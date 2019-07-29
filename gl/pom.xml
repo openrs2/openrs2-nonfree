@@ -12,4 +12,12 @@
   <packaging>jar</packaging>
 
   <name>OpenRS2 GL</name>
+
+  <dependencies>
+    <dependency>
+      <groupId>dev.openrs2</groupId>
+      <artifactId>openrs2-deob-annotations</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+  </dependencies>
 </project>

@@ -12,4 +12,17 @@
   <packaging>jar</packaging>
 
   <name>OpenRS2 Loader</name>
+
+  <dependencies>
+    <dependency>
+      <groupId>dev.openrs2</groupId>
+      <artifactId>openrs2-signlink</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>dev.openrs2</groupId>
+      <artifactId>openrs2-unpack</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+  </dependencies>
 </project>
