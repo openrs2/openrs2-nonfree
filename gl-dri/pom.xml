@@ -4,22 +4,20 @@
 
   <parent>
     <groupId>dev.openrs2</groupId>
-    <artifactId>openrs2</artifactId>
+    <artifactId>openrs2-nonfree</artifactId>
     <version>1.0.0-SNAPSHOT</version>
   </parent>
 
-  <artifactId>openrs2-nonfree</artifactId>
-  <packaging>pom</packaging>
+  <artifactId>openrs2-gl-dri</artifactId>
+  <packaging>jar</packaging>
 
-  <name>OpenRS2 Non-Free</name>
+  <name>OpenRS2 GL DRI</name>
 
-  <modules>
-    <module>client</module>
-    <module>gl</module>
-    <module>gl-dri</module>
-    <module>loader</module>
-    <module>signlink</module>
-    <module>unpack</module>
-    <module>unpacker</module>
-  </modules>
+  <dependencies>
+    <dependency>
+      <groupId>dev.openrs2</groupId>
+      <artifactId>openrs2-deob-annotations</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+  </dependencies>
 </project>
