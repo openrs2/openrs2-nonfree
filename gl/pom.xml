@@ -16,7 +16,7 @@
   <dependencies>
     <dependency>
       <groupId>dev.openrs2</groupId>
-      <artifactId>openrs2-deob-annotations</artifactId>
+      <artifactId>openrs2-gl-dri</artifactId>
       <version>${project.version}</version>
     </dependency>
   </dependencies>
