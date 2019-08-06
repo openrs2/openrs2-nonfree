@@ -1,6 +1,7 @@
 .*
 !.git*
 !.mailmap
+*.iml
 */target
 *~
 /target
