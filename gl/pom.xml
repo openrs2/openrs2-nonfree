@@ -13,6 +13,10 @@
 
   <name>OpenRS2 GL</name>
 
+  <properties>
+    <openrs2.root>${project.parent.parent.basedir}</openrs2.root>
+  </properties>
+
   <dependencies>
     <dependency>
       <groupId>dev.openrs2</groupId>
@@ -29,7 +33,7 @@
         <configuration>
           <compilerArgs>
             <arg>-h</arg>
-            <arg>${maven.multiModuleProjectDirectory}/gl-natives/src/main/c</arg>
+            <arg>${openrs2.root}/gl-natives/src/main/c</arg>
           </compilerArgs>
         </configuration>
       </plugin>

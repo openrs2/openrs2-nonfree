@@ -13,6 +13,10 @@
 
   <name>OpenRS2 Client</name>
 
+  <properties>
+    <openrs2.root>${project.parent.parent.basedir}</openrs2.root>
+  </properties>
+
   <dependencies>
     <dependency>
       <groupId>dev.openrs2</groupId>
@@ -34,7 +38,7 @@
         <configuration>
           <compilerArgs>
             <arg>-h</arg>
-            <arg>${maven.multiModuleProjectDirectory}/misc-natives/src/main/c</arg>
+            <arg>${openrs2.root}/misc-natives/src/main/c</arg>
           </compilerArgs>
         </configuration>
       </plugin>

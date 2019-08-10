@@ -22,4 +22,8 @@
     <module>unpack</module>
     <module>unpacker</module>
   </modules>
+
+  <properties>
+    <openrs2.root>${project.parent.basedir}</openrs2.root>
+  </properties>
 </project>
