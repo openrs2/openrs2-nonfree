@@ -33,7 +33,8 @@
         <configuration>
           <compilerArgs>
             <arg>-h</arg>
-            <arg>${openrs2.root}/gl-natives/src/main/c</arg>
+            <!-- ideally we'd use ${openrs2.root} here but there's a bug in IDEA -->
+            <arg>${project.basedir}/../../gl-natives/src/main/c</arg>
           </compilerArgs>
         </configuration>
       </plugin>
