@@ -12,6 +12,7 @@
   <packaging>jar</packaging>
 
   <name>OpenRS2 GL</name>
+  <description>Jagex's OpenGL bindings.</description>
 
   <properties>
     <openrs2.root>${project.parent.parent.basedir}</openrs2.root>

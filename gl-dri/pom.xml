@@ -12,6 +12,8 @@
   <packaging>jar</packaging>
 
   <name>OpenRS2 GL DRI</name>
+  <description>DRI hack for Jagex's OpenGL bindings, which is used to support
+    the open-source Mesa drivers on UNIX systems.</description>
 
   <properties>
     <openrs2.root>${project.parent.parent.basedir}</openrs2.root>
