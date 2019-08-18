@@ -12,6 +12,12 @@
   <packaging>pom</packaging>
 
   <name>OpenRS2 Non-Free</name>
+  <licenses>
+    <license>
+      <name>Proprietary</name>
+      <distribution>manual</distribution>
+    </license>
+  </licenses>
 
   <modules>
     <module>client</module>
