@@ -13,7 +13,8 @@
 
   <name>OpenRS2 Loader</name>
   <description>An applet that downloads and unpacks the client, OpenGL bindings
-    and native libraries then starts the client.</description>
+    and native libraries then starts the client.
+  </description>
 
   <properties>
     <openrs2.root>${project.parent.parent.basedir}</openrs2.root>

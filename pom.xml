@@ -13,7 +13,8 @@
 
   <name>OpenRS2 Non-Free</name>
   <description>Parent module for code and data that cannot be legally
-    redistributed.</description>
+    redistributed.
+  </description>
   <licenses>
     <license>
       <name>Proprietary</name>

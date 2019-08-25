@@ -15,7 +15,8 @@
   <description>A bridge between the (signed) loader and (unsigned) client. It
     is used by the client to perform privileged operations that can only be
     performed in a signed context in a restrictive environment, such as an
-    applet.</description>
+    applet.
+  </description>
 
   <properties>
     <openrs2.root>${project.parent.parent.basedir}</openrs2.root>
