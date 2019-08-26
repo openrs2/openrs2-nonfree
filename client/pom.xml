@@ -12,8 +12,8 @@
   <packaging>jar</packaging>
 
   <name>OpenRS2 Client</name>
-  <description>The high detail variant of the RuneScape client
-    software.
+  <description>
+    The high detail variant of the RuneScape client software.
   </description>
 
   <properties>

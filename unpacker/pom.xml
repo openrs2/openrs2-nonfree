@@ -12,8 +12,9 @@
   <packaging>jar</packaging>
 
   <name>OpenRS2 Unpacker</name>
-  <description>Unpacker for Jagex's custom class file format, which is similar
-    to but significantly simpler than Pack200.
+  <description>
+    Unpacker for Jagex's custom class file format, which is similar to but
+    significantly simpler than Pack200.
   </description>
 
   <properties>

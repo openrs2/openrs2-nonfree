@@ -12,8 +12,9 @@
   <packaging>jar</packaging>
 
   <name>OpenRS2 Loader</name>
-  <description>An applet that downloads and unpacks the client, OpenGL bindings
-    and native libraries then starts the client.
+  <description>
+    An applet that downloads and unpacks the client, OpenGL bindings and native
+    libraries then starts the client.
   </description>
 
   <properties>
