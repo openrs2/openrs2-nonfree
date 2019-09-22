@@ -16,10 +16,6 @@
     The high detail variant of the RuneScape client software.
   </description>
 
-  <properties>
-    <openrs2.root>${project.parent.parent.basedir}</openrs2.root>
-  </properties>
-
   <dependencies>
     <dependency>
       <groupId>dev.openrs2</groupId>
@@ -41,7 +37,7 @@
         <configuration>
           <compilerArgs>
             <arg>-h</arg>
-            <!-- ideally we'd use ${openrs2.root} here but there's a bug in IDEA -->
+            <!-- ideally we'd use ${project.parent.parent.basedir} here but there's a bug in IDEA -->
             <arg>${project.basedir}/../../misc-natives/src/main/c</arg>
           </compilerArgs>
         </configuration>

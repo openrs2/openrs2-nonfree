@@ -17,10 +17,6 @@
     significantly simpler than Pack200.
   </description>
 
-  <properties>
-    <openrs2.root>${project.parent.parent.basedir}</openrs2.root>
-  </properties>
-
   <dependencies>
     <dependency>
       <groupId>dev.openrs2</groupId>

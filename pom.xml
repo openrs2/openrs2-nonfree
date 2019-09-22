@@ -42,8 +42,4 @@
     <url>https://git.openrs2.dev/openrs2/nonfree/issues</url>
   </issueManagement>
   <ciManagement />
-
-  <properties>
-    <openrs2.root>${project.parent.basedir}</openrs2.root>
-  </properties>
 </project>
