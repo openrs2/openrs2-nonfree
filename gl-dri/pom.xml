@@ -33,8 +33,7 @@
         <configuration>
           <compilerArgs>
             <arg>-h</arg>
-            <!-- ideally we'd use ${project.parent.parent.basedir} here but there's a bug in IDEA -->
-            <arg>${project.basedir}/../../gl-dri-natives/src/main/c</arg>
+            <arg>${project.build.directory}/include</arg>
           </compilerArgs>
         </configuration>
       </plugin>
