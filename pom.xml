@@ -33,13 +33,13 @@
   </modules>
 
   <scm>
-    <connection>scm:git:https://git.openrs2.dev/openrs2/nonfree.git</connection>
-    <developerConnection>scm:git:git@git.openrs2.dev:openrs2/nonfree.git</developerConnection>
-    <url>https://git.openrs2.dev/openrs2/nonfree</url>
+    <connection>scm:git:https://git.openrs2.dev/openrs2/openrs2-nonfree.git</connection>
+    <developerConnection>scm:git:git@git.openrs2.dev:openrs2/openrs2-nonfree.git</developerConnection>
+    <url>https://git.openrs2.dev/openrs2/openrs2-nonfree</url>
   </scm>
   <issueManagement>
     <system>Gitea</system>
-    <url>https://git.openrs2.dev/openrs2/nonfree/issues</url>
+    <url>https://git.openrs2.dev/openrs2/openrs2-nonfree/issues</url>
   </issueManagement>
   <ciManagement />
 </project>
