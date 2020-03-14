@@ -3,7 +3,5 @@ plugins {
 }
 
 dependencies {
-    api(project(":nonfree:gl-dri"))
-
     compileOnly(project(":deob-annotations"))
 }
