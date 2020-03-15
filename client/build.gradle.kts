@@ -13,7 +13,6 @@ tasks.named<JavaExec>("run") {
 dependencies {
     compileOnly(project(":deob-annotations"))
 
-    implementation(project(":jsobject"))
     implementation(project(":nonfree:gl"))
     implementation(project(":nonfree:signlink"))
 }
