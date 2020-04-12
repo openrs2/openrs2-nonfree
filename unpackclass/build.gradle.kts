@@ -3,7 +3,5 @@ plugins {
 }
 
 dependencies {
-    compileOnly(project(":deob-annotations"))
-
     implementation(project(":nonfree:unpack"))
 }

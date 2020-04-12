@@ -7,6 +7,9 @@ configure(subprojects) {
         dependencies {
             val annotationProcessor by configurations
             annotationProcessor(project(":deob-processor"))
+
+            val compileOnly by configurations
+            compileOnly(project(":deob-annotations"))
         }
 
         tasks.named<JavaCompile>("compileJava") {
