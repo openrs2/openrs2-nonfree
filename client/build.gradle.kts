@@ -1,3 +1,5 @@
+evaluationDependsOn(":nonfree")
+
 plugins {
     application
 }
