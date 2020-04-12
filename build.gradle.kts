@@ -13,7 +13,7 @@ configure(subprojects) {
         }
 
         tasks.named<JavaCompile>("compileJava") {
-            options.compilerArgs = listOf("-Amap=${project.rootDir}/data/deob-map/${project.name}.yaml")
+            options.compilerArgs = listOf("-Amap=${project.rootDir}/share/deob-map/${project.name}.yaml")
         }
     }
 }
