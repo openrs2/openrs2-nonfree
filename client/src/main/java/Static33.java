@@ -1211,7 +1211,7 @@ public final class Static33 {
 					}
 					@Pc(567) boolean local567 = false;
 					for (@Pc(569) int local569 = 0; local569 < Static4.anInt3260; local569++) {
-						if (Static6.aClass4_Sub15Array1[local569].aLong212 == local540) {
+						if (Static6.aClass4_Sub15Array1[local569].key == local540) {
 							local567 = true;
 							break;
 						}

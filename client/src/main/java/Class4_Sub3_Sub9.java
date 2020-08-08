@@ -19,17 +19,17 @@ public final class Class4_Sub3_Sub9 extends Class4_Sub3 {
 
 	@OriginalMember(owner = "client!g", name = "<init>", descriptor = "(II)V")
 	public Class4_Sub3_Sub9(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
-		this.aLong212 = (long) arg0 << 32 | (long) arg1;
+		this.key = (long) arg0 << 32 | (long) arg1;
 	}
 
 	@OriginalMember(owner = "client!g", name = "d", descriptor = "(I)I")
 	public final int method1515() {
-		return (int) (this.aLong212 >>> 32 & 0xFFL);
+		return (int) (this.key >>> 32 & 0xFFL);
 	}
 
 	@OriginalMember(owner = "client!g", name = "e", descriptor = "(I)I")
 	public final int method1516() {
-		return (int) this.aLong212;
+		return (int) this.key;
 	}
 
 	@OriginalMember(owner = "client!g", name = "e", descriptor = "(B)V")

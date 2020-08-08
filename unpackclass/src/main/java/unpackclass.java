@@ -272,7 +272,7 @@ public final class unpackclass extends unpack {
 
 	@OriginalMember(owner = "unpackclass!unpackclass", name = "a", descriptor = "(Lunpackclass!s;)V")
 	private void method4949(@OriginalArg(0) Class201_Sub2 arg0) {
-		if (arg0.method4939()) {
+		if (arg0.isLinked()) {
 			return;
 		}
 		this.aClass202_1.method4922(arg0);
@@ -954,7 +954,7 @@ public final class unpackclass extends unpack {
 		local1916.method4910(this.anInt6150);
 		this.anInt6150 = 1;
 		for (@Pc(1937) Class201_Sub2 local1937 = (Class201_Sub2) this.aClass202_1.method4923(); local1937 != null; local1937 = (Class201_Sub2) this.aClass202_1.method4924()) {
-			local1937.method4938();
+			local1937.unlink();
 			local1916.method4909(local1937.anInt6148);
 			if (local1937.aClass201_Sub2_5 != null) {
 				local1916.method4910(local1937.aClass201_Sub2_5.anInt6149);

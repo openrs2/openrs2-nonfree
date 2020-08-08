@@ -221,7 +221,7 @@ public final class Static38 {
 					if (local1245 != null) {
 						for (@Pc(1253) Class4_Sub3_Sub21 local1253 = (Class4_Sub3_Sub21) local1245.method2610(); local1253 != null; local1253 = (Class4_Sub3_Sub21) local1245.method2616()) {
 							if ((local1222 & 0x7FFF) == local1253.aClass53_Sub2_1.anInt2168) {
-								local1253.method4817();
+								local1253.unlink();
 								break;
 							}
 						}

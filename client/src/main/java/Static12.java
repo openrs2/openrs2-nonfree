@@ -184,7 +184,7 @@ public final class Static12 {
 						if (local9.aBoolean407 && Static7.anInt5357 >= local61 && Static7.anInt6038 >= local63 && Static7.anInt5357 < local65 && Static7.anInt6038 < local67) {
 							for (@Pc(164) Class4_Sub13 local164 = (Class4_Sub13) Static3.aClass112_14.method2610(); local164 != null; local164 = (Class4_Sub13) Static3.aClass112_14.method2616()) {
 								if (local164.aBoolean172) {
-									local164.method4817();
+									local164.unlink();
 									local164.aClass185_7.aBoolean414 = false;
 								}
 							}
@@ -748,7 +748,7 @@ public final class Static12 {
 		@Pc(16) Class4_Sub3_Sub9 local16 = (Class4_Sub3_Sub9) Static3.aClass84_8.method1844((long) arg0 << 32 | (long) arg1);
 		if (local16 == null) {
 			local16 = new Class4_Sub3_Sub9(arg0, arg1);
-			Static3.aClass84_8.method1840(local16, local16.aLong212);
+			Static3.aClass84_8.method1840(local16, local16.key);
 		}
 		return local16;
 	}
@@ -899,7 +899,7 @@ public final class Static12 {
 		}
 		if (arg3.aClass4_Sub6_Sub4_2 != null) {
 			arg3.aClass4_Sub6_Sub4_2.method3377(local164);
-			if (!arg3.aClass4_Sub6_Sub4_2.method4815()) {
+			if (!arg3.aClass4_Sub6_Sub4_2.isLinked()) {
 				arg3.aClass4_Sub6_Sub4_2 = null;
 			}
 		} else if (arg3.anIntArray172 != null && (arg3.anInt2125 -= arg2) <= 0) {
@@ -975,12 +975,12 @@ public final class Static12 {
 		for (@Pc(27) Class4_Sub5 local27 = arg0 ? (Class4_Sub5) Static7.aClass84_25.method1842() : (Class4_Sub5) Static7.aClass84_25.method1843(); local27 != null; local27 = (Class4_Sub5) Static7.aClass84_25.method1843()) {
 			if (local13 > (local27.aLong17 & 0x3FFFFFFFFFFFFFFFL)) {
 				if ((local27.aLong17 & 0x4000000000000000L) != 0L) {
-					@Pc(55) int local55 = (int) local27.aLong212;
+					@Pc(55) int local55 = (int) local27.key;
 					Static1.anIntArray2[local55] = Static1.anIntArray62[local55];
-					local27.method4817();
+					local27.unlink();
 					return local55;
 				}
-				local27.method4817();
+				local27.unlink();
 			}
 		}
 		return -1;
@@ -1028,7 +1028,7 @@ public final class Static12 {
 			Static5.aClass4_Sub6_Sub3_2.method2670(local19.aClass4_Sub6_Sub4_3);
 			local19.aClass4_Sub6_Sub4_3 = null;
 		}
-		local19.method4817();
+		local19.unlink();
 	}
 
 	@OriginalMember(owner = "client!dc", name = "a", descriptor = "(JI)Ljava/lang/String;")
@@ -1319,10 +1319,10 @@ public final class Static12 {
 			local5.glGenTextures(2, Static2.anIntArray83, 0);
 			Static2.anInt1028 = Static9.method210();
 		}
-		for (@Pc(29) Class4 local29 = Static2.aClass112_5.method2610(); local29 != null; local29 = Static2.aClass112_5.method2616()) {
+		for (@Pc(29) Node local29 = Static2.aClass112_5.method2610(); local29 != null; local29 = Static2.aClass112_5.method2616()) {
 			@Pc(34) Class4_Sub4 local34 = (Class4_Sub4) local29;
 			if (!local34.method762()) {
-				local34.method4817();
+				local34.unlink();
 			}
 		}
 		if (Static2.aClass4_Sub4_Sub1_1 == null) {

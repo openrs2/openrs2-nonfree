@@ -80,7 +80,7 @@ public final class Class98 {
 			if (local87 == null) {
 				return null;
 			} else {
-				local64.method4817();
+				local64.unlink();
 				this.aClass84_12.method1840(local87, local26);
 				return local87;
 			}

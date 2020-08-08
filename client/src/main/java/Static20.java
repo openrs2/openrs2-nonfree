@@ -1500,7 +1500,7 @@ public final class Static20 {
 		for (@Pc(16) Class4_Sub3_Sub2 local16 = (Class4_Sub3_Sub2) Static1.aClass112_1.method2610(); local16 != null; local16 = (Class4_Sub3_Sub2) Static1.aClass112_1.method2616()) {
 			@Pc(22) Class53_Sub6 local22 = local16.aClass53_Sub6_1;
 			if (local22.anInt3717 != Static7.anInt5334 || Static2.anInt954 > local22.anInt3707) {
-				local16.method4817();
+				local16.unlink();
 			} else if (local22.anInt3719 <= Static2.anInt954) {
 				if (local22.anInt3713 > 0) {
 					@Pc(61) Class53_Sub1_Sub2 local61 = Static3.aClass53_Sub1_Sub2Array1[local22.anInt3713 - 1];

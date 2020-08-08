@@ -4,7 +4,7 @@ import dev.openrs2.deob.annotation.OriginalMember;
 import dev.openrs2.deob.annotation.Pc;
 
 @OriginalClass("client!jo")
-public abstract class Class4_Sub1 extends Class4 {
+public abstract class Class4_Sub1 extends Node {
 
 	@OriginalMember(owner = "client!jo", name = "z", descriptor = "Lclient!md;")
 	protected Class114 aClass114_41;

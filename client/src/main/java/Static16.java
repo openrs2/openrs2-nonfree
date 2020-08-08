@@ -3713,13 +3713,13 @@ public final class Static16 {
 									if (Static3.aClass84_9 == null) {
 										continue;
 									}
-									@Pc(10299) Class4 local10299 = Static3.aClass84_9.method1844((long) local10276);
+									@Pc(10299) Node local10299 = Static3.aClass84_9.method1844((long) local10276);
 									if (local10299 != null && !local10289) {
-										local10299.method4817();
+										local10299.unlink();
 										continue;
 									}
 									if (local10299 == null && local10289) {
-										@Pc(10313) Class4 local10313 = new Class4();
+										@Pc(10313) Node local10313 = new Node();
 										Static3.aClass84_9.method1840(local10313, (long) local10276);
 									}
 									continue;
@@ -3731,7 +3731,7 @@ public final class Static16 {
 										local5 = local10331 + 1;
 										Static7.anIntArray571[local10331] = 0;
 									} else {
-										@Pc(10350) Class4 local10350 = Static3.aClass84_9.method1844((long) local10334);
+										@Pc(10350) Node local10350 = Static3.aClass84_9.method1844((long) local10334);
 										local5 = local10331 + 1;
 										Static7.anIntArray571[local10331] = local10350 == null ? 0 : 1;
 									}
@@ -3744,13 +3744,13 @@ public final class Static16 {
 									if (Static3.aClass84_10 == null) {
 										continue;
 									}
-									@Pc(10389) Class4 local10389 = Static3.aClass84_10.method1844((long) local10369);
+									@Pc(10389) Node local10389 = Static3.aClass84_10.method1844((long) local10369);
 									if (local10389 != null && !local10380) {
-										local10389.method4817();
+										local10389.unlink();
 										continue;
 									}
 									if (local10389 == null && local10380) {
-										@Pc(10403) Class4 local10403 = new Class4();
+										@Pc(10403) Node local10403 = new Node();
 										Static3.aClass84_10.method1840(local10403, (long) local10369);
 									}
 									continue;
@@ -3762,7 +3762,7 @@ public final class Static16 {
 										local5 = local10425 + 1;
 										Static7.anIntArray571[local10425] = 0;
 									} else {
-										@Pc(10444) Class4 local10444 = Static3.aClass84_10.method1844((long) local10428);
+										@Pc(10444) Node local10444 = Static3.aClass84_10.method1844((long) local10428);
 										local5 = local10425 + 1;
 										Static7.anIntArray571[local10425] = local10444 == null ? 0 : 1;
 									}
@@ -4890,7 +4890,7 @@ public final class Static16 {
 				if (Static4.anInt3406 != 0) {
 					Static26.method4357("", 0, "Clientscript error - check log for details");
 				}
-				Static26.method3059(local15060, "CS2 - scr:" + arg1.aLong212 + " op:" + local25);
+				Static26.method3059(local15060, "CS2 - scr:" + arg1.key + " op:" + local25);
 			} else {
 				@Pc(15069) StringBuffer local15069 = new StringBuffer(30);
 				local15069.append("%0a - in: ").append(arg1.aString159);
@@ -4904,7 +4904,7 @@ public final class Static16 {
 				if (Static4.anInt3406 != 0) {
 					Static26.method4357("", 0, "Clientscript error in: " + arg1.aString159);
 				}
-				Static26.method3059(local15060, "CS2 - scr:" + arg1.aLong212 + " op:" + local25 + local15069.toString());
+				Static26.method3059(local15060, "CS2 - scr:" + arg1.key + " op:" + local25 + local15069.toString());
 			}
 		}
 	}

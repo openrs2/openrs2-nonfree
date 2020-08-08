@@ -79,7 +79,7 @@ public final class Class35 {
 					@Pc(69) Class4_Sub20 local69 = (Class4_Sub20) this.aClass112_4.method2613();
 					local33 = new Class4_Sub20(arg0, local69.anInt3905);
 					this.aClass4_Sub20Array1[local69.anInt3908] = null;
-					local69.method4817();
+					local69.unlink();
 				}
 				this.aClass4_Sub20Array1[arg0] = local33;
 			} else {

@@ -3,7 +3,7 @@ import dev.openrs2.deob.annotation.OriginalClass;
 import dev.openrs2.deob.annotation.OriginalMember;
 
 @OriginalClass("client!nb")
-public final class Class4_Sub17 extends Class4 {
+public final class Class4_Sub17 extends Node {
 
 	@OriginalMember(owner = "client!nb", name = "u", descriptor = "I")
 	public int anInt3457 = Integer.MAX_VALUE;

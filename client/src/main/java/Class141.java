@@ -7,7 +7,7 @@ import dev.openrs2.deob.annotation.Pc;
 public final class Class141 {
 
 	@OriginalMember(owner = "client!qe", name = "l", descriptor = "Lclient!ni;")
-	private Class4 aClass4_159;
+	private Node aClass4_159;
 
 	@OriginalMember(owner = "client!qe", name = "d", descriptor = "I")
 	private int anInt4287 = 0;
@@ -21,26 +21,26 @@ public final class Class141 {
 	}
 
 	@OriginalMember(owner = "client!qe", name = "a", descriptor = "(B)Lclient!ni;")
-	public final Class4 method3540() {
+	public final Node method3540() {
 		this.anInt4287 = 0;
 		return this.method3544();
 	}
 
 	@OriginalMember(owner = "client!qe", name = "b", descriptor = "(B)Lclient!ni;")
-	public final Class4 method3544() {
+	public final Node method3544() {
 		if (this.anInt4287 > 0 && this.aClass84_20.aClass4Array1[this.anInt4287 - 1] != this.aClass4_159) {
-			@Pc(25) Class4 local25 = this.aClass4_159;
-			this.aClass4_159 = local25.aClass4_235;
+			@Pc(25) Node local25 = this.aClass4_159;
+			this.aClass4_159 = local25.next;
 			return local25;
 		}
-		@Pc(50) Class4 local50;
+		@Pc(50) Node local50;
 		do {
 			if (this.anInt4287 >= this.aClass84_20.anInt2336) {
 				return null;
 			}
-			local50 = this.aClass84_20.aClass4Array1[this.anInt4287++].aClass4_235;
+			local50 = this.aClass84_20.aClass4Array1[this.anInt4287++].next;
 		} while (this.aClass84_20.aClass4Array1[this.anInt4287 - 1] == local50);
-		this.aClass4_159 = local50.aClass4_235;
+		this.aClass4_159 = local50.next;
 		return local50;
 	}
 }

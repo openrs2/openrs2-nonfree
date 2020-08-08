@@ -21,7 +21,7 @@ public final class Static13 {
 		if (Static2.anInt1029 != arg2 || Static2.anInt1027 != arg3) {
 			Static2.anInt1029 = arg2;
 			Static2.anInt1027 = arg3;
-			for (@Pc(30) Class4 local30 = Static2.aClass112_5.method2610(); local30 != Static2.aClass112_5.aClass4_117; local30 = local30.aClass4_235) {
+			for (@Pc(30) Node local30 = Static2.aClass112_5.method2610(); local30 != Static2.aClass112_5.aClass4_117; local30 = local30.next) {
 				((Class4_Sub4) local30).method765(Static2.anInt1029, Static2.anInt1027);
 			}
 			Static2.aBoolean60 = true;
@@ -121,7 +121,7 @@ public final class Static13 {
 	@OriginalMember(owner = "client!di", name = "a", descriptor = "(Lclient!bc;Z)V")
 	public static void method876(@OriginalArg(0) Class4_Sub4 arg0) {
 		arg0.aBoolean54 = false;
-		arg0.method4817();
+		arg0.unlink();
 		Static12.method870();
 	}
 
@@ -223,7 +223,7 @@ public final class Static13 {
 			Static2.anInt1032 = -1;
 		}
 		if (!Static2.aClass112_5.method2609()) {
-			for (@Pc(39) Class4 local39 = Static2.aClass112_5.method2610(); local39 != Static2.aClass112_5.aClass4_117; local39 = local39.aClass4_235) {
+			for (@Pc(39) Node local39 = Static2.aClass112_5.method2610(); local39 != Static2.aClass112_5.aClass4_117; local39 = local39.next) {
 				((Class4_Sub4) local39).method760();
 			}
 		}

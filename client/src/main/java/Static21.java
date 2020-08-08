@@ -459,7 +459,7 @@ public final class Static21 {
 	private static void method2010(@OriginalArg(1) int arg0) {
 		@Pc(16) Class4_Sub18 local16 = (Class4_Sub18) Static5.aClass84_17.method1844((long) arg0);
 		if (local16 != null) {
-			local16.method4817();
+			local16.unlink();
 		}
 	}
 
@@ -762,7 +762,7 @@ public final class Static21 {
 					@Pc(1037) Class4_Sub21 local1037;
 					if (local1021 != null) {
 						local1037 = new Class4_Sub21(local967, local1021.anInt3939);
-						local1021.method4817();
+						local1021.unlink();
 					} else if (local1003 == -1) {
 						local1037 = new Class4_Sub21(local967, Static19.method1813(local973).aClass4_Sub21_2.anInt3939);
 					} else {
@@ -910,7 +910,7 @@ public final class Static21 {
 					@Pc(1556) Class4_Sub21 local1556;
 					if (local1541 != null) {
 						local1556 = new Class4_Sub21(local1541.anInt3947, local1490);
-						local1541.method4817();
+						local1541.unlink();
 					} else if (local1520 == -1) {
 						local1556 = new Class4_Sub21(Static19.method1813(local1486).aClass4_Sub21_2.anInt3947, local1490);
 					} else {
@@ -936,7 +936,7 @@ public final class Static21 {
 				}
 				@Pc(1779) long local1779 = local1598 & Long.MAX_VALUE;
 				@Pc(1781) int local1781;
-				for (local1781 = 0; Static4.anInt3260 > local1781 && (Static6.aClass4_Sub15Array1[local1781].aLong212 != local1779 || local1602 != Static6.aClass4_Sub15Array1[local1781].anInt2988); local1781++) {
+				for (local1781 = 0; Static4.anInt3260 > local1781 && (Static6.aClass4_Sub15Array1[local1781].key != local1779 || local1602 != Static6.aClass4_Sub15Array1[local1781].anInt2988); local1781++) {
 				}
 				if (local1781 < Static4.anInt3260) {
 					while (local1781 < Static4.anInt3260 - 1) {
@@ -949,8 +949,8 @@ public final class Static21 {
 			} else {
 				@Pc(1625) String local1625 = Static5.aClass4_Sub10_Sub1_2.method4593();
 				@Pc(1629) Class4_Sub15 local1629 = new Class4_Sub15();
-				local1629.aLong212 = local1598;
-				local1629.aString182 = Static35.method4319(local1629.aLong212);
+				local1629.key = local1598;
+				local1629.aString182 = Static35.method4319(local1629.key);
 				local1629.aByte5 = local1619;
 				local1629.anInt2988 = local1602;
 				local1629.aString181 = local1625;
@@ -1227,7 +1227,7 @@ public final class Static21 {
 					Static28.method3246(local2747 == null || local2754.anInt4620 != local2747.anInt4620, local2754);
 				}
 				if (local2747 != null) {
-					local2747.method4817();
+					local2747.unlink();
 					Static4.aClass84_13.method1840(local2747, (long) local2736);
 				}
 				@Pc(2788) Class185 local2788 = Static19.method1813(local2732);
@@ -1358,12 +1358,12 @@ public final class Static21 {
 			@Pc(3217) Class4_Sub15[] local3217 = new Class4_Sub15[100];
 			for (@Pc(3219) int local3219 = 0; local3219 < Static4.anInt3260; local3219++) {
 				local3217[local3219] = new Class4_Sub15();
-				local3217[local3219].aLong212 = Static5.aClass4_Sub10_Sub1_2.method4622();
-				local3217[local3219].aString182 = Static35.method4319(local3217[local3219].aLong212);
+				local3217[local3219].key = Static5.aClass4_Sub10_Sub1_2.method4622();
+				local3217[local3219].aString182 = Static35.method4319(local3217[local3219].key);
 				local3217[local3219].anInt2988 = Static5.aClass4_Sub10_Sub1_2.method4616();
 				local3217[local3219].aByte5 = Static5.aClass4_Sub10_Sub1_2.method4637();
 				local3217[local3219].aString181 = Static5.aClass4_Sub10_Sub1_2.method4593();
-				if (Static1.aLong23 == local3217[local3219].aLong212) {
+				if (Static1.aLong23 == local3217[local3219].key) {
 					Static5.aByte13 = local3217[local3219].aByte5;
 				}
 			}
@@ -2323,7 +2323,7 @@ public final class Static21 {
 					}
 				}
 				if (!local17) {
-					@Pc(50) int local50 = (int) local6.aLong212;
+					@Pc(50) int local50 = (int) local6.key;
 					@Pc(54) Class185 local54 = Static19.method1813(local50);
 					if (local54 != null) {
 						Static28.method3270(local54);

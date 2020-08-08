@@ -4,7 +4,7 @@ import dev.openrs2.deob.annotation.OriginalMember;
 import dev.openrs2.deob.annotation.Pc;
 
 @OriginalClass("unpackclass!e")
-public final class Class201_Sub1 extends Class201 {
+public final class Class201_Sub1 extends Node {
 
 	@OriginalMember(owner = "unpackclass!e", name = "f", descriptor = "[I")
 	private static final int[] anIntArray689 = new int[256];

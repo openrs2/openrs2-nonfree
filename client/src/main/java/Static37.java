@@ -451,7 +451,7 @@ public final class Static37 {
 				local6.anInt4446 = 0;
 				Static16.method4654(local6);
 			} else {
-				local6.method4817();
+				local6.unlink();
 			}
 		}
 	}

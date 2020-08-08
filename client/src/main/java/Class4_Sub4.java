@@ -3,7 +3,7 @@ import dev.openrs2.deob.annotation.OriginalClass;
 import dev.openrs2.deob.annotation.OriginalMember;
 
 @OriginalClass("client!bc")
-public abstract class Class4_Sub4 extends Class4 {
+public abstract class Class4_Sub4 extends Node {
 
 	@OriginalMember(owner = "client!bc", name = "t", descriptor = "Z")
 	public boolean aBoolean54;

@@ -690,12 +690,12 @@ public final class Static34 {
 		if (local20 == 0L) {
 			return;
 		}
-		while (Static6.aClass4_Sub15Array1.length > local16 && local20 != Static6.aClass4_Sub15Array1[local16].aLong212) {
+		while (Static6.aClass4_Sub15Array1.length > local16 && local20 != Static6.aClass4_Sub15Array1[local16].key) {
 			local16++;
 		}
 		if (Static6.aClass4_Sub15Array1.length > local16 && Static6.aClass4_Sub15Array1[local16] != null) {
 			Static3.aClass4_Sub10_Sub1_1.method4650(75);
-			Static3.aClass4_Sub10_Sub1_1.method4582(Static6.aClass4_Sub15Array1[local16].aLong212);
+			Static3.aClass4_Sub10_Sub1_1.method4582(Static6.aClass4_Sub15Array1[local16].key);
 		}
 	}
 

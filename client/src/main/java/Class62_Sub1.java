@@ -89,8 +89,8 @@ public final class Class62_Sub1 extends Class62 {
 		if (this.aClass61_2 == null) {
 			return 0;
 		} else if (this.aBoolean394) {
-			@Pc(27) Class4 local27 = this.aClass112_30.method2610();
-			return local27 == null ? 0 : (int) local27.aLong212;
+			@Pc(27) Node local27 = this.aClass112_30.method2610();
+			return local27 == null ? 0 : (int) local27.key;
 		} else {
 			return this.aClass61_2.anInt1972;
 		}
@@ -173,13 +173,13 @@ public final class Class62_Sub1 extends Class62 {
 		if (this.aClass60_4 == null) {
 			return;
 		}
-		for (@Pc(22) Class4 local22 = this.aClass112_29.method2610(); local22 != null; local22 = this.aClass112_29.method2616()) {
-			if ((long) arg0 == local22.aLong212) {
+		for (@Pc(22) Node local22 = this.aClass112_29.method2610(); local22 != null; local22 = this.aClass112_29.method2616()) {
+			if ((long) arg0 == local22.key) {
 				return;
 			}
 		}
-		@Pc(48) Class4 local48 = new Class4();
-		local48.aLong212 = arg0;
+		@Pc(48) Node local48 = new Node();
+		local48.key = arg0;
 		this.aClass112_29.method2612(local48);
 	}
 
@@ -188,10 +188,10 @@ public final class Class62_Sub1 extends Class62 {
 		if (this.aClass112_30 == null || this.method4659() == null) {
 			return;
 		}
-		for (@Pc(22) Class4 local22 = this.aClass112_29.method2610(); local22 != null; local22 = this.aClass112_29.method2616()) {
-			@Pc(32) int local32 = (int) local22.aLong212;
+		for (@Pc(22) Node local22 = this.aClass112_29.method2610(); local22 != null; local22 = this.aClass112_29.method2616()) {
+			@Pc(32) int local32 = (int) local22.key;
 			if (local32 < 0 || this.aClass61_2.anInt1979 <= local32 || this.aClass61_2.anIntArray154[local32] == 0) {
-				local22.method4817();
+				local22.unlink();
 			} else {
 				if (this.aByteArray72[local32] == 0) {
 					this.method4672(local32, 1);
@@ -200,7 +200,7 @@ public final class Class62_Sub1 extends Class62 {
 					this.method4672(local32, 2);
 				}
 				if (this.aByteArray72[local32] == 1) {
-					local22.method4817();
+					local22.unlink();
 				}
 			}
 		}
@@ -229,7 +229,7 @@ public final class Class62_Sub1 extends Class62 {
 			return null;
 		} else {
 			@Pc(25) byte[] local25 = local9.method4352();
-			local9.method4817();
+			local9.unlink();
 			return local25;
 		}
 	}
@@ -250,7 +250,7 @@ public final class Class62_Sub1 extends Class62 {
 	private Class4_Sub3_Sub1 method4672(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1) {
 		@Pc(13) Class4_Sub3_Sub1 local13 = (Class4_Sub3_Sub1) this.aClass84_27.method1844((long) arg0);
 		if (local13 != null && arg1 == 0 && !local13.aBoolean363 && local13.aBoolean364) {
-			local13.method4817();
+			local13.unlink();
 			local13 = null;
 		}
 		if (local13 == null) {
@@ -303,7 +303,7 @@ public final class Class62_Sub1 extends Class62 {
 				this.aClass51_3.anInt1359 = 0;
 			} catch (@Pc(219) RuntimeException local219) {
 				this.aClass51_3.method1091();
-				local13.method4817();
+				local13.unlink();
 				if (local13.aBoolean363 && !this.aClass51_3.method1083()) {
 					@Pc(244) Class4_Sub3_Sub1_Sub2 local244 = this.aClass51_3.method1088((byte) 2, this.anInt5790, true, arg0);
 					this.aClass84_27.method1840(local244, (long) arg0);
@@ -320,7 +320,7 @@ public final class Class62_Sub1 extends Class62 {
 				}
 			}
 			if (!local13.aBoolean363) {
-				local13.method4817();
+				local13.unlink();
 			}
 			return local13;
 		}
@@ -345,12 +345,12 @@ public final class Class62_Sub1 extends Class62 {
 				this.aByteArray72[arg0] = 1;
 			}
 			if (!local13.aBoolean363) {
-				local13.method4817();
+				local13.unlink();
 			}
 			return local13;
 		} catch (@Pc(428) Exception local428) {
 			this.aByteArray72[arg0] = -1;
-			local13.method4817();
+			local13.unlink();
 			if (local13.aBoolean363 && !this.aClass51_3.method1083()) {
 				@Pc(455) Class4_Sub3_Sub1_Sub2 local455 = this.aClass51_3.method1088((byte) 2, this.anInt5790, true, arg0);
 				this.aClass84_27.method1840(local455, (long) arg0);
@@ -367,15 +367,15 @@ public final class Class62_Sub1 extends Class62 {
 			}
 			if (this.aBoolean394) {
 				@Pc(175) boolean local175 = true;
-				for (@Pc(182) Class4 local182 = this.aClass112_30.method2610(); local182 != null; local182 = this.aClass112_30.method2616()) {
-					@Pc(188) int local188 = (int) local182.aLong212;
+				for (@Pc(182) Node local182 = this.aClass112_30.method2610(); local182 != null; local182 = this.aClass112_30.method2616()) {
+					@Pc(188) int local188 = (int) local182.key;
 					if (this.aByteArray72[local188] == 0) {
 						this.method4672(local188, 1);
 					}
 					if (this.aByteArray72[local188] == 0) {
 						local175 = false;
 					} else {
-						local182.method4817();
+						local182.unlink();
 					}
 				}
 				while (this.anInt5802 < this.aClass61_2.anIntArray154.length) {
@@ -391,8 +391,8 @@ public final class Class62_Sub1 extends Class62 {
 						}
 						if (this.aByteArray72[this.anInt5802] == 0) {
 							local175 = false;
-							@Pc(290) Class4 local290 = new Class4();
-							local290.aLong212 = this.anInt5802;
+							@Pc(290) Node local290 = new Node();
+							local290.key = this.anInt5802;
 							this.aClass112_30.method2612(local290);
 						}
 						this.anInt5802++;
@@ -404,13 +404,13 @@ public final class Class62_Sub1 extends Class62 {
 				}
 			} else if (this.aBoolean395) {
 				@Pc(31) boolean local31 = true;
-				for (@Pc(36) Class4 local36 = this.aClass112_30.method2610(); local36 != null; local36 = this.aClass112_30.method2616()) {
-					@Pc(42) int local42 = (int) local36.aLong212;
+				for (@Pc(36) Node local36 = this.aClass112_30.method2610(); local36 != null; local36 = this.aClass112_30.method2616()) {
+					@Pc(42) int local42 = (int) local36.key;
 					if (this.aByteArray72[local42] != 1) {
 						this.method4672(local42, 2);
 					}
 					if (this.aByteArray72[local42] == 1) {
-						local36.method4817();
+						local36.unlink();
 					} else {
 						local31 = false;
 					}
@@ -428,8 +428,8 @@ public final class Class62_Sub1 extends Class62 {
 						}
 						if (this.aByteArray72[this.anInt5802] != 1) {
 							local31 = false;
-							@Pc(145) Class4 local145 = new Class4();
-							local145.aLong212 = this.anInt5802;
+							@Pc(145) Node local145 = new Node();
+							local145.key = this.anInt5802;
 							this.aClass112_30.method2612(local145);
 						}
 						this.anInt5802++;
@@ -452,7 +452,7 @@ public final class Class62_Sub1 extends Class62 {
 					if (!local335.aBoolean363) {
 						throw new RuntimeException();
 					}
-					local335.method4817();
+					local335.unlink();
 				} else {
 					local335.aBoolean365 = true;
 				}

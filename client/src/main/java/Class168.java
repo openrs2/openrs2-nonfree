@@ -362,7 +362,7 @@ public final class Class168 {
 			for (@Pc(591) int local591 = 0; local591 < local576; local591++) {
 				@Pc(607) boolean local607 = arg0.method4629() == 1;
 				@Pc(611) int local611 = arg0.method4618();
-				@Pc(620) Class4 local620;
+				@Pc(620) Node local620;
 				if (local607) {
 					local620 = new Class4_Sub26(arg0.method4593());
 				} else {

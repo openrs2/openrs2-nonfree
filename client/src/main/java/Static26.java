@@ -151,7 +151,7 @@ public final class Static26 {
 		@Pc(33) Class141 local33 = new Class141(Static4.aClass84_13);
 		for (@Pc(38) Class4_Sub27 local38 = (Class4_Sub27) local33.method3540(); local38 != null; local38 = (Class4_Sub27) local33.method3544()) {
 			if (local20 == local38.anInt4620) {
-				return Static19.method1813((int) local38.aLong212);
+				return Static19.method1813((int) local38.key);
 			}
 		}
 		return null;
@@ -693,7 +693,7 @@ public final class Static26 {
 	public static Class4_Sub3_Sub9 method2984() {
 		@Pc(10) Class4_Sub3_Sub9 local10 = (Class4_Sub3_Sub9) Static3.aClass175_11.method4332();
 		if (local10 != null) {
-			local10.method4817();
+			local10.unlink();
 			local10.method4819();
 			return local10;
 		}
@@ -706,7 +706,7 @@ public final class Static26 {
 			if (local35.method1522() > Class194.method4849()) {
 				return null;
 			}
-			local35.method4817();
+			local35.unlink();
 			local35.method4819();
 		} while ((local35.aLong213 & Long.MIN_VALUE) == 0L);
 		return local35;

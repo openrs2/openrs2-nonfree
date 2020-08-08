@@ -81,7 +81,7 @@ public final class Class114 {
 					@Pc(47) Class4_Sub16 local47 = (Class4_Sub16) this.aClass112_17.method2613();
 					local30 = new Class4_Sub16(arg0, local47.anInt3293);
 					this.aClass4_Sub16Array1[local47.anInt3294] = null;
-					local47.method4817();
+					local47.unlink();
 				} else {
 					local30 = new Class4_Sub16(arg0, this.anInt3301);
 					this.anInt3301++;

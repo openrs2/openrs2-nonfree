@@ -1284,11 +1284,11 @@ public final class Static35 {
 		for (@Pc(14) Class4_Sub3_Sub6 local14 = (Class4_Sub3_Sub6) Static2.aClass112_8.method2610(); local14 != null; local14 = (Class4_Sub3_Sub6) Static2.aClass112_8.method2616()) {
 			@Pc(20) Class53_Sub5 local20 = local14.aClass53_Sub5_1;
 			if (local20.anInt3655 != Static7.anInt5334 || local20.aBoolean265) {
-				local14.method4817();
+				local14.unlink();
 			} else if (Static2.anInt954 >= local20.anInt3665) {
 				local20.method3058(Static5.anInt4156);
 				if (local20.aBoolean265) {
-					local14.method4817();
+					local14.unlink();
 				} else {
 					Static11.method637(local20.anInt3655, local20.anInt3647, local20.anInt3653, local20.anInt3648, 60, local20, 0, -1L, false);
 				}

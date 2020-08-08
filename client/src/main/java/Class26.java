@@ -44,7 +44,7 @@ public final class Class26 {
 		this.method512(arg1);
 		if (this.anInt532 == 0) {
 			@Pc(31) Class4_Sub3_Sub4 local31 = (Class4_Sub3_Sub4) this.aClass175_2.method4336();
-			local31.method4817();
+			local31.unlink();
 			local31.method4819();
 		} else {
 			this.anInt532--;
@@ -66,7 +66,7 @@ public final class Class26 {
 	public final void method512(@OriginalArg(0) long arg0) {
 		@Pc(10) Class4_Sub3_Sub4 local10 = (Class4_Sub3_Sub4) this.aClass84_1.method1844(arg0);
 		if (local10 != null) {
-			local10.method4817();
+			local10.unlink();
 			local10.method4819();
 			this.anInt532++;
 		}
@@ -76,7 +76,7 @@ public final class Class26 {
 	public final void method515() {
 		for (@Pc(16) Class4_Sub3_Sub4 local16 = (Class4_Sub3_Sub4) this.aClass175_2.method4332(); local16 != null; local16 = (Class4_Sub3_Sub4) this.aClass175_2.method4340()) {
 			if (local16.method2320()) {
-				local16.method4817();
+				local16.unlink();
 				local16.method4819();
 				this.anInt532++;
 			}
@@ -91,15 +91,15 @@ public final class Class26 {
 		for (@Pc(22) Class4_Sub3_Sub4 local22 = (Class4_Sub3_Sub4) this.aClass175_2.method4332(); local22 != null; local22 = (Class4_Sub3_Sub4) this.aClass175_2.method4340()) {
 			if (local22.method2320()) {
 				if (local22.method2319() == null) {
-					local22.method4817();
+					local22.unlink();
 					local22.method4819();
 					this.anInt532++;
 				}
 			} else if (++local22.aLong213 > (long) arg0) {
 				@Pc(45) Class4_Sub3_Sub4 local45 = Static5.aClass67_1.method2015(local22);
-				this.aClass84_1.method1840(local45, local22.aLong212);
+				this.aClass84_1.method1840(local45, local22.key);
 				Static23.method2452(local22, local45);
-				local22.method4817();
+				local22.unlink();
 				local22.method4819();
 			}
 		}
@@ -113,17 +113,17 @@ public final class Class26 {
 		}
 		@Pc(26) Object local26 = local10.method2319();
 		if (local26 == null) {
-			local10.method4817();
+			local10.unlink();
 			local10.method4819();
 			this.anInt532++;
 			return null;
 		}
 		if (local10.method2320()) {
 			@Pc(61) Class4_Sub3_Sub4_Sub1 local61 = new Class4_Sub3_Sub4_Sub1(local26);
-			this.aClass84_1.method1840(local61, local10.aLong212);
+			this.aClass84_1.method1840(local61, local10.key);
 			this.aClass175_2.method4333(local61);
 			local61.aLong213 = 0L;
-			local10.method4817();
+			local10.unlink();
 			local10.method4819();
 		} else {
 			this.aClass175_2.method4333(local10);

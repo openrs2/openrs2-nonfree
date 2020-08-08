@@ -22,7 +22,7 @@ public final class Class4_Sub3_Sub17 extends Class4_Sub3 {
 		for (@Pc(29) int local29 = 0; local29 < local12; local29++) {
 			@Pc(41) boolean local41 = arg0.method4629() == 1;
 			@Pc(45) int local45 = arg0.method4618();
-			@Pc(54) Class4 local54;
+			@Pc(54) Node local54;
 			if (local41) {
 				local54 = new Class4_Sub26(arg0.method4593());
 			} else {

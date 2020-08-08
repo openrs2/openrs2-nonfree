@@ -644,7 +644,7 @@ public final class Static29 {
 		}
 		for (@Pc(2739) Class4_Sub12 local2739 = (Class4_Sub12) local10.method1842(); local2739 != null; local2739 = (Class4_Sub12) local10.method1843()) {
 			if (local2739.anInt2357 == 0) {
-				local2739.method4817();
+				local2739.unlink();
 			} else {
 				local2739.method1866();
 			}
@@ -654,7 +654,7 @@ public final class Static29 {
 		@Pc(2777) long[] local2777 = new long[local2766];
 		local10.method1845(local2774);
 		for (@Pc(2784) int local2784 = 0; local2784 < local2766; local2784++) {
-			local2777[local2784] = local2774[local2784].aLong212;
+			local2777[local2784] = local2774[local2784].key;
 		}
 		Static11.method563(local2777, local2774);
 		return local2774;

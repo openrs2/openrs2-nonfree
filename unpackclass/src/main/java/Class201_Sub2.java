@@ -2,7 +2,7 @@ import dev.openrs2.deob.annotation.OriginalClass;
 import dev.openrs2.deob.annotation.OriginalMember;
 
 @OriginalClass("unpackclass!s")
-public final class Class201_Sub2 extends Class201 {
+public final class Class201_Sub2 extends Node {
 
 	@OriginalMember(owner = "unpackclass!s", name = "d", descriptor = "Lunpackclass!s;")
 	public Class201_Sub2 aClass201_Sub2_5;

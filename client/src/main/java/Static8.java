@@ -115,7 +115,7 @@ public final class Static8 {
 			local443.anInt4441 -= local90;
 			local443.anInt4445 -= local95;
 			if (local443.anInt4445 < 0 || local443.anInt4441 < 0 || local443.anInt4445 >= 104 || local443.anInt4441 >= 104) {
-				local443.method4817();
+				local443.unlink();
 			}
 		}
 		if (Static6.anInt4506 != 0) {

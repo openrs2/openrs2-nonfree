@@ -45,7 +45,7 @@ public final class Class4_Sub6_Sub3 extends Class4_Sub6 {
 					this.method2668(local60);
 				} else {
 					local60.anInt6071 = local68;
-					this.method2672(local60.aClass4_235, local60);
+					this.method2672(local60.next, local60);
 				}
 			}
 		} while (arg2 != 0);
@@ -53,9 +53,9 @@ public final class Class4_Sub6_Sub3 extends Class4_Sub6 {
 
 	@OriginalMember(owner = "client!lo", name = "a", descriptor = "(Lclient!wm;)V")
 	private void method2668(@OriginalArg(0) Class4_Sub33 arg0) {
-		arg0.method4817();
+		arg0.unlink();
 		arg0.method4810();
-		@Pc(9) Class4 local9 = this.aClass112_16.aClass4_117.aClass4_235;
+		@Pc(9) Node local9 = this.aClass112_16.aClass4_117.next;
 		if (local9 == this.aClass112_16.aClass4_117) {
 			this.anInt3270 = -1;
 		} else {
@@ -77,7 +77,7 @@ public final class Class4_Sub6_Sub3 extends Class4_Sub6 {
 
 	@OriginalMember(owner = "client!lo", name = "a", descriptor = "(Lclient!tf;)V")
 	public final synchronized void method2670(@OriginalArg(0) Class4_Sub6 arg0) {
-		arg0.method4817();
+		arg0.unlink();
 	}
 
 	@OriginalMember(owner = "client!lo", name = "b", descriptor = "(I)V")
@@ -106,7 +106,7 @@ public final class Class4_Sub6_Sub3 extends Class4_Sub6 {
 					this.method2668(local50);
 				} else {
 					local50.anInt6071 = local58;
-					this.method2672(local50.aClass4_235, local50);
+					this.method2672(local50.next, local50);
 				}
 			}
 		} while (arg0 != 0);
@@ -126,12 +126,12 @@ public final class Class4_Sub6_Sub3 extends Class4_Sub6 {
 	}
 
 	@OriginalMember(owner = "client!lo", name = "a", descriptor = "(Lclient!ni;Lclient!wm;)V")
-	private void method2672(@OriginalArg(0) Class4 arg0, @OriginalArg(1) Class4_Sub33 arg1) {
+	private void method2672(@OriginalArg(0) Node arg0, @OriginalArg(1) Class4_Sub33 arg1) {
 		while (arg0 != this.aClass112_16.aClass4_117 && ((Class4_Sub33) arg0).anInt6071 <= arg1.anInt6071) {
-			arg0 = arg0.aClass4_235;
+			arg0 = arg0.next;
 		}
 		Static28.method3267(arg0, arg1);
-		this.anInt3270 = ((Class4_Sub33) this.aClass112_16.aClass4_117.aClass4_235).anInt6071;
+		this.anInt3270 = ((Class4_Sub33) this.aClass112_16.aClass4_117.next).anInt6071;
 	}
 
 	@OriginalMember(owner = "client!lo", name = "a", descriptor = "()I")

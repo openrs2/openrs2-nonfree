@@ -500,9 +500,9 @@ public final class Static24 {
 
 	@OriginalMember(owner = "client!mc", name = "b", descriptor = "(BI)V")
 	public static void method2689(@OriginalArg(1) int arg0) {
-		for (@Pc(16) Class4 local16 = Static2.aClass84_5.method1842(); local16 != null; local16 = Static2.aClass84_5.method1843()) {
-			if ((local16.aLong212 >> 48 & 0xFFFFL) == (long) arg0) {
-				local16.method4817();
+		for (@Pc(16) Node local16 = Static2.aClass84_5.method1842(); local16 != null; local16 = Static2.aClass84_5.method1843()) {
+			if ((local16.key >> 48 & 0xFFFFL) == (long) arg0) {
+				local16.unlink();
 			}
 		}
 	}
@@ -861,7 +861,7 @@ public final class Static24 {
 	public static synchronized void method2717(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
 		if (arg1 == Static4.anInt3332) {
 			@Pc(7) Class4_Sub32 local7 = new Class4_Sub32();
-			local7.aLong212 = arg0;
+			local7.key = arg0;
 			Static4.aClass112_21.method2612(local7);
 		}
 	}

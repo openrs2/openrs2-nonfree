@@ -6,7 +6,7 @@ import dev.openrs2.deob.annotation.OriginalMember;
 import dev.openrs2.deob.annotation.Pc;
 
 @OriginalClass("client!fd")
-public class Class4_Sub10 extends Class4 {
+public class Class4_Sub10 extends Node {
 
 	@OriginalMember(owner = "client!fd", name = "I", descriptor = "[B")
 	public byte[] aByteArray71;

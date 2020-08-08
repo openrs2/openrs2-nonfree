@@ -42,7 +42,7 @@ public final class Static25 {
 														}
 														return;
 													}
-													@Pc(174) int local174 = (int) local167.aLong212;
+													@Pc(174) int local174 = (int) local167.key;
 													local1.glDeleteObjectARB(local174);
 												}
 											}
@@ -52,11 +52,11 @@ public final class Static25 {
 											local1.glDeleteObjectARB(local136.anInt4717);
 										}
 									}
-									@Pc(126) int local126 = (int) local119.aLong212;
+									@Pc(126) int local126 = (int) local119.key;
 									local1.glDeleteLists(local126, 1);
 								}
 							}
-							Static4.anIntArray319[local3++] = (int) local79.aLong212;
+							Static4.anIntArray319[local3++] = (int) local79.key;
 							Static4.anInt3330 -= local79.anInt5434;
 							if (local3 == 1000) {
 								local1.glDeleteTextures(local3, Static4.anIntArray319, 0);
@@ -64,7 +64,7 @@ public final class Static25 {
 							}
 						}
 					}
-					Static4.anIntArray319[local3++] = (int) local48.aLong212;
+					Static4.anIntArray319[local3++] = (int) local48.key;
 					Static4.anInt3333 -= local48.anInt5434;
 					if (local3 == 1000) {
 						local1.glDeleteTextures(local3, Static4.anIntArray319, 0);
@@ -72,7 +72,7 @@ public final class Static25 {
 					}
 				}
 			}
-			Static4.anIntArray319[local3++] = (int) local8.aLong212;
+			Static4.anIntArray319[local3++] = (int) local8.key;
 			Static4.anInt3331 -= local8.anInt5434;
 			if (local3 == 1000) {
 				local1.glDeleteBuffersARB(local3, Static4.anIntArray319, 0);
@@ -85,7 +85,7 @@ public final class Static25 {
 	public static synchronized void method2720(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
 		if (arg2 == Static4.anInt3332) {
 			@Pc(8) Class4_Sub32 local8 = new Class4_Sub32(arg1);
-			local8.aLong212 = arg0;
+			local8.key = arg0;
 			Static4.aClass112_20.method2612(local8);
 		}
 	}
@@ -94,7 +94,7 @@ public final class Static25 {
 	public static synchronized void method2721(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
 		if (arg2 == Static4.anInt3332) {
 			@Pc(8) Class4_Sub32 local8 = new Class4_Sub32(arg1);
-			local8.aLong212 = arg0;
+			local8.key = arg0;
 			Static4.aClass112_18.method2612(local8);
 		}
 	}
@@ -103,7 +103,7 @@ public final class Static25 {
 	public static synchronized void method2722(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
 		if (arg2 == Static4.anInt3332) {
 			@Pc(8) Class4_Sub32 local8 = new Class4_Sub32(arg1);
-			local8.aLong212 = arg0;
+			local8.key = arg0;
 			Static4.aClass112_19.method2612(local8);
 		}
 	}
@@ -112,7 +112,7 @@ public final class Static25 {
 	public static synchronized void method2723(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
 		if (arg1 == Static4.anInt3332) {
 			@Pc(7) Class4_Sub32 local7 = new Class4_Sub32();
-			local7.aLong212 = arg0;
+			local7.key = arg0;
 			Static4.aClass112_23.method2612(local7);
 		}
 	}
@@ -817,7 +817,7 @@ public final class Static25 {
 					Static5.aClass4_Sub6_Sub3_2.method2670(local14.aClass4_Sub6_Sub4_3);
 					local14.aClass4_Sub6_Sub4_3 = null;
 				}
-				local14.method4817();
+				local14.unlink();
 				return;
 			}
 		}

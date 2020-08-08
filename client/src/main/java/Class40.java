@@ -32,7 +32,7 @@ public final class Class40 {
 	}
 
 	@OriginalMember(owner = "client!dj", name = "c", descriptor = "(I)Lclient!ni;")
-	public final Class4 method886() {
+	public final Node method886() {
 		return this.aClass84_4.method1842();
 	}
 
@@ -40,11 +40,11 @@ public final class Class40 {
 	public final void method888(@OriginalArg(0) long arg0, @OriginalArg(2) Class4_Sub3 arg1) {
 		if (this.anInt1044 == 0) {
 			@Pc(15) Class4_Sub3 local15 = this.aClass175_3.method4336();
-			local15.method4817();
+			local15.unlink();
 			local15.method4819();
 			if (this.aClass4_Sub3_18 == local15) {
 				@Pc(31) Class4_Sub3 local31 = this.aClass175_3.method4336();
-				local31.method4817();
+				local31.unlink();
 				local31.method4819();
 			}
 		} else {
@@ -64,7 +64,7 @@ public final class Class40 {
 	}
 
 	@OriginalMember(owner = "client!dj", name = "d", descriptor = "(I)Lclient!ni;")
-	public final Class4 method890() {
+	public final Node method890() {
 		return this.aClass84_4.method1843();
 	}
 

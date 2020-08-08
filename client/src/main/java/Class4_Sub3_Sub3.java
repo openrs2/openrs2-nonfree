@@ -38,7 +38,7 @@ public final class Class4_Sub3_Sub3 extends Class4_Sub3 {
 	private void method602() {
 		this.aClass84_2 = new Class84(this.aClass84_3.method1839());
 		for (@Pc(22) Class4_Sub26 local22 = (Class4_Sub26) this.aClass84_3.method1842(); local22 != null; local22 = (Class4_Sub26) this.aClass84_3.method1843()) {
-			@Pc(34) Class4_Sub22 local34 = new Class4_Sub22(local22.aString278, (int) local22.aLong212);
+			@Pc(34) Class4_Sub22 local34 = new Class4_Sub22(local22.aString278, (int) local22.key);
 			this.aClass84_2.method1840(local34, Static24.method2682(local22.aString278));
 		}
 	}
@@ -58,7 +58,7 @@ public final class Class4_Sub3_Sub3 extends Class4_Sub3 {
 			this.aClass84_3 = new Class84(Static24.method2595(local68));
 			for (@Pc(78) int local78 = 0; local78 < local68; local78++) {
 				@Pc(87) int local87 = arg0.method4595();
-				@Pc(99) Class4 local99;
+				@Pc(99) Node local99;
 				if (arg1 == 5) {
 					local99 = new Class4_Sub26(arg0.method4593());
 				} else {
@@ -95,7 +95,7 @@ public final class Class4_Sub3_Sub3 extends Class4_Sub3 {
 	private void method607() {
 		this.aClass84_2 = new Class84(this.aClass84_3.method1839());
 		for (@Pc(24) Class4_Sub32 local24 = (Class4_Sub32) this.aClass84_3.method1842(); local24 != null; local24 = (Class4_Sub32) this.aClass84_3.method1843()) {
-			@Pc(33) Class4_Sub32 local33 = new Class4_Sub32((int) local24.aLong212);
+			@Pc(33) Class4_Sub32 local33 = new Class4_Sub32((int) local24.key);
 			this.aClass84_2.method1840(local33, (long) local24.anInt5434);
 		}
 	}

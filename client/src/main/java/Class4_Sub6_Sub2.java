@@ -215,7 +215,7 @@ public final class Class4_Sub6_Sub2 extends Class4_Sub6 {
 	@OriginalMember(owner = "client!ld", name = "d", descriptor = "(B)V")
 	public final synchronized void method2484() {
 		for (@Pc(7) Class4_Sub23 local7 = (Class4_Sub23) this.aClass84_15.method1842(); local7 != null; local7 = (Class4_Sub23) this.aClass84_15.method1843()) {
-			local7.method4817();
+			local7.unlink();
 		}
 	}
 
@@ -345,7 +345,7 @@ public final class Class4_Sub6_Sub2 extends Class4_Sub6 {
 				if (local12.anInt1288 < 0) {
 					this.aClass4_Sub9ArrayArray2[local12.anInt1301][local12.anInt1296] = null;
 				}
-				local12.method4817();
+				local12.unlink();
 			}
 		}
 	}
@@ -360,7 +360,7 @@ public final class Class4_Sub6_Sub2 extends Class4_Sub6 {
 			return false;
 		}
 		if (arg0.anInt1288 >= 0) {
-			arg0.method4817();
+			arg0.unlink();
 			if (arg0.anInt1283 > 0 && arg0 == this.aClass4_Sub9ArrayArray1[arg0.anInt1301][arg0.anInt1283]) {
 				this.aClass4_Sub9ArrayArray1[arg0.anInt1301][arg0.anInt1283] = null;
 			}
@@ -736,7 +736,7 @@ public final class Class4_Sub6_Sub2 extends Class4_Sub6 {
 		arg0.anInt1303 = Static7.anInt5394 / 100;
 		if (arg0.anInt1288 >= 0 && (arg0.aClass4_Sub6_Sub4_1 == null || arg0.aClass4_Sub6_Sub4_1.method3365())) {
 			arg0.method1057();
-			arg0.method4817();
+			arg0.unlink();
 			if (arg0.anInt1283 > 0 && this.aClass4_Sub9ArrayArray1[arg0.anInt1301][arg0.anInt1283] == arg0) {
 				this.aClass4_Sub9ArrayArray1[arg0.anInt1301][arg0.anInt1283] = null;
 			}
@@ -807,7 +807,7 @@ public final class Class4_Sub6_Sub2 extends Class4_Sub6 {
 		}
 		arg0.method1057();
 		if (arg0.anInt1288 >= 0) {
-			arg0.method4817();
+			arg0.unlink();
 			if (arg0.anInt1283 > 0 && this.aClass4_Sub9ArrayArray1[arg0.anInt1301][arg0.anInt1283] == arg0) {
 				this.aClass4_Sub9ArrayArray1[arg0.anInt1301][arg0.anInt1283] = null;
 			}
@@ -835,7 +835,7 @@ public final class Class4_Sub6_Sub2 extends Class4_Sub6 {
 		@Pc(9) boolean local9 = true;
 		@Pc(24) int[] local24 = new int[] { 22050 };
 		for (@Pc(36) Class4_Sub14 local36 = (Class4_Sub14) arg0.aClass84_23.method1842(); local36 != null; local36 = (Class4_Sub14) arg0.aClass84_23.method1843()) {
-			@Pc(43) int local43 = (int) local36.aLong212;
+			@Pc(43) int local43 = (int) local36.key;
 			@Pc(53) Class4_Sub23 local53 = (Class4_Sub23) this.aClass84_15.method1844((long) local43);
 			if (local53 == null) {
 				local53 = Static13.method887(local43, arg1);

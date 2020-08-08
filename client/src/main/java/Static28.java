@@ -105,9 +105,9 @@ public final class Static28 {
 
 	@OriginalMember(owner = "client!ol", name = "a", descriptor = "(ZLclient!rl;I)V")
 	public static void method3246(@OriginalArg(0) boolean arg0, @OriginalArg(1) Class4_Sub27 arg1) {
-		@Pc(9) int local9 = (int) arg1.aLong212;
+		@Pc(9) int local9 = (int) arg1.key;
 		@Pc(12) int local12 = arg1.anInt4620;
-		arg1.method4817();
+		arg1.unlink();
 		if (arg0) {
 			Static32.method4025(local12);
 		}
@@ -328,14 +328,14 @@ public final class Static28 {
 	}
 
 	@OriginalMember(owner = "client!on", name = "a", descriptor = "(Lclient!ni;BLclient!ni;)V")
-	public static void method3267(@OriginalArg(0) Class4 arg0, @OriginalArg(2) Class4 arg1) {
-		if (arg1.aClass4_234 != null) {
-			arg1.method4817();
+	public static void method3267(@OriginalArg(0) Node arg0, @OriginalArg(2) Node arg1) {
+		if (arg1.prev != null) {
+			arg1.unlink();
 		}
-		arg1.aClass4_235 = arg0;
-		arg1.aClass4_234 = arg0.aClass4_234;
-		arg1.aClass4_234.aClass4_235 = arg1;
-		arg1.aClass4_235.aClass4_234 = arg1;
+		arg1.next = arg0;
+		arg1.prev = arg0.prev;
+		arg1.prev.next = arg1;
+		arg1.next.prev = arg1;
 	}
 
 	@OriginalMember(owner = "client!on", name = "b", descriptor = "(BI)V")

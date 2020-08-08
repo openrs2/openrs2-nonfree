@@ -201,12 +201,12 @@ public final class Class4_Sub6_Sub4 extends Class4_Sub6 {
 	public final synchronized void method3360(@OriginalArg(0) int arg0) {
 		if (arg0 == 0) {
 			this.method3382();
-			this.method4817();
+			this.unlink();
 		} else if (this.anInt4104 == 0 && this.anInt4098 == 0) {
 			this.anInt4105 = 0;
 			this.anInt4101 = 0;
 			this.anInt4096 = 0;
-			this.method4817();
+			this.unlink();
 		} else {
 			@Pc(31) int local31 = -this.anInt4096;
 			if (this.anInt4096 > local31) {
@@ -243,7 +243,7 @@ public final class Class4_Sub6_Sub4 extends Class4_Sub6 {
 				if (this.anInt4101 == Integer.MIN_VALUE) {
 					this.anInt4101 = 0;
 					this.anInt4096 = this.anInt4104 = this.anInt4098 = 0;
-					this.method4817();
+					this.unlink();
 					arg0 = this.anInt4105;
 				}
 				this.anInt4105 = 0;
@@ -266,7 +266,7 @@ public final class Class4_Sub6_Sub4 extends Class4_Sub6 {
 		if (this.anInt4100 < 0) {
 			if (this.anInt4095 <= 0) {
 				this.method3354();
-				this.method4817();
+				this.unlink();
 				return;
 			}
 			this.anInt4100 = 0;
@@ -274,7 +274,7 @@ public final class Class4_Sub6_Sub4 extends Class4_Sub6 {
 		if (this.anInt4100 >= local87) {
 			if (this.anInt4095 >= 0) {
 				this.method3354();
-				this.method4817();
+				this.unlink();
 				return;
 			}
 			this.anInt4100 = local87 - 1;
@@ -346,12 +346,12 @@ public final class Class4_Sub6_Sub4 extends Class4_Sub6 {
 				if (this.anInt4100 < 0) {
 					this.anInt4100 = -1;
 					this.method3354();
-					this.method4817();
+					this.unlink();
 				}
 			} else if (this.anInt4100 >= local87) {
 				this.anInt4100 = local87;
 				this.method3354();
-				this.method4817();
+				this.unlink();
 			}
 		} else if (this.aBoolean290) {
 			if (this.anInt4095 < 0) {
@@ -452,7 +452,7 @@ public final class Class4_Sub6_Sub4 extends Class4_Sub6 {
 		} else if (this.anInt4101 == Integer.MIN_VALUE) {
 			this.anInt4101 = 0;
 			this.anInt4096 = this.anInt4104 = this.anInt4098 = 0;
-			this.method4817();
+			this.unlink();
 			return true;
 		} else {
 			this.method3371();
@@ -590,7 +590,7 @@ public final class Class4_Sub6_Sub4 extends Class4_Sub6 {
 		if (this.anInt4100 < 0) {
 			if (this.anInt4095 <= 0) {
 				this.method3354();
-				this.method4817();
+				this.unlink();
 				return;
 			}
 			this.anInt4100 = 0;
@@ -598,7 +598,7 @@ public final class Class4_Sub6_Sub4 extends Class4_Sub6 {
 		if (this.anInt4100 >= local29) {
 			if (this.anInt4095 >= 0) {
 				this.method3354();
-				this.method4817();
+				this.unlink();
 				return;
 			}
 			this.anInt4100 = local29 - 1;
@@ -674,14 +674,14 @@ public final class Class4_Sub6_Sub4 extends Class4_Sub6 {
 				if (this.anInt4100 < 0) {
 					this.anInt4100 = -1;
 					this.method3354();
-					this.method4817();
+					this.unlink();
 				}
 			} else {
 				this.method3383(arg0, local40, local29, arg2, 0);
 				if (this.anInt4100 >= local29) {
 					this.anInt4100 = local29;
 					this.method3354();
-					this.method4817();
+					this.unlink();
 				}
 			}
 		} else if (this.aBoolean290) {

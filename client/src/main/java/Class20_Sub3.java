@@ -409,7 +409,7 @@ public final class Class20_Sub3 extends Class20 {
 				}
 			}
 			if (!arg1) {
-				local16.method4817();
+				local16.unlink();
 				this.anInt3522--;
 				if (local16.method4821()) {
 					local16.method4819();
