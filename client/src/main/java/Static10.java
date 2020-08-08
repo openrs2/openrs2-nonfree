@@ -1210,23 +1210,6 @@ public final class Static10 {
 		return Static3.aBoolean138 ? true : Static3.aBoolean144;
 	}
 
-	@OriginalMember(owner = "client!c", name = "a", descriptor = "([BZI)Ljava/lang/Object;")
-	public static Object method461(@OriginalArg(0) byte[] arg0) {
-		if (arg0 == null) {
-			return null;
-		}
-		if (arg0.length > 136 && !Static3.aBoolean145) {
-			try {
-				@Pc(19) Class75 local19 = (Class75) Class.forName("Class75_Sub1").getDeclaredConstructor().newInstance();
-				local19.method2325(arg0);
-				return local19;
-			} catch (@Pc(26) Throwable local26) {
-				Static3.aBoolean145 = true;
-			}
-		}
-		return arg0;
-	}
-
 	@OriginalMember(owner = "client!c", name = "a", descriptor = "(IIIIIII)V")
 	public static void method462(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4, @OriginalArg(6) int arg5) {
 		@Pc(7) Class94[] local7 = Static7.aClass94Array1;

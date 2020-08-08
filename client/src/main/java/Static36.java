@@ -350,14 +350,6 @@ public final class Static36 {
 		Static6.anInt4844 = arg1;
 	}
 
-	@OriginalMember(owner = "client!vf", name = "a", descriptor = "([BI)[B")
-	public static byte[] method4445(@OriginalArg(0) byte[] arg0) {
-		@Pc(14) int local14 = arg0.length;
-		@Pc(17) byte[] local17 = new byte[local14];
-		Static8.method80(arg0, 0, local17, 0, local14);
-		return local17;
-	}
-
 	@OriginalMember(owner = "client!vg", name = "a", descriptor = "([[III)I")
 	public static int method3821(@OriginalArg(0) int[][] arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
 		@Pc(3) int local3 = arg1 >> 7;

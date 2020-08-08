@@ -53,7 +53,7 @@ public final class Class199_Sub1 extends Class199 {
 			if (super.aBoolean433) {
 				super.anObjectArray34[super.anIntArray696[local38]] = local58.aByteArray77;
 			} else {
-				super.anObjectArray34[super.anIntArray696[local38]] = Class198.method4888(local58.aByteArray77);
+				super.anObjectArray34[super.anIntArray696[local38]] = ByteArray.wrap(local58.aByteArray77);
 			}
 		}
 	}

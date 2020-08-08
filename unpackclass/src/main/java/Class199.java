@@ -224,7 +224,7 @@ public abstract class Class199 {
 				}
 			}
 		}
-		@Pc(46) byte[] local46 = Class198.method4889(this.anObjectArrayArray3[arg0][arg1], false);
+		@Pc(46) byte[] local46 = ByteArray.unwrap(this.anObjectArrayArray3[arg0][arg1], false);
 		if (this.aBoolean434) {
 			this.anObjectArrayArray3[arg0][arg1] = null;
 			if (this.anIntArray701[arg0] == 1) {
@@ -274,9 +274,9 @@ public abstract class Class199 {
 			}
 			@Pc(100) byte[] local100;
 			if (arg1 == null || arg1[0] == 0 && arg1[1] == 0 && arg1[2] == 0 && arg1[3] == 0) {
-				local100 = Class198.method4889(this.anObjectArray34[arg0], false);
+				local100 = ByteArray.unwrap(this.anObjectArray34[arg0], false);
 			} else {
-				local100 = Class198.method4889(this.anObjectArray34[arg0], true);
+				local100 = ByteArray.unwrap(this.anObjectArray34[arg0], true);
 				@Pc(105) Class201_Sub1 local105 = new Class201_Sub1(local100);
 				local105.method4921(arg1, local105.aByteArray77.length);
 			}
@@ -330,7 +330,7 @@ public abstract class Class199 {
 					if (this.aBoolean434) {
 						local43[local326] = local250[local320];
 					} else {
-						local43[local326] = Class198.method4888(local250[local320]);
+						local43[local326] = ByteArray.wrap(local250[local320]);
 					}
 				}
 			} else {
@@ -343,7 +343,7 @@ public abstract class Class199 {
 				if (this.aBoolean434) {
 					local43[local361] = local124;
 				} else {
-					local43[local361] = Class198.method4888(local124);
+					local43[local361] = ByteArray.wrap(local124);
 				}
 			}
 			return true;

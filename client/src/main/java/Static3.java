@@ -584,9 +584,6 @@ public final class Static3 {
 	@OriginalMember(owner = "client!gm", name = "g", descriptor = "Ljava/lang/String;")
 	public static String aString118 = "wishes to trade with you.";
 
-	@OriginalMember(owner = "client!gn", name = "v", descriptor = "Z")
-	public static boolean aBoolean145 = false;
-
 	@OriginalMember(owner = "client!go", name = "b", descriptor = "[B")
 	public static final byte[] aByteArray16 = new byte[] { 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 0, 1, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 

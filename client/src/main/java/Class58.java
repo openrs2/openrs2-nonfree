@@ -155,7 +155,7 @@ public final class Class58 {
 				}
 			}
 		}
-		return Static29.method3492(false, this.anObjectArrayArray1[arg1][arg0]);
+		return ByteArray.unwrap(this.anObjectArrayArray1[arg1][arg0], false);
 	}
 
 	@OriginalMember(owner = "client!fh", name = "d", descriptor = "(I)I")
@@ -168,7 +168,7 @@ public final class Class58 {
 		if (this.aBoolean107) {
 			this.anObjectArray1[arg0] = this.aClass62_1.method4657(arg0);
 		} else {
-			this.anObjectArray1[arg0] = Static10.method461(this.aClass62_1.method4657(arg0));
+			this.anObjectArray1[arg0] = ByteArray.wrap(this.aClass62_1.method4657(arg0));
 		}
 	}
 
@@ -216,9 +216,9 @@ public final class Class58 {
 			}
 			@Pc(123) byte[] local123;
 			if (arg0 == null || arg0[0] == 0 && arg0[1] == 0 && arg0[2] == 0 && arg0[3] == 0) {
-				local123 = Static29.method3492(false, this.anObjectArray1[arg1]);
+				local123 = ByteArray.unwrap(this.anObjectArray1[arg1], false);
 			} else {
-				local123 = Static29.method3492(true, this.anObjectArray1[arg1]);
+				local123 = ByteArray.unwrap(this.anObjectArray1[arg1], true);
 				@Pc(128) Class4_Sub10 local128 = new Class4_Sub10(local123);
 				local128.method4607(arg0, local128.aByteArray71.length);
 			}
@@ -274,7 +274,7 @@ public final class Class58 {
 					if (this.aBoolean108) {
 						local57[local373] = local289[local366];
 					} else {
-						local57[local373] = Static10.method461(local289[local366]);
+						local57[local373] = ByteArray.wrap(local289[local366]);
 					}
 				}
 			} else {
@@ -287,7 +287,7 @@ public final class Class58 {
 				if (this.aBoolean108) {
 					local57[local409] = local151;
 				} else {
-					local57[local409] = Static10.method461(local151);
+					local57[local409] = ByteArray.wrap(local151);
 				}
 			}
 			return true;
@@ -392,7 +392,7 @@ public final class Class58 {
 				}
 			}
 		}
-		@Pc(62) byte[] local62 = Static29.method3492(false, this.anObjectArrayArray1[arg1][arg0]);
+		@Pc(62) byte[] local62 = ByteArray.unwrap(this.anObjectArrayArray1[arg1][arg0], false);
 		if (this.aBoolean108) {
 			this.anObjectArrayArray1[arg1][arg0] = null;
 			if (this.aClass61_1.anIntArray152[arg1] == 1) {

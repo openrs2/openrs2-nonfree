@@ -1671,21 +1671,6 @@ public final class Static29 {
 		}
 	}
 
-	@OriginalMember(owner = "client!qa", name = "a", descriptor = "(IZLjava/lang/Object;)[B")
-	public static byte[] method3492(@OriginalArg(1) boolean arg0, @OriginalArg(2) Object arg1) {
-		if (arg1 == null) {
-			return null;
-		} else if (arg1 instanceof byte[]) {
-			@Pc(20) byte[] local20 = (byte[]) arg1;
-			return arg0 ? Static36.method4445(local20) : local20;
-		} else if (arg1 instanceof Class75) {
-			@Pc(34) Class75 local34 = (Class75) arg1;
-			return local34.method2324();
-		} else {
-			throw new IllegalArgumentException();
-		}
-	}
-
 	@OriginalMember(owner = "client!qa", name = "a", descriptor = "(Lclient!nh;Z)V")
 	public static void method3493(@OriginalArg(0) Class4_Sub19 arg0, @OriginalArg(1) boolean arg1) {
 		Static3.aClass112_26.method2612(arg0);
