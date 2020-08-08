@@ -346,12 +346,12 @@ public final class loader extends Applet implements Runnable {
 				if (local142 == null) {
 					return;
 				}
-				local132.anUnpack2 = new unpack_Sub1(local142);
+				local132.anUnpack2 = new Pack200Unpacker(local142);
 				@Pc(160) byte[] local160 = this.method4839(false, local121, Class191.aClass190_4);
 				if (local160 == null) {
 					return;
 				}
-				local132.anUnpack1 = new unpack_Sub1(local160);
+				local132.anUnpack1 = new Pack200Unpacker(local160);
 			} catch (@Pc(171) Throwable local171) {
 			}
 			if (local132.anUnpack2 == null) {
