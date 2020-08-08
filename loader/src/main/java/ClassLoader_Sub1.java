@@ -41,7 +41,7 @@ public final class ClassLoader_Sub1 extends ClassLoader {
 			return local5;
 		}
 		if (this.anUnpack1 != null) {
-			@Pc(21) byte[] local21 = this.anUnpack1.method4948(arg0);
+			@Pc(21) byte[] local21 = this.anUnpack1.get(arg0);
 			if (local21 != null) {
 				@Pc(35) Class local35 = this.defineClass(arg0, local21, 0, local21.length, this.aProtectionDomain1);
 				if (arg1) {
@@ -51,7 +51,7 @@ public final class ClassLoader_Sub1 extends ClassLoader {
 				return local35;
 			}
 		}
-		@Pc(54) byte[] local54 = this.anUnpack2.method4948(arg0);
+		@Pc(54) byte[] local54 = this.anUnpack2.get(arg0);
 		if (local54 == null) {
 			return super.findSystemClass(arg0);
 		}

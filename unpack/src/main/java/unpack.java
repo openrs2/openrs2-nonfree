@@ -14,43 +14,43 @@ import dev.openrs2.deob.annotation.Pc;
 public class unpack {
 
 	@OriginalMember(owner = "unpack!unpack", name = "cache", descriptor = "Ljava/util/Hashtable;")
-	protected final Hashtable cache = new Hashtable();
+	protected final Hashtable<String, byte[]> cache = new Hashtable<>();
 
 	@OriginalMember(owner = "unpack!unpack", name = "<init>", descriptor = "()V")
-	public unpack() {
+	protected unpack() {
 	}
 
 	@OriginalMember(owner = "unpack!unpack", name = "<init>", descriptor = "([B)V")
-	public unpack(@OriginalArg(0) byte[] arg0) throws IOException {
-		@Pc(9) byte[] local9 = new byte[1000];
-		@Pc(17) ZipInputStream local17 = new ZipInputStream(new ByteArrayInputStream(arg0));
+	public unpack(@OriginalArg(0) byte[] in) throws IOException {
+		@Pc(9) byte[] temp = new byte[1000];
+		@Pc(17) ZipInputStream zip = new ZipInputStream(new ByteArrayInputStream(in));
 		while (true) {
-			@Pc(26) String local26;
+			@Pc(26) String path;
 			do {
-				@Pc(20) ZipEntry local20 = local17.getNextEntry();
-				if (local20 == null) {
-					local17.close();
+				@Pc(20) ZipEntry entry = zip.getNextEntry();
+				if (entry == null) {
+					zip.close();
 					return;
 				}
-				local26 = local20.getName();
-			} while (!local26.endsWith(".class"));
-			@Pc(38) String local38 = local26.substring(0, local26.length() - 6);
-			local38 = local38.replace('/', '.');
-			@Pc(47) ByteArrayOutputStream local47 = new ByteArrayOutputStream();
+				path = entry.getName();
+			} while (!path.endsWith(".class"));
+			@Pc(38) String name = path.substring(0, path.length() - 6);
+			name = name.replace('/', '.');
+			@Pc(47) ByteArrayOutputStream out = new ByteArrayOutputStream();
 			while (true) {
-				@Pc(53) int local53 = local17.read(local9, 0, 1000);
-				if (local53 == -1) {
-					@Pc(66) byte[] local66 = local47.toByteArray();
-					this.cache.put(local38, local66);
+				@Pc(53) int len = zip.read(temp, 0, 1000);
+				if (len == -1) {
+					@Pc(66) byte[] bytes = out.toByteArray();
+					this.cache.put(name, bytes);
 					break;
 				}
-				local47.write(local9, 0, local53);
+				out.write(temp, 0, len);
 			}
 		}
 	}
 
 	@OriginalMember(owner = "unpack!unpack", name = "a", descriptor = "(Ljava/lang/String;B)[B")
-	public final byte[] method4948(@OriginalArg(0) String arg0) {
-		return (byte[]) this.cache.remove(arg0);
+	public final byte[] get(@OriginalArg(0) String name) {
+		return this.cache.remove(name);
 	}
 }
