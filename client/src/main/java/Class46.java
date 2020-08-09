@@ -117,9 +117,9 @@ public final class Class46 {
 	}
 
 	@OriginalMember(owner = "client!eg", name = "a", descriptor = "(Lclient!fd;Z)V")
-	public final void method1016(@OriginalArg(0) Class4_Sub10 arg0) {
+	public final void method1016(@OriginalArg(0) Buffer arg0) {
 		while (true) {
-			@Pc(14) int local14 = arg0.method4629();
+			@Pc(14) int local14 = arg0.readUnsignedByte();
 			if (local14 == 0) {
 				return;
 			}
@@ -210,63 +210,63 @@ public final class Class46 {
 	}
 
 	@OriginalMember(owner = "client!eg", name = "a", descriptor = "(Lclient!fd;II)V")
-	private void method1020(@OriginalArg(0) Class4_Sub10 arg0, @OriginalArg(1) int arg1) {
+	private void method1020(@OriginalArg(0) Buffer arg0, @OriginalArg(1) int arg1) {
 		if (arg1 == 1) {
-			@Pc(8) int local8 = arg0.method4616();
+			@Pc(8) int local8 = arg0.readUnsignedShort();
 			this.anIntArray94 = new int[local8];
 			for (@Pc(14) int local14 = 0; local14 < local8; local14++) {
-				this.anIntArray94[local14] = arg0.method4616();
+				this.anIntArray94[local14] = arg0.readUnsignedShort();
 			}
 			this.anIntArray95 = new int[local8];
 			for (@Pc(33) int local33 = 0; local33 < local8; local33++) {
-				this.anIntArray95[local33] = arg0.method4616();
+				this.anIntArray95[local33] = arg0.readUnsignedShort();
 			}
 			for (@Pc(52) int local52 = 0; local52 < local8; local52++) {
-				this.anIntArray95[local52] = (arg0.method4616() << 16) + this.anIntArray95[local52];
+				this.anIntArray95[local52] = (arg0.readUnsignedShort() << 16) + this.anIntArray95[local52];
 			}
 		} else if (arg1 == 2) {
-			this.anInt1242 = arg0.method4616();
+			this.anInt1242 = arg0.readUnsignedShort();
 		} else if (arg1 == 3) {
 			this.aBooleanArray6 = new boolean[256];
-			@Pc(335) int local335 = arg0.method4629();
+			@Pc(335) int local335 = arg0.readUnsignedByte();
 			for (@Pc(337) int local337 = 0; local337 < local335; local337++) {
-				this.aBooleanArray6[arg0.method4629()] = true;
+				this.aBooleanArray6[arg0.readUnsignedByte()] = true;
 			}
 		} else if (arg1 == 4) {
 			this.aBoolean73 = true;
 		} else if (arg1 == 5) {
-			this.anInt1243 = arg0.method4629();
+			this.anInt1243 = arg0.readUnsignedByte();
 		} else if (arg1 == 6) {
-			this.anInt1224 = arg0.method4616();
+			this.anInt1224 = arg0.readUnsignedShort();
 		} else if (arg1 == 7) {
-			this.anInt1232 = arg0.method4616();
+			this.anInt1232 = arg0.readUnsignedShort();
 		} else if (arg1 == 8) {
-			this.anInt1239 = arg0.method4629();
+			this.anInt1239 = arg0.readUnsignedByte();
 		} else if (arg1 == 9) {
-			this.anInt1240 = arg0.method4629();
+			this.anInt1240 = arg0.readUnsignedByte();
 		} else if (arg1 == 10) {
-			this.anInt1237 = arg0.method4629();
+			this.anInt1237 = arg0.readUnsignedByte();
 		} else if (arg1 == 11) {
-			this.anInt1238 = arg0.method4629();
+			this.anInt1238 = arg0.readUnsignedByte();
 		} else if (arg1 == 12) {
-			@Pc(249) int local249 = arg0.method4629();
+			@Pc(249) int local249 = arg0.readUnsignedByte();
 			this.anIntArray93 = new int[local249];
 			for (@Pc(255) int local255 = 0; local255 < local249; local255++) {
-				this.anIntArray93[local255] = arg0.method4616();
+				this.anIntArray93[local255] = arg0.readUnsignedShort();
 			}
 			for (@Pc(270) int local270 = 0; local270 < local249; local270++) {
-				this.anIntArray93[local270] += arg0.method4616() << 16;
+				this.anIntArray93[local270] += arg0.readUnsignedShort() << 16;
 			}
 		} else if (arg1 == 13) {
-			@Pc(181) int local181 = arg0.method4616();
+			@Pc(181) int local181 = arg0.readUnsignedShort();
 			this.anIntArrayArray11 = new int[local181][];
 			for (@Pc(187) int local187 = 0; local187 < local181; local187++) {
-				@Pc(198) int local198 = arg0.method4629();
+				@Pc(198) int local198 = arg0.readUnsignedByte();
 				if (local198 > 0) {
 					this.anIntArrayArray11[local187] = new int[local198];
-					this.anIntArrayArray11[local187][0] = arg0.method4618();
+					this.anIntArrayArray11[local187][0] = arg0.readUnsignedMedium();
 					for (@Pc(221) int local221 = 1; local221 < local198; local221++) {
-						this.anIntArrayArray11[local187][local221] = arg0.method4616();
+						this.anIntArrayArray11[local187][local221] = arg0.readUnsignedShort();
 					}
 				}
 			}

@@ -695,7 +695,7 @@ public final class Static34 {
 		}
 		if (Static6.aClass4_Sub15Array1.length > local16 && Static6.aClass4_Sub15Array1[local16] != null) {
 			Static3.aClass4_Sub10_Sub1_1.method4650(75);
-			Static3.aClass4_Sub10_Sub1_1.method4582(Static6.aClass4_Sub15Array1[local16].key);
+			Static3.aClass4_Sub10_Sub1_1.writeLong(Static6.aClass4_Sub15Array1[local16].key);
 		}
 	}
 
@@ -967,7 +967,7 @@ public final class Static34 {
 			}
 		}
 		@Pc(103) int local103 = arg5 + arg4;
-		@Pc(108) Class4_Sub10 local108 = new Class4_Sub10(arg6);
+		@Pc(108) Buffer local108 = new Buffer(arg6);
 		@Pc(112) int local112 = arg2 + arg3;
 		for (@Pc(114) int local114 = 0; local114 < local9; local114++) {
 			for (@Pc(129) int local129 = 0; local129 < 64; local129++) {
@@ -978,22 +978,22 @@ public final class Static34 {
 		}
 		@Pc(171) boolean local171 = false;
 		@Pc(173) boolean local173 = false;
-		while (local108.aByteArray71.length > local108.anInt5709) {
-			@Pc(183) int local183 = local108.method4629();
+		while (local108.bytes.length > local108.position) {
+			@Pc(183) int local183 = local108.readUnsignedByte();
 			if (local183 == 128) {
 				local171 = true;
-				Static6.anIntArray465[0] = local108.method4616();
-				Static6.anIntArray465[1] = local108.method4576();
-				Static6.anIntArray465[2] = local108.method4576();
-				Static6.anIntArray465[3] = local108.method4576();
-				Static6.anIntArray465[4] = local108.method4616();
+				Static6.anIntArray465[0] = local108.readUnsignedShort();
+				Static6.anIntArray465[1] = local108.readShort();
+				Static6.anIntArray465[2] = local108.readShort();
+				Static6.anIntArray465[3] = local108.readShort();
+				Static6.anIntArray465[4] = local108.readUnsignedShort();
 			} else {
 				if (local183 != 129) {
-					local108.anInt5709--;
+					local108.position--;
 					break;
 				}
 				for (@Pc(201) int local201 = 0; local201 < 4; local201++) {
-					@Pc(210) byte local210 = local108.method4637();
+					@Pc(210) byte local210 = local108.readByte();
 					if (local210 == 0) {
 						@Pc(216) int local216 = arg4 + 64;
 						if (local216 < 0) {
@@ -1029,7 +1029,7 @@ public final class Static34 {
 					} else if (local210 == 1) {
 						for (@Pc(307) int local307 = 0; local307 < 64; local307 += 4) {
 							for (@Pc(312) int local312 = 0; local312 < 64; local312 += 4) {
-								@Pc(321) byte local321 = local108.method4637();
+								@Pc(321) byte local321 = local108.readByte();
 								for (@Pc(325) int local325 = local307 + arg4; local325 < local307 + arg4 + 4; local325++) {
 									for (@Pc(337) int local337 = arg3 + local312; local337 < local312 + arg3 + 4; local337++) {
 										if (local325 >= 0 && local325 < 104 && local337 >= 0 && local337 < 104) {
@@ -1079,17 +1079,17 @@ public final class Static34 {
 		if (Static3.aBoolean138 && !arg0) {
 			@Pc(539) Class187 local539 = null;
 			while (true) {
-				while (local108.anInt5709 < local108.aByteArray71.length) {
-					@Pc(549) int local549 = local108.method4629();
+				while (local108.position < local108.bytes.length) {
+					@Pc(549) int local549 = local108.readUnsignedByte();
 					if (local549 == 0) {
 						local539 = new Class187(local108);
 					} else if (local549 == 1) {
-						@Pc(585) int local585 = local108.method4629();
+						@Pc(585) int local585 = local108.readUnsignedByte();
 						if (local585 > 0) {
 							for (@Pc(590) int local590 = 0; local590 < local585; local590++) {
 								@Pc(598) Class50 local598 = new Class50(local108);
 								if (local598.anInt1323 == 31) {
-									@Pc(608) Class178 local608 = Static11.method494(local108.method4616());
+									@Pc(608) Class178 local608 = Static11.method494(local108.readUnsignedShort());
 									local598.method1073(local608.anInt5484, local608.anInt5480, local608.anInt5482, local608.anInt5481);
 								}
 								local598.anInt1338 += arg4 << 7;
@@ -1303,8 +1303,8 @@ public final class Static34 {
 				Static5.aClass53_Sub1_Sub1Array1[local34] = null;
 			}
 		}
-		if (Static5.aClass4_Sub10_Sub1_2.anInt5709 != Static1.anInt1052) {
-			throw new RuntimeException("gpp1 pos:" + Static5.aClass4_Sub10_Sub1_2.anInt5709 + " psize:" + Static1.anInt1052);
+		if (Static5.aClass4_Sub10_Sub1_2.position != Static1.anInt1052) {
+			throw new RuntimeException("gpp1 pos:" + Static5.aClass4_Sub10_Sub1_2.position + " psize:" + Static1.anInt1052);
 		}
 		for (@Pc(85) int local85 = 0; local85 < Static3.anInt2510; local85++) {
 			if (Static5.aClass53_Sub1_Sub1Array1[Static4.anIntArray317[local85]] == null) {

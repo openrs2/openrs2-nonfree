@@ -24,10 +24,10 @@ public final class Static22 {
 	}
 
 	@OriginalMember(owner = "client!jo", name = "a", descriptor = "(Lsignlink!pm;IBLclient!fd;)V")
-	public static void method4689(@OriginalArg(0) SignLink arg0, @OriginalArg(1) int arg1, @OriginalArg(3) Class4_Sub10 arg2) {
+	public static void method4689(@OriginalArg(0) SignLink arg0, @OriginalArg(1) int arg1, @OriginalArg(3) Buffer arg2) {
 		@Pc(9) Class4_Sub29 local9 = new Class4_Sub29();
-		local9.anInt4857 = arg2.method4629();
-		local9.anInt4858 = arg2.method4595();
+		local9.anInt4857 = arg2.readUnsignedByte();
+		local9.anInt4858 = arg2.readInt();
 		local9.anIntArray527 = new int[local9.anInt4857];
 		local9.aByteArrayArrayArray19 = new byte[local9.anInt4857][][];
 		local9.aClass197Array1 = new PrivilegedRequest[local9.anInt4857];
@@ -36,31 +36,31 @@ public final class Static22 {
 		local9.anIntArray526 = new int[local9.anInt4857];
 		for (@Pc(57) int local57 = 0; local57 < local9.anInt4857; local57++) {
 			try {
-				@Pc(69) int local69 = arg2.method4629();
+				@Pc(69) int local69 = arg2.readUnsignedByte();
 				if (local69 == 0 || local69 == 1 || local69 == 2) {
-					@Pc(88) String local88 = arg2.method4593();
+					@Pc(88) String local88 = arg2.readString();
 					@Pc(90) int local90 = 0;
-					@Pc(94) String local94 = arg2.method4593();
+					@Pc(94) String local94 = arg2.readString();
 					if (local69 == 1) {
-						local90 = arg2.method4595();
+						local90 = arg2.readInt();
 					}
 					local9.anIntArray527[local57] = local69;
 					local9.anIntArray526[local57] = local90;
 					local9.aClass197Array1[local57] = arg0.getDeclaredField(Static33.method4156(local88), local94);
 				} else if (local69 == 3 || local69 == 4) {
-					@Pc(137) String local137 = arg2.method4593();
-					@Pc(141) String local141 = arg2.method4593();
-					@Pc(145) int local145 = arg2.method4629();
+					@Pc(137) String local137 = arg2.readString();
+					@Pc(141) String local141 = arg2.readString();
+					@Pc(145) int local145 = arg2.readUnsignedByte();
 					@Pc(148) String[] local148 = new String[local145];
 					for (@Pc(150) int local150 = 0; local150 < local145; local150++) {
-						local148[local150] = arg2.method4593();
+						local148[local150] = arg2.readString();
 					}
 					@Pc(169) byte[][] local169 = new byte[local145][];
 					if (local69 == 3) {
 						for (@Pc(174) int local174 = 0; local174 < local145; local174++) {
-							@Pc(185) int local185 = arg2.method4595();
+							@Pc(185) int local185 = arg2.readInt();
 							local169[local174] = new byte[local185];
-							arg2.method4612(local185, local169[local174]);
+							arg2.readBytes(local169[local174], local185);
 						}
 					}
 					@Pc(204) Class[] local204 = new Class[local145];
@@ -271,7 +271,7 @@ public final class Static22 {
 		@Pc(30) Class82 local30 = new Class82();
 		local30.anInt2292 = arg0;
 		if (local26 != null) {
-			local30.method1806(new Class4_Sub10(local26));
+			local30.method1806(new Buffer(local26));
 		}
 		Static4.aClass26_28.method510(local30, (long) arg0);
 		return local30;
@@ -292,7 +292,7 @@ public final class Static22 {
 				}
 				Static3.anInt2102 = Static6.anInt4979;
 				Static3.aClass4_Sub10_Sub1_1.method4650(142);
-				Static3.aClass4_Sub10_Sub1_1.method4582(arg0);
+				Static3.aClass4_Sub10_Sub1_1.writeLong(arg0);
 				break;
 			}
 		}
@@ -1040,10 +1040,10 @@ public final class Static22 {
 				if (Static6.aBoolean338) {
 					local79 = Static4.anInt2842;
 				}
-				Static3.aClass4_Sub10_Sub1_1.anInt5709 = 0;
-				Static3.aClass4_Sub10_Sub1_1.method4581(23);
-				Static3.aClass4_Sub10_Sub1_1.method4617(local79);
-				Static3.aClass52_7.method1107(Static3.aClass4_Sub10_Sub1_1.aByteArray71, Static3.aClass4_Sub10_Sub1_1.anInt5709);
+				Static3.aClass4_Sub10_Sub1_1.position = 0;
+				Static3.aClass4_Sub10_Sub1_1.writeByte(23);
+				Static3.aClass4_Sub10_Sub1_1.writeInt(local79);
+				Static3.aClass52_7.method1107(Static3.aClass4_Sub10_Sub1_1.bytes, Static3.aClass4_Sub10_Sub1_1.position);
 				if (Static1.aClass102_1 != null) {
 					Static1.aClass102_1.method2996();
 				}
@@ -1234,30 +1234,30 @@ public final class Static22 {
 		if (Static4.aByteBuffer9 != null) {
 			return;
 		}
-		@Pc(6) Class4_Sub10 local6 = new Class4_Sub10(1088);
-		@Pc(11) Class4_Sub10 local11 = new Class4_Sub10(5140);
+		@Pc(6) Buffer local6 = new Buffer(1088);
+		@Pc(11) Buffer local11 = new Buffer(5140);
 		if (Static3.aBoolean126) {
-			local11.method4604(0.0F);
-			local11.method4604(1.0F);
-			local11.method4604(0.0F);
-			local11.method4604(0.5F);
-			local11.method4604(1.0F);
-			local11.method4604(0.0F);
-			local11.method4604(-1.0F);
-			local11.method4604(0.0F);
-			local11.method4604(0.5F);
-			local11.method4604(0.0F);
+			local11.writeFloat(0.0F);
+			local11.writeFloat(1.0F);
+			local11.writeFloat(0.0F);
+			local11.writeFloat(0.5F);
+			local11.writeFloat(1.0F);
+			local11.writeFloat(0.0F);
+			local11.writeFloat(-1.0F);
+			local11.writeFloat(0.0F);
+			local11.writeFloat(0.5F);
+			local11.writeFloat(0.0F);
 		} else {
-			local11.method4632(0.0F);
-			local11.method4632(1.0F);
-			local11.method4632(0.0F);
-			local11.method4632(0.5F);
-			local11.method4632(1.0F);
-			local11.method4632(0.0F);
-			local11.method4632(-1.0F);
-			local11.method4632(0.0F);
-			local11.method4632(0.5F);
-			local11.method4632(0.0F);
+			local11.writeFloatLE(0.0F);
+			local11.writeFloatLE(1.0F);
+			local11.writeFloatLE(0.0F);
+			local11.writeFloatLE(0.5F);
+			local11.writeFloatLE(1.0F);
+			local11.writeFloatLE(0.0F);
+			local11.writeFloatLE(-1.0F);
+			local11.writeFloatLE(0.0F);
+			local11.writeFloatLE(0.5F);
+			local11.writeFloatLE(0.0F);
 		}
 		@Pc(96) float local96 = 0.0F;
 		@Pc(98) float local98 = 0.05882353F;
@@ -1271,17 +1271,17 @@ public final class Static22 {
 				@Pc(150) float local150 = (float) Class109.anIntArray299[local134] * local116 / 65535.0F;
 				@Pc(159) float local159 = (float) Class109.anIntArray299[local134] * local123 / 65535.0F;
 				if (Static3.aBoolean126) {
-					local11.method4604(local159);
-					local11.method4604(local141);
-					local11.method4604(local150);
-					local11.method4604(local96);
-					local11.method4604(local98);
+					local11.writeFloat(local159);
+					local11.writeFloat(local141);
+					local11.writeFloat(local150);
+					local11.writeFloat(local96);
+					local11.writeFloat(local98);
 				} else {
-					local11.method4632(local159);
-					local11.method4632(local141);
-					local11.method4632(local150);
-					local11.method4632(local96);
-					local11.method4632(local98);
+					local11.writeFloatLE(local159);
+					local11.writeFloatLE(local141);
+					local11.writeFloatLE(local150);
+					local11.writeFloatLE(local96);
+					local11.writeFloatLE(local98);
 				}
 				local98 += 0.05882353F;
 			}
@@ -1289,33 +1289,33 @@ public final class Static22 {
 				@Pc(216) int local216 = local100 * 15 + 2;
 				@Pc(220) int local220 = local216 - 15;
 				if (Static3.aBoolean126) {
-					local6.method4631(0);
-					local6.method4631(0);
+					local6.writeShort(0);
+					local6.writeShort(0);
 					for (@Pc(232) int local232 = 1; local232 < 16; local232++) {
-						local6.method4631(local220++);
-						local6.method4631(local216++);
+						local6.writeShort(local220++);
+						local6.writeShort(local216++);
 					}
-					local6.method4631(1);
-					local6.method4631(1);
+					local6.writeShort(1);
+					local6.writeShort(1);
 				} else {
-					local6.method4603(0);
-					local6.method4603(0);
+					local6.writeShortLE(0);
+					local6.writeShortLE(0);
 					for (@Pc(266) int local266 = 1; local266 < 16; local266++) {
-						local6.method4603(local220++);
-						local6.method4603(local216++);
+						local6.writeShortLE(local220++);
+						local6.writeShortLE(local216++);
 					}
-					local6.method4603(1);
-					local6.method4603(1);
+					local6.writeShortLE(1);
+					local6.writeShortLE(1);
 				}
 			}
 			local96 += 0.05882353F;
 			local98 = 0.05882353F;
 		}
-		Static4.aByteBuffer9 = ByteBuffer.allocateDirect(local11.anInt5709);
-		Static4.aByteBuffer9.put(local11.aByteArray71, 0, local11.anInt5709);
+		Static4.aByteBuffer9 = ByteBuffer.allocateDirect(local11.position);
+		Static4.aByteBuffer9.put(local11.bytes, 0, local11.position);
 		Static4.aByteBuffer9.flip();
-		Static4.aByteBuffer10 = ByteBuffer.allocateDirect(local6.anInt5709);
-		Static4.aByteBuffer10.put(local6.aByteArray71, 0, local6.anInt5709);
+		Static4.aByteBuffer10 = ByteBuffer.allocateDirect(local6.position);
+		Static4.aByteBuffer10.put(local6.bytes, 0, local6.position);
 		Static4.aByteBuffer10.flip();
 	}
 
@@ -1795,7 +1795,7 @@ public final class Static22 {
 		@Pc(28) byte[] local28 = Static1.aClass58_3.method1372(33, arg0);
 		@Pc(32) Class133 local32 = new Class133();
 		if (local28 != null) {
-			local32.method3398(arg0, new Class4_Sub10(local28));
+			local32.method3398(arg0, new Buffer(local28));
 		}
 		Static5.aClass26_42.method510(local32, (long) arg0);
 		return local32;

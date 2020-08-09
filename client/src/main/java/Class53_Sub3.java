@@ -704,24 +704,24 @@ public final class Class53_Sub3 extends Class53 {
 	private void method2751(@OriginalArg(0) byte[] arg0) {
 		@Pc(1) boolean local1 = false;
 		@Pc(3) boolean local3 = false;
-		@Pc(8) Class4_Sub10 local8 = new Class4_Sub10(arg0);
-		@Pc(13) Class4_Sub10 local13 = new Class4_Sub10(arg0);
-		@Pc(18) Class4_Sub10 local18 = new Class4_Sub10(arg0);
-		@Pc(23) Class4_Sub10 local23 = new Class4_Sub10(arg0);
-		@Pc(28) Class4_Sub10 local28 = new Class4_Sub10(arg0);
-		local8.anInt5709 = arg0.length - 18;
-		@Pc(38) int local38 = local8.method4616();
-		@Pc(42) int local42 = local8.method4616();
-		@Pc(46) int local46 = local8.method4629();
-		@Pc(50) int local50 = local8.method4629();
-		@Pc(54) int local54 = local8.method4629();
-		@Pc(58) int local58 = local8.method4629();
-		@Pc(62) int local62 = local8.method4629();
-		@Pc(66) int local66 = local8.method4629();
-		@Pc(70) int local70 = local8.method4616();
-		@Pc(74) int local74 = local8.method4616();
-		@Pc(78) int local78 = local8.method4616();
-		@Pc(82) int local82 = local8.method4616();
+		@Pc(8) Buffer local8 = new Buffer(arg0);
+		@Pc(13) Buffer local13 = new Buffer(arg0);
+		@Pc(18) Buffer local18 = new Buffer(arg0);
+		@Pc(23) Buffer local23 = new Buffer(arg0);
+		@Pc(28) Buffer local28 = new Buffer(arg0);
+		local8.position = arg0.length - 18;
+		@Pc(38) int local38 = local8.readUnsignedShort();
+		@Pc(42) int local42 = local8.readUnsignedShort();
+		@Pc(46) int local46 = local8.readUnsignedByte();
+		@Pc(50) int local50 = local8.readUnsignedByte();
+		@Pc(54) int local54 = local8.readUnsignedByte();
+		@Pc(58) int local58 = local8.readUnsignedByte();
+		@Pc(62) int local62 = local8.readUnsignedByte();
+		@Pc(66) int local66 = local8.readUnsignedByte();
+		@Pc(70) int local70 = local8.readUnsignedShort();
+		@Pc(74) int local74 = local8.readUnsignedShort();
+		@Pc(78) int local78 = local8.readUnsignedShort();
+		@Pc(82) int local82 = local8.readUnsignedShort();
 		@Pc(90) int local90 = local38;
 		@Pc(96) int local96 = local90 + local42;
 		@Pc(98) int local98 = local96;
@@ -788,27 +788,27 @@ public final class Class53_Sub3 extends Class53 {
 			this.anIntArray325 = new int[local42];
 		}
 		this.aShortArray53 = new short[local42];
-		local8.anInt5709 = 0;
-		local13.anInt5709 = local165;
-		local18.anInt5709 = local171;
-		local23.anInt5709 = local147;
-		local28.anInt5709 = local125;
+		local8.position = 0;
+		local13.position = local165;
+		local18.position = local171;
+		local23.position = local147;
+		local28.position = local125;
 		@Pc(301) int local301 = 0;
 		@Pc(303) int local303 = 0;
 		@Pc(305) int local305 = 0;
 		for (@Pc(307) int local307 = 0; local307 < local38; local307++) {
-			@Pc(314) int local314 = local8.method4629();
+			@Pc(314) int local314 = local8.readUnsignedByte();
 			@Pc(316) int local316 = 0;
 			if ((local314 & 0x1) != 0) {
-				local316 = local13.method4597();
+				local316 = local13.readSmart();
 			}
 			@Pc(326) int local326 = 0;
 			if ((local314 & 0x2) != 0) {
-				local326 = local18.method4597();
+				local326 = local18.readSmart();
 			}
 			@Pc(336) int local336 = 0;
 			if ((local314 & 0x4) != 0) {
-				local336 = local23.method4597();
+				local336 = local23.readSmart();
 			}
 			this.anIntArray329[local307] = local301 + local316;
 			this.anIntArray324[local307] = local303 + local326;
@@ -817,18 +817,18 @@ public final class Class53_Sub3 extends Class53 {
 			local303 = this.anIntArray324[local307];
 			local305 = this.anIntArray326[local307];
 			if (local66 == 1) {
-				this.anIntArray323[local307] = local28.method4629();
+				this.anIntArray323[local307] = local28.readUnsignedByte();
 			}
 		}
-		local8.anInt5709 = local149;
-		local13.anInt5709 = local116;
-		local18.anInt5709 = local98;
-		local23.anInt5709 = local134;
-		local28.anInt5709 = local107;
+		local8.position = local149;
+		local13.position = local116;
+		local18.position = local98;
+		local23.position = local134;
+		local28.position = local107;
 		for (@Pc(409) int local409 = 0; local409 < local42; local409++) {
-			this.aShortArray53[local409] = (short) local8.method4616();
+			this.aShortArray53[local409] = (short) local8.readUnsignedShort();
 			if (local50 == 1) {
-				@Pc(427) int local427 = local13.method4629();
+				@Pc(427) int local427 = local13.readUnsignedByte();
 				if ((local427 & 0x1) == 1) {
 					this.aByteArray40[local409] = 1;
 					local1 = true;
@@ -848,28 +848,28 @@ public final class Class53_Sub3 extends Class53 {
 				}
 			}
 			if (local54 == 255) {
-				this.aByteArray37[local409] = local18.method4637();
+				this.aByteArray37[local409] = local18.readByte();
 			}
 			if (local58 == 1) {
-				this.aByteArray33[local409] = local23.method4637();
+				this.aByteArray33[local409] = local23.readByte();
 			}
 			if (local62 == 1) {
-				this.anIntArray325[local409] = local28.method4629();
+				this.anIntArray325[local409] = local28.readUnsignedByte();
 			}
 		}
 		this.anInt3355 = -1;
-		local8.anInt5709 = local96;
-		local13.anInt5709 = local90;
+		local8.position = local96;
+		local13.position = local90;
 		@Pc(533) int local533 = 0;
 		@Pc(535) int local535 = 0;
 		@Pc(537) int local537 = 0;
 		@Pc(539) int local539 = 0;
 		for (@Pc(541) int local541 = 0; local541 < local42; local541++) {
-			@Pc(548) int local548 = local13.method4629();
+			@Pc(548) int local548 = local13.readUnsignedByte();
 			if (local548 == 1) {
-				local533 = local8.method4597() + local539;
-				local535 = local8.method4597() + local533;
-				local537 = local8.method4597() + local535;
+				local533 = local8.readSmart() + local539;
+				local535 = local8.readSmart() + local533;
+				local537 = local8.readSmart() + local535;
 				local539 = local537;
 				this.anIntArray331[local541] = local533;
 				this.anIntArray330[local541] = local535;
@@ -886,7 +886,7 @@ public final class Class53_Sub3 extends Class53 {
 			}
 			if (local548 == 2) {
 				local535 = local537;
-				local537 = local8.method4597() + local539;
+				local537 = local8.readSmart() + local539;
 				local539 = local537;
 				this.anIntArray331[local541] = local533;
 				this.anIntArray330[local541] = local535;
@@ -897,7 +897,7 @@ public final class Class53_Sub3 extends Class53 {
 			}
 			if (local548 == 3) {
 				local533 = local537;
-				local537 = local8.method4597() + local539;
+				local537 = local8.readSmart() + local539;
 				local539 = local537;
 				this.anIntArray331[local541] = local533;
 				this.anIntArray330[local541] = local535;
@@ -910,7 +910,7 @@ public final class Class53_Sub3 extends Class53 {
 				@Pc(686) int local686 = local533;
 				local533 = local535;
 				local535 = local686;
-				local537 = local8.method4597() + local539;
+				local537 = local8.readSmart() + local539;
 				local539 = local537;
 				this.anIntArray331[local541] = local533;
 				this.anIntArray330[local541] = local686;
@@ -921,12 +921,12 @@ public final class Class53_Sub3 extends Class53 {
 			}
 		}
 		this.anInt3355++;
-		local8.anInt5709 = local157;
+		local8.position = local157;
 		for (@Pc(733) int local733 = 0; local733 < local46; local733++) {
 			this.aByteArray38[local733] = 0;
-			this.aShortArray59[local733] = (short) local8.method4616();
-			this.aShortArray56[local733] = (short) local8.method4616();
-			this.aShortArray57[local733] = (short) local8.method4616();
+			this.aShortArray59[local733] = (short) local8.readUnsignedShort();
+			this.aShortArray56[local733] = (short) local8.readUnsignedShort();
+			this.aShortArray57[local733] = (short) local8.readUnsignedShort();
 		}
 		if (this.aByteArray35 != null) {
 			@Pc(772) boolean local772 = false;
@@ -998,38 +998,38 @@ public final class Class53_Sub3 extends Class53 {
 
 	@OriginalMember(owner = "client!ml", name = "b", descriptor = "([B)V")
 	private void method2755(@OriginalArg(0) byte[] arg0) {
-		@Pc(4) Class4_Sub10 local4 = new Class4_Sub10(arg0);
-		@Pc(9) Class4_Sub10 local9 = new Class4_Sub10(arg0);
-		@Pc(14) Class4_Sub10 local14 = new Class4_Sub10(arg0);
-		@Pc(19) Class4_Sub10 local19 = new Class4_Sub10(arg0);
-		@Pc(24) Class4_Sub10 local24 = new Class4_Sub10(arg0);
-		@Pc(29) Class4_Sub10 local29 = new Class4_Sub10(arg0);
-		@Pc(34) Class4_Sub10 local34 = new Class4_Sub10(arg0);
-		local4.anInt5709 = arg0.length - 23;
-		@Pc(44) int local44 = local4.method4616();
-		@Pc(48) int local48 = local4.method4616();
-		@Pc(52) int local52 = local4.method4629();
-		@Pc(56) int local56 = local4.method4629();
+		@Pc(4) Buffer local4 = new Buffer(arg0);
+		@Pc(9) Buffer local9 = new Buffer(arg0);
+		@Pc(14) Buffer local14 = new Buffer(arg0);
+		@Pc(19) Buffer local19 = new Buffer(arg0);
+		@Pc(24) Buffer local24 = new Buffer(arg0);
+		@Pc(29) Buffer local29 = new Buffer(arg0);
+		@Pc(34) Buffer local34 = new Buffer(arg0);
+		local4.position = arg0.length - 23;
+		@Pc(44) int local44 = local4.readUnsignedShort();
+		@Pc(48) int local48 = local4.readUnsignedShort();
+		@Pc(52) int local52 = local4.readUnsignedByte();
+		@Pc(56) int local56 = local4.readUnsignedByte();
 		@Pc(65) boolean local65 = (local56 & 0x1) == 1;
 		@Pc(74) boolean local74 = (local56 & 0x2) == 2;
-		@Pc(78) int local78 = local4.method4629();
-		@Pc(82) int local82 = local4.method4629();
-		@Pc(86) int local86 = local4.method4629();
-		@Pc(90) int local90 = local4.method4629();
-		@Pc(94) int local94 = local4.method4629();
-		@Pc(98) int local98 = local4.method4616();
-		@Pc(102) int local102 = local4.method4616();
-		@Pc(106) int local106 = local4.method4616();
-		@Pc(110) int local110 = local4.method4616();
-		@Pc(114) int local114 = local4.method4616();
+		@Pc(78) int local78 = local4.readUnsignedByte();
+		@Pc(82) int local82 = local4.readUnsignedByte();
+		@Pc(86) int local86 = local4.readUnsignedByte();
+		@Pc(90) int local90 = local4.readUnsignedByte();
+		@Pc(94) int local94 = local4.readUnsignedByte();
+		@Pc(98) int local98 = local4.readUnsignedShort();
+		@Pc(102) int local102 = local4.readUnsignedShort();
+		@Pc(106) int local106 = local4.readUnsignedShort();
+		@Pc(110) int local110 = local4.readUnsignedShort();
+		@Pc(114) int local114 = local4.readUnsignedShort();
 		@Pc(116) int local116 = 0;
 		@Pc(118) int local118 = 0;
 		@Pc(120) int local120 = 0;
 		if (local52 > 0) {
 			this.aByteArray38 = new byte[local52];
-			local4.anInt5709 = 0;
+			local4.position = 0;
 			for (@Pc(131) int local131 = 0; local131 < local52; local131++) {
-				@Pc(143) byte local143 = this.aByteArray38[local131] = local4.method4637();
+				@Pc(143) byte local143 = this.aByteArray38[local131] = local4.readByte();
 				if (local143 == 0) {
 					local116++;
 				}
@@ -1139,27 +1139,27 @@ public final class Class53_Sub3 extends Class53 {
 				this.aByteArray31 = new byte[local120];
 			}
 		}
-		local4.anInt5709 = local52;
-		local9.anInt5709 = local250;
-		local14.anInt5709 = local256;
-		local19.anInt5709 = local262;
-		local24.anInt5709 = local201;
+		local4.position = local52;
+		local9.position = local250;
+		local14.position = local256;
+		local19.position = local262;
+		local24.position = local201;
 		@Pc(473) int local473 = 0;
 		@Pc(475) int local475 = 0;
 		@Pc(477) int local477 = 0;
 		for (@Pc(479) int local479 = 0; local479 < local44; local479++) {
-			@Pc(486) int local486 = local4.method4629();
+			@Pc(486) int local486 = local4.readUnsignedByte();
 			@Pc(488) int local488 = 0;
 			if ((local486 & 0x1) != 0) {
-				local488 = local9.method4597();
+				local488 = local9.readSmart();
 			}
 			@Pc(498) int local498 = 0;
 			if ((local486 & 0x2) != 0) {
-				local498 = local14.method4597();
+				local498 = local14.readSmart();
 			}
 			@Pc(508) int local508 = 0;
 			if ((local486 & 0x4) != 0) {
-				local508 = local19.method4597();
+				local508 = local19.readSmart();
 			}
 			this.anIntArray329[local479] = local473 + local488;
 			this.anIntArray324[local479] = local475 + local498;
@@ -1168,54 +1168,54 @@ public final class Class53_Sub3 extends Class53 {
 			local475 = this.anIntArray324[local479];
 			local477 = this.anIntArray326[local479];
 			if (local94 == 1) {
-				this.anIntArray323[local479] = local24.method4629();
+				this.anIntArray323[local479] = local24.readUnsignedByte();
 			}
 		}
-		local4.anInt5709 = local242;
-		local9.anInt5709 = local169;
-		local14.anInt5709 = local183;
-		local19.anInt5709 = local210;
-		local24.anInt5709 = local192;
-		local29.anInt5709 = local225;
-		local34.anInt5709 = local223;
+		local4.position = local242;
+		local9.position = local169;
+		local14.position = local183;
+		local19.position = local210;
+		local24.position = local192;
+		local29.position = local225;
+		local34.position = local223;
 		for (@Pc(587) int local587 = 0; local587 < local48; local587++) {
-			this.aShortArray53[local587] = (short) local4.method4616();
+			this.aShortArray53[local587] = (short) local4.readUnsignedShort();
 			if (local65) {
-				this.aByteArray40[local587] = local9.method4637();
+				this.aByteArray40[local587] = local9.readByte();
 			}
 			if (local78 == 255) {
-				this.aByteArray37[local587] = local14.method4637();
+				this.aByteArray37[local587] = local14.readByte();
 			}
 			if (local82 == 1) {
-				this.aByteArray33[local587] = local19.method4637();
+				this.aByteArray33[local587] = local19.readByte();
 			}
 			if (local86 == 1) {
-				this.anIntArray325[local587] = local24.method4629();
+				this.anIntArray325[local587] = local24.readUnsignedByte();
 			}
 			if (local90 == 1) {
-				this.aShortArray51[local587] = (short) (local29.method4616() - 1);
+				this.aShortArray51[local587] = (short) (local29.readUnsignedShort() - 1);
 			}
 			if (this.aByteArray35 != null) {
 				if (this.aShortArray51[local587] == -1) {
 					this.aByteArray35[local587] = -1;
 				} else {
-					this.aByteArray35[local587] = (byte) (local34.method4629() - 1);
+					this.aByteArray35[local587] = (byte) (local34.readUnsignedByte() - 1);
 				}
 			}
 		}
 		this.anInt3355 = -1;
-		local4.anInt5709 = local181;
-		local9.anInt5709 = local167;
+		local4.position = local181;
+		local9.position = local167;
 		@Pc(688) int local688 = 0;
 		@Pc(690) int local690 = 0;
 		@Pc(692) int local692 = 0;
 		@Pc(694) int local694 = 0;
 		for (@Pc(696) int local696 = 0; local696 < local48; local696++) {
-			@Pc(703) int local703 = local9.method4629();
+			@Pc(703) int local703 = local9.readUnsignedByte();
 			if (local703 == 1) {
-				local688 = local4.method4597() + local694;
-				local690 = local4.method4597() + local688;
-				local692 = local4.method4597() + local690;
+				local688 = local4.readSmart() + local694;
+				local690 = local4.readSmart() + local688;
+				local692 = local4.readSmart() + local690;
 				local694 = local692;
 				this.anIntArray331[local696] = local688;
 				this.anIntArray330[local696] = local690;
@@ -1232,7 +1232,7 @@ public final class Class53_Sub3 extends Class53 {
 			}
 			if (local703 == 2) {
 				local690 = local692;
-				local692 = local4.method4597() + local694;
+				local692 = local4.readSmart() + local694;
 				local694 = local692;
 				this.anIntArray331[local696] = local688;
 				this.anIntArray330[local696] = local690;
@@ -1243,7 +1243,7 @@ public final class Class53_Sub3 extends Class53 {
 			}
 			if (local703 == 3) {
 				local688 = local692;
-				local692 = local4.method4597() + local694;
+				local692 = local4.readSmart() + local694;
 				local694 = local692;
 				this.anIntArray331[local696] = local688;
 				this.anIntArray330[local696] = local690;
@@ -1256,7 +1256,7 @@ public final class Class53_Sub3 extends Class53 {
 				@Pc(841) int local841 = local688;
 				local688 = local690;
 				local690 = local841;
-				local692 = local4.method4597() + local694;
+				local692 = local4.readSmart() + local694;
 				local694 = local692;
 				this.anIntArray331[local696] = local688;
 				this.anIntArray330[local696] = local841;
@@ -1267,73 +1267,73 @@ public final class Class53_Sub3 extends Class53 {
 			}
 		}
 		this.anInt3355++;
-		local4.anInt5709 = local268;
-		local9.anInt5709 = local276;
-		local14.anInt5709 = local284;
-		local19.anInt5709 = local292;
-		local24.anInt5709 = local298;
-		local29.anInt5709 = local304;
+		local4.position = local268;
+		local9.position = local276;
+		local14.position = local284;
+		local19.position = local292;
+		local24.position = local298;
+		local29.position = local304;
 		for (@Pc(903) int local903 = 0; local903 < local52; local903++) {
 			@Pc(913) int local913 = this.aByteArray38[local903] & 0xFF;
 			if (local913 == 0) {
-				this.aShortArray59[local903] = (short) local4.method4616();
-				this.aShortArray56[local903] = (short) local4.method4616();
-				this.aShortArray57[local903] = (short) local4.method4616();
+				this.aShortArray59[local903] = (short) local4.readUnsignedShort();
+				this.aShortArray56[local903] = (short) local4.readUnsignedShort();
+				this.aShortArray57[local903] = (short) local4.readUnsignedShort();
 			}
 			if (local913 == 1) {
-				this.aShortArray59[local903] = (short) local9.method4616();
-				this.aShortArray56[local903] = (short) local9.method4616();
-				this.aShortArray57[local903] = (short) local9.method4616();
-				this.aShortArray60[local903] = (short) local14.method4616();
-				this.aShortArray55[local903] = (short) local14.method4616();
-				this.aShortArray58[local903] = (short) local14.method4616();
-				this.aByteArray36[local903] = local19.method4637();
-				this.aByteArray39[local903] = local24.method4637();
-				this.aByteArray34[local903] = local29.method4637();
+				this.aShortArray59[local903] = (short) local9.readUnsignedShort();
+				this.aShortArray56[local903] = (short) local9.readUnsignedShort();
+				this.aShortArray57[local903] = (short) local9.readUnsignedShort();
+				this.aShortArray60[local903] = (short) local14.readUnsignedShort();
+				this.aShortArray55[local903] = (short) local14.readUnsignedShort();
+				this.aShortArray58[local903] = (short) local14.readUnsignedShort();
+				this.aByteArray36[local903] = local19.readByte();
+				this.aByteArray39[local903] = local24.readByte();
+				this.aByteArray34[local903] = local29.readByte();
 			}
 			if (local913 == 2) {
-				this.aShortArray59[local903] = (short) local9.method4616();
-				this.aShortArray56[local903] = (short) local9.method4616();
-				this.aShortArray57[local903] = (short) local9.method4616();
-				this.aShortArray60[local903] = (short) local14.method4616();
-				this.aShortArray55[local903] = (short) local14.method4616();
-				this.aShortArray58[local903] = (short) local14.method4616();
-				this.aByteArray36[local903] = local19.method4637();
-				this.aByteArray39[local903] = local24.method4637();
-				this.aByteArray34[local903] = local29.method4637();
-				this.aByteArray32[local903] = local29.method4637();
-				this.aByteArray31[local903] = local29.method4637();
+				this.aShortArray59[local903] = (short) local9.readUnsignedShort();
+				this.aShortArray56[local903] = (short) local9.readUnsignedShort();
+				this.aShortArray57[local903] = (short) local9.readUnsignedShort();
+				this.aShortArray60[local903] = (short) local14.readUnsignedShort();
+				this.aShortArray55[local903] = (short) local14.readUnsignedShort();
+				this.aShortArray58[local903] = (short) local14.readUnsignedShort();
+				this.aByteArray36[local903] = local19.readByte();
+				this.aByteArray39[local903] = local24.readByte();
+				this.aByteArray34[local903] = local29.readByte();
+				this.aByteArray32[local903] = local29.readByte();
+				this.aByteArray31[local903] = local29.readByte();
 			}
 			if (local913 == 3) {
-				this.aShortArray59[local903] = (short) local9.method4616();
-				this.aShortArray56[local903] = (short) local9.method4616();
-				this.aShortArray57[local903] = (short) local9.method4616();
-				this.aShortArray60[local903] = (short) local14.method4616();
-				this.aShortArray55[local903] = (short) local14.method4616();
-				this.aShortArray58[local903] = (short) local14.method4616();
-				this.aByteArray36[local903] = local19.method4637();
-				this.aByteArray39[local903] = local24.method4637();
-				this.aByteArray34[local903] = local29.method4637();
+				this.aShortArray59[local903] = (short) local9.readUnsignedShort();
+				this.aShortArray56[local903] = (short) local9.readUnsignedShort();
+				this.aShortArray57[local903] = (short) local9.readUnsignedShort();
+				this.aShortArray60[local903] = (short) local14.readUnsignedShort();
+				this.aShortArray55[local903] = (short) local14.readUnsignedShort();
+				this.aShortArray58[local903] = (short) local14.readUnsignedShort();
+				this.aByteArray36[local903] = local19.readByte();
+				this.aByteArray39[local903] = local24.readByte();
+				this.aByteArray34[local903] = local29.readByte();
 			}
 		}
 		if (!local74) {
 			return;
 		}
-		local4.anInt5709 = local240;
-		@Pc(1180) int local1180 = local4.method4629();
+		local4.position = local240;
+		@Pc(1180) int local1180 = local4.readUnsignedByte();
 		if (local1180 > 0) {
 			this.aClass158Array1 = new Class158[local1180];
 			for (@Pc(1188) int local1188 = 0; local1188 < local1180; local1188++) {
-				@Pc(1195) int local1195 = local4.method4616();
-				@Pc(1199) int local1199 = local4.method4616();
+				@Pc(1195) int local1195 = local4.readUnsignedShort();
+				@Pc(1199) int local1199 = local4.readUnsignedShort();
 				this.aClass158Array1[local1188] = new Class158(local1195, this.anIntArray331[local1199], this.anIntArray330[local1199], this.anIntArray332[local1199]);
 			}
 		}
-		@Pc(1225) int local1225 = local4.method4629();
+		@Pc(1225) int local1225 = local4.readUnsignedByte();
 		if (local1225 > 0) {
 			this.aClass167Array1 = new Class167[local1225];
 			for (@Pc(1233) int local1233 = 0; local1233 < local1225; local1233++) {
-				this.aClass167Array1[local1233] = new Class167(local4.method4616(), local4.method4616());
+				this.aClass167Array1[local1233] = new Class167(local4.readUnsignedShort(), local4.readUnsignedShort());
 			}
 		}
 	}

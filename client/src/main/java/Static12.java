@@ -106,7 +106,7 @@ public final class Static12 {
 	@OriginalMember(owner = "client!client", name = "g", descriptor = "(I)V")
 	public static void method685() {
 		Static3.aClass4_Sub10_Sub1_1.method4650(218);
-		Static3.aClass4_Sub10_Sub1_1.method4582(0L);
+		Static3.aClass4_Sub10_Sub1_1.writeLong(0L);
 	}
 
 	@OriginalMember(owner = "client!client", name = "a", descriptor = "(Lclient!wf;)Lclient!on;")
@@ -296,7 +296,7 @@ public final class Static12 {
 												continue;
 											}
 											Static3.aClass4_Sub10_Sub1_1.method4650(251);
-											Static3.aClass4_Sub10_Sub1_1.method4591(local550[0] << 28 | local550[1] << 14 | local550[2]);
+											Static3.aClass4_Sub10_Sub1_1.writeIntAlt3Reverse(local550[0] << 28 | local550[1] << 14 | local550[2]);
 										}
 										Static1.anInt640 = 1;
 										Static1.aBoolean49 = false;

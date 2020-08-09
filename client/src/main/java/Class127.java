@@ -37,9 +37,9 @@ public final class Class127 {
 	public int anInt3876 = 128;
 
 	@OriginalMember(owner = "client!oh", name = "a", descriptor = "(ILclient!fd;I)V")
-	public final void method3221(@OriginalArg(0) int arg0, @OriginalArg(1) Class4_Sub10 arg1) {
+	public final void method3221(@OriginalArg(0) int arg0, @OriginalArg(1) Buffer arg1) {
 		while (true) {
-			@Pc(15) int local15 = arg1.method4629();
+			@Pc(15) int local15 = arg1.readUnsignedByte();
 			if (local15 == 0) {
 				return;
 			}
@@ -48,34 +48,34 @@ public final class Class127 {
 	}
 
 	@OriginalMember(owner = "client!oh", name = "a", descriptor = "(IIILclient!fd;)V")
-	private void method3223(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) Class4_Sub10 arg2) {
+	private void method3223(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) Buffer arg2) {
 		if (arg0 == 1) {
-			this.anInt3869 = Static8.method71(arg2.method4618());
+			this.anInt3869 = Static8.method71(arg2.readUnsignedMedium());
 		} else if (arg0 == 2) {
-			this.anInt3877 = arg2.method4629();
+			this.anInt3877 = arg2.readUnsignedByte();
 		} else if (arg0 == 3) {
-			this.anInt3877 = arg2.method4616();
+			this.anInt3877 = arg2.readUnsignedShort();
 			if (this.anInt3877 == 65535) {
 				this.anInt3877 = -1;
 			}
 		} else if (arg0 == 5) {
 			this.aBoolean274 = false;
 		} else if (arg0 == 7) {
-			this.anInt3870 = Static8.method71(arg2.method4618());
+			this.anInt3870 = Static8.method71(arg2.readUnsignedMedium());
 		} else if (arg0 == 8) {
 			Static1.anInt549 = arg1;
 		} else if (arg0 == 9) {
-			this.anInt3876 = arg2.method4616();
+			this.anInt3876 = arg2.readUnsignedShort();
 		} else if (arg0 == 10) {
 			this.aBoolean273 = false;
 		} else if (arg0 == 11) {
-			this.anInt3868 = arg2.method4629();
+			this.anInt3868 = arg2.readUnsignedByte();
 		} else if (arg0 == 12) {
 			this.aBoolean275 = true;
 		} else if (arg0 == 13) {
-			this.anInt3874 = arg2.method4618();
+			this.anInt3874 = arg2.readUnsignedMedium();
 		} else if (arg0 == 14) {
-			this.anInt3871 = arg2.method4629();
+			this.anInt3871 = arg2.readUnsignedByte();
 		}
 	}
 }

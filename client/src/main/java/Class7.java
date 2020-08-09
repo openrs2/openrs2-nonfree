@@ -16,17 +16,17 @@ public final class Class7 {
 	private int anInt114;
 
 	@OriginalMember(owner = "client!ag", name = "<init>", descriptor = "(Lclient!fd;)V")
-	public Class7(@OriginalArg(0) Class4_Sub10 arg0) {
+	public Class7(@OriginalArg(0) Buffer arg0) {
 		for (@Pc(7) int local7 = 0; local7 < 10; local7++) {
-			@Pc(14) int local14 = arg0.method4629();
+			@Pc(14) int local14 = arg0.readUnsignedByte();
 			if (local14 != 0) {
-				arg0.anInt5709--;
+				arg0.position--;
 				this.aClass173Array1[local7] = new Class173();
 				this.aClass173Array1[local7].method4323(arg0);
 			}
 		}
-		this.anInt115 = arg0.method4616();
-		this.anInt114 = arg0.method4616();
+		this.anInt115 = arg0.readUnsignedShort();
+		this.anInt114 = arg0.readUnsignedShort();
 	}
 
 	@OriginalMember(owner = "client!ag", name = "a", descriptor = "()[B")

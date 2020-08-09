@@ -1240,27 +1240,27 @@ public final class Class53_Sub4_Sub2 extends Class53_Sub4 {
 
 	@OriginalMember(owner = "client!s", name = "s", descriptor = "()V")
 	private void method3851() {
-		if (Static6.aClass4_Sub10_9.aByteArray71.length < this.anInt4690 * 12) {
-			Static6.aClass4_Sub10_9 = new Class4_Sub10((this.anInt4690 + 100) * 12);
+		if (Static6.aClass4_Sub10_9.bytes.length < this.anInt4690 * 12) {
+			Static6.aClass4_Sub10_9 = new Buffer((this.anInt4690 + 100) * 12);
 		} else {
-			Static6.aClass4_Sub10_9.anInt5709 = 0;
+			Static6.aClass4_Sub10_9.position = 0;
 		}
 		if (Static3.aBoolean126) {
 			for (@Pc(25) int local25 = 0; local25 < this.anInt4690; local25++) {
-				Static6.aClass4_Sub10_9.method4617(this.aShortArray94[local25]);
-				Static6.aClass4_Sub10_9.method4617(this.aShortArray97[local25]);
-				Static6.aClass4_Sub10_9.method4617(this.aShortArray98[local25]);
+				Static6.aClass4_Sub10_9.writeInt(this.aShortArray94[local25]);
+				Static6.aClass4_Sub10_9.writeInt(this.aShortArray97[local25]);
+				Static6.aClass4_Sub10_9.writeInt(this.aShortArray98[local25]);
 			}
 		} else {
 			for (@Pc(55) int local55 = 0; local55 < this.anInt4690; local55++) {
-				Static6.aClass4_Sub10_9.method4599(this.aShortArray94[local55]);
-				Static6.aClass4_Sub10_9.method4599(this.aShortArray97[local55]);
-				Static6.aClass4_Sub10_9.method4599(this.aShortArray98[local55]);
+				Static6.aClass4_Sub10_9.writeIntLE(this.aShortArray94[local55]);
+				Static6.aClass4_Sub10_9.writeIntLE(this.aShortArray97[local55]);
+				Static6.aClass4_Sub10_9.writeIntLE(this.aShortArray98[local55]);
 			}
 		}
 		if (!Static3.aBoolean135) {
-			@Pc(115) ByteBuffer local115 = ByteBuffer.allocateDirect(Static6.aClass4_Sub10_9.anInt5709);
-			local115.put(Static6.aClass4_Sub10_9.aByteArray71, 0, Static6.aClass4_Sub10_9.anInt5709);
+			@Pc(115) ByteBuffer local115 = ByteBuffer.allocateDirect(Static6.aClass4_Sub10_9.position);
+			local115.put(Static6.aClass4_Sub10_9.bytes, 0, Static6.aClass4_Sub10_9.position);
 			local115.flip();
 			this.aClass57_4.aBoolean103 = true;
 			this.aClass57_4.aByteBuffer1 = local115;
@@ -1268,7 +1268,7 @@ public final class Class53_Sub4_Sub2 extends Class53_Sub4 {
 			return;
 		}
 		@Pc(88) Class111 local88 = new Class111();
-		@Pc(95) ByteBuffer local95 = ByteBuffer.wrap(Static6.aClass4_Sub10_9.aByteArray71, 0, Static6.aClass4_Sub10_9.anInt5709);
+		@Pc(95) ByteBuffer local95 = ByteBuffer.wrap(Static6.aClass4_Sub10_9.bytes, 0, Static6.aClass4_Sub10_9.position);
 		local88.method2602(local95);
 		this.aClass57_4.aBoolean103 = true;
 		this.aClass57_4.aByteBuffer1 = null;
@@ -2539,10 +2539,10 @@ public final class Class53_Sub4_Sub2 extends Class53_Sub4 {
 		if (local1 == 0) {
 			return;
 		}
-		if (Static6.aClass4_Sub10_9.aByteArray71.length < this.anInt4691 * local1) {
-			Static6.aClass4_Sub10_9 = new Class4_Sub10((this.anInt4691 + 100) * local1);
+		if (Static6.aClass4_Sub10_9.bytes.length < this.anInt4691 * local1) {
+			Static6.aClass4_Sub10_9 = new Buffer((this.anInt4691 + 100) * local1);
 		} else {
-			Static6.aClass4_Sub10_9.anInt5709 = 0;
+			Static6.aClass4_Sub10_9.position = 0;
 		}
 		if (arg1) {
 			if (Static3.aBoolean126) {
@@ -2557,10 +2557,10 @@ public final class Class53_Sub4_Sub2 extends Class53_Sub4 {
 						if (local109 == -1) {
 							break;
 						}
-						Static6.aClass4_Sub10_9.anInt5709 = local109 * local1;
-						Static6.aClass4_Sub10_9.method4617(local71);
-						Static6.aClass4_Sub10_9.method4617(local78);
-						Static6.aClass4_Sub10_9.method4617(local85);
+						Static6.aClass4_Sub10_9.position = local109 * local1;
+						Static6.aClass4_Sub10_9.writeInt(local71);
+						Static6.aClass4_Sub10_9.writeInt(local78);
+						Static6.aClass4_Sub10_9.writeInt(local85);
 					}
 				}
 			} else {
@@ -2575,10 +2575,10 @@ public final class Class53_Sub4_Sub2 extends Class53_Sub4 {
 						if (local186 == -1) {
 							break;
 						}
-						Static6.aClass4_Sub10_9.anInt5709 = local186 * local1;
-						Static6.aClass4_Sub10_9.method4599(local148);
-						Static6.aClass4_Sub10_9.method4599(local155);
-						Static6.aClass4_Sub10_9.method4599(local162);
+						Static6.aClass4_Sub10_9.position = local186 * local1;
+						Static6.aClass4_Sub10_9.writeIntLE(local148);
+						Static6.aClass4_Sub10_9.writeIntLE(local155);
+						Static6.aClass4_Sub10_9.writeIntLE(local162);
 					}
 				}
 			}
@@ -2587,12 +2587,12 @@ public final class Class53_Sub4_Sub2 extends Class53_Sub4 {
 			if (Static2.aBoolean66) {
 				for (@Pc(645) int local645 = 0; local645 < this.anInt4690; local645++) {
 					@Pc(665) int local665 = Static31.method3863(this.aShortArray92[local645], this.aShortArray91[local645], this.aShort43, this.aByteArray63[local645]);
-					Static6.aClass4_Sub10_9.anInt5709 = this.aClass57_5.anInt1744 + this.aShortArray94[local645] * local1;
-					Static6.aClass4_Sub10_9.method4617(local665);
-					Static6.aClass4_Sub10_9.anInt5709 = this.aClass57_5.anInt1744 + this.aShortArray97[local645] * local1;
-					Static6.aClass4_Sub10_9.method4617(local665);
-					Static6.aClass4_Sub10_9.anInt5709 = this.aClass57_5.anInt1744 + this.aShortArray98[local645] * local1;
-					Static6.aClass4_Sub10_9.method4617(local665);
+					Static6.aClass4_Sub10_9.position = this.aClass57_5.anInt1744 + this.aShortArray94[local645] * local1;
+					Static6.aClass4_Sub10_9.writeInt(local665);
+					Static6.aClass4_Sub10_9.position = this.aClass57_5.anInt1744 + this.aShortArray97[local645] * local1;
+					Static6.aClass4_Sub10_9.writeInt(local665);
+					Static6.aClass4_Sub10_9.position = this.aClass57_5.anInt1744 + this.aShortArray98[local645] * local1;
+					Static6.aClass4_Sub10_9.writeInt(local665);
 				}
 			} else {
 				@Pc(220) int local220 = (int) Static4.aFloatArray40[0];
@@ -2659,12 +2659,12 @@ public final class Class53_Sub4_Sub2 extends Class53_Sub4 {
 					@Pc(562) int local562 = Static31.method3863(this.aShortArray92[local261], this.aShortArray91[local261], local281, this.aByteArray63[local261]);
 					@Pc(577) int local577 = Static31.method3863(this.aShortArray92[local261], this.aShortArray91[local261], local375, this.aByteArray63[local261]);
 					@Pc(592) int local592 = Static31.method3863(this.aShortArray92[local261], this.aShortArray91[local261], local469, this.aByteArray63[local261]);
-					Static6.aClass4_Sub10_9.anInt5709 = this.aClass57_5.anInt1744 + local270 * local1;
-					Static6.aClass4_Sub10_9.method4617(local562);
-					Static6.aClass4_Sub10_9.anInt5709 = this.aClass57_5.anInt1744 + local364 * local1;
-					Static6.aClass4_Sub10_9.method4617(local577);
-					Static6.aClass4_Sub10_9.anInt5709 = this.aClass57_5.anInt1744 + local458 * local1;
-					Static6.aClass4_Sub10_9.method4617(local592);
+					Static6.aClass4_Sub10_9.position = this.aClass57_5.anInt1744 + local270 * local1;
+					Static6.aClass4_Sub10_9.writeInt(local562);
+					Static6.aClass4_Sub10_9.position = this.aClass57_5.anInt1744 + local364 * local1;
+					Static6.aClass4_Sub10_9.writeInt(local577);
+					Static6.aClass4_Sub10_9.position = this.aClass57_5.anInt1744 + local458 * local1;
+					Static6.aClass4_Sub10_9.writeInt(local592);
 				}
 				this.aShortArray95 = null;
 				this.aShortArray90 = null;
@@ -2674,63 +2674,63 @@ public final class Class53_Sub4_Sub2 extends Class53_Sub4 {
 		if (arg3) {
 			@Pc(723) float local723 = 3.0F / (float) this.aShort44;
 			@Pc(734) float local734 = 3.0F / (float) (this.aShort44 + this.aShort44 / 2);
-			Static6.aClass4_Sub10_9.anInt5709 = this.aClass57_2.anInt1744;
+			Static6.aClass4_Sub10_9.position = this.aClass57_2.anInt1744;
 			if (Static3.aBoolean126) {
 				for (@Pc(743) int local743 = 0; local743 < this.anInt4691; local743++) {
 					@Pc(752) short local752 = this.aShortArray89[local743];
 					if (local752 == 0) {
-						Static6.aClass4_Sub10_9.method4604((float) this.aShortArray95[local743] * local734);
-						Static6.aClass4_Sub10_9.method4604((float) this.aShortArray90[local743] * local734);
-						Static6.aClass4_Sub10_9.method4604((float) this.aShortArray87[local743] * local734);
+						Static6.aClass4_Sub10_9.writeFloat((float) this.aShortArray95[local743] * local734);
+						Static6.aClass4_Sub10_9.writeFloat((float) this.aShortArray90[local743] * local734);
+						Static6.aClass4_Sub10_9.writeFloat((float) this.aShortArray87[local743] * local734);
 					} else {
 						@Pc(790) float local790 = local723 / (float) local752;
-						Static6.aClass4_Sub10_9.method4604((float) this.aShortArray95[local743] * local790);
-						Static6.aClass4_Sub10_9.method4604((float) this.aShortArray90[local743] * local790);
-						Static6.aClass4_Sub10_9.method4604((float) this.aShortArray87[local743] * local790);
+						Static6.aClass4_Sub10_9.writeFloat((float) this.aShortArray95[local743] * local790);
+						Static6.aClass4_Sub10_9.writeFloat((float) this.aShortArray90[local743] * local790);
+						Static6.aClass4_Sub10_9.writeFloat((float) this.aShortArray87[local743] * local790);
 					}
-					@Pc(821) Class4_Sub10 local821 = Static6.aClass4_Sub10_9;
-					local821.anInt5709 += local1 - 12;
+					@Pc(821) Buffer local821 = Static6.aClass4_Sub10_9;
+					local821.position += local1 - 12;
 				}
 			} else {
 				for (@Pc(833) int local833 = 0; local833 < this.anInt4691; local833++) {
 					@Pc(842) short local842 = this.aShortArray89[local833];
 					if (local842 == 0) {
-						Static6.aClass4_Sub10_9.method4632((float) this.aShortArray95[local833] * local734);
-						Static6.aClass4_Sub10_9.method4632((float) this.aShortArray90[local833] * local734);
-						Static6.aClass4_Sub10_9.method4632((float) this.aShortArray87[local833] * local734);
+						Static6.aClass4_Sub10_9.writeFloatLE((float) this.aShortArray95[local833] * local734);
+						Static6.aClass4_Sub10_9.writeFloatLE((float) this.aShortArray90[local833] * local734);
+						Static6.aClass4_Sub10_9.writeFloatLE((float) this.aShortArray87[local833] * local734);
 					} else {
 						@Pc(880) float local880 = local723 / (float) local842;
-						Static6.aClass4_Sub10_9.method4632((float) this.aShortArray95[local833] * local880);
-						Static6.aClass4_Sub10_9.method4632((float) this.aShortArray90[local833] * local880);
-						Static6.aClass4_Sub10_9.method4632((float) this.aShortArray87[local833] * local880);
+						Static6.aClass4_Sub10_9.writeFloatLE((float) this.aShortArray95[local833] * local880);
+						Static6.aClass4_Sub10_9.writeFloatLE((float) this.aShortArray90[local833] * local880);
+						Static6.aClass4_Sub10_9.writeFloatLE((float) this.aShortArray87[local833] * local880);
 					}
-					@Pc(911) Class4_Sub10 local911 = Static6.aClass4_Sub10_9;
-					local911.anInt5709 += local1 - 12;
+					@Pc(911) Buffer local911 = Static6.aClass4_Sub10_9;
+					local911.position += local1 - 12;
 				}
 			}
 		}
 		if (arg4) {
-			Static6.aClass4_Sub10_9.anInt5709 = this.aClass57_3.anInt1744;
+			Static6.aClass4_Sub10_9.position = this.aClass57_3.anInt1744;
 			if (Static3.aBoolean126) {
 				for (@Pc(931) int local931 = 0; local931 < this.anInt4691; local931++) {
-					Static6.aClass4_Sub10_9.method4604(this.aFloatArray55[local931]);
-					Static6.aClass4_Sub10_9.method4604(this.aFloatArray54[local931]);
-					@Pc(950) Class4_Sub10 local950 = Static6.aClass4_Sub10_9;
-					local950.anInt5709 += local1 - 8;
+					Static6.aClass4_Sub10_9.writeFloat(this.aFloatArray55[local931]);
+					Static6.aClass4_Sub10_9.writeFloat(this.aFloatArray54[local931]);
+					@Pc(950) Buffer local950 = Static6.aClass4_Sub10_9;
+					local950.position += local1 - 8;
 				}
 			} else {
 				for (@Pc(962) int local962 = 0; local962 < this.anInt4691; local962++) {
-					Static6.aClass4_Sub10_9.method4632(this.aFloatArray55[local962]);
-					Static6.aClass4_Sub10_9.method4632(this.aFloatArray54[local962]);
-					@Pc(981) Class4_Sub10 local981 = Static6.aClass4_Sub10_9;
-					local981.anInt5709 += local1 - 8;
+					Static6.aClass4_Sub10_9.writeFloatLE(this.aFloatArray55[local962]);
+					Static6.aClass4_Sub10_9.writeFloatLE(this.aFloatArray54[local962]);
+					@Pc(981) Buffer local981 = Static6.aClass4_Sub10_9;
+					local981.position += local1 - 8;
 				}
 			}
 		}
-		Static6.aClass4_Sub10_9.anInt5709 = local1 * this.anInt4691;
+		Static6.aClass4_Sub10_9.position = local1 * this.anInt4691;
 		if (arg0) {
 			if (Static3.aBoolean129) {
-				@Pc(1007) ByteBuffer local1007 = ByteBuffer.wrap(Static6.aClass4_Sub10_9.aByteArray71, 0, Static6.aClass4_Sub10_9.anInt5709);
+				@Pc(1007) ByteBuffer local1007 = ByteBuffer.wrap(Static6.aClass4_Sub10_9.bytes, 0, Static6.aClass4_Sub10_9.position);
 				if (this.aClass111_7 == null) {
 					this.aClass111_7 = new Class111(true);
 					this.aClass111_7.method2602(local1007);
@@ -2762,12 +2762,12 @@ public final class Class53_Sub4_Sub2 extends Class53_Sub4 {
 					this.aClass57_3.anInt1745 = local1;
 				}
 			} else {
-				if (Static6.aByteBuffer15 == null || Static6.aByteBuffer15.capacity() < Static6.aClass4_Sub10_9.anInt5709) {
-					Static6.aByteBuffer15 = ByteBuffer.allocateDirect(Static6.aClass4_Sub10_9.anInt5709 + local1 * 100);
+				if (Static6.aByteBuffer15 == null || Static6.aByteBuffer15.capacity() < Static6.aClass4_Sub10_9.position) {
+					Static6.aByteBuffer15 = ByteBuffer.allocateDirect(Static6.aClass4_Sub10_9.position + local1 * 100);
 				} else {
 					Static6.aByteBuffer15.clear();
 				}
-				Static6.aByteBuffer15.put(Static6.aClass4_Sub10_9.aByteArray71, 0, Static6.aClass4_Sub10_9.anInt5709);
+				Static6.aByteBuffer15.put(Static6.aClass4_Sub10_9.bytes, 0, Static6.aClass4_Sub10_9.position);
 				Static6.aByteBuffer15.flip();
 				if (arg1) {
 					this.aClass57_1.aBoolean103 = true;
@@ -2796,7 +2796,7 @@ public final class Class53_Sub4_Sub2 extends Class53_Sub4 {
 			}
 		} else if (Static3.aBoolean135) {
 			@Pc(1211) Class111 local1211 = new Class111();
-			@Pc(1218) ByteBuffer local1218 = ByteBuffer.wrap(Static6.aClass4_Sub10_9.aByteArray71, 0, Static6.aClass4_Sub10_9.anInt5709);
+			@Pc(1218) ByteBuffer local1218 = ByteBuffer.wrap(Static6.aClass4_Sub10_9.bytes, 0, Static6.aClass4_Sub10_9.position);
 			local1211.method2602(local1218);
 			if (arg1) {
 				this.aClass57_1.aBoolean103 = true;
@@ -2823,8 +2823,8 @@ public final class Class53_Sub4_Sub2 extends Class53_Sub4 {
 				this.aClass57_3.anInt1745 = local1;
 			}
 		} else {
-			@Pc(1298) ByteBuffer local1298 = ByteBuffer.allocateDirect(Static6.aClass4_Sub10_9.anInt5709);
-			local1298.put(Static6.aClass4_Sub10_9.aByteArray71, 0, Static6.aClass4_Sub10_9.anInt5709);
+			@Pc(1298) ByteBuffer local1298 = ByteBuffer.allocateDirect(Static6.aClass4_Sub10_9.position);
+			local1298.put(Static6.aClass4_Sub10_9.bytes, 0, Static6.aClass4_Sub10_9.position);
 			local1298.flip();
 			if (arg1) {
 				this.aClass57_1.aBoolean103 = true;

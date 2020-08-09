@@ -22,9 +22,9 @@ public final class Class4_Sub3_Sub23 extends Class4_Sub3 {
 	public char[] aCharArray5;
 
 	@OriginalMember(owner = "client!wh", name = "a", descriptor = "(BLclient!fd;)V")
-	public final void method4772(@OriginalArg(1) Class4_Sub10 arg0) {
+	public final void method4772(@OriginalArg(1) Buffer arg0) {
 		while (true) {
-			@Pc(5) int local5 = arg0.method4629();
+			@Pc(5) int local5 = arg0.readUnsignedByte();
 			if (local5 == 0) {
 				return;
 			}
@@ -73,25 +73,25 @@ public final class Class4_Sub3_Sub23 extends Class4_Sub3 {
 	}
 
 	@OriginalMember(owner = "client!wh", name = "a", descriptor = "(ILclient!fd;I)V")
-	private void method4779(@OriginalArg(1) Class4_Sub10 arg0, @OriginalArg(2) int arg1) {
+	private void method4779(@OriginalArg(1) Buffer arg0, @OriginalArg(2) int arg1) {
 		if (arg1 == 1) {
-			this.aString362 = arg0.method4593();
+			this.aString362 = arg0.readString();
 		} else if (arg1 == 2) {
-			@Pc(95) int local95 = arg0.method4629();
+			@Pc(95) int local95 = arg0.readUnsignedByte();
 			this.anIntArray677 = new int[local95];
 			this.aCharArray4 = new char[local95];
 			for (@Pc(105) int local105 = 0; local105 < local95; local105++) {
-				this.anIntArray677[local105] = arg0.method4616();
-				@Pc(119) byte local119 = arg0.method4637();
+				this.anIntArray677[local105] = arg0.readUnsignedShort();
+				@Pc(119) byte local119 = arg0.readByte();
 				this.aCharArray4[local105] = local119 == 0 ? 0 : Static29.method3522(local119);
 			}
 		} else if (arg1 == 3) {
-			@Pc(39) int local39 = arg0.method4629();
+			@Pc(39) int local39 = arg0.readUnsignedByte();
 			this.aCharArray5 = new char[local39];
 			this.anIntArray676 = new int[local39];
 			for (@Pc(49) int local49 = 0; local49 < local39; local49++) {
-				this.anIntArray676[local49] = arg0.method4616();
-				@Pc(69) byte local69 = arg0.method4637();
+				this.anIntArray676[local49] = arg0.readUnsignedShort();
+				@Pc(69) byte local69 = arg0.readByte();
 				this.aCharArray5[local49] = local69 == 0 ? 0 : Static29.method3522(local69);
 			}
 		} else if (arg1 != 4) {

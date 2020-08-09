@@ -227,7 +227,7 @@ public final class Static23 {
 		@Pc(29) Class46 local29 = new Class46();
 		local29.anInt1223 = arg0;
 		if (local25 != null) {
-			local29.method1016(new Class4_Sub10(local25));
+			local29.method1016(new Buffer(local25));
 		}
 		local29.method1022();
 		Static6.aClass26_53.method510(local29, (long) arg0);

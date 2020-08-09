@@ -250,34 +250,34 @@ public final class Class20_Sub3 extends Class20 {
 		if (!arg3 && Static2.aBoolean66) {
 			arg0.glDisable(GL.GL_LIGHTING);
 		}
-		Static5.aClass4_Sub10_7.anInt5709 = 0;
+		Static5.aClass4_Sub10_7.position = 0;
 		if (Static3.aBoolean126) {
 			for (@Pc(15) int local15 = arg1 - 1; local15 >= 0; local15--) {
 				@Pc(28) int local28 = Static5.anIntArray387[local15] > 32 ? 32 : Static5.anIntArray387[local15];
 				if (local28 > 0) {
 					for (@Pc(34) int local34 = local28 - 1; local34 >= 0; local34--) {
 						@Pc(45) Class20_Sub2_Sub1 local45 = this.aClass20_Sub2_Sub1Array2[Static5.aShortArrayArray3[local15][local34]];
-						Static5.aClass4_Sub10_7.method4604((float) (local45.anInt3228 >> 12));
-						Static5.aClass4_Sub10_7.method4604((float) (local45.anInt3229 >> 12));
-						Static5.aClass4_Sub10_7.method4604((float) (local45.anInt3230 >> 12));
+						Static5.aClass4_Sub10_7.writeFloat((float) (local45.anInt3228 >> 12));
+						Static5.aClass4_Sub10_7.writeFloat((float) (local45.anInt3229 >> 12));
+						Static5.aClass4_Sub10_7.writeFloat((float) (local45.anInt3230 >> 12));
 						@Pc(72) int local72 = local45.anInt3231;
-						Static5.aClass4_Sub10_7.method4581((byte) (local72 >> 16));
-						Static5.aClass4_Sub10_7.method4581((byte) (local72 >> 8));
-						Static5.aClass4_Sub10_7.method4581((byte) local72);
-						Static5.aClass4_Sub10_7.method4581((byte) (local72 >> 24));
+						Static5.aClass4_Sub10_7.writeByte((byte) (local72 >> 16));
+						Static5.aClass4_Sub10_7.writeByte((byte) (local72 >> 8));
+						Static5.aClass4_Sub10_7.writeByte((byte) local72);
+						Static5.aClass4_Sub10_7.writeByte((byte) (local72 >> 24));
 					}
 					if (Static5.anIntArray387[local15] > 32) {
 						@Pc(113) int local113 = Static5.anIntArray387[local15] - 32 - 1;
 						for (@Pc(119) int local119 = Static5.anIntArray388[local113] - 1; local119 >= 0; local119--) {
 							@Pc(130) Class20_Sub2_Sub1 local130 = this.aClass20_Sub2_Sub1Array2[Static5.aShortArrayArray4[local113][local119]];
-							Static5.aClass4_Sub10_7.method4604((float) (local130.anInt3228 >> 12));
-							Static5.aClass4_Sub10_7.method4604((float) (local130.anInt3229 >> 12));
-							Static5.aClass4_Sub10_7.method4604((float) (local130.anInt3230 >> 12));
+							Static5.aClass4_Sub10_7.writeFloat((float) (local130.anInt3228 >> 12));
+							Static5.aClass4_Sub10_7.writeFloat((float) (local130.anInt3229 >> 12));
+							Static5.aClass4_Sub10_7.writeFloat((float) (local130.anInt3230 >> 12));
 							@Pc(157) int local157 = local130.anInt3231;
-							Static5.aClass4_Sub10_7.method4581((byte) (local157 >> 16));
-							Static5.aClass4_Sub10_7.method4581((byte) (local157 >> 8));
-							Static5.aClass4_Sub10_7.method4581((byte) local157);
-							Static5.aClass4_Sub10_7.method4581((byte) (local157 >> 24));
+							Static5.aClass4_Sub10_7.writeByte((byte) (local157 >> 16));
+							Static5.aClass4_Sub10_7.writeByte((byte) (local157 >> 8));
+							Static5.aClass4_Sub10_7.writeByte((byte) local157);
+							Static5.aClass4_Sub10_7.writeByte((byte) (local157 >> 24));
 						}
 					}
 				}
@@ -288,48 +288,48 @@ public final class Class20_Sub3 extends Class20 {
 				if (local205 > 0) {
 					for (@Pc(211) int local211 = local205 - 1; local211 >= 0; local211--) {
 						@Pc(222) Class20_Sub2_Sub1 local222 = this.aClass20_Sub2_Sub1Array2[Static5.aShortArrayArray3[local192][local211]];
-						Static5.aClass4_Sub10_7.method4632((float) (local222.anInt3228 >> 12));
-						Static5.aClass4_Sub10_7.method4632((float) (local222.anInt3229 >> 12));
-						Static5.aClass4_Sub10_7.method4632((float) (local222.anInt3230 >> 12));
+						Static5.aClass4_Sub10_7.writeFloatLE((float) (local222.anInt3228 >> 12));
+						Static5.aClass4_Sub10_7.writeFloatLE((float) (local222.anInt3229 >> 12));
+						Static5.aClass4_Sub10_7.writeFloatLE((float) (local222.anInt3230 >> 12));
 						@Pc(249) int local249 = local222.anInt3231;
-						Static5.aClass4_Sub10_7.method4581((byte) (local249 >> 16));
-						Static5.aClass4_Sub10_7.method4581((byte) (local249 >> 8));
-						Static5.aClass4_Sub10_7.method4581((byte) local249);
-						Static5.aClass4_Sub10_7.method4581((byte) (local249 >> 24));
+						Static5.aClass4_Sub10_7.writeByte((byte) (local249 >> 16));
+						Static5.aClass4_Sub10_7.writeByte((byte) (local249 >> 8));
+						Static5.aClass4_Sub10_7.writeByte((byte) local249);
+						Static5.aClass4_Sub10_7.writeByte((byte) (local249 >> 24));
 					}
 					if (Static5.anIntArray387[local192] > 32) {
 						@Pc(290) int local290 = Static5.anIntArray387[local192] - 32 - 1;
 						for (@Pc(296) int local296 = Static5.anIntArray388[local290] - 1; local296 >= 0; local296--) {
 							@Pc(307) Class20_Sub2_Sub1 local307 = this.aClass20_Sub2_Sub1Array2[Static5.aShortArrayArray4[local290][local296]];
-							Static5.aClass4_Sub10_7.method4632((float) (local307.anInt3228 >> 12));
-							Static5.aClass4_Sub10_7.method4632((float) (local307.anInt3229 >> 12));
-							Static5.aClass4_Sub10_7.method4632((float) (local307.anInt3230 >> 12));
+							Static5.aClass4_Sub10_7.writeFloatLE((float) (local307.anInt3228 >> 12));
+							Static5.aClass4_Sub10_7.writeFloatLE((float) (local307.anInt3229 >> 12));
+							Static5.aClass4_Sub10_7.writeFloatLE((float) (local307.anInt3230 >> 12));
 							@Pc(334) int local334 = local307.anInt3231;
-							Static5.aClass4_Sub10_7.method4581((byte) (local334 >> 16));
-							Static5.aClass4_Sub10_7.method4581((byte) (local334 >> 8));
-							Static5.aClass4_Sub10_7.method4581((byte) local334);
-							Static5.aClass4_Sub10_7.method4581((byte) (local334 >> 24));
+							Static5.aClass4_Sub10_7.writeByte((byte) (local334 >> 16));
+							Static5.aClass4_Sub10_7.writeByte((byte) (local334 >> 8));
+							Static5.aClass4_Sub10_7.writeByte((byte) local334);
+							Static5.aClass4_Sub10_7.writeByte((byte) (local334 >> 24));
 						}
 					}
 				}
 			}
 		}
-		if (Static5.aClass4_Sub10_7.anInt5709 != 0) {
+		if (Static5.aClass4_Sub10_7.position != 0) {
 			if (Static3.aBoolean135) {
 				arg0.glBindBufferARB(GL.GL_ARRAY_BUFFER, 0);
 			}
-			if (Static5.aByteBuffer12 == null || Static5.aByteBuffer12.capacity() < Static5.aClass4_Sub10_7.anInt5709) {
-				Static5.aByteBuffer12 = ByteBuffer.allocateDirect(Static5.aClass4_Sub10_7.anInt5709).order(ByteOrder.nativeOrder());
+			if (Static5.aByteBuffer12 == null || Static5.aByteBuffer12.capacity() < Static5.aClass4_Sub10_7.position) {
+				Static5.aByteBuffer12 = ByteBuffer.allocateDirect(Static5.aClass4_Sub10_7.position).order(ByteOrder.nativeOrder());
 			} else {
 				Static5.aByteBuffer12.clear();
 			}
-			Static5.aByteBuffer12.put(Static5.aClass4_Sub10_7.aByteArray71, 0, Static5.aClass4_Sub10_7.anInt5709);
+			Static5.aByteBuffer12.put(Static5.aClass4_Sub10_7.bytes, 0, Static5.aClass4_Sub10_7.position);
 			Static5.aByteBuffer12.flip();
 			Static5.aByteBuffer12.position(0);
 			arg0.glVertexPointer(3, GL.GL_FLOAT, 16, Static5.aByteBuffer12);
 			Static5.aByteBuffer12.position(12);
 			arg0.glColorPointer(4, GL.GL_UNSIGNED_BYTE, 16, Static5.aByteBuffer12);
-			arg0.glDrawArrays(GL.GL_POINTS, 0, Static5.aClass4_Sub10_7.anInt5709 >> 4);
+			arg0.glDrawArrays(GL.GL_POINTS, 0, Static5.aClass4_Sub10_7.position >> 4);
 		}
 		if (!arg3 && Static2.aBoolean66) {
 			arg0.glEnable(GL.GL_LIGHTING);

@@ -31,9 +31,9 @@ public final class Class131 {
 	public int anInt4068 = 128;
 
 	@OriginalMember(owner = "client!pa", name = "a", descriptor = "(Lclient!fd;II)V")
-	public final void method3326(@OriginalArg(0) Class4_Sub10 arg0, @OriginalArg(2) int arg1) {
+	public final void method3326(@OriginalArg(0) Buffer arg0, @OriginalArg(2) int arg1) {
 		while (true) {
-			@Pc(13) int local13 = arg0.method4629();
+			@Pc(13) int local13 = arg0.readUnsignedByte();
 			if (local13 == 0) {
 				return;
 			}
@@ -42,17 +42,17 @@ public final class Class131 {
 	}
 
 	@OriginalMember(owner = "client!pa", name = "a", descriptor = "(ILclient!fd;IB)V")
-	private void method3328(@OriginalArg(0) int arg0, @OriginalArg(1) Class4_Sub10 arg1, @OriginalArg(2) int arg2) {
+	private void method3328(@OriginalArg(0) int arg0, @OriginalArg(1) Buffer arg1, @OriginalArg(2) int arg2) {
 		if (arg2 == 1) {
-			this.anInt4067 = arg1.method4618();
+			this.anInt4067 = arg1.readUnsignedMedium();
 			this.method3330(this.anInt4067);
 		} else if (arg2 == 2) {
-			this.anInt4074 = arg1.method4616();
+			this.anInt4074 = arg1.readUnsignedShort();
 			if (this.anInt4074 == 65535) {
 				this.anInt4074 = -1;
 			}
 		} else if (arg2 == 3) {
-			this.anInt4068 = arg1.method4616();
+			this.anInt4068 = arg1.readUnsignedShort();
 		} else if (arg2 == 4) {
 			this.aBoolean286 = false;
 		}

@@ -279,21 +279,21 @@ public final class Class4_Sub1_Sub39 extends Class4_Sub1 {
 
 	@OriginalMember(owner = "client!vm", name = "a", descriptor = "(BLclient!fd;I)V")
 	@Override
-	public final void method4687(@OriginalArg(1) Class4_Sub10 arg0, @OriginalArg(2) int arg1) {
+	public final void method4687(@OriginalArg(1) Buffer arg0, @OriginalArg(2) int arg1) {
 		if (arg1 != 0) {
 			return;
 		}
-		@Pc(13) int local13 = arg0.method4629();
+		@Pc(13) int local13 = arg0.readUnsignedByte();
 		if (local13 != 0) {
 			this.method4549(local13);
 			return;
 		}
-		this.anIntArrayArray49 = new int[arg0.method4629()][4];
+		this.anIntArrayArray49 = new int[arg0.readUnsignedByte()][4];
 		for (@Pc(31) int local31 = 0; local31 < this.anIntArrayArray49.length; local31++) {
-			this.anIntArrayArray49[local31][0] = arg0.method4616();
-			this.anIntArrayArray49[local31][1] = arg0.method4629() << 4;
-			this.anIntArrayArray49[local31][2] = arg0.method4629() << 4;
-			this.anIntArrayArray49[local31][3] = arg0.method4629() << 4;
+			this.anIntArrayArray49[local31][0] = arg0.readUnsignedShort();
+			this.anIntArrayArray49[local31][1] = arg0.readUnsignedByte() << 4;
+			this.anIntArrayArray49[local31][2] = arg0.readUnsignedByte() << 4;
+			this.anIntArrayArray49[local31][3] = arg0.readUnsignedByte() << 4;
 		}
 	}
 

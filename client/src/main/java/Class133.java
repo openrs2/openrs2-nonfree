@@ -16,9 +16,9 @@ public final class Class133 {
 	public int anInt4119;
 
 	@OriginalMember(owner = "client!pe", name = "a", descriptor = "(IILclient!fd;)V")
-	public final void method3398(@OriginalArg(1) int arg0, @OriginalArg(2) Class4_Sub10 arg1) {
+	public final void method3398(@OriginalArg(1) int arg0, @OriginalArg(2) Buffer arg1) {
 		while (true) {
-			@Pc(5) int local5 = arg1.method4629();
+			@Pc(5) int local5 = arg1.readUnsignedByte();
 			if (local5 == 0) {
 				return;
 			}
@@ -27,12 +27,12 @@ public final class Class133 {
 	}
 
 	@OriginalMember(owner = "client!pe", name = "a", descriptor = "(BLclient!fd;II)V")
-	private void method3399(@OriginalArg(1) Class4_Sub10 arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2) {
+	private void method3399(@OriginalArg(1) Buffer arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2) {
 		if (arg1 == 1) {
-			this.anInt4116 = arg0.method4616();
+			this.anInt4116 = arg0.readUnsignedShort();
 		} else if (arg1 == 2) {
-			this.anInt4119 = arg0.method4629();
-			this.anInt4111 = arg0.method4629();
+			this.anInt4119 = arg0.readUnsignedByte();
+			this.anInt4111 = arg0.readUnsignedByte();
 		}
 	}
 

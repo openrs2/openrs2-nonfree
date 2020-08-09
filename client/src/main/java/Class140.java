@@ -82,35 +82,35 @@ public final class Class140 {
 	}
 
 	@OriginalMember(owner = "client!qa", name = "a", descriptor = "(ILclient!fd;Z)V")
-	private void method3491(@OriginalArg(0) int arg0, @OriginalArg(1) Class4_Sub10 arg1) {
+	private void method3491(@OriginalArg(0) int arg0, @OriginalArg(1) Buffer arg1) {
 		if (arg0 == 1) {
-			this.anInt4231 = arg1.method4629();
+			this.anInt4231 = arg1.readUnsignedByte();
 		} else if (arg0 == 2) {
-			@Pc(22) int local22 = arg1.method4629();
+			@Pc(22) int local22 = arg1.readUnsignedByte();
 			this.anIntArray449 = new int[local22];
 			for (@Pc(28) int local28 = 0; local28 < local22; local28++) {
-				this.anIntArray449[local28] = arg1.method4616();
+				this.anIntArray449[local28] = arg1.readUnsignedShort();
 			}
 		} else if (arg0 == 3) {
 			this.aBoolean298 = true;
 		} else if (arg0 == 40) {
-			@Pc(55) int local55 = arg1.method4629();
+			@Pc(55) int local55 = arg1.readUnsignedByte();
 			this.aShortArray76 = new short[local55];
 			this.aShortArray75 = new short[local55];
 			for (@Pc(65) int local65 = 0; local65 < local55; local65++) {
-				this.aShortArray75[local65] = (short) arg1.method4616();
-				this.aShortArray76[local65] = (short) arg1.method4616();
+				this.aShortArray75[local65] = (short) arg1.readUnsignedShort();
+				this.aShortArray76[local65] = (short) arg1.readUnsignedShort();
 			}
 		} else if (arg0 == 41) {
-			@Pc(124) int local124 = arg1.method4629();
+			@Pc(124) int local124 = arg1.readUnsignedByte();
 			this.aShortArray78 = new short[local124];
 			this.aShortArray77 = new short[local124];
 			for (@Pc(134) int local134 = 0; local134 < local124; local134++) {
-				this.aShortArray77[local134] = (short) arg1.method4616();
-				this.aShortArray78[local134] = (short) arg1.method4616();
+				this.aShortArray77[local134] = (short) arg1.readUnsignedShort();
+				this.aShortArray78[local134] = (short) arg1.readUnsignedShort();
 			}
 		} else if (arg0 >= 60 && arg0 < 70) {
-			this.anIntArray450[arg0 - 60] = arg1.method4616();
+			this.anIntArray450[arg0 - 60] = arg1.readUnsignedShort();
 		}
 	}
 
@@ -129,9 +129,9 @@ public final class Class140 {
 	}
 
 	@OriginalMember(owner = "client!qa", name = "a", descriptor = "(ZLclient!fd;)V")
-	public final void method3496(@OriginalArg(1) Class4_Sub10 arg0) {
+	public final void method3496(@OriginalArg(1) Buffer arg0) {
 		while (true) {
-			@Pc(5) int local5 = arg0.method4629();
+			@Pc(5) int local5 = arg0.readUnsignedByte();
 			if (local5 == 0) {
 				return;
 			}

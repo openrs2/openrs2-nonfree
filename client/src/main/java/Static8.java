@@ -172,24 +172,24 @@ public final class Static8 {
 				local19 = true;
 				if (arg0 == 1) {
 					Static3.aClass4_Sub10_Sub1_1.method4650(212);
-					Static3.aClass4_Sub10_Sub1_1.method4614(Static4.anIntArray317[local21]);
-					Static3.aClass4_Sub10_Sub1_1.method4611(0);
+					Static3.aClass4_Sub10_Sub1_1.writeShortA(Static4.anIntArray317[local21]);
+					Static3.aClass4_Sub10_Sub1_1.writeByteA(0);
 				} else if (arg0 == 4) {
 					Static3.aClass4_Sub10_Sub1_1.method4650(105);
-					Static3.aClass4_Sub10_Sub1_1.method4631(Static4.anIntArray317[local21]);
-					Static3.aClass4_Sub10_Sub1_1.method4581(0);
+					Static3.aClass4_Sub10_Sub1_1.writeShort(Static4.anIntArray317[local21]);
+					Static3.aClass4_Sub10_Sub1_1.writeByte(0);
 				} else if (arg0 == 5) {
 					Static3.aClass4_Sub10_Sub1_1.method4650(96);
-					Static3.aClass4_Sub10_Sub1_1.method4611(0);
-					Static3.aClass4_Sub10_Sub1_1.method4631(Static4.anIntArray317[local21]);
+					Static3.aClass4_Sub10_Sub1_1.writeByteA(0);
+					Static3.aClass4_Sub10_Sub1_1.writeShort(Static4.anIntArray317[local21]);
 				} else if (arg0 == 6) {
 					Static3.aClass4_Sub10_Sub1_1.method4650(77);
-					Static3.aClass4_Sub10_Sub1_1.method4613(Static4.anIntArray317[local21]);
-					Static3.aClass4_Sub10_Sub1_1.method4586(0);
+					Static3.aClass4_Sub10_Sub1_1.writeShortLE2(Static4.anIntArray317[local21]);
+					Static3.aClass4_Sub10_Sub1_1.writeByteS(0);
 				} else if (arg0 == 7) {
 					Static3.aClass4_Sub10_Sub1_1.method4650(52);
-					Static3.aClass4_Sub10_Sub1_1.method4631(Static4.anIntArray317[local21]);
-					Static3.aClass4_Sub10_Sub1_1.method4581(0);
+					Static3.aClass4_Sub10_Sub1_1.writeShort(Static4.anIntArray317[local21]);
+					Static3.aClass4_Sub10_Sub1_1.writeByte(0);
 				}
 				break;
 			}
@@ -282,9 +282,9 @@ public final class Static8 {
 
 	@OriginalMember(owner = "client!ab", name = "a", descriptor = "(IJ)V")
 	public static void method13(@OriginalArg(1) long arg0) {
-		Static3.aClass4_Sub10_Sub1_1.anInt5709 = 0;
-		Static3.aClass4_Sub10_Sub1_1.method4581(21);
-		Static3.aClass4_Sub10_Sub1_1.method4582(arg0);
+		Static3.aClass4_Sub10_Sub1_1.position = 0;
+		Static3.aClass4_Sub10_Sub1_1.writeByte(21);
+		Static3.aClass4_Sub10_Sub1_1.writeLong(arg0);
 		Static6.anInt5173 = -3;
 		Static2.anInt1213 = 0;
 		Static4.anInt3409 = 0;
@@ -781,7 +781,7 @@ public final class Static8 {
 		@Pc(32) Class181 local32 = new Class181();
 		local32.anInt5553 = arg0;
 		if (local28 != null) {
-			local32.method4454(new Class4_Sub10(local28));
+			local32.method4454(new Buffer(local28));
 		}
 		local32.method4466();
 		if (!Static2.aBoolean152 && local32.aBoolean375) {
@@ -834,7 +834,7 @@ public final class Static8 {
 	@OriginalMember(owner = "client!ag", name = "a", descriptor = "(Lclient!fh;II)Lclient!ag;")
 	public static Class7 method106(@OriginalArg(0) Class58 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
 		@Pc(5) byte[] local5 = arg0.method1372(arg1, arg2);
-		return local5 == null ? null : new Class7(new Class4_Sub10(local5));
+		return local5 == null ? null : new Class7(new Buffer(local5));
 	}
 
 	@OriginalMember(owner = "client!ah", name = "a", descriptor = "(ILclient!vh;ILclient!p;ILclient!f;II)V")
@@ -894,7 +894,7 @@ public final class Static8 {
 	}
 
 	@OriginalMember(owner = "client!ah", name = "a", descriptor = "(ILclient!fd;)Ljava/lang/String;")
-	public static String method110(@OriginalArg(1) Class4_Sub10 arg0) {
+	public static String method110(@OriginalArg(1) Buffer arg0) {
 		return Static29.method3537(arg0);
 	}
 

@@ -296,25 +296,25 @@ public final class Class4_Sub1_Sub1 extends Class4_Sub1 {
 
 	@OriginalMember(owner = "client!ac", name = "a", descriptor = "(BLclient!fd;I)V")
 	@Override
-	public final void method4687(@OriginalArg(1) Class4_Sub10 arg0, @OriginalArg(2) int arg1) {
+	public final void method4687(@OriginalArg(1) Buffer arg0, @OriginalArg(2) int arg1) {
 		if (arg1 == 0) {
-			this.anInt74 = arg0.method4629();
+			this.anInt74 = arg0.readUnsignedByte();
 		} else if (arg1 == 1) {
-			this.anInt84 = arg0.method4616();
+			this.anInt84 = arg0.readUnsignedShort();
 		} else if (arg1 == 2) {
-			this.anInt87 = arg0.method4616();
+			this.anInt87 = arg0.readUnsignedShort();
 		} else if (arg1 == 3) {
-			this.anInt72 = arg0.method4616();
+			this.anInt72 = arg0.readUnsignedShort();
 		} else if (arg1 == 4) {
-			this.anInt82 = arg0.method4616();
+			this.anInt82 = arg0.readUnsignedShort();
 		} else if (arg1 == 5) {
-			this.anInt81 = arg0.method4616();
+			this.anInt81 = arg0.readUnsignedShort();
 		} else if (arg1 == 6) {
-			this.anInt76 = arg0.method4629();
+			this.anInt76 = arg0.readUnsignedByte();
 		} else if (arg1 == 7) {
-			this.anInt75 = arg0.method4616();
+			this.anInt75 = arg0.readUnsignedShort();
 		} else if (arg1 == 8) {
-			this.anInt77 = arg0.method4616();
+			this.anInt77 = arg0.readUnsignedShort();
 		}
 	}
 }

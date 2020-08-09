@@ -32,26 +32,26 @@ public final class Class70 implements Interface2 {
 			this.anInt2100 = local19[0];
 			@Pc(42) int[][] local42 = Static27.method3234(0.4F);
 			@Pc(53) int[][] local53 = Static27.method3234(0.4F);
-			@Pc(58) Class4_Sub10 local58 = new Class4_Sub10(262144);
+			@Pc(58) Buffer local58 = new Buffer(262144);
 			for (@Pc(60) int local60 = 0; local60 < 256; local60++) {
 				@Pc(67) int[] local67 = local42[local60];
 				@Pc(71) int[] local71 = local53[local60];
 				for (@Pc(73) int local73 = 0; local73 < 64; local73++) {
 					if (Static3.aBoolean126) {
-						local58.method4604((float) local67[local73] / 4096.0F);
-						local58.method4604((float) local71[local73] / 4096.0F);
-						local58.method4604(1.0F);
-						local58.method4604(1.0F);
+						local58.writeFloat((float) local67[local73] / 4096.0F);
+						local58.writeFloat((float) local71[local73] / 4096.0F);
+						local58.writeFloat(1.0F);
+						local58.writeFloat(1.0F);
 					} else {
-						local58.method4632((float) local67[local73] / 4096.0F);
-						local58.method4632((float) local71[local73] / 4096.0F);
-						local58.method4632(1.0F);
-						local58.method4632(1.0F);
+						local58.writeFloatLE((float) local67[local73] / 4096.0F);
+						local58.writeFloatLE((float) local71[local73] / 4096.0F);
+						local58.writeFloatLE(1.0F);
+						local58.writeFloatLE(1.0F);
 					}
 				}
 			}
-			@Pc(141) ByteBuffer local141 = ByteBuffer.allocateDirect(local58.anInt5709).order(ByteOrder.nativeOrder());
-			local141.put(local58.aByteArray71, 0, local58.anInt5709);
+			@Pc(141) ByteBuffer local141 = ByteBuffer.allocateDirect(local58.position).order(ByteOrder.nativeOrder());
+			local141.put(local58.bytes, 0, local58.position);
 			local141.flip();
 			this.aFloatBuffer1 = local141.asFloatBuffer().asReadOnlyBuffer();
 			this.method1642();

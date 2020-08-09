@@ -53,11 +53,11 @@ public final class Class4_Sub1_Sub14 extends Class4_Sub1 {
 
 	@OriginalMember(owner = "client!km", name = "a", descriptor = "(BLclient!fd;I)V")
 	@Override
-	public final void method4687(@OriginalArg(1) Class4_Sub10 arg0, @OriginalArg(2) int arg1) {
+	public final void method4687(@OriginalArg(1) Buffer arg0, @OriginalArg(2) int arg1) {
 		if (arg1 == 0) {
-			this.aClass11Array1 = new Class11[arg0.method4629()];
+			this.aClass11Array1 = new Class11[arg0.readUnsignedByte()];
 			for (@Pc(11) int local11 = 0; local11 < this.aClass11Array1.length; local11++) {
-				@Pc(24) int local24 = arg0.method4629();
+				@Pc(24) int local24 = arg0.readUnsignedByte();
 				if (local24 == 0) {
 					this.aClass11Array1[local11] = Static32.method3922(arg0);
 				} else if (local24 == 1) {
@@ -69,7 +69,7 @@ public final class Class4_Sub1_Sub14 extends Class4_Sub1 {
 				}
 			}
 		} else if (arg1 == 1) {
-			this.aBoolean397 = arg0.method4629() == 1;
+			this.aBoolean397 = arg0.readUnsignedByte() == 1;
 		}
 	}
 

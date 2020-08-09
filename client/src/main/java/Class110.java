@@ -49,48 +49,48 @@ public final class Class110 {
 	private int anInt3132 = 0;
 
 	@OriginalMember(owner = "client!li", name = "a", descriptor = "(IILclient!fd;)V")
-	private void method2564(@OriginalArg(0) int arg0, @OriginalArg(2) Class4_Sub10 arg1) {
+	private void method2564(@OriginalArg(0) int arg0, @OriginalArg(2) Buffer arg1) {
 		if (arg0 == 1) {
-			this.anInt3136 = arg1.method4616();
+			this.anInt3136 = arg1.readUnsignedShort();
 		} else if (arg0 == 2) {
-			this.anInt3134 = arg1.method4616();
+			this.anInt3134 = arg1.readUnsignedShort();
 		} else if (arg0 == 4) {
-			this.anInt3133 = arg1.method4616();
+			this.anInt3133 = arg1.readUnsignedShort();
 		} else if (arg0 == 5) {
-			this.anInt3144 = arg1.method4616();
+			this.anInt3144 = arg1.readUnsignedShort();
 		} else if (arg0 == 6) {
-			this.anInt3137 = arg1.method4616();
+			this.anInt3137 = arg1.readUnsignedShort();
 		} else if (arg0 == 7) {
-			this.anInt3130 = arg1.method4629();
+			this.anInt3130 = arg1.readUnsignedByte();
 		} else if (arg0 == 8) {
-			this.anInt3132 = arg1.method4629();
+			this.anInt3132 = arg1.readUnsignedByte();
 		} else if (arg0 == 9) {
 			this.aBoolean221 = true;
 		} else if (arg0 == 10) {
 			this.aBoolean222 = true;
 		} else if (arg0 == 40) {
-			@Pc(93) int local93 = arg1.method4629();
+			@Pc(93) int local93 = arg1.readUnsignedByte();
 			this.aShortArray45 = new short[local93];
 			this.aShortArray49 = new short[local93];
 			for (@Pc(103) int local103 = 0; local103 < local93; local103++) {
-				this.aShortArray49[local103] = (short) arg1.method4616();
-				this.aShortArray45[local103] = (short) arg1.method4616();
+				this.aShortArray49[local103] = (short) arg1.readUnsignedShort();
+				this.aShortArray45[local103] = (short) arg1.readUnsignedShort();
 			}
 		} else if (arg0 == 41) {
-			@Pc(141) int local141 = arg1.method4629();
+			@Pc(141) int local141 = arg1.readUnsignedByte();
 			this.aShortArray47 = new short[local141];
 			this.aShortArray48 = new short[local141];
 			for (@Pc(151) int local151 = 0; local151 < local141; local151++) {
-				this.aShortArray47[local151] = (short) arg1.method4616();
-				this.aShortArray48[local151] = (short) arg1.method4616();
+				this.aShortArray47[local151] = (short) arg1.readUnsignedShort();
+				this.aShortArray48[local151] = (short) arg1.readUnsignedShort();
 			}
 		}
 	}
 
 	@OriginalMember(owner = "client!li", name = "a", descriptor = "(Lclient!fd;Z)V")
-	public final void method2568(@OriginalArg(0) Class4_Sub10 arg0) {
+	public final void method2568(@OriginalArg(0) Buffer arg0) {
 		while (true) {
-			@Pc(9) int local9 = arg0.method4629();
+			@Pc(9) int local9 = arg0.readUnsignedByte();
 			if (local9 == 0) {
 				return;
 			}

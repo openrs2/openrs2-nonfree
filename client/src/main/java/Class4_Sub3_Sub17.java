@@ -10,23 +10,23 @@ public final class Class4_Sub3_Sub17 extends Class4_Sub3 {
 	private Class84 aClass84_21;
 
 	@OriginalMember(owner = "client!ro", name = "a", descriptor = "(Lclient!fd;BI)V")
-	private void method3799(@OriginalArg(0) Class4_Sub10 arg0, @OriginalArg(2) int arg1) {
+	private void method3799(@OriginalArg(0) Buffer arg0, @OriginalArg(2) int arg1) {
 		if (arg1 != 249) {
 			return;
 		}
-		@Pc(12) int local12 = arg0.method4629();
+		@Pc(12) int local12 = arg0.readUnsignedByte();
 		if (this.aClass84_21 == null) {
 			@Pc(21) int local21 = Static24.method2595(local12);
 			this.aClass84_21 = new Class84(local21);
 		}
 		for (@Pc(29) int local29 = 0; local29 < local12; local29++) {
-			@Pc(41) boolean local41 = arg0.method4629() == 1;
-			@Pc(45) int local45 = arg0.method4618();
+			@Pc(41) boolean local41 = arg0.readUnsignedByte() == 1;
+			@Pc(45) int local45 = arg0.readUnsignedMedium();
 			@Pc(54) Node local54;
 			if (local41) {
-				local54 = new Class4_Sub26(arg0.method4593());
+				local54 = new Class4_Sub26(arg0.readString());
 			} else {
-				local54 = new Class4_Sub32(arg0.method4595());
+				local54 = new Class4_Sub32(arg0.readInt());
 			}
 			this.aClass84_21.method1840(local54, (long) local45);
 		}
@@ -43,9 +43,9 @@ public final class Class4_Sub3_Sub17 extends Class4_Sub3 {
 	}
 
 	@OriginalMember(owner = "client!ro", name = "a", descriptor = "(Lclient!fd;I)V")
-	public final void method3801(@OriginalArg(0) Class4_Sub10 arg0) {
+	public final void method3801(@OriginalArg(0) Buffer arg0) {
 		while (true) {
-			@Pc(9) int local9 = arg0.method4629();
+			@Pc(9) int local9 = arg0.readUnsignedByte();
 			if (local9 == 0) {
 				return;
 			}

@@ -323,7 +323,7 @@ public final class Static36 {
 		} catch (@Pc(21) Exception local21) {
 			@Pc(63) String local63 = "T2 - " + Static1.anInt552 + "," + Static3.anInt2273 + "," + Static2.anInt1231 + " - " + Static1.anInt1052 + "," + (Static5.anInt3983 + Static4.aClass53_Sub1_Sub1_2.anIntArray422[0]) + "," + (Static7.anInt5479 + Static4.aClass53_Sub1_Sub1_2.anIntArray426[0]) + " - ";
 			for (@Pc(65) int local65 = 0; Static1.anInt1052 > local65 && local65 < 50; local65++) {
-				local63 = local63 + Static5.aClass4_Sub10_Sub1_2.aByteArray71[local65] + ",";
+				local63 = local63 + Static5.aClass4_Sub10_Sub1_2.bytes[local65] + ",";
 			}
 			Static26.method3059(local21, local63);
 			Static19.method1818();
@@ -553,8 +553,8 @@ public final class Static36 {
 				Static3.aClass53_Sub1_Sub2Array1[local28] = null;
 			}
 		}
-		if (Static5.aClass4_Sub10_Sub1_2.anInt5709 != Static1.anInt1052) {
-			throw new RuntimeException("gnp1 pos:" + Static5.aClass4_Sub10_Sub1_2.anInt5709 + " psize:" + Static1.anInt1052);
+		if (Static5.aClass4_Sub10_Sub1_2.position != Static1.anInt1052) {
+			throw new RuntimeException("gnp1 pos:" + Static5.aClass4_Sub10_Sub1_2.position + " psize:" + Static1.anInt1052);
 		}
 		for (@Pc(87) int local87 = 0; local87 < Static6.anInt4451; local87++) {
 			if (Static3.aClass53_Sub1_Sub2Array1[Static7.anIntArray595[local87]] == null) {
@@ -881,6 +881,6 @@ public final class Static36 {
 	@OriginalMember(owner = "client!w", name = "e", descriptor = "(I)V")
 	public static void method4567() {
 		Static3.aClass4_Sub10_Sub1_1.method4650(156);
-		Static3.aClass4_Sub10_Sub1_1.method4631(Static7.anInt5426);
+		Static3.aClass4_Sub10_Sub1_1.writeShort(Static7.anInt5426);
 	}
 }

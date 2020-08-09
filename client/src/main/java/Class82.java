@@ -91,9 +91,9 @@ public final class Class82 {
 	public int anInt2291 = -1;
 
 	@OriginalMember(owner = "client!ho", name = "a", descriptor = "(Lclient!fd;I)V")
-	public final void method1806(@OriginalArg(0) Class4_Sub10 arg0) {
+	public final void method1806(@OriginalArg(0) Buffer arg0) {
 		while (true) {
-			@Pc(15) int local15 = arg0.method4629();
+			@Pc(15) int local15 = arg0.readUnsignedByte();
 			if (local15 == 0) {
 				return;
 			}
@@ -120,21 +120,21 @@ public final class Class82 {
 	}
 
 	@OriginalMember(owner = "client!ho", name = "a", descriptor = "(IILclient!fd;)V")
-	private void method1809(@OriginalArg(1) int arg0, @OriginalArg(2) Class4_Sub10 arg1) {
+	private void method1809(@OriginalArg(1) int arg0, @OriginalArg(2) Buffer arg1) {
 		if (arg0 == 1) {
-			this.anInt2277 = arg1.method4616();
+			this.anInt2277 = arg1.readUnsignedShort();
 		} else if (arg0 == 2) {
-			this.anInt2291 = arg1.method4616();
+			this.anInt2291 = arg1.readUnsignedShort();
 		} else if (arg0 == 3) {
-			this.aString131 = arg1.method4593();
+			this.aString131 = arg1.readString();
 		} else if (arg0 == 4) {
-			this.anInt2286 = arg1.method4618();
+			this.anInt2286 = arg1.readUnsignedMedium();
 		} else if (arg0 == 5) {
-			this.anInt2287 = arg1.method4618();
+			this.anInt2287 = arg1.readUnsignedMedium();
 		} else if (arg0 == 6) {
-			this.anInt2270 = arg1.method4629();
+			this.anInt2270 = arg1.readUnsignedByte();
 		} else if (arg0 == 7) {
-			@Pc(301) int local301 = arg1.method4629();
+			@Pc(301) int local301 = arg1.readUnsignedByte();
 			if ((local301 & 0x2) == 2) {
 				this.aBoolean155 = true;
 			}
@@ -142,51 +142,51 @@ public final class Class82 {
 				this.aBoolean154 = false;
 			}
 		} else if (arg0 == 8) {
-			this.aBoolean156 = arg1.method4629() == 1;
+			this.aBoolean156 = arg1.readUnsignedByte() == 1;
 		} else if (arg0 == 9) {
-			this.anInt2282 = arg1.method4616();
+			this.anInt2282 = arg1.readUnsignedShort();
 			if (this.anInt2282 == 65535) {
 				this.anInt2282 = -1;
 			}
-			this.anInt2294 = arg1.method4616();
+			this.anInt2294 = arg1.readUnsignedShort();
 			if (this.anInt2294 == 65535) {
 				this.anInt2294 = -1;
 			}
-			this.anInt2276 = arg1.method4595();
-			this.anInt2275 = arg1.method4595();
+			this.anInt2276 = arg1.readInt();
+			this.anInt2275 = arg1.readInt();
 		} else if (arg0 >= 10 && arg0 <= 14) {
-			this.aStringArray15[arg0 - 10] = arg1.method4593();
+			this.aStringArray15[arg0 - 10] = arg1.readString();
 		} else if (arg0 == 15) {
-			@Pc(262) int local262 = arg1.method4629();
+			@Pc(262) int local262 = arg1.readUnsignedByte();
 			this.anIntArray188 = new int[local262 * 2];
 			for (@Pc(270) int local270 = 0; local270 < local262 * 2; local270++) {
-				this.anIntArray188[local270] = arg1.method4576();
+				this.anIntArray188[local270] = arg1.readShort();
 			}
-			this.anInt2266 = arg1.method4595();
-			this.anInt2283 = arg1.method4595();
+			this.anInt2266 = arg1.readInt();
+			this.anInt2283 = arg1.readInt();
 		} else if (arg0 == 16) {
 			this.aBoolean157 = false;
 		} else if (arg0 == 17) {
-			this.aString130 = arg1.method4593();
+			this.aString130 = arg1.readString();
 		} else if (arg0 == 18) {
-			this.anInt2279 = arg1.method4616();
+			this.anInt2279 = arg1.readUnsignedShort();
 		} else if (arg0 == 19) {
-			this.anInt2284 = arg1.method4616();
+			this.anInt2284 = arg1.readUnsignedShort();
 		} else if (arg0 == 20) {
-			this.anInt2267 = arg1.method4616();
+			this.anInt2267 = arg1.readUnsignedShort();
 			if (this.anInt2267 == 65535) {
 				this.anInt2267 = -1;
 			}
-			this.anInt2271 = arg1.method4616();
+			this.anInt2271 = arg1.readUnsignedShort();
 			if (this.anInt2271 == 65535) {
 				this.anInt2271 = -1;
 			}
-			this.anInt2285 = arg1.method4595();
-			this.anInt2265 = arg1.method4595();
+			this.anInt2285 = arg1.readInt();
+			this.anInt2265 = arg1.readInt();
 		} else if (arg0 == 21) {
-			this.anInt2280 = arg1.method4595();
+			this.anInt2280 = arg1.readInt();
 		} else if (arg0 == 22) {
-			this.anInt2274 = arg1.method4595();
+			this.anInt2274 = arg1.readInt();
 		}
 	}
 

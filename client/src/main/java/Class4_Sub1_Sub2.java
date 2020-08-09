@@ -82,17 +82,17 @@ public final class Class4_Sub1_Sub2 extends Class4_Sub1 {
 
 	@OriginalMember(owner = "client!bl", name = "a", descriptor = "(BLclient!fd;I)V")
 	@Override
-	public final void method4687(@OriginalArg(1) Class4_Sub10 arg0, @OriginalArg(2) int arg1) {
+	public final void method4687(@OriginalArg(1) Buffer arg0, @OriginalArg(2) int arg1) {
 		if (arg1 == 0) {
-			this.anInt371 = arg0.method4616();
+			this.anInt371 = arg0.readUnsignedShort();
 		} else if (arg1 == 1) {
-			this.anInt378 = arg0.method4616();
+			this.anInt378 = arg0.readUnsignedShort();
 		} else if (arg1 == 2) {
-			this.anInt373 = arg0.method4616();
+			this.anInt373 = arg0.readUnsignedShort();
 		} else if (arg1 == 3) {
-			this.anInt374 = arg0.method4616();
+			this.anInt374 = arg0.readUnsignedShort();
 		} else if (arg1 == 4) {
-			@Pc(55) int local55 = arg0.method4618();
+			@Pc(55) int local55 = arg0.readUnsignedMedium();
 			this.anIntArray40[0] = (local55 & 0xFF0000) << 4;
 			this.anIntArray40[2] = local55 >> 12 & 0x0;
 			this.anIntArray40[1] = local55 >> 4 & 0xFF0;

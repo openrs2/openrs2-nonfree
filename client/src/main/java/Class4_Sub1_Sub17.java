@@ -83,13 +83,13 @@ public final class Class4_Sub1_Sub17 extends Class4_Sub1 {
 
 	@OriginalMember(owner = "client!lj", name = "a", descriptor = "(BLclient!fd;I)V")
 	@Override
-	public final void method4687(@OriginalArg(1) Class4_Sub10 arg0, @OriginalArg(2) int arg1) {
+	public final void method4687(@OriginalArg(1) Buffer arg0, @OriginalArg(2) int arg1) {
 		if (arg1 == 0) {
-			this.anInt3185 = arg0.method4576();
+			this.anInt3185 = arg0.readShort();
 		} else if (arg1 == 1) {
-			this.anInt3189 = (arg0.method4637() << 12) / 100;
+			this.anInt3189 = (arg0.readByte() << 12) / 100;
 		} else if (arg1 == 2) {
-			this.anInt3176 = (arg0.method4637() << 12) / 100;
+			this.anInt3176 = (arg0.readByte() << 12) / 100;
 		}
 	}
 

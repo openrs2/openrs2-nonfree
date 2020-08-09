@@ -635,9 +635,9 @@ public final class Static24 {
 	}
 
 	@OriginalMember(owner = "client!me", name = "a", descriptor = "(ILclient!fd;)Lclient!cd;")
-	public static Class27 method2701(@OriginalArg(1) Class4_Sub10 arg0) {
+	public static Class27 method2701(@OriginalArg(1) Buffer arg0) {
 		@Pc(7) Class27 local7 = new Class27();
-		local7.anInt540 = arg0.method4616();
+		local7.anInt540 = arg0.readUnsignedShort();
 		local7.aClass4_Sub3_Sub11_1 = Static26.method2991(local7.anInt540);
 		return local7;
 	}

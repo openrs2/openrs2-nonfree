@@ -489,7 +489,7 @@ public final class Static6 {
 	public static int[] anIntArray492 = new int[2];
 
 	@OriginalMember(owner = "client!rk", name = "w", descriptor = "[Lclient!fd;")
-	public static final Class4_Sub10[] aClass4_Sub10Array1 = new Class4_Sub10[2048];
+	public static final Buffer[] aClass4_Sub10Array1 = new Buffer[2048];
 
 	@OriginalMember(owner = "client!rl", name = "r", descriptor = "I")
 	public static int anInt4617 = 0;
@@ -519,7 +519,7 @@ public final class Static6 {
 	public static int anInt4679 = -1;
 
 	@OriginalMember(owner = "client!s", name = "Q", descriptor = "Lclient!fd;")
-	public static Class4_Sub10 aClass4_Sub10_9 = new Class4_Sub10(10000);
+	public static Buffer aClass4_Sub10_9 = new Buffer(10000);
 
 	@OriginalMember(owner = "client!s", name = "eb", descriptor = "Lclient!s;")
 	public static Class53_Sub4_Sub2 aClass53_Sub4_Sub2_1 = new Class53_Sub4_Sub2();

@@ -16,9 +16,9 @@ public final class Class4_Sub3_Sub12 extends Class4_Sub3 {
 	private char aChar3;
 
 	@OriginalMember(owner = "client!jc", name = "a", descriptor = "(Lclient!fd;I)V")
-	public final void method1992(@OriginalArg(0) Class4_Sub10 arg0) {
+	public final void method1992(@OriginalArg(0) Buffer arg0) {
 		while (true) {
-			@Pc(9) int local9 = arg0.method4629();
+			@Pc(9) int local9 = arg0.readUnsignedByte();
 			if (local9 == 0) {
 				return;
 			}
@@ -32,13 +32,13 @@ public final class Class4_Sub3_Sub12 extends Class4_Sub3 {
 	}
 
 	@OriginalMember(owner = "client!jc", name = "a", descriptor = "(Lclient!fd;IZ)V")
-	private void method1999(@OriginalArg(0) Class4_Sub10 arg0, @OriginalArg(1) int arg1) {
+	private void method1999(@OriginalArg(0) Buffer arg0, @OriginalArg(1) int arg1) {
 		if (arg1 == 1) {
-			this.aChar3 = Static29.method3522(arg0.method4637());
+			this.aChar3 = Static29.method3522(arg0.readByte());
 		} else if (arg1 == 2) {
-			this.anInt2546 = arg0.method4595();
+			this.anInt2546 = arg0.readInt();
 		} else if (arg1 == 5) {
-			this.aString153 = arg0.method4593();
+			this.aString153 = arg0.readString();
 		}
 	}
 }

@@ -16,11 +16,11 @@ public final class Class143 {
 	public boolean aBoolean303 = false;
 
 	@OriginalMember(owner = "client!qg", name = "a", descriptor = "(ILclient!fd;II)V")
-	private void method3552(@OriginalArg(1) Class4_Sub10 arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2) {
+	private void method3552(@OriginalArg(1) Buffer arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2) {
 		if (arg2 == 1) {
-			this.anInt4312 = arg0.method4616();
+			this.anInt4312 = arg0.readUnsignedShort();
 		} else if (arg2 == 2) {
-			this.anInt4306 = arg0.method4618();
+			this.anInt4306 = arg0.readUnsignedMedium();
 		} else if (arg2 == 3) {
 			this.aBoolean303 = true;
 		} else if (arg2 == 4) {
@@ -29,9 +29,9 @@ public final class Class143 {
 	}
 
 	@OriginalMember(owner = "client!qg", name = "a", descriptor = "(IZLclient!fd;)V")
-	public final void method3556(@OriginalArg(0) int arg0, @OriginalArg(2) Class4_Sub10 arg1) {
+	public final void method3556(@OriginalArg(0) int arg0, @OriginalArg(2) Buffer arg1) {
 		while (true) {
-			@Pc(9) int local9 = arg1.method4629();
+			@Pc(9) int local9 = arg1.readUnsignedByte();
 			if (local9 == 0) {
 				return;
 			}

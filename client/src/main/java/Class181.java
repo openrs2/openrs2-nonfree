@@ -444,9 +444,9 @@ public final class Class181 {
 	}
 
 	@OriginalMember(owner = "client!vh", name = "a", descriptor = "(ILclient!fd;)V")
-	public final void method4454(@OriginalArg(1) Class4_Sub10 arg0) {
+	public final void method4454(@OriginalArg(1) Buffer arg0) {
 		while (true) {
-			@Pc(9) int local9 = arg0.method4629();
+			@Pc(9) int local9 = arg0.readUnsignedByte();
 			if (local9 == 0) {
 				return;
 			}
@@ -686,47 +686,47 @@ public final class Class181 {
 	}
 
 	@OriginalMember(owner = "client!vh", name = "a", descriptor = "(IILclient!fd;)V")
-	private void method4461(@OriginalArg(0) int arg0, @OriginalArg(2) Class4_Sub10 arg1) {
+	private void method4461(@OriginalArg(0) int arg0, @OriginalArg(2) Buffer arg1) {
 		if (arg0 == 1) {
-			@Pc(1037) int local1037 = arg1.method4629();
+			@Pc(1037) int local1037 = arg1.readUnsignedByte();
 			if (local1037 > 0) {
 				if (this.anIntArray630 == null || Static6.aBoolean313) {
 					this.anIntArray630 = new int[local1037];
 					this.anIntArray627 = new int[local1037];
 					for (@Pc(1067) int local1067 = 0; local1067 < local1037; local1067++) {
-						this.anIntArray630[local1067] = arg1.method4616();
-						this.anIntArray627[local1067] = arg1.method4629();
+						this.anIntArray630[local1067] = arg1.readUnsignedShort();
+						this.anIntArray627[local1067] = arg1.readUnsignedByte();
 					}
 				} else {
-					arg1.anInt5709 += local1037 * 3;
+					arg1.position += local1037 * 3;
 				}
 			}
 		} else if (arg0 == 2) {
-			this.aString332 = arg1.method4593();
+			this.aString332 = arg1.readString();
 		} else if (arg0 == 5) {
-			@Pc(989) int local989 = arg1.method4629();
+			@Pc(989) int local989 = arg1.readUnsignedByte();
 			if (local989 > 0) {
 				if (this.anIntArray630 == null || Static6.aBoolean313) {
 					this.anIntArray627 = null;
 					this.anIntArray630 = new int[local989];
 					for (@Pc(1008) int local1008 = 0; local1008 < local989; local1008++) {
-						this.anIntArray630[local1008] = arg1.method4616();
+						this.anIntArray630[local1008] = arg1.readUnsignedShort();
 					}
 				} else {
-					arg1.anInt5709 += local989 * 2;
+					arg1.position += local989 * 2;
 				}
 			}
 		} else if (arg0 == 14) {
-			this.anInt5527 = arg1.method4629();
+			this.anInt5527 = arg1.readUnsignedByte();
 		} else if (arg0 == 15) {
-			this.anInt5516 = arg1.method4629();
+			this.anInt5516 = arg1.readUnsignedByte();
 		} else if (arg0 == 17) {
 			this.anInt5509 = 0;
 			this.aBoolean374 = false;
 		} else if (arg0 == 18) {
 			this.aBoolean374 = false;
 		} else if (arg0 == 19) {
-			this.anInt5522 = arg1.method4629();
+			this.anInt5522 = arg1.readUnsignedByte();
 		} else if (arg0 == 21) {
 			this.aByte23 = 1;
 		} else if (arg0 == 22) {
@@ -734,109 +734,109 @@ public final class Class181 {
 		} else if (arg0 == 23) {
 			this.anInt5544 = 1;
 		} else if (arg0 == 24) {
-			this.anInt5523 = arg1.method4616();
+			this.anInt5523 = arg1.readUnsignedShort();
 			if (this.anInt5523 == 65535) {
 				this.anInt5523 = -1;
 			}
 		} else if (arg0 == 27) {
 			this.anInt5509 = 1;
 		} else if (arg0 == 28) {
-			this.anInt5507 = arg1.method4629();
+			this.anInt5507 = arg1.readUnsignedByte();
 		} else if (arg0 == 29) {
-			this.anInt5529 = arg1.method4637();
+			this.anInt5529 = arg1.readByte();
 		} else if (arg0 == 39) {
-			this.anInt5512 = arg1.method4637() * 5;
+			this.anInt5512 = arg1.readByte() * 5;
 		} else if (arg0 >= 30 && arg0 < 35) {
-			this.aStringArray39[arg0 - 30] = arg1.method4593();
+			this.aStringArray39[arg0 - 30] = arg1.readString();
 			if (this.aStringArray39[arg0 - 30].equalsIgnoreCase(Static4.aString185)) {
 				this.aStringArray39[arg0 - 30] = null;
 			}
 		} else if (arg0 == 40) {
-			@Pc(913) int local913 = arg1.method4629();
+			@Pc(913) int local913 = arg1.readUnsignedByte();
 			this.aShortArray119 = new short[local913];
 			this.aShortArray116 = new short[local913];
 			for (@Pc(923) int local923 = 0; local923 < local913; local923++) {
-				this.aShortArray119[local923] = (short) arg1.method4616();
-				this.aShortArray116[local923] = (short) arg1.method4616();
+				this.aShortArray119[local923] = (short) arg1.readUnsignedShort();
+				this.aShortArray116[local923] = (short) arg1.readUnsignedShort();
 			}
 		} else if (arg0 == 41) {
-			@Pc(875) int local875 = arg1.method4629();
+			@Pc(875) int local875 = arg1.readUnsignedByte();
 			this.aShortArray117 = new short[local875];
 			this.aShortArray118 = new short[local875];
 			for (@Pc(885) int local885 = 0; local885 < local875; local885++) {
-				this.aShortArray118[local885] = (short) arg1.method4616();
-				this.aShortArray117[local885] = (short) arg1.method4616();
+				this.aShortArray118[local885] = (short) arg1.readUnsignedShort();
+				this.aShortArray117[local885] = (short) arg1.readUnsignedShort();
 			}
 		} else if (arg0 == 42) {
-			@Pc(188) int local188 = arg1.method4629();
+			@Pc(188) int local188 = arg1.readUnsignedByte();
 			this.aByteArray70 = new byte[local188];
 			for (@Pc(194) int local194 = 0; local194 < local188; local194++) {
-				this.aByteArray70[local194] = arg1.method4637();
+				this.aByteArray70[local194] = arg1.readByte();
 			}
 		} else if (arg0 == 62) {
 			this.aBoolean381 = true;
 		} else if (arg0 == 64) {
 			this.aBoolean377 = false;
 		} else if (arg0 == 65) {
-			this.anInt5537 = arg1.method4616();
+			this.anInt5537 = arg1.readUnsignedShort();
 		} else if (arg0 == 66) {
-			this.anInt5552 = arg1.method4616();
+			this.anInt5552 = arg1.readUnsignedShort();
 		} else if (arg0 == 67) {
-			this.anInt5548 = arg1.method4616();
+			this.anInt5548 = arg1.readUnsignedShort();
 		} else if (arg0 == 69) {
-			this.anInt5538 = arg1.method4629();
+			this.anInt5538 = arg1.readUnsignedByte();
 		} else if (arg0 == 70) {
-			this.anInt5524 = arg1.method4576();
+			this.anInt5524 = arg1.readShort();
 		} else if (arg0 == 71) {
-			this.anInt5536 = arg1.method4576();
+			this.anInt5536 = arg1.readShort();
 		} else if (arg0 == 72) {
-			this.anInt5541 = arg1.method4576();
+			this.anInt5541 = arg1.readShort();
 		} else if (arg0 == 73) {
 			this.aBoolean376 = true;
 		} else if (arg0 == 74) {
 			this.aBoolean385 = true;
 		} else if (arg0 == 75) {
-			this.anInt5517 = arg1.method4629();
+			this.anInt5517 = arg1.readUnsignedByte();
 		} else if (arg0 == 77 || arg0 == 92) {
 			@Pc(732) int local732 = -1;
-			this.anInt5535 = arg1.method4616();
+			this.anInt5535 = arg1.readUnsignedShort();
 			if (this.anInt5535 == 65535) {
 				this.anInt5535 = -1;
 			}
-			this.anInt5531 = arg1.method4616();
+			this.anInt5531 = arg1.readUnsignedShort();
 			if (this.anInt5531 == 65535) {
 				this.anInt5531 = -1;
 			}
 			if (arg0 == 92) {
-				local732 = arg1.method4616();
+				local732 = arg1.readUnsignedShort();
 				if (local732 == 65535) {
 					local732 = -1;
 				}
 			}
-			@Pc(778) int local778 = arg1.method4629();
+			@Pc(778) int local778 = arg1.readUnsignedByte();
 			this.anIntArray631 = new int[local778 + 2];
 			for (@Pc(786) int local786 = 0; local786 <= local778; local786++) {
-				this.anIntArray631[local786] = arg1.method4616();
+				this.anIntArray631[local786] = arg1.readUnsignedShort();
 				if (this.anIntArray631[local786] == 65535) {
 					this.anIntArray631[local786] = -1;
 				}
 			}
 			this.anIntArray631[local778 + 1] = local732;
 		} else if (arg0 == 78) {
-			this.anInt5521 = arg1.method4616();
-			this.anInt5519 = arg1.method4629();
+			this.anInt5521 = arg1.readUnsignedShort();
+			this.anInt5519 = arg1.readUnsignedByte();
 		} else if (arg0 == 79) {
-			this.anInt5555 = arg1.method4616();
-			this.anInt5530 = arg1.method4616();
-			this.anInt5519 = arg1.method4629();
-			@Pc(323) int local323 = arg1.method4629();
+			this.anInt5555 = arg1.readUnsignedShort();
+			this.anInt5530 = arg1.readUnsignedShort();
+			this.anInt5519 = arg1.readUnsignedByte();
+			@Pc(323) int local323 = arg1.readUnsignedByte();
 			this.anIntArray632 = new int[local323];
 			for (@Pc(329) int local329 = 0; local329 < local323; local329++) {
-				this.anIntArray632[local329] = arg1.method4616();
+				this.anIntArray632[local329] = arg1.readUnsignedShort();
 			}
 		} else if (arg0 == 81) {
 			this.aByte23 = 2;
-			this.aShort48 = (short) (arg1.method4629() * 256);
+			this.aShort48 = (short) (arg1.readUnsignedByte() * 256);
 		} else if (arg0 == 82) {
 			this.aBoolean383 = true;
 		} else if (arg0 == 88) {
@@ -849,7 +849,7 @@ public final class Class181 {
 			this.aBoolean375 = true;
 		} else if (arg0 == 93) {
 			this.aByte23 = 3;
-			this.aShort48 = (short) arg1.method4616();
+			this.aShort48 = (short) arg1.readUnsignedShort();
 		} else if (arg0 == 94) {
 			this.aByte23 = 4;
 		} else if (arg0 == 95) {
@@ -861,52 +861,52 @@ public final class Class181 {
 		} else if (arg0 == 98) {
 			this.aBoolean379 = true;
 		} else if (arg0 == 99) {
-			this.anInt5513 = arg1.method4629();
-			this.anInt5551 = arg1.method4616();
+			this.anInt5513 = arg1.readUnsignedByte();
+			this.anInt5551 = arg1.readUnsignedShort();
 		} else if (arg0 == 100) {
-			this.anInt5533 = arg1.method4629();
-			this.anInt5528 = arg1.method4616();
+			this.anInt5533 = arg1.readUnsignedByte();
+			this.anInt5528 = arg1.readUnsignedShort();
 		} else if (arg0 == 101) {
-			this.anInt5546 = arg1.method4629();
+			this.anInt5546 = arg1.readUnsignedByte();
 		} else if (arg0 == 102) {
-			this.anInt5515 = arg1.method4616();
+			this.anInt5515 = arg1.readUnsignedShort();
 		} else if (arg0 == 103) {
 			this.anInt5544 = 0;
 		} else if (arg0 == 104) {
-			this.anInt5525 = arg1.method4629();
+			this.anInt5525 = arg1.readUnsignedByte();
 		} else if (arg0 == 105) {
 			this.aBoolean382 = true;
 		} else if (arg0 == 106) {
-			@Pc(501) int local501 = arg1.method4629();
+			@Pc(501) int local501 = arg1.readUnsignedByte();
 			this.anIntArray628 = new int[local501];
 			this.anIntArray633 = new int[local501];
 			for (@Pc(511) int local511 = 0; local511 < local501; local511++) {
-				this.anIntArray633[local511] = arg1.method4616();
-				@Pc(525) int local525 = arg1.method4629();
+				this.anIntArray633[local511] = arg1.readUnsignedShort();
+				@Pc(525) int local525 = arg1.readUnsignedByte();
 				this.anIntArray628[local511] = local525;
 				this.anInt5505 += local525;
 			}
 		} else if (arg0 == 107) {
-			this.anInt5526 = arg1.method4616();
+			this.anInt5526 = arg1.readUnsignedShort();
 		} else if (arg0 >= 150 && arg0 < 155) {
-			this.aStringArray39[arg0 - 150] = arg1.method4593();
+			this.aStringArray39[arg0 - 150] = arg1.readString();
 			if (!Static2.aBoolean152 || this.aStringArray39[arg0 - 150].equalsIgnoreCase(Static4.aString185)) {
 				this.aStringArray39[arg0 - 150] = null;
 			}
 		} else if (arg0 == 249) {
-			@Pc(600) int local600 = arg1.method4629();
+			@Pc(600) int local600 = arg1.readUnsignedByte();
 			if (this.aClass84_26 == null) {
 				@Pc(608) int local608 = Static24.method2595(local600);
 				this.aClass84_26 = new Class84(local608);
 			}
 			for (@Pc(616) int local616 = 0; local616 < local600; local616++) {
-				@Pc(628) boolean local628 = arg1.method4629() == 1;
-				@Pc(632) int local632 = arg1.method4618();
+				@Pc(628) boolean local628 = arg1.readUnsignedByte() == 1;
+				@Pc(632) int local632 = arg1.readUnsignedMedium();
 				@Pc(641) Node local641;
 				if (local628) {
-					local641 = new Class4_Sub26(arg1.method4593());
+					local641 = new Class4_Sub26(arg1.readString());
 				} else {
-					local641 = new Class4_Sub32(arg1.method4595());
+					local641 = new Class4_Sub32(arg1.readInt());
 				}
 				this.aClass84_26.method1840(local641, (long) local632);
 			}

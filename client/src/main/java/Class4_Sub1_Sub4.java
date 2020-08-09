@@ -19,13 +19,13 @@ public final class Class4_Sub1_Sub4 extends Class4_Sub1 {
 
 	@OriginalMember(owner = "client!cf", name = "a", descriptor = "(BLclient!fd;I)V")
 	@Override
-	public final void method4687(@OriginalArg(1) Class4_Sub10 arg0, @OriginalArg(2) int arg1) {
+	public final void method4687(@OriginalArg(1) Buffer arg0, @OriginalArg(2) int arg1) {
 		if (arg1 == 0) {
-			this.anInt581 = arg0.method4616();
+			this.anInt581 = arg0.readUnsignedShort();
 		} else if (arg1 == 1) {
-			this.anInt588 = arg0.method4616();
+			this.anInt588 = arg0.readUnsignedShort();
 		} else if (arg1 == 2) {
-			this.aBoolean397 = arg0.method4629() == 1;
+			this.aBoolean397 = arg0.readUnsignedByte() == 1;
 		}
 	}
 

@@ -96,7 +96,7 @@ public final class Class24_Sub1 extends Class24 implements Interface4 {
 		if (local28 == null) {
 			return null;
 		} else {
-			@Pc(40) Class4_Sub3_Sub18 local40 = new Class4_Sub3_Sub18(new Class4_Sub10(local28));
+			@Pc(40) Class4_Sub3_Sub18 local40 = new Class4_Sub3_Sub18(new Buffer(local28));
 			this.aClass40_4.method888((long) arg0, local40);
 			return local40;
 		}

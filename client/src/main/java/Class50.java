@@ -67,25 +67,25 @@ public final class Class50 {
 	public boolean aBoolean80 = false;
 
 	@OriginalMember(owner = "client!em", name = "<init>", descriptor = "(Lclient!fd;)V")
-	public Class50(@OriginalArg(0) Class4_Sub10 arg0) {
+	public Class50(@OriginalArg(0) Buffer arg0) {
 		if (Static2.anIntArray97 == null) {
 			Static35.method4363();
 		}
-		this.anInt1326 = arg0.method4629();
+		this.anInt1326 = arg0.readUnsignedByte();
 		this.aBoolean78 = (this.anInt1326 & 0x10) != 0;
 		this.aBoolean79 = (this.anInt1326 & 0x8) != 0;
 		this.anInt1326 &= 7;
-		this.anInt1338 = arg0.method4616();
-		this.anInt1320 = arg0.method4616();
-		this.anInt1322 = arg0.method4616();
-		this.anInt1318 = arg0.method4629();
+		this.anInt1338 = arg0.readUnsignedShort();
+		this.anInt1320 = arg0.readUnsignedShort();
+		this.anInt1322 = arg0.readUnsignedShort();
+		this.anInt1318 = arg0.readUnsignedByte();
 		this.method1075();
 		this.aShortArray28 = new short[this.anInt1318 * 2 + 1];
 		for (@Pc(81) int local81 = 0; local81 < this.aShortArray28.length; local81++) {
-			this.aShortArray28[local81] = (short) arg0.method4616();
+			this.aShortArray28[local81] = (short) arg0.readUnsignedShort();
 		}
-		this.anInt1321 = Static4.anIntArray295[arg0.method4616()];
-		@Pc(108) int local108 = arg0.method4629();
+		this.anInt1321 = Static4.anIntArray295[arg0.readUnsignedShort()];
+		@Pc(108) int local108 = arg0.readUnsignedByte();
 		this.anInt1323 = local108 & 0x1F;
 		this.anInt1332 = (local108 & 0xE0) << 3;
 		if (this.anInt1323 != 31) {

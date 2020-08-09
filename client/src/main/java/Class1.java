@@ -39,20 +39,20 @@ public final class Class1 {
 	@OriginalMember(owner = "client!a", name = "<init>", descriptor = "([BLclient!af;)V")
 	public Class1(@OriginalArg(0) byte[] arg0, @OriginalArg(1) Class4_Sub2 arg1) {
 		this.aClass4_Sub2_1 = arg1;
-		@Pc(21) Class4_Sub10 local21 = new Class4_Sub10(arg0);
-		@Pc(26) Class4_Sub10 local26 = new Class4_Sub10(arg0);
-		local21.anInt5709 = 2;
-		@Pc(33) int local33 = local21.method4629();
+		@Pc(21) Buffer local21 = new Buffer(arg0);
+		@Pc(26) Buffer local26 = new Buffer(arg0);
+		local21.position = 2;
+		@Pc(33) int local33 = local21.readUnsignedByte();
 		@Pc(35) int local35 = 0;
 		@Pc(37) int local37 = -1;
 		@Pc(39) int local39 = -1;
-		local26.anInt5709 = local21.anInt5709 + local33;
+		local26.position = local21.position + local33;
 		for (@Pc(47) int local47 = 0; local47 < local33; local47++) {
 			@Pc(56) int local56 = this.aClass4_Sub2_1.anIntArray11[local47];
 			if (local56 == 0) {
 				local37 = local47;
 			}
-			@Pc(64) int local64 = local21.method4629();
+			@Pc(64) int local64 = local21.readUnsignedByte();
 			if (local64 > 0) {
 				if (local56 == 0) {
 					local39 = local47;
@@ -65,17 +65,17 @@ public final class Class1 {
 				if ((local64 & 0x1) == 0) {
 					Static1.aShortArray8[local35] = local77;
 				} else {
-					Static1.aShortArray8[local35] = (short) local26.method4597();
+					Static1.aShortArray8[local35] = (short) local26.readSmart();
 				}
 				if ((local64 & 0x2) == 0) {
 					Static1.aShortArray2[local35] = local77;
 				} else {
-					Static1.aShortArray2[local35] = (short) local26.method4597();
+					Static1.aShortArray2[local35] = (short) local26.readSmart();
 				}
 				if ((local64 & 0x4) == 0) {
 					Static1.aShortArray6[local35] = local77;
 				} else {
-					Static1.aShortArray6[local35] = (short) local26.method4597();
+					Static1.aShortArray6[local35] = (short) local26.readSmart();
 				}
 				Static1.aByteArray2[local35] = (byte) (local64 >>> 3 & 0x3);
 				if (local56 == 2) {
@@ -97,7 +97,7 @@ public final class Class1 {
 				local35++;
 			}
 		}
-		if (local26.anInt5709 != arg0.length) {
+		if (local26.position != arg0.length) {
 			throw new RuntimeException();
 		}
 		this.anInt1 = local35;

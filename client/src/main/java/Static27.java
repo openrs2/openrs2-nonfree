@@ -649,8 +649,8 @@ public final class Static27 {
 			}
 		}
 		Static3.aClass4_Sub10_Sub1_1.method4650(216);
-		Static3.aClass4_Sub10_Sub1_1.method4581(arg0.length() - 1);
-		Static3.aClass4_Sub10_Sub1_1.method4575(arg0.substring(2));
+		Static3.aClass4_Sub10_Sub1_1.writeByte(arg0.length() - 1);
+		Static3.aClass4_Sub10_Sub1_1.writeString(arg0.substring(2));
 	}
 
 	@OriginalMember(owner = "client!of", name = "c", descriptor = "(III)V")
@@ -679,7 +679,7 @@ public final class Static27 {
 		@Pc(21) byte[] local21 = Static2.aClass58_36.method1372(26, arg0);
 		@Pc(25) Class4_Sub3_Sub17 local25 = new Class4_Sub3_Sub17();
 		if (local21 != null) {
-			local25.method3801(new Class4_Sub10(local21));
+			local25.method3801(new Buffer(local21));
 		}
 		Static3.aClass40_10.method888((long) arg0, local25);
 		return local25;
@@ -754,7 +754,7 @@ public final class Static27 {
 			Static4.aBoolean210 = false;
 		} else if (Static1.anInt344 != 0 && Static6.anInt4844 != -1 && !Static16.method1550()) {
 			Static3.aClass4_Sub10_Sub1_1.method4650(250);
-			Static3.aClass4_Sub10_Sub1_1.method4617(Static6.anInt4844);
+			Static3.aClass4_Sub10_Sub1_1.writeInt(Static6.anInt4844);
 			Static6.anInt4844 = -1;
 		}
 	}

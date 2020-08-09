@@ -39,9 +39,9 @@ public final class Class4_Sub1_Sub31 extends Class4_Sub1 {
 
 	@OriginalMember(owner = "client!sh", name = "a", descriptor = "(BLclient!fd;I)V")
 	@Override
-	public final void method4687(@OriginalArg(1) Class4_Sub10 arg0, @OriginalArg(2) int arg1) {
+	public final void method4687(@OriginalArg(1) Buffer arg0, @OriginalArg(2) int arg1) {
 		if (arg1 == 0) {
-			this.anInt4832 = arg0.method4616();
+			this.anInt4832 = arg0.readUnsignedShort();
 		}
 	}
 }

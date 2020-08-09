@@ -649,20 +649,20 @@ public final class client extends Applet_Sub1 {
 
 	@OriginalMember(owner = "client!client", name = "a", descriptor = "([BI)V")
 	private void method688(@OriginalArg(0) byte[] arg0) {
-		@Pc(11) Class4_Sub10 local11 = new Class4_Sub10(arg0);
+		@Pc(11) Buffer local11 = new Buffer(arg0);
 		while (true) {
-			@Pc(15) int local15 = local11.method4629();
+			@Pc(15) int local15 = local11.readUnsignedByte();
 			if (local15 == 0) {
 				return;
 			}
 			if (local15 == 1) {
 				@Pc(31) int[] local31 = Static2.anIntArray163 = new int[6];
-				local31[0] = local11.method4616();
-				local31[1] = local11.method4616();
-				local31[2] = local11.method4616();
-				local31[3] = local11.method4616();
-				local31[4] = local11.method4616();
-				local31[5] = local11.method4616();
+				local31[0] = local11.readUnsignedShort();
+				local31[1] = local11.readUnsignedShort();
+				local31[2] = local11.readUnsignedShort();
+				local31[3] = local11.readUnsignedShort();
+				local31[4] = local11.readUnsignedShort();
+				local31[5] = local11.readUnsignedShort();
 			}
 		}
 	}
@@ -730,10 +730,10 @@ public final class client extends Applet_Sub1 {
 			}
 			if (Static6.anInt4952 == 2) {
 				Static3.aClass52_5 = new Class52((Socket) Static5.aClass197_4.result, Static7.aClass196_4);
-				@Pc(198) Class4_Sub10 local198 = new Class4_Sub10(5);
-				local198.method4581(15);
-				local198.method4617(550);
-				Static3.aClass52_5.method1107(local198.aByteArray71, 5);
+				@Pc(198) Buffer local198 = new Buffer(5);
+				local198.writeByte(15);
+				local198.writeInt(550);
+				Static3.aClass52_5.method1107(local198.bytes, 5);
 				Static6.anInt4952++;
 				Static1.aLong29 = MonotonicClock.currentTimeMillis();
 			}

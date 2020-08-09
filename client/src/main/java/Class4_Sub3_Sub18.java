@@ -62,18 +62,18 @@ public final class Class4_Sub3_Sub18 extends Class4_Sub3 {
 	private final int anInt4967;
 
 	@OriginalMember(owner = "client!so", name = "<init>", descriptor = "(Lclient!fd;)V")
-	public Class4_Sub3_Sub18(@OriginalArg(0) Class4_Sub10 arg0) {
+	public Class4_Sub3_Sub18(@OriginalArg(0) Buffer arg0) {
 		this.aClass4_Sub3_Sub15_1 = new Class4_Sub3_Sub15(arg0);
-		this.aBoolean345 = arg0.method4629() == 1;
-		this.aBoolean341 = arg0.method4629() == 1;
-		this.aBoolean346 = arg0.method4629() == 1;
-		this.aBoolean342 = arg0.method4629() == 1;
-		@Pc(62) int local62 = arg0.method4629() & 0x3;
-		this.anInt4968 = arg0.method4637();
-		this.anInt4970 = arg0.method4637();
-		@Pc(76) int local76 = arg0.method4629();
-		arg0.method4629();
-		this.aBoolean343 = arg0.method4629() == 1;
+		this.aBoolean345 = arg0.readUnsignedByte() == 1;
+		this.aBoolean341 = arg0.readUnsignedByte() == 1;
+		this.aBoolean346 = arg0.readUnsignedByte() == 1;
+		this.aBoolean342 = arg0.readUnsignedByte() == 1;
+		@Pc(62) int local62 = arg0.readUnsignedByte() & 0x3;
+		this.anInt4968 = arg0.readByte();
+		this.anInt4970 = arg0.readByte();
+		@Pc(76) int local76 = arg0.readUnsignedByte();
+		arg0.readUnsignedByte();
+		this.aBoolean343 = arg0.readUnsignedByte() == 1;
 		this.anInt4969 = local76 >> 4 & 0xF;
 		if (local62 == 1) {
 			this.anInt4967 = 2;

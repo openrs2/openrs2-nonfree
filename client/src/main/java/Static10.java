@@ -375,7 +375,7 @@ public final class Static10 {
 				}
 				Static3.anInt2102 = Static6.anInt4979;
 				Static3.aClass4_Sub10_Sub1_1.method4650(172);
-				Static3.aClass4_Sub10_Sub1_1.method4582(arg0);
+				Static3.aClass4_Sub10_Sub1_1.writeLong(arg0);
 				break;
 			}
 		}

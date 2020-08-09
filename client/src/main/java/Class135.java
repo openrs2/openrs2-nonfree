@@ -100,48 +100,48 @@ public final class Class135 {
 
 	@OriginalMember(owner = "client!pi", name = "c", descriptor = "()V")
 	public final void method3434() {
-		@Pc(7) Class4_Sub10 local7 = new Class4_Sub10(this.anInt4162 * 4);
-		@Pc(15) Class4_Sub10 local15 = new Class4_Sub10(this.anInt4161 * 16);
+		@Pc(7) Buffer local7 = new Buffer(this.anInt4162 * 4);
+		@Pc(15) Buffer local15 = new Buffer(this.anInt4161 * 16);
 		if (Static3.aBoolean126) {
 			for (@Pc(19) int local19 = 0; local19 < this.anInt4161; local19++) {
-				local15.method4581(this.aByteArray53[local19]);
-				local15.method4581(this.aByteArray54[local19]);
-				local15.method4581(this.aByteArray55[local19]);
-				local15.method4581(255);
-				local15.method4604((float) this.anIntArray439[local19]);
-				local15.method4604((float) this.anIntArray438[local19]);
-				local15.method4604((float) this.anIntArray436[local19]);
+				local15.writeByte(this.aByteArray53[local19]);
+				local15.writeByte(this.aByteArray54[local19]);
+				local15.writeByte(this.aByteArray55[local19]);
+				local15.writeByte(255);
+				local15.writeFloat((float) this.anIntArray439[local19]);
+				local15.writeFloat((float) this.anIntArray438[local19]);
+				local15.writeFloat((float) this.anIntArray436[local19]);
 			}
 			for (@Pc(76) int local76 = 0; local76 < this.anInt4162; local76++) {
-				local7.method4617(this.anIntArray437[local76]);
+				local7.writeInt(this.anIntArray437[local76]);
 			}
 		} else {
 			for (@Pc(92) int local92 = 0; local92 < this.anInt4161; local92++) {
-				local15.method4581(this.aByteArray53[local92]);
-				local15.method4581(this.aByteArray54[local92]);
-				local15.method4581(this.aByteArray55[local92]);
-				local15.method4581(255);
-				local15.method4632((float) this.anIntArray439[local92]);
-				local15.method4632((float) this.anIntArray438[local92]);
-				local15.method4632((float) this.anIntArray436[local92]);
+				local15.writeByte(this.aByteArray53[local92]);
+				local15.writeByte(this.aByteArray54[local92]);
+				local15.writeByte(this.aByteArray55[local92]);
+				local15.writeByte(255);
+				local15.writeFloatLE((float) this.anIntArray439[local92]);
+				local15.writeFloatLE((float) this.anIntArray438[local92]);
+				local15.writeFloatLE((float) this.anIntArray436[local92]);
 			}
 			for (@Pc(149) int local149 = 0; local149 < this.anInt4162; local149++) {
-				local7.method4599(this.anIntArray437[local149]);
+				local7.writeIntLE(this.anIntArray437[local149]);
 			}
 		}
 		if (Static3.aBoolean135) {
 			this.aClass111_5 = new Class111();
-			@Pc(173) ByteBuffer local173 = ByteBuffer.wrap(local15.aByteArray71);
+			@Pc(173) ByteBuffer local173 = ByteBuffer.wrap(local15.bytes);
 			this.aClass111_5.method2602(local173);
 			this.aClass111_6 = new Class111();
-			local173 = ByteBuffer.wrap(local7.aByteArray71);
+			local173 = ByteBuffer.wrap(local7.bytes);
 			this.aClass111_6.method2601(local173);
 		} else {
-			this.aByteBuffer13 = ByteBuffer.allocateDirect(local15.anInt5709);
-			this.aByteBuffer13.put(local15.aByteArray71);
+			this.aByteBuffer13 = ByteBuffer.allocateDirect(local15.position);
+			this.aByteBuffer13.put(local15.bytes);
 			this.aByteBuffer13.flip();
-			this.aByteBuffer14 = ByteBuffer.allocateDirect(local7.anInt5709);
-			this.aByteBuffer14.put(local7.aByteArray71);
+			this.aByteBuffer14 = ByteBuffer.allocateDirect(local7.position);
+			this.aByteBuffer14.put(local7.bytes);
 			this.aByteBuffer14.flip();
 		}
 		this.anIntArray439 = null;

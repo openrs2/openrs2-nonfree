@@ -57,10 +57,10 @@ public final class Class73 {
 	}
 
 	@OriginalMember(owner = "client!h", name = "a", descriptor = "(Lclient!fd;)V")
-	public final void method1674(@OriginalArg(0) Class4_Sub10 arg0) {
-		this.anInt2133 = arg0.method4629();
-		this.anInt2132 = arg0.method4595();
-		this.anInt2131 = arg0.method4595();
+	public final void method1674(@OriginalArg(0) Buffer arg0) {
+		this.anInt2133 = arg0.readUnsignedByte();
+		this.anInt2132 = arg0.readInt();
+		this.anInt2131 = arg0.readInt();
 		this.method1676(arg0);
 	}
 
@@ -82,13 +82,13 @@ public final class Class73 {
 	}
 
 	@OriginalMember(owner = "client!h", name = "b", descriptor = "(Lclient!fd;)V")
-	public final void method1676(@OriginalArg(0) Class4_Sub10 arg0) {
-		this.anInt2134 = arg0.method4629();
+	public final void method1676(@OriginalArg(0) Buffer arg0) {
+		this.anInt2134 = arg0.readUnsignedByte();
 		this.anIntArray178 = new int[this.anInt2134];
 		this.anIntArray177 = new int[this.anInt2134];
 		for (@Pc(16) int local16 = 0; local16 < this.anInt2134; local16++) {
-			this.anIntArray178[local16] = arg0.method4616();
-			this.anIntArray177[local16] = arg0.method4616();
+			this.anIntArray178[local16] = arg0.readUnsignedShort();
+			this.anIntArray177[local16] = arg0.readUnsignedShort();
 		}
 	}
 }

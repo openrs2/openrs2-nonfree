@@ -44,25 +44,25 @@ public final class Class4_Sub3_Sub3 extends Class4_Sub3 {
 	}
 
 	@OriginalMember(owner = "client!cj", name = "a", descriptor = "(ILclient!fd;I)V")
-	private void method603(@OriginalArg(1) Class4_Sub10 arg0, @OriginalArg(2) int arg1) {
+	private void method603(@OriginalArg(1) Buffer arg0, @OriginalArg(2) int arg1) {
 		if (arg1 == 1) {
-			this.aChar2 = Static29.method3522(arg0.method4637());
+			this.aChar2 = Static29.method3522(arg0.readByte());
 		} else if (arg1 == 2) {
-			this.aChar1 = Static29.method3522(arg0.method4637());
+			this.aChar1 = Static29.method3522(arg0.readByte());
 		} else if (arg1 == 3) {
-			this.aString50 = arg0.method4593();
+			this.aString50 = arg0.readString();
 		} else if (arg1 == 4) {
-			this.anInt642 = arg0.method4595();
+			this.anInt642 = arg0.readInt();
 		} else if (arg1 == 5 || arg1 == 6) {
-			@Pc(68) int local68 = arg0.method4616();
+			@Pc(68) int local68 = arg0.readUnsignedShort();
 			this.aClass84_3 = new Class84(Static24.method2595(local68));
 			for (@Pc(78) int local78 = 0; local78 < local68; local78++) {
-				@Pc(87) int local87 = arg0.method4595();
+				@Pc(87) int local87 = arg0.readInt();
 				@Pc(99) Node local99;
 				if (arg1 == 5) {
-					local99 = new Class4_Sub26(arg0.method4593());
+					local99 = new Class4_Sub26(arg0.readString());
 				} else {
-					local99 = new Class4_Sub32(arg0.method4595());
+					local99 = new Class4_Sub32(arg0.readInt());
 				}
 				this.aClass84_3.method1840(local99, (long) local87);
 			}
@@ -101,9 +101,9 @@ public final class Class4_Sub3_Sub3 extends Class4_Sub3 {
 	}
 
 	@OriginalMember(owner = "client!cj", name = "a", descriptor = "(ZLclient!fd;)V")
-	public final void method609(@OriginalArg(1) Class4_Sub10 arg0) {
+	public final void method609(@OriginalArg(1) Buffer arg0) {
 		while (true) {
-			@Pc(9) int local9 = arg0.method4629();
+			@Pc(9) int local9 = arg0.readUnsignedByte();
 			if (local9 == 0) {
 				return;
 			}

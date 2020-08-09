@@ -23,9 +23,9 @@ public final class Class4_Sub1_Sub24 extends Class4_Sub1 {
 
 	@OriginalMember(owner = "client!qb", name = "a", descriptor = "(BLclient!fd;I)V")
 	@Override
-	public final void method4687(@OriginalArg(1) Class4_Sub10 arg0, @OriginalArg(2) int arg1) {
+	public final void method4687(@OriginalArg(1) Buffer arg0, @OriginalArg(2) int arg1) {
 		if (arg1 == 0) {
-			this.anInt4259 = (arg0.method4629() << 12) / 255;
+			this.anInt4259 = (arg0.readUnsignedByte() << 12) / 255;
 		}
 	}
 

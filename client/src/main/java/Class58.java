@@ -219,8 +219,8 @@ public final class Class58 {
 				local123 = ByteArray.unwrap(this.anObjectArray1[arg1], false);
 			} else {
 				local123 = ByteArray.unwrap(this.anObjectArray1[arg1], true);
-				@Pc(128) Class4_Sub10 local128 = new Class4_Sub10(local123);
-				local128.method4607(arg0, local128.aByteArray71.length);
+				@Pc(128) Buffer local128 = new Buffer(local123);
+				local128.xteaDecrypt(arg0, local128.bytes.length);
 			}
 			@Pc(151) byte[] local151;
 			try {
@@ -236,15 +236,15 @@ public final class Class58 {
 				@Pc(229) int[] local229 = new int[local33];
 				local226--;
 				@Pc(236) int local236 = local151[local226] & 0xFF;
-				@Pc(241) Class4_Sub10 local241 = new Class4_Sub10(local151);
+				@Pc(241) Buffer local241 = new Buffer(local151);
 				local226 -= local33 * local236 * 4;
-				local241.anInt5709 = local226;
+				local241.position = local226;
 				for (@Pc(254) int local254 = 0; local254 < local236; local254++) {
 					@Pc(259) int local259 = 0;
 					for (@Pc(261) int local261 = 0; local261 < local33; local261++) {
 						if (local27 != null) {
 						}
-						local259 += local241.method4595();
+						local259 += local241.readInt();
 						local229[local261] += local259;
 					}
 				}
@@ -253,12 +253,12 @@ public final class Class58 {
 					local289[local291] = new byte[local229[local291]];
 					local229[local291] = 0;
 				}
-				local241.anInt5709 = local226;
+				local241.position = local226;
 				@Pc(313) int local313 = 0;
 				for (@Pc(315) int local315 = 0; local315 < local236; local315++) {
 					@Pc(320) int local320 = 0;
 					for (@Pc(322) int local322 = 0; local322 < local33; local322++) {
-						local320 += local241.method4595();
+						local320 += local241.readInt();
 						Static8.method80(local151, local313, local289[local322], local229[local322], local320);
 						local313 += local320;
 						local229[local322] += local320;

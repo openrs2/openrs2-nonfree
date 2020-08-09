@@ -70,10 +70,10 @@ public final class Static14 {
 					}
 					if (Static7.aClass185_16 != null && Static12.method691(Static1.aClass185_1) != null) {
 						Static3.aClass4_Sub10_Sub1_1.method4650(0);
-						Static3.aClass4_Sub10_Sub1_1.method4624(Static1.aClass185_1.anInt5914);
-						Static3.aClass4_Sub10_Sub1_1.method4584(Static7.aClass185_16.anInt5914);
-						Static3.aClass4_Sub10_Sub1_1.method4614(Static7.aClass185_16.anInt5968);
-						Static3.aClass4_Sub10_Sub1_1.method4636(Static1.aClass185_1.anInt5968);
+						Static3.aClass4_Sub10_Sub1_1.writeIntLE2(Static1.aClass185_1.anInt5914);
+						Static3.aClass4_Sub10_Sub1_1.writeIntAlt3(Static7.aClass185_16.anInt5914);
+						Static3.aClass4_Sub10_Sub1_1.writeShortA(Static7.aClass185_16.anInt5968);
+						Static3.aClass4_Sub10_Sub1_1.writeShortLEA(Static1.aClass185_1.anInt5968);
 					}
 				} else if ((Static3.anInt5400 == 1 || Static13.method1005(Static7.anInt5634 - 1)) && Static7.anInt5634 > 2) {
 					Static31.method3783();
@@ -106,8 +106,8 @@ public final class Static14 {
 			}
 			if (local12.status == 1) {
 				local3 = (FileOnDisk) local12.result;
-				@Pc(36) Class4_Sub10 local36 = Static15.method1347();
-				local3.write(local36.aByteArray71, 0, local36.anInt5709);
+				@Pc(36) Buffer local36 = Static15.method1347();
+				local3.write(local36.bytes, 0, local36.position);
 			}
 		} catch (@Pc(46) Exception local46) {
 		}
@@ -221,17 +221,17 @@ public final class Static14 {
 					Static2.anIntArray127[Static6.anInt4744] = Static7.anIntArray597[local16];
 					local32 = Static6.anInt4744++;
 				}
-				@Pc(82) Class4_Sub10 local82 = new Class4_Sub10(Static7.aByteArrayArray50[local16]);
+				@Pc(82) Buffer local82 = new Buffer(Static7.aByteArrayArray50[local16]);
 				@Pc(84) int local84 = 0;
-				while (Static7.aByteArrayArray50[local16].length > local82.anInt5709 && local84 < 511 && Static6.anInt4451 < 1023) {
+				while (Static7.aByteArrayArray50[local16].length > local82.position && local84 < 511 && Static6.anInt4451 < 1023) {
 					@Pc(112) int local112 = local84++ << 6 | local32;
-					@Pc(116) int local116 = local82.method4616();
+					@Pc(116) int local116 = local82.readUnsignedShort();
 					@Pc(120) int local120 = local116 >> 14;
 					@Pc(126) int local126 = local116 >> 7 & 0x3F;
 					@Pc(139) int local139 = (Static7.anIntArray597[local16] >> 8) * 64 + local126 - Static5.anInt3983;
 					@Pc(143) int local143 = local116 & 0x3F;
 					@Pc(155) int local155 = local143 + (Static7.anIntArray597[local16] & 0xFF) * 64 - Static7.anInt5479;
-					@Pc(161) Class168 local161 = Static15.method1495(local82.method4616());
+					@Pc(161) Class168 local161 = Static15.method1495(local82.readUnsignedShort());
 					if (Static3.aClass53_Sub1_Sub2Array1[local112] == null && (local161.aByte21 & 0x1) > 0 && Static2.anInt1216 == local120 && local139 >= 0 && local161.anInt5262 + local139 < 104 && local155 >= 0 && local155 + local161.anInt5262 < 104) {
 						Static3.aClass53_Sub1_Sub2Array1[local112] = new Class53_Sub1_Sub2();
 						@Pc(217) Class53_Sub1_Sub2 local217 = Static3.aClass53_Sub1_Sub2Array1[local112];
@@ -285,7 +285,7 @@ public final class Static14 {
 		@Pc(42) byte[] local42 = Static6.aClass58_86.method1372(Static9.method192(arg0), Static33.method4090(arg0));
 		@Pc(46) Class32 local46 = new Class32();
 		if (local42 != null) {
-			local46.method695(new Class4_Sub10(local42));
+			local46.method695(new Buffer(local42));
 		}
 		Static3.aClass26_25.method510(local46, (long) arg0);
 		return local46;
@@ -327,28 +327,28 @@ public final class Static14 {
 	}
 
 	@OriginalMember(owner = "client!el", name = "a", descriptor = "(ILclient!fd;)V")
-	public static void method1072(@OriginalArg(1) Class4_Sub10 arg0) {
-		@Pc(9) int local9 = arg0.method4579();
+	public static void method1072(@OriginalArg(1) Buffer arg0) {
+		@Pc(9) int local9 = arg0.readUnsignedSmart();
 		Static6.aClass151Array1 = new Class151[local9];
 		for (@Pc(14) int local14 = 0; local14 < local9; local14++) {
 			Static6.aClass151Array1[local14] = new Class151();
-			Static6.aClass151Array1[local14].anInt4469 = arg0.method4579();
-			Static6.aClass151Array1[local14].aString270 = arg0.method4633();
+			Static6.aClass151Array1[local14].anInt4469 = arg0.readUnsignedSmart();
+			Static6.aClass151Array1[local14].aString270 = arg0.readVersionedString();
 		}
-		Static6.anInt4615 = arg0.method4579();
-		Static1.anInt645 = arg0.method4579();
-		Static3.anInt2580 = arg0.method4579();
+		Static6.anInt4615 = arg0.readUnsignedSmart();
+		Static1.anInt645 = arg0.readUnsignedSmart();
+		Static3.anInt2580 = arg0.readUnsignedSmart();
 		Static2.aClass63_Sub1Array1 = new Class63_Sub1[Static1.anInt645 + 1 - Static6.anInt4615];
 		for (@Pc(69) int local69 = 0; local69 < Static3.anInt2580; local69++) {
-			@Pc(80) int local80 = arg0.method4579();
+			@Pc(80) int local80 = arg0.readUnsignedSmart();
 			@Pc(88) Class63_Sub1 local88 = Static2.aClass63_Sub1Array1[local80] = new Class63_Sub1();
-			local88.anInt2021 = arg0.method4629();
-			local88.anInt2020 = arg0.method4595();
+			local88.anInt2021 = arg0.readUnsignedByte();
+			local88.anInt2020 = arg0.readInt();
 			local88.anInt2037 = Static6.anInt4615 + local80;
-			local88.aString110 = arg0.method4633();
-			local88.aString111 = arg0.method4633();
+			local88.aString110 = arg0.readVersionedString();
+			local88.aString111 = arg0.readVersionedString();
 		}
-		Static4.anInt2842 = arg0.method4595();
+		Static4.anInt2842 = arg0.readInt();
 		Static6.aBoolean338 = true;
 	}
 
@@ -793,7 +793,7 @@ public final class Static14 {
 				}
 				Static3.aClass52_7 = new Class52((Socket) Static7.aClass197_5.result, Static7.aClass196_4);
 				Static7.aClass197_5 = null;
-				Static3.aClass52_7.method1107(Static3.aClass4_Sub10_Sub1_1.aByteArray71, Static3.aClass4_Sub10_Sub1_1.anInt5709);
+				Static3.aClass52_7.method1107(Static3.aClass4_Sub10_Sub1_1.bytes, Static3.aClass4_Sub10_Sub1_1.position);
 				if (Static1.aClass102_1 != null) {
 					Static1.aClass102_1.method2996();
 				}

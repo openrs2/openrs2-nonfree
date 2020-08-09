@@ -49,20 +49,20 @@ public final class Class37 {
 	public int anInt908 = 0;
 
 	@OriginalMember(owner = "client!dc", name = "a", descriptor = "(Lclient!fd;II)V")
-	private void method740(@OriginalArg(0) Class4_Sub10 arg0, @OriginalArg(2) int arg1) {
+	private void method740(@OriginalArg(0) Buffer arg0, @OriginalArg(2) int arg1) {
 		if (arg1 == 1) {
-			this.anInt893 = arg0.method4616();
+			this.anInt893 = arg0.readUnsignedShort();
 		} else if (arg1 == 2) {
-			arg0.method4629();
+			arg0.readUnsignedByte();
 		} else if (arg1 == 3) {
-			this.anInt898 = arg0.method4595();
-			this.anInt903 = arg0.method4595();
-			this.anInt892 = arg0.method4595();
+			this.anInt898 = arg0.readInt();
+			this.anInt903 = arg0.readInt();
+			this.anInt892 = arg0.readInt();
 		} else if (arg1 == 4) {
-			this.anInt895 = arg0.method4629();
-			this.anInt911 = arg0.method4595();
+			this.anInt895 = arg0.readUnsignedByte();
+			this.anInt911 = arg0.readInt();
 		} else if (arg1 == 6) {
-			this.anInt907 = arg0.method4629();
+			this.anInt907 = arg0.readUnsignedByte();
 		} else if (arg1 == 8) {
 			this.anInt908 = 1;
 		} else if (arg1 == 9) {
@@ -93,9 +93,9 @@ public final class Class37 {
 	}
 
 	@OriginalMember(owner = "client!dc", name = "a", descriptor = "(Lclient!fd;B)V")
-	public final void method746(@OriginalArg(0) Class4_Sub10 arg0) {
+	public final void method746(@OriginalArg(0) Buffer arg0) {
 		while (true) {
-			@Pc(10) int local10 = arg0.method4629();
+			@Pc(10) int local10 = arg0.readUnsignedByte();
 			if (local10 == 0) {
 				return;
 			}

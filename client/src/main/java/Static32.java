@@ -97,8 +97,8 @@ public final class Static32 {
 		if (!Static1.aBoolean38 && Static3.aClass52_7 != null) {
 			Static3.aClass4_Sub10_Sub1_1.method4650(137);
 			try {
-				Static3.aClass52_7.method1107(Static3.aClass4_Sub10_Sub1_1.aByteArray71, Static3.aClass4_Sub10_Sub1_1.anInt5709);
-				Static3.aClass4_Sub10_Sub1_1.anInt5709 = 0;
+				Static3.aClass52_7.method1107(Static3.aClass4_Sub10_Sub1_1.bytes, Static3.aClass4_Sub10_Sub1_1.position);
+				Static3.aClass4_Sub10_Sub1_1.position = 0;
 			} catch (@Pc(52) IOException local52) {
 				Static1.aBoolean38 = true;
 			}
@@ -127,13 +127,13 @@ public final class Static32 {
 	}
 
 	@OriginalMember(owner = "client!sc", name = "a", descriptor = "(Lclient!fd;I)Lclient!gg;")
-	public static Class11_Sub3 method3921(@OriginalArg(0) Class4_Sub10 arg0) {
-		return new Class11_Sub3(arg0.method4576(), arg0.method4576(), arg0.method4576(), arg0.method4576(), arg0.method4618(), arg0.method4618(), arg0.method4629());
+	public static Class11_Sub3 method3921(@OriginalArg(0) Buffer arg0) {
+		return new Class11_Sub3(arg0.readShort(), arg0.readShort(), arg0.readShort(), arg0.readShort(), arg0.readUnsignedMedium(), arg0.readUnsignedMedium(), arg0.readUnsignedByte());
 	}
 
 	@OriginalMember(owner = "client!sc", name = "b", descriptor = "(Lclient!fd;I)Lclient!de;")
-	public static Class11_Sub2 method3922(@OriginalArg(0) Class4_Sub10 arg0) {
-		return new Class11_Sub2(arg0.method4576(), arg0.method4576(), arg0.method4576(), arg0.method4576(), arg0.method4618(), arg0.method4629());
+	public static Class11_Sub2 method3922(@OriginalArg(0) Buffer arg0) {
+		return new Class11_Sub2(arg0.readShort(), arg0.readShort(), arg0.readShort(), arg0.readShort(), arg0.readUnsignedMedium(), arg0.readUnsignedByte());
 	}
 
 	@OriginalMember(owner = "client!sd", name = "a", descriptor = "(ZJB)V")
@@ -167,7 +167,7 @@ public final class Static32 {
 		Static2.aBooleanArray5[Static6.anInt4516++] = arg0;
 		Static3.anInt2102 = Static6.anInt4979;
 		Static3.aClass4_Sub10_Sub1_1.method4650(197);
-		Static3.aClass4_Sub10_Sub1_1.method4582(arg1);
+		Static3.aClass4_Sub10_Sub1_1.writeLong(arg1);
 	}
 
 	@OriginalMember(owner = "client!sd", name = "a", descriptor = "(IZZIII)V")
@@ -232,7 +232,7 @@ public final class Static32 {
 	}
 
 	@OriginalMember(owner = "client!se", name = "a", descriptor = "(Lclient!fd;I)V")
-	public static void method3949(@OriginalArg(0) Class4_Sub10 arg0) {
+	public static void method3949(@OriginalArg(0) Buffer arg0) {
 		@Pc(8) byte[] local8 = new byte[24];
 		if (Static1.aClass189_1 != null) {
 			try {
@@ -250,7 +250,7 @@ public final class Static32 {
 				}
 			}
 		}
-		arg0.method4594(local8, 24);
+		arg0.writeBytes(local8, 24);
 	}
 
 	@OriginalMember(owner = "client!se", name = "c", descriptor = "(II)V")
@@ -260,8 +260,8 @@ public final class Static32 {
 	}
 
 	@OriginalMember(owner = "client!se", name = "a", descriptor = "(ZLclient!fd;)Lclient!in;")
-	public static Class11_Sub4 method3953(@OriginalArg(1) Class4_Sub10 arg0) {
-		return new Class11_Sub4(arg0.method4576(), arg0.method4576(), arg0.method4576(), arg0.method4576(), arg0.method4576(), arg0.method4576(), arg0.method4576(), arg0.method4576(), arg0.method4618(), arg0.method4629());
+	public static Class11_Sub4 method3953(@OriginalArg(1) Buffer arg0) {
+		return new Class11_Sub4(arg0.readShort(), arg0.readShort(), arg0.readShort(), arg0.readShort(), arg0.readShort(), arg0.readShort(), arg0.readShort(), arg0.readShort(), arg0.readUnsignedMedium(), arg0.readUnsignedByte());
 	}
 
 	@OriginalMember(owner = "client!se", name = "a", descriptor = "(IIIIIIII)V")
@@ -320,7 +320,7 @@ public final class Static32 {
 		@Pc(21) byte[] local21 = Static3.aClass58_100.method1372(0, arg0);
 		@Pc(25) Class89 local25 = new Class89();
 		if (local21 != null) {
-			local25.method1915(new Class4_Sub10(local21));
+			local25.method1915(new Buffer(local21));
 		}
 		local25.method1919();
 		Static4.aClass26_29.method510(local25, (long) arg0);

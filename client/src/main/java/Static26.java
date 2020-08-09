@@ -10,21 +10,21 @@ import dev.openrs2.deob.annotation.Pc;
 public final class Static26 {
 
 	@OriginalMember(owner = "client!nc", name = "a", descriptor = "(ILclient!fd;)V")
-	public static void method2934(@OriginalArg(1) Class4_Sub10 arg0) {
+	public static void method2934(@OriginalArg(1) Buffer arg0) {
 		@Pc(7) int local7 = Static3.anInt2963 >> 2 << 10;
 		@Pc(11) int local11 = Static3.anInt2964 >> 1;
 		@Pc(15) byte[][] local15 = new byte[Static3.anInt2965][Static3.anInt2960];
-		while (arg0.aByteArray71.length > arg0.anInt5709) {
+		while (arg0.bytes.length > arg0.position) {
 			@Pc(23) boolean local23 = false;
 			@Pc(25) int local25 = 0;
 			@Pc(27) int local27 = 0;
-			if (arg0.method4629() == 1) {
+			if (arg0.readUnsignedByte() == 1) {
 				local23 = true;
-				local27 = arg0.method4629();
-				local25 = arg0.method4629();
+				local27 = arg0.readUnsignedByte();
+				local25 = arg0.readUnsignedByte();
 			}
-			@Pc(47) int local47 = arg0.method4629();
-			@Pc(51) int local51 = arg0.method4629();
+			@Pc(47) int local47 = arg0.readUnsignedByte();
+			@Pc(51) int local51 = arg0.readUnsignedByte();
 			@Pc(58) int local58 = local47 * 64 - Static3.anInt2962;
 			@Pc(69) int local69 = Static3.anInt2960 + Static3.anInt2961 - local51 * 64 - 1;
 			if (local58 >= 0 && local69 - 63 >= 0 && local58 + 63 < Static3.anInt2965 && local69 < Static3.anInt2960) {
@@ -32,14 +32,14 @@ public final class Static26 {
 					@Pc(124) byte[] local124 = local15[local58 + local114];
 					for (@Pc(126) int local126 = 0; local126 < 64; local126++) {
 						if (!local23 || local114 >= local27 * 8 && local114 < local27 * 8 + 8 && local126 >= local25 * 8 && local126 < local25 * 8 + 8) {
-							local124[local69 - local126] = arg0.method4637();
+							local124[local69 - local126] = arg0.readByte();
 						}
 					}
 				}
 			} else if (local23) {
-				arg0.anInt5709 += 64;
+				arg0.position += 64;
 			} else {
-				arg0.anInt5709 += 4096;
+				arg0.position += 4096;
 			}
 		}
 		@Pc(194) int local194 = Static3.anInt2965;
@@ -136,7 +136,7 @@ public final class Static26 {
 		@Pc(27) byte[] local27 = Static3.aClass58_55.method1372(4, arg0);
 		@Pc(31) Class127 local31 = new Class127();
 		if (local27 != null) {
-			local31.method3221(arg0, new Class4_Sub10(local27));
+			local31.method3221(arg0, new Buffer(local27));
 		}
 		Static3.aClass26_24.method510(local31, (long) arg0);
 		return local31;
@@ -290,7 +290,7 @@ public final class Static26 {
 		@Pc(20) byte[] local20 = Static1.aClass58_2.method1372(1, arg0);
 		@Pc(24) Class131 local24 = new Class131();
 		if (local20 != null) {
-			local24.method3326(new Class4_Sub10(local20), arg0);
+			local24.method3326(new Buffer(local20), arg0);
 		}
 		Static1.aClass26_6.method510(local24, (long) arg0);
 		return local24;
@@ -350,7 +350,7 @@ public final class Static26 {
 				}
 			}
 		}
-		@Pc(101) Class4_Sub10 local101 = new Class4_Sub10(arg2);
+		@Pc(101) Buffer local101 = new Buffer(arg2);
 		@Pc(109) byte local109;
 		if (arg8) {
 			local109 = 1;
@@ -422,22 +422,22 @@ public final class Static26 {
 			}
 		}
 		@Pc(526) boolean local526 = false;
-		while (local101.aByteArray71.length > local101.anInt5709) {
-			@Pc(538) int local538 = local101.method4629();
+		while (local101.bytes.length > local101.position) {
+			@Pc(538) int local538 = local101.readUnsignedByte();
 			if (local538 == 128) {
 				local526 = true;
-				Static6.anIntArray465[0] = local101.method4616();
-				Static6.anIntArray465[1] = local101.method4576();
-				Static6.anIntArray465[2] = local101.method4576();
-				Static6.anIntArray465[3] = local101.method4576();
-				Static6.anIntArray465[4] = local101.method4616();
+				Static6.anIntArray465[0] = local101.readUnsignedShort();
+				Static6.anIntArray465[1] = local101.readShort();
+				Static6.anIntArray465[2] = local101.readShort();
+				Static6.anIntArray465[3] = local101.readShort();
+				Static6.anIntArray465[4] = local101.readUnsignedShort();
 			} else {
 				if (local538 != 129) {
-					local101.anInt5709--;
+					local101.position--;
 					break;
 				}
 				for (@Pc(580) int local580 = 0; local580 < 4; local580++) {
-					@Pc(587) byte local587 = local101.method4637();
+					@Pc(587) byte local587 = local101.readByte();
 					if (local587 == 0) {
 						if (local580 <= arg0) {
 							@Pc(600) int local600 = arg3 + 7;
@@ -475,7 +475,7 @@ public final class Static26 {
 					} else if (local587 == 1) {
 						for (@Pc(699) int local699 = 0; local699 < 64; local699 += 4) {
 							for (@Pc(706) int local706 = 0; local706 < 64; local706 += 4) {
-								@Pc(713) byte local713 = local101.method4637();
+								@Pc(713) byte local713 = local101.readByte();
 								if (local580 <= arg0) {
 									for (@Pc(718) int local718 = local699; local718 < local699 + 4; local718++) {
 										for (@Pc(729) int local729 = local706; local729 < local706 + 4; local729++) {
@@ -499,17 +499,17 @@ public final class Static26 {
 		if (Static3.aBoolean138 && !arg8) {
 			@Pc(840) Class187 local840 = null;
 			while (true) {
-				while (local101.aByteArray71.length > local101.anInt5709) {
-					@Pc(854) int local854 = local101.method4629();
+				while (local101.bytes.length > local101.position) {
+					@Pc(854) int local854 = local101.readUnsignedByte();
 					if (local854 == 0) {
 						local840 = new Class187(local101);
 					} else if (local854 == 1) {
-						@Pc(893) int local893 = local101.method4629();
+						@Pc(893) int local893 = local101.readUnsignedByte();
 						if (local893 > 0) {
 							for (@Pc(897) int local897 = 0; local897 < local893; local897++) {
 								@Pc(905) Class50 local905 = new Class50(local101);
 								if (local905.anInt1323 == 31) {
-									@Pc(916) Class178 local916 = Static11.method494(local101.method4616());
+									@Pc(916) Class178 local916 = Static11.method494(local101.readUnsignedShort());
 									local905.method1073(local916.anInt5484, local916.anInt5480, local916.anInt5482, local916.anInt5481);
 								}
 								@Pc(932) int local932 = local905.anInt1338 >> 7;
@@ -840,7 +840,7 @@ public final class Static26 {
 		}
 		@Pc(39) Class4_Sub3_Sub11 local39 = new Class4_Sub3_Sub11();
 		if (local25 != null) {
-			local39.method1908(new Class4_Sub10(local25));
+			local39.method1908(new Buffer(local25));
 		}
 		if (arg0 >= 32768) {
 			local39.method1910();

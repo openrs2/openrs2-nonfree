@@ -77,48 +77,48 @@ public final class Class173 {
 	}
 
 	@OriginalMember(owner = "client!uh", name = "a", descriptor = "(Lclient!fd;)V")
-	public final void method4323(@OriginalArg(0) Class4_Sub10 arg0) {
+	public final void method4323(@OriginalArg(0) Buffer arg0) {
 		this.aClass73_7 = new Class73();
 		this.aClass73_7.method1674(arg0);
 		this.aClass73_4 = new Class73();
 		this.aClass73_4.method1674(arg0);
-		@Pc(21) int local21 = arg0.method4629();
+		@Pc(21) int local21 = arg0.readUnsignedByte();
 		if (local21 != 0) {
-			arg0.anInt5709--;
+			arg0.position--;
 			this.aClass73_6 = new Class73();
 			this.aClass73_6.method1674(arg0);
 			this.aClass73_8 = new Class73();
 			this.aClass73_8.method1674(arg0);
 		}
-		@Pc(51) int local51 = arg0.method4629();
+		@Pc(51) int local51 = arg0.readUnsignedByte();
 		if (local51 != 0) {
-			arg0.anInt5709--;
+			arg0.position--;
 			this.aClass73_5 = new Class73();
 			this.aClass73_5.method1674(arg0);
 			this.aClass73_2 = new Class73();
 			this.aClass73_2.method1674(arg0);
 		}
-		@Pc(81) int local81 = arg0.method4629();
+		@Pc(81) int local81 = arg0.readUnsignedByte();
 		if (local81 != 0) {
-			arg0.anInt5709--;
+			arg0.position--;
 			this.aClass73_3 = new Class73();
 			this.aClass73_3.method1674(arg0);
 			this.aClass73_1 = new Class73();
 			this.aClass73_1.method1674(arg0);
 		}
 		for (@Pc(109) int local109 = 0; local109 < 10; local109++) {
-			@Pc(116) int local116 = arg0.method4579();
+			@Pc(116) int local116 = arg0.readUnsignedSmart();
 			if (local116 == 0) {
 				break;
 			}
 			this.anIntArray605[local109] = local116;
-			this.anIntArray604[local109] = arg0.method4597();
-			this.anIntArray606[local109] = arg0.method4579();
+			this.anIntArray604[local109] = arg0.readSmart();
+			this.anIntArray606[local109] = arg0.readUnsignedSmart();
 		}
-		this.anInt5347 = arg0.method4579();
-		this.anInt5348 = arg0.method4579();
-		this.anInt5346 = arg0.method4616();
-		this.anInt5349 = arg0.method4616();
+		this.anInt5347 = arg0.readUnsignedSmart();
+		this.anInt5348 = arg0.readUnsignedSmart();
+		this.anInt5346 = arg0.readUnsignedShort();
+		this.anInt5349 = arg0.readUnsignedShort();
 		this.aClass146_1 = new Class146();
 		this.aClass73_9 = new Class73();
 		this.aClass146_1.method3642(arg0, this.aClass73_9);

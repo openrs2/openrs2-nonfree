@@ -17,43 +17,43 @@ public final class Static35 {
 		for (@Pc(3) int local3 = 0; local3 < Static6.anInt4760; local3++) {
 			@Pc(10) int local10 = Static7.anIntArray587[local3];
 			@Pc(14) Class53_Sub1_Sub2 local14 = Static3.aClass53_Sub1_Sub2Array1[local10];
-			@Pc(18) int local18 = Static5.aClass4_Sub10_Sub1_2.method4629();
+			@Pc(18) int local18 = Static5.aClass4_Sub10_Sub1_2.readUnsignedByte();
 			if ((local18 & 0x1) != 0) {
-				local18 += Static5.aClass4_Sub10_Sub1_2.method4629() << 8;
+				local18 += Static5.aClass4_Sub10_Sub1_2.readUnsignedByte() << 8;
 			}
 			if ((local18 & 0x40) != 0) {
-				@Pc(43) int local43 = Static5.aClass4_Sub10_Sub1_2.method4589();
-				@Pc(49) int local49 = Static5.aClass4_Sub10_Sub1_2.method4605();
+				@Pc(43) int local43 = Static5.aClass4_Sub10_Sub1_2.readUnsignedByteC();
+				@Pc(49) int local49 = Static5.aClass4_Sub10_Sub1_2.readUnsignedByteS();
 				local14.method3304(Static2.anInt954, local49, local43);
 				local14.anInt3993 = Static2.anInt954 + 300;
-				local14.anInt4022 = Static5.aClass4_Sub10_Sub1_2.method4589();
+				local14.anInt4022 = Static5.aClass4_Sub10_Sub1_2.readUnsignedByteC();
 			}
 			if ((local18 & 0x100) != 0) {
-				@Pc(74) int local74 = Static5.aClass4_Sub10_Sub1_2.method4623();
+				@Pc(74) int local74 = Static5.aClass4_Sub10_Sub1_2.readUnsignedByteA();
 				@Pc(77) int[] local77 = new int[local74];
 				@Pc(80) int[] local80 = new int[local74];
 				@Pc(83) int[] local83 = new int[local74];
 				for (@Pc(85) int local85 = 0; local85 < local74; local85++) {
-					@Pc(96) int local96 = Static5.aClass4_Sub10_Sub1_2.method4635();
+					@Pc(96) int local96 = Static5.aClass4_Sub10_Sub1_2.readUnsignedShortLE();
 					if (local96 == 65535) {
 						local96 = -1;
 					}
 					local83[local85] = local96;
-					local77[local85] = Static5.aClass4_Sub10_Sub1_2.method4589();
-					local80[local85] = Static5.aClass4_Sub10_Sub1_2.method4588();
+					local77[local85] = Static5.aClass4_Sub10_Sub1_2.readUnsignedByteC();
+					local80[local85] = Static5.aClass4_Sub10_Sub1_2.readUnsignedShortLEA();
 				}
 				Static11.method555(local83, local14, local80, local77);
 			}
 			if ((local18 & 0x10) != 0) {
-				@Pc(141) int local141 = Static5.aClass4_Sub10_Sub1_2.method4623();
-				@Pc(145) int local145 = Static5.aClass4_Sub10_Sub1_2.method4605();
+				@Pc(141) int local141 = Static5.aClass4_Sub10_Sub1_2.readUnsignedByteA();
+				@Pc(145) int local145 = Static5.aClass4_Sub10_Sub1_2.readUnsignedByteS();
 				local14.method3304(Static2.anInt954, local145, local141);
 			}
 			if ((local18 & 0x2) != 0) {
 				if (local14.aClass168_1.method4260()) {
 					Static25.method2931(local14);
 				}
-				local14.method3317(Static15.method1495(Static5.aClass4_Sub10_Sub1_2.method4630()));
+				local14.method3317(Static15.method1495(Static5.aClass4_Sub10_Sub1_2.readUnsignedShortA()));
 				local14.method3316(local14.aClass168_1.anInt5262);
 				local14.anInt4009 = local14.aClass168_1.anInt5243;
 				local14.anInt3986 = local14.aClass168_1.anInt5261;
@@ -62,20 +62,20 @@ public final class Static35 {
 				}
 			}
 			if ((local18 & 0x200) != 0) {
-				local14.anInt4014 = Static5.aClass4_Sub10_Sub1_2.method4588();
-				local14.anInt4003 = Static5.aClass4_Sub10_Sub1_2.method4616();
+				local14.anInt4014 = Static5.aClass4_Sub10_Sub1_2.readUnsignedShortLEA();
+				local14.anInt4003 = Static5.aClass4_Sub10_Sub1_2.readUnsignedShort();
 			}
 			if ((local18 & 0x20) != 0) {
-				@Pc(238) int local238 = Static5.aClass4_Sub10_Sub1_2.method4616();
+				@Pc(238) int local238 = Static5.aClass4_Sub10_Sub1_2.readUnsignedShort();
 				if (local238 == 65535) {
 					local238 = -1;
 				}
-				@Pc(250) int local250 = Static5.aClass4_Sub10_Sub1_2.method4605();
+				@Pc(250) int local250 = Static5.aClass4_Sub10_Sub1_2.readUnsignedByteS();
 				Static11.method529(local238, local14, local250);
 			}
 			if ((local18 & 0x4) != 0) {
-				@Pc(266) int local266 = Static5.aClass4_Sub10_Sub1_2.method4630();
-				@Pc(270) int local270 = Static5.aClass4_Sub10_Sub1_2.method4595();
+				@Pc(266) int local266 = Static5.aClass4_Sub10_Sub1_2.readUnsignedShortA();
+				@Pc(270) int local270 = Static5.aClass4_Sub10_Sub1_2.readInt();
 				@Pc(272) boolean local272 = true;
 				if (local266 == 65535) {
 					local266 = -1;
@@ -105,13 +105,13 @@ public final class Static35 {
 				}
 			}
 			if ((local18 & 0x8) != 0) {
-				local14.anInt3985 = Static5.aClass4_Sub10_Sub1_2.method4635();
+				local14.anInt3985 = Static5.aClass4_Sub10_Sub1_2.readUnsignedShortLE();
 				if (local14.anInt3985 == 65535) {
 					local14.anInt3985 = -1;
 				}
 			}
 			if ((local18 & 0x80) != 0) {
-				local14.aString234 = Static5.aClass4_Sub10_Sub1_2.method4593();
+				local14.aString234 = Static5.aClass4_Sub10_Sub1_2.readString();
 				local14.anInt4023 = 100;
 			}
 		}
@@ -245,9 +245,9 @@ public final class Static35 {
 		for (@Pc(13) int local13 = 0; local13 < Static6.anInt4760; local13++) {
 			@Pc(24) int local24 = Static7.anIntArray587[local13];
 			@Pc(28) Class53_Sub1_Sub1 local28 = Static5.aClass53_Sub1_Sub1Array1[local24];
-			@Pc(32) int local32 = Static5.aClass4_Sub10_Sub1_2.method4629();
+			@Pc(32) int local32 = Static5.aClass4_Sub10_Sub1_2.readUnsignedByte();
 			if ((local32 & 0x80) != 0) {
-				local32 += Static5.aClass4_Sub10_Sub1_2.method4629() << 8;
+				local32 += Static5.aClass4_Sub10_Sub1_2.readUnsignedByte() << 8;
 			}
 			Static30.method3565(local24, local32, local28);
 		}
@@ -296,16 +296,16 @@ public final class Static35 {
 				Static2.anInt1629 = 0;
 				Static4.anInt3275 = Static7.anInt5312;
 				Static3.aClass4_Sub10_Sub1_1.method4650(52);
-				Static3.aClass4_Sub10_Sub1_1.method4631(local24);
-				Static3.aClass4_Sub10_Sub1_1.method4581(Static2.aBooleanArray4[82] ? 1 : 0);
+				Static3.aClass4_Sub10_Sub1_1.writeShort(local24);
+				Static3.aClass4_Sub10_Sub1_1.writeByte(Static2.aBooleanArray4[82] ? 1 : 0);
 				Static15.method1337(Static4.aClass53_Sub1_Sub1_2.anIntArray422[0], 0, 0, local46.method3311(), local19, Static4.aClass53_Sub1_Sub1_2.anIntArray426[0], 0, local46.method3311(), local15);
 			}
 		}
 		if (local28 == 17) {
 			Static3.aClass4_Sub10_Sub1_1.method4650(95);
-			Static3.aClass4_Sub10_Sub1_1.method4631(local24);
-			Static3.aClass4_Sub10_Sub1_1.method4584(local19);
-			Static3.aClass4_Sub10_Sub1_1.method4636(local15);
+			Static3.aClass4_Sub10_Sub1_1.writeShort(local24);
+			Static3.aClass4_Sub10_Sub1_1.writeIntAlt3(local19);
+			Static3.aClass4_Sub10_Sub1_1.writeShortLEA(local15);
 			Static2.anInt2246 = 0;
 			Static1.aClass185_3 = Static19.method1813(local19);
 			Static5.anInt3884 = local15;
@@ -318,11 +318,11 @@ public final class Static35 {
 				Static4.anInt3275 = Static7.anInt5312;
 				Static2.anInt1629 = 0;
 				Static3.aClass4_Sub10_Sub1_1.method4650(160);
-				Static3.aClass4_Sub10_Sub1_1.method4578(Static2.aBooleanArray4[82] ? 1 : 0);
-				Static3.aClass4_Sub10_Sub1_1.method4624(Static5.anInt4302);
-				Static3.aClass4_Sub10_Sub1_1.method4613(local24);
-				Static3.aClass4_Sub10_Sub1_1.method4631(Static1.anInt314);
-				Static3.aClass4_Sub10_Sub1_1.method4636(Static1.anInt243);
+				Static3.aClass4_Sub10_Sub1_1.writeByteC(Static2.aBooleanArray4[82] ? 1 : 0);
+				Static3.aClass4_Sub10_Sub1_1.writeIntLE2(Static5.anInt4302);
+				Static3.aClass4_Sub10_Sub1_1.writeShortLE2(local24);
+				Static3.aClass4_Sub10_Sub1_1.writeShort(Static1.anInt314);
+				Static3.aClass4_Sub10_Sub1_1.writeShortLEA(Static1.anInt243);
 				Static15.method1337(Static4.aClass53_Sub1_Sub1_2.anIntArray422[0], 0, 0, local146.method3311(), local19, Static4.aClass53_Sub1_Sub1_2.anIntArray426[0], 0, local146.method3311(), local15);
 			}
 		}
@@ -332,10 +332,10 @@ public final class Static35 {
 			Static6.anInt5177 = Static2.anInt1797;
 			Static2.anInt1629 = 0;
 			Static3.aClass4_Sub10_Sub1_1.method4650(134);
-			Static3.aClass4_Sub10_Sub1_1.method4586(Static2.aBooleanArray4[82] ? 1 : 0);
-			Static3.aClass4_Sub10_Sub1_1.method4614(Integer.MAX_VALUE & (int) (local32 >>> 32));
-			Static3.aClass4_Sub10_Sub1_1.method4614(Static7.anInt5479 + local19);
-			Static3.aClass4_Sub10_Sub1_1.method4636(Static5.anInt3983 + local15);
+			Static3.aClass4_Sub10_Sub1_1.writeByteS(Static2.aBooleanArray4[82] ? 1 : 0);
+			Static3.aClass4_Sub10_Sub1_1.writeShortA(Integer.MAX_VALUE & (int) (local32 >>> 32));
+			Static3.aClass4_Sub10_Sub1_1.writeShortA(Static7.anInt5479 + local19);
+			Static3.aClass4_Sub10_Sub1_1.writeShortLEA(Static5.anInt3983 + local15);
 			Static13.method1004(local19, local32, local15);
 		}
 		if (local28 == 46) {
@@ -344,10 +344,10 @@ public final class Static35 {
 			Static7.anInt6008 = 2;
 			Static4.anInt3275 = Static7.anInt5312;
 			Static3.aClass4_Sub10_Sub1_1.method4650(227);
-			Static3.aClass4_Sub10_Sub1_1.method4631(local15 + Static5.anInt3983);
-			Static3.aClass4_Sub10_Sub1_1.method4581(Static2.aBooleanArray4[82] ? 1 : 0);
-			Static3.aClass4_Sub10_Sub1_1.method4631(Static7.anInt5479 + local19);
-			Static3.aClass4_Sub10_Sub1_1.method4636(local24);
+			Static3.aClass4_Sub10_Sub1_1.writeShort(local15 + Static5.anInt3983);
+			Static3.aClass4_Sub10_Sub1_1.writeByte(Static2.aBooleanArray4[82] ? 1 : 0);
+			Static3.aClass4_Sub10_Sub1_1.writeShort(Static7.anInt5479 + local19);
+			Static3.aClass4_Sub10_Sub1_1.writeShortLEA(local24);
 			Static15.method1337(Static4.aClass53_Sub1_Sub1_2.anIntArray422[0], 0, 0, 0, local19, Static4.aClass53_Sub1_Sub1_2.anIntArray426[0], 0, 0, local15);
 		}
 		if (local28 == 21) {
@@ -358,11 +358,11 @@ public final class Static35 {
 				Static7.anInt6008 = 2;
 				Static2.anInt1629 = 0;
 				Static3.aClass4_Sub10_Sub1_1.method4650(123);
-				Static3.aClass4_Sub10_Sub1_1.method4636(local24);
-				Static3.aClass4_Sub10_Sub1_1.method4617(Static5.anInt4302);
-				Static3.aClass4_Sub10_Sub1_1.method4614(Static1.anInt314);
-				Static3.aClass4_Sub10_Sub1_1.method4586(Static2.aBooleanArray4[82] ? 1 : 0);
-				Static3.aClass4_Sub10_Sub1_1.method4636(Static1.anInt243);
+				Static3.aClass4_Sub10_Sub1_1.writeShortLEA(local24);
+				Static3.aClass4_Sub10_Sub1_1.writeInt(Static5.anInt4302);
+				Static3.aClass4_Sub10_Sub1_1.writeShortA(Static1.anInt314);
+				Static3.aClass4_Sub10_Sub1_1.writeByteS(Static2.aBooleanArray4[82] ? 1 : 0);
+				Static3.aClass4_Sub10_Sub1_1.writeShortLEA(Static1.anInt243);
 				Static15.method1337(Static4.aClass53_Sub1_Sub1_2.anIntArray422[0], 0, 0, local346.method3311(), local19, Static4.aClass53_Sub1_Sub1_2.anIntArray426[0], 0, local346.method3311(), local15);
 			}
 		}
@@ -372,7 +372,7 @@ public final class Static35 {
 			Static2.anInt1629 = 0;
 			Static7.anInt6008 = 2;
 			Static3.aClass4_Sub10_Sub1_1.method4650(72);
-			Static3.aClass4_Sub10_Sub1_1.method4631(local24);
+			Static3.aClass4_Sub10_Sub1_1.writeShort(local24);
 		}
 		if (local28 == 19) {
 			if (local24 == 0) {
@@ -380,10 +380,10 @@ public final class Static35 {
 				Static27.method3186(Static7.anInt5334, local15, local19);
 			} else if (local24 == 1) {
 				Static3.aClass4_Sub10_Sub1_1.method4650(204);
-				Static3.aClass4_Sub10_Sub1_1.method4614(local19 + Static7.anInt5479);
-				Static3.aClass4_Sub10_Sub1_1.method4614(Static2.anInt1367);
-				Static3.aClass4_Sub10_Sub1_1.method4584(Static1.anInt1053);
-				Static3.aClass4_Sub10_Sub1_1.method4613(local15 + Static5.anInt3983);
+				Static3.aClass4_Sub10_Sub1_1.writeShortA(local19 + Static7.anInt5479);
+				Static3.aClass4_Sub10_Sub1_1.writeShortA(Static2.anInt1367);
+				Static3.aClass4_Sub10_Sub1_1.writeIntAlt3(Static1.anInt1053);
+				Static3.aClass4_Sub10_Sub1_1.writeShortLE2(local15 + Static5.anInt3983);
 			}
 		}
 		if (local28 == 28) {
@@ -392,13 +392,13 @@ public final class Static35 {
 			Static6.anInt5177 = Static2.anInt1797;
 			Static2.anInt1629 = 0;
 			Static3.aClass4_Sub10_Sub1_1.method4650(119);
-			Static3.aClass4_Sub10_Sub1_1.method4584(Static5.anInt4302);
-			Static3.aClass4_Sub10_Sub1_1.method4631(Static7.anInt5479 + local19);
-			Static3.aClass4_Sub10_Sub1_1.method4614(Static1.anInt243);
-			Static3.aClass4_Sub10_Sub1_1.method4613(Static1.anInt314);
-			Static3.aClass4_Sub10_Sub1_1.method4636(local24);
-			Static3.aClass4_Sub10_Sub1_1.method4613(Static5.anInt3983 + local15);
-			Static3.aClass4_Sub10_Sub1_1.method4586(Static2.aBooleanArray4[82] ? 1 : 0);
+			Static3.aClass4_Sub10_Sub1_1.writeIntAlt3(Static5.anInt4302);
+			Static3.aClass4_Sub10_Sub1_1.writeShort(Static7.anInt5479 + local19);
+			Static3.aClass4_Sub10_Sub1_1.writeShortA(Static1.anInt243);
+			Static3.aClass4_Sub10_Sub1_1.writeShortLE2(Static1.anInt314);
+			Static3.aClass4_Sub10_Sub1_1.writeShortLEA(local24);
+			Static3.aClass4_Sub10_Sub1_1.writeShortLE2(Static5.anInt3983 + local15);
+			Static3.aClass4_Sub10_Sub1_1.writeByteS(Static2.aBooleanArray4[82] ? 1 : 0);
 			Static15.method1337(Static4.aClass53_Sub1_Sub1_2.anIntArray422[0], 0, 0, 0, local19, Static4.aClass53_Sub1_Sub1_2.anIntArray426[0], 0, 0, local15);
 		}
 		if (local28 == 36) {
@@ -409,8 +409,8 @@ public final class Static35 {
 				Static6.anInt5177 = Static2.anInt1797;
 				Static4.anInt3275 = Static7.anInt5312;
 				Static3.aClass4_Sub10_Sub1_1.method4650(37);
-				Static3.aClass4_Sub10_Sub1_1.method4581(Static2.aBooleanArray4[82] ? 1 : 0);
-				Static3.aClass4_Sub10_Sub1_1.method4636(local24);
+				Static3.aClass4_Sub10_Sub1_1.writeByte(Static2.aBooleanArray4[82] ? 1 : 0);
+				Static3.aClass4_Sub10_Sub1_1.writeShortLEA(local24);
 				Static15.method1337(Static4.aClass53_Sub1_Sub1_2.anIntArray422[0], 0, 0, local582.method3311(), local19, Static4.aClass53_Sub1_Sub1_2.anIntArray426[0], 0, local582.method3311(), local15);
 			}
 		}
@@ -422,16 +422,16 @@ public final class Static35 {
 				Static2.anInt1629 = 0;
 				Static4.anInt3275 = Static7.anInt5312;
 				Static3.aClass4_Sub10_Sub1_1.method4650(4);
-				Static3.aClass4_Sub10_Sub1_1.method4581(Static2.aBooleanArray4[82] ? 1 : 0);
-				Static3.aClass4_Sub10_Sub1_1.method4614(local24);
+				Static3.aClass4_Sub10_Sub1_1.writeByte(Static2.aBooleanArray4[82] ? 1 : 0);
+				Static3.aClass4_Sub10_Sub1_1.writeShortA(local24);
 				Static15.method1337(Static4.aClass53_Sub1_Sub1_2.anIntArray422[0], 0, 0, local649.method3311(), local19, Static4.aClass53_Sub1_Sub1_2.anIntArray426[0], 0, local649.method3311(), local15);
 			}
 		}
 		if (local28 == 10) {
 			Static3.aClass4_Sub10_Sub1_1.method4650(102);
-			Static3.aClass4_Sub10_Sub1_1.method4617(local19);
-			Static3.aClass4_Sub10_Sub1_1.method4614(local15);
-			Static3.aClass4_Sub10_Sub1_1.method4631(local24);
+			Static3.aClass4_Sub10_Sub1_1.writeInt(local19);
+			Static3.aClass4_Sub10_Sub1_1.writeShortA(local15);
+			Static3.aClass4_Sub10_Sub1_1.writeShort(local24);
 			Static2.anInt2246 = 0;
 			Static1.aClass185_3 = Static19.method1813(local19);
 			Static5.anInt3884 = local15;
@@ -444,8 +444,8 @@ public final class Static35 {
 				Static7.anInt6008 = 2;
 				Static6.anInt5177 = Static2.anInt1797;
 				Static3.aClass4_Sub10_Sub1_1.method4650(33);
-				Static3.aClass4_Sub10_Sub1_1.method4636(local24);
-				Static3.aClass4_Sub10_Sub1_1.method4611(Static2.aBooleanArray4[82] ? 1 : 0);
+				Static3.aClass4_Sub10_Sub1_1.writeShortLEA(local24);
+				Static3.aClass4_Sub10_Sub1_1.writeByteA(Static2.aBooleanArray4[82] ? 1 : 0);
 				Static15.method1337(Static4.aClass53_Sub1_Sub1_2.anIntArray422[0], 0, 0, local744.method3311(), local19, Static4.aClass53_Sub1_Sub1_2.anIntArray426[0], 0, local744.method3311(), local15);
 			}
 		}
@@ -455,7 +455,7 @@ public final class Static35 {
 			Static4.anInt3275 = Static7.anInt5312;
 			Static7.anInt6008 = 2;
 			Static3.aClass4_Sub10_Sub1_1.method4650(176);
-			Static3.aClass4_Sub10_Sub1_1.method4631(local24);
+			Static3.aClass4_Sub10_Sub1_1.writeShort(local24);
 		}
 		if (local28 == 4) {
 			Static7.anInt6008 = 2;
@@ -463,12 +463,12 @@ public final class Static35 {
 			Static2.anInt1629 = 0;
 			Static6.anInt5177 = Static2.anInt1797;
 			Static3.aClass4_Sub10_Sub1_1.method4650(89);
-			Static3.aClass4_Sub10_Sub1_1.method4631((int) (local32 >>> 32) & Integer.MAX_VALUE);
-			Static3.aClass4_Sub10_Sub1_1.method4578(Static2.aBooleanArray4[82] ? 1 : 0);
-			Static3.aClass4_Sub10_Sub1_1.method4636(Static5.anInt3983 + local15);
-			Static3.aClass4_Sub10_Sub1_1.method4613(Static2.anInt1367);
-			Static3.aClass4_Sub10_Sub1_1.method4631(Static7.anInt5479 + local19);
-			Static3.aClass4_Sub10_Sub1_1.method4584(Static1.anInt1053);
+			Static3.aClass4_Sub10_Sub1_1.writeShort((int) (local32 >>> 32) & Integer.MAX_VALUE);
+			Static3.aClass4_Sub10_Sub1_1.writeByteC(Static2.aBooleanArray4[82] ? 1 : 0);
+			Static3.aClass4_Sub10_Sub1_1.writeShortLEA(Static5.anInt3983 + local15);
+			Static3.aClass4_Sub10_Sub1_1.writeShortLE2(Static2.anInt1367);
+			Static3.aClass4_Sub10_Sub1_1.writeShort(Static7.anInt5479 + local19);
+			Static3.aClass4_Sub10_Sub1_1.writeIntAlt3(Static1.anInt1053);
 			Static13.method1004(local19, local32, local15);
 		}
 		if (local28 == 6) {
@@ -477,10 +477,10 @@ public final class Static35 {
 			Static7.anInt6008 = 2;
 			Static4.anInt3275 = Static7.anInt5312;
 			Static3.aClass4_Sub10_Sub1_1.method4650(232);
-			Static3.aClass4_Sub10_Sub1_1.method4613(local19 + Static7.anInt5479);
-			Static3.aClass4_Sub10_Sub1_1.method4636(local24);
-			Static3.aClass4_Sub10_Sub1_1.method4611(Static2.aBooleanArray4[82] ? 1 : 0);
-			Static3.aClass4_Sub10_Sub1_1.method4613(local15 + Static5.anInt3983);
+			Static3.aClass4_Sub10_Sub1_1.writeShortLE2(local19 + Static7.anInt5479);
+			Static3.aClass4_Sub10_Sub1_1.writeShortLEA(local24);
+			Static3.aClass4_Sub10_Sub1_1.writeByteA(Static2.aBooleanArray4[82] ? 1 : 0);
+			Static3.aClass4_Sub10_Sub1_1.writeShortLE2(local15 + Static5.anInt3983);
 			Static15.method1337(Static4.aClass53_Sub1_Sub1_2.anIntArray422[0], 0, 0, 0, local19, Static4.aClass53_Sub1_Sub1_2.anIntArray426[0], 0, 0, local15);
 		}
 		if (local28 == 42) {
@@ -491,10 +491,10 @@ public final class Static35 {
 				Static4.anInt3275 = Static7.anInt5312;
 				Static7.anInt6008 = 2;
 				Static3.aClass4_Sub10_Sub1_1.method4650(155);
-				Static3.aClass4_Sub10_Sub1_1.method4614(local24);
-				Static3.aClass4_Sub10_Sub1_1.method4578(Static2.aBooleanArray4[82] ? 1 : 0);
-				Static3.aClass4_Sub10_Sub1_1.method4631(Static2.anInt1367);
-				Static3.aClass4_Sub10_Sub1_1.method4584(Static1.anInt1053);
+				Static3.aClass4_Sub10_Sub1_1.writeShortA(local24);
+				Static3.aClass4_Sub10_Sub1_1.writeByteC(Static2.aBooleanArray4[82] ? 1 : 0);
+				Static3.aClass4_Sub10_Sub1_1.writeShort(Static2.anInt1367);
+				Static3.aClass4_Sub10_Sub1_1.writeIntAlt3(Static1.anInt1053);
 				Static15.method1337(Static4.aClass53_Sub1_Sub1_2.anIntArray422[0], 0, 0, local969.method3311(), local19, Static4.aClass53_Sub1_Sub1_2.anIntArray426[0], 0, local969.method3311(), local15);
 			}
 		}
@@ -506,8 +506,8 @@ public final class Static35 {
 				Static6.anInt5177 = Static2.anInt1797;
 				Static7.anInt6008 = 2;
 				Static3.aClass4_Sub10_Sub1_1.method4650(105);
-				Static3.aClass4_Sub10_Sub1_1.method4631(local24);
-				Static3.aClass4_Sub10_Sub1_1.method4581(Static2.aBooleanArray4[82] ? 1 : 0);
+				Static3.aClass4_Sub10_Sub1_1.writeShort(local24);
+				Static3.aClass4_Sub10_Sub1_1.writeByte(Static2.aBooleanArray4[82] ? 1 : 0);
 				Static15.method1337(Static4.aClass53_Sub1_Sub1_2.anIntArray422[0], 0, 0, local1044.method3311(), local19, Static4.aClass53_Sub1_Sub1_2.anIntArray426[0], 0, local1044.method3311(), local15);
 			}
 		}
@@ -519,8 +519,8 @@ public final class Static35 {
 				Static24.method2945(Static5.anInt3983 + local15, Static7.anInt5479 + local19, Static7.anInt5334);
 			} else {
 				Static3.aClass4_Sub10_Sub1_1.method4650(85);
-				Static3.aClass4_Sub10_Sub1_1.method4636(Static5.anInt3983 + local15);
-				Static3.aClass4_Sub10_Sub1_1.method4613(Static7.anInt5479 + local19);
+				Static3.aClass4_Sub10_Sub1_1.writeShortLEA(Static5.anInt3983 + local15);
+				Static3.aClass4_Sub10_Sub1_1.writeShortLE2(Static7.anInt5479 + local19);
 			}
 		}
 		if (local28 == 59) {
@@ -531,25 +531,25 @@ public final class Static35 {
 				Static2.anInt1629 = 0;
 				Static7.anInt6008 = 2;
 				Static3.aClass4_Sub10_Sub1_1.method4650(53);
-				Static3.aClass4_Sub10_Sub1_1.method4636(local24);
-				Static3.aClass4_Sub10_Sub1_1.method4586(Static2.aBooleanArray4[82] ? 1 : 0);
+				Static3.aClass4_Sub10_Sub1_1.writeShortLEA(local24);
+				Static3.aClass4_Sub10_Sub1_1.writeByteS(Static2.aBooleanArray4[82] ? 1 : 0);
 				Static15.method1337(Static4.aClass53_Sub1_Sub1_2.anIntArray422[0], 0, 0, local1170.method3311(), local19, Static4.aClass53_Sub1_Sub1_2.anIntArray426[0], 0, local1170.method3311(), local15);
 			}
 		}
 		if (local28 == 51) {
 			Static3.aClass4_Sub10_Sub1_1.method4650(88);
-			Static3.aClass4_Sub10_Sub1_1.method4636(local24);
-			Static3.aClass4_Sub10_Sub1_1.method4591(local19);
-			Static3.aClass4_Sub10_Sub1_1.method4636(local15);
+			Static3.aClass4_Sub10_Sub1_1.writeShortLEA(local24);
+			Static3.aClass4_Sub10_Sub1_1.writeIntAlt3Reverse(local19);
+			Static3.aClass4_Sub10_Sub1_1.writeShortLEA(local15);
 			Static2.anInt2246 = 0;
 			Static1.aClass185_3 = Static19.method1813(local19);
 			Static5.anInt3884 = local15;
 		}
 		if (local28 == 13) {
 			Static3.aClass4_Sub10_Sub1_1.method4650(242);
-			Static3.aClass4_Sub10_Sub1_1.method4636(local15);
-			Static3.aClass4_Sub10_Sub1_1.method4636(local24);
-			Static3.aClass4_Sub10_Sub1_1.method4591(local19);
+			Static3.aClass4_Sub10_Sub1_1.writeShortLEA(local15);
+			Static3.aClass4_Sub10_Sub1_1.writeShortLEA(local24);
+			Static3.aClass4_Sub10_Sub1_1.writeIntAlt3Reverse(local19);
 			Static2.anInt2246 = 0;
 			Static1.aClass185_3 = Static19.method1813(local19);
 			Static5.anInt3884 = local15;
@@ -561,10 +561,10 @@ public final class Static35 {
 		}
 		if (local28 == 1) {
 			Static3.aClass4_Sub10_Sub1_1.method4650(40);
-			Static3.aClass4_Sub10_Sub1_1.method4591(local19);
-			Static3.aClass4_Sub10_Sub1_1.method4631(Static2.anInt1367);
-			Static3.aClass4_Sub10_Sub1_1.method4613(local15);
-			Static3.aClass4_Sub10_Sub1_1.method4617(Static1.anInt1053);
+			Static3.aClass4_Sub10_Sub1_1.writeIntAlt3Reverse(local19);
+			Static3.aClass4_Sub10_Sub1_1.writeShort(Static2.anInt1367);
+			Static3.aClass4_Sub10_Sub1_1.writeShortLE2(local15);
+			Static3.aClass4_Sub10_Sub1_1.writeInt(Static1.anInt1053);
 		}
 		if (local28 == 29) {
 			@Pc(1354) Class53_Sub1_Sub1 local1354 = Static5.aClass53_Sub1_Sub1Array1[local24];
@@ -574,14 +574,14 @@ public final class Static35 {
 				Static6.anInt5177 = Static2.anInt1797;
 				Static7.anInt6008 = 2;
 				Static3.aClass4_Sub10_Sub1_1.method4650(148);
-				Static3.aClass4_Sub10_Sub1_1.method4614(local24);
-				Static3.aClass4_Sub10_Sub1_1.method4611(Static2.aBooleanArray4[82] ? 1 : 0);
+				Static3.aClass4_Sub10_Sub1_1.writeShortA(local24);
+				Static3.aClass4_Sub10_Sub1_1.writeByteA(Static2.aBooleanArray4[82] ? 1 : 0);
 				Static15.method1337(Static4.aClass53_Sub1_Sub1_2.anIntArray422[0], 0, 0, local1354.method3311(), local19, Static4.aClass53_Sub1_Sub1_2.anIntArray426[0], 0, local1354.method3311(), local15);
 			}
 		}
 		if (local28 == 11) {
 			Static3.aClass4_Sub10_Sub1_1.method4650(158);
-			Static3.aClass4_Sub10_Sub1_1.method4617(local19);
+			Static3.aClass4_Sub10_Sub1_1.writeInt(local19);
 			@Pc(1434) Class185 local1434 = Static19.method1813(local19);
 			if (local1434.anIntArrayArray50 != null && local1434.anIntArrayArray50[0][0] == 5) {
 				@Pc(1452) int local1452 = local1434.anIntArrayArray50[0][1];
@@ -597,10 +597,10 @@ public final class Static35 {
 			Static2.anInt1629 = 0;
 			Static4.anInt3275 = Static7.anInt5312;
 			Static3.aClass4_Sub10_Sub1_1.method4650(159);
-			Static3.aClass4_Sub10_Sub1_1.method4636(local15 + Static5.anInt3983);
-			Static3.aClass4_Sub10_Sub1_1.method4631(Static7.anInt5479 + local19);
-			Static3.aClass4_Sub10_Sub1_1.method4581(Static2.aBooleanArray4[82] ? 1 : 0);
-			Static3.aClass4_Sub10_Sub1_1.method4636((int) (local32 >>> 32) & Integer.MAX_VALUE);
+			Static3.aClass4_Sub10_Sub1_1.writeShortLEA(local15 + Static5.anInt3983);
+			Static3.aClass4_Sub10_Sub1_1.writeShort(Static7.anInt5479 + local19);
+			Static3.aClass4_Sub10_Sub1_1.writeByte(Static2.aBooleanArray4[82] ? 1 : 0);
+			Static3.aClass4_Sub10_Sub1_1.writeShortLEA((int) (local32 >>> 32) & Integer.MAX_VALUE);
 			Static13.method1004(local19, local32, local15);
 		}
 		if (local28 == 39) {
@@ -611,19 +611,19 @@ public final class Static35 {
 				Static2.anInt1629 = 0;
 				Static7.anInt6008 = 2;
 				Static3.aClass4_Sub10_Sub1_1.method4650(245);
-				Static3.aClass4_Sub10_Sub1_1.method4631(local24);
-				Static3.aClass4_Sub10_Sub1_1.method4586(Static2.aBooleanArray4[82] ? 1 : 0);
+				Static3.aClass4_Sub10_Sub1_1.writeShort(local24);
+				Static3.aClass4_Sub10_Sub1_1.writeByteS(Static2.aBooleanArray4[82] ? 1 : 0);
 				Static15.method1337(Static4.aClass53_Sub1_Sub1_2.anIntArray422[0], 0, 0, local1545.method3311(), local19, Static4.aClass53_Sub1_Sub1_2.anIntArray426[0], 0, local1545.method3311(), local15);
 			}
 		}
 		if (local28 == 15) {
 			Static3.aClass4_Sub10_Sub1_1.method4650(58);
-			Static3.aClass4_Sub10_Sub1_1.method4631(local24);
-			Static3.aClass4_Sub10_Sub1_1.method4584(local19);
-			Static3.aClass4_Sub10_Sub1_1.method4631(Static1.anInt314);
-			Static3.aClass4_Sub10_Sub1_1.method4631(local15);
-			Static3.aClass4_Sub10_Sub1_1.method4614(Static1.anInt243);
-			Static3.aClass4_Sub10_Sub1_1.method4584(Static5.anInt4302);
+			Static3.aClass4_Sub10_Sub1_1.writeShort(local24);
+			Static3.aClass4_Sub10_Sub1_1.writeIntAlt3(local19);
+			Static3.aClass4_Sub10_Sub1_1.writeShort(Static1.anInt314);
+			Static3.aClass4_Sub10_Sub1_1.writeShort(local15);
+			Static3.aClass4_Sub10_Sub1_1.writeShortA(Static1.anInt243);
+			Static3.aClass4_Sub10_Sub1_1.writeIntAlt3(Static5.anInt4302);
 			Static2.anInt2246 = 0;
 			Static1.aClass185_3 = Static19.method1813(local19);
 			Static5.anInt3884 = local15;
@@ -636,14 +636,14 @@ public final class Static35 {
 			}
 			if (local1662) {
 				Static3.aClass4_Sub10_Sub1_1.method4650(158);
-				Static3.aClass4_Sub10_Sub1_1.method4617(local19);
+				Static3.aClass4_Sub10_Sub1_1.writeInt(local19);
 			}
 		}
 		if (local28 == 30) {
 			Static3.aClass4_Sub10_Sub1_1.method4650(81);
-			Static3.aClass4_Sub10_Sub1_1.method4613(local15);
-			Static3.aClass4_Sub10_Sub1_1.method4636(local24);
-			Static3.aClass4_Sub10_Sub1_1.method4624(local19);
+			Static3.aClass4_Sub10_Sub1_1.writeShortLE2(local15);
+			Static3.aClass4_Sub10_Sub1_1.writeShortLEA(local24);
+			Static3.aClass4_Sub10_Sub1_1.writeIntLE2(local19);
 			Static2.anInt2246 = 0;
 			Static1.aClass185_3 = Static19.method1813(local19);
 			Static5.anInt3884 = local15;
@@ -656,8 +656,8 @@ public final class Static35 {
 				Static2.anInt1629 = 0;
 				Static6.anInt5177 = Static2.anInt1797;
 				Static3.aClass4_Sub10_Sub1_1.method4650(77);
-				Static3.aClass4_Sub10_Sub1_1.method4613(local24);
-				Static3.aClass4_Sub10_Sub1_1.method4586(Static2.aBooleanArray4[82] ? 1 : 0);
+				Static3.aClass4_Sub10_Sub1_1.writeShortLE2(local24);
+				Static3.aClass4_Sub10_Sub1_1.writeByteS(Static2.aBooleanArray4[82] ? 1 : 0);
 				Static15.method1337(Static4.aClass53_Sub1_Sub1_2.anIntArray422[0], 0, 0, local1728.method3311(), local19, Static4.aClass53_Sub1_Sub1_2.anIntArray426[0], 0, local1728.method3311(), local15);
 			}
 		}
@@ -669,17 +669,17 @@ public final class Static35 {
 					Static24.method2945(local15 + Static5.anInt3983, local19 + Static7.anInt5479, Static7.anInt5334);
 				} else {
 					Static37.method4661(local15, 1, local19);
-					Static3.aClass4_Sub10_Sub1_1.method4581(Static2.anInt1941);
-					Static3.aClass4_Sub10_Sub1_1.method4581(Static7.anInt5798);
-					Static3.aClass4_Sub10_Sub1_1.method4631((int) Static5.aFloat97);
-					Static3.aClass4_Sub10_Sub1_1.method4581(57);
-					Static3.aClass4_Sub10_Sub1_1.method4581(Static6.anInt3585);
-					Static3.aClass4_Sub10_Sub1_1.method4581(Static6.anInt4761);
-					Static3.aClass4_Sub10_Sub1_1.method4581(89);
-					Static3.aClass4_Sub10_Sub1_1.method4631(Static4.aClass53_Sub1_Sub1_2.anInt3974);
-					Static3.aClass4_Sub10_Sub1_1.method4631(Static4.aClass53_Sub1_Sub1_2.anInt4002);
-					Static3.aClass4_Sub10_Sub1_1.method4581(Static2.anInt946);
-					Static3.aClass4_Sub10_Sub1_1.method4581(63);
+					Static3.aClass4_Sub10_Sub1_1.writeByte(Static2.anInt1941);
+					Static3.aClass4_Sub10_Sub1_1.writeByte(Static7.anInt5798);
+					Static3.aClass4_Sub10_Sub1_1.writeShort((int) Static5.aFloat97);
+					Static3.aClass4_Sub10_Sub1_1.writeByte(57);
+					Static3.aClass4_Sub10_Sub1_1.writeByte(Static6.anInt3585);
+					Static3.aClass4_Sub10_Sub1_1.writeByte(Static6.anInt4761);
+					Static3.aClass4_Sub10_Sub1_1.writeByte(89);
+					Static3.aClass4_Sub10_Sub1_1.writeShort(Static4.aClass53_Sub1_Sub1_2.anInt3974);
+					Static3.aClass4_Sub10_Sub1_1.writeShort(Static4.aClass53_Sub1_Sub1_2.anInt4002);
+					Static3.aClass4_Sub10_Sub1_1.writeByte(Static2.anInt946);
+					Static3.aClass4_Sub10_Sub1_1.writeByte(63);
 					Static15.method1337(Static4.aClass53_Sub1_Sub1_2.anIntArray422[0], 0, 0, 0, local19, Static4.aClass53_Sub1_Sub1_2.anIntArray426[0], 0, 0, local15);
 				}
 			}
@@ -707,12 +707,12 @@ public final class Static35 {
 			Static2.anInt1629 = 0;
 			Static4.anInt3275 = Static7.anInt5312;
 			Static3.aClass4_Sub10_Sub1_1.method4650(28);
-			Static3.aClass4_Sub10_Sub1_1.method4636(local19 + Static7.anInt5479);
-			Static3.aClass4_Sub10_Sub1_1.method4617(Static1.anInt1053);
-			Static3.aClass4_Sub10_Sub1_1.method4613(Static2.anInt1367);
-			Static3.aClass4_Sub10_Sub1_1.method4631(local24);
-			Static3.aClass4_Sub10_Sub1_1.method4613(local15 + Static5.anInt3983);
-			Static3.aClass4_Sub10_Sub1_1.method4586(Static2.aBooleanArray4[82] ? 1 : 0);
+			Static3.aClass4_Sub10_Sub1_1.writeShortLEA(local19 + Static7.anInt5479);
+			Static3.aClass4_Sub10_Sub1_1.writeInt(Static1.anInt1053);
+			Static3.aClass4_Sub10_Sub1_1.writeShortLE2(Static2.anInt1367);
+			Static3.aClass4_Sub10_Sub1_1.writeShort(local24);
+			Static3.aClass4_Sub10_Sub1_1.writeShortLE2(local15 + Static5.anInt3983);
+			Static3.aClass4_Sub10_Sub1_1.writeByteS(Static2.aBooleanArray4[82] ? 1 : 0);
 			Static15.method1337(Static4.aClass53_Sub1_Sub1_2.anIntArray422[0], 0, 0, 0, local19, Static4.aClass53_Sub1_Sub1_2.anIntArray426[0], 0, 0, local15);
 		}
 		if (local28 == 5) {
@@ -723,10 +723,10 @@ public final class Static35 {
 				Static4.anInt3275 = Static7.anInt5312;
 				Static2.anInt1629 = 0;
 				Static3.aClass4_Sub10_Sub1_1.method4650(224);
-				Static3.aClass4_Sub10_Sub1_1.method4614(local24);
-				Static3.aClass4_Sub10_Sub1_1.method4631(Static2.anInt1367);
-				Static3.aClass4_Sub10_Sub1_1.method4624(Static1.anInt1053);
-				Static3.aClass4_Sub10_Sub1_1.method4586(Static2.aBooleanArray4[82] ? 1 : 0);
+				Static3.aClass4_Sub10_Sub1_1.writeShortA(local24);
+				Static3.aClass4_Sub10_Sub1_1.writeShort(Static2.anInt1367);
+				Static3.aClass4_Sub10_Sub1_1.writeIntLE2(Static1.anInt1053);
+				Static3.aClass4_Sub10_Sub1_1.writeByteS(Static2.aBooleanArray4[82] ? 1 : 0);
 				Static15.method1337(Static4.aClass53_Sub1_Sub1_2.anIntArray422[0], 0, 0, local2053.method3311(), local19, Static4.aClass53_Sub1_Sub1_2.anIntArray426[0], 0, local2053.method3311(), local15);
 			}
 		}
@@ -736,10 +736,10 @@ public final class Static35 {
 			Static4.anInt3275 = Static7.anInt5312;
 			Static6.anInt5177 = Static2.anInt1797;
 			Static3.aClass4_Sub10_Sub1_1.method4650(48);
-			Static3.aClass4_Sub10_Sub1_1.method4631(Static5.anInt3983 + local15);
-			Static3.aClass4_Sub10_Sub1_1.method4614((int) (local32 >>> 32) & Integer.MAX_VALUE);
-			Static3.aClass4_Sub10_Sub1_1.method4586(Static2.aBooleanArray4[82] ? 1 : 0);
-			Static3.aClass4_Sub10_Sub1_1.method4631(Static7.anInt5479 + local19);
+			Static3.aClass4_Sub10_Sub1_1.writeShort(Static5.anInt3983 + local15);
+			Static3.aClass4_Sub10_Sub1_1.writeShortA((int) (local32 >>> 32) & Integer.MAX_VALUE);
+			Static3.aClass4_Sub10_Sub1_1.writeByteS(Static2.aBooleanArray4[82] ? 1 : 0);
+			Static3.aClass4_Sub10_Sub1_1.writeShort(Static7.anInt5479 + local19);
 			Static13.method1004(local19, local32, local15);
 		}
 		if (local28 == 34) {
@@ -763,18 +763,18 @@ public final class Static35 {
 		}
 		if (local28 == 49) {
 			Static3.aClass4_Sub10_Sub1_1.method4650(145);
-			Static3.aClass4_Sub10_Sub1_1.method4614(local15);
-			Static3.aClass4_Sub10_Sub1_1.method4584(local19);
-			Static3.aClass4_Sub10_Sub1_1.method4614(local24);
+			Static3.aClass4_Sub10_Sub1_1.writeShortA(local15);
+			Static3.aClass4_Sub10_Sub1_1.writeIntAlt3(local19);
+			Static3.aClass4_Sub10_Sub1_1.writeShortA(local24);
 			Static2.anInt2246 = 0;
 			Static1.aClass185_3 = Static19.method1813(local19);
 			Static5.anInt3884 = local15;
 		}
 		if (local28 == 58) {
 			Static3.aClass4_Sub10_Sub1_1.method4650(214);
-			Static3.aClass4_Sub10_Sub1_1.method4636(local15);
-			Static3.aClass4_Sub10_Sub1_1.method4614(local24);
-			Static3.aClass4_Sub10_Sub1_1.method4617(local19);
+			Static3.aClass4_Sub10_Sub1_1.writeShortLEA(local15);
+			Static3.aClass4_Sub10_Sub1_1.writeShortA(local24);
+			Static3.aClass4_Sub10_Sub1_1.writeInt(local19);
 			Static2.anInt2246 = 0;
 			Static1.aClass185_3 = Static19.method1813(local19);
 			Static5.anInt3884 = local15;
@@ -787,16 +787,16 @@ public final class Static35 {
 				Static2.anInt1629 = 0;
 				Static4.anInt3275 = Static7.anInt5312;
 				Static3.aClass4_Sub10_Sub1_1.method4650(12);
-				Static3.aClass4_Sub10_Sub1_1.method4613(local24);
-				Static3.aClass4_Sub10_Sub1_1.method4581(Static2.aBooleanArray4[82] ? 1 : 0);
+				Static3.aClass4_Sub10_Sub1_1.writeShortLE2(local24);
+				Static3.aClass4_Sub10_Sub1_1.writeByte(Static2.aBooleanArray4[82] ? 1 : 0);
 				Static15.method1337(Static4.aClass53_Sub1_Sub1_2.anIntArray422[0], 0, 0, local2321.method3311(), local19, Static4.aClass53_Sub1_Sub1_2.anIntArray426[0], 0, local2321.method3311(), local15);
 			}
 		}
 		if (local28 == 35) {
 			Static3.aClass4_Sub10_Sub1_1.method4650(103);
-			Static3.aClass4_Sub10_Sub1_1.method4591(local19);
-			Static3.aClass4_Sub10_Sub1_1.method4613(local15);
-			Static3.aClass4_Sub10_Sub1_1.method4631(local24);
+			Static3.aClass4_Sub10_Sub1_1.writeIntAlt3Reverse(local19);
+			Static3.aClass4_Sub10_Sub1_1.writeShortLE2(local15);
+			Static3.aClass4_Sub10_Sub1_1.writeShort(local24);
 			Static2.anInt2246 = 0;
 			Static1.aClass185_3 = Static19.method1813(local19);
 			Static5.anInt3884 = local15;
@@ -809,8 +809,8 @@ public final class Static35 {
 				Static2.anInt1629 = 0;
 				Static7.anInt6008 = 2;
 				Static3.aClass4_Sub10_Sub1_1.method4650(212);
-				Static3.aClass4_Sub10_Sub1_1.method4614(local24);
-				Static3.aClass4_Sub10_Sub1_1.method4611(Static2.aBooleanArray4[82] ? 1 : 0);
+				Static3.aClass4_Sub10_Sub1_1.writeShortA(local24);
+				Static3.aClass4_Sub10_Sub1_1.writeByteA(Static2.aBooleanArray4[82] ? 1 : 0);
 				Static15.method1337(Static4.aClass53_Sub1_Sub1_2.anIntArray422[0], 0, 0, local2423.method3311(), local19, Static4.aClass53_Sub1_Sub1_2.anIntArray426[0], 0, local2423.method3311(), local15);
 			}
 		}
@@ -820,13 +820,13 @@ public final class Static35 {
 			Static6.anInt5177 = Static2.anInt1797;
 			Static2.anInt1629 = 0;
 			Static3.aClass4_Sub10_Sub1_1.method4650(116);
-			Static3.aClass4_Sub10_Sub1_1.method4631(Static1.anInt314);
-			Static3.aClass4_Sub10_Sub1_1.method4636(local15 + Static5.anInt3983);
-			Static3.aClass4_Sub10_Sub1_1.method4636((int) (local32 >>> 32) & Integer.MAX_VALUE);
-			Static3.aClass4_Sub10_Sub1_1.method4624(Static5.anInt4302);
-			Static3.aClass4_Sub10_Sub1_1.method4578(Static2.aBooleanArray4[82] ? 1 : 0);
-			Static3.aClass4_Sub10_Sub1_1.method4613(Static7.anInt5479 + local19);
-			Static3.aClass4_Sub10_Sub1_1.method4613(Static1.anInt243);
+			Static3.aClass4_Sub10_Sub1_1.writeShort(Static1.anInt314);
+			Static3.aClass4_Sub10_Sub1_1.writeShortLEA(local15 + Static5.anInt3983);
+			Static3.aClass4_Sub10_Sub1_1.writeShortLEA((int) (local32 >>> 32) & Integer.MAX_VALUE);
+			Static3.aClass4_Sub10_Sub1_1.writeIntLE2(Static5.anInt4302);
+			Static3.aClass4_Sub10_Sub1_1.writeByteC(Static2.aBooleanArray4[82] ? 1 : 0);
+			Static3.aClass4_Sub10_Sub1_1.writeShortLE2(Static7.anInt5479 + local19);
+			Static3.aClass4_Sub10_Sub1_1.writeShortLE2(Static1.anInt243);
 			Static13.method1004(local19, local32, local15);
 		}
 		if (local28 == 44) {
@@ -835,10 +835,10 @@ public final class Static35 {
 			Static2.anInt1629 = 0;
 			Static7.anInt6008 = 2;
 			Static3.aClass4_Sub10_Sub1_1.method4650(3);
-			Static3.aClass4_Sub10_Sub1_1.method4578(Static2.aBooleanArray4[82] ? 1 : 0);
-			Static3.aClass4_Sub10_Sub1_1.method4613(Static7.anInt5479 + local19);
-			Static3.aClass4_Sub10_Sub1_1.method4613(local24);
-			Static3.aClass4_Sub10_Sub1_1.method4614(local15 + Static5.anInt3983);
+			Static3.aClass4_Sub10_Sub1_1.writeByteC(Static2.aBooleanArray4[82] ? 1 : 0);
+			Static3.aClass4_Sub10_Sub1_1.writeShortLE2(Static7.anInt5479 + local19);
+			Static3.aClass4_Sub10_Sub1_1.writeShortLE2(local24);
+			Static3.aClass4_Sub10_Sub1_1.writeShortA(local15 + Static5.anInt3983);
 			Static15.method1337(Static4.aClass53_Sub1_Sub1_2.anIntArray422[0], 0, 0, 0, local19, Static4.aClass53_Sub1_Sub1_2.anIntArray426[0], 0, 0, local15);
 		}
 		if (local28 == 23 || local28 == 1009) {
@@ -857,7 +857,7 @@ public final class Static35 {
 				}
 				if (local2665 != null) {
 					Static3.aClass4_Sub10_Sub1_1.method4650(65);
-					Static3.aClass4_Sub10_Sub1_1.method4613(local2665.anInt5255);
+					Static3.aClass4_Sub10_Sub1_1.writeShortLE2(local2665.anInt5255);
 				}
 			}
 		}
@@ -870,10 +870,10 @@ public final class Static35 {
 			Static6.anInt5177 = Static2.anInt1797;
 			Static2.anInt1629 = 0;
 			Static3.aClass4_Sub10_Sub1_1.method4650(60);
-			Static3.aClass4_Sub10_Sub1_1.method4614(local19 + Static7.anInt5479);
-			Static3.aClass4_Sub10_Sub1_1.method4613((int) (local32 >>> 32) & Integer.MAX_VALUE);
-			Static3.aClass4_Sub10_Sub1_1.method4581(Static2.aBooleanArray4[82] ? 1 : 0);
-			Static3.aClass4_Sub10_Sub1_1.method4613(Static5.anInt3983 + local15);
+			Static3.aClass4_Sub10_Sub1_1.writeShortA(local19 + Static7.anInt5479);
+			Static3.aClass4_Sub10_Sub1_1.writeShortLE2((int) (local32 >>> 32) & Integer.MAX_VALUE);
+			Static3.aClass4_Sub10_Sub1_1.writeByte(Static2.aBooleanArray4[82] ? 1 : 0);
+			Static3.aClass4_Sub10_Sub1_1.writeShortLE2(Static5.anInt3983 + local15);
 			Static13.method1004(local19, local32, local15);
 		}
 		if (local28 == 41) {
@@ -882,37 +882,37 @@ public final class Static35 {
 			Static6.anInt5177 = Static2.anInt1797;
 			Static4.anInt3275 = Static7.anInt5312;
 			Static3.aClass4_Sub10_Sub1_1.method4650(92);
-			Static3.aClass4_Sub10_Sub1_1.method4586(Static2.aBooleanArray4[82] ? 1 : 0);
-			Static3.aClass4_Sub10_Sub1_1.method4613((int) (local32 >>> 32) & Integer.MAX_VALUE);
-			Static3.aClass4_Sub10_Sub1_1.method4614(local15 + Static5.anInt3983);
-			Static3.aClass4_Sub10_Sub1_1.method4614(local19 + Static7.anInt5479);
+			Static3.aClass4_Sub10_Sub1_1.writeByteS(Static2.aBooleanArray4[82] ? 1 : 0);
+			Static3.aClass4_Sub10_Sub1_1.writeShortLE2((int) (local32 >>> 32) & Integer.MAX_VALUE);
+			Static3.aClass4_Sub10_Sub1_1.writeShortA(local15 + Static5.anInt3983);
+			Static3.aClass4_Sub10_Sub1_1.writeShortA(local19 + Static7.anInt5479);
 			Static13.method1004(local19, local32, local15);
 		}
 		if (local28 == 50) {
 			Static3.aClass4_Sub10_Sub1_1.method4650(177);
-			Static3.aClass4_Sub10_Sub1_1.method4591(local19);
-			Static3.aClass4_Sub10_Sub1_1.method4631(local24);
-			Static3.aClass4_Sub10_Sub1_1.method4624(Static1.anInt1053);
-			Static3.aClass4_Sub10_Sub1_1.method4613(local15);
-			Static3.aClass4_Sub10_Sub1_1.method4613(Static2.anInt1367);
+			Static3.aClass4_Sub10_Sub1_1.writeIntAlt3Reverse(local19);
+			Static3.aClass4_Sub10_Sub1_1.writeShort(local24);
+			Static3.aClass4_Sub10_Sub1_1.writeIntLE2(Static1.anInt1053);
+			Static3.aClass4_Sub10_Sub1_1.writeShortLE2(local15);
+			Static3.aClass4_Sub10_Sub1_1.writeShortLE2(Static2.anInt1367);
 			Static2.anInt2246 = 0;
 			Static1.aClass185_3 = Static19.method1813(local19);
 			Static5.anInt3884 = local15;
 		}
 		if (local28 == 20) {
 			Static3.aClass4_Sub10_Sub1_1.method4650(124);
-			Static3.aClass4_Sub10_Sub1_1.method4636(local15);
-			Static3.aClass4_Sub10_Sub1_1.method4636(local24);
-			Static3.aClass4_Sub10_Sub1_1.method4624(local19);
+			Static3.aClass4_Sub10_Sub1_1.writeShortLEA(local15);
+			Static3.aClass4_Sub10_Sub1_1.writeShortLEA(local24);
+			Static3.aClass4_Sub10_Sub1_1.writeIntLE2(local19);
 			Static2.anInt2246 = 0;
 			Static1.aClass185_3 = Static19.method1813(local19);
 			Static5.anInt3884 = local15;
 		}
 		if (local28 == 2) {
 			Static3.aClass4_Sub10_Sub1_1.method4650(205);
-			Static3.aClass4_Sub10_Sub1_1.method4591(local19);
-			Static3.aClass4_Sub10_Sub1_1.method4613(local15);
-			Static3.aClass4_Sub10_Sub1_1.method4614(local24);
+			Static3.aClass4_Sub10_Sub1_1.writeIntAlt3Reverse(local19);
+			Static3.aClass4_Sub10_Sub1_1.writeShortLE2(local15);
+			Static3.aClass4_Sub10_Sub1_1.writeShortA(local24);
 			Static2.anInt2246 = 0;
 			Static1.aClass185_3 = Static19.method1813(local19);
 			Static5.anInt3884 = local15;
@@ -923,10 +923,10 @@ public final class Static35 {
 			Static4.anInt3275 = Static7.anInt5312;
 			Static2.anInt1629 = 0;
 			Static3.aClass4_Sub10_Sub1_1.method4650(54);
-			Static3.aClass4_Sub10_Sub1_1.method4581(Static2.aBooleanArray4[82] ? 1 : 0);
-			Static3.aClass4_Sub10_Sub1_1.method4613(Static7.anInt5479 + local19);
-			Static3.aClass4_Sub10_Sub1_1.method4631(local24);
-			Static3.aClass4_Sub10_Sub1_1.method4631(local15 + Static5.anInt3983);
+			Static3.aClass4_Sub10_Sub1_1.writeByte(Static2.aBooleanArray4[82] ? 1 : 0);
+			Static3.aClass4_Sub10_Sub1_1.writeShortLE2(Static7.anInt5479 + local19);
+			Static3.aClass4_Sub10_Sub1_1.writeShort(local24);
+			Static3.aClass4_Sub10_Sub1_1.writeShort(local15 + Static5.anInt3983);
 			Static15.method1337(Static4.aClass53_Sub1_Sub1_2.anIntArray422[0], 0, 0, 0, local19, Static4.aClass53_Sub1_Sub1_2.anIntArray426[0], 0, 0, local15);
 		}
 		if (local28 == 22) {
@@ -937,8 +937,8 @@ public final class Static35 {
 				Static6.anInt5177 = Static2.anInt1797;
 				Static2.anInt1629 = 0;
 				Static3.aClass4_Sub10_Sub1_1.method4650(96);
-				Static3.aClass4_Sub10_Sub1_1.method4611(Static2.aBooleanArray4[82] ? 1 : 0);
-				Static3.aClass4_Sub10_Sub1_1.method4631(local24);
+				Static3.aClass4_Sub10_Sub1_1.writeByteA(Static2.aBooleanArray4[82] ? 1 : 0);
+				Static3.aClass4_Sub10_Sub1_1.writeShort(local24);
 				Static15.method1337(Static4.aClass53_Sub1_Sub1_2.anIntArray422[0], 0, 0, local3012.method3311(), local19, Static4.aClass53_Sub1_Sub1_2.anIntArray426[0], 0, local3012.method3311(), local15);
 			}
 		}
@@ -950,8 +950,8 @@ public final class Static35 {
 				Static6.anInt5177 = Static2.anInt1797;
 				Static4.anInt3275 = Static7.anInt5312;
 				Static3.aClass4_Sub10_Sub1_1.method4650(223);
-				Static3.aClass4_Sub10_Sub1_1.method4581(Static2.aBooleanArray4[82] ? 1 : 0);
-				Static3.aClass4_Sub10_Sub1_1.method4636(local24);
+				Static3.aClass4_Sub10_Sub1_1.writeByte(Static2.aBooleanArray4[82] ? 1 : 0);
+				Static3.aClass4_Sub10_Sub1_1.writeShortLEA(local24);
 				Static15.method1337(Static4.aClass53_Sub1_Sub1_2.anIntArray422[0], 0, 0, local3080.method3311(), local19, Static4.aClass53_Sub1_Sub1_2.anIntArray426[0], 0, local3080.method3311(), local15);
 			}
 		}
@@ -959,7 +959,7 @@ public final class Static35 {
 			@Pc(3148) Class185 local3148 = Static19.method1813(local19);
 			if (local3148 == null || local3148.anIntArray661[local15] < 100000) {
 				Static3.aClass4_Sub10_Sub1_1.method4650(72);
-				Static3.aClass4_Sub10_Sub1_1.method4631(local24);
+				Static3.aClass4_Sub10_Sub1_1.writeShort(local24);
 			} else {
 				Static26.method4357("", 0, local3148.anIntArray661[local15] + " x " + method4361(local24).aString308);
 			}
@@ -969,7 +969,7 @@ public final class Static35 {
 		}
 		if (local28 == 18) {
 			Static3.aClass4_Sub10_Sub1_1.method4650(158);
-			Static3.aClass4_Sub10_Sub1_1.method4617(local19);
+			Static3.aClass4_Sub10_Sub1_1.writeInt(local19);
 			@Pc(3216) Class185 local3216 = Static19.method1813(local19);
 			if (local3216.anIntArrayArray50 != null && local3216.anIntArrayArray50[0][0] == 5) {
 				@Pc(3240) int local3240 = local3216.anIntArrayArray50[0][1];
@@ -983,10 +983,10 @@ public final class Static35 {
 			Static4.anInt3275 = Static7.anInt5312;
 			Static6.anInt5177 = Static2.anInt1797;
 			Static3.aClass4_Sub10_Sub1_1.method4650(8);
-			Static3.aClass4_Sub10_Sub1_1.method4636(local24);
-			Static3.aClass4_Sub10_Sub1_1.method4631(local19 + Static7.anInt5479);
-			Static3.aClass4_Sub10_Sub1_1.method4631(Static5.anInt3983 + local15);
-			Static3.aClass4_Sub10_Sub1_1.method4611(Static2.aBooleanArray4[82] ? 1 : 0);
+			Static3.aClass4_Sub10_Sub1_1.writeShortLEA(local24);
+			Static3.aClass4_Sub10_Sub1_1.writeShort(local19 + Static7.anInt5479);
+			Static3.aClass4_Sub10_Sub1_1.writeShort(Static5.anInt3983 + local15);
+			Static3.aClass4_Sub10_Sub1_1.writeByteA(Static2.aBooleanArray4[82] ? 1 : 0);
 			Static15.method1337(Static4.aClass53_Sub1_Sub1_2.anIntArray422[0], 0, 0, 0, local19, Static4.aClass53_Sub1_Sub1_2.anIntArray426[0], 0, 0, local15);
 		}
 		if (Static2.anInt1334 != 0) {
@@ -1468,12 +1468,12 @@ public final class Static35 {
 
 	@OriginalMember(owner = "client!uk", name = "a", descriptor = "(ZIIII)V")
 	public static void method4339(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3) {
-		Static3.aClass4_Sub10_Sub1_1.anInt5709 = 0;
-		Static3.aClass4_Sub10_Sub1_1.method4581(20);
-		Static3.aClass4_Sub10_Sub1_1.method4581(arg3);
-		Static3.aClass4_Sub10_Sub1_1.method4581(arg2);
-		Static3.aClass4_Sub10_Sub1_1.method4631(arg0);
-		Static3.aClass4_Sub10_Sub1_1.method4631(arg1);
+		Static3.aClass4_Sub10_Sub1_1.position = 0;
+		Static3.aClass4_Sub10_Sub1_1.writeByte(20);
+		Static3.aClass4_Sub10_Sub1_1.writeByte(arg3);
+		Static3.aClass4_Sub10_Sub1_1.writeByte(arg2);
+		Static3.aClass4_Sub10_Sub1_1.writeShort(arg0);
+		Static3.aClass4_Sub10_Sub1_1.writeShort(arg1);
 		Static2.anInt1213 = 0;
 		Static6.anInt4759 = 1;
 		Static6.anInt5173 = -3;
@@ -1549,7 +1549,7 @@ public final class Static35 {
 		@Pc(38) Class162 local38 = new Class162();
 		local38.anInt5066 = arg0;
 		if (local34 != null) {
-			local38.method4120(new Class4_Sub10(local34));
+			local38.method4120(new Buffer(local34));
 		}
 		local38.method4127();
 		if (local38.anInt5089 != -1) {
@@ -1583,7 +1583,7 @@ public final class Static35 {
 		@Pc(22) byte[] local22 = Static3.aClass58_52.method1372(29, arg0);
 		@Pc(26) Class145 local26 = new Class145();
 		if (local22 != null) {
-			local26.method3618(arg0, new Class4_Sub10(local22));
+			local26.method3618(arg0, new Buffer(local22));
 		}
 		Static6.aClass26_52.method510(local26, (long) arg0);
 		return local26;
@@ -1728,7 +1728,7 @@ public final class Static35 {
 				}
 				Static3.aClass52_7 = new Class52((Socket) Static7.aClass197_5.result, Static7.aClass196_4);
 				Static7.aClass197_5 = null;
-				Static3.aClass52_7.method1107(Static3.aClass4_Sub10_Sub1_1.aByteArray71, Static3.aClass4_Sub10_Sub1_1.anInt5709);
+				Static3.aClass52_7.method1107(Static3.aClass4_Sub10_Sub1_1.bytes, Static3.aClass4_Sub10_Sub1_1.position);
 				if (Static1.aClass102_1 != null) {
 					Static1.aClass102_1.method2996();
 				}
@@ -1762,10 +1762,10 @@ public final class Static35 {
 				if (Static3.aClass52_7.method1101() < Static2.aStringArray8.length * 8) {
 					return;
 				}
-				Static5.aClass4_Sub10_Sub1_2.anInt5709 = 0;
-				Static3.aClass52_7.method1099(0, Static5.aClass4_Sub10_Sub1_2.aByteArray71, Static2.aStringArray8.length * 8);
+				Static5.aClass4_Sub10_Sub1_2.position = 0;
+				Static3.aClass52_7.method1099(0, Static5.aClass4_Sub10_Sub1_2.bytes, Static2.aStringArray8.length * 8);
 				for (@Pc(199) int local199 = 0; local199 < Static2.aStringArray8.length; local199++) {
-					Static2.aStringArray8[local199] = method4319(Static5.aClass4_Sub10_Sub1_2.method4622());
+					Static2.aStringArray8[local199] = method4319(Static5.aClass4_Sub10_Sub1_2.readLong());
 				}
 				Static6.anInt4759 = 0;
 				Static6.anInt5173 = 21;

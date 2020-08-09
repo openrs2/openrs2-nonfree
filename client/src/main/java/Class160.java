@@ -28,13 +28,13 @@ public final class Class160 {
 	}
 
 	@OriginalMember(owner = "client!t", name = "<init>", descriptor = "(Lclient!fd;)V")
-	public Class160(@OriginalArg(0) Class4_Sub10 arg0) {
-		this.aByte17 = arg0.method4637();
-		this.anInt4983 = arg0.method4616();
-		this.anInt4982 = arg0.method4595();
-		this.anInt4976 = arg0.method4595();
-		this.anInt4980 = arg0.method4595();
-		this.anInt4981 = arg0.method4595();
+	public Class160(@OriginalArg(0) Buffer arg0) {
+		this.aByte17 = arg0.readByte();
+		this.anInt4983 = arg0.readUnsignedShort();
+		this.anInt4982 = arg0.readInt();
+		this.anInt4976 = arg0.readInt();
+		this.anInt4980 = arg0.readInt();
+		this.anInt4981 = arg0.readInt();
 	}
 
 	@OriginalMember(owner = "client!t", name = "a", descriptor = "(I)I")

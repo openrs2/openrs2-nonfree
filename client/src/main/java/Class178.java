@@ -19,22 +19,22 @@ public final class Class178 {
 	public int anInt5482 = 0;
 
 	@OriginalMember(owner = "client!vd", name = "a", descriptor = "(IILclient!fd;B)V")
-	private void method4437(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) Class4_Sub10 arg2) {
+	private void method4437(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) Buffer arg2) {
 		if (arg1 == 1) {
-			this.anInt5482 = arg2.method4629();
+			this.anInt5482 = arg2.readUnsignedByte();
 		} else if (arg1 == 2) {
-			this.anInt5481 = arg2.method4616();
+			this.anInt5481 = arg2.readUnsignedShort();
 		} else if (arg1 == 3) {
-			this.anInt5484 = arg2.method4616();
+			this.anInt5484 = arg2.readUnsignedShort();
 		} else if (arg1 == 4) {
-			this.anInt5480 = arg2.method4576();
+			this.anInt5480 = arg2.readShort();
 		}
 	}
 
 	@OriginalMember(owner = "client!vd", name = "a", descriptor = "(ZLclient!fd;I)V")
-	public final void method4438(@OriginalArg(1) Class4_Sub10 arg0, @OriginalArg(2) int arg1) {
+	public final void method4438(@OriginalArg(1) Buffer arg0, @OriginalArg(2) int arg1) {
 		while (true) {
-			@Pc(5) int local5 = arg0.method4629();
+			@Pc(5) int local5 = arg0.readUnsignedByte();
 			if (local5 == 0) {
 				return;
 			}

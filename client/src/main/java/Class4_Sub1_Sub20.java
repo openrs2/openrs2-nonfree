@@ -157,15 +157,15 @@ public final class Class4_Sub1_Sub20 extends Class4_Sub1 {
 
 	@OriginalMember(owner = "client!of", name = "a", descriptor = "(BLclient!fd;I)V")
 	@Override
-	public final void method4687(@OriginalArg(1) Class4_Sub10 arg0, @OriginalArg(2) int arg1) {
+	public final void method4687(@OriginalArg(1) Buffer arg0, @OriginalArg(2) int arg1) {
 		if (arg1 != 0) {
 			return;
 		}
-		this.anInt3819 = arg0.method4629();
-		this.anIntArrayArray34 = new int[arg0.method4629()][2];
+		this.anInt3819 = arg0.readUnsignedByte();
+		this.anIntArrayArray34 = new int[arg0.readUnsignedByte()][2];
 		for (@Pc(26) int local26 = 0; local26 < this.anIntArrayArray34.length; local26++) {
-			this.anIntArrayArray34[local26][0] = arg0.method4616();
-			this.anIntArrayArray34[local26][1] = arg0.method4616();
+			this.anIntArrayArray34[local26][0] = arg0.readUnsignedShort();
+			this.anIntArrayArray34[local26][1] = arg0.readUnsignedShort();
 		}
 	}
 }

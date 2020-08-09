@@ -58,10 +58,10 @@ public final class Class53_Sub1_Sub1 extends Class53_Sub1 {
 	public int anInt1596 = -1;
 
 	@OriginalMember(owner = "client!f", name = "a", descriptor = "(Lclient!fd;B)V")
-	public final void method1170(@OriginalArg(0) Class4_Sub10 arg0) {
-		arg0.anInt5709 = 0;
+	public final void method1170(@OriginalArg(0) Buffer arg0) {
+		arg0.position = 0;
 		@Pc(16) int local16 = -1;
-		@Pc(20) int local20 = arg0.method4629();
+		@Pc(20) int local20 = arg0.readUnsignedByte();
 		@Pc(31) boolean local31 = (local20 & 0x4) != 0;
 		@Pc(35) int local35 = local20 & 0x1;
 		@Pc(41) int local41 = super.method3311();
@@ -70,19 +70,19 @@ public final class Class53_Sub1_Sub1 extends Class53_Sub1 {
 		@Pc(64) int[] local64 = new int[12];
 		this.anInt3974 += (this.method3311() - local41) * 64;
 		this.anInt4002 += (this.method3311() - local41) * 64;
-		this.anInt1573 = arg0.method4637();
-		this.anInt1596 = arg0.method4637();
+		this.anInt1573 = arg0.readByte();
+		this.anInt1596 = arg0.readByte();
 		this.anInt1593 = 0;
 		for (@Pc(107) int local107 = 0; local107 < 12; local107++) {
-			@Pc(116) int local116 = arg0.method4629();
+			@Pc(116) int local116 = arg0.readUnsignedByte();
 			if (local116 == 0) {
 				local64[local107] = 0;
 			} else {
-				@Pc(129) int local129 = arg0.method4629();
+				@Pc(129) int local129 = arg0.readUnsignedByte();
 				@Pc(136) int local136 = (local116 << 8) + local129;
 				if (local107 == 0 && local136 == 65535) {
-					local16 = arg0.method4616();
-					this.anInt1593 = arg0.method4629();
+					local16 = arg0.readUnsignedShort();
+					this.anInt1593 = arg0.readUnsignedByte();
 					break;
 				}
 				if (local136 >= 32768) {
@@ -99,30 +99,30 @@ public final class Class53_Sub1_Sub1 extends Class53_Sub1 {
 		}
 		@Pc(199) int[] local199 = new int[5];
 		for (@Pc(201) int local201 = 0; local201 < 5; local201++) {
-			@Pc(208) int local208 = arg0.method4629();
+			@Pc(208) int local208 = arg0.readUnsignedByte();
 			if (local208 < 0 || Static6.aShortArrayArray6[local201].length <= local208) {
 				local208 = 0;
 			}
 			local199[local201] = local208;
 		}
-		this.anInt3986 = arg0.method4616();
-		@Pc(242) long local242 = arg0.method4622();
+		this.anInt3986 = arg0.readUnsignedShort();
+		@Pc(242) long local242 = arg0.readLong();
 		this.aString88 = Static29.method3477(local242);
-		this.anInt1597 = arg0.method4629();
+		this.anInt1597 = arg0.readUnsignedByte();
 		if (local31) {
-			this.anInt1584 = arg0.method4616();
+			this.anInt1584 = arg0.readUnsignedShort();
 			this.anInt1576 = this.anInt1597;
 			this.anInt1586 = -1;
 		} else {
 			this.anInt1584 = 0;
-			this.anInt1576 = arg0.method4629();
-			this.anInt1586 = arg0.method4629();
+			this.anInt1576 = arg0.readUnsignedByte();
+			this.anInt1586 = arg0.readUnsignedByte();
 			if (this.anInt1586 == 255) {
 				this.anInt1586 = -1;
 			}
 		}
 		@Pc(293) int local293 = this.anInt1582;
-		this.anInt1582 = arg0.method4629();
+		this.anInt1582 = arg0.readUnsignedByte();
 		if (this.anInt1582 == 0) {
 			Static12.method739(this);
 		} else {
@@ -131,11 +131,11 @@ public final class Class53_Sub1_Sub1 extends Class53_Sub1 {
 			@Pc(310) int local310 = this.anInt1580;
 			@Pc(313) int local313 = this.anInt1589;
 			@Pc(316) int local316 = this.anInt1587;
-			this.anInt1588 = arg0.method4616();
-			this.anInt1583 = arg0.method4616();
-			this.anInt1580 = arg0.method4616();
-			this.anInt1589 = arg0.method4616();
-			this.anInt1587 = arg0.method4629();
+			this.anInt1588 = arg0.readUnsignedShort();
+			this.anInt1583 = arg0.readUnsignedShort();
+			this.anInt1580 = arg0.readUnsignedShort();
+			this.anInt1589 = arg0.readUnsignedShort();
+			this.anInt1587 = arg0.readUnsignedByte();
 			if (this.anInt1582 != local293 || local307 != this.anInt1588 || local304 != this.anInt1583 || this.anInt1580 != local310 || this.anInt1589 != local313 || this.anInt1587 != local316) {
 				Static10.method383(this);
 			}

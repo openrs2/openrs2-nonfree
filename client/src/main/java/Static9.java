@@ -199,19 +199,19 @@ public final class Static9 {
 	}
 
 	@OriginalMember(owner = "client!an", name = "a", descriptor = "(Lclient!fd;ZZZIIIIIIII)V")
-	public static void method195(@OriginalArg(0) Class4_Sub10 arg0, @OriginalArg(2) boolean arg1, @OriginalArg(3) boolean arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4, @OriginalArg(6) int arg5, @OriginalArg(7) int arg6, @OriginalArg(8) int arg7, @OriginalArg(9) int arg8, @OriginalArg(10) int arg9, @OriginalArg(11) int arg10) {
+	public static void method195(@OriginalArg(0) Buffer arg0, @OriginalArg(2) boolean arg1, @OriginalArg(3) boolean arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4, @OriginalArg(6) int arg5, @OriginalArg(7) int arg6, @OriginalArg(8) int arg7, @OriginalArg(9) int arg8, @OriginalArg(10) int arg9, @OriginalArg(11) int arg10) {
 		if (arg10 < 0 || arg10 >= 104 || arg6 < 0 || arg6 >= 104) {
 			while (true) {
-				@Pc(315) int local315 = arg0.method4629();
+				@Pc(315) int local315 = arg0.readUnsignedByte();
 				if (local315 == 0) {
 					break;
 				}
 				if (local315 == 1) {
-					arg0.method4629();
+					arg0.readUnsignedByte();
 					break;
 				}
 				if (local315 <= 49) {
-					arg0.method4629();
+					arg0.readUnsignedByte();
 				}
 			}
 			return;
@@ -220,7 +220,7 @@ public final class Static9 {
 			Static4.aByteArrayArrayArray17[arg3][arg10][arg6] = 0;
 		}
 		while (true) {
-			@Pc(37) int local37 = arg0.method4629();
+			@Pc(37) int local37 = arg0.readUnsignedByte();
 			if (local37 == 0) {
 				if (arg2) {
 					Static6.anIntArrayArrayArray13[0][arg9 + arg10][arg8 + arg6] = Static6.anIntArrayArrayArray14[0][arg9 + arg10][arg8 + arg6];
@@ -232,7 +232,7 @@ public final class Static9 {
 				break;
 			}
 			if (local37 == 1) {
-				@Pc(132) int local132 = arg0.method4629();
+				@Pc(132) int local132 = arg0.readUnsignedByte();
 				if (arg2) {
 					Static6.anIntArrayArrayArray13[0][arg9 + arg10][arg8 + arg6] = local132 * 8 + Static6.anIntArrayArrayArray14[0][arg9 + arg10][arg8 + arg6];
 				} else {
@@ -249,9 +249,9 @@ public final class Static9 {
 			}
 			if (local37 <= 49) {
 				if (arg1) {
-					arg0.method4629();
+					arg0.readUnsignedByte();
 				} else {
-					Static4.aByteArrayArrayArray15[arg3][arg10][arg6] = arg0.method4637();
+					Static4.aByteArrayArrayArray15[arg3][arg10][arg6] = arg0.readByte();
 					Static2.aByteArrayArrayArray4[arg3][arg10][arg6] = (byte) ((local37 - 2) / 4);
 					Static1.aByteArrayArrayArray1[arg3][arg10][arg6] = (byte) (arg7 + local37 - 2 & 0x3);
 				}
@@ -637,7 +637,7 @@ public final class Static9 {
 		@Pc(29) byte[] local29 = Static6.aClass58_95.method1372(5, arg0);
 		@Pc(33) Class4_Sub3_Sub8 local33 = new Class4_Sub3_Sub8();
 		if (local29 != null) {
-			local33.method1499(new Class4_Sub10(local29));
+			local33.method1499(new Buffer(local29));
 		}
 		Static2.aClass40_6.method888((long) arg0, local33);
 		return local33;
@@ -908,13 +908,13 @@ public final class Static9 {
 	}
 
 	@OriginalMember(owner = "client!bg", name = "a", descriptor = "(IILclient!fd;)V")
-	public static void method281(@OriginalArg(1) int arg0, @OriginalArg(2) Class4_Sub10 arg1) {
+	public static void method281(@OriginalArg(1) int arg0, @OriginalArg(2) Buffer arg1) {
 		if (Static1.aClass189_1 == null) {
 			return;
 		}
 		try {
 			Static1.aClass189_1.method4798(0L);
-			Static1.aClass189_1.method4795(arg0, arg1.aByteArray71, 24);
+			Static1.aClass189_1.method4795(arg0, arg1.bytes, 24);
 		} catch (@Pc(14) Exception local14) {
 		}
 	}

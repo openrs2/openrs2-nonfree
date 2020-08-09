@@ -25,9 +25,9 @@ public final class Class4_Sub3_Sub15 extends Class4_Sub3 {
 	private final Class4_Sub1[] aClass4_Sub1Array19;
 
 	@OriginalMember(owner = "client!ln", name = "<init>", descriptor = "(Lclient!fd;)V")
-	public Class4_Sub3_Sub15(@OriginalArg(0) Class4_Sub10 arg0) {
+	public Class4_Sub3_Sub15(@OriginalArg(0) Buffer arg0) {
 		@Pc(5) int local5 = 0;
-		@Pc(9) int local9 = arg0.method4629();
+		@Pc(9) int local9 = arg0.readUnsignedByte();
 		this.aClass4_Sub1Array19 = new Class4_Sub1[local9];
 		@Pc(15) int local15 = 0;
 		@Pc(18) int[][] local18 = new int[local9][];
@@ -42,7 +42,7 @@ public final class Class4_Sub3_Sub15 extends Class4_Sub3 {
 			@Pc(46) int local46 = local27.aClass4_Sub1Array42.length;
 			local18[local20] = new int[local46];
 			for (@Pc(53) int local53 = 0; local53 < local46; local53++) {
-				local18[local20][local53] = arg0.method4629();
+				local18[local20][local53] = arg0.readUnsignedByte();
 			}
 			this.aClass4_Sub1Array19[local20] = local27;
 		}
@@ -66,9 +66,9 @@ public final class Class4_Sub3_Sub15 extends Class4_Sub3 {
 			}
 			local18[local93] = null;
 		}
-		this.aClass4_Sub1_3 = this.aClass4_Sub1Array19[arg0.method4629()];
-		this.aClass4_Sub1_1 = this.aClass4_Sub1Array19[arg0.method4629()];
-		this.aClass4_Sub1_2 = this.aClass4_Sub1Array19[arg0.method4629()];
+		this.aClass4_Sub1_3 = this.aClass4_Sub1Array19[arg0.readUnsignedByte()];
+		this.aClass4_Sub1_1 = this.aClass4_Sub1Array19[arg0.readUnsignedByte()];
+		this.aClass4_Sub1_2 = this.aClass4_Sub1Array19[arg0.readUnsignedByte()];
 		@Pc(190) int[][] local190 = null;
 	}
 

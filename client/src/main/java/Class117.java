@@ -7,7 +7,7 @@ import dev.openrs2.deob.annotation.Pc;
 public final class Class117 {
 
 	@OriginalMember(owner = "client!mg", name = "i", descriptor = "Lclient!fd;")
-	private Class4_Sub10 aClass4_Sub10_6;
+	private Buffer aClass4_Sub10_6;
 
 	@OriginalMember(owner = "client!mg", name = "m", descriptor = "[Lclient!wb;")
 	private Class62_Sub1[] aClass62_Sub1Array1;
@@ -61,8 +61,8 @@ public final class Class117 {
 		if (this.aClass4_Sub3_Sub1_Sub2_2.aBoolean364) {
 			return false;
 		} else {
-			this.aClass4_Sub10_6 = new Class4_Sub10(this.aClass4_Sub3_Sub1_Sub2_2.method4352());
-			this.aClass62_Sub1Array1 = new Class62_Sub1[(this.aClass4_Sub10_6.aByteArray71.length - 5) / 8];
+			this.aClass4_Sub10_6 = new Buffer(this.aClass4_Sub3_Sub1_Sub2_2.method4352());
+			this.aClass62_Sub1Array1 = new Class62_Sub1[(this.aClass4_Sub10_6.bytes.length - 5) / 8];
 			return true;
 		}
 	}
@@ -72,12 +72,12 @@ public final class Class117 {
 		if (this.aClass4_Sub10_6 == null) {
 			throw new RuntimeException();
 		}
-		this.aClass4_Sub10_6.anInt5709 = arg2 * 8 + 5;
-		if (this.aClass4_Sub10_6.aByteArray71.length <= this.aClass4_Sub10_6.anInt5709) {
+		this.aClass4_Sub10_6.position = arg2 * 8 + 5;
+		if (this.aClass4_Sub10_6.bytes.length <= this.aClass4_Sub10_6.position) {
 			throw new RuntimeException();
 		} else if (this.aClass62_Sub1Array1[arg2] == null) {
-			@Pc(48) int local48 = this.aClass4_Sub10_6.method4595();
-			@Pc(55) int local55 = this.aClass4_Sub10_6.method4595();
+			@Pc(48) int local48 = this.aClass4_Sub10_6.readInt();
+			@Pc(55) int local55 = this.aClass4_Sub10_6.readInt();
 			@Pc(76) Class62_Sub1 local76 = new Class62_Sub1(arg2, arg1, arg0, this.aClass51_1, this.aClass92_2, local48, local55, true);
 			this.aClass62_Sub1Array1[arg2] = local76;
 			return local76;

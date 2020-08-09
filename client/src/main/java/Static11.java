@@ -27,7 +27,7 @@ public final class Static11 {
 		@Pc(28) byte[] local28 = Static4.aClass58_54.method1372(31, arg0);
 		@Pc(32) Class178 local32 = new Class178();
 		if (local28 != null) {
-			local32.method4438(new Class4_Sub10(local28), arg0);
+			local32.method4438(new Buffer(local28), arg0);
 		}
 		Static6.aClass26_54.method510(local32, (long) arg0);
 		return local32;
@@ -660,11 +660,11 @@ public final class Static11 {
 		Static4.anInt3335 = -1;
 		Static5.anInt4329 = 0;
 		Static3.anInt2273 = -1;
-		Static3.aClass4_Sub10_Sub1_1.anInt5709 = 0;
+		Static3.aClass4_Sub10_Sub1_1.position = 0;
 		Static2.anInt1231 = -1;
 		Static3.anInt2583 = 0;
 		Static1.anInt552 = -1;
-		Static5.aClass4_Sub10_Sub1_2.anInt5709 = 0;
+		Static5.aClass4_Sub10_Sub1_2.position = 0;
 		for (@Pc(45) int local45 = 0; local45 < Static7.aClass94Array1.length; local45++) {
 			Static7.aClass94Array1[local45] = null;
 		}
@@ -856,24 +856,24 @@ public final class Static11 {
 
 	@OriginalMember(owner = "client!ch", name = "a", descriptor = "(Z[BIII[Lclient!ch;)V")
 	public static void method576(@OriginalArg(0) boolean arg0, @OriginalArg(1) byte[] arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) Class30[] arg4) {
-		@Pc(10) Class4_Sub10 local10 = new Class4_Sub10(arg1);
+		@Pc(10) Buffer local10 = new Buffer(arg1);
 		@Pc(20) int local20 = -1;
 		while (true) {
-			@Pc(24) int local24 = local10.method4598();
+			@Pc(24) int local24 = local10.readUnsignedMultiSmart();
 			if (local24 == 0) {
 				return;
 			}
 			local20 += local24;
 			@Pc(37) int local37 = 0;
 			while (true) {
-				@Pc(41) int local41 = local10.method4579();
+				@Pc(41) int local41 = local10.readUnsignedSmart();
 				if (local41 == 0) {
 					break;
 				}
 				local37 += local41 - 1;
 				@Pc(56) int local56 = local37 & 0x3F;
 				@Pc(62) int local62 = local37 >> 6 & 0x3F;
-				@Pc(66) int local66 = local10.method4629();
+				@Pc(66) int local66 = local10.readUnsignedByte();
 				@Pc(70) int local70 = local66 & 0x3;
 				@Pc(74) int local74 = local66 >> 2;
 				@Pc(79) int local79 = local62 + arg3;

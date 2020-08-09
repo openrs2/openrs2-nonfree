@@ -320,7 +320,7 @@ public final class Static15 {
 		Static6.anInt5214++;
 		Static3.anInt2102 = Static6.anInt4979;
 		Static3.aClass4_Sub10_Sub1_1.method4650(26);
-		Static3.aClass4_Sub10_Sub1_1.method4582(arg0);
+		Static3.aClass4_Sub10_Sub1_1.writeLong(arg0);
 	}
 
 	@OriginalMember(owner = "client!fd", name = "a", descriptor = "(IIIILclient!vh;BIII)V")
@@ -556,37 +556,37 @@ public final class Static15 {
 	}
 
 	@OriginalMember(owner = "client!fh", name = "b", descriptor = "(I)Lclient!fd;")
-	public static Class4_Sub10 method1347() {
-		@Pc(13) Class4_Sub10 local13 = new Class4_Sub10(34);
-		local13.method4581(11);
-		local13.method4581(Static1.anInt185);
-		local13.method4581(Static3.aBoolean144 ? 1 : 0);
-		local13.method4581(Static4.aBoolean398 ? 1 : 0);
-		local13.method4581(Static3.aBoolean159 ? 1 : 0);
-		local13.method4581(Static6.aBoolean227 ? 1 : 0);
-		local13.method4581(Static2.aBoolean117 ? 1 : 0);
-		local13.method4581(Static7.aBoolean421 ? 1 : 0);
-		local13.method4581(Static1.aBoolean27 ? 1 : 0);
-		local13.method4581(Static2.aBoolean75 ? 1 : 0);
-		local13.method4581(Static3.anInt2298);
-		local13.method4581(Static2.aBoolean66 ? 1 : 0);
-		local13.method4581(Static7.aBoolean393 ? 1 : 0);
-		local13.method4581(Static7.aBoolean362 ? 1 : 0);
-		local13.method4581(Static1.anInt1051);
-		local13.method4581(Static7.aBoolean122 ? 1 : 0);
-		local13.method4581(Static4.anInt3315);
-		local13.method4581(Static1.anInt344);
-		local13.method4581(Static5.anInt4120);
-		local13.method4631(Static4.anInt3403);
-		local13.method4631(Static3.anInt2627);
-		local13.method4581(Static26.method2954());
-		local13.method4617(Static5.anInt3909);
-		local13.method4581(Static5.anInt3637);
-		local13.method4581(Static5.aBoolean278 ? 1 : 0);
-		local13.method4581(Static5.aBoolean293 ? 1 : 0);
-		local13.method4581(Static5.anInt4291);
-		local13.method4581(Static7.aBoolean390 ? 1 : 0);
-		local13.method4581(Static2.aBoolean69 ? 1 : 0);
+	public static Buffer method1347() {
+		@Pc(13) Buffer local13 = new Buffer(34);
+		local13.writeByte(11);
+		local13.writeByte(Static1.anInt185);
+		local13.writeByte(Static3.aBoolean144 ? 1 : 0);
+		local13.writeByte(Static4.aBoolean398 ? 1 : 0);
+		local13.writeByte(Static3.aBoolean159 ? 1 : 0);
+		local13.writeByte(Static6.aBoolean227 ? 1 : 0);
+		local13.writeByte(Static2.aBoolean117 ? 1 : 0);
+		local13.writeByte(Static7.aBoolean421 ? 1 : 0);
+		local13.writeByte(Static1.aBoolean27 ? 1 : 0);
+		local13.writeByte(Static2.aBoolean75 ? 1 : 0);
+		local13.writeByte(Static3.anInt2298);
+		local13.writeByte(Static2.aBoolean66 ? 1 : 0);
+		local13.writeByte(Static7.aBoolean393 ? 1 : 0);
+		local13.writeByte(Static7.aBoolean362 ? 1 : 0);
+		local13.writeByte(Static1.anInt1051);
+		local13.writeByte(Static7.aBoolean122 ? 1 : 0);
+		local13.writeByte(Static4.anInt3315);
+		local13.writeByte(Static1.anInt344);
+		local13.writeByte(Static5.anInt4120);
+		local13.writeShort(Static4.anInt3403);
+		local13.writeShort(Static3.anInt2627);
+		local13.writeByte(Static26.method2954());
+		local13.writeInt(Static5.anInt3909);
+		local13.writeByte(Static5.anInt3637);
+		local13.writeByte(Static5.aBoolean278 ? 1 : 0);
+		local13.writeByte(Static5.aBoolean293 ? 1 : 0);
+		local13.writeByte(Static5.anInt4291);
+		local13.writeByte(Static7.aBoolean390 ? 1 : 0);
+		local13.writeByte(Static2.aBoolean69 ? 1 : 0);
 		return local13;
 	}
 
@@ -610,9 +610,9 @@ public final class Static15 {
 						@Pc(88) Class185 local88 = Static5.aClass185ArrayArray115[arg0][local53] = new Class185();
 						local88.anInt5914 = (arg0 << 16) + local53;
 						if (local74[0] == -1) {
-							local88.method4732(new Class4_Sub10(local74));
+							local88.method4732(new Buffer(local74));
 						} else {
-							local88.method4728(new Class4_Sub10(local74));
+							local88.method4728(new Buffer(local74));
 						}
 					}
 				}
@@ -649,7 +649,7 @@ public final class Static15 {
 		@Pc(28) byte[] local28 = Static1.aClass58_22.method1372(34, arg0);
 		@Pc(32) Class143 local32 = new Class143();
 		if (local28 != null) {
-			local32.method3556(arg0, new Class4_Sub10(local28));
+			local32.method3556(arg0, new Buffer(local28));
 		}
 		Static7.aClass26_55.method510(local32, (long) arg0);
 		return local32;
@@ -899,17 +899,17 @@ public final class Static15 {
 
 	@OriginalMember(owner = "client!fl", name = "a", descriptor = "(II[Lclient!ch;[BIIIIZII)V")
 	public static void method1471(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) Class30[] arg2, @OriginalArg(3) byte[] arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) boolean arg8, @OriginalArg(10) int arg9) {
-		@Pc(10) Class4_Sub10 local10 = new Class4_Sub10(arg3);
+		@Pc(10) Buffer local10 = new Buffer(arg3);
 		@Pc(12) int local12 = -1;
 		while (true) {
-			@Pc(21) int local21 = local10.method4598();
+			@Pc(21) int local21 = local10.readUnsignedMultiSmart();
 			if (local21 == 0) {
 				return;
 			}
 			local12 += local21;
 			@Pc(34) int local34 = 0;
 			while (true) {
-				@Pc(38) int local38 = local10.method4579();
+				@Pc(38) int local38 = local10.readUnsignedSmart();
 				if (local38 == 0) {
 					break;
 				}
@@ -917,7 +917,7 @@ public final class Static15 {
 				@Pc(57) int local57 = local34 >> 6 & 0x3F;
 				@Pc(61) int local61 = local34 & 0x3F;
 				@Pc(65) int local65 = local34 >> 12;
-				@Pc(69) int local69 = local10.method4629();
+				@Pc(69) int local69 = local10.readUnsignedByte();
 				@Pc(73) int local73 = local69 >> 2;
 				@Pc(77) int local77 = local69 & 0x3;
 				if (local65 == arg7 && arg6 <= local57 && arg6 + 8 > local57 && arg5 <= local61 && arg5 + 8 > local61) {
@@ -1057,7 +1057,7 @@ public final class Static15 {
 		@Pc(30) Class168 local30 = new Class168();
 		local30.anInt5255 = arg0;
 		if (local26 != null) {
-			local30.method4263(new Class4_Sub10(local26));
+			local30.method4263(new Buffer(local26));
 		}
 		local30.method4261();
 		Static3.aClass26_22.method510(local30, (long) arg0);

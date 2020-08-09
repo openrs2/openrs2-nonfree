@@ -135,21 +135,21 @@ public final class Class4_Sub1_Sub27 extends Class4_Sub1 {
 
 	@OriginalMember(owner = "client!rh", name = "a", descriptor = "(BLclient!fd;I)V")
 	@Override
-	public final void method4687(@OriginalArg(1) Class4_Sub10 arg0, @OriginalArg(2) int arg1) {
+	public final void method4687(@OriginalArg(1) Buffer arg0, @OriginalArg(2) int arg1) {
 		if (arg1 == 0) {
-			this.anInt4551 = this.anInt4557 = arg0.method4629();
+			this.anInt4551 = this.anInt4557 = arg0.readUnsignedByte();
 		} else if (arg1 == 1) {
-			this.anInt4549 = arg0.method4629();
+			this.anInt4549 = arg0.readUnsignedByte();
 		} else if (arg1 == 2) {
-			this.anInt4552 = arg0.method4616();
+			this.anInt4552 = arg0.readUnsignedShort();
 		} else if (arg1 == 3) {
-			this.anInt4553 = arg0.method4629();
+			this.anInt4553 = arg0.readUnsignedByte();
 		} else if (arg1 == 4) {
-			this.anInt4548 = arg0.method4629();
+			this.anInt4548 = arg0.readUnsignedByte();
 		} else if (arg1 == 5) {
-			this.anInt4551 = arg0.method4629();
+			this.anInt4551 = arg0.readUnsignedByte();
 		} else if (arg1 == 6) {
-			this.anInt4557 = arg0.method4629();
+			this.anInt4557 = arg0.readUnsignedByte();
 		}
 	}
 }

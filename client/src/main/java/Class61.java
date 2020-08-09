@@ -59,23 +59,23 @@ public final class Class61 {
 
 	@OriginalMember(owner = "client!fo", name = "a", descriptor = "([BI)V")
 	private void method1503(@OriginalArg(0) byte[] arg0) {
-		@Pc(8) Class4_Sub10 local8 = new Class4_Sub10(Static19.method1749(arg0));
-		@Pc(12) int local12 = local8.method4629();
+		@Pc(8) Buffer local8 = new Buffer(Static19.method1749(arg0));
+		@Pc(12) int local12 = local8.readUnsignedByte();
 		if (local12 != 5 && local12 != 6) {
 			throw new RuntimeException();
 		}
 		if (local12 >= 6) {
-			this.anInt1971 = local8.method4595();
+			this.anInt1971 = local8.readInt();
 		} else {
 			this.anInt1971 = 0;
 		}
 		@Pc(44) int local44 = 0;
-		@Pc(48) int local48 = local8.method4629();
-		this.anInt1972 = local8.method4616();
+		@Pc(48) int local48 = local8.readUnsignedByte();
+		this.anInt1972 = local8.readUnsignedShort();
 		@Pc(55) int local55 = -1;
 		this.anIntArray156 = new int[this.anInt1972];
 		for (@Pc(62) int local62 = 0; local62 < this.anInt1972; local62++) {
-			this.anIntArray156[local62] = local44 += local8.method4616();
+			this.anIntArray156[local62] = local44 += local8.readUnsignedShort();
 			if (local55 < this.anIntArray156[local62]) {
 				local55 = this.anIntArray156[local62];
 			}
@@ -92,18 +92,18 @@ public final class Class61 {
 				this.anIntArray155[local137] = -1;
 			}
 			for (@Pc(151) int local151 = 0; local151 < this.anInt1972; local151++) {
-				this.anIntArray155[this.anIntArray156[local151]] = local8.method4595();
+				this.anIntArray155[this.anIntArray156[local151]] = local8.readInt();
 			}
 			this.aClass66_1 = new IntHashTable(this.anIntArray155);
 		}
 		for (@Pc(181) int local181 = 0; local181 < this.anInt1972; local181++) {
-			this.anIntArray153[this.anIntArray156[local181]] = local8.method4595();
+			this.anIntArray153[this.anIntArray156[local181]] = local8.readInt();
 		}
 		for (@Pc(204) int local204 = 0; local204 < this.anInt1972; local204++) {
-			this.anIntArray157[this.anIntArray156[local204]] = local8.method4595();
+			this.anIntArray157[this.anIntArray156[local204]] = local8.readInt();
 		}
 		for (@Pc(223) int local223 = 0; local223 < this.anInt1972; local223++) {
-			this.anIntArray154[this.anIntArray156[local223]] = local8.method4616();
+			this.anIntArray154[this.anIntArray156[local223]] = local8.readUnsignedShort();
 		}
 		for (@Pc(242) int local242 = 0; local242 < this.anInt1972; local242++) {
 			@Pc(258) int local258 = 0;
@@ -112,7 +112,7 @@ public final class Class61 {
 			@Pc(270) int local270 = this.anIntArray154[local265];
 			this.anIntArrayArray14[local265] = new int[local270];
 			for (@Pc(278) int local278 = 0; local278 < local270; local278++) {
-				@Pc(300) int local300 = this.anIntArrayArray14[local265][local278] = local258 += local8.method4616();
+				@Pc(300) int local300 = this.anIntArrayArray14[local265][local278] = local258 += local8.readUnsignedShort();
 				if (local300 > local260) {
 					local260 = local300;
 				}
@@ -141,7 +141,7 @@ public final class Class61 {
 				} else {
 					local420 = this.anIntArrayArray14[local366][local404];
 				}
-				this.anIntArrayArray15[local366][local420] = local8.method4595();
+				this.anIntArrayArray15[local366][local420] = local8.readInt();
 			}
 			this.aClass66Array1[local366] = new IntHashTable(this.anIntArrayArray15[local366]);
 		}

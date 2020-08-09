@@ -31,28 +31,28 @@ public final class Class153 {
 	public int anInt4707 = 8;
 
 	@OriginalMember(owner = "client!sa", name = "a", descriptor = "(IILclient!fd;I)V")
-	private void method3883(@OriginalArg(1) int arg0, @OriginalArg(2) Class4_Sub10 arg1, @OriginalArg(3) int arg2) {
+	private void method3883(@OriginalArg(1) int arg0, @OriginalArg(2) Buffer arg1, @OriginalArg(3) int arg2) {
 		if (arg2 == 1) {
-			this.anInt4707 = arg1.method4616();
+			this.anInt4707 = arg1.readUnsignedShort();
 		} else if (arg2 == 2) {
 			this.aBoolean327 = true;
 		} else if (arg2 == 3) {
-			this.anInt4696 = arg1.method4576();
-			this.anInt4697 = arg1.method4576();
-			this.anInt4700 = arg1.method4576();
+			this.anInt4696 = arg1.readShort();
+			this.anInt4697 = arg1.readShort();
+			this.anInt4700 = arg1.readShort();
 		} else if (arg2 == 4) {
-			this.anInt4706 = arg1.method4629();
+			this.anInt4706 = arg1.readUnsignedByte();
 		} else if (arg2 == 5) {
-			this.anInt4698 = arg1.method4616();
+			this.anInt4698 = arg1.readUnsignedShort();
 		} else if (arg2 == 6) {
-			this.anInt4703 = arg1.method4618();
+			this.anInt4703 = arg1.readUnsignedMedium();
 		}
 	}
 
 	@OriginalMember(owner = "client!sa", name = "a", descriptor = "(BILclient!fd;)V")
-	public final void method3886(@OriginalArg(1) int arg0, @OriginalArg(2) Class4_Sub10 arg1) {
+	public final void method3886(@OriginalArg(1) int arg0, @OriginalArg(2) Buffer arg1) {
 		while (true) {
-			@Pc(9) int local9 = arg1.method4629();
+			@Pc(9) int local9 = arg1.readUnsignedByte();
 			if (local9 == 0) {
 				return;
 			}

@@ -343,7 +343,7 @@ public final class Static5 {
 	public static int anInt3519 = 0;
 
 	@OriginalMember(owner = "client!ne", name = "T", descriptor = "Lclient!fd;")
-	public static final Class4_Sub10 aClass4_Sub10_7 = new Class4_Sub10(131056);
+	public static final Buffer aClass4_Sub10_7 = new Buffer(131056);
 
 	@OriginalMember(owner = "client!ne", name = "V", descriptor = "[Z")
 	public static final boolean[] aBooleanArray18 = new boolean[8];
@@ -409,7 +409,7 @@ public final class Static5 {
 	public static String aString218 = "Loaded fonts";
 
 	@OriginalMember(owner = "client!no", name = "U", descriptor = "Lclient!fd;")
-	public static final Class4_Sub10 aClass4_Sub10_8 = new Class4_Sub10(new byte[5000]);
+	public static final Buffer aClass4_Sub10_8 = new Buffer(new byte[5000]);
 
 	@OriginalMember(owner = "client!no", name = "Y", descriptor = "I")
 	public static int anInt3635 = 0;

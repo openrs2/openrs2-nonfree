@@ -47,20 +47,20 @@ public final class Static20 {
 	}
 
 	@OriginalMember(owner = "client!ii", name = "b", descriptor = "(Lclient!fd;)V")
-	private static void method2406(@OriginalArg(0) Class4_Sub10 arg0) {
+	private static void method2406(@OriginalArg(0) Buffer arg0) {
 		label83:
 		while (true) {
-			if (arg0.anInt5709 < arg0.aByteArray71.length) {
+			if (arg0.position < arg0.bytes.length) {
 				@Pc(7) boolean local7 = false;
 				@Pc(9) int local9 = 0;
 				@Pc(11) int local11 = 0;
-				if (arg0.method4629() == 1) {
+				if (arg0.readUnsignedByte() == 1) {
 					local7 = true;
-					local9 = arg0.method4629();
-					local11 = arg0.method4629();
+					local9 = arg0.readUnsignedByte();
+					local11 = arg0.readUnsignedByte();
 				}
-				@Pc(30) int local30 = arg0.method4629();
-				@Pc(34) int local34 = arg0.method4629();
+				@Pc(30) int local30 = arg0.readUnsignedByte();
+				@Pc(34) int local34 = arg0.readUnsignedByte();
 				@Pc(40) int local40 = local30 * 64 - Static3.anInt2962;
 				@Pc(50) int local50 = Static3.anInt2960 + Static3.anInt2961 - local34 * 64 - 1;
 				if (local40 >= 0 && local50 - 63 >= 0 && local40 + 63 < Static3.anInt2965 && local50 < Static3.anInt2960) {
@@ -73,13 +73,13 @@ public final class Static20 {
 						}
 						for (@Pc(79) int local79 = 0; local79 < 64; local79++) {
 							if (!local7 || local74 >= local9 * 8 && local74 < local9 * 8 + 8 && local79 >= local11 * 8 && local79 < local11 * 8 + 8) {
-								@Pc(113) byte local113 = arg0.method4637();
+								@Pc(113) byte local113 = arg0.readByte();
 								if (local113 != 0) {
 									if (Static3.aByteArrayArrayArray10[local68][local72] == null) {
 										Static3.aByteArrayArrayArray10[local68][local72] = new byte[4096];
 									}
 									Static3.aByteArrayArrayArray10[local68][local72][(63 - local79 << 6) + local74] = local113;
-									@Pc(146) byte local146 = arg0.method4637();
+									@Pc(146) byte local146 = arg0.readByte();
 									if (Static3.aByteArrayArrayArray11[local68][local72] == null) {
 										Static3.aByteArrayArrayArray11[local68][local72] = new byte[4096];
 									}
@@ -95,9 +95,9 @@ public final class Static20 {
 					if (local180 >= (local7 ? 64 : 4096)) {
 						continue label83;
 					}
-					@Pc(191) byte local191 = arg0.method4637();
+					@Pc(191) byte local191 = arg0.readByte();
 					if (local191 != 0) {
-						arg0.anInt5709++;
+						arg0.position++;
 					}
 					local180++;
 				}
@@ -107,20 +107,20 @@ public final class Static20 {
 	}
 
 	@OriginalMember(owner = "client!ii", name = "a", descriptor = "(Lclient!fd;Z)V")
-	private static void method2407(@OriginalArg(0) Class4_Sub10 arg0, @OriginalArg(1) boolean arg1) {
+	private static void method2407(@OriginalArg(0) Buffer arg0, @OriginalArg(1) boolean arg1) {
 		label125:
 		while (true) {
-			if (arg0.anInt5709 < arg0.aByteArray71.length) {
+			if (arg0.position < arg0.bytes.length) {
 				@Pc(7) boolean local7 = false;
 				@Pc(9) int local9 = 0;
 				@Pc(11) int local11 = 0;
-				if (arg0.method4629() == 1) {
+				if (arg0.readUnsignedByte() == 1) {
 					local7 = true;
-					local9 = arg0.method4629();
-					local11 = arg0.method4629();
+					local9 = arg0.readUnsignedByte();
+					local11 = arg0.readUnsignedByte();
 				}
-				@Pc(30) int local30 = arg0.method4629();
-				@Pc(34) int local34 = arg0.method4629();
+				@Pc(30) int local30 = arg0.readUnsignedByte();
+				@Pc(34) int local34 = arg0.readUnsignedByte();
 				@Pc(40) int local40 = local30 * 64 - Static3.anInt2962;
 				@Pc(50) int local50 = Static3.anInt2960 + Static3.anInt2961 - local34 * 64 - 1;
 				if (local40 >= 0 && local50 - 63 >= 0 && local40 + 63 < Static3.anInt2965 && local50 < Static3.anInt2960) {
@@ -133,25 +133,25 @@ public final class Static20 {
 						}
 						for (@Pc(79) int local79 = 0; local79 < 64; local79++) {
 							if (!local7 || local74 >= local9 * 8 && local74 < local9 * 8 + 8 && local79 >= local11 * 8 && local79 < local11 * 8 + 8) {
-								@Pc(113) int local113 = arg0.method4629();
+								@Pc(113) int local113 = arg0.readUnsignedByte();
 								if (local113 != 0) {
 									if ((local113 & 0x1) == 1) {
-										@Pc(125) int local125 = arg0.method4629();
+										@Pc(125) int local125 = arg0.readUnsignedByte();
 										if (Static3.aByteArrayArrayArray12[local68][local72] == null) {
 											Static3.aByteArrayArrayArray12[local68][local72] = new byte[4096];
 										}
 										Static3.aByteArrayArrayArray12[local68][local72][(63 - local79 << 6) + local74] = (byte) local125;
 									}
 									if ((local113 & 0x2) == 2) {
-										@Pc(162) int local162 = arg0.method4618();
+										@Pc(162) int local162 = arg0.readUnsignedMedium();
 										if (Static3.anIntArrayArrayArray6[local68][local72] == null) {
 											Static3.anIntArrayArrayArray6[local68][local72] = new int[4096];
 										}
 										Static3.anIntArrayArrayArray6[local68][local72][(63 - local79 << 6) + local74] = local162;
 									}
 									if ((local113 & 0x4) == 4) {
-										@Pc(198) int local198 = arg0.method4616();
-										@Pc(202) int local202 = arg0.method4629();
+										@Pc(198) int local198 = arg0.readUnsignedShort();
+										@Pc(202) int local202 = arg0.readUnsignedByte();
 										local198--;
 										@Pc(207) Class181 local207 = Static8.method99(local198);
 										if (local207.anIntArray631 != null) {
@@ -180,16 +180,16 @@ public final class Static20 {
 					if (local270 >= (local7 ? 64 : 4096)) {
 						continue label125;
 					}
-					@Pc(281) int local281 = arg0.method4629();
+					@Pc(281) int local281 = arg0.readUnsignedByte();
 					if (local281 != 0) {
 						if ((local281 & 0x1) == 1) {
-							arg0.anInt5709++;
+							arg0.position++;
 						}
 						if ((local281 & 0x2) == 2) {
-							arg0.anInt5709 += 2;
+							arg0.position += 2;
 						}
 						if ((local281 & 0x4) == 4) {
-							arg0.anInt5709 += 3;
+							arg0.position += 3;
 						}
 					}
 					local270++;
@@ -934,20 +934,20 @@ public final class Static20 {
 			Static16.method1501(256);
 			Static4.anInt2644 = 20;
 		} else if (Static4.anInt2644 == 20) {
-			Static26.method2934(new Class4_Sub10(Static3.aClass58_65.method1358("underlay", Static3.aClass4_Sub3_Sub22_3.aString358)));
+			Static26.method2934(new Buffer(Static3.aClass58_65.method1358("underlay", Static3.aClass4_Sub3_Sub22_3.aString358)));
 			Static4.anInt2644 = 30;
 			Static32.method3917(true);
 			Static18.method4371();
 		} else if (Static4.anInt2644 == 30) {
-			Static19.method2398(new Class4_Sub10(Static3.aClass58_65.method1358("overlay", Static3.aClass4_Sub3_Sub22_3.aString358)));
+			Static19.method2398(new Buffer(Static3.aClass58_65.method1358("overlay", Static3.aClass4_Sub3_Sub22_3.aString358)));
 			Static4.anInt2644 = 40;
 			Static18.method4371();
 		} else if (Static4.anInt2644 == 40) {
-			method2406(new Class4_Sub10(Static3.aClass58_65.method1358("overlay2", Static3.aClass4_Sub3_Sub22_3.aString358)));
+			method2406(new Buffer(Static3.aClass58_65.method1358("overlay2", Static3.aClass4_Sub3_Sub22_3.aString358)));
 			Static4.anInt2644 = 50;
 			Static18.method4371();
 		} else if (Static4.anInt2644 == 50) {
-			method2407(new Class4_Sub10(Static3.aClass58_65.method1358("loc", Static3.aClass4_Sub3_Sub22_3.aString358)), Static7.aBoolean370);
+			method2407(new Buffer(Static3.aClass58_65.method1358("loc", Static3.aClass4_Sub3_Sub22_3.aString358)), Static7.aBoolean370);
 			Static4.anInt2644 = 60;
 			Static32.method3917(true);
 			Static18.method4371();
@@ -1324,7 +1324,7 @@ public final class Static20 {
 		}
 		@Pc(38) Class4_Sub3_Sub23 local38 = new Class4_Sub3_Sub23();
 		if (local26 != null) {
-			local38.method4772(new Class4_Sub10(local26));
+			local38.method4772(new Buffer(local26));
 		}
 		if (arg0 >= 32768) {
 			local38.method4778();

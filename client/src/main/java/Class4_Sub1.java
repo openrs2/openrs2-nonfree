@@ -41,7 +41,7 @@ public abstract class Class4_Sub1 extends Node {
 	}
 
 	@OriginalMember(owner = "client!jo", name = "a", descriptor = "(BLclient!fd;I)V")
-	public void method4687(@OriginalArg(1) Class4_Sub10 arg0, @OriginalArg(2) int arg1) {
+	public void method4687(@OriginalArg(1) Buffer arg0, @OriginalArg(2) int arg1) {
 	}
 
 	@OriginalMember(owner = "client!jo", name = "c", descriptor = "(I)I")
