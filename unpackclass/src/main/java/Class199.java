@@ -62,17 +62,17 @@ public abstract class Class199 {
 
 	@OriginalMember(owner = "unpackclass!aa", name = "b", descriptor = "([B)[B")
 	private static byte[] method4935(@OriginalArg(0) byte[] arg0) {
-		@Pc(4) Class201_Sub1 local4 = new Class201_Sub1(arg0);
-		@Pc(7) int local7 = local4.method4914();
-		@Pc(10) int local10 = local4.method4917();
+		@Pc(4) Buffer local4 = new Buffer(arg0);
+		@Pc(7) int local7 = local4.readUnsignedByte();
+		@Pc(10) int local10 = local4.readInt();
 		if (local10 < 0 || anInt6143 != 0 && local10 > anInt6143) {
 			throw new RuntimeException();
 		} else if (local7 == 0) {
 			@Pc(26) byte[] local26 = new byte[local10];
-			local4.method4918(local26, local10);
+			local4.readBytes(local26, local10);
 			return local26;
 		} else {
-			@Pc(36) int local36 = local4.method4917();
+			@Pc(36) int local36 = local4.readInt();
 			if (local36 < 0 || anInt6143 != 0 && local36 > anInt6143) {
 				throw new RuntimeException();
 			}
@@ -94,22 +94,22 @@ public abstract class Class199 {
 
 	@OriginalMember(owner = "unpackclass!aa", name = "a", descriptor = "([B)V")
 	protected final void method4927(@OriginalArg(0) byte[] arg0) {
-		this.anInt6142 = Class201_Sub1.method4908(arg0, arg0.length);
-		@Pc(13) Class201_Sub1 local13 = new Class201_Sub1(method4935(arg0));
-		@Pc(16) int local16 = local13.method4914();
+		this.anInt6142 = Buffer.crc32(arg0, arg0.length);
+		@Pc(13) Buffer local13 = new Buffer(method4935(arg0));
+		@Pc(16) int local16 = local13.readUnsignedByte();
 		if (local16 != 5 && local16 != 6) {
 			throw new RuntimeException("Incorrect JS5 protocol number: " + local16);
 		}
 		if (local16 >= 6) {
-			local13.method4917();
+			local13.readInt();
 		}
-		@Pc(42) int local42 = local13.method4914();
-		this.anInt6141 = local13.method4915();
+		@Pc(42) int local42 = local13.readUnsignedByte();
+		this.anInt6141 = local13.readUnsignedShort();
 		@Pc(48) int local48 = 0;
 		@Pc(50) int local50 = -1;
 		this.anIntArray696 = new int[this.anInt6141];
 		for (@Pc(57) int local57 = 0; local57 < this.anInt6141; local57++) {
-			this.anIntArray696[local57] = local48 += local13.method4915();
+			this.anIntArray696[local57] = local48 += local13.readUnsignedShort();
 			if (this.anIntArray696[local57] > local50) {
 				local50 = this.anIntArray696[local57];
 			}
@@ -127,18 +127,18 @@ public abstract class Class199 {
 				this.anIntArray697[local142] = -1;
 			}
 			for (@Pc(157) int local157 = 0; local157 < this.anInt6141; local157++) {
-				this.anIntArray697[this.anIntArray696[local157]] = local13.method4917();
+				this.anIntArray697[this.anIntArray696[local157]] = local13.readInt();
 			}
 			new Class205(this.anIntArray697);
 		}
 		for (@Pc(179) int local179 = 0; local179 < this.anInt6141; local179++) {
-			this.anIntArray698[this.anIntArray696[local179]] = local13.method4917();
+			this.anIntArray698[this.anIntArray696[local179]] = local13.readInt();
 		}
 		for (@Pc(197) int local197 = 0; local197 < this.anInt6141; local197++) {
-			this.anIntArray699[this.anIntArray696[local197]] = local13.method4917();
+			this.anIntArray699[this.anIntArray696[local197]] = local13.readInt();
 		}
 		for (@Pc(215) int local215 = 0; local215 < this.anInt6141; local215++) {
-			this.anIntArray700[this.anIntArray696[local215]] = local13.method4915();
+			this.anIntArray700[this.anIntArray696[local215]] = local13.readUnsignedShort();
 		}
 		for (@Pc(233) int local233 = 0; local233 < this.anInt6141; local233++) {
 			@Pc(240) int local240 = this.anIntArray696[local233];
@@ -147,7 +147,7 @@ public abstract class Class199 {
 			@Pc(249) int local249 = -1;
 			this.anIntArrayArray56[local240] = new int[local245];
 			for (@Pc(257) int local257 = 0; local257 < local245; local257++) {
-				@Pc(273) int local273 = this.anIntArrayArray56[local240][local257] = local247 += local13.method4915();
+				@Pc(273) int local273 = this.anIntArrayArray56[local240][local257] = local247 += local13.readUnsignedShort();
 				if (local273 > local249) {
 					local249 = local273;
 				}
@@ -176,7 +176,7 @@ public abstract class Class199 {
 				} else {
 					local375 = this.anIntArrayArray56[local327][local361];
 				}
-				this.anIntArrayArray57[local327][local375] = local13.method4917();
+				this.anIntArrayArray57[local327][local375] = local13.readInt();
 			}
 			this.aClass205Array2[local327] = new Class205(this.anIntArrayArray57[local327]);
 		}
@@ -277,14 +277,14 @@ public abstract class Class199 {
 				local100 = ByteArray.unwrap(this.anObjectArray34[arg0], false);
 			} else {
 				local100 = ByteArray.unwrap(this.anObjectArray34[arg0], true);
-				@Pc(105) Class201_Sub1 local105 = new Class201_Sub1(local100);
-				local105.method4921(arg1, local105.aByteArray77.length);
+				@Pc(105) Buffer local105 = new Buffer(local100);
+				local105.xteaDecrypt(arg1, local105.bytes.length);
 			}
 			@Pc(124) byte[] local124;
 			try {
 				local124 = method4935(local100);
 			} catch (@Pc(126) RuntimeException local126) {
-				throw TracingException.wrap(local126, "T3 - " + (arg1 != null) + "," + arg0 + "," + local100.length + "," + Class201_Sub1.method4908(local100, local100.length) + "," + Class201_Sub1.method4908(local100, local100.length - 2) + "," + this.anIntArray698[arg0] + "," + this.anInt6142);
+				throw TracingException.wrap(local126, "T3 - " + (arg1 != null) + "," + arg0 + "," + local100.length + "," + Buffer.crc32(local100, local100.length) + "," + Buffer.crc32(local100, local100.length - 2) + "," + this.anIntArray698[arg0] + "," + this.anInt6142);
 			}
 			if (this.aBoolean433) {
 				this.anObjectArray34[arg0] = null;
@@ -294,13 +294,13 @@ public abstract class Class199 {
 				local191--;
 				@Pc(198) int local198 = local124[local191] & 0xFF;
 				local191 -= local19 * local198 * 4;
-				@Pc(211) Class201_Sub1 local211 = new Class201_Sub1(local124);
+				@Pc(211) Buffer local211 = new Buffer(local124);
 				@Pc(214) int[] local214 = new int[local19];
-				local211.anInt6119 = local191;
+				local211.position = local191;
 				for (@Pc(219) int local219 = 0; local219 < local198; local219++) {
 					@Pc(223) int local223 = 0;
 					for (@Pc(225) int local225 = 0; local225 < local19; local225++) {
-						local223 += local211.method4917();
+						local223 += local211.readInt();
 						local214[local225] += local223;
 					}
 				}
@@ -309,12 +309,12 @@ public abstract class Class199 {
 					local250[local252] = new byte[local214[local252]];
 					local214[local252] = 0;
 				}
-				local211.anInt6119 = local191;
+				local211.position = local191;
 				@Pc(274) int local274 = 0;
 				for (@Pc(276) int local276 = 0; local276 < local198; local276++) {
 					@Pc(280) int local280 = 0;
 					for (@Pc(282) int local282 = 0; local282 < local19; local282++) {
-						local280 += local211.method4917();
+						local280 += local211.readInt();
 						Class208.method4926(local124, local274, local250[local282], local214[local282], local280);
 						local214[local282] += local280;
 						local274 += local280;

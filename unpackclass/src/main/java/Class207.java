@@ -21,15 +21,15 @@ public final class Class207 {
 	}
 
 	@OriginalMember(owner = "unpackclass!k", name = "a", descriptor = "(Lunpackclass!e;[B)V")
-	public final void method4925(@OriginalArg(0) Class201_Sub1 arg0, @OriginalArg(1) byte[] arg1) {
-		if (arg0.aByteArray77[arg0.anInt6119] != 31 || arg0.aByteArray77[arg0.anInt6119 + 1] != -117) {
+	public final void method4925(@OriginalArg(0) Buffer arg0, @OriginalArg(1) byte[] arg1) {
+		if (arg0.bytes[arg0.position] != 31 || arg0.bytes[arg0.position + 1] != -117) {
 			throw new RuntimeException("Invalid GZIP header!");
 		}
 		if (this.anInflater2 == null) {
 			this.anInflater2 = new Inflater(true);
 		}
 		try {
-			this.anInflater2.setInput(arg0.aByteArray77, arg0.anInt6119 + 10, arg0.aByteArray77.length - arg0.anInt6119 - 10 - 8);
+			this.anInflater2.setInput(arg0.bytes, arg0.position + 10, arg0.bytes.length - arg0.position - 10 - 8);
 			this.anInflater2.inflate(arg1);
 		} catch (@Pc(55) Exception local55) {
 			this.anInflater2.reset();
