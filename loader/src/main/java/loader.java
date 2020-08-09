@@ -64,7 +64,7 @@ public final class loader extends Applet implements Runnable {
 	private int anInt6102 = 32;
 
 	@OriginalMember(owner = "loader!loader", name = "a", descriptor = "(Lloader!b;[BZB)Z")
-	private boolean method4836(@OriginalArg(0) Class190 arg0, @OriginalArg(1) byte[] arg1, @OriginalArg(2) boolean arg2) {
+	private boolean method4836(@OriginalArg(0) Resource arg0, @OriginalArg(1) byte[] arg1, @OriginalArg(2) boolean arg2) {
 		try {
 			if (arg1 == null) {
 				return false;
@@ -74,7 +74,7 @@ public final class loader extends Applet implements Runnable {
 			local9.update(arg1);
 			@Pc(22) byte[] local22 = local9.digest();
 			for (@Pc(24) int local24 = 0; local24 < 20; local24++) {
-				if (local22[local24] != arg0.anIntArray682[local24]) {
+				if (local22[local24] != arg0.checksum[local24]) {
 					return false;
 				}
 			}
@@ -113,11 +113,11 @@ public final class loader extends Applet implements Runnable {
 	}
 
 	@OriginalMember(owner = "loader!loader", name = "a", descriptor = "(ZILloader!b;)[B")
-	private byte[] method4838(@OriginalArg(0) boolean arg0, @OriginalArg(2) Class190 arg1) {
+	private byte[] method4838(@OriginalArg(0) boolean arg0, @OriginalArg(2) Resource arg1) {
 		@Pc(8) Font local8 = new Font("Helvetica", 1, 13);
 		@Pc(12) FontMetrics local12 = this.getFontMetrics(local8);
 		@Pc(17) Color local17 = new Color(9179409);
-		@Pc(21) byte[] local21 = new byte[arg1.anInt6097];
+		@Pc(21) byte[] local21 = new byte[arg1.compressedSize];
 		try {
 			@Pc(63) InputStream local63;
 			if (arg0) {
@@ -126,10 +126,10 @@ public final class loader extends Applet implements Runnable {
 				local34.setSoTimeout(10000);
 				@Pc(40) OutputStream local40 = local34.getOutputStream();
 				local40.write(17);
-				local40.write(("JAGGRAB " + local26.getFile() + arg1.aString371 + "\n\n").getBytes());
+				local40.write(("JAGGRAB " + local26.getFile() + arg1.source + "\n\n").getBytes());
 				local63 = local34.getInputStream();
 			} else {
-				local63 = (new URL(this.getCodeBase(), arg1.aString371)).openStream();
+				local63 = (new URL(this.getCodeBase(), arg1.source)).openStream();
 			}
 			@Pc(76) int local76 = -1;
 			@Pc(86) int local86 = 0;
@@ -155,7 +155,7 @@ public final class loader extends Applet implements Runnable {
 							local76 = local134;
 							local145.setColor(local17);
 							local145.drawRect(this.anInt6101 / 2 - 152, this.anInt6104 / 2 - 18, 303, 33);
-							@Pc(196) String local196 = arg1.aStringArray45[this.anInt6103] + " - " + local134 + "%";
+							@Pc(196) String local196 = arg1.loadingMessages[this.anInt6103] + " - " + local134 + "%";
 							local145.setFont(local8);
 							local145.setColor(Color.white);
 							local145.drawString(local196, (this.anInt6101 - local12.stringWidth(local196)) / 2, this.anInt6104 / 2 + 4);
@@ -165,8 +165,8 @@ public final class loader extends Applet implements Runnable {
 				}
 			}
 			local63.close();
-			if (arg1.anInt6097 != arg1.anInt6096) {
-				@Pc(242) byte[] local242 = new byte[arg1.anInt6096];
+			if (arg1.compressedSize != arg1.uncompressedSize) {
+				@Pc(242) byte[] local242 = new byte[arg1.uncompressedSize];
 				@Pc(247) Inflater local247 = new Inflater(true);
 				local247.setInput(local21);
 				local21 = local242;
@@ -179,10 +179,10 @@ public final class loader extends Applet implements Runnable {
 	}
 
 	@OriginalMember(owner = "loader!loader", name = "a", descriptor = "(ZILsignlink!pm;Lloader!b;)[B")
-	private byte[] method4839(@OriginalArg(0) boolean arg0, @OriginalArg(2) SignLink arg1, @OriginalArg(3) Class190 arg2) {
+	private byte[] method4839(@OriginalArg(0) boolean arg0, @OriginalArg(2) SignLink arg1, @OriginalArg(3) Resource arg2) {
 		@Pc(7) File local7;
 		try {
-			local7 = SignLink.getFile(arg2.aString370, this.anInt6102, aString375);
+			local7 = SignLink.getFile(arg2.destination, this.anInt6102, aString375);
 		} catch (@Pc(9) Exception local9) {
 			this.method4837("nocache");
 			return null;
@@ -342,12 +342,12 @@ public final class loader extends Applet implements Runnable {
 			@Pc(132) ClassLoader_Sub1 local132 = new ClassLoader_Sub1();
 			try {
 				Class.forName("java.util.jar.Pack200");
-				@Pc(142) byte[] local142 = this.method4839(false, local121, Class191.aClass190_2);
+				@Pc(142) byte[] local142 = this.method4839(false, local121, Resources.clientPack200);
 				if (local142 == null) {
 					return;
 				}
 				local132.anUnpack2 = new Pack200Unpacker(local142);
-				@Pc(160) byte[] local160 = this.method4839(false, local121, Class191.aClass190_4);
+				@Pc(160) byte[] local160 = this.method4839(false, local121, Resources.glPack200);
 				if (local160 == null) {
 					return;
 				}
@@ -355,7 +355,7 @@ public final class loader extends Applet implements Runnable {
 			} catch (@Pc(171) Throwable local171) {
 			}
 			if (local132.anUnpack2 == null) {
-				@Pc(182) byte[] local182 = this.method4839(false, local121, Class191.aClass190_1);
+				@Pc(182) byte[] local182 = this.method4839(false, local121, Resources.unpackClass);
 				if (local182 == null) {
 					return;
 				}
@@ -364,12 +364,12 @@ public final class loader extends Applet implements Runnable {
 				@Pc(198) Class local198 = Class.forName("unpack");
 				local189.aHashtable1.put(local198.getName(), local198);
 				local198 = local189.loadClass("unpackclass");
-				@Pc(216) byte[] local216 = this.method4839(false, local121, Class191.aClass190_3);
+				@Pc(216) byte[] local216 = this.method4839(false, local121, Resources.clientPackClass);
 				if (local216 == null) {
 					return;
 				}
 				local132.anUnpack2 = (unpack) local198.getConstructor(Class.forName("[B"), Boolean.TYPE).newInstance(local216, Boolean.TRUE);
-				@Pc(253) byte[] local253 = this.method4839(false, local121, Class191.aClass190_5);
+				@Pc(253) byte[] local253 = this.method4839(false, local121, Resources.glPackClass);
 				if (local253 == null) {
 					return;
 				}
@@ -399,13 +399,13 @@ public final class loader extends Applet implements Runnable {
 			} else {
 				var25 = 2;
 			}
-			for (@Pc(337) int local337 = 0; local337 < Class191.aClass190ArrayArray1[var25].length; local337++) {
-				@Pc(360) byte[] local360 = this.method4839(this.getParameter("suppress_sha") != null, local121, Class191.aClass190ArrayArray1[var25][local337]);
+			for (@Pc(337) int local337 = 0; local337 < Resources.glNatives[var25].length; local337++) {
+				@Pc(360) byte[] local360 = this.method4839(this.getParameter("suppress_sha") != null, local121, Resources.glNatives[var25][local337]);
 				if (local360 == null) {
 					return;
 				}
 			}
-			if (Class191.aClass190Array1 != null) {
+			if (Resources.miscNatives != null) {
 				@Pc(376) String local376 = System.getProperty("os.name").toLowerCase();
 				if (local376.startsWith("win")) {
 					@Pc(385) String local385 = System.getProperty("os.arch").toLowerCase();
@@ -415,7 +415,7 @@ public final class loader extends Applet implements Runnable {
 					} else {
 						local395 = 0;
 					}
-					@Pc(413) byte[] local413 = this.method4839(this.getParameter("suppress_sha") != null, local121, Class191.aClass190Array1[local395]);
+					@Pc(413) byte[] local413 = this.method4839(this.getParameter("suppress_sha") != null, local121, Resources.miscNatives[local395]);
 					if (local413 == null) {
 						return;
 					}
