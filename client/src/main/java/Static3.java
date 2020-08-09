@@ -663,7 +663,7 @@ public final class Static3 {
 	public static final int[] anIntArray181 = new int[14];
 
 	@OriginalMember(owner = "client!hk", name = "ab", descriptor = "Lclient!wa;")
-	public static final Class4_Sub10_Sub1 aClass4_Sub10_Sub1_1 = new Class4_Sub10_Sub1(5000);
+	public static final Packet aClass4_Sub10_Sub1_1 = new Packet(5000);
 
 	@OriginalMember(owner = "client!hk", name = "eb", descriptor = "I")
 	public static int anInt2232 = -1;

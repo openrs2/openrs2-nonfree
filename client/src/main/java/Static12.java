@@ -105,7 +105,7 @@ public final class Static12 {
 
 	@OriginalMember(owner = "client!client", name = "g", descriptor = "(I)V")
 	public static void method685() {
-		Static3.aClass4_Sub10_Sub1_1.method4650(218);
+		Static3.aClass4_Sub10_Sub1_1.writeOpcode(218);
 		Static3.aClass4_Sub10_Sub1_1.writeLong(0L);
 	}
 
@@ -295,7 +295,7 @@ public final class Static12 {
 												Static21.method2063();
 												continue;
 											}
-											Static3.aClass4_Sub10_Sub1_1.method4650(251);
+											Static3.aClass4_Sub10_Sub1_1.writeOpcode(251);
 											Static3.aClass4_Sub10_Sub1_1.writeIntAlt3Reverse(local550[0] << 28 | local550[1] << 14 | local550[2]);
 										}
 										Static1.anInt640 = 1;
@@ -919,8 +919,8 @@ public final class Static12 {
 	@OriginalMember(owner = "client!db", name = "a", descriptor = "(I)V")
 	public static void method734() {
 		while (true) {
-			if (Static5.aClass4_Sub10_Sub1_2.method4651(Static1.anInt1052) >= 27) {
-				@Pc(22) int local22 = Static5.aClass4_Sub10_Sub1_2.method4652(15);
+			if (Static5.aClass4_Sub10_Sub1_2.readableBits(Static1.anInt1052) >= 27) {
+				@Pc(22) int local22 = Static5.aClass4_Sub10_Sub1_2.readBits(15);
 				if (local22 != 32767) {
 					@Pc(31) boolean local31 = false;
 					if (Static3.aClass53_Sub1_Sub2Array1[local22] == null) {
@@ -933,24 +933,24 @@ public final class Static12 {
 					if (local49.aClass168_1 != null && local49.aClass168_1.method4260()) {
 						Static25.method2931(local49);
 					}
-					@Pc(77) int local77 = Static5.aClass4_Sub10_Sub1_2.method4652(5);
+					@Pc(77) int local77 = Static5.aClass4_Sub10_Sub1_2.readBits(5);
 					if (local77 > 15) {
 						local77 -= 32;
 					}
-					@Pc(89) int local89 = Static1.anIntArray27[Static5.aClass4_Sub10_Sub1_2.method4652(3)];
+					@Pc(89) int local89 = Static1.anIntArray27[Static5.aClass4_Sub10_Sub1_2.readBits(3)];
 					if (local31) {
 						local49.anInt4017 = local49.anInt4031 = local89;
 					}
-					@Pc(102) int local102 = Static5.aClass4_Sub10_Sub1_2.method4652(5);
-					local49.method3317(Static15.method1495(Static5.aClass4_Sub10_Sub1_2.method4652(14)));
-					@Pc(116) int local116 = Static5.aClass4_Sub10_Sub1_2.method4652(1);
+					@Pc(102) int local102 = Static5.aClass4_Sub10_Sub1_2.readBits(5);
+					local49.method3317(Static15.method1495(Static5.aClass4_Sub10_Sub1_2.readBits(14)));
+					@Pc(116) int local116 = Static5.aClass4_Sub10_Sub1_2.readBits(1);
 					if (local102 > 15) {
 						local102 -= 32;
 					}
 					if (local116 == 1) {
 						Static7.anIntArray587[Static6.anInt4760++] = local22;
 					}
-					@Pc(139) int local139 = Static5.aClass4_Sub10_Sub1_2.method4652(1);
+					@Pc(139) int local139 = Static5.aClass4_Sub10_Sub1_2.readBits(1);
 					local49.method3316(local49.aClass168_1.anInt5262);
 					local49.anInt3986 = local49.aClass168_1.anInt5261;
 					local49.anInt4009 = local49.aClass168_1.anInt5243;
@@ -964,7 +964,7 @@ public final class Static12 {
 					continue;
 				}
 			}
-			Static5.aClass4_Sub10_Sub1_2.method4644();
+			Static5.aClass4_Sub10_Sub1_2.finishBitAccess();
 			return;
 		}
 	}

@@ -694,7 +694,7 @@ public final class Static34 {
 			local16++;
 		}
 		if (Static6.aClass4_Sub15Array1.length > local16 && Static6.aClass4_Sub15Array1[local16] != null) {
-			Static3.aClass4_Sub10_Sub1_1.method4650(75);
+			Static3.aClass4_Sub10_Sub1_1.writeOpcode(75);
 			Static3.aClass4_Sub10_Sub1_1.writeLong(Static6.aClass4_Sub15Array1[local16].key);
 		}
 	}

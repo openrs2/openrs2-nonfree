@@ -166,10 +166,10 @@ public final class Static37 {
 	@OriginalMember(owner = "client!wb", name = "a", descriptor = "(IIII)V")
 	public static void method4661(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(3) int arg2) {
 		if (arg1 == 0) {
-			Static3.aClass4_Sub10_Sub1_1.method4650(230);
+			Static3.aClass4_Sub10_Sub1_1.writeOpcode(230);
 		}
 		if (arg1 == 1) {
-			Static3.aClass4_Sub10_Sub1_1.method4650(207);
+			Static3.aClass4_Sub10_Sub1_1.writeOpcode(207);
 		}
 		Static3.aClass4_Sub10_Sub1_1.writeByteS(++Static1.aByte1);
 		Static3.aClass4_Sub10_Sub1_1.writeByte(Static2.aBooleanArray4[82] ? 1 : 0);
@@ -721,7 +721,7 @@ public final class Static37 {
 
 	@OriginalMember(owner = "client!wf", name = "a", descriptor = "(BII)V")
 	public static void method4736(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1) {
-		Static3.aClass4_Sub10_Sub1_1.method4650(178);
+		Static3.aClass4_Sub10_Sub1_1.writeOpcode(178);
 		Static3.aClass4_Sub10_Sub1_1.writeShortLE2(arg0);
 		Static3.aClass4_Sub10_Sub1_1.writeIntAlt3(arg1);
 	}
@@ -883,52 +883,52 @@ public final class Static37 {
 			return;
 		}
 		if (arg2 == 1) {
-			Static3.aClass4_Sub10_Sub1_1.method4650(94);
+			Static3.aClass4_Sub10_Sub1_1.writeOpcode(94);
 			Static3.aClass4_Sub10_Sub1_1.writeInt(arg0);
 			Static3.aClass4_Sub10_Sub1_1.writeShort(arg1);
 		}
 		if (arg2 == 2) {
-			Static3.aClass4_Sub10_Sub1_1.method4650(201);
+			Static3.aClass4_Sub10_Sub1_1.writeOpcode(201);
 			Static3.aClass4_Sub10_Sub1_1.writeInt(arg0);
 			Static3.aClass4_Sub10_Sub1_1.writeShort(arg1);
 		}
 		if (arg2 == 3) {
-			Static3.aClass4_Sub10_Sub1_1.method4650(30);
+			Static3.aClass4_Sub10_Sub1_1.writeOpcode(30);
 			Static3.aClass4_Sub10_Sub1_1.writeInt(arg0);
 			Static3.aClass4_Sub10_Sub1_1.writeShort(arg1);
 		}
 		if (arg2 == 4) {
-			Static3.aClass4_Sub10_Sub1_1.method4650(61);
+			Static3.aClass4_Sub10_Sub1_1.writeOpcode(61);
 			Static3.aClass4_Sub10_Sub1_1.writeInt(arg0);
 			Static3.aClass4_Sub10_Sub1_1.writeShort(arg1);
 		}
 		if (arg2 == 5) {
-			Static3.aClass4_Sub10_Sub1_1.method4650(66);
+			Static3.aClass4_Sub10_Sub1_1.writeOpcode(66);
 			Static3.aClass4_Sub10_Sub1_1.writeInt(arg0);
 			Static3.aClass4_Sub10_Sub1_1.writeShort(arg1);
 		}
 		if (arg2 == 6) {
-			Static3.aClass4_Sub10_Sub1_1.method4650(7);
+			Static3.aClass4_Sub10_Sub1_1.writeOpcode(7);
 			Static3.aClass4_Sub10_Sub1_1.writeInt(arg0);
 			Static3.aClass4_Sub10_Sub1_1.writeShort(arg1);
 		}
 		if (arg2 == 7) {
-			Static3.aClass4_Sub10_Sub1_1.method4650(108);
+			Static3.aClass4_Sub10_Sub1_1.writeOpcode(108);
 			Static3.aClass4_Sub10_Sub1_1.writeInt(arg0);
 			Static3.aClass4_Sub10_Sub1_1.writeShort(arg1);
 		}
 		if (arg2 == 8) {
-			Static3.aClass4_Sub10_Sub1_1.method4650(255);
+			Static3.aClass4_Sub10_Sub1_1.writeOpcode(255);
 			Static3.aClass4_Sub10_Sub1_1.writeInt(arg0);
 			Static3.aClass4_Sub10_Sub1_1.writeShort(arg1);
 		}
 		if (arg2 == 9) {
-			Static3.aClass4_Sub10_Sub1_1.method4650(97);
+			Static3.aClass4_Sub10_Sub1_1.writeOpcode(97);
 			Static3.aClass4_Sub10_Sub1_1.writeInt(arg0);
 			Static3.aClass4_Sub10_Sub1_1.writeShort(arg1);
 		}
 		if (arg2 == 10) {
-			Static3.aClass4_Sub10_Sub1_1.method4650(10);
+			Static3.aClass4_Sub10_Sub1_1.writeOpcode(10);
 			Static3.aClass4_Sub10_Sub1_1.writeInt(arg0);
 			Static3.aClass4_Sub10_Sub1_1.writeShort(arg1);
 		}

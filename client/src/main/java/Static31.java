@@ -427,7 +427,7 @@ public final class Static31 {
 	}
 
 	@OriginalMember(owner = "client!rl", name = "a", descriptor = "(Lclient!wa;ZI)V")
-	public static void method3753(@OriginalArg(0) Class4_Sub10_Sub1 arg0) {
+	public static void method3753(@OriginalArg(0) Packet arg0) {
 		while (true) {
 			@Pc(16) Class4_Sub29 local16 = (Class4_Sub29) Static6.aClass112_28.method2610();
 			if (local16 == null) {
@@ -455,7 +455,7 @@ public final class Static31 {
 			if (local22) {
 				return;
 			}
-			arg0.method4650(78);
+			arg0.writeOpcode(78);
 			arg0.writeByte(0);
 			@Pc(107) int local107 = arg0.position;
 			arg0.writeInt(local16.anInt4858);

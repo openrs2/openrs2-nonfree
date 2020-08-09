@@ -319,7 +319,7 @@ public final class Static15 {
 		Static2.aBooleanArray7[Static6.anInt5214] = false;
 		Static6.anInt5214++;
 		Static3.anInt2102 = Static6.anInt4979;
-		Static3.aClass4_Sub10_Sub1_1.method4650(26);
+		Static3.aClass4_Sub10_Sub1_1.writeOpcode(26);
 		Static3.aClass4_Sub10_Sub1_1.writeLong(arg0);
 	}
 

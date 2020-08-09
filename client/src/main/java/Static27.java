@@ -648,7 +648,7 @@ public final class Static27 {
 				Static26.method4357(null, 0, "Height: " + Static6.anIntArrayArrayArray13[Static7.anInt5334][Static4.aClass53_Sub1_Sub1_2.anInt3974 >> 7][Static4.aClass53_Sub1_Sub1_2.anInt4002 >> 7]);
 			}
 		}
-		Static3.aClass4_Sub10_Sub1_1.method4650(216);
+		Static3.aClass4_Sub10_Sub1_1.writeOpcode(216);
 		Static3.aClass4_Sub10_Sub1_1.writeByte(arg0.length() - 1);
 		Static3.aClass4_Sub10_Sub1_1.writeString(arg0.substring(2));
 	}
@@ -753,7 +753,7 @@ public final class Static27 {
 			}
 			Static4.aBoolean210 = false;
 		} else if (Static1.anInt344 != 0 && Static6.anInt4844 != -1 && !Static16.method1550()) {
-			Static3.aClass4_Sub10_Sub1_1.method4650(250);
+			Static3.aClass4_Sub10_Sub1_1.writeOpcode(250);
 			Static3.aClass4_Sub10_Sub1_1.writeInt(Static6.anInt4844);
 			Static6.anInt4844 = -1;
 		}

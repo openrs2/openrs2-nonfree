@@ -1654,11 +1654,11 @@ public final class Static30 {
 				Static5.aClass4_Sub10_Sub1_3.writeInt(Static5.aClass58_80.method1369());
 				Static5.aClass4_Sub10_Sub1_3.writeBytes(Static3.aClass4_Sub10_Sub1_1.bytes, Static3.aClass4_Sub10_Sub1_1.position);
 				Static3.aClass52_7.method1107(Static5.aClass4_Sub10_Sub1_3.bytes, Static5.aClass4_Sub10_Sub1_3.position);
-				Static3.aClass4_Sub10_Sub1_1.method4639(local197);
+				Static3.aClass4_Sub10_Sub1_1.setKey(local197);
 				for (@Pc(594) int local594 = 0; local594 < 4; local594++) {
 					local197[local594] += 50;
 				}
-				Static5.aClass4_Sub10_Sub1_2.method4639(local197);
+				Static5.aClass4_Sub10_Sub1_2.setKey(local197);
 				Static3.anInt2574 = 4;
 			}
 			if (Static3.anInt2574 == 4) {
@@ -1697,7 +1697,7 @@ public final class Static30 {
 			}
 			if (Static3.anInt2574 == 6) {
 				Static3.aClass4_Sub10_Sub1_1.position = 0;
-				Static3.aClass4_Sub10_Sub1_1.method4650(17);
+				Static3.aClass4_Sub10_Sub1_1.writeOpcode(17);
 				Static3.aClass52_7.method1107(Static3.aClass4_Sub10_Sub1_1.bytes, Static3.aClass4_Sub10_Sub1_1.position);
 				Static3.anInt2574 = 4;
 				return;
@@ -1760,7 +1760,7 @@ public final class Static30 {
 					Class86.method1851(Static7.aClass196_4.applet, "loggedin");
 				} catch (@Pc(924) Throwable local924) {
 				}
-				Static1.anInt552 = Static5.aClass4_Sub10_Sub1_2.method4646();
+				Static1.anInt552 = Static5.aClass4_Sub10_Sub1_2.readOpcode();
 				Static1.anInt1052 = Static5.aClass4_Sub10_Sub1_2.readUnsignedShort();
 				Static3.anInt2574 = 9;
 			}

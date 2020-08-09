@@ -240,20 +240,20 @@ public final class Static33 {
 		@Pc(19) int local19 = Static5.aClass4_Sub10_Sub1_2.readUnsignedShortLEA();
 		@Pc(23) int local23 = Static5.aClass4_Sub10_Sub1_2.readUnsignedShortA();
 		@Pc(27) int local27 = Static5.aClass4_Sub10_Sub1_2.readUnsignedShortLE();
-		Static5.aClass4_Sub10_Sub1_2.method4642();
+		Static5.aClass4_Sub10_Sub1_2.startBitAccess();
 		for (@Pc(32) int local32 = 0; local32 < 4; local32++) {
 			for (@Pc(39) int local39 = 0; local39 < 13; local39++) {
 				for (@Pc(46) int local46 = 0; local46 < 13; local46++) {
-					@Pc(56) int local56 = Static5.aClass4_Sub10_Sub1_2.method4652(1);
+					@Pc(56) int local56 = Static5.aClass4_Sub10_Sub1_2.readBits(1);
 					if (local56 == 1) {
-						Static7.anIntArrayArrayArray15[local32][local39][local46] = Static5.aClass4_Sub10_Sub1_2.method4652(26);
+						Static7.anIntArrayArrayArray15[local32][local39][local46] = Static5.aClass4_Sub10_Sub1_2.readBits(26);
 					} else {
 						Static7.anIntArrayArrayArray15[local32][local39][local46] = -1;
 					}
 				}
 			}
 		}
-		Static5.aClass4_Sub10_Sub1_2.method4644();
+		Static5.aClass4_Sub10_Sub1_2.finishBitAccess();
 		@Pc(104) int local104 = (Static1.anInt1052 - Static5.aClass4_Sub10_Sub1_2.position) / 16;
 		Static5.anIntArrayArray35 = new int[local104][4];
 		for (@Pc(110) int local110 = 0; local110 < local104; local110++) {
@@ -1077,7 +1077,7 @@ public final class Static33 {
 			Static23.method1936(true);
 		}
 		if (Static4.aFrame2 != null && Static3.aClass52_7 != null && Static4.anInt3304 == 25) {
-			Static3.aClass4_Sub10_Sub1_1.method4650(236);
+			Static3.aClass4_Sub10_Sub1_1.writeOpcode(236);
 			Static3.aClass4_Sub10_Sub1_1.writeInt(1057001181);
 		}
 		if (!Static5.aBoolean294) {
@@ -1099,7 +1099,7 @@ public final class Static33 {
 		} else {
 			Static9.method233(30);
 			if (Static3.aClass52_7 != null) {
-				Static3.aClass4_Sub10_Sub1_1.method4650(113);
+				Static3.aClass4_Sub10_Sub1_1.writeOpcode(113);
 			}
 		}
 		Static35.method4306();

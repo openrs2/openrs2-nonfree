@@ -397,7 +397,7 @@ public final class Static5 {
 	public static Class84 aClass84_17 = new Class84(32);
 
 	@OriginalMember(owner = "client!nj", name = "j", descriptor = "Lclient!wa;")
-	public static final Class4_Sub10_Sub1 aClass4_Sub10_Sub1_2 = new Class4_Sub10_Sub1(65536);
+	public static final Packet aClass4_Sub10_Sub1_2 = new Packet(65536);
 
 	@OriginalMember(owner = "client!nl", name = "c", descriptor = "[I")
 	public static final int[] anIntArray392 = new int[] { 0, 4, 4, 8, 0, 0, 8, 0, 0 };
@@ -658,7 +658,7 @@ public final class Static5 {
 	public static int anInt4216 = 0;
 
 	@OriginalMember(owner = "client!po", name = "g", descriptor = "Lclient!wa;")
-	public static final Class4_Sub10_Sub1 aClass4_Sub10_Sub1_3 = new Class4_Sub10_Sub1(5000);
+	public static final Packet aClass4_Sub10_Sub1_3 = new Packet(5000);
 
 	@OriginalMember(owner = "client!qa", name = "q", descriptor = "I")
 	public static int anInt4230 = 100;

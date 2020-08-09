@@ -95,7 +95,7 @@ public final class Static32 {
 		}
 		Static3.anInt2142 = 0;
 		if (!Static1.aBoolean38 && Static3.aClass52_7 != null) {
-			Static3.aClass4_Sub10_Sub1_1.method4650(137);
+			Static3.aClass4_Sub10_Sub1_1.writeOpcode(137);
 			try {
 				Static3.aClass52_7.method1107(Static3.aClass4_Sub10_Sub1_1.bytes, Static3.aClass4_Sub10_Sub1_1.position);
 				Static3.aClass4_Sub10_Sub1_1.position = 0;
@@ -166,7 +166,7 @@ public final class Static32 {
 		Static3.aStringArray18[Static6.anInt4516] = Static30.method423(arg1);
 		Static2.aBooleanArray5[Static6.anInt4516++] = arg0;
 		Static3.anInt2102 = Static6.anInt4979;
-		Static3.aClass4_Sub10_Sub1_1.method4650(197);
+		Static3.aClass4_Sub10_Sub1_1.writeOpcode(197);
 		Static3.aClass4_Sub10_Sub1_1.writeLong(arg1);
 	}
 

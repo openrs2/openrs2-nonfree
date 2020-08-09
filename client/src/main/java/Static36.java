@@ -32,7 +32,7 @@ public final class Static36 {
 
 	@OriginalMember(owner = "client!va", name = "b", descriptor = "(I)V")
 	public static void method4406() {
-		@Pc(6) int local6 = Static5.aClass4_Sub10_Sub1_2.method4652(8);
+		@Pc(6) int local6 = Static5.aClass4_Sub10_Sub1_2.readBits(8);
 		if (Static3.anInt2510 > local6) {
 			for (@Pc(23) int local23 = local6; local23 < Static3.anInt2510; local23++) {
 				Static2.anIntArray99[Static5.anInt4195++] = Static4.anIntArray317[local23];
@@ -45,12 +45,12 @@ public final class Static36 {
 		for (@Pc(55) int local55 = 0; local55 < local6; local55++) {
 			@Pc(62) int local62 = Static4.anIntArray317[local55];
 			@Pc(66) Class53_Sub1_Sub1 local66 = Static5.aClass53_Sub1_Sub1Array1[local62];
-			@Pc(73) int local73 = Static5.aClass4_Sub10_Sub1_2.method4652(1);
+			@Pc(73) int local73 = Static5.aClass4_Sub10_Sub1_2.readBits(1);
 			if (local73 == 0) {
 				Static4.anIntArray317[Static3.anInt2510++] = local62;
 				local66.anInt3990 = Static2.anInt954;
 			} else {
-				@Pc(94) int local94 = Static5.aClass4_Sub10_Sub1_2.method4652(2);
+				@Pc(94) int local94 = Static5.aClass4_Sub10_Sub1_2.readBits(2);
 				if (local94 == 0) {
 					Static4.anIntArray317[Static3.anInt2510++] = local62;
 					local66.anInt3990 = Static2.anInt954;
@@ -58,25 +58,25 @@ public final class Static36 {
 				} else if (local94 == 1) {
 					Static4.anIntArray317[Static3.anInt2510++] = local62;
 					local66.anInt3990 = Static2.anInt954;
-					@Pc(140) int local140 = Static5.aClass4_Sub10_Sub1_2.method4652(3);
+					@Pc(140) int local140 = Static5.aClass4_Sub10_Sub1_2.readBits(3);
 					local66.method3308(local140, 1);
-					@Pc(150) int local150 = Static5.aClass4_Sub10_Sub1_2.method4652(1);
+					@Pc(150) int local150 = Static5.aClass4_Sub10_Sub1_2.readBits(1);
 					if (local150 == 1) {
 						Static7.anIntArray587[Static6.anInt4760++] = local62;
 					}
 				} else if (local94 == 2) {
 					Static4.anIntArray317[Static3.anInt2510++] = local62;
 					local66.anInt3990 = Static2.anInt954;
-					if (Static5.aClass4_Sub10_Sub1_2.method4652(1) == 1) {
-						@Pc(193) int local193 = Static5.aClass4_Sub10_Sub1_2.method4652(3);
+					if (Static5.aClass4_Sub10_Sub1_2.readBits(1) == 1) {
+						@Pc(193) int local193 = Static5.aClass4_Sub10_Sub1_2.readBits(3);
 						local66.method3308(local193, 2);
-						@Pc(205) int local205 = Static5.aClass4_Sub10_Sub1_2.method4652(3);
+						@Pc(205) int local205 = Static5.aClass4_Sub10_Sub1_2.readBits(3);
 						local66.method3308(local205, 2);
 					} else {
-						@Pc(219) int local219 = Static5.aClass4_Sub10_Sub1_2.method4652(3);
+						@Pc(219) int local219 = Static5.aClass4_Sub10_Sub1_2.readBits(3);
 						local66.method3308(local219, 0);
 					}
-					@Pc(229) int local229 = Static5.aClass4_Sub10_Sub1_2.method4652(1);
+					@Pc(229) int local229 = Static5.aClass4_Sub10_Sub1_2.readBits(1);
 					if (local229 == 1) {
 						Static7.anIntArray587[Static6.anInt4760++] = local62;
 					}
@@ -880,7 +880,7 @@ public final class Static36 {
 
 	@OriginalMember(owner = "client!w", name = "e", descriptor = "(I)V")
 	public static void method4567() {
-		Static3.aClass4_Sub10_Sub1_1.method4650(156);
+		Static3.aClass4_Sub10_Sub1_1.writeOpcode(156);
 		Static3.aClass4_Sub10_Sub1_1.writeShort(Static7.anInt5426);
 	}
 }

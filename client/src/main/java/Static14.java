@@ -69,7 +69,7 @@ public final class Static14 {
 						Static21.method2019(local231);
 					}
 					if (Static7.aClass185_16 != null && Static12.method691(Static1.aClass185_1) != null) {
-						Static3.aClass4_Sub10_Sub1_1.method4650(0);
+						Static3.aClass4_Sub10_Sub1_1.writeOpcode(0);
 						Static3.aClass4_Sub10_Sub1_1.writeIntLE2(Static1.aClass185_1.anInt5914);
 						Static3.aClass4_Sub10_Sub1_1.writeIntAlt3(Static7.aClass185_16.anInt5914);
 						Static3.aClass4_Sub10_Sub1_1.writeShortA(Static7.aClass185_16.anInt5968);

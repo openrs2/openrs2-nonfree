@@ -862,8 +862,8 @@ public final class Static26 {
 
 	@OriginalMember(owner = "client!o", name = "b", descriptor = "(B)V")
 	public static void method3056() {
-		Static5.aClass4_Sub10_Sub1_2.method4642();
-		@Pc(13) int local13 = Static5.aClass4_Sub10_Sub1_2.method4652(8);
+		Static5.aClass4_Sub10_Sub1_2.startBitAccess();
+		@Pc(13) int local13 = Static5.aClass4_Sub10_Sub1_2.readBits(8);
 		if (local13 < Static6.anInt4451) {
 			for (@Pc(23) int local23 = local13; local23 < Static6.anInt4451; local23++) {
 				Static2.anIntArray99[Static5.anInt4195++] = Static7.anIntArray595[local23];
@@ -876,12 +876,12 @@ public final class Static26 {
 		for (@Pc(62) int local62 = 0; local62 < local13; local62++) {
 			@Pc(73) int local73 = Static7.anIntArray595[local62];
 			@Pc(77) Class53_Sub1_Sub2 local77 = Static3.aClass53_Sub1_Sub2Array1[local73];
-			@Pc(82) int local82 = Static5.aClass4_Sub10_Sub1_2.method4652(1);
+			@Pc(82) int local82 = Static5.aClass4_Sub10_Sub1_2.readBits(1);
 			if (local82 == 0) {
 				Static7.anIntArray595[Static6.anInt4451++] = local73;
 				local77.anInt3990 = Static2.anInt954;
 			} else {
-				@Pc(106) int local106 = Static5.aClass4_Sub10_Sub1_2.method4652(2);
+				@Pc(106) int local106 = Static5.aClass4_Sub10_Sub1_2.readBits(2);
 				if (local106 == 0) {
 					Static7.anIntArray595[Static6.anInt4451++] = local73;
 					local77.anInt3990 = Static2.anInt954;
@@ -889,25 +889,25 @@ public final class Static26 {
 				} else if (local106 == 1) {
 					Static7.anIntArray595[Static6.anInt4451++] = local73;
 					local77.anInt3990 = Static2.anInt954;
-					@Pc(151) int local151 = Static5.aClass4_Sub10_Sub1_2.method4652(3);
+					@Pc(151) int local151 = Static5.aClass4_Sub10_Sub1_2.readBits(3);
 					local77.method3308(local151, 1);
-					@Pc(161) int local161 = Static5.aClass4_Sub10_Sub1_2.method4652(1);
+					@Pc(161) int local161 = Static5.aClass4_Sub10_Sub1_2.readBits(1);
 					if (local161 == 1) {
 						Static7.anIntArray587[Static6.anInt4760++] = local73;
 					}
 				} else if (local106 == 2) {
 					Static7.anIntArray595[Static6.anInt4451++] = local73;
 					local77.anInt3990 = Static2.anInt954;
-					if (Static5.aClass4_Sub10_Sub1_2.method4652(1) == 1) {
-						@Pc(215) int local215 = Static5.aClass4_Sub10_Sub1_2.method4652(3);
+					if (Static5.aClass4_Sub10_Sub1_2.readBits(1) == 1) {
+						@Pc(215) int local215 = Static5.aClass4_Sub10_Sub1_2.readBits(3);
 						local77.method3308(local215, 2);
-						@Pc(227) int local227 = Static5.aClass4_Sub10_Sub1_2.method4652(3);
+						@Pc(227) int local227 = Static5.aClass4_Sub10_Sub1_2.readBits(3);
 						local77.method3308(local227, 2);
 					} else {
-						@Pc(201) int local201 = Static5.aClass4_Sub10_Sub1_2.method4652(3);
+						@Pc(201) int local201 = Static5.aClass4_Sub10_Sub1_2.readBits(3);
 						local77.method3308(local201, 0);
 					}
-					@Pc(237) int local237 = Static5.aClass4_Sub10_Sub1_2.method4652(1);
+					@Pc(237) int local237 = Static5.aClass4_Sub10_Sub1_2.readBits(1);
 					if (local237 == 1) {
 						Static7.anIntArray587[Static6.anInt4760++] = local73;
 					}

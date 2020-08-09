@@ -269,7 +269,7 @@ public final class Static21 {
 
 	@OriginalMember(owner = "client!jc", name = "a", descriptor = "(Z)V")
 	public static void method2001() {
-		Static3.aClass4_Sub10_Sub1_1.method4650(86);
+		Static3.aClass4_Sub10_Sub1_1.writeOpcode(86);
 		Static3.aClass4_Sub10_Sub1_1.writeByte(Static11.method557());
 		Static3.aClass4_Sub10_Sub1_1.writeShort(Static1.anInt526);
 		Static3.aClass4_Sub10_Sub1_1.writeShort(Static1.anInt690);
@@ -510,7 +510,7 @@ public final class Static21 {
 			Static3.aClass52_7.method1099(0, Static5.aClass4_Sub10_Sub1_2.bytes, 1);
 			Static5.aClass4_Sub10_Sub1_2.position = 0;
 			local15--;
-			Static1.anInt552 = Static5.aClass4_Sub10_Sub1_2.method4646();
+			Static1.anInt552 = Static5.aClass4_Sub10_Sub1_2.readOpcode();
 			Static1.anInt1052 = Static4.anIntArray242[Static1.anInt552];
 		}
 		if (Static1.anInt1052 == -1) {
@@ -1039,7 +1039,7 @@ public final class Static21 {
 				Static35.method4512(false, Static5.anInt3637, -1, -1);
 			}
 			@Pc(2051) byte[] local2051 = new byte[Static1.anInt1052];
-			Static5.aClass4_Sub10_Sub1_2.method4647(local2051, Static1.anInt1052);
+			Static5.aClass4_Sub10_Sub1_2.writeEncryptedBytes(local2051, Static1.anInt1052);
 			@Pc(2063) String local2063 = Static34.method4271(0, local2051, Static1.anInt1052);
 			if (Static4.aFrame2 == null && (SignLink.anInt6106 == 3 || !SignLink.osName.startsWith("win") || Static2.aBoolean118)) {
 				Static37.method4719(local2063, true);
@@ -1539,7 +1539,7 @@ public final class Static21 {
 			if (local3976.anInt2559 >= 0 && local3976.anInt2559 < Static6.aClass4_Sub3_Sub14Array11.length) {
 				if (local3976.anInt2561 == 1 || local3976.anInt2561 == 10) {
 					local3976.anInt2560 = Static5.aClass4_Sub10_Sub1_2.readUnsignedShort();
-					@Pc(4011) Class4_Sub10_Sub1 local4011 = Static5.aClass4_Sub10_Sub1_2;
+					@Pc(4011) Packet local4011 = Static5.aClass4_Sub10_Sub1_2;
 					local4011.position += 5;
 				} else if (local3976.anInt2561 >= 2 && local3976.anInt2561 <= 6) {
 					if (local3976.anInt2561 == 2) {
@@ -2007,7 +2007,7 @@ public final class Static21 {
 			Static1.anInt552 = -1;
 			return true;
 		} else if (Static1.anInt552 == 166) {
-			@Pc(5763) Class4_Sub10_Sub1 local5763 = Static5.aClass4_Sub10_Sub1_2;
+			@Pc(5763) Packet local5763 = Static5.aClass4_Sub10_Sub1_2;
 			local5763.position += 28;
 			if (Static5.aClass4_Sub10_Sub1_2.verifyCrc32()) {
 				Static9.method281(Static5.aClass4_Sub10_Sub1_2.position - 28, Static5.aClass4_Sub10_Sub1_2);
@@ -2304,7 +2304,7 @@ public final class Static21 {
 
 	@OriginalMember(owner = "client!jk", name = "a", descriptor = "(IILjava/lang/String;)V")
 	public static void method2060(@OriginalArg(1) int arg0, @OriginalArg(2) String arg1) {
-		Static3.aClass4_Sub10_Sub1_1.method4650(215);
+		Static3.aClass4_Sub10_Sub1_1.writeOpcode(215);
 		Static3.aClass4_Sub10_Sub1_1.writeLong(Static18.method1746(arg1));
 		Static3.aClass4_Sub10_Sub1_1.writeByteC(arg0);
 	}
@@ -2335,7 +2335,7 @@ public final class Static21 {
 
 	@OriginalMember(owner = "client!jk", name = "a", descriptor = "(I)V")
 	public static void method2063() {
-		Static3.aClass4_Sub10_Sub1_1.method4650(189);
+		Static3.aClass4_Sub10_Sub1_1.writeOpcode(189);
 		for (@Pc(14) Class4_Sub27 local14 = (Class4_Sub27) Static4.aClass84_13.method1842(); local14 != null; local14 = (Class4_Sub27) Static4.aClass84_13.method1843()) {
 			if (local14.anInt4619 == 0) {
 				Static28.method3246(true, local14);

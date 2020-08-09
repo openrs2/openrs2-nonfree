@@ -1698,21 +1698,21 @@ public final class Static16 {
 							if (Static29.method3473(local13921)) {
 								local13923 = Static12.method737(local13921);
 							}
-							Static3.aClass4_Sub10_Sub1_1.method4650(219);
+							Static3.aClass4_Sub10_Sub1_1.writeOpcode(219);
 							Static3.aClass4_Sub10_Sub1_1.writeInt(local13923);
 							continue;
 						}
 						if (local45 == 3105) {
 							local13--;
 							@Pc(13955) String local13955 = Static2.aStringArray5[local13];
-							Static3.aClass4_Sub10_Sub1_1.method4650(149);
+							Static3.aClass4_Sub10_Sub1_1.writeOpcode(149);
 							Static3.aClass4_Sub10_Sub1_1.writeLong(Static18.method1746(local13955));
 							continue;
 						}
 						if (local45 == 3106) {
 							local13--;
 							@Pc(13986) String local13986 = Static2.aStringArray5[local13];
-							Static3.aClass4_Sub10_Sub1_1.method4650(164);
+							Static3.aClass4_Sub10_Sub1_1.writeOpcode(164);
 							Static3.aClass4_Sub10_Sub1_1.writeByte(local13986.length() + 1);
 							Static3.aClass4_Sub10_Sub1_1.writeString(local13986);
 							continue;
@@ -1745,7 +1745,7 @@ public final class Static16 {
 						if (local45 == 3110) {
 							local5--;
 							@Pc(14098) int local14098 = Static7.anIntArray571[local5];
-							Static3.aClass4_Sub10_Sub1_1.method4650(231);
+							Static3.aClass4_Sub10_Sub1_1.writeOpcode(231);
 							Static3.aClass4_Sub10_Sub1_1.writeShort(local14098);
 							continue;
 						}
@@ -2930,7 +2930,7 @@ public final class Static16 {
 									Static7.anInt5413 = Static7.anIntArray571[local5];
 									Static6.anInt4837 = Static7.anIntArray571[local5 + 1];
 									Static6.anInt5016 = Static7.anIntArray571[local5 + 2];
-									Static3.aClass4_Sub10_Sub1_1.method4650(234);
+									Static3.aClass4_Sub10_Sub1_1.writeOpcode(234);
 									Static3.aClass4_Sub10_Sub1_1.writeByte(Static7.anInt5413);
 									Static3.aClass4_Sub10_Sub1_1.writeByte(Static6.anInt4837);
 									Static3.aClass4_Sub10_Sub1_1.writeByte(Static6.anInt5016);
@@ -2942,7 +2942,7 @@ public final class Static16 {
 									local5 -= 2;
 									@Pc(4012) int local4012 = Static7.anIntArray571[local5];
 									@Pc(4018) int local4018 = Static7.anIntArray571[local5 + 1];
-									Static3.aClass4_Sub10_Sub1_1.method4650(90);
+									Static3.aClass4_Sub10_Sub1_1.writeOpcode(90);
 									Static3.aClass4_Sub10_Sub1_1.writeLong(Static18.method1746(local4007));
 									Static3.aClass4_Sub10_Sub1_1.writeByte(local4012 - 1);
 									Static3.aClass4_Sub10_Sub1_1.writeByte(local4018);
@@ -3098,7 +3098,7 @@ public final class Static16 {
 											local4156 = 5;
 										}
 									}
-									Static3.aClass4_Sub10_Sub1_1.method4650(186);
+									Static3.aClass4_Sub10_Sub1_1.writeOpcode(186);
 									Static3.aClass4_Sub10_Sub1_1.writeByte(0);
 									@Pc(4616) int local4616 = Static3.aClass4_Sub10_Sub1_1.position;
 									Static3.aClass4_Sub10_Sub1_1.writeByte(local4154);
@@ -3112,7 +3112,7 @@ public final class Static16 {
 									@Pc(4647) String local4647 = Static2.aStringArray5[local13];
 									@Pc(4653) String local4653 = Static2.aStringArray5[local13 + 1];
 									if (Static3.anInt2576 != 0 || (!Static1.aBoolean47 || Static5.aBoolean287) && !Static2.aBoolean67) {
-										Static3.aClass4_Sub10_Sub1_1.method4650(157);
+										Static3.aClass4_Sub10_Sub1_1.writeOpcode(157);
 										Static3.aClass4_Sub10_Sub1_1.writeByte(0);
 										@Pc(4680) int local4680 = Static3.aClass4_Sub10_Sub1_1.position;
 										Static3.aClass4_Sub10_Sub1_1.writeLong(Static18.method1746(local4647));
@@ -3262,7 +3262,7 @@ public final class Static16 {
 									continue;
 								}
 								if (local45 == 5059) {
-									Static3.aClass4_Sub10_Sub1_1.method4650(222);
+									Static3.aClass4_Sub10_Sub1_1.writeOpcode(222);
 									Static3.aClass4_Sub10_Sub1_1.writeByte(0);
 									@Pc(5125) int local5125 = Static3.aClass4_Sub10_Sub1_1.position;
 									Static3.aClass4_Sub10_Sub1_1.writeByte(0);
@@ -3274,7 +3274,7 @@ public final class Static16 {
 								if (local45 == 5060) {
 									local13--;
 									@Pc(5165) String local5165 = Static2.aStringArray5[local13];
-									Static3.aClass4_Sub10_Sub1_1.method4650(42);
+									Static3.aClass4_Sub10_Sub1_1.writeOpcode(42);
 									Static3.aClass4_Sub10_Sub1_1.writeByte(0);
 									@Pc(5178) int local5178 = Static3.aClass4_Sub10_Sub1_1.position;
 									Static3.aClass4_Sub10_Sub1_1.writeLong(Static18.method1746(local5165));
@@ -3284,7 +3284,7 @@ public final class Static16 {
 									continue;
 								}
 								if (local45 == 5061) {
-									Static3.aClass4_Sub10_Sub1_1.method4650(222);
+									Static3.aClass4_Sub10_Sub1_1.writeOpcode(222);
 									Static3.aClass4_Sub10_Sub1_1.writeByte(0);
 									@Pc(5227) int local5227 = Static3.aClass4_Sub10_Sub1_1.position;
 									Static3.aClass4_Sub10_Sub1_1.writeByte(1);
@@ -3851,7 +3851,7 @@ public final class Static16 {
 									local5--;
 									@Pc(8729) int local8729 = Static7.anIntArray571[local5];
 									@Pc(8733) String local8733 = Static2.aStringArray5[local13];
-									Static3.aClass4_Sub10_Sub1_1.method4650(243);
+									Static3.aClass4_Sub10_Sub1_1.writeOpcode(243);
 									Static3.aClass4_Sub10_Sub1_1.writeByte(Static19.method1791(local8733) + Static19.method1791(local8724) + 1);
 									Static3.aClass4_Sub10_Sub1_1.writeString(local8733);
 									Static3.aClass4_Sub10_Sub1_1.writeString(local8724);

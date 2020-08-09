@@ -171,23 +171,23 @@ public final class Static8 {
 			if (local30 != null && local30.aString88 != null && local30.aString88.equalsIgnoreCase(local17)) {
 				local19 = true;
 				if (arg0 == 1) {
-					Static3.aClass4_Sub10_Sub1_1.method4650(212);
+					Static3.aClass4_Sub10_Sub1_1.writeOpcode(212);
 					Static3.aClass4_Sub10_Sub1_1.writeShortA(Static4.anIntArray317[local21]);
 					Static3.aClass4_Sub10_Sub1_1.writeByteA(0);
 				} else if (arg0 == 4) {
-					Static3.aClass4_Sub10_Sub1_1.method4650(105);
+					Static3.aClass4_Sub10_Sub1_1.writeOpcode(105);
 					Static3.aClass4_Sub10_Sub1_1.writeShort(Static4.anIntArray317[local21]);
 					Static3.aClass4_Sub10_Sub1_1.writeByte(0);
 				} else if (arg0 == 5) {
-					Static3.aClass4_Sub10_Sub1_1.method4650(96);
+					Static3.aClass4_Sub10_Sub1_1.writeOpcode(96);
 					Static3.aClass4_Sub10_Sub1_1.writeByteA(0);
 					Static3.aClass4_Sub10_Sub1_1.writeShort(Static4.anIntArray317[local21]);
 				} else if (arg0 == 6) {
-					Static3.aClass4_Sub10_Sub1_1.method4650(77);
+					Static3.aClass4_Sub10_Sub1_1.writeOpcode(77);
 					Static3.aClass4_Sub10_Sub1_1.writeShortLE2(Static4.anIntArray317[local21]);
 					Static3.aClass4_Sub10_Sub1_1.writeByteS(0);
 				} else if (arg0 == 7) {
-					Static3.aClass4_Sub10_Sub1_1.method4650(52);
+					Static3.aClass4_Sub10_Sub1_1.writeOpcode(52);
 					Static3.aClass4_Sub10_Sub1_1.writeShort(Static4.anIntArray317[local21]);
 					Static3.aClass4_Sub10_Sub1_1.writeByte(0);
 				}
