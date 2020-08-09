@@ -424,7 +424,7 @@ public final class Static33 {
 	}
 
 	@OriginalMember(owner = "client!te", name = "a", descriptor = "(Lsignlink!pm;I)V")
-	public static void method4149(@OriginalArg(0) Class196 arg0) {
+	public static void method4149(@OriginalArg(0) SignLink arg0) {
 		@Pc(3) Class195 local3 = null;
 		Static1.anInt185 = 3;
 		Static35.method665(true);
@@ -460,12 +460,12 @@ public final class Static33 {
 		Static5.anInt3909 = 0;
 		Static5.aBoolean293 = false;
 		try {
-			@Pc(84) Class197 local84 = arg0.method4881("openrs2");
-			while (local84.anInt6107 == 0) {
+			@Pc(84) PrivilegedRequest local84 = arg0.openPreferences("openrs2");
+			while (local84.status == 0) {
 				Static37.method4640(1L);
 			}
-			if (local84.anInt6107 == 1) {
-				local3 = (Class195) local84.anObject6;
+			if (local84.status == 1) {
+				local3 = (Class195) local84.result;
 				@Pc(102) int local102 = 0;
 				@Pc(108) byte[] local108 = new byte[(int) local3.method4855()];
 				while (local102 < local108.length) {

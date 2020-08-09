@@ -466,7 +466,7 @@ public final class Static25 {
 	}
 
 	@OriginalMember(owner = "client!mo", name = "a", descriptor = "(Ljava/awt/Component;BILsignlink!pm;I)Lclient!tj;")
-	public static Class102 method2807(@OriginalArg(0) Component arg0, @OriginalArg(2) int arg1, @OriginalArg(3) Class196 arg2, @OriginalArg(4) int arg3) {
+	public static Class102 method2807(@OriginalArg(0) Component arg0, @OriginalArg(2) int arg1, @OriginalArg(3) SignLink arg2, @OriginalArg(4) int arg3) {
 		if (Static7.anInt5394 == 0) {
 			throw new IllegalStateException();
 		}
@@ -483,7 +483,7 @@ public final class Static25 {
 			if (Static4.anInt3257 > 0 && Static4.aClass91_1 == null) {
 				Static4.aClass91_1 = new Class91();
 				Static4.aClass91_1.aClass196_2 = arg2;
-				arg2.method4883(Static4.anInt3257, Static4.aClass91_1);
+				arg2.startThread(Static4.aClass91_1, Static4.anInt3257);
 			}
 			if (Static4.aClass91_1 != null) {
 				if (Static4.aClass91_1.aClass102Array1[arg3] != null) {
@@ -503,7 +503,7 @@ public final class Static25 {
 				if (Static4.anInt3257 > 0 && Static4.aClass91_1 == null) {
 					Static4.aClass91_1 = new Class91();
 					Static4.aClass91_1.aClass196_2 = arg2;
-					arg2.method4883(Static4.anInt3257, Static4.aClass91_1);
+					arg2.startThread(Static4.aClass91_1, Static4.anInt3257);
 				}
 				if (Static4.aClass91_1 != null) {
 					if (Static4.aClass91_1.aClass102Array1[arg3] != null) {

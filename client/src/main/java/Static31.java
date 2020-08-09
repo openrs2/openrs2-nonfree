@@ -75,13 +75,13 @@ public final class Static31 {
 	}
 
 	@OriginalMember(owner = "client!re", name = "a", descriptor = "(Lsignlink!pm;Ljava/awt/Frame;Z)V")
-	public static void method3658(@OriginalArg(0) Class196 arg0, @OriginalArg(1) Frame arg1) {
+	public static void method3658(@OriginalArg(0) SignLink arg0, @OriginalArg(1) Frame arg1) {
 		while (true) {
-			@Pc(10) Class197 local10 = arg0.method4871(arg1);
-			while (local10.anInt6107 == 0) {
+			@Pc(10) PrivilegedRequest local10 = arg0.exitFullScreen(arg1);
+			while (local10.status == 0) {
 				Static37.method4640(10L);
 			}
-			if (local10.anInt6107 == 1) {
+			if (local10.status == 1) {
 				arg1.setVisible(false);
 				arg1.dispose();
 				return;
@@ -436,18 +436,18 @@ public final class Static31 {
 			@Pc(22) boolean local22 = false;
 			for (@Pc(24) int local24 = 0; local24 < local16.anInt4857; local24++) {
 				if (local16.aClass197Array1[local24] != null) {
-					if (local16.aClass197Array1[local24].anInt6107 == 2) {
+					if (local16.aClass197Array1[local24].status == 2) {
 						local16.anIntArray529[local24] = -5;
 					}
-					if (local16.aClass197Array1[local24].anInt6107 == 0) {
+					if (local16.aClass197Array1[local24].status == 0) {
 						local22 = true;
 					}
 				}
 				if (local16.aClass197Array2[local24] != null) {
-					if (local16.aClass197Array2[local24].anInt6107 == 2) {
+					if (local16.aClass197Array2[local24].status == 2) {
 						local16.anIntArray529[local24] = -6;
 					}
-					if (local16.aClass197Array2[local24].anInt6107 == 0) {
+					if (local16.aClass197Array2[local24].status == 0) {
 						local22 = true;
 					}
 				}
@@ -464,22 +464,22 @@ public final class Static31 {
 					try {
 						@Pc(140) int local140 = local16.anIntArray527[local114];
 						if (local140 == 0) {
-							@Pc(149) Field local149 = (Field) local16.aClass197Array1[local114].anObject6;
+							@Pc(149) Field local149 = (Field) local16.aClass197Array1[local114].result;
 							@Pc(153) int local153 = local149.getInt(null);
 							arg0.method4581(0);
 							arg0.method4617(local153);
 						} else if (local140 == 1) {
-							@Pc(173) Field local173 = (Field) local16.aClass197Array1[local114].anObject6;
+							@Pc(173) Field local173 = (Field) local16.aClass197Array1[local114].result;
 							local173.setInt(null, local16.anIntArray526[local114]);
 							arg0.method4581(0);
 						} else if (local140 == 2) {
-							@Pc(196) Field local196 = (Field) local16.aClass197Array1[local114].anObject6;
+							@Pc(196) Field local196 = (Field) local16.aClass197Array1[local114].result;
 							@Pc(199) int local199 = local196.getModifiers();
 							arg0.method4581(0);
 							arg0.method4617(local199);
 						}
 						if (local140 == 3) {
-							@Pc(242) Method local242 = (Method) local16.aClass197Array2[local114].anObject6;
+							@Pc(242) Method local242 = (Method) local16.aClass197Array2[local114].result;
 							@Pc(247) byte[][] local247 = local16.aByteArrayArrayArray19[local114];
 							@Pc(251) Object[] local251 = new Object[local247.length];
 							for (@Pc(253) int local253 = 0; local253 < local247.length; local253++) {
@@ -499,7 +499,7 @@ public final class Static31 {
 								arg0.method4581(4);
 							}
 						} else if (local140 == 4) {
-							@Pc(222) Method local222 = (Method) local16.aClass197Array2[local114].anObject6;
+							@Pc(222) Method local222 = (Method) local16.aClass197Array2[local114].result;
 							@Pc(225) int local225 = local222.getModifiers();
 							arg0.method4581(0);
 							arg0.method4617(local225);

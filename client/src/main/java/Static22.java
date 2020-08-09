@@ -24,14 +24,14 @@ public final class Static22 {
 	}
 
 	@OriginalMember(owner = "client!jo", name = "a", descriptor = "(Lsignlink!pm;IBLclient!fd;)V")
-	public static void method4689(@OriginalArg(0) Class196 arg0, @OriginalArg(1) int arg1, @OriginalArg(3) Class4_Sub10 arg2) {
+	public static void method4689(@OriginalArg(0) SignLink arg0, @OriginalArg(1) int arg1, @OriginalArg(3) Class4_Sub10 arg2) {
 		@Pc(9) Class4_Sub29 local9 = new Class4_Sub29();
 		local9.anInt4857 = arg2.method4629();
 		local9.anInt4858 = arg2.method4595();
 		local9.anIntArray527 = new int[local9.anInt4857];
 		local9.aByteArrayArrayArray19 = new byte[local9.anInt4857][][];
-		local9.aClass197Array1 = new Class197[local9.anInt4857];
-		local9.aClass197Array2 = new Class197[local9.anInt4857];
+		local9.aClass197Array1 = new PrivilegedRequest[local9.anInt4857];
+		local9.aClass197Array2 = new PrivilegedRequest[local9.anInt4857];
 		local9.anIntArray529 = new int[local9.anInt4857];
 		local9.anIntArray526 = new int[local9.anInt4857];
 		for (@Pc(57) int local57 = 0; local57 < local9.anInt4857; local57++) {
@@ -46,7 +46,7 @@ public final class Static22 {
 					}
 					local9.anIntArray527[local57] = local69;
 					local9.anIntArray526[local57] = local90;
-					local9.aClass197Array1[local57] = arg0.method4885(local94, Static33.method4156(local88));
+					local9.aClass197Array1[local57] = arg0.getDeclaredField(Static33.method4156(local88), local94);
 				} else if (local69 == 3 || local69 == 4) {
 					@Pc(137) String local137 = arg2.method4593();
 					@Pc(141) String local141 = arg2.method4593();
@@ -68,7 +68,7 @@ public final class Static22 {
 					for (@Pc(211) int local211 = 0; local211 < local145; local211++) {
 						local204[local211] = Static33.method4156(local148[local211]);
 					}
-					local9.aClass197Array2[local57] = arg0.method4875(local141, Static33.method4156(local137), local204);
+					local9.aClass197Array2[local57] = arg0.getDeclaredMethod(Static33.method4156(local137), local141, local204);
 					local9.aByteArrayArrayArray19[local57] = local169;
 				}
 			} catch (@Pc(244) ClassNotFoundException local244) {
@@ -1020,7 +1020,7 @@ public final class Static22 {
 				if (Class194.method4849() - 5000L < Static6.aLong169) {
 					return 0;
 				}
-				Static7.aClass197_5 = Static7.aClass196_4.method4887(Static6.aString291, Static4.anInt3358);
+				Static7.aClass197_5 = Static7.aClass196_4.openSocket(Static6.aString291, Static4.anInt3358);
 				Static7.aLong35 = Class194.method4849();
 				Static7.anInt5319 = 1;
 			}
@@ -1028,13 +1028,13 @@ public final class Static22 {
 				return Static27.method3235(1000);
 			}
 			if (Static7.anInt5319 == 1) {
-				if (Static7.aClass197_5.anInt6107 == 2) {
+				if (Static7.aClass197_5.status == 2) {
 					return Static27.method3235(1001);
 				}
-				if (Static7.aClass197_5.anInt6107 != 1) {
+				if (Static7.aClass197_5.status != 1) {
 					return -1;
 				}
-				Static3.aClass52_7 = new Class52((Socket) Static7.aClass197_5.anObject6, Static7.aClass196_4);
+				Static3.aClass52_7 = new Class52((Socket) Static7.aClass197_5.result, Static7.aClass196_4);
 				Static7.aClass197_5 = null;
 				@Pc(79) int local79 = 0;
 				if (Static6.aBoolean338) {

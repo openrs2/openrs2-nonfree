@@ -179,10 +179,10 @@ public final class loader extends Applet implements Runnable {
 	}
 
 	@OriginalMember(owner = "loader!loader", name = "a", descriptor = "(ZILsignlink!pm;Lloader!b;)[B")
-	private byte[] method4839(@OriginalArg(0) boolean arg0, @OriginalArg(2) Class196 arg1, @OriginalArg(3) Class190 arg2) {
+	private byte[] method4839(@OriginalArg(0) boolean arg0, @OriginalArg(2) SignLink arg1, @OriginalArg(3) Class190 arg2) {
 		@Pc(7) File local7;
 		try {
-			local7 = Class196.method4873(arg2.aString370, this.anInt6102, aString375);
+			local7 = SignLink.getFile(arg2.aString370, this.anInt6102, aString375);
 		} catch (@Pc(9) Exception local9) {
 			this.method4837("nocache");
 			return null;
@@ -332,9 +332,9 @@ public final class loader extends Applet implements Runnable {
 				}
 			} catch (@Pc(112) Exception local112) {
 			}
-			@Pc(121) Class196 local121;
+			@Pc(121) SignLink local121;
 			try {
-				local121 = new Class196(this, this.anInt6102, aString375, 29);
+				local121 = new SignLink(this, this.anInt6102, aString375, 29);
 			} catch (@Pc(123) Exception local123) {
 				this.method4837("nocache");
 				return;
@@ -423,9 +423,9 @@ public final class loader extends Applet implements Runnable {
 			}
 			@Pc(420) Class local420 = Class.forName("Class195");
 			local132.aHashtable1.put(local420.getName(), local420);
-			@Pc(430) Class local430 = Class.forName("Class196");
+			@Pc(430) Class local430 = Class.forName("SignLink");
 			local132.aHashtable1.put(local430.getName(), local430);
-			local420 = Class.forName("Class197");
+			local420 = Class.forName("PrivilegedRequest");
 			local132.aHashtable1.put(local420.getName(), local420);
 			local420 = Class.forName("Class194");
 			local132.aHashtable1.put(local420.getName(), local420);

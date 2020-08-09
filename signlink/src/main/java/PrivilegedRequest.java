@@ -2,26 +2,26 @@ import dev.openrs2.deob.annotation.OriginalClass;
 import dev.openrs2.deob.annotation.OriginalMember;
 
 @OriginalClass("signlink!vk")
-public final class Class197 {
+public final class PrivilegedRequest {
 
 	@OriginalMember(owner = "signlink!vk", name = "d", descriptor = "Lsignlink!vk;")
-	public Class197 aClass197_8;
+	public PrivilegedRequest next;
 
 	@OriginalMember(owner = "signlink!vk", name = "c", descriptor = "Ljava/lang/Object;")
-	public volatile Object anObject6;
+	public volatile Object result;
 
 	@OriginalMember(owner = "signlink!vk", name = "f", descriptor = "I")
-	public int anInt6108;
+	public int type;
 
 	@OriginalMember(owner = "signlink!vk", name = "b", descriptor = "I")
-	public int anInt6109;
+	public int intArg1;
 
 	@OriginalMember(owner = "signlink!vk", name = "a", descriptor = "Ljava/lang/Object;")
-	public Object anObject7;
+	public Object objectArg;
 
 	@OriginalMember(owner = "signlink!vk", name = "g", descriptor = "I")
-	public int anInt6110;
+	public int intArg2;
 
 	@OriginalMember(owner = "signlink!vk", name = "e", descriptor = "I")
-	public volatile int anInt6107 = 0;
+	public volatile int status = 0;
 }

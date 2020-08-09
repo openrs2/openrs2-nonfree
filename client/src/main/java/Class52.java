@@ -16,7 +16,7 @@ public final class Class52 implements Runnable {
 	private byte[] aByteArray11;
 
 	@OriginalMember(owner = "client!eo", name = "y", descriptor = "Lsignlink!vk;")
-	private Class197 aClass197_3;
+	private PrivilegedRequest aClass197_3;
 
 	@OriginalMember(owner = "client!eo", name = "f", descriptor = "Z")
 	private boolean aBoolean81 = false;
@@ -34,7 +34,7 @@ public final class Class52 implements Runnable {
 	private final Socket aSocket1;
 
 	@OriginalMember(owner = "client!eo", name = "x", descriptor = "Lsignlink!pm;")
-	private final Class196 aClass196_1;
+	private final SignLink aClass196_1;
 
 	@OriginalMember(owner = "client!eo", name = "r", descriptor = "Ljava/io/InputStream;")
 	private InputStream anInputStream1;
@@ -43,7 +43,7 @@ public final class Class52 implements Runnable {
 	private OutputStream anOutputStream1;
 
 	@OriginalMember(owner = "client!eo", name = "<init>", descriptor = "(Ljava/net/Socket;Lsignlink!pm;)V")
-	public Class52(@OriginalArg(0) Socket arg0, @OriginalArg(1) Class196 arg1) throws IOException {
+	public Class52(@OriginalArg(0) Socket arg0, @OriginalArg(1) SignLink arg1) throws IOException {
 		this.aSocket1 = arg0;
 		this.aClass196_1 = arg1;
 		this.aSocket1.setSoTimeout(30000);
@@ -82,12 +82,12 @@ public final class Class52 implements Runnable {
 			this.notifyAll();
 		}
 		if (this.aClass197_3 != null) {
-			while (this.aClass197_3.anInt6107 == 0) {
+			while (this.aClass197_3.status == 0) {
 				Static37.method4640(1L);
 			}
-			if (this.aClass197_3.anInt6107 == 1) {
+			if (this.aClass197_3.status == 1) {
 				try {
-					((Thread) this.aClass197_3.anObject6).join();
+					((Thread) this.aClass197_3.result).join();
 				} catch (@Pc(58) InterruptedException local58) {
 				}
 			}
@@ -209,7 +209,7 @@ public final class Class52 implements Runnable {
 				}
 			}
 			if (this.aClass197_3 == null) {
-				this.aClass197_3 = this.aClass196_1.method4883(3, this);
+				this.aClass197_3 = this.aClass196_1.startThread(this, 3);
 			}
 			this.notifyAll();
 		}

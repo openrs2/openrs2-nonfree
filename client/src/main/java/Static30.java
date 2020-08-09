@@ -1291,12 +1291,12 @@ public final class Static30 {
 	@OriginalMember(owner = "client!qi", name = "a", descriptor = "(Ljava/lang/String;I)V")
 	public static void method419(@OriginalArg(0) String arg0) {
 		Static6.aString261 = arg0;
-		if (Static7.aClass196_4.anApplet2 == null) {
+		if (Static7.aClass196_4.applet == null) {
 			return;
 		}
 		try {
-			@Pc(15) String local15 = Static7.aClass196_4.anApplet2.getParameter("cookieprefix");
-			@Pc(24) String local24 = Static7.aClass196_4.anApplet2.getParameter("cookiehost");
+			@Pc(15) String local15 = Static7.aClass196_4.applet.getParameter("cookieprefix");
+			@Pc(24) String local24 = Static7.aClass196_4.applet.getParameter("cookiehost");
 			@Pc(39) String local39 = local15 + "settings=" + arg0 + "; version=1; path=/; domain=" + local24;
 			@Pc(54) String local54;
 			if (arg0.length() == 0) {
@@ -1304,7 +1304,7 @@ public final class Static30 {
 			} else {
 				local54 = local39 + "; Expires=" + Static12.method742(Class194.method4849() + 94608000000L) + "; Max-Age=" + 94608000L;
 			}
-			Class86.method1853("document.cookie=\"" + local54 + "\"", Static7.aClass196_4.anApplet2);
+			Class86.method1853("document.cookie=\"" + local54 + "\"", Static7.aClass196_4.applet);
 		} catch (@Pc(92) Throwable local92) {
 		}
 	}
@@ -1541,17 +1541,17 @@ public final class Static30 {
 				Static6.anInt4458 = 0;
 			}
 			if (Static3.anInt2574 == 1) {
-				Static7.aClass197_5 = Static7.aClass196_4.method4887(Static6.aString292, Static6.anInt4866);
+				Static7.aClass197_5 = Static7.aClass196_4.openSocket(Static6.aString292, Static6.anInt4866);
 				Static3.anInt2574 = 2;
 			}
 			if (Static3.anInt2574 == 2) {
-				if (Static7.aClass197_5.anInt6107 == 2) {
+				if (Static7.aClass197_5.status == 2) {
 					throw new IOException();
 				}
-				if (Static7.aClass197_5.anInt6107 != 1) {
+				if (Static7.aClass197_5.status != 1) {
 					return;
 				}
-				Static3.aClass52_7 = new Class52((Socket) Static7.aClass197_5.anObject6, Static7.aClass196_4);
+				Static3.aClass52_7 = new Class52((Socket) Static7.aClass197_5.result, Static7.aClass196_4);
 				Static7.aClass197_5 = null;
 				@Pc(111) long local111 = Static1.aLong23 = Static18.method1746(Static3.aString132);
 				@Pc(118) int local118 = (int) (local111 >> 16 & 0x1FL);
@@ -1746,18 +1746,18 @@ public final class Static30 {
 				if (!Static1.aBoolean52) {
 					if (Static1.aBoolean47 && !Static4.aBoolean241 || Static7.aBoolean399) {
 						try {
-							Class86.method1851(Static7.aClass196_4.anApplet2, "zap");
+							Class86.method1851(Static7.aClass196_4.applet, "zap");
 						} catch (@Pc(906) Throwable local906) {
 						}
 					} else {
 						try {
-							Class86.method1851(Static7.aClass196_4.anApplet2, "unzap");
+							Class86.method1851(Static7.aClass196_4.applet, "unzap");
 						} catch (@Pc(916) Throwable local916) {
 						}
 					}
 				}
 				try {
-					Class86.method1851(Static7.aClass196_4.anApplet2, "loggedin");
+					Class86.method1851(Static7.aClass196_4.applet, "loggedin");
 				} catch (@Pc(924) Throwable local924) {
 				}
 				Static1.anInt552 = Static5.aClass4_Sub10_Sub1_2.method4646();

@@ -550,12 +550,12 @@ public final class Static13 {
 			if (local27 == null) {
 				arg0 = -1;
 			} else {
-				Static7.aClass196_4.method4862(new Point(local23.anInt4119, local23.anInt4111), local27.anInt5612, local27.method2170(), local27.anInt5602, Static5.aCanvas115);
+				Static7.aClass196_4.setCursor(Static5.aCanvas115, local27.anInt5602, local27.anInt5612, local27.method2170(), new Point(local23.anInt4119, local23.anInt4111));
 				Static7.anInt5345 = arg0;
 			}
 		}
 		if (arg0 == -1 && Static7.anInt5345 != -1) {
-			Static7.aClass196_4.method4862(new Point(), -1, null, -1, Static5.aCanvas115);
+			Static7.aClass196_4.setCursor(Static5.aCanvas115, -1, -1, null, new Point());
 			Static7.anInt5345 = -1;
 		}
 	}
@@ -987,15 +987,15 @@ public final class Static13 {
 	}
 
 	@OriginalMember(owner = "client!ef", name = "a", descriptor = "(Lsignlink!pm;Ljava/lang/Object;Z)V")
-	public static void method1013(@OriginalArg(0) Class196 arg0, @OriginalArg(1) Object arg1) {
-		if (arg0.anEventQueue1 == null) {
+	public static void method1013(@OriginalArg(0) SignLink arg0, @OriginalArg(1) Object arg1) {
+		if (arg0.eventQueue == null) {
 			return;
 		}
-		for (@Pc(12) int local12 = 0; local12 < 50 && arg0.anEventQueue1.peekEvent() != null; local12++) {
+		for (@Pc(12) int local12 = 0; local12 < 50 && arg0.eventQueue.peekEvent() != null; local12++) {
 			Static37.method4640(1L);
 		}
 		if (arg1 != null) {
-			arg0.anEventQueue1.postEvent(new ActionEvent(arg1, 1001, "dummy"));
+			arg0.eventQueue.postEvent(new ActionEvent(arg1, 1001, "dummy"));
 		}
 	}
 

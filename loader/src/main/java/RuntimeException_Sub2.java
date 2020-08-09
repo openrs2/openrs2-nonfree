@@ -99,7 +99,7 @@ public final class RuntimeException_Sub2 extends RuntimeException {
 			local42 = method4832(local42, "%40", "@");
 			local42 = method4832(local42, "%26", "&");
 			local42 = method4832(local42, "%23", "#");
-			@Pc(90) URL local90 = new URL(arg1.getCodeBase(), "loadererror.ws?c=" + anInt6099 + "&v1=" + Class196.aString377 + "&v2=" + Class196.aString378 + "&e=" + local42);
+			@Pc(90) URL local90 = new URL(arg1.getCodeBase(), "loadererror.ws?c=" + anInt6099 + "&v1=" + SignLink.javaVendor + "&v2=" + SignLink.javaVersion + "&e=" + local42);
 			@Pc(96) DataInputStream local96 = new DataInputStream(local90.openStream());
 			local96.read();
 			local96.close();

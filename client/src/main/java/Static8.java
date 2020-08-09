@@ -301,8 +301,8 @@ public final class Static8 {
 	}
 
 	@OriginalMember(owner = "client!ac", name = "a", descriptor = "(IIIILsignlink!pm;I)Ljava/awt/Frame;")
-	public static Frame method67(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(4) Class196 arg3) {
-		if (!arg3.method4879()) {
+	public static Frame method67(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(4) SignLink arg3) {
+		if (!arg3.isFullScreenSupported()) {
 			return null;
 		}
 		@Pc(26) Class169[] local26 = Static11.method610(arg3);
@@ -319,14 +319,14 @@ public final class Static8 {
 		if (!local34) {
 			return null;
 		}
-		@Pc(109) Class197 local109 = arg3.method4884(arg1, arg2, arg0);
-		while (local109.anInt6107 == 0) {
+		@Pc(109) PrivilegedRequest local109 = arg3.enterFullScreen(arg1, arg2, arg0);
+		while (local109.status == 0) {
 			Static37.method4640(10L);
 		}
-		@Pc(124) Frame local124 = (Frame) local109.anObject6;
+		@Pc(124) Frame local124 = (Frame) local109.result;
 		if (local124 == null) {
 			return null;
-		} else if (local109.anInt6107 == 2) {
+		} else if (local109.status == 2) {
 			Static31.method3658(arg3, local124);
 			return null;
 		} else {

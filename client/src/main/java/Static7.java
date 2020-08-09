@@ -18,7 +18,7 @@ public final class Static7 {
 	public static int anInt5236;
 
 	@OriginalMember(owner = "client!ua", name = "O", descriptor = "Lsignlink!pm;")
-	public static Class196 aClass196_4;
+	public static SignLink aClass196_4;
 
 	@OriginalMember(owner = "client!ub", name = "j", descriptor = "I")
 	public static int anInt5281;
@@ -156,7 +156,7 @@ public final class Static7 {
 	public static int[] anIntArray650;
 
 	@OriginalMember(owner = "client!wb", name = "D", descriptor = "Lsignlink!vk;")
-	public static Class197 aClass197_5;
+	public static PrivilegedRequest aClass197_5;
 
 	@OriginalMember(owner = "client!wb", name = "J", descriptor = "I")
 	public static int anInt5798;

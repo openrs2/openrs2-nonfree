@@ -335,7 +335,7 @@ public final class Static19 {
 		Static12.method778();
 		Static11.method605(true);
 		try {
-			Class86.method1851(Static7.aClass196_4.anApplet2, "loggedout");
+			Class86.method1851(Static7.aClass196_4.applet, "loggedout");
 		} catch (@Pc(159) Throwable local159) {
 		}
 	}
@@ -367,10 +367,10 @@ public final class Static19 {
 													}
 													@Pc(200) String local200 = "";
 													if (Static1.aClass197_2 != null) {
-														if (Static1.aClass197_2.anObject6 == null) {
-															local200 = Static27.method3226(Static1.aClass197_2.anInt6109);
+														if (Static1.aClass197_2.result == null) {
+															local200 = Static27.method3226(Static1.aClass197_2.intArg1);
 														} else {
-															local200 = (String) Static1.aClass197_2.anObject6;
+															local200 = (String) Static1.aClass197_2.result;
 														}
 													}
 													arg1 = arg1.substring(0, local194) + local200 + arg1.substring(local194 + 4);

@@ -569,7 +569,7 @@ public final class Static27 {
 				Static7.aClass51_2.method1081();
 			}
 			if (arg0.equalsIgnoreCase("::breakcon")) {
-				Static7.aClass196_4.method4874();
+				Static7.aClass196_4.breakConnection();
 				Static3.aClass52_7.method1104();
 				Static7.aClass51_2.method1086();
 			}

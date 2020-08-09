@@ -312,7 +312,7 @@ public final class Static24 {
 		if (Static3.aFrame1 != null) {
 			local83 = Static3.aFrame1;
 		} else if (Static4.aFrame2 == null) {
-			local83 = Static7.aClass196_4.anApplet2;
+			local83 = Static7.aClass196_4.applet;
 		} else {
 			local83 = Static4.aFrame2;
 		}
@@ -384,11 +384,11 @@ public final class Static24 {
 				} else {
 					Static4.aClass59_1 = null;
 				}
-				@Pc(299) Class197 local299 = Static7.aClass196_4.method4878(Static7.aClient1.getClass());
-				while (local299.anInt6107 == 0) {
+				@Pc(299) PrivilegedRequest local299 = Static7.aClass196_4.loadGlNatives(Static7.aClient1.getClass());
+				while (local299.status == 0) {
 					Static37.method4640(100L);
 				}
-				if (local299.anInt6107 == 1) {
+				if (local299.status == 1) {
 					Static2.aBoolean76 = true;
 				}
 			}

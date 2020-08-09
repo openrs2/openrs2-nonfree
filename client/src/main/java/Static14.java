@@ -97,15 +97,15 @@ public final class Static14 {
 	}
 
 	@OriginalMember(owner = "client!ej", name = "a", descriptor = "(ILsignlink!pm;)V")
-	public static void method1055(@OriginalArg(1) Class196 arg0) {
+	public static void method1055(@OriginalArg(1) SignLink arg0) {
 		@Pc(3) Class195 local3 = null;
 		try {
-			@Pc(12) Class197 local12 = arg0.method4881("openrs2");
-			while (local12.anInt6107 == 0) {
+			@Pc(12) PrivilegedRequest local12 = arg0.openPreferences("openrs2");
+			while (local12.status == 0) {
 				Static37.method4640(1L);
 			}
-			if (local12.anInt6107 == 1) {
-				local3 = (Class195) local12.anObject6;
+			if (local12.status == 1) {
+				local3 = (Class195) local12.result;
 				@Pc(36) Class4_Sub10 local36 = Static15.method1347();
 				local3.method4851(local36.anInt5709, 0, local36.aByteArray71);
 			}
@@ -369,7 +369,7 @@ public final class Static14 {
 	public static boolean method1079() {
 		if (Static2.aBoolean102) {
 			try {
-				return !((Boolean) Class86.method1851(Static7.aClass196_4.anApplet2, "showingVideoAd"));
+				return !((Boolean) Class86.method1851(Static7.aClass196_4.applet, "showingVideoAd"));
 			} catch (@Pc(23) Throwable local23) {
 			}
 		}
@@ -781,17 +781,17 @@ public final class Static14 {
 				Static4.anInt2974 = 0;
 			}
 			if (Static6.anInt5117 == 1) {
-				Static7.aClass197_5 = Static7.aClass196_4.method4887(Static6.aString291, Static4.anInt3358);
+				Static7.aClass197_5 = Static7.aClass196_4.openSocket(Static6.aString291, Static4.anInt3358);
 				Static6.anInt5117 = 2;
 			}
 			if (Static6.anInt5117 == 2) {
-				if (Static7.aClass197_5.anInt6107 == 2) {
+				if (Static7.aClass197_5.status == 2) {
 					throw new IOException();
 				}
-				if (Static7.aClass197_5.anInt6107 != 1) {
+				if (Static7.aClass197_5.status != 1) {
 					return;
 				}
-				Static3.aClass52_7 = new Class52((Socket) Static7.aClass197_5.anObject6, Static7.aClass196_4);
+				Static3.aClass52_7 = new Class52((Socket) Static7.aClass197_5.result, Static7.aClass196_4);
 				Static7.aClass197_5 = null;
 				Static3.aClass52_7.method1107(Static3.aClass4_Sub10_Sub1_1.aByteArray71, Static3.aClass4_Sub10_Sub1_1.anInt5709);
 				if (Static1.aClass102_1 != null) {

@@ -278,7 +278,7 @@ public final class Static4 {
 	public static float aFloat82;
 
 	@OriginalMember(owner = "client!mo", name = "Z", descriptor = "Lsignlink!pm;")
-	public static Class196 aClass196_3;
+	public static SignLink aClass196_3;
 
 	@OriginalMember(owner = "client!na", name = "pb", descriptor = "[[I")
 	public static int[][] anIntArrayArray31;

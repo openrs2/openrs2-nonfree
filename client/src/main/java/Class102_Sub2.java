@@ -11,8 +11,8 @@ public final class Class102_Sub2 extends Class102 {
 	private final int anInt3600;
 
 	@OriginalMember(owner = "client!nm", name = "<init>", descriptor = "(Lsignlink!pm;I)V")
-	public Class102_Sub2(@OriginalArg(0) Class196 arg0, @OriginalArg(1) int arg1) {
-		Static5.anInterface5_1 = arg0.method4877();
+	public Class102_Sub2(@OriginalArg(0) SignLink arg0, @OriginalArg(1) int arg1) {
+		Static5.anInterface5_1 = arg0.getAudioSource();
 		this.anInt3600 = arg1;
 	}
 

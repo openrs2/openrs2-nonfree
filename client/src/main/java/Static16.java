@@ -3913,17 +3913,17 @@ public final class Static16 {
 								if (local45 == 5419) {
 									@Pc(9027) String local9027 = "";
 									if (Static1.aClass197_2 != null) {
-										if (Static1.aClass197_2.anObject6 == null) {
-											local9027 = Static27.method3226(Static1.aClass197_2.anInt6109);
+										if (Static1.aClass197_2.result == null) {
+											local9027 = Static27.method3226(Static1.aClass197_2.intArg1);
 										} else {
-											local9027 = (String) Static1.aClass197_2.anObject6;
+											local9027 = (String) Static1.aClass197_2.result;
 										}
 									}
 									Static2.aStringArray5[local13++] = local9027;
 									continue;
 								}
 								if (local45 == 5420) {
-									Static7.anIntArray571[local5++] = Class196.anInt6106 == 3 ? 1 : 0;
+									Static7.anIntArray571[local5++] = SignLink.anInt6106 == 3 ? 1 : 0;
 									continue;
 								}
 								if (local45 == 5421) {
@@ -3935,10 +3935,10 @@ public final class Static16 {
 									local5--;
 									@Pc(9100) boolean local9100 = Static7.anIntArray571[local5] == 1;
 									@Pc(9110) String local9110 = Static36.method4436() + local9090;
-									if (Static4.aFrame2 != null || local9100 && Class196.anInt6106 != 3 && Class196.aString383.startsWith("win") && !Static2.aBoolean118) {
+									if (Static4.aFrame2 != null || local9100 && SignLink.anInt6106 != 3 && SignLink.osName.startsWith("win") && !Static2.aBoolean118) {
 										Static6.aString269 = local9110;
 										Static4.aBoolean206 = local9100;
-										Static1.aClass197_1 = Static7.aClass196_4.method4864(local9110);
+										Static1.aClass197_1 = Static7.aClass196_4.openUrl(local9110);
 										continue;
 									}
 									Static37.method4719(local9110, local9100);

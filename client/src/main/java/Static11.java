@@ -984,18 +984,18 @@ public final class Static11 {
 	}
 
 	@OriginalMember(owner = "client!cj", name = "a", descriptor = "(ILsignlink!pm;)[Lclient!ub;")
-	public static Class169[] method610(@OriginalArg(1) Class196 arg0) {
-		if (!arg0.method4879()) {
+	public static Class169[] method610(@OriginalArg(1) SignLink arg0) {
+		if (!arg0.isFullScreenSupported()) {
 			return new Class169[0];
 		}
-		@Pc(17) Class197 local17 = arg0.method4872();
-		while (local17.anInt6107 == 0) {
+		@Pc(17) PrivilegedRequest local17 = arg0.getDisplayModes();
+		while (local17.status == 0) {
 			Static37.method4640(10L);
 		}
-		if (local17.anInt6107 == 2) {
+		if (local17.status == 2) {
 			return new Class169[0];
 		}
-		@Pc(39) int[] local39 = (int[]) local17.anObject6;
+		@Pc(39) int[] local39 = (int[]) local17.result;
 		@Pc(45) Class169[] local45 = new Class169[local39.length >> 2];
 		for (@Pc(53) int local53 = 0; local53 < local45.length; local53++) {
 			@Pc(65) Class169 local65 = new Class169();

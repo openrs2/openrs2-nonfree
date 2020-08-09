@@ -670,7 +670,7 @@ public final class Static15 {
 
 	@OriginalMember(owner = "client!fi", name = "h", descriptor = "(I)V")
 	public static void method1402() {
-		if (Class196.aString377.toLowerCase().indexOf("microsoft") != -1) {
+		if (SignLink.javaVendor.toLowerCase().indexOf("microsoft") != -1) {
 			Static5.anIntArray445[188] = 71;
 			Static5.anIntArray445[223] = 28;
 			Static5.anIntArray445[219] = 42;
@@ -687,7 +687,7 @@ public final class Static15 {
 		}
 		Static5.anIntArray445[61] = 27;
 		Static5.anIntArray445[46] = 72;
-		if (Class196.aMethod2 == null) {
+		if (SignLink.setFocusTraversalKeysEnabled == null) {
 			Static5.anIntArray445[192] = 58;
 			Static5.anIntArray445[222] = 59;
 		} else {

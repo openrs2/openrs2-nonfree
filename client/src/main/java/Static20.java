@@ -1035,7 +1035,7 @@ public final class Static20 {
 
 	@OriginalMember(owner = "client!im", name = "a", descriptor = "(ILjava/awt/Component;)V")
 	public static void method1926(@OriginalArg(1) Component arg0) {
-		@Pc(1) Method local1 = Class196.aMethod2;
+		@Pc(1) Method local1 = SignLink.setFocusTraversalKeysEnabled;
 		if (local1 != null) {
 			try {
 				local1.invoke(arg0, Boolean.FALSE);
@@ -1193,7 +1193,7 @@ public final class Static20 {
 		if (Static3.aFrame1 != null) {
 			local9 = Static3.aFrame1;
 		} else if (Static4.aFrame2 == null) {
-			local9 = Static7.aClass196_4.anApplet2;
+			local9 = Static7.aClass196_4.applet;
 		} else {
 			local9 = Static4.aFrame2;
 		}

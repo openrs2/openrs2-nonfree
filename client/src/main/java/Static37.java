@@ -531,7 +531,7 @@ public final class Static37 {
 	public static void method4719(@OriginalArg(1) String arg0, @OriginalArg(2) boolean arg1) {
 		if (!arg1) {
 			try {
-				Class86.method1851(Static7.aClass196_4.anApplet2, "loggedout");
+				Class86.method1851(Static7.aClass196_4.applet, "loggedout");
 			} catch (@Pc(51) Throwable local51) {
 			}
 			try {
@@ -542,7 +542,7 @@ public final class Static37 {
 		}
 		if (Static3.aBoolean138 && Static4.aBoolean207) {
 			try {
-				Class86.method1852(new Object[] { (new URL(Static1.anApplet_Sub1_1.getCodeBase(), arg0)).toString() }, Static7.aClass196_4.anApplet2, "openjs");
+				Class86.method1852(new Object[] { (new URL(Static1.anApplet_Sub1_1.getCodeBase(), arg0)).toString() }, Static7.aClass196_4.applet, "openjs");
 				return;
 			} catch (@Pc(29) Throwable local29) {
 			}
@@ -558,7 +558,7 @@ public final class Static37 {
 		@Pc(8) Class63_Sub1 local8 = Static20.method1927(arg0);
 		if (local8 == null) {
 			return false;
-		} else if (Class196.anInt6106 == 1 || Class196.anInt6106 == 2 || Static4.anInt3406 == 2) {
+		} else if (SignLink.anInt6106 == 1 || SignLink.anInt6106 == 2 || Static4.anInt3406 == 2) {
 			Static6.aString292 = local8.aString111;
 			Static6.anInt4846 = local8.anInt2037;
 			if (Static4.anInt3406 != 0) {

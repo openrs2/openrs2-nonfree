@@ -1041,12 +1041,12 @@ public final class Static21 {
 			@Pc(2051) byte[] local2051 = new byte[Static1.anInt1052];
 			Static5.aClass4_Sub10_Sub1_2.method4647(local2051, Static1.anInt1052);
 			@Pc(2063) String local2063 = Static34.method4271(0, local2051, Static1.anInt1052);
-			if (Static4.aFrame2 == null && (Class196.anInt6106 == 3 || !Class196.aString383.startsWith("win") || Static2.aBoolean118)) {
+			if (Static4.aFrame2 == null && (SignLink.anInt6106 == 3 || !SignLink.osName.startsWith("win") || Static2.aBoolean118)) {
 				Static37.method4719(local2063, true);
 			} else {
 				Static6.aString269 = local2063;
 				Static4.aBoolean206 = true;
-				Static1.aClass197_1 = Static7.aClass196_4.method4864(local2063);
+				Static1.aClass197_1 = Static7.aClass196_4.openUrl(local2063);
 			}
 			Static1.anInt552 = -1;
 			return true;
@@ -1323,7 +1323,7 @@ public final class Static21 {
 			return true;
 		} else if (Static1.anInt552 == 103) {
 			@Pc(3127) int local3127 = Static5.aClass4_Sub10_Sub1_2.method4595();
-			Static1.aClass197_2 = Static7.aClass196_4.method4863(local3127);
+			Static1.aClass197_2 = Static7.aClass196_4.getReverseDns(local3127);
 			Static1.anInt552 = -1;
 			return true;
 		} else if (Static1.anInt552 == 242) {

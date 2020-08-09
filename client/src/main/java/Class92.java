@@ -20,14 +20,14 @@ public final class Class92 implements Runnable {
 
 	@OriginalMember(owner = "client!ja", name = "<init>", descriptor = "()V")
 	public Class92() {
-		@Pc(20) Class197 local20 = Static7.aClass196_4.method4883(5, this);
-		while (local20.anInt6107 == 0) {
+		@Pc(20) PrivilegedRequest local20 = Static7.aClass196_4.startThread(this, 5);
+		while (local20.status == 0) {
 			Static37.method4640(10L);
 		}
-		if (local20.anInt6107 == 2) {
+		if (local20.status == 2) {
 			throw new RuntimeException();
 		}
-		this.aThread1 = (Thread) local20.anObject6;
+		this.aThread1 = (Thread) local20.result;
 	}
 
 	@OriginalMember(owner = "client!ja", name = "run", descriptor = "()V")

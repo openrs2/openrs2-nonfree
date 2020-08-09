@@ -146,8 +146,8 @@ public final class client extends Applet_Sub1 {
 											if (Static1.aClass185_1 != null) {
 												Static14.method1047();
 											}
-											if (Static1.aClass197_1 != null && Static1.aClass197_1.anInt6107 == 1) {
-												if (Static1.aClass197_1.anObject6 != null) {
+											if (Static1.aClass197_1 != null && Static1.aClass197_1.status == 1) {
+												if (Static1.aClass197_1.result != null) {
 													Static37.method4719(Static6.aString269, Static4.aBoolean206);
 												}
 												Static1.aClass197_1 = null;
@@ -444,7 +444,7 @@ public final class client extends Applet_Sub1 {
 			}
 		} else if (Static5.anInt4285 == 110) {
 			Static4.aClass99_1 = new Class99();
-			Static7.aClass196_4.method4883(10, Static4.aClass99_1);
+			Static7.aClass196_4.startThread(Static4.aClass99_1, 10);
 			Static6.anInt4621 = 75;
 			Static5.aString243 = Static4.aString200;
 			Static5.anInt4285 = 120;
@@ -587,7 +587,7 @@ public final class client extends Applet_Sub1 {
 			Static6.aString291 = "127.0.0.1";
 		}
 		Static7.aShortArray124 = Static5.aShortArray74 = Static7.aShortArray111 = Static4.aShortArray126 = new short[256];
-		if (Class196.anInt6106 == 3 && Static4.anInt3406 != 2) {
+		if (SignLink.anInt6106 == 3 && Static4.anInt3406 != 2) {
 			Static6.anInt4846 = Static5.anInt4213;
 		}
 		if (Static2.anInt5720 == 1) {
@@ -616,20 +616,20 @@ public final class client extends Applet_Sub1 {
 		if (Static6.aClass19_1 != null) {
 			Static6.aClass19_1.method900(Static5.aCanvas115);
 		}
-		Static5.anInt3815 = Class196.anInt6106;
+		Static5.anInt3815 = SignLink.anInt6106;
 		try {
-			if (Static7.aClass196_4.aClass195_2 != null) {
-				Static3.aClass189_4 = new Class189(Static7.aClass196_4.aClass195_2, 5200, 0);
+			if (Static7.aClass196_4.cacheData != null) {
+				Static3.aClass189_4 = new Class189(Static7.aClass196_4.cacheData, 5200, 0);
 				for (@Pc(174) int local174 = 0; local174 < 29; local174++) {
-					Static4.aClass189Array1[local174] = new Class189(Static7.aClass196_4.aClass195Array1[local174], 6000, 0);
+					Static4.aClass189Array1[local174] = new Class189(Static7.aClass196_4.cacheIndexes[local174], 6000, 0);
 				}
-				Static3.aClass189_5 = new Class189(Static7.aClass196_4.aClass195_4, 6000, 0);
+				Static3.aClass189_5 = new Class189(Static7.aClass196_4.cacheMasterIndex, 6000, 0);
 				Static1.aClass60_2 = new Class60(255, Static3.aClass189_4, Static3.aClass189_5, 500000);
-				Static1.aClass189_1 = new Class189(Static7.aClass196_4.aClass195_3, 24, 0);
-				Static7.aClass196_4.aClass195_4 = null;
-				Static7.aClass196_4.aClass195Array1 = null;
-				Static7.aClass196_4.aClass195_2 = null;
-				Static7.aClass196_4.aClass195_3 = null;
+				Static1.aClass189_1 = new Class189(Static7.aClass196_4.uid, 24, 0);
+				Static7.aClass196_4.cacheMasterIndex = null;
+				Static7.aClass196_4.cacheIndexes = null;
+				Static7.aClass196_4.cacheData = null;
+				Static7.aClass196_4.uid = null;
 			}
 		} catch (@Pc(230) IOException local230) {
 			Static1.aClass189_1 = null;
@@ -716,20 +716,20 @@ public final class client extends Applet_Sub1 {
 		}
 		try {
 			if (Static6.anInt4952 == 0) {
-				Static5.aClass197_4 = Static7.aClass196_4.method4887(Static6.aString292, Static6.anInt4866);
+				Static5.aClass197_4 = Static7.aClass196_4.openSocket(Static6.aString292, Static6.anInt4866);
 				Static6.anInt4952++;
 			}
 			if (Static6.anInt4952 == 1) {
-				if (Static5.aClass197_4.anInt6107 == 2) {
+				if (Static5.aClass197_4.status == 2) {
 					this.method684(1000);
 					return;
 				}
-				if (Static5.aClass197_4.anInt6107 == 1) {
+				if (Static5.aClass197_4.status == 1) {
 					Static6.anInt4952++;
 				}
 			}
 			if (Static6.anInt4952 == 2) {
-				Static3.aClass52_5 = new Class52((Socket) Static5.aClass197_4.anObject6, Static7.aClass196_4);
+				Static3.aClass52_5 = new Class52((Socket) Static5.aClass197_4.result, Static7.aClass196_4);
 				@Pc(198) Class4_Sub10 local198 = new Class4_Sub10(5);
 				local198.method4581(15);
 				local198.method4617(550);
@@ -859,7 +859,7 @@ public final class client extends Applet_Sub1 {
 			if (Static3.aFrame1 != null) {
 				local79 = Static3.aFrame1;
 			} else if (Static4.aFrame2 == null) {
-				local79 = Static7.aClass196_4.anApplet2;
+				local79 = Static7.aClass196_4.applet;
 			} else {
 				local79 = Static4.aFrame2;
 			}

@@ -18,7 +18,7 @@ public final class Static1 {
 	public static Class58 aClass58_2;
 
 	@OriginalMember(owner = "client!ab", name = "j", descriptor = "Lsignlink!vk;")
-	public static Class197 aClass197_1;
+	public static PrivilegedRequest aClass197_1;
 
 	@OriginalMember(owner = "client!ac", name = "T", descriptor = "F")
 	public static float aFloat5;
@@ -27,7 +27,7 @@ public final class Static1 {
 	public static int anInt97;
 
 	@OriginalMember(owner = "client!af", name = "q", descriptor = "Lsignlink!vk;")
-	public static Class197 aClass197_2;
+	public static PrivilegedRequest aClass197_2;
 
 	@OriginalMember(owner = "client!af", name = "C", descriptor = "[[[Lclient!nh;")
 	public static Class4_Sub19[][][] aClass4_Sub19ArrayArrayArray1;

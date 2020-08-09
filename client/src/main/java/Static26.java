@@ -811,7 +811,7 @@ public final class Static26 {
 	public static boolean method2988() {
 		if (Static2.aBoolean102) {
 			try {
-				Class86.method1851(Static7.aClass196_4.anApplet2, "showVideoAd");
+				Class86.method1851(Static7.aClass196_4.applet, "showVideoAd");
 				return true;
 			} catch (@Pc(20) Throwable local20) {
 			}
@@ -936,15 +936,15 @@ public final class Static26 {
 			local54 = Static31.method3736(local54, "%40", "@");
 			local54 = Static31.method3736(local54, "%26", "&");
 			local54 = Static31.method3736(local54, "%23", "#");
-			if (Static4.aClass196_3.anApplet2 == null) {
+			if (Static4.aClass196_3.applet == null) {
 				return;
 			}
-			@Pc(115) Class197 local115 = Static4.aClass196_3.method4880(new URL(Static4.aClass196_3.anApplet2.getCodeBase(), "clienterror.ws?c=" + Static7.anInt5282 + "&u=" + Static1.aLong23 + "&v1=" + Class196.aString377 + "&v2=" + Class196.aString378 + "&e=" + local54));
-			while (local115.anInt6107 == 0) {
+			@Pc(115) PrivilegedRequest local115 = Static4.aClass196_3.openUrlStream(new URL(Static4.aClass196_3.applet.getCodeBase(), "clienterror.ws?c=" + Static7.anInt5282 + "&u=" + Static1.aLong23 + "&v1=" + SignLink.javaVendor + "&v2=" + SignLink.javaVersion + "&e=" + local54));
+			while (local115.status == 0) {
 				Static37.method4640(1L);
 			}
-			if (local115.anInt6107 == 1) {
-				@Pc(133) DataInputStream local133 = (DataInputStream) local115.anObject6;
+			if (local115.status == 1) {
+				@Pc(133) DataInputStream local133 = (DataInputStream) local115.result;
 				local133.read();
 				local133.close();
 			}
