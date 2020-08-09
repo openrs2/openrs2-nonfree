@@ -173,7 +173,7 @@ public final class unpackclass extends unpack {
 	@OriginalMember(owner = "unpackclass!unpackclass", name = "<init>", descriptor = "([BZ)V")
 	public unpackclass(@OriginalArg(0) byte[] arg0, @OriginalArg(1) boolean arg1) throws IOException {
 		@Pc(572) Class199_Sub1 local572 = new Class199_Sub1(arg0, true, true);
-		this.aClass201_Sub1_1.bytes = local572.method4930(1, 0);
+		this.aClass201_Sub1_1.bytes = local572.getFile(1, 0);
 		this.aClass201_Sub1_1.position = this.aClass201_Sub1_1.bytes.length - 20;
 		this.aClass201_Sub2Array11 = this.method4957(1);
 		this.aClass201_Sub2Array5 = this.method4957(3);
@@ -229,9 +229,9 @@ public final class unpackclass extends unpack {
 		this.method4963(this.aClass201_Sub2Array8, 16);
 		this.method4963(this.aClass201_Sub2Array8, 8);
 		this.method4963(this.aClass201_Sub2Array8, 0);
-		@Pc(881) int local881 = local572.method4933();
+		@Pc(881) int local881 = local572.getGroupCapacity();
 		for (@Pc(883) int local883 = 0; local883 < local881; local883++) {
-			this.aClass201_Sub1_1.bytes = local572.method4930(0, local883);
+			this.aClass201_Sub1_1.bytes = local572.getFile(0, local883);
 			this.method4969(arg1);
 		}
 		this.anIntArray702 = null;

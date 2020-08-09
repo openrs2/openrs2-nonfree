@@ -8,7 +8,7 @@ import dev.openrs2.deob.annotation.OriginalMember;
 import dev.openrs2.deob.annotation.Pc;
 
 @OriginalClass("unpackclass!p")
-public final class Class199_Sub1 extends Class199 {
+public final class Class199_Sub1 extends Js5Index {
 
 	@OriginalMember(owner = "unpackclass!p", name = "<init>", descriptor = "([BZZ)V")
 	public Class199_Sub1(@OriginalArg(0) byte[] arg0, @OriginalArg(1) boolean arg1, @OriginalArg(2) boolean arg2) throws IOException {
@@ -33,8 +33,8 @@ public final class Class199_Sub1 extends Class199 {
 		local19.writeByte(local4);
 		local19.writeInt(local9);
 		arg0.readFully(local19.bytes, local19.position, local7);
-		this.method4927(local19.bytes);
-		for (@Pc(38) int local38 = 0; local38 < super.anInt6141; local38++) {
+		this.read(local19.bytes);
+		for (@Pc(38) int local38 = 0; local38 < super.size; local38++) {
 			@Pc(43) int local43 = arg0.read();
 			@Pc(46) int local46 = arg0.readInt();
 			@Pc(48) int local48 = local46;
@@ -50,10 +50,10 @@ public final class Class199_Sub1 extends Class199 {
 				local46 -= 33554432;
 			}
 			arg0.readFully(local58.bytes, local58.position, local46);
-			if (super.aBoolean433) {
-				super.anObjectArray34[super.anIntArray696[local38]] = local58.bytes;
+			if (super.discardPacked) {
+				super.packed[super.groupIds[local38]] = local58.bytes;
 			} else {
-				super.anObjectArray34[super.anIntArray696[local38]] = ByteArray.wrap(local58.bytes);
+				super.packed[super.groupIds[local38]] = ByteArray.wrap(local58.bytes);
 			}
 		}
 	}
