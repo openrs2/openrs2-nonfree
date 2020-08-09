@@ -102,7 +102,7 @@ public final class SignLink implements Runnable {
 	private FullScreenManager fullScreenManager;
 
 	@OriginalMember(owner = "signlink!pm", name = "h", descriptor = "Lsignlink!e;")
-	private Class193 cursorManager;
+	private CursorManager cursorManager;
 
 	@OriginalMember(owner = "signlink!pm", name = "q", descriptor = "Ljava/lang/Thread;")
 	private final Thread thread;
@@ -238,7 +238,7 @@ public final class SignLink implements Runnable {
 		} catch (@Pc(237) Throwable ex) {
 		}
 		try {
-			this.cursorManager = new Class193();
+			this.cursorManager = new CursorManager();
 		} catch (@Pc(244) Throwable ex) {
 		}
 		@Pc(247) ThreadGroup rootGroup = Thread.currentThread().getThreadGroup();
@@ -260,8 +260,8 @@ public final class SignLink implements Runnable {
 	}
 
 	@OriginalMember(owner = "signlink!pm", name = "a", descriptor = "(BLjava/awt/Point;I[IILjava/awt/Component;)Lsignlink!vk;")
-	public final PrivilegedRequest setCursor(@OriginalArg(5) Component component, @OriginalArg(4) int width, @OriginalArg(2) int height, @OriginalArg(3) int[] pixels, @OriginalArg(1) Point hotPoint) {
-		return this.enqueue(17, width, height, new Object[] { component, pixels, hotPoint });
+	public final PrivilegedRequest setCursor(@OriginalArg(5) Component component, @OriginalArg(4) int width, @OriginalArg(2) int height, @OriginalArg(3) int[] pixels, @OriginalArg(1) Point hotSpot) {
+		return this.enqueue(17, width, height, new Object[] { component, pixels, hotSpot });
 	}
 
 	@OriginalMember(owner = "signlink!pm", name = "a", descriptor = "(BI)Lsignlink!vk;")
@@ -425,16 +425,16 @@ public final class SignLink implements Runnable {
 					@Pc(520) Class195 preferences = openPreferencesInternal(cacheSubDir);
 					request.result = preferences;
 				} else if (type == 14) {
-					@Pc(273) int local273 = request.intArg1;
-					@Pc(276) int local276 = request.intArg2;
-					this.cursorManager.method4848(local276, local273);
+					@Pc(273) int x = request.intArg1;
+					@Pc(276) int y = request.intArg2;
+					this.cursorManager.setPosition(x, y);
 				} else if (type == 15) {
-					@Pc(495) Component local495 = (Component) request.objectArg;
-					@Pc(505) boolean local505 = request.intArg1 != 0;
-					this.cursorManager.method4846(local505, local495);
+					@Pc(495) Component component = (Component) request.objectArg;
+					@Pc(505) boolean reset = request.intArg1 != 0;
+					this.cursorManager.setComponent(component, reset);
 				} else if (type == 17) {
-					@Pc(469) Object[] local469 = (Object[]) request.objectArg;
-					this.cursorManager.method4847(request.intArg1, request.intArg2, (Point) local469[2], (int[]) local469[1], (Component) local469[0]);
+					@Pc(469) Object[] args = (Object[]) request.objectArg;
+					this.cursorManager.setCursor((Component) args[0], request.intArg1, request.intArg2, (int[]) args[1], (Point) args[2]);
 				} else if (type == 16) {
 					try {
 						if (!osName.startsWith("win")) {
