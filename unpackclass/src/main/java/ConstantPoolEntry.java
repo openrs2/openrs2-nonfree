@@ -2,23 +2,23 @@ import dev.openrs2.deob.annotation.OriginalClass;
 import dev.openrs2.deob.annotation.OriginalMember;
 
 @OriginalClass("unpackclass!s")
-public final class Class201_Sub2 extends Node {
+public final class ConstantPoolEntry extends Node {
 
 	@OriginalMember(owner = "unpackclass!s", name = "d", descriptor = "Lunpackclass!s;")
-	public Class201_Sub2 aClass201_Sub2_5;
+	public ConstantPoolEntry name;
 
 	@OriginalMember(owner = "unpackclass!s", name = "e", descriptor = "Lunpackclass!s;")
-	public Class201_Sub2 aClass201_Sub2_6;
+	public ConstantPoolEntry descriptor;
 
 	@OriginalMember(owner = "unpackclass!s", name = "f", descriptor = "J")
-	public long aLong219;
+	public long longValue;
 
 	@OriginalMember(owner = "unpackclass!s", name = "g", descriptor = "[B")
-	public byte[] aByteArray84;
+	public byte[] bytesValue;
 
 	@OriginalMember(owner = "unpackclass!s", name = "h", descriptor = "I")
-	public int anInt6148;
+	public int tag;
 
 	@OriginalMember(owner = "unpackclass!s", name = "i", descriptor = "I")
-	public int anInt6149;
+	public int index;
 }

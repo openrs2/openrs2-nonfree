@@ -2,20 +2,20 @@ import dev.openrs2.deob.annotation.OriginalClass;
 import dev.openrs2.deob.annotation.OriginalMember;
 
 @OriginalClass("unpackclass!r")
-public final class Class211 {
+public final class Code {
 
 	@OriginalMember(owner = "unpackclass!r", name = "a", descriptor = "I")
-	public int anInt6144;
+	public int maxStack;
 
 	@OriginalMember(owner = "unpackclass!r", name = "b", descriptor = "I")
-	public int anInt6145;
+	public int maxLocals;
 
 	@OriginalMember(owner = "unpackclass!r", name = "c", descriptor = "I")
-	public int anInt6146;
+	public int length;
 
 	@OriginalMember(owner = "unpackclass!r", name = "d", descriptor = "[Lunpackclass!n;")
-	public Class209[] aClass209Array1;
+	public ExceptionTableEntry[] exceptionTable;
 
 	@OriginalMember(owner = "unpackclass!r", name = "e", descriptor = "[Lunpackclass!o;")
-	public Class210[] aClass210Array1;
+	public LineNumberTableEntry[] lineNumberTable;
 }
