@@ -40,7 +40,7 @@ public abstract class Class199 {
 	private int[][] anIntArrayArray57;
 
 	@OriginalMember(owner = "unpackclass!aa", name = "i", descriptor = "[Lunpackclass!i;")
-	private Class205[] aClass205Array2;
+	private IntHashTable[] aClass205Array2;
 
 	@OriginalMember(owner = "unpackclass!aa", name = "j", descriptor = "[Ljava/lang/Object;")
 	protected Object[] anObjectArray34;
@@ -129,7 +129,7 @@ public abstract class Class199 {
 			for (@Pc(157) int local157 = 0; local157 < this.anInt6141; local157++) {
 				this.anIntArray697[this.anIntArray696[local157]] = local13.readInt();
 			}
-			new Class205(this.anIntArray697);
+			new IntHashTable(this.anIntArray697);
 		}
 		for (@Pc(179) int local179 = 0; local179 < this.anInt6141; local179++) {
 			this.anIntArray698[this.anIntArray696[local179]] = local13.readInt();
@@ -161,7 +161,7 @@ public abstract class Class199 {
 			return;
 		}
 		this.anIntArrayArray57 = new int[local50 + 1][];
-		this.aClass205Array2 = new Class205[local50 + 1];
+		this.aClass205Array2 = new IntHashTable[local50 + 1];
 		for (@Pc(320) int local320 = 0; local320 < this.anInt6141; local320++) {
 			@Pc(327) int local327 = this.anIntArray696[local320];
 			@Pc(332) int local332 = this.anIntArray700[local327];
@@ -178,7 +178,7 @@ public abstract class Class199 {
 				}
 				this.anIntArrayArray57[local327][local375] = local13.readInt();
 			}
-			this.aClass205Array2[local327] = new Class205(this.anIntArrayArray57[local327]);
+			this.aClass205Array2[local327] = new IntHashTable(this.anIntArrayArray57[local327]);
 		}
 	}
 
