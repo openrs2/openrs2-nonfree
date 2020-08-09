@@ -89,7 +89,7 @@ public final class Class124 implements MouseListener, MouseMotionListener, Focus
 			Static5.anInt4214 = 0;
 			Static7.anInt6049 = arg0.getX();
 			Static3.anInt2426 = arg0.getY();
-			Static7.aLong193 = Class194.method4849();
+			Static7.aLong193 = MonotonicClock.currentTimeMillis();
 			if ((arg0.getModifiersEx() & MouseEvent.BUTTON3_DOWN_MASK) == 0) {
 				Static7.anInt5679 = 1;
 				Static2.anInt1306 = 1;

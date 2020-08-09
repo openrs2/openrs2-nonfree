@@ -1302,7 +1302,7 @@ public final class Static30 {
 			if (arg0.length() == 0) {
 				local54 = local39 + "; Expires=Thu, 01-Jan-1970 00:00:00 GMT; Max-Age=0";
 			} else {
-				local54 = local39 + "; Expires=" + Static12.method742(Class194.method4849() + 94608000000L) + "; Max-Age=" + 94608000L;
+				local54 = local39 + "; Expires=" + Static12.method742(MonotonicClock.currentTimeMillis() + 94608000000L) + "; Max-Age=" + 94608000L;
 			}
 			Class86.method1853("document.cookie=\"" + local54 + "\"", Static7.aClass196_4.applet);
 		} catch (@Pc(92) Throwable local92) {

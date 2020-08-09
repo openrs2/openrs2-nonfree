@@ -212,7 +212,7 @@ public final class client extends Applet_Sub1 {
 		if (Static5.anInt4285 == 0) {
 			@Pc(32) Runtime local32 = Runtime.getRuntime();
 			@Pc(41) int local41 = (int) (0L / 1024L);
-			@Pc(44) long local44 = Class194.method4849();
+			@Pc(44) long local44 = MonotonicClock.currentTimeMillis();
 			if (Static2.aLong66 == 0L) {
 				Static2.aLong66 = local44;
 			}
@@ -735,7 +735,7 @@ public final class client extends Applet_Sub1 {
 				local198.method4617(550);
 				Static3.aClass52_5.method1107(local198.aByteArray71, 5);
 				Static6.anInt4952++;
-				Static1.aLong29 = Class194.method4849();
+				Static1.aLong29 = MonotonicClock.currentTimeMillis();
 			}
 			if (Static6.anInt4952 == 3) {
 				if (Static4.anInt3304 == 0 || Static4.anInt3304 == 5 || Static3.aClass52_5.method1101() > 0) {
@@ -745,7 +745,7 @@ public final class client extends Applet_Sub1 {
 						return;
 					}
 					Static6.anInt4952++;
-				} else if (Class194.method4849() - Static1.aLong29 > 30000L) {
+				} else if (MonotonicClock.currentTimeMillis() - Static1.aLong29 > 30000L) {
 					this.method684(1001);
 					return;
 				}
@@ -851,7 +851,7 @@ public final class client extends Applet_Sub1 {
 		if (local34 && Static4.aBoolean210 && Static1.aClass102_1 != null) {
 			Static1.aClass102_1.method3009();
 		}
-		if ((Static4.anInt3304 == 30 || Static4.anInt3304 == 10) && (Static1.aBoolean18 || Static1.aLong15 != 0L && Static1.aLong15 < Class194.method4849())) {
+		if ((Static4.anInt3304 == 30 || Static4.anInt3304 == 10) && (Static1.aBoolean18 || Static1.aLong15 != 0L && Static1.aLong15 < MonotonicClock.currentTimeMillis())) {
 			Static35.method4512(Static1.aBoolean18, Static11.method557(), Static4.anInt3403, Static3.anInt2627);
 		}
 		if (Static3.aFrame1 == null) {
@@ -872,7 +872,7 @@ public final class client extends Applet_Sub1 {
 			}
 			if (Static2.anInt1635 != local95 || Static6.anInt4380 != local99) {
 				Static20.method1949();
-				Static1.aLong15 = Class194.method4849() + 500L;
+				Static1.aLong15 = MonotonicClock.currentTimeMillis() + 500L;
 			}
 		}
 		if (Static3.aFrame1 != null && !Static3.aBoolean158 && (Static4.anInt3304 == 30 || Static4.anInt3304 == 10)) {

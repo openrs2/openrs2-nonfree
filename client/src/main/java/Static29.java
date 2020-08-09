@@ -2847,10 +2847,10 @@ public final class Static29 {
 		Static1.anIntArray2[arg0] = arg1;
 		@Pc(20) Class4_Sub5 local20 = (Class4_Sub5) Static7.aClass84_25.method1844((long) arg0);
 		if (local20 == null) {
-			@Pc(30) Class4_Sub5 local30 = new Class4_Sub5(Class194.method4849() + 500L);
+			@Pc(30) Class4_Sub5 local30 = new Class4_Sub5(MonotonicClock.currentTimeMillis() + 500L);
 			Static7.aClass84_25.method1840(local30, (long) arg0);
 		} else {
-			local20.aLong17 = Class194.method4849() + 500L;
+			local20.aLong17 = MonotonicClock.currentTimeMillis() + 500L;
 		}
 	}
 }

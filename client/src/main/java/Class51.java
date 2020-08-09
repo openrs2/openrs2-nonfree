@@ -123,7 +123,7 @@ public final class Class51 {
 							}
 						}
 						this.anInt1357 = 0;
-						this.aLong54 = Class194.method4849();
+						this.aLong54 = MonotonicClock.currentTimeMillis();
 						return;
 					}
 					this.aClass175_7.method4333(local64);
@@ -227,7 +227,7 @@ public final class Class51 {
 	@OriginalMember(owner = "client!en", name = "h", descriptor = "(I)Z")
 	public final boolean method1097() {
 		if (this.aClass52_2 != null) {
-			@Pc(11) long local11 = Class194.method4849();
+			@Pc(11) long local11 = MonotonicClock.currentTimeMillis();
 			@Pc(18) int local18 = (int) (local11 - this.aLong54);
 			this.aLong54 = local11;
 			if (local18 > 200) {

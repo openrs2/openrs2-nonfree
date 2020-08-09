@@ -32,7 +32,7 @@ public final class Class77_Sub3 extends Class77 {
 
 	@OriginalMember(owner = "client!oo", name = "e", descriptor = "(I)J")
 	private long method3290() {
-		@Pc(6) long local6 = Class194.method4849() * 1000000L;
+		@Pc(6) long local6 = MonotonicClock.currentTimeMillis() * 1000000L;
 		@Pc(12) long local12 = local6 - this.aLong141;
 		@Pc(15) long local15 = (long) 0;
 		this.aLong141 = local6;

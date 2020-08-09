@@ -965,7 +965,7 @@ public final class Static8 {
 			@Pc(28) Class4_Sub5 local28 = new Class4_Sub5(4611686018427387905L);
 			Static7.aClass84_25.method1840(local28, (long) arg0);
 		} else if (local21.aLong17 != 4611686018427387905L) {
-			local21.aLong17 = Class194.method4849() + 500L | 0x4000000000000000L;
+			local21.aLong17 = MonotonicClock.currentTimeMillis() + 500L | 0x4000000000000000L;
 		}
 	}
 }

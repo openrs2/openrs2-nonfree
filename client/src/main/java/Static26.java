@@ -241,14 +241,14 @@ public final class Static26 {
 		Static5.anInt3500 = Static5.anInt3504;
 		Static5.anInt3505 = 0;
 		Static5.anInt3504 = 0;
-		@Pc(8) long local8 = Class194.method4849();
+		@Pc(8) long local8 = MonotonicClock.currentTimeMillis();
 		for (@Pc(13) Class20_Sub3 local13 = (Class20_Sub3) Static5.aClass172_3.method4320(); local13 != null; local13 = (Class20_Sub3) Static5.aClass172_3.method4315()) {
 			if (local13.method2968(arg0)) {
 				Static5.anInt3505++;
 			}
 		}
 		if (Static5.aBoolean251 && arg0 % 100L == 0L) {
-			System.out.println("Particle system count: " + Static5.aClass172_3.method4316() + ", running: " + Static5.anInt3505 + ". Particles: " + Static5.anInt3504 + ". Time taken: " + (Class194.method4849() - local8) + "ms");
+			System.out.println("Particle system count: " + Static5.aClass172_3.method4316() + ", running: " + Static5.anInt3505 + ". Particles: " + Static5.anInt3504 + ". Time taken: " + (MonotonicClock.currentTimeMillis() - local8) + "ms");
 		}
 	}
 
@@ -703,7 +703,7 @@ public final class Static26 {
 			if (local35 == null) {
 				return null;
 			}
-			if (local35.method1522() > Class194.method4849()) {
+			if (local35.method1522() > MonotonicClock.currentTimeMillis()) {
 				return null;
 			}
 			local35.unlink();

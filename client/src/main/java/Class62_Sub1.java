@@ -443,7 +443,7 @@ public final class Class62_Sub1 extends Class62 {
 				this.aClass112_30 = null;
 			}
 		}
-		if (!this.aBoolean396 || this.aLong199 > Class194.method4849()) {
+		if (!this.aBoolean396 || this.aLong199 > MonotonicClock.currentTimeMillis()) {
 			return;
 		}
 		for (@Pc(335) Class4_Sub3_Sub1 local335 = (Class4_Sub3_Sub1) this.aClass84_27.method1842(); local335 != null; local335 = (Class4_Sub3_Sub1) this.aClass84_27.method1843()) {
@@ -458,6 +458,6 @@ public final class Class62_Sub1 extends Class62 {
 				}
 			}
 		}
-		this.aLong199 = Class194.method4849() + 1000L;
+		this.aLong199 = MonotonicClock.currentTimeMillis() + 1000L;
 	}
 }

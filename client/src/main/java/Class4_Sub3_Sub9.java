@@ -34,7 +34,7 @@ public final class Class4_Sub3_Sub9 extends Class4_Sub3 {
 
 	@OriginalMember(owner = "client!g", name = "e", descriptor = "(B)V")
 	public final void method1519() {
-		this.aLong213 = Class194.method4849() + 500L | this.aLong213 & Long.MIN_VALUE;
+		this.aLong213 = MonotonicClock.currentTimeMillis() + 500L | this.aLong213 & Long.MIN_VALUE;
 		Static1.aClass175_4.method4333(this);
 	}
 

@@ -1017,14 +1017,14 @@ public final class Static22 {
 	public static int method2285() {
 		try {
 			if (Static7.anInt5319 == 0) {
-				if (Class194.method4849() - 5000L < Static6.aLong169) {
+				if (MonotonicClock.currentTimeMillis() - 5000L < Static6.aLong169) {
 					return 0;
 				}
 				Static7.aClass197_5 = Static7.aClass196_4.openSocket(Static6.aString291, Static4.anInt3358);
-				Static7.aLong35 = Class194.method4849();
+				Static7.aLong35 = MonotonicClock.currentTimeMillis();
 				Static7.anInt5319 = 1;
 			}
-			if (Class194.method4849() > Static7.aLong35 + 30000L) {
+			if (MonotonicClock.currentTimeMillis() > Static7.aLong35 + 30000L) {
 				return Static27.method3235(1000);
 			}
 			if (Static7.anInt5319 == 1) {
@@ -1101,7 +1101,7 @@ public final class Static22 {
 				Static7.anInt5319 = 0;
 				Static6.anInt4618 = 0;
 				Static3.aClass52_7 = null;
-				Static6.aLong169 = Class194.method4849();
+				Static6.aLong169 = MonotonicClock.currentTimeMillis();
 				return 0;
 			} else {
 				return Static27.method3235(1002);

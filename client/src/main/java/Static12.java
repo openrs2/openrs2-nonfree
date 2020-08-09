@@ -971,7 +971,7 @@ public final class Static12 {
 
 	@OriginalMember(owner = "client!db", name = "a", descriptor = "(IZ)I")
 	public static int method735(@OriginalArg(1) boolean arg0) {
-		@Pc(13) long local13 = Class194.method4849();
+		@Pc(13) long local13 = MonotonicClock.currentTimeMillis();
 		for (@Pc(27) Class4_Sub5 local27 = arg0 ? (Class4_Sub5) Static7.aClass84_25.method1842() : (Class4_Sub5) Static7.aClass84_25.method1843(); local27 != null; local27 = (Class4_Sub5) Static7.aClass84_25.method1843()) {
 			if (local13 > (local27.aLong17 & 0x3FFFFFFFFFFFFFFFL)) {
 				if ((local27.aLong17 & 0x4000000000000000L) != 0L) {

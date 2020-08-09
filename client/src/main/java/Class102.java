@@ -30,7 +30,7 @@ public class Class102 {
 	private boolean aBoolean259 = false;
 
 	@OriginalMember(owner = "client!tj", name = "e", descriptor = "J")
-	private long aLong126 = Class194.method4849();
+	private long aLong126 = MonotonicClock.currentTimeMillis();
 
 	@OriginalMember(owner = "client!tj", name = "B", descriptor = "I")
 	private int anInt3594 = 0;
@@ -93,7 +93,7 @@ public class Class102 {
 		if (this.aBoolean259) {
 			return;
 		}
-		@Pc(18) long local18 = Class194.method4849();
+		@Pc(18) long local18 = MonotonicClock.currentTimeMillis();
 		try {
 			if (this.aLong126 + 500000L < local18) {
 				this.aLong126 = local18 - 500000L;
@@ -223,7 +223,7 @@ public class Class102 {
 			this.method3011();
 		} catch (@Pc(18) Exception local18) {
 			this.method3004();
-			this.aLong129 = Class194.method4849() + 2000L;
+			this.aLong129 = MonotonicClock.currentTimeMillis() + 2000L;
 		}
 	}
 
@@ -327,6 +327,6 @@ public class Class102 {
 		if (this.aClass4_Sub6_7 != null) {
 			this.aClass4_Sub6_7.method3348(arg0, 0, 256);
 		}
-		this.aLong126 = Class194.method4849();
+		this.aLong126 = MonotonicClock.currentTimeMillis();
 	}
 }

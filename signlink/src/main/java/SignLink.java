@@ -330,7 +330,7 @@ public final class SignLink implements Runnable {
 			try {
 				@Pc(46) int type = request.type;
 				if (type == 1) {
-					if (breakConnectionsUntil > Class194.method4849()) {
+					if (breakConnectionsUntil > MonotonicClock.currentTimeMillis()) {
 						throw new IOException();
 					}
 					request.result = new Socket(InetAddress.getByName((String) request.objectArg), request.intArg1);
@@ -341,7 +341,7 @@ public final class SignLink implements Runnable {
 					thread.setPriority(request.intArg1);
 					request.result = thread;
 				} else if (type == 4) {
-					if (breakConnectionsUntil > Class194.method4849()) {
+					if (breakConnectionsUntil > MonotonicClock.currentTimeMillis()) {
 						throw new IOException();
 					}
 					request.result = new DataInputStream(((URL) request.objectArg).openStream());
@@ -365,7 +365,7 @@ public final class SignLink implements Runnable {
 					@Pc(129) Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
 					clipboard.setContents(transferable, null);
 				} else if (type == 3) {
-					if (breakConnectionsUntil > Class194.method4849()) {
+					if (breakConnectionsUntil > MonotonicClock.currentTimeMillis()) {
 						throw new IOException();
 					}
 					@Pc(188) String ip = (request.intArg1 >> 24 & 0xFF) + "." + (request.intArg1 >> 16 & 0xFF) + "." + (request.intArg1 >> 8 & 0xFF) + "." + (request.intArg1 & 0xFF);
@@ -492,7 +492,7 @@ public final class SignLink implements Runnable {
 
 	@OriginalMember(owner = "signlink!pm", name = "b", descriptor = "(I)V")
 	public final void breakConnection() {
-		breakConnectionsUntil = Class194.method4849() + (long) 5000;
+		breakConnectionsUntil = MonotonicClock.currentTimeMillis() + (long) 5000;
 	}
 
 	@OriginalMember(owner = "signlink!pm", name = "a", descriptor = "(Ljava/lang/String;BLjava/lang/Class;[Ljava/lang/Class;)Lsignlink!vk;")

@@ -4633,11 +4633,11 @@ public final class Static16 {
 								}
 							} else if (local45 < 6400) {
 								if (local45 == 6300) {
-									Static7.anIntArray571[local5++] = (int) (Class194.method4849() / 60000L);
+									Static7.anIntArray571[local5++] = (int) (MonotonicClock.currentTimeMillis() / 60000L);
 									continue;
 								}
 								if (local45 == 6301) {
-									Static7.anIntArray571[local5++] = (int) (Class194.method4849() / 86400000L) - 11745;
+									Static7.anIntArray571[local5++] = (int) (MonotonicClock.currentTimeMillis() / 86400000L) - 11745;
 									continue;
 								}
 								if (local45 == 6302) {
@@ -4654,7 +4654,7 @@ public final class Static16 {
 								}
 								if (local45 == 6303) {
 									Static7.aCalendar2.clear();
-									Static7.aCalendar2.setTime(new Date(Class194.method4849()));
+									Static7.aCalendar2.setTime(new Date(MonotonicClock.currentTimeMillis()));
 									Static7.anIntArray571[local5++] = Static7.aCalendar2.get(1);
 									continue;
 								}

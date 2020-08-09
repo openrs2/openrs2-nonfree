@@ -36,9 +36,9 @@ public final class Static25 {
 												while (true) {
 													@Pc(167) Class4_Sub32 local167 = (Class4_Sub32) Static4.aClass112_23.method2608();
 													if (local167 == null) {
-														if (Static4.anInt3331 + Static4.anInt3333 + Static4.anInt3330 > 100663296 && Class194.method4849() > Static4.aLong118 + 60000L) {
+														if (Static4.anInt3331 + Static4.anInt3333 + Static4.anInt3330 > 100663296 && MonotonicClock.currentTimeMillis() > Static4.aLong118 + 60000L) {
 															System.gc();
-															Static4.aLong118 = Class194.method4849();
+															Static4.aLong118 = MonotonicClock.currentTimeMillis();
 														}
 														return;
 													}

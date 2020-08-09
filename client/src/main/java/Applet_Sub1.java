@@ -53,7 +53,7 @@ public abstract class Applet_Sub1 extends Applet implements Runnable, FocusListe
 
 	@OriginalMember(owner = "client!ue", name = "a", descriptor = "(I)V")
 	private void method666() {
-		@Pc(6) long local6 = Class194.method4849();
+		@Pc(6) long local6 = MonotonicClock.currentTimeMillis();
 		@Pc(10) long local10 = Static6.aLongArray40[Static5.anInt5197];
 		Static6.aLongArray40[Static5.anInt5197] = local6;
 		if ((long) 0 != local10 && local10 < local6) {
@@ -118,7 +118,7 @@ public abstract class Applet_Sub1 extends Applet implements Runnable, FocusListe
 		Static6.aBoolean314 = true;
 		Static1.aBoolean18 = false;
 		Static3.aBoolean158 = true;
-		Static5.aLong26 = Class194.method4849();
+		Static5.aLong26 = MonotonicClock.currentTimeMillis();
 	}
 
 	@OriginalMember(owner = "client!ue", name = "windowDeactivated", descriptor = "(Ljava/awt/event/WindowEvent;)V")
@@ -155,7 +155,7 @@ public abstract class Applet_Sub1 extends Applet implements Runnable, FocusListe
 			return;
 		}
 		Static6.aBoolean314 = true;
-		if (Static2.aBoolean77 && !Static3.aBoolean138 && Class194.method4849() - Static5.aLong26 > 1000L) {
+		if (Static2.aBoolean77 && !Static3.aBoolean138 && MonotonicClock.currentTimeMillis() - Static5.aLong26 > 1000L) {
 			@Pc(27) Rectangle local27 = arg0.getClipBounds();
 			if (local27 == null || local27.width >= Static2.anInt1635 && Static6.anInt4380 <= local27.height) {
 				Static1.aBoolean18 = true;
@@ -199,7 +199,7 @@ public abstract class Applet_Sub1 extends Applet implements Runnable, FocusListe
 
 	@OriginalMember(owner = "client!ue", name = "d", descriptor = "(I)V")
 	private void method674() {
-		@Pc(14) long local14 = Class194.method4849();
+		@Pc(14) long local14 = MonotonicClock.currentTimeMillis();
 		@Pc(18) long local18 = Static7.aLongArray8[Static4.anInt2832];
 		Static7.aLongArray8[Static4.anInt2832] = local14;
 		if (local18 != 0L && local14 > local18) {
@@ -226,7 +226,7 @@ public abstract class Applet_Sub1 extends Applet implements Runnable, FocusListe
 	@Override
 	public final void stop() {
 		if (Static1.anApplet_Sub1_1 == this && !Static1.aBoolean45) {
-			Static7.aLong186 = Class194.method4849() + 4000L;
+			Static7.aLong186 = MonotonicClock.currentTimeMillis() + 4000L;
 		}
 	}
 
@@ -373,7 +373,7 @@ public abstract class Applet_Sub1 extends Applet implements Runnable, FocusListe
 			this.method681();
 			Static2.aClass77_1 = Static16.method1500();
 			this.method682();
-			while (Static7.aLong186 == 0L || Class194.method4849() < Static7.aLong186) {
+			while (Static7.aLong186 == 0L || MonotonicClock.currentTimeMillis() < Static7.aLong186) {
 				Static4.anInt3326 = Static2.aClass77_1.method3283(Static6.anInt4397, Static1.anInt80);
 				for (@Pc(177) int local177 = 0; local177 < Static4.anInt3326; local177++) {
 					this.method666();
@@ -465,7 +465,7 @@ public abstract class Applet_Sub1 extends Applet implements Runnable, FocusListe
 	@Override
 	public final void destroy() {
 		if (Static1.anApplet_Sub1_1 == this && !Static1.aBoolean45) {
-			Static7.aLong186 = Class194.method4849();
+			Static7.aLong186 = MonotonicClock.currentTimeMillis();
 			Static37.method4640(5000L);
 			Static4.aClass196_3 = null;
 			this.method675(false);

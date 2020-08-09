@@ -427,7 +427,7 @@ public final class loader extends Applet implements Runnable {
 			local132.aHashtable1.put(local430.getName(), local430);
 			local420 = Class.forName("PrivilegedRequest");
 			local132.aHashtable1.put(local420.getName(), local420);
-			local420 = Class.forName("Class194");
+			local420 = Class.forName("MonotonicClock");
 			local132.aHashtable1.put(local420.getName(), local420);
 			local420 = Class.forName("Interface5");
 			local132.aHashtable1.put(local420.getName(), local420);
