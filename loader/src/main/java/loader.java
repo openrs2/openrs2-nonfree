@@ -339,41 +339,41 @@ public final class loader extends Applet implements Runnable {
 				this.error("nocache");
 				return;
 			}
-			@Pc(132) ClassLoader_Sub1 classLoader = new ClassLoader_Sub1();
+			@Pc(132) UnpackerClassLoader classLoader = new UnpackerClassLoader();
 			try {
 				Class.forName("java.util.jar.Pack200");
 				@Pc(142) byte[] clientBytes = this.method4839(false, signLink, Resources.clientPack200);
 				if (clientBytes == null) {
 					return;
 				}
-				classLoader.anUnpack2 = new Pack200Unpacker(clientBytes);
+				classLoader.secondaryUnpacker = new Pack200Unpacker(clientBytes);
 				@Pc(160) byte[] glBytes = this.method4839(false, signLink, Resources.glPack200);
 				if (glBytes == null) {
 					return;
 				}
-				classLoader.anUnpack1 = new Pack200Unpacker(glBytes);
+				classLoader.primaryUnpacker = new Pack200Unpacker(glBytes);
 			} catch (@Pc(171) Throwable ex) {
 			}
-			if (classLoader.anUnpack2 == null) {
+			if (classLoader.secondaryUnpacker == null) {
 				@Pc(182) byte[] unpackClassBytes = this.method4839(false, signLink, Resources.unpackClass);
 				if (unpackClassBytes == null) {
 					return;
 				}
-				@Pc(189) ClassLoader_Sub1 unpackClassLoader = new ClassLoader_Sub1();
-				unpackClassLoader.anUnpack2 = new unpack(unpackClassBytes);
+				@Pc(189) UnpackerClassLoader unpackClassLoader = new UnpackerClassLoader();
+				unpackClassLoader.secondaryUnpacker = new unpack(unpackClassBytes);
 				@Pc(198) Class<?> clazz = Class.forName("unpack");
-				unpackClassLoader.aHashtable1.put(clazz.getName(), clazz);
+				unpackClassLoader.cache.put(clazz.getName(), clazz);
 				clazz = unpackClassLoader.loadClass("unpackclass");
 				@Pc(216) byte[] clientBytes = this.method4839(false, signLink, Resources.clientPackClass);
 				if (clientBytes == null) {
 					return;
 				}
-				classLoader.anUnpack2 = (unpack) clazz.getConstructor(Class.forName("[B"), Boolean.TYPE).newInstance(clientBytes, Boolean.TRUE);
+				classLoader.secondaryUnpacker = (unpack) clazz.getConstructor(Class.forName("[B"), Boolean.TYPE).newInstance(clientBytes, Boolean.TRUE);
 				@Pc(253) byte[] glBytes = this.method4839(false, signLink, Resources.glPackClass);
 				if (glBytes == null) {
 					return;
 				}
-				classLoader.anUnpack1 = (unpack) clazz.getConstructor(Class.forName("[B"), Boolean.TYPE).newInstance(glBytes, Boolean.TRUE);
+				classLoader.primaryUnpacker = (unpack) clazz.getConstructor(Class.forName("[B"), Boolean.TYPE).newInstance(glBytes, Boolean.TRUE);
 			}
 			@Pc(288) String osName = System.getProperty("os.name").toLowerCase();
 			@Pc(292) String osArch = System.getProperty("os.arch").toLowerCase();
@@ -423,15 +423,15 @@ public final class loader extends Applet implements Runnable {
 				}
 			}
 			@Pc(420) Class<?> clazz = Class.forName("FileOnDisk");
-			classLoader.aHashtable1.put(clazz.getName(), clazz);
+			classLoader.cache.put(clazz.getName(), clazz);
 			@Pc(430) Class<?> signLinkClass = Class.forName("SignLink");
-			classLoader.aHashtable1.put(signLinkClass.getName(), signLinkClass);
+			classLoader.cache.put(signLinkClass.getName(), signLinkClass);
 			clazz = Class.forName("PrivilegedRequest");
-			classLoader.aHashtable1.put(clazz.getName(), clazz);
+			classLoader.cache.put(clazz.getName(), clazz);
 			clazz = Class.forName("MonotonicClock");
-			classLoader.aHashtable1.put(clazz.getName(), clazz);
+			classLoader.cache.put(clazz.getName(), clazz);
 			clazz = Class.forName("AudioSource");
-			classLoader.aHashtable1.put(clazz.getName(), clazz);
+			classLoader.cache.put(clazz.getName(), clazz);
 			clazz = classLoader.loadClass("client");
 			synchronized (this) {
 				if (this.destroyed) {
