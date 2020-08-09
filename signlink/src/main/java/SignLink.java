@@ -99,7 +99,7 @@ public final class SignLink implements Runnable {
 	public Class195[] cacheIndexes;
 
 	@OriginalMember(owner = "signlink!pm", name = "z", descriptor = "Lsignlink!c;")
-	private Class192 fullScreenManager;
+	private FullScreenManager fullScreenManager;
 
 	@OriginalMember(owner = "signlink!pm", name = "h", descriptor = "Lsignlink!e;")
 	private Class193 cursorManager;
@@ -234,7 +234,7 @@ public final class SignLink implements Runnable {
 			this.cacheIndexes[i] = new Class195(getFile("main_file_cache.idx" + i, this.cacheId, this.cacheSubDir), "rw", 0x100000L);
 		}
 		try {
-			this.fullScreenManager = new Class192();
+			this.fullScreenManager = new FullScreenManager();
 		} catch (@Pc(237) Throwable ex) {
 		}
 		try {
@@ -371,14 +371,14 @@ public final class SignLink implements Runnable {
 					@Pc(188) String ip = (request.intArg1 >> 24 & 0xFF) + "." + (request.intArg1 >> 16 & 0xFF) + "." + (request.intArg1 >> 8 & 0xFF) + "." + (request.intArg1 & 0xFF);
 					request.result = InetAddress.getByName(ip).getHostName();
 				} else if (type == 5) {
-					request.result = this.fullScreenManager.method4844();
+					request.result = this.fullScreenManager.getDisplayModes();
 				} else if (type == 6) {
 					@Pc(214) Frame frame = new Frame("OpenRS2 Full Screen");
 					request.result = frame;
 					frame.setResizable(false);
-					this.fullScreenManager.method4843(request.intArg1 & 0xFFFF, request.intArg1 >>> 16, request.intArg2 >> 16, frame, request.intArg2 & 0xFFFF);
+					this.fullScreenManager.enter(frame, request.intArg1 >>> 16, request.intArg1 & 0xFFFF, request.intArg2 >> 16, request.intArg2 & 0xFFFF);
 				} else if (type == 7) {
-					this.fullScreenManager.method4842();
+					this.fullScreenManager.exit();
 				} else if (type == 10) {
 					@Pc(610) Class<?>[] loadParameters = new Class<?>[] { Class.forName("java.lang.Class"), Class.forName("java.lang.String") };
 					@Pc(612) Runtime runtime = Runtime.getRuntime();
