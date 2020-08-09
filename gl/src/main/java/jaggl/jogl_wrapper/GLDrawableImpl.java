@@ -25,14 +25,14 @@ public final class GLDrawableImpl implements GLDrawable {
 	public final GLCapabilities capabilities;
 
 	@OriginalMember(owner = "gl!jaggl/jogl_wrapper/GLDrawableImpl", name = "<init>", descriptor = "(Ljava/awt/Component;Lgl!javax/media/opengl/GLCapabilities;Lgl!javax/media/opengl/GLCapabilitiesChooser;)V")
-	public GLDrawableImpl(@OriginalArg(0) Component arg0, @OriginalArg(1) GLCapabilities arg1, @OriginalArg(2) GLCapabilitiesChooser arg2) {
-		this.component = arg0;
-		this.capabilities = arg1;
+	public GLDrawableImpl(@OriginalArg(0) Component component, @OriginalArg(1) GLCapabilities capabilities, @OriginalArg(2) GLCapabilitiesChooser chooser) {
+		this.component = component;
+		this.capabilities = capabilities;
 	}
 
 	@OriginalMember(owner = "gl!jaggl/jogl_wrapper/GLDrawableImpl", name = "createContext", descriptor = "(Lgl!javax/media/opengl/GLContext;)Lgl!javax/media/opengl/GLContext;")
 	@Override
-	public final GLContext createContext(@OriginalArg(0) GLContext arg0) {
+	public final GLContext createContext(@OriginalArg(0) GLContext context) {
 		return new GLContextImpl(this);
 	}
 
@@ -44,6 +44,6 @@ public final class GLDrawableImpl implements GLDrawable {
 
 	@OriginalMember(owner = "gl!jaggl/jogl_wrapper/GLDrawableImpl", name = "setRealized", descriptor = "(Z)V")
 	@Override
-	public final void setRealized(@OriginalArg(0) boolean arg0) {
+	public final void setRealized(@OriginalArg(0) boolean realized) {
 	}
 }

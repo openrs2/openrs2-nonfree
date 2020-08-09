@@ -13,8 +13,8 @@ public final class GLCapabilities extends jagglcaps implements Cloneable {
 	public final Object clone() {
 		try {
 			return super.clone();
-		} catch (@Pc(3) CloneNotSupportedException local3) {
-			throw new GLException(local3);
+		} catch (@Pc(3) CloneNotSupportedException ex) {
+			throw new GLException(ex);
 		}
 	}
 }

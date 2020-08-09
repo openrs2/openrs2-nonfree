@@ -25,16 +25,16 @@ public final class GLContextImpl extends GLContext {
 	private final GLDrawableImpl drawable;
 
 	@OriginalMember(owner = "gl!jaggl/jogl_wrapper/GLContextImpl", name = "<init>", descriptor = "(Lgl!jaggl/jogl_wrapper/GLDrawableImpl;)V")
-	public GLContextImpl(@OriginalArg(0) GLDrawableImpl arg0) {
-		this.drawable = arg0;
+	public GLContextImpl(@OriginalArg(0) GLDrawableImpl drawable) {
+		this.drawable = drawable;
 		this.setGL(new opengl());
 	}
 
 	@OriginalMember(owner = "gl!jaggl/jogl_wrapper/GLContextImpl", name = "create", descriptor = "()V")
 	private void create() {
 		if (this.drawable.capabilities != null) {
-			@Pc(15) int local15 = this.drawable.capabilities.getSampleBuffers() ? this.drawable.capabilities.getNumSamples() : 0;
-			if (!context.choosePixelFormat(this.drawable.component, local15, this.drawable.capabilities.getAlphaBits())) {
+			@Pc(15) int numSamples = this.drawable.capabilities.getSampleBuffers() ? this.drawable.capabilities.getNumSamples() : 0;
+			if (!context.choosePixelFormat(this.drawable.component, numSamples, this.drawable.capabilities.getAlphaBits())) {
 				throw new GLException("Unable to create a usable pixel format ");
 			}
 		} else if (!context.choosePixelFormat(this.drawable.component, 0, 0)) {
@@ -50,17 +50,17 @@ public final class GLContextImpl extends GLContext {
 	@OriginalMember(owner = "gl!jaggl/jogl_wrapper/GLContextImpl", name = "makeCurrent", descriptor = "()I")
 	@Override
 	public final int makeCurrent() throws GLException {
-		@Pc(1) boolean local1 = false;
+		@Pc(1) boolean created = false;
 		if (!this.context_valid) {
 			this.create();
-			local1 = true;
+			created = true;
 		}
 		if (!context.makeCurrent()) {
 			throw new GLException("Error making context current: " + context.getLastError());
 		}
 		this.context_valid = true;
 		setCurrent(this);
-		return local1 ? 2 : 1;
+		return created ? 2 : 1;
 	}
 
 	@OriginalMember(owner = "gl!jaggl/jogl_wrapper/GLContextImpl", name = "release", descriptor = "()V")
@@ -87,7 +87,7 @@ public final class GLContextImpl extends GLContext {
 	}
 
 	@OriginalMember(owner = "gl!jaggl/jogl_wrapper/GLContextImpl", name = "setGL", descriptor = "(Lgl!javax/media/opengl/GL;)V")
-	private void setGL(@OriginalArg(0) GL arg0) {
-		this.gl = arg0;
+	private void setGL(@OriginalArg(0) GL gl) {
+		this.gl = gl;
 	}
 }

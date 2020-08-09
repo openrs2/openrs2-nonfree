@@ -15,13 +15,13 @@ public final class GLDrawableFactoryImpl extends GLDrawableFactory {
 
 	@OriginalMember(owner = "gl!jaggl/jogl_wrapper/GLDrawableFactoryImpl", name = "getGLDrawable", descriptor = "(Ljava/lang/Object;Lgl!javax/media/opengl/GLCapabilities;Lgl!javax/media/opengl/GLCapabilitiesChooser;)Lgl!javax/media/opengl/GLDrawable;")
 	@Override
-	public final GLDrawable getGLDrawable(@OriginalArg(0) Object arg0, @OriginalArg(1) GLCapabilities arg1, @OriginalArg(2) GLCapabilitiesChooser arg2) {
-		if (arg0 == null) {
+	public final GLDrawable getGLDrawable(@OriginalArg(0) Object target, @OriginalArg(1) GLCapabilities capabilities, @OriginalArg(2) GLCapabilitiesChooser chooser) {
+		if (target == null) {
 			throw new IllegalArgumentException("Null target");
-		} else if (arg0 instanceof Component) {
-			return new GLDrawableImpl((Component) arg0, arg1, arg2);
+		} else if (target instanceof Component) {
+			return new GLDrawableImpl((Component) target, capabilities, chooser);
 		} else {
-			throw new IllegalArgumentException("GLDrawables not supported for objects of type " + arg0.getClass().getName() + " (only Components are supported in this implementation)");
+			throw new IllegalArgumentException("GLDrawables not supported for objects of type " + target.getClass().getName() + " (only Components are supported in this implementation)");
 		}
 	}
 }

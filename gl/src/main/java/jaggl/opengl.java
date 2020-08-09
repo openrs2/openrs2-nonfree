@@ -20,109 +20,109 @@ import dev.openrs2.deob.annotation.Pc;
 public final class opengl implements GL {
 
 	@OriginalMember(owner = "gl!jaggl/opengl", name = "isDirect", descriptor = "(Ljava/nio/Buffer;)Z")
-	private static boolean isDirect(@OriginalArg(0) Buffer arg0) {
-		if (arg0 == null) {
+	private static boolean isDirect(@OriginalArg(0) Buffer buffer) {
+		if (buffer == null) {
 			return true;
-		} else if (arg0 instanceof ByteBuffer) {
-			return ((ByteBuffer) arg0).isDirect();
-		} else if (arg0 instanceof FloatBuffer) {
-			return ((FloatBuffer) arg0).isDirect();
-		} else if (arg0 instanceof DoubleBuffer) {
-			return ((DoubleBuffer) arg0).isDirect();
-		} else if (arg0 instanceof CharBuffer) {
-			return ((CharBuffer) arg0).isDirect();
-		} else if (arg0 instanceof ShortBuffer) {
-			return ((ShortBuffer) arg0).isDirect();
-		} else if (arg0 instanceof IntBuffer) {
-			return ((IntBuffer) arg0).isDirect();
-		} else if (arg0 instanceof LongBuffer) {
-			return ((LongBuffer) arg0).isDirect();
+		} else if (buffer instanceof ByteBuffer) {
+			return ((ByteBuffer) buffer).isDirect();
+		} else if (buffer instanceof FloatBuffer) {
+			return ((FloatBuffer) buffer).isDirect();
+		} else if (buffer instanceof DoubleBuffer) {
+			return ((DoubleBuffer) buffer).isDirect();
+		} else if (buffer instanceof CharBuffer) {
+			return ((CharBuffer) buffer).isDirect();
+		} else if (buffer instanceof ShortBuffer) {
+			return ((ShortBuffer) buffer).isDirect();
+		} else if (buffer instanceof IntBuffer) {
+			return ((IntBuffer) buffer).isDirect();
+		} else if (buffer instanceof LongBuffer) {
+			return ((LongBuffer) buffer).isDirect();
 		} else {
-			throw new InvalidParameterException("Buffer " + arg0.getClass() + " is invalid");
+			throw new InvalidParameterException("Buffer " + buffer.getClass() + " is invalid");
 		}
 	}
 
 	@OriginalMember(owner = "gl!jaggl/opengl", name = "getDirectBufferByteOffset", descriptor = "(Ljava/nio/Buffer;)I")
-	private static int getDirectBufferByteOffset(@OriginalArg(0) Buffer arg0) {
-		if (arg0 == null) {
+	private static int getDirectBufferByteOffset(@OriginalArg(0) Buffer buffer) {
+		if (buffer == null) {
 			return 0;
-		} else if (arg0 instanceof ByteBuffer) {
-			return arg0.position();
-		} else if (arg0 instanceof FloatBuffer) {
-			return arg0.position() * 4;
-		} else if (arg0 instanceof IntBuffer) {
-			return arg0.position() * 4;
-		} else if (arg0 instanceof ShortBuffer) {
-			return arg0.position() * 2;
-		} else if (arg0 instanceof DoubleBuffer) {
-			return arg0.position() * 8;
-		} else if (arg0 instanceof LongBuffer) {
-			return arg0.position() * 8;
-		} else if (arg0 instanceof CharBuffer) {
-			return arg0.position() * 2;
+		} else if (buffer instanceof ByteBuffer) {
+			return buffer.position();
+		} else if (buffer instanceof FloatBuffer) {
+			return buffer.position() * 4;
+		} else if (buffer instanceof IntBuffer) {
+			return buffer.position() * 4;
+		} else if (buffer instanceof ShortBuffer) {
+			return buffer.position() * 2;
+		} else if (buffer instanceof DoubleBuffer) {
+			return buffer.position() * 8;
+		} else if (buffer instanceof LongBuffer) {
+			return buffer.position() * 8;
+		} else if (buffer instanceof CharBuffer) {
+			return buffer.position() * 2;
 		} else {
-			throw new InvalidParameterException("Buffer " + arg0.getClass() + " is invalid");
+			throw new InvalidParameterException("Buffer " + buffer.getClass() + " is invalid");
 		}
 	}
 
 	@OriginalMember(owner = "gl!jaggl/opengl", name = "getArray", descriptor = "(Ljava/nio/Buffer;)Ljava/lang/Object;")
-	private static Object getArray(@OriginalArg(0) Buffer arg0) {
-		if (arg0 == null) {
+	private static Object getArray(@OriginalArg(0) Buffer buffer) {
+		if (buffer == null) {
 			return null;
-		} else if (arg0 instanceof ByteBuffer) {
-			return ((ByteBuffer) arg0).array();
-		} else if (arg0 instanceof FloatBuffer) {
-			return ((FloatBuffer) arg0).array();
-		} else if (arg0 instanceof IntBuffer) {
-			return ((IntBuffer) arg0).array();
-		} else if (arg0 instanceof ShortBuffer) {
-			return ((ShortBuffer) arg0).array();
-		} else if (arg0 instanceof DoubleBuffer) {
-			return ((DoubleBuffer) arg0).array();
-		} else if (arg0 instanceof LongBuffer) {
-			return ((LongBuffer) arg0).array();
-		} else if (arg0 instanceof CharBuffer) {
-			return ((CharBuffer) arg0).array();
+		} else if (buffer instanceof ByteBuffer) {
+			return ((ByteBuffer) buffer).array();
+		} else if (buffer instanceof FloatBuffer) {
+			return ((FloatBuffer) buffer).array();
+		} else if (buffer instanceof IntBuffer) {
+			return ((IntBuffer) buffer).array();
+		} else if (buffer instanceof ShortBuffer) {
+			return ((ShortBuffer) buffer).array();
+		} else if (buffer instanceof DoubleBuffer) {
+			return ((DoubleBuffer) buffer).array();
+		} else if (buffer instanceof LongBuffer) {
+			return ((LongBuffer) buffer).array();
+		} else if (buffer instanceof CharBuffer) {
+			return ((CharBuffer) buffer).array();
 		} else {
-			throw new InvalidParameterException("Buffer " + arg0.getClass() + " is invalid");
+			throw new InvalidParameterException("Buffer " + buffer.getClass() + " is invalid");
 		}
 	}
 
 	@OriginalMember(owner = "gl!jaggl/opengl", name = "getIndirectBufferByteOffset", descriptor = "(Ljava/nio/Buffer;)I")
-	private static int getIndirectBufferByteOffset(@OriginalArg(0) Buffer arg0) {
-		if (arg0 == null) {
+	private static int getIndirectBufferByteOffset(@OriginalArg(0) Buffer buffer) {
+		if (buffer == null) {
 			return 0;
 		}
-		@Pc(6) int local6 = arg0.position();
-		if (arg0 instanceof ByteBuffer) {
-			return ((ByteBuffer) arg0).arrayOffset() + local6;
-		} else if (arg0 instanceof FloatBuffer) {
-			return (((FloatBuffer) arg0).arrayOffset() + local6) * 4;
-		} else if (arg0 instanceof IntBuffer) {
-			return (((IntBuffer) arg0).arrayOffset() + local6) * 4;
-		} else if (arg0 instanceof ShortBuffer) {
-			return (((ShortBuffer) arg0).arrayOffset() + local6) * 2;
-		} else if (arg0 instanceof DoubleBuffer) {
-			return (((DoubleBuffer) arg0).arrayOffset() + local6) * 8;
-		} else if (arg0 instanceof LongBuffer) {
-			return (((LongBuffer) arg0).arrayOffset() + local6) * 8;
-		} else if (arg0 instanceof CharBuffer) {
-			return (((CharBuffer) arg0).arrayOffset() + local6) * 2;
+		@Pc(6) int position = buffer.position();
+		if (buffer instanceof ByteBuffer) {
+			return ((ByteBuffer) buffer).arrayOffset() + position;
+		} else if (buffer instanceof FloatBuffer) {
+			return (((FloatBuffer) buffer).arrayOffset() + position) * 4;
+		} else if (buffer instanceof IntBuffer) {
+			return (((IntBuffer) buffer).arrayOffset() + position) * 4;
+		} else if (buffer instanceof ShortBuffer) {
+			return (((ShortBuffer) buffer).arrayOffset() + position) * 2;
+		} else if (buffer instanceof DoubleBuffer) {
+			return (((DoubleBuffer) buffer).arrayOffset() + position) * 8;
+		} else if (buffer instanceof LongBuffer) {
+			return (((LongBuffer) buffer).arrayOffset() + position) * 8;
+		} else if (buffer instanceof CharBuffer) {
+			return (((CharBuffer) buffer).arrayOffset() + position) * 2;
 		} else {
-			throw new RuntimeException("Unknown buffer type " + arg0.getClass().getName());
+			throw new RuntimeException("Unknown buffer type " + buffer.getClass().getName());
 		}
 	}
 
 	@OriginalMember(owner = "gl!jaggl/opengl", name = "isExtensionAvailable", descriptor = "(Ljava/lang/String;)Z")
 	@Override
-	public final boolean isExtensionAvailable(@OriginalArg(0) String arg0) {
-		return context.isExtensionAvailable(arg0);
+	public final boolean isExtensionAvailable(@OriginalArg(0) String extension) {
+		return context.isExtensionAvailable(extension);
 	}
 
 	@OriginalMember(owner = "gl!jaggl/opengl", name = "setSwapInterval", descriptor = "(I)V")
 	@Override
-	public final void setSwapInterval(@OriginalArg(0) int arg0) {
-		context.setSwapInterval(arg0);
+	public final void setSwapInterval(@OriginalArg(0) int swapInterval) {
+		context.setSwapInterval(swapInterval);
 	}
 
 	@OriginalMember(owner = "gl!jaggl/opengl", name = "glShaderSourceARB0", descriptor = "(IILjava/lang/Object;[II)V")

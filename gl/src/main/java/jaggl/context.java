@@ -15,22 +15,22 @@ import dev.openrs2.deob.annotation.Pc;
 public final class context {
 
 	@OriginalMember(owner = "gl!jaggl/context", name = "extensionsString", descriptor = "Ljava/util/HashSet;")
-	private static HashSet extensionsString = null;
+	private static HashSet<String> extensionsString = null;
 
 	@OriginalMember(owner = "gl!jaggl/context", name = "gl", descriptor = "Lgl!jaggl/opengl;")
 	private static final opengl gl = new opengl();
 
 	@OriginalMember(owner = "gl!jaggl/context", name = "choosePixelFormat", descriptor = "(Ljava/awt/Component;II)Z")
-	public static boolean choosePixelFormat(@OriginalArg(0) Component arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
-		@Pc(8) Boolean local8 = (Boolean) AccessController.doPrivileged(new PrivilegedAction() {
+	public static boolean choosePixelFormat(@OriginalArg(0) Component component, @OriginalArg(1) int numSamples, @OriginalArg(2) int alphaBits) {
+		@Pc(8) Boolean result = (Boolean) AccessController.doPrivileged(new PrivilegedAction() {
 
 			@OriginalMember(owner = "gl!jaggl/context$2", name = "run", descriptor = "()Ljava/lang/Object;")
 			@Override
 			public final Object run() {
-				return context.choosePixelFormat1(arg0, arg1, arg2);
+				return context.choosePixelFormat1(component, numSamples, alphaBits);
 			}
 		});
-		return local8;
+		return result;
 	}
 
 	@OriginalMember(owner = "gl!jaggl/context", name = "createContext", descriptor = "()Z")
@@ -49,22 +49,22 @@ public final class context {
 	public static native int getLastError();
 
 	@OriginalMember(owner = "gl!jaggl/context", name = "setSwapInterval", descriptor = "(I)V")
-	public static native void setSwapInterval(@OriginalArg(0) int arg0);
+	public static native void setSwapInterval(@OriginalArg(0) int swapInterval);
 
 	@OriginalMember(owner = "gl!jaggl/context", name = "getExtensionsString", descriptor = "()Ljava/lang/String;")
 	private static native String getExtensionsString();
 
 	@OriginalMember(owner = "gl!jaggl/context", name = "isExtensionAvailable", descriptor = "(Ljava/lang/String;)Z")
-	public static boolean isExtensionAvailable(@OriginalArg(0) String arg0) {
+	public static boolean isExtensionAvailable(@OriginalArg(0) String extension) {
 		if (extensionsString == null) {
-			@Pc(14) String local14 = gl.glGetString(GL.GL_EXTENSIONS) + " " + getExtensionsString();
-			@Pc(18) String[] local18 = local14.split(" ");
-			extensionsString = new HashSet(local18.length);
-			for (@Pc(26) int local26 = 0; local26 < local18.length; local26++) {
-				extensionsString.add(local18[local26]);
+			@Pc(14) String spaceSeparatedExtensions = gl.glGetString(GL.GL_EXTENSIONS) + " " + getExtensionsString();
+			@Pc(18) String[] extensions = spaceSeparatedExtensions.split(" ");
+			extensionsString = new HashSet<>(extensions.length);
+			for (@Pc(26) int i = 0; i < extensions.length; i++) {
+				extensionsString.add(extensions[i]);
 			}
 		}
-		return extensionsString.contains(arg0);
+		return extensionsString.contains(extension);
 	}
 
 	@OriginalMember(owner = "gl!jaggl/context", name = "makeCurrent", descriptor = "()Z")
@@ -77,7 +77,7 @@ public final class context {
 	public static native int getAlphaBits();
 
 	@OriginalMember(owner = "gl!jaggl/context", name = "choosePixelFormat1", descriptor = "(Ljava/awt/Component;II)Z")
-	public static native boolean choosePixelFormat1(@OriginalArg(0) Component arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2);
+	public static native boolean choosePixelFormat1(@OriginalArg(0) Component component, @OriginalArg(1) int numSamples, @OriginalArg(2) int alphaBits);
 
 	@OriginalMember(owner = "gl!jaggl/context", name = "makeCurrent1", descriptor = "()Z")
 	private static native boolean makeCurrent1();

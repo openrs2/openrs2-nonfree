@@ -345,10 +345,10 @@ public interface GL {
 	int GL_RENDERBUFFER = 0x8D41;
 
 	@OriginalMember(owner = "gl!javax/media/opengl/GL", name = "isExtensionAvailable", descriptor = "(Ljava/lang/String;)Z")
-	boolean isExtensionAvailable(@OriginalArg(0) String arg0);
+	boolean isExtensionAvailable(@OriginalArg(0) String extension);
 
 	@OriginalMember(owner = "gl!javax/media/opengl/GL", name = "setSwapInterval", descriptor = "(I)V")
-	void setSwapInterval(@OriginalArg(0) int arg0);
+	void setSwapInterval(@OriginalArg(0) int swapInterval);
 
 	@OriginalMember(owner = "gl!javax/media/opengl/GL", name = "glLightfv", descriptor = "(II[FI)V")
 	void glLightfv(@OriginalArg(0) int light, @OriginalArg(1) int pname, @OriginalArg(2) float[] params, @OriginalArg(3) int paramsOffset);

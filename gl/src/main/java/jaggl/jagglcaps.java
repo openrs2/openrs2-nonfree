@@ -58,13 +58,13 @@ public class jagglcaps {
 	}
 
 	@OriginalMember(owner = "gl!jaggl/jagglcaps", name = "setAlphaBits", descriptor = "(I)V")
-	public final void setAlphaBits(@OriginalArg(0) int arg0) {
-		this.alphaBits = arg0;
+	public final void setAlphaBits(@OriginalArg(0) int alphaBits) {
+		this.alphaBits = alphaBits;
 	}
 
 	@OriginalMember(owner = "gl!jaggl/jagglcaps", name = "setSampleBuffers", descriptor = "(Z)V")
-	public final void setSampleBuffers(@OriginalArg(0) boolean arg0) {
-		this.sampleBuffers = arg0;
+	public final void setSampleBuffers(@OriginalArg(0) boolean sampleBuffers) {
+		this.sampleBuffers = sampleBuffers;
 	}
 
 	@OriginalMember(owner = "gl!jaggl/jagglcaps", name = "getSampleBuffers", descriptor = "()Z")
@@ -73,8 +73,8 @@ public class jagglcaps {
 	}
 
 	@OriginalMember(owner = "gl!jaggl/jagglcaps", name = "setNumSamples", descriptor = "(I)V")
-	public final void setNumSamples(@OriginalArg(0) int arg0) {
-		this.numSamples = arg0;
+	public final void setNumSamples(@OriginalArg(0) int numSamples) {
+		this.numSamples = numSamples;
 	}
 
 	@OriginalMember(owner = "gl!jaggl/jagglcaps", name = "getNumSamples", descriptor = "()I")

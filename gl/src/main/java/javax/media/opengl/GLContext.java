@@ -16,8 +16,8 @@ public abstract class GLContext {
 	}
 
 	@OriginalMember(owner = "gl!javax/media/opengl/GLContext", name = "setCurrent", descriptor = "(Lgl!javax/media/opengl/GLContext;)V")
-	protected static void setCurrent(@OriginalArg(0) GLContext arg0) {
-		currentContext = arg0;
+	protected static void setCurrent(@OriginalArg(0) GLContext context) {
+		currentContext = context;
 	}
 
 	@OriginalMember(owner = "gl!javax/media/opengl/GLContext", name = "<init>", descriptor = "()V")
