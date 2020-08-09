@@ -78,7 +78,7 @@ public abstract class Class199 {
 			}
 			@Pc(50) byte[] local50 = new byte[local36];
 			if (local7 == 1) {
-				Class212.method4940(local50, local36, arg0, local10);
+				Bzip2Decompressor.bunzip2(local50, local36, arg0, local10);
 			} else {
 				aClass207_2.method4925(local4, local50);
 			}
