@@ -342,12 +342,12 @@ public final class loader extends Applet implements Runnable {
 			@Pc(132) UnpackerClassLoader classLoader = new UnpackerClassLoader();
 			try {
 				Class.forName("java.util.jar.Pack200");
-				@Pc(142) byte[] clientBytes = this.method4839(false, signLink, Resources.clientPack200);
+				@Pc(142) byte[] clientBytes = this.method4839(false, signLink, Resources.CLIENT_PACK200);
 				if (clientBytes == null) {
 					return;
 				}
 				classLoader.secondaryUnpacker = new Pack200Unpacker(clientBytes);
-				@Pc(160) byte[] glBytes = this.method4839(false, signLink, Resources.glPack200);
+				@Pc(160) byte[] glBytes = this.method4839(false, signLink, Resources.GL_PACK200);
 				if (glBytes == null) {
 					return;
 				}
@@ -355,7 +355,7 @@ public final class loader extends Applet implements Runnable {
 			} catch (@Pc(171) Throwable ex) {
 			}
 			if (classLoader.secondaryUnpacker == null) {
-				@Pc(182) byte[] unpackClassBytes = this.method4839(false, signLink, Resources.unpackClass);
+				@Pc(182) byte[] unpackClassBytes = this.method4839(false, signLink, Resources.UNPACK_CLASS);
 				if (unpackClassBytes == null) {
 					return;
 				}
@@ -364,12 +364,12 @@ public final class loader extends Applet implements Runnable {
 				@Pc(198) Class<?> clazz = Class.forName("unpack");
 				unpackClassLoader.cache.put(clazz.getName(), clazz);
 				clazz = unpackClassLoader.loadClass("unpackclass");
-				@Pc(216) byte[] clientBytes = this.method4839(false, signLink, Resources.clientPackClass);
+				@Pc(216) byte[] clientBytes = this.method4839(false, signLink, Resources.CLIENT_PACK_CLASS);
 				if (clientBytes == null) {
 					return;
 				}
 				classLoader.secondaryUnpacker = (unpack) clazz.getConstructor(Class.forName("[B"), Boolean.TYPE).newInstance(clientBytes, Boolean.TRUE);
-				@Pc(253) byte[] glBytes = this.method4839(false, signLink, Resources.glPackClass);
+				@Pc(253) byte[] glBytes = this.method4839(false, signLink, Resources.GL_PACK_CLASS);
 				if (glBytes == null) {
 					return;
 				}
@@ -400,13 +400,13 @@ public final class loader extends Applet implements Runnable {
 				this.error("os");
 				return;
 			}
-			for (@Pc(337) int i = 0; i < Resources.glNatives[platform].length; i++) {
-				@Pc(360) byte[] bytes = this.method4839(this.getParameter("suppress_sha") != null, signLink, Resources.glNatives[platform][i]);
+			for (@Pc(337) int i = 0; i < Resources.GL_NATIVES[platform].length; i++) {
+				@Pc(360) byte[] bytes = this.method4839(this.getParameter("suppress_sha") != null, signLink, Resources.GL_NATIVES[platform][i]);
 				if (bytes == null) {
 					return;
 				}
 			}
-			if (Resources.miscNatives != null) {
+			if (Resources.MISC_NATIVES != null) {
 				@Pc(376) String miscOsName = System.getProperty("os.name").toLowerCase();
 				if (miscOsName.startsWith("win")) {
 					@Pc(385) String miscOsArch = System.getProperty("os.arch").toLowerCase();
@@ -416,7 +416,7 @@ public final class loader extends Applet implements Runnable {
 					} else {
 						miscPlatform = 0;
 					}
-					@Pc(413) byte[] bytes = this.method4839(this.getParameter("suppress_sha") != null, signLink, Resources.miscNatives[miscPlatform]);
+					@Pc(413) byte[] bytes = this.method4839(this.getParameter("suppress_sha") != null, signLink, Resources.MISC_NATIVES[miscPlatform]);
 					if (bytes == null) {
 						return;
 					}
