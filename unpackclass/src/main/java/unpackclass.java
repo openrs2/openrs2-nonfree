@@ -172,7 +172,7 @@ public final class unpackclass extends unpack {
 
 	@OriginalMember(owner = "unpackclass!unpackclass", name = "<init>", descriptor = "([BZ)V")
 	public unpackclass(@OriginalArg(0) byte[] arg0, @OriginalArg(1) boolean arg1) throws IOException {
-		@Pc(572) Class199_Sub1 local572 = new Class199_Sub1(arg0, true, true);
+		@Pc(572) Js5File local572 = new Js5File(arg0, true, true);
 		this.aClass201_Sub1_1.bytes = local572.getFile(1, 0);
 		this.aClass201_Sub1_1.position = this.aClass201_Sub1_1.bytes.length - 20;
 		this.aClass201_Sub2Array11 = this.method4957(1);
