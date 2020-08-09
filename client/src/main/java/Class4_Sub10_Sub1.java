@@ -7,7 +7,7 @@ import dev.openrs2.deob.annotation.Pc;
 public final class Class4_Sub10_Sub1 extends Buffer {
 
 	@OriginalMember(owner = "client!wa", name = "Ob", descriptor = "Lclient!m;")
-	private Class113 aClass113_1;
+	private IsaacRandom aClass113_1;
 
 	@OriginalMember(owner = "client!wa", name = "Yb", descriptor = "I")
 	private int anInt5772;
@@ -19,7 +19,7 @@ public final class Class4_Sub10_Sub1 extends Buffer {
 
 	@OriginalMember(owner = "client!wa", name = "a", descriptor = "([II)V")
 	public final void method4639(@OriginalArg(0) int[] arg0) {
-		this.aClass113_1 = new Class113(arg0);
+		this.aClass113_1 = new IsaacRandom(arg0);
 	}
 
 	@OriginalMember(owner = "client!wa", name = "q", descriptor = "(I)V")
@@ -34,19 +34,19 @@ public final class Class4_Sub10_Sub1 extends Buffer {
 
 	@OriginalMember(owner = "client!wa", name = "e", descriptor = "(Z)I")
 	public final int method4646() {
-		return this.bytes[this.position++] - this.aClass113_1.method2678() & 0xFF;
+		return this.bytes[this.position++] - this.aClass113_1.nextInt() & 0xFF;
 	}
 
 	@OriginalMember(owner = "client!wa", name = "a", descriptor = "(I[BII)V")
 	public final void method4647(@OriginalArg(1) byte[] arg0, @OriginalArg(2) int arg1) {
 		for (@Pc(7) int local7 = 0; local7 < arg1; local7++) {
-			arg0[local7] = (byte) (this.bytes[this.position++] - this.aClass113_1.method2678());
+			arg0[local7] = (byte) (this.bytes[this.position++] - this.aClass113_1.nextInt());
 		}
 	}
 
 	@OriginalMember(owner = "client!wa", name = "m", descriptor = "(II)V")
 	public final void method4650(@OriginalArg(1) int arg0) {
-		this.bytes[this.position++] = (byte) (this.aClass113_1.method2678() + arg0);
+		this.bytes[this.position++] = (byte) (this.aClass113_1.nextInt() + arg0);
 	}
 
 	@OriginalMember(owner = "client!wa", name = "n", descriptor = "(II)I")
