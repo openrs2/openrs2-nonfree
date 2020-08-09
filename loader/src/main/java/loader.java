@@ -421,7 +421,7 @@ public final class loader extends Applet implements Runnable {
 					}
 				}
 			}
-			@Pc(420) Class local420 = Class.forName("Class195");
+			@Pc(420) Class local420 = Class.forName("FileOnDisk");
 			local132.aHashtable1.put(local420.getName(), local420);
 			@Pc(430) Class local430 = Class.forName("SignLink");
 			local132.aHashtable1.put(local430.getName(), local430);

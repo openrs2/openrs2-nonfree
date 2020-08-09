@@ -66,16 +66,16 @@ public final class SignLink implements Runnable {
 	private Interface5 audioSource;
 
 	@OriginalMember(owner = "signlink!pm", name = "i", descriptor = "Lsignlink!kd;")
-	public Class195 cacheData = null;
+	public FileOnDisk cacheData = null;
 
 	@OriginalMember(owner = "signlink!pm", name = "m", descriptor = "Ljava/applet/Applet;")
 	public Applet applet = null;
 
 	@OriginalMember(owner = "signlink!pm", name = "j", descriptor = "Lsignlink!kd;")
-	public Class195 uid = null;
+	public FileOnDisk uid = null;
 
 	@OriginalMember(owner = "signlink!pm", name = "b", descriptor = "Lsignlink!kd;")
-	public Class195 cacheMasterIndex = null;
+	public FileOnDisk cacheMasterIndex = null;
 
 	@OriginalMember(owner = "signlink!pm", name = "c", descriptor = "Z")
 	private boolean stop = false;
@@ -96,7 +96,7 @@ public final class SignLink implements Runnable {
 	public EventQueue eventQueue;
 
 	@OriginalMember(owner = "signlink!pm", name = "u", descriptor = "[Lsignlink!kd;")
-	public Class195[] cacheIndexes;
+	public FileOnDisk[] cacheIndexes;
 
 	@OriginalMember(owner = "signlink!pm", name = "z", descriptor = "Lsignlink!c;")
 	private FullScreenManager fullScreenManager;
@@ -108,13 +108,13 @@ public final class SignLink implements Runnable {
 	private final Thread thread;
 
 	@OriginalMember(owner = "signlink!pm", name = "c", descriptor = "(Ljava/lang/String;B)Lsignlink!kd;")
-	private static Class195 openPreferencesInternal(@OriginalArg(0) String cacheSubDir) {
+	private static FileOnDisk openPreferencesInternal(@OriginalArg(0) String cacheSubDir) {
 		@Pc(34) String[] cacheLocations = new String[] { "c:/rscache/", "/rscache/", homeDir, "c:/windows/", "c:/winnt/", "c:/", "/tmp/", "" };
 		for (@Pc(41) int i = 0; i < cacheLocations.length; i++) {
 			@Pc(49) String cacheLocation = cacheLocations[i];
 			if (cacheLocation.length() <= 0 || (new File(cacheLocation)).exists()) {
 				try {
-					return new Class195(new File(cacheLocation, ".openrs2_" + cacheSubDir + "_preferences.dat"), "rw", 10000L);
+					return new FileOnDisk(new File(cacheLocation, ".openrs2_" + cacheSubDir + "_preferences.dat"), "rw", 10000L);
 				} catch (@Pc(82) Exception ex) {
 				}
 			}
@@ -226,12 +226,12 @@ public final class SignLink implements Runnable {
 			}
 		} catch (@Pc(151) Exception ex) {
 		}
-		this.uid = new Class195(getFile("random.dat", this.cacheId, null), "rw", 25L);
-		this.cacheData = new Class195(getFile("main_file_cache.dat2", this.cacheId, this.cacheSubDir), "rw", 0x6400000L);
-		this.cacheMasterIndex = new Class195(getFile("main_file_cache.idx255", this.cacheId, this.cacheSubDir), "rw", 0x100000L);
-		this.cacheIndexes = new Class195[archiveCount];
+		this.uid = new FileOnDisk(getFile("random.dat", this.cacheId, null), "rw", 25L);
+		this.cacheData = new FileOnDisk(getFile("main_file_cache.dat2", this.cacheId, this.cacheSubDir), "rw", 0x6400000L);
+		this.cacheMasterIndex = new FileOnDisk(getFile("main_file_cache.idx255", this.cacheId, this.cacheSubDir), "rw", 0x100000L);
+		this.cacheIndexes = new FileOnDisk[archiveCount];
 		for (@Pc(198) int i = 0; i < archiveCount; i++) {
-			this.cacheIndexes[i] = new Class195(getFile("main_file_cache.idx" + i, this.cacheId, this.cacheSubDir), "rw", 0x100000L);
+			this.cacheIndexes[i] = new FileOnDisk(getFile("main_file_cache.idx" + i, this.cacheId, this.cacheSubDir), "rw", 0x100000L);
 		}
 		try {
 			this.fullScreenManager = new FullScreenManager();
@@ -422,7 +422,7 @@ public final class SignLink implements Runnable {
 					nativeLibraries.setAccessible(false);
 				} else if (type == 12) {
 					@Pc(516) String cacheSubDir = (String) request.objectArg;
-					@Pc(520) Class195 preferences = openPreferencesInternal(cacheSubDir);
+					@Pc(520) FileOnDisk preferences = openPreferencesInternal(cacheSubDir);
 					request.result = preferences;
 				} else if (type == 14) {
 					@Pc(273) int x = request.intArg1;
@@ -537,13 +537,13 @@ public final class SignLink implements Runnable {
 		}
 		if (this.cacheData != null) {
 			try {
-				this.cacheData.method4853();
+				this.cacheData.close();
 			} catch (@Pc(31) IOException ex) {
 			}
 		}
 		if (this.cacheMasterIndex != null) {
 			try {
-				this.cacheMasterIndex.method4853();
+				this.cacheMasterIndex.close();
 			} catch (@Pc(49) IOException ex) {
 			}
 		}
@@ -551,7 +551,7 @@ public final class SignLink implements Runnable {
 			for (@Pc(56) int i = 0; i < this.cacheIndexes.length; i++) {
 				if (this.cacheIndexes[i] != null) {
 					try {
-						this.cacheIndexes[i].method4853();
+						this.cacheIndexes[i].close();
 					} catch (@Pc(80) IOException ex) {
 					}
 				}
@@ -559,7 +559,7 @@ public final class SignLink implements Runnable {
 		}
 		if (this.uid != null) {
 			try {
-				this.uid.method4853();
+				this.uid.close();
 			} catch (@Pc(91) IOException ex) {
 			}
 		}

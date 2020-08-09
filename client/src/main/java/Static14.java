@@ -98,22 +98,22 @@ public final class Static14 {
 
 	@OriginalMember(owner = "client!ej", name = "a", descriptor = "(ILsignlink!pm;)V")
 	public static void method1055(@OriginalArg(1) SignLink arg0) {
-		@Pc(3) Class195 local3 = null;
+		@Pc(3) FileOnDisk local3 = null;
 		try {
 			@Pc(12) PrivilegedRequest local12 = arg0.openPreferences("openrs2");
 			while (local12.status == 0) {
 				Static37.method4640(1L);
 			}
 			if (local12.status == 1) {
-				local3 = (Class195) local12.result;
+				local3 = (FileOnDisk) local12.result;
 				@Pc(36) Class4_Sub10 local36 = Static15.method1347();
-				local3.method4851(local36.anInt5709, 0, local36.aByteArray71);
+				local3.write(local36.aByteArray71, 0, local36.anInt5709);
 			}
 		} catch (@Pc(46) Exception local46) {
 		}
 		try {
 			if (local3 != null) {
-				local3.method4853();
+				local3.close();
 			}
 		} catch (@Pc(57) Exception local57) {
 		}

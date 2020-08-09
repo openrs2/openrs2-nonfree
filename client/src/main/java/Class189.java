@@ -29,7 +29,7 @@ public final class Class189 {
 	private long aLong207 = -1L;
 
 	@OriginalMember(owner = "client!wl", name = "p", descriptor = "Lsignlink!kd;")
-	private final Class195 aClass195_1;
+	private final FileOnDisk aClass195_1;
 
 	@OriginalMember(owner = "client!wl", name = "c", descriptor = "J")
 	private long aLong205;
@@ -61,9 +61,9 @@ public final class Class189 {
 	}
 
 	@OriginalMember(owner = "client!wl", name = "<init>", descriptor = "(Lsignlink!kd;II)V")
-	public Class189(@OriginalArg(0) Class195 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) throws IOException {
+	public Class189(@OriginalArg(0) FileOnDisk arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) throws IOException {
 		this.aClass195_1 = arg0;
-		this.aLong206 = this.aLong205 = arg0.method4855();
+		this.aLong206 = this.aLong205 = arg0.length();
 		this.aByteArray76 = new byte[arg1];
 		this.aLong210 = 0L;
 		this.aByteArray75 = new byte[arg2];
@@ -91,10 +91,10 @@ public final class Class189 {
 				@Pc(149) long local149 = -1L;
 				@Pc(151) long local151 = -1L;
 				if (this.aLong210 != this.aLong209) {
-					this.aClass195_1.method4852(this.aLong210);
+					this.aClass195_1.seek(this.aLong210);
 					this.aLong209 = this.aLong210;
 				}
-				this.aClass195_1.method4851(arg2, arg0, arg1);
+				this.aClass195_1.write(arg1, arg0, arg2);
 				if (this.aLong210 >= this.aLong207 && this.aLong207 + (long) this.anInt6061 > this.aLong210) {
 					local151 = this.aLong210;
 				} else if (this.aLong210 <= this.aLong207 && (long) arg2 + this.aLong210 > this.aLong207) {
@@ -134,7 +134,7 @@ public final class Class189 {
 	private void method4796() throws IOException {
 		this.anInt6061 = 0;
 		if (this.aLong209 != this.aLong210) {
-			this.aClass195_1.method4852(this.aLong210);
+			this.aClass195_1.seek(this.aLong210);
 			this.aLong209 = this.aLong210;
 		}
 		this.aLong207 = this.aLong210;
@@ -143,7 +143,7 @@ public final class Class189 {
 			if (local49 > 200000000) {
 				local49 = 200000000;
 			}
-			@Pc(67) int local67 = this.aClass195_1.method4854(this.aByteArray76, local49, this.anInt6061);
+			@Pc(67) int local67 = this.aClass195_1.read(this.aByteArray76, local49, this.anInt6061);
 			if (local67 == -1) {
 				break;
 			}
@@ -171,10 +171,10 @@ public final class Class189 {
 			return;
 		}
 		if (this.aLong208 != this.aLong209) {
-			this.aClass195_1.method4852(this.aLong208);
+			this.aClass195_1.seek(this.aLong208);
 			this.aLong209 = this.aLong208;
 		}
-		this.aClass195_1.method4851(this.anInt6057, 0, this.aByteArray75);
+		this.aClass195_1.write(this.aByteArray75, 0, this.anInt6057);
 		this.aLong209 += this.anInt6057;
 		if (this.aLong209 > this.aLong205) {
 			this.aLong205 = this.aLong209;
@@ -223,10 +223,10 @@ public final class Class189 {
 				arg1 = local110;
 			}
 			if (this.aByteArray76.length < arg2) {
-				this.aClass195_1.method4852(this.aLong210);
+				this.aClass195_1.seek(this.aLong210);
 				this.aLong209 = this.aLong210;
 				while (arg2 > 0) {
-					@Pc(178) int local178 = this.aClass195_1.method4854(arg0, arg2, arg1);
+					@Pc(178) int local178 = this.aClass195_1.read(arg0, arg2, arg1);
 					if (local178 == -1) {
 						break;
 					}
@@ -290,7 +290,7 @@ public final class Class189 {
 
 	@OriginalMember(owner = "client!wl", name = "c", descriptor = "(B)Ljava/io/File;")
 	private File method4802() {
-		return this.aClass195_1.method4850();
+		return this.aClass195_1.getFile();
 	}
 
 	@OriginalMember(owner = "client!wl", name = "a", descriptor = "(I[B)V")

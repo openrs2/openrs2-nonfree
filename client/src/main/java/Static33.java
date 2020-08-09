@@ -425,7 +425,7 @@ public final class Static33 {
 
 	@OriginalMember(owner = "client!te", name = "a", descriptor = "(Lsignlink!pm;I)V")
 	public static void method4149(@OriginalArg(0) SignLink arg0) {
-		@Pc(3) Class195 local3 = null;
+		@Pc(3) FileOnDisk local3 = null;
 		Static1.anInt185 = 3;
 		Static35.method665(true);
 		Static2.aBoolean75 = true;
@@ -465,11 +465,11 @@ public final class Static33 {
 				Static37.method4640(1L);
 			}
 			if (local84.status == 1) {
-				local3 = (Class195) local84.result;
+				local3 = (FileOnDisk) local84.result;
 				@Pc(102) int local102 = 0;
-				@Pc(108) byte[] local108 = new byte[(int) local3.method4855()];
+				@Pc(108) byte[] local108 = new byte[(int) local3.length()];
 				while (local102 < local108.length) {
-					@Pc(126) int local126 = local3.method4854(local108, local108.length - local102, local102);
+					@Pc(126) int local126 = local3.read(local108, local108.length - local102, local102);
 					if (local126 == -1) {
 						throw new IOException("EOF");
 					}
@@ -481,7 +481,7 @@ public final class Static33 {
 		}
 		try {
 			if (local3 != null) {
-				local3.method4853();
+				local3.close();
 			}
 		} catch (@Pc(160) Exception local160) {
 		}
