@@ -315,7 +315,7 @@ public abstract class Class199 {
 					@Pc(280) int local280 = 0;
 					for (@Pc(282) int local282 = 0; local282 < local19; local282++) {
 						local280 += local211.readInt();
-						Class208.method4926(local124, local274, local250[local282], local214[local282], local280);
+						ArrayUtils.copy(local124, local274, local250[local282], local214[local282], local280);
 						local214[local282] += local280;
 						local274 += local280;
 					}
