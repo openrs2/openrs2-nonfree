@@ -60,7 +60,7 @@ public final class unpackclass extends unpack {
 	private Buffer aClass201_Sub1_16 = new Buffer(null);
 
 	@OriginalMember(owner = "unpackclass!unpackclass", name = "I", descriptor = "Lunpackclass!f;")
-	private Class202 aClass202_1 = new Class202();
+	private LinkedList aClass202_1 = new LinkedList();
 
 	@OriginalMember(owner = "unpackclass!unpackclass", name = "J", descriptor = "I")
 	private int anInt6150 = 1;
@@ -275,7 +275,7 @@ public final class unpackclass extends unpack {
 		if (arg0.isLinked()) {
 			return;
 		}
-		this.aClass202_1.method4922(arg0);
+		this.aClass202_1.add(arg0);
 		arg0.anInt6149 = this.anInt6150++;
 		if (arg0.anInt6148 == 5 || arg0.anInt6148 == 6) {
 			this.anInt6150++;
@@ -938,7 +938,7 @@ public final class unpackclass extends unpack {
 		if (local484 != null) {
 			local1859 += 8;
 		}
-		for (@Pc(1867) Class201_Sub2 local1867 = (Class201_Sub2) this.aClass202_1.method4923(); local1867 != null; local1867 = (Class201_Sub2) this.aClass202_1.method4924()) {
+		for (@Pc(1867) Class201_Sub2 local1867 = (Class201_Sub2) this.aClass202_1.head(); local1867 != null; local1867 = (Class201_Sub2) this.aClass202_1.next()) {
 			local1859 += this.anIntArray702[local1867.anInt6148];
 			if (local1867.aByteArray84 != null) {
 				local1859 += local1867.aByteArray84.length;
@@ -953,7 +953,7 @@ public final class unpackclass extends unpack {
 		local1916.writeShort(local694);
 		local1916.writeShort(this.anInt6150);
 		this.anInt6150 = 1;
-		for (@Pc(1937) Class201_Sub2 local1937 = (Class201_Sub2) this.aClass202_1.method4923(); local1937 != null; local1937 = (Class201_Sub2) this.aClass202_1.method4924()) {
+		for (@Pc(1937) Class201_Sub2 local1937 = (Class201_Sub2) this.aClass202_1.head(); local1937 != null; local1937 = (Class201_Sub2) this.aClass202_1.next()) {
 			local1937.unlink();
 			local1916.writeByte(local1937.anInt6148);
 			if (local1937.aClass201_Sub2_5 != null) {
