@@ -122,11 +122,11 @@ public final class Buffer extends Node {
 	@OriginalMember(owner = "unpackclass!e", name = "e", descriptor = "()I")
 	public final int readShort() {
 		this.position += 2;
-		@Pc(27) int local27 = ((this.bytes[this.position - 2] & 0xFF) << 8) + (this.bytes[this.position - 1] & 0xFF);
-		if (local27 > 32767) {
-			local27 -= 65536;
+		@Pc(27) int value = ((this.bytes[this.position - 2] & 0xFF) << 8) + (this.bytes[this.position - 1] & 0xFF);
+		if (value > 32767) {
+			value -= 65536;
 		}
-		return local27;
+		return value;
 	}
 
 	@OriginalMember(owner = "unpackclass!e", name = "f", descriptor = "()I")
