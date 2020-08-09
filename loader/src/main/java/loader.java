@@ -448,15 +448,15 @@ public final class loader extends Applet implements Runnable {
 				}
 			}
 		} catch (@Pc(532) Exception ex) {
-			RuntimeException_Sub2.anInt6099 = 1713832515;
+			TracingException.clientCrc = 1713832515;
 			if (ex instanceof InvocationTargetException) {
 				@Pc(541) Throwable target = ((InvocationTargetException) ex).getTargetException();
 				if (target instanceof ThreadDeath) {
 					return;
 				}
-				RuntimeException_Sub2.method4834(target, this, ex.toString());
+				TracingException.report(target, this, ex.toString());
 			} else {
-				RuntimeException_Sub2.method4834(ex, this, null);
+				TracingException.report(ex, this, null);
 			}
 			this.error("crash");
 		}
