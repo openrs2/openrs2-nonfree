@@ -13,7 +13,7 @@ public abstract class Class199 {
 	private static int anInt6143;
 
 	@OriginalMember(owner = "unpackclass!aa", name = "m", descriptor = "Lunpackclass!k;")
-	private static final Class207 aClass207_2 = new Class207();
+	private static final GzipDecompressor aClass207_2 = new GzipDecompressor();
 
 	@OriginalMember(owner = "unpackclass!aa", name = "a", descriptor = "I")
 	protected int anInt6141;
@@ -80,7 +80,7 @@ public abstract class Class199 {
 			if (local7 == 1) {
 				Bzip2Decompressor.bunzip2(local50, local36, arg0, local10);
 			} else {
-				aClass207_2.method4925(local4, local50);
+				aClass207_2.gunzip(local4, local50);
 			}
 			return local50;
 		}
