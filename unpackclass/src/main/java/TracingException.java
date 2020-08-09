@@ -4,20 +4,20 @@ import dev.openrs2.deob.annotation.OriginalMember;
 import dev.openrs2.deob.annotation.Pc;
 
 @OriginalClass("unpackclass!q")
-public final class RuntimeException_Sub3 extends RuntimeException {
+public final class TracingException extends RuntimeException {
 
 	@OriginalMember(owner = "unpackclass!q", name = "a", descriptor = "(Ljava/lang/Throwable;Ljava/lang/String;)Lunpackclass!q;")
-	public static RuntimeException_Sub3 method4937(@OriginalArg(0) Throwable arg0, @OriginalArg(1) String arg1) {
-		@Pc(5) RuntimeException_Sub3 local5;
-		if (arg0 instanceof RuntimeException_Sub3) {
-			local5 = (RuntimeException_Sub3) arg0;
+	public static TracingException wrap(@OriginalArg(0) Throwable cause, @OriginalArg(1) String message) {
+		@Pc(5) TracingException ex;
+		if (cause instanceof TracingException) {
+			ex = (TracingException) cause;
 		} else {
-			local5 = new RuntimeException_Sub3(arg0, arg1);
+			ex = new TracingException(cause, message);
 		}
-		return local5;
+		return ex;
 	}
 
 	@OriginalMember(owner = "unpackclass!q", name = "<init>", descriptor = "(Ljava/lang/Throwable;Ljava/lang/String;)V")
-	private RuntimeException_Sub3(@OriginalArg(0) Throwable arg0, @OriginalArg(1) String arg1) {
+	private TracingException(@OriginalArg(0) Throwable cause, @OriginalArg(1) String message) {
 	}
 }
