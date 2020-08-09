@@ -5,23 +5,23 @@ import dev.openrs2.deob.annotation.OriginalClass;
 import dev.openrs2.deob.annotation.OriginalMember;
 
 @OriginalClass("signlink!le")
-public interface Interface5 {
+public interface AudioSource {
 
 	@OriginalMember(owner = "signlink!le", name = "a", descriptor = "(I[I)V")
-	void method4856(@OriginalArg(0) int arg0, @OriginalArg(1) int[] arg1);
+	void write(@OriginalArg(0) int channel, @OriginalArg(1) int[] samples);
 
 	@OriginalMember(owner = "signlink!le", name = "a", descriptor = "(ZLjava/awt/Component;II)V")
-	void method4857(@OriginalArg(0) boolean arg0, @OriginalArg(1) Component arg1, @OriginalArg(3) int arg2) throws Exception;
+	void init(@OriginalArg(1) Component component, @OriginalArg(0) boolean stereo, @OriginalArg(3) int sampleRate) throws Exception;
 
 	@OriginalMember(owner = "signlink!le", name = "c", descriptor = "(II)I")
-	int method4858(@OriginalArg(0) int arg0);
+	int getBufferedSampleCount(@OriginalArg(0) int channel);
 
 	@OriginalMember(owner = "signlink!le", name = "a", descriptor = "(II)V")
-	void method4859(@OriginalArg(0) int arg0);
+	void close(@OriginalArg(0) int channel);
 
 	@OriginalMember(owner = "signlink!le", name = "b", descriptor = "(II)V")
-	void method4860(@OriginalArg(1) int arg0);
+	void flush(@OriginalArg(1) int channel);
 
 	@OriginalMember(owner = "signlink!le", name = "a", descriptor = "(IBI)V")
-	void method4861(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1) throws Exception;
+	void open(@OriginalArg(2) int channel, @OriginalArg(0) int bufferSize) throws Exception;
 }

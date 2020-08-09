@@ -429,7 +429,7 @@ public final class loader extends Applet implements Runnable {
 			local132.aHashtable1.put(local420.getName(), local420);
 			local420 = Class.forName("MonotonicClock");
 			local132.aHashtable1.put(local420.getName(), local420);
-			local420 = Class.forName("Interface5");
+			local420 = Class.forName("AudioSource");
 			local132.aHashtable1.put(local420.getName(), local420);
 			local420 = local132.loadClass("client");
 			synchronized (this) {

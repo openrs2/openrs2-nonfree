@@ -63,7 +63,7 @@ public final class SignLink implements Runnable {
 	private static volatile long breakConnectionsUntil = 0L;
 
 	@OriginalMember(owner = "signlink!pm", name = "p", descriptor = "Lsignlink!le;")
-	private Interface5 audioSource;
+	private AudioSource audioSource;
 
 	@OriginalMember(owner = "signlink!pm", name = "i", descriptor = "Lsignlink!kd;")
 	public FileOnDisk cacheData = null;
@@ -501,7 +501,7 @@ public final class SignLink implements Runnable {
 	}
 
 	@OriginalMember(owner = "signlink!pm", name = "d", descriptor = "(B)Lsignlink!le;")
-	public final Interface5 getAudioSource() {
+	public final AudioSource getAudioSource() {
 		return this.audioSource;
 	}
 

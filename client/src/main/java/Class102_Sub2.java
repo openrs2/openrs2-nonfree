@@ -22,36 +22,36 @@ public final class Class102_Sub2 extends Class102 {
 		if (arg0 > 32768) {
 			throw new IllegalArgumentException();
 		}
-		Static5.anInterface5_1.method4861(arg0, this.anInt3600);
+		Static5.anInterface5_1.open(this.anInt3600, arg0);
 	}
 
 	@OriginalMember(owner = "client!nm", name = "d", descriptor = "()V")
 	@Override
 	protected final void method3011() {
-		Static5.anInterface5_1.method4860(this.anInt3600);
+		Static5.anInterface5_1.flush(this.anInt3600);
 	}
 
 	@OriginalMember(owner = "client!nm", name = "a", descriptor = "(Ljava/awt/Component;)V")
 	@Override
 	public final void method3006(@OriginalArg(0) Component arg0) throws Exception {
-		Static5.anInterface5_1.method4857(Static4.aBoolean183, arg0, Static7.anInt5394);
+		Static5.anInterface5_1.init(arg0, Static4.aBoolean183, Static7.anInt5394);
 	}
 
 	@OriginalMember(owner = "client!nm", name = "a", descriptor = "()I")
 	@Override
 	protected final int method3002() {
-		return Static5.anInterface5_1.method4858(this.anInt3600);
+		return Static5.anInterface5_1.getBufferedSampleCount(this.anInt3600);
 	}
 
 	@OriginalMember(owner = "client!nm", name = "b", descriptor = "()V")
 	@Override
 	protected final void method3004() {
-		Static5.anInterface5_1.method4859(this.anInt3600);
+		Static5.anInterface5_1.close(this.anInt3600);
 	}
 
 	@OriginalMember(owner = "client!nm", name = "c", descriptor = "()V")
 	@Override
 	protected final void method3005() {
-		Static5.anInterface5_1.method4856(this.anInt3600, this.anIntArray393);
+		Static5.anInterface5_1.write(this.anInt3600, this.anIntArray393);
 	}
 }
