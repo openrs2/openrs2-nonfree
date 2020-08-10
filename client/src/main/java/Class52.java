@@ -98,8 +98,8 @@ public final class Class52 implements Runnable {
 	@OriginalMember(owner = "client!eo", name = "b", descriptor = "(B)V")
 	public final void method1104() {
 		if (!this.aBoolean81) {
-			this.anInputStream1 = new InputStream_Sub1();
-			this.anOutputStream1 = new OutputStream_Sub1();
+			this.anInputStream1 = new BrokenInputStream();
+			this.anOutputStream1 = new BrokenOutputStream();
 		}
 	}
 
