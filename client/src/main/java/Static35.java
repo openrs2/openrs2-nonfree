@@ -155,7 +155,7 @@ public final class Static35 {
 				Static4.anInt3341 = Static2.anInt1797;
 			}
 			Static6.aShortArray100[0] = 1006;
-			Static6.aStringArray30[0] = Static6.aString296;
+			Static6.aStringArray30[0] = LocalisedText.CANCEL;
 			Static6.aStringArray27[0] = "";
 			Static7.anInt5634 = 1;
 			Static2.anIntArray160[0] = Static7.anInt6050;
@@ -1113,103 +1113,6 @@ public final class Static35 {
 		return local29 & Static1.anIntArray2[local16] >> local19;
 	}
 
-	@OriginalMember(owner = "client!uf", name = "a", descriptor = "(B)V")
-	public static void method4312() {
-		Static5.aString233 = "Carregando fontes - ";
-		Static5.aString230 = "M";
-		Static3.aString133 = "Objeto para membros";
-		Static3.aString122 = "Remova ";
-		Static4.aString160 = "Alocando memória";
-		Static6.aString290 = "Carregando texturas - ";
-		Static6.aString193 = "Mechscape carregando. Aguarde...";
-		Static4.aString200 = "Gerenciador de entradas carregado";
-		Static7.aString315 = "brilho3:";
-		Static1.aString7 = "Padrões carregados";
-		Static1.aString11 = "Descartar";
-		Static5.aString324 = "roxo:";
-		Static5.aString314 = "Usar";
-		Static7.aString369 = "Carregando sprites - ";
-		Static3.aString139 = "Virar para cá";
-		Static5.aString239 = "K";
-		Static1.aString43 = "amarelo:";
-		Static6.aString276 = "Não é possível encontrar ";
-		Static4.aString180 = " da sua lista de ignorados primeiro.";
-		Static4.aString199 = "Lista de atualizações carregada";
-		Static3.aString128 = " já está na sua lista de ignorados.";
-		Static4.aString201 = "Continuar";
-		Static5.aString218 = "Fontes carregadas";
-		Static3.aString120 = "Atacar";
-		Static4.aString207 = "Conexão perdida.";
-		Static7.aString320 = "habilidade: ";
-		Static1.aString46 = "Tentando reestabelecer conexão. Aguarde.";
-		Static2.aString83 = "Iniciando biblioteca 3D";
-		Static4.aString211 = "Mecanismo de som preparado";
-		Static3.aString115 = "Largar";
-		Static4.aString210 = "OpenRS2 carregando. Aguarde...";
-		Static4.aString203 = "brilho1:";
-		Static1.aString49 = "M";
-		Static5.aString250 = "brilho3:";
-		Static3.aString325 = "verde:";
-		Static6.aString275 = "Verificando atualizações - ";
-		Static1.aString55 = " ";
-		Static3.aString147 = "Tela título aberta";
-		Static1.aString26 = "Pegar";
-		Static3.aString154 = "onda:";
-		Static6.aString267 = "onda2:";
-		Static3.aString150 = "Interfaces carregadas";
-		Static6.aString262 = "Memória alocada";
-		Static1.aString23 = "Conectado ao servidor de atualização";
-		Static2.aString68 = "Carregando...";
-		Static6.aString260 = "Remova ";
-		Static5.aString235 = "rolagem:";
-		Static4.aString187 = "Carregando. Aguarde.";
-		Static1.aString38 = "Sua lista de ignorados está cheia. O limite é 100 usuários.";
-		Static3.aString113 = " da sua lista de amigos primeiro.";
-		Static1.aString29 = "qualificação: ";
-		Static4.aString179 = "branco:";
-		Static7.aString364 = "Conectando ao servidor de atualização";
-		Static6.aString298 = "cyan:";
-		Static2.aString80 = "Dados da lista de mundos carregados";
-		Static1.aString56 = "Carregando tela título - ";
-		Static3.aString149 = "Carregando padrões - ";
-		Static7.aString348 = "nível: ";
-		Static5.aString224 = " saiu do jogo.";
-		Static4.aString161 = "K";
-		Static4.aString368 = "Config carregada";
-		Static4.aString202 = "Selecionar opção";
-		Static3.aString112 = "Biblioteca 3D iniciada";
-		Static4.aString170 = "tremor:";
-		Static6.aString282 = "Ok";
-		Static3.aString121 = "Pacote de palavras carregado";
-		Static6.aString293 = "brilho2:";
-		Static4.aString205 = "Você não pode adicionar a si próprio à sua lista de ignorados.";
-		Static6.aString265 = "Sprites carregados";
-		Static5.aString240 = "Tela título carregada";
-		Static6.aString296 = "Cancelar";
-		Static6.aString266 = "flash1:";
-		Static4.aString206 = "Carregando dados da lista de mundos";
-		Static3.aString146 = "Sua lista de amigos está cheia. O limite é 100 para os usuários não pagantes e 200 para os membros.";
-		Static3.aString148 = " mais opções";
-		Static3.aString124 = "Aguarde...";
-		Static1.aString8 = "Fechar";
-		Static7.aString347 = " já está na sua lista de amigos.";
-		Static7.aString363 = "Você não pode adicionar a si próprio à sua lista de amigos.";
-		Static1.aString6 = "Caminhar para cá";
-		Static5.aString37 = "Selecionar";
-		Static1.aString22 = "Examinar";
-		Static3.aString142 = "deslizamento:";
-		Static4.aString185 = "Oculto";
-		Static5.aString249 = " entrou no jogo.";
-		Static1.aString30 = "Carregando config - ";
-		Static7.aString329 = "Carregando interfaces - ";
-		Static7.aString343 = "flash2:";
-		Static3.aString118 = "deseja negociar com você.";
-		Static7.aString344 = "vermelho:";
-		Static5.aString256 = "Texturas carregadas";
-		Static7.aString317 = "Universo de jogo criado";
-		Static2.aString82 = "Carregando pacote de palavras - ";
-	}
-
 	@OriginalMember(owner = "client!uf", name = "a", descriptor = "(I)V")
 	public static void method4313() {
 		Static1.aClass26_6.method511();
@@ -1309,16 +1212,16 @@ public final class Static35 {
 	public static String method4328() {
 		@Pc(31) String local31;
 		if (Static2.anInt1334 == 1 && Static7.anInt5634 < 2) {
-			local31 = Static5.aString314 + Static1.aString55 + Static7.aString365 + " ->";
+			local31 = LocalisedText.USE + LocalisedText.MINISEPARATOR + Static7.aString365 + " ->";
 		} else if (Static3.aBoolean177 && Static7.anInt5634 < 2) {
-			local31 = Static4.aString140 + Static1.aString55 + Static2.aString81 + " ->";
+			local31 = Static4.aString140 + LocalisedText.MINISEPARATOR + Static2.aString81 + " ->";
 		} else if (Static2.aBoolean68 && Static2.aBooleanArray4[81] && Static7.anInt5634 > 2) {
 			local31 = Static26.method2992(Static7.anInt5634 - 2);
 		} else {
 			local31 = Static26.method2992(Static7.anInt5634 - 1);
 		}
 		if (Static7.anInt5634 > 2) {
-			local31 = local31 + "<col=ffffff> / " + (Static7.anInt5634 - 2) + Static3.aString148;
+			local31 = local31 + "<col=ffffff> / " + (Static7.anInt5634 - 2) + LocalisedText.MOREOPTIONS;
 		}
 		return local31;
 	}
@@ -1559,7 +1462,7 @@ public final class Static35 {
 			local38.method4130(method4361(local38.anInt5067), method4361(local38.anInt5077));
 		}
 		if (!Static1.aBoolean200 && local38.aBoolean350) {
-			local38.aString308 = Static3.aString133;
+			local38.aString308 = LocalisedText.MEMBERS_OBJECT;
 			local38.aStringArray33 = Static6.aStringArray29;
 			local38.aStringArray32 = Static6.aStringArray26;
 			local38.anInt5099 = 0;
@@ -1627,7 +1530,7 @@ public final class Static35 {
 			}
 			return local11 - local14;
 		} else if (arg1 == 2) {
-			return Static37.method4711(arg0.method1552().aString270, Static1.anInt124, arg2.method1552().aString270);
+			return Static37.method4711(arg0.method1552().aString270, client.language, arg2.method1552().aString270);
 		} else if (arg1 == 3) {
 			if (arg2.aString110.equals("-")) {
 				if (arg0.aString110.equals("-")) {
@@ -1640,7 +1543,7 @@ public final class Static35 {
 			} else if (arg0.aString110.equals("-")) {
 				return arg3 ? 1 : -1;
 			} else {
-				return Static37.method4711(arg0.aString110, Static1.anInt124, arg2.aString110);
+				return Static37.method4711(arg0.aString110, client.language, arg2.aString110);
 			}
 		} else if (arg1 == 4) {
 			return arg2.method1542() ? (arg0.method1542() ? 0 : 1) : arg0.method1542() ? -1 : 0;

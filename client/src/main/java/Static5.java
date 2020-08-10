@@ -300,14 +300,8 @@ public final class Static5 {
 	@OriginalMember(owner = "client!nc", name = "f", descriptor = "[[S")
 	public static final short[][] aShortArrayArray2 = new short[][] { { 10, 30, 50, 70, 90, 110, 310, 684, 704, 556, 940, 960, 6454, 6952, 6972, 2358, 2732, 2752, 10550, 10924, 10944, 10310, 10556, 10576, 14646, 15020, 15040, 19766, 20140, 20160, -29386, -29012, -28992, 31030, 31276, 31296, -24266, -23892, -23872, -19146, -18772, -18752, -14026, -13652, -13632, -6858, -6484, -6464, 522, 542, 6794, 6814, 11018, 11038, 14986, 15006, 21130, 21150, -28918, -28898, -22006, -21986, -12918, -12898, 10, 30, 50, 70, 90, 110, 310, 684, 704, 556, 940, 960, 6454, 6952, 6972, 2358, 2732, 2752, 10550, 10924, 10944, 10310, 10556, 10576, 14646, 15020, 15040, 19766, 20140, 20160, -29386, -29012, -28992, 31030, 31276, 31296, -24266, -23892, -23872, -19146, -18772, -18752, -14026, -13652, -13632, -6858, -6484, -6464, 522, 542, 6794, 6814, 11018, 11038, 14986, 15006, 21130, 21150, -28918, -28898, -22006, -21986, -12918, -12898, 10, 30, 50, 70, 90, 110, 310, 684, 704, 556, 940, 960, 6454, 6952, 6972, 2358, 2732, 2752, 10550, 10924, 10944, 10310, 10556, 10576, 14646, 15020, 15040, 19766, 20140, 20160, -29386, -29012, -28992, 31030, 31276, 31296, -24266, -23892, -23872, -19146, -18772, -18752, -14026, -13652, -13632, -6858, -6484, -6464, 522, 542, 6794, 6814, 11018, 11038, 14986, 15006, 21130, 21150, -28918, -28898, -22006, -21986, -12918, -12898, 10, 30, 50, 70, 90, 110, 310, 684, 704, 556, 940, 960, 6454, 6952, 6972, 2358, 2732, 2752, 10550, 10924, 10944, 10310, 10556, 10576, 14646, 15020, 15040, 19766, 20140, 20160, -29386, -29012, -28992, 31030, 31276, 31296, -24266, -23892, -23872, -19146, -18772, -18752, -14026, -13652, -13632, -6858, -6484, -6464, 522, 542, 6794, 6814, 11018, 11038, 14986, 15006, 21130, 21150, -28918, -28898, -22006, -21986, -12918, -12898 }, { 10, 30, 50, 70, 90, 110, 310, 684, 704, 556, 940, 960, 6454, 6952, 6972, 2358, 2732, 2752, 10550, 10924, 10944, 10310, 10556, 10576, 14646, 15020, 15040, 19766, 20140, 20160, -29386, -29012, -28992, 31030, 31276, 31296, -24266, -23892, -23872, -19146, -18772, -18752, -14026, -13652, -13632, -6858, -6484, -6464, 522, 542, 6794, 6814, 11018, 11038, 14986, 15006, 21130, 21150, -28918, -28898, -22006, -21986, -12918, -12898, 10, 30, 50, 70, 90, 110, 310, 684, 704, 556, 940, 960, 6454, 6952, 6972, 2358, 2732, 2752, 10550, 10924, 10944, 10310, 10556, 10576, 14646, 15020, 15040, 19766, 20140, 20160, -29386, -29012, -28992, 31030, 31276, 31296, -24266, -23892, -23872, -19146, -18772, -18752, -14026, -13652, -13632, -6858, -6484, -6464, 522, 542, 6794, 6814, 11018, 11038, 14986, 15006, 21130, 21150, -28918, -28898, -22006, -21986, -12918, -12898, 10, 30, 50, 70, 90, 110, 310, 684, 704, 556, 940, 960, 6454, 6952, 6972, 2358, 2732, 2752, 10550, 10924, 10944, 10310, 10556, 10576, 14646, 15020, 15040, 19766, 20140, 20160, -29386, -29012, -28992, 31030, 31276, 31296, -24266, -23892, -23872, -19146, -18772, -18752, -14026, -13652, -13632, -6858, -6484, -6464, 522, 542, 6794, 6814, 11018, 11038, 14986, 15006, 21130, 21150, -28918, -28898, -22006, -21986, -12918, -12898, 10347, 10582, 10429, 10407, 10359, 8414, 9540, 10456, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }, { 10, 30, 50, 70, 90, 110, 310, 684, 704, 556, 940, 960, 6454, 6952, 6972, 2358, 2732, 2752, 10550, 10924, 10944, 10310, 10556, 10576, 14646, 15020, 15040, 19766, 20140, 20160, -29386, -29012, -28992, 31030, 31276, 31296, -24266, -23892, -23872, -19146, -18772, -18752, -14026, -13652, -13632, -6858, -6484, -6464, 522, 542, 6794, 6814, 11018, 11038, 14986, 15006, 21130, 21150, -28918, -28898, -22006, -21986, -12918, -12898, 10, 30, 50, 70, 90, 110, 310, 684, 704, 556, 940, 960, 6454, 6952, 6972, 2358, 2732, 2752, 10550, 10924, 10944, 10310, 10556, 10576, 14646, 15020, 15040, 19766, 20140, 20160, -29386, -29012, -28992, 31030, 31276, 31296, -24266, -23892, -23872, -19146, -18772, -18752, -14026, -13652, -13632, -6858, -6484, -6464, 522, 542, 6794, 6814, 11018, 11038, 14986, 15006, 21130, 21150, -28918, -28898, -22006, -21986, -12918, -12898, 10, 30, 50, 70, 90, 110, 310, 684, 704, 556, 940, 960, 6454, 6952, 6972, 2358, 2732, 2752, 10550, 10924, 10944, 10310, 10556, 10576, 14646, 15020, 15040, 19766, 20140, 20160, -29386, -29012, -28992, 31030, 31276, 31296, -24266, -23892, -23872, -19146, -18772, -18752, -14026, -13652, -13632, -6858, -6484, -6464, 522, 542, 6794, 6814, 11018, 11038, 14986, 15006, 21130, 21150, -28918, -28898, -22006, -21986, -12918, -12898, 10, 30, 50, 70, 90, 110, 310, 684, 704, 556, 940, 960, 6454, 6952, 6972, 2358, 2732, 2752, 10550, 10924, 10944, 10310, 10556, 10576, 14646, 15020, 15040, 19766, 20140, 20160, -29386, -29012, -28992, 31030, 31276, 31296, -24266, -23892, -23872, -19146, -18772, -18752, -14026, -13652, -13632, -6858, -6484, -6464, 522, 542, 6794, 6814, 11018, 11038, 14986, 15006, 21130, 21150, -28918, -28898, -22006, -21986, -12918, -12898 }, { 4300, 3294, 3303, 3264, 4506, 4382, 4387, 5293, 7622, 7384, 8412, 7496, 86, 123, 111, 99, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 30, 50, 70, 90, 110, 310, 684, 704, 556, 940, 960, 6454, 6952, 6972, 2358, 2732, 2752, 10550, 10924, 10944, 10310, 10556, 10576, 14646, 15020, 15040, 19766, 20140, 20160, -29386, -29012, -28992, 31030, 31276, 31296, -24266, -23892, -23872, -19146, -18772, -18752, -14026, -13652, -13632, -6858, -6484, -6464, 522, 542, 6794, 6814, 11018, 11038, 14986, 15006, 21130, 21150, -28918, -28898, -22006, -21986, -12918, -12898, 10, 30, 50, 70, 90, 110, 310, 684, 704, 556, 940, 960, 6454, 6952, 6972, 2358, 2732, 2752, 10550, 10924, 10944, 10310, 10556, 10576, 14646, 15020, 15040, 19766, 20140, 20160, -29386, -29012, -28992, 31030, 31276, 31296, -24266, -23892, -23872, -19146, -18772, -18752, -14026, -13652, -13632, -6858, -6484, -6464, 522, 542, 6794, 6814, 11018, 11038, 14986, 15006, 21130, 21150, -28918, -28898, -22006, -21986, -12918, -12898, 13766, 13745, 13726, 13890, 13743, 13852, 17602, 18605, 21660, 24000, 24997, 24088, 27972, 25903, 26904, 27193, 27175, 27156, 30020, 28975, 29976, 12482, 13485, 10392, 10692, 10669, 10776, 6717, 6695, 7830, 6971, 6951, 5910, 3389, 3369, 3356, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }, { 10, 30, 50, 70, 90, 110, 310, 684, 704, 556, 940, 960, 6454, 6952, 6972, 2358, 2732, 2752, 10550, 10924, 10944, 10310, 10556, 10576, 14646, 15020, 15040, 19766, 20140, 20160, -29386, -29012, -28992, 31030, 31276, 31296, -24266, -23892, -23872, -19146, -18772, -18752, -14026, -13652, -13632, -6858, -6484, -6464, 522, 542, 6794, 6814, 11018, 11038, 14986, 15006, 21130, 21150, -28918, -28898, -22006, -21986, -12918, -12898, 10, 30, 50, 70, 90, 110, 310, 684, 704, 556, 940, 960, 6454, 6952, 6972, 2358, 2732, 2752, 10550, 10924, 10944, 10310, 10556, 10576, 14646, 15020, 15040, 19766, 20140, 20160, -29386, -29012, -28992, 31030, 31276, 31296, -24266, -23892, -23872, -19146, -18772, -18752, -14026, -13652, -13632, -6858, -6484, -6464, 522, 542, 6794, 6814, 11018, 11038, 14986, 15006, 21130, 21150, -28918, -28898, -22006, -21986, -12918, -12898, 10, 30, 50, 70, 90, 110, 310, 684, 704, 556, 940, 960, 6454, 6952, 6972, 2358, 2732, 2752, 10550, 10924, 10944, 10310, 10556, 10576, 14646, 15020, 15040, 19766, 20140, 20160, -29386, -29012, -28992, 31030, 31276, 31296, -24266, -23892, -23872, -19146, -18772, -18752, -14026, -13652, -13632, -6858, -6484, -6464, 522, 542, 6794, 6814, 11018, 11038, 14986, 15006, 21130, 21150, -28918, -28898, -22006, -21986, -12918, -12898, 10, 30, 50, 70, 90, 110, 310, 684, 704, 556, 940, 960, 6454, 6952, 6972, 2358, 2732, 2752, 10550, 10924, 10944, 10310, 10556, 10576, 14646, 15020, 15040, 19766, 20140, 20160, -29386, -29012, -28992, 31030, 31276, 31296, -24266, -23892, -23872, -19146, -18772, -18752, -14026, -13652, -13632, -6858, -6484, -6464, 522, 542, 6794, 6814, 11018, 11038, 14986, 15006, 21130, 21150, -28918, -28898, -22006, -21986, -12918, -12898 } };
 
-	@OriginalMember(owner = "client!nc", name = "h", descriptor = "Ljava/lang/String;")
-	public static final String aString213 = "white:";
-
 	@OriginalMember(owner = "client!nd", name = "o", descriptor = "I")
 	public static int anInt3483 = 0;
-
-	@OriginalMember(owner = "client!nd", name = "q", descriptor = "Ljava/lang/String;")
-	public static final String aString215 = "glow3:";
 
 	@OriginalMember(owner = "client!nd", name = "s", descriptor = "I")
 	public static int anInt3486 = 0;
@@ -369,23 +363,14 @@ public final class Static5 {
 	@OriginalMember(owner = "client!ng", name = "z", descriptor = "[Lclient!ml;")
 	public static final Class53_Sub3[] aClass53_Sub3Array3 = new Class53_Sub3[4];
 
-	@OriginalMember(owner = "client!ng", name = "B", descriptor = "Ljava/lang/String;")
-	public static String aString324 = "purple:";
-
 	@OriginalMember(owner = "client!ng", name = "J", descriptor = "[I")
 	public static final int[] anIntArray615 = new int[8];
-
-	@OriginalMember(owner = "client!nh", name = "o", descriptor = "Ljava/lang/String;")
-	public static final String aString217 = "flash1:";
 
 	@OriginalMember(owner = "client!nh", name = "O", descriptor = "Lclient!ic;")
 	public static final Class84 aClass84_16 = new Class84(16);
 
 	@OriginalMember(owner = "client!nh", name = "U", descriptor = "[Lclient!eg;")
 	public static final Class46[] aClass46Array2 = new Class46[14];
-
-	@OriginalMember(owner = "client!ni", name = "k", descriptor = "Ljava/lang/String;")
-	public static final String aString367 = "purple:";
 
 	@OriginalMember(owner = "client!ni", name = "n", descriptor = "[I")
 	public static final int[] anIntArray681 = new int[] { 1, 4 };
@@ -404,9 +389,6 @@ public final class Static5 {
 
 	@OriginalMember(owner = "client!nl", name = "d", descriptor = "I")
 	public static int anInt3570 = 0;
-
-	@OriginalMember(owner = "client!nl", name = "g", descriptor = "Ljava/lang/String;")
-	public static String aString218 = "Loaded fonts";
 
 	@OriginalMember(owner = "client!no", name = "U", descriptor = "Lclient!fd;")
 	public static final Buffer aClass4_Sub10_8 = new Buffer(new byte[5000]);
@@ -468,9 +450,6 @@ public final class Static5 {
 	@OriginalMember(owner = "client!ob", name = "y", descriptor = "I")
 	public static int anInt5206 = 0;
 
-	@OriginalMember(owner = "client!ob", name = "z", descriptor = "Ljava/lang/String;")
-	public static String aString314 = "Use";
-
 	@OriginalMember(owner = "client!oc", name = "z", descriptor = "Lclient!cc;")
 	public static final Class26 aClass26_39 = new Class26(5);
 
@@ -522,9 +501,6 @@ public final class Static5 {
 	@OriginalMember(owner = "client!ok", name = "j", descriptor = "I")
 	public static int anInt3897 = 0;
 
-	@OriginalMember(owner = "client!ol", name = "o", descriptor = "Ljava/lang/String;")
-	public static String aString230 = "M";
-
 	@OriginalMember(owner = "client!ol", name = "r", descriptor = "I")
 	public static final int anInt3907 = 3353893;
 
@@ -543,14 +519,8 @@ public final class Static5 {
 	@OriginalMember(owner = "client!om", name = "m", descriptor = "I")
 	public static int anInt3920 = -1;
 
-	@OriginalMember(owner = "client!om", name = "o", descriptor = "Ljava/lang/String;")
-	public static final String aString231 = "flash3:";
-
 	@OriginalMember(owner = "client!on", name = "q", descriptor = "Z")
 	public static boolean aBoolean278 = false;
-
-	@OriginalMember(owner = "client!on", name = "z", descriptor = "Ljava/lang/String;")
-	public static String aString233 = "Loading fonts - ";
 
 	@OriginalMember(owner = "client!on", name = "K", descriptor = "Lclient!cc;")
 	public static final Class26 aClass26_43 = new Class26(500);
@@ -570,20 +540,11 @@ public final class Static5 {
 	@OriginalMember(owner = "client!pe", name = "b", descriptor = "I")
 	public static int anInt4112 = 0;
 
-	@OriginalMember(owner = "client!pe", name = "c", descriptor = "Ljava/lang/String;")
-	public static String aString239 = "K";
-
-	@OriginalMember(owner = "client!pe", name = "e", descriptor = "Ljava/lang/String;")
-	public static String aString240 = "Loaded title screen";
-
 	@OriginalMember(owner = "client!pe", name = "l", descriptor = "I")
 	public static int anInt4120 = 127;
 
 	@OriginalMember(owner = "client!pf", name = "c", descriptor = "[I")
 	public static final int[] anIntArray432 = new int[2];
-
-	@OriginalMember(owner = "client!pg", name = "f", descriptor = "Ljava/lang/String;")
-	public static String aString224 = " has logged out.";
 
 	@OriginalMember(owner = "client!pg", name = "l", descriptor = "Lclient!cc;")
 	public static final Class26 aClass26_41 = new Class26(64);
@@ -621,26 +582,17 @@ public final class Static5 {
 	@OriginalMember(owner = "client!pk", name = "ab", descriptor = "I")
 	public static int anInt4197 = 0;
 
-	@OriginalMember(owner = "client!pl", name = "r", descriptor = "Ljava/lang/String;")
-	public static final String aString247 = "glow1:";
-
 	@OriginalMember(owner = "client!pl", name = "u", descriptor = "[Lclient!te;")
 	public static final Class4_Sub3_Sub19[] aClass4_Sub3_Sub19Array4 = new Class4_Sub3_Sub19[14];
 
 	@OriginalMember(owner = "client!pl", name = "v", descriptor = "Lclient!ai;")
 	public static Interface1 anInterface1_1 = null;
 
-	@OriginalMember(owner = "client!pl", name = "x", descriptor = "Ljava/lang/String;")
-	public static String aString249 = " has logged in.";
-
 	@OriginalMember(owner = "client!pl", name = "y", descriptor = "I")
 	public static int anInt4210 = 0;
 
 	@OriginalMember(owner = "client!pn", name = "a", descriptor = "[I")
 	public static final int[] anIntArray447 = new int[100];
-
-	@OriginalMember(owner = "client!pn", name = "b", descriptor = "Ljava/lang/String;")
-	public static String aString250 = "glow3:";
 
 	@OriginalMember(owner = "client!pn", name = "c", descriptor = "Z")
 	public static boolean aBoolean297 = false;
@@ -662,9 +614,6 @@ public final class Static5 {
 
 	@OriginalMember(owner = "client!qa", name = "q", descriptor = "I")
 	public static int anInt4230 = 100;
-
-	@OriginalMember(owner = "client!qc", name = "zb", descriptor = "Ljava/lang/String;")
-	public static String aString235 = "scroll:";
 
 	@OriginalMember(owner = "client!qd", name = "G", descriptor = "I")
 	public static volatile int anInt4279 = 0;
@@ -690,17 +639,11 @@ public final class Static5 {
 	@OriginalMember(owner = "client!qf", name = "n", descriptor = "I")
 	public static int anInt4304 = 0;
 
-	@OriginalMember(owner = "client!qg", name = "a", descriptor = "Ljava/lang/String;")
-	public static String aString256 = "Loaded textures";
-
 	@OriginalMember(owner = "client!qh", name = "q", descriptor = "I")
 	public static int anInt4324 = -1;
 
 	@OriginalMember(owner = "client!qh", name = "w", descriptor = "I")
 	public static int anInt4329 = 0;
-
-	@OriginalMember(owner = "client!qi", name = "a", descriptor = "Ljava/lang/String;")
-	public static String aString37 = "Select";
 
 	@OriginalMember(owner = "client!qi", name = "j", descriptor = "J")
 	public static volatile long aLong26 = 0L;

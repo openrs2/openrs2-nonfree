@@ -576,7 +576,7 @@ public final class Static37 {
 			if (Static4.anInt3406 != 0) {
 				local52 = ":" + (local8.anInt2037 + 7000);
 			}
-			@Pc(130) String local130 = "http://" + local8.aString111 + local52 + "/l=" + Static1.anInt124 + "/a=" + Static6.anInt4938 + local54 + "/j" + (Static2.aBoolean102 ? "1" : "0") + ",o" + (Static4.aBoolean231 ? "1" : "0") + ",a2,m" + (Static1.aBoolean52 ? "1" : "0");
+			@Pc(130) String local130 = "http://" + local8.aString111 + local52 + "/l=" + client.language + "/a=" + Static6.anInt4938 + local54 + "/j" + (Static2.aBoolean102 ? "1" : "0") + ",o" + (Static4.aBoolean231 ? "1" : "0") + ",a2,m" + (Static1.aBoolean52 ? "1" : "0");
 			try {
 				Static7.aClient1.getAppletContext().showDocument(new URL(local130), "_self");
 				return true;

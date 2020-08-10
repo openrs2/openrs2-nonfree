@@ -127,7 +127,7 @@ public final class Static28 {
 			Static8.method66(Static6.anInt4440, Static3.anInt2394, Static5.anInt3890, Static4.anInt3455);
 		} else {
 			Static8.method66(Static6.anInt4440, Static3.anInt2394, Static5.anInt3890, Static4.anInt3455);
-			@Pc(75) int local75 = Static5.aClass4_Sub3_Sub5_3.method2252(Static4.aString202);
+			@Pc(75) int local75 = Static5.aClass4_Sub3_Sub5_3.method2252(LocalisedText.CHOOSE_OPTION);
 			for (@Pc(77) int local77 = 0; local77 < Static7.anInt5634; local77++) {
 				@Pc(86) int local86 = Static5.aClass4_Sub3_Sub5_3.method2252(Static26.method2992(local77));
 				if (local86 > local75) {
@@ -607,7 +607,7 @@ public final class Static28 {
 			Static6.aClass4_Sub3_Sub14_7.method4507((Static1.anInt526 - local16) / 2, 0, local16, local10);
 			Static6.aClass56_1.method2815(Static1.anInt526 / 2 - Static6.aClass56_1.anInt3408 / 2, 18);
 		}
-		arg1.method2271(Static2.anInt5720 == 1 ? Static6.aString193 : Static4.aString210, Static1.anInt526 / 2, Static1.anInt690 / 2 - 26, 16777215, -1);
+		arg1.method2271(Static2.anInt5720 == 1 ? LocalisedText.GAME1_LOADING : LocalisedText.GAME0_LOADING, Static1.anInt526 / 2, Static1.anInt690 / 2 - 26, 16777215, -1);
 		@Pc(70) int local70 = Static1.anInt690 / 2 - 18;
 		if (Static3.aBoolean138) {
 			Static18.method1690(Static1.anInt526 / 2 - 152, local70, 304, 34, 9179409);

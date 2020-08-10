@@ -795,9 +795,9 @@ public final class Static26 {
 			local10 = local10.substring(0, local19) + "," + local10.substring(local19);
 		}
 		if (local10.length() <= 9) {
-			return local10.length() <= 6 ? " <col=ffff00>" + local10 + "</col>" : " <col=ffffff>" + local10.substring(0, local10.length() - 4) + Static4.aString161 + " (" + local10 + ")</col>";
+			return local10.length() <= 6 ? " <col=ffff00>" + local10 + "</col>" : " <col=ffffff>" + local10.substring(0, local10.length() - 4) + LocalisedText.THOUSAND + " (" + local10 + ")</col>";
 		} else {
-			return " <col=00ff80>" + local10.substring(0, local10.length() - 8) + Static5.aString230 + " (" + local10 + ")</col>";
+			return " <col=00ff80>" + local10.substring(0, local10.length() - 8) + LocalisedText.MILLION + " (" + local10 + ")</col>";
 		}
 	}
 
@@ -851,7 +851,7 @@ public final class Static26 {
 
 	@OriginalMember(owner = "client!nl", name = "a", descriptor = "(BI)Ljava/lang/String;")
 	public static String method2992(@OriginalArg(1) int arg0) {
-		return Static6.aStringArray27[arg0].length() <= 0 ? Static6.aStringArray30[arg0] : Static6.aStringArray30[arg0] + Static1.aString55 + Static6.aStringArray27[arg0];
+		return Static6.aStringArray27[arg0].length() <= 0 ? Static6.aStringArray30[arg0] : Static6.aStringArray30[arg0] + LocalisedText.MINISEPARATOR + Static6.aStringArray27[arg0];
 	}
 
 	@OriginalMember(owner = "client!nl", name = "b", descriptor = "(I)V")

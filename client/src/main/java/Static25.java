@@ -566,7 +566,7 @@ public final class Static25 {
 			Static2.aClass4_Sub3_Sub14_2.method4506(local3, local5);
 			Static2.aClass4_Sub3_Sub14_2.method4511(local21 + local3 - Static2.aClass4_Sub3_Sub14_2.anInt5609, local5);
 		}
-		Static5.aClass4_Sub3_Sub5_3.method2259(Static4.aString202, local3 + 3, local5 + 14, Static1.anInt504, -1);
+		Static5.aClass4_Sub3_Sub5_3.method2259(LocalisedText.CHOOSE_OPTION, local3 + 3, local5 + 14, Static1.anInt504, -1);
 		if (Static3.aBoolean138) {
 			Static18.method1691(local3, local5 + 20, local21, local13 - 20, Static5.anInt4293, 256 - Static3.anInt2587);
 		} else {

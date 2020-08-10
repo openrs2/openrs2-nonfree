@@ -205,7 +205,7 @@ public final class Class168 {
 			this.anInt5262 = arg0.readUnsignedByte();
 		} else if (arg1 >= 30 && arg1 < 35) {
 			this.aStringArray35[arg1 - 30] = arg0.readString();
-			if (this.aStringArray35[arg1 - 30].equalsIgnoreCase(Static4.aString185)) {
+			if (this.aStringArray35[arg1 - 30].equalsIgnoreCase(LocalisedText.HIDDEN)) {
 				this.aStringArray35[arg1 - 30] = null;
 			}
 		} else if (arg1 == 40) {
@@ -350,7 +350,7 @@ public final class Class168 {
 			this.anInt5267 = arg0.readUnsignedShort();
 		} else if (arg1 >= 150 && arg1 < 155) {
 			this.aStringArray35[arg1 - 150] = arg0.readString();
-			if (!Static5.aBoolean301 || this.aStringArray35[arg1 - 150].equalsIgnoreCase(Static4.aString185)) {
+			if (!Static5.aBoolean301 || this.aStringArray35[arg1 - 150].equalsIgnoreCase(LocalisedText.HIDDEN)) {
 				this.aStringArray35[arg1 - 150] = null;
 			}
 		} else if (arg1 == 249) {

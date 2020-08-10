@@ -40,22 +40,6 @@ public final class Static19 {
 		local14.anInt1993 = arg0;
 	}
 
-	@OriginalMember(owner = "client!hk", name = "a", descriptor = "(IZ)V")
-	public static void method1776(@OriginalArg(0) int arg0) {
-		if (arg0 == 0) {
-			return;
-		}
-		if (arg0 == 1) {
-			Static30.method425();
-		} else if (arg0 == 2) {
-			Static17.method1651();
-		} else if (arg0 == 3) {
-			Static35.method4312();
-		} else {
-			throw new RuntimeException();
-		}
-	}
-
 	@OriginalMember(owner = "client!hk", name = "g", descriptor = "(I)Lclient!gb;")
 	public static Class63_Sub1 method1777() {
 		return Static3.aClass63_Sub1Array2.length <= Static6.anInt3224 ? null : Static3.aClass63_Sub1Array2[Static6.anInt3224++];
@@ -277,16 +261,6 @@ public final class Static19 {
 		}
 		Static7.aClass26_56.method510(local31, (long) arg0);
 		return local31;
-	}
-
-	@OriginalMember(owner = "client!ia", name = "a", descriptor = "(Ljava/lang/String;Z)I")
-	public static int method1817(@OriginalArg(0) String arg0) {
-		for (@Pc(11) int local11 = 0; local11 < Static2.aStringArray41.length; local11++) {
-			if (Static2.aStringArray41[local11].equalsIgnoreCase(arg0)) {
-				return local11;
-			}
-		}
-		return -1;
 	}
 
 	@OriginalMember(owner = "client!ia", name = "a", descriptor = "(Z)V")

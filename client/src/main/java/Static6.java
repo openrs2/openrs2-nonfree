@@ -344,17 +344,11 @@ public final class Static6 {
 	@OriginalMember(owner = "client!qj", name = "bb", descriptor = "I")
 	public static final int anInt4366 = -1;
 
-	@OriginalMember(owner = "client!qj", name = "hb", descriptor = "Ljava/lang/String;")
-	public static String aString260 = "Please remove ";
-
 	@OriginalMember(owner = "client!qj", name = "ib", descriptor = "[I")
 	public static final int[] anIntArray462 = new int[2000];
 
 	@OriginalMember(owner = "client!qj", name = "jb", descriptor = "Ljava/lang/String;")
 	public static String aString261 = null;
-
-	@OriginalMember(owner = "client!qk", name = "k", descriptor = "Ljava/lang/String;")
-	public static String aString262 = "Allocated memory";
 
 	@OriginalMember(owner = "client!qk", name = "r", descriptor = "I")
 	public static int anInt4384 = 0;
@@ -380,9 +374,6 @@ public final class Static6 {
 	@OriginalMember(owner = "client!r", name = "k", descriptor = "I")
 	public static int anInt3224 = 1;
 
-	@OriginalMember(owner = "client!r", name = "m", descriptor = "Ljava/lang/String;")
-	public static String aString193 = "Mechscape is loading - please wait...";
-
 	@OriginalMember(owner = "client!r", name = "n", descriptor = "Z")
 	public static boolean aBoolean227 = true;
 
@@ -395,20 +386,11 @@ public final class Static6 {
 	@OriginalMember(owner = "client!ra", name = "q", descriptor = "I")
 	public static int anInt4434 = 0;
 
-	@OriginalMember(owner = "client!ra", name = "y", descriptor = "Ljava/lang/String;")
-	public static String aString265 = "Loaded sprites";
-
 	@OriginalMember(owner = "client!ra", name = "C", descriptor = "[I")
 	public static final int[] anIntArray474 = new int[] { 1, 1, 1, 1, 4, 1, 1, 5, 6, 1, 5, 0, 7, 0, 4, 1, 7, 2, 1, 1, 6, 1, 1, 3, 6, 1, 7, 0, 0, 6, 7, 0, 1, 7, 6, 1, 1, 1, 5, 4, 3, 2, 1, 1, 0, 4, 1, 5 };
 
 	@OriginalMember(owner = "client!rb", name = "d", descriptor = "[I")
 	public static final int[] anIntArray475 = new int[] { 0, -1, 0, 1 };
-
-	@OriginalMember(owner = "client!rb", name = "e", descriptor = "Ljava/lang/String;")
-	public static String aString266 = "flash1:";
-
-	@OriginalMember(owner = "client!rb", name = "f", descriptor = "Ljava/lang/String;")
-	public static String aString267 = "wave2:";
 
 	@OriginalMember(owner = "client!rc", name = "c", descriptor = "I")
 	public static int anInt4451 = 0;
@@ -452,9 +434,6 @@ public final class Static6 {
 	@OriginalMember(owner = "client!rg", name = "ob", descriptor = "[Lclient!wb;")
 	public static final Class62_Sub1[] aClass62_Sub1Array2 = new Class62_Sub1[29];
 
-	@OriginalMember(owner = "client!rh", name = "U", descriptor = "Ljava/lang/String;")
-	public static String aString275 = "Checking for updates - ";
-
 	@OriginalMember(owner = "client!rh", name = "W", descriptor = "I")
 	public static int anInt4546 = 0;
 
@@ -472,9 +451,6 @@ public final class Static6 {
 
 	@OriginalMember(owner = "client!rh", name = "lb", descriptor = "I")
 	public static volatile int anInt4556 = -1;
-
-	@OriginalMember(owner = "client!ri", name = "J", descriptor = "Ljava/lang/String;")
-	public static String aString276 = "Unable to find ";
 
 	@OriginalMember(owner = "client!ri", name = "V", descriptor = "Lclient!cc;")
 	public static final Class26 aClass26_48 = new Class26(200);
@@ -505,9 +481,6 @@ public final class Static6 {
 
 	@OriginalMember(owner = "client!rl", name = "y", descriptor = "I")
 	public static int anInt4621 = 10;
-
-	@OriginalMember(owner = "client!rm", name = "gb", descriptor = "Ljava/lang/String;")
-	public static String aString282 = "Ok";
 
 	@OriginalMember(owner = "client!rm", name = "hb", descriptor = "I")
 	public static int anInt4659 = 0;
@@ -578,9 +551,6 @@ public final class Static6 {
 	@OriginalMember(owner = "client!sd", name = "h", descriptor = "I")
 	public static int anInt4761 = 0;
 
-	@OriginalMember(owner = "client!se", name = "X", descriptor = "Ljava/lang/String;")
-	public static String aString290 = "Loading textures - ";
-
 	@OriginalMember(owner = "client!se", name = "ab", descriptor = "[I")
 	public static final int[] anIntArray517 = new int[200];
 
@@ -589,9 +559,6 @@ public final class Static6 {
 
 	@OriginalMember(owner = "client!sg", name = "c", descriptor = "I")
 	public static int anInt4802 = 0;
-
-	@OriginalMember(owner = "client!sg", name = "e", descriptor = "Ljava/lang/String;")
-	public static String aString293 = "glow2:";
 
 	@OriginalMember(owner = "client!sg", name = "g", descriptor = "[I")
 	public static final int[] anIntArray519 = new int[] { 16, 32, 64, 128 };
@@ -607,9 +574,6 @@ public final class Static6 {
 
 	@OriginalMember(owner = "client!si", name = "c", descriptor = "[I")
 	public static final int[] anIntArray524 = new int[] { 0, 0, 2, 0, 0, 2, 1, 1, 0 };
-
-	@OriginalMember(owner = "client!si", name = "d", descriptor = "Ljava/lang/String;")
-	public static String aString296 = "Cancel";
 
 	@OriginalMember(owner = "client!si", name = "i", descriptor = "I")
 	public static int anInt4844 = -1;
@@ -640,9 +604,6 @@ public final class Static6 {
 
 	@OriginalMember(owner = "client!sk", name = "i", descriptor = "J")
 	public static long aLong169 = 0L;
-
-	@OriginalMember(owner = "client!sk", name = "j", descriptor = "Ljava/lang/String;")
-	public static String aString298 = "cyan:";
 
 	@OriginalMember(owner = "client!sl", name = "V", descriptor = "[C")
 	public static final char[] aCharArray3 = new char[] { '€', '\u0000', '‚', 'ƒ', '„', '…', '†', '‡', 'ˆ', '‰', 'Š', '‹', 'Œ', '\u0000', 'Ž', '\u0000', '\u0000', '‘', '’', '“', '”', '•', '–', '—', '˜', '™', 'š', '›', 'œ', '\u0000', 'ž', 'Ÿ' };

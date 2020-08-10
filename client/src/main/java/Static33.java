@@ -500,11 +500,11 @@ public final class Static33 {
 		}
 		@Pc(38) String local38 = arg0.aString316;
 		if (arg0.anInt5246 != 0) {
-			@Pc(51) String local51 = Static2.anInt5720 == 1 ? Static1.aString29 : Static7.aString348;
+			@Pc(51) String local51 = Static2.anInt5720 == 1 ? LocalisedText.RATING : LocalisedText.LEVEL;
 			local38 = local38 + Static20.method1921(Static4.aClass53_Sub1_Sub1_2.anInt1597, arg0.anInt5246) + " (" + local51 + arg0.anInt5246 + ")";
 		}
 		if (Static2.anInt1334 == 1) {
-			Static16.method1497((long) arg2, arg3, arg1, Static7.aString365 + " -> <col=ffff00>" + local38, Static5.aString314, (short) 33, Static2.anInt1937);
+			Static16.method1497((long) arg2, arg3, arg1, Static7.aString365 + " -> <col=ffff00>" + local38, LocalisedText.USE, (short) 33, Static2.anInt1937);
 		} else if (Static3.aBoolean177) {
 			@Pc(88) Class4_Sub3_Sub12 local88 = Static5.anInt4224 == -1 ? null : Static19.method1815(Static5.anInt4224);
 			if ((Static5.anInt3560 & 0x2) != 0 && (local88 == null || arg0.method4262(local88.anInt2546, Static5.anInt4224) != local88.anInt2546)) {
@@ -517,7 +517,7 @@ public final class Static33 {
 			}
 			if (local134 != null) {
 				for (@Pc(145) int local145 = 4; local145 >= 0; local145--) {
-					if (local134[local145] != null && (Static2.anInt5720 != 0 || !local134[local145].equalsIgnoreCase(Static3.aString120))) {
+					if (local134[local145] != null && (Static2.anInt5720 != 0 || !local134[local145].equalsIgnoreCase(LocalisedText.ATTACK))) {
 						@Pc(167) byte local167 = 0;
 						@Pc(169) int local169 = -1;
 						if (local145 == arg0.anInt5245) {
@@ -547,7 +547,7 @@ public final class Static33 {
 			}
 			if (Static2.anInt5720 == 0 && local134 != null) {
 				for (@Pc(249) int local249 = 4; local249 >= 0; local249--) {
-					if (local134[local249] != null && local134[local249].equalsIgnoreCase(Static3.aString120)) {
+					if (local134[local249] != null && local134[local249].equalsIgnoreCase(LocalisedText.ATTACK)) {
 						@Pc(271) short local271 = 0;
 						if (Static4.aClass53_Sub1_Sub1_2.anInt1597 < arg0.anInt5246) {
 							local271 = 2000;
@@ -575,7 +575,7 @@ public final class Static33 {
 					}
 				}
 			}
-			Static16.method1497((long) arg2, arg3, arg1, "<col=ffff00>" + local38, Static1.aString22, (short) 1010, Static3.anInt2232);
+			Static16.method1497((long) arg2, arg3, arg1, "<col=ffff00>" + local38, LocalisedText.EXAMINE, (short) 1010, Static3.anInt2232);
 		}
 	}
 
@@ -952,7 +952,7 @@ public final class Static33 {
 		}
 		@Pc(374) boolean local374 = false;
 		if (Static6.anInt4659 != 0) {
-			Static37.method4716(Static4.aString187 + "<br>(100%)", true);
+			Static37.method4716(LocalisedText.LOADING + "<br>(100%)", true);
 		}
 		Static9.method763();
 		Static24.method2697();

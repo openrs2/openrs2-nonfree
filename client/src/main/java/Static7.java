@@ -239,14 +239,8 @@ public final class Static7 {
 	@OriginalMember(owner = "client!u", name = "j", descriptor = "S")
 	public static short aShort45 = 256;
 
-	@OriginalMember(owner = "client!ua", name = "L", descriptor = "Ljava/lang/String;")
-	public static String aString315 = "flash3:";
-
 	@OriginalMember(owner = "client!ua", name = "hb", descriptor = "I")
 	public static int anInt5269 = 0;
-
-	@OriginalMember(owner = "client!ub", name = "c", descriptor = "Ljava/lang/String;")
-	public static String aString317 = "Created gameworld";
 
 	@OriginalMember(owner = "client!ub", name = "l", descriptor = "I")
 	public static int anInt5283 = 0;
@@ -299,9 +293,6 @@ public final class Static7 {
 	@OriginalMember(owner = "client!ug", name = "e", descriptor = "[I")
 	public static final int[] anIntArray601 = new int[50];
 
-	@OriginalMember(owner = "client!ug", name = "h", descriptor = "Ljava/lang/String;")
-	public static String aString320 = "skill: ";
-
 	@OriginalMember(owner = "client!ug", name = "m", descriptor = "I")
 	public static int anInt5345 = -1;
 
@@ -325,9 +316,6 @@ public final class Static7 {
 
 	@OriginalMember(owner = "client!ui", name = "g", descriptor = "[[S")
 	public static final short[][] aShortArrayArray8 = new short[][] { { 6554, 115, 10304, 28, 5702, 7756, 5681, 4510, -31835, 22437, 2859, -11339, 16, 5157, 10446, 3658, -27314, -21965, 472, 580, 784, 21966, 28950, -15697, -14002 }, { 9104, 10275, 7595, 3610, 7975, 8526, 918, -26734, 24466, 10145, -6882, 5027, 1457, 16565, -30545, 25486, 24, 5392, 10429, 3673, -27335, -21957, 192, 687, 412, 21821, 28835, -15460, -14019 }, new short[0], new short[0], new short[0] };
-
-	@OriginalMember(owner = "client!ui", name = "j", descriptor = "Ljava/lang/String;")
-	public static final String aString321 = "flash2:";
 
 	@OriginalMember(owner = "client!uj", name = "F", descriptor = "[J")
 	public static final long[] aLongArray54 = new long[200];
@@ -370,9 +358,6 @@ public final class Static7 {
 
 	@OriginalMember(owner = "client!v", name = "o", descriptor = "[I")
 	public static int[] anIntArray620 = new int[2];
-
-	@OriginalMember(owner = "client!v", name = "p", descriptor = "Ljava/lang/String;")
-	public static String aString329 = "Loading interfaces - ";
 
 	@OriginalMember(owner = "client!v", name = "s", descriptor = "[I")
 	public static final int[] anIntArray621 = new int[] { 160, 192, 80, 96, 0, 144, 80, 48, 160 };
@@ -461,9 +446,6 @@ public final class Static7 {
 	@OriginalMember(owner = "client!vl", name = "q", descriptor = "Z")
 	public static boolean aBoolean390 = false;
 
-	@OriginalMember(owner = "client!vl", name = "r", descriptor = "Ljava/lang/String;")
-	public static final String aString337 = "scroll:";
-
 	@OriginalMember(owner = "client!vl", name = "u", descriptor = "I")
 	public static int anInt5634 = 0;
 
@@ -476,12 +458,6 @@ public final class Static7 {
 	@OriginalMember(owner = "client!wa", name = "cc", descriptor = "Z")
 	public static boolean aBoolean393 = true;
 
-	@OriginalMember(owner = "client!wb", name = "i", descriptor = "Ljava/lang/String;")
-	public static String aString343 = "flash2:";
-
-	@OriginalMember(owner = "client!wb", name = "t", descriptor = "Ljava/lang/String;")
-	public static String aString344 = "red:";
-
 	@OriginalMember(owner = "client!wc", name = "b", descriptor = "I")
 	public static int anInt5803 = 0;
 
@@ -493,12 +469,6 @@ public final class Static7 {
 
 	@OriginalMember(owner = "client!wd", name = "tb", descriptor = "Z")
 	public static volatile boolean aBoolean400 = true;
-
-	@OriginalMember(owner = "client!wd", name = "wb", descriptor = "Ljava/lang/String;")
-	public static String aString347 = " is already on your friend list.";
-
-	@OriginalMember(owner = "client!wd", name = "xb", descriptor = "Ljava/lang/String;")
-	public static String aString348 = "level: ";
 
 	@OriginalMember(owner = "client!wd", name = "yb", descriptor = "[I")
 	public static final int[] anIntArray656 = new int[32];
@@ -524,17 +494,11 @@ public final class Static7 {
 	@OriginalMember(owner = "client!wg", name = "V", descriptor = "I")
 	public static int anInt6008 = 0;
 
-	@OriginalMember(owner = "client!wh", name = "M", descriptor = "Ljava/lang/String;")
-	public static String aString363 = "You can't add yourself to your own friend list.";
-
 	@OriginalMember(owner = "client!wi", name = "e", descriptor = "I")
 	public static int anInt6031 = 0;
 
 	@OriginalMember(owner = "client!wj", name = "b", descriptor = "Z")
 	public static boolean aBoolean421 = true;
-
-	@OriginalMember(owner = "client!wj", name = "d", descriptor = "Ljava/lang/String;")
-	public static String aString364 = "Connecting to update server";
 
 	@OriginalMember(owner = "client!wj", name = "m", descriptor = "I")
 	public static int anInt6038 = 0;
@@ -562,9 +526,6 @@ public final class Static7 {
 
 	@OriginalMember(owner = "client!wn", name = "B", descriptor = "Ljava/util/zip/CRC32;")
 	public static final CRC32 aCRC32_1 = new CRC32();
-
-	@OriginalMember(owner = "client!wn", name = "L", descriptor = "Ljava/lang/String;")
-	public static String aString369 = "Loading sprites - ";
 
 	@OriginalMember(owner = "client!wn", name = "N", descriptor = "I")
 	public static int anInt6094 = 0;

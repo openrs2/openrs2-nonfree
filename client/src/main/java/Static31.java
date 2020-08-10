@@ -419,7 +419,7 @@ public final class Static31 {
 			} else {
 				Static33.method4205(arg0, arg4, arg3, arg1, 0);
 			}
-			Static37.method4716(Static4.aString187, false);
+			Static37.method4716(LocalisedText.LOADING, false);
 		}
 		if (!arg2 && !Static3.aBoolean366 && !Static1.aBoolean17 && arg0 <= Static4.anInt3341 && arg3 + arg0 > Static4.anInt3341 && arg4 <= Static5.anInt5848 && arg4 + arg1 > Static5.anInt5848) {
 			Static16.method1518(arg1, Static4.anInt3341, arg4, arg0, arg3, Static5.anInt5848);
@@ -1067,7 +1067,7 @@ public final class Static31 {
 
 	@OriginalMember(owner = "client!rm", name = "f", descriptor = "(B)V")
 	public static void method3783() {
-		@Pc(9) int local9 = Static5.aClass4_Sub3_Sub5_3.method2252(Static4.aString202);
+		@Pc(9) int local9 = Static5.aClass4_Sub3_Sub5_3.method2252(LocalisedText.CHOOSE_OPTION);
 		for (@Pc(11) int local11 = 0; local11 < Static7.anInt5634; local11++) {
 			@Pc(20) int local20 = Static5.aClass4_Sub3_Sub5_3.method2252(Static26.method2992(local11));
 			if (local20 > local9) {

@@ -268,7 +268,7 @@ public final class Static13 {
 	@OriginalMember(owner = "client!dj", name = "a", descriptor = "(II)Ljava/lang/String;")
 	private static String method892(@OriginalArg(1) int arg0) {
 		if (arg0 >= 100000) {
-			return arg0 < 10000000 ? "<col=ffffff>" + arg0 / 1000 + Static5.aString239 + "</col>" : "<col=00ff80>" + arg0 / 1000000 + Static1.aString49 + "</col>";
+			return arg0 < 10000000 ? "<col=ffffff>" + arg0 / 1000 + LocalisedText.THOUSAND_SHORT + "</col>" : "<col=00ff80>" + arg0 / 1000000 + LocalisedText.MILLION_SHORT + "</col>";
 		} else {
 			return "<col=ffff00>" + arg0 + "</col>";
 		}

@@ -133,7 +133,7 @@ public final class Class162 {
 	public int anInt5095 = 0;
 
 	@OriginalMember(owner = "client!td", name = "gb", descriptor = "[Ljava/lang/String;")
-	public String[] aStringArray32 = new String[] { null, null, null, null, Static3.aString115 };
+	public String[] aStringArray32 = new String[] { null, null, null, null, LocalisedText.DROP };
 
 	@OriginalMember(owner = "client!td", name = "hb", descriptor = "Z")
 	public boolean aBoolean350 = false;
@@ -163,7 +163,7 @@ public final class Class162 {
 	public int anInt5102 = 1;
 
 	@OriginalMember(owner = "client!td", name = "tb", descriptor = "[Ljava/lang/String;")
-	public String[] aStringArray33 = new String[] { null, null, Static1.aString26, null, null };
+	public String[] aStringArray33 = new String[] { null, null, LocalisedText.TAKE, null, null };
 
 	@OriginalMember(owner = "client!td", name = "nb", descriptor = "I")
 	private int anInt5097 = -1;
@@ -430,7 +430,7 @@ public final class Class162 {
 				this.aStringArray32[local158] = arg0.aStringArray32[local158];
 			}
 		}
-		this.aStringArray32[4] = Static1.aString11;
+		this.aStringArray32[4] = LocalisedText.LENT_ITEM_RETURN;
 	}
 
 	@OriginalMember(owner = "client!td", name = "b", descriptor = "(III)I")
@@ -539,7 +539,7 @@ public final class Class162 {
 			this.anInt5070 = arg1.readUnsignedShort();
 		} else if (arg0 >= 30 && arg0 < 35) {
 			this.aStringArray33[arg0 - 30] = arg1.readString();
-			if (this.aStringArray33[arg0 - 30].equalsIgnoreCase(Static4.aString185)) {
+			if (this.aStringArray33[arg0 - 30].equalsIgnoreCase(LocalisedText.HIDDEN)) {
 				this.aStringArray33[arg0 - 30] = null;
 			}
 		} else if (arg0 >= 35 && arg0 < 40) {

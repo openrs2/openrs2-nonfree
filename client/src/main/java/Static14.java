@@ -881,8 +881,8 @@ public final class Static14 {
 		@Pc(11) int local11 = Static5.aClass58_81.method1351() - 1;
 		Static5.anInt6072 = local11 * 256 + Static5.aClass58_81.method1371(local11);
 		Static1.aClass4_Sub3_Sub5_Sub2_1 = arg1;
-		Static6.aStringArray26 = new String[] { null, null, null, null, Static3.aString115 };
-		Static6.aStringArray29 = new String[] { null, null, Static1.aString26, null, null };
+		Static6.aStringArray26 = new String[] { null, null, null, null, LocalisedText.DROP };
+		Static6.aStringArray29 = new String[] { null, null, LocalisedText.TAKE, null, null };
 	}
 
 	@OriginalMember(owner = "client!f", name = "f", descriptor = "(I)V")

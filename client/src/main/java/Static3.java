@@ -440,14 +440,8 @@ public final class Static3 {
 	@OriginalMember(owner = "client!jk", name = "n", descriptor = "Lclient!fh;")
 	public static Class58 aClass58_64;
 
-	@OriginalMember(owner = "client!gb", name = "z", descriptor = "Ljava/lang/String;")
-	public static String aString112 = "Started 3d Library";
-
 	@OriginalMember(owner = "client!gd", name = "a", descriptor = "[I")
 	public static int[] anIntArray164 = new int[2];
-
-	@OriginalMember(owner = "client!gd", name = "b", descriptor = "Ljava/lang/String;")
-	public static String aString113 = " from your friend list first.";
 
 	@OriginalMember(owner = "client!gd", name = "j", descriptor = "Lclient!dj;")
 	public static final Class40 aClass40_9 = new Class40(128);
@@ -463,9 +457,6 @@ public final class Static3 {
 
 	@OriginalMember(owner = "client!gf", name = "f", descriptor = "I")
 	public static int anInt2048 = 0;
-
-	@OriginalMember(owner = "client!gg", name = "l", descriptor = "Ljava/lang/String;")
-	public static String aString115 = "Drop";
 
 	@OriginalMember(owner = "client!gh", name = "d", descriptor = "I")
 	public static int anInt2579 = 0;
@@ -581,14 +572,8 @@ public final class Static3 {
 	@OriginalMember(owner = "client!gm", name = "f", descriptor = "J")
 	public static long aLong67 = 0L;
 
-	@OriginalMember(owner = "client!gm", name = "g", descriptor = "Ljava/lang/String;")
-	public static String aString118 = "wishes to trade with you.";
-
 	@OriginalMember(owner = "client!go", name = "b", descriptor = "[B")
 	public static final byte[] aByteArray16 = new byte[] { 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 0, 1, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
-
-	@OriginalMember(owner = "client!hb", name = "a", descriptor = "Ljava/lang/String;")
-	public static String aString120 = "Attack";
 
 	@OriginalMember(owner = "client!hb", name = "b", descriptor = "I")
 	public static int anInt2140 = 0;
@@ -626,14 +611,8 @@ public final class Static3 {
 	@OriginalMember(owner = "client!he", name = "p", descriptor = "Lclient!cc;")
 	public static final Class26 aClass26_21 = new Class26(64);
 
-	@OriginalMember(owner = "client!he", name = "x", descriptor = "Ljava/lang/String;")
-	public static String aString121 = "Loaded wordpack";
-
 	@OriginalMember(owner = "client!he", name = "B", descriptor = "Z")
 	public static boolean aBoolean147 = true;
-
-	@OriginalMember(owner = "client!he", name = "C", descriptor = "Ljava/lang/String;")
-	public static String aString122 = "Please remove ";
 
 	@OriginalMember(owner = "client!hh", name = "b", descriptor = "Z")
 	public static boolean aBoolean366 = true;
@@ -644,20 +623,11 @@ public final class Static3 {
 	@OriginalMember(owner = "client!hh", name = "e", descriptor = "I")
 	public static int anInt5400 = 0;
 
-	@OriginalMember(owner = "client!hh", name = "i", descriptor = "Ljava/lang/String;")
-	public static String aString325 = "green:";
-
 	@OriginalMember(owner = "client!hi", name = "b", descriptor = "[S")
 	public static final short[] aShortArray32 = new short[] { -4160, -4163, -8256, -8259, 22461 };
 
 	@OriginalMember(owner = "client!hi", name = "i", descriptor = "I")
 	public static final int anInt2193 = 2301979;
-
-	@OriginalMember(owner = "client!hj", name = "a", descriptor = "Ljava/lang/String;")
-	public static final String aString123 = "wave:";
-
-	@OriginalMember(owner = "client!hj", name = "c", descriptor = "Ljava/lang/String;")
-	public static String aString124 = "Please wait...";
 
 	@OriginalMember(owner = "client!hj", name = "e", descriptor = "[I")
 	public static final int[] anIntArray181 = new int[14];
@@ -676,9 +646,6 @@ public final class Static3 {
 
 	@OriginalMember(owner = "client!hk", name = "lb", descriptor = "S")
 	public static short aShort13 = 256;
-
-	@OriginalMember(owner = "client!hm", name = "u", descriptor = "Ljava/lang/String;")
-	public static String aString128 = " is already on your ignore list.";
 
 	@OriginalMember(owner = "client!hn", name = "l", descriptor = "I")
 	public static int anInt5405 = 0;
@@ -712,9 +679,6 @@ public final class Static3 {
 
 	@OriginalMember(owner = "client!ia", name = "d", descriptor = "[I")
 	public static final int[] anIntArray191 = new int[] { 2, 2, 4, 2, 1, 8, 4, 1, 4, 4, 2, 1, 1, 1, 4, 1 };
-
-	@OriginalMember(owner = "client!ia", name = "e", descriptor = "Ljava/lang/String;")
-	public static String aString133 = "Members object";
 
 	@OriginalMember(owner = "client!ia", name = "i", descriptor = "Lclient!wf;")
 	public static Class185 aClass185_5 = null;
@@ -788,17 +752,11 @@ public final class Static3 {
 	@OriginalMember(owner = "client!im", name = "m", descriptor = "Lclient!cc;")
 	public static Class26 aClass26_23 = new Class26(64);
 
-	@OriginalMember(owner = "client!im", name = "p", descriptor = "Ljava/lang/String;")
-	public static String aString139 = "Face here";
-
 	@OriginalMember(owner = "client!in", name = "p", descriptor = "[I")
 	public static final int[] anIntArray218 = new int[32];
 
 	@OriginalMember(owner = "client!in", name = "A", descriptor = "[I")
 	public static final int[] anIntArray219 = new int[32];
-
-	@OriginalMember(owner = "client!io", name = "w", descriptor = "Ljava/lang/String;")
-	public static String aString142 = "slide:";
 
 	@OriginalMember(owner = "client!io", name = "B", descriptor = "Lclient!cc;")
 	public static final Class26 aClass26_24 = new Class26(64);
@@ -806,26 +764,11 @@ public final class Static3 {
 	@OriginalMember(owner = "client!io", name = "G", descriptor = "[Z")
 	public static final boolean[] aBooleanArray11 = new boolean[8];
 
-	@OriginalMember(owner = "client!io", name = "H", descriptor = "Ljava/lang/String;")
-	public static final String aString144 = "slide:";
-
 	@OriginalMember(owner = "client!j", name = "o", descriptor = "I")
 	public static int anInt2505 = 0;
 
-	@OriginalMember(owner = "client!j", name = "q", descriptor = "Ljava/lang/String;")
-	public static String aString146 = "Your friend list is full. Max of 100 for free users, and 200 for members.";
-
 	@OriginalMember(owner = "client!j", name = "s", descriptor = "Z")
 	public static boolean aBoolean173 = false;
-
-	@OriginalMember(owner = "client!j", name = "t", descriptor = "Ljava/lang/String;")
-	public static String aString147 = "Opened title screen";
-
-	@OriginalMember(owner = "client!j", name = "u", descriptor = "Ljava/lang/String;")
-	public static String aString148 = " more options";
-
-	@OriginalMember(owner = "client!j", name = "v", descriptor = "Ljava/lang/String;")
-	public static String aString149 = "Loading defaults - ";
 
 	@OriginalMember(owner = "client!j", name = "x", descriptor = "[S")
 	public static final short[] aShortArray35 = new short[] { 960, 957, -21568, -21571, 22464 };
@@ -835,9 +778,6 @@ public final class Static3 {
 
 	@OriginalMember(owner = "client!jb", name = "a", descriptor = "I")
 	public static int anInt2522 = -2;
-
-	@OriginalMember(owner = "client!jb", name = "i", descriptor = "Ljava/lang/String;")
-	public static String aString150 = "Loaded interfaces";
 
 	@OriginalMember(owner = "client!jb", name = "l", descriptor = "[Ljava/lang/String;")
 	public static final String[] aStringArray18 = new String[100];
@@ -856,9 +796,6 @@ public final class Static3 {
 
 	@OriginalMember(owner = "client!jd", name = "h", descriptor = "[J")
 	public static final long[] aLongArray16 = new long[100];
-
-	@OriginalMember(owner = "client!jd", name = "i", descriptor = "Ljava/lang/String;")
-	public static String aString154 = "wave:";
 
 	@OriginalMember(owner = "client!je", name = "c", descriptor = "Lclient!cc;")
 	public static final Class26 aClass26_26 = new Class26(64);

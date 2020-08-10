@@ -13,6 +13,9 @@ import dev.openrs2.deob.annotation.Pc;
 @OriginalClass("client!client")
 public final class client extends Applet_Sub1 {
 
+	@OriginalMember(owner = "client!ak", name = "b", descriptor = "I")
+	public static int language = 0;
+
 	@OriginalMember(owner = "client!client", name = "main", descriptor = "([Ljava/lang/String;)V")
 	public static void main(@OriginalArg(0) String[] arg0) {
 		try {
@@ -31,17 +34,17 @@ public final class client extends Applet_Sub1 {
 				Static14.method1071("modewhat");
 			}
 			Static1.aBoolean52 = false;
-			Static1.anInt124 = Static19.method1817(arg0[2]);
-			if (Static1.anInt124 == -1) {
+			language = Language.fromIsoCode(arg0[2]);
+			if (language == -1) {
 				if (arg0[2].equals("english")) {
-					Static1.anInt124 = 0;
+					language = 0;
 				} else if (arg0[2].equals("german")) {
-					Static1.anInt124 = 1;
+					language = 1;
 				} else {
 					Static14.method1071("language");
 				}
 			}
-			Static19.method1776(Static1.anInt124);
+			LocalisedText.setLanguage(language);
 			Static2.aBoolean102 = false;
 			Static4.aBoolean231 = false;
 			if (arg0[3].equals("game0")) {
@@ -222,10 +225,10 @@ public final class client extends Applet_Sub1 {
 					Static3.aLong67 = local44;
 				}
 				Static6.anInt4621 = 5;
-				Static5.aString243 = Static4.aString160;
+				Static5.aString243 = LocalisedText.MAINLOAD0;
 			} else {
 				Static6.anInt4621 = 5;
-				Static5.aString243 = Static6.aString262;
+				Static5.aString243 = LocalisedText.MAINLOAD0B;
 				Static5.anInt4285 = 10;
 			}
 		} else if (Static5.anInt4285 == 10) {
@@ -233,7 +236,7 @@ public final class client extends Applet_Sub1 {
 				Static7.aClass30Array1[local93] = new Class30(104, 104);
 			}
 			Static5.anInt4285 = 30;
-			Static5.aString243 = Static7.aString317;
+			Static5.aString243 = LocalisedText.MAINLOAD10B;
 			Static6.anInt4621 = 10;
 		} else if (Static5.anInt4285 == 30) {
 			if (Static1.aClass117_1 == null) {
@@ -270,11 +273,11 @@ public final class client extends Applet_Sub1 {
 				Static7.aClass58_102 = Static27.method3231(true, false, 27, true);
 				Static5.aClass58_80 = Static27.method3231(true, true, 28, true);
 				Static6.anInt4621 = 15;
-				Static5.aString243 = Static1.aString23;
+				Static5.aString243 = LocalisedText.MAINLOAD30B;
 				Static5.anInt4285 = 40;
 			} else {
 				Static6.anInt4621 = 12;
-				Static5.aString243 = Static7.aString364;
+				Static5.aString243 = LocalisedText.MAINLOAD30;
 			}
 		} else if (Static5.anInt4285 == 40) {
 			@Pc(355) int local355 = 0;
@@ -282,7 +285,7 @@ public final class client extends Applet_Sub1 {
 				local355 += Static6.aClass62_Sub1Array2[local357].method4664() * Static1.anIntArray60[local357] / 100;
 			}
 			if (local355 == 100) {
-				Static5.aString243 = Static4.aString199;
+				Static5.aString243 = LocalisedText.MAINLOAD40B;
 				Static6.anInt4621 = 20;
 				Static24.method2946(Static1.aClass58_4);
 				Static31.method3154(Static1.aClass58_4);
@@ -291,17 +294,17 @@ public final class client extends Applet_Sub1 {
 			} else {
 				Static6.anInt4621 = 20;
 				if (local355 != 0) {
-					Static5.aString243 = Static6.aString275 + local355 + "%";
+					Static5.aString243 = LocalisedText.CHECKING_FOR_UPDATES + local355 + "%";
 				}
 			}
 		} else if (Static5.anInt4285 == 41) {
 			if (Static5.aClass58_80.method1360()) {
 				this.method688(Static5.aClass58_80.method1343(1));
 				Static5.anInt4285 = 45;
-				Static5.aString243 = Static1.aString7;
+				Static5.aString243 = LocalisedText.MAINLOAD41B;
 				Static6.anInt4621 = 25;
 			} else {
-				Static5.aString243 = Static3.aString149 + Static5.aClass58_80.method1345() + "%";
+				Static5.aString243 = LocalisedText.MAINLOAD41 + Static5.aClass58_80.method1345() + "%";
 				Static6.anInt4621 = 25;
 			}
 		} else if (Static5.anInt4285 == 45) {
@@ -316,19 +319,19 @@ public final class client extends Applet_Sub1 {
 			Static6.aClass102_2.method3008(Static5.aClass4_Sub6_Sub3_2);
 			Static7.aClass170_1 = new Class170(22050, Static7.anInt5394);
 			Static7.anInt5611 = Static7.aClass58_98.method1362("scape main");
-			Static5.aString243 = Static4.aString211;
+			Static5.aString243 = LocalisedText.MAINLOAD45B;
 			Static5.anInt4285 = 50;
 			Static6.anInt4621 = 30;
 		} else if (Static5.anInt4285 == 50) {
 			@Pc(540) int local540 = Static10.method464(Static4.aClass58_67, Static1.aClass58_4);
 			@Pc(543) int local543 = Static16.method1565();
 			if (local540 >= local543) {
-				Static5.aString243 = Static5.aString218;
+				Static5.aString243 = LocalisedText.MAINLOAD50B;
 				Static5.anInt4285 = 60;
 				Static6.anInt4621 = 35;
 			} else {
 				Static6.anInt4621 = 35;
-				Static5.aString243 = Static5.aString233 + local540 * 100 / local543 + "%";
+				Static5.aString243 = LocalisedText.MAINLOAD50 + local540 * 100 / local543 + "%";
 			}
 		} else if (Static5.anInt4285 == 60) {
 			@Pc(582) int local582 = Static14.method1046(Static1.aClass58_4);
@@ -336,14 +339,14 @@ public final class client extends Applet_Sub1 {
 			if (local585 <= local582) {
 				Static5.anInt4285 = 65;
 				Static6.anInt4621 = 40;
-				Static5.aString243 = Static5.aString240;
+				Static5.aString243 = LocalisedText.MAINLOAD60B;
 			} else {
 				Static6.anInt4621 = 40;
-				Static5.aString243 = Static1.aString56 + local582 * 100 / local585 + "%";
+				Static5.aString243 = LocalisedText.MAINLOAD60 + local582 * 100 / local585 + "%";
 			}
 		} else if (Static5.anInt4285 == 65) {
 			Static8.method113(Static1.aClass58_4, Static4.aClass58_67);
-			Static5.aString243 = Static3.aString147;
+			Static5.aString243 = LocalisedText.MAINLOAD65B;
 			Static6.anInt4621 = 45;
 			Static9.method233(5);
 			Static5.anInt4285 = 70;
@@ -372,7 +375,7 @@ public final class client extends Applet_Sub1 {
 			local647 += Static7.aClass58_102.method1345();
 			if (local647 < 1100) {
 				Static6.anInt4621 = 50;
-				Static5.aString243 = Static1.aString30 + local647 / 11 + "%";
+				Static5.aString243 = LocalisedText.MAINLOAD70 + local647 / 11 + "%";
 			} else {
 				Static9.method231(Static2.aClass58_39);
 				Static27.method3228(Static2.aClass58_39);
@@ -399,7 +402,7 @@ public final class client extends Applet_Sub1 {
 				Static8.method5(Static1.aClass58_4, Static2.aClass58_39);
 				Static29.method3474(Static2.aClass58_39, Static1.aClass58_4);
 				Static6.anInt4621 = 50;
-				Static5.aString243 = Static4.aString368;
+				Static5.aString243 = LocalisedText.MAINLOAD70B;
 				Static15.method1338();
 				Static5.anInt4285 = 80;
 			}
@@ -408,11 +411,11 @@ public final class client extends Applet_Sub1 {
 			@Pc(887) int local887 = Static14.method1084();
 			if (local884 >= local887) {
 				Static35.method667(Static1.aClass58_4);
-				Static5.aString243 = Static6.aString265;
+				Static5.aString243 = LocalisedText.MAINLOAD80B;
 				Static6.anInt4621 = 60;
 				Static5.anInt4285 = 90;
 			} else {
-				Static5.aString243 = Static7.aString369 + local884 * 100 / local887 + "%";
+				Static5.aString243 = LocalisedText.MAINLOAD80 + local884 * 100 / local887 + "%";
 				Static6.anInt4621 = 60;
 			}
 		} else if (Static5.anInt4285 == 90) {
@@ -432,10 +435,10 @@ public final class client extends Applet_Sub1 {
 					Static23.method2539(0.6F);
 				}
 				Static6.anInt4621 = 70;
-				Static5.aString243 = Static5.aString256;
+				Static5.aString243 = LocalisedText.MAINLOAD90B;
 				Static5.anInt4285 = 100;
 			} else {
-				Static5.aString243 = Static6.aString290 + Static4.aClass58_68.method1345() + "%";
+				Static5.aString243 = LocalisedText.MAINLOAD90 + Static4.aClass58_68.method1345() + "%";
 				Static6.anInt4621 = 70;
 			}
 		} else if (Static5.anInt4285 == 100) {
@@ -446,28 +449,28 @@ public final class client extends Applet_Sub1 {
 			Static4.aClass99_1 = new Class99();
 			Static7.aClass196_4.startThread(Static4.aClass99_1, 10);
 			Static6.anInt4621 = 75;
-			Static5.aString243 = Static4.aString200;
+			Static5.aString243 = LocalisedText.MAINLOAD110B;
 			Static5.anInt4285 = 120;
 		} else if (Static5.anInt4285 == 120) {
 			if (Static6.aClass58_71.method1340("huffman", "")) {
 				@Pc(1066) Class129 local1066 = new Class129(Static6.aClass58_71.method1358("", "huffman"));
 				Static20.method1978(local1066);
-				Static5.aString243 = Static3.aString121;
+				Static5.aString243 = LocalisedText.MAINLOAD120B;
 				Static6.anInt4621 = 80;
 				Static5.anInt4285 = 130;
 			} else {
-				Static5.aString243 = Static2.aString82 + "0%";
+				Static5.aString243 = LocalisedText.MAINLOAD120 + "0%";
 				Static6.anInt4621 = 80;
 			}
 		} else if (Static5.anInt4285 == 130) {
 			if (!Static2.aClass58_27.method1360()) {
-				Static5.aString243 = Static7.aString329 + Static2.aClass58_27.method1345() * 3 / 4 + "%";
+				Static5.aString243 = LocalisedText.MAINLOAD130 + Static2.aClass58_27.method1345() * 3 / 4 + "%";
 				Static6.anInt4621 = 85;
 			} else if (!Static4.aClass58_73.method1360()) {
-				Static5.aString243 = Static7.aString329 + (Static4.aClass58_73.method1345() / 10 + 75) + "%";
+				Static5.aString243 = LocalisedText.MAINLOAD130 + (Static4.aClass58_73.method1345() / 10 + 75) + "%";
 				Static6.anInt4621 = 85;
 			} else if (!Static4.aClass58_67.method1360()) {
-				Static5.aString243 = Static7.aString329 + (Static4.aClass58_67.method1345() / 20 + 85) + "%";
+				Static5.aString243 = LocalisedText.MAINLOAD130 + (Static4.aClass58_67.method1345() / 20 + 85) + "%";
 				Static6.anInt4621 = 85;
 			} else if (Static5.aClass58_82.method1365("details")) {
 				Static19.method2393(Static5.aClass58_82);
@@ -475,15 +478,15 @@ public final class client extends Applet_Sub1 {
 				Static13.method1028(Static4.aClass58_69);
 				Static5.anInt4285 = 135;
 				Static6.anInt4621 = 95;
-				Static5.aString243 = Static3.aString150;
+				Static5.aString243 = LocalisedText.MAINLOAD130B;
 			} else {
-				Static5.aString243 = Static7.aString329 + (Static5.aClass58_82.method1342("details") / 10 + 90) + "%";
+				Static5.aString243 = LocalisedText.MAINLOAD130 + (Static5.aClass58_82.method1342("details") / 10 + 90) + "%";
 				Static6.anInt4621 = 85;
 			}
 		} else if (Static5.anInt4285 == 135) {
 			@Pc(1200) int local1200 = Static22.method2285();
 			if (local1200 == -1) {
-				Static5.aString243 = Static4.aString206;
+				Static5.aString243 = LocalisedText.MAINLOAD135;
 				Static6.anInt4621 = 95;
 			} else if (local1200 == 7 || local1200 == 9) {
 				this.method670("worldlistfull");
@@ -491,7 +494,7 @@ public final class client extends Applet_Sub1 {
 			} else if (Static6.aBoolean338) {
 				Static6.anInt4621 = 96;
 				Static5.anInt4285 = 140;
-				Static5.aString243 = Static2.aString80;
+				Static5.aString243 = LocalisedText.MAINLOAD135B;
 			} else {
 				this.method670("worldlistio_" + local1200);
 				Static9.method233(1000);
@@ -506,7 +509,7 @@ public final class client extends Applet_Sub1 {
 			Static2.aClass58_27.method1356(true);
 			Static7.aBoolean422 = true;
 			Static5.anInt4285 = 150;
-			Static5.aString243 = Static2.aString83;
+			Static5.aString243 = LocalisedText.MAINLOAD140;
 			Static6.anInt4621 = 97;
 		} else if (Static5.anInt4285 == 150) {
 			Static19.method1859();
@@ -520,7 +523,7 @@ public final class client extends Applet_Sub1 {
 			Static14.method1055(Static7.aClass196_4);
 			Static35.method4512(false, Static5.anInt3637, -1, -1);
 			Static6.anInt4621 = 100;
-			Static5.aString243 = Static3.aString112;
+			Static5.aString243 = LocalisedText.MAINLOAD150B;
 			Static5.anInt4285 = 160;
 		} else if (Static5.anInt4285 == 160) {
 			Static11.method605(true);
@@ -641,9 +644,9 @@ public final class client extends Applet_Sub1 {
 			Static3.aBoolean176 = true;
 		}
 		if (Static2.anInt5720 == 0) {
-			Static5.aString255 = Static4.aString210;
+			Static5.aString255 = LocalisedText.GAME0_LOADING;
 		} else if (Static2.anInt5720 == 1) {
-			Static5.aString255 = Static6.aString193;
+			Static5.aString255 = LocalisedText.GAME1_LOADING;
 		}
 	}
 
@@ -789,11 +792,11 @@ public final class client extends Applet_Sub1 {
 			Static1.aBoolean52 = false;
 		}
 		try {
-			Static1.anInt124 = Integer.parseInt(this.getParameter("lang"));
+			language = Integer.parseInt(this.getParameter("lang"));
 		} catch (@Pc(67) Exception local67) {
-			Static1.anInt124 = 0;
+			language = 0;
 		}
-		Static19.method1776(Static1.anInt124);
+		LocalisedText.setLanguage(language);
 		@Pc(76) String local76 = this.getParameter("objecttag");
 		if (local76 != null && local76.equals("1")) {
 			Static4.aBoolean231 = true;
@@ -903,20 +906,20 @@ public final class client extends Applet_Sub1 {
 					Static6.anInt4398 = Static3.anInt2886;
 				}
 				@Pc(267) int local267 = (Static6.anInt4398 - Static3.anInt2886) * 50 / Static6.anInt4398;
-				Static37.method4716(Static4.aString187 + "<br>(" + local267 + "%)", false);
+				Static37.method4716(LocalisedText.LOADING + "<br>(" + local267 + "%)", false);
 			} else if (Static6.anInt4659 == 2) {
 				if (Static7.anInt5486 > Static7.anInt5473) {
 					Static7.anInt5473 = Static7.anInt5486;
 				}
 				@Pc(305) int local305 = (Static7.anInt5473 - Static7.anInt5486) * 50 / Static7.anInt5473 + 50;
-				Static37.method4716(Static4.aString187 + "<br>(" + local305 + "%)", false);
+				Static37.method4716(LocalisedText.LOADING + "<br>(" + local305 + "%)", false);
 			} else {
-				Static37.method4716(Static4.aString187, false);
+				Static37.method4716(LocalisedText.LOADING, false);
 			}
 		} else if (Static4.anInt3304 == 30) {
 			Static35.method4304(local26);
 		} else if (Static4.anInt3304 == 40) {
-			Static37.method4716(Static4.aString207 + "<br>" + Static1.aString46, false);
+			Static37.method4716(LocalisedText.CONLOST + "<br>" + LocalisedText.ATTEMPT_TO_REESTABLISH, false);
 		}
 		if (Static3.aBoolean138 && Static4.anInt3304 != 0) {
 			Static17.method1622();

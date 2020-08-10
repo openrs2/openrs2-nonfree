@@ -765,7 +765,7 @@ public final class Static11 {
 		Static2.aBoolean119 = false;
 		Static5.aBoolean248 = true;
 		Static7.anInt5426 = 0;
-		Static5.aString236 = Static1.aString6;
+		Static5.aString236 = LocalisedText.WALKHERE;
 		Static36.method4447();
 		Static7.aBoolean389 = false;
 		Static21.method2001();

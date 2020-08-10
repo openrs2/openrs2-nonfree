@@ -289,7 +289,7 @@ public final class Static30 {
 									continue;
 								}
 								if (Static2.anInt5720 == 1) {
-									Static16.method1497(1L, local567, local583, "", Static3.aString139, (short) 47, -1);
+									Static16.method1497(1L, local567, local583, "", LocalisedText.FACEHERE, (short) 47, -1);
 								}
 								Static16.method1497(1L, local567, local583, "", Static5.aString236, (short) 26, -1);
 								continue;
@@ -391,7 +391,7 @@ public final class Static30 {
 						if (!Static1.aBoolean17) {
 							if (local38.anInt5911 == 0 && local38.aBoolean407 && local266 <= Static4.anInt3341 && Static5.anInt5848 >= local259 && Static4.anInt3341 < local309 && local298 > Static5.anInt5848 && !Static1.aBoolean26) {
 								Static6.aShortArray100[0] = 1006;
-								Static6.aStringArray30[0] = Static6.aString296;
+								Static6.aStringArray30[0] = LocalisedText.CANCEL;
 								Static6.aStringArray27[0] = "";
 								Static2.anIntArray160[0] = Static7.anInt6050;
 								Static7.anInt5634 = 1;
@@ -424,7 +424,7 @@ public final class Static30 {
 								if (local1207.anInt4619 == 0 && !Static1.aBoolean17 && Static4.anInt3341 >= local266 && Static5.anInt5848 >= local259 && local309 > Static4.anInt3341 && Static5.anInt5848 < local298 && !Static1.aBoolean26) {
 									Static6.aShortArray100[0] = 1006;
 									Static2.anIntArray160[0] = Static7.anInt6050;
-									Static6.aStringArray30[0] = Static6.aString296;
+									Static6.aStringArray30[0] = LocalisedText.CANCEL;
 									Static6.aStringArray27[0] = "";
 									Static7.anInt5634 = 1;
 								}
@@ -603,7 +603,7 @@ public final class Static30 {
 											}
 										}
 										if (Static6.aClass185_14 == local38) {
-											local1957 = Static3.aString124;
+											local1957 = LocalisedText.PLEASEWAIT;
 											local1964 = local38.anInt5933;
 										}
 										if (!local38.aBoolean416) {
@@ -1336,103 +1336,6 @@ public final class Static30 {
 			}
 		}
 		return false;
-	}
-
-	@OriginalMember(owner = "client!qi", name = "b", descriptor = "(I)V")
-	public static void method425() {
-		Static3.aString115 = "Fallen lassen";
-		Static6.aString293 = "leuchten2:";
-		Static1.aString8 = "Schließen";
-		Static1.aString23 = "Verbindung zum Update-Server hergestellt.";
-		Static7.aString344 = "rot:";
-		Static4.aString160 = "Speicher wird zugewiesen.";
-		Static3.aString148 = " weitere Optionen";
-		Static3.aString121 = "Wordpack geladen.";
-		Static5.aString240 = "Titelbild geladen.";
-		Static1.aString7 = "Standardinstellungen geladen";
-		Static5.aString37 = "Auswählen";
-		Static6.aString275 = "Suche nach Updates - ";
-		Static2.aString68 = "Lade...";
-		Static1.aString56 = "Lade Titelbild - ";
-		Static4.aString201 = "Weiter";
-		Static7.aString369 = "Lade Sprites - ";
-		Static6.aString260 = "Bitte entferne ";
-		Static6.aString290 = "Lade Texturen - ";
-		Static3.aString133 = "Gegenstand für Mitglieder";
-		Static5.aString314 = "Benutzen";
-		Static2.aString80 = "Liste der Welten geladen";
-		Static4.aString210 = "OpenRS2 wird geladen - bitte warten...";
-		Static5.aString230 = "M";
-		Static2.aString82 = "Lade Wordpack - ";
-		Static7.aString364 = "Verbindung mit Update-Server...";
-		Static2.aString83 = "Starte 3D-Softwarebibliothek.";
-		Static3.aString154 = "welle:";
-		Static1.aString38 = "Deine Ignorieren-Liste ist voll, du kannst nur 100 Spieler darauf eintragen.";
-		Static6.aString282 = "Okay";
-		Static4.aString170 = "schütteln:";
-		Static7.aString329 = "Lade Benutzeroberfläche - ";
-		Static3.aString149 = "Lade Standardeinstellungen - ";
-		Static3.aString128 = " steht bereits auf deiner Ignorieren-Liste!";
-		Static3.aString112 = "3D-Softwarebibliothek gestartet.";
-		Static1.aString49 = "M";
-		Static1.aString46 = "Bitte warte - es wird versucht, die Verbindung wiederherzustellen.";
-		Static3.aString325 = "grün:";
-		Static5.aString233 = "Lade Schriftsätze - ";
-		Static4.aString179 = "weiss:";
-		Static7.aString317 = "Spielwelt erstellt.";
-		Static1.aString55 = ": ";
-		Static5.aString235 = "scrollen:";
-		Static6.aString276 = "Spieler kann nicht gefunden werden: ";
-		Static3.aString147 = "Titelbild geöffnet.";
-		Static1.aString30 = "Lade Konfiguration - ";
-		Static4.aString211 = "Musik-Engine vorbereitet.";
-		Static4.aString187 = "Ladevorgang - bitte warte.";
-		Static3.aString120 = "Angreifen";
-		Static3.aString146 = "Deine Freunde-Liste ist voll! Maximale Einträge: Mitglieder 200/freie Spieler 100";
-		Static3.aString113 = " zuerst von deiner Freunde-Liste!";
-		Static4.aString203 = "leuchten1:";
-		Static4.aString206 = "Lade Liste der Welten";
-		Static7.aString315 = "blinken3:";
-		Static5.aString250 = "leuchten3:";
-		Static3.aString118 = "möchte mit dir handeln.";
-		Static3.aString139 = "Hierhin drehen";
-		Static5.aString239 = "T";
-		Static6.aString265 = "Sprites geladen.";
-		Static1.aString6 = "Hierhin gehen";
-		Static4.aString202 = "Wähl eine Option";
-		Static6.aString266 = "blinken1:";
-		Static5.aString249 = " loggt sich ein.";
-		Static5.aString224 = " loggt sich aus.";
-		Static4.aString185 = "Versteckt";
-		Static6.aString298 = "blaugrün:";
-		Static4.aString199 = "Update-Liste geladen.";
-		Static4.aString200 = "Eingabeprozedur geladen.";
-		Static3.aString124 = "Bitte warte...";
-		Static4.aString207 = "Verbindung abgebrochen.";
-		Static6.aString296 = "Abbrechen";
-		Static6.aString267 = "welle2:";
-		Static7.aString348 = "Stufe: ";
-		Static4.aString161 = "T";
-		Static1.aString22 = "Untersuchen";
-		Static5.aString218 = "Schriftsätze geladen.";
-		Static1.aString11 = "Ablegen";
-		Static6.aString262 = "Zugewiesener Speicher.";
-		Static3.aString150 = "Benutzeroberfläche geladen.";
-		Static7.aString320 = "Fertigkeit: ";
-		Static4.aString205 = "Du kannst dich nicht auf deine eigene Ignorieren-Liste setzen!";
-		Static3.aString142 = "gleiten:";
-		Static7.aString347 = " steht bereits auf deiner Freunde-Liste!";
-		Static3.aString122 = "Bitte entferne ";
-		Static7.aString343 = "blinken2:";
-		Static6.aString193 = "Mechscape wird geladen - bitte warten...";
-		Static4.aString368 = "Konfig geladen.";
-		Static1.aString26 = "Nehmen";
-		Static7.aString363 = "Du kannst dich nicht auf deine eigene Freunde-Liste setzen!";
-		Static5.aString256 = "Texturen geladen.";
-		Static1.aString43 = "gelb:";
-		Static5.aString324 = "lila:";
-		Static1.aString29 = "Kampfstufe: ";
-		Static4.aString180 = " zuerst von deiner Ignorieren-Liste!";
 	}
 
 	@OriginalMember(owner = "client!qj", name = "c", descriptor = "(II)V")

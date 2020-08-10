@@ -245,9 +245,6 @@ public final class Static2 {
 	@OriginalMember(owner = "client!df", name = "a", descriptor = "Lclient!cc;")
 	public static final Class26 aClass26_7 = new Class26(50);
 
-	@OriginalMember(owner = "client!df", name = "f", descriptor = "Ljava/lang/String;")
-	public static final String aString59 = "green:";
-
 	@OriginalMember(owner = "client!df", name = "g", descriptor = "[Ljava/lang/String;")
 	public static final String[] aStringArray5 = new String[1000];
 
@@ -320,9 +317,6 @@ public final class Static2 {
 	@OriginalMember(owner = "client!dm", name = "a", descriptor = "I")
 	public static int anInt1125 = 0;
 
-	@OriginalMember(owner = "client!dm", name = "i", descriptor = "Ljava/lang/String;")
-	public static String aString68 = "Loading...";
-
 	@OriginalMember(owner = "client!dn", name = "U", descriptor = "Z")
 	public static boolean aBoolean66 = true;
 
@@ -380,9 +374,6 @@ public final class Static2 {
 	@OriginalMember(owner = "client!ef", name = "b", descriptor = "I")
 	public static final int anInt1221 = 7759444;
 
-	@OriginalMember(owner = "client!ef", name = "f", descriptor = "Ljava/lang/String;")
-	public static final String aString75 = "shake:";
-
 	@OriginalMember(owner = "client!eg", name = "m", descriptor = "I")
 	public static int anInt1231 = 0;
 
@@ -403,9 +394,6 @@ public final class Static2 {
 
 	@OriginalMember(owner = "client!ej", name = "p", descriptor = "Lclient!cc;")
 	public static final Class26 aClass26_11 = new Class26(4);
-
-	@OriginalMember(owner = "client!ej", name = "r", descriptor = "Ljava/lang/String;")
-	public static String aString80 = "Loaded world list data";
 
 	@OriginalMember(owner = "client!ej", name = "v", descriptor = "Z")
 	public static boolean aBoolean75 = true;
@@ -439,12 +427,6 @@ public final class Static2 {
 
 	@OriginalMember(owner = "client!em", name = "B", descriptor = "I")
 	public static int anInt1334 = 0;
-
-	@OriginalMember(owner = "client!en", name = "j", descriptor = "Ljava/lang/String;")
-	public static String aString82 = "Loading wordpack - ";
-
-	@OriginalMember(owner = "client!en", name = "r", descriptor = "Ljava/lang/String;")
-	public static String aString83 = "Starting 3d Library";
 
 	@OriginalMember(owner = "client!eo", name = "a", descriptor = "I")
 	public static final int anInt1360 = 5063219;
@@ -496,9 +478,6 @@ public final class Static2 {
 
 	@OriginalMember(owner = "client!fd", name = "nb", descriptor = "I")
 	public static int anInt5739 = 0;
-
-	@OriginalMember(owner = "client!fd", name = "wb", descriptor = "[Ljava/lang/String;")
-	public static final String[] aStringArray41 = new String[] { "en", "de", "fr", "pt" };
 
 	@OriginalMember(owner = "client!fg", name = "z", descriptor = "Z")
 	public static boolean aBoolean104 = true;

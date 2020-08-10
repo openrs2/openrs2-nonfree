@@ -331,12 +331,6 @@ public final class Static4 {
 	@OriginalMember(owner = "client!jm", name = "b", descriptor = "I")
 	public static int anInt2665 = 0;
 
-	@OriginalMember(owner = "client!jm", name = "d", descriptor = "Ljava/lang/String;")
-	public static String aString160 = "Allocating memory";
-
-	@OriginalMember(owner = "client!jm", name = "e", descriptor = "Ljava/lang/String;")
-	public static String aString161 = "K";
-
 	@OriginalMember(owner = "client!jm", name = "g", descriptor = "Z")
 	public static boolean aBoolean184 = false;
 
@@ -348,9 +342,6 @@ public final class Static4 {
 
 	@OriginalMember(owner = "client!jo", name = "I", descriptor = "[I")
 	public static final int[] anIntArray653 = new int[4096];
-
-	@OriginalMember(owner = "client!jo", name = "N", descriptor = "Ljava/lang/String;")
-	public static final String aString346 = "yellow:";
 
 	@OriginalMember(owner = "client!jo", name = "O", descriptor = "[I")
 	public static final int[] anIntArray654 = new int[14];
@@ -372,9 +363,6 @@ public final class Static4 {
 
 	@OriginalMember(owner = "client!kf", name = "u", descriptor = "Lclient!dj;")
 	public static final Class40 aClass40_12 = new Class40(64);
-
-	@OriginalMember(owner = "client!kf", name = "K", descriptor = "Ljava/lang/String;")
-	public static String aString170 = "shake:";
 
 	@OriginalMember(owner = "client!kg", name = "d", descriptor = "[I")
 	public static final int[] anIntArray256 = new int[4];
@@ -406,17 +394,8 @@ public final class Static4 {
 	@OriginalMember(owner = "client!kn", name = "J", descriptor = "[Ljava/lang/String;")
 	public static final String[] aStringArray22 = new String[200];
 
-	@OriginalMember(owner = "client!ko", name = "e", descriptor = "Ljava/lang/String;")
-	public static final String aString177 = "wave2:";
-
 	@OriginalMember(owner = "client!l", name = "q", descriptor = "I")
 	public static int anInt2989 = 0;
-
-	@OriginalMember(owner = "client!l", name = "s", descriptor = "Ljava/lang/String;")
-	public static String aString179 = "white:";
-
-	@OriginalMember(owner = "client!l", name = "x", descriptor = "Ljava/lang/String;")
-	public static String aString180 = " from your ignore list first.";
 
 	@OriginalMember(owner = "client!l", name = "A", descriptor = "[Lclient!wl;")
 	public static final Class189[] aClass189Array1 = new Class189[29];
@@ -426,9 +405,6 @@ public final class Static4 {
 
 	@OriginalMember(owner = "client!la", name = "W", descriptor = "I")
 	public static int anInt3020 = -1;
-
-	@OriginalMember(owner = "client!la", name = "Y", descriptor = "Ljava/lang/String;")
-	public static String aString185 = "Hidden";
 
 	@OriginalMember(owner = "client!la", name = "Z", descriptor = "[J")
 	public static final long[] aLongArray24 = new long[100];
@@ -441,9 +417,6 @@ public final class Static4 {
 
 	@OriginalMember(owner = "client!lc", name = "g", descriptor = "Ljava/lang/String;")
 	public static String aString140 = null;
-
-	@OriginalMember(owner = "client!ld", name = "C", descriptor = "Ljava/lang/String;")
-	public static String aString187 = "Loading - please wait.";
 
 	@OriginalMember(owner = "client!ld", name = "Cb", descriptor = "I")
 	public static int anInt3086 = 0;
@@ -496,9 +469,6 @@ public final class Static4 {
 	@OriginalMember(owner = "client!lh", name = "s", descriptor = "[S")
 	public static short[] aShortArray126 = new short[256];
 
-	@OriginalMember(owner = "client!lh", name = "t", descriptor = "Ljava/lang/String;")
-	public static String aString368 = "Loaded config";
-
 	@OriginalMember(owner = "client!li", name = "c", descriptor = "[I")
 	public static final int[] anIntArray301 = new int[] { 16776960, 16711680, 65280, 65535, 16711935, 16777215 };
 
@@ -529,9 +499,6 @@ public final class Static4 {
 	@OriginalMember(owner = "client!ma", name = "e", descriptor = "I")
 	public static int anInt3407 = -1;
 
-	@OriginalMember(owner = "client!ma", name = "f", descriptor = "Ljava/lang/String;")
-	public static String aString211 = "Prepared sound engine";
-
 	@OriginalMember(owner = "client!ma", name = "h", descriptor = "I")
 	public static int anInt3409 = 0;
 
@@ -541,14 +508,8 @@ public final class Static4 {
 	@OriginalMember(owner = "client!mc", name = "o", descriptor = "I")
 	public static int anInt3290 = -1;
 
-	@OriginalMember(owner = "client!mc", name = "p", descriptor = "Ljava/lang/String;")
-	public static final String aString198 = "red:";
-
 	@OriginalMember(owner = "client!mc", name = "s", descriptor = "[I")
 	public static final int[] anIntArray313 = new int[] { 19, 55, 38, 155, 255, 110, 137, 205, 76 };
-
-	@OriginalMember(owner = "client!mc", name = "w", descriptor = "Ljava/lang/String;")
-	public static String aString199 = "Loaded update list";
 
 	@OriginalMember(owner = "client!mc", name = "x", descriptor = "[Lclient!te;")
 	public static final Class4_Sub3_Sub19[] aClass4_Sub3_Sub19Array2 = new Class4_Sub3_Sub19[14];
@@ -565,14 +526,8 @@ public final class Static4 {
 	@OriginalMember(owner = "client!md", name = "b", descriptor = "[I")
 	public static final int[] anIntArray315 = new int[] { 1, 0, -1, 0 };
 
-	@OriginalMember(owner = "client!md", name = "e", descriptor = "Ljava/lang/String;")
-	public static String aString200 = "Loaded input handler";
-
 	@OriginalMember(owner = "client!md", name = "l", descriptor = "I")
 	public static int anInt3304 = 0;
-
-	@OriginalMember(owner = "client!md", name = "n", descriptor = "Ljava/lang/String;")
-	public static String aString201 = "Continue";
 
 	@OriginalMember(owner = "client!md", name = "o", descriptor = "[Lclient!ag;")
 	public static final Class7[] aClass7Array1 = new Class7[50];
@@ -583,9 +538,6 @@ public final class Static4 {
 	@OriginalMember(owner = "client!me", name = "h", descriptor = "Z")
 	public static boolean aBoolean231 = false;
 
-	@OriginalMember(owner = "client!mf", name = "b", descriptor = "Ljava/lang/String;")
-	public static String aString202 = "Choose Option";
-
 	@OriginalMember(owner = "client!mf", name = "d", descriptor = "Z")
 	public static boolean aBoolean232 = false;
 
@@ -595,12 +547,6 @@ public final class Static4 {
 	@OriginalMember(owner = "client!mf", name = "g", descriptor = "I")
 	public static int anInt3315 = 127;
 
-	@OriginalMember(owner = "client!mf", name = "i", descriptor = "Ljava/lang/String;")
-	public static String aString203 = "glow1:";
-
-	@OriginalMember(owner = "client!mf", name = "m", descriptor = "Ljava/lang/String;")
-	public static final String aString204 = "cyan:";
-
 	@OriginalMember(owner = "client!mg", name = "a", descriptor = "[I")
 	public static final int[] anIntArray317 = new int[2048];
 
@@ -609,9 +555,6 @@ public final class Static4 {
 
 	@OriginalMember(owner = "client!mg", name = "r", descriptor = "I")
 	public static int anInt3327 = 0;
-
-	@OriginalMember(owner = "client!mg", name = "u", descriptor = "Ljava/lang/String;")
-	public static String aString205 = "You can't add yourself to your own ignore list.";
 
 	@OriginalMember(owner = "client!mh", name = "a", descriptor = "I")
 	public static int anInt3330 = 0;
@@ -652,9 +595,6 @@ public final class Static4 {
 	@OriginalMember(owner = "client!mi", name = "b", descriptor = "I")
 	public static int anInt3335 = 0;
 
-	@OriginalMember(owner = "client!mi", name = "g", descriptor = "Ljava/lang/String;")
-	public static String aString206 = "Loading world list data";
-
 	@OriginalMember(owner = "client!ml", name = "p", descriptor = "[I")
 	public static final int[] anIntArray321 = Class109.anIntArray298;
 
@@ -672,9 +612,6 @@ public final class Static4 {
 
 	@OriginalMember(owner = "client!mm", name = "a", descriptor = "I")
 	public static int anInt3357 = 0;
-
-	@OriginalMember(owner = "client!mm", name = "e", descriptor = "Ljava/lang/String;")
-	public static String aString207 = "Connection lost.";
 
 	@OriginalMember(owner = "client!mm", name = "f", descriptor = "Lclient!cc;")
 	public static final Class26 aClass26_32 = new Class26(50);
@@ -711,9 +648,6 @@ public final class Static4 {
 
 	@OriginalMember(owner = "client!mn", name = "m", descriptor = "I")
 	public static int anInt3367 = -1;
-
-	@OriginalMember(owner = "client!mo", name = "X", descriptor = "Ljava/lang/String;")
-	public static String aString210 = "OpenRS2 is loading - please wait...";
 
 	@OriginalMember(owner = "client!mo", name = "db", descriptor = "[I")
 	public static final int[] anIntArray336 = new int[32];

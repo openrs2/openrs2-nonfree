@@ -299,17 +299,8 @@ public final class Static1 {
 	@OriginalMember(owner = "client!ac", name = "cb", descriptor = "I")
 	public static int anInt80 = 20;
 
-	@OriginalMember(owner = "client!ac", name = "db", descriptor = "Ljava/lang/String;")
-	public static String aString6 = "Walk here";
-
-	@OriginalMember(owner = "client!ac", name = "nb", descriptor = "Ljava/lang/String;")
-	public static String aString7 = "Loaded defaults";
-
 	@OriginalMember(owner = "client!ae", name = "c", descriptor = "[S")
 	public static final short[] aShortArray11 = new short[] { -10304, 9104, -1, -1, -1 };
-
-	@OriginalMember(owner = "client!ae", name = "d", descriptor = "Ljava/lang/String;")
-	public static String aString8 = "Close";
 
 	@OriginalMember(owner = "client!ae", name = "e", descriptor = "I")
 	public static int anInt91 = 0;
@@ -329,17 +320,8 @@ public final class Static1 {
 	@OriginalMember(owner = "client!af", name = "F", descriptor = "I")
 	public static int anInt113 = 0;
 
-	@OriginalMember(owner = "client!ah", name = "d", descriptor = "Ljava/lang/String;")
-	public static final String aString10 = "glow2:";
-
 	@OriginalMember(owner = "client!ah", name = "f", descriptor = "[I")
 	public static final int[] anIntArray15 = new int[1000];
-
-	@OriginalMember(owner = "client!aj", name = "b", descriptor = "Ljava/lang/String;")
-	public static String aString11 = "Discard";
-
-	@OriginalMember(owner = "client!ak", name = "b", descriptor = "I")
-	public static int anInt124 = 0;
 
 	@OriginalMember(owner = "client!ak", name = "d", descriptor = "I")
 	public static int anInt126 = 0;
@@ -374,12 +356,6 @@ public final class Static1 {
 	@OriginalMember(owner = "client!ao", name = "f", descriptor = "Lclient!cc;")
 	public static final Class26 aClass26_2 = new Class26(50);
 
-	@OriginalMember(owner = "client!ao", name = "g", descriptor = "Ljava/lang/String;")
-	public static String aString22 = "Examine";
-
-	@OriginalMember(owner = "client!ao", name = "h", descriptor = "Ljava/lang/String;")
-	public static String aString23 = "Connected to update server";
-
 	@OriginalMember(owner = "client!b", name = "a", descriptor = "[I")
 	public static final int[] anIntArray22 = new int[1];
 
@@ -394,9 +370,6 @@ public final class Static1 {
 
 	@OriginalMember(owner = "client!bb", name = "C", descriptor = "I")
 	public static int anInt242 = 0;
-
-	@OriginalMember(owner = "client!bb", name = "F", descriptor = "Ljava/lang/String;")
-	public static String aString26 = "Take";
 
 	@OriginalMember(owner = "client!bc", name = "u", descriptor = "I")
 	public static int anInt925 = 0;
@@ -434,17 +407,11 @@ public final class Static1 {
 	@OriginalMember(owner = "client!bf", name = "l", descriptor = "[I")
 	public static final int[] anIntArray35 = new int[] { 256, 128, 86, 64 };
 
-	@OriginalMember(owner = "client!bg", name = "o", descriptor = "Ljava/lang/String;")
-	public static String aString29 = "rating: ";
-
 	@OriginalMember(owner = "client!bg", name = "r", descriptor = "Z")
 	public static volatile boolean aBoolean18 = false;
 
 	@OriginalMember(owner = "client!bg", name = "u", descriptor = "[Lclient!t;")
 	public static final Class160[] aClass160Array1 = new Class160[6];
-
-	@OriginalMember(owner = "client!bg", name = "v", descriptor = "Ljava/lang/String;")
-	public static String aString30 = "Loading config - ";
 
 	@OriginalMember(owner = "client!bh", name = "b", descriptor = "Lclient!uk;")
 	public static final Class175 aClass175_4 = new Class175();
@@ -500,17 +467,11 @@ public final class Static1 {
 	@OriginalMember(owner = "client!bo", name = "r", descriptor = "I")
 	public static int anInt420 = -1;
 
-	@OriginalMember(owner = "client!c", name = "A", descriptor = "Ljava/lang/String;")
-	public static String aString38 = "Your ignore list is full. Max of 100 users.";
-
 	@OriginalMember(owner = "client!c", name = "L", descriptor = "[[[I")
 	public static final int[][][] anIntArrayArrayArray1 = new int[2][][];
 
 	@OriginalMember(owner = "client!ca", name = "V", descriptor = "[I")
 	public static final int[] anIntArray46 = new int[] { 8, 11, 4, 6, 9, 7, 10, 0 };
-
-	@OriginalMember(owner = "client!cb", name = "n", descriptor = "Ljava/lang/String;")
-	public static String aString43 = "yellow:";
 
 	@OriginalMember(owner = "client!cc", name = "c", descriptor = "I")
 	public static int anInt528 = -1;
@@ -545,9 +506,6 @@ public final class Static1 {
 	@OriginalMember(owner = "client!cg", name = "a", descriptor = "Z")
 	public static boolean aBoolean35 = false;
 
-	@OriginalMember(owner = "client!cg", name = "e", descriptor = "Ljava/lang/String;")
-	public static String aString46 = "Please wait - attempting to reestablish.";
-
 	@OriginalMember(owner = "client!cg", name = "m", descriptor = "I")
 	public static int anInt595 = 0;
 
@@ -571,9 +529,6 @@ public final class Static1 {
 
 	@OriginalMember(owner = "client!cj", name = "C", descriptor = "[Lclient!te;")
 	public static final Class4_Sub3_Sub19[] aClass4_Sub3_Sub19Array1 = new Class4_Sub3_Sub19[14];
-
-	@OriginalMember(owner = "client!cj", name = "H", descriptor = "Ljava/lang/String;")
-	public static String aString49 = "M";
 
 	@OriginalMember(owner = "client!cj", name = "X", descriptor = "J")
 	public static long aLong32 = 0L;
@@ -602,14 +557,8 @@ public final class Static1 {
 	@OriginalMember(owner = "client!d", name = "j", descriptor = "I")
 	public static int anInt837 = 0;
 
-	@OriginalMember(owner = "client!d", name = "k", descriptor = "Ljava/lang/String;")
-	public static String aString55 = " ";
-
 	@OriginalMember(owner = "client!d", name = "n", descriptor = "[I")
 	public static final int[] anIntArray60 = new int[] { 4, 4, 1, 2, 6, 4, 2, 48, 2, 2, 2, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 };
-
-	@OriginalMember(owner = "client!d", name = "H", descriptor = "Ljava/lang/String;")
-	public static String aString56 = "Loading title screen - ";
 
 	@OriginalMember(owner = "client!da", name = "d", descriptor = "Z")
 	public static boolean aBoolean49 = false;

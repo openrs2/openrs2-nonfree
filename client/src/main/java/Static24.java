@@ -371,7 +371,7 @@ public final class Static24 {
 				if (Static4.anInt3304 == 5) {
 					Static28.method3331(true, Static5.aClass4_Sub3_Sub5_3);
 				} else {
-					Static37.method4716(Static4.aString187, false);
+					Static37.method4716(LocalisedText.LOADING, false);
 				}
 				try {
 					@Pc(268) Graphics local268 = Static5.aCanvas115.getGraphics();

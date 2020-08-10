@@ -296,7 +296,7 @@ public final class Static36 {
 		if (Static6.aString261 != null) {
 			local12 = "/p=" + Static6.aString261;
 		}
-		return "http://" + local5 + ".openrs2.dev/l=" + Static1.anInt124 + "/a=" + Static6.anInt4938 + local12 + "/";
+		return "http://" + local5 + ".openrs2.dev/l=" + client.language + "/a=" + Static6.anInt4938 + local12 + "/";
 	}
 
 	@OriginalMember(owner = "client!ve", name = "a", descriptor = "(IIIIIIIII)Z")

@@ -428,7 +428,7 @@ public final class Static10 {
 			Static8.method66(Static6.anInt4440, Static3.anInt2394, Static5.anInt3890, Static4.anInt3455);
 		} else {
 			Static8.method66(Static6.anInt4440, Static3.anInt2394, Static5.anInt3890, Static4.anInt3455);
-			@Pc(93) int local93 = Static5.aClass4_Sub3_Sub5_3.method2252(Static4.aString202);
+			@Pc(93) int local93 = Static5.aClass4_Sub3_Sub5_3.method2252(LocalisedText.CHOOSE_OPTION);
 			for (@Pc(95) int local95 = 0; local95 < Static7.anInt5634; local95++) {
 				@Pc(108) int local108 = Static5.aClass4_Sub3_Sub5_3.method2252(Static26.method2992(local95));
 				if (local93 < local108) {

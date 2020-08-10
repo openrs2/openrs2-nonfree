@@ -142,24 +142,24 @@ public final class Static32 {
 			return;
 		}
 		if (Static6.anInt4516 >= 100) {
-			Static26.method4357("", 0, Static1.aString38);
+			Static26.method4357("", 0, LocalisedText.IGNORELISTFULL);
 			return;
 		}
 		@Pc(25) String local25 = Static29.method3477(arg1);
 		for (@Pc(27) int local27 = 0; local27 < Static6.anInt4516; local27++) {
 			if (Static3.aLongArray16[local27] == arg1) {
-				Static26.method4357("", 0, local25 + Static3.aString128);
+				Static26.method4357("", 0, local25 + LocalisedText.IGNORELISTDUPE);
 				return;
 			}
 		}
 		for (@Pc(59) int local59 = 0; local59 < Static6.anInt5214; local59++) {
 			if (Static7.aLongArray54[local59] == arg1) {
-				Static26.method4357("", 0, Static6.aString260 + local25 + Static3.aString113);
+				Static26.method4357("", 0, LocalisedText.REMOVEFRIEND1 + local25 + LocalisedText.REMOVEFRIEND2);
 				return;
 			}
 		}
 		if (local25.equals(Static4.aClass53_Sub1_Sub1_2.aString88)) {
-			Static26.method4357("", 0, Static4.aString205);
+			Static26.method4357("", 0, LocalisedText.IGNORECANTADDSELF);
 			return;
 		}
 		Static3.aLongArray16[Static6.anInt4516] = arg1;

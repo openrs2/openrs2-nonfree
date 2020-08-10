@@ -22,7 +22,7 @@ public final class Static8 {
 		} else {
 			Static9.method233(25);
 		}
-		Static37.method4716(Static4.aString187, true);
+		Static37.method4716(LocalisedText.LOADING, true);
 		@Pc(57) int local57 = Static5.anInt3983;
 		@Pc(59) int local59 = Static7.anInt5479;
 		Static5.anInt3983 = arg1 * 8 - 48;
@@ -195,7 +195,7 @@ public final class Static8 {
 			}
 		}
 		if (!local19) {
-			Static26.method4357("", 0, Static6.aString276 + local17);
+			Static26.method4357("", 0, LocalisedText.UNABLETOFIND + local17);
 		}
 	}
 

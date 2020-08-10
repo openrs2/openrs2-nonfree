@@ -226,7 +226,7 @@ public final class Class185 {
 	public int anInt5907 = 0;
 
 	@OriginalMember(owner = "client!wf", name = "i", descriptor = "Ljava/lang/String;")
-	public String aString349 = Static6.aString282;
+	public String aString349 = LocalisedText.OK;
 
 	@OriginalMember(owner = "client!wf", name = "M", descriptor = "I")
 	public int anInt5896 = 0;
@@ -839,16 +839,16 @@ public final class Class185 {
 			this.aString349 = arg0.readString();
 			if (this.aString349.length() == 0) {
 				if (this.anInt5912 == 1) {
-					this.aString349 = Static6.aString282;
+					this.aString349 = LocalisedText.OK;
 				}
 				if (this.anInt5912 == 4) {
-					this.aString349 = Static5.aString37;
+					this.aString349 = LocalisedText.SELECT;
 				}
 				if (this.anInt5912 == 5) {
-					this.aString349 = Static5.aString37;
+					this.aString349 = LocalisedText.SELECT;
 				}
 				if (this.anInt5912 == 6) {
-					this.aString349 = Static4.aString201;
+					this.aString349 = LocalisedText.CONTINUE;
 				}
 			}
 		}

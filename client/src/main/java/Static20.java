@@ -1073,7 +1073,7 @@ public final class Static20 {
 				Static34.method4222(local47 - 152, local59, 304, 34, 9179409);
 				Static33.method4205(local47 - 150, local59 + 2, Static4.anInt2644 * 3, 30, 9179409);
 			}
-			Static5.aClass4_Sub3_Sub5_3.method2271(Static2.aString68, local47, local59 + 20, 16777215, -1);
+			Static5.aClass4_Sub3_Sub5_3.method2271(LocalisedText.LOADINGDOTDOTDOT, local47, local59 + 20, 16777215, -1);
 			return;
 		}
 		Static7.anInt5680 = (int) ((float) (arg0 * 2) / Static3.aFloat68);
