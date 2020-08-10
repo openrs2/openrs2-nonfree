@@ -59,7 +59,7 @@ public final class Js5Index {
 
 	@OriginalMember(owner = "client!fo", name = "a", descriptor = "([BI)V")
 	private void read(@OriginalArg(0) byte[] bytes) {
-		@Pc(8) Buffer buffer = new Buffer(Static19.method1749(bytes));
+		@Pc(8) Buffer buffer = new Buffer(Js5Compression.uncompress(bytes));
 		@Pc(12) int protocol = buffer.readUnsignedByte();
 		if (protocol != 5 && protocol != 6) {
 			throw new RuntimeException();

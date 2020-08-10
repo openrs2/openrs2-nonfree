@@ -449,9 +449,6 @@ public final class Static3 {
 	@OriginalMember(owner = "client!gh", name = "d", descriptor = "I")
 	public static int anInt2579 = 0;
 
-	@OriginalMember(owner = "client!gh", name = "e", descriptor = "Lclient!jb;")
-	public static final Class93 aClass93_2 = new Class93();
-
 	@OriginalMember(owner = "client!gh", name = "i", descriptor = "I")
 	public static int anInt2582 = 0;
 

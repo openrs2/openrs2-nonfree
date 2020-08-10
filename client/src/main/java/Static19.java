@@ -7,32 +7,6 @@ import dev.openrs2.deob.annotation.Pc;
 
 public final class Static19 {
 
-	@OriginalMember(owner = "client!hj", name = "a", descriptor = "(Z[B)[B")
-	public static byte[] method1749(@OriginalArg(1) byte[] arg0) {
-		@Pc(8) Buffer local8 = new Buffer(arg0);
-		@Pc(12) int local12 = local8.readUnsignedByte();
-		@Pc(16) int local16 = local8.readInt();
-		if (local16 < 0 || Static7.anInt5956 != 0 && Static7.anInt5956 < local16) {
-			throw new RuntimeException();
-		} else if (local12 == 0) {
-			@Pc(47) byte[] local47 = new byte[local16];
-			local8.readBytes(local47, local16);
-			return local47;
-		} else {
-			@Pc(59) int local59 = local8.readInt();
-			if (local59 < 0 || Static7.anInt5956 != 0 && Static7.anInt5956 < local59) {
-				throw new RuntimeException();
-			}
-			@Pc(84) byte[] local84 = new byte[local59];
-			if (local12 == 1) {
-				Static10.method351(local84, local59, arg0, local16);
-			} else {
-				Static3.aClass93_2.method1979(local8, local84);
-			}
-			return local84;
-		}
-	}
-
 	@OriginalMember(owner = "client!hk", name = "a", descriptor = "(IZI)V")
 	public static void method1773(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1) {
 		@Pc(14) Class4_Sub3_Sub9 local14 = Static12.method2322(6, arg1);

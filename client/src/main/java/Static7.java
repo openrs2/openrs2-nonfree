@@ -461,9 +461,6 @@ public final class Static7 {
 	@OriginalMember(owner = "client!wf", name = "Dc", descriptor = "I")
 	public static int anInt5946 = 0;
 
-	@OriginalMember(owner = "client!wf", name = "Tc", descriptor = "I")
-	public static final int anInt5956 = 0;
-
 	@OriginalMember(owner = "client!wg", name = "E", descriptor = "I")
 	public static int anInt5997 = 2;
 
