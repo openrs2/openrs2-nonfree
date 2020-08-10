@@ -836,7 +836,7 @@ public final class Static33 {
 		}
 		local25.method743();
 		if (local25.anInt907 == 2 && Static5.aClass84_16.method1844((long) arg0) == null) {
-			Static5.aClass84_16.method1840(new Class4_Sub32(Static1.anInt876), (long) arg0);
+			Static5.aClass84_16.method1840(new IntNode(Static1.anInt876), (long) arg0);
 			Static6.aClass37Array1[Static1.anInt876++] = local25;
 		}
 		Static3.aClass26_21.method510(local25, (long) arg0);

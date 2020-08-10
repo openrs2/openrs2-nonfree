@@ -29,17 +29,17 @@ public final class Class4_Sub3_Sub3 extends Class4_Sub3 {
 		if (this.aClass84_3 == null) {
 			return this.anInt642;
 		} else {
-			@Pc(17) Class4_Sub32 local17 = (Class4_Sub32) this.aClass84_3.method1844((long) arg0);
-			return local17 == null ? this.anInt642 : local17.anInt5434;
+			@Pc(17) IntNode local17 = (IntNode) this.aClass84_3.method1844((long) arg0);
+			return local17 == null ? this.anInt642 : local17.value;
 		}
 	}
 
 	@OriginalMember(owner = "client!cj", name = "d", descriptor = "(I)V")
 	private void method602() {
 		this.aClass84_2 = new Class84(this.aClass84_3.method1839());
-		for (@Pc(22) Class4_Sub26 local22 = (Class4_Sub26) this.aClass84_3.method1842(); local22 != null; local22 = (Class4_Sub26) this.aClass84_3.method1843()) {
-			@Pc(34) Class4_Sub22 local34 = new Class4_Sub22(local22.aString278, (int) local22.key);
-			this.aClass84_2.method1840(local34, Static24.method2682(local22.aString278));
+		for (@Pc(22) StringNode local22 = (StringNode) this.aClass84_3.method1842(); local22 != null; local22 = (StringNode) this.aClass84_3.method1843()) {
+			@Pc(34) Class4_Sub22 local34 = new Class4_Sub22(local22.value, (int) local22.key);
+			this.aClass84_2.method1840(local34, Static24.method2682(local22.value));
 		}
 	}
 
@@ -60,9 +60,9 @@ public final class Class4_Sub3_Sub3 extends Class4_Sub3 {
 				@Pc(87) int local87 = arg0.readInt();
 				@Pc(99) Node local99;
 				if (arg1 == 5) {
-					local99 = new Class4_Sub26(arg0.readString());
+					local99 = new StringNode(arg0.readString());
 				} else {
-					local99 = new Class4_Sub32(arg0.readInt());
+					local99 = new IntNode(arg0.readInt());
 				}
 				this.aClass84_3.method1840(local99, (long) local87);
 			}
@@ -77,7 +77,7 @@ public final class Class4_Sub3_Sub3 extends Class4_Sub3 {
 		if (this.aClass84_2 == null) {
 			this.method607();
 		}
-		@Pc(32) Class4_Sub32 local32 = (Class4_Sub32) this.aClass84_2.method1844((long) arg0);
+		@Pc(32) IntNode local32 = (IntNode) this.aClass84_2.method1844((long) arg0);
 		return local32 != null;
 	}
 
@@ -86,17 +86,17 @@ public final class Class4_Sub3_Sub3 extends Class4_Sub3 {
 		if (this.aClass84_3 == null) {
 			return this.aString50;
 		} else {
-			@Pc(18) Class4_Sub26 local18 = (Class4_Sub26) this.aClass84_3.method1844((long) arg0);
-			return local18 == null ? this.aString50 : local18.aString278;
+			@Pc(18) StringNode local18 = (StringNode) this.aClass84_3.method1844((long) arg0);
+			return local18 == null ? this.aString50 : local18.value;
 		}
 	}
 
 	@OriginalMember(owner = "client!cj", name = "e", descriptor = "(I)V")
 	private void method607() {
 		this.aClass84_2 = new Class84(this.aClass84_3.method1839());
-		for (@Pc(24) Class4_Sub32 local24 = (Class4_Sub32) this.aClass84_3.method1842(); local24 != null; local24 = (Class4_Sub32) this.aClass84_3.method1843()) {
-			@Pc(33) Class4_Sub32 local33 = new Class4_Sub32((int) local24.key);
-			this.aClass84_2.method1840(local33, (long) local24.anInt5434);
+		for (@Pc(24) IntNode local24 = (IntNode) this.aClass84_3.method1842(); local24 != null; local24 = (IntNode) this.aClass84_3.method1843()) {
+			@Pc(33) IntNode local33 = new IntNode((int) local24.key);
+			this.aClass84_2.method1840(local33, (long) local24.value);
 		}
 	}
 

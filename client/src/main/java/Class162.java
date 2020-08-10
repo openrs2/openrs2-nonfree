@@ -383,8 +383,8 @@ public final class Class162 {
 		if (this.aClass84_22 == null) {
 			return arg0;
 		} else {
-			@Pc(20) Class4_Sub26 local20 = (Class4_Sub26) this.aClass84_22.method1844((long) arg1);
-			return local20 == null ? arg0 : local20.aString278;
+			@Pc(20) StringNode local20 = (StringNode) this.aClass84_22.method1844((long) arg1);
+			return local20 == null ? arg0 : local20.value;
 		}
 	}
 
@@ -438,8 +438,8 @@ public final class Class162 {
 		if (this.aClass84_22 == null) {
 			return arg1;
 		} else {
-			@Pc(26) Class4_Sub32 local26 = (Class4_Sub32) this.aClass84_22.method1844((long) arg0);
-			return local26 == null ? arg1 : local26.anInt5434;
+			@Pc(26) IntNode local26 = (IntNode) this.aClass84_22.method1844((long) arg0);
+			return local26 == null ? arg1 : local26.value;
 		}
 	}
 
@@ -642,9 +642,9 @@ public final class Class162 {
 				@Pc(499) int local499 = arg1.readUnsignedMedium();
 				@Pc(508) Node local508;
 				if (local495) {
-					local508 = new Class4_Sub26(arg1.readString());
+					local508 = new StringNode(arg1.readString());
 				} else {
-					local508 = new Class4_Sub32(arg1.readInt());
+					local508 = new IntNode(arg1.readInt());
 				}
 				this.aClass84_22.method1840(local508, (long) local499);
 			}

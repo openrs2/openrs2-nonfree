@@ -634,9 +634,9 @@ public final class Static16 {
 					if (local45 == 51) {
 						@Pc(814) Class84 local814 = arg1.aClass84Array1[local23[local11]];
 						local5--;
-						@Pc(826) Class4_Sub32 local826 = (Class4_Sub32) local814.method1844((long) Static7.anIntArray571[local5]);
+						@Pc(826) IntNode local826 = (IntNode) local814.method1844((long) Static7.anIntArray571[local5]);
 						if (local826 != null) {
-							local11 += local826.anInt5434;
+							local11 += local826.value;
 						}
 						continue;
 					}

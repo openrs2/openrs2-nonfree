@@ -845,7 +845,7 @@ public final class Static24 {
 	@OriginalMember(owner = "client!mh", name = "a", descriptor = "(II)V")
 	public static synchronized void method2717(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
 		if (arg1 == Static4.anInt3332) {
-			@Pc(7) Class4_Sub32 local7 = new Class4_Sub32();
+			@Pc(7) IntNode local7 = new IntNode();
 			local7.key = arg0;
 			Static4.aClass112_21.method2612(local7);
 		}

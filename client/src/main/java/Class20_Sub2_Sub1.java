@@ -249,7 +249,7 @@ public final class Class20_Sub2_Sub1 extends Class20_Sub2 {
 				local39.anIntArray214 = new int[local39.anIntArray213.length];
 				for (@Pc(1006) int local1006 = 0; local1006 < local39.anIntArray213.length; local1006++) {
 					Static33.method4201(local39.anIntArray213[local1006]);
-					local39.anIntArray214[local1006] = ((Class4_Sub32) Static5.aClass84_16.method1844((long) local39.anIntArray213[local1006])).anInt5434;
+					local39.anIntArray214[local1006] = ((IntNode) Static5.aClass84_16.method1844((long) local39.anIntArray213[local1006])).value;
 				}
 			}
 			for (@Pc(1036) int local1036 = 0; local1036 < local39.anIntArray214.length; local1036++) {

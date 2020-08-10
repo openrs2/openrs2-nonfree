@@ -24,9 +24,9 @@ public final class Class4_Sub3_Sub17 extends Class4_Sub3 {
 			@Pc(45) int local45 = arg0.readUnsignedMedium();
 			@Pc(54) Node local54;
 			if (local41) {
-				local54 = new Class4_Sub26(arg0.readString());
+				local54 = new StringNode(arg0.readString());
 			} else {
-				local54 = new Class4_Sub32(arg0.readInt());
+				local54 = new IntNode(arg0.readInt());
 			}
 			this.aClass84_21.method1840(local54, (long) local45);
 		}
@@ -37,8 +37,8 @@ public final class Class4_Sub3_Sub17 extends Class4_Sub3 {
 		if (this.aClass84_21 == null) {
 			return arg0;
 		} else {
-			@Pc(19) Class4_Sub32 local19 = (Class4_Sub32) this.aClass84_21.method1844((long) arg1);
-			return local19 == null ? arg0 : local19.anInt5434;
+			@Pc(19) IntNode local19 = (IntNode) this.aClass84_21.method1844((long) arg1);
+			return local19 == null ? arg0 : local19.value;
 		}
 	}
 
@@ -58,8 +58,8 @@ public final class Class4_Sub3_Sub17 extends Class4_Sub3 {
 		if (this.aClass84_21 == null) {
 			return arg0;
 		} else {
-			@Pc(22) Class4_Sub26 local22 = (Class4_Sub26) this.aClass84_21.method1844((long) arg1);
-			return local22 == null ? arg0 : local22.aString278;
+			@Pc(22) StringNode local22 = (StringNode) this.aClass84_21.method1844((long) arg1);
+			return local22 == null ? arg0 : local22.value;
 		}
 	}
 }

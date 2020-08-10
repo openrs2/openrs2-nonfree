@@ -319,12 +319,12 @@ public final class Class4_Sub12 extends Node {
 		@Pc(1) long local1 = 0L;
 		if ((arg0 & 0x7F) == 0 || (arg2 & 0x7F) == 0) {
 			local1 = (long) (arg0 + (arg2 << 16)) + ((long) arg6 << 32);
-			@Pc(28) Class4_Sub32 local28 = (Class4_Sub32) this.aClass84_6.method1844(local1);
+			@Pc(28) IntNode local28 = (IntNode) this.aClass84_6.method1844(local1);
 			if (local28 != null) {
-				if (arg1 < this.anIntArray207[local28.anInt5434]) {
-					this.anIntArray207[local28.anInt5434] = arg1;
+				if (arg1 < this.anIntArray207[local28.value]) {
+					this.anIntArray207[local28.value] = arg1;
 				}
-				return local28.anInt5434;
+				return local28.value;
 			}
 		}
 		this.anIntArray203[this.anInt2357] = arg0;
@@ -338,7 +338,7 @@ public final class Class4_Sub12 extends Node {
 		this.aFloatArray25[this.anInt2357] = arg5;
 		this.anIntArray201[this.anInt2357] = arg6;
 		if (local1 != 0L) {
-			this.aClass84_6.method1840(new Class4_Sub32(this.anInt2357), local1);
+			this.aClass84_6.method1840(new IntNode(this.anInt2357), local1);
 		}
 		return this.anInt2357++;
 	}

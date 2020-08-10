@@ -165,7 +165,7 @@ public final class Static28 {
 				while (local84-- > 0) {
 					@Pc(103) int local103 = local14.readInt();
 					@Pc(107) int local107 = local14.readInt();
-					local91.method1840(new Class4_Sub32(local107), (long) local103);
+					local91.method1840(new IntNode(local107), (long) local103);
 				}
 			}
 		}
@@ -200,12 +200,12 @@ public final class Static28 {
 			if (local12.anIntArray385[local26] >= 0 && Static5.anInt6072 > local12.anIntArray385[local26]) {
 				@Pc(61) Class162 local61 = Static35.method4361(local12.anIntArray385[local26]);
 				if (local61.aClass84_22 != null) {
-					@Pc(72) Class4_Sub32 local72 = (Class4_Sub32) local61.aClass84_22.method1844((long) arg0);
+					@Pc(72) IntNode local72 = (IntNode) local61.aClass84_22.method1844((long) arg0);
 					if (local72 != null) {
 						if (arg2) {
-							local19 += local72.anInt5434 * local12.anIntArray386[local26];
+							local19 += local72.value * local12.anIntArray386[local26];
 						} else {
-							local19 += local72.anInt5434;
+							local19 += local72.value;
 						}
 					}
 				}

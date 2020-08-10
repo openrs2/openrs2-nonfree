@@ -159,9 +159,9 @@ public final class Class135 {
 		@Pc(1) long local1 = 0L;
 		if ((arg1 & 0x7F) == 0 || (arg3 & 0x7F) == 0) {
 			local1 = arg1 + (arg3 << 16);
-			@Pc(23) Class4_Sub32 local23 = (Class4_Sub32) this.aClass84_19.method1844(local1);
+			@Pc(23) IntNode local23 = (IntNode) this.aClass84_19.method1844(local1);
 			if (local23 != null) {
-				return local23.anInt5434;
+				return local23.value;
 			}
 		}
 		@Pc(31) int local31 = arg0.anInt1321;
@@ -204,7 +204,7 @@ public final class Class135 {
 		this.anIntArray439[this.anInt4161] = arg1;
 		this.anIntArray438[this.anInt4161] = arg2;
 		this.anIntArray436[this.anInt4161] = arg3;
-		this.aClass84_19.method1840(new Class4_Sub32(this.anInt4161), local1);
+		this.aClass84_19.method1840(new IntNode(this.anInt4161), local1);
 		return this.anInt4161++;
 	}
 }

@@ -183,8 +183,8 @@ public final class Class168 {
 		if (this.aClass84_24 == null) {
 			return arg1;
 		} else {
-			@Pc(23) Class4_Sub26 local23 = (Class4_Sub26) this.aClass84_24.method1844((long) arg0);
-			return local23 == null ? arg1 : local23.aString278;
+			@Pc(23) StringNode local23 = (StringNode) this.aClass84_24.method1844((long) arg0);
+			return local23 == null ? arg1 : local23.value;
 		}
 	}
 
@@ -364,9 +364,9 @@ public final class Class168 {
 				@Pc(611) int local611 = arg0.readUnsignedMedium();
 				@Pc(620) Node local620;
 				if (local607) {
-					local620 = new Class4_Sub26(arg0.readString());
+					local620 = new StringNode(arg0.readString());
 				} else {
-					local620 = new Class4_Sub32(arg0.readInt());
+					local620 = new IntNode(arg0.readInt());
 				}
 				this.aClass84_24.method1840(local620, (long) local611);
 			}
@@ -398,8 +398,8 @@ public final class Class168 {
 		if (this.aClass84_24 == null) {
 			return arg0;
 		} else {
-			@Pc(25) Class4_Sub32 local25 = (Class4_Sub32) this.aClass84_24.method1844((long) arg1);
-			return local25 == null ? arg0 : local25.anInt5434;
+			@Pc(25) IntNode local25 = (IntNode) this.aClass84_24.method1844((long) arg1);
+			return local25 == null ? arg0 : local25.value;
 		}
 	}
 
