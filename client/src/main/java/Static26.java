@@ -809,7 +809,7 @@ public final class Static26 {
 
 	@OriginalMember(owner = "client!nj", name = "a", descriptor = "(I)Z")
 	public static boolean method2988() {
-		if (Static2.aBoolean102) {
+		if (client.javaScript) {
 			try {
 				Class86.method1851(Static7.aClass196_4.applet, "showVideoAd");
 				return true;

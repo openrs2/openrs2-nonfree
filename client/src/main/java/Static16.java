@@ -134,7 +134,7 @@ public final class Static16 {
 					method1497(0L, local30, local46, " ->", Static4.aString140, (short) 19, Static6.anInt4466);
 				}
 			} else {
-				if (Static2.anInt5720 == 1) {
+				if (client.game == 1) {
 					method1497(0L, local30, local46, "", LocalisedText.FACEHERE, (short) 47, -1);
 				}
 				method1497(0L, local30, local46, "", Static5.aString236, (short) 26, -1);
@@ -1983,7 +1983,7 @@ public final class Static16 {
 							continue;
 						}
 						if (local45 == 3337) {
-							Static7.anIntArray571[local5++] = Static6.anInt4938;
+							Static7.anIntArray571[local5++] = client.affiliate;
 							continue;
 						}
 					} else if (local45 < 3500) {
@@ -2303,7 +2303,7 @@ public final class Static16 {
 							continue;
 						}
 						if (local45 == 3629) {
-							Static7.anIntArray571[local5++] = Static5.anInt6076;
+							Static7.anIntArray571[local5++] = client.country;
 							continue;
 						}
 						if (local45 == 3630) {
@@ -3935,7 +3935,7 @@ public final class Static16 {
 									local5--;
 									@Pc(9100) boolean local9100 = Static7.anIntArray571[local5] == 1;
 									@Pc(9110) String local9110 = Static36.method4436() + local9090;
-									if (Static4.aFrame2 != null || local9100 && SignLink.anInt6106 != 3 && SignLink.osName.startsWith("win") && !Static2.aBoolean118) {
+									if (Static4.aFrame2 != null || local9100 && SignLink.anInt6106 != 3 && SignLink.osName.startsWith("win") && !client.haveIe6) {
 										Static6.aString269 = local9110;
 										Static4.aBoolean206 = local9100;
 										Static1.aClass197_1 = Static7.aClass196_4.openUrl(local9110);
@@ -3952,13 +3952,13 @@ public final class Static16 {
 									@Pc(9161) int local9161 = Static7.anIntArray571[local5];
 									if (local9150.length() > 0) {
 										if (Static7.aStringArray38 == null) {
-											Static7.aStringArray38 = new String[Static5.anIntArray681[Static2.anInt5720]];
+											Static7.aStringArray38 = new String[Static5.anIntArray681[client.game]];
 										}
 										Static7.aStringArray38[local9161] = local9150;
 									}
 									if (local9156.length() > 0) {
 										if (Static2.aStringArray42 == null) {
-											Static2.aStringArray42 = new String[Static5.anIntArray681[Static2.anInt5720]];
+											Static2.aStringArray42 = new String[Static5.anIntArray681[client.game]];
 										}
 										Static2.aStringArray42[local9161] = local9156;
 									}
@@ -4887,7 +4887,7 @@ public final class Static16 {
 			}
 		} catch (@Pc(15060) Exception local15060) {
 			if (arg1.aString159 == null) {
-				if (Static4.anInt3406 != 0) {
+				if (client.modeWhere != 0) {
 					Static26.method4357("", 0, "Clientscript error - check log for details");
 				}
 				Static26.method3059(local15060, "CS2 - scr:" + arg1.key + " op:" + local25);
@@ -4901,7 +4901,7 @@ public final class Static16 {
 					@Pc(15103) int local15103 = local23[local11];
 					local15069.append("%0a - non-existant gosub script-num: ").append(Integer.toString(local15103));
 				}
-				if (Static4.anInt3406 != 0) {
+				if (client.modeWhere != 0) {
 					Static26.method4357("", 0, "Clientscript error in: " + arg1.aString159);
 				}
 				Static26.method3059(local15060, "CS2 - scr:" + arg1.key + " op:" + local25 + local15069.toString());

@@ -289,14 +289,14 @@ public final class Static36 {
 	@OriginalMember(owner = "client!vd", name = "a", descriptor = "(B)Ljava/lang/String;")
 	public static String method4436() {
 		@Pc(5) String local5 = "www";
-		if (Static4.anInt3406 != 0) {
+		if (client.modeWhere != 0) {
 			local5 = "www-wtqa";
 		}
 		@Pc(12) String local12 = "";
-		if (Static6.aString261 != null) {
-			local12 = "/p=" + Static6.aString261;
+		if (client.settings != null) {
+			local12 = "/p=" + client.settings;
 		}
-		return "http://" + local5 + ".openrs2.dev/l=" + client.language + "/a=" + Static6.anInt4938 + local12 + "/";
+		return "http://" + local5 + ".openrs2.dev/l=" + client.language + "/a=" + client.affiliate + local12 + "/";
 	}
 
 	@OriginalMember(owner = "client!ve", name = "a", descriptor = "(IIIIIIIII)Z")
@@ -616,7 +616,7 @@ public final class Static36 {
 		@Pc(176) int local176 = Static7.anInt5331 * local57 / Static3.anInt2965;
 		@Pc(184) int local184 = arg3 + local59 * Static5.anInt3546 / Static3.anInt2960;
 		@Pc(190) int local190 = Static7.anInt5680 * local59 / Static3.anInt2960;
-		if (Static2.anInt5720 == 1) {
+		if (client.game == 1) {
 			local166 = 16777215;
 		}
 		@Pc(207) int local207 = arg2 + Static3.anInt2542 * local57 / Static3.anInt2965;

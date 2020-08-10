@@ -1379,9 +1379,9 @@ public final class Static22 {
 
 	@OriginalMember(owner = "client!km", name = "f", descriptor = "(I)V")
 	public static void method2387() {
-		if (!Static1.aBoolean52 && Static4.anInt3406 != 2) {
+		if (!client.advertSuppressed && client.modeWhere != 2) {
 			try {
-				Class86.method1851(Static7.aClient1, "tbrefresh");
+				Class86.method1851(client.instance, "tbrefresh");
 			} catch (@Pc(24) Throwable local24) {
 			}
 		}

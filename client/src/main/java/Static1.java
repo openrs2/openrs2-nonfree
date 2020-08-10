@@ -584,9 +584,6 @@ public final class Static1 {
 	@OriginalMember(owner = "client!db", name = "l", descriptor = "Lclient!fe;")
 	public static Class56_Sub1 aClass56_Sub1_1 = null;
 
-	@OriginalMember(owner = "client!db", name = "p", descriptor = "Z")
-	public static boolean aBoolean52 = false;
-
 	@OriginalMember(owner = "client!db", name = "q", descriptor = "I")
 	public static int anInt891 = 0;
 }

@@ -607,7 +607,7 @@ public final class Static27 {
 				Static14.method1055(Static7.aClass196_4);
 				Static2.aBoolean104 = false;
 			}
-			if (arg0.startsWith("::fps ") && Static4.anInt3406 != 0) {
+			if (arg0.startsWith("::fps ") && client.modeWhere != 0) {
 				Static37.method4782(Static12.method737(arg0.substring(6)));
 			}
 			if (arg0.equalsIgnoreCase("::errortest")) {

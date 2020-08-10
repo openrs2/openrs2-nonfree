@@ -320,12 +320,6 @@ public final class Static14 {
 		}
 	}
 
-	@OriginalMember(owner = "client!el", name = "a", descriptor = "(ILjava/lang/String;)V")
-	public static void method1071(@OriginalArg(1) String arg0) {
-		System.out.println("Bad " + arg0 + ", Usage: worldid, <live/rc/wip>, <english/german>, <game0/game1>");
-		System.exit(1);
-	}
-
 	@OriginalMember(owner = "client!el", name = "a", descriptor = "(ILclient!fd;)V")
 	public static void method1072(@OriginalArg(1) Buffer arg0) {
 		@Pc(9) int local9 = arg0.readUnsignedSmart();
@@ -367,7 +361,7 @@ public final class Static14 {
 
 	@OriginalMember(owner = "client!em", name = "c", descriptor = "(I)Z")
 	public static boolean method1079() {
-		if (Static2.aBoolean102) {
+		if (client.javaScript) {
 			try {
 				return !((Boolean) Class86.method1851(Static7.aClass196_4.applet, "showingVideoAd"));
 			} catch (@Pc(23) Throwable local23) {

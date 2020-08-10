@@ -500,7 +500,7 @@ public final class Static33 {
 		}
 		@Pc(38) String local38 = arg0.aString316;
 		if (arg0.anInt5246 != 0) {
-			@Pc(51) String local51 = Static2.anInt5720 == 1 ? LocalisedText.RATING : LocalisedText.LEVEL;
+			@Pc(51) String local51 = client.game == 1 ? LocalisedText.RATING : LocalisedText.LEVEL;
 			local38 = local38 + Static20.method1921(Static4.aClass53_Sub1_Sub1_2.anInt1597, arg0.anInt5246) + " (" + local51 + arg0.anInt5246 + ")";
 		}
 		if (Static2.anInt1334 == 1) {
@@ -517,7 +517,7 @@ public final class Static33 {
 			}
 			if (local134 != null) {
 				for (@Pc(145) int local145 = 4; local145 >= 0; local145--) {
-					if (local134[local145] != null && (Static2.anInt5720 != 0 || !local134[local145].equalsIgnoreCase(LocalisedText.ATTACK))) {
+					if (local134[local145] != null && (client.game != 0 || !local134[local145].equalsIgnoreCase(LocalisedText.ATTACK))) {
 						@Pc(167) byte local167 = 0;
 						@Pc(169) int local169 = -1;
 						if (local145 == arg0.anInt5245) {
@@ -545,7 +545,7 @@ public final class Static33 {
 					}
 				}
 			}
-			if (Static2.anInt5720 == 0 && local134 != null) {
+			if (client.game == 0 && local134 != null) {
 				for (@Pc(249) int local249 = 4; local249 >= 0; local249--) {
 					if (local134[local249] != null && local134[local249].equalsIgnoreCase(LocalisedText.ATTACK)) {
 						@Pc(271) short local271 = 0;

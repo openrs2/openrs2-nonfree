@@ -493,9 +493,6 @@ public final class Static4 {
 	@OriginalMember(owner = "client!m", name = "f", descriptor = "I")
 	public static int anInt3275 = 0;
 
-	@OriginalMember(owner = "client!ma", name = "d", descriptor = "I")
-	public static int anInt3406 = 0;
-
 	@OriginalMember(owner = "client!ma", name = "e", descriptor = "I")
 	public static int anInt3407 = -1;
 
@@ -534,9 +531,6 @@ public final class Static4 {
 
 	@OriginalMember(owner = "client!me", name = "g", descriptor = "Lclient!on;")
 	public static final Class4_Sub21 aClass4_Sub21_1 = new Class4_Sub21(0, -1);
-
-	@OriginalMember(owner = "client!me", name = "h", descriptor = "Z")
-	public static boolean aBoolean231 = false;
 
 	@OriginalMember(owner = "client!mf", name = "d", descriptor = "Z")
 	public static boolean aBoolean232 = false;

@@ -95,9 +95,6 @@ public final class Static7 {
 	@OriginalMember(owner = "client!va", name = "d", descriptor = "[[I")
 	public static int[][] anIntArrayArray48;
 
-	@OriginalMember(owner = "client!va", name = "f", descriptor = "Lclient!client;")
-	public static client aClient1;
-
 	@OriginalMember(owner = "client!va", name = "i", descriptor = "[[B")
 	public static byte[][] aByteArrayArray50;
 
@@ -418,9 +415,6 @@ public final class Static7 {
 
 	@OriginalMember(owner = "client!vh", name = "B", descriptor = "[I")
 	public static final int[] anIntArray629 = new int[50];
-
-	@OriginalMember(owner = "client!vh", name = "hb", descriptor = "I")
-	public static int anInt5543 = 0;
 
 	@OriginalMember(owner = "client!vi", name = "T", descriptor = "I")
 	public static int anInt5584 = -1;

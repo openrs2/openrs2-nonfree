@@ -13,58 +13,100 @@ import dev.openrs2.deob.annotation.Pc;
 @OriginalClass("client!client")
 public final class client extends Applet_Sub1 {
 
+	@OriginalMember(owner = "client!pn", name = "e", descriptor = "I")
+	private static int worldId = 1;
+
+	@OriginalMember(owner = "client!ma", name = "d", descriptor = "I")
+	public static int modeWhere = 0;
+
+	@OriginalMember(owner = "client!vh", name = "hb", descriptor = "I")
+	public static int modeWhat = 0;
+
 	@OriginalMember(owner = "client!ak", name = "b", descriptor = "I")
 	public static int language = 0;
 
+	@OriginalMember(owner = "client!fc", name = "i", descriptor = "Z")
+	public static boolean javaScript = false;
+
+	@OriginalMember(owner = "client!db", name = "p", descriptor = "Z")
+	public static boolean advertSuppressed = false;
+
+	@OriginalMember(owner = "client!me", name = "h", descriptor = "Z")
+	public static boolean objectTag = false;
+
+	@OriginalMember(owner = "client!fd", name = "U", descriptor = "I")
+	public static int game = 0;
+
+	@OriginalMember(owner = "client!qj", name = "jb", descriptor = "Ljava/lang/String;")
+	public static String settings = null;
+
+	@OriginalMember(owner = "client!fm", name = "n", descriptor = "Z")
+	public static boolean haveIe6 = false;
+
+	@OriginalMember(owner = "client!ni", name = "g", descriptor = "I")
+	public static int country;
+
+	@OriginalMember(owner = "client!sn", name = "Y", descriptor = "I")
+	public static int affiliate = 0;
+
+	@OriginalMember(owner = "client!va", name = "f", descriptor = "Lclient!client;")
+	public static client instance;
+
 	@OriginalMember(owner = "client!client", name = "main", descriptor = "([Ljava/lang/String;)V")
-	public static void main(@OriginalArg(0) String[] arg0) {
+	public static void main(@OriginalArg(0) String[] args) {
 		try {
-			if (arg0.length != 4) {
-				Static14.method1071("argument count");
+			if (args.length != 4) {
+				printUsage("argument count");
 			}
-			Static5.anInt4213 = Integer.parseInt(arg0[0]);
-			Static4.anInt3406 = 2;
-			if (arg0[1].equals("live")) {
-				Static7.anInt5543 = 0;
-			} else if (arg0[1].equals("rc")) {
-				Static7.anInt5543 = 1;
-			} else if (arg0[1].equals("wip")) {
-				Static7.anInt5543 = 2;
+			worldId = Integer.parseInt(args[0]);
+			modeWhere = 2;
+			if (args[1].equals("live")) {
+				modeWhat = 0;
+			} else if (args[1].equals("rc")) {
+				modeWhat = 1;
+			} else if (args[1].equals("wip")) {
+				modeWhat = 2;
 			} else {
-				Static14.method1071("modewhat");
+				printUsage("modewhat");
 			}
-			Static1.aBoolean52 = false;
-			language = Language.fromIsoCode(arg0[2]);
+			advertSuppressed = false;
+			language = Language.fromIsoCode(args[2]);
 			if (language == -1) {
-				if (arg0[2].equals("english")) {
+				if (args[2].equals("english")) {
 					language = 0;
-				} else if (arg0[2].equals("german")) {
+				} else if (args[2].equals("german")) {
 					language = 1;
 				} else {
-					Static14.method1071("language");
+					printUsage("language");
 				}
 			}
 			LocalisedText.setLanguage(language);
-			Static2.aBoolean102 = false;
-			Static4.aBoolean231 = false;
-			if (arg0[3].equals("game0")) {
-				Static2.anInt5720 = 0;
-			} else if (arg0[3].equals("game1")) {
-				Static2.anInt5720 = 1;
+			javaScript = false;
+			objectTag = false;
+			if (args[3].equals("game0")) {
+				game = 0;
+			} else if (args[3].equals("game1")) {
+				game = 1;
 			} else {
-				Static14.method1071("game");
+				printUsage("game");
 			}
-			Static6.aString261 = "";
-			Static2.aBoolean118 = false;
-			Static5.anInt6076 = 0;
-			Static6.anInt4938 = 0;
-			@Pc(131) client local131 = new client();
-			Static7.aClient1 = local131;
-			local131.method679(Static7.anInt5543 + 32, Static2.anInt5720 == 1 ? "mechscape" : "openrs2");
+			settings = "";
+			haveIe6 = false;
+			country = 0;
+			affiliate = 0;
+			@Pc(131) client c = new client();
+			instance = c;
+			c.method679(modeWhat + 32, game == 1 ? "mechscape" : "openrs2");
 			Static4.aFrame2.setLocation(40, 40);
-		} catch (@Pc(156) Exception local156) {
-			Static26.method3059(local156, null);
+		} catch (@Pc(156) Exception ex) {
+			Static26.method3059(ex, null);
 		}
+	}
+
+	@OriginalMember(owner = "client!el", name = "a", descriptor = "(ILjava/lang/String;)V")
+	private static void printUsage(@OriginalArg(1) String thing) {
+		System.out.println("Bad " + thing + ", Usage: worldid, <live/rc/wip>, <english/german>, <game0/game1>");
+		System.exit(1);
 	}
 
 	@OriginalMember(owner = "client!client", name = "f", descriptor = "(I)V")
@@ -113,7 +155,7 @@ public final class client extends Applet_Sub1 {
 				}
 			}
 		}
-		if (!Static3.aBoolean138 && Static2.anInt5720 == 0) {
+		if (!Static3.aBoolean138 && game == 0) {
 			Static14.method1059();
 		} else if (Static3.anInt2574 == 0 && Static6.anInt4759 == 0) {
 			if (Static1.anInt772 == 2) {
@@ -572,28 +614,28 @@ public final class client extends Applet_Sub1 {
 		Static20.method1949();
 		Static2.aClass92_1 = new Class92();
 		Static7.aClass51_2 = new Class51();
-		if (Static7.anInt5543 != 0) {
+		if (modeWhat != 0) {
 			Static6.aByteArrayArray35 = new byte[50][];
 		}
 		Static33.method4149(Static7.aClass196_4);
-		if (Static4.anInt3406 == 0) {
+		if (modeWhere == 0) {
 			Static6.aString291 = this.getCodeBase().getHost();
 			Static3.anInt2337 = 43594;
 			Static7.anInt5498 = 443;
-		} else if (Static4.anInt3406 == 1) {
+		} else if (modeWhere == 1) {
 			Static6.aString291 = this.getCodeBase().getHost();
-			Static7.anInt5498 = Static5.anInt4213 + 50000;
-			Static3.anInt2337 = Static5.anInt4213 + 40000;
-		} else if (Static4.anInt3406 == 2) {
-			Static7.anInt5498 = Static5.anInt4213 + 50000;
-			Static3.anInt2337 = Static5.anInt4213 + 40000;
+			Static7.anInt5498 = worldId + 50000;
+			Static3.anInt2337 = worldId + 40000;
+		} else if (modeWhere == 2) {
+			Static7.anInt5498 = worldId + 50000;
+			Static3.anInt2337 = worldId + 40000;
 			Static6.aString291 = "127.0.0.1";
 		}
 		Static7.aShortArray124 = Static5.aShortArray74 = Static7.aShortArray111 = Static4.aShortArray126 = new short[256];
-		if (SignLink.anInt6106 == 3 && Static4.anInt3406 != 2) {
-			Static6.anInt4846 = Static5.anInt4213;
+		if (SignLink.anInt6106 == 3 && modeWhere != 2) {
+			Static6.anInt4846 = worldId;
 		}
-		if (Static2.anInt5720 == 1) {
+		if (game == 1) {
 			Static1.aShortArrayArray1 = Static5.aShortArrayArray5;
 			Static7.aShortArray113 = Static3.aShortArray35;
 			Static4.aShortArray46 = Static3.aShortArray32;
@@ -640,12 +682,12 @@ public final class client extends Applet_Sub1 {
 			Static1.aClass60_2 = null;
 			Static3.aClass189_4 = null;
 		}
-		if (Static4.anInt3406 != 0) {
+		if (modeWhere != 0) {
 			Static3.aBoolean176 = true;
 		}
-		if (Static2.anInt5720 == 0) {
+		if (game == 0) {
 			Static5.aString255 = LocalisedText.GAME0_LOADING;
-		} else if (Static2.anInt5720 == 1) {
+		} else if (game == 1) {
 			Static5.aString255 = LocalisedText.GAME1_LOADING;
 		}
 	}
@@ -776,20 +818,20 @@ public final class client extends Applet_Sub1 {
 		if (!this.method671()) {
 			return;
 		}
-		Static5.anInt4213 = Integer.parseInt(this.getParameter("worldid"));
-		Static4.anInt3406 = Integer.parseInt(this.getParameter("modewhere"));
-		if (Static4.anInt3406 < 0 || Static4.anInt3406 > 1) {
-			Static4.anInt3406 = 0;
+		worldId = Integer.parseInt(this.getParameter("worldid"));
+		modeWhere = Integer.parseInt(this.getParameter("modewhere"));
+		if (modeWhere < 0 || modeWhere > 1) {
+			modeWhere = 0;
 		}
-		Static7.anInt5543 = Integer.parseInt(this.getParameter("modewhat"));
-		if (Static7.anInt5543 < 0 || Static7.anInt5543 > 2) {
-			Static7.anInt5543 = 0;
+		modeWhat = Integer.parseInt(this.getParameter("modewhat"));
+		if (modeWhat < 0 || modeWhat > 2) {
+			modeWhat = 0;
 		}
-		@Pc(48) String local48 = this.getParameter("advertsuppressed");
-		if (local48 != null && local48.equals("1")) {
-			Static1.aBoolean52 = true;
+		@Pc(48) String advertSuppressedStr = this.getParameter("advertsuppressed");
+		if (advertSuppressedStr != null && advertSuppressedStr.equals("1")) {
+			advertSuppressed = true;
 		} else {
-			Static1.aBoolean52 = false;
+			advertSuppressed = false;
 		}
 		try {
 			language = Integer.parseInt(this.getParameter("lang"));
@@ -797,49 +839,49 @@ public final class client extends Applet_Sub1 {
 			language = 0;
 		}
 		LocalisedText.setLanguage(language);
-		@Pc(76) String local76 = this.getParameter("objecttag");
-		if (local76 != null && local76.equals("1")) {
-			Static4.aBoolean231 = true;
+		@Pc(76) String objectTagStr = this.getParameter("objecttag");
+		if (objectTagStr != null && objectTagStr.equals("1")) {
+			objectTag = true;
 		} else {
-			Static4.aBoolean231 = false;
+			objectTag = false;
 		}
-		@Pc(92) String local92 = this.getParameter("js");
-		if (local92 != null && local92.equals("1")) {
-			Static2.aBoolean102 = true;
+		@Pc(92) String javaScriptStr = this.getParameter("js");
+		if (javaScriptStr != null && javaScriptStr.equals("1")) {
+			javaScript = true;
 		} else {
-			Static2.aBoolean102 = false;
+			javaScript = false;
 		}
-		@Pc(108) String local108 = this.getParameter("game");
-		if (local108 != null && local108.equals("1")) {
-			Static2.anInt5720 = 1;
+		@Pc(108) String gameStr = this.getParameter("game");
+		if (gameStr != null && gameStr.equals("1")) {
+			game = 1;
 		} else {
-			Static2.anInt5720 = 0;
+			game = 0;
 		}
 		try {
-			Static6.anInt4938 = Integer.parseInt(this.getParameter("affid"));
-		} catch (@Pc(128) Exception local128) {
-			Static6.anInt4938 = 0;
+			affiliate = Integer.parseInt(this.getParameter("affid"));
+		} catch (@Pc(128) Exception ex) {
+			affiliate = 0;
 		}
-		Static6.aString261 = this.getParameter("settings");
-		if (Static6.aString261 == null) {
-			Static6.aString261 = "";
+		settings = this.getParameter("settings");
+		if (settings == null) {
+			settings = "";
 		}
-		@Pc(143) String local143 = this.getParameter("country");
-		if (local143 != null) {
+		@Pc(143) String countryStr = this.getParameter("country");
+		if (countryStr != null) {
 			try {
-				Static5.anInt6076 = Integer.parseInt(local143);
-			} catch (@Pc(152) Exception local152) {
-				Static5.anInt6076 = 0;
+				country = Integer.parseInt(countryStr);
+			} catch (@Pc(152) Exception ex) {
+				country = 0;
 			}
 		}
-		@Pc(158) String local158 = this.getParameter("haveie6");
-		if (local158 != null && local158.equals("1")) {
-			Static2.aBoolean118 = true;
+		@Pc(158) String haveIe6Str = this.getParameter("haveie6");
+		if (haveIe6Str != null && haveIe6Str.equals("1")) {
+			haveIe6 = true;
 		} else {
-			Static2.aBoolean118 = false;
+			haveIe6 = false;
 		}
-		Static7.aClient1 = this;
-		this.method677(Static7.anInt5543 + 32);
+		instance = this;
+		this.method677(modeWhat + 32);
 	}
 
 	@OriginalMember(owner = "client!client", name = "e", descriptor = "(I)V")

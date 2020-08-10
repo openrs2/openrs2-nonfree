@@ -347,9 +347,6 @@ public final class Static6 {
 	@OriginalMember(owner = "client!qj", name = "ib", descriptor = "[I")
 	public static final int[] anIntArray462 = new int[2000];
 
-	@OriginalMember(owner = "client!qj", name = "jb", descriptor = "Ljava/lang/String;")
-	public static String aString261 = null;
-
 	@OriginalMember(owner = "client!qk", name = "r", descriptor = "I")
 	public static int anInt4384 = 0;
 
@@ -622,9 +619,6 @@ public final class Static6 {
 
 	@OriginalMember(owner = "client!sn", name = "W", descriptor = "[Z")
 	public static final boolean[] aBooleanArray24 = new boolean[100];
-
-	@OriginalMember(owner = "client!sn", name = "Y", descriptor = "I")
-	public static int anInt4938 = 0;
 
 	@OriginalMember(owner = "client!sn", name = "ab", descriptor = "[Ljava/lang/String;")
 	public static final String[] aStringArray30 = new String[500];

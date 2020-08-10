@@ -340,7 +340,7 @@ public final class Static24 {
 			if (Static6.aClass19_1 != null) {
 				Static6.aClass19_1.method894(Static5.aCanvas115);
 			}
-			Static7.aClient1.method669();
+			client.instance.method669();
 			Static20.method1926(Static5.aCanvas115);
 			Static13.method883(Static5.aCanvas115);
 			if (Static6.aClass19_1 != null) {
@@ -384,7 +384,7 @@ public final class Static24 {
 				} else {
 					Static4.aClass59_1 = null;
 				}
-				@Pc(299) PrivilegedRequest local299 = Static7.aClass196_4.loadGlNatives(Static7.aClient1.getClass());
+				@Pc(299) PrivilegedRequest local299 = Static7.aClass196_4.loadGlNatives(client.instance.getClass());
 				while (local299.status == 0) {
 					Static37.method4640(100L);
 				}
@@ -544,7 +544,7 @@ public final class Static24 {
 		Static34.method4270();
 		Static10.method898();
 		Static31.method3688();
-		if (Static7.anInt5543 != 0) {
+		if (client.modeWhat != 0) {
 			for (@Pc(54) int local54 = 0; local54 < Static6.aByteArrayArray35.length; local54++) {
 				Static6.aByteArrayArray35[local54] = null;
 			}

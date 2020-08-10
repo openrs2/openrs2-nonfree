@@ -558,10 +558,10 @@ public final class Static37 {
 		@Pc(8) Class63_Sub1 local8 = Static20.method1927(arg0);
 		if (local8 == null) {
 			return false;
-		} else if (SignLink.anInt6106 == 1 || SignLink.anInt6106 == 2 || Static4.anInt3406 == 2) {
+		} else if (SignLink.anInt6106 == 1 || SignLink.anInt6106 == 2 || client.modeWhere == 2) {
 			Static6.aString292 = local8.aString111;
 			Static6.anInt4846 = local8.anInt2037;
-			if (Static4.anInt3406 != 0) {
+			if (client.modeWhere != 0) {
 				Static5.anInt4045 = Static6.anInt4846 + 50000;
 				Static3.anInt2194 = Static6.anInt4846 + 40000;
 				Static6.anInt4866 = Static3.anInt2194;
@@ -570,15 +570,15 @@ public final class Static37 {
 		} else {
 			@Pc(52) String local52 = "";
 			@Pc(54) String local54 = "";
-			if (Static6.aString261 != null) {
-				local54 = "/p=" + Static6.aString261;
+			if (client.settings != null) {
+				local54 = "/p=" + client.settings;
 			}
-			if (Static4.anInt3406 != 0) {
+			if (client.modeWhere != 0) {
 				local52 = ":" + (local8.anInt2037 + 7000);
 			}
-			@Pc(130) String local130 = "http://" + local8.aString111 + local52 + "/l=" + client.language + "/a=" + Static6.anInt4938 + local54 + "/j" + (Static2.aBoolean102 ? "1" : "0") + ",o" + (Static4.aBoolean231 ? "1" : "0") + ",a2,m" + (Static1.aBoolean52 ? "1" : "0");
+			@Pc(130) String local130 = "http://" + local8.aString111 + local52 + "/l=" + client.language + "/a=" + client.affiliate + local54 + "/j" + (client.javaScript ? "1" : "0") + ",o" + (client.objectTag ? "1" : "0") + ",a2,m" + (client.advertSuppressed ? "1" : "0");
 			try {
-				Static7.aClient1.getAppletContext().showDocument(new URL(local130), "_self");
+				client.instance.getAppletContext().showDocument(new URL(local130), "_self");
 				return true;
 			} catch (@Pc(140) Exception local140) {
 				return false;

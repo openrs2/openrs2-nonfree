@@ -1626,7 +1626,7 @@ public final class Static29 {
 					local29 = false;
 				}
 			}
-			@Pc(110) String local110 = Static2.anInt5720 == 1 ? LocalisedText.RATING : LocalisedText.LEVEL;
+			@Pc(110) String local110 = client.game == 1 ? LocalisedText.RATING : LocalisedText.LEVEL;
 			if (arg2.anInt1576 <= arg2.anInt1597) {
 				local144 = arg2.method1173() + (local29 ? Static20.method1921(Static4.aClass53_Sub1_Sub1_2.anInt1597, arg2.anInt1597) : "<col=ffffff>") + " (" + local110 + arg2.anInt1597 + ")";
 			} else {
@@ -1641,7 +1641,7 @@ public final class Static29 {
 			for (@Pc(269) int local269 = 7; local269 >= 0; local269--) {
 				if (Static2.aStringArray40[local269] != null) {
 					@Pc(277) short local277 = 0;
-					if (Static2.anInt5720 == 0 && Static2.aStringArray40[local269].equalsIgnoreCase(LocalisedText.ATTACK)) {
+					if (client.game == 0 && Static2.aStringArray40[local269].equalsIgnoreCase(LocalisedText.ATTACK)) {
 						if (Static4.aClass53_Sub1_Sub1_2.anInt1597 < arg2.anInt1597) {
 							local277 = 2000;
 						}

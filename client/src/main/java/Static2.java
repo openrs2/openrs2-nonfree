@@ -464,14 +464,8 @@ public final class Static2 {
 	@OriginalMember(owner = "client!fc", name = "e", descriptor = "I")
 	public static int anInt1641 = -2;
 
-	@OriginalMember(owner = "client!fc", name = "i", descriptor = "Z")
-	public static boolean aBoolean102 = false;
-
 	@OriginalMember(owner = "client!fd", name = "t", descriptor = "[Ljava/lang/String;")
 	public static final String[] aStringArray40 = new String[8];
-
-	@OriginalMember(owner = "client!fd", name = "U", descriptor = "I")
-	public static int anInt5720 = 0;
 
 	@OriginalMember(owner = "client!fd", name = "V", descriptor = "I")
 	public static int anInt5721 = 0;
@@ -529,9 +523,6 @@ public final class Static2 {
 
 	@OriginalMember(owner = "client!fm", name = "j", descriptor = "I")
 	public static int anInt1943 = 0;
-
-	@OriginalMember(owner = "client!fm", name = "n", descriptor = "Z")
-	public static boolean aBoolean118 = false;
 
 	@OriginalMember(owner = "client!fo", name = "b", descriptor = "Z")
 	public static boolean aBoolean119 = false;

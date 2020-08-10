@@ -122,7 +122,7 @@ public final class Static30 {
 		local32.writeInt(local12[0]);
 		local32.writeString(arg9);
 		local32.writeInt(local12[1]);
-		local32.writeShort(Static6.anInt4938);
+		local32.writeShort(client.affiliate);
 		local32.writeByte(arg1);
 		local32.writeByte(arg5);
 		local32.writeInt(local12[2]);
@@ -288,7 +288,7 @@ public final class Static30 {
 									}
 									continue;
 								}
-								if (Static2.anInt5720 == 1) {
+								if (client.game == 1) {
 									Static16.method1497(1L, local567, local583, "", LocalisedText.FACEHERE, (short) 47, -1);
 								}
 								Static16.method1497(1L, local567, local583, "", Static5.aString236, (short) 26, -1);
@@ -1290,7 +1290,7 @@ public final class Static30 {
 
 	@OriginalMember(owner = "client!qi", name = "a", descriptor = "(Ljava/lang/String;I)V")
 	public static void method419(@OriginalArg(0) String arg0) {
-		Static6.aString261 = arg0;
+		client.settings = arg0;
 		if (Static7.aClass196_4.applet == null) {
 			return;
 		}
@@ -1511,18 +1511,18 @@ public final class Static30 {
 				} else {
 					Static5.aClass4_Sub10_Sub1_3.writeByte(16);
 				}
-				Static5.aClass4_Sub10_Sub1_3.writeShort(Static3.aClass4_Sub10_Sub1_1.position + Static19.method1791(Static6.aString261) + 163);
+				Static5.aClass4_Sub10_Sub1_3.writeShort(Static3.aClass4_Sub10_Sub1_1.position + Static19.method1791(client.settings) + 163);
 				Static5.aClass4_Sub10_Sub1_3.writeInt(550);
 				Static5.aClass4_Sub10_Sub1_3.writeByte(Static1.anInt1047);
-				Static5.aClass4_Sub10_Sub1_3.writeByte(Static1.aBoolean52 ? 1 : 0);
+				Static5.aClass4_Sub10_Sub1_3.writeByte(client.advertSuppressed ? 1 : 0);
 				Static5.aClass4_Sub10_Sub1_3.writeByte(1);
 				Static5.aClass4_Sub10_Sub1_3.writeByte(Static11.method557());
 				Static5.aClass4_Sub10_Sub1_3.writeShort(Static1.anInt526);
 				Static5.aClass4_Sub10_Sub1_3.writeShort(Static1.anInt690);
 				Static5.aClass4_Sub10_Sub1_3.writeByte(Static2.anInt1125);
 				Static32.method3949(Static5.aClass4_Sub10_Sub1_3);
-				Static5.aClass4_Sub10_Sub1_3.writeString(Static6.aString261);
-				Static5.aClass4_Sub10_Sub1_3.writeInt(Static6.anInt4938);
+				Static5.aClass4_Sub10_Sub1_3.writeString(client.settings);
+				Static5.aClass4_Sub10_Sub1_3.writeInt(client.affiliate);
 				Static5.aClass4_Sub10_Sub1_3.writeInt(Static25.method2806());
 				Static2.aBoolean104 = true;
 				Static5.aClass4_Sub10_Sub1_3.writeShort(Static7.anInt5426);
@@ -1646,7 +1646,7 @@ public final class Static30 {
 				Static33.method4132(Static7.aBoolean370);
 				Static23.method2453(Static7.aBoolean370);
 				Static19.method4378(Static7.aBoolean370);
-				if (!Static1.aBoolean52) {
+				if (!client.advertSuppressed) {
 					if (Static1.aBoolean47 && !Static4.aBoolean241 || Static7.aBoolean399) {
 						try {
 							Class86.method1851(Static7.aClass196_4.applet, "zap");

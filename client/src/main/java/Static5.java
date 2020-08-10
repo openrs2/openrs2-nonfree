@@ -63,9 +63,6 @@ public final class Static5 {
 	@OriginalMember(owner = "client!ni", name = "a", descriptor = "I")
 	public static int anInt6072;
 
-	@OriginalMember(owner = "client!ni", name = "g", descriptor = "I")
-	public static int anInt6076;
-
 	@OriginalMember(owner = "client!ni", name = "l", descriptor = "Ljava/awt/Canvas;")
 	public static Canvas aCanvas115;
 
@@ -596,9 +593,6 @@ public final class Static5 {
 
 	@OriginalMember(owner = "client!pn", name = "c", descriptor = "Z")
 	public static boolean aBoolean297 = false;
-
-	@OriginalMember(owner = "client!pn", name = "e", descriptor = "I")
-	public static int anInt4213 = 1;
 
 	@OriginalMember(owner = "client!pn", name = "f", descriptor = "Ljava/util/Random;")
 	public static final Random aRandom1 = new Random();

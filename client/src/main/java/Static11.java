@@ -649,7 +649,7 @@ public final class Static11 {
 
 	@OriginalMember(owner = "client!cg", name = "a", descriptor = "(I)V")
 	public static void method559() {
-		Static7.aClient1.method682();
+		client.instance.method682();
 		Static3.aBoolean158 = true;
 		Static3.anInt2235 = 0;
 		Static7.aBoolean367 = true;
@@ -965,7 +965,7 @@ public final class Static11 {
 		Static4.aClass53_Sub1_Sub1_2 = new Class53_Sub1_Sub1();
 		Static4.aClass53_Sub1_Sub1_2.anInt4002 = 3000;
 		Static4.aClass53_Sub1_Sub1_2.anInt3974 = 3000;
-		if (!Static3.aBoolean138 && Static2.anInt5720 == 0) {
+		if (!Static3.aBoolean138 && client.game == 0) {
 			Static21.method2005(Static1.aClass58_4);
 			Static9.method233(10);
 			return;

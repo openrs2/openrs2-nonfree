@@ -607,7 +607,7 @@ public final class Static28 {
 			Static6.aClass4_Sub3_Sub14_7.method4507((Static1.anInt526 - local16) / 2, 0, local16, local10);
 			Static6.aClass56_1.method2815(Static1.anInt526 / 2 - Static6.aClass56_1.anInt3408 / 2, 18);
 		}
-		arg1.method2271(Static2.anInt5720 == 1 ? LocalisedText.GAME1_LOADING : LocalisedText.GAME0_LOADING, Static1.anInt526 / 2, Static1.anInt690 / 2 - 26, 16777215, -1);
+		arg1.method2271(client.game == 1 ? LocalisedText.GAME1_LOADING : LocalisedText.GAME0_LOADING, Static1.anInt526 / 2, Static1.anInt690 / 2 - 26, 16777215, -1);
 		@Pc(70) int local70 = Static1.anInt690 / 2 - 18;
 		if (Static3.aBoolean138) {
 			Static18.method1690(Static1.anInt526 / 2 - 152, local70, 304, 34, 9179409);

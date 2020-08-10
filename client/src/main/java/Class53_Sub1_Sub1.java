@@ -201,7 +201,7 @@ public final class Class53_Sub1_Sub1 extends Class53_Sub1 {
 		if (Static3.aBoolean138 && Static4.anInt3256 < 96 && local108 > 50) {
 			Static24.method2567();
 		}
-		if (Static7.anInt5543 != 0 && local108 < 50) {
+		if (client.modeWhat != 0 && local108 < 50) {
 			@Pc(134) int local134 = 50 - local108;
 			while (Static7.anInt5425 < local134) {
 				Static6.aByteArrayArray35[Static7.anInt5425] = new byte[102400];
