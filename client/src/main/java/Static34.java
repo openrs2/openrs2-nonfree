@@ -1278,14 +1278,6 @@ public final class Static34 {
 		Static2.aClass58_40 = arg0;
 	}
 
-	@OriginalMember(owner = "client!ua", name = "a", descriptor = "(BJ)V")
-	public static void method4267(@OriginalArg(1) long arg0) {
-		try {
-			Thread.sleep(arg0);
-		} catch (@Pc(7) InterruptedException local7) {
-		}
-	}
-
 	@OriginalMember(owner = "client!ub", name = "a", descriptor = "(I)V")
 	public static void method4269() {
 		Static5.anInt4195 = 0;

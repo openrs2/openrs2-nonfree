@@ -992,7 +992,7 @@ public final class Static13 {
 			return;
 		}
 		for (@Pc(12) int local12 = 0; local12 < 50 && arg0.eventQueue.peekEvent() != null; local12++) {
-			Static37.method4640(1L);
+			ThreadUtils.sleep(1L);
 		}
 		if (arg1 != null) {
 			arg0.eventQueue.postEvent(new ActionEvent(arg1, 1001, "dummy"));

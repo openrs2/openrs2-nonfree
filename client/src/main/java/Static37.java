@@ -7,19 +7,6 @@ import dev.openrs2.deob.annotation.Pc;
 
 public final class Static37 {
 
-	@OriginalMember(owner = "client!wa", name = "a", descriptor = "(BJ)V")
-	public static void method4640(@OriginalArg(1) long arg0) {
-		if (arg0 <= 0L) {
-			return;
-		}
-		if (arg0 % 10L == 0L) {
-			Static34.method4267(arg0 - 1L);
-			Static34.method4267(1L);
-		} else {
-			Static34.method4267(arg0);
-		}
-	}
-
 	@OriginalMember(owner = "client!wa", name = "c", descriptor = "(IB)V")
 	public static void method4641(@OriginalArg(0) int arg0) {
 		Static4.anInt2853 = 3;

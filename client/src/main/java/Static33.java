@@ -462,7 +462,7 @@ public final class Static33 {
 		try {
 			@Pc(84) PrivilegedRequest local84 = arg0.openPreferences("openrs2");
 			while (local84.status == 0) {
-				Static37.method4640(1L);
+				ThreadUtils.sleep(1L);
 			}
 			if (local84.status == 1) {
 				local3 = (FileOnDisk) local84.result;

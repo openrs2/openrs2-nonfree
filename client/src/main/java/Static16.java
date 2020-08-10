@@ -5270,7 +5270,7 @@ public final class Static16 {
 				if (local29++ > 5) {
 					return -2;
 				}
-				Static37.method4640(1000L);
+				ThreadUtils.sleep(1000L);
 			}
 			Static3.aGL1 = Static3.aGLContext1.getGL();
 			Static3.aBoolean138 = true;
@@ -5294,7 +5294,7 @@ public final class Static16 {
 						Static17.method1605();
 						return -3;
 					}
-					Static37.method4640(100L);
+					ThreadUtils.sleep(100L);
 				}
 			}
 			Static3.aGL1.glClear(GL.GL_COLOR_BUFFER_BIT);

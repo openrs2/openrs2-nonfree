@@ -83,7 +83,7 @@ public final class Class52 implements Runnable {
 		}
 		if (this.aClass197_3 != null) {
 			while (this.aClass197_3.status == 0) {
-				Static37.method4640(1L);
+				ThreadUtils.sleep(1L);
 			}
 			if (this.aClass197_3.status == 1) {
 				try {

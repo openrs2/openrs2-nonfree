@@ -184,7 +184,7 @@ public class Class102 {
 			if (local17) {
 				Static4.aClass91_1.aBoolean170 = true;
 				while (Static4.aClass91_1.aBoolean171) {
-					Static37.method4640(50L);
+					ThreadUtils.sleep(50L);
 				}
 				Static4.aClass91_1 = null;
 			}

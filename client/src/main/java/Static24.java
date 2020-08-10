@@ -386,7 +386,7 @@ public final class Static24 {
 				}
 				@Pc(299) PrivilegedRequest local299 = GameShell.signLink.loadGlNatives(client.instance.getClass());
 				while (local299.status == 0) {
-					Static37.method4640(100L);
+					ThreadUtils.sleep(100L);
 				}
 				if (local299.status == 1) {
 					Static2.aBoolean76 = true;

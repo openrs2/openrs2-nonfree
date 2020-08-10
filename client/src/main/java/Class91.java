@@ -29,7 +29,7 @@ public final class Class91 implements Runnable {
 						local23.method2998();
 					}
 				}
-				Static37.method4640(10L);
+				ThreadUtils.sleep(10L);
 				Static13.method1013(this.aClass196_2, null);
 			}
 		} catch (@Pc(48) Exception local48) {

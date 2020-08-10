@@ -321,7 +321,7 @@ public final class Static8 {
 		}
 		@Pc(109) PrivilegedRequest local109 = arg3.enterFullScreen(arg1, arg2, arg0);
 		while (local109.status == 0) {
-			Static37.method4640(10L);
+			ThreadUtils.sleep(10L);
 		}
 		@Pc(124) Frame local124 = (Frame) local109.result;
 		if (local124 == null) {

@@ -941,7 +941,7 @@ public final class Static26 {
 			}
 			@Pc(115) PrivilegedRequest local115 = Static4.aClass196_3.openUrlStream(new URL(Static4.aClass196_3.applet.getCodeBase(), "clienterror.ws?c=" + Static7.anInt5282 + "&u=" + Static1.aLong23 + "&v1=" + SignLink.javaVendor + "&v2=" + SignLink.javaVersion + "&e=" + local54));
 			while (local115.status == 0) {
-				Static37.method4640(1L);
+				ThreadUtils.sleep(1L);
 			}
 			if (local115.status == 1) {
 				@Pc(133) DataInputStream local133 = (DataInputStream) local115.result;

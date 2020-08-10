@@ -386,7 +386,7 @@ public abstract class GameShell extends Applet implements Runnable, FocusListene
 			}
 			@Pc(80) PrivilegedRequest request = signLink.startThread(this, 1);
 			while (request.status == 0) {
-				Static37.method4640(10L);
+				ThreadUtils.sleep(10L);
 			}
 			thread = (Thread) request.result;
 		} catch (@Pc(97) Exception ex) {
@@ -483,7 +483,7 @@ public abstract class GameShell extends Applet implements Runnable, FocusListene
 			Static4.aClass196_3 = signLink = new SignLink(null, cacheId, cacheSubDir, 29);
 			@Pc(77) PrivilegedRequest request = signLink.startThread(this, 1);
 			while (request.status == 0) {
-				Static37.method4640(10L);
+				ThreadUtils.sleep(10L);
 			}
 			thread = (Thread) request.result;
 		} catch (@Pc(94) Exception local94) {
@@ -519,7 +519,7 @@ public abstract class GameShell extends Applet implements Runnable, FocusListene
 		try {
 			@Pc(18) PrivilegedRequest request = signLink.loadMiscNatives(instance.getClass());
 			while (request.status == 0) {
-				Static37.method4640(100L);
+				ThreadUtils.sleep(100L);
 			}
 			if (request.result != null) {
 				throw (Throwable) request.result;
@@ -536,7 +536,7 @@ public abstract class GameShell extends Applet implements Runnable, FocusListene
 	public final void destroy() {
 		if (instance == this && !shutdown) {
 			killTime = MonotonicClock.currentTimeMillis();
-			Static37.method4640(5000L);
+			ThreadUtils.sleep(5000L);
 			Static4.aClass196_3 = null;
 			this.shutdown(false);
 		}

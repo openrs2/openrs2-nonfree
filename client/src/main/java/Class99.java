@@ -30,7 +30,7 @@ public final class Class99 implements Runnable {
 					this.anInt2670++;
 				}
 			}
-			Static37.method4640(50L);
+			ThreadUtils.sleep(50L);
 		}
 	}
 }

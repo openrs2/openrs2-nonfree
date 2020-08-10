@@ -990,7 +990,7 @@ public final class Static11 {
 		}
 		@Pc(17) PrivilegedRequest local17 = arg0.getDisplayModes();
 		while (local17.status == 0) {
-			Static37.method4640(10L);
+			ThreadUtils.sleep(10L);
 		}
 		if (local17.status == 2) {
 			return new Class169[0];

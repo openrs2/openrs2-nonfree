@@ -61,11 +61,11 @@ public final class Class77_Sub3 extends Class77 {
 	@OriginalMember(owner = "client!oo", name = "a", descriptor = "(III)I")
 	@Override
 	public final int method3283(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1) {
-		Static37.method4640((long) arg0);
+		ThreadUtils.sleep((long) arg0);
 		this.aLong142 += this.method3290();
 		@Pc(22) long local22 = (long) arg1 * 1000000L;
 		if (this.aLong140 > this.aLong142) {
-			Static37.method4640((this.aLong140 - this.aLong142) / 1000000L);
+			ThreadUtils.sleep((this.aLong140 - this.aLong142) / 1000000L);
 			this.aLong141 += this.aLong140 - this.aLong142;
 			this.aLong142 += this.aLong140 - this.aLong142;
 			this.aLong140 += local22;

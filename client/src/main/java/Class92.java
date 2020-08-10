@@ -22,7 +22,7 @@ public final class Class92 implements Runnable {
 	public Class92() {
 		@Pc(20) PrivilegedRequest local20 = GameShell.signLink.startThread(this, 5);
 		while (local20.status == 0) {
-			Static37.method4640(10L);
+			ThreadUtils.sleep(10L);
 		}
 		if (local20.status == 2) {
 			throw new RuntimeException();
