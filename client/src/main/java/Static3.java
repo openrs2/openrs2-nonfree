@@ -1,4 +1,3 @@
-import java.awt.Frame;
 import java.nio.ByteBuffer;
 import javax.media.opengl.GL;
 import javax.media.opengl.GLContext;
