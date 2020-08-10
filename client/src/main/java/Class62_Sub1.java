@@ -10,7 +10,7 @@ public final class Class62_Sub1 extends Class62 {
 	private byte[] aByteArray72;
 
 	@OriginalMember(owner = "client!wb", name = "C", descriptor = "Lclient!fo;")
-	private Class61 aClass61_2;
+	private Js5Index aClass61_2;
 
 	@OriginalMember(owner = "client!wb", name = "Q", descriptor = "Z")
 	private boolean aBoolean395;
@@ -92,13 +92,13 @@ public final class Class62_Sub1 extends Class62 {
 			@Pc(27) Node local27 = this.aClass112_30.method2610();
 			return local27 == null ? 0 : (int) local27.key;
 		} else {
-			return this.aClass61_2.anInt1972;
+			return this.aClass61_2.size;
 		}
 	}
 
 	@OriginalMember(owner = "client!wb", name = "a", descriptor = "(I)Lclient!fo;")
 	@Override
-	public final Class61 method4659() {
+	public final Js5Index method4659() {
 		if (this.aClass61_2 != null) {
 			return this.aClass61_2;
 		}
@@ -117,8 +117,8 @@ public final class Class62_Sub1 extends Class62 {
 				if (local53 == null) {
 					throw new RuntimeException();
 				}
-				this.aClass61_2 = new Class61(local53, this.anInt5784);
-				if (this.anInt5800 != this.aClass61_2.anInt1971) {
+				this.aClass61_2 = new Js5Index(local53, this.anInt5784);
+				if (this.anInt5800 != this.aClass61_2.version) {
 					throw new RuntimeException();
 				}
 			} catch (@Pc(149) RuntimeException local149) {
@@ -135,7 +135,7 @@ public final class Class62_Sub1 extends Class62 {
 				if (local53 == null) {
 					throw new RuntimeException();
 				}
-				this.aClass61_2 = new Class61(local53, this.anInt5784);
+				this.aClass61_2 = new Js5Index(local53, this.anInt5784);
 			} catch (@Pc(74) RuntimeException local74) {
 				this.aClass51_3.method1091();
 				this.aClass61_2 = null;
@@ -152,7 +152,7 @@ public final class Class62_Sub1 extends Class62 {
 		}
 		if (this.aClass60_4 != null) {
 			this.anInt5783 = 0;
-			this.aByteArray72 = new byte[this.aClass61_2.anInt1979];
+			this.aByteArray72 = new byte[this.aClass61_2.capacity];
 		}
 		this.aClass4_Sub3_Sub1_1 = null;
 		return this.aClass61_2;
@@ -190,7 +190,7 @@ public final class Class62_Sub1 extends Class62 {
 		}
 		for (@Pc(22) Node local22 = this.aClass112_29.method2610(); local22 != null; local22 = this.aClass112_29.method2616()) {
 			@Pc(32) int local32 = (int) local22.key;
-			if (local32 < 0 || this.aClass61_2.anInt1979 <= local32 || this.aClass61_2.anIntArray154[local32] == 0) {
+			if (local32 < 0 || this.aClass61_2.capacity <= local32 || this.aClass61_2.groupSizes[local32] == 0) {
 				local22.unlink();
 			} else {
 				if (this.aByteArray72[local32] == 0) {
@@ -236,7 +236,7 @@ public final class Class62_Sub1 extends Class62 {
 
 	@OriginalMember(owner = "client!wb", name = "e", descriptor = "(I)I")
 	public final int method4671() {
-		return this.aClass61_2 == null ? 0 : this.aClass61_2.anInt1972;
+		return this.aClass61_2 == null ? 0 : this.aClass61_2.size;
 	}
 
 	@OriginalMember(owner = "client!wb", name = "a", descriptor = "(II)I")
@@ -296,7 +296,7 @@ public final class Class62_Sub1 extends Class62 {
 				Static7.aCRC32_1.reset();
 				Static7.aCRC32_1.update(local169, 0, local169.length - 2);
 				@Pc(197) int local197 = (int) Static7.aCRC32_1.getValue();
-				if (this.aClass61_2.anIntArray153[arg0] != local197) {
+				if (this.aClass61_2.groupChecksums[arg0] != local197) {
 					throw new RuntimeException();
 				}
 				this.aClass51_3.anInt1358 = 0;
@@ -310,8 +310,8 @@ public final class Class62_Sub1 extends Class62 {
 				}
 				return null;
 			}
-			local169[local169.length - 2] = (byte) (this.aClass61_2.anIntArray157[arg0] >>> 8);
-			local169[local169.length - 1] = (byte) this.aClass61_2.anIntArray157[arg0];
+			local169[local169.length - 2] = (byte) (this.aClass61_2.groupVersions[arg0] >>> 8);
+			local169[local169.length - 1] = (byte) this.aClass61_2.groupVersions[arg0];
 			if (this.aClass60_4 != null) {
 				this.aClass92_3.method1968(this.aClass60_4, local169, arg0);
 				if (this.aByteArray72[arg0] != 1) {
@@ -331,11 +331,11 @@ public final class Class62_Sub1 extends Class62 {
 			Static7.aCRC32_1.reset();
 			Static7.aCRC32_1.update(local169, 0, local169.length - 2);
 			@Pc(346) int local346 = (int) Static7.aCRC32_1.getValue();
-			if (local346 != this.aClass61_2.anIntArray153[arg0]) {
+			if (local346 != this.aClass61_2.groupChecksums[arg0]) {
 				throw new RuntimeException();
 			}
 			@Pc(378) int local378 = (local169[local169.length - 1] & 0xFF) + ((local169[local169.length - 2] & 0xFF) << 8);
-			if ((this.aClass61_2.anIntArray157[arg0] & 0xFFFF) != local378) {
+			if ((this.aClass61_2.groupVersions[arg0] & 0xFFFF) != local378) {
 				throw new RuntimeException();
 			}
 			if (this.aByteArray72[arg0] != 1) {
@@ -378,8 +378,8 @@ public final class Class62_Sub1 extends Class62 {
 						local182.unlink();
 					}
 				}
-				while (this.anInt5802 < this.aClass61_2.anIntArray154.length) {
-					if (this.aClass61_2.anIntArray154[this.anInt5802] == 0) {
+				while (this.anInt5802 < this.aClass61_2.groupSizes.length) {
+					if (this.aClass61_2.groupSizes[this.anInt5802] == 0) {
 						this.anInt5802++;
 					} else {
 						if (this.aClass92_3.anInt2520 >= 250) {
@@ -415,8 +415,8 @@ public final class Class62_Sub1 extends Class62 {
 						local31 = false;
 					}
 				}
-				while (this.aClass61_2.anIntArray154.length > this.anInt5802) {
-					if (this.aClass61_2.anIntArray154[this.anInt5802] == 0) {
+				while (this.aClass61_2.groupSizes.length > this.anInt5802) {
+					if (this.aClass61_2.groupSizes[this.anInt5802] == 0) {
 						this.anInt5802++;
 					} else {
 						if (this.aClass51_3.method1095()) {

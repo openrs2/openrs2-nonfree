@@ -13,7 +13,7 @@ public final class Class58 {
 	private Object[] anObjectArray1;
 
 	@OriginalMember(owner = "client!fh", name = "L", descriptor = "Lclient!fo;")
-	private Class61 aClass61_1 = null;
+	private Js5Index aClass61_1 = null;
 
 	@OriginalMember(owner = "client!fh", name = "p", descriptor = "Z")
 	private final boolean aBoolean108;
@@ -38,9 +38,9 @@ public final class Class58 {
 		}
 		arg0 = arg0.toLowerCase();
 		arg1 = arg1.toLowerCase();
-		@Pc(25) int local25 = this.aClass61_1.aClass66_1.get(Static24.method2644(arg0));
+		@Pc(25) int local25 = this.aClass61_1.groupNameHashTable.get(Static24.method2644(arg0));
 		if (this.method1366(local25)) {
-			@Pc(52) int local52 = this.aClass61_1.aClass66Array1[local25].get(Static24.method2644(arg1));
+			@Pc(52) int local52 = this.aClass61_1.fileNameHashTables[local25].get(Static24.method2644(arg1));
 			return this.method1370(local25, local52);
 		} else {
 			return false;
@@ -56,7 +56,7 @@ public final class Class58 {
 	public final int method1342(@OriginalArg(0) String arg0) {
 		if (this.method1348()) {
 			arg0 = arg0.toLowerCase();
-			@Pc(30) int local30 = this.aClass61_1.aClass66_1.get(Static24.method2644(arg0));
+			@Pc(30) int local30 = this.aClass61_1.groupNameHashTable.get(Static24.method2644(arg0));
 			return this.method1346(local30);
 		} else {
 			return 0;
@@ -67,11 +67,11 @@ public final class Class58 {
 	public final byte[] method1343(@OriginalArg(0) int arg0) {
 		if (!this.method1348()) {
 			return null;
-		} else if (this.aClass61_1.anIntArray152.length == 1) {
+		} else if (this.aClass61_1.groupCapacities.length == 1) {
 			return this.method1372(0, arg0);
 		} else if (!this.method1366(arg0)) {
 			return null;
-		} else if (this.aClass61_1.anIntArray152[arg0] == 1) {
+		} else if (this.aClass61_1.groupCapacities[arg0] == 1) {
 			return this.method1372(arg0, 0);
 		} else {
 			throw new RuntimeException();
@@ -82,7 +82,7 @@ public final class Class58 {
 	public final boolean method1344(@OriginalArg(0) String arg0) {
 		if (this.method1348()) {
 			arg0 = arg0.toLowerCase();
-			@Pc(27) int local27 = this.aClass61_1.aClass66_1.get(Static24.method2644(arg0));
+			@Pc(27) int local27 = this.aClass61_1.groupNameHashTable.get(Static24.method2644(arg0));
 			return local27 >= 0;
 		} else {
 			return false;
@@ -97,7 +97,7 @@ public final class Class58 {
 		@Pc(13) int local13 = 0;
 		@Pc(15) int local15 = 0;
 		for (@Pc(17) int local17 = 0; local17 < this.anObjectArray1.length; local17++) {
-			if (this.aClass61_1.anIntArray154[local17] > 0) {
+			if (this.aClass61_1.groupSizes[local17] > 0) {
 				local15 += this.method1346(local17);
 				local13 += 100;
 			}
@@ -125,8 +125,8 @@ public final class Class58 {
 			if (this.aClass61_1 == null) {
 				return false;
 			}
-			this.anObjectArray1 = new Object[this.aClass61_1.anInt1979];
-			this.anObjectArrayArray1 = new Object[this.aClass61_1.anInt1979][];
+			this.anObjectArray1 = new Object[this.aClass61_1.capacity];
+			this.anObjectArrayArray1 = new Object[this.aClass61_1.capacity][];
 		}
 		return true;
 	}
@@ -160,7 +160,7 @@ public final class Class58 {
 
 	@OriginalMember(owner = "client!fh", name = "d", descriptor = "(I)I")
 	public final int method1351() {
-		return this.method1348() ? this.aClass61_1.anIntArray152.length : -1;
+		return this.method1348() ? this.aClass61_1.groupCapacities.length : -1;
 	}
 
 	@OriginalMember(owner = "client!fh", name = "c", descriptor = "(II)V")
@@ -176,7 +176,7 @@ public final class Class58 {
 	private boolean method1353(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1) {
 		if (!this.method1348()) {
 			return false;
-		} else if (arg1 >= 0 && arg0 >= 0 && this.aClass61_1.anIntArray152.length > arg1 && arg0 < this.aClass61_1.anIntArray152[arg1]) {
+		} else if (arg1 >= 0 && arg0 >= 0 && this.aClass61_1.groupCapacities.length > arg1 && arg0 < this.aClass61_1.groupCapacities[arg1]) {
 			return true;
 		} else if (Static4.aBoolean182) {
 			throw new IllegalArgumentException(arg1 + "," + arg0);
@@ -192,11 +192,11 @@ public final class Class58 {
 		} else if (this.anObjectArray1[arg1] == null) {
 			return false;
 		} else {
-			@Pc(27) int[] local27 = this.aClass61_1.anIntArrayArray14[arg1];
-			@Pc(33) int local33 = this.aClass61_1.anIntArray154[arg1];
+			@Pc(27) int[] local27 = this.aClass61_1.fileIds[arg1];
+			@Pc(33) int local33 = this.aClass61_1.groupSizes[arg1];
 			@Pc(35) boolean local35 = true;
 			if (this.anObjectArrayArray1[arg1] == null) {
-				this.anObjectArrayArray1[arg1] = new Object[this.aClass61_1.anIntArray152[arg1]];
+				this.anObjectArrayArray1[arg1] = new Object[this.aClass61_1.groupCapacities[arg1]];
 			}
 			@Pc(57) Object[] local57 = this.anObjectArrayArray1[arg1];
 			for (@Pc(59) int local59 = 0; local59 < local33; local59++) {
@@ -226,7 +226,7 @@ public final class Class58 {
 			try {
 				local151 = Static19.method1749(local123);
 			} catch (@Pc(153) RuntimeException local153) {
-				throw Static11.method612(local153, "T3 - " + (arg0 != null) + "," + arg1 + "," + local123.length + "," + Static12.method2321(local123.length, local123) + "," + Static12.method2321(local123.length - 2, local123) + "," + this.aClass61_1.anIntArray153[arg1] + "," + this.aClass61_1.anInt1978);
+				throw Static11.method612(local153, "T3 - " + (arg0 != null) + "," + arg1 + "," + local123.length + "," + Static12.method2321(local123.length, local123) + "," + Static12.method2321(local123.length - 2, local123) + "," + this.aClass61_1.groupChecksums[arg1] + "," + this.aClass61_1.checksum);
 			}
 			if (this.aBoolean107) {
 				this.anObjectArray1[arg1] = null;
@@ -311,11 +311,11 @@ public final class Class58 {
 		if (!this.method1348()) {
 			return;
 		}
-		this.aClass61_1.aClass66Array1 = null;
-		this.aClass61_1.anIntArrayArray15 = null;
+		this.aClass61_1.fileNameHashTables = null;
+		this.aClass61_1.fileNameHashes = null;
 		if (arg0) {
-			this.aClass61_1.anIntArray155 = null;
-			this.aClass61_1.aClass66_1 = null;
+			this.aClass61_1.groupNameHashes = null;
+			this.aClass61_1.groupNameHashTable = null;
 		}
 	}
 
@@ -323,7 +323,7 @@ public final class Class58 {
 	public final void method1357(@OriginalArg(1) String arg0) {
 		if (this.method1348()) {
 			arg0 = arg0.toLowerCase();
-			@Pc(32) int local32 = this.aClass61_1.aClass66_1.get(Static24.method2644(arg0));
+			@Pc(32) int local32 = this.aClass61_1.groupNameHashTable.get(Static24.method2644(arg0));
 			this.method1341(local32);
 		}
 	}
@@ -335,9 +335,9 @@ public final class Class58 {
 		}
 		arg1 = arg1.toLowerCase();
 		arg0 = arg0.toLowerCase();
-		@Pc(31) int local31 = this.aClass61_1.aClass66_1.get(Static24.method2644(arg1));
+		@Pc(31) int local31 = this.aClass61_1.groupNameHashTable.get(Static24.method2644(arg1));
 		if (this.method1366(local31)) {
-			@Pc(50) int local50 = this.aClass61_1.aClass66Array1[local31].get(Static24.method2644(arg0));
+			@Pc(50) int local50 = this.aClass61_1.fileNameHashTables[local31].get(Static24.method2644(arg0));
 			return this.method1372(local31, local50);
 		} else {
 			return null;
@@ -348,11 +348,11 @@ public final class Class58 {
 	public final boolean method1359(@OriginalArg(0) int arg0) {
 		if (!this.method1348()) {
 			return false;
-		} else if (this.aClass61_1.anIntArray152.length == 1) {
+		} else if (this.aClass61_1.groupCapacities.length == 1) {
 			return this.method1370(0, arg0);
 		} else if (!this.method1366(arg0)) {
 			return false;
-		} else if (this.aClass61_1.anIntArray152[arg0] == 1) {
+		} else if (this.aClass61_1.groupCapacities[arg0] == 1) {
 			return this.method1370(arg0, 0);
 		} else {
 			throw new RuntimeException();
@@ -365,8 +365,8 @@ public final class Class58 {
 			return false;
 		}
 		@Pc(14) boolean local14 = true;
-		for (@Pc(16) int local16 = 0; local16 < this.aClass61_1.anIntArray156.length; local16++) {
-			@Pc(32) int local32 = this.aClass61_1.anIntArray156[local16];
+		for (@Pc(16) int local16 = 0; local16 < this.aClass61_1.groupIds.length; local16++) {
+			@Pc(32) int local32 = this.aClass61_1.groupIds[local16];
 			if (this.anObjectArray1[local32] == null) {
 				this.method1352(local32);
 				if (this.anObjectArray1[local32] == null) {
@@ -395,7 +395,7 @@ public final class Class58 {
 		@Pc(62) byte[] local62 = ByteArray.unwrap(this.anObjectArrayArray1[arg1][arg0], false);
 		if (this.aBoolean108) {
 			this.anObjectArrayArray1[arg1][arg0] = null;
-			if (this.aClass61_1.anIntArray152[arg1] == 1) {
+			if (this.aClass61_1.groupCapacities[arg1] == 1) {
 				this.anObjectArrayArray1[arg1] = null;
 			}
 		}
@@ -406,7 +406,7 @@ public final class Class58 {
 	public final int method1362(@OriginalArg(1) String arg0) {
 		if (this.method1348()) {
 			arg0 = arg0.toLowerCase();
-			@Pc(22) int local22 = this.aClass61_1.aClass66_1.get(Static24.method2644(arg0));
+			@Pc(22) int local22 = this.aClass61_1.groupNameHashTable.get(Static24.method2644(arg0));
 			return this.method1366(local22) ? local22 : -1;
 		} else {
 			return -1;
@@ -418,9 +418,9 @@ public final class Class58 {
 		if (!this.method1366(arg0)) {
 			return null;
 		}
-		@Pc(27) int[] local27 = this.aClass61_1.anIntArrayArray14[arg0];
+		@Pc(27) int[] local27 = this.aClass61_1.fileIds[arg0];
 		if (local27 == null) {
-			local27 = new int[this.aClass61_1.anIntArray154[arg0]];
+			local27 = new int[this.aClass61_1.groupSizes[arg0]];
 			@Pc(38) int local38 = 0;
 			while (local38 < local27.length) {
 				local27[local38] = local38++;
@@ -433,7 +433,7 @@ public final class Class58 {
 	public final boolean method1365(@OriginalArg(0) String arg0) {
 		if (this.method1348()) {
 			arg0 = arg0.toLowerCase();
-			@Pc(28) int local28 = this.aClass61_1.aClass66_1.get(Static24.method2644(arg0));
+			@Pc(28) int local28 = this.aClass61_1.groupNameHashTable.get(Static24.method2644(arg0));
 			return this.method1355(local28);
 		} else {
 			return false;
@@ -444,7 +444,7 @@ public final class Class58 {
 	private boolean method1366(@OriginalArg(0) int arg0) {
 		if (!this.method1348()) {
 			return false;
-		} else if (arg0 >= 0 && this.aClass61_1.anIntArray152.length > arg0 && this.aClass61_1.anIntArray152[arg0] != 0) {
+		} else if (arg0 >= 0 && this.aClass61_1.groupCapacities.length > arg0 && this.aClass61_1.groupCapacities[arg0] != 0) {
 			return true;
 		} else if (Static4.aBoolean182) {
 			throw new IllegalArgumentException(Integer.toString(arg0));
@@ -456,7 +456,7 @@ public final class Class58 {
 	@OriginalMember(owner = "client!fh", name = "b", descriptor = "(IB)I")
 	public final int method1367(@OriginalArg(0) int arg0) {
 		if (this.method1348()) {
-			@Pc(17) int local17 = this.aClass61_1.aClass66_1.get(arg0);
+			@Pc(17) int local17 = this.aClass61_1.groupNameHashTable.get(arg0);
 			return this.method1366(local17) ? local17 : -1;
 		} else {
 			return -1;
@@ -475,7 +475,7 @@ public final class Class58 {
 		if (!this.method1348()) {
 			throw new IllegalStateException("");
 		}
-		return this.aClass61_1.anInt1978;
+		return this.aClass61_1.checksum;
 	}
 
 	@OriginalMember(owner = "client!fh", name = "a", descriptor = "(IZI)Z")
@@ -494,7 +494,7 @@ public final class Class58 {
 
 	@OriginalMember(owner = "client!fh", name = "g", descriptor = "(II)I")
 	public final int method1371(@OriginalArg(0) int arg0) {
-		return this.method1366(arg0) ? this.aClass61_1.anIntArray152[arg0] : 0;
+		return this.method1366(arg0) ? this.aClass61_1.groupCapacities[arg0] : 0;
 	}
 
 	@OriginalMember(owner = "client!fh", name = "a", descriptor = "(IBI)[B")

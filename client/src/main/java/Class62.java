@@ -19,5 +19,5 @@ public abstract class Class62 {
 	public abstract byte[] method4657(@OriginalArg(1) int arg0);
 
 	@OriginalMember(owner = "client!ga", name = "a", descriptor = "(I)Lclient!fo;")
-	public abstract Class61 method4659();
+	public abstract Js5Index method4659();
 }
