@@ -221,14 +221,8 @@ public final class Static6 {
 	@OriginalMember(owner = "client!se", name = "W", descriptor = "[Lclient!uj;")
 	public static Class4_Sub3_Sub14[] aClass4_Sub3_Sub14Array12;
 
-	@OriginalMember(owner = "client!se", name = "Y", descriptor = "Ljava/lang/String;")
-	public static String aString291;
-
 	@OriginalMember(owner = "client!se", name = "Z", descriptor = "Lclient!fh;")
 	public static Class58 aClass58_90;
-
-	@OriginalMember(owner = "client!se", name = "db", descriptor = "Ljava/lang/String;")
-	public static String aString292;
 
 	@OriginalMember(owner = "client!se", name = "eb", descriptor = "I")
 	public static int anInt4793;
@@ -262,9 +256,6 @@ public final class Static6 {
 
 	@OriginalMember(owner = "client!sj", name = "s", descriptor = "[Lclient!l;")
 	public static Class4_Sub15[] aClass4_Sub15Array1;
-
-	@OriginalMember(owner = "client!sk", name = "f", descriptor = "I")
-	public static int anInt4866;
 
 	@OriginalMember(owner = "client!sk", name = "h", descriptor = "I")
 	public static int anInt4867;
@@ -568,9 +559,6 @@ public final class Static6 {
 
 	@OriginalMember(owner = "client!si", name = "i", descriptor = "I")
 	public static int anInt4844 = -1;
-
-	@OriginalMember(owner = "client!si", name = "l", descriptor = "I")
-	public static int anInt4846 = -1;
 
 	@OriginalMember(owner = "client!sj", name = "p", descriptor = "I")
 	public static int anInt4856 = 0;

@@ -256,9 +256,6 @@ public final class Static4 {
 	@OriginalMember(owner = "client!mm", name = "b", descriptor = "Lclient!uj;")
 	public static Class4_Sub3_Sub14 aClass4_Sub3_Sub14_3;
 
-	@OriginalMember(owner = "client!mm", name = "c", descriptor = "I")
-	public static int anInt3358;
-
 	@OriginalMember(owner = "client!mm", name = "g", descriptor = "I")
 	public static int anInt3360;
 

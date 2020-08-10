@@ -939,10 +939,10 @@ public final class Static27 {
 			return arg0;
 		}
 		Static7.anInt5319 = 0;
-		if (Static3.anInt2337 == Static4.anInt3358) {
-			Static4.anInt3358 = Static7.anInt5498;
+		if (client.worldListDefaultPort == client.worldListPort) {
+			client.worldListPort = client.worldListAlternatePort;
 		} else {
-			Static4.anInt3358 = Static3.anInt2337;
+			client.worldListPort = client.worldListDefaultPort;
 		}
 		return -1;
 	}

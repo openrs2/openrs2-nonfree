@@ -215,9 +215,6 @@ public final class Static3 {
 	@OriginalMember(owner = "client!hi", name = "g", descriptor = "F")
 	public static float aFloat51;
 
-	@OriginalMember(owner = "client!hj", name = "b", descriptor = "I")
-	public static int anInt2194;
-
 	@OriginalMember(owner = "client!hk", name = "S", descriptor = "[I")
 	public static int[] anIntArray185;
 
@@ -241,9 +238,6 @@ public final class Static3 {
 
 	@OriginalMember(owner = "client!ho", name = "U", descriptor = "I")
 	public static int anInt2296;
-
-	@OriginalMember(owner = "client!ic", name = "q", descriptor = "I")
-	public static int anInt2337;
 
 	@OriginalMember(owner = "client!id", name = "d", descriptor = "Lclient!fh;")
 	public static Class58 aClass58_52;

@@ -1434,17 +1434,17 @@ public final class Static30 {
 					Static2.anInt1641 = -5;
 					return;
 				}
-				if (Static6.anInt4866 == Static3.anInt2194) {
-					Static6.anInt4866 = Static5.anInt4045;
+				if (client.port == client.defaultPort) {
+					client.port = client.alternatePort;
 				} else {
-					Static6.anInt4866 = Static3.anInt2194;
+					client.port = client.defaultPort;
 				}
 				Static5.anInt3570++;
 				Static3.anInt2574 = 1;
 				Static6.anInt4458 = 0;
 			}
 			if (Static3.anInt2574 == 1) {
-				Static7.aClass197_5 = GameShell.signLink.openSocket(Static6.aString292, Static6.anInt4866);
+				Static7.aClass197_5 = GameShell.signLink.openSocket(client.hostname, client.port);
 				Static3.anInt2574 = 2;
 			}
 			if (Static3.anInt2574 == 2) {
@@ -1689,10 +1689,10 @@ public final class Static30 {
 			if (Static5.anInt3570 < 1) {
 				Static5.anInt3570++;
 				Static3.anInt2574 = 1;
-				if (Static3.anInt2194 == Static6.anInt4866) {
-					Static6.anInt4866 = Static5.anInt4045;
+				if (client.defaultPort == client.port) {
+					client.port = client.alternatePort;
 				} else {
-					Static6.anInt4866 = Static3.anInt2194;
+					client.port = client.defaultPort;
 				}
 				Static6.anInt4458 = 0;
 			} else {
@@ -1808,7 +1808,7 @@ public final class Static30 {
 		Static2.aString76 = arg0;
 		if (Static3.aString132.equals("") || Static2.aString76.equals("")) {
 			Static2.anInt1641 = 3;
-		} else if (Static6.anInt4846 == -1) {
+		} else if (client.worldId == -1) {
 			Static4.anInt2974 = 0;
 			Static6.anInt5117 = 1;
 			Static2.anInt1641 = -3;

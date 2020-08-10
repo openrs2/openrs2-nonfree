@@ -1020,7 +1020,7 @@ public final class Static22 {
 				if (MonotonicClock.currentTimeMillis() - 5000L < Static6.aLong169) {
 					return 0;
 				}
-				Static7.aClass197_5 = GameShell.signLink.openSocket(Static6.aString291, Static4.anInt3358);
+				Static7.aClass197_5 = GameShell.signLink.openSocket(client.worldListHostname, client.worldListPort);
 				Static7.aLong35 = MonotonicClock.currentTimeMillis();
 				Static7.anInt5319 = 1;
 			}

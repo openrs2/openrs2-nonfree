@@ -1891,7 +1891,7 @@ public final class Static16 {
 							continue;
 						}
 						if (local45 == 3318) {
-							Static7.anIntArray571[local5++] = Static6.anInt4846;
+							Static7.anIntArray571[local5++] = client.worldId;
 							continue;
 						}
 						if (local45 == 3321) {

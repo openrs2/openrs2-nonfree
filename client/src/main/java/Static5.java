@@ -245,9 +245,6 @@ public final class Static5 {
 	@OriginalMember(owner = "client!qc", name = "xb", descriptor = "[[I")
 	public static int[][] anIntArrayArray36;
 
-	@OriginalMember(owner = "client!qc", name = "kc", descriptor = "I")
-	public static int anInt4045;
-
 	@OriginalMember(owner = "client!qd", name = "I", descriptor = "I")
 	public static int anInt4281;
 

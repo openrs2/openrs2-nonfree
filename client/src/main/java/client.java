@@ -13,9 +13,6 @@ import dev.openrs2.deob.annotation.Pc;
 @OriginalClass("client!client")
 public final class client extends GameShell {
 
-	@OriginalMember(owner = "client!pn", name = "e", descriptor = "I")
-	private static int worldId = 1;
-
 	@OriginalMember(owner = "client!ma", name = "d", descriptor = "I")
 	public static int modeWhere = 0;
 
@@ -49,6 +46,36 @@ public final class client extends GameShell {
 	@OriginalMember(owner = "client!sn", name = "Y", descriptor = "I")
 	public static int affiliate = 0;
 
+	@OriginalMember(owner = "client!pn", name = "e", descriptor = "I")
+	private static int worldListWorldId = 1;
+
+	@OriginalMember(owner = "client!se", name = "Y", descriptor = "Ljava/lang/String;")
+	public static String worldListHostname;
+
+	@OriginalMember(owner = "client!ic", name = "q", descriptor = "I")
+	public static int worldListDefaultPort;
+
+	@OriginalMember(owner = "client!vf", name = "f", descriptor = "I")
+	public static int worldListAlternatePort;
+
+	@OriginalMember(owner = "client!mm", name = "c", descriptor = "I")
+	public static int worldListPort;
+
+	@OriginalMember(owner = "client!si", name = "l", descriptor = "I")
+	public static int worldId = -1;
+
+	@OriginalMember(owner = "client!se", name = "db", descriptor = "Ljava/lang/String;")
+	public static String hostname;
+
+	@OriginalMember(owner = "client!hj", name = "b", descriptor = "I")
+	public static int defaultPort;
+
+	@OriginalMember(owner = "client!qc", name = "kc", descriptor = "I")
+	public static int alternatePort;
+
+	@OriginalMember(owner = "client!sk", name = "f", descriptor = "I")
+	public static int port;
+
 	@OriginalMember(owner = "client!va", name = "f", descriptor = "Lclient!client;")
 	public static client instance;
 
@@ -58,7 +85,7 @@ public final class client extends GameShell {
 			if (args.length != 4) {
 				printUsage("argument count");
 			}
-			worldId = Integer.parseInt(args[0]);
+			worldListWorldId = Integer.parseInt(args[0]);
 			modeWhere = 2;
 			if (args[1].equals("live")) {
 				modeWhat = 0;
@@ -619,27 +646,27 @@ public final class client extends GameShell {
 		}
 		Static33.method4149(GameShell.signLink);
 		if (modeWhere == 0) {
-			Static6.aString291 = this.getCodeBase().getHost();
-			Static3.anInt2337 = 43594;
-			Static7.anInt5498 = 443;
+			worldListHostname = this.getCodeBase().getHost();
+			worldListDefaultPort = 43594;
+			worldListAlternatePort = 443;
 		} else if (modeWhere == 1) {
-			Static6.aString291 = this.getCodeBase().getHost();
-			Static7.anInt5498 = worldId + 50000;
-			Static3.anInt2337 = worldId + 40000;
+			worldListHostname = this.getCodeBase().getHost();
+			worldListDefaultPort = worldListWorldId + 40000;
+			worldListAlternatePort = worldListWorldId + 50000;
 		} else if (modeWhere == 2) {
-			Static7.anInt5498 = worldId + 50000;
-			Static3.anInt2337 = worldId + 40000;
-			Static6.aString291 = "127.0.0.1";
+			worldListHostname = "127.0.0.1";
+			worldListDefaultPort = worldListWorldId + 40000;
+			worldListAlternatePort = worldListWorldId + 50000;
 		}
 		Static7.aShortArray124 = Static5.aShortArray74 = Static7.aShortArray111 = Static4.aShortArray126 = new short[256];
 		if (SignLink.anInt6106 == 3 && modeWhere != 2) {
-			Static6.anInt4846 = worldId;
+			worldId = worldListWorldId;
 		}
 		if (game == 1) {
 			Static1.aShortArrayArray1 = Static5.aShortArrayArray5;
 			Static7.aShortArray113 = Static3.aShortArray35;
 			Static4.aShortArray46 = Static3.aShortArray32;
-			Static4.anInt3364 = 16777215;
+			Static4.anInt3364 = 0xFFFFFF;
 			Static4.anInt3365 = 0;
 			Static2.aBoolean68 = true;
 			Static6.aShortArrayArray6 = Static5.aShortArrayArray2;
@@ -649,11 +676,11 @@ public final class client extends GameShell {
 			Static1.aShortArrayArray1 = Static7.aShortArrayArray8;
 			Static4.aShortArray46 = Static1.aShortArray11;
 		}
-		Static3.anInt2194 = Static3.anInt2337;
-		Static5.anInt4045 = Static7.anInt5498;
-		Static6.aString292 = Static6.aString291;
-		Static4.anInt3358 = Static3.anInt2337;
-		Static6.anInt4866 = Static4.anInt3358;
+		defaultPort = worldListDefaultPort;
+		alternatePort = worldListAlternatePort;
+		hostname = worldListHostname;
+		worldListPort = worldListDefaultPort;
+		port = worldListPort;
 		Static15.method1402();
 		Static20.method1926(GameShell.canvas);
 		Static13.method883(GameShell.canvas);
@@ -727,10 +754,10 @@ public final class client extends GameShell {
 			if (Static2.anInt5721 > 3000) {
 				Static2.anInt5721 = 3000;
 			}
-			if (Static6.anInt4866 == Static3.anInt2194) {
-				Static6.anInt4866 = Static5.anInt4045;
+			if (port == defaultPort) {
+				port = alternatePort;
 			} else {
-				Static6.anInt4866 = Static3.anInt2194;
+				port = defaultPort;
 			}
 			if (Static7.aClass51_2.anInt1358 >= 2 && Static7.aClass51_2.anInt1359 == 6) {
 				this.error("js5connect_outofdate");
@@ -761,7 +788,7 @@ public final class client extends GameShell {
 		}
 		try {
 			if (Static6.anInt4952 == 0) {
-				Static5.aClass197_4 = GameShell.signLink.openSocket(Static6.aString292, Static6.anInt4866);
+				Static5.aClass197_4 = GameShell.signLink.openSocket(hostname, port);
 				Static6.anInt4952++;
 			}
 			if (Static6.anInt4952 == 1) {
@@ -818,7 +845,7 @@ public final class client extends GameShell {
 		if (!this.isHostnameValid()) {
 			return;
 		}
-		worldId = Integer.parseInt(this.getParameter("worldid"));
+		worldListWorldId = Integer.parseInt(this.getParameter("worldid"));
 		modeWhere = Integer.parseInt(this.getParameter("modewhere"));
 		if (modeWhere < 0 || modeWhere > 1) {
 			modeWhere = 0;

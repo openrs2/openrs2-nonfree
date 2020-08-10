@@ -116,9 +116,6 @@ public final class Static7 {
 	@OriginalMember(owner = "client!ve", name = "d", descriptor = "[Ljava/lang/String;")
 	public static String[] aStringArray38;
 
-	@OriginalMember(owner = "client!vf", name = "f", descriptor = "I")
-	public static int anInt5498;
-
 	@OriginalMember(owner = "client!vf", name = "g", descriptor = "Lclient!ud;")
 	public static Class170 aClass170_1;
 

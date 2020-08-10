@@ -546,12 +546,12 @@ public final class Static37 {
 		if (local8 == null) {
 			return false;
 		} else if (SignLink.anInt6106 == 1 || SignLink.anInt6106 == 2 || client.modeWhere == 2) {
-			Static6.aString292 = local8.aString111;
-			Static6.anInt4846 = local8.anInt2037;
+			client.hostname = local8.aString111;
+			client.worldId = local8.anInt2037;
 			if (client.modeWhere != 0) {
-				Static5.anInt4045 = Static6.anInt4846 + 50000;
-				Static3.anInt2194 = Static6.anInt4846 + 40000;
-				Static6.anInt4866 = Static3.anInt2194;
+				client.alternatePort = client.worldId + 50000;
+				client.defaultPort = client.worldId + 40000;
+				client.port = client.defaultPort;
 			}
 			return true;
 		} else {

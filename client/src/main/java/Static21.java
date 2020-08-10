@@ -1452,7 +1452,7 @@ public final class Static21 {
 				@Pc(3651) boolean local3651 = true;
 				local3644--;
 				for (@Pc(3654) int local3654 = 0; local3654 < local3644; local3654++) {
-					if (Static4.anIntArray293[local3654] != Static6.anInt4846 && Static6.anInt4846 == Static4.anIntArray293[local3654 + 1] || Static4.anIntArray293[local3654] == 0 && Static4.anIntArray293[local3654 + 1] != 0) {
+					if (Static4.anIntArray293[local3654] != client.worldId && client.worldId == Static4.anIntArray293[local3654 + 1] || Static4.anIntArray293[local3654] == 0 && Static4.anIntArray293[local3654 + 1] != 0) {
 						local3651 = false;
 						@Pc(3691) int local3691 = Static4.anIntArray293[local3654];
 						Static4.anIntArray293[local3654] = Static4.anIntArray293[local3654 + 1];

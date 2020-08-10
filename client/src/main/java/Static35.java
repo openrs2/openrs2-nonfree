@@ -1612,14 +1612,14 @@ public final class Static35 {
 				Static2.anInt1213 = 0;
 				Static6.anInt4759 = 1;
 				Static4.anInt3409++;
-				if (Static6.anInt4866 == Static3.anInt2194) {
-					Static6.anInt4866 = Static5.anInt4045;
+				if (client.port == client.defaultPort) {
+					client.port = client.alternatePort;
 				} else {
-					Static6.anInt4866 = Static3.anInt2194;
+					client.port = client.defaultPort;
 				}
 			}
 			if (Static6.anInt4759 == 1) {
-				Static7.aClass197_5 = GameShell.signLink.openSocket(Static6.aString292, Static6.anInt4866);
+				Static7.aClass197_5 = GameShell.signLink.openSocket(client.hostname, client.port);
 				Static6.anInt4759 = 2;
 			}
 			if (Static6.anInt4759 == 2) {
@@ -1687,10 +1687,10 @@ public final class Static35 {
 			} else {
 				Static2.anInt1213 = 0;
 				Static6.anInt4759 = 1;
-				if (Static6.anInt4866 == Static3.anInt2194) {
-					Static6.anInt4866 = Static5.anInt4045;
+				if (client.port == client.defaultPort) {
+					client.port = client.alternatePort;
 				} else {
-					Static6.anInt4866 = Static3.anInt2194;
+					client.port = client.defaultPort;
 				}
 				Static4.anInt3409++;
 			}
