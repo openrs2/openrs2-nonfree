@@ -24,7 +24,7 @@ public final class Class161 implements KeyListener, FocusListener {
 	public final void keyTyped(@OriginalArg(0) KeyEvent arg0) {
 		if (Static7.aClass161_1 != null) {
 			@Pc(9) char local9 = arg0.getKeyChar();
-			if (local9 != '\u0000' && local9 != '\uffff' && Static30.method424(local9)) {
+			if (local9 != '\u0000' && local9 != '\uffff' && Cp1252Charset.isCharValid(local9)) {
 				@Pc(27) int local27 = Static6.anInt4861 + 1 & 0x7F;
 				if (local27 != Static5.anInt4304) {
 					Static2.anIntArray125[Static6.anInt4861] = -1;

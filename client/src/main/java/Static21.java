@@ -1040,7 +1040,7 @@ public final class Static21 {
 			}
 			@Pc(2051) byte[] local2051 = new byte[Static1.anInt1052];
 			Static5.aClass4_Sub10_Sub1_2.writeEncryptedBytes(local2051, Static1.anInt1052);
-			@Pc(2063) String local2063 = Static34.method4271(0, local2051, Static1.anInt1052);
+			@Pc(2063) String local2063 = Cp1252Charset.decodeString(local2051, 0, Static1.anInt1052);
 			if (GameShell.frame == null && (SignLink.anInt6106 == 3 || !SignLink.osName.startsWith("win") || client.haveIe6)) {
 				Static37.method4719(local2063, true);
 			} else {

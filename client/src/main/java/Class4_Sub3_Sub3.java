@@ -46,9 +46,9 @@ public final class Class4_Sub3_Sub3 extends Class4_Sub3 {
 	@OriginalMember(owner = "client!cj", name = "a", descriptor = "(ILclient!fd;I)V")
 	private void method603(@OriginalArg(1) Buffer arg0, @OriginalArg(2) int arg1) {
 		if (arg1 == 1) {
-			this.aChar2 = Static29.method3522(arg0.readByte());
+			this.aChar2 = Cp1252Charset.decodeChar(arg0.readByte());
 		} else if (arg1 == 2) {
-			this.aChar1 = Static29.method3522(arg0.readByte());
+			this.aChar1 = Cp1252Charset.decodeChar(arg0.readByte());
 		} else if (arg1 == 3) {
 			this.aString50 = arg0.readString();
 		} else if (arg1 == 4) {

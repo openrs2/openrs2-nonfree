@@ -195,16 +195,6 @@ public final class Static24 {
 		}
 	}
 
-	@OriginalMember(owner = "client!ln", name = "a", descriptor = "(Ljava/lang/String;I)I")
-	public static int method2644(@OriginalArg(0) String arg0) {
-		@Pc(7) int local7 = 0;
-		@Pc(10) int local10 = arg0.length();
-		for (@Pc(12) int local12 = 0; local12 < local10; local12++) {
-			local7 = (local7 << 5) + Static10.method284(arg0.charAt(local12)) - local7;
-		}
-		return local7;
-	}
-
 	@OriginalMember(owner = "client!ln", name = "b", descriptor = "(Ljava/lang/String;I)V")
 	public static void method2651(@OriginalArg(0) String arg0) {
 		System.out.println("Error: " + Static31.method3736(arg0, "\n", "%0a"));

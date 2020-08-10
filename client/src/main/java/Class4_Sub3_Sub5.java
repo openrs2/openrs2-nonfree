@@ -167,7 +167,7 @@ public abstract class Class4_Sub3_Sub5 extends Class4_Sub3 {
 					}
 				}
 				if (local5 == -1) {
-					@Pc(132) char local132 = (char) (Static10.method284(local21) & 0xFF);
+					@Pc(132) char local132 = (char) (Cp1252Charset.encodeChar(local21) & 0xFF);
 					local9 += this.anIntArray250[local132];
 					if (this.aByteArray22 != null && local7 != '\u0000') {
 						local9 += this.aByteArray22[(local7 << 8) + local132];
@@ -235,7 +235,7 @@ public abstract class Class4_Sub3_Sub5 extends Class4_Sub3 {
 					}
 				}
 				if (local6 == -1) {
-					@Pc(171) char local171 = (char) (Static10.method284(local20) & 0xFF);
+					@Pc(171) char local171 = (char) (Cp1252Charset.encodeChar(local20) & 0xFF);
 					if (this.aByteArray22 != null && local8 != '\u0000') {
 						arg1 += this.aByteArray22[(local8 << 8) + local171];
 					}
@@ -538,7 +538,7 @@ public abstract class Class4_Sub3_Sub5 extends Class4_Sub3 {
 					}
 				}
 				if (local6 == -1) {
-					@Pc(200) char local200 = (char) (Static10.method284(local22) & 0xFF);
+					@Pc(200) char local200 = (char) (Cp1252Charset.encodeChar(local22) & 0xFF);
 					if (this.aByteArray22 != null && local8 != '\u0000') {
 						arg1 += this.aByteArray22[(local8 << 8) + local200];
 					}
@@ -685,7 +685,7 @@ public abstract class Class4_Sub3_Sub5 extends Class4_Sub3 {
 
 	@OriginalMember(owner = "client!gl", name = "a", descriptor = "(C)I")
 	private int method2277(@OriginalArg(0) char arg0) {
-		return this.anIntArray250[Static10.method284(arg0) & 0xFF];
+		return this.anIntArray250[Cp1252Charset.encodeChar(arg0) & 0xFF];
 	}
 
 	@OriginalMember(owner = "client!gl", name = "c", descriptor = "(Ljava/lang/String;)V")
@@ -818,7 +818,7 @@ public abstract class Class4_Sub3_Sub5 extends Class4_Sub3 {
 				if (local21 == -1) {
 					if (local37 != '\u0000') {
 						Static3.aStringBuffer3.append(local37);
-						local37 = (char) (Static10.method284(local37) & 0xFF);
+						local37 = (char) (Cp1252Charset.encodeChar(local37) & 0xFF);
 						local11 += this.anIntArray250[local37];
 						if (this.aByteArray22 != null && local23 != '\u0000') {
 							local11 += this.aByteArray22[(local23 << 8) + local37];

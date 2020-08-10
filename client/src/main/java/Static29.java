@@ -2505,22 +2505,6 @@ public final class Static29 {
 		}
 	}
 
-	@OriginalMember(owner = "client!qb", name = "a", descriptor = "(ZB)C")
-	public static char method3522(@OriginalArg(1) byte arg0) {
-		@Pc(7) int local7 = arg0 & 0xFF;
-		if (local7 == 0) {
-			throw new IllegalArgumentException("Non cp1252 character 0x" + Integer.toString(local7, 16) + " provided");
-		}
-		if (local7 >= 128 && local7 < 160) {
-			@Pc(47) char local47 = Static6.aCharArray3[local7 - 128];
-			if (local47 == '\u0000') {
-				local47 = '?';
-			}
-			local7 = local47;
-		}
-		return (char) local7;
-	}
-
 	@OriginalMember(owner = "client!qc", name = "a", descriptor = "(I)V")
 	public static void method3302() {
 		Static6.aClass26_52.method515();
@@ -2734,7 +2718,7 @@ public final class Static29 {
 			}
 			@Pc(24) byte[] local24 = new byte[local12];
 			arg0.position += Static2.aClass129_1.method3233(0, arg0.position, arg0.bytes, local24, local12);
-			return Static34.method4271(0, local24, local12);
+			return Cp1252Charset.decodeString(local24, 0, local12);
 		} catch (@Pc(48) Exception local48) {
 			return "Cabbage";
 		}

@@ -1319,25 +1319,6 @@ public final class Static30 {
 		return Static35.method4319(arg0);
 	}
 
-	@OriginalMember(owner = "client!qi", name = "a", descriptor = "(CI)Z")
-	public static boolean method424(@OriginalArg(0) char arg0) {
-		if (arg0 > '\u0000' && arg0 < '\u0080' || arg0 >= ' ' && arg0 <= 'ÿ') {
-			return true;
-		}
-		if (arg0 != '\u0000') {
-			@Pc(27) int local27 = 0;
-			@Pc(29) char[] local29 = Static6.aCharArray3;
-			while (local27 < local29.length) {
-				@Pc(37) char local37 = local29[local27];
-				if (arg0 == local37) {
-					return true;
-				}
-				local27++;
-			}
-		}
-		return false;
-	}
-
 	@OriginalMember(owner = "client!qj", name = "c", descriptor = "(II)V")
 	public static void method3594() {
 		Static6.aClass26_52.method517(5);

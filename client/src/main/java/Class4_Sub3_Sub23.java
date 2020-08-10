@@ -83,7 +83,7 @@ public final class Class4_Sub3_Sub23 extends Class4_Sub3 {
 			for (@Pc(105) int local105 = 0; local105 < local95; local105++) {
 				this.anIntArray677[local105] = arg0.readUnsignedShort();
 				@Pc(119) byte local119 = arg0.readByte();
-				this.aCharArray4[local105] = local119 == 0 ? 0 : Static29.method3522(local119);
+				this.aCharArray4[local105] = local119 == 0 ? 0 : Cp1252Charset.decodeChar(local119);
 			}
 		} else if (arg1 == 3) {
 			@Pc(39) int local39 = arg0.readUnsignedByte();
@@ -92,7 +92,7 @@ public final class Class4_Sub3_Sub23 extends Class4_Sub3 {
 			for (@Pc(49) int local49 = 0; local49 < local39; local49++) {
 				this.anIntArray676[local49] = arg0.readUnsignedShort();
 				@Pc(69) byte local69 = arg0.readByte();
-				this.aCharArray5[local49] = local69 == 0 ? 0 : Static29.method3522(local69);
+				this.aCharArray5[local49] = local69 == 0 ? 0 : Cp1252Charset.decodeChar(local69);
 			}
 		} else if (arg1 != 4) {
 		}

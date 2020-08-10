@@ -581,9 +581,6 @@ public final class Static6 {
 	@OriginalMember(owner = "client!sk", name = "i", descriptor = "J")
 	public static long aLong169 = 0L;
 
-	@OriginalMember(owner = "client!sl", name = "V", descriptor = "[C")
-	public static final char[] aCharArray3 = new char[] { '€', '\u0000', '‚', 'ƒ', '„', '…', '†', '‡', 'ˆ', '‰', 'Š', '‹', 'Œ', '\u0000', 'Ž', '\u0000', '\u0000', '‘', '’', '“', '”', '•', '–', '—', '˜', '™', 'š', '›', 'œ', '\u0000', 'ž', 'Ÿ' };
-
 	@OriginalMember(owner = "client!sl", name = "Y", descriptor = "[Ljava/lang/String;")
 	public static String[] aStringArray29 = null;
 

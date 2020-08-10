@@ -1311,23 +1311,4 @@ public final class Static34 {
 		Static6.aClass26_46.method511();
 	}
 
-	@OriginalMember(owner = "client!ub", name = "a", descriptor = "(I[BZI)Ljava/lang/String;")
-	public static String method4271(@OriginalArg(0) int arg0, @OriginalArg(1) byte[] arg1, @OriginalArg(3) int arg2) {
-		@Pc(8) char[] local8 = new char[arg2];
-		@Pc(14) int local14 = 0;
-		for (@Pc(16) int local16 = 0; local16 < arg2; local16++) {
-			@Pc(32) int local32 = arg1[arg0 + local16] & 0xFF;
-			if (local32 != 0) {
-				if (local32 >= 128 && local32 < 160) {
-					@Pc(49) char local49 = Static6.aCharArray3[local32 - 128];
-					if (local49 == '\u0000') {
-						local49 = '?';
-					}
-					local32 = local49;
-				}
-				local8[local14++] = (char) local32;
-			}
-		}
-		return new String(local8, 0, local14);
-	}
 }

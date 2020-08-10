@@ -34,7 +34,7 @@ public final class Class4_Sub3_Sub12 extends Class4_Sub3 {
 	@OriginalMember(owner = "client!jc", name = "a", descriptor = "(Lclient!fd;IZ)V")
 	private void method1999(@OriginalArg(0) Buffer arg0, @OriginalArg(1) int arg1) {
 		if (arg1 == 1) {
-			this.aChar3 = Static29.method3522(arg0.readByte());
+			this.aChar3 = Cp1252Charset.decodeChar(arg0.readByte());
 		} else if (arg1 == 2) {
 			this.anInt2546 = arg0.readInt();
 		} else if (arg1 == 5) {

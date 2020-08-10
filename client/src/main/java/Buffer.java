@@ -32,7 +32,7 @@ public class Buffer extends Node {
 		if (index >= 0) {
 			throw new IllegalArgumentException("NUL character at " + index + " - cannot pjstr");
 		}
-		this.position += Static20.method1966(this.bytes, value, value.length(), this.position);
+		this.position += Cp1252Charset.encodeString(value, value.length(), this.bytes, this.position);
 		this.bytes[this.position++] = 0;
 	}
 
@@ -167,7 +167,7 @@ public class Buffer extends Node {
 		@Pc(6) int off = this.position;
 		while (this.bytes[this.position++] != 0) {
 		}
-		return Static34.method4271(off, this.bytes, this.position - off - 1);
+		return Cp1252Charset.decodeString(this.bytes, off, this.position - off - 1);
 	}
 
 	@OriginalMember(owner = "client!fd", name = "a", descriptor = "(I[BIB)V")
@@ -490,7 +490,7 @@ public class Buffer extends Node {
 		@Pc(33) int off = this.position;
 		while (this.bytes[this.position++] != 0) {
 		}
-		return Static34.method4271(off, this.bytes, this.position - off - 1);
+		return Cp1252Charset.decodeString(this.bytes, off, this.position - off - 1);
 	}
 
 	@OriginalMember(owner = "client!fd", name = "b", descriptor = "(II[BI)V")

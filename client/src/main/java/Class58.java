@@ -38,9 +38,9 @@ public final class Class58 {
 		}
 		arg0 = arg0.toLowerCase();
 		arg1 = arg1.toLowerCase();
-		@Pc(25) int local25 = this.aClass61_1.groupNameHashTable.get(Static24.method2644(arg0));
+		@Pc(25) int local25 = this.aClass61_1.groupNameHashTable.get(StringUtils.hashCode(arg0));
 		if (this.method1366(local25)) {
-			@Pc(52) int local52 = this.aClass61_1.fileNameHashTables[local25].get(Static24.method2644(arg1));
+			@Pc(52) int local52 = this.aClass61_1.fileNameHashTables[local25].get(StringUtils.hashCode(arg1));
 			return this.method1370(local25, local52);
 		} else {
 			return false;
@@ -56,7 +56,7 @@ public final class Class58 {
 	public final int method1342(@OriginalArg(0) String arg0) {
 		if (this.method1348()) {
 			arg0 = arg0.toLowerCase();
-			@Pc(30) int local30 = this.aClass61_1.groupNameHashTable.get(Static24.method2644(arg0));
+			@Pc(30) int local30 = this.aClass61_1.groupNameHashTable.get(StringUtils.hashCode(arg0));
 			return this.method1346(local30);
 		} else {
 			return 0;
@@ -82,7 +82,7 @@ public final class Class58 {
 	public final boolean method1344(@OriginalArg(0) String arg0) {
 		if (this.method1348()) {
 			arg0 = arg0.toLowerCase();
-			@Pc(27) int local27 = this.aClass61_1.groupNameHashTable.get(Static24.method2644(arg0));
+			@Pc(27) int local27 = this.aClass61_1.groupNameHashTable.get(StringUtils.hashCode(arg0));
 			return local27 >= 0;
 		} else {
 			return false;
@@ -323,7 +323,7 @@ public final class Class58 {
 	public final void method1357(@OriginalArg(1) String arg0) {
 		if (this.method1348()) {
 			arg0 = arg0.toLowerCase();
-			@Pc(32) int local32 = this.aClass61_1.groupNameHashTable.get(Static24.method2644(arg0));
+			@Pc(32) int local32 = this.aClass61_1.groupNameHashTable.get(StringUtils.hashCode(arg0));
 			this.method1341(local32);
 		}
 	}
@@ -335,9 +335,9 @@ public final class Class58 {
 		}
 		arg1 = arg1.toLowerCase();
 		arg0 = arg0.toLowerCase();
-		@Pc(31) int local31 = this.aClass61_1.groupNameHashTable.get(Static24.method2644(arg1));
+		@Pc(31) int local31 = this.aClass61_1.groupNameHashTable.get(StringUtils.hashCode(arg1));
 		if (this.method1366(local31)) {
-			@Pc(50) int local50 = this.aClass61_1.fileNameHashTables[local31].get(Static24.method2644(arg0));
+			@Pc(50) int local50 = this.aClass61_1.fileNameHashTables[local31].get(StringUtils.hashCode(arg0));
 			return this.method1372(local31, local50);
 		} else {
 			return null;
@@ -406,7 +406,7 @@ public final class Class58 {
 	public final int method1362(@OriginalArg(1) String arg0) {
 		if (this.method1348()) {
 			arg0 = arg0.toLowerCase();
-			@Pc(22) int local22 = this.aClass61_1.groupNameHashTable.get(Static24.method2644(arg0));
+			@Pc(22) int local22 = this.aClass61_1.groupNameHashTable.get(StringUtils.hashCode(arg0));
 			return this.method1366(local22) ? local22 : -1;
 		} else {
 			return -1;
@@ -433,7 +433,7 @@ public final class Class58 {
 	public final boolean method1365(@OriginalArg(0) String arg0) {
 		if (this.method1348()) {
 			arg0 = arg0.toLowerCase();
-			@Pc(28) int local28 = this.aClass61_1.groupNameHashTable.get(Static24.method2644(arg0));
+			@Pc(28) int local28 = this.aClass61_1.groupNameHashTable.get(StringUtils.hashCode(arg0));
 			return this.method1355(local28);
 		} else {
 			return false;
