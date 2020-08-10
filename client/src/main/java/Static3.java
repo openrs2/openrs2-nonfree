@@ -350,7 +350,7 @@ public final class Static3 {
 	public static int anInt2394;
 
 	@OriginalMember(owner = "client!il", name = "b", descriptor = "Lclient!ic;")
-	public static Class84 aClass84_9;
+	public static HashTable aClass84_9;
 
 	@OriginalMember(owner = "client!il", name = "e", descriptor = "I")
 	public static int anInt2449;
@@ -404,7 +404,7 @@ public final class Static3 {
 	public static BufferedFile aClass189_5;
 
 	@OriginalMember(owner = "client!je", name = "m", descriptor = "Lclient!ic;")
-	public static Class84 aClass84_10;
+	public static HashTable aClass84_10;
 
 	@OriginalMember(owner = "client!jf", name = "d", descriptor = "Lclient!eo;")
 	public static BufferedSocket aClass52_7;
@@ -701,7 +701,7 @@ public final class Static3 {
 	public static int[] anIntArray199 = null;
 
 	@OriginalMember(owner = "client!ii", name = "a", descriptor = "Lclient!ic;")
-	public static final Class84 aClass84_14 = new Class84(16);
+	public static final HashTable aClass84_14 = new HashTable(16);
 
 	@OriginalMember(owner = "client!ii", name = "c", descriptor = "Lclient!uk;")
 	public static final Class175 aClass175_12 = new Class175();
@@ -716,7 +716,7 @@ public final class Static3 {
 	public static final int[] anIntArray211 = new int[14];
 
 	@OriginalMember(owner = "client!ij", name = "N", descriptor = "Lclient!ic;")
-	public static final Class84 aClass84_8 = new Class84(16);
+	public static final HashTable aClass84_8 = new HashTable(16);
 
 	@OriginalMember(owner = "client!ik", name = "B", descriptor = "Z")
 	public static boolean aBoolean166 = false;

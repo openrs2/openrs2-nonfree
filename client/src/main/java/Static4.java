@@ -361,7 +361,7 @@ public final class Static4 {
 	public static final int anInt2888 = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!\"£$%^&*()-_=+[{]};:'@#~,<.>/?\\| ÄËÏÖÜäëïöüÿßÁÀÉÈÍÌÓÒÚÙáàéèíìóòúùÂÊÎÔÛâêîôûÆæãÃõÕçÇ".length();
 
 	@OriginalMember(owner = "client!kl", name = "Z", descriptor = "Lclient!ic;")
-	public static Class84 aClass84_13 = new Class84(8);
+	public static HashTable aClass84_13 = new HashTable(8);
 
 	@OriginalMember(owner = "client!km", name = "Z", descriptor = "Lclient!cc;")
 	public static Class26 aClass26_28 = new Class26(128);

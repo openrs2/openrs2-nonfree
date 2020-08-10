@@ -479,13 +479,13 @@ public final class Static24 {
 		Static6.anInt4953 = arg2;
 		Static3.anInt2571 = arg1;
 		Static19.method2402(arg3);
-		Static3.aClass84_10 = new Class84(8);
-		Static3.aClass84_9 = new Class84(8);
+		Static3.aClass84_10 = new HashTable(8);
+		Static3.aClass84_9 = new HashTable(8);
 	}
 
 	@OriginalMember(owner = "client!mc", name = "b", descriptor = "(BI)V")
 	public static void method2689(@OriginalArg(1) int arg0) {
-		for (@Pc(16) Node local16 = Static2.aClass84_5.method1842(); local16 != null; local16 = Static2.aClass84_5.method1843()) {
+		for (@Pc(16) Node local16 = Static2.aClass84_5.head(); local16 != null; local16 = Static2.aClass84_5.next()) {
 			if ((local16.key >> 48 & 0xFFFFL) == (long) arg0) {
 				local16.unlink();
 			}

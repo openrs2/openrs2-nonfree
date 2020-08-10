@@ -342,7 +342,7 @@ public final class Static10 {
 		@Pc(9) Class4_Sub27 local9 = new Class4_Sub27();
 		local9.anInt4619 = arg1;
 		local9.anInt4620 = arg0;
-		Static4.aClass84_13.method1840(local9, (long) arg2);
+		Static4.aClass84_13.put((long) arg2, local9);
 		Static9.method230(arg0);
 		@Pc(28) Class185 local28 = Static19.method1813(arg2);
 		if (local28 != null) {
@@ -434,7 +434,7 @@ public final class Static10 {
 
 	@OriginalMember(owner = "client!bn", name = "a", descriptor = "(ILclient!f;)V")
 	public static void method383(@OriginalArg(1) Class53_Sub1_Sub1 arg0) {
-		@Pc(20) Class4_Sub11 local20 = (Class4_Sub11) Static5.aClass84_18.method1844(Static18.method1746(arg0.aString88));
+		@Pc(20) Class4_Sub11 local20 = (Class4_Sub11) Static5.aClass84_18.get(Static18.method1746(arg0.aString88));
 		if (local20 == null) {
 			Static8.method109(null, arg0.anIntArray422[0], null, arg0.anIntArray426[0], arg0, 0, Static7.anInt5334);
 		} else {

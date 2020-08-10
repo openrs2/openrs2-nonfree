@@ -7,10 +7,10 @@ import dev.openrs2.deob.annotation.Pc;
 public final class Class98 {
 
 	@OriginalMember(owner = "client!jk", name = "m", descriptor = "Lclient!ic;")
-	private final Class84 aClass84_11 = new Class84(256);
+	private final HashTable aClass84_11 = new HashTable(256);
 
 	@OriginalMember(owner = "client!jk", name = "x", descriptor = "Lclient!ic;")
-	private final Class84 aClass84_12 = new Class84(256);
+	private final HashTable aClass84_12 = new HashTable(256);
 
 	@OriginalMember(owner = "client!jk", name = "c", descriptor = "Lclient!fh;")
 	private final Class58 aClass58_62;
@@ -29,7 +29,7 @@ public final class Class98 {
 		@Pc(18) int local18 = arg2 ^ (arg0 >>> 12 | (arg0 & 0x30000FFF) << 4);
 		local18 |= arg0 << 16;
 		@Pc(31) long local31 = (long) local18;
-		@Pc(38) Class4_Sub8_Sub1 local38 = (Class4_Sub8_Sub1) this.aClass84_12.method1844(local31);
+		@Pc(38) Class4_Sub8_Sub1 local38 = (Class4_Sub8_Sub1) this.aClass84_12.get(local31);
 		if (local38 != null) {
 			return local38;
 		} else if (arg1 == null || arg1[0] > 0) {
@@ -38,7 +38,7 @@ public final class Class98 {
 				return null;
 			}
 			@Pc(66) Class4_Sub8_Sub1 local66 = local57.method107();
-			this.aClass84_12.method1840(local66, local31);
+			this.aClass84_12.put(local31, local66);
 			if (arg1 != null) {
 				arg1[0] -= local66.aByteArray52.length;
 			}
@@ -64,24 +64,24 @@ public final class Class98 {
 		@Pc(15) int local15 = arg0 ^ ((arg1 & 0x60000FFF) << 4 | arg1 >>> 12);
 		local15 |= arg1 << 16;
 		@Pc(26) long local26 = (long) local15 ^ 0x100000000L;
-		@Pc(33) Class4_Sub8_Sub1 local33 = (Class4_Sub8_Sub1) this.aClass84_12.method1844(local26);
+		@Pc(33) Class4_Sub8_Sub1 local33 = (Class4_Sub8_Sub1) this.aClass84_12.get(local26);
 		if (local33 != null) {
 			return local33;
 		} else if (arg2 == null || arg2[0] > 0) {
-			@Pc(64) Class4_Sub24 local64 = (Class4_Sub24) this.aClass84_11.method1844(local26);
+			@Pc(64) Class4_Sub24 local64 = (Class4_Sub24) this.aClass84_11.get(local26);
 			if (local64 == null) {
 				local64 = Static30.method3636(this.aClass58_62, arg1, arg0);
 				if (local64 == null) {
 					return null;
 				}
-				this.aClass84_11.method1840(local64, local26);
+				this.aClass84_11.put(local26, local64);
 			}
 			@Pc(87) Class4_Sub8_Sub1 local87 = local64.method3635(arg2);
 			if (local87 == null) {
 				return null;
 			} else {
 				local64.unlink();
-				this.aClass84_12.method1840(local87, local26);
+				this.aClass84_12.put(local26, local87);
 				return local87;
 			}
 		} else {

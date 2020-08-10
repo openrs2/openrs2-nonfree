@@ -7,7 +7,7 @@ import dev.openrs2.deob.annotation.Pc;
 public final class Class4_Sub3_Sub17 extends Class4_Sub3 {
 
 	@OriginalMember(owner = "client!ro", name = "C", descriptor = "Lclient!ic;")
-	private Class84 aClass84_21;
+	private HashTable aClass84_21;
 
 	@OriginalMember(owner = "client!ro", name = "a", descriptor = "(Lclient!fd;BI)V")
 	private void method3799(@OriginalArg(0) Buffer arg0, @OriginalArg(2) int arg1) {
@@ -17,7 +17,7 @@ public final class Class4_Sub3_Sub17 extends Class4_Sub3 {
 		@Pc(12) int local12 = arg0.readUnsignedByte();
 		if (this.aClass84_21 == null) {
 			@Pc(21) int local21 = Static24.method2595(local12);
-			this.aClass84_21 = new Class84(local21);
+			this.aClass84_21 = new HashTable(local21);
 		}
 		for (@Pc(29) int local29 = 0; local29 < local12; local29++) {
 			@Pc(41) boolean local41 = arg0.readUnsignedByte() == 1;
@@ -28,7 +28,7 @@ public final class Class4_Sub3_Sub17 extends Class4_Sub3 {
 			} else {
 				local54 = new IntNode(arg0.readInt());
 			}
-			this.aClass84_21.method1840(local54, (long) local45);
+			this.aClass84_21.put((long) local45, local54);
 		}
 	}
 
@@ -37,7 +37,7 @@ public final class Class4_Sub3_Sub17 extends Class4_Sub3 {
 		if (this.aClass84_21 == null) {
 			return arg0;
 		} else {
-			@Pc(19) IntNode local19 = (IntNode) this.aClass84_21.method1844((long) arg1);
+			@Pc(19) IntNode local19 = (IntNode) this.aClass84_21.get((long) arg1);
 			return local19 == null ? arg0 : local19.value;
 		}
 	}
@@ -58,7 +58,7 @@ public final class Class4_Sub3_Sub17 extends Class4_Sub3 {
 		if (this.aClass84_21 == null) {
 			return arg0;
 		} else {
-			@Pc(22) StringNode local22 = (StringNode) this.aClass84_21.method1844((long) arg1);
+			@Pc(22) StringNode local22 = (StringNode) this.aClass84_21.get((long) arg1);
 			return local22 == null ? arg0 : local22.value;
 		}
 	}

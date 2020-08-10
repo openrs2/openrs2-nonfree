@@ -28,7 +28,7 @@ public final class Class181 {
 	private short[] aShortArray119;
 
 	@OriginalMember(owner = "client!vh", name = "lb", descriptor = "Lclient!ic;")
-	private Class84 aClass84_26;
+	private HashTable aClass84_26;
 
 	@OriginalMember(owner = "client!vh", name = "rb", descriptor = "[I")
 	public int[] anIntArray632;
@@ -309,7 +309,7 @@ public final class Class181 {
 		if (this.aClass84_26 == null) {
 			return arg0;
 		} else {
-			@Pc(27) IntNode local27 = (IntNode) this.aClass84_26.method1844((long) arg1);
+			@Pc(27) IntNode local27 = (IntNode) this.aClass84_26.get((long) arg1);
 			return local27 == null ? arg0 : local27.value;
 		}
 	}
@@ -897,7 +897,7 @@ public final class Class181 {
 			@Pc(600) int local600 = arg1.readUnsignedByte();
 			if (this.aClass84_26 == null) {
 				@Pc(608) int local608 = Static24.method2595(local600);
-				this.aClass84_26 = new Class84(local608);
+				this.aClass84_26 = new HashTable(local608);
 			}
 			for (@Pc(616) int local616 = 0; local616 < local600; local616++) {
 				@Pc(628) boolean local628 = arg1.readUnsignedByte() == 1;
@@ -908,7 +908,7 @@ public final class Class181 {
 				} else {
 					local641 = new IntNode(arg1.readInt());
 				}
-				this.aClass84_26.method1840(local641, (long) local632);
+				this.aClass84_26.put((long) local632, local641);
 			}
 		}
 	}
@@ -971,7 +971,7 @@ public final class Class181 {
 		if (this.aClass84_26 == null) {
 			return arg0;
 		} else {
-			@Pc(25) StringNode local25 = (StringNode) this.aClass84_26.method1844((long) arg1);
+			@Pc(25) StringNode local25 = (StringNode) this.aClass84_26.get((long) arg1);
 			return local25 == null ? arg0 : local25.value;
 		}
 	}

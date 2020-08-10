@@ -296,10 +296,10 @@ public final class Static26 {
 
 	@OriginalMember(owner = "client!nf", name = "a", descriptor = "(IIIII)V")
 	public static void method2972(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3) {
-		@Pc(12) Class4_Sub18 local12 = (Class4_Sub18) Static5.aClass84_17.method1844((long) arg0);
+		@Pc(12) Class4_Sub18 local12 = (Class4_Sub18) Static5.aClass84_17.get((long) arg0);
 		if (local12 == null) {
 			local12 = new Class4_Sub18();
-			Static5.aClass84_17.method1840(local12, (long) arg0);
+			Static5.aClass84_17.put((long) arg0, local12);
 		}
 		if (local12.anIntArray385.length <= arg1) {
 			@Pc(41) int[] local41 = new int[arg1 + 1];

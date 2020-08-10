@@ -19,7 +19,7 @@ public final class Class40 {
 	private final int anInt1045;
 
 	@OriginalMember(owner = "client!dj", name = "q", descriptor = "Lclient!ic;")
-	private final Class84 aClass84_4;
+	private final HashTable aClass84_4;
 
 	@OriginalMember(owner = "client!dj", name = "<init>", descriptor = "(I)V")
 	public Class40(@OriginalArg(0) int arg0) {
@@ -28,12 +28,12 @@ public final class Class40 {
 		for (local16 = 1; arg0 > local16 + local16; local16 += local16) {
 		}
 		this.anInt1045 = arg0;
-		this.aClass84_4 = new Class84(local16);
+		this.aClass84_4 = new HashTable(local16);
 	}
 
 	@OriginalMember(owner = "client!dj", name = "c", descriptor = "(I)Lclient!ni;")
 	public final Node method886() {
-		return this.aClass84_4.method1842();
+		return this.aClass84_4.head();
 	}
 
 	@OriginalMember(owner = "client!dj", name = "a", descriptor = "(JILclient!lh;)V")
@@ -50,13 +50,13 @@ public final class Class40 {
 		} else {
 			this.anInt1044--;
 		}
-		this.aClass84_4.method1840(arg1, arg0);
+		this.aClass84_4.put(arg0, arg1);
 		this.aClass175_3.method4333(arg1);
 	}
 
 	@OriginalMember(owner = "client!dj", name = "a", descriptor = "(IJ)Lclient!lh;")
 	public final Class4_Sub3 method889(@OriginalArg(1) long arg0) {
-		@Pc(18) Class4_Sub3 local18 = (Class4_Sub3) this.aClass84_4.method1844(arg0);
+		@Pc(18) Class4_Sub3 local18 = (Class4_Sub3) this.aClass84_4.get(arg0);
 		if (local18 != null) {
 			this.aClass175_3.method4333(local18);
 		}
@@ -65,13 +65,13 @@ public final class Class40 {
 
 	@OriginalMember(owner = "client!dj", name = "d", descriptor = "(I)Lclient!ni;")
 	public final Node method890() {
-		return this.aClass84_4.method1843();
+		return this.aClass84_4.next();
 	}
 
 	@OriginalMember(owner = "client!dj", name = "a", descriptor = "(B)V")
 	public final void method893() {
 		this.aClass175_3.method4337();
-		this.aClass84_4.method1847();
+		this.aClass84_4.clear();
 		this.aClass4_Sub3_18 = new Class4_Sub3();
 		this.anInt1044 = this.anInt1045;
 	}

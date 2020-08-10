@@ -44,7 +44,7 @@ public final class Class4_Sub12 extends Node {
 	private int[] anIntArray206;
 
 	@OriginalMember(owner = "client!ih", name = "N", descriptor = "Lclient!ic;")
-	private Class84 aClass84_6;
+	private HashTable aClass84_6;
 
 	@OriginalMember(owner = "client!ih", name = "O", descriptor = "[[I")
 	private int[][] anIntArrayArray19;
@@ -319,7 +319,7 @@ public final class Class4_Sub12 extends Node {
 		@Pc(1) long local1 = 0L;
 		if ((arg0 & 0x7F) == 0 || (arg2 & 0x7F) == 0) {
 			local1 = (long) (arg0 + (arg2 << 16)) + ((long) arg6 << 32);
-			@Pc(28) IntNode local28 = (IntNode) this.aClass84_6.method1844(local1);
+			@Pc(28) IntNode local28 = (IntNode) this.aClass84_6.get(local1);
 			if (local28 != null) {
 				if (arg1 < this.anIntArray207[local28.value]) {
 					this.anIntArray207[local28.value] = arg1;
@@ -338,7 +338,7 @@ public final class Class4_Sub12 extends Node {
 		this.aFloatArray25[this.anInt2357] = arg5;
 		this.anIntArray201[this.anInt2357] = arg6;
 		if (local1 != 0L) {
-			this.aClass84_6.method1840(new IntNode(this.anInt2357), local1);
+			this.aClass84_6.put(local1, new IntNode(this.anInt2357));
 		}
 		return this.anInt2357++;
 	}
@@ -359,7 +359,7 @@ public final class Class4_Sub12 extends Node {
 		this.anIntArray206 = new int[this.anInt2355];
 		this.anIntArray202 = new int[this.anInt2355];
 		this.anIntArrayArray18 = new int[this.anInt2355][];
-		this.aClass84_6 = new Class84(Static24.method2595(this.anInt2352));
+		this.aClass84_6 = new HashTable(Static24.method2595(this.anInt2352));
 		if (this.aBoolean162) {
 			this.anIntArrayArray19 = new int[this.anInt2355][];
 			this.aBooleanArray10 = new boolean[this.anInt2355];

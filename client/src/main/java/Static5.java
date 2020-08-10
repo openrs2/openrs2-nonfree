@@ -357,7 +357,7 @@ public final class Static5 {
 	public static final int[] anIntArray615 = new int[8];
 
 	@OriginalMember(owner = "client!nh", name = "O", descriptor = "Lclient!ic;")
-	public static final Class84 aClass84_16 = new Class84(16);
+	public static final HashTable aClass84_16 = new HashTable(16);
 
 	@OriginalMember(owner = "client!nh", name = "U", descriptor = "[Lclient!eg;")
 	public static final Class46[] aClass46Array2 = new Class46[14];
@@ -369,7 +369,7 @@ public final class Static5 {
 	public static final Class26 aClass26_35 = new Class26(64);
 
 	@OriginalMember(owner = "client!nj", name = "i", descriptor = "Lclient!ic;")
-	public static Class84 aClass84_17 = new Class84(32);
+	public static HashTable aClass84_17 = new HashTable(32);
 
 	@OriginalMember(owner = "client!nj", name = "j", descriptor = "Lclient!wa;")
 	public static final Packet aClass4_Sub10_Sub1_2 = new Packet(65536);
@@ -516,7 +516,7 @@ public final class Static5 {
 	public static final Class26 aClass26_43 = new Class26(500);
 
 	@OriginalMember(owner = "client!p", name = "nc", descriptor = "Lclient!ic;")
-	public static final Class84 aClass84_18 = new Class84(16);
+	public static final HashTable aClass84_18 = new HashTable(16);
 
 	@OriginalMember(owner = "client!pa", name = "c", descriptor = "Lclient!dj;")
 	public static final Class40 aClass40_13 = new Class40(128);

@@ -157,15 +157,15 @@ public final class Static28 {
 		local9.anInt2657 = local14.readUnsignedShort();
 		@Pc(66) int local66 = local14.readUnsignedByte();
 		if (local66 > 0) {
-			local9.aClass84Array1 = new Class84[local66];
+			local9.aClass84Array1 = new HashTable[local66];
 			for (@Pc(77) int local77 = 0; local77 < local66; local77++) {
 				@Pc(84) int local84 = local14.readUnsignedShort();
-				@Pc(91) Class84 local91 = new Class84(Static24.method2595(local84));
+				@Pc(91) HashTable local91 = new HashTable(Static24.method2595(local84));
 				local9.aClass84Array1[local77] = local91;
 				while (local84-- > 0) {
 					@Pc(103) int local103 = local14.readInt();
 					@Pc(107) int local107 = local14.readInt();
-					local91.method1840(new IntNode(local107), (long) local103);
+					local91.put((long) local103, new IntNode(local107));
 				}
 			}
 		}
@@ -191,7 +191,7 @@ public final class Static28 {
 
 	@OriginalMember(owner = "client!om", name = "a", descriptor = "(IBIZ)I")
 	public static int method3248(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) boolean arg2) {
-		@Pc(12) Class4_Sub18 local12 = (Class4_Sub18) Static5.aClass84_17.method1844((long) arg1);
+		@Pc(12) Class4_Sub18 local12 = (Class4_Sub18) Static5.aClass84_17.get((long) arg1);
 		if (local12 == null) {
 			return 0;
 		}
@@ -200,7 +200,7 @@ public final class Static28 {
 			if (local12.anIntArray385[local26] >= 0 && Static5.anInt6072 > local12.anIntArray385[local26]) {
 				@Pc(61) Class162 local61 = Static35.method4361(local12.anIntArray385[local26]);
 				if (local61.aClass84_22 != null) {
-					@Pc(72) IntNode local72 = (IntNode) local61.aClass84_22.method1844((long) arg0);
+					@Pc(72) IntNode local72 = (IntNode) local61.aClass84_22.get((long) arg0);
 					if (local72 != null) {
 						if (arg2) {
 							local19 += local72.value * local12.anIntArray386[local26];

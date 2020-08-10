@@ -727,11 +727,11 @@ public final class Static11 {
 		if (Static3.anInt5398 != -1) {
 			Static32.method4025(Static3.anInt5398);
 		}
-		for (@Pc(3886) Class4_Sub27 local3886 = (Class4_Sub27) Static4.aClass84_13.method1842(); local3886 != null; local3886 = (Class4_Sub27) Static4.aClass84_13.method1843()) {
+		for (@Pc(3886) Class4_Sub27 local3886 = (Class4_Sub27) Static4.aClass84_13.head(); local3886 != null; local3886 = (Class4_Sub27) Static4.aClass84_13.next()) {
 			Static28.method3246(true, local3886);
 		}
 		Static3.anInt5398 = -1;
-		Static4.aClass84_13 = new Class84(8);
+		Static4.aClass84_13 = new HashTable(8);
 		Static14.method1068();
 		Static6.aClass185_14 = null;
 		Static7.anInt5634 = 0;
@@ -949,11 +949,11 @@ public final class Static11 {
 			if (Static3.anInt5398 != -1) {
 				Static32.method4025(Static3.anInt5398);
 			}
-			for (@Pc(15) Class4_Sub27 local15 = (Class4_Sub27) Static4.aClass84_13.method1842(); local15 != null; local15 = (Class4_Sub27) Static4.aClass84_13.method1843()) {
+			for (@Pc(15) Class4_Sub27 local15 = (Class4_Sub27) Static4.aClass84_13.head(); local15 != null; local15 = (Class4_Sub27) Static4.aClass84_13.next()) {
 				Static28.method3246(true, local15);
 			}
 			Static3.anInt5398 = -1;
-			Static4.aClass84_13 = new Class84(8);
+			Static4.aClass84_13 = new HashTable(8);
 			Static14.method1068();
 			Static3.anInt5398 = Static7.anInt742;
 			Static12.method777(false);

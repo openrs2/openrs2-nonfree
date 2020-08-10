@@ -166,7 +166,7 @@ public final class Static33 {
 		if (arg0 < 0) {
 			return 0;
 		}
-		@Pc(18) Class4_Sub18 local18 = (Class4_Sub18) Static5.aClass84_17.method1844((long) arg0);
+		@Pc(18) Class4_Sub18 local18 = (Class4_Sub18) Static5.aClass84_17.get((long) arg0);
 		if (local18 == null) {
 			return Static9.method264(arg0).anInt1963;
 		}
@@ -835,8 +835,8 @@ public final class Static33 {
 			local25.method746(new Buffer(local21));
 		}
 		local25.method743();
-		if (local25.anInt907 == 2 && Static5.aClass84_16.method1844((long) arg0) == null) {
-			Static5.aClass84_16.method1840(new IntNode(Static1.anInt876), (long) arg0);
+		if (local25.anInt907 == 2 && Static5.aClass84_16.get((long) arg0) == null) {
+			Static5.aClass84_16.put((long) arg0, new IntNode(Static1.anInt876));
 			Static6.aClass37Array1[Static1.anInt876++] = local25;
 		}
 		Static3.aClass26_21.method510(local25, (long) arg0);

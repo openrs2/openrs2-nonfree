@@ -183,7 +183,7 @@ public final class Static29 {
 
 	@OriginalMember(owner = "client!pg", name = "a", descriptor = "([[[BB[[B[[I[[FI[[B[[B[[I[[B[[F[[F)[Lclient!ih;")
 	public static Class4_Sub12[] method3149(@OriginalArg(0) byte[][][] arg0, @OriginalArg(2) byte[][] arg1, @OriginalArg(3) int[][] arg2, @OriginalArg(4) float[][] arg3, @OriginalArg(5) int arg4, @OriginalArg(6) byte[][] arg5, @OriginalArg(7) byte[][] arg6, @OriginalArg(8) int[][] arg7, @OriginalArg(9) byte[][] arg8, @OriginalArg(10) float[][] arg9, @OriginalArg(11) float[][] arg10) {
-		@Pc(10) Class84 local10 = new Class84(128);
+		@Pc(10) HashTable local10 = new HashTable(128);
 		for (@Pc(12) int local12 = 1; local12 <= 102; local12++) {
 			for (@Pc(17) int local17 = 1; local17 <= 102; local17++) {
 				@Pc(30) int local30 = arg8[local12][local17] & 0xFF;
@@ -376,7 +376,7 @@ public final class Static29 {
 				}
 			}
 		}
-		for (@Pc(1123) Class4_Sub12 local1123 = (Class4_Sub12) local10.method1842(); local1123 != null; local1123 = (Class4_Sub12) local10.method1843()) {
+		for (@Pc(1123) Class4_Sub12 local1123 = (Class4_Sub12) local10.head(); local1123 != null; local1123 = (Class4_Sub12) local10.next()) {
 			local1123.method1872();
 		}
 		for (@Pc(1137) int local1137 = 1; local1137 <= 102; local1137++) {
@@ -642,17 +642,17 @@ public final class Static29 {
 				}
 			}
 		}
-		for (@Pc(2739) Class4_Sub12 local2739 = (Class4_Sub12) local10.method1842(); local2739 != null; local2739 = (Class4_Sub12) local10.method1843()) {
+		for (@Pc(2739) Class4_Sub12 local2739 = (Class4_Sub12) local10.head(); local2739 != null; local2739 = (Class4_Sub12) local10.next()) {
 			if (local2739.anInt2357 == 0) {
 				local2739.unlink();
 			} else {
 				local2739.method1866();
 			}
 		}
-		@Pc(2766) int local2766 = local10.method1841();
+		@Pc(2766) int local2766 = local10.size();
 		@Pc(2774) Class4_Sub12[] local2774 = new Class4_Sub12[local2766];
 		@Pc(2777) long[] local2777 = new long[local2766];
-		local10.method1845(local2774);
+		local10.toArray(local2774);
 		for (@Pc(2784) int local2784 = 0; local2784 < local2766; local2784++) {
 			local2777[local2784] = local2774[local2784].key;
 		}
@@ -1545,7 +1545,7 @@ public final class Static29 {
 					if (local15.aClass185Array4 != null) {
 						method3480(local15.aClass185Array4, arg1);
 					}
-					@Pc(44) Class4_Sub27 local44 = (Class4_Sub27) Static4.aClass84_13.method1844((long) local15.anInt5914);
+					@Pc(44) Class4_Sub27 local44 = (Class4_Sub27) Static4.aClass84_13.get((long) local15.anInt5914);
 					if (local44 != null) {
 						Static28.method3277(local44.anInt4620, arg1);
 					}
@@ -2452,7 +2452,7 @@ public final class Static29 {
 					if (local19.aClass185Array4 != null) {
 						method3495(local19.aClass185Array4, local19.anInt5914);
 					}
-					@Pc(79) Class4_Sub27 local79 = (Class4_Sub27) Static4.aClass84_13.method1844((long) local19.anInt5914);
+					@Pc(79) Class4_Sub27 local79 = (Class4_Sub27) Static4.aClass84_13.get((long) local19.anInt5914);
 					if (local79 != null) {
 						Static27.method4243(local79.anInt4620);
 					}
@@ -2829,10 +2829,10 @@ public final class Static29 {
 	@OriginalMember(owner = "client!qe", name = "a", descriptor = "(ZII)V")
 	public static void method3543(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1) {
 		Static1.anIntArray2[arg0] = arg1;
-		@Pc(20) Class4_Sub5 local20 = (Class4_Sub5) Static7.aClass84_25.method1844((long) arg0);
+		@Pc(20) Class4_Sub5 local20 = (Class4_Sub5) Static7.aClass84_25.get((long) arg0);
 		if (local20 == null) {
 			@Pc(30) Class4_Sub5 local30 = new Class4_Sub5(MonotonicClock.currentTimeMillis() + 500L);
-			Static7.aClass84_25.method1840(local30, (long) arg0);
+			Static7.aClass84_25.put((long) arg0, local30);
 		} else {
 			local20.aLong17 = MonotonicClock.currentTimeMillis() + 500L;
 		}

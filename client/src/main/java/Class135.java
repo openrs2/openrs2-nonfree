@@ -49,7 +49,7 @@ public final class Class135 {
 	private int[] anIntArray438;
 
 	@OriginalMember(owner = "client!pi", name = "n", descriptor = "Lclient!ic;")
-	private Class84 aClass84_19;
+	private HashTable aClass84_19;
 
 	@OriginalMember(owner = "client!pi", name = "o", descriptor = "[B")
 	private byte[] aByteArray55;
@@ -75,7 +75,7 @@ public final class Class135 {
 		this.aByteArray53 = new byte[this.anInt4159];
 		this.aByteArray54 = new byte[this.anInt4159];
 		this.aByteArray55 = new byte[this.anInt4159];
-		this.aClass84_19 = new Class84(Static24.method2595(this.anInt4159));
+		this.aClass84_19 = new HashTable(Static24.method2595(this.anInt4159));
 	}
 
 	@OriginalMember(owner = "client!pi", name = "b", descriptor = "()V")
@@ -159,7 +159,7 @@ public final class Class135 {
 		@Pc(1) long local1 = 0L;
 		if ((arg1 & 0x7F) == 0 || (arg3 & 0x7F) == 0) {
 			local1 = arg1 + (arg3 << 16);
-			@Pc(23) IntNode local23 = (IntNode) this.aClass84_19.method1844(local1);
+			@Pc(23) IntNode local23 = (IntNode) this.aClass84_19.get(local1);
 			if (local23 != null) {
 				return local23.value;
 			}
@@ -204,7 +204,7 @@ public final class Class135 {
 		this.anIntArray439[this.anInt4161] = arg1;
 		this.anIntArray438[this.anInt4161] = arg2;
 		this.anIntArray436[this.anInt4161] = arg3;
-		this.aClass84_19.method1840(new IntNode(this.anInt4161), local1);
+		this.aClass84_19.put(local1, new IntNode(this.anInt4161));
 		return this.anInt4161++;
 	}
 }

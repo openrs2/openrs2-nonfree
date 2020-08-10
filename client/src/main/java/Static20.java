@@ -43,7 +43,7 @@ public final class Static20 {
 
 	@OriginalMember(owner = "client!ii", name = "b", descriptor = "(I)Lclient!wg;")
 	public static Class4_Sub3_Sub22 method2405(@OriginalArg(0) int arg0) {
-		return (Class4_Sub3_Sub22) Static3.aClass84_14.method1844((long) arg0);
+		return (Class4_Sub3_Sub22) Static3.aClass84_14.get((long) arg0);
 	}
 
 	@OriginalMember(owner = "client!ii", name = "b", descriptor = "(Lclient!fd;)V")
@@ -1365,7 +1365,7 @@ public final class Static20 {
 			local31.anInt2112 = local31.aClass53_Sub1_Sub2_1.anInt4002 + local31.aClass53_Sub1_Sub2_1.method3311() * 64;
 			Static12.method731(arg0, arg2, arg3, local31, arg1);
 		}
-		for (@Pc(217) Class4_Sub11 local217 = (Class4_Sub11) Static5.aClass84_18.method1842(); local217 != null; local217 = (Class4_Sub11) Static5.aClass84_18.method1843()) {
+		for (@Pc(217) Class4_Sub11 local217 = (Class4_Sub11) Static5.aClass84_18.head(); local217 != null; local217 = (Class4_Sub11) Static5.aClass84_18.next()) {
 			@Pc(222) byte local222 = 1;
 			@Pc(227) Class34 local227 = local217.aClass53_Sub1_Sub1_1.method3314();
 			if (local227.anInt860 == local217.aClass53_Sub1_Sub1_1.anInt4005) {

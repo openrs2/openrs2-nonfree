@@ -106,7 +106,7 @@ public final class Static12 {
 
 	@OriginalMember(owner = "client!client", name = "a", descriptor = "(Lclient!wf;)Lclient!on;")
 	public static Class4_Sub21 method687(@OriginalArg(0) Class185 arg0) {
-		@Pc(13) Class4_Sub21 local13 = (Class4_Sub21) Static2.aClass84_5.method1844(((long) arg0.anInt5914 << 32) + (long) arg0.anInt5968);
+		@Pc(13) Class4_Sub21 local13 = (Class4_Sub21) Static2.aClass84_5.get(((long) arg0.anInt5914 << 32) + (long) arg0.anInt5968);
 		return local13 == null ? arg0.aClass4_Sub21_2 : local13;
 	}
 
@@ -600,7 +600,7 @@ public final class Static12 {
 						if (local9.aClass185Array4 != null) {
 							method693(local9.aClass185Array4, local9.anInt5914, local61, local63, local65, local67, local50 - local9.anInt5932, local55 - local9.anInt5931);
 						}
-						@Pc(1691) Class4_Sub27 local1691 = (Class4_Sub27) Static4.aClass84_13.method1844((long) local9.anInt5914);
+						@Pc(1691) Class4_Sub27 local1691 = (Class4_Sub27) Static4.aClass84_13.get((long) local9.anInt5914);
 						if (local1691 != null) {
 							Static14.method1060(local1691.anInt4620, local65, local50, local63, local55, local61, local67);
 						}
@@ -740,10 +740,10 @@ public final class Static12 {
 
 	@OriginalMember(owner = "client!cn", name = "a", descriptor = "(III)Lclient!g;")
 	public static Class4_Sub3_Sub9 method2322(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
-		@Pc(16) Class4_Sub3_Sub9 local16 = (Class4_Sub3_Sub9) Static3.aClass84_8.method1844((long) arg0 << 32 | (long) arg1);
+		@Pc(16) Class4_Sub3_Sub9 local16 = (Class4_Sub3_Sub9) Static3.aClass84_8.get((long) arg0 << 32 | (long) arg1);
 		if (local16 == null) {
 			local16 = new Class4_Sub3_Sub9(arg0, arg1);
-			Static3.aClass84_8.method1840(local16, local16.key);
+			Static3.aClass84_8.put(local16.key, local16);
 		}
 		return local16;
 	}
@@ -755,7 +755,7 @@ public final class Static12 {
 
 	@OriginalMember(owner = "client!co", name = "a", descriptor = "(Z)V")
 	public static void method715() {
-		Static5.aClass84_17 = new Class84(32);
+		Static5.aClass84_17 = new HashTable(32);
 	}
 
 	@OriginalMember(owner = "client!co", name = "a", descriptor = "(Ljava/util/Random;II)I")
@@ -967,7 +967,7 @@ public final class Static12 {
 	@OriginalMember(owner = "client!db", name = "a", descriptor = "(IZ)I")
 	public static int method735(@OriginalArg(1) boolean arg0) {
 		@Pc(13) long local13 = MonotonicClock.currentTimeMillis();
-		for (@Pc(27) Class4_Sub5 local27 = arg0 ? (Class4_Sub5) Static7.aClass84_25.method1842() : (Class4_Sub5) Static7.aClass84_25.method1843(); local27 != null; local27 = (Class4_Sub5) Static7.aClass84_25.method1843()) {
+		for (@Pc(27) Class4_Sub5 local27 = arg0 ? (Class4_Sub5) Static7.aClass84_25.head() : (Class4_Sub5) Static7.aClass84_25.next(); local27 != null; local27 = (Class4_Sub5) Static7.aClass84_25.next()) {
 			if (local13 > (local27.aLong17 & 0x3FFFFFFFFFFFFFFFL)) {
 				if ((local27.aLong17 & 0x4000000000000000L) != 0L) {
 					@Pc(55) int local55 = (int) local27.key;
@@ -1015,7 +1015,7 @@ public final class Static12 {
 
 	@OriginalMember(owner = "client!db", name = "a", descriptor = "(ILclient!f;)V")
 	public static void method739(@OriginalArg(1) Class53_Sub1_Sub1 arg0) {
-		@Pc(19) Class4_Sub11 local19 = (Class4_Sub11) Static5.aClass84_18.method1844(Static18.method1746(arg0.aString88));
+		@Pc(19) Class4_Sub11 local19 = (Class4_Sub11) Static5.aClass84_18.get(Static18.method1746(arg0.aString88));
 		if (local19 == null) {
 			return;
 		}
@@ -1184,7 +1184,7 @@ public final class Static12 {
 				Static1.anIntArray2[local11] = 0;
 			}
 		}
-		Static7.aClass84_25 = new Class84(16);
+		Static7.aClass84_25 = new HashTable(16);
 	}
 
 	@OriginalMember(owner = "client!df", name = "a", descriptor = "(II)V")

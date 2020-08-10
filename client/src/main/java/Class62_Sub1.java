@@ -19,7 +19,7 @@ public final class Class62_Sub1 extends Class62 {
 	private int anInt5783 = 0;
 
 	@OriginalMember(owner = "client!wb", name = "q", descriptor = "Lclient!ic;")
-	private final Class84 aClass84_27 = new Class84(16);
+	private final HashTable aClass84_27 = new HashTable(16);
 
 	@OriginalMember(owner = "client!wb", name = "N", descriptor = "I")
 	private int anInt5802 = 0;
@@ -242,13 +242,13 @@ public final class Class62_Sub1 extends Class62 {
 	@OriginalMember(owner = "client!wb", name = "a", descriptor = "(II)I")
 	@Override
 	public final int method4655(@OriginalArg(0) int arg0) {
-		@Pc(9) Class4_Sub3_Sub1 local9 = (Class4_Sub3_Sub1) this.aClass84_27.method1844((long) arg0);
+		@Pc(9) Class4_Sub3_Sub1 local9 = (Class4_Sub3_Sub1) this.aClass84_27.get((long) arg0);
 		return local9 == null ? 0 : local9.method4354();
 	}
 
 	@OriginalMember(owner = "client!wb", name = "a", descriptor = "(III)Lclient!ng;")
 	private Class4_Sub3_Sub1 method4672(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1) {
-		@Pc(13) Class4_Sub3_Sub1 local13 = (Class4_Sub3_Sub1) this.aClass84_27.method1844((long) arg0);
+		@Pc(13) Class4_Sub3_Sub1 local13 = (Class4_Sub3_Sub1) this.aClass84_27.get((long) arg0);
 		if (local13 != null && arg1 == 0 && !local13.aBoolean363 && local13.aBoolean364) {
 			local13.unlink();
 			local13 = null;
@@ -282,7 +282,7 @@ public final class Class62_Sub1 extends Class62 {
 			} else {
 				throw new RuntimeException();
 			}
-			this.aClass84_27.method1840(local13, (long) arg0);
+			this.aClass84_27.put((long) arg0, local13);
 		}
 		if (local13.aBoolean364) {
 			return null;
@@ -306,7 +306,7 @@ public final class Class62_Sub1 extends Class62 {
 				local13.unlink();
 				if (local13.aBoolean363 && !this.aClass51_3.method1083()) {
 					@Pc(244) Class4_Sub3_Sub1_Sub2 local244 = this.aClass51_3.method1088((byte) 2, this.anInt5790, true, arg0);
-					this.aClass84_27.method1840(local244, (long) arg0);
+					this.aClass84_27.put((long) arg0, local244);
 				}
 				return null;
 			}
@@ -353,7 +353,7 @@ public final class Class62_Sub1 extends Class62 {
 			local13.unlink();
 			if (local13.aBoolean363 && !this.aClass51_3.method1083()) {
 				@Pc(455) Class4_Sub3_Sub1_Sub2 local455 = this.aClass51_3.method1088((byte) 2, this.anInt5790, true, arg0);
-				this.aClass84_27.method1840(local455, (long) arg0);
+				this.aClass84_27.put((long) arg0, local455);
 			}
 			return null;
 		}
@@ -446,7 +446,7 @@ public final class Class62_Sub1 extends Class62 {
 		if (!this.aBoolean396 || this.aLong199 > MonotonicClock.currentTimeMillis()) {
 			return;
 		}
-		for (@Pc(335) Class4_Sub3_Sub1 local335 = (Class4_Sub3_Sub1) this.aClass84_27.method1842(); local335 != null; local335 = (Class4_Sub3_Sub1) this.aClass84_27.method1843()) {
+		for (@Pc(335) Class4_Sub3_Sub1 local335 = (Class4_Sub3_Sub1) this.aClass84_27.head(); local335 != null; local335 = (Class4_Sub3_Sub1) this.aClass84_27.next()) {
 			if (!local335.aBoolean364) {
 				if (local335.aBoolean365) {
 					if (!local335.aBoolean363) {

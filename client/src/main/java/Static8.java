@@ -336,7 +336,7 @@ public final class Static8 {
 
 	@OriginalMember(owner = "client!ac", name = "a", descriptor = "(IIZ)I")
 	public static int method70(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
-		@Pc(14) Class4_Sub18 local14 = (Class4_Sub18) Static5.aClass84_17.method1844((long) arg0);
+		@Pc(14) Class4_Sub18 local14 = (Class4_Sub18) Static5.aClass84_17.get((long) arg0);
 		if (local14 == null) {
 			return -1;
 		} else if (arg1 >= 0 && arg1 < local14.anIntArray385.length) {
@@ -533,7 +533,7 @@ public final class Static8 {
 			local9.anInt2115 = Static10.method396(arg4);
 			local9.anInt2127 = arg4.anInt1587;
 			local9.anInt2123 = arg4.anInt1582 * 128;
-			Static5.aClass84_18.method1840(local9, Static18.method1746(arg4.aString88));
+			Static5.aClass84_18.put(Static18.method1746(arg4.aString88), local9);
 		}
 	}
 
@@ -589,8 +589,8 @@ public final class Static8 {
 			return false;
 		} else if (!arg0.method1810()) {
 			return false;
-		} else if (Static3.aClass84_10.method1844((long) arg0.anInt2292) == null) {
-			return Static3.aClass84_9.method1844((long) arg0.anInt2284) == null;
+		} else if (Static3.aClass84_10.get((long) arg0.anInt2292) == null) {
+			return Static3.aClass84_9.get((long) arg0.anInt2284) == null;
 		} else {
 			return false;
 		}
@@ -604,10 +604,10 @@ public final class Static8 {
 	@OriginalMember(owner = "client!al", name = "a", descriptor = "(IBI)V")
 	public static void method173(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1) {
 		Static1.anIntArray62[arg0] = arg1;
-		@Pc(21) Class4_Sub5 local21 = (Class4_Sub5) Static7.aClass84_25.method1844((long) arg0);
+		@Pc(21) Class4_Sub5 local21 = (Class4_Sub5) Static7.aClass84_25.get((long) arg0);
 		if (local21 == null) {
 			@Pc(28) Class4_Sub5 local28 = new Class4_Sub5(4611686018427387905L);
-			Static7.aClass84_25.method1840(local28, (long) arg0);
+			Static7.aClass84_25.put((long) arg0, local28);
 		} else if (local21.aLong17 != 4611686018427387905L) {
 			local21.aLong17 = MonotonicClock.currentTimeMillis() + 500L | 0x4000000000000000L;
 		}

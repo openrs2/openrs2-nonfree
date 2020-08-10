@@ -250,7 +250,7 @@ public final class Static15 {
 
 	@OriginalMember(owner = "client!fc", name = "a", descriptor = "(IBI)I")
 	public static int method1226(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1) {
-		@Pc(12) Class4_Sub18 local12 = (Class4_Sub18) Static5.aClass84_17.method1844((long) arg1);
+		@Pc(12) Class4_Sub18 local12 = (Class4_Sub18) Static5.aClass84_17.get((long) arg1);
 		if (local12 == null) {
 			return 0;
 		} else if (arg0 == -1) {

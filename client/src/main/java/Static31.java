@@ -217,7 +217,7 @@ public final class Static31 {
 			}
 			local54.unlink();
 		}
-		for (@Pc(83) Class4_Sub11 local83 = (Class4_Sub11) Static5.aClass84_18.method1842(); local83 != null; local83 = (Class4_Sub11) Static5.aClass84_18.method1843()) {
+		for (@Pc(83) Class4_Sub11 local83 = (Class4_Sub11) Static5.aClass84_18.head(); local83 != null; local83 = (Class4_Sub11) Static5.aClass84_18.next()) {
 			if (local83.aClass4_Sub6_Sub4_3 != null) {
 				Static5.aClass4_Sub6_Sub3_2.method2670(local83.aClass4_Sub6_Sub4_3);
 				local83.aClass4_Sub6_Sub4_3 = null;

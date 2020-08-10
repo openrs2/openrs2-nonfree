@@ -97,7 +97,7 @@ public final class Class4_Sub6_Sub2 extends Class4_Sub6 {
 	private final Class4_Sub6_Sub1 aClass4_Sub6_Sub1_1 = new Class4_Sub6_Sub1(this);
 
 	@OriginalMember(owner = "client!ld", name = "ob", descriptor = "Lclient!ic;")
-	private final Class84 aClass84_15 = new Class84(128);
+	private final HashTable aClass84_15 = new HashTable(128);
 
 	@OriginalMember(owner = "client!ld", name = "<init>", descriptor = "()V")
 	public Class4_Sub6_Sub2() {
@@ -214,7 +214,7 @@ public final class Class4_Sub6_Sub2 extends Class4_Sub6 {
 
 	@OriginalMember(owner = "client!ld", name = "d", descriptor = "(B)V")
 	public final synchronized void method2484() {
-		for (@Pc(7) Class4_Sub23 local7 = (Class4_Sub23) this.aClass84_15.method1842(); local7 != null; local7 = (Class4_Sub23) this.aClass84_15.method1843()) {
+		for (@Pc(7) Class4_Sub23 local7 = (Class4_Sub23) this.aClass84_15.head(); local7 != null; local7 = (Class4_Sub23) this.aClass84_15.next()) {
 			local7.unlink();
 		}
 	}
@@ -257,7 +257,7 @@ public final class Class4_Sub6_Sub2 extends Class4_Sub6 {
 				}
 			}
 		}
-		@Pc(112) Class4_Sub23 local112 = (Class4_Sub23) this.aClass84_15.method1844((long) this.anIntArray284[arg1]);
+		@Pc(112) Class4_Sub23 local112 = (Class4_Sub23) this.aClass84_15.get((long) this.anIntArray284[arg1]);
 		if (local112 == null) {
 			return;
 		}
@@ -817,7 +817,7 @@ public final class Class4_Sub6_Sub2 extends Class4_Sub6 {
 
 	@OriginalMember(owner = "client!ld", name = "g", descriptor = "(B)V")
 	public final synchronized void method2509() {
-		for (@Pc(19) Class4_Sub23 local19 = (Class4_Sub23) this.aClass84_15.method1842(); local19 != null; local19 = (Class4_Sub23) this.aClass84_15.method1843()) {
+		for (@Pc(19) Class4_Sub23 local19 = (Class4_Sub23) this.aClass84_15.head(); local19 != null; local19 = (Class4_Sub23) this.aClass84_15.next()) {
 			local19.method3570();
 		}
 	}
@@ -834,16 +834,16 @@ public final class Class4_Sub6_Sub2 extends Class4_Sub6 {
 		arg0.method4163();
 		@Pc(9) boolean local9 = true;
 		@Pc(24) int[] local24 = new int[] { 22050 };
-		for (@Pc(36) Class4_Sub14 local36 = (Class4_Sub14) arg0.aClass84_23.method1842(); local36 != null; local36 = (Class4_Sub14) arg0.aClass84_23.method1843()) {
+		for (@Pc(36) Class4_Sub14 local36 = (Class4_Sub14) arg0.aClass84_23.head(); local36 != null; local36 = (Class4_Sub14) arg0.aClass84_23.next()) {
 			@Pc(43) int local43 = (int) local36.key;
-			@Pc(53) Class4_Sub23 local53 = (Class4_Sub23) this.aClass84_15.method1844((long) local43);
+			@Pc(53) Class4_Sub23 local53 = (Class4_Sub23) this.aClass84_15.get((long) local43);
 			if (local53 == null) {
 				local53 = Static13.method887(local43, arg1);
 				if (local53 == null) {
 					local9 = false;
 					continue;
 				}
-				this.aClass84_15.method1840(local53, (long) local43);
+				this.aClass84_15.put((long) local43, local53);
 			}
 			if (!local53.method3566(local24, arg2, local36.aByteArray18)) {
 				local9 = false;

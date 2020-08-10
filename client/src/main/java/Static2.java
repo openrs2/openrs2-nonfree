@@ -381,7 +381,7 @@ public final class Static2 {
 	public static int anInt1266 = 0;
 
 	@OriginalMember(owner = "client!ei", name = "D", descriptor = "Lclient!ic;")
-	public static final Class84 aClass84_5 = new Class84(512);
+	public static final HashTable aClass84_5 = new HashTable(512);
 
 	@OriginalMember(owner = "client!ei", name = "E", descriptor = "I")
 	public static int anInt1267 = 0;

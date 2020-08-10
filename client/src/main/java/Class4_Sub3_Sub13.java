@@ -20,7 +20,7 @@ public final class Class4_Sub3_Sub13 extends Class4_Sub3 {
 	public String[] aStringArray19;
 
 	@OriginalMember(owner = "client!jl", name = "E", descriptor = "[Lclient!ic;")
-	public Class84[] aClass84Array1;
+	public HashTable[] aClass84Array1;
 
 	@OriginalMember(owner = "client!jl", name = "G", descriptor = "I")
 	public int anInt2658;

@@ -89,7 +89,7 @@ public final class Static36 {
 
 	@OriginalMember(owner = "client!va", name = "b", descriptor = "(II)V")
 	public static void method4407(@OriginalArg(1) int arg0) {
-		@Pc(8) Class4_Sub18 local8 = (Class4_Sub18) Static5.aClass84_17.method1844((long) arg0);
+		@Pc(8) Class4_Sub18 local8 = (Class4_Sub18) Static5.aClass84_17.get((long) arg0);
 		if (local8 != null) {
 			for (@Pc(24) int local24 = 0; local24 < local8.anIntArray385.length; local24++) {
 				local8.anIntArray385[local24] = -1;

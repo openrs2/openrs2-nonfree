@@ -419,7 +419,7 @@ public final class Static30 {
 							if (local38.aClass185Array4 != null) {
 								method3554(local128 - local38.anInt5932, local38.anInt5914, local89, local38.aClass185Array4, local298, local309, local259, local122 - local38.anInt5931, local266);
 							}
-							@Pc(1207) Class4_Sub27 local1207 = (Class4_Sub27) Static4.aClass84_13.method1844((long) local38.anInt5914);
+							@Pc(1207) Class4_Sub27 local1207 = (Class4_Sub27) Static4.aClass84_13.get((long) local38.anInt5914);
 							if (local1207 != null) {
 								if (local1207.anInt4619 == 0 && !Static1.aBoolean17 && Static4.anInt3341 >= local266 && Static5.anInt5848 >= local259 && local309 > Static4.anInt3341 && Static5.anInt5848 < local298 && !Static1.aBoolean26) {
 									Static6.aShortArray100[0] = 1006;

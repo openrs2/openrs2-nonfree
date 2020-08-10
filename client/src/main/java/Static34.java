@@ -1201,7 +1201,7 @@ public final class Static34 {
 		if (arg1.aClass185Array4 != null) {
 			Static31.method3660(arg1.aClass185Array4, arg0, local8, arg1.anInt5914, local20);
 		}
-		@Pc(61) Class4_Sub27 local61 = (Class4_Sub27) Static4.aClass84_13.method1844((long) arg1.anInt5914);
+		@Pc(61) Class4_Sub27 local61 = (Class4_Sub27) Static4.aClass84_13.get((long) arg1.anInt5914);
 		if (local61 != null) {
 			Static21.method2050(arg0, local8, local61.anInt4620, local20);
 		}
