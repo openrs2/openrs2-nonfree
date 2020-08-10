@@ -440,9 +440,6 @@ public final class Static1 {
 	@OriginalMember(owner = "client!bl", name = "fb", descriptor = "J")
 	public static long aLong20 = 0L;
 
-	@OriginalMember(owner = "client!bm", name = "a", descriptor = "Lclient!kf;")
-	public static final Class104 aClass104_1 = new Class104();
-
 	@OriginalMember(owner = "client!bn", name = "B", descriptor = "I")
 	public static int anInt402 = 2;
 

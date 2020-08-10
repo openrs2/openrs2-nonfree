@@ -27,7 +27,7 @@ public final class Js5Compression {
 			}
 			@Pc(84) byte[] out = new byte[uncompressedLen];
 			if (type == 1) {
-				Static10.method351(out, uncompressedLen, in, len);
+				Bzip2Decompressor.bunzip2(out, uncompressedLen, in, len);
 			} else {
 				GZIP_DECOMPRESSOR.gunzip(buffer, out);
 			}

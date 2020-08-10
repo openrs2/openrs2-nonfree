@@ -73,9 +73,6 @@ public final class Static4 {
 	@OriginalMember(owner = "client!kl", name = "Y", descriptor = "I")
 	public static int anInt2920;
 
-	@OriginalMember(owner = "client!km", name = "cb", descriptor = "[I")
-	public static int[] anIntArray265;
-
 	@OriginalMember(owner = "client!kn", name = "D", descriptor = "[Ljava/lang/String;")
 	public static String[] aStringArray21;
 
