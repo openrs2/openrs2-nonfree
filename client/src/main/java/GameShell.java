@@ -94,7 +94,7 @@ public abstract class GameShell extends Applet implements Runnable, FocusListene
 	@OriginalMember(owner = "client!ue", name = "providesignlink", descriptor = "(Lsignlink!pm;)V")
 	public static void providesignlink(@OriginalArg(0) SignLink signLink) {
 		GameShell.signLink = signLink;
-		Static4.aClass196_3 = signLink;
+		TracingException.signLink = signLink;
 	}
 
 	@OriginalMember(owner = "client!ue", name = "windowDeiconified", descriptor = "(Ljava/awt/event/WindowEvent;)V")
@@ -372,7 +372,7 @@ public abstract class GameShell extends Applet implements Runnable, FocusListene
 			topMargin = 0;
 			canvasWidth = 765;
 			frameWidth = 765;
-			Static7.anInt5282 = 1550;
+			TracingException.clientVersion = 1550;
 			canvasHeight = 503;
 			frameHeight = 503;
 			@Pc(50) String openWindowJavaScriptStr = this.getParameter("openwinjs");
@@ -382,7 +382,7 @@ public abstract class GameShell extends Applet implements Runnable, FocusListene
 				openWindowJavaScript = false;
 			}
 			if (signLink == null) {
-				Static4.aClass196_3 = signLink = new SignLink(this, cacheId, null, 0);
+				TracingException.signLink = signLink = new SignLink(this, cacheId, null, 0);
 			}
 			@Pc(80) PrivilegedRequest request = signLink.startThread(this, 1);
 			while (request.status == 0) {
@@ -390,7 +390,7 @@ public abstract class GameShell extends Applet implements Runnable, FocusListene
 			}
 			thread = (Thread) request.result;
 		} catch (@Pc(97) Exception ex) {
-			Static26.method3059(ex, null);
+			TracingException.report(ex, null);
 			this.error("crash");
 		}
 	}
@@ -452,7 +452,7 @@ public abstract class GameShell extends Applet implements Runnable, FocusListene
 				Static13.method1013(signLink, canvas);
 			}
 		} catch (@Pc(197) Exception ex) {
-			Static26.method3059(ex, null);
+			TracingException.report(ex, null);
 			this.error("crash");
 		}
 		this.shutdown(true);
@@ -465,7 +465,7 @@ public abstract class GameShell extends Applet implements Runnable, FocusListene
 	protected final void startApplication(@OriginalArg(0) int cacheId, @OriginalArg(2) String cacheSubDir) {
 		try {
 			topMargin = 0;
-			Static7.anInt5282 = 550;
+			TracingException.clientVersion = 550;
 			canvasHeight = 768;
 			frameHeight = 768;
 			canvasWidth = 1024;
@@ -480,14 +480,14 @@ public abstract class GameShell extends Applet implements Runnable, FocusListene
 			frame.toFront();
 			@Pc(44) Insets insets = frame.getInsets();
 			frame.setSize(insets.left + frameWidth + insets.right, insets.bottom + frameHeight + insets.top);
-			Static4.aClass196_3 = signLink = new SignLink(null, cacheId, cacheSubDir, 29);
+			TracingException.signLink = signLink = new SignLink(null, cacheId, cacheSubDir, 29);
 			@Pc(77) PrivilegedRequest request = signLink.startThread(this, 1);
 			while (request.status == 0) {
 				ThreadUtils.sleep(10L);
 			}
 			thread = (Thread) request.result;
 		} catch (@Pc(94) Exception local94) {
-			Static26.method3059(local94, null);
+			TracingException.report(local94, null);
 		}
 	}
 
@@ -537,7 +537,7 @@ public abstract class GameShell extends Applet implements Runnable, FocusListene
 		if (instance == this && !shutdown) {
 			killTime = MonotonicClock.currentTimeMillis();
 			ThreadUtils.sleep(5000L);
-			Static4.aClass196_3 = null;
+			TracingException.signLink = null;
 			this.shutdown(false);
 		}
 	}

@@ -325,7 +325,7 @@ public final class Static36 {
 			for (@Pc(65) int local65 = 0; Static1.anInt1052 > local65 && local65 < 50; local65++) {
 				local63 = local63 + Static5.aClass4_Sub10_Sub1_2.bytes[local65] + ",";
 			}
-			Static26.method3059(local21, local63);
+			TracingException.report(local21, local63);
 			Static19.method1818();
 			return true;
 		}

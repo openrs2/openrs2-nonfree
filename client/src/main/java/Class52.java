@@ -184,7 +184,7 @@ public final class Class52 implements Runnable {
 				}
 			}
 		} catch (@Pc(128) Exception local128) {
-			Static26.method3059(local128, null);
+			TracingException.report(local128, null);
 		}
 	}
 

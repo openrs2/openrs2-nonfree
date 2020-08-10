@@ -1008,18 +1008,6 @@ public final class Static11 {
 		return local45;
 	}
 
-	@OriginalMember(owner = "client!cj", name = "a", descriptor = "(Ljava/lang/Throwable;Ljava/lang/String;)Lclient!bk;")
-	public static RuntimeException_Sub1 method612(@OriginalArg(0) Throwable arg0, @OriginalArg(1) String arg1) {
-		@Pc(12) RuntimeException_Sub1 local12;
-		if (arg0 instanceof RuntimeException_Sub1) {
-			local12 = (RuntimeException_Sub1) arg0;
-			local12.aString31 = local12.aString31 + ' ' + arg1;
-		} else {
-			local12 = new RuntimeException_Sub1(arg0, arg1);
-		}
-		return local12;
-	}
-
 	@OriginalMember(owner = "client!ck", name = "a", descriptor = "(ZC)Z")
 	public static boolean method636(@OriginalArg(1) char arg0) {
 		return arg0 >= '0' && arg0 <= '9' || arg0 >= 'A' && arg0 <= 'Z' || arg0 >= 'a' && arg0 <= 'z';

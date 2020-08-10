@@ -238,14 +238,6 @@ public final class Static31 {
 		}
 	}
 
-	@OriginalMember(owner = "client!ri", name = "a", descriptor = "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)Ljava/lang/String;")
-	public static String method3736(@OriginalArg(0) String arg0, @OriginalArg(1) String arg1, @OriginalArg(2) String arg2) {
-		for (@Pc(21) int local21 = arg0.indexOf(arg2); local21 != -1; local21 = arg0.indexOf(arg2, local21 + arg1.length())) {
-			arg0 = arg0.substring(0, local21) + arg1 + arg0.substring(local21 + arg2.length());
-		}
-		return arg0;
-	}
-
 	@OriginalMember(owner = "client!rk", name = "c", descriptor = "(I)V")
 	public static void method3745() {
 		Static5.aClass26_45.method511();

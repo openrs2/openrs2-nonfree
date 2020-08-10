@@ -226,7 +226,7 @@ public final class Class58 {
 			try {
 				local151 = Js5Compression.uncompress(local123);
 			} catch (@Pc(153) RuntimeException local153) {
-				throw Static11.method612(local153, "T3 - " + (arg0 != null) + "," + arg1 + "," + local123.length + "," + Static12.method2321(local123.length, local123) + "," + Static12.method2321(local123.length - 2, local123) + "," + this.aClass61_1.groupChecksums[arg1] + "," + this.aClass61_1.checksum);
+				throw TracingException.wrap(local153, "T3 - " + (arg0 != null) + "," + arg1 + "," + local123.length + "," + Static12.method2321(local123.length, local123) + "," + Static12.method2321(local123.length - 2, local123) + "," + this.aClass61_1.groupChecksums[arg1] + "," + this.aClass61_1.checksum);
 			}
 			if (this.aBoolean107) {
 				this.anObjectArray1[arg1] = null;

@@ -33,7 +33,7 @@ public final class Class91 implements Runnable {
 				Static13.method1013(this.aClass196_2, null);
 			}
 		} catch (@Pc(48) Exception local48) {
-			Static26.method3059(local48, null);
+			TracingException.report(local48, null);
 		} finally {
 			this.aBoolean171 = false;
 		}

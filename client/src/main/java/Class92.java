@@ -53,7 +53,7 @@ public final class Class92 implements Runnable {
 					local15.aByteArray3 = local15.aClass60_1.method1481((int) local15.aLong213);
 				}
 			} catch (@Pc(76) Exception local76) {
-				Static26.method3059(local76, null);
+				TracingException.report(local76, null);
 			}
 			local15.aBoolean364 = false;
 		}

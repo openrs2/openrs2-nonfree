@@ -1,8 +1,3 @@
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.io.StringReader;
-import java.io.StringWriter;
 import java.lang.reflect.Method;
 import java.util.Date;
 import java.util.Random;
@@ -1042,50 +1037,6 @@ public final class Static12 {
 		@Pc(33) int local33 = Static4.aCalendar1.get(12);
 		@Pc(37) int local37 = Static4.aCalendar1.get(13);
 		return Static3.aStringArray37[local9 - 1] + ", " + local17 / 10 + local17 % 10 + "-" + Static6.aStringArray28[local21] + "-" + local25 + " " + local29 / 10 + local29 % 10 + ":" + local33 / 10 + local33 % 10 + ":" + local37 / 10 + local37 % 10 + " GMT";
-	}
-
-	@OriginalMember(owner = "client!dc", name = "a", descriptor = "(ZLjava/lang/Throwable;)Ljava/lang/String;")
-	public static String method744(@OriginalArg(1) Throwable arg0) throws IOException {
-		@Pc(14) String local14;
-		if (arg0 instanceof RuntimeException_Sub1) {
-			@Pc(19) RuntimeException_Sub1 local19 = (RuntimeException_Sub1) arg0;
-			local14 = local19.aString31 + " | ";
-			arg0 = local19.aThrowable1;
-		} else {
-			local14 = "";
-		}
-		@Pc(36) StringWriter local36 = new StringWriter();
-		@Pc(41) PrintWriter local41 = new PrintWriter(local36);
-		arg0.printStackTrace(local41);
-		local41.close();
-		@Pc(49) String local49 = local36.toString();
-		@Pc(57) BufferedReader local57 = new BufferedReader(new StringReader(local49));
-		@Pc(60) String local60 = local57.readLine();
-		while (true) {
-			@Pc(63) String local63 = local57.readLine();
-			if (local63 == null) {
-				return local14 + "| " + local60;
-			}
-			@Pc(72) int local72 = local63.indexOf(40);
-			@Pc(79) int local79 = local63.indexOf(41, local72 + 1);
-			@Pc(88) String local88;
-			if (local72 == -1) {
-				local88 = local63;
-			} else {
-				local88 = local63.substring(0, local72);
-			}
-			@Pc(95) String local95 = local88.trim();
-			local95 = local95.substring(local95.lastIndexOf(32) + 1);
-			local95 = local95.substring(local95.lastIndexOf(9) + 1);
-			@Pc(120) String local120 = local14 + local95;
-			if (local72 != -1 && local79 != -1) {
-				@Pc(136) int local136 = local63.indexOf(".java:", local72);
-				if (local136 >= 0) {
-					local120 = local120 + local63.substring(local136 + 5, local79);
-				}
-			}
-			local14 = local120 + ' ';
-		}
 	}
 
 	@OriginalMember(owner = "client!dc", name = "a", descriptor = "(IILclient!eg;IIILclient!vg;IIIZIII)Lclient!vg;")

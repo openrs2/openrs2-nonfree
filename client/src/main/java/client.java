@@ -126,7 +126,7 @@ public final class client extends GameShell {
 			c.startApplication(modeWhat + 32, game == 1 ? "mechscape" : "openrs2");
 			GameShell.frame.setLocation(40, 40);
 		} catch (@Pc(156) Exception ex) {
-			Static26.method3059(ex, null);
+			TracingException.report(ex, null);
 		}
 	}
 

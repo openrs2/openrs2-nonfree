@@ -625,7 +625,7 @@ public final class Static37 {
 			local216 = local179 - local208;
 		}
 		if (local216 == 0 && local196 == 0 || local216 <= -104 || local216 >= 104 || local196 <= -104 || local196 >= 104) {
-			Static26.method3059(null, "RC: " + local179 + "," + local175 + " " + local208 + "," + local184 + " " + Static5.anInt3983 + "," + Static7.anInt5479);
+			TracingException.report(null, "RC: " + local179 + "," + local175 + " " + local208 + "," + local184 + " " + Static5.anInt3983 + "," + Static7.anInt5479);
 			return;
 		}
 		if (local216 > local196) {

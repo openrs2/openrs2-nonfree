@@ -2085,7 +2085,7 @@ public final class Static21 {
 			Static6.anInt4996 = Static6.anInt4979;
 			return true;
 		} else {
-			Static26.method3059(null, "T1 - " + Static1.anInt552 + "," + Static3.anInt2273 + "," + Static2.anInt1231 + " - " + Static1.anInt1052);
+			TracingException.report(null, "T1 - " + Static1.anInt552 + "," + Static3.anInt2273 + "," + Static2.anInt1231 + " - " + Static1.anInt1052);
 			Static19.method1818();
 			return true;
 		}

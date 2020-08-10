@@ -195,11 +195,6 @@ public final class Static24 {
 		}
 	}
 
-	@OriginalMember(owner = "client!ln", name = "b", descriptor = "(Ljava/lang/String;I)V")
-	public static void method2651(@OriginalArg(0) String arg0) {
-		System.out.println("Error: " + Static31.method3736(arg0, "\n", "%0a"));
-	}
-
 	@OriginalMember(owner = "client!ln", name = "a", descriptor = "(III)V")
 	public static void method2652(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
 		if (arg0 == 8) {

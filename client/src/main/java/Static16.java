@@ -4890,7 +4890,7 @@ public final class Static16 {
 				if (client.modeWhere != 0) {
 					Static26.method4357("", 0, "Clientscript error - check log for details");
 				}
-				Static26.method3059(local15060, "CS2 - scr:" + arg1.key + " op:" + local25);
+				TracingException.report(local15060, "CS2 - scr:" + arg1.key + " op:" + local25);
 			} else {
 				@Pc(15069) StringBuffer local15069 = new StringBuffer(30);
 				local15069.append("%0a - in: ").append(arg1.aString159);
@@ -4904,7 +4904,7 @@ public final class Static16 {
 				if (client.modeWhere != 0) {
 					Static26.method4357("", 0, "Clientscript error in: " + arg1.aString159);
 				}
-				Static26.method3059(local15060, "CS2 - scr:" + arg1.key + " op:" + local25 + local15069.toString());
+				TracingException.report(local15060, "CS2 - scr:" + arg1.key + " op:" + local25 + local15069.toString());
 			}
 		}
 	}

@@ -265,9 +265,6 @@ public final class Static4 {
 	@OriginalMember(owner = "client!mn", name = "l", descriptor = "F")
 	public static float aFloat82;
 
-	@OriginalMember(owner = "client!mo", name = "Z", descriptor = "Lsignlink!pm;")
-	public static SignLink aClass196_3;
-
 	@OriginalMember(owner = "client!na", name = "pb", descriptor = "[[I")
 	public static int[][] anIntArrayArray31;
 

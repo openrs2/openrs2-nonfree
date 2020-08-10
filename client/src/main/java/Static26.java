@@ -1,5 +1,3 @@
-import java.io.DataInputStream;
-import java.net.URL;
 import java.nio.FloatBuffer;
 import javax.media.opengl.GL;
 
@@ -915,40 +913,6 @@ public final class Static26 {
 					Static2.anIntArray99[Static5.anInt4195++] = local73;
 				}
 			}
-		}
-	}
-
-	@OriginalMember(owner = "client!o", name = "a", descriptor = "(Ljava/lang/Throwable;ILjava/lang/String;)V")
-	public static void method3059(@OriginalArg(0) Throwable arg0, @OriginalArg(2) String arg1) {
-		try {
-			@Pc(13) String local13 = "";
-			if (arg0 != null) {
-				local13 = Static12.method744(arg0);
-			}
-			if (arg1 != null) {
-				if (arg0 != null) {
-					local13 = local13 + " | ";
-				}
-				local13 = local13 + arg1;
-			}
-			Static24.method2651(local13);
-			@Pc(54) String local54 = Static31.method3736(local13, "%3a", ":");
-			local54 = Static31.method3736(local54, "%40", "@");
-			local54 = Static31.method3736(local54, "%26", "&");
-			local54 = Static31.method3736(local54, "%23", "#");
-			if (Static4.aClass196_3.applet == null) {
-				return;
-			}
-			@Pc(115) PrivilegedRequest local115 = Static4.aClass196_3.openUrlStream(new URL(Static4.aClass196_3.applet.getCodeBase(), "clienterror.ws?c=" + Static7.anInt5282 + "&u=" + Static1.aLong23 + "&v1=" + SignLink.javaVendor + "&v2=" + SignLink.javaVersion + "&e=" + local54));
-			while (local115.status == 0) {
-				ThreadUtils.sleep(1L);
-			}
-			if (local115.status == 1) {
-				@Pc(133) DataInputStream local133 = (DataInputStream) local115.result;
-				local133.read();
-				local133.close();
-			}
-		} catch (@Pc(140) Exception local140) {
 		}
 	}
 
