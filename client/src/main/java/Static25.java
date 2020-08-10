@@ -141,7 +141,7 @@ public final class Static25 {
 				}
 			}
 			Static3.aClass169Array1 = new Class169[local15];
-			Static8.method73(local13, 0, Static3.aClass169Array1, 0, local15);
+			ArrayUtils.copy(local13, 0, Static3.aClass169Array1, 0, local15);
 			@Pc(107) int[] local107 = new int[Static3.aClass169Array1.length];
 			for (@Pc(109) int local109 = 0; local109 < Static3.aClass169Array1.length; local109++) {
 				@Pc(117) Class169 local117 = Static3.aClass169Array1[local109];
@@ -767,13 +767,13 @@ public final class Static25 {
 		if (Static7.anInt5634 == arg0) {
 			return;
 		}
-		Static8.method73(Static6.aStringArray30, arg0 + 1, Static6.aStringArray30, arg0, Static7.anInt5634 - arg0);
-		Static8.method73(Static6.aStringArray27, arg0 + 1, Static6.aStringArray27, arg0, Static7.anInt5634 - arg0);
-		Static8.method74(Static2.anIntArray160, arg0 + 1, Static2.anIntArray160, arg0, Static7.anInt5634 - arg0);
-		Static8.method78(Static6.aShortArray100, arg0 + 1, Static6.aShortArray100, arg0, Static7.anInt5634 - arg0);
-		Static8.method79(Static4.aLongArray56, arg0 + 1, Static4.aLongArray56, arg0, Static7.anInt5634 - arg0);
-		Static8.method74(Static2.anIntArray117, arg0 + 1, Static2.anIntArray117, arg0, Static7.anInt5634 - arg0);
-		Static8.method74(Static6.anIntArray543, arg0 + 1, Static6.anIntArray543, arg0, Static7.anInt5634 - arg0);
+		ArrayUtils.copy(Static6.aStringArray30, arg0 + 1, Static6.aStringArray30, arg0, Static7.anInt5634 - arg0);
+		ArrayUtils.copy(Static6.aStringArray27, arg0 + 1, Static6.aStringArray27, arg0, Static7.anInt5634 - arg0);
+		ArrayUtils.copy(Static2.anIntArray160, arg0 + 1, Static2.anIntArray160, arg0, Static7.anInt5634 - arg0);
+		ArrayUtils.copy(Static6.aShortArray100, arg0 + 1, Static6.aShortArray100, arg0, Static7.anInt5634 - arg0);
+		ArrayUtils.copy(Static4.aLongArray56, arg0 + 1, Static4.aLongArray56, arg0, Static7.anInt5634 - arg0);
+		ArrayUtils.copy(Static2.anIntArray117, arg0 + 1, Static2.anIntArray117, arg0, Static7.anInt5634 - arg0);
+		ArrayUtils.copy(Static6.anIntArray543, arg0 + 1, Static6.anIntArray543, arg0, Static7.anInt5634 - arg0);
 	}
 
 	@OriginalMember(owner = "client!nb", name = "c", descriptor = "(I)V")

@@ -160,7 +160,7 @@ public final class Class4_Sub1_Sub33 extends Class4_Sub1 {
 					}
 				}
 			} else {
-				Static8.method75(local13, 0, Static2.anInt1626, 0);
+				ArrayUtils.fill(local13, 0, Static2.anInt1626, 0);
 			}
 		}
 		return local13;

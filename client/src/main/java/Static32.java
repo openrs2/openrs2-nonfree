@@ -9,7 +9,7 @@ public final class Static32 {
 	@OriginalMember(owner = "client!s", name = "a", descriptor = "([FI)[F")
 	public static float[] method3875(@OriginalArg(0) float[] arg0, @OriginalArg(1) int arg1) {
 		@Pc(2) float[] local2 = new float[arg1];
-		Static8.method77(arg0, 0, local2, 0, arg1);
+		ArrayUtils.copy(arg0, 0, local2, 0, arg1);
 		return local2;
 	}
 

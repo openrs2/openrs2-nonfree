@@ -2227,7 +2227,7 @@ public final class Static21 {
 			method2021(49, 92);
 		}
 		@Pc(20) float[] local20 = new float[arg1.length];
-		Static8.method77(arg1, 0, local20, 0, arg1.length);
+		ArrayUtils.copy(arg1, 0, local20, 0, arg1.length);
 		return local20;
 	}
 

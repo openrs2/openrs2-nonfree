@@ -76,7 +76,7 @@ public final class Class4_Sub1_Sub28 extends Class4_Sub1 {
 						break;
 					}
 				}
-				Static8.method75(local11, 0, Static2.anInt1626, local140);
+				ArrayUtils.fill(local11, 0, Static2.anInt1626, local140);
 			} else {
 				for (@Pc(31) int local31 = 0; local31 < Static2.anInt1626; local31++) {
 					@Pc(40) int local40 = 0;

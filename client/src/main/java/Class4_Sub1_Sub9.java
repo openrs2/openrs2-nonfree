@@ -28,7 +28,7 @@ public final class Class4_Sub1_Sub9 extends Class4_Sub1 {
 					local15[local47] = local34[Static1.anInt901 - local47];
 				}
 			} else {
-				Static8.method74(local34, 0, local15, 0, Static2.anInt1626);
+				ArrayUtils.copy(local34, 0, local15, 0, Static2.anInt1626);
 			}
 		}
 		return local15;

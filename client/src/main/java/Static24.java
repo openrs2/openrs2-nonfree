@@ -43,7 +43,7 @@ public final class Static24 {
 			return null;
 		} else {
 			@Pc(18) int[] local18 = new int[arg0.length];
-			Static8.method74(arg0, 0, local18, 0, arg0.length);
+			ArrayUtils.copy(arg0, 0, local18, 0, arg0.length);
 			return local18;
 		}
 	}

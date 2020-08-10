@@ -1,0 +1,361 @@
+import dev.openrs2.deob.annotation.OriginalArg;
+import dev.openrs2.deob.annotation.OriginalMember;
+import dev.openrs2.deob.annotation.Pc;
+
+public final class ArrayUtils {
+	@OriginalMember(owner = "client!ad", name = "a", descriptor = "([BI[BII)V")
+	public static void copy(@OriginalArg(0) byte[] src, @OriginalArg(1) int srcOff, @OriginalArg(2) byte[] dest, @OriginalArg(3) int destOff, @OriginalArg(4) int len) {
+		if (src == dest) {
+			if (srcOff == destOff) {
+				return;
+			}
+			if (destOff > srcOff && destOff < srcOff + len) {
+				len--;
+				@Pc(19) int srcOff2 = srcOff + len;
+				@Pc(23) int destOff2 = destOff + len;
+				len = srcOff2 - len;
+				len += 7;
+				while (srcOff2 >= len) {
+					@Pc(34) int destOff3 = destOff2 - 1;
+					@Pc(37) int srcOff3 = srcOff2 - 1;
+					dest[destOff2] = src[srcOff2];
+					dest[destOff3--] = src[srcOff3--];
+					dest[destOff3--] = src[srcOff3--];
+					dest[destOff3--] = src[srcOff3--];
+					dest[destOff3--] = src[srcOff3--];
+					dest[destOff3--] = src[srcOff3--];
+					dest[destOff3--] = src[srcOff3--];
+					destOff2 = destOff3 - 1;
+					srcOff2 = srcOff3 - 1;
+					dest[destOff3] = src[srcOff3];
+				}
+				len -= 7;
+				while (srcOff2 >= len) {
+					dest[destOff2--] = src[srcOff2--];
+				}
+				return;
+			}
+		}
+		len += srcOff;
+		len -= 7;
+		while (srcOff < len) {
+			@Pc(121) int destOff2 = destOff + 1;
+			@Pc(124) int srcOff2 = srcOff + 1;
+			dest[destOff] = src[srcOff];
+			dest[destOff2++] = src[srcOff2++];
+			dest[destOff2++] = src[srcOff2++];
+			dest[destOff2++] = src[srcOff2++];
+			dest[destOff2++] = src[srcOff2++];
+			dest[destOff2++] = src[srcOff2++];
+			dest[destOff2++] = src[srcOff2++];
+			destOff = destOff2 + 1;
+			srcOff = srcOff2 + 1;
+			dest[destOff2] = src[srcOff2];
+		}
+		len += 7;
+		while (srcOff < len) {
+			dest[destOff++] = src[srcOff++];
+		}
+	}
+
+	@OriginalMember(owner = "client!ad", name = "a", descriptor = "([SI[SII)V")
+	public static void copy(@OriginalArg(0) short[] src, @OriginalArg(1) int srcOff, @OriginalArg(2) short[] dest, @OriginalArg(3) int destOff, @OriginalArg(4) int len) {
+		if (src == dest) {
+			if (srcOff == destOff) {
+				return;
+			}
+			if (destOff > srcOff && destOff < srcOff + len) {
+				len--;
+				@Pc(19) int srcOff2 = srcOff + len;
+				@Pc(23) int destOff2 = destOff + len;
+				len = srcOff2 - len;
+				len += 7;
+				while (srcOff2 >= len) {
+					@Pc(34) int destOff3 = destOff2 - 1;
+					@Pc(37) int srcOff3 = srcOff2 - 1;
+					dest[destOff2] = src[srcOff2];
+					dest[destOff3--] = src[srcOff3--];
+					dest[destOff3--] = src[srcOff3--];
+					dest[destOff3--] = src[srcOff3--];
+					dest[destOff3--] = src[srcOff3--];
+					dest[destOff3--] = src[srcOff3--];
+					dest[destOff3--] = src[srcOff3--];
+					destOff2 = destOff3 - 1;
+					srcOff2 = srcOff3 - 1;
+					dest[destOff3] = src[srcOff3];
+				}
+				len -= 7;
+				while (srcOff2 >= len) {
+					dest[destOff2--] = src[srcOff2--];
+				}
+				return;
+			}
+		}
+		len += srcOff;
+		len -= 7;
+		while (srcOff < len) {
+			@Pc(121) int destOff2 = destOff + 1;
+			@Pc(124) int srcOff2 = srcOff + 1;
+			dest[destOff] = src[srcOff];
+			dest[destOff2++] = src[srcOff2++];
+			dest[destOff2++] = src[srcOff2++];
+			dest[destOff2++] = src[srcOff2++];
+			dest[destOff2++] = src[srcOff2++];
+			dest[destOff2++] = src[srcOff2++];
+			dest[destOff2++] = src[srcOff2++];
+			destOff = destOff2 + 1;
+			srcOff = srcOff2 + 1;
+			dest[destOff2] = src[srcOff2];
+		}
+		len += 7;
+		while (srcOff < len) {
+			dest[destOff++] = src[srcOff++];
+		}
+	}
+
+	@OriginalMember(owner = "client!ad", name = "a", descriptor = "([II[III)V")
+	public static void copy(@OriginalArg(0) int[] src, @OriginalArg(1) int srcOff, @OriginalArg(2) int[] dest, @OriginalArg(3) int destOff, @OriginalArg(4) int len) {
+		if (src == dest) {
+			if (srcOff == destOff) {
+				return;
+			}
+			if (destOff > srcOff && destOff < srcOff + len) {
+				len--;
+				@Pc(19) int srcOff2 = srcOff + len;
+				@Pc(23) int destOff2 = destOff + len;
+				len = srcOff2 - len;
+				len += 7;
+				while (srcOff2 >= len) {
+					@Pc(34) int destOff3 = destOff2 - 1;
+					@Pc(37) int srcOff3 = srcOff2 - 1;
+					dest[destOff2] = src[srcOff2];
+					dest[destOff3--] = src[srcOff3--];
+					dest[destOff3--] = src[srcOff3--];
+					dest[destOff3--] = src[srcOff3--];
+					dest[destOff3--] = src[srcOff3--];
+					dest[destOff3--] = src[srcOff3--];
+					dest[destOff3--] = src[srcOff3--];
+					destOff2 = destOff3 - 1;
+					srcOff2 = srcOff3 - 1;
+					dest[destOff3] = src[srcOff3];
+				}
+				len -= 7;
+				while (srcOff2 >= len) {
+					dest[destOff2--] = src[srcOff2--];
+				}
+				return;
+			}
+		}
+		len += srcOff;
+		len -= 7;
+		while (srcOff < len) {
+			@Pc(121) int destOff2 = destOff + 1;
+			@Pc(124) int srcOff2 = srcOff + 1;
+			dest[destOff] = src[srcOff];
+			dest[destOff2++] = src[srcOff2++];
+			dest[destOff2++] = src[srcOff2++];
+			dest[destOff2++] = src[srcOff2++];
+			dest[destOff2++] = src[srcOff2++];
+			dest[destOff2++] = src[srcOff2++];
+			dest[destOff2++] = src[srcOff2++];
+			destOff = destOff2 + 1;
+			srcOff = srcOff2 + 1;
+			dest[destOff2] = src[srcOff2];
+		}
+		len += 7;
+		while (srcOff < len) {
+			dest[destOff++] = src[srcOff++];
+		}
+	}
+
+	@OriginalMember(owner = "client!ad", name = "a", descriptor = "([JI[JII)V")
+	public static void copy(@OriginalArg(0) long[] src, @OriginalArg(1) int srcOff, @OriginalArg(2) long[] dest, @OriginalArg(3) int destOff, @OriginalArg(4) int len) {
+		if (src == dest) {
+			if (srcOff == destOff) {
+				return;
+			}
+			if (destOff > srcOff && destOff < srcOff + len) {
+				len--;
+				@Pc(19) int srcOff2 = srcOff + len;
+				@Pc(23) int destOff2 = destOff + len;
+				len = srcOff2 - len;
+				len += 3;
+				while (srcOff2 >= len) {
+					@Pc(34) int destOff3 = destOff2 - 1;
+					@Pc(37) int srcOff3 = srcOff2 - 1;
+					dest[destOff2] = src[srcOff2];
+					dest[destOff3--] = src[srcOff3--];
+					dest[destOff3--] = src[srcOff3--];
+					destOff2 = destOff3 - 1;
+					srcOff2 = srcOff3 - 1;
+					dest[destOff3] = src[srcOff3];
+				}
+				len -= 3;
+				while (srcOff2 >= len) {
+					dest[destOff2--] = src[srcOff2--];
+				}
+				return;
+			}
+		}
+		len += srcOff;
+		len -= 3;
+		while (srcOff < len) {
+			@Pc(89) int destOff2 = destOff + 1;
+			@Pc(92) int srcOff2 = srcOff + 1;
+			dest[destOff] = src[srcOff];
+			dest[destOff2++] = src[srcOff2++];
+			dest[destOff2++] = src[srcOff2++];
+			destOff = destOff2 + 1;
+			srcOff = srcOff2 + 1;
+			dest[destOff2] = src[srcOff2];
+		}
+		len += 3;
+		while (srcOff < len) {
+			dest[destOff++] = src[srcOff++];
+		}
+	}
+
+	@OriginalMember(owner = "client!ad", name = "a", descriptor = "([FI[FII)V")
+	public static void copy(@OriginalArg(0) float[] src, @OriginalArg(1) int srcOff, @OriginalArg(2) float[] dest, @OriginalArg(3) int destOff, @OriginalArg(4) int len) {
+		if (src == dest) {
+			return;
+		}
+		len -= 7;
+		while (srcOff < len) {
+			@Pc(121) int destOff2 = destOff + 1;
+			@Pc(124) int srcOff2 = srcOff + 1;
+			dest[destOff] = src[srcOff];
+			dest[destOff2++] = src[srcOff2++];
+			dest[destOff2++] = src[srcOff2++];
+			dest[destOff2++] = src[srcOff2++];
+			dest[destOff2++] = src[srcOff2++];
+			dest[destOff2++] = src[srcOff2++];
+			dest[destOff2++] = src[srcOff2++];
+			destOff = destOff2 + 1;
+			srcOff = srcOff2 + 1;
+			dest[destOff2] = src[srcOff2];
+		}
+		len += 7;
+		while (srcOff < len) {
+			dest[destOff++] = src[srcOff++];
+		}
+	}
+
+	@OriginalMember(owner = "client!ad", name = "a", descriptor = "([Ljava/lang/Object;I[Ljava/lang/Object;II)V")
+	public static void copy(@OriginalArg(0) Object[] src, @OriginalArg(1) int srcOff, @OriginalArg(2) Object[] dest, @OriginalArg(3) int destOff, @OriginalArg(4) int len) {
+		if (src == dest) {
+			if (srcOff == destOff) {
+				return;
+			}
+			if (destOff > srcOff && destOff < srcOff + len) {
+				len--;
+				@Pc(19) int srcOff2 = srcOff + len;
+				@Pc(23) int destOff2 = destOff + len;
+				len = srcOff2 - len;
+				len += 7;
+				while (srcOff2 >= len) {
+					@Pc(34) int destOff3 = destOff2 - 1;
+					@Pc(37) int srcOff3 = srcOff2 - 1;
+					dest[destOff2] = src[srcOff2];
+					dest[destOff3--] = src[srcOff3--];
+					dest[destOff3--] = src[srcOff3--];
+					dest[destOff3--] = src[srcOff3--];
+					dest[destOff3--] = src[srcOff3--];
+					dest[destOff3--] = src[srcOff3--];
+					dest[destOff3--] = src[srcOff3--];
+					destOff2 = destOff3 - 1;
+					srcOff2 = srcOff3 - 1;
+					dest[destOff3] = src[srcOff3];
+				}
+				len -= 7;
+				while (srcOff2 >= len) {
+					dest[destOff2--] = src[srcOff2--];
+				}
+				return;
+			}
+		}
+		len += srcOff;
+		len -= 7;
+		while (srcOff < len) {
+			@Pc(121) int destOff2 = destOff + 1;
+			@Pc(124) int srcOff2 = srcOff + 1;
+			dest[destOff] = src[srcOff];
+			dest[destOff2++] = src[srcOff2++];
+			dest[destOff2++] = src[srcOff2++];
+			dest[destOff2++] = src[srcOff2++];
+			dest[destOff2++] = src[srcOff2++];
+			dest[destOff2++] = src[srcOff2++];
+			dest[destOff2++] = src[srcOff2++];
+			destOff = destOff2 + 1;
+			srcOff = srcOff2 + 1;
+			dest[destOff2] = src[srcOff2];
+		}
+		len += 7;
+		while (srcOff < len) {
+			dest[destOff++] = src[srcOff++];
+		}
+	}
+
+	@OriginalMember(owner = "client!ad", name = "a", descriptor = "([III)V")
+	public static void clear(@OriginalArg(0) int[] dest, @OriginalArg(1) int off, @OriginalArg(2) int len) {
+		len = len - 7;
+		while (off < len) {
+			@Pc(11) int off2 = off + 1;
+			dest[off] = 0;
+			dest[off2++] = 0;
+			dest[off2++] = 0;
+			dest[off2++] = 0;
+			dest[off2++] = 0;
+			dest[off2++] = 0;
+			dest[off2++] = 0;
+			off = off2 + 1;
+			dest[off2] = 0;
+		}
+		len += 7;
+		while (off < len) {
+			dest[off++] = 0;
+		}
+	}
+
+	@OriginalMember(owner = "client!ad", name = "a", descriptor = "([SIIS)V")
+	public static void fill(@OriginalArg(0) short[] dest, @OriginalArg(1) int off, @OriginalArg(2) int len, @OriginalArg(3) short value) {
+		len = len - 7;
+		while (off < len) {
+			@Pc(11) int off2 = off + 1;
+			dest[off] = value;
+			dest[off2++] = value;
+			dest[off2++] = value;
+			dest[off2++] = value;
+			dest[off2++] = value;
+			dest[off2++] = value;
+			dest[off2++] = value;
+			off = off2 + 1;
+			dest[off2] = value;
+		}
+		len += 7;
+		while (off < len) {
+			dest[off++] = value;
+		}
+	}
+
+	@OriginalMember(owner = "client!ad", name = "a", descriptor = "([IIII)V")
+	public static void fill(@OriginalArg(0) int[] dest, @OriginalArg(1) int off, @OriginalArg(2) int len, @OriginalArg(3) int value) {
+		len = off + len - 7;
+		while (off < len) {
+			@Pc(11) int off2 = off + 1;
+			dest[off] = value;
+			dest[off2++] = value;
+			dest[off2++] = value;
+			dest[off2++] = value;
+			dest[off2++] = value;
+			dest[off2++] = value;
+			dest[off2++] = value;
+			off = off2 + 1;
+			dest[off2] = value;
+		}
+		len += 7;
+		while (off < len) {
+			dest[off++] = value;
+		}
+	}
+}

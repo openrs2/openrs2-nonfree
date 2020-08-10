@@ -45,7 +45,7 @@ public abstract class ByteArray {
 	private static byte[] copy(@OriginalArg(0) byte[] in) {
 		@Pc(14) int len = in.length;
 		@Pc(17) byte[] out = new byte[len];
-		Static8.method80(in, 0, out, 0, len);
+		ArrayUtils.copy(in, 0, out, 0, len);
 		return out;
 	}
 

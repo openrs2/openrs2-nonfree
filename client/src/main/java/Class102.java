@@ -237,7 +237,7 @@ public class Class102 {
 		if (Static4.aBoolean183) {
 			local1 = 512;
 		}
-		Static8.method76(arg0, 0, local1);
+		ArrayUtils.clear(arg0, 0, local1);
 		this.anInt3593 -= 256;
 		if (this.aClass4_Sub6_7 != null && this.anInt3593 <= 0) {
 			this.anInt3593 += Static7.anInt5394 >> 4;

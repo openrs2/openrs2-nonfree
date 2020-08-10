@@ -892,7 +892,7 @@ public final class Static27 {
 		if (arg0 != 64) {
 			Static5.aBoolean276 = true;
 		}
-		Static8.method80(arg1, 0, local13, 0, arg1.length);
+		ArrayUtils.copy(arg1, 0, local13, 0, arg1.length);
 		return local13;
 	}
 

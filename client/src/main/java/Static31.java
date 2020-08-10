@@ -1577,7 +1577,7 @@ public final class Static31 {
 	@OriginalMember(owner = "client!s", name = "a", descriptor = "([SI)[S")
 	public static short[] method3860(@OriginalArg(0) short[] arg0, @OriginalArg(1) int arg1) {
 		@Pc(2) short[] local2 = new short[arg1];
-		Static8.method78(arg0, 0, local2, 0, arg1);
+		ArrayUtils.copy(arg0, 0, local2, 0, arg1);
 		return local2;
 	}
 

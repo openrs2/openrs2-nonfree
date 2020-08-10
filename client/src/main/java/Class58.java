@@ -259,7 +259,7 @@ public final class Class58 {
 					@Pc(320) int local320 = 0;
 					for (@Pc(322) int local322 = 0; local322 < local33; local322++) {
 						local320 += local241.readInt();
-						Static8.method80(local151, local313, local289[local322], local229[local322], local320);
+						ArrayUtils.copy(local151, local313, local289[local322], local229[local322], local320);
 						local313 += local320;
 						local229[local322] += local320;
 					}

@@ -630,7 +630,7 @@ public final class Static15 {
 			return null;
 		} else {
 			@Pc(12) short[] local12 = new short[arg0.length];
-			Static8.method78(arg0, 0, local12, 0, arg0.length);
+			ArrayUtils.copy(arg0, 0, local12, 0, arg0.length);
 			return local12;
 		}
 	}

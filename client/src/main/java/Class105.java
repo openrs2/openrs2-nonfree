@@ -488,7 +488,7 @@ public final class Class105 {
 			local30 = local30 * local123 + 32767 - local26 * local119 >> 16;
 			local26 = local135;
 		}
-		Static8.method72(Static4.aClass53_Sub3_1.aShortArray53, 0, Static4.aClass53_Sub3_1.anInt3353, (short) Static4.anInterface4_1.method446(this.anInt2858));
+		ArrayUtils.fill(Static4.aClass53_Sub3_1.aShortArray53, 0, Static4.aClass53_Sub3_1.anInt3353, (short) Static4.anInterface4_1.method446(this.anInt2858));
 		@Pc(172) Class53_Sub4_Sub1 local172 = Static4.aClass53_Sub3_1.method2759(64, 512, -local26, -local28, -local30);
 		@Pc(178) int local178 = local172.method3838() - local172.method3829();
 		@Pc(184) int local184 = local172.method3842() - local172.method3813();

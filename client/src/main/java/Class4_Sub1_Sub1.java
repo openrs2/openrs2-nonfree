@@ -231,11 +231,11 @@ public final class Class4_Sub1_Sub1 extends Class4_Sub1 {
 							local116[Static1.anInt901 & arg2 + local403] = local116[Static1.anInt901 & arg1 + arg2 - local403 - 1] = local20 * local403 / local82;
 						}
 						if (local97 + local104 <= Static2.anInt1626) {
-							Static8.method75(local116, local97, local104, local20);
+							ArrayUtils.fill(local116, local97, local104, local20);
 						} else {
 							@Pc(461) int local461 = Static2.anInt1626 - local97;
-							Static8.method75(local116, local97, local461, local20);
-							Static8.method75(local116, 0, local104 - local461, local20);
+							ArrayUtils.fill(local116, local97, local461, local20);
+							ArrayUtils.fill(local116, 0, local104 - local461, local20);
 						}
 					} else {
 						@Pc(274) int local274 = local260 * local20 / local93;
@@ -252,10 +252,10 @@ public final class Class4_Sub1_Sub1 extends Class4_Sub1 {
 						}
 						if (Static2.anInt1626 < local104 + local97) {
 							@Pc(379) int local379 = Static2.anInt1626 - local97;
-							Static8.method75(local116, local97, local379, local274);
-							Static8.method75(local116, 0, local104 - local379, local274);
+							ArrayUtils.fill(local116, local97, local379, local274);
+							ArrayUtils.fill(local116, 0, local104 - local379, local274);
 						} else {
-							Static8.method75(local116, local97, local104, local274);
+							ArrayUtils.fill(local116, local97, local104, local274);
 						}
 					}
 				} else {
@@ -273,23 +273,23 @@ public final class Class4_Sub1_Sub1 extends Class4_Sub1 {
 					}
 					if (local97 + local104 > Static2.anInt1626) {
 						@Pc(231) int local231 = Static2.anInt1626 - local97;
-						Static8.method75(local116, local97, local231, local130);
-						Static8.method75(local116, 0, local104 - local231, local130);
+						ArrayUtils.fill(local116, local97, local231, local130);
+						ArrayUtils.fill(local116, 0, local104 - local231, local130);
 					} else {
-						Static8.method75(local116, local97, local104, local130);
+						ArrayUtils.fill(local116, local97, local104, local130);
 					}
 				}
 			}
 		} else if (Static2.anInt1626 >= arg1 + arg2) {
 			for (@Pc(486) int local486 = 0; local486 < arg0; local486++) {
-				Static8.method75(arg5[local486 + arg3], arg2, arg1, local20);
+				ArrayUtils.fill(arg5[local486 + arg3], arg2, arg1, local20);
 			}
 		} else {
 			@Pc(507) int local507 = Static2.anInt1626 - arg2;
 			for (@Pc(509) int local509 = 0; local509 < arg0; local509++) {
 				@Pc(518) int[] local518 = arg5[local509 + arg3];
-				Static8.method75(local518, arg2, local507, local20);
-				Static8.method75(local518, 0, arg1 - local507, local20);
+				ArrayUtils.fill(local518, arg2, local507, local20);
+				ArrayUtils.fill(local518, 0, arg1 - local507, local20);
 			}
 		}
 	}
