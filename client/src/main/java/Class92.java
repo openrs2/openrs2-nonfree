@@ -20,7 +20,7 @@ public final class Class92 implements Runnable {
 
 	@OriginalMember(owner = "client!ja", name = "<init>", descriptor = "()V")
 	public Class92() {
-		@Pc(20) PrivilegedRequest local20 = Static7.aClass196_4.startThread(this, 5);
+		@Pc(20) PrivilegedRequest local20 = GameShell.signLink.startThread(this, 5);
 		while (local20.status == 0) {
 			Static37.method4640(10L);
 		}

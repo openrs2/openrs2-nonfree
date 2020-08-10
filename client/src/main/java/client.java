@@ -11,7 +11,7 @@ import dev.openrs2.deob.annotation.OriginalMember;
 import dev.openrs2.deob.annotation.Pc;
 
 @OriginalClass("client!client")
-public final class client extends Applet_Sub1 {
+public final class client extends GameShell {
 
 	@OriginalMember(owner = "client!pn", name = "e", descriptor = "I")
 	private static int worldId = 1;
@@ -96,8 +96,8 @@ public final class client extends Applet_Sub1 {
 			affiliate = 0;
 			@Pc(131) client c = new client();
 			instance = c;
-			c.method679(modeWhat + 32, game == 1 ? "mechscape" : "openrs2");
-			Static4.aFrame2.setLocation(40, 40);
+			c.startApplication(modeWhat + 32, game == 1 ? "mechscape" : "openrs2");
+			GameShell.frame.setLocation(40, 40);
 		} catch (@Pc(156) Exception ex) {
 			Static26.method3059(ex, null);
 		}
@@ -117,7 +117,7 @@ public final class client extends Applet_Sub1 {
 		}
 		Static5.anInt4156++;
 		if (Static3.anInt5398 != -1) {
-			Static14.method1060(Static3.anInt5398, Static1.anInt526, 0, 0, 0, 0, Static1.anInt690);
+			Static14.method1060(Static3.anInt5398, GameShell.canvasWidth, 0, 0, 0, 0, GameShell.canvasHeight);
 		}
 		Static6.anInt4979++;
 		if (Static3.aBoolean138) {
@@ -353,10 +353,10 @@ public final class client extends Applet_Sub1 {
 			Static9.method175(Static7.aBoolean122);
 			Static1.aClass4_Sub6_Sub2_2 = new Class4_Sub6_Sub2();
 			Static1.aClass4_Sub6_Sub2_2.method2505();
-			Static1.aClass102_1 = Static25.method2807(Static5.aCanvas115, 22050, Static7.aClass196_4, 0);
+			Static1.aClass102_1 = Static25.method2807(GameShell.canvas, 22050, GameShell.signLink, 0);
 			Static1.aClass102_1.method3008(Static1.aClass4_Sub6_Sub2_2);
 			Static36.method4551(Static1.aClass4_Sub6_Sub2_2, Static5.aClass58_83, Static5.aClass58_78, Static6.aClass58_92);
-			Static6.aClass102_2 = Static25.method2807(Static5.aCanvas115, 2048, Static7.aClass196_4, 1);
+			Static6.aClass102_2 = Static25.method2807(GameShell.canvas, 2048, GameShell.signLink, 1);
 			Static5.aClass4_Sub6_Sub3_2 = new Class4_Sub6_Sub3();
 			Static6.aClass102_2.method3008(Static5.aClass4_Sub6_Sub3_2);
 			Static7.aClass170_1 = new Class170(22050, Static7.anInt5394);
@@ -489,7 +489,7 @@ public final class client extends Applet_Sub1 {
 			}
 		} else if (Static5.anInt4285 == 110) {
 			Static4.aClass99_1 = new Class99();
-			Static7.aClass196_4.startThread(Static4.aClass99_1, 10);
+			GameShell.signLink.startThread(Static4.aClass99_1, 10);
 			Static6.anInt4621 = 75;
 			Static5.aString243 = LocalisedText.MAINLOAD110B;
 			Static5.anInt4285 = 120;
@@ -531,14 +531,14 @@ public final class client extends Applet_Sub1 {
 				Static5.aString243 = LocalisedText.MAINLOAD135;
 				Static6.anInt4621 = 95;
 			} else if (local1200 == 7 || local1200 == 9) {
-				this.method670("worldlistfull");
+				this.error("worldlistfull");
 				Static9.method233(1000);
 			} else if (Static6.aBoolean338) {
 				Static6.anInt4621 = 96;
 				Static5.anInt4285 = 140;
 				Static5.aString243 = LocalisedText.MAINLOAD135B;
 			} else {
-				this.method670("worldlistio_" + local1200);
+				this.error("worldlistio_" + local1200);
 				Static9.method233(1000);
 			}
 		} else if (Static5.anInt4285 == 140) {
@@ -562,7 +562,7 @@ public final class client extends Applet_Sub1 {
 				Static5.anInt4291 = 0;
 			}
 			Static5.aBoolean278 = true;
-			Static14.method1055(Static7.aClass196_4);
+			Static14.method1055(GameShell.signLink);
 			Static35.method4512(false, Static5.anInt3637, -1, -1);
 			Static6.anInt4621 = 100;
 			Static5.aString243 = LocalisedText.MAINLOAD150B;
@@ -574,13 +574,13 @@ public final class client extends Applet_Sub1 {
 
 	@OriginalMember(owner = "client!client", name = "a", descriptor = "(B)V")
 	@Override
-	protected final void method672() {
+	protected final void mainQuit() {
 		if (Static3.aBoolean138) {
 			Static17.method1605();
 		}
-		if (Static3.aFrame1 != null) {
-			Static31.method3658(Static7.aClass196_4, Static3.aFrame1);
-			Static3.aFrame1 = null;
+		if (GameShell.fullScreenFrame != null) {
+			Static31.method3658(GameShell.signLink, GameShell.fullScreenFrame);
+			GameShell.fullScreenFrame = null;
 		}
 		if (Static4.aClass99_1 != null) {
 			Static4.aClass99_1.aBoolean185 = false;
@@ -590,10 +590,10 @@ public final class client extends Applet_Sub1 {
 			Static3.aClass52_7.method1103();
 			Static3.aClass52_7 = null;
 		}
-		Static11.method588(Static5.aCanvas115);
-		Static13.method891(Static5.aCanvas115);
+		Static11.method588(GameShell.canvas);
+		Static13.method891(GameShell.canvas);
 		if (Static6.aClass19_1 != null) {
-			Static6.aClass19_1.method894(Static5.aCanvas115);
+			Static6.aClass19_1.method894(GameShell.canvas);
 		}
 		Static11.method589();
 		Static38.method4794();
@@ -610,14 +610,14 @@ public final class client extends Applet_Sub1 {
 
 	@OriginalMember(owner = "client!client", name = "c", descriptor = "(B)V")
 	@Override
-	protected final void method681() {
+	protected final void mainInit() {
 		Static20.method1949();
 		Static2.aClass92_1 = new Class92();
 		Static7.aClass51_2 = new Class51();
 		if (modeWhat != 0) {
 			Static6.aByteArrayArray35 = new byte[50][];
 		}
-		Static33.method4149(Static7.aClass196_4);
+		Static33.method4149(GameShell.signLink);
 		if (modeWhere == 0) {
 			Static6.aString291 = this.getCodeBase().getHost();
 			Static3.anInt2337 = 43594;
@@ -655,26 +655,26 @@ public final class client extends Applet_Sub1 {
 		Static4.anInt3358 = Static3.anInt2337;
 		Static6.anInt4866 = Static4.anInt3358;
 		Static15.method1402();
-		Static20.method1926(Static5.aCanvas115);
-		Static13.method883(Static5.aCanvas115);
+		Static20.method1926(GameShell.canvas);
+		Static13.method883(GameShell.canvas);
 		Static6.aClass19_1 = Static10.method345();
 		if (Static6.aClass19_1 != null) {
-			Static6.aClass19_1.method900(Static5.aCanvas115);
+			Static6.aClass19_1.method900(GameShell.canvas);
 		}
 		Static5.anInt3815 = SignLink.anInt6106;
 		try {
-			if (Static7.aClass196_4.cacheData != null) {
-				Static3.aClass189_4 = new Class189(Static7.aClass196_4.cacheData, 5200, 0);
+			if (GameShell.signLink.cacheData != null) {
+				Static3.aClass189_4 = new Class189(GameShell.signLink.cacheData, 5200, 0);
 				for (@Pc(174) int local174 = 0; local174 < 29; local174++) {
-					Static4.aClass189Array1[local174] = new Class189(Static7.aClass196_4.cacheIndexes[local174], 6000, 0);
+					Static4.aClass189Array1[local174] = new Class189(GameShell.signLink.cacheIndexes[local174], 6000, 0);
 				}
-				Static3.aClass189_5 = new Class189(Static7.aClass196_4.cacheMasterIndex, 6000, 0);
+				Static3.aClass189_5 = new Class189(GameShell.signLink.cacheMasterIndex, 6000, 0);
 				Static1.aClass60_2 = new Class60(255, Static3.aClass189_4, Static3.aClass189_5, 500000);
-				Static1.aClass189_1 = new Class189(Static7.aClass196_4.uid, 24, 0);
-				Static7.aClass196_4.cacheMasterIndex = null;
-				Static7.aClass196_4.cacheIndexes = null;
-				Static7.aClass196_4.cacheData = null;
-				Static7.aClass196_4.uid = null;
+				Static1.aClass189_1 = new Class189(GameShell.signLink.uid, 24, 0);
+				GameShell.signLink.cacheMasterIndex = null;
+				GameShell.signLink.cacheIndexes = null;
+				GameShell.signLink.cacheData = null;
+				GameShell.signLink.uid = null;
 			}
 		} catch (@Pc(230) IOException local230) {
 			Static1.aClass189_1 = null;
@@ -733,22 +733,22 @@ public final class client extends Applet_Sub1 {
 				Static6.anInt4866 = Static3.anInt2194;
 			}
 			if (Static7.aClass51_2.anInt1358 >= 2 && Static7.aClass51_2.anInt1359 == 6) {
-				this.method670("js5connect_outofdate");
+				this.error("js5connect_outofdate");
 				Static4.anInt3304 = 1000;
 				return;
 			}
 			if (Static7.aClass51_2.anInt1358 >= 4 && Static7.aClass51_2.anInt1359 == -1) {
-				this.method670("js5crc");
+				this.error("js5crc");
 				Static4.anInt3304 = 1000;
 				return;
 			}
 			if (Static7.aClass51_2.anInt1358 >= 4 && (Static4.anInt3304 == 0 || Static4.anInt3304 == 5)) {
 				if (Static7.aClass51_2.anInt1359 == 7 || Static7.aClass51_2.anInt1359 == 9) {
-					this.method670("js5connect_full");
+					this.error("js5connect_full");
 				} else if (Static7.aClass51_2.anInt1359 <= 0) {
-					this.method670("js5io");
+					this.error("js5io");
 				} else {
-					this.method670("js5connect");
+					this.error("js5connect");
 				}
 				Static4.anInt3304 = 1000;
 				return;
@@ -761,7 +761,7 @@ public final class client extends Applet_Sub1 {
 		}
 		try {
 			if (Static6.anInt4952 == 0) {
-				Static5.aClass197_4 = Static7.aClass196_4.openSocket(Static6.aString292, Static6.anInt4866);
+				Static5.aClass197_4 = GameShell.signLink.openSocket(Static6.aString292, Static6.anInt4866);
 				Static6.anInt4952++;
 			}
 			if (Static6.anInt4952 == 1) {
@@ -774,7 +774,7 @@ public final class client extends Applet_Sub1 {
 				}
 			}
 			if (Static6.anInt4952 == 2) {
-				Static3.aClass52_5 = new Class52((Socket) Static5.aClass197_4.result, Static7.aClass196_4);
+				Static3.aClass52_5 = new Class52((Socket) Static5.aClass197_4.result, GameShell.signLink);
 				@Pc(198) Buffer local198 = new Buffer(5);
 				local198.writeByte(15);
 				local198.writeInt(550);
@@ -809,13 +809,13 @@ public final class client extends Applet_Sub1 {
 
 	@OriginalMember(owner = "client!client", name = "b", descriptor = "(B)V")
 	@Override
-	protected final void method673() {
+	protected final void reset() {
 	}
 
 	@OriginalMember(owner = "client!client", name = "init", descriptor = "()V")
 	@Override
 	public final void init() {
-		if (!this.method671()) {
+		if (!this.isHostnameValid()) {
 			return;
 		}
 		worldId = Integer.parseInt(this.getParameter("worldid"));
@@ -881,12 +881,12 @@ public final class client extends Applet_Sub1 {
 			haveIe6 = false;
 		}
 		instance = this;
-		this.method677(modeWhat + 32);
+		this.startApplet(modeWhat + 32);
 	}
 
 	@OriginalMember(owner = "client!client", name = "e", descriptor = "(I)V")
 	@Override
-	protected final void method678() {
+	protected final void mainRedraw() {
 		if (Static4.anInt3304 == 1000) {
 			return;
 		}
@@ -896,37 +896,37 @@ public final class client extends Applet_Sub1 {
 		if (local34 && Static4.aBoolean210 && Static1.aClass102_1 != null) {
 			Static1.aClass102_1.method3009();
 		}
-		if ((Static4.anInt3304 == 30 || Static4.anInt3304 == 10) && (Static1.aBoolean18 || Static1.aLong15 != 0L && Static1.aLong15 < MonotonicClock.currentTimeMillis())) {
-			Static35.method4512(Static1.aBoolean18, Static11.method557(), Static4.anInt3403, Static3.anInt2627);
+		if ((Static4.anInt3304 == 30 || Static4.anInt3304 == 10) && (GameShell.replaceCanvas || Static1.aLong15 != 0L && Static1.aLong15 < MonotonicClock.currentTimeMillis())) {
+			Static35.method4512(GameShell.replaceCanvas, Static11.method557(), Static4.anInt3403, Static3.anInt2627);
 		}
-		if (Static3.aFrame1 == null) {
+		if (GameShell.fullScreenFrame == null) {
 			@Pc(79) Container local79;
-			if (Static3.aFrame1 != null) {
-				local79 = Static3.aFrame1;
-			} else if (Static4.aFrame2 == null) {
-				local79 = Static7.aClass196_4.applet;
+			if (GameShell.fullScreenFrame != null) {
+				local79 = GameShell.fullScreenFrame;
+			} else if (GameShell.frame == null) {
+				local79 = GameShell.signLink.applet;
 			} else {
-				local79 = Static4.aFrame2;
+				local79 = GameShell.frame;
 			}
 			@Pc(95) int local95 = local79.getSize().width;
 			@Pc(99) int local99 = local79.getSize().height;
-			if (Static4.aFrame2 == local79) {
-				@Pc(106) Insets local106 = Static4.aFrame2.getInsets();
+			if (GameShell.frame == local79) {
+				@Pc(106) Insets local106 = GameShell.frame.getInsets();
 				local95 -= local106.left + local106.right;
 				local99 -= local106.bottom + local106.top;
 			}
-			if (Static2.anInt1635 != local95 || Static6.anInt4380 != local99) {
+			if (GameShell.frameWidth != local95 || GameShell.frameHeight != local99) {
 				Static20.method1949();
 				Static1.aLong15 = MonotonicClock.currentTimeMillis() + 500L;
 			}
 		}
-		if (Static3.aFrame1 != null && !Static3.aBoolean158 && (Static4.anInt3304 == 30 || Static4.anInt3304 == 10)) {
+		if (GameShell.fullScreenFrame != null && !GameShell.focus && (Static4.anInt3304 == 30 || Static4.anInt3304 == 10)) {
 			Static35.method4512(false, Static5.anInt3637, -1, -1);
 		}
 		@Pc(173) boolean local173 = false;
-		if (Static6.aBoolean314) {
+		if (GameShell.fullRedraw) {
 			local173 = true;
-			Static6.aBoolean314 = false;
+			GameShell.fullRedraw = false;
 		}
 		if (local173) {
 			Static29.method3430();
@@ -970,7 +970,7 @@ public final class client extends Applet_Sub1 {
 			}
 		} else if ((Static4.anInt3304 == 30 || Static4.anInt3304 == 10) && Static1.anInt268 == 0 && !local173) {
 			try {
-				@Pc(391) Graphics local391 = Static5.aCanvas115.getGraphics();
+				@Pc(391) Graphics local391 = GameShell.canvas.getGraphics();
 				for (@Pc(393) int local393 = 0; local393 < Static1.anInt113; local393++) {
 					if (Static6.aBooleanArray24[local393]) {
 						Static4.aClass59_1.method4240(Static5.anIntArray383[local393], Static7.anIntArray638[local393], Static7.anIntArray616[local393], local391, Static6.anIntArray540[local393]);
@@ -978,17 +978,17 @@ public final class client extends Applet_Sub1 {
 					}
 				}
 			} catch (@Pc(429) Exception local429) {
-				Static5.aCanvas115.repaint();
+				GameShell.canvas.repaint();
 			}
 		} else if (Static4.anInt3304 != 0) {
 			try {
-				@Pc(364) Graphics local364 = Static5.aCanvas115.getGraphics();
+				@Pc(364) Graphics local364 = GameShell.canvas.getGraphics();
 				Static4.aClass59_1.method4238(local364);
 				for (@Pc(372) int local372 = 0; local372 < Static1.anInt113; local372++) {
 					Static6.aBooleanArray24[local372] = false;
 				}
 			} catch (@Pc(384) Exception local384) {
-				Static5.aCanvas115.repaint();
+				GameShell.canvas.repaint();
 			}
 		}
 		if (Static7.aBoolean422) {
@@ -996,13 +996,13 @@ public final class client extends Applet_Sub1 {
 		}
 		if (Static5.aBoolean278 && Static4.anInt3304 == 10 && Static3.anInt5398 != -1) {
 			Static5.aBoolean278 = false;
-			Static14.method1055(Static7.aClass196_4);
+			Static14.method1055(GameShell.signLink);
 		}
 	}
 
 	@OriginalMember(owner = "client!client", name = "a", descriptor = "(Z)V")
 	@Override
-	protected final void method663() {
+	protected final void mainLoop() {
 		if (Static4.anInt3304 == 1000) {
 			return;
 		}

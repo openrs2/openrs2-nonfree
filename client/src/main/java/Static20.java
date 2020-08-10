@@ -964,42 +964,42 @@ public final class Static20 {
 			Static4.anInt2644 = 70;
 			Static18.method4371();
 		} else if (Static4.anInt2644 == 70) {
-			Static6.aClass106_7 = new Class106(11, true, Static5.aCanvas115);
+			Static6.aClass106_7 = new Class106(11, true, GameShell.canvas);
 			Static4.anInt2644 = 73;
 			Static32.method3917(true);
 			Static18.method4371();
 		} else if (Static4.anInt2644 == 73) {
-			Static4.aClass106_3 = new Class106(12, true, Static5.aCanvas115);
+			Static4.aClass106_3 = new Class106(12, true, GameShell.canvas);
 			Static4.anInt2644 = 76;
 			Static32.method3917(true);
 			Static18.method4371();
 		} else if (Static4.anInt2644 == 76) {
-			Static4.aClass106_5 = new Class106(14, true, Static5.aCanvas115);
+			Static4.aClass106_5 = new Class106(14, true, GameShell.canvas);
 			Static4.anInt2644 = 79;
 			Static32.method3917(true);
 			Static18.method4371();
 		} else if (Static4.anInt2644 == 79) {
-			Static4.aClass106_4 = new Class106(17, true, Static5.aCanvas115);
+			Static4.aClass106_4 = new Class106(17, true, GameShell.canvas);
 			Static4.anInt2644 = 82;
 			Static32.method3917(true);
 			Static18.method4371();
 		} else if (Static4.anInt2644 == 82) {
-			Static1.aClass106_1 = new Class106(19, true, Static5.aCanvas115);
+			Static1.aClass106_1 = new Class106(19, true, GameShell.canvas);
 			Static4.anInt2644 = 85;
 			Static32.method3917(true);
 			Static18.method4371();
 		} else if (Static4.anInt2644 == 85) {
-			Static2.aClass106_2 = new Class106(22, true, Static5.aCanvas115);
+			Static2.aClass106_2 = new Class106(22, true, GameShell.canvas);
 			Static4.anInt2644 = 88;
 			Static32.method3917(true);
 			Static18.method4371();
 		} else if (Static4.anInt2644 == 88) {
-			Static5.aClass106_6 = new Class106(26, true, Static5.aCanvas115);
+			Static5.aClass106_6 = new Class106(26, true, GameShell.canvas);
 			Static4.anInt2644 = 91;
 			Static32.method3917(true);
 			Static18.method4371();
 		} else {
-			Static6.aClass106_8 = new Class106(30, true, Static5.aCanvas115);
+			Static6.aClass106_8 = new Class106(30, true, GameShell.canvas);
 			Static4.anInt2644 = 100;
 			Static32.method3917(true);
 			Static18.method4371();
@@ -1190,40 +1190,40 @@ public final class Static20 {
 	@OriginalMember(owner = "client!io", name = "a", descriptor = "(Z)V")
 	public static void method1949() {
 		@Pc(9) Container local9;
-		if (Static3.aFrame1 != null) {
-			local9 = Static3.aFrame1;
-		} else if (Static4.aFrame2 == null) {
-			local9 = Static7.aClass196_4.applet;
+		if (GameShell.fullScreenFrame != null) {
+			local9 = GameShell.fullScreenFrame;
+		} else if (GameShell.frame == null) {
+			local9 = GameShell.signLink.applet;
 		} else {
-			local9 = Static4.aFrame2;
+			local9 = GameShell.frame;
 		}
-		Static2.anInt1635 = local9.getSize().width;
-		Static6.anInt4380 = local9.getSize().height;
-		if (local9 == Static4.aFrame2) {
-			@Pc(35) Insets local35 = Static4.aFrame2.getInsets();
-			Static2.anInt1635 -= local35.left + local35.right;
-			Static6.anInt4380 -= local35.bottom + local35.top;
+		GameShell.frameWidth = local9.getSize().width;
+		GameShell.frameHeight = local9.getSize().height;
+		if (local9 == GameShell.frame) {
+			@Pc(35) Insets local35 = GameShell.frame.getInsets();
+			GameShell.frameWidth -= local35.left + local35.right;
+			GameShell.frameHeight -= local35.bottom + local35.top;
 		}
 		if (Static11.method557() >= 2) {
-			Static7.anInt5622 = 0;
-			Static1.anInt526 = Static2.anInt1635;
-			Static6.anInt4859 = 0;
-			Static1.anInt690 = Static6.anInt4380;
+			GameShell.topMargin = 0;
+			GameShell.canvasWidth = GameShell.frameWidth;
+			GameShell.leftMargin = 0;
+			GameShell.canvasHeight = GameShell.frameHeight;
 		} else {
-			Static1.anInt526 = 765;
-			Static1.anInt690 = 503;
-			Static6.anInt4859 = (Static2.anInt1635 - 765) / 2;
-			Static7.anInt5622 = 0;
+			GameShell.canvasWidth = 765;
+			GameShell.canvasHeight = 503;
+			GameShell.leftMargin = (GameShell.frameWidth - 765) / 2;
+			GameShell.topMargin = 0;
 		}
 		if (Static3.aBoolean138) {
-			Static16.method1587(Static1.anInt526, Static1.anInt690);
+			Static16.method1587(GameShell.canvasWidth, GameShell.canvasHeight);
 		}
-		Static5.aCanvas115.setSize(Static1.anInt526, Static1.anInt690);
-		if (local9 == Static4.aFrame2) {
-			@Pc(104) Insets local104 = Static4.aFrame2.getInsets();
-			Static5.aCanvas115.setLocation(local104.left + Static6.anInt4859, Static7.anInt5622 + local104.top);
+		GameShell.canvas.setSize(GameShell.canvasWidth, GameShell.canvasHeight);
+		if (local9 == GameShell.frame) {
+			@Pc(104) Insets local104 = GameShell.frame.getInsets();
+			GameShell.canvas.setLocation(local104.left + GameShell.leftMargin, GameShell.topMargin + local104.top);
 		} else {
-			Static5.aCanvas115.setLocation(Static6.anInt4859, Static7.anInt5622);
+			GameShell.canvas.setLocation(GameShell.leftMargin, GameShell.topMargin);
 		}
 		if (Static3.anInt5398 != -1) {
 			Static12.method777(true);

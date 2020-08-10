@@ -1,4 +1,3 @@
-import java.awt.Canvas;
 import java.nio.ByteBuffer;
 import java.util.Random;
 
@@ -62,9 +61,6 @@ public final class Static5 {
 
 	@OriginalMember(owner = "client!ni", name = "a", descriptor = "I")
 	public static int anInt6072;
-
-	@OriginalMember(owner = "client!ni", name = "l", descriptor = "Ljava/awt/Canvas;")
-	public static Canvas aCanvas115;
 
 	@OriginalMember(owner = "client!ni", name = "m", descriptor = "[[Lclient!wf;")
 	public static Class185[][] aClass185ArrayArray115;
@@ -638,9 +634,6 @@ public final class Static5 {
 
 	@OriginalMember(owner = "client!qh", name = "w", descriptor = "I")
 	public static int anInt4329 = 0;
-
-	@OriginalMember(owner = "client!qi", name = "j", descriptor = "J")
-	public static volatile long aLong26 = 0L;
 
 	@OriginalMember(owner = "client!qi", name = "o", descriptor = "I")
 	public static int anInt441 = 2;

@@ -290,9 +290,9 @@ public final class Static9 {
 			Static6.aClass102_2.method3001();
 		}
 		method175(Static7.aBoolean122);
-		Static1.aClass102_1 = Static25.method2807(Static5.aCanvas115, 22050, Static7.aClass196_4, 0);
+		Static1.aClass102_1 = Static25.method2807(GameShell.canvas, 22050, GameShell.signLink, 0);
 		Static1.aClass102_1.method3008(Static1.aClass4_Sub6_Sub2_2);
-		Static6.aClass102_2 = Static25.method2807(Static5.aCanvas115, 2048, Static7.aClass196_4, 1);
+		Static6.aClass102_2 = Static25.method2807(GameShell.canvas, 2048, GameShell.signLink, 1);
 		Static6.aClass102_2.method3008(Static5.aClass4_Sub6_Sub3_2);
 	}
 
@@ -316,21 +316,21 @@ public final class Static9 {
 	@OriginalMember(owner = "client!ao", name = "a", descriptor = "(Ljava/awt/Color;ZZILjava/lang/String;)V")
 	public static void method202(@OriginalArg(0) Color arg0, @OriginalArg(1) boolean arg1, @OriginalArg(3) int arg2, @OriginalArg(4) String arg3) {
 		try {
-			@Pc(2) Graphics local2 = Static5.aCanvas115.getGraphics();
+			@Pc(2) Graphics local2 = GameShell.canvas.getGraphics();
 			if (Static1.aFont1 == null) {
 				Static1.aFont1 = new Font("Helvetica", 1, 13);
-				Static1.aFontMetrics1 = Static5.aCanvas115.getFontMetrics(Static1.aFont1);
+				Static1.aFontMetrics1 = GameShell.canvas.getFontMetrics(Static1.aFont1);
 			}
 			if (arg1) {
 				local2.setColor(Color.black);
-				local2.fillRect(0, 0, Static1.anInt526, Static1.anInt690);
+				local2.fillRect(0, 0, GameShell.canvasWidth, GameShell.canvasHeight);
 			}
 			if (arg0 == null) {
 				arg0 = new Color(140, 17, 17);
 			}
 			try {
 				if (Static2.anImage2 == null) {
-					Static2.anImage2 = Static5.aCanvas115.createImage(304, 34);
+					Static2.anImage2 = GameShell.canvas.createImage(304, 34);
 				}
 				@Pc(48) Graphics local48 = Static2.anImage2.getGraphics();
 				local48.setColor(arg0);
@@ -342,10 +342,10 @@ public final class Static9 {
 				local48.setFont(Static1.aFont1);
 				local48.setColor(Color.white);
 				local48.drawString(arg3, (304 - Static1.aFontMetrics1.stringWidth(arg3)) / 2, 22);
-				local2.drawImage(Static2.anImage2, Static1.anInt526 / 2 - 152, Static1.anInt690 / 2 - 18, null);
+				local2.drawImage(Static2.anImage2, GameShell.canvasWidth / 2 - 152, GameShell.canvasHeight / 2 - 18, null);
 			} catch (@Pc(128) Exception local128) {
-				@Pc(134) int local134 = Static1.anInt526 / 2 - 152;
-				@Pc(140) int local140 = Static1.anInt690 / 2 - 18;
+				@Pc(134) int local134 = GameShell.canvasWidth / 2 - 152;
+				@Pc(140) int local140 = GameShell.canvasHeight / 2 - 18;
 				local2.setColor(arg0);
 				local2.drawRect(local134, local140, 303, 33);
 				local2.fillRect(local134 + 2, local140 + 2, arg2 * 3, 30);
@@ -359,10 +359,10 @@ public final class Static9 {
 			if (Static5.aString255 != null) {
 				local2.setFont(Static1.aFont1);
 				local2.setColor(Color.white);
-				local2.drawString(Static5.aString255, Static1.anInt526 / 2 - Static1.aFontMetrics1.stringWidth(Static5.aString255) / 2, Static1.anInt690 / 2 - 26);
+				local2.drawString(Static5.aString255, GameShell.canvasWidth / 2 - Static1.aFontMetrics1.stringWidth(Static5.aString255) / 2, GameShell.canvasHeight / 2 - 26);
 			}
 		} catch (@Pc(243) Exception local243) {
-			Static5.aCanvas115.repaint();
+			GameShell.canvas.repaint();
 		}
 	}
 

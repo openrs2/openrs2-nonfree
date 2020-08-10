@@ -588,7 +588,7 @@ public final class Static11 {
 
 	@OriginalMember(owner = "client!cf", name = "g", descriptor = "(I)I")
 	public static int method557() {
-		if (Static3.aFrame1 != null) {
+		if (GameShell.fullScreenFrame != null) {
 			return 3;
 		} else if (Static3.aBoolean138 && Static4.aBoolean184) {
 			return 2;
@@ -650,7 +650,7 @@ public final class Static11 {
 	@OriginalMember(owner = "client!cg", name = "a", descriptor = "(I)V")
 	public static void method559() {
 		client.instance.method682();
-		Static3.aBoolean158 = true;
+		GameShell.focus = true;
 		Static3.anInt2235 = 0;
 		Static7.aBoolean367 = true;
 		Static4.aClass99_1.anInt2670 = 0;

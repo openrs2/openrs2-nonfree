@@ -811,7 +811,7 @@ public final class Static26 {
 	public static boolean method2988() {
 		if (client.javaScript) {
 			try {
-				BrowserControl.call(Static7.aClass196_4.applet, "showVideoAd");
+				BrowserControl.call(GameShell.signLink.applet, "showVideoAd");
 				return true;
 			} catch (@Pc(20) Throwable local20) {
 			}

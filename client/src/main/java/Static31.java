@@ -1077,15 +1077,15 @@ public final class Static31 {
 		@Pc(42) int local42 = Static7.anInt5634 * 15 + 21;
 		@Pc(44) int local44 = Static5.anInt5848;
 		@Pc(45) int local45 = local9 + 8;
-		if (local42 + local44 > Static1.anInt690) {
-			local44 = Static1.anInt690 - local42;
+		if (local42 + local44 > GameShell.canvasHeight) {
+			local44 = GameShell.canvasHeight - local42;
 		}
 		if (local44 < 0) {
 			local44 = 0;
 		}
 		@Pc(68) int local68 = Static4.anInt3341 - local45 / 2;
-		if (local68 + local45 > Static1.anInt526) {
-			local68 = Static1.anInt526 - local45;
+		if (local68 + local45 > GameShell.canvasWidth) {
+			local68 = GameShell.canvasWidth - local45;
 		}
 		if (local68 < 0) {
 			local68 = 0;

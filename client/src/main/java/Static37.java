@@ -506,10 +506,10 @@ public final class Static37 {
 			Static17.method1622();
 		} else {
 			try {
-				@Pc(169) Graphics local169 = Static5.aCanvas115.getGraphics();
+				@Pc(169) Graphics local169 = GameShell.canvas.getGraphics();
 				Static4.aClass59_1.method4238(local169);
 			} catch (@Pc(177) Exception local177) {
-				Static5.aCanvas115.repaint();
+				GameShell.canvas.repaint();
 			}
 		}
 	}
@@ -531,24 +531,24 @@ public final class Static37 {
 	public static void method4719(@OriginalArg(1) String arg0, @OriginalArg(2) boolean arg1) {
 		if (!arg1) {
 			try {
-				BrowserControl.call(Static7.aClass196_4.applet, "loggedout");
+				BrowserControl.call(GameShell.signLink.applet, "loggedout");
 			} catch (@Pc(51) Throwable local51) {
 			}
 			try {
-				Static1.anApplet_Sub1_1.getAppletContext().showDocument(new URL(Static1.anApplet_Sub1_1.getCodeBase(), arg0), "_top");
+				GameShell.instance.getAppletContext().showDocument(new URL(GameShell.instance.getCodeBase(), arg0), "_top");
 			} catch (@Pc(63) Exception local63) {
 			}
 			return;
 		}
-		if (Static3.aBoolean138 && Static4.aBoolean207) {
+		if (Static3.aBoolean138 && GameShell.openWindowJavaScript) {
 			try {
-				BrowserControl.call(Static7.aClass196_4.applet, "openjs", new Object[] { (new URL(Static1.anApplet_Sub1_1.getCodeBase(), arg0)).toString() });
+				BrowserControl.call(GameShell.signLink.applet, "openjs", new Object[] { (new URL(GameShell.instance.getCodeBase(), arg0)).toString() });
 				return;
 			} catch (@Pc(29) Throwable local29) {
 			}
 		}
 		try {
-			Static1.anApplet_Sub1_1.getAppletContext().showDocument(new URL(Static1.anApplet_Sub1_1.getCodeBase(), arg0), "_blank");
+			GameShell.instance.getAppletContext().showDocument(new URL(GameShell.instance.getCodeBase(), arg0), "_blank");
 		} catch (@Pc(41) Exception local41) {
 		}
 	}

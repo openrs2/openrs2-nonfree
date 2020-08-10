@@ -324,8 +324,8 @@ public final class Static33 {
 		@Pc(12) int local12;
 		@Pc(15) int local15;
 		if (local3 == null) {
-			local15 = Static1.anInt690;
-			local12 = Static1.anInt526;
+			local15 = GameShell.canvasHeight;
+			local12 = GameShell.canvasWidth;
 		} else {
 			local12 = local3.anInt5893;
 			local15 = local3.anInt5949;
@@ -1076,7 +1076,7 @@ public final class Static33 {
 		if (Static3.aBoolean138) {
 			Static23.method1936(true);
 		}
-		if (Static4.aFrame2 != null && Static3.aClass52_7 != null && Static4.anInt3304 == 25) {
+		if (GameShell.frame != null && Static3.aClass52_7 != null && Static4.anInt3304 == 25) {
 			Static3.aClass4_Sub10_Sub1_1.writeOpcode(236);
 			Static3.aClass4_Sub10_Sub1_1.writeInt(1057001181);
 		}

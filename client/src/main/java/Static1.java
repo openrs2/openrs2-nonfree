@@ -167,9 +167,6 @@ public final class Static1 {
 	@OriginalMember(owner = "client!cb", name = "m", descriptor = "Lclient!ld;")
 	public static Class4_Sub6_Sub2 aClass4_Sub6_Sub2_2;
 
-	@OriginalMember(owner = "client!cb", name = "o", descriptor = "I")
-	public static int anInt526;
-
 	@OriginalMember(owner = "client!cc", name = "a", descriptor = "Lclient!gl;")
 	public static Class4_Sub3_Sub5 aClass4_Sub3_Sub5_1;
 
@@ -214,9 +211,6 @@ public final class Static1 {
 
 	@OriginalMember(owner = "client!ck", name = "bb", descriptor = "Lclient!fm;")
 	public static Class60 aClass60_2;
-
-	@OriginalMember(owner = "client!ck", name = "db", descriptor = "I")
-	public static int anInt690;
 
 	@OriginalMember(owner = "client!ck", name = "fb", descriptor = "[Lclient!uj;")
 	public static Class4_Sub3_Sub14[] aClass4_Sub3_Sub14Array3;
@@ -407,9 +401,6 @@ public final class Static1 {
 	@OriginalMember(owner = "client!bf", name = "l", descriptor = "[I")
 	public static final int[] anIntArray35 = new int[] { 256, 128, 86, 64 };
 
-	@OriginalMember(owner = "client!bg", name = "r", descriptor = "Z")
-	public static volatile boolean aBoolean18 = false;
-
 	@OriginalMember(owner = "client!bg", name = "u", descriptor = "[Lclient!t;")
 	public static final Class160[] aClass160Array1 = new Class160[6];
 
@@ -539,9 +530,6 @@ public final class Static1 {
 	@OriginalMember(owner = "client!client", name = "W", descriptor = "B")
 	public static byte aByte1 = 0;
 
-	@OriginalMember(owner = "client!client", name = "ab", descriptor = "Z")
-	public static boolean aBoolean45 = false;
-
 	@OriginalMember(owner = "client!client", name = "cb", descriptor = "I")
 	public static int anInt777 = 0;
 
@@ -577,9 +565,6 @@ public final class Static1 {
 
 	@OriginalMember(owner = "client!db", name = "h", descriptor = "I")
 	public static int anInt885 = 0;
-
-	@OriginalMember(owner = "client!db", name = "i", descriptor = "Lclient!ue;")
-	public static Applet_Sub1 anApplet_Sub1_1 = null;
 
 	@OriginalMember(owner = "client!db", name = "l", descriptor = "Lclient!fe;")
 	public static Class56_Sub1 aClass56_Sub1_1 = null;

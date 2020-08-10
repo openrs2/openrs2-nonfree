@@ -17,9 +17,6 @@ public final class Static6 {
 	@OriginalMember(owner = "client!qk", name = "f", descriptor = "I")
 	public static int anInt4375;
 
-	@OriginalMember(owner = "client!qk", name = "l", descriptor = "I")
-	public static int anInt4380;
-
 	@OriginalMember(owner = "client!qk", name = "s", descriptor = "Lclient!kk;")
 	public static Class106 aClass106_7;
 
@@ -419,9 +416,6 @@ public final class Static6 {
 	@OriginalMember(owner = "client!rg", name = "ab", descriptor = "I")
 	public static int anInt4506 = 0;
 
-	@OriginalMember(owner = "client!rg", name = "bb", descriptor = "Z")
-	public static volatile boolean aBoolean314 = true;
-
 	@OriginalMember(owner = "client!rg", name = "kb", descriptor = "[J")
 	public static final long[] aLongArray40 = new long[32];
 
@@ -580,9 +574,6 @@ public final class Static6 {
 
 	@OriginalMember(owner = "client!sj", name = "p", descriptor = "I")
 	public static int anInt4856 = 0;
-
-	@OriginalMember(owner = "client!sj", name = "w", descriptor = "I")
-	public static int anInt4859 = 0;
 
 	@OriginalMember(owner = "client!sj", name = "x", descriptor = "[Ljava/lang/String;")
 	public static final String[] aStringArray28 = new String[] { "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" };

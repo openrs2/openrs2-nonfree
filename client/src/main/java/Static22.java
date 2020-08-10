@@ -1020,7 +1020,7 @@ public final class Static22 {
 				if (MonotonicClock.currentTimeMillis() - 5000L < Static6.aLong169) {
 					return 0;
 				}
-				Static7.aClass197_5 = Static7.aClass196_4.openSocket(Static6.aString291, Static4.anInt3358);
+				Static7.aClass197_5 = GameShell.signLink.openSocket(Static6.aString291, Static4.anInt3358);
 				Static7.aLong35 = MonotonicClock.currentTimeMillis();
 				Static7.anInt5319 = 1;
 			}
@@ -1034,7 +1034,7 @@ public final class Static22 {
 				if (Static7.aClass197_5.status != 1) {
 					return -1;
 				}
-				Static3.aClass52_7 = new Class52((Socket) Static7.aClass197_5.result, Static7.aClass196_4);
+				Static3.aClass52_7 = new Class52((Socket) Static7.aClass197_5.result, GameShell.signLink);
 				Static7.aClass197_5 = null;
 				@Pc(79) int local79 = 0;
 				if (Static6.aBoolean338) {

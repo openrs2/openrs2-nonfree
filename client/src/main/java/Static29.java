@@ -714,42 +714,42 @@ public final class Static29 {
 
 	@OriginalMember(owner = "client!ph", name = "f", descriptor = "(I)V")
 	public static void method3430() {
-		@Pc(7) int local7 = Static6.anInt4859;
-		@Pc(9) int local9 = Static7.anInt5622;
-		@Pc(16) int local16 = Static6.anInt4380 - Static1.anInt690 - local9;
-		@Pc(24) int local24 = Static2.anInt1635 - Static1.anInt526 - local7;
+		@Pc(7) int local7 = GameShell.leftMargin;
+		@Pc(9) int local9 = GameShell.topMargin;
+		@Pc(16) int local16 = GameShell.frameHeight - GameShell.canvasHeight - local9;
+		@Pc(24) int local24 = GameShell.frameWidth - GameShell.canvasWidth - local7;
 		if (local7 <= 0 && local24 <= 0 && local9 <= 0 && local16 <= 0) {
 			return;
 		}
 		try {
 			@Pc(47) Container local47;
-			if (Static3.aFrame1 != null) {
-				local47 = Static3.aFrame1;
-			} else if (Static4.aFrame2 == null) {
-				local47 = Static7.aClass196_4.applet;
+			if (GameShell.fullScreenFrame != null) {
+				local47 = GameShell.fullScreenFrame;
+			} else if (GameShell.frame == null) {
+				local47 = GameShell.signLink.applet;
 			} else {
-				local47 = Static4.aFrame2;
+				local47 = GameShell.frame;
 			}
 			@Pc(58) int local58 = 0;
 			@Pc(60) int local60 = 0;
-			if (local47 == Static4.aFrame2) {
-				@Pc(66) Insets local66 = Static4.aFrame2.getInsets();
+			if (local47 == GameShell.frame) {
+				@Pc(66) Insets local66 = GameShell.frame.getInsets();
 				local58 = local66.left;
 				local60 = local66.top;
 			}
 			@Pc(75) Graphics local75 = local47.getGraphics();
 			local75.setColor(Color.black);
 			if (local7 > 0) {
-				local75.fillRect(local58, local60, local7, Static6.anInt4380);
+				local75.fillRect(local58, local60, local7, GameShell.frameHeight);
 			}
 			if (local9 > 0) {
-				local75.fillRect(local58, local60, Static2.anInt1635, local9);
+				local75.fillRect(local58, local60, GameShell.frameWidth, local9);
 			}
 			if (local24 > 0) {
-				local75.fillRect(local58 + Static2.anInt1635 - local24, local60, local24, Static6.anInt4380);
+				local75.fillRect(local58 + GameShell.frameWidth - local24, local60, local24, GameShell.frameHeight);
 			}
 			if (local16 > 0) {
-				local75.fillRect(local58, local60 + Static6.anInt4380 - local16, Static2.anInt1635, local16);
+				local75.fillRect(local58, local60 + GameShell.frameHeight - local16, GameShell.frameWidth, local16);
 			}
 		} catch (@Pc(127) Exception local127) {
 		}
@@ -1009,12 +1009,12 @@ public final class Static29 {
 			Static3.aClass4_Sub10_Sub1_1.writeShortLE2((int) Static5.aFloat147);
 			Static3.aClass4_Sub10_Sub1_1.writeShortLEA((int) Static5.aFloat97);
 		}
-		if (Static3.aBoolean158 && !Static7.aBoolean367) {
+		if (GameShell.focus && !Static7.aBoolean367) {
 			Static7.aBoolean367 = true;
 			Static3.aClass4_Sub10_Sub1_1.writeOpcode(248);
 			Static3.aClass4_Sub10_Sub1_1.writeByte(1);
 		}
-		if (!Static3.aBoolean158 && Static7.aBoolean367) {
+		if (!GameShell.focus && Static7.aBoolean367) {
 			Static7.aBoolean367 = false;
 			Static3.aClass4_Sub10_Sub1_1.writeOpcode(248);
 			Static3.aClass4_Sub10_Sub1_1.writeByte(0);
@@ -1247,7 +1247,7 @@ public final class Static29 {
 		}
 		Static5.aClass185_12 = null;
 		if (Static3.anInt5398 != -1) {
-			Static14.method1060(Static3.anInt5398, Static1.anInt526, 0, 0, 0, 0, Static1.anInt690);
+			Static14.method1060(Static3.anInt5398, GameShell.canvasWidth, 0, 0, 0, 0, GameShell.canvasHeight);
 		}
 		Static6.anInt4979++;
 		if (Static5.aClass185_12 != null) {

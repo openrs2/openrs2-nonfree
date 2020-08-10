@@ -1221,7 +1221,7 @@ public final class Static12 {
 
 	@OriginalMember(owner = "client!de", name = "a", descriptor = "(BZ)V")
 	public static void method777(@OriginalArg(1) boolean arg0) {
-		Static21.method2050(arg0, Static1.anInt526, Static3.anInt5398, Static1.anInt690);
+		Static21.method2050(arg0, GameShell.canvasWidth, Static3.anInt5398, GameShell.canvasHeight);
 	}
 
 	@OriginalMember(owner = "client!df", name = "a", descriptor = "(B)V")

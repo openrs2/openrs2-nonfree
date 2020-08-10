@@ -602,25 +602,25 @@ public final class Static28 {
 	@OriginalMember(owner = "client!pa", name = "a", descriptor = "(ZLclient!gl;Z)V")
 	public static void method3331(@OriginalArg(0) boolean arg0, @OriginalArg(1) Class4_Sub3_Sub5 arg1) {
 		if (Static3.aBoolean138 || arg0) {
-			@Pc(10) int local10 = Static1.anInt690;
+			@Pc(10) int local10 = GameShell.canvasHeight;
 			@Pc(16) int local16 = local10 * 956 / 503;
-			Static6.aClass4_Sub3_Sub14_7.method4507((Static1.anInt526 - local16) / 2, 0, local16, local10);
-			Static6.aClass56_1.method2815(Static1.anInt526 / 2 - Static6.aClass56_1.anInt3408 / 2, 18);
+			Static6.aClass4_Sub3_Sub14_7.method4507((GameShell.canvasWidth - local16) / 2, 0, local16, local10);
+			Static6.aClass56_1.method2815(GameShell.canvasWidth / 2 - Static6.aClass56_1.anInt3408 / 2, 18);
 		}
-		arg1.method2271(client.game == 1 ? LocalisedText.GAME1_LOADING : LocalisedText.GAME0_LOADING, Static1.anInt526 / 2, Static1.anInt690 / 2 - 26, 16777215, -1);
-		@Pc(70) int local70 = Static1.anInt690 / 2 - 18;
+		arg1.method2271(client.game == 1 ? LocalisedText.GAME1_LOADING : LocalisedText.GAME0_LOADING, GameShell.canvasWidth / 2, GameShell.canvasHeight / 2 - 26, 16777215, -1);
+		@Pc(70) int local70 = GameShell.canvasHeight / 2 - 18;
 		if (Static3.aBoolean138) {
-			Static18.method1690(Static1.anInt526 / 2 - 152, local70, 304, 34, 9179409);
-			Static18.method1690(Static1.anInt526 / 2 - 151, local70 + 1, 302, 32, 0);
-			Static18.method1701(Static1.anInt526 / 2 - 150, local70 + 2, Static6.anInt4621 * 3, 30, 9179409);
-			Static18.method1701(Static1.anInt526 / 2 + Static6.anInt4621 * 3 - 150, local70 + 2, 300 - Static6.anInt4621 * 3, 30, 0);
+			Static18.method1690(GameShell.canvasWidth / 2 - 152, local70, 304, 34, 9179409);
+			Static18.method1690(GameShell.canvasWidth / 2 - 151, local70 + 1, 302, 32, 0);
+			Static18.method1701(GameShell.canvasWidth / 2 - 150, local70 + 2, Static6.anInt4621 * 3, 30, 9179409);
+			Static18.method1701(GameShell.canvasWidth / 2 + Static6.anInt4621 * 3 - 150, local70 + 2, 300 - Static6.anInt4621 * 3, 30, 0);
 		} else {
-			Static34.method4222(Static1.anInt526 / 2 - 152, local70, 304, 34, 9179409);
-			Static34.method4222(Static1.anInt526 / 2 - 151, local70 + 1, 302, 32, 0);
-			Static33.method4205(Static1.anInt526 / 2 - 150, local70 + 2, Static6.anInt4621 * 3, 30, 9179409);
-			Static33.method4205(Static6.anInt4621 * 3 + Static1.anInt526 / 2 - 150, local70 + 2, 300 - Static6.anInt4621 * 3, 30, 0);
+			Static34.method4222(GameShell.canvasWidth / 2 - 152, local70, 304, 34, 9179409);
+			Static34.method4222(GameShell.canvasWidth / 2 - 151, local70 + 1, 302, 32, 0);
+			Static33.method4205(GameShell.canvasWidth / 2 - 150, local70 + 2, Static6.anInt4621 * 3, 30, 9179409);
+			Static33.method4205(Static6.anInt4621 * 3 + GameShell.canvasWidth / 2 - 150, local70 + 2, 300 - Static6.anInt4621 * 3, 30, 0);
 		}
-		arg1.method2271(Static5.aString243, Static1.anInt526 / 2, Static1.anInt690 / 2 + 4, 16777215, -1);
+		arg1.method2271(Static5.aString243, GameShell.canvasWidth / 2, GameShell.canvasHeight / 2 + 4, 16777215, -1);
 	}
 
 	@OriginalMember(owner = "client!pc", name = "a", descriptor = "(II)I")

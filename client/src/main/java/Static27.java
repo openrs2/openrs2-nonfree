@@ -569,12 +569,12 @@ public final class Static27 {
 				Static7.aClass51_2.method1081();
 			}
 			if (arg0.equalsIgnoreCase("::breakcon")) {
-				Static7.aClass196_4.breakConnection();
+				GameShell.signLink.breakConnection();
 				Static3.aClass52_7.method1104();
 				Static7.aClass51_2.method1086();
 			}
 			if (arg0.equalsIgnoreCase("::replacecanvas")) {
-				Static1.aBoolean18 = true;
+				GameShell.replaceCanvas = true;
 			}
 			if (arg0.equalsIgnoreCase("::rebuild")) {
 				Static9.method233(25);
@@ -599,12 +599,12 @@ public final class Static27 {
 			}
 			if (arg0.startsWith("::setba")) {
 				Static5.anInt4291 = Static12.method737(arg0.substring(8));
-				Static14.method1055(Static7.aClass196_4);
+				Static14.method1055(GameShell.signLink);
 				Static2.aBoolean104 = false;
 			}
 			if (arg0.startsWith("::setparticles")) {
 				Static26.method2957(Static12.method737(arg0.substring(15)));
-				Static14.method1055(Static7.aClass196_4);
+				Static14.method1055(GameShell.signLink);
 				Static2.aBoolean104 = false;
 			}
 			if (arg0.startsWith("::fps ") && client.modeWhere != 0) {

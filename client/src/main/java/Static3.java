@@ -242,9 +242,6 @@ public final class Static3 {
 	@OriginalMember(owner = "client!ho", name = "U", descriptor = "I")
 	public static int anInt2296;
 
-	@OriginalMember(owner = "client!ia", name = "b", descriptor = "Z")
-	public static boolean aBoolean158;
-
 	@OriginalMember(owner = "client!ic", name = "q", descriptor = "I")
 	public static int anInt2337;
 
@@ -352,9 +349,6 @@ public final class Static3 {
 
 	@OriginalMember(owner = "client!ii", name = "C", descriptor = "I")
 	public static int anInt2973;
-
-	@OriginalMember(owner = "client!ij", name = "D", descriptor = "Ljava/awt/Frame;")
-	public static Frame aFrame1;
 
 	@OriginalMember(owner = "client!ij", name = "L", descriptor = "Lclient!vn;")
 	public static Class4_Sub3_Sub14_Sub1 aClass4_Sub3_Sub14_Sub1_3;

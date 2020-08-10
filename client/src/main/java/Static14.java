@@ -363,7 +363,7 @@ public final class Static14 {
 	public static boolean method1079() {
 		if (client.javaScript) {
 			try {
-				return !((Boolean) BrowserControl.call(Static7.aClass196_4.applet, "showingVideoAd"));
+				return !((Boolean) BrowserControl.call(GameShell.signLink.applet, "showingVideoAd"));
 			} catch (@Pc(23) Throwable local23) {
 			}
 		}
@@ -775,7 +775,7 @@ public final class Static14 {
 				Static4.anInt2974 = 0;
 			}
 			if (Static6.anInt5117 == 1) {
-				Static7.aClass197_5 = Static7.aClass196_4.openSocket(Static6.aString291, Static4.anInt3358);
+				Static7.aClass197_5 = GameShell.signLink.openSocket(Static6.aString291, Static4.anInt3358);
 				Static6.anInt5117 = 2;
 			}
 			if (Static6.anInt5117 == 2) {
@@ -785,7 +785,7 @@ public final class Static14 {
 				if (Static7.aClass197_5.status != 1) {
 					return;
 				}
-				Static3.aClass52_7 = new Class52((Socket) Static7.aClass197_5.result, Static7.aClass196_4);
+				Static3.aClass52_7 = new Class52((Socket) Static7.aClass197_5.result, GameShell.signLink);
 				Static7.aClass197_5 = null;
 				Static3.aClass52_7.method1107(Static3.aClass4_Sub10_Sub1_1.bytes, Static3.aClass4_Sub10_Sub1_1.position);
 				if (Static1.aClass102_1 != null) {

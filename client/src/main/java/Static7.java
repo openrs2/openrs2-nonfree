@@ -17,9 +17,6 @@ public final class Static7 {
 	@OriginalMember(owner = "client!ua", name = "i", descriptor = "I")
 	public static int anInt5236;
 
-	@OriginalMember(owner = "client!ua", name = "O", descriptor = "Lsignlink!pm;")
-	public static SignLink aClass196_4;
-
 	@OriginalMember(owner = "client!ub", name = "j", descriptor = "I")
 	public static int anInt5281;
 
@@ -160,9 +157,6 @@ public final class Static7 {
 
 	@OriginalMember(owner = "client!wc", name = "a", descriptor = "Lclient!fh;")
 	public static Class58 aClass58_102;
-
-	@OriginalMember(owner = "client!wf", name = "C", descriptor = "Ljava/lang/Thread;")
-	public static Thread aThread2;
 
 	@OriginalMember(owner = "client!wg", name = "J", descriptor = "[S")
 	public static short[] aShortArray124;
@@ -359,9 +353,6 @@ public final class Static7 {
 	@OriginalMember(owner = "client!v", name = "s", descriptor = "[I")
 	public static final int[] anIntArray621 = new int[] { 160, 192, 80, 96, 0, 144, 80, 48, 160 };
 
-	@OriginalMember(owner = "client!v", name = "w", descriptor = "J")
-	public static long aLong186 = 0L;
-
 	@OriginalMember(owner = "client!va", name = "c", descriptor = "[Lclient!ui;")
 	public static final Class174[] aClass174Array1 = new Class174[50];
 
@@ -425,9 +416,6 @@ public final class Static7 {
 	@OriginalMember(owner = "client!vi", name = "cb", descriptor = "[I")
 	public static final int[] anIntArray638 = new int[100];
 
-	@OriginalMember(owner = "client!vl", name = "b", descriptor = "I")
-	public static int anInt5622 = 0;
-
 	@OriginalMember(owner = "client!vl", name = "c", descriptor = "I")
 	public static int anInt5623 = 0;
 
@@ -460,9 +448,6 @@ public final class Static7 {
 
 	@OriginalMember(owner = "client!wd", name = "qb", descriptor = "Z")
 	public static boolean aBoolean399 = false;
-
-	@OriginalMember(owner = "client!wd", name = "tb", descriptor = "Z")
-	public static volatile boolean aBoolean400 = true;
 
 	@OriginalMember(owner = "client!wd", name = "yb", descriptor = "[I")
 	public static final int[] anIntArray656 = new int[32];

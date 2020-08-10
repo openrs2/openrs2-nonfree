@@ -125,9 +125,6 @@ public final class Static2 {
 	@OriginalMember(owner = "client!fa", name = "ab", descriptor = "I")
 	public static int anInt1632;
 
-	@OriginalMember(owner = "client!fa", name = "fb", descriptor = "I")
-	public static int anInt1635;
-
 	@OriginalMember(owner = "client!fb", name = "a", descriptor = "[Lclient!fe;")
 	public static Class56_Sub1[] aClass56_Sub1Array2;
 
@@ -403,9 +400,6 @@ public final class Static2 {
 
 	@OriginalMember(owner = "client!ek", name = "c", descriptor = "Z")
 	public static boolean aBoolean76 = false;
-
-	@OriginalMember(owner = "client!el", name = "a", descriptor = "Z")
-	public static boolean aBoolean77 = false;
 
 	@OriginalMember(owner = "client!el", name = "c", descriptor = "[[B")
 	public static final byte[][] aByteArrayArray11 = new byte[50][];

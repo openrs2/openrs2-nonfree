@@ -291,7 +291,7 @@ public final class Static10 {
 			arg0 = false;
 		}
 		Static7.aBoolean390 = arg0;
-		Static14.method1055(Static7.aClass196_4);
+		Static14.method1055(GameShell.signLink);
 		if (local13 == arg0) {
 			return false;
 		} else {

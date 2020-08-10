@@ -91,9 +91,6 @@ public final class Static4 {
 	@OriginalMember(owner = "client!ko", name = "c", descriptor = "I")
 	public static int anInt2977;
 
-	@OriginalMember(owner = "client!ko", name = "f", descriptor = "Z")
-	public static boolean aBoolean207;
-
 	@OriginalMember(owner = "client!ko", name = "g", descriptor = "I")
 	public static int anInt2979;
 
@@ -234,9 +231,6 @@ public final class Static4 {
 
 	@OriginalMember(owner = "client!mg", name = "p", descriptor = "I")
 	public static int anInt3326;
-
-	@OriginalMember(owner = "client!mg", name = "q", descriptor = "Ljava/awt/Frame;")
-	public static Frame aFrame2;
 
 	@OriginalMember(owner = "client!mg", name = "t", descriptor = "B")
 	public static byte aByte6;

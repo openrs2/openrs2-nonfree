@@ -7,25 +7,25 @@ import dev.openrs2.deob.annotation.OriginalClass;
 import dev.openrs2.deob.annotation.OriginalMember;
 
 @OriginalClass("client!ql")
-public final class Canvas_Sub2 extends Canvas {
+public final class GameCanvas extends Canvas {
 
 	@OriginalMember(owner = "client!ql", name = "h", descriptor = "Ljava/awt/Component;")
-	private final Component aComponent2;
+	private final Component component;
 
 	@OriginalMember(owner = "client!ql", name = "<init>", descriptor = "(Ljava/awt/Component;)V")
-	public Canvas_Sub2(@OriginalArg(0) Component arg0) {
-		this.aComponent2 = arg0;
+	public GameCanvas(@OriginalArg(0) Component component) {
+		this.component = component;
 	}
 
 	@OriginalMember(owner = "client!ql", name = "paint", descriptor = "(Ljava/awt/Graphics;)V")
 	@Override
-	public final void paint(@OriginalArg(0) Graphics arg0) {
-		this.aComponent2.paint(arg0);
+	public final void paint(@OriginalArg(0) Graphics graphics) {
+		this.component.paint(graphics);
 	}
 
 	@OriginalMember(owner = "client!ql", name = "update", descriptor = "(Ljava/awt/Graphics;)V")
 	@Override
-	public final void update(@OriginalArg(0) Graphics arg0) {
-		this.aComponent2.update(arg0);
+	public final void update(@OriginalArg(0) Graphics graphics) {
+		this.component.update(graphics);
 	}
 }

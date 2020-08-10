@@ -309,7 +309,7 @@ public final class Static19 {
 		Static12.method778();
 		Static11.method605(true);
 		try {
-			BrowserControl.call(Static7.aClass196_4.applet, "loggedout");
+			BrowserControl.call(GameShell.signLink.applet, "loggedout");
 		} catch (@Pc(159) Throwable local159) {
 		}
 	}

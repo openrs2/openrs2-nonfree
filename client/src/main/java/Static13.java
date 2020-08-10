@@ -550,12 +550,12 @@ public final class Static13 {
 			if (local27 == null) {
 				arg0 = -1;
 			} else {
-				Static7.aClass196_4.setCursor(Static5.aCanvas115, local27.anInt5602, local27.anInt5612, local27.method2170(), new Point(local23.anInt4119, local23.anInt4111));
+				GameShell.signLink.setCursor(GameShell.canvas, local27.anInt5602, local27.anInt5612, local27.method2170(), new Point(local23.anInt4119, local23.anInt4111));
 				Static7.anInt5345 = arg0;
 			}
 		}
 		if (arg0 == -1 && Static7.anInt5345 != -1) {
-			Static7.aClass196_4.setCursor(Static5.aCanvas115, -1, -1, null, new Point());
+			GameShell.signLink.setCursor(GameShell.canvas, -1, -1, null, new Point());
 			Static7.anInt5345 = -1;
 		}
 	}

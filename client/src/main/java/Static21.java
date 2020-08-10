@@ -271,8 +271,8 @@ public final class Static21 {
 	public static void method2001() {
 		Static3.aClass4_Sub10_Sub1_1.writeOpcode(86);
 		Static3.aClass4_Sub10_Sub1_1.writeByte(Static11.method557());
-		Static3.aClass4_Sub10_Sub1_1.writeShort(Static1.anInt526);
-		Static3.aClass4_Sub10_Sub1_1.writeShort(Static1.anInt690);
+		Static3.aClass4_Sub10_Sub1_1.writeShort(GameShell.canvasWidth);
+		Static3.aClass4_Sub10_Sub1_1.writeShort(GameShell.canvasHeight);
 		Static3.aClass4_Sub10_Sub1_1.writeByte(Static2.anInt1125);
 	}
 
@@ -1035,18 +1035,18 @@ public final class Static21 {
 			Static1.anInt552 = -1;
 			return true;
 		} else if (Static1.anInt552 == 30) {
-			if (Static3.aFrame1 != null) {
+			if (GameShell.fullScreenFrame != null) {
 				Static35.method4512(false, Static5.anInt3637, -1, -1);
 			}
 			@Pc(2051) byte[] local2051 = new byte[Static1.anInt1052];
 			Static5.aClass4_Sub10_Sub1_2.writeEncryptedBytes(local2051, Static1.anInt1052);
 			@Pc(2063) String local2063 = Static34.method4271(0, local2051, Static1.anInt1052);
-			if (Static4.aFrame2 == null && (SignLink.anInt6106 == 3 || !SignLink.osName.startsWith("win") || client.haveIe6)) {
+			if (GameShell.frame == null && (SignLink.anInt6106 == 3 || !SignLink.osName.startsWith("win") || client.haveIe6)) {
 				Static37.method4719(local2063, true);
 			} else {
 				Static6.aString269 = local2063;
 				Static4.aBoolean206 = true;
-				Static1.aClass197_1 = Static7.aClass196_4.openUrl(local2063);
+				Static1.aClass197_1 = GameShell.signLink.openUrl(local2063);
 			}
 			Static1.anInt552 = -1;
 			return true;
@@ -1323,7 +1323,7 @@ public final class Static21 {
 			return true;
 		} else if (Static1.anInt552 == 103) {
 			@Pc(3127) int local3127 = Static5.aClass4_Sub10_Sub1_2.readInt();
-			Static1.aClass197_2 = Static7.aClass196_4.getReverseDns(local3127);
+			Static1.aClass197_2 = GameShell.signLink.getReverseDns(local3127);
 			Static1.anInt552 = -1;
 			return true;
 		} else if (Static1.anInt552 == 242) {
@@ -1387,7 +1387,7 @@ public final class Static21 {
 			Static6.aClass4_Sub15Array1 = local3217;
 			return true;
 		} else if (Static1.anInt552 == 173) {
-			Static22.method4689(Static7.aClass196_4, Static1.anInt1052, Static5.aClass4_Sub10_Sub1_2);
+			Static22.method4689(GameShell.signLink, Static1.anInt1052, Static5.aClass4_Sub10_Sub1_2);
 			Static1.anInt552 = -1;
 			return true;
 		} else if (Static1.anInt552 == 115 || Static1.anInt552 == 111 || Static1.anInt552 == 17 || Static1.anInt552 == 144 || Static1.anInt552 == 114 || Static1.anInt552 == 133 || Static1.anInt552 == 47 || Static1.anInt552 == 158 || Static1.anInt552 == 105 || Static1.anInt552 == 120 || Static1.anInt552 == 60 || Static1.anInt552 == 179 || Static1.anInt552 == 232 || Static1.anInt552 == 131) {
