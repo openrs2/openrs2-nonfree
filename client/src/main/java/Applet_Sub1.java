@@ -134,7 +134,7 @@ public abstract class Applet_Sub1 extends Applet implements Runnable, FocusListe
 		this.aBoolean43 = true;
 		System.out.println("error_game_" + arg0);
 		try {
-			Class86.method1851(Static7.aClass196_4.applet, "loggedout");
+			BrowserControl.call(Static7.aClass196_4.applet, "loggedout");
 		} catch (@Pc(35) Throwable local35) {
 		}
 		try {

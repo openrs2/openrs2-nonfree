@@ -363,7 +363,7 @@ public final class Static14 {
 	public static boolean method1079() {
 		if (client.javaScript) {
 			try {
-				return !((Boolean) Class86.method1851(Static7.aClass196_4.applet, "showingVideoAd"));
+				return !((Boolean) BrowserControl.call(Static7.aClass196_4.applet, "showingVideoAd"));
 			} catch (@Pc(23) Throwable local23) {
 			}
 		}

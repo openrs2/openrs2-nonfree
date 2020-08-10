@@ -1304,7 +1304,7 @@ public final class Static30 {
 			} else {
 				local54 = local39 + "; Expires=" + Static12.method742(MonotonicClock.currentTimeMillis() + 94608000000L) + "; Max-Age=" + 94608000L;
 			}
-			Class86.method1853("document.cookie=\"" + local54 + "\"", Static7.aClass196_4.applet);
+			BrowserControl.eval(Static7.aClass196_4.applet, "document.cookie=\"" + local54 + "\"");
 		} catch (@Pc(92) Throwable local92) {
 		}
 	}
@@ -1649,18 +1649,18 @@ public final class Static30 {
 				if (!client.advertSuppressed) {
 					if (Static1.aBoolean47 && !Static4.aBoolean241 || Static7.aBoolean399) {
 						try {
-							Class86.method1851(Static7.aClass196_4.applet, "zap");
+							BrowserControl.call(Static7.aClass196_4.applet, "zap");
 						} catch (@Pc(906) Throwable local906) {
 						}
 					} else {
 						try {
-							Class86.method1851(Static7.aClass196_4.applet, "unzap");
+							BrowserControl.call(Static7.aClass196_4.applet, "unzap");
 						} catch (@Pc(916) Throwable local916) {
 						}
 					}
 				}
 				try {
-					Class86.method1851(Static7.aClass196_4.applet, "loggedin");
+					BrowserControl.call(Static7.aClass196_4.applet, "loggedin");
 				} catch (@Pc(924) Throwable local924) {
 				}
 				Static1.anInt552 = Static5.aClass4_Sub10_Sub1_2.readOpcode();

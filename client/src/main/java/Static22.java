@@ -1381,7 +1381,7 @@ public final class Static22 {
 	public static void method2387() {
 		if (!client.advertSuppressed && client.modeWhere != 2) {
 			try {
-				Class86.method1851(client.instance, "tbrefresh");
+				BrowserControl.call(client.instance, "tbrefresh");
 			} catch (@Pc(24) Throwable local24) {
 			}
 		}

@@ -531,7 +531,7 @@ public final class Static37 {
 	public static void method4719(@OriginalArg(1) String arg0, @OriginalArg(2) boolean arg1) {
 		if (!arg1) {
 			try {
-				Class86.method1851(Static7.aClass196_4.applet, "loggedout");
+				BrowserControl.call(Static7.aClass196_4.applet, "loggedout");
 			} catch (@Pc(51) Throwable local51) {
 			}
 			try {
@@ -542,7 +542,7 @@ public final class Static37 {
 		}
 		if (Static3.aBoolean138 && Static4.aBoolean207) {
 			try {
-				Class86.method1852(new Object[] { (new URL(Static1.anApplet_Sub1_1.getCodeBase(), arg0)).toString() }, Static7.aClass196_4.applet, "openjs");
+				BrowserControl.call(Static7.aClass196_4.applet, "openjs", new Object[] { (new URL(Static1.anApplet_Sub1_1.getCodeBase(), arg0)).toString() });
 				return;
 			} catch (@Pc(29) Throwable local29) {
 			}
