@@ -236,8 +236,8 @@ public final class Static32 {
 		@Pc(8) byte[] local8 = new byte[24];
 		if (Static1.aClass189_1 != null) {
 			try {
-				Static1.aClass189_1.method4798(0L);
-				Static1.aClass189_1.method4803(local8);
+				Static1.aClass189_1.seek(0L);
+				Static1.aClass189_1.read(local8);
 				@Pc(32) int local32;
 				for (local32 = 0; local32 < 24 && local8[local32] == 0; local32++) {
 				}

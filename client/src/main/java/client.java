@@ -691,13 +691,13 @@ public final class client extends GameShell {
 		Static5.anInt3815 = SignLink.anInt6106;
 		try {
 			if (GameShell.signLink.cacheData != null) {
-				Static3.aClass189_4 = new Class189(GameShell.signLink.cacheData, 5200, 0);
+				Static3.aClass189_4 = new BufferedFile(GameShell.signLink.cacheData, 5200, 0);
 				for (@Pc(174) int local174 = 0; local174 < 29; local174++) {
-					Static4.aClass189Array1[local174] = new Class189(GameShell.signLink.cacheIndexes[local174], 6000, 0);
+					Static4.aClass189Array1[local174] = new BufferedFile(GameShell.signLink.cacheIndexes[local174], 6000, 0);
 				}
-				Static3.aClass189_5 = new Class189(GameShell.signLink.cacheMasterIndex, 6000, 0);
+				Static3.aClass189_5 = new BufferedFile(GameShell.signLink.cacheMasterIndex, 6000, 0);
 				Static1.aClass60_2 = new Class60(255, Static3.aClass189_4, Static3.aClass189_5, 500000);
-				Static1.aClass189_1 = new Class189(GameShell.signLink.uid, 24, 0);
+				Static1.aClass189_1 = new BufferedFile(GameShell.signLink.uid, 24, 0);
 				GameShell.signLink.cacheMasterIndex = null;
 				GameShell.signLink.cacheIndexes = null;
 				GameShell.signLink.cacheData = null;

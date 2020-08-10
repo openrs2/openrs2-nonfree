@@ -75,7 +75,7 @@ public final class FileOnDisk {
 	}
 
 	@OriginalMember(owner = "signlink!kd", name = "a", descriptor = "([BIII)I")
-	public final int read(@OriginalArg(0) byte[] bytes, @OriginalArg(2) int len, @OriginalArg(3) int off) throws IOException {
+	public final int read(@OriginalArg(0) byte[] bytes, @OriginalArg(3) int off, @OriginalArg(2) int len) throws IOException {
 		@Pc(6) int n = this.randomAccessFile.read(bytes, off, len);
 		if (n > 0) {
 			this.position += n;

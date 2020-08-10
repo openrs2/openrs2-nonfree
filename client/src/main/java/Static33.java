@@ -469,7 +469,7 @@ public final class Static33 {
 				@Pc(102) int local102 = 0;
 				@Pc(108) byte[] local108 = new byte[(int) local3.length()];
 				while (local102 < local108.length) {
-					@Pc(126) int local126 = local3.read(local108, local108.length - local102, local102);
+					@Pc(126) int local126 = local3.read(local108, local102, local108.length - local102);
 					if (local126 == -1) {
 						throw new IOException("EOF");
 					}

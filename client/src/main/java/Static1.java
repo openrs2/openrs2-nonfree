@@ -75,7 +75,7 @@ public final class Static1 {
 	public static Class4_Sub3_Sub14[] aClass4_Sub3_Sub14Array2;
 
 	@OriginalMember(owner = "client!an", name = "f", descriptor = "Lclient!wl;")
-	public static Class189 aClass189_1;
+	public static BufferedFile aClass189_1;
 
 	@OriginalMember(owner = "client!an", name = "g", descriptor = "Lclient!fh;")
 	public static Class58 aClass58_7;

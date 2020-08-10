@@ -48,7 +48,7 @@ public final class Class144 {
 	@OriginalMember(owner = "client!qk", name = "c", descriptor = "(I)V")
 	private void method3606() {
 		@Pc(8) long local8 = this.aLong153;
-		@Pc(10) long[] local10 = Class189.aLongArray58;
+		@Pc(10) long[] local10 = BufferedFile.CRC64_TABLE;
 		this.aLong153 = -1L;
 		this.aLong153 = this.aLong153 >>> 8 ^ local10[(int) (((long) (this.anInt4372 >> 8) ^ this.aLong153) & 0xFFL)];
 		this.aLong153 = local10[(int) ((this.aLong153 ^ (long) this.anInt4372) & 0xFFL)] ^ this.aLong153 >>> 8;

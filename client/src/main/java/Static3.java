@@ -233,7 +233,7 @@ public final class Static3 {
 	public static Class112 aClass112_13;
 
 	@OriginalMember(owner = "client!ho", name = "S", descriptor = "Lclient!wl;")
-	public static Class189 aClass189_4;
+	public static BufferedFile aClass189_4;
 
 	@OriginalMember(owner = "client!ho", name = "U", descriptor = "I")
 	public static int anInt2296;
@@ -401,7 +401,7 @@ public final class Static3 {
 	public static Class4_Sub19[][][] aClass4_Sub19ArrayArrayArray2;
 
 	@OriginalMember(owner = "client!je", name = "l", descriptor = "Lclient!wl;")
-	public static Class189 aClass189_5;
+	public static BufferedFile aClass189_5;
 
 	@OriginalMember(owner = "client!je", name = "m", descriptor = "Lclient!ic;")
 	public static Class84 aClass84_10;

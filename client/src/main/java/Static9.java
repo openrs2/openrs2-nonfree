@@ -913,8 +913,8 @@ public final class Static9 {
 			return;
 		}
 		try {
-			Static1.aClass189_1.method4798(0L);
-			Static1.aClass189_1.method4795(arg0, arg1.bytes, 24);
+			Static1.aClass189_1.seek(0L);
+			Static1.aClass189_1.write(arg1.bytes, arg0, 24);
 		} catch (@Pc(14) Exception local14) {
 		}
 	}
