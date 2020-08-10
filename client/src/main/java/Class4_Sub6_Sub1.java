@@ -7,7 +7,7 @@ import dev.openrs2.deob.annotation.Pc;
 public final class Class4_Sub6_Sub1 extends Class4_Sub6 {
 
 	@OriginalMember(owner = "client!bn", name = "y", descriptor = "Lclient!ll;")
-	public final Class112 aClass112_3 = new Class112();
+	public final LinkedList aClass112_3 = new LinkedList();
 
 	@OriginalMember(owner = "client!bn", name = "K", descriptor = "Lclient!lo;")
 	public final Class4_Sub6_Sub3 aClass4_Sub6_Sub3_1 = new Class4_Sub6_Sub3();
@@ -24,7 +24,7 @@ public final class Class4_Sub6_Sub1 extends Class4_Sub6 {
 	@Override
 	public final void method3345(@OriginalArg(0) int arg0) {
 		this.aClass4_Sub6_Sub3_1.method3345(arg0);
-		for (@Pc(15) Class4_Sub9 local15 = (Class4_Sub9) this.aClass112_3.method2610(); local15 != null; local15 = (Class4_Sub9) this.aClass112_3.method2616()) {
+		for (@Pc(15) Class4_Sub9 local15 = (Class4_Sub9) this.aClass112_3.head(); local15 != null; local15 = (Class4_Sub9) this.aClass112_3.next()) {
 			if (!this.aClass4_Sub6_Sub2_1.method2491(local15)) {
 				@Pc(28) int local28 = arg0;
 				do {
@@ -83,7 +83,7 @@ public final class Class4_Sub6_Sub1 extends Class4_Sub6 {
 	@OriginalMember(owner = "client!bn", name = "d", descriptor = "()Lclient!tf;")
 	@Override
 	public final Class4_Sub6 method3350() {
-		@Pc(9) Class4_Sub9 local9 = (Class4_Sub9) this.aClass112_3.method2610();
+		@Pc(9) Class4_Sub9 local9 = (Class4_Sub9) this.aClass112_3.head();
 		if (local9 == null) {
 			return null;
 		} else if (local9.aClass4_Sub6_Sub4_1 == null) {
@@ -98,7 +98,7 @@ public final class Class4_Sub6_Sub1 extends Class4_Sub6 {
 	public final Class4_Sub6 method3349() {
 		@Pc(9) Class4_Sub9 local9;
 		do {
-			local9 = (Class4_Sub9) this.aClass112_3.method2616();
+			local9 = (Class4_Sub9) this.aClass112_3.next();
 			if (local9 == null) {
 				return null;
 			}
@@ -110,7 +110,7 @@ public final class Class4_Sub6_Sub1 extends Class4_Sub6 {
 	@Override
 	public final void method3348(@OriginalArg(0) int[] arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
 		this.aClass4_Sub6_Sub3_1.method3348(arg0, arg1, arg2);
-		for (@Pc(17) Class4_Sub9 local17 = (Class4_Sub9) this.aClass112_3.method2610(); local17 != null; local17 = (Class4_Sub9) this.aClass112_3.method2616()) {
+		for (@Pc(17) Class4_Sub9 local17 = (Class4_Sub9) this.aClass112_3.head(); local17 != null; local17 = (Class4_Sub9) this.aClass112_3.next()) {
 			if (!this.aClass4_Sub6_Sub2_1.method2491(local17)) {
 				@Pc(28) int local28 = arg1;
 				@Pc(30) int local30 = arg2;

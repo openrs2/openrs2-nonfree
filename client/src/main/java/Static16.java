@@ -271,9 +271,9 @@ public final class Static16 {
 					local682.aBoolean281 = true;
 				}
 				if (local138 == 3) {
-					@Pc(952) Class112 local952 = Static4.aClass112ArrayArrayArray1[Static7.anInt5334][local117][local124];
+					@Pc(952) LinkedList local952 = Static4.aClass112ArrayArrayArray1[Static7.anInt5334][local117][local124];
 					if (local952 != null) {
-						for (@Pc(960) Class4_Sub3_Sub21 local960 = (Class4_Sub3_Sub21) local952.method2613(); local960 != null; local960 = (Class4_Sub3_Sub21) local952.method2615()) {
+						for (@Pc(960) Class4_Sub3_Sub21 local960 = (Class4_Sub3_Sub21) local952.tail(); local960 != null; local960 = (Class4_Sub3_Sub21) local952.prev()) {
 							@Pc(967) int local967 = local960.aClass53_Sub2_1.anInt2168;
 							@Pc(971) Class162 local971 = Static35.method4361(local967);
 							if (Static2.anInt1334 == 1) {
@@ -5015,7 +5015,7 @@ public final class Static16 {
 		@Pc(41) Class4_Sub3_Sub22 local41 = new Class4_Sub3_Sub22(arg0, arg1.readString(), arg1.readString(), arg1.readInt(), arg1.readInt(), arg1.readUnsignedByte() == 1, arg1.readUnsignedByte());
 		@Pc(49) int local49 = arg1.readUnsignedByte();
 		for (@Pc(51) int local51 = 0; local51 < local49; local51++) {
-			local41.aClass112_31.method2612(new Class4_Sub7(arg1.readUnsignedByte(), arg1.readUnsignedByte(), arg1.readUnsignedShort(), arg1.readUnsignedShort(), arg1.readUnsignedShort(), arg1.readUnsignedShort(), arg1.readUnsignedShort(), arg1.readUnsignedShort(), arg1.readUnsignedShort(), arg1.readUnsignedShort()));
+			local41.aClass112_31.addTail(new Class4_Sub7(arg1.readUnsignedByte(), arg1.readUnsignedByte(), arg1.readUnsignedShort(), arg1.readUnsignedShort(), arg1.readUnsignedShort(), arg1.readUnsignedShort(), arg1.readUnsignedShort(), arg1.readUnsignedShort(), arg1.readUnsignedShort(), arg1.readUnsignedShort()));
 		}
 		local41.method4759();
 		return local41;

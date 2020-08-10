@@ -1170,7 +1170,7 @@ public final class Static33 {
 			}
 			for (@Pc(329) int local329 = 0; local329 < 104; local329++) {
 				for (@Pc(334) int local334 = 0; local334 < 104; local334++) {
-					@Pc(347) Class112 local347 = Static4.aClass112ArrayArrayArray1[Static7.anInt5334][local329][local334];
+					@Pc(347) LinkedList local347 = Static4.aClass112ArrayArrayArray1[Static7.anInt5334][local329][local334];
 					if (local347 != null) {
 						@Pc(362) int local362 = local329 * 4 + 2 - Static4.aClass53_Sub1_Sub1_2.anInt3974 / 32;
 						@Pc(374) int local374 = local334 * 4 + 2 - Static4.aClass53_Sub1_Sub1_2.anInt4002 / 32;

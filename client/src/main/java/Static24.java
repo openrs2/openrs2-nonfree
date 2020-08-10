@@ -824,19 +824,19 @@ public final class Static24 {
 	@OriginalMember(owner = "client!mh", name = "a", descriptor = "(I[Lclient!ec;I)V")
 	public static synchronized void method2715(@OriginalArg(0) int arg0, @OriginalArg(1) Class43[] arg1, @OriginalArg(2) int arg2) {
 		if (arg2 == Static4.anInt3332) {
-			Static4.aClass112_22.method2612(new Class4_Sub28(arg0, arg1));
+			Static4.aClass112_22.addTail(new Class4_Sub28(arg0, arg1));
 		}
 	}
 
 	@OriginalMember(owner = "client!mh", name = "a", descriptor = "()V")
 	public static synchronized void method2716() {
 		Static4.anInt3332++;
-		Static4.aClass112_18.method2606();
-		Static4.aClass112_19.method2606();
-		Static4.aClass112_20.method2606();
-		Static4.aClass112_21.method2606();
-		Static4.aClass112_22.method2606();
-		Static4.aClass112_23.method2606();
+		Static4.aClass112_18.clear();
+		Static4.aClass112_19.clear();
+		Static4.aClass112_20.clear();
+		Static4.aClass112_21.clear();
+		Static4.aClass112_22.clear();
+		Static4.aClass112_23.clear();
 		Static4.anInt3331 = 0;
 		Static4.anInt3333 = 0;
 		Static4.anInt3330 = 0;
@@ -847,7 +847,7 @@ public final class Static24 {
 		if (arg1 == Static4.anInt3332) {
 			@Pc(7) IntNode local7 = new IntNode();
 			local7.key = arg0;
-			Static4.aClass112_21.method2612(local7);
+			Static4.aClass112_21.addTail(local7);
 		}
 	}
 }

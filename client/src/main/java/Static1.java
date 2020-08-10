@@ -333,7 +333,7 @@ public final class Static1 {
 	public static final int[] anIntArray21 = new int[50];
 
 	@OriginalMember(owner = "client!al", name = "P", descriptor = "Lclient!ll;")
-	public static final Class112 aClass112_1 = new Class112();
+	public static final LinkedList aClass112_1 = new LinkedList();
 
 	@OriginalMember(owner = "client!al", name = "U", descriptor = "S")
 	public static short aShort1 = 32767;
@@ -342,7 +342,7 @@ public final class Static1 {
 	public static int anInt185 = 3;
 
 	@OriginalMember(owner = "client!am", name = "o", descriptor = "Lclient!ll;")
-	public static final Class112 aClass112_2 = new Class112();
+	public static final LinkedList aClass112_2 = new LinkedList();
 
 	@OriginalMember(owner = "client!am", name = "B", descriptor = "I")
 	public static int anInt214 = 0;

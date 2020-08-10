@@ -25,7 +25,7 @@ public final class Class62_Sub1 extends Class62 {
 	private int anInt5802 = 0;
 
 	@OriginalMember(owner = "client!wb", name = "R", descriptor = "Lclient!ll;")
-	private final Class112 aClass112_29 = new Class112();
+	private final LinkedList aClass112_29 = new LinkedList();
 
 	@OriginalMember(owner = "client!wb", name = "T", descriptor = "J")
 	private long aLong199 = 0L;
@@ -40,7 +40,7 @@ public final class Class62_Sub1 extends Class62 {
 	private boolean aBoolean394;
 
 	@OriginalMember(owner = "client!wb", name = "S", descriptor = "Lclient!ll;")
-	private Class112 aClass112_30;
+	private LinkedList aClass112_30;
 
 	@OriginalMember(owner = "client!wb", name = "L", descriptor = "I")
 	private final int anInt5800;
@@ -71,7 +71,7 @@ public final class Class62_Sub1 extends Class62 {
 			this.aBoolean394 = false;
 		} else {
 			this.aBoolean394 = true;
-			this.aClass112_30 = new Class112();
+			this.aClass112_30 = new LinkedList();
 		}
 		this.anInt5800 = arg6;
 		this.aBoolean396 = arg7;
@@ -89,7 +89,7 @@ public final class Class62_Sub1 extends Class62 {
 		if (this.aClass61_2 == null) {
 			return 0;
 		} else if (this.aBoolean394) {
-			@Pc(27) Node local27 = this.aClass112_30.method2610();
+			@Pc(27) Node local27 = this.aClass112_30.head();
 			return local27 == null ? 0 : (int) local27.key;
 		} else {
 			return this.aClass61_2.size;
@@ -173,14 +173,14 @@ public final class Class62_Sub1 extends Class62 {
 		if (this.aClass60_4 == null) {
 			return;
 		}
-		for (@Pc(22) Node local22 = this.aClass112_29.method2610(); local22 != null; local22 = this.aClass112_29.method2616()) {
+		for (@Pc(22) Node local22 = this.aClass112_29.head(); local22 != null; local22 = this.aClass112_29.next()) {
 			if ((long) arg0 == local22.key) {
 				return;
 			}
 		}
 		@Pc(48) Node local48 = new Node();
 		local48.key = arg0;
-		this.aClass112_29.method2612(local48);
+		this.aClass112_29.addTail(local48);
 	}
 
 	@OriginalMember(owner = "client!wb", name = "a", descriptor = "(Z)V")
@@ -188,7 +188,7 @@ public final class Class62_Sub1 extends Class62 {
 		if (this.aClass112_30 == null || this.method4659() == null) {
 			return;
 		}
-		for (@Pc(22) Node local22 = this.aClass112_29.method2610(); local22 != null; local22 = this.aClass112_29.method2616()) {
+		for (@Pc(22) Node local22 = this.aClass112_29.head(); local22 != null; local22 = this.aClass112_29.next()) {
 			@Pc(32) int local32 = (int) local22.key;
 			if (local32 < 0 || this.aClass61_2.capacity <= local32 || this.aClass61_2.groupSizes[local32] == 0) {
 				local22.unlink();
@@ -216,7 +216,7 @@ public final class Class62_Sub1 extends Class62 {
 		if (this.aClass60_4 != null) {
 			this.aBoolean395 = true;
 			if (this.aClass112_30 == null) {
-				this.aClass112_30 = new Class112();
+				this.aClass112_30 = new LinkedList();
 			}
 		}
 	}
@@ -367,7 +367,7 @@ public final class Class62_Sub1 extends Class62 {
 			}
 			if (this.aBoolean394) {
 				@Pc(175) boolean local175 = true;
-				for (@Pc(182) Node local182 = this.aClass112_30.method2610(); local182 != null; local182 = this.aClass112_30.method2616()) {
+				for (@Pc(182) Node local182 = this.aClass112_30.head(); local182 != null; local182 = this.aClass112_30.next()) {
 					@Pc(188) int local188 = (int) local182.key;
 					if (this.aByteArray72[local188] == 0) {
 						this.method4672(local188, 1);
@@ -393,7 +393,7 @@ public final class Class62_Sub1 extends Class62 {
 							local175 = false;
 							@Pc(290) Node local290 = new Node();
 							local290.key = this.anInt5802;
-							this.aClass112_30.method2612(local290);
+							this.aClass112_30.addTail(local290);
 						}
 						this.anInt5802++;
 					}
@@ -404,7 +404,7 @@ public final class Class62_Sub1 extends Class62 {
 				}
 			} else if (this.aBoolean395) {
 				@Pc(31) boolean local31 = true;
-				for (@Pc(36) Node local36 = this.aClass112_30.method2610(); local36 != null; local36 = this.aClass112_30.method2616()) {
+				for (@Pc(36) Node local36 = this.aClass112_30.head(); local36 != null; local36 = this.aClass112_30.next()) {
 					@Pc(42) int local42 = (int) local36.key;
 					if (this.aByteArray72[local42] != 1) {
 						this.method4672(local42, 2);
@@ -430,7 +430,7 @@ public final class Class62_Sub1 extends Class62 {
 							local31 = false;
 							@Pc(145) Node local145 = new Node();
 							local145.key = this.anInt5802;
-							this.aClass112_30.method2612(local145);
+							this.aClass112_30.addTail(local145);
 						}
 						this.anInt5802++;
 					}

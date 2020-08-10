@@ -421,12 +421,12 @@ public final class Static32 {
 
 	@OriginalMember(owner = "client!sj", name = "a", descriptor = "(Z)V")
 	public static void method3996() {
-		for (@Pc(6) Class4_Sub11 local6 = (Class4_Sub11) Static1.aClass112_2.method2610(); local6 != null; local6 = (Class4_Sub11) Static1.aClass112_2.method2616()) {
+		for (@Pc(6) Class4_Sub11 local6 = (Class4_Sub11) Static1.aClass112_2.head(); local6 != null; local6 = (Class4_Sub11) Static1.aClass112_2.next()) {
 			if (local6.aBoolean146) {
 				local6.method1652();
 			}
 		}
-		for (@Pc(36) Class4_Sub11 local36 = (Class4_Sub11) Static2.aClass112_9.method2610(); local36 != null; local36 = (Class4_Sub11) Static2.aClass112_9.method2616()) {
+		for (@Pc(36) Class4_Sub11 local36 = (Class4_Sub11) Static2.aClass112_9.head(); local36 != null; local36 = (Class4_Sub11) Static2.aClass112_9.next()) {
 			if (local36.aBoolean146) {
 				local36.method1652();
 			}

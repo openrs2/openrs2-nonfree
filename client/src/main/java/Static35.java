@@ -1184,7 +1184,7 @@ public final class Static35 {
 
 	@OriginalMember(owner = "client!ug", name = "d", descriptor = "(I)V")
 	public static void method4321() {
-		for (@Pc(14) Class4_Sub3_Sub6 local14 = (Class4_Sub3_Sub6) Static2.aClass112_8.method2610(); local14 != null; local14 = (Class4_Sub3_Sub6) Static2.aClass112_8.method2616()) {
+		for (@Pc(14) Class4_Sub3_Sub6 local14 = (Class4_Sub3_Sub6) Static2.aClass112_8.head(); local14 != null; local14 = (Class4_Sub3_Sub6) Static2.aClass112_8.next()) {
 			@Pc(20) Class53_Sub5 local20 = local14.aClass53_Sub5_1;
 			if (local20.anInt3655 != Static7.anInt5334 || local20.aBoolean265) {
 				local14.unlink();

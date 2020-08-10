@@ -12,29 +12,29 @@ public final class Static25 {
 		@Pc(1) GL local1 = Static3.aGL1;
 		@Pc(3) int local3 = 0;
 		while (true) {
-			@Pc(8) IntNode local8 = (IntNode) Static4.aClass112_18.method2608();
+			@Pc(8) IntNode local8 = (IntNode) Static4.aClass112_18.removeHead();
 			if (local8 == null) {
 				if (local3 > 0) {
 					local1.glDeleteBuffersARB(local3, Static4.anIntArray319, 0);
 					local3 = 0;
 				}
 				while (true) {
-					@Pc(48) IntNode local48 = (IntNode) Static4.aClass112_19.method2608();
+					@Pc(48) IntNode local48 = (IntNode) Static4.aClass112_19.removeHead();
 					if (local48 == null) {
 						while (true) {
-							@Pc(79) IntNode local79 = (IntNode) Static4.aClass112_20.method2608();
+							@Pc(79) IntNode local79 = (IntNode) Static4.aClass112_20.removeHead();
 							if (local79 == null) {
 								if (local3 > 0) {
 									local1.glDeleteTextures(local3, Static4.anIntArray319, 0);
 								}
 								while (true) {
-									@Pc(119) IntNode local119 = (IntNode) Static4.aClass112_21.method2608();
+									@Pc(119) IntNode local119 = (IntNode) Static4.aClass112_21.removeHead();
 									if (local119 == null) {
 										while (true) {
-											@Pc(136) Class4_Sub28 local136 = (Class4_Sub28) Static4.aClass112_22.method2608();
+											@Pc(136) Class4_Sub28 local136 = (Class4_Sub28) Static4.aClass112_22.removeHead();
 											if (local136 == null) {
 												while (true) {
-													@Pc(167) IntNode local167 = (IntNode) Static4.aClass112_23.method2608();
+													@Pc(167) IntNode local167 = (IntNode) Static4.aClass112_23.removeHead();
 													if (local167 == null) {
 														if (Static4.anInt3331 + Static4.anInt3333 + Static4.anInt3330 > 100663296 && MonotonicClock.currentTimeMillis() > Static4.aLong118 + 60000L) {
 															System.gc();
@@ -86,7 +86,7 @@ public final class Static25 {
 		if (arg2 == Static4.anInt3332) {
 			@Pc(8) IntNode local8 = new IntNode(arg1);
 			local8.key = arg0;
-			Static4.aClass112_20.method2612(local8);
+			Static4.aClass112_20.addTail(local8);
 		}
 	}
 
@@ -95,7 +95,7 @@ public final class Static25 {
 		if (arg2 == Static4.anInt3332) {
 			@Pc(8) IntNode local8 = new IntNode(arg1);
 			local8.key = arg0;
-			Static4.aClass112_18.method2612(local8);
+			Static4.aClass112_18.addTail(local8);
 		}
 	}
 
@@ -104,7 +104,7 @@ public final class Static25 {
 		if (arg2 == Static4.anInt3332) {
 			@Pc(8) IntNode local8 = new IntNode(arg1);
 			local8.key = arg0;
-			Static4.aClass112_19.method2612(local8);
+			Static4.aClass112_19.addTail(local8);
 		}
 	}
 
@@ -113,7 +113,7 @@ public final class Static25 {
 		if (arg1 == Static4.anInt3332) {
 			@Pc(7) IntNode local7 = new IntNode();
 			local7.key = arg0;
-			Static4.aClass112_23.method2612(local7);
+			Static4.aClass112_23.addTail(local7);
 		}
 	}
 
@@ -330,7 +330,7 @@ public final class Static25 {
 		if (!Static3.aBoolean166 || Static3.aClass112_13 == null) {
 			return;
 		}
-		for (@Pc(153) Class4_Sub17 local153 = (Class4_Sub17) Static3.aClass112_13.method2610(); local153 != null; local153 = (Class4_Sub17) Static3.aClass112_13.method2616()) {
+		for (@Pc(153) Class4_Sub17 local153 = (Class4_Sub17) Static3.aClass112_13.head(); local153 != null; local153 = (Class4_Sub17) Static3.aClass112_13.next()) {
 			@Pc(161) Class82 local161 = Static22.method2191(local153.aClass4_Sub3_Sub7_1.anInt1760);
 			if (Static1.anInt640 == 0 && local153.method2923(Static7.anInt5357, Static7.anInt6038)) {
 				if (!local153.aClass4_Sub3_Sub7_1.aBoolean105) {
@@ -811,7 +811,7 @@ public final class Static25 {
 
 	@OriginalMember(owner = "client!nb", name = "a", descriptor = "(BLclient!p;)V")
 	public static void method2931(@OriginalArg(1) Class53_Sub1_Sub2 arg0) {
-		for (@Pc(14) Class4_Sub11 local14 = (Class4_Sub11) Static2.aClass112_9.method2610(); local14 != null; local14 = (Class4_Sub11) Static2.aClass112_9.method2616()) {
+		for (@Pc(14) Class4_Sub11 local14 = (Class4_Sub11) Static2.aClass112_9.head(); local14 != null; local14 = (Class4_Sub11) Static2.aClass112_9.next()) {
 			if (arg0 == local14.aClass53_Sub1_Sub2_1) {
 				if (local14.aClass4_Sub6_Sub4_3 != null) {
 					Static5.aClass4_Sub6_Sub3_2.method2670(local14.aClass4_Sub6_Sub4_3);

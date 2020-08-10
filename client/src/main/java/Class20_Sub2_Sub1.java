@@ -138,7 +138,7 @@ public final class Class20_Sub2_Sub1 extends Class20_Sub2 {
 			@Pc(388) long local388 = (long) (local39.anInt2419 * local380 * arg1);
 			this.anInt3233 = (int) ((long) this.anInt3233 - ((long) this.anInt3233 * local388 >> 28));
 		}
-		@Pc(406) Node local406 = local35.aClass112_24.aClass4_117;
+		@Pc(406) Node local406 = local35.aClass112_24.sentinel;
 		for (@Pc(409) Node local409 = local406.next; local409 != local406; local409 = local409.next) {
 			@Pc(415) Class4_Sub3_Sub24 local415 = (Class4_Sub3_Sub24) local409;
 			@Pc(419) Class37 local419 = local415.aClass167_1.aClass37_1;

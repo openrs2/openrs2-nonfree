@@ -275,7 +275,7 @@ public final class unpackclass extends unpack {
 		if (entry.isLinked()) {
 			return;
 		}
-		this.constantPool.add(entry);
+		this.constantPool.addTail(entry);
 		entry.index = this.constantPoolSize++;
 		if (entry.tag == 5 || entry.tag == 6) {
 			this.constantPoolSize++;

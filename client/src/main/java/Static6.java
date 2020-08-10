@@ -459,7 +459,7 @@ public final class Static6 {
 	public static final int[] anIntArray494 = new int[] { 2047, 16383, 65535 };
 
 	@OriginalMember(owner = "client!rl", name = "x", descriptor = "Lclient!ll;")
-	public static Class112 aClass112_28 = new Class112();
+	public static LinkedList aClass112_28 = new LinkedList();
 
 	@OriginalMember(owner = "client!rl", name = "y", descriptor = "I")
 	public static int anInt4621 = 10;

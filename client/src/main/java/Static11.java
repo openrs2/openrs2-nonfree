@@ -483,7 +483,7 @@ public final class Static11 {
 			@Pc(298) Class4_Sub13 local298 = new Class4_Sub13();
 			local298.anObjectArray2 = arg2.anObjectArray32;
 			local298.aClass185_7 = arg2;
-			Static3.aClass112_14.method2612(local298);
+			Static3.aClass112_14.addTail(local298);
 		}
 	}
 
@@ -695,8 +695,8 @@ public final class Static11 {
 			Static3.aClass53_Sub1_Sub2Array1[local3756] = null;
 		}
 		Static4.aClass53_Sub1_Sub1_2 = Static5.aClass53_Sub1_Sub1Array1[2047] = new Class53_Sub1_Sub1();
-		Static1.aClass112_1.method2606();
-		Static2.aClass112_8.method2606();
+		Static1.aClass112_1.clear();
+		Static2.aClass112_8.clear();
 		if (Static4.aClass112ArrayArrayArray1 != null) {
 			for (@Pc(3787) int local3787 = 0; local3787 < 4; local3787++) {
 				for (@Pc(3794) int local3794 = 0; local3794 < 104; local3794++) {
@@ -706,7 +706,7 @@ public final class Static11 {
 				}
 			}
 		}
-		Static2.aClass112_7 = new Class112();
+		Static2.aClass112_7 = new LinkedList();
 		Static7.anInt5497 = 0;
 		Static6.anInt5214 = 0;
 		Static12.method778();

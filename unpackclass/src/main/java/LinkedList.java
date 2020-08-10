@@ -19,7 +19,7 @@ public final class LinkedList {
 	}
 
 	@OriginalMember(owner = "unpackclass!f", name = "a", descriptor = "(Lunpackclass!w;)V")
-	public final void add(@OriginalArg(0) Node node) {
+	public final void addTail(@OriginalArg(0) Node node) {
 		if (node.prev != null) {
 			node.unlink();
 		}

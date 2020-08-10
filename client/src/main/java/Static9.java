@@ -149,12 +149,12 @@ public final class Static9 {
 	}
 
 	@OriginalMember(owner = "client!am", name = "a", descriptor = "(Lclient!ll;III)V")
-	public static void method193(@OriginalArg(0) Class112 arg0, @OriginalArg(1) int arg1, @OriginalArg(3) int arg2) {
-		Static3.aClass112_13.method2606();
+	public static void method193(@OriginalArg(0) LinkedList arg0, @OriginalArg(1) int arg1, @OriginalArg(3) int arg2) {
+		Static3.aClass112_13.clear();
 		if (Static6.aBoolean317) {
 			return;
 		}
-		for (@Pc(23) Class4_Sub3_Sub7 local23 = (Class4_Sub3_Sub7) arg0.method2610(); local23 != null; local23 = (Class4_Sub3_Sub7) arg0.method2616()) {
+		for (@Pc(23) Class4_Sub3_Sub7 local23 = (Class4_Sub3_Sub7) arg0.head(); local23 != null; local23 = (Class4_Sub3_Sub7) arg0.next()) {
 			@Pc(30) Class82 local30 = Static22.method2191(local23.anInt1760);
 			if (Static8.method120(local30)) {
 				Static36.method3811(arg1, local23, arg2, local30);

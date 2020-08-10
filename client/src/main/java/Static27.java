@@ -103,7 +103,7 @@ public final class Static27 {
 		}
 		Static4.aByteArrayArrayArray17 = new byte[4][104][104];
 		Static1.aByteArrayArrayArray2 = new byte[4][104][104];
-		Static4.aClass112ArrayArrayArray1 = new Class112[4][104][104];
+		Static4.aClass112ArrayArrayArray1 = new LinkedList[4][104][104];
 		if (Static3.aBoolean138) {
 			method3109();
 			Static14.method1205();

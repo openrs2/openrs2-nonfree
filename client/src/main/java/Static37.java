@@ -342,7 +342,7 @@ public final class Static37 {
 	@OriginalMember(owner = "client!wd", name = "i", descriptor = "(I)V")
 	public static void method4713() {
 		while (true) {
-			@Pc(16) Class4_Sub30 local16 = (Class4_Sub30) Static5.aClass112_27.method2608();
+			@Pc(16) Class4_Sub30 local16 = (Class4_Sub30) Static5.aClass112_27.removeHead();
 			if (local16 == null) {
 				return;
 			}
@@ -433,7 +433,7 @@ public final class Static37 {
 
 	@OriginalMember(owner = "client!wd", name = "j", descriptor = "(I)V")
 	public static void method4714() {
-		for (@Pc(6) Class4_Sub25 local6 = (Class4_Sub25) Static2.aClass112_7.method2610(); local6 != null; local6 = (Class4_Sub25) Static2.aClass112_7.method2616()) {
+		for (@Pc(6) Class4_Sub25 local6 = (Class4_Sub25) Static2.aClass112_7.head(); local6 != null; local6 = (Class4_Sub25) Static2.aClass112_7.next()) {
 			if (local6.anInt4436 == -1) {
 				local6.anInt4446 = 0;
 				Static16.method4654(local6);

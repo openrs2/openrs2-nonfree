@@ -176,7 +176,7 @@ public final class Class4_Sub6_Sub2 extends Class4_Sub6 {
 		if ((this.anIntArray285[arg0] & 0x4) == 0) {
 			return;
 		}
-		for (@Pc(19) Class4_Sub9 local19 = (Class4_Sub9) this.aClass4_Sub6_Sub1_1.aClass112_3.method2610(); local19 != null; local19 = (Class4_Sub9) this.aClass4_Sub6_Sub1_1.aClass112_3.method2616()) {
+		for (@Pc(19) Class4_Sub9 local19 = (Class4_Sub9) this.aClass4_Sub6_Sub1_1.aClass112_3.head(); local19 != null; local19 = (Class4_Sub9) this.aClass4_Sub6_Sub1_1.aClass112_3.next()) {
 			if (local19.anInt1301 == arg0) {
 				local19.anInt1294 = 0;
 			}
@@ -188,7 +188,7 @@ public final class Class4_Sub6_Sub2 extends Class4_Sub6 {
 		if ((this.anIntArray285[arg0] & 0x2) == 0) {
 			return;
 		}
-		for (@Pc(26) Class4_Sub9 local26 = (Class4_Sub9) this.aClass4_Sub6_Sub1_1.aClass112_3.method2610(); local26 != null; local26 = (Class4_Sub9) this.aClass4_Sub6_Sub1_1.aClass112_3.method2616()) {
+		for (@Pc(26) Class4_Sub9 local26 = (Class4_Sub9) this.aClass4_Sub6_Sub1_1.aClass112_3.head(); local26 != null; local26 = (Class4_Sub9) this.aClass4_Sub6_Sub1_1.aClass112_3.next()) {
 			if (arg0 == local26.anInt1301 && this.aClass4_Sub9ArrayArray2[arg0][local26.anInt1296] == null && local26.anInt1288 < 0) {
 				local26.anInt1288 = 0;
 			}
@@ -244,7 +244,7 @@ public final class Class4_Sub6_Sub2 extends Class4_Sub6 {
 	private void method2485(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2) {
 		this.method2486(64, arg2, arg1);
 		if ((this.anIntArray285[arg1] & 0x2) != 0) {
-			for (@Pc(26) Class4_Sub9 local26 = (Class4_Sub9) this.aClass4_Sub6_Sub1_1.aClass112_3.method2613(); local26 != null; local26 = (Class4_Sub9) this.aClass4_Sub6_Sub1_1.aClass112_3.method2615()) {
+			for (@Pc(26) Class4_Sub9 local26 = (Class4_Sub9) this.aClass4_Sub6_Sub1_1.aClass112_3.tail(); local26 != null; local26 = (Class4_Sub9) this.aClass4_Sub6_Sub1_1.aClass112_3.prev()) {
 				if (local26.anInt1301 == arg1 && local26.anInt1288 < 0) {
 					this.aClass4_Sub9ArrayArray2[arg1][local26.anInt1296] = null;
 					this.aClass4_Sub9ArrayArray2[arg1][arg2] = local26;
@@ -297,7 +297,7 @@ public final class Class4_Sub6_Sub2 extends Class4_Sub6 {
 			}
 			this.aClass4_Sub9ArrayArray1[arg1][local130.anInt1283] = local130;
 		}
-		this.aClass4_Sub6_Sub1_1.aClass112_3.method2612(local130);
+		this.aClass4_Sub6_Sub1_1.aClass112_3.addTail(local130);
 		this.aClass4_Sub9ArrayArray2[arg1][arg2] = local130;
 	}
 
@@ -312,7 +312,7 @@ public final class Class4_Sub6_Sub2 extends Class4_Sub6 {
 			local12.anInt1288 = 0;
 			return;
 		}
-		for (@Pc(47) Class4_Sub9 local47 = (Class4_Sub9) this.aClass4_Sub6_Sub1_1.aClass112_3.method2610(); local47 != null; local47 = (Class4_Sub9) this.aClass4_Sub6_Sub1_1.aClass112_3.method2616()) {
+		for (@Pc(47) Class4_Sub9 local47 = (Class4_Sub9) this.aClass4_Sub6_Sub1_1.aClass112_3.head(); local47 != null; local47 = (Class4_Sub9) this.aClass4_Sub6_Sub1_1.aClass112_3.next()) {
 			if (local47.anInt1301 == local12.anInt1301 && local47.anInt1288 < 0 && local12 != local47) {
 				local12.anInt1288 = 0;
 				break;
@@ -333,7 +333,7 @@ public final class Class4_Sub6_Sub2 extends Class4_Sub6 {
 
 	@OriginalMember(owner = "client!ld", name = "c", descriptor = "(BI)V")
 	private void method2489(@OriginalArg(1) int arg0) {
-		for (@Pc(12) Class4_Sub9 local12 = (Class4_Sub9) this.aClass4_Sub6_Sub1_1.aClass112_3.method2610(); local12 != null; local12 = (Class4_Sub9) this.aClass4_Sub6_Sub1_1.aClass112_3.method2616()) {
+		for (@Pc(12) Class4_Sub9 local12 = (Class4_Sub9) this.aClass4_Sub6_Sub1_1.aClass112_3.head(); local12 != null; local12 = (Class4_Sub9) this.aClass4_Sub6_Sub1_1.aClass112_3.next()) {
 			if (arg0 < 0 || arg0 == local12.anInt1301) {
 				if (local12.aClass4_Sub6_Sub4_1 != null) {
 					local12.aClass4_Sub6_Sub4_1.method3360(Static7.anInt5394 / 100);
@@ -530,7 +530,7 @@ public final class Class4_Sub6_Sub2 extends Class4_Sub6 {
 
 	@OriginalMember(owner = "client!ld", name = "c", descriptor = "(II)V")
 	private void method2495(@OriginalArg(1) int arg0) {
-		for (@Pc(8) Class4_Sub9 local8 = (Class4_Sub9) this.aClass4_Sub6_Sub1_1.aClass112_3.method2610(); local8 != null; local8 = (Class4_Sub9) this.aClass4_Sub6_Sub1_1.aClass112_3.method2616()) {
+		for (@Pc(8) Class4_Sub9 local8 = (Class4_Sub9) this.aClass4_Sub6_Sub1_1.aClass112_3.head(); local8 != null; local8 = (Class4_Sub9) this.aClass4_Sub6_Sub1_1.aClass112_3.next()) {
 			if ((arg0 < 0 || local8.anInt1301 == arg0) && local8.anInt1288 < 0) {
 				this.aClass4_Sub9ArrayArray2[local8.anInt1301][local8.anInt1296] = null;
 				local8.anInt1288 = 0;

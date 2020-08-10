@@ -722,11 +722,11 @@ public final class Static20 {
 	}
 
 	@OriginalMember(owner = "client!ii", name = "b", descriptor = "(IIII)Lclient!ll;")
-	public static Class112 method2410(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
-		@Pc(3) Class112 local3 = new Class112();
+	public static LinkedList method2410(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
+		@Pc(3) LinkedList local3 = new LinkedList();
 		for (@Pc(8) Class4_Sub3_Sub7 local8 = (Class4_Sub3_Sub7) Static3.aClass175_12.method4332(); local8 != null; local8 = (Class4_Sub3_Sub7) Static3.aClass175_12.method4340()) {
 			method2404(local8, arg0, arg1);
-			local3.method2612(local8);
+			local3.addTail(local8);
 		}
 		@Pc(29) int[] local29 = new int[3];
 		for (@Pc(31) int local31 = 0; local31 < Static3.aClass138_6.anInt4219; local31++) {
@@ -736,7 +736,7 @@ public final class Static20 {
 				local40.anInt1768 = local29[1] - Static3.anInt2962;
 				local40.anInt1769 = Static3.anInt2960 + Static3.anInt2961 - local29[2] - 1;
 				method2404(local40, arg0, arg1);
-				local3.method2612(local40);
+				local3.addTail(local40);
 			}
 		}
 		return local3;
@@ -925,7 +925,7 @@ public final class Static20 {
 			Static3.anIntArrayArrayArray7 = new int[local309][local318][];
 			Static3.aByteArrayArrayArray10 = new byte[local309][local318][];
 			Static3.aByteArrayArrayArray14 = new byte[local309][local318][];
-			Static3.aClass112_13 = new Class112();
+			Static3.aClass112_13 = new LinkedList();
 			Static1.aClass130_1 = new Class130();
 			@Pc(358) int local358 = Static2.anInt1273 >> 1;
 			@Pc(364) int local364 = Static6.anInt4555 >> 2 << 10;
@@ -1092,7 +1092,7 @@ public final class Static20 {
 			Static34.method4224(Static3.aClass4_Sub3_Sub14_Sub1_2.anIntArray241, arg3, arg0);
 			Static19.method2401(local169, local177, local190, local198, 0, 0, arg3, arg0 + 1);
 			method2403();
-			@Pc(268) Class112 local268 = Static19.method2397();
+			@Pc(268) LinkedList local268 = Static19.method2397();
 			Static9.method193(local268, arg2, arg1);
 			Static3.aClass4_Sub3_Sub14_Sub1_2.method2169();
 			Static18.method1697(Static3.aClass4_Sub3_Sub14_Sub1_2.anIntArray241, arg2, arg1, arg3, arg0);
@@ -1100,7 +1100,7 @@ public final class Static20 {
 		} else {
 			Static19.method2401(local169, local177, local190, local198, arg2, arg1, arg3 + arg2, arg0 + arg1 + 1);
 			method2403();
-			@Pc(218) Class112 local218 = Static19.method2397();
+			@Pc(218) LinkedList local218 = Static19.method2397();
 			Static9.method193(local218, 0, 0);
 		}
 		if (Static4.anInt2853 > 0) {
@@ -1335,10 +1335,10 @@ public final class Static20 {
 
 	@OriginalMember(owner = "client!j", name = "a", descriptor = "(IIIII)V")
 	public static void method1963(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3) {
-		for (@Pc(10) Class4_Sub11 local10 = (Class4_Sub11) Static1.aClass112_2.method2610(); local10 != null; local10 = (Class4_Sub11) Static1.aClass112_2.method2616()) {
+		for (@Pc(10) Class4_Sub11 local10 = (Class4_Sub11) Static1.aClass112_2.head(); local10 != null; local10 = (Class4_Sub11) Static1.aClass112_2.next()) {
 			Static12.method731(arg0, arg2, arg3, local10, arg1);
 		}
-		for (@Pc(31) Class4_Sub11 local31 = (Class4_Sub11) Static2.aClass112_9.method2610(); local31 != null; local31 = (Class4_Sub11) Static2.aClass112_9.method2616()) {
+		for (@Pc(31) Class4_Sub11 local31 = (Class4_Sub11) Static2.aClass112_9.head(); local31 != null; local31 = (Class4_Sub11) Static2.aClass112_9.next()) {
 			@Pc(40) byte local40 = 1;
 			@Pc(45) Class34 local45 = local31.aClass53_Sub1_Sub2_1.method3314();
 			if (local31.aClass53_Sub1_Sub2_1.anInt4005 == local45.anInt860) {
@@ -1429,7 +1429,7 @@ public final class Static20 {
 
 	@OriginalMember(owner = "client!jb", name = "a", descriptor = "(B)V")
 	public static void method1976() {
-		for (@Pc(16) Class4_Sub3_Sub2 local16 = (Class4_Sub3_Sub2) Static1.aClass112_1.method2610(); local16 != null; local16 = (Class4_Sub3_Sub2) Static1.aClass112_1.method2616()) {
+		for (@Pc(16) Class4_Sub3_Sub2 local16 = (Class4_Sub3_Sub2) Static1.aClass112_1.head(); local16 != null; local16 = (Class4_Sub3_Sub2) Static1.aClass112_1.next()) {
 			@Pc(22) Class53_Sub6 local22 = local16.aClass53_Sub6_1;
 			if (local22.anInt3717 != Static7.anInt5334 || Static2.anInt954 > local22.anInt3707) {
 				local16.unlink();

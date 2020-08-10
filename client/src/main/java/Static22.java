@@ -83,12 +83,12 @@ public final class Static22 {
 				local9.anIntArray529[local57] = -5;
 			}
 		}
-		Static6.aClass112_28.method2612(local9);
+		Static6.aClass112_28.addTail(local9);
 	}
 
 	@OriginalMember(owner = "client!jo", name = "a", descriptor = "(ILclient!vh;III)V")
 	public static void method4690(@OriginalArg(0) int arg0, @OriginalArg(1) Class181 arg1, @OriginalArg(2) int arg2, @OriginalArg(4) int arg3) {
-		for (@Pc(15) Class4_Sub11 local15 = (Class4_Sub11) Static1.aClass112_2.method2610(); local15 != null; local15 = (Class4_Sub11) Static1.aClass112_2.method2616()) {
+		for (@Pc(15) Class4_Sub11 local15 = (Class4_Sub11) Static1.aClass112_2.head(); local15 != null; local15 = (Class4_Sub11) Static1.aClass112_2.next()) {
 			if (local15.anInt2126 == arg2 && local15.anInt2124 == arg3 * 128 && local15.anInt2113 == arg0 * 128 && arg1.anInt5553 == local15.aClass181_1.anInt5553) {
 				if (local15.aClass4_Sub6_Sub4_3 != null) {
 					Static5.aClass4_Sub6_Sub3_2.method2670(local15.aClass4_Sub6_Sub4_3);
@@ -106,7 +106,7 @@ public final class Static22 {
 
 	@OriginalMember(owner = "client!jo", name = "d", descriptor = "(I)V")
 	public static void method4692() {
-		for (@Pc(8) Class4_Sub25 local8 = (Class4_Sub25) Static2.aClass112_7.method2610(); local8 != null; local8 = (Class4_Sub25) Static2.aClass112_7.method2616()) {
+		for (@Pc(8) Class4_Sub25 local8 = (Class4_Sub25) Static2.aClass112_7.head(); local8 != null; local8 = (Class4_Sub25) Static2.aClass112_7.next()) {
 			if (local8.anInt4436 > 0) {
 				local8.anInt4436--;
 			}

@@ -196,7 +196,7 @@ public final class Static31 {
 
 	@OriginalMember(owner = "client!ri", name = "b", descriptor = "(ZI)V")
 	public static void method3733(@OriginalArg(0) boolean arg0) {
-		for (@Pc(8) Class4_Sub11 local8 = (Class4_Sub11) Static1.aClass112_2.method2610(); local8 != null; local8 = (Class4_Sub11) Static1.aClass112_2.method2616()) {
+		for (@Pc(8) Class4_Sub11 local8 = (Class4_Sub11) Static1.aClass112_2.head(); local8 != null; local8 = (Class4_Sub11) Static1.aClass112_2.next()) {
 			if (local8.aClass4_Sub6_Sub4_3 != null) {
 				Static5.aClass4_Sub6_Sub3_2.method2670(local8.aClass4_Sub6_Sub4_3);
 				local8.aClass4_Sub6_Sub4_3 = null;
@@ -210,7 +210,7 @@ public final class Static31 {
 		if (!arg0) {
 			return;
 		}
-		for (@Pc(54) Class4_Sub11 local54 = (Class4_Sub11) Static2.aClass112_9.method2610(); local54 != null; local54 = (Class4_Sub11) Static2.aClass112_9.method2616()) {
+		for (@Pc(54) Class4_Sub11 local54 = (Class4_Sub11) Static2.aClass112_9.head(); local54 != null; local54 = (Class4_Sub11) Static2.aClass112_9.next()) {
 			if (local54.aClass4_Sub6_Sub4_3 != null) {
 				Static5.aClass4_Sub6_Sub3_2.method2670(local54.aClass4_Sub6_Sub4_3);
 				local54.aClass4_Sub6_Sub4_3 = null;
@@ -421,7 +421,7 @@ public final class Static31 {
 	@OriginalMember(owner = "client!rl", name = "a", descriptor = "(Lclient!wa;ZI)V")
 	public static void method3753(@OriginalArg(0) Packet arg0) {
 		while (true) {
-			@Pc(16) Class4_Sub29 local16 = (Class4_Sub29) Static6.aClass112_28.method2610();
+			@Pc(16) Class4_Sub29 local16 = (Class4_Sub29) Static6.aClass112_28.head();
 			if (local16 == null) {
 				return;
 			}

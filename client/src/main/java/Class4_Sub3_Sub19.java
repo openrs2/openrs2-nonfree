@@ -11,7 +11,7 @@ public final class Class4_Sub3_Sub19 extends Class4_Sub3 {
 
 	@OriginalMember(owner = "client!te", name = "<init>", descriptor = "(Lclient!fh;Lclient!fh;IZ)V")
 	public Class4_Sub3_Sub19(@OriginalArg(0) Class58 arg0, @OriginalArg(1) Class58 arg1, @OriginalArg(2) int arg2, @OriginalArg(3) boolean arg3) {
-		@Pc(7) Class112 local7 = new Class112();
+		@Pc(7) LinkedList local7 = new LinkedList();
 		@Pc(12) int local12 = arg0.method1371(arg2);
 		this.aClass1Array1 = new Class1[local12];
 		@Pc(21) int[] local21 = arg0.method1363(arg2);
@@ -19,7 +19,7 @@ public final class Class4_Sub3_Sub19 extends Class4_Sub3 {
 			@Pc(35) byte[] local35 = arg0.method1372(arg2, local21[local23]);
 			@Pc(37) Class4_Sub2 local37 = null;
 			@Pc(51) int local51 = (local35[0] & 0xFF) << 8 | local35[1] & 0xFF;
-			for (@Pc(56) Class4_Sub2 local56 = (Class4_Sub2) local7.method2610(); local56 != null; local56 = (Class4_Sub2) local7.method2616()) {
+			for (@Pc(56) Class4_Sub2 local56 = (Class4_Sub2) local7.head(); local56 != null; local56 = (Class4_Sub2) local7.next()) {
 				if (local51 == local56.anInt112) {
 					local37 = local56;
 					break;
@@ -28,7 +28,7 @@ public final class Class4_Sub3_Sub19 extends Class4_Sub3 {
 			if (local37 == null) {
 				@Pc(95) byte[] local95 = arg1.method1350(0, local51);
 				local37 = new Class4_Sub2(local51, local95);
-				local7.method2612(local37);
+				local7.addTail(local37);
 			}
 			this.aClass1Array1[local21[local23]] = new Class1(local35, local37);
 		}

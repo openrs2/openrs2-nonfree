@@ -606,7 +606,7 @@ public final class Static5 {
 	public static volatile int anInt4279 = 0;
 
 	@OriginalMember(owner = "client!qd", name = "J", descriptor = "Lclient!ll;")
-	public static final Class112 aClass112_27 = new Class112();
+	public static final LinkedList aClass112_27 = new LinkedList();
 
 	@OriginalMember(owner = "client!qd", name = "L", descriptor = "Ljava/lang/String;")
 	public static String aString255 = null;

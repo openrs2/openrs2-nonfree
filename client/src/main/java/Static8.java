@@ -111,7 +111,7 @@ public final class Static8 {
 				}
 			}
 		}
-		for (@Pc(443) Class4_Sub25 local443 = (Class4_Sub25) Static2.aClass112_7.method2610(); local443 != null; local443 = (Class4_Sub25) Static2.aClass112_7.method2616()) {
+		for (@Pc(443) Class4_Sub25 local443 = (Class4_Sub25) Static2.aClass112_7.head(); local443 != null; local443 = (Class4_Sub25) Static2.aClass112_7.next()) {
 			local443.anInt4441 -= local90;
 			local443.anInt4445 -= local95;
 			if (local443.anInt4445 < 0 || local443.anInt4441 < 0 || local443.anInt4445 >= 104 || local443.anInt4441 >= 104) {
@@ -137,8 +137,8 @@ public final class Static8 {
 			Static17.method1655();
 		}
 		Static31.method3150();
-		Static2.aClass112_8.method2606();
-		Static1.aClass112_1.method2606();
+		Static2.aClass112_8.clear();
+		Static1.aClass112_1.clear();
 		Static26.method2963();
 	}
 
@@ -353,13 +353,13 @@ public final class Static8 {
 
 	@OriginalMember(owner = "client!ae", name = "a", descriptor = "(III)V")
 	public static void method89(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
-		@Pc(17) Class112 local17 = Static4.aClass112ArrayArrayArray1[Static7.anInt5334][arg0][arg1];
+		@Pc(17) LinkedList local17 = Static4.aClass112ArrayArrayArray1[Static7.anInt5334][arg0][arg1];
 		if (local17 == null) {
 			Static31.method3734(Static7.anInt5334, arg0, arg1);
 			return;
 		}
 		@Pc(28) int local28 = -99999999;
-		@Pc(33) Class4_Sub3_Sub21 local33 = (Class4_Sub3_Sub21) local17.method2610();
+		@Pc(33) Class4_Sub3_Sub21 local33 = (Class4_Sub3_Sub21) local17.head();
 		@Pc(35) Class4_Sub3_Sub21 local35 = null;
 		while (local33 != null) {
 			@Pc(44) Class162 local44 = Static35.method4361(local33.aClass53_Sub2_1.anInt2168);
@@ -371,14 +371,14 @@ public final class Static8 {
 				local28 = local47;
 				local35 = local33;
 			}
-			local33 = (Class4_Sub3_Sub21) local17.method2616();
+			local33 = (Class4_Sub3_Sub21) local17.next();
 		}
 		if (local35 == null) {
 			Static31.method3734(Static7.anInt5334, arg0, arg1);
 			return;
 		}
-		local17.method2607(local35);
-		@Pc(100) Class4_Sub3_Sub21 local100 = (Class4_Sub3_Sub21) local17.method2610();
+		local17.addHead(local35);
+		@Pc(100) Class4_Sub3_Sub21 local100 = (Class4_Sub3_Sub21) local17.head();
 		@Pc(102) Class53_Sub2 local102 = null;
 		@Pc(104) Class53_Sub2 local104 = null;
 		while (local100 != null) {
@@ -391,7 +391,7 @@ public final class Static8 {
 					local102 = local110;
 				}
 			}
-			local100 = (Class4_Sub3_Sub21) local17.method2616();
+			local100 = (Class4_Sub3_Sub21) local17.next();
 		}
 		@Pc(155) long local155 = (long) (arg0 + (arg1 << 7) + 1610612736);
 		Static29.method3478(Static7.anInt5334, arg0, arg1, Static11.method522(arg1 * 128 + 64, arg0 * 128 + 64, Static7.anInt5334), local35.aClass53_Sub2_1, local155, local104, local102);
@@ -510,7 +510,7 @@ public final class Static8 {
 			if (local9.anIntArray172 != null) {
 				local9.anInt2125 = (int) ((double) (local9.anInt2116 - local9.anInt2119) * Math.random()) + local9.anInt2119;
 			}
-			Static1.aClass112_2.method2612(local9);
+			Static1.aClass112_2.addTail(local9);
 		} else if (arg2 != null) {
 			local9.aClass53_Sub1_Sub2_1 = arg2;
 			@Pc(86) Class168 local86 = arg2.aClass168_1;
@@ -525,7 +525,7 @@ public final class Static8 {
 				local9.anInt2127 = local86.anInt5235;
 				local9.anInt2123 = local86.anInt5249 * 128;
 			}
-			Static2.aClass112_9.method2612(local9);
+			Static2.aClass112_9.addTail(local9);
 		} else if (arg4 != null) {
 			local9.aClass53_Sub1_Sub1_1 = arg4;
 			local9.anInt2117 = (arg1 + arg4.method3311()) * 128;

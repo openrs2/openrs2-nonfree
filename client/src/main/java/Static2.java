@@ -276,7 +276,7 @@ public final class Static2 {
 	public static int anInt1029 = -1;
 
 	@OriginalMember(owner = "client!di", name = "f", descriptor = "Lclient!ll;")
-	public static final Class112 aClass112_5 = new Class112();
+	public static final LinkedList aClass112_5 = new LinkedList();
 
 	@OriginalMember(owner = "client!di", name = "g", descriptor = "Z")
 	public static boolean aBoolean57 = true;
@@ -324,10 +324,10 @@ public final class Static2 {
 	public static int anInt1165 = 0;
 
 	@OriginalMember(owner = "client!e", name = "v", descriptor = "Lclient!ll;")
-	public static final Class112 aClass112_6 = new Class112();
+	public static final LinkedList aClass112_6 = new LinkedList();
 
 	@OriginalMember(owner = "client!e", name = "A", descriptor = "Lclient!ll;")
-	public static Class112 aClass112_7 = new Class112();
+	public static LinkedList aClass112_7 = new LinkedList();
 
 	@OriginalMember(owner = "client!ea", name = "y", descriptor = "Lclient!mc;")
 	public static final Class4_Sub16 aClass4_Sub16_2 = new Class4_Sub16(0, 0);
@@ -438,7 +438,7 @@ public final class Static2 {
 	public static int anInt1599 = 0;
 
 	@OriginalMember(owner = "client!fa", name = "S", descriptor = "Lclient!ll;")
-	public static final Class112 aClass112_8 = new Class112();
+	public static final LinkedList aClass112_8 = new LinkedList();
 
 	@OriginalMember(owner = "client!fa", name = "X", descriptor = "I")
 	public static int anInt1629 = 0;
@@ -495,7 +495,7 @@ public final class Static2 {
 	public static int anInt1877 = 0;
 
 	@OriginalMember(owner = "client!fl", name = "W", descriptor = "Lclient!ll;")
-	public static final Class112 aClass112_9 = new Class112();
+	public static final LinkedList aClass112_9 = new LinkedList();
 
 	@OriginalMember(owner = "client!fl", name = "ab", descriptor = "Z")
 	public static boolean aBoolean117 = true;
@@ -510,7 +510,7 @@ public final class Static2 {
 	public static int anInt1940 = 0;
 
 	@OriginalMember(owner = "client!fm", name = "f", descriptor = "Lclient!ll;")
-	public static final Class112 aClass112_10 = new Class112();
+	public static final LinkedList aClass112_10 = new LinkedList();
 
 	@OriginalMember(owner = "client!fm", name = "h", descriptor = "[Lclient!eg;")
 	public static final Class46[] aClass46Array1 = new Class46[14];

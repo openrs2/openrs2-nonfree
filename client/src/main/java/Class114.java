@@ -13,7 +13,7 @@ public final class Class114 {
 	private int anInt3301 = 0;
 
 	@OriginalMember(owner = "client!md", name = "a", descriptor = "Lclient!ll;")
-	private Class112 aClass112_17 = new Class112();
+	private LinkedList aClass112_17 = new LinkedList();
 
 	@OriginalMember(owner = "client!md", name = "r", descriptor = "Z")
 	public boolean aBoolean230 = false;
@@ -48,7 +48,7 @@ public final class Class114 {
 		}
 		this.anIntArrayArrayArray8 = null;
 		this.aClass4_Sub16Array1 = null;
-		this.aClass112_17.method2606();
+		this.aClass112_17.clear();
 		this.aClass112_17 = null;
 	}
 
@@ -78,7 +78,7 @@ public final class Class114 {
 			if (local30 == null) {
 				this.aBoolean230 = true;
 				if (this.anInt3307 <= this.anInt3301) {
-					@Pc(47) Class4_Sub16 local47 = (Class4_Sub16) this.aClass112_17.method2613();
+					@Pc(47) Class4_Sub16 local47 = (Class4_Sub16) this.aClass112_17.tail();
 					local30 = new Class4_Sub16(arg0, local47.anInt3293);
 					this.aClass4_Sub16Array1[local47.anInt3294] = null;
 					local47.unlink();
@@ -90,7 +90,7 @@ public final class Class114 {
 			} else {
 				this.aBoolean230 = false;
 			}
-			this.aClass112_17.method2607(local30);
+			this.aClass112_17.addHead(local30);
 			return this.anIntArrayArrayArray8[local30.anInt3293];
 		}
 	}

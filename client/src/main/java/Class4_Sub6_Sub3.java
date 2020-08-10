@@ -7,10 +7,10 @@ import dev.openrs2.deob.annotation.Pc;
 public final class Class4_Sub6_Sub3 extends Class4_Sub6 {
 
 	@OriginalMember(owner = "client!lo", name = "s", descriptor = "Lclient!ll;")
-	private final Class112 aClass112_15 = new Class112();
+	private final LinkedList aClass112_15 = new LinkedList();
 
 	@OriginalMember(owner = "client!lo", name = "t", descriptor = "Lclient!ll;")
-	private final Class112 aClass112_16 = new Class112();
+	private final LinkedList aClass112_16 = new LinkedList();
 
 	@OriginalMember(owner = "client!lo", name = "u", descriptor = "I")
 	private int anInt3269 = 0;
@@ -37,7 +37,7 @@ public final class Class4_Sub6_Sub3 extends Class4_Sub6 {
 			arg2 -= local33;
 			this.anInt3269 += local33;
 			this.method2669();
-			@Pc(60) Class4_Sub33 local60 = (Class4_Sub33) this.aClass112_16.method2610();
+			@Pc(60) Class4_Sub33 local60 = (Class4_Sub33) this.aClass112_16.head();
 			synchronized (local60) {
 				@Pc(68) int local68 = local60.method4811(this);
 				if (local68 < 0) {
@@ -55,8 +55,8 @@ public final class Class4_Sub6_Sub3 extends Class4_Sub6 {
 	private void method2668(@OriginalArg(0) Class4_Sub33 arg0) {
 		arg0.unlink();
 		arg0.method4810();
-		@Pc(9) Node local9 = this.aClass112_16.aClass4_117.next;
-		if (local9 == this.aClass112_16.aClass4_117) {
+		@Pc(9) Node local9 = this.aClass112_16.sentinel.next;
+		if (local9 == this.aClass112_16.sentinel) {
 			this.anInt3270 = -1;
 		} else {
 			this.anInt3270 = ((Class4_Sub33) local9).anInt6071;
@@ -68,7 +68,7 @@ public final class Class4_Sub6_Sub3 extends Class4_Sub6 {
 		if (this.anInt3269 <= 0) {
 			return;
 		}
-		for (@Pc(8) Class4_Sub33 local8 = (Class4_Sub33) this.aClass112_16.method2610(); local8 != null; local8 = (Class4_Sub33) this.aClass112_16.method2616()) {
+		for (@Pc(8) Class4_Sub33 local8 = (Class4_Sub33) this.aClass112_16.head(); local8 != null; local8 = (Class4_Sub33) this.aClass112_16.next()) {
 			local8.anInt6071 -= this.anInt3269;
 		}
 		this.anInt3270 -= this.anInt3269;
@@ -98,7 +98,7 @@ public final class Class4_Sub6_Sub3 extends Class4_Sub6 {
 			arg0 -= local29;
 			this.anInt3269 += local29;
 			this.method2669();
-			@Pc(50) Class4_Sub33 local50 = (Class4_Sub33) this.aClass112_16.method2610();
+			@Pc(50) Class4_Sub33 local50 = (Class4_Sub33) this.aClass112_16.head();
 			synchronized (local50) {
 				@Pc(58) int local58 = local50.method4811(this);
 				if (local58 < 0) {
@@ -114,7 +114,7 @@ public final class Class4_Sub6_Sub3 extends Class4_Sub6 {
 
 	@OriginalMember(owner = "client!lo", name = "c", descriptor = "(I)V")
 	private void method2671(@OriginalArg(0) int arg0) {
-		for (@Pc(5) Class4_Sub6 local5 = (Class4_Sub6) this.aClass112_15.method2610(); local5 != null; local5 = (Class4_Sub6) this.aClass112_15.method2616()) {
+		for (@Pc(5) Class4_Sub6 local5 = (Class4_Sub6) this.aClass112_15.head(); local5 != null; local5 = (Class4_Sub6) this.aClass112_15.next()) {
 			local5.method3345(arg0);
 		}
 	}
@@ -122,16 +122,16 @@ public final class Class4_Sub6_Sub3 extends Class4_Sub6 {
 	@OriginalMember(owner = "client!lo", name = "c", descriptor = "()Lclient!tf;")
 	@Override
 	public final Class4_Sub6 method3349() {
-		return (Class4_Sub6) this.aClass112_15.method2616();
+		return (Class4_Sub6) this.aClass112_15.next();
 	}
 
 	@OriginalMember(owner = "client!lo", name = "a", descriptor = "(Lclient!ni;Lclient!wm;)V")
 	private void method2672(@OriginalArg(0) Node arg0, @OriginalArg(1) Class4_Sub33 arg1) {
-		while (arg0 != this.aClass112_16.aClass4_117 && ((Class4_Sub33) arg0).anInt6071 <= arg1.anInt6071) {
+		while (arg0 != this.aClass112_16.sentinel && ((Class4_Sub33) arg0).anInt6071 <= arg1.anInt6071) {
 			arg0 = arg0.next;
 		}
 		Static28.method3267(arg0, arg1);
-		this.anInt3270 = ((Class4_Sub33) this.aClass112_16.aClass4_117.next).anInt6071;
+		this.anInt3270 = ((Class4_Sub33) this.aClass112_16.sentinel.next).anInt6071;
 	}
 
 	@OriginalMember(owner = "client!lo", name = "a", descriptor = "()I")
@@ -142,7 +142,7 @@ public final class Class4_Sub6_Sub3 extends Class4_Sub6 {
 
 	@OriginalMember(owner = "client!lo", name = "c", descriptor = "([III)V")
 	private void method2673(@OriginalArg(0) int[] arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
-		for (@Pc(5) Class4_Sub6 local5 = (Class4_Sub6) this.aClass112_15.method2610(); local5 != null; local5 = (Class4_Sub6) this.aClass112_15.method2616()) {
+		for (@Pc(5) Class4_Sub6 local5 = (Class4_Sub6) this.aClass112_15.head(); local5 != null; local5 = (Class4_Sub6) this.aClass112_15.next()) {
 			local5.method3351(arg0, arg1, arg2);
 		}
 	}
@@ -150,11 +150,11 @@ public final class Class4_Sub6_Sub3 extends Class4_Sub6 {
 	@OriginalMember(owner = "client!lo", name = "d", descriptor = "()Lclient!tf;")
 	@Override
 	public final Class4_Sub6 method3350() {
-		return (Class4_Sub6) this.aClass112_15.method2610();
+		return (Class4_Sub6) this.aClass112_15.head();
 	}
 
 	@OriginalMember(owner = "client!lo", name = "b", descriptor = "(Lclient!tf;)V")
 	public final synchronized void method2674(@OriginalArg(0) Class4_Sub6 arg0) {
-		this.aClass112_15.method2607(arg0);
+		this.aClass112_15.addHead(arg0);
 	}
 }

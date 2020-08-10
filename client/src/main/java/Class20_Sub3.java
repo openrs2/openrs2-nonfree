@@ -62,7 +62,7 @@ public final class Class20_Sub3 extends Class20 {
 	private int anInt3507 = 0;
 
 	@OriginalMember(owner = "client!ne", name = "E", descriptor = "Lclient!ll;")
-	public Class112 aClass112_24 = new Class112();
+	public LinkedList aClass112_24 = new LinkedList();
 
 	@OriginalMember(owner = "client!ne", name = "I", descriptor = "Z")
 	private boolean aBoolean252 = false;
@@ -339,7 +339,7 @@ public final class Class20_Sub3 extends Class20 {
 	@OriginalMember(owner = "client!ne", name = "e", descriptor = "()V")
 	public final void method2958() {
 		this.aBoolean250 = true;
-		for (@Pc(8) Class4_Sub3_Sub24 local8 = (Class4_Sub3_Sub24) this.aClass112_24.method2610(); local8 != null; local8 = (Class4_Sub3_Sub24) this.aClass112_24.method2616()) {
+		for (@Pc(8) Class4_Sub3_Sub24 local8 = (Class4_Sub3_Sub24) this.aClass112_24.head(); local8 != null; local8 = (Class4_Sub3_Sub24) this.aClass112_24.next()) {
 			if (local8.aClass167_1.aClass37_1.anInt907 == 1) {
 				local8.method4819();
 			}
@@ -348,7 +348,7 @@ public final class Class20_Sub3 extends Class20 {
 		this.anInt3499 = 0;
 		this.aClass172_2 = new Class172();
 		this.anInt3507 = 0;
-		this.aClass112_24 = new Class112();
+		this.aClass112_24 = new LinkedList();
 		this.anInt3522 = 0;
 		this.method2944();
 	}
@@ -377,7 +377,7 @@ public final class Class20_Sub3 extends Class20 {
 
 	@OriginalMember(owner = "client!ne", name = "a", descriptor = "(II)V")
 	private void method2960(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
-		for (@Pc(5) Class4_Sub3_Sub24 local5 = (Class4_Sub3_Sub24) this.aClass112_24.method2610(); local5 != null; local5 = (Class4_Sub3_Sub24) this.aClass112_24.method2616()) {
+		for (@Pc(5) Class4_Sub3_Sub24 local5 = (Class4_Sub3_Sub24) this.aClass112_24.head(); local5 != null; local5 = (Class4_Sub3_Sub24) this.aClass112_24.next()) {
 			local5.anInt6095 = local5.anInt6084 + this.anInt3518;
 			local5.anInt6089 = local5.anInt6085 + this.anInt3512;
 			local5.anInt6087 = local5.anInt6090 + this.anInt3509;
@@ -399,7 +399,7 @@ public final class Class20_Sub3 extends Class20 {
 			Static5.aBooleanArray18[local1] = false;
 		}
 		label88:
-		for (@Pc(16) Class4_Sub3_Sub24 local16 = (Class4_Sub3_Sub24) this.aClass112_24.method2610(); local16 != null; local16 = (Class4_Sub3_Sub24) this.aClass112_24.method2616()) {
+		for (@Pc(16) Class4_Sub3_Sub24 local16 = (Class4_Sub3_Sub24) this.aClass112_24.head(); local16 != null; local16 = (Class4_Sub3_Sub24) this.aClass112_24.next()) {
 			if (arg0 != null) {
 				for (@Pc(22) int local22 = 0; local22 < arg0.length; local22++) {
 					if (local16.aClass167_1 == arg0[local22]) {
@@ -431,12 +431,12 @@ public final class Class20_Sub3 extends Class20 {
 				if (local87 == null) {
 					local87 = new Class4_Sub3_Sub24(arg0[local72], this);
 				}
-				this.aClass112_24.method2612(local87);
+				this.aClass112_24.addTail(local87);
 				this.anInt3522++;
 				Static5.aBooleanArray18[local72] = true;
 			}
 		}
-		for (@Pc(152) Class4_Sub3_Sub24 local152 = (Class4_Sub3_Sub24) this.aClass112_24.method2610(); local152 != null; local152 = (Class4_Sub3_Sub24) this.aClass112_24.method2616()) {
+		for (@Pc(152) Class4_Sub3_Sub24 local152 = (Class4_Sub3_Sub24) this.aClass112_24.head(); local152 != null; local152 = (Class4_Sub3_Sub24) this.aClass112_24.next()) {
 			for (@Pc(156) int local156 = 0; local156 < arg0.length; local156++) {
 				if (Static5.aBooleanArray18[local156] && arg0[local156] == local152.aClass167_1) {
 					local152.method4827(arg4[local152.aClass167_1.anInt5232], arg3[local152.aClass167_1.anInt5232], arg2[local152.aClass167_1.anInt5232]);

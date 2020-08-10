@@ -759,7 +759,7 @@ public final class Static19 {
 	}
 
 	@OriginalMember(owner = "client!ii", name = "a", descriptor = "()Lclient!ll;")
-	public static Class112 method2397() {
+	public static LinkedList method2397() {
 		@Pc(3) int local3 = Static3.anInt2972 - Static3.anInt2973;
 		@Pc(7) int local7 = Static3.anInt2966 - Static3.anInt2967;
 		@Pc(15) int local15 = (Static3.anInt2970 - Static3.anInt2969 << 16) / local3;

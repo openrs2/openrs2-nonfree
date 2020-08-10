@@ -230,7 +230,7 @@ public final class Static3 {
 	public static int anInt2272;
 
 	@OriginalMember(owner = "client!ho", name = "D", descriptor = "Lclient!ll;")
-	public static Class112 aClass112_13;
+	public static LinkedList aClass112_13;
 
 	@OriginalMember(owner = "client!ho", name = "S", descriptor = "Lclient!wl;")
 	public static BufferedFile aClass189_4;
@@ -794,7 +794,7 @@ public final class Static3 {
 	public static int anInt2576 = 0;
 
 	@OriginalMember(owner = "client!jf", name = "a", descriptor = "Lclient!ll;")
-	public static final Class112 aClass112_26 = new Class112();
+	public static final LinkedList aClass112_26 = new LinkedList();
 
 	@OriginalMember(owner = "client!jh", name = "b", descriptor = "I")
 	public static int anInt2583 = 0;
@@ -803,7 +803,7 @@ public final class Static3 {
 	public static boolean aBoolean177 = false;
 
 	@OriginalMember(owner = "client!jh", name = "e", descriptor = "Lclient!ll;")
-	public static final Class112 aClass112_14 = new Class112();
+	public static final LinkedList aClass112_14 = new LinkedList();
 
 	@OriginalMember(owner = "client!jh", name = "h", descriptor = "Lclient!uk;")
 	public static final Class175 aClass175_11 = new Class175();

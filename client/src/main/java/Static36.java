@@ -235,7 +235,7 @@ public final class Static36 {
 				Static16.method1497((long) arg1.anInt1760, arg3.anInt2284, 0, arg3.aString130, arg3.aStringArray15[0], (short) 1012, -1);
 			}
 		}
-		Static3.aClass112_13.method2612(local222);
+		Static3.aClass112_13.addTail(local222);
 	}
 
 	@OriginalMember(owner = "client!vc", name = "a", descriptor = "(IILclient!wf;I)V")

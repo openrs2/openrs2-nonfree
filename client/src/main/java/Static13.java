@@ -11,7 +11,7 @@ public final class Static13 {
 
 	@OriginalMember(owner = "client!di", name = "a", descriptor = "(IIII)Z")
 	public static boolean method874(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) {
-		if (Static2.anInt1028 == -1 || Static2.aClass112_5.method2609()) {
+		if (Static2.anInt1028 == -1 || Static2.aClass112_5.isEmpty()) {
 			Static2.aBoolean58 = false;
 			return false;
 		}
@@ -21,7 +21,7 @@ public final class Static13 {
 		if (Static2.anInt1029 != arg2 || Static2.anInt1027 != arg3) {
 			Static2.anInt1029 = arg2;
 			Static2.anInt1027 = arg3;
-			for (@Pc(30) Node local30 = Static2.aClass112_5.method2610(); local30 != Static2.aClass112_5.aClass4_117; local30 = local30.next) {
+			for (@Pc(30) Node local30 = Static2.aClass112_5.head(); local30 != Static2.aClass112_5.sentinel; local30 = local30.next) {
 				((Class4_Sub4) local30).method765(Static2.anInt1029, Static2.anInt1027);
 			}
 			Static2.aBoolean60 = true;
@@ -109,7 +109,7 @@ public final class Static13 {
 					arg0.method765(Static2.anInt1029, Static2.anInt1027);
 				}
 				arg0.aBoolean54 = true;
-				Static2.aClass112_5.method2612(arg0);
+				Static2.aClass112_5.addTail(arg0);
 				Static12.method870();
 				return true;
 			}
@@ -149,8 +149,8 @@ public final class Static13 {
 		@Pc(15) int local15 = 0;
 		@Pc(17) int local17 = 1;
 		@Pc(29) Class4_Sub4 local29;
-		for (@Pc(22) Class4_Sub4 local22 = (Class4_Sub4) Static2.aClass112_5.method2610(); local22 != null; local22 = local29) {
-			local29 = (Class4_Sub4) Static2.aClass112_5.method2616();
+		for (@Pc(22) Class4_Sub4 local22 = (Class4_Sub4) Static2.aClass112_5.head(); local22 != null; local22 = local29) {
+			local29 = (Class4_Sub4) Static2.aClass112_5.next();
 			@Pc(33) int local33 = local22.method753();
 			for (@Pc(35) int local35 = 0; local35 < local33; local35++) {
 				local22.method761(local35, Static2.anInt1029, Static2.anInt1027, Static2.anIntArray83[local15], Static2.anInt1032);
@@ -222,8 +222,8 @@ public final class Static13 {
 			}
 			Static2.anInt1032 = -1;
 		}
-		if (!Static2.aClass112_5.method2609()) {
-			for (@Pc(39) Node local39 = Static2.aClass112_5.method2610(); local39 != Static2.aClass112_5.aClass4_117; local39 = local39.next) {
+		if (!Static2.aClass112_5.isEmpty()) {
+			for (@Pc(39) Node local39 = Static2.aClass112_5.head(); local39 != Static2.aClass112_5.sentinel; local39 = local39.next) {
 				((Class4_Sub4) local39).method760();
 			}
 		}
@@ -575,7 +575,7 @@ public final class Static13 {
 		local3.anInt4993 = arg9;
 		local3.anInt4992 = arg1;
 		local3.anInt5003 = arg8;
-		Static5.aClass112_27.method2612(local3);
+		Static5.aClass112_27.addTail(local3);
 	}
 
 	@OriginalMember(owner = "client!dn", name = "f", descriptor = "(I)V")
@@ -964,7 +964,7 @@ public final class Static13 {
 	@OriginalMember(owner = "client!ee", name = "a", descriptor = "(IIIIIIBIII)V")
 	public static void method1011(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(7) int arg6, @OriginalArg(8) int arg7, @OriginalArg(9) int arg8) {
 		@Pc(5) Class4_Sub25 local5 = null;
-		for (@Pc(10) Class4_Sub25 local10 = (Class4_Sub25) Static2.aClass112_7.method2610(); local10 != null; local10 = (Class4_Sub25) Static2.aClass112_7.method2616()) {
+		for (@Pc(10) Class4_Sub25 local10 = (Class4_Sub25) Static2.aClass112_7.head(); local10 != null; local10 = (Class4_Sub25) Static2.aClass112_7.next()) {
 			if (arg1 == local10.anInt4438 && arg3 == local10.anInt4445 && local10.anInt4441 == arg5 && arg7 == local10.anInt4437) {
 				local5 = local10;
 				break;
@@ -977,7 +977,7 @@ public final class Static13 {
 			local5.anInt4437 = arg7;
 			local5.anInt4445 = arg3;
 			Static16.method4654(local5);
-			Static2.aClass112_7.method2612(local5);
+			Static2.aClass112_7.addTail(local5);
 		}
 		local5.anInt4446 = arg8;
 		local5.anInt4435 = arg0;

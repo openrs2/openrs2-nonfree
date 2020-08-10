@@ -16,7 +16,7 @@ public final class Static4 {
 	public static Class91 aClass91_1;
 
 	@OriginalMember(owner = "client!jl", name = "B", descriptor = "[[[Lclient!ll;")
-	public static Class112[][][] aClass112ArrayArrayArray1;
+	public static LinkedList[][][] aClass112ArrayArrayArray1;
 
 	@OriginalMember(owner = "client!jm", name = "i", descriptor = "F")
 	public static float aFloat62;
@@ -547,25 +547,25 @@ public final class Static4 {
 	public static long aLong118 = 0L;
 
 	@OriginalMember(owner = "client!mh", name = "e", descriptor = "Lclient!ll;")
-	public static final Class112 aClass112_18 = new Class112();
+	public static final LinkedList aClass112_18 = new LinkedList();
 
 	@OriginalMember(owner = "client!mh", name = "f", descriptor = "I")
 	public static int anInt3333 = 0;
 
 	@OriginalMember(owner = "client!mh", name = "g", descriptor = "Lclient!ll;")
-	public static final Class112 aClass112_19 = new Class112();
+	public static final LinkedList aClass112_19 = new LinkedList();
 
 	@OriginalMember(owner = "client!mh", name = "h", descriptor = "Lclient!ll;")
-	public static final Class112 aClass112_20 = new Class112();
+	public static final LinkedList aClass112_20 = new LinkedList();
 
 	@OriginalMember(owner = "client!mh", name = "i", descriptor = "Lclient!ll;")
-	public static final Class112 aClass112_21 = new Class112();
+	public static final LinkedList aClass112_21 = new LinkedList();
 
 	@OriginalMember(owner = "client!mh", name = "j", descriptor = "Lclient!ll;")
-	public static final Class112 aClass112_22 = new Class112();
+	public static final LinkedList aClass112_22 = new LinkedList();
 
 	@OriginalMember(owner = "client!mh", name = "k", descriptor = "Lclient!ll;")
-	public static final Class112 aClass112_23 = new Class112();
+	public static final LinkedList aClass112_23 = new LinkedList();
 
 	@OriginalMember(owner = "client!mh", name = "l", descriptor = "[I")
 	public static final int[] anIntArray319 = new int[1000];

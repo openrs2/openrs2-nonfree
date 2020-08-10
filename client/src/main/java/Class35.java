@@ -16,7 +16,7 @@ public final class Class35 {
 	private int anInt875 = -1;
 
 	@OriginalMember(owner = "client!da", name = "s", descriptor = "Lclient!ll;")
-	private Class112 aClass112_4 = new Class112();
+	private LinkedList aClass112_4 = new LinkedList();
 
 	@OriginalMember(owner = "client!da", name = "t", descriptor = "Z")
 	public boolean aBoolean51 = false;
@@ -76,7 +76,7 @@ public final class Class35 {
 					local33 = new Class4_Sub20(arg0, this.anInt872);
 					this.anInt872++;
 				} else {
-					@Pc(69) Class4_Sub20 local69 = (Class4_Sub20) this.aClass112_4.method2613();
+					@Pc(69) Class4_Sub20 local69 = (Class4_Sub20) this.aClass112_4.tail();
 					local33 = new Class4_Sub20(arg0, local69.anInt3905);
 					this.aClass4_Sub20Array1[local69.anInt3908] = null;
 					local69.unlink();
@@ -85,7 +85,7 @@ public final class Class35 {
 			} else {
 				this.aBoolean51 = false;
 			}
-			this.aClass112_4.method2607(local33);
+			this.aClass112_4.addHead(local33);
 			return this.anIntArrayArray8[local33.anInt3905];
 		}
 	}
@@ -97,7 +97,7 @@ public final class Class35 {
 		}
 		this.anIntArrayArray8 = null;
 		this.aClass4_Sub20Array1 = null;
-		this.aClass112_4.method2606();
+		this.aClass112_4.clear();
 		this.aClass112_4 = null;
 	}
 }

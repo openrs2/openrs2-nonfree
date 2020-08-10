@@ -199,21 +199,21 @@ public final class client extends GameShell {
 			@Pc(395) Class185 local395;
 			@Pc(406) Class185 local406;
 			do {
-				local389 = (Class4_Sub13) Static2.aClass112_6.method2608();
+				local389 = (Class4_Sub13) Static2.aClass112_6.removeHead();
 				if (local389 == null) {
 					while (true) {
 						@Pc(440) Class4_Sub13 local440;
 						@Pc(448) Class185 local448;
 						@Pc(460) Class185 local460;
 						do {
-							local440 = (Class4_Sub13) Static2.aClass112_10.method2608();
+							local440 = (Class4_Sub13) Static2.aClass112_10.removeHead();
 							if (local440 == null) {
 								while (true) {
 									@Pc(489) Class4_Sub13 local489;
 									@Pc(496) Class185 local496;
 									@Pc(505) Class185 local505;
 									do {
-										local489 = (Class4_Sub13) Static3.aClass112_14.method2608();
+										local489 = (Class4_Sub13) Static3.aClass112_14.removeHead();
 										if (local489 == null) {
 											if (Static1.aClass185_1 != null) {
 												Static14.method1047();
