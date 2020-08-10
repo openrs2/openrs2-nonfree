@@ -1440,7 +1440,7 @@ public final class Static29 {
 											}
 											try {
 												if (Static3.aClass52_7 != null && Static3.aClass4_Sub10_Sub1_1.position > 0) {
-													Static3.aClass52_7.method1107(Static3.aClass4_Sub10_Sub1_1.bytes, Static3.aClass4_Sub10_Sub1_1.position);
+													Static3.aClass52_7.write(Static3.aClass4_Sub10_Sub1_1.bytes, Static3.aClass4_Sub10_Sub1_1.position);
 													Static3.aClass4_Sub10_Sub1_1.position = 0;
 													Static3.anInt2142 = 0;
 												}

@@ -519,7 +519,7 @@ public final class Static9 {
 			Static8.method101();
 		}
 		if (arg0 != 40 && Static2.aClass52_1 != null) {
-			Static2.aClass52_1.method1103();
+			Static2.aClass52_1.close();
 			Static2.aClass52_1 = null;
 		}
 		if (arg0 == 25 || arg0 == 28) {

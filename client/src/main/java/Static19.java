@@ -240,7 +240,7 @@ public final class Static19 {
 	@OriginalMember(owner = "client!ia", name = "a", descriptor = "(Z)V")
 	public static void method1818() {
 		if (Static3.aClass52_7 != null) {
-			Static3.aClass52_7.method1103();
+			Static3.aClass52_7.close();
 			Static3.aClass52_7 = null;
 		}
 		Static24.method2697();

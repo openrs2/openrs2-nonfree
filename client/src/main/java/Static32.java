@@ -97,7 +97,7 @@ public final class Static32 {
 		if (!Static1.aBoolean38 && Static3.aClass52_7 != null) {
 			Static3.aClass4_Sub10_Sub1_1.writeOpcode(137);
 			try {
-				Static3.aClass52_7.method1107(Static3.aClass4_Sub10_Sub1_1.bytes, Static3.aClass4_Sub10_Sub1_1.position);
+				Static3.aClass52_7.write(Static3.aClass4_Sub10_Sub1_1.bytes, Static3.aClass4_Sub10_Sub1_1.position);
 				Static3.aClass4_Sub10_Sub1_1.position = 0;
 			} catch (@Pc(52) IOException local52) {
 				Static1.aBoolean38 = true;

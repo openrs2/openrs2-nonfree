@@ -502,12 +502,12 @@ public final class Static21 {
 		if (Static3.aClass52_7 == null) {
 			return false;
 		}
-		@Pc(15) int local15 = Static3.aClass52_7.method1101();
+		@Pc(15) int local15 = Static3.aClass52_7.available();
 		if (local15 == 0) {
 			return false;
 		}
 		if (Static1.anInt552 == -1) {
-			Static3.aClass52_7.method1099(0, Static5.aClass4_Sub10_Sub1_2.bytes, 1);
+			Static3.aClass52_7.read(Static5.aClass4_Sub10_Sub1_2.bytes, 0, 1);
 			Static5.aClass4_Sub10_Sub1_2.position = 0;
 			local15--;
 			Static1.anInt552 = Static5.aClass4_Sub10_Sub1_2.readOpcode();
@@ -518,7 +518,7 @@ public final class Static21 {
 				return false;
 			}
 			local15--;
-			Static3.aClass52_7.method1099(0, Static5.aClass4_Sub10_Sub1_2.bytes, 1);
+			Static3.aClass52_7.read(Static5.aClass4_Sub10_Sub1_2.bytes, 0, 1);
 			Static1.anInt1052 = Static5.aClass4_Sub10_Sub1_2.bytes[0] & 0xFF;
 		}
 		if (Static1.anInt1052 == -2) {
@@ -526,7 +526,7 @@ public final class Static21 {
 				return false;
 			}
 			local15 -= 2;
-			Static3.aClass52_7.method1099(0, Static5.aClass4_Sub10_Sub1_2.bytes, 2);
+			Static3.aClass52_7.read(Static5.aClass4_Sub10_Sub1_2.bytes, 0, 2);
 			Static5.aClass4_Sub10_Sub1_2.position = 0;
 			Static1.anInt1052 = Static5.aClass4_Sub10_Sub1_2.readUnsignedShort();
 		}
@@ -534,7 +534,7 @@ public final class Static21 {
 			return false;
 		}
 		Static5.aClass4_Sub10_Sub1_2.position = 0;
-		Static3.aClass52_7.method1099(0, Static5.aClass4_Sub10_Sub1_2.bytes, Static1.anInt1052);
+		Static3.aClass52_7.read(Static5.aClass4_Sub10_Sub1_2.bytes, 0, Static1.anInt1052);
 		Static2.anInt1231 = Static3.anInt2273;
 		Static3.anInt2273 = Static4.anInt3335;
 		Static3.anInt2583 = 0;

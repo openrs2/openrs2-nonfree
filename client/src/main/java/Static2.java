@@ -99,7 +99,7 @@ public final class Static2 {
 	public static int anInt1325;
 
 	@OriginalMember(owner = "client!em", name = "n", descriptor = "Lclient!eo;")
-	public static Class52 aClass52_1;
+	public static BufferedSocket aClass52_1;
 
 	@OriginalMember(owner = "client!em", name = "A", descriptor = "[I")
 	public static int[] anIntArray100;

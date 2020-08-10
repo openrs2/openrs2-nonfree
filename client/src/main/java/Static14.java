@@ -757,7 +757,7 @@ public final class Static14 {
 		try {
 			if (++Static4.anInt2974 > 1500) {
 				if (Static3.aClass52_7 != null) {
-					Static3.aClass52_7.method1103();
+					Static3.aClass52_7.close();
 					Static3.aClass52_7 = null;
 				}
 				if (Static5.anInt4216 >= 1) {
@@ -785,16 +785,16 @@ public final class Static14 {
 				if (Static7.aClass197_5.status != 1) {
 					return;
 				}
-				Static3.aClass52_7 = new Class52((Socket) Static7.aClass197_5.result, GameShell.signLink);
+				Static3.aClass52_7 = new BufferedSocket((Socket) Static7.aClass197_5.result, GameShell.signLink);
 				Static7.aClass197_5 = null;
-				Static3.aClass52_7.method1107(Static3.aClass4_Sub10_Sub1_1.bytes, Static3.aClass4_Sub10_Sub1_1.position);
+				Static3.aClass52_7.write(Static3.aClass4_Sub10_Sub1_1.bytes, Static3.aClass4_Sub10_Sub1_1.position);
 				if (Static1.aClass102_1 != null) {
 					Static1.aClass102_1.method2996();
 				}
 				if (Static6.aClass102_2 != null) {
 					Static6.aClass102_2.method2996();
 				}
-				@Pc(131) int local131 = Static3.aClass52_7.method1105();
+				@Pc(131) int local131 = Static3.aClass52_7.read();
 				if (Static1.aClass102_1 != null) {
 					Static1.aClass102_1.method2996();
 				}
@@ -804,34 +804,34 @@ public final class Static14 {
 				if (local131 != 101) {
 					Static2.anInt1641 = local131;
 					Static6.anInt5117 = 0;
-					Static3.aClass52_7.method1103();
+					Static3.aClass52_7.close();
 					Static3.aClass52_7 = null;
 					return;
 				}
 				Static6.anInt5117 = 3;
 			}
 			if (Static6.anInt5117 == 3) {
-				if (Static3.aClass52_7.method1101() < 2) {
+				if (Static3.aClass52_7.available() < 2) {
 					return;
 				}
-				@Pc(185) int local185 = Static3.aClass52_7.method1105() << 8 | Static3.aClass52_7.method1105();
+				@Pc(185) int local185 = Static3.aClass52_7.read() << 8 | Static3.aClass52_7.read();
 				Static37.method4720(local185);
 				if (client.worldId == -1) {
 					Static6.anInt5117 = 0;
 					Static2.anInt1641 = 6;
-					Static3.aClass52_7.method1103();
+					Static3.aClass52_7.close();
 					Static3.aClass52_7 = null;
 					return;
 				}
 				Static6.anInt5117 = 0;
-				Static3.aClass52_7.method1103();
+				Static3.aClass52_7.close();
 				Static3.aClass52_7 = null;
 				Static8.method101();
 				return;
 			}
 		} catch (@Pc(217) IOException local217) {
 			if (Static3.aClass52_7 != null) {
-				Static3.aClass52_7.method1103();
+				Static3.aClass52_7.close();
 				Static3.aClass52_7 = null;
 			}
 			if (Static5.anInt4216 < 1) {

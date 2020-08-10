@@ -221,7 +221,7 @@ public final class Static3 {
 	public static Class58 aClass58_49;
 
 	@OriginalMember(owner = "client!hk", name = "kb", descriptor = "Lclient!eo;")
-	public static Class52 aClass52_5;
+	public static BufferedSocket aClass52_5;
 
 	@OriginalMember(owner = "client!ho", name = "e", descriptor = "F")
 	public static float aFloat54;
@@ -407,7 +407,7 @@ public final class Static3 {
 	public static Class84 aClass84_10;
 
 	@OriginalMember(owner = "client!jf", name = "d", descriptor = "Lclient!eo;")
-	public static Class52 aClass52_7;
+	public static BufferedSocket aClass52_7;
 
 	@OriginalMember(owner = "client!jh", name = "i", descriptor = "I")
 	public static int anInt2586;

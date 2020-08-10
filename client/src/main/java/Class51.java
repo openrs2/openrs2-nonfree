@@ -15,7 +15,7 @@ public final class Class51 {
 	private long aLong54;
 
 	@OriginalMember(owner = "client!en", name = "C", descriptor = "Lclient!eo;")
-	private Class52 aClass52_2;
+	private BufferedSocket aClass52_2;
 
 	@OriginalMember(owner = "client!en", name = "H", descriptor = "Lclient!ul;")
 	private Class4_Sub3_Sub1_Sub2 aClass4_Sub3_Sub1_Sub2_1;
@@ -61,10 +61,10 @@ public final class Class51 {
 			this.aClass4_Sub10_1.position = 0;
 			this.aClass4_Sub10_1.writeByte(7);
 			this.aClass4_Sub10_1.writeMedium(0);
-			this.aClass52_2.method1107(this.aClass4_Sub10_1.bytes, 4);
+			this.aClass52_2.write(this.aClass4_Sub10_1.bytes, 4);
 		} catch (@Pc(36) IOException local36) {
 			try {
-				this.aClass52_2.method1103();
+				this.aClass52_2.close();
 			} catch (@Pc(42) Exception local42) {
 			}
 			this.aClass52_2 = null;
@@ -81,15 +81,15 @@ public final class Class51 {
 	@OriginalMember(owner = "client!en", name = "a", descriptor = "(B)V")
 	public final void method1086() {
 		if (this.aClass52_2 != null) {
-			this.aClass52_2.method1104();
+			this.aClass52_2.breakConnection();
 		}
 	}
 
 	@OriginalMember(owner = "client!en", name = "a", descriptor = "(ILclient!eo;Z)V")
-	public final void method1087(@OriginalArg(1) Class52 arg0, @OriginalArg(2) boolean arg1) {
+	public final void method1087(@OriginalArg(1) BufferedSocket arg0, @OriginalArg(2) boolean arg1) {
 		if (this.aClass52_2 != null) {
 			try {
-				this.aClass52_2.method1103();
+				this.aClass52_2.close();
 			} catch (@Pc(15) Exception local15) {
 			}
 			this.aClass52_2 = null;
@@ -111,10 +111,10 @@ public final class Class51 {
 								this.aClass4_Sub10_1.writeByte(4);
 								this.aClass4_Sub10_1.writeByte(this.aByte2);
 								this.aClass4_Sub10_1.writeShort(0);
-								this.aClass52_2.method1107(this.aClass4_Sub10_1.bytes, 4);
+								this.aClass52_2.write(this.aClass4_Sub10_1.bytes, 4);
 							} catch (@Pc(113) IOException local113) {
 								try {
-									this.aClass52_2.method1103();
+									this.aClass52_2.close();
 								} catch (@Pc(119) Exception local119) {
 								}
 								this.aClass52_2 = null;
@@ -156,14 +156,14 @@ public final class Class51 {
 	@OriginalMember(owner = "client!en", name = "f", descriptor = "(I)V")
 	public final void method1090() {
 		if (this.aClass52_2 != null) {
-			this.aClass52_2.method1103();
+			this.aClass52_2.close();
 		}
 	}
 
 	@OriginalMember(owner = "client!en", name = "g", descriptor = "(I)V")
 	public final void method1091() {
 		try {
-			this.aClass52_2.method1103();
+			this.aClass52_2.close();
 		} catch (@Pc(9) Exception local9) {
 		}
 		this.aClass52_2 = null;
@@ -186,10 +186,10 @@ public final class Class51 {
 			this.aClass4_Sub10_1.position = 0;
 			this.aClass4_Sub10_1.writeByte(arg0 ? 2 : 3);
 			this.aClass4_Sub10_1.writeMedium(0);
-			this.aClass52_2.method1107(this.aClass4_Sub10_1.bytes, 4);
+			this.aClass52_2.write(this.aClass4_Sub10_1.bytes, 4);
 		} catch (@Pc(43) IOException local43) {
 			try {
-				this.aClass52_2.method1103();
+				this.aClass52_2.close();
 			} catch (@Pc(49) Exception local49) {
 			}
 			this.anInt1358++;
@@ -212,10 +212,10 @@ public final class Class51 {
 			this.aClass4_Sub10_1.position = 0;
 			this.aClass4_Sub10_1.writeByte(6);
 			this.aClass4_Sub10_1.writeMedium(3);
-			this.aClass52_2.method1107(this.aClass4_Sub10_1.bytes, 4);
+			this.aClass52_2.write(this.aClass4_Sub10_1.bytes, 4);
 		} catch (@Pc(38) IOException local38) {
 			try {
-				this.aClass52_2.method1103();
+				this.aClass52_2.close();
 			} catch (@Pc(44) Exception local44) {
 			}
 			this.aClass52_2 = null;
@@ -236,7 +236,7 @@ public final class Class51 {
 			this.anInt1357 += local18;
 			if (this.anInt1357 > 30000) {
 				try {
-					this.aClass52_2.method1103();
+					this.aClass52_2.close();
 				} catch (@Pc(46) Exception local46) {
 				}
 				this.aClass52_2 = null;
@@ -246,23 +246,23 @@ public final class Class51 {
 			return this.method1092() == 0 && this.method1080() == 0;
 		}
 		try {
-			this.aClass52_2.method1106();
+			this.aClass52_2.checkError();
 			for (@Pc(87) Class4_Sub3_Sub1_Sub2 local87 = (Class4_Sub3_Sub1_Sub2) this.aClass175_5.method4332(); local87 != null; local87 = (Class4_Sub3_Sub1_Sub2) this.aClass175_5.method4340()) {
 				this.aClass4_Sub10_1.position = 0;
 				this.aClass4_Sub10_1.writeByte(1);
 				this.aClass4_Sub10_1.writeMedium((int) local87.aLong213);
-				this.aClass52_2.method1107(this.aClass4_Sub10_1.bytes, 4);
+				this.aClass52_2.write(this.aClass4_Sub10_1.bytes, 4);
 				this.aClass175_6.method4333(local87);
 			}
 			for (@Pc(146) Class4_Sub3_Sub1_Sub2 local146 = (Class4_Sub3_Sub1_Sub2) this.aClass175_7.method4332(); local146 != null; local146 = (Class4_Sub3_Sub1_Sub2) this.aClass175_7.method4340()) {
 				this.aClass4_Sub10_1.position = 0;
 				this.aClass4_Sub10_1.writeByte(0);
 				this.aClass4_Sub10_1.writeMedium((int) local146.aLong213);
-				this.aClass52_2.method1107(this.aClass4_Sub10_1.bytes, 4);
+				this.aClass52_2.write(this.aClass4_Sub10_1.bytes, 4);
 				this.aClass175_8.method4333(local146);
 			}
 			for (@Pc(188) int local188 = 0; local188 < 100; local188++) {
-				@Pc(198) int local198 = this.aClass52_2.method1101();
+				@Pc(198) int local198 = this.aClass52_2.available();
 				if (local198 < 0) {
 					throw new IOException();
 				}
@@ -285,7 +285,7 @@ public final class Class51 {
 					if (local198 < local242) {
 						local242 = local198;
 					}
-					this.aClass52_2.method1099(this.aClass4_Sub3_Sub1_Sub2_1.aClass4_Sub10_10.position, this.aClass4_Sub3_Sub1_Sub2_1.aClass4_Sub10_10.bytes, local242);
+					this.aClass52_2.read(this.aClass4_Sub3_Sub1_Sub2_1.aClass4_Sub10_10.bytes, this.aClass4_Sub3_Sub1_Sub2_1.aClass4_Sub10_10.position, local242);
 					if (this.aByte2 != 0) {
 						for (@Pc(301) int local301 = 0; local301 < local242; local301++) {
 							this.aClass4_Sub3_Sub1_Sub2_1.aClass4_Sub10_10.bytes[local301 + this.aClass4_Sub3_Sub1_Sub2_1.aClass4_Sub10_10.position] ^= this.aByte2;
@@ -307,7 +307,7 @@ public final class Class51 {
 					if (local391 > local198) {
 						local391 = local198;
 					}
-					this.aClass52_2.method1099(this.aClass4_Sub10_2.position, this.aClass4_Sub10_2.bytes, local391);
+					this.aClass52_2.read(this.aClass4_Sub10_2.bytes, this.aClass4_Sub10_2.position, local391);
 					if (this.aByte2 != 0) {
 						for (@Pc(416) int local416 = 0; local416 < local391; local416++) {
 							this.aClass4_Sub10_2.bytes[this.aClass4_Sub10_2.position + local416] = (byte) (this.aClass4_Sub10_2.bytes[this.aClass4_Sub10_2.position + local416] ^ this.aByte2);
@@ -357,7 +357,7 @@ public final class Class51 {
 			return true;
 		} catch (@Pc(657) IOException local657) {
 			try {
-				this.aClass52_2.method1103();
+				this.aClass52_2.close();
 			} catch (@Pc(663) Exception local663) {
 			}
 			this.aClass52_2 = null;

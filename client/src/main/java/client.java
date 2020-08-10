@@ -614,7 +614,7 @@ public final class client extends GameShell {
 		}
 		Static4.aClass99_1 = null;
 		if (Static3.aClass52_7 != null) {
-			Static3.aClass52_7.method1103();
+			Static3.aClass52_7.close();
 			Static3.aClass52_7 = null;
 		}
 		Static11.method588(GameShell.canvas);
@@ -801,17 +801,17 @@ public final class client extends GameShell {
 				}
 			}
 			if (Static6.anInt4952 == 2) {
-				Static3.aClass52_5 = new Class52((Socket) Static5.aClass197_4.result, GameShell.signLink);
+				Static3.aClass52_5 = new BufferedSocket((Socket) Static5.aClass197_4.result, GameShell.signLink);
 				@Pc(198) Buffer local198 = new Buffer(5);
 				local198.writeByte(15);
 				local198.writeInt(550);
-				Static3.aClass52_5.method1107(local198.bytes, 5);
+				Static3.aClass52_5.write(local198.bytes, 5);
 				Static6.anInt4952++;
 				Static1.aLong29 = MonotonicClock.currentTimeMillis();
 			}
 			if (Static6.anInt4952 == 3) {
-				if (Static4.anInt3304 == 0 || Static4.anInt3304 == 5 || Static3.aClass52_5.method1101() > 0) {
-					@Pc(259) int local259 = Static3.aClass52_5.method1105();
+				if (Static4.anInt3304 == 0 || Static4.anInt3304 == 5 || Static3.aClass52_5.available() > 0) {
+					@Pc(259) int local259 = Static3.aClass52_5.read();
 					if (local259 != 0) {
 						this.method684(local259);
 						return;

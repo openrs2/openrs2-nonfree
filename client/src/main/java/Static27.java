@@ -570,7 +570,7 @@ public final class Static27 {
 			}
 			if (arg0.equalsIgnoreCase("::breakcon")) {
 				GameShell.signLink.breakConnection();
-				Static3.aClass52_7.method1104();
+				Static3.aClass52_7.breakConnection();
 				Static7.aClass51_2.method1086();
 			}
 			if (arg0.equalsIgnoreCase("::replacecanvas")) {
@@ -929,7 +929,7 @@ public final class Static27 {
 	@OriginalMember(owner = "client!ok", name = "a", descriptor = "(BI)I")
 	public static int method3235(@OriginalArg(1) int arg0) {
 		if (Static3.aClass52_7 != null) {
-			Static3.aClass52_7.method1103();
+			Static3.aClass52_7.close();
 			Static3.aClass52_7 = null;
 		}
 		Static6.anInt4618++;
