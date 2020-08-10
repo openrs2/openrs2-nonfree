@@ -4,7 +4,7 @@ import dev.openrs2.deob.annotation.Pc;
 
 public final class Js5Compression {
 	@OriginalMember(owner = "client!gh", name = "e", descriptor = "Lclient!jb;")
-	private static final Class93 GZIP_DECOMPRESSOR = new Class93();
+	private static final GzipDecompressor GZIP_DECOMPRESSOR = new GzipDecompressor();
 
 	@OriginalMember(owner = "client!wf", name = "Tc", descriptor = "I")
 	private static final int MAX_LENGTH = 0;
@@ -29,7 +29,7 @@ public final class Js5Compression {
 			if (type == 1) {
 				Static10.method351(out, uncompressedLen, in, len);
 			} else {
-				GZIP_DECOMPRESSOR.method1979(buffer, out);
+				GZIP_DECOMPRESSOR.gunzip(buffer, out);
 			}
 			return out;
 		}
