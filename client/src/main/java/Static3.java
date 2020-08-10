@@ -724,9 +724,6 @@ public final class Static3 {
 	@OriginalMember(owner = "client!ik", name = "M", descriptor = "I")
 	public static volatile int anInt2426 = 0;
 
-	@OriginalMember(owner = "client!ik", name = "W", descriptor = "[B")
-	public static final byte[] aByteArray17 = new byte[520];
-
 	@OriginalMember(owner = "client!il", name = "f", descriptor = "[I")
 	public static final int[] anIntArray217 = new int[50];
 

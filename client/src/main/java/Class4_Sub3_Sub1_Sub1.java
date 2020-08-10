@@ -11,7 +11,7 @@ public final class Class4_Sub3_Sub1_Sub1 extends Class4_Sub3_Sub1 {
 	public byte[] aByteArray3;
 
 	@OriginalMember(owner = "client!al", name = "Y", descriptor = "Lclient!fm;")
-	public Class60 aClass60_1;
+	public Cache aClass60_1;
 
 	@OriginalMember(owner = "client!al", name = "d", descriptor = "(I)I")
 	@Override

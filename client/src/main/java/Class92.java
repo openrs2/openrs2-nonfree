@@ -48,9 +48,9 @@ public final class Class92 implements Runnable {
 			}
 			try {
 				if (local15.anInt181 == 2) {
-					local15.aClass60_1.method1482(local15.aByteArray3.length, local15.aByteArray3, (int) local15.aLong213);
+					local15.aClass60_1.write((int) local15.aLong213, local15.aByteArray3, local15.aByteArray3.length);
 				} else if (local15.anInt181 == 3) {
-					local15.aByteArray3 = local15.aClass60_1.method1481((int) local15.aLong213);
+					local15.aByteArray3 = local15.aClass60_1.read((int) local15.aLong213);
 				}
 			} catch (@Pc(76) Exception local76) {
 				TracingException.report(local76, null);
@@ -60,7 +60,7 @@ public final class Class92 implements Runnable {
 	}
 
 	@OriginalMember(owner = "client!ja", name = "a", descriptor = "(ILclient!fm;I)Lclient!al;")
-	public final Class4_Sub3_Sub1_Sub1 method1965(@OriginalArg(1) Class60 arg0, @OriginalArg(2) int arg1) {
+	public final Class4_Sub3_Sub1_Sub1 method1965(@OriginalArg(1) Cache arg0, @OriginalArg(2) int arg1) {
 		@Pc(7) Class4_Sub3_Sub1_Sub1 local7 = new Class4_Sub3_Sub1_Sub1();
 		local7.anInt181 = 3;
 		local7.aClass60_1 = arg0;
@@ -71,7 +71,7 @@ public final class Class92 implements Runnable {
 	}
 
 	@OriginalMember(owner = "client!ja", name = "a", descriptor = "(BLclient!fm;[BI)Lclient!al;")
-	public final Class4_Sub3_Sub1_Sub1 method1968(@OriginalArg(1) Class60 arg0, @OriginalArg(2) byte[] arg1, @OriginalArg(3) int arg2) {
+	public final Class4_Sub3_Sub1_Sub1 method1968(@OriginalArg(1) Cache arg0, @OriginalArg(2) byte[] arg1, @OriginalArg(3) int arg2) {
 		@Pc(15) Class4_Sub3_Sub1_Sub1 local15 = new Class4_Sub3_Sub1_Sub1();
 		local15.aLong213 = arg2;
 		local15.aClass60_1 = arg0;
@@ -105,7 +105,7 @@ public final class Class92 implements Runnable {
 	}
 
 	@OriginalMember(owner = "client!ja", name = "a", descriptor = "(BLclient!fm;I)Lclient!al;")
-	public final Class4_Sub3_Sub1_Sub1 method1973(@OriginalArg(1) Class60 arg0, @OriginalArg(2) int arg1) {
+	public final Class4_Sub3_Sub1_Sub1 method1973(@OriginalArg(1) Cache arg0, @OriginalArg(2) int arg1) {
 		@Pc(5) Class4_Sub3_Sub1_Sub1 local5 = new Class4_Sub3_Sub1_Sub1();
 		local5.anInt181 = 1;
 		synchronized (this.aClass175_10) {
@@ -122,7 +122,7 @@ public final class Class92 implements Runnable {
 				local23 = (Class4_Sub3_Sub1_Sub1) this.aClass175_10.method4340();
 			}
 		}
-		local5.aByteArray3 = arg0.method1481(arg1);
+		local5.aByteArray3 = arg0.read(arg1);
 		local5.aBoolean364 = false;
 		local5.aBoolean363 = true;
 		return local5;

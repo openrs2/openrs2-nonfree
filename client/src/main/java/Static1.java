@@ -210,7 +210,7 @@ public final class Static1 {
 	public static Class117 aClass117_1;
 
 	@OriginalMember(owner = "client!ck", name = "bb", descriptor = "Lclient!fm;")
-	public static Class60 aClass60_2;
+	public static Cache aClass60_2;
 
 	@OriginalMember(owner = "client!ck", name = "fb", descriptor = "[Lclient!uj;")
 	public static Class4_Sub3_Sub14[] aClass4_Sub3_Sub14Array3;

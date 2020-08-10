@@ -696,7 +696,7 @@ public final class client extends GameShell {
 					Static4.aClass189Array1[local174] = new BufferedFile(GameShell.signLink.cacheIndexes[local174], 6000, 0);
 				}
 				Static3.aClass189_5 = new BufferedFile(GameShell.signLink.cacheMasterIndex, 6000, 0);
-				Static1.aClass60_2 = new Class60(255, Static3.aClass189_4, Static3.aClass189_5, 500000);
+				Static1.aClass60_2 = new Cache(Static3.aClass189_4, Static3.aClass189_5, 255, 500000);
 				Static1.aClass189_1 = new BufferedFile(GameShell.signLink.uid, 24, 0);
 				GameShell.signLink.cacheMasterIndex = null;
 				GameShell.signLink.cacheIndexes = null;

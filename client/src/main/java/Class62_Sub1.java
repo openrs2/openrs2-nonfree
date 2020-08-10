@@ -31,7 +31,7 @@ public final class Class62_Sub1 extends Class62 {
 	private long aLong199 = 0L;
 
 	@OriginalMember(owner = "client!wb", name = "n", descriptor = "Lclient!fm;")
-	private final Class60 aClass60_4;
+	private final Cache aClass60_4;
 
 	@OriginalMember(owner = "client!wb", name = "x", descriptor = "I")
 	private final int anInt5790;
@@ -55,7 +55,7 @@ public final class Class62_Sub1 extends Class62 {
 	private final Class92 aClass92_3;
 
 	@OriginalMember(owner = "client!wb", name = "l", descriptor = "Lclient!fm;")
-	private final Class60 aClass60_3;
+	private final Cache aClass60_3;
 
 	@OriginalMember(owner = "client!wb", name = "g", descriptor = "Lclient!en;")
 	private final Class51 aClass51_3;
@@ -64,7 +64,7 @@ public final class Class62_Sub1 extends Class62 {
 	private Class4_Sub3_Sub1 aClass4_Sub3_Sub1_1;
 
 	@OriginalMember(owner = "client!wb", name = "<init>", descriptor = "(ILclient!fm;Lclient!fm;Lclient!en;Lclient!ja;IIZ)V")
-	public Class62_Sub1(@OriginalArg(0) int arg0, @OriginalArg(1) Class60 arg1, @OriginalArg(2) Class60 arg2, @OriginalArg(3) Class51 arg3, @OriginalArg(4) Class92 arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) boolean arg7) {
+	public Class62_Sub1(@OriginalArg(0) int arg0, @OriginalArg(1) Cache arg1, @OriginalArg(2) Cache arg2, @OriginalArg(3) Class51 arg3, @OriginalArg(4) Class92 arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) boolean arg7) {
 		this.aClass60_4 = arg1;
 		this.anInt5790 = arg0;
 		if (this.aClass60_4 == null) {

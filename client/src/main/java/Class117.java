@@ -68,7 +68,7 @@ public final class Class117 {
 	}
 
 	@OriginalMember(owner = "client!mg", name = "a", descriptor = "(Lclient!fm;BLclient!fm;ZI)Lclient!wb;")
-	private Class62_Sub1 method2712(@OriginalArg(0) Class60 arg0, @OriginalArg(2) Class60 arg1, @OriginalArg(4) int arg2) {
+	private Class62_Sub1 method2712(@OriginalArg(0) Cache arg0, @OriginalArg(2) Cache arg1, @OriginalArg(4) int arg2) {
 		if (this.aClass4_Sub10_6 == null) {
 			throw new RuntimeException();
 		}
@@ -87,7 +87,7 @@ public final class Class117 {
 	}
 
 	@OriginalMember(owner = "client!mg", name = "a", descriptor = "(Lclient!fm;Lclient!fm;IB)Lclient!wb;")
-	public final Class62_Sub1 method2714(@OriginalArg(0) Class60 arg0, @OriginalArg(1) Class60 arg1, @OriginalArg(2) int arg2) {
+	public final Class62_Sub1 method2714(@OriginalArg(0) Cache arg0, @OriginalArg(1) Cache arg1, @OriginalArg(2) int arg2) {
 		return this.method2712(arg0, arg1, arg2);
 	}
 }
