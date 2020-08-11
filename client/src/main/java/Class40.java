@@ -7,7 +7,7 @@ import dev.openrs2.deob.annotation.Pc;
 public final class Class40 {
 
 	@OriginalMember(owner = "client!dj", name = "f", descriptor = "Lclient!lh;")
-	private Class4_Sub3 aClass4_Sub3_18 = new Class4_Sub3();
+	private SecondaryNode aClass4_Sub3_18 = new SecondaryNode();
 
 	@OriginalMember(owner = "client!dj", name = "o", descriptor = "Lclient!uk;")
 	private final Class175 aClass175_3 = new Class175();
@@ -37,15 +37,15 @@ public final class Class40 {
 	}
 
 	@OriginalMember(owner = "client!dj", name = "a", descriptor = "(JILclient!lh;)V")
-	public final void method888(@OriginalArg(0) long arg0, @OriginalArg(2) Class4_Sub3 arg1) {
+	public final void method888(@OriginalArg(0) long arg0, @OriginalArg(2) SecondaryNode arg1) {
 		if (this.anInt1044 == 0) {
-			@Pc(15) Class4_Sub3 local15 = this.aClass175_3.method4336();
+			@Pc(15) SecondaryNode local15 = this.aClass175_3.method4336();
 			local15.unlink();
-			local15.method4819();
+			local15.unlinkSecondary();
 			if (this.aClass4_Sub3_18 == local15) {
-				@Pc(31) Class4_Sub3 local31 = this.aClass175_3.method4336();
+				@Pc(31) SecondaryNode local31 = this.aClass175_3.method4336();
 				local31.unlink();
-				local31.method4819();
+				local31.unlinkSecondary();
 			}
 		} else {
 			this.anInt1044--;
@@ -55,8 +55,8 @@ public final class Class40 {
 	}
 
 	@OriginalMember(owner = "client!dj", name = "a", descriptor = "(IJ)Lclient!lh;")
-	public final Class4_Sub3 method889(@OriginalArg(1) long arg0) {
-		@Pc(18) Class4_Sub3 local18 = (Class4_Sub3) this.aClass84_4.get(arg0);
+	public final SecondaryNode method889(@OriginalArg(1) long arg0) {
+		@Pc(18) SecondaryNode local18 = (SecondaryNode) this.aClass84_4.get(arg0);
 		if (local18 != null) {
 			this.aClass175_3.method4333(local18);
 		}
@@ -72,7 +72,7 @@ public final class Class40 {
 	public final void method893() {
 		this.aClass175_3.method4337();
 		this.aClass84_4.clear();
-		this.aClass4_Sub3_18 = new Class4_Sub3();
+		this.aClass4_Sub3_18 = new SecondaryNode();
 		this.anInt1044 = this.anInt1045;
 	}
 }

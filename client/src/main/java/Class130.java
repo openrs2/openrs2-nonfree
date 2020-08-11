@@ -10,28 +10,28 @@ public final class Class130 {
 	private Class175 aClass175_13;
 
 	@OriginalMember(owner = "client!om", name = "n", descriptor = "Lclient!lh;")
-	private Class4_Sub3 aClass4_Sub3_51;
+	private SecondaryNode aClass4_Sub3_51;
 
 	@OriginalMember(owner = "client!om", name = "a", descriptor = "(I)Lclient!lh;")
-	public final Class4_Sub3 method3250() {
-		@Pc(6) Class4_Sub3 local6 = this.aClass4_Sub3_51;
+	public final SecondaryNode method3250() {
+		@Pc(6) SecondaryNode local6 = this.aClass4_Sub3_51;
 		if (local6 == this.aClass175_13.aClass4_Sub3_60) {
 			this.aClass4_Sub3_51 = null;
 			return null;
 		} else {
-			this.aClass4_Sub3_51 = local6.aClass4_Sub3_75;
+			this.aClass4_Sub3_51 = local6.secondaryNext;
 			return local6;
 		}
 	}
 
 	@OriginalMember(owner = "client!om", name = "d", descriptor = "(B)Lclient!lh;")
-	public final Class4_Sub3 method3255() {
-		@Pc(8) Class4_Sub3 local8 = this.aClass175_13.aClass4_Sub3_60.aClass4_Sub3_75;
+	public final SecondaryNode method3255() {
+		@Pc(8) SecondaryNode local8 = this.aClass175_13.aClass4_Sub3_60.secondaryNext;
 		if (this.aClass175_13.aClass4_Sub3_60 == local8) {
 			this.aClass4_Sub3_51 = null;
 			return null;
 		} else {
-			this.aClass4_Sub3_51 = local8.aClass4_Sub3_75;
+			this.aClass4_Sub3_51 = local8.secondaryNext;
 			return local8;
 		}
 	}

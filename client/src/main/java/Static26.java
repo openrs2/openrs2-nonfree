@@ -692,7 +692,7 @@ public final class Static26 {
 		@Pc(10) Class4_Sub3_Sub9 local10 = (Class4_Sub3_Sub9) Static3.aClass175_11.method4332();
 		if (local10 != null) {
 			local10.unlink();
-			local10.method4819();
+			local10.unlinkSecondary();
 			return local10;
 		}
 		@Pc(35) Class4_Sub3_Sub9 local35;
@@ -705,8 +705,8 @@ public final class Static26 {
 				return null;
 			}
 			local35.unlink();
-			local35.method4819();
-		} while ((local35.aLong213 & Long.MIN_VALUE) == 0L);
+			local35.unlinkSecondary();
+		} while ((local35.secondaryKey & Long.MIN_VALUE) == 0L);
 		return local35;
 	}
 

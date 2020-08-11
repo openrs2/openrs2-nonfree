@@ -341,7 +341,7 @@ public final class Class20_Sub3 extends Class20 {
 		this.aBoolean250 = true;
 		for (@Pc(8) Class4_Sub3_Sub24 local8 = (Class4_Sub3_Sub24) this.aClass112_24.head(); local8 != null; local8 = (Class4_Sub3_Sub24) this.aClass112_24.next()) {
 			if (local8.aClass167_1.aClass37_1.anInt907 == 1) {
-				local8.method4819();
+				local8.unlinkSecondary();
 			}
 		}
 		this.aClass20_Sub2_Sub1Array2 = new Class20_Sub2_Sub1[8192];
@@ -411,8 +411,8 @@ public final class Class20_Sub3 extends Class20 {
 			if (!arg1) {
 				local16.unlink();
 				this.anInt3522--;
-				if (local16.method4821()) {
-					local16.method4819();
+				if (local16.isSecondaryLinked()) {
+					local16.unlinkSecondary();
 					Static5.anInt3524--;
 				}
 			}

@@ -139,7 +139,7 @@ public final class Class51 {
 		@Pc(20) Class4_Sub3_Sub1_Sub2 local20 = new Class4_Sub3_Sub1_Sub2();
 		local20.aByte22 = arg0;
 		local20.aBoolean363 = arg2;
-		local20.aLong213 = local16;
+		local20.secondaryKey = local16;
 		if (arg2) {
 			if (this.method1092() >= 20) {
 				throw new RuntimeException();
@@ -250,14 +250,14 @@ public final class Class51 {
 			for (@Pc(87) Class4_Sub3_Sub1_Sub2 local87 = (Class4_Sub3_Sub1_Sub2) this.aClass175_5.method4332(); local87 != null; local87 = (Class4_Sub3_Sub1_Sub2) this.aClass175_5.method4340()) {
 				this.aClass4_Sub10_1.position = 0;
 				this.aClass4_Sub10_1.writeByte(1);
-				this.aClass4_Sub10_1.writeMedium((int) local87.aLong213);
+				this.aClass4_Sub10_1.writeMedium((int) local87.secondaryKey);
 				this.aClass52_2.write(this.aClass4_Sub10_1.bytes, 4);
 				this.aClass175_6.method4333(local87);
 			}
 			for (@Pc(146) Class4_Sub3_Sub1_Sub2 local146 = (Class4_Sub3_Sub1_Sub2) this.aClass175_7.method4332(); local146 != null; local146 = (Class4_Sub3_Sub1_Sub2) this.aClass175_7.method4340()) {
 				this.aClass4_Sub10_1.position = 0;
 				this.aClass4_Sub10_1.writeByte(0);
-				this.aClass4_Sub10_1.writeMedium((int) local146.aLong213);
+				this.aClass4_Sub10_1.writeMedium((int) local146.secondaryKey);
 				this.aClass52_2.write(this.aClass4_Sub10_1.bytes, 4);
 				this.aClass175_8.method4333(local146);
 			}
@@ -296,7 +296,7 @@ public final class Class51 {
 					@Pc(343) Class4_Sub3_Sub1_Sub2 local343 = this.aClass4_Sub3_Sub1_Sub2_1;
 					local343.anInt5384 += local242;
 					if (local253 == this.aClass4_Sub3_Sub1_Sub2_1.aClass4_Sub10_10.position) {
-						this.aClass4_Sub3_Sub1_Sub2_1.method4819();
+						this.aClass4_Sub3_Sub1_Sub2_1.unlinkSecondary();
 						this.aClass4_Sub3_Sub1_Sub2_1.aBoolean364 = false;
 						this.aClass4_Sub3_Sub1_Sub2_1 = null;
 					} else if (this.aClass4_Sub3_Sub1_Sub2_1.anInt5384 == 512) {
@@ -327,10 +327,10 @@ public final class Class51 {
 							@Pc(510) long local510 = (long) (local478 + (local473 << 16));
 							@Pc(520) Class4_Sub3_Sub1_Sub2 local520;
 							if (local498) {
-								for (local520 = (Class4_Sub3_Sub1_Sub2) this.aClass175_8.method4332(); local520 != null && local520.aLong213 != local510; local520 = (Class4_Sub3_Sub1_Sub2) this.aClass175_8.method4340()) {
+								for (local520 = (Class4_Sub3_Sub1_Sub2) this.aClass175_8.method4332(); local520 != null && local520.secondaryKey != local510; local520 = (Class4_Sub3_Sub1_Sub2) this.aClass175_8.method4340()) {
 								}
 							} else {
-								for (local520 = (Class4_Sub3_Sub1_Sub2) this.aClass175_6.method4332(); local520 != null && local510 != local520.aLong213; local520 = (Class4_Sub3_Sub1_Sub2) this.aClass175_6.method4340()) {
+								for (local520 = (Class4_Sub3_Sub1_Sub2) this.aClass175_6.method4332(); local520 != null && local510 != local520.secondaryKey; local520 = (Class4_Sub3_Sub1_Sub2) this.aClass175_6.method4340()) {
 								}
 							}
 							if (local520 == null) {

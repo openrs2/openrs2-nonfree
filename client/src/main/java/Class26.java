@@ -45,14 +45,14 @@ public final class Class26 {
 		if (this.anInt532 == 0) {
 			@Pc(31) Class4_Sub3_Sub4 local31 = (Class4_Sub3_Sub4) this.aClass175_2.method4336();
 			local31.unlink();
-			local31.method4819();
+			local31.unlinkSecondary();
 		} else {
 			this.anInt532--;
 		}
 		@Pc(42) Class4_Sub3_Sub4_Sub1 local42 = new Class4_Sub3_Sub4_Sub1(arg0);
 		this.aClass84_1.put(arg1, local42);
 		this.aClass175_2.method4333(local42);
-		local42.aLong213 = 0L;
+		local42.secondaryKey = 0L;
 	}
 
 	@OriginalMember(owner = "client!cc", name = "a", descriptor = "(B)V")
@@ -67,7 +67,7 @@ public final class Class26 {
 		@Pc(10) Class4_Sub3_Sub4 local10 = (Class4_Sub3_Sub4) this.aClass84_1.get(arg0);
 		if (local10 != null) {
 			local10.unlink();
-			local10.method4819();
+			local10.unlinkSecondary();
 			this.anInt532++;
 		}
 	}
@@ -77,7 +77,7 @@ public final class Class26 {
 		for (@Pc(16) Class4_Sub3_Sub4 local16 = (Class4_Sub3_Sub4) this.aClass175_2.method4332(); local16 != null; local16 = (Class4_Sub3_Sub4) this.aClass175_2.method4340()) {
 			if (local16.method2320()) {
 				local16.unlink();
-				local16.method4819();
+				local16.unlinkSecondary();
 				this.anInt532++;
 			}
 		}
@@ -92,15 +92,15 @@ public final class Class26 {
 			if (local22.method2320()) {
 				if (local22.method2319() == null) {
 					local22.unlink();
-					local22.method4819();
+					local22.unlinkSecondary();
 					this.anInt532++;
 				}
-			} else if (++local22.aLong213 > (long) arg0) {
+			} else if (++local22.secondaryKey > (long) arg0) {
 				@Pc(45) Class4_Sub3_Sub4 local45 = Static5.aClass67_1.method2015(local22);
 				this.aClass84_1.put(local22.key, local45);
 				Static23.method2452(local22, local45);
 				local22.unlink();
-				local22.method4819();
+				local22.unlinkSecondary();
 			}
 		}
 	}
@@ -114,7 +114,7 @@ public final class Class26 {
 		@Pc(26) Object local26 = local10.method2319();
 		if (local26 == null) {
 			local10.unlink();
-			local10.method4819();
+			local10.unlinkSecondary();
 			this.anInt532++;
 			return null;
 		}
@@ -122,12 +122,12 @@ public final class Class26 {
 			@Pc(61) Class4_Sub3_Sub4_Sub1 local61 = new Class4_Sub3_Sub4_Sub1(local26);
 			this.aClass84_1.put(local10.key, local61);
 			this.aClass175_2.method4333(local61);
-			local61.aLong213 = 0L;
+			local61.secondaryKey = 0L;
 			local10.unlink();
-			local10.method4819();
+			local10.unlinkSecondary();
 		} else {
 			this.aClass175_2.method4333(local10);
-			local10.aLong213 = 0L;
+			local10.secondaryKey = 0L;
 		}
 		return local26;
 	}

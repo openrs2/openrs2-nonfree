@@ -6,7 +6,7 @@ import dev.openrs2.deob.annotation.OriginalMember;
 import dev.openrs2.deob.annotation.Pc;
 
 @OriginalClass("client!gl")
-public abstract class Class4_Sub3_Sub5 extends Class4_Sub3 {
+public abstract class Class4_Sub3_Sub5 extends SecondaryNode {
 
 	@OriginalMember(owner = "client!gl", name = "C", descriptor = "[B")
 	private byte[] aByteArray22;

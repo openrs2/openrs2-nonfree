@@ -108,14 +108,14 @@ public final class Static23 {
 	}
 
 	@OriginalMember(owner = "client!la", name = "a", descriptor = "(Lclient!lh;BLclient!lh;)V")
-	public static void method2452(@OriginalArg(0) Class4_Sub3 arg0, @OriginalArg(2) Class4_Sub3 arg1) {
-		if (arg1.aClass4_Sub3_74 != null) {
-			arg1.method4819();
+	public static void method2452(@OriginalArg(0) SecondaryNode arg0, @OriginalArg(2) SecondaryNode arg1) {
+		if (arg1.secondaryPrev != null) {
+			arg1.unlinkSecondary();
 		}
-		arg1.aClass4_Sub3_75 = arg0.aClass4_Sub3_75;
-		arg1.aClass4_Sub3_74 = arg0;
-		arg1.aClass4_Sub3_74.aClass4_Sub3_75 = arg1;
-		arg1.aClass4_Sub3_75.aClass4_Sub3_74 = arg1;
+		arg1.secondaryNext = arg0.secondaryNext;
+		arg1.secondaryPrev = arg0;
+		arg1.secondaryPrev.secondaryNext = arg1;
+		arg1.secondaryNext.secondaryPrev = arg1;
 	}
 
 	@OriginalMember(owner = "client!la", name = "a", descriptor = "(ZB)V")

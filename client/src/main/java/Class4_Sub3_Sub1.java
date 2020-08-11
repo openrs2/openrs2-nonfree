@@ -2,7 +2,7 @@ import dev.openrs2.deob.annotation.OriginalClass;
 import dev.openrs2.deob.annotation.OriginalMember;
 
 @OriginalClass("client!ng")
-public abstract class Class4_Sub3_Sub1 extends Class4_Sub3 {
+public abstract class Class4_Sub3_Sub1 extends SecondaryNode {
 
 	@OriginalMember(owner = "client!ng", name = "y", descriptor = "Z")
 	public boolean aBoolean363;
