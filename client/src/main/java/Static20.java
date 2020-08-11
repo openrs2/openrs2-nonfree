@@ -1459,7 +1459,7 @@ public final class Static20 {
 	}
 
 	@OriginalMember(owner = "client!jb", name = "a", descriptor = "(ILclient!oj;)V")
-	public static void method1978(@OriginalArg(1) Class129 arg0) {
+	public static void method1978(@OriginalArg(1) HuffmanCodec arg0) {
 		Static2.aClass129_1 = arg0;
 	}
 

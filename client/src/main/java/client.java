@@ -522,7 +522,7 @@ public final class client extends GameShell {
 			Static5.anInt4285 = 120;
 		} else if (Static5.anInt4285 == 120) {
 			if (Static6.aClass58_71.method1340("huffman", "")) {
-				@Pc(1066) Class129 local1066 = new Class129(Static6.aClass58_71.method1358("", "huffman"));
+				@Pc(1066) HuffmanCodec local1066 = new HuffmanCodec(Static6.aClass58_71.method1358("", "huffman"));
 				Static20.method1978(local1066);
 				Static5.aString243 = LocalisedText.MAINLOAD120B;
 				Static6.anInt4621 = 80;

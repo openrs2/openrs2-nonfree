@@ -2717,7 +2717,7 @@ public final class Static29 {
 				local12 = 32767;
 			}
 			@Pc(24) byte[] local24 = new byte[local12];
-			arg0.position += Static2.aClass129_1.method3233(0, arg0.position, arg0.bytes, local24, local12);
+			arg0.position += Static2.aClass129_1.decode(arg0.bytes, arg0.position, local24, 0, local12);
 			return Cp1252Charset.decodeString(local24, 0, local12);
 		} catch (@Pc(48) Exception local48) {
 			return "Cabbage";
