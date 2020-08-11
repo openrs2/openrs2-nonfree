@@ -16,7 +16,7 @@ public final class HashTable {
 	private Node iteratorCursor;
 
 	@OriginalMember(owner = "client!ic", name = "r", descriptor = "I")
-	private int iteratorKey = 0;
+	private int iteratorBucket = 0;
 
 	@OriginalMember(owner = "client!ic", name = "n", descriptor = "[Lclient!ni;")
 	public final Node[] buckets;
@@ -67,24 +67,24 @@ public final class HashTable {
 
 	@OriginalMember(owner = "client!ic", name = "c", descriptor = "(I)Lclient!ni;")
 	public final Node head() {
-		this.iteratorKey = 0;
+		this.iteratorBucket = 0;
 		return this.next();
 	}
 
 	@OriginalMember(owner = "client!ic", name = "a", descriptor = "(B)Lclient!ni;")
 	public final Node next() {
-		if (this.iteratorKey > 0 && this.buckets[this.iteratorKey - 1] != this.iteratorCursor) {
+		if (this.iteratorBucket > 0 && this.buckets[this.iteratorBucket - 1] != this.iteratorCursor) {
 			@Pc(25) Node node = this.iteratorCursor;
 			this.iteratorCursor = node.next;
 			return node;
 		}
 		@Pc(58) Node node;
 		do {
-			if (this.iteratorKey >= this.bucketCount) {
+			if (this.iteratorBucket >= this.bucketCount) {
 				return null;
 			}
-			node = this.buckets[this.iteratorKey++].next;
-		} while (node == this.buckets[this.iteratorKey - 1]);
+			node = this.buckets[this.iteratorBucket++].next;
+		} while (node == this.buckets[this.iteratorBucket - 1]);
 		this.iteratorCursor = node.next;
 		return node;
 	}
