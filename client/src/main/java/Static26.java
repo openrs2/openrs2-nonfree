@@ -146,8 +146,8 @@ public final class Static26 {
 			return Static19.method1813(arg0.anInt5937);
 		}
 		@Pc(20) int local20 = arg0.anInt5914 >>> 16;
-		@Pc(33) Class141 local33 = new Class141(Static4.aClass84_13);
-		for (@Pc(38) Class4_Sub27 local38 = (Class4_Sub27) local33.method3540(); local38 != null; local38 = (Class4_Sub27) local33.method3544()) {
+		@Pc(33) HashTableIterator local33 = new HashTableIterator(Static4.aClass84_13);
+		for (@Pc(38) Class4_Sub27 local38 = (Class4_Sub27) local33.head(); local38 != null; local38 = (Class4_Sub27) local33.next()) {
 			if (local20 == local38.anInt4620) {
 				return Static19.method1813((int) local38.key);
 			}
