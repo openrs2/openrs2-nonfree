@@ -173,14 +173,14 @@ public final class Class62_Sub1 extends Class62 {
 		if (this.aClass60_4 == null) {
 			return;
 		}
-		for (@Pc(22) Node local22 = this.aClass112_29.head(); local22 != null; local22 = this.aClass112_29.next()) {
-			if ((long) group == local22.key) {
+		for (@Pc(22) Node node = this.aClass112_29.head(); node != null; node = this.aClass112_29.next()) {
+			if (node.key == (long) group) {
 				return;
 			}
 		}
-		@Pc(48) Node local48 = new Node();
-		local48.key = group;
-		this.aClass112_29.addTail(local48);
+		@Pc(48) Node node = new Node();
+		node.key = group;
+		this.aClass112_29.addTail(node);
 	}
 
 	@OriginalMember(owner = "client!wb", name = "a", descriptor = "(Z)V")

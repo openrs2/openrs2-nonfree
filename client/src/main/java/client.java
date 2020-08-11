@@ -309,9 +309,9 @@ public final class client extends GameShell {
 			Static6.anInt4621 = 10;
 		} else if (Static5.anInt4285 == 30) {
 			if (Static1.aClass117_1 == null) {
-				Static1.aClass117_1 = new Class117(Static7.aClass51_2, Static2.aClass92_1);
+				Static1.aClass117_1 = new Js5MasterIndex(Static7.aClass51_2, Static2.aClass92_1);
 			}
-			if (Static1.aClass117_1.method2707()) {
+			if (Static1.aClass117_1.isReady()) {
 				Static3.aClass58_46 = Static27.method3231(true, false, 0, true);
 				Static4.aClass58_66 = Static27.method3231(true, false, 1, true);
 				Static2.aClass58_39 = Static27.method3231(false, true, 2, true);

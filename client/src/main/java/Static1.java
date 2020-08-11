@@ -207,7 +207,7 @@ public final class Static1 {
 	public static int anInt647;
 
 	@OriginalMember(owner = "client!cj", name = "P", descriptor = "Lclient!mg;")
-	public static Class117 aClass117_1;
+	public static Js5MasterIndex aClass117_1;
 
 	@OriginalMember(owner = "client!ck", name = "bb", descriptor = "Lclient!fm;")
 	public static Cache aClass60_2;
