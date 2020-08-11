@@ -303,7 +303,7 @@ public final class Static5 {
 	public static final Class34 aClass34_1 = new Class34();
 
 	@OriginalMember(owner = "client!ne", name = "k", descriptor = "Lclient!ak;")
-	public static Class10 aClass10_1 = new Class10(8);
+	public static SecondaryHashTable aClass10_1 = new SecondaryHashTable(8);
 
 	@OriginalMember(owner = "client!ne", name = "l", descriptor = "Z")
 	public static boolean aBoolean249 = false;

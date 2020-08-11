@@ -227,7 +227,7 @@ public final class Static26 {
 
 	@OriginalMember(owner = "client!ne", name = "h", descriptor = "()V")
 	public static void method2963() {
-		Static5.aClass10_1 = new Class10(8);
+		Static5.aClass10_1 = new SecondaryHashTable(8);
 		Static5.anInt3524 = 0;
 		for (@Pc(11) Class20_Sub3 local11 = (Class20_Sub3) Static5.aClass172_3.method4320(); local11 != null; local11 = (Class20_Sub3) Static5.aClass172_3.method4315()) {
 			local11.method2958();

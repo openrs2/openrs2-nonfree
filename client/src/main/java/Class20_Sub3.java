@@ -425,7 +425,7 @@ public final class Class20_Sub3 extends Class20 {
 				@Pc(87) Class4_Sub3_Sub24 local87 = null;
 				if (arg0[local72].aClass37_1.anInt907 == 1 && Static5.anInt3524 < 32) {
 					local87 = new Class4_Sub3_Sub24(arg0[local72], this);
-					Static5.aClass10_1.method119((long) arg0[local72].aClass37_1.anInt900, local87);
+					Static5.aClass10_1.put((long) arg0[local72].aClass37_1.anInt900, local87);
 					Static5.anInt3524++;
 				}
 				if (local87 == null) {

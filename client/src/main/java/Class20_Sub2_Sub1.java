@@ -190,7 +190,7 @@ public final class Class20_Sub2_Sub1 extends Class20_Sub2 {
 		}
 		if (local39.anIntArray216 != null) {
 			for (@Pc(693) int local693 = 0; local693 < local39.anIntArray216.length; local693++) {
-				@Pc(708) Class4_Sub3_Sub24 local708 = (Class4_Sub3_Sub24) Static5.aClass10_1.method118((long) local39.anIntArray216[local693]);
+				@Pc(708) Class4_Sub3_Sub24 local708 = (Class4_Sub3_Sub24) Static5.aClass10_1.get((long) local39.anIntArray216[local693]);
 				while (local708 != null) {
 					@Pc(714) Class37 local714 = local708.aClass167_1.aClass37_1;
 					@Pc(719) int local719 = local21 - local708.anInt6095;
@@ -198,7 +198,7 @@ public final class Class20_Sub2_Sub1 extends Class20_Sub2 {
 					@Pc(729) int local729 = local31 - local708.anInt6087;
 					@Pc(742) long local742 = (long) (local719 * local719 + local724 * local724 + local729 * local729);
 					if (local742 > local714.aLong39) {
-						local708 = (Class4_Sub3_Sub24) Static5.aClass10_1.method117();
+						local708 = (Class4_Sub3_Sub24) Static5.aClass10_1.nextWithKey();
 					} else {
 						@Pc(758) int local758 = (int) Math.sqrt((double) local742);
 						if (local758 == 0) {
@@ -206,7 +206,7 @@ public final class Class20_Sub2_Sub1 extends Class20_Sub2 {
 						}
 						@Pc(786) long local786 = (long) (local719 * local708.anInt6091 + local724 * local714.anInt903 + local729 * local708.anInt6088) * 65535L / (long) (local714.anInt904 * local758);
 						if (local786 < (long) local714.anInt906) {
-							local708 = (Class4_Sub3_Sub24) Static5.aClass10_1.method117();
+							local708 = (Class4_Sub3_Sub24) Static5.aClass10_1.nextWithKey();
 						} else {
 							@Pc(800) int local800 = 0;
 							if (local714.anInt895 == 1) {
@@ -238,7 +238,7 @@ public final class Class20_Sub2_Sub1 extends Class20_Sub2 {
 								this.anInt3229 += (local714.anInt903 - local800) * arg1;
 								this.anInt3230 += (local708.anInt6088 - local800) * arg1;
 							}
-							local708 = (Class4_Sub3_Sub24) Static5.aClass10_1.method117();
+							local708 = (Class4_Sub3_Sub24) Static5.aClass10_1.nextWithKey();
 						}
 					}
 				}
