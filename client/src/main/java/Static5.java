@@ -461,9 +461,6 @@ public final class Static5 {
 	@OriginalMember(owner = "client!og", name = "gb", descriptor = "[J")
 	public static final long[] aLongArray57 = new long[1000];
 
-	@OriginalMember(owner = "client!oi", name = "c", descriptor = "Lclient!gh;")
-	public static final Class67 aClass67_1 = Static34.method1541();
-
 	@OriginalMember(owner = "client!oi", name = "g", descriptor = "[Ljava/lang/String;")
 	public static final String[] aStringArray24 = new String[5];
 

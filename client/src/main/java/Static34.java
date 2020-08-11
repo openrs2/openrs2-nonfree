@@ -1207,15 +1207,6 @@ public final class Static34 {
 		}
 	}
 
-	@OriginalMember(owner = "client!tn", name = "b", descriptor = "(I)Lclient!gh;")
-	public static Class67 method1541() {
-		try {
-			return (Class67) Class.forName("Class67_Sub1").getDeclaredConstructor().newInstance();
-		} catch (@Pc(15) Throwable local15) {
-			return null;
-		}
-	}
-
 	@OriginalMember(owner = "client!tn", name = "d", descriptor = "(B)Lclient!vn;")
 	public static Class4_Sub3_Sub14_Sub1 method1546() {
 		@Pc(14) byte[] local14 = Static6.aByteArrayArray36[0];

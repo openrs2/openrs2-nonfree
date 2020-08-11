@@ -85,7 +85,7 @@ public final class LruHashTable {
 
 	@OriginalMember(owner = "client!cc", name = "a", descriptor = "(BI)V")
 	public final void sweep(@OriginalArg(1) int maxAge) {
-		if (Static5.aClass67_1 == null) {
+		if (ReferenceNodeFactory.SOFT_REFERENCE_NODE_FACTORY == null) {
 			return;
 		}
 		for (@Pc(22) ReferenceNode node = (ReferenceNode) this.queue.head(); node != null; node = (ReferenceNode) this.queue.next()) {
@@ -96,7 +96,7 @@ public final class LruHashTable {
 					this.available++;
 				}
 			} else if (++node.secondaryKey > (long) maxAge) {
-				@Pc(45) ReferenceNode softNode = Static5.aClass67_1.method2015(node);
+				@Pc(45) ReferenceNode softNode = ReferenceNodeFactory.SOFT_REFERENCE_NODE_FACTORY.create(node);
 				this.table.put(node.key, softNode);
 				Static23.method2452(node, softNode);
 				node.unlink();
