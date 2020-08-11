@@ -30,7 +30,7 @@ public final class Class91 implements Runnable {
 					}
 				}
 				ThreadUtils.sleep(10L);
-				Static13.method1013(this.aClass196_2, null);
+				GameShell.flush(this.aClass196_2, null);
 			}
 		} catch (@Pc(48) Exception local48) {
 			TracingException.report(local48, null);

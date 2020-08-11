@@ -4403,7 +4403,7 @@ public final class Static16 {
 									if (local6938 > 2) {
 										local6938 = 2;
 									}
-									if (Static4.anInt3256 < 96) {
+									if (GameShell.maxMemory < 96) {
 										local6938 = 0;
 										local6933 = true;
 									}

@@ -462,9 +462,6 @@ public final class Static4 {
 	@OriginalMember(owner = "client!ln", name = "L", descriptor = "Lclient!cc;")
 	public static final LruHashTable aClass26_30 = new LruHashTable(4);
 
-	@OriginalMember(owner = "client!ln", name = "R", descriptor = "I")
-	public static int anInt3256 = 64;
-
 	@OriginalMember(owner = "client!ln", name = "V", descriptor = "S")
 	public static short aShort25 = 205;
 

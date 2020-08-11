@@ -447,7 +447,7 @@ public final class Static33 {
 		Static2.aBoolean117 = true;
 		Static1.anInt1051 = 0;
 		Static1.anInt344 = 255;
-		if (Static4.anInt3256 < 96) {
+		if (GameShell.maxMemory < 96) {
 			Static26.method2957(0);
 		} else {
 			Static26.method2957(2);

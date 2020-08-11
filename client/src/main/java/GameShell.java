@@ -6,6 +6,7 @@ import java.awt.Frame;
 import java.awt.Graphics;
 import java.awt.Insets;
 import java.awt.Rectangle;
+import java.awt.event.ActionEvent;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
 import java.awt.event.WindowEvent;
@@ -27,6 +28,9 @@ public abstract class GameShell extends Applet implements Runnable, FocusListene
 
 	@OriginalMember(owner = "client!wf", name = "C", descriptor = "Ljava/lang/Thread;")
 	public static Thread thread;
+
+	@OriginalMember(owner = "client!ln", name = "R", descriptor = "I")
+	public static int maxMemory = 64;
 
 	@OriginalMember(owner = "client!ho", name = "R", descriptor = "I")
 	public static int framesPerSecond = 0;
@@ -115,6 +119,9 @@ public abstract class GameShell extends Applet implements Runnable, FocusListene
 	@OriginalMember(owner = "client!db", name = "i", descriptor = "Lclient!ue;")
 	public static GameShell instance = null;
 
+	@OriginalMember(owner = "client!hb", name = "i", descriptor = "I")
+	public static int instances = 0;
+
 	@OriginalMember(owner = "client!ue", name = "L", descriptor = "Z")
 	private boolean miscNativesLoaded = false;
 
@@ -147,6 +154,35 @@ public abstract class GameShell extends Applet implements Runnable, FocusListene
 			logicTimes[i] = 0L;
 		}
 		logicCycles = 0;
+	}
+
+	@OriginalMember(owner = "client!cm", name = "a", descriptor = "(Z)V")
+	private static void getMaxMemory() {
+		try {
+			@Pc(12) Method method = Runtime.class.getMethod("maxMemory");
+			if (method != null) {
+				try {
+					@Pc(16) Runtime runtime = Runtime.getRuntime();
+					@Pc(23) Long bytes = (Long) method.invoke(runtime, (Object[]) null);
+					maxMemory = (int) (bytes / 1048576L) + 1;
+				} catch (@Pc(33) Throwable ex) {
+				}
+			}
+		} catch (@Pc(39) Exception ex) {
+		}
+	}
+
+	@OriginalMember(owner = "client!ef", name = "a", descriptor = "(Lsignlink!pm;Ljava/lang/Object;Z)V")
+	public static void flush(@OriginalArg(0) SignLink signLink, @OriginalArg(1) Object source) {
+		if (signLink.eventQueue == null) {
+			return;
+		}
+		for (@Pc(12) int i = 0; i < 50 && signLink.eventQueue.peekEvent() != null; i++) {
+			ThreadUtils.sleep(1L);
+		}
+		if (source != null) {
+			signLink.eventQueue.postEvent(new ActionEvent(source, 1001, "dummy"));
+		}
 	}
 
 	@OriginalMember(owner = "client!ue", name = "windowDeiconified", descriptor = "(Ljava/awt/event/WindowEvent;)V")
@@ -411,8 +447,8 @@ public abstract class GameShell extends Applet implements Runnable, FocusListene
 	protected final void startApplet(@OriginalArg(1) int cacheId) {
 		try {
 			if (instance != null) {
-				Static3.anInt2145++;
-				if (Static3.anInt2145 < 3) {
+				instances++;
+				if (instances < 3) {
 					this.getAppletContext().showDocument(this.getDocumentBase(), "_self");
 					return;
 				}
@@ -489,7 +525,7 @@ public abstract class GameShell extends Applet implements Runnable, FocusListene
 					}
 				}
 			}
-			Static12.method697();
+			getMaxMemory();
 			this.addCanvas();
 			Static4.aClass59_1 = Static25.method2727(canvasHeight, canvasWidth, canvas);
 			this.mainInit();
@@ -501,7 +537,7 @@ public abstract class GameShell extends Applet implements Runnable, FocusListene
 					this.mainLoopWrapper();
 				}
 				this.mainRedrawWrapper();
-				Static13.method1013(signLink, canvas);
+				flush(signLink, canvas);
 			}
 		} catch (@Pc(197) Exception ex) {
 			TracingException.report(ex, null);

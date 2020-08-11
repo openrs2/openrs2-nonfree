@@ -103,7 +103,7 @@ public final class Static37 {
 		}
 		if (local20 >= 4) {
 			@Pc(369) int local369 = arg0.readUnsignedByte();
-			if (Static4.anInt3256 < 96) {
+			if (GameShell.maxMemory < 96) {
 				local369 = 0;
 			}
 			Static26.method2957(local369);

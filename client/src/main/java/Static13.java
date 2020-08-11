@@ -986,19 +986,6 @@ public final class Static13 {
 		local5.anInt4442 = arg6;
 	}
 
-	@OriginalMember(owner = "client!ef", name = "a", descriptor = "(Lsignlink!pm;Ljava/lang/Object;Z)V")
-	public static void method1013(@OriginalArg(0) SignLink arg0, @OriginalArg(1) Object arg1) {
-		if (arg0.eventQueue == null) {
-			return;
-		}
-		for (@Pc(12) int local12 = 0; local12 < 50 && arg0.eventQueue.peekEvent() != null; local12++) {
-			ThreadUtils.sleep(1L);
-		}
-		if (arg1 != null) {
-			arg0.eventQueue.postEvent(new ActionEvent(arg1, 1001, "dummy"));
-		}
-	}
-
 	@OriginalMember(owner = "client!eg", name = "a", descriptor = "(ZIIII)V")
 	public static void method1015(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3) {
 		if (Static4.anInt3086 <= arg3 && arg3 <= Static5.anInt4230) {

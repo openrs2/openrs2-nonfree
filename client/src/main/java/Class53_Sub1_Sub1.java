@@ -198,7 +198,7 @@ public final class Class53_Sub1_Sub1 extends Class53_Sub1 {
 		@Pc(82) Class46 local82 = this.anInt4005 == -1 || this.aBoolean98 || this.anInt4005 == this.method3314().anInt860 && local27 != null ? null : Static23.method2494(this.anInt4005);
 		@Pc(105) Class53_Sub4 local105 = this.aClass144_2.method3608(this.aClass150Array3, this.anInt4046, this.anInt4011, this.anInt4019, local82, this.anInt3970, local53, this.anInt4000, local27, true, this.anInt4044);
 		@Pc(108) int local108 = Static15.method1228();
-		if (Static3.aBoolean138 && Static4.anInt3256 < 96 && local108 > 50) {
+		if (Static3.aBoolean138 && GameShell.maxMemory < 96 && local108 > 50) {
 			Static24.method2567();
 		}
 		if (client.modeWhat != 0 && local108 < 50) {

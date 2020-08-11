@@ -618,22 +618,6 @@ public final class Static12 {
 		Static28.method3249();
 	}
 
-	@OriginalMember(owner = "client!cm", name = "a", descriptor = "(Z)V")
-	public static void method697() {
-		try {
-			@Pc(12) Method local12 = Runtime.class.getMethod("maxMemory");
-			if (local12 != null) {
-				try {
-					@Pc(16) Runtime local16 = Runtime.getRuntime();
-					@Pc(23) Long local23 = (Long) local12.invoke(local16, (Object[]) null);
-					Static4.anInt3256 = (int) (local23 / 1048576L) + 1;
-				} catch (@Pc(33) Throwable local33) {
-				}
-			}
-		} catch (@Pc(39) Exception local39) {
-		}
-	}
-
 	@OriginalMember(owner = "client!cm", name = "b", descriptor = "(ZI)V")
 	public static void method698(@OriginalArg(1) int arg0) {
 		@Pc(5) int local5 = Static3.anInt2519;
