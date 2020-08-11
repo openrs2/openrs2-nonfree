@@ -98,7 +98,7 @@ public final class LruHashTable {
 			} else if (++node.secondaryKey > (long) maxAge) {
 				@Pc(45) ReferenceNode softNode = ReferenceNodeFactory.SOFT_REFERENCE_NODE_FACTORY.create(node);
 				this.table.put(node.key, softNode);
-				Static23.method2452(node, softNode);
+				SecondaryLinkedList.insertAfter(softNode, node);
 				node.unlink();
 				node.unlinkSecondary();
 			}

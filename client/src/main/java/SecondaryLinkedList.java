@@ -6,6 +6,17 @@ import dev.openrs2.deob.annotation.Pc;
 @OriginalClass("client!uk")
 public final class SecondaryLinkedList {
 
+	@OriginalMember(owner = "client!la", name = "a", descriptor = "(Lclient!lh;BLclient!lh;)V")
+	public static void insertAfter(@OriginalArg(2) SecondaryNode node, @OriginalArg(0) SecondaryNode position) {
+		if (node.secondaryPrev != null) {
+			node.unlinkSecondary();
+		}
+		node.secondaryNext = position.secondaryNext;
+		node.secondaryPrev = position;
+		node.secondaryPrev.secondaryNext = node;
+		node.secondaryNext.secondaryPrev = node;
+	}
+
 	@OriginalMember(owner = "client!uk", name = "l", descriptor = "Lclient!lh;")
 	private SecondaryNode cursor;
 

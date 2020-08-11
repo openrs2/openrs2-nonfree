@@ -107,17 +107,6 @@ public final class Static23 {
 		return local7;
 	}
 
-	@OriginalMember(owner = "client!la", name = "a", descriptor = "(Lclient!lh;BLclient!lh;)V")
-	public static void method2452(@OriginalArg(0) SecondaryNode arg0, @OriginalArg(2) SecondaryNode arg1) {
-		if (arg1.secondaryPrev != null) {
-			arg1.unlinkSecondary();
-		}
-		arg1.secondaryNext = arg0.secondaryNext;
-		arg1.secondaryPrev = arg0;
-		arg1.secondaryPrev.secondaryNext = arg1;
-		arg1.secondaryNext.secondaryPrev = arg1;
-	}
-
 	@OriginalMember(owner = "client!la", name = "a", descriptor = "(ZB)V")
 	public static void method2453(@OriginalArg(0) boolean arg0) {
 		if (arg0 != Static1.aBoolean200) {
