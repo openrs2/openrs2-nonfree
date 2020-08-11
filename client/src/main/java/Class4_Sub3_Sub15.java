@@ -73,7 +73,7 @@ public final class Class4_Sub3_Sub15 extends SecondaryNode {
 	}
 
 	@OriginalMember(owner = "client!ln", name = "a", descriptor = "(DIILclient!kj;Lclient!fh;IZ)Lclient!vn;")
-	public final Class4_Sub3_Sub14_Sub1 method2645(@OriginalArg(0) double arg0, @OriginalArg(2) int arg1, @OriginalArg(3) Interface3 arg2, @OriginalArg(4) Class58 arg3, @OriginalArg(5) int arg4) {
+	public final Class4_Sub3_Sub14_Sub1 method2645(@OriginalArg(0) double arg0, @OriginalArg(2) int arg1, @OriginalArg(3) Interface3 arg2, @OriginalArg(4) Js5 arg3, @OriginalArg(5) int arg4) {
 		Static9.method200(arg0);
 		Static6.anInterface3_1 = arg2;
 		Static1.aClass58_7 = arg3;
@@ -133,7 +133,7 @@ public final class Class4_Sub3_Sub15 extends SecondaryNode {
 	}
 
 	@OriginalMember(owner = "client!ln", name = "a", descriptor = "(IBILclient!fh;DLclient!kj;Z)[I")
-	public final int[] method2646(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) Class58 arg2, @OriginalArg(4) double arg3, @OriginalArg(5) Interface3 arg4, @OriginalArg(6) boolean arg5) {
+	public final int[] method2646(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) Js5 arg2, @OriginalArg(4) double arg3, @OriginalArg(5) Interface3 arg4, @OriginalArg(6) boolean arg5) {
 		@Pc(12) int[] local12 = new int[arg1 * arg0 * 4];
 		Static9.method200(arg3);
 		Static6.anInterface3_1 = arg4;
@@ -217,7 +217,7 @@ public final class Class4_Sub3_Sub15 extends SecondaryNode {
 	}
 
 	@OriginalMember(owner = "client!ln", name = "a", descriptor = "(IBZLclient!kj;Lclient!fh;I)[F")
-	public final float[] method2648(@OriginalArg(0) int arg0, @OriginalArg(2) boolean arg1, @OriginalArg(3) Interface3 arg2, @OriginalArg(4) Class58 arg3, @OriginalArg(5) int arg4) {
+	public final float[] method2648(@OriginalArg(0) int arg0, @OriginalArg(2) boolean arg1, @OriginalArg(3) Interface3 arg2, @OriginalArg(4) Js5 arg3, @OriginalArg(5) int arg4) {
 		Static6.anInterface3_1 = arg2;
 		@Pc(29) float[] local29 = new float[arg4 * 4 * arg0];
 		Static1.aClass58_7 = arg3;
@@ -282,16 +282,16 @@ public final class Class4_Sub3_Sub15 extends SecondaryNode {
 	}
 
 	@OriginalMember(owner = "client!ln", name = "a", descriptor = "(Lclient!kj;Lclient!fh;I)Z")
-	public final boolean method2649(@OriginalArg(0) Interface3 arg0, @OriginalArg(1) Class58 arg1) {
+	public final boolean method2649(@OriginalArg(0) Interface3 arg0, @OriginalArg(1) Js5 arg1) {
 		if (Static6.anInt4366 > 0) {
 			for (@Pc(26) int local26 = 0; local26 < this.anIntArray307.length; local26++) {
-				if (!arg1.method1370(Static6.anInt4366, this.anIntArray307[local26])) {
+				if (!arg1.isFileReady(Static6.anInt4366, this.anIntArray307[local26])) {
 					return false;
 				}
 			}
 		} else {
 			for (@Pc(49) int local49 = 0; local49 < this.anIntArray307.length; local49++) {
-				if (!arg1.method1359(this.anIntArray307[local49])) {
+				if (!arg1.isFileReady(this.anIntArray307[local49])) {
 					return false;
 				}
 			}
@@ -305,7 +305,7 @@ public final class Class4_Sub3_Sub15 extends SecondaryNode {
 	}
 
 	@OriginalMember(owner = "client!ln", name = "a", descriptor = "(ILclient!kj;Lclient!fh;IDIZ)Lclient!jn;")
-	public final Class4_Sub3_Sub14_Sub1_Sub1 method2650(@OriginalArg(0) int arg0, @OriginalArg(1) Interface3 arg1, @OriginalArg(2) Class58 arg2, @OriginalArg(4) double arg3, @OriginalArg(5) int arg4) {
+	public final Class4_Sub3_Sub14_Sub1_Sub1 method2650(@OriginalArg(0) int arg0, @OriginalArg(1) Interface3 arg1, @OriginalArg(2) Js5 arg2, @OriginalArg(4) double arg3, @OriginalArg(5) int arg4) {
 		Static9.method200(arg3);
 		Static6.anInterface3_1 = arg1;
 		Static1.aClass58_7 = arg2;
@@ -383,7 +383,7 @@ public final class Class4_Sub3_Sub15 extends SecondaryNode {
 	}
 
 	@OriginalMember(owner = "client!ln", name = "a", descriptor = "(DZILclient!fh;Lclient!kj;IZI)[I")
-	public final int[] method2653(@OriginalArg(0) double arg0, @OriginalArg(1) boolean arg1, @OriginalArg(3) Class58 arg2, @OriginalArg(4) Interface3 arg3, @OriginalArg(5) int arg4, @OriginalArg(6) boolean arg5, @OriginalArg(7) int arg6) {
+	public final int[] method2653(@OriginalArg(0) double arg0, @OriginalArg(1) boolean arg1, @OriginalArg(3) Js5 arg2, @OriginalArg(4) Interface3 arg3, @OriginalArg(5) int arg4, @OriginalArg(6) boolean arg5, @OriginalArg(7) int arg6) {
 		Static9.method200(arg0);
 		Static6.anInterface3_1 = arg3;
 		Static1.aClass58_7 = arg2;

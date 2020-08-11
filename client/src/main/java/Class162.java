@@ -366,13 +366,13 @@ public final class Class162 {
 			return true;
 		}
 		@Pc(37) boolean local37 = true;
-		if (!Static4.aClass58_75.method1370(local17, 0)) {
+		if (!Static4.aClass58_75.isFileReady(local17, 0)) {
 			local37 = false;
 		}
-		if (local7 != -1 && !Static4.aClass58_75.method1370(local7, 0)) {
+		if (local7 != -1 && !Static4.aClass58_75.isFileReady(local7, 0)) {
 			local37 = false;
 		}
-		if (local10 != -1 && !Static4.aClass58_75.method1370(local10, 0)) {
+		if (local10 != -1 && !Static4.aClass58_75.isFileReady(local10, 0)) {
 			local37 = false;
 		}
 		return local37;
@@ -455,10 +455,10 @@ public final class Class162 {
 			return true;
 		}
 		@Pc(25) boolean local25 = true;
-		if (!Static4.aClass58_75.method1370(local2, 0)) {
+		if (!Static4.aClass58_75.isFileReady(local2, 0)) {
 			local25 = false;
 		}
-		if (local9 != -1 && !Static4.aClass58_75.method1370(local9, 0)) {
+		if (local9 != -1 && !Static4.aClass58_75.isFileReady(local9, 0)) {
 			local25 = false;
 		}
 		return local25;

@@ -239,7 +239,7 @@ public final class Static28 {
 	}
 
 	@OriginalMember(owner = "client!om", name = "a", descriptor = "(IIIIZLclient!fh;)V")
-	public static void method3251(@OriginalArg(0) int arg0, @OriginalArg(3) int arg1, @OriginalArg(5) Class58 arg2) {
+	public static void method3251(@OriginalArg(0) int arg0, @OriginalArg(3) int arg1, @OriginalArg(5) Js5 arg2) {
 		Static2.anInt1244 = 0;
 		Static7.anInt5391 = arg0;
 		Static3.anInt5397 = 10000;
@@ -543,11 +543,11 @@ public final class Static28 {
 			for (@Pc(95) int local95 = (local25 - 6) / 8; local95 <= (local25 + 6) / 8; local95++) {
 				@Pc(112) int local112 = (local82 << 8) + local95;
 				Static7.anIntArray597[local76] = local112;
-				Static3.anIntArray167[local76] = Static3.aClass58_47.method1362("m" + local82 + "_" + local95);
-				Static1.anIntArray59[local76] = Static3.aClass58_47.method1362("l" + local82 + "_" + local95);
-				Static6.anIntArray570[local76] = Static3.aClass58_47.method1362("n" + local82 + "_" + local95);
-				Static4.anIntArray316[local76] = Static3.aClass58_47.method1362("um" + local82 + "_" + local95);
-				Static3.anIntArray197[local76] = Static3.aClass58_47.method1362("ul" + local82 + "_" + local95);
+				Static3.anIntArray167[local76] = Static3.aClass58_47.getGroupId("m" + local82 + "_" + local95);
+				Static1.anIntArray59[local76] = Static3.aClass58_47.getGroupId("l" + local82 + "_" + local95);
+				Static6.anIntArray570[local76] = Static3.aClass58_47.getGroupId("n" + local82 + "_" + local95);
+				Static4.anIntArray316[local76] = Static3.aClass58_47.getGroupId("um" + local82 + "_" + local95);
+				Static3.anIntArray197[local76] = Static3.aClass58_47.getGroupId("ul" + local82 + "_" + local95);
 				if (Static6.anIntArray570[local76] == -1) {
 					Static3.anIntArray167[local76] = -1;
 					Static1.anIntArray59[local76] = -1;

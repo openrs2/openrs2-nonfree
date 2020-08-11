@@ -212,7 +212,7 @@ public final class Static23 {
 		if (local10 != null) {
 			return local10;
 		}
-		@Pc(25) byte[] local25 = Static3.aClass58_44.method1372(Static15.method1397(arg0), Static35.method4299(arg0));
+		@Pc(25) byte[] local25 = Static3.aClass58_44.fetchFile(Static15.method1397(arg0), Static35.method4299(arg0));
 		@Pc(29) Class46 local29 = new Class46();
 		local29.anInt1223 = arg0;
 		if (local25 != null) {
@@ -224,7 +224,7 @@ public final class Static23 {
 	}
 
 	@OriginalMember(owner = "client!ld", name = "a", descriptor = "(Lclient!fh;I)V")
-	public static void method2508(@OriginalArg(0) Class58 arg0) {
+	public static void method2508(@OriginalArg(0) Js5 arg0) {
 		Static3.aClass58_100 = arg0;
 	}
 
@@ -235,21 +235,21 @@ public final class Static23 {
 		if (local18 != null) {
 			return local18;
 		}
-		@Pc(30) byte[] local30 = Static4.aClass58_73.method1343(Static4.aClass58_73.method1367(local9));
+		@Pc(30) byte[] local30 = Static4.aClass58_73.fetchFile(Static4.aClass58_73.getGroupId(local9));
 		if (local30 == null) {
 			@Pc(69) int local69 = arg0 | arg2 + 65536 << 8;
 			@Pc(80) Class4_Sub3_Sub13 local80 = (Class4_Sub3_Sub13) Static5.aClass40_13.method889((long) local69 << 16);
 			if (local80 != null) {
 				return local80;
 			}
-			@Pc(93) byte[] local93 = Static4.aClass58_73.method1343(Static4.aClass58_73.method1367(local69));
+			@Pc(93) byte[] local93 = Static4.aClass58_73.fetchFile(Static4.aClass58_73.getGroupId(local69));
 			if (local93 == null) {
 				@Pc(131) int local131 = arg0 | 0xFFFF00;
 				@Pc(140) Class4_Sub3_Sub13 local140 = (Class4_Sub3_Sub13) Static5.aClass40_13.method889((long) local131 << 16);
 				if (local140 != null) {
 					return local140;
 				}
-				@Pc(153) byte[] local153 = Static4.aClass58_73.method1343(Static4.aClass58_73.method1367(local131));
+				@Pc(153) byte[] local153 = Static4.aClass58_73.fetchFile(Static4.aClass58_73.getGroupId(local131));
 				if (local153 == null) {
 					return null;
 				} else if (local153.length > 1) {

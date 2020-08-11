@@ -155,7 +155,7 @@ public final class Static33 {
 	}
 
 	@OriginalMember(owner = "client!t", name = "a", descriptor = "(Lclient!fh;ZILclient!fh;)V")
-	public static void method4080(@OriginalArg(0) Class58 arg0, @OriginalArg(3) Class58 arg1) {
+	public static void method4080(@OriginalArg(0) Js5 arg0, @OriginalArg(3) Js5 arg1) {
 		Static5.aBoolean301 = true;
 		Static7.aClass58_104 = arg1;
 		Static1.aClass58_21 = arg0;
@@ -226,10 +226,10 @@ public final class Static33 {
 						Static3.anIntArray197[local504] = -1;
 					} else {
 						Static7.anIntArray597[local504] = local536;
-						Static3.anIntArray167[local504] = Static3.aClass58_47.method1362("m" + local510 + "_" + local523);
-						Static1.anIntArray59[local504] = Static3.aClass58_47.method1362("l" + local510 + "_" + local523);
-						Static4.anIntArray316[local504] = Static3.aClass58_47.method1362("um" + local510 + "_" + local523);
-						Static3.anIntArray197[local504] = Static3.aClass58_47.method1362("ul" + local510 + "_" + local523);
+						Static3.anIntArray167[local504] = Static3.aClass58_47.getGroupId("m" + local510 + "_" + local523);
+						Static1.anIntArray59[local504] = Static3.aClass58_47.getGroupId("l" + local510 + "_" + local523);
+						Static4.anIntArray316[local504] = Static3.aClass58_47.getGroupId("um" + local510 + "_" + local523);
+						Static3.anIntArray197[local504] = Static3.aClass58_47.getGroupId("ul" + local510 + "_" + local523);
 					}
 					local504++;
 				}
@@ -294,10 +294,10 @@ public final class Static33 {
 							Static7.anIntArray597[local182] = local233;
 							@Pc(272) int local272 = local233 >> 8 & 0xFF;
 							@Pc(276) int local276 = local233 & 0xFF;
-							Static3.anIntArray167[local182] = Static3.aClass58_47.method1362("m" + local272 + "_" + local276);
-							Static1.anIntArray59[local182] = Static3.aClass58_47.method1362("l" + local272 + "_" + local276);
-							Static4.anIntArray316[local182] = Static3.aClass58_47.method1362("um" + local272 + "_" + local276);
-							Static3.anIntArray197[local182] = Static3.aClass58_47.method1362("ul" + local272 + "_" + local276);
+							Static3.anIntArray167[local182] = Static3.aClass58_47.getGroupId("m" + local272 + "_" + local276);
+							Static1.anIntArray59[local182] = Static3.aClass58_47.getGroupId("l" + local272 + "_" + local276);
+							Static4.anIntArray316[local182] = Static3.aClass58_47.getGroupId("um" + local272 + "_" + local276);
+							Static3.anIntArray197[local182] = Static3.aClass58_47.getGroupId("ul" + local272 + "_" + local276);
 							local182++;
 						}
 					}
@@ -405,8 +405,8 @@ public final class Static33 {
 	}
 
 	@OriginalMember(owner = "client!td", name = "a", descriptor = "(Lclient!fh;II)Z")
-	public static boolean method4131(@OriginalArg(0) Class58 arg0, @OriginalArg(2) int arg1) {
-		@Pc(13) byte[] local13 = arg0.method1343(arg1);
+	public static boolean method4131(@OriginalArg(0) Js5 arg0, @OriginalArg(2) int arg1) {
+		@Pc(13) byte[] local13 = arg0.fetchFile(arg1);
 		if (local13 == null) {
 			return false;
 		} else {
@@ -727,8 +727,8 @@ public final class Static33 {
 	}
 
 	@OriginalMember(owner = "client!tg", name = "a", descriptor = "(Lclient!fh;II)Lclient!tg;")
-	public static Class4_Sub31 method4165(@OriginalArg(0) Class58 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
-		@Pc(5) byte[] local5 = arg0.method1372(arg1, arg2);
+	public static Class4_Sub31 method4165(@OriginalArg(0) Js5 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
+		@Pc(5) byte[] local5 = arg0.fetchFile(arg1, arg2);
 		return local5 == null ? null : new Class4_Sub31(new Buffer(local5));
 	}
 
@@ -786,7 +786,7 @@ public final class Static33 {
 	}
 
 	@OriginalMember(owner = "client!ti", name = "a", descriptor = "(Lclient!fh;B)V")
-	public static void method4198(@OriginalArg(0) Class58 arg0) {
+	public static void method4198(@OriginalArg(0) Js5 arg0) {
 		Static6.aClass58_86 = arg0;
 	}
 
@@ -828,7 +828,7 @@ public final class Static33 {
 		if (local6 != null) {
 			return local6;
 		}
-		@Pc(21) byte[] local21 = Static2.aClass58_40.method1372(1, arg0);
+		@Pc(21) byte[] local21 = Static2.aClass58_40.fetchFile(1, arg0);
 		@Pc(25) Class37 local25 = new Class37();
 		local25.anInt900 = arg0;
 		if (local21 != null) {
@@ -869,14 +869,14 @@ public final class Static33 {
 		@Pc(12) boolean local12 = true;
 		for (@Pc(14) int local14 = 0; local14 < Static1.aByteArrayArray4.length; local14++) {
 			if (Static3.anIntArray167[local14] != -1 && Static1.aByteArrayArray4[local14] == null) {
-				Static1.aByteArrayArray4[local14] = Static3.aClass58_47.method1372(Static3.anIntArray167[local14], 0);
+				Static1.aByteArrayArray4[local14] = Static3.aClass58_47.fetchFile(Static3.anIntArray167[local14], 0);
 				if (Static1.aByteArrayArray4[local14] == null) {
 					local12 = false;
 					Static3.anInt2886++;
 				}
 			}
 			if (Static1.anIntArray59[local14] != -1 && Static5.aByteArrayArray31[local14] == null) {
-				Static5.aByteArrayArray31[local14] = Static3.aClass58_47.method1361(0, Static1.anIntArray59[local14], Static5.anIntArrayArray35[local14]);
+				Static5.aByteArrayArray31[local14] = Static3.aClass58_47.fetchFile(Static1.anIntArray59[local14], 0, Static5.anIntArrayArray35[local14]);
 				if (Static5.aByteArrayArray31[local14] == null) {
 					local12 = false;
 					Static3.anInt2886++;
@@ -884,14 +884,14 @@ public final class Static33 {
 			}
 			if (Static3.aBoolean138) {
 				if (Static4.anIntArray316[local14] != -1 && Static7.aByteArrayArray49[local14] == null) {
-					Static7.aByteArrayArray49[local14] = Static3.aClass58_47.method1372(Static4.anIntArray316[local14], 0);
+					Static7.aByteArrayArray49[local14] = Static3.aClass58_47.fetchFile(Static4.anIntArray316[local14], 0);
 					if (Static7.aByteArrayArray49[local14] == null) {
 						local12 = false;
 						Static3.anInt2886++;
 					}
 				}
 				if (Static3.anIntArray197[local14] != -1 && Static1.aByteArrayArray3[local14] == null) {
-					Static1.aByteArrayArray3[local14] = Static3.aClass58_47.method1372(Static3.anIntArray197[local14], 0);
+					Static1.aByteArrayArray3[local14] = Static3.aClass58_47.fetchFile(Static3.anIntArray197[local14], 0);
 					if (Static1.aByteArrayArray3[local14] == null) {
 						Static3.anInt2886++;
 						local12 = false;
@@ -899,7 +899,7 @@ public final class Static33 {
 				}
 			}
 			if (Static6.anIntArray570 != null && Static7.aByteArrayArray50[local14] == null && Static6.anIntArray570[local14] != -1) {
-				Static7.aByteArrayArray50[local14] = Static3.aClass58_47.method1361(0, Static6.anIntArray570[local14], Static5.anIntArrayArray35[local14]);
+				Static7.aByteArrayArray50[local14] = Static3.aClass58_47.fetchFile(Static6.anIntArray570[local14], 0, Static5.anIntArrayArray35[local14]);
 				if (Static7.aByteArrayArray50[local14] == null) {
 					local12 = false;
 					Static3.anInt2886++;
@@ -907,9 +907,9 @@ public final class Static33 {
 			}
 		}
 		if (Static7.aClass138_14 == null) {
-			if (Static2.aClass4_Sub3_Sub22_1 == null || !Static5.aClass58_82.method1344(Static2.aClass4_Sub3_Sub22_1.aString358 + "_labels")) {
+			if (Static2.aClass4_Sub3_Sub22_1 == null || !Static5.aClass58_82.isGroupNameValid(Static2.aClass4_Sub3_Sub22_1.aString358 + "_labels")) {
 				Static7.aClass138_14 = new Class138(0);
-			} else if (Static5.aClass58_82.method1365(Static2.aClass4_Sub3_Sub22_1.aString358 + "_labels")) {
+			} else if (Static5.aClass58_82.isFileReady(Static2.aClass4_Sub3_Sub22_1.aString358 + "_labels")) {
 				Static7.aClass138_14 = Static16.method1555(Static5.aClass58_82, Static2.aClass4_Sub3_Sub22_1.aString358 + "_labels", Static7.aBoolean370);
 			} else {
 				Static3.anInt2886++;
@@ -1088,8 +1088,8 @@ public final class Static33 {
 			for (@Pc(844) int local844 = local822 - 1; local844 <= local828 + 1; local844++) {
 				for (@Pc(853) int local853 = local834 - 1; local853 <= local840 + 1; local853++) {
 					if (local844 < local822 || local844 > local828 || local853 < local834 || local840 < local853) {
-						Static3.aClass58_47.method1357("m" + local844 + "_" + local853);
-						Static3.aClass58_47.method1357("l" + local844 + "_" + local853);
+						Static3.aClass58_47.prefetchGroup("m" + local844 + "_" + local853);
+						Static3.aClass58_47.prefetchGroup("l" + local844 + "_" + local853);
 					}
 				}
 			}
@@ -1108,7 +1108,7 @@ public final class Static33 {
 	}
 
 	@OriginalMember(owner = "client!tj", name = "a", descriptor = "(IILclient!fh;I)Lclient!fe;")
-	public static Class56_Sub1 method3003(@OriginalArg(2) Class58 arg0, @OriginalArg(3) int arg1) {
+	public static Class56_Sub1 method3003(@OriginalArg(2) Js5 arg0, @OriginalArg(3) int arg1) {
 		return Static9.method197(arg0, arg1, 0) ? Static27.method3187() : null;
 	}
 

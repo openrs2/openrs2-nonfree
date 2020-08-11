@@ -830,7 +830,7 @@ public final class Class4_Sub6_Sub2 extends Class4_Sub6 {
 	}
 
 	@OriginalMember(owner = "client!ld", name = "a", descriptor = "(IILclient!tg;Lclient!fh;Lclient!jk;)Z")
-	public final synchronized boolean method2511(@OriginalArg(2) Class4_Sub31 arg0, @OriginalArg(3) Class58 arg1, @OriginalArg(4) Class98 arg2) {
+	public final synchronized boolean method2511(@OriginalArg(2) Class4_Sub31 arg0, @OriginalArg(3) Js5 arg1, @OriginalArg(4) Class98 arg2) {
 		arg0.method4163();
 		@Pc(9) boolean local9 = true;
 		@Pc(24) int[] local24 = new int[] { 22050 };

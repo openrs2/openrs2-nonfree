@@ -6,7 +6,7 @@ import dev.openrs2.deob.annotation.OriginalMember;
 public final class Static1 {
 
 	@OriginalMember(owner = "client!aa", name = "d", descriptor = "Lclient!fh;")
-	public static Class58 aClass58_1;
+	public static Js5 aClass58_1;
 
 	@OriginalMember(owner = "client!ab", name = "a", descriptor = "I")
 	public static int anInt5;
@@ -15,7 +15,7 @@ public final class Static1 {
 	public static Class4_Sub3_Sub10 aClass4_Sub3_Sub10_1;
 
 	@OriginalMember(owner = "client!ab", name = "e", descriptor = "Lclient!fh;")
-	public static Class58 aClass58_2;
+	public static Js5 aClass58_2;
 
 	@OriginalMember(owner = "client!ab", name = "j", descriptor = "Lsignlink!vk;")
 	public static PrivilegedRequest aClass197_1;
@@ -33,13 +33,13 @@ public final class Static1 {
 	public static Class4_Sub19[][][] aClass4_Sub19ArrayArrayArray1;
 
 	@OriginalMember(owner = "client!af", name = "E", descriptor = "Lclient!fh;")
-	public static Class58 aClass58_3;
+	public static Js5 aClass58_3;
 
 	@OriginalMember(owner = "client!ah", name = "e", descriptor = "I")
 	public static int anInt119;
 
 	@OriginalMember(owner = "client!ah", name = "g", descriptor = "Lclient!fh;")
-	public static Class58 aClass58_4;
+	public static Js5 aClass58_4;
 
 	@OriginalMember(owner = "client!aj", name = "c", descriptor = "[[[B")
 	public static byte[][][] aByteArrayArrayArray1;
@@ -78,13 +78,13 @@ public final class Static1 {
 	public static BufferedFile aClass189_1;
 
 	@OriginalMember(owner = "client!an", name = "g", descriptor = "Lclient!fh;")
-	public static Class58 aClass58_7;
+	public static Js5 aClass58_7;
 
 	@OriginalMember(owner = "client!bb", name = "E", descriptor = "I")
 	public static int anInt243;
 
 	@OriginalMember(owner = "client!bc", name = "o", descriptor = "Lclient!fh;")
-	public static Class58 aClass58_24;
+	public static Js5 aClass58_24;
 
 	@OriginalMember(owner = "client!bc", name = "q", descriptor = "[[I")
 	public static int[][] anIntArrayArray9;
@@ -108,7 +108,7 @@ public final class Static1 {
 	public static int[] anIntArray32;
 
 	@OriginalMember(owner = "client!bh", name = "c", descriptor = "Lclient!fh;")
-	public static Class58 aClass58_30;
+	public static Js5 aClass58_30;
 
 	@OriginalMember(owner = "client!bh", name = "j", descriptor = "I")
 	public static int anInt1053;
@@ -144,7 +144,7 @@ public final class Static1 {
 	public static long aLong23;
 
 	@OriginalMember(owner = "client!bo", name = "e", descriptor = "Lclient!fh;")
-	public static Class58 aClass58_10;
+	public static Js5 aClass58_10;
 
 	@OriginalMember(owner = "client!bo", name = "o", descriptor = "Ljava/awt/FontMetrics;")
 	public static FontMetrics aFontMetrics1;
@@ -183,13 +183,13 @@ public final class Static1 {
 	public static int[][][] anIntArrayArrayArray2;
 
 	@OriginalMember(owner = "client!cg", name = "g", descriptor = "Lclient!fh;")
-	public static Class58 aClass58_19;
+	public static Js5 aClass58_19;
 
 	@OriginalMember(owner = "client!cg", name = "h", descriptor = "F")
 	public static float aFloat21;
 
 	@OriginalMember(owner = "client!cg", name = "i", descriptor = "Lclient!fh;")
-	public static Class58 aClass58_20;
+	public static Js5 aClass58_20;
 
 	@OriginalMember(owner = "client!cg", name = "k", descriptor = "I")
 	public static int anInt593;
@@ -228,13 +228,13 @@ public final class Static1 {
 	public static int anInt818;
 
 	@OriginalMember(owner = "client!co", name = "p", descriptor = "Lclient!fh;")
-	public static Class58 aClass58_21;
+	public static Js5 aClass58_21;
 
 	@OriginalMember(owner = "client!co", name = "r", descriptor = "[I")
 	public static int[] anIntArray59;
 
 	@OriginalMember(owner = "client!da", name = "l", descriptor = "Lclient!fh;")
-	public static Class58 aClass58_22;
+	public static Js5 aClass58_22;
 
 	@OriginalMember(owner = "client!da", name = "m", descriptor = "Lclient!ld;")
 	public static Class4_Sub6_Sub2 aClass4_Sub6_Sub2_3;
@@ -243,7 +243,7 @@ public final class Static1 {
 	public static int anInt881;
 
 	@OriginalMember(owner = "client!db", name = "c", descriptor = "Lclient!fh;")
-	public static Class58 aClass58_23;
+	public static Js5 aClass58_23;
 
 	@OriginalMember(owner = "client!db", name = "e", descriptor = "[I")
 	public static int[] anIntArray63;

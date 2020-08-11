@@ -40,7 +40,7 @@ public final class Static32 {
 	}
 
 	@OriginalMember(owner = "client!sa", name = "a", descriptor = "(ILclient!fh;I)Lclient!ma;")
-	public static Class56 method3878(@OriginalArg(1) Class58 arg0, @OriginalArg(2) int arg1) {
+	public static Class56 method3878(@OriginalArg(1) Js5 arg0, @OriginalArg(2) int arg1) {
 		return Static33.method4131(arg0, arg1) ? Static9.method204() : null;
 	}
 
@@ -67,7 +67,7 @@ public final class Static32 {
 	}
 
 	@OriginalMember(owner = "client!sa", name = "a", descriptor = "(BLclient!fh;)V")
-	public static void method3884(@OriginalArg(1) Class58 arg0) {
+	public static void method3884(@OriginalArg(1) Js5 arg0) {
 		Static6.aClass58_84 = arg0;
 	}
 
@@ -317,7 +317,7 @@ public final class Static32 {
 		if (local6 != null) {
 			return local6;
 		}
-		@Pc(21) byte[] local21 = Static3.aClass58_100.method1372(0, arg0);
+		@Pc(21) byte[] local21 = Static3.aClass58_100.fetchFile(0, arg0);
 		@Pc(25) Class89 local25 = new Class89();
 		if (local21 != null) {
 			local25.method1915(new Buffer(local21));
@@ -763,7 +763,7 @@ public final class Static32 {
 		if (arg0 == -1 || !Static3.aBooleanArray12[arg0]) {
 			return;
 		}
-		Static3.aClass58_56.method1368(arg0);
+		Static3.aClass58_56.discardUnpacked(arg0);
 		if (Static5.aClass185ArrayArray115[arg0] == null) {
 			return;
 		}

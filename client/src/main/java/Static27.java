@@ -676,7 +676,7 @@ public final class Static27 {
 		if (local6 != null) {
 			return local6;
 		}
-		@Pc(21) byte[] local21 = Static2.aClass58_36.method1372(26, arg0);
+		@Pc(21) byte[] local21 = Static2.aClass58_36.fetchFile(26, arg0);
 		@Pc(25) Class4_Sub3_Sub17 local25 = new Class4_Sub3_Sub17();
 		if (local21 != null) {
 			local25.method3801(new Buffer(local21));
@@ -825,7 +825,7 @@ public final class Static27 {
 	}
 
 	@OriginalMember(owner = "client!oi", name = "a", descriptor = "(Lclient!fh;BII)[Lclient!uj;")
-	public static Class4_Sub3_Sub14[] method3225(@OriginalArg(0) Class58 arg0, @OriginalArg(3) int arg1) {
+	public static Class4_Sub3_Sub14[] method3225(@OriginalArg(0) Js5 arg0, @OriginalArg(3) int arg1) {
 		return Static9.method197(arg0, arg1, 0) ? Static21.method2064() : null;
 	}
 
@@ -835,9 +835,9 @@ public final class Static27 {
 	}
 
 	@OriginalMember(owner = "client!oi", name = "a", descriptor = "(Lclient!fh;I)V")
-	public static void method3228(@OriginalArg(0) Class58 arg0) {
+	public static void method3228(@OriginalArg(0) Js5 arg0) {
 		Static3.aClass58_55 = arg0;
-		Static2.anInt5716 = Static3.aClass58_55.method1371(4);
+		Static2.anInt5716 = Static3.aClass58_55.getGroupCapacity(4);
 	}
 
 	@OriginalMember(owner = "client!oj", name = "a", descriptor = "(IIZLjava/lang/String;)Z")
@@ -897,7 +897,7 @@ public final class Static27 {
 	}
 
 	@OriginalMember(owner = "client!oj", name = "a", descriptor = "(ZBZIZ)Lclient!fh;")
-	public static Class58 method3231(@OriginalArg(0) boolean arg0, @OriginalArg(2) boolean arg1, @OriginalArg(3) int arg2, @OriginalArg(4) boolean arg3) {
+	public static Js5 method3231(@OriginalArg(0) boolean arg0, @OriginalArg(2) boolean arg1, @OriginalArg(3) int arg2, @OriginalArg(4) boolean arg3) {
 		@Pc(5) Cache local5 = null;
 		if (Static3.aClass189_4 != null) {
 			local5 = new Cache(Static3.aClass189_4, Static4.aClass189Array1[arg2], arg2, 1000000);
@@ -906,7 +906,7 @@ public final class Static27 {
 		if (arg3) {
 			Static6.aClass62_Sub1Array2[arg2].method4668();
 		}
-		return new Class58(Static6.aClass62_Sub1Array2[arg2], arg1, arg0);
+		return new Js5(Static6.aClass62_Sub1Array2[arg2], arg1, arg0);
 	}
 
 	@OriginalMember(owner = "client!oj", name = "a", descriptor = "(IIIIIIFIZ)[[I")

@@ -21,7 +21,7 @@ public final class Static6 {
 	public static Class106 aClass106_7;
 
 	@OriginalMember(owner = "client!ql", name = "a", descriptor = "Lclient!fh;")
-	public static Class58 aClass58_84;
+	public static Js5 aClass58_84;
 
 	@OriginalMember(owner = "client!ql", name = "c", descriptor = "Lclient!kj;")
 	public static Interface3 anInterface3_1;
@@ -105,13 +105,13 @@ public final class Static6 {
 	public static float aFloat107;
 
 	@OriginalMember(owner = "client!r", name = "r", descriptor = "Lclient!fh;")
-	public static Class58 aClass58_71;
+	public static Js5 aClass58_71;
 
 	@OriginalMember(owner = "client!ra", name = "w", descriptor = "I")
 	public static int anInt4440;
 
 	@OriginalMember(owner = "client!rb", name = "a", descriptor = "Lclient!fh;")
-	public static Class58 aClass58_85;
+	public static Js5 aClass58_85;
 
 	@OriginalMember(owner = "client!rb", name = "c", descriptor = "F")
 	public static float aFloat108;
@@ -141,7 +141,7 @@ public final class Static6 {
 	public static Class56 aClass56_1;
 
 	@OriginalMember(owner = "client!ri", name = "A", descriptor = "Lclient!fh;")
-	public static Class58 aClass58_86;
+	public static Js5 aClass58_86;
 
 	@OriginalMember(owner = "client!ri", name = "X", descriptor = "[Lclient!uj;")
 	public static Class4_Sub3_Sub14[] aClass4_Sub3_Sub14Array11;
@@ -207,22 +207,22 @@ public final class Static6 {
 	public static float aFloat120;
 
 	@OriginalMember(owner = "client!sa", name = "k", descriptor = "Lclient!fh;")
-	public static Class58 aClass58_87;
+	public static Js5 aClass58_87;
 
 	@OriginalMember(owner = "client!sc", name = "fb", descriptor = "Lclient!tj;")
 	public static Class102 aClass102_2;
 
 	@OriginalMember(owner = "client!sc", name = "gb", descriptor = "Lclient!fh;")
-	public static Class58 aClass58_88;
+	public static Js5 aClass58_88;
 
 	@OriginalMember(owner = "client!sd", name = "i", descriptor = "Lclient!fh;")
-	public static Class58 aClass58_89;
+	public static Js5 aClass58_89;
 
 	@OriginalMember(owner = "client!se", name = "W", descriptor = "[Lclient!uj;")
 	public static Class4_Sub3_Sub14[] aClass4_Sub3_Sub14Array12;
 
 	@OriginalMember(owner = "client!se", name = "Z", descriptor = "Lclient!fh;")
-	public static Class58 aClass58_90;
+	public static Js5 aClass58_90;
 
 	@OriginalMember(owner = "client!se", name = "eb", descriptor = "I")
 	public static int anInt4793;
@@ -234,7 +234,7 @@ public final class Static6 {
 	public static int anInt4801;
 
 	@OriginalMember(owner = "client!sg", name = "d", descriptor = "Lclient!fh;")
-	public static Class58 aClass58_91;
+	public static Js5 aClass58_91;
 
 	@OriginalMember(owner = "client!sh", name = "ab", descriptor = "Lclient!bh;")
 	public static Class19 aClass19_1;
@@ -264,7 +264,7 @@ public final class Static6 {
 	public static short[][] aShortArrayArray6;
 
 	@OriginalMember(owner = "client!sm", name = "i", descriptor = "Lclient!fh;")
-	public static Class58 aClass58_92;
+	public static Js5 aClass58_92;
 
 	@OriginalMember(owner = "client!sn", name = "T", descriptor = "[[[I")
 	public static int[][][] anIntArrayArrayArray14;
@@ -279,7 +279,7 @@ public final class Static6 {
 	public static int[] anIntArray541;
 
 	@OriginalMember(owner = "client!ta", name = "u", descriptor = "Lclient!fh;")
-	public static Class58 aClass58_93;
+	public static Js5 aClass58_93;
 
 	@OriginalMember(owner = "client!ta", name = "z", descriptor = "I")
 	public static int anInt5001;
@@ -297,7 +297,7 @@ public final class Static6 {
 	public static int[] anIntArray549;
 
 	@OriginalMember(owner = "client!td", name = "k", descriptor = "Lclient!fh;")
-	public static Class58 aClass58_94;
+	public static Js5 aClass58_94;
 
 	@OriginalMember(owner = "client!td", name = "I", descriptor = "C")
 	public static char aChar4;
@@ -321,7 +321,7 @@ public final class Static6 {
 	public static int anInt5188;
 
 	@OriginalMember(owner = "client!tl", name = "c", descriptor = "Lclient!fh;")
-	public static Class58 aClass58_95;
+	public static Js5 aClass58_95;
 
 	@OriginalMember(owner = "client!tm", name = "A", descriptor = "[I")
 	public static int[] anIntArray570;

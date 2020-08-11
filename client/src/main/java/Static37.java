@@ -697,7 +697,7 @@ public final class Static37 {
 		if (local10 != null) {
 			return local10;
 		}
-		@Pc(22) byte[] local22 = Static6.aClass58_90.method1372(30, arg0);
+		@Pc(22) byte[] local22 = Static6.aClass58_90.fetchFile(30, arg0);
 		@Pc(26) Class153 local26 = new Class153();
 		if (local22 != null) {
 			local26.method3886(arg0, new Buffer(local22));
@@ -922,16 +922,16 @@ public final class Static37 {
 	}
 
 	@OriginalMember(owner = "client!wg", name = "a", descriptor = "(BILclient!fh;Lclient!fh;Z)Lclient!te;")
-	public static Class4_Sub3_Sub19 method4756(@OriginalArg(1) int arg0, @OriginalArg(2) Class58 arg1, @OriginalArg(3) Class58 arg2) {
+	public static Class4_Sub3_Sub19 method4756(@OriginalArg(1) int arg0, @OriginalArg(2) Js5 arg1, @OriginalArg(3) Js5 arg2) {
 		@Pc(7) boolean local7 = true;
-		@Pc(12) int[] local12 = arg1.method1363(arg0);
+		@Pc(12) int[] local12 = arg1.getFileIds(arg0);
 		for (@Pc(14) int local14 = 0; local14 < local12.length; local14++) {
-			@Pc(30) byte[] local30 = arg1.method1350(local12[local14], arg0);
+			@Pc(30) byte[] local30 = arg1.fetchFileNoDiscard(arg0, local12[local14]);
 			if (local30 == null) {
 				local7 = false;
 			} else {
 				@Pc(52) int local52 = (local30[0] & 0xFF) << 8 | local30[1] & 0xFF;
-				@Pc(60) byte[] local60 = arg2.method1350(0, local52);
+				@Pc(60) byte[] local60 = arg2.fetchFileNoDiscard(local52, 0);
 				if (local60 == null) {
 					local7 = false;
 				}
@@ -1034,7 +1034,7 @@ public final class Static37 {
 		if (local10 != null) {
 			return local10;
 		}
-		@Pc(27) byte[] local27 = Static6.aClass58_84.method1372(32, arg0);
+		@Pc(27) byte[] local27 = Static6.aClass58_84.fetchFile(32, arg0);
 		@Pc(31) Class34 local31 = new Class34();
 		if (local27 != null) {
 			local31.method720(new Buffer(local27));
@@ -1188,19 +1188,19 @@ public final class Static37 {
 	}
 
 	@OriginalMember(owner = "client!wj", name = "a", descriptor = "(Lclient!fh;Lclient!fh;Lclient!fh;I)V")
-	public static void method4785(@OriginalArg(0) Class58 arg0, @OriginalArg(1) Class58 arg1, @OriginalArg(2) Class58 arg2) {
+	public static void method4785(@OriginalArg(0) Js5 arg0, @OriginalArg(1) Js5 arg1, @OriginalArg(2) Js5 arg2) {
 		Static3.aClass58_44 = arg0;
 		Static2.aClass58_35 = arg2;
 		Static7.aClass58_101 = arg1;
 	}
 
 	@OriginalMember(owner = "client!wj", name = "a", descriptor = "(Lclient!fh;ILclient!fh;Lclient!fh;Lclient!fh;)V")
-	public static void method4787(@OriginalArg(0) Class58 arg0, @OriginalArg(2) Class58 arg1, @OriginalArg(3) Class58 arg2, @OriginalArg(4) Class58 arg3) {
+	public static void method4787(@OriginalArg(0) Js5 arg0, @OriginalArg(2) Js5 arg1, @OriginalArg(3) Js5 arg2, @OriginalArg(4) Js5 arg3) {
 		Static3.aClass58_61 = arg0;
 		Static7.aClass58_99 = arg3;
 		Static3.aClass58_56 = arg2;
 		Static3.aClass58_49 = arg1;
-		Static5.aClass185ArrayArray115 = new Class185[Static3.aClass58_56.method1351()][];
-		Static3.aBooleanArray12 = new boolean[Static3.aClass58_56.method1351()];
+		Static5.aClass185ArrayArray115 = new Class185[Static3.aClass58_56.capacity()][];
+		Static3.aBooleanArray12 = new boolean[Static3.aClass58_56.capacity()];
 	}
 }

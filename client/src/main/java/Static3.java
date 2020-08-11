@@ -14,7 +14,7 @@ public final class Static3 {
 	public static int[] anIntArray167;
 
 	@OriginalMember(owner = "client!gg", name = "m", descriptor = "Lclient!fh;")
-	public static Class58 aClass58_44;
+	public static Js5 aClass58_44;
 
 	@OriginalMember(owner = "client!gg", name = "q", descriptor = "Lclient!vn;")
 	public static Class4_Sub3_Sub14_Sub1 aClass4_Sub3_Sub14_Sub1_2;
@@ -23,7 +23,7 @@ public final class Static3 {
 	public static boolean aBoolean124;
 
 	@OriginalMember(owner = "client!gh", name = "a", descriptor = "Lclient!fh;")
-	public static Class58 aClass58_59;
+	public static Js5 aClass58_59;
 
 	@OriginalMember(owner = "client!gh", name = "f", descriptor = "I")
 	public static int anInt2580;
@@ -155,7 +155,7 @@ public final class Static3 {
 	public static int[] anIntArray170;
 
 	@OriginalMember(owner = "client!gn", name = "q", descriptor = "Lclient!fh;")
-	public static Class58 aClass58_46;
+	public static Js5 aClass58_46;
 
 	@OriginalMember(owner = "client!gn", name = "D", descriptor = "I")
 	public static int anInt2120;
@@ -164,13 +164,13 @@ public final class Static3 {
 	public static Class169[] aClass169Array1;
 
 	@OriginalMember(owner = "client!hb", name = "j", descriptor = "Lclient!fh;")
-	public static Class58 aClass58_47;
+	public static Js5 aClass58_47;
 
 	@OriginalMember(owner = "client!hc", name = "d", descriptor = "F")
 	public static float aFloat63;
 
 	@OriginalMember(owner = "client!he", name = "n", descriptor = "Lclient!fh;")
-	public static Class58 aClass58_48;
+	public static Js5 aClass58_48;
 
 	@OriginalMember(owner = "client!he", name = "o", descriptor = "I")
 	public static int anInt2162;
@@ -209,7 +209,7 @@ public final class Static3 {
 	public static int anInt5397;
 
 	@OriginalMember(owner = "client!hh", name = "k", descriptor = "Lclient!fh;")
-	public static Class58 aClass58_100;
+	public static Js5 aClass58_100;
 
 	@OriginalMember(owner = "client!hi", name = "g", descriptor = "F")
 	public static float aFloat51;
@@ -218,7 +218,7 @@ public final class Static3 {
 	public static int[] anIntArray185;
 
 	@OriginalMember(owner = "client!hk", name = "ib", descriptor = "Lclient!fh;")
-	public static Class58 aClass58_49;
+	public static Js5 aClass58_49;
 
 	@OriginalMember(owner = "client!hk", name = "kb", descriptor = "Lclient!eo;")
 	public static BufferedSocket aClass52_5;
@@ -239,7 +239,7 @@ public final class Static3 {
 	public static int anInt2296;
 
 	@OriginalMember(owner = "client!id", name = "d", descriptor = "Lclient!fh;")
-	public static Class58 aClass58_52;
+	public static Js5 aClass58_52;
 
 	@OriginalMember(owner = "client!id", name = "e", descriptor = "[I")
 	public static int[] anIntArray196;
@@ -269,7 +269,7 @@ public final class Static3 {
 	public static ByteBuffer aByteBuffer5;
 
 	@OriginalMember(owner = "client!ii", name = "b", descriptor = "Lclient!fh;")
-	public static Class58 aClass58_65;
+	public static Js5 aClass58_65;
 
 	@OriginalMember(owner = "client!ii", name = "d", descriptor = "Lclient!wg;")
 	public static Class4_Sub3_Sub22 aClass4_Sub3_Sub22_3;
@@ -359,13 +359,13 @@ public final class Static3 {
 	public static Class56[] aClass56Array3;
 
 	@OriginalMember(owner = "client!in", name = "q", descriptor = "Lclient!fh;")
-	public static Class58 aClass58_55;
+	public static Js5 aClass58_55;
 
 	@OriginalMember(owner = "client!in", name = "u", descriptor = "Lclient!fh;")
-	public static Class58 aClass58_56;
+	public static Js5 aClass58_56;
 
 	@OriginalMember(owner = "client!io", name = "D", descriptor = "Lclient!fh;")
-	public static Class58 aClass58_57;
+	public static Js5 aClass58_57;
 
 	@OriginalMember(owner = "client!io", name = "E", descriptor = "I")
 	public static int anInt2496;
@@ -380,7 +380,7 @@ public final class Static3 {
 	public static int anInt2519;
 
 	@OriginalMember(owner = "client!ja", name = "p", descriptor = "Lclient!fh;")
-	public static Class58 aClass58_58;
+	public static Js5 aClass58_58;
 
 	@OriginalMember(owner = "client!jb", name = "f", descriptor = "Lclient!ib;")
 	public static Class4_Sub3_Sub10 aClass4_Sub3_Sub10_4;
@@ -413,10 +413,10 @@ public final class Static3 {
 	public static int anInt2586;
 
 	@OriginalMember(owner = "client!jh", name = "k", descriptor = "Lclient!fh;")
-	public static Class58 aClass58_60;
+	public static Js5 aClass58_60;
 
 	@OriginalMember(owner = "client!ji", name = "a", descriptor = "Lclient!fh;")
-	public static Class58 aClass58_61;
+	public static Js5 aClass58_61;
 
 	@OriginalMember(owner = "client!ji", name = "b", descriptor = "I")
 	public static int anInt2587;
@@ -425,7 +425,7 @@ public final class Static3 {
 	public static int[] anIntArray226;
 
 	@OriginalMember(owner = "client!jk", name = "n", descriptor = "Lclient!fh;")
-	public static Class58 aClass58_64;
+	public static Js5 aClass58_64;
 
 	@OriginalMember(owner = "client!gd", name = "a", descriptor = "[I")
 	public static int[] anIntArray164 = new int[2];

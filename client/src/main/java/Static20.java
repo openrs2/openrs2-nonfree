@@ -825,7 +825,7 @@ public final class Static20 {
 	}
 
 	@OriginalMember(owner = "client!ik", name = "a", descriptor = "(IIBLclient!fh;)Lclient!uj;")
-	public static Class4_Sub3_Sub14 method1917(@OriginalArg(0) int arg0, @OriginalArg(3) Class58 arg1) {
+	public static Class4_Sub3_Sub14 method1917(@OriginalArg(0) int arg0, @OriginalArg(3) Js5 arg1) {
 		return Static9.method197(arg1, arg0, 0) ? Static14.method1063() : null;
 	}
 
@@ -857,8 +857,8 @@ public final class Static20 {
 			return;
 		}
 		if (Static4.anInt2644 < 10) {
-			if (!Static3.aClass58_65.method1365(Static3.aClass4_Sub3_Sub22_3.aString358)) {
-				Static4.anInt2644 = Static5.aClass58_82.method1342(Static3.aClass4_Sub3_Sub22_3.aString358) / 10;
+			if (!Static3.aClass58_65.isFileReady(Static3.aClass4_Sub3_Sub22_3.aString358)) {
+				Static4.anInt2644 = Static5.aClass58_82.getReadyPercentage(Static3.aClass4_Sub3_Sub22_3.aString358) / 10;
 				return;
 			}
 			Static30.method3597();
@@ -934,26 +934,26 @@ public final class Static20 {
 			Static16.method1501(256);
 			Static4.anInt2644 = 20;
 		} else if (Static4.anInt2644 == 20) {
-			Static26.method2934(new Buffer(Static3.aClass58_65.method1358("underlay", Static3.aClass4_Sub3_Sub22_3.aString358)));
+			Static26.method2934(new Buffer(Static3.aClass58_65.fetchFile(Static3.aClass4_Sub3_Sub22_3.aString358, "underlay")));
 			Static4.anInt2644 = 30;
 			Static32.method3917(true);
 			GameShell.resetTimer();
 		} else if (Static4.anInt2644 == 30) {
-			Static19.method2398(new Buffer(Static3.aClass58_65.method1358("overlay", Static3.aClass4_Sub3_Sub22_3.aString358)));
+			Static19.method2398(new Buffer(Static3.aClass58_65.fetchFile(Static3.aClass4_Sub3_Sub22_3.aString358, "overlay")));
 			Static4.anInt2644 = 40;
 			GameShell.resetTimer();
 		} else if (Static4.anInt2644 == 40) {
-			method2406(new Buffer(Static3.aClass58_65.method1358("overlay2", Static3.aClass4_Sub3_Sub22_3.aString358)));
+			method2406(new Buffer(Static3.aClass58_65.fetchFile(Static3.aClass4_Sub3_Sub22_3.aString358, "overlay2")));
 			Static4.anInt2644 = 50;
 			GameShell.resetTimer();
 		} else if (Static4.anInt2644 == 50) {
-			method2407(new Buffer(Static3.aClass58_65.method1358("loc", Static3.aClass4_Sub3_Sub22_3.aString358)), Static7.aBoolean370);
+			method2407(new Buffer(Static3.aClass58_65.fetchFile(Static3.aClass4_Sub3_Sub22_3.aString358, "loc")), Static7.aBoolean370);
 			Static4.anInt2644 = 60;
 			Static32.method3917(true);
 			GameShell.resetTimer();
 		} else if (Static4.anInt2644 == 60) {
-			if (Static3.aClass58_65.method1344(Static3.aClass4_Sub3_Sub22_3.aString358 + "_labels")) {
-				if (!Static3.aClass58_65.method1365(Static3.aClass4_Sub3_Sub22_3.aString358 + "_labels")) {
+			if (Static3.aClass58_65.isGroupNameValid(Static3.aClass4_Sub3_Sub22_3.aString358 + "_labels")) {
+				if (!Static3.aClass58_65.isFileReady(Static3.aClass4_Sub3_Sub22_3.aString358 + "_labels")) {
 					return;
 				}
 				Static3.aClass138_6 = Static16.method1555(Static3.aClass58_65, Static3.aClass4_Sub3_Sub22_3.aString358 + "_labels", Static7.aBoolean370);
@@ -1318,9 +1318,9 @@ public final class Static20 {
 		}
 		@Pc(26) byte[] local26;
 		if (arg0 >= 32768) {
-			local26 = Static2.aClass58_26.method1372(0, arg0 & 0x7FFF);
+			local26 = Static2.aClass58_26.fetchFile(0, arg0 & 0x7FFF);
 		} else {
-			local26 = Static6.aClass58_91.method1372(0, arg0);
+			local26 = Static6.aClass58_91.fetchFile(0, arg0);
 		}
 		@Pc(38) Class4_Sub3_Sub23 local38 = new Class4_Sub3_Sub23();
 		if (local26 != null) {
@@ -1395,7 +1395,7 @@ public final class Static20 {
 	}
 
 	@OriginalMember(owner = "client!j", name = "a", descriptor = "(ILclient!fh;)V")
-	public static void method1964(@OriginalArg(1) Class58 arg0) {
+	public static void method1964(@OriginalArg(1) Js5 arg0) {
 		Static1.aClass58_20 = arg0;
 	}
 

@@ -160,7 +160,7 @@ public final class Static24 {
 	}
 
 	@OriginalMember(owner = "client!lj", name = "a", descriptor = "(Lclient!fh;B)V")
-	public static void method2599(@OriginalArg(0) Class58 arg0) {
+	public static void method2599(@OriginalArg(0) Js5 arg0) {
 		Static6.aClass58_90 = arg0;
 	}
 
@@ -225,12 +225,12 @@ public final class Static24 {
 	}
 
 	@OriginalMember(owner = "client!ln", name = "a", descriptor = "(Lclient!fh;BII)Lclient!vn;")
-	public static Class4_Sub3_Sub14_Sub1 method2654(@OriginalArg(0) Class58 arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2) {
+	public static Class4_Sub3_Sub14_Sub1 method2654(@OriginalArg(0) Js5 arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2) {
 		return Static9.method197(arg0, arg1, arg2) ? Static21.method2002() : null;
 	}
 
 	@OriginalMember(owner = "client!m", name = "a", descriptor = "(ILclient!fh;)V")
-	public static void method2675(@OriginalArg(1) Class58 arg0) {
+	public static void method2675(@OriginalArg(1) Js5 arg0) {
 		if (Static3.aBoolean124) {
 			return;
 		}
@@ -249,7 +249,7 @@ public final class Static24 {
 	}
 
 	@OriginalMember(owner = "client!m", name = "a", descriptor = "(Lclient!fh;IB)Lclient!vn;")
-	public static Class4_Sub3_Sub14_Sub1 method2679(@OriginalArg(0) Class58 arg0, @OriginalArg(1) int arg1) {
+	public static Class4_Sub3_Sub14_Sub1 method2679(@OriginalArg(0) Js5 arg0, @OriginalArg(1) int arg1) {
 		return Static33.method4131(arg0, arg1) ? Static21.method2002() : null;
 	}
 
@@ -452,24 +452,24 @@ public final class Static24 {
 	}
 
 	@OriginalMember(owner = "client!mb", name = "a", descriptor = "(Lclient!fh;I)V")
-	public static void method2946(@OriginalArg(0) Class58 arg0) {
-		Static2.anInt914 = arg0.method1362("p11_full");
-		Static7.anInt6040 = arg0.method1362("p12_full");
-		Static4.anInt3309 = arg0.method1362("b12_full");
-		Static3.anInt2120 = arg0.method1362("hitmarks");
-		Static6.anInt4363 = arg0.method1362("hitbar_default");
-		Static5.anInt4281 = arg0.method1362("headicons_pk");
-		Static2.anInt1975 = arg0.method1362("headicons_prayer");
-		Static5.anInt4207 = arg0.method1362("hint_headicons");
-		Static7.anInt5332 = arg0.method1362("hint_mapmarkers");
-		Static7.anInt5230 = arg0.method1362("mapflag");
-		Static6.anInt3786 = arg0.method1362("cross");
-		Static3.anInt2296 = arg0.method1362("mapdots");
-		Static5.anInt4163 = arg0.method1362("scrollbar");
-		Static3.anInt2449 = arg0.method1362("name_icons");
-		Static2.anInt1632 = arg0.method1362("floorshadows");
-		Static1.anInt130 = arg0.method1362("compass");
-		Static6.anInt4371 = arg0.method1362("hint_mapedge");
+	public static void method2946(@OriginalArg(0) Js5 arg0) {
+		Static2.anInt914 = arg0.getGroupId("p11_full");
+		Static7.anInt6040 = arg0.getGroupId("p12_full");
+		Static4.anInt3309 = arg0.getGroupId("b12_full");
+		Static3.anInt2120 = arg0.getGroupId("hitmarks");
+		Static6.anInt4363 = arg0.getGroupId("hitbar_default");
+		Static5.anInt4281 = arg0.getGroupId("headicons_pk");
+		Static2.anInt1975 = arg0.getGroupId("headicons_prayer");
+		Static5.anInt4207 = arg0.getGroupId("hint_headicons");
+		Static7.anInt5332 = arg0.getGroupId("hint_mapmarkers");
+		Static7.anInt5230 = arg0.getGroupId("mapflag");
+		Static6.anInt3786 = arg0.getGroupId("cross");
+		Static3.anInt2296 = arg0.getGroupId("mapdots");
+		Static5.anInt4163 = arg0.getGroupId("scrollbar");
+		Static3.anInt2449 = arg0.getGroupId("name_icons");
+		Static2.anInt1632 = arg0.getGroupId("floorshadows");
+		Static1.anInt130 = arg0.getGroupId("compass");
+		Static6.anInt4371 = arg0.getGroupId("hint_mapedge");
 	}
 
 	@OriginalMember(owner = "client!mb", name = "a", descriptor = "(ZIIII)V")
@@ -498,7 +498,7 @@ public final class Static24 {
 	}
 
 	@OriginalMember(owner = "client!mc", name = "a", descriptor = "(ILclient!fh;IBIIZ)V")
-	public static void method2692(@OriginalArg(1) Class58 arg0, @OriginalArg(4) int arg1, @OriginalArg(5) int arg2) {
+	public static void method2692(@OriginalArg(1) Js5 arg0, @OriginalArg(4) int arg1, @OriginalArg(5) int arg2) {
 		Static3.anInt5397 = 2;
 		Static7.anInt6022 = arg2;
 		Static2.aClass58_42 = arg0;
@@ -544,17 +544,17 @@ public final class Static24 {
 			((Class24_Sub1) Static4.anInterface4_1).method460();
 		}
 		Static5.aClass40_13.method893();
-		Static3.aClass58_46.method1349();
-		Static4.aClass58_66.method1349();
-		Static2.aClass58_27.method1349();
-		Static6.aClass58_92.method1349();
-		Static3.aClass58_47.method1349();
-		Static7.aClass58_98.method1349();
-		Static4.aClass58_69.method1349();
-		Static1.aClass58_4.method1349();
-		Static6.aClass58_71.method1349();
-		Static3.aClass58_57.method1349();
-		Static4.aClass58_73.method1349();
+		Static3.aClass58_46.discardUnpacked();
+		Static4.aClass58_66.discardUnpacked();
+		Static2.aClass58_27.discardUnpacked();
+		Static6.aClass58_92.discardUnpacked();
+		Static3.aClass58_47.discardUnpacked();
+		Static7.aClass58_98.discardUnpacked();
+		Static4.aClass58_69.discardUnpacked();
+		Static1.aClass58_4.discardUnpacked();
+		Static6.aClass58_71.discardUnpacked();
+		Static3.aClass58_57.discardUnpacked();
+		Static4.aClass58_73.discardUnpacked();
 		Static1.aClass26_5.clear();
 	}
 
@@ -803,8 +803,8 @@ public final class Static24 {
 	}
 
 	@OriginalMember(owner = "client!mg", name = "a", descriptor = "(Lclient!fh;I)V")
-	public static void method2711(@OriginalArg(0) Class58 arg0) {
-		Static4.anInt3250 = arg0.method1362("runes");
+	public static void method2711(@OriginalArg(0) Js5 arg0) {
+		Static4.anInt3250 = arg0.getGroupId("runes");
 	}
 
 	@OriginalMember(owner = "client!mg", name = "a", descriptor = "(I)Lclient!fg;")

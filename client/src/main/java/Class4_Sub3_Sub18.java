@@ -87,7 +87,7 @@ public final class Class4_Sub3_Sub18 extends SecondaryNode {
 	}
 
 	@OriginalMember(owner = "client!so", name = "a", descriptor = "(Lclient!kj;Lclient!fh;Z)[I")
-	public final int[] method4071(@OriginalArg(0) Interface3 arg0, @OriginalArg(1) Class58 arg1, @OriginalArg(2) boolean arg2) {
+	public final int[] method4071(@OriginalArg(0) Interface3 arg0, @OriginalArg(1) Js5 arg1, @OriginalArg(2) boolean arg2) {
 		if (this.aClass4_Sub3_Sub15_1.method2649(arg0, arg1)) {
 			@Pc(14) int local14 = arg2 ? 64 : 128;
 			return this.aClass4_Sub3_Sub15_1.method2653(1.0D, this.aBoolean341, arg1, arg0, local14, false, local14);
@@ -97,7 +97,7 @@ public final class Class4_Sub3_Sub18 extends SecondaryNode {
 	}
 
 	@OriginalMember(owner = "client!so", name = "a", descriptor = "(Lclient!kj;Lclient!fh;FZ)[I")
-	public final int[] method4073(@OriginalArg(0) Interface3 arg0, @OriginalArg(1) Class58 arg1, @OriginalArg(2) float arg2, @OriginalArg(3) boolean arg3) {
+	public final int[] method4073(@OriginalArg(0) Interface3 arg0, @OriginalArg(1) Js5 arg1, @OriginalArg(2) float arg2, @OriginalArg(3) boolean arg3) {
 		if (this.anIntArray538 == null || this.aFloat131 != arg2) {
 			if (!this.aClass4_Sub3_Sub15_1.method2649(arg0, arg1)) {
 				return null;
@@ -223,12 +223,12 @@ public final class Class4_Sub3_Sub18 extends SecondaryNode {
 	}
 
 	@OriginalMember(owner = "client!so", name = "a", descriptor = "(Lclient!kj;Lclient!fh;)Z")
-	public final boolean method4076(@OriginalArg(0) Interface3 arg0, @OriginalArg(1) Class58 arg1) {
+	public final boolean method4076(@OriginalArg(0) Interface3 arg0, @OriginalArg(1) Js5 arg1) {
 		return this.aClass4_Sub3_Sub15_1.method2649(arg0, arg1);
 	}
 
 	@OriginalMember(owner = "client!so", name = "a", descriptor = "(Lclient!kj;Lclient!fh;I)Z")
-	public final boolean method4077(@OriginalArg(0) Interface3 arg0, @OriginalArg(1) Class58 arg1, @OriginalArg(2) int arg2) {
+	public final boolean method4077(@OriginalArg(0) Interface3 arg0, @OriginalArg(1) Js5 arg1, @OriginalArg(2) int arg2) {
 		if (!this.aClass4_Sub3_Sub15_1.method2649(arg0, arg1)) {
 			return false;
 		}

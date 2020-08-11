@@ -10,19 +10,19 @@ public class Class24 implements Interface3 {
 	private final Class40 aClass40_2 = new Class40(256);
 
 	@OriginalMember(owner = "client!qi", name = "c", descriptor = "Lclient!fh;")
-	private final Class58 aClass58_13;
+	private final Js5 aClass58_13;
 
 	@OriginalMember(owner = "client!qi", name = "m", descriptor = "Lclient!fh;")
-	private final Class58 aClass58_14;
+	private final Js5 aClass58_14;
 
 	@OriginalMember(owner = "client!qi", name = "l", descriptor = "[Lclient!mi;")
 	private final Class119[] aClass119Array2;
 
 	@OriginalMember(owner = "client!qi", name = "<init>", descriptor = "(Lclient!fh;Lclient!fh;Lclient!fh;)V")
-	protected Class24(@OriginalArg(0) Class58 arg0, @OriginalArg(1) Class58 arg1, @OriginalArg(2) Class58 arg2) {
+	protected Class24(@OriginalArg(0) Js5 arg0, @OriginalArg(1) Js5 arg1, @OriginalArg(2) Js5 arg2) {
 		this.aClass58_13 = arg1;
 		this.aClass58_14 = arg2;
-		@Pc(24) Buffer local24 = new Buffer(arg0.method1372(0, 0));
+		@Pc(24) Buffer local24 = new Buffer(arg0.fetchFile(0, 0));
 		@Pc(28) int local28 = local24.readUnsignedShort();
 		this.aClass119Array2 = new Class119[local28];
 		for (@Pc(34) int local34 = 0; local34 < local28; local34++) {
@@ -131,7 +131,7 @@ public class Class24 implements Interface3 {
 		if (local10 != null) {
 			return (Class4_Sub3_Sub15) local10;
 		}
-		@Pc(21) byte[] local21 = this.aClass58_13.method1343(arg0);
+		@Pc(21) byte[] local21 = this.aClass58_13.fetchFile(arg0);
 		if (local21 == null) {
 			return null;
 		} else {

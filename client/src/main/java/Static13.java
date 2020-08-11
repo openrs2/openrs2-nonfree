@@ -1,6 +1,5 @@
 import java.awt.Component;
 import java.awt.Point;
-import java.awt.event.ActionEvent;
 import javax.media.opengl.GL;
 
 import dev.openrs2.deob.annotation.OriginalArg;
@@ -252,8 +251,8 @@ public final class Static13 {
 	}
 
 	@OriginalMember(owner = "client!dj", name = "a", descriptor = "(ILclient!fh;I)Lclient!qh;")
-	public static Class4_Sub23 method887(@OriginalArg(0) int arg0, @OriginalArg(1) Class58 arg1) {
-		@Pc(17) byte[] local17 = arg1.method1343(arg0);
+	public static Class4_Sub23 method887(@OriginalArg(0) int arg0, @OriginalArg(1) Js5 arg1) {
+		@Pc(17) byte[] local17 = arg1.fetchFile(arg0);
 		return local17 == null ? null : new Class4_Sub23(local17);
 	}
 
@@ -680,7 +679,7 @@ public final class Static13 {
 		if (local17 != null) {
 			return local17;
 		}
-		@Pc(29) byte[] local29 = Static6.aClass58_94.method1372(16, arg0);
+		@Pc(29) byte[] local29 = Static6.aClass58_94.fetchFile(16, arg0);
 		@Pc(33) Class79 local33 = new Class79();
 		if (local29 != null) {
 			local33.method1747(new Buffer(local29));
@@ -1010,7 +1009,7 @@ public final class Static13 {
 	}
 
 	@OriginalMember(owner = "client!eh", name = "a", descriptor = "(Lclient!fh;)V")
-	public static void method1028(@OriginalArg(0) Class58 arg0) {
+	public static void method1028(@OriginalArg(0) Js5 arg0) {
 		Static2.aClass58_37 = arg0;
 	}
 }

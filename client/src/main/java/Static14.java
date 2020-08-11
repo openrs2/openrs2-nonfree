@@ -9,12 +9,12 @@ import dev.openrs2.deob.annotation.Pc;
 public final class Static14 {
 
 	@OriginalMember(owner = "client!ei", name = "a", descriptor = "(Lclient!fh;I)I")
-	public static int method1046(@OriginalArg(0) Class58 arg0) {
+	public static int method1046(@OriginalArg(0) Js5 arg0) {
 		@Pc(5) int local5 = 0;
-		if (arg0.method1359(Static6.anInt4677)) {
+		if (arg0.isFileReady(Static6.anInt4677)) {
 			local5++;
 		}
-		if (arg0.method1359(Static1.anInt322)) {
+		if (arg0.isFileReady(Static1.anInt322)) {
 			local5++;
 		}
 		return local5;
@@ -282,7 +282,7 @@ public final class Static14 {
 		if (local10 != null) {
 			return local10;
 		}
-		@Pc(42) byte[] local42 = Static6.aClass58_86.method1372(Static9.method192(arg0), Static33.method4090(arg0));
+		@Pc(42) byte[] local42 = Static6.aClass58_86.fetchFile(Static9.method192(arg0), Static33.method4090(arg0));
 		@Pc(46) Class32 local46 = new Class32();
 		if (local42 != null) {
 			local46.method695(new Buffer(local42));
@@ -303,8 +303,8 @@ public final class Static14 {
 
 	@OriginalMember(owner = "client!el", name = "b", descriptor = "(I)V")
 	public static void method1068() {
-		Static5.aClass185ArrayArray115 = new Class185[Static3.aClass58_56.method1351()][];
-		Static3.aBooleanArray12 = new boolean[Static3.aClass58_56.method1351()];
+		Static5.aClass185ArrayArray115 = new Class185[Static3.aClass58_56.capacity()][];
+		Static3.aBooleanArray12 = new boolean[Static3.aClass58_56.capacity()];
 	}
 
 	@OriginalMember(owner = "client!el", name = "a", descriptor = "(IIIBIIIII)V")
@@ -868,12 +868,12 @@ public final class Static14 {
 	}
 
 	@OriginalMember(owner = "client!f", name = "a", descriptor = "(Lclient!fh;Lclient!ke;IZLclient!fh;)V")
-	public static void method1171(@OriginalArg(0) Class58 arg0, @OriginalArg(1) Class4_Sub3_Sub5_Sub2 arg1, @OriginalArg(4) Class58 arg2) {
+	public static void method1171(@OriginalArg(0) Js5 arg0, @OriginalArg(1) Class4_Sub3_Sub5_Sub2 arg1, @OriginalArg(4) Js5 arg2) {
 		Static4.aClass58_75 = arg2;
 		Static5.aClass58_81 = arg0;
 		Static1.aBoolean200 = true;
-		@Pc(11) int local11 = Static5.aClass58_81.method1351() - 1;
-		Static5.anInt6072 = local11 * 256 + Static5.aClass58_81.method1371(local11);
+		@Pc(11) int local11 = Static5.aClass58_81.capacity() - 1;
+		Static5.anInt6072 = local11 * 256 + Static5.aClass58_81.getGroupCapacity(local11);
 		Static1.aClass4_Sub3_Sub5_Sub2_1 = arg1;
 		Static6.aStringArray26 = new String[] { null, null, null, null, LocalisedText.DROP };
 		Static6.aStringArray29 = new String[] { null, null, LocalisedText.TAKE, null, null };

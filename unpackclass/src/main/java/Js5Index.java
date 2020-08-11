@@ -205,12 +205,12 @@ public abstract class Js5Index {
 	}
 
 	@OriginalMember(owner = "unpackclass!aa", name = "b", descriptor = "(II)[B")
-	public final byte[] getFile(@OriginalArg(0) int group, @OriginalArg(1) int file) {
-		return this.getFile(group, file, null);
+	public final byte[] fetchFile(@OriginalArg(0) int group, @OriginalArg(1) int file) {
+		return this.fetchFile(group, file, null);
 	}
 
 	@OriginalMember(owner = "unpackclass!aa", name = "a", descriptor = "(II[I)[B")
-	private byte[] getFile(@OriginalArg(0) int group, @OriginalArg(1) int file, @OriginalArg(2) int[] key) {
+	private byte[] fetchFile(@OriginalArg(0) int group, @OriginalArg(1) int file, @OriginalArg(2) int[] key) {
 		if (!this.isFileValid(group, file)) {
 			return null;
 		}
@@ -256,7 +256,7 @@ public abstract class Js5Index {
 				this.unpacked[group] = new Object[this.groupCapacities[group]];
 			}
 			@Pc(43) Object[] unpacked = this.unpacked[group];
-			@Pc(45) boolean found = true;
+			@Pc(45) boolean valid = true;
 			for (@Pc(47) int i = 0; i < groupSize; i++) {
 				@Pc(53) int fileId;
 				if (fileIds == null) {
@@ -265,11 +265,11 @@ public abstract class Js5Index {
 					fileId = fileIds[i];
 				}
 				if (unpacked[fileId] == null) {
-					found = false;
+					valid = false;
 					break;
 				}
 			}
-			if (found) {
+			if (valid) {
 				return true;
 			}
 			@Pc(100) byte[] compressed;
@@ -295,19 +295,19 @@ public abstract class Js5Index {
 				@Pc(198) int stripes = uncompressed[position] & 0xFF;
 				position -= groupSize * stripes * 4;
 				@Pc(211) Buffer buffer = new Buffer(uncompressed);
-				@Pc(214) int[] sizes = new int[groupSize];
+				@Pc(214) int[] lens = new int[groupSize];
 				buffer.position = position;
 				for (@Pc(219) int i = 0; i < stripes; i++) {
 					@Pc(223) int len = 0;
 					for (@Pc(225) int j = 0; j < groupSize; j++) {
 						len += buffer.readInt();
-						sizes[j] += len;
+						lens[j] += len;
 					}
 				}
 				@Pc(250) byte[][] extracted = new byte[groupSize][];
 				for (@Pc(252) int i = 0; i < groupSize; i++) {
-					extracted[i] = new byte[sizes[i]];
-					sizes[i] = 0;
+					extracted[i] = new byte[lens[i]];
+					lens[i] = 0;
 				}
 				buffer.position = position;
 				@Pc(274) int off = 0;
@@ -315,8 +315,8 @@ public abstract class Js5Index {
 					@Pc(280) int len = 0;
 					for (@Pc(282) int j = 0; j < groupSize; j++) {
 						len += buffer.readInt();
-						ArrayUtils.copy(uncompressed, off, extracted[j], sizes[j], len);
-						sizes[j] += len;
+						ArrayUtils.copy(uncompressed, off, extracted[j], lens[j], len);
+						lens[j] += len;
 						off += len;
 					}
 				}

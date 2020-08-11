@@ -1008,7 +1008,7 @@ public final class Static35 {
 	}
 
 	@OriginalMember(owner = "client!ue", name = "a", descriptor = "(Lclient!fh;B)V")
-	public static void method667(@OriginalArg(0) Class58 arg0) {
+	public static void method667(@OriginalArg(0) Js5 arg0) {
 		Static2.aClass4_Sub3_Sub14Array10 = Static27.method3225(arg0, Static3.anInt2120);
 		Static2.aClass4_Sub3_Sub14Array7 = Static27.method3225(arg0, Static6.anInt4363);
 		Static3.aClass4_Sub3_Sub14Array8 = Static27.method3225(arg0, Static5.anInt4281);
@@ -1448,7 +1448,7 @@ public final class Static35 {
 		if (local18 != null) {
 			return local18;
 		}
-		@Pc(34) byte[] local34 = Static5.aClass58_81.method1372(Static10.method394(arg0), Static33.method4058(arg0));
+		@Pc(34) byte[] local34 = Static5.aClass58_81.fetchFile(Static10.method394(arg0), Static33.method4058(arg0));
 		@Pc(38) Class162 local38 = new Class162();
 		local38.anInt5066 = arg0;
 		if (local34 != null) {
@@ -1483,7 +1483,7 @@ public final class Static35 {
 		if (local10 != null) {
 			return local10;
 		}
-		@Pc(22) byte[] local22 = Static3.aClass58_52.method1372(29, arg0);
+		@Pc(22) byte[] local22 = Static3.aClass58_52.fetchFile(29, arg0);
 		@Pc(26) Class145 local26 = new Class145();
 		if (local22 != null) {
 			local26.method3618(arg0, new Buffer(local22));

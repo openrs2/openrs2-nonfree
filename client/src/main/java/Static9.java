@@ -266,8 +266,8 @@ public final class Static9 {
 	}
 
 	@OriginalMember(owner = "client!an", name = "a", descriptor = "(ILclient!fh;II)Z")
-	public static boolean method197(@OriginalArg(1) Class58 arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2) {
-		@Pc(9) byte[] local9 = arg0.method1372(arg1, arg2);
+	public static boolean method197(@OriginalArg(1) Js5 arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2) {
+		@Pc(9) byte[] local9 = arg0.fetchFile(arg1, arg2);
 		if (local9 == null) {
 			return false;
 		} else {
@@ -497,7 +497,7 @@ public final class Static9 {
 	}
 
 	@OriginalMember(owner = "client!bb", name = "a", descriptor = "(Lclient!fh;I)V")
-	public static void method231(@OriginalArg(0) Class58 arg0) {
+	public static void method231(@OriginalArg(0) Js5 arg0) {
 		Static4.aClass58_74 = arg0;
 	}
 
@@ -623,9 +623,9 @@ public final class Static9 {
 	}
 
 	@OriginalMember(owner = "client!be", name = "a", descriptor = "(Lclient!fh;I)V")
-	public static void method262(@OriginalArg(0) Class58 arg0) {
+	public static void method262(@OriginalArg(0) Js5 arg0) {
 		Static6.aClass58_94 = arg0;
-		Static5.anInt4158 = Static6.aClass58_94.method1371(16);
+		Static5.anInt4158 = Static6.aClass58_94.getGroupCapacity(16);
 	}
 
 	@OriginalMember(owner = "client!be", name = "a", descriptor = "(II)Lclient!fn;")
@@ -634,7 +634,7 @@ public final class Static9 {
 		if (local18 != null) {
 			return local18;
 		}
-		@Pc(29) byte[] local29 = Static6.aClass58_95.method1372(5, arg0);
+		@Pc(29) byte[] local29 = Static6.aClass58_95.fetchFile(5, arg0);
 		@Pc(33) Class4_Sub3_Sub8 local33 = new Class4_Sub3_Sub8();
 		if (local29 != null) {
 			local33.method1499(new Buffer(local29));

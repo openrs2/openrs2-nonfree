@@ -173,7 +173,7 @@ public final class unpackclass extends unpack {
 	@OriginalMember(owner = "unpackclass!unpackclass", name = "<init>", descriptor = "([BZ)V")
 	public unpackclass(@OriginalArg(0) byte[] bytes, @OriginalArg(1) boolean readLineNumberTable) throws IOException {
 		@Pc(572) Js5File file = new Js5File(bytes, true, true);
-		this.in.bytes = file.getFile(1, 0);
+		this.in.bytes = file.fetchFile(1, 0);
 		this.in.position = this.in.bytes.length - 20;
 		this.utf8Entries = this.createEntries(1);
 		this.intEntries = this.createEntries(3);
@@ -231,7 +231,7 @@ public final class unpackclass extends unpack {
 		this.readNumericEntries(this.doubleEntries, 0);
 		@Pc(881) int classes = file.getGroupCapacity();
 		for (@Pc(883) int i = 0; i < classes; i++) {
-			this.in.bytes = file.getFile(0, i);
+			this.in.bytes = file.fetchFile(0, i);
 			this.readClass(readLineNumberTable);
 		}
 		this.CONSTANT_POOL_ENTRY_LENGTHS = null;

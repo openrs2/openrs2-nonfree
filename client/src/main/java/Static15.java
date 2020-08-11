@@ -594,8 +594,8 @@ public final class Static15 {
 	public static boolean method1364(@OriginalArg(1) int arg0) {
 		if (Static3.aBooleanArray12[arg0]) {
 			return true;
-		} else if (Static3.aClass58_56.method1355(arg0)) {
-			@Pc(29) int local29 = Static3.aClass58_56.method1371(arg0);
+		} else if (Static3.aClass58_56.isGroupReady(arg0)) {
+			@Pc(29) int local29 = Static3.aClass58_56.getGroupCapacity(arg0);
 			if (local29 == 0) {
 				Static3.aBooleanArray12[arg0] = true;
 				return true;
@@ -605,7 +605,7 @@ public final class Static15 {
 			}
 			for (@Pc(53) int local53 = 0; local53 < local29; local53++) {
 				if (Static5.aClass185ArrayArray115[arg0][local53] == null) {
-					@Pc(74) byte[] local74 = Static3.aClass58_56.method1372(arg0, local53);
+					@Pc(74) byte[] local74 = Static3.aClass58_56.fetchFile(arg0, local53);
 					if (local74 != null) {
 						@Pc(88) Class185 local88 = Static5.aClass185ArrayArray115[arg0][local53] = new Class185();
 						local88.anInt5914 = (arg0 << 16) + local53;
@@ -646,7 +646,7 @@ public final class Static15 {
 		if (local10 != null) {
 			return local10;
 		}
-		@Pc(28) byte[] local28 = Static1.aClass58_22.method1372(34, arg0);
+		@Pc(28) byte[] local28 = Static1.aClass58_22.fetchFile(34, arg0);
 		@Pc(32) Class143 local32 = new Class143();
 		if (local28 != null) {
 			local32.method3556(arg0, new Buffer(local28));
@@ -943,7 +943,7 @@ public final class Static15 {
 	}
 
 	@OriginalMember(owner = "client!fl", name = "a", descriptor = "(Lclient!fh;ILclient!fh;)V")
-	public static void method1473(@OriginalArg(0) Class58 arg0, @OriginalArg(2) Class58 arg1) {
+	public static void method1473(@OriginalArg(0) Js5 arg0, @OriginalArg(2) Js5 arg1) {
 		Static2.aClass58_26 = arg1;
 		Static6.aClass58_91 = arg0;
 	}
@@ -1053,7 +1053,7 @@ public final class Static15 {
 		if (local10 != null) {
 			return local10;
 		}
-		@Pc(26) byte[] local26 = Static7.aClass58_104.method1372(Static25.method2808(arg0), Static24.method2690(arg0));
+		@Pc(26) byte[] local26 = Static7.aClass58_104.fetchFile(Static25.method2808(arg0), Static24.method2690(arg0));
 		@Pc(30) Class168 local30 = new Class168();
 		local30.anInt5255 = arg0;
 		if (local26 != null) {

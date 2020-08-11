@@ -13,13 +13,13 @@ public final class Class98 {
 	private final HashTable aClass84_12 = new HashTable(256);
 
 	@OriginalMember(owner = "client!jk", name = "c", descriptor = "Lclient!fh;")
-	private final Class58 aClass58_62;
+	private final Js5 aClass58_62;
 
 	@OriginalMember(owner = "client!jk", name = "l", descriptor = "Lclient!fh;")
-	private final Class58 aClass58_63;
+	private final Js5 aClass58_63;
 
 	@OriginalMember(owner = "client!jk", name = "<init>", descriptor = "(Lclient!fh;Lclient!fh;)V")
-	public Class98(@OriginalArg(0) Class58 arg0, @OriginalArg(1) Class58 arg1) {
+	public Class98(@OriginalArg(0) Js5 arg0, @OriginalArg(1) Js5 arg1) {
 		this.aClass58_62 = arg1;
 		this.aClass58_63 = arg0;
 	}
@@ -50,9 +50,9 @@ public final class Class98 {
 
 	@OriginalMember(owner = "client!jk", name = "a", descriptor = "([III)Lclient!pb;")
 	public final Class4_Sub8_Sub1 method2058(@OriginalArg(0) int[] arg0, @OriginalArg(2) int arg1) {
-		if (this.aClass58_62.method1351() == 1) {
+		if (this.aClass58_62.capacity() == 1) {
 			return this.method2059(arg1, 0, arg0);
-		} else if (this.aClass58_62.method1371(arg1) == 1) {
+		} else if (this.aClass58_62.getGroupCapacity(arg1) == 1) {
 			return this.method2059(0, arg1, arg0);
 		} else {
 			throw new RuntimeException();
@@ -91,9 +91,9 @@ public final class Class98 {
 
 	@OriginalMember(owner = "client!jk", name = "a", descriptor = "(I[II)Lclient!pb;")
 	public final Class4_Sub8_Sub1 method2061(@OriginalArg(1) int[] arg0, @OriginalArg(2) int arg1) {
-		if (this.aClass58_63.method1351() == 1) {
+		if (this.aClass58_63.capacity() == 1) {
 			return this.method2057(0, arg0, arg1);
-		} else if (this.aClass58_63.method1371(arg1) == 1) {
+		} else if (this.aClass58_63.getGroupCapacity(arg1) == 1) {
 			return this.method2057(arg1, arg0, 0);
 		} else {
 			throw new RuntimeException();

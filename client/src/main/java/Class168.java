@@ -442,7 +442,7 @@ public final class Class168 {
 			if (local40 == null) {
 				@Pc(52) boolean local52 = false;
 				for (@Pc(54) int local54 = 0; local54 < this.anIntArray588.length; local54++) {
-					if (!Static1.aClass58_21.method1370(this.anIntArray588[local54], 0)) {
+					if (!Static1.aClass58_21.isFileReady(this.anIntArray588[local54], 0)) {
 						local52 = true;
 					}
 				}
@@ -493,7 +493,7 @@ public final class Class168 {
 		if (local39 == null) {
 			@Pc(44) boolean local44 = false;
 			for (@Pc(46) int local46 = 0; local46 < this.anIntArray589.length; local46++) {
-				if (this.anIntArray589[local46] != -1 && !Static1.aClass58_21.method1370(this.anIntArray589[local46], 0)) {
+				if (this.anIntArray589[local46] != -1 && !Static1.aClass58_21.isFileReady(this.anIntArray589[local46], 0)) {
 					local44 = true;
 				}
 			}

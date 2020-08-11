@@ -1,4 +1,3 @@
-import java.lang.reflect.Method;
 import java.util.Date;
 import java.util.Random;
 import javax.media.opengl.GL;
@@ -764,7 +763,7 @@ public final class Static12 {
 		if (local10 != null) {
 			return local10;
 		}
-		@Pc(21) byte[] local21 = Static4.aClass58_73.method1372(arg0, 0);
+		@Pc(21) byte[] local21 = Static4.aClass58_73.fetchFile(arg0, 0);
 		if (local21 == null || local21.length <= 1) {
 			return null;
 		} else {

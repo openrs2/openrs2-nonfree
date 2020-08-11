@@ -205,7 +205,7 @@ public final class Class181 {
 		}
 		@Pc(13) boolean local13 = true;
 		for (@Pc(15) int local15 = 0; local15 < this.anIntArray630.length; local15++) {
-			local13 &= Static7.aClass58_97.method1370(this.anIntArray630[local15] & 0xFFFF, 0);
+			local13 &= Static7.aClass58_97.isFileReady(this.anIntArray630[local15] & 0xFFFF, 0);
 		}
 		return local13;
 	}
@@ -572,7 +572,7 @@ public final class Class181 {
 		if (this.anIntArray627 != null) {
 			for (@Pc(16) int local16 = 0; local16 < this.anIntArray627.length; local16++) {
 				if (this.anIntArray627[local16] == arg0) {
-					return Static7.aClass58_97.method1370(this.anIntArray630[local16] & 0xFFFF, 0);
+					return Static7.aClass58_97.isFileReady(this.anIntArray630[local16] & 0xFFFF, 0);
 				}
 			}
 			return true;
@@ -581,7 +581,7 @@ public final class Class181 {
 		} else if (arg0 == 10) {
 			@Pc(61) boolean local61 = true;
 			for (@Pc(63) int local63 = 0; local63 < this.anIntArray630.length; local63++) {
-				local61 &= Static7.aClass58_97.method1370(this.anIntArray630[local63] & 0xFFFF, 0);
+				local61 &= Static7.aClass58_97.isFileReady(this.anIntArray630[local63] & 0xFFFF, 0);
 			}
 			return local61;
 		} else {

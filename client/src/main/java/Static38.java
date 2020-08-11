@@ -294,7 +294,7 @@ public final class Static38 {
 	}
 
 	@OriginalMember(owner = "client!wj", name = "a", descriptor = "(Lclient!fh;IB)[Lclient!fe;")
-	public static Class56_Sub1[] method4790(@OriginalArg(0) Class58 arg0, @OriginalArg(1) int arg1) {
+	public static Class56_Sub1[] method4790(@OriginalArg(0) Js5 arg0, @OriginalArg(1) int arg1) {
 		return Static33.method4131(arg0, arg1) ? Static26.method4358() : null;
 	}
 

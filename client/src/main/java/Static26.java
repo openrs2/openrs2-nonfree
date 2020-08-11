@@ -131,7 +131,7 @@ public final class Static26 {
 		if (local6 != null) {
 			return local6;
 		}
-		@Pc(27) byte[] local27 = Static3.aClass58_55.method1372(4, arg0);
+		@Pc(27) byte[] local27 = Static3.aClass58_55.fetchFile(4, arg0);
 		@Pc(31) Class127 local31 = new Class127();
 		if (local27 != null) {
 			local31.method3221(arg0, new Buffer(local27));
@@ -156,7 +156,7 @@ public final class Static26 {
 	}
 
 	@OriginalMember(owner = "client!ne", name = "a", descriptor = "(Lclient!fh;)V")
-	public static void method2950(@OriginalArg(0) Class58 arg0) {
+	public static void method2950(@OriginalArg(0) Js5 arg0) {
 		Static5.anInt3501 = 0;
 		Static5.anInt3502 = 0;
 		Static5.aClass172_3 = new Class172();
@@ -285,7 +285,7 @@ public final class Static26 {
 		if (local10 != null) {
 			return local10;
 		}
-		@Pc(20) byte[] local20 = Static1.aClass58_2.method1372(1, arg0);
+		@Pc(20) byte[] local20 = Static1.aClass58_2.fetchFile(1, arg0);
 		@Pc(24) Class131 local24 = new Class131();
 		if (local20 != null) {
 			local24.method3326(new Buffer(local20), arg0);
@@ -832,9 +832,9 @@ public final class Static26 {
 		}
 		@Pc(25) byte[] local25;
 		if (arg0 < 32768) {
-			local25 = Static1.aClass58_19.method1372(1, arg0);
+			local25 = Static1.aClass58_19.fetchFile(1, arg0);
 		} else {
-			local25 = Static4.aClass58_72.method1372(1, arg0 & 0x7FFF);
+			local25 = Static4.aClass58_72.fetchFile(1, arg0 & 0x7FFF);
 		}
 		@Pc(39) Class4_Sub3_Sub11 local39 = new Class4_Sub3_Sub11();
 		if (local25 != null) {

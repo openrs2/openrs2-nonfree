@@ -261,13 +261,13 @@ public final class Static25 {
 	}
 
 	@OriginalMember(owner = "client!mj", name = "a", descriptor = "(IIBLclient!fh;)[Lclient!vn;")
-	public static Class4_Sub3_Sub14_Sub1[] method2729(@OriginalArg(1) int arg0, @OriginalArg(3) Class58 arg1) {
+	public static Class4_Sub3_Sub14_Sub1[] method2729(@OriginalArg(1) int arg0, @OriginalArg(3) Js5 arg1) {
 		return Static9.method197(arg1, arg0, 0) ? Static8.method103() : null;
 	}
 
 	@OriginalMember(owner = "client!ml", name = "a", descriptor = "(Lclient!fh;II)Lclient!ml;")
-	public static Class53_Sub3 method2752(@OriginalArg(0) Class58 arg0, @OriginalArg(1) int arg1) {
-		@Pc(5) byte[] local5 = arg0.method1372(arg1, 0);
+	public static Class53_Sub3 method2752(@OriginalArg(0) Js5 arg0, @OriginalArg(1) int arg1) {
+		@Pc(5) byte[] local5 = arg0.fetchFile(arg1, 0);
 		return local5 == null ? null : new Class53_Sub3(local5);
 	}
 
@@ -537,7 +537,7 @@ public final class Static25 {
 		@Pc(13) int local13 = Static3.anInt2394 - 3;
 		@Pc(21) int local21 = Static6.anInt4440;
 		if (Static6.aClass4_Sub3_Sub14_5 == null || Static2.aClass4_Sub3_Sub14_2 == null) {
-			if (Static1.aClass58_4.method1359(Static1.anInt771) && Static1.aClass58_4.method1359(Static4.anInt3336)) {
+			if (Static1.aClass58_4.isFileReady(Static1.anInt771) && Static1.aClass58_4.isFileReady(Static4.anInt3336)) {
 				Static6.aClass4_Sub3_Sub14_5 = Static31.method3691(Static1.aClass58_4, Static1.anInt771);
 				Static2.aClass4_Sub3_Sub14_2 = Static31.method3691(Static1.aClass58_4, Static4.anInt3336);
 				if (Static3.aBoolean138) {
@@ -584,7 +584,7 @@ public final class Static25 {
 				}
 			}
 		}
-		if ((Static7.aClass4_Sub3_Sub14_9 == null || Static6.aClass4_Sub3_Sub14_8 == null || Static1.aClass4_Sub3_Sub14_1 == null) && Static1.aClass58_4.method1359(Static1.anInt593) && Static1.aClass58_4.method1359(Static4.anInt2741) && Static1.aClass58_4.method1359(Static1.anInt881)) {
+		if ((Static7.aClass4_Sub3_Sub14_9 == null || Static6.aClass4_Sub3_Sub14_8 == null || Static1.aClass4_Sub3_Sub14_1 == null) && Static1.aClass58_4.isFileReady(Static1.anInt593) && Static1.aClass58_4.isFileReady(Static4.anInt2741) && Static1.aClass58_4.isFileReady(Static1.anInt881)) {
 			Static7.aClass4_Sub3_Sub14_9 = Static31.method3691(Static1.aClass58_4, Static1.anInt593);
 			Static6.aClass4_Sub3_Sub14_8 = Static31.method3691(Static1.aClass58_4, Static4.anInt2741);
 			Static1.aClass4_Sub3_Sub14_1 = Static31.method3691(Static1.aClass58_4, Static1.anInt881);

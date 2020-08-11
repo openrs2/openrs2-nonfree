@@ -98,7 +98,7 @@ public final class Class62_Sub1 extends Class62 {
 
 	@OriginalMember(owner = "client!wb", name = "a", descriptor = "(I)Lclient!fo;")
 	@Override
-	public final Js5Index method4659() {
+	public final Js5Index fetchIndex() {
 		if (this.aClass61_2 != null) {
 			return this.aClass61_2;
 		}
@@ -160,7 +160,7 @@ public final class Class62_Sub1 extends Class62 {
 
 	@OriginalMember(owner = "client!wb", name = "b", descriptor = "(B)I")
 	public final int method4664() {
-		if (this.method4659() == null) {
+		if (this.fetchIndex() == null) {
 			return this.aClass4_Sub3_Sub1_1 == null ? 0 : this.aClass4_Sub3_Sub1_1.method4354();
 		} else {
 			return 100;
@@ -169,23 +169,23 @@ public final class Class62_Sub1 extends Class62 {
 
 	@OriginalMember(owner = "client!wb", name = "b", descriptor = "(II)V")
 	@Override
-	public final void method4656(@OriginalArg(0) int arg0) {
+	public final void prefetchGroup(@OriginalArg(0) int group) {
 		if (this.aClass60_4 == null) {
 			return;
 		}
 		for (@Pc(22) Node local22 = this.aClass112_29.head(); local22 != null; local22 = this.aClass112_29.next()) {
-			if ((long) arg0 == local22.key) {
+			if ((long) group == local22.key) {
 				return;
 			}
 		}
 		@Pc(48) Node local48 = new Node();
-		local48.key = arg0;
+		local48.key = group;
 		this.aClass112_29.addTail(local48);
 	}
 
 	@OriginalMember(owner = "client!wb", name = "a", descriptor = "(Z)V")
 	public final void method4666() {
-		if (this.aClass112_30 == null || this.method4659() == null) {
+		if (this.aClass112_30 == null || this.fetchIndex() == null) {
 			return;
 		}
 		for (@Pc(22) Node local22 = this.aClass112_29.head(); local22 != null; local22 = this.aClass112_29.next()) {
@@ -223,8 +223,8 @@ public final class Class62_Sub1 extends Class62 {
 
 	@OriginalMember(owner = "client!wb", name = "c", descriptor = "(II)[B")
 	@Override
-	public final byte[] method4657(@OriginalArg(1) int arg0) {
-		@Pc(9) Class4_Sub3_Sub1 local9 = this.method4672(arg0, 0);
+	public final byte[] fetchGroup(@OriginalArg(1) int group) {
+		@Pc(9) Class4_Sub3_Sub1 local9 = this.method4672(group, 0);
 		if (local9 == null) {
 			return null;
 		} else {
@@ -241,8 +241,8 @@ public final class Class62_Sub1 extends Class62 {
 
 	@OriginalMember(owner = "client!wb", name = "a", descriptor = "(II)I")
 	@Override
-	public final int method4655(@OriginalArg(0) int arg0) {
-		@Pc(9) Class4_Sub3_Sub1 local9 = (Class4_Sub3_Sub1) this.aClass84_27.get((long) arg0);
+	public final int getReadyPercentage(@OriginalArg(0) int group) {
+		@Pc(9) Class4_Sub3_Sub1 local9 = (Class4_Sub3_Sub1) this.aClass84_27.get((long) group);
 		return local9 == null ? 0 : local9.method4354();
 	}
 
@@ -362,7 +362,7 @@ public final class Class62_Sub1 extends Class62 {
 	@OriginalMember(owner = "client!wb", name = "f", descriptor = "(I)V")
 	public final void method4673() {
 		if (this.aClass112_30 != null) {
-			if (this.method4659() == null) {
+			if (this.fetchIndex() == null) {
 				return;
 			}
 			if (this.aBoolean394) {

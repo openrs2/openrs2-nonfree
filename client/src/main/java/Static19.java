@@ -213,7 +213,7 @@ public final class Static19 {
 		if (local16 != null) {
 			return local16;
 		}
-		@Pc(28) byte[] local28 = Static4.aClass58_74.method1372(11, arg0);
+		@Pc(28) byte[] local28 = Static4.aClass58_74.fetchFile(11, arg0);
 		@Pc(32) Class4_Sub3_Sub12 local32 = new Class4_Sub3_Sub12();
 		if (local28 != null) {
 			local32.method1992(new Buffer(local28));
@@ -228,7 +228,7 @@ public final class Static19 {
 		if (local6 != null) {
 			return local6;
 		}
-		@Pc(27) byte[] local27 = Static6.aClass58_85.method1372(3, arg0);
+		@Pc(27) byte[] local27 = Static6.aClass58_85.fetchFile(3, arg0);
 		@Pc(31) Class140 local31 = new Class140();
 		if (local27 != null) {
 			local31.method3496(new Buffer(local27));
@@ -373,7 +373,7 @@ public final class Static19 {
 	}
 
 	@OriginalMember(owner = "client!id", name = "a", descriptor = "(BLclient!fh;)V")
-	public static void method1850(@OriginalArg(1) Class58 arg0) {
+	public static void method1850(@OriginalArg(1) Js5 arg0) {
 		Static2.aClass58_36 = arg0;
 	}
 
@@ -499,13 +499,13 @@ public final class Static19 {
 	}
 
 	@OriginalMember(owner = "client!ii", name = "a", descriptor = "(Lclient!fh;)V")
-	public static void method2393(@OriginalArg(0) Class58 arg0) {
+	public static void method2393(@OriginalArg(0) Js5 arg0) {
 		Static3.aClass58_65 = arg0;
 		Static3.aClass84_14.clear();
-		@Pc(9) int local9 = Static3.aClass58_65.method1362("details");
-		@Pc(14) int[] local14 = Static3.aClass58_65.method1363(local9);
+		@Pc(9) int local9 = Static3.aClass58_65.getGroupId("details");
+		@Pc(14) int[] local14 = Static3.aClass58_65.getFileIds(local9);
 		for (@Pc(16) int local16 = 0; local16 < local14.length; local16++) {
-			Static3.aClass84_14.put((long) local14[local16], Static16.method1562(local14[local16], new Buffer(Static3.aClass58_65.method1372(local9, local14[local16]))));
+			Static3.aClass84_14.put((long) local14[local16], Static16.method1562(local14[local16], new Buffer(Static3.aClass58_65.fetchFile(local9, local14[local16]))));
 		}
 	}
 

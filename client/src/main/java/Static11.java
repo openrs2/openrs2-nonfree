@@ -24,7 +24,7 @@ public final class Static11 {
 		if (local10 != null) {
 			return local10;
 		}
-		@Pc(28) byte[] local28 = Static4.aClass58_54.method1372(31, arg0);
+		@Pc(28) byte[] local28 = Static4.aClass58_54.fetchFile(31, arg0);
 		@Pc(32) Class178 local32 = new Class178();
 		if (local28 != null) {
 			local32.method4438(new Buffer(local28), arg0);
@@ -34,7 +34,7 @@ public final class Static11 {
 	}
 
 	@OriginalMember(owner = "client!ca", name = "a", descriptor = "(Lclient!fh;III)[Lclient!ma;")
-	public static Class56[] method495(@OriginalArg(0) Class58 arg0, @OriginalArg(1) int arg1) {
+	public static Class56[] method495(@OriginalArg(0) Js5 arg0, @OriginalArg(1) int arg1) {
 		return Static9.method197(arg0, arg1, 0) ? Static23.method2456() : null;
 	}
 
@@ -69,7 +69,7 @@ public final class Static11 {
 	}
 
 	@OriginalMember(owner = "client!cc", name = "a", descriptor = "(Lclient!fh;ILclient!fh;)V")
-	public static void method514(@OriginalArg(0) Class58 arg0, @OriginalArg(2) Class58 arg1) {
+	public static void method514(@OriginalArg(0) Js5 arg0, @OriginalArg(2) Js5 arg1) {
 		Static3.aClass58_58 = arg1;
 		Static1.aClass58_3 = arg0;
 	}
@@ -600,48 +600,48 @@ public final class Static11 {
 	}
 
 	@OriginalMember(owner = "client!cf", name = "a", descriptor = "(Lclient!fh;I)I")
-	public static int method558(@OriginalArg(0) Class58 arg0) {
+	public static int method558(@OriginalArg(0) Js5 arg0) {
 		@Pc(5) int local5 = 0;
-		if (arg0.method1359(Static3.anInt2120)) {
+		if (arg0.isFileReady(Static3.anInt2120)) {
 			local5++;
 		}
-		if (arg0.method1359(Static6.anInt4363)) {
+		if (arg0.isFileReady(Static6.anInt4363)) {
 			local5++;
 		}
-		if (arg0.method1359(Static5.anInt4281)) {
+		if (arg0.isFileReady(Static5.anInt4281)) {
 			local5++;
 		}
-		if (arg0.method1359(Static2.anInt1975)) {
+		if (arg0.isFileReady(Static2.anInt1975)) {
 			local5++;
 		}
-		if (arg0.method1359(Static5.anInt4207)) {
+		if (arg0.isFileReady(Static5.anInt4207)) {
 			local5++;
 		}
-		if (arg0.method1359(Static7.anInt5332)) {
+		if (arg0.isFileReady(Static7.anInt5332)) {
 			local5++;
 		}
-		if (arg0.method1359(Static7.anInt5230)) {
+		if (arg0.isFileReady(Static7.anInt5230)) {
 			local5++;
 		}
-		if (arg0.method1359(Static6.anInt3786)) {
+		if (arg0.isFileReady(Static6.anInt3786)) {
 			local5++;
 		}
-		if (arg0.method1359(Static3.anInt2296)) {
+		if (arg0.isFileReady(Static3.anInt2296)) {
 			local5++;
 		}
-		if (arg0.method1359(Static5.anInt4163)) {
+		if (arg0.isFileReady(Static5.anInt4163)) {
 			local5++;
 		}
-		if (arg0.method1359(Static3.anInt2449)) {
+		if (arg0.isFileReady(Static3.anInt2449)) {
 			local5++;
 		}
-		if (arg0.method1359(Static2.anInt1632)) {
+		if (arg0.isFileReady(Static2.anInt1632)) {
 			local5++;
 		}
-		if (arg0.method1359(Static1.anInt130)) {
+		if (arg0.isFileReady(Static1.anInt130)) {
 			local5++;
 		}
-		if (arg0.method1359(Static6.anInt4371)) {
+		if (arg0.isFileReady(Static6.anInt4371)) {
 			local5++;
 		}
 		return local5;
@@ -897,7 +897,7 @@ public final class Static11 {
 	}
 
 	@OriginalMember(owner = "client!ci", name = "a", descriptor = "(IILclient!fh;)Lclient!uj;")
-	public static Class4_Sub3_Sub14 method583(@OriginalArg(1) int arg0, @OriginalArg(2) Class58 arg1) {
+	public static Class4_Sub3_Sub14 method583(@OriginalArg(1) int arg0, @OriginalArg(2) Js5 arg1) {
 		return Static33.method4131(arg1, arg0) ? Static14.method1063() : null;
 	}
 

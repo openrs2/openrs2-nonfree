@@ -367,13 +367,13 @@ public final class client extends GameShell {
 				}
 			}
 		} else if (Static5.anInt4285 == 41) {
-			if (Static5.aClass58_80.method1360()) {
-				this.method688(Static5.aClass58_80.method1343(1));
+			if (Static5.aClass58_80.fetchAll()) {
+				this.method688(Static5.aClass58_80.fetchFile(1));
 				Static5.anInt4285 = 45;
 				Static5.aString243 = LocalisedText.MAINLOAD41B;
 				Static6.anInt4621 = 25;
 			} else {
-				Static5.aString243 = LocalisedText.MAINLOAD41 + Static5.aClass58_80.method1345() + "%";
+				Static5.aString243 = LocalisedText.MAINLOAD41 + Static5.aClass58_80.getReadyPercentage() + "%";
 				Static6.anInt4621 = 25;
 			}
 		} else if (Static5.anInt4285 == 45) {
@@ -387,7 +387,7 @@ public final class client extends GameShell {
 			Static5.aClass4_Sub6_Sub3_2 = new Class4_Sub6_Sub3();
 			Static6.aClass102_2.method3008(Static5.aClass4_Sub6_Sub3_2);
 			Static7.aClass170_1 = new Class170(22050, Static7.anInt5394);
-			Static7.anInt5611 = Static7.aClass58_98.method1362("scape main");
+			Static7.anInt5611 = Static7.aClass58_98.getGroupId("scape main");
 			Static5.aString243 = LocalisedText.MAINLOAD45B;
 			Static5.anInt4285 = 50;
 			Static6.anInt4621 = 30;
@@ -420,28 +420,28 @@ public final class client extends GameShell {
 			Static9.method233(5);
 			Static5.anInt4285 = 70;
 		} else if (Static5.anInt4285 == 70) {
-			Static2.aClass58_39.method1360();
-			@Pc(647) int local647 = Static2.aClass58_39.method1345();
-			Static4.aClass58_76.method1360();
-			local647 += Static4.aClass58_76.method1345();
-			Static7.aClass58_96.method1360();
-			local647 += Static7.aClass58_96.method1345();
-			Static6.aClass58_88.method1360();
-			local647 += Static6.aClass58_88.method1345();
-			Static5.aClass58_79.method1360();
-			local647 += Static5.aClass58_79.method1345();
-			Static1.aClass58_1.method1360();
-			local647 += Static1.aClass58_1.method1345();
-			Static1.aClass58_24.method1360();
-			local647 += Static1.aClass58_24.method1345();
-			Static1.aClass58_10.method1360();
-			local647 += Static1.aClass58_10.method1345();
-			Static6.aClass58_87.method1360();
-			local647 += Static6.aClass58_87.method1345();
-			Static1.aClass58_30.method1360();
-			local647 += Static1.aClass58_30.method1345();
-			Static7.aClass58_102.method1360();
-			local647 += Static7.aClass58_102.method1345();
+			Static2.aClass58_39.fetchAll();
+			@Pc(647) int local647 = Static2.aClass58_39.getReadyPercentage();
+			Static4.aClass58_76.fetchAll();
+			local647 += Static4.aClass58_76.getReadyPercentage();
+			Static7.aClass58_96.fetchAll();
+			local647 += Static7.aClass58_96.getReadyPercentage();
+			Static6.aClass58_88.fetchAll();
+			local647 += Static6.aClass58_88.getReadyPercentage();
+			Static5.aClass58_79.fetchAll();
+			local647 += Static5.aClass58_79.getReadyPercentage();
+			Static1.aClass58_1.fetchAll();
+			local647 += Static1.aClass58_1.getReadyPercentage();
+			Static1.aClass58_24.fetchAll();
+			local647 += Static1.aClass58_24.getReadyPercentage();
+			Static1.aClass58_10.fetchAll();
+			local647 += Static1.aClass58_10.getReadyPercentage();
+			Static6.aClass58_87.fetchAll();
+			local647 += Static6.aClass58_87.getReadyPercentage();
+			Static1.aClass58_30.fetchAll();
+			local647 += Static1.aClass58_30.getReadyPercentage();
+			Static7.aClass58_102.fetchAll();
+			local647 += Static7.aClass58_102.getReadyPercentage();
 			if (local647 < 1100) {
 				Static6.anInt4621 = 50;
 				Static5.aString243 = LocalisedText.MAINLOAD70 + local647 / 11 + "%";
@@ -488,7 +488,7 @@ public final class client extends GameShell {
 				Static6.anInt4621 = 60;
 			}
 		} else if (Static5.anInt4285 == 90) {
-			if (Static4.aClass58_68.method1360()) {
+			if (Static4.aClass58_68.fetchAll()) {
 				@Pc(960) Class24_Sub1 local960 = new Class24_Sub1(Static2.aClass58_29, Static4.aClass58_68, Static1.aClass58_4, 20, !Static6.aBoolean227);
 				Static23.method2551(local960);
 				if (Static1.anInt185 == 1) {
@@ -507,7 +507,7 @@ public final class client extends GameShell {
 				Static5.aString243 = LocalisedText.MAINLOAD90B;
 				Static5.anInt4285 = 100;
 			} else {
-				Static5.aString243 = LocalisedText.MAINLOAD90 + Static4.aClass58_68.method1345() + "%";
+				Static5.aString243 = LocalisedText.MAINLOAD90 + Static4.aClass58_68.getReadyPercentage() + "%";
 				Static6.anInt4621 = 70;
 			}
 		} else if (Static5.anInt4285 == 100) {
@@ -521,8 +521,8 @@ public final class client extends GameShell {
 			Static5.aString243 = LocalisedText.MAINLOAD110B;
 			Static5.anInt4285 = 120;
 		} else if (Static5.anInt4285 == 120) {
-			if (Static6.aClass58_71.method1340("huffman", "")) {
-				@Pc(1066) HuffmanCodec local1066 = new HuffmanCodec(Static6.aClass58_71.method1358("", "huffman"));
+			if (Static6.aClass58_71.isFileReady("huffman", "")) {
+				@Pc(1066) HuffmanCodec local1066 = new HuffmanCodec(Static6.aClass58_71.fetchFile("huffman", ""));
 				Static20.method1978(local1066);
 				Static5.aString243 = LocalisedText.MAINLOAD120B;
 				Static6.anInt4621 = 80;
@@ -532,16 +532,16 @@ public final class client extends GameShell {
 				Static6.anInt4621 = 80;
 			}
 		} else if (Static5.anInt4285 == 130) {
-			if (!Static2.aClass58_27.method1360()) {
-				Static5.aString243 = LocalisedText.MAINLOAD130 + Static2.aClass58_27.method1345() * 3 / 4 + "%";
+			if (!Static2.aClass58_27.fetchAll()) {
+				Static5.aString243 = LocalisedText.MAINLOAD130 + Static2.aClass58_27.getReadyPercentage() * 3 / 4 + "%";
 				Static6.anInt4621 = 85;
-			} else if (!Static4.aClass58_73.method1360()) {
-				Static5.aString243 = LocalisedText.MAINLOAD130 + (Static4.aClass58_73.method1345() / 10 + 75) + "%";
+			} else if (!Static4.aClass58_73.fetchAll()) {
+				Static5.aString243 = LocalisedText.MAINLOAD130 + (Static4.aClass58_73.getReadyPercentage() / 10 + 75) + "%";
 				Static6.anInt4621 = 85;
-			} else if (!Static4.aClass58_67.method1360()) {
-				Static5.aString243 = LocalisedText.MAINLOAD130 + (Static4.aClass58_67.method1345() / 20 + 85) + "%";
+			} else if (!Static4.aClass58_67.fetchAll()) {
+				Static5.aString243 = LocalisedText.MAINLOAD130 + (Static4.aClass58_67.getReadyPercentage() / 20 + 85) + "%";
 				Static6.anInt4621 = 85;
-			} else if (Static5.aClass58_82.method1365("details")) {
+			} else if (Static5.aClass58_82.isFileReady("details")) {
 				Static19.method2393(Static5.aClass58_82);
 				Static26.method2950(Static7.aClass58_102);
 				Static13.method1028(Static4.aClass58_69);
@@ -549,7 +549,7 @@ public final class client extends GameShell {
 				Static6.anInt4621 = 95;
 				Static5.aString243 = LocalisedText.MAINLOAD130B;
 			} else {
-				Static5.aString243 = LocalisedText.MAINLOAD130 + (Static5.aClass58_82.method1342("details") / 10 + 90) + "%";
+				Static5.aString243 = LocalisedText.MAINLOAD130 + (Static5.aClass58_82.getReadyPercentage("details") / 10 + 90) + "%";
 				Static6.anInt4621 = 85;
 			}
 		} else if (Static5.anInt4285 == 135) {
@@ -569,13 +569,13 @@ public final class client extends GameShell {
 				Static9.method233(1000);
 			}
 		} else if (Static5.anInt4285 == 140) {
-			Static7.anInt742 = Static2.aClass58_27.method1362("loginscreen");
-			Static3.aClass58_47.method1356(false);
-			Static7.aClass58_98.method1356(true);
-			Static1.aClass58_4.method1356(true);
-			Static4.aClass58_67.method1356(true);
-			Static6.aClass58_71.method1356(true);
-			Static2.aClass58_27.method1356(true);
+			Static7.anInt742 = Static2.aClass58_27.getGroupId("loginscreen");
+			Static3.aClass58_47.discardNames(false);
+			Static7.aClass58_98.discardNames(true);
+			Static1.aClass58_4.discardNames(true);
+			Static4.aClass58_67.discardNames(true);
+			Static6.aClass58_71.discardNames(true);
+			Static2.aClass58_27.discardNames(true);
 			Static7.aBoolean422 = true;
 			Static5.anInt4285 = 150;
 			Static5.aString243 = LocalisedText.MAINLOAD140;

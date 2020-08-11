@@ -267,7 +267,7 @@ public final class Static22 {
 		if (local10 != null) {
 			return local10;
 		}
-		@Pc(26) byte[] local26 = Static1.aClass58_23.method1372(36, arg0);
+		@Pc(26) byte[] local26 = Static1.aClass58_23.fetchFile(36, arg0);
 		@Pc(30) Class82 local30 = new Class82();
 		local30.anInt2292 = arg0;
 		if (local26 != null) {
@@ -694,8 +694,8 @@ public final class Static22 {
 	}
 
 	@OriginalMember(owner = "client!ka", name = "a", descriptor = "(ILclient!fh;ILclient!fh;I)Lclient!ke;")
-	public static Class4_Sub3_Sub5_Sub2 method2194(@OriginalArg(1) Class58 arg0, @OriginalArg(2) int arg1, @OriginalArg(3) Class58 arg2) {
-		return Static9.method197(arg2, arg1, 0) ? Static16.method4658(arg0.method1372(arg1, 0)) : null;
+	public static Class4_Sub3_Sub5_Sub2 method2194(@OriginalArg(1) Js5 arg0, @OriginalArg(2) int arg1, @OriginalArg(3) Js5 arg2) {
+		return Static9.method197(arg2, arg1, 0) ? Static16.method4658(arg0.fetchFile(arg1, 0)) : null;
 	}
 
 	@OriginalMember(owner = "client!ka", name = "a", descriptor = "(IIIIIILclient!vc;IJ)Z")
@@ -1372,7 +1372,7 @@ public final class Static22 {
 	}
 
 	@OriginalMember(owner = "client!kl", name = "a", descriptor = "(ILclient!fh;Lclient!fh;)V")
-	public static void method2362(@OriginalArg(1) Class58 arg0, @OriginalArg(2) Class58 arg1) {
+	public static void method2362(@OriginalArg(1) Js5 arg0, @OriginalArg(2) Js5 arg1) {
 		Static6.aClass58_89 = arg0;
 		Static3.aClass58_64 = arg1;
 	}
@@ -1792,7 +1792,7 @@ public final class Static22 {
 		if (local14 != null) {
 			return local14;
 		}
-		@Pc(28) byte[] local28 = Static1.aClass58_3.method1372(33, arg0);
+		@Pc(28) byte[] local28 = Static1.aClass58_3.fetchFile(33, arg0);
 		@Pc(32) Class133 local32 = new Class133();
 		if (local28 != null) {
 			local32.method3398(arg0, new Buffer(local28));

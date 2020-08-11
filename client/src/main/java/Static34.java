@@ -647,7 +647,7 @@ public final class Static34 {
 	}
 
 	@OriginalMember(owner = "client!tl", name = "a", descriptor = "(ILclient!fh;ZLclient!fh;)V")
-	public static void method4232(@OriginalArg(1) Class58 arg0, @OriginalArg(3) Class58 arg1) {
+	public static void method4232(@OriginalArg(1) Js5 arg0, @OriginalArg(3) Js5 arg1) {
 		Static2.aBoolean152 = true;
 		Static7.aClass58_97 = arg1;
 		Static2.aClass58_38 = arg0;
@@ -1243,7 +1243,7 @@ public final class Static34 {
 	}
 
 	@OriginalMember(owner = "client!tn", name = "a", descriptor = "(ILclient!fh;II)[Lclient!uj;")
-	public static Class4_Sub3_Sub14[] method1548(@OriginalArg(0) int arg0, @OriginalArg(1) Class58 arg1) {
+	public static Class4_Sub3_Sub14[] method1548(@OriginalArg(0) int arg0, @OriginalArg(1) Js5 arg1) {
 		return Static9.method197(arg1, arg0, 0) ? Static21.method2000() : null;
 	}
 
@@ -1265,7 +1265,7 @@ public final class Static34 {
 	}
 
 	@OriginalMember(owner = "client!ua", name = "a", descriptor = "(Lclient!fh;B)V")
-	public static void method4264(@OriginalArg(0) Class58 arg0) {
+	public static void method4264(@OriginalArg(0) Js5 arg0) {
 		Static2.aClass58_40 = arg0;
 	}
 

@@ -10,14 +10,14 @@ public abstract class Class62 {
 	}
 
 	@OriginalMember(owner = "client!ga", name = "a", descriptor = "(II)I")
-	public abstract int method4655(@OriginalArg(0) int arg0);
+	public abstract int getReadyPercentage(@OriginalArg(0) int group);
 
 	@OriginalMember(owner = "client!ga", name = "b", descriptor = "(II)V")
-	public abstract void method4656(@OriginalArg(0) int arg0);
+	public abstract void prefetchGroup(@OriginalArg(0) int group);
 
 	@OriginalMember(owner = "client!ga", name = "c", descriptor = "(II)[B")
-	public abstract byte[] method4657(@OriginalArg(1) int arg0);
+	public abstract byte[] fetchGroup(@OriginalArg(1) int group);
 
 	@OriginalMember(owner = "client!ga", name = "a", descriptor = "(I)Lclient!fo;")
-	public abstract Js5Index method4659();
+	public abstract Js5Index fetchIndex();
 }

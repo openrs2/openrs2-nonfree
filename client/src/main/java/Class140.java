@@ -121,7 +121,7 @@ public final class Class140 {
 		}
 		@Pc(13) boolean local13 = true;
 		for (@Pc(22) int local22 = 0; local22 < this.anIntArray449.length; local22++) {
-			if (!Static3.aClass58_48.method1370(this.anIntArray449[local22], 0)) {
+			if (!Static3.aClass58_48.isFileReady(this.anIntArray449[local22], 0)) {
 				local13 = false;
 			}
 		}
@@ -143,7 +143,7 @@ public final class Class140 {
 	public final boolean method3497() {
 		@Pc(16) boolean local16 = true;
 		for (@Pc(18) int local18 = 0; local18 < 5; local18++) {
-			if (this.anIntArray450[local18] != -1 && !Static3.aClass58_48.method1370(this.anIntArray450[local18], 0)) {
+			if (this.anIntArray450[local18] != -1 && !Static3.aClass58_48.isFileReady(this.anIntArray450[local18], 0)) {
 				local16 = false;
 			}
 		}

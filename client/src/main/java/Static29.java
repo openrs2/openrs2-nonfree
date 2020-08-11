@@ -860,10 +860,10 @@ public final class Static29 {
 	}
 
 	@OriginalMember(owner = "client!pl", name = "a", descriptor = "(BLclient!fh;Lclient!fh;)V")
-	public static void method3474(@OriginalArg(1) Class58 arg0, @OriginalArg(2) Class58 arg1) {
+	public static void method3474(@OriginalArg(1) Js5 arg0, @OriginalArg(2) Js5 arg1) {
 		Static1.aClass58_23 = arg0;
 		Static3.aClass58_60 = arg1;
-		Static1.aClass58_23.method1371(36);
+		Static1.aClass58_23.getGroupCapacity(36);
 	}
 
 	@OriginalMember(owner = "client!pl", name = "a", descriptor = "(IJ)V")

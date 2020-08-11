@@ -45,7 +45,7 @@ public final class Class143 {
 		if (local23 != null) {
 			return local23;
 		}
-		Static7.aClass58_103.method1359(this.anInt4312);
+		Static7.aClass58_103.isFileReady(this.anInt4312);
 		@Pc(44) Class56_Sub1 local44 = Static33.method3003(Static7.aClass58_103, this.anInt4312);
 		if (local44 != null) {
 			local44.method1311(Static6.anInt4867, Static1.anInt97, Static5.anInt3963);

@@ -313,20 +313,20 @@ public final class Static16 {
 	}
 
 	@OriginalMember(owner = "client!g", name = "a", descriptor = "(BLclient!fh;Lclient!ai;Lclient!fh;)V")
-	public static void method1521(@OriginalArg(1) Class58 arg0, @OriginalArg(2) Interface1 arg1, @OriginalArg(3) Class58 arg2) {
+	public static void method1521(@OriginalArg(1) Js5 arg0, @OriginalArg(2) Interface1 arg1, @OriginalArg(3) Js5 arg2) {
 		Static1.aClass58_19 = arg2;
 		Static4.aClass58_72 = arg0;
 		Static5.anInterface1_1 = arg1;
 		if (Static1.aClass58_19 != null) {
-			Static2.anInt912 = Static1.aClass58_19.method1371(1);
+			Static2.anInt912 = Static1.aClass58_19.getGroupCapacity(1);
 		}
 		if (Static4.aClass58_72 != null) {
-			Static7.anInt6046 = Static4.aClass58_72.method1371(1);
+			Static7.anInt6046 = Static4.aClass58_72.getGroupCapacity(1);
 		}
 	}
 
 	@OriginalMember(owner = "client!g", name = "a", descriptor = "(Lclient!fh;BII)[Lclient!fe;")
-	public static Class56_Sub1[] method1523(@OriginalArg(0) Class58 arg0, @OriginalArg(3) int arg1) {
+	public static Class56_Sub1[] method1523(@OriginalArg(0) Js5 arg0, @OriginalArg(3) int arg1) {
 		return Static9.method197(arg0, arg1, 0) ? Static26.method4358() : null;
 	}
 
@@ -3969,11 +3969,11 @@ public final class Static16 {
 									Static1.anInt881 = Static7.anIntArray571[local5 + 8];
 									Static1.anInt504 = Static7.anIntArray571[local5 + 9];
 									Static4.anInt2920 = Static7.anIntArray571[local5 + 10];
-									Static1.aClass58_4.method1359(Static1.anInt771);
-									Static1.aClass58_4.method1359(Static4.anInt3336);
-									Static1.aClass58_4.method1359(Static1.anInt593);
-									Static1.aClass58_4.method1359(Static4.anInt2741);
-									Static1.aClass58_4.method1359(Static1.anInt881);
+									Static1.aClass58_4.isFileReady(Static1.anInt771);
+									Static1.aClass58_4.isFileReady(Static4.anInt3336);
+									Static1.aClass58_4.isFileReady(Static1.anInt593);
+									Static1.aClass58_4.isFileReady(Static4.anInt2741);
+									Static1.aClass58_4.isFileReady(Static1.anInt881);
 									Static7.aBoolean389 = true;
 									continue;
 								}
@@ -4927,18 +4927,18 @@ public final class Static16 {
 	}
 
 	@OriginalMember(owner = "client!gd", name = "a", descriptor = "(Lclient!fh;ILjava/lang/String;Z)Lclient!po;")
-	public static Class138 method1555(@OriginalArg(0) Class58 arg0, @OriginalArg(2) String arg1, @OriginalArg(3) boolean arg2) {
-		@Pc(10) int local10 = arg0.method1362(arg1);
+	public static Class138 method1555(@OriginalArg(0) Js5 arg0, @OriginalArg(2) String arg1, @OriginalArg(3) boolean arg2) {
+		@Pc(10) int local10 = arg0.getGroupId(arg1);
 		if (local10 == -1) {
 			return new Class138(0);
 		}
-		@Pc(23) int[] local23 = arg0.method1363(local10);
+		@Pc(23) int[] local23 = arg0.getFileIds(local10);
 		@Pc(29) Class138 local29 = new Class138(local23.length);
 		@Pc(31) int local31 = 0;
 		@Pc(39) int local39 = 0;
 		while (true) {
 			while (local29.anInt4219 > local31) {
-				@Pc(59) Buffer local59 = new Buffer(arg0.method1372(local10, local23[local39++]));
+				@Pc(59) Buffer local59 = new Buffer(arg0.fetchFile(local10, local23[local39++]));
 				@Pc(63) int local63 = local59.readInt();
 				@Pc(67) int local67 = local59.readUnsignedShort();
 				@Pc(71) int local71 = local59.readUnsignedByte();
@@ -4993,7 +4993,7 @@ public final class Static16 {
 	}
 
 	@OriginalMember(owner = "client!gd", name = "a", descriptor = "(Lclient!fh;B)V")
-	public static void method1560(@OriginalArg(0) Class58 arg0) {
+	public static void method1560(@OriginalArg(0) Js5 arg0) {
 		Static3.aClass58_52 = arg0;
 	}
 

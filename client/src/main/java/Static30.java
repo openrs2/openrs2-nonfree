@@ -1507,35 +1507,35 @@ public final class Static30 {
 				Static5.aClass4_Sub10_Sub1_3.writeInt(Static25.method2806());
 				Static2.aBoolean104 = true;
 				Static5.aClass4_Sub10_Sub1_3.writeShort(Static7.anInt5426);
-				Static5.aClass4_Sub10_Sub1_3.writeInt(Static3.aClass58_46.method1369());
-				Static5.aClass4_Sub10_Sub1_3.writeInt(Static4.aClass58_66.method1369());
-				Static5.aClass4_Sub10_Sub1_3.writeInt(Static2.aClass58_39.method1369());
-				Static5.aClass4_Sub10_Sub1_3.writeInt(Static2.aClass58_27.method1369());
-				Static5.aClass4_Sub10_Sub1_3.writeInt(Static6.aClass58_92.method1369());
-				Static5.aClass4_Sub10_Sub1_3.writeInt(Static3.aClass58_47.method1369());
-				Static5.aClass4_Sub10_Sub1_3.writeInt(Static7.aClass58_98.method1369());
-				Static5.aClass4_Sub10_Sub1_3.writeInt(Static4.aClass58_69.method1369());
-				Static5.aClass4_Sub10_Sub1_3.writeInt(Static1.aClass58_4.method1369());
-				Static5.aClass4_Sub10_Sub1_3.writeInt(Static2.aClass58_29.method1369());
-				Static5.aClass4_Sub10_Sub1_3.writeInt(Static6.aClass58_71.method1369());
-				Static5.aClass4_Sub10_Sub1_3.writeInt(Static3.aClass58_57.method1369());
-				Static5.aClass4_Sub10_Sub1_3.writeInt(Static4.aClass58_73.method1369());
-				Static5.aClass4_Sub10_Sub1_3.writeInt(Static4.aClass58_67.method1369());
-				Static5.aClass4_Sub10_Sub1_3.writeInt(Static5.aClass58_78.method1369());
-				Static5.aClass4_Sub10_Sub1_3.writeInt(Static5.aClass58_83.method1369());
-				Static5.aClass4_Sub10_Sub1_3.writeInt(Static4.aClass58_76.method1369());
-				Static5.aClass4_Sub10_Sub1_3.writeInt(Static7.aClass58_96.method1369());
-				Static5.aClass4_Sub10_Sub1_3.writeInt(Static6.aClass58_88.method1369());
-				Static5.aClass4_Sub10_Sub1_3.writeInt(Static5.aClass58_79.method1369());
-				Static5.aClass4_Sub10_Sub1_3.writeInt(Static1.aClass58_1.method1369());
-				Static5.aClass4_Sub10_Sub1_3.writeInt(Static1.aClass58_24.method1369());
-				Static5.aClass4_Sub10_Sub1_3.writeInt(Static1.aClass58_10.method1369());
-				Static5.aClass4_Sub10_Sub1_3.writeInt(Static5.aClass58_82.method1369());
-				Static5.aClass4_Sub10_Sub1_3.writeInt(Static6.aClass58_87.method1369());
-				Static5.aClass4_Sub10_Sub1_3.writeInt(Static1.aClass58_30.method1369());
-				Static5.aClass4_Sub10_Sub1_3.writeInt(Static4.aClass58_68.method1369());
-				Static5.aClass4_Sub10_Sub1_3.writeInt(Static7.aClass58_102.method1369());
-				Static5.aClass4_Sub10_Sub1_3.writeInt(Static5.aClass58_80.method1369());
+				Static5.aClass4_Sub10_Sub1_3.writeInt(Static3.aClass58_46.getChecksum());
+				Static5.aClass4_Sub10_Sub1_3.writeInt(Static4.aClass58_66.getChecksum());
+				Static5.aClass4_Sub10_Sub1_3.writeInt(Static2.aClass58_39.getChecksum());
+				Static5.aClass4_Sub10_Sub1_3.writeInt(Static2.aClass58_27.getChecksum());
+				Static5.aClass4_Sub10_Sub1_3.writeInt(Static6.aClass58_92.getChecksum());
+				Static5.aClass4_Sub10_Sub1_3.writeInt(Static3.aClass58_47.getChecksum());
+				Static5.aClass4_Sub10_Sub1_3.writeInt(Static7.aClass58_98.getChecksum());
+				Static5.aClass4_Sub10_Sub1_3.writeInt(Static4.aClass58_69.getChecksum());
+				Static5.aClass4_Sub10_Sub1_3.writeInt(Static1.aClass58_4.getChecksum());
+				Static5.aClass4_Sub10_Sub1_3.writeInt(Static2.aClass58_29.getChecksum());
+				Static5.aClass4_Sub10_Sub1_3.writeInt(Static6.aClass58_71.getChecksum());
+				Static5.aClass4_Sub10_Sub1_3.writeInt(Static3.aClass58_57.getChecksum());
+				Static5.aClass4_Sub10_Sub1_3.writeInt(Static4.aClass58_73.getChecksum());
+				Static5.aClass4_Sub10_Sub1_3.writeInt(Static4.aClass58_67.getChecksum());
+				Static5.aClass4_Sub10_Sub1_3.writeInt(Static5.aClass58_78.getChecksum());
+				Static5.aClass4_Sub10_Sub1_3.writeInt(Static5.aClass58_83.getChecksum());
+				Static5.aClass4_Sub10_Sub1_3.writeInt(Static4.aClass58_76.getChecksum());
+				Static5.aClass4_Sub10_Sub1_3.writeInt(Static7.aClass58_96.getChecksum());
+				Static5.aClass4_Sub10_Sub1_3.writeInt(Static6.aClass58_88.getChecksum());
+				Static5.aClass4_Sub10_Sub1_3.writeInt(Static5.aClass58_79.getChecksum());
+				Static5.aClass4_Sub10_Sub1_3.writeInt(Static1.aClass58_1.getChecksum());
+				Static5.aClass4_Sub10_Sub1_3.writeInt(Static1.aClass58_24.getChecksum());
+				Static5.aClass4_Sub10_Sub1_3.writeInt(Static1.aClass58_10.getChecksum());
+				Static5.aClass4_Sub10_Sub1_3.writeInt(Static5.aClass58_82.getChecksum());
+				Static5.aClass4_Sub10_Sub1_3.writeInt(Static6.aClass58_87.getChecksum());
+				Static5.aClass4_Sub10_Sub1_3.writeInt(Static1.aClass58_30.getChecksum());
+				Static5.aClass4_Sub10_Sub1_3.writeInt(Static4.aClass58_68.getChecksum());
+				Static5.aClass4_Sub10_Sub1_3.writeInt(Static7.aClass58_102.getChecksum());
+				Static5.aClass4_Sub10_Sub1_3.writeInt(Static5.aClass58_80.getChecksum());
 				Static5.aClass4_Sub10_Sub1_3.writeBytes(Static3.aClass4_Sub10_Sub1_1.bytes, Static3.aClass4_Sub10_Sub1_1.position);
 				Static3.aClass52_7.write(Static5.aClass4_Sub10_Sub1_3.bytes, Static5.aClass4_Sub10_Sub1_3.position);
 				Static3.aClass4_Sub10_Sub1_1.setKey(local197);
@@ -1842,9 +1842,9 @@ public final class Static30 {
 	}
 
 	@OriginalMember(owner = "client!qn", name = "a", descriptor = "(Lclient!fh;)Z")
-	private static boolean method3628(@OriginalArg(0) Class58 arg0) {
+	private static boolean method3628(@OriginalArg(0) Js5 arg0) {
 		if (!Static6.aBoolean308) {
-			@Pc(7) byte[] local7 = arg0.method1372(0, 0);
+			@Pc(7) byte[] local7 = arg0.fetchFile(0, 0);
 			if (local7 == null) {
 				return false;
 			}
@@ -1960,12 +1960,12 @@ public final class Static30 {
 	}
 
 	@OriginalMember(owner = "client!qn", name = "a", descriptor = "(Lclient!fh;II)Lclient!qn;")
-	public static Class4_Sub24 method3636(@OriginalArg(0) Class58 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
+	public static Class4_Sub24 method3636(@OriginalArg(0) Js5 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
 		if (method3628(arg0)) {
-			@Pc(16) byte[] local16 = arg0.method1372(arg1, arg2);
+			@Pc(16) byte[] local16 = arg0.fetchFile(arg1, arg2);
 			return local16 == null ? null : new Class4_Sub24(local16);
 		} else {
-			arg0.method1370(arg1, arg2);
+			arg0.isFileReady(arg1, arg2);
 			return null;
 		}
 	}

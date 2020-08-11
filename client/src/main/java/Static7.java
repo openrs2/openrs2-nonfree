@@ -12,7 +12,7 @@ public final class Static7 {
 	public static int anInt5231;
 
 	@OriginalMember(owner = "client!u", name = "h", descriptor = "Lclient!fh;")
-	public static Class58 aClass58_96;
+	public static Js5 aClass58_96;
 
 	@OriginalMember(owner = "client!ua", name = "i", descriptor = "I")
 	public static int anInt5236;
@@ -24,10 +24,10 @@ public final class Static7 {
 	public static int[] anIntArray597;
 
 	@OriginalMember(owner = "client!uc", name = "W", descriptor = "Lclient!fh;")
-	public static Class58 aClass58_97;
+	public static Js5 aClass58_97;
 
 	@OriginalMember(owner = "client!uc", name = "X", descriptor = "Lclient!fh;")
-	public static Class58 aClass58_98;
+	public static Js5 aClass58_98;
 
 	@OriginalMember(owner = "client!uc", name = "Y", descriptor = "[[[I")
 	public static int[][][] anIntArrayArrayArray15;
@@ -36,7 +36,7 @@ public final class Static7 {
 	public static byte[][] aByteArrayArray49;
 
 	@OriginalMember(owner = "client!ud", name = "l", descriptor = "Lclient!fh;")
-	public static Class58 aClass58_99;
+	public static Js5 aClass58_99;
 
 	@OriginalMember(owner = "client!ue", name = "n", descriptor = "I")
 	public static int anInt742;
@@ -93,7 +93,7 @@ public final class Static7 {
 	public static byte[][] aByteArrayArray50;
 
 	@OriginalMember(owner = "client!va", name = "j", descriptor = "Lclient!fh;")
-	public static Class58 aClass58_101;
+	public static Js5 aClass58_101;
 
 	@OriginalMember(owner = "client!vb", name = "X", descriptor = "[S")
 	public static short[] aShortArray113;
@@ -150,13 +150,13 @@ public final class Static7 {
 	public static int anInt5798;
 
 	@OriginalMember(owner = "client!wc", name = "a", descriptor = "Lclient!fh;")
-	public static Class58 aClass58_102;
+	public static Js5 aClass58_102;
 
 	@OriginalMember(owner = "client!wg", name = "J", descriptor = "[S")
 	public static short[] aShortArray124;
 
 	@OriginalMember(owner = "client!wg", name = "L", descriptor = "Lclient!fh;")
-	public static Class58 aClass58_103;
+	public static Js5 aClass58_103;
 
 	@OriginalMember(owner = "client!wh", name = "B", descriptor = "I")
 	public static int anInt6022;
@@ -165,7 +165,7 @@ public final class Static7 {
 	public static int[] anIntArray678;
 
 	@OriginalMember(owner = "client!wi", name = "b", descriptor = "Lclient!fh;")
-	public static Class58 aClass58_104;
+	public static Js5 aClass58_104;
 
 	@OriginalMember(owner = "client!wi", name = "d", descriptor = "I")
 	public static int anInt6030;

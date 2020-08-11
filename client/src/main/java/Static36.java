@@ -282,7 +282,7 @@ public final class Static36 {
 	}
 
 	@OriginalMember(owner = "client!vc", name = "a", descriptor = "(Lclient!fh;I)V")
-	public static void method3814(@OriginalArg(0) Class58 arg0) {
+	public static void method3814(@OriginalArg(0) Js5 arg0) {
 		Static1.aClass58_2 = arg0;
 	}
 
@@ -564,10 +564,10 @@ public final class Static36 {
 	}
 
 	@OriginalMember(owner = "client!vl", name = "a", descriptor = "(ILclient!fh;Lclient!fh;)V")
-	public static void method4523(@OriginalArg(1) Class58 arg0, @OriginalArg(2) Class58 arg1) {
+	public static void method4523(@OriginalArg(1) Js5 arg0, @OriginalArg(2) Js5 arg1) {
 		Static3.aClass58_48 = arg0;
 		Static6.aClass58_85 = arg1;
-		Static1.anInt119 = Static6.aClass58_85.method1371(3);
+		Static1.anInt119 = Static6.aClass58_85.getGroupCapacity(3);
 	}
 
 	@OriginalMember(owner = "client!vl", name = "a", descriptor = "(IIIII)V")
@@ -661,7 +661,7 @@ public final class Static36 {
 	}
 
 	@OriginalMember(owner = "client!vm", name = "a", descriptor = "(Lclient!ld;Lclient!fh;Lclient!fh;ZLclient!fh;)Z")
-	public static boolean method4551(@OriginalArg(0) Class4_Sub6_Sub2 arg0, @OriginalArg(1) Class58 arg1, @OriginalArg(2) Class58 arg2, @OriginalArg(4) Class58 arg3) {
+	public static boolean method4551(@OriginalArg(0) Class4_Sub6_Sub2 arg0, @OriginalArg(1) Js5 arg1, @OriginalArg(2) Js5 arg2, @OriginalArg(4) Js5 arg3) {
 		Static1.aClass4_Sub6_Sub2_3 = arg0;
 		Static3.aClass58_59 = arg1;
 		Static6.aClass58_93 = arg3;

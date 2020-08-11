@@ -67,7 +67,7 @@ public final class Static31 {
 		if (local6 != null) {
 			return local6;
 		}
-		@Pc(22) byte[] local22 = Static4.aClass58_67.method1372(arg0, 0);
+		@Pc(22) byte[] local22 = Static4.aClass58_67.fetchFile(arg0, 0);
 		@Pc(35) Class4_Sub3_Sub5_Sub2 local35 = new Class4_Sub3_Sub5_Sub2(local22);
 		local35.method2267(Static3.aClass56Array3, null);
 		Static1.aClass26_3.put((long) arg0, local35);
@@ -182,7 +182,7 @@ public final class Static31 {
 	}
 
 	@OriginalMember(owner = "client!rg", name = "a", descriptor = "(Lclient!fh;IZI)Lclient!vn;")
-	public static Class4_Sub3_Sub14_Sub1 method3691(@OriginalArg(0) Class58 arg0, @OriginalArg(1) int arg1) {
+	public static Class4_Sub3_Sub14_Sub1 method3691(@OriginalArg(0) Js5 arg0, @OriginalArg(1) int arg1) {
 		return Static9.method197(arg0, arg1, 0) ? Static34.method1546() : null;
 	}
 
@@ -1150,9 +1150,9 @@ public final class Static31 {
 	}
 
 	@OriginalMember(owner = "client!rn", name = "a", descriptor = "(ILclient!fh;)V")
-	public static void method3154(@OriginalArg(1) Class58 arg0) {
-		Static6.anInt4677 = arg0.method1362("titlebg");
-		Static1.anInt322 = arg0.method1362("logo");
+	public static void method3154(@OriginalArg(1) Js5 arg0) {
+		Static6.anInt4677 = arg0.getGroupId("titlebg");
+		Static1.anInt322 = arg0.getGroupId("logo");
 	}
 
 	@OriginalMember(owner = "client!rn", name = "a", descriptor = "(Lclient!qf;IIIIIIIZ)V")

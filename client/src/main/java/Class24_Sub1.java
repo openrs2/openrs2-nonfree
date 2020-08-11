@@ -13,10 +13,10 @@ public final class Class24_Sub1 extends Class24 implements Interface4 {
 	private int anInt447 = 50;
 
 	@OriginalMember(owner = "client!c", name = "N", descriptor = "Lclient!fh;")
-	private final Class58 aClass58_16;
+	private final Js5 aClass58_16;
 
 	@OriginalMember(owner = "client!c", name = "J", descriptor = "Lclient!fh;")
-	private final Class58 aClass58_15;
+	private final Js5 aClass58_15;
 
 	@OriginalMember(owner = "client!c", name = "X", descriptor = "Lclient!dj;")
 	private Class40 aClass40_4;
@@ -25,7 +25,7 @@ public final class Class24_Sub1 extends Class24 implements Interface4 {
 	private Class40 aClass40_3;
 
 	@OriginalMember(owner = "client!c", name = "<init>", descriptor = "(Lclient!fh;Lclient!fh;Lclient!fh;IZ)V")
-	public Class24_Sub1(@OriginalArg(0) Class58 arg0, @OriginalArg(1) Class58 arg1, @OriginalArg(2) Class58 arg2, @OriginalArg(3) int arg3, @OriginalArg(4) boolean arg4) {
+	public Class24_Sub1(@OriginalArg(0) Js5 arg0, @OriginalArg(1) Js5 arg1, @OriginalArg(2) Js5 arg2, @OriginalArg(3) int arg3, @OriginalArg(4) boolean arg4) {
 		super(arg1, arg0, arg2);
 		this.anInt447 = arg3;
 		this.aClass58_16 = arg2;
@@ -92,7 +92,7 @@ public final class Class24_Sub1 extends Class24 implements Interface4 {
 		if (local17 != null) {
 			return local17;
 		}
-		@Pc(28) byte[] local28 = this.aClass58_15.method1372(arg0, 0);
+		@Pc(28) byte[] local28 = this.aClass58_15.fetchFile(arg0, 0);
 		if (local28 == null) {
 			return null;
 		} else {

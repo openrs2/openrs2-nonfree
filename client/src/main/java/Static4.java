@@ -73,7 +73,7 @@ public final class Static4 {
 	public static String[] aStringArray21;
 
 	@OriginalMember(owner = "client!kn", name = "F", descriptor = "Lclient!fh;")
-	public static Class58 aClass58_66;
+	public static Js5 aClass58_66;
 
 	@OriginalMember(owner = "client!ko", name = "a", descriptor = "[[[B")
 	public static byte[][][] aByteArrayArrayArray15;
@@ -91,13 +91,13 @@ public final class Static4 {
 	public static boolean[][] aBooleanArrayArray4;
 
 	@OriginalMember(owner = "client!l", name = "u", descriptor = "Lclient!fh;")
-	public static Class58 aClass58_67;
+	public static Js5 aClass58_67;
 
 	@OriginalMember(owner = "client!l", name = "w", descriptor = "Lclient!ob;")
 	public static Class59 aClass59_1;
 
 	@OriginalMember(owner = "client!la", name = "U", descriptor = "Lclient!fh;")
-	public static Class58 aClass58_68;
+	public static Js5 aClass58_68;
 
 	@OriginalMember(owner = "client!lb", name = "j", descriptor = "[I")
 	public static int[] anIntArray272;
@@ -115,7 +115,7 @@ public final class Static4 {
 	public static float aFloat59;
 
 	@OriginalMember(owner = "client!lc", name = "j", descriptor = "Lclient!fh;")
-	public static Class58 aClass58_54;
+	public static Js5 aClass58_54;
 
 	@OriginalMember(owner = "client!ld", name = "bb", descriptor = "I")
 	public static int anInt3068;
@@ -151,7 +151,7 @@ public final class Static4 {
 	public static int anInt3171;
 
 	@OriginalMember(owner = "client!lj", name = "T", descriptor = "Lclient!fh;")
-	public static Class58 aClass58_69;
+	public static Js5 aClass58_69;
 
 	@OriginalMember(owner = "client!ll", name = "d", descriptor = "I")
 	public static int anInt3196;
@@ -172,13 +172,13 @@ public final class Static4 {
 	public static int anInt3260;
 
 	@OriginalMember(owner = "client!m", name = "d", descriptor = "Lclient!fh;")
-	public static Class58 aClass58_72;
+	public static Js5 aClass58_72;
 
 	@OriginalMember(owner = "client!m", name = "i", descriptor = "[I")
 	public static int[] anIntArray309;
 
 	@OriginalMember(owner = "client!m", name = "p", descriptor = "Lclient!fh;")
-	public static Class58 aClass58_73;
+	public static Js5 aClass58_73;
 
 	@OriginalMember(owner = "client!ma", name = "c", descriptor = "[Lclient!wf;")
 	public static Class185[] aClass185Array3;
@@ -208,13 +208,13 @@ public final class Static4 {
 	public static Class33[] aClass33Array2;
 
 	@OriginalMember(owner = "client!mf", name = "e", descriptor = "Lclient!fh;")
-	public static Class58 aClass58_74;
+	public static Js5 aClass58_74;
 
 	@OriginalMember(owner = "client!mf", name = "j", descriptor = "[I")
 	public static int[] anIntArray316;
 
 	@OriginalMember(owner = "client!mf", name = "k", descriptor = "Lclient!fh;")
-	public static Class58 aClass58_75;
+	public static Js5 aClass58_75;
 
 	@OriginalMember(owner = "client!mf", name = "l", descriptor = "I")
 	public static int anInt3317;
@@ -235,7 +235,7 @@ public final class Static4 {
 	public static byte[][][] aByteArrayArrayArray17;
 
 	@OriginalMember(owner = "client!mi", name = "f", descriptor = "Lclient!fh;")
-	public static Class58 aClass58_76;
+	public static Js5 aClass58_76;
 
 	@OriginalMember(owner = "client!mi", name = "h", descriptor = "I")
 	public static int anInt3336;
@@ -290,9 +290,6 @@ public final class Static4 {
 
 	@OriginalMember(owner = "client!jk", name = "o", descriptor = "Ljava/util/Calendar;")
 	public static final Calendar aCalendar1 = Calendar.getInstance(TimeZone.getTimeZone("GMT"));
-
-	@OriginalMember(owner = "client!jk", name = "q", descriptor = "Z")
-	public static final boolean aBoolean182 = false;
 
 	@OriginalMember(owner = "client!jk", name = "t", descriptor = "I")
 	public static int anInt2643 = -1;

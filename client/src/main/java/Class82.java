@@ -107,7 +107,7 @@ public final class Class82 {
 		if (local22 != null) {
 			return local22;
 		}
-		Static3.aClass58_60.method1359(this.anInt2279);
+		Static3.aClass58_60.isFileReady(this.anInt2279);
 		@Pc(41) Class56_Sub1 local41 = Static33.method3003(Static3.aClass58_60, this.anInt2279);
 		if (local41 != null) {
 			local41.anInt3412 = local41.anInt3408;
@@ -222,7 +222,7 @@ public final class Class82 {
 		@Pc(30) Class56 local30 = (Class56) Static3.aClass26_23.get((long) (local17 | (arg0 ? 65536 : 0)));
 		if (local30 != null) {
 			return local30;
-		} else if (Static3.aClass58_60.method1359(local17)) {
+		} else if (Static3.aClass58_60.isFileReady(local17)) {
 			@Pc(49) Class56_Sub1 local49 = Static33.method3003(Static3.aClass58_60, local17);
 			@Pc(55) Class56 local55;
 			if (Static3.aBoolean138 && !arg1) {
