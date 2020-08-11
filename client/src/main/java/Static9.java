@@ -909,12 +909,12 @@ public final class Static9 {
 
 	@OriginalMember(owner = "client!bg", name = "a", descriptor = "(IILclient!fd;)V")
 	public static void method281(@OriginalArg(1) int arg0, @OriginalArg(2) Buffer arg1) {
-		if (Static1.aClass189_1 == null) {
+		if (client.uid == null) {
 			return;
 		}
 		try {
-			Static1.aClass189_1.seek(0L);
-			Static1.aClass189_1.write(arg1.bytes, arg0, 24);
+			client.uid.seek(0L);
+			client.uid.write(arg1.bytes, arg0, 24);
 		} catch (@Pc(14) Exception local14) {
 		}
 	}

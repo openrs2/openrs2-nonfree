@@ -491,9 +491,6 @@ public final class Static7 {
 	@OriginalMember(owner = "client!wl", name = "x", descriptor = "Z")
 	public static boolean aBoolean422 = false;
 
-	@OriginalMember(owner = "client!wn", name = "B", descriptor = "Ljava/util/zip/CRC32;")
-	public static final CRC32 aCRC32_1 = new CRC32();
-
 	@OriginalMember(owner = "client!wn", name = "N", descriptor = "I")
 	public static int anInt6094 = 0;
 }

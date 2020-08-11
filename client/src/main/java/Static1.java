@@ -74,9 +74,6 @@ public final class Static1 {
 	@OriginalMember(owner = "client!am", name = "z", descriptor = "[Lclient!uj;")
 	public static Class4_Sub3_Sub14[] aClass4_Sub3_Sub14Array2;
 
-	@OriginalMember(owner = "client!an", name = "f", descriptor = "Lclient!wl;")
-	public static BufferedFile aClass189_1;
-
 	@OriginalMember(owner = "client!an", name = "g", descriptor = "Lclient!fh;")
 	public static Js5 aClass58_7;
 
@@ -205,12 +202,6 @@ public final class Static1 {
 
 	@OriginalMember(owner = "client!cj", name = "I", descriptor = "I")
 	public static int anInt647;
-
-	@OriginalMember(owner = "client!cj", name = "P", descriptor = "Lclient!mg;")
-	public static Js5MasterIndex aClass117_1;
-
-	@OriginalMember(owner = "client!ck", name = "bb", descriptor = "Lclient!fm;")
-	public static Cache aClass60_2;
 
 	@OriginalMember(owner = "client!ck", name = "fb", descriptor = "[Lclient!uj;")
 	public static Class4_Sub3_Sub14[] aClass4_Sub3_Sub14Array3;
@@ -538,9 +529,6 @@ public final class Static1 {
 
 	@OriginalMember(owner = "client!d", name = "j", descriptor = "I")
 	public static int anInt837 = 0;
-
-	@OriginalMember(owner = "client!d", name = "n", descriptor = "[I")
-	public static final int[] anIntArray60 = new int[] { 4, 4, 1, 2, 6, 4, 2, 48, 2, 2, 2, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 };
 
 	@OriginalMember(owner = "client!da", name = "d", descriptor = "Z")
 	public static boolean aBoolean49 = false;

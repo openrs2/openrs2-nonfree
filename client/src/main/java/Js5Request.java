@@ -8,7 +8,7 @@ public abstract class Js5Request extends SecondaryNode {
 	public boolean urgent;
 
 	@OriginalMember(owner = "client!ng", name = "E", descriptor = "Z")
-	public boolean aBoolean365;
+	public boolean orphan;
 
 	@OriginalMember(owner = "client!ng", name = "C", descriptor = "Z")
 	public volatile boolean incomplete = true;

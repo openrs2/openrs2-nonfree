@@ -232,9 +232,6 @@ public final class Static3 {
 	@OriginalMember(owner = "client!ho", name = "D", descriptor = "Lclient!ll;")
 	public static LinkedList aClass112_13;
 
-	@OriginalMember(owner = "client!ho", name = "S", descriptor = "Lclient!wl;")
-	public static BufferedFile aClass189_4;
-
 	@OriginalMember(owner = "client!ho", name = "U", descriptor = "I")
 	public static int anInt2296;
 
@@ -399,9 +396,6 @@ public final class Static3 {
 
 	@OriginalMember(owner = "client!je", name = "j", descriptor = "[[[Lclient!nh;")
 	public static Class4_Sub19[][][] aClass4_Sub19ArrayArrayArray2;
-
-	@OriginalMember(owner = "client!je", name = "l", descriptor = "Lclient!wl;")
-	public static BufferedFile aClass189_5;
 
 	@OriginalMember(owner = "client!je", name = "m", descriptor = "Lclient!ic;")
 	public static HashTable aClass84_10;

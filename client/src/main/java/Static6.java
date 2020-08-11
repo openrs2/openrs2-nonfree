@@ -407,9 +407,6 @@ public final class Static6 {
 	@OriginalMember(owner = "client!rg", name = "mb", descriptor = "I")
 	public static int anInt4516 = 0;
 
-	@OriginalMember(owner = "client!rg", name = "ob", descriptor = "[Lclient!wb;")
-	public static final Class62_Sub1[] aClass62_Sub1Array2 = new Class62_Sub1[29];
-
 	@OriginalMember(owner = "client!rh", name = "W", descriptor = "I")
 	public static int anInt4546 = 0;
 

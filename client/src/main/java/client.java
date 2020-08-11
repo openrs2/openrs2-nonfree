@@ -13,6 +13,9 @@ import dev.openrs2.deob.annotation.Pc;
 @OriginalClass("client!client")
 public final class client extends GameShell {
 
+	@OriginalMember(owner = "client!d", name = "n", descriptor = "[I")
+	private static final int[] JS5_ARCHIVE_WEIGHTS = new int[] { 4, 4, 1, 2, 6, 4, 2, 48, 2, 2, 2, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 };
+
 	@OriginalMember(owner = "client!ma", name = "d", descriptor = "I")
 	public static int modeWhere = 0;
 
@@ -76,6 +79,27 @@ public final class client extends GameShell {
 	@OriginalMember(owner = "client!sk", name = "f", descriptor = "I")
 	public static int port;
 
+	@OriginalMember(owner = "client!ho", name = "S", descriptor = "Lclient!wl;")
+	private static BufferedFile cacheData;
+
+	@OriginalMember(owner = "client!l", name = "A", descriptor = "[Lclient!wl;")
+	private static final BufferedFile[] cacheIndexes = new BufferedFile[29];
+
+	@OriginalMember(owner = "client!je", name = "l", descriptor = "Lclient!wl;")
+	private static BufferedFile cacheMasterIndex;
+
+	@OriginalMember(owner = "client!ck", name = "bb", descriptor = "Lclient!fm;")
+	private static Cache masterCache;
+
+	@OriginalMember(owner = "client!an", name = "f", descriptor = "Lclient!wl;")
+	public static BufferedFile uid;
+
+	@OriginalMember(owner = "client!cj", name = "P", descriptor = "Lclient!mg;")
+	private static Js5MasterIndex js5MasterIndex;
+
+	@OriginalMember(owner = "client!rg", name = "ob", descriptor = "[Lclient!wb;")
+	public static final Js5ResourceProviderImpl[] js5Providers = new Js5ResourceProviderImpl[29];
+
 	@OriginalMember(owner = "client!va", name = "f", descriptor = "Lclient!client;")
 	public static client instance;
 
@@ -134,6 +158,19 @@ public final class client extends GameShell {
 	private static void printUsage(@OriginalArg(1) String thing) {
 		System.out.println("Bad " + thing + ", Usage: worldid, <live/rc/wip>, <english/german>, <game0/game1>");
 		System.exit(1);
+	}
+
+	@OriginalMember(owner = "client!oj", name = "a", descriptor = "(ZBZIZ)Lclient!fh;")
+	private static Js5 createJs5(@OriginalArg(3) int archive, @OriginalArg(2) boolean discardPacked, @OriginalArg(0) boolean discardUnpacked, @OriginalArg(4) boolean prefetchAll) {
+		@Pc(5) Cache cache = null;
+		if (cacheData != null) {
+			cache = new Cache(cacheData, cacheIndexes[archive], archive, 1000000);
+		}
+		js5Providers[archive] = js5MasterIndex.getResourceProvider(masterCache, cache, archive);
+		if (prefetchAll) {
+			js5Providers[archive].prefetchAll();
+		}
+		return new Js5(js5Providers[archive], discardPacked, discardUnpacked);
 	}
 
 	@OriginalMember(owner = "client!client", name = "f", descriptor = "(I)V")
@@ -308,39 +345,39 @@ public final class client extends GameShell {
 			Static5.aString243 = LocalisedText.MAINLOAD10B;
 			Static6.anInt4621 = 10;
 		} else if (Static5.anInt4285 == 30) {
-			if (Static1.aClass117_1 == null) {
-				Static1.aClass117_1 = new Js5MasterIndex(Static7.aClass51_2, Static2.aClass92_1);
+			if (js5MasterIndex == null) {
+				js5MasterIndex = new Js5MasterIndex(Static7.aClass51_2, Static2.aClass92_1);
 			}
-			if (Static1.aClass117_1.isReady()) {
-				Static3.aClass58_46 = Static27.method3231(true, false, 0, true);
-				Static4.aClass58_66 = Static27.method3231(true, false, 1, true);
-				Static2.aClass58_39 = Static27.method3231(false, true, 2, true);
-				Static2.aClass58_27 = Static27.method3231(true, false, 3, true);
-				Static6.aClass58_92 = Static27.method3231(true, false, 4, true);
-				Static3.aClass58_47 = Static27.method3231(true, true, 5, true);
-				Static7.aClass58_98 = Static27.method3231(true, true, 6, false);
-				Static4.aClass58_69 = Static27.method3231(true, false, 7, true);
-				Static1.aClass58_4 = Static27.method3231(true, false, 8, true);
-				Static2.aClass58_29 = Static27.method3231(true, false, 9, true);
-				Static6.aClass58_71 = Static27.method3231(true, false, 10, true);
-				Static3.aClass58_57 = Static27.method3231(true, false, 11, true);
-				Static4.aClass58_73 = Static27.method3231(true, false, 12, true);
-				Static4.aClass58_67 = Static27.method3231(true, false, 13, true);
-				Static5.aClass58_78 = Static27.method3231(true, false, 14, false);
-				Static5.aClass58_83 = Static27.method3231(true, false, 15, true);
-				Static4.aClass58_76 = Static27.method3231(true, false, 16, true);
-				Static7.aClass58_96 = Static27.method3231(true, false, 17, true);
-				Static6.aClass58_88 = Static27.method3231(true, false, 18, true);
-				Static5.aClass58_79 = Static27.method3231(true, false, 19, true);
-				Static1.aClass58_1 = Static27.method3231(true, false, 20, true);
-				Static1.aClass58_24 = Static27.method3231(true, false, 21, true);
-				Static1.aClass58_10 = Static27.method3231(true, false, 22, true);
-				Static5.aClass58_82 = Static27.method3231(true, true, 23, true);
-				Static6.aClass58_87 = Static27.method3231(true, false, 24, true);
-				Static1.aClass58_30 = Static27.method3231(true, false, 25, true);
-				Static4.aClass58_68 = Static27.method3231(true, true, 26, true);
-				Static7.aClass58_102 = Static27.method3231(true, false, 27, true);
-				Static5.aClass58_80 = Static27.method3231(true, true, 28, true);
+			if (js5MasterIndex.isReady()) {
+				Static3.aClass58_46 = createJs5(0, false, true, true);
+				Static4.aClass58_66 = createJs5(1, false, true, true);
+				Static2.aClass58_39 = createJs5(2, true, false, true);
+				Static2.aClass58_27 = createJs5(3, false, true, true);
+				Static6.aClass58_92 = createJs5(4, false, true, true);
+				Static3.aClass58_47 = createJs5(5, true, true, true);
+				Static7.aClass58_98 = createJs5(6, true, true, false);
+				Static4.aClass58_69 = createJs5(7, false, true, true);
+				Static1.aClass58_4 = createJs5(8, false, true, true);
+				Static2.aClass58_29 = createJs5(9, false, true, true);
+				Static6.aClass58_71 = createJs5(10, false, true, true);
+				Static3.aClass58_57 = createJs5(11, false, true, true);
+				Static4.aClass58_73 = createJs5(12, false, true, true);
+				Static4.aClass58_67 = createJs5(13, false, true, true);
+				Static5.aClass58_78 = createJs5(14, false, true, false);
+				Static5.aClass58_83 = createJs5(15, false, true, true);
+				Static4.aClass58_76 = createJs5(16, false, true, true);
+				Static7.aClass58_96 = createJs5(17, false, true, true);
+				Static6.aClass58_88 = createJs5(18, false, true, true);
+				Static5.aClass58_79 = createJs5(19, false, true, true);
+				Static1.aClass58_1 = createJs5(20, false, true, true);
+				Static1.aClass58_24 = createJs5(21, false, true, true);
+				Static1.aClass58_10 = createJs5(22, false, true, true);
+				Static5.aClass58_82 = createJs5(23, true, true, true);
+				Static6.aClass58_87 = createJs5(24, false, true, true);
+				Static1.aClass58_30 = createJs5(25, false, true, true);
+				Static4.aClass58_68 = createJs5(26, true, true, true);
+				Static7.aClass58_102 = createJs5(27, false, true, true);
+				Static5.aClass58_80 = createJs5(28, true, true, true);
 				Static6.anInt4621 = 15;
 				Static5.aString243 = LocalisedText.MAINLOAD30B;
 				Static5.anInt4285 = 40;
@@ -350,8 +387,8 @@ public final class client extends GameShell {
 			}
 		} else if (Static5.anInt4285 == 40) {
 			@Pc(355) int local355 = 0;
-			for (@Pc(357) int local357 = 0; local357 < 29; local357++) {
-				local355 += Static6.aClass62_Sub1Array2[local357].method4664() * Static1.anIntArray60[local357] / 100;
+			for (@Pc(357) int i = 0; i < 29; i++) {
+				local355 += js5Providers[i].getIndexPercentageComplete() * JS5_ARCHIVE_WEIGHTS[i] / 100;
 			}
 			if (local355 == 100) {
 				Static5.aString243 = LocalisedText.MAINLOAD40B;
@@ -691,23 +728,23 @@ public final class client extends GameShell {
 		Static5.anInt3815 = SignLink.anInt6106;
 		try {
 			if (GameShell.signLink.cacheData != null) {
-				Static3.aClass189_4 = new BufferedFile(GameShell.signLink.cacheData, 5200, 0);
-				for (@Pc(174) int local174 = 0; local174 < 29; local174++) {
-					Static4.aClass189Array1[local174] = new BufferedFile(GameShell.signLink.cacheIndexes[local174], 6000, 0);
+				cacheData = new BufferedFile(GameShell.signLink.cacheData, 5200, 0);
+				for (@Pc(174) int i = 0; i < 29; i++) {
+					cacheIndexes[i] = new BufferedFile(GameShell.signLink.cacheIndexes[i], 6000, 0);
 				}
-				Static3.aClass189_5 = new BufferedFile(GameShell.signLink.cacheMasterIndex, 6000, 0);
-				Static1.aClass60_2 = new Cache(Static3.aClass189_4, Static3.aClass189_5, 255, 500000);
-				Static1.aClass189_1 = new BufferedFile(GameShell.signLink.uid, 24, 0);
+				cacheMasterIndex = new BufferedFile(GameShell.signLink.cacheMasterIndex, 6000, 0);
+				masterCache = new Cache(cacheData, cacheMasterIndex, 255, 500000);
+				uid = new BufferedFile(GameShell.signLink.uid, 24, 0);
 				GameShell.signLink.cacheMasterIndex = null;
 				GameShell.signLink.cacheIndexes = null;
 				GameShell.signLink.cacheData = null;
 				GameShell.signLink.uid = null;
 			}
-		} catch (@Pc(230) IOException local230) {
-			Static1.aClass189_1 = null;
-			Static3.aClass189_5 = null;
-			Static1.aClass60_2 = null;
-			Static3.aClass189_4 = null;
+		} catch (@Pc(230) IOException ex) {
+			uid = null;
+			cacheMasterIndex = null;
+			masterCache = null;
+			cacheData = null;
 		}
 		if (modeWhere != 0) {
 			Static3.aBoolean176 = true;
@@ -1040,8 +1077,8 @@ public final class client extends GameShell {
 			Static5.aRandom1.setSeed((long) Static2.anInt1976);
 		}
 		this.method689();
-		if (Static1.aClass117_1 != null) {
-			Static1.aClass117_1.method2706();
+		if (js5MasterIndex != null) {
+			js5MasterIndex.tick();
 		}
 		Static30.method3551();
 		Static9.method763();

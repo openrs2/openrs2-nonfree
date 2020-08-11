@@ -10,7 +10,7 @@ public final class Js5MasterIndex {
 	private Buffer buffer;
 
 	@OriginalMember(owner = "client!mg", name = "m", descriptor = "[Lclient!wb;")
-	private Class62_Sub1[] aClass62_Sub1Array1;
+	private Js5ResourceProviderImpl[] resourceProviders;
 
 	@OriginalMember(owner = "client!mg", name = "h", descriptor = "Lclient!en;")
 	private final Js5NetQueue netQueue;
@@ -31,18 +31,18 @@ public final class Js5MasterIndex {
 	}
 
 	@OriginalMember(owner = "client!mg", name = "a", descriptor = "(Z)V")
-	public final void method2706() {
-		if (this.aClass62_Sub1Array1 == null) {
+	public final void tick() {
+		if (this.resourceProviders == null) {
 			return;
 		}
-		for (@Pc(12) int i = 0; i < this.aClass62_Sub1Array1.length; i++) {
-			if (this.aClass62_Sub1Array1[i] != null) {
-				this.aClass62_Sub1Array1[i].method4666();
+		for (@Pc(12) int i = 0; i < this.resourceProviders.length; i++) {
+			if (this.resourceProviders[i] != null) {
+				this.resourceProviders[i].processPrefetchQueue();
 			}
 		}
-		for (@Pc(43) int i = 0; i < this.aClass62_Sub1Array1.length; i++) {
-			if (this.aClass62_Sub1Array1[i] != null) {
-				this.aClass62_Sub1Array1[i].method4673();
+		for (@Pc(43) int i = 0; i < this.resourceProviders.length; i++) {
+			if (this.resourceProviders[i] != null) {
+				this.resourceProviders[i].tick();
 			}
 		}
 	}
@@ -62,32 +62,32 @@ public final class Js5MasterIndex {
 			return false;
 		} else {
 			this.buffer = new Buffer(this.request.getData());
-			this.aClass62_Sub1Array1 = new Class62_Sub1[(this.buffer.bytes.length - 5) / 8];
+			this.resourceProviders = new Js5ResourceProviderImpl[(this.buffer.bytes.length - 5) / 8];
 			return true;
 		}
 	}
 
 	@OriginalMember(owner = "client!mg", name = "a", descriptor = "(Lclient!fm;BLclient!fm;ZI)Lclient!wb;")
-	private Class62_Sub1 method2712(@OriginalArg(0) Cache arg0, @OriginalArg(2) Cache arg1, @OriginalArg(4) int archive) {
+	private Js5ResourceProviderImpl getResourceProviderInternal(@OriginalArg(0) Cache masterCache, @OriginalArg(2) Cache cache, @OriginalArg(4) int archive) {
 		if (this.buffer == null) {
 			throw new RuntimeException();
 		}
 		this.buffer.position = archive * 8 + 5;
 		if (this.buffer.bytes.length <= this.buffer.position) {
 			throw new RuntimeException();
-		} else if (this.aClass62_Sub1Array1[archive] == null) {
+		} else if (this.resourceProviders[archive] == null) {
 			@Pc(48) int checksum = this.buffer.readInt();
 			@Pc(55) int version = this.buffer.readInt();
-			@Pc(76) Class62_Sub1 local76 = new Class62_Sub1(archive, arg1, arg0, this.netQueue, this.cacheQueue, checksum, version, true);
-			this.aClass62_Sub1Array1[archive] = local76;
-			return local76;
+			@Pc(76) Js5ResourceProviderImpl provider = new Js5ResourceProviderImpl(archive, cache, masterCache, this.netQueue, this.cacheQueue, checksum, version, true);
+			this.resourceProviders[archive] = provider;
+			return provider;
 		} else {
-			return this.aClass62_Sub1Array1[archive];
+			return this.resourceProviders[archive];
 		}
 	}
 
 	@OriginalMember(owner = "client!mg", name = "a", descriptor = "(Lclient!fm;Lclient!fm;IB)Lclient!wb;")
-	public final Class62_Sub1 method2714(@OriginalArg(0) Cache arg0, @OriginalArg(1) Cache arg1, @OriginalArg(2) int archive) {
-		return this.method2712(arg0, arg1, archive);
+	public final Js5ResourceProviderImpl getResourceProvider(@OriginalArg(0) Cache masterCache, @OriginalArg(1) Cache cache, @OriginalArg(2) int archive) {
+		return this.getResourceProviderInternal(masterCache, cache, archive);
 	}
 }

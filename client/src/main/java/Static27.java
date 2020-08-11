@@ -896,19 +896,6 @@ public final class Static27 {
 		return local13;
 	}
 
-	@OriginalMember(owner = "client!oj", name = "a", descriptor = "(ZBZIZ)Lclient!fh;")
-	public static Js5 method3231(@OriginalArg(0) boolean arg0, @OriginalArg(2) boolean arg1, @OriginalArg(3) int arg2, @OriginalArg(4) boolean arg3) {
-		@Pc(5) Cache local5 = null;
-		if (Static3.aClass189_4 != null) {
-			local5 = new Cache(Static3.aClass189_4, Static4.aClass189Array1[arg2], arg2, 1000000);
-		}
-		Static6.aClass62_Sub1Array2[arg2] = Static1.aClass117_1.method2714(Static1.aClass60_2, local5, arg2);
-		if (arg3) {
-			Static6.aClass62_Sub1Array2[arg2].method4668();
-		}
-		return new Js5(Static6.aClass62_Sub1Array2[arg2], arg1, arg0);
-	}
-
 	@OriginalMember(owner = "client!oj", name = "a", descriptor = "(IIIIIIFIZ)[[I")
 	public static int[][] method3234(@OriginalArg(6) float arg0) {
 		@Pc(17) int[][] local17 = new int[256][64];

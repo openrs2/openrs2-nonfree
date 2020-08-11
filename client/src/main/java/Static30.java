@@ -364,9 +364,9 @@ public final class Static30 {
 								@Pc(883) int local883 = 0;
 								@Pc(885) int local885 = 0;
 								for (@Pc(887) int local887 = 0; local887 < 29; local887++) {
-									local885 += Static6.aClass62_Sub1Array2[local887].method4671();
-									local881 += Static6.aClass62_Sub1Array2[local887].method4667();
-									local883 += Static6.aClass62_Sub1Array2[local887].method4660();
+									local885 += client.js5Providers[local887].getIndexSize();
+									local881 += client.js5Providers[local887].getVerifiedGroups();
+									local883 += client.js5Providers[local887].getTotalVerifiedGroups();
 								}
 								@Pc(923) int local923 = local883 * 100 / local885;
 								@Pc(929) int local929 = local881 * 10000 / local885;

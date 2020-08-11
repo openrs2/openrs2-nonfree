@@ -234,10 +234,10 @@ public final class Static32 {
 	@OriginalMember(owner = "client!se", name = "a", descriptor = "(Lclient!fd;I)V")
 	public static void method3949(@OriginalArg(0) Buffer arg0) {
 		@Pc(8) byte[] local8 = new byte[24];
-		if (Static1.aClass189_1 != null) {
+		if (client.uid != null) {
 			try {
-				Static1.aClass189_1.seek(0L);
-				Static1.aClass189_1.read(local8);
+				client.uid.seek(0L);
+				client.uid.read(local8);
 				@Pc(32) int local32;
 				for (local32 = 0; local32 < 24 && local8[local32] == 0; local32++) {
 				}

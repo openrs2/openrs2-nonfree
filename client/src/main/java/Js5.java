@@ -22,15 +22,15 @@ public final class Js5 {
 	private final boolean discardUnpacked;
 
 	@OriginalMember(owner = "client!fh", name = "G", descriptor = "Lclient!ga;")
-	private final Class62 aClass62_1;
+	private final Js5ResourceProvider provider;
 
 	@OriginalMember(owner = "client!fh", name = "g", descriptor = "Z")
 	private final boolean discardPacked;
 
 	@OriginalMember(owner = "client!fh", name = "<init>", descriptor = "(Lclient!ga;ZZ)V")
-	public Js5(@OriginalArg(0) Class62 arg0, @OriginalArg(1) boolean discardPacked, @OriginalArg(2) boolean discardUnpacked) {
+	public Js5(@OriginalArg(0) Js5ResourceProvider provider, @OriginalArg(1) boolean discardPacked, @OriginalArg(2) boolean discardUnpacked) {
 		this.discardUnpacked = discardUnpacked;
-		this.aClass62_1 = arg0;
+		this.provider = provider;
 		this.discardPacked = discardPacked;
 	}
 
@@ -52,7 +52,7 @@ public final class Js5 {
 
 	@OriginalMember(owner = "client!fh", name = "a", descriptor = "(II)V")
 	private void prefetchGroup(@OriginalArg(1) int group) {
-		this.aClass62_1.prefetchGroup(group);
+		this.provider.prefetchGroup(group);
 	}
 
 	@OriginalMember(owner = "client!fh", name = "a", descriptor = "(Ljava/lang/String;B)I")
@@ -115,7 +115,7 @@ public final class Js5 {
 	@OriginalMember(owner = "client!fh", name = "b", descriptor = "(II)I")
 	private int getPercentageComplete(@OriginalArg(0) int group) {
 		if (this.isGroupValid(group)) {
-			return this.packed[group] == null ? this.aClass62_1.getPercentageComplete(group) : 100;
+			return this.packed[group] == null ? this.provider.getPercentageComplete(group) : 100;
 		} else {
 			return 0;
 		}
@@ -124,7 +124,7 @@ public final class Js5 {
 	@OriginalMember(owner = "client!fh", name = "a", descriptor = "(B)Z")
 	private boolean isIndexReady() {
 		if (this.index == null) {
-			this.index = this.aClass62_1.fetchIndex();
+			this.index = this.provider.fetchIndex();
 			if (this.index == null) {
 				return false;
 			}
@@ -169,9 +169,9 @@ public final class Js5 {
 	@OriginalMember(owner = "client!fh", name = "c", descriptor = "(II)V")
 	private void fetchGroup(@OriginalArg(1) int group) {
 		if (this.discardPacked) {
-			this.packed[group] = this.aClass62_1.fetchGroup(group);
+			this.packed[group] = this.provider.fetchGroup(group);
 		} else {
-			this.packed[group] = ByteArray.wrap(this.aClass62_1.fetchGroup(group));
+			this.packed[group] = ByteArray.wrap(this.provider.fetchGroup(group));
 		}
 	}
 

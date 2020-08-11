@@ -372,9 +372,6 @@ public final class Static4 {
 	@OriginalMember(owner = "client!l", name = "q", descriptor = "I")
 	public static int anInt2989 = 0;
 
-	@OriginalMember(owner = "client!l", name = "A", descriptor = "[Lclient!wl;")
-	public static final BufferedFile[] aClass189Array1 = new BufferedFile[29];
-
 	@OriginalMember(owner = "client!la", name = "S", descriptor = "I")
 	public static int anInt3017 = -1;
 
