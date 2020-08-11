@@ -411,13 +411,13 @@ public final class Static8 {
 
 	@OriginalMember(owner = "client!ae", name = "c", descriptor = "(I)V")
 	public static void method91() {
-		Static5.aClass26_42.method515();
-		Static6.aClass26_46.method515();
+		Static5.aClass26_42.clearSoft();
+		Static6.aClass26_46.clearSoft();
 	}
 
 	@OriginalMember(owner = "client!af", name = "a", descriptor = "(II)Lclient!vh;")
 	public static Class181 method99(@OriginalArg(0) int arg0) {
-		@Pc(14) Class181 local14 = (Class181) Static3.aClass26_19.method518((long) arg0);
+		@Pc(14) Class181 local14 = (Class181) Static3.aClass26_19.get((long) arg0);
 		if (local14 != null) {
 			return local14;
 		}
@@ -435,7 +435,7 @@ public final class Static8 {
 			local32.anInt5509 = 0;
 			local32.aBoolean374 = false;
 		}
-		Static3.aClass26_19.method510(local32, (long) arg0);
+		Static3.aClass26_19.put((long) arg0, local32);
 		return local32;
 	}
 

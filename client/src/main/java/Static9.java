@@ -139,8 +139,8 @@ public final class Static9 {
 
 	@OriginalMember(owner = "client!am", name = "a", descriptor = "(II)V")
 	public static void method191() {
-		Static5.aClass26_45.method517(5);
-		Static7.aClass26_57.method517(5);
+		Static5.aClass26_45.sweep(5);
+		Static7.aClass26_57.sweep(5);
 	}
 
 	@OriginalMember(owner = "client!am", name = "b", descriptor = "(II)I")
@@ -278,7 +278,7 @@ public final class Static9 {
 
 	@OriginalMember(owner = "client!an", name = "a", descriptor = "(I)V")
 	public static void method198() {
-		Static5.aClass26_37.method511();
+		Static5.aClass26_37.clear();
 	}
 
 	@OriginalMember(owner = "client!an", name = "b", descriptor = "(I)V")
@@ -310,7 +310,7 @@ public final class Static9 {
 
 	@OriginalMember(owner = "client!ao", name = "a", descriptor = "(B)V")
 	public static void method201() {
-		Static4.aClass26_29.method511();
+		Static4.aClass26_29.clear();
 	}
 
 	@OriginalMember(owner = "client!ao", name = "a", descriptor = "(Ljava/awt/Color;ZZILjava/lang/String;)V")

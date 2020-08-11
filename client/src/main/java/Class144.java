@@ -63,7 +63,7 @@ public final class Class144 {
 		}
 		this.aLong153 = local10[(int) ((this.aLong153 ^ (long) (this.aBoolean306 ? 1 : 0)) & 0xFFL)] ^ this.aLong153 >>> 8;
 		if (local8 != 0L && this.aLong153 != local8) {
-			Static2.aClass26_12.method512(local8);
+			Static2.aClass26_12.remove(local8);
 		}
 	}
 
@@ -98,7 +98,7 @@ public final class Class144 {
 				}
 			}
 		}
-		@Pc(169) Class53_Sub4 local169 = (Class53_Sub4) Static2.aClass26_12.method518(local54);
+		@Pc(169) Class53_Sub4 local169 = (Class53_Sub4) Static2.aClass26_12.get(local54);
 		if (local169 == null) {
 			@Pc(174) boolean local174 = false;
 			for (@Pc(176) int local176 = 0; local176 < 12; local176++) {
@@ -113,7 +113,7 @@ public final class Class144 {
 			}
 			if (local174) {
 				if (this.aLong154 != -1L) {
-					local169 = (Class53_Sub4) Static2.aClass26_12.method518(this.aLong154);
+					local169 = (Class53_Sub4) Static2.aClass26_12.get(this.aLong154);
 				}
 				if (local169 == null) {
 					return null;
@@ -207,7 +207,7 @@ public final class Class144 {
 					((Class53_Sub4_Sub2) local169).method3872(false, false, true, false, false, true);
 				}
 				if (arg9) {
-					Static2.aClass26_12.method510(local169, local54);
+					Static2.aClass26_12.put(local54, local169);
 					this.aLong154 = local54;
 				}
 			}
@@ -350,7 +350,7 @@ public final class Class144 {
 	@OriginalMember(owner = "client!qk", name = "a", descriptor = "(ILclient!eg;IIIIII)Lclient!vg;")
 	public final Class53_Sub4 method3609(@OriginalArg(1) Class46 arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4, @OriginalArg(6) int arg5, @OriginalArg(7) int arg6) {
 		@Pc(14) long local14 = (long) arg2 << 32 | (long) (arg1 << 16) | (long) arg5;
-		@Pc(24) Class53_Sub4 local24 = (Class53_Sub4) Static3.aClass26_27.method518(local14);
+		@Pc(24) Class53_Sub4 local24 = (Class53_Sub4) Static3.aClass26_27.get(local14);
 		if (local24 == null) {
 			@Pc(30) int local30 = 0;
 			@Pc(33) Class53_Sub3[] local33 = new Class53_Sub3[3];
@@ -380,7 +380,7 @@ public final class Class144 {
 				}
 			}
 			local24 = local105.method2761(64, 768, -50, -10, -50);
-			Static3.aClass26_27.method510(local24, local14);
+			Static3.aClass26_27.put(local14, local24);
 		}
 		if (arg0 != null) {
 			local24 = arg0.method1017(arg4, arg6, local24, arg3);
@@ -423,7 +423,7 @@ public final class Class144 {
 		if (this.anInt4387 != -1) {
 			return Static15.method1495(this.anInt4387).method4266(arg2, arg1, arg0, arg3);
 		}
-		@Pc(28) Class53_Sub4 local28 = (Class53_Sub4) Static3.aClass26_27.method518(this.aLong153);
+		@Pc(28) Class53_Sub4 local28 = (Class53_Sub4) Static3.aClass26_27.get(this.aLong153);
 		if (local28 == null) {
 			@Pc(33) boolean local33 = false;
 			for (@Pc(35) int local35 = 0; local35 < 12; local35++) {
@@ -465,7 +465,7 @@ public final class Class144 {
 				}
 			}
 			local28 = local162.method2761(64, 768, -50, -10, -50);
-			Static3.aClass26_27.method510(local28, this.aLong153);
+			Static3.aClass26_27.put(this.aLong153, local28);
 		}
 		if (arg1 != null) {
 			local28 = arg1.method1017(arg0, arg2, local28, arg3);

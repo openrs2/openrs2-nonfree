@@ -9,7 +9,7 @@ public final class Static35 {
 
 	@OriginalMember(owner = "client!uc", name = "f", descriptor = "(B)V")
 	public static void method4296() {
-		Static6.aClass26_54.method515();
+		Static6.aClass26_54.clearSoft();
 	}
 
 	@OriginalMember(owner = "client!uc", name = "f", descriptor = "(I)V")
@@ -1115,7 +1115,7 @@ public final class Static35 {
 
 	@OriginalMember(owner = "client!uf", name = "a", descriptor = "(I)V")
 	public static void method4313() {
-		Static1.aClass26_6.method511();
+		Static1.aClass26_6.clear();
 	}
 
 	@OriginalMember(owner = "client!ug", name = "a", descriptor = "(B)V")
@@ -1444,7 +1444,7 @@ public final class Static35 {
 
 	@OriginalMember(owner = "client!ul", name = "a", descriptor = "(IB)Lclient!td;")
 	public static Class162 method4361(@OriginalArg(0) int arg0) {
-		@Pc(18) Class162 local18 = (Class162) Static5.aClass26_35.method518((long) arg0);
+		@Pc(18) Class162 local18 = (Class162) Static5.aClass26_35.get((long) arg0);
 		if (local18 != null) {
 			return local18;
 		}
@@ -1468,7 +1468,7 @@ public final class Static35 {
 			local38.anInt5099 = 0;
 			local38.aBoolean349 = false;
 		}
-		Static5.aClass26_35.method510(local38, (long) arg0);
+		Static5.aClass26_35.put((long) arg0, local38);
 		return local38;
 	}
 
@@ -1479,7 +1479,7 @@ public final class Static35 {
 
 	@OriginalMember(owner = "client!ul", name = "b", descriptor = "(IB)Lclient!qm;")
 	public static Class145 method4364(@OriginalArg(0) int arg0) {
-		@Pc(10) Class145 local10 = (Class145) Static6.aClass26_52.method518((long) arg0);
+		@Pc(10) Class145 local10 = (Class145) Static6.aClass26_52.get((long) arg0);
 		if (local10 != null) {
 			return local10;
 		}
@@ -1488,7 +1488,7 @@ public final class Static35 {
 		if (local22 != null) {
 			local26.method3618(arg0, new Buffer(local22));
 		}
-		Static6.aClass26_52.method510(local26, (long) arg0);
+		Static6.aClass26_52.put((long) arg0, local26);
 		return local26;
 	}
 
@@ -1699,9 +1699,9 @@ public final class Static35 {
 
 	@OriginalMember(owner = "client!v", name = "b", descriptor = "(I)V")
 	public static void method4400() {
-		Static3.aClass26_19.method515();
-		Static5.aClass26_43.method515();
-		Static7.aClass26_18.method515();
-		Static4.aClass26_32.method515();
+		Static3.aClass26_19.clearSoft();
+		Static5.aClass26_43.clearSoft();
+		Static7.aClass26_18.clearSoft();
+		Static4.aClass26_32.clearSoft();
 	}
 }

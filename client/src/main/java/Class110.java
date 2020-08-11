@@ -100,7 +100,7 @@ public final class Class110 {
 
 	@OriginalMember(owner = "client!li", name = "a", descriptor = "(IIIB)Lclient!vg;")
 	public final Class53_Sub4 method2569(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
-		@Pc(9) Class53_Sub4 local9 = (Class53_Sub4) Static7.aClass26_57.method518((long) this.anInt3138);
+		@Pc(9) Class53_Sub4 local9 = (Class53_Sub4) Static7.aClass26_57.get((long) this.anInt3138);
 		if (local9 == null) {
 			@Pc(22) Class53_Sub3 local22 = Static25.method2752(Static3.aClass58_64, this.anInt3136);
 			if (local22 == null) {
@@ -117,7 +117,7 @@ public final class Class110 {
 				}
 			}
 			local9 = local22.method2761(this.anInt3130 + 64, this.anInt3132 + 850, -30, -50, -30);
-			Static7.aClass26_57.method510(local9, (long) this.anInt3138);
+			Static7.aClass26_57.put((long) this.anInt3138, local9);
 		}
 		@Pc(113) Class53_Sub4 local113;
 		if (this.anInt3134 == -1 || arg2 == -1) {

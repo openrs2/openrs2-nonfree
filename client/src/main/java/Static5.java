@@ -366,7 +366,7 @@ public final class Static5 {
 	public static final int[] anIntArray681 = new int[] { 1, 4 };
 
 	@OriginalMember(owner = "client!nj", name = "h", descriptor = "Lclient!cc;")
-	public static final Class26 aClass26_35 = new Class26(64);
+	public static final LruHashTable aClass26_35 = new LruHashTable(64);
 
 	@OriginalMember(owner = "client!nj", name = "i", descriptor = "Lclient!ic;")
 	public static HashTable aClass84_17 = new HashTable(32);
@@ -393,7 +393,7 @@ public final class Static5 {
 	public static int anInt3637 = 0;
 
 	@OriginalMember(owner = "client!o", name = "r", descriptor = "Lclient!cc;")
-	public static final Class26 aClass26_37 = new Class26(100);
+	public static final LruHashTable aClass26_37 = new LruHashTable(100);
 
 	@OriginalMember(owner = "client!o", name = "J", descriptor = "[I")
 	public static final int[] anIntArray398 = new int[14];
@@ -441,7 +441,7 @@ public final class Static5 {
 	public static int anInt5206 = 0;
 
 	@OriginalMember(owner = "client!oc", name = "z", descriptor = "Lclient!cc;")
-	public static final Class26 aClass26_39 = new Class26(5);
+	public static final LruHashTable aClass26_39 = new LruHashTable(5);
 
 	@OriginalMember(owner = "client!oc", name = "B", descriptor = "I")
 	public static int anInt3715 = 0;
@@ -483,7 +483,7 @@ public final class Static5 {
 	public static int anInt3896 = 99;
 
 	@OriginalMember(owner = "client!ok", name = "h", descriptor = "Lclient!cc;")
-	public static final Class26 aClass26_42 = new Class26(64);
+	public static final LruHashTable aClass26_42 = new LruHashTable(64);
 
 	@OriginalMember(owner = "client!ok", name = "i", descriptor = "[Lclient!te;")
 	public static final Class4_Sub3_Sub19[] aClass4_Sub3_Sub19Array3 = new Class4_Sub3_Sub19[14];
@@ -513,7 +513,7 @@ public final class Static5 {
 	public static boolean aBoolean278 = false;
 
 	@OriginalMember(owner = "client!on", name = "K", descriptor = "Lclient!cc;")
-	public static final Class26 aClass26_43 = new Class26(500);
+	public static final LruHashTable aClass26_43 = new LruHashTable(500);
 
 	@OriginalMember(owner = "client!p", name = "nc", descriptor = "Lclient!ic;")
 	public static final HashTable aClass84_18 = new HashTable(16);
@@ -537,7 +537,7 @@ public final class Static5 {
 	public static final int[] anIntArray432 = new int[2];
 
 	@OriginalMember(owner = "client!pg", name = "l", descriptor = "Lclient!cc;")
-	public static final Class26 aClass26_41 = new Class26(64);
+	public static final LruHashTable aClass26_41 = new LruHashTable(64);
 
 	@OriginalMember(owner = "client!ph", name = "ab", descriptor = "I")
 	public static int anInt4156 = 0;
@@ -621,7 +621,7 @@ public final class Static5 {
 	public static int anInt4291 = 0;
 
 	@OriginalMember(owner = "client!qf", name = "f", descriptor = "Lclient!cc;")
-	public static final Class26 aClass26_45 = new Class26(64);
+	public static final LruHashTable aClass26_45 = new LruHashTable(64);
 
 	@OriginalMember(owner = "client!qf", name = "n", descriptor = "I")
 	public static int anInt4304 = 0;

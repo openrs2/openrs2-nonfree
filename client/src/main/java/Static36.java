@@ -375,7 +375,7 @@ public final class Static36 {
 
 	@OriginalMember(owner = "client!vh", name = "a", descriptor = "(B)V")
 	public static void method4448() {
-		Static7.aClass26_56.method511();
+		Static7.aClass26_56.clear();
 	}
 
 	@OriginalMember(owner = "client!vh", name = "c", descriptor = "(I)V")

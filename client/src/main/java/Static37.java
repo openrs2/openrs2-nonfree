@@ -147,7 +147,7 @@ public final class Static37 {
 
 	@OriginalMember(owner = "client!wa", name = "s", descriptor = "(I)V")
 	public static void method4649() {
-		Static2.aClass26_16.method511();
+		Static2.aClass26_16.clear();
 	}
 
 	@OriginalMember(owner = "client!wb", name = "a", descriptor = "(IIII)V")
@@ -214,14 +214,14 @@ public final class Static37 {
 	public static Class4_Sub3_Sub14 method4676(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) boolean arg2, @OriginalArg(4) Class144 arg3, @OriginalArg(5) int arg4, @OriginalArg(6) int arg5) {
 		@Pc(23) int local23 = (arg2 ? 65536 : 0) + arg4 + (arg1 << 17) + (arg5 << 19);
 		@Pc(34) long local34 = (long) arg0 * 3147483667L + (long) local23 * 3849834839L;
-		@Pc(40) Class4_Sub3_Sub14 local40 = (Class4_Sub3_Sub14) Static5.aClass26_37.method518(local34);
+		@Pc(40) Class4_Sub3_Sub14 local40 = (Class4_Sub3_Sub14) Static5.aClass26_37.get(local34);
 		if (local40 != null) {
 			return local40;
 		}
 		Static4.aBoolean218 = false;
 		@Pc(58) Class4_Sub3_Sub14 local58 = Static13.method965(arg1, arg2, arg0, false, arg3, arg5, arg4, false);
 		if (local58 != null && !Static4.aBoolean218) {
-			Static5.aClass26_37.method510(local58, local34);
+			Static5.aClass26_37.put(local34, local58);
 		}
 		return local58;
 	}
@@ -503,8 +503,8 @@ public final class Static37 {
 
 	@OriginalMember(owner = "client!we", name = "a", descriptor = "(ZI)V")
 	public static void method4717() {
-		Static4.aClass26_28.method517(5);
-		Static3.aClass26_23.method517(5);
+		Static4.aClass26_28.sweep(5);
+		Static3.aClass26_23.sweep(5);
 	}
 
 	@OriginalMember(owner = "client!we", name = "a", descriptor = "(I)V")
@@ -687,13 +687,13 @@ public final class Static37 {
 
 	@OriginalMember(owner = "client!wf", name = "a", descriptor = "(II)V")
 	public static void method4727() {
-		Static5.aClass26_42.method517(5);
-		Static6.aClass26_46.method517(5);
+		Static5.aClass26_42.sweep(5);
+		Static6.aClass26_46.sweep(5);
 	}
 
 	@OriginalMember(owner = "client!wf", name = "b", descriptor = "(BI)Lclient!sa;")
 	public static Class153 method4731(@OriginalArg(1) int arg0) {
-		@Pc(10) Class153 local10 = (Class153) Static2.aClass26_16.method518((long) arg0);
+		@Pc(10) Class153 local10 = (Class153) Static2.aClass26_16.get((long) arg0);
 		if (local10 != null) {
 			return local10;
 		}
@@ -702,7 +702,7 @@ public final class Static37 {
 		if (local22 != null) {
 			local26.method3886(arg0, new Buffer(local22));
 		}
-		Static2.aClass26_16.method510(local26, (long) arg0);
+		Static2.aClass26_16.put((long) arg0, local26);
 		return local26;
 	}
 
@@ -1030,7 +1030,7 @@ public final class Static37 {
 
 	@OriginalMember(owner = "client!wh", name = "a", descriptor = "(II)Lclient!d;")
 	public static Class34 method4776(@OriginalArg(1) int arg0) {
-		@Pc(10) Class34 local10 = (Class34) Static6.aClass26_51.method518((long) arg0);
+		@Pc(10) Class34 local10 = (Class34) Static6.aClass26_51.get((long) arg0);
 		if (local10 != null) {
 			return local10;
 		}
@@ -1040,7 +1040,7 @@ public final class Static37 {
 			local31.method720(new Buffer(local27));
 		}
 		local31.method725();
-		Static6.aClass26_51.method510(local31, (long) arg0);
+		Static6.aClass26_51.put((long) arg0, local31);
 		return local31;
 	}
 

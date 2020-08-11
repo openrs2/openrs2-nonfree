@@ -113,8 +113,8 @@ public final class Static16 {
 
 	@OriginalMember(owner = "client!fo", name = "a", descriptor = "(IB)V")
 	public static void method1501(@OriginalArg(0) int arg0) {
-		Static3.aClass26_25.method511();
-		Static3.aClass26_25 = new Class26(arg0);
+		Static3.aClass26_25.clear();
+		Static3.aClass26_25 = new LruHashTable(arg0);
 	}
 
 	@OriginalMember(owner = "client!g", name = "a", descriptor = "(IIIIIII)V")

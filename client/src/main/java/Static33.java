@@ -819,12 +819,12 @@ public final class Static33 {
 
 	@OriginalMember(owner = "client!ti", name = "f", descriptor = "(I)V")
 	public static void method4200() {
-		Static3.aClass26_26.method511();
+		Static3.aClass26_26.clear();
 	}
 
 	@OriginalMember(owner = "client!ti", name = "c", descriptor = "(II)Lclient!dc;")
 	public static Class37 method4201(@OriginalArg(0) int arg0) {
-		@Pc(6) Class37 local6 = (Class37) Static3.aClass26_21.method518((long) arg0);
+		@Pc(6) Class37 local6 = (Class37) Static3.aClass26_21.get((long) arg0);
 		if (local6 != null) {
 			return local6;
 		}
@@ -839,7 +839,7 @@ public final class Static33 {
 			Static5.aClass84_16.put((long) arg0, new IntNode(Static1.anInt876));
 			Static6.aClass37Array1[Static1.anInt876++] = local25;
 		}
-		Static3.aClass26_21.method510(local25, (long) arg0);
+		Static3.aClass26_21.put((long) arg0, local25);
 		return local25;
 	}
 

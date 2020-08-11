@@ -663,14 +663,14 @@ public final class Static29 {
 	@OriginalMember(owner = "client!ph", name = "a", descriptor = "(ILclient!vg;IIBII)Lclient!vg;")
 	public static Class53_Sub4 method3427(@OriginalArg(0) int arg0, @OriginalArg(1) Class53_Sub4 arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(5) int arg4, @OriginalArg(6) int arg5) {
 		@Pc(18) long local18 = (long) arg3;
-		@Pc(24) Class53_Sub4 local24 = (Class53_Sub4) Static4.aClass26_30.method518(local18);
+		@Pc(24) Class53_Sub4 local24 = (Class53_Sub4) Static4.aClass26_30.get(local18);
 		if (local24 == null) {
 			@Pc(32) Class53_Sub3 local32 = Static25.method2752(Static4.aClass58_69, arg3);
 			if (local32 == null) {
 				return null;
 			}
 			local24 = local32.method2761(64, 768, -50, -10, -50);
-			Static4.aClass26_30.method510(local24, local18);
+			Static4.aClass26_30.put(local18, local24);
 		}
 		@Pc(53) int local53 = arg1.method3829();
 		@Pc(56) int local56 = arg1.method3838();
@@ -2507,8 +2507,8 @@ public final class Static29 {
 
 	@OriginalMember(owner = "client!qc", name = "a", descriptor = "(I)V")
 	public static void method3302() {
-		Static6.aClass26_52.method515();
-		Static2.aClass26_11.method515();
+		Static6.aClass26_52.clearSoft();
+		Static2.aClass26_11.clearSoft();
 	}
 
 	@OriginalMember(owner = "client!qc", name = "b", descriptor = "(IIII)Z")

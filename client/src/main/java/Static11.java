@@ -20,7 +20,7 @@ public final class Static11 {
 
 	@OriginalMember(owner = "client!ca", name = "a", descriptor = "(IB)Lclient!vd;")
 	public static Class178 method494(@OriginalArg(0) int arg0) {
-		@Pc(10) Class178 local10 = (Class178) Static6.aClass26_54.method518((long) arg0);
+		@Pc(10) Class178 local10 = (Class178) Static6.aClass26_54.get((long) arg0);
 		if (local10 != null) {
 			return local10;
 		}
@@ -29,7 +29,7 @@ public final class Static11 {
 		if (local28 != null) {
 			local32.method4438(new Buffer(local28), arg0);
 		}
-		Static6.aClass26_54.method510(local32, (long) arg0);
+		Static6.aClass26_54.put((long) arg0, local32);
 		return local32;
 	}
 
@@ -581,9 +581,9 @@ public final class Static11 {
 
 	@OriginalMember(owner = "client!cf", name = "f", descriptor = "(B)V")
 	public static void method556() {
-		Static5.aClass26_35.method515();
-		Static2.aClass26_7.method515();
-		Static5.aClass26_37.method515();
+		Static5.aClass26_35.clearSoft();
+		Static2.aClass26_7.clearSoft();
+		Static5.aClass26_37.clearSoft();
 	}
 
 	@OriginalMember(owner = "client!cf", name = "g", descriptor = "(I)I")
@@ -908,8 +908,8 @@ public final class Static11 {
 
 	@OriginalMember(owner = "client!ci", name = "a", descriptor = "(BI)V")
 	public static void method586() {
-		Static7.aClass26_55.method517(5);
-		Static5.aClass26_41.method517(5);
+		Static7.aClass26_55.sweep(5);
+		Static5.aClass26_41.sweep(5);
 	}
 
 	@OriginalMember(owner = "client!ci", name = "a", descriptor = "(I)V")

@@ -210,8 +210,8 @@ public final class Static10 {
 
 	@OriginalMember(owner = "client!bh", name = "b", descriptor = "(I)V")
 	public static void method898() {
-		Static2.aClass26_12.method511();
-		Static3.aClass26_27.method511();
+		Static2.aClass26_12.clear();
+		Static3.aClass26_27.clear();
 	}
 
 	@OriginalMember(owner = "client!bi", name = "a", descriptor = "(ZI)Z")
@@ -237,7 +237,7 @@ public final class Static10 {
 
 	@OriginalMember(owner = "client!bi", name = "a", descriptor = "(B)V")
 	public static void method301() {
-		Static4.aClass26_30.method511();
+		Static4.aClass26_30.clear();
 	}
 
 	@OriginalMember(owner = "client!bi", name = "a", descriptor = "(II)I")

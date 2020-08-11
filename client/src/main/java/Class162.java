@@ -256,7 +256,7 @@ public final class Class162 {
 				return Static35.method4361(local13).method4123(arg0, 1, arg2, arg3, arg4, arg5);
 			}
 		}
-		@Pc(62) Class53_Sub4 local62 = (Class53_Sub4) Static2.aClass26_7.method518((long) this.anInt5066);
+		@Pc(62) Class53_Sub4 local62 = (Class53_Sub4) Static2.aClass26_7.get((long) this.anInt5066);
 		if (local62 == null) {
 			@Pc(72) Class53_Sub3 local72 = Static25.method2752(Static4.aClass58_75, this.anInt5055);
 			if (local72 == null) {
@@ -294,7 +294,7 @@ public final class Class162 {
 			if (Static3.aBoolean138) {
 				((Class53_Sub4_Sub2) local62).method3872(false, false, false, false, false, true);
 			}
-			Static2.aClass26_7.method510(local62, (long) this.anInt5066);
+			Static2.aClass26_7.put((long) this.anInt5066, local62);
 		}
 		if (arg4 != null) {
 			local62 = arg4.method1017(arg5, arg2, local62, arg0);

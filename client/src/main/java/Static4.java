@@ -364,7 +364,7 @@ public final class Static4 {
 	public static HashTable aClass84_13 = new HashTable(8);
 
 	@OriginalMember(owner = "client!km", name = "Z", descriptor = "Lclient!cc;")
-	public static Class26 aClass26_28 = new Class26(128);
+	public static LruHashTable aClass26_28 = new LruHashTable(128);
 
 	@OriginalMember(owner = "client!km", name = "db", descriptor = "I")
 	public static int anInt2959 = 0;
@@ -409,7 +409,7 @@ public final class Static4 {
 	public static short aShort18 = 1;
 
 	@OriginalMember(owner = "client!lf", name = "X", descriptor = "Lclient!cc;")
-	public static final Class26 aClass26_29 = new Class26(64);
+	public static final LruHashTable aClass26_29 = new LruHashTable(64);
 
 	@OriginalMember(owner = "client!lf", name = "ab", descriptor = "[I")
 	public static final int[] anIntArray293 = new int[200];
@@ -466,7 +466,7 @@ public final class Static4 {
 	public static final int anInt3227 = 12;
 
 	@OriginalMember(owner = "client!ln", name = "L", descriptor = "Lclient!cc;")
-	public static final Class26 aClass26_30 = new Class26(4);
+	public static final LruHashTable aClass26_30 = new LruHashTable(4);
 
 	@OriginalMember(owner = "client!ln", name = "R", descriptor = "I")
 	public static int anInt3256 = 64;
@@ -592,7 +592,7 @@ public final class Static4 {
 	public static int anInt3357 = 0;
 
 	@OriginalMember(owner = "client!mm", name = "f", descriptor = "Lclient!cc;")
-	public static final Class26 aClass26_32 = new Class26(50);
+	public static final LruHashTable aClass26_32 = new LruHashTable(50);
 
 	@OriginalMember(owner = "client!mm", name = "h", descriptor = "[[I")
 	public static final int[][] anIntArrayArray28 = new int[][] { { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }, { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 }, { 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1 }, { 1, 1, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 }, { 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1 }, { 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 }, { 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1 }, { 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0 }, { 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0 }, { 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1 }, { 1, 1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 }, { 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1 }, { 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 1, 1 } };

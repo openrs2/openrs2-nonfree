@@ -48,7 +48,7 @@ public final class Static18 {
 
 	@OriginalMember(owner = "client!hc", name = "a", descriptor = "(IB)V")
 	public static void method2323() {
-		Static3.aClass26_24.method517(5);
+		Static3.aClass26_24.sweep(5);
 	}
 
 	@OriginalMember(owner = "client!hd", name = "a", descriptor = "(IIIII)V")
@@ -317,7 +317,7 @@ public final class Static18 {
 
 	@OriginalMember(owner = "client!he", name = "b", descriptor = "(B)V")
 	public static void method1713() {
-		Static6.aClass26_50.method515();
+		Static6.aClass26_50.clearSoft();
 	}
 
 	@OriginalMember(owner = "client!he", name = "a", descriptor = "(I)V")
@@ -354,7 +354,7 @@ public final class Static18 {
 
 	@OriginalMember(owner = "client!he", name = "a", descriptor = "(IB)V")
 	public static void method1716() {
-		Static3.aClass26_25.method517(5);
+		Static3.aClass26_25.sweep(5);
 	}
 
 	@OriginalMember(owner = "client!hg", name = "a", descriptor = "(II[I[I)V")
@@ -690,11 +690,11 @@ public final class Static18 {
 					@Pc(536) int local536;
 					if (local31 instanceof Class53_Sub1_Sub2) {
 						@Pc(541) Class53_Sub1_Sub2 local541 = (Class53_Sub1_Sub2) local31;
-						@Pc(551) Class4_Sub3_Sub14[] local551 = (Class4_Sub3_Sub14[]) Static1.aClass26_5.method518((long) local541.aClass168_1.anInt5240);
+						@Pc(551) Class4_Sub3_Sub14[] local551 = (Class4_Sub3_Sub14[]) Static1.aClass26_5.get((long) local541.aClass168_1.anInt5240);
 						if (local551 == null) {
 							local551 = Static27.method3225(Static1.aClass58_4, local541.aClass168_1.anInt5240);
 							if (local551 != null) {
-								Static1.aClass26_5.method510(local551, (long) local541.aClass168_1.anInt5240);
+								Static1.aClass26_5.put((long) local541.aClass168_1.anInt5240, local551);
 							}
 						}
 						if (local551 != null && local551.length == 2) {

@@ -240,7 +240,7 @@ public final class Static2 {
 	public static int anInt954 = 0;
 
 	@OriginalMember(owner = "client!df", name = "a", descriptor = "Lclient!cc;")
-	public static final Class26 aClass26_7 = new Class26(50);
+	public static final LruHashTable aClass26_7 = new LruHashTable(50);
 
 	@OriginalMember(owner = "client!df", name = "g", descriptor = "[Ljava/lang/String;")
 	public static final String[] aStringArray5 = new String[1000];
@@ -390,7 +390,7 @@ public final class Static2 {
 	public static int anInt1273 = (int) (Math.random() * 33.0D) - 16;
 
 	@OriginalMember(owner = "client!ej", name = "p", descriptor = "Lclient!cc;")
-	public static final Class26 aClass26_11 = new Class26(4);
+	public static final LruHashTable aClass26_11 = new LruHashTable(4);
 
 	@OriginalMember(owner = "client!ej", name = "v", descriptor = "Z")
 	public static boolean aBoolean75 = true;
@@ -408,7 +408,7 @@ public final class Static2 {
 	public static final int[] anIntArray99 = new int[1000];
 
 	@OriginalMember(owner = "client!el", name = "f", descriptor = "Lclient!cc;")
-	public static final Class26 aClass26_12 = new Class26(260);
+	public static final LruHashTable aClass26_12 = new LruHashTable(260);
 
 	@OriginalMember(owner = "client!em", name = "a", descriptor = "Ljava/lang/String;")
 	public static String aString81 = null;
@@ -489,7 +489,7 @@ public final class Static2 {
 	public static int anInt1874 = -1;
 
 	@OriginalMember(owner = "client!fj", name = "ab", descriptor = "Lclient!cc;")
-	public static final Class26 aClass26_16 = new Class26(16);
+	public static final LruHashTable aClass26_16 = new LruHashTable(16);
 
 	@OriginalMember(owner = "client!fj", name = "eb", descriptor = "I")
 	public static int anInt1877 = 0;

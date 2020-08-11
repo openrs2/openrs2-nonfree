@@ -1009,9 +1009,9 @@ public final class Static20 {
 
 	@OriginalMember(owner = "client!il", name = "a", descriptor = "(II)V")
 	public static void method1923() {
-		Static5.aClass26_35.method517(5);
-		Static2.aClass26_7.method517(5);
-		Static5.aClass26_37.method517(5);
+		Static5.aClass26_35.sweep(5);
+		Static2.aClass26_7.sweep(5);
+		Static5.aClass26_37.sweep(5);
 	}
 
 	@OriginalMember(owner = "client!il", name = "b", descriptor = "(B)V")
@@ -1030,7 +1030,7 @@ public final class Static20 {
 
 	@OriginalMember(owner = "client!il", name = "b", descriptor = "(I)V")
 	public static void method1925() {
-		Static2.aClass26_16.method515();
+		Static2.aClass26_16.clearSoft();
 	}
 
 	@OriginalMember(owner = "client!im", name = "a", descriptor = "(ILjava/awt/Component;)V")
@@ -1182,9 +1182,9 @@ public final class Static20 {
 
 	@OriginalMember(owner = "client!in", name = "a", descriptor = "(ZI)V")
 	public static void method1942() {
-		Static6.aClass26_48.method517(50);
-		Static1.aClass26_1.method517(50);
-		Static1.aClass26_4.method517(50);
+		Static6.aClass26_48.sweep(50);
+		Static1.aClass26_1.sweep(50);
+		Static1.aClass26_4.sweep(50);
 	}
 
 	@OriginalMember(owner = "client!io", name = "a", descriptor = "(Z)V")
@@ -1401,8 +1401,8 @@ public final class Static20 {
 
 	@OriginalMember(owner = "client!ja", name = "b", descriptor = "(I)V")
 	public static void method1969() {
-		Static6.aClass26_53.method515();
-		Static7.aClass26_49.method515();
+		Static6.aClass26_53.clearSoft();
+		Static7.aClass26_49.clearSoft();
 	}
 
 	@OriginalMember(owner = "client!ja", name = "a", descriptor = "(IBI)V")
@@ -1413,9 +1413,9 @@ public final class Static20 {
 
 	@OriginalMember(owner = "client!jb", name = "a", descriptor = "(I)V")
 	public static void method1974() {
-		Static6.aClass26_48.method515();
-		Static1.aClass26_1.method515();
-		Static1.aClass26_4.method515();
+		Static6.aClass26_48.clearSoft();
+		Static1.aClass26_1.clearSoft();
+		Static1.aClass26_4.clearSoft();
 	}
 
 	@OriginalMember(owner = "client!jb", name = "a", descriptor = "(IZIII)V")

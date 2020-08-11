@@ -953,7 +953,7 @@ public final class Static30 {
 
 	@OriginalMember(owner = "client!qg", name = "b", descriptor = "(I)V")
 	public static void method3555() {
-		Static3.aClass26_21.method511();
+		Static3.aClass26_21.clear();
 	}
 
 	@OriginalMember(owner = "client!qh", name = "a", descriptor = "(IIILclient!f;)V")
@@ -1311,7 +1311,7 @@ public final class Static30 {
 
 	@OriginalMember(owner = "client!qi", name = "a", descriptor = "(I)V")
 	public static void method420() {
-		Static6.aClass26_50.method511();
+		Static6.aClass26_50.clear();
 	}
 
 	@OriginalMember(owner = "client!qi", name = "a", descriptor = "(IJ)Ljava/lang/String;")
@@ -1321,8 +1321,8 @@ public final class Static30 {
 
 	@OriginalMember(owner = "client!qj", name = "c", descriptor = "(II)V")
 	public static void method3594() {
-		Static6.aClass26_52.method517(5);
-		Static2.aClass26_11.method517(5);
+		Static6.aClass26_52.sweep(5);
+		Static2.aClass26_11.sweep(5);
 	}
 
 	@OriginalMember(owner = "client!qj", name = "a", descriptor = "()V")
@@ -1393,10 +1393,10 @@ public final class Static30 {
 
 	@OriginalMember(owner = "client!qj", name = "g", descriptor = "(I)V")
 	public static void method3599() {
-		Static3.aClass26_19.method511();
-		Static5.aClass26_43.method511();
-		Static7.aClass26_18.method511();
-		Static4.aClass26_32.method511();
+		Static3.aClass26_19.clear();
+		Static5.aClass26_43.clear();
+		Static7.aClass26_18.clear();
+		Static4.aClass26_32.clear();
 	}
 
 	@OriginalMember(owner = "client!qj", name = "g", descriptor = "(B)V")
@@ -1685,7 +1685,7 @@ public final class Static30 {
 
 	@OriginalMember(owner = "client!qk", name = "a", descriptor = "(I)V")
 	public static void method3601() {
-		Static6.aClass26_51.method511();
+		Static6.aClass26_51.clear();
 	}
 
 	@OriginalMember(owner = "client!qk", name = "a", descriptor = "(IBI)I")

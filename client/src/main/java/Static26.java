@@ -127,7 +127,7 @@ public final class Static26 {
 
 	@OriginalMember(owner = "client!nc", name = "a", descriptor = "(BI)Lclient!oh;")
 	public static Class127 method2935(@OriginalArg(1) int arg0) {
-		@Pc(6) Class127 local6 = (Class127) Static3.aClass26_24.method518((long) arg0);
+		@Pc(6) Class127 local6 = (Class127) Static3.aClass26_24.get((long) arg0);
 		if (local6 != null) {
 			return local6;
 		}
@@ -136,7 +136,7 @@ public final class Static26 {
 		if (local27 != null) {
 			local31.method3221(arg0, new Buffer(local27));
 		}
-		Static3.aClass26_24.method510(local31, (long) arg0);
+		Static3.aClass26_24.put((long) arg0, local31);
 		return local31;
 	}
 
@@ -281,7 +281,7 @@ public final class Static26 {
 
 	@OriginalMember(owner = "client!nf", name = "a", descriptor = "(IZ)Lclient!pa;")
 	public static Class131 method2971(@OriginalArg(0) int arg0) {
-		@Pc(10) Class131 local10 = (Class131) Static1.aClass26_6.method518((long) arg0);
+		@Pc(10) Class131 local10 = (Class131) Static1.aClass26_6.get((long) arg0);
 		if (local10 != null) {
 			return local10;
 		}
@@ -290,7 +290,7 @@ public final class Static26 {
 		if (local20 != null) {
 			local24.method3326(new Buffer(local20), arg0);
 		}
-		Static1.aClass26_6.method510(local24, (long) arg0);
+		Static1.aClass26_6.put((long) arg0, local24);
 		return local24;
 	}
 
@@ -854,8 +854,8 @@ public final class Static26 {
 
 	@OriginalMember(owner = "client!nl", name = "b", descriptor = "(I)V")
 	public static void method2993() {
-		Static4.aClass26_28.method515();
-		Static3.aClass26_23.method515();
+		Static4.aClass26_28.clearSoft();
+		Static3.aClass26_23.clearSoft();
 	}
 
 	@OriginalMember(owner = "client!o", name = "b", descriptor = "(B)V")
@@ -918,9 +918,9 @@ public final class Static26 {
 
 	@OriginalMember(owner = "client!o", name = "a", descriptor = "(II)V")
 	public static void method3061() {
-		Static3.aClass26_22.method517(5);
-		Static1.aClass26_2.method517(5);
-		Static5.aClass26_39.method517(5);
+		Static3.aClass26_22.sweep(5);
+		Static1.aClass26_2.sweep(5);
+		Static5.aClass26_39.sweep(5);
 	}
 
 	@OriginalMember(owner = "client!o", name = "b", descriptor = "(III)Lclient!co;")

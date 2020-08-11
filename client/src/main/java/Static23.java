@@ -219,7 +219,7 @@ public final class Static23 {
 
 	@OriginalMember(owner = "client!ld", name = "b", descriptor = "(II)Lclient!eg;")
 	public static Class46 method2494(@OriginalArg(0) int arg0) {
-		@Pc(10) Class46 local10 = (Class46) Static6.aClass26_53.method518((long) arg0);
+		@Pc(10) Class46 local10 = (Class46) Static6.aClass26_53.get((long) arg0);
 		if (local10 != null) {
 			return local10;
 		}
@@ -230,7 +230,7 @@ public final class Static23 {
 			local29.method1016(new Buffer(local25));
 		}
 		local29.method1022();
-		Static6.aClass26_53.method510(local29, (long) arg0);
+		Static6.aClass26_53.put((long) arg0, local29);
 		return local29;
 	}
 

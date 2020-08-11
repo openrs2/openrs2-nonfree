@@ -1042,7 +1042,7 @@ public final class Static12 {
 	@OriginalMember(owner = "client!dc", name = "a", descriptor = "(IILclient!eg;IIILclient!vg;IIIZIII)Lclient!vg;")
 	public static Class53_Sub4 method745(@OriginalArg(0) int arg0, @OriginalArg(2) Class46 arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4, @OriginalArg(6) Class53_Sub4 arg5, @OriginalArg(7) int arg6, @OriginalArg(8) int arg7, @OriginalArg(9) int arg8, @OriginalArg(10) boolean arg9, @OriginalArg(11) int arg10, @OriginalArg(12) int arg11, @OriginalArg(13) int arg12) {
 		@Pc(23) long local23 = ((long) arg10 << 32) + (long) ((arg4 << 24) + (arg11 << 16) + arg3) + ((long) arg0 << 48);
-		@Pc(33) Class53_Sub4 local33 = (Class53_Sub4) Static6.aClass26_50.method518(local23);
+		@Pc(33) Class53_Sub4 local33 = (Class53_Sub4) Static6.aClass26_50.get(local23);
 		if (local33 == null) {
 			@Pc(41) byte local41;
 			if (arg3 == 1) {
@@ -1085,7 +1085,7 @@ public final class Static12 {
 				}
 			}
 			local33 = local107.method2761(64, 768, -50, -10, -50);
-			Static6.aClass26_50.method510(local33, local23);
+			Static6.aClass26_50.put(local23, local33);
 		}
 		@Pc(377) int local377 = arg3 * 64 - 1;
 		@Pc(380) int local380 = -local377;
@@ -1167,7 +1167,7 @@ public final class Static12 {
 
 	@OriginalMember(owner = "client!de", name = "b", descriptor = "(IZ)V")
 	public static void method775() {
-		Static1.aClass26_6.method517(5);
+		Static1.aClass26_6.sweep(5);
 	}
 
 	@OriginalMember(owner = "client!de", name = "a", descriptor = "(BZ)V")

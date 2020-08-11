@@ -246,9 +246,9 @@ public final class Static13 {
 
 	@OriginalMember(owner = "client!dj", name = "a", descriptor = "(I)V")
 	public static void method884() {
-		Static3.aClass26_22.method511();
-		Static1.aClass26_2.method511();
-		Static5.aClass26_39.method511();
+		Static3.aClass26_22.clear();
+		Static1.aClass26_2.clear();
+		Static5.aClass26_39.clear();
 	}
 
 	@OriginalMember(owner = "client!dj", name = "a", descriptor = "(ILclient!fh;I)Lclient!qh;")
@@ -456,8 +456,8 @@ public final class Static13 {
 
 	@OriginalMember(owner = "client!dm", name = "b", descriptor = "(I)V")
 	public static void method941() {
-		Static6.aClass26_52.method511();
-		Static2.aClass26_11.method511();
+		Static6.aClass26_52.clear();
+		Static2.aClass26_11.clear();
 	}
 
 	@OriginalMember(owner = "client!dn", name = "a", descriptor = "(IZIZLclient!qk;IIIZ)Lclient!uj;")
@@ -676,7 +676,7 @@ public final class Static13 {
 
 	@OriginalMember(owner = "client!ea", name = "a", descriptor = "(BI)Lclient!hi;")
 	public static Class79 method935(@OriginalArg(1) int arg0) {
-		@Pc(17) Class79 local17 = (Class79) Static3.aClass26_26.method518((long) arg0);
+		@Pc(17) Class79 local17 = (Class79) Static3.aClass26_26.get((long) arg0);
 		if (local17 != null) {
 			return local17;
 		}
@@ -685,14 +685,14 @@ public final class Static13 {
 		if (local29 != null) {
 			local33.method1747(new Buffer(local29));
 		}
-		Static3.aClass26_26.method510(local33, (long) arg0);
+		Static3.aClass26_26.put((long) arg0, local33);
 		return local33;
 	}
 
 	@OriginalMember(owner = "client!ea", name = "a", descriptor = "(IBIII)Lclient!eh;")
 	public static Class47 method936(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3) {
 		@Pc(39) long local39 = (long) arg2 & 0xFFFFL | ((long) arg0 & 0xFFFFL) << 48 | ((long) arg1 & 0xFFFFL) << 32 | ((long) arg3 & 0xFFFFL) << 16;
-		@Pc(45) Class47 local45 = (Class47) Static2.aClass26_11.method518(local39);
+		@Pc(45) Class47 local45 = (Class47) Static2.aClass26_11.get(local39);
 		if (local45 != null) {
 			return local45;
 		}
@@ -706,7 +706,7 @@ public final class Static13 {
 			}
 		}
 		@Pc(120) Class47 local120 = new Class47(local56.anInt4405, local52, local56.anInt4399, arg0, arg1, arg3);
-		Static2.aClass26_11.method510(local120, local39);
+		Static2.aClass26_11.put(local39, local120);
 		return local120;
 	}
 
@@ -958,7 +958,7 @@ public final class Static13 {
 
 	@OriginalMember(owner = "client!ee", name = "b", descriptor = "(I)V")
 	public static void method1010() {
-		Static5.aClass26_39.method511();
+		Static5.aClass26_39.clear();
 	}
 
 	@OriginalMember(owner = "client!ee", name = "a", descriptor = "(IIIIIIBIII)V")

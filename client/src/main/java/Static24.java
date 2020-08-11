@@ -539,7 +539,7 @@ public final class Static24 {
 		Static30.method420();
 		Static9.method201();
 		Static30.method3555();
-		Static1.aClass26_3.method511();
+		Static1.aClass26_3.clear();
 		if (!Static3.aBoolean138) {
 			((Class24_Sub1) Static4.anInterface4_1).method460();
 		}
@@ -555,7 +555,7 @@ public final class Static24 {
 		Static6.aClass58_71.method1349();
 		Static3.aClass58_57.method1349();
 		Static4.aClass58_73.method1349();
-		Static1.aClass26_5.method511();
+		Static1.aClass26_5.clear();
 	}
 
 	@OriginalMember(owner = "client!me", name = "a", descriptor = "(ZLjava/lang/String;I)V")

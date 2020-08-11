@@ -438,7 +438,7 @@ public final class Class168 {
 		} else if (this.anIntArray588 == null) {
 			return null;
 		} else {
-			@Pc(40) Class53_Sub4 local40 = (Class53_Sub4) Static5.aClass26_39.method518((long) this.anInt5255);
+			@Pc(40) Class53_Sub4 local40 = (Class53_Sub4) Static5.aClass26_39.get((long) this.anInt5255);
 			if (local40 == null) {
 				@Pc(52) boolean local52 = false;
 				for (@Pc(54) int local54 = 0; local54 < this.anIntArray588.length; local54++) {
@@ -474,7 +474,7 @@ public final class Class168 {
 					}
 				}
 				local40 = local122.method2761(64, 768, -50, -10, -50);
-				Static5.aClass26_39.method510(local40, (long) this.anInt5255);
+				Static5.aClass26_39.put((long) this.anInt5255, local40);
 			}
 			if (arg1 != null) {
 				local40 = arg1.method1017(arg2, arg0, local40, arg3);
@@ -489,7 +489,7 @@ public final class Class168 {
 			@Pc(13) Class168 local13 = this.method4265();
 			return local13 == null ? null : local13.method4268(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		}
-		@Pc(39) Class53_Sub4 local39 = (Class53_Sub4) Static1.aClass26_2.method518((long) this.anInt5255);
+		@Pc(39) Class53_Sub4 local39 = (Class53_Sub4) Static1.aClass26_2.get((long) this.anInt5255);
 		if (local39 == null) {
 			@Pc(44) boolean local44 = false;
 			for (@Pc(46) int local46 = 0; local46 < this.anIntArray589.length; local46++) {
@@ -591,7 +591,7 @@ public final class Class168 {
 			if (Static3.aBoolean138) {
 				((Class53_Sub4_Sub2) local39).method3872(false, false, false, false, false, true);
 			}
-			Static1.aClass26_2.method510(local39, (long) this.anInt5255);
+			Static1.aClass26_2.put((long) this.anInt5255, local39);
 		}
 		@Pc(718) boolean local718 = false;
 		@Pc(720) boolean local720 = false;

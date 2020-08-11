@@ -41,7 +41,7 @@ public final class Class143 {
 
 	@OriginalMember(owner = "client!qg", name = "a", descriptor = "(IZI)Lclient!fe;")
 	public final Class56_Sub1 method3557(@OriginalArg(1) boolean arg0, @OriginalArg(2) int arg1) {
-		@Pc(23) Class56_Sub1 local23 = (Class56_Sub1) Static5.aClass26_41.method518((long) (arg1 << 16 | this.anInt4312 | (arg0 ? 262144 : 0)));
+		@Pc(23) Class56_Sub1 local23 = (Class56_Sub1) Static5.aClass26_41.get((long) (arg1 << 16 | this.anInt4312 | (arg0 ? 262144 : 0)));
 		if (local23 != null) {
 			return local23;
 		}
@@ -57,7 +57,7 @@ public final class Class143 {
 			for (@Pc(66) int local66 = 0; local66 < arg1; local66++) {
 				local44.method1313();
 			}
-			Static5.aClass26_41.method510(local44, (long) (this.anInt4312 | arg1 << 16 | (arg0 ? 262144 : 0)));
+			Static5.aClass26_41.put((long) (this.anInt4312 | arg1 << 16 | (arg0 ? 262144 : 0)), local44);
 		}
 		return local44;
 	}

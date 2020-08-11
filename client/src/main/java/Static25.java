@@ -525,9 +525,9 @@ public final class Static25 {
 
 	@OriginalMember(owner = "client!mo", name = "f", descriptor = "(I)V")
 	public static void method2809() {
-		Static5.aClass26_35.method511();
-		Static2.aClass26_7.method511();
-		Static5.aClass26_37.method511();
+		Static5.aClass26_35.clear();
+		Static2.aClass26_7.clear();
+		Static5.aClass26_37.clear();
 	}
 
 	@OriginalMember(owner = "client!mo", name = "a", descriptor = "(Z)V")
@@ -709,13 +709,13 @@ public final class Static25 {
 
 	@OriginalMember(owner = "client!nb", name = "b", descriptor = "(Z)V")
 	public static void method2924() {
-		Static3.aClass26_25.method511();
+		Static3.aClass26_25.clear();
 	}
 
 	@OriginalMember(owner = "client!nb", name = "b", descriptor = "(I)V")
 	public static void method2925() {
-		Static4.aClass26_28.method511();
-		Static3.aClass26_23.method511();
+		Static4.aClass26_28.clear();
+		Static3.aClass26_23.clear();
 	}
 
 	@OriginalMember(owner = "client!nb", name = "b", descriptor = "(III)I")

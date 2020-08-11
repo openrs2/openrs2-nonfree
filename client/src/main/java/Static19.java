@@ -90,7 +90,7 @@ public final class Static19 {
 
 	@OriginalMember(owner = "client!hm", name = "d", descriptor = "(I)V")
 	public static void method1793() {
-		Static3.aClass26_26.method515();
+		Static3.aClass26_26.clearSoft();
 	}
 
 	@OriginalMember(owner = "client!hm", name = "e", descriptor = "(I)I")
@@ -100,7 +100,7 @@ public final class Static19 {
 
 	@OriginalMember(owner = "client!hn", name = "b", descriptor = "(I)V")
 	public static void method4376() {
-		Static1.aClass26_2.method511();
+		Static1.aClass26_2.clear();
 	}
 
 	@OriginalMember(owner = "client!hn", name = "a", descriptor = "(IIIZ)Ljava/lang/String;")
@@ -224,7 +224,7 @@ public final class Static19 {
 
 	@OriginalMember(owner = "client!i", name = "b", descriptor = "(II)Lclient!qa;")
 	public static Class140 method1816(@OriginalArg(1) int arg0) {
-		@Pc(6) Class140 local6 = (Class140) Static7.aClass26_56.method518((long) arg0);
+		@Pc(6) Class140 local6 = (Class140) Static7.aClass26_56.get((long) arg0);
 		if (local6 != null) {
 			return local6;
 		}
@@ -233,7 +233,7 @@ public final class Static19 {
 		if (local27 != null) {
 			local31.method3496(new Buffer(local27));
 		}
-		Static7.aClass26_56.method510(local31, (long) arg0);
+		Static7.aClass26_56.put((long) arg0, local31);
 		return local31;
 	}
 

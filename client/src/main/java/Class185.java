@@ -532,7 +532,7 @@ public final class Class185 {
 		} else if (local14 == 1 && local17 == -1) {
 			return null;
 		} else if (local14 == 1) {
-			@Pc(61) Class53_Sub4 local61 = (Class53_Sub4) Static1.aClass26_1.method518((long) (local17 + (local14 << 16)));
+			@Pc(61) Class53_Sub4 local61 = (Class53_Sub4) Static1.aClass26_1.get((long) (local17 + (local14 << 16)));
 			if (local61 == null) {
 				@Pc(68) Class53_Sub3 local68 = Static25.method2752(Static7.aClass58_99, local17);
 				if (local68 == null) {
@@ -540,7 +540,7 @@ public final class Class185 {
 					return null;
 				}
 				local61 = local68.method2761(64, 768, -50, -10, -50);
-				Static1.aClass26_1.method510(local61, (long) (local17 + (local14 << 16)));
+				Static1.aClass26_1.put((long) (local17 + (local14 << 16)), local61);
 			}
 			if (arg0 != null) {
 				local61 = arg0.method1017(arg4, arg2, local61, arg3);
@@ -610,7 +610,7 @@ public final class Class185 {
 		if (local27 == -1) {
 			return null;
 		}
-		@Pc(39) Class4_Sub3_Sub14 local39 = (Class4_Sub3_Sub14) Static6.aClass26_48.method518((long) local27);
+		@Pc(39) Class4_Sub3_Sub14 local39 = (Class4_Sub3_Sub14) Static6.aClass26_48.get((long) local27);
 		if (local39 != null) {
 			return local39;
 		}
@@ -618,7 +618,7 @@ public final class Class185 {
 		if (local50 == null) {
 			Static3.aBoolean178 = true;
 		} else {
-			Static6.aClass26_48.method510(local50, (long) local27);
+			Static6.aClass26_48.put((long) local27, local50);
 		}
 		return local50;
 	}
@@ -874,7 +874,7 @@ public final class Class185 {
 			return null;
 		}
 		@Pc(66) long local66 = ((this.aBoolean406 ? 1L : 0L) << 39) + ((long) this.anInt5975 << 36) + (long) local12 + ((this.aBoolean412 ? 1L : 0L) << 35) + ((this.aBoolean404 ? 1L : 0L) << 38) + ((long) this.anInt5934 << 40);
-		@Pc(72) Class4_Sub3_Sub14 local72 = (Class4_Sub3_Sub14) Static6.aClass26_48.method518(local66);
+		@Pc(72) Class4_Sub3_Sub14 local72 = (Class4_Sub3_Sub14) Static6.aClass26_48.get(local66);
 		if (local72 != null) {
 			return local72;
 		}
@@ -914,7 +914,7 @@ public final class Class185 {
 		} else {
 			local156 = new Class4_Sub3_Sub14_Sub2(local86);
 		}
-		Static6.aClass26_48.method510(local156, local66);
+		Static6.aClass26_48.put(local66, local156);
 		return local156;
 	}
 
@@ -1132,7 +1132,7 @@ public final class Class185 {
 		if (this.anInt5954 == -1) {
 			return null;
 		}
-		@Pc(28) Class4_Sub3_Sub5 local28 = (Class4_Sub3_Sub5) Static1.aClass26_4.method518((long) this.anInt5954);
+		@Pc(28) Class4_Sub3_Sub5 local28 = (Class4_Sub3_Sub5) Static1.aClass26_4.get((long) this.anInt5954);
 		if (local28 != null) {
 			return local28;
 		}
@@ -1141,7 +1141,7 @@ public final class Class185 {
 			Static3.aBoolean178 = true;
 		} else {
 			local42.method2267(arg0, null);
-			Static1.aClass26_4.method510(local42, (long) this.anInt5954);
+			Static1.aClass26_4.put((long) this.anInt5954, local42);
 		}
 		return local42;
 	}
