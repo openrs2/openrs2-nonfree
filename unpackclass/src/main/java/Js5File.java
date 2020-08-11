@@ -8,7 +8,7 @@ import dev.openrs2.deob.annotation.OriginalMember;
 import dev.openrs2.deob.annotation.Pc;
 
 @OriginalClass("unpackclass!p")
-public final class Js5File extends Js5Index {
+public final class Js5File extends Js5 {
 
 	@OriginalMember(owner = "unpackclass!p", name = "<init>", descriptor = "([BZZ)V")
 	public Js5File(@OriginalArg(0) byte[] in, @OriginalArg(1) boolean discardPacked, @OriginalArg(2) boolean discardUnpacked) throws IOException {

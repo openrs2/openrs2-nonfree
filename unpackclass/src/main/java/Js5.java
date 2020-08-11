@@ -4,7 +4,7 @@ import dev.openrs2.deob.annotation.OriginalMember;
 import dev.openrs2.deob.annotation.Pc;
 
 @OriginalClass("unpackclass!aa")
-public abstract class Js5Index {
+public abstract class Js5 {
 
 	@OriginalMember(owner = "unpackclass!aa", name = "q", descriptor = "Z")
 	private static boolean RAISE_EXCEPTIONS;
@@ -87,7 +87,7 @@ public abstract class Js5Index {
 	}
 
 	@OriginalMember(owner = "unpackclass!aa", name = "<init>", descriptor = "(ZZ)V")
-	protected Js5Index(@OriginalArg(0) boolean discardPacked, @OriginalArg(1) boolean discardUnpacked) {
+	protected Js5(@OriginalArg(0) boolean discardPacked, @OriginalArg(1) boolean discardUnpacked) {
 		this.discardPacked = discardPacked;
 		this.discardUnpacked = discardUnpacked;
 	}
