@@ -547,10 +547,10 @@ public final class Static9 {
 				} else {
 					Static24.method2692(Static7.aClass58_98, 255, Static7.anInt5611);
 				}
-				Static7.aClass51_2.writeLoggedIn(false);
+				client.js5NetQueue.writeLoggedIn(false);
 			} else {
 				Static13.method971();
-				Static7.aClass51_2.writeLoggedIn(true);
+				client.js5NetQueue.writeLoggedIn(true);
 			}
 		}
 		if (Static3.aBoolean138 && (arg0 == 25 || arg0 == 28 || arg0 == 40)) {

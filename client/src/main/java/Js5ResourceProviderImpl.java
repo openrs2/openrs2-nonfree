@@ -307,7 +307,7 @@ public final class Js5ResourceProviderImpl extends Js5ResourceProvider {
 					throw new RuntimeException();
 				}
 				this.netQueue.errors = 0;
-				this.netQueue.state = 0;
+				this.netQueue.response = 0;
 			} catch (@Pc(219) RuntimeException ex) {
 				this.netQueue.rekey();
 				request.unlink();

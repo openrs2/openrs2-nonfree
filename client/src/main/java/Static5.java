@@ -50,9 +50,6 @@ public final class Static5 {
 	@OriginalMember(owner = "client!nh", name = "u", descriptor = "I")
 	public static int anInt3546;
 
-	@OriginalMember(owner = "client!nh", name = "x", descriptor = "Lsignlink!vk;")
-	public static PrivilegedRequest aClass197_4;
-
 	@OriginalMember(owner = "client!nh", name = "W", descriptor = "[I")
 	public static int[] anIntArray391;
 

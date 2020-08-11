@@ -39,7 +39,7 @@ public final class Js5NetQueue {
 	public volatile int errors = 0;
 
 	@OriginalMember(owner = "client!en", name = "F", descriptor = "I")
-	public volatile int state = 0;
+	public volatile int response = 0;
 
 	@OriginalMember(owner = "client!en", name = "G", descriptor = "B")
 	private byte encryptionKey = 0;
@@ -69,7 +69,7 @@ public final class Js5NetQueue {
 			}
 			this.socket = null;
 			this.errors++;
-			this.state = -2;
+			this.response = -2;
 		}
 	}
 
@@ -119,7 +119,7 @@ public final class Js5NetQueue {
 								}
 								this.socket = null;
 								this.errors++;
-								this.state = -2;
+								this.response = -2;
 							}
 						}
 						this.latency = 0;
@@ -168,7 +168,7 @@ public final class Js5NetQueue {
 		}
 		this.socket = null;
 		this.encryptionKey = (byte) (Math.random() * 255.0D + 1.0D);
-		this.state = -1;
+		this.response = -1;
 		this.errors++;
 	}
 
@@ -194,7 +194,7 @@ public final class Js5NetQueue {
 			}
 			this.errors++;
 			this.socket = null;
-			this.state = -2;
+			this.response = -2;
 		}
 	}
 
@@ -219,7 +219,7 @@ public final class Js5NetQueue {
 			} catch (@Pc(44) Exception closeEx) {
 			}
 			this.socket = null;
-			this.state = -2;
+			this.response = -2;
 			this.errors++;
 		}
 	}
@@ -362,7 +362,7 @@ public final class Js5NetQueue {
 			}
 			this.socket = null;
 			this.errors++;
-			this.state = -2;
+			this.response = -2;
 			return this.getUrgentRequestCount() == 0 && this.getPrefetchRequestCount() == 0;
 		}
 	}

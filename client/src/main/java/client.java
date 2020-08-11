@@ -100,6 +100,30 @@ public final class client extends GameShell {
 	@OriginalMember(owner = "client!rg", name = "ob", descriptor = "[Lclient!wb;")
 	public static final Js5ResourceProviderImpl[] js5Providers = new Js5ResourceProviderImpl[29];
 
+	@OriginalMember(owner = "client!ee", name = "a", descriptor = "Lclient!ja;")
+	private static Js5CacheQueue js5CacheQueue;
+
+	@OriginalMember(owner = "client!um", name = "b", descriptor = "Lclient!en;")
+	public static Js5NetQueue js5NetQueue;
+
+	@OriginalMember(owner = "client!nh", name = "x", descriptor = "Lsignlink!vk;")
+	private static PrivilegedRequest js5SocketRequest;
+
+	@OriginalMember(owner = "client!hk", name = "kb", descriptor = "Lclient!eo;")
+	private static BufferedSocket js5Socket;
+
+	@OriginalMember(owner = "client!sn", name = "qb", descriptor = "I")
+	private static int js5ConnectState = 0;
+
+	@OriginalMember(owner = "client!cf", name = "ab", descriptor = "J")
+	private static long js5ConnectTime;
+
+	@OriginalMember(owner = "client!mm", name = "a", descriptor = "I")
+	private static int js5PrevErrors = 0;
+
+	@OriginalMember(owner = "client!fd", name = "V", descriptor = "I")
+	private static int js5ConnectDelay = 0;
+
 	@OriginalMember(owner = "client!va", name = "f", descriptor = "Lclient!client;")
 	public static client instance;
 
@@ -297,12 +321,12 @@ public final class client extends GameShell {
 	}
 
 	@OriginalMember(owner = "client!client", name = "a", descriptor = "(ZI)V")
-	private void method684(@OriginalArg(1) int arg0) {
-		Static7.aClass51_2.state = arg0;
-		Static3.aClass52_5 = null;
-		Static7.aClass51_2.errors++;
-		Static6.anInt4952 = 0;
-		Static5.aClass197_4 = null;
+	private void setJs5Response(@OriginalArg(1) int response) {
+		js5NetQueue.response = response;
+		js5Socket = null;
+		js5NetQueue.errors++;
+		js5ConnectState = 0;
+		js5SocketRequest = null;
 	}
 
 	@OriginalMember(owner = "client!client", name = "h", descriptor = "(I)V")
@@ -346,7 +370,7 @@ public final class client extends GameShell {
 			Static6.anInt4621 = 10;
 		} else if (Static5.anInt4285 == 30) {
 			if (js5MasterIndex == null) {
-				js5MasterIndex = new Js5MasterIndex(Static7.aClass51_2, Static2.aClass92_1);
+				js5MasterIndex = new Js5MasterIndex(js5NetQueue, js5CacheQueue);
 			}
 			if (js5MasterIndex.isReady()) {
 				Static3.aClass58_46 = createJs5(0, false, true, true);
@@ -668,16 +692,16 @@ public final class client extends GameShell {
 		if (Static6.aClass102_2 != null) {
 			Static6.aClass102_2.method3001();
 		}
-		Static7.aClass51_2.stop();
-		Static2.aClass92_1.stop();
+		js5NetQueue.stop();
+		js5CacheQueue.stop();
 	}
 
 	@OriginalMember(owner = "client!client", name = "c", descriptor = "(B)V")
 	@Override
 	protected final void mainInit() {
 		Static20.method1949();
-		Static2.aClass92_1 = new Js5CacheQueue();
-		Static7.aClass51_2 = new Js5NetQueue();
+		js5CacheQueue = new Js5CacheQueue();
+		js5NetQueue = new Js5NetQueue();
 		if (modeWhat != 0) {
 			Static6.aByteArrayArray35 = new byte[50][];
 		}
@@ -777,39 +801,39 @@ public final class client extends GameShell {
 	}
 
 	@OriginalMember(owner = "client!client", name = "d", descriptor = "(B)V")
-	private void method689() {
-		@Pc(3) boolean local3 = Static7.aClass51_2.tick();
-		if (!local3) {
-			this.method690();
+	private void js5NetworkTick() {
+		@Pc(3) boolean reconnect = js5NetQueue.tick();
+		if (!reconnect) {
+			this.js5Connect();
 		}
 	}
 
 	@OriginalMember(owner = "client!client", name = "e", descriptor = "(B)V")
-	private void method690() {
-		if (Static7.aClass51_2.errors > Static4.anInt3357) {
-			Static2.anInt5721 = (Static7.aClass51_2.errors * 50 - 50) * 5;
-			if (Static2.anInt5721 > 3000) {
-				Static2.anInt5721 = 3000;
+	private void js5Connect() {
+		if (js5NetQueue.errors > js5PrevErrors) {
+			js5ConnectDelay = (js5NetQueue.errors * 50 - 50) * 5;
+			if (js5ConnectDelay > 3000) {
+				js5ConnectDelay = 3000;
 			}
 			if (port == defaultPort) {
 				port = alternatePort;
 			} else {
 				port = defaultPort;
 			}
-			if (Static7.aClass51_2.errors >= 2 && Static7.aClass51_2.state == 6) {
+			if (js5NetQueue.errors >= 2 && js5NetQueue.response == 6) {
 				this.error("js5connect_outofdate");
 				Static4.anInt3304 = 1000;
 				return;
 			}
-			if (Static7.aClass51_2.errors >= 4 && Static7.aClass51_2.state == -1) {
+			if (js5NetQueue.errors >= 4 && js5NetQueue.response == -1) {
 				this.error("js5crc");
 				Static4.anInt3304 = 1000;
 				return;
 			}
-			if (Static7.aClass51_2.errors >= 4 && (Static4.anInt3304 == 0 || Static4.anInt3304 == 5)) {
-				if (Static7.aClass51_2.state == 7 || Static7.aClass51_2.state == 9) {
+			if (js5NetQueue.errors >= 4 && (Static4.anInt3304 == 0 || Static4.anInt3304 == 5)) {
+				if (js5NetQueue.response == 7 || js5NetQueue.response == 9) {
 					this.error("js5connect_full");
-				} else if (Static7.aClass51_2.state <= 0) {
+				} else if (js5NetQueue.response <= 0) {
 					this.error("js5io");
 				} else {
 					this.error("js5connect");
@@ -818,56 +842,56 @@ public final class client extends GameShell {
 				return;
 			}
 		}
-		Static4.anInt3357 = Static7.aClass51_2.errors;
-		if (Static2.anInt5721 > 0) {
-			Static2.anInt5721--;
+		js5PrevErrors = js5NetQueue.errors;
+		if (js5ConnectDelay > 0) {
+			js5ConnectDelay--;
 			return;
 		}
 		try {
-			if (Static6.anInt4952 == 0) {
-				Static5.aClass197_4 = GameShell.signLink.openSocket(hostname, port);
-				Static6.anInt4952++;
+			if (js5ConnectState == 0) {
+				js5SocketRequest = GameShell.signLink.openSocket(hostname, port);
+				js5ConnectState++;
 			}
-			if (Static6.anInt4952 == 1) {
-				if (Static5.aClass197_4.status == 2) {
-					this.method684(1000);
+			if (js5ConnectState == 1) {
+				if (js5SocketRequest.status == 2) {
+					this.setJs5Response(1000);
 					return;
 				}
-				if (Static5.aClass197_4.status == 1) {
-					Static6.anInt4952++;
+				if (js5SocketRequest.status == 1) {
+					js5ConnectState++;
 				}
 			}
-			if (Static6.anInt4952 == 2) {
-				Static3.aClass52_5 = new BufferedSocket((Socket) Static5.aClass197_4.result, GameShell.signLink);
-				@Pc(198) Buffer local198 = new Buffer(5);
-				local198.writeByte(15);
-				local198.writeInt(550);
-				Static3.aClass52_5.write(local198.bytes, 5);
-				Static6.anInt4952++;
-				Static1.aLong29 = MonotonicClock.currentTimeMillis();
+			if (js5ConnectState == 2) {
+				js5Socket = new BufferedSocket((Socket) js5SocketRequest.result, GameShell.signLink);
+				@Pc(198) Buffer buffer = new Buffer(5);
+				buffer.writeByte(15);
+				buffer.writeInt(550);
+				js5Socket.write(buffer.bytes, 5);
+				js5ConnectState++;
+				js5ConnectTime = MonotonicClock.currentTimeMillis();
 			}
-			if (Static6.anInt4952 == 3) {
-				if (Static4.anInt3304 == 0 || Static4.anInt3304 == 5 || Static3.aClass52_5.available() > 0) {
-					@Pc(259) int local259 = Static3.aClass52_5.read();
-					if (local259 != 0) {
-						this.method684(local259);
+			if (js5ConnectState == 3) {
+				if (Static4.anInt3304 == 0 || Static4.anInt3304 == 5 || js5Socket.available() > 0) {
+					@Pc(259) int response = js5Socket.read();
+					if (response != 0) {
+						this.setJs5Response(response);
 						return;
 					}
-					Static6.anInt4952++;
-				} else if (MonotonicClock.currentTimeMillis() - Static1.aLong29 > 30000L) {
-					this.method684(1001);
+					js5ConnectState++;
+				} else if (MonotonicClock.currentTimeMillis() - js5ConnectTime > 30000L) {
+					this.setJs5Response(1001);
 					return;
 				}
 			}
-			if (Static6.anInt4952 == 4) {
-				@Pc(288) boolean local288 = Static4.anInt3304 == 5 || Static4.anInt3304 == 10 || Static4.anInt3304 == 28;
-				Static7.aClass51_2.start(Static3.aClass52_5, !local288);
-				Static5.aClass197_4 = null;
-				Static6.anInt4952 = 0;
-				Static3.aClass52_5 = null;
+			if (js5ConnectState == 4) {
+				@Pc(288) boolean loggedOut = Static4.anInt3304 == 5 || Static4.anInt3304 == 10 || Static4.anInt3304 == 28;
+				js5NetQueue.start(js5Socket, !loggedOut);
+				js5SocketRequest = null;
+				js5ConnectState = 0;
+				js5Socket = null;
 			}
-		} catch (@Pc(305) IOException local305) {
-			this.method684(1002);
+		} catch (@Pc(305) IOException ex) {
+			this.setJs5Response(1002);
 		}
 	}
 
@@ -1076,7 +1100,7 @@ public final class client extends GameShell {
 			Static2.anInt1976 = local25.get(11) * 600 + local25.get(12) * 10 + local25.get(13) / 6;
 			Static5.aRandom1.setSeed((long) Static2.anInt1976);
 		}
-		this.method689();
+		this.js5NetworkTick();
 		if (js5MasterIndex != null) {
 			js5MasterIndex.tick();
 		}

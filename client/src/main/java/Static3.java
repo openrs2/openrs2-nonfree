@@ -220,9 +220,6 @@ public final class Static3 {
 	@OriginalMember(owner = "client!hk", name = "ib", descriptor = "Lclient!fh;")
 	public static Js5 aClass58_49;
 
-	@OriginalMember(owner = "client!hk", name = "kb", descriptor = "Lclient!eo;")
-	public static BufferedSocket aClass52_5;
-
 	@OriginalMember(owner = "client!ho", name = "e", descriptor = "F")
 	public static float aFloat54;
 

@@ -573,9 +573,6 @@ public final class Static4 {
 	@OriginalMember(owner = "client!ml", name = "T", descriptor = "[I")
 	public static final int[] anIntArray328 = new int[10000];
 
-	@OriginalMember(owner = "client!mm", name = "a", descriptor = "I")
-	public static int anInt3357 = 0;
-
 	@OriginalMember(owner = "client!mm", name = "f", descriptor = "Lclient!cc;")
 	public static final LruHashTable aClass26_32 = new LruHashTable(50);
 

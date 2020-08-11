@@ -59,9 +59,6 @@ public final class Static2 {
 	@OriginalMember(owner = "client!ea", name = "I", descriptor = "Lclient!fh;")
 	public static Js5 aClass58_35;
 
-	@OriginalMember(owner = "client!ee", name = "a", descriptor = "Lclient!ja;")
-	public static Js5CacheQueue aClass92_1;
-
 	@OriginalMember(owner = "client!ef", name = "a", descriptor = "Lclient!oj;")
 	public static HuffmanCodec aClass129_1;
 
@@ -457,9 +454,6 @@ public final class Static2 {
 
 	@OriginalMember(owner = "client!fd", name = "t", descriptor = "[Ljava/lang/String;")
 	public static final String[] aStringArray40 = new String[8];
-
-	@OriginalMember(owner = "client!fd", name = "V", descriptor = "I")
-	public static int anInt5721 = 0;
 
 	@OriginalMember(owner = "client!fd", name = "nb", descriptor = "I")
 	public static int anInt5739 = 0;

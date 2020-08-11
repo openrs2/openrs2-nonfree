@@ -593,9 +593,6 @@ public final class Static6 {
 	@OriginalMember(owner = "client!sn", name = "ib", descriptor = "I")
 	public static int anInt4946 = 0;
 
-	@OriginalMember(owner = "client!sn", name = "qb", descriptor = "I")
-	public static int anInt4952 = 0;
-
 	@OriginalMember(owner = "client!sn", name = "rb", descriptor = "I")
 	public static int anInt4953 = -1;
 

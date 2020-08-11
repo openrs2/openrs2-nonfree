@@ -173,9 +173,6 @@ public final class Static1 {
 	@OriginalMember(owner = "client!ce", name = "b", descriptor = "Ljava/awt/Font;")
 	public static Font aFont1;
 
-	@OriginalMember(owner = "client!cf", name = "ab", descriptor = "J")
-	public static long aLong29;
-
 	@OriginalMember(owner = "client!cg", name = "c", descriptor = "[[[I")
 	public static int[][][] anIntArrayArrayArray2;
 
