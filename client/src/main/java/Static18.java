@@ -878,18 +878,6 @@ public final class Static18 {
 		}
 	}
 
-	@OriginalMember(owner = "client!hh", name = "a", descriptor = "(B)V")
-	public static void method4371() {
-		Static2.aClass77_1.method3288();
-		for (@Pc(10) int local10 = 0; local10 < 32; local10++) {
-			Static7.aLongArray8[local10] = 0L;
-		}
-		for (@Pc(27) int local27 = 0; local27 < 32; local27++) {
-			Static6.aLongArray40[local27] = 0L;
-		}
-		Static4.anInt3326 = 0;
-	}
-
 	@OriginalMember(owner = "client!hh", name = "a", descriptor = "(II)V")
 	public static void method4372(@OriginalArg(0) int arg0) {
 		Static4.aFloatArray38[0] = (float) (arg0 >> 16 & 0xFF) / 255.0F;

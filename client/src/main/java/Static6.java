@@ -341,9 +341,6 @@ public final class Static6 {
 	@OriginalMember(owner = "client!ql", name = "e", descriptor = "I")
 	public static int anInt4393 = -1;
 
-	@OriginalMember(owner = "client!qm", name = "b", descriptor = "I")
-	public static int anInt4397 = 1;
-
 	@OriginalMember(owner = "client!qm", name = "c", descriptor = "I")
 	public static int anInt4398 = 1;
 
@@ -406,9 +403,6 @@ public final class Static6 {
 
 	@OriginalMember(owner = "client!rg", name = "ab", descriptor = "I")
 	public static int anInt4506 = 0;
-
-	@OriginalMember(owner = "client!rg", name = "kb", descriptor = "[J")
-	public static final long[] aLongArray40 = new long[32];
 
 	@OriginalMember(owner = "client!rg", name = "mb", descriptor = "I")
 	public static int anInt4516 = 0;

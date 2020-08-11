@@ -917,8 +917,8 @@ public final class client extends GameShell {
 		if (Static4.anInt3304 == 1000) {
 			return;
 		}
-		@Pc(26) long local26 = Static12.method727() / 1000000L - Static1.aLong24;
-		Static1.aLong24 = Static12.method727() / 1000000L;
+		@Pc(26) long local26 = GameShell.time() / 1000000L - Static1.aLong24;
+		Static1.aLong24 = GameShell.time() / 1000000L;
 		@Pc(34) boolean local34 = Static12.method639();
 		if (local34 && Static4.aBoolean210 && Static1.aClass102_1 != null) {
 			Static1.aClass102_1.method3009();
@@ -1056,10 +1056,10 @@ public final class client extends GameShell {
 		}
 		if (Static4.anInt3304 == 0) {
 			this.method686();
-			Static18.method4371();
+			GameShell.resetTimer();
 		} else if (Static4.anInt3304 == 5) {
 			this.method686();
-			Static18.method4371();
+			GameShell.resetTimer();
 		} else if (Static4.anInt3304 == 25 || Static4.anInt3304 == 28) {
 			Static33.method3000();
 		}

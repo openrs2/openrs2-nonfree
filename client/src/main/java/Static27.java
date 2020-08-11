@@ -608,7 +608,7 @@ public final class Static27 {
 				Static2.aBoolean104 = false;
 			}
 			if (arg0.startsWith("::fps ") && client.modeWhere != 0) {
-				Static37.method4782(Static12.method737(arg0.substring(6)));
+				GameShell.setFramesPerSecond(Static12.method737(arg0.substring(6)));
 			}
 			if (arg0.equalsIgnoreCase("::errortest")) {
 				throw new RuntimeException();

@@ -1104,7 +1104,7 @@ public final class Static33 {
 		}
 		Static35.method4306();
 		Static9.method763();
-		Static18.method4371();
+		GameShell.resetTimer();
 	}
 
 	@OriginalMember(owner = "client!tj", name = "a", descriptor = "(IILclient!fh;I)Lclient!fe;")

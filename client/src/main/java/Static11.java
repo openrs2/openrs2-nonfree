@@ -649,7 +649,7 @@ public final class Static11 {
 
 	@OriginalMember(owner = "client!cg", name = "a", descriptor = "(I)V")
 	public static void method559() {
-		client.instance.method682();
+		client.instance.loadMiscNatives();
 		GameShell.focus = true;
 		Static3.anInt2235 = 0;
 		Static7.aBoolean367 = true;

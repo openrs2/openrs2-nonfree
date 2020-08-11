@@ -290,9 +290,6 @@ public final class Static1 {
 	@OriginalMember(owner = "client!aa", name = "f", descriptor = "[I")
 	public static final int[] anIntArray2 = new int[2500];
 
-	@OriginalMember(owner = "client!ac", name = "cb", descriptor = "I")
-	public static int anInt80 = 20;
-
 	@OriginalMember(owner = "client!ae", name = "c", descriptor = "[S")
 	public static final short[] aShortArray11 = new short[] { -10304, 9104, -1, -1, -1 };
 

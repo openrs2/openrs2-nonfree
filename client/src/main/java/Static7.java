@@ -254,9 +254,6 @@ public final class Static7 {
 	@OriginalMember(owner = "client!ud", name = "n", descriptor = "Z")
 	public static boolean aBoolean362 = true;
 
-	@OriginalMember(owner = "client!ue", name = "i", descriptor = "[J")
-	public static final long[] aLongArray8 = new long[32];
-
 	@OriginalMember(owner = "client!ue", name = "m", descriptor = "S")
 	public static short aShort11 = 32767;
 

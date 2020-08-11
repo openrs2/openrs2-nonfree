@@ -646,9 +646,6 @@ public final class Static3 {
 	@OriginalMember(owner = "client!ho", name = "Q", descriptor = "[I")
 	public static final int[] anIntArray189 = new int[1000];
 
-	@OriginalMember(owner = "client!ho", name = "R", descriptor = "I")
-	public static int anInt2295 = 0;
-
 	@OriginalMember(owner = "client!ho", name = "T", descriptor = "[I")
 	public static final int[] anIntArray190 = new int[14];
 

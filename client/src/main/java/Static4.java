@@ -48,9 +48,6 @@ public final class Static4 {
 	@OriginalMember(owner = "client!ka", name = "g", descriptor = "Lclient!wf;")
 	public static Class185 aClass185_9;
 
-	@OriginalMember(owner = "client!kf", name = "a", descriptor = "I")
-	public static int anInt2832;
-
 	@OriginalMember(owner = "client!kf", name = "t", descriptor = "I")
 	public static int anInt2842;
 
@@ -224,9 +221,6 @@ public final class Static4 {
 
 	@OriginalMember(owner = "client!mg", name = "g", descriptor = "Lclient!kk;")
 	public static Class106 aClass106_5;
-
-	@OriginalMember(owner = "client!mg", name = "p", descriptor = "I")
-	public static int anInt3326;
 
 	@OriginalMember(owner = "client!mg", name = "t", descriptor = "B")
 	public static byte aByte6;

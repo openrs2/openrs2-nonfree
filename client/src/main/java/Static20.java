@@ -937,20 +937,20 @@ public final class Static20 {
 			Static26.method2934(new Buffer(Static3.aClass58_65.method1358("underlay", Static3.aClass4_Sub3_Sub22_3.aString358)));
 			Static4.anInt2644 = 30;
 			Static32.method3917(true);
-			Static18.method4371();
+			GameShell.resetTimer();
 		} else if (Static4.anInt2644 == 30) {
 			Static19.method2398(new Buffer(Static3.aClass58_65.method1358("overlay", Static3.aClass4_Sub3_Sub22_3.aString358)));
 			Static4.anInt2644 = 40;
-			Static18.method4371();
+			GameShell.resetTimer();
 		} else if (Static4.anInt2644 == 40) {
 			method2406(new Buffer(Static3.aClass58_65.method1358("overlay2", Static3.aClass4_Sub3_Sub22_3.aString358)));
 			Static4.anInt2644 = 50;
-			Static18.method4371();
+			GameShell.resetTimer();
 		} else if (Static4.anInt2644 == 50) {
 			method2407(new Buffer(Static3.aClass58_65.method1358("loc", Static3.aClass4_Sub3_Sub22_3.aString358)), Static7.aBoolean370);
 			Static4.anInt2644 = 60;
 			Static32.method3917(true);
-			Static18.method4371();
+			GameShell.resetTimer();
 		} else if (Static4.anInt2644 == 60) {
 			if (Static3.aClass58_65.method1344(Static3.aClass4_Sub3_Sub22_3.aString358 + "_labels")) {
 				if (!Static3.aClass58_65.method1365(Static3.aClass4_Sub3_Sub22_3.aString358 + "_labels")) {
@@ -962,47 +962,47 @@ public final class Static20 {
 			}
 			Static19.method2400();
 			Static4.anInt2644 = 70;
-			Static18.method4371();
+			GameShell.resetTimer();
 		} else if (Static4.anInt2644 == 70) {
 			Static6.aClass106_7 = new Class106(11, true, GameShell.canvas);
 			Static4.anInt2644 = 73;
 			Static32.method3917(true);
-			Static18.method4371();
+			GameShell.resetTimer();
 		} else if (Static4.anInt2644 == 73) {
 			Static4.aClass106_3 = new Class106(12, true, GameShell.canvas);
 			Static4.anInt2644 = 76;
 			Static32.method3917(true);
-			Static18.method4371();
+			GameShell.resetTimer();
 		} else if (Static4.anInt2644 == 76) {
 			Static4.aClass106_5 = new Class106(14, true, GameShell.canvas);
 			Static4.anInt2644 = 79;
 			Static32.method3917(true);
-			Static18.method4371();
+			GameShell.resetTimer();
 		} else if (Static4.anInt2644 == 79) {
 			Static4.aClass106_4 = new Class106(17, true, GameShell.canvas);
 			Static4.anInt2644 = 82;
 			Static32.method3917(true);
-			Static18.method4371();
+			GameShell.resetTimer();
 		} else if (Static4.anInt2644 == 82) {
 			Static1.aClass106_1 = new Class106(19, true, GameShell.canvas);
 			Static4.anInt2644 = 85;
 			Static32.method3917(true);
-			Static18.method4371();
+			GameShell.resetTimer();
 		} else if (Static4.anInt2644 == 85) {
 			Static2.aClass106_2 = new Class106(22, true, GameShell.canvas);
 			Static4.anInt2644 = 88;
 			Static32.method3917(true);
-			Static18.method4371();
+			GameShell.resetTimer();
 		} else if (Static4.anInt2644 == 88) {
 			Static5.aClass106_6 = new Class106(26, true, GameShell.canvas);
 			Static4.anInt2644 = 91;
 			Static32.method3917(true);
-			Static18.method4371();
+			GameShell.resetTimer();
 		} else {
 			Static6.aClass106_8 = new Class106(30, true, GameShell.canvas);
 			Static4.anInt2644 = 100;
 			Static32.method3917(true);
-			Static18.method4371();
+			GameShell.resetTimer();
 			System.gc();
 		}
 	}
@@ -1116,7 +1116,7 @@ public final class Static20 {
 		@Pc(310) int local310 = arg3 + arg2 - 5;
 		@Pc(312) int local312 = 16776960;
 		@Pc(318) int local318 = arg1 + arg0 - 8;
-		Static5.aClass4_Sub3_Sub5_2.method2275("Fps:" + Static3.anInt2295, local310, local318, 16776960, -1);
+		Static5.aClass4_Sub3_Sub5_2.method2275("Fps:" + GameShell.framesPerSecond, local310, local318, 16776960, -1);
 		@Pc(334) Runtime local334 = Runtime.getRuntime();
 		local318 -= 15;
 		@Pc(344) int local344 = (int) ((local334.totalMemory() - local334.freeMemory()) / 1024L);

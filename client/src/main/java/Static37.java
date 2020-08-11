@@ -1162,11 +1162,6 @@ public final class Static37 {
 		return true;
 	}
 
-	@OriginalMember(owner = "client!wi", name = "a", descriptor = "(II)V")
-	public static void method4782(@OriginalArg(0) int arg0) {
-		Static1.anInt80 = 1000 / arg0;
-	}
-
 	@OriginalMember(owner = "client!wj", name = "b", descriptor = "(B)V")
 	public static void method4784() {
 		if (Static2.anInt1940 == 2) {

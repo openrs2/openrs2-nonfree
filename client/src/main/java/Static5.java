@@ -80,9 +80,6 @@ public final class Static5 {
 	@OriginalMember(owner = "client!o", name = "N", descriptor = "[I")
 	public static int[] anIntArray399;
 
-	@OriginalMember(owner = "client!ob", name = "k", descriptor = "I")
-	public static int anInt5197;
-
 	@OriginalMember(owner = "client!ob", name = "x", descriptor = "I")
 	public static int anInt5205;
 
@@ -295,9 +292,6 @@ public final class Static5 {
 
 	@OriginalMember(owner = "client!nd", name = "s", descriptor = "I")
 	public static int anInt3486 = 0;
-
-	@OriginalMember(owner = "client!nd", name = "u", descriptor = "I")
-	public static int anInt3488 = 500;
 
 	@OriginalMember(owner = "client!nd", name = "y", descriptor = "Lclient!d;")
 	public static final Class34 aClass34_1 = new Class34();

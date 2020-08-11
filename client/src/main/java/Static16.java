@@ -98,19 +98,6 @@ public final class Static16 {
 		}
 	}
 
-	@OriginalMember(owner = "client!fo", name = "a", descriptor = "(B)Lclient!jf;")
-	public static Class77 method1500() {
-		try {
-			return new Class77_Sub2();
-		} catch (@Pc(8) Throwable local8) {
-			try {
-				return (Class77) Class.forName("Class77_Sub1").getDeclaredConstructor().newInstance();
-			} catch (@Pc(20) Throwable local20) {
-				return new Class77_Sub3();
-			}
-		}
-	}
-
 	@OriginalMember(owner = "client!fo", name = "a", descriptor = "(IB)V")
 	public static void method1501(@OriginalArg(0) int arg0) {
 		Static3.aClass26_25.clear();

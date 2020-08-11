@@ -28,6 +28,36 @@ public abstract class GameShell extends Applet implements Runnable, FocusListene
 	@OriginalMember(owner = "client!wf", name = "C", descriptor = "Ljava/lang/Thread;")
 	public static Thread thread;
 
+	@OriginalMember(owner = "client!ho", name = "R", descriptor = "I")
+	public static int framesPerSecond = 0;
+
+	@OriginalMember(owner = "client!de", name = "s", descriptor = "Lclient!jf;")
+	private static Timer timer;
+
+	@OriginalMember(owner = "client!mg", name = "p", descriptor = "I")
+	private static int logicCycles;
+
+	@OriginalMember(owner = "client!ue", name = "i", descriptor = "[J")
+	private static final long[] redrawTimes = new long[32];
+
+	@OriginalMember(owner = "client!rg", name = "kb", descriptor = "[J")
+	private static final long[] logicTimes = new long[32];
+
+	@OriginalMember(owner = "client!kf", name = "a", descriptor = "I")
+	private static int redrawTimePointer;
+
+	@OriginalMember(owner = "client!ob", name = "k", descriptor = "I")
+	private static int logicTimePointer;
+
+	@OriginalMember(owner = "client!nd", name = "u", descriptor = "I")
+	private static int partialRedraws = 500;
+
+	@OriginalMember(owner = "client!qm", name = "b", descriptor = "I")
+	private static int minimumDelay = 1;
+
+	@OriginalMember(owner = "client!ac", name = "cb", descriptor = "I")
+	private static int timePerFrame = 20;
+
 	@OriginalMember(owner = "client!wd", name = "tb", descriptor = "Z")
 	private static volatile boolean focusIn = true;
 
@@ -97,6 +127,28 @@ public abstract class GameShell extends Applet implements Runnable, FocusListene
 		TracingException.signLink = signLink;
 	}
 
+	@OriginalMember(owner = "client!wi", name = "a", descriptor = "(II)V")
+	public static void setFramesPerSecond(@OriginalArg(0) int fps) {
+		timePerFrame = 1000 / fps;
+	}
+
+	@OriginalMember(owner = "client!d", name = "c", descriptor = "(I)J")
+	public static long time() {
+		return timer.time();
+	}
+
+	@OriginalMember(owner = "client!hh", name = "a", descriptor = "(B)V")
+	public static void resetTimer() {
+		timer.reset();
+		for (@Pc(10) int i = 0; i < 32; i++) {
+			redrawTimes[i] = 0L;
+		}
+		for (@Pc(27) int i = 0; i < 32; i++) {
+			logicTimes[i] = 0L;
+		}
+		logicCycles = 0;
+	}
+
 	@OriginalMember(owner = "client!ue", name = "windowDeiconified", descriptor = "(Ljava/awt/event/WindowEvent;)V")
 	@Override
 	public final void windowDeiconified(@OriginalArg(0) WindowEvent event) {
@@ -119,12 +171,12 @@ public abstract class GameShell extends Applet implements Runnable, FocusListene
 
 	@OriginalMember(owner = "client!ue", name = "a", descriptor = "(I)V")
 	private void mainLoopWrapper() {
-		@Pc(6) long local6 = MonotonicClock.currentTimeMillis();
-		@Pc(10) long local10 = Static6.aLongArray40[Static5.anInt5197];
-		Static6.aLongArray40[Static5.anInt5197] = local6;
-		if ((long) 0 != local10 && local10 < local6) {
+		@Pc(6) long now = MonotonicClock.currentTimeMillis();
+		@Pc(10) long previous = logicTimes[logicTimePointer];
+		logicTimes[logicTimePointer] = now;
+		if ((long) 0 != previous && previous < now) {
 		}
-		Static5.anInt5197 = Static5.anInt5197 + 1 & 0x1F;
+		logicTimePointer = logicTimePointer + 1 & 0x1F;
 		synchronized (this) {
 			focus = focusIn;
 		}
@@ -269,16 +321,16 @@ public abstract class GameShell extends Applet implements Runnable, FocusListene
 
 	@OriginalMember(owner = "client!ue", name = "d", descriptor = "(I)V")
 	private void mainRedrawWrapper() {
-		@Pc(14) long local14 = MonotonicClock.currentTimeMillis();
-		@Pc(18) long local18 = Static7.aLongArray8[Static4.anInt2832];
-		Static7.aLongArray8[Static4.anInt2832] = local14;
-		if (local18 != 0L && local14 > local18) {
-			@Pc(42) int local42 = (int) (local14 - local18);
-			Static3.anInt2295 = ((local42 >> 1) + 32000) / local42;
+		@Pc(14) long now = MonotonicClock.currentTimeMillis();
+		@Pc(18) long previous = redrawTimes[redrawTimePointer];
+		redrawTimes[redrawTimePointer] = now;
+		if (previous != 0L && now > previous) {
+			@Pc(42) int duration = (int) (now - previous);
+			framesPerSecond = ((duration >> 1) + 32000) / duration;
 		}
-		Static4.anInt2832 = Static4.anInt2832 + 1 & 0x1F;
-		if (Static5.anInt3488++ > 50) {
-			Static5.anInt3488 -= 50;
+		redrawTimePointer = redrawTimePointer + 1 & 0x1F;
+		if (partialRedraws++ > 50) {
+			partialRedraws -= 50;
 			fullRedraw = true;
 			canvas.setSize(canvasWidth, canvasHeight);
 			canvas.setVisible(true);
@@ -407,7 +459,7 @@ public abstract class GameShell extends Applet implements Runnable, FocusListene
 						this.error("wrongjava");
 						return;
 					}
-					Static6.anInt4397 = 5;
+					minimumDelay = 5;
 				} else if (javaVendor.indexOf("ibm") != -1 && (SignLink.javaVersion == null || SignLink.javaVersion.equals("1.4.2"))) {
 					this.error("wrongjava");
 					return;
@@ -441,11 +493,11 @@ public abstract class GameShell extends Applet implements Runnable, FocusListene
 			this.addCanvas();
 			Static4.aClass59_1 = Static25.method2727(canvasHeight, canvasWidth, canvas);
 			this.mainInit();
-			Static2.aClass77_1 = Static16.method1500();
-			this.method682();
+			timer = Timer.create();
+			this.loadMiscNatives();
 			while (killTime == 0L || MonotonicClock.currentTimeMillis() < killTime) {
-				Static4.anInt3326 = Static2.aClass77_1.method3283(Static6.anInt4397, Static1.anInt80);
-				for (@Pc(177) int i = 0; i < Static4.anInt3326; i++) {
+				logicCycles = timer.sleep(minimumDelay, timePerFrame);
+				for (@Pc(177) int i = 0; i < logicCycles; i++) {
 					this.mainLoopWrapper();
 				}
 				this.mainRedrawWrapper();
@@ -512,7 +564,7 @@ public abstract class GameShell extends Applet implements Runnable, FocusListene
 	}
 
 	@OriginalMember(owner = "client!ue", name = "c", descriptor = "(Z)V")
-	public final void method682() {
+	public final void loadMiscNatives() {
 		if (this.miscNativesLoaded) {
 			return;
 		}
@@ -526,7 +578,7 @@ public abstract class GameShell extends Applet implements Runnable, FocusListene
 			}
 			jagmisc.init();
 			this.miscNativesLoaded = true;
-			Static2.aClass77_1 = Static16.method1500();
+			timer = Timer.create();
 		} catch (@Pc(48) Throwable ex) {
 		}
 	}

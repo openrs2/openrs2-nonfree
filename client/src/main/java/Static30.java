@@ -341,7 +341,7 @@ public final class Static30 {
 								}
 								@Pc(787) int local787 = local128 + local38.anInt5893;
 								@Pc(791) int local791 = local122 + 15;
-								Static5.aClass4_Sub3_Sub5_2.method2275("Fps:" + Static3.anInt2295, local787, local791, 16776960, -1);
+								Static5.aClass4_Sub3_Sub5_2.method2275("Fps:" + GameShell.framesPerSecond, local787, local791, 16776960, -1);
 								@Pc(807) Runtime local807 = Runtime.getRuntime();
 								local791 += 15;
 								@Pc(817) int local817 = (int) ((local807.totalMemory() - local807.freeMemory()) / 1024L);

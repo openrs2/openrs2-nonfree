@@ -842,11 +842,6 @@ public final class Static12 {
 		local12.anInt2001 = arg2;
 	}
 
-	@OriginalMember(owner = "client!d", name = "c", descriptor = "(I)J")
-	public static long method727() {
-		return Static2.aClass77_1.method3289();
-	}
-
 	@OriginalMember(owner = "client!da", name = "a", descriptor = "(ZIIILclient!gn;I)V")
 	public static void method731(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) Class4_Sub11 arg3, @OriginalArg(5) int arg4) {
 		if (arg3.anInt2115 == -1 && arg3.anIntArray172 == null) {
