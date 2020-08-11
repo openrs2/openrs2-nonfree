@@ -6,5 +6,5 @@ import dev.openrs2.deob.annotation.OriginalMember;
 public abstract class Class67 {
 
 	@OriginalMember(owner = "client!gh", name = "a", descriptor = "(ILclient!cn;)Lclient!cn;")
-	public abstract Class4_Sub3_Sub4 method2015(@OriginalArg(1) Class4_Sub3_Sub4 arg0);
+	public abstract ReferenceNode method2015(@OriginalArg(1) ReferenceNode arg0);
 }

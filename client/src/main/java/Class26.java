@@ -31,8 +31,8 @@ public final class Class26 {
 	@OriginalMember(owner = "client!cc", name = "a", descriptor = "(Z)I")
 	public final int method509() {
 		@Pc(7) int local7 = 0;
-		for (@Pc(18) Class4_Sub3_Sub4 local18 = (Class4_Sub3_Sub4) this.aClass175_2.head(); local18 != null; local18 = (Class4_Sub3_Sub4) this.aClass175_2.next()) {
-			if (!local18.method2320()) {
+		for (@Pc(18) ReferenceNode local18 = (ReferenceNode) this.aClass175_2.head(); local18 != null; local18 = (ReferenceNode) this.aClass175_2.next()) {
+			if (!local18.isSoft()) {
 				local7++;
 			}
 		}
@@ -43,13 +43,13 @@ public final class Class26 {
 	public final void method510(@OriginalArg(1) Object arg0, @OriginalArg(2) long arg1) {
 		this.method512(arg1);
 		if (this.anInt532 == 0) {
-			@Pc(31) Class4_Sub3_Sub4 local31 = (Class4_Sub3_Sub4) this.aClass175_2.removeHead();
+			@Pc(31) ReferenceNode local31 = (ReferenceNode) this.aClass175_2.removeHead();
 			local31.unlink();
 			local31.unlinkSecondary();
 		} else {
 			this.anInt532--;
 		}
-		@Pc(42) Class4_Sub3_Sub4_Sub1 local42 = new Class4_Sub3_Sub4_Sub1(arg0);
+		@Pc(42) HardReferenceNode local42 = new HardReferenceNode(arg0);
 		this.aClass84_1.put(arg1, local42);
 		this.aClass175_2.addTail(local42);
 		local42.secondaryKey = 0L;
@@ -64,7 +64,7 @@ public final class Class26 {
 
 	@OriginalMember(owner = "client!cc", name = "a", descriptor = "(JI)V")
 	public final void method512(@OriginalArg(0) long arg0) {
-		@Pc(10) Class4_Sub3_Sub4 local10 = (Class4_Sub3_Sub4) this.aClass84_1.get(arg0);
+		@Pc(10) ReferenceNode local10 = (ReferenceNode) this.aClass84_1.get(arg0);
 		if (local10 != null) {
 			local10.unlink();
 			local10.unlinkSecondary();
@@ -74,8 +74,8 @@ public final class Class26 {
 
 	@OriginalMember(owner = "client!cc", name = "b", descriptor = "(Z)V")
 	public final void method515() {
-		for (@Pc(16) Class4_Sub3_Sub4 local16 = (Class4_Sub3_Sub4) this.aClass175_2.head(); local16 != null; local16 = (Class4_Sub3_Sub4) this.aClass175_2.next()) {
-			if (local16.method2320()) {
+		for (@Pc(16) ReferenceNode local16 = (ReferenceNode) this.aClass175_2.head(); local16 != null; local16 = (ReferenceNode) this.aClass175_2.next()) {
+			if (local16.isSoft()) {
 				local16.unlink();
 				local16.unlinkSecondary();
 				this.anInt532++;
@@ -88,15 +88,15 @@ public final class Class26 {
 		if (Static5.aClass67_1 == null) {
 			return;
 		}
-		for (@Pc(22) Class4_Sub3_Sub4 local22 = (Class4_Sub3_Sub4) this.aClass175_2.head(); local22 != null; local22 = (Class4_Sub3_Sub4) this.aClass175_2.next()) {
-			if (local22.method2320()) {
-				if (local22.method2319() == null) {
+		for (@Pc(22) ReferenceNode local22 = (ReferenceNode) this.aClass175_2.head(); local22 != null; local22 = (ReferenceNode) this.aClass175_2.next()) {
+			if (local22.isSoft()) {
+				if (local22.get() == null) {
 					local22.unlink();
 					local22.unlinkSecondary();
 					this.anInt532++;
 				}
 			} else if (++local22.secondaryKey > (long) arg0) {
-				@Pc(45) Class4_Sub3_Sub4 local45 = Static5.aClass67_1.method2015(local22);
+				@Pc(45) ReferenceNode local45 = Static5.aClass67_1.method2015(local22);
 				this.aClass84_1.put(local22.key, local45);
 				Static23.method2452(local22, local45);
 				local22.unlink();
@@ -107,19 +107,19 @@ public final class Class26 {
 
 	@OriginalMember(owner = "client!cc", name = "a", descriptor = "(JB)Ljava/lang/Object;")
 	public final Object method518(@OriginalArg(0) long arg0) {
-		@Pc(10) Class4_Sub3_Sub4 local10 = (Class4_Sub3_Sub4) this.aClass84_1.get(arg0);
+		@Pc(10) ReferenceNode local10 = (ReferenceNode) this.aClass84_1.get(arg0);
 		if (local10 == null) {
 			return null;
 		}
-		@Pc(26) Object local26 = local10.method2319();
+		@Pc(26) Object local26 = local10.get();
 		if (local26 == null) {
 			local10.unlink();
 			local10.unlinkSecondary();
 			this.anInt532++;
 			return null;
 		}
-		if (local10.method2320()) {
-			@Pc(61) Class4_Sub3_Sub4_Sub1 local61 = new Class4_Sub3_Sub4_Sub1(local26);
+		if (local10.isSoft()) {
+			@Pc(61) HardReferenceNode local61 = new HardReferenceNode(local26);
 			this.aClass84_1.put(local10.key, local61);
 			this.aClass175_2.addTail(local61);
 			local61.secondaryKey = 0L;

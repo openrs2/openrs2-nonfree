@@ -7,7 +7,7 @@ public final class Class67_Sub1 extends Class67 {
 
 	@OriginalMember(owner = "client!jg", name = "a", descriptor = "(ILclient!cn;)Lclient!cn;")
 	@Override
-	public final Class4_Sub3_Sub4 method2015(@OriginalArg(1) Class4_Sub3_Sub4 arg0) {
-		return new Class4_Sub3_Sub4_Sub2(arg0.method2319());
+	public final ReferenceNode method2015(@OriginalArg(1) ReferenceNode arg0) {
+		return new SoftReferenceNode(arg0.get());
 	}
 }
