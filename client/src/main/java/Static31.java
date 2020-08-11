@@ -402,7 +402,7 @@ public final class Static31 {
 		Static5.anInt3656 = local189;
 		Static5.anInt4066 = local185;
 		Static7.anInt5678 = local183;
-		if (Static3.aBoolean366 && Static7.aClass51_2.method1092() == 0) {
+		if (Static3.aBoolean366 && Static7.aClass51_2.getUrgentRequestCount() == 0) {
 			Static3.aBoolean366 = false;
 		}
 		if (Static3.aBoolean366) {

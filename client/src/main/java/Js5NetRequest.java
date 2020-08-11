@@ -2,29 +2,29 @@ import dev.openrs2.deob.annotation.OriginalClass;
 import dev.openrs2.deob.annotation.OriginalMember;
 
 @OriginalClass("client!ul")
-public final class Class4_Sub3_Sub1_Sub2 extends Class4_Sub3_Sub1 {
+public final class Js5NetRequest extends Js5Request {
 
 	@OriginalMember(owner = "client!ul", name = "K", descriptor = "I")
-	public int anInt5384;
+	public int blockPosition;
 
 	@OriginalMember(owner = "client!ul", name = "O", descriptor = "B")
-	public byte aByte22;
+	public byte trailerLen;
 
 	@OriginalMember(owner = "client!ul", name = "R", descriptor = "Lclient!fd;")
-	public Buffer aClass4_Sub10_10;
+	public Buffer data;
 
 	@OriginalMember(owner = "client!ul", name = "d", descriptor = "(I)I")
 	@Override
-	public final int method4354() {
-		return this.aClass4_Sub10_10 == null ? 0 : this.aClass4_Sub10_10.position * 100 / (this.aClass4_Sub10_10.bytes.length - this.aByte22);
+	public final int getReadyPercentage() {
+		return this.data == null ? 0 : this.data.position * 100 / (this.data.bytes.length - this.trailerLen);
 	}
 
 	@OriginalMember(owner = "client!ul", name = "e", descriptor = "(B)[B")
 	@Override
-	public final byte[] method4352() {
-		if (this.aBoolean364 || this.aClass4_Sub10_10.bytes.length - this.aByte22 > this.aClass4_Sub10_10.position) {
+	public final byte[] getData() {
+		if (this.incomplete || this.data.bytes.length - this.trailerLen > this.data.position) {
 			throw new RuntimeException();
 		}
-		return this.aClass4_Sub10_10.bytes;
+		return this.data.bytes;
 	}
 }

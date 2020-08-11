@@ -60,7 +60,7 @@ public final class Static2 {
 	public static Js5 aClass58_35;
 
 	@OriginalMember(owner = "client!ee", name = "a", descriptor = "Lclient!ja;")
-	public static Class92 aClass92_1;
+	public static Js5CacheQueue aClass92_1;
 
 	@OriginalMember(owner = "client!ef", name = "a", descriptor = "Lclient!oj;")
 	public static HuffmanCodec aClass129_1;

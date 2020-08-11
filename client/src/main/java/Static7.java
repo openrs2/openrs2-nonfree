@@ -75,7 +75,7 @@ public final class Static7 {
 	public static int anInt5394;
 
 	@OriginalMember(owner = "client!um", name = "b", descriptor = "Lclient!en;")
-	public static Class51 aClass51_2;
+	public static Js5NetQueue aClass51_2;
 
 	@OriginalMember(owner = "client!un", name = "x", descriptor = "I")
 	public static int anInt5412;

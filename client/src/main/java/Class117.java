@@ -13,20 +13,20 @@ public final class Class117 {
 	private Class62_Sub1[] aClass62_Sub1Array1;
 
 	@OriginalMember(owner = "client!mg", name = "h", descriptor = "Lclient!en;")
-	private final Class51 aClass51_1;
+	private final Js5NetQueue aClass51_1;
 
 	@OriginalMember(owner = "client!mg", name = "d", descriptor = "Lclient!ja;")
-	private final Class92 aClass92_2;
+	private final Js5CacheQueue aClass92_2;
 
 	@OriginalMember(owner = "client!mg", name = "j", descriptor = "Lclient!ul;")
-	private Class4_Sub3_Sub1_Sub2 aClass4_Sub3_Sub1_Sub2_2;
+	private Js5NetRequest aClass4_Sub3_Sub1_Sub2_2;
 
 	@OriginalMember(owner = "client!mg", name = "<init>", descriptor = "(Lclient!en;Lclient!ja;)V")
-	public Class117(@OriginalArg(0) Class51 arg0, @OriginalArg(1) Class92 arg1) {
+	public Class117(@OriginalArg(0) Js5NetQueue arg0, @OriginalArg(1) Js5CacheQueue arg1) {
 		this.aClass51_1 = arg0;
 		this.aClass92_2 = arg1;
-		if (!this.aClass51_1.method1083()) {
-			this.aClass4_Sub3_Sub1_Sub2_2 = this.aClass51_1.method1088((byte) 0, 255, true, 255);
+		if (!this.aClass51_1.isUrgentRequestQueueFull()) {
+			this.aClass4_Sub3_Sub1_Sub2_2 = this.aClass51_1.read(255, 255, true, (byte) 0);
 		}
 	}
 
@@ -53,15 +53,15 @@ public final class Class117 {
 			return true;
 		}
 		if (this.aClass4_Sub3_Sub1_Sub2_2 == null) {
-			if (this.aClass51_1.method1083()) {
+			if (this.aClass51_1.isUrgentRequestQueueFull()) {
 				return false;
 			}
-			this.aClass4_Sub3_Sub1_Sub2_2 = this.aClass51_1.method1088((byte) 0, 255, true, 255);
+			this.aClass4_Sub3_Sub1_Sub2_2 = this.aClass51_1.read(255, 255, true, (byte) 0);
 		}
-		if (this.aClass4_Sub3_Sub1_Sub2_2.aBoolean364) {
+		if (this.aClass4_Sub3_Sub1_Sub2_2.incomplete) {
 			return false;
 		} else {
-			this.aClass4_Sub10_6 = new Buffer(this.aClass4_Sub3_Sub1_Sub2_2.method4352());
+			this.aClass4_Sub10_6 = new Buffer(this.aClass4_Sub3_Sub1_Sub2_2.getData());
 			this.aClass62_Sub1Array1 = new Class62_Sub1[(this.aClass4_Sub10_6.bytes.length - 5) / 8];
 			return true;
 		}

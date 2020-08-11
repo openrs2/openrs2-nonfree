@@ -261,9 +261,9 @@ public final class client extends GameShell {
 
 	@OriginalMember(owner = "client!client", name = "a", descriptor = "(ZI)V")
 	private void method684(@OriginalArg(1) int arg0) {
-		Static7.aClass51_2.anInt1359 = arg0;
+		Static7.aClass51_2.state = arg0;
 		Static3.aClass52_5 = null;
-		Static7.aClass51_2.anInt1358++;
+		Static7.aClass51_2.errors++;
 		Static6.anInt4952 = 0;
 		Static5.aClass197_4 = null;
 	}
@@ -631,16 +631,16 @@ public final class client extends GameShell {
 		if (Static6.aClass102_2 != null) {
 			Static6.aClass102_2.method3001();
 		}
-		Static7.aClass51_2.method1090();
-		Static2.aClass92_1.method1971();
+		Static7.aClass51_2.stop();
+		Static2.aClass92_1.stop();
 	}
 
 	@OriginalMember(owner = "client!client", name = "c", descriptor = "(B)V")
 	@Override
 	protected final void mainInit() {
 		Static20.method1949();
-		Static2.aClass92_1 = new Class92();
-		Static7.aClass51_2 = new Class51();
+		Static2.aClass92_1 = new Js5CacheQueue();
+		Static7.aClass51_2 = new Js5NetQueue();
 		if (modeWhat != 0) {
 			Static6.aByteArrayArray35 = new byte[50][];
 		}
@@ -741,7 +741,7 @@ public final class client extends GameShell {
 
 	@OriginalMember(owner = "client!client", name = "d", descriptor = "(B)V")
 	private void method689() {
-		@Pc(3) boolean local3 = Static7.aClass51_2.method1097();
+		@Pc(3) boolean local3 = Static7.aClass51_2.tick();
 		if (!local3) {
 			this.method690();
 		}
@@ -749,8 +749,8 @@ public final class client extends GameShell {
 
 	@OriginalMember(owner = "client!client", name = "e", descriptor = "(B)V")
 	private void method690() {
-		if (Static7.aClass51_2.anInt1358 > Static4.anInt3357) {
-			Static2.anInt5721 = (Static7.aClass51_2.anInt1358 * 50 - 50) * 5;
+		if (Static7.aClass51_2.errors > Static4.anInt3357) {
+			Static2.anInt5721 = (Static7.aClass51_2.errors * 50 - 50) * 5;
 			if (Static2.anInt5721 > 3000) {
 				Static2.anInt5721 = 3000;
 			}
@@ -759,20 +759,20 @@ public final class client extends GameShell {
 			} else {
 				port = defaultPort;
 			}
-			if (Static7.aClass51_2.anInt1358 >= 2 && Static7.aClass51_2.anInt1359 == 6) {
+			if (Static7.aClass51_2.errors >= 2 && Static7.aClass51_2.state == 6) {
 				this.error("js5connect_outofdate");
 				Static4.anInt3304 = 1000;
 				return;
 			}
-			if (Static7.aClass51_2.anInt1358 >= 4 && Static7.aClass51_2.anInt1359 == -1) {
+			if (Static7.aClass51_2.errors >= 4 && Static7.aClass51_2.state == -1) {
 				this.error("js5crc");
 				Static4.anInt3304 = 1000;
 				return;
 			}
-			if (Static7.aClass51_2.anInt1358 >= 4 && (Static4.anInt3304 == 0 || Static4.anInt3304 == 5)) {
-				if (Static7.aClass51_2.anInt1359 == 7 || Static7.aClass51_2.anInt1359 == 9) {
+			if (Static7.aClass51_2.errors >= 4 && (Static4.anInt3304 == 0 || Static4.anInt3304 == 5)) {
+				if (Static7.aClass51_2.state == 7 || Static7.aClass51_2.state == 9) {
 					this.error("js5connect_full");
-				} else if (Static7.aClass51_2.anInt1359 <= 0) {
+				} else if (Static7.aClass51_2.state <= 0) {
 					this.error("js5io");
 				} else {
 					this.error("js5connect");
@@ -781,7 +781,7 @@ public final class client extends GameShell {
 				return;
 			}
 		}
-		Static4.anInt3357 = Static7.aClass51_2.anInt1358;
+		Static4.anInt3357 = Static7.aClass51_2.errors;
 		if (Static2.anInt5721 > 0) {
 			Static2.anInt5721--;
 			return;
@@ -824,7 +824,7 @@ public final class client extends GameShell {
 			}
 			if (Static6.anInt4952 == 4) {
 				@Pc(288) boolean local288 = Static4.anInt3304 == 5 || Static4.anInt3304 == 10 || Static4.anInt3304 == 28;
-				Static7.aClass51_2.method1087(Static3.aClass52_5, !local288);
+				Static7.aClass51_2.start(Static3.aClass52_5, !local288);
 				Static5.aClass197_4 = null;
 				Static6.anInt4952 = 0;
 				Static3.aClass52_5 = null;

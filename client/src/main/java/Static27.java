@@ -563,15 +563,15 @@ public final class Static27 {
 				Static23.method2455();
 			}
 			if (arg0.equalsIgnoreCase("::clientjs5drop")) {
-				Static7.aClass51_2.method1090();
+				Static7.aClass51_2.stop();
 			}
 			if (arg0.equalsIgnoreCase("::serverjs5drop")) {
-				Static7.aClass51_2.method1081();
+				Static7.aClass51_2.closeServer();
 			}
 			if (arg0.equalsIgnoreCase("::breakcon")) {
 				GameShell.signLink.breakConnection();
 				Static3.aClass52_7.breakConnection();
-				Static7.aClass51_2.method1086();
+				Static7.aClass51_2.breakConnection();
 			}
 			if (arg0.equalsIgnoreCase("::replacecanvas")) {
 				GameShell.replaceCanvas = true;
