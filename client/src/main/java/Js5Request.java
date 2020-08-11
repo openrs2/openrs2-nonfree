@@ -17,5 +17,5 @@ public abstract class Js5Request extends SecondaryNode {
 	public abstract byte[] getData();
 
 	@OriginalMember(owner = "client!ng", name = "d", descriptor = "(I)I")
-	public abstract int getReadyPercentage();
+	public abstract int getPercentageComplete();
 }

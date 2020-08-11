@@ -858,7 +858,7 @@ public final class Static20 {
 		}
 		if (Static4.anInt2644 < 10) {
 			if (!Static3.aClass58_65.isFileReady(Static3.aClass4_Sub3_Sub22_3.aString358)) {
-				Static4.anInt2644 = Static5.aClass58_82.getReadyPercentage(Static3.aClass4_Sub3_Sub22_3.aString358) / 10;
+				Static4.anInt2644 = Static5.aClass58_82.getPercentageComplete(Static3.aClass4_Sub3_Sub22_3.aString358) / 10;
 				return;
 			}
 			Static30.method3597();

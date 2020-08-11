@@ -373,7 +373,7 @@ public final class client extends GameShell {
 				Static5.aString243 = LocalisedText.MAINLOAD41B;
 				Static6.anInt4621 = 25;
 			} else {
-				Static5.aString243 = LocalisedText.MAINLOAD41 + Static5.aClass58_80.getReadyPercentage() + "%";
+				Static5.aString243 = LocalisedText.MAINLOAD41 + Static5.aClass58_80.getPercentageComplete() + "%";
 				Static6.anInt4621 = 25;
 			}
 		} else if (Static5.anInt4285 == 45) {
@@ -421,27 +421,27 @@ public final class client extends GameShell {
 			Static5.anInt4285 = 70;
 		} else if (Static5.anInt4285 == 70) {
 			Static2.aClass58_39.fetchAll();
-			@Pc(647) int local647 = Static2.aClass58_39.getReadyPercentage();
+			@Pc(647) int local647 = Static2.aClass58_39.getPercentageComplete();
 			Static4.aClass58_76.fetchAll();
-			local647 += Static4.aClass58_76.getReadyPercentage();
+			local647 += Static4.aClass58_76.getPercentageComplete();
 			Static7.aClass58_96.fetchAll();
-			local647 += Static7.aClass58_96.getReadyPercentage();
+			local647 += Static7.aClass58_96.getPercentageComplete();
 			Static6.aClass58_88.fetchAll();
-			local647 += Static6.aClass58_88.getReadyPercentage();
+			local647 += Static6.aClass58_88.getPercentageComplete();
 			Static5.aClass58_79.fetchAll();
-			local647 += Static5.aClass58_79.getReadyPercentage();
+			local647 += Static5.aClass58_79.getPercentageComplete();
 			Static1.aClass58_1.fetchAll();
-			local647 += Static1.aClass58_1.getReadyPercentage();
+			local647 += Static1.aClass58_1.getPercentageComplete();
 			Static1.aClass58_24.fetchAll();
-			local647 += Static1.aClass58_24.getReadyPercentage();
+			local647 += Static1.aClass58_24.getPercentageComplete();
 			Static1.aClass58_10.fetchAll();
-			local647 += Static1.aClass58_10.getReadyPercentage();
+			local647 += Static1.aClass58_10.getPercentageComplete();
 			Static6.aClass58_87.fetchAll();
-			local647 += Static6.aClass58_87.getReadyPercentage();
+			local647 += Static6.aClass58_87.getPercentageComplete();
 			Static1.aClass58_30.fetchAll();
-			local647 += Static1.aClass58_30.getReadyPercentage();
+			local647 += Static1.aClass58_30.getPercentageComplete();
 			Static7.aClass58_102.fetchAll();
-			local647 += Static7.aClass58_102.getReadyPercentage();
+			local647 += Static7.aClass58_102.getPercentageComplete();
 			if (local647 < 1100) {
 				Static6.anInt4621 = 50;
 				Static5.aString243 = LocalisedText.MAINLOAD70 + local647 / 11 + "%";
@@ -507,7 +507,7 @@ public final class client extends GameShell {
 				Static5.aString243 = LocalisedText.MAINLOAD90B;
 				Static5.anInt4285 = 100;
 			} else {
-				Static5.aString243 = LocalisedText.MAINLOAD90 + Static4.aClass58_68.getReadyPercentage() + "%";
+				Static5.aString243 = LocalisedText.MAINLOAD90 + Static4.aClass58_68.getPercentageComplete() + "%";
 				Static6.anInt4621 = 70;
 			}
 		} else if (Static5.anInt4285 == 100) {
@@ -533,13 +533,13 @@ public final class client extends GameShell {
 			}
 		} else if (Static5.anInt4285 == 130) {
 			if (!Static2.aClass58_27.fetchAll()) {
-				Static5.aString243 = LocalisedText.MAINLOAD130 + Static2.aClass58_27.getReadyPercentage() * 3 / 4 + "%";
+				Static5.aString243 = LocalisedText.MAINLOAD130 + Static2.aClass58_27.getPercentageComplete() * 3 / 4 + "%";
 				Static6.anInt4621 = 85;
 			} else if (!Static4.aClass58_73.fetchAll()) {
-				Static5.aString243 = LocalisedText.MAINLOAD130 + (Static4.aClass58_73.getReadyPercentage() / 10 + 75) + "%";
+				Static5.aString243 = LocalisedText.MAINLOAD130 + (Static4.aClass58_73.getPercentageComplete() / 10 + 75) + "%";
 				Static6.anInt4621 = 85;
 			} else if (!Static4.aClass58_67.fetchAll()) {
-				Static5.aString243 = LocalisedText.MAINLOAD130 + (Static4.aClass58_67.getReadyPercentage() / 20 + 85) + "%";
+				Static5.aString243 = LocalisedText.MAINLOAD130 + (Static4.aClass58_67.getPercentageComplete() / 20 + 85) + "%";
 				Static6.anInt4621 = 85;
 			} else if (Static5.aClass58_82.isFileReady("details")) {
 				Static19.method2393(Static5.aClass58_82);
@@ -549,7 +549,7 @@ public final class client extends GameShell {
 				Static6.anInt4621 = 95;
 				Static5.aString243 = LocalisedText.MAINLOAD130B;
 			} else {
-				Static5.aString243 = LocalisedText.MAINLOAD130 + (Static5.aClass58_82.getReadyPercentage("details") / 10 + 90) + "%";
+				Static5.aString243 = LocalisedText.MAINLOAD130 + (Static5.aClass58_82.getPercentageComplete("details") / 10 + 90) + "%";
 				Static6.anInt4621 = 85;
 			}
 		} else if (Static5.anInt4285 == 135) {

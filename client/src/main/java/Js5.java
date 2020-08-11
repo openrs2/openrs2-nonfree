@@ -56,11 +56,11 @@ public final class Js5 {
 	}
 
 	@OriginalMember(owner = "client!fh", name = "a", descriptor = "(Ljava/lang/String;B)I")
-	public final int getReadyPercentage(@OriginalArg(0) String group) {
+	public final int getPercentageComplete(@OriginalArg(0) String group) {
 		if (this.isIndexReady()) {
 			group = group.toLowerCase();
 			@Pc(30) int groupId = this.index.groupNameHashTable.get(StringUtils.hashCode(group));
-			return this.getReadyPercentage(groupId);
+			return this.getPercentageComplete(groupId);
 		} else {
 			return 0;
 		}
@@ -93,7 +93,7 @@ public final class Js5 {
 	}
 
 	@OriginalMember(owner = "client!fh", name = "a", descriptor = "(I)I")
-	public final int getReadyPercentage() {
+	public final int getPercentageComplete() {
 		if (!this.isIndexReady()) {
 			return 0;
 		}
@@ -101,7 +101,7 @@ public final class Js5 {
 		@Pc(15) int complete = 0;
 		for (@Pc(17) int i = 0; i < this.packed.length; i++) {
 			if (this.index.groupSizes[i] > 0) {
-				complete += this.getReadyPercentage(i);
+				complete += this.getPercentageComplete(i);
 				total += 100;
 			}
 		}
@@ -113,9 +113,9 @@ public final class Js5 {
 	}
 
 	@OriginalMember(owner = "client!fh", name = "b", descriptor = "(II)I")
-	private int getReadyPercentage(@OriginalArg(0) int group) {
+	private int getPercentageComplete(@OriginalArg(0) int group) {
 		if (this.isGroupValid(group)) {
-			return this.packed[group] == null ? this.aClass62_1.getReadyPercentage(group) : 100;
+			return this.packed[group] == null ? this.aClass62_1.getPercentageComplete(group) : 100;
 		} else {
 			return 0;
 		}

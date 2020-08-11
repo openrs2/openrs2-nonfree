@@ -10,7 +10,7 @@ public abstract class Class62 {
 	}
 
 	@OriginalMember(owner = "client!ga", name = "a", descriptor = "(II)I")
-	public abstract int getReadyPercentage(@OriginalArg(0) int group);
+	public abstract int getPercentageComplete(@OriginalArg(0) int group);
 
 	@OriginalMember(owner = "client!ga", name = "b", descriptor = "(II)V")
 	public abstract void prefetchGroup(@OriginalArg(0) int group);

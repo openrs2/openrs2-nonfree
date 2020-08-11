@@ -15,7 +15,7 @@ public final class Js5NetRequest extends Js5Request {
 
 	@OriginalMember(owner = "client!ul", name = "d", descriptor = "(I)I")
 	@Override
-	public final int getReadyPercentage() {
+	public final int getPercentageComplete() {
 		return this.data == null ? 0 : this.data.position * 100 / (this.data.bytes.length - this.trailerLen);
 	}
 

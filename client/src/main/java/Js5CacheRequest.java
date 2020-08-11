@@ -15,7 +15,7 @@ public final class Js5CacheRequest extends Js5Request {
 
 	@OriginalMember(owner = "client!al", name = "d", descriptor = "(I)I")
 	@Override
-	public final int getReadyPercentage() {
+	public final int getPercentageComplete() {
 		return this.incomplete ? 0 : 100;
 	}
 

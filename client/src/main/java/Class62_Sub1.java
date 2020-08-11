@@ -161,7 +161,7 @@ public final class Class62_Sub1 extends Class62 {
 	@OriginalMember(owner = "client!wb", name = "b", descriptor = "(B)I")
 	public final int method4664() {
 		if (this.fetchIndex() == null) {
-			return this.aClass4_Sub3_Sub1_1 == null ? 0 : this.aClass4_Sub3_Sub1_1.getReadyPercentage();
+			return this.aClass4_Sub3_Sub1_1 == null ? 0 : this.aClass4_Sub3_Sub1_1.getPercentageComplete();
 		} else {
 			return 100;
 		}
@@ -241,9 +241,9 @@ public final class Class62_Sub1 extends Class62 {
 
 	@OriginalMember(owner = "client!wb", name = "a", descriptor = "(II)I")
 	@Override
-	public final int getReadyPercentage(@OriginalArg(0) int group) {
+	public final int getPercentageComplete(@OriginalArg(0) int group) {
 		@Pc(9) Js5Request local9 = (Js5Request) this.aClass84_27.get((long) group);
-		return local9 == null ? 0 : local9.getReadyPercentage();
+		return local9 == null ? 0 : local9.getPercentageComplete();
 	}
 
 	@OriginalMember(owner = "client!wb", name = "a", descriptor = "(III)Lclient!ng;")
