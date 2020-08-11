@@ -704,7 +704,7 @@ public final class Static3 {
 	public static final HashTable aClass84_14 = new HashTable(16);
 
 	@OriginalMember(owner = "client!ii", name = "c", descriptor = "Lclient!uk;")
-	public static final Class175 aClass175_12 = new Class175();
+	public static final SecondaryLinkedList aClass175_12 = new SecondaryLinkedList();
 
 	@OriginalMember(owner = "client!ii", name = "j", descriptor = "I")
 	public static final int anInt2963 = (int) (Math.random() * 17.0D) - 8;
@@ -806,7 +806,7 @@ public final class Static3 {
 	public static final LinkedList aClass112_14 = new LinkedList();
 
 	@OriginalMember(owner = "client!jh", name = "h", descriptor = "Lclient!uk;")
-	public static final Class175 aClass175_11 = new Class175();
+	public static final SecondaryLinkedList aClass175_11 = new SecondaryLinkedList();
 
 	@OriginalMember(owner = "client!jh", name = "j", descriptor = "[I")
 	public static final int[] anIntArray225 = new int[32];

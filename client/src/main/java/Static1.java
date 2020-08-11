@@ -405,7 +405,7 @@ public final class Static1 {
 	public static final Class160[] aClass160Array1 = new Class160[6];
 
 	@OriginalMember(owner = "client!bh", name = "b", descriptor = "Lclient!uk;")
-	public static final Class175 aClass175_4 = new Class175();
+	public static final SecondaryLinkedList aClass175_4 = new SecondaryLinkedList();
 
 	@OriginalMember(owner = "client!bh", name = "d", descriptor = "I")
 	public static int anInt1047 = -1;

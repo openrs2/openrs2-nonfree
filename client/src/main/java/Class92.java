@@ -7,7 +7,7 @@ import dev.openrs2.deob.annotation.Pc;
 public final class Class92 implements Runnable {
 
 	@OriginalMember(owner = "client!ja", name = "h", descriptor = "Lclient!uk;")
-	private final Class175 aClass175_10 = new Class175();
+	private final SecondaryLinkedList aClass175_10 = new SecondaryLinkedList();
 
 	@OriginalMember(owner = "client!ja", name = "m", descriptor = "Z")
 	private boolean aBoolean174 = false;
@@ -36,7 +36,7 @@ public final class Class92 implements Runnable {
 		while (!this.aBoolean174) {
 			@Pc(15) Class4_Sub3_Sub1_Sub1 local15;
 			synchronized (this.aClass175_10) {
-				local15 = (Class4_Sub3_Sub1_Sub1) this.aClass175_10.method4336();
+				local15 = (Class4_Sub3_Sub1_Sub1) this.aClass175_10.removeHead();
 				if (local15 == null) {
 					try {
 						this.aClass175_10.wait();
@@ -98,7 +98,7 @@ public final class Class92 implements Runnable {
 	@OriginalMember(owner = "client!ja", name = "a", descriptor = "(ILclient!al;)V")
 	private void method1972(@OriginalArg(1) Class4_Sub3_Sub1_Sub1 arg0) {
 		synchronized (this.aClass175_10) {
-			this.aClass175_10.method4333(arg0);
+			this.aClass175_10.addTail(arg0);
 			this.anInt2520++;
 			this.aClass175_10.notifyAll();
 		}
@@ -109,7 +109,7 @@ public final class Class92 implements Runnable {
 		@Pc(5) Class4_Sub3_Sub1_Sub1 local5 = new Class4_Sub3_Sub1_Sub1();
 		local5.anInt181 = 1;
 		synchronized (this.aClass175_10) {
-			@Pc(23) Class4_Sub3_Sub1_Sub1 local23 = (Class4_Sub3_Sub1_Sub1) this.aClass175_10.method4332();
+			@Pc(23) Class4_Sub3_Sub1_Sub1 local23 = (Class4_Sub3_Sub1_Sub1) this.aClass175_10.head();
 			while (true) {
 				if (local23 == null) {
 					break;
@@ -119,7 +119,7 @@ public final class Class92 implements Runnable {
 					local5.aBoolean364 = false;
 					return local5;
 				}
-				local23 = (Class4_Sub3_Sub1_Sub1) this.aClass175_10.method4340();
+				local23 = (Class4_Sub3_Sub1_Sub1) this.aClass175_10.next();
 			}
 		}
 		local5.aByteArray3 = arg0.read(arg1);

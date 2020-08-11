@@ -166,7 +166,7 @@ public final class Static20 {
 											local236.anInt1763 = local202;
 											local236.anInt1768 = local68 * 64 + local74;
 											local236.anInt1769 = local72 * 64 + 64 - local79;
-											Static3.aClass175_12.method4333(local236);
+											Static3.aClass175_12.addTail(local236);
 										}
 									}
 								}
@@ -724,7 +724,7 @@ public final class Static20 {
 	@OriginalMember(owner = "client!ii", name = "b", descriptor = "(IIII)Lclient!ll;")
 	public static LinkedList method2410(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
 		@Pc(3) LinkedList local3 = new LinkedList();
-		for (@Pc(8) Class4_Sub3_Sub7 local8 = (Class4_Sub3_Sub7) Static3.aClass175_12.method4332(); local8 != null; local8 = (Class4_Sub3_Sub7) Static3.aClass175_12.method4340()) {
+		for (@Pc(8) Class4_Sub3_Sub7 local8 = (Class4_Sub3_Sub7) Static3.aClass175_12.head(); local8 != null; local8 = (Class4_Sub3_Sub7) Static3.aClass175_12.next()) {
 			method2404(local8, arg0, arg1);
 			local3.addTail(local8);
 		}

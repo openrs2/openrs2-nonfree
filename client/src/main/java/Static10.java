@@ -461,7 +461,7 @@ public final class Static10 {
 		Static3.aByteArrayArrayArray11 = null;
 		Static3.aByteArrayArrayArray13 = null;
 		Static3.aClass4_Sub3_Sub22_3 = null;
-		Static3.aClass175_12.method4337();
+		Static3.aClass175_12.clear();
 		Static4.aClass106_5 = null;
 		Static6.aClass106_8 = null;
 		Static1.aClass106_1 = null;

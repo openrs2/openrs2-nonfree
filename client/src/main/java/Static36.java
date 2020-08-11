@@ -636,7 +636,7 @@ public final class Static36 {
 		} else {
 			local255 = Static5.anInt4215 * 5;
 		}
-		for (@Pc(266) Class4_Sub3_Sub7 local266 = (Class4_Sub3_Sub7) Static3.aClass175_12.method4332(); local266 != null; local266 = (Class4_Sub3_Sub7) Static3.aClass175_12.method4340()) {
+		for (@Pc(266) Class4_Sub3_Sub7 local266 = (Class4_Sub3_Sub7) Static3.aClass175_12.head(); local266 != null; local266 = (Class4_Sub3_Sub7) Static3.aClass175_12.next()) {
 			@Pc(273) Class82 local273 = Static22.method2191(local266.anInt1760);
 			if (Static8.method120(local273)) {
 				if (local266.anInt1760 == Static5.anInt3920) {

@@ -35,14 +35,14 @@ public final class Class4_Sub3_Sub9 extends SecondaryNode {
 	@OriginalMember(owner = "client!g", name = "e", descriptor = "(B)V")
 	public final void method1519() {
 		this.secondaryKey = MonotonicClock.currentTimeMillis() + 500L | this.secondaryKey & Long.MIN_VALUE;
-		Static1.aClass175_4.method4333(this);
+		Static1.aClass175_4.addTail(this);
 	}
 
 	@OriginalMember(owner = "client!g", name = "f", descriptor = "(B)V")
 	public final void method1520() {
 		this.secondaryKey |= Long.MIN_VALUE;
 		if (this.method1522() == 0L) {
-			Static3.aClass175_11.method4333(this);
+			Static3.aClass175_11.addTail(this);
 		}
 	}
 

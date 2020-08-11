@@ -21,16 +21,16 @@ public final class Class51 {
 	private Class4_Sub3_Sub1_Sub2 aClass4_Sub3_Sub1_Sub2_1;
 
 	@OriginalMember(owner = "client!en", name = "t", descriptor = "Lclient!uk;")
-	private final Class175 aClass175_5 = new Class175();
+	private final SecondaryLinkedList aClass175_5 = new SecondaryLinkedList();
 
 	@OriginalMember(owner = "client!en", name = "w", descriptor = "Lclient!uk;")
-	private final Class175 aClass175_6 = new Class175();
+	private final SecondaryLinkedList aClass175_6 = new SecondaryLinkedList();
 
 	@OriginalMember(owner = "client!en", name = "x", descriptor = "Lclient!uk;")
-	private final Class175 aClass175_7 = new Class175();
+	private final SecondaryLinkedList aClass175_7 = new SecondaryLinkedList();
 
 	@OriginalMember(owner = "client!en", name = "y", descriptor = "Lclient!uk;")
-	private final Class175 aClass175_8 = new Class175();
+	private final SecondaryLinkedList aClass175_8 = new SecondaryLinkedList();
 
 	@OriginalMember(owner = "client!en", name = "A", descriptor = "Lclient!fd;")
 	private final Buffer aClass4_Sub10_1 = new Buffer(4);
@@ -49,7 +49,7 @@ public final class Class51 {
 
 	@OriginalMember(owner = "client!en", name = "a", descriptor = "(I)I")
 	private int method1080() {
-		return this.aClass175_7.method4334() + this.aClass175_8.method4334();
+		return this.aClass175_7.size() + this.aClass175_8.size();
 	}
 
 	@OriginalMember(owner = "client!en", name = "b", descriptor = "(I)V")
@@ -100,10 +100,10 @@ public final class Class51 {
 		this.aClass4_Sub3_Sub1_Sub2_1 = null;
 		this.aClass4_Sub10_2.position = 0;
 		while (true) {
-			@Pc(41) Class4_Sub3_Sub1_Sub2 local41 = (Class4_Sub3_Sub1_Sub2) this.aClass175_6.method4336();
+			@Pc(41) Class4_Sub3_Sub1_Sub2 local41 = (Class4_Sub3_Sub1_Sub2) this.aClass175_6.removeHead();
 			if (local41 == null) {
 				while (true) {
-					@Pc(64) Class4_Sub3_Sub1_Sub2 local64 = (Class4_Sub3_Sub1_Sub2) this.aClass175_8.method4336();
+					@Pc(64) Class4_Sub3_Sub1_Sub2 local64 = (Class4_Sub3_Sub1_Sub2) this.aClass175_8.removeHead();
 					if (local64 == null) {
 						if (this.aByte2 != 0) {
 							try {
@@ -126,10 +126,10 @@ public final class Class51 {
 						this.aLong54 = MonotonicClock.currentTimeMillis();
 						return;
 					}
-					this.aClass175_7.method4333(local64);
+					this.aClass175_7.addTail(local64);
 				}
 			}
-			this.aClass175_5.method4333(local41);
+			this.aClass175_5.addTail(local41);
 		}
 	}
 
@@ -144,9 +144,9 @@ public final class Class51 {
 			if (this.method1092() >= 20) {
 				throw new RuntimeException();
 			}
-			this.aClass175_5.method4333(local20);
+			this.aClass175_5.addTail(local20);
 		} else if (this.method1080() < 20) {
-			this.aClass175_7.method4333(local20);
+			this.aClass175_7.addTail(local20);
 		} else {
 			throw new RuntimeException();
 		}
@@ -174,7 +174,7 @@ public final class Class51 {
 
 	@OriginalMember(owner = "client!en", name = "a", descriptor = "(Z)I")
 	public final int method1092() {
-		return this.aClass175_5.method4334() + this.aClass175_6.method4334();
+		return this.aClass175_5.size() + this.aClass175_6.size();
 	}
 
 	@OriginalMember(owner = "client!en", name = "a", descriptor = "(BZ)V")
@@ -247,19 +247,19 @@ public final class Class51 {
 		}
 		try {
 			this.aClass52_2.checkError();
-			for (@Pc(87) Class4_Sub3_Sub1_Sub2 local87 = (Class4_Sub3_Sub1_Sub2) this.aClass175_5.method4332(); local87 != null; local87 = (Class4_Sub3_Sub1_Sub2) this.aClass175_5.method4340()) {
+			for (@Pc(87) Class4_Sub3_Sub1_Sub2 local87 = (Class4_Sub3_Sub1_Sub2) this.aClass175_5.head(); local87 != null; local87 = (Class4_Sub3_Sub1_Sub2) this.aClass175_5.next()) {
 				this.aClass4_Sub10_1.position = 0;
 				this.aClass4_Sub10_1.writeByte(1);
 				this.aClass4_Sub10_1.writeMedium((int) local87.secondaryKey);
 				this.aClass52_2.write(this.aClass4_Sub10_1.bytes, 4);
-				this.aClass175_6.method4333(local87);
+				this.aClass175_6.addTail(local87);
 			}
-			for (@Pc(146) Class4_Sub3_Sub1_Sub2 local146 = (Class4_Sub3_Sub1_Sub2) this.aClass175_7.method4332(); local146 != null; local146 = (Class4_Sub3_Sub1_Sub2) this.aClass175_7.method4340()) {
+			for (@Pc(146) Class4_Sub3_Sub1_Sub2 local146 = (Class4_Sub3_Sub1_Sub2) this.aClass175_7.head(); local146 != null; local146 = (Class4_Sub3_Sub1_Sub2) this.aClass175_7.next()) {
 				this.aClass4_Sub10_1.position = 0;
 				this.aClass4_Sub10_1.writeByte(0);
 				this.aClass4_Sub10_1.writeMedium((int) local146.secondaryKey);
 				this.aClass52_2.write(this.aClass4_Sub10_1.bytes, 4);
-				this.aClass175_8.method4333(local146);
+				this.aClass175_8.addTail(local146);
 			}
 			for (@Pc(188) int local188 = 0; local188 < 100; local188++) {
 				@Pc(198) int local198 = this.aClass52_2.available();
@@ -327,10 +327,10 @@ public final class Class51 {
 							@Pc(510) long local510 = (long) (local478 + (local473 << 16));
 							@Pc(520) Class4_Sub3_Sub1_Sub2 local520;
 							if (local498) {
-								for (local520 = (Class4_Sub3_Sub1_Sub2) this.aClass175_8.method4332(); local520 != null && local520.secondaryKey != local510; local520 = (Class4_Sub3_Sub1_Sub2) this.aClass175_8.method4340()) {
+								for (local520 = (Class4_Sub3_Sub1_Sub2) this.aClass175_8.head(); local520 != null && local520.secondaryKey != local510; local520 = (Class4_Sub3_Sub1_Sub2) this.aClass175_8.next()) {
 								}
 							} else {
-								for (local520 = (Class4_Sub3_Sub1_Sub2) this.aClass175_6.method4332(); local520 != null && local510 != local520.secondaryKey; local520 = (Class4_Sub3_Sub1_Sub2) this.aClass175_6.method4340()) {
+								for (local520 = (Class4_Sub3_Sub1_Sub2) this.aClass175_6.head(); local520 != null && local510 != local520.secondaryKey; local520 = (Class4_Sub3_Sub1_Sub2) this.aClass175_6.next()) {
 								}
 							}
 							if (local520 == null) {

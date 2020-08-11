@@ -689,7 +689,7 @@ public final class Static26 {
 
 	@OriginalMember(owner = "client!nh", name = "d", descriptor = "(B)Lclient!g;")
 	public static Class4_Sub3_Sub9 method2984() {
-		@Pc(10) Class4_Sub3_Sub9 local10 = (Class4_Sub3_Sub9) Static3.aClass175_11.method4332();
+		@Pc(10) Class4_Sub3_Sub9 local10 = (Class4_Sub3_Sub9) Static3.aClass175_11.head();
 		if (local10 != null) {
 			local10.unlink();
 			local10.unlinkSecondary();
@@ -697,7 +697,7 @@ public final class Static26 {
 		}
 		@Pc(35) Class4_Sub3_Sub9 local35;
 		do {
-			local35 = (Class4_Sub3_Sub9) Static1.aClass175_4.method4332();
+			local35 = (Class4_Sub3_Sub9) Static1.aClass175_4.head();
 			if (local35 == null) {
 				return null;
 			}

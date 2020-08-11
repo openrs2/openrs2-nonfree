@@ -520,11 +520,11 @@ public final class Static19 {
 	}
 
 	@OriginalMember(owner = "client!ii", name = "b", descriptor = "(II)Lclient!uk;")
-	public static Class175 method2395(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
-		@Pc(3) Class175 local3 = new Class175();
+	public static SecondaryLinkedList method2395(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
+		@Pc(3) SecondaryLinkedList local3 = new SecondaryLinkedList();
 		for (@Pc(8) Class4_Sub3_Sub22 local8 = (Class4_Sub3_Sub22) Static3.aClass84_14.head(); local8 != null; local8 = (Class4_Sub3_Sub22) Static3.aClass84_14.next()) {
 			if (local8.aBoolean420 && local8.method4754(arg0, arg1)) {
-				local3.method4333(local8);
+				local3.addTail(local8);
 			}
 		}
 		return local3;
@@ -831,7 +831,7 @@ public final class Static19 {
 	public static void method2400() {
 		for (@Pc(1) int local1 = 0; local1 < Static3.aClass138_6.anInt4219; local1++) {
 			if (Static3.aClass138_6.aClass4_Sub3_Sub7Array1[local1] != null) {
-				Static3.aClass175_12.method4333(Static3.aClass138_6.aClass4_Sub3_Sub7Array1[local1]);
+				Static3.aClass175_12.addTail(Static3.aClass138_6.aClass4_Sub3_Sub7Array1[local1]);
 			}
 		}
 	}

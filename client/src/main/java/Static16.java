@@ -3559,9 +3559,9 @@ public final class Static16 {
 									@Pc(9792) int local9792 = local5 - 2;
 									@Pc(9798) int local9798 = Static7.anIntArray571[local9792 + 1];
 									@Pc(9802) int local9802 = Static7.anIntArray571[local9792];
-									@Pc(9812) Class175 local9812 = Static19.method2395(local9802 >> 14 & 0x3FFF, local9802 & 0x3FFF);
+									@Pc(9812) SecondaryLinkedList local9812 = Static19.method2395(local9802 >> 14 & 0x3FFF, local9802 & 0x3FFF);
 									@Pc(9814) boolean local9814 = false;
-									for (@Pc(9819) Class4_Sub3_Sub22 local9819 = (Class4_Sub3_Sub22) local9812.method4332(); local9819 != null; local9819 = (Class4_Sub3_Sub22) local9812.method4340()) {
+									for (@Pc(9819) Class4_Sub3_Sub22 local9819 = (Class4_Sub3_Sub22) local9812.head(); local9819 != null; local9819 = (Class4_Sub3_Sub22) local9812.next()) {
 										if (local9819.anInt5993 == local9798) {
 											local9814 = true;
 											break;
@@ -5039,8 +5039,8 @@ public final class Static16 {
 	@OriginalMember(owner = "client!gf", name = "b", descriptor = "(B)V")
 	public static void method1566() {
 		Static3.aClass84_8.clear();
-		Static1.aClass175_4.method4337();
-		Static3.aClass175_11.method4337();
+		Static1.aClass175_4.clear();
+		Static3.aClass175_11.clear();
 	}
 
 	@OriginalMember(owner = "client!gg", name = "c", descriptor = "(I)V")

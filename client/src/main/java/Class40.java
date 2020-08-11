@@ -10,7 +10,7 @@ public final class Class40 {
 	private SecondaryNode aClass4_Sub3_18 = new SecondaryNode();
 
 	@OriginalMember(owner = "client!dj", name = "o", descriptor = "Lclient!uk;")
-	private final Class175 aClass175_3 = new Class175();
+	private final SecondaryLinkedList aClass175_3 = new SecondaryLinkedList();
 
 	@OriginalMember(owner = "client!dj", name = "r", descriptor = "I")
 	private int anInt1044;
@@ -39,11 +39,11 @@ public final class Class40 {
 	@OriginalMember(owner = "client!dj", name = "a", descriptor = "(JILclient!lh;)V")
 	public final void method888(@OriginalArg(0) long arg0, @OriginalArg(2) SecondaryNode arg1) {
 		if (this.anInt1044 == 0) {
-			@Pc(15) SecondaryNode local15 = this.aClass175_3.method4336();
+			@Pc(15) SecondaryNode local15 = this.aClass175_3.removeHead();
 			local15.unlink();
 			local15.unlinkSecondary();
 			if (this.aClass4_Sub3_18 == local15) {
-				@Pc(31) SecondaryNode local31 = this.aClass175_3.method4336();
+				@Pc(31) SecondaryNode local31 = this.aClass175_3.removeHead();
 				local31.unlink();
 				local31.unlinkSecondary();
 			}
@@ -51,14 +51,14 @@ public final class Class40 {
 			this.anInt1044--;
 		}
 		this.aClass84_4.put(arg0, arg1);
-		this.aClass175_3.method4333(arg1);
+		this.aClass175_3.addTail(arg1);
 	}
 
 	@OriginalMember(owner = "client!dj", name = "a", descriptor = "(IJ)Lclient!lh;")
 	public final SecondaryNode method889(@OriginalArg(1) long arg0) {
 		@Pc(18) SecondaryNode local18 = (SecondaryNode) this.aClass84_4.get(arg0);
 		if (local18 != null) {
-			this.aClass175_3.method4333(local18);
+			this.aClass175_3.addTail(local18);
 		}
 		return local18;
 	}
@@ -70,7 +70,7 @@ public final class Class40 {
 
 	@OriginalMember(owner = "client!dj", name = "a", descriptor = "(B)V")
 	public final void method893() {
-		this.aClass175_3.method4337();
+		this.aClass175_3.clear();
 		this.aClass84_4.clear();
 		this.aClass4_Sub3_18 = new SecondaryNode();
 		this.anInt1044 = this.anInt1045;
