@@ -1161,27 +1161,6 @@ public final class Static35 {
 		}
 	}
 
-	@OriginalMember(owner = "client!ug", name = "a", descriptor = "(IJ)Ljava/lang/String;")
-	public static String method4319(@OriginalArg(1) long arg0) {
-		if (arg0 <= 0L || arg0 >= 6582952005840035281L) {
-			return null;
-		} else if (arg0 % 37L == 0L) {
-			return null;
-		} else {
-			@Pc(31) int local31 = 0;
-			for (@Pc(33) long local33 = arg0; local33 != 0L; local33 /= 37L) {
-				local31++;
-			}
-			@Pc(49) StringBuffer local49 = new StringBuffer(local31);
-			while (arg0 != 0L) {
-				@Pc(57) long local57 = arg0;
-				arg0 /= 37L;
-				local49.append(Static4.aCharArray1[(int) (local57 - arg0 * 37L)]);
-			}
-			return local49.reverse().toString();
-		}
-	}
-
 	@OriginalMember(owner = "client!ug", name = "d", descriptor = "(I)V")
 	public static void method4321() {
 		for (@Pc(14) Class4_Sub3_Sub6 local14 = (Class4_Sub3_Sub6) Static2.aClass112_8.head(); local14 != null; local14 = (Class4_Sub3_Sub6) Static2.aClass112_8.next()) {
@@ -1668,7 +1647,7 @@ public final class Static35 {
 				Static5.aClass4_Sub10_Sub1_2.position = 0;
 				Static3.aClass52_7.read(Static5.aClass4_Sub10_Sub1_2.bytes, 0, Static2.aStringArray8.length * 8);
 				for (@Pc(199) int local199 = 0; local199 < Static2.aStringArray8.length; local199++) {
-					Static2.aStringArray8[local199] = method4319(Static5.aClass4_Sub10_Sub1_2.readLong());
+					Static2.aStringArray8[local199] = Base37.decodeLowerCase(Static5.aClass4_Sub10_Sub1_2.readLong());
 				}
 				Static6.anInt4759 = 0;
 				Static6.anInt5173 = 21;

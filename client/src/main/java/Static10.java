@@ -434,7 +434,7 @@ public final class Static10 {
 
 	@OriginalMember(owner = "client!bn", name = "a", descriptor = "(ILclient!f;)V")
 	public static void method383(@OriginalArg(1) Class53_Sub1_Sub1 arg0) {
-		@Pc(20) Class4_Sub11 local20 = (Class4_Sub11) Static5.aClass84_18.get(Static18.method1746(arg0.aString88));
+		@Pc(20) Class4_Sub11 local20 = (Class4_Sub11) Static5.aClass84_18.get(Base37.encode(arg0.aString88));
 		if (local20 == null) {
 			Static8.method109(null, arg0.anIntArray422[0], null, arg0.anIntArray426[0], arg0, 0, Static7.anInt5334);
 		} else {
@@ -720,7 +720,7 @@ public final class Static10 {
 				arg0.anInt5944 = 150;
 				arg0.anInt5976 = (int) (Math.sin((double) Static2.anInt954 / 40.0D) * 256.0D) & 0x7FF;
 				arg0.anInt5939 = 5;
-				arg0.anInt5895 = ((int) Static18.method1746(Static4.aClass53_Sub1_Sub1_2.aString88) << 11) + 2047;
+				arg0.anInt5895 = ((int) Base37.encode(Static4.aClass53_Sub1_Sub1_2.aString88) << 11) + 2047;
 				arg0.anInt5892 = Static4.aClass53_Sub1_Sub1_2.anInt4046;
 				arg0.anInt5891 = Static4.aClass53_Sub1_Sub1_2.anInt4005;
 				arg0.anInt5979 = Static4.aClass53_Sub1_Sub1_2.anInt4019;

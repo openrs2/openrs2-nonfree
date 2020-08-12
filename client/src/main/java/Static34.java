@@ -686,7 +686,7 @@ public final class Static34 {
 			return;
 		}
 		@Pc(16) int local16 = 0;
-		@Pc(20) long local20 = Static18.method1746(arg0);
+		@Pc(20) long local20 = Base37.encode(arg0);
 		if (local20 == 0L) {
 			return;
 		}

@@ -943,27 +943,4 @@ public final class Static18 {
 		}
 	}
 
-	@OriginalMember(owner = "client!hi", name = "a", descriptor = "(ILjava/lang/String;)J")
-	public static long method1746(@OriginalArg(1) String arg0) {
-		@Pc(3) long local3 = 0L;
-		@Pc(15) int local15 = arg0.length();
-		for (@Pc(17) int local17 = 0; local17 < local15; local17++) {
-			local3 *= 37L;
-			@Pc(32) char local32 = arg0.charAt(local17);
-			if (local32 >= 'A' && local32 <= 'Z') {
-				local3 += local32 + 1 - 65;
-			} else if (local32 >= 'a' && local32 <= 'z') {
-				local3 += local32 + 1 - 97;
-			} else if (local32 >= '0' && local32 <= '9') {
-				local3 += local32 + 27 - 48;
-			}
-			if (local3 >= 177917621779460413L) {
-				break;
-			}
-		}
-		while (local3 % 37L == 0L && local3 != 0L) {
-			local3 /= 37L;
-		}
-		return local3;
-	}
 }

@@ -107,7 +107,7 @@ public final class Class53_Sub1_Sub1 extends Class53_Sub1 {
 		}
 		this.anInt3986 = arg0.readUnsignedShort();
 		@Pc(242) long local242 = arg0.readLong();
-		this.aString88 = Static29.method3477(local242);
+		this.aString88 = Base37.decodeTitleCase(local242);
 		this.anInt1597 = arg0.readUnsignedByte();
 		if (local31) {
 			this.anInt1584 = arg0.readUnsignedShort();

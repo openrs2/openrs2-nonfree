@@ -533,7 +533,7 @@ public final class Static8 {
 			local9.anInt2115 = Static10.method396(arg4);
 			local9.anInt2127 = arg4.anInt1587;
 			local9.anInt2123 = arg4.anInt1582 * 128;
-			Static5.aClass84_18.put(Static18.method1746(arg4.aString88), local9);
+			Static5.aClass84_18.put(Base37.encode(arg4.aString88), local9);
 		}
 	}
 

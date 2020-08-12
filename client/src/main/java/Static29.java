@@ -838,7 +838,7 @@ public final class Static29 {
 
 	@OriginalMember(owner = "client!pk", name = "a", descriptor = "(Ljava/lang/String;Z)Ljava/lang/String;")
 	public static String method3464(@OriginalArg(0) String arg0) {
-		@Pc(15) String local15 = method3477(Static18.method1746(arg0));
+		@Pc(15) String local15 = Base37.decodeTitleCase(Base37.encode(arg0));
 		if (local15 == null) {
 			local15 = "";
 		}
@@ -1474,35 +1474,6 @@ public final class Static29 {
 				local1562 = Static19.method1813(local1550.anInt5937);
 			} while (local1562 == null || local1562.aClass185Array4 == null || local1562.aClass185Array4.length <= local1550.anInt5968 || local1562.aClass185Array4[local1550.anInt5968] != local1550);
 			Static21.method2019(local1542);
-		}
-	}
-
-	@OriginalMember(owner = "client!pn", name = "a", descriptor = "(ZJ)Ljava/lang/String;")
-	public static String method3477(@OriginalArg(1) long arg0) {
-		if (arg0 <= 0L || arg0 >= 6582952005840035281L) {
-			return null;
-		} else if (arg0 % 37L == 0L) {
-			return null;
-		} else {
-			@Pc(45) int local45 = 0;
-			for (@Pc(47) long local47 = arg0; local47 != 0L; local47 /= 37L) {
-				local45++;
-			}
-			@Pc(63) StringBuffer local63 = new StringBuffer(local45);
-			while (arg0 != 0L) {
-				@Pc(71) long local71 = arg0;
-				arg0 /= 37L;
-				@Pc(85) char local85 = Static4.aCharArray1[(int) (local71 - arg0 * 37L)];
-				if (local85 == '_') {
-					local85 = ' ';
-					@Pc(95) int local95 = local63.length() - 1;
-					local63.setCharAt(local95, Character.toUpperCase(local63.charAt(local95)));
-				}
-				local63.append(local85);
-			}
-			local63.reverse();
-			local63.setCharAt(0, Character.toUpperCase(local63.charAt(0)));
-			return local63.toString();
 		}
 	}
 

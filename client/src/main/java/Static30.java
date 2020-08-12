@@ -749,7 +749,7 @@ public final class Static30 {
 											}
 											@Pc(2827) Class53_Sub1_Sub1 local2827 = Static5.aClass53_Sub1_Sub1Array1[local2817];
 											@Pc(2838) Class46 local2838 = local2670 == -1 ? null : Static23.method2494(local2670);
-											if (local2827 != null && (int) Static18.method1746(local2827.aString88) << 11 == (local38.anInt5895 & 0xFFFFF800)) {
+											if (local2827 != null && (int) Base37.encode(local2827.aString88) << 11 == (local38.anInt5895 & 0xFFFFF800)) {
 												local2665 = local2827.aClass144_2.method3608(null, 0, -1, -1, null, local38.anInt5892, false, 0, local2838, true, 0);
 											}
 										}
@@ -1020,7 +1020,7 @@ public final class Static30 {
 			@Pc(248) int local248 = Static5.aClass4_Sub10_Sub1_2.readUnsignedByteS();
 			@Pc(251) int local251 = Static5.aClass4_Sub10_Sub1_2.position;
 			if (arg2.aString88 != null && arg2.aClass144_2 != null) {
-				@Pc(264) long local264 = Static18.method1746(arg2.aString88);
+				@Pc(264) long local264 = Base37.encode(arg2.aString88);
 				@Pc(266) boolean local266 = false;
 				if (local236 <= 1) {
 					if (!local244 && (Static1.aBoolean47 && !Static5.aBoolean287 || Static2.aBoolean67)) {
@@ -1316,7 +1316,7 @@ public final class Static30 {
 
 	@OriginalMember(owner = "client!qi", name = "a", descriptor = "(IJ)Ljava/lang/String;")
 	public static String method423(@OriginalArg(1) long arg0) {
-		return Static35.method4319(arg0);
+		return Base37.decodeLowerCase(arg0);
 	}
 
 	@OriginalMember(owner = "client!qj", name = "c", descriptor = "(II)V")
@@ -1437,7 +1437,7 @@ public final class Static30 {
 				}
 				Static3.aClass52_7 = new BufferedSocket((Socket) Static7.aClass197_5.result, GameShell.signLink);
 				Static7.aClass197_5 = null;
-				@Pc(111) long local111 = Static1.aLong23 = Static18.method1746(Static3.aString132);
+				@Pc(111) long local111 = Static1.aLong23 = Base37.encode(Static3.aString132);
 				@Pc(118) int local118 = (int) (local111 >> 16 & 0x1FL);
 				Static3.aClass4_Sub10_Sub1_1.position = 0;
 				Static3.aClass4_Sub10_Sub1_1.writeByte(14);
@@ -1483,7 +1483,7 @@ public final class Static30 {
 				Static3.aClass4_Sub10_Sub1_1.writeInt(local197[1]);
 				Static3.aClass4_Sub10_Sub1_1.writeInt(local197[2]);
 				Static3.aClass4_Sub10_Sub1_1.writeInt(local197[3]);
-				Static3.aClass4_Sub10_Sub1_1.writeLong(Static18.method1746(Static3.aString132));
+				Static3.aClass4_Sub10_Sub1_1.writeLong(Base37.encode(Static3.aString132));
 				Static3.aClass4_Sub10_Sub1_1.writeString(Static2.aString76);
 				Static3.aClass4_Sub10_Sub1_1.rsaEncrypt(Static6.aBigInteger2, Static2.aBigInteger1);
 				Static5.aClass4_Sub10_Sub1_3.position = 0;
@@ -1797,7 +1797,7 @@ public final class Static30 {
 			@Pc(50) Buffer local50 = new Buffer(128);
 			local50.writeByte(10);
 			local50.writeInt((int) (Math.random() * 9.9999999E7D));
-			local50.writeLong(Static18.method1746(Static3.aString132));
+			local50.writeLong(Base37.encode(Static3.aString132));
 			local50.writeInt((int) (Math.random() * 9.9999999E7D));
 			local50.writeString(Static2.aString76);
 			local50.writeInt((int) (Math.random() * 9.9999999E7D));

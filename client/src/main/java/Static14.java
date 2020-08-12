@@ -89,7 +89,7 @@ public final class Static14 {
 
 	@OriginalMember(owner = "client!ej", name = "a", descriptor = "(Ljava/lang/String;I)Ljava/lang/String;")
 	public static String method1054(@OriginalArg(0) String arg0) {
-		@Pc(17) String local17 = Static35.method4319(Static18.method1746(arg0));
+		@Pc(17) String local17 = Base37.decodeLowerCase(Base37.encode(arg0));
 		if (local17 == null) {
 			local17 = "";
 		}

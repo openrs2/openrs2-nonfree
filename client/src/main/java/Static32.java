@@ -145,7 +145,7 @@ public final class Static32 {
 			Static26.method4357("", 0, LocalisedText.IGNORELISTFULL);
 			return;
 		}
-		@Pc(25) String local25 = Static29.method3477(arg1);
+		@Pc(25) String local25 = Base37.decodeTitleCase(arg1);
 		for (@Pc(27) int local27 = 0; local27 < Static6.anInt4516; local27++) {
 			if (Static3.aLongArray16[local27] == arg1) {
 				Static26.method4357("", 0, local25 + LocalisedText.IGNORELISTDUPE);

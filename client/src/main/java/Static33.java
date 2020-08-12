@@ -1202,7 +1202,7 @@ public final class Static33 {
 					@Pc(520) int local520 = local502.anInt3974 / 32 - Static4.aClass53_Sub1_Sub1_2.anInt3974 / 32;
 					@Pc(522) boolean local522 = false;
 					@Pc(533) int local533 = local502.anInt4002 / 32 - Static4.aClass53_Sub1_Sub1_2.anInt4002 / 32;
-					@Pc(540) long local540 = Static18.method1746(local502.aString88);
+					@Pc(540) long local540 = Base37.encode(local502.aString88);
 					for (@Pc(542) int local542 = 0; local542 < Static6.anInt5214; local542++) {
 						if (local540 == Static7.aLongArray54[local542] && Static4.anIntArray293[local542] != 0) {
 							local522 = true;

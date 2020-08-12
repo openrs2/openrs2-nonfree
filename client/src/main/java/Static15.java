@@ -294,7 +294,7 @@ public final class Static15 {
 			Static26.method4357("", 0, LocalisedText.FRIENDLISTFULL);
 			return;
 		}
-		@Pc(35) String local35 = Static29.method3477(arg0);
+		@Pc(35) String local35 = Base37.decodeTitleCase(arg0);
 		for (@Pc(37) int local37 = 0; local37 < Static6.anInt5214; local37++) {
 			if (arg0 == Static7.aLongArray54[local37]) {
 				Static26.method4357("", 0, local35 + LocalisedText.FRIENDLISTDUPE);

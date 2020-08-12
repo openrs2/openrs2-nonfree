@@ -1693,7 +1693,7 @@ public final class Static16 {
 							local13--;
 							@Pc(13955) String local13955 = Static2.aStringArray5[local13];
 							Static3.aClass4_Sub10_Sub1_1.writeOpcode(149);
-							Static3.aClass4_Sub10_Sub1_1.writeLong(Static18.method1746(local13955));
+							Static3.aClass4_Sub10_Sub1_1.writeLong(Base37.encode(local13955));
 							continue;
 						}
 						if (local45 == 3106) {
@@ -2097,25 +2097,25 @@ public final class Static16 {
 						if (local45 == 3605) {
 							local13--;
 							@Pc(12462) String local12462 = Static2.aStringArray5[local13];
-							Static15.method1229(Static18.method1746(local12462));
+							Static15.method1229(Base37.encode(local12462));
 							continue;
 						}
 						if (local45 == 3606) {
 							local13--;
 							@Pc(12478) String local12478 = Static2.aStringArray5[local13];
-							Static10.method308(Static18.method1746(local12478));
+							Static10.method308(Base37.encode(local12478));
 							continue;
 						}
 						if (local45 == 3607) {
 							local13--;
 							@Pc(12499) String local12499 = Static2.aStringArray5[local13];
-							Static32.method3923(false, Static18.method1746(local12499));
+							Static32.method3923(false, Base37.encode(local12499));
 							continue;
 						}
 						if (local45 == 3608) {
 							local13--;
 							@Pc(12520) String local12520 = Static2.aStringArray5[local13];
-							Static22.method2192(Static18.method1746(local12520));
+							Static22.method2192(Base37.encode(local12520));
 							continue;
 						}
 						if (local45 == 3609) {
@@ -2204,7 +2204,7 @@ public final class Static16 {
 						if (local45 == 3619) {
 							local13--;
 							@Pc(12786) String local12786 = Static2.aStringArray5[local13];
-							Static29.method3475(Static18.method1746(local12786));
+							Static29.method3475(Base37.encode(local12786));
 							continue;
 						}
 						if (local45 == 3620) {
@@ -2223,7 +2223,7 @@ public final class Static16 {
 							local5--;
 							@Pc(12831) int local12831 = Static7.anIntArray571[local5];
 							if (Static7.anInt5497 != 0 && Static6.anInt4516 > local12831) {
-								Static2.aStringArray5[local13++] = Static29.method3477(Static3.aLongArray16[local12831]);
+								Static2.aStringArray5[local13++] = Base37.decodeTitleCase(Static3.aLongArray16[local12831]);
 								continue;
 							}
 							Static2.aStringArray5[local13++] = "";
@@ -2296,7 +2296,7 @@ public final class Static16 {
 						if (local45 == 3630) {
 							local13--;
 							@Pc(13064) String local13064 = Static2.aStringArray5[local13];
-							Static32.method3923(true, Static18.method1746(local13064));
+							Static32.method3923(true, Base37.encode(local13064));
 							continue;
 						}
 						if (local45 == 3631) {
@@ -2930,7 +2930,7 @@ public final class Static16 {
 									@Pc(4012) int local4012 = Static7.anIntArray571[local5];
 									@Pc(4018) int local4018 = Static7.anIntArray571[local5 + 1];
 									Static3.aClass4_Sub10_Sub1_1.writeOpcode(90);
-									Static3.aClass4_Sub10_Sub1_1.writeLong(Static18.method1746(local4007));
+									Static3.aClass4_Sub10_Sub1_1.writeLong(Base37.encode(local4007));
 									Static3.aClass4_Sub10_Sub1_1.writeByte(local4012 - 1);
 									Static3.aClass4_Sub10_Sub1_1.writeByte(local4018);
 									continue;
@@ -3102,7 +3102,7 @@ public final class Static16 {
 										Static3.aClass4_Sub10_Sub1_1.writeOpcode(157);
 										Static3.aClass4_Sub10_Sub1_1.writeByte(0);
 										@Pc(4680) int local4680 = Static3.aClass4_Sub10_Sub1_1.position;
-										Static3.aClass4_Sub10_Sub1_1.writeLong(Static18.method1746(local4647));
+										Static3.aClass4_Sub10_Sub1_1.writeLong(Base37.encode(local4647));
 										Static31.method3655(Static3.aClass4_Sub10_Sub1_1, local4653);
 										Static3.aClass4_Sub10_Sub1_1.writeByteLength(Static3.aClass4_Sub10_Sub1_1.position - local4680);
 									}
@@ -3264,7 +3264,7 @@ public final class Static16 {
 									Static3.aClass4_Sub10_Sub1_1.writeOpcode(42);
 									Static3.aClass4_Sub10_Sub1_1.writeByte(0);
 									@Pc(5178) int local5178 = Static3.aClass4_Sub10_Sub1_1.position;
-									Static3.aClass4_Sub10_Sub1_1.writeLong(Static18.method1746(local5165));
+									Static3.aClass4_Sub10_Sub1_1.writeLong(Base37.encode(local5165));
 									Static3.aClass4_Sub10_Sub1_1.writeShort(Static1.aClass27_1.anInt540);
 									Static1.aClass27_1.aClass4_Sub3_Sub11_1.method1911(Static1.aClass27_1.anIntArray48, Static3.aClass4_Sub10_Sub1_1);
 									Static3.aClass4_Sub10_Sub1_1.writeByteLength(Static3.aClass4_Sub10_Sub1_1.position - local5178);
@@ -4117,7 +4117,7 @@ public final class Static16 {
 								if (local45 == 5604) {
 									local13--;
 									if (Static4.anInt3304 == 10 && Static6.anInt5117 == 0 && Static3.anInt2574 == 0 && Static6.anInt4759 == 0 && Static7.anInt5319 == 0) {
-										Static8.method13(Static18.method1746(Static2.aStringArray5[local13]));
+										Static8.method13(Base37.encode(Static2.aStringArray5[local13]));
 									}
 									continue;
 								}
@@ -4125,7 +4125,7 @@ public final class Static16 {
 									local5 -= 7;
 									local13 -= 3;
 									if (Static4.anInt3304 == 10 && Static6.anInt5117 == 0 && Static3.anInt2574 == 0 && Static6.anInt4759 == 0 && Static7.anInt5319 == 0) {
-										Static30.method3553(Static7.anIntArray571[local5 + 6] == 1, Static7.anIntArray571[local5], Static7.anIntArray571[local5 + 4] == 1, Static7.anIntArray571[local5 + 3], Static2.aStringArray5[local13 + 2], Static7.anIntArray571[local5 + 1], Static7.anIntArray571[local5 + 2], Static18.method1746(Static2.aStringArray5[local13]), Static7.anIntArray571[local5 + 5] == 1, Static2.aStringArray5[local13 + 1]);
+										Static30.method3553(Static7.anIntArray571[local5 + 6] == 1, Static7.anIntArray571[local5], Static7.anIntArray571[local5 + 4] == 1, Static7.anIntArray571[local5 + 3], Static2.aStringArray5[local13 + 2], Static7.anIntArray571[local5 + 1], Static7.anIntArray571[local5 + 2], Base37.encode(Static2.aStringArray5[local13]), Static7.anIntArray571[local5 + 5] == 1, Static2.aStringArray5[local13 + 1]);
 									}
 									continue;
 								}

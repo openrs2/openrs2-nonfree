@@ -993,7 +993,7 @@ public final class Static12 {
 
 	@OriginalMember(owner = "client!db", name = "a", descriptor = "(ILclient!f;)V")
 	public static void method739(@OriginalArg(1) Class53_Sub1_Sub1 arg0) {
-		@Pc(19) Class4_Sub11 local19 = (Class4_Sub11) Static5.aClass84_18.get(Static18.method1746(arg0.aString88));
+		@Pc(19) Class4_Sub11 local19 = (Class4_Sub11) Static5.aClass84_18.get(Base37.encode(arg0.aString88));
 		if (local19 == null) {
 			return;
 		}
