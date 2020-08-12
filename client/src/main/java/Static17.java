@@ -396,7 +396,7 @@ public final class Static17 {
 
 	@OriginalMember(owner = "client!gi", name = "p", descriptor = "()V")
 	public static void method1618() {
-		if (Static2.aBoolean66) {
+		if (Preferences.highDetailLighting) {
 			method1610(true);
 			Static16.method1592(true);
 		} else {

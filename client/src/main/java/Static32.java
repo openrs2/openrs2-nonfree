@@ -406,7 +406,7 @@ public final class Static32 {
 						if (arg0.anIntArray576[local122] != 12345678) {
 							Static23.method2543(local156, local160, local164, local144, local148, local152, arg0.anIntArray576[local122], arg0.anIntArray575[local122], arg0.anIntArray574[local122]);
 						}
-					} else if (!Static1.aBoolean27) {
+					} else if (!Preferences.groundTextures) {
 						@Pc(373) int local373 = Static4.anInterface4_1.method446(arg0.anIntArray572[local122]);
 						Static23.method2543(local156, local160, local164, local144, local148, local152, Static10.method302(local373, arg0.anIntArray576[local122]), Static10.method302(local373, arg0.anIntArray575[local122]), Static10.method302(local373, arg0.anIntArray574[local122]));
 					} else if (arg0.aBoolean353) {

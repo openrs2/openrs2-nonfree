@@ -214,7 +214,7 @@ public final class Class53_Sub4_Sub2 extends Class53_Sub4 {
 		this.aClass15_1 = new Class15();
 		this.aClass57_1 = new Class57();
 		this.aClass57_5 = new Class57();
-		if (Static2.aBoolean66) {
+		if (Preferences.highDetailLighting) {
 			this.aClass57_2 = new Class57();
 		}
 		this.aClass57_3 = new Class57();
@@ -1307,7 +1307,7 @@ public final class Class53_Sub4_Sub2 extends Class53_Sub4 {
 			local3.aShortArray92 = Static15.method1396(this.aShortArray92);
 		}
 		local3.aByteArray63 = this.aByteArray63;
-		if (arg2 && arg3 && (arg6 && arg4 || Static2.aBoolean66)) {
+		if (arg2 && arg3 && (arg6 && arg4 || Preferences.highDetailLighting)) {
 			local3.aClass57_5 = this.aClass57_5;
 		} else {
 			local3.aClass57_5 = new Class57();
@@ -1323,7 +1323,7 @@ public final class Class53_Sub4_Sub2 extends Class53_Sub4 {
 			local3.aShortArray87 = Static15.method1396(this.aShortArray87);
 			local3.aShortArray89 = Static15.method1396(this.aShortArray89);
 		}
-		if (!Static2.aBoolean66) {
+		if (!Preferences.highDetailLighting) {
 			local3.aClass57_2 = null;
 		} else if (arg4 && arg5 && arg6) {
 			local3.aClass57_2 = this.aClass57_2;
@@ -1981,7 +1981,7 @@ public final class Class53_Sub4_Sub2 extends Class53_Sub4 {
 			}
 			local1.glColorPointer(4, GL.GL_UNSIGNED_BYTE, this.aClass57_5.anInt1745, (long) this.aClass57_5.anInt1744);
 		}
-		if (Static2.aBoolean66 && this.aClass57_2.aClass111_1 != null) {
+		if (Preferences.highDetailLighting && this.aClass57_2.aClass111_1 != null) {
 			if (local172 != this.aClass57_2.aClass111_1) {
 				this.aClass57_2.aClass111_1.method2604();
 				local172 = this.aClass57_2.aClass111_1;
@@ -1998,7 +1998,7 @@ public final class Class53_Sub4_Sub2 extends Class53_Sub4 {
 		if (this.aClass57_4.aClass111_1 != null) {
 			this.aClass57_4.aClass111_1.method2603();
 		}
-		if (this.aClass57_1.aClass111_1 == null || this.aClass57_5.aClass111_1 == null || Static2.aBoolean66 && this.aClass57_2.aClass111_1 == null || this.aClass57_3.aClass111_1 == null) {
+		if (this.aClass57_1.aClass111_1 == null || this.aClass57_5.aClass111_1 == null || Preferences.highDetailLighting && this.aClass57_2.aClass111_1 == null || this.aClass57_3.aClass111_1 == null) {
 			if (Static3.aBoolean135) {
 				local1.glBindBufferARB(GL.GL_ARRAY_BUFFER, 0);
 			}
@@ -2010,7 +2010,7 @@ public final class Class53_Sub4_Sub2 extends Class53_Sub4 {
 				this.aClass57_5.aByteBuffer1.position(this.aClass57_5.anInt1744);
 				local1.glColorPointer(4, GL.GL_UNSIGNED_BYTE, this.aClass57_5.anInt1745, this.aClass57_5.aByteBuffer1);
 			}
-			if (Static2.aBoolean66 && this.aClass57_2.aClass111_1 == null) {
+			if (Preferences.highDetailLighting && this.aClass57_2.aClass111_1 == null) {
 				this.aClass57_2.aByteBuffer1.position(this.aClass57_2.anInt1744);
 				local1.glNormalPointer(GL.GL_FLOAT, this.aClass57_2.anInt1745, this.aClass57_2.aByteBuffer1);
 			}
@@ -2584,7 +2584,7 @@ public final class Class53_Sub4_Sub2 extends Class53_Sub4 {
 			}
 		}
 		if (arg2) {
-			if (Static2.aBoolean66) {
+			if (Preferences.highDetailLighting) {
 				for (@Pc(645) int local645 = 0; local645 < this.anInt4690; local645++) {
 					@Pc(665) int local665 = Static31.method3863(this.aShortArray92[local645], this.aShortArray91[local645], this.aShort43, this.aByteArray63[local645]);
 					Static6.aClass4_Sub10_9.position = this.aClass57_5.anInt1744 + this.aShortArray94[local645] * local1;
@@ -2900,7 +2900,7 @@ public final class Class53_Sub4_Sub2 extends Class53_Sub4 {
 			throw new IllegalArgumentException();
 		} else if (this.anInt4691 != 0) {
 			if (arg5) {
-				@Pc(26) boolean local26 = !this.aClass57_5.aBoolean103 && (arg1 || arg2 && !Static2.aBoolean66);
+				@Pc(26) boolean local26 = !this.aClass57_5.aBoolean103 && (arg1 || arg2 && !Preferences.highDetailLighting);
 				this.method3870(false, !this.aClass57_1.aBoolean103 && arg0, local26, this.aClass57_2 != null && !this.aClass57_2.aBoolean103 && arg2, !this.aClass57_3.aBoolean103);
 				if (!this.aClass57_4.aBoolean103 && arg3 && arg1) {
 					this.method3851();
@@ -2928,7 +2928,7 @@ public final class Class53_Sub4_Sub2 extends Class53_Sub4 {
 					this.aByte16 = (byte) (this.aByte16 | 0x2);
 				}
 			}
-			if (arg2 && Static2.aBoolean66) {
+			if (arg2 && Preferences.highDetailLighting) {
 				if (this.aClass57_2.aBoolean103) {
 					this.aShortArray95 = null;
 					this.aShortArray90 = null;
@@ -3049,7 +3049,7 @@ public final class Class53_Sub4_Sub2 extends Class53_Sub4 {
 				arg3.aShortArray87[local319] = this.aShortArray87[local319];
 				arg3.aShortArray89[local319] = this.aShortArray89[local319];
 			}
-			if (Static2.aBoolean66) {
+			if (Preferences.highDetailLighting) {
 				if (arg4.aClass57_2 == null) {
 					arg4.aClass57_2 = new Class57();
 				}

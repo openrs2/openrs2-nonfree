@@ -96,29 +96,6 @@ public final class Static14 {
 		return local17;
 	}
 
-	@OriginalMember(owner = "client!ej", name = "a", descriptor = "(ILsignlink!pm;)V")
-	public static void method1055(@OriginalArg(1) SignLink arg0) {
-		@Pc(3) FileOnDisk local3 = null;
-		try {
-			@Pc(12) PrivilegedRequest local12 = arg0.openPreferences("openrs2");
-			while (local12.status == 0) {
-				ThreadUtils.sleep(1L);
-			}
-			if (local12.status == 1) {
-				local3 = (FileOnDisk) local12.result;
-				@Pc(36) Buffer local36 = Static15.method1347();
-				local3.write(local36.bytes, 0, local36.position);
-			}
-		} catch (@Pc(46) Exception local46) {
-		}
-		try {
-			if (local3 != null) {
-				local3.close();
-			}
-		} catch (@Pc(57) Exception local57) {
-		}
-	}
-
 	@OriginalMember(owner = "client!ej", name = "a", descriptor = "(II)I")
 	public static int method1056(@OriginalArg(1) int arg0) {
 		return arg0 & 0xFF;

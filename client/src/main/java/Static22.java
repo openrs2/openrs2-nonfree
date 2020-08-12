@@ -373,7 +373,7 @@ public final class Static22 {
 		@Pc(321) long local321 = local250 | (long) arg2 << 32;
 		@Pc(330) boolean local330 = local60.aBoolean372 & !arg5;
 		if (arg9 == 22) {
-			if (Static3.aBoolean159 || local60.anInt5522 != 0 || local60.anInt5509 == 1 || local60.aBoolean376) {
+			if (Preferences.groundDecoration || local60.anInt5522 != 0 || local60.anInt5509 == 1 || local60.aBoolean376) {
 				@Pc(377) Class53 local377;
 				if (local60.anInt5523 == -1 && local60.anIntArray633 == null && local60.anIntArray631 == null && !local60.aBoolean379) {
 					@Pc(393) Class96 local393 = local60.method4450(local159, arg8, 22, local193, local151, local253, local330, arg0, local167, null);
@@ -1453,7 +1453,7 @@ public final class Static22 {
 				if (arg0 == 0 || arg0 == local280) {
 					local255.aBoolean98 = false;
 					local255.aBoolean282 = true;
-					if ((Static2.aBoolean117 && Static3.anInt2510 > 200 || Static3.anInt2510 > 50) && arg0 != 0 && local255.anInt4005 == local255.method3314().anInt860) {
+					if ((Preferences.manyIdleAnimations && Static3.anInt2510 > 200 || Static3.anInt2510 > 50) && arg0 != 0 && local255.anInt4005 == local255.method3314().anInt860) {
 						local255.aBoolean98 = true;
 					}
 					if (local280 == 1) {

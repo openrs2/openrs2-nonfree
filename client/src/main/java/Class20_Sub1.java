@@ -104,9 +104,9 @@ public final class Class20_Sub1 extends Class20 {
 	public final void method307(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) boolean arg2, @OriginalArg(3) int arg3, @OriginalArg(4) long arg4) {
 		if (this.aBoolean20) {
 			arg2 = false;
-		} else if (Static5.anInt3523 < this.aClass89_1.anInt2422) {
+		} else if (Preferences.particles < this.aClass89_1.anInt2422) {
 			arg2 = false;
-		} else if (Static6.anIntArray494[Static5.anInt3523] < Static5.anInt3500) {
+		} else if (Static6.anIntArray494[Preferences.particles] < Static5.anInt3500) {
 			arg2 = false;
 		} else if (this.anInt334 == this.anInt336 && this.anInt336 == this.anInt318 && this.anInt324 == this.anInt319 && this.anInt324 == this.anInt310 && this.anInt332 == this.anInt311 && this.anInt339 == this.anInt311) {
 			arg2 = false;

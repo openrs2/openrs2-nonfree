@@ -308,9 +308,6 @@ public final class Static2 {
 	@OriginalMember(owner = "client!dm", name = "a", descriptor = "I")
 	public static int anInt1125 = 0;
 
-	@OriginalMember(owner = "client!dn", name = "U", descriptor = "Z")
-	public static boolean aBoolean66 = true;
-
 	@OriginalMember(owner = "client!dn", name = "Z", descriptor = "I")
 	public static int anInt1161 = 0;
 
@@ -359,9 +356,6 @@ public final class Static2 {
 	@OriginalMember(owner = "client!ed", name = "H", descriptor = "Z")
 	public static boolean aBoolean68 = false;
 
-	@OriginalMember(owner = "client!ee", name = "d", descriptor = "Z")
-	public static boolean aBoolean69 = true;
-
 	@OriginalMember(owner = "client!ef", name = "b", descriptor = "I")
 	public static final int anInt1221 = 7759444;
 
@@ -385,9 +379,6 @@ public final class Static2 {
 
 	@OriginalMember(owner = "client!ej", name = "p", descriptor = "Lclient!cc;")
 	public static final LruHashTable aClass26_11 = new LruHashTable(4);
-
-	@OriginalMember(owner = "client!ej", name = "v", descriptor = "Z")
-	public static boolean aBoolean75 = true;
 
 	@OriginalMember(owner = "client!ek", name = "b", descriptor = "I")
 	public static volatile int anInt1306 = 0;
@@ -458,9 +449,6 @@ public final class Static2 {
 	@OriginalMember(owner = "client!fd", name = "nb", descriptor = "I")
 	public static int anInt5739 = 0;
 
-	@OriginalMember(owner = "client!fg", name = "z", descriptor = "Z")
-	public static boolean aBoolean104 = true;
-
 	@OriginalMember(owner = "client!fg", name = "L", descriptor = "I")
 	public static int anInt1767 = 0;
 
@@ -487,9 +475,6 @@ public final class Static2 {
 
 	@OriginalMember(owner = "client!fl", name = "W", descriptor = "Lclient!ll;")
 	public static final LinkedList aClass112_9 = new LinkedList();
-
-	@OriginalMember(owner = "client!fl", name = "ab", descriptor = "Z")
-	public static boolean aBoolean117 = true;
 
 	@OriginalMember(owner = "client!fl", name = "cb", descriptor = "I")
 	public static int anInt1937 = -1;

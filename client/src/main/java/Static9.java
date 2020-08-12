@@ -289,7 +289,7 @@ public final class Static9 {
 		if (Static6.aClass102_2 != null) {
 			Static6.aClass102_2.method3001();
 		}
-		method175(Static7.aBoolean122);
+		method175(Preferences.stereo);
 		Static1.aClass102_1 = Static25.method2807(GameShell.canvas, 22050, GameShell.signLink, 0);
 		Static1.aClass102_1.method3008(Static1.aClass4_Sub6_Sub2_2);
 		Static6.aClass102_2 = Static25.method2807(GameShell.canvas, 2048, GameShell.signLink, 1);
@@ -542,7 +542,7 @@ public final class Static9 {
 		if (local114 != local28) {
 			if (local28) {
 				Static6.anInt4844 = Static7.anInt5611;
-				if (Static1.anInt344 == 0) {
+				if (Preferences.musicVolume == 0) {
 					Static13.method971();
 				} else {
 					Static24.method2692(Static7.aClass58_98, 255, Static7.anInt5611);

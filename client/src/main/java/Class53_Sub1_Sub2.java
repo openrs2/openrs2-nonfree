@@ -40,7 +40,7 @@ public final class Class53_Sub1_Sub2 extends Class53_Sub1 {
 		if (local86.anIntArray590 != null) {
 			local86 = local86.method4265();
 		}
-		if (Static2.aBoolean75 && local86.aBoolean354) {
+		if (Preferences.characterShadows && local86.aBoolean354) {
 			@Pc(141) Class53_Sub4 local141 = Static12.method745(this.aClass168_1.aShort46, local54 == null ? local28 : local54, arg0, this.aClass168_1.anInt5262, this.aClass168_1.aByte20, local75, local54 == null ? this.anInt3970 : this.anInt4046, this.anInt4006, this.anInt4002, this.aBoolean284, this.aClass168_1.aShort47, this.aClass168_1.aByte19, this.anInt3974);
 			if (Static3.aBoolean138) {
 				@Pc(145) float local145 = Static17.method1620();

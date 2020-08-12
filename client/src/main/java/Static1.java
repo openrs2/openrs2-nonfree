@@ -323,9 +323,6 @@ public final class Static1 {
 	@OriginalMember(owner = "client!al", name = "U", descriptor = "S")
 	public static short aShort1 = 32767;
 
-	@OriginalMember(owner = "client!al", name = "X", descriptor = "I")
-	public static int anInt185 = 3;
-
 	@OriginalMember(owner = "client!am", name = "o", descriptor = "Lclient!ll;")
 	public static final LinkedList aClass112_2 = new LinkedList();
 
@@ -395,9 +392,6 @@ public final class Static1 {
 	@OriginalMember(owner = "client!bh", name = "d", descriptor = "I")
 	public static int anInt1047 = -1;
 
-	@OriginalMember(owner = "client!bh", name = "h", descriptor = "I")
-	public static int anInt1051 = 0;
-
 	@OriginalMember(owner = "client!bh", name = "i", descriptor = "I")
 	public static int anInt1052 = 0;
 
@@ -409,9 +403,6 @@ public final class Static1 {
 
 	@OriginalMember(owner = "client!bj", name = "b", descriptor = "Z")
 	public static boolean aBoolean21 = false;
-
-	@OriginalMember(owner = "client!bk", name = "d", descriptor = "I")
-	public static int anInt344 = 255;
 
 	@OriginalMember(owner = "client!bk", name = "e", descriptor = "S")
 	public static short aShort9 = 1;
@@ -430,9 +421,6 @@ public final class Static1 {
 
 	@OriginalMember(owner = "client!bn", name = "H", descriptor = "Z")
 	public static boolean aBoolean26 = false;
-
-	@OriginalMember(owner = "client!bn", name = "L", descriptor = "Z")
-	public static boolean aBoolean27 = true;
 
 	@OriginalMember(owner = "client!bo", name = "q", descriptor = "J")
 	public static long aLong24 = 0L;

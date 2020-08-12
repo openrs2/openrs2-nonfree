@@ -537,7 +537,7 @@ public final class Static13 {
 
 	@OriginalMember(owner = "client!dn", name = "c", descriptor = "(II)V")
 	public static void method966(@OriginalArg(0) int arg0) {
-		if (!Static2.aBoolean69) {
+		if (!Preferences.customCursors) {
 			arg0 = -1;
 		}
 		if (Static7.anInt5345 == arg0) {

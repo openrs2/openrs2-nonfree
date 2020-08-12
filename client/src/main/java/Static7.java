@@ -1,5 +1,4 @@
 import java.util.Calendar;
-import java.util.zip.CRC32;
 
 import dev.openrs2.deob.annotation.OriginalMember;
 
@@ -182,9 +181,6 @@ public final class Static7 {
 	@OriginalMember(owner = "client!tn", name = "e", descriptor = "Lclient!cc;")
 	public static final LruHashTable aClass26_18 = new LruHashTable(30);
 
-	@OriginalMember(owner = "client!tn", name = "m", descriptor = "Z")
-	public static boolean aBoolean122 = true;
-
 	@OriginalMember(owner = "client!tn", name = "o", descriptor = "Z")
 	public static boolean aBoolean123 = false;
 
@@ -247,9 +243,6 @@ public final class Static7 {
 
 	@OriginalMember(owner = "client!ud", name = "k", descriptor = "[I")
 	public static final int[] anIntArray599 = new int[25];
-
-	@OriginalMember(owner = "client!ud", name = "n", descriptor = "Z")
-	public static boolean aBoolean362 = true;
 
 	@OriginalMember(owner = "client!ue", name = "m", descriptor = "S")
 	public static short aShort11 = 32767;
@@ -413,9 +406,6 @@ public final class Static7 {
 	@OriginalMember(owner = "client!vl", name = "n", descriptor = "Z")
 	public static boolean aBoolean389 = false;
 
-	@OriginalMember(owner = "client!vl", name = "q", descriptor = "Z")
-	public static boolean aBoolean390 = false;
-
 	@OriginalMember(owner = "client!vl", name = "u", descriptor = "I")
 	public static int anInt5634 = 0;
 
@@ -424,9 +414,6 @@ public final class Static7 {
 
 	@OriginalMember(owner = "client!w", name = "B", descriptor = "[I")
 	public static final int[] anIntArray646 = new int[] { -1, -1, 1, 1 };
-
-	@OriginalMember(owner = "client!wa", name = "cc", descriptor = "Z")
-	public static boolean aBoolean393 = true;
 
 	@OriginalMember(owner = "client!wc", name = "b", descriptor = "I")
 	public static int anInt5803 = 0;
@@ -460,9 +447,6 @@ public final class Static7 {
 
 	@OriginalMember(owner = "client!wi", name = "e", descriptor = "I")
 	public static int anInt6031 = 0;
-
-	@OriginalMember(owner = "client!wj", name = "b", descriptor = "Z")
-	public static boolean aBoolean421 = true;
 
 	@OriginalMember(owner = "client!wj", name = "m", descriptor = "I")
 	public static int anInt6038 = 0;

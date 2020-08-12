@@ -341,7 +341,7 @@ public final class Static36 {
 
 	@OriginalMember(owner = "client!vf", name = "a", descriptor = "(BII)V")
 	public static void method4444(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1) {
-		arg0 = arg0 * Static1.anInt344 >> 8;
+		arg0 = arg0 * Preferences.musicVolume >> 8;
 		if (arg1 == -1 && !Static4.aBoolean210) {
 			Static37.method4718();
 		} else if (arg1 != -1 && (Static6.anInt4844 != arg1 || !Static16.method1550()) && arg0 != 0 && !Static4.aBoolean210) {

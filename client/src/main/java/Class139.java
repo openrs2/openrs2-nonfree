@@ -8,7 +8,7 @@ public final class Class139 implements Interface2 {
 	@OriginalMember(owner = "client!q", name = "b", descriptor = "()V")
 	@Override
 	public final void method3484() {
-		if (Static2.aBoolean66) {
+		if (Preferences.highDetailLighting) {
 			Static17.method1610(false);
 		}
 	}
@@ -16,7 +16,7 @@ public final class Class139 implements Interface2 {
 	@OriginalMember(owner = "client!q", name = "a", descriptor = "()V")
 	@Override
 	public final void method3483() {
-		if (Static2.aBoolean66) {
+		if (Preferences.highDetailLighting) {
 			Static17.method1610(true);
 		}
 	}

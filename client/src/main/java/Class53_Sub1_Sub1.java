@@ -216,7 +216,7 @@ public final class Class53_Sub1_Sub1 extends Class53_Sub1 {
 			return;
 		}
 		this.anInt4016 = local105.method3813();
-		if (Static2.aBoolean75 && (this.aClass144_2.anInt4387 == -1 || Static15.method1495(this.aClass144_2.anInt4387).aBoolean354)) {
+		if (Preferences.characterShadows && (this.aClass144_2.anInt4387 == -1 || Static15.method1495(this.aClass144_2.anInt4387).aBoolean354)) {
 			@Pc(222) Class53_Sub4 local222 = Static12.method745(0, local82 == null ? local27 : local82, arg0, 1, 240, local105, local82 == null ? this.anInt3970 : this.anInt4046, this.anInt4006, this.anInt4002, this.aBoolean284, 0, 160, this.anInt3974);
 			if (Static3.aBoolean138) {
 				@Pc(241) float local241 = Static17.method1620();

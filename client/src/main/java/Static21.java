@@ -380,7 +380,7 @@ public final class Static21 {
 			return;
 		}
 		Static5.aBoolean248 = true;
-		if (Static5.aBoolean293) {
+		if (Preferences.aBoolean293) {
 			Static5.aFloat147 = (int) Static5.aFloat147 + 47 & 0xFFFFFFF0;
 		} else {
 			Static1.aFloat20 += (12.0F - Static1.aFloat20) / 2.0F;
@@ -1036,7 +1036,7 @@ public final class Static21 {
 			return true;
 		} else if (Static1.anInt552 == 30) {
 			if (GameShell.fullScreenFrame != null) {
-				Static35.method4512(false, Static5.anInt3637, -1, -1);
+				Static35.method4512(false, Preferences.displayMode, -1, -1);
 			}
 			@Pc(2051) byte[] local2051 = new byte[Static1.anInt1052];
 			Static5.aClass4_Sub10_Sub1_2.writeEncryptedBytes(local2051, Static1.anInt1052);

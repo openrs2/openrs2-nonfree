@@ -50,7 +50,7 @@ public final class Class81 implements Interface2 {
 	@Override
 	public final void method3483() {
 		@Pc(1) GL local1 = Static3.aGL1;
-		if (Static2.aBoolean66) {
+		if (Preferences.highDetailLighting) {
 			local1.glCallList(this.anInt2236 + 1);
 		} else {
 			local1.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_SRC0_ALPHA, GL.GL_TEXTURE);
@@ -61,7 +61,7 @@ public final class Class81 implements Interface2 {
 	@Override
 	public final void method3486(@OriginalArg(0) int arg0) {
 		@Pc(1) GL local1 = Static3.aGL1;
-		if (Static2.aBoolean66 && this.anIntArray186 != null) {
+		if (Preferences.highDetailLighting && this.anIntArray186 != null) {
 			local1.glActiveTexture(GL.GL_TEXTURE1);
 			local1.glBindTexture(GL.GL_TEXTURE_CUBE_MAP, this.anIntArray186[arg0 - 1]);
 			local1.glActiveTexture(GL.GL_TEXTURE0);
@@ -229,7 +229,7 @@ public final class Class81 implements Interface2 {
 	public final void method3484() {
 		@Pc(1) GL local1 = Static3.aGL1;
 		Static17.method1607(1);
-		if (Static2.aBoolean66) {
+		if (Preferences.highDetailLighting) {
 			local1.glCallList(this.anInt2236);
 		} else {
 			local1.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_SRC0_ALPHA, GL.GL_PRIMARY_COLOR);

@@ -1,4 +1,3 @@
-import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.FloatBuffer;
 import java.nio.IntBuffer;
@@ -423,70 +422,6 @@ public final class Static33 {
 		}
 	}
 
-	@OriginalMember(owner = "client!te", name = "a", descriptor = "(Lsignlink!pm;I)V")
-	public static void method4149(@OriginalArg(0) SignLink arg0) {
-		@Pc(3) FileOnDisk local3 = null;
-		Static1.anInt185 = 3;
-		Static35.method665(true);
-		Static2.aBoolean75 = true;
-		Static6.aBoolean227 = true;
-		Static4.aBoolean398 = true;
-		Static5.anInt4120 = 127;
-		Static1.aBoolean27 = true;
-		Static3.aBoolean159 = true;
-		Static2.aBoolean66 = true;
-		Static7.aBoolean421 = true;
-		Static7.aBoolean393 = true;
-		Static7.aBoolean122 = true;
-		Static4.anInt3403 = 0;
-		Static7.aBoolean362 = true;
-		Static3.anInt2298 = 2;
-		Static4.anInt3315 = 127;
-		Static3.anInt2627 = 0;
-		Static2.anInt1125 = 0;
-		Static2.aBoolean117 = true;
-		Static1.anInt1051 = 0;
-		Static1.anInt344 = 255;
-		if (GameShell.maxMemory < 96) {
-			Static26.method2957(0);
-		} else {
-			Static26.method2957(2);
-		}
-		Static5.aBoolean278 = false;
-		Static5.anInt3637 = 0;
-		Static7.aBoolean390 = false;
-		Static5.anInt4291 = 0;
-		Static2.aBoolean69 = true;
-		Static5.anInt3909 = 0;
-		Static5.aBoolean293 = false;
-		try {
-			@Pc(84) PrivilegedRequest local84 = arg0.openPreferences("openrs2");
-			while (local84.status == 0) {
-				ThreadUtils.sleep(1L);
-			}
-			if (local84.status == 1) {
-				local3 = (FileOnDisk) local84.result;
-				@Pc(102) int local102 = 0;
-				@Pc(108) byte[] local108 = new byte[(int) local3.length()];
-				while (local102 < local108.length) {
-					@Pc(126) int local126 = local3.read(local108, local102, local108.length - local102);
-					if (local126 == -1) {
-						throw new IOException("EOF");
-					}
-					local102 += local126;
-				}
-				Static37.method4643(new Buffer(local108));
-			}
-		} catch (@Pc(153) Exception local153) {
-		}
-		try {
-			if (local3 != null) {
-				local3.close();
-			}
-		} catch (@Pc(160) Exception local160) {
-		}
-	}
-
 	@OriginalMember(owner = "client!te", name = "a", descriptor = "(Lclient!ua;IIII)V")
 	public static void method4152(@OriginalArg(0) Class168 arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3) {
 		if (Static7.anInt5634 >= 400) {
@@ -592,7 +527,7 @@ public final class Static33 {
 		@Pc(36) float local36 = local17.aFloat149;
 		@Pc(39) int local39 = local17.anInt6036;
 		@Pc(48) int local48 = local17.anInt6043;
-		if (!Static7.aBoolean362) {
+		if (!Preferences.fog) {
 			local48 = 0;
 		}
 		@Pc(56) Class4_Sub3_Sub10 local56 = local17.aClass4_Sub3_Sub10_7;
@@ -956,7 +891,7 @@ public final class Static33 {
 		}
 		Static9.method763();
 		Static24.method2697();
-		if (Static3.aBoolean138 && Static7.aBoolean393) {
+		if (Static3.aBoolean138 && Preferences.highDetailWater) {
 			for (@Pc(398) int local398 = 0; local398 < Static1.aByteArrayArray4.length; local398++) {
 				if (Static1.aByteArrayArray3[local398] != null || Static7.aByteArrayArray49[local398] != null) {
 					local374 = true;
@@ -1118,7 +1053,7 @@ public final class Static33 {
 			return;
 		}
 		Static5.aBoolean248 = true;
-		if (Static5.aBoolean293) {
+		if (Preferences.aBoolean293) {
 			Static5.aFloat97 = (int) Static5.aFloat97 - 65 & 0xFFFFFF80;
 		} else {
 			Static4.aFloat79 += (-Static4.aFloat79 - 24.0F) / 2.0F;

@@ -225,8 +225,8 @@ public final class Static10 {
 		} else if (!Static13.method879() || !Static13.method877() || !Static12.method871()) {
 			arg0 = false;
 		}
-		Static7.aBoolean390 = arg0;
-		Static14.method1055(GameShell.signLink);
+		Preferences.hdr = arg0;
+		Preferences.write(GameShell.signLink);
 		if (local13 == arg0) {
 			return false;
 		} else {
@@ -644,7 +644,7 @@ public final class Static10 {
 
 	@OriginalMember(owner = "client!c", name = "a", descriptor = "(Z)Z")
 	public static boolean method456() {
-		return Static3.aBoolean138 ? true : Static3.aBoolean144;
+		return Static3.aBoolean138 ? true : Preferences.allLevelsVisible;
 	}
 
 	@OriginalMember(owner = "client!c", name = "a", descriptor = "(IIIIIII)V")

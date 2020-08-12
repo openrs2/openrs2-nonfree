@@ -164,7 +164,7 @@ public final class Static27 {
 
 	@OriginalMember(owner = "client!od", name = "a", descriptor = "(IIIIII)V")
 	public static void method3114(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5) {
-		if (!Static2.aBoolean66 || Static5.anInt3734 == arg3 && Static5.anInt3737 == arg4 && Static5.anInt3740 == arg5 && Static5.anInt3735 == arg4 && Static5.anInt3739 == arg5) {
+		if (!Preferences.highDetailLighting || Static5.anInt3734 == arg3 && Static5.anInt3737 == arg4 && Static5.anInt3740 == arg5 && Static5.anInt3735 == arg4 && Static5.anInt3739 == arg5) {
 			return;
 		}
 		for (@Pc(20) int local20 = 0; local20 < 4; local20++) {
@@ -212,7 +212,7 @@ public final class Static27 {
 
 	@OriginalMember(owner = "client!od", name = "a", descriptor = "(IIIIIIII)V")
 	public static void method3115(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7) {
-		if (!Static2.aBoolean66 || Static5.anInt3734 == arg3 && Static5.anInt3737 == arg4 && Static5.anInt3740 == arg5 && Static5.anInt3735 == arg6 && Static5.anInt3739 == arg7) {
+		if (!Preferences.highDetailLighting || Static5.anInt3734 == arg3 && Static5.anInt3737 == arg4 && Static5.anInt3740 == arg5 && Static5.anInt3735 == arg6 && Static5.anInt3739 == arg7) {
 			return;
 		}
 		for (@Pc(20) int local20 = 0; local20 < 4; local20++) {
@@ -286,7 +286,7 @@ public final class Static27 {
 
 	@OriginalMember(owner = "client!od", name = "a", descriptor = "(II[[[Lclient!nh;)V")
 	public static void method3116(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) Class4_Sub19[][][] arg2) {
-		if (!Static2.aBoolean66) {
+		if (!Preferences.highDetailLighting) {
 			return;
 		}
 		@Pc(4) GL local4 = Static3.aGL1;
@@ -354,7 +354,7 @@ public final class Static27 {
 
 	@OriginalMember(owner = "client!od", name = "a", descriptor = "(IIIII)V")
 	public static void method3117(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4) {
-		if (!Static2.aBoolean66) {
+		if (!Preferences.highDetailLighting) {
 			return;
 		}
 		label43:
@@ -399,7 +399,7 @@ public final class Static27 {
 
 	@OriginalMember(owner = "client!od", name = "a", descriptor = "(IIIIIII)V")
 	public static void method3119(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6) {
-		if (!Static2.aBoolean66) {
+		if (!Preferences.highDetailLighting) {
 			return;
 		}
 		if (arg0 == 1 && arg5 > 0) {
@@ -598,14 +598,14 @@ public final class Static27 {
 				Static35.method4512(false, 3, 1024, 768);
 			}
 			if (arg0.startsWith("::setba")) {
-				Static5.anInt4291 = Static12.method737(arg0.substring(8));
-				Static14.method1055(GameShell.signLink);
-				Static2.aBoolean104 = false;
+				Preferences.buildArea = Static12.method737(arg0.substring(8));
+				Preferences.write(GameShell.signLink);
+				Preferences.sentToServer = false;
 			}
 			if (arg0.startsWith("::setparticles")) {
-				Static26.method2957(Static12.method737(arg0.substring(15)));
-				Static14.method1055(GameShell.signLink);
-				Static2.aBoolean104 = false;
+				Preferences.setParticles(Static12.method737(arg0.substring(15)));
+				Preferences.write(GameShell.signLink);
+				Preferences.sentToServer = false;
 			}
 			if (arg0.startsWith("::fps ") && client.modeWhere != 0) {
 				GameShell.setFramesPerSecond(Static12.method737(arg0.substring(6)));
@@ -703,7 +703,7 @@ public final class Static27 {
 				if (Static3.anIntArray217[local3] < 0) {
 					@Pc(223) int local223;
 					if (Static7.anIntArray601[local3] == 0) {
-						local223 = Static1.anIntArray21[local3] * Static4.anInt3315 >> 8;
+						local223 = Static1.anIntArray21[local3] * Preferences.soundEffectsVolume >> 8;
 					} else {
 						@Pc(137) int local137 = (Static7.anIntArray601[local3] & 0xFF) * 128;
 						@Pc(145) int local145 = Static7.anIntArray601[local3] >> 16 & 0xFF;
@@ -724,7 +724,7 @@ public final class Static27 {
 						if (local192 < 0) {
 							local192 = 0;
 						}
-						local223 = (local137 - local192) * Static5.anInt4120 * Static1.anIntArray21[local3] / local137 >> 8;
+						local223 = (local137 - local192) * Preferences.areaSoundsVolume * Static1.anIntArray21[local3] / local137 >> 8;
 					}
 					if (local223 > 0) {
 						@Pc(240) Class4_Sub8_Sub1 local240 = local89.method107().method3338(Static7.aClass170_1);
@@ -748,11 +748,11 @@ public final class Static27 {
 			}
 		}
 		if (Static4.aBoolean210 && !Static16.method1550()) {
-			if (Static1.anInt344 != 0 && Static6.anInt4844 != -1) {
-				Static28.method3251(Static1.anInt344, Static6.anInt4844, Static7.aClass58_98);
+			if (Preferences.musicVolume != 0 && Static6.anInt4844 != -1) {
+				Static28.method3251(Preferences.musicVolume, Static6.anInt4844, Static7.aClass58_98);
 			}
 			Static4.aBoolean210 = false;
-		} else if (Static1.anInt344 != 0 && Static6.anInt4844 != -1 && !Static16.method1550()) {
+		} else if (Preferences.musicVolume != 0 && Static6.anInt4844 != -1 && !Static16.method1550()) {
 			Static3.aClass4_Sub10_Sub1_1.writeOpcode(250);
 			Static3.aClass4_Sub10_Sub1_1.writeInt(Static6.anInt4844);
 			Static6.anInt4844 = -1;

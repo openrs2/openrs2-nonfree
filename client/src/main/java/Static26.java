@@ -173,16 +173,6 @@ public final class Static26 {
 		Static5.anIntArray388 = null;
 	}
 
-	@OriginalMember(owner = "client!ne", name = "c", descriptor = "()I")
-	public static int method2954() {
-		return Static5.anInt3523;
-	}
-
-	@OriginalMember(owner = "client!ne", name = "b", descriptor = "(I)V")
-	public static void method2957(@OriginalArg(0) int arg0) {
-		Static5.anInt3523 = arg0;
-	}
-
 	@OriginalMember(owner = "client!ne", name = "a", descriptor = "(III)V")
 	public static void method2961(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
 		@Pc(1) GL local1 = Static3.aGL1;
@@ -194,7 +184,7 @@ public final class Static26 {
 		Static24.method2652(0, 0);
 		local1.glColorMaterial(GL.GL_FRONT, GL.GL_DIFFUSE);
 		local1.glMaterialfv(GL.GL_FRONT, GL.GL_AMBIENT, Static4.aFloatArray36, 0);
-		if (Static2.aBoolean66) {
+		if (Preferences.highDetailLighting) {
 			local1.glDisableClientState(GL.GL_NORMAL_ARRAY);
 		}
 		local1.glDisableClientState(GL.GL_TEXTURE_COORD_ARRAY);
@@ -209,7 +199,7 @@ public final class Static26 {
 	@OriginalMember(owner = "client!ne", name = "g", descriptor = "()V")
 	public static void method2962() {
 		@Pc(1) GL local1 = Static3.aGL1;
-		if (Static2.aBoolean66) {
+		if (Preferences.highDetailLighting) {
 			local1.glEnableClientState(GL.GL_NORMAL_ARRAY);
 		}
 		local1.glEnableClientState(GL.GL_TEXTURE_COORD_ARRAY);
@@ -326,7 +316,7 @@ public final class Static26 {
 		}
 		Static6.aBoolean330 = true;
 		Static5.aBoolean248 = true;
-		if (Static5.aBoolean293) {
+		if (Preferences.aBoolean293) {
 			Static5.aFloat147 = (int) Static5.aFloat147 - 17 & 0xFFFFFFF0;
 		} else {
 			Static1.aFloat20 += (-Static1.aFloat20 - 12.0F) / 2.0F;

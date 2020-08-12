@@ -194,9 +194,6 @@ public final class Static5 {
 	@OriginalMember(owner = "client!pj", name = "a", descriptor = "Lclient!uj;")
 	public static Class4_Sub3_Sub14 aClass4_Sub3_Sub14_4;
 
-	@OriginalMember(owner = "client!pj", name = "b", descriptor = "Z")
-	public static boolean aBoolean293;
-
 	@OriginalMember(owner = "client!pj", name = "c", descriptor = "I")
 	public static int anInt4163;
 
@@ -326,9 +323,6 @@ public final class Static5 {
 	@OriginalMember(owner = "client!ne", name = "Y", descriptor = "[Z")
 	public static final boolean[] aBooleanArray19 = new boolean[8];
 
-	@OriginalMember(owner = "client!ne", name = "ab", descriptor = "I")
-	public static int anInt3523 = 2;
-
 	@OriginalMember(owner = "client!ne", name = "eb", descriptor = "I")
 	public static int anInt3524 = 0;
 
@@ -379,9 +373,6 @@ public final class Static5 {
 
 	@OriginalMember(owner = "client!no", name = "Z", descriptor = "I")
 	public static int anInt3636 = -1;
-
-	@OriginalMember(owner = "client!no", name = "ab", descriptor = "I")
-	public static int anInt3637 = 0;
 
 	@OriginalMember(owner = "client!o", name = "r", descriptor = "Lclient!cc;")
 	public static final LruHashTable aClass26_37 = new LruHashTable(100);
@@ -482,9 +473,6 @@ public final class Static5 {
 	@OriginalMember(owner = "client!ol", name = "r", descriptor = "I")
 	public static final int anInt3907 = 3353893;
 
-	@OriginalMember(owner = "client!ol", name = "t", descriptor = "I")
-	public static int anInt3909 = 0;
-
 	@OriginalMember(owner = "client!ol", name = "w", descriptor = "[I")
 	public static final int[] anIntArray419 = new int[128];
 
@@ -496,9 +484,6 @@ public final class Static5 {
 
 	@OriginalMember(owner = "client!om", name = "m", descriptor = "I")
 	public static int anInt3920 = -1;
-
-	@OriginalMember(owner = "client!on", name = "q", descriptor = "Z")
-	public static boolean aBoolean278 = false;
 
 	@OriginalMember(owner = "client!on", name = "K", descriptor = "Lclient!cc;")
 	public static final LruHashTable aClass26_43 = new LruHashTable(500);
@@ -517,9 +502,6 @@ public final class Static5 {
 
 	@OriginalMember(owner = "client!pe", name = "b", descriptor = "I")
 	public static int anInt4112 = 0;
-
-	@OriginalMember(owner = "client!pe", name = "l", descriptor = "I")
-	public static int anInt4120 = 127;
 
 	@OriginalMember(owner = "client!pf", name = "c", descriptor = "[I")
 	public static final int[] anIntArray432 = new int[2];
@@ -604,9 +586,6 @@ public final class Static5 {
 
 	@OriginalMember(owner = "client!qe", name = "f", descriptor = "[I")
 	public static final int[] anIntArray456 = new int[] { 1, 0, 0, 0, 1, 0, 2, 1, 1, 1, 0, 2, 0, 0, 1, 0 };
-
-	@OriginalMember(owner = "client!qe", name = "k", descriptor = "I")
-	public static int anInt4291 = 0;
 
 	@OriginalMember(owner = "client!qf", name = "f", descriptor = "Lclient!cc;")
 	public static final LruHashTable aClass26_45 = new LruHashTable(64);

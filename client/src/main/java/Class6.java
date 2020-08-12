@@ -57,7 +57,7 @@ public final class Class6 implements Interface2 {
 	public final void method3484() {
 		@Pc(5) GL local5 = Static3.aGL1;
 		Static17.method1607(1);
-		if (Static5.aClass4_Sub3_Sub10_6 == null || this.anInt96 < 0 || !Static2.aBoolean66) {
+		if (Static5.aClass4_Sub3_Sub10_6 == null || this.anInt96 < 0 || !Preferences.highDetailLighting) {
 			local5.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_SRC0_ALPHA, GL.GL_PRIMARY_COLOR);
 			return;
 		}

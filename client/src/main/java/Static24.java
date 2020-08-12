@@ -200,7 +200,7 @@ public final class Static24 {
 		if (arg0 == 8) {
 			arg0 = 4;
 		}
-		if (arg0 == 4 && !Static7.aBoolean393) {
+		if (arg0 == 4 && !Preferences.highDetailWater) {
 			arg0 = 2;
 			arg1 = 2;
 		}
@@ -277,20 +277,20 @@ public final class Static24 {
 		if (arg5) {
 			Static17.method1605();
 		}
-		if (GameShell.fullScreenFrame != null && (arg4 != 3 || arg0 != Static4.anInt3403 || arg3 != Static3.anInt2627)) {
+		if (GameShell.fullScreenFrame != null && (arg4 != 3 || arg0 != Preferences.fullScreenWidth || arg3 != Preferences.fullScreenHeight)) {
 			Static31.method3658(GameShell.signLink, GameShell.fullScreenFrame);
 			GameShell.fullScreenFrame = null;
 		}
 		if (arg4 == 3 && GameShell.fullScreenFrame == null) {
 			GameShell.fullScreenFrame = Static8.method67(0, arg0, arg3, GameShell.signLink);
 			if (GameShell.fullScreenFrame != null) {
-				Static4.anInt3403 = arg0;
-				Static3.anInt2627 = arg3;
-				Static14.method1055(GameShell.signLink);
+				Preferences.fullScreenWidth = arg0;
+				Preferences.fullScreenHeight = arg3;
+				Preferences.write(GameShell.signLink);
 			}
 		}
 		if (arg4 == 3 && GameShell.fullScreenFrame == null) {
-			method2813(-1, arg1, true, -1, Static5.anInt3637, true);
+			method2813(-1, arg1, true, -1, Preferences.displayMode, true);
 			return;
 		}
 		@Pc(83) Container local83;
@@ -390,7 +390,7 @@ public final class Static24 {
 			Static4.aClass59_1 = null;
 			Static25.method2915();
 			((Class24_Sub1) Static4.anInterface4_1).method463(200);
-			if (Static2.aBoolean66) {
+			if (Preferences.highDetailLighting) {
 				Static23.method2539(0.7F);
 			}
 			if (Static5.aClass187ArrayArray1 == null) {
@@ -405,17 +405,17 @@ public final class Static24 {
 			Static25.method2906();
 			Static26.method2951();
 			((Class24_Sub1) Static4.anInterface4_1).method463(20);
-			if (Static2.aBoolean66) {
-				if (Static1.anInt185 == 1) {
+			if (Preferences.highDetailLighting) {
+				if (Preferences.brightness == 1) {
 					Static23.method2539(0.9F);
 				}
-				if (Static1.anInt185 == 2) {
+				if (Preferences.brightness == 2) {
 					Static23.method2539(0.8F);
 				}
-				if (Static1.anInt185 == 3) {
+				if (Preferences.brightness == 3) {
 					Static23.method2539(0.7F);
 				}
-				if (Static1.anInt185 == 4) {
+				if (Preferences.brightness == 4) {
 					Static23.method2539(0.6F);
 				}
 			}

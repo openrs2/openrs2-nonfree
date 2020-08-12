@@ -312,9 +312,6 @@ public final class Static4 {
 	@OriginalMember(owner = "client!jo", name = "E", descriptor = "[J")
 	public static final long[] aLongArray56 = new long[500];
 
-	@OriginalMember(owner = "client!jo", name = "G", descriptor = "Z")
-	public static boolean aBoolean398 = true;
-
 	@OriginalMember(owner = "client!jo", name = "I", descriptor = "[I")
 	public static final int[] anIntArray653 = new int[4096];
 
@@ -504,9 +501,6 @@ public final class Static4 {
 	@OriginalMember(owner = "client!mf", name = "f", descriptor = "I")
 	public static int anInt3314 = 0;
 
-	@OriginalMember(owner = "client!mf", name = "g", descriptor = "I")
-	public static int anInt3315 = 127;
-
 	@OriginalMember(owner = "client!mg", name = "a", descriptor = "[I")
 	public static final int[] anIntArray317 = new int[2048];
 
@@ -611,9 +605,6 @@ public final class Static4 {
 
 	@OriginalMember(owner = "client!mo", name = "eb", descriptor = "Z")
 	public static boolean aBoolean241 = false;
-
-	@OriginalMember(owner = "client!mo", name = "gb", descriptor = "I")
-	public static int anInt3403 = 0;
 
 	@OriginalMember(owner = "client!na", name = "z", descriptor = "Lclient!na;")
 	public static final Class53_Sub4_Sub1 aClass53_Sub4_Sub1_1 = new Class53_Sub4_Sub1();

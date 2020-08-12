@@ -247,7 +247,7 @@ public final class Class20_Sub3 extends Class20 {
 
 	@OriginalMember(owner = "client!ne", name = "a", descriptor = "(Lgl!javax/media/opengl/GL;IZZ)V")
 	public final void method2955(@OriginalArg(0) GL arg0, @OriginalArg(1) int arg1, @OriginalArg(2) boolean arg2, @OriginalArg(3) boolean arg3) {
-		if (!arg3 && Static2.aBoolean66) {
+		if (!arg3 && Preferences.highDetailLighting) {
 			arg0.glDisable(GL.GL_LIGHTING);
 		}
 		Static5.aClass4_Sub10_7.position = 0;
@@ -331,7 +331,7 @@ public final class Class20_Sub3 extends Class20 {
 			arg0.glColorPointer(4, GL.GL_UNSIGNED_BYTE, 16, Static5.aByteBuffer12);
 			arg0.glDrawArrays(GL.GL_POINTS, 0, Static5.aClass4_Sub10_7.position >> 4);
 		}
-		if (!arg3 && Static2.aBoolean66) {
+		if (!arg3 && Preferences.highDetailLighting) {
 			arg0.glEnable(GL.GL_LIGHTING);
 		}
 	}

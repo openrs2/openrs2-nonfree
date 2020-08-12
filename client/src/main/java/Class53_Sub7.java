@@ -176,7 +176,7 @@ public final class Class53_Sub7 extends Class53 {
 		@Pc(114) int local114 = this.anInt4569 + (local80 >> 1);
 		@Pc(124) int local124 = this.anInt4593 + (local83 + 1 >> 1);
 		this.method3731(local98 * 128, local114 * 128);
-		@Pc(176) boolean local176 = !local12 && local17.aBoolean372 && (this.anInt4571 != local17.anInt5553 || (this.anInt4574 != this.anInt4594 || this.aClass46_3 != null && (this.aClass46_3.aBoolean71 || Static6.aBoolean258) && this.anInt4574 != this.anInt4580) && Static3.anInt2298 >= 2);
+		@Pc(176) boolean local176 = !local12 && local17.aBoolean372 && (this.anInt4571 != local17.anInt5553 || (this.anInt4574 != this.anInt4594 || this.aClass46_3 != null && (this.aClass46_3.aBoolean71 || Static6.aBoolean258) && this.anInt4574 != this.anInt4580) && Preferences.sceneryShadows >= 2);
 		if (arg0 && !local176) {
 			this.anInt4594 = this.anInt4574;
 			this.anInt4571 = local17.anInt5553;

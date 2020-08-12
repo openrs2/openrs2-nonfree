@@ -262,7 +262,7 @@ public final class Static38 {
 				@Pc(1451) int local1451 = Static5.aClass4_Sub10_Sub1_2.readUnsignedByte();
 				if (local1419 >= 0 && local1410 >= 0 && local1419 < 104 && local1410 < 104) {
 					@Pc(1474) int local1474 = local1439 + 1;
-					if (local1419 - local1474 <= Static4.aClass53_Sub1_Sub1_2.anIntArray422[0] && Static4.aClass53_Sub1_Sub1_2.anIntArray422[0] <= local1474 + local1419 && local1410 - local1474 <= Static4.aClass53_Sub1_Sub1_2.anIntArray426[0] && local1410 + local1474 >= Static4.aClass53_Sub1_Sub1_2.anIntArray426[0] && Static5.anInt4120 != 0 && local1443 > 0 && Static6.anInt4457 < 50 && local1423 != -1) {
+					if (local1419 - local1474 <= Static4.aClass53_Sub1_Sub1_2.anIntArray422[0] && Static4.aClass53_Sub1_Sub1_2.anIntArray422[0] <= local1474 + local1419 && local1410 - local1474 <= Static4.aClass53_Sub1_Sub1_2.anIntArray426[0] && local1410 + local1474 >= Static4.aClass53_Sub1_Sub1_2.anIntArray426[0] && Preferences.areaSoundsVolume != 0 && local1443 > 0 && Static6.anInt4457 < 50 && local1423 != -1) {
 						Static4.anIntArray294[Static6.anInt4457] = local1423;
 						Static7.anIntArray629[Static6.anInt4457] = local1443;
 						Static3.anIntArray217[Static6.anInt4457] = local1447;

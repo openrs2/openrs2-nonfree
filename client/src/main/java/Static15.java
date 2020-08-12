@@ -268,7 +268,7 @@ public final class Static15 {
 
 	@OriginalMember(owner = "client!fc", name = "a", descriptor = "(BIIII)V")
 	public static void method1227(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3) {
-		if (Static4.anInt3315 == 0 || arg2 == 0 || Static6.anInt4457 >= 50 || arg1 == -1) {
+		if (Preferences.soundEffectsVolume == 0 || arg2 == 0 || Static6.anInt4457 >= 50 || arg1 == -1) {
 			return;
 		}
 		Static4.anIntArray294[Static6.anInt4457] = arg1;
@@ -553,41 +553,6 @@ public final class Static15 {
 			arg1 >>= 1;
 		}
 		return (arg2 >> 1) + (arg1 >> 5 << 7) + (arg0 >> 2 << 10);
-	}
-
-	@OriginalMember(owner = "client!fh", name = "b", descriptor = "(I)Lclient!fd;")
-	public static Buffer method1347() {
-		@Pc(13) Buffer local13 = new Buffer(34);
-		local13.writeByte(11);
-		local13.writeByte(Static1.anInt185);
-		local13.writeByte(Static3.aBoolean144 ? 1 : 0);
-		local13.writeByte(Static4.aBoolean398 ? 1 : 0);
-		local13.writeByte(Static3.aBoolean159 ? 1 : 0);
-		local13.writeByte(Static6.aBoolean227 ? 1 : 0);
-		local13.writeByte(Static2.aBoolean117 ? 1 : 0);
-		local13.writeByte(Static7.aBoolean421 ? 1 : 0);
-		local13.writeByte(Static1.aBoolean27 ? 1 : 0);
-		local13.writeByte(Static2.aBoolean75 ? 1 : 0);
-		local13.writeByte(Static3.anInt2298);
-		local13.writeByte(Static2.aBoolean66 ? 1 : 0);
-		local13.writeByte(Static7.aBoolean393 ? 1 : 0);
-		local13.writeByte(Static7.aBoolean362 ? 1 : 0);
-		local13.writeByte(Static1.anInt1051);
-		local13.writeByte(Static7.aBoolean122 ? 1 : 0);
-		local13.writeByte(Static4.anInt3315);
-		local13.writeByte(Static1.anInt344);
-		local13.writeByte(Static5.anInt4120);
-		local13.writeShort(Static4.anInt3403);
-		local13.writeShort(Static3.anInt2627);
-		local13.writeByte(Static26.method2954());
-		local13.writeInt(Static5.anInt3909);
-		local13.writeByte(Static5.anInt3637);
-		local13.writeByte(Static5.aBoolean278 ? 1 : 0);
-		local13.writeByte(Static5.aBoolean293 ? 1 : 0);
-		local13.writeByte(Static5.anInt4291);
-		local13.writeByte(Static7.aBoolean390 ? 1 : 0);
-		local13.writeByte(Static2.aBoolean69 ? 1 : 0);
-		return local13;
 	}
 
 	@OriginalMember(owner = "client!fh", name = "e", descriptor = "(II)Z")

@@ -790,7 +790,7 @@ public final class Static30 {
 											Static17.method1618();
 											Static16.method1588(true);
 											Static16.method1593(false);
-											Static23.method2416(Static1.anInt185);
+											Static23.method2416(Preferences.brightness);
 											if (Static7.aBoolean123) {
 												Static18.method1698();
 												Static17.method1603();
@@ -1504,8 +1504,8 @@ public final class Static30 {
 				Static32.method3949(Static5.aClass4_Sub10_Sub1_3);
 				Static5.aClass4_Sub10_Sub1_3.writeString(client.settings);
 				Static5.aClass4_Sub10_Sub1_3.writeInt(client.affiliate);
-				Static5.aClass4_Sub10_Sub1_3.writeInt(Static25.method2806());
-				Static2.aBoolean104 = true;
+				Static5.aClass4_Sub10_Sub1_3.writeInt(Preferences.toInt());
+				Preferences.sentToServer = true;
 				Static5.aClass4_Sub10_Sub1_3.writeShort(Static7.anInt5426);
 				Static5.aClass4_Sub10_Sub1_3.writeInt(Static3.aClass58_46.getChecksum());
 				Static5.aClass4_Sub10_Sub1_3.writeInt(Static4.aClass58_66.getChecksum());

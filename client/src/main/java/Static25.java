@@ -460,11 +460,6 @@ public final class Static25 {
 		local25.glLightfv(GL.GL_LIGHT1, GL.GL_DIFFUSE, local139, 0);
 	}
 
-	@OriginalMember(owner = "client!mo", name = "f", descriptor = "(B)I")
-	public static int method2806() {
-		return ((Static5.anInt4120 == 0 ? 0 : 1) << 22) + ((Static1.anInt344 == 0 ? 0 : 1) << 21) + ((Static4.anInt3315 == 0 ? 0 : 1) << 20) + ((Static7.aBoolean362 ? 1 : 0) << 16) + ((Static2.aBoolean66 ? 1 : 0) << 13) + ((Static3.anInt2298 & 0x3) << 11) + ((Static1.aBoolean27 ? 1 : 0) << 9) + ((Static7.aBoolean421 ? 1 : 0) << 8) + ((Static2.aBoolean117 ? 1 : 0) << 7) + ((Static4.aBoolean398 ? 1 : 0) << 4) + ((Static3.aBoolean144 ? 1 : 0) << 3) + (Static1.anInt185 & 0x7) + ((Static3.aBoolean159 ? 1 : 0) << 5) + ((Static6.aBoolean227 ? 1 : 0) << 6) + ((Static2.aBoolean75 ? 1 : 0) << 10) + ((Static7.aBoolean393 ? 1 : 0) << 15) + (Static5.anInt4291 << 17) + ((Static7.aBoolean122 ? 1 : 0) << 19) + (Static26.method2954() << 23);
-	}
-
 	@OriginalMember(owner = "client!mo", name = "a", descriptor = "(Ljava/awt/Component;BILsignlink!pm;I)Lclient!tj;")
 	public static Class102 method2807(@OriginalArg(0) Component arg0, @OriginalArg(2) int arg1, @OriginalArg(3) SignLink arg2, @OriginalArg(4) int arg3) {
 		if (Static7.anInt5394 == 0) {

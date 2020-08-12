@@ -1001,12 +1001,6 @@ public final class Static35 {
 		}
 	}
 
-	@OriginalMember(owner = "client!ue", name = "a", descriptor = "(BZ)V")
-	public static void method665(@OriginalArg(1) boolean arg0) {
-		Static3.aBoolean144 = arg0;
-		Static6.aBoolean313 = !Static10.method456();
-	}
-
 	@OriginalMember(owner = "client!ue", name = "a", descriptor = "(Lclient!fh;B)V")
 	public static void method667(@OriginalArg(0) Js5 arg0) {
 		Static2.aClass4_Sub3_Sub14Array10 = Static27.method3225(arg0, Static3.anInt2120);

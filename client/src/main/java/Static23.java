@@ -173,7 +173,7 @@ public final class Static23 {
 
 	@OriginalMember(owner = "client!lc", name = "a", descriptor = "(IIII)V")
 	public static void method1933(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2) {
-		arg0 = Static1.anInt344 * arg0 >> 8;
+		arg0 = Preferences.musicVolume * arg0 >> 8;
 		if (arg0 != 0 && arg2 != -1) {
 			Static28.method3251(arg0, arg2, Static3.aClass58_57);
 			Static4.aBoolean210 = true;

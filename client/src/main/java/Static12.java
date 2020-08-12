@@ -52,7 +52,7 @@ public final class Static12 {
 
 	@OriginalMember(owner = "client!ck", name = "a", descriptor = "(IJ)V")
 	public static void method641(@OriginalArg(1) long arg0) {
-		if (!Static5.aBoolean293) {
+		if (!Preferences.aBoolean293) {
 			Static5.aFloat147 += (float) arg0 * Static1.aFloat20 / 40.0F;
 			Static5.aFloat97 += (float) arg0 * Static4.aFloat79 / 40.0F;
 		}
@@ -831,7 +831,7 @@ public final class Static12 {
 			return;
 		}
 		@Pc(16) int local16 = 0;
-		@Pc(23) int local23 = arg3.anInt2127 * Static5.anInt4120 >> 8;
+		@Pc(23) int local23 = arg3.anInt2127 * Preferences.areaSoundsVolume >> 8;
 		if (arg1 > arg3.anInt2117) {
 			local16 = arg1 - arg3.anInt2117;
 		} else if (arg3.anInt2124 > arg1) {
@@ -842,7 +842,7 @@ public final class Static12 {
 		} else if (arg3.anInt2113 > arg4) {
 			local16 += arg3.anInt2113 - arg4;
 		}
-		if (arg3.anInt2123 == 0 || arg3.anInt2123 < local16 - 64 || Static5.anInt4120 == 0 || arg3.anInt2126 != arg0) {
+		if (arg3.anInt2123 == 0 || arg3.anInt2123 < local16 - 64 || Preferences.areaSoundsVolume == 0 || arg3.anInt2126 != arg0) {
 			if (arg3.aClass4_Sub6_Sub4_3 != null) {
 				Static5.aClass4_Sub6_Sub3_2.method2670(arg3.aClass4_Sub6_Sub4_3);
 				arg3.aClass4_Sub6_Sub4_3 = null;
@@ -979,10 +979,10 @@ public final class Static12 {
 		}
 		Static21.method2018(arg0, local64, arg2, Static7.aClass30Array1[arg0], arg3, arg5);
 		if (arg4 >= 0) {
-			@Pc(97) boolean local97 = Static3.aBoolean159;
-			Static3.aBoolean159 = true;
+			@Pc(97) boolean local97 = Preferences.groundDecoration;
+			Preferences.groundDecoration = true;
 			Static22.method2193(arg1, arg0, arg4, local64, arg5, false, arg2, Static7.aClass30Array1[arg0], false, arg6);
-			Static3.aBoolean159 = local97;
+			Preferences.groundDecoration = local97;
 		}
 	}
 

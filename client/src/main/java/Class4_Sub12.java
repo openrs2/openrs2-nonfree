@@ -235,7 +235,7 @@ public final class Class4_Sub12 extends Node {
 			local257.glVertexPointer(3, GL.GL_FLOAT, local282, this.aByteBuffer6);
 			this.aByteBuffer6.position(12);
 			local257.glColorPointer(4, GL.GL_UNSIGNED_BYTE, local282, this.aByteBuffer6);
-			if (Static2.aBoolean66) {
+			if (Preferences.highDetailLighting) {
 				this.aByteBuffer6.position(16);
 				local257.glNormalPointer(GL.GL_FLOAT, local282, this.aByteBuffer6);
 			}
@@ -251,7 +251,7 @@ public final class Class4_Sub12 extends Node {
 			this.aClass111_2.method2604();
 			local257.glVertexPointer(3, GL.GL_FLOAT, local282, 0L);
 			local257.glColorPointer(4, GL.GL_UNSIGNED_BYTE, local282, 12L);
-			if (Static2.aBoolean66) {
+			if (Preferences.highDetailLighting) {
 				local257.glNormalPointer(GL.GL_FLOAT, local282, 16L);
 			}
 			local257.glTexCoordPointer(2, GL.GL_FLOAT, local282, 28L);

@@ -779,7 +779,7 @@ public final class Static29 {
 			if (arg4) {
 				Static15.method1227(0, local38, local44, 255);
 			}
-		} else if (Static5.anInt4120 != 0) {
+		} else if (Preferences.areaSoundsVolume != 0) {
 			Static4.anIntArray294[Static6.anInt4457] = local38;
 			Static7.anIntArray629[Static6.anInt4457] = local44;
 			@Pc(113) int local113 = (arg1 - 64) / 128;
@@ -1019,10 +1019,10 @@ public final class Static29 {
 			Static3.aClass4_Sub10_Sub1_1.writeOpcode(248);
 			Static3.aClass4_Sub10_Sub1_1.writeByte(0);
 		}
-		if (!Static2.aBoolean104) {
+		if (!Preferences.sentToServer) {
 			Static3.aClass4_Sub10_Sub1_1.writeOpcode(120);
-			Static3.aClass4_Sub10_Sub1_1.writeInt(Static25.method2806());
-			Static2.aBoolean104 = true;
+			Static3.aClass4_Sub10_Sub1_1.writeInt(Preferences.toInt());
+			Preferences.sentToServer = true;
 		}
 		if (Static7.aBoolean401) {
 			Static7.aBoolean401 = false;

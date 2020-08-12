@@ -481,7 +481,7 @@ public final class Static28 {
 					@Pc(80) int local80 = arg0 + local76;
 					if (local72 > 0 && local80 > 0 && local72 < 103 && local80 < 103) {
 						@Pc(102) Class181 local102 = Static8.method99(local14);
-						if (local68 != 22 || Static3.aBoolean159 || local102.anInt5522 != 0 || local102.anInt5509 == 1 || local102.aBoolean376) {
+						if (local68 != 22 || Preferences.groundDecoration || local102.anInt5522 != 0 || local102.anInt5509 == 1 || local102.aBoolean376) {
 							local28 = true;
 							if (!local102.method4449()) {
 								local7 = false;
@@ -523,7 +523,7 @@ public final class Static28 {
 
 	@OriginalMember(owner = "client!pa", name = "a", descriptor = "(I)V")
 	public static void method3322() {
-		Static27.method3104(Static5.anInt4291);
+		Static27.method3104(Preferences.buildArea);
 		@Pc(17) int local17 = (Static3.anInt2519 >> 10) + (Static5.anInt3983 >> 3);
 		@Pc(25) int local25 = (Static7.anInt5479 >> 3) + (Static7.anInt5678 >> 10);
 		Static1.aByteArrayArray4 = new byte[18][];

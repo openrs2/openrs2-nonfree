@@ -3771,7 +3771,7 @@ public final class Static16 {
 								}
 								if (local45 == 5301) {
 									if (GameShell.fullScreenFrame != null) {
-										Static35.method4512(false, Static5.anInt3637, -1, -1);
+										Static35.method4512(false, Preferences.displayMode, -1, -1);
 									}
 									continue;
 								}
@@ -3790,8 +3790,8 @@ public final class Static16 {
 									continue;
 								}
 								if (local45 == 5305) {
-									@Pc(5796) int local5796 = Static4.anInt3403;
-									@Pc(5798) int local5798 = Static3.anInt2627;
+									@Pc(5796) int local5796 = Preferences.fullScreenWidth;
+									@Pc(5798) int local5798 = Preferences.fullScreenHeight;
 									@Pc(5800) int local5800 = -1;
 									@Pc(5803) Class169[] local5803 = Static25.method2725();
 									for (@Pc(5805) int local5805 = 0; local5805 < local5803.length; local5805++) {
@@ -3818,7 +3818,7 @@ public final class Static16 {
 									continue;
 								}
 								if (local45 == 5308) {
-									Static7.anIntArray571[local5++] = Static5.anInt3637;
+									Static7.anIntArray571[local5++] = Preferences.displayMode;
 									continue;
 								}
 								if (local45 == 5309) {
@@ -3827,8 +3827,8 @@ public final class Static16 {
 									if (local5907 < 0 || local5907 > 2) {
 										local5907 = 0;
 									}
-									Static5.anInt3637 = local5907;
-									Static14.method1055(GameShell.signLink);
+									Preferences.displayMode = local5907;
+									Preferences.write(GameShell.signLink);
 									continue;
 								}
 							} else if (local45 < 5500) {
@@ -3888,7 +3888,7 @@ public final class Static16 {
 								}
 								if (local45 == 5411) {
 									if (GameShell.fullScreenFrame != null) {
-										Static35.method4512(false, Static5.anInt3637, -1, -1);
+										Static35.method4512(false, Preferences.displayMode, -1, -1);
 									}
 									if (GameShell.frame == null) {
 										Static37.method4719(Static36.method4436(), false);
@@ -3915,7 +3915,7 @@ public final class Static16 {
 								}
 								if (local45 == 5421) {
 									if (GameShell.fullScreenFrame != null) {
-										Static35.method4512(false, Static5.anInt3637, -1, -1);
+										Static35.method4512(false, Preferences.displayMode, -1, -1);
 									}
 									local13--;
 									@Pc(9090) String local9090 = Static2.aStringArray5[local13];
@@ -4168,92 +4168,92 @@ public final class Static16 {
 									if (local6301 > 4) {
 										local6301 = 4;
 									}
-									Static1.anInt185 = local6301;
-									if (!Static3.aBoolean138 || !Static2.aBoolean66) {
-										if (Static1.anInt185 == 1) {
+									Preferences.brightness = local6301;
+									if (!Static3.aBoolean138 || !Preferences.highDetailLighting) {
+										if (Preferences.brightness == 1) {
 											Static23.method2539(0.9F);
 										}
-										if (Static1.anInt185 == 2) {
+										if (Preferences.brightness == 2) {
 											Static23.method2539(0.8F);
 										}
-										if (Static1.anInt185 == 3) {
+										if (Preferences.brightness == 3) {
 											Static23.method2539(0.7F);
 										}
-										if (Static1.anInt185 == 4) {
+										if (Preferences.brightness == 4) {
 											Static23.method2539(0.6F);
 										}
 									}
 									if (Static3.aBoolean138) {
 										Static17.method1655();
-										if (!Static2.aBoolean66) {
+										if (!Preferences.highDetailLighting) {
 											Static36.method4455();
 										}
 									}
 									Static9.method198();
-									Static14.method1055(GameShell.signLink);
-									Static2.aBoolean104 = false;
+									Preferences.write(GameShell.signLink);
+									Preferences.sentToServer = false;
 									continue;
 								}
 								if (local45 == 6002) {
 									local5--;
-									Static35.method665(Static7.anIntArray571[local5] == 1);
+									Preferences.setAllLevelsVisible(Static7.anIntArray571[local5] == 1);
 									Static30.method3599();
 									Static36.method4455();
 									method2014();
-									Static14.method1055(GameShell.signLink);
-									Static2.aBoolean104 = false;
+									Preferences.write(GameShell.signLink);
+									Preferences.sentToServer = false;
 									continue;
 								}
 								if (local45 == 6003) {
 									local5--;
-									Static4.aBoolean398 = Static7.anIntArray571[local5] == 1;
+									Preferences.roofsVisible = Static7.anIntArray571[local5] == 1;
 									method2014();
-									Static14.method1055(GameShell.signLink);
-									Static2.aBoolean104 = false;
+									Preferences.write(GameShell.signLink);
+									Preferences.sentToServer = false;
 									continue;
 								}
 								if (local45 == 6005) {
 									local5--;
-									Static3.aBoolean159 = Static7.anIntArray571[local5] == 1;
+									Preferences.groundDecoration = Static7.anIntArray571[local5] == 1;
 									Static36.method4455();
-									Static14.method1055(GameShell.signLink);
-									Static2.aBoolean104 = false;
+									Preferences.write(GameShell.signLink);
+									Preferences.sentToServer = false;
 									continue;
 								}
 								if (local45 == 6006) {
 									local5--;
-									Static6.aBoolean227 = Static7.anIntArray571[local5] == 1;
-									((Class24_Sub1) Static4.anInterface4_1).method457(!Static6.aBoolean227);
-									Static14.method1055(GameShell.signLink);
-									Static2.aBoolean104 = false;
+									Preferences.highDetailTextures = Static7.anIntArray571[local5] == 1;
+									((Class24_Sub1) Static4.anInterface4_1).method457(!Preferences.highDetailTextures);
+									Preferences.write(GameShell.signLink);
+									Preferences.sentToServer = false;
 									continue;
 								}
 								if (local45 == 6007) {
 									local5--;
-									Static2.aBoolean117 = Static7.anIntArray571[local5] == 1;
-									Static14.method1055(GameShell.signLink);
-									Static2.aBoolean104 = false;
+									Preferences.manyIdleAnimations = Static7.anIntArray571[local5] == 1;
+									Preferences.write(GameShell.signLink);
+									Preferences.sentToServer = false;
 									continue;
 								}
 								if (local45 == 6008) {
 									local5--;
-									Static7.aBoolean421 = Static7.anIntArray571[local5] == 1;
-									Static14.method1055(GameShell.signLink);
-									Static2.aBoolean104 = false;
+									Preferences.flickeringEffects = Static7.anIntArray571[local5] == 1;
+									Preferences.write(GameShell.signLink);
+									Preferences.sentToServer = false;
 									continue;
 								}
 								if (local45 == 6009) {
 									local5--;
-									Static1.aBoolean27 = Static7.anIntArray571[local5] == 1;
-									Static14.method1055(GameShell.signLink);
-									Static2.aBoolean104 = false;
+									Preferences.groundTextures = Static7.anIntArray571[local5] == 1;
+									Preferences.write(GameShell.signLink);
+									Preferences.sentToServer = false;
 									continue;
 								}
 								if (local45 == 6010) {
 									local5--;
-									Static2.aBoolean75 = Static7.anIntArray571[local5] == 1;
-									Static14.method1055(GameShell.signLink);
-									Static2.aBoolean104 = false;
+									Preferences.characterShadows = Static7.anIntArray571[local5] == 1;
+									Preferences.write(GameShell.signLink);
+									Preferences.sentToServer = false;
 									continue;
 								}
 								if (local45 == 6011) {
@@ -4262,9 +4262,9 @@ public final class Static16 {
 									if (local6587 < 0 || local6587 > 2) {
 										local6587 = 0;
 									}
-									Static3.anInt2298 = local6587;
-									Static14.method1055(GameShell.signLink);
-									Static2.aBoolean104 = false;
+									Preferences.sceneryShadows = local6587;
+									Preferences.write(GameShell.signLink);
+									Preferences.sentToServer = false;
 									continue;
 								}
 								if (local45 == 6012) {
@@ -4272,46 +4272,46 @@ public final class Static16 {
 										Static24.method2652(0, 0);
 									}
 									local5--;
-									Static2.aBoolean66 = Static7.anIntArray571[local5] == 1;
-									if (Static3.aBoolean138 && Static2.aBoolean66) {
+									Preferences.highDetailLighting = Static7.anIntArray571[local5] == 1;
+									if (Static3.aBoolean138 && Preferences.highDetailLighting) {
 										Static23.method2539(0.7F);
 									} else {
-										if (Static1.anInt185 == 1) {
+										if (Preferences.brightness == 1) {
 											Static23.method2539(0.9F);
 										}
-										if (Static1.anInt185 == 2) {
+										if (Preferences.brightness == 2) {
 											Static23.method2539(0.8F);
 										}
-										if (Static1.anInt185 == 3) {
+										if (Preferences.brightness == 3) {
 											Static23.method2539(0.7F);
 										}
-										if (Static1.anInt185 == 4) {
+										if (Preferences.brightness == 4) {
 											Static23.method2539(0.6F);
 										}
 									}
 									Static36.method4455();
-									Static14.method1055(GameShell.signLink);
-									Static2.aBoolean104 = false;
+									Preferences.write(GameShell.signLink);
+									Preferences.sentToServer = false;
 									continue;
 								}
 								if (local45 == 6014) {
 									local5--;
-									Static7.aBoolean393 = Static7.anIntArray571[local5] == 1;
+									Preferences.highDetailWater = Static7.anIntArray571[local5] == 1;
 									if (Static3.aBoolean138) {
 										Static36.method4455();
 									}
-									Static14.method1055(GameShell.signLink);
-									Static2.aBoolean104 = false;
+									Preferences.write(GameShell.signLink);
+									Preferences.sentToServer = false;
 									continue;
 								}
 								if (local45 == 6015) {
 									local5--;
-									Static7.aBoolean362 = Static7.anIntArray571[local5] == 1;
+									Preferences.fog = Static7.anIntArray571[local5] == 1;
 									if (Static3.aBoolean138) {
 										Static17.method1655();
 									}
-									Static14.method1055(GameShell.signLink);
-									Static2.aBoolean104 = false;
+									Preferences.write(GameShell.signLink);
+									Preferences.sentToServer = false;
 									continue;
 								}
 								if (local45 == 6016) {
@@ -4328,10 +4328,10 @@ public final class Static16 {
 								}
 								if (local45 == 6017) {
 									local5--;
-									Static7.aBoolean122 = Static7.anIntArray571[local5] == 1;
+									Preferences.stereo = Static7.anIntArray571[local5] == 1;
 									Static9.method199();
-									Static14.method1055(GameShell.signLink);
-									Static2.aBoolean104 = false;
+									Preferences.write(GameShell.signLink);
+									Preferences.sentToServer = false;
 									continue;
 								}
 								if (local45 == 6018) {
@@ -4343,9 +4343,9 @@ public final class Static16 {
 									if (local6779 > 127) {
 										local6779 = 127;
 									}
-									Static4.anInt3315 = local6779;
-									Static14.method1055(GameShell.signLink);
-									Static2.aBoolean104 = false;
+									Preferences.soundEffectsVolume = local6779;
+									Preferences.write(GameShell.signLink);
+									Preferences.sentToServer = false;
 									continue;
 								}
 								if (local45 == 6019) {
@@ -4357,8 +4357,8 @@ public final class Static16 {
 									if (local6806 > 255) {
 										local6806 = 255;
 									}
-									if (Static1.anInt344 != local6806) {
-										if (Static1.anInt344 == 0 && Static6.anInt4844 != -1) {
+									if (Preferences.musicVolume != local6806) {
+										if (Preferences.musicVolume == 0 && Static6.anInt4844 != -1) {
 											Static28.method3251(local6806, Static6.anInt4844, Static7.aClass58_98);
 											Static4.aBoolean210 = false;
 										} else if (local6806 == 0) {
@@ -4367,10 +4367,10 @@ public final class Static16 {
 										} else {
 											Static29.method3541(local6806);
 										}
-										Static1.anInt344 = local6806;
+										Preferences.musicVolume = local6806;
 									}
-									Static14.method1055(GameShell.signLink);
-									Static2.aBoolean104 = false;
+									Preferences.write(GameShell.signLink);
+									Preferences.sentToServer = false;
 									continue;
 								}
 								if (local45 == 6020) {
@@ -4382,9 +4382,9 @@ public final class Static16 {
 									if (local6882 > 127) {
 										local6882 = 127;
 									}
-									Static5.anInt4120 = local6882;
-									Static14.method1055(GameShell.signLink);
-									Static2.aBoolean104 = false;
+									Preferences.areaSoundsVolume = local6882;
+									Preferences.write(GameShell.signLink);
+									Preferences.sentToServer = false;
 									continue;
 								}
 								if (local45 == 6021) {
@@ -4407,9 +4407,9 @@ public final class Static16 {
 										local6938 = 0;
 										local6933 = true;
 									}
-									Static26.method2957(local6938);
-									Static14.method1055(GameShell.signLink);
-									Static2.aBoolean104 = false;
+									Preferences.setParticles(local6938);
+									Preferences.write(GameShell.signLink);
+									Preferences.sentToServer = false;
 									local5 = local6935 + 1;
 									Static7.anIntArray571[local6935] = local6933 ? 0 : 1;
 									continue;
@@ -4420,8 +4420,8 @@ public final class Static16 {
 									if (local6985 < 0 || local6985 > 2) {
 										local6985 = 0;
 									}
-									Static1.anInt1051 = local6985;
-									Static14.method1055(GameShell.signLink);
+									Preferences.antiAliasingMode = local6985;
+									Preferences.write(GameShell.signLink);
 									continue;
 								}
 								if (local45 == 6027) {
@@ -4438,13 +4438,13 @@ public final class Static16 {
 								}
 								if (local45 == 6028) {
 									local5--;
-									Static2.aBoolean69 = Static7.anIntArray571[local5] != 0;
-									Static14.method1055(GameShell.signLink);
+									Preferences.customCursors = Static7.anIntArray571[local5] != 0;
+									Preferences.write(GameShell.signLink);
 									continue;
 								}
 							} else if (local45 < 6200) {
 								if (local45 == 6101) {
-									Static7.anIntArray571[local5++] = Static1.anInt185;
+									Static7.anIntArray571[local5++] = Preferences.brightness;
 									continue;
 								}
 								if (local45 == 6102) {
@@ -4452,47 +4452,47 @@ public final class Static16 {
 									continue;
 								}
 								if (local45 == 6103) {
-									Static7.anIntArray571[local5++] = Static4.aBoolean398 ? 1 : 0;
+									Static7.anIntArray571[local5++] = Preferences.roofsVisible ? 1 : 0;
 									continue;
 								}
 								if (local45 == 6105) {
-									Static7.anIntArray571[local5++] = Static3.aBoolean159 ? 1 : 0;
+									Static7.anIntArray571[local5++] = Preferences.groundDecoration ? 1 : 0;
 									continue;
 								}
 								if (local45 == 6106) {
-									Static7.anIntArray571[local5++] = Static6.aBoolean227 ? 1 : 0;
+									Static7.anIntArray571[local5++] = Preferences.highDetailTextures ? 1 : 0;
 									continue;
 								}
 								if (local45 == 6107) {
-									Static7.anIntArray571[local5++] = Static2.aBoolean117 ? 1 : 0;
+									Static7.anIntArray571[local5++] = Preferences.manyIdleAnimations ? 1 : 0;
 									continue;
 								}
 								if (local45 == 6108) {
-									Static7.anIntArray571[local5++] = Static7.aBoolean421 ? 1 : 0;
+									Static7.anIntArray571[local5++] = Preferences.flickeringEffects ? 1 : 0;
 									continue;
 								}
 								if (local45 == 6109) {
-									Static7.anIntArray571[local5++] = Static1.aBoolean27 ? 1 : 0;
+									Static7.anIntArray571[local5++] = Preferences.groundTextures ? 1 : 0;
 									continue;
 								}
 								if (local45 == 6110) {
-									Static7.anIntArray571[local5++] = Static2.aBoolean75 ? 1 : 0;
+									Static7.anIntArray571[local5++] = Preferences.characterShadows ? 1 : 0;
 									continue;
 								}
 								if (local45 == 6111) {
-									Static7.anIntArray571[local5++] = Static3.anInt2298;
+									Static7.anIntArray571[local5++] = Preferences.sceneryShadows;
 									continue;
 								}
 								if (local45 == 6112) {
-									Static7.anIntArray571[local5++] = Static2.aBoolean66 ? 1 : 0;
+									Static7.anIntArray571[local5++] = Preferences.highDetailLighting ? 1 : 0;
 									continue;
 								}
 								if (local45 == 6114) {
-									Static7.anIntArray571[local5++] = Static7.aBoolean393 ? 1 : 0;
+									Static7.anIntArray571[local5++] = Preferences.highDetailWater ? 1 : 0;
 									continue;
 								}
 								if (local45 == 6115) {
-									Static7.anIntArray571[local5++] = Static7.aBoolean362 ? 1 : 0;
+									Static7.anIntArray571[local5++] = Preferences.fog ? 1 : 0;
 									continue;
 								}
 								if (local45 == 6116) {
@@ -4500,19 +4500,19 @@ public final class Static16 {
 									continue;
 								}
 								if (local45 == 6117) {
-									Static7.anIntArray571[local5++] = Static7.aBoolean122 ? 1 : 0;
+									Static7.anIntArray571[local5++] = Preferences.stereo ? 1 : 0;
 									continue;
 								}
 								if (local45 == 6118) {
-									Static7.anIntArray571[local5++] = Static4.anInt3315;
+									Static7.anIntArray571[local5++] = Preferences.soundEffectsVolume;
 									continue;
 								}
 								if (local45 == 6119) {
-									Static7.anIntArray571[local5++] = Static1.anInt344;
+									Static7.anIntArray571[local5++] = Preferences.musicVolume;
 									continue;
 								}
 								if (local45 == 6120) {
-									Static7.anIntArray571[local5++] = Static5.anInt4120;
+									Static7.anIntArray571[local5++] = Preferences.areaSoundsVolume;
 									continue;
 								}
 								if (local45 == 6121) {
@@ -4524,11 +4524,11 @@ public final class Static16 {
 									continue;
 								}
 								if (local45 == 6123) {
-									Static7.anIntArray571[local5++] = Static26.method2954();
+									Static7.anIntArray571[local5++] = Preferences.getParticles();
 									continue;
 								}
 								if (local45 == 6124) {
-									Static7.anIntArray571[local5++] = Static1.anInt1051;
+									Static7.anIntArray571[local5++] = Preferences.antiAliasingMode;
 									continue;
 								}
 								if (local45 == 6126) {
@@ -4540,11 +4540,11 @@ public final class Static16 {
 									continue;
 								}
 								if (local45 == 6127) {
-									Static7.anIntArray571[local5++] = Static7.aBoolean390 ? 1 : 0;
+									Static7.anIntArray571[local5++] = Preferences.hdr ? 1 : 0;
 									continue;
 								}
 								if (local45 == 6128) {
-									Static7.anIntArray571[local5++] = Static2.aBoolean69 ? 1 : 0;
+									Static7.anIntArray571[local5++] = Preferences.customCursors ? 1 : 0;
 									continue;
 								}
 							} else if (local45 < 6300) {
@@ -4752,12 +4752,12 @@ public final class Static16 {
 								}
 								if (local45 == 6504) {
 									local5--;
-									Static5.anInt3909 = Static7.anIntArray571[local5];
-									Static14.method1055(GameShell.signLink);
+									Preferences.anInt3909 = Static7.anIntArray571[local5];
+									Preferences.write(GameShell.signLink);
 									continue;
 								}
 								if (local45 == 6505) {
-									Static7.anIntArray571[local5++] = Static5.anInt3909;
+									Static7.anIntArray571[local5++] = Preferences.anInt3909;
 									continue;
 								}
 								if (local45 == 6506) {
@@ -4800,12 +4800,12 @@ public final class Static16 {
 							} else if (local45 < 6700) {
 								if (local45 == 6600) {
 									local5--;
-									Static5.aBoolean293 = Static7.anIntArray571[local5] == 1;
-									Static14.method1055(GameShell.signLink);
+									Preferences.aBoolean293 = Static7.anIntArray571[local5] == 1;
+									Preferences.write(GameShell.signLink);
 									continue;
 								}
 								if (local45 == 6601) {
-									Static7.anIntArray571[local5++] = Static5.aBoolean293 ? 1 : 0;
+									Static7.anIntArray571[local5++] = Preferences.aBoolean293 ? 1 : 0;
 									continue;
 								}
 							} else if (local45 < 6900) {

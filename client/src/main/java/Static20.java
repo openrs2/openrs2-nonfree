@@ -1019,7 +1019,7 @@ public final class Static20 {
 		if (Static7.aBoolean401) {
 			return;
 		}
-		if (Static5.aBoolean293) {
+		if (Preferences.aBoolean293) {
 			Static5.aFloat97 = (int) Static5.aFloat97 + 191 & 0xFFFFFF80;
 		} else {
 			Static4.aFloat79 += (24.0F - Static4.aFloat79) / 2.0F;

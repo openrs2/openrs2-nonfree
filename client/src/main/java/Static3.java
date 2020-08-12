@@ -541,9 +541,6 @@ public final class Static3 {
 	@OriginalMember(owner = "client!gm", name = "d", descriptor = "S")
 	public static short aShort12 = 320;
 
-	@OriginalMember(owner = "client!gm", name = "e", descriptor = "Z")
-	public static boolean aBoolean144 = true;
-
 	@OriginalMember(owner = "client!gm", name = "f", descriptor = "J")
 	public static long aLong67 = 0L;
 
@@ -643,9 +640,6 @@ public final class Static3 {
 	@OriginalMember(owner = "client!i", name = "b", descriptor = "I")
 	public static int anInt2297 = 0;
 
-	@OriginalMember(owner = "client!i", name = "c", descriptor = "I")
-	public static int anInt2298 = 2;
-
 	@OriginalMember(owner = "client!ia", name = "d", descriptor = "[I")
 	public static final int[] anIntArray191 = new int[] { 2, 2, 4, 2, 1, 8, 4, 1, 4, 4, 2, 1, 1, 1, 4, 1 };
 
@@ -666,9 +660,6 @@ public final class Static3 {
 
 	@OriginalMember(owner = "client!ib", name = "H", descriptor = "[F")
 	public static final float[] aFloatArray23 = new float[4];
-
-	@OriginalMember(owner = "client!ic", name = "g", descriptor = "Z")
-	public static boolean aBoolean159 = true;
 
 	@OriginalMember(owner = "client!id", name = "c", descriptor = "[Ljava/lang/String;")
 	public static final String[] aStringArray16 = new String[100];
@@ -807,9 +798,6 @@ public final class Static3 {
 
 	@OriginalMember(owner = "client!jj", name = "bb", descriptor = "[Z")
 	public static final boolean[] aBooleanArray13 = new boolean[5];
-
-	@OriginalMember(owner = "client!jj", name = "jb", descriptor = "I")
-	public static int anInt2627 = 0;
 
 	@OriginalMember(owner = "client!jk", name = "d", descriptor = "Lclient!cc;")
 	public static final LruHashTable aClass26_27 = new LruHashTable(5);

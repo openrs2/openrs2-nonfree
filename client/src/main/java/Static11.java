@@ -99,7 +99,7 @@ public final class Static11 {
 		}
 		if (Static3.aBoolean138) {
 			Static14.method1205();
-			Static10.method300(Static7.aBoolean390);
+			Static10.method300(Preferences.hdr);
 			Static26.method2969();
 		}
 		Static8.method113(Static1.aClass58_4, Static4.aClass58_67);
@@ -776,7 +776,7 @@ public final class Static11 {
 		if (Static2.aBoolean119) {
 			return 0;
 		} else if (Static10.method456()) {
-			return Static4.aBoolean398 ? 2 : 1;
+			return Preferences.roofsVisible ? 2 : 1;
 		} else {
 			return 1;
 		}

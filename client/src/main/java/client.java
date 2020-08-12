@@ -331,7 +331,7 @@ public final class client extends GameShell {
 
 	@OriginalMember(owner = "client!client", name = "h", descriptor = "(I)V")
 	private void method686() {
-		if (!Static5.aBoolean278) {
+		if (!Preferences.safeMode) {
 			label264:
 			while (true) {
 				do {
@@ -339,7 +339,7 @@ public final class client extends GameShell {
 						break label264;
 					}
 				} while (Static6.aChar4 != 's' && Static6.aChar4 != 'S');
-				Static5.aBoolean278 = true;
+				Preferences.safeMode = true;
 			}
 		}
 		if (Static5.anInt4285 == 0) {
@@ -438,7 +438,7 @@ public final class client extends GameShell {
 				Static6.anInt4621 = 25;
 			}
 		} else if (Static5.anInt4285 == 45) {
-			Static9.method175(Static7.aBoolean122);
+			Static9.method175(Preferences.stereo);
 			Static1.aClass4_Sub6_Sub2_2 = new Class4_Sub6_Sub2();
 			Static1.aClass4_Sub6_Sub2_2.method2505();
 			Static1.aClass102_1 = Static25.method2807(GameShell.canvas, 22050, GameShell.signLink, 0);
@@ -550,18 +550,18 @@ public final class client extends GameShell {
 			}
 		} else if (Static5.anInt4285 == 90) {
 			if (Static4.aClass58_68.fetchAll()) {
-				@Pc(960) Class24_Sub1 local960 = new Class24_Sub1(Static2.aClass58_29, Static4.aClass58_68, Static1.aClass58_4, 20, !Static6.aBoolean227);
+				@Pc(960) Class24_Sub1 local960 = new Class24_Sub1(Static2.aClass58_29, Static4.aClass58_68, Static1.aClass58_4, 20, !Preferences.highDetailTextures);
 				Static23.method2551(local960);
-				if (Static1.anInt185 == 1) {
+				if (Preferences.brightness == 1) {
 					Static23.method2539(0.9F);
 				}
-				if (Static1.anInt185 == 2) {
+				if (Preferences.brightness == 2) {
 					Static23.method2539(0.8F);
 				}
-				if (Static1.anInt185 == 3) {
+				if (Preferences.brightness == 3) {
 					Static23.method2539(0.7F);
 				}
-				if (Static1.anInt185 == 4) {
+				if (Preferences.brightness == 4) {
 					Static23.method2539(0.6F);
 				}
 				Static6.anInt4621 = 70;
@@ -643,15 +643,15 @@ public final class client extends GameShell {
 			Static6.anInt4621 = 97;
 		} else if (Static5.anInt4285 == 150) {
 			Static19.method1859();
-			if (Static5.aBoolean278) {
-				Static5.anInt3637 = 0;
-				Static1.anInt1051 = 0;
+			if (Preferences.safeMode) {
+				Preferences.displayMode = 0;
+				Preferences.antiAliasingMode = 0;
 				Static2.anInt1125 = 0;
-				Static5.anInt4291 = 0;
+				Preferences.buildArea = 0;
 			}
-			Static5.aBoolean278 = true;
-			Static14.method1055(GameShell.signLink);
-			Static35.method4512(false, Static5.anInt3637, -1, -1);
+			Preferences.safeMode = true;
+			Preferences.write(GameShell.signLink);
+			Static35.method4512(false, Preferences.displayMode, -1, -1);
 			Static6.anInt4621 = 100;
 			Static5.aString243 = LocalisedText.MAINLOAD150B;
 			Static5.anInt4285 = 160;
@@ -705,7 +705,7 @@ public final class client extends GameShell {
 		if (modeWhat != 0) {
 			Static6.aByteArrayArray35 = new byte[50][];
 		}
-		Static33.method4149(GameShell.signLink);
+		Preferences.read(GameShell.signLink);
 		if (modeWhere == 0) {
 			worldListHostname = this.getCodeBase().getHost();
 			worldListDefaultPort = 43594;
@@ -985,7 +985,7 @@ public final class client extends GameShell {
 			Static1.aClass102_1.method3009();
 		}
 		if ((Static4.anInt3304 == 30 || Static4.anInt3304 == 10) && (GameShell.replaceCanvas || Static1.aLong15 != 0L && Static1.aLong15 < MonotonicClock.currentTimeMillis())) {
-			Static35.method4512(GameShell.replaceCanvas, Static11.method557(), Static4.anInt3403, Static3.anInt2627);
+			Static35.method4512(GameShell.replaceCanvas, Static11.method557(), Preferences.fullScreenWidth, Preferences.fullScreenHeight);
 		}
 		if (GameShell.fullScreenFrame == null) {
 			@Pc(79) Container local79;
@@ -1009,7 +1009,7 @@ public final class client extends GameShell {
 			}
 		}
 		if (GameShell.fullScreenFrame != null && !GameShell.focus && (Static4.anInt3304 == 30 || Static4.anInt3304 == 10)) {
-			Static35.method4512(false, Static5.anInt3637, -1, -1);
+			Static35.method4512(false, Preferences.displayMode, -1, -1);
 		}
 		@Pc(173) boolean local173 = false;
 		if (GameShell.fullRedraw) {
@@ -1082,9 +1082,9 @@ public final class client extends GameShell {
 		if (Static7.aBoolean422) {
 			Static31.method3798();
 		}
-		if (Static5.aBoolean278 && Static4.anInt3304 == 10 && Static3.anInt5398 != -1) {
-			Static5.aBoolean278 = false;
-			Static14.method1055(GameShell.signLink);
+		if (Preferences.safeMode && Static4.anInt3304 == 10 && Static3.anInt5398 != -1) {
+			Preferences.safeMode = false;
+			Preferences.write(GameShell.signLink);
 		}
 	}
 
