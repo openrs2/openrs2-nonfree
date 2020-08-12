@@ -716,11 +716,6 @@ public final class Static12 {
 		}
 	}
 
-	@OriginalMember(owner = "client!cn", name = "a", descriptor = "(II[B)I")
-	public static int method2321(@OriginalArg(0) int arg0, @OriginalArg(2) byte[] arg1) {
-		return Static23.method4818(arg1, arg0, 0);
-	}
-
 	@OriginalMember(owner = "client!cn", name = "a", descriptor = "(III)Lclient!g;")
 	public static Class4_Sub3_Sub9 method2322(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
 		@Pc(16) Class4_Sub3_Sub9 local16 = (Class4_Sub3_Sub9) Static3.aClass84_8.get((long) arg0 << 32 | (long) arg1);

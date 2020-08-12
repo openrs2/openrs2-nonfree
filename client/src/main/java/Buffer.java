@@ -8,6 +8,20 @@ import dev.openrs2.deob.annotation.Pc;
 @OriginalClass("client!fd")
 public class Buffer extends Node {
 
+	@OriginalMember(owner = "client!lh", name = "a", descriptor = "([BIII)I")
+	private static int crc32(@OriginalArg(0) byte[] bytes, @OriginalArg(3) int off, @OriginalArg(1) int len) {
+		@Pc(7) int crc = -1;
+		for (@Pc(9) int i = off; i < len; i++) {
+			crc = Class169.CRC32_TABLE[(crc ^ bytes[i]) & 0xFF] ^ crc >>> 8;
+		}
+		return ~crc;
+	}
+
+	@OriginalMember(owner = "client!cn", name = "a", descriptor = "(II[B)I")
+	public static int crc32(@OriginalArg(2) byte[] bytes, @OriginalArg(0) int len) {
+		return crc32(bytes, 0, len);
+	}
+
 	@OriginalMember(owner = "client!fd", name = "I", descriptor = "[B")
 	public byte[] bytes;
 
@@ -230,7 +244,7 @@ public class Buffer extends Node {
 	@OriginalMember(owner = "client!fd", name = "i", descriptor = "(I)Z")
 	public final boolean verifyCrc32() {
 		this.position -= 4;
-		@Pc(17) int actual = Static23.method4818(this.bytes, this.position, 0);
+		@Pc(17) int actual = crc32(this.bytes, 0, this.position);
 		@Pc(21) int expected = this.readInt();
 		return actual == expected;
 	}
@@ -376,7 +390,7 @@ public class Buffer extends Node {
 
 	@OriginalMember(owner = "client!fd", name = "k", descriptor = "(II)I")
 	public final int writeCrc32(@OriginalArg(1) int off) {
-		@Pc(11) int checksum = Static23.method4818(this.bytes, this.position, off);
+		@Pc(11) int checksum = crc32(this.bytes, off, this.position);
 		this.writeInt(checksum);
 		return checksum;
 	}

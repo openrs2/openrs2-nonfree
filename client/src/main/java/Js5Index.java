@@ -50,7 +50,7 @@ public final class Js5Index {
 
 	@OriginalMember(owner = "client!fo", name = "<init>", descriptor = "([BI)V")
 	public Js5Index(@OriginalArg(0) byte[] bytes, @OriginalArg(1) int expectedChecksum) {
-		this.checksum = Static12.method2321(bytes.length, bytes);
+		this.checksum = Buffer.crc32(bytes, bytes.length);
 		if (this.checksum != expectedChecksum) {
 			throw new RuntimeException();
 		}

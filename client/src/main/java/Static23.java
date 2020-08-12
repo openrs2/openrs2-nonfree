@@ -3795,15 +3795,6 @@ public final class Static23 {
 		method2547(Static6.anInt5185, Static6.anInt5183, Static6.anInt5186, Static6.anInt5187);
 	}
 
-	@OriginalMember(owner = "client!lh", name = "a", descriptor = "([BIII)I")
-	public static int method4818(@OriginalArg(0) byte[] arg0, @OriginalArg(1) int arg1, @OriginalArg(3) int arg2) {
-		@Pc(7) int local7 = -1;
-		for (@Pc(9) int local9 = arg2; local9 < arg1; local9++) {
-			local7 = Class169.anIntArray591[(local7 ^ arg0[local9]) & 0xFF] ^ local7 >>> 8;
-		}
-		return ~local7;
-	}
-
 	@OriginalMember(owner = "client!lh", name = "a", descriptor = "(IZ)V")
 	public static void method4822(@OriginalArg(0) int arg0) {
 		@Pc(13) Class4_Sub3_Sub9 local13 = Static12.method2322(2, arg0);

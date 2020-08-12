@@ -229,7 +229,7 @@ public final class Js5 {
 			try {
 				uncompressed = Js5Compression.uncompress(compressed);
 			} catch (@Pc(153) RuntimeException ex) {
-				throw TracingException.wrap(ex, "T3 - " + (key != null) + "," + group + "," + compressed.length + "," + Static12.method2321(compressed.length, compressed) + "," + Static12.method2321(compressed.length - 2, compressed) + "," + this.index.groupChecksums[group] + "," + this.index.checksum);
+				throw TracingException.wrap(ex, "T3 - " + (key != null) + "," + group + "," + compressed.length + "," + Buffer.crc32(compressed, compressed.length) + "," + Buffer.crc32(compressed, compressed.length - 2) + "," + this.index.groupChecksums[group] + "," + this.index.checksum);
 			}
 			if (this.discardPacked) {
 				this.packed[group] = null;
