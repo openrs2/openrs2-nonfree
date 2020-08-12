@@ -521,9 +521,6 @@ public final class Static5 {
 	@OriginalMember(owner = "client!pj", name = "h", descriptor = "Z")
 	public static boolean aBoolean294 = false;
 
-	@OriginalMember(owner = "client!pj", name = "i", descriptor = "Ljava/lang/String;")
-	public static String aString243 = "";
-
 	@OriginalMember(owner = "client!pj", name = "j", descriptor = "[I")
 	public static int[] anIntArray440 = new int[2];
 
@@ -577,12 +574,6 @@ public final class Static5 {
 
 	@OriginalMember(owner = "client!qd", name = "J", descriptor = "Lclient!ll;")
 	public static final LinkedList aClass112_27 = new LinkedList();
-
-	@OriginalMember(owner = "client!qd", name = "L", descriptor = "Ljava/lang/String;")
-	public static String aString255 = null;
-
-	@OriginalMember(owner = "client!qe", name = "b", descriptor = "I")
-	public static int anInt4285 = 0;
 
 	@OriginalMember(owner = "client!qe", name = "f", descriptor = "[I")
 	public static final int[] anIntArray456 = new int[] { 1, 0, 0, 0, 1, 0, 2, 1, 1, 1, 0, 2, 0, 0, 1, 0 };

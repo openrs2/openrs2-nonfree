@@ -612,15 +612,15 @@ public final class Static28 {
 		if (Static3.aBoolean138) {
 			Static18.method1690(GameShell.canvasWidth / 2 - 152, local70, 304, 34, 9179409);
 			Static18.method1690(GameShell.canvasWidth / 2 - 151, local70 + 1, 302, 32, 0);
-			Static18.method1701(GameShell.canvasWidth / 2 - 150, local70 + 2, Static6.anInt4621 * 3, 30, 9179409);
-			Static18.method1701(GameShell.canvasWidth / 2 + Static6.anInt4621 * 3 - 150, local70 + 2, 300 - Static6.anInt4621 * 3, 30, 0);
+			Static18.method1701(GameShell.canvasWidth / 2 - 150, local70 + 2, client.mainLoadPercentage * 3, 30, 9179409);
+			Static18.method1701(GameShell.canvasWidth / 2 + client.mainLoadPercentage * 3 - 150, local70 + 2, 300 - client.mainLoadPercentage * 3, 30, 0);
 		} else {
 			Static34.method4222(GameShell.canvasWidth / 2 - 152, local70, 304, 34, 9179409);
 			Static34.method4222(GameShell.canvasWidth / 2 - 151, local70 + 1, 302, 32, 0);
-			Static33.method4205(GameShell.canvasWidth / 2 - 150, local70 + 2, Static6.anInt4621 * 3, 30, 9179409);
-			Static33.method4205(Static6.anInt4621 * 3 + GameShell.canvasWidth / 2 - 150, local70 + 2, 300 - Static6.anInt4621 * 3, 30, 0);
+			Static33.method4205(GameShell.canvasWidth / 2 - 150, local70 + 2, client.mainLoadPercentage * 3, 30, 9179409);
+			Static33.method4205(client.mainLoadPercentage * 3 + GameShell.canvasWidth / 2 - 150, local70 + 2, 300 - client.mainLoadPercentage * 3, 30, 0);
 		}
-		arg1.method2271(Static5.aString243, GameShell.canvasWidth / 2, GameShell.canvasHeight / 2 + 4, 16777215, -1);
+		arg1.method2271(client.mainLoadSecondaryText, GameShell.canvasWidth / 2, GameShell.canvasHeight / 2 + 4, 16777215, -1);
 	}
 
 	@OriginalMember(owner = "client!pc", name = "a", descriptor = "(II)I")

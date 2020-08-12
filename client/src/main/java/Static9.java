@@ -356,10 +356,10 @@ public final class Static9 {
 				local2.setColor(Color.white);
 				local2.drawString(arg3, local134 + (304 - Static1.aFontMetrics1.stringWidth(arg3)) / 2, local140 + 22);
 			}
-			if (Static5.aString255 != null) {
+			if (client.mainLoadPrimaryText != null) {
 				local2.setFont(Static1.aFont1);
 				local2.setColor(Color.white);
-				local2.drawString(Static5.aString255, GameShell.canvasWidth / 2 - Static1.aFontMetrics1.stringWidth(Static5.aString255) / 2, GameShell.canvasHeight / 2 - 26);
+				local2.drawString(client.mainLoadPrimaryText, GameShell.canvasWidth / 2 - Static1.aFontMetrics1.stringWidth(client.mainLoadPrimaryText) / 2, GameShell.canvasHeight / 2 - 26);
 			}
 		} catch (@Pc(243) Exception local243) {
 			GameShell.canvas.repaint();
