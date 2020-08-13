@@ -322,11 +322,11 @@ public final class Js5NetQueue {
 							@Pc(478) int group = this.inBuffer.readUnsignedShort();
 							@Pc(483) int flags = this.inBuffer.readUnsignedByte();
 							@Pc(487) int compressionType = flags & 0x7F;
-							@Pc(498) boolean urgent = (flags & 0x80) != 0;
-							@Pc(503) int uncompressedLen = this.inBuffer.readInt();
+							@Pc(498) boolean prefetch = (flags & 0x80) != 0;
+							@Pc(503) int len = this.inBuffer.readInt();
 							@Pc(510) long key = group + (archive << 16);
 							@Pc(520) Js5NetRequest request;
-							if (urgent) {
+							if (prefetch) {
 								for (request = (Js5NetRequest) this.inFlightPrefetchRequests.head(); request != null && request.secondaryKey != key; request = (Js5NetRequest) this.inFlightPrefetchRequests.next()) {
 								}
 							} else {
@@ -338,9 +338,9 @@ public final class Js5NetQueue {
 							}
 							this.current = request;
 							@Pc(581) int headerLen = compressionType == 0 ? 5 : 9;
-							this.current.data = new Buffer(this.current.trailerLen + uncompressedLen + headerLen);
+							this.current.data = new Buffer(this.current.trailerLen + len + headerLen);
 							this.current.data.writeByte(compressionType);
-							this.current.data.writeInt(uncompressedLen);
+							this.current.data.writeInt(len);
 							this.current.blockPosition = 8;
 							this.inBuffer.position = 0;
 						} else if (this.current.blockPosition != 0) {
