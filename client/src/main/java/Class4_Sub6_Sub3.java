@@ -130,7 +130,7 @@ public final class Class4_Sub6_Sub3 extends Class4_Sub6 {
 		while (arg0 != this.aClass112_16.sentinel && ((Class4_Sub33) arg0).anInt6071 <= arg1.anInt6071) {
 			arg0 = arg0.next;
 		}
-		Static28.method3267(arg0, arg1);
+		LinkedList.insertBefore(arg1, arg0);
 		this.anInt3270 = ((Class4_Sub33) this.aClass112_16.sentinel.next).anInt6071;
 	}
 

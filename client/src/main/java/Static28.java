@@ -327,17 +327,6 @@ public final class Static28 {
 		Static1.aClass26_6.clearSoft();
 	}
 
-	@OriginalMember(owner = "client!on", name = "a", descriptor = "(Lclient!ni;BLclient!ni;)V")
-	public static void method3267(@OriginalArg(0) Node arg0, @OriginalArg(2) Node arg1) {
-		if (arg1.prev != null) {
-			arg1.unlink();
-		}
-		arg1.next = arg0;
-		arg1.prev = arg0.prev;
-		arg1.prev.next = arg1;
-		arg1.next.prev = arg1;
-	}
-
 	@OriginalMember(owner = "client!on", name = "b", descriptor = "(BI)V")
 	public static void method3268() {
 		Static6.aClass26_51.sweep(5);

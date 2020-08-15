@@ -6,6 +6,17 @@ import dev.openrs2.deob.annotation.Pc;
 @OriginalClass("client!ll")
 public final class LinkedList {
 
+	@OriginalMember(owner = "client!on", name = "a", descriptor = "(Lclient!ni;BLclient!ni;)V")
+	public static void insertBefore(@OriginalArg(2) Node node, @OriginalArg(0) Node position) {
+		if (node.prev != null) {
+			node.unlink();
+		}
+		node.next = position;
+		node.prev = position.prev;
+		node.prev.next = node;
+		node.next.prev = node;
+	}
+
 	@OriginalMember(owner = "client!ll", name = "p", descriptor = "Lclient!ni;")
 	private Node cursor;
 
