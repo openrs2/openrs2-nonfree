@@ -46,7 +46,7 @@ public final class NanoTimer extends Timer {
 	}
 
 	@OriginalMember(owner = "client!hf", name = "a", descriptor = "(B)J")
-	private long getDelta() {
+	private long getDuration() {
 		@Pc(1) long current = System.nanoTime();
 		@Pc(7) long duration = current - this.previousFrame;
 		this.previousFrame = current;
@@ -69,7 +69,7 @@ public final class NanoTimer extends Timer {
 	public final int sleep(@OriginalArg(0) int minimumDelay, @OriginalArg(2) int timePerFrame) {
 		ThreadUtils.sleep(minimumDelay);
 		@Pc(15) long timePerFrameNanos = (long) timePerFrame * 1000000L;
-		this.time += this.getDelta();
+		this.time += this.getDuration();
 		if (this.nextFrame > this.time) {
 			ThreadUtils.sleep((this.nextFrame - this.time) / 1000000L);
 			this.previousFrame += this.nextFrame - this.time;

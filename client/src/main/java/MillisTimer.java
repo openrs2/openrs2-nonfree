@@ -31,7 +31,7 @@ public final class MillisTimer extends Timer {
 	}
 
 	@OriginalMember(owner = "client!oo", name = "e", descriptor = "(I)J")
-	private long getDelta() {
+	private long getDuration() {
 		@Pc(6) long now = MonotonicClock.currentTimeMillis() * 1000000L;
 		@Pc(12) long duration = now - this.previousFrame;
 		@Pc(15) long sum = 0;
@@ -62,7 +62,7 @@ public final class MillisTimer extends Timer {
 	@Override
 	public final int sleep(@OriginalArg(0) int minimumDelay, @OriginalArg(2) int timePerFrame) {
 		ThreadUtils.sleep(minimumDelay);
-		this.time += this.getDelta();
+		this.time += this.getDuration();
 		@Pc(22) long timePerFrameNanos = (long) timePerFrame * 1000000L;
 		if (this.nextFrame > this.time) {
 			ThreadUtils.sleep((this.nextFrame - this.time) / 1000000L);
