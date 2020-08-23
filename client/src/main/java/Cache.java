@@ -58,7 +58,7 @@ public final class Cache {
 				buffer[5] = (byte) block;
 				buffer[0] = (byte) (len >> 16);
 				buffer[1] = (byte) (len >> 8);
-				@Pc(126) int seq = 0;
+				@Pc(126) int blockNum = 0;
 				buffer[4] = (byte) (block >> 8);
 				@Pc(135) int off = 0;
 				buffer[2] = (byte) len;
@@ -81,7 +81,7 @@ public final class Cache {
 								@Pc(228) int actualSeq = ((buffer[2] & 0xFF) << 8) + (buffer[3] & 0xFF);
 								@Pc(234) int archive = buffer[7] & 0xFF;
 								@Pc(248) int actualGroup = (buffer[1] & 0xFF) + ((buffer[0] & 0xFF) << 8);
-								if (group != actualGroup || seq != actualSeq || archive != this.archive) {
+								if (group != actualGroup || blockNum != actualSeq || archive != this.archive) {
 									@Pc(267) boolean result = false;
 									return result;
 								}
@@ -108,10 +108,10 @@ public final class Cache {
 							buffer[4] = (byte) (nextBlock >> 16);
 							buffer[6] = (byte) nextBlock;
 							buffer[0] = (byte) (group >> 8);
-							buffer[2] = (byte) (seq >> 8);
+							buffer[2] = (byte) (blockNum >> 8);
 							buffer[7] = (byte) this.archive;
-							buffer[3] = (byte) seq;
-							seq++;
+							buffer[3] = (byte) blockNum;
+							blockNum++;
 							@Pc(390) int blockSize = len - off;
 							this.data.seek((long) (block * 520));
 							if (blockSize > 512) {
@@ -159,7 +159,7 @@ public final class Cache {
 					return (byte[]) result;
 				} else {
 					@Pc(130) byte[] bytes = new byte[len];
-					@Pc(132) int seq = 0;
+					@Pc(132) int blockNum = 0;
 					@Pc(134) int off = 0;
 					while (off < len) {
 						if (block == 0) {
@@ -176,7 +176,7 @@ public final class Cache {
 						@Pc(214) int nextBlock = (buffer[6] & 0xFF) + ((buffer[5] & 0xFF) << 8) + ((buffer[4] & 0xFF) << 16);
 						@Pc(228) int actualGroup = (buffer[1] & 0xFF) + ((buffer[0] & 0xFF) << 8);
 						@Pc(234) int archive = buffer[7] & 0xFF;
-						if (group != actualGroup || actualSeq != seq || archive != this.archive) {
+						if (group != actualGroup || actualSeq != blockNum || archive != this.archive) {
 							@Pc(250) Object result = null;
 							return (byte[]) result;
 						}
@@ -187,7 +187,7 @@ public final class Cache {
 						for (@Pc(272) int i = 0; i < blockSize; i++) {
 							bytes[off++] = buffer[i + 8];
 						}
-						seq++;
+						blockNum++;
 						block = nextBlock;
 					}
 					@Pc(293) byte[] result = bytes;
