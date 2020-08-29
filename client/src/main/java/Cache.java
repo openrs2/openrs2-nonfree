@@ -78,10 +78,10 @@ public final class Cache {
 									break eof;
 								}
 								nextBlock = (buffer[6] & 0xFF) + ((buffer[4] & 0xFF) << 16) + ((buffer[5] & 0xFF) << 8);
-								@Pc(228) int actualSeq = ((buffer[2] & 0xFF) << 8) + (buffer[3] & 0xFF);
+								@Pc(228) int actualBlockNum = ((buffer[2] & 0xFF) << 8) + (buffer[3] & 0xFF);
 								@Pc(234) int archive = buffer[7] & 0xFF;
 								@Pc(248) int actualGroup = (buffer[1] & 0xFF) + ((buffer[0] & 0xFF) << 8);
-								if (group != actualGroup || blockNum != actualSeq || archive != this.archive) {
+								if (group != actualGroup || blockNum != actualBlockNum || archive != this.archive) {
 									@Pc(267) boolean result = false;
 									return result;
 								}
@@ -172,11 +172,11 @@ public final class Cache {
 							blockSize = 512;
 						}
 						this.data.read(buffer, 0, blockSize + 8);
-						@Pc(192) int actualSeq = (buffer[3] & 0xFF) + ((buffer[2] & 0xFF) << 8);
+						@Pc(192) int actualBlockNum = (buffer[3] & 0xFF) + ((buffer[2] & 0xFF) << 8);
 						@Pc(214) int nextBlock = (buffer[6] & 0xFF) + ((buffer[5] & 0xFF) << 8) + ((buffer[4] & 0xFF) << 16);
 						@Pc(228) int actualGroup = (buffer[1] & 0xFF) + ((buffer[0] & 0xFF) << 8);
 						@Pc(234) int archive = buffer[7] & 0xFF;
-						if (group != actualGroup || actualSeq != blockNum || archive != this.archive) {
+						if (group != actualGroup || actualBlockNum != blockNum || archive != this.archive) {
 							@Pc(250) Object result = null;
 							return (byte[]) result;
 						}
