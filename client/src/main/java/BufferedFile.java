@@ -212,7 +212,7 @@ public final class BufferedFile {
 			}
 			@Pc(76) int originalLen = len;
 			@Pc(81) long originalPosition = this.virtualPosition;
-			if (this.readPosition <= this.virtualPosition && this.readPosition + (long) this.readLen > this.virtualPosition) {
+			if (this.virtualPosition >= this.readPosition && this.virtualPosition < this.readPosition + (long) this.readLen) {
 				@Pc(110) int n = (int) ((long) this.readLen + this.readPosition - this.virtualPosition);
 				if (n > len) {
 					n = len;
@@ -222,7 +222,7 @@ public final class BufferedFile {
 				this.virtualPosition += n;
 				off = n;
 			}
-			if (this.readBuffer.length < len) {
+			if (len > this.readBuffer.length) {
 				this.file.seek(this.virtualPosition);
 				this.physicalPosition = this.virtualPosition;
 				while (len > 0) {
@@ -270,7 +270,7 @@ public final class BufferedFile {
 				} else if (this.writePosition < (long) originalLen + originalPosition && (long) originalLen + originalPosition <= (long) this.writeLen + this.writePosition) {
 					end = (long) originalLen + originalPosition;
 				}
-				if (start > -1L && end > start) {
+				if (start > -1L && start < end) {
 					@Pc(440) int copyLen = (int) (end - start);
 					ArrayUtils.copy(this.writeBuffer, (int) (start - this.writePosition), b, (int) (start - originalPosition), copyLen);
 					if (end > this.virtualPosition) {
