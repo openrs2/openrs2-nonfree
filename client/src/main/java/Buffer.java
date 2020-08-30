@@ -61,7 +61,7 @@ public class Buffer extends Node {
 	}
 
 	@OriginalMember(owner = "client!fd", name = "a", descriptor = "(II)V")
-	public final void writeUnsignedSmart(@OriginalArg(1) int value) {
+	public final void writeUnsignedShortSmart(@OriginalArg(1) int value) {
 		if (value >= 0 && value < 128) {
 			this.writeByte(value);
 		} else if (value >= 0 && value < 32768) {
@@ -77,7 +77,7 @@ public class Buffer extends Node {
 	}
 
 	@OriginalMember(owner = "client!fd", name = "e", descriptor = "(B)I")
-	public final int readUnsignedSmart() {
+	public final int readUnsignedShortSmart() {
 		@Pc(14) int peek = this.bytes[this.position] & 0xFF;
 		return peek < 128 ? this.readUnsignedByte() : this.readUnsignedShort() - 32768;
 	}
@@ -211,7 +211,7 @@ public class Buffer extends Node {
 	}
 
 	@OriginalMember(owner = "client!fd", name = "g", descriptor = "(B)I")
-	public final int readSmart() {
+	public final int readShortSmart() {
 		@Pc(11) int peek = this.bytes[this.position] & 0xFF;
 		return peek < 128 ? this.readUnsignedByte() - 64 : this.readUnsignedShort() - 49152;
 	}
@@ -220,7 +220,7 @@ public class Buffer extends Node {
 	public final int readUnsignedMultiSmart() {
 		@Pc(7) int total = 0;
 		@Pc(11) int value;
-		for (value = this.readUnsignedSmart(); value == 32767; value = this.readUnsignedSmart()) {
+		for (value = this.readUnsignedShortSmart(); value == 32767; value = this.readUnsignedShortSmart()) {
 			total += 32767;
 		}
 		return total + value;

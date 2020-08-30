@@ -866,7 +866,7 @@ public final class Static11 {
 			local20 += local24;
 			@Pc(37) int local37 = 0;
 			while (true) {
-				@Pc(41) int local41 = local10.readUnsignedSmart();
+				@Pc(41) int local41 = local10.readUnsignedShortSmart();
 				if (local41 == 0) {
 					break;
 				}

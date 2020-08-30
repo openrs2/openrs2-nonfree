@@ -299,19 +299,19 @@ public final class Static14 {
 
 	@OriginalMember(owner = "client!el", name = "a", descriptor = "(ILclient!fd;)V")
 	public static void method1072(@OriginalArg(1) Buffer arg0) {
-		@Pc(9) int local9 = arg0.readUnsignedSmart();
+		@Pc(9) int local9 = arg0.readUnsignedShortSmart();
 		Static6.aClass151Array1 = new Class151[local9];
 		for (@Pc(14) int local14 = 0; local14 < local9; local14++) {
 			Static6.aClass151Array1[local14] = new Class151();
-			Static6.aClass151Array1[local14].anInt4469 = arg0.readUnsignedSmart();
+			Static6.aClass151Array1[local14].anInt4469 = arg0.readUnsignedShortSmart();
 			Static6.aClass151Array1[local14].aString270 = arg0.readVersionedString();
 		}
-		Static6.anInt4615 = arg0.readUnsignedSmart();
-		Static1.anInt645 = arg0.readUnsignedSmart();
-		Static3.anInt2580 = arg0.readUnsignedSmart();
+		Static6.anInt4615 = arg0.readUnsignedShortSmart();
+		Static1.anInt645 = arg0.readUnsignedShortSmart();
+		Static3.anInt2580 = arg0.readUnsignedShortSmart();
 		Static2.aClass63_Sub1Array1 = new Class63_Sub1[Static1.anInt645 + 1 - Static6.anInt4615];
 		for (@Pc(69) int local69 = 0; local69 < Static3.anInt2580; local69++) {
-			@Pc(80) int local80 = arg0.readUnsignedSmart();
+			@Pc(80) int local80 = arg0.readUnsignedShortSmart();
 			@Pc(88) Class63_Sub1 local88 = Static2.aClass63_Sub1Array1[local80] = new Class63_Sub1();
 			local88.anInt2021 = arg0.readUnsignedByte();
 			local88.anInt2020 = arg0.readInt();

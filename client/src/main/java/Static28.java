@@ -458,7 +458,7 @@ public final class Static28 {
 			@Pc(28) boolean local28 = false;
 			while (true) {
 				while (!local28) {
-					@Pc(47) int local47 = local12.readUnsignedSmart();
+					@Pc(47) int local47 = local12.readUnsignedShortSmart();
 					if (local47 == 0) {
 						continue label55;
 					}
@@ -479,7 +479,7 @@ public final class Static28 {
 						}
 					}
 				}
-				@Pc(34) int local34 = local12.readUnsignedSmart();
+				@Pc(34) int local34 = local12.readUnsignedShortSmart();
 				if (local34 == 0) {
 					break;
 				}

@@ -874,7 +874,7 @@ public final class Static15 {
 			local12 += local21;
 			@Pc(34) int local34 = 0;
 			while (true) {
-				@Pc(38) int local38 = local10.readUnsignedSmart();
+				@Pc(38) int local38 = local10.readUnsignedShortSmart();
 				if (local38 == 0) {
 					break;
 				}

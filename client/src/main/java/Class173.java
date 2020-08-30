@@ -107,16 +107,16 @@ public final class Class173 {
 			this.aClass73_1.method1674(arg0);
 		}
 		for (@Pc(109) int local109 = 0; local109 < 10; local109++) {
-			@Pc(116) int local116 = arg0.readUnsignedSmart();
+			@Pc(116) int local116 = arg0.readUnsignedShortSmart();
 			if (local116 == 0) {
 				break;
 			}
 			this.anIntArray605[local109] = local116;
-			this.anIntArray604[local109] = arg0.readSmart();
-			this.anIntArray606[local109] = arg0.readUnsignedSmart();
+			this.anIntArray604[local109] = arg0.readShortSmart();
+			this.anIntArray606[local109] = arg0.readUnsignedShortSmart();
 		}
-		this.anInt5347 = arg0.readUnsignedSmart();
-		this.anInt5348 = arg0.readUnsignedSmart();
+		this.anInt5347 = arg0.readUnsignedShortSmart();
+		this.anInt5348 = arg0.readUnsignedShortSmart();
 		this.anInt5346 = arg0.readUnsignedShort();
 		this.anInt5349 = arg0.readUnsignedShort();
 		this.aClass146_1 = new Class146();

@@ -800,15 +800,15 @@ public final class Class53_Sub3 extends Class53 {
 			@Pc(314) int local314 = local8.readUnsignedByte();
 			@Pc(316) int local316 = 0;
 			if ((local314 & 0x1) != 0) {
-				local316 = local13.readSmart();
+				local316 = local13.readShortSmart();
 			}
 			@Pc(326) int local326 = 0;
 			if ((local314 & 0x2) != 0) {
-				local326 = local18.readSmart();
+				local326 = local18.readShortSmart();
 			}
 			@Pc(336) int local336 = 0;
 			if ((local314 & 0x4) != 0) {
-				local336 = local23.readSmart();
+				local336 = local23.readShortSmart();
 			}
 			this.anIntArray329[local307] = local301 + local316;
 			this.anIntArray324[local307] = local303 + local326;
@@ -867,9 +867,9 @@ public final class Class53_Sub3 extends Class53 {
 		for (@Pc(541) int local541 = 0; local541 < local42; local541++) {
 			@Pc(548) int local548 = local13.readUnsignedByte();
 			if (local548 == 1) {
-				local533 = local8.readSmart() + local539;
-				local535 = local8.readSmart() + local533;
-				local537 = local8.readSmart() + local535;
+				local533 = local8.readShortSmart() + local539;
+				local535 = local8.readShortSmart() + local533;
+				local537 = local8.readShortSmart() + local535;
 				local539 = local537;
 				this.anIntArray331[local541] = local533;
 				this.anIntArray330[local541] = local535;
@@ -886,7 +886,7 @@ public final class Class53_Sub3 extends Class53 {
 			}
 			if (local548 == 2) {
 				local535 = local537;
-				local537 = local8.readSmart() + local539;
+				local537 = local8.readShortSmart() + local539;
 				local539 = local537;
 				this.anIntArray331[local541] = local533;
 				this.anIntArray330[local541] = local535;
@@ -897,7 +897,7 @@ public final class Class53_Sub3 extends Class53 {
 			}
 			if (local548 == 3) {
 				local533 = local537;
-				local537 = local8.readSmart() + local539;
+				local537 = local8.readShortSmart() + local539;
 				local539 = local537;
 				this.anIntArray331[local541] = local533;
 				this.anIntArray330[local541] = local535;
@@ -910,7 +910,7 @@ public final class Class53_Sub3 extends Class53 {
 				@Pc(686) int local686 = local533;
 				local533 = local535;
 				local535 = local686;
-				local537 = local8.readSmart() + local539;
+				local537 = local8.readShortSmart() + local539;
 				local539 = local537;
 				this.anIntArray331[local541] = local533;
 				this.anIntArray330[local541] = local686;
@@ -1151,15 +1151,15 @@ public final class Class53_Sub3 extends Class53 {
 			@Pc(486) int local486 = local4.readUnsignedByte();
 			@Pc(488) int local488 = 0;
 			if ((local486 & 0x1) != 0) {
-				local488 = local9.readSmart();
+				local488 = local9.readShortSmart();
 			}
 			@Pc(498) int local498 = 0;
 			if ((local486 & 0x2) != 0) {
-				local498 = local14.readSmart();
+				local498 = local14.readShortSmart();
 			}
 			@Pc(508) int local508 = 0;
 			if ((local486 & 0x4) != 0) {
-				local508 = local19.readSmart();
+				local508 = local19.readShortSmart();
 			}
 			this.anIntArray329[local479] = local473 + local488;
 			this.anIntArray324[local479] = local475 + local498;
@@ -1213,9 +1213,9 @@ public final class Class53_Sub3 extends Class53 {
 		for (@Pc(696) int local696 = 0; local696 < local48; local696++) {
 			@Pc(703) int local703 = local9.readUnsignedByte();
 			if (local703 == 1) {
-				local688 = local4.readSmart() + local694;
-				local690 = local4.readSmart() + local688;
-				local692 = local4.readSmart() + local690;
+				local688 = local4.readShortSmart() + local694;
+				local690 = local4.readShortSmart() + local688;
+				local692 = local4.readShortSmart() + local690;
 				local694 = local692;
 				this.anIntArray331[local696] = local688;
 				this.anIntArray330[local696] = local690;
@@ -1232,7 +1232,7 @@ public final class Class53_Sub3 extends Class53 {
 			}
 			if (local703 == 2) {
 				local690 = local692;
-				local692 = local4.readSmart() + local694;
+				local692 = local4.readShortSmart() + local694;
 				local694 = local692;
 				this.anIntArray331[local696] = local688;
 				this.anIntArray330[local696] = local690;
@@ -1243,7 +1243,7 @@ public final class Class53_Sub3 extends Class53 {
 			}
 			if (local703 == 3) {
 				local688 = local692;
-				local692 = local4.readSmart() + local694;
+				local692 = local4.readShortSmart() + local694;
 				local694 = local692;
 				this.anIntArray331[local696] = local688;
 				this.anIntArray330[local696] = local690;
@@ -1256,7 +1256,7 @@ public final class Class53_Sub3 extends Class53 {
 				@Pc(841) int local841 = local688;
 				local688 = local690;
 				local690 = local841;
-				local692 = local4.readSmart() + local694;
+				local692 = local4.readShortSmart() + local694;
 				local694 = local692;
 				this.anIntArray331[local696] = local688;
 				this.anIntArray330[local696] = local841;

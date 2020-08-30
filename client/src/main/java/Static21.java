@@ -563,7 +563,7 @@ public final class Static21 {
 			}
 			while (Static5.aClass4_Sub10_Sub1_2.position < Static1.anInt1052) {
 				@Pc(213) int local213 = 0;
-				@Pc(217) int local217 = Static5.aClass4_Sub10_Sub1_2.readUnsignedSmart();
+				@Pc(217) int local217 = Static5.aClass4_Sub10_Sub1_2.readUnsignedShortSmart();
 				@Pc(221) int local221 = Static5.aClass4_Sub10_Sub1_2.readUnsignedShort();
 				if (local221 != 0) {
 					local213 = Static5.aClass4_Sub10_Sub1_2.readUnsignedByte();

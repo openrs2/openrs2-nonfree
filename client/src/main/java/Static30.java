@@ -11,7 +11,7 @@ public final class Static30 {
 	@OriginalMember(owner = "client!qe", name = "a", descriptor = "(ILclient!fd;)V")
 	public static void method3546(@OriginalArg(1) Buffer arg0) {
 		for (@Pc(3) int local3 = 0; local3 < Static3.anInt2580; local3++) {
-			@Pc(14) int local14 = arg0.readUnsignedSmart();
+			@Pc(14) int local14 = arg0.readUnsignedShortSmart();
 			@Pc(18) int local18 = arg0.readUnsignedShort();
 			if (local18 == 65535) {
 				local18 = -1;
@@ -959,7 +959,7 @@ public final class Static30 {
 	@OriginalMember(owner = "client!qh", name = "a", descriptor = "(IIILclient!f;)V")
 	public static void method3565(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(3) Class53_Sub1_Sub1 arg2) {
 		if ((arg1 & 0x1) != 0) {
-			@Pc(14) int local14 = Static5.aClass4_Sub10_Sub1_2.readUnsignedSmart();
+			@Pc(14) int local14 = Static5.aClass4_Sub10_Sub1_2.readUnsignedShortSmart();
 			@Pc(18) int local18 = Static5.aClass4_Sub10_Sub1_2.readUnsignedByte();
 			arg2.method3304(Static2.anInt954, local18, local14);
 			arg2.anInt3993 = Static2.anInt954 + 300;
@@ -1112,7 +1112,7 @@ public final class Static30 {
 			arg2.anInt4030 = 0;
 		}
 		if ((arg1 & 0x400) != 0) {
-			@Pc(670) int local670 = Static5.aClass4_Sub10_Sub1_2.readUnsignedSmart();
+			@Pc(670) int local670 = Static5.aClass4_Sub10_Sub1_2.readUnsignedShortSmart();
 			@Pc(674) int local674 = Static5.aClass4_Sub10_Sub1_2.readUnsignedByte();
 			arg2.method3304(Static2.anInt954, local674, local670);
 		}

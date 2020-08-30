@@ -2683,7 +2683,7 @@ public final class Static29 {
 	@OriginalMember(owner = "client!qd", name = "a", descriptor = "(ZILclient!fd;)Ljava/lang/String;")
 	public static String method3537(@OriginalArg(2) Buffer arg0) {
 		try {
-			@Pc(12) int local12 = arg0.readUnsignedSmart();
+			@Pc(12) int local12 = arg0.readUnsignedShortSmart();
 			if (local12 > 32767) {
 				local12 = 32767;
 			}

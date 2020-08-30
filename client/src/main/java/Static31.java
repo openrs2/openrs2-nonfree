@@ -56,7 +56,7 @@ public final class Static31 {
 	public static int method3655(@OriginalArg(0) Buffer arg0, @OriginalArg(1) String arg1) {
 		@Pc(6) int local6 = arg0.position;
 		@Pc(10) byte[] local10 = Static14.method1061(arg1);
-		arg0.writeUnsignedSmart(local10.length);
+		arg0.writeUnsignedShortSmart(local10.length);
 		arg0.position += Static2.aClass129_1.encode(local10, 0, arg0.bytes, arg0.position, local10.length);
 		return arg0.position - local6;
 	}

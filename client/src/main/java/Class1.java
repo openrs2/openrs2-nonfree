@@ -65,17 +65,17 @@ public final class Class1 {
 				if ((local64 & 0x1) == 0) {
 					Static1.aShortArray8[local35] = local77;
 				} else {
-					Static1.aShortArray8[local35] = (short) local26.readSmart();
+					Static1.aShortArray8[local35] = (short) local26.readShortSmart();
 				}
 				if ((local64 & 0x2) == 0) {
 					Static1.aShortArray2[local35] = local77;
 				} else {
-					Static1.aShortArray2[local35] = (short) local26.readSmart();
+					Static1.aShortArray2[local35] = (short) local26.readShortSmart();
 				}
 				if ((local64 & 0x4) == 0) {
 					Static1.aShortArray6[local35] = local77;
 				} else {
-					Static1.aShortArray6[local35] = (short) local26.readSmart();
+					Static1.aShortArray6[local35] = (short) local26.readShortSmart();
 				}
 				Static1.aByteArray2[local35] = (byte) (local64 >>> 3 & 0x3);
 				if (local56 == 2) {
