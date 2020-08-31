@@ -16,8 +16,8 @@ public final class Js5File extends Js5 {
 	}
 
 	@OriginalMember(owner = "unpackclass!p", name = "<init>", descriptor = "([BZZZ)V")
-	private Js5File(@OriginalArg(0) byte[] in, @OriginalArg(1) boolean discardPacked, @OriginalArg(2) boolean discardUnapcked, @OriginalArg(3) boolean arg3) throws IOException {
-		super(discardPacked, discardUnapcked);
+	private Js5File(@OriginalArg(0) byte[] in, @OriginalArg(1) boolean discardPacked, @OriginalArg(2) boolean discardUnpacked, @OriginalArg(3) boolean arg3) throws IOException {
+		super(discardPacked, discardUnpacked);
 		this.read(new DataInputStream(new ByteArrayInputStream(in)), arg3);
 	}
 
