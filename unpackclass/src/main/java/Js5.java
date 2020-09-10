@@ -93,7 +93,7 @@ public abstract class Js5 {
 	}
 
 	@OriginalMember(owner = "unpackclass!aa", name = "a", descriptor = "([B)V")
-	protected final void read(@OriginalArg(0) byte[] bytes) {
+	protected final void decode(@OriginalArg(0) byte[] bytes) {
 		this.checksum = Buffer.crc32(bytes, bytes.length);
 		@Pc(13) Buffer buffer = new Buffer(uncompress(bytes));
 		@Pc(16) int protocol = buffer.readUnsignedByte();

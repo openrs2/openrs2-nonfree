@@ -33,7 +33,7 @@ public final class Js5File extends Js5 {
 		indexBuffer.writeByte(indexType);
 		indexBuffer.writeInt(indexCompressedLen);
 		in.readFully(indexBuffer.bytes, indexBuffer.position, indexRemaining);
-		this.read(indexBuffer.bytes);
+		this.decode(indexBuffer.bytes);
 		for (@Pc(38) int i = 0; i < super.size; i++) {
 			@Pc(43) int groupType = in.read();
 			@Pc(46) int groupRemaining = in.readInt();

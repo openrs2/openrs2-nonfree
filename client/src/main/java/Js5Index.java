@@ -54,11 +54,11 @@ public final class Js5Index {
 		if (this.checksum != expectedChecksum) {
 			throw new RuntimeException();
 		}
-		this.read(bytes);
+		this.decode(bytes);
 	}
 
 	@OriginalMember(owner = "client!fo", name = "a", descriptor = "([BI)V")
-	private void read(@OriginalArg(0) byte[] bytes) {
+	private void decode(@OriginalArg(0) byte[] bytes) {
 		@Pc(8) Buffer buffer = new Buffer(Js5Compression.uncompress(bytes));
 		@Pc(12) int protocol = buffer.readUnsignedByte();
 		if (protocol != 5 && protocol != 6) {
