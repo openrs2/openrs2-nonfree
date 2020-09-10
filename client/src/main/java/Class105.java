@@ -403,7 +403,7 @@ public final class Class105 {
 			this.aClass4_Sub3_Sub14_Sub1_5 = null;
 			return false;
 		}
-		@Pc(145) int local145 = IntegerUtils.flp2(this.anInt2856);
+		@Pc(145) int local145 = IntUtils.flp2(this.anInt2856);
 		if (local145 > 512) {
 			local145 = 512;
 		}

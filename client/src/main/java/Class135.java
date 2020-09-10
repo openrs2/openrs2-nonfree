@@ -75,7 +75,7 @@ public final class Class135 {
 		this.aByteArray53 = new byte[this.anInt4159];
 		this.aByteArray54 = new byte[this.anInt4159];
 		this.aByteArray55 = new byte[this.anInt4159];
-		this.aClass84_19 = new HashTable(IntegerUtils.clp2(this.anInt4159));
+		this.aClass84_19 = new HashTable(IntUtils.clp2(this.anInt4159));
 	}
 
 	@OriginalMember(owner = "client!pi", name = "b", descriptor = "()V")

@@ -1049,7 +1049,7 @@ public final class Static23 {
 		Static4.anInt3128 = arg3 - arg1;
 		method2555();
 		if (Static4.anIntArray297.length < Static4.anInt3128) {
-			Static4.anIntArray297 = new int[IntegerUtils.clp2(Static4.anInt3128)];
+			Static4.anIntArray297 = new int[IntUtils.clp2(Static4.anInt3128)];
 		}
 		@Pc(23) int local23 = arg1 * Static6.anInt5188 + arg0;
 		for (@Pc(25) int local25 = 0; local25 < Static4.anInt3128; local25++) {

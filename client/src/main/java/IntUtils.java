@@ -2,7 +2,7 @@ import dev.openrs2.deob.annotation.OriginalArg;
 import dev.openrs2.deob.annotation.OriginalMember;
 import dev.openrs2.deob.annotation.Pc;
 
-public final class IntegerUtils {
+public final class IntUtils {
 	@OriginalMember(owner = "client!lj", name = "a", descriptor = "(IB)I")
 	public static int clp2(@OriginalArg(0) int v) {
 		v--;

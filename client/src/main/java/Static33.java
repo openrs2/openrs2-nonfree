@@ -12,9 +12,9 @@ public final class Static33 {
 
 	@OriginalMember(owner = "client!so", name = "a", descriptor = "(IIIIII[F)V")
 	public static void method4070(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) float[] arg6) {
-		if (arg2 == 0 || arg2 == Integer.MIN_VALUE || !IntegerUtils.isPowerOfTwo(arg2)) {
+		if (arg2 == 0 || arg2 == Integer.MIN_VALUE || !IntUtils.isPowerOfTwo(arg2)) {
 			throw new InvalidParameterException("width must be power of 2");
-		} else if (arg3 == 0 || arg3 == Integer.MIN_VALUE || !IntegerUtils.isPowerOfTwo(arg3)) {
+		} else if (arg3 == 0 || arg3 == Integer.MIN_VALUE || !IntUtils.isPowerOfTwo(arg3)) {
 			throw new InvalidParameterException("height must be power of 2");
 		} else {
 			@Pc(32) byte local32;
@@ -82,9 +82,9 @@ public final class Static33 {
 
 	@OriginalMember(owner = "client!so", name = "a", descriptor = "(IIIIII[I)V")
 	public static void method4072(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int[] arg6) {
-		if (arg2 == 0 || arg2 == Integer.MIN_VALUE || !IntegerUtils.isPowerOfTwo(arg2)) {
+		if (arg2 == 0 || arg2 == Integer.MIN_VALUE || !IntUtils.isPowerOfTwo(arg2)) {
 			throw new InvalidParameterException("width must be power of 2");
-		} else if (arg3 == 0 || arg3 == Integer.MIN_VALUE || !IntegerUtils.isPowerOfTwo(arg3)) {
+		} else if (arg3 == 0 || arg3 == Integer.MIN_VALUE || !IntUtils.isPowerOfTwo(arg3)) {
 			throw new InvalidParameterException("height must be power of 2");
 		} else if (arg4 == 32993 || arg4 == 6408) {
 			@Pc(40) GL local40 = Static3.aGL1;

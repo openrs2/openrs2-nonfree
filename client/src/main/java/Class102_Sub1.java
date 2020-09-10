@@ -51,7 +51,7 @@ public final class Class102_Sub1 extends Class102 {
 				this.aSourceDataLine1 = null;
 				throw local36;
 			} else {
-				this.method2999(IntegerUtils.clp2(arg0));
+				this.method2999(IntUtils.clp2(arg0));
 			}
 		}
 	}

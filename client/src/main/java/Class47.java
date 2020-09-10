@@ -149,7 +149,7 @@ public final class Class47 {
 			return;
 		}
 		this.anInt1245 = arg0;
-		@Pc(10) int local10 = IntegerUtils.flp2(arg0);
+		@Pc(10) int local10 = IntUtils.flp2(arg0);
 		if (local10 > 512) {
 			local10 = 512;
 		}

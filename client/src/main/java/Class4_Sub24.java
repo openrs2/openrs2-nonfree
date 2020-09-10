@@ -54,7 +54,7 @@ public final class Class4_Sub24 extends Node {
 	private float[] method3627(@OriginalArg(0) int arg0) {
 		Static30.method3629(this.aByteArrayArray37[arg0]);
 		Static30.method3632();
-		@Pc(15) int local15 = Static30.method3637(IntegerUtils.bitCount(Static6.anIntArray468.length - 1));
+		@Pc(15) int local15 = Static30.method3637(IntUtils.bitCount(Static6.anIntArray468.length - 1));
 		@Pc(19) boolean local19 = Static6.aBooleanArray23[local15];
 		@Pc(25) int local25 = local19 ? Static6.anInt4415 : Static6.anInt4413;
 		@Pc(27) boolean local27 = false;
@@ -141,7 +141,7 @@ public final class Class4_Sub24 extends Node {
 				local214[local359 * 4 + 3] = (local372 - local390) * local432 - (local382 - local398) * local442;
 				local214[local359 * 4 + 1] = (local382 - local398) * local432 + (local372 - local390) * local442;
 			}
-			@Pc(486) int local486 = IntegerUtils.bitCount(local25 - 1);
+			@Pc(486) int local486 = IntUtils.bitCount(local25 - 1);
 			for (@Pc(488) int local488 = 0; local488 < local486 - 3; local488++) {
 				@Pc(499) int local499 = local25 >> local488 + 2;
 				@Pc(503) int local503 = 0x8 << local488;

@@ -356,7 +356,7 @@ public final class NpcType {
 		} else if (code == 249) {
 			@Pc(576) int size = buffer.readUnsignedByte();
 			if (this.params == null) {
-				@Pc(583) int buckets = IntegerUtils.clp2(size);
+				@Pc(583) int buckets = IntUtils.clp2(size);
 				this.params = new HashTable(buckets);
 			}
 			for (@Pc(591) int i = 0; i < size; i++) {

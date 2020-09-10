@@ -645,9 +645,9 @@ public final class Static30 {
 												@Pc(2207) int local2207 = (local38.anInt5949 + local2185 - 1) / local2185;
 												if (Static3.aBoolean138) {
 													Static18.method1692(local128, local122, local128 + local38.anInt5893, local122 + local38.anInt5949);
-													@Pc(2226) boolean local2226 = IntegerUtils.isPowerOfTwo(local2137.anInt5609);
+													@Pc(2226) boolean local2226 = IntUtils.isPowerOfTwo(local2137.anInt5609);
 													@Pc(2229) Class4_Sub3_Sub14_Sub2 local2229 = (Class4_Sub3_Sub14_Sub2) local2137;
-													@Pc(2234) boolean local2234 = IntegerUtils.isPowerOfTwo(local2137.anInt5608);
+													@Pc(2234) boolean local2234 = IntUtils.isPowerOfTwo(local2137.anInt5608);
 													if (local2226 && local2234) {
 														if (local117 == 0) {
 															local2229.method4518(local128, local122, local2197, local2207);
@@ -1888,7 +1888,7 @@ public final class Static30 {
 				local138[local140 * 2 + 1] = -((float) Math.sin((double) (local140 * 4 + 2) * 3.141592653589793D / (double) local26));
 			}
 			@Pc(187) int[] local187 = new int[local38];
-			@Pc(193) int local193 = IntegerUtils.bitCount(local38 - 1);
+			@Pc(193) int local193 = IntUtils.bitCount(local38 - 1);
 			for (@Pc(195) int local195 = 0; local195 < local38; local195++) {
 				local187[local195] = Static23.method2426(local195, local193);
 			}

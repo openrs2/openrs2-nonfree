@@ -160,7 +160,7 @@ public final class Static28 {
 			local9.aClass84Array1 = new HashTable[local66];
 			for (@Pc(77) int local77 = 0; local77 < local66; local77++) {
 				@Pc(84) int local84 = local14.readUnsignedShort();
-				@Pc(91) HashTable local91 = new HashTable(IntegerUtils.clp2(local84));
+				@Pc(91) HashTable local91 = new HashTable(IntUtils.clp2(local84));
 				local9.aClass84Array1[local77] = local91;
 				while (local84-- > 0) {
 					@Pc(103) int local103 = local14.readInt();

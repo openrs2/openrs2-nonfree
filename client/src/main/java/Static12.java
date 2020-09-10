@@ -740,7 +740,7 @@ public final class Static12 {
 	public static int method716(@OriginalArg(0) Random arg0, @OriginalArg(1) int arg1) {
 		if (arg1 <= 0) {
 			throw new IllegalArgumentException();
-		} else if (IntegerUtils.isPowerOfTwo(arg1)) {
+		} else if (IntUtils.isPowerOfTwo(arg1)) {
 			return (int) (((long) arg0.nextInt() & 0xFFFFFFFFL) * (long) arg1 >> 32);
 		} else {
 			@Pc(45) int local45 = Integer.MIN_VALUE - (int) (4294967296L % (long) arg1);
