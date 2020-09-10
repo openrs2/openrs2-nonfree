@@ -127,7 +127,7 @@ public class Class24 implements Interface3 {
 
 	@OriginalMember(owner = "client!qi", name = "c", descriptor = "(IZ)Lclient!ln;")
 	protected Class4_Sub3_Sub15 method421(@OriginalArg(0) int arg0) {
-		@Pc(10) SecondaryNode local10 = this.aClass40_2.method889((long) arg0);
+		@Pc(10) SecondaryNode local10 = this.aClass40_2.get((long) arg0);
 		if (local10 != null) {
 			return (Class4_Sub3_Sub15) local10;
 		}
@@ -136,7 +136,7 @@ public class Class24 implements Interface3 {
 			return null;
 		} else {
 			@Pc(34) Class4_Sub3_Sub15 local34 = new Class4_Sub3_Sub15(new Buffer(local21));
-			this.aClass40_2.method888((long) arg0, local34);
+			this.aClass40_2.put((long) arg0, local34);
 			return local34;
 		}
 	}

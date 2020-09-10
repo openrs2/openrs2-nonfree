@@ -4,28 +4,28 @@ import dev.openrs2.deob.annotation.OriginalMember;
 import dev.openrs2.deob.annotation.Pc;
 
 @OriginalClass("client!qk")
-public final class Class144 {
+public final class PlayerAppearance {
 
 	@OriginalMember(owner = "client!qk", name = "b", descriptor = "J")
-	private long aLong153;
+	private long checksum;
 
 	@OriginalMember(owner = "client!qk", name = "c", descriptor = "I")
-	private int anInt4372;
+	private int basId;
 
 	@OriginalMember(owner = "client!qk", name = "p", descriptor = "[I")
-	public int[] anIntArray463;
+	public int[] colors;
 
 	@OriginalMember(owner = "client!qk", name = "q", descriptor = "Z")
-	public boolean aBoolean306;
+	public boolean female;
 
 	@OriginalMember(owner = "client!qk", name = "u", descriptor = "J")
 	private long aLong154;
 
 	@OriginalMember(owner = "client!qk", name = "w", descriptor = "I")
-	public int anInt4387;
+	public int npcId;
 
 	@OriginalMember(owner = "client!qk", name = "y", descriptor = "[I")
-	private int[] anIntArray464;
+	private int[] identikit;
 
 	@OriginalMember(owner = "client!qk", name = "B", descriptor = "[[I")
 	private int[][] anIntArrayArray37;
@@ -33,51 +33,51 @@ public final class Class144 {
 	@OriginalMember(owner = "client!qk", name = "a", descriptor = "(BII)V")
 	public final void method3604(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1) {
 		@Pc(7) int local7 = Static1.anIntArray46[arg0];
-		if (this.anIntArray464[local7] != 0 && Static19.method1816(arg1) != null) {
-			this.anIntArray464[local7] = Integer.MIN_VALUE | arg1;
-			this.method3606();
+		if (this.identikit[local7] != 0 && Static19.method1816(arg1) != null) {
+			this.identikit[local7] = Integer.MIN_VALUE | arg1;
+			this.updateChecksum();
 		}
 	}
 
 	@OriginalMember(owner = "client!qk", name = "a", descriptor = "(ZI)V")
-	public final void method3605(@OriginalArg(0) boolean arg0) {
-		this.aBoolean306 = arg0;
-		this.method3606();
+	public final void setGender(@OriginalArg(0) boolean female) {
+		this.female = female;
+		this.updateChecksum();
 	}
 
 	@OriginalMember(owner = "client!qk", name = "c", descriptor = "(I)V")
-	private void method3606() {
-		@Pc(8) long local8 = this.aLong153;
-		@Pc(10) long[] local10 = BufferedFile.CRC64_TABLE;
-		this.aLong153 = -1L;
-		this.aLong153 = this.aLong153 >>> 8 ^ local10[(int) (((long) (this.anInt4372 >> 8) ^ this.aLong153) & 0xFFL)];
-		this.aLong153 = local10[(int) ((this.aLong153 ^ (long) this.anInt4372) & 0xFFL)] ^ this.aLong153 >>> 8;
-		for (@Pc(53) int local53 = 0; local53 < 12; local53++) {
-			this.aLong153 = this.aLong153 >>> 8 ^ local10[(int) (((long) (this.anIntArray464[local53] >> 24) ^ this.aLong153) & 0xFFL)];
-			this.aLong153 = this.aLong153 >>> 8 ^ local10[(int) (((long) (this.anIntArray464[local53] >> 16) ^ this.aLong153) & 0xFFL)];
-			this.aLong153 = local10[(int) ((this.aLong153 ^ (long) (this.anIntArray464[local53] >> 8)) & 0xFFL)] ^ this.aLong153 >>> 8;
-			this.aLong153 = local10[(int) ((this.aLong153 ^ (long) this.anIntArray464[local53]) & 0xFFL)] ^ this.aLong153 >>> 8;
+	private void updateChecksum() {
+		@Pc(8) long previousChecksum = this.checksum;
+		@Pc(10) long[] CRC64_TABLE = BufferedFile.CRC64_TABLE;
+		this.checksum = -1L;
+		this.checksum = this.checksum >>> 8 ^ CRC64_TABLE[(int) (((long) (this.basId >> 8) ^ this.checksum) & 0xFFL)];
+		this.checksum = CRC64_TABLE[(int) ((this.checksum ^ (long) this.basId) & 0xFFL)] ^ this.checksum >>> 8;
+		for (@Pc(53) int i = 0; i < 12; i++) {
+			this.checksum = this.checksum >>> 8 ^ CRC64_TABLE[(int) (((long) (this.identikit[i] >> 24) ^ this.checksum) & 0xFFL)];
+			this.checksum = this.checksum >>> 8 ^ CRC64_TABLE[(int) (((long) (this.identikit[i] >> 16) ^ this.checksum) & 0xFFL)];
+			this.checksum = CRC64_TABLE[(int) ((this.checksum ^ (long) (this.identikit[i] >> 8)) & 0xFFL)] ^ this.checksum >>> 8;
+			this.checksum = CRC64_TABLE[(int) ((this.checksum ^ (long) this.identikit[i]) & 0xFFL)] ^ this.checksum >>> 8;
 		}
-		for (@Pc(147) int local147 = 0; local147 < 5; local147++) {
-			this.aLong153 = this.aLong153 >>> 8 ^ local10[(int) (((long) this.anIntArray463[local147] ^ this.aLong153) & 0xFFL)];
+		for (@Pc(147) int i = 0; i < 5; i++) {
+			this.checksum = this.checksum >>> 8 ^ CRC64_TABLE[(int) (((long) this.colors[i] ^ this.checksum) & 0xFFL)];
 		}
-		this.aLong153 = local10[(int) ((this.aLong153 ^ (long) (this.aBoolean306 ? 1 : 0)) & 0xFFL)] ^ this.aLong153 >>> 8;
-		if (local8 != 0L && this.aLong153 != local8) {
-			Static2.aClass26_12.remove(local8);
+		this.checksum = CRC64_TABLE[(int) ((this.checksum ^ (long) (this.female ? 1 : 0)) & 0xFFL)] ^ this.checksum >>> 8;
+		if (previousChecksum != 0L && this.checksum != previousChecksum) {
+			Static2.aClass26_12.remove(previousChecksum);
 		}
 	}
 
 	@OriginalMember(owner = "client!qk", name = "a", descriptor = "([Lclient!re;IIILclient!eg;IIZILclient!eg;ZI)Lclient!vg;")
 	public final Class53_Sub4 method3608(@OriginalArg(0) Class150[] arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) Class46 arg4, @OriginalArg(5) int arg5, @OriginalArg(7) boolean arg6, @OriginalArg(8) int arg7, @OriginalArg(9) Class46 arg8, @OriginalArg(10) boolean arg9, @OriginalArg(11) int arg10) {
-		if (this.anInt4387 != -1) {
-			return Static15.method1495(this.anInt4387).method4268(arg5, arg7, arg4, arg8, arg2, arg0, arg3, arg1, arg10);
+		if (this.npcId != -1) {
+			return NpcTypeList.get(this.npcId).method4268(arg5, arg7, arg4, arg8, arg2, arg0, arg3, arg1, arg10);
 		}
-		@Pc(51) int[] local51 = this.anIntArray464;
-		@Pc(54) long local54 = this.aLong153;
+		@Pc(51) int[] local51 = this.identikit;
+		@Pc(54) long local54 = this.checksum;
 		if (arg8 != null && (arg8.anInt1224 >= 0 || arg8.anInt1232 >= 0)) {
 			local51 = new int[12];
 			for (@Pc(75) int local75 = 0; local75 < 12; local75++) {
-				local51[local75] = this.anIntArray464[local75];
+				local51[local75] = this.identikit[local75];
 			}
 			if (arg8.anInt1224 >= 0) {
 				if (arg8.anInt1224 == 65535) {
@@ -107,7 +107,7 @@ public final class Class144 {
 					if ((Integer.MIN_VALUE & local185) != 0 && !Static19.method1816(local185 & 0x3FFFFFFF).method3494()) {
 						local174 = true;
 					}
-				} else if (!Static35.method4361(local185 & 0x3FFFFFFF).method4128(this.aBoolean306)) {
+				} else if (!ObjTypeList.get(local185 & 0x3FFFFFFF).method4128(this.female)) {
 					local174 = true;
 				}
 			}
@@ -124,7 +124,7 @@ public final class Class144 {
 				for (@Pc(252) int local252 = 0; local252 < 12; local252++) {
 					@Pc(259) int local259 = local51[local252];
 					if ((local259 & 0x40000000) != 0) {
-						@Pc(273) Class53_Sub3 local273 = Static35.method4361(local259 & 0x3FFFFFFF).method4121(this.aBoolean306);
+						@Pc(273) Class53_Sub3 local273 = ObjTypeList.get(local259 & 0x3FFFFFFF).method4121(this.female);
 						if (local273 != null) {
 							local250[local252] = local273;
 						}
@@ -136,8 +136,8 @@ public final class Class144 {
 					}
 				}
 				@Pc(306) Class34 local306 = null;
-				if (this.anInt4372 != -1) {
-					local306 = Static37.method4776(this.anInt4372);
+				if (this.basId != -1) {
+					local306 = Static37.method4776(this.basId);
 				}
 				if (local306 != null && local306.anIntArrayArray7 != null) {
 					for (@Pc(326) int local326 = 0; local326 < local306.anIntArrayArray7.length; local326++) {
@@ -195,11 +195,11 @@ public final class Class144 {
 				}
 				@Pc(753) Class53_Sub3 local753 = new Class53_Sub3(local250, local250.length);
 				for (@Pc(755) int local755 = 0; local755 < 5; local755++) {
-					if (Static6.aShortArrayArray6[local755].length > this.anIntArray463[local755]) {
-						local753.method2768(Static7.aShortArray113[local755], Static6.aShortArrayArray6[local755][this.anIntArray463[local755]]);
+					if (Static6.aShortArrayArray6[local755].length > this.colors[local755]) {
+						local753.method2768(Static7.aShortArray113[local755], Static6.aShortArrayArray6[local755][this.colors[local755]]);
 					}
-					if (Static1.aShortArrayArray1[local755].length > this.anIntArray463[local755]) {
-						local753.method2768(Static4.aShortArray46[local755], Static1.aShortArrayArray1[local755][this.anIntArray463[local755]]);
+					if (Static1.aShortArrayArray1[local755].length > this.colors[local755]) {
+						local753.method2768(Static4.aShortArray46[local755], Static1.aShortArrayArray1[local755][this.colors[local755]]);
 					}
 				}
 				local169 = local753.method2761(64, 850, -30, -50, -30);
@@ -372,11 +372,11 @@ public final class Class144 {
 			}
 			@Pc(105) Class53_Sub3 local105 = new Class53_Sub3(local33, local30);
 			for (@Pc(107) int local107 = 0; local107 < 5; local107++) {
-				if (Static6.aShortArrayArray6[local107].length > this.anIntArray463[local107]) {
-					local105.method2768(Static7.aShortArray113[local107], Static6.aShortArrayArray6[local107][this.anIntArray463[local107]]);
+				if (Static6.aShortArrayArray6[local107].length > this.colors[local107]) {
+					local105.method2768(Static7.aShortArray113[local107], Static6.aShortArrayArray6[local107][this.colors[local107]]);
 				}
-				if (Static1.aShortArrayArray1[local107].length > this.anIntArray463[local107]) {
-					local105.method2768(Static4.aShortArray46[local107], Static1.aShortArrayArray1[local107][this.anIntArray463[local107]]);
+				if (Static1.aShortArrayArray1[local107].length > this.colors[local107]) {
+					local105.method2768(Static4.aShortArray46[local107], Static1.aShortArrayArray1[local107][this.colors[local107]]);
 				}
 			}
 			local24 = local105.method2761(64, 768, -50, -10, -50);
@@ -389,50 +389,50 @@ public final class Class144 {
 	}
 
 	@OriginalMember(owner = "client!qk", name = "a", descriptor = "(II[II[IZ)V")
-	public final void method3610(@OriginalArg(1) int arg0, @OriginalArg(2) int[] arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int[] arg3, @OriginalArg(5) boolean arg4) {
-		if (this.anInt4372 != arg2) {
-			this.anInt4372 = arg2;
+	public final void set(@OriginalArg(1) int npcId, @OriginalArg(2) int[] identikit, @OriginalArg(3) int basId, @OriginalArg(4) int[] colors, @OriginalArg(5) boolean female) {
+		if (this.basId != basId) {
+			this.basId = basId;
 			this.anIntArrayArray37 = null;
 		}
-		if (arg1 == null) {
-			arg1 = new int[12];
+		if (identikit == null) {
+			identikit = new int[12];
 			for (@Pc(25) int local25 = 0; local25 < 8; local25++) {
 				for (@Pc(30) int local30 = 0; local30 < Static1.anInt119; local30++) {
 					@Pc(37) Class140 local37 = Static19.method1816(local30);
-					if (local37 != null && !local37.aBoolean298 && (arg4 ? Static6.anIntArray487[local25] : Static6.anIntArray550[local25]) == local37.anInt4231) {
-						arg1[Static1.anIntArray46[local25]] = Integer.MIN_VALUE | local30;
+					if (local37 != null && !local37.aBoolean298 && (female ? Static6.anIntArray487[local25] : Static6.anIntArray550[local25]) == local37.anInt4231) {
+						identikit[Static1.anIntArray46[local25]] = Integer.MIN_VALUE | local30;
 						break;
 					}
 				}
 			}
 		}
-		this.anIntArray464 = arg1;
-		this.anIntArray463 = arg3;
-		this.aBoolean306 = arg4;
-		this.anInt4387 = arg0;
-		this.method3606();
+		this.identikit = identikit;
+		this.colors = colors;
+		this.female = female;
+		this.npcId = npcId;
+		this.updateChecksum();
 	}
 
 	@OriginalMember(owner = "client!qk", name = "a", descriptor = "(B)I")
 	public final int method3611() {
-		return this.anInt4387 == -1 ? (this.anIntArray464[8] << 10) + (this.anIntArray463[0] << 25) + (this.anIntArray463[4] << 20) + (this.anIntArray464[0] << 15) + (this.anIntArray464[11] << 5) + this.anIntArray464[1] : Static15.method1495(this.anInt4387).anInt5255 + 305419896;
+		return this.npcId == -1 ? (this.identikit[8] << 10) + (this.colors[0] << 25) + (this.colors[4] << 20) + (this.identikit[0] << 15) + (this.identikit[11] << 5) + this.identikit[1] : NpcTypeList.get(this.npcId).id + 305419896;
 	}
 
 	@OriginalMember(owner = "client!qk", name = "a", descriptor = "(ILclient!eg;IBI)Lclient!vg;")
 	public final Class53_Sub4 method3612(@OriginalArg(0) int arg0, @OriginalArg(1) Class46 arg1, @OriginalArg(2) int arg2, @OriginalArg(4) int arg3) {
-		if (this.anInt4387 != -1) {
-			return Static15.method1495(this.anInt4387).method4266(arg2, arg1, arg0, arg3);
+		if (this.npcId != -1) {
+			return NpcTypeList.get(this.npcId).method4266(arg2, arg1, arg0, arg3);
 		}
-		@Pc(28) Class53_Sub4 local28 = (Class53_Sub4) Static3.aClass26_27.get(this.aLong153);
+		@Pc(28) Class53_Sub4 local28 = (Class53_Sub4) Static3.aClass26_27.get(this.checksum);
 		if (local28 == null) {
 			@Pc(33) boolean local33 = false;
 			for (@Pc(35) int local35 = 0; local35 < 12; local35++) {
-				@Pc(43) int local43 = this.anIntArray464[local35];
+				@Pc(43) int local43 = this.identikit[local35];
 				if ((local43 & 0x40000000) == 0) {
 					if ((Integer.MIN_VALUE & local43) != 0 && !Static19.method1816(local43 & 0x3FFFFFFF).method3497()) {
 						local33 = true;
 					}
-				} else if (!Static35.method4361(local43 & 0x3FFFFFFF).method4134(this.aBoolean306)) {
+				} else if (!ObjTypeList.get(local43 & 0x3FFFFFFF).method4134(this.female)) {
 					local33 = true;
 				}
 			}
@@ -442,9 +442,9 @@ public final class Class144 {
 			@Pc(93) Class53_Sub3[] local93 = new Class53_Sub3[12];
 			@Pc(95) int local95 = 0;
 			for (@Pc(97) int local97 = 0; local97 < 12; local97++) {
-				@Pc(105) int local105 = this.anIntArray464[local97];
+				@Pc(105) int local105 = this.identikit[local97];
 				if ((local105 & 0x40000000) != 0) {
-					@Pc(122) Class53_Sub3 local122 = Static35.method4361(local105 & 0x3FFFFFFF).method4125(this.aBoolean306);
+					@Pc(122) Class53_Sub3 local122 = ObjTypeList.get(local105 & 0x3FFFFFFF).method4125(this.female);
 					if (local122 != null) {
 						local93[local95++] = local122;
 					}
@@ -457,15 +457,15 @@ public final class Class144 {
 			}
 			@Pc(162) Class53_Sub3 local162 = new Class53_Sub3(local93, local95);
 			for (@Pc(164) int local164 = 0; local164 < 5; local164++) {
-				if (Static6.aShortArrayArray6[local164].length > this.anIntArray463[local164]) {
-					local162.method2768(Static7.aShortArray113[local164], Static6.aShortArrayArray6[local164][this.anIntArray463[local164]]);
+				if (Static6.aShortArrayArray6[local164].length > this.colors[local164]) {
+					local162.method2768(Static7.aShortArray113[local164], Static6.aShortArrayArray6[local164][this.colors[local164]]);
 				}
-				if (this.anIntArray463[local164] < Static1.aShortArrayArray1[local164].length) {
-					local162.method2768(Static4.aShortArray46[local164], Static1.aShortArrayArray1[local164][this.anIntArray463[local164]]);
+				if (this.colors[local164] < Static1.aShortArrayArray1[local164].length) {
+					local162.method2768(Static4.aShortArray46[local164], Static1.aShortArrayArray1[local164][this.colors[local164]]);
 				}
 			}
 			local28 = local162.method2761(64, 768, -50, -10, -50);
-			Static3.aClass26_27.put(this.aLong153, local28);
+			Static3.aClass26_27.put(this.checksum, local28);
 		}
 		if (arg1 != null) {
 			local28 = arg1.method1017(arg0, arg2, local28, arg3);
@@ -474,8 +474,8 @@ public final class Class144 {
 	}
 
 	@OriginalMember(owner = "client!qk", name = "b", descriptor = "(IBI)V")
-	public final void method3613(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1) {
-		this.anIntArray463[arg0] = arg1;
-		this.method3606();
+	public final void setColor(@OriginalArg(0) int i, @OriginalArg(2) int color) {
+		this.colors[i] = color;
+		this.updateChecksum();
 	}
 }

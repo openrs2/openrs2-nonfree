@@ -590,7 +590,7 @@ public final class Static18 {
 	public static void method4370(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5) {
 		Static5.anInt3635 = 0;
 		for (@Pc(17) int local17 = -1; local17 < Static6.anInt4451 + Static3.anInt2510; local17++) {
-			@Pc(31) Class53_Sub1 local31;
+			@Pc(31) PathingEntity local31;
 			if (local17 == -1) {
 				local31 = Static4.aClass53_Sub1_Sub1_2;
 			} else if (local17 < Static3.anInt2510) {
@@ -599,8 +599,8 @@ public final class Static18 {
 				local31 = Static3.aClass53_Sub1_Sub2Array1[Static7.anIntArray595[local17 - Static3.anInt2510]];
 			}
 			if (local31 != null && local31.method3310()) {
-				if (local31 instanceof Class53_Sub1_Sub2) {
-					@Pc(70) Class168 local70 = ((Class53_Sub1_Sub2) local31).aClass168_1;
+				if (local31 instanceof Npc) {
+					@Pc(70) NpcType local70 = ((Npc) local31).type;
 					if (local70.anIntArray590 != null) {
 						local70 = local70.method4265();
 					}
@@ -609,7 +609,7 @@ public final class Static18 {
 					}
 				}
 				if (local17 >= Static3.anInt2510) {
-					@Pc(93) Class168 local93 = ((Class53_Sub1_Sub2) local31).aClass168_1;
+					@Pc(93) NpcType local93 = ((Npc) local31).type;
 					if (local93.anIntArray590 != null) {
 						local93 = local93.method4265();
 					}
@@ -643,16 +643,16 @@ public final class Static18 {
 					}
 				} else {
 					@Pc(260) int local260 = 30;
-					@Pc(263) Class53_Sub1_Sub1 local263 = (Class53_Sub1_Sub1) local31;
-					if (local263.anInt1573 != -1 || local263.anInt1596 != -1) {
+					@Pc(263) Player local263 = (Player) local31;
+					if (local263.skullIcon != -1 || local263.prayerIcon != -1) {
 						Static28.method3325(arg2 >> 1, arg3, arg1, arg4 >> 1, local31.method3306() + 15, local31);
 						if (Static7.anInt5584 > -1) {
-							if (local263.anInt1573 != -1) {
-								Static3.aClass4_Sub3_Sub14Array8[local263.anInt1573].method4506(arg0 + Static7.anInt5584 - 12, Static4.anInt3290 + arg5 - 30);
+							if (local263.skullIcon != -1) {
+								Static3.aClass4_Sub3_Sub14Array8[local263.skullIcon].method4506(arg0 + Static7.anInt5584 - 12, Static4.anInt3290 + arg5 - 30);
 								local260 += 25;
 							}
-							if (local263.anInt1596 != -1) {
-								Static1.aClass4_Sub3_Sub14Array1[local263.anInt1596].method4506(Static7.anInt5584 + arg0 - 12, arg5 + Static4.anInt3290 - local260);
+							if (local263.prayerIcon != -1) {
+								Static1.aClass4_Sub3_Sub14Array1[local263.prayerIcon].method4506(Static7.anInt5584 + arg0 - 12, arg5 + Static4.anInt3290 - local260);
 								local260 += 25;
 							}
 						}
@@ -670,7 +670,7 @@ public final class Static18 {
 						}
 					}
 				}
-				if (local31.aString234 != null && (local17 >= Static3.anInt2510 || Static7.anInt5413 == 0 || Static7.anInt5413 == 3 || Static7.anInt5413 == 1 && Static24.method2562(((Class53_Sub1_Sub1) local31).aString88))) {
+				if (local31.aString234 != null && (local17 >= Static3.anInt2510 || Static7.anInt5413 == 0 || Static7.anInt5413 == 3 || Static7.anInt5413 == 1 && Static24.method2562(((Player) local31).name))) {
 					Static28.method3325(arg2 >> 1, arg3, arg1, arg4 >> 1, local31.method3306(), local31);
 					if (Static7.anInt5584 > -1 && Static5.anInt3635 < Static5.anInt5199) {
 						Static5.anIntArray566[Static5.anInt3635] = Static5.aClass4_Sub3_Sub5_3.method2252(local31.aString234) / 2;
@@ -688,20 +688,20 @@ public final class Static18 {
 					@Pc(525) Class4_Sub3_Sub14 local525 = Static2.aClass4_Sub3_Sub14Array7[0];
 					@Pc(529) Class4_Sub3_Sub14 local529 = Static2.aClass4_Sub3_Sub14Array7[1];
 					@Pc(536) int local536;
-					if (local31 instanceof Class53_Sub1_Sub2) {
-						@Pc(541) Class53_Sub1_Sub2 local541 = (Class53_Sub1_Sub2) local31;
-						@Pc(551) Class4_Sub3_Sub14[] local551 = (Class4_Sub3_Sub14[]) Static1.aClass26_5.get((long) local541.aClass168_1.anInt5240);
+					if (local31 instanceof Npc) {
+						@Pc(541) Npc local541 = (Npc) local31;
+						@Pc(551) Class4_Sub3_Sub14[] local551 = (Class4_Sub3_Sub14[]) Static1.aClass26_5.get((long) local541.type.anInt5240);
 						if (local551 == null) {
-							local551 = Static27.method3225(client.js5Archive8, local541.aClass168_1.anInt5240);
+							local551 = Static27.method3225(client.js5Archive8, local541.type.anInt5240);
 							if (local551 != null) {
-								Static1.aClass26_5.put((long) local541.aClass168_1.anInt5240, local551);
+								Static1.aClass26_5.put((long) local541.type.anInt5240, local551);
 							}
 						}
 						if (local551 != null && local551.length == 2) {
 							local529 = local551[1];
 							local525 = local551[0];
 						}
-						@Pc(593) Class168 local593 = local541.aClass168_1;
+						@Pc(593) NpcType local593 = local541.type;
 						if (local593.anInt5259 == -1) {
 							local536 = local31.method3306();
 						} else {
@@ -733,9 +733,9 @@ public final class Static18 {
 				for (@Pc(707) int local707 = 0; local707 < 4; local707++) {
 					if (local31.anIntArray425[local707] > Static2.anInt954) {
 						@Pc(742) int local742;
-						if (local31 instanceof Class53_Sub1_Sub2) {
-							@Pc(729) Class53_Sub1_Sub2 local729 = (Class53_Sub1_Sub2) local31;
-							@Pc(732) Class168 local732 = local729.aClass168_1;
+						if (local31 instanceof Npc) {
+							@Pc(729) Npc local729 = (Npc) local31;
+							@Pc(732) NpcType local732 = local729.type;
 							if (local732.anInt5259 == -1) {
 								local742 = local31.method3306() / 2;
 							} else {

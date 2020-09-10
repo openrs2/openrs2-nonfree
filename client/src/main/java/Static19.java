@@ -100,7 +100,7 @@ public final class Static19 {
 
 	@OriginalMember(owner = "client!hn", name = "b", descriptor = "(I)V")
 	public static void method4376() {
-		Static1.aClass26_2.clear();
+		NpcTypeList.models.clear();
 	}
 
 	@OriginalMember(owner = "client!hn", name = "a", descriptor = "(IIIZ)Ljava/lang/String;")
@@ -125,14 +125,6 @@ public final class Static19 {
 			}
 		}
 		return new String(local65);
-	}
-
-	@OriginalMember(owner = "client!hn", name = "a", descriptor = "(ZI)V")
-	public static void method4378(@OriginalArg(0) boolean arg0) {
-		if (arg0 != Static5.aBoolean301) {
-			Static5.aBoolean301 = arg0;
-			Static13.method884();
-		}
 	}
 
 	@OriginalMember(owner = "client!hn", name = "a", descriptor = "(IIIIII)V")
@@ -205,21 +197,6 @@ public final class Static19 {
 			}
 		}
 		return Static5.aClass185ArrayArray115[local7][local19];
-	}
-
-	@OriginalMember(owner = "client!i", name = "a", descriptor = "(IB)Lclient!jc;")
-	public static Class4_Sub3_Sub12 method1815(@OriginalArg(0) int arg0) {
-		@Pc(16) Class4_Sub3_Sub12 local16 = (Class4_Sub3_Sub12) Static5.aClass40_14.method889((long) arg0);
-		if (local16 != null) {
-			return local16;
-		}
-		@Pc(28) byte[] local28 = Static4.aClass58_74.fetchFile(11, arg0);
-		@Pc(32) Class4_Sub3_Sub12 local32 = new Class4_Sub3_Sub12();
-		if (local28 != null) {
-			local32.method1992(new Buffer(local28));
-		}
-		Static5.aClass40_14.method888((long) arg0, local32);
-		return local32;
 	}
 
 	@OriginalMember(owner = "client!i", name = "b", descriptor = "(II)Lclient!qa;")
@@ -357,10 +334,10 @@ public final class Static19 {
 	@OriginalMember(owner = "client!ib", name = "b", descriptor = "(IIIIII)Lclient!ib;")
 	public static Class4_Sub3_Sub10 method1838(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5) {
 		@Pc(29) long local29 = (long) arg0 * 67481L ^ (long) arg1 * 97549L ^ (long) arg2 * 475427L ^ (long) arg3 * 986053L ^ (long) arg4 * 32147369L ^ (long) arg5 * 76724863L;
-		@Pc(35) Class4_Sub3_Sub10 local35 = (Class4_Sub3_Sub10) Static3.aClass40_11.method889(local29);
+		@Pc(35) Class4_Sub3_Sub10 local35 = (Class4_Sub3_Sub10) Static3.aClass40_11.get(local29);
 		if (local35 == null) {
 			@Pc(49) Class4_Sub3_Sub10 local49 = new Class4_Sub3_Sub10(arg0, arg1, arg2, arg3, arg4, arg5);
-			Static3.aClass40_11.method888(local29, local49);
+			Static3.aClass40_11.put(local29, local49);
 			return local49;
 		} else {
 			return local35;

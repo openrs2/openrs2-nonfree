@@ -59,7 +59,7 @@ public final class Class24_Sub1 extends Class24 implements Interface4 {
 
 	@OriginalMember(owner = "client!c", name = "i", descriptor = "(II)V")
 	public final void method458(@OriginalArg(0) int arg0) {
-		for (@Pc(13) Class4_Sub3_Sub18 local13 = (Class4_Sub3_Sub18) this.aClass40_4.method886(); local13 != null; local13 = (Class4_Sub3_Sub18) this.aClass40_4.method890()) {
+		for (@Pc(13) Class4_Sub3_Sub18 local13 = (Class4_Sub3_Sub18) this.aClass40_4.head(); local13 != null; local13 = (Class4_Sub3_Sub18) this.aClass40_4.next()) {
 			if (local13.aBoolean344) {
 				local13.method4074(arg0);
 				local13.aBoolean344 = false;
@@ -88,7 +88,7 @@ public final class Class24_Sub1 extends Class24 implements Interface4 {
 
 	@OriginalMember(owner = "client!c", name = "j", descriptor = "(II)Lclient!so;")
 	private Class4_Sub3_Sub18 method459(@OriginalArg(0) int arg0) {
-		@Pc(17) Class4_Sub3_Sub18 local17 = (Class4_Sub3_Sub18) this.aClass40_4.method889((long) arg0);
+		@Pc(17) Class4_Sub3_Sub18 local17 = (Class4_Sub3_Sub18) this.aClass40_4.get((long) arg0);
 		if (local17 != null) {
 			return local17;
 		}
@@ -97,7 +97,7 @@ public final class Class24_Sub1 extends Class24 implements Interface4 {
 			return null;
 		} else {
 			@Pc(40) Class4_Sub3_Sub18 local40 = new Class4_Sub3_Sub18(new Buffer(local28));
-			this.aClass40_4.method888((long) arg0, local40);
+			this.aClass40_4.put((long) arg0, local40);
 			return local40;
 		}
 	}
@@ -121,9 +121,9 @@ public final class Class24_Sub1 extends Class24 implements Interface4 {
 
 	@OriginalMember(owner = "client!c", name = "c", descriptor = "(I)V")
 	public final void method460() {
-		this.aClass40_4.method893();
+		this.aClass40_4.clear();
 		if (this.aClass40_3 != null) {
-			this.aClass40_3.method893();
+			this.aClass40_3.clear();
 		}
 		Static6.anIntArray539 = null;
 	}
@@ -188,10 +188,10 @@ public final class Class24_Sub1 extends Class24 implements Interface4 {
 
 	@OriginalMember(owner = "client!c", name = "k", descriptor = "(II)Lclient!qd;")
 	private Class4_Sub3_Sub16 method465(@OriginalArg(1) int arg0) {
-		@Pc(11) Class4_Sub3_Sub16 local11 = (Class4_Sub3_Sub16) this.aClass40_3.method889((long) arg0);
+		@Pc(11) Class4_Sub3_Sub16 local11 = (Class4_Sub3_Sub16) this.aClass40_3.get((long) arg0);
 		if (local11 == null) {
 			@Pc(27) Class4_Sub3_Sub16 local27 = new Class4_Sub3_Sub16(this.method417(arg0).aShort26 & 0xFFFF);
-			this.aClass40_3.method888((long) arg0, local27);
+			this.aClass40_3.put((long) arg0, local27);
 			return local27;
 		} else {
 			return local11;

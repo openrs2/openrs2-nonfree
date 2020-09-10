@@ -13,8 +13,8 @@ public final class Class128 implements Interface1 {
 			@Pc(18) Class4_Sub3_Sub3 local18 = Static21.method2056(arg1[0]);
 			return local18.method606((int) arg0);
 		} else if (arg2 == 1 || arg2 == 10) {
-			@Pc(38) Class162 local38 = Static35.method4361((int) arg0);
-			return local38.aString308;
+			@Pc(38) ObjType local38 = ObjTypeList.get((int) arg0);
+			return local38.name;
 		} else if (arg2 == 6 || arg2 == 7 || arg2 == 11) {
 			return Static21.method2056(arg1[0]).method606((int) arg0);
 		} else {

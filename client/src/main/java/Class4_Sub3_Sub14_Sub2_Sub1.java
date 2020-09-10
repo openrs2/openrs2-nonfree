@@ -22,8 +22,8 @@ public final class Class4_Sub3_Sub14_Sub2_Sub1 extends Class4_Sub3_Sub14_Sub2 {
 	@OriginalMember(owner = "client!vj", name = "a", descriptor = "([I)V")
 	@Override
 	protected final void method4515(@OriginalArg(0) int[] arg0) {
-		this.anInt5617 = Static24.method2595(this.anInt5609);
-		this.anInt5620 = Static24.method2595(this.anInt5608);
+		this.anInt5617 = IntegerUtils.clp2(this.anInt5609);
+		this.anInt5620 = IntegerUtils.clp2(this.anInt5608);
 		@Pc(20) byte[] local20 = new byte[this.anInt5617 * this.anInt5620 * 4];
 		@Pc(22) int local22 = 0;
 		@Pc(24) int local24 = 0;

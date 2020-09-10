@@ -359,7 +359,7 @@ public final class Class4_Sub12 extends Node {
 		this.anIntArray206 = new int[this.anInt2355];
 		this.anIntArray202 = new int[this.anInt2355];
 		this.anIntArrayArray18 = new int[this.anInt2355][];
-		this.aClass84_6 = new HashTable(Static24.method2595(this.anInt2352));
+		this.aClass84_6 = new HashTable(IntegerUtils.clp2(this.anInt2352));
 		if (this.aBoolean162) {
 			this.anIntArrayArray19 = new int[this.anInt2355][];
 			this.aBooleanArray10 = new boolean[this.anInt2355];

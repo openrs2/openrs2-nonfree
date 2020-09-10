@@ -128,7 +128,7 @@ public final class Class4_Sub3_Sub5_Sub1 extends Class4_Sub3_Sub5 {
 			}
 		}
 		this.anInt1023 *= 16;
-		this.anInt1023 = Static24.method2595(this.anInt1023);
+		this.anInt1023 = IntegerUtils.clp2(this.anInt1023);
 		@Pc(57) int local57 = this.anInt1023 / 16;
 		@Pc(66) byte[] local66 = new byte[this.anInt1023 * this.anInt1023 * 2];
 		for (@Pc(68) int local68 = 0; local68 < 256; local68++) {

@@ -68,8 +68,8 @@ public final class Class4_Sub4_Sub1 extends Class4_Sub4 {
 			local1.glEnd();
 		} else {
 			Static9.method216(this.anInt936);
-			@Pc(29) int local29 = Static24.method2605(arg1);
-			@Pc(33) int local33 = Static24.method2605(arg2);
+			@Pc(29) int local29 = IntegerUtils.flp2(arg1);
+			@Pc(33) int local33 = IntegerUtils.flp2(arg2);
 			@Pc(35) int local35 = 0;
 			while (local29 > 256 || local33 > 256) {
 				local1.glViewport(0, 0, local29, local33);
@@ -176,8 +176,8 @@ public final class Class4_Sub4_Sub1 extends Class4_Sub4 {
 	@Override
 	public final void method765(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
 		@Pc(1) GL local1 = Static3.aGL1;
-		@Pc(5) int local5 = Static24.method2605(arg0);
-		@Pc(9) int local9 = Static24.method2605(arg1);
+		@Pc(5) int local5 = IntegerUtils.flp2(arg0);
+		@Pc(9) int local9 = IntegerUtils.flp2(arg1);
 		if (this.anIntArray66 != null) {
 			local1.glDeleteTextures(this.anIntArray66.length, this.anIntArray66, 0);
 			this.anIntArray66 = null;

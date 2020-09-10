@@ -151,9 +151,6 @@ public final class Static7 {
 	@OriginalMember(owner = "client!wh", name = "L", descriptor = "[I")
 	public static int[] anIntArray678;
 
-	@OriginalMember(owner = "client!wi", name = "b", descriptor = "Lclient!fh;")
-	public static Js5 aClass58_104;
-
 	@OriginalMember(owner = "client!wi", name = "d", descriptor = "I")
 	public static int anInt6030;
 

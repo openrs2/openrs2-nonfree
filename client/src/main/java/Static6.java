@@ -275,9 +275,6 @@ public final class Static6 {
 	@OriginalMember(owner = "client!tb", name = "c", descriptor = "[I")
 	public static int[] anIntArray544;
 
-	@OriginalMember(owner = "client!tb", name = "h", descriptor = "[I")
-	public static int[] anIntArray545;
-
 	@OriginalMember(owner = "client!tb", name = "k", descriptor = "Lclient!uj;")
 	public static Class4_Sub3_Sub14 aClass4_Sub3_Sub14_7;
 
@@ -482,9 +479,6 @@ public final class Static6 {
 	@OriginalMember(owner = "client!sc", name = "T", descriptor = "I")
 	public static int anInt4744 = 0;
 
-	@OriginalMember(owner = "client!sc", name = "U", descriptor = "[Ljava/lang/String;")
-	public static String[] aStringArray26 = null;
-
 	@OriginalMember(owner = "client!sc", name = "jb", descriptor = "[Ljava/lang/String;")
 	public static final String[] aStringArray27 = new String[500];
 
@@ -553,9 +547,6 @@ public final class Static6 {
 
 	@OriginalMember(owner = "client!sk", name = "i", descriptor = "J")
 	public static long aLong169 = 0L;
-
-	@OriginalMember(owner = "client!sl", name = "Y", descriptor = "[Ljava/lang/String;")
-	public static String[] aStringArray29 = null;
 
 	@OriginalMember(owner = "client!sm", name = "a", descriptor = "Lclient!cc;")
 	public static final LruHashTable aClass26_52 = new LruHashTable(16);

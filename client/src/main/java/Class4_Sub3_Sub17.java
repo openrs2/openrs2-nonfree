@@ -16,7 +16,7 @@ public final class Class4_Sub3_Sub17 extends SecondaryNode {
 		}
 		@Pc(12) int local12 = arg0.readUnsignedByte();
 		if (this.aClass84_21 == null) {
-			@Pc(21) int local21 = Static24.method2595(local12);
+			@Pc(21) int local21 = IntegerUtils.clp2(local12);
 			this.aClass84_21 = new HashTable(local21);
 		}
 		for (@Pc(29) int local29 = 0; local29 < local12; local29++) {

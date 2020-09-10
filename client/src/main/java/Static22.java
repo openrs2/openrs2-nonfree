@@ -1394,34 +1394,34 @@ public final class Static22 {
 			local7 = 1;
 		}
 		for (@Pc(14) int local14 = 0; local14 < local7; local14++) {
-			@Pc(32) Class53_Sub1_Sub1 local32;
+			@Pc(32) Player local32;
 			if (arg0 == 0) {
 				local32 = Static4.aClass53_Sub1_Sub1_2;
 			} else {
 				local32 = Static5.aClass53_Sub1_Sub1Array1[Static4.anIntArray317[local14]];
 			}
 			if (local32 != null && local32.method3310()) {
-				@Pc(46) int local46 = local32.method3311();
+				@Pc(46) int local46 = local32.getSize();
 				if (arg0 == 0 || arg0 == local46) {
 					if (local46 == 1) {
-						if ((local32.anInt3974 & 0x7F) == 64 && (local32.anInt4002 & 0x7F) == 64) {
-							@Pc(211) int local211 = local32.anInt3974 >> 7;
-							@Pc(216) int local216 = local32.anInt4002 >> 7;
+						if ((local32.x & 0x7F) == 64 && (local32.z & 0x7F) == 64) {
+							@Pc(211) int local211 = local32.x >> 7;
+							@Pc(216) int local216 = local32.z >> 7;
 							if (local211 >= 0 && local211 < 104 && local216 >= 0 && local216 < 104) {
 								@Pc(238) int local238 = Static1.anIntArrayArray2[local211][local216]++;
 							}
 						}
-					} else if (((local46 & 0x1) != 0 || (local32.anInt3974 & 0x7F) == 0 && (local32.anInt4002 & 0x7F) == 0) && ((local46 & 0x1) != 1 || (local32.anInt3974 & 0x7F) == 64 && (local32.anInt4002 & 0x7F) == 64)) {
-						@Pc(111) int local111 = local32.anInt3974 - local46 * 64 >> 7;
-						@Pc(120) int local120 = local32.anInt4002 - local46 * 64 >> 7;
-						@Pc(126) int local126 = local32.method3311() + local111;
+					} else if (((local46 & 0x1) != 0 || (local32.x & 0x7F) == 0 && (local32.z & 0x7F) == 0) && ((local46 & 0x1) != 1 || (local32.x & 0x7F) == 64 && (local32.z & 0x7F) == 64)) {
+						@Pc(111) int local111 = local32.x - local46 * 64 >> 7;
+						@Pc(120) int local120 = local32.z - local46 * 64 >> 7;
+						@Pc(126) int local126 = local32.getSize() + local111;
 						if (local126 > 104) {
 							local126 = 104;
 						}
 						if (local111 < 0) {
 							local111 = 0;
 						}
-						@Pc(146) int local146 = local120 + local32.method3311();
+						@Pc(146) int local146 = local120 + local32.getSize();
 						if (local120 < 0) {
 							local120 = 0;
 						}
@@ -1439,7 +1439,7 @@ public final class Static22 {
 		}
 		label220:
 		for (@Pc(246) int local246 = 0; local246 < local7; local246++) {
-			@Pc(255) Class53_Sub1_Sub1 local255;
+			@Pc(255) Player local255;
 			@Pc(253) long local253;
 			if (arg0 == 0) {
 				local253 = 8791798054912L;
@@ -1449,7 +1449,7 @@ public final class Static22 {
 				local253 = (long) Static4.anIntArray317[local246] << 32;
 			}
 			if (local255 != null && local255.method3310()) {
-				@Pc(280) int local280 = local255.method3311();
+				@Pc(280) int local280 = local255.getSize();
 				if (arg0 == 0 || arg0 == local280) {
 					local255.aBoolean98 = false;
 					local255.aBoolean282 = true;
@@ -1457,9 +1457,9 @@ public final class Static22 {
 						local255.aBoolean98 = true;
 					}
 					if (local280 == 1) {
-						if ((local255.anInt3974 & 0x7F) == 64 && (local255.anInt4002 & 0x7F) == 64) {
-							@Pc(340) int local340 = local255.anInt3974 >> 7;
-							@Pc(345) int local345 = local255.anInt4002 >> 7;
+						if ((local255.x & 0x7F) == 64 && (local255.z & 0x7F) == 64) {
+							@Pc(340) int local340 = local255.x >> 7;
+							@Pc(345) int local345 = local255.z >> 7;
 							if (local340 < 0 || local340 >= 104 || local345 < 0 || local345 >= 104) {
 								continue;
 							}
@@ -1468,9 +1468,9 @@ public final class Static22 {
 								continue;
 							}
 						}
-					} else if ((local280 & 0x1) == 0 && (local255.anInt3974 & 0x7F) == 0 && (local255.anInt4002 & 0x7F) == 0 || (local280 & 0x1) == 1 && (local255.anInt3974 & 0x7F) == 64 && (local255.anInt4002 & 0x7F) == 0) {
-						@Pc(430) int local430 = local255.anInt4002 - local280 * 64 >> 7;
-						@Pc(440) int local440 = local255.anInt3974 - local280 * 64 >> 7;
+					} else if ((local280 & 0x1) == 0 && (local255.x & 0x7F) == 0 && (local255.z & 0x7F) == 0 || (local280 & 0x1) == 1 && (local255.x & 0x7F) == 64 && (local255.z & 0x7F) == 0) {
+						@Pc(430) int local430 = local255.z - local280 * 64 >> 7;
+						@Pc(440) int local440 = local255.x - local280 * 64 >> 7;
 						@Pc(444) int local444 = local280 + local440;
 						if (local440 < 0) {
 							local440 = 0;
@@ -1509,13 +1509,13 @@ public final class Static22 {
 					}
 					if (local255.anObject5 == null || Static2.anInt954 < local255.anInt4042 || local255.anInt4010 <= Static2.anInt954) {
 						local255.aBoolean282 = false;
-						local255.anInt4006 = Static11.method522(local255.anInt4002, local255.anInt3974, Static7.anInt5334);
-						Static11.method637(Static7.anInt5334, local255.anInt3974, local255.anInt4002, local255.anInt4006, (local280 - 1) * 64 + 60, local255, local255.anInt4031, local253, local255.aBoolean284);
+						local255.anInt4006 = Static11.method522(local255.z, local255.x, Static7.anInt5334);
+						Static11.method637(Static7.anInt5334, local255.x, local255.z, local255.anInt4006, (local280 - 1) * 64 + 60, local255, local255.anInt4031, local253, local255.aBoolean284);
 					} else {
 						local255.aBoolean98 = false;
 						local255.aBoolean282 = false;
-						local255.anInt4006 = Static11.method522(local255.anInt4002, local255.anInt3974, Static7.anInt5334);
-						Static11.method584(Static7.anInt5334, local255.anInt3974, local255.anInt4002, local255.anInt4006, local255, local255.anInt4031, local253, local255.anInt4043, local255.anInt4018, local255.anInt4041, local255.anInt4038);
+						local255.anInt4006 = Static11.method522(local255.z, local255.x, Static7.anInt5334);
+						Static11.method584(Static7.anInt5334, local255.x, local255.z, local255.anInt4006, local255, local255.anInt4031, local253, local255.anInt4043, local255.anInt4018, local255.anInt4041, local255.anInt4038);
 					}
 				}
 			}
@@ -1812,7 +1812,7 @@ public final class Static22 {
 
 	@OriginalMember(owner = "client!kn", name = "a", descriptor = "(Z)V")
 	public static void method2413() {
-		Static2.aClass26_7.clear();
+		ObjTypeList.models.clear();
 	}
 
 	@OriginalMember(owner = "client!kn", name = "a", descriptor = "(III)J")

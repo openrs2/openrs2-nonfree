@@ -168,7 +168,7 @@ public final class Class18 {
 			Static1.anIntArray31[local15] = this.anIntArray33[local15];
 		}
 		@Pc(34) int local34 = Static1.anIntArray35[this.anInt272 - 1];
-		@Pc(40) int local40 = Static24.method2700(local34 - 1);
+		@Pc(40) int local40 = IntegerUtils.bitCount(local34 - 1);
 		Static1.anIntArray32[0] = Static30.method3637(local40);
 		Static1.anIntArray32[1] = Static30.method3637(local40);
 		@Pc(52) int local52 = 2;

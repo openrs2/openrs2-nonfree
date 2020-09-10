@@ -94,7 +94,7 @@ public final class Static4 {
 	public static int[] anIntArray272;
 
 	@OriginalMember(owner = "client!lb", name = "k", descriptor = "Lclient!f;")
-	public static Class53_Sub1_Sub1 aClass53_Sub1_Sub1_2;
+	public static Player aClass53_Sub1_Sub1_2;
 
 	@OriginalMember(owner = "client!lc", name = "d", descriptor = "I")
 	public static int anInt2464;
@@ -192,14 +192,8 @@ public final class Static4 {
 	@OriginalMember(owner = "client!mf", name = "c", descriptor = "[Lclient!co;")
 	public static Class33[] aClass33Array2;
 
-	@OriginalMember(owner = "client!mf", name = "e", descriptor = "Lclient!fh;")
-	public static Js5 aClass58_74;
-
 	@OriginalMember(owner = "client!mf", name = "j", descriptor = "[I")
 	public static int[] anIntArray316;
-
-	@OriginalMember(owner = "client!mf", name = "k", descriptor = "Lclient!fh;")
-	public static Js5 aClass58_75;
 
 	@OriginalMember(owner = "client!mf", name = "l", descriptor = "I")
 	public static int anInt3317;

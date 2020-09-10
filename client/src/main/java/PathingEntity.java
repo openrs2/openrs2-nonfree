@@ -4,7 +4,7 @@ import dev.openrs2.deob.annotation.OriginalMember;
 import dev.openrs2.deob.annotation.Pc;
 
 @OriginalClass("client!qc")
-public abstract class Class53_Sub1 extends Class53 {
+public abstract class PathingEntity extends Class53 {
 
 	@OriginalMember(owner = "client!qc", name = "t", descriptor = "I")
 	public int anInt3966;
@@ -16,7 +16,7 @@ public abstract class Class53_Sub1 extends Class53 {
 	public int anInt3973;
 
 	@OriginalMember(owner = "client!qc", name = "C", descriptor = "I")
-	public int anInt3974;
+	public int x;
 
 	@OriginalMember(owner = "client!qc", name = "D", descriptor = "I")
 	public int anInt3975;
@@ -28,7 +28,7 @@ public abstract class Class53_Sub1 extends Class53 {
 	protected Class20_Sub3 aClass20_Sub3_6;
 
 	@OriginalMember(owner = "client!qc", name = "ob", descriptor = "I")
-	public int anInt4002;
+	public int z;
 
 	@OriginalMember(owner = "client!qc", name = "tb", descriptor = "I")
 	public int anInt4006;
@@ -100,7 +100,7 @@ public abstract class Class53_Sub1 extends Class53 {
 	private int anInt3972 = 0;
 
 	@OriginalMember(owner = "client!qc", name = "N", descriptor = "I")
-	private int anInt3982 = 1;
+	private int size = 1;
 
 	@OriginalMember(owner = "client!qc", name = "R", descriptor = "I")
 	public int anInt3985 = -1;
@@ -130,7 +130,7 @@ public abstract class Class53_Sub1 extends Class53 {
 	public int anInt3965 = 0;
 
 	@OriginalMember(owner = "client!qc", name = "S", descriptor = "I")
-	public int anInt3986 = -1;
+	public int basId = -1;
 
 	@OriginalMember(owner = "client!qc", name = "ub", descriptor = "I")
 	public int anInt4007 = -1;
@@ -297,9 +297,9 @@ public abstract class Class53_Sub1 extends Class53 {
 		this.anInt4037 = 0;
 		this.anIntArray422[0] = arg2;
 		this.anIntArray426[0] = arg0;
-		this.anInt4002 = this.anIntArray426[0] * 128 + arg1 * 64;
+		this.z = this.anIntArray426[0] * 128 + arg1 * 64;
 		this.anInt3965 = 0;
-		this.anInt3974 = this.anIntArray422[0] * 128 + arg1 * 64;
+		this.x = this.anIntArray422[0] * 128 + arg1 * 64;
 		if (Static3.aBoolean138 && Static4.aClass53_Sub1_Sub1_2 == this) {
 			Static17.method1655();
 		}
@@ -596,8 +596,8 @@ public abstract class Class53_Sub1 extends Class53 {
 	}
 
 	@OriginalMember(owner = "client!qc", name = "e", descriptor = "(I)I")
-	public int method3311() {
-		return this.anInt3982;
+	public int getSize() {
+		return this.size;
 	}
 
 	@OriginalMember(owner = "client!qc", name = "a", descriptor = "(Lclient!vg;II)V")
@@ -618,7 +618,7 @@ public abstract class Class53_Sub1 extends Class53 {
 		@Pc(55) int local55 = local35 * local45 - local40 * local31 >> 16;
 		@Pc(65) int local65 = local35 * local40 + local45 * local31 >> 16;
 		@Pc(70) int local70 = -local19 / 2;
-		@Pc(82) int local82 = Static11.method522(local55 + this.anInt4002, local65 + this.anInt3974, Static7.anInt5334);
+		@Pc(82) int local82 = Static11.method522(local55 + this.z, local65 + this.x, Static7.anInt5334);
 		@Pc(86) int local86 = local16 / 2;
 		@Pc(91) int local91 = -local16 / 2;
 		@Pc(102) int local102 = local31 * local70 + local86 * local35 >> 16;
@@ -626,13 +626,13 @@ public abstract class Class53_Sub1 extends Class53 {
 		@Pc(116) int local116 = local35 * local106 - local31 * local91 >> 16;
 		@Pc(126) int local126 = local35 * local70 - local31 * local86 >> 16;
 		@Pc(136) int local136 = local91 * local35 + local31 * local106 >> 16;
-		@Pc(148) int local148 = Static11.method522(local126 + this.anInt4002, local102 + this.anInt3974, Static7.anInt5334);
-		@Pc(161) int local161 = Static11.method522(local116 + this.anInt4002, this.anInt3974 + local136, Static7.anInt5334);
+		@Pc(148) int local148 = Static11.method522(local126 + this.z, local102 + this.x, Static7.anInt5334);
+		@Pc(161) int local161 = Static11.method522(local116 + this.z, this.x + local136, Static7.anInt5334);
 		@Pc(165) int local165 = local16 / 2;
 		@Pc(169) int local169 = local19 / 2;
 		@Pc(180) int local180 = local31 * local169 + local165 * local35 >> 16;
 		@Pc(191) int local191 = local35 * local169 - local31 * local165 >> 16;
-		@Pc(204) int local204 = Static11.method522(this.anInt4002 + local191, local180 + this.anInt3974, Static7.anInt5334);
+		@Pc(204) int local204 = Static11.method522(this.z + local191, local180 + this.x, Static7.anInt5334);
 		@Pc(215) int local215 = local204 > local161 ? local161 : local204;
 		@Pc(226) int local226 = local161 > local82 ? local82 : local161;
 		@Pc(233) int local233 = local82 < local148 ? local82 : local148;
@@ -667,7 +667,7 @@ public abstract class Class53_Sub1 extends Class53 {
 			@Pc(67) Class53_Sub4_Sub2 local67 = (Class53_Sub4_Sub2) arg0;
 			@Pc(70) Class53_Sub4_Sub2 local70 = (Class53_Sub4_Sub2) arg1;
 			if ((this.aClass20_Sub3_6 == null || this.aClass20_Sub3_6.aBoolean250) && (local67.aClass158Array3 != null || local67.aClass167Array3 != null || local70 != null && (local70.aClass158Array3 != null || local70.aClass167Array3 != null))) {
-				this.aClass20_Sub3_6 = new Class20_Sub3(Static2.anInt954, this.method3311(), this.method3311());
+				this.aClass20_Sub3_6 = new Class20_Sub3(Static2.anInt954, this.getSize(), this.getSize());
 			}
 			if (this.aClass20_Sub3_6 != null) {
 				this.aClass20_Sub3_6.method2967(local67.aClass158Array3, local67.aClass167Array3, false, local67.anIntArray507, local67.anIntArray504, local67.anIntArray502);
@@ -676,7 +676,7 @@ public abstract class Class53_Sub1 extends Class53 {
 			@Pc(4) Class53_Sub4_Sub1 local4 = (Class53_Sub4_Sub1) arg1;
 			@Pc(7) Class53_Sub4_Sub1 local7 = (Class53_Sub4_Sub1) arg0;
 			if ((this.aClass20_Sub3_6 == null || this.aClass20_Sub3_6.aBoolean250) && (local7.aClass158Array2 != null || local7.aClass167Array2 != null || local4 != null && (local4.aClass158Array2 != null || local4.aClass167Array2 != null))) {
-				this.aClass20_Sub3_6 = new Class20_Sub3(Static2.anInt954, this.method3311(), this.method3311());
+				this.aClass20_Sub3_6 = new Class20_Sub3(Static2.anInt954, this.getSize(), this.getSize());
 			}
 			if (this.aClass20_Sub3_6 != null) {
 				this.aClass20_Sub3_6.method2967(local7.aClass158Array2, local7.aClass167Array2, false, local7.anIntArray347, local7.anIntArray344, local7.anIntArray340);
@@ -686,7 +686,7 @@ public abstract class Class53_Sub1 extends Class53 {
 	}
 
 	@OriginalMember(owner = "client!qc", name = "a", descriptor = "(II)V")
-	public final void method3316(@OriginalArg(1) int arg0) {
-		this.anInt3982 = arg0;
+	public final void setSize(@OriginalArg(1) int size) {
+		this.size = size;
 	}
 }

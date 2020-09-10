@@ -516,7 +516,7 @@ public final class Class185 {
 	}
 
 	@OriginalMember(owner = "client!wf", name = "a", descriptor = "(Lclient!eg;Lclient!qk;IBIIZ)Lclient!vg;")
-	public final Class53_Sub4 method4723(@OriginalArg(0) Class46 arg0, @OriginalArg(1) Class144 arg1, @OriginalArg(2) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4, @OriginalArg(6) boolean arg5) {
+	public final Class53_Sub4 method4723(@OriginalArg(0) Class46 arg0, @OriginalArg(1) PlayerAppearance arg1, @OriginalArg(2) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4, @OriginalArg(6) boolean arg5) {
 		@Pc(14) int local14;
 		@Pc(17) int local17;
 		if (arg5) {
@@ -547,7 +547,7 @@ public final class Class185 {
 			}
 			return local61;
 		} else if (local14 == 2) {
-			@Pc(120) Class53_Sub4 local120 = Static15.method1495(local17).method4266(arg2, arg0, arg4, arg3);
+			@Pc(120) Class53_Sub4 local120 = NpcTypeList.get(local17).method4266(arg2, arg0, arg4, arg3);
 			if (local120 == null) {
 				Static3.aBoolean178 = true;
 				return null;
@@ -566,7 +566,7 @@ public final class Class185 {
 				return local149;
 			}
 		} else if (local14 == 4) {
-			@Pc(166) Class162 local166 = Static35.method4361(local17);
+			@Pc(166) ObjType local166 = ObjTypeList.get(local17);
 			@Pc(176) Class53_Sub4 local176 = local166.method4123(arg3, 10, arg2, arg1, arg0, arg4);
 			if (local176 == null) {
 				Static3.aBoolean178 = true;
@@ -575,7 +575,7 @@ public final class Class185 {
 				return local176;
 			}
 		} else if (local14 == 6) {
-			@Pc(204) Class53_Sub4 local204 = Static15.method1495(local17).method4268(arg3, 0, null, arg0, arg2, null, 0, 0, arg4);
+			@Pc(204) Class53_Sub4 local204 = NpcTypeList.get(local17).method4268(arg3, 0, null, arg0, arg2, null, 0, 0, arg4);
 			if (local204 == null) {
 				Static3.aBoolean178 = true;
 				return null;

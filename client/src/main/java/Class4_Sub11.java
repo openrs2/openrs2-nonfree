@@ -36,7 +36,7 @@ public final class Class4_Sub11 extends Node {
 	public boolean aBoolean146;
 
 	@OriginalMember(owner = "client!gn", name = "I", descriptor = "Lclient!p;")
-	public Class53_Sub1_Sub2 aClass53_Sub1_Sub2_1;
+	public Npc aClass53_Sub1_Sub2_1;
 
 	@OriginalMember(owner = "client!gn", name = "J", descriptor = "I")
 	public int anInt2123;
@@ -45,7 +45,7 @@ public final class Class4_Sub11 extends Node {
 	public int anInt2124;
 
 	@OriginalMember(owner = "client!gn", name = "L", descriptor = "Lclient!f;")
-	public Class53_Sub1_Sub1 aClass53_Sub1_Sub1_1;
+	public Player aClass53_Sub1_Sub1_1;
 
 	@OriginalMember(owner = "client!gn", name = "M", descriptor = "I")
 	public int anInt2125;
@@ -86,7 +86,7 @@ public final class Class4_Sub11 extends Node {
 			@Pc(21) int local21 = Static10.method395(this.aClass53_Sub1_Sub2_1);
 			if (local9 != local21) {
 				this.anInt2115 = local21;
-				@Pc(36) Class168 local36 = this.aClass53_Sub1_Sub2_1.aClass168_1;
+				@Pc(36) NpcType local36 = this.aClass53_Sub1_Sub2_1.type;
 				if (local36.anIntArray590 != null) {
 					local36 = local36.method4265();
 				}
@@ -99,8 +99,8 @@ public final class Class4_Sub11 extends Node {
 			}
 		} else if (this.aClass53_Sub1_Sub1_1 != null) {
 			this.anInt2115 = Static10.method396(this.aClass53_Sub1_Sub1_1);
-			this.anInt2123 = this.aClass53_Sub1_Sub1_1.anInt1582 * 128;
-			this.anInt2127 = this.aClass53_Sub1_Sub1_1.anInt1587;
+			this.anInt2123 = this.aClass53_Sub1_Sub1_1.soundRadius * 128;
+			this.anInt2127 = this.aClass53_Sub1_Sub1_1.soundVolume;
 		}
 		if (this.anInt2115 != local9 && this.aClass4_Sub6_Sub4_3 != null) {
 			Static5.aClass4_Sub6_Sub3_2.method2670(this.aClass4_Sub6_Sub4_3);

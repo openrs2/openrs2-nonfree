@@ -310,21 +310,21 @@ public final class client extends GameShell {
 		if (Static3.aBoolean138) {
 			label195:
 			for (@Pc(56) int local56 = 0; local56 < 32768; local56++) {
-				@Pc(65) Class53_Sub1_Sub2 local65 = Static3.aClass53_Sub1_Sub2Array1[local56];
+				@Pc(65) Npc local65 = Static3.aClass53_Sub1_Sub2Array1[local56];
 				if (local65 != null) {
-					@Pc(71) byte local71 = local65.aClass168_1.aByte21;
+					@Pc(71) byte local71 = local65.type.aByte21;
 					if ((local71 & 0x2) > 0 && local65.anInt3965 == 0 && Math.random() * 1000.0D < 10.0D) {
 						@Pc(98) int local98 = (int) Math.round(Math.random() * 2.0D - 1.0D);
 						@Pc(106) int local106 = (int) Math.round(Math.random() * 2.0D - 1.0D);
 						if (local98 != 0 || local106 != 0) {
 							local65.aByteArray51[0] = 1;
-							local65.anIntArray422[0] = local98 + (local65.anInt3974 >> 7);
-							local65.anIntArray426[0] = (local65.anInt4002 >> 7) + local106;
-							Static7.aClass30Array1[Static7.anInt5334].method568(0, local65.anInt4002 >> 7, local65.method3311(), false, local65.anInt3974 >> 7, local65.method3311(), false);
-							if (local65.anIntArray422[0] >= 0 && local65.anIntArray422[0] <= 104 - local65.method3311() && local65.anIntArray426[0] >= 0 && local65.anIntArray426[0] <= 104 - local65.method3311() && Static7.aClass30Array1[Static7.anInt5334].method575(local65.anIntArray426[0], local65.anInt4002 >> 7, local65.anIntArray422[0], local65.anInt3974 >> 7)) {
-								if (local65.method3311() > 1) {
-									for (@Pc(240) int local240 = local65.anIntArray422[0]; local240 < local65.anIntArray422[0] + local65.method3311(); local240++) {
-										for (@Pc(256) int local256 = local65.anIntArray426[0]; local65.anIntArray426[0] + local65.method3311() > local256; local256++) {
+							local65.anIntArray422[0] = local98 + (local65.x >> 7);
+							local65.anIntArray426[0] = (local65.z >> 7) + local106;
+							Static7.aClass30Array1[Static7.anInt5334].method568(0, local65.z >> 7, local65.getSize(), false, local65.x >> 7, local65.getSize(), false);
+							if (local65.anIntArray422[0] >= 0 && local65.anIntArray422[0] <= 104 - local65.getSize() && local65.anIntArray426[0] >= 0 && local65.anIntArray426[0] <= 104 - local65.getSize() && Static7.aClass30Array1[Static7.anInt5334].method575(local65.anIntArray426[0], local65.z >> 7, local65.anIntArray422[0], local65.x >> 7)) {
+								if (local65.getSize() > 1) {
+									for (@Pc(240) int local240 = local65.anIntArray422[0]; local240 < local65.anIntArray422[0] + local65.getSize(); local240++) {
+										for (@Pc(256) int local256 = local65.anIntArray426[0]; local65.anIntArray426[0] + local65.getSize() > local256; local256++) {
 											if ((Static7.aClass30Array1[Static7.anInt5334].anIntArrayArray6[local240][local256] & 0x2401FF) != 0) {
 												continue label195;
 											}
@@ -338,7 +338,7 @@ public final class client extends GameShell {
 					Static32.method4024(local65);
 					Static34.method4247(local65);
 					Static13.method939(local65);
-					Static7.aClass30Array1[Static7.anInt5334].method567(false, false, local65.method3311(), local65.method3311(), local65.anInt4002 >> 7, local65.anInt3974 >> 7);
+					Static7.aClass30Array1[Static7.anInt5334].method567(false, false, local65.getSize(), local65.getSize(), local65.z >> 7, local65.x >> 7);
 				}
 			}
 		}
@@ -606,13 +606,13 @@ public final class client extends GameShell {
 				mainLoadPercentage = 50;
 				mainLoadSecondaryText = LocalisedText.MAINLOAD70 + local647 / 11 + "%";
 			} else {
-				Static9.method231(js5Archive2);
+				ParamTypeList.init(js5Archive2);
 				Static27.method3228(js5Archive2);
 				Static36.method3814(js5Archive2);
 				Static36.method4523(js5Archive7, js5Archive2);
 				Static34.method4232(js5Archive16, js5Archive7);
-				Static33.method4080(js5Archive7, js5Archive18);
-				Static14.method1171(js5Archive19, Static2.aClass4_Sub3_Sub5_Sub2_2, js5Archive7);
+				NpcTypeList.init(js5Archive18, js5Archive7);
+				ObjTypeList.init(js5Archive19, js5Archive7, Static2.aClass4_Sub3_Sub5_Sub2_2);
 				Static19.method1850(js5Archive2);
 				Static37.method4785(js5Archive20, js5Archive1, js5Archive0);
 				Static32.method3884(js5Archive2);
@@ -632,7 +632,7 @@ public final class client extends GameShell {
 				Static29.method3474(js5Archive2, js5Archive8);
 				mainLoadPercentage = 50;
 				mainLoadSecondaryText = LocalisedText.MAINLOAD70B;
-				Static15.method1338();
+				Equipment.init();
 				mainLoadState = 80;
 			}
 		} else if (mainLoadState == 80) {

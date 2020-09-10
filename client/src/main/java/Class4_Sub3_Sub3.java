@@ -55,7 +55,7 @@ public final class Class4_Sub3_Sub3 extends SecondaryNode {
 			this.anInt642 = arg0.readInt();
 		} else if (arg1 == 5 || arg1 == 6) {
 			@Pc(68) int local68 = arg0.readUnsignedShort();
-			this.aClass84_3 = new HashTable(Static24.method2595(local68));
+			this.aClass84_3 = new HashTable(IntegerUtils.clp2(local68));
 			for (@Pc(78) int local78 = 0; local78 < local68; local78++) {
 				@Pc(87) int local87 = arg0.readInt();
 				@Pc(99) Node local99;

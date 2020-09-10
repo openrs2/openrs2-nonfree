@@ -83,9 +83,6 @@ public final class Static1 {
 	@OriginalMember(owner = "client!bc", name = "x", descriptor = "I")
 	public static int anInt927;
 
-	@OriginalMember(owner = "client!be", name = "h", descriptor = "Lclient!ke;")
-	public static Class4_Sub3_Sub5_Sub2 aClass4_Sub3_Sub5_Sub2_1;
-
 	@OriginalMember(owner = "client!bf", name = "d", descriptor = "[Z")
 	public static boolean[] aBooleanArray3;
 
@@ -194,14 +191,8 @@ public final class Static1 {
 	@OriginalMember(owner = "client!client", name = "V", descriptor = "I")
 	public static int anInt772;
 
-	@OriginalMember(owner = "client!cn", name = "C", descriptor = "Z")
-	public static boolean aBoolean200;
-
 	@OriginalMember(owner = "client!co", name = "i", descriptor = "I")
 	public static int anInt818;
-
-	@OriginalMember(owner = "client!co", name = "p", descriptor = "Lclient!fh;")
-	public static Js5 aClass58_21;
 
 	@OriginalMember(owner = "client!co", name = "r", descriptor = "[I")
 	public static int[] anIntArray59;
@@ -313,9 +304,6 @@ public final class Static1 {
 
 	@OriginalMember(owner = "client!am", name = "B", descriptor = "I")
 	public static int anInt214 = 0;
-
-	@OriginalMember(owner = "client!ao", name = "f", descriptor = "Lclient!cc;")
-	public static final LruHashTable aClass26_2 = new LruHashTable(50);
 
 	@OriginalMember(owner = "client!b", name = "a", descriptor = "[I")
 	public static final int[] anIntArray22 = new int[1];
@@ -462,7 +450,7 @@ public final class Static1 {
 	public static final Class40 aClass40_5 = new Class40(64);
 
 	@OriginalMember(owner = "client!ci", name = "f", descriptor = "Lclient!qk;")
-	public static final Class144 aClass144_1 = new Class144();
+	public static final PlayerAppearance aClass144_1 = new PlayerAppearance();
 
 	@OriginalMember(owner = "client!ci", name = "j", descriptor = "Lclient!wf;")
 	public static Class185 aClass185_2 = null;

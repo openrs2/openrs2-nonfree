@@ -18,7 +18,7 @@ public final class Static24 {
 				return true;
 			}
 		}
-		if (arg0.equalsIgnoreCase(Static4.aClass53_Sub1_Sub1_2.aString88)) {
+		if (arg0.equalsIgnoreCase(Static4.aClass53_Sub1_Sub1_2.name)) {
 			return true;
 		} else {
 			return false;
@@ -137,17 +137,6 @@ public final class Static24 {
 		return null;
 	}
 
-	@OriginalMember(owner = "client!lj", name = "a", descriptor = "(IB)I")
-	public static int method2595(@OriginalArg(0) int arg0) {
-		arg0--;
-		arg0 |= arg0 >>> 1;
-		arg0 |= arg0 >>> 2;
-		arg0 |= arg0 >>> 4;
-		arg0 |= arg0 >>> 8;
-		arg0 |= arg0 >>> 16;
-		return arg0 + 1;
-	}
-
 	@OriginalMember(owner = "client!lj", name = "a", descriptor = "(ILclient!wf;B)Ljava/lang/String;")
 	public static String method2597(@OriginalArg(0) int arg0, @OriginalArg(1) Class185 arg1) {
 		if (!Static12.method687(arg1).method3266(arg0) && arg1.anObjectArray18 == null) {
@@ -162,17 +151,6 @@ public final class Static24 {
 	@OriginalMember(owner = "client!lj", name = "a", descriptor = "(Lclient!fh;B)V")
 	public static void method2599(@OriginalArg(0) Js5 arg0) {
 		Static6.aClass58_90 = arg0;
-	}
-
-	@OriginalMember(owner = "client!ll", name = "a", descriptor = "(IB)I")
-	public static int method2605(@OriginalArg(0) int arg0) {
-		@Pc(7) int local7 = arg0 >>> 1;
-		local7 |= local7 >>> 1;
-		local7 |= local7 >>> 2;
-		local7 |= local7 >>> 4;
-		local7 |= local7 >>> 8;
-		local7 |= local7 >>> 16;
-		return arg0 & ~local7;
 	}
 
 	@OriginalMember(owner = "client!ll", name = "a", descriptor = "(III)Lclient!ve;")
@@ -492,11 +470,6 @@ public final class Static24 {
 		}
 	}
 
-	@OriginalMember(owner = "client!mc", name = "a", descriptor = "(IB)I")
-	public static int method2690(@OriginalArg(0) int arg0) {
-		return arg0 & 0x7F;
-	}
-
 	@OriginalMember(owner = "client!mc", name = "a", descriptor = "(ILclient!fh;IBIIZ)V")
 	public static void method2692(@OriginalArg(1) Js5 arg0, @OriginalArg(4) int arg1, @OriginalArg(5) int arg2) {
 		Static3.anInt5397 = 2;
@@ -514,8 +487,8 @@ public final class Static24 {
 		Static35.method4313();
 		Static36.method4448();
 		Static30.method3599();
-		Static13.method884();
-		Static25.method2809();
+		NpcTypeList.clear();
+		ObjTypeList.clear();
 		Static27.method3180();
 		Static31.method3745();
 		Static25.method2924();
@@ -543,7 +516,7 @@ public final class Static24 {
 		if (!Static3.aBoolean138) {
 			((Class24_Sub1) Static4.anInterface4_1).method460();
 		}
-		Static5.aClass40_13.method893();
+		Static5.aClass40_13.clear();
 		client.js5Archive0.discardUnpacked();
 		client.js5Archive1.discardUnpacked();
 		client.js5Archive3.discardUnpacked();
@@ -591,32 +564,6 @@ public final class Static24 {
 			local118[local122] = Static26.method2991(local8[local122]).method1913();
 		}
 		Static12.method714(Static7.aShortArray114, local118);
-	}
-
-	@OriginalMember(owner = "client!me", name = "a", descriptor = "(II)I")
-	public static int method2700(@OriginalArg(0) int arg0) {
-		@Pc(1) int local1 = 0;
-		if (arg0 < 0 || arg0 >= 65536) {
-			arg0 >>>= 16;
-			local1 += 16;
-		}
-		if (arg0 >= 256) {
-			arg0 >>>= 8;
-			local1 += 8;
-		}
-		if (arg0 >= 16) {
-			arg0 >>>= 4;
-			local1 += 4;
-		}
-		if (arg0 >= 4) {
-			local1 += 2;
-			arg0 >>>= 2;
-		}
-		if (arg0 >= 1) {
-			local1++;
-			arg0 >>>= 1;
-		}
-		return local1 + arg0;
 	}
 
 	@OriginalMember(owner = "client!me", name = "a", descriptor = "(ILclient!fd;)Lclient!cd;")
@@ -718,16 +665,16 @@ public final class Static24 {
 	}
 
 	@OriginalMember(owner = "client!mf", name = "a", descriptor = "(Lclient!qc;I)V")
-	public static void method2705(@OriginalArg(0) Class53_Sub1 arg0) {
+	public static void method2705(@OriginalArg(0) PathingEntity arg0) {
 		if (Static2.anInt954 == arg0.anInt3966 || arg0.anInt4007 == -1 || arg0.anInt3996 != 0 || arg0.anInt4044 + 1 > Static23.method2494(arg0.anInt4007).anIntArray94[arg0.anInt3970]) {
 			@Pc(41) int local41 = arg0.anInt3966 - arg0.anInt4034;
 			@Pc(46) int local46 = Static2.anInt954 - arg0.anInt4034;
-			@Pc(57) int local57 = arg0.anInt3973 * 128 + arg0.method3311() * 64;
-			@Pc(71) int local71 = arg0.anInt4033 * 128 + arg0.method3311() * 64;
-			@Pc(82) int local82 = arg0.anInt4013 * 128 + arg0.method3311() * 64;
-			@Pc(95) int local95 = arg0.anInt4025 * 128 + arg0.method3311() * 64;
-			arg0.anInt4002 = ((local41 - local46) * local71 + local46 * local95) / local41;
-			arg0.anInt3974 = (local57 * (local41 - local46) + local82 * local46) / local41;
+			@Pc(57) int local57 = arg0.anInt3973 * 128 + arg0.getSize() * 64;
+			@Pc(71) int local71 = arg0.anInt4033 * 128 + arg0.getSize() * 64;
+			@Pc(82) int local82 = arg0.anInt4013 * 128 + arg0.getSize() * 64;
+			@Pc(95) int local95 = arg0.anInt4025 * 128 + arg0.getSize() * 64;
+			arg0.z = ((local41 - local46) * local71 + local46 * local95) / local41;
+			arg0.x = (local57 * (local41 - local46) + local82 * local46) / local41;
 		}
 		if (arg0.anInt4008 == 0) {
 			arg0.anInt4017 = 1024;

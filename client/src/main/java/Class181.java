@@ -896,7 +896,7 @@ public final class Class181 {
 		} else if (arg0 == 249) {
 			@Pc(600) int local600 = arg1.readUnsignedByte();
 			if (this.aClass84_26 == null) {
-				@Pc(608) int local608 = Static24.method2595(local600);
+				@Pc(608) int local608 = IntegerUtils.clp2(local600);
 				this.aClass84_26 = new HashTable(local608);
 			}
 			for (@Pc(616) int local616 = 0; local616 < local600; local616++) {

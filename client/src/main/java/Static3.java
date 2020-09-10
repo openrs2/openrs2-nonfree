@@ -599,7 +599,7 @@ public final class Static3 {
 	public static int anInt2232 = -1;
 
 	@OriginalMember(owner = "client!hk", name = "hb", descriptor = "[Lclient!p;")
-	public static final Class53_Sub1_Sub2[] aClass53_Sub1_Sub2Array1 = new Class53_Sub1_Sub2[32768];
+	public static final Npc[] aClass53_Sub1_Sub2Array1 = new Npc[32768];
 
 	@OriginalMember(owner = "client!hk", name = "jb", descriptor = "I")
 	public static int anInt2235 = 0;
@@ -612,9 +612,6 @@ public final class Static3 {
 
 	@OriginalMember(owner = "client!hn", name = "m", descriptor = "[Ljava/lang/String;")
 	public static final String[] aStringArray37 = new String[] { "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat" };
-
-	@OriginalMember(owner = "client!ho", name = "j", descriptor = "Lclient!cc;")
-	public static final LruHashTable aClass26_22 = new LruHashTable(64);
 
 	@OriginalMember(owner = "client!ho", name = "n", descriptor = "I")
 	public static int anInt2273 = 0;

@@ -10,69 +10,69 @@ public final class Class40 {
 	private SecondaryNode aClass4_Sub3_18 = new SecondaryNode();
 
 	@OriginalMember(owner = "client!dj", name = "o", descriptor = "Lclient!uk;")
-	private final SecondaryLinkedList aClass175_3 = new SecondaryLinkedList();
+	private final SecondaryLinkedList queue = new SecondaryLinkedList();
 
 	@OriginalMember(owner = "client!dj", name = "r", descriptor = "I")
-	private int anInt1044;
+	private int available;
 
 	@OriginalMember(owner = "client!dj", name = "s", descriptor = "I")
-	private final int anInt1045;
+	private final int capacity;
 
 	@OriginalMember(owner = "client!dj", name = "q", descriptor = "Lclient!ic;")
-	private final HashTable aClass84_4;
+	private final HashTable table;
 
 	@OriginalMember(owner = "client!dj", name = "<init>", descriptor = "(I)V")
-	public Class40(@OriginalArg(0) int arg0) {
-		this.anInt1044 = arg0;
-		@Pc(16) int local16;
-		for (local16 = 1; arg0 > local16 + local16; local16 += local16) {
+	public Class40(@OriginalArg(0) int capacity) {
+		this.available = capacity;
+		@Pc(16) int bucketCount;
+		for (bucketCount = 1; bucketCount + bucketCount < capacity; bucketCount += bucketCount) {
 		}
-		this.anInt1045 = arg0;
-		this.aClass84_4 = new HashTable(local16);
+		this.capacity = capacity;
+		this.table = new HashTable(bucketCount);
 	}
 
 	@OriginalMember(owner = "client!dj", name = "c", descriptor = "(I)Lclient!ni;")
-	public final Node method886() {
-		return this.aClass84_4.head();
+	public final Node head() {
+		return this.table.head();
 	}
 
 	@OriginalMember(owner = "client!dj", name = "a", descriptor = "(JILclient!lh;)V")
-	public final void method888(@OriginalArg(0) long arg0, @OriginalArg(2) SecondaryNode arg1) {
-		if (this.anInt1044 == 0) {
-			@Pc(15) SecondaryNode local15 = this.aClass175_3.removeHead();
-			local15.unlink();
-			local15.unlinkSecondary();
-			if (this.aClass4_Sub3_18 == local15) {
-				@Pc(31) SecondaryNode local31 = this.aClass175_3.removeHead();
-				local31.unlink();
-				local31.unlinkSecondary();
+	public final void put(@OriginalArg(0) long key, @OriginalArg(2) SecondaryNode value) {
+		if (this.available == 0) {
+			@Pc(15) SecondaryNode first = this.queue.removeHead();
+			first.unlink();
+			first.unlinkSecondary();
+			if (this.aClass4_Sub3_18 == first) {
+				@Pc(31) SecondaryNode second = this.queue.removeHead();
+				second.unlink();
+				second.unlinkSecondary();
 			}
 		} else {
-			this.anInt1044--;
+			this.available--;
 		}
-		this.aClass84_4.put(arg0, arg1);
-		this.aClass175_3.addTail(arg1);
+		this.table.put(key, value);
+		this.queue.addTail(value);
 	}
 
 	@OriginalMember(owner = "client!dj", name = "a", descriptor = "(IJ)Lclient!lh;")
-	public final SecondaryNode method889(@OriginalArg(1) long arg0) {
-		@Pc(18) SecondaryNode local18 = (SecondaryNode) this.aClass84_4.get(arg0);
-		if (local18 != null) {
-			this.aClass175_3.addTail(local18);
+	public final SecondaryNode get(@OriginalArg(1) long key) {
+		@Pc(18) SecondaryNode value = (SecondaryNode) this.table.get(key);
+		if (value != null) {
+			this.queue.addTail(value);
 		}
-		return local18;
+		return value;
 	}
 
 	@OriginalMember(owner = "client!dj", name = "d", descriptor = "(I)Lclient!ni;")
-	public final Node method890() {
-		return this.aClass84_4.next();
+	public final Node next() {
+		return this.table.next();
 	}
 
 	@OriginalMember(owner = "client!dj", name = "a", descriptor = "(B)V")
-	public final void method893() {
-		this.aClass175_3.clear();
-		this.aClass84_4.clear();
+	public final void clear() {
+		this.queue.clear();
+		this.table.clear();
 		this.aClass4_Sub3_18 = new SecondaryNode();
-		this.anInt1044 = this.anInt1045;
+		this.available = this.capacity;
 	}
 }

@@ -513,18 +513,6 @@ public final class Static25 {
 		}
 	}
 
-	@OriginalMember(owner = "client!mo", name = "c", descriptor = "(II)I")
-	public static int method2808(@OriginalArg(0) int arg0) {
-		return arg0 >>> 7;
-	}
-
-	@OriginalMember(owner = "client!mo", name = "f", descriptor = "(I)V")
-	public static void method2809() {
-		Static5.aClass26_35.clear();
-		Static2.aClass26_7.clear();
-		Static5.aClass26_37.clear();
-	}
-
 	@OriginalMember(owner = "client!mo", name = "a", descriptor = "(Z)V")
 	public static void method2811() {
 		@Pc(3) int local3 = Static5.anInt3890;
@@ -805,7 +793,7 @@ public final class Static25 {
 	}
 
 	@OriginalMember(owner = "client!nb", name = "a", descriptor = "(BLclient!p;)V")
-	public static void method2931(@OriginalArg(1) Class53_Sub1_Sub2 arg0) {
+	public static void method2931(@OriginalArg(1) Npc arg0) {
 		for (@Pc(14) Class4_Sub11 local14 = (Class4_Sub11) Static2.aClass112_9.head(); local14 != null; local14 = (Class4_Sub11) Static2.aClass112_9.next()) {
 			if (arg0 == local14.aClass53_Sub1_Sub2_1) {
 				if (local14.aClass4_Sub6_Sub4_3 != null) {

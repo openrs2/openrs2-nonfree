@@ -79,7 +79,7 @@ public final class Static11 {
 		Static35.method4310();
 		Static31.method3150();
 		Static24.method2697();
-		Static3.aClass40_11.method893();
+		Static3.aClass40_11.clear();
 		Static3.aClass96_1 = new Class96();
 		((Class24_Sub1) Static4.anInterface4_1).method460();
 		Static13.method1027();
@@ -92,7 +92,7 @@ public final class Static11 {
 		Static22.method2411();
 		Static20.method1929();
 		for (@Pc(42) int local42 = 0; local42 < 2048; local42++) {
-			@Pc(51) Class53_Sub1_Sub1 local51 = Static5.aClass53_Sub1_Sub1Array1[local42];
+			@Pc(51) Player local51 = Static5.aClass53_Sub1_Sub1Array1[local42];
 			if (local51 != null) {
 				local51.anObject5 = null;
 			}
@@ -494,7 +494,7 @@ public final class Static11 {
 	}
 
 	@OriginalMember(owner = "client!ce", name = "a", descriptor = "(ILclient!p;BI)V")
-	public static void method529(@OriginalArg(0) int arg0, @OriginalArg(1) Class53_Sub1_Sub2 arg1, @OriginalArg(3) int arg2) {
+	public static void method529(@OriginalArg(0) int arg0, @OriginalArg(1) Npc arg1, @OriginalArg(3) int arg2) {
 		if (arg0 == arg1.anInt4007 && arg0 != -1) {
 			@Pc(19) Class46 local19 = Static23.method2494(arg0);
 			@Pc(22) int local22 = local19.anInt1238;
@@ -504,7 +504,7 @@ public final class Static11 {
 				arg1.anInt4011 = 1;
 				arg1.anInt4001 = 0;
 				arg1.anInt4044 = 0;
-				Static29.method3461(local19, arg1.anInt4002, arg1.anInt3974, arg1.anInt3970, false);
+				Static29.method3461(local19, arg1.z, arg1.x, arg1.anInt3970, false);
 			}
 			if (local22 == 2) {
 				arg1.anInt4001 = 0;
@@ -518,7 +518,7 @@ public final class Static11 {
 			arg1.anInt4007 = arg0;
 			arg1.anInt4044 = 0;
 			if (arg1.anInt4007 != -1) {
-				Static29.method3461(Static23.method2494(arg1.anInt4007), arg1.anInt4002, arg1.anInt3974, arg1.anInt3970, false);
+				Static29.method3461(Static23.method2494(arg1.anInt4007), arg1.z, arg1.x, arg1.anInt3970, false);
 			}
 		}
 	}
@@ -529,7 +529,7 @@ public final class Static11 {
 	}
 
 	@OriginalMember(owner = "client!cf", name = "a", descriptor = "([ILclient!p;[II[I)V")
-	public static void method555(@OriginalArg(0) int[] arg0, @OriginalArg(1) Class53_Sub1_Sub2 arg1, @OriginalArg(2) int[] arg2, @OriginalArg(4) int[] arg3) {
+	public static void method555(@OriginalArg(0) int[] arg0, @OriginalArg(1) Npc arg1, @OriginalArg(2) int[] arg2, @OriginalArg(4) int[] arg3) {
 		for (@Pc(7) int local7 = 0; local7 < arg0.length; local7++) {
 			@Pc(19) int local19 = arg0[local7];
 			@Pc(23) int local23 = arg2[local7];
@@ -553,7 +553,7 @@ public final class Static11 {
 									local61.anInt4460 = 0;
 									local61.anInt4461 = local27;
 									local61.anInt4462 = 0;
-									Static29.method3461(local53, arg1.anInt4002, arg1.anInt3974, 0, false);
+									Static29.method3461(local53, arg1.z, arg1.x, 0, false);
 								} else if (local56 == 2) {
 									local61.anInt4465 = 0;
 								}
@@ -569,7 +569,7 @@ public final class Static11 {
 							local155.anInt4464 = 1;
 							local155.anInt4465 = 0;
 							local155.anInt4461 = local27;
-							Static29.method3461(local53, arg1.anInt4002, arg1.anInt3974, 0, false);
+							Static29.method3461(local53, arg1.z, arg1.x, 0, false);
 						}
 					}
 				}
@@ -577,13 +577,6 @@ public final class Static11 {
 				local23 >>>= 1;
 			}
 		}
-	}
-
-	@OriginalMember(owner = "client!cf", name = "f", descriptor = "(B)V")
-	public static void method556() {
-		Static5.aClass26_35.clearSoft();
-		Static2.aClass26_7.clearSoft();
-		Static5.aClass26_37.clearSoft();
 	}
 
 	@OriginalMember(owner = "client!cf", name = "g", descriptor = "(I)I")
@@ -694,7 +687,7 @@ public final class Static11 {
 		for (@Pc(3756) int local3756 = 0; local3756 < 32768; local3756++) {
 			Static3.aClass53_Sub1_Sub2Array1[local3756] = null;
 		}
-		Static4.aClass53_Sub1_Sub1_2 = Static5.aClass53_Sub1_Sub1Array1[2047] = new Class53_Sub1_Sub1();
+		Static4.aClass53_Sub1_Sub1_2 = Static5.aClass53_Sub1_Sub1Array1[2047] = new Player();
 		Static1.aClass112_1.clear();
 		Static2.aClass112_8.clear();
 		if (Static4.aClass112ArrayArrayArray1 != null) {
@@ -736,7 +729,7 @@ public final class Static11 {
 		Static6.aClass185_14 = null;
 		Static7.anInt5634 = 0;
 		Static1.aBoolean17 = false;
-		Static1.aClass144_1.method3610(-1, null, -1, new int[] { 0, 0, 0, 0, 0 }, false);
+		Static1.aClass144_1.set(-1, null, -1, new int[] { 0, 0, 0, 0, 0 }, false);
 		for (@Pc(3945) int local3945 = 0; local3945 < 8; local3945++) {
 			Static2.aStringArray40[local3945] = null;
 			Static3.aBooleanArray11[local3945] = false;
@@ -962,9 +955,9 @@ public final class Static11 {
 		}
 		Static7.anInt6050 = -1;
 		Static13.method966(Static4.anInt3407);
-		Static4.aClass53_Sub1_Sub1_2 = new Class53_Sub1_Sub1();
-		Static4.aClass53_Sub1_Sub1_2.anInt4002 = 3000;
-		Static4.aClass53_Sub1_Sub1_2.anInt3974 = 3000;
+		Static4.aClass53_Sub1_Sub1_2 = new Player();
+		Static4.aClass53_Sub1_Sub1_2.z = 3000;
+		Static4.aClass53_Sub1_Sub1_2.x = 3000;
 		if (!Static3.aBoolean138 && client.game == 0) {
 			Static21.method2005(client.js5Archive8);
 			Static9.method233(10);

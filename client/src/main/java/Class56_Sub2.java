@@ -133,8 +133,8 @@ public final class Class56_Sub2 extends Class56 {
 
 	@OriginalMember(owner = "client!n", name = "a", descriptor = "([B[I)V")
 	private void method2819(@OriginalArg(0) byte[] arg0, @OriginalArg(1) int[] arg1) {
-		this.anInt3416 = Static24.method2595(this.anInt3408);
-		this.anInt3417 = Static24.method2595(this.anInt3413);
+		this.anInt3416 = IntegerUtils.clp2(this.anInt3408);
+		this.anInt3417 = IntegerUtils.clp2(this.anInt3413);
 		@Pc(20) byte[] local20 = new byte[this.anInt3416 * this.anInt3417 * 4];
 		@Pc(22) int local22 = 0;
 		@Pc(24) int local24 = 0;

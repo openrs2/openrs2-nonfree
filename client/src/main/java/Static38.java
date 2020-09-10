@@ -97,7 +97,7 @@ public final class Static38 {
 					@Pc(514) int local514 = local408 * 64;
 					if (local425 != 0) {
 						@Pc(534) int local534;
-						@Pc(542) Class53_Sub1 local542;
+						@Pc(542) PathingEntity local542;
 						if (local425 >= 0) {
 							@Pc(528) int local528 = local425 - 1;
 							local534 = local528 >> 11 & 0xF;
@@ -315,7 +315,7 @@ public final class Static38 {
 	}
 
 	@OriginalMember(owner = "client!wk", name = "a", descriptor = "(Lclient!f;III)V")
-	public static void method4793(@OriginalArg(0) Class53_Sub1_Sub1 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
+	public static void method4793(@OriginalArg(0) Player arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
 		if (arg0.anInt4007 == arg1 && arg1 != -1) {
 			@Pc(89) Class46 local89 = Static23.method2494(arg1);
 			@Pc(92) int local92 = local89.anInt1238;
@@ -325,7 +325,7 @@ public final class Static38 {
 				arg0.anInt4044 = 0;
 				arg0.anInt4011 = 1;
 				arg0.anInt4001 = 0;
-				Static29.method3461(local89, arg0.anInt4002, arg0.anInt3974, arg0.anInt3970, arg0 == Static4.aClass53_Sub1_Sub1_2);
+				Static29.method3461(local89, arg0.z, arg0.x, arg0.anInt3970, arg0 == Static4.aClass53_Sub1_Sub1_2);
 			}
 			if (local92 == 2) {
 				arg0.anInt4001 = 0;
@@ -339,7 +339,7 @@ public final class Static38 {
 			arg0.anInt4001 = 0;
 			arg0.anInt4030 = arg0.anInt3965;
 			if (arg0.anInt4007 != -1) {
-				Static29.method3461(Static23.method2494(arg0.anInt4007), arg0.anInt4002, arg0.anInt3974, arg0.anInt3970, arg0 == Static4.aClass53_Sub1_Sub1_2);
+				Static29.method3461(Static23.method2494(arg0.anInt4007), arg0.z, arg0.x, arg0.anInt3970, arg0 == Static4.aClass53_Sub1_Sub1_2);
 			}
 		}
 	}
@@ -369,7 +369,7 @@ public final class Static38 {
 			} else {
 				local19 = Static4.anIntArray317[local7];
 			}
-			@Pc(29) Class53_Sub1_Sub1 local29 = Static5.aClass53_Sub1_Sub1Array1[local19];
+			@Pc(29) Player local29 = Static5.aClass53_Sub1_Sub1Array1[local19];
 			if (local29 != null && local29.anInt4023 > 0) {
 				local29.anInt4023--;
 				if (local29.anInt4023 == 0) {
@@ -379,7 +379,7 @@ public final class Static38 {
 		}
 		for (@Pc(57) int local57 = 0; local57 < Static6.anInt4451; local57++) {
 			@Pc(64) int local64 = Static7.anIntArray595[local57];
-			@Pc(68) Class53_Sub1_Sub2 local68 = Static3.aClass53_Sub1_Sub2Array1[local64];
+			@Pc(68) Npc local68 = Static3.aClass53_Sub1_Sub2Array1[local64];
 			if (local68 != null && local68.anInt4023 > 0) {
 				local68.anInt4023--;
 				if (local68.anInt4023 == 0) {

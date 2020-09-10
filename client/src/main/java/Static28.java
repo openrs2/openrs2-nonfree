@@ -160,7 +160,7 @@ public final class Static28 {
 			local9.aClass84Array1 = new HashTable[local66];
 			for (@Pc(77) int local77 = 0; local77 < local66; local77++) {
 				@Pc(84) int local84 = local14.readUnsignedShort();
-				@Pc(91) HashTable local91 = new HashTable(Static24.method2595(local84));
+				@Pc(91) HashTable local91 = new HashTable(IntegerUtils.clp2(local84));
 				local9.aClass84Array1[local77] = local91;
 				while (local84-- > 0) {
 					@Pc(103) int local103 = local14.readInt();
@@ -197,10 +197,10 @@ public final class Static28 {
 		}
 		@Pc(19) int local19 = 0;
 		for (@Pc(26) int local26 = 0; local26 < local12.anIntArray385.length; local26++) {
-			if (local12.anIntArray385[local26] >= 0 && Static5.anInt6072 > local12.anIntArray385[local26]) {
-				@Pc(61) Class162 local61 = Static35.method4361(local12.anIntArray385[local26]);
-				if (local61.aClass84_22 != null) {
-					@Pc(72) IntNode local72 = (IntNode) local61.aClass84_22.get((long) arg0);
+			if (local12.anIntArray385[local26] >= 0 && ObjTypeList.capacity > local12.anIntArray385[local26]) {
+				@Pc(61) ObjType local61 = ObjTypeList.get(local12.anIntArray385[local26]);
+				if (local61.params != null) {
+					@Pc(72) IntNode local72 = (IntNode) local61.params.get((long) arg0);
 					if (local72 != null) {
 						if (arg2) {
 							local19 += local72.value * local12.anIntArray386[local26];
@@ -490,7 +490,7 @@ public final class Static28 {
 
 	@OriginalMember(owner = "client!pa", name = "a", descriptor = "(II)[B")
 	public static byte[] method3321(@OriginalArg(0) int arg0) {
-		@Pc(18) Class4_Sub3_Sub20 local18 = (Class4_Sub3_Sub20) Static7.aClass40_15.method889((long) arg0);
+		@Pc(18) Class4_Sub3_Sub20 local18 = (Class4_Sub3_Sub20) Static7.aClass40_15.get((long) arg0);
 		if (local18 == null) {
 			@Pc(24) byte[] local24 = new byte[512];
 			@Pc(30) Random local30 = new Random((long) arg0);
@@ -505,7 +505,7 @@ public final class Static28 {
 				local24[local55] = local24[511 - local45] = local64;
 			}
 			local18 = new Class4_Sub3_Sub20(local24);
-			Static7.aClass40_15.method888((long) arg0, local18);
+			Static7.aClass40_15.put((long) arg0, local18);
 		}
 		return local18.aByteArray69;
 	}
@@ -568,8 +568,8 @@ public final class Static28 {
 	}
 
 	@OriginalMember(owner = "client!pa", name = "a", descriptor = "(IIIIZILclient!qc;)V")
-	public static void method3325(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(5) int arg4, @OriginalArg(6) Class53_Sub1 arg5) {
-		Static29.method3482(arg0, arg4, arg1, arg5.anInt3974, arg5.anInt4002, arg2, arg3);
+	public static void method3325(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(5) int arg4, @OriginalArg(6) PathingEntity arg5) {
+		Static29.method3482(arg0, arg4, arg1, arg5.x, arg5.z, arg2, arg3);
 	}
 
 	@OriginalMember(owner = "client!pa", name = "a", descriptor = "(IIIIZ)V")

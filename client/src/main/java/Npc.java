@@ -4,14 +4,14 @@ import dev.openrs2.deob.annotation.OriginalMember;
 import dev.openrs2.deob.annotation.Pc;
 
 @OriginalClass("client!p")
-public final class Class53_Sub1_Sub2 extends Class53_Sub1 {
+public final class Npc extends PathingEntity {
 
 	@OriginalMember(owner = "client!p", name = "oc", descriptor = "Lclient!ua;")
-	public Class168 aClass168_1;
+	public NpcType type;
 
 	@OriginalMember(owner = "client!p", name = "a", descriptor = "(BLclient!ua;)V")
-	public final void method3317(@OriginalArg(1) Class168 arg0) {
-		this.aClass168_1 = arg0;
+	public final void setType(@OriginalArg(1) NpcType type) {
+		this.type = type;
 		if (this.aClass20_Sub3_6 != null) {
 			this.aClass20_Sub3_6.method2952();
 		}
@@ -20,28 +20,28 @@ public final class Class53_Sub1_Sub2 extends Class53_Sub1 {
 	@OriginalMember(owner = "client!p", name = "d", descriptor = "(I)Z")
 	@Override
 	public final boolean method3310() {
-		return this.aClass168_1 != null;
+		return this.type != null;
 	}
 
 	@OriginalMember(owner = "client!p", name = "a", descriptor = "(IIIIIIIIJILclient!ne;)V")
 	@Override
 	public final void method3805(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) long arg8, @OriginalArg(9) int arg9, @OriginalArg(10) Class20_Sub3 arg10) {
-		if (this.aClass168_1 == null) {
+		if (this.type == null) {
 			return;
 		}
 		@Pc(28) Class46 local28 = this.anInt4007 != -1 && this.anInt3996 == 0 ? Static23.method2494(this.anInt4007) : null;
 		@Pc(54) Class46 local54 = this.anInt4005 == -1 || this.anInt4005 == this.method3314().anInt860 && local28 != null ? null : Static23.method2494(this.anInt4005);
-		@Pc(75) Class53_Sub4 local75 = this.aClass168_1.method4268(this.anInt3970, this.anInt4000, local54, local28, this.anInt4011, this.aClass150Array3, this.anInt4019, this.anInt4046, this.anInt4044);
+		@Pc(75) Class53_Sub4 local75 = this.type.method4268(this.anInt3970, this.anInt4000, local54, local28, this.anInt4011, this.aClass150Array3, this.anInt4019, this.anInt4046, this.anInt4044);
 		if (local75 == null) {
 			return;
 		}
 		this.anInt4016 = local75.method3813();
-		@Pc(86) Class168 local86 = this.aClass168_1;
+		@Pc(86) NpcType local86 = this.type;
 		if (local86.anIntArray590 != null) {
 			local86 = local86.method4265();
 		}
 		if (Preferences.characterShadows && local86.aBoolean354) {
-			@Pc(141) Class53_Sub4 local141 = Static12.method745(this.aClass168_1.aShort46, local54 == null ? local28 : local54, arg0, this.aClass168_1.anInt5262, this.aClass168_1.aByte20, local75, local54 == null ? this.anInt3970 : this.anInt4046, this.anInt4006, this.anInt4002, this.aBoolean284, this.aClass168_1.aShort47, this.aClass168_1.aByte19, this.anInt3974);
+			@Pc(141) Class53_Sub4 local141 = Static12.method745(this.type.aShort46, local54 == null ? local28 : local54, arg0, this.type.size, this.type.aByte20, local75, local54 == null ? this.anInt3970 : this.anInt4046, this.anInt4006, this.z, this.aBoolean284, this.type.aShort47, this.type.aByte19, this.x);
 			if (Static3.aBoolean138) {
 				@Pc(145) float local145 = Static17.method1620();
 				@Pc(147) float local147 = Static17.method1612();
@@ -80,21 +80,21 @@ public final class Class53_Sub1_Sub2 extends Class53_Sub1 {
 				local75 = ((Class53_Sub4_Sub1) local75).method2903(local189);
 			}
 			this.method3315(local75, local189);
-			if (this.aClass168_1.anInt5262 == 1) {
+			if (this.type.size == 1) {
 				local75.aBoolean324 = true;
 			}
 			local75.method3805(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, this.aClass20_Sub3_6);
 			return;
 		}
 		this.method3315(local75, local189);
-		if (this.aClass168_1.anInt5262 == 1) {
+		if (this.type.size == 1) {
 			local75.aBoolean324 = true;
 		}
 		local75.method3805(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, this.aClass20_Sub3_6);
 		if (local189 == null) {
 			return;
 		}
-		if (this.aClass168_1.anInt5262 == 1) {
+		if (this.type.size == 1) {
 			local189.aBoolean324 = true;
 		}
 		if (this.aClass20_Sub3_6 != null) {
@@ -121,13 +121,13 @@ public final class Class53_Sub1_Sub2 extends Class53_Sub1 {
 	@OriginalMember(owner = "client!p", name = "a", descriptor = "(IIIII)V")
 	@Override
 	public final void method3806(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4) {
-		if (this.aClass168_1 == null) {
+		if (this.type == null) {
 			return;
 		}
 		if (!this.aBoolean285) {
 			@Pc(28) Class46 local28 = this.anInt4007 != -1 && this.anInt3996 == 0 ? Static23.method2494(this.anInt4007) : null;
 			@Pc(52) Class46 local52 = this.anInt4005 == -1 || this.anInt4005 == this.method3314().anInt860 && local28 != null ? null : Static23.method2494(this.anInt4005);
-			@Pc(73) Class53_Sub4 local73 = this.aClass168_1.method4268(this.anInt3970, this.anInt4000, local52, local28, this.anInt4011, this.aClass150Array3, this.anInt4019, this.anInt4046, this.anInt4044);
+			@Pc(73) Class53_Sub4 local73 = this.type.method4268(this.anInt3970, this.anInt4000, local52, local28, this.anInt4011, this.aClass150Array3, this.anInt4019, this.anInt4046, this.anInt4044);
 			if (local73 == null) {
 				return;
 			}
@@ -141,12 +141,12 @@ public final class Class53_Sub1_Sub2 extends Class53_Sub1 {
 	@OriginalMember(owner = "client!p", name = "a", descriptor = "(Z)I")
 	@Override
 	protected final int method3303() {
-		if (this.aClass168_1.anIntArray590 != null) {
-			@Pc(17) Class168 local17 = this.aClass168_1.method4265();
+		if (this.type.anIntArray590 != null) {
+			@Pc(17) NpcType local17 = this.type.method4265();
 			if (local17 != null && local17.anInt5261 != -1) {
 				return local17.anInt5261;
 			}
 		}
-		return this.anInt3986;
+		return this.basId;
 	}
 }

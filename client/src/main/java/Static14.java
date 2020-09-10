@@ -208,21 +208,21 @@ public final class Static14 {
 					@Pc(139) int local139 = (Static7.anIntArray597[local16] >> 8) * 64 + local126 - Static5.anInt3983;
 					@Pc(143) int local143 = local116 & 0x3F;
 					@Pc(155) int local155 = local143 + (Static7.anIntArray597[local16] & 0xFF) * 64 - Static7.anInt5479;
-					@Pc(161) Class168 local161 = Static15.method1495(local82.readUnsignedShort());
-					if (Static3.aClass53_Sub1_Sub2Array1[local112] == null && (local161.aByte21 & 0x1) > 0 && Static2.anInt1216 == local120 && local139 >= 0 && local161.anInt5262 + local139 < 104 && local155 >= 0 && local155 + local161.anInt5262 < 104) {
-						Static3.aClass53_Sub1_Sub2Array1[local112] = new Class53_Sub1_Sub2();
-						@Pc(217) Class53_Sub1_Sub2 local217 = Static3.aClass53_Sub1_Sub2Array1[local112];
+					@Pc(161) NpcType local161 = NpcTypeList.get(local82.readUnsignedShort());
+					if (Static3.aClass53_Sub1_Sub2Array1[local112] == null && (local161.aByte21 & 0x1) > 0 && Static2.anInt1216 == local120 && local139 >= 0 && local161.size + local139 < 104 && local155 >= 0 && local155 + local161.size < 104) {
+						Static3.aClass53_Sub1_Sub2Array1[local112] = new Npc();
+						@Pc(217) Npc local217 = Static3.aClass53_Sub1_Sub2Array1[local112];
 						Static7.anIntArray595[Static6.anInt4451++] = local112;
 						local217.anInt3990 = Static2.anInt954;
-						local217.method3317(local161);
-						local217.method3316(local217.aClass168_1.anInt5262);
-						local217.anInt4017 = local217.anInt4031 = Static1.anIntArray27[local217.aClass168_1.aByte18];
-						local217.anInt4009 = local217.aClass168_1.anInt5243;
+						local217.setType(local161);
+						local217.setSize(local217.type.size);
+						local217.anInt4017 = local217.anInt4031 = Static1.anIntArray27[local217.type.aByte18];
+						local217.anInt4009 = local217.type.anInt5243;
 						if (local217.anInt4009 == 0) {
 							local217.anInt4031 = 0;
 						}
-						local217.anInt3986 = local217.aClass168_1.anInt5261;
-						local217.method3301(local155, local217.method3311(), local139, true);
+						local217.basId = local217.type.anInt5261;
+						local217.method3301(local155, local217.getSize(), local139, true);
 					}
 				}
 			}
@@ -842,18 +842,6 @@ public final class Static14 {
 				Static11.method519(local42, 2000000);
 			}
 		}
-	}
-
-	@OriginalMember(owner = "client!f", name = "a", descriptor = "(Lclient!fh;Lclient!ke;IZLclient!fh;)V")
-	public static void method1171(@OriginalArg(0) Js5 arg0, @OriginalArg(1) Class4_Sub3_Sub5_Sub2 arg1, @OriginalArg(4) Js5 arg2) {
-		Static4.aClass58_75 = arg2;
-		Static5.aClass58_81 = arg0;
-		Static1.aBoolean200 = true;
-		@Pc(11) int local11 = Static5.aClass58_81.capacity() - 1;
-		Static5.anInt6072 = local11 * 256 + Static5.aClass58_81.getGroupCapacity(local11);
-		Static1.aClass4_Sub3_Sub5_Sub2_1 = arg1;
-		Static6.aStringArray26 = new String[] { null, null, null, null, LocalisedText.DROP };
-		Static6.aStringArray29 = new String[] { null, null, LocalisedText.TAKE, null, null };
 	}
 
 	@OriginalMember(owner = "client!f", name = "f", descriptor = "(I)V")

@@ -224,9 +224,6 @@ public final class Static2 {
 	@OriginalMember(owner = "client!de", name = "x", descriptor = "I")
 	public static int anInt954 = 0;
 
-	@OriginalMember(owner = "client!df", name = "a", descriptor = "Lclient!cc;")
-	public static final LruHashTable aClass26_7 = new LruHashTable(50);
-
 	@OriginalMember(owner = "client!df", name = "g", descriptor = "[Ljava/lang/String;")
 	public static final String[] aStringArray5 = new String[1000];
 

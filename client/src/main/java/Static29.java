@@ -1320,8 +1320,8 @@ public final class Static29 {
 												}
 												Static6.anInt4946 = 0;
 											} else if (Static1.anInt528 != -1 && Static2.anInt1767 == 0 && Static6.anInt4946 == 0) {
-												@Pc(1797) int local1797 = (Static1.anInt528 << 1) + 1 - Static4.aClass53_Sub1_Sub1_2.method3311() >> 1;
-												@Pc(1809) int local1809 = (Static1.anInt420 << 1) + 1 - Static4.aClass53_Sub1_Sub1_2.method3311() >> 1;
+												@Pc(1797) int local1797 = (Static1.anInt528 << 1) + 1 - Static4.aClass53_Sub1_Sub1_2.getSize() >> 1;
+												@Pc(1809) int local1809 = (Static1.anInt420 << 1) + 1 - Static4.aClass53_Sub1_Sub1_2.getSize() >> 1;
 												Static37.method4661(local1797, 0, local1809);
 												Static6.anInt5177 = Static2.anInt1797;
 												Static4.anInt3275 = Static7.anInt5312;
@@ -1578,18 +1578,18 @@ public final class Static29 {
 	}
 
 	@OriginalMember(owner = "client!qa", name = "a", descriptor = "(IIILclient!f;I)V")
-	public static void method3488(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) Class53_Sub1_Sub1 arg2, @OriginalArg(4) int arg3) {
+	public static void method3488(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) Player arg2, @OriginalArg(4) int arg3) {
 		if (Static4.aClass53_Sub1_Sub1_2 == arg2 || Static7.anInt5634 >= 400) {
 			return;
 		}
 		@Pc(144) String local144;
-		if (arg2.anInt1584 == 0) {
+		if (arg2.skillLevel == 0) {
 			@Pc(29) boolean local29 = true;
 			if (Static4.aClass53_Sub1_Sub1_2.anInt1586 != -1 && arg2.anInt1586 != -1) {
-				@Pc(53) int local53 = arg2.anInt1597 >= Static4.aClass53_Sub1_Sub1_2.anInt1597 ? arg2.anInt1597 : Static4.aClass53_Sub1_Sub1_2.anInt1597;
+				@Pc(53) int local53 = arg2.combatLevel >= Static4.aClass53_Sub1_Sub1_2.combatLevel ? arg2.combatLevel : Static4.aClass53_Sub1_Sub1_2.combatLevel;
 				@Pc(68) int local68 = Static4.aClass53_Sub1_Sub1_2.anInt1586 >= arg2.anInt1586 ? arg2.anInt1586 : Static4.aClass53_Sub1_Sub1_2.anInt1586;
 				@Pc(79) int local79 = local53 * 10 / 100 + local68 + 5;
-				@Pc(86) int local86 = Static4.aClass53_Sub1_Sub1_2.anInt1597 - arg2.anInt1597;
+				@Pc(86) int local86 = Static4.aClass53_Sub1_Sub1_2.combatLevel - arg2.combatLevel;
 				if (local86 < 0) {
 					local86 = -local86;
 				}
@@ -1598,13 +1598,13 @@ public final class Static29 {
 				}
 			}
 			@Pc(110) String local110 = client.game == 1 ? LocalisedText.RATING : LocalisedText.LEVEL;
-			if (arg2.anInt1576 <= arg2.anInt1597) {
-				local144 = arg2.method1173() + (local29 ? Static20.method1921(Static4.aClass53_Sub1_Sub1_2.anInt1597, arg2.anInt1597) : "<col=ffffff>") + " (" + local110 + arg2.anInt1597 + ")";
+			if (arg2.anInt1576 <= arg2.combatLevel) {
+				local144 = arg2.method1173() + (local29 ? Static20.method1921(Static4.aClass53_Sub1_Sub1_2.combatLevel, arg2.combatLevel) : "<col=ffffff>") + " (" + local110 + arg2.combatLevel + ")";
 			} else {
-				local144 = arg2.method1173() + (local29 ? Static20.method1921(Static4.aClass53_Sub1_Sub1_2.anInt1597, arg2.anInt1597) : "<col=ffffff>") + " (" + local110 + arg2.anInt1597 + "+" + (arg2.anInt1576 - arg2.anInt1597) + ")";
+				local144 = arg2.method1173() + (local29 ? Static20.method1921(Static4.aClass53_Sub1_Sub1_2.combatLevel, arg2.combatLevel) : "<col=ffffff>") + " (" + local110 + arg2.combatLevel + "+" + (arg2.anInt1576 - arg2.combatLevel) + ")";
 			}
 		} else {
-			local144 = arg2.method1173() + " (" + LocalisedText.SKILL + arg2.anInt1584 + ")";
+			local144 = arg2.method1173() + " (" + LocalisedText.SKILL + arg2.skillLevel + ")";
 		}
 		if (Static2.anInt1334 == 1) {
 			Static16.method1497((long) arg1, arg3, arg0, Static7.aString365 + " -> <col=ffffff>" + local144, LocalisedText.USE, (short) 21, Static2.anInt1937);
@@ -1613,11 +1613,11 @@ public final class Static29 {
 				if (Static2.aStringArray40[local269] != null) {
 					@Pc(277) short local277 = 0;
 					if (client.game == 0 && Static2.aStringArray40[local269].equalsIgnoreCase(LocalisedText.ATTACK)) {
-						if (Static4.aClass53_Sub1_Sub1_2.anInt1597 < arg2.anInt1597) {
+						if (Static4.aClass53_Sub1_Sub1_2.combatLevel < arg2.combatLevel) {
 							local277 = 2000;
 						}
-						if (Static4.aClass53_Sub1_Sub1_2.anInt1593 != 0 && arg2.anInt1593 != 0) {
-							if (arg2.anInt1593 == Static4.aClass53_Sub1_Sub1_2.anInt1593) {
+						if (Static4.aClass53_Sub1_Sub1_2.team != 0 && arg2.team != 0) {
+							if (arg2.team == Static4.aClass53_Sub1_Sub1_2.team) {
 								local277 = 2000;
 							} else {
 								local277 = 0;

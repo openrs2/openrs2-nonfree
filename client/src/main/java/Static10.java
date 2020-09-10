@@ -433,8 +433,8 @@ public final class Static10 {
 	}
 
 	@OriginalMember(owner = "client!bn", name = "a", descriptor = "(ILclient!f;)V")
-	public static void method383(@OriginalArg(1) Class53_Sub1_Sub1 arg0) {
-		@Pc(20) Class4_Sub11 local20 = (Class4_Sub11) Static5.aClass84_18.get(Base37.encode(arg0.aString88));
+	public static void method383(@OriginalArg(1) Player arg0) {
+		@Pc(20) Class4_Sub11 local20 = (Class4_Sub11) Static5.aClass84_18.get(Base37.encode(arg0.name));
 		if (local20 == null) {
 			Static8.method109(null, arg0.anIntArray422[0], null, arg0.anIntArray426[0], arg0, 0, Static7.anInt5334);
 		} else {
@@ -590,14 +590,9 @@ public final class Static10 {
 		return 2;
 	}
 
-	@OriginalMember(owner = "client!bo", name = "a", descriptor = "(II)I")
-	public static int method394(@OriginalArg(1) int arg0) {
-		return arg0 >>> 8;
-	}
-
 	@OriginalMember(owner = "client!bo", name = "a", descriptor = "(BLclient!p;)I")
-	public static int method395(@OriginalArg(1) Class53_Sub1_Sub2 arg0) {
-		@Pc(4) Class168 local4 = arg0.aClass168_1;
+	public static int method395(@OriginalArg(1) Npc arg0) {
+		@Pc(4) NpcType local4 = arg0.type;
 		if (local4.anIntArray590 != null) {
 			local4 = local4.method4265();
 			if (local4 == null) {
@@ -617,15 +612,15 @@ public final class Static10 {
 	}
 
 	@OriginalMember(owner = "client!bo", name = "a", descriptor = "(Lclient!f;B)I")
-	public static int method396(@OriginalArg(0) Class53_Sub1_Sub1 arg0) {
-		@Pc(8) int local8 = arg0.anInt1580;
+	public static int method396(@OriginalArg(0) Player arg0) {
+		@Pc(8) int local8 = arg0.walkSound;
 		@Pc(12) Class34 local12 = arg0.method3314();
 		if (arg0.anInt4005 == local12.anInt860) {
-			local8 = arg0.anInt1588;
+			local8 = arg0.idleSound;
 		} else if (local12.anInt831 == arg0.anInt4005 || arg0.anInt4005 == local12.anInt829 || local12.anInt857 == arg0.anInt4005 || arg0.anInt4005 == local12.anInt867) {
-			local8 = arg0.anInt1589;
+			local8 = arg0.runSound;
 		} else if (local12.anInt854 == arg0.anInt4005 || arg0.anInt4005 == local12.anInt833 || arg0.anInt4005 == local12.anInt861 || local12.anInt852 == arg0.anInt4005) {
-			local8 = arg0.anInt1583;
+			local8 = arg0.crawlSound;
 		}
 		return local8;
 	}
@@ -693,7 +688,7 @@ public final class Static10 {
 				Static7.anInt5228 = arg0.anInt5926;
 				Static4.anInt3017 = arg0.anInt5947;
 			}
-			if (Static1.aClass144_1.aBoolean306) {
+			if (Static1.aClass144_1.female) {
 				arg0.anInt5947 = Static4.anInt3017;
 			} else {
 				arg0.anInt5947 = Static7.anInt5228;
@@ -703,7 +698,7 @@ public final class Static10 {
 				Static4.anInt3017 = arg0.anInt5947;
 				Static7.anInt5228 = arg0.anInt5926;
 			}
-			if (Static1.aClass144_1.aBoolean306) {
+			if (Static1.aClass144_1.female) {
 				arg0.anInt5947 = Static7.anInt5228;
 			} else {
 				arg0.anInt5947 = Static4.anInt3017;
@@ -714,13 +709,13 @@ public final class Static10 {
 			arg0.anInt5895 = -1;
 			arg0.anInt5939 = 5;
 		} else if (local4 == 328) {
-			if (Static4.aClass53_Sub1_Sub1_2.aString88 == null) {
+			if (Static4.aClass53_Sub1_Sub1_2.name == null) {
 				arg0.anInt5895 = 0;
 			} else {
 				arg0.anInt5944 = 150;
 				arg0.anInt5976 = (int) (Math.sin((double) Static2.anInt954 / 40.0D) * 256.0D) & 0x7FF;
 				arg0.anInt5939 = 5;
-				arg0.anInt5895 = ((int) Base37.encode(Static4.aClass53_Sub1_Sub1_2.aString88) << 11) + 2047;
+				arg0.anInt5895 = ((int) Base37.encode(Static4.aClass53_Sub1_Sub1_2.name) << 11) + 2047;
 				arg0.anInt5892 = Static4.aClass53_Sub1_Sub1_2.anInt4046;
 				arg0.anInt5891 = Static4.aClass53_Sub1_Sub1_2.anInt4005;
 				arg0.anInt5979 = Static4.aClass53_Sub1_Sub1_2.anInt4019;

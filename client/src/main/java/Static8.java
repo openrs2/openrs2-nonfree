@@ -34,11 +34,11 @@ public final class Static8 {
 		if (arg0) {
 			Static6.anInt4451 = 0;
 			for (@Pc(166) int local166 = 0; local166 < 32768; local166++) {
-				@Pc(175) Class53_Sub1_Sub2 local175 = Static3.aClass53_Sub1_Sub2Array1[local166];
+				@Pc(175) Npc local175 = Static3.aClass53_Sub1_Sub2Array1[local166];
 				if (local175 != null) {
-					local175.anInt4002 -= local90 * 128;
-					local175.anInt3974 -= local95 * 128;
-					if (local175.anInt3974 >= 0 && local175.anInt3974 <= 13184 && local175.anInt4002 >= 0 && local175.anInt4002 <= 13184) {
+					local175.z -= local90 * 128;
+					local175.x -= local95 * 128;
+					if (local175.x >= 0 && local175.x <= 13184 && local175.z >= 0 && local175.z <= 13184) {
 						for (@Pc(226) int local226 = 0; local226 < 10; local226++) {
 							@Pc(233) int[] local233 = local175.anIntArray422;
 							local233[local226] -= local95;
@@ -47,14 +47,14 @@ public final class Static8 {
 						}
 						Static7.anIntArray595[Static6.anInt4451++] = local166;
 					} else {
-						Static3.aClass53_Sub1_Sub2Array1[local166].method3317(null);
+						Static3.aClass53_Sub1_Sub2Array1[local166].setType(null);
 						Static3.aClass53_Sub1_Sub2Array1[local166] = null;
 					}
 				}
 			}
 		} else {
 			for (@Pc(103) int local103 = 0; local103 < 32768; local103++) {
-				@Pc(112) Class53_Sub1_Sub2 local112 = Static3.aClass53_Sub1_Sub2Array1[local103];
+				@Pc(112) Npc local112 = Static3.aClass53_Sub1_Sub2Array1[local103];
 				if (local112 != null) {
 					for (@Pc(117) int local117 = 0; local117 < 10; local117++) {
 						@Pc(124) int[] local124 = local112.anIntArray422;
@@ -62,13 +62,13 @@ public final class Static8 {
 						local124 = local112.anIntArray426;
 						local124[local117] -= local90;
 					}
-					local112.anInt3974 -= local95 * 128;
-					local112.anInt4002 -= local90 * 128;
+					local112.x -= local95 * 128;
+					local112.z -= local90 * 128;
 				}
 			}
 		}
 		for (@Pc(263) int local263 = 0; local263 < 2048; local263++) {
-			@Pc(272) Class53_Sub1_Sub1 local272 = Static5.aClass53_Sub1_Sub1Array1[local263];
+			@Pc(272) Player local272 = Static5.aClass53_Sub1_Sub1Array1[local263];
 			if (local272 != null) {
 				for (@Pc(277) int local277 = 0; local277 < 10; local277++) {
 					@Pc(282) int[] local282 = local272.anIntArray422;
@@ -76,8 +76,8 @@ public final class Static8 {
 					local282 = local272.anIntArray426;
 					local282[local277] -= local90;
 				}
-				local272.anInt4002 -= local90 * 128;
-				local272.anInt3974 -= local95 * 128;
+				local272.z -= local90 * 128;
+				local272.x -= local95 * 128;
 			}
 		}
 		@Pc(320) byte local320 = 0;
@@ -167,8 +167,8 @@ public final class Static8 {
 		@Pc(17) String local17 = Static29.method3464(Static14.method1054(arg1));
 		@Pc(19) boolean local19 = false;
 		for (@Pc(21) int local21 = 0; local21 < Static3.anInt2510; local21++) {
-			@Pc(30) Class53_Sub1_Sub1 local30 = Static5.aClass53_Sub1_Sub1Array1[Static4.anIntArray317[local21]];
-			if (local30 != null && local30.aString88 != null && local30.aString88.equalsIgnoreCase(local17)) {
+			@Pc(30) Player local30 = Static5.aClass53_Sub1_Sub1Array1[Static4.anIntArray317[local21]];
+			if (local30 != null && local30.name != null && local30.name.equalsIgnoreCase(local17)) {
 				local19 = true;
 				if (arg0 == 1) {
 					Static3.aClass4_Sub10_Sub1_1.writeOpcode(212);
@@ -203,9 +203,9 @@ public final class Static8 {
 	public static void method8() {
 		for (@Pc(11) int local11 = 0; local11 < Static6.anInt4451; local11++) {
 			@Pc(18) int local18 = Static7.anIntArray595[local11];
-			@Pc(22) Class53_Sub1_Sub2 local22 = Static3.aClass53_Sub1_Sub2Array1[local18];
+			@Pc(22) Npc local22 = Static3.aClass53_Sub1_Sub2Array1[local18];
 			if (local22 != null) {
-				Static15.method1428(local22.aClass168_1.anInt5262, local22);
+				Static15.method1428(local22.type.size, local22);
 			}
 		}
 	}
@@ -362,9 +362,9 @@ public final class Static8 {
 		@Pc(33) Class4_Sub3_Sub21 local33 = (Class4_Sub3_Sub21) local17.head();
 		@Pc(35) Class4_Sub3_Sub21 local35 = null;
 		while (local33 != null) {
-			@Pc(44) Class162 local44 = Static35.method4361(local33.aClass53_Sub2_1.anInt2168);
-			@Pc(47) int local47 = local44.anInt5102;
-			if (local44.anInt5075 == 1) {
+			@Pc(44) ObjType local44 = ObjTypeList.get(local33.aClass53_Sub2_1.anInt2168);
+			@Pc(47) int local47 = local44.cost;
+			if (local44.stackable == 1) {
 				local47 *= local33.aClass53_Sub2_1.anInt2166 + 1;
 			}
 			if (local47 > local28) {
@@ -482,7 +482,7 @@ public final class Static8 {
 	}
 
 	@OriginalMember(owner = "client!ah", name = "a", descriptor = "(ILclient!vh;ILclient!p;ILclient!f;II)V")
-	public static void method109(@OriginalArg(1) Class181 arg0, @OriginalArg(2) int arg1, @OriginalArg(3) Class53_Sub1_Sub2 arg2, @OriginalArg(4) int arg3, @OriginalArg(5) Class53_Sub1_Sub1 arg4, @OriginalArg(6) int arg5, @OriginalArg(7) int arg6) {
+	public static void method109(@OriginalArg(1) Class181 arg0, @OriginalArg(2) int arg1, @OriginalArg(3) Npc arg2, @OriginalArg(4) int arg3, @OriginalArg(5) Player arg4, @OriginalArg(6) int arg5, @OriginalArg(7) int arg6) {
 		@Pc(9) Class4_Sub11 local9 = new Class4_Sub11();
 		local9.anInt2126 = arg6;
 		local9.anInt2113 = arg3 * 128;
@@ -513,14 +513,14 @@ public final class Static8 {
 			Static1.aClass112_2.addTail(local9);
 		} else if (arg2 != null) {
 			local9.aClass53_Sub1_Sub2_1 = arg2;
-			@Pc(86) Class168 local86 = arg2.aClass168_1;
+			@Pc(86) NpcType local86 = arg2.type;
 			if (local86.anIntArray590 != null) {
 				local9.aBoolean146 = true;
 				local86 = local86.method4265();
 			}
 			if (local86 != null) {
-				local9.anInt2117 = (local86.anInt5262 + arg1) * 128;
-				local9.anInt2112 = (local86.anInt5262 + arg3) * 128;
+				local9.anInt2117 = (local86.size + arg1) * 128;
+				local9.anInt2112 = (local86.size + arg3) * 128;
 				local9.anInt2115 = Static10.method395(arg2);
 				local9.anInt2127 = local86.anInt5235;
 				local9.anInt2123 = local86.anInt5249 * 128;
@@ -528,12 +528,12 @@ public final class Static8 {
 			Static2.aClass112_9.addTail(local9);
 		} else if (arg4 != null) {
 			local9.aClass53_Sub1_Sub1_1 = arg4;
-			local9.anInt2117 = (arg1 + arg4.method3311()) * 128;
-			local9.anInt2112 = (arg4.method3311() + arg3) * 128;
+			local9.anInt2117 = (arg1 + arg4.getSize()) * 128;
+			local9.anInt2112 = (arg4.getSize() + arg3) * 128;
 			local9.anInt2115 = Static10.method396(arg4);
-			local9.anInt2127 = arg4.anInt1587;
-			local9.anInt2123 = arg4.anInt1582 * 128;
-			Static5.aClass84_18.put(Base37.encode(arg4.aString88), local9);
+			local9.anInt2127 = arg4.soundVolume;
+			local9.anInt2123 = arg4.soundRadius * 128;
+			Static5.aClass84_18.put(Base37.encode(arg4.name), local9);
 		}
 	}
 
