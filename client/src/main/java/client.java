@@ -528,7 +528,7 @@ public final class client extends GameShell {
 			}
 		} else if (mainLoadState == 41) {
 			if (js5Archive28.fetchAll()) {
-				this.method688(js5Archive28.fetchFile(1));
+				this.decodeDefaults(js5Archive28.fetchFile(1));
 				mainLoadState = 45;
 				mainLoadSecondaryText = LocalisedText.MAINLOAD41B;
 				mainLoadPercentage = 25;
@@ -880,21 +880,21 @@ public final class client extends GameShell {
 	}
 
 	@OriginalMember(owner = "client!client", name = "a", descriptor = "([BI)V")
-	private void method688(@OriginalArg(0) byte[] arg0) {
-		@Pc(11) Buffer local11 = new Buffer(arg0);
+	private void decodeDefaults(@OriginalArg(0) byte[] bytes) {
+		@Pc(11) Buffer buffer = new Buffer(bytes);
 		while (true) {
-			@Pc(15) int local15 = local11.readUnsignedByte();
-			if (local15 == 0) {
+			@Pc(15) int code = buffer.readUnsignedByte();
+			if (code == 0) {
 				return;
 			}
-			if (local15 == 1) {
-				@Pc(31) int[] local31 = Static2.anIntArray163 = new int[6];
-				local31[0] = local11.readUnsignedShort();
-				local31[1] = local11.readUnsignedShort();
-				local31[2] = local11.readUnsignedShort();
-				local31[3] = local11.readUnsignedShort();
-				local31[4] = local11.readUnsignedShort();
-				local31[5] = local11.readUnsignedShort();
+			if (code == 1) {
+				@Pc(31) int[] textures = Static2.skyboxTextures = new int[6];
+				textures[0] = buffer.readUnsignedShort();
+				textures[1] = buffer.readUnsignedShort();
+				textures[2] = buffer.readUnsignedShort();
+				textures[3] = buffer.readUnsignedShort();
+				textures[4] = buffer.readUnsignedShort();
+				textures[5] = buffer.readUnsignedShort();
 			}
 		}
 	}
