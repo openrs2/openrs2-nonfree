@@ -19,10 +19,10 @@ public final class Class24_Sub1 extends Class24 implements Interface4 {
 	private final Js5 aClass58_15;
 
 	@OriginalMember(owner = "client!c", name = "X", descriptor = "Lclient!dj;")
-	private Class40 aClass40_4;
+	private LruHashTable aClass40_4;
 
 	@OriginalMember(owner = "client!c", name = "E", descriptor = "Lclient!dj;")
-	private Class40 aClass40_3;
+	private LruHashTable aClass40_3;
 
 	@OriginalMember(owner = "client!c", name = "<init>", descriptor = "(Lclient!fh;Lclient!fh;Lclient!fh;IZ)V")
 	public Class24_Sub1(@OriginalArg(0) Js5 arg0, @OriginalArg(1) Js5 arg1, @OriginalArg(2) Js5 arg2, @OriginalArg(3) int arg3, @OriginalArg(4) boolean arg4) {
@@ -31,9 +31,9 @@ public final class Class24_Sub1 extends Class24 implements Interface4 {
 		this.aClass58_16 = arg2;
 		this.aClass58_15 = arg0;
 		this.aBoolean28 = arg4;
-		this.aClass40_4 = new Class40(this.anInt447);
+		this.aClass40_4 = new LruHashTable(this.anInt447);
 		if (Static3.aBoolean138) {
-			this.aClass40_3 = new Class40(this.anInt447);
+			this.aClass40_3 = new LruHashTable(this.anInt447);
 		} else {
 			this.aClass40_3 = null;
 		}
@@ -144,9 +144,9 @@ public final class Class24_Sub1 extends Class24 implements Interface4 {
 	@OriginalMember(owner = "client!c", name = "d", descriptor = "(IB)V")
 	public final void method463(@OriginalArg(0) int arg0) {
 		this.anInt447 = arg0;
-		this.aClass40_4 = new Class40(this.anInt447);
+		this.aClass40_4 = new LruHashTable(this.anInt447);
 		if (Static3.aBoolean138) {
-			this.aClass40_3 = new Class40(this.anInt447);
+			this.aClass40_3 = new LruHashTable(this.anInt447);
 		} else {
 			this.aClass40_3 = null;
 		}

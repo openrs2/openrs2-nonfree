@@ -7,7 +7,7 @@ import dev.openrs2.deob.annotation.Pc;
 public class Class24 implements Interface3 {
 
 	@OriginalMember(owner = "client!qi", name = "p", descriptor = "Lclient!dj;")
-	private final Class40 aClass40_2 = new Class40(256);
+	private final LruHashTable aClass40_2 = new LruHashTable(256);
 
 	@OriginalMember(owner = "client!qi", name = "c", descriptor = "Lclient!fh;")
 	private final Js5 aClass58_13;

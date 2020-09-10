@@ -350,7 +350,7 @@ public final class Static7 {
 	public static final int[] anIntArray501 = new int[25];
 
 	@OriginalMember(owner = "client!vd", name = "a", descriptor = "Lclient!dj;")
-	public static final Class40 aClass40_15 = new Class40(16);
+	public static final LruHashTable aClass40_15 = new LruHashTable(16);
 
 	@OriginalMember(owner = "client!vd", name = "i", descriptor = "[I")
 	public static final int[] anIntArray626 = new int[5];

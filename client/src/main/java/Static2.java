@@ -387,7 +387,7 @@ public final class Static2 {
 	public static String aString81 = null;
 
 	@OriginalMember(owner = "client!em", name = "p", descriptor = "Lclient!dj;")
-	public static final Class40 aClass40_6 = new Class40(64);
+	public static final LruHashTable aClass40_6 = new LruHashTable(64);
 
 	@OriginalMember(owner = "client!em", name = "z", descriptor = "I")
 	public static int anInt1333 = 0;

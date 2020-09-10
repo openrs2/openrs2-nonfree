@@ -447,7 +447,7 @@ public final class Static1 {
 	public static final int[] anIntArray52 = new int[] { 0, 0, 0, 0, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3 };
 
 	@OriginalMember(owner = "client!ci", name = "e", descriptor = "Lclient!dj;")
-	public static final Class40 aClass40_5 = new Class40(64);
+	public static final LruHashTable aClass40_5 = new LruHashTable(64);
 
 	@OriginalMember(owner = "client!ci", name = "f", descriptor = "Lclient!qk;")
 	public static final PlayerAppearance aClass144_1 = new PlayerAppearance();

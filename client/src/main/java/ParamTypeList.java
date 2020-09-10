@@ -4,7 +4,7 @@ import dev.openrs2.deob.annotation.Pc;
 
 public final class ParamTypeList {
 	@OriginalMember(owner = "client!ob", name = "f", descriptor = "Lclient!dj;")
-	private static final Class40 types = new Class40(64);
+	private static final LruHashTable types = new LruHashTable(64);
 
 	@OriginalMember(owner = "client!mf", name = "e", descriptor = "Lclient!fh;")
 	private static Js5 archive;

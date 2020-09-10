@@ -413,7 +413,7 @@ public final class Static3 {
 	public static int[] anIntArray164 = new int[2];
 
 	@OriginalMember(owner = "client!gd", name = "j", descriptor = "Lclient!dj;")
-	public static final Class40 aClass40_9 = new Class40(128);
+	public static final LruHashTable aClass40_9 = new LruHashTable(128);
 
 	@OriginalMember(owner = "client!ge", name = "d", descriptor = "[I")
 	public static final int[] anIntArray166 = new int[] { 1, -1, -1, 1 };
@@ -527,7 +527,7 @@ public final class Static3 {
 	public static int anInt2102 = 0;
 
 	@OriginalMember(owner = "client!gm", name = "c", descriptor = "Lclient!dj;")
-	public static final Class40 aClass40_10 = new Class40(64);
+	public static final LruHashTable aClass40_10 = new LruHashTable(64);
 
 	@OriginalMember(owner = "client!gm", name = "d", descriptor = "S")
 	public static short aShort12 = 320;
@@ -635,7 +635,7 @@ public final class Static3 {
 	public static Class185 aClass185_5 = null;
 
 	@OriginalMember(owner = "client!ib", name = "y", descriptor = "Lclient!dj;")
-	public static final Class40 aClass40_11 = new Class40(4);
+	public static final LruHashTable aClass40_11 = new LruHashTable(4);
 
 	@OriginalMember(owner = "client!ib", name = "A", descriptor = "[I")
 	public static int[] anIntArray194 = null;

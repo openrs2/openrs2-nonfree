@@ -310,7 +310,7 @@ public final class Static4 {
 	public static final byte[] aByteArray21 = new byte[16384];
 
 	@OriginalMember(owner = "client!kf", name = "u", descriptor = "Lclient!dj;")
-	public static final Class40 aClass40_12 = new Class40(64);
+	public static final LruHashTable aClass40_12 = new LruHashTable(64);
 
 	@OriginalMember(owner = "client!kg", name = "d", descriptor = "[I")
 	public static final int[] anIntArray256 = new int[4];

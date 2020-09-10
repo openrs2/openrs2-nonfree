@@ -4,7 +4,7 @@ import dev.openrs2.deob.annotation.OriginalMember;
 import dev.openrs2.deob.annotation.Pc;
 
 @OriginalClass("client!dj")
-public final class Class40 {
+public final class LruHashTable {
 
 	@OriginalMember(owner = "client!dj", name = "f", descriptor = "Lclient!lh;")
 	private SecondaryNode aClass4_Sub3_18 = new SecondaryNode();
@@ -22,7 +22,7 @@ public final class Class40 {
 	private final HashTable table;
 
 	@OriginalMember(owner = "client!dj", name = "<init>", descriptor = "(I)V")
-	public Class40(@OriginalArg(0) int capacity) {
+	public LruHashTable(@OriginalArg(0) int capacity) {
 		this.available = capacity;
 		@Pc(16) int bucketCount;
 		for (bucketCount = 1; bucketCount + bucketCount < capacity; bucketCount += bucketCount) {
