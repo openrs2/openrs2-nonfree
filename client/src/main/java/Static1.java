@@ -5,9 +5,6 @@ import dev.openrs2.deob.annotation.OriginalMember;
 
 public final class Static1 {
 
-	@OriginalMember(owner = "client!aa", name = "d", descriptor = "Lclient!fh;")
-	public static Js5 aClass58_1;
-
 	@OriginalMember(owner = "client!ab", name = "a", descriptor = "I")
 	public static int anInt5;
 
@@ -37,9 +34,6 @@ public final class Static1 {
 
 	@OriginalMember(owner = "client!ah", name = "e", descriptor = "I")
 	public static int anInt119;
-
-	@OriginalMember(owner = "client!ah", name = "g", descriptor = "Lclient!fh;")
-	public static Js5 aClass58_4;
 
 	@OriginalMember(owner = "client!aj", name = "c", descriptor = "[[[B")
 	public static byte[][][] aByteArrayArrayArray1;
@@ -80,9 +74,6 @@ public final class Static1 {
 	@OriginalMember(owner = "client!bb", name = "E", descriptor = "I")
 	public static int anInt243;
 
-	@OriginalMember(owner = "client!bc", name = "o", descriptor = "Lclient!fh;")
-	public static Js5 aClass58_24;
-
 	@OriginalMember(owner = "client!bc", name = "q", descriptor = "[[I")
 	public static int[][] anIntArrayArray9;
 
@@ -103,9 +94,6 @@ public final class Static1 {
 
 	@OriginalMember(owner = "client!bf", name = "f", descriptor = "[I")
 	public static int[] anIntArray32;
-
-	@OriginalMember(owner = "client!bh", name = "c", descriptor = "Lclient!fh;")
-	public static Js5 aClass58_30;
 
 	@OriginalMember(owner = "client!bh", name = "j", descriptor = "I")
 	public static int anInt1053;
@@ -139,9 +127,6 @@ public final class Static1 {
 
 	@OriginalMember(owner = "client!bo", name = "b", descriptor = "J")
 	public static long aLong23;
-
-	@OriginalMember(owner = "client!bo", name = "e", descriptor = "Lclient!fh;")
-	public static Js5 aClass58_10;
 
 	@OriginalMember(owner = "client!bo", name = "o", descriptor = "Ljava/awt/FontMetrics;")
 	public static FontMetrics aFontMetrics1;

@@ -665,7 +665,7 @@ public final class Static29 {
 		@Pc(18) long local18 = (long) arg3;
 		@Pc(24) Class53_Sub4 local24 = (Class53_Sub4) Static4.aClass26_30.get(local18);
 		if (local24 == null) {
-			@Pc(32) Class53_Sub3 local32 = Static25.method2752(Static4.aClass58_69, arg3);
+			@Pc(32) Class53_Sub3 local32 = Static25.method2752(client.js5Archive7, arg3);
 			if (local32 == null) {
 				return null;
 			}

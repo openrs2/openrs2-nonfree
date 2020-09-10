@@ -10,9 +10,6 @@ public final class Static7 {
 	@OriginalMember(owner = "client!u", name = "e", descriptor = "I")
 	public static int anInt5231;
 
-	@OriginalMember(owner = "client!u", name = "h", descriptor = "Lclient!fh;")
-	public static Js5 aClass58_96;
-
 	@OriginalMember(owner = "client!ua", name = "i", descriptor = "I")
 	public static int anInt5236;
 
@@ -24,9 +21,6 @@ public final class Static7 {
 
 	@OriginalMember(owner = "client!uc", name = "W", descriptor = "Lclient!fh;")
 	public static Js5 aClass58_97;
-
-	@OriginalMember(owner = "client!uc", name = "X", descriptor = "Lclient!fh;")
-	public static Js5 aClass58_98;
 
 	@OriginalMember(owner = "client!uc", name = "Y", descriptor = "[[[I")
 	public static int[][][] anIntArrayArrayArray15;
@@ -144,9 +138,6 @@ public final class Static7 {
 
 	@OriginalMember(owner = "client!wb", name = "J", descriptor = "I")
 	public static int anInt5798;
-
-	@OriginalMember(owner = "client!wc", name = "a", descriptor = "Lclient!fh;")
-	public static Js5 aClass58_102;
 
 	@OriginalMember(owner = "client!wg", name = "J", descriptor = "[S")
 	public static short[] aShortArray124;

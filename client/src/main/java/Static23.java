@@ -175,7 +175,7 @@ public final class Static23 {
 	public static void method1933(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2) {
 		arg0 = Preferences.musicVolume * arg0 >> 8;
 		if (arg0 != 0 && arg2 != -1) {
-			Static28.method3251(arg0, arg2, Static3.aClass58_57);
+			Static28.method3251(arg0, arg2, client.js5Archive11);
 			Static4.aBoolean210 = true;
 		}
 	}
@@ -235,21 +235,21 @@ public final class Static23 {
 		if (local18 != null) {
 			return local18;
 		}
-		@Pc(30) byte[] local30 = Static4.aClass58_73.fetchFile(Static4.aClass58_73.getGroupId(local9));
+		@Pc(30) byte[] local30 = client.js5Archive12.fetchFile(client.js5Archive12.getGroupId(local9));
 		if (local30 == null) {
 			@Pc(69) int local69 = arg0 | arg2 + 65536 << 8;
 			@Pc(80) Class4_Sub3_Sub13 local80 = (Class4_Sub3_Sub13) Static5.aClass40_13.method889((long) local69 << 16);
 			if (local80 != null) {
 				return local80;
 			}
-			@Pc(93) byte[] local93 = Static4.aClass58_73.fetchFile(Static4.aClass58_73.getGroupId(local69));
+			@Pc(93) byte[] local93 = client.js5Archive12.fetchFile(client.js5Archive12.getGroupId(local69));
 			if (local93 == null) {
 				@Pc(131) int local131 = arg0 | 0xFFFF00;
 				@Pc(140) Class4_Sub3_Sub13 local140 = (Class4_Sub3_Sub13) Static5.aClass40_13.method889((long) local131 << 16);
 				if (local140 != null) {
 					return local140;
 				}
-				@Pc(153) byte[] local153 = Static4.aClass58_73.fetchFile(Static4.aClass58_73.getGroupId(local131));
+				@Pc(153) byte[] local153 = client.js5Archive12.fetchFile(client.js5Archive12.getGroupId(local131));
 				if (local153 == null) {
 					return null;
 				} else if (local153.length > 1) {

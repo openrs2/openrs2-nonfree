@@ -692,7 +692,7 @@ public final class Static27 {
 			if (Static3.anIntArray217[local3] >= -10) {
 				@Pc(89) Class7 local89 = Static4.aClass7Array1[local3];
 				if (local89 == null) {
-					local89 = Static8.method106(Static6.aClass58_92, Static4.anIntArray294[local3], 0);
+					local89 = Static8.method106(client.js5Archive4, Static4.anIntArray294[local3], 0);
 					if (local89 == null) {
 						continue;
 					}
@@ -749,7 +749,7 @@ public final class Static27 {
 		}
 		if (Static4.aBoolean210 && !Static16.method1550()) {
 			if (Preferences.musicVolume != 0 && Static6.anInt4844 != -1) {
-				Static28.method3251(Preferences.musicVolume, Static6.anInt4844, Static7.aClass58_98);
+				Static28.method3251(Preferences.musicVolume, Static6.anInt4844, client.js5Archive6);
 			}
 			Static4.aBoolean210 = false;
 		} else if (Preferences.musicVolume != 0 && Static6.anInt4844 != -1 && !Static16.method1550()) {

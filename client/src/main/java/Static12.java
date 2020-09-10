@@ -758,7 +758,7 @@ public final class Static12 {
 		if (local10 != null) {
 			return local10;
 		}
-		@Pc(21) byte[] local21 = Static4.aClass58_73.fetchFile(arg0, 0);
+		@Pc(21) byte[] local21 = client.js5Archive12.fetchFile(arg0, 0);
 		if (local21 == null || local21.length <= 1) {
 			return null;
 		} else {
@@ -856,7 +856,7 @@ public final class Static12 {
 		if (arg3.aClass4_Sub6_Sub4_3 != null) {
 			arg3.aClass4_Sub6_Sub4_3.method3377(local164);
 		} else if (arg3.anInt2115 >= 0) {
-			@Pc(186) Class7 local186 = Static8.method106(Static6.aClass58_92, arg3.anInt2115, 0);
+			@Pc(186) Class7 local186 = Static8.method106(client.js5Archive4, arg3.anInt2115, 0);
 			if (local186 != null) {
 				@Pc(195) Class4_Sub8_Sub1 local195 = local186.method107().method3338(Static7.aClass170_1);
 				@Pc(200) Class4_Sub6_Sub4 local200 = Static28.method3385(local195, local164);
@@ -872,7 +872,7 @@ public final class Static12 {
 			}
 		} else if (arg3.anIntArray172 != null && (arg3.anInt2125 -= arg2) <= 0) {
 			@Pc(234) int local234 = (int) ((double) arg3.anIntArray172.length * Math.random());
-			@Pc(242) Class7 local242 = Static8.method106(Static6.aClass58_92, arg3.anIntArray172[local234], 0);
+			@Pc(242) Class7 local242 = Static8.method106(client.js5Archive4, arg3.anIntArray172[local234], 0);
 			if (local242 != null) {
 				@Pc(249) Class4_Sub8_Sub1 local249 = local242.method107().method3338(Static7.aClass170_1);
 				@Pc(254) Class4_Sub6_Sub4 local254 = Static28.method3385(local249, local164);

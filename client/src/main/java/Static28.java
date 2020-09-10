@@ -532,11 +532,11 @@ public final class Static28 {
 			for (@Pc(95) int local95 = (local25 - 6) / 8; local95 <= (local25 + 6) / 8; local95++) {
 				@Pc(112) int local112 = (local82 << 8) + local95;
 				Static7.anIntArray597[local76] = local112;
-				Static3.anIntArray167[local76] = Static3.aClass58_47.getGroupId("m" + local82 + "_" + local95);
-				Static1.anIntArray59[local76] = Static3.aClass58_47.getGroupId("l" + local82 + "_" + local95);
-				Static6.anIntArray570[local76] = Static3.aClass58_47.getGroupId("n" + local82 + "_" + local95);
-				Static4.anIntArray316[local76] = Static3.aClass58_47.getGroupId("um" + local82 + "_" + local95);
-				Static3.anIntArray197[local76] = Static3.aClass58_47.getGroupId("ul" + local82 + "_" + local95);
+				Static3.anIntArray167[local76] = client.js5Archive5.getGroupId("m" + local82 + "_" + local95);
+				Static1.anIntArray59[local76] = client.js5Archive5.getGroupId("l" + local82 + "_" + local95);
+				Static6.anIntArray570[local76] = client.js5Archive5.getGroupId("n" + local82 + "_" + local95);
+				Static4.anIntArray316[local76] = client.js5Archive5.getGroupId("um" + local82 + "_" + local95);
+				Static3.anIntArray197[local76] = client.js5Archive5.getGroupId("ul" + local82 + "_" + local95);
 				if (Static6.anIntArray570[local76] == -1) {
 					Static3.anIntArray167[local76] = -1;
 					Static1.anIntArray59[local76] = -1;

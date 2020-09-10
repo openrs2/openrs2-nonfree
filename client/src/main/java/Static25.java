@@ -532,9 +532,9 @@ public final class Static25 {
 		@Pc(13) int local13 = Static3.anInt2394 - 3;
 		@Pc(21) int local21 = Static6.anInt4440;
 		if (Static6.aClass4_Sub3_Sub14_5 == null || Static2.aClass4_Sub3_Sub14_2 == null) {
-			if (Static1.aClass58_4.isFileReady(Static1.anInt771) && Static1.aClass58_4.isFileReady(Static4.anInt3336)) {
-				Static6.aClass4_Sub3_Sub14_5 = Static31.method3691(Static1.aClass58_4, Static1.anInt771);
-				Static2.aClass4_Sub3_Sub14_2 = Static31.method3691(Static1.aClass58_4, Static4.anInt3336);
+			if (client.js5Archive8.isFileReady(Static1.anInt771) && client.js5Archive8.isFileReady(Static4.anInt3336)) {
+				Static6.aClass4_Sub3_Sub14_5 = Static31.method3691(client.js5Archive8, Static1.anInt771);
+				Static2.aClass4_Sub3_Sub14_2 = Static31.method3691(client.js5Archive8, Static4.anInt3336);
 				if (Static3.aBoolean138) {
 					if (Static6.aClass4_Sub3_Sub14_5 instanceof Class4_Sub3_Sub14_Sub1_Sub1) {
 						Static6.aClass4_Sub3_Sub14_5 = new Class4_Sub3_Sub14_Sub2_Sub1((Class4_Sub3_Sub14_Sub1) Static6.aClass4_Sub3_Sub14_5);
@@ -579,10 +579,10 @@ public final class Static25 {
 				}
 			}
 		}
-		if ((Static7.aClass4_Sub3_Sub14_9 == null || Static6.aClass4_Sub3_Sub14_8 == null || Static1.aClass4_Sub3_Sub14_1 == null) && Static1.aClass58_4.isFileReady(Static1.anInt593) && Static1.aClass58_4.isFileReady(Static4.anInt2741) && Static1.aClass58_4.isFileReady(Static1.anInt881)) {
-			Static7.aClass4_Sub3_Sub14_9 = Static31.method3691(Static1.aClass58_4, Static1.anInt593);
-			Static6.aClass4_Sub3_Sub14_8 = Static31.method3691(Static1.aClass58_4, Static4.anInt2741);
-			Static1.aClass4_Sub3_Sub14_1 = Static31.method3691(Static1.aClass58_4, Static1.anInt881);
+		if ((Static7.aClass4_Sub3_Sub14_9 == null || Static6.aClass4_Sub3_Sub14_8 == null || Static1.aClass4_Sub3_Sub14_1 == null) && client.js5Archive8.isFileReady(Static1.anInt593) && client.js5Archive8.isFileReady(Static4.anInt2741) && client.js5Archive8.isFileReady(Static1.anInt881)) {
+			Static7.aClass4_Sub3_Sub14_9 = Static31.method3691(client.js5Archive8, Static1.anInt593);
+			Static6.aClass4_Sub3_Sub14_8 = Static31.method3691(client.js5Archive8, Static4.anInt2741);
+			Static1.aClass4_Sub3_Sub14_1 = Static31.method3691(client.js5Archive8, Static1.anInt881);
 			if (Static3.aBoolean138) {
 				if (Static7.aClass4_Sub3_Sub14_9 instanceof Class4_Sub3_Sub14_Sub1_Sub1) {
 					Static7.aClass4_Sub3_Sub14_9 = new Class4_Sub3_Sub14_Sub2_Sub1((Class4_Sub3_Sub14_Sub1) Static7.aClass4_Sub3_Sub14_9);

@@ -225,10 +225,10 @@ public final class Static33 {
 						Static3.anIntArray197[local504] = -1;
 					} else {
 						Static7.anIntArray597[local504] = local536;
-						Static3.anIntArray167[local504] = Static3.aClass58_47.getGroupId("m" + local510 + "_" + local523);
-						Static1.anIntArray59[local504] = Static3.aClass58_47.getGroupId("l" + local510 + "_" + local523);
-						Static4.anIntArray316[local504] = Static3.aClass58_47.getGroupId("um" + local510 + "_" + local523);
-						Static3.anIntArray197[local504] = Static3.aClass58_47.getGroupId("ul" + local510 + "_" + local523);
+						Static3.anIntArray167[local504] = client.js5Archive5.getGroupId("m" + local510 + "_" + local523);
+						Static1.anIntArray59[local504] = client.js5Archive5.getGroupId("l" + local510 + "_" + local523);
+						Static4.anIntArray316[local504] = client.js5Archive5.getGroupId("um" + local510 + "_" + local523);
+						Static3.anIntArray197[local504] = client.js5Archive5.getGroupId("ul" + local510 + "_" + local523);
 					}
 					local504++;
 				}
@@ -293,10 +293,10 @@ public final class Static33 {
 							Static7.anIntArray597[local182] = local233;
 							@Pc(272) int local272 = local233 >> 8 & 0xFF;
 							@Pc(276) int local276 = local233 & 0xFF;
-							Static3.anIntArray167[local182] = Static3.aClass58_47.getGroupId("m" + local272 + "_" + local276);
-							Static1.anIntArray59[local182] = Static3.aClass58_47.getGroupId("l" + local272 + "_" + local276);
-							Static4.anIntArray316[local182] = Static3.aClass58_47.getGroupId("um" + local272 + "_" + local276);
-							Static3.anIntArray197[local182] = Static3.aClass58_47.getGroupId("ul" + local272 + "_" + local276);
+							Static3.anIntArray167[local182] = client.js5Archive5.getGroupId("m" + local272 + "_" + local276);
+							Static1.anIntArray59[local182] = client.js5Archive5.getGroupId("l" + local272 + "_" + local276);
+							Static4.anIntArray316[local182] = client.js5Archive5.getGroupId("um" + local272 + "_" + local276);
+							Static3.anIntArray197[local182] = client.js5Archive5.getGroupId("ul" + local272 + "_" + local276);
 							local182++;
 						}
 					}
@@ -804,14 +804,14 @@ public final class Static33 {
 		@Pc(12) boolean local12 = true;
 		for (@Pc(14) int local14 = 0; local14 < Static1.aByteArrayArray4.length; local14++) {
 			if (Static3.anIntArray167[local14] != -1 && Static1.aByteArrayArray4[local14] == null) {
-				Static1.aByteArrayArray4[local14] = Static3.aClass58_47.fetchFile(Static3.anIntArray167[local14], 0);
+				Static1.aByteArrayArray4[local14] = client.js5Archive5.fetchFile(Static3.anIntArray167[local14], 0);
 				if (Static1.aByteArrayArray4[local14] == null) {
 					local12 = false;
 					Static3.anInt2886++;
 				}
 			}
 			if (Static1.anIntArray59[local14] != -1 && Static5.aByteArrayArray31[local14] == null) {
-				Static5.aByteArrayArray31[local14] = Static3.aClass58_47.fetchFile(Static1.anIntArray59[local14], 0, Static5.anIntArrayArray35[local14]);
+				Static5.aByteArrayArray31[local14] = client.js5Archive5.fetchFile(Static1.anIntArray59[local14], 0, Static5.anIntArrayArray35[local14]);
 				if (Static5.aByteArrayArray31[local14] == null) {
 					local12 = false;
 					Static3.anInt2886++;
@@ -819,14 +819,14 @@ public final class Static33 {
 			}
 			if (Static3.aBoolean138) {
 				if (Static4.anIntArray316[local14] != -1 && Static7.aByteArrayArray49[local14] == null) {
-					Static7.aByteArrayArray49[local14] = Static3.aClass58_47.fetchFile(Static4.anIntArray316[local14], 0);
+					Static7.aByteArrayArray49[local14] = client.js5Archive5.fetchFile(Static4.anIntArray316[local14], 0);
 					if (Static7.aByteArrayArray49[local14] == null) {
 						local12 = false;
 						Static3.anInt2886++;
 					}
 				}
 				if (Static3.anIntArray197[local14] != -1 && Static1.aByteArrayArray3[local14] == null) {
-					Static1.aByteArrayArray3[local14] = Static3.aClass58_47.fetchFile(Static3.anIntArray197[local14], 0);
+					Static1.aByteArrayArray3[local14] = client.js5Archive5.fetchFile(Static3.anIntArray197[local14], 0);
 					if (Static1.aByteArrayArray3[local14] == null) {
 						Static3.anInt2886++;
 						local12 = false;
@@ -834,7 +834,7 @@ public final class Static33 {
 				}
 			}
 			if (Static6.anIntArray570 != null && Static7.aByteArrayArray50[local14] == null && Static6.anIntArray570[local14] != -1) {
-				Static7.aByteArrayArray50[local14] = Static3.aClass58_47.fetchFile(Static6.anIntArray570[local14], 0, Static5.anIntArrayArray35[local14]);
+				Static7.aByteArrayArray50[local14] = client.js5Archive5.fetchFile(Static6.anIntArray570[local14], 0, Static5.anIntArrayArray35[local14]);
 				if (Static7.aByteArrayArray50[local14] == null) {
 					local12 = false;
 					Static3.anInt2886++;
@@ -842,10 +842,10 @@ public final class Static33 {
 			}
 		}
 		if (Static7.aClass138_14 == null) {
-			if (Static2.aClass4_Sub3_Sub22_1 == null || !Static5.aClass58_82.isGroupNameValid(Static2.aClass4_Sub3_Sub22_1.aString358 + "_labels")) {
+			if (Static2.aClass4_Sub3_Sub22_1 == null || !client.js5Archive23.isGroupNameValid(Static2.aClass4_Sub3_Sub22_1.aString358 + "_labels")) {
 				Static7.aClass138_14 = new Class138(0);
-			} else if (Static5.aClass58_82.isFileReady(Static2.aClass4_Sub3_Sub22_1.aString358 + "_labels")) {
-				Static7.aClass138_14 = Static16.method1555(Static5.aClass58_82, Static2.aClass4_Sub3_Sub22_1.aString358 + "_labels", Static7.aBoolean370);
+			} else if (client.js5Archive23.isFileReady(Static2.aClass4_Sub3_Sub22_1.aString358 + "_labels")) {
+				Static7.aClass138_14 = Static16.method1555(client.js5Archive23, Static2.aClass4_Sub3_Sub22_1.aString358 + "_labels", Static7.aBoolean370);
 			} else {
 				Static3.anInt2886++;
 				local12 = false;
@@ -1023,8 +1023,8 @@ public final class Static33 {
 			for (@Pc(844) int local844 = local822 - 1; local844 <= local828 + 1; local844++) {
 				for (@Pc(853) int local853 = local834 - 1; local853 <= local840 + 1; local853++) {
 					if (local844 < local822 || local844 > local828 || local853 < local834 || local840 < local853) {
-						Static3.aClass58_47.prefetchGroup("m" + local844 + "_" + local853);
-						Static3.aClass58_47.prefetchGroup("l" + local844 + "_" + local853);
+						client.js5Archive5.prefetchGroup("m" + local844 + "_" + local853);
+						client.js5Archive5.prefetchGroup("l" + local844 + "_" + local853);
 					}
 				}
 			}

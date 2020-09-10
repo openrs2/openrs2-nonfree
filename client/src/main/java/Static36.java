@@ -345,7 +345,7 @@ public final class Static36 {
 		if (arg1 == -1 && !Static4.aBoolean210) {
 			Static37.method4718();
 		} else if (arg1 != -1 && (Static6.anInt4844 != arg1 || !Static16.method1550()) && arg0 != 0 && !Static4.aBoolean210) {
-			Static24.method2692(Static7.aClass58_98, arg0, arg1);
+			Static24.method2692(client.js5Archive6, arg0, arg1);
 		}
 		Static6.anInt4844 = arg1;
 	}

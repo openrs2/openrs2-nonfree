@@ -692,7 +692,7 @@ public final class Static18 {
 						@Pc(541) Class53_Sub1_Sub2 local541 = (Class53_Sub1_Sub2) local31;
 						@Pc(551) Class4_Sub3_Sub14[] local551 = (Class4_Sub3_Sub14[]) Static1.aClass26_5.get((long) local541.aClass168_1.anInt5240);
 						if (local551 == null) {
-							local551 = Static27.method3225(Static1.aClass58_4, local541.aClass168_1.anInt5240);
+							local551 = Static27.method3225(client.js5Archive8, local541.aClass168_1.anInt5240);
 							if (local551 != null) {
 								Static1.aClass26_5.put((long) local541.aClass168_1.anInt5240, local551);
 							}

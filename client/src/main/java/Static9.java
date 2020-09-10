@@ -534,7 +534,7 @@ public final class Static9 {
 			Static22.method2387();
 		}
 		if (arg0 == 5) {
-			Static24.method2675(Static1.aClass58_4);
+			Static24.method2675(client.js5Archive8);
 		} else {
 			Static22.method2411();
 		}
@@ -545,7 +545,7 @@ public final class Static9 {
 				if (Preferences.musicVolume == 0) {
 					Static13.method971();
 				} else {
-					Static24.method2692(Static7.aClass58_98, 255, Static7.anInt5611);
+					Static24.method2692(client.js5Archive6, 255, Static7.anInt5611);
 				}
 				client.js5NetQueue.writeLoggedIn(false);
 			} else {

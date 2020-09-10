@@ -67,7 +67,7 @@ public final class Static31 {
 		if (local6 != null) {
 			return local6;
 		}
-		@Pc(22) byte[] local22 = Static4.aClass58_67.fetchFile(arg0, 0);
+		@Pc(22) byte[] local22 = client.js5Archive13.fetchFile(arg0, 0);
 		@Pc(35) Class4_Sub3_Sub5_Sub2 local35 = new Class4_Sub3_Sub5_Sub2(local22);
 		local35.method2267(Static3.aClass56Array3, null);
 		Static1.aClass26_3.put((long) arg0, local35);

@@ -155,14 +155,8 @@ public final class Static5 {
 	@OriginalMember(owner = "client!oj", name = "k", descriptor = "I")
 	public static int anInt3890;
 
-	@OriginalMember(owner = "client!om", name = "f", descriptor = "Lclient!fh;")
-	public static Js5 aClass58_79;
-
 	@OriginalMember(owner = "client!p", name = "pc", descriptor = "Ljava/lang/String;")
 	public static String aString236;
-
-	@OriginalMember(owner = "client!p", name = "yc", descriptor = "Lclient!fh;")
-	public static Js5 aClass58_80;
 
 	@OriginalMember(owner = "client!p", name = "zc", descriptor = "[[[B")
 	public static byte[][][] aByteArrayArrayArray18;
@@ -175,9 +169,6 @@ public final class Static5 {
 
 	@OriginalMember(owner = "client!pg", name = "a", descriptor = "I")
 	public static int anInt3764;
-
-	@OriginalMember(owner = "client!pg", name = "h", descriptor = "Lclient!fh;")
-	public static Js5 aClass58_78;
 
 	@OriginalMember(owner = "client!pg", name = "o", descriptor = "I")
 	public static int anInt3774;
@@ -221,9 +212,6 @@ public final class Static5 {
 	@OriginalMember(owner = "client!qa", name = "t", descriptor = "[[Lclient!wj;")
 	public static Class187[][] aClass187ArrayArray1;
 
-	@OriginalMember(owner = "client!qb", name = "S", descriptor = "Lclient!fh;")
-	public static Js5 aClass58_82;
-
 	@OriginalMember(owner = "client!qb", name = "W", descriptor = "I")
 	public static int anInt4260;
 
@@ -259,9 +247,6 @@ public final class Static5 {
 
 	@OriginalMember(owner = "client!qg", name = "i", descriptor = "Lclient!wf;")
 	public static Class185 aClass185_12;
-
-	@OriginalMember(owner = "client!qh", name = "C", descriptor = "Lclient!fh;")
-	public static Js5 aClass58_83;
 
 	@OriginalMember(owner = "client!nb", name = "D", descriptor = "[I")
 	public static final int[] anIntArray383 = new int[100];

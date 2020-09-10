@@ -154,17 +154,11 @@ public final class Static3 {
 	@OriginalMember(owner = "client!gm", name = "a", descriptor = "[I")
 	public static int[] anIntArray170;
 
-	@OriginalMember(owner = "client!gn", name = "q", descriptor = "Lclient!fh;")
-	public static Js5 aClass58_46;
-
 	@OriginalMember(owner = "client!gn", name = "D", descriptor = "I")
 	public static int anInt2120;
 
 	@OriginalMember(owner = "client!hb", name = "h", descriptor = "[Lclient!ub;")
 	public static Class169[] aClass169Array1;
-
-	@OriginalMember(owner = "client!hb", name = "j", descriptor = "Lclient!fh;")
-	public static Js5 aClass58_47;
 
 	@OriginalMember(owner = "client!hc", name = "d", descriptor = "F")
 	public static float aFloat63;
@@ -357,9 +351,6 @@ public final class Static3 {
 
 	@OriginalMember(owner = "client!in", name = "u", descriptor = "Lclient!fh;")
 	public static Js5 aClass58_56;
-
-	@OriginalMember(owner = "client!io", name = "D", descriptor = "Lclient!fh;")
-	public static Js5 aClass58_57;
 
 	@OriginalMember(owner = "client!io", name = "E", descriptor = "I")
 	public static int anInt2496;

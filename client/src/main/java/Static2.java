@@ -14,9 +14,6 @@ public final class Static2 {
 	@OriginalMember(owner = "client!df", name = "d", descriptor = "Lclient!ke;")
 	public static Class4_Sub3_Sub5_Sub2 aClass4_Sub3_Sub5_Sub2_2;
 
-	@OriginalMember(owner = "client!df", name = "e", descriptor = "Lclient!fh;")
-	public static Js5 aClass58_27;
-
 	@OriginalMember(owner = "client!dg", name = "m", descriptor = "Z")
 	public static boolean aBoolean152;
 
@@ -37,9 +34,6 @@ public final class Static2 {
 
 	@OriginalMember(owner = "client!dj", name = "m", descriptor = "I")
 	public static int anInt1042;
-
-	@OriginalMember(owner = "client!dj", name = "p", descriptor = "Lclient!fh;")
-	public static Js5 aClass58_29;
 
 	@OriginalMember(owner = "client!dn", name = "T", descriptor = "[Lclient!uj;")
 	public static Class4_Sub3_Sub14[] aClass4_Sub3_Sub14Array6;
@@ -100,9 +94,6 @@ public final class Static2 {
 
 	@OriginalMember(owner = "client!en", name = "e", descriptor = "I")
 	public static int anInt1344;
-
-	@OriginalMember(owner = "client!en", name = "i", descriptor = "Lclient!fh;")
-	public static Js5 aClass58_39;
 
 	@OriginalMember(owner = "client!en", name = "p", descriptor = "[Ljava/lang/String;")
 	public static String[] aStringArray8;

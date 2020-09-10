@@ -544,17 +544,17 @@ public final class Static24 {
 			((Class24_Sub1) Static4.anInterface4_1).method460();
 		}
 		Static5.aClass40_13.method893();
-		Static3.aClass58_46.discardUnpacked();
-		Static4.aClass58_66.discardUnpacked();
-		Static2.aClass58_27.discardUnpacked();
-		Static6.aClass58_92.discardUnpacked();
-		Static3.aClass58_47.discardUnpacked();
-		Static7.aClass58_98.discardUnpacked();
-		Static4.aClass58_69.discardUnpacked();
-		Static1.aClass58_4.discardUnpacked();
-		Static6.aClass58_71.discardUnpacked();
-		Static3.aClass58_57.discardUnpacked();
-		Static4.aClass58_73.discardUnpacked();
+		client.js5Archive0.discardUnpacked();
+		client.js5Archive1.discardUnpacked();
+		client.js5Archive3.discardUnpacked();
+		client.js5Archive4.discardUnpacked();
+		client.js5Archive5.discardUnpacked();
+		client.js5Archive6.discardUnpacked();
+		client.js5Archive7.discardUnpacked();
+		client.js5Archive8.discardUnpacked();
+		client.js5Archive10.discardUnpacked();
+		client.js5Archive11.discardUnpacked();
+		client.js5Archive12.discardUnpacked();
 		Static1.aClass26_5.clear();
 	}
 

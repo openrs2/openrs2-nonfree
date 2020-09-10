@@ -3969,11 +3969,11 @@ public final class Static16 {
 									Static1.anInt881 = Static7.anIntArray571[local5 + 8];
 									Static1.anInt504 = Static7.anIntArray571[local5 + 9];
 									Static4.anInt2920 = Static7.anIntArray571[local5 + 10];
-									Static1.aClass58_4.isFileReady(Static1.anInt771);
-									Static1.aClass58_4.isFileReady(Static4.anInt3336);
-									Static1.aClass58_4.isFileReady(Static1.anInt593);
-									Static1.aClass58_4.isFileReady(Static4.anInt2741);
-									Static1.aClass58_4.isFileReady(Static1.anInt881);
+									client.js5Archive8.isFileReady(Static1.anInt771);
+									client.js5Archive8.isFileReady(Static4.anInt3336);
+									client.js5Archive8.isFileReady(Static1.anInt593);
+									client.js5Archive8.isFileReady(Static4.anInt2741);
+									client.js5Archive8.isFileReady(Static1.anInt881);
 									Static7.aBoolean389 = true;
 									continue;
 								}
@@ -4359,7 +4359,7 @@ public final class Static16 {
 									}
 									if (Preferences.musicVolume != local6806) {
 										if (Preferences.musicVolume == 0 && Static6.anInt4844 != -1) {
-											Static28.method3251(local6806, Static6.anInt4844, Static7.aClass58_98);
+											Static28.method3251(local6806, Static6.anInt4844, client.js5Archive6);
 											Static4.aBoolean210 = false;
 										} else if (local6806 == 0) {
 											Static37.method4718();

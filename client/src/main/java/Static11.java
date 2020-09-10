@@ -102,15 +102,15 @@ public final class Static11 {
 			Static10.method300(Preferences.hdr);
 			Static26.method2969();
 		}
-		Static8.method113(Static1.aClass58_4, Static4.aClass58_67);
-		Static35.method667(Static1.aClass58_4);
+		Static8.method113(client.js5Archive8, client.js5Archive13);
+		Static35.method667(client.js5Archive8);
 		Static6.aClass4_Sub3_Sub14_5 = null;
 		Static6.aClass4_Sub3_Sub14_8 = null;
 		Static2.aClass4_Sub3_Sub14_2 = null;
 		Static7.aClass4_Sub3_Sub14_9 = null;
 		Static1.aClass4_Sub3_Sub14_1 = null;
 		if (Static4.anInt3304 == 5) {
-			Static24.method2675(Static1.aClass58_4);
+			Static24.method2675(client.js5Archive8);
 		}
 		if (Static4.anInt3304 == 10) {
 			method605(false);
@@ -966,7 +966,7 @@ public final class Static11 {
 		Static4.aClass53_Sub1_Sub1_2.anInt4002 = 3000;
 		Static4.aClass53_Sub1_Sub1_2.anInt3974 = 3000;
 		if (!Static3.aBoolean138 && client.game == 0) {
-			Static21.method2005(Static1.aClass58_4);
+			Static21.method2005(client.js5Archive8);
 			Static9.method233(10);
 			return;
 		}
