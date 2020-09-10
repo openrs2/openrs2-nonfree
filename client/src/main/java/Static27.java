@@ -803,7 +803,7 @@ public final class Static27 {
 
 	@OriginalMember(owner = "client!oh", name = "a", descriptor = "(II)V")
 	public static void method3219() {
-		Static6.aClass26_50.sweep(5);
+		Static6.aClass26_50.clean(5);
 	}
 
 	@OriginalMember(owner = "client!oh", name = "b", descriptor = "(II)I")
@@ -929,6 +929,6 @@ public final class Static27 {
 
 	@OriginalMember(owner = "client!ok", name = "b", descriptor = "(BI)V")
 	public static void method3236() {
-		Static3.aClass26_26.sweep(5);
+		Static3.aClass26_26.clean(5);
 	}
 }

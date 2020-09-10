@@ -387,8 +387,8 @@ public final class Static37 {
 
 	@OriginalMember(owner = "client!we", name = "a", descriptor = "(ZI)V")
 	public static void method4717() {
-		Static4.aClass26_28.sweep(5);
-		Static3.aClass26_23.sweep(5);
+		Static4.aClass26_28.clean(5);
+		Static3.aClass26_23.clean(5);
 	}
 
 	@OriginalMember(owner = "client!we", name = "a", descriptor = "(I)V")
@@ -571,8 +571,8 @@ public final class Static37 {
 
 	@OriginalMember(owner = "client!wf", name = "a", descriptor = "(II)V")
 	public static void method4727() {
-		Static5.aClass26_42.sweep(5);
-		Static6.aClass26_46.sweep(5);
+		Static5.aClass26_42.clean(5);
+		Static6.aClass26_46.clean(5);
 	}
 
 	@OriginalMember(owner = "client!wf", name = "b", descriptor = "(BI)Lclient!sa;")

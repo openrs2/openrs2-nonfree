@@ -275,7 +275,7 @@ public final class Static14 {
 
 	@OriginalMember(owner = "client!el", name = "b", descriptor = "(II)V")
 	public static void method1067() {
-		Static6.aClass26_54.sweep(5);
+		Static6.aClass26_54.clean(5);
 	}
 
 	@OriginalMember(owner = "client!el", name = "b", descriptor = "(I)V")

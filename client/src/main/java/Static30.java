@@ -1321,8 +1321,8 @@ public final class Static30 {
 
 	@OriginalMember(owner = "client!qj", name = "c", descriptor = "(II)V")
 	public static void method3594() {
-		Static6.aClass26_52.sweep(5);
-		Static2.aClass26_11.sweep(5);
+		Static6.aClass26_52.clean(5);
+		Static2.aClass26_11.clean(5);
 	}
 
 	@OriginalMember(owner = "client!qj", name = "a", descriptor = "()V")

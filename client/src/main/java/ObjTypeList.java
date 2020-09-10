@@ -108,9 +108,9 @@ public final class ObjTypeList {
 	}
 
 	@OriginalMember(owner = "client!il", name = "a", descriptor = "(II)V")
-	public static void sweep() {
-		types.sweep(5);
-		models.sweep(5);
-		sprites.sweep(5);
+	public static void clean() {
+		types.clean(5);
+		models.clean(5);
+		sprites.clean(5);
 	}
 }

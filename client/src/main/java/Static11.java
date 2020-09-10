@@ -901,8 +901,8 @@ public final class Static11 {
 
 	@OriginalMember(owner = "client!ci", name = "a", descriptor = "(BI)V")
 	public static void method586() {
-		Static7.aClass26_55.sweep(5);
-		Static5.aClass26_41.sweep(5);
+		Static7.aClass26_55.clean(5);
+		Static5.aClass26_41.clean(5);
 	}
 
 	@OriginalMember(owner = "client!ci", name = "a", descriptor = "(I)V")

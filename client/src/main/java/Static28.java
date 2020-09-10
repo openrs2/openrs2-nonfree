@@ -329,7 +329,7 @@ public final class Static28 {
 
 	@OriginalMember(owner = "client!on", name = "b", descriptor = "(BI)V")
 	public static void method3268() {
-		Static6.aClass26_51.sweep(5);
+		Static6.aClass26_51.clean(5);
 	}
 
 	@OriginalMember(owner = "client!on", name = "a", descriptor = "(ILclient!wf;)V")
@@ -411,10 +411,10 @@ public final class Static28 {
 
 	@OriginalMember(owner = "client!on", name = "c", descriptor = "(II)V")
 	public static void method3278() {
-		Static3.aClass26_19.sweep(5);
-		Static5.aClass26_43.sweep(5);
-		Static7.aClass26_18.sweep(5);
-		Static4.aClass26_32.sweep(5);
+		Static3.aClass26_19.clean(5);
+		Static5.aClass26_43.clean(5);
+		Static7.aClass26_18.clean(5);
+		Static4.aClass26_32.clean(5);
 	}
 
 	@OriginalMember(owner = "client!on", name = "g", descriptor = "(I)V")

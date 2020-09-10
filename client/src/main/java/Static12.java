@@ -1140,7 +1140,7 @@ public final class Static12 {
 
 	@OriginalMember(owner = "client!de", name = "b", descriptor = "(IZ)V")
 	public static void method775() {
-		Static1.aClass26_6.sweep(5);
+		Static1.aClass26_6.clean(5);
 	}
 
 	@OriginalMember(owner = "client!de", name = "a", descriptor = "(BZ)V")

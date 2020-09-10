@@ -1175,9 +1175,9 @@ public final class Static20 {
 
 	@OriginalMember(owner = "client!in", name = "a", descriptor = "(ZI)V")
 	public static void method1942() {
-		Static6.aClass26_48.sweep(50);
-		Static1.aClass26_1.sweep(50);
-		Static1.aClass26_4.sweep(50);
+		Static6.aClass26_48.clean(50);
+		Static1.aClass26_1.clean(50);
+		Static1.aClass26_4.clean(50);
 	}
 
 	@OriginalMember(owner = "client!io", name = "a", descriptor = "(Z)V")

@@ -48,7 +48,7 @@ public final class Static18 {
 
 	@OriginalMember(owner = "client!hc", name = "a", descriptor = "(IB)V")
 	public static void method2323() {
-		Static3.aClass26_24.sweep(5);
+		Static3.aClass26_24.clean(5);
 	}
 
 	@OriginalMember(owner = "client!hd", name = "a", descriptor = "(IIIII)V")
@@ -354,7 +354,7 @@ public final class Static18 {
 
 	@OriginalMember(owner = "client!he", name = "a", descriptor = "(IB)V")
 	public static void method1716() {
-		Static3.aClass26_25.sweep(5);
+		Static3.aClass26_25.clean(5);
 	}
 
 	@OriginalMember(owner = "client!hg", name = "a", descriptor = "(II[I[I)V")

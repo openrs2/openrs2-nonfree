@@ -71,10 +71,10 @@ public final class NpcTypeList {
 	}
 
 	@OriginalMember(owner = "client!o", name = "a", descriptor = "(II)V")
-	public static void sweep() {
-		types.sweep(5);
-		models.sweep(5);
-		headModels.sweep(5);
+	public static void clean() {
+		types.clean(5);
+		models.clean(5);
+		headModels.clean(5);
 	}
 
 	@OriginalMember(owner = "client!og", name = "g", descriptor = "(B)V")

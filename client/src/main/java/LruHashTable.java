@@ -84,7 +84,7 @@ public final class LruHashTable {
 	}
 
 	@OriginalMember(owner = "client!cc", name = "a", descriptor = "(BI)V")
-	public final void sweep(@OriginalArg(1) int maxAge) {
+	public final void clean(@OriginalArg(1) int maxAge) {
 		if (ReferenceNodeFactory.SOFT_REFERENCE_NODE_FACTORY == null) {
 			return;
 		}

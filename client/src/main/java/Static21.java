@@ -2434,7 +2434,7 @@ public final class Static21 {
 
 	@OriginalMember(owner = "client!jm", name = "a", descriptor = "(II)V")
 	public static void method2082() {
-		Static7.aClass26_56.sweep(5);
+		Static7.aClass26_56.clean(5);
 	}
 
 	@OriginalMember(owner = "client!jn", name = "c", descriptor = "([I[IIIIIIII)V")

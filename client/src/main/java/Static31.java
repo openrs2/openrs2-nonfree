@@ -1471,8 +1471,8 @@ public final class Static31 {
 		Static12.method775();
 		Static21.method2082();
 		Static28.method3278();
-		NpcTypeList.sweep();
-		ObjTypeList.sweep();
+		NpcTypeList.clean();
+		ObjTypeList.clean();
 		Static32.method3986();
 		Static9.method191();
 		Static18.method1716();
@@ -1488,8 +1488,8 @@ public final class Static31 {
 		Static20.method1942();
 		Static32.method4030();
 		Static27.method3219();
-		Static1.aClass26_5.sweep(5);
-		Static1.aClass26_3.sweep(5);
+		Static1.aClass26_5.clean(5);
+		Static1.aClass26_3.clean(5);
 	}
 
 	@OriginalMember(owner = "client!ro", name = "a", descriptor = "(IIIB)I")
