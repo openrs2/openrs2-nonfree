@@ -4,7 +4,7 @@ import dev.openrs2.deob.annotation.Pc;
 
 public final class WordPack {
 	@OriginalMember(owner = "client!ef", name = "a", descriptor = "Lclient!oj;")
-	public static HuffmanCodec huffmanCodec;
+	private static HuffmanCodec huffmanCodec;
 
 	@OriginalMember(owner = "client!jb", name = "a", descriptor = "(ILclient!oj;)V")
 	public static void init(@OriginalArg(1) HuffmanCodec huffmanCodec) {
