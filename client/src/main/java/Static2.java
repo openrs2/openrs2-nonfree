@@ -53,9 +53,6 @@ public final class Static2 {
 	@OriginalMember(owner = "client!ea", name = "I", descriptor = "Lclient!fh;")
 	public static Js5 aClass58_35;
 
-	@OriginalMember(owner = "client!ef", name = "a", descriptor = "Lclient!oj;")
-	public static HuffmanCodec aClass129_1;
-
 	@OriginalMember(owner = "client!ef", name = "c", descriptor = "[Lclient!co;")
 	public static Class33[] aClass33Array1;
 

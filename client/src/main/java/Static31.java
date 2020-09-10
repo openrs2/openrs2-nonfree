@@ -52,15 +52,6 @@ public final class Static31 {
 		Static6.aClass26_54.clear();
 	}
 
-	@OriginalMember(owner = "client!rc", name = "a", descriptor = "(Lclient!fd;Ljava/lang/String;I)I")
-	public static int method3655(@OriginalArg(0) Buffer arg0, @OriginalArg(1) String arg1) {
-		@Pc(6) int local6 = arg0.position;
-		@Pc(10) byte[] local10 = Static14.method1061(arg1);
-		arg0.writeUnsignedShortSmart(local10.length);
-		arg0.position += Static2.aClass129_1.encode(local10, 0, arg0.bytes, arg0.position, local10.length);
-		return arg0.position - local6;
-	}
-
 	@OriginalMember(owner = "client!rc", name = "a", descriptor = "(II)Lclient!ke;")
 	public static Class4_Sub3_Sub5_Sub2 method3656(@OriginalArg(1) int arg0) {
 		@Pc(6) Class4_Sub3_Sub5_Sub2 local6 = (Class4_Sub3_Sub5_Sub2) Static1.aClass26_3.get((long) arg0);

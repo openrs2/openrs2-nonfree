@@ -1451,11 +1451,6 @@ public final class Static20 {
 		}
 	}
 
-	@OriginalMember(owner = "client!jb", name = "a", descriptor = "(ILclient!oj;)V")
-	public static void method1978(@OriginalArg(1) HuffmanCodec arg0) {
-		Static2.aClass129_1 = arg0;
-	}
-
 	@OriginalMember(owner = "client!jc", name = "d", descriptor = "(I)Lclient!gb;")
 	public static Class63_Sub1 method1991() {
 		Static6.anInt3224 = 0;

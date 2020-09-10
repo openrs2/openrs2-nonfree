@@ -139,6 +139,75 @@ public final class Cp1252Charset {
 		return srcLen2;
 	}
 
+	@OriginalMember(owner = "client!ej", name = "b", descriptor = "(Ljava/lang/String;I)[B")
+	public static byte[] encodeString(@OriginalArg(0) String src) {
+		@Pc(4) int srcLen = src.length();
+		@Pc(13) byte[] dest = new byte[srcLen];
+		for (@Pc(19) int i = 0; i < srcLen; i++) {
+			@Pc(30) char c = src.charAt(i);
+			if (c > '\u0000' && c < '\u0080' || c >= ' ' && c <= 'ÿ') {
+				dest[i] = (byte) c;
+			} else if (c == '€') {
+				dest[i] = -128;
+			} else if (c == '‚') {
+				dest[i] = -126;
+			} else if (c == 'ƒ') {
+				dest[i] = -125;
+			} else if (c == '„') {
+				dest[i] = -124;
+			} else if (c == '…') {
+				dest[i] = -123;
+			} else if (c == '†') {
+				dest[i] = -122;
+			} else if (c == '‡') {
+				dest[i] = -121;
+			} else if (c == 'ˆ') {
+				dest[i] = -120;
+			} else if (c == '‰') {
+				dest[i] = -119;
+			} else if (c == 'Š') {
+				dest[i] = -118;
+			} else if (c == '‹') {
+				dest[i] = -117;
+			} else if (c == 'Œ') {
+				dest[i] = -116;
+			} else if (c == 'Ž') {
+				dest[i] = -114;
+			} else if (c == '‘') {
+				dest[i] = -111;
+			} else if (c == '’') {
+				dest[i] = -110;
+			} else if (c == '“') {
+				dest[i] = -109;
+			} else if (c == '”') {
+				dest[i] = -108;
+			} else if (c == '•') {
+				dest[i] = -107;
+			} else if (c == '–') {
+				dest[i] = -106;
+			} else if (c == '—') {
+				dest[i] = -105;
+			} else if (c == '˜') {
+				dest[i] = -104;
+			} else if (c == '™') {
+				dest[i] = -103;
+			} else if (c == 'š') {
+				dest[i] = -102;
+			} else if (c == '›') {
+				dest[i] = -101;
+			} else if (c == 'œ') {
+				dest[i] = -100;
+			} else if (c == 'ž') {
+				dest[i] = -98;
+			} else if (c == 'Ÿ') {
+				dest[i] = -97;
+			} else {
+				dest[i] = 63;
+			}
+		}
+		return dest;
+	}
+
 	@OriginalMember(owner = "client!qb", name = "a", descriptor = "(ZB)C")
 	public static char decodeChar(@OriginalArg(1) byte b) {
 		@Pc(7) int codepoint = b & 0xFF;

@@ -1046,7 +1046,7 @@ public final class Static30 {
 						local314 = local343.anInt540;
 						local333 = local343.aClass4_Sub3_Sub11_1.method1909(Static5.aClass4_Sub10_8);
 					} else {
-						local333 = Static17.method2265(method3569(Static8.method110(Static5.aClass4_Sub10_8)));
+						local333 = Static17.method2265(method3569(WordPack.readString(Static5.aClass4_Sub10_8)));
 					}
 					arg2.aString234 = local333.trim();
 					arg2.anInt3998 = local232 & 0xFF;

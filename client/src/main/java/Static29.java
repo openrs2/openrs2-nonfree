@@ -2680,21 +2680,6 @@ public final class Static29 {
 		}
 	}
 
-	@OriginalMember(owner = "client!qd", name = "a", descriptor = "(ZILclient!fd;)Ljava/lang/String;")
-	public static String method3537(@OriginalArg(2) Buffer arg0) {
-		try {
-			@Pc(12) int local12 = arg0.readUnsignedShortSmart();
-			if (local12 > 32767) {
-				local12 = 32767;
-			}
-			@Pc(24) byte[] local24 = new byte[local12];
-			arg0.position += Static2.aClass129_1.decode(arg0.bytes, arg0.position, local24, 0, local12);
-			return Cp1252Charset.decodeString(local24, 0, local12);
-		} catch (@Pc(48) Exception local48) {
-			return "Cabbage";
-		}
-	}
-
 	@OriginalMember(owner = "client!qd", name = "a", descriptor = "(III)I")
 	public static int method3538(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1) {
 		@Pc(7) int local7 = arg0 >> 31 & arg1 - 1;

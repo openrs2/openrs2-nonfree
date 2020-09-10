@@ -3090,7 +3090,7 @@ public final class Static16 {
 									@Pc(4616) int local4616 = Static3.aClass4_Sub10_Sub1_1.position;
 									Static3.aClass4_Sub10_Sub1_1.writeByte(local4154);
 									Static3.aClass4_Sub10_Sub1_1.writeByte(local4156);
-									Static31.method3655(Static3.aClass4_Sub10_Sub1_1, local4125);
+									WordPack.writeString(Static3.aClass4_Sub10_Sub1_1, local4125);
 									Static3.aClass4_Sub10_Sub1_1.writeByteLength(Static3.aClass4_Sub10_Sub1_1.position - local4616);
 									continue;
 								}
@@ -3103,7 +3103,7 @@ public final class Static16 {
 										Static3.aClass4_Sub10_Sub1_1.writeByte(0);
 										@Pc(4680) int local4680 = Static3.aClass4_Sub10_Sub1_1.position;
 										Static3.aClass4_Sub10_Sub1_1.writeLong(Base37.encode(local4647));
-										Static31.method3655(Static3.aClass4_Sub10_Sub1_1, local4653);
+										WordPack.writeString(Static3.aClass4_Sub10_Sub1_1, local4653);
 										Static3.aClass4_Sub10_Sub1_1.writeByteLength(Static3.aClass4_Sub10_Sub1_1.position - local4680);
 									}
 									continue;

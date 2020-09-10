@@ -993,7 +993,7 @@ public final class Static21 {
 			return true;
 		} else if (Static1.anInt552 == 104) {
 			@Pc(1858) long local1858 = Static5.aClass4_Sub10_Sub1_2.readLong();
-			@Pc(1865) String local1865 = Static17.method2265(Static30.method3569(Static8.method110(Static5.aClass4_Sub10_Sub1_2)));
+			@Pc(1865) String local1865 = Static17.method2265(Static30.method3569(WordPack.readString(Static5.aClass4_Sub10_Sub1_2)));
 			Static26.method4357(Base37.decodeTitleCase(local1858), 6, local1865);
 			Static1.anInt552 = -1;
 			return true;
@@ -1205,7 +1205,7 @@ public final class Static21 {
 			if (!local2559 && Static3.anInt5405 == 0) {
 				Static4.aLongArray24[Static1.anInt595] = local2579;
 				Static1.anInt595 = (Static1.anInt595 + 1) % 100;
-				@Pc(2663) String local2663 = Static17.method2265(Static30.method3569(Static8.method110(Static5.aClass4_Sub10_Sub1_2)));
+				@Pc(2663) String local2663 = Static17.method2265(Static30.method3569(WordPack.readString(Static5.aClass4_Sub10_Sub1_2)));
 				if (local2583 == 2 || local2583 == 3) {
 					Static26.method4357("<img=1>" + Base37.decodeTitleCase(local2563), 7, local2663);
 				} else if (local2583 == 1) {
@@ -1282,7 +1282,7 @@ public final class Static21 {
 			if (!local2861 && Static3.anInt5405 == 0) {
 				Static4.aLongArray24[Static1.anInt595] = local2855;
 				Static1.anInt595 = (Static1.anInt595 + 1) % 100;
-				@Pc(2939) String local2939 = Static17.method2265(Static30.method3569(Static8.method110(Static5.aClass4_Sub10_Sub1_2)));
+				@Pc(2939) String local2939 = Static17.method2265(Static30.method3569(WordPack.readString(Static5.aClass4_Sub10_Sub1_2)));
 				if (local2859 == 2 || local2859 == 3) {
 					Static26.method2982("<img=1>" + Base37.decodeTitleCase(local2830), Base37.decodeTitleCase(local2838), local2939);
 				} else if (local2859 == 1) {

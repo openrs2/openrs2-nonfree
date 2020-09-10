@@ -537,11 +537,6 @@ public final class Static8 {
 		}
 	}
 
-	@OriginalMember(owner = "client!ah", name = "a", descriptor = "(ILclient!fd;)Ljava/lang/String;")
-	public static String method110(@OriginalArg(1) Buffer arg0) {
-		return Static29.method3537(arg0);
-	}
-
 	@OriginalMember(owner = "client!ah", name = "a", descriptor = "(II)V")
 	public static void method111(@OriginalArg(0) int arg0) {
 		@Pc(8) Class4_Sub3_Sub9 local8 = Static12.method2322(12, arg0);

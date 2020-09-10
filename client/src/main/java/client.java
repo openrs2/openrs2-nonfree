@@ -683,7 +683,7 @@ public final class client extends GameShell {
 		} else if (mainLoadState == 120) {
 			if (js5Archive10.isFileReady("huffman", "")) {
 				@Pc(1066) HuffmanCodec codec = new HuffmanCodec(js5Archive10.fetchFile("huffman", ""));
-				Static20.method1978(codec);
+				WordPack.init(codec);
 				mainLoadSecondaryText = LocalisedText.MAINLOAD120B;
 				mainLoadPercentage = 80;
 				mainLoadState = 130;
