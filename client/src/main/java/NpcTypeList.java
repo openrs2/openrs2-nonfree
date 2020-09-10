@@ -78,9 +78,9 @@ public final class NpcTypeList {
 	}
 
 	@OriginalMember(owner = "client!og", name = "g", descriptor = "(B)V")
-	public static void clearSoft() {
-		types.clearSoft();
-		models.clearSoft();
-		headModels.clearSoft();
+	public static void removeSoft() {
+		types.removeSoft();
+		models.removeSoft();
+		headModels.removeSoft();
 	}
 }

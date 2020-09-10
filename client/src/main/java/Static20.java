@@ -1023,7 +1023,7 @@ public final class Static20 {
 
 	@OriginalMember(owner = "client!il", name = "b", descriptor = "(I)V")
 	public static void method1925() {
-		Static2.aClass26_16.clearSoft();
+		Static2.aClass26_16.removeSoft();
 	}
 
 	@OriginalMember(owner = "client!im", name = "a", descriptor = "(ILjava/awt/Component;)V")
@@ -1394,8 +1394,8 @@ public final class Static20 {
 
 	@OriginalMember(owner = "client!ja", name = "b", descriptor = "(I)V")
 	public static void method1969() {
-		Static6.aClass26_53.clearSoft();
-		Static7.aClass26_49.clearSoft();
+		Static6.aClass26_53.removeSoft();
+		Static7.aClass26_49.removeSoft();
 	}
 
 	@OriginalMember(owner = "client!ja", name = "a", descriptor = "(IBI)V")
@@ -1406,9 +1406,9 @@ public final class Static20 {
 
 	@OriginalMember(owner = "client!jb", name = "a", descriptor = "(I)V")
 	public static void method1974() {
-		Static6.aClass26_48.clearSoft();
-		Static1.aClass26_1.clearSoft();
-		Static1.aClass26_4.clearSoft();
+		Static6.aClass26_48.removeSoft();
+		Static1.aClass26_1.removeSoft();
+		Static1.aClass26_4.removeSoft();
 	}
 
 	@OriginalMember(owner = "client!jb", name = "a", descriptor = "(IZIII)V")

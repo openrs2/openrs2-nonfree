@@ -411,8 +411,8 @@ public final class Static8 {
 
 	@OriginalMember(owner = "client!ae", name = "c", descriptor = "(I)V")
 	public static void method91() {
-		Static5.aClass26_42.clearSoft();
-		Static6.aClass26_46.clearSoft();
+		Static5.aClass26_42.removeSoft();
+		Static6.aClass26_46.removeSoft();
 	}
 
 	@OriginalMember(owner = "client!af", name = "a", descriptor = "(II)Lclient!vh;")

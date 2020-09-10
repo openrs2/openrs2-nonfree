@@ -101,10 +101,10 @@ public final class ObjTypeList {
 	}
 
 	@OriginalMember(owner = "client!cf", name = "f", descriptor = "(B)V")
-	public static void clearSoft() {
-		types.clearSoft();
-		models.clearSoft();
-		sprites.clearSoft();
+	public static void removeSoft() {
+		types.removeSoft();
+		models.removeSoft();
+		sprites.removeSoft();
 	}
 
 	@OriginalMember(owner = "client!il", name = "a", descriptor = "(II)V")

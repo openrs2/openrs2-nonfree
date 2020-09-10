@@ -324,7 +324,7 @@ public final class Static28 {
 
 	@OriginalMember(owner = "client!om", name = "e", descriptor = "(B)V")
 	public static void method3258() {
-		Static1.aClass26_6.clearSoft();
+		Static1.aClass26_6.removeSoft();
 	}
 
 	@OriginalMember(owner = "client!on", name = "b", descriptor = "(BI)V")
@@ -585,7 +585,7 @@ public final class Static28 {
 
 	@OriginalMember(owner = "client!pa", name = "b", descriptor = "(B)V")
 	public static void method3329() {
-		Static7.aClass26_56.clearSoft();
+		Static7.aClass26_56.removeSoft();
 	}
 
 	@OriginalMember(owner = "client!pa", name = "a", descriptor = "(ZLclient!gl;Z)V")

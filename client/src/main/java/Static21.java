@@ -2243,7 +2243,7 @@ public final class Static21 {
 
 	@OriginalMember(owner = "client!jj", name = "f", descriptor = "(B)V")
 	public static void method2048() {
-		Static6.aClass26_51.clearSoft();
+		Static6.aClass26_51.removeSoft();
 	}
 
 	@OriginalMember(owner = "client!jj", name = "a", descriptor = "(ZIIII)V")

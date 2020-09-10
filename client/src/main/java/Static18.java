@@ -317,7 +317,7 @@ public final class Static18 {
 
 	@OriginalMember(owner = "client!he", name = "b", descriptor = "(B)V")
 	public static void method1713() {
-		Static6.aClass26_50.clearSoft();
+		Static6.aClass26_50.removeSoft();
 	}
 
 	@OriginalMember(owner = "client!he", name = "a", descriptor = "(I)V")

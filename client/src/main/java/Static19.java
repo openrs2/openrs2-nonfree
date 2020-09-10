@@ -90,7 +90,7 @@ public final class Static19 {
 
 	@OriginalMember(owner = "client!hm", name = "d", descriptor = "(I)V")
 	public static void method1793() {
-		Static3.aClass26_26.clearSoft();
+		Static3.aClass26_26.removeSoft();
 	}
 
 	@OriginalMember(owner = "client!hm", name = "e", descriptor = "(I)I")

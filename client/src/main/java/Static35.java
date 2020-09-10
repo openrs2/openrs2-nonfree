@@ -9,7 +9,7 @@ public final class Static35 {
 
 	@OriginalMember(owner = "client!uc", name = "f", descriptor = "(B)V")
 	public static void method4296() {
-		Static6.aClass26_54.clearSoft();
+		Static6.aClass26_54.removeSoft();
 	}
 
 	@OriginalMember(owner = "client!uc", name = "f", descriptor = "(I)V")
@@ -1642,9 +1642,9 @@ public final class Static35 {
 
 	@OriginalMember(owner = "client!v", name = "b", descriptor = "(I)V")
 	public static void method4400() {
-		Static3.aClass26_19.clearSoft();
-		Static5.aClass26_43.clearSoft();
-		Static7.aClass26_18.clearSoft();
-		Static4.aClass26_32.clearSoft();
+		Static3.aClass26_19.removeSoft();
+		Static5.aClass26_43.removeSoft();
+		Static7.aClass26_18.removeSoft();
+		Static4.aClass26_32.removeSoft();
 	}
 }

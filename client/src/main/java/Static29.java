@@ -2478,8 +2478,8 @@ public final class Static29 {
 
 	@OriginalMember(owner = "client!qc", name = "a", descriptor = "(I)V")
 	public static void method3302() {
-		Static6.aClass26_52.clearSoft();
-		Static2.aClass26_11.clearSoft();
+		Static6.aClass26_52.removeSoft();
+		Static2.aClass26_11.removeSoft();
 	}
 
 	@OriginalMember(owner = "client!qc", name = "b", descriptor = "(IIII)Z")

@@ -270,7 +270,7 @@ public final class Static14 {
 
 	@OriginalMember(owner = "client!el", name = "a", descriptor = "(I)V")
 	public static void method1066() {
-		Static4.aClass26_30.clearSoft();
+		Static4.aClass26_30.removeSoft();
 	}
 
 	@OriginalMember(owner = "client!el", name = "b", descriptor = "(II)V")
@@ -846,8 +846,8 @@ public final class Static14 {
 
 	@OriginalMember(owner = "client!f", name = "f", descriptor = "(I)V")
 	public static void method1172() {
-		Static2.aClass26_12.clearSoft();
-		Static3.aClass26_27.clearSoft();
+		Static2.aClass26_12.removeSoft();
+		Static3.aClass26_27.removeSoft();
 	}
 
 	@OriginalMember(owner = "client!f", name = "a", descriptor = "(IIB)Z")
@@ -928,8 +928,8 @@ public final class Static14 {
 
 	@OriginalMember(owner = "client!fa", name = "f", descriptor = "(B)V")
 	public static void method1203() {
-		Static5.aClass26_45.clearSoft();
-		Static7.aClass26_57.clearSoft();
+		Static5.aClass26_45.removeSoft();
+		Static7.aClass26_57.removeSoft();
 	}
 
 	@OriginalMember(owner = "client!fb", name = "a", descriptor = "(II)V")

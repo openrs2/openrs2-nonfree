@@ -73,7 +73,7 @@ public final class SoftLruHashTable {
 	}
 
 	@OriginalMember(owner = "client!cc", name = "b", descriptor = "(Z)V")
-	public final void clearSoft() {
+	public final void removeSoft() {
 		for (@Pc(16) ReferenceNode node = (ReferenceNode) this.queue.head(); node != null; node = (ReferenceNode) this.queue.next()) {
 			if (node.isSoft()) {
 				node.unlink();

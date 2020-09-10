@@ -771,7 +771,7 @@ public final class Static27 {
 
 	@OriginalMember(owner = "client!og", name = "g", descriptor = "(I)V")
 	private static void method4707() {
-		Static3.aClass26_24.clearSoft();
+		Static3.aClass26_24.removeSoft();
 	}
 
 	@OriginalMember(owner = "client!og", name = "h", descriptor = "(B)V")
@@ -780,8 +780,8 @@ public final class Static27 {
 		Static28.method3258();
 		Static28.method3329();
 		Static35.method4400();
-		NpcTypeList.clearSoft();
-		ObjTypeList.clearSoft();
+		NpcTypeList.removeSoft();
+		ObjTypeList.removeSoft();
 		Static20.method1969();
 		Static14.method1203();
 		Static32.method3916();
@@ -797,8 +797,8 @@ public final class Static27 {
 		Static20.method1974();
 		Static14.method1066();
 		Static18.method1713();
-		Static1.aClass26_5.clearSoft();
-		Static1.aClass26_3.clearSoft();
+		Static1.aClass26_5.removeSoft();
+		Static1.aClass26_3.removeSoft();
 	}
 
 	@OriginalMember(owner = "client!oh", name = "a", descriptor = "(II)V")

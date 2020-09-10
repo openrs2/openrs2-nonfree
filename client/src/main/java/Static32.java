@@ -80,7 +80,7 @@ public final class Static32 {
 
 	@OriginalMember(owner = "client!sc", name = "f", descriptor = "(I)V")
 	public static void method3916() {
-		Static3.aClass26_25.clearSoft();
+		Static3.aClass26_25.removeSoft();
 	}
 
 	@OriginalMember(owner = "client!sc", name = "a", descriptor = "(IZ)V")
