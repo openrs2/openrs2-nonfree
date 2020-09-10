@@ -25,9 +25,6 @@ public final class Static3 {
 	@OriginalMember(owner = "client!gh", name = "a", descriptor = "Lclient!fh;")
 	public static Js5 aClass58_59;
 
-	@OriginalMember(owner = "client!gh", name = "f", descriptor = "I")
-	public static int anInt2580;
-
 	@OriginalMember(owner = "client!gh", name = "h", descriptor = "[Z")
 	public static boolean[] aBooleanArray12;
 
@@ -746,7 +743,7 @@ public final class Static3 {
 	public static final SoftLruHashTable aClass26_26 = new SoftLruHashTable(64);
 
 	@OriginalMember(owner = "client!je", name = "d", descriptor = "[Lclient!gb;")
-	public static Class63_Sub1[] aClass63_Sub1Array2 = new Class63_Sub1[0];
+	public static World[] aClass63_Sub1Array2 = new World[0];
 
 	@OriginalMember(owner = "client!je", name = "e", descriptor = "I")
 	public static int anInt2571 = -1;

@@ -48,9 +48,6 @@ public final class Static4 {
 	@OriginalMember(owner = "client!ka", name = "g", descriptor = "Lclient!wf;")
 	public static Class185 aClass185_9;
 
-	@OriginalMember(owner = "client!kf", name = "t", descriptor = "I")
-	public static int anInt2842;
-
 	@OriginalMember(owner = "client!kf", name = "P", descriptor = "I")
 	public static int anInt2853;
 

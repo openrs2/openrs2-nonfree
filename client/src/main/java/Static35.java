@@ -1442,12 +1442,12 @@ public final class Static35 {
 		}
 		@Pc(15) int local15 = (arg3 + arg5) / 2;
 		@Pc(17) int local17 = arg5;
-		@Pc(21) Class63_Sub1 local21 = Static3.aClass63_Sub1Array2[local15];
+		@Pc(21) World local21 = Static3.aClass63_Sub1Array2[local15];
 		Static3.aClass63_Sub1Array2[local15] = Static3.aClass63_Sub1Array2[arg3];
 		Static3.aClass63_Sub1Array2[arg3] = local21;
 		for (@Pc(33) int local33 = arg5; local33 < arg3; local33++) {
 			if (Static14.method1202(arg2, arg0, local21, arg4, Static3.aClass63_Sub1Array2[local33], arg1) <= 0) {
-				@Pc(55) Class63_Sub1 local55 = Static3.aClass63_Sub1Array2[local33];
+				@Pc(55) World local55 = Static3.aClass63_Sub1Array2[local33];
 				Static3.aClass63_Sub1Array2[local33] = Static3.aClass63_Sub1Array2[local17];
 				Static3.aClass63_Sub1Array2[local17++] = local55;
 			}
@@ -1459,10 +1459,10 @@ public final class Static35 {
 	}
 
 	@OriginalMember(owner = "client!ul", name = "a", descriptor = "(ILclient!gb;ILclient!gb;Z)I")
-	public static int method4366(@OriginalArg(1) Class63_Sub1 arg0, @OriginalArg(2) int arg1, @OriginalArg(3) Class63_Sub1 arg2, @OriginalArg(4) boolean arg3) {
+	public static int method4366(@OriginalArg(1) World arg0, @OriginalArg(2) int arg1, @OriginalArg(3) World arg2, @OriginalArg(4) boolean arg3) {
 		if (arg1 == 1) {
-			@Pc(11) int local11 = arg2.anInt2023;
-			@Pc(14) int local14 = arg0.anInt2023;
+			@Pc(11) int local11 = arg2.players;
+			@Pc(14) int local14 = arg0.players;
 			if (!arg3) {
 				if (local14 == -1) {
 					local14 = 2001;
@@ -1473,31 +1473,31 @@ public final class Static35 {
 			}
 			return local11 - local14;
 		} else if (arg1 == 2) {
-			return Static37.method4711(arg0.method1552().aString270, client.language, arg2.method1552().aString270);
+			return Static37.method4711(arg0.getCountry().name, client.language, arg2.getCountry().name);
 		} else if (arg1 == 3) {
-			if (arg2.aString110.equals("-")) {
-				if (arg0.aString110.equals("-")) {
+			if (arg2.activity.equals("-")) {
+				if (arg0.activity.equals("-")) {
 					return 0;
 				} else if (arg3) {
 					return -1;
 				} else {
 					return 1;
 				}
-			} else if (arg0.aString110.equals("-")) {
+			} else if (arg0.activity.equals("-")) {
 				return arg3 ? 1 : -1;
 			} else {
-				return Static37.method4711(arg0.aString110, client.language, arg2.aString110);
+				return Static37.method4711(arg0.activity, client.language, arg2.activity);
 			}
 		} else if (arg1 == 4) {
-			return arg2.method1542() ? (arg0.method1542() ? 0 : 1) : arg0.method1542() ? -1 : 0;
+			return arg2.isLootShare() ? (arg0.isLootShare() ? 0 : 1) : arg0.isLootShare() ? -1 : 0;
 		} else if (arg1 == 5) {
-			return arg2.method1543() ? (arg0.method1543() ? 0 : 1) : arg0.method1543() ? -1 : 0;
+			return arg2.isQuickChat() ? (arg0.isQuickChat() ? 0 : 1) : arg0.isQuickChat() ? -1 : 0;
 		} else if (arg1 == 6) {
-			return arg2.method1544() ? (arg0.method1544() ? 0 : 1) : arg0.method1544() ? -1 : 0;
+			return arg2.isPvp() ? (arg0.isPvp() ? 0 : 1) : arg0.isPvp() ? -1 : 0;
 		} else if (arg1 == 7) {
-			return arg2.method1540() ? (arg0.method1540() ? 0 : 1) : arg0.method1540() ? -1 : 0;
+			return arg2.isMembers() ? (arg0.isMembers() ? 0 : 1) : arg0.isMembers() ? -1 : 0;
 		} else {
-			return arg2.anInt2037 - arg0.anInt2037;
+			return arg2.id - arg0.id;
 		}
 	}
 

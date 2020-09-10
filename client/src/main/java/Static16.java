@@ -4683,7 +4683,7 @@ public final class Static16 {
 									continue;
 								}
 								if (local45 == 6501) {
-									@Pc(7710) Class63_Sub1 local7710 = Static20.method1991();
+									@Pc(7710) World local7710 = Static20.method1991();
 									if (local7710 == null) {
 										@Pc(7758) int local7758 = local5 + 1;
 										Static7.anIntArray571[local5] = -1;
@@ -4697,21 +4697,21 @@ public final class Static16 {
 										Static7.anIntArray571[local7758] = 0;
 									} else {
 										@Pc(7716) int local7716 = local5 + 1;
-										Static7.anIntArray571[local5] = local7710.anInt2037;
-										Static7.anIntArray571[local7716++] = local7710.anInt2020;
+										Static7.anIntArray571[local5] = local7710.id;
+										Static7.anIntArray571[local7716++] = local7710.flags;
 										@Pc(7728) int local7728 = local13 + 1;
-										Static2.aStringArray5[local13] = local7710.aString110;
-										@Pc(7735) Class151 local7735 = local7710.method1552();
-										Static7.anIntArray571[local7716++] = local7735.anInt4469;
+										Static2.aStringArray5[local13] = local7710.activity;
+										@Pc(7735) Country local7735 = local7710.getCountry();
+										Static7.anIntArray571[local7716++] = local7735.flag;
 										local13 = local7728 + 1;
-										Static2.aStringArray5[local7728] = local7735.aString270;
+										Static2.aStringArray5[local7728] = local7735.name;
 										local5 = local7716 + 1;
-										Static7.anIntArray571[local7716] = local7710.anInt2023;
+										Static7.anIntArray571[local7716] = local7710.players;
 									}
 									continue;
 								}
 								if (local45 == 6502) {
-									@Pc(7796) Class63_Sub1 local7796 = Static19.method1777();
+									@Pc(7796) World local7796 = Static19.method1777();
 									if (local7796 == null) {
 										@Pc(7801) int local7801 = local5 + 1;
 										Static7.anIntArray571[local5] = -1;
@@ -4725,16 +4725,16 @@ public final class Static16 {
 										Static7.anIntArray571[local7801] = 0;
 									} else {
 										@Pc(7833) int local7833 = local5 + 1;
-										Static7.anIntArray571[local5] = local7796.anInt2037;
-										Static7.anIntArray571[local7833++] = local7796.anInt2020;
+										Static7.anIntArray571[local5] = local7796.id;
+										Static7.anIntArray571[local7833++] = local7796.flags;
 										@Pc(7845) int local7845 = local13 + 1;
-										Static2.aStringArray5[local13] = local7796.aString110;
-										@Pc(7852) Class151 local7852 = local7796.method1552();
-										Static7.anIntArray571[local7833++] = local7852.anInt4469;
+										Static2.aStringArray5[local13] = local7796.activity;
+										@Pc(7852) Country local7852 = local7796.getCountry();
+										Static7.anIntArray571[local7833++] = local7852.flag;
 										local13 = local7845 + 1;
-										Static2.aStringArray5[local7845] = local7852.aString270;
+										Static2.aStringArray5[local7845] = local7852.name;
 										local5 = local7833 + 1;
-										Static7.anIntArray571[local7833] = local7796.anInt2023;
+										Static7.anIntArray571[local7833] = local7796.players;
 									}
 									continue;
 								}
@@ -4763,7 +4763,7 @@ public final class Static16 {
 								if (local45 == 6506) {
 									@Pc(7950) int local7950 = local5 - 1;
 									@Pc(7953) int local7953 = Static7.anIntArray571[local7950];
-									@Pc(7957) Class63_Sub1 local7957 = Static20.method1927(local7953);
+									@Pc(7957) World local7957 = WorldList.get(local7953);
 									if (local7957 == null) {
 										@Pc(7963) int local7963 = local7950 + 1;
 										Static7.anIntArray571[local7950] = -1;
@@ -4776,15 +4776,15 @@ public final class Static16 {
 										Static7.anIntArray571[local7963] = 0;
 									} else {
 										@Pc(7990) int local7990 = local7950 + 1;
-										Static7.anIntArray571[local7950] = local7957.anInt2020;
+										Static7.anIntArray571[local7950] = local7957.flags;
 										@Pc(7996) int local7996 = local13 + 1;
-										Static2.aStringArray5[local13] = local7957.aString110;
-										@Pc(8003) Class151 local8003 = local7957.method1552();
-										Static7.anIntArray571[local7990++] = local8003.anInt4469;
+										Static2.aStringArray5[local13] = local7957.activity;
+										@Pc(8003) Country local8003 = local7957.getCountry();
+										Static7.anIntArray571[local7990++] = local8003.flag;
 										local13 = local7996 + 1;
-										Static2.aStringArray5[local7996] = local8003.aString270;
+										Static2.aStringArray5[local7996] = local8003.name;
 										local5 = local7990 + 1;
-										Static7.anIntArray571[local7990] = local7957.anInt2023;
+										Static7.anIntArray571[local7990] = local7957.players;
 									}
 									continue;
 								}
@@ -4909,21 +4909,6 @@ public final class Static16 {
 		Static4.aFloatArray64[2] = local31 * ((float) (arg0 & 0xFF) / 255.0F) * local46 * local7;
 		Static4.aFloatArray64[1] = local44 * ((float) (arg0 >> 8 & 0xFF) / 255.0F) * local46 * local7;
 		return Static4.aFloatArray64;
-	}
-
-	@OriginalMember(owner = "client!gd", name = "a", descriptor = "(B[B)Z")
-	public static boolean method1554(@OriginalArg(1) byte[] arg0) {
-		@Pc(8) Buffer local8 = new Buffer(arg0);
-		@Pc(12) int local12 = local8.readUnsignedByte();
-		if (local12 != 1) {
-			return false;
-		}
-		@Pc(38) boolean local38 = local8.readUnsignedByte() == 1;
-		if (local38) {
-			Static14.method1072(local8);
-		}
-		Static30.method3546(local8);
-		return true;
 	}
 
 	@OriginalMember(owner = "client!gd", name = "a", descriptor = "(Lclient!fh;ILjava/lang/String;Z)Lclient!po;")

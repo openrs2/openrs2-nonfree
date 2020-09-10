@@ -426,12 +426,12 @@ public final class Static37 {
 
 	@OriginalMember(owner = "client!we", name = "a", descriptor = "(BI)Z")
 	public static boolean method4720(@OriginalArg(1) int arg0) {
-		@Pc(8) Class63_Sub1 local8 = Static20.method1927(arg0);
+		@Pc(8) World local8 = WorldList.get(arg0);
 		if (local8 == null) {
 			return false;
 		} else if (SignLink.anInt6106 == 1 || SignLink.anInt6106 == 2 || client.modeWhere == 2) {
-			client.hostname = local8.aString111;
-			client.worldId = local8.anInt2037;
+			client.hostname = local8.hostname;
+			client.worldId = local8.id;
 			if (client.modeWhere != 0) {
 				client.alternatePort = client.worldId + 50000;
 				client.defaultPort = client.worldId + 40000;
@@ -445,9 +445,9 @@ public final class Static37 {
 				local54 = "/p=" + client.settings;
 			}
 			if (client.modeWhere != 0) {
-				local52 = ":" + (local8.anInt2037 + 7000);
+				local52 = ":" + (local8.id + 7000);
 			}
-			@Pc(130) String local130 = "http://" + local8.aString111 + local52 + "/l=" + client.language + "/a=" + client.affiliate + local54 + "/j" + (client.javaScript ? "1" : "0") + ",o" + (client.objectTag ? "1" : "0") + ",a2,m" + (client.advertSuppressed ? "1" : "0");
+			@Pc(130) String local130 = "http://" + local8.hostname + local52 + "/l=" + client.language + "/a=" + client.affiliate + local54 + "/j" + (client.javaScript ? "1" : "0") + ",o" + (client.objectTag ? "1" : "0") + ",a2,m" + (client.advertSuppressed ? "1" : "0");
 			try {
 				client.instance.getAppletContext().showDocument(new URL(local130), "_self");
 				return true;

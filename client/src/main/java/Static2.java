@@ -122,9 +122,6 @@ public final class Static2 {
 	@OriginalMember(owner = "client!fb", name = "e", descriptor = "I")
 	public static int anInt1637;
 
-	@OriginalMember(owner = "client!fc", name = "b", descriptor = "[Lclient!gb;")
-	public static Class63_Sub1[] aClass63_Sub1Array1;
-
 	@OriginalMember(owner = "client!fd", name = "Q", descriptor = "I")
 	public static int anInt5716;
 

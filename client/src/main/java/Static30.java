@@ -8,20 +8,6 @@ import dev.openrs2.deob.annotation.Pc;
 
 public final class Static30 {
 
-	@OriginalMember(owner = "client!qe", name = "a", descriptor = "(ILclient!fd;)V")
-	public static void method3546(@OriginalArg(1) Buffer arg0) {
-		for (@Pc(3) int local3 = 0; local3 < Static3.anInt2580; local3++) {
-			@Pc(14) int local14 = arg0.readUnsignedShortSmart();
-			@Pc(18) int local18 = arg0.readUnsignedShort();
-			if (local18 == 65535) {
-				local18 = -1;
-			}
-			if (Static2.aClass63_Sub1Array1[local14] != null) {
-				Static2.aClass63_Sub1Array1[local14].anInt2023 = local18;
-			}
-		}
-	}
-
 	@OriginalMember(owner = "client!qf", name = "a", descriptor = "(I)V")
 	public static void method3547() {
 		synchronized (Static7.aClass161_1) {

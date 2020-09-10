@@ -1036,13 +1036,13 @@ public final class Static22 {
 				}
 				Static3.aClass52_7 = new BufferedSocket((Socket) Static7.aClass197_5.result, GameShell.signLink);
 				Static7.aClass197_5 = null;
-				@Pc(79) int local79 = 0;
-				if (Static6.aBoolean338) {
-					local79 = Static4.anInt2842;
+				@Pc(79) int checksum = 0;
+				if (WorldList.loaded) {
+					checksum = WorldList.checksum;
 				}
 				Static3.aClass4_Sub10_Sub1_1.position = 0;
 				Static3.aClass4_Sub10_Sub1_1.writeByte(23);
-				Static3.aClass4_Sub10_Sub1_1.writeInt(local79);
+				Static3.aClass4_Sub10_Sub1_1.writeInt(checksum);
 				Static3.aClass52_7.write(Static3.aClass4_Sub10_Sub1_1.bytes, Static3.aClass4_Sub10_Sub1_1.position);
 				if (Static1.aClass102_1 != null) {
 					Static1.aClass102_1.method2996();
@@ -1087,13 +1087,13 @@ public final class Static22 {
 			Static2.anInt1123 += local189;
 			if (Static2.anInt1123 < Static6.anInt4617) {
 				return -1;
-			} else if (Static16.method1554(Static2.aByteArray10)) {
-				@Pc(233) int local233 = 0;
-				Static3.aClass63_Sub1Array2 = new Class63_Sub1[Static3.anInt2580];
-				for (@Pc(238) int local238 = Static6.anInt4615; local238 <= Static1.anInt645; local238++) {
-					@Pc(249) Class63_Sub1 local249 = Static20.method1927(local238);
-					if (local249 != null) {
-						Static3.aClass63_Sub1Array2[local233++] = local249;
+			} else if (WorldList.decode(Static2.aByteArray10)) {
+				@Pc(233) int i = 0;
+				Static3.aClass63_Sub1Array2 = new World[WorldList.size];
+				for (@Pc(238) int id = WorldList.minId; id <= WorldList.maxId; id++) {
+					@Pc(249) World world = WorldList.get(id);
+					if (world != null) {
+						Static3.aClass63_Sub1Array2[i++] = world;
 					}
 				}
 				Static3.aClass52_7.close();

@@ -15,7 +15,7 @@ public final class Static19 {
 	}
 
 	@OriginalMember(owner = "client!hk", name = "g", descriptor = "(I)Lclient!gb;")
-	public static Class63_Sub1 method1777() {
+	public static World method1777() {
 		return Static3.aClass63_Sub1Array2.length <= Static6.anInt3224 ? null : Static3.aClass63_Sub1Array2[Static6.anInt3224++];
 	}
 

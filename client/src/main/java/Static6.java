@@ -113,9 +113,6 @@ public final class Static6 {
 	@OriginalMember(owner = "client!rb", name = "c", descriptor = "F")
 	public static float aFloat108;
 
-	@OriginalMember(owner = "client!rc", name = "d", descriptor = "[Lclient!rf;")
-	public static Class151[] aClass151Array1;
-
 	@OriginalMember(owner = "client!re", name = "a", descriptor = "[I")
 	public static int[] anIntArray478;
 
@@ -151,9 +148,6 @@ public final class Static6 {
 
 	@OriginalMember(owner = "client!rk", name = "s", descriptor = "Z")
 	public static boolean aBoolean321;
-
-	@OriginalMember(owner = "client!rl", name = "o", descriptor = "I")
-	public static int anInt4615;
 
 	@OriginalMember(owner = "client!rl", name = "q", descriptor = "Lclient!kk;")
 	public static Class106 aClass106_8;
@@ -550,9 +544,6 @@ public final class Static6 {
 
 	@OriginalMember(owner = "client!sm", name = "a", descriptor = "Lclient!cc;")
 	public static final SoftLruHashTable aClass26_52 = new SoftLruHashTable(16);
-
-	@OriginalMember(owner = "client!sm", name = "e", descriptor = "Z")
-	public static boolean aBoolean338 = false;
 
 	@OriginalMember(owner = "client!sm", name = "f", descriptor = "I")
 	public static int anInt4907 = 0;

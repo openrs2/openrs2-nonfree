@@ -720,7 +720,7 @@ public final class client extends GameShell {
 			} else if (local1200 == 7 || local1200 == 9) {
 				this.error("worldlistfull");
 				Static9.method233(1000);
-			} else if (Static6.aBoolean338) {
+			} else if (WorldList.loaded) {
 				mainLoadPercentage = 96;
 				mainLoadState = 140;
 				mainLoadSecondaryText = LocalisedText.MAINLOAD135B;

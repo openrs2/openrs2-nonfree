@@ -1039,11 +1039,6 @@ public final class Static20 {
 		arg0.addFocusListener(Static7.aClass161_1);
 	}
 
-	@OriginalMember(owner = "client!im", name = "a", descriptor = "(BI)Lclient!gb;")
-	public static Class63_Sub1 method1927(@OriginalArg(1) int arg0) {
-		return Static6.aBoolean338 && Static6.anInt4615 <= arg0 && Static1.anInt645 >= arg0 ? Static2.aClass63_Sub1Array1[arg0 - Static6.anInt4615] : null;
-	}
-
 	@OriginalMember(owner = "client!im", name = "a", descriptor = "(IBIII)V")
 	public static void method1928(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3) {
 		if (Static4.anInt2644 < 100) {
@@ -1452,7 +1447,7 @@ public final class Static20 {
 	}
 
 	@OriginalMember(owner = "client!jc", name = "d", descriptor = "(I)Lclient!gb;")
-	public static Class63_Sub1 method1991() {
+	public static World method1991() {
 		Static6.anInt3224 = 0;
 		return Static19.method1777();
 	}

@@ -228,32 +228,6 @@ public final class Static14 {
 		}
 	}
 
-	@OriginalMember(owner = "client!el", name = "a", descriptor = "(ILclient!fd;)V")
-	public static void method1072(@OriginalArg(1) Buffer arg0) {
-		@Pc(9) int local9 = arg0.readUnsignedShortSmart();
-		Static6.aClass151Array1 = new Class151[local9];
-		for (@Pc(14) int local14 = 0; local14 < local9; local14++) {
-			Static6.aClass151Array1[local14] = new Class151();
-			Static6.aClass151Array1[local14].anInt4469 = arg0.readUnsignedShortSmart();
-			Static6.aClass151Array1[local14].aString270 = arg0.readVersionedString();
-		}
-		Static6.anInt4615 = arg0.readUnsignedShortSmart();
-		Static1.anInt645 = arg0.readUnsignedShortSmart();
-		Static3.anInt2580 = arg0.readUnsignedShortSmart();
-		Static2.aClass63_Sub1Array1 = new Class63_Sub1[Static1.anInt645 + 1 - Static6.anInt4615];
-		for (@Pc(69) int local69 = 0; local69 < Static3.anInt2580; local69++) {
-			@Pc(80) int local80 = arg0.readUnsignedShortSmart();
-			@Pc(88) Class63_Sub1 local88 = Static2.aClass63_Sub1Array1[local80] = new Class63_Sub1();
-			local88.anInt2021 = arg0.readUnsignedByte();
-			local88.anInt2020 = arg0.readInt();
-			local88.anInt2037 = Static6.anInt4615 + local80;
-			local88.aString110 = arg0.readVersionedString();
-			local88.aString111 = arg0.readVersionedString();
-		}
-		Static4.anInt2842 = arg0.readInt();
-		Static6.aBoolean338 = true;
-	}
-
 	@OriginalMember(owner = "client!em", name = "a", descriptor = "(ZLjava/lang/String;)Z")
 	public static boolean method1077(@OriginalArg(1) String arg0) {
 		if (arg0 == null) {
@@ -845,7 +819,7 @@ public final class Static14 {
 	}
 
 	@OriginalMember(owner = "client!fa", name = "a", descriptor = "(IZLclient!gb;ZLclient!gb;IZ)I")
-	public static int method1202(@OriginalArg(0) int arg0, @OriginalArg(1) boolean arg1, @OriginalArg(2) Class63_Sub1 arg2, @OriginalArg(3) boolean arg3, @OriginalArg(4) Class63_Sub1 arg4, @OriginalArg(5) int arg5) {
+	public static int method1202(@OriginalArg(0) int arg0, @OriginalArg(1) boolean arg1, @OriginalArg(2) World arg2, @OriginalArg(3) boolean arg3, @OriginalArg(4) World arg4, @OriginalArg(5) int arg5) {
 		@Pc(15) int local15 = Static35.method4366(arg2, arg0, arg4, arg1);
 		if (local15 != 0) {
 			return arg1 ? -local15 : local15;
