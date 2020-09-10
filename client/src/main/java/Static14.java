@@ -249,8 +249,8 @@ public final class Static14 {
 
 	@OriginalMember(owner = "client!el", name = "a", descriptor = "(III)V")
 	public static void method1064(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
-		Static4.aClass26_28 = new LruHashTable(arg0);
-		Static3.aClass26_23 = new LruHashTable(arg1);
+		Static4.aClass26_28 = new SoftLruHashTable(arg0);
+		Static3.aClass26_23 = new SoftLruHashTable(arg1);
 	}
 
 	@OriginalMember(owner = "client!el", name = "a", descriptor = "(II)Lclient!cm;")

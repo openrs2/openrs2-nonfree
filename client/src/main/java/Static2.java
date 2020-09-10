@@ -366,7 +366,7 @@ public final class Static2 {
 	public static int anInt1273 = (int) (Math.random() * 33.0D) - 16;
 
 	@OriginalMember(owner = "client!ej", name = "p", descriptor = "Lclient!cc;")
-	public static final LruHashTable aClass26_11 = new LruHashTable(4);
+	public static final SoftLruHashTable aClass26_11 = new SoftLruHashTable(4);
 
 	@OriginalMember(owner = "client!ek", name = "b", descriptor = "I")
 	public static volatile int anInt1306 = 0;
@@ -381,7 +381,7 @@ public final class Static2 {
 	public static final int[] anIntArray99 = new int[1000];
 
 	@OriginalMember(owner = "client!el", name = "f", descriptor = "Lclient!cc;")
-	public static final LruHashTable aClass26_12 = new LruHashTable(260);
+	public static final SoftLruHashTable aClass26_12 = new SoftLruHashTable(260);
 
 	@OriginalMember(owner = "client!em", name = "a", descriptor = "Ljava/lang/String;")
 	public static String aString81 = null;
@@ -456,7 +456,7 @@ public final class Static2 {
 	public static int anInt1874 = -1;
 
 	@OriginalMember(owner = "client!fj", name = "ab", descriptor = "Lclient!cc;")
-	public static final LruHashTable aClass26_16 = new LruHashTable(16);
+	public static final SoftLruHashTable aClass26_16 = new SoftLruHashTable(16);
 
 	@OriginalMember(owner = "client!fj", name = "eb", descriptor = "I")
 	public static int anInt1877 = 0;

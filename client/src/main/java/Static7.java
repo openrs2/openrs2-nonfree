@@ -167,7 +167,7 @@ public final class Static7 {
 	public static int anInt2022 = -1;
 
 	@OriginalMember(owner = "client!tn", name = "e", descriptor = "Lclient!cc;")
-	public static final LruHashTable aClass26_18 = new LruHashTable(30);
+	public static final SoftLruHashTable aClass26_18 = new SoftLruHashTable(30);
 
 	@OriginalMember(owner = "client!tn", name = "o", descriptor = "Z")
 	public static boolean aBoolean123 = false;
@@ -290,7 +290,7 @@ public final class Static7 {
 	public static int anInt5357 = 0;
 
 	@OriginalMember(owner = "client!ul", name = "M", descriptor = "Lclient!cc;")
-	public static final LruHashTable aClass26_55 = new LruHashTable(64);
+	public static final SoftLruHashTable aClass26_55 = new SoftLruHashTable(64);
 
 	@OriginalMember(owner = "client!un", name = "t", descriptor = "Lclient!ic;")
 	public static HashTable aClass84_25 = new HashTable(16);
@@ -335,7 +335,7 @@ public final class Static7 {
 	public static final int[] anIntArray625 = new int[5];
 
 	@OriginalMember(owner = "client!vb", name = "V", descriptor = "Lclient!cc;")
-	public static final LruHashTable aClass26_56 = new LruHashTable(64);
+	public static final SoftLruHashTable aClass26_56 = new SoftLruHashTable(64);
 
 	@OriginalMember(owner = "client!vb", name = "ab", descriptor = "I")
 	public static int anInt5473 = 1;
@@ -344,7 +344,7 @@ public final class Static7 {
 	public static boolean aBoolean370 = false;
 
 	@OriginalMember(owner = "client!vc", name = "f", descriptor = "Lclient!cc;")
-	public static final LruHashTable aClass26_49 = new LruHashTable(100);
+	public static final SoftLruHashTable aClass26_49 = new SoftLruHashTable(100);
 
 	@OriginalMember(owner = "client!vc", name = "l", descriptor = "[I")
 	public static final int[] anIntArray501 = new int[25];
@@ -359,7 +359,7 @@ public final class Static7 {
 	public static int anInt5486 = 0;
 
 	@OriginalMember(owner = "client!ve", name = "j", descriptor = "Lclient!cc;")
-	public static final LruHashTable aClass26_57 = new LruHashTable(30);
+	public static final SoftLruHashTable aClass26_57 = new SoftLruHashTable(30);
 
 	@OriginalMember(owner = "client!ve", name = "o", descriptor = "[Lclient!ch;")
 	public static final Class30[] aClass30Array1 = new Class30[4];

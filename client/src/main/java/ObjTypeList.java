@@ -4,13 +4,13 @@ import dev.openrs2.deob.annotation.Pc;
 
 public final class ObjTypeList {
 	@OriginalMember(owner = "client!nj", name = "h", descriptor = "Lclient!cc;")
-	private static final LruHashTable types = new LruHashTable(64);
+	private static final SoftLruHashTable types = new SoftLruHashTable(64);
 
 	@OriginalMember(owner = "client!df", name = "a", descriptor = "Lclient!cc;")
-	public static final LruHashTable models = new LruHashTable(50);
+	public static final SoftLruHashTable models = new SoftLruHashTable(50);
 
 	@OriginalMember(owner = "client!o", name = "r", descriptor = "Lclient!cc;")
-	public static final LruHashTable sprites = new LruHashTable(100);
+	public static final SoftLruHashTable sprites = new SoftLruHashTable(100);
 
 	@OriginalMember(owner = "client!ni", name = "a", descriptor = "I")
 	public static int capacity;

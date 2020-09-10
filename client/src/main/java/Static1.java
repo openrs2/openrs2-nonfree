@@ -264,7 +264,7 @@ public final class Static1 {
 	public static boolean aBoolean8 = false;
 
 	@OriginalMember(owner = "client!af", name = "v", descriptor = "Lclient!cc;")
-	public static final LruHashTable aClass26_1 = new LruHashTable(50);
+	public static final SoftLruHashTable aClass26_1 = new SoftLruHashTable(50);
 
 	@OriginalMember(owner = "client!af", name = "A", descriptor = "[I")
 	public static final int[] anIntArray13 = new int[5];
@@ -336,7 +336,7 @@ public final class Static1 {
 	public static final float[] aFloatArray5 = new float[] { 0.1F, 0.1F, 0.15F, 0.1F };
 
 	@OriginalMember(owner = "client!be", name = "a", descriptor = "Lclient!cc;")
-	public static final LruHashTable aClass26_3 = new LruHashTable(4);
+	public static final SoftLruHashTable aClass26_3 = new SoftLruHashTable(4);
 
 	@OriginalMember(owner = "client!be", name = "b", descriptor = "I")
 	public static int anInt268 = 0;
@@ -381,10 +381,10 @@ public final class Static1 {
 	public static short aShort9 = 1;
 
 	@OriginalMember(owner = "client!bl", name = "cb", descriptor = "Lclient!cc;")
-	public static final LruHashTable aClass26_4 = new LruHashTable(20);
+	public static final SoftLruHashTable aClass26_4 = new SoftLruHashTable(20);
 
 	@OriginalMember(owner = "client!bl", name = "db", descriptor = "Lclient!cc;")
-	public static final LruHashTable aClass26_5 = new LruHashTable(4);
+	public static final SoftLruHashTable aClass26_5 = new SoftLruHashTable(4);
 
 	@OriginalMember(owner = "client!bl", name = "fb", descriptor = "J")
 	public static long aLong20 = 0L;
@@ -414,7 +414,7 @@ public final class Static1 {
 	public static final int[] anIntArray47 = new int[14];
 
 	@OriginalMember(owner = "client!cd", name = "g", descriptor = "Lclient!cc;")
-	public static final LruHashTable aClass26_6 = new LruHashTable(64);
+	public static final SoftLruHashTable aClass26_6 = new SoftLruHashTable(64);
 
 	@OriginalMember(owner = "client!ce", name = "a", descriptor = "I")
 	public static int anInt547 = 0;

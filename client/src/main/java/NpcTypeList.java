@@ -4,13 +4,13 @@ import dev.openrs2.deob.annotation.Pc;
 
 public final class NpcTypeList {
 	@OriginalMember(owner = "client!ho", name = "j", descriptor = "Lclient!cc;")
-	private static final LruHashTable types = new LruHashTable(64);
+	private static final SoftLruHashTable types = new SoftLruHashTable(64);
 
 	@OriginalMember(owner = "client!ao", name = "f", descriptor = "Lclient!cc;")
-	public static final LruHashTable models = new LruHashTable(50);
+	public static final SoftLruHashTable models = new SoftLruHashTable(50);
 
 	@OriginalMember(owner = "client!oc", name = "z", descriptor = "Lclient!cc;")
-	public static final LruHashTable headModels = new LruHashTable(5);
+	public static final SoftLruHashTable headModels = new SoftLruHashTable(5);
 
 	@OriginalMember(owner = "client!qe", name = "e", descriptor = "Z")
 	public static boolean allowMembers;
