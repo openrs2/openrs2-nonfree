@@ -1089,11 +1089,11 @@ public final class Static22 {
 				return -1;
 			} else if (WorldList.decode(Static2.aByteArray10)) {
 				@Pc(233) int i = 0;
-				Static3.aClass63_Sub1Array2 = new World[WorldList.size];
+				WorldList.sorted = new World[WorldList.size];
 				for (@Pc(238) int id = WorldList.minId; id <= WorldList.maxId; id++) {
 					@Pc(249) World world = WorldList.get(id);
 					if (world != null) {
-						Static3.aClass63_Sub1Array2[i++] = world;
+						WorldList.sorted[i++] = world;
 					}
 				}
 				Static3.aClass52_7.close();

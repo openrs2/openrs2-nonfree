@@ -106,21 +106,6 @@ public final class Static32 {
 		Static9.method763();
 	}
 
-	@OriginalMember(owner = "client!sc", name = "a", descriptor = "(CZ)C")
-	public static char method3919(@OriginalArg(0) char arg0) {
-		if (arg0 == 'Æ') {
-			return 'E';
-		} else if (arg0 == 'æ') {
-			return 'e';
-		} else if (arg0 == 'ß') {
-			return 's';
-		} else if (arg0 == 'Œ') {
-			return 'E';
-		} else {
-			return (char) (arg0 == 'œ' ? 'e' : '\u0000');
-		}
-	}
-
 	@OriginalMember(owner = "client!sc", name = "a", descriptor = "(IB)Z")
 	public static boolean method3920(@OriginalArg(0) int arg0) {
 		return arg0 == 4 || arg0 == 8;

@@ -2615,7 +2615,7 @@ public final class Static16 {
 						}
 						if (local45 == 4107) {
 							local13 -= 2;
-							Static7.anIntArray571[local5++] = Static27.method3220(Static37.method4711(Static2.aStringArray5[local13 + 1], client.language, Static2.aStringArray5[local13]));
+							Static7.anIntArray571[local5++] = Static27.method3220(StringUtils.compare(Static2.aStringArray5[local13], Static2.aStringArray5[local13 + 1], client.language));
 							continue;
 						}
 						if (local45 == 4108) {
@@ -4794,7 +4794,7 @@ public final class Static16 {
 									@Pc(8044) boolean local8044 = Static7.anIntArray571[local5 + 1] == 1;
 									@Pc(8050) int local8050 = Static7.anIntArray571[local5 + 2];
 									@Pc(8063) boolean local8063 = Static7.anIntArray571[local5 + 3] == 1;
-									Static11.method553(local8044, local8031, local8063, local8050);
+									WorldList.sort(local8031, local8044, local8050, local8063);
 									continue;
 								}
 							} else if (local45 < 6700) {

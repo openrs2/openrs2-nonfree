@@ -731,19 +731,6 @@ public final class Static25 {
 		Static1.aStringArray4[0] = arg2;
 	}
 
-	@OriginalMember(owner = "client!nb", name = "a", descriptor = "(IIC)I")
-	public static int method2928(@OriginalArg(1) int arg0, @OriginalArg(2) char arg1) {
-		@Pc(12) int local12 = arg1 << 4;
-		if (Character.isUpperCase(arg1) || Character.isTitleCase(arg1)) {
-			arg1 = Character.toLowerCase(arg1);
-			local12 = (arg1 << 4) + 1;
-		}
-		if (arg1 == 'ñ' && arg0 == 0) {
-			local12 = 1762;
-		}
-		return local12;
-	}
-
 	@OriginalMember(owner = "client!nb", name = "a", descriptor = "(ZI)V")
 	public static void method2929(@OriginalArg(1) int arg0) {
 		Static7.anInt5634--;

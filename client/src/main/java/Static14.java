@@ -818,19 +818,6 @@ public final class Static14 {
 		return -1;
 	}
 
-	@OriginalMember(owner = "client!fa", name = "a", descriptor = "(IZLclient!gb;ZLclient!gb;IZ)I")
-	public static int method1202(@OriginalArg(0) int arg0, @OriginalArg(1) boolean arg1, @OriginalArg(2) World arg2, @OriginalArg(3) boolean arg3, @OriginalArg(4) World arg4, @OriginalArg(5) int arg5) {
-		@Pc(15) int local15 = Static35.method4366(arg2, arg0, arg4, arg1);
-		if (local15 != 0) {
-			return arg1 ? -local15 : local15;
-		} else if (arg5 == -1) {
-			return 0;
-		} else {
-			@Pc(40) int local40 = Static35.method4366(arg2, arg5, arg4, arg3);
-			return arg3 ? -local40 : local40;
-		}
-	}
-
 	@OriginalMember(owner = "client!fa", name = "f", descriptor = "(B)V")
 	public static void method1203() {
 		Static5.aClass26_45.removeSoft();

@@ -742,9 +742,6 @@ public final class Static3 {
 	@OriginalMember(owner = "client!je", name = "c", descriptor = "Lclient!cc;")
 	public static final SoftLruHashTable aClass26_26 = new SoftLruHashTable(64);
 
-	@OriginalMember(owner = "client!je", name = "d", descriptor = "[Lclient!gb;")
-	public static World[] aClass63_Sub1Array2 = new World[0];
-
 	@OriginalMember(owner = "client!je", name = "e", descriptor = "I")
 	public static int anInt2571 = -1;
 
