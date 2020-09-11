@@ -185,9 +185,6 @@ public final class Static2 {
 	@OriginalMember(owner = "client!gb", name = "r", descriptor = "Lclient!kk;")
 	public static Class106 aClass106_2;
 
-	@OriginalMember(owner = "client!gb", name = "w", descriptor = "[I")
-	public static int[] skyboxTextures;
-
 	@OriginalMember(owner = "client!dc", name = "m", descriptor = "I")
 	public static int anInt902 = 0;
 

@@ -888,7 +888,7 @@ public final class client extends GameShell {
 				return;
 			}
 			if (code == 1) {
-				@Pc(31) int[] textures = Static2.skyboxTextures = new int[6];
+				@Pc(31) int[] textures = Defaults.skyboxTextures = new int[6];
 				textures[0] = buffer.readUnsignedShort();
 				textures[1] = buffer.readUnsignedShort();
 				textures[2] = buffer.readUnsignedShort();
