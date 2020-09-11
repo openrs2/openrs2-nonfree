@@ -10,7 +10,7 @@ public final class Js5MasterIndex {
 	private Buffer buffer;
 
 	@OriginalMember(owner = "client!mg", name = "m", descriptor = "[Lclient!wb;")
-	private Js5ResourceProviderImpl[] resourceProviders;
+	private Js5CachedResourceProvider[] resourceProviders;
 
 	@OriginalMember(owner = "client!mg", name = "h", descriptor = "Lclient!en;")
 	private final Js5NetQueue netQueue;
@@ -62,13 +62,13 @@ public final class Js5MasterIndex {
 			return false;
 		} else {
 			this.buffer = new Buffer(this.request.getData());
-			this.resourceProviders = new Js5ResourceProviderImpl[(this.buffer.bytes.length - 5) / 8];
+			this.resourceProviders = new Js5CachedResourceProvider[(this.buffer.bytes.length - 5) / 8];
 			return true;
 		}
 	}
 
 	@OriginalMember(owner = "client!mg", name = "a", descriptor = "(Lclient!fm;BLclient!fm;ZI)Lclient!wb;")
-	private Js5ResourceProviderImpl getResourceProviderInternal(@OriginalArg(0) Cache masterCache, @OriginalArg(2) Cache cache, @OriginalArg(4) int archive) {
+	private Js5CachedResourceProvider getResourceProviderInternal(@OriginalArg(0) Cache masterCache, @OriginalArg(2) Cache cache, @OriginalArg(4) int archive) {
 		if (this.buffer == null) {
 			throw new RuntimeException();
 		}
@@ -78,7 +78,7 @@ public final class Js5MasterIndex {
 		} else if (this.resourceProviders[archive] == null) {
 			@Pc(48) int checksum = this.buffer.readInt();
 			@Pc(55) int version = this.buffer.readInt();
-			@Pc(76) Js5ResourceProviderImpl provider = new Js5ResourceProviderImpl(archive, cache, masterCache, this.netQueue, this.cacheQueue, checksum, version, true);
+			@Pc(76) Js5CachedResourceProvider provider = new Js5CachedResourceProvider(archive, cache, masterCache, this.netQueue, this.cacheQueue, checksum, version, true);
 			this.resourceProviders[archive] = provider;
 			return provider;
 		} else {
@@ -87,7 +87,7 @@ public final class Js5MasterIndex {
 	}
 
 	@OriginalMember(owner = "client!mg", name = "a", descriptor = "(Lclient!fm;Lclient!fm;IB)Lclient!wb;")
-	public final Js5ResourceProviderImpl getResourceProvider(@OriginalArg(0) Cache masterCache, @OriginalArg(1) Cache cache, @OriginalArg(2) int archive) {
+	public final Js5CachedResourceProvider getResourceProvider(@OriginalArg(0) Cache masterCache, @OriginalArg(1) Cache cache, @OriginalArg(2) int archive) {
 		return this.getResourceProviderInternal(masterCache, cache, archive);
 	}
 }

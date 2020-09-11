@@ -6,7 +6,7 @@ import dev.openrs2.deob.annotation.OriginalMember;
 import dev.openrs2.deob.annotation.Pc;
 
 @OriginalClass("client!wb")
-public final class Js5ResourceProviderImpl extends Js5ResourceProvider {
+public final class Js5CachedResourceProvider extends Js5ResourceProvider {
 
 	@OriginalMember(owner = "client!wn", name = "B", descriptor = "Ljava/util/zip/CRC32;")
 	private static final CRC32 crc32 = new CRC32();
@@ -69,7 +69,7 @@ public final class Js5ResourceProviderImpl extends Js5ResourceProvider {
 	private Js5Request indexRequest;
 
 	@OriginalMember(owner = "client!wb", name = "<init>", descriptor = "(ILclient!fm;Lclient!fm;Lclient!en;Lclient!ja;IIZ)V")
-	public Js5ResourceProviderImpl(@OriginalArg(0) int archive, @OriginalArg(1) Cache cache, @OriginalArg(2) Cache masterCache, @OriginalArg(3) Js5NetQueue netQueue, @OriginalArg(4) Js5CacheQueue cacheQueue, @OriginalArg(5) int expectedChecksum, @OriginalArg(6) int expectedVersion, @OriginalArg(7) boolean dicardOrphans) {
+	public Js5CachedResourceProvider(@OriginalArg(0) int archive, @OriginalArg(1) Cache cache, @OriginalArg(2) Cache masterCache, @OriginalArg(3) Js5NetQueue netQueue, @OriginalArg(4) Js5CacheQueue cacheQueue, @OriginalArg(5) int expectedChecksum, @OriginalArg(6) int expectedVersion, @OriginalArg(7) boolean dicardOrphans) {
 		this.cache = cache;
 		this.archive = archive;
 		if (this.cache == null) {

@@ -110,7 +110,7 @@ public final class client extends GameShell {
 	private static Js5MasterIndex js5MasterIndex;
 
 	@OriginalMember(owner = "client!rg", name = "ob", descriptor = "[Lclient!wb;")
-	public static final Js5ResourceProviderImpl[] js5Providers = new Js5ResourceProviderImpl[29];
+	public static final Js5CachedResourceProvider[] js5Providers = new Js5CachedResourceProvider[29];
 
 	@OriginalMember(owner = "client!ee", name = "a", descriptor = "Lclient!ja;")
 	private static Js5CacheQueue js5CacheQueue;
