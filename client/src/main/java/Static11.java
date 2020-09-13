@@ -108,60 +108,6 @@ public final class Static11 {
 		}
 	}
 
-	@OriginalMember(owner = "client!cc", name = "a", descriptor = "(Lclient!io;ZI)V")
-	public static void method519(@OriginalArg(0) Class4_Sub13 arg0, @OriginalArg(2) int arg1) {
-		@Pc(8) Object[] local8 = arg0.anObjectArray2;
-		@Pc(14) int local14 = (Integer) local8[0];
-		@Pc(18) ClientScript local18 = ClientScriptList.get(local14);
-		if (local18 == null) {
-			return;
-		}
-		Static4.aStringArray21 = new String[local18.stringLocals];
-		@Pc(29) int local29 = 0;
-		Static4.anIntArray272 = new int[local18.intLocals];
-		@Pc(35) int local35 = 0;
-		for (@Pc(37) int local37 = 1; local37 < local8.length; local37++) {
-			if (local8[local37] instanceof Integer) {
-				@Pc(56) int local56 = (Integer) local8[local37];
-				if (local56 == -2147483647) {
-					local56 = arg0.anInt2495;
-				}
-				if (local56 == -2147483646) {
-					local56 = arg0.anInt2492;
-				}
-				if (local56 == -2147483645) {
-					local56 = arg0.aClass185_7 == null ? -1 : arg0.aClass185_7.id;
-				}
-				if (local56 == -2147483644) {
-					local56 = arg0.anInt2494;
-				}
-				if (local56 == -2147483643) {
-					local56 = arg0.aClass185_7 == null ? -1 : arg0.aClass185_7.anInt5968;
-				}
-				if (local56 == -2147483642) {
-					local56 = arg0.aClass185_6 == null ? -1 : arg0.aClass185_6.id;
-				}
-				if (local56 == -2147483641) {
-					local56 = arg0.aClass185_6 == null ? -1 : arg0.aClass185_6.anInt5968;
-				}
-				if (local56 == -2147483640) {
-					local56 = arg0.anInt2488;
-				}
-				if (local56 == -2147483639) {
-					local56 = arg0.anInt2490;
-				}
-				Static4.anIntArray272[local29++] = local56;
-			} else if (local8[local37] instanceof String) {
-				@Pc(168) String local168 = (String) local8[local37];
-				if (local168.equals("event_opbase")) {
-					local168 = arg0.aString143;
-				}
-				Static4.aStringArray21[local35++] = local168;
-			}
-		}
-		Static16.method1551(arg1, local18);
-	}
-
 	@OriginalMember(owner = "client!cd", name = "a", descriptor = "([[FIBIII[[FIBBLclient!ih;Z[[F[[III)V")
 	public static void method521(@OriginalArg(0) float[][] arg0, @OriginalArg(1) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4, @OriginalArg(6) float[][] arg5, @OriginalArg(7) int arg6, @OriginalArg(8) byte arg7, @OriginalArg(9) byte arg8, @OriginalArg(10) Class4_Sub12 arg9, @OriginalArg(11) boolean arg10, @OriginalArg(12) float[][] arg11, @OriginalArg(13) int[][] arg12, @OriginalArg(14) int arg13, @OriginalArg(15) int arg14) {
 		@Pc(7) int local7 = (arg1 << 8) + 255;

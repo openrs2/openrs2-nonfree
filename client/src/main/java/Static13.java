@@ -738,15 +738,15 @@ public final class Static13 {
 	@OriginalMember(owner = "client!ee", name = "a", descriptor = "(IIII)V")
 	public static void method1007(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2) {
 		if (arg1 == 1012) {
-			Static24.method2710(10, arg0, arg2);
+			ScriptRunner.method2710(10, arg0, arg2);
 		} else if (arg1 == 1002) {
-			Static24.method2710(11, arg0, arg2);
+			ScriptRunner.method2710(11, arg0, arg2);
 		} else if (arg1 == 1008) {
-			Static24.method2710(12, arg0, arg2);
+			ScriptRunner.method2710(12, arg0, arg2);
 		} else if (arg1 == 1003) {
-			Static24.method2710(13, arg0, arg2);
+			ScriptRunner.method2710(13, arg0, arg2);
 		} else if (arg1 == 1011) {
-			Static24.method2710(14, arg0, arg2);
+			ScriptRunner.method2710(14, arg0, arg2);
 		}
 	}
 

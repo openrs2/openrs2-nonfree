@@ -2183,7 +2183,7 @@ public final class Static21 {
 
 	@OriginalMember(owner = "client!jh", name = "a", descriptor = "(ZLclient!io;)V")
 	public static void method2019(@OriginalArg(1) Class4_Sub13 arg0) {
-		Static11.method519(arg0, 200000);
+		ScriptRunner.method519(arg0, 200000);
 	}
 
 	@OriginalMember(owner = "client!ji", name = "a", descriptor = "(IIB)V")

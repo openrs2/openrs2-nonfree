@@ -192,4 +192,35 @@ public final class StringUtils {
 		}
 		return rank;
 	}
+
+	@OriginalMember(owner = "client!wd", name = "a", descriptor = "(Z[Ljava/lang/String;II)Ljava/lang/String;")
+	public static String join(@OriginalArg(1) String[] array, @OriginalArg(2) int off, @OriginalArg(3) int len) {
+		if (len == 0) {
+			return "";
+		} else if (len == 1) {
+			@Pc(23) String s = array[off];
+			return s == null ? "null" : s.toString();
+		} else {
+			@Pc(33) int bufferSize = 0;
+			@Pc(37) int end = len + off;
+			for (@Pc(39) int i = off; i < end; i++) {
+				@Pc(46) String s = array[i];
+				if (s == null) {
+					bufferSize += 4;
+				} else {
+					bufferSize += s.length();
+				}
+			}
+			@Pc(65) StringBuffer buffer = new StringBuffer(bufferSize);
+			for (@Pc(67) int i = off; i < end; i++) {
+				@Pc(78) String s = array[i];
+				if (s == null) {
+					buffer.append("null");
+				} else {
+					buffer.append(s);
+				}
+			}
+			return buffer.toString();
+		}
+	}
 }

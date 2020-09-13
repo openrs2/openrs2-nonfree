@@ -248,37 +248,6 @@ public final class Static37 {
 		}
 	}
 
-	@OriginalMember(owner = "client!wd", name = "a", descriptor = "(Z[Ljava/lang/String;II)Ljava/lang/String;")
-	public static String method4715(@OriginalArg(1) String[] arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2) {
-		if (arg2 == 0) {
-			return "";
-		} else if (arg2 == 1) {
-			@Pc(23) String local23 = arg0[arg1];
-			return local23 == null ? "null" : local23.toString();
-		} else {
-			@Pc(33) int local33 = 0;
-			@Pc(37) int local37 = arg2 + arg1;
-			for (@Pc(39) int local39 = arg1; local39 < local37; local39++) {
-				@Pc(46) String local46 = arg0[local39];
-				if (local46 == null) {
-					local33 += 4;
-				} else {
-					local33 += local46.length();
-				}
-			}
-			@Pc(65) StringBuffer local65 = new StringBuffer(local33);
-			for (@Pc(67) int local67 = arg1; local67 < local37; local67++) {
-				@Pc(78) String local78 = arg0[local67];
-				if (local78 == null) {
-					local65.append("null");
-				} else {
-					local65.append(local78);
-				}
-			}
-			return local65.toString();
-		}
-	}
-
 	@OriginalMember(owner = "client!wd", name = "a", descriptor = "(BLjava/lang/String;Z)V")
 	public static void method4716(@OriginalArg(1) String arg0, @OriginalArg(2) boolean arg1) {
 		@Pc(17) int local17 = Static5.aClass4_Sub3_Sub5_2.method2261(arg0, 250);

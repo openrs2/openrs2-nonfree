@@ -200,9 +200,6 @@ public final class Static2 {
 	@OriginalMember(owner = "client!de", name = "x", descriptor = "I")
 	public static int anInt954 = 0;
 
-	@OriginalMember(owner = "client!df", name = "g", descriptor = "[Ljava/lang/String;")
-	public static final String[] aStringArray5 = new String[1000];
-
 	@OriginalMember(owner = "client!df", name = "h", descriptor = "I")
 	public static int anInt959 = 0;
 
@@ -388,9 +385,6 @@ public final class Static2 {
 
 	@OriginalMember(owner = "client!fd", name = "t", descriptor = "[Ljava/lang/String;")
 	public static final String[] aStringArray40 = new String[8];
-
-	@OriginalMember(owner = "client!fd", name = "nb", descriptor = "I")
-	public static int anInt5739 = 0;
 
 	@OriginalMember(owner = "client!fg", name = "L", descriptor = "I")
 	public static int anInt1767 = 0;

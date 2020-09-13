@@ -60,9 +60,6 @@ public final class Static4 {
 	@OriginalMember(owner = "client!kl", name = "Y", descriptor = "I")
 	public static int anInt2920;
 
-	@OriginalMember(owner = "client!kn", name = "D", descriptor = "[Ljava/lang/String;")
-	public static String[] aStringArray21;
-
 	@OriginalMember(owner = "client!ko", name = "a", descriptor = "[[[B")
 	public static byte[][][] aByteArrayArrayArray15;
 
@@ -77,9 +74,6 @@ public final class Static4 {
 
 	@OriginalMember(owner = "client!l", name = "r", descriptor = "[[Z")
 	public static boolean[][] aBooleanArrayArray4;
-
-	@OriginalMember(owner = "client!lb", name = "j", descriptor = "[I")
-	public static int[] anIntArray272;
 
 	@OriginalMember(owner = "client!lb", name = "k", descriptor = "Lclient!f;")
 	public static Player aClass53_Sub1_Sub1_2;

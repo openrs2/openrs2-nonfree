@@ -320,14 +320,14 @@ public final class Static25 {
 			if (Static1.anInt640 == 0 && local153.method2923(Mouse.x, Mouse.y)) {
 				if (!local153.aClass4_Sub3_Sub7_1.aBoolean105) {
 					local153.aClass4_Sub3_Sub7_1.aBoolean105 = true;
-					Static24.method2710(15, local153.aClass4_Sub3_Sub7_1.anInt1760, local161.anInt2284);
+					ScriptRunner.method2710(15, local153.aClass4_Sub3_Sub7_1.anInt1760, local161.anInt2284);
 				}
 				if (local153.aClass4_Sub3_Sub7_1.aBoolean105) {
-					Static24.method2710(17, local153.aClass4_Sub3_Sub7_1.anInt1760, local161.anInt2284);
+					ScriptRunner.method2710(17, local153.aClass4_Sub3_Sub7_1.anInt1760, local161.anInt2284);
 				}
 			} else if (local153.aClass4_Sub3_Sub7_1.aBoolean105) {
 				local153.aClass4_Sub3_Sub7_1.aBoolean105 = false;
-				Static24.method2710(16, local153.aClass4_Sub3_Sub7_1.anInt1760, local161.anInt2284);
+				ScriptRunner.method2710(16, local153.aClass4_Sub3_Sub7_1.anInt1760, local161.anInt2284);
 			}
 		}
 	}

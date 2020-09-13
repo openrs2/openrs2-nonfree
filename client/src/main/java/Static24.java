@@ -718,27 +718,6 @@ public final class Static24 {
 		}
 	}
 
-	@OriginalMember(owner = "client!mg", name = "a", descriptor = "(IIII)V")
-	public static void method2710(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(3) int arg2) {
-		@Pc(17) ClientScript local17 = ClientScriptList.get(arg0, arg1, arg2);
-		if (local17 == null) {
-			return;
-		}
-		Static4.anIntArray272 = new int[local17.intLocals];
-		Static4.aStringArray21 = new String[local17.stringLocals];
-		if (local17.trigger == 15 || local17.trigger == 17 || local17.trigger == 16) {
-			@Pc(49) int local49 = 0;
-			@Pc(51) int local51 = 0;
-			if (Static5.aClass185_12 != null) {
-				local49 = Static5.aClass185_12.anInt5960;
-				local51 = Static5.aClass185_12.anInt5888;
-			}
-			Static4.anIntArray272[1] = Mouse.y - local51;
-			Static4.anIntArray272[0] = Mouse.x - local49;
-		}
-		Static16.method1551(200000, local17);
-	}
-
 	@OriginalMember(owner = "client!mg", name = "a", descriptor = "(Lclient!fh;I)V")
 	public static void method2711(@OriginalArg(0) Js5 arg0) {
 		Static4.anInt3250 = arg0.getGroupId("runes");

@@ -154,9 +154,6 @@ public final class Static7 {
 	@OriginalMember(owner = "client!wl", name = "y", descriptor = "F")
 	public static float aFloat154;
 
-	@OriginalMember(owner = "client!tm", name = "O", descriptor = "[I")
-	public static final int[] anIntArray571 = new int[1000];
-
 	@OriginalMember(owner = "client!tn", name = "c", descriptor = "I")
 	public static int anInt2022 = -1;
 
@@ -277,9 +274,6 @@ public final class Static7 {
 	@OriginalMember(owner = "client!un", name = "v", descriptor = "[I")
 	public static final int[] anIntArray616 = new int[100];
 
-	@OriginalMember(owner = "client!un", name = "w", descriptor = "[I")
-	public static final int[] anIntArray617 = new int[5];
-
 	@OriginalMember(owner = "client!un", name = "y", descriptor = "I")
 	public static int anInt5413 = 0;
 
@@ -297,9 +291,6 @@ public final class Static7 {
 
 	@OriginalMember(owner = "client!v", name = "s", descriptor = "[I")
 	public static final int[] anIntArray621 = new int[] { 160, 192, 80, 96, 0, 144, 80, 48, 160 };
-
-	@OriginalMember(owner = "client!va", name = "c", descriptor = "[Lclient!ui;")
-	public static final Class174[] aClass174Array1 = new Class174[50];
 
 	@OriginalMember(owner = "client!va", name = "e", descriptor = "I")
 	public static int anInt5440 = 0;

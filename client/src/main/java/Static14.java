@@ -718,7 +718,7 @@ public final class Static14 {
 				@Pc(42) Class4_Sub13 local42 = new Class4_Sub13();
 				local42.anObjectArray2 = local34.anObjectArray22;
 				local42.aClass185_7 = local34;
-				Static11.method519(local42, 2000000);
+				ScriptRunner.method519(local42, 2000000);
 			}
 		}
 	}
