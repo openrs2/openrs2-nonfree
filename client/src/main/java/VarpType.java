@@ -4,26 +4,26 @@ import dev.openrs2.deob.annotation.OriginalMember;
 import dev.openrs2.deob.annotation.Pc;
 
 @OriginalClass("client!hi")
-public final class Class79 {
+public final class VarpType {
 
 	@OriginalMember(owner = "client!hi", name = "f", descriptor = "I")
-	public int anInt2191 = 0;
+	public int clientCode = 0;
 
 	@OriginalMember(owner = "client!hi", name = "a", descriptor = "(Lclient!fd;BI)V")
-	private void method1743(@OriginalArg(0) Buffer arg0, @OriginalArg(2) int arg1) {
-		if (arg1 == 5) {
-			this.anInt2191 = arg0.readUnsignedShort();
+	private void decode(@OriginalArg(0) Buffer buffer, @OriginalArg(2) int code) {
+		if (code == 5) {
+			this.clientCode = buffer.readUnsignedShort();
 		}
 	}
 
 	@OriginalMember(owner = "client!hi", name = "a", descriptor = "(Lclient!fd;I)V")
-	public final void method1747(@OriginalArg(0) Buffer arg0) {
+	public final void decode(@OriginalArg(0) Buffer buffer) {
 		while (true) {
-			@Pc(5) int local5 = arg0.readUnsignedByte();
-			if (local5 == 0) {
+			@Pc(5) int code = buffer.readUnsignedByte();
+			if (code == 0) {
 				return;
 			}
-			this.method1743(arg0, local5);
+			this.decode(buffer, code);
 		}
 	}
 }

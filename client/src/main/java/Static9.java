@@ -136,11 +136,6 @@ public final class Static9 {
 		Static7.aClass26_57.clean(5);
 	}
 
-	@OriginalMember(owner = "client!am", name = "b", descriptor = "(II)I")
-	public static int method192(@OriginalArg(1) int arg0) {
-		return arg0 >>> 10;
-	}
-
 	@OriginalMember(owner = "client!am", name = "a", descriptor = "(Lclient!ll;III)V")
 	public static void method193(@OriginalArg(0) LinkedList arg0, @OriginalArg(1) int arg1, @OriginalArg(3) int arg2) {
 		Static3.aClass112_13.clear();
@@ -608,12 +603,6 @@ public final class Static9 {
 		if (client.musicChannel != null) {
 			client.musicChannel.method2998();
 		}
-	}
-
-	@OriginalMember(owner = "client!be", name = "a", descriptor = "(Lclient!fh;I)V")
-	public static void method262(@OriginalArg(0) Js5 arg0) {
-		Static6.aClass58_94 = arg0;
-		Static5.anInt4158 = Static6.aClass58_94.getGroupCapacity(16);
 	}
 
 	@OriginalMember(owner = "client!bf", name = "a", descriptor = "([II)I")

@@ -186,10 +186,10 @@ public final class Static23 {
 
 	@OriginalMember(owner = "client!lc", name = "b", descriptor = "(III)V")
 	public static void method1937(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1) {
-		@Pc(7) Class32 local7 = Static14.method1065(arg0);
-		@Pc(10) int local10 = local7.anInt787;
-		@Pc(13) int local13 = local7.anInt794;
-		@Pc(16) int local16 = local7.anInt795;
+		@Pc(7) VarbitType local7 = VarbitTypeList.get(arg0);
+		@Pc(10) int local10 = local7.baseVar;
+		@Pc(13) int local13 = local7.startBit;
+		@Pc(16) int local16 = local7.endBit;
 		@Pc(23) int local23 = Class4_Sub3_Sub16.anIntArray455[local16 - local13];
 		if (arg1 < 0 || arg1 > local23) {
 			arg1 = 0;

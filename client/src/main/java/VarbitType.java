@@ -4,34 +4,34 @@ import dev.openrs2.deob.annotation.OriginalMember;
 import dev.openrs2.deob.annotation.Pc;
 
 @OriginalClass("client!cm")
-public final class Class32 {
+public final class VarbitType {
 
 	@OriginalMember(owner = "client!cm", name = "a", descriptor = "I")
-	public int anInt787;
+	public int baseVar;
 
 	@OriginalMember(owner = "client!cm", name = "i", descriptor = "I")
-	public int anInt794;
+	public int startBit;
 
 	@OriginalMember(owner = "client!cm", name = "j", descriptor = "I")
-	public int anInt795;
+	public int endBit;
 
 	@OriginalMember(owner = "client!cm", name = "a", descriptor = "(Lclient!fd;B)V")
-	public final void method695(@OriginalArg(0) Buffer arg0) {
+	public final void decode(@OriginalArg(0) Buffer buffer) {
 		while (true) {
-			@Pc(15) int local15 = arg0.readUnsignedByte();
-			if (local15 == 0) {
+			@Pc(15) int code = buffer.readUnsignedByte();
+			if (code == 0) {
 				return;
 			}
-			this.method696(arg0, local15);
+			this.decode(buffer, code);
 		}
 	}
 
 	@OriginalMember(owner = "client!cm", name = "a", descriptor = "(Lclient!fd;BI)V")
-	private void method696(@OriginalArg(0) Buffer arg0, @OriginalArg(2) int arg1) {
-		if (arg1 == 1) {
-			this.anInt787 = arg0.readUnsignedShort();
-			this.anInt794 = arg0.readUnsignedByte();
-			this.anInt795 = arg0.readUnsignedByte();
+	private void decode(@OriginalArg(0) Buffer buffer, @OriginalArg(2) int code) {
+		if (code == 1) {
+			this.baseVar = buffer.readUnsignedShort();
+			this.startBit = buffer.readUnsignedByte();
+			this.endBit = buffer.readUnsignedByte();
 		}
 	}
 }

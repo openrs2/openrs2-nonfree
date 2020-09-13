@@ -622,11 +622,6 @@ public final class Static25 {
 		Static4.anIntArrayArray31 = null;
 	}
 
-	@OriginalMember(owner = "client!nb", name = "b", descriptor = "(Z)V")
-	public static void method2924() {
-		Static3.aClass26_25.clear();
-	}
-
 	@OriginalMember(owner = "client!nb", name = "b", descriptor = "(I)V")
 	public static void method2925() {
 		Static4.aClass26_28.clear();

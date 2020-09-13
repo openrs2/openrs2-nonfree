@@ -929,7 +929,7 @@ public final class Static20 {
 			@Pc(364) int local364 = Static6.anInt4555 >> 2 << 10;
 			method2408(local364, local358);
 			Static14.method1064(1024, 256);
-			Static16.method1501(256);
+			VarbitTypeList.resize(256);
 			Static4.anInt2644 = 20;
 		} else if (Static4.anInt2644 == 20) {
 			Static26.method2934(new Buffer(Static3.aClass58_65.fetchFile(Static3.aClass4_Sub3_Sub22_3.aString358, "underlay")));

@@ -1145,9 +1145,9 @@ public final class Static12 {
 
 	@OriginalMember(owner = "client!df", name = "a", descriptor = "(B)V")
 	public static void method778() {
-		for (@Pc(11) int local11 = 0; local11 < Static5.anInt4158; local11++) {
-			@Pc(18) Class79 local18 = Static13.method935(local11);
-			if (local18 != null && local18.anInt2191 == 0) {
+		for (@Pc(11) int local11 = 0; local11 < VarpTypeList.capacity; local11++) {
+			@Pc(18) VarpType local18 = VarpTypeList.get(local11);
+			if (local18 != null && local18.clientCode == 0) {
 				Static1.anIntArray62[local11] = 0;
 				Static1.anIntArray2[local11] = 0;
 			}

@@ -179,21 +179,6 @@ public final class Static14 {
 		Static3.aClass26_23 = new SoftLruHashTable(arg1);
 	}
 
-	@OriginalMember(owner = "client!el", name = "a", descriptor = "(II)Lclient!cm;")
-	public static Class32 method1065(@OriginalArg(0) int arg0) {
-		@Pc(10) Class32 local10 = (Class32) Static3.aClass26_25.get((long) arg0);
-		if (local10 != null) {
-			return local10;
-		}
-		@Pc(42) byte[] local42 = Static6.aClass58_86.fetchFile(Static9.method192(arg0), Static33.method4090(arg0));
-		@Pc(46) Class32 local46 = new Class32();
-		if (local42 != null) {
-			local46.method695(new Buffer(local42));
-		}
-		Static3.aClass26_25.put((long) arg0, local46);
-		return local46;
-	}
-
 	@OriginalMember(owner = "client!el", name = "a", descriptor = "(I)V")
 	public static void method1066() {
 		Static4.aClass26_30.removeSoft();

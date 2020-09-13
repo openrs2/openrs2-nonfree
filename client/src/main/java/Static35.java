@@ -1099,10 +1099,10 @@ public final class Static35 {
 
 	@OriginalMember(owner = "client!uf", name = "a", descriptor = "(BI)I")
 	public static int method4311(@OriginalArg(1) int arg0) {
-		@Pc(13) Class32 local13 = Static14.method1065(arg0);
-		@Pc(16) int local16 = local13.anInt787;
-		@Pc(19) int local19 = local13.anInt794;
-		@Pc(22) int local22 = local13.anInt795;
+		@Pc(13) VarbitType local13 = VarbitTypeList.get(arg0);
+		@Pc(16) int local16 = local13.baseVar;
+		@Pc(19) int local19 = local13.startBit;
+		@Pc(22) int local22 = local13.endBit;
 		@Pc(29) int local29 = Class4_Sub3_Sub16.anIntArray455[local22 - local19];
 		return local29 & Static1.anIntArray2[local16] >> local19;
 	}

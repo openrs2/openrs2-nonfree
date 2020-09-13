@@ -712,9 +712,6 @@ public final class Static3 {
 	@OriginalMember(owner = "client!jb", name = "l", descriptor = "[Ljava/lang/String;")
 	public static final String[] aStringArray18 = new String[100];
 
-	@OriginalMember(owner = "client!jc", name = "G", descriptor = "Lclient!cc;")
-	public static SoftLruHashTable aClass26_25 = new SoftLruHashTable(64);
-
 	@OriginalMember(owner = "client!jc", name = "R", descriptor = "I")
 	public static int anInt2553 = 100;
 
@@ -726,9 +723,6 @@ public final class Static3 {
 
 	@OriginalMember(owner = "client!jd", name = "h", descriptor = "[J")
 	public static final long[] aLongArray16 = new long[100];
-
-	@OriginalMember(owner = "client!je", name = "c", descriptor = "Lclient!cc;")
-	public static final SoftLruHashTable aClass26_26 = new SoftLruHashTable(64);
 
 	@OriginalMember(owner = "client!je", name = "e", descriptor = "I")
 	public static int anInt2571 = -1;

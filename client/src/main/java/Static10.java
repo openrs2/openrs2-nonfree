@@ -471,7 +471,7 @@ public final class Static10 {
 		Static3.aClass84_10 = null;
 		Static3.aClass84_9 = null;
 		Static14.method1064(128, 64);
-		Static16.method1501(64);
+		VarbitTypeList.resize(64);
 	}
 
 	@OriginalMember(owner = "client!bn", name = "a", descriptor = "(IIIIIIII)V")

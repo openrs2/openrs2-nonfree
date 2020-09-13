@@ -78,11 +78,6 @@ public final class Static32 {
 		}
 	}
 
-	@OriginalMember(owner = "client!sc", name = "f", descriptor = "(I)V")
-	public static void method3916() {
-		Static3.aClass26_25.removeSoft();
-	}
-
 	@OriginalMember(owner = "client!sc", name = "a", descriptor = "(IZ)V")
 	public static void method3917(@OriginalArg(1) boolean arg0) {
 		Static9.method763();

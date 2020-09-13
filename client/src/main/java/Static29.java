@@ -2614,7 +2614,7 @@ public final class Static29 {
 	public static void method3534(@OriginalArg(1) int arg0) {
 		Static21.method2062();
 		Static32.method3996();
-		@Pc(20) int local20 = Static13.method935(arg0).anInt2191;
+		@Pc(20) int local20 = VarpTypeList.get(arg0).clientCode;
 		if (local20 == 0) {
 			return;
 		}

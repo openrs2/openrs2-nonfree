@@ -769,8 +769,8 @@ public final class Static27 {
 		ObjTypeList.removeSoft();
 		Static20.method1969();
 		Static14.method1203();
-		Static32.method3916();
-		Static19.method1793();
+		VarbitTypeList.removeSoft();
+		VarpTypeList.removeSoft();
 		Static21.method2048();
 		Static22.method2359();
 		Static26.method2993();
@@ -912,8 +912,4 @@ public final class Static27 {
 		return -1;
 	}
 
-	@OriginalMember(owner = "client!ok", name = "b", descriptor = "(BI)V")
-	public static void method3236() {
-		Static3.aClass26_26.clean(5);
-	}
 }

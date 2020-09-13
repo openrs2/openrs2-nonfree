@@ -170,9 +170,6 @@ public final class Static5 {
 	@OriginalMember(owner = "client!ph", name = "X", descriptor = "Lclient!lo;")
 	public static Class4_Sub6_Sub3 aClass4_Sub6_Sub3_2;
 
-	@OriginalMember(owner = "client!ph", name = "cb", descriptor = "I")
-	public static int anInt4158;
-
 	@OriginalMember(owner = "client!ph", name = "db", descriptor = "Lclient!gl;")
 	public static Class4_Sub3_Sub5 aClass4_Sub3_Sub5_3;
 

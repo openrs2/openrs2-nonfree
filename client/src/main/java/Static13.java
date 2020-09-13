@@ -650,21 +650,6 @@ public final class Static13 {
 		}
 	}
 
-	@OriginalMember(owner = "client!ea", name = "a", descriptor = "(BI)Lclient!hi;")
-	public static Class79 method935(@OriginalArg(1) int arg0) {
-		@Pc(17) Class79 local17 = (Class79) Static3.aClass26_26.get((long) arg0);
-		if (local17 != null) {
-			return local17;
-		}
-		@Pc(29) byte[] local29 = Static6.aClass58_94.fetchFile(16, arg0);
-		@Pc(33) Class79 local33 = new Class79();
-		if (local29 != null) {
-			local33.method1747(new Buffer(local29));
-		}
-		Static3.aClass26_26.put((long) arg0, local33);
-		return local33;
-	}
-
 	@OriginalMember(owner = "client!ea", name = "a", descriptor = "(IBIII)Lclient!eh;")
 	public static Class47 method936(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3) {
 		@Pc(39) long local39 = (long) arg2 & 0xFFFFL | ((long) arg0 & 0xFFFFL) << 48 | ((long) arg1 & 0xFFFFL) << 32 | ((long) arg3 & 0xFFFFL) << 16;

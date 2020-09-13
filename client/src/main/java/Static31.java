@@ -1466,8 +1466,8 @@ public final class Static31 {
 		ObjTypeList.clean();
 		Static32.method3986();
 		Static9.method191();
-		Static18.method1716();
-		Static27.method3236();
+		VarbitTypeList.clean();
+		VarpTypeList.clean();
 		Static28.method3268();
 		Static11.method586();
 		Static37.method4717();

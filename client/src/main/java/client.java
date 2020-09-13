@@ -629,8 +629,8 @@ public final class client extends GameShell {
 				Static37.method4785(js5Archive20, js5Archive1, js5Archive0);
 				Static32.method3884(js5Archive2);
 				Static22.method2362(js5Archive21, js5Archive7);
-				Static33.method4198(js5Archive22);
-				Static9.method262(js5Archive2);
+				VarbitTypeList.init(js5Archive22);
+				VarpTypeList.init(js5Archive2);
 				Static37.method4787(js5Archive8, js5Archive13, js5Archive3, js5Archive7);
 				InvTypeList.init(js5Archive2);
 				EnumTypeList.init(js5Archive17);

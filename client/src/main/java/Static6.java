@@ -134,9 +134,6 @@ public final class Static6 {
 	@OriginalMember(owner = "client!rh", name = "ob", descriptor = "Lclient!ma;")
 	public static Class56 aClass56_1;
 
-	@OriginalMember(owner = "client!ri", name = "A", descriptor = "Lclient!fh;")
-	public static Js5 aClass58_86;
-
 	@OriginalMember(owner = "client!ri", name = "X", descriptor = "[Lclient!uj;")
 	public static Class4_Sub3_Sub14[] aClass4_Sub3_Sub14Array11;
 
@@ -268,9 +265,6 @@ public final class Static6 {
 
 	@OriginalMember(owner = "client!tc", name = "V", descriptor = "[I")
 	public static int[] anIntArray549;
-
-	@OriginalMember(owner = "client!td", name = "k", descriptor = "Lclient!fh;")
-	public static Js5 aClass58_94;
 
 	@OriginalMember(owner = "client!te", name = "D", descriptor = "Lclient!uj;")
 	public static Class4_Sub3_Sub14 aClass4_Sub3_Sub14_8;

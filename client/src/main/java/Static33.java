@@ -276,11 +276,6 @@ public final class Static33 {
 		Static8.method2(false, local27, local144, local19, local138, local23, local148);
 	}
 
-	@OriginalMember(owner = "client!ta", name = "a", descriptor = "(II)I")
-	public static int method4090(@OriginalArg(0) int arg0) {
-		return arg0 & 0x3FF;
-	}
-
 	@OriginalMember(owner = "client!ta", name = "b", descriptor = "(ZI)V")
 	public static void method4092(@OriginalArg(1) int arg0) {
 		@Pc(14) Class4_Sub3_Sub9 local14 = Static12.method2322(6, arg0);
@@ -682,11 +677,6 @@ public final class Static33 {
 		return method4168(Static6.anInt5133, arg0, 128, 128, Static6.anInt5144, Static6.anInt5144, arg0, Static6.anInt5147, arg1);
 	}
 
-	@OriginalMember(owner = "client!ti", name = "a", descriptor = "(Lclient!fh;B)V")
-	public static void method4198(@OriginalArg(0) Js5 arg0) {
-		Static6.aClass58_86 = arg0;
-	}
-
 	@OriginalMember(owner = "client!ti", name = "a", descriptor = "(Lclient!wf;B)Z")
 	public static boolean method4199(@OriginalArg(0) Class185 arg0) {
 		if (arg0.anIntArray668 == null) {
@@ -712,11 +702,6 @@ public final class Static33 {
 			}
 		}
 		return true;
-	}
-
-	@OriginalMember(owner = "client!ti", name = "f", descriptor = "(I)V")
-	public static void method4200() {
-		Static3.aClass26_26.clear();
 	}
 
 	@OriginalMember(owner = "client!ti", name = "c", descriptor = "(II)Lclient!dc;")
