@@ -41,7 +41,7 @@ public final class Packet extends Buffer {
 	}
 
 	@OriginalMember(owner = "client!wa", name = "a", descriptor = "(I[BII)V")
-	public final void writeEncryptedBytes(@OriginalArg(1) byte[] bytes, @OriginalArg(2) int len) {
+	public final void readEncryptedBytes(@OriginalArg(1) byte[] bytes, @OriginalArg(2) int len) {
 		for (@Pc(7) int i = 0; i < len; i++) {
 			bytes[i] = (byte) (this.bytes[this.position++] - this.cipher.nextInt());
 		}
