@@ -23,10 +23,10 @@ public final class Class182 {
 	public int anInt5631;
 
 	@OriginalMember(owner = "client!vl", name = "m", descriptor = "Lclient!vc;")
-	public Class53 aClass53_9;
+	public Entity aClass53_9;
 
 	@OriginalMember(owner = "client!vl", name = "p", descriptor = "Lclient!vc;")
-	public Class53 aClass53_10;
+	public Entity aClass53_10;
 
 	@OriginalMember(owner = "client!vl", name = "t", descriptor = "I")
 	public int anInt5633;

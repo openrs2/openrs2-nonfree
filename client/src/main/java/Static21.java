@@ -2088,8 +2088,8 @@ public final class Static21 {
 		if (local9 == 0L) {
 			return;
 		}
-		@Pc(105) Class53 local105 = null;
-		@Pc(107) Class53 local107 = null;
+		@Pc(105) Entity local105 = null;
+		@Pc(107) Entity local107 = null;
 		if (arg4 == 0) {
 			@Pc(117) Class179 local117 = Static22.method2415(arg0, arg5, arg2);
 			if (local117 != null) {

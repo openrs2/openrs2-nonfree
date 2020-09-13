@@ -607,7 +607,7 @@ public final class Static26 {
 	}
 
 	@OriginalMember(owner = "client!nh", name = "a", descriptor = "(Lclient!vc;III)V")
-	public static void method2981(@OriginalArg(0) Class53 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) {
+	public static void method2981(@OriginalArg(0) Entity arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) {
 		if (arg2 < Static7.anInt5632) {
 			@Pc(12) Class4_Sub19 local12 = Static1.aClass4_Sub19ArrayArrayArray1[arg1][arg2 + 1][arg3];
 			if (local12 != null && local12.aClass42_1 != null && local12.aClass42_1.aClass53_2.method3808()) {

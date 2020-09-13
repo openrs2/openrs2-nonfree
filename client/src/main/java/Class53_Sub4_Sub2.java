@@ -609,7 +609,7 @@ public final class Class53_Sub4_Sub2 extends Class53_Sub4 {
 
 	@OriginalMember(owner = "client!s", name = "a", descriptor = "(III)Lclient!vc;")
 	@Override
-	public final Class53 method3809() {
+	public final Entity method3809() {
 		this.aBoolean325 = false;
 		if (this.aClass152_1 != null) {
 			this.aShortArray95 = this.aClass152_1.aShortArray84;
@@ -2184,7 +2184,7 @@ public final class Class53_Sub4_Sub2 extends Class53_Sub4 {
 
 	@OriginalMember(owner = "client!s", name = "a", descriptor = "(Lclient!vc;IIIZ)V")
 	@Override
-	public final void method3807(@OriginalArg(0) Class53 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) boolean arg4) {
+	public final void method3807(@OriginalArg(0) Entity arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) boolean arg4) {
 		@Pc(2) Class53_Sub4_Sub2 local2 = (Class53_Sub4_Sub2) arg0;
 		if (this.anInt4690 == 0 || local2.anInt4690 == 0) {
 			return;

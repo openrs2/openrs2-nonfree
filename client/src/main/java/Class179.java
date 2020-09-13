@@ -11,7 +11,7 @@ public final class Class179 {
 	public int anInt5491;
 
 	@OriginalMember(owner = "client!ve", name = "h", descriptor = "Lclient!vc;")
-	public Class53 aClass53_4;
+	public Entity aClass53_4;
 
 	@OriginalMember(owner = "client!ve", name = "i", descriptor = "I")
 	public int anInt5492;
@@ -20,7 +20,7 @@ public final class Class179 {
 	public int anInt5493;
 
 	@OriginalMember(owner = "client!ve", name = "l", descriptor = "Lclient!vc;")
-	public Class53 aClass53_5;
+	public Entity aClass53_5;
 
 	@OriginalMember(owner = "client!ve", name = "m", descriptor = "I")
 	public int anInt5494;

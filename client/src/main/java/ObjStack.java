@@ -4,7 +4,7 @@ import dev.openrs2.deob.annotation.OriginalMember;
 import dev.openrs2.deob.annotation.Pc;
 
 @OriginalClass("client!he")
-public final class ObjStack extends Class53 {
+public final class ObjStack extends Entity {
 
 	@OriginalMember(owner = "client!he", name = "u", descriptor = "I")
 	public int count;

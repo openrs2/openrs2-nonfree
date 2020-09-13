@@ -269,7 +269,7 @@ public final class LocType {
 		} else {
 			local46 = false;
 		}
-		@Pc(60) Class53 local60 = (Class53) LocTypeList.aClass26_18.get(local24);
+		@Pc(60) Entity local60 = (Entity) LocTypeList.aClass26_18.get(local24);
 		if (local60 == null) {
 			@Pc(69) Class53_Sub3 local69 = this.method4452(arg7, arg2);
 			if (local69 == null) {

@@ -1205,7 +1205,7 @@ public final class Static20 {
 	}
 
 	@OriginalMember(owner = "client!io", name = "a", descriptor = "(Lclient!vc;IIIII)V")
-	public static void method1951(@OriginalArg(0) Class53 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5) {
+	public static void method1951(@OriginalArg(0) Entity arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5) {
 		@Pc(1) boolean local1 = true;
 		@Pc(3) int local3 = arg2;
 		@Pc(7) int local7 = arg2 + arg4;

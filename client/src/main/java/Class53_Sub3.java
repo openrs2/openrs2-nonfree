@@ -4,7 +4,7 @@ import dev.openrs2.deob.annotation.OriginalMember;
 import dev.openrs2.deob.annotation.Pc;
 
 @OriginalClass("client!ml")
-public final class Class53_Sub3 extends Class53 {
+public final class Class53_Sub3 extends Entity {
 
 	@OriginalMember(owner = "client!ml", name = "m", descriptor = "[S")
 	public short[] aShortArray51;
@@ -633,7 +633,7 @@ public final class Class53_Sub3 extends Class53 {
 
 	@OriginalMember(owner = "client!ml", name = "a", descriptor = "(III)Lclient!vc;")
 	@Override
-	public final Class53 method3809() {
+	public final Entity method3809() {
 		return this.method2761(this.aShort33, this.aShort29, -50, -10, -50);
 	}
 
@@ -1386,7 +1386,7 @@ public final class Class53_Sub3 extends Class53 {
 
 	@OriginalMember(owner = "client!ml", name = "a", descriptor = "(Lclient!vc;IIIZ)V")
 	@Override
-	public final void method3807(@OriginalArg(0) Class53 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) boolean arg4) {
+	public final void method3807(@OriginalArg(0) Entity arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) boolean arg4) {
 		@Pc(2) Class53_Sub3 local2 = (Class53_Sub3) arg0;
 		local2.method2765();
 		local2.method2764();

@@ -8,7 +8,7 @@ public final class Class42 {
 	public long aLong45;
 
 	@OriginalMember(owner = "client!dm", name = "d", descriptor = "Lclient!vc;")
-	public Class53 aClass53_2;
+	public Entity aClass53_2;
 
 	@OriginalMember(owner = "client!dm", name = "f", descriptor = "I")
 	public int anInt1128;

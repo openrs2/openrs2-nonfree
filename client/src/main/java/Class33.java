@@ -14,7 +14,7 @@ public final class Class33 {
 	public int anInt815;
 
 	@OriginalMember(owner = "client!co", name = "g", descriptor = "Lclient!vc;")
-	public Class53 aClass53_1;
+	public Entity aClass53_1;
 
 	@OriginalMember(owner = "client!co", name = "h", descriptor = "I")
 	public int anInt817;

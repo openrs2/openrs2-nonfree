@@ -1478,7 +1478,7 @@ public final class Static29 {
 	}
 
 	@OriginalMember(owner = "client!pn", name = "a", descriptor = "(IIIILclient!vc;JLclient!vc;Lclient!vc;)V")
-	public static void method3478(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) Class53 arg4, @OriginalArg(5) long arg5, @OriginalArg(6) Class53 arg6, @OriginalArg(7) Class53 arg7) {
+	public static void method3478(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) Entity arg4, @OriginalArg(5) long arg5, @OriginalArg(6) Entity arg6, @OriginalArg(7) Entity arg7) {
 		@Pc(3) Class180 local3 = new Class180();
 		local3.aClass53_7 = arg4;
 		local3.anInt5496 = arg1 * 128 + 64;

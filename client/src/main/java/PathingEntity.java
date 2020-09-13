@@ -4,7 +4,7 @@ import dev.openrs2.deob.annotation.OriginalMember;
 import dev.openrs2.deob.annotation.Pc;
 
 @OriginalClass("client!qc")
-public abstract class PathingEntity extends Class53 {
+public abstract class PathingEntity extends Entity {
 
 	@OriginalMember(owner = "client!qc", name = "t", descriptor = "I")
 	public int anInt3966;
