@@ -13,6 +13,16 @@ public final class StringUtils {
 		return hash;
 	}
 
+	@OriginalMember(owner = "client!m", name = "a", descriptor = "(BLjava/lang/String;)J")
+	public static long longHashCode(@OriginalArg(1) String s) {
+		@Pc(13) int len = s.length();
+		@Pc(15) long hash = 0L;
+		for (@Pc(17) int i = 0; i < len; i++) {
+			hash = (long) s.charAt(i) + (hash << 5) - hash;
+		}
+		return hash;
+	}
+
 	@OriginalMember(owner = "client!wd", name = "a", descriptor = "(ILjava/lang/String;ILjava/lang/String;)I")
 	public static int compare(@OriginalArg(3) String x, @OriginalArg(1) String y, @OriginalArg(2) int language) {
 		@Pc(8) int xLen = x.length();

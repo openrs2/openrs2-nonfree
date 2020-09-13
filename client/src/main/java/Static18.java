@@ -36,11 +36,6 @@ public final class Static18 {
 		}
 	}
 
-	@OriginalMember(owner = "client!hb", name = "a", descriptor = "(IB)I")
-	public static int method1677(@OriginalArg(0) int arg0) {
-		return arg0 >>> 8;
-	}
-
 	@OriginalMember(owner = "client!hb", name = "a", descriptor = "(I[Lclient!ih;)V")
 	public static void method1679(@OriginalArg(0) int arg0, @OriginalArg(1) Class4_Sub12[] arg1) {
 		Static5.aClass4_Sub12ArrayArray2[arg0] = arg1;

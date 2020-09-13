@@ -2262,21 +2262,6 @@ public final class Static21 {
 		}
 	}
 
-	@OriginalMember(owner = "client!jk", name = "a", descriptor = "(BI)Lclient!cj;")
-	public static Class4_Sub3_Sub3 method2056(@OriginalArg(1) int arg0) {
-		@Pc(6) Class4_Sub3_Sub3 local6 = (Class4_Sub3_Sub3) Static3.aClass40_9.get((long) arg0);
-		if (local6 != null) {
-			return local6;
-		}
-		@Pc(33) byte[] local33 = Static1.aClass58_20.fetchFile(Static18.method1677(arg0), Static14.method1056(arg0));
-		@Pc(37) Class4_Sub3_Sub3 local37 = new Class4_Sub3_Sub3();
-		if (local33 != null) {
-			local37.method609(new Buffer(local33));
-		}
-		Static3.aClass40_9.put((long) arg0, local37);
-		return local37;
-	}
-
 	@OriginalMember(owner = "client!jk", name = "a", descriptor = "(IILjava/lang/String;)V")
 	public static void method2060(@OriginalArg(1) int arg0, @OriginalArg(2) String arg1) {
 		Static3.aClass4_Sub10_Sub1_1.writeOpcode(215);

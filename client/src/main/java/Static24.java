@@ -240,16 +240,6 @@ public final class Static24 {
 		Static6.anIntArray489 = new int[arg0];
 	}
 
-	@OriginalMember(owner = "client!m", name = "a", descriptor = "(BLjava/lang/String;)J")
-	public static long method2682(@OriginalArg(1) String arg0) {
-		@Pc(13) int local13 = arg0.length();
-		@Pc(15) long local15 = 0L;
-		for (@Pc(17) int local17 = 0; local17 < local13; local17++) {
-			local15 = (long) arg0.charAt(local17) + (local15 << 5) - local15;
-		}
-		return local15;
-	}
-
 	@OriginalMember(owner = "client!ma", name = "a", descriptor = "(BIIZIIZ)V")
 	public static void method2813(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) boolean arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4, @OriginalArg(6) boolean arg5) {
 		if (arg5) {

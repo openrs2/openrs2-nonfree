@@ -409,9 +409,6 @@ public final class Static3 {
 	@OriginalMember(owner = "client!gd", name = "a", descriptor = "[I")
 	public static int[] anIntArray164 = new int[2];
 
-	@OriginalMember(owner = "client!gd", name = "j", descriptor = "Lclient!dj;")
-	public static final LruHashTable aClass40_9 = new LruHashTable(128);
-
 	@OriginalMember(owner = "client!ge", name = "d", descriptor = "[I")
 	public static final int[] anIntArray166 = new int[] { 1, -1, -1, 1 };
 

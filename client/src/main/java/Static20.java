@@ -1367,11 +1367,6 @@ public final class Static20 {
 		}
 	}
 
-	@OriginalMember(owner = "client!j", name = "a", descriptor = "(ILclient!fh;)V")
-	public static void method1964(@OriginalArg(1) Js5 arg0) {
-		Static1.aClass58_20 = arg0;
-	}
-
 	@OriginalMember(owner = "client!ja", name = "b", descriptor = "(I)V")
 	public static void method1969() {
 		Static6.aClass26_53.removeSoft();

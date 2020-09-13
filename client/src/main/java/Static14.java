@@ -96,11 +96,6 @@ public final class Static14 {
 		return local17;
 	}
 
-	@OriginalMember(owner = "client!ej", name = "a", descriptor = "(II)I")
-	public static int method1056(@OriginalArg(1) int arg0) {
-		return arg0 & 0xFF;
-	}
-
 	@OriginalMember(owner = "client!ej", name = "c", descriptor = "(I)V")
 	public static void method1059() {
 		Static2.anInt1943++;
