@@ -894,18 +894,18 @@ public final class Static29 {
 			return;
 		}
 		Static31.method3753(Static3.aClass4_Sub10_Sub1_1);
-		synchronized (Static4.aClass99_1.anObject4) {
+		synchronized (MouseRecorder.instance.lock) {
 			if (!Static5.aBoolean277) {
-				Static4.aClass99_1.anInt2670 = 0;
-			} else if (Static6.anInt4802 != 0 || Static4.aClass99_1.anInt2670 >= 40) {
+				MouseRecorder.instance.samples = 0;
+			} else if (Static6.anInt4802 != 0 || MouseRecorder.instance.samples >= 40) {
 				Static3.aClass4_Sub10_Sub1_1.writeOpcode(199);
 				Static3.aClass4_Sub10_Sub1_1.writeByte(0);
 				@Pc(86) int local86 = 0;
 				@Pc(89) int local89 = Static3.aClass4_Sub10_Sub1_1.position;
-				for (@Pc(91) int local91 = 0; local91 < Static4.aClass99_1.anInt2670 && Static3.aClass4_Sub10_Sub1_1.position - local89 < 240; local91++) {
+				for (@Pc(91) int local91 = 0; local91 < MouseRecorder.instance.samples && Static3.aClass4_Sub10_Sub1_1.position - local89 < 240; local91++) {
 					local86++;
-					@Pc(113) int local113 = Static4.aClass99_1.anIntArray236[local91];
-					@Pc(118) int local118 = Static4.aClass99_1.anIntArray235[local91];
+					@Pc(113) int local113 = MouseRecorder.instance.x[local91];
+					@Pc(118) int local118 = MouseRecorder.instance.y[local91];
 					if (local118 < 0) {
 						local118 = 0;
 					} else if (local118 > 65534) {
@@ -917,7 +917,7 @@ public final class Static29 {
 					} else if (local113 > 65534) {
 						local113 = 65534;
 					}
-					if (Static4.aClass99_1.anIntArray235[local91] == -1 && Static4.aClass99_1.anIntArray236[local91] == -1) {
+					if (MouseRecorder.instance.y[local91] == -1 && MouseRecorder.instance.x[local91] == -1) {
 						local136 = true;
 						local113 = -1;
 						local118 = -1;
@@ -960,15 +960,15 @@ public final class Static29 {
 					}
 				}
 				Static3.aClass4_Sub10_Sub1_1.writeByteLength(Static3.aClass4_Sub10_Sub1_1.position - local89);
-				if (local86 < Static4.aClass99_1.anInt2670) {
-					@Pc(350) Class99 local350 = Static4.aClass99_1;
-					local350.anInt2670 -= local86;
-					for (@Pc(357) int local357 = 0; local357 < Static4.aClass99_1.anInt2670; local357++) {
-						Static4.aClass99_1.anIntArray236[local357] = Static4.aClass99_1.anIntArray236[local86 + local357];
-						Static4.aClass99_1.anIntArray235[local357] = Static4.aClass99_1.anIntArray235[local86 + local357];
+				if (local86 < MouseRecorder.instance.samples) {
+					@Pc(350) MouseRecorder local350 = MouseRecorder.instance;
+					local350.samples -= local86;
+					for (@Pc(357) int local357 = 0; local357 < MouseRecorder.instance.samples; local357++) {
+						MouseRecorder.instance.x[local357] = MouseRecorder.instance.x[local86 + local357];
+						MouseRecorder.instance.y[local357] = MouseRecorder.instance.y[local86 + local357];
 					}
 				} else {
-					Static4.aClass99_1.anInt2670 = 0;
+					MouseRecorder.instance.samples = 0;
 				}
 			}
 		}

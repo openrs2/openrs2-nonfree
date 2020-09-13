@@ -183,9 +183,6 @@ public final class Static4 {
 	@OriginalMember(owner = "client!me", name = "d", descriptor = "Lclient!kk;")
 	public static Class106 aClass106_4;
 
-	@OriginalMember(owner = "client!me", name = "i", descriptor = "Lclient!jm;")
-	public static Class99 aClass99_1;
-
 	@OriginalMember(owner = "client!mf", name = "c", descriptor = "[Lclient!co;")
 	public static Class33[] aClass33Array2;
 

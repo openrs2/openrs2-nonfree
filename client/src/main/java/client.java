@@ -675,8 +675,8 @@ public final class client extends GameShell {
 				mainLoadState = 110;
 			}
 		} else if (mainLoadState == 110) {
-			Static4.aClass99_1 = new Class99();
-			GameShell.signLink.startThread(Static4.aClass99_1, 10);
+			MouseRecorder.instance = new MouseRecorder();
+			GameShell.signLink.startThread(MouseRecorder.instance, 10);
 			mainLoadPercentage = 75;
 			mainLoadSecondaryText = LocalisedText.MAINLOAD110B;
 			mainLoadState = 120;
@@ -769,10 +769,10 @@ public final class client extends GameShell {
 			Static31.method3658(GameShell.signLink, GameShell.fullScreenFrame);
 			GameShell.fullScreenFrame = null;
 		}
-		if (Static4.aClass99_1 != null) {
-			Static4.aClass99_1.aBoolean185 = false;
+		if (MouseRecorder.instance != null) {
+			MouseRecorder.instance.running = false;
 		}
-		Static4.aClass99_1 = null;
+		MouseRecorder.instance = null;
 		if (Static3.aClass52_7 != null) {
 			Static3.aClass52_7.close();
 			Static3.aClass52_7 = null;

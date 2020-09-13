@@ -575,7 +575,7 @@ public final class Static11 {
 		GameShell.focus = true;
 		Static3.anInt2235 = 0;
 		Static7.aBoolean367 = true;
-		Static4.aClass99_1.anInt2670 = 0;
+		MouseRecorder.instance.samples = 0;
 		Static1.aLong32 = 0L;
 		Static12.method719();
 		Static1.anInt885 = 0;
