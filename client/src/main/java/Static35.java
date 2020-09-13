@@ -254,7 +254,7 @@ public final class Static35 {
 	}
 
 	@OriginalMember(owner = "client!ud", name = "a", descriptor = "(Lclient!wf;BIII)V")
-	public static void method4309(@OriginalArg(0) Class185 arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3) {
+	public static void method4309(@OriginalArg(0) Component arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3) {
 		if (Static3.aBoolean138) {
 			Static18.method1693(arg3, arg1, arg0.anInt5893 + arg3, arg1 + arg0.anInt5949);
 		}
@@ -307,7 +307,7 @@ public final class Static35 {
 			Static3.aClass4_Sub10_Sub1_1.writeIntAlt3(local19);
 			Static3.aClass4_Sub10_Sub1_1.writeShortLEA(local15);
 			Static2.anInt2246 = 0;
-			Static1.aClass185_3 = Static19.method1813(local19);
+			Static1.aClass185_3 = InterfaceList.getComponent(local19);
 			Static5.anInt3884 = local15;
 		}
 		if (local28 == 33) {
@@ -433,7 +433,7 @@ public final class Static35 {
 			Static3.aClass4_Sub10_Sub1_1.writeShortA(local15);
 			Static3.aClass4_Sub10_Sub1_1.writeShort(local24);
 			Static2.anInt2246 = 0;
-			Static1.aClass185_3 = Static19.method1813(local19);
+			Static1.aClass185_3 = InterfaceList.getComponent(local19);
 			Static5.anInt3884 = local15;
 		}
 		if (local28 == 25) {
@@ -542,7 +542,7 @@ public final class Static35 {
 			Static3.aClass4_Sub10_Sub1_1.writeIntAlt3Reverse(local19);
 			Static3.aClass4_Sub10_Sub1_1.writeShortLEA(local15);
 			Static2.anInt2246 = 0;
-			Static1.aClass185_3 = Static19.method1813(local19);
+			Static1.aClass185_3 = InterfaceList.getComponent(local19);
 			Static5.anInt3884 = local15;
 		}
 		if (local28 == 13) {
@@ -551,7 +551,7 @@ public final class Static35 {
 			Static3.aClass4_Sub10_Sub1_1.writeShortLEA(local24);
 			Static3.aClass4_Sub10_Sub1_1.writeIntAlt3Reverse(local19);
 			Static2.anInt2246 = 0;
-			Static1.aClass185_3 = Static19.method1813(local19);
+			Static1.aClass185_3 = InterfaceList.getComponent(local19);
 			Static5.anInt3884 = local15;
 		}
 		if (local28 == 3 && Static6.aClass185_14 == null) {
@@ -582,7 +582,7 @@ public final class Static35 {
 		if (local28 == 11) {
 			Static3.aClass4_Sub10_Sub1_1.writeOpcode(158);
 			Static3.aClass4_Sub10_Sub1_1.writeInt(local19);
-			@Pc(1434) Class185 local1434 = Static19.method1813(local19);
+			@Pc(1434) Component local1434 = InterfaceList.getComponent(local19);
 			if (local1434.anIntArrayArray50 != null && local1434.anIntArrayArray50[0][0] == 5) {
 				@Pc(1452) int local1452 = local1434.anIntArrayArray50[0][1];
 				if (local1434.anIntArray671[0] != Static1.anIntArray2[local1452]) {
@@ -625,11 +625,11 @@ public final class Static35 {
 			Static3.aClass4_Sub10_Sub1_1.writeShortA(Static1.anInt243);
 			Static3.aClass4_Sub10_Sub1_1.writeIntAlt3(Static5.anInt4302);
 			Static2.anInt2246 = 0;
-			Static1.aClass185_3 = Static19.method1813(local19);
+			Static1.aClass185_3 = InterfaceList.getComponent(local19);
 			Static5.anInt3884 = local15;
 		}
 		if (local28 == 57) {
-			@Pc(1660) Class185 local1660 = Static19.method1813(local19);
+			@Pc(1660) Component local1660 = InterfaceList.getComponent(local19);
 			@Pc(1662) boolean local1662 = true;
 			if (local1660.anInt5904 > 0) {
 				local1662 = Static36.method4402(local1660);
@@ -645,7 +645,7 @@ public final class Static35 {
 			Static3.aClass4_Sub10_Sub1_1.writeShortLEA(local24);
 			Static3.aClass4_Sub10_Sub1_1.writeIntLE2(local19);
 			Static2.anInt2246 = 0;
-			Static1.aClass185_3 = Static19.method1813(local19);
+			Static1.aClass185_3 = InterfaceList.getComponent(local19);
 			Static5.anInt3884 = local15;
 		}
 		if (local28 == 14) {
@@ -686,7 +686,7 @@ public final class Static35 {
 		}
 		if (local28 == 9) {
 			Static26.method4812();
-			@Pc(1913) Class185 local1913 = Static19.method1813(local19);
+			@Pc(1913) Component local1913 = InterfaceList.getComponent(local19);
 			Static1.anInt314 = local15;
 			Static2.anInt1334 = 1;
 			Static5.anInt4302 = local19;
@@ -743,7 +743,7 @@ public final class Static35 {
 			Static13.method1004(local19, local32, local15);
 		}
 		if (local28 == 34) {
-			@Pc(2187) Class185 local2187 = Static23.method2425(local19, local15);
+			@Pc(2187) Component local2187 = Static23.method2425(local19, local15);
 			if (local2187 != null) {
 				Static26.method4812();
 				@Pc(2195) Class4_Sub21 local2195 = Static12.method687(local2187);
@@ -753,7 +753,7 @@ public final class Static35 {
 				if (Static4.aString140 == null) {
 					Static4.aString140 = "Null";
 				}
-				if (local2187.aBoolean416) {
+				if (local2187.if3) {
 					Static2.aString81 = local2187.aString352 + "<col=ffffff>";
 				} else {
 					Static2.aString81 = "<col=00ff00>" + local2187.aString353 + "<col=ffffff>";
@@ -767,7 +767,7 @@ public final class Static35 {
 			Static3.aClass4_Sub10_Sub1_1.writeIntAlt3(local19);
 			Static3.aClass4_Sub10_Sub1_1.writeShortA(local24);
 			Static2.anInt2246 = 0;
-			Static1.aClass185_3 = Static19.method1813(local19);
+			Static1.aClass185_3 = InterfaceList.getComponent(local19);
 			Static5.anInt3884 = local15;
 		}
 		if (local28 == 58) {
@@ -776,7 +776,7 @@ public final class Static35 {
 			Static3.aClass4_Sub10_Sub1_1.writeShortA(local24);
 			Static3.aClass4_Sub10_Sub1_1.writeInt(local19);
 			Static2.anInt2246 = 0;
-			Static1.aClass185_3 = Static19.method1813(local19);
+			Static1.aClass185_3 = InterfaceList.getComponent(local19);
 			Static5.anInt3884 = local15;
 		}
 		if (local28 == 8) {
@@ -798,7 +798,7 @@ public final class Static35 {
 			Static3.aClass4_Sub10_Sub1_1.writeShortLE2(local15);
 			Static3.aClass4_Sub10_Sub1_1.writeShort(local24);
 			Static2.anInt2246 = 0;
-			Static1.aClass185_3 = Static19.method1813(local19);
+			Static1.aClass185_3 = InterfaceList.getComponent(local19);
 			Static5.anInt3884 = local15;
 		}
 		if (local28 == 43) {
@@ -896,7 +896,7 @@ public final class Static35 {
 			Static3.aClass4_Sub10_Sub1_1.writeShortLE2(local15);
 			Static3.aClass4_Sub10_Sub1_1.writeShortLE2(Static2.anInt1367);
 			Static2.anInt2246 = 0;
-			Static1.aClass185_3 = Static19.method1813(local19);
+			Static1.aClass185_3 = InterfaceList.getComponent(local19);
 			Static5.anInt3884 = local15;
 		}
 		if (local28 == 20) {
@@ -905,7 +905,7 @@ public final class Static35 {
 			Static3.aClass4_Sub10_Sub1_1.writeShortLEA(local24);
 			Static3.aClass4_Sub10_Sub1_1.writeIntLE2(local19);
 			Static2.anInt2246 = 0;
-			Static1.aClass185_3 = Static19.method1813(local19);
+			Static1.aClass185_3 = InterfaceList.getComponent(local19);
 			Static5.anInt3884 = local15;
 		}
 		if (local28 == 2) {
@@ -914,7 +914,7 @@ public final class Static35 {
 			Static3.aClass4_Sub10_Sub1_1.writeShortLE2(local15);
 			Static3.aClass4_Sub10_Sub1_1.writeShortA(local24);
 			Static2.anInt2246 = 0;
-			Static1.aClass185_3 = Static19.method1813(local19);
+			Static1.aClass185_3 = InterfaceList.getComponent(local19);
 			Static5.anInt3884 = local15;
 		}
 		if (local28 == 45) {
@@ -956,7 +956,7 @@ public final class Static35 {
 			}
 		}
 		if (local28 == 1001) {
-			@Pc(3148) Class185 local3148 = Static19.method1813(local19);
+			@Pc(3148) Component local3148 = InterfaceList.getComponent(local19);
 			if (local3148 == null || local3148.anIntArray661[local15] < 100000) {
 				Static3.aClass4_Sub10_Sub1_1.writeOpcode(72);
 				Static3.aClass4_Sub10_Sub1_1.writeShort(local24);
@@ -964,13 +964,13 @@ public final class Static35 {
 				Static26.method4357("", 0, local3148.anIntArray661[local15] + " x " + ObjTypeList.get(local24).name);
 			}
 			Static2.anInt2246 = 0;
-			Static1.aClass185_3 = Static19.method1813(local19);
+			Static1.aClass185_3 = InterfaceList.getComponent(local19);
 			Static5.anInt3884 = local15;
 		}
 		if (local28 == 18) {
 			Static3.aClass4_Sub10_Sub1_1.writeOpcode(158);
 			Static3.aClass4_Sub10_Sub1_1.writeInt(local19);
-			@Pc(3216) Class185 local3216 = Static19.method1813(local19);
+			@Pc(3216) Component local3216 = InterfaceList.getComponent(local19);
 			if (local3216.anIntArrayArray50 != null && local3216.anIntArrayArray50[0][0] == 5) {
 				@Pc(3240) int local3240 = local3216.anIntArrayArray50[0][1];
 				Static1.anIntArray2[local3240] = 1 - Static1.anIntArray2[local3240];
@@ -991,7 +991,7 @@ public final class Static35 {
 		}
 		if (Static2.anInt1334 != 0) {
 			Static2.anInt1334 = 0;
-			Static28.method3270(Static19.method1813(Static5.anInt4302));
+			Static28.method3270(InterfaceList.getComponent(Static5.anInt4302));
 		}
 		if (Static3.aBoolean177) {
 			Static26.method4812();
@@ -1357,7 +1357,7 @@ public final class Static35 {
 	}
 
 	@OriginalMember(owner = "client!ul", name = "a", descriptor = "(ILclient!wf;IIIII)V")
-	public static void method4360(@OriginalArg(0) int arg0, @OriginalArg(1) Class185 arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5) {
+	public static void method4360(@OriginalArg(0) int arg0, @OriginalArg(1) Component arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5) {
 		@Pc(10) Class82 local10 = Static22.method2191(arg3);
 		if (local10 == null || !local10.aBoolean155 || !local10.method1810()) {
 			return;

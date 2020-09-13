@@ -344,7 +344,7 @@ public final class Static10 {
 		local9.anInt4620 = arg0;
 		Static4.aClass84_13.put((long) arg2, local9);
 		Static9.method230(arg0);
-		@Pc(28) Class185 local28 = Static19.method1813(arg2);
+		@Pc(28) Component local28 = InterfaceList.getComponent(arg2);
 		if (local28 != null) {
 			Static28.method3270(local28);
 		}
@@ -672,7 +672,7 @@ public final class Static10 {
 	}
 
 	@OriginalMember(owner = "client!c", name = "a", descriptor = "(Lclient!wf;I)V")
-	public static void method467(@OriginalArg(0) Class185 arg0) {
+	public static void method467(@OriginalArg(0) Component arg0) {
 		@Pc(4) int local4 = arg0.anInt5904;
 		if (local4 == 324) {
 			if (Static4.anInt3017 == -1) {

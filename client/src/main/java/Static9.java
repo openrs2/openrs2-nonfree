@@ -154,7 +154,7 @@ public final class Static9 {
 	}
 
 	@OriginalMember(owner = "client!am", name = "a", descriptor = "(ILjava/lang/String;IIIIIILclient!gl;Lclient!wf;)V")
-	public static void method194(@OriginalArg(0) int arg0, @OriginalArg(1) String arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4, @OriginalArg(6) int arg5, @OriginalArg(7) int arg6, @OriginalArg(8) Class4_Sub3_Sub5 arg7, @OriginalArg(9) Class185 arg8) {
+	public static void method194(@OriginalArg(0) int arg0, @OriginalArg(1) String arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4, @OriginalArg(6) int arg5, @OriginalArg(7) int arg6, @OriginalArg(8) Class4_Sub3_Sub5 arg7, @OriginalArg(9) Component arg8) {
 		@Pc(14) int local14 = arg5 * arg5 + arg3 * arg3;
 		@Pc(21) int local21 = (int) Static5.aFloat97 + Static6.anInt3585 & 0x7FF;
 		@Pc(33) int local33 = Math.max(arg8.anInt5893 / 2, arg8.anInt5949 / 2) + 10;
@@ -470,12 +470,12 @@ public final class Static9 {
 
 	@OriginalMember(owner = "client!bb", name = "a", descriptor = "(II)V")
 	public static void method230(@OriginalArg(1) int arg0) {
-		if (!Static15.method1364(arg0)) {
+		if (!InterfaceList.load(arg0)) {
 			return;
 		}
-		@Pc(22) Class185[] local22 = Static5.aClass185ArrayArray115[arg0];
+		@Pc(22) Component[] local22 = InterfaceList.components[arg0];
 		for (@Pc(24) int local24 = 0; local24 < local22.length; local24++) {
-			@Pc(36) Class185 local36 = local22[local24];
+			@Pc(36) Component local36 = local22[local24];
 			if (local36 != null) {
 				local36.anInt5979 = 1;
 				local36.anInt5892 = 0;

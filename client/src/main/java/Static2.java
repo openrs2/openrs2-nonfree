@@ -126,7 +126,7 @@ public final class Static2 {
 	public static Js5 aClass58_40;
 
 	@OriginalMember(owner = "client!ff", name = "d", descriptor = "Lclient!wf;")
-	public static Class185 aClass185_4;
+	public static Component aClass185_4;
 
 	@OriginalMember(owner = "client!fg", name = "J", descriptor = "[[[B")
 	public static byte[][][] aByteArrayArrayArray4;

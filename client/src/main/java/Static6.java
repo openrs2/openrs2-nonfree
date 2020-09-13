@@ -159,7 +159,7 @@ public final class Static6 {
 	public static int anInt3786;
 
 	@OriginalMember(owner = "client!ro", name = "H", descriptor = "Lclient!wf;")
-	public static Class185 aClass185_13;
+	public static Component aClass185_13;
 
 	@OriginalMember(owner = "client!s", name = "cb", descriptor = "[J")
 	public static long[] aLongArray43;
@@ -474,7 +474,7 @@ public final class Static6 {
 	public static final int[] anIntArray517 = new int[200];
 
 	@OriginalMember(owner = "client!sg", name = "b", descriptor = "Lclient!wf;")
-	public static Class185 aClass185_14 = null;
+	public static Component aClass185_14 = null;
 
 	@OriginalMember(owner = "client!sg", name = "g", descriptor = "[I")
 	public static final int[] anIntArray519 = new int[] { 16, 32, 64, 128 };

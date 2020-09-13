@@ -138,7 +138,7 @@ public final class Static24 {
 	}
 
 	@OriginalMember(owner = "client!lj", name = "a", descriptor = "(ILclient!wf;B)Ljava/lang/String;")
-	public static String method2597(@OriginalArg(0) int arg0, @OriginalArg(1) Class185 arg1) {
+	public static String method2597(@OriginalArg(0) int arg0, @OriginalArg(1) Component arg1) {
 		if (!Static12.method687(arg1).method3266(arg0) && arg1.anObjectArray18 == null) {
 			return null;
 		} else if (arg1.aStringArray43 == null || arg0 >= arg1.aStringArray43.length || arg1.aStringArray43[arg0] == null || arg1.aStringArray43[arg0].trim().length() == 0) {

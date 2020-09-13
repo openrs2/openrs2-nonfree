@@ -108,7 +108,7 @@ public final class Static16 {
 			@Pc(32) int local32 = Static1.anInt403;
 			@Pc(46) int local46 = local18 + (local32 - local18) * (arg5 - arg2) / arg0;
 			if (Static3.aBoolean177 && (Static5.anInt3560 & 0x40) != 0) {
-				@Pc(85) Class185 local85 = Static23.method2425(Static1.anInt1053, Static2.anInt1367);
+				@Pc(85) Component local85 = Static23.method2425(Static1.anInt1053, Static2.anInt1367);
 				if (local85 == null) {
 					Static26.method4812();
 				} else {
@@ -635,12 +635,12 @@ public final class Static16 {
 						@Pc(14773) int local14773 = Static7.anIntArray571[local5];
 						@Pc(14779) int local14779 = Static7.anIntArray571[local5 + 1];
 						if (local14779 != 0) {
-							@Pc(14790) Class185 local14790 = Static19.method1813(local14773);
+							@Pc(14790) Component local14790 = InterfaceList.getComponent(local14773);
 							if (local14790.aClass185Array4 == null) {
-								local14790.aClass185Array4 = new Class185[local14769 + 1];
+								local14790.aClass185Array4 = new Component[local14769 + 1];
 							}
 							if (local14769 >= local14790.aClass185Array4.length) {
-								@Pc(14815) Class185[] local14815 = new Class185[local14769 + 1];
+								@Pc(14815) Component[] local14815 = new Component[local14769 + 1];
 								for (@Pc(14817) int local14817 = 0; local14817 < local14790.aClass185Array4.length; local14817++) {
 									local14815[local14817] = local14790.aClass185Array4[local14817];
 								}
@@ -649,11 +649,11 @@ public final class Static16 {
 							if (local14769 > 0 && local14790.aClass185Array4[local14769 - 1] == null) {
 								throw new RuntimeException("Gap at:" + (local14769 - 1));
 							}
-							@Pc(14865) Class185 local14865 = new Class185();
-							local14865.anInt5937 = local14865.anInt5914 = local14790.anInt5914;
-							local14865.aBoolean416 = true;
+							@Pc(14865) Component local14865 = new Component();
+							local14865.anInt5937 = local14865.id = local14790.id;
+							local14865.if3 = true;
 							local14865.anInt5968 = local14769;
-							local14865.anInt5911 = local14779;
+							local14865.type = local14779;
 							local14790.aClass185Array4[local14769] = local14865;
 							if (local846) {
 								Static3.aClass185_8 = local14865;
@@ -666,21 +666,21 @@ public final class Static16 {
 						throw new RuntimeException();
 					}
 					if (local45 == 101) {
-						@Pc(14911) Class185 local14911 = local846 ? Static3.aClass185_8 : Static4.aClass185_9;
+						@Pc(14911) Component local14911 = local846 ? Static3.aClass185_8 : Static4.aClass185_9;
 						if (local14911.anInt5968 == -1) {
 							if (!local846) {
 								throw new RuntimeException("Tried to cc_delete static active-component!");
 							}
 							throw new RuntimeException("Tried to .cc_delete static .active-component!");
 						}
-						@Pc(14935) Class185 local14935 = Static19.method1813(local14911.anInt5914);
+						@Pc(14935) Component local14935 = InterfaceList.getComponent(local14911.id);
 						local14935.aClass185Array4[local14911.anInt5968] = null;
 						Static28.method3270(local14935);
 						continue;
 					}
 					if (local45 == 102) {
 						local5--;
-						@Pc(14959) Class185 local14959 = Static19.method1813(Static7.anIntArray571[local5]);
+						@Pc(14959) Component local14959 = InterfaceList.getComponent(Static7.anIntArray571[local5]);
 						local14959.aClass185Array4 = null;
 						Static28.method3270(local14959);
 						continue;
@@ -689,7 +689,7 @@ public final class Static16 {
 						@Pc(14972) int local14972 = local5 - 2;
 						@Pc(14976) int local14976 = Static7.anIntArray571[local14972];
 						@Pc(14982) int local14982 = Static7.anIntArray571[local14972 + 1];
-						@Pc(14987) Class185 local14987 = Static23.method2425(local14976, local14982);
+						@Pc(14987) Component local14987 = Static23.method2425(local14976, local14982);
 						if (local14987 != null && local14982 != -1) {
 							local5 = local14972 + 1;
 							Static7.anIntArray571[local14972] = 1;
@@ -707,7 +707,7 @@ public final class Static16 {
 					if (local45 == 201) {
 						@Pc(15022) int local15022 = local5 - 1;
 						@Pc(15025) int local15025 = Static7.anIntArray571[local15022];
-						@Pc(15031) Class185 local15031 = Static19.method1813(local15025);
+						@Pc(15031) Component local15031 = InterfaceList.getComponent(local15025);
 						if (local15031 == null) {
 							local5 = local15022 + 1;
 							Static7.anIntArray571[local15022] = 0;
@@ -759,12 +759,12 @@ public final class Static16 {
 						continue;
 					}
 				} else if (local45 >= 1000 && local45 < 1100 || local45 >= 2000 && local45 < 2100) {
-					@Pc(885) Class185 local885;
+					@Pc(885) Component local885;
 					if (local45 < 2000) {
 						local885 = local846 ? Static3.aClass185_8 : Static4.aClass185_9;
 					} else {
 						local5--;
-						local885 = Static19.method1813(Static7.anIntArray571[local5]);
+						local885 = InterfaceList.getComponent(Static7.anIntArray571[local5]);
 						local45 -= 1000;
 					}
 					if (local45 == 1000) {
@@ -788,7 +788,7 @@ public final class Static16 {
 						Static28.method3270(local885);
 						Static33.method4118(local885);
 						if (local885.anInt5968 == -1) {
-							Static36.method4405(local885.anInt5914);
+							Static36.method4405(local885.id);
 						}
 						continue;
 					}
@@ -814,7 +814,7 @@ public final class Static16 {
 						local885.aByte24 = (byte) local1021;
 						Static28.method3270(local885);
 						Static33.method4118(local885);
-						if (local885.anInt5911 == 0) {
+						if (local885.type == 0) {
 							Static34.method4251(false, local885);
 						}
 						continue;
@@ -827,7 +827,7 @@ public final class Static16 {
 							Static28.method3270(local885);
 						}
 						if (local885.anInt5968 == -1) {
-							Static32.method4026(local885.anInt5914);
+							Static32.method4026(local885.id);
 						}
 						continue;
 					}
@@ -837,7 +837,7 @@ public final class Static16 {
 						local885.anInt5970 = Static7.anIntArray571[local5 + 1];
 						Static28.method3270(local885);
 						Static33.method4118(local885);
-						if (local885.anInt5911 == 0) {
+						if (local885.type == 0) {
 							Static34.method4251(false, local885);
 						}
 						continue;
@@ -848,10 +848,10 @@ public final class Static16 {
 						continue;
 					}
 				} else if (local45 >= 1100 && local45 < 1200 || local45 >= 2100 && local45 < 2200) {
-					@Pc(1190) Class185 local1190;
+					@Pc(1190) Component local1190;
 					if (local45 >= 2000) {
 						local5--;
-						local1190 = Static19.method1813(Static7.anIntArray571[local5]);
+						local1190 = InterfaceList.getComponent(Static7.anIntArray571[local5]);
 						local45 -= 1000;
 					} else {
 						local1190 = local846 ? Static3.aClass185_8 : Static4.aClass185_9;
@@ -874,7 +874,7 @@ public final class Static16 {
 						}
 						Static28.method3270(local1190);
 						if (local1190.anInt5968 == -1) {
-							Static8.method111(local1190.anInt5914);
+							Static8.method111(local1190.id);
 						}
 						continue;
 					}
@@ -883,7 +883,7 @@ public final class Static16 {
 						local1190.anInt5933 = Static7.anIntArray571[local5];
 						Static28.method3270(local1190);
 						if (local1190.anInt5968 == -1) {
-							Static33.method4092(local1190.anInt5914);
+							Static33.method4092(local1190.id);
 						}
 						continue;
 					}
@@ -929,7 +929,7 @@ public final class Static16 {
 						local1190.anInt5895 = Static7.anIntArray571[local5];
 						Static28.method3270(local1190);
 						if (local1190.anInt5968 == -1) {
-							Static12.method779(local1190.anInt5914);
+							Static12.method779(local1190.id);
 						}
 						continue;
 					}
@@ -943,8 +943,8 @@ public final class Static16 {
 						local1190.anInt5918 = Static7.anIntArray571[local5 + 5];
 						Static28.method3270(local1190);
 						if (local1190.anInt5968 == -1) {
-							Static21.method1994(local1190.anInt5914);
-							Static15.method1224(local1190.anInt5914);
+							Static21.method1994(local1190.id);
+							Static15.method1224(local1190.id);
 						}
 						continue;
 					}
@@ -959,7 +959,7 @@ public final class Static16 {
 							Static28.method3270(local1190);
 						}
 						if (local1190.anInt5968 == -1) {
-							Static35.method680(local1190.anInt5914);
+							Static35.method680(local1190.id);
 						}
 						continue;
 					}
@@ -977,7 +977,7 @@ public final class Static16 {
 							Static28.method3270(local1190);
 						}
 						if (local1190.anInt5968 == -1) {
-							Static37.method4678(local1190.anInt5914);
+							Static37.method4678(local1190.id);
 						}
 						continue;
 					}
@@ -1030,7 +1030,7 @@ public final class Static16 {
 						local1190.anInt5885 = Static7.anIntArray571[local5];
 						local1190.anInt5887 = Static7.anIntArray571[local5 + 1];
 						Static28.method3270(local1190);
-						if (local1190.anInt5911 == 0) {
+						if (local1190.type == 0) {
 							Static34.method4251(false, local1190);
 						}
 						continue;
@@ -1053,7 +1053,7 @@ public final class Static16 {
 						local1190.anInt5918 = Static7.anIntArray571[local5];
 						Static28.method3270(local1190);
 						if (local1190.anInt5968 == -1) {
-							Static21.method1994(local1190.anInt5914);
+							Static21.method1994(local1190.id);
 						}
 						continue;
 					}
@@ -1065,13 +1065,13 @@ public final class Static16 {
 						continue;
 					}
 				} else if (local45 >= 1200 && local45 < 1300 || local45 >= 2200 && local45 < 2300) {
-					@Pc(1917) Class185 local1917;
+					@Pc(1917) Component local1917;
 					if (local45 < 2000) {
 						local1917 = local846 ? Static3.aClass185_8 : Static4.aClass185_9;
 					} else {
 						local45 -= 1000;
 						local5--;
-						local1917 = Static19.method1813(Static7.anIntArray571[local5]);
+						local1917 = InterfaceList.getComponent(Static7.anIntArray571[local5]);
 					}
 					Static28.method3270(local1917);
 					if (local45 == 1200 || local45 == 1205 || local45 == 1208 || local45 == 1209) {
@@ -1079,9 +1079,9 @@ public final class Static16 {
 						@Pc(1955) int local1955 = Static7.anIntArray571[local5 + 1];
 						@Pc(1959) int local1959 = Static7.anIntArray571[local5];
 						if (local1917.anInt5968 == -1) {
-							Static35.method676(local1917.anInt5914);
-							Static21.method1994(local1917.anInt5914);
-							Static15.method1224(local1917.anInt5914);
+							Static35.method676(local1917.id);
+							Static21.method1994(local1917.id);
+							Static15.method1224(local1917.id);
 						}
 						if (local1959 == -1) {
 							local1917.anInt5939 = 1;
@@ -1120,7 +1120,7 @@ public final class Static16 {
 						local5--;
 						local1917.anInt5895 = Static7.anIntArray571[local5];
 						if (local1917.anInt5968 == -1) {
-							Static12.method779(local1917.anInt5914);
+							Static12.method779(local1917.id);
 						}
 						continue;
 					}
@@ -1128,7 +1128,7 @@ public final class Static16 {
 						local1917.anInt5939 = 3;
 						local1917.anInt5895 = Static4.aClass53_Sub1_Sub1_2.appearance.method3611();
 						if (local1917.anInt5968 == -1) {
-							Static12.method779(local1917.anInt5914);
+							Static12.method779(local1917.id);
 						}
 						continue;
 					}
@@ -1137,7 +1137,7 @@ public final class Static16 {
 						local5--;
 						local1917.anInt5895 = Static7.anIntArray571[local5];
 						if (local1917.anInt5968 == -1) {
-							Static12.method779(local1917.anInt5914);
+							Static12.method779(local1917.id);
 						}
 						continue;
 					}
@@ -1146,7 +1146,7 @@ public final class Static16 {
 						local5--;
 						local1917.anInt5895 = Static7.anIntArray571[local5];
 						if (local1917.anInt5968 == -1) {
-							Static12.method779(local1917.anInt5914);
+							Static12.method779(local1917.id);
 						}
 						continue;
 					}
@@ -1167,13 +1167,13 @@ public final class Static16 {
 						continue;
 					}
 				} else if (local45 >= 1300 && local45 < 1400 || local45 >= 2300 && local45 < 2400) {
-					@Pc(2274) Class185 local2274;
+					@Pc(2274) Component local2274;
 					if (local45 < 2000) {
 						local2274 = local846 ? Static3.aClass185_8 : Static4.aClass185_9;
 					} else {
 						local45 -= 1000;
 						local5--;
-						local2274 = Static19.method1813(Static7.anIntArray571[local5]);
+						local2274 = InterfaceList.getComponent(Static7.anIntArray571[local5]);
 					}
 					if (local45 == 1300) {
 						local5--;
@@ -1246,12 +1246,12 @@ public final class Static16 {
 					}
 				} else {
 					if (local45 >= 1400 && local45 < 1500 || local45 >= 2400 && local45 < 2500) {
-						@Pc(2505) Class185 local2505;
+						@Pc(2505) Component local2505;
 						if (local45 < 2000) {
 							local2505 = local846 ? Static3.aClass185_8 : Static4.aClass185_9;
 						} else {
 							local5--;
-							local2505 = Static19.method1813(Static7.anIntArray571[local5]);
+							local2505 = InterfaceList.getComponent(Static7.anIntArray571[local5]);
 							local45 -= 1000;
 						}
 						local13--;
@@ -1354,7 +1354,7 @@ public final class Static16 {
 						continue;
 					}
 					if (local45 < 1600) {
-						@Pc(14557) Class185 local14557 = local846 ? Static3.aClass185_8 : Static4.aClass185_9;
+						@Pc(14557) Component local14557 = local846 ? Static3.aClass185_8 : Static4.aClass185_9;
 						if (local45 == 1500) {
 							Static7.anIntArray571[local5++] = local14557.anInt5960;
 							continue;
@@ -1380,7 +1380,7 @@ public final class Static16 {
 							continue;
 						}
 					} else if (local45 < 1700) {
-						@Pc(2934) Class185 local2934 = local846 ? Static3.aClass185_8 : Static4.aClass185_9;
+						@Pc(2934) Component local2934 = local846 ? Static3.aClass185_8 : Static4.aClass185_9;
 						if (local45 == 1600) {
 							Static7.anIntArray571[local5++] = local2934.anInt5932;
 							continue;
@@ -1434,7 +1434,7 @@ public final class Static16 {
 							continue;
 						}
 					} else if (local45 < 1800) {
-						@Pc(3109) Class185 local3109 = local846 ? Static3.aClass185_8 : Static4.aClass185_9;
+						@Pc(3109) Component local3109 = local846 ? Static3.aClass185_8 : Static4.aClass185_9;
 						if (local45 == 1700) {
 							Static7.anIntArray571[local5++] = local3109.anInt5938;
 							continue;
@@ -1452,7 +1452,7 @@ public final class Static16 {
 							continue;
 						}
 					} else if (local45 < 1900) {
-						@Pc(3170) Class185 local3170 = local846 ? Static3.aClass185_8 : Static4.aClass185_9;
+						@Pc(3170) Component local3170 = local846 ? Static3.aClass185_8 : Static4.aClass185_9;
 						if (local45 == 1800) {
 							Static7.anIntArray571[local5++] = Static12.method687(local3170).method3273();
 							continue;
@@ -1478,7 +1478,7 @@ public final class Static16 {
 						}
 					} else if (local45 < 2600) {
 						@Pc(14466) int local14466 = local5 - 1;
-						@Pc(14470) Class185 local14470 = Static19.method1813(Static7.anIntArray571[local14466]);
+						@Pc(14470) Component local14470 = InterfaceList.getComponent(Static7.anIntArray571[local14466]);
 						if (local45 == 2500) {
 							local5 = local14466 + 1;
 							Static7.anIntArray571[local14466] = local14470.anInt5960;
@@ -1511,7 +1511,7 @@ public final class Static16 {
 						}
 					} else if (local45 < 2700) {
 						local5--;
-						@Pc(14299) Class185 local14299 = Static19.method1813(Static7.anIntArray571[local5]);
+						@Pc(14299) Component local14299 = InterfaceList.getComponent(Static7.anIntArray571[local5]);
 						if (local45 == 2600) {
 							Static7.anIntArray571[local5++] = local14299.anInt5932;
 							continue;
@@ -1567,14 +1567,14 @@ public final class Static16 {
 					} else if (local45 < 2800) {
 						if (local45 == 2700) {
 							@Pc(14115) int local14115 = local5 - 1;
-							@Pc(14119) Class185 local14119 = Static19.method1813(Static7.anIntArray571[local14115]);
+							@Pc(14119) Component local14119 = InterfaceList.getComponent(Static7.anIntArray571[local14115]);
 							local5 = local14115 + 1;
 							Static7.anIntArray571[local14115] = local14119.anInt5938;
 							continue;
 						}
 						if (local45 == 2701) {
 							@Pc(14134) int local14134 = local5 - 1;
-							@Pc(14138) Class185 local14138 = Static19.method1813(Static7.anIntArray571[local14134]);
+							@Pc(14138) Component local14138 = InterfaceList.getComponent(Static7.anIntArray571[local14134]);
 							if (local14138.anInt5938 == -1) {
 								local5 = local14134 + 1;
 								Static7.anIntArray571[local14134] = 0;
@@ -1599,7 +1599,7 @@ public final class Static16 {
 						}
 						if (local45 == 2703) {
 							@Pc(14202) int local14202 = local5 - 1;
-							@Pc(14206) Class185 local14206 = Static19.method1813(Static7.anIntArray571[local14202]);
+							@Pc(14206) Component local14206 = InterfaceList.getComponent(Static7.anIntArray571[local14202]);
 							if (local14206.aClass185Array4 == null) {
 								local5 = local14202 + 1;
 								Static7.anIntArray571[local14202] = 0;
@@ -1632,7 +1632,7 @@ public final class Static16 {
 						}
 					} else if (local45 < 2900) {
 						local5--;
-						@Pc(3273) Class185 local3273 = Static19.method1813(Static7.anIntArray571[local5]);
+						@Pc(3273) Component local3273 = InterfaceList.getComponent(Static7.anIntArray571[local5]);
 						if (local45 == 2800) {
 							Static7.anIntArray571[local5++] = Static12.method687(local3273).method3273();
 							continue;
@@ -1711,7 +1711,7 @@ public final class Static16 {
 							@Pc(14033) int local14033 = Static7.anIntArray571[local5];
 							@Pc(14039) int local14039 = Static7.anIntArray571[local5 + 2];
 							@Pc(14045) int local14045 = Static7.anIntArray571[local5 + 1];
-							@Pc(14049) Class185 local14049 = Static19.method1813(local14039);
+							@Pc(14049) Component local14049 = InterfaceList.getComponent(local14039);
 							Static15.method1401(local14049, local14033, local14045);
 							continue;
 						}
@@ -1719,7 +1719,7 @@ public final class Static16 {
 							local5 -= 2;
 							@Pc(14069) int local14069 = Static7.anIntArray571[local5 + 1];
 							@Pc(14073) int local14073 = Static7.anIntArray571[local5];
-							@Pc(14079) Class185 local14079 = local846 ? Static3.aClass185_8 : Static4.aClass185_9;
+							@Pc(14079) Component local14079 = local846 ? Static3.aClass185_8 : Static4.aClass185_9;
 							Static15.method1401(local14079, local14073, local14069);
 							continue;
 						}

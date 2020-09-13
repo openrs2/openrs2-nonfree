@@ -368,22 +368,22 @@ public final class client extends GameShell {
 		}
 		while (true) {
 			@Pc(389) Class4_Sub13 local389;
-			@Pc(395) Class185 local395;
-			@Pc(406) Class185 local406;
+			@Pc(395) Component local395;
+			@Pc(406) Component local406;
 			do {
 				local389 = (Class4_Sub13) Static2.aClass112_6.removeHead();
 				if (local389 == null) {
 					while (true) {
 						@Pc(440) Class4_Sub13 local440;
-						@Pc(448) Class185 local448;
-						@Pc(460) Class185 local460;
+						@Pc(448) Component local448;
+						@Pc(460) Component local460;
 						do {
 							local440 = (Class4_Sub13) Static2.aClass112_10.removeHead();
 							if (local440 == null) {
 								while (true) {
 									@Pc(489) Class4_Sub13 local489;
-									@Pc(496) Class185 local496;
-									@Pc(505) Class185 local505;
+									@Pc(496) Component local496;
+									@Pc(505) Component local505;
 									do {
 										local489 = (Class4_Sub13) Static3.aClass112_14.removeHead();
 										if (local489 == null) {
@@ -407,7 +407,7 @@ public final class client extends GameShell {
 										if (local496.anInt5968 < 0) {
 											break;
 										}
-										local505 = Static19.method1813(local496.anInt5937);
+										local505 = InterfaceList.getComponent(local496.anInt5937);
 									} while (local505 == null || local505.aClass185Array4 == null || local505.aClass185Array4.length <= local496.anInt5968 || local505.aClass185Array4[local496.anInt5968] != local496);
 									Static21.method2019(local489);
 								}
@@ -416,7 +416,7 @@ public final class client extends GameShell {
 							if (local448.anInt5968 < 0) {
 								break;
 							}
-							local460 = Static19.method1813(local448.anInt5937);
+							local460 = InterfaceList.getComponent(local448.anInt5937);
 						} while (local460 == null || local460.aClass185Array4 == null || local448.anInt5968 >= local460.aClass185Array4.length || local460.aClass185Array4[local448.anInt5968] != local448);
 						Static21.method2019(local440);
 					}
@@ -425,7 +425,7 @@ public final class client extends GameShell {
 				if (local395.anInt5968 < 0) {
 					break;
 				}
-				local406 = Static19.method1813(local395.anInt5937);
+				local406 = InterfaceList.getComponent(local395.anInt5937);
 			} while (local406 == null || local406.aClass185Array4 == null || local395.anInt5968 >= local406.aClass185Array4.length || local406.aClass185Array4[local395.anInt5968] != local395);
 			Static21.method2019(local389);
 		}
@@ -631,7 +631,7 @@ public final class client extends GameShell {
 				Static22.method2362(js5Archive21, js5Archive7);
 				VarbitTypeList.init(js5Archive22);
 				VarpTypeList.init(js5Archive2);
-				Static37.method4787(js5Archive8, js5Archive13, js5Archive3, js5Archive7);
+				InterfaceList.init(js5Archive3, js5Archive7, js5Archive8, js5Archive13);
 				InvTypeList.init(js5Archive2);
 				EnumTypeList.init(js5Archive17);
 				Static16.method1521(js5Archive25, new Class128(), js5Archive24);

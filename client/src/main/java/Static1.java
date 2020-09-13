@@ -213,7 +213,7 @@ public final class Static1 {
 	public static int anInt894;
 
 	@OriginalMember(owner = "client!dc", name = "g", descriptor = "Lclient!wf;")
-	public static Class185 aClass185_3;
+	public static Component aClass185_3;
 
 	@OriginalMember(owner = "client!dc", name = "l", descriptor = "I")
 	public static int anInt901;
@@ -420,7 +420,7 @@ public final class Static1 {
 	public static float aFloat20 = 0.0F;
 
 	@OriginalMember(owner = "client!cf", name = "W", descriptor = "Lclient!wf;")
-	public static Class185 aClass185_1 = null;
+	public static Component aClass185_1 = null;
 
 	@OriginalMember(owner = "client!cf", name = "X", descriptor = "[[I")
 	public static final int[][] anIntArrayArray5 = new int[][] { { 0, 128, 0, 0, 128, 0, 128, 128 }, { 0, 128, 0, 0, 128, 0 }, { 0, 0, 64, 128, 0, 128 }, { 128, 128, 64, 128, 128, 0 }, { 0, 0, 128, 0, 128, 128, 64, 128 }, { 0, 128, 0, 0, 128, 0, 64, 128 }, { 64, 128, 0, 128, 0, 0, 64, 0 }, { 0, 0, 64, 0, 0, 64 }, { 128, 0, 128, 128, 0, 128, 0, 64, 64, 0 }, { 0, 128, 0, 0, 32, 64, 64, 96, 128, 128 }, { 0, 0, 128, 0, 128, 128, 64, 96, 32, 64 }, { 0, 0, 128, 0, 96, 32, 32, 32 } };
@@ -441,7 +441,7 @@ public final class Static1 {
 	public static final PlayerAppearance aClass144_1 = new PlayerAppearance();
 
 	@OriginalMember(owner = "client!ci", name = "j", descriptor = "Lclient!wf;")
-	public static Class185 aClass185_2 = null;
+	public static Component aClass185_2 = null;
 
 	@OriginalMember(owner = "client!ci", name = "k", descriptor = "I")
 	public static int anInt626 = 0;

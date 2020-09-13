@@ -40,7 +40,7 @@ public final class Static4 {
 	public static int anInt2748;
 
 	@OriginalMember(owner = "client!ka", name = "g", descriptor = "Lclient!wf;")
-	public static Class185 aClass185_9;
+	public static Component aClass185_9;
 
 	@OriginalMember(owner = "client!kf", name = "P", descriptor = "I")
 	public static int anInt2853;
@@ -151,7 +151,7 @@ public final class Static4 {
 	public static int[] anIntArray309;
 
 	@OriginalMember(owner = "client!ma", name = "c", descriptor = "[Lclient!wf;")
-	public static Class185[] aClass185Array3;
+	public static Component[] aClass185Array3;
 
 	@OriginalMember(owner = "client!mb", name = "f", descriptor = "F")
 	public static float aFloat85;

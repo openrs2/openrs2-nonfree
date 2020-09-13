@@ -111,7 +111,7 @@ public final class Static30 {
 	}
 
 	@OriginalMember(owner = "client!qg", name = "a", descriptor = "(IIBI[Lclient!wf;IIIII)V")
-	public static void method3554(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) Class185[] arg3, @OriginalArg(5) int arg4, @OriginalArg(6) int arg5, @OriginalArg(7) int arg6, @OriginalArg(8) int arg7, @OriginalArg(9) int arg8) {
+	public static void method3554(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) Component[] arg3, @OriginalArg(5) int arg4, @OriginalArg(6) int arg5, @OriginalArg(7) int arg6, @OriginalArg(8) int arg7, @OriginalArg(9) int arg8) {
 		if (Static3.aBoolean138) {
 			Static18.method1693(arg8, arg6, arg5, arg4);
 		} else {
@@ -119,7 +119,7 @@ public final class Static30 {
 			Static23.method2561();
 		}
 		for (@Pc(22) int local22 = 0; local22 < arg3.length; local22++) {
-			@Pc(38) Class185 local38 = arg3[local22];
+			@Pc(38) Component local38 = arg3[local22];
 			if (local38 != null && (arg1 == local38.anInt5937 || arg1 == -1412584499 && local38 == Static1.aClass185_1)) {
 				@Pc(89) int local89;
 				if (arg2 == -1) {
@@ -133,14 +133,14 @@ public final class Static30 {
 				}
 				local38.anInt5900 = Static2.anInt954;
 				local38.anInt5967 = local89;
-				if (!local38.aBoolean416 || !Static12.method692(local38)) {
+				if (!local38.if3 || !Static12.method692(local38)) {
 					if (local38.anInt5904 > 0) {
 						Static10.method467(local38);
 					}
 					@Pc(117) int local117 = local38.anInt5903;
 					@Pc(122) int local122 = local38.anInt5888 + arg7;
 					@Pc(128) int local128 = local38.anInt5960 + arg0;
-					if (Static1.aBoolean26 && (Static12.method687(local38).anInt3947 != 0 || local38.anInt5911 == 0) && local117 > 127) {
+					if (Static1.aBoolean26 && (Static12.method687(local38).anInt3947 != 0 || local38.type == 0) && local117 > 127) {
 						local117 = 127;
 					}
 					if (local38 == Static1.aClass185_1) {
@@ -178,7 +178,7 @@ public final class Static30 {
 					@Pc(298) int local298;
 					@Pc(266) int local266;
 					@Pc(259) int local259;
-					if (local38.anInt5911 == 2) {
+					if (local38.type == 2) {
 						local259 = arg6;
 						local309 = arg5;
 						local266 = arg8;
@@ -188,14 +188,14 @@ public final class Static30 {
 						local266 = local128 <= arg8 ? arg8 : local128;
 						@Pc(272) int local272 = local128 + local38.anInt5893;
 						@Pc(278) int local278 = local122 + local38.anInt5949;
-						if (local38.anInt5911 == 9) {
+						if (local38.type == 9) {
 							local272++;
 							local278++;
 						}
 						local298 = local278 >= arg4 ? arg4 : local278;
 						local309 = local272 >= arg5 ? arg5 : local272;
 					}
-					if (!local38.aBoolean416 || local266 < local309 && local298 > local259) {
+					if (!local38.if3 || local266 < local309 && local298 > local259) {
 						if (local38.anInt5904 != 0) {
 							if (local38.anInt5904 == 1337 || local38.anInt5904 == 1403) {
 								Static3.anInt2047 = local128;
@@ -241,7 +241,7 @@ public final class Static30 {
 								@Pc(567) int local567 = Static4.aClass53_Sub1_Sub1_2.x + local540 + 64 - Static4.aClass53_Sub1_Sub1_2.getSize() * 64 >> 7;
 								@Pc(583) int local583 = Static4.aClass53_Sub1_Sub1_2.z + 64 - local551 - Static4.aClass53_Sub1_Sub1_2.getSize() * 64 >> 7;
 								if (Static3.aBoolean177 && (Static5.anInt3560 & 0x40) != 0) {
-									@Pc(597) Class185 local597 = Static23.method2425(Static1.anInt1053, Static2.anInt1367);
+									@Pc(597) Component local597 = Static23.method2425(Static1.anInt1053, Static2.anInt1367);
 									if (local597 == null) {
 										Static26.method4812();
 									} else {
@@ -350,7 +350,7 @@ public final class Static30 {
 							}
 						}
 						if (!Static1.aBoolean17) {
-							if (local38.anInt5911 == 0 && local38.aBoolean407 && local266 <= Static4.anInt3341 && Static5.anInt5848 >= local259 && Static4.anInt3341 < local309 && local298 > Static5.anInt5848 && !Static1.aBoolean26) {
+							if (local38.type == 0 && local38.aBoolean407 && local266 <= Static4.anInt3341 && Static5.anInt5848 >= local259 && Static4.anInt3341 < local309 && local298 > Static5.anInt5848 && !Static1.aBoolean26) {
 								Static6.aShortArray100[0] = 1006;
 								Static6.aStringArray30[0] = LocalisedText.CANCEL;
 								Static6.aStringArray27[0] = "";
@@ -361,11 +361,11 @@ public final class Static30 {
 								Static15.method1427(local38, Static5.anInt5848 - local122, Static4.anInt3341 - local128);
 							}
 						}
-						if (local38.anInt5911 == 0) {
-							if (!local38.aBoolean416 && Static12.method692(local38) && local38 != Static5.aClass185_11) {
+						if (local38.type == 0) {
+							if (!local38.if3 && Static12.method692(local38) && local38 != Static5.aClass185_11) {
 								continue;
 							}
-							if (!local38.aBoolean416) {
+							if (!local38.if3) {
 								if (local38.anInt5887 - local38.anInt5949 < local38.anInt5931) {
 									local38.anInt5931 = local38.anInt5887 - local38.anInt5949;
 								}
@@ -376,11 +376,11 @@ public final class Static30 {
 							if (Static3.aBoolean138 && local38.anInt5904 == 1407) {
 								Static13.method874(local128, local122, local38.anInt5893, local38.anInt5949);
 							}
-							method3554(local128 - local38.anInt5932, local38.anInt5914, local89, arg3, local298, local309, local259, local122 - local38.anInt5931, local266);
+							method3554(local128 - local38.anInt5932, local38.id, local89, arg3, local298, local309, local259, local122 - local38.anInt5931, local266);
 							if (local38.aClass185Array4 != null) {
-								method3554(local128 - local38.anInt5932, local38.anInt5914, local89, local38.aClass185Array4, local298, local309, local259, local122 - local38.anInt5931, local266);
+								method3554(local128 - local38.anInt5932, local38.id, local89, local38.aClass185Array4, local298, local309, local259, local122 - local38.anInt5931, local266);
 							}
-							@Pc(1207) Class4_Sub27 local1207 = (Class4_Sub27) Static4.aClass84_13.get((long) local38.anInt5914);
+							@Pc(1207) Class4_Sub27 local1207 = (Class4_Sub27) Static4.aClass84_13.get((long) local38.id);
 							if (local1207 != null) {
 								if (local1207.anInt4619 == 0 && !Static1.aBoolean17 && Static4.anInt3341 >= local266 && Static5.anInt5848 >= local259 && local309 > Static4.anInt3341 && Static5.anInt5848 < local298 && !Static1.aBoolean26) {
 									Static6.aShortArray100[0] = 1006;
@@ -403,11 +403,11 @@ public final class Static30 {
 							}
 						}
 						if (Static1.aBooleanArray2[local89] || Static1.anInt268 > 1) {
-							if (local38.anInt5911 == 0 && !local38.aBoolean416 && local38.anInt5949 < local38.anInt5887) {
+							if (local38.type == 0 && !local38.if3 && local38.anInt5949 < local38.anInt5887) {
 								method3607(local38.anInt5949, local38.anInt5893 + local128, local38.anInt5887, local122, local38.anInt5931);
 							}
-							if (local38.anInt5911 != 1) {
-								if (local38.anInt5911 == 2) {
+							if (local38.type != 1) {
+								if (local38.type == 2) {
 									@Pc(1338) int local1338 = 0;
 									for (@Pc(1340) int local1340 = 0; local1340 < local38.anInt5950; local1340++) {
 										for (@Pc(1346) int local1346 = 0; local1346 < local38.anInt5927; local1346++) {
@@ -421,7 +421,7 @@ public final class Static30 {
 												@Pc(1402) int local1402 = local38.anIntArray660[local1338] - 1;
 												if (local1369 + 32 > arg8 && local1369 < arg5 && arg6 < local1359 + 32 && local1359 < arg4 || local38 == Static5.aClass185_10 && Static1.anInt91 == local1338) {
 													@Pc(1463) Class4_Sub3_Sub14 local1463;
-													if (Static2.anInt1334 == 1 && local1338 == Static1.anInt314 && local38.anInt5914 == Static5.anInt4302) {
+													if (Static2.anInt1334 == 1 && local1338 == Static1.anInt314 && local38.id == Static5.anInt4302) {
 														local1463 = Static37.method4676(local38.anIntArray661[local1338], 2, local38.aBoolean405, null, local1402, 0);
 													} else {
 														local1463 = Static37.method4676(local38.anIntArray661[local1338], 1, local38.aBoolean405, null, local1402, 3153952);
@@ -446,7 +446,7 @@ public final class Static30 {
 														}
 														local1463.method4513(local1498 + local1369, local1359 + local1503, 128);
 														if (arg1 != -1) {
-															@Pc(1551) Class185 local1551 = arg3[arg1 & 0xFFFF];
+															@Pc(1551) Component local1551 = arg3[arg1 & 0xFFFF];
 															@Pc(1557) int local1557;
 															@Pc(1555) int local1555;
 															if (Static3.aBoolean138) {
@@ -498,7 +498,7 @@ public final class Static30 {
 											local1338++;
 										}
 									}
-								} else if (local38.anInt5911 == 3) {
+								} else if (local38.type == 3) {
 									@Pc(1782) int local1782;
 									if (Static33.method4199(local38)) {
 										local1782 = local38.anInt5902;
@@ -534,7 +534,7 @@ public final class Static30 {
 									} else {
 										Static34.method4221(local128, local122, local38.anInt5893, local38.anInt5949, local1782, 256 - (local117 & 0xFF));
 									}
-								} else if (local38.anInt5911 == 4) {
+								} else if (local38.type == 4) {
 									@Pc(1944) Class4_Sub3_Sub5 local1944 = local38.method4734(Static3.aClass56Array3);
 									if (local1944 != null) {
 										@Pc(1957) String local1957 = local38.aString351;
@@ -553,7 +553,7 @@ public final class Static30 {
 												local1964 = local38.anInt5966;
 											}
 										}
-										if (local38.aBoolean416 && local38.anInt5938 != -1) {
+										if (local38.if3 && local38.anInt5938 != -1) {
 											@Pc(2008) ObjType local2008 = ObjTypeList.get(local38.anInt5938);
 											local1957 = local2008.name;
 											if (local1957 == null) {
@@ -567,15 +567,15 @@ public final class Static30 {
 											local1957 = LocalisedText.PLEASEWAIT;
 											local1964 = local38.anInt5933;
 										}
-										if (!local38.aBoolean416) {
+										if (!local38.if3) {
 											local1957 = Static19.method1820(local38, local1957);
 										}
 										local1944.method2255(local1957, local128, local122, local38.anInt5893, local38.anInt5949, local1964, local38.aBoolean415 ? 0 : -1, local38.anInt5924, local38.anInt5922, local38.anInt5948);
 									} else if (Static3.aBoolean178) {
 										Static28.method3270(local38);
 									}
-								} else if (local38.anInt5911 == 5) {
-									if (!local38.aBoolean416) {
+								} else if (local38.type == 5) {
+									if (!local38.if3) {
 										@Pc(2106) Class4_Sub3_Sub14 local2106 = local38.method4729(Static33.method4199(local38));
 										if (local2106 != null) {
 											local2106.method4506(local128, local122);
@@ -674,7 +674,7 @@ public final class Static30 {
 											Static28.method3270(local38);
 										}
 									}
-								} else if (local38.anInt5911 == 6) {
+								} else if (local38.type == 6) {
 									@Pc(2663) boolean local2663 = Static33.method4199(local38);
 									@Pc(2665) Class53_Sub4 local2665 = null;
 									@Pc(2670) int local2670;
@@ -763,7 +763,7 @@ public final class Static30 {
 											}
 											@Pc(3115) int local3115 = Class109.anIntArray298[local38.anInt5944] * local38.anInt5918 >> 16;
 											@Pc(3125) int local3125 = local38.anInt5918 * Class109.anIntArray299[local38.anInt5944] >> 16;
-											if (local38.aBoolean416) {
+											if (local38.if3) {
 												local2665.method3822(local38.anInt5976, local38.anInt5886, local38.anInt5944, local38.anInt5963, local38.anInt5906 + local2677 + local3125, local3115 + local38.anInt5906, -1L);
 											} else {
 												local2665.method3822(local38.anInt5976, 0, local38.anInt5944, 0, local3125, local3115, -1L);
@@ -775,7 +775,7 @@ public final class Static30 {
 											Static23.method2556(local2952, local2938);
 											@Pc(2967) int local2967 = local38.anInt5918 * Class109.anIntArray298[local38.anInt5944] >> 16;
 											@Pc(2977) int local2977 = Class109.anIntArray299[local38.anInt5944] * local38.anInt5918 >> 16;
-											if (!local38.aBoolean416) {
+											if (!local38.if3) {
 												local2665.method3822(local38.anInt5976, 0, local38.anInt5944, 0, local2977, local2967, -1L);
 											} else if (local38.aBoolean418) {
 												((Class53_Sub4_Sub1) local2665).method2911(local38.anInt5976, local38.anInt5886, local38.anInt5944, local38.anInt5963, local2977 + local2677 + local38.anInt5906, local2967 + local38.anInt5906, local38.anInt5918);
@@ -786,7 +786,7 @@ public final class Static30 {
 										}
 									}
 								} else {
-									if (local38.anInt5911 == 7) {
+									if (local38.type == 7) {
 										@Pc(3183) Class4_Sub3_Sub5 local3183 = local38.method4734(Static3.aClass56Array3);
 										if (local3183 == null) {
 											if (Static3.aBoolean178) {
@@ -819,7 +819,7 @@ public final class Static30 {
 											}
 										}
 									}
-									if (local38.anInt5911 == 8 && Static2.aClass185_4 == local38 && Static4.anInt3493 == Static5.anInt5840) {
+									if (local38.type == 8 && Static2.aClass185_4 == local38 && Static4.anInt3493 == Static5.anInt5840) {
 										@Pc(3363) int local3363 = 0;
 										@Pc(3365) Class4_Sub3_Sub5 local3365 = Static5.aClass4_Sub3_Sub5_2;
 										@Pc(3367) int local3367 = 0;
@@ -878,7 +878,7 @@ public final class Static30 {
 											local3524 += local3365.anInt2820 + 1;
 										}
 									}
-									if (local38.anInt5911 == 9) {
+									if (local38.type == 9) {
 										@Pc(3592) int local3592;
 										@Pc(3601) int local3601;
 										@Pc(3596) int local3596;
@@ -1766,7 +1766,7 @@ public final class Static30 {
 	}
 
 	@OriginalMember(owner = "client!qm", name = "a", descriptor = "(Lclient!wf;IIIIIII)V")
-	public static void method3619(@OriginalArg(0) Class185 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4, @OriginalArg(6) int arg5, @OriginalArg(7) int arg6) {
+	public static void method3619(@OriginalArg(0) Component arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4, @OriginalArg(6) int arg5, @OriginalArg(7) int arg6) {
 		@Pc(18) int local18 = arg3 * arg3 + arg5 * arg5;
 		if (arg1 < local18) {
 			return;

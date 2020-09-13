@@ -321,7 +321,7 @@ public final class Static32 {
 	}
 
 	@OriginalMember(owner = "client!sh", name = "a", descriptor = "(Lclient!wf;IB)I")
-	public static int method3985(@OriginalArg(0) Class185 arg0, @OriginalArg(1) int arg1) {
+	public static int method3985(@OriginalArg(0) Component arg0, @OriginalArg(1) int arg1) {
 		if (!Static12.method687(arg0).method3266(arg1) && arg0.anObjectArray18 == null) {
 			return -1;
 		} else if (arg0.anIntArray666 == null || arg0.anIntArray666.length <= arg1) {
@@ -736,31 +736,6 @@ public final class Static32 {
 				arg0.anInt4030--;
 			}
 		}
-	}
-
-	@OriginalMember(owner = "client!sl", name = "c", descriptor = "(II)V")
-	public static void method4025(@OriginalArg(1) int arg0) {
-		if (arg0 == -1 || !Static3.aBooleanArray12[arg0]) {
-			return;
-		}
-		Static3.aClass58_56.discardUnpacked(arg0);
-		if (Static5.aClass185ArrayArray115[arg0] == null) {
-			return;
-		}
-		@Pc(25) boolean local25 = true;
-		for (@Pc(27) int local27 = 0; local27 < Static5.aClass185ArrayArray115[arg0].length; local27++) {
-			if (Static5.aClass185ArrayArray115[arg0][local27] != null) {
-				if (Static5.aClass185ArrayArray115[arg0][local27].anInt5911 == 2) {
-					local25 = false;
-				} else {
-					Static5.aClass185ArrayArray115[arg0][local27] = null;
-				}
-			}
-		}
-		if (local25) {
-			Static5.aClass185ArrayArray115[arg0] = null;
-		}
-		Static3.aBooleanArray12[arg0] = false;
 	}
 
 	@OriginalMember(owner = "client!sl", name = "d", descriptor = "(II)V")

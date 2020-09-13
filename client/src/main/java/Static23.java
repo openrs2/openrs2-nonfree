@@ -85,8 +85,8 @@ public final class Static23 {
 	}
 
 	@OriginalMember(owner = "client!l", name = "a", descriptor = "(IBI)Lclient!wf;")
-	public static Class185 method2425(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1) {
-		@Pc(9) Class185 local9 = Static19.method1813(arg0);
+	public static Component method2425(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1) {
+		@Pc(9) Component local9 = InterfaceList.getComponent(arg0);
 		if (arg1 == -1) {
 			return local9;
 		} else if (local9 == null || local9.aClass185Array4 == null || arg1 >= local9.aClass185Array4.length) {

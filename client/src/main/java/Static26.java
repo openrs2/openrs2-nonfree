@@ -141,15 +141,15 @@ public final class Static26 {
 	}
 
 	@OriginalMember(owner = "client!nd", name = "a", descriptor = "(ILclient!wf;)Lclient!wf;")
-	public static Class185 method2942(@OriginalArg(1) Class185 arg0) {
+	public static Component method2942(@OriginalArg(1) Component arg0) {
 		if (arg0.anInt5937 != -1) {
-			return Static19.method1813(arg0.anInt5937);
+			return InterfaceList.getComponent(arg0.anInt5937);
 		}
-		@Pc(20) int local20 = arg0.anInt5914 >>> 16;
+		@Pc(20) int local20 = arg0.id >>> 16;
 		@Pc(33) HashTableIterator local33 = new HashTableIterator(Static4.aClass84_13);
 		for (@Pc(38) Class4_Sub27 local38 = (Class4_Sub27) local33.head(); local38 != null; local38 = (Class4_Sub27) local33.next()) {
 			if (local20 == local38.anInt4620) {
-				return Static19.method1813((int) local38.key);
+				return InterfaceList.getComponent((int) local38.key);
 			}
 		}
 		return null;
@@ -675,7 +675,7 @@ public final class Static26 {
 		if (!Static3.aBoolean177) {
 			return;
 		}
-		@Pc(15) Class185 local15 = Static23.method2425(Static1.anInt1053, Static2.anInt1367);
+		@Pc(15) Component local15 = Static23.method2425(Static1.anInt1053, Static2.anInt1367);
 		if (local15 != null && local15.anObjectArray17 != null) {
 			@Pc(26) Class4_Sub13 local26 = new Class4_Sub13();
 			local26.anObjectArray2 = local15.anObjectArray17;

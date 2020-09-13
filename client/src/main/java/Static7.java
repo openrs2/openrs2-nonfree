@@ -25,9 +25,6 @@ public final class Static7 {
 	@OriginalMember(owner = "client!uc", name = "Z", descriptor = "[[B")
 	public static byte[][] aByteArrayArray49;
 
-	@OriginalMember(owner = "client!ud", name = "l", descriptor = "Lclient!fh;")
-	public static Js5 aClass58_99;
-
 	@OriginalMember(owner = "client!ue", name = "n", descriptor = "I")
 	public static int anInt742;
 
@@ -275,7 +272,7 @@ public final class Static7 {
 	public static HashTable aClass84_25 = new HashTable(16);
 
 	@OriginalMember(owner = "client!un", name = "u", descriptor = "Lclient!wf;")
-	public static Class185 aClass185_15 = null;
+	public static Component aClass185_15 = null;
 
 	@OriginalMember(owner = "client!un", name = "v", descriptor = "[I")
 	public static final int[] anIntArray616 = new int[100];
@@ -350,7 +347,7 @@ public final class Static7 {
 	public static int anInt5497 = 0;
 
 	@OriginalMember(owner = "client!vh", name = "f", descriptor = "Lclient!wf;")
-	public static Class185 aClass185_16 = null;
+	public static Component aClass185_16 = null;
 
 	@OriginalMember(owner = "client!vh", name = "B", descriptor = "[I")
 	public static final int[] anIntArray629 = new int[50];

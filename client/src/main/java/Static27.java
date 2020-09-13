@@ -84,8 +84,8 @@ public final class Static27 {
 
 	@OriginalMember(owner = "client!ob", name = "a", descriptor = "(II)V")
 	public static void method4243(@OriginalArg(1) int arg0) {
-		if (Static15.method1364(arg0)) {
-			Static29.method3495(Static5.aClass185ArrayArray115[arg0], -1);
+		if (InterfaceList.load(arg0)) {
+			Static29.method3495(InterfaceList.components[arg0], -1);
 		}
 	}
 

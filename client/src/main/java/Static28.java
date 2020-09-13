@@ -109,10 +109,10 @@ public final class Static28 {
 		@Pc(12) int local12 = arg1.anInt4620;
 		arg1.unlink();
 		if (arg0) {
-			Static32.method4025(local12);
+			InterfaceList.discard(local12);
 		}
 		Static24.method2689(local12);
-		@Pc(28) Class185 local28 = Static19.method1813(local9);
+		@Pc(28) Component local28 = InterfaceList.getComponent(local9);
 		if (local28 != null) {
 			method3270(local28);
 		}
@@ -308,7 +308,7 @@ public final class Static28 {
 	}
 
 	@OriginalMember(owner = "client!on", name = "a", descriptor = "(ILclient!wf;)V")
-	public static void method3270(@OriginalArg(1) Class185 arg0) {
+	public static void method3270(@OriginalArg(1) Component arg0) {
 		if (arg0.anInt5900 == Static3.anInt2522) {
 			Static2.aBooleanArray8[arg0.anInt5967] = true;
 		}
@@ -379,8 +379,8 @@ public final class Static28 {
 
 	@OriginalMember(owner = "client!on", name = "a", descriptor = "(IIB)V")
 	public static void method3277(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
-		if (Static15.method1364(arg0)) {
-			Static29.method3480(Static5.aClass185ArrayArray115[arg0], arg1);
+		if (InterfaceList.load(arg0)) {
+			Static29.method3480(InterfaceList.components[arg0], arg1);
 		}
 	}
 

@@ -886,7 +886,7 @@ public final class Static18 {
 	}
 
 	@OriginalMember(owner = "client!hi", name = "a", descriptor = "(BLclient!wf;IIIIII)V")
-	public static void method1742(@OriginalArg(1) Class185 arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4, @OriginalArg(6) int arg5, @OriginalArg(7) int arg6) {
+	public static void method1742(@OriginalArg(1) Component arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4, @OriginalArg(6) int arg5, @OriginalArg(7) int arg6) {
 		if (Static5.aBoolean297) {
 			Static7.anInt5283 = 32;
 		} else {

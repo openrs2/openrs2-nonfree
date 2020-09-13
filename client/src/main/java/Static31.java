@@ -95,9 +95,9 @@ public final class Static31 {
 	}
 
 	@OriginalMember(owner = "client!rf", name = "a", descriptor = "([Lclient!wf;ZIIII)V")
-	public static void method3660(@OriginalArg(0) Class185[] arg0, @OriginalArg(1) boolean arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4) {
+	public static void method3660(@OriginalArg(0) Component[] arg0, @OriginalArg(1) boolean arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4) {
 		for (@Pc(7) int local7 = 0; local7 < arg0.length; local7++) {
-			@Pc(19) Class185 local19 = arg0[local7];
+			@Pc(19) Component local19 = arg0[local7];
 			if (local19 != null && local19.anInt5937 == arg3) {
 				Static11.method526(arg1, arg2, local19, arg4);
 				Static36.method3812(arg2, arg4, local19);
@@ -113,7 +113,7 @@ public final class Static31 {
 				if (local19.anInt5932 < 0) {
 					local19.anInt5932 = 0;
 				}
-				if (local19.anInt5911 == 0) {
+				if (local19.type == 0) {
 					Static34.method4251(arg1, local19);
 				}
 			}
@@ -1002,7 +1002,7 @@ public final class Static31 {
 	}
 
 	@OriginalMember(owner = "client!rm", name = "a", descriptor = "(Lclient!ma;ILclient!wf;BIII)V")
-	public static void method3780(@OriginalArg(0) Class56 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) Class185 arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4, @OriginalArg(6) int arg5) {
+	public static void method3780(@OriginalArg(0) Class56 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) Component arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4, @OriginalArg(6) int arg5) {
 		if (arg0 == null) {
 			return;
 		}

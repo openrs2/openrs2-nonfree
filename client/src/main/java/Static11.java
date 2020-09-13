@@ -130,7 +130,7 @@ public final class Static11 {
 					local56 = arg0.anInt2492;
 				}
 				if (local56 == -2147483645) {
-					local56 = arg0.aClass185_7 == null ? -1 : arg0.aClass185_7.anInt5914;
+					local56 = arg0.aClass185_7 == null ? -1 : arg0.aClass185_7.id;
 				}
 				if (local56 == -2147483644) {
 					local56 = arg0.anInt2494;
@@ -139,7 +139,7 @@ public final class Static11 {
 					local56 = arg0.aClass185_7 == null ? -1 : arg0.aClass185_7.anInt5968;
 				}
 				if (local56 == -2147483642) {
-					local56 = arg0.aClass185_6 == null ? -1 : arg0.aClass185_6.anInt5914;
+					local56 = arg0.aClass185_6 == null ? -1 : arg0.aClass185_6.id;
 				}
 				if (local56 == -2147483641) {
 					local56 = arg0.aClass185_6 == null ? -1 : arg0.aClass185_6.anInt5968;
@@ -326,7 +326,7 @@ public final class Static11 {
 	}
 
 	@OriginalMember(owner = "client!ce", name = "a", descriptor = "(ILclient!wf;IIIILclient!uj;)V")
-	public static void method525(@OriginalArg(0) int arg0, @OriginalArg(1) Class185 arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(5) int arg4, @OriginalArg(6) Class4_Sub3_Sub14 arg5) {
+	public static void method525(@OriginalArg(0) int arg0, @OriginalArg(1) Component arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(5) int arg4, @OriginalArg(6) Class4_Sub3_Sub14 arg5) {
 		if (arg5 == null) {
 			return;
 		}
@@ -350,7 +350,7 @@ public final class Static11 {
 	}
 
 	@OriginalMember(owner = "client!ce", name = "a", descriptor = "(ZILclient!wf;II)V")
-	public static void method526(@OriginalArg(0) boolean arg0, @OriginalArg(1) int arg1, @OriginalArg(2) Class185 arg2, @OriginalArg(3) int arg3) {
+	public static void method526(@OriginalArg(0) boolean arg0, @OriginalArg(1) int arg1, @OriginalArg(2) Component arg2, @OriginalArg(3) int arg3) {
 		@Pc(13) int local13 = arg2.anInt5949;
 		if (arg2.aByte27 == 0) {
 			arg2.anInt5949 = arg2.anInt5950;
@@ -359,9 +359,9 @@ public final class Static11 {
 		} else if (arg2.aByte27 == 2) {
 			arg2.anInt5949 = arg3 * arg2.anInt5950 >> 14;
 		} else if (arg2.aByte27 == 3) {
-			if (arg2.anInt5911 == 2) {
+			if (arg2.type == 2) {
 				arg2.anInt5949 = arg2.anInt5964 * (arg2.anInt5950 - 1) + arg2.anInt5950 * 32;
-			} else if (arg2.anInt5911 == 7) {
+			} else if (arg2.type == 7) {
 				arg2.anInt5949 = arg2.anInt5950 * 12 + (arg2.anInt5950 - 1) * arg2.anInt5964;
 			}
 		}
@@ -373,9 +373,9 @@ public final class Static11 {
 		} else if (arg2.aByte24 == 2) {
 			arg2.anInt5893 = arg1 * arg2.anInt5927 >> 14;
 		} else if (arg2.aByte24 == 3) {
-			if (arg2.anInt5911 == 2) {
+			if (arg2.type == 2) {
 				arg2.anInt5893 = (arg2.anInt5927 - 1) * arg2.anInt5943 + arg2.anInt5927 * 32;
-			} else if (arg2.anInt5911 == 7) {
+			} else if (arg2.type == 7) {
 				arg2.anInt5893 = arg2.anInt5927 * 115 + arg2.anInt5943 * (arg2.anInt5927 - 1);
 			}
 		}
@@ -385,7 +385,7 @@ public final class Static11 {
 		if (arg2.aByte27 == 4) {
 			arg2.anInt5949 = arg2.anInt5970 * arg2.anInt5893 / arg2.anInt5908;
 		}
-		if (Static1.aBoolean26 && (Static12.method687(arg2).anInt3947 != 0 || arg2.anInt5911 == 0)) {
+		if (Static1.aBoolean26 && (Static12.method687(arg2).anInt3947 != 0 || arg2.type == 0)) {
 			if (arg2.anInt5949 < 5 && arg2.anInt5893 < 5) {
 				arg2.anInt5949 = 5;
 				arg2.anInt5893 = 5;
@@ -635,14 +635,14 @@ public final class Static11 {
 			Static6.anIntArray462[local3857] = -1;
 		}
 		if (Static3.anInt5398 != -1) {
-			Static32.method4025(Static3.anInt5398);
+			InterfaceList.discard(Static3.anInt5398);
 		}
 		for (@Pc(3886) Class4_Sub27 local3886 = (Class4_Sub27) Static4.aClass84_13.head(); local3886 != null; local3886 = (Class4_Sub27) Static4.aClass84_13.next()) {
 			Static28.method3246(true, local3886);
 		}
 		Static3.anInt5398 = -1;
 		Static4.aClass84_13 = new HashTable(8);
-		Static14.method1068();
+		InterfaceList.clear();
 		Static6.aClass185_14 = null;
 		Static7.anInt5634 = 0;
 		Static1.aBoolean17 = false;
@@ -826,14 +826,14 @@ public final class Static11 {
 	public static void method605(@OriginalArg(0) boolean arg0) {
 		if (arg0) {
 			if (Static3.anInt5398 != -1) {
-				Static32.method4025(Static3.anInt5398);
+				InterfaceList.discard(Static3.anInt5398);
 			}
 			for (@Pc(15) Class4_Sub27 local15 = (Class4_Sub27) Static4.aClass84_13.head(); local15 != null; local15 = (Class4_Sub27) Static4.aClass84_13.next()) {
 				Static28.method3246(true, local15);
 			}
 			Static3.anInt5398 = -1;
 			Static4.aClass84_13 = new HashTable(8);
-			Static14.method1068();
+			InterfaceList.clear();
 			Static3.anInt5398 = Static7.anInt742;
 			Static12.method777(false);
 			Static13.method933();

@@ -25,9 +25,6 @@ public final class Static3 {
 	@OriginalMember(owner = "client!gh", name = "a", descriptor = "Lclient!fh;")
 	public static Js5 aClass58_59;
 
-	@OriginalMember(owner = "client!gh", name = "h", descriptor = "[Z")
-	public static boolean[] aBooleanArray12;
-
 	@OriginalMember(owner = "client!gi", name = "c", descriptor = "I")
 	public static int anInt2075;
 
@@ -208,9 +205,6 @@ public final class Static3 {
 	@OriginalMember(owner = "client!hk", name = "S", descriptor = "[I")
 	public static int[] anIntArray185;
 
-	@OriginalMember(owner = "client!hk", name = "ib", descriptor = "Lclient!fh;")
-	public static Js5 aClass58_49;
-
 	@OriginalMember(owner = "client!ho", name = "e", descriptor = "F")
 	public static float aFloat54;
 
@@ -346,9 +340,6 @@ public final class Static3 {
 	@OriginalMember(owner = "client!in", name = "q", descriptor = "Lclient!fh;")
 	public static Js5 aClass58_55;
 
-	@OriginalMember(owner = "client!in", name = "u", descriptor = "Lclient!fh;")
-	public static Js5 aClass58_56;
-
 	@OriginalMember(owner = "client!io", name = "E", descriptor = "I")
 	public static int anInt2496;
 
@@ -374,7 +365,7 @@ public final class Static3 {
 	public static int anInt2542;
 
 	@OriginalMember(owner = "client!jc", name = "D", descriptor = "Lclient!wf;")
-	public static Class185 aClass185_8;
+	public static Component aClass185_8;
 
 	@OriginalMember(owner = "client!jd", name = "a", descriptor = "I")
 	public static int anInt2554;
@@ -393,9 +384,6 @@ public final class Static3 {
 
 	@OriginalMember(owner = "client!jh", name = "k", descriptor = "Lclient!fh;")
 	public static Js5 aClass58_60;
-
-	@OriginalMember(owner = "client!ji", name = "a", descriptor = "Lclient!fh;")
-	public static Js5 aClass58_61;
 
 	@OriginalMember(owner = "client!ji", name = "b", descriptor = "I")
 	public static int anInt2587;
@@ -620,7 +608,7 @@ public final class Static3 {
 	public static final int[] anIntArray191 = new int[] { 2, 2, 4, 2, 1, 8, 4, 1, 4, 4, 2, 1, 1, 1, 4, 1 };
 
 	@OriginalMember(owner = "client!ia", name = "i", descriptor = "Lclient!wf;")
-	public static Class185 aClass185_5 = null;
+	public static Component aClass185_5 = null;
 
 	@OriginalMember(owner = "client!ib", name = "y", descriptor = "Lclient!dj;")
 	public static final LruHashTable aClass40_11 = new LruHashTable(4);

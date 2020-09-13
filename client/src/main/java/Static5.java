@@ -56,9 +56,6 @@ public final class Static5 {
 	@OriginalMember(owner = "client!nh", name = "X", descriptor = "I")
 	public static int anInt3560;
 
-	@OriginalMember(owner = "client!ni", name = "m", descriptor = "[[Lclient!wf;")
-	public static Class185[][] aClass185ArrayArray115;
-
 	@OriginalMember(owner = "client!nj", name = "k", descriptor = "[[Lclient!ih;")
 	public static Class4_Sub12[][] aClass4_Sub12ArrayArray2;
 
@@ -78,7 +75,7 @@ public final class Static5 {
 	public static int[] anIntArray402;
 
 	@OriginalMember(owner = "client!oc", name = "ab", descriptor = "Lclient!wf;")
-	public static Class185 aClass185_10;
+	public static Component aClass185_10;
 
 	@OriginalMember(owner = "client!oc", name = "bb", descriptor = "I")
 	public static int anInt3731;
@@ -159,7 +156,7 @@ public final class Static5 {
 	public static int anInt4066;
 
 	@OriginalMember(owner = "client!pe", name = "n", descriptor = "Lclient!wf;")
-	public static Class185 aClass185_11;
+	public static Component aClass185_11;
 
 	@OriginalMember(owner = "client!pg", name = "a", descriptor = "I")
 	public static int anInt3764;
@@ -231,7 +228,7 @@ public final class Static5 {
 	public static int anInt4309;
 
 	@OriginalMember(owner = "client!qg", name = "i", descriptor = "Lclient!wf;")
-	public static Class185 aClass185_12;
+	public static Component aClass185_12;
 
 	@OriginalMember(owner = "client!nb", name = "D", descriptor = "[I")
 	public static final int[] anIntArray383 = new int[100];

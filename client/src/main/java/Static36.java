@@ -7,7 +7,7 @@ import dev.openrs2.deob.annotation.Pc;
 public final class Static36 {
 
 	@OriginalMember(owner = "client!v", name = "a", descriptor = "(BLclient!wf;)Z")
-	public static boolean method4402(@OriginalArg(1) Class185 arg0) {
+	public static boolean method4402(@OriginalArg(1) Component arg0) {
 		if (arg0.anInt5904 == 205) {
 			Static1.anInt885 = 250;
 			return true;
@@ -223,7 +223,7 @@ public final class Static36 {
 	}
 
 	@OriginalMember(owner = "client!vc", name = "a", descriptor = "(IILclient!wf;I)V")
-	public static void method3812(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) Class185 arg2) {
+	public static void method3812(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) Component arg2) {
 		if (arg2.aByte26 == 0) {
 			arg2.anInt5960 = arg2.anInt5928;
 		} else if (arg2.aByte26 == 1) {
@@ -250,7 +250,7 @@ public final class Static36 {
 		} else {
 			arg2.anInt5888 = arg1 - (arg2.anInt5951 * arg1 >> 14) - arg2.anInt5949;
 		}
-		if (!Static1.aBoolean26 || Static12.method687(arg2).anInt3947 == 0 && arg2.anInt5911 != 0) {
+		if (!Static1.aBoolean26 || Static12.method687(arg2).anInt3947 == 0 && arg2.type != 0) {
 			return;
 		}
 		if (arg2.anInt5888 < 0) {
@@ -382,7 +382,7 @@ public final class Static36 {
 	}
 
 	@OriginalMember(owner = "client!vh", name = "a", descriptor = "(IBLclient!wf;)I")
-	public static int method4464(@OriginalArg(0) int arg0, @OriginalArg(2) Class185 arg1) {
+	public static int method4464(@OriginalArg(0) int arg0, @OriginalArg(2) Component arg1) {
 		if (arg1.anIntArrayArray50 == null || arg0 >= arg1.anIntArrayArray50.length) {
 			return -2;
 		}
@@ -420,7 +420,7 @@ public final class Static36 {
 					@Pc(114) int local114 = local32 + 1;
 					@Pc(118) int local118 = local30[local32] << 16;
 					local118 += local30[local114++];
-					@Pc(129) Class185 local129 = Static19.method1813(local118);
+					@Pc(129) Component local129 = InterfaceList.getComponent(local118);
 					local32 = local114 + 1;
 					@Pc(134) int local134 = local30[local114];
 					if (local134 != -1 && (!ObjTypeList.get(local134).members || Static7.aBoolean370)) {
@@ -454,7 +454,7 @@ public final class Static36 {
 					@Pc(261) int local261 = local32 + 1;
 					@Pc(265) int local265 = local30[local32] << 16;
 					local265 += local30[local261++];
-					@Pc(276) Class185 local276 = Static19.method1813(local265);
+					@Pc(276) Component local276 = InterfaceList.getComponent(local265);
 					local32 = local261 + 1;
 					@Pc(281) int local281 = local30[local261];
 					if (local281 != -1 && (!ObjTypeList.get(local281).members || Static7.aBoolean370)) {

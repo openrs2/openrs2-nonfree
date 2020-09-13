@@ -1187,14 +1187,14 @@ public final class Static34 {
 	}
 
 	@OriginalMember(owner = "client!tm", name = "a", descriptor = "(ZZLclient!wf;)V")
-	public static void method4251(@OriginalArg(0) boolean arg0, @OriginalArg(2) Class185 arg1) {
+	public static void method4251(@OriginalArg(0) boolean arg0, @OriginalArg(2) Component arg1) {
 		@Pc(8) int local8 = arg1.anInt5885 == 0 ? arg1.anInt5893 : arg1.anInt5885;
 		@Pc(20) int local20 = arg1.anInt5887 == 0 ? arg1.anInt5949 : arg1.anInt5887;
-		Static31.method3660(Static5.aClass185ArrayArray115[arg1.anInt5914 >> 16], arg0, local8, arg1.anInt5914, local20);
+		Static31.method3660(InterfaceList.components[arg1.id >> 16], arg0, local8, arg1.id, local20);
 		if (arg1.aClass185Array4 != null) {
-			Static31.method3660(arg1.aClass185Array4, arg0, local8, arg1.anInt5914, local20);
+			Static31.method3660(arg1.aClass185Array4, arg0, local8, arg1.id, local20);
 		}
-		@Pc(61) Class4_Sub27 local61 = (Class4_Sub27) Static4.aClass84_13.get((long) arg1.anInt5914);
+		@Pc(61) Class4_Sub27 local61 = (Class4_Sub27) Static4.aClass84_13.get((long) arg1.id);
 		if (local61 != null) {
 			Static21.method2050(arg0, local8, local61.anInt4620, local20);
 		}

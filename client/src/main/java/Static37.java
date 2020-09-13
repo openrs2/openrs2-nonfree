@@ -655,7 +655,7 @@ public final class Static37 {
 
 	@OriginalMember(owner = "client!wg", name = "a", descriptor = "(IIIILjava/lang/String;)V")
 	public static void method4752(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(4) String arg3) {
-		@Pc(4) Class185 local4 = Static23.method2425(arg0, arg1);
+		@Pc(4) Component local4 = Static23.method2425(arg0, arg1);
 		if (local4 == null) {
 			return;
 		}
@@ -999,13 +999,4 @@ public final class Static37 {
 		Static7.aClass58_101 = arg1;
 	}
 
-	@OriginalMember(owner = "client!wj", name = "a", descriptor = "(Lclient!fh;ILclient!fh;Lclient!fh;Lclient!fh;)V")
-	public static void method4787(@OriginalArg(0) Js5 arg0, @OriginalArg(2) Js5 arg1, @OriginalArg(3) Js5 arg2, @OriginalArg(4) Js5 arg3) {
-		Static3.aClass58_61 = arg0;
-		Static7.aClass58_99 = arg3;
-		Static3.aClass58_56 = arg2;
-		Static3.aClass58_49 = arg1;
-		Static5.aClass185ArrayArray115 = new Class185[Static3.aClass58_56.capacity()][];
-		Static3.aBooleanArray12 = new boolean[Static3.aClass58_56.capacity()];
-	}
 }

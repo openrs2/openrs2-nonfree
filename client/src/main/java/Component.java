@@ -4,7 +4,7 @@ import dev.openrs2.deob.annotation.OriginalMember;
 import dev.openrs2.deob.annotation.Pc;
 
 @OriginalClass("client!wf")
-public final class Class185 {
+public final class Component {
 
 	@OriginalMember(owner = "client!wf", name = "d", descriptor = "[Ljava/lang/Object;")
 	public Object[] anObjectArray3;
@@ -97,7 +97,7 @@ public final class Class185 {
 	public String aString354;
 
 	@OriginalMember(owner = "client!wf", name = "ub", descriptor = "I")
-	public int anInt5911;
+	public int type;
 
 	@OriginalMember(owner = "client!wf", name = "xb", descriptor = "[Ljava/lang/Object;")
 	public Object[] anObjectArray16;
@@ -166,7 +166,7 @@ public final class Class185 {
 	public int[] anIntArray671;
 
 	@OriginalMember(owner = "client!wf", name = "Yc", descriptor = "[Lclient!wf;")
-	public Class185[] aClass185Array4;
+	public Component[] aClass185Array4;
 
 	@OriginalMember(owner = "client!wf", name = "bd", descriptor = "[Ljava/lang/Object;")
 	public Object[] anObjectArray28;
@@ -196,7 +196,7 @@ public final class Class185 {
 	public int[] anIntArray673;
 
 	@OriginalMember(owner = "client!wf", name = "f", descriptor = "Lclient!wf;")
-	public Class185 aClass185_17 = null;
+	public Component aClass185_17 = null;
 
 	@OriginalMember(owner = "client!wf", name = "j", descriptor = "I")
 	public int anInt5886 = 0;
@@ -238,7 +238,7 @@ public final class Class185 {
 	public int anInt5885 = 0;
 
 	@OriginalMember(owner = "client!wf", name = "yb", descriptor = "I")
-	public int anInt5914 = -1;
+	public int id = -1;
 
 	@OriginalMember(owner = "client!wf", name = "ob", descriptor = "Z")
 	public boolean aBoolean409 = false;
@@ -439,7 +439,7 @@ public final class Class185 {
 	public int anInt5963 = 0;
 
 	@OriginalMember(owner = "client!wf", name = "rc", descriptor = "Z")
-	public boolean aBoolean416 = false;
+	public boolean if3 = false;
 
 	@OriginalMember(owner = "client!wf", name = "K", descriptor = "Z")
 	public boolean aBoolean407 = false;
@@ -534,7 +534,7 @@ public final class Class185 {
 		} else if (local14 == 1) {
 			@Pc(61) Class53_Sub4 local61 = (Class53_Sub4) Static1.aClass26_1.get((long) (local17 + (local14 << 16)));
 			if (local61 == null) {
-				@Pc(68) Class53_Sub3 local68 = Static25.method2752(Static7.aClass58_99, local17);
+				@Pc(68) Class53_Sub3 local68 = Static25.method2752(InterfaceList.modelsArchive, local17);
 				if (local68 == null) {
 					Static3.aBoolean178 = true;
 					return null;
@@ -614,7 +614,7 @@ public final class Class185 {
 		if (local39 != null) {
 			return local39;
 		}
-		@Pc(50) Class4_Sub3_Sub14 local50 = Static20.method1917(local27, Static3.aClass58_61);
+		@Pc(50) Class4_Sub3_Sub14 local50 = Static20.method1917(local27, InterfaceList.spritesArchive);
 		if (local50 == null) {
 			Static3.aBoolean178 = true;
 		} else {
@@ -646,47 +646,47 @@ public final class Class185 {
 	}
 
 	@OriginalMember(owner = "client!wf", name = "a", descriptor = "(Lclient!fd;I)V")
-	public final void method4728(@OriginalArg(0) Buffer arg0) {
-		this.aBoolean416 = false;
-		this.anInt5911 = arg0.readUnsignedByte();
-		this.anInt5912 = arg0.readUnsignedByte();
-		this.anInt5904 = arg0.readUnsignedShort();
-		this.anInt5928 = arg0.readShort();
-		this.anInt5951 = arg0.readShort();
-		this.anInt5927 = arg0.readUnsignedShort();
-		this.anInt5950 = arg0.readUnsignedShort();
+	public final void decodeIf1(@OriginalArg(0) Buffer buffer) {
+		this.if3 = false;
+		this.type = buffer.readUnsignedByte();
+		this.anInt5912 = buffer.readUnsignedByte();
+		this.anInt5904 = buffer.readUnsignedShort();
+		this.anInt5928 = buffer.readShort();
+		this.anInt5951 = buffer.readShort();
+		this.anInt5927 = buffer.readUnsignedShort();
+		this.anInt5950 = buffer.readUnsignedShort();
 		this.aByte27 = 0;
 		this.aByte26 = 0;
 		this.aByte25 = 0;
 		this.aByte24 = 0;
-		this.anInt5903 = arg0.readUnsignedByte();
-		this.anInt5937 = arg0.readUnsignedShort();
+		this.anInt5903 = buffer.readUnsignedByte();
+		this.anInt5937 = buffer.readUnsignedShort();
 		if (this.anInt5937 == 65535) {
 			this.anInt5937 = -1;
 		} else {
-			this.anInt5937 += this.anInt5914 & 0xFFFF0000;
+			this.anInt5937 += this.id & 0xFFFF0000;
 		}
-		this.anInt5923 = arg0.readUnsignedShort();
+		this.anInt5923 = buffer.readUnsignedShort();
 		if (this.anInt5923 == 65535) {
 			this.anInt5923 = -1;
 		}
-		@Pc(110) int local110 = arg0.readUnsignedByte();
+		@Pc(110) int local110 = buffer.readUnsignedByte();
 		if (local110 > 0) {
 			this.anIntArray668 = new int[local110];
 			this.anIntArray671 = new int[local110];
 			for (@Pc(126) int local126 = 0; local126 < local110; local126++) {
-				this.anIntArray668[local126] = arg0.readUnsignedByte();
-				this.anIntArray671[local126] = arg0.readUnsignedShort();
+				this.anIntArray668[local126] = buffer.readUnsignedByte();
+				this.anIntArray671[local126] = buffer.readUnsignedShort();
 			}
 		}
-		@Pc(154) int local154 = arg0.readUnsignedByte();
+		@Pc(154) int local154 = buffer.readUnsignedByte();
 		if (local154 > 0) {
 			this.anIntArrayArray50 = new int[local154][];
 			for (@Pc(162) int local162 = 0; local162 < local154; local162++) {
-				@Pc(173) int local173 = arg0.readUnsignedShort();
+				@Pc(173) int local173 = buffer.readUnsignedShort();
 				this.anIntArrayArray50[local162] = new int[local173];
 				for (@Pc(181) int local181 = 0; local181 < local173; local181++) {
-					this.anIntArrayArray50[local162][local181] = arg0.readUnsignedShort();
+					this.anIntArrayArray50[local162][local181] = buffer.readUnsignedShort();
 					if (this.anIntArrayArray50[local162][local181] == 65535) {
 						this.anIntArrayArray50[local162][local181] = -1;
 					}
@@ -694,149 +694,149 @@ public final class Class185 {
 			}
 		}
 		@Pc(217) int local217 = 0;
-		if (this.anInt5911 == 0) {
-			this.anInt5887 = arg0.readUnsignedShort();
-			this.aBoolean417 = arg0.readUnsignedByte() == 1;
+		if (this.type == 0) {
+			this.anInt5887 = buffer.readUnsignedShort();
+			this.aBoolean417 = buffer.readUnsignedByte() == 1;
 		}
-		if (this.anInt5911 == 1) {
-			arg0.readUnsignedShort();
-			arg0.readUnsignedByte();
+		if (this.type == 1) {
+			buffer.readUnsignedShort();
+			buffer.readUnsignedByte();
 		}
-		if (this.anInt5911 == 2) {
+		if (this.type == 2) {
 			this.aByte24 = 3;
 			this.aByte27 = 3;
 			this.anIntArray661 = new int[this.anInt5950 * this.anInt5927];
 			this.anIntArray660 = new int[this.anInt5927 * this.anInt5950];
-			@Pc(282) int local282 = arg0.readUnsignedByte();
-			@Pc(286) int local286 = arg0.readUnsignedByte();
+			@Pc(282) int local282 = buffer.readUnsignedByte();
+			@Pc(286) int local286 = buffer.readUnsignedByte();
 			if (local282 == 1) {
 				local217 = 268435456;
 			}
-			@Pc(297) int local297 = arg0.readUnsignedByte();
+			@Pc(297) int local297 = buffer.readUnsignedByte();
 			if (local286 == 1) {
 				local217 |= 1073741824;
 			}
-			@Pc(309) int local309 = arg0.readUnsignedByte();
+			@Pc(309) int local309 = buffer.readUnsignedByte();
 			if (local297 == 1) {
 				local217 |= Integer.MIN_VALUE;
 			}
 			if (local309 == 1) {
 				local217 |= 536870912;
 			}
-			this.anInt5943 = arg0.readUnsignedByte();
-			this.anInt5964 = arg0.readUnsignedByte();
+			this.anInt5943 = buffer.readUnsignedByte();
+			this.anInt5964 = buffer.readUnsignedByte();
 			this.anIntArray663 = new int[20];
 			this.anIntArray664 = new int[20];
 			this.anIntArray658 = new int[20];
 			for (@Pc(350) int local350 = 0; local350 < 20; local350++) {
-				@Pc(357) int local357 = arg0.readUnsignedByte();
+				@Pc(357) int local357 = buffer.readUnsignedByte();
 				if (local357 == 1) {
-					this.anIntArray664[local350] = arg0.readShort();
-					this.anIntArray663[local350] = arg0.readShort();
-					this.anIntArray658[local350] = arg0.readInt();
+					this.anIntArray664[local350] = buffer.readShort();
+					this.anIntArray663[local350] = buffer.readShort();
+					this.anIntArray658[local350] = buffer.readInt();
 				} else {
 					this.anIntArray658[local350] = -1;
 				}
 			}
 			this.aStringArray44 = new String[5];
 			for (@Pc(399) int local399 = 0; local399 < 5; local399++) {
-				@Pc(408) String local408 = arg0.readString();
+				@Pc(408) String local408 = buffer.readString();
 				if (local408.length() > 0) {
 					this.aStringArray44[local399] = local408;
 					local217 |= 0x1 << local399 + 23;
 				}
 			}
 		}
-		if (this.anInt5911 == 3) {
-			this.aBoolean413 = arg0.readUnsignedByte() == 1;
+		if (this.type == 3) {
+			this.aBoolean413 = buffer.readUnsignedByte() == 1;
 		}
-		if (this.anInt5911 == 4 || this.anInt5911 == 1) {
-			this.anInt5924 = arg0.readUnsignedByte();
-			this.anInt5922 = arg0.readUnsignedByte();
-			this.anInt5948 = arg0.readUnsignedByte();
-			this.anInt5954 = arg0.readUnsignedShort();
+		if (this.type == 4 || this.type == 1) {
+			this.anInt5924 = buffer.readUnsignedByte();
+			this.anInt5922 = buffer.readUnsignedByte();
+			this.anInt5948 = buffer.readUnsignedByte();
+			this.anInt5954 = buffer.readUnsignedShort();
 			if (this.anInt5954 == 65535) {
 				this.anInt5954 = -1;
 			}
-			this.aBoolean415 = arg0.readUnsignedByte() == 1;
+			this.aBoolean415 = buffer.readUnsignedByte() == 1;
 		}
-		if (this.anInt5911 == 4) {
-			this.aString351 = arg0.readString();
-			this.aString350 = arg0.readString();
+		if (this.type == 4) {
+			this.aString351 = buffer.readString();
+			this.aString350 = buffer.readString();
 		}
-		if (this.anInt5911 == 1 || this.anInt5911 == 3 || this.anInt5911 == 4) {
-			this.anInt5933 = arg0.readInt();
+		if (this.type == 1 || this.type == 3 || this.type == 4) {
+			this.anInt5933 = buffer.readInt();
 		}
-		if (this.anInt5911 == 3 || this.anInt5911 == 4) {
-			this.anInt5902 = arg0.readInt();
-			this.anInt5966 = arg0.readInt();
-			this.anInt5971 = arg0.readInt();
+		if (this.type == 3 || this.type == 4) {
+			this.anInt5902 = buffer.readInt();
+			this.anInt5966 = buffer.readInt();
+			this.anInt5971 = buffer.readInt();
 		}
-		if (this.anInt5911 == 5) {
-			this.anInt5947 = arg0.readInt();
-			this.anInt5926 = arg0.readInt();
+		if (this.type == 5) {
+			this.anInt5947 = buffer.readInt();
+			this.anInt5926 = buffer.readInt();
 		}
-		if (this.anInt5911 == 6) {
+		if (this.type == 6) {
 			this.anInt5939 = 1;
-			this.anInt5895 = arg0.readUnsignedShort();
+			this.anInt5895 = buffer.readUnsignedShort();
 			this.anInt5909 = 1;
 			if (this.anInt5895 == 65535) {
 				this.anInt5895 = -1;
 			}
-			this.anInt5929 = arg0.readUnsignedShort();
+			this.anInt5929 = buffer.readUnsignedShort();
 			if (this.anInt5929 == 65535) {
 				this.anInt5929 = -1;
 			}
-			this.anInt5891 = arg0.readUnsignedShort();
+			this.anInt5891 = buffer.readUnsignedShort();
 			if (this.anInt5891 == 65535) {
 				this.anInt5891 = -1;
 			}
-			this.anInt5910 = arg0.readUnsignedShort();
+			this.anInt5910 = buffer.readUnsignedShort();
 			if (this.anInt5910 == 65535) {
 				this.anInt5910 = -1;
 			}
-			this.anInt5918 = arg0.readUnsignedShort();
-			this.anInt5944 = arg0.readUnsignedShort();
-			this.anInt5976 = arg0.readUnsignedShort();
+			this.anInt5918 = buffer.readUnsignedShort();
+			this.anInt5944 = buffer.readUnsignedShort();
+			this.anInt5976 = buffer.readUnsignedShort();
 		}
-		if (this.anInt5911 == 7) {
+		if (this.type == 7) {
 			this.aByte27 = 3;
 			this.aByte24 = 3;
 			this.anIntArray661 = new int[this.anInt5927 * this.anInt5950];
 			this.anIntArray660 = new int[this.anInt5950 * this.anInt5927];
-			this.anInt5924 = arg0.readUnsignedByte();
-			this.anInt5954 = arg0.readUnsignedShort();
+			this.anInt5924 = buffer.readUnsignedByte();
+			this.anInt5954 = buffer.readUnsignedShort();
 			if (this.anInt5954 == 65535) {
 				this.anInt5954 = -1;
 			}
-			this.aBoolean415 = arg0.readUnsignedByte() == 1;
-			this.anInt5933 = arg0.readInt();
-			this.anInt5943 = arg0.readShort();
-			this.anInt5964 = arg0.readShort();
-			@Pc(729) int local729 = arg0.readUnsignedByte();
+			this.aBoolean415 = buffer.readUnsignedByte() == 1;
+			this.anInt5933 = buffer.readInt();
+			this.anInt5943 = buffer.readShort();
+			this.anInt5964 = buffer.readShort();
+			@Pc(729) int local729 = buffer.readUnsignedByte();
 			if (local729 == 1) {
 				local217 |= 1073741824;
 			}
 			this.aStringArray44 = new String[5];
 			for (@Pc(743) int local743 = 0; local743 < 5; local743++) {
-				@Pc(750) String local750 = arg0.readString();
+				@Pc(750) String local750 = buffer.readString();
 				if (local750.length() > 0) {
 					this.aStringArray44[local743] = local750;
 					local217 |= 0x1 << local743 + 23;
 				}
 			}
 		}
-		if (this.anInt5911 == 8) {
-			this.aString351 = arg0.readString();
+		if (this.type == 8) {
+			this.aString351 = buffer.readString();
 		}
-		if (this.anInt5912 == 2 || this.anInt5911 == 2) {
-			this.aString355 = arg0.readString();
-			this.aString353 = arg0.readString();
-			@Pc(808) int local808 = arg0.readUnsignedShort() & 0x3F;
+		if (this.anInt5912 == 2 || this.type == 2) {
+			this.aString355 = buffer.readString();
+			this.aString353 = buffer.readString();
+			@Pc(808) int local808 = buffer.readUnsignedShort() & 0x3F;
 			local217 |= local808 << 11;
 		}
 		if (this.anInt5912 == 1 || this.anInt5912 == 4 || this.anInt5912 == 5 || this.anInt5912 == 6) {
-			this.aString349 = arg0.readString();
+			this.aString349 = buffer.readString();
 			if (this.aString349.length() == 0) {
 				if (this.anInt5912 == 1) {
 					this.aString349 = LocalisedText.OK;
@@ -880,9 +880,9 @@ public final class Class185 {
 		}
 		@Pc(86) Class4_Sub3_Sub14_Sub1 local86;
 		if (this.aBoolean412) {
-			local86 = Static31.method3691(Static3.aClass58_61, local12);
+			local86 = Static31.method3691(InterfaceList.spritesArchive, local12);
 		} else {
-			local86 = Static24.method2654(Static3.aClass58_61, local12, 0);
+			local86 = Static24.method2654(InterfaceList.spritesArchive, local12, 0);
 		}
 		if (local86 == null) {
 			Static3.aBoolean178 = true;
@@ -932,188 +932,188 @@ public final class Class185 {
 	}
 
 	@OriginalMember(owner = "client!wf", name = "b", descriptor = "(ILclient!fd;)V")
-	public final void method4732(@OriginalArg(1) Buffer arg0) {
-		this.aBoolean416 = true;
-		arg0.position++;
-		this.anInt5911 = arg0.readUnsignedByte();
-		if ((this.anInt5911 & 0x80) != 0) {
-			this.anInt5911 &= 127;
-			arg0.readString();
+	public final void decodeIf3(@OriginalArg(1) Buffer buffer) {
+		this.if3 = true;
+		buffer.position++;
+		this.type = buffer.readUnsignedByte();
+		if ((this.type & 0x80) != 0) {
+			this.type &= 127;
+			buffer.readString();
 		}
-		this.anInt5904 = arg0.readUnsignedShort();
-		this.anInt5928 = arg0.readShort();
-		this.anInt5951 = arg0.readShort();
-		this.anInt5927 = arg0.readUnsignedShort();
-		this.anInt5950 = arg0.readUnsignedShort();
-		this.aByte24 = arg0.readByte();
-		this.aByte27 = arg0.readByte();
-		this.aByte26 = arg0.readByte();
-		this.aByte25 = arg0.readByte();
-		this.anInt5937 = arg0.readUnsignedShort();
+		this.anInt5904 = buffer.readUnsignedShort();
+		this.anInt5928 = buffer.readShort();
+		this.anInt5951 = buffer.readShort();
+		this.anInt5927 = buffer.readUnsignedShort();
+		this.anInt5950 = buffer.readUnsignedShort();
+		this.aByte24 = buffer.readByte();
+		this.aByte27 = buffer.readByte();
+		this.aByte26 = buffer.readByte();
+		this.aByte25 = buffer.readByte();
+		this.anInt5937 = buffer.readUnsignedShort();
 		if (this.anInt5937 == 65535) {
 			this.anInt5937 = -1;
 		} else {
-			this.anInt5937 += this.anInt5914 & 0xFFFF0000;
+			this.anInt5937 += this.id & 0xFFFF0000;
 		}
-		this.aBoolean417 = arg0.readUnsignedByte() == 1;
-		if (this.anInt5911 == 0) {
-			this.anInt5885 = arg0.readUnsignedShort();
-			this.anInt5887 = arg0.readUnsignedShort();
-			this.aBoolean407 = arg0.readUnsignedByte() == 1;
+		this.aBoolean417 = buffer.readUnsignedByte() == 1;
+		if (this.type == 0) {
+			this.anInt5885 = buffer.readUnsignedShort();
+			this.anInt5887 = buffer.readUnsignedShort();
+			this.aBoolean407 = buffer.readUnsignedByte() == 1;
 		}
-		if (this.anInt5911 == 5) {
-			this.anInt5947 = arg0.readInt();
-			this.anInt5958 = arg0.readUnsignedShort();
-			@Pc(160) int local160 = arg0.readUnsignedByte();
+		if (this.type == 5) {
+			this.anInt5947 = buffer.readInt();
+			this.anInt5958 = buffer.readUnsignedShort();
+			@Pc(160) int local160 = buffer.readUnsignedByte();
 			this.aBoolean412 = (local160 & 0x2) != 0;
 			this.aBoolean410 = (local160 & 0x1) != 0;
-			this.anInt5903 = arg0.readUnsignedByte();
-			this.anInt5975 = arg0.readUnsignedByte();
-			this.anInt5934 = arg0.readInt();
-			this.aBoolean404 = arg0.readUnsignedByte() == 1;
-			this.aBoolean406 = arg0.readUnsignedByte() == 1;
-			this.anInt5933 = arg0.readInt();
+			this.anInt5903 = buffer.readUnsignedByte();
+			this.anInt5975 = buffer.readUnsignedByte();
+			this.anInt5934 = buffer.readInt();
+			this.aBoolean404 = buffer.readUnsignedByte() == 1;
+			this.aBoolean406 = buffer.readUnsignedByte() == 1;
+			this.anInt5933 = buffer.readInt();
 		}
-		if (this.anInt5911 == 6) {
+		if (this.type == 6) {
 			this.anInt5939 = 1;
-			this.anInt5895 = arg0.readUnsignedShort();
+			this.anInt5895 = buffer.readUnsignedShort();
 			if (this.anInt5895 == 65535) {
 				this.anInt5895 = -1;
 			}
-			this.anInt5907 = arg0.readShort();
-			this.anInt5921 = arg0.readShort();
-			this.anInt5944 = arg0.readUnsignedShort();
-			this.anInt5976 = arg0.readUnsignedShort();
-			this.anInt5886 = arg0.readUnsignedShort();
-			this.anInt5918 = arg0.readUnsignedShort();
-			this.anInt5891 = arg0.readUnsignedShort();
+			this.anInt5907 = buffer.readShort();
+			this.anInt5921 = buffer.readShort();
+			this.anInt5944 = buffer.readUnsignedShort();
+			this.anInt5976 = buffer.readUnsignedShort();
+			this.anInt5886 = buffer.readUnsignedShort();
+			this.anInt5918 = buffer.readUnsignedShort();
+			this.anInt5891 = buffer.readUnsignedShort();
 			if (this.anInt5891 == 65535) {
 				this.anInt5891 = -1;
 			}
-			this.aBoolean418 = arg0.readUnsignedByte() == 1;
-			this.aShort50 = (short) arg0.readUnsignedShort();
-			this.aShort49 = (short) arg0.readUnsignedShort();
-			this.aBoolean411 = arg0.readUnsignedByte() == 1;
+			this.aBoolean418 = buffer.readUnsignedByte() == 1;
+			this.aShort50 = (short) buffer.readUnsignedShort();
+			this.aShort49 = (short) buffer.readUnsignedShort();
+			this.aBoolean411 = buffer.readUnsignedByte() == 1;
 			if (this.aByte24 != 0) {
-				this.anInt5957 = arg0.readUnsignedShort();
+				this.anInt5957 = buffer.readUnsignedShort();
 			}
 			if (this.aByte27 != 0) {
-				this.anInt5920 = arg0.readUnsignedShort();
+				this.anInt5920 = buffer.readUnsignedShort();
 			}
 		}
-		if (this.anInt5911 == 4) {
-			this.anInt5954 = arg0.readUnsignedShort();
+		if (this.type == 4) {
+			this.anInt5954 = buffer.readUnsignedShort();
 			if (this.anInt5954 == 65535) {
 				this.anInt5954 = -1;
 			}
-			this.aString351 = arg0.readString();
-			this.anInt5948 = arg0.readUnsignedByte();
-			this.anInt5924 = arg0.readUnsignedByte();
-			this.anInt5922 = arg0.readUnsignedByte();
-			this.aBoolean415 = arg0.readUnsignedByte() == 1;
-			this.anInt5933 = arg0.readInt();
+			this.aString351 = buffer.readString();
+			this.anInt5948 = buffer.readUnsignedByte();
+			this.anInt5924 = buffer.readUnsignedByte();
+			this.anInt5922 = buffer.readUnsignedByte();
+			this.aBoolean415 = buffer.readUnsignedByte() == 1;
+			this.anInt5933 = buffer.readInt();
 		}
-		if (this.anInt5911 == 3) {
-			this.anInt5933 = arg0.readInt();
-			this.aBoolean413 = arg0.readUnsignedByte() == 1;
-			this.anInt5903 = arg0.readUnsignedByte();
+		if (this.type == 3) {
+			this.anInt5933 = buffer.readInt();
+			this.aBoolean413 = buffer.readUnsignedByte() == 1;
+			this.anInt5903 = buffer.readUnsignedByte();
 		}
-		if (this.anInt5911 == 9) {
-			this.anInt5899 = arg0.readUnsignedByte();
-			this.anInt5933 = arg0.readInt();
-			this.aBoolean409 = arg0.readUnsignedByte() == 1;
+		if (this.type == 9) {
+			this.anInt5899 = buffer.readUnsignedByte();
+			this.anInt5933 = buffer.readInt();
+			this.aBoolean409 = buffer.readUnsignedByte() == 1;
 		}
-		@Pc(460) int local460 = arg0.readUnsignedMedium();
-		@Pc(464) int local464 = arg0.readUnsignedByte();
+		@Pc(460) int local460 = buffer.readUnsignedMedium();
+		@Pc(464) int local464 = buffer.readUnsignedByte();
 		if (local464 != 0) {
 			this.aByteArray74 = new byte[10];
 			this.anIntArray662 = new int[10];
 			this.aByteArray73 = new byte[10];
 			while (local464 != 0) {
 				@Pc(493) int local493 = (local464 >> 4) - 1;
-				@Pc(501) int local501 = arg0.readUnsignedByte() | local464 << 8;
+				@Pc(501) int local501 = buffer.readUnsignedByte() | local464 << 8;
 				local501 &= 4095;
 				if (local501 == 4095) {
 					this.anIntArray662[local493] = -1;
 				} else {
 					this.anIntArray662[local493] = local501;
 				}
-				this.aByteArray74[local493] = arg0.readByte();
-				this.aByteArray73[local493] = arg0.readByte();
-				local464 = arg0.readUnsignedByte();
+				this.aByteArray74[local493] = buffer.readByte();
+				this.aByteArray73[local493] = buffer.readByte();
+				local464 = buffer.readUnsignedByte();
 			}
 		}
-		this.aString352 = arg0.readString();
-		@Pc(551) int local551 = arg0.readUnsignedByte();
+		this.aString352 = buffer.readString();
+		@Pc(551) int local551 = buffer.readUnsignedByte();
 		@Pc(555) int local555 = local551 >> 4;
 		@Pc(559) int local559 = local551 & 0xF;
 		if (local559 > 0) {
 			this.aStringArray43 = new String[local559];
 			for (@Pc(571) int local571 = 0; local571 < local559; local571++) {
-				this.aStringArray43[local571] = arg0.readString();
+				this.aStringArray43[local571] = buffer.readString();
 			}
 		}
 		if (local555 > 0) {
-			@Pc(596) int local596 = arg0.readUnsignedByte();
+			@Pc(596) int local596 = buffer.readUnsignedByte();
 			this.anIntArray666 = new int[local596 + 1];
 			for (@Pc(604) int local604 = 0; local604 < this.anIntArray666.length; local604++) {
 				this.anIntArray666[local604] = -1;
 			}
-			this.anIntArray666[local596] = arg0.readUnsignedShort();
+			this.anIntArray666[local596] = buffer.readUnsignedShort();
 		}
 		if (local555 > 1) {
-			@Pc(638) int local638 = arg0.readUnsignedByte();
-			this.anIntArray666[local638] = arg0.readUnsignedShort();
+			@Pc(638) int local638 = buffer.readUnsignedByte();
+			this.anIntArray666[local638] = buffer.readUnsignedShort();
 		}
-		this.aString354 = arg0.readString();
+		this.aString354 = buffer.readString();
 		if (this.aString354.equals("")) {
 			this.aString354 = null;
 		}
 		@Pc(661) int local661 = -1;
-		this.anInt5896 = arg0.readUnsignedByte();
-		this.anInt5953 = arg0.readUnsignedByte();
-		this.aBoolean402 = arg0.readUnsignedByte() == 1;
-		this.aString355 = arg0.readString();
+		this.anInt5896 = buffer.readUnsignedByte();
+		this.anInt5953 = buffer.readUnsignedByte();
+		this.aBoolean402 = buffer.readUnsignedByte() == 1;
+		this.aString355 = buffer.readString();
 		if (Static32.method3882(local460) != 0) {
-			local661 = arg0.readUnsignedShort();
+			local661 = buffer.readUnsignedShort();
 			if (local661 == 65535) {
 				local661 = -1;
 			}
-			this.anInt5930 = arg0.readUnsignedShort();
+			this.anInt5930 = buffer.readUnsignedShort();
 			if (this.anInt5930 == 65535) {
 				this.anInt5930 = -1;
 			}
-			this.anInt5890 = arg0.readUnsignedShort();
+			this.anInt5890 = buffer.readUnsignedShort();
 			if (this.anInt5890 == 65535) {
 				this.anInt5890 = -1;
 			}
 		}
 		this.aClass4_Sub21_2 = new Class4_Sub21(local460, local661);
-		this.anObjectArray22 = this.method4740(arg0);
-		this.anObjectArray26 = this.method4740(arg0);
-		this.anObjectArray28 = this.method4740(arg0);
-		this.anObjectArray17 = this.method4740(arg0);
-		this.anObjectArray13 = this.method4740(arg0);
-		this.anObjectArray24 = this.method4740(arg0);
-		this.anObjectArray3 = this.method4740(arg0);
-		this.anObjectArray25 = this.method4740(arg0);
-		this.anObjectArray16 = this.method4740(arg0);
-		this.anObjectArray18 = this.method4740(arg0);
-		this.anObjectArray9 = this.method4740(arg0);
-		this.anObjectArray29 = this.method4740(arg0);
-		this.anObjectArray15 = this.method4740(arg0);
-		this.anObjectArray30 = this.method4740(arg0);
-		this.anObjectArray8 = this.method4740(arg0);
-		this.anObjectArray11 = this.method4740(arg0);
-		this.anObjectArray7 = this.method4740(arg0);
-		this.anObjectArray20 = this.method4740(arg0);
-		this.anObjectArray27 = this.method4740(arg0);
-		this.anObjectArray21 = this.method4740(arg0);
-		this.anIntArray669 = this.method4730(arg0);
-		this.anIntArray670 = this.method4730(arg0);
-		this.anIntArray667 = this.method4730(arg0);
-		this.anIntArray673 = this.method4730(arg0);
-		this.anIntArray665 = this.method4730(arg0);
+		this.anObjectArray22 = this.method4740(buffer);
+		this.anObjectArray26 = this.method4740(buffer);
+		this.anObjectArray28 = this.method4740(buffer);
+		this.anObjectArray17 = this.method4740(buffer);
+		this.anObjectArray13 = this.method4740(buffer);
+		this.anObjectArray24 = this.method4740(buffer);
+		this.anObjectArray3 = this.method4740(buffer);
+		this.anObjectArray25 = this.method4740(buffer);
+		this.anObjectArray16 = this.method4740(buffer);
+		this.anObjectArray18 = this.method4740(buffer);
+		this.anObjectArray9 = this.method4740(buffer);
+		this.anObjectArray29 = this.method4740(buffer);
+		this.anObjectArray15 = this.method4740(buffer);
+		this.anObjectArray30 = this.method4740(buffer);
+		this.anObjectArray8 = this.method4740(buffer);
+		this.anObjectArray11 = this.method4740(buffer);
+		this.anObjectArray7 = this.method4740(buffer);
+		this.anObjectArray20 = this.method4740(buffer);
+		this.anObjectArray27 = this.method4740(buffer);
+		this.anObjectArray21 = this.method4740(buffer);
+		this.anIntArray669 = this.method4730(buffer);
+		this.anIntArray670 = this.method4730(buffer);
+		this.anIntArray667 = this.method4730(buffer);
+		this.anIntArray673 = this.method4730(buffer);
+		this.anIntArray665 = this.method4730(buffer);
 	}
 
 	@OriginalMember(owner = "client!wf", name = "a", descriptor = "(IBI)V")
@@ -1136,7 +1136,7 @@ public final class Class185 {
 		if (local28 != null) {
 			return local28;
 		}
-		@Pc(42) Class4_Sub3_Sub5 local42 = Static8.method121(Static3.aClass58_61, Static3.aClass58_49, this.anInt5954);
+		@Pc(42) Class4_Sub3_Sub5 local42 = Static8.method121(InterfaceList.spritesArchive, InterfaceList.fontMetricsArchive, this.anInt5954);
 		if (local42 == null) {
 			Static3.aBoolean178 = true;
 		} else {
@@ -1151,7 +1151,7 @@ public final class Class185 {
 		if (this.anIntArray672 != null) {
 			return true;
 		}
-		@Pc(19) Class56_Sub1 local19 = Static33.method3003(Static3.aClass58_61, this.anInt5947);
+		@Pc(19) Class56_Sub1 local19 = Static33.method3003(InterfaceList.spritesArchive, this.anInt5947);
 		if (local19 == null) {
 			return false;
 		}

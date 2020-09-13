@@ -283,8 +283,8 @@ public final class Static33 {
 	}
 
 	@OriginalMember(owner = "client!tc", name = "a", descriptor = "(Lclient!wf;B)V")
-	public static void method4118(@OriginalArg(0) Class185 arg0) {
-		@Pc(3) Class185 local3 = Static26.method2942(arg0);
+	public static void method4118(@OriginalArg(0) Component arg0) {
+		@Pc(3) Component local3 = Static26.method2942(arg0);
 		@Pc(12) int local12;
 		@Pc(15) int local15;
 		if (local3 == null) {
@@ -678,7 +678,7 @@ public final class Static33 {
 	}
 
 	@OriginalMember(owner = "client!ti", name = "a", descriptor = "(Lclient!wf;B)Z")
-	public static boolean method4199(@OriginalArg(0) Class185 arg0) {
+	public static boolean method4199(@OriginalArg(0) Component arg0) {
 		if (arg0.anIntArray668 == null) {
 			return false;
 		}
@@ -1009,7 +1009,7 @@ public final class Static33 {
 	}
 
 	@OriginalMember(owner = "client!tj", name = "a", descriptor = "(IILclient!wf;II)V")
-	public static void method3010(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) Class185 arg2, @OriginalArg(3) int arg3) {
+	public static void method3010(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) Component arg2, @OriginalArg(3) int arg3) {
 		Static9.method763();
 		if (Static3.aBoolean138) {
 			Static18.method1693(arg0, arg3, arg2.anInt5893 + arg0, arg2.anInt5949 + arg3);

@@ -5,13 +5,13 @@ import dev.openrs2.deob.annotation.OriginalMember;
 public final class Class4_Sub13 extends Node {
 
 	@OriginalMember(owner = "client!io", name = "o", descriptor = "Lclient!wf;")
-	public Class185 aClass185_6;
+	public Component aClass185_6;
 
 	@OriginalMember(owner = "client!io", name = "p", descriptor = "I")
 	public int anInt2488;
 
 	@OriginalMember(owner = "client!io", name = "q", descriptor = "Lclient!wf;")
-	public Class185 aClass185_7;
+	public Component aClass185_7;
 
 	@OriginalMember(owner = "client!io", name = "s", descriptor = "I")
 	public int anInt2490;

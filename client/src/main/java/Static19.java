@@ -176,19 +176,6 @@ public final class Static19 {
 		return arg0 >= 999999999 ? "*" : Integer.toString(arg0);
 	}
 
-	@OriginalMember(owner = "client!i", name = "a", descriptor = "(II)Lclient!wf;")
-	public static Class185 method1813(@OriginalArg(1) int arg0) {
-		@Pc(7) int local7 = arg0 >> 16;
-		@Pc(19) int local19 = arg0 & 0xFFFF;
-		if (Static5.aClass185ArrayArray115[local7] == null || Static5.aClass185ArrayArray115[local7][local19] == null) {
-			@Pc(34) boolean local34 = Static15.method1364(local7);
-			if (!local34) {
-				return null;
-			}
-		}
-		return Static5.aClass185ArrayArray115[local7][local19];
-	}
-
 	@OriginalMember(owner = "client!i", name = "b", descriptor = "(II)Lclient!qa;")
 	public static Class140 method1816(@OriginalArg(1) int arg0) {
 		@Pc(6) Class140 local6 = (Class140) Static7.aClass26_56.get((long) arg0);
@@ -256,7 +243,7 @@ public final class Static19 {
 	}
 
 	@OriginalMember(owner = "client!ia", name = "a", descriptor = "(Lclient!wf;ILjava/lang/String;)Ljava/lang/String;")
-	public static String method1820(@OriginalArg(0) Class185 arg0, @OriginalArg(2) String arg1) {
+	public static String method1820(@OriginalArg(0) Component arg0, @OriginalArg(2) String arg1) {
 		if (arg1.indexOf("%") == -1) {
 			return arg1;
 		}
