@@ -14,9 +14,6 @@ public final class Static2 {
 	@OriginalMember(owner = "client!df", name = "d", descriptor = "Lclient!ke;")
 	public static Class4_Sub3_Sub5_Sub2 aClass4_Sub3_Sub5_Sub2_2;
 
-	@OriginalMember(owner = "client!dg", name = "m", descriptor = "Z")
-	public static boolean aBoolean152;
-
 	@OriginalMember(owner = "client!dg", name = "p", descriptor = "[Lclient!uj;")
 	public static Class4_Sub3_Sub14[] aClass4_Sub3_Sub14Array9;
 
@@ -70,9 +67,6 @@ public final class Static2 {
 
 	@OriginalMember(owner = "client!ei", name = "F", descriptor = "[I")
 	public static int[] anIntArray97;
-
-	@OriginalMember(owner = "client!ej", name = "x", descriptor = "Lclient!fh;")
-	public static Js5 aClass58_38;
 
 	@OriginalMember(owner = "client!el", name = "m", descriptor = "I")
 	public static int anInt1317;

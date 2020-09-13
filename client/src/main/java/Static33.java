@@ -402,14 +402,6 @@ public final class Static33 {
 		}
 	}
 
-	@OriginalMember(owner = "client!td", name = "b", descriptor = "(ZI)V")
-	public static void method4132(@OriginalArg(0) boolean arg0) {
-		if (Static2.aBoolean152 != arg0) {
-			Static2.aBoolean152 = arg0;
-			Static30.method3599();
-		}
-	}
-
 	@OriginalMember(owner = "client!te", name = "a", descriptor = "(Lclient!ua;IIII)V")
 	public static void method4152(@OriginalArg(0) NpcType arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3) {
 		if (Static7.anInt5634 >= 400) {
@@ -590,7 +582,7 @@ public final class Static33 {
 	}
 
 	@OriginalMember(owner = "client!te", name = "a", descriptor = "(IILclient!vh;IIII)Z")
-	public static boolean method4155(@OriginalArg(1) int arg0, @OriginalArg(2) Class181 arg1, @OriginalArg(4) int arg2, @OriginalArg(6) int arg3) {
+	public static boolean method4155(@OriginalArg(1) int arg0, @OriginalArg(2) LocType arg1, @OriginalArg(4) int arg2, @OriginalArg(6) int arg3) {
 		@Pc(10) Class143 local10 = Static15.method1400(arg1.anInt5515);
 		if (local10.anInt4312 == -1) {
 			return true;
@@ -1082,7 +1074,7 @@ public final class Static33 {
 			for (@Pc(258) int local258 = 0; local258 < Static6.anInt4434; local258++) {
 				@Pc(277) int local277 = Static3.anIntArray189[local258] * 4 + 2 - Static4.aClass53_Sub1_Sub1_2.x / 32;
 				@Pc(292) int local292 = Static2.anIntArray187[local258] * 4 + 2 - Static4.aClass53_Sub1_Sub1_2.z / 32;
-				@Pc(298) Class181 local298 = Static8.method99(Static1.anIntArray15[local258]);
+				@Pc(298) LocType local298 = LocTypeList.get(Static1.anIntArray15[local258]);
 				if (local298.anIntArray631 != null) {
 					local298 = local298.method4453();
 					if (local298 == null || local298.anInt5526 == -1) {

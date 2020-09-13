@@ -2106,7 +2106,7 @@ public final class Static21 {
 		@Pc(67) int local67 = (int) local9 >> 14 & 0x1F;
 		@Pc(74) int local74 = Integer.MAX_VALUE & (int) (local9 >>> 32);
 		@Pc(81) int local81 = (int) local9 >> 20 & 0x3;
-		@Pc(85) Class181 local85 = Static8.method99(local74);
+		@Pc(85) LocType local85 = LocTypeList.get(local74);
 		if (local85.method4463()) {
 			Static22.method4690(arg2, local85, arg0, arg5);
 		}

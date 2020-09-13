@@ -631,11 +631,6 @@ public final class Static26 {
 		Static4.anInt5826 = local10[1];
 	}
 
-	@OriginalMember(owner = "client!nh", name = "a", descriptor = "(ZI)I")
-	public static int method2980(@OriginalArg(1) int arg0) {
-		return arg0 & 0xFF;
-	}
-
 	@OriginalMember(owner = "client!nh", name = "a", descriptor = "(Lclient!vc;III)V")
 	public static void method2981(@OriginalArg(0) Class53 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) {
 		if (arg2 < Static7.anInt5632) {

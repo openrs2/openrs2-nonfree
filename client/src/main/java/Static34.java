@@ -646,13 +646,6 @@ public final class Static34 {
 		}
 	}
 
-	@OriginalMember(owner = "client!tl", name = "a", descriptor = "(ILclient!fh;ZLclient!fh;)V")
-	public static void method4232(@OriginalArg(1) Js5 arg0, @OriginalArg(3) Js5 arg1) {
-		Static2.aBoolean152 = true;
-		Static7.aClass58_97 = arg1;
-		Static2.aClass58_38 = arg0;
-	}
-
 	@OriginalMember(owner = "client!tl", name = "a", descriptor = "(Lclient!qc;Z)V")
 	public static void method4234(@OriginalArg(0) PathingEntity arg0) {
 		@Pc(13) int local13 = arg0.anInt4034 - Static2.anInt954;
@@ -1235,7 +1228,7 @@ public final class Static34 {
 		if (arg1 == 11) {
 			arg1 = 10;
 		}
-		@Pc(15) Class181 local15 = Static8.method99(arg0);
+		@Pc(15) LocType local15 = LocTypeList.get(arg0);
 		if (arg1 >= 5 && arg1 <= 8) {
 			arg1 = 4;
 		}

@@ -173,7 +173,7 @@ public final class Static38 {
 			} else if (Static1.anInt552 == 115) {
 				@Pc(935) int local935 = Static5.aClass4_Sub10_Sub1_2.readUnsignedShort();
 				@Pc(939) int local939 = Static5.aClass4_Sub10_Sub1_2.readUnsignedByte();
-				Static8.method99(local935).method4457(local939);
+				LocTypeList.get(local935).method4457(local939);
 			} else if (Static1.anInt552 == 232) {
 				@Pc(954) int local954 = Static5.aClass4_Sub10_Sub1_2.readUnsignedByteC();
 				@Pc(960) int local960 = Static1.anInt818 + (local954 & 0x7);

@@ -610,7 +610,7 @@ public final class client extends GameShell {
 				Static27.method3228(js5Archive2);
 				Static36.method3814(js5Archive2);
 				Static36.method4523(js5Archive7, js5Archive2);
-				Static34.method4232(js5Archive16, js5Archive7);
+				LocTypeList.init(js5Archive16, js5Archive7);
 				NpcTypeList.init(js5Archive18, js5Archive7);
 				ObjTypeList.init(js5Archive19, js5Archive7, Static2.aClass4_Sub3_Sub5_Sub2_2);
 				StructTypeList.init(js5Archive2);

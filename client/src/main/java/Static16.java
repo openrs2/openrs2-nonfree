@@ -137,7 +137,7 @@ public final class Static16 {
 			if (local103 != local112) {
 				local103 = local112;
 				if (local138 == 2 && Static37.method4669(Static7.anInt5334, local117, local124, local112)) {
-					@Pc(163) Class181 local163 = Static8.method99(local131);
+					@Pc(163) LocType local163 = LocTypeList.get(local131);
 					if (local163.anIntArray631 != null) {
 						local163 = local163.method4453();
 					}
@@ -145,14 +145,14 @@ public final class Static16 {
 						continue;
 					}
 					if (Static2.anInt1334 == 1) {
-						method1497(local112, local117, local124, Static7.aString365 + " -> <col=00ffff>" + local163.aString332, LocalisedText.USE, (short) 16, Static2.anInt1937);
+						method1497(local112, local117, local124, Static7.aString365 + " -> <col=00ffff>" + local163.name, LocalisedText.USE, (short) 16, Static2.anInt1937);
 					} else if (Static3.aBoolean177) {
 						@Pc(215) ParamType local215 = Static5.anInt4224 == -1 ? null : ParamTypeList.get(Static5.anInt4224);
-						if ((Static5.anInt3560 & 0x4) != 0 && (local215 == null || local163.method4451(local215.defaultInt, Static5.anInt4224) != local215.defaultInt)) {
-							method1497(local112, local117, local124, Static2.aString81 + " -> <col=00ffff>" + local163.aString332, Static4.aString140, (short) 4, Static6.anInt4466);
+						if ((Static5.anInt3560 & 0x4) != 0 && (local215 == null || local163.getParam(Static5.anInt4224, local215.defaultInt) != local215.defaultInt)) {
+							method1497(local112, local117, local124, Static2.aString81 + " -> <col=00ffff>" + local163.name, Static4.aString140, (short) 4, Static6.anInt4466);
 						}
 					} else {
-						@Pc(267) String[] local267 = local163.aStringArray39;
+						@Pc(267) String[] local267 = local163.ops;
 						if (Static5.aBoolean254) {
 							local267 = Static35.method4300(local267);
 						}
@@ -182,11 +182,11 @@ public final class Static16 {
 									if (local163.anInt5533 == local278) {
 										local327 = local163.anInt5528;
 									}
-									method1497(local112, local117, local124, "<col=00ffff>" + local163.aString332, local267[local278], local294, local327);
+									method1497(local112, local117, local124, "<col=00ffff>" + local163.name, local267[local278], local294, local327);
 								}
 							}
 						}
-						method1497((long) local163.anInt5553, local117, local124, "<col=00ffff>" + local163.aString332, LocalisedText.EXAMINE, (short) 1007, Static3.anInt2232);
+						method1497((long) local163.id, local117, local124, "<col=00ffff>" + local163.name, LocalisedText.EXAMINE, (short) 1007, Static3.anInt2232);
 					}
 				}
 				if (local138 == 1) {
@@ -4197,7 +4197,7 @@ public final class Static16 {
 								if (local45 == 6002) {
 									local5--;
 									Preferences.setAllLevelsVisible(Static7.anIntArray571[local5] == 1);
-									Static30.method3599();
+									LocTypeList.clear();
 									Static36.method4455();
 									method2014();
 									Preferences.write(GameShell.signLink);
@@ -4863,9 +4863,9 @@ public final class Static16 {
 						@Pc(10544) int local10544 = Static7.anIntArray571[local5 + 1];
 						@Pc(10548) ParamType local10548 = ParamTypeList.get(local10544);
 						if (local10548.isString()) {
-							Static2.aStringArray5[local13++] = Static8.method99(local10538).method4467(local10548.defaultString, local10544);
+							Static2.aStringArray5[local13++] = LocTypeList.get(local10538).getParam(local10544, local10548.defaultString);
 						} else {
-							Static7.anIntArray571[local5++] = Static8.method99(local10538).method4451(local10548.defaultInt, local10544);
+							Static7.anIntArray571[local5++] = LocTypeList.get(local10538).getParam(local10544, local10548.defaultInt);
 						}
 						continue;
 					}

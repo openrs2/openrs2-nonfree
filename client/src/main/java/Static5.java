@@ -449,9 +449,6 @@ public final class Static5 {
 	@OriginalMember(owner = "client!om", name = "m", descriptor = "I")
 	public static int anInt3920 = -1;
 
-	@OriginalMember(owner = "client!on", name = "K", descriptor = "Lclient!cc;")
-	public static final SoftLruHashTable aClass26_43 = new SoftLruHashTable(500);
-
 	@OriginalMember(owner = "client!p", name = "nc", descriptor = "Lclient!ic;")
 	public static final HashTable aClass84_18 = new HashTable(16);
 

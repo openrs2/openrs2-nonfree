@@ -415,9 +415,6 @@ public final class Static3 {
 	@OriginalMember(owner = "client!ge", name = "d", descriptor = "[I")
 	public static final int[] anIntArray166 = new int[] { 1, -1, -1, 1 };
 
-	@OriginalMember(owner = "client!gf", name = "a", descriptor = "Lclient!cc;")
-	public static final SoftLruHashTable aClass26_19 = new SoftLruHashTable(64);
-
 	@OriginalMember(owner = "client!gf", name = "e", descriptor = "I")
 	public static int anInt2047 = -1;
 

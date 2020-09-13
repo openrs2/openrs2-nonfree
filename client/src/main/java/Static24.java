@@ -486,7 +486,7 @@ public final class Static24 {
 		Static32.method3956();
 		Static35.method4313();
 		Static36.method4448();
-		Static30.method3599();
+		LocTypeList.clear();
 		NpcTypeList.clear();
 		ObjTypeList.clear();
 		Static27.method3180();

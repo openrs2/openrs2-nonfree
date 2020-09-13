@@ -153,14 +153,14 @@ public final class Static20 {
 										@Pc(198) int local198 = arg0.readUnsignedShort();
 										@Pc(202) int local202 = arg0.readUnsignedByte();
 										local198--;
-										@Pc(207) Class181 local207 = Static8.method99(local198);
+										@Pc(207) LocType local207 = LocTypeList.get(local198);
 										if (local207.anIntArray631 != null) {
 											local207 = local207.method4453();
 											if (local207 == null || local207.anInt5526 == -1) {
 												continue;
 											}
 										}
-										if ((!local207.aBoolean375 || arg1) && local207.anInt5526 != -1) {
+										if ((!local207.members || arg1) && local207.anInt5526 != -1) {
 											@Pc(236) Class4_Sub3_Sub7 local236 = new Class4_Sub3_Sub7();
 											local236.anInt1760 = local207.anInt5526;
 											local236.anInt1763 = local202;

@@ -1377,14 +1377,6 @@ public final class Static30 {
 		Static12.method714(Static7.aShortArray114, local118);
 	}
 
-	@OriginalMember(owner = "client!qj", name = "g", descriptor = "(I)V")
-	public static void method3599() {
-		Static3.aClass26_19.clear();
-		Static5.aClass26_43.clear();
-		Static7.aClass26_18.clear();
-		Static4.aClass26_32.clear();
-	}
-
 	@OriginalMember(owner = "client!qj", name = "g", descriptor = "(B)V")
 	public static void method3600() {
 		if (Static3.anInt2574 == 0 || Static3.anInt2574 == 5) {
@@ -1610,7 +1602,7 @@ public final class Static30 {
 				Static7.anInt2022 = Static5.aClass4_Sub10_Sub1_2.readUnsignedShort();
 				Static7.aBoolean399 = Static5.aClass4_Sub10_Sub1_2.readUnsignedByte() == 1;
 				Static7.aBoolean370 = Static5.aClass4_Sub10_Sub1_2.readUnsignedByte() == 1;
-				Static33.method4132(Static7.aBoolean370);
+				LocTypeList.setAllowMembers(Static7.aBoolean370);
 				ObjTypeList.setAllowMembers(Static7.aBoolean370);
 				NpcTypeList.setAllowMembers(Static7.aBoolean370);
 				if (!client.advertSuppressed) {

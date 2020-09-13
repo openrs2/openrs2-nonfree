@@ -409,14 +409,6 @@ public final class Static28 {
 		}
 	}
 
-	@OriginalMember(owner = "client!on", name = "c", descriptor = "(II)V")
-	public static void method3278() {
-		Static3.aClass26_19.clean(5);
-		Static5.aClass26_43.clean(5);
-		Static7.aClass26_18.clean(5);
-		Static4.aClass26_32.clean(5);
-	}
-
 	@OriginalMember(owner = "client!on", name = "g", descriptor = "(I)V")
 	public static void method3281() {
 		Static7.aClass26_55.clear();
@@ -469,7 +461,7 @@ public final class Static28 {
 					@Pc(76) int local76 = local26 & 0x3F;
 					@Pc(80) int local80 = arg0 + local76;
 					if (local72 > 0 && local80 > 0 && local72 < 103 && local80 < 103) {
-						@Pc(102) Class181 local102 = Static8.method99(local14);
+						@Pc(102) LocType local102 = LocTypeList.get(local14);
 						if (local68 != 22 || Preferences.groundDecoration || local102.anInt5522 != 0 || local102.anInt5509 == 1 || local102.aBoolean376) {
 							local28 = true;
 							if (!local102.method4449()) {

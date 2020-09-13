@@ -93,7 +93,7 @@ public final class Class53_Sub7 extends Class53 {
 				this.anInt4580 = local96.anInt4580;
 				this.aClass46_3 = local96.aClass46_3;
 			} else if (Static3.aBoolean138) {
-				@Pc(65) Class181 local65 = Static8.method99(this.anInt4587);
+				@Pc(65) LocType local65 = LocTypeList.get(this.anInt4587);
 				if (local65.anIntArray631 != null) {
 					local65 = local65.method4453();
 				}
@@ -146,7 +146,7 @@ public final class Class53_Sub7 extends Class53 {
 	@OriginalMember(owner = "client!ri", name = "a", descriptor = "(ZI)Lclient!vc;")
 	private Class53 method3728(@OriginalArg(0) boolean arg0) {
 		@Pc(12) boolean local12 = Static6.anIntArrayArrayArray13 != Static6.anIntArrayArrayArray14;
-		@Pc(17) Class181 local17 = Static8.method99(this.anInt4587);
+		@Pc(17) LocType local17 = LocTypeList.get(this.anInt4587);
 		if (local17.anIntArray631 != null) {
 			local17 = local17.method4453();
 		}
@@ -158,7 +158,7 @@ public final class Class53_Sub7 extends Class53 {
 			this.anInt4571 = -1;
 			return null;
 		}
-		if (!this.aBoolean318 && local17.anInt5553 != this.anInt4571) {
+		if (!this.aBoolean318 && local17.id != this.anInt4571) {
 			this.method3730(-1);
 		}
 		@Pc(63) int local63 = this.anInt4577 & 0x3;
@@ -176,10 +176,10 @@ public final class Class53_Sub7 extends Class53 {
 		@Pc(114) int local114 = this.anInt4569 + (local80 >> 1);
 		@Pc(124) int local124 = this.anInt4593 + (local83 + 1 >> 1);
 		this.method3731(local98 * 128, local114 * 128);
-		@Pc(176) boolean local176 = !local12 && local17.aBoolean372 && (this.anInt4571 != local17.anInt5553 || (this.anInt4574 != this.anInt4594 || this.aClass46_3 != null && (this.aClass46_3.aBoolean71 || Static6.aBoolean258) && this.anInt4574 != this.anInt4580) && Preferences.sceneryShadows >= 2);
+		@Pc(176) boolean local176 = !local12 && local17.aBoolean372 && (this.anInt4571 != local17.id || (this.anInt4574 != this.anInt4594 || this.aClass46_3 != null && (this.aClass46_3.aBoolean71 || Static6.aBoolean258) && this.anInt4574 != this.anInt4580) && Preferences.sceneryShadows >= 2);
 		if (arg0 && !local176) {
 			this.anInt4594 = this.anInt4574;
-			this.anInt4571 = local17.anInt5553;
+			this.anInt4571 = local17.id;
 			return null;
 		}
 		@Pc(199) int local199 = (local80 << 6) + (this.anInt4569 << 7);
@@ -204,7 +204,7 @@ public final class Class53_Sub7 extends Class53 {
 		}
 		if (local321 == null) {
 			this.anInt4594 = this.anInt4574;
-			this.anInt4571 = local17.anInt5553;
+			this.anInt4571 = local17.id;
 			return null;
 		}
 		if (Static3.aBoolean138 && local176) {
@@ -231,7 +231,7 @@ public final class Class53_Sub7 extends Class53 {
 				this.anInt4581 = local199;
 			}
 		}
-		this.anInt4571 = local17.anInt5553;
+		this.anInt4571 = local17.id;
 		this.anInt4594 = this.anInt4574;
 		return local321.aClass53_3;
 	}
@@ -241,8 +241,8 @@ public final class Class53_Sub7 extends Class53 {
 		@Pc(7) int local7 = arg0;
 		@Pc(9) boolean local9 = false;
 		if (arg0 == -1) {
-			@Pc(20) Class181 local20 = Static8.method99(this.anInt4587);
-			@Pc(22) Class181 local22 = local20;
+			@Pc(20) LocType local20 = LocTypeList.get(this.anInt4587);
+			@Pc(22) LocType local22 = local20;
 			if (local20.anIntArray631 != null) {
 				local20 = local20.method4453();
 			}
@@ -257,7 +257,7 @@ public final class Class53_Sub7 extends Class53 {
 					return;
 				}
 				local7 = local20.method4460();
-				if (this.anInt4571 != local20.anInt5553) {
+				if (this.anInt4571 != local20.id) {
 					local9 = local20.aBoolean380;
 				}
 			} else if (local20.anInt5523 == -1) {
@@ -266,14 +266,14 @@ public final class Class53_Sub7 extends Class53 {
 						return;
 					}
 					local7 = local22.method4460();
-					if (local22.anInt5553 != this.anInt4571) {
+					if (local22.id != this.anInt4571) {
 						local9 = local22.aBoolean380;
 					}
-				} else if (local22 != null && local22.anInt5523 != -1 && this.anInt4571 != local22.anInt5553) {
+				} else if (local22 != null && local22.anInt5523 != -1 && this.anInt4571 != local22.id) {
 					local9 = local22.aBoolean380;
 					local7 = local22.anInt5523;
 				}
-			} else if (this.anInt4571 != local20.anInt5553) {
+			} else if (this.anInt4571 != local20.id) {
 				local9 = local20.aBoolean380;
 				local7 = local20.anInt5523;
 			}
@@ -385,7 +385,7 @@ public final class Class53_Sub7 extends Class53 {
 		if (Static3.aBoolean138) {
 			@Pc(70) Class53_Sub4_Sub2 local70 = (Class53_Sub4_Sub2) arg0;
 			if ((this.aClass20_Sub3_7 == null || this.aClass20_Sub3_7.aBoolean250) && (local70.aClass158Array3 != null || local70.aClass167Array3 != null)) {
-				@Pc(91) Class181 local91 = Static8.method99(this.anInt4587);
+				@Pc(91) LocType local91 = LocTypeList.get(this.anInt4587);
 				if (local91.anIntArray631 != null) {
 					local91 = local91.method4453();
 				}
@@ -399,7 +399,7 @@ public final class Class53_Sub7 extends Class53 {
 		} else {
 			@Pc(8) Class53_Sub4_Sub1 local8 = (Class53_Sub4_Sub1) arg0;
 			if ((this.aClass20_Sub3_7 == null || this.aClass20_Sub3_7.aBoolean250) && (local8.aClass158Array2 != null || local8.aClass167Array2 != null)) {
-				@Pc(28) Class181 local28 = Static8.method99(this.anInt4587);
+				@Pc(28) LocType local28 = LocTypeList.get(this.anInt4587);
 				if (local28.anIntArray631 != null) {
 					local28 = local28.method4453();
 				}

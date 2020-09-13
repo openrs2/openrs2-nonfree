@@ -87,9 +87,9 @@ public final class Static22 {
 	}
 
 	@OriginalMember(owner = "client!jo", name = "a", descriptor = "(ILclient!vh;III)V")
-	public static void method4690(@OriginalArg(0) int arg0, @OriginalArg(1) Class181 arg1, @OriginalArg(2) int arg2, @OriginalArg(4) int arg3) {
+	public static void method4690(@OriginalArg(0) int arg0, @OriginalArg(1) LocType arg1, @OriginalArg(2) int arg2, @OriginalArg(4) int arg3) {
 		for (@Pc(15) Class4_Sub11 local15 = (Class4_Sub11) Static1.aClass112_2.head(); local15 != null; local15 = (Class4_Sub11) Static1.aClass112_2.next()) {
-			if (local15.anInt2126 == arg2 && local15.anInt2124 == arg3 * 128 && local15.anInt2113 == arg0 * 128 && arg1.anInt5553 == local15.aClass181_1.anInt5553) {
+			if (local15.anInt2126 == arg2 && local15.anInt2124 == arg3 * 128 && local15.anInt2113 == arg0 * 128 && arg1.id == local15.aClass181_1.id) {
 				if (local15.aClass4_Sub6_Sub4_3 != null) {
 					Static5.aClass4_Sub6_Sub3_2.method2670(local15.aClass4_Sub6_Sub4_3);
 					local15.aClass4_Sub6_Sub4_3 = null;
@@ -311,7 +311,7 @@ public final class Static22 {
 		if (Static5.anInt3896 > arg1) {
 			Static5.anInt3896 = arg1;
 		}
-		@Pc(60) Class181 local60 = Static8.method99(arg2);
+		@Pc(60) LocType local60 = LocTypeList.get(arg2);
 		if (Static3.aBoolean138 && local60.aBoolean383) {
 			return;
 		}
@@ -620,7 +620,7 @@ public final class Static22 {
 			@Pc(1967) long local1967 = Static25.method2726(arg1, arg4, arg6);
 			@Pc(1969) int local1969 = 16;
 			if (local1967 != 0L) {
-				local1969 = Static8.method99((int) (local1967 >>> 32) & Integer.MAX_VALUE).anInt5507;
+				local1969 = LocTypeList.get((int) (local1967 >>> 32) & Integer.MAX_VALUE).anInt5507;
 			}
 			@Pc(2040) Class53 local2040;
 			if (local60.anInt5523 == -1 && local60.anIntArray633 == null && local60.anIntArray631 == null && !local60.aBoolean379) {
@@ -637,7 +637,7 @@ public final class Static22 {
 			@Pc(2089) long local2089 = Static25.method2726(arg1, arg4, arg6);
 			@Pc(2091) int local2091 = 8;
 			if (local2089 != 0L) {
-				local2091 = Static8.method99(Integer.MAX_VALUE & (int) (local2089 >>> 32)).anInt5507 / 2;
+				local2091 = LocTypeList.get(Integer.MAX_VALUE & (int) (local2089 >>> 32)).anInt5507 / 2;
 			}
 			@Pc(2170) Class53 local2170;
 			if (local60.anInt5523 == -1 && local60.anIntArray633 == null && local60.anIntArray631 == null && !local60.aBoolean379) {
@@ -667,7 +667,7 @@ public final class Static22 {
 			@Pc(2300) int local2300 = 8;
 			@Pc(2305) long local2305 = Static25.method2726(arg1, arg4, arg6);
 			if (local2305 != 0L) {
-				local2300 = Static8.method99((int) (local2305 >>> 32) & Integer.MAX_VALUE).anInt5507 / 2;
+				local2300 = LocTypeList.get((int) (local2305 >>> 32) & Integer.MAX_VALUE).anInt5507 / 2;
 			}
 			@Pc(2328) int local2328 = arg0 + 2 & 0x3;
 			@Pc(2392) Class53 local2392;

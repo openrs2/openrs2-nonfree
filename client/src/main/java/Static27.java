@@ -764,7 +764,7 @@ public final class Static27 {
 		method4707();
 		Static28.method3258();
 		Static28.method3329();
-		Static35.method4400();
+		LocTypeList.removeSoft();
 		NpcTypeList.removeSoft();
 		ObjTypeList.removeSoft();
 		Static20.method1969();

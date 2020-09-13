@@ -48,11 +48,6 @@ public final class Static37 {
 		Static3.aClass4_Sub10_Sub1_1.writeShortLEA(arg0 + Static5.anInt3983);
 	}
 
-	@OriginalMember(owner = "client!wb", name = "d", descriptor = "(II)I")
-	public static int method4662(@OriginalArg(1) int arg0) {
-		return arg0 >>> 8;
-	}
-
 	@OriginalMember(owner = "client!wb", name = "c", descriptor = "(I)I")
 	public static int method4663() {
 		return Static2.aBoolean68 && Static2.aBooleanArray4[81] && Static7.anInt5634 > 2 ? Static2.anIntArray160[Static7.anInt5634 - 2] : Static2.anIntArray160[Static7.anInt5634 - 1];
@@ -169,7 +164,7 @@ public final class Static37 {
 				local42 = Static3.aClass53_Sub1_Sub2Array1[local55];
 			}
 			if (local42 != null) {
-				@Pc(69) Class181 local69 = Static8.method99(local16.anInt5004);
+				@Pc(69) LocType local69 = LocTypeList.get(local16.anInt5004);
 				if (Static7.anInt5334 < 3) {
 				}
 				@Pc(88) int local88;
@@ -861,7 +856,7 @@ public final class Static37 {
 			@Pc(32) int local32 = (int) local21 >> 20 & 0x3;
 			@Pc(39) int local39 = (int) local21 >> 14 & 0x1F;
 			@Pc(46) int local46 = Integer.MAX_VALUE & (int) (local21 >>> 32);
-			@Pc(50) Class181 local50 = Static8.method99(local46);
+			@Pc(50) LocType local50 = LocTypeList.get(local46);
 			if (local50.anInt5515 == -1) {
 				@Pc(56) int local56 = arg0;
 				@Pc(58) int[] local58 = Static6.anIntArray561;
@@ -935,7 +930,7 @@ public final class Static37 {
 			@Pc(430) int local430 = (int) local418 >> 20 & 0x3;
 			@Pc(437) int local437 = Integer.MAX_VALUE & (int) (local418 >>> 32);
 			@Pc(444) int local444 = (int) local418 >> 14 & 0x1F;
-			@Pc(448) Class181 local448 = Static8.method99(local437);
+			@Pc(448) LocType local448 = LocTypeList.get(local437);
 			if (local448.anInt5515 == -1) {
 				if (local444 == 9) {
 					@Pc(459) int local459 = 15658734;
@@ -964,7 +959,7 @@ public final class Static37 {
 		if (local573 != 0L) {
 			@Pc(585) int local585 = (int) (local573 >>> 32) & Integer.MAX_VALUE;
 			@Pc(592) int local592 = (int) local573 >> 20 & 0x3;
-			@Pc(596) Class181 local596 = Static8.method99(local585);
+			@Pc(596) LocType local596 = LocTypeList.get(local585);
 			if (local596.anInt5515 != -1 && !Static33.method4155(arg3, local596, arg4, local592)) {
 				return false;
 			}

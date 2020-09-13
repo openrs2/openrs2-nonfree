@@ -19,9 +19,6 @@ public final class Static7 {
 	@OriginalMember(owner = "client!uc", name = "V", descriptor = "[I")
 	public static int[] anIntArray597;
 
-	@OriginalMember(owner = "client!uc", name = "W", descriptor = "Lclient!fh;")
-	public static Js5 aClass58_97;
-
 	@OriginalMember(owner = "client!uc", name = "Y", descriptor = "[[[I")
 	public static int[][][] anIntArrayArrayArray15;
 
@@ -165,9 +162,6 @@ public final class Static7 {
 
 	@OriginalMember(owner = "client!tn", name = "c", descriptor = "I")
 	public static int anInt2022 = -1;
-
-	@OriginalMember(owner = "client!tn", name = "e", descriptor = "Lclient!cc;")
-	public static final SoftLruHashTable aClass26_18 = new SoftLruHashTable(30);
 
 	@OriginalMember(owner = "client!tn", name = "o", descriptor = "Z")
 	public static boolean aBoolean123 = false;

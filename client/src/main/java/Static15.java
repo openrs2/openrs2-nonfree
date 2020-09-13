@@ -324,7 +324,7 @@ public final class Static15 {
 	}
 
 	@OriginalMember(owner = "client!fd", name = "a", descriptor = "(IIIILclient!vh;BIII)V")
-	public static void method4592(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) Class181 arg4, @OriginalArg(6) int arg5, @OriginalArg(7) int arg6, @OriginalArg(8) int arg7) {
+	public static void method4592(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) LocType arg4, @OriginalArg(6) int arg5, @OriginalArg(7) int arg6, @OriginalArg(8) int arg7) {
 		@Pc(9) int local9 = arg2 & 0x3;
 		@Pc(20) int local20;
 		@Pc(23) int local23;
@@ -870,7 +870,7 @@ public final class Static15 {
 				@Pc(73) int local73 = local69 >> 2;
 				@Pc(77) int local77 = local69 & 0x3;
 				if (local65 == arg7 && arg6 <= local57 && arg6 + 8 > local57 && arg5 <= local61 && arg5 + 8 > local61) {
-					@Pc(108) Class181 local108 = Static8.method99(local12);
+					@Pc(108) LocType local108 = LocTypeList.get(local12);
 					@Pc(125) int local125 = Static29.method3147(local108.anInt5527, local61 & 0x7, local77, local57 & 0x7, arg4, local108.anInt5516) + arg1;
 					@Pc(145) int local145 = arg9 + Static26.method4356(local57 & 0x7, local108.anInt5516, local108.anInt5527, arg4, local61 & 0x7, local77);
 					if (local125 > 0 && local145 > 0 && local125 < 103 && local145 < 103) {

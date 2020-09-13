@@ -415,30 +415,6 @@ public final class Static8 {
 		Static6.aClass26_46.removeSoft();
 	}
 
-	@OriginalMember(owner = "client!af", name = "a", descriptor = "(II)Lclient!vh;")
-	public static Class181 method99(@OriginalArg(0) int arg0) {
-		@Pc(14) Class181 local14 = (Class181) Static3.aClass26_19.get((long) arg0);
-		if (local14 != null) {
-			return local14;
-		}
-		@Pc(28) byte[] local28 = Static2.aClass58_38.fetchFile(Static37.method4662(arg0), Static26.method2980(arg0));
-		@Pc(32) Class181 local32 = new Class181();
-		local32.anInt5553 = arg0;
-		if (local28 != null) {
-			local32.method4454(new Buffer(local28));
-		}
-		local32.method4466();
-		if (!Static2.aBoolean152 && local32.aBoolean375) {
-			local32.aStringArray39 = null;
-		}
-		if (local32.aBoolean385) {
-			local32.anInt5509 = 0;
-			local32.aBoolean374 = false;
-		}
-		Static3.aClass26_19.put((long) arg0, local32);
-		return local32;
-	}
-
 	@OriginalMember(owner = "client!af", name = "a", descriptor = "(IIIIBII)V")
 	public static void method100(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(5) int arg4, @OriginalArg(6) int arg5) {
 		if (Static2.anInt902 <= arg4 - arg0 && arg0 + arg4 <= Static3.anInt2553 && arg2 - arg0 >= Static4.anInt3086 && Static5.anInt4230 >= arg0 + arg2) {
@@ -482,7 +458,7 @@ public final class Static8 {
 	}
 
 	@OriginalMember(owner = "client!ah", name = "a", descriptor = "(ILclient!vh;ILclient!p;ILclient!f;II)V")
-	public static void method109(@OriginalArg(1) Class181 arg0, @OriginalArg(2) int arg1, @OriginalArg(3) Npc arg2, @OriginalArg(4) int arg3, @OriginalArg(5) Player arg4, @OriginalArg(6) int arg5, @OriginalArg(7) int arg6) {
+	public static void method109(@OriginalArg(1) LocType arg0, @OriginalArg(2) int arg1, @OriginalArg(3) Npc arg2, @OriginalArg(4) int arg3, @OriginalArg(5) Player arg4, @OriginalArg(6) int arg5, @OriginalArg(7) int arg6) {
 		@Pc(9) Class4_Sub11 local9 = new Class4_Sub11();
 		local9.anInt2126 = arg6;
 		local9.anInt2113 = arg3 * 128;

@@ -733,7 +733,7 @@ public final class Static13 {
 		@Pc(23) int local23 = (int) arg1 >> 14 & 0x1F;
 		@Pc(30) int local30 = Integer.MAX_VALUE & (int) (arg1 >>> 32);
 		if (local23 == 10 || local23 == 11 || local23 == 22) {
-			@Pc(49) Class181 local49 = Static8.method99(local30);
+			@Pc(49) LocType local49 = LocTypeList.get(local30);
 			@Pc(52) int local52 = local49.anInt5538;
 			@Pc(63) int local63;
 			@Pc(66) int local66;
@@ -855,13 +855,13 @@ public final class Static13 {
 						local168 = Static37.method4739(arg0, local147, local154);
 					}
 					if (local168 != 0L) {
-						@Pc(227) Class181 local227 = Static8.method99(Integer.MAX_VALUE & (int) (local168 >>> 32));
-						if (!local227.aBoolean375 || Static7.aBoolean370) {
+						@Pc(227) LocType local227 = LocTypeList.get(Integer.MAX_VALUE & (int) (local168 >>> 32));
+						if (!local227.members || Static7.aBoolean370) {
 							@Pc(235) int local235 = local227.anInt5526;
 							if (local227.anIntArray631 != null) {
 								for (@Pc(241) int local241 = 0; local241 < local227.anIntArray631.length; local241++) {
 									if (local227.anIntArray631[local241] != -1) {
-										@Pc(264) Class181 local264 = Static8.method99(local227.anIntArray631[local241]);
+										@Pc(264) LocType local264 = LocTypeList.get(local227.anIntArray631[local241]);
 										if (local264.anInt5526 >= 0) {
 											local235 = local264.anInt5526;
 										}
@@ -894,7 +894,7 @@ public final class Static13 {
 										}
 									}
 								}
-								Static1.anIntArray15[Static6.anInt4434] = local227.anInt5553;
+								Static1.anIntArray15[Static6.anInt4434] = local227.id;
 								Static3.anIntArray189[Static6.anInt4434] = local288;
 								Static2.anIntArray187[Static6.anInt4434] = local293;
 								Static6.anInt4434++;
