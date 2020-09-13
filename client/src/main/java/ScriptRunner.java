@@ -30,7 +30,7 @@ public final class ScriptRunner {
 	private static final int[][] arrays = new int[5][5000];
 
 	@OriginalMember(owner = "client!gb", name = "a", descriptor = "(IILclient!jl;)V")
-	public static void run(@OriginalArg(2) ClientScript script, @OriginalArg(0) int maxCycles) {
+	private static void run(@OriginalArg(2) ClientScript script, @OriginalArg(0) int maxCycles) {
 		fp = 0;
 		@Pc(5) int isp = 0;
 		@Pc(11) int pc = -1;
