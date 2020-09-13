@@ -190,9 +190,6 @@ public final class Static7 {
 	@OriginalMember(owner = "client!u", name = "a", descriptor = "I")
 	public static int anInt5228 = -1;
 
-	@OriginalMember(owner = "client!u", name = "d", descriptor = "Lclient!tb;")
-	public static Class161 aClass161_1 = new Class161();
-
 	@OriginalMember(owner = "client!u", name = "g", descriptor = "[I")
 	public static final int[] anIntArray587 = new int[2048];
 
@@ -208,17 +205,8 @@ public final class Static7 {
 	@OriginalMember(owner = "client!uc", name = "T", descriptor = "[I")
 	public static final int[] anIntArray595 = new int[1024];
 
-	@OriginalMember(owner = "client!uc", name = "U", descriptor = "[I")
-	public static final int[] anIntArray596 = new int[128];
-
 	@OriginalMember(owner = "client!uc", name = "ab", descriptor = "[I")
 	public static final int[] anIntArray598 = new int[100];
-
-	@OriginalMember(owner = "client!uc", name = "cb", descriptor = "I")
-	public static int anInt5311 = 0;
-
-	@OriginalMember(owner = "client!uc", name = "db", descriptor = "I")
-	public static int anInt5312 = 0;
 
 	@OriginalMember(owner = "client!ud", name = "a", descriptor = "I")
 	public static int anInt5319 = 0;
@@ -279,9 +267,6 @@ public final class Static7 {
 
 	@OriginalMember(owner = "client!uj", name = "L", descriptor = "Z")
 	public static boolean aBoolean388 = false;
-
-	@OriginalMember(owner = "client!uk", name = "b", descriptor = "I")
-	public static int anInt5357 = 0;
 
 	@OriginalMember(owner = "client!ul", name = "M", descriptor = "Lclient!cc;")
 	public static final SoftLruHashTable aClass26_55 = new SoftLruHashTable(64);
@@ -382,17 +367,11 @@ public final class Static7 {
 	@OriginalMember(owner = "client!vl", name = "c", descriptor = "I")
 	public static int anInt5623 = 0;
 
-	@OriginalMember(owner = "client!vl", name = "l", descriptor = "J")
-	public static volatile long aLong193 = 0L;
-
 	@OriginalMember(owner = "client!vl", name = "n", descriptor = "Z")
 	public static boolean aBoolean389 = false;
 
 	@OriginalMember(owner = "client!vl", name = "u", descriptor = "I")
 	public static int anInt5634 = 0;
-
-	@OriginalMember(owner = "client!w", name = "z", descriptor = "I")
-	public static volatile int anInt5679 = 0;
 
 	@OriginalMember(owner = "client!w", name = "B", descriptor = "[I")
 	public static final int[] anIntArray646 = new int[] { -1, -1, 1, 1 };
@@ -430,9 +409,6 @@ public final class Static7 {
 	@OriginalMember(owner = "client!wi", name = "e", descriptor = "I")
 	public static int anInt6031 = 0;
 
-	@OriginalMember(owner = "client!wj", name = "m", descriptor = "I")
-	public static int anInt6038 = 0;
-
 	@OriginalMember(owner = "client!wj", name = "x", descriptor = "[I")
 	public static final int[] anIntArray679 = new int[] { 12543016, 15504954, 15914854, 16773818 };
 
@@ -441,9 +417,6 @@ public final class Static7 {
 
 	@OriginalMember(owner = "client!wk", name = "c", descriptor = "Ljava/util/Calendar;")
 	public static final Calendar aCalendar2 = Calendar.getInstance();
-
-	@OriginalMember(owner = "client!wk", name = "e", descriptor = "I")
-	public static volatile int anInt6049 = 0;
 
 	@OriginalMember(owner = "client!wk", name = "f", descriptor = "I")
 	public static int anInt6050 = -1;

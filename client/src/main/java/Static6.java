@@ -278,9 +278,6 @@ public final class Static6 {
 	@OriginalMember(owner = "client!td", name = "k", descriptor = "Lclient!fh;")
 	public static Js5 aClass58_94;
 
-	@OriginalMember(owner = "client!td", name = "I", descriptor = "C")
-	public static char aChar4;
-
 	@OriginalMember(owner = "client!te", name = "D", descriptor = "Lclient!uj;")
 	public static Class4_Sub3_Sub14 aClass4_Sub3_Sub14_8;
 
@@ -398,14 +395,8 @@ public final class Static6 {
 	@OriginalMember(owner = "client!rh", name = "kb", descriptor = "I")
 	public static int anInt4555 = (int) (Math.random() * 17.0D) - 8;
 
-	@OriginalMember(owner = "client!rh", name = "lb", descriptor = "I")
-	public static volatile int anInt4556 = -1;
-
 	@OriginalMember(owner = "client!ri", name = "V", descriptor = "Lclient!cc;")
 	public static final SoftLruHashTable aClass26_48 = new SoftLruHashTable(200);
-
-	@OriginalMember(owner = "client!ri", name = "Y", descriptor = "I")
-	public static int anInt4595 = 0;
 
 	@OriginalMember(owner = "client!ri", name = "Z", descriptor = "[I")
 	public static int[] anIntArray489 = new int[2];
@@ -500,9 +491,6 @@ public final class Static6 {
 	@OriginalMember(owner = "client!sg", name = "b", descriptor = "Lclient!wf;")
 	public static Class185 aClass185_14 = null;
 
-	@OriginalMember(owner = "client!sg", name = "c", descriptor = "I")
-	public static int anInt4802 = 0;
-
 	@OriginalMember(owner = "client!sg", name = "g", descriptor = "[I")
 	public static final int[] anIntArray519 = new int[] { 16, 32, 64, 128 };
 
@@ -530,9 +518,6 @@ public final class Static6 {
 	@OriginalMember(owner = "client!sj", name = "A", descriptor = "[I")
 	public static final int[] anIntArray528 = new int[14];
 
-	@OriginalMember(owner = "client!sj", name = "C", descriptor = "I")
-	public static int anInt4861 = 0;
-
 	@OriginalMember(owner = "client!sk", name = "b", descriptor = "I")
 	public static int anInt4863 = -1;
 
@@ -559,9 +544,6 @@ public final class Static6 {
 
 	@OriginalMember(owner = "client!sn", name = "rb", descriptor = "I")
 	public static int anInt4953 = -1;
-
-	@OriginalMember(owner = "client!t", name = "d", descriptor = "I")
-	public static volatile int anInt4977 = -1;
 
 	@OriginalMember(owner = "client!t", name = "f", descriptor = "I")
 	public static int anInt4979 = 1;

@@ -903,7 +903,7 @@ public final class Static18 {
 			Static7.anInt5283 = 0;
 		}
 		Static5.aBoolean297 = false;
-		if (Static2.anInt1991 != 0) {
+		if (Mouse.pressedButton != 0) {
 			if (arg2 <= arg3 && arg2 + 16 > arg3 && arg1 >= arg5 && arg1 < arg5 + 16) {
 				arg0.anInt5931 -= 4;
 				Static28.method3270(arg0);

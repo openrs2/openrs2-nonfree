@@ -29,9 +29,6 @@ public final class Static2 {
 	@OriginalMember(owner = "client!dj", name = "j", descriptor = "[[I")
 	public static int[][] anIntArrayArray10;
 
-	@OriginalMember(owner = "client!dj", name = "m", descriptor = "I")
-	public static int anInt1042;
-
 	@OriginalMember(owner = "client!dn", name = "T", descriptor = "[Lclient!uj;")
 	public static Class4_Sub3_Sub14[] aClass4_Sub3_Sub14Array6;
 
@@ -272,9 +269,6 @@ public final class Static2 {
 	@OriginalMember(owner = "client!di", name = "p", descriptor = "I")
 	public static int anInt1032 = -1;
 
-	@OriginalMember(owner = "client!dj", name = "i", descriptor = "[Z")
-	public static final boolean[] aBooleanArray4 = new boolean[112];
-
 	@OriginalMember(owner = "client!dm", name = "a", descriptor = "I")
 	public static int anInt1125 = 0;
 
@@ -311,9 +305,6 @@ public final class Static2 {
 	@OriginalMember(owner = "client!ed", name = "y", descriptor = "Z")
 	public static boolean aBoolean67 = false;
 
-	@OriginalMember(owner = "client!ed", name = "z", descriptor = "Lclient!nf;")
-	public static Class124 aClass124_1 = new Class124();
-
 	@OriginalMember(owner = "client!ed", name = "A", descriptor = "I")
 	public static int anInt1213 = 0;
 
@@ -349,9 +340,6 @@ public final class Static2 {
 
 	@OriginalMember(owner = "client!ej", name = "p", descriptor = "Lclient!cc;")
 	public static final SoftLruHashTable aClass26_11 = new SoftLruHashTable(4);
-
-	@OriginalMember(owner = "client!ek", name = "b", descriptor = "I")
-	public static volatile int anInt1306 = 0;
 
 	@OriginalMember(owner = "client!ek", name = "c", descriptor = "Z")
 	public static boolean aBoolean76 = false;
@@ -422,12 +410,6 @@ public final class Static2 {
 	@OriginalMember(owner = "client!fg", name = "L", descriptor = "I")
 	public static int anInt1767 = 0;
 
-	@OriginalMember(owner = "client!fh", name = "E", descriptor = "I")
-	public static int anInt1797 = 0;
-
-	@OriginalMember(owner = "client!fi", name = "V", descriptor = "[I")
-	public static final int[] anIntArray125 = new int[128];
-
 	@OriginalMember(owner = "client!fi", name = "hb", descriptor = "[I")
 	public static final int[] anIntArray127 = new int[64];
 
@@ -469,9 +451,6 @@ public final class Static2 {
 
 	@OriginalMember(owner = "client!fo", name = "c", descriptor = "[Z")
 	public static final boolean[] aBooleanArray8 = new boolean[100];
-
-	@OriginalMember(owner = "client!g", name = "y", descriptor = "I")
-	public static int anInt1991 = 0;
 
 	@OriginalMember(owner = "client!g", name = "D", descriptor = "J")
 	public static long aLong66 = 0L;

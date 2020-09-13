@@ -1357,20 +1357,6 @@ public final class Static22 {
 		Static4.anInt2661 = 0;
 	}
 
-	@OriginalMember(owner = "client!kl", name = "f", descriptor = "(B)Z")
-	public static boolean method2361() {
-		synchronized (Static7.aClass161_1) {
-			if (Static7.anInt5311 == Static5.anInt4304) {
-				return false;
-			} else {
-				Static2.anInt1042 = Static2.anIntArray125[Static5.anInt4304];
-				Static6.aChar4 = Static5.aCharArray2[Static5.anInt4304];
-				Static5.anInt4304 = Static5.anInt4304 + 1 & 0x7F;
-				return true;
-			}
-		}
-	}
-
 	@OriginalMember(owner = "client!kl", name = "a", descriptor = "(ILclient!fh;Lclient!fh;)V")
 	public static void method2362(@OriginalArg(1) Js5 arg0, @OriginalArg(2) Js5 arg1) {
 		Static6.aClass58_89 = arg0;

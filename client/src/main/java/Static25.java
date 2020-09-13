@@ -332,7 +332,7 @@ public final class Static25 {
 		}
 		for (@Pc(153) Class4_Sub17 local153 = (Class4_Sub17) Static3.aClass112_13.head(); local153 != null; local153 = (Class4_Sub17) Static3.aClass112_13.next()) {
 			@Pc(161) Class82 local161 = Static22.method2191(local153.aClass4_Sub3_Sub7_1.anInt1760);
-			if (Static1.anInt640 == 0 && local153.method2923(Static7.anInt5357, Static7.anInt6038)) {
+			if (Static1.anInt640 == 0 && local153.method2923(Mouse.x, Mouse.y)) {
 				if (!local153.aClass4_Sub3_Sub7_1.aBoolean105) {
 					local153.aClass4_Sub3_Sub7_1.aBoolean105 = true;
 					Static24.method2710(15, local153.aClass4_Sub3_Sub7_1.anInt1760, local161.anInt2284);
@@ -555,8 +555,8 @@ public final class Static25 {
 		} else {
 			Static34.method4213(local3, local5 + 20, local21, local13 - 20, Static5.anInt4293, 256 - Static3.anInt2587);
 		}
-		@Pc(211) int local211 = Static7.anInt5357;
-		@Pc(213) int local213 = Static7.anInt6038;
+		@Pc(211) int local211 = Mouse.x;
+		@Pc(213) int local213 = Mouse.y;
 		for (@Pc(215) int local215 = 0; local215 < Static7.anInt5634; local215++) {
 			@Pc(233) int local233 = (Static7.anInt5634 - local215 - 1) * 15 + local5 + 20 + 13;
 			if (local3 < local211 && local21 + local3 > local211 && local233 - 13 < local213 && local233 + 3 > local213) {

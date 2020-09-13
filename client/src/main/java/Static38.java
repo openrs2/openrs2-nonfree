@@ -344,15 +344,6 @@ public final class Static38 {
 		}
 	}
 
-	@OriginalMember(owner = "client!wl", name = "a", descriptor = "(I)V")
-	public static void method4794() {
-		if (Static2.aClass124_1 != null) {
-			synchronized (Static2.aClass124_1) {
-				Static2.aClass124_1 = null;
-			}
-		}
-	}
-
 	@OriginalMember(owner = "client!wn", name = "a", descriptor = "(III)V")
 	public static void method4824(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1) {
 		@Pc(4) Class4_Sub3_Sub9 local4 = Static12.method2322(5, arg0);

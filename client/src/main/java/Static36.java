@@ -213,7 +213,7 @@ public final class Static36 {
 				Static28.method3244(arg1, arg0, (local224.anInt3413 >> 1) + 5, arg2, false, local222, arg3);
 			}
 		}
-		if (local222.method2923(Static7.anInt5357, Static7.anInt6038) && arg3.aStringArray15 != null) {
+		if (local222.method2923(Mouse.x, Mouse.y) && arg3.aStringArray15 != null) {
 			if (arg3.aStringArray15[4] != null) {
 				Static16.method1497((long) arg1.anInt1760, arg3.anInt2284, 0, arg3.aString130, arg3.aStringArray15[4], (short) 1011, -1);
 			}
@@ -301,11 +301,6 @@ public final class Static36 {
 		} else {
 			return false;
 		}
-	}
-
-	@OriginalMember(owner = "client!ve", name = "a", descriptor = "(I)I")
-	public static int method4441() {
-		return Static5.anInt4214;
 	}
 
 	@OriginalMember(owner = "client!ve", name = "b", descriptor = "(I)Z")
@@ -662,13 +657,6 @@ public final class Static36 {
 		Static6.aClass58_93 = arg3;
 		Static2.aClass58_41 = arg2;
 		return true;
-	}
-
-	@OriginalMember(owner = "client!vm", name = "c", descriptor = "(II)V")
-	public static void method4553(@OriginalArg(1) int arg0) {
-		synchronized (Static2.aClass124_1) {
-			Static5.anInt4214 = arg0;
-		}
 	}
 
 	@OriginalMember(owner = "client!vn", name = "a", descriptor = "([I[IIIIIIIII)V")

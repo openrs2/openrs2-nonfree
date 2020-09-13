@@ -8,31 +8,6 @@ import dev.openrs2.deob.annotation.Pc;
 
 public final class Static30 {
 
-	@OriginalMember(owner = "client!qf", name = "a", descriptor = "(I)V")
-	public static void method3547() {
-		synchronized (Static7.aClass161_1) {
-			Static5.anInt4304 = Static7.anInt5311;
-			Static5.anInt4279++;
-			if (Static6.anInt4595 >= 0) {
-				while (Static6.anInt4595 != Static4.anInt3314) {
-					@Pc(25) int local25 = Static7.anIntArray596[Static4.anInt3314];
-					Static4.anInt3314 = Static4.anInt3314 + 1 & 0x7F;
-					if (local25 >= 0) {
-						Static2.aBooleanArray4[local25] = true;
-					} else {
-						Static2.aBooleanArray4[~local25] = false;
-					}
-				}
-			} else {
-				for (@Pc(49) int local49 = 0; local49 < 112; local49++) {
-					Static2.aBooleanArray4[local49] = false;
-				}
-				Static6.anInt4595 = Static4.anInt3314;
-			}
-			Static7.anInt5311 = Static6.anInt4861;
-		}
-	}
-
 	@OriginalMember(owner = "client!qf", name = "a", descriptor = "(Lclient!fd;I)Lclient!jo;")
 	public static Class4_Sub1 method3549(@OriginalArg(0) Buffer arg0) {
 		arg0.readUnsignedByte();
@@ -179,8 +154,8 @@ public final class Static30 {
 							local117 = 128;
 						}
 						if (Static3.aBoolean173 && Static4.aBoolean232) {
-							@Pc(181) int local181 = Static7.anInt6038;
-							@Pc(183) int local183 = Static7.anInt5357;
+							@Pc(181) int local181 = Mouse.y;
+							@Pc(183) int local183 = Mouse.x;
 							@Pc(187) int local187 = local181 - Static1.anInt777;
 							@Pc(191) int local191 = local183 - Static5.anInt5204;
 							if (Static6.anInt5182 > local187) {
@@ -457,8 +432,8 @@ public final class Static30 {
 													if (local1463 == null) {
 														Static28.method3270(local38);
 													} else if (local38 == Static5.aClass185_10 && local1338 == Static1.anInt91) {
-														@Pc(1498) int local1498 = Static7.anInt5357 - Static1.anInt547;
-														@Pc(1503) int local1503 = Static7.anInt6038 - Static1.anInt789;
+														@Pc(1498) int local1498 = Mouse.x - Static1.anInt547;
+														@Pc(1503) int local1503 = Mouse.y - Static1.anInt789;
 														if (local1498 < 5 && local1498 > -5) {
 															local1498 = 0;
 														}

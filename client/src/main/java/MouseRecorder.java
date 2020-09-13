@@ -28,8 +28,8 @@ public final class MouseRecorder implements Runnable {
 		while (this.running) {
 			synchronized (this.lock) {
 				if (this.samples < 500) {
-					this.x[this.samples] = Static7.anInt5357;
-					this.y[this.samples] = Static7.anInt6038;
+					this.x[this.samples] = Mouse.x;
+					this.y[this.samples] = Mouse.y;
 					this.samples++;
 				}
 			}

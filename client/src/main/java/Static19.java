@@ -93,11 +93,6 @@ public final class Static19 {
 		Static3.aClass26_26.removeSoft();
 	}
 
-	@OriginalMember(owner = "client!hm", name = "e", descriptor = "(I)I")
-	public static int method1794() {
-		return Static5.anInt4279;
-	}
-
 	@OriginalMember(owner = "client!hn", name = "b", descriptor = "(I)V")
 	public static void method4376() {
 		NpcTypeList.models.clear();

@@ -1,7 +1,5 @@
-import java.awt.Component;
 import java.awt.Container;
 import java.awt.Insets;
-import java.lang.reflect.Method;
 
 import dev.openrs2.deob.annotation.OriginalArg;
 import dev.openrs2.deob.annotation.OriginalMember;
@@ -1024,19 +1022,6 @@ public final class Static20 {
 	@OriginalMember(owner = "client!il", name = "b", descriptor = "(I)V")
 	public static void method1925() {
 		Static2.aClass26_16.removeSoft();
-	}
-
-	@OriginalMember(owner = "client!im", name = "a", descriptor = "(ILjava/awt/Component;)V")
-	public static void method1926(@OriginalArg(1) Component arg0) {
-		@Pc(1) Method local1 = SignLink.setFocusTraversalKeysEnabled;
-		if (local1 != null) {
-			try {
-				local1.invoke(arg0, Boolean.FALSE);
-			} catch (@Pc(20) Throwable local20) {
-			}
-		}
-		arg0.addKeyListener(Static7.aClass161_1);
-		arg0.addFocusListener(Static7.aClass161_1);
 	}
 
 	@OriginalMember(owner = "client!im", name = "a", descriptor = "(IBIII)V")

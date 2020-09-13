@@ -488,12 +488,6 @@ public final class Static5 {
 	@OriginalMember(owner = "client!pj", name = "k", descriptor = "[I")
 	public static final int[] anIntArray441 = new int[128];
 
-	@OriginalMember(owner = "client!pj", name = "l", descriptor = "[C")
-	public static final char[] aCharArray2 = new char[128];
-
-	@OriginalMember(owner = "client!pk", name = "S", descriptor = "[I")
-	public static final int[] anIntArray445 = new int[] { -1, -1, -1, -1, -1, -1, -1, -1, 85, 80, 84, -1, 91, -1, -1, -1, 81, 82, 86, -1, -1, -1, -1, -1, -1, -1, -1, 13, -1, -1, -1, -1, 83, 104, 105, 103, 102, 96, 98, 97, 99, -1, -1, -1, -1, -1, -1, -1, 25, 16, 17, 18, 19, 20, 21, 22, 23, 24, -1, -1, -1, -1, -1, -1, -1, 48, 68, 66, 50, 34, 51, 52, 53, 39, 54, 55, 56, 70, 69, 40, 41, 32, 35, 49, 36, 38, 67, 33, 65, 37, 64, -1, -1, -1, -1, -1, 228, 231, 227, 233, 224, 219, 225, 230, 226, 232, 89, 87, -1, 88, 229, 90, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, -1, -1, -1, 101, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 100, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1 };
-
 	@OriginalMember(owner = "client!pk", name = "Y", descriptor = "I")
 	public static int anInt4195 = 0;
 
@@ -518,9 +512,6 @@ public final class Static5 {
 	@OriginalMember(owner = "client!pn", name = "f", descriptor = "Ljava/util/Random;")
 	public static final Random aRandom1 = new Random();
 
-	@OriginalMember(owner = "client!pn", name = "g", descriptor = "I")
-	public static volatile int anInt4214 = 0;
-
 	@OriginalMember(owner = "client!po", name = "b", descriptor = "I")
 	public static int anInt4216 = 0;
 
@@ -530,9 +521,6 @@ public final class Static5 {
 	@OriginalMember(owner = "client!qa", name = "q", descriptor = "I")
 	public static int anInt4230 = 100;
 
-	@OriginalMember(owner = "client!qd", name = "G", descriptor = "I")
-	public static volatile int anInt4279 = 0;
-
 	@OriginalMember(owner = "client!qd", name = "J", descriptor = "Lclient!ll;")
 	public static final LinkedList aClass112_27 = new LinkedList();
 
@@ -541,9 +529,6 @@ public final class Static5 {
 
 	@OriginalMember(owner = "client!qf", name = "f", descriptor = "Lclient!cc;")
 	public static final SoftLruHashTable aClass26_45 = new SoftLruHashTable(64);
-
-	@OriginalMember(owner = "client!qf", name = "n", descriptor = "I")
-	public static int anInt4304 = 0;
 
 	@OriginalMember(owner = "client!qh", name = "q", descriptor = "I")
 	public static int anInt4324 = -1;

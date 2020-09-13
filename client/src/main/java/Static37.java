@@ -43,14 +43,14 @@ public final class Static37 {
 			Static3.aClass4_Sub10_Sub1_1.writeOpcode(207);
 		}
 		Static3.aClass4_Sub10_Sub1_1.writeByteS(++Static1.aByte1);
-		Static3.aClass4_Sub10_Sub1_1.writeByte(Static2.aBooleanArray4[82] ? 1 : 0);
+		Static3.aClass4_Sub10_Sub1_1.writeByte(Keyboard.pressedKeys[82] ? 1 : 0);
 		Static3.aClass4_Sub10_Sub1_1.writeShort(Static7.anInt5479 + arg2);
 		Static3.aClass4_Sub10_Sub1_1.writeShortLEA(arg0 + Static5.anInt3983);
 	}
 
 	@OriginalMember(owner = "client!wb", name = "c", descriptor = "(I)I")
 	public static int method4663() {
-		return Static2.aBoolean68 && Static2.aBooleanArray4[81] && Static7.anInt5634 > 2 ? Static2.anIntArray160[Static7.anInt5634 - 2] : Static2.anIntArray160[Static7.anInt5634 - 1];
+		return Static2.aBoolean68 && Keyboard.pressedKeys[81] && Static7.anInt5634 > 2 ? Static2.anIntArray160[Static7.anInt5634 - 2] : Static2.anIntArray160[Static7.anInt5634 - 1];
 	}
 
 	@OriginalMember(owner = "client!wb", name = "a", descriptor = "(IIIJ)Z")
@@ -972,23 +972,23 @@ public final class Static37 {
 		if (Static2.anInt1940 == 2) {
 			if (Static4.anInt3341 == Static4.anInt2663 && Static1.anInt891 == Static5.anInt5848) {
 				Static2.anInt1940 = 0;
-				if (Static2.aBoolean68 && Static2.aBooleanArray4[81] && Static7.anInt5634 > 2) {
+				if (Static2.aBoolean68 && Keyboard.pressedKeys[81] && Static7.anInt5634 > 2) {
 					Static35.method664(Static7.anInt5634 - 2);
 				} else {
 					Static35.method664(Static7.anInt5634 - 1);
 				}
 			}
-		} else if (Static4.anInt3341 == Static2.anInt1797 && Static5.anInt5848 == Static7.anInt5312) {
+		} else if (Static4.anInt3341 == Mouse.clickX && Static5.anInt5848 == Mouse.clickY) {
 			Static2.anInt1940 = 0;
-			if (Static2.aBoolean68 && Static2.aBooleanArray4[81] && Static7.anInt5634 > 2) {
+			if (Static2.aBoolean68 && Keyboard.pressedKeys[81] && Static7.anInt5634 > 2) {
 				Static35.method664(Static7.anInt5634 - 2);
 			} else {
 				Static35.method664(Static7.anInt5634 - 1);
 			}
 		} else {
 			Static2.anInt1940 = 2;
-			Static1.anInt891 = Static7.anInt5312;
-			Static4.anInt2663 = Static2.anInt1797;
+			Static1.anInt891 = Mouse.clickY;
+			Static4.anInt2663 = Mouse.clickX;
 		}
 	}
 

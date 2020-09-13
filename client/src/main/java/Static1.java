@@ -383,9 +383,6 @@ public final class Static1 {
 	@OriginalMember(owner = "client!bl", name = "db", descriptor = "Lclient!cc;")
 	public static final SoftLruHashTable aClass26_5 = new SoftLruHashTable(4);
 
-	@OriginalMember(owner = "client!bl", name = "fb", descriptor = "J")
-	public static long aLong20 = 0L;
-
 	@OriginalMember(owner = "client!bn", name = "B", descriptor = "I")
 	public static int anInt402 = 2;
 

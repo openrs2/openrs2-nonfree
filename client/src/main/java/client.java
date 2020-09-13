@@ -298,9 +298,9 @@ public final class client extends GameShell {
 
 	@OriginalMember(owner = "client!client", name = "f", descriptor = "(I)V")
 	private void method683() {
-		for (Static6.anInt5088 = 0; Static22.method2361() && Static6.anInt5088 < 128; Static6.anInt5088++) {
-			Static5.anIntArray441[Static6.anInt5088] = Static2.anInt1042;
-			Static5.anIntArray419[Static6.anInt5088] = Static6.aChar4;
+		for (Static6.anInt5088 = 0; Keyboard.nextKey() && Static6.anInt5088 < 128; Static6.anInt5088++) {
+			Static5.anIntArray441[Static6.anInt5088] = Keyboard.keyCode;
+			Static5.anIntArray419[Static6.anInt5088] = Keyboard.keyChar;
 		}
 		Static5.anInt4156++;
 		if (Static3.anInt5398 != -1) {
@@ -434,10 +434,10 @@ public final class client extends GameShell {
 			label264:
 			while (true) {
 				do {
-					if (!Static22.method2361()) {
+					if (!Keyboard.nextKey()) {
 						break label264;
 					}
-				} while (Static6.aChar4 != 's' && Static6.aChar4 != 'S');
+				} while (Keyboard.keyChar != 's' && Keyboard.keyChar != 'S');
 				Preferences.safeMode = true;
 			}
 		}
@@ -777,13 +777,13 @@ public final class client extends GameShell {
 			Static3.aClass52_7.close();
 			Static3.aClass52_7 = null;
 		}
-		Static11.method588(GameShell.canvas);
-		Static13.method891(GameShell.canvas);
+		Keyboard.stop(GameShell.canvas);
+		Mouse.stop(GameShell.canvas);
 		if (Static6.aClass19_1 != null) {
 			Static6.aClass19_1.method894(GameShell.canvas);
 		}
-		Static11.method589();
-		Static38.method4794();
+		Keyboard.quit();
+		Mouse.quit();
 		Static6.aClass19_1 = null;
 		if (Static1.aClass102_1 != null) {
 			Static1.aClass102_1.method3001();
@@ -841,9 +841,9 @@ public final class client extends GameShell {
 		hostname = worldListHostname;
 		worldListPort = worldListDefaultPort;
 		port = worldListPort;
-		Static15.method1402();
-		Static20.method1926(GameShell.canvas);
-		Static13.method883(GameShell.canvas);
+		Keyboard.init();
+		Keyboard.start(GameShell.canvas);
+		Mouse.start(GameShell.canvas);
 		Static6.aClass19_1 = Static10.method345();
 		if (Static6.aClass19_1 != null) {
 			Static6.aClass19_1.method900(GameShell.canvas);
@@ -1205,8 +1205,8 @@ public final class client extends GameShell {
 		}
 		Static30.method3551();
 		Static9.method763();
-		Static30.method3547();
-		Static11.method587();
+		Keyboard.loop();
+		Mouse.loop();
 		if (Static3.aBoolean138) {
 			Static25.method2719();
 		}

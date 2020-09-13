@@ -1,5 +1,3 @@
-import java.awt.Component;
-
 import dev.openrs2.deob.annotation.OriginalArg;
 import dev.openrs2.deob.annotation.OriginalMember;
 import dev.openrs2.deob.annotation.Pc;
@@ -592,7 +590,7 @@ public final class Static11 {
 		}
 		Static1.aBoolean17 = false;
 		Static7.anInt5634 = 0;
-		Static36.method4553(0);
+		Mouse.setIdleLoops(0);
 		for (@Pc(3667) int local3667 = 0; local3667 < 100; local3667++) {
 			Static6.aStringArray31[local3667] = null;
 		}
@@ -832,37 +830,6 @@ public final class Static11 {
 	public static void method586() {
 		Static7.aClass26_55.clean(5);
 		Static5.aClass26_41.clean(5);
-	}
-
-	@OriginalMember(owner = "client!ci", name = "a", descriptor = "(I)V")
-	public static void method587() {
-		synchronized (Static2.aClass124_1) {
-			Static5.anInt4214++;
-			Static2.anInt1991 = Static2.anInt1306;
-			Static7.anInt5357 = Static6.anInt4977;
-			Static7.anInt6038 = Static6.anInt4556;
-			Static6.anInt4802 = Static7.anInt5679;
-			Static2.anInt1797 = Static7.anInt6049;
-			Static7.anInt5312 = Static3.anInt2426;
-			Static1.aLong20 = Static7.aLong193;
-			Static7.anInt5679 = 0;
-		}
-	}
-
-	@OriginalMember(owner = "client!ci", name = "a", descriptor = "(BLjava/awt/Component;)V")
-	public static void method588(@OriginalArg(1) Component arg0) {
-		arg0.removeKeyListener(Static7.aClass161_1);
-		arg0.removeFocusListener(Static7.aClass161_1);
-		Static6.anInt4595 = -1;
-	}
-
-	@OriginalMember(owner = "client!ci", name = "a", descriptor = "(Z)V")
-	public static void method589() {
-		if (Static7.aClass161_1 != null) {
-			synchronized (Static7.aClass161_1) {
-				Static7.aClass161_1 = null;
-			}
-		}
 	}
 
 	@OriginalMember(owner = "client!cj", name = "a", descriptor = "(ZI)V")

@@ -3389,7 +3389,7 @@ public final class Static16 {
 								}
 							} else if (local45 < 5200) {
 								if (local45 == 5100) {
-									if (Static2.aBooleanArray4[86]) {
+									if (Keyboard.pressedKeys[86]) {
 										Static7.anIntArray571[local5++] = 1;
 									} else {
 										Static7.anIntArray571[local5++] = 0;
@@ -3397,7 +3397,7 @@ public final class Static16 {
 									continue;
 								}
 								if (local45 == 5101) {
-									if (Static2.aBooleanArray4[82]) {
+									if (Keyboard.pressedKeys[82]) {
 										Static7.anIntArray571[local5++] = 1;
 									} else {
 										Static7.anIntArray571[local5++] = 0;
@@ -3405,7 +3405,7 @@ public final class Static16 {
 									continue;
 								}
 								if (local45 == 5102) {
-									if (Static2.aBooleanArray4[81]) {
+									if (Keyboard.pressedKeys[81]) {
 										Static7.anIntArray571[local5++] = 1;
 									} else {
 										Static7.anIntArray571[local5++] = 0;

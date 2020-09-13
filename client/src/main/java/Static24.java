@@ -298,14 +298,14 @@ public final class Static24 {
 			GameShell.topMargin = 0;
 		}
 		if (arg2) {
-			Static11.method588(GameShell.canvas);
-			Static13.method891(GameShell.canvas);
+			Keyboard.stop(GameShell.canvas);
+			Mouse.stop(GameShell.canvas);
 			if (Static6.aClass19_1 != null) {
 				Static6.aClass19_1.method894(GameShell.canvas);
 			}
 			client.instance.addCanvas();
-			Static20.method1926(GameShell.canvas);
-			Static13.method883(GameShell.canvas);
+			Keyboard.start(GameShell.canvas);
+			Mouse.start(GameShell.canvas);
 			if (Static6.aClass19_1 != null) {
 				Static6.aClass19_1.method900(GameShell.canvas);
 			}
@@ -743,8 +743,8 @@ public final class Static24 {
 				local49 = Static5.aClass185_12.anInt5960;
 				local51 = Static5.aClass185_12.anInt5888;
 			}
-			Static4.anIntArray272[1] = Static7.anInt6038 - local51;
-			Static4.anIntArray272[0] = Static7.anInt5357 - local49;
+			Static4.anIntArray272[1] = Mouse.y - local51;
+			Static4.anIntArray272[0] = Mouse.x - local49;
 		}
 		Static16.method1551(200000, local17);
 	}

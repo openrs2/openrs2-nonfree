@@ -25,7 +25,7 @@ public final class Static14 {
 		Static28.method3270(Static1.aClass185_1);
 		Static3.anInt2165++;
 		if (Static6.aBoolean310 && Static4.aBoolean232) {
-			@Pc(27) int local27 = Static7.anInt5357;
+			@Pc(27) int local27 = Mouse.x;
 			@Pc(31) int local31 = local27 - Static5.anInt5204;
 			if (local31 < Static2.anInt1633) {
 				local31 = Static2.anInt1633;
@@ -33,7 +33,7 @@ public final class Static14 {
 			if (Static1.aClass185_1.anInt5893 + local31 > Static1.aClass185_2.anInt5893 + Static2.anInt1633) {
 				local31 = Static1.aClass185_2.anInt5893 + Static2.anInt1633 - Static1.aClass185_1.anInt5893;
 			}
-			@Pc(61) int local61 = Static7.anInt6038;
+			@Pc(61) int local61 = Mouse.y;
 			@Pc(65) int local65 = local61 - Static1.anInt777;
 			if (Static6.anInt5182 > local65) {
 				local65 = Static6.anInt5182;
@@ -57,7 +57,7 @@ public final class Static14 {
 				local169.anObjectArray2 = Static1.aClass185_1.anObjectArray11;
 				Static21.method2019(local169);
 			}
-			if (Static2.anInt1991 == 0) {
+			if (Mouse.pressedButton == 0) {
 				if (Static3.aBoolean173) {
 					if (Static1.aClass185_1.anObjectArray7 != null) {
 						@Pc(231) Class4_Sub13 local231 = new Class4_Sub13();

@@ -1,4 +1,3 @@
-import java.awt.Component;
 import java.awt.Point;
 import javax.media.opengl.GL;
 
@@ -236,25 +235,10 @@ public final class Static13 {
 		Static2.anInt1029 = -1;
 	}
 
-	@OriginalMember(owner = "client!dj", name = "a", descriptor = "(BLjava/awt/Component;)V")
-	public static void method883(@OriginalArg(1) Component arg0) {
-		arg0.addMouseListener(Static2.aClass124_1);
-		arg0.addMouseMotionListener(Static2.aClass124_1);
-		arg0.addFocusListener(Static2.aClass124_1);
-	}
-
 	@OriginalMember(owner = "client!dj", name = "a", descriptor = "(ILclient!fh;I)Lclient!qh;")
 	public static Class4_Sub23 method887(@OriginalArg(0) int arg0, @OriginalArg(1) Js5 arg1) {
 		@Pc(17) byte[] local17 = arg1.fetchFile(arg0);
 		return local17 == null ? null : new Class4_Sub23(local17);
-	}
-
-	@OriginalMember(owner = "client!dj", name = "a", descriptor = "(Ljava/awt/Component;I)V")
-	public static void method891(@OriginalArg(0) Component arg0) {
-		arg0.removeMouseListener(Static2.aClass124_1);
-		arg0.removeMouseMotionListener(Static2.aClass124_1);
-		arg0.removeFocusListener(Static2.aClass124_1);
-		Static2.anInt1306 = 0;
 	}
 
 	@OriginalMember(owner = "client!dj", name = "a", descriptor = "(II)Ljava/lang/String;")

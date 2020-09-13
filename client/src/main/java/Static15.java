@@ -617,42 +617,6 @@ public final class Static15 {
 		Static1.anInt777 = arg2;
 	}
 
-	@OriginalMember(owner = "client!fi", name = "h", descriptor = "(I)V")
-	public static void method1402() {
-		if (SignLink.javaVendor.toLowerCase().indexOf("microsoft") != -1) {
-			Static5.anIntArray445[188] = 71;
-			Static5.anIntArray445[223] = 28;
-			Static5.anIntArray445[219] = 42;
-			Static5.anIntArray445[192] = 58;
-			Static5.anIntArray445[221] = 43;
-			Static5.anIntArray445[190] = 72;
-			Static5.anIntArray445[189] = 26;
-			Static5.anIntArray445[222] = 59;
-			Static5.anIntArray445[186] = 57;
-			Static5.anIntArray445[220] = 74;
-			Static5.anIntArray445[187] = 27;
-			Static5.anIntArray445[191] = 73;
-			return;
-		}
-		Static5.anIntArray445[61] = 27;
-		Static5.anIntArray445[46] = 72;
-		if (SignLink.setFocusTraversalKeysEnabled == null) {
-			Static5.anIntArray445[192] = 58;
-			Static5.anIntArray445[222] = 59;
-		} else {
-			Static5.anIntArray445[520] = 59;
-			Static5.anIntArray445[192] = 28;
-			Static5.anIntArray445[222] = 58;
-		}
-		Static5.anIntArray445[92] = 74;
-		Static5.anIntArray445[91] = 42;
-		Static5.anIntArray445[93] = 43;
-		Static5.anIntArray445[45] = 26;
-		Static5.anIntArray445[44] = 71;
-		Static5.anIntArray445[47] = 73;
-		Static5.anIntArray445[59] = 57;
-	}
-
 	@OriginalMember(owner = "client!fi", name = "a", descriptor = "(Lclient!wf;I)Lclient!wf;")
 	private static Class185 method1403(@OriginalArg(0) Class185 arg0) {
 		@Pc(2) Class185 local2 = Static12.method691(arg0);
@@ -967,8 +931,8 @@ public final class Static15 {
 			Static34.method4222(local3 + 1, local9 + 18, local11 - 2, local19 - 19, 0);
 		}
 		Static5.aClass4_Sub3_Sub5_3.method2259(LocalisedText.CHOOSE_OPTION, local3 + 3, local9 + 14, 6116423, -1);
-		@Pc(100) int local100 = Static7.anInt5357;
-		@Pc(102) int local102 = Static7.anInt6038;
+		@Pc(100) int local100 = Mouse.x;
+		@Pc(102) int local102 = Mouse.y;
 		for (@Pc(104) int local104 = 0; local104 < Static7.anInt5634; local104++) {
 			@Pc(125) int local125 = local9 + (Static7.anInt5634 - local104 - 1) * 15 + 31;
 			@Pc(127) int local127 = 16777215;
