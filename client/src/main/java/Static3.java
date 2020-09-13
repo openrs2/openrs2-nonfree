@@ -523,9 +523,6 @@ public final class Static3 {
 	@OriginalMember(owner = "client!gm", name = "b", descriptor = "I")
 	public static int anInt2102 = 0;
 
-	@OriginalMember(owner = "client!gm", name = "c", descriptor = "Lclient!dj;")
-	public static final LruHashTable aClass40_10 = new LruHashTable(64);
-
 	@OriginalMember(owner = "client!gm", name = "d", descriptor = "S")
 	public static short aShort12 = 320;
 

@@ -670,21 +670,6 @@ public final class Static27 {
 		return local21;
 	}
 
-	@OriginalMember(owner = "client!og", name = "c", descriptor = "(II)Lclient!ro;")
-	public static Class4_Sub3_Sub17 method4703(@OriginalArg(1) int arg0) {
-		@Pc(6) Class4_Sub3_Sub17 local6 = (Class4_Sub3_Sub17) Static3.aClass40_10.get((long) arg0);
-		if (local6 != null) {
-			return local6;
-		}
-		@Pc(21) byte[] local21 = Static2.aClass58_36.fetchFile(26, arg0);
-		@Pc(25) Class4_Sub3_Sub17 local25 = new Class4_Sub3_Sub17();
-		if (local21 != null) {
-			local25.method3801(new Buffer(local21));
-		}
-		Static3.aClass40_10.put((long) arg0, local25);
-		return local25;
-	}
-
 	@OriginalMember(owner = "client!og", name = "f", descriptor = "(B)V")
 	public static void method4704() {
 		for (@Pc(3) int local3 = 0; local3 < Static6.anInt4457; local3++) {

@@ -59,9 +59,6 @@ public final class Static2 {
 	@OriginalMember(owner = "client!ef", name = "e", descriptor = "[B")
 	public static byte[] aByteArray10;
 
-	@OriginalMember(owner = "client!eg", name = "i", descriptor = "Lclient!fh;")
-	public static Js5 aClass58_36;
-
 	@OriginalMember(owner = "client!eg", name = "s", descriptor = "[Lclient!uj;")
 	public static Class4_Sub3_Sub14[] aClass4_Sub3_Sub14Array7;
 

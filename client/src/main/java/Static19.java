@@ -349,11 +349,6 @@ public final class Static19 {
 		return arg0 & 0xFF;
 	}
 
-	@OriginalMember(owner = "client!id", name = "a", descriptor = "(BLclient!fh;)V")
-	public static void method1850(@OriginalArg(1) Js5 arg0) {
-		Static2.aClass58_36 = arg0;
-	}
-
 	@OriginalMember(owner = "client!ig", name = "b", descriptor = "()V")
 	public static void method1855() {
 		Static3.aBoolean160 = Static3.aBoolean137;

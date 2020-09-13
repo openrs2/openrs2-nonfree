@@ -4851,9 +4851,9 @@ public final class Static16 {
 							@Pc(10487) int local10487 = Static7.anIntArray571[local5 + 1];
 							@Pc(10491) ParamType local10491 = ParamTypeList.get(local10487);
 							if (local10491.isString()) {
-								Static2.aStringArray5[local13++] = Static27.method4703(local10481).method3804(local10491.defaultString, local10487);
+								Static2.aStringArray5[local13++] = StructTypeList.get(local10481).getParam(local10487, local10491.defaultString);
 							} else {
-								Static7.anIntArray571[local5++] = Static27.method4703(local10481).method3800(local10491.defaultInt, local10487);
+								Static7.anIntArray571[local5++] = StructTypeList.get(local10481).getParam(local10487, local10491.defaultInt);
 							}
 							continue;
 						}
