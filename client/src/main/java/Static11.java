@@ -112,13 +112,13 @@ public final class Static11 {
 	public static void method519(@OriginalArg(0) Class4_Sub13 arg0, @OriginalArg(2) int arg1) {
 		@Pc(8) Object[] local8 = arg0.anObjectArray2;
 		@Pc(14) int local14 = (Integer) local8[0];
-		@Pc(18) Class4_Sub3_Sub13 local18 = Static12.method718(local14);
+		@Pc(18) ClientScript local18 = ClientScriptList.get(local14);
 		if (local18 == null) {
 			return;
 		}
-		Static4.aStringArray21 = new String[local18.anInt2660];
+		Static4.aStringArray21 = new String[local18.stringLocals];
 		@Pc(29) int local29 = 0;
-		Static4.anIntArray272 = new int[local18.anInt2662];
+		Static4.anIntArray272 = new int[local18.intLocals];
 		@Pc(35) int local35 = 0;
 		for (@Pc(37) int local37 = 1; local37 < local8.length; local37++) {
 			if (local8[local37] instanceof Integer) {

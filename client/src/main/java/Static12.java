@@ -747,22 +747,6 @@ public final class Static12 {
 		}
 	}
 
-	@OriginalMember(owner = "client!co", name = "a", descriptor = "(ZI)Lclient!jl;")
-	public static Class4_Sub3_Sub13 method718(@OriginalArg(1) int arg0) {
-		@Pc(10) Class4_Sub3_Sub13 local10 = (Class4_Sub3_Sub13) Static5.aClass40_13.get((long) arg0);
-		if (local10 != null) {
-			return local10;
-		}
-		@Pc(21) byte[] local21 = client.js5Archive12.fetchFile(arg0, 0);
-		if (local21 == null || local21.length <= 1) {
-			return null;
-		} else {
-			@Pc(36) Class4_Sub3_Sub13 local36 = Static28.method3247(local21);
-			Static5.aClass40_13.put((long) arg0, local36);
-			return local36;
-		}
-	}
-
 	@OriginalMember(owner = "client!co", name = "b", descriptor = "(I)V")
 	public static void method719() {
 		Static6.aClass112_28 = new LinkedList();

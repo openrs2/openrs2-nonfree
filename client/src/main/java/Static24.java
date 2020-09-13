@@ -506,7 +506,7 @@ public final class Static24 {
 		if (!Static3.aBoolean138) {
 			((Class24_Sub1) Static4.anInterface4_1).method460();
 		}
-		Static5.aClass40_13.clear();
+		ClientScriptList.scripts.clear();
 		client.js5Archive0.discardUnpacked();
 		client.js5Archive1.discardUnpacked();
 		client.js5Archive3.discardUnpacked();
@@ -720,13 +720,13 @@ public final class Static24 {
 
 	@OriginalMember(owner = "client!mg", name = "a", descriptor = "(IIII)V")
 	public static void method2710(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(3) int arg2) {
-		@Pc(17) Class4_Sub3_Sub13 local17 = Static23.method2535(arg0, arg1, arg2);
+		@Pc(17) ClientScript local17 = ClientScriptList.get(arg0, arg1, arg2);
 		if (local17 == null) {
 			return;
 		}
-		Static4.anIntArray272 = new int[local17.anInt2662];
-		Static4.aStringArray21 = new String[local17.anInt2660];
-		if (local17.anInt2656 == 15 || local17.anInt2656 == 17 || local17.anInt2656 == 16) {
+		Static4.anIntArray272 = new int[local17.intLocals];
+		Static4.aStringArray21 = new String[local17.stringLocals];
+		if (local17.trigger == 15 || local17.trigger == 17 || local17.trigger == 16) {
 			@Pc(49) int local49 = 0;
 			@Pc(51) int local51 = 0;
 			if (Static5.aClass185_12 != null) {

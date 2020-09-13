@@ -142,53 +142,6 @@ public final class Static28 {
 		}
 	}
 
-	@OriginalMember(owner = "client!ol", name = "a", descriptor = "(B[B)Lclient!jl;")
-	public static Class4_Sub3_Sub13 method3247(@OriginalArg(1) byte[] arg0) {
-		@Pc(9) Class4_Sub3_Sub13 local9 = new Class4_Sub3_Sub13();
-		@Pc(14) Buffer local14 = new Buffer(arg0);
-		local14.position = local14.bytes.length - 2;
-		@Pc(25) int local25 = local14.readUnsignedShort();
-		@Pc(35) int local35 = local14.bytes.length - local25 - 12 - 2;
-		local14.position = local35;
-		@Pc(42) int local42 = local14.readInt();
-		local9.anInt2662 = local14.readUnsignedShort();
-		local9.anInt2660 = local14.readUnsignedShort();
-		local9.anInt2658 = local14.readUnsignedShort();
-		local9.anInt2657 = local14.readUnsignedShort();
-		@Pc(66) int local66 = local14.readUnsignedByte();
-		if (local66 > 0) {
-			local9.aClass84Array1 = new HashTable[local66];
-			for (@Pc(77) int local77 = 0; local77 < local66; local77++) {
-				@Pc(84) int local84 = local14.readUnsignedShort();
-				@Pc(91) HashTable local91 = new HashTable(IntUtils.clp2(local84));
-				local9.aClass84Array1[local77] = local91;
-				while (local84-- > 0) {
-					@Pc(103) int local103 = local14.readInt();
-					@Pc(107) int local107 = local14.readInt();
-					local91.put((long) local103, new IntNode(local107));
-				}
-			}
-		}
-		@Pc(129) int local129 = 0;
-		local14.position = 0;
-		local9.aString159 = local14.fastReadString();
-		local9.aStringArray19 = new String[local42];
-		local9.anIntArray234 = new int[local42];
-		local9.anIntArray233 = new int[local42];
-		while (local14.position < local35) {
-			@Pc(161) int local161 = local14.readUnsignedShort();
-			if (local161 == 3) {
-				local9.aStringArray19[local129] = local14.readString().intern();
-			} else if (local161 >= 100 || local161 == 21 || local161 == 38 || local161 == 39) {
-				local9.anIntArray233[local129] = local14.readUnsignedByte();
-			} else {
-				local9.anIntArray233[local129] = local14.readInt();
-			}
-			local9.anIntArray234[local129++] = local161;
-		}
-		return local9;
-	}
-
 	@OriginalMember(owner = "client!om", name = "a", descriptor = "(B)V")
 	public static void method3249() {
 		if (Static1.anInt331 < 0) {

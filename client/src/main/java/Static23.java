@@ -220,56 +220,6 @@ public final class Static23 {
 		Static3.aClass58_100 = arg0;
 	}
 
-	@OriginalMember(owner = "client!lf", name = "a", descriptor = "(IIII)Lclient!jl;")
-	public static Class4_Sub3_Sub13 method2535(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
-		@Pc(9) int local9 = arg1 << 8 | arg0;
-		@Pc(18) Class4_Sub3_Sub13 local18 = (Class4_Sub3_Sub13) Static5.aClass40_13.get((long) local9 << 16);
-		if (local18 != null) {
-			return local18;
-		}
-		@Pc(30) byte[] local30 = client.js5Archive12.fetchFile(client.js5Archive12.getGroupId(local9));
-		if (local30 == null) {
-			@Pc(69) int local69 = arg0 | arg2 + 65536 << 8;
-			@Pc(80) Class4_Sub3_Sub13 local80 = (Class4_Sub3_Sub13) Static5.aClass40_13.get((long) local69 << 16);
-			if (local80 != null) {
-				return local80;
-			}
-			@Pc(93) byte[] local93 = client.js5Archive12.fetchFile(client.js5Archive12.getGroupId(local69));
-			if (local93 == null) {
-				@Pc(131) int local131 = arg0 | 0xFFFF00;
-				@Pc(140) Class4_Sub3_Sub13 local140 = (Class4_Sub3_Sub13) Static5.aClass40_13.get((long) local131 << 16);
-				if (local140 != null) {
-					return local140;
-				}
-				@Pc(153) byte[] local153 = client.js5Archive12.fetchFile(client.js5Archive12.getGroupId(local131));
-				if (local153 == null) {
-					return null;
-				} else if (local153.length > 1) {
-					@Pc(166) Class4_Sub3_Sub13 local166 = Static28.method3247(local153);
-					local166.anInt2656 = arg0;
-					Static5.aClass40_13.put((long) local131 << 16, local166);
-					return local166;
-				} else {
-					return null;
-				}
-			} else if (local93.length <= 1) {
-				return null;
-			} else {
-				@Pc(112) Class4_Sub3_Sub13 local112 = Static28.method3247(local93);
-				local112.anInt2656 = arg0;
-				Static5.aClass40_13.put((long) local69 << 16, local112);
-				return local112;
-			}
-		} else if (local30.length <= 1) {
-			return null;
-		} else {
-			@Pc(46) Class4_Sub3_Sub13 local46 = Static28.method3247(local30);
-			local46.anInt2656 = arg0;
-			Static5.aClass40_13.put((long) local9 << 16, local46);
-			return local46;
-		}
-	}
-
 	@OriginalMember(owner = "client!lf", name = "c", descriptor = "(IIIIII)V")
 	public static void method2536(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4) {
 		Static3.anInt2497 = arg3;

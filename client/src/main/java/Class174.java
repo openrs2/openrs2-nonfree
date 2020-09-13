@@ -5,7 +5,7 @@ import dev.openrs2.deob.annotation.OriginalMember;
 public final class Class174 {
 
 	@OriginalMember(owner = "client!ui", name = "a", descriptor = "Lclient!jl;")
-	public Class4_Sub3_Sub13 aClass4_Sub3_Sub13_1;
+	public ClientScript aClass4_Sub3_Sub13_1;
 
 	@OriginalMember(owner = "client!ui", name = "c", descriptor = "[Ljava/lang/String;")
 	public String[] aStringArray36;

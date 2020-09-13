@@ -369,13 +369,13 @@ public final class Static16 {
 	}
 
 	@OriginalMember(owner = "client!gb", name = "a", descriptor = "(IILclient!jl;)V")
-	public static void method1551(@OriginalArg(0) int arg0, @OriginalArg(2) Class4_Sub3_Sub13 arg1) {
+	public static void method1551(@OriginalArg(0) int arg0, @OriginalArg(2) ClientScript arg1) {
 		Static2.anInt5739 = 0;
 		@Pc(5) int local5 = 0;
 		@Pc(11) int local11 = -1;
 		@Pc(13) int local13 = 0;
-		@Pc(16) int[] local16 = arg1.anIntArray234;
-		@Pc(23) int[] local23 = arg1.anIntArray233;
+		@Pc(16) int[] local16 = arg1.opcodes;
+		@Pc(23) int[] local23 = arg1.intOperands;
 		@Pc(25) byte local25 = -1;
 		try {
 			@Pc(27) int local27 = 0;
@@ -404,7 +404,7 @@ public final class Static16 {
 						continue;
 					}
 					if (local45 == 3) {
-						Static2.aStringArray5[local13++] = arg1.aStringArray19[local11];
+						Static2.aStringArray5[local13++] = arg1.stringOperands[local11];
 						continue;
 					}
 					if (local45 == 6) {
@@ -447,9 +447,9 @@ public final class Static16 {
 						Static4.aStringArray21 = local242.aStringArray36;
 						arg1 = local242.aClass4_Sub3_Sub13_1;
 						local11 = local242.anInt5353;
-						local23 = arg1.anIntArray233;
+						local23 = arg1.intOperands;
 						Static4.anIntArray272 = local242.anIntArray613;
-						local16 = arg1.anIntArray234;
+						local16 = arg1.opcodes;
 						continue;
 					}
 					if (local45 == 25) {
@@ -515,17 +515,17 @@ public final class Static16 {
 					}
 					if (local45 == 40) {
 						@Pc(457) int local457 = local23[local11];
-						@Pc(461) Class4_Sub3_Sub13 local461 = Static12.method718(local457);
-						@Pc(465) int[] local465 = new int[local461.anInt2662];
-						@Pc(469) String[] local469 = new String[local461.anInt2660];
-						for (@Pc(471) int local471 = 0; local471 < local461.anInt2658; local471++) {
-							local465[local471] = Static7.anIntArray571[local471 + local5 - local461.anInt2658];
+						@Pc(461) ClientScript local461 = ClientScriptList.get(local457);
+						@Pc(465) int[] local465 = new int[local461.intLocals];
+						@Pc(469) String[] local469 = new String[local461.stringLocals];
+						for (@Pc(471) int local471 = 0; local471 < local461.intArgs; local471++) {
+							local465[local471] = Static7.anIntArray571[local471 + local5 - local461.intArgs];
 						}
-						for (@Pc(496) int local496 = 0; local496 < local461.anInt2657; local496++) {
-							local469[local496] = Static2.aStringArray5[local13 + local496 - local461.anInt2657];
+						for (@Pc(496) int local496 = 0; local496 < local461.stringArgs; local496++) {
+							local469[local496] = Static2.aStringArray5[local13 + local496 - local461.stringArgs];
 						}
-						local5 -= local461.anInt2658;
-						local13 -= local461.anInt2657;
+						local5 -= local461.intArgs;
+						local13 -= local461.stringArgs;
 						@Pc(534) Class174 local534 = new Class174();
 						local534.anIntArray613 = Static4.anIntArray272;
 						local534.aStringArray36 = Static4.aStringArray21;
@@ -538,9 +538,9 @@ public final class Static16 {
 						Static4.aStringArray21 = local469;
 						arg1 = local461;
 						local11 = -1;
-						local16 = local461.anIntArray234;
+						local16 = local461.opcodes;
 						Static4.anIntArray272 = local465;
-						local23 = local461.anIntArray233;
+						local23 = local461.intOperands;
 						continue;
 					}
 					if (local45 == 42) {
@@ -613,7 +613,7 @@ public final class Static16 {
 						continue;
 					}
 					if (local45 == 51) {
-						@Pc(814) HashTable local814 = arg1.aClass84Array1[local23[local11]];
+						@Pc(814) HashTable local814 = arg1.switchTables[local23[local11]];
 						local5--;
 						@Pc(826) IntNode local826 = (IntNode) local814.get((long) Static7.anIntArray571[local5]);
 						if (local826 != null) {
@@ -4867,23 +4867,23 @@ public final class Static16 {
 				throw new IllegalStateException();
 			}
 		} catch (@Pc(15060) Exception local15060) {
-			if (arg1.aString159 == null) {
+			if (arg1.name == null) {
 				if (client.modeWhere != 0) {
 					Static26.method4357("", 0, "Clientscript error - check log for details");
 				}
 				TracingException.report(local15060, "CS2 - scr:" + arg1.key + " op:" + local25);
 			} else {
 				@Pc(15069) StringBuffer local15069 = new StringBuffer(30);
-				local15069.append("%0a - in: ").append(arg1.aString159);
+				local15069.append("%0a - in: ").append(arg1.name);
 				for (@Pc(15080) int local15080 = Static2.anInt5739 - 1; local15080 >= 0; local15080--) {
-					local15069.append("%0a - via: ").append(Static7.aClass174Array1[local15080].aClass4_Sub3_Sub13_1.aString159);
+					local15069.append("%0a - via: ").append(Static7.aClass174Array1[local15080].aClass4_Sub3_Sub13_1.name);
 				}
 				if (local25 == 40) {
 					@Pc(15103) int local15103 = local23[local11];
 					local15069.append("%0a - non-existant gosub script-num: ").append(Integer.toString(local15103));
 				}
 				if (client.modeWhere != 0) {
-					Static26.method4357("", 0, "Clientscript error in: " + arg1.aString159);
+					Static26.method4357("", 0, "Clientscript error in: " + arg1.name);
 				}
 				TracingException.report(local15060, "CS2 - scr:" + arg1.key + " op:" + local25 + local15069.toString());
 			}
