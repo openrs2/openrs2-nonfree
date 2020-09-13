@@ -563,7 +563,7 @@ public final class Static27 {
 				Static23.method2455();
 			}
 			if (arg0.equalsIgnoreCase("::clientjs5drop")) {
-				client.js5NetQueue.stop();
+				client.js5NetQueue.quit();
 			}
 			if (arg0.equalsIgnoreCase("::serverjs5drop")) {
 				client.js5NetQueue.closeServer();

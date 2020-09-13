@@ -83,7 +83,7 @@ public final class Js5CacheQueue implements Runnable {
 	}
 
 	@OriginalMember(owner = "client!ja", name = "a", descriptor = "(Z)V")
-	public final void stop() {
+	public final void quit() {
 		this.stop = true;
 		synchronized (this.queue) {
 			this.queue.notifyAll();

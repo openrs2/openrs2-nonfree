@@ -154,7 +154,7 @@ public final class Js5NetQueue {
 	}
 
 	@OriginalMember(owner = "client!en", name = "f", descriptor = "(I)V")
-	public final void stop() {
+	public final void quit() {
 		if (this.socket != null) {
 			this.socket.close();
 		}

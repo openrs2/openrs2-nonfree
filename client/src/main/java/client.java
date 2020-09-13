@@ -803,8 +803,8 @@ public final class client extends GameShell {
 		if (soundChannel != null) {
 			soundChannel.quit();
 		}
-		js5NetQueue.stop();
-		js5CacheQueue.stop();
+		js5NetQueue.quit();
+		js5CacheQueue.quit();
 	}
 
 	@OriginalMember(owner = "client!client", name = "c", descriptor = "(B)V")
