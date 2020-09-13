@@ -260,8 +260,8 @@ public final class Static16 {
 				if (local138 == 3) {
 					@Pc(952) LinkedList local952 = Static4.aClass112ArrayArrayArray1[Static7.anInt5334][local117][local124];
 					if (local952 != null) {
-						for (@Pc(960) Class4_Sub3_Sub21 local960 = (Class4_Sub3_Sub21) local952.tail(); local960 != null; local960 = (Class4_Sub3_Sub21) local952.prev()) {
-							@Pc(967) int local967 = local960.aClass53_Sub2_1.anInt2168;
+						for (@Pc(960) ObjStackNode local960 = (ObjStackNode) local952.tail(); local960 != null; local960 = (ObjStackNode) local952.prev()) {
+							@Pc(967) int local967 = local960.value.type;
 							@Pc(971) ObjType local971 = ObjTypeList.get(local967);
 							if (Static2.anInt1334 == 1) {
 								method1497((long) local967, local117, local124, Static7.aString365 + " -> <col=ff9040>" + local971.name, LocalisedText.USE, (short) 28, Static2.anInt1937);

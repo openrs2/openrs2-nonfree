@@ -347,42 +347,42 @@ public final class Static8 {
 			return;
 		}
 		@Pc(28) int local28 = -99999999;
-		@Pc(33) Class4_Sub3_Sub21 local33 = (Class4_Sub3_Sub21) local17.head();
-		@Pc(35) Class4_Sub3_Sub21 local35 = null;
+		@Pc(33) ObjStackNode local33 = (ObjStackNode) local17.head();
+		@Pc(35) ObjStackNode local35 = null;
 		while (local33 != null) {
-			@Pc(44) ObjType local44 = ObjTypeList.get(local33.aClass53_Sub2_1.anInt2168);
+			@Pc(44) ObjType local44 = ObjTypeList.get(local33.value.type);
 			@Pc(47) int local47 = local44.cost;
 			if (local44.stackable == 1) {
-				local47 *= local33.aClass53_Sub2_1.anInt2166 + 1;
+				local47 *= local33.value.count + 1;
 			}
 			if (local47 > local28) {
 				local28 = local47;
 				local35 = local33;
 			}
-			local33 = (Class4_Sub3_Sub21) local17.next();
+			local33 = (ObjStackNode) local17.next();
 		}
 		if (local35 == null) {
 			Static31.method3734(Static7.anInt5334, arg0, arg1);
 			return;
 		}
 		local17.addHead(local35);
-		@Pc(100) Class4_Sub3_Sub21 local100 = (Class4_Sub3_Sub21) local17.head();
-		@Pc(102) Class53_Sub2 local102 = null;
-		@Pc(104) Class53_Sub2 local104 = null;
+		@Pc(100) ObjStackNode local100 = (ObjStackNode) local17.head();
+		@Pc(102) ObjStack local102 = null;
+		@Pc(104) ObjStack local104 = null;
 		while (local100 != null) {
-			@Pc(110) Class53_Sub2 local110 = local100.aClass53_Sub2_1;
-			if (local35.aClass53_Sub2_1.anInt2168 != local110.anInt2168) {
+			@Pc(110) ObjStack local110 = local100.value;
+			if (local35.value.type != local110.type) {
 				if (local104 == null) {
 					local104 = local110;
 				}
-				if (local104.anInt2168 != local110.anInt2168 && local102 == null) {
+				if (local104.type != local110.type && local102 == null) {
 					local102 = local110;
 				}
 			}
-			local100 = (Class4_Sub3_Sub21) local17.next();
+			local100 = (ObjStackNode) local17.next();
 		}
 		@Pc(155) long local155 = (long) (arg0 + (arg1 << 7) + 1610612736);
-		Static29.method3478(Static7.anInt5334, arg0, arg1, Static11.method522(arg1 * 128 + 64, arg0 * 128 + 64, Static7.anInt5334), local35.aClass53_Sub2_1, local155, local104, local102);
+		Static29.method3478(Static7.anInt5334, arg0, arg1, Static11.method522(arg1 * 128 + 64, arg0 * 128 + 64, Static7.anInt5334), local35.value, local155, local104, local102);
 	}
 
 	@OriginalMember(owner = "client!ae", name = "b", descriptor = "(I)V")
