@@ -677,33 +677,6 @@ public final class Static33 {
 		return method4168(Static6.anInt5133, arg0, 128, 128, Static6.anInt5144, Static6.anInt5144, arg0, Static6.anInt5147, arg1);
 	}
 
-	@OriginalMember(owner = "client!ti", name = "a", descriptor = "(Lclient!wf;B)Z")
-	public static boolean method4199(@OriginalArg(0) Component arg0) {
-		if (arg0.anIntArray668 == null) {
-			return false;
-		}
-		for (@Pc(19) int local19 = 0; local19 < arg0.anIntArray668.length; local19++) {
-			@Pc(29) int local29 = Static36.method4464(local19, arg0);
-			@Pc(34) int local34 = arg0.anIntArray671[local19];
-			if (arg0.anIntArray668[local19] == 2) {
-				if (local29 >= local34) {
-					return false;
-				}
-			} else if (arg0.anIntArray668[local19] == 3) {
-				if (local29 <= local34) {
-					return false;
-				}
-			} else if (arg0.anIntArray668[local19] == 4) {
-				if (local29 == local34) {
-					return false;
-				}
-			} else if (local34 != local29) {
-				return false;
-			}
-		}
-		return true;
-	}
-
 	@OriginalMember(owner = "client!ti", name = "c", descriptor = "(II)Lclient!dc;")
 	public static Class37 method4201(@OriginalArg(0) int arg0) {
 		@Pc(6) Class37 local6 = (Class37) Static3.aClass26_21.get((long) arg0);

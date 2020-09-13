@@ -583,10 +583,10 @@ public final class Static35 {
 			Static3.aClass4_Sub10_Sub1_1.writeOpcode(158);
 			Static3.aClass4_Sub10_Sub1_1.writeInt(local19);
 			@Pc(1434) Component local1434 = InterfaceList.getComponent(local19);
-			if (local1434.anIntArrayArray50 != null && local1434.anIntArrayArray50[0][0] == 5) {
-				@Pc(1452) int local1452 = local1434.anIntArrayArray50[0][1];
-				if (local1434.anIntArray671[0] != Static1.anIntArray2[local1452]) {
-					Static1.anIntArray2[local1452] = local1434.anIntArray671[0];
+			if (local1434.cs1Scripts != null && local1434.cs1Scripts[0][0] == 5) {
+				@Pc(1452) int local1452 = local1434.cs1Scripts[0][1];
+				if (local1434.cs1ComparisonOperands[0] != Static1.anIntArray2[local1452]) {
+					Static1.anIntArray2[local1452] = local1434.cs1ComparisonOperands[0];
 					Static29.method3534(local1452);
 				}
 			}
@@ -971,8 +971,8 @@ public final class Static35 {
 			Static3.aClass4_Sub10_Sub1_1.writeOpcode(158);
 			Static3.aClass4_Sub10_Sub1_1.writeInt(local19);
 			@Pc(3216) Component local3216 = InterfaceList.getComponent(local19);
-			if (local3216.anIntArrayArray50 != null && local3216.anIntArrayArray50[0][0] == 5) {
-				@Pc(3240) int local3240 = local3216.anIntArrayArray50[0][1];
+			if (local3216.cs1Scripts != null && local3216.cs1Scripts[0][0] == 5) {
+				@Pc(3240) int local3240 = local3216.cs1Scripts[0][1];
 				Static1.anIntArray2[local3240] = 1 - Static1.anIntArray2[local3240];
 				Static29.method3534(local3240);
 			}

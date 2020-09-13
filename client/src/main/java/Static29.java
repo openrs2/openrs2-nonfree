@@ -2430,7 +2430,7 @@ public final class Static29 {
 				}
 				if (local19.type == 6) {
 					if (local19.anInt5891 != -1 || local19.anInt5910 != -1) {
-						@Pc(108) boolean local108 = Static33.method4199(local19);
+						@Pc(108) boolean local108 = Cs1ScriptRunner.isTrue(local19);
 						@Pc(113) int local113;
 						if (local108) {
 							local113 = local19.anInt5910;

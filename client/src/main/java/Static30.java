@@ -500,7 +500,7 @@ public final class Static30 {
 									}
 								} else if (local38.type == 3) {
 									@Pc(1782) int local1782;
-									if (Static33.method4199(local38)) {
+									if (Cs1ScriptRunner.isTrue(local38)) {
 										local1782 = local38.anInt5902;
 										if (Static5.aClass185_11 == local38 && local38.anInt5971 != 0) {
 											local1782 = local38.anInt5971;
@@ -539,7 +539,7 @@ public final class Static30 {
 									if (local1944 != null) {
 										@Pc(1957) String local1957 = local38.aString351;
 										@Pc(1964) int local1964;
-										if (Static33.method4199(local38)) {
+										if (Cs1ScriptRunner.isTrue(local38)) {
 											local1964 = local38.anInt5902;
 											if (local38 == Static5.aClass185_11 && local38.anInt5971 != 0) {
 												local1964 = local38.anInt5971;
@@ -568,7 +568,7 @@ public final class Static30 {
 											local1964 = local38.anInt5933;
 										}
 										if (!local38.if3) {
-											local1957 = Static19.method1820(local38, local1957);
+											local1957 = Cs1ScriptRunner.interpolate(local38, local1957);
 										}
 										local1944.method2255(local1957, local128, local122, local38.anInt5893, local38.anInt5949, local1964, local38.aBoolean415 ? 0 : -1, local38.anInt5924, local38.anInt5922, local38.anInt5948);
 									} else if (Static3.aBoolean178) {
@@ -576,7 +576,7 @@ public final class Static30 {
 									}
 								} else if (local38.type == 5) {
 									if (!local38.if3) {
-										@Pc(2106) Class4_Sub3_Sub14 local2106 = local38.method4729(Static33.method4199(local38));
+										@Pc(2106) Class4_Sub3_Sub14 local2106 = local38.method4729(Cs1ScriptRunner.isTrue(local38));
 										if (local2106 != null) {
 											local2106.method4506(local128, local122);
 										} else if (Static3.aBoolean178) {
@@ -675,7 +675,7 @@ public final class Static30 {
 										}
 									}
 								} else if (local38.type == 6) {
-									@Pc(2663) boolean local2663 = Static33.method4199(local38);
+									@Pc(2663) boolean local2663 = Cs1ScriptRunner.isTrue(local38);
 									@Pc(2665) Class53_Sub4 local2665 = null;
 									@Pc(2670) int local2670;
 									if (local2663) {
@@ -824,7 +824,7 @@ public final class Static30 {
 										@Pc(3365) Class4_Sub3_Sub5 local3365 = Static5.aClass4_Sub3_Sub5_2;
 										@Pc(3367) int local3367 = 0;
 										@Pc(3370) String local3370 = local38.aString351;
-										@Pc(3375) String local3375 = Static19.method1820(local38, local3370);
+										@Pc(3375) String local3375 = Cs1ScriptRunner.interpolate(local38, local3370);
 										while (local3375.length() > 0) {
 											@Pc(3385) int local3385 = local3375.indexOf("<br>");
 											@Pc(3394) String local3394;
@@ -863,7 +863,7 @@ public final class Static30 {
 										}
 										@Pc(3524) int local3524 = local3365.anInt2820 + local3437 + 2;
 										@Pc(3527) String local3527 = local38.aString351;
-										@Pc(3532) String local3532 = Static19.method1820(local38, local3527);
+										@Pc(3532) String local3532 = Cs1ScriptRunner.interpolate(local38, local3527);
 										while (local3532.length() > 0) {
 											@Pc(3539) int local3539 = local3532.indexOf("<br>");
 											@Pc(3548) String local3548;

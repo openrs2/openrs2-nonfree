@@ -55,7 +55,7 @@ public final class Component {
 	public int anInt5898;
 
 	@OriginalMember(owner = "client!wf", name = "U", descriptor = "[[I")
-	public int[][] anIntArrayArray50;
+	public int[][] cs1Scripts;
 
 	@OriginalMember(owner = "client!wf", name = "X", descriptor = "[I")
 	public int[] anIntArray659;
@@ -133,7 +133,7 @@ public final class Component {
 	public Object[] anObjectArray23;
 
 	@OriginalMember(owner = "client!wf", name = "oc", descriptor = "[I")
-	public int[] anIntArray668;
+	public int[] cs1ComparisonOpcodes;
 
 	@OriginalMember(owner = "client!wf", name = "pc", descriptor = "[I")
 	public int[] anIntArray669;
@@ -163,7 +163,7 @@ public final class Component {
 	public int[] anIntArray670;
 
 	@OriginalMember(owner = "client!wf", name = "Wc", descriptor = "[I")
-	public int[] anIntArray671;
+	public int[] cs1ComparisonOperands;
 
 	@OriginalMember(owner = "client!wf", name = "Yc", descriptor = "[Lclient!wf;")
 	public Component[] aClass185Array4;
@@ -672,23 +672,23 @@ public final class Component {
 		}
 		@Pc(110) int local110 = buffer.readUnsignedByte();
 		if (local110 > 0) {
-			this.anIntArray668 = new int[local110];
-			this.anIntArray671 = new int[local110];
+			this.cs1ComparisonOpcodes = new int[local110];
+			this.cs1ComparisonOperands = new int[local110];
 			for (@Pc(126) int local126 = 0; local126 < local110; local126++) {
-				this.anIntArray668[local126] = buffer.readUnsignedByte();
-				this.anIntArray671[local126] = buffer.readUnsignedShort();
+				this.cs1ComparisonOpcodes[local126] = buffer.readUnsignedByte();
+				this.cs1ComparisonOperands[local126] = buffer.readUnsignedShort();
 			}
 		}
 		@Pc(154) int local154 = buffer.readUnsignedByte();
 		if (local154 > 0) {
-			this.anIntArrayArray50 = new int[local154][];
+			this.cs1Scripts = new int[local154][];
 			for (@Pc(162) int local162 = 0; local162 < local154; local162++) {
 				@Pc(173) int local173 = buffer.readUnsignedShort();
-				this.anIntArrayArray50[local162] = new int[local173];
+				this.cs1Scripts[local162] = new int[local173];
 				for (@Pc(181) int local181 = 0; local181 < local173; local181++) {
-					this.anIntArrayArray50[local162][local181] = buffer.readUnsignedShort();
-					if (this.anIntArrayArray50[local162][local181] == 65535) {
-						this.anIntArrayArray50[local162][local181] = -1;
+					this.cs1Scripts[local162][local181] = buffer.readUnsignedShort();
+					if (this.cs1Scripts[local162][local181] == 65535) {
+						this.cs1Scripts[local162][local181] = -1;
 					}
 				}
 			}

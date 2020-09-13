@@ -171,11 +171,6 @@ public final class Static19 {
 		Static11.method572(arg1.length - 1, arg1, 0, arg0);
 	}
 
-	@OriginalMember(owner = "client!ho", name = "a", descriptor = "(II)Ljava/lang/String;")
-	private static String method1807(@OriginalArg(0) int arg0) {
-		return arg0 >= 999999999 ? "*" : Integer.toString(arg0);
-	}
-
 	@OriginalMember(owner = "client!i", name = "b", descriptor = "(II)Lclient!qa;")
 	public static Class140 method1816(@OriginalArg(1) int arg0) {
 		@Pc(6) Class140 local6 = (Class140) Static7.aClass26_56.get((long) arg0);
@@ -239,58 +234,6 @@ public final class Static19 {
 		try {
 			BrowserControl.call(GameShell.signLink.applet, "loggedout");
 		} catch (@Pc(159) Throwable local159) {
-		}
-	}
-
-	@OriginalMember(owner = "client!ia", name = "a", descriptor = "(Lclient!wf;ILjava/lang/String;)Ljava/lang/String;")
-	public static String method1820(@OriginalArg(0) Component arg0, @OriginalArg(2) String arg1) {
-		if (arg1.indexOf("%") == -1) {
-			return arg1;
-		}
-		while (true) {
-			@Pc(21) int local21 = arg1.indexOf("%1");
-			if (local21 == -1) {
-				while (true) {
-					@Pc(54) int local54 = arg1.indexOf("%2");
-					if (local54 == -1) {
-						while (true) {
-							@Pc(90) int local90 = arg1.indexOf("%3");
-							if (local90 == -1) {
-								while (true) {
-									@Pc(126) int local126 = arg1.indexOf("%4");
-									if (local126 == -1) {
-										while (true) {
-											@Pc(162) int local162 = arg1.indexOf("%5");
-											if (local162 == -1) {
-												while (true) {
-													@Pc(194) int local194 = arg1.indexOf("%dns");
-													if (local194 == -1) {
-														return arg1;
-													}
-													@Pc(200) String local200 = "";
-													if (Static1.aClass197_2 != null) {
-														if (Static1.aClass197_2.result == null) {
-															local200 = Static27.method3226(Static1.aClass197_2.intArg1);
-														} else {
-															local200 = (String) Static1.aClass197_2.result;
-														}
-													}
-													arg1 = arg1.substring(0, local194) + local200 + arg1.substring(local194 + 4);
-												}
-											}
-											arg1 = arg1.substring(0, local162) + method1807(Static36.method4464(4, arg0)) + arg1.substring(local162 + 2);
-										}
-									}
-									arg1 = arg1.substring(0, local126) + method1807(Static36.method4464(3, arg0)) + arg1.substring(local126 + 2);
-								}
-							}
-							arg1 = arg1.substring(0, local90) + method1807(Static36.method4464(2, arg0)) + arg1.substring(local90 + 2);
-						}
-					}
-					arg1 = arg1.substring(0, local54) + method1807(Static36.method4464(1, arg0)) + arg1.substring(local54 + 2);
-				}
-			}
-			arg1 = arg1.substring(0, local21) + method1807(Static36.method4464(0, arg0)) + arg1.substring(local21 + 2);
 		}
 	}
 
