@@ -1,4 +1,3 @@
-import java.awt.Component;
 import javax.media.opengl.GL;
 
 import dev.openrs2.deob.annotation.OriginalArg;
@@ -444,59 +443,6 @@ public final class Static25 {
 		local25.glLightfv(GL.GL_LIGHT0, GL.GL_DIFFUSE, local105, 0);
 		@Pc(139) float[] local139 = new float[] { -arg3 * local34, -arg3 * local43, -arg3 * local50, 1.0F };
 		local25.glLightfv(GL.GL_LIGHT1, GL.GL_DIFFUSE, local139, 0);
-	}
-
-	@OriginalMember(owner = "client!mo", name = "a", descriptor = "(Ljava/awt/Component;BILsignlink!pm;I)Lclient!tj;")
-	public static Class102 method2807(@OriginalArg(0) Component arg0, @OriginalArg(2) int arg1, @OriginalArg(3) SignLink arg2, @OriginalArg(4) int arg3) {
-		if (Static7.anInt5394 == 0) {
-			throw new IllegalStateException();
-		}
-		try {
-			@Pc(38) Class102 local38 = (Class102) Class.forName("Class102_Sub1").getDeclaredConstructor().newInstance();
-			local38.anInt3595 = arg1;
-			local38.anIntArray393 = new int[(Static4.aBoolean183 ? 2 : 1) * 256];
-			local38.method3006(arg0);
-			local38.anInt3596 = (arg1 & 0xFFFFFC00) + 1024;
-			if (local38.anInt3596 > 16384) {
-				local38.anInt3596 = 16384;
-			}
-			local38.method2999(local38.anInt3596);
-			if (Static4.anInt3257 > 0 && Static4.aClass91_1 == null) {
-				Static4.aClass91_1 = new Class91();
-				Static4.aClass91_1.aClass196_2 = arg2;
-				arg2.startThread(Static4.aClass91_1, Static4.anInt3257);
-			}
-			if (Static4.aClass91_1 != null) {
-				if (Static4.aClass91_1.aClass102Array1[arg3] != null) {
-					throw new IllegalArgumentException();
-				}
-				Static4.aClass91_1.aClass102Array1[arg3] = local38;
-			}
-			return local38;
-		} catch (@Pc(123) Throwable local123) {
-			try {
-				@Pc(129) Class102_Sub2 local129 = new Class102_Sub2(arg2, arg3);
-				local129.anInt3595 = arg1;
-				local129.anIntArray393 = new int[(Static4.aBoolean183 ? 2 : 1) * 256];
-				local129.method3006(arg0);
-				local129.anInt3596 = 16384;
-				local129.method2999(local129.anInt3596);
-				if (Static4.anInt3257 > 0 && Static4.aClass91_1 == null) {
-					Static4.aClass91_1 = new Class91();
-					Static4.aClass91_1.aClass196_2 = arg2;
-					arg2.startThread(Static4.aClass91_1, Static4.anInt3257);
-				}
-				if (Static4.aClass91_1 != null) {
-					if (Static4.aClass91_1.aClass102Array1[arg3] != null) {
-						throw new IllegalArgumentException();
-					}
-					Static4.aClass91_1.aClass102Array1[arg3] = local129;
-				}
-				return local129;
-			} catch (@Pc(192) Throwable local192) {
-				return new Class102();
-			}
-		}
 	}
 
 	@OriginalMember(owner = "client!mo", name = "a", descriptor = "(Z)V")

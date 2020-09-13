@@ -65,9 +65,6 @@ public final class Static5 {
 	@OriginalMember(owner = "client!nl", name = "f", descriptor = "I")
 	public static int anInt3572;
 
-	@OriginalMember(owner = "client!nm", name = "N", descriptor = "Lsignlink!le;")
-	public static AudioSource anInterface5_1;
-
 	@OriginalMember(owner = "client!o", name = "w", descriptor = "I")
 	public static int anInt3656;
 

@@ -229,6 +229,12 @@ public final class client extends GameShell {
 	@OriginalMember(owner = "client!l", name = "w", descriptor = "Lclient!ob;")
 	public static FrameBuffer frameBuffer;
 
+	@OriginalMember(owner = "client!ca", name = "Z", descriptor = "Lclient!tj;")
+	public static AudioChannel musicChannel;
+
+	@OriginalMember(owner = "client!sc", name = "fb", descriptor = "Lclient!tj;")
+	public static AudioChannel soundChannel;
+
 	@OriginalMember(owner = "client!va", name = "f", descriptor = "Lclient!client;")
 	public static client instance;
 
@@ -543,16 +549,16 @@ public final class client extends GameShell {
 				mainLoadPercentage = 25;
 			}
 		} else if (mainLoadState == 45) {
-			Static9.method175(Preferences.stereo);
+			AudioChannel.init(Preferences.stereo);
 			Static1.aClass4_Sub6_Sub2_2 = new Class4_Sub6_Sub2();
 			Static1.aClass4_Sub6_Sub2_2.method2505();
-			Static1.aClass102_1 = Static25.method2807(GameShell.canvas, 22050, GameShell.signLink, 0);
-			Static1.aClass102_1.method3008(Static1.aClass4_Sub6_Sub2_2);
+			musicChannel = AudioChannel.create(GameShell.canvas, GameShell.signLink, 0, 22050);
+			musicChannel.method3008(Static1.aClass4_Sub6_Sub2_2);
 			Static36.method4551(Static1.aClass4_Sub6_Sub2_2, js5Archive15, js5Archive14, js5Archive4);
-			Static6.aClass102_2 = Static25.method2807(GameShell.canvas, 2048, GameShell.signLink, 1);
+			soundChannel = AudioChannel.create(GameShell.canvas, GameShell.signLink, 1, 2048);
 			Static5.aClass4_Sub6_Sub3_2 = new Class4_Sub6_Sub3();
-			Static6.aClass102_2.method3008(Static5.aClass4_Sub6_Sub3_2);
-			Static7.aClass170_1 = new Class170(22050, Static7.anInt5394);
+			soundChannel.method3008(Static5.aClass4_Sub6_Sub3_2);
+			Static7.aClass170_1 = new Class170(22050, Static7.sampleRate);
 			Static7.anInt5611 = js5Archive6.getGroupId("scape main");
 			mainLoadSecondaryText = LocalisedText.MAINLOAD45B;
 			mainLoadState = 50;
@@ -791,11 +797,11 @@ public final class client extends GameShell {
 		Keyboard.quit();
 		Mouse.quit();
 		mouseWheel = null;
-		if (Static1.aClass102_1 != null) {
-			Static1.aClass102_1.method3001();
+		if (musicChannel != null) {
+			musicChannel.quit();
 		}
-		if (Static6.aClass102_2 != null) {
-			Static6.aClass102_2.method3001();
+		if (soundChannel != null) {
+			soundChannel.quit();
 		}
 		js5NetQueue.stop();
 		js5CacheQueue.stop();
@@ -1086,8 +1092,8 @@ public final class client extends GameShell {
 		@Pc(26) long local26 = GameShell.time() / 1000000L - Static1.aLong24;
 		Static1.aLong24 = GameShell.time() / 1000000L;
 		@Pc(34) boolean local34 = Static12.method639();
-		if (local34 && Static4.aBoolean210 && Static1.aClass102_1 != null) {
-			Static1.aClass102_1.method3009();
+		if (local34 && Static4.aBoolean210 && musicChannel != null) {
+			musicChannel.method3009();
 		}
 		if ((Static4.anInt3304 == 30 || Static4.anInt3304 == 10) && (GameShell.replaceCanvas || Static1.aLong15 != 0L && Static1.aLong15 < MonotonicClock.currentTimeMillis())) {
 			Static35.method4512(GameShell.replaceCanvas, Static11.method557(), Preferences.fullScreenWidth, Preferences.fullScreenHeight);

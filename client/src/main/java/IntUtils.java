@@ -55,4 +55,14 @@ public final class IntUtils {
 		}
 		return bits + v;
 	}
+
+	@OriginalMember(owner = "client!ca", name = "d", descriptor = "(II)I")
+	public static int bitCountFast(@OriginalArg(1) int v) {
+		v = (v >>> 1 & 0x55555555) + (v & 0x55555555);
+		v = (v & 0x33333333) + (v >>> 2 & 0xB3333333);
+		v = (v >>> 4) + v & 0xF0F0F0F;
+		v += v >>> 8;
+		v += v >>> 16;
+		return v & 0xFF;
+	}
 }

@@ -160,12 +160,12 @@ public final class Class4_Sub6_Sub4 extends Class4_Sub6 {
 				}
 				this.anInt4105 += arg1;
 				if (this.anInt4095 == -256 && (this.anInt4100 & 0xFF) == 0) {
-					if (Static4.aBoolean183) {
+					if (AudioChannel.stereo) {
 						arg1 = Static28.method3376(((Class4_Sub8_Sub1) this.aClass4_Sub8_5).aByteArray52, arg0, this.anInt4100, arg1, this.anInt4104, this.anInt4098, this.anInt4102, this.anInt4099, local7, arg2, this);
 					} else {
 						arg1 = Static28.method3389(((Class4_Sub8_Sub1) this.aClass4_Sub8_5).aByteArray52, arg0, this.anInt4100, arg1, this.anInt4096, this.anInt4097, local7, arg2, this);
 					}
-				} else if (Static4.aBoolean183) {
+				} else if (AudioChannel.stereo) {
 					arg1 = Static28.method3370(((Class4_Sub8_Sub1) this.aClass4_Sub8_5).aByteArray52, arg0, this.anInt4100, arg1, this.anInt4104, this.anInt4098, this.anInt4102, this.anInt4099, local7, arg2, this, this.anInt4095, arg4);
 				} else {
 					arg1 = Static28.method3390(((Class4_Sub8_Sub1) this.aClass4_Sub8_5).aByteArray52, arg0, this.anInt4100, arg1, this.anInt4096, this.anInt4097, local7, arg2, this, this.anInt4095, arg4);
@@ -180,12 +180,12 @@ public final class Class4_Sub6_Sub4 extends Class4_Sub6 {
 				return arg3;
 			}
 			if (this.anInt4095 == -256 && (this.anInt4100 & 0xFF) == 0) {
-				if (Static4.aBoolean183) {
+				if (AudioChannel.stereo) {
 					return Static28.method3387(((Class4_Sub8_Sub1) this.aClass4_Sub8_5).aByteArray52, arg0, this.anInt4100, arg1, this.anInt4104, this.anInt4098, arg3, arg2, this);
 				}
 				return Static28.method3380(((Class4_Sub8_Sub1) this.aClass4_Sub8_5).aByteArray52, arg0, this.anInt4100, arg1, this.anInt4096, arg3, arg2, this);
 			}
-			if (Static4.aBoolean183) {
+			if (AudioChannel.stereo) {
 				return Static28.method3356(((Class4_Sub8_Sub1) this.aClass4_Sub8_5).aByteArray52, arg0, this.anInt4100, arg1, this.anInt4104, this.anInt4098, arg3, arg2, this, this.anInt4095, arg4);
 			}
 			return Static29.method3391(((Class4_Sub8_Sub1) this.aClass4_Sub8_5).aByteArray52, arg0, this.anInt4100, arg1, this.anInt4096, arg3, arg2, this, this.anInt4095, arg4);
@@ -519,12 +519,12 @@ public final class Class4_Sub6_Sub4 extends Class4_Sub6 {
 				}
 				this.anInt4105 += arg1;
 				if (this.anInt4095 == 256 && (this.anInt4100 & 0xFF) == 0) {
-					if (Static4.aBoolean183) {
+					if (AudioChannel.stereo) {
 						arg1 = Static28.method3362(((Class4_Sub8_Sub1) this.aClass4_Sub8_5).aByteArray52, arg0, this.anInt4100, arg1, this.anInt4104, this.anInt4098, this.anInt4102, this.anInt4099, local7, arg2, this);
 					} else {
 						arg1 = Static28.method3378(((Class4_Sub8_Sub1) this.aClass4_Sub8_5).aByteArray52, arg0, this.anInt4100, arg1, this.anInt4096, this.anInt4097, local7, arg2, this);
 					}
-				} else if (Static4.aBoolean183) {
+				} else if (AudioChannel.stereo) {
 					arg1 = Static28.method3366(((Class4_Sub8_Sub1) this.aClass4_Sub8_5).aByteArray52, arg0, this.anInt4100, arg1, this.anInt4104, this.anInt4098, this.anInt4102, this.anInt4099, local7, arg2, this, this.anInt4095, arg4);
 				} else {
 					arg1 = Static28.method3363(((Class4_Sub8_Sub1) this.aClass4_Sub8_5).aByteArray52, arg0, this.anInt4100, arg1, this.anInt4096, this.anInt4097, local7, arg2, this, this.anInt4095, arg4);
@@ -539,12 +539,12 @@ public final class Class4_Sub6_Sub4 extends Class4_Sub6 {
 				return arg3;
 			}
 			if (this.anInt4095 == 256 && (this.anInt4100 & 0xFF) == 0) {
-				if (Static4.aBoolean183) {
+				if (AudioChannel.stereo) {
 					return Static28.method3375(((Class4_Sub8_Sub1) this.aClass4_Sub8_5).aByteArray52, arg0, this.anInt4100, arg1, this.anInt4104, this.anInt4098, arg3, arg2, this);
 				}
 				return Static28.method3361(((Class4_Sub8_Sub1) this.aClass4_Sub8_5).aByteArray52, arg0, this.anInt4100, arg1, this.anInt4096, arg3, arg2, this);
 			}
-			if (Static4.aBoolean183) {
+			if (AudioChannel.stereo) {
 				return Static28.method3357(((Class4_Sub8_Sub1) this.aClass4_Sub8_5).aByteArray52, arg0, this.anInt4100, arg1, this.anInt4104, this.anInt4098, arg3, arg2, this, this.anInt4095, arg4);
 			}
 			return Static28.method3373(((Class4_Sub8_Sub1) this.aClass4_Sub8_5).aByteArray52, arg0, this.anInt4100, arg1, this.anInt4096, arg3, arg2, this, this.anInt4095, arg4);

@@ -223,7 +223,7 @@ public final class Class4_Sub6_Sub2 extends Class4_Sub6 {
 	@Override
 	public final synchronized void method3345(@OriginalArg(0) int arg0) {
 		if (this.aClass72_1.method1664()) {
-			@Pc(18) int local18 = this.aClass72_1.anInt2129 * this.anInt3085 / Static7.anInt5394;
+			@Pc(18) int local18 = this.aClass72_1.anInt2129 * this.anInt3085 / Static7.sampleRate;
 			do {
 				@Pc(27) long local27 = this.aLong110 + (long) arg0 * (long) local18;
 				if (this.aLong111 - local27 >= 0L) {
@@ -336,7 +336,7 @@ public final class Class4_Sub6_Sub2 extends Class4_Sub6 {
 		for (@Pc(12) Class4_Sub9 local12 = (Class4_Sub9) this.aClass4_Sub6_Sub1_1.aClass112_3.head(); local12 != null; local12 = (Class4_Sub9) this.aClass4_Sub6_Sub1_1.aClass112_3.next()) {
 			if (arg0 < 0 || arg0 == local12.anInt1301) {
 				if (local12.aClass4_Sub6_Sub4_1 != null) {
-					local12.aClass4_Sub6_Sub4_1.method3360(Static7.anInt5394 / 100);
+					local12.aClass4_Sub6_Sub4_1.method3360(Static7.sampleRate / 100);
 					if (local12.aClass4_Sub6_Sub4_1.method3372()) {
 						this.aClass4_Sub6_Sub1_1.aClass4_Sub6_Sub3_1.method2674(local12.aClass4_Sub6_Sub4_1);
 					}
@@ -552,7 +552,7 @@ public final class Class4_Sub6_Sub2 extends Class4_Sub6 {
 	@Override
 	public final synchronized void method3348(@OriginalArg(0) int[] arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
 		if (this.aClass72_1.method1664()) {
-			@Pc(18) int local18 = this.anInt3085 * this.aClass72_1.anInt2129 / Static7.anInt5394;
+			@Pc(18) int local18 = this.anInt3085 * this.aClass72_1.anInt2129 / Static7.sampleRate;
 			do {
 				@Pc(27) long local27 = (long) local18 * (long) arg2 + this.aLong110;
 				if (this.aLong111 - local27 >= 0L) {
@@ -717,7 +717,7 @@ public final class Class4_Sub6_Sub2 extends Class4_Sub6 {
 			@Pc(97) double local97 = Math.sin((double) (arg0.anInt1284 & 0x1FF) * 0.01227184630308513D);
 			local31 += (int) (local97 * (double) local88);
 		}
-		@Pc(132) int local132 = (int) ((double) (arg0.aClass4_Sub8_Sub1_1.anInt4085 * 256) * Math.pow(2.0D, (double) local31 * 3.255208333333333E-4D) / (double) Static7.anInt5394 + 0.5D);
+		@Pc(132) int local132 = (int) ((double) (arg0.aClass4_Sub8_Sub1_1.anInt4085 * 256) * Math.pow(2.0D, (double) local31 * 3.255208333333333E-4D) / (double) Static7.sampleRate + 0.5D);
 		return local132 < 1 ? 1 : local132;
 	}
 
@@ -733,7 +733,7 @@ public final class Class4_Sub6_Sub2 extends Class4_Sub6 {
 
 	@OriginalMember(owner = "client!ld", name = "a", descriptor = "(Lclient!ej;III[I)Z")
 	public final boolean method2506(@OriginalArg(0) Class4_Sub9 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(4) int[] arg3) {
-		arg0.anInt1303 = Static7.anInt5394 / 100;
+		arg0.anInt1303 = Static7.sampleRate / 100;
 		if (arg0.anInt1288 >= 0 && (arg0.aClass4_Sub6_Sub4_1 == null || arg0.aClass4_Sub6_Sub4_1.method3365())) {
 			arg0.method1057();
 			arg0.unlink();

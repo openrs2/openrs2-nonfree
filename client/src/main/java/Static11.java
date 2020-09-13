@@ -36,16 +36,6 @@ public final class Static11 {
 		return Static9.method197(arg0, arg1, 0) ? Static23.method2456() : null;
 	}
 
-	@OriginalMember(owner = "client!ca", name = "d", descriptor = "(II)I")
-	public static int method496(@OriginalArg(1) int arg0) {
-		arg0 = (arg0 >>> 1 & 0x55555555) + (arg0 & 0x55555555);
-		arg0 = (arg0 & 0x33333333) + (arg0 >>> 2 & 0xB3333333);
-		arg0 = (arg0 >>> 4) + arg0 & 0xF0F0F0F;
-		arg0 += arg0 >>> 8;
-		arg0 += arg0 >>> 16;
-		return arg0 & 0xFF;
-	}
-
 	@OriginalMember(owner = "client!cb", name = "a", descriptor = "(III)Z")
 	public static boolean method508(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
 		@Pc(7) int local7 = Static2.anIntArrayArrayArray3[arg0][arg1][arg2];

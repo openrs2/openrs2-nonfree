@@ -1044,18 +1044,18 @@ public final class Static22 {
 				Static3.aClass4_Sub10_Sub1_1.writeByte(23);
 				Static3.aClass4_Sub10_Sub1_1.writeInt(checksum);
 				Static3.aClass52_7.write(Static3.aClass4_Sub10_Sub1_1.bytes, Static3.aClass4_Sub10_Sub1_1.position);
-				if (Static1.aClass102_1 != null) {
-					Static1.aClass102_1.method2996();
+				if (client.musicChannel != null) {
+					client.musicChannel.method2996();
 				}
-				if (Static6.aClass102_2 != null) {
-					Static6.aClass102_2.method2996();
+				if (client.soundChannel != null) {
+					client.soundChannel.method2996();
 				}
 				@Pc(117) int local117 = Static3.aClass52_7.read();
-				if (Static1.aClass102_1 != null) {
-					Static1.aClass102_1.method2996();
+				if (client.musicChannel != null) {
+					client.musicChannel.method2996();
 				}
-				if (Static6.aClass102_2 != null) {
-					Static6.aClass102_2.method2996();
+				if (client.soundChannel != null) {
+					client.soundChannel.method2996();
 				}
 				if (local117 != 0) {
 					return Static27.method3235(local117);

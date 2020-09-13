@@ -6,19 +6,88 @@ import dev.openrs2.deob.annotation.OriginalMember;
 import dev.openrs2.deob.annotation.Pc;
 
 @OriginalClass("client!tj")
-public class Class102 {
+public class AudioChannel {
+
+	@OriginalMember(owner = "client!jk", name = "w", descriptor = "Lclient!im;")
+	public static AudioThread thread;
+
+	@OriginalMember(owner = "client!ln", name = "T", descriptor = "I")
+	private static int threadPriority;
+
+	@OriginalMember(owner = "client!jk", name = "s", descriptor = "Z")
+	public static boolean stereo;
+
+	@OriginalMember(owner = "client!al", name = "a", descriptor = "(IZIB)V")
+	public static void init(@OriginalArg(1) boolean stereo) {
+		threadPriority = 2;
+		AudioChannel.stereo = stereo;
+		Static7.sampleRate = 22050;
+	}
+
+	@OriginalMember(owner = "client!mo", name = "a", descriptor = "(Ljava/awt/Component;BILsignlink!pm;I)Lclient!tj;")
+	public static AudioChannel create(@OriginalArg(0) Component component, @OriginalArg(3) SignLink signLink, @OriginalArg(4) int channelId, @OriginalArg(2) int sampleRate) {
+		if (Static7.sampleRate == 0) {
+			throw new IllegalStateException();
+		}
+		try {
+			@Pc(38) AudioChannel channel = (AudioChannel) Class.forName("JavaAudioChannel").getDeclaredConstructor().newInstance();
+			channel.sampleRate = sampleRate;
+			channel.samples = new int[(stereo ? 2 : 1) * 256];
+			channel.init(component);
+			channel.bufferSize = (sampleRate & 0xFFFFFC00) + 1024;
+			if (channel.bufferSize > 16384) {
+				channel.bufferSize = 16384;
+			}
+			channel.open(channel.bufferSize);
+			if (threadPriority > 0 && thread == null) {
+				thread = new AudioThread();
+				thread.signLink = signLink;
+				signLink.startThread(thread, threadPriority);
+			}
+			if (thread != null) {
+				if (thread.channels[channelId] != null) {
+					throw new IllegalArgumentException();
+				}
+				thread.channels[channelId] = channel;
+			}
+			return channel;
+		} catch (@Pc(123) Throwable ex) {
+			try {
+				@Pc(129) SignLinkAudioChannel channel = new SignLinkAudioChannel(signLink, channelId);
+				channel.sampleRate = sampleRate;
+				channel.samples = new int[(stereo ? 2 : 1) * 256];
+				channel.init(component);
+				channel.bufferSize = 16384;
+				channel.open(channel.bufferSize);
+				if (threadPriority > 0 && thread == null) {
+					thread = new AudioThread();
+					thread.signLink = signLink;
+					signLink.startThread(thread, threadPriority);
+				}
+				if (thread != null) {
+					if (thread.channels[channelId] != null) {
+						throw new IllegalArgumentException();
+					}
+					thread.channels[channelId] = channel;
+				}
+				return channel;
+			} catch (@Pc(192) Throwable ex2) {
+				return new AudioChannel();
+			}
+		}
+	}
 
 	@OriginalMember(owner = "client!tj", name = "b", descriptor = "Lclient!tf;")
 	private Class4_Sub6 aClass4_Sub6_7;
 
 	@OriginalMember(owner = "client!tj", name = "o", descriptor = "[I")
-	public int[] anIntArray393;
+	public int[] samples;
 
 	@OriginalMember(owner = "client!tj", name = "C", descriptor = "I")
-	public int anInt3595;
+	public int sampleRate;
 
 	@OriginalMember(owner = "client!tj", name = "E", descriptor = "I")
-	public int anInt3596;
+	public int bufferSize;
 
 	@OriginalMember(owner = "client!tj", name = "G", descriptor = "I")
 	private int anInt3597;
@@ -51,7 +120,7 @@ public class Class102 {
 	private final Class4_Sub6[] aClass4_Sub6Array5 = new Class4_Sub6[8];
 
 	@OriginalMember(owner = "client!tj", name = "K", descriptor = "J")
-	private long aLong129 = 0L;
+	private long closeUntil = 0L;
 
 	@OriginalMember(owner = "client!tj", name = "L", descriptor = "Z")
 	private boolean aBoolean260 = true;
@@ -93,122 +162,122 @@ public class Class102 {
 		if (this.aBoolean259) {
 			return;
 		}
-		@Pc(18) long local18 = MonotonicClock.currentTimeMillis();
+		@Pc(18) long now = MonotonicClock.currentTimeMillis();
 		try {
-			if (this.aLong126 + 500000L < local18) {
-				this.aLong126 = local18 - 500000L;
+			if (this.aLong126 + 500000L < now) {
+				this.aLong126 = now - 500000L;
 			}
-			while (this.aLong126 + 5000L < local18) {
+			while (this.aLong126 + 5000L < now) {
 				this.method2995();
-				this.aLong126 += 256000 / Static7.anInt5394;
+				this.aLong126 += 256000 / Static7.sampleRate;
 			}
-		} catch (@Pc(58) Exception local58) {
-			this.aLong126 = local18;
+		} catch (@Pc(58) Exception ex) {
+			this.aLong126 = now;
 		}
-		if (this.anIntArray393 == null) {
+		if (this.samples == null) {
 			return;
 		}
 		try {
-			if (this.aLong129 != 0L) {
-				if (local18 < this.aLong129) {
+			if (this.closeUntil != 0L) {
+				if (this.closeUntil > now) {
 					return;
 				}
-				this.method2999(this.anInt3596);
+				this.open(this.bufferSize);
 				this.aBoolean260 = true;
-				this.aLong129 = 0L;
+				this.closeUntil = 0L;
 			}
-			@Pc(96) int local96 = this.method3002();
-			if (this.anInt3598 < this.anInt3594 - local96) {
-				this.anInt3598 = this.anInt3594 - local96;
+			@Pc(96) int bufferedSamples = this.getBufferedSampleCount();
+			if (this.anInt3598 < this.anInt3594 - bufferedSamples) {
+				this.anInt3598 = this.anInt3594 - bufferedSamples;
 			}
-			@Pc(117) int local117 = this.anInt3597 + this.anInt3595;
+			@Pc(117) int local117 = this.anInt3597 + this.sampleRate;
 			if (local117 + 256 > 16384) {
 				local117 = 16128;
 			}
-			if (local117 + 256 > this.anInt3596) {
-				this.anInt3596 += 1024;
-				local96 = 0;
-				if (this.anInt3596 > 16384) {
-					this.anInt3596 = 16384;
+			if (local117 + 256 > this.bufferSize) {
+				this.bufferSize += 1024;
+				bufferedSamples = 0;
+				if (this.bufferSize > 16384) {
+					this.bufferSize = 16384;
 				}
-				this.method3004();
-				this.method2999(this.anInt3596);
-				if (this.anInt3596 < local117 + 256) {
-					local117 = this.anInt3596 - 256;
-					this.anInt3597 = local117 - this.anInt3595;
+				this.close();
+				this.open(this.bufferSize);
+				if (this.bufferSize < local117 + 256) {
+					local117 = this.bufferSize - 256;
+					this.anInt3597 = local117 - this.sampleRate;
 				}
 				this.aBoolean260 = true;
 			}
-			while (local117 > local96) {
-				local96 += 256;
-				this.method3012(this.anIntArray393);
-				this.method3005();
+			while (local117 > bufferedSamples) {
+				bufferedSamples += 256;
+				this.method3012(this.samples);
+				this.write();
 			}
-			if (local18 > this.aLong128) {
+			if (now > this.aLong128) {
 				if (this.aBoolean260) {
 					this.aBoolean260 = false;
 				} else if (this.anInt3598 == 0 && this.anInt3592 == 0) {
-					this.method3004();
-					this.aLong129 = local18 + 2000L;
+					this.close();
+					this.closeUntil = now + 2000L;
 					return;
 				} else {
 					this.anInt3597 = Math.min(this.anInt3592, this.anInt3598);
 					this.anInt3592 = this.anInt3598;
 				}
 				this.anInt3598 = 0;
-				this.aLong128 = local18 + 2000L;
+				this.aLong128 = now + 2000L;
 			}
-			this.anInt3594 = local96;
-		} catch (@Pc(262) Exception local262) {
-			this.method3004();
-			this.aLong129 = local18 + 2000L;
+			this.anInt3594 = bufferedSamples;
+		} catch (@Pc(262) Exception ex) {
+			this.close();
+			this.closeUntil = now + 2000L;
 		}
 	}
 
 	@OriginalMember(owner = "client!tj", name = "b", descriptor = "(I)V")
-	public void method2999(@OriginalArg(0) int arg0) throws Exception {
+	public void open(@OriginalArg(0) int bufferSize) throws Exception {
 	}
 
 	@OriginalMember(owner = "client!tj", name = "d", descriptor = "(I)V")
-	public final synchronized void method3001() {
-		if (Static4.aClass91_1 != null) {
-			@Pc(17) boolean local17 = true;
-			for (@Pc(19) int local19 = 0; local19 < 2; local19++) {
-				if (Static4.aClass91_1.aClass102Array1[local19] == this) {
-					Static4.aClass91_1.aClass102Array1[local19] = null;
+	public final synchronized void quit() {
+		if (thread != null) {
+			@Pc(17) boolean stop = true;
+			for (@Pc(19) int i = 0; i < 2; i++) {
+				if (thread.channels[i] == this) {
+					thread.channels[i] = null;
 				}
-				if (Static4.aClass91_1.aClass102Array1[local19] != null) {
-					local17 = false;
+				if (thread.channels[i] != null) {
+					stop = false;
 				}
 			}
-			if (local17) {
-				Static4.aClass91_1.aBoolean170 = true;
-				while (Static4.aClass91_1.aBoolean171) {
+			if (stop) {
+				thread.stop = true;
+				while (thread.running) {
 					ThreadUtils.sleep(50L);
 				}
-				Static4.aClass91_1 = null;
+				thread = null;
 			}
 		}
-		this.method3004();
+		this.close();
 		this.aBoolean259 = true;
-		this.anIntArray393 = null;
+		this.samples = null;
 	}
 
 	@OriginalMember(owner = "client!tj", name = "a", descriptor = "()I")
-	protected int method3002() throws Exception {
-		return this.anInt3596;
+	protected int getBufferedSampleCount() throws Exception {
+		return this.bufferSize;
 	}
 
 	@OriginalMember(owner = "client!tj", name = "b", descriptor = "()V")
-	protected void method3004() {
+	protected void close() {
 	}
 
 	@OriginalMember(owner = "client!tj", name = "c", descriptor = "()V")
-	protected void method3005() throws Exception {
+	protected void write() throws Exception {
 	}
 
 	@OriginalMember(owner = "client!tj", name = "a", descriptor = "(Ljava/awt/Component;)V")
-	public void method3006(@OriginalArg(0) Component arg0) throws Exception {
+	public void init(@OriginalArg(0) Component component) throws Exception {
 	}
 
 	@OriginalMember(owner = "client!tj", name = "a", descriptor = "(Lclient!tf;I)V")
@@ -220,27 +289,27 @@ public class Class102 {
 	public final synchronized void method3009() {
 		this.aBoolean260 = true;
 		try {
-			this.method3011();
-		} catch (@Pc(18) Exception local18) {
-			this.method3004();
-			this.aLong129 = MonotonicClock.currentTimeMillis() + 2000L;
+			this.flush();
+		} catch (@Pc(18) Exception ex) {
+			this.close();
+			this.closeUntil = MonotonicClock.currentTimeMillis() + 2000L;
 		}
 	}
 
 	@OriginalMember(owner = "client!tj", name = "d", descriptor = "()V")
-	protected void method3011() throws Exception {
+	protected void flush() throws Exception {
 	}
 
 	@OriginalMember(owner = "client!tj", name = "a", descriptor = "([II)V")
 	private void method3012(@OriginalArg(0) int[] arg0) {
 		@Pc(1) short local1 = 256;
-		if (Static4.aBoolean183) {
+		if (stereo) {
 			local1 = 512;
 		}
 		ArrayUtils.clear(arg0, 0, local1);
 		this.anInt3593 -= 256;
 		if (this.aClass4_Sub6_7 != null && this.anInt3593 <= 0) {
-			this.anInt3593 += Static7.anInt5394 >> 4;
+			this.anInt3593 += Static7.sampleRate >> 4;
 			Static15.method1324(this.aClass4_Sub6_7);
 			this.method2994(this.aClass4_Sub6_7.method3347(), this.aClass4_Sub6_7);
 			@Pc(45) int local45 = 0;

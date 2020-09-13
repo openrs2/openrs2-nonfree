@@ -134,9 +134,6 @@ public final class Static1 {
 	@OriginalMember(owner = "client!ca", name = "S", descriptor = "I")
 	public static int anInt497;
 
-	@OriginalMember(owner = "client!ca", name = "Z", descriptor = "Lclient!tj;")
-	public static Class102 aClass102_1;
-
 	@OriginalMember(owner = "client!ca", name = "bb", descriptor = "I")
 	public static int anInt504;
 

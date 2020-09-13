@@ -43,7 +43,7 @@ public final class Class4_Sub6_Sub1 extends Class4_Sub6 {
 	@OriginalMember(owner = "client!bn", name = "a", descriptor = "(ILclient!ej;I[IIB)V")
 	private void method385(@OriginalArg(0) int arg0, @OriginalArg(1) Class4_Sub9 arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int[] arg3, @OriginalArg(4) int arg4) {
 		if ((this.aClass4_Sub6_Sub2_1.anIntArray285[arg1.anInt1301] & 0x4) != 0 && arg1.anInt1288 < 0) {
-			@Pc(28) int local28 = this.aClass4_Sub6_Sub2_1.anIntArray275[arg1.anInt1301] / Static7.anInt5394;
+			@Pc(28) int local28 = this.aClass4_Sub6_Sub2_1.anIntArray275[arg1.anInt1301] / Static7.sampleRate;
 			while (true) {
 				@Pc(39) int local39 = (local28 + 1048575 - arg1.anInt1294) / local28;
 				if (arg0 < local39) {
@@ -54,7 +54,7 @@ public final class Class4_Sub6_Sub1 extends Class4_Sub6 {
 				arg2 += local39;
 				@Pc(56) int local56 = 262144 / local28;
 				@Pc(59) Class4_Sub6_Sub4 local59 = arg1.aClass4_Sub6_Sub4_1;
-				@Pc(63) int local63 = Static7.anInt5394 / 100;
+				@Pc(63) int local63 = Static7.sampleRate / 100;
 				arg0 -= local39;
 				if (local63 > local56) {
 					local63 = local56;
@@ -131,7 +131,7 @@ public final class Class4_Sub6_Sub1 extends Class4_Sub6 {
 	@OriginalMember(owner = "client!bn", name = "a", descriptor = "(IILclient!ej;)V")
 	private void method386(@OriginalArg(1) int arg0, @OriginalArg(2) Class4_Sub9 arg1) {
 		if ((this.aClass4_Sub6_Sub2_1.anIntArray285[arg1.anInt1301] & 0x4) != 0 && arg1.anInt1288 < 0) {
-			@Pc(28) int local28 = this.aClass4_Sub6_Sub2_1.anIntArray275[arg1.anInt1301] / Static7.anInt5394;
+			@Pc(28) int local28 = this.aClass4_Sub6_Sub2_1.anIntArray275[arg1.anInt1301] / Static7.sampleRate;
 			@Pc(38) int local38 = (local28 + 1048575 - arg1.anInt1294) / local28;
 			arg1.anInt1294 = local28 * arg0 + arg1.anInt1294 & 0xFFFFF;
 			if (arg0 >= local38) {

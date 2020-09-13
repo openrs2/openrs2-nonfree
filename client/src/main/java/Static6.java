@@ -197,9 +197,6 @@ public final class Static6 {
 	@OriginalMember(owner = "client!s", name = "Ab", descriptor = "F")
 	public static float aFloat120;
 
-	@OriginalMember(owner = "client!sc", name = "fb", descriptor = "Lclient!tj;")
-	public static Class102 aClass102_2;
-
 	@OriginalMember(owner = "client!sd", name = "i", descriptor = "Lclient!fh;")
 	public static Js5 aClass58_89;
 

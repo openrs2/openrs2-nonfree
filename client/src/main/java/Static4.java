@@ -6,14 +6,8 @@ import dev.openrs2.deob.annotation.OriginalMember;
 
 public final class Static4 {
 
-	@OriginalMember(owner = "client!jk", name = "s", descriptor = "Z")
-	public static boolean aBoolean183;
-
 	@OriginalMember(owner = "client!jk", name = "v", descriptor = "[I")
 	public static int[] anIntArray231;
-
-	@OriginalMember(owner = "client!jk", name = "w", descriptor = "Lclient!im;")
-	public static Class91 aClass91_1;
 
 	@OriginalMember(owner = "client!jl", name = "B", descriptor = "[[[Lclient!ll;")
 	public static LinkedList[][][] aClass112ArrayArrayArray1;
@@ -143,9 +137,6 @@ public final class Static4 {
 
 	@OriginalMember(owner = "client!ln", name = "K", descriptor = "I")
 	public static int anInt3253;
-
-	@OriginalMember(owner = "client!ln", name = "T", descriptor = "I")
-	public static int anInt3257;
 
 	@OriginalMember(owner = "client!ln", name = "W", descriptor = "I")
 	public static int anInt3258;

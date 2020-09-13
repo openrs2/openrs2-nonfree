@@ -62,7 +62,7 @@ public final class Static7 {
 	public static Class4_Sub31 aClass4_Sub31_2;
 
 	@OriginalMember(owner = "client!um", name = "a", descriptor = "I")
-	public static int anInt5394;
+	public static int sampleRate;
 
 	@OriginalMember(owner = "client!un", name = "x", descriptor = "I")
 	public static int anInt5412;

@@ -1112,7 +1112,7 @@ public final class Static28 {
 
 	@OriginalMember(owner = "client!pc", name = "a", descriptor = "(Lclient!pb;II)Lclient!pc;")
 	public static Class4_Sub6_Sub4 method3385(@OriginalArg(0) Class4_Sub8_Sub1 arg0, @OriginalArg(2) int arg1) {
-		return arg0.aByteArray52 == null || arg0.aByteArray52.length == 0 ? null : new Class4_Sub6_Sub4(arg0, (int) ((long) arg0.anInt4085 * 256L * (long) 100 / (long) (Static7.anInt5394 * 100)), arg1 << 6);
+		return arg0.aByteArray52 == null || arg0.aByteArray52.length == 0 ? null : new Class4_Sub6_Sub4(arg0, (int) ((long) arg0.anInt4085 * 256L * (long) 100 / (long) (Static7.sampleRate * 100)), arg1 << 6);
 	}
 
 	@OriginalMember(owner = "client!pc", name = "b", descriptor = "(I[B[IIIIIIIILclient!pc;)I")

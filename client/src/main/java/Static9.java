@@ -130,13 +130,6 @@ public final class Static9 {
 		}
 	}
 
-	@OriginalMember(owner = "client!al", name = "a", descriptor = "(IZIB)V")
-	public static void method175(@OriginalArg(1) boolean arg0) {
-		Static4.anInt3257 = 2;
-		Static4.aBoolean183 = arg0;
-		Static7.anInt5394 = 22050;
-	}
-
 	@OriginalMember(owner = "client!am", name = "a", descriptor = "(II)V")
 	public static void method191() {
 		Static5.aClass26_45.clean(5);
@@ -283,17 +276,17 @@ public final class Static9 {
 
 	@OriginalMember(owner = "client!an", name = "b", descriptor = "(I)V")
 	public static void method199() {
-		if (Static1.aClass102_1 != null) {
-			Static1.aClass102_1.method3001();
+		if (client.musicChannel != null) {
+			client.musicChannel.quit();
 		}
-		if (Static6.aClass102_2 != null) {
-			Static6.aClass102_2.method3001();
+		if (client.soundChannel != null) {
+			client.soundChannel.quit();
 		}
-		method175(Preferences.stereo);
-		Static1.aClass102_1 = Static25.method2807(GameShell.canvas, 22050, GameShell.signLink, 0);
-		Static1.aClass102_1.method3008(Static1.aClass4_Sub6_Sub2_2);
-		Static6.aClass102_2 = Static25.method2807(GameShell.canvas, 2048, GameShell.signLink, 1);
-		Static6.aClass102_2.method3008(Static5.aClass4_Sub6_Sub3_2);
+		AudioChannel.init(Preferences.stereo);
+		client.musicChannel = AudioChannel.create(GameShell.canvas, GameShell.signLink, 0, 22050);
+		client.musicChannel.method3008(Static1.aClass4_Sub6_Sub2_2);
+		client.soundChannel = AudioChannel.create(GameShell.canvas, GameShell.signLink, 1, 2048);
+		client.soundChannel.method3008(Static5.aClass4_Sub6_Sub3_2);
 	}
 
 	@OriginalMember(owner = "client!ao", name = "a", descriptor = "(DB)V")
@@ -609,11 +602,11 @@ public final class Static9 {
 
 	@OriginalMember(owner = "client!bc", name = "a", descriptor = "(Z)V")
 	public static void method763() {
-		if (Static6.aClass102_2 != null) {
-			Static6.aClass102_2.method2998();
+		if (client.soundChannel != null) {
+			client.soundChannel.method2998();
 		}
-		if (Static1.aClass102_1 != null) {
-			Static1.aClass102_1.method2998();
+		if (client.musicChannel != null) {
+			client.musicChannel.method2998();
 		}
 	}
 
