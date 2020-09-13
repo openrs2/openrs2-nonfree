@@ -35,7 +35,7 @@ public final class ClientScript extends SecondaryNode {
 		}
 		@Pc(129) int i = 0;
 		buffer.position = 0;
-		script.name = buffer.fastReadString();
+		script.name = buffer.readStringFast();
 		script.stringOperands = new String[instructions];
 		script.opcodes = new int[instructions];
 		script.intOperands = new int[instructions];

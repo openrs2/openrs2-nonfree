@@ -416,7 +416,7 @@ public class Buffer extends Node {
 	}
 
 	@OriginalMember(owner = "client!fd", name = "l", descriptor = "(B)Ljava/lang/String;")
-	public final String fastReadString() {
+	public final String readStringFast() {
 		if (this.bytes[this.position] == 0) {
 			this.position++;
 			return null;
