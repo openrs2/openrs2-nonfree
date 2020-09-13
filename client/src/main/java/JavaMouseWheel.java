@@ -8,7 +8,7 @@ import dev.openrs2.deob.annotation.OriginalMember;
 import dev.openrs2.deob.annotation.Pc;
 
 @OriginalClass("client!dk")
-public final class AwtMouseWheel extends MouseWheel implements MouseWheelListener {
+public final class JavaMouseWheel extends MouseWheel implements MouseWheelListener {
 
 	@OriginalMember(owner = "client!dk", name = "k", descriptor = "I")
 	private int wheelRotation = 0;

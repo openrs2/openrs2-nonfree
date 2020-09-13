@@ -11,7 +11,7 @@ public abstract class MouseWheel {
 	@OriginalMember(owner = "client!bl", name = "f", descriptor = "(I)Lclient!bh;")
 	public static MouseWheel create() {
 		try {
-			return (MouseWheel) Class.forName("AwtMouseWheel").getDeclaredConstructor().newInstance();
+			return (MouseWheel) Class.forName("JavaMouseWheel").getDeclaredConstructor().newInstance();
 		} catch (@Pc(15) Throwable ex) {
 			return null;
 		}
