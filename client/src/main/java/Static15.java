@@ -248,24 +248,6 @@ public final class Static15 {
 		local8.method1519();
 	}
 
-	@OriginalMember(owner = "client!fc", name = "a", descriptor = "(IBI)I")
-	public static int method1226(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1) {
-		@Pc(12) Class4_Sub18 local12 = (Class4_Sub18) Static5.aClass84_17.get((long) arg1);
-		if (local12 == null) {
-			return 0;
-		} else if (arg0 == -1) {
-			return 0;
-		} else {
-			@Pc(35) int local35 = 0;
-			for (@Pc(37) int local37 = 0; local37 < local12.anIntArray386.length; local37++) {
-				if (arg0 == local12.anIntArray385[local37]) {
-					local35 += local12.anIntArray386[local37];
-				}
-			}
-			return local35;
-		}
-	}
-
 	@OriginalMember(owner = "client!fc", name = "a", descriptor = "(BIIII)V")
 	public static void method1227(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3) {
 		if (Preferences.soundEffectsVolume == 0 || arg2 == 0 || Static6.anInt4457 >= 50 || arg1 == -1) {

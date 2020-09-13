@@ -189,31 +189,6 @@ public final class Static28 {
 		return local9;
 	}
 
-	@OriginalMember(owner = "client!om", name = "a", descriptor = "(IBIZ)I")
-	public static int method3248(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) boolean arg2) {
-		@Pc(12) Class4_Sub18 local12 = (Class4_Sub18) Static5.aClass84_17.get((long) arg1);
-		if (local12 == null) {
-			return 0;
-		}
-		@Pc(19) int local19 = 0;
-		for (@Pc(26) int local26 = 0; local26 < local12.anIntArray385.length; local26++) {
-			if (local12.anIntArray385[local26] >= 0 && ObjTypeList.capacity > local12.anIntArray385[local26]) {
-				@Pc(61) ObjType local61 = ObjTypeList.get(local12.anIntArray385[local26]);
-				if (local61.params != null) {
-					@Pc(72) IntNode local72 = (IntNode) local61.params.get((long) arg0);
-					if (local72 != null) {
-						if (arg2) {
-							local19 += local72.value * local12.anIntArray386[local26];
-						} else {
-							local19 += local72.value;
-						}
-					}
-				}
-			}
-		}
-		return local19;
-	}
-
 	@OriginalMember(owner = "client!om", name = "a", descriptor = "(B)V")
 	public static void method3249() {
 		if (Static1.anInt331 < 0) {

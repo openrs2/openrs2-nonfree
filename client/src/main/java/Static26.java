@@ -284,31 +284,6 @@ public final class Static26 {
 		return local24;
 	}
 
-	@OriginalMember(owner = "client!nf", name = "a", descriptor = "(IIIII)V")
-	public static void method2972(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3) {
-		@Pc(12) Class4_Sub18 local12 = (Class4_Sub18) Static5.aClass84_17.get((long) arg0);
-		if (local12 == null) {
-			local12 = new Class4_Sub18();
-			Static5.aClass84_17.put((long) arg0, local12);
-		}
-		if (local12.anIntArray385.length <= arg1) {
-			@Pc(41) int[] local41 = new int[arg1 + 1];
-			@Pc(46) int[] local46 = new int[arg1 + 1];
-			for (@Pc(48) int local48 = 0; local48 < local12.anIntArray385.length; local48++) {
-				local41[local48] = local12.anIntArray385[local48];
-				local46[local48] = local12.anIntArray386[local48];
-			}
-			for (@Pc(74) int local74 = local12.anIntArray385.length; local74 < arg1; local74++) {
-				local41[local74] = -1;
-				local46[local74] = 0;
-			}
-			local12.anIntArray386 = local46;
-			local12.anIntArray385 = local41;
-		}
-		local12.anIntArray385[arg1] = arg2;
-		local12.anIntArray386[arg1] = arg3;
-	}
-
 	@OriginalMember(owner = "client!nf", name = "a", descriptor = "(I)V")
 	public static void method2973() {
 		if (Static6.aBoolean330) {

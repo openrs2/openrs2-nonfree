@@ -87,17 +87,6 @@ public final class Static36 {
 		}
 	}
 
-	@OriginalMember(owner = "client!va", name = "b", descriptor = "(II)V")
-	public static void method4407(@OriginalArg(1) int arg0) {
-		@Pc(8) Class4_Sub18 local8 = (Class4_Sub18) Static5.aClass84_17.get((long) arg0);
-		if (local8 != null) {
-			for (@Pc(24) int local24 = 0; local24 < local8.anIntArray385.length; local24++) {
-				local8.anIntArray385[local24] = -1;
-				local8.anIntArray386[local24] = 0;
-			}
-		}
-	}
-
 	@OriginalMember(owner = "client!vb", name = "a", descriptor = "(BIIII)V")
 	public static void method4433(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3) {
 		@Pc(6) Class4_Sub3_Sub9 local6 = Static12.method2322(10, arg3);

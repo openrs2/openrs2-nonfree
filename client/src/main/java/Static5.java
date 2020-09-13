@@ -323,9 +323,6 @@ public final class Static5 {
 	@OriginalMember(owner = "client!ni", name = "n", descriptor = "[I")
 	public static final int[] anIntArray681 = new int[] { 1, 4 };
 
-	@OriginalMember(owner = "client!nj", name = "i", descriptor = "Lclient!ic;")
-	public static HashTable aClass84_17 = new HashTable(32);
-
 	@OriginalMember(owner = "client!nj", name = "j", descriptor = "Lclient!wa;")
 	public static final Packet aClass4_Sub10_Sub1_2 = new Packet(65536);
 

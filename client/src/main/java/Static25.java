@@ -756,7 +756,7 @@ public final class Static25 {
 				Static3.aClass53_Sub1_Sub2Array1[local52].anInt3985 = -1;
 			}
 		}
-		Static12.method715();
+		Inv.deleteAll();
 		Static1.anInt772 = 1;
 		Static9.method233(30);
 		for (@Pc(82) int local82 = 0; local82 < 100; local82++) {

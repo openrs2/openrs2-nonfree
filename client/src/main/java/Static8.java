@@ -334,18 +334,6 @@ public final class Static8 {
 		}
 	}
 
-	@OriginalMember(owner = "client!ac", name = "a", descriptor = "(IIZ)I")
-	public static int method70(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
-		@Pc(14) Class4_Sub18 local14 = (Class4_Sub18) Static5.aClass84_17.get((long) arg0);
-		if (local14 == null) {
-			return -1;
-		} else if (arg1 >= 0 && arg1 < local14.anIntArray385.length) {
-			return local14.anIntArray385[arg1];
-		} else {
-			return -1;
-		}
-	}
-
 	@OriginalMember(owner = "client!ac", name = "c", descriptor = "(II)I")
 	public static int method71(@OriginalArg(0) int arg0) {
 		return arg0 == 16711935 ? -1 : Static28.method3276(arg0);

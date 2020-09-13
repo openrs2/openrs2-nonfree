@@ -1762,7 +1762,7 @@ public final class Static16 {
 							@Pc(13117) int local13117 = Static7.anIntArray571[local13111 + 1];
 							@Pc(13121) int local13121 = Static7.anIntArray571[local13111];
 							local5 = local13111 + 1;
-							Static7.anIntArray571[local13111] = Static8.method70(local13121, local13117);
+							Static7.anIntArray571[local13111] = Inv.getItemType(local13121, local13117);
 							continue;
 						}
 						if (local45 == 3302) {
@@ -1770,7 +1770,7 @@ public final class Static16 {
 							@Pc(13142) int local13142 = Static7.anIntArray571[local13138];
 							@Pc(13148) int local13148 = Static7.anIntArray571[local13138 + 1];
 							local5 = local13138 + 1;
-							Static7.anIntArray571[local13138] = Static21.method3285(local13148, local13142);
+							Static7.anIntArray571[local13138] = Inv.getItemCount(local13142, local13148);
 							continue;
 						}
 						if (local45 == 3303) {
@@ -1778,14 +1778,14 @@ public final class Static16 {
 							@Pc(13168) int local13168 = Static7.anIntArray571[local13164];
 							@Pc(13174) int local13174 = Static7.anIntArray571[local13164 + 1];
 							local5 = local13164 + 1;
-							Static7.anIntArray571[local13164] = Static15.method1226(local13174, local13168);
+							Static7.anIntArray571[local13164] = Inv.getSlotTotal(local13168, local13174);
 							continue;
 						}
 						if (local45 == 3304) {
 							@Pc(13191) int local13191 = local5 - 1;
 							@Pc(13194) int local13194 = Static7.anIntArray571[local13191];
 							local5 = local13191 + 1;
-							Static7.anIntArray571[local13191] = Static9.method264(local13194).anInt1963;
+							Static7.anIntArray571[local13191] = InvTypeList.get(local13194).size;
 							continue;
 						}
 						if (local45 == 3305) {
@@ -1846,7 +1846,7 @@ public final class Static16 {
 							@Pc(13377) int local13377 = Static7.anIntArray571[local13371 + 1];
 							@Pc(13383) int local13383 = Static7.anIntArray571[local13371] + 32768;
 							local5 = local13371 + 1;
-							Static7.anIntArray571[local13371] = Static8.method70(local13383, local13377);
+							Static7.anIntArray571[local13371] = Inv.getItemType(local13383, local13377);
 							continue;
 						}
 						if (local45 == 3314) {
@@ -1854,7 +1854,7 @@ public final class Static16 {
 							@Pc(13404) int local13404 = Static7.anIntArray571[local13398 + 1];
 							@Pc(13410) int local13410 = Static7.anIntArray571[local13398] + 32768;
 							local5 = local13398 + 1;
-							Static7.anIntArray571[local13398] = Static21.method3285(local13404, local13410);
+							Static7.anIntArray571[local13398] = Inv.getItemCount(local13410, local13404);
 							continue;
 						}
 						if (local45 == 3315) {
@@ -1862,7 +1862,7 @@ public final class Static16 {
 							@Pc(13430) int local13430 = Static7.anIntArray571[local13424] + 32768;
 							@Pc(13436) int local13436 = Static7.anIntArray571[local13424 + 1];
 							local5 = local13424 + 1;
-							Static7.anIntArray571[local13424] = Static15.method1226(local13436, local13430);
+							Static7.anIntArray571[local13424] = Inv.getSlotTotal(local13430, local13436);
 							continue;
 						}
 						if (local45 == 3316) {
@@ -1929,7 +1929,7 @@ public final class Static16 {
 							@Pc(13650) int local13650 = local5 - 1;
 							@Pc(13653) int local13653 = Static7.anIntArray571[local13650];
 							local5 = local13650 + 1;
-							Static7.anIntArray571[local13650] = Static33.method4088(local13653);
+							Static7.anIntArray571[local13650] = Inv.getFreeSpace(local13653);
 							continue;
 						}
 						if (local45 == 3331) {
@@ -1937,7 +1937,7 @@ public final class Static16 {
 							@Pc(13674) int local13674 = Static7.anIntArray571[local13668 + 1];
 							@Pc(13678) int local13678 = Static7.anIntArray571[local13668];
 							local5 = local13668 + 1;
-							Static7.anIntArray571[local13668] = Static28.method3248(local13674, local13678, false);
+							Static7.anIntArray571[local13668] = Inv.getTotalParam(local13678, local13674, false);
 							continue;
 						}
 						if (local45 == 3332) {
@@ -1945,7 +1945,7 @@ public final class Static16 {
 							@Pc(13700) int local13700 = Static7.anIntArray571[local13694 + 1];
 							@Pc(13704) int local13704 = Static7.anIntArray571[local13694];
 							local5 = local13694 + 1;
-							Static7.anIntArray571[local13694] = Static28.method3248(local13700, local13704, true);
+							Static7.anIntArray571[local13694] = Inv.getTotalParam(local13704, local13700, true);
 							continue;
 						}
 						if (local45 == 3333) {

@@ -662,7 +662,7 @@ public final class Static11 {
 			Static3.aBooleanArray11[local3945] = false;
 			Static5.anIntArray615[local3945] = -1;
 		}
-		Static12.method715();
+		Inv.deleteAll();
 		Static3.aBoolean366 = true;
 		for (@Pc(3969) int local3969 = 0; local3969 < 100; local3969++) {
 			Static2.aBooleanArray8[local3969] = true;

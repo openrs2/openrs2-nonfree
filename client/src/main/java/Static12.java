@@ -731,11 +731,6 @@ public final class Static12 {
 		Static31.method3652(arg1, arg1.length - 1, arg0, 0);
 	}
 
-	@OriginalMember(owner = "client!co", name = "a", descriptor = "(Z)V")
-	public static void method715() {
-		Static5.aClass84_17 = new HashTable(32);
-	}
-
 	@OriginalMember(owner = "client!co", name = "a", descriptor = "(Ljava/util/Random;II)I")
 	public static int method716(@OriginalArg(0) Random arg0, @OriginalArg(1) int arg1) {
 		if (arg1 <= 0) {

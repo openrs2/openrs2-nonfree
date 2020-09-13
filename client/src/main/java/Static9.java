@@ -623,21 +623,6 @@ public final class Static9 {
 		Static5.anInt4158 = Static6.aClass58_94.getGroupCapacity(16);
 	}
 
-	@OriginalMember(owner = "client!be", name = "a", descriptor = "(II)Lclient!fn;")
-	public static Class4_Sub3_Sub8 method264(@OriginalArg(0) int arg0) {
-		@Pc(18) Class4_Sub3_Sub8 local18 = (Class4_Sub3_Sub8) Static2.aClass40_6.get((long) arg0);
-		if (local18 != null) {
-			return local18;
-		}
-		@Pc(29) byte[] local29 = Static6.aClass58_95.fetchFile(5, arg0);
-		@Pc(33) Class4_Sub3_Sub8 local33 = new Class4_Sub3_Sub8();
-		if (local29 != null) {
-			local33.method1499(new Buffer(local29));
-		}
-		Static2.aClass40_6.put((long) arg0, local33);
-		return local33;
-	}
-
 	@OriginalMember(owner = "client!bf", name = "a", descriptor = "([II)I")
 	public static int method265(@OriginalArg(0) int[] arg0, @OriginalArg(1) int arg1) {
 		@Pc(3) int local3 = arg0[arg1];

@@ -148,24 +148,6 @@ public final class Static33 {
 		}
 	}
 
-	@OriginalMember(owner = "client!ta", name = "a", descriptor = "(IB)I")
-	public static int method4088(@OriginalArg(0) int arg0) {
-		if (arg0 < 0) {
-			return 0;
-		}
-		@Pc(18) Class4_Sub18 local18 = (Class4_Sub18) Static5.aClass84_17.get((long) arg0);
-		if (local18 == null) {
-			return Static9.method264(arg0).anInt1963;
-		}
-		@Pc(32) int local32 = 0;
-		for (@Pc(34) int local34 = 0; local34 < local18.anIntArray385.length; local34++) {
-			if (local18.anIntArray385[local34] == -1) {
-				local32++;
-			}
-		}
-		return local32 + Static9.method264(arg0).anInt1963 - local18.anIntArray385.length;
-	}
-
 	@OriginalMember(owner = "client!ta", name = "a", descriptor = "(ZI)V")
 	public static void method4089(@OriginalArg(0) boolean arg0) {
 		Static5.aBoolean294 = arg0;
