@@ -870,7 +870,7 @@ public final class Static20 {
 			Static3.anInt2960 = (Static3.aClass4_Sub3_Sub22_3.anInt6007 >> 6 << 6) + 64 - Static3.anInt2961;
 			@Pc(84) int local84 = -1;
 			@Pc(86) int local86 = -1;
-			if (Static3.aClass4_Sub3_Sub22_3.method4753(Static7.anInt5479 + (Static4.aClass53_Sub1_Sub1_2.z >> 7), Static7.anInt5334, local70, (Static4.aClass53_Sub1_Sub1_2.x >> 7) + Static5.anInt3983)) {
+			if (Static3.aClass4_Sub3_Sub22_3.method4753(Static7.anInt5479 + (Player.self.z >> 7), Static7.anInt5334, local70, (Player.self.x >> 7) + Static5.anInt3983)) {
 				local86 = local70[1] - Static3.anInt2962;
 				local84 = Static3.anInt2961 + Static3.anInt2960 - local70[2] - 1;
 			}
@@ -1119,7 +1119,7 @@ public final class Static20 {
 
 	@OriginalMember(owner = "client!im", name = "b", descriptor = "(I)V")
 	public static void method1932() {
-		if (Static4.aClass53_Sub1_Sub1_2 != null && Static4.aClass53_Sub1_Sub1_2.x + 64 - Static4.aClass53_Sub1_Sub1_2.getSize() * 64 >> 7 == Static6.anInt4506 && Static4.aClass53_Sub1_Sub1_2.z + 64 - Static4.aClass53_Sub1_Sub1_2.getSize() * 64 >> 7 == Static3.anInt2140) {
+		if (Player.self != null && Player.self.x + 64 - Player.self.getSize() * 64 >> 7 == Static6.anInt4506 && Player.self.z + 64 - Player.self.getSize() * 64 >> 7 == Static3.anInt2140) {
 			Static3.aBoolean147 = false;
 			Static6.anInt4506 = 0;
 		}
@@ -1412,7 +1412,7 @@ public final class Static20 {
 					@Pc(113) int local113 = -local22.anInt3713 - 1;
 					@Pc(118) Player local118;
 					if (Static7.anInt2022 == local113) {
-						local118 = Static4.aClass53_Sub1_Sub1_2;
+						local118 = Player.self;
 					} else {
 						local118 = Static5.aClass53_Sub1_Sub1Array1[local113];
 					}

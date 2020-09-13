@@ -700,16 +700,16 @@ public final class Static10 {
 			arg0.anInt5895 = -1;
 			arg0.anInt5939 = 5;
 		} else if (local4 == 328) {
-			if (Static4.aClass53_Sub1_Sub1_2.name == null) {
+			if (Player.self.name == null) {
 				arg0.anInt5895 = 0;
 			} else {
 				arg0.anInt5944 = 150;
 				arg0.anInt5976 = (int) (Math.sin((double) Static2.anInt954 / 40.0D) * 256.0D) & 0x7FF;
 				arg0.anInt5939 = 5;
-				arg0.anInt5895 = ((int) Base37.encode(Static4.aClass53_Sub1_Sub1_2.name) << 11) + 2047;
-				arg0.anInt5892 = Static4.aClass53_Sub1_Sub1_2.anInt4046;
-				arg0.anInt5891 = Static4.aClass53_Sub1_Sub1_2.anInt4005;
-				arg0.anInt5979 = Static4.aClass53_Sub1_Sub1_2.anInt4019;
+				arg0.anInt5895 = ((int) Base37.encode(Player.self.name) << 11) + 2047;
+				arg0.anInt5892 = Player.self.anInt4046;
+				arg0.anInt5891 = Player.self.anInt4005;
+				arg0.anInt5979 = Player.self.anInt4019;
 				arg0.anInt5897 = 0;
 			}
 		}

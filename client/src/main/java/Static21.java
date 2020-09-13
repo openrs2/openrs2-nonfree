@@ -1284,7 +1284,7 @@ public final class Static21 {
 			@Pc(3057) int local3057 = Static5.aClass4_Sub10_Sub1_2.readUnsignedByteC();
 			@Pc(3061) int local3061 = Static5.aClass4_Sub10_Sub1_2.readUnsignedByte();
 			Static7.anInt5334 = local3061 >> 1;
-			Static4.aClass53_Sub1_Sub1_2.method1174(local3053, (local3061 & 0x1) == 1, local3057);
+			Player.self.method1174(local3053, (local3061 & 0x1) == 1, local3057);
 			Static1.anInt552 = -1;
 			return true;
 		} else if (Static1.anInt552 == 172) {
@@ -1713,7 +1713,7 @@ public final class Static21 {
 				@Pc(4564) int local4564 = local4466 & 0xFFFF;
 				@Pc(4569) Player local4569;
 				if (Static7.anInt2022 == local4564) {
-					local4569 = Static4.aClass53_Sub1_Sub1_2;
+					local4569 = Player.self;
 				} else {
 					local4569 = Static5.aClass53_Sub1_Sub1Array1[local4564];
 				}
@@ -1771,7 +1771,7 @@ public final class Static21 {
 							if (local4768 != -1) {
 								@Pc(4778) Class46 local4778 = Static23.method2494(local4768);
 								if (local4778 != null && local4778.anIntArray95 != null) {
-									Static29.method3461(local4778, local4569.z, local4569.x, 0, local4569 == Static4.aClass53_Sub1_Sub1_2);
+									Static29.method3461(local4778, local4569.z, local4569.x, 0, local4569 == Player.self);
 								}
 							}
 						}
@@ -2032,8 +2032,8 @@ public final class Static21 {
 			@Pc(5945) int local5945 = Static5.aClass4_Sub10_Sub1_2.readUnsignedShort();
 			if (Static35.method4381(local5945)) {
 				@Pc(5951) int local5951 = 0;
-				if (Static4.aClass53_Sub1_Sub1_2.appearance != null) {
-					local5951 = Static4.aClass53_Sub1_Sub1_2.appearance.method3611();
+				if (Player.self.appearance != null) {
+					local5951 = Player.self.appearance.method3611();
 				}
 				Static29.method3471(3, -1, local5941, local5951);
 			}

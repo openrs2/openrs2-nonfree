@@ -63,7 +63,7 @@ public final class Cs1ScriptRunner {
 					value = Static1.anIntArray2[script[pc++]] * 100 / 46875;
 				}
 				if (opcode == 8) {
-					value = Static4.aClass53_Sub1_Sub1_2.combatLevel;
+					value = Player.self.combatLevel;
 				}
 				if (opcode == 9) {
 					for (@Pc(237) int local237 = 0; local237 < 25; local237++) {
@@ -106,10 +106,10 @@ public final class Cs1ScriptRunner {
 					value = Static35.method4311(local375);
 				}
 				if (opcode == 18) {
-					value = Static5.anInt3983 + (Static4.aClass53_Sub1_Sub1_2.x >> 7);
+					value = Static5.anInt3983 + (Player.self.x >> 7);
 				}
 				if (opcode == 19) {
-					value = (Static4.aClass53_Sub1_Sub1_2.z >> 7) + Static7.anInt5479;
+					value = (Player.self.z >> 7) + Static7.anInt5479;
 				}
 				if (opcode == 20) {
 					value = script[pc++];

@@ -280,7 +280,7 @@ public final class Static31 {
 			if (Static3.aBooleanArray13[4] && Static7.anIntArray626[4] + 128 > local121) {
 				local121 = Static7.anIntArray626[4] + 128;
 			}
-			Static32.method3954(local137, Static11.method522(Static4.aClass53_Sub1_Sub1_2.z, Static4.aClass53_Sub1_Sub1_2.x, Static7.anInt5334) - 50, local121, local121 * 3 + 600, Static3.anInt2496, arg1, Static7.anInt5412);
+			Static32.method3954(local137, Static11.method522(Player.self.z, Player.self.x, Static7.anInt5334) - 50, local121, local121 * 3 + 600, Static3.anInt2496, arg1, Static7.anInt5412);
 		} else if (Static1.anInt772 == 5) {
 			Static12.method698(arg1);
 		}
@@ -328,7 +328,7 @@ public final class Static31 {
 			if (Static4.anInt3304 == 10) {
 				local398 = Static33.method4153(Preferences.brightness, Static7.anInt5678 >> 10, Static5.anInt4156, Static3.anInt2519 >> 10);
 			} else {
-				local398 = Static33.method4153(Preferences.brightness, Static4.aClass53_Sub1_Sub1_2.anIntArray426[0] >> 3, Static5.anInt4156, Static4.aClass53_Sub1_Sub1_2.anIntArray422[0] >> 3);
+				local398 = Static33.method4153(Preferences.brightness, Player.self.anIntArray426[0] >> 3, Static5.anInt4156, Player.self.anIntArray422[0] >> 3);
 			}
 			if (Static6.anInt4863 >= 0) {
 				Static17.method1603();
@@ -371,7 +371,7 @@ public final class Static31 {
 			Static27.method3111(Static2.anInt954, !Preferences.flickeringEffects);
 			Static21.method2078(Static5.anInt3656, Static5.anInt4066, Static2.anInt1931, Static7.anInt5678, Static3.anInt2519);
 			Static3.anInt2085 = Static2.anInt954;
-			Static25.method2728(Static3.anInt2519, Static2.anInt1931, Static7.anInt5678, Static5.anInt4066, Static5.anInt3656, Static1.aByteArrayArrayArray2, Static5.anIntArray440, Static3.anIntArray164, Static7.anIntArray620, Static6.anIntArray489, Static6.anIntArray492, Static7.anInt5334 + 1, local562, Static4.aClass53_Sub1_Sub1_2.x >> 7, Static4.aClass53_Sub1_Sub1_2.z >> 7);
+			Static25.method2728(Static3.anInt2519, Static2.anInt1931, Static7.anInt5678, Static5.anInt4066, Static5.anInt3656, Static1.aByteArrayArrayArray2, Static5.anIntArray440, Static3.anIntArray164, Static7.anIntArray620, Static6.anIntArray489, Static6.anIntArray492, Static7.anInt5334 + 1, local562, Player.self.x >> 7, Player.self.z >> 7);
 			Static7.aBoolean123 = true;
 			Static27.method3112();
 			Static21.method2078(0, 0, 0, 0, 0);
@@ -380,7 +380,7 @@ public final class Static31 {
 			Static10.method462(arg4, Static7.anInt5440, arg1, Static7.anInt5440, arg3, arg0);
 			Static22.method2360();
 		} else {
-			Static25.method2728(Static3.anInt2519, Static2.anInt1931, Static7.anInt5678, Static5.anInt4066, Static5.anInt3656, Static1.aByteArrayArrayArray2, Static5.anIntArray440, Static3.anIntArray164, Static7.anIntArray620, Static6.anIntArray489, Static6.anIntArray492, Static7.anInt5334 + 1, local562, Static4.aClass53_Sub1_Sub1_2.x >> 7, Static4.aClass53_Sub1_Sub1_2.z >> 7);
+			Static25.method2728(Static3.anInt2519, Static2.anInt1931, Static7.anInt5678, Static5.anInt4066, Static5.anInt3656, Static1.aByteArrayArrayArray2, Static5.anIntArray440, Static3.anIntArray164, Static7.anIntArray620, Static6.anIntArray489, Static6.anIntArray492, Static7.anInt5334 + 1, local562, Player.self.x >> 7, Player.self.z >> 7);
 			Static9.method763();
 			Static22.method2360();
 			Static18.method4370(arg0, 256, arg1, 256, arg3, arg4);

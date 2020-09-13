@@ -300,7 +300,7 @@ public abstract class PathingEntity extends Entity {
 		this.z = this.anIntArray426[0] * 128 + arg1 * 64;
 		this.anInt3965 = 0;
 		this.x = this.anIntArray422[0] * 128 + arg1 * 64;
-		if (Static3.aBoolean138 && Static4.aClass53_Sub1_Sub1_2 == this) {
+		if (Static3.aBoolean138 && Player.self == this) {
 			Static17.method1655();
 		}
 		if (this.aClass20_Sub3_6 != null) {

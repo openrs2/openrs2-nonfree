@@ -238,8 +238,8 @@ public final class Static30 {
 								local521 = (Static6.anInt4761 + 256) * local521 >> 8;
 								@Pc(540) int local540 = local502 * local491 + local509 * local521 >> 11;
 								@Pc(551) int local551 = local521 * local491 - local502 * local509 >> 11;
-								@Pc(567) int local567 = Static4.aClass53_Sub1_Sub1_2.x + local540 + 64 - Static4.aClass53_Sub1_Sub1_2.getSize() * 64 >> 7;
-								@Pc(583) int local583 = Static4.aClass53_Sub1_Sub1_2.z + 64 - local551 - Static4.aClass53_Sub1_Sub1_2.getSize() * 64 >> 7;
+								@Pc(567) int local567 = Player.self.x + local540 + 64 - Player.self.getSize() * 64 >> 7;
+								@Pc(583) int local583 = Player.self.z + 64 - local551 - Player.self.getSize() * 64 >> 7;
 								if (Static3.aBoolean177 && (Static5.anInt3560 & 0x40) != 0) {
 									@Pc(597) Component local597 = Static23.method2425(Static1.anInt1053, Static2.anInt1367);
 									if (local597 == null) {
@@ -593,8 +593,8 @@ public final class Static30 {
 										@Pc(2137) Class4_Sub3_Sub14 local2137;
 										if (local38.anInt5938 == -1) {
 											local2137 = local38.method4729(false);
-										} else if (local38.aBoolean419 && Static4.aClass53_Sub1_Sub1_2.appearance != null) {
-											local2137 = Static37.method4676(local38.anInt5962, local38.anInt5975, local38.aBoolean405, Static4.aClass53_Sub1_Sub1_2.appearance, local38.anInt5938, local38.anInt5934);
+										} else if (local38.aBoolean419 && Player.self.appearance != null) {
+											local2137 = Static37.method4676(local38.anInt5962, local38.anInt5975, local38.aBoolean405, Player.self.appearance, local38.anInt5938, local38.anInt5934);
 										} else {
 											local2137 = Static37.method4676(local38.anInt5962, local38.anInt5975, local38.aBoolean405, null, local38.anInt5938, local38.anInt5934);
 										}
@@ -689,8 +689,8 @@ public final class Static30 {
 										if (local2687 != null) {
 											@Pc(2695) ObjType local2695 = local2687.method4124(local38.anInt5962);
 											@Pc(2704) Class46 local2704 = local2670 == -1 ? null : Static23.method2494(local2670);
-											if (local38.aBoolean419 && Static4.aClass53_Sub1_Sub1_2.appearance != null) {
-												local2665 = local2695.method4123(local38.anInt5892, 1, local38.anInt5979, Static4.aClass53_Sub1_Sub1_2.appearance, local2704, local38.anInt5897);
+											if (local38.aBoolean419 && Player.self.appearance != null) {
+												local2665 = local2695.method4123(local38.anInt5892, 1, local38.anInt5979, Player.self.appearance, local2704, local38.anInt5897);
 											} else {
 												local2665 = local2695.method4123(local38.anInt5892, 1, local38.anInt5979, null, local2704, local38.anInt5897);
 											}
@@ -715,13 +715,13 @@ public final class Static30 {
 											}
 										}
 									} else if (local2670 == -1) {
-										local2665 = local38.method4723(null, Static4.aClass53_Sub1_Sub1_2.appearance, -1, -1, 0, local2663);
+										local2665 = local38.method4723(null, Player.self.appearance, -1, -1, 0, local2663);
 										if (local2665 == null && Static3.aBoolean178) {
 											Static28.method3270(local38);
 										}
 									} else {
 										@Pc(2765) Class46 local2765 = Static23.method2494(local2670);
-										local2665 = local38.method4723(local2765, Static4.aClass53_Sub1_Sub1_2.appearance, local38.anInt5979, local38.anInt5892, local38.anInt5897, local2663);
+										local2665 = local38.method4723(local2765, Player.self.appearance, local38.anInt5979, local38.anInt5892, local38.anInt5897, local2663);
 										if (local2665 == null && Static3.aBoolean178) {
 											Static28.method3270(local38);
 										}
@@ -967,7 +967,7 @@ public final class Static30 {
 			if (arg2.aString234.charAt(0) == '~') {
 				arg2.aString234 = arg2.aString234.substring(1);
 				Static26.method4357(arg2.method1173(), 2, arg2.aString234);
-			} else if (arg2 == Static4.aClass53_Sub1_Sub1_2) {
+			} else if (arg2 == Player.self) {
 				Static26.method4357(arg2.method1173(), 2, arg2.aString234);
 			}
 			arg2.anInt3998 = 0;
@@ -1049,7 +1049,7 @@ public final class Static30 {
 					if (local553 != -1) {
 						@Pc(562) Class46 local562 = Static23.method2494(local553);
 						if (local562 != null && local562.anIntArray95 != null) {
-							Static29.method3461(local562, arg2.z, arg2.x, 0, arg2 == Static4.aClass53_Sub1_Sub1_2);
+							Static29.method3461(local562, arg2.z, arg2.x, 0, arg2 == Player.self);
 						}
 					}
 				}

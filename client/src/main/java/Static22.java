@@ -205,7 +205,7 @@ public final class Static22 {
 			Static7.anIntArray587[Static6.anInt4760++] = 2047;
 		} else if (local19 == 1) {
 			@Pc(42) int local42 = Static5.aClass4_Sub10_Sub1_2.readBits(3);
-			Static4.aClass53_Sub1_Sub1_2.method3308(local42, 1);
+			Player.self.method3308(local42, 1);
 			@Pc(54) int local54 = Static5.aClass4_Sub10_Sub1_2.readBits(1);
 			if (local54 == 1) {
 				Static7.anIntArray587[Static6.anInt4760++] = 2047;
@@ -213,12 +213,12 @@ public final class Static22 {
 		} else if (local19 == 2) {
 			if (Static5.aClass4_Sub10_Sub1_2.readBits(1) == 1) {
 				@Pc(82) int local82 = Static5.aClass4_Sub10_Sub1_2.readBits(3);
-				Static4.aClass53_Sub1_Sub1_2.method3308(local82, 2);
+				Player.self.method3308(local82, 2);
 				@Pc(92) int local92 = Static5.aClass4_Sub10_Sub1_2.readBits(3);
-				Static4.aClass53_Sub1_Sub1_2.method3308(local92, 2);
+				Player.self.method3308(local92, 2);
 			} else {
 				@Pc(104) int local104 = Static5.aClass4_Sub10_Sub1_2.readBits(3);
-				Static4.aClass53_Sub1_Sub1_2.method3308(local104, 0);
+				Player.self.method3308(local104, 0);
 			}
 			@Pc(114) int local114 = Static5.aClass4_Sub10_Sub1_2.readBits(1);
 			if (local114 == 1) {
@@ -233,7 +233,7 @@ public final class Static22 {
 			}
 			Static7.anInt5334 = Static5.aClass4_Sub10_Sub1_2.readBits(2);
 			@Pc(171) int local171 = Static5.aClass4_Sub10_Sub1_2.readBits(7);
-			Static4.aClass53_Sub1_Sub1_2.method1174(local137, local142 == 1, local171);
+			Player.self.method1174(local137, local142 == 1, local171);
 		}
 	}
 
@@ -1382,7 +1382,7 @@ public final class Static22 {
 		for (@Pc(14) int local14 = 0; local14 < local7; local14++) {
 			@Pc(32) Player local32;
 			if (arg0 == 0) {
-				local32 = Static4.aClass53_Sub1_Sub1_2;
+				local32 = Player.self;
 			} else {
 				local32 = Static5.aClass53_Sub1_Sub1Array1[Static4.anIntArray317[local14]];
 			}
@@ -1429,7 +1429,7 @@ public final class Static22 {
 			@Pc(253) long local253;
 			if (arg0 == 0) {
 				local253 = 8791798054912L;
-				local255 = Static4.aClass53_Sub1_Sub1_2;
+				local255 = Player.self;
 			} else {
 				local255 = Static5.aClass53_Sub1_Sub1Array1[Static4.anIntArray317[local246]];
 				local253 = (long) Static4.anIntArray317[local246] << 32;

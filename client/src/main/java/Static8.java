@@ -91,7 +91,7 @@ public final class Static8 {
 		@Pc(337) byte local337 = 0;
 		Static7.anInt5334 = arg6;
 		@Pc(341) byte local341 = 104;
-		Static4.aClass53_Sub1_Sub1_2.method1174(arg3, false, arg4);
+		Player.self.method1174(arg3, false, arg4);
 		@Pc(349) byte local349 = 1;
 		if (local90 < 0) {
 			local341 = -1;

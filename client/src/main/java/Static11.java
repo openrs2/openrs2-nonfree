@@ -550,7 +550,7 @@ public final class Static11 {
 		for (@Pc(3756) int local3756 = 0; local3756 < 32768; local3756++) {
 			Static3.aClass53_Sub1_Sub2Array1[local3756] = null;
 		}
-		Static4.aClass53_Sub1_Sub1_2 = Static5.aClass53_Sub1_Sub1Array1[2047] = new Player();
+		Player.self = Static5.aClass53_Sub1_Sub1Array1[2047] = new Player();
 		Static1.aClass112_1.clear();
 		Static2.aClass112_8.clear();
 		if (Static4.aClass112ArrayArrayArray1 != null) {
@@ -787,9 +787,9 @@ public final class Static11 {
 		}
 		Static7.anInt6050 = -1;
 		Static13.method966(Static4.anInt3407);
-		Static4.aClass53_Sub1_Sub1_2 = new Player();
-		Static4.aClass53_Sub1_Sub1_2.z = 3000;
-		Static4.aClass53_Sub1_Sub1_2.x = 3000;
+		Player.self = new Player();
+		Player.self.z = 3000;
+		Player.self.x = 3000;
 		if (!Static3.aBoolean138 && client.game == 0) {
 			Static21.method2005(client.js5Archive8);
 			Static9.method233(10);

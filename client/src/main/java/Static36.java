@@ -300,7 +300,7 @@ public final class Static36 {
 			Static23.method2455();
 			return true;
 		} catch (@Pc(21) Exception local21) {
-			@Pc(63) String local63 = "T2 - " + Static1.anInt552 + "," + Static3.anInt2273 + "," + Static2.anInt1231 + " - " + Static1.anInt1052 + "," + (Static5.anInt3983 + Static4.aClass53_Sub1_Sub1_2.anIntArray422[0]) + "," + (Static7.anInt5479 + Static4.aClass53_Sub1_Sub1_2.anIntArray426[0]) + " - ";
+			@Pc(63) String local63 = "T2 - " + Static1.anInt552 + "," + Static3.anInt2273 + "," + Static2.anInt1231 + " - " + Static1.anInt1052 + "," + (Static5.anInt3983 + Player.self.anIntArray422[0]) + "," + (Static7.anInt5479 + Player.self.anIntArray426[0]) + " - ";
 			for (@Pc(65) int local65 = 0; Static1.anInt1052 > local65 && local65 < 50; local65++) {
 				local63 = local63 + Static5.aClass4_Sub10_Sub1_2.bytes[local65] + ",";
 			}

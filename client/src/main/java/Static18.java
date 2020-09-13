@@ -582,7 +582,7 @@ public final class Static18 {
 		for (@Pc(17) int local17 = -1; local17 < Static6.anInt4451 + Static3.anInt2510; local17++) {
 			@Pc(31) PathingEntity local31;
 			if (local17 == -1) {
-				local31 = Static4.aClass53_Sub1_Sub1_2;
+				local31 = Player.self;
 			} else if (local17 < Static3.anInt2510) {
 				local31 = Static5.aClass53_Sub1_Sub1Array1[Static4.anIntArray317[local17]];
 			} else {

@@ -108,7 +108,7 @@ public final class Static38 {
 							local534 = local549 >> 11 & 0xF;
 							@Pc(559) int local559 = local549 & 0x7FF;
 							if (local559 == Static7.anInt2022) {
-								local542 = Static4.aClass53_Sub1_Sub1_2;
+								local542 = Player.self;
 							} else {
 								local542 = Static5.aClass53_Sub1_Sub1Array1[local559];
 							}
@@ -262,7 +262,7 @@ public final class Static38 {
 				@Pc(1451) int local1451 = Static5.aClass4_Sub10_Sub1_2.readUnsignedByte();
 				if (local1419 >= 0 && local1410 >= 0 && local1419 < 104 && local1410 < 104) {
 					@Pc(1474) int local1474 = local1439 + 1;
-					if (local1419 - local1474 <= Static4.aClass53_Sub1_Sub1_2.anIntArray422[0] && Static4.aClass53_Sub1_Sub1_2.anIntArray422[0] <= local1474 + local1419 && local1410 - local1474 <= Static4.aClass53_Sub1_Sub1_2.anIntArray426[0] && local1410 + local1474 >= Static4.aClass53_Sub1_Sub1_2.anIntArray426[0] && Preferences.areaSoundsVolume != 0 && local1443 > 0 && Static6.anInt4457 < 50 && local1423 != -1) {
+					if (local1419 - local1474 <= Player.self.anIntArray422[0] && Player.self.anIntArray422[0] <= local1474 + local1419 && local1410 - local1474 <= Player.self.anIntArray426[0] && local1410 + local1474 >= Player.self.anIntArray426[0] && Preferences.areaSoundsVolume != 0 && local1443 > 0 && Static6.anInt4457 < 50 && local1423 != -1) {
 						Static4.anIntArray294[Static6.anInt4457] = local1423;
 						Static7.anIntArray629[Static6.anInt4457] = local1443;
 						Static3.anIntArray217[Static6.anInt4457] = local1447;
@@ -325,7 +325,7 @@ public final class Static38 {
 				arg0.anInt4044 = 0;
 				arg0.anInt4011 = 1;
 				arg0.anInt4001 = 0;
-				Static29.method3461(local89, arg0.z, arg0.x, arg0.anInt3970, arg0 == Static4.aClass53_Sub1_Sub1_2);
+				Static29.method3461(local89, arg0.z, arg0.x, arg0.anInt3970, arg0 == Player.self);
 			}
 			if (local92 == 2) {
 				arg0.anInt4001 = 0;
@@ -339,7 +339,7 @@ public final class Static38 {
 			arg0.anInt4001 = 0;
 			arg0.anInt4030 = arg0.anInt3965;
 			if (arg0.anInt4007 != -1) {
-				Static29.method3461(Static23.method2494(arg0.anInt4007), arg0.z, arg0.x, arg0.anInt3970, arg0 == Static4.aClass53_Sub1_Sub1_2);
+				Static29.method3461(Static23.method2494(arg0.anInt4007), arg0.z, arg0.x, arg0.anInt3970, arg0 == Player.self);
 			}
 		}
 	}

@@ -155,7 +155,7 @@ public final class Static37 {
 			if (local16.anInt4992 < 0) {
 				@Pc(33) int local33 = -local16.anInt4992 - 1;
 				if (local33 == Static7.anInt2022) {
-					local42 = Static4.aClass53_Sub1_Sub1_2;
+					local42 = Player.self;
 				} else {
 					local42 = Static5.aClass53_Sub1_Sub1Array1[local33];
 				}
@@ -376,22 +376,22 @@ public final class Static37 {
 			}
 			return;
 		}
-		if ((Static4.aByteArrayArrayArray17[Static7.anInt5334][Static4.aClass53_Sub1_Sub1_2.x >> 7][Static4.aClass53_Sub1_Sub1_2.z >> 7] & 0x4) != 0) {
-			Static9.method279(0, Static4.aClass53_Sub1_Sub1_2.x >> 7, false, Static4.aClass53_Sub1_Sub1_2.z >> 7, Static1.aClass4_Sub19ArrayArrayArray1);
+		if ((Static4.aByteArrayArrayArray17[Static7.anInt5334][Player.self.x >> 7][Player.self.z >> 7] & 0x4) != 0) {
+			Static9.method279(0, Player.self.x >> 7, false, Player.self.z >> 7, Static1.aClass4_Sub19ArrayArrayArray1);
 		}
 		if (Static5.anInt4066 >= 310) {
 			return;
 		}
 		@Pc(175) int local175 = Static7.anInt5678 >> 7;
 		@Pc(179) int local179 = Static3.anInt2519 >> 7;
-		@Pc(184) int local184 = Static4.aClass53_Sub1_Sub1_2.z >> 7;
+		@Pc(184) int local184 = Player.self.z >> 7;
 		@Pc(196) int local196;
 		if (local175 >= local184) {
 			local196 = local175 - local184;
 		} else {
 			local196 = local184 - local175;
 		}
-		@Pc(208) int local208 = Static4.aClass53_Sub1_Sub1_2.x >> 7;
+		@Pc(208) int local208 = Player.self.x >> 7;
 		@Pc(216) int local216;
 		if (local208 > local179) {
 			local216 = local208 - local179;
