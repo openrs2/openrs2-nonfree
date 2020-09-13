@@ -51,21 +51,21 @@ public final class Static14 {
 			@Pc(159) int local159 = local65 + Static1.aClass185_2.anInt5931 - Static6.anInt5182;
 			if (Static1.aClass185_1.anObjectArray11 != null && Static3.aBoolean173) {
 				@Pc(169) Class4_Sub13 local169 = new Class4_Sub13();
-				local169.anInt2492 = local159;
-				local169.aClass185_7 = Static1.aClass185_1;
-				local169.anInt2495 = local150;
-				local169.anObjectArray2 = Static1.aClass185_1.anObjectArray11;
+				local169.mouseY = local159;
+				local169.source = Static1.aClass185_1;
+				local169.mouseX = local150;
+				local169.arguments = Static1.aClass185_1.anObjectArray11;
 				Static21.method2019(local169);
 			}
 			if (Mouse.pressedButton == 0) {
 				if (Static3.aBoolean173) {
 					if (Static1.aClass185_1.anObjectArray7 != null) {
 						@Pc(231) Class4_Sub13 local231 = new Class4_Sub13();
-						local231.aClass185_6 = Static7.aClass185_16;
-						local231.aClass185_7 = Static1.aClass185_1;
-						local231.anInt2495 = local150;
-						local231.anInt2492 = local159;
-						local231.anObjectArray2 = Static1.aClass185_1.anObjectArray7;
+						local231.target = Static7.aClass185_16;
+						local231.source = Static1.aClass185_1;
+						local231.mouseX = local150;
+						local231.mouseY = local159;
+						local231.arguments = Static1.aClass185_1.anObjectArray7;
 						Static21.method2019(local231);
 					}
 					if (Static7.aClass185_16 != null && Static12.method691(Static1.aClass185_1) != null) {
@@ -716,8 +716,8 @@ public final class Static14 {
 			@Pc(34) Component local34 = local24[local26];
 			if (local34.anObjectArray22 != null) {
 				@Pc(42) Class4_Sub13 local42 = new Class4_Sub13();
-				local42.anObjectArray2 = local34.anObjectArray22;
-				local42.aClass185_7 = local34;
+				local42.arguments = local34.anObjectArray22;
+				local42.source = local34;
 				ScriptRunner.method519(local42, 2000000);
 			}
 		}

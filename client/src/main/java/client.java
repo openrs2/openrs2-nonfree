@@ -403,7 +403,7 @@ public final class client extends GameShell {
 											}
 											return;
 										}
-										local496 = local489.aClass185_7;
+										local496 = local489.source;
 										if (local496.anInt5968 < 0) {
 											break;
 										}
@@ -412,7 +412,7 @@ public final class client extends GameShell {
 									Static21.method2019(local489);
 								}
 							}
-							local448 = local440.aClass185_7;
+							local448 = local440.source;
 							if (local448.anInt5968 < 0) {
 								break;
 							}
@@ -421,7 +421,7 @@ public final class client extends GameShell {
 						Static21.method2019(local440);
 					}
 				}
-				local395 = local389.aClass185_7;
+				local395 = local389.source;
 				if (local395.anInt5968 < 0) {
 					break;
 				}

@@ -349,8 +349,8 @@ public final class Static11 {
 		}
 		if (arg0 && arg2.anObjectArray32 != null && (local108 != arg2.anInt5893 || local13 != arg2.anInt5949)) {
 			@Pc(298) Class4_Sub13 local298 = new Class4_Sub13();
-			local298.anObjectArray2 = arg2.anObjectArray32;
-			local298.aClass185_7 = arg2;
+			local298.arguments = arg2.anObjectArray32;
+			local298.source = arg2;
 			Static3.aClass112_14.addTail(local298);
 		}
 	}

@@ -1449,7 +1449,7 @@ public final class Static29 {
 											}
 											return;
 										}
-										local1650 = local1643.aClass185_7;
+										local1650 = local1643.source;
 										if (local1650.anInt5968 < 0) {
 											break;
 										}
@@ -1458,7 +1458,7 @@ public final class Static29 {
 									Static21.method2019(local1643);
 								}
 							}
-							local1600 = local1593.aClass185_7;
+							local1600 = local1593.source;
 							if (local1600.anInt5968 < 0) {
 								break;
 							}
@@ -1467,7 +1467,7 @@ public final class Static29 {
 						Static21.method2019(local1593);
 					}
 				}
-				local1550 = local1542.aClass185_7;
+				local1550 = local1542.source;
 				if (local1550.anInt5968 < 0) {
 					break;
 				}
@@ -1523,8 +1523,8 @@ public final class Static29 {
 				}
 				if (arg1 == 0 && local15.anObjectArray19 != null) {
 					@Pc(64) Class4_Sub13 local64 = new Class4_Sub13();
-					local64.aClass185_7 = local15;
-					local64.anObjectArray2 = local15.anObjectArray19;
+					local64.source = local15;
+					local64.arguments = local15.anObjectArray19;
 					Static21.method2019(local64);
 				}
 				if (arg1 == 1 && local15.anObjectArray4 != null) {
@@ -1535,8 +1535,8 @@ public final class Static29 {
 						}
 					}
 					@Pc(123) Class4_Sub13 local123 = new Class4_Sub13();
-					local123.anObjectArray2 = local15.anObjectArray4;
-					local123.aClass185_7 = local15;
+					local123.arguments = local15.anObjectArray4;
+					local123.source = local15;
 					Static21.method2019(local123);
 				}
 			}

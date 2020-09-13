@@ -678,8 +678,8 @@ public final class Static26 {
 		@Pc(15) Component local15 = Static23.method2425(Static1.anInt1053, Static2.anInt1367);
 		if (local15 != null && local15.anObjectArray17 != null) {
 			@Pc(26) Class4_Sub13 local26 = new Class4_Sub13();
-			local26.anObjectArray2 = local15.anObjectArray17;
-			local26.aClass185_7 = local15;
+			local26.arguments = local15.anObjectArray17;
+			local26.source = local15;
 			Static21.method2019(local26);
 		}
 		Static3.aBoolean177 = false;

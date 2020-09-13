@@ -630,10 +630,10 @@ public final class Static37 {
 		}
 		if (local4.anObjectArray18 != null) {
 			@Pc(22) Class4_Sub13 local22 = new Class4_Sub13();
-			local22.anInt2494 = arg2;
-			local22.aClass185_7 = local4;
-			local22.aString143 = arg3;
-			local22.anObjectArray2 = local4.anObjectArray18;
+			local22.op = arg2;
+			local22.source = local4;
+			local22.opBase = arg3;
+			local22.arguments = local4.anObjectArray18;
 			Static21.method2019(local22);
 		}
 		@Pc(40) boolean local40 = true;

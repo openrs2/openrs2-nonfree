@@ -4552,77 +4552,77 @@ public final class ScriptRunner {
 	}
 
 	@OriginalMember(owner = "client!mg", name = "a", descriptor = "(IIII)V")
-	public static void method2710(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(3) int arg2) {
-		@Pc(17) ClientScript local17 = ClientScriptList.get(arg0, arg1, arg2);
-		if (local17 == null) {
+	public static void method2710(@OriginalArg(0) int trigger, @OriginalArg(1) int arg1, @OriginalArg(3) int arg2) {
+		@Pc(17) ClientScript script = ClientScriptList.get(trigger, arg1, arg2);
+		if (script == null) {
 			return;
 		}
-		intLocals = new int[local17.intLocals];
-		stringLocals = new String[local17.stringLocals];
-		if (local17.trigger == 15 || local17.trigger == 17 || local17.trigger == 16) {
-			@Pc(49) int local49 = 0;
-			@Pc(51) int local51 = 0;
+		intLocals = new int[script.intLocals];
+		stringLocals = new String[script.stringLocals];
+		if (script.trigger == 15 || script.trigger == 17 || script.trigger == 16) {
+			@Pc(49) int x = 0;
+			@Pc(51) int y = 0;
 			if (Static5.aClass185_12 != null) {
-				local49 = Static5.aClass185_12.anInt5960;
-				local51 = Static5.aClass185_12.anInt5888;
+				x = Static5.aClass185_12.anInt5960;
+				y = Static5.aClass185_12.anInt5888;
 			}
-			intLocals[1] = Mouse.y - local51;
-			intLocals[0] = Mouse.x - local49;
+			intLocals[1] = Mouse.y - y;
+			intLocals[0] = Mouse.x - x;
 		}
-		run(local17, 200000);
+		run(script, 200000);
 	}
 
 	@OriginalMember(owner = "client!cc", name = "a", descriptor = "(Lclient!io;ZI)V")
-	public static void method519(@OriginalArg(0) Class4_Sub13 arg0, @OriginalArg(2) int arg1) {
-		@Pc(8) Object[] local8 = arg0.anObjectArray2;
-		@Pc(14) int local14 = (Integer) local8[0];
-		@Pc(18) ClientScript local18 = ClientScriptList.get(local14);
-		if (local18 == null) {
+	public static void method519(@OriginalArg(0) Class4_Sub13 arg0, @OriginalArg(2) int maxCycles) {
+		@Pc(8) Object[] args = arg0.arguments;
+		@Pc(14) int scriptId = (Integer) args[0];
+		@Pc(18) ClientScript script = ClientScriptList.get(scriptId);
+		if (script == null) {
 			return;
 		}
-		stringLocals = new String[local18.stringLocals];
-		@Pc(29) int local29 = 0;
-		intLocals = new int[local18.intLocals];
-		@Pc(35) int local35 = 0;
-		for (@Pc(37) int local37 = 1; local37 < local8.length; local37++) {
-			if (local8[local37] instanceof Integer) {
-				@Pc(56) int local56 = (Integer) local8[local37];
-				if (local56 == -2147483647) {
-					local56 = arg0.anInt2495;
+		stringLocals = new String[script.stringLocals];
+		@Pc(29) int intLocalIndex = 0;
+		intLocals = new int[script.intLocals];
+		@Pc(35) int stringLocalIndex = 0;
+		for (@Pc(37) int i = 1; i < args.length; i++) {
+			if (args[i] instanceof Integer) {
+				@Pc(56) int value = (Integer) args[i];
+				if (value == 0x80000001) {
+					value = arg0.mouseX;
 				}
-				if (local56 == -2147483646) {
-					local56 = arg0.anInt2492;
+				if (value == 0x80000002) {
+					value = arg0.mouseY;
 				}
-				if (local56 == -2147483645) {
-					local56 = arg0.aClass185_7 == null ? -1 : arg0.aClass185_7.id;
+				if (value == 0x80000003) {
+					value = arg0.source == null ? -1 : arg0.source.id;
 				}
-				if (local56 == -2147483644) {
-					local56 = arg0.anInt2494;
+				if (value == 0x80000004) {
+					value = arg0.op;
 				}
-				if (local56 == -2147483643) {
-					local56 = arg0.aClass185_7 == null ? -1 : arg0.aClass185_7.anInt5968;
+				if (value == 0x80000005) {
+					value = arg0.source == null ? -1 : arg0.source.anInt5968;
 				}
-				if (local56 == -2147483642) {
-					local56 = arg0.aClass185_6 == null ? -1 : arg0.aClass185_6.id;
+				if (value == 0x80000006) {
+					value = arg0.target == null ? -1 : arg0.target.id;
 				}
-				if (local56 == -2147483641) {
-					local56 = arg0.aClass185_6 == null ? -1 : arg0.aClass185_6.anInt5968;
+				if (value == 0x80000007) {
+					value = arg0.target == null ? -1 : arg0.target.anInt5968;
 				}
-				if (local56 == -2147483640) {
-					local56 = arg0.anInt2488;
+				if (value == 0x80000008) {
+					value = arg0.keyCode;
 				}
-				if (local56 == -2147483639) {
-					local56 = arg0.anInt2490;
+				if (value == 0x80000009) {
+					value = arg0.keyChar;
 				}
-				intLocals[local29++] = local56;
-			} else if (local8[local37] instanceof String) {
-				@Pc(168) String local168 = (String) local8[local37];
-				if (local168.equals("event_opbase")) {
-					local168 = arg0.aString143;
+				intLocals[intLocalIndex++] = value;
+			} else if (args[i] instanceof String) {
+				@Pc(168) String value = (String) args[i];
+				if (value.equals("event_opbase")) {
+					value = arg0.opBase;
 				}
-				stringLocals[local35++] = local168;
+				stringLocals[stringLocalIndex++] = value;
 			}
 		}
-		run(local18, arg1);
+		run(script, maxCycles);
 	}
 }

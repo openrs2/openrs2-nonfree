@@ -986,7 +986,7 @@ public final class Static21 {
 			local1895[0] = Integer.valueOf(Static5.aClass4_Sub10_Sub1_2.readInt());
 			if (Static35.method4381(local1885)) {
 				@Pc(1953) Class4_Sub13 local1953 = new Class4_Sub13();
-				local1953.anObjectArray2 = local1895;
+				local1953.arguments = local1895;
 				method2019(local1953);
 			}
 			Static1.anInt552 = -1;
@@ -2378,8 +2378,8 @@ public final class Static21 {
 		@Pc(4) Component local4 = Static23.method2425(arg5, arg3);
 		if (local4 != null && local4.anObjectArray13 != null) {
 			@Pc(15) Class4_Sub13 local15 = new Class4_Sub13();
-			local15.anObjectArray2 = local4.anObjectArray13;
-			local15.aClass185_7 = local4;
+			local15.arguments = local4.anObjectArray13;
+			local15.source = local4;
 			method2019(local15);
 		}
 		Static3.aBoolean177 = true;
