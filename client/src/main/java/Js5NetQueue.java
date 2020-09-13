@@ -12,7 +12,7 @@ public final class Js5NetQueue {
 	private int latency;
 
 	@OriginalMember(owner = "client!en", name = "B", descriptor = "J")
-	private long previousTick;
+	private long previousLoop;
 
 	@OriginalMember(owner = "client!en", name = "C", descriptor = "Lclient!eo;")
 	private BufferedSocket socket;
@@ -123,7 +123,7 @@ public final class Js5NetQueue {
 							}
 						}
 						this.latency = 0;
-						this.previousTick = MonotonicClock.currentTimeMillis();
+						this.previousLoop = MonotonicClock.currentTimeMillis();
 						return;
 					}
 					this.pendingPrefetchRequests.addTail(prefetchRequest);
@@ -225,11 +225,11 @@ public final class Js5NetQueue {
 	}
 
 	@OriginalMember(owner = "client!en", name = "h", descriptor = "(I)Z")
-	public final boolean tick() {
+	public final boolean loop() {
 		if (this.socket != null) {
 			@Pc(11) long now = MonotonicClock.currentTimeMillis();
-			@Pc(18) int duration = (int) (now - this.previousTick);
-			this.previousTick = now;
+			@Pc(18) int duration = (int) (now - this.previousLoop);
+			this.previousLoop = now;
 			if (duration > 200) {
 				duration = 200;
 			}

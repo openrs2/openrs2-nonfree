@@ -31,7 +31,7 @@ public final class Js5MasterIndex {
 	}
 
 	@OriginalMember(owner = "client!mg", name = "a", descriptor = "(Z)V")
-	public final void tick() {
+	public final void loop() {
 		if (this.resourceProviders == null) {
 			return;
 		}
@@ -42,7 +42,7 @@ public final class Js5MasterIndex {
 		}
 		for (@Pc(43) int i = 0; i < this.resourceProviders.length; i++) {
 			if (this.resourceProviders[i] != null) {
-				this.resourceProviders[i].tick();
+				this.resourceProviders[i].loop();
 			}
 		}
 	}

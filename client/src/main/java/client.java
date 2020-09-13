@@ -903,8 +903,8 @@ public final class client extends GameShell {
 	}
 
 	@OriginalMember(owner = "client!client", name = "d", descriptor = "(B)V")
-	private void js5NetworkTick() {
-		@Pc(3) boolean reconnect = js5NetQueue.tick();
+	private void js5NetworkLoop() {
+		@Pc(3) boolean reconnect = js5NetQueue.loop();
 		if (!reconnect) {
 			this.js5Connect();
 		}
@@ -1202,9 +1202,9 @@ public final class client extends GameShell {
 			Static2.anInt1976 = local25.get(11) * 600 + local25.get(12) * 10 + local25.get(13) / 6;
 			Static5.aRandom1.setSeed((long) Static2.anInt1976);
 		}
-		this.js5NetworkTick();
+		this.js5NetworkLoop();
 		if (js5MasterIndex != null) {
-			js5MasterIndex.tick();
+			js5MasterIndex.loop();
 		}
 		Static30.method3551();
 		Static9.method763();

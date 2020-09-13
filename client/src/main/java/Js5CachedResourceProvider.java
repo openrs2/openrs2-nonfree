@@ -367,7 +367,7 @@ public final class Js5CachedResourceProvider extends Js5ResourceProvider {
 	}
 
 	@OriginalMember(owner = "client!wb", name = "f", descriptor = "(I)V")
-	public final void tick() {
+	public final void loop() {
 		if (this.groupQueue != null) {
 			if (this.fetchIndex() == null) {
 				return;
