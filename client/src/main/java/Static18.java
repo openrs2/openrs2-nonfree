@@ -644,11 +644,11 @@ public final class Static18 {
 				} else {
 					@Pc(260) int local260 = 30;
 					@Pc(263) Player local263 = (Player) local31;
-					if (local263.skullIcon != -1 || local263.prayerIcon != -1) {
+					if (local263.pkIcon != -1 || local263.prayerIcon != -1) {
 						Static28.method3325(arg2 >> 1, arg3, arg1, arg4 >> 1, local31.method3306() + 15, local31);
 						if (Static7.anInt5584 > -1) {
-							if (local263.skullIcon != -1) {
-								Static3.aClass4_Sub3_Sub14Array8[local263.skullIcon].method4506(arg0 + Static7.anInt5584 - 12, Static4.anInt3290 + arg5 - 30);
+							if (local263.pkIcon != -1) {
+								Static3.aClass4_Sub3_Sub14Array8[local263.pkIcon].method4506(arg0 + Static7.anInt5584 - 12, Static4.anInt3290 + arg5 - 30);
 								local260 += 25;
 							}
 							if (local263.prayerIcon != -1) {

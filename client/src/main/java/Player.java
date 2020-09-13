@@ -28,7 +28,7 @@ public final class Player extends PathingEntity {
 	public int anInt1586 = -1;
 
 	@OriginalMember(owner = "client!f", name = "pc", descriptor = "I")
-	public int skullIcon = -1;
+	public int pkIcon = -1;
 
 	@OriginalMember(owner = "client!f", name = "Dc", descriptor = "I")
 	public int soundVolume = 255;
@@ -70,7 +70,7 @@ public final class Player extends PathingEntity {
 		@Pc(64) int[] identikit = new int[12];
 		this.x += (this.getSize() - previousSize) * 64;
 		this.z += (this.getSize() - previousSize) * 64;
-		this.skullIcon = buffer.readByte();
+		this.pkIcon = buffer.readByte();
 		this.prayerIcon = buffer.readByte();
 		this.team = 0;
 		for (@Pc(107) int i = 0; i < 12; i++) {
