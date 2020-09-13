@@ -245,9 +245,6 @@ public final class Static5 {
 	@OriginalMember(owner = "client!nb", name = "H", descriptor = "I")
 	public static int anInt3469 = 0;
 
-	@OriginalMember(owner = "client!nc", name = "b", descriptor = "I")
-	public static int anInt3472 = 0;
-
 	@OriginalMember(owner = "client!nc", name = "d", descriptor = "Z")
 	public static boolean aBoolean248 = true;
 
@@ -472,9 +469,6 @@ public final class Static5 {
 
 	@OriginalMember(owner = "client!ph", name = "ab", descriptor = "I")
 	public static int anInt4156 = 0;
-
-	@OriginalMember(owner = "client!pj", name = "d", descriptor = "[[B")
-	public static final byte[][] aByteArrayArray30 = new byte[250][];
 
 	@OriginalMember(owner = "client!pj", name = "g", descriptor = "I")
 	public static int anInt4166 = 0;

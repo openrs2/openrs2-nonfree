@@ -30,7 +30,7 @@ public class Buffer extends Node {
 
 	@OriginalMember(owner = "client!fd", name = "<init>", descriptor = "(I)V")
 	public Buffer(@OriginalArg(0) int size) {
-		this.bytes = Static32.method4028(size);
+		this.bytes = BufferPool.allocate(size);
 		this.position = 0;
 	}
 

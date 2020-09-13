@@ -774,25 +774,6 @@ public final class Static32 {
 		local14.method1519();
 	}
 
-	@OriginalMember(owner = "client!sm", name = "a", descriptor = "(II)[B")
-	public static synchronized byte[] method4028(@OriginalArg(1) int arg0) {
-		if (arg0 == 100 && Static2.anInt1266 > 0) {
-			@Pc(22) byte[] local22 = Static2.aByteArrayArray9[--Static2.anInt1266];
-			Static2.aByteArrayArray9[Static2.anInt1266] = null;
-			return local22;
-		} else if (arg0 == 5000 && Static5.anInt3472 > 0) {
-			@Pc(50) byte[] local50 = Static5.aByteArrayArray30[--Static5.anInt3472];
-			Static5.aByteArrayArray30[Static5.anInt3472] = null;
-			return local50;
-		} else if (arg0 == 30000 && Static2.anInt1161 > 0) {
-			@Pc(72) byte[] local72 = Static2.aByteArrayArray11[--Static2.anInt1161];
-			Static2.aByteArrayArray11[Static2.anInt1161] = null;
-			return local72;
-		} else {
-			return new byte[arg0];
-		}
-	}
-
 	@OriginalMember(owner = "client!sm", name = "b", descriptor = "(II)V")
 	public static void method4030() {
 		Static4.aClass26_30.clean(5);

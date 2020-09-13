@@ -197,9 +197,6 @@ public final class Static2 {
 	@OriginalMember(owner = "client!de", name = "m", descriptor = "I")
 	public static final int anInt946 = 0;
 
-	@OriginalMember(owner = "client!de", name = "r", descriptor = "[[B")
-	public static final byte[][] aByteArrayArray9 = new byte[1000][];
-
 	@OriginalMember(owner = "client!de", name = "x", descriptor = "I")
 	public static int anInt954 = 0;
 
@@ -272,9 +269,6 @@ public final class Static2 {
 	@OriginalMember(owner = "client!dm", name = "a", descriptor = "I")
 	public static int anInt1125 = 0;
 
-	@OriginalMember(owner = "client!dn", name = "Z", descriptor = "I")
-	public static int anInt1161 = 0;
-
 	@OriginalMember(owner = "client!dn", name = "eb", descriptor = "I")
 	public static int anInt1165 = 0;
 
@@ -326,9 +320,6 @@ public final class Static2 {
 	@OriginalMember(owner = "client!eg", name = "D", descriptor = "Ljava/lang/String;")
 	public static String aString76 = "";
 
-	@OriginalMember(owner = "client!ei", name = "B", descriptor = "I")
-	public static int anInt1266 = 0;
-
 	@OriginalMember(owner = "client!ei", name = "D", descriptor = "Lclient!ic;")
 	public static final HashTable aClass84_5 = new HashTable(512);
 
@@ -343,9 +334,6 @@ public final class Static2 {
 
 	@OriginalMember(owner = "client!ek", name = "c", descriptor = "Z")
 	public static boolean aBoolean76 = false;
-
-	@OriginalMember(owner = "client!el", name = "c", descriptor = "[[B")
-	public static final byte[][] aByteArrayArray11 = new byte[50][];
 
 	@OriginalMember(owner = "client!el", name = "e", descriptor = "[I")
 	public static final int[] anIntArray99 = new int[1000];
