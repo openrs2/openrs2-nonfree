@@ -300,14 +300,14 @@ public final class Static24 {
 		if (arg2) {
 			Keyboard.stop(GameShell.canvas);
 			Mouse.stop(GameShell.canvas);
-			if (Static6.aClass19_1 != null) {
-				Static6.aClass19_1.method894(GameShell.canvas);
+			if (client.mouseWheel != null) {
+				client.mouseWheel.stop(GameShell.canvas);
 			}
 			client.instance.addCanvas();
 			Keyboard.start(GameShell.canvas);
 			Mouse.start(GameShell.canvas);
-			if (Static6.aClass19_1 != null) {
-				Static6.aClass19_1.method900(GameShell.canvas);
+			if (client.mouseWheel != null) {
+				client.mouseWheel.start(GameShell.canvas);
 			}
 		} else {
 			if (Static3.aBoolean138) {

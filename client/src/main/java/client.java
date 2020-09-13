@@ -223,6 +223,9 @@ public final class client extends GameShell {
 	@OriginalMember(owner = "client!p", name = "yc", descriptor = "Lclient!fh;")
 	public static Js5 js5Archive28;
 
+	@OriginalMember(owner = "client!sh", name = "ab", descriptor = "Lclient!bh;")
+	public static MouseWheel mouseWheel;
+
 	@OriginalMember(owner = "client!va", name = "f", descriptor = "Lclient!client;")
 	public static client instance;
 
@@ -779,12 +782,12 @@ public final class client extends GameShell {
 		}
 		Keyboard.stop(GameShell.canvas);
 		Mouse.stop(GameShell.canvas);
-		if (Static6.aClass19_1 != null) {
-			Static6.aClass19_1.method894(GameShell.canvas);
+		if (mouseWheel != null) {
+			mouseWheel.stop(GameShell.canvas);
 		}
 		Keyboard.quit();
 		Mouse.quit();
-		Static6.aClass19_1 = null;
+		mouseWheel = null;
 		if (Static1.aClass102_1 != null) {
 			Static1.aClass102_1.method3001();
 		}
@@ -844,9 +847,9 @@ public final class client extends GameShell {
 		Keyboard.init();
 		Keyboard.start(GameShell.canvas);
 		Mouse.start(GameShell.canvas);
-		Static6.aClass19_1 = Static10.method345();
-		if (Static6.aClass19_1 != null) {
-			Static6.aClass19_1.method900(GameShell.canvas);
+		mouseWheel = MouseWheel.create();
+		if (mouseWheel != null) {
+			mouseWheel.start(GameShell.canvas);
 		}
 		Static5.anInt3815 = SignLink.anInt6106;
 		try {
@@ -1210,9 +1213,9 @@ public final class client extends GameShell {
 		if (Static3.aBoolean138) {
 			Static25.method2719();
 		}
-		if (Static6.aClass19_1 != null) {
-			@Pc(73) int local73 = Static6.aClass19_1.method899();
-			Static3.anInt2885 = local73;
+		if (mouseWheel != null) {
+			@Pc(73) int wheelRotation = mouseWheel.getWheelRotation();
+			Static3.anInt2885 = wheelRotation;
 		}
 		if (Static4.anInt3304 == 0) {
 			this.mainLoad();

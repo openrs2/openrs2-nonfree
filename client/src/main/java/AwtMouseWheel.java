@@ -8,34 +8,34 @@ import dev.openrs2.deob.annotation.OriginalMember;
 import dev.openrs2.deob.annotation.Pc;
 
 @OriginalClass("client!dk")
-public final class Class19_Sub1 extends Class19 implements MouseWheelListener {
+public final class AwtMouseWheel extends MouseWheel implements MouseWheelListener {
 
 	@OriginalMember(owner = "client!dk", name = "k", descriptor = "I")
-	private int anInt1054 = 0;
+	private int wheelRotation = 0;
 
 	@OriginalMember(owner = "client!dk", name = "a", descriptor = "(B)I")
 	@Override
-	public final synchronized int method899() {
-		@Pc(10) int local10 = this.anInt1054;
-		this.anInt1054 = 0;
-		return local10;
+	public final synchronized int getWheelRotation() {
+		@Pc(10) int wheelRotation = this.wheelRotation;
+		this.wheelRotation = 0;
+		return wheelRotation;
 	}
 
 	@OriginalMember(owner = "client!dk", name = "mouseWheelMoved", descriptor = "(Ljava/awt/event/MouseWheelEvent;)V")
 	@Override
-	public final synchronized void mouseWheelMoved(@OriginalArg(0) MouseWheelEvent arg0) {
-		this.anInt1054 += arg0.getWheelRotation();
+	public final synchronized void mouseWheelMoved(@OriginalArg(0) MouseWheelEvent event) {
+		this.wheelRotation += event.getWheelRotation();
 	}
 
 	@OriginalMember(owner = "client!dk", name = "a", descriptor = "(Ljava/awt/Component;B)V")
 	@Override
-	public final void method894(@OriginalArg(0) Component arg0) {
-		arg0.removeMouseWheelListener(this);
+	public final void stop(@OriginalArg(0) Component component) {
+		component.removeMouseWheelListener(this);
 	}
 
 	@OriginalMember(owner = "client!dk", name = "a", descriptor = "(Ljava/awt/Component;Z)V")
 	@Override
-	public final void method900(@OriginalArg(0) Component arg0) {
-		arg0.addMouseWheelListener(this);
+	public final void start(@OriginalArg(0) Component component) {
+		component.addMouseWheelListener(this);
 	}
 }

@@ -418,15 +418,6 @@ public final class Static10 {
 		}
 	}
 
-	@OriginalMember(owner = "client!bl", name = "f", descriptor = "(I)Lclient!bh;")
-	public static Class19 method345() {
-		try {
-			return (Class19) Class.forName("Class19_Sub1").getDeclaredConstructor().newInstance();
-		} catch (@Pc(15) Throwable local15) {
-			return null;
-		}
-	}
-
 	@OriginalMember(owner = "client!bl", name = "a", descriptor = "(ILclient!fh;)V")
 	public static void method346(@OriginalArg(1) Js5 arg0) {
 		Static4.aClass58_54 = arg0;
