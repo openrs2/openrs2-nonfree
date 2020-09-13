@@ -23,8 +23,8 @@ public final class Class4_Sub3_Sub14_Sub1_Sub1 extends Class4_Sub3_Sub14_Sub1 {
 		@Pc(9) int local9 = arg1 + this.anInt5604;
 		@Pc(15) int local15 = local4 + local9 * Static6.anInt5188;
 		@Pc(17) int local17 = 0;
-		@Pc(20) int local20 = this.anInt5608;
-		@Pc(23) int local23 = this.anInt5609;
+		@Pc(20) int local20 = this.height;
+		@Pc(23) int local23 = this.width;
 		@Pc(27) int local27 = Static6.anInt5188 - local23;
 		@Pc(29) int local29 = 0;
 		if (local9 < Static6.anInt5183) {
@@ -53,7 +53,7 @@ public final class Class4_Sub3_Sub14_Sub1_Sub1 extends Class4_Sub3_Sub14_Sub1 {
 			local27 += local107;
 		}
 		if (local23 > 0 && local20 > 0) {
-			Static21.method2182(Static6.anIntArray561, this.anIntArray241, local17, local15, local23, local20, local27, local29);
+			Static21.method2182(Static6.anIntArray561, this.pixels, local17, local15, local23, local20, local27, local29);
 		}
 	}
 
@@ -76,7 +76,7 @@ public final class Class4_Sub3_Sub14_Sub1_Sub1 extends Class4_Sub3_Sub14_Sub1 {
 				@Pc(88) int local88 = local51 + local27 * local78;
 				@Pc(94) int local94 = local63 - local18 * local78;
 				for (@Pc(99) int local99 = -arg9[local71]; local99 < 0; local99++) {
-					@Pc(115) int local115 = this.anIntArray241[(local88 >> 16) + (local94 >> 16) * this.anInt5609];
+					@Pc(115) int local115 = this.pixels[(local88 >> 16) + (local94 >> 16) * this.width];
 					@Pc(119) int local119 = Static6.anIntArray561[local82];
 					@Pc(123) int local123 = local115 >>> 24;
 					@Pc(127) int local127 = 256 - local123;
@@ -99,8 +99,8 @@ public final class Class4_Sub3_Sub14_Sub1_Sub1 extends Class4_Sub3_Sub14_Sub1 {
 		@Pc(9) int local9 = arg1 + this.anInt5604;
 		@Pc(15) int local15 = local4 + local9 * Static6.anInt5188;
 		@Pc(17) int local17 = 0;
-		@Pc(20) int local20 = this.anInt5608;
-		@Pc(23) int local23 = this.anInt5609;
+		@Pc(20) int local20 = this.height;
+		@Pc(23) int local23 = this.width;
 		@Pc(27) int local27 = Static6.anInt5188 - local23;
 		@Pc(29) int local29 = 0;
 		if (local9 < Static6.anInt5183) {
@@ -129,7 +129,7 @@ public final class Class4_Sub3_Sub14_Sub1_Sub1 extends Class4_Sub3_Sub14_Sub1 {
 			local27 += local107;
 		}
 		if (local23 > 0 && local20 > 0) {
-			Static22.method2186(Static6.anIntArray561, this.anIntArray241, local17, local15, local23, local20, local27, local29, arg2);
+			Static22.method2186(Static6.anIntArray561, this.pixels, local17, local15, local23, local20, local27, local29, arg2);
 		}
 	}
 
@@ -139,8 +139,8 @@ public final class Class4_Sub3_Sub14_Sub1_Sub1 extends Class4_Sub3_Sub14_Sub1 {
 		if (arg2 <= 0 || arg3 <= 0) {
 			return;
 		}
-		@Pc(7) int local7 = this.anInt5609;
-		@Pc(10) int local10 = this.anInt5608;
+		@Pc(7) int local7 = this.width;
+		@Pc(10) int local10 = this.height;
 		@Pc(12) int local12 = 0;
 		@Pc(14) int local14 = 0;
 		@Pc(17) int local17 = this.anInt5602;
@@ -186,7 +186,7 @@ public final class Class4_Sub3_Sub14_Sub1_Sub1 extends Class4_Sub3_Sub14_Sub1 {
 			local12 += local26 * local192;
 			local130 += local192;
 		}
-		Static21.method2185(Static6.anIntArray561, this.anIntArray241, local12, local14, local126, local130, arg2, arg3, local26, local32, local7, arg4);
+		Static21.method2185(Static6.anIntArray561, this.pixels, local12, local14, local126, local130, arg2, arg3, local26, local32, local7, arg4);
 	}
 
 	@OriginalMember(owner = "client!jn", name = "b", descriptor = "(IIIIII)V")
@@ -202,12 +202,12 @@ public final class Class4_Sub3_Sub14_Sub1_Sub1 extends Class4_Sub3_Sub14_Sub1 {
 		@Pc(43) int local43 = (int) Math.floor(Math.cos(local23) * (double) arg5 + 0.5D);
 		@Pc(53) int local53 = -arg0 * local43 + -arg1 * local33;
 		@Pc(64) int local64 = --arg0 * local33 + -arg1 * local43;
-		@Pc(78) int local78 = ((this.anInt5609 << 4) - arg0) * local43 + -arg1 * local33;
-		@Pc(93) int local93 = -((this.anInt5609 << 4) - arg0) * local33 + -arg1 * local43;
-		@Pc(107) int local107 = -arg0 * local43 + ((this.anInt5608 << 4) - arg1) * local33;
-		@Pc(122) int local122 = --arg0 * local33 + ((this.anInt5608 << 4) - arg1) * local43;
-		@Pc(140) int local140 = ((this.anInt5609 << 4) - arg0) * local43 + ((this.anInt5608 << 4) - arg1) * local33;
-		@Pc(159) int local159 = -((this.anInt5609 << 4) - arg0) * local33 + ((this.anInt5608 << 4) - arg1) * local43;
+		@Pc(78) int local78 = ((this.width << 4) - arg0) * local43 + -arg1 * local33;
+		@Pc(93) int local93 = -((this.width << 4) - arg0) * local33 + -arg1 * local43;
+		@Pc(107) int local107 = -arg0 * local43 + ((this.height << 4) - arg1) * local33;
+		@Pc(122) int local122 = --arg0 * local33 + ((this.height << 4) - arg1) * local43;
+		@Pc(140) int local140 = ((this.width << 4) - arg0) * local43 + ((this.height << 4) - arg1) * local33;
+		@Pc(159) int local159 = -((this.width << 4) - arg0) * local33 + ((this.height << 4) - arg1) * local43;
 		@Pc(164) int local164;
 		@Pc(166) int local166;
 		if (local53 < local78) {
@@ -297,9 +297,9 @@ public final class Class4_Sub3_Sub14_Sub1_Sub1 extends Class4_Sub3_Sub14_Sub1 {
 				while (local384 < 0) {
 					@Pc(388) int local388 = local319;
 					@Pc(394) int local394 = local303;
-					if (local368 >= 0 && local378 >= 0 && local368 - (this.anInt5609 << 12) < 0 && local378 - (this.anInt5608 << 12) < 0) {
+					if (local368 >= 0 && local378 >= 0 && local368 - (this.width << 12) < 0 && local378 - (this.height << 12) < 0) {
 						while (local394 < 0) {
-							@Pc(432) int local432 = this.anIntArray241[(local378 >> 12) * this.anInt5609 + (local368 >> 12)];
+							@Pc(432) int local432 = this.pixels[(local378 >> 12) * this.width + (local368 >> 12)];
 							@Pc(436) int local436 = Static6.anIntArray561[local388];
 							@Pc(440) int local440 = local432 >>> 24;
 							@Pc(444) int local444 = 256 - local440;
@@ -316,8 +316,8 @@ public final class Class4_Sub3_Sub14_Sub1_Sub1 extends Class4_Sub3_Sub14_Sub1 {
 					@Pc(494) int local494 = local319;
 					@Pc(504) int local504 = local378 + (local350 * local333 >> 4);
 					@Pc(506) int local506 = local303;
-					if (local368 >= 0 && local368 - (this.anInt5609 << 12) < 0) {
-						if ((local525 = local504 - (this.anInt5608 << 12)) >= 0) {
+					if (local368 >= 0 && local368 - (this.width << 12) < 0) {
+						if ((local525 = local504 - (this.height << 12)) >= 0) {
 							local525 = (local333 - local525) / local333;
 							local506 = local303 + local525;
 							local504 += local333 * local525;
@@ -327,7 +327,7 @@ public final class Class4_Sub3_Sub14_Sub1_Sub1 extends Class4_Sub3_Sub14_Sub1 {
 							local506 = local525;
 						}
 						while (local506 < 0) {
-							@Pc(573) int local573 = this.anIntArray241[(local504 >> 12) * this.anInt5609 + (local368 >> 12)];
+							@Pc(573) int local573 = this.pixels[(local504 >> 12) * this.width + (local368 >> 12)];
 							@Pc(577) int local577 = Static6.anIntArray561[local494];
 							@Pc(581) int local581 = local573 >>> 24;
 							@Pc(585) int local585 = 256 - local581;
@@ -346,18 +346,18 @@ public final class Class4_Sub3_Sub14_Sub1_Sub1 extends Class4_Sub3_Sub14_Sub1 {
 					@Pc(641) int local641 = local319;
 					@Pc(651) int local651 = local378 + (local350 * local333 >> 4);
 					@Pc(653) int local653 = local303;
-					if (local368 >= 0 && local368 - (this.anInt5609 << 12) < 0) {
+					if (local368 >= 0 && local368 - (this.width << 12) < 0) {
 						if (local651 < 0) {
 							local525 = (local333 - local651 - 1) / local333;
 							local653 = local303 + local525;
 							local651 += local333 * local525;
 							local641 = local319 + local525;
 						}
-						if ((local525 = (local651 + 1 - (this.anInt5608 << 12) - local333) / local333) > local653) {
+						if ((local525 = (local651 + 1 - (this.height << 12) - local333) / local333) > local653) {
 							local653 = local525;
 						}
 						while (local653 < 0) {
-							@Pc(722) int local722 = this.anIntArray241[(local651 >> 12) * this.anInt5609 + (local368 >> 12)];
+							@Pc(722) int local722 = this.pixels[(local651 >> 12) * this.width + (local368 >> 12)];
 							@Pc(726) int local726 = Static6.anIntArray561[local641];
 							@Pc(730) int local730 = local722 >>> 24;
 							@Pc(734) int local734 = 256 - local730;
@@ -378,8 +378,8 @@ public final class Class4_Sub3_Sub14_Sub1_Sub1 extends Class4_Sub3_Sub14_Sub1 {
 					@Pc(794) int local794 = local319;
 					@Pc(802) int local802 = local368 + (local350 * local342 >> 4);
 					@Pc(806) int local806 = local303;
-					if (local378 >= 0 && local378 - (this.anInt5608 << 12) < 0) {
-						if ((local525 = local802 - (this.anInt5609 << 12)) >= 0) {
+					if (local378 >= 0 && local378 - (this.height << 12) < 0) {
+						if ((local525 = local802 - (this.width << 12)) >= 0) {
 							local525 = (local342 - local525) / local342;
 							local806 = local303 + local525;
 							local802 += local342 * local525;
@@ -389,7 +389,7 @@ public final class Class4_Sub3_Sub14_Sub1_Sub1 extends Class4_Sub3_Sub14_Sub1 {
 							local806 = local525;
 						}
 						while (local806 < 0) {
-							@Pc(873) int local873 = this.anIntArray241[(local378 >> 12) * this.anInt5609 + (local802 >> 12)];
+							@Pc(873) int local873 = this.pixels[(local378 >> 12) * this.width + (local802 >> 12)];
 							@Pc(877) int local877 = Static6.anIntArray561[local794];
 							@Pc(881) int local881 = local873 >>> 24;
 							@Pc(885) int local885 = 256 - local881;
@@ -409,7 +409,7 @@ public final class Class4_Sub3_Sub14_Sub1_Sub1 extends Class4_Sub3_Sub14_Sub1 {
 					@Pc(951) int local951 = local368 + (local350 * local342 >> 4);
 					@Pc(959) int local959 = local378 + (local350 * local333 >> 4);
 					@Pc(961) int local961 = local303;
-					if ((local525 = local951 - (this.anInt5609 << 12)) >= 0) {
+					if ((local525 = local951 - (this.width << 12)) >= 0) {
 						local525 = (local342 - local525) / local342;
 						local961 = local303 + local525;
 						local951 += local342 * local525;
@@ -419,7 +419,7 @@ public final class Class4_Sub3_Sub14_Sub1_Sub1 extends Class4_Sub3_Sub14_Sub1 {
 					if ((local525 = (local951 - local342) / local342) > local961) {
 						local961 = local525;
 					}
-					if ((local525 = local959 - (this.anInt5608 << 12)) >= 0) {
+					if ((local525 = local959 - (this.height << 12)) >= 0) {
 						local525 = (local333 - local525) / local333;
 						local961 += local525;
 						local951 += local342 * local525;
@@ -430,7 +430,7 @@ public final class Class4_Sub3_Sub14_Sub1_Sub1 extends Class4_Sub3_Sub14_Sub1 {
 						local961 = local525;
 					}
 					while (local961 < 0) {
-						@Pc(1069) int local1069 = this.anIntArray241[(local959 >> 12) * this.anInt5609 + (local951 >> 12)];
+						@Pc(1069) int local1069 = this.pixels[(local959 >> 12) * this.width + (local951 >> 12)];
 						@Pc(1073) int local1073 = Static6.anIntArray561[local943];
 						@Pc(1077) int local1077 = local1069 >>> 24;
 						@Pc(1081) int local1081 = 256 - local1077;
@@ -451,7 +451,7 @@ public final class Class4_Sub3_Sub14_Sub1_Sub1 extends Class4_Sub3_Sub14_Sub1 {
 					@Pc(1153) int local1153 = local368 + (local350 * local342 >> 4);
 					@Pc(1161) int local1161 = local378 + (local350 * local333 >> 4);
 					@Pc(1163) int local1163 = local303;
-					if ((local525 = local1153 - (this.anInt5609 << 12)) >= 0) {
+					if ((local525 = local1153 - (this.width << 12)) >= 0) {
 						local525 = (local342 - local525) / local342;
 						local1163 = local303 + local525;
 						local1153 += local342 * local525;
@@ -468,11 +468,11 @@ public final class Class4_Sub3_Sub14_Sub1_Sub1 extends Class4_Sub3_Sub14_Sub1 {
 						local1161 += local333 * local525;
 						local1145 += local525;
 					}
-					if ((local525 = (local1161 + 1 - (this.anInt5608 << 12) - local333) / local333) > local1163) {
+					if ((local525 = (local1161 + 1 - (this.height << 12) - local333) / local333) > local1163) {
 						local1163 = local525;
 					}
 					while (local1163 < 0) {
-						@Pc(1273) int local1273 = this.anIntArray241[(local1161 >> 12) * this.anInt5609 + (local1153 >> 12)];
+						@Pc(1273) int local1273 = this.pixels[(local1161 >> 12) * this.width + (local1153 >> 12)];
 						@Pc(1277) int local1277 = Static6.anIntArray561[local1145];
 						@Pc(1281) int local1281 = local1273 >>> 24;
 						@Pc(1285) int local1285 = 256 - local1281;
@@ -493,18 +493,18 @@ public final class Class4_Sub3_Sub14_Sub1_Sub1 extends Class4_Sub3_Sub14_Sub1 {
 				@Pc(1351) int local1351 = local319;
 				@Pc(1359) int local1359 = local368 + (local350 * local342 >> 4);
 				@Pc(1363) int local1363 = local303;
-				if (local378 >= 0 && local378 - (this.anInt5608 << 12) < 0) {
+				if (local378 >= 0 && local378 - (this.height << 12) < 0) {
 					if (local1359 < 0) {
 						local525 = (local342 - local1359 - 1) / local342;
 						local1363 = local303 + local525;
 						local1359 += local342 * local525;
 						local1351 = local319 + local525;
 					}
-					if ((local525 = (local1359 + 1 - (this.anInt5609 << 12) - local342) / local342) > local1363) {
+					if ((local525 = (local1359 + 1 - (this.width << 12) - local342) / local342) > local1363) {
 						local1363 = local525;
 					}
 					while (local1363 < 0) {
-						@Pc(1432) int local1432 = this.anIntArray241[(local378 >> 12) * this.anInt5609 + (local1359 >> 12)];
+						@Pc(1432) int local1432 = this.pixels[(local378 >> 12) * this.width + (local1359 >> 12)];
 						@Pc(1436) int local1436 = Static6.anIntArray561[local1351];
 						@Pc(1440) int local1440 = local1432 >>> 24;
 						@Pc(1444) int local1444 = 256 - local1440;
@@ -531,10 +531,10 @@ public final class Class4_Sub3_Sub14_Sub1_Sub1 extends Class4_Sub3_Sub14_Sub1 {
 					local1518 += local333 * local525;
 					local1502 = local319 + local525;
 				}
-				if ((local525 = (local1510 + 1 - (this.anInt5609 << 12) - local342) / local342) > local1520) {
+				if ((local525 = (local1510 + 1 - (this.width << 12) - local342) / local342) > local1520) {
 					local1520 = local525;
 				}
-				if ((local525 = local1518 - (this.anInt5608 << 12)) >= 0) {
+				if ((local525 = local1518 - (this.height << 12)) >= 0) {
 					local525 = (local333 - local525) / local333;
 					local1520 += local525;
 					local1510 += local342 * local525;
@@ -545,7 +545,7 @@ public final class Class4_Sub3_Sub14_Sub1_Sub1 extends Class4_Sub3_Sub14_Sub1 {
 					local1520 = local525;
 				}
 				while (local1520 < 0) {
-					@Pc(1630) int local1630 = this.anIntArray241[(local1518 >> 12) * this.anInt5609 + (local1510 >> 12)];
+					@Pc(1630) int local1630 = this.pixels[(local1518 >> 12) * this.width + (local1510 >> 12)];
 					@Pc(1634) int local1634 = Static6.anIntArray561[local1502];
 					@Pc(1638) int local1638 = local1630 >>> 24;
 					@Pc(1642) int local1642 = 256 - local1638;
@@ -573,7 +573,7 @@ public final class Class4_Sub3_Sub14_Sub1_Sub1 extends Class4_Sub3_Sub14_Sub1 {
 					local1722 += local333 * local525;
 					local1706 = local319 + local525;
 				}
-				if ((local525 = (local1714 + 1 - (this.anInt5609 << 12) - local342) / local342) > local1724) {
+				if ((local525 = (local1714 + 1 - (this.width << 12) - local342) / local342) > local1724) {
 					local1724 = local525;
 				}
 				if (local1722 < 0) {
@@ -583,11 +583,11 @@ public final class Class4_Sub3_Sub14_Sub1_Sub1 extends Class4_Sub3_Sub14_Sub1 {
 					local1722 += local333 * local525;
 					local1706 += local525;
 				}
-				if ((local525 = (local1722 + 1 - (this.anInt5608 << 12) - local333) / local333) > local1724) {
+				if ((local525 = (local1722 + 1 - (this.height << 12) - local333) / local333) > local1724) {
 					local1724 = local525;
 				}
 				while (local1724 < 0) {
-					@Pc(1836) int local1836 = this.anIntArray241[(local1722 >> 12) * this.anInt5609 + (local1714 >> 12)];
+					@Pc(1836) int local1836 = this.pixels[(local1722 >> 12) * this.width + (local1714 >> 12)];
 					@Pc(1840) int local1840 = Static6.anIntArray561[local1706];
 					@Pc(1844) int local1844 = local1836 >>> 24;
 					@Pc(1848) int local1848 = 256 - local1844;
@@ -623,7 +623,7 @@ public final class Class4_Sub3_Sub14_Sub1_Sub1 extends Class4_Sub3_Sub14_Sub1 {
 				@Pc(88) int local88 = local51 + local27 * local78;
 				@Pc(94) int local94 = local63 - local18 * local78;
 				for (@Pc(99) int local99 = -arg8[local71]; local99 < 0; local99++) {
-					@Pc(115) int local115 = this.anIntArray241[(local88 >> 16) + (local94 >> 16) * this.anInt5609];
+					@Pc(115) int local115 = this.pixels[(local88 >> 16) + (local94 >> 16) * this.width];
 					@Pc(119) int local119 = Static6.anIntArray561[local82];
 					@Pc(123) int local123 = local115 >>> 24;
 					@Pc(127) int local127 = 256 - local123;
@@ -641,8 +641,8 @@ public final class Class4_Sub3_Sub14_Sub1_Sub1 extends Class4_Sub3_Sub14_Sub1 {
 
 	@OriginalMember(owner = "client!jn", name = "c", descriptor = "()[I")
 	@Override
-	public final int[] method2170() {
-		return this.anIntArray241;
+	public final int[] getPixels() {
+		return this.pixels;
 	}
 
 	@OriginalMember(owner = "client!jn", name = "a", descriptor = "(IIII)V")
@@ -651,8 +651,8 @@ public final class Class4_Sub3_Sub14_Sub1_Sub1 extends Class4_Sub3_Sub14_Sub1 {
 		if (arg2 <= 0 || arg3 <= 0) {
 			return;
 		}
-		@Pc(7) int local7 = this.anInt5609;
-		@Pc(10) int local10 = this.anInt5608;
+		@Pc(7) int local7 = this.width;
+		@Pc(10) int local10 = this.height;
 		@Pc(12) int local12 = 0;
 		@Pc(14) int local14 = 0;
 		@Pc(17) int local17 = this.anInt5602;
@@ -698,7 +698,7 @@ public final class Class4_Sub3_Sub14_Sub1_Sub1 extends Class4_Sub3_Sub14_Sub1 {
 			local12 += local26 * local192;
 			local130 += local192;
 		}
-		Static21.method2184(Static6.anIntArray561, this.anIntArray241, local12, local14, local126, local130, arg2, arg3, local26, local32, local7);
+		Static21.method2184(Static6.anIntArray561, this.pixels, local12, local14, local126, local130, arg2, arg3, local26, local32, local7);
 	}
 
 	@OriginalMember(owner = "client!jn", name = "a", descriptor = "(IIIIIIDI)V")
@@ -717,7 +717,7 @@ public final class Class4_Sub3_Sub14_Sub1_Sub1 extends Class4_Sub3_Sub14_Sub1 {
 				@Pc(72) int local72 = local45;
 				@Pc(74) int local74 = local57;
 				for (@Pc(77) int local77 = -20; local77 < 0; local77++) {
-					@Pc(93) int local93 = this.anIntArray241[(local72 >> 16) + (local74 >> 16) * this.anInt5609];
+					@Pc(93) int local93 = this.pixels[(local72 >> 16) + (local74 >> 16) * this.width];
 					@Pc(97) int local97 = Static6.anIntArray561[local70];
 					@Pc(101) int local101 = local93 >>> 24;
 					@Pc(105) int local105 = 256 - local101;
@@ -736,12 +736,12 @@ public final class Class4_Sub3_Sub14_Sub1_Sub1 extends Class4_Sub3_Sub14_Sub1 {
 	@OriginalMember(owner = "client!jn", name = "c", descriptor = "(II)V")
 	@Override
 	public final void method4511(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
-		@Pc(10) int local10 = arg0 + this.anInt5602 - this.anInt5609 - this.anInt5606;
+		@Pc(10) int local10 = arg0 + this.anInt5602 - this.width - this.anInt5606;
 		@Pc(15) int local15 = arg1 + this.anInt5604;
 		@Pc(21) int local21 = local10 + local15 * Static6.anInt5188;
-		@Pc(26) int local26 = this.anInt5609 - 1;
-		@Pc(29) int local29 = this.anInt5608;
-		@Pc(32) int local32 = this.anInt5609;
+		@Pc(26) int local26 = this.width - 1;
+		@Pc(29) int local29 = this.height;
+		@Pc(32) int local32 = this.width;
 		@Pc(36) int local36 = Static6.anInt5188 - local32;
 		@Pc(40) int local40 = local32 + local32;
 		if (local15 < Static6.anInt5183) {
@@ -770,7 +770,7 @@ public final class Class4_Sub3_Sub14_Sub1_Sub1 extends Class4_Sub3_Sub14_Sub1 {
 			local36 += local118;
 		}
 		if (local32 > 0 && local29 > 0) {
-			Static21.method2183(Static6.anIntArray561, this.anIntArray241, local26, local21, local32, local29, local36, local40);
+			Static21.method2183(Static6.anIntArray561, this.pixels, local26, local21, local32, local29, local36, local40);
 		}
 	}
 
@@ -781,8 +781,8 @@ public final class Class4_Sub3_Sub14_Sub1_Sub1 extends Class4_Sub3_Sub14_Sub1 {
 		@Pc(9) int local9 = arg1 + this.anInt5604;
 		@Pc(15) int local15 = local4 + local9 * Static6.anInt5188;
 		@Pc(17) int local17 = 0;
-		@Pc(20) int local20 = this.anInt5608;
-		@Pc(23) int local23 = this.anInt5609;
+		@Pc(20) int local20 = this.height;
+		@Pc(23) int local23 = this.width;
 		@Pc(27) int local27 = Static6.anInt5188 - local23;
 		@Pc(29) int local29 = 0;
 		if (local9 < Static6.anInt5183) {
@@ -811,7 +811,7 @@ public final class Class4_Sub3_Sub14_Sub1_Sub1 extends Class4_Sub3_Sub14_Sub1 {
 			local27 += local107;
 		}
 		if (local23 > 0 && local20 > 0) {
-			Static21.method2182(Static6.anIntArray561, this.anIntArray241, local17, local15, local23, local20, local27, local29);
+			Static21.method2182(Static6.anIntArray561, this.pixels, local17, local15, local23, local20, local27, local29);
 		}
 	}
 }

@@ -582,9 +582,9 @@ public final class Static36 {
 		}
 		arg2 += (arg1 - local57) / 2;
 		arg3 += (arg0 - local59) / 2;
-		if (Static4.aClass4_Sub3_Sub14_3 == null || arg1 != Static4.aClass4_Sub3_Sub14_3.anInt5609 || arg0 != Static4.aClass4_Sub3_Sub14_3.anInt5608) {
+		if (Static4.aClass4_Sub3_Sub14_3 == null || arg1 != Static4.aClass4_Sub3_Sub14_3.width || arg0 != Static4.aClass4_Sub3_Sub14_3.height) {
 			@Pc(117) Class4_Sub3_Sub14_Sub1 local117 = new Class4_Sub3_Sub14_Sub1(arg1, arg0);
-			Static34.method4224(local117.anIntArray241, arg1, arg0);
+			Static34.method4224(local117.pixels, arg1, arg0);
 			if (Static3.aClass4_Sub3_Sub22_3.anInt5995 != -1) {
 				Static33.method4205(0, 0, arg1, arg0, Static3.aClass4_Sub3_Sub22_3.anInt5995);
 			}
@@ -598,7 +598,7 @@ public final class Static36 {
 			if (Static3.aBoolean138) {
 				Static6.anIntArray561 = null;
 			} else {
-				Static4.aClass59_1.method4244();
+				client.frameBuffer.makeTarget();
 			}
 		}
 		@Pc(166) int local166 = 16711680;

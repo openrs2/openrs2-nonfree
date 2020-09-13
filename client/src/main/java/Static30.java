@@ -606,9 +606,9 @@ public final class Static30 {
 												@Pc(2207) int local2207 = (local38.anInt5949 + local2185 - 1) / local2185;
 												if (Static3.aBoolean138) {
 													Static18.method1692(local128, local122, local128 + local38.anInt5893, local122 + local38.anInt5949);
-													@Pc(2226) boolean local2226 = IntUtils.isPowerOfTwo(local2137.anInt5609);
+													@Pc(2226) boolean local2226 = IntUtils.isPowerOfTwo(local2137.width);
 													@Pc(2229) Class4_Sub3_Sub14_Sub2 local2229 = (Class4_Sub3_Sub14_Sub2) local2137;
-													@Pc(2234) boolean local2234 = IntUtils.isPowerOfTwo(local2137.anInt5608);
+													@Pc(2234) boolean local2234 = IntUtils.isPowerOfTwo(local2137.height);
 													if (local2226 && local2234) {
 														if (local117 == 0) {
 															local2229.method4518(local128, local122, local2197, local2207);

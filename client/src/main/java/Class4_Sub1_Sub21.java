@@ -30,9 +30,9 @@ public class Class4_Sub1_Sub21 extends Class4_Sub1 {
 		} else if (this.anInt5847 >= 0) {
 			@Pc(38) Class4_Sub3_Sub14_Sub1 local38 = Static6.anInt4366 < 0 ? Static24.method2679(Static1.aClass58_7, this.anInt5847) : Static24.method2654(Static1.aClass58_7, Static6.anInt4366, this.anInt5847);
 			local38.method2176();
-			this.anIntArray655 = local38.anIntArray241;
-			this.anInt5843 = local38.anInt5609;
-			this.anInt5834 = local38.anInt5608;
+			this.anIntArray655 = local38.pixels;
+			this.anInt5843 = local38.width;
+			this.anInt5834 = local38.height;
 			return true;
 		} else {
 			return false;

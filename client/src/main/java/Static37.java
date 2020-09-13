@@ -299,7 +299,7 @@ public final class Static37 {
 		} else {
 			try {
 				@Pc(169) Graphics local169 = GameShell.canvas.getGraphics();
-				Static4.aClass59_1.method4238(local169);
+				client.frameBuffer.draw(local169);
 			} catch (@Pc(177) Exception local177) {
 				GameShell.canvas.repaint();
 			}

@@ -456,7 +456,7 @@ public final class Class105 {
 		Static22.method2295();
 		this.aClass4_Sub3_Sub14_Sub1_5 = new Class4_Sub3_Sub14_Sub1_Sub1(this.anInt2861, this.anInt2861);
 		Static34.method4223(Static4.anIntArray256);
-		this.aClass4_Sub3_Sub14_Sub1_5.method2178();
+		this.aClass4_Sub3_Sub14_Sub1_5.makeTarget();
 		Static23.method2561();
 		Static33.method4205(0, 0, this.anInt2861, this.anInt2861, 0);
 		@Pc(26) int local26 = 0;
@@ -510,7 +510,7 @@ public final class Class105 {
 			this.method2301();
 			this.method2291();
 		}
-		Static4.aClass59_1.method4244();
+		client.frameBuffer.makeTarget();
 		Static34.method4226(Static4.anIntArray256);
 		Static23.method2561();
 	}
@@ -558,7 +558,7 @@ public final class Class105 {
 		}
 		this.aClass4_Sub3_Sub14_Sub1_5 = new Class4_Sub3_Sub14_Sub1(this.anInt2861, this.anInt2861);
 		Static34.method4223(Static4.anIntArray256);
-		this.aClass4_Sub3_Sub14_Sub1_5.method2178();
+		this.aClass4_Sub3_Sub14_Sub1_5.makeTarget();
 		Static23.method2561();
 		Static33.method4205(0, 0, this.anInt2861, this.anInt2861, 0);
 		@Pc(33) int local33 = 0;
@@ -600,7 +600,7 @@ public final class Class105 {
 		} else {
 			local167.method2911(0, 0, 0, -local186, -local193, 0, (local179 << 9) / this.anInt2861);
 		}
-		Static4.aClass59_1.method4244();
+		client.frameBuffer.makeTarget();
 		Static34.method4226(Static4.anIntArray256);
 		Static23.method2561();
 	}

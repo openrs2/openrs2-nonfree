@@ -123,7 +123,7 @@ public final class Class4_Sub3_Sub15 extends SecondaryNode {
 					local158 = 0;
 				}
 				@Pc(175) int local175 = Static4.anIntArray267[local158];
-				local27.anIntArray241[local51++] = local175 + (local148 << 16) + (local152 << 8);
+				local27.pixels[local51++] = local175 + (local148 << 16) + (local152 << 8);
 			}
 		}
 		for (@Pc(207) int local207 = 0; local207 < this.aClass4_Sub1Array19.length; local207++) {
@@ -373,7 +373,7 @@ public final class Class4_Sub3_Sub15 extends SecondaryNode {
 						local214 = 0;
 					}
 				}
-				local30.anIntArray241[local54++] = (local197 << 8) + (local214 << 24) + (local188 << 16) + local184;
+				local30.pixels[local54++] = (local197 << 8) + (local214 << 24) + (local188 << 16) + local184;
 			}
 		}
 		for (@Pc(271) int local271 = 0; local271 < this.aClass4_Sub1Array19.length; local271++) {

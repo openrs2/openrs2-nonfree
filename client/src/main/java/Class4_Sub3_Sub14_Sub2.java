@@ -36,8 +36,8 @@ public class Class4_Sub3_Sub14_Sub2 extends Class4_Sub3_Sub14 {
 		this.anInt5612 = arg1;
 		this.anInt5606 = arg2;
 		this.anInt5604 = arg3;
-		this.anInt5609 = arg4;
-		this.anInt5608 = arg5;
+		this.width = arg4;
+		this.height = arg5;
 		this.method4515(arg6);
 		this.method4516();
 	}
@@ -48,9 +48,9 @@ public class Class4_Sub3_Sub14_Sub2 extends Class4_Sub3_Sub14 {
 		this.anInt5612 = arg0.anInt5612;
 		this.anInt5606 = arg0.anInt5606;
 		this.anInt5604 = arg0.anInt5604;
-		this.anInt5609 = arg0.anInt5609;
-		this.anInt5608 = arg0.anInt5608;
-		this.method4515(arg0.anIntArray241);
+		this.width = arg0.width;
+		this.height = arg0.height;
+		this.method4515(arg0.pixels);
 		this.method4516();
 	}
 
@@ -79,14 +79,14 @@ public class Class4_Sub3_Sub14_Sub2 extends Class4_Sub3_Sub14 {
 		@Pc(2) GL local2 = Static3.aGL1;
 		Static17.method1600(this.anInt5614);
 		this.method4521(1);
-		@Pc(16) float local16 = (float) this.anInt5609 / (float) this.anInt5617;
-		@Pc(24) float local24 = (float) this.anInt5608 / (float) this.anInt5620;
+		@Pc(16) float local16 = (float) this.width / (float) this.anInt5617;
+		@Pc(24) float local24 = (float) this.height / (float) this.anInt5620;
 		local16 *= arg3;
 		local24 *= arg4;
 		@Pc(39) int local39 = arg0 + this.anInt5606;
-		@Pc(46) int local46 = local39 + this.anInt5609 * arg3;
+		@Pc(46) int local46 = local39 + this.width * arg3;
 		@Pc(53) int local53 = Static3.anInt2083 - arg1 - this.anInt5604;
-		@Pc(60) int local60 = local53 - this.anInt5608 * arg4;
+		@Pc(60) int local60 = local53 - this.height * arg4;
 		@Pc(65) float local65 = (float) arg2 / 256.0F;
 		local2.glBegin(GL.GL_TRIANGLE_FAN);
 		local2.glColor4f(1.0F, 1.0F, 1.0F, local65);
@@ -147,14 +147,14 @@ public class Class4_Sub3_Sub14_Sub2 extends Class4_Sub3_Sub14 {
 
 	@OriginalMember(owner = "client!oa", name = "a", descriptor = "([I)V")
 	protected void method4515(@OriginalArg(0) int[] arg0) {
-		this.anInt5617 = IntUtils.clp2(this.anInt5609);
-		this.anInt5620 = IntUtils.clp2(this.anInt5608);
+		this.anInt5617 = IntUtils.clp2(this.width);
+		this.anInt5620 = IntUtils.clp2(this.height);
 		@Pc(20) byte[] local20 = new byte[this.anInt5617 * this.anInt5620 * 4];
 		@Pc(22) int local22 = 0;
 		@Pc(24) int local24 = 0;
-		@Pc(32) int local32 = (this.anInt5617 - this.anInt5609) * 4;
-		for (@Pc(34) int local34 = 0; local34 < this.anInt5608; local34++) {
-			for (@Pc(40) int local40 = 0; local40 < this.anInt5609; local40++) {
+		@Pc(32) int local32 = (this.anInt5617 - this.width) * 4;
+		for (@Pc(34) int local34 = 0; local34 < this.height; local34++) {
+			for (@Pc(40) int local40 = 0; local40 < this.width; local40++) {
 				@Pc(49) int local49 = arg0[local24++];
 				if (local49 == 0) {
 					local22 += 4;
@@ -185,8 +185,8 @@ public class Class4_Sub3_Sub14_Sub2 extends Class4_Sub3_Sub14 {
 
 	@OriginalMember(owner = "client!oa", name = "a", descriptor = "()V")
 	private void method4516() {
-		@Pc(7) float local7 = (float) this.anInt5609 / (float) this.anInt5617;
-		@Pc(15) float local15 = (float) this.anInt5608 / (float) this.anInt5620;
+		@Pc(7) float local7 = (float) this.width / (float) this.anInt5617;
+		@Pc(15) float local15 = (float) this.height / (float) this.anInt5620;
 		@Pc(17) GL local17 = Static3.aGL1;
 		if (this.anInt5618 == -1) {
 			this.anInt5618 = local17.glGenLists(1);
@@ -195,13 +195,13 @@ public class Class4_Sub3_Sub14_Sub2 extends Class4_Sub3_Sub14 {
 		local17.glNewList(this.anInt5618, GL.GL_COMPILE);
 		local17.glBegin(GL.GL_TRIANGLE_FAN);
 		local17.glTexCoord2f(local7, 0.0F);
-		local17.glVertex2f((float) this.anInt5609, 0.0F);
+		local17.glVertex2f((float) this.width, 0.0F);
 		local17.glTexCoord2f(0.0F, 0.0F);
 		local17.glVertex2f(0.0F, 0.0F);
 		local17.glTexCoord2f(0.0F, local15);
-		local17.glVertex2f(0.0F, (float) -this.anInt5608);
+		local17.glVertex2f(0.0F, (float) -this.height);
 		local17.glTexCoord2f(local7, local15);
-		local17.glVertex2f((float) this.anInt5609, (float) -this.anInt5608);
+		local17.glVertex2f((float) this.width, (float) -this.height);
 		local17.glEnd();
 		local17.glEndList();
 	}
@@ -224,26 +224,26 @@ public class Class4_Sub3_Sub14_Sub2 extends Class4_Sub3_Sub14 {
 		local11.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_SRC0_RGB, GL.GL_PREVIOUS);
 		@Pc(47) float local47 = (float) (arg0 - Static3.anInt2150) / (float) arg2.anInt5617;
 		@Pc(56) float local56 = (float) (arg1 - Static3.anInt2152) / (float) arg2.anInt5620;
-		@Pc(68) float local68 = (float) (arg0 + this.anInt5609 - Static3.anInt2150) / (float) arg2.anInt5617;
-		@Pc(80) float local80 = (float) (arg1 + this.anInt5608 - Static3.anInt2152) / (float) arg2.anInt5620;
+		@Pc(68) float local68 = (float) (arg0 + this.width - Static3.anInt2150) / (float) arg2.anInt5617;
+		@Pc(80) float local80 = (float) (arg1 + this.height - Static3.anInt2152) / (float) arg2.anInt5620;
 		arg0 += this.anInt5606;
 		arg1 += this.anInt5604;
 		local11.glBegin(GL.GL_TRIANGLE_FAN);
 		local11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-		@Pc(107) float local107 = (float) this.anInt5609 / (float) this.anInt5617;
-		@Pc(115) float local115 = (float) this.anInt5608 / (float) this.anInt5620;
+		@Pc(107) float local107 = (float) this.width / (float) this.anInt5617;
+		@Pc(115) float local115 = (float) this.height / (float) this.anInt5620;
 		local11.glMultiTexCoord2f(GL.GL_TEXTURE1, local68, local56);
 		local11.glTexCoord2f(local107, 0.0F);
-		local11.glVertex2f((float) (arg0 + this.anInt5609), (float) (Static3.anInt2083 - arg1));
+		local11.glVertex2f((float) (arg0 + this.width), (float) (Static3.anInt2083 - arg1));
 		local11.glMultiTexCoord2f(GL.GL_TEXTURE1, local47, local56);
 		local11.glTexCoord2f(0.0F, 0.0F);
 		local11.glVertex2f((float) arg0, (float) (Static3.anInt2083 - arg1));
 		local11.glMultiTexCoord2f(GL.GL_TEXTURE1, local47, local80);
 		local11.glTexCoord2f(0.0F, local115);
-		local11.glVertex2f((float) arg0, (float) (Static3.anInt2083 - arg1 - this.anInt5608));
+		local11.glVertex2f((float) arg0, (float) (Static3.anInt2083 - arg1 - this.height));
 		local11.glMultiTexCoord2f(GL.GL_TEXTURE1, local68, local80);
 		local11.glTexCoord2f(local107, local115);
-		local11.glVertex2f((float) (arg0 + this.anInt5609), (float) (Static3.anInt2083 - arg1 - this.anInt5608));
+		local11.glVertex2f((float) (arg0 + this.width), (float) (Static3.anInt2083 - arg1 - this.height));
 		local11.glEnd();
 		local11.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_COMBINE_RGB, GL.GL_MODULATE);
 		local11.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_SRC0_RGB, GL.GL_TEXTURE);
@@ -257,14 +257,14 @@ public class Class4_Sub3_Sub14_Sub2 extends Class4_Sub3_Sub14 {
 		@Pc(2) GL local2 = Static3.aGL1;
 		Static17.method1600(this.anInt5614);
 		this.method4521(1);
-		@Pc(16) float local16 = (float) this.anInt5609 / (float) this.anInt5617;
-		@Pc(24) float local24 = (float) this.anInt5608 / (float) this.anInt5620;
+		@Pc(16) float local16 = (float) this.width / (float) this.anInt5617;
+		@Pc(24) float local24 = (float) this.height / (float) this.anInt5620;
 		local16 *= arg2;
 		local24 *= arg3;
 		@Pc(39) int local39 = arg0 + this.anInt5606;
-		@Pc(46) int local46 = local39 + this.anInt5609 * arg2;
+		@Pc(46) int local46 = local39 + this.width * arg2;
 		@Pc(53) int local53 = Static3.anInt2083 - arg1 - this.anInt5604;
-		@Pc(60) int local60 = local53 - this.anInt5608 * arg3;
+		@Pc(60) int local60 = local53 - this.height * arg3;
 		local2.glBegin(GL.GL_TRIANGLE_FAN);
 		local2.glTexCoord2f(local16, 0.0F);
 		local2.glVertex2f((float) local46, (float) local53);
@@ -309,8 +309,8 @@ public class Class4_Sub3_Sub14_Sub2 extends Class4_Sub3_Sub14 {
 		@Pc(156) int local156 = (arg5 << 16) + local54 * local72 - local43 * local63;
 		@Pc(168) int local168 = (arg4 << 16) + local54 * local63 + local51 * local72;
 		@Pc(180) int local180 = (arg5 << 16) + local54 * local72 - local51 * local63;
-		@Pc(188) float local188 = (float) arg8.anInt5609 / (float) arg8.anInt5617;
-		@Pc(196) float local196 = (float) arg8.anInt5608 / (float) arg8.anInt5620;
+		@Pc(188) float local188 = (float) arg8.width / (float) arg8.anInt5617;
+		@Pc(196) float local196 = (float) arg8.height / (float) arg8.anInt5620;
 		local11.glBegin(GL.GL_TRIANGLE_FAN);
 		local11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
 		@Pc(211) float local211 = (float) this.anInt5617 * 65536.0F;
@@ -341,8 +341,8 @@ public class Class4_Sub3_Sub14_Sub2 extends Class4_Sub3_Sub14 {
 			return;
 		}
 		Static17.method1625();
-		@Pc(8) int local8 = this.anInt5609;
-		@Pc(11) int local11 = this.anInt5608;
+		@Pc(8) int local8 = this.width;
+		@Pc(11) int local11 = this.height;
 		@Pc(13) int local13 = 0;
 		@Pc(15) int local15 = 0;
 		@Pc(18) int local18 = this.anInt5602;
@@ -372,8 +372,8 @@ public class Class4_Sub3_Sub14_Sub2 extends Class4_Sub3_Sub14 {
 		@Pc(137) float local137 = local132 + (float) arg2;
 		@Pc(142) float local142 = (float) (Static3.anInt2083 - arg1);
 		@Pc(147) float local147 = local142 - (float) arg3;
-		@Pc(155) float local155 = (float) this.anInt5609 / (float) this.anInt5617;
-		@Pc(163) float local163 = (float) this.anInt5608 / (float) this.anInt5620;
+		@Pc(155) float local155 = (float) this.width / (float) this.anInt5617;
+		@Pc(163) float local163 = (float) this.height / (float) this.anInt5620;
 		@Pc(168) float local168 = (float) arg4 / 256.0F;
 		local123.glBegin(GL.GL_TRIANGLE_FAN);
 		local123.glColor4f(1.0F, 1.0F, 1.0F, local168);
@@ -427,17 +427,17 @@ public class Class4_Sub3_Sub14_Sub2 extends Class4_Sub3_Sub14 {
 		Static17.method1600(this.anInt5614);
 		this.method4521(1);
 		local12.glTranslatef((float) arg0, (float) (Static3.anInt2083 - arg1), 0.0F);
-		@Pc(35) float local35 = (float) this.anInt5609 / (float) this.anInt5617;
-		@Pc(43) float local43 = (float) this.anInt5608 / (float) this.anInt5620;
+		@Pc(35) float local35 = (float) this.width / (float) this.anInt5617;
+		@Pc(43) float local43 = (float) this.height / (float) this.anInt5620;
 		local12.glBegin(GL.GL_TRIANGLE_FAN);
 		local12.glTexCoord2f(0.0F, 0.0F);
-		local12.glVertex2f((float) this.anInt5609, 0.0F);
+		local12.glVertex2f((float) this.width, 0.0F);
 		local12.glTexCoord2f(local35, 0.0F);
 		local12.glVertex2f(0.0F, 0.0F);
 		local12.glTexCoord2f(local35, local43);
-		local12.glVertex2f(0.0F, (float) -this.anInt5608);
+		local12.glVertex2f(0.0F, (float) -this.height);
 		local12.glTexCoord2f(0.0F, local43);
-		local12.glVertex2f((float) this.anInt5609, (float) -this.anInt5608);
+		local12.glVertex2f((float) this.width, (float) -this.height);
 		local12.glEnd();
 		local12.glLoadIdentity();
 	}
@@ -449,8 +449,8 @@ public class Class4_Sub3_Sub14_Sub2 extends Class4_Sub3_Sub14 {
 			return;
 		}
 		Static17.method1596();
-		@Pc(8) int local8 = this.anInt5609;
-		@Pc(11) int local11 = this.anInt5608;
+		@Pc(8) int local8 = this.width;
+		@Pc(11) int local11 = this.height;
 		@Pc(13) int local13 = 0;
 		@Pc(15) int local15 = 0;
 		@Pc(18) int local18 = this.anInt5602;
@@ -480,8 +480,8 @@ public class Class4_Sub3_Sub14_Sub2 extends Class4_Sub3_Sub14 {
 		@Pc(137) float local137 = local132 + (float) arg2;
 		@Pc(142) float local142 = (float) (Static3.anInt2083 - arg1);
 		@Pc(147) float local147 = local142 - (float) arg3;
-		@Pc(155) float local155 = (float) this.anInt5609 / (float) this.anInt5617;
-		@Pc(163) float local163 = (float) this.anInt5608 / (float) this.anInt5620;
+		@Pc(155) float local155 = (float) this.width / (float) this.anInt5617;
+		@Pc(163) float local163 = (float) this.height / (float) this.anInt5620;
 		local123.glBegin(GL.GL_TRIANGLE_FAN);
 		local123.glTexCoord2f(local155, 0.0F);
 		local123.glVertex2f(local137, local142);

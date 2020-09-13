@@ -129,7 +129,7 @@ public final class Static18 {
 
 	@OriginalMember(owner = "client!hd", name = "a", descriptor = "(IIIIIILclient!oa;)V")
 	public static void method1689(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) Class4_Sub3_Sub14_Sub2 arg6) {
-		if (Static3.anInt2149 - Static3.anInt2152 != arg6.anInt5608) {
+		if (Static3.anInt2149 - Static3.anInt2152 != arg6.height) {
 			throw new IllegalStateException();
 		}
 		Static16.method1585();
@@ -245,7 +245,7 @@ public final class Static18 {
 
 	@OriginalMember(owner = "client!hd", name = "a", descriptor = "(Lclient!oa;)V")
 	public static void method1696(@OriginalArg(0) Class4_Sub3_Sub14_Sub2 arg0) {
-		if (arg0.anInt5608 != Static3.anInt2149 - Static3.anInt2152) {
+		if (arg0.height != Static3.anInt2149 - Static3.anInt2152) {
 			throw new IllegalArgumentException();
 		}
 		Static3.aClass4_Sub3_Sub14_Sub2_1 = arg0;
@@ -710,13 +710,13 @@ public final class Static18 {
 					} else {
 						local536 = local31.method3306();
 					}
-					Static28.method3325(arg2 >> 1, arg3, arg1, arg4 >> 1, local525.anInt5608 + local536 + 10, local31);
+					Static28.method3325(arg2 >> 1, arg3, arg1, arg4 >> 1, local525.height + local536 + 10, local31);
 					if (Static7.anInt5584 > -1) {
-						@Pc(635) int local635 = Static7.anInt5584 + arg0 - (local525.anInt5609 >> 1);
+						@Pc(635) int local635 = Static7.anInt5584 + arg0 - (local525.width >> 1);
 						@Pc(641) int local641 = Static4.anInt3290 + arg5 - 3;
 						local525.method4506(local635, local641);
-						@Pc(653) int local653 = local31.anInt4022 * local525.anInt5609 / 255;
-						@Pc(656) int local656 = local525.anInt5608;
+						@Pc(653) int local653 = local31.anInt4022 * local525.width / 255;
+						@Pc(656) int local656 = local525.height;
 						if (Static3.aBoolean138) {
 							method1692(local635, local641, local635 + local653, local656 + local641);
 						} else {

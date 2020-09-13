@@ -268,9 +268,9 @@ public final class Static35 {
 				Static34.method4210(arg3, arg1, arg0.anIntArray672, arg0.anIntArray657);
 			}
 		} else if (Static3.aBoolean138) {
-			((Class4_Sub3_Sub14_Sub2) Static6.aClass4_Sub3_Sub14_6).method4519(arg3, arg1, arg0.anInt5893, arg0.anInt5949, Static6.aClass4_Sub3_Sub14_6.anInt5609 / 2, Static6.aClass4_Sub3_Sub14_6.anInt5608 / 2, (int) Static5.aFloat97, 256, (Class4_Sub3_Sub14_Sub2) arg0.method4729(false));
+			((Class4_Sub3_Sub14_Sub2) Static6.aClass4_Sub3_Sub14_6).method4519(arg3, arg1, arg0.anInt5893, arg0.anInt5949, Static6.aClass4_Sub3_Sub14_6.width / 2, Static6.aClass4_Sub3_Sub14_6.height / 2, (int) Static5.aFloat97, 256, (Class4_Sub3_Sub14_Sub2) arg0.method4729(false));
 		} else {
-			((Class4_Sub3_Sub14_Sub1) Static6.aClass4_Sub3_Sub14_6).method2165(arg3, arg1, arg0.anInt5893, arg0.anInt5949, Static6.aClass4_Sub3_Sub14_6.anInt5609 / 2, Static6.aClass4_Sub3_Sub14_6.anInt5608 / 2, (int) Static5.aFloat97, arg0.anIntArray672, arg0.anIntArray657);
+			((Class4_Sub3_Sub14_Sub1) Static6.aClass4_Sub3_Sub14_6).method2165(arg3, arg1, arg0.anInt5893, arg0.anInt5949, Static6.aClass4_Sub3_Sub14_6.width / 2, Static6.aClass4_Sub3_Sub14_6.height / 2, (int) Static5.aFloat97, arg0.anIntArray672, arg0.anIntArray657);
 		}
 		Static6.aBooleanArray24[arg2] = true;
 	}

@@ -84,9 +84,6 @@ public final class Static4 {
 	@OriginalMember(owner = "client!l", name = "r", descriptor = "[[Z")
 	public static boolean[][] aBooleanArrayArray4;
 
-	@OriginalMember(owner = "client!l", name = "w", descriptor = "Lclient!ob;")
-	public static Class59 aClass59_1;
-
 	@OriginalMember(owner = "client!lb", name = "j", descriptor = "[I")
 	public static int[] anIntArray272;
 

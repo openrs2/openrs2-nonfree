@@ -16,10 +16,10 @@ public abstract class Class4_Sub3_Sub14 extends SecondaryNode {
 	protected int anInt5606;
 
 	@OriginalMember(owner = "client!uj", name = "E", descriptor = "I")
-	public int anInt5608;
+	public int height;
 
 	@OriginalMember(owner = "client!uj", name = "G", descriptor = "I")
-	public int anInt5609;
+	public int width;
 
 	@OriginalMember(owner = "client!uj", name = "J", descriptor = "I")
 	public int anInt5612;

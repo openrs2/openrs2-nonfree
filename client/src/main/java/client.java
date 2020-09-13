@@ -226,6 +226,9 @@ public final class client extends GameShell {
 	@OriginalMember(owner = "client!sh", name = "ab", descriptor = "Lclient!bh;")
 	public static MouseWheel mouseWheel;
 
+	@OriginalMember(owner = "client!l", name = "w", descriptor = "Lclient!ob;")
+	public static FrameBuffer frameBuffer;
+
 	@OriginalMember(owner = "client!va", name = "f", descriptor = "Lclient!client;")
 	public static client instance;
 
@@ -1155,29 +1158,29 @@ public final class client extends GameShell {
 		}
 		if (Static3.aBoolean138 && Static4.anInt3304 != 0) {
 			Static17.method1622();
-			for (@Pc(436) int local436 = 0; local436 < Static1.anInt113; local436++) {
-				Static6.aBooleanArray24[local436] = false;
+			for (@Pc(436) int i = 0; i < Static1.anInt113; i++) {
+				Static6.aBooleanArray24[i] = false;
 			}
 		} else if ((Static4.anInt3304 == 30 || Static4.anInt3304 == 10) && Static1.anInt268 == 0 && !local173) {
 			try {
-				@Pc(391) Graphics local391 = GameShell.canvas.getGraphics();
-				for (@Pc(393) int local393 = 0; local393 < Static1.anInt113; local393++) {
-					if (Static6.aBooleanArray24[local393]) {
-						Static4.aClass59_1.method4240(Static5.anIntArray383[local393], Static7.anIntArray638[local393], Static7.anIntArray616[local393], local391, Static6.anIntArray540[local393]);
-						Static6.aBooleanArray24[local393] = false;
+				@Pc(391) Graphics graphics = GameShell.canvas.getGraphics();
+				for (@Pc(393) int i = 0; i < Static1.anInt113; i++) {
+					if (Static6.aBooleanArray24[i]) {
+						frameBuffer.draw(graphics, Static6.anIntArray540[i], Static7.anIntArray638[i], Static5.anIntArray383[i], Static7.anIntArray616[i]);
+						Static6.aBooleanArray24[i] = false;
 					}
 				}
-			} catch (@Pc(429) Exception local429) {
+			} catch (@Pc(429) Exception ex) {
 				GameShell.canvas.repaint();
 			}
 		} else if (Static4.anInt3304 != 0) {
 			try {
-				@Pc(364) Graphics local364 = GameShell.canvas.getGraphics();
-				Static4.aClass59_1.method4238(local364);
-				for (@Pc(372) int local372 = 0; local372 < Static1.anInt113; local372++) {
-					Static6.aBooleanArray24[local372] = false;
+				@Pc(364) Graphics graphics = GameShell.canvas.getGraphics();
+				frameBuffer.draw(graphics);
+				for (@Pc(372) int i = 0; i < Static1.anInt113; i++) {
+					Static6.aBooleanArray24[i] = false;
 				}
-			} catch (@Pc(384) Exception local384) {
+			} catch (@Pc(384) Exception ex) {
 				GameShell.canvas.repaint();
 			}
 		}

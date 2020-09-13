@@ -328,8 +328,8 @@ public final class Static24 {
 			GameShell.canvas.setIgnoreRepaint(true);
 			if (!Static2.aBoolean76) {
 				Static35.method4310();
-				Static4.aClass59_1 = null;
-				Static4.aClass59_1 = Static25.method2727(GameShell.canvasHeight, GameShell.canvasWidth, GameShell.canvas);
+				client.frameBuffer = null;
+				client.frameBuffer = FrameBuffer.create(GameShell.canvas, GameShell.canvasWidth, GameShell.canvasHeight);
 				Static34.method4227();
 				if (Static4.anInt3304 == 5) {
 					Static28.method3331(true, Static5.aClass4_Sub3_Sub5_3);
@@ -337,15 +337,15 @@ public final class Static24 {
 					Static37.method4716(LocalisedText.LOADING, false);
 				}
 				try {
-					@Pc(268) Graphics local268 = GameShell.canvas.getGraphics();
-					Static4.aClass59_1.method4238(local268);
+					@Pc(268) Graphics graphics = GameShell.canvas.getGraphics();
+					client.frameBuffer.draw(graphics);
 				} catch (@Pc(276) Exception local276) {
 				}
 				Static29.method3430();
 				if (arg1 == 0) {
-					Static4.aClass59_1 = Static25.method2727(503, 765, GameShell.canvas);
+					client.frameBuffer = FrameBuffer.create(GameShell.canvas, 765, 503);
 				} else {
-					Static4.aClass59_1 = null;
+					client.frameBuffer = null;
 				}
 				@Pc(299) PrivilegedRequest local299 = GameShell.signLink.loadGlNatives(client.instance.getClass());
 				while (local299.status == 0) {
@@ -365,7 +365,7 @@ public final class Static24 {
 		}
 		if (arg4 > 0 && arg1 == 0) {
 			GameShell.thread.setPriority(5);
-			Static4.aClass59_1 = null;
+			client.frameBuffer = null;
 			Static25.method2915();
 			((Class24_Sub1) Static4.anInterface4_1).method463(200);
 			if (Preferences.highDetailLighting) {
@@ -379,7 +379,7 @@ public final class Static24 {
 			Static36.method4447();
 		} else if (arg4 == 0 && arg1 > 0) {
 			GameShell.thread.setPriority(1);
-			Static4.aClass59_1 = Static25.method2727(503, 765, GameShell.canvas);
+			client.frameBuffer = FrameBuffer.create(GameShell.canvas, 765, 503);
 			Static25.method2906();
 			Static26.method2951();
 			((Class24_Sub1) Static4.anInterface4_1).method463(20);
