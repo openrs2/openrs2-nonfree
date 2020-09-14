@@ -68,7 +68,7 @@ public final class PlayerAppearance {
 	}
 
 	@OriginalMember(owner = "client!qk", name = "a", descriptor = "([Lclient!re;IIILclient!eg;IIZILclient!eg;ZI)Lclient!vg;")
-	public final Class53_Sub4 method3608(@OriginalArg(0) Class150[] arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) Class46 arg4, @OriginalArg(5) int arg5, @OriginalArg(7) boolean arg6, @OriginalArg(8) int arg7, @OriginalArg(9) Class46 arg8, @OriginalArg(10) boolean arg9, @OriginalArg(11) int arg10) {
+	public final Model method3608(@OriginalArg(0) Class150[] arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) Class46 arg4, @OriginalArg(5) int arg5, @OriginalArg(7) boolean arg6, @OriginalArg(8) int arg7, @OriginalArg(9) Class46 arg8, @OriginalArg(10) boolean arg9, @OriginalArg(11) int arg10) {
 		if (this.npcId != -1) {
 			return NpcTypeList.get(this.npcId).method4268(arg5, arg7, arg4, arg8, arg2, arg0, arg3, arg1, arg10);
 		}
@@ -98,7 +98,7 @@ public final class PlayerAppearance {
 				}
 			}
 		}
-		@Pc(169) Class53_Sub4 local169 = (Class53_Sub4) Static2.aClass26_12.get(local54);
+		@Pc(169) Model local169 = (Model) Static2.aClass26_12.get(local54);
 		if (local169 == null) {
 			@Pc(174) boolean local174 = false;
 			for (@Pc(176) int local176 = 0; local176 < 12; local176++) {
@@ -113,7 +113,7 @@ public final class PlayerAppearance {
 			}
 			if (local174) {
 				if (this.aLong154 != -1L) {
-					local169 = (Class53_Sub4) Static2.aClass26_12.get(this.aLong154);
+					local169 = (Model) Static2.aClass26_12.get(this.aLong154);
 				}
 				if (local169 == null) {
 					return null;
@@ -204,7 +204,7 @@ public final class PlayerAppearance {
 				}
 				local169 = local753.method2761(64, 850, -30, -50, -30);
 				if (GlRenderer.enabled) {
-					((Class53_Sub4_Sub2) local169).method3872(false, false, true, false, false, true);
+					((GlModel) local169).method3872(false, false, true, false, false, true);
 				}
 				if (arg9) {
 					Static2.aClass26_12.put(local54, local169);
@@ -317,7 +317,7 @@ public final class PlayerAppearance {
 					}
 				}
 			}
-			@Pc(1318) Class53_Sub4 local1318 = local169.method3831(!local848, !local850, !local852);
+			@Pc(1318) Model local1318 = local169.method3831(!local848, !local850, !local852);
 			@Pc(1320) int local1320 = 0;
 			@Pc(1322) int local1322 = 1;
 			while (local860 > local1320) {
@@ -348,9 +348,9 @@ public final class PlayerAppearance {
 	}
 
 	@OriginalMember(owner = "client!qk", name = "a", descriptor = "(ILclient!eg;IIIIII)Lclient!vg;")
-	public final Class53_Sub4 method3609(@OriginalArg(1) Class46 arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4, @OriginalArg(6) int arg5, @OriginalArg(7) int arg6) {
+	public final Model method3609(@OriginalArg(1) Class46 arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4, @OriginalArg(6) int arg5, @OriginalArg(7) int arg6) {
 		@Pc(14) long local14 = (long) arg2 << 32 | (long) (arg1 << 16) | (long) arg5;
-		@Pc(24) Class53_Sub4 local24 = (Class53_Sub4) Static3.aClass26_27.get(local14);
+		@Pc(24) Model local24 = (Model) Static3.aClass26_27.get(local14);
 		if (local24 == null) {
 			@Pc(30) int local30 = 0;
 			@Pc(33) Class53_Sub3[] local33 = new Class53_Sub3[3];
@@ -419,11 +419,11 @@ public final class PlayerAppearance {
 	}
 
 	@OriginalMember(owner = "client!qk", name = "a", descriptor = "(ILclient!eg;IBI)Lclient!vg;")
-	public final Class53_Sub4 method3612(@OriginalArg(0) int arg0, @OriginalArg(1) Class46 arg1, @OriginalArg(2) int arg2, @OriginalArg(4) int arg3) {
+	public final Model method3612(@OriginalArg(0) int arg0, @OriginalArg(1) Class46 arg1, @OriginalArg(2) int arg2, @OriginalArg(4) int arg3) {
 		if (this.npcId != -1) {
 			return NpcTypeList.get(this.npcId).method4266(arg2, arg1, arg0, arg3);
 		}
-		@Pc(28) Class53_Sub4 local28 = (Class53_Sub4) Static3.aClass26_27.get(this.checksum);
+		@Pc(28) Model local28 = (Model) Static3.aClass26_27.get(this.checksum);
 		if (local28 == null) {
 			@Pc(33) boolean local33 = false;
 			for (@Pc(35) int local35 = 0; local35 < 12; local35++) {

@@ -61,7 +61,7 @@ public final class Class46 {
 	public int anInt1243 = 5;
 
 	@OriginalMember(owner = "client!eg", name = "a", descriptor = "(ZIILclient!vg;II)Lclient!vg;")
-	public final Class53_Sub4 method1014(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) Class53_Sub4 arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4) {
+	public final Model method1014(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) Model arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4) {
 		@Pc(10) int local10 = this.anIntArray94[arg1];
 		arg1 = this.anIntArray95[arg1];
 		@Pc(21) Class4_Sub3_Sub19 local21 = Static32.method3984(arg1 >> 16);
@@ -76,7 +76,7 @@ public final class Class46 {
 			local35 = Static32.method3984(arg0 >> 16);
 			arg0 &= 65535;
 		}
-		@Pc(124) Class53_Sub4 local124;
+		@Pc(124) Model local124;
 		if (local35 == null) {
 			local124 = arg2.method3831(!local21.method4150(arg1), !local21.method4151(arg1), !this.aBoolean72);
 		} else {
@@ -84,11 +84,11 @@ public final class Class46 {
 		}
 		if (this.aBoolean72 && GlRenderer.enabled) {
 			if (arg3 == 1) {
-				((Class53_Sub4_Sub2) local124).method3848();
+				((GlModel) local124).method3848();
 			} else if (arg3 == 2) {
-				((Class53_Sub4_Sub2) local124).method3849();
+				((GlModel) local124).method3849();
 			} else if (arg3 == 3) {
-				((Class53_Sub4_Sub2) local124).method3862();
+				((GlModel) local124).method3862();
 			}
 		} else if (arg3 == 1) {
 			local124.method3827();
@@ -100,11 +100,11 @@ public final class Class46 {
 		local124.method3835(local21, arg1, local35, arg0, arg4 - 1, local10, this.aBoolean72);
 		if (this.aBoolean72 && GlRenderer.enabled) {
 			if (arg3 == 1) {
-				((Class53_Sub4_Sub2) local124).method3862();
+				((GlModel) local124).method3862();
 			} else if (arg3 == 2) {
-				((Class53_Sub4_Sub2) local124).method3849();
+				((GlModel) local124).method3849();
 			} else if (arg3 == 3) {
-				((Class53_Sub4_Sub2) local124).method3848();
+				((GlModel) local124).method3848();
 			}
 		} else if (arg3 == 1) {
 			local124.method3820();
@@ -128,7 +128,7 @@ public final class Class46 {
 	}
 
 	@OriginalMember(owner = "client!eg", name = "a", descriptor = "(ZIILclient!vg;I)Lclient!vg;")
-	public final Class53_Sub4 method1017(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) Class53_Sub4 arg2, @OriginalArg(4) int arg3) {
+	public final Model method1017(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) Model arg2, @OriginalArg(4) int arg3) {
 		@Pc(8) int local8 = this.anIntArray94[arg3];
 		@Pc(19) int local19 = this.anIntArray95[arg3];
 		@Pc(25) Class4_Sub3_Sub19 local25 = Static32.method3984(local19 >> 16);
@@ -176,7 +176,7 @@ public final class Class46 {
 			local152 &= !local79.method4150(local75);
 			local161 &= !local79.method4151(local75);
 		}
-		@Pc(246) Class53_Sub4 local246 = arg2.method3831(local152, local161, !this.aBoolean72);
+		@Pc(246) Model local246 = arg2.method3831(local152, local161, !this.aBoolean72);
 		local246.method3835(local25, local19, local39, arg1, arg0 - 1, local8, this.aBoolean72);
 		if (local73 != null) {
 			local246.method3835(local73, local77, local79, local75, arg0 - 1, local8, this.aBoolean72);
@@ -185,7 +185,7 @@ public final class Class46 {
 	}
 
 	@OriginalMember(owner = "client!eg", name = "a", descriptor = "(IIILclient!vg;I)Lclient!vg;")
-	public final Class53_Sub4 method1018(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) Class53_Sub4 arg2, @OriginalArg(4) int arg3) {
+	public final Model method1018(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) Model arg2, @OriginalArg(4) int arg3) {
 		@Pc(8) int local8 = this.anIntArray94[arg0];
 		arg0 = this.anIntArray95[arg0];
 		@Pc(27) Class4_Sub3_Sub19 local27 = Static32.method3984(arg0 >> 16);
@@ -199,7 +199,7 @@ public final class Class46 {
 			local43 = Static32.method3984(arg3 >> 16);
 			arg3 &= 65535;
 		}
-		@Pc(102) Class53_Sub4 local102;
+		@Pc(102) Model local102;
 		if (local43 == null) {
 			local102 = arg2.method3836(!local27.method4150(arg0), !local27.method4151(arg0), !this.aBoolean72);
 		} else {
@@ -280,7 +280,7 @@ public final class Class46 {
 	}
 
 	@OriginalMember(owner = "client!eg", name = "a", descriptor = "(IIIIILclient!vg;)Lclient!vg;")
-	public final Class53_Sub4 method1021(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) Class53_Sub4 arg4) {
+	public final Model method1021(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) Model arg4) {
 		@Pc(10) int local10 = this.anIntArray94[arg2];
 		arg2 = this.anIntArray95[arg2];
 		@Pc(21) Class4_Sub3_Sub19 local21 = Static32.method3984(arg2 >> 16);
@@ -295,7 +295,7 @@ public final class Class46 {
 			local40 = Static32.method3984(arg0 >> 16);
 			arg0 &= 65535;
 		}
-		@Pc(116) Class53_Sub4 local116;
+		@Pc(116) Model local116;
 		if (local40 == null) {
 			local116 = arg4.method3833(!local21.method4150(arg2), !local21.method4151(arg2), !this.aBoolean72);
 		} else {
@@ -303,11 +303,11 @@ public final class Class46 {
 		}
 		if (GlRenderer.enabled && this.aBoolean72) {
 			if (arg3 == 1) {
-				((Class53_Sub4_Sub2) local116).method3848();
+				((GlModel) local116).method3848();
 			} else if (arg3 == 2) {
-				((Class53_Sub4_Sub2) local116).method3849();
+				((GlModel) local116).method3849();
 			} else if (arg3 == 3) {
-				((Class53_Sub4_Sub2) local116).method3862();
+				((GlModel) local116).method3862();
 			}
 		} else if (arg3 == 1) {
 			local116.method3827();
@@ -319,11 +319,11 @@ public final class Class46 {
 		local116.method3835(local21, arg2, local40, arg0, arg1 - 1, local10, this.aBoolean72);
 		if (GlRenderer.enabled && this.aBoolean72) {
 			if (arg3 == 1) {
-				((Class53_Sub4_Sub2) local116).method3862();
+				((GlModel) local116).method3862();
 			} else if (arg3 == 2) {
-				((Class53_Sub4_Sub2) local116).method3849();
+				((GlModel) local116).method3849();
 			} else if (arg3 == 3) {
-				((Class53_Sub4_Sub2) local116).method3848();
+				((GlModel) local116).method3848();
 			}
 		} else if (arg3 == 1) {
 			local116.method3820();

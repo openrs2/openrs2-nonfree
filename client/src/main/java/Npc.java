@@ -31,7 +31,7 @@ public final class Npc extends PathingEntity {
 		}
 		@Pc(28) Class46 local28 = this.anInt4007 != -1 && this.anInt3996 == 0 ? Static23.method2494(this.anInt4007) : null;
 		@Pc(54) Class46 local54 = this.anInt4005 == -1 || this.anInt4005 == this.method3314().anInt860 && local28 != null ? null : Static23.method2494(this.anInt4005);
-		@Pc(75) Class53_Sub4 local75 = this.type.method4268(this.anInt3970, this.anInt4000, local54, local28, this.anInt4011, this.aClass150Array3, this.anInt4019, this.anInt4046, this.anInt4044);
+		@Pc(75) Model local75 = this.type.method4268(this.anInt3970, this.anInt4000, local54, local28, this.anInt4011, this.aClass150Array3, this.anInt4019, this.anInt4046, this.anInt4044);
 		if (local75 == null) {
 			return;
 		}
@@ -41,7 +41,7 @@ public final class Npc extends PathingEntity {
 			local86 = local86.method4265();
 		}
 		if (Preferences.characterShadows && local86.aBoolean354) {
-			@Pc(141) Class53_Sub4 local141 = Static12.method745(this.type.aShort46, local54 == null ? local28 : local54, arg0, this.type.size, this.type.aByte20, local75, local54 == null ? this.anInt3970 : this.anInt4046, this.anInt4006, this.z, this.aBoolean284, this.type.aShort47, this.type.aByte19, this.x);
+			@Pc(141) Model local141 = Static12.method745(this.type.aShort46, local54 == null ? local28 : local54, arg0, this.type.size, this.type.aByte20, local75, local54 == null ? this.anInt3970 : this.anInt4046, this.anInt4006, this.z, this.aBoolean284, this.type.aShort47, this.type.aByte19, this.x);
 			if (GlRenderer.enabled) {
 				@Pc(145) float local145 = GlRenderer.method1620();
 				@Pc(147) float local147 = GlRenderer.method1612();
@@ -54,7 +54,7 @@ public final class Npc extends PathingEntity {
 				local141.method3805(0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, -1L, arg9, this.aClass20_Sub3_6);
 			}
 		}
-		@Pc(189) Class53_Sub4 local189 = null;
+		@Pc(189) Model local189 = null;
 		this.method3305(local75);
 		this.method3312(local75, arg0);
 		if (this.anInt3961 != -1 && this.anInt4026 != -1) {
@@ -77,7 +77,7 @@ public final class Npc extends PathingEntity {
 		}
 		if (!GlRenderer.enabled) {
 			if (local189 != null) {
-				local75 = ((Class53_Sub4_Sub1) local75).method2903(local189);
+				local75 = ((SoftwareModel) local75).method2903(local189);
 			}
 			this.method3315(local75, local189);
 			if (this.type.size == 1) {
@@ -98,7 +98,7 @@ public final class Npc extends PathingEntity {
 			local189.aBoolean324 = true;
 		}
 		if (this.aClass20_Sub3_6 != null) {
-			@Pc(352) Class53_Sub4_Sub2 local352 = (Class53_Sub4_Sub2) local189;
+			@Pc(352) GlModel local352 = (GlModel) local189;
 			this.aClass20_Sub3_6.method2967(local352.aClass158Array3, local352.aClass167Array3, true, local352.anIntArray507, local352.anIntArray504, local352.anIntArray502);
 		}
 		local189.method3805(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, this.aClass20_Sub3_6);
@@ -127,7 +127,7 @@ public final class Npc extends PathingEntity {
 		if (!this.aBoolean285) {
 			@Pc(28) Class46 local28 = this.anInt4007 != -1 && this.anInt3996 == 0 ? Static23.method2494(this.anInt4007) : null;
 			@Pc(52) Class46 local52 = this.anInt4005 == -1 || this.anInt4005 == this.method3314().anInt860 && local28 != null ? null : Static23.method2494(this.anInt4005);
-			@Pc(73) Class53_Sub4 local73 = this.type.method4268(this.anInt3970, this.anInt4000, local52, local28, this.anInt4011, this.aClass150Array3, this.anInt4019, this.anInt4046, this.anInt4044);
+			@Pc(73) Model local73 = this.type.method4268(this.anInt3970, this.anInt4000, local52, local28, this.anInt4011, this.aClass150Array3, this.anInt4019, this.anInt4046, this.anInt4044);
 			if (local73 == null) {
 				return;
 			}

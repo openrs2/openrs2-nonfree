@@ -383,7 +383,7 @@ public final class Class53_Sub7 extends Entity {
 	@OriginalMember(owner = "client!ri", name = "a", descriptor = "(ZLclient!vc;)V")
 	private void method3737(@OriginalArg(1) Entity arg0) {
 		if (GlRenderer.enabled) {
-			@Pc(70) Class53_Sub4_Sub2 local70 = (Class53_Sub4_Sub2) arg0;
+			@Pc(70) GlModel local70 = (GlModel) arg0;
 			if ((this.aClass20_Sub3_7 == null || this.aClass20_Sub3_7.aBoolean250) && (local70.aClass158Array3 != null || local70.aClass167Array3 != null)) {
 				@Pc(91) LocType local91 = LocTypeList.get(this.anInt4587);
 				if (local91.anIntArray631 != null) {
@@ -397,7 +397,7 @@ public final class Class53_Sub7 extends Entity {
 				this.aClass20_Sub3_7.method2967(local70.aClass158Array3, local70.aClass167Array3, false, local70.anIntArray507, local70.anIntArray504, local70.anIntArray502);
 			}
 		} else {
-			@Pc(8) Class53_Sub4_Sub1 local8 = (Class53_Sub4_Sub1) arg0;
+			@Pc(8) SoftwareModel local8 = (SoftwareModel) arg0;
 			if ((this.aClass20_Sub3_7 == null || this.aClass20_Sub3_7.aBoolean250) && (local8.aClass158Array2 != null || local8.aClass167Array2 != null)) {
 				@Pc(28) LocType local28 = LocTypeList.get(this.anInt4587);
 				if (local28.anIntArray631 != null) {

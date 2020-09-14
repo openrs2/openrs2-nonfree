@@ -60,8 +60,8 @@ public final class Static24 {
 				for (@Pc(44) int local44 = 0; local44 < local32[local34].length; local44++) {
 					@Pc(60) Class4_Sub19 local60 = local32[local34][local44];
 					if (local60 != null) {
-						if (local60.aClass42_1 != null && local60.aClass42_1.aClass53_2 instanceof Class53_Sub4_Sub2) {
-							@Pc(76) Class53_Sub4_Sub2 local76 = (Class53_Sub4_Sub2) local60.aClass42_1.aClass53_2;
+						if (local60.aClass42_1 != null && local60.aClass42_1.aClass53_2 instanceof GlModel) {
+							@Pc(76) GlModel local76 = (GlModel) local60.aClass42_1.aClass53_2;
 							if ((Long.MIN_VALUE & local60.aClass42_1.aLong45) == 0L) {
 								local76.method3872(false, true, true, false, true, true);
 							} else {
@@ -69,16 +69,16 @@ public final class Static24 {
 							}
 						}
 						if (local60.aClass182_1 != null) {
-							if (local60.aClass182_1.aClass53_10 instanceof Class53_Sub4_Sub2) {
-								@Pc(118) Class53_Sub4_Sub2 local118 = (Class53_Sub4_Sub2) local60.aClass182_1.aClass53_10;
+							if (local60.aClass182_1.aClass53_10 instanceof GlModel) {
+								@Pc(118) GlModel local118 = (GlModel) local60.aClass182_1.aClass53_10;
 								if ((local60.aClass182_1.aLong194 & Long.MIN_VALUE) == 0L) {
 									local118.method3872(false, true, true, false, true, true);
 								} else {
 									local118.method3872(true, true, true, true, true, true);
 								}
 							}
-							if (local60.aClass182_1.aClass53_9 instanceof Class53_Sub4_Sub2) {
-								@Pc(157) Class53_Sub4_Sub2 local157 = (Class53_Sub4_Sub2) local60.aClass182_1.aClass53_9;
+							if (local60.aClass182_1.aClass53_9 instanceof GlModel) {
+								@Pc(157) GlModel local157 = (GlModel) local60.aClass182_1.aClass53_9;
 								if ((Long.MIN_VALUE & local60.aClass182_1.aLong194) == 0L) {
 									local157.method3872(false, true, true, false, true, true);
 								} else {
@@ -87,16 +87,16 @@ public final class Static24 {
 							}
 						}
 						if (local60.aClass179_1 != null) {
-							if (local60.aClass179_1.aClass53_5 instanceof Class53_Sub4_Sub2) {
-								@Pc(199) Class53_Sub4_Sub2 local199 = (Class53_Sub4_Sub2) local60.aClass179_1.aClass53_5;
+							if (local60.aClass179_1.aClass53_5 instanceof GlModel) {
+								@Pc(199) GlModel local199 = (GlModel) local60.aClass179_1.aClass53_5;
 								if ((Long.MIN_VALUE & local60.aClass179_1.aLong188) == 0L) {
 									local199.method3872(false, true, true, false, true, true);
 								} else {
 									local199.method3872(true, true, true, true, true, true);
 								}
 							}
-							if (local60.aClass179_1.aClass53_4 instanceof Class53_Sub4_Sub2) {
-								@Pc(237) Class53_Sub4_Sub2 local237 = (Class53_Sub4_Sub2) local60.aClass179_1.aClass53_4;
+							if (local60.aClass179_1.aClass53_4 instanceof GlModel) {
+								@Pc(237) GlModel local237 = (GlModel) local60.aClass179_1.aClass53_4;
 								if ((local60.aClass179_1.aLong188 & Long.MIN_VALUE) == 0L) {
 									local237.method3872(false, true, true, false, true, true);
 								} else {
@@ -105,8 +105,8 @@ public final class Static24 {
 							}
 						}
 						for (@Pc(269) int local269 = 0; local269 < local60.anInt3554; local269++) {
-							if (local60.aClass33Array3[local269].aClass53_1 instanceof Class53_Sub4_Sub2) {
-								@Pc(288) Class53_Sub4_Sub2 local288 = (Class53_Sub4_Sub2) local60.aClass33Array3[local269].aClass53_1;
+							if (local60.aClass33Array3[local269].aClass53_1 instanceof GlModel) {
+								@Pc(288) GlModel local288 = (GlModel) local60.aClass33Array3[local269].aClass53_1;
 								if ((Long.MIN_VALUE & local60.aClass33Array3[local269].aLong38) == 0L) {
 									local288.method3872(false, true, true, false, true, true);
 								} else {

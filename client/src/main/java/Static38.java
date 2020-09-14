@@ -27,10 +27,10 @@ public final class Static38 {
 				@Pc(126) int local126 = local26 * 64;
 				@Pc(130) int local130 = local34 * 64;
 				@Pc(134) int local134 = local41 * 64;
-				@Pc(161) Class53_Sub6 local161 = new Class53_Sub6(local55, Static7.anInt5334, local126, local130, Static11.method522(local130, local126, Static7.anInt5334) - local61, local71 + Static2.anInt954, Static2.anInt954 + local75, local79, local89, local51, local67);
+				@Pc(161) ProjAnim local161 = new ProjAnim(local55, Static7.anInt5334, local126, local130, Static11.method522(local130, local126, Static7.anInt5334) - local61, local71 + Static2.anInt954, Static2.anInt954 + local75, local79, local89, local51, local67);
 				@Pc(165) int local165 = local47 * 64;
 				local161.method3105(Static11.method522(local165, local134, Static7.anInt5334) - local67, local134, Static2.anInt954 + local71, local165);
-				Static1.aClass112_1.addTail(new Class4_Sub3_Sub2(local161));
+				Static1.aClass112_1.addTail(new ProjAnimNode(local161));
 			}
 		} else if (Static1.anInt552 == 114) {
 			@Pc(198) int local198 = Static5.aClass4_Sub10_Sub1_2.readUnsignedByte();
@@ -128,9 +128,9 @@ public final class Static38 {
 							}
 						}
 					}
-					@Pc(682) Class53_Sub6 local682 = new Class53_Sub6(local433, Static7.anInt5334, local510, local514, Static11.method522(local514, local510, Static7.anInt5334) - local437, local447 + Static2.anInt954, Static2.anInt954 + local451, local455, local465, local429, local443);
+					@Pc(682) ProjAnim local682 = new ProjAnim(local433, Static7.anInt5334, local510, local514, Static11.method522(local514, local510, Static7.anInt5334) - local437, local447 + Static2.anInt954, Static2.anInt954 + local451, local455, local465, local429, local443);
 					local682.method3105(Static11.method522(local502, local506, Static7.anInt5334) - local443, local506, Static2.anInt954 + local447, local502);
-					Static1.aClass112_1.addTail(new Class4_Sub3_Sub2(local682));
+					Static1.aClass112_1.addTail(new ProjAnimNode(local682));
 				}
 			} else if (Static1.anInt552 == 158) {
 				@Pc(715) int local715 = Static5.aClass4_Sub10_Sub1_2.readUnsignedByte();
@@ -142,8 +142,8 @@ public final class Static38 {
 				if (local723 >= 0 && local729 >= 0 && local723 < 104 && local729 < 104) {
 					@Pc(765) int local765 = local729 * 128 + 64;
 					@Pc(771) int local771 = local723 * 128 + 64;
-					@Pc(789) Class53_Sub5 local789 = new Class53_Sub5(local733, Static7.anInt5334, local771, local765, Static11.method522(local765, local771, Static7.anInt5334) - local737, local741, Static2.anInt954);
-					Static2.aClass112_8.addTail(new Class4_Sub3_Sub6(local789));
+					@Pc(789) SpotAnim local789 = new SpotAnim(local733, Static7.anInt5334, local771, local765, Static11.method522(local765, local771, Static7.anInt5334) - local737, local741, Static2.anInt954);
+					Static2.aClass112_8.addTail(new SpotAnimNode(local789));
 				}
 			} else if (Static1.anInt552 == 179) {
 				@Pc(804) int local804 = Static5.aClass4_Sub10_Sub1_2.readUnsignedShort();
@@ -207,9 +207,9 @@ public final class Static38 {
 					@Pc(1134) int local1134 = local1042 * 128 + 64;
 					@Pc(1140) int local1140 = local1048 * 128 + 64;
 					@Pc(1146) int local1146 = local1030 * 128 + 64;
-					@Pc(1173) Class53_Sub6 local1173 = new Class53_Sub6(local1056, Static7.anInt5334, local1146, local1128, Static11.method522(local1128, local1146, Static7.anInt5334) - local1062, Static2.anInt954 + local1072, local1076 + Static2.anInt954, local1080, local1084, local1052, local1068);
+					@Pc(1173) ProjAnim local1173 = new ProjAnim(local1056, Static7.anInt5334, local1146, local1128, Static11.method522(local1128, local1146, Static7.anInt5334) - local1062, Static2.anInt954 + local1072, local1076 + Static2.anInt954, local1080, local1084, local1052, local1068);
 					local1173.method3105(Static11.method522(local1140, local1134, Static7.anInt5334) - local1068, local1134, local1072 + Static2.anInt954, local1140);
-					Static1.aClass112_1.addTail(new Class4_Sub3_Sub2(local1173));
+					Static1.aClass112_1.addTail(new ProjAnimNode(local1173));
 				}
 			} else if (Static1.anInt552 == 120) {
 				@Pc(1203) int local1203 = Static5.aClass4_Sub10_Sub1_2.readUnsignedByteS();

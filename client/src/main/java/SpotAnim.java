@@ -4,7 +4,7 @@ import dev.openrs2.deob.annotation.OriginalMember;
 import dev.openrs2.deob.annotation.Pc;
 
 @OriginalClass("client!o")
-public final class Class53_Sub5 extends Entity {
+public final class SpotAnim extends Entity {
 
 	@OriginalMember(owner = "client!o", name = "E", descriptor = "Lclient!ne;")
 	private Class20_Sub3 aClass20_Sub3_4;
@@ -49,7 +49,7 @@ public final class Class53_Sub5 extends Entity {
 	private Class46 aClass46_1;
 
 	@OriginalMember(owner = "client!o", name = "<init>", descriptor = "(IIIIIII)V")
-	public Class53_Sub5(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6) {
+	public SpotAnim(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6) {
 		this.anInt3655 = arg1;
 		this.anInt3657 = arg0;
 		this.anInt3647 = arg2;
@@ -69,9 +69,9 @@ public final class Class53_Sub5 extends Entity {
 	}
 
 	@OriginalMember(owner = "client!o", name = "a", descriptor = "(ILclient!vg;)V")
-	private void method3057(@OriginalArg(1) Class53_Sub4 arg0) {
+	private void method3057(@OriginalArg(1) Model arg0) {
 		if (GlRenderer.enabled) {
-			@Pc(55) Class53_Sub4_Sub2 local55 = (Class53_Sub4_Sub2) arg0;
+			@Pc(55) GlModel local55 = (GlModel) arg0;
 			if ((this.aClass20_Sub3_4 == null || this.aClass20_Sub3_4.aBoolean250) && (local55.aClass158Array3 != null || local55.aClass167Array3 != null)) {
 				this.aClass20_Sub3_4 = new Class20_Sub3(Static2.anInt954, 1, 1);
 			}
@@ -79,7 +79,7 @@ public final class Class53_Sub5 extends Entity {
 				this.aClass20_Sub3_4.method2967(local55.aClass158Array3, local55.aClass167Array3, false, local55.anIntArray507, local55.anIntArray504, local55.anIntArray502);
 			}
 		} else {
-			@Pc(8) Class53_Sub4_Sub1 local8 = (Class53_Sub4_Sub1) arg0;
+			@Pc(8) SoftwareModel local8 = (SoftwareModel) arg0;
 			if ((this.aClass20_Sub3_4 == null || this.aClass20_Sub3_4.aBoolean250) && (local8.aClass158Array2 != null || local8.aClass167Array2 != null)) {
 				this.aClass20_Sub3_4 = new Class20_Sub3(Static2.anInt954, 1, 1);
 			}
@@ -110,9 +110,9 @@ public final class Class53_Sub5 extends Entity {
 	}
 
 	@OriginalMember(owner = "client!o", name = "a", descriptor = "(I)Lclient!vg;")
-	private Class53_Sub4 method3060() {
+	private Model method3060() {
 		@Pc(17) Class110 local17 = Static21.method2004(this.anInt3657);
-		@Pc(27) Class53_Sub4 local27;
+		@Pc(27) Model local27;
 		if (this.aBoolean265) {
 			local27 = local17.method2569(-1, 0, -1);
 		} else {
@@ -125,7 +125,7 @@ public final class Class53_Sub5 extends Entity {
 	@Override
 	public final void method3806(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4) {
 		if (!this.aBoolean264) {
-			@Pc(10) Class53_Sub4 local10 = this.method3060();
+			@Pc(10) Model local10 = this.method3060();
 			if (local10 == null) {
 				return;
 			}
@@ -139,7 +139,7 @@ public final class Class53_Sub5 extends Entity {
 	@OriginalMember(owner = "client!o", name = "a", descriptor = "(IIIIIIIIJILclient!ne;)V")
 	@Override
 	public final void method3805(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) long arg8, @OriginalArg(9) int arg9, @OriginalArg(10) Class20_Sub3 arg10) {
-		@Pc(7) Class53_Sub4 local7 = this.method3060();
+		@Pc(7) Model local7 = this.method3060();
 		if (local7 != null) {
 			this.method3057(local7);
 			local7.method3805(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, this.aClass20_Sub3_4);

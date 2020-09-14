@@ -661,7 +661,7 @@ public final class Static30 {
 									}
 								} else if (local38.type == 6) {
 									@Pc(2663) boolean local2663 = Cs1ScriptRunner.isTrue(local38);
-									@Pc(2665) Class53_Sub4 local2665 = null;
+									@Pc(2665) Model local2665 = null;
 									@Pc(2670) int local2670;
 									if (local2663) {
 										local2670 = local38.anInt5910;
@@ -763,7 +763,7 @@ public final class Static30 {
 											if (!local38.if3) {
 												local2665.method3822(local38.anInt5976, 0, local38.anInt5944, 0, local2977, local2967, -1L);
 											} else if (local38.aBoolean418) {
-												((Class53_Sub4_Sub1) local2665).method2911(local38.anInt5976, local38.anInt5886, local38.anInt5944, local38.anInt5963, local2977 + local2677 + local38.anInt5906, local2967 + local38.anInt5906, local38.anInt5918);
+												((SoftwareModel) local2665).method2911(local38.anInt5976, local38.anInt5886, local38.anInt5944, local38.anInt5963, local2977 + local2677 + local38.anInt5906, local2967 + local38.anInt5906, local38.anInt5918);
 											} else {
 												local2665.method3822(local38.anInt5976, local38.anInt5886, local38.anInt5944, local38.anInt5963, local2677 + local2977 + local38.anInt5906, local2967 + local38.anInt5906, -1L);
 											}

@@ -404,8 +404,8 @@ public final class Static22 {
 				@Pc(532) boolean local532 = method2196(arg1, arg4, arg6, local193, local78, local81, local493, local321);
 				if (local60.aBoolean377 && local532 && arg8) {
 					@Pc(542) int local542 = 15;
-					if (local493 instanceof Class53_Sub4) {
-						local542 = ((Class53_Sub4) local493).method3826() / 4;
+					if (local493 instanceof Model) {
+						local542 = ((Model) local493).method3826() / 4;
 						if (local542 > 30) {
 							local542 = 30;
 						}

@@ -4,7 +4,7 @@ import dev.openrs2.deob.annotation.OriginalMember;
 import dev.openrs2.deob.annotation.Pc;
 
 @OriginalClass("client!na")
-public final class Class53_Sub4_Sub1 extends Class53_Sub4 {
+public final class SoftwareModel extends Model {
 
 	@OriginalMember(owner = "client!na", name = "p", descriptor = "S")
 	private short aShort35;
@@ -133,11 +133,11 @@ public final class Class53_Sub4_Sub1 extends Class53_Sub4 {
 	}
 
 	@OriginalMember(owner = "client!na", name = "<init>", descriptor = "()V")
-	public Class53_Sub4_Sub1() {
+	public SoftwareModel() {
 	}
 
 	@OriginalMember(owner = "client!na", name = "<init>", descriptor = "(Lclient!ml;IIIII)V")
-	public Class53_Sub4_Sub1(@OriginalArg(0) Class53_Sub3 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5) {
+	public SoftwareModel(@OriginalArg(0) Class53_Sub3 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5) {
 		arg0.method2764();
 		arg0.method2744();
 		this.anInt3440 = arg0.anInt3356;
@@ -316,7 +316,7 @@ public final class Class53_Sub4_Sub1 extends Class53_Sub4 {
 	}
 
 	@OriginalMember(owner = "client!na", name = "<init>", descriptor = "([Lclient!na;I)V")
-	private Class53_Sub4_Sub1(@OriginalArg(0) Class53_Sub4_Sub1[] arg0, @OriginalArg(1) int arg1) {
+	private SoftwareModel(@OriginalArg(0) SoftwareModel[] arg0, @OriginalArg(1) int arg1) {
 		@Pc(24) boolean local24 = false;
 		@Pc(26) boolean local26 = false;
 		@Pc(28) boolean local28 = false;
@@ -328,7 +328,7 @@ public final class Class53_Sub4_Sub1 extends Class53_Sub4 {
 		@Pc(43) int local43 = 0;
 		this.aByte12 = -1;
 		for (@Pc(48) int local48 = 0; local48 < arg1; local48++) {
-			@Pc(55) Class53_Sub4_Sub1 local55 = arg0[local48];
+			@Pc(55) SoftwareModel local55 = arg0[local48];
 			if (local55 != null) {
 				this.anInt3440 += local55.anInt3440;
 				this.anInt3439 += local55.anInt3439;
@@ -393,7 +393,7 @@ public final class Class53_Sub4_Sub1 extends Class53_Sub4 {
 		@Pc(265) int local265 = 0;
 		@Pc(267) int local267 = 0;
 		for (@Pc(269) int local269 = 0; local269 < arg1; local269++) {
-			@Pc(276) Class53_Sub4_Sub1 local276 = arg0[local269];
+			@Pc(276) SoftwareModel local276 = arg0[local269];
 			if (local276 != null) {
 				for (@Pc(280) int local280 = 0; local280 < local276.anInt3439; local280++) {
 					this.anIntArray343[this.anInt3439] = local276.anIntArray343[local280] + this.anInt3440;
@@ -460,7 +460,7 @@ public final class Class53_Sub4_Sub1 extends Class53_Sub4 {
 		@Pc(645) int local645 = 0;
 		this.anInt3438 = this.anInt3440;
 		for (@Pc(651) int local651 = 0; local651 < arg1; local651++) {
-			@Pc(658) Class53_Sub4_Sub1 local658 = arg0[local651];
+			@Pc(658) SoftwareModel local658 = arg0[local651];
 			if (local658 != null) {
 				for (@Pc(662) int local662 = 0; local662 < local658.anInt3437; local662++) {
 					if (local658.anIntArray351[local662] >= local658.anInt3438) {
@@ -505,7 +505,7 @@ public final class Class53_Sub4_Sub1 extends Class53_Sub4 {
 
 	@OriginalMember(owner = "client!na", name = "a", descriptor = "(ZZZ)Lclient!vg;")
 	@Override
-	public final Class53_Sub4 method3831(@OriginalArg(0) boolean arg0, @OriginalArg(1) boolean arg1, @OriginalArg(2) boolean arg2) {
+	public final Model method3831(@OriginalArg(0) boolean arg0, @OriginalArg(1) boolean arg1, @OriginalArg(2) boolean arg2) {
 		if (!arg0 && Static4.aByteArray44.length < this.anInt3439) {
 			Static4.aByteArray44 = new byte[this.anInt3439 + 100];
 		}
@@ -957,8 +957,8 @@ public final class Class53_Sub4_Sub1 extends Class53_Sub4 {
 	}
 
 	@OriginalMember(owner = "client!na", name = "a", descriptor = "(Lclient!vg;)Lclient!vg;")
-	public final Class53_Sub4 method2903(@OriginalArg(0) Class53_Sub4 arg0) {
-		return new Class53_Sub4_Sub1(new Class53_Sub4_Sub1[] { this, (Class53_Sub4_Sub1) arg0 }, 2);
+	public final Model method2903(@OriginalArg(0) Model arg0) {
+		return new SoftwareModel(new SoftwareModel[] { this, (SoftwareModel) arg0 }, 2);
 	}
 
 	@OriginalMember(owner = "client!na", name = "a", descriptor = "(IIIIIIIIJILclient!ne;)V")
@@ -1313,7 +1313,7 @@ public final class Class53_Sub4_Sub1 extends Class53_Sub4 {
 
 	@OriginalMember(owner = "client!na", name = "b", descriptor = "(ZZZ)Lclient!vg;")
 	@Override
-	public final Class53_Sub4 method3833(@OriginalArg(0) boolean arg0, @OriginalArg(1) boolean arg1, @OriginalArg(2) boolean arg2) {
+	public final Model method3833(@OriginalArg(0) boolean arg0, @OriginalArg(1) boolean arg1, @OriginalArg(2) boolean arg2) {
 		if (!arg0 && Static4.aByteArray46.length < this.anInt3439) {
 			Static4.aByteArray46 = new byte[this.anInt3439 + 100];
 		}
@@ -1338,7 +1338,7 @@ public final class Class53_Sub4_Sub1 extends Class53_Sub4 {
 
 	@OriginalMember(owner = "client!na", name = "c", descriptor = "(ZZZ)Lclient!vg;")
 	@Override
-	public final Class53_Sub4 method3836(@OriginalArg(0) boolean arg0, @OriginalArg(1) boolean arg1, @OriginalArg(2) boolean arg2) {
+	public final Model method3836(@OriginalArg(0) boolean arg0, @OriginalArg(1) boolean arg1, @OriginalArg(2) boolean arg2) {
 		if (!arg0 && Static4.aByteArray45.length < this.anInt3439) {
 			Static4.aByteArray45 = new byte[this.anInt3439 + 100];
 		}
@@ -1507,7 +1507,7 @@ public final class Class53_Sub4_Sub1 extends Class53_Sub4 {
 	}
 
 	@OriginalMember(owner = "client!na", name = "a", descriptor = "(ZZLclient!na;[B[S[I[I[I)Lclient!vg;")
-	private Class53_Sub4 method2908(@OriginalArg(0) boolean arg0, @OriginalArg(1) boolean arg1, @OriginalArg(2) Class53_Sub4_Sub1 arg2, @OriginalArg(3) byte[] arg3, @OriginalArg(4) short[] arg4, @OriginalArg(5) int[] arg5, @OriginalArg(6) int[] arg6, @OriginalArg(7) int[] arg7) {
+	private Model method2908(@OriginalArg(0) boolean arg0, @OriginalArg(1) boolean arg1, @OriginalArg(2) SoftwareModel arg2, @OriginalArg(3) byte[] arg3, @OriginalArg(4) short[] arg4, @OriginalArg(5) int[] arg5, @OriginalArg(6) int[] arg6, @OriginalArg(7) int[] arg7) {
 		arg2.anInt3440 = this.anInt3440;
 		arg2.anInt3438 = this.anInt3438;
 		arg2.anInt3439 = this.anInt3439;
@@ -1627,7 +1627,7 @@ public final class Class53_Sub4_Sub1 extends Class53_Sub4 {
 	}
 
 	@OriginalMember(owner = "client!na", name = "a", descriptor = "(II[[I[[IIIIZ)Lclient!na;")
-	public final Class53_Sub4_Sub1 method2910(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int[][] arg2, @OriginalArg(3) int[][] arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) boolean arg7) {
+	public final SoftwareModel method2910(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int[][] arg2, @OriginalArg(3) int[][] arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) boolean arg7) {
 		if (!this.aBoolean244) {
 			this.method2909();
 		}
@@ -1654,9 +1654,9 @@ public final class Class53_Sub4_Sub1 extends Class53_Sub4 {
 				return this;
 			}
 		}
-		@Pc(150) Class53_Sub4_Sub1 local150;
+		@Pc(150) SoftwareModel local150;
 		if (arg7) {
-			local150 = new Class53_Sub4_Sub1();
+			local150 = new SoftwareModel();
 			local150.anInt3440 = this.anInt3440;
 			local150.anInt3438 = this.anInt3438;
 			local150.anInt3439 = this.anInt3439;

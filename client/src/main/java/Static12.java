@@ -970,9 +970,9 @@ public final class Static12 {
 	}
 
 	@OriginalMember(owner = "client!dc", name = "a", descriptor = "(IILclient!eg;IIILclient!vg;IIIZIII)Lclient!vg;")
-	public static Class53_Sub4 method745(@OriginalArg(0) int arg0, @OriginalArg(2) Class46 arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4, @OriginalArg(6) Class53_Sub4 arg5, @OriginalArg(7) int arg6, @OriginalArg(8) int arg7, @OriginalArg(9) int arg8, @OriginalArg(10) boolean arg9, @OriginalArg(11) int arg10, @OriginalArg(12) int arg11, @OriginalArg(13) int arg12) {
+	public static Model method745(@OriginalArg(0) int arg0, @OriginalArg(2) Class46 arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4, @OriginalArg(6) Model arg5, @OriginalArg(7) int arg6, @OriginalArg(8) int arg7, @OriginalArg(9) int arg8, @OriginalArg(10) boolean arg9, @OriginalArg(11) int arg10, @OriginalArg(12) int arg11, @OriginalArg(13) int arg12) {
 		@Pc(23) long local23 = ((long) arg10 << 32) + (long) ((arg4 << 24) + (arg11 << 16) + arg3) + ((long) arg0 << 48);
-		@Pc(33) Class53_Sub4 local33 = (Class53_Sub4) Static6.aClass26_50.get(local23);
+		@Pc(33) Model local33 = (Model) Static6.aClass26_50.get(local23);
 		if (local33 == null) {
 			@Pc(41) byte local41;
 			if (arg3 == 1) {
@@ -1058,7 +1058,7 @@ public final class Static12 {
 			local475 = Static32.method3984(arg6 >> 16);
 			arg6 &= 65535;
 		}
-		@Pc(500) Class53_Sub4 local500;
+		@Pc(500) Model local500;
 		if (local475 == null) {
 			local500 = local33.method3836(true, true, true);
 			local500.method3824((local435 - local432) / 2, 128, (local457 - local438) / 2);
@@ -1073,7 +1073,7 @@ public final class Static12 {
 			local500.method3815(arg2);
 		}
 		if (GlRenderer.enabled) {
-			@Pc(591) Class53_Sub4_Sub2 local591 = (Class53_Sub4_Sub2) local500;
+			@Pc(591) GlModel local591 = (GlModel) local500;
 			if (arg7 != Static11.method522(local438 + arg8, arg12 + local432, Static7.anInt5334) || Static11.method522(local457 + arg8, local435 + arg12, Static7.anInt5334) != arg7) {
 				for (@Pc(615) int local615 = 0; local615 < local591.anInt4689; local615++) {
 					@Pc(621) int[] local621 = local591.anIntArray504;
@@ -1083,7 +1083,7 @@ public final class Static12 {
 				local591.aClass15_1.aBoolean15 = false;
 			}
 		} else {
-			@Pc(660) Class53_Sub4_Sub1 local660 = (Class53_Sub4_Sub1) local500;
+			@Pc(660) SoftwareModel local660 = (SoftwareModel) local500;
 			if (arg7 != Static11.method522(local438 + arg8, local432 + arg12, Static7.anInt5334) || arg7 != Static11.method522(local457 + arg8, arg12 + local435, Static7.anInt5334)) {
 				for (@Pc(690) int local690 = 0; local690 < local660.anInt3440; local690++) {
 					@Pc(700) int[] local700 = local660.anIntArray344;

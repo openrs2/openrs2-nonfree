@@ -15,12 +15,12 @@ public final class Static32 {
 
 	@OriginalMember(owner = "client!s", name = "y", descriptor = "()V")
 	public static void method3876() {
-		Static6.aClass53_Sub4_Sub2_1 = new Class53_Sub4_Sub2();
-		Static6.aClass53_Sub4_Sub2_2 = new Class53_Sub4_Sub2();
-		Static6.aClass53_Sub4_Sub2_3 = new Class53_Sub4_Sub2();
-		Static6.aClass53_Sub4_Sub2_4 = new Class53_Sub4_Sub2();
-		Static6.aClass53_Sub4_Sub2_5 = new Class53_Sub4_Sub2();
-		Static6.aClass53_Sub4_Sub2_6 = new Class53_Sub4_Sub2();
+		Static6.aClass53_Sub4_Sub2_1 = new GlModel();
+		Static6.aClass53_Sub4_Sub2_2 = new GlModel();
+		Static6.aClass53_Sub4_Sub2_3 = new GlModel();
+		Static6.aClass53_Sub4_Sub2_4 = new GlModel();
+		Static6.aClass53_Sub4_Sub2_5 = new GlModel();
+		Static6.aClass53_Sub4_Sub2_6 = new GlModel();
 	}
 
 	@OriginalMember(owner = "client!s", name = "a", descriptor = "(FFF)I")

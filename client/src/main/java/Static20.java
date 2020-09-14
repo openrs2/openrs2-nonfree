@@ -1397,8 +1397,8 @@ public final class Static20 {
 
 	@OriginalMember(owner = "client!jb", name = "a", descriptor = "(B)V")
 	public static void method1976() {
-		for (@Pc(16) Class4_Sub3_Sub2 local16 = (Class4_Sub3_Sub2) Static1.aClass112_1.head(); local16 != null; local16 = (Class4_Sub3_Sub2) Static1.aClass112_1.next()) {
-			@Pc(22) Class53_Sub6 local22 = local16.aClass53_Sub6_1;
+		for (@Pc(16) ProjAnimNode local16 = (ProjAnimNode) Static1.aClass112_1.head(); local16 != null; local16 = (ProjAnimNode) Static1.aClass112_1.next()) {
+			@Pc(22) ProjAnim local22 = local16.value;
 			if (local22.anInt3717 != Static7.anInt5334 || Static2.anInt954 > local22.anInt3707) {
 				local16.unlink();
 			} else if (local22.anInt3719 <= Static2.anInt954) {

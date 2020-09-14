@@ -1372,8 +1372,8 @@ public final class Class53_Sub3 extends Entity {
 	}
 
 	@OriginalMember(owner = "client!ml", name = "b", descriptor = "(IIIII)Lclient!na;")
-	public final Class53_Sub4_Sub1 method2759(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4) {
-		return new Class53_Sub4_Sub1(this, arg0, arg1, arg2, arg3, arg4);
+	public final SoftwareModel method2759(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4) {
+		return new SoftwareModel(this, arg0, arg1, arg2, arg3, arg4);
 	}
 
 	@OriginalMember(owner = "client!ml", name = "k", descriptor = "()V")
@@ -1460,13 +1460,13 @@ public final class Class53_Sub3 extends Entity {
 	}
 
 	@OriginalMember(owner = "client!ml", name = "c", descriptor = "(IIIII)Lclient!vg;")
-	public final Class53_Sub4 method2761(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4) {
+	public final Model method2761(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4) {
 		if (GlRenderer.enabled) {
-			@Pc(9) Class53_Sub4_Sub2 local9 = new Class53_Sub4_Sub2(this, arg0, arg1, true);
+			@Pc(9) GlModel local9 = new GlModel(this, arg0, arg1, true);
 			local9.method3866();
 			return local9;
 		} else {
-			return new Class53_Sub4_Sub1(this, arg0, arg1, arg2, arg3, arg4);
+			return new SoftwareModel(this, arg0, arg1, arg2, arg3, arg4);
 		}
 	}
 

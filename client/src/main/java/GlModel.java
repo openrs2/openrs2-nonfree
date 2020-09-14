@@ -7,7 +7,7 @@ import dev.openrs2.deob.annotation.OriginalMember;
 import dev.openrs2.deob.annotation.Pc;
 
 @OriginalClass("client!s")
-public final class Class53_Sub4_Sub2 extends Class53_Sub4 {
+public final class GlModel extends Model {
 
 	@OriginalMember(owner = "client!s", name = "n", descriptor = "[S")
 	private short[] aShortArray87;
@@ -139,11 +139,11 @@ public final class Class53_Sub4_Sub2 extends Class53_Sub4 {
 	private int anInt4691 = 0;
 
 	@OriginalMember(owner = "client!s", name = "<init>", descriptor = "()V")
-	public Class53_Sub4_Sub2() {
+	public GlModel() {
 	}
 
 	@OriginalMember(owner = "client!s", name = "<init>", descriptor = "(Lclient!ml;IIZ)V")
-	public Class53_Sub4_Sub2(@OriginalArg(0) Class53_Sub3 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) boolean arg3) {
+	public GlModel(@OriginalArg(0) Class53_Sub3 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) boolean arg3) {
 		@Pc(26) int[] local26 = new int[arg0.anInt3353];
 		this.anIntArray506 = new int[arg0.anInt3356 + 1];
 		for (@Pc(35) int local35 = 0; local35 < arg0.anInt3353; local35++) {
@@ -1276,8 +1276,8 @@ public final class Class53_Sub4_Sub2 extends Class53_Sub4 {
 	}
 
 	@OriginalMember(owner = "client!s", name = "a", descriptor = "(ZZZZZZZZZZZ)Lclient!s;")
-	public final Class53_Sub4_Sub2 method3852(@OriginalArg(0) boolean arg0, @OriginalArg(1) boolean arg1, @OriginalArg(2) boolean arg2, @OriginalArg(4) boolean arg3, @OriginalArg(5) boolean arg4, @OriginalArg(6) boolean arg5, @OriginalArg(7) boolean arg6, @OriginalArg(9) boolean arg7, @OriginalArg(10) boolean arg8) {
-		@Pc(3) Class53_Sub4_Sub2 local3 = new Class53_Sub4_Sub2();
+	public final GlModel method3852(@OriginalArg(0) boolean arg0, @OriginalArg(1) boolean arg1, @OriginalArg(2) boolean arg2, @OriginalArg(4) boolean arg3, @OriginalArg(5) boolean arg4, @OriginalArg(6) boolean arg5, @OriginalArg(7) boolean arg6, @OriginalArg(9) boolean arg7, @OriginalArg(10) boolean arg8) {
+		@Pc(3) GlModel local3 = new GlModel();
 		local3.anInt4689 = this.anInt4689;
 		local3.anInt4688 = this.anInt4688;
 		local3.anInt4691 = this.anInt4691;
@@ -1484,7 +1484,7 @@ public final class Class53_Sub4_Sub2 extends Class53_Sub4 {
 
 	@OriginalMember(owner = "client!s", name = "c", descriptor = "(ZZZ)Lclient!vg;")
 	@Override
-	public final Class53_Sub4 method3836(@OriginalArg(0) boolean arg0, @OriginalArg(1) boolean arg1, @OriginalArg(2) boolean arg2) {
+	public final Model method3836(@OriginalArg(0) boolean arg0, @OriginalArg(1) boolean arg1, @OriginalArg(2) boolean arg2) {
 		return this.method3873(arg0, arg1, arg2, Static6.aClass53_Sub4_Sub2_4, Static6.aClass53_Sub4_Sub2_3);
 	}
 
@@ -2076,7 +2076,7 @@ public final class Class53_Sub4_Sub2 extends Class53_Sub4 {
 	}
 
 	@OriginalMember(owner = "client!s", name = "a", descriptor = "(IILclient!s;[[I[[IIII)V")
-	public final void method3859(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) Class53_Sub4_Sub2 arg2, @OriginalArg(3) int[][] arg3, @OriginalArg(4) int[][] arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7) {
+	public final void method3859(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) GlModel arg2, @OriginalArg(3) int[][] arg3, @OriginalArg(4) int[][] arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7) {
 		if (!arg2.aClass15_1.aBoolean15) {
 			arg2.method3865();
 		}
@@ -2185,7 +2185,7 @@ public final class Class53_Sub4_Sub2 extends Class53_Sub4 {
 	@OriginalMember(owner = "client!s", name = "a", descriptor = "(Lclient!vc;IIIZ)V")
 	@Override
 	public final void method3807(@OriginalArg(0) Entity arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) boolean arg4) {
-		@Pc(2) Class53_Sub4_Sub2 local2 = (Class53_Sub4_Sub2) arg0;
+		@Pc(2) GlModel local2 = (GlModel) arg0;
 		if (this.anInt4690 == 0 || local2.anInt4690 == 0) {
 			return;
 		}
@@ -2855,7 +2855,7 @@ public final class Class53_Sub4_Sub2 extends Class53_Sub4 {
 
 	@OriginalMember(owner = "client!s", name = "b", descriptor = "(ZZZ)Lclient!vg;")
 	@Override
-	public final Class53_Sub4 method3833(@OriginalArg(0) boolean arg0, @OriginalArg(1) boolean arg1, @OriginalArg(2) boolean arg2) {
+	public final Model method3833(@OriginalArg(0) boolean arg0, @OriginalArg(1) boolean arg1, @OriginalArg(2) boolean arg2) {
 		return this.method3873(arg0, arg1, arg2, Static6.aClass53_Sub4_Sub2_6, Static6.aClass53_Sub4_Sub2_5);
 	}
 
@@ -2964,12 +2964,12 @@ public final class Class53_Sub4_Sub2 extends Class53_Sub4 {
 
 	@OriginalMember(owner = "client!s", name = "a", descriptor = "(ZZZ)Lclient!vg;")
 	@Override
-	public final Class53_Sub4 method3831(@OriginalArg(0) boolean arg0, @OriginalArg(1) boolean arg1, @OriginalArg(2) boolean arg2) {
+	public final Model method3831(@OriginalArg(0) boolean arg0, @OriginalArg(1) boolean arg1, @OriginalArg(2) boolean arg2) {
 		return this.method3873(arg0, arg1, arg2, Static6.aClass53_Sub4_Sub2_2, Static6.aClass53_Sub4_Sub2_1);
 	}
 
 	@OriginalMember(owner = "client!s", name = "a", descriptor = "(ZZZLclient!s;Lclient!s;)Lclient!vg;")
-	private Class53_Sub4 method3873(@OriginalArg(0) boolean arg0, @OriginalArg(1) boolean arg1, @OriginalArg(2) boolean arg2, @OriginalArg(3) Class53_Sub4_Sub2 arg3, @OriginalArg(4) Class53_Sub4_Sub2 arg4) {
+	private Model method3873(@OriginalArg(0) boolean arg0, @OriginalArg(1) boolean arg1, @OriginalArg(2) boolean arg2, @OriginalArg(3) GlModel arg3, @OriginalArg(4) GlModel arg4) {
 		arg3.anInt4689 = this.anInt4689;
 		arg3.anInt4688 = this.anInt4688;
 		arg3.anInt4691 = this.anInt4691;

@@ -516,7 +516,7 @@ public final class Component {
 	}
 
 	@OriginalMember(owner = "client!wf", name = "a", descriptor = "(Lclient!eg;Lclient!qk;IBIIZ)Lclient!vg;")
-	public final Class53_Sub4 method4723(@OriginalArg(0) Class46 arg0, @OriginalArg(1) PlayerAppearance arg1, @OriginalArg(2) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4, @OriginalArg(6) boolean arg5) {
+	public final Model method4723(@OriginalArg(0) Class46 arg0, @OriginalArg(1) PlayerAppearance arg1, @OriginalArg(2) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4, @OriginalArg(6) boolean arg5) {
 		@Pc(14) int local14;
 		@Pc(17) int local17;
 		if (arg5) {
@@ -532,7 +532,7 @@ public final class Component {
 		} else if (local14 == 1 && local17 == -1) {
 			return null;
 		} else if (local14 == 1) {
-			@Pc(61) Class53_Sub4 local61 = (Class53_Sub4) Static1.aClass26_1.get((long) (local17 + (local14 << 16)));
+			@Pc(61) Model local61 = (Model) Static1.aClass26_1.get((long) (local17 + (local14 << 16)));
 			if (local61 == null) {
 				@Pc(68) Class53_Sub3 local68 = Static25.method2752(InterfaceList.modelsArchive, local17);
 				if (local68 == null) {
@@ -547,7 +547,7 @@ public final class Component {
 			}
 			return local61;
 		} else if (local14 == 2) {
-			@Pc(120) Class53_Sub4 local120 = NpcTypeList.get(local17).method4266(arg2, arg0, arg4, arg3);
+			@Pc(120) Model local120 = NpcTypeList.get(local17).method4266(arg2, arg0, arg4, arg3);
 			if (local120 == null) {
 				Static3.aBoolean178 = true;
 				return null;
@@ -558,7 +558,7 @@ public final class Component {
 			if (arg1 == null) {
 				return null;
 			}
-			@Pc(149) Class53_Sub4 local149 = arg1.method3612(arg4, arg0, arg2, arg3);
+			@Pc(149) Model local149 = arg1.method3612(arg4, arg0, arg2, arg3);
 			if (local149 == null) {
 				Static3.aBoolean178 = true;
 				return null;
@@ -567,7 +567,7 @@ public final class Component {
 			}
 		} else if (local14 == 4) {
 			@Pc(166) ObjType local166 = ObjTypeList.get(local17);
-			@Pc(176) Class53_Sub4 local176 = local166.method4123(arg3, 10, arg2, arg1, arg0, arg4);
+			@Pc(176) Model local176 = local166.method4123(arg3, 10, arg2, arg1, arg0, arg4);
 			if (local176 == null) {
 				Static3.aBoolean178 = true;
 				return null;
@@ -575,7 +575,7 @@ public final class Component {
 				return local176;
 			}
 		} else if (local14 == 6) {
-			@Pc(204) Class53_Sub4 local204 = NpcTypeList.get(local17).method4268(arg3, 0, null, arg0, arg2, null, 0, 0, arg4);
+			@Pc(204) Model local204 = NpcTypeList.get(local17).method4268(arg3, 0, null, arg0, arg2, null, 0, 0, arg4);
 			if (local204 == null) {
 				Static3.aBoolean178 = true;
 				return null;
@@ -590,7 +590,7 @@ public final class Component {
 			@Pc(227) int local227 = this.anInt5895 & 0xFFFF;
 			@Pc(230) int local230 = this.anInt5913;
 			@Pc(235) int local235 = this.anInt5895 >>> 16;
-			@Pc(246) Class53_Sub4 local246 = arg1.method3609(arg0, local227, local230, arg3, arg4, local235, arg2);
+			@Pc(246) Model local246 = arg1.method3609(arg0, local227, local230, arg3, arg4, local235, arg2);
 			if (local246 == null) {
 				Static3.aBoolean178 = true;
 				return null;

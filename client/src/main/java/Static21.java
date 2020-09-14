@@ -1646,8 +1646,8 @@ public final class Static21 {
 				if (local4488 >= 0 && local4495 >= 0 && local4488 < 104 && local4495 < 104) {
 					@Pc(4515) int local4515 = local4495 * 128 + 64;
 					@Pc(4521) int local4521 = local4488 * 128 + 64;
-					@Pc(4539) Class53_Sub5 local4539 = new Class53_Sub5(local4452, local4479, local4521, local4515, Static11.method522(local4515, local4521, local4479) - local4460, local4456, Static2.anInt954);
-					Static2.aClass112_8.addTail(new Class4_Sub3_Sub6(local4539));
+					@Pc(4539) SpotAnim local4539 = new SpotAnim(local4452, local4479, local4521, local4515, Static11.method522(local4515, local4521, local4479) - local4460, local4456, Static2.anInt954);
+					Static2.aClass112_8.addTail(new SpotAnimNode(local4539));
 				}
 			} else if (local4466 >> 29 != 0) {
 				@Pc(4805) int local4805 = local4466 & 0xFFFF;

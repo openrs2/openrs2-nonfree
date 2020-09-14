@@ -417,22 +417,22 @@ public final class Static6 {
 	public static Buffer aClass4_Sub10_9 = new Buffer(10000);
 
 	@OriginalMember(owner = "client!s", name = "eb", descriptor = "Lclient!s;")
-	public static Class53_Sub4_Sub2 aClass53_Sub4_Sub2_1 = new Class53_Sub4_Sub2();
+	public static GlModel aClass53_Sub4_Sub2_1 = new GlModel();
 
 	@OriginalMember(owner = "client!s", name = "ib", descriptor = "Lclient!s;")
-	public static Class53_Sub4_Sub2 aClass53_Sub4_Sub2_2 = new Class53_Sub4_Sub2();
+	public static GlModel aClass53_Sub4_Sub2_2 = new GlModel();
 
 	@OriginalMember(owner = "client!s", name = "kb", descriptor = "Lclient!s;")
-	public static Class53_Sub4_Sub2 aClass53_Sub4_Sub2_3 = new Class53_Sub4_Sub2();
+	public static GlModel aClass53_Sub4_Sub2_3 = new GlModel();
 
 	@OriginalMember(owner = "client!s", name = "mb", descriptor = "Lclient!s;")
-	public static Class53_Sub4_Sub2 aClass53_Sub4_Sub2_4 = new Class53_Sub4_Sub2();
+	public static GlModel aClass53_Sub4_Sub2_4 = new GlModel();
 
 	@OriginalMember(owner = "client!s", name = "nb", descriptor = "Lclient!s;")
-	public static Class53_Sub4_Sub2 aClass53_Sub4_Sub2_5 = new Class53_Sub4_Sub2();
+	public static GlModel aClass53_Sub4_Sub2_5 = new GlModel();
 
 	@OriginalMember(owner = "client!s", name = "ob", descriptor = "Lclient!s;")
-	public static Class53_Sub4_Sub2 aClass53_Sub4_Sub2_6 = new Class53_Sub4_Sub2();
+	public static GlModel aClass53_Sub4_Sub2_6 = new GlModel();
 
 	@OriginalMember(owner = "client!s", name = "qb", descriptor = "Z")
 	public static boolean aBoolean326 = false;

@@ -172,7 +172,7 @@ public final class Player extends PathingEntity {
 			}
 			@Pc(26) Class46 local26 = this.anInt4007 != -1 && this.anInt3996 == 0 ? Static23.method2494(this.anInt4007) : null;
 			@Pc(55) Class46 local55 = this.anInt4005 == -1 || this.aBoolean98 || this.anInt4005 == this.method3314().anInt860 && local26 != null ? null : Static23.method2494(this.anInt4005);
-			@Pc(78) Class53_Sub4 local78 = this.appearance.method3608(this.aClass150Array3, this.anInt4046, this.anInt4011, this.anInt4019, local55, this.anInt3970, false, this.anInt4000, local26, false, this.anInt4044);
+			@Pc(78) Model local78 = this.appearance.method3608(this.aClass150Array3, this.anInt4046, this.anInt4011, this.anInt4019, local55, this.anInt3970, false, this.anInt4000, local26, false, this.anInt4044);
 			if (local78 == null) {
 				return;
 			}
@@ -199,7 +199,7 @@ public final class Player extends PathingEntity {
 		@Pc(31) Class34 local31 = this.method3314();
 		@Pc(53) boolean local53 = local31.anInt844 != 0 || local31.anInt847 != 0 || local31.anInt850 != 0 || local31.anInt851 != 0;
 		@Pc(82) Class46 local82 = this.anInt4005 == -1 || this.aBoolean98 || this.anInt4005 == this.method3314().anInt860 && local27 != null ? null : Static23.method2494(this.anInt4005);
-		@Pc(105) Class53_Sub4 local105 = this.appearance.method3608(this.aClass150Array3, this.anInt4046, this.anInt4011, this.anInt4019, local82, this.anInt3970, local53, this.anInt4000, local27, true, this.anInt4044);
+		@Pc(105) Model local105 = this.appearance.method3608(this.aClass150Array3, this.anInt4046, this.anInt4011, this.anInt4019, local82, this.anInt3970, local53, this.anInt4000, local27, true, this.anInt4044);
 		@Pc(108) int local108 = Static15.method1228();
 		if (GlRenderer.enabled && GameShell.maxMemory < 96 && local108 > 50) {
 			Static24.method2567();
@@ -220,7 +220,7 @@ public final class Player extends PathingEntity {
 		}
 		this.anInt4016 = local105.method3813();
 		if (Preferences.characterShadows && (this.appearance.npcId == -1 || NpcTypeList.get(this.appearance.npcId).aBoolean354)) {
-			@Pc(222) Class53_Sub4 local222 = Static12.method745(0, local82 == null ? local27 : local82, arg0, 1, 240, local105, local82 == null ? this.anInt3970 : this.anInt4046, this.anInt4006, this.z, this.aBoolean284, 0, 160, this.x);
+			@Pc(222) Model local222 = Static12.method745(0, local82 == null ? local27 : local82, arg0, 1, 240, local105, local82 == null ? this.anInt3970 : this.anInt4046, this.anInt4006, this.z, this.aBoolean284, 0, 160, this.x);
 			if (GlRenderer.enabled) {
 				@Pc(241) float local241 = GlRenderer.method1620();
 				@Pc(243) float local243 = GlRenderer.method1612();
@@ -264,7 +264,7 @@ public final class Player extends PathingEntity {
 			}
 		}
 		this.method3305(local105);
-		@Pc(494) Class53_Sub4 local494 = null;
+		@Pc(494) Model local494 = null;
 		this.method3312(local105, arg0);
 		if (!this.aBoolean98 && this.anInt3961 != -1 && this.anInt4026 != -1) {
 			@Pc(518) Class110 local518 = Static21.method2004(this.anInt3961);
@@ -284,16 +284,16 @@ public final class Player extends PathingEntity {
 				}
 			}
 		}
-		@Pc(572) Class53_Sub4 local572 = null;
+		@Pc(572) Model local572 = null;
 		if (!this.aBoolean98 && this.anObject5 != null) {
 			if (this.anInt4010 <= Static2.anInt954) {
 				this.anObject5 = null;
 			}
 			if (this.anInt4042 <= Static2.anInt954 && Static2.anInt954 < this.anInt4010) {
 				if (this.anObject5 instanceof Class53_Sub7) {
-					local572 = (Class53_Sub4) ((Class53_Sub7) this.anObject5).method3735();
+					local572 = (Model) ((Class53_Sub7) this.anObject5).method3735();
 				} else {
-					local572 = (Class53_Sub4) this.anObject5;
+					local572 = (Model) this.anObject5;
 				}
 				local572.method3823(this.anInt4032 - this.x, this.anInt3975 - this.anInt4006, this.anInt4027 - this.z);
 				if (this.anInt4017 == 512) {
@@ -311,7 +311,7 @@ public final class Player extends PathingEntity {
 			local105.method3805(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, this.aClass20_Sub3_6);
 			if (local494 != null) {
 				if (this.aClass20_Sub3_6 != null) {
-					@Pc(736) Class53_Sub4_Sub2 local736 = (Class53_Sub4_Sub2) local494;
+					@Pc(736) GlModel local736 = (GlModel) local494;
 					this.aClass20_Sub3_6.method2967(local736.aClass158Array3, local736.aClass167Array3, true, local736.anIntArray507, local736.anIntArray504, local736.anIntArray502);
 				}
 				local494.aBoolean324 = true;
@@ -319,10 +319,10 @@ public final class Player extends PathingEntity {
 			}
 		} else {
 			if (local494 != null) {
-				local105 = ((Class53_Sub4_Sub1) local105).method2903(local494);
+				local105 = ((SoftwareModel) local105).method2903(local494);
 			}
 			if (local572 != null) {
-				local105 = ((Class53_Sub4_Sub1) local105).method2903(local572);
+				local105 = ((SoftwareModel) local105).method2903(local572);
 			}
 			this.method3315(local105, local494);
 			local105.aBoolean324 = true;
@@ -379,13 +379,13 @@ public final class Player extends PathingEntity {
 	}
 
 	@OriginalMember(owner = "client!f", name = "a", descriptor = "(IILclient!ne;IIIIIIIIBIILclient!vg;I)V")
-	private void method1175(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) Class20_Sub3 arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) int arg8, @OriginalArg(9) int arg9, @OriginalArg(10) int arg10, @OriginalArg(12) int arg11, @OriginalArg(13) int arg12, @OriginalArg(14) Class53_Sub4 arg13, @OriginalArg(15) int arg14) {
+	private void method1175(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) Class20_Sub3 arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) int arg8, @OriginalArg(9) int arg9, @OriginalArg(10) int arg10, @OriginalArg(12) int arg11, @OriginalArg(13) int arg12, @OriginalArg(14) Model arg13, @OriginalArg(15) int arg14) {
 		@Pc(15) int local15 = arg8 * arg8 + arg1 * arg1;
 		if (local15 < 16 || local15 > arg12) {
 			return;
 		}
 		@Pc(39) int local39 = (int) (Math.atan2((double) arg8, (double) arg1) * 325.949D) & 0x7FF;
-		@Pc(51) Class53_Sub4 local51 = Static29.method3427(local39, arg13, this.z, arg10, this.anInt4006, this.x);
+		@Pc(51) Model local51 = Static29.method3427(local39, arg13, this.z, arg10, this.anInt4006, this.x);
 		if (local51 == null) {
 			return;
 		}

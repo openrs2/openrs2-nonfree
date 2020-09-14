@@ -4,7 +4,7 @@ import dev.openrs2.deob.annotation.OriginalMember;
 import dev.openrs2.deob.annotation.Pc;
 
 @OriginalClass("client!vg")
-public abstract class Class53_Sub4 extends Entity {
+public abstract class Model extends Entity {
 
 	@OriginalMember(owner = "client!vg", name = "m", descriptor = "Z")
 	public boolean aBoolean324 = false;
@@ -242,13 +242,13 @@ public abstract class Class53_Sub4 extends Entity {
 	protected abstract boolean method3830();
 
 	@OriginalMember(owner = "client!vg", name = "a", descriptor = "(ZZZ)Lclient!vg;")
-	public abstract Class53_Sub4 method3831(@OriginalArg(0) boolean arg0, @OriginalArg(1) boolean arg1, @OriginalArg(2) boolean arg2);
+	public abstract Model method3831(@OriginalArg(0) boolean arg0, @OriginalArg(1) boolean arg1, @OriginalArg(2) boolean arg2);
 
 	@OriginalMember(owner = "client!vg", name = "c", descriptor = "(I)V")
 	public abstract void method3832(@OriginalArg(0) int arg0);
 
 	@OriginalMember(owner = "client!vg", name = "b", descriptor = "(ZZZ)Lclient!vg;")
-	public abstract Class53_Sub4 method3833(@OriginalArg(0) boolean arg0, @OriginalArg(1) boolean arg1, @OriginalArg(2) boolean arg2);
+	public abstract Model method3833(@OriginalArg(0) boolean arg0, @OriginalArg(1) boolean arg1, @OriginalArg(2) boolean arg2);
 
 	@OriginalMember(owner = "client!vg", name = "a", descriptor = "(IIII)V")
 	protected abstract void method3834(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3);
@@ -272,7 +272,7 @@ public abstract class Class53_Sub4 extends Entity {
 	}
 
 	@OriginalMember(owner = "client!vg", name = "c", descriptor = "(ZZZ)Lclient!vg;")
-	public abstract Class53_Sub4 method3836(@OriginalArg(0) boolean arg0, @OriginalArg(1) boolean arg1, @OriginalArg(2) boolean arg2);
+	public abstract Model method3836(@OriginalArg(0) boolean arg0, @OriginalArg(1) boolean arg1, @OriginalArg(2) boolean arg2);
 
 	@OriginalMember(owner = "client!vg", name = "a", descriptor = "(I[IIIIZI[I)V")
 	protected abstract void method3837(@OriginalArg(0) int arg0, @OriginalArg(1) int[] arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) boolean arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int[] arg7);

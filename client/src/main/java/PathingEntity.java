@@ -324,7 +324,7 @@ public abstract class PathingEntity extends Entity {
 	}
 
 	@OriginalMember(owner = "client!qc", name = "a", descriptor = "(ILclient!vg;)V")
-	protected final void method3305(@OriginalArg(1) Class53_Sub4 arg0) {
+	protected final void method3305(@OriginalArg(1) Model arg0) {
 		@Pc(9) Class34 local9 = this.method3314();
 		if (local9.anInt850 == 0 && local9.anInt851 == 0) {
 			return;
@@ -601,7 +601,7 @@ public abstract class PathingEntity extends Entity {
 	}
 
 	@OriginalMember(owner = "client!qc", name = "a", descriptor = "(Lclient!vg;II)V")
-	protected final void method3312(@OriginalArg(0) Class53_Sub4 arg0, @OriginalArg(1) int arg1) {
+	protected final void method3312(@OriginalArg(0) Model arg0, @OriginalArg(1) int arg1) {
 		Static6.anInt4907 = 0;
 		Static4.anInt2747 = 0;
 		Static5.anInt3525 = 0;
@@ -662,10 +662,10 @@ public abstract class PathingEntity extends Entity {
 	}
 
 	@OriginalMember(owner = "client!qc", name = "a", descriptor = "(Lclient!vg;BLclient!vg;)V")
-	protected final void method3315(@OriginalArg(0) Class53_Sub4 arg0, @OriginalArg(2) Class53_Sub4 arg1) {
+	protected final void method3315(@OriginalArg(0) Model arg0, @OriginalArg(2) Model arg1) {
 		if (GlRenderer.enabled) {
-			@Pc(67) Class53_Sub4_Sub2 local67 = (Class53_Sub4_Sub2) arg0;
-			@Pc(70) Class53_Sub4_Sub2 local70 = (Class53_Sub4_Sub2) arg1;
+			@Pc(67) GlModel local67 = (GlModel) arg0;
+			@Pc(70) GlModel local70 = (GlModel) arg1;
 			if ((this.aClass20_Sub3_6 == null || this.aClass20_Sub3_6.aBoolean250) && (local67.aClass158Array3 != null || local67.aClass167Array3 != null || local70 != null && (local70.aClass158Array3 != null || local70.aClass167Array3 != null))) {
 				this.aClass20_Sub3_6 = new Class20_Sub3(Static2.anInt954, this.getSize(), this.getSize());
 			}
@@ -673,8 +673,8 @@ public abstract class PathingEntity extends Entity {
 				this.aClass20_Sub3_6.method2967(local67.aClass158Array3, local67.aClass167Array3, false, local67.anIntArray507, local67.anIntArray504, local67.anIntArray502);
 			}
 		} else {
-			@Pc(4) Class53_Sub4_Sub1 local4 = (Class53_Sub4_Sub1) arg1;
-			@Pc(7) Class53_Sub4_Sub1 local7 = (Class53_Sub4_Sub1) arg0;
+			@Pc(4) SoftwareModel local4 = (SoftwareModel) arg1;
+			@Pc(7) SoftwareModel local7 = (SoftwareModel) arg0;
 			if ((this.aClass20_Sub3_6 == null || this.aClass20_Sub3_6.aBoolean250) && (local7.aClass158Array2 != null || local7.aClass167Array2 != null || local4 != null && (local4.aClass158Array2 != null || local4.aClass167Array2 != null))) {
 				this.aClass20_Sub3_6 = new Class20_Sub3(Static2.anInt954, this.getSize(), this.getSize());
 			}

@@ -4,7 +4,7 @@ import dev.openrs2.deob.annotation.OriginalMember;
 import dev.openrs2.deob.annotation.Pc;
 
 @OriginalClass("client!oc")
-public final class Class53_Sub6 extends Entity {
+public final class ProjAnim extends Entity {
 
 	@OriginalMember(owner = "client!oc", name = "q", descriptor = "Lclient!ne;")
 	private Class20_Sub3 aClass20_Sub3_5;
@@ -94,7 +94,7 @@ public final class Class53_Sub6 extends Entity {
 	private final Class46 aClass46_2;
 
 	@OriginalMember(owner = "client!oc", name = "<init>", descriptor = "(IIIIIIIIIII)V")
-	public Class53_Sub6(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) int arg8, @OriginalArg(9) int arg9, @OriginalArg(10) int arg10) {
+	public ProjAnim(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) int arg8, @OriginalArg(9) int arg9, @OriginalArg(10) int arg10) {
 		this.anInt3728 = arg3;
 		this.anInt3726 = arg4;
 		this.aBoolean268 = false;
@@ -157,7 +157,7 @@ public final class Class53_Sub6 extends Entity {
 	@OriginalMember(owner = "client!oc", name = "a", descriptor = "(IIIIIIIIJILclient!ne;)V")
 	@Override
 	public final void method3805(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) long arg8, @OriginalArg(9) int arg9, @OriginalArg(10) Class20_Sub3 arg10) {
-		@Pc(7) Class53_Sub4 local7 = this.method3108();
+		@Pc(7) Model local7 = this.method3108();
 		if (local7 != null) {
 			this.method3106(local7);
 			local7.method3805(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, this.aClass20_Sub3_5);
@@ -190,9 +190,9 @@ public final class Class53_Sub6 extends Entity {
 	}
 
 	@OriginalMember(owner = "client!oc", name = "a", descriptor = "(ILclient!vg;)V")
-	private void method3106(@OriginalArg(1) Class53_Sub4 arg0) {
+	private void method3106(@OriginalArg(1) Model arg0) {
 		if (GlRenderer.enabled) {
-			@Pc(4) Class53_Sub4_Sub2 local4 = (Class53_Sub4_Sub2) arg0;
+			@Pc(4) GlModel local4 = (GlModel) arg0;
 			if ((this.aClass20_Sub3_5 == null || this.aClass20_Sub3_5.aBoolean250) && (local4.aClass158Array3 != null || local4.aClass167Array3 != null)) {
 				this.aClass20_Sub3_5 = new Class20_Sub3(Static2.anInt954, 1, 1);
 			}
@@ -200,7 +200,7 @@ public final class Class53_Sub6 extends Entity {
 				this.aClass20_Sub3_5.method2967(local4.aClass158Array3, local4.aClass167Array3, false, local4.anIntArray507, local4.anIntArray504, local4.anIntArray502);
 			}
 		} else {
-			@Pc(51) Class53_Sub4_Sub1 local51 = (Class53_Sub4_Sub1) arg0;
+			@Pc(51) SoftwareModel local51 = (SoftwareModel) arg0;
 			if ((this.aClass20_Sub3_5 == null || this.aClass20_Sub3_5.aBoolean250) && (local51.aClass158Array2 != null || local51.aClass167Array2 != null)) {
 				this.aClass20_Sub3_5 = new Class20_Sub3(Static2.anInt954, 1, 1);
 			}
@@ -218,9 +218,9 @@ public final class Class53_Sub6 extends Entity {
 	}
 
 	@OriginalMember(owner = "client!oc", name = "a", descriptor = "(Z)Lclient!vg;")
-	private Class53_Sub4 method3108() {
+	private Model method3108() {
 		@Pc(14) Class110 local14 = Static21.method2004(this.anInt3720);
-		@Pc(24) Class53_Sub4 local24 = local14.method2569(this.anInt3718, this.anInt3725, this.anInt3708);
+		@Pc(24) Model local24 = local14.method2569(this.anInt3718, this.anInt3725, this.anInt3708);
 		if (local24 == null) {
 			return null;
 		} else {
@@ -233,7 +233,7 @@ public final class Class53_Sub6 extends Entity {
 	@Override
 	public final void method3806(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4) {
 		if (!this.aBoolean267) {
-			@Pc(11) Class53_Sub4 local11 = this.method3108();
+			@Pc(11) Model local11 = this.method3108();
 			if (local11 == null) {
 				return;
 			}

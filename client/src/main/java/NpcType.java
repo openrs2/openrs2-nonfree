@@ -431,14 +431,14 @@ public final class NpcType {
 	}
 
 	@OriginalMember(owner = "client!ua", name = "a", descriptor = "(ILclient!eg;BII)Lclient!vg;")
-	public final Class53_Sub4 method4266(@OriginalArg(0) int arg0, @OriginalArg(1) Class46 arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3) {
+	public final Model method4266(@OriginalArg(0) int arg0, @OriginalArg(1) Class46 arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3) {
 		if (this.anIntArray590 != null) {
 			@Pc(13) NpcType local13 = this.method4265();
 			return local13 == null ? null : local13.method4266(arg0, arg1, arg2, arg3);
 		} else if (this.anIntArray588 == null) {
 			return null;
 		} else {
-			@Pc(40) Class53_Sub4 local40 = (Class53_Sub4) NpcTypeList.headModels.get((long) this.id);
+			@Pc(40) Model local40 = (Model) NpcTypeList.headModels.get((long) this.id);
 			if (local40 == null) {
 				@Pc(52) boolean local52 = false;
 				for (@Pc(54) int local54 = 0; local54 < this.anIntArray588.length; local54++) {
@@ -484,12 +484,12 @@ public final class NpcType {
 	}
 
 	@OriginalMember(owner = "client!ua", name = "a", descriptor = "(IIILclient!eg;Lclient!eg;I[Lclient!re;III)Lclient!vg;")
-	public final Class53_Sub4 method4268(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(3) Class46 arg2, @OriginalArg(4) Class46 arg3, @OriginalArg(5) int arg4, @OriginalArg(6) Class150[] arg5, @OriginalArg(7) int arg6, @OriginalArg(8) int arg7, @OriginalArg(9) int arg8) {
+	public final Model method4268(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(3) Class46 arg2, @OriginalArg(4) Class46 arg3, @OriginalArg(5) int arg4, @OriginalArg(6) Class150[] arg5, @OriginalArg(7) int arg6, @OriginalArg(8) int arg7, @OriginalArg(9) int arg8) {
 		if (this.anIntArray590 != null) {
 			@Pc(13) NpcType local13 = this.method4265();
 			return local13 == null ? null : local13.method4268(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		}
-		@Pc(39) Class53_Sub4 local39 = (Class53_Sub4) NpcTypeList.models.get((long) this.id);
+		@Pc(39) Model local39 = (Model) NpcTypeList.models.get((long) this.id);
 		if (local39 == null) {
 			@Pc(44) boolean local44 = false;
 			for (@Pc(46) int local46 = 0; local46 < this.anIntArray589.length; local46++) {
@@ -589,7 +589,7 @@ public final class NpcType {
 			}
 			local39 = local597.method2761(this.anInt5254 + 64, this.anInt5239 + 850, -30, -50, -30);
 			if (GlRenderer.enabled) {
-				((Class53_Sub4_Sub2) local39).method3872(false, false, false, false, false, true);
+				((GlModel) local39).method3872(false, false, false, false, false, true);
 			}
 			NpcTypeList.models.put((long) this.id, local39);
 		}
@@ -636,7 +636,7 @@ public final class NpcType {
 			}
 		}
 		if (!local718 && arg3 == null && arg2 == null) {
-			@Pc(934) Class53_Sub4 local934 = local39.method3831(true, true, true);
+			@Pc(934) Model local934 = local39.method3831(true, true, true);
 			if (this.anInt5247 != 128 || this.anInt5265 != 128) {
 				local934.method3824(this.anInt5247, this.anInt5265, this.anInt5247);
 			}
@@ -704,7 +704,7 @@ public final class NpcType {
 				}
 			}
 		}
-		@Pc(1218) Class53_Sub4 local1218 = local39.method3831(!local720, !local722, !local724);
+		@Pc(1218) Model local1218 = local39.method3831(!local720, !local722, !local724);
 		@Pc(1220) int local1220 = 1;
 		for (@Pc(1228) int local1228 = 0; local1228 < local731; local1228++) {
 			if (Static1.aClass4_Sub3_Sub19Array1[local1228] != null) {

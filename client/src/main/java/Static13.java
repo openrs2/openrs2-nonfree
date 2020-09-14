@@ -450,7 +450,7 @@ public final class Static13 {
 				local9 = ObjTypeList.get(local19);
 			}
 		}
-		@Pc(61) Class53_Sub4_Sub1 local61 = local9.method4135(arg4);
+		@Pc(61) SoftwareModel local61 = local9.method4135(arg4);
 		if (local61 == null) {
 			return null;
 		}

@@ -244,7 +244,7 @@ public final class ObjType {
 	}
 
 	@OriginalMember(owner = "client!td", name = "a", descriptor = "(IIIILclient!qk;Lclient!eg;I)Lclient!vg;")
-	public final Class53_Sub4 method4123(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) PlayerAppearance arg3, @OriginalArg(5) Class46 arg4, @OriginalArg(6) int arg5) {
+	public final Model method4123(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) PlayerAppearance arg3, @OriginalArg(5) Class46 arg4, @OriginalArg(6) int arg5) {
 		if (this.countObj != null && arg1 > 1) {
 			@Pc(13) int local13 = -1;
 			for (@Pc(15) int local15 = 0; local15 < 10; local15++) {
@@ -256,7 +256,7 @@ public final class ObjType {
 				return ObjTypeList.get(local13).method4123(arg0, 1, arg2, arg3, arg4, arg5);
 			}
 		}
-		@Pc(62) Class53_Sub4 local62 = (Class53_Sub4) ObjTypeList.models.get((long) this.id);
+		@Pc(62) Model local62 = (Model) ObjTypeList.models.get((long) this.id);
 		if (local62 == null) {
 			@Pc(72) Class53_Sub3 local72 = Static25.method2752(ObjTypeList.modelsArchive, this.model);
 			if (local72 == null) {
@@ -292,7 +292,7 @@ public final class ObjType {
 			}
 			local62.aBoolean324 = true;
 			if (GlRenderer.enabled) {
-				((Class53_Sub4_Sub2) local62).method3872(false, false, false, false, false, true);
+				((GlModel) local62).method3872(false, false, false, false, false, true);
 			}
 			ObjTypeList.models.put((long) this.id, local62);
 		}
@@ -465,7 +465,7 @@ public final class ObjType {
 	}
 
 	@OriginalMember(owner = "client!td", name = "a", descriptor = "(Lclient!qk;I)Lclient!na;")
-	public final Class53_Sub4_Sub1 method4135(@OriginalArg(0) PlayerAppearance arg0) {
+	public final SoftwareModel method4135(@OriginalArg(0) PlayerAppearance arg0) {
 		@Pc(11) Class53_Sub3 local11 = Static25.method2752(ObjTypeList.modelsArchive, this.model);
 		if (local11 == null) {
 			return null;
@@ -494,7 +494,7 @@ public final class ObjType {
 				}
 			}
 		}
-		@Pc(168) Class53_Sub4_Sub1 local168 = local11.method2759(this.ambient + 64, this.contrast + 768, -50, -10, -50);
+		@Pc(168) SoftwareModel local168 = local11.method2759(this.ambient + 64, this.contrast + 768, -50, -10, -50);
 		if (this.resizeX != 128 || this.resizeY != 128 || this.resizeZ != 128) {
 			local168.method3824(this.resizeX, this.resizeY, this.resizeZ);
 		}

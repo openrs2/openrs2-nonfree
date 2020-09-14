@@ -508,7 +508,7 @@ public final class Static4 {
 	public static boolean aBoolean241 = false;
 
 	@OriginalMember(owner = "client!na", name = "z", descriptor = "Lclient!na;")
-	public static final Class53_Sub4_Sub1 aClass53_Sub4_Sub1_1 = new Class53_Sub4_Sub1();
+	public static final SoftwareModel aClass53_Sub4_Sub1_1 = new SoftwareModel();
 
 	@OriginalMember(owner = "client!na", name = "O", descriptor = "[B")
 	public static byte[] aByteArray44 = new byte[1];
@@ -526,10 +526,10 @@ public final class Static4 {
 	public static short[] aShortArray65 = new short[1];
 
 	@OriginalMember(owner = "client!na", name = "fb", descriptor = "Lclient!na;")
-	public static final Class53_Sub4_Sub1 aClass53_Sub4_Sub1_2 = new Class53_Sub4_Sub1();
+	public static final SoftwareModel aClass53_Sub4_Sub1_2 = new SoftwareModel();
 
 	@OriginalMember(owner = "client!na", name = "gb", descriptor = "Lclient!na;")
-	public static final Class53_Sub4_Sub1 aClass53_Sub4_Sub1_3 = new Class53_Sub4_Sub1();
+	public static final SoftwareModel aClass53_Sub4_Sub1_3 = new SoftwareModel();
 
 	@OriginalMember(owner = "client!na", name = "hb", descriptor = "[I")
 	public static int[] anIntArray354 = new int[1];

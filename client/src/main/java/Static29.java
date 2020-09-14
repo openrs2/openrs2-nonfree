@@ -661,9 +661,9 @@ public final class Static29 {
 	}
 
 	@OriginalMember(owner = "client!ph", name = "a", descriptor = "(ILclient!vg;IIBII)Lclient!vg;")
-	public static Class53_Sub4 method3427(@OriginalArg(0) int arg0, @OriginalArg(1) Class53_Sub4 arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(5) int arg4, @OriginalArg(6) int arg5) {
+	public static Model method3427(@OriginalArg(0) int arg0, @OriginalArg(1) Model arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(5) int arg4, @OriginalArg(6) int arg5) {
 		@Pc(18) long local18 = (long) arg3;
-		@Pc(24) Class53_Sub4 local24 = (Class53_Sub4) Static4.aClass26_30.get(local18);
+		@Pc(24) Model local24 = (Model) Static4.aClass26_30.get(local18);
 		if (local24 == null) {
 			@Pc(32) Class53_Sub3 local32 = Static25.method2752(client.js5Archive7, arg3);
 			if (local32 == null) {
@@ -676,12 +676,12 @@ public final class Static29 {
 		@Pc(56) int local56 = arg1.method3838();
 		@Pc(59) int local59 = arg1.method3818();
 		@Pc(62) int local62 = arg1.method3841();
-		@Pc(68) Class53_Sub4 local68 = local24.method3836(true, true, true);
+		@Pc(68) Model local68 = local24.method3836(true, true, true);
 		if (arg0 != 0) {
 			local68.method3815(arg0);
 		}
 		if (GlRenderer.enabled) {
-			@Pc(148) Class53_Sub4_Sub2 local148 = (Class53_Sub4_Sub2) local68;
+			@Pc(148) GlModel local148 = (GlModel) local68;
 			if (Static11.method522(arg2 + local59, arg5 + local53, Static7.anInt5334) != arg4 || arg4 != Static11.method522(arg2 + local62, local56 + arg5, Static7.anInt5334)) {
 				for (@Pc(183) int local183 = 0; local183 < local148.anInt4689; local183++) {
 					@Pc(189) int[] local189 = local148.anIntArray504;
@@ -691,7 +691,7 @@ public final class Static29 {
 				local148.aClass57_1.aBoolean103 = false;
 			}
 		} else {
-			@Pc(78) Class53_Sub4_Sub1 local78 = (Class53_Sub4_Sub1) local68;
+			@Pc(78) SoftwareModel local78 = (SoftwareModel) local68;
 			if (arg4 != Static11.method522(arg2 + local59, local53 + arg5, Static7.anInt5334) || Static11.method522(local62 + arg2, local56 + arg5, Static7.anInt5334) != arg4) {
 				for (@Pc(108) int local108 = 0; local108 < local78.anInt3440; local108++) {
 					@Pc(114) int[] local114 = local78.anIntArray344;
