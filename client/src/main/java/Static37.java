@@ -44,8 +44,8 @@ public final class Static37 {
 		}
 		Static3.aClass4_Sub10_Sub1_1.writeByteS(++Static1.aByte1);
 		Static3.aClass4_Sub10_Sub1_1.writeByte(Keyboard.pressedKeys[82] ? 1 : 0);
-		Static3.aClass4_Sub10_Sub1_1.writeShort(Static7.anInt5479 + arg2);
-		Static3.aClass4_Sub10_Sub1_1.writeShortLEA(arg0 + Static5.anInt3983);
+		Static3.aClass4_Sub10_Sub1_1.writeShort(Static7.originZ + arg2);
+		Static3.aClass4_Sub10_Sub1_1.writeShortLEA(arg0 + Static5.originX);
 	}
 
 	@OriginalMember(owner = "client!wb", name = "c", descriptor = "(I)I")
@@ -55,18 +55,18 @@ public final class Static37 {
 
 	@OriginalMember(owner = "client!wb", name = "a", descriptor = "(IIIJ)Z")
 	public static boolean method4669(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) long arg3) {
-		@Pc(7) Class4_Sub19 local7 = Static1.aClass4_Sub19ArrayArrayArray1[arg0][arg1][arg2];
+		@Pc(7) Tile local7 = Terrain.tiles[arg0][arg1][arg2];
 		if (local7 == null) {
 			return false;
-		} else if (local7.aClass179_1 != null && local7.aClass179_1.aLong188 == arg3) {
+		} else if (local7.wall != null && local7.wall.aLong188 == arg3) {
 			return true;
-		} else if (local7.aClass182_1 != null && local7.aClass182_1.aLong194 == arg3) {
+		} else if (local7.wallDecor != null && local7.wallDecor.aLong194 == arg3) {
 			return true;
-		} else if (local7.aClass42_1 != null && local7.aClass42_1.aLong45 == arg3) {
+		} else if (local7.groundDecor != null && local7.groundDecor.aLong45 == arg3) {
 			return true;
 		} else {
-			for (@Pc(46) int local46 = 0; local46 < local7.anInt3554; local46++) {
-				if (local7.aClass33Array3[local46].aLong38 == arg3) {
+			for (@Pc(46) int local46 = 0; local46 < local7.sceneryLen; local46++) {
+				if (local7.scenery[local46].aLong38 == arg3) {
 					return true;
 				}
 			}
@@ -136,10 +136,10 @@ public final class Static37 {
 		for (@Pc(31) int local31 = 0; local31 < local29; local31++) {
 			@Pc(42) byte[] local42 = local11[local31];
 			if (local42 != null) {
-				@Pc(55) int local55 = (Static7.anIntArray597[local31] >> 8) * 64 - Static5.anInt3983;
-				@Pc(66) int local66 = (Static7.anIntArray597[local31] & 0xFF) * 64 - Static7.anInt5479;
+				@Pc(55) int local55 = (Static7.mapSquares[local31] >> 8) * 64 - Static5.originX;
+				@Pc(66) int local66 = (Static7.mapSquares[local31] & 0xFF) * 64 - Static7.originZ;
 				Static9.method763();
-				Static11.method576(arg0, local42, local66, local55, Static7.aClass30Array1);
+				Static11.method576(arg0, local42, local66, local55, PathFinder.collisionMaps);
 			}
 		}
 	}
@@ -151,86 +151,86 @@ public final class Static37 {
 			if (local16 == null) {
 				return;
 			}
-			@Pc(42) PathingEntity local42;
-			if (local16.anInt4992 < 0) {
-				@Pc(33) int local33 = -local16.anInt4992 - 1;
-				if (local33 == Static7.anInt2022) {
-					local42 = Player.self;
+			@Pc(42) PathingEntity entity;
+			if (local16.entityId < 0) {
+				@Pc(33) int playerId = -local16.entityId - 1;
+				if (playerId == Player.selfId) {
+					entity = Player.self;
 				} else {
-					local42 = Static5.aClass53_Sub1_Sub1Array1[local33];
+					entity = Player.players[playerId];
 				}
 			} else {
-				@Pc(55) int local55 = local16.anInt4992 - 1;
-				local42 = Static3.aClass53_Sub1_Sub2Array1[local55];
+				@Pc(55) int npcId = local16.entityId - 1;
+				entity = Npc.npcs[npcId];
 			}
-			if (local42 != null) {
-				@Pc(69) LocType local69 = LocTypeList.get(local16.anInt5004);
-				if (Static7.anInt5334 < 3) {
+			if (entity != null) {
+				@Pc(69) LocType type = LocTypeList.get(local16.locId);
+				if (Static7.y < 3) {
 				}
-				@Pc(88) int local88;
-				@Pc(85) int local85;
-				if (local16.anInt5003 == 1 || local16.anInt5003 == 3) {
-					local88 = local69.anInt5516;
-					local85 = local69.anInt5527;
+				@Pc(88) int width;
+				@Pc(85) int length;
+				if (local16.angle == 1 || local16.angle == 3) {
+					width = type.length;
+					length = type.width;
 				} else {
-					local85 = local69.anInt5516;
-					local88 = local69.anInt5527;
+					length = type.length;
+					width = type.width;
 				}
-				@Pc(105) int local105 = local16.anInt5010 + (local88 + 1 >> 1);
-				@Pc(112) int local112 = local16.anInt5010 + (local88 >> 1);
-				@Pc(120) int local120 = local16.anInt4993 + (local85 >> 1);
-				@Pc(130) int local130 = local16.anInt4993 + (local85 + 1 >> 1);
-				@Pc(134) int[][] local134 = Static6.anIntArrayArrayArray13[Static7.anInt5334];
+				@Pc(105) int local105 = local16.x + (width + 1 >> 1);
+				@Pc(112) int local112 = local16.x + (width >> 1);
+				@Pc(120) int local120 = local16.z + (length >> 1);
+				@Pc(130) int local130 = local16.z + (length + 1 >> 1);
+				@Pc(134) int[][] local134 = Terrain.tileHeights[Static7.y];
 				@Pc(161) int local161 = local134[local105][local120] + local134[local112][local120] + local134[local112][local130] + local134[local105][local130] >> 2;
 				@Pc(163) Entity local163 = null;
-				@Pc(168) int local168 = Static1.anIntArray52[local16.anInt4998];
-				if (local168 == 0) {
-					@Pc(234) Class179 local234 = Static24.method2611(Static7.anInt5334, local16.anInt5010, local16.anInt4993);
-					if (local234 != null) {
-						local163 = local234.aClass53_5;
+				@Pc(168) int layer = Loc.LAYERS[local16.shape];
+				if (layer == 0) {
+					@Pc(234) Wall wall = Terrain.getWall(Static7.y, local16.x, local16.z);
+					if (wall != null) {
+						local163 = wall.aClass53_5;
 					}
-				} else if (local168 == 1) {
-					@Pc(219) Class182 local219 = Static33.method4126(Static7.anInt5334, local16.anInt5010, local16.anInt4993);
-					if (local219 != null) {
-						local163 = local219.aClass53_10;
+				} else if (layer == 1) {
+					@Pc(219) WallDecor wallDecor = Terrain.getWallDecor(Static7.y, local16.x, local16.z);
+					if (wallDecor != null) {
+						local163 = wallDecor.aClass53_10;
 					}
-				} else if (local168 == 2) {
-					@Pc(205) Class33 local205 = Static26.method3062(Static7.anInt5334, local16.anInt5010, local16.anInt4993);
-					if (local205 != null) {
-						local163 = local205.aClass53_1;
+				} else if (layer == 2) {
+					@Pc(205) Scenery scenery = Terrain.getScenery(Static7.y, local16.x, local16.z);
+					if (scenery != null) {
+						local163 = scenery.aClass53_1;
 					}
-				} else if (local168 == 3) {
-					@Pc(192) Class42 local192 = Static11.method527(Static7.anInt5334, local16.anInt5010, local16.anInt4993);
-					if (local192 != null) {
-						local163 = local192.aClass53_2;
+				} else if (layer == 3) {
+					@Pc(192) GroundDecor groundDecor = Terrain.getGroundDecor(Static7.y, local16.x, local16.z);
+					if (groundDecor != null) {
+						local163 = groundDecor.aClass53_2;
 					}
 				}
 				if (local163 != null) {
-					Static13.method1011(-1, Static7.anInt5334, 0, local16.anInt5010, local16.anInt4999 + 1, local16.anInt4993, 0, local168, local16.anInt4997 + 1);
-					local42.anInt4027 = local16.anInt4993 * 128 + local85 * 64;
+					LocList.add(-1, local16.x, Static7.y, local16.z, 0, 0, layer, local16.anInt4999 + 1, local16.anInt4997 + 1);
+					entity.anInt4027 = local16.z * 128 + length * 64;
 					@Pc(274) int local274 = local16.anInt4994;
 					@Pc(277) int local277 = local16.anInt4995;
-					local42.anInt4032 = local16.anInt5010 * 128 + local88 * 64;
-					local42.anInt3975 = local161;
-					local42.anInt4042 = local16.anInt4997 + Static2.anInt954;
+					entity.anInt4032 = local16.x * 128 + width * 64;
+					entity.anInt3975 = local161;
+					entity.anInt4042 = local16.anInt4997 + Static2.anInt954;
 					@Pc(300) int local300 = local16.anInt5007;
-					local42.anObject5 = local163;
-					local42.anInt4010 = local16.anInt4999 + Static2.anInt954;
+					entity.anObject5 = local163;
+					entity.anInt4010 = local16.anInt4999 + Static2.anInt954;
 					if (local300 < local277) {
 						@Pc(315) int local315 = local277;
 						local277 = local300;
 						local300 = local315;
 					}
-					local42.anInt4041 = local16.anInt5010 + local300;
-					local42.anInt4043 = local16.anInt5010 + local277;
+					entity.anInt4041 = local16.x + local300;
+					entity.anInt4043 = local16.x + local277;
 					@Pc(335) int local335 = local16.anInt5008;
 					if (local335 < local274) {
 						@Pc(341) int local341 = local274;
 						local274 = local335;
 						local335 = local341;
 					}
-					local42.anInt4038 = local335 + local16.anInt4993;
-					local42.anInt4018 = local274 + local16.anInt4993;
+					entity.anInt4038 = local335 + local16.z;
+					entity.anInt4018 = local274 + local16.z;
 				}
 			}
 		}
@@ -238,12 +238,12 @@ public final class Static37 {
 
 	@OriginalMember(owner = "client!wd", name = "j", descriptor = "(I)V")
 	public static void method4714() {
-		for (@Pc(6) Class4_Sub25 local6 = (Class4_Sub25) Static2.aClass112_7.head(); local6 != null; local6 = (Class4_Sub25) Static2.aClass112_7.next()) {
-			if (local6.anInt4436 == -1) {
-				local6.anInt4446 = 0;
-				Static16.method4654(local6);
+		for (@Pc(6) Loc loc = (Loc) LocList.locs.head(); loc != null; loc = (Loc) LocList.locs.next()) {
+			if (loc.anInt4436 == -1) {
+				loc.anInt4446 = 0;
+				Static16.method4654(loc);
 			} else {
-				local6.unlink();
+				loc.unlink();
 			}
 		}
 	}
@@ -359,7 +359,7 @@ public final class Static37 {
 				Static1.aByteArrayArrayArray2[local29][local27][local34] = local19;
 			}
 		}
-		if (Static7.anInt5334 == 3) {
+		if (Static7.y == 3) {
 			return;
 		}
 		for (@Pc(59) int local59 = 0; local59 < 2; local59++) {
@@ -370,14 +370,14 @@ public final class Static37 {
 			Static6.anIntArray489[local59] = 0;
 		}
 		if (Static1.anInt772 != 1) {
-			@Pc(94) int local94 = Static11.method522(Static7.anInt5678, Static3.anInt2519, Static7.anInt5334);
-			if (local94 - Static2.anInt1931 < 800 && (Static4.aByteArrayArrayArray17[Static7.anInt5334][Static3.anInt2519 >> 7][Static7.anInt5678 >> 7] & 0x4) != 0) {
-				Static9.method279(1, Static3.anInt2519 >> 7, false, Static7.anInt5678 >> 7, Static1.aClass4_Sub19ArrayArrayArray1);
+			@Pc(94) int local94 = Static11.method522(Static7.anInt5678, Static3.anInt2519, Static7.y);
+			if (local94 - Static2.anInt1931 < 800 && (Static4.tileFlags[Static7.y][Static3.anInt2519 >> 7][Static7.anInt5678 >> 7] & 0x4) != 0) {
+				Static9.method279(1, Static3.anInt2519 >> 7, false, Static7.anInt5678 >> 7, Terrain.tiles);
 			}
 			return;
 		}
-		if ((Static4.aByteArrayArrayArray17[Static7.anInt5334][Player.self.x >> 7][Player.self.z >> 7] & 0x4) != 0) {
-			Static9.method279(0, Player.self.x >> 7, false, Player.self.z >> 7, Static1.aClass4_Sub19ArrayArrayArray1);
+		if ((Static4.tileFlags[Static7.y][Player.self.x >> 7][Player.self.z >> 7] & 0x4) != 0) {
+			Static9.method279(0, Player.self.x >> 7, false, Player.self.z >> 7, Terrain.tiles);
 		}
 		if (Static5.anInt4066 >= 310) {
 			return;
@@ -399,7 +399,7 @@ public final class Static37 {
 			local216 = local179 - local208;
 		}
 		if (local216 == 0 && local196 == 0 || local216 <= -104 || local216 >= 104 || local196 <= -104 || local196 >= 104) {
-			TracingException.report(null, "RC: " + local179 + "," + local175 + " " + local208 + "," + local184 + " " + Static5.anInt3983 + "," + Static7.anInt5479);
+			TracingException.report(null, "RC: " + local179 + "," + local175 + " " + local208 + "," + local184 + " " + Static5.originX + "," + Static7.originZ);
 			return;
 		}
 		if (local216 > local196) {
@@ -411,8 +411,8 @@ public final class Static37 {
 				} else if (local208 < local179) {
 					local179--;
 				}
-				if ((Static4.aByteArrayArrayArray17[Static7.anInt5334][local179][local175] & 0x4) != 0) {
-					Static9.method279(1, local179, false, local175, Static1.aClass4_Sub19ArrayArrayArray1);
+				if ((Static4.tileFlags[Static7.y][local179][local175] & 0x4) != 0) {
+					Static9.method279(1, local179, false, local175, Terrain.tiles);
 					break;
 				}
 				local399 += local397;
@@ -423,8 +423,8 @@ public final class Static37 {
 						local175--;
 					}
 					local399 -= 65536;
-					if ((Static4.aByteArrayArrayArray17[Static7.anInt5334][local179][local175] & 0x4) != 0) {
-						Static9.method279(1, local179, false, local175, Static1.aClass4_Sub19ArrayArrayArray1);
+					if ((Static4.tileFlags[Static7.y][local179][local175] & 0x4) != 0) {
+						Static9.method279(1, local179, false, local175, Terrain.tiles);
 						break;
 					}
 				}
@@ -439,8 +439,8 @@ public final class Static37 {
 			} else if (local184 < local175) {
 				local175--;
 			}
-			if ((Static4.aByteArrayArrayArray17[Static7.anInt5334][local179][local175] & 0x4) != 0) {
-				Static9.method279(1, local179, false, local175, Static1.aClass4_Sub19ArrayArrayArray1);
+			if ((Static4.tileFlags[Static7.y][local179][local175] & 0x4) != 0) {
+				Static9.method279(1, local179, false, local175, Terrain.tiles);
 				break;
 			}
 			local293 += local299;
@@ -451,8 +451,8 @@ public final class Static37 {
 				} else if (local179 > local208) {
 					local179--;
 				}
-				if ((Static4.aByteArrayArrayArray17[Static7.anInt5334][local179][local175] & 0x4) != 0) {
-					Static9.method279(1, local179, false, local175, Static1.aClass4_Sub19ArrayArrayArray1);
+				if ((Static4.tileFlags[Static7.y][local179][local175] & 0x4) != 0) {
+					Static9.method279(1, local179, false, local175, Terrain.tiles);
 					break;
 				}
 			}
@@ -489,10 +489,10 @@ public final class Static37 {
 
 	@OriginalMember(owner = "client!wf", name = "a", descriptor = "()V")
 	public static void method4737() {
-		Static5.anInt4112 = 0;
+		Terrain.anInt4112 = 0;
 		label194:
-		for (@Pc(3) int local3 = 0; local3 < Static2.anInt1742; local3++) {
-			@Pc(10) Class184 local10 = Static7.aClass184Array13[local3];
+		for (@Pc(3) int local3 = 0; local3 < Terrain.anInt1742; local3++) {
+			@Pc(10) Class184 local10 = Terrain.aClass184Array13[local3];
 			if (Static3.anIntArray170 != null) {
 				for (@Pc(14) int local14 = 0; local14 < Static3.anIntArray170.length; local14++) {
 					if (Static3.anIntArray170[local14] != -1000000 && (local10.anInt5872 <= Static3.anIntArray170[local14] || local10.anInt5881 <= Static3.anIntArray170[local14]) && (local10.anInt5862 <= Static5.anIntArray399[local14] || local10.anInt5877 <= Static5.anIntArray399[local14]) && (local10.anInt5862 >= Static1.anIntArray63[local14] || local10.anInt5877 >= Static1.anIntArray63[local14]) && (local10.anInt5860 <= Static4.anIntArray309[local14] || local10.anInt5879 <= Static4.anIntArray309[local14]) && (local10.anInt5860 >= Static3.anIntArray226[local14] || local10.anInt5879 >= Static3.anIntArray226[local14])) {
@@ -501,19 +501,19 @@ public final class Static37 {
 				}
 			}
 			if (local10.anInt5866 == 1) {
-				@Pc(100) int local100 = local10.anInt5867 + Static4.anInt3253 - Static6.anInt4513;
-				if (local100 >= 0 && local100 <= Static4.anInt3253 + Static4.anInt3253) {
-					@Pc(115) int local115 = local10.anInt5876 + Static4.anInt3253 - Static4.anInt3329;
+				@Pc(100) int local100 = local10.anInt5867 + Terrain.anInt3253 - Static6.anInt4513;
+				if (local100 >= 0 && local100 <= Terrain.anInt3253 + Terrain.anInt3253) {
+					@Pc(115) int local115 = local10.anInt5876 + Terrain.anInt3253 - Static4.anInt3329;
 					if (local115 < 0) {
 						local115 = 0;
 					}
-					@Pc(126) int local126 = local10.anInt5870 + Static4.anInt3253 - Static4.anInt3329;
-					if (local126 > Static4.anInt3253 + Static4.anInt3253) {
-						local126 = Static4.anInt3253 + Static4.anInt3253;
+					@Pc(126) int local126 = local10.anInt5870 + Terrain.anInt3253 - Static4.anInt3329;
+					if (local126 > Terrain.anInt3253 + Terrain.anInt3253) {
+						local126 = Terrain.anInt3253 + Terrain.anInt3253;
 					}
 					@Pc(137) boolean local137 = false;
 					while (local115 <= local126) {
-						if (Static4.aBooleanArrayArray5[local100][local115++]) {
+						if (Terrain.aBooleanArrayArray5[local100][local115++]) {
 							local137 = true;
 							break;
 						}
@@ -533,23 +533,23 @@ public final class Static37 {
 						local10.anInt5874 = (local10.anInt5879 - Static6.anInt4400 << 8) / local158;
 						local10.anInt5869 = (local10.anInt5872 - Static6.anInt4375 << 8) / local158;
 						local10.anInt5868 = (local10.anInt5881 - Static6.anInt4375 << 8) / local158;
-						Static6.aClass184Array12[Static5.anInt4112++] = local10;
+						Terrain.aClass184Array12[Terrain.anInt4112++] = local10;
 					}
 				}
 			} else if (local10.anInt5866 == 2) {
-				@Pc(234) int local234 = local10.anInt5876 + Static4.anInt3253 - Static4.anInt3329;
-				if (local234 >= 0 && local234 <= Static4.anInt3253 + Static4.anInt3253) {
-					@Pc(249) int local249 = local10.anInt5867 + Static4.anInt3253 - Static6.anInt4513;
+				@Pc(234) int local234 = local10.anInt5876 + Terrain.anInt3253 - Static4.anInt3329;
+				if (local234 >= 0 && local234 <= Terrain.anInt3253 + Terrain.anInt3253) {
+					@Pc(249) int local249 = local10.anInt5867 + Terrain.anInt3253 - Static6.anInt4513;
 					if (local249 < 0) {
 						local249 = 0;
 					}
-					@Pc(260) int local260 = local10.anInt5858 + Static4.anInt3253 - Static6.anInt4513;
-					if (local260 > Static4.anInt3253 + Static4.anInt3253) {
-						local260 = Static4.anInt3253 + Static4.anInt3253;
+					@Pc(260) int local260 = local10.anInt5858 + Terrain.anInt3253 - Static6.anInt4513;
+					if (local260 > Terrain.anInt3253 + Terrain.anInt3253) {
+						local260 = Terrain.anInt3253 + Terrain.anInt3253;
 					}
 					@Pc(271) boolean local271 = false;
 					while (local249 <= local260) {
-						if (Static4.aBooleanArrayArray5[local249++][local234]) {
+						if (Terrain.aBooleanArrayArray5[local249++][local234]) {
 							local271 = true;
 							break;
 						}
@@ -569,34 +569,34 @@ public final class Static37 {
 						local10.anInt5878 = (local10.anInt5877 - Static7.anInt5281 << 8) / local292;
 						local10.anInt5869 = (local10.anInt5872 - Static6.anInt4375 << 8) / local292;
 						local10.anInt5868 = (local10.anInt5881 - Static6.anInt4375 << 8) / local292;
-						Static6.aClass184Array12[Static5.anInt4112++] = local10;
+						Terrain.aClass184Array12[Terrain.anInt4112++] = local10;
 					}
 				}
 			} else if (local10.anInt5866 == 4) {
 				@Pc(366) int local366 = local10.anInt5872 - Static6.anInt4375;
 				if (local366 > 128) {
-					@Pc(377) int local377 = local10.anInt5876 + Static4.anInt3253 - Static4.anInt3329;
+					@Pc(377) int local377 = local10.anInt5876 + Terrain.anInt3253 - Static4.anInt3329;
 					if (local377 < 0) {
 						local377 = 0;
 					}
-					@Pc(388) int local388 = local10.anInt5870 + Static4.anInt3253 - Static4.anInt3329;
-					if (local388 > Static4.anInt3253 + Static4.anInt3253) {
-						local388 = Static4.anInt3253 + Static4.anInt3253;
+					@Pc(388) int local388 = local10.anInt5870 + Terrain.anInt3253 - Static4.anInt3329;
+					if (local388 > Terrain.anInt3253 + Terrain.anInt3253) {
+						local388 = Terrain.anInt3253 + Terrain.anInt3253;
 					}
 					if (local377 <= local388) {
-						@Pc(408) int local408 = local10.anInt5867 + Static4.anInt3253 - Static6.anInt4513;
+						@Pc(408) int local408 = local10.anInt5867 + Terrain.anInt3253 - Static6.anInt4513;
 						if (local408 < 0) {
 							local408 = 0;
 						}
-						@Pc(419) int local419 = local10.anInt5858 + Static4.anInt3253 - Static6.anInt4513;
-						if (local419 > Static4.anInt3253 + Static4.anInt3253) {
-							local419 = Static4.anInt3253 + Static4.anInt3253;
+						@Pc(419) int local419 = local10.anInt5858 + Terrain.anInt3253 - Static6.anInt4513;
+						if (local419 > Terrain.anInt3253 + Terrain.anInt3253) {
+							local419 = Terrain.anInt3253 + Terrain.anInt3253;
 						}
 						@Pc(430) boolean local430 = false;
 						label166:
 						for (@Pc(432) int local432 = local408; local432 <= local419; local432++) {
 							for (@Pc(437) int local437 = local377; local437 <= local388; local437++) {
-								if (Static4.aBooleanArrayArray5[local432][local437]) {
+								if (Terrain.aBooleanArrayArray5[local432][local437]) {
 									local430 = true;
 									break label166;
 								}
@@ -608,7 +608,7 @@ public final class Static37 {
 							local10.anInt5878 = (local10.anInt5877 - Static7.anInt5281 << 8) / local366;
 							local10.anInt5864 = (local10.anInt5860 - Static6.anInt4400 << 8) / local366;
 							local10.anInt5874 = (local10.anInt5879 - Static6.anInt4400 << 8) / local366;
-							Static6.aClass184Array12[Static5.anInt4112++] = local10;
+							Terrain.aClass184Array12[Terrain.anInt4112++] = local10;
 						}
 					}
 				}
@@ -618,8 +618,8 @@ public final class Static37 {
 
 	@OriginalMember(owner = "client!wf", name = "b", descriptor = "(III)J")
 	public static long method4739(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
-		@Pc(7) Class4_Sub19 local7 = Static1.aClass4_Sub19ArrayArrayArray1[arg0][arg1][arg2];
-		return local7 == null || local7.aClass182_1 == null ? 0L : local7.aClass182_1.aLong194;
+		@Pc(7) Tile local7 = Terrain.tiles[arg0][arg1][arg2];
+		return local7 == null || local7.wallDecor == null ? 0L : local7.wallDecor.aLong194;
 	}
 
 	@OriginalMember(owner = "client!wg", name = "a", descriptor = "(IIIILjava/lang/String;)V")
@@ -797,7 +797,7 @@ public final class Static37 {
 		if (arg4 && Static5.anInt3490 >= 100) {
 			Static3.anInt2519 = Static4.anInt2977 * 128 + 64;
 			Static7.anInt5678 = Static5.anInt4165 * 128 + 64;
-			Static2.anInt1931 = Static11.method522(Static7.anInt5678, Static3.anInt2519, Static7.anInt5334) - Static4.anInt3131;
+			Static2.anInt1931 = Static11.method522(Static7.anInt5678, Static3.anInt2519, Static7.y) - Static4.anInt3131;
 		}
 		Static1.anInt772 = 2;
 	}

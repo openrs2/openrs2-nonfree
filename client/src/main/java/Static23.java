@@ -12,78 +12,6 @@ public final class Static23 {
 		Static25.method2777();
 	}
 
-	@OriginalMember(owner = "client!l", name = "a", descriptor = "(IIIIIIIILclient!vc;IZJ)Z")
-	public static boolean method2424(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) Entity arg8, @OriginalArg(9) int arg9, @OriginalArg(10) boolean arg10, @OriginalArg(11) long arg11) {
-		@Pc(6) boolean local6 = Static6.anIntArrayArrayArray13 == Static1.anIntArrayArrayArray2;
-		@Pc(8) int local8 = 0;
-		for (@Pc(10) int local10 = arg1; local10 < arg1 + arg3; local10++) {
-			for (@Pc(17) int local17 = arg2; local17 < arg2 + arg4; local17++) {
-				if (local10 < 0 || local17 < 0 || local10 >= Static7.anInt5632 || local17 >= Static7.anInt5590) {
-					return false;
-				}
-				@Pc(42) Class4_Sub19 local42 = Static1.aClass4_Sub19ArrayArrayArray1[arg0][local10][local17];
-				if (local42 != null && local42.anInt3554 >= 5) {
-					return false;
-				}
-			}
-		}
-		@Pc(58) Class33 local58 = new Class33();
-		local58.aLong38 = arg11;
-		local58.anInt819 = arg0;
-		local58.anInt821 = arg5;
-		local58.anInt827 = arg6;
-		local58.anInt823 = arg7;
-		local58.aClass53_1 = arg8;
-		local58.anInt814 = arg9;
-		local58.anInt824 = arg1;
-		local58.anInt826 = arg2;
-		local58.anInt825 = arg1 + arg3 - 1;
-		local58.anInt817 = arg2 + arg4 - 1;
-		for (@Pc(101) int local101 = arg1; local101 < arg1 + arg3; local101++) {
-			for (@Pc(108) int local108 = arg2; local108 < arg2 + arg4; local108++) {
-				@Pc(115) int local115 = 0;
-				if (local101 > arg1) {
-					local115++;
-				}
-				if (local101 < arg1 + arg3 - 1) {
-					local115 += 4;
-				}
-				if (local108 > arg2) {
-					local115 += 8;
-				}
-				if (local108 < arg2 + arg4 - 1) {
-					local115 += 2;
-				}
-				for (@Pc(141) int local141 = arg0; local141 >= 0; local141--) {
-					if (Static1.aClass4_Sub19ArrayArrayArray1[local141][local101][local108] == null) {
-						Static1.aClass4_Sub19ArrayArrayArray1[local141][local101][local108] = new Class4_Sub19(local141, local101, local108);
-					}
-				}
-				@Pc(174) Class4_Sub19 local174 = Static1.aClass4_Sub19ArrayArrayArray1[arg0][local101][local108];
-				local174.aClass33Array3[local174.anInt3554] = local58;
-				local174.anIntArray390[local174.anInt3554] = local115;
-				local174.anInt3551 |= local115;
-				local174.anInt3554++;
-				if (local6 && Static2.anIntArrayArray10[local101][local108] != 0) {
-					local8 = Static2.anIntArrayArray10[local101][local108];
-				}
-			}
-		}
-		if (local6 && local8 != 0) {
-			for (@Pc(222) int local222 = arg1; local222 < arg1 + arg3; local222++) {
-				for (@Pc(229) int local229 = arg2; local229 < arg2 + arg4; local229++) {
-					if (Static2.anIntArrayArray10[local222][local229] == 0) {
-						Static2.anIntArrayArray10[local222][local229] = local8;
-					}
-				}
-			}
-		}
-		if (arg10) {
-			Static4.aClass33Array2[Static4.anInt2661++] = local58;
-		}
-		return true;
-	}
-
 	@OriginalMember(owner = "client!l", name = "a", descriptor = "(IBI)Lclient!wf;")
 	public static Component method2425(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1) {
 		@Pc(9) Component local9 = InterfaceList.getComponent(arg0);
@@ -230,7 +158,7 @@ public final class Static23 {
 		if (Static1.anInt212 >= 100) {
 			@Pc(31) int local31 = Static4.anInt3302 * 128 + 64;
 			@Pc(37) int local37 = Static3.anInt2497 * 128 + 64;
-			@Pc(46) int local46 = Static11.method522(local37, local31, Static7.anInt5334) - Static5.anInt3572;
+			@Pc(46) int local46 = Static11.method522(local37, local31, Static7.y) - Static5.anInt3572;
 			@Pc(50) int local50 = local31 - Static3.anInt2519;
 			@Pc(55) int local55 = local46 - Static2.anInt1931;
 			@Pc(60) int local60 = local37 - Static7.anInt5678;
@@ -251,11 +179,11 @@ public final class Static23 {
 	public static void method2537() {
 		@Pc(9) int local9 = Static4.anInt2977 * 128 + 64;
 		@Pc(15) int local15 = Static5.anInt4165 * 128 + 64;
-		@Pc(24) int local24 = Static11.method522(local15, local9, Static7.anInt5334) - Static4.anInt3131;
+		@Pc(24) int local24 = Static11.method522(local15, local9, Static7.y) - Static4.anInt3131;
 		if (Static5.anInt3490 >= 100) {
 			Static7.anInt5678 = Static5.anInt4165 * 128 + 64;
 			Static3.anInt2519 = Static4.anInt2977 * 128 + 64;
-			Static2.anInt1931 = Static11.method522(Static7.anInt5678, Static3.anInt2519, Static7.anInt5334) - Static4.anInt3131;
+			Static2.anInt1931 = Static11.method522(Static7.anInt5678, Static3.anInt2519, Static7.y) - Static4.anInt3131;
 		} else {
 			if (Static7.anInt5678 < local15) {
 				Static7.anInt5678 += Static7.anInt5236 + (local15 - Static7.anInt5678) * Static5.anInt3490 / 1000;
@@ -296,7 +224,7 @@ public final class Static23 {
 		}
 		@Pc(226) int local226 = Static3.anInt2497 * 128 + 64;
 		@Pc(232) int local232 = Static4.anInt3302 * 128 + 64;
-		@Pc(240) int local240 = Static11.method522(local226, local232, Static7.anInt5334) - Static5.anInt3572;
+		@Pc(240) int local240 = Static11.method522(local226, local232, Static7.y) - Static5.anInt3572;
 		@Pc(245) int local245 = local226 - Static7.anInt5678;
 		@Pc(250) int local250 = local240 - Static2.anInt1931;
 		@Pc(255) int local255 = local232 - Static3.anInt2519;

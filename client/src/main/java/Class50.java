@@ -199,7 +199,7 @@ public final class Class50 {
 		@Pc(25) int local25 = this.anInt1324;
 		@Pc(56) int local56;
 		if (local25 == 1) {
-			local56 = (Class109.anIntArray299[local22] >> 6) + 1024;
+			local56 = (MathUtils.SINE[local22] >> 6) + 1024;
 		} else if (local25 == 3) {
 			local56 = Static2.anIntArray97[local22] >> 1;
 		} else if (local25 == 4) {

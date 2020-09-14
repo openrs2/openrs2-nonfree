@@ -283,27 +283,27 @@ public final class Class20_Sub2_Sub1 extends Class20_Sub2 {
 		this.anInt3228 = (int) ((long) this.anInt3228 + ((long) this.aShort19 * (long) this.anInt3233 >> 23) * (long) arg1);
 		this.anInt3229 = (int) ((long) this.anInt3229 + ((long) this.aShort23 * (long) this.anInt3233 >> 23) * (long) arg1);
 		this.anInt3230 = (int) ((long) this.anInt3230 + ((long) this.aShort24 * (long) this.anInt3233 >> 23) * (long) arg1);
-		@Pc(1217) int local1217 = this.anInt3228 >> 19;
-		@Pc(1222) int local1222 = this.anInt3230 >> 19;
+		@Pc(1217) int x = this.anInt3228 >> 19;
+		@Pc(1222) int z = this.anInt3230 >> 19;
 		@Pc(1227) int local1227 = this.anInt3229 >> Static4.anInt3227;
-		if (local1227 > 0 || local1227 < -65535 || local1217 < 0 || local1217 >= Static7.anInt5632 || local1222 < 0 || local1222 >= Static7.anInt5590) {
+		if (local1227 > 0 || local1227 < -65535 || x < 0 || x >= Terrain.width || z < 0 || z >= Terrain.length) {
 			this.method2630();
 			return;
 		}
-		@Pc(1247) int[][][] local1247 = Static6.anIntArrayArrayArray13;
-		@Pc(1256) int local1256 = local1247[local35.anInt3514][local1217][local1222];
+		@Pc(1247) int[][][] local1247 = Terrain.tileHeights;
+		@Pc(1256) int local1256 = local1247[local35.anInt3514][x][z];
 		@Pc(1271) int local1271;
 		if (local35.anInt3514 < 3) {
-			local1271 = local1247[local35.anInt3514 + 1][local1217][local1222];
+			local1271 = local1247[local35.anInt3514 + 1][x][z];
 		} else {
-			local1271 = local1247[local35.anInt3514][local1217][local1222] - 1024;
+			local1271 = local1247[local35.anInt3514][x][z] - 1024;
 		}
 		if (local39.aBoolean168) {
 			if (local39.anInt2405 == -1 && local1227 > local1256) {
 				this.method2630();
 				return;
 			}
-			if (local39.anInt2405 >= 0 && local1227 > local1247[local39.anInt2405][local1217][local1222]) {
+			if (local39.anInt2405 >= 0 && local1227 > local1247[local39.anInt2405][x][z]) {
 				this.method2630();
 				return;
 			}
@@ -311,39 +311,39 @@ public final class Class20_Sub2_Sub1 extends Class20_Sub2 {
 				this.method2630();
 				return;
 			}
-			if (local39.anInt2438 >= 0 && local1227 < local1247[local39.anInt2438 + 1][local1217][local1222]) {
+			if (local39.anInt2438 >= 0 && local1227 < local1247[local39.anInt2438 + 1][x][z]) {
 				this.method2630();
 				return;
 			}
 		}
-		if (local1217 >= local35.anInt3513 && local1217 <= local35.anInt3521 && local1222 >= local35.anInt3508 && local1222 <= local35.anInt3515 && local1227 <= local35.anInt3510 && local1227 >= local35.anInt3520) {
+		if (x >= local35.anInt3513 && x <= local35.anInt3521 && z >= local35.anInt3508 && z <= local35.anInt3515 && local1227 <= local35.anInt3510 && local1227 >= local35.anInt3520) {
 			this.aBoolean228 = false;
 			return;
 		}
 		this.aBoolean228 = true;
-		@Pc(1369) byte local1369 = 3;
-		if (local1227 > local1247[1][local1217][local1222]) {
-			local1369 = 0;
-		} else if (local1227 > local1247[2][local1217][local1222]) {
-			local1369 = 1;
-		} else if (local1227 > local1247[3][local1217][local1222]) {
-			local1369 = 2;
-		} else if (local1227 < local1247[3][local1217][local1222] - 1024) {
+		@Pc(1369) byte y = 3;
+		if (local1227 > local1247[1][x][z]) {
+			y = 0;
+		} else if (local1227 > local1247[2][x][z]) {
+			y = 1;
+		} else if (local1227 > local1247[3][x][z]) {
+			y = 2;
+		} else if (local1227 < local1247[3][x][z] - 1024) {
 			this.method2630();
 			return;
 		}
-		@Pc(1427) Class4_Sub19 local1427 = Static1.aClass4_Sub19ArrayArrayArray1[local1369][local1217][local1222];
-		if (local1427 == null) {
-			local1427 = Static1.aClass4_Sub19ArrayArrayArray1[local1369][local1217][local1222] = new Class4_Sub19(local1369, local1217, local1222);
+		@Pc(1427) Tile tile = Terrain.tiles[y][x][z];
+		if (tile == null) {
+			tile = Terrain.tiles[y][x][z] = new Tile(y, x, z);
 		}
-		if (local1427.aClass108_1 == null) {
-			local1427.aClass108_1 = new Class108();
-			local1427.aByte14 = (byte) (arg0 & 0xFFL);
-		} else if (local1427.aByte14 != (byte) (arg0 & 0xFFL)) {
-			local1427.aClass108_1.method2457();
-			local1427.aByte14 = (byte) (arg0 & 0xFFL);
+		if (tile.aClass108_1 == null) {
+			tile.aClass108_1 = new Class108();
+			tile.aByte14 = (byte) (arg0 & 0xFFL);
+		} else if (tile.aByte14 != (byte) (arg0 & 0xFFL)) {
+			tile.aClass108_1.method2457();
+			tile.aByte14 = (byte) (arg0 & 0xFFL);
 		}
-		local1427.aClass108_1.method2460(this);
+		tile.aClass108_1.method2460(this);
 	}
 
 	@OriginalMember(owner = "client!lm", name = "a", descriptor = "()V")

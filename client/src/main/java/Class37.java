@@ -74,7 +74,7 @@ public final class Class37 {
 
 	@OriginalMember(owner = "client!dc", name = "a", descriptor = "(B)V")
 	public final void method743() {
-		this.anInt906 = Class109.anIntArray298[this.anInt893];
+		this.anInt906 = MathUtils.COSINE[this.anInt893];
 		this.anInt904 = (int) Math.sqrt((double) (this.anInt892 * this.anInt892 + this.anInt898 * this.anInt898 + this.anInt903 * this.anInt903));
 		if (this.anInt911 == 0) {
 			this.anInt911 = 1;

@@ -533,12 +533,12 @@ public final class NpcType {
 								local252[12] = -local193;
 								local252[14] = -local207;
 							} else {
-								@Pc(271) int local271 = Class109.anIntArray298[local200] >> 1;
-								@Pc(277) int local277 = Class109.anIntArray299[local200] >> 1;
-								@Pc(283) int local283 = Class109.anIntArray298[local221] >> 1;
-								@Pc(289) int local289 = Class109.anIntArray299[local221] >> 1;
-								@Pc(295) int local295 = Class109.anIntArray298[local228] >> 1;
-								@Pc(301) int local301 = Class109.anIntArray299[local228] >> 1;
+								@Pc(271) int local271 = MathUtils.COSINE[local200] >> 1;
+								@Pc(277) int local277 = MathUtils.SINE[local200] >> 1;
+								@Pc(283) int local283 = MathUtils.COSINE[local221] >> 1;
+								@Pc(289) int local289 = MathUtils.SINE[local221] >> 1;
+								@Pc(295) int local295 = MathUtils.COSINE[local228] >> 1;
+								@Pc(301) int local301 = MathUtils.SINE[local228] >> 1;
 								@Pc(309) int local309 = local295 * local277 + 16384 >> 15;
 								local252[8] = local283 * local271 + 16384 >> 15;
 								local252[5] = -local277;

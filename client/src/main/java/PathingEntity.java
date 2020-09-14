@@ -611,14 +611,14 @@ public abstract class PathingEntity extends Entity {
 		if (local16 == 0 || local19 == 0) {
 			return;
 		}
-		@Pc(31) int local31 = Class109.anIntArray299[arg1];
-		@Pc(35) int local35 = Class109.anIntArray298[arg1];
+		@Pc(31) int local31 = MathUtils.SINE[arg1];
+		@Pc(35) int local35 = MathUtils.COSINE[arg1];
 		@Pc(40) int local40 = -local16 / 2;
 		@Pc(45) int local45 = -local19 / 2;
 		@Pc(55) int local55 = local35 * local45 - local40 * local31 >> 16;
 		@Pc(65) int local65 = local35 * local40 + local45 * local31 >> 16;
 		@Pc(70) int local70 = -local19 / 2;
-		@Pc(82) int local82 = Static11.method522(local55 + this.z, local65 + this.x, Static7.anInt5334);
+		@Pc(82) int local82 = Static11.method522(local55 + this.z, local65 + this.x, Static7.y);
 		@Pc(86) int local86 = local16 / 2;
 		@Pc(91) int local91 = -local16 / 2;
 		@Pc(102) int local102 = local31 * local70 + local86 * local35 >> 16;
@@ -626,13 +626,13 @@ public abstract class PathingEntity extends Entity {
 		@Pc(116) int local116 = local35 * local106 - local31 * local91 >> 16;
 		@Pc(126) int local126 = local35 * local70 - local31 * local86 >> 16;
 		@Pc(136) int local136 = local91 * local35 + local31 * local106 >> 16;
-		@Pc(148) int local148 = Static11.method522(local126 + this.z, local102 + this.x, Static7.anInt5334);
-		@Pc(161) int local161 = Static11.method522(local116 + this.z, this.x + local136, Static7.anInt5334);
+		@Pc(148) int local148 = Static11.method522(local126 + this.z, local102 + this.x, Static7.y);
+		@Pc(161) int local161 = Static11.method522(local116 + this.z, this.x + local136, Static7.y);
 		@Pc(165) int local165 = local16 / 2;
 		@Pc(169) int local169 = local19 / 2;
 		@Pc(180) int local180 = local31 * local169 + local165 * local35 >> 16;
 		@Pc(191) int local191 = local35 * local169 - local31 * local165 >> 16;
-		@Pc(204) int local204 = Static11.method522(this.z + local191, local180 + this.x, Static7.anInt5334);
+		@Pc(204) int local204 = Static11.method522(this.z + local191, local180 + this.x, Static7.y);
 		@Pc(215) int local215 = local204 > local161 ? local161 : local204;
 		@Pc(226) int local226 = local161 > local82 ? local82 : local161;
 		@Pc(233) int local233 = local82 < local148 ? local82 : local148;

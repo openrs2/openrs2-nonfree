@@ -10,7 +10,7 @@ public final class Static4 {
 	public static int[] anIntArray231;
 
 	@OriginalMember(owner = "client!jl", name = "B", descriptor = "[[[Lclient!ll;")
-	public static LinkedList[][][] aClass112ArrayArrayArray1;
+	public static LinkedList[][][] objStacks;
 
 	@OriginalMember(owner = "client!jm", name = "i", descriptor = "F")
 	public static float aFloat62;
@@ -72,9 +72,6 @@ public final class Static4 {
 	@OriginalMember(owner = "client!ko", name = "g", descriptor = "I")
 	public static int anInt2979;
 
-	@OriginalMember(owner = "client!l", name = "r", descriptor = "[[Z")
-	public static boolean[][] aBooleanArrayArray4;
-
 	@OriginalMember(owner = "client!lc", name = "d", descriptor = "I")
 	public static int anInt2464;
 
@@ -111,9 +108,6 @@ public final class Static4 {
 	@OriginalMember(owner = "client!li", name = "b", descriptor = "I")
 	public static int anInt3131;
 
-	@OriginalMember(owner = "client!li", name = "h", descriptor = "[[Z")
-	public static boolean[][] aBooleanArrayArray5;
-
 	@OriginalMember(owner = "client!li", name = "k", descriptor = "[S")
 	public static short[] aShortArray46;
 
@@ -125,9 +119,6 @@ public final class Static4 {
 
 	@OriginalMember(owner = "client!ln", name = "F", descriptor = "I")
 	public static int anInt3250;
-
-	@OriginalMember(owner = "client!ln", name = "K", descriptor = "I")
-	public static int anInt3253;
 
 	@OriginalMember(owner = "client!ln", name = "W", descriptor = "I")
 	public static int anInt3258;
@@ -162,11 +153,8 @@ public final class Static4 {
 	@OriginalMember(owner = "client!me", name = "d", descriptor = "Lclient!kk;")
 	public static Class106 aClass106_4;
 
-	@OriginalMember(owner = "client!mf", name = "c", descriptor = "[Lclient!co;")
-	public static Class33[] aClass33Array2;
-
 	@OriginalMember(owner = "client!mf", name = "j", descriptor = "[I")
-	public static int[] anIntArray316;
+	public static int[] underwaterMapGroupIds;
 
 	@OriginalMember(owner = "client!mf", name = "l", descriptor = "I")
 	public static int anInt3317;
@@ -180,11 +168,8 @@ public final class Static4 {
 	@OriginalMember(owner = "client!mg", name = "v", descriptor = "I")
 	public static int anInt3329;
 
-	@OriginalMember(owner = "client!mi", name = "c", descriptor = "[[[B")
-	public static byte[][][] aByteArrayArrayArray16;
-
 	@OriginalMember(owner = "client!mi", name = "d", descriptor = "[[[B")
-	public static byte[][][] aByteArrayArrayArray17;
+	public static byte[][][] tileFlags;
 
 	@OriginalMember(owner = "client!mi", name = "h", descriptor = "I")
 	public static int anInt3336;
@@ -196,7 +181,7 @@ public final class Static4 {
 	public static Sprite aClass4_Sub3_Sub14_3;
 
 	@OriginalMember(owner = "client!mm", name = "g", descriptor = "I")
-	public static int anInt3360;
+	public static int centralZoneX;
 
 	@OriginalMember(owner = "client!mn", name = "d", descriptor = "I")
 	public static int anInt3363;
@@ -246,9 +231,6 @@ public final class Static4 {
 	@OriginalMember(owner = "client!jk", name = "u", descriptor = "I")
 	public static int anInt2644 = 0;
 
-	@OriginalMember(owner = "client!jl", name = "K", descriptor = "I")
-	public static int anInt2661 = 0;
-
 	@OriginalMember(owner = "client!jl", name = "M", descriptor = "I")
 	public static int anInt2663 = 0;
 
@@ -260,9 +242,6 @@ public final class Static4 {
 
 	@OriginalMember(owner = "client!jo", name = "E", descriptor = "[J")
 	public static final long[] aLongArray56 = new long[500];
-
-	@OriginalMember(owner = "client!jo", name = "I", descriptor = "[I")
-	public static final int[] anIntArray653 = new int[4096];
 
 	@OriginalMember(owner = "client!jo", name = "O", descriptor = "[I")
 	public static final int[] anIntArray654 = new int[14];
@@ -454,10 +433,10 @@ public final class Static4 {
 	public static int anInt3335 = 0;
 
 	@OriginalMember(owner = "client!ml", name = "p", descriptor = "[I")
-	public static final int[] anIntArray321 = Class109.anIntArray298;
+	public static final int[] anIntArray321 = MathUtils.COSINE;
 
 	@OriginalMember(owner = "client!ml", name = "u", descriptor = "[I")
-	public static final int[] anIntArray322 = Class109.anIntArray299;
+	public static final int[] anIntArray322 = MathUtils.SINE;
 
 	@OriginalMember(owner = "client!ml", name = "y", descriptor = "I")
 	public static int anInt3354 = 0;

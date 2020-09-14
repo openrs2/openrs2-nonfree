@@ -17,10 +17,10 @@ public final class Static7 {
 	public static int anInt5281;
 
 	@OriginalMember(owner = "client!uc", name = "V", descriptor = "[I")
-	public static int[] anIntArray597;
+	public static int[] mapSquares;
 
 	@OriginalMember(owner = "client!uc", name = "Y", descriptor = "[[[I")
-	public static int[][][] anIntArrayArrayArray15;
+	public static int[][][] zones;
 
 	@OriginalMember(owner = "client!uc", name = "Z", descriptor = "[[B")
 	public static byte[][] aByteArrayArray49;
@@ -44,7 +44,7 @@ public final class Static7 {
 	public static int anInt5332;
 
 	@OriginalMember(owner = "client!uf", name = "h", descriptor = "I")
-	public static int anInt5334;
+	public static int y;
 
 	@OriginalMember(owner = "client!uj", name = "I", descriptor = "I")
 	public static int anInt5611;
@@ -64,14 +64,8 @@ public final class Static7 {
 	@OriginalMember(owner = "client!un", name = "x", descriptor = "I")
 	public static int anInt5412;
 
-	@OriginalMember(owner = "client!v", name = "q", descriptor = "[[Lclient!ih;")
-	public static Class4_Sub12[][] aClass4_Sub12ArrayArray3;
-
 	@OriginalMember(owner = "client!v", name = "v", descriptor = "I")
 	public static int anInt5437;
-
-	@OriginalMember(owner = "client!va", name = "d", descriptor = "[[I")
-	public static int[][] anIntArrayArray48;
 
 	@OriginalMember(owner = "client!va", name = "i", descriptor = "[[B")
 	public static byte[][] aByteArrayArray50;
@@ -88,11 +82,8 @@ public final class Static7 {
 	@OriginalMember(owner = "client!vc", name = "a", descriptor = "Lclient!po;")
 	public static Class138 aClass138_14;
 
-	@OriginalMember(owner = "client!vc", name = "j", descriptor = "[Lclient!we;")
-	public static Class184[] aClass184Array13;
-
 	@OriginalMember(owner = "client!vd", name = "c", descriptor = "I")
-	public static int anInt5479;
+	public static int originZ;
 
 	@OriginalMember(owner = "client!ve", name = "d", descriptor = "[Ljava/lang/String;")
 	public static String[] aStringArray38;
@@ -100,17 +91,8 @@ public final class Static7 {
 	@OriginalMember(owner = "client!vf", name = "g", descriptor = "Lclient!ud;")
 	public static Class170 aClass170_1;
 
-	@OriginalMember(owner = "client!vi", name = "Y", descriptor = "[[[Lclient!nh;")
-	public static Class4_Sub19[][][] aClass4_Sub19ArrayArrayArray3;
-
 	@OriginalMember(owner = "client!vi", name = "Z", descriptor = "I")
 	public static int anInt5589;
-
-	@OriginalMember(owner = "client!vi", name = "bb", descriptor = "I")
-	public static int anInt5590;
-
-	@OriginalMember(owner = "client!vl", name = "o", descriptor = "I")
-	public static int anInt5632;
 
 	@OriginalMember(owner = "client!vm", name = "V", descriptor = "[I")
 	public static int[] anIntArray643;
@@ -154,9 +136,6 @@ public final class Static7 {
 	@OriginalMember(owner = "client!wl", name = "y", descriptor = "F")
 	public static float aFloat154;
 
-	@OriginalMember(owner = "client!tn", name = "c", descriptor = "I")
-	public static int anInt2022 = -1;
-
 	@OriginalMember(owner = "client!tn", name = "o", descriptor = "Z")
 	public static boolean aBoolean123 = false;
 
@@ -195,9 +174,6 @@ public final class Static7 {
 
 	@OriginalMember(owner = "client!ub", name = "l", descriptor = "I")
 	public static int anInt5283 = 0;
-
-	@OriginalMember(owner = "client!uc", name = "T", descriptor = "[I")
-	public static final int[] anIntArray595 = new int[1024];
 
 	@OriginalMember(owner = "client!uc", name = "ab", descriptor = "[I")
 	public static final int[] anIntArray598 = new int[100];
@@ -257,7 +233,7 @@ public final class Static7 {
 	public static final long[] aLongArray54 = new long[200];
 
 	@OriginalMember(owner = "client!uj", name = "H", descriptor = "I")
-	public static int anInt5610 = -1;
+	public static int buildArea = -1;
 
 	@OriginalMember(owner = "client!uj", name = "L", descriptor = "Z")
 	public static boolean aBoolean388 = false;
@@ -328,9 +304,6 @@ public final class Static7 {
 	@OriginalMember(owner = "client!ve", name = "j", descriptor = "Lclient!cc;")
 	public static final SoftLruHashTable aClass26_57 = new SoftLruHashTable(30);
 
-	@OriginalMember(owner = "client!ve", name = "o", descriptor = "[Lclient!ch;")
-	public static final Class30[] aClass30Array1 = new Class30[4];
-
 	@OriginalMember(owner = "client!vf", name = "b", descriptor = "[S")
 	public static final short[] aShortArray115 = new short[] { 6798, 8741, 25238, 4626, 4550 };
 
@@ -393,9 +366,6 @@ public final class Static7 {
 
 	@OriginalMember(owner = "client!wg", name = "V", descriptor = "I")
 	public static int anInt6008 = 0;
-
-	@OriginalMember(owner = "client!wi", name = "e", descriptor = "I")
-	public static int anInt6031 = 0;
 
 	@OriginalMember(owner = "client!wj", name = "x", descriptor = "[I")
 	public static final int[] anIntArray679 = new int[] { 12543016, 15504954, 15914854, 16773818 };

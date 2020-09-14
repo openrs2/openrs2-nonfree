@@ -120,16 +120,16 @@ public final class Class105 {
 		}
 		Static9.method213(-1.0F, 1.0F, -1.0F, 1.0F, this.anInt2861, this.anInt2861);
 		if (this.anInt2865 != 0) {
-			@Pc(96) int local96 = Class109.anIntArray299[this.anInt2865];
-			@Pc(101) int local101 = Class109.anIntArray298[this.anInt2865];
+			@Pc(96) int local96 = MathUtils.SINE[this.anInt2865];
+			@Pc(101) int local101 = MathUtils.COSINE[this.anInt2865];
 			@Pc(113) int local113 = local41 * local101 + 32767 - local43 * local96 >> 16;
 			local43 = local41 * local96 + local43 * local101 + 32767 >> 16;
 			local41 = local113;
 		}
 		if (this.anInt2855 != 0) {
 			@Pc(137) int local137 = this.anInt2855 - 1024 & 0x7FF;
-			@Pc(141) int local141 = Class109.anIntArray299[local137];
-			@Pc(145) int local145 = Class109.anIntArray298[local137];
+			@Pc(141) int local141 = MathUtils.SINE[local137];
+			@Pc(145) int local145 = MathUtils.COSINE[local137];
 			@Pc(157) int local157 = local43 * local141 + local39 * local145 + 32767 >> 16;
 			local43 = local43 * local145 + 32767 - local39 * local141 >> 16;
 			local39 = local157;
@@ -229,16 +229,16 @@ public final class Class105 {
 		@Pc(101) int local101 = local86 > local94 ? local86 : local94;
 		Static9.method212((float) -local101, (float) local101, (float) -local101, (float) local101, 2048.0F, -2048.0F, this.anInt2861, this.anInt2861);
 		if (this.anInt2865 != 0) {
-			@Pc(126) int local126 = Class109.anIntArray299[this.anInt2865];
-			@Pc(131) int local131 = Class109.anIntArray298[this.anInt2865];
+			@Pc(126) int local126 = MathUtils.SINE[this.anInt2865];
+			@Pc(131) int local131 = MathUtils.COSINE[this.anInt2865];
 			@Pc(143) int local143 = local27 * local131 + 32767 - local29 * local126 >> 16;
 			local29 = local27 * local126 + local29 * local131 + 32767 >> 16;
 			local27 = local143;
 		}
 		if (this.anInt2855 != 0) {
 			@Pc(167) int local167 = this.anInt2855 - 1024 & 0x7FF;
-			@Pc(171) int local171 = Class109.anIntArray299[local167];
-			@Pc(175) int local175 = Class109.anIntArray298[local167];
+			@Pc(171) int local171 = MathUtils.SINE[local167];
+			@Pc(175) int local175 = MathUtils.COSINE[local167];
 			@Pc(187) int local187 = local29 * local171 + local25 * local175 + 32767 >> 16;
 			local29 = local29 * local175 + 32767 - local25 * local171 >> 16;
 			local25 = local187;
@@ -474,16 +474,16 @@ public final class Class105 {
 			}
 		}
 		if (this.anInt2865 != 0) {
-			@Pc(74) int local74 = Class109.anIntArray299[this.anInt2865];
-			@Pc(79) int local79 = Class109.anIntArray298[this.anInt2865];
+			@Pc(74) int local74 = MathUtils.SINE[this.anInt2865];
+			@Pc(79) int local79 = MathUtils.COSINE[this.anInt2865];
 			@Pc(91) int local91 = local28 * local79 + 32767 - local30 * local74 >> 16;
 			local30 = local28 * local74 + local30 * local79 + 32767 >> 16;
 			local28 = local91;
 		}
 		if (this.anInt2855 != 0) {
 			@Pc(115) int local115 = this.anInt2855 - 1024 & 0x7FF;
-			@Pc(119) int local119 = Class109.anIntArray299[local115];
-			@Pc(123) int local123 = Class109.anIntArray298[local115];
+			@Pc(119) int local119 = MathUtils.SINE[local115];
+			@Pc(123) int local123 = MathUtils.COSINE[local115];
 			@Pc(135) int local135 = local30 * local119 + local26 * local123 + 32767 >> 16;
 			local30 = local30 * local123 + 32767 - local26 * local119 >> 16;
 			local26 = local135;
@@ -576,16 +576,16 @@ public final class Class105 {
 			}
 		}
 		if (this.anInt2865 != 0) {
-			@Pc(81) int local81 = Class109.anIntArray299[this.anInt2865];
-			@Pc(86) int local86 = Class109.anIntArray298[this.anInt2865];
+			@Pc(81) int local81 = MathUtils.SINE[this.anInt2865];
+			@Pc(86) int local86 = MathUtils.COSINE[this.anInt2865];
 			@Pc(98) int local98 = local35 * local86 + 32767 - local37 * local81 >> 16;
 			local37 = local35 * local81 + local37 * local86 + 32767 >> 16;
 			local35 = local98;
 		}
 		if (this.anInt2855 != 0) {
 			@Pc(122) int local122 = this.anInt2855 - 1024 & 0x7FF;
-			@Pc(126) int local126 = Class109.anIntArray299[local122];
-			@Pc(130) int local130 = Class109.anIntArray298[local122];
+			@Pc(126) int local126 = MathUtils.SINE[local122];
+			@Pc(130) int local130 = MathUtils.COSINE[local122];
 			@Pc(142) int local142 = local37 * local126 + local33 * local130 + 32767 >> 16;
 			local37 = local37 * local130 + 32767 - local33 * local126 >> 16;
 			local33 = local142;

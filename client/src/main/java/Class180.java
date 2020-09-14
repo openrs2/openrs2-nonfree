@@ -5,7 +5,7 @@ import dev.openrs2.deob.annotation.OriginalMember;
 public final class Class180 {
 
 	@OriginalMember(owner = "client!vf", name = "a", descriptor = "I")
-	public int anInt5496;
+	public int x;
 
 	@OriginalMember(owner = "client!vf", name = "d", descriptor = "J")
 	public long aLong189;
@@ -26,5 +26,5 @@ public final class Class180 {
 	public int anInt5501;
 
 	@OriginalMember(owner = "client!vf", name = "n", descriptor = "I")
-	public int anInt5503;
+	public int z;
 }

@@ -322,7 +322,7 @@ public final class client extends GameShell {
 		if (GlRenderer.enabled) {
 			label195:
 			for (@Pc(56) int local56 = 0; local56 < 32768; local56++) {
-				@Pc(65) Npc local65 = Static3.aClass53_Sub1_Sub2Array1[local56];
+				@Pc(65) Npc local65 = Npc.npcs[local56];
 				if (local65 != null) {
 					@Pc(71) byte local71 = local65.type.aByte21;
 					if ((local71 & 0x2) > 0 && local65.anInt3965 == 0 && Math.random() * 1000.0D < 10.0D) {
@@ -332,12 +332,12 @@ public final class client extends GameShell {
 							local65.aByteArray51[0] = 1;
 							local65.anIntArray422[0] = local98 + (local65.x >> 7);
 							local65.anIntArray426[0] = (local65.z >> 7) + local106;
-							Static7.aClass30Array1[Static7.anInt5334].method568(0, local65.z >> 7, local65.getSize(), false, local65.x >> 7, local65.getSize(), false);
-							if (local65.anIntArray422[0] >= 0 && local65.anIntArray422[0] <= 104 - local65.getSize() && local65.anIntArray426[0] >= 0 && local65.anIntArray426[0] <= 104 - local65.getSize() && Static7.aClass30Array1[Static7.anInt5334].method575(local65.anIntArray426[0], local65.z >> 7, local65.anIntArray422[0], local65.x >> 7)) {
+							PathFinder.collisionMaps[Static7.y].method568(0, local65.z >> 7, local65.getSize(), false, local65.x >> 7, local65.getSize(), false);
+							if (local65.anIntArray422[0] >= 0 && local65.anIntArray422[0] <= 104 - local65.getSize() && local65.anIntArray426[0] >= 0 && local65.anIntArray426[0] <= 104 - local65.getSize() && PathFinder.collisionMaps[Static7.y].method575(local65.anIntArray426[0], local65.z >> 7, local65.anIntArray422[0], local65.x >> 7)) {
 								if (local65.getSize() > 1) {
 									for (@Pc(240) int local240 = local65.anIntArray422[0]; local240 < local65.anIntArray422[0] + local65.getSize(); local240++) {
 										for (@Pc(256) int local256 = local65.anIntArray426[0]; local65.anIntArray426[0] + local65.getSize() > local256; local256++) {
-											if ((Static7.aClass30Array1[Static7.anInt5334].anIntArrayArray6[local240][local256] & 0x2401FF) != 0) {
+											if ((PathFinder.collisionMaps[Static7.y].flags[local240][local256] & 0x2401FF) != 0) {
 												continue label195;
 											}
 										}
@@ -350,7 +350,7 @@ public final class client extends GameShell {
 					Static32.method4024(local65);
 					Static34.method4247(local65);
 					Static13.method939(local65);
-					Static7.aClass30Array1[Static7.anInt5334].method567(false, false, local65.getSize(), local65.getSize(), local65.z >> 7, local65.x >> 7);
+					PathFinder.collisionMaps[Static7.y].method567(false, false, local65.getSize(), local65.getSize(), local65.z >> 7, local65.x >> 7);
 				}
 			}
 		}
@@ -474,7 +474,7 @@ public final class client extends GameShell {
 			}
 		} else if (mainLoadState == 10) {
 			for (@Pc(93) int i = 0; i < 4; i++) {
-				Static7.aClass30Array1[i] = new Class30(104, 104);
+				PathFinder.collisionMaps[i] = new CollisionMap(104, 104);
 			}
 			mainLoadState = 30;
 			mainLoadSecondaryText = LocalisedText.MAINLOAD10B;

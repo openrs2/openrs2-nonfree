@@ -43,46 +43,46 @@ public final class Static25 {
 
 	@OriginalMember(owner = "client!mi", name = "a", descriptor = "(III)J")
 	public static long method2726(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
-		@Pc(7) Class4_Sub19 local7 = Static1.aClass4_Sub19ArrayArrayArray1[arg0][arg1][arg2];
-		return local7 == null || local7.aClass179_1 == null ? 0L : local7.aClass179_1.aLong188;
+		@Pc(7) Tile local7 = Terrain.tiles[arg0][arg1][arg2];
+		return local7 == null || local7.wall == null ? 0L : local7.wall.aLong188;
 	}
 
 	@OriginalMember(owner = "client!mj", name = "a", descriptor = "(IIIII[[[B[I[I[I[I[IIBII)V")
 	public static void method2728(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) byte[][][] arg5, @OriginalArg(6) int[] arg6, @OriginalArg(7) int[] arg7, @OriginalArg(8) int[] arg8, @OriginalArg(9) int[] arg9, @OriginalArg(10) int[] arg10, @OriginalArg(11) int arg11, @OriginalArg(12) byte arg12, @OriginalArg(13) int arg13, @OriginalArg(14) int arg14) {
 		if (arg0 < 0) {
 			arg0 = 0;
-		} else if (arg0 >= Static7.anInt5632 * 128) {
-			arg0 = Static7.anInt5632 * 128 - 1;
+		} else if (arg0 >= Terrain.width * 128) {
+			arg0 = Terrain.width * 128 - 1;
 		}
 		if (arg2 < 0) {
 			arg2 = 0;
-		} else if (arg2 >= Static7.anInt5590 * 128) {
-			arg2 = Static7.anInt5590 * 128 - 1;
+		} else if (arg2 >= Terrain.length * 128) {
+			arg2 = Terrain.length * 128 - 1;
 		}
-		Static2.anInt2247 = Class109.anIntArray299[arg3];
-		Static5.anInt3487 = Class109.anIntArray298[arg3];
-		Static6.anInt4794 = Class109.anIntArray299[arg4];
-		Static3.anInt2272 = Class109.anIntArray298[arg4];
+		Static2.anInt2247 = MathUtils.SINE[arg3];
+		Static5.anInt3487 = MathUtils.COSINE[arg3];
+		Static6.anInt4794 = MathUtils.SINE[arg4];
+		Static3.anInt2272 = MathUtils.COSINE[arg4];
 		Static7.anInt5281 = arg0;
 		Static6.anInt4375 = arg1;
 		Static6.anInt4400 = arg2;
 		Static6.anInt4513 = arg0 / 128;
 		Static4.anInt3329 = arg2 / 128;
-		Static6.anInt4978 = Static6.anInt4513 - Static4.anInt3253;
+		Static6.anInt4978 = Static6.anInt4513 - Terrain.anInt3253;
 		if (Static6.anInt4978 < 0) {
 			Static6.anInt4978 = 0;
 		}
-		Static1.anInt890 = Static4.anInt3329 - Static4.anInt3253;
+		Static1.anInt890 = Static4.anInt3329 - Terrain.anInt3253;
 		if (Static1.anInt890 < 0) {
 			Static1.anInt890 = 0;
 		}
-		Static2.anInt5778 = Static6.anInt4513 + Static4.anInt3253;
-		if (Static2.anInt5778 > Static7.anInt5632) {
-			Static2.anInt5778 = Static7.anInt5632;
+		Static2.anInt5778 = Static6.anInt4513 + Terrain.anInt3253;
+		if (Static2.anInt5778 > Terrain.width) {
+			Static2.anInt5778 = Terrain.width;
 		}
-		Static2.anInt1344 = Static4.anInt3329 + Static4.anInt3253;
-		if (Static2.anInt1344 > Static7.anInt5590) {
-			Static2.anInt1344 = Static7.anInt5590;
+		Static2.anInt1344 = Static4.anInt3329 + Terrain.anInt3253;
+		if (Static2.anInt1344 > Terrain.length) {
+			Static2.anInt1344 = Terrain.length;
 		}
 		@Pc(99) short local99;
 		if (GlRenderer.enabled) {
@@ -90,29 +90,29 @@ public final class Static25 {
 		} else {
 			local99 = 3500;
 		}
-		for (@Pc(104) int local104 = 0; local104 < Static4.anInt3253 + Static4.anInt3253 + 2; local104++) {
-			for (@Pc(113) int local113 = 0; local113 < Static4.anInt3253 + Static4.anInt3253 + 2; local113++) {
-				@Pc(130) int local130 = (local104 - Static4.anInt3253 << 7) - (Static7.anInt5281 & 0x7F);
-				@Pc(140) int local140 = (local113 - Static4.anInt3253 << 7) - (Static6.anInt4400 & 0x7F);
-				@Pc(146) int local146 = Static6.anInt4513 + local104 - Static4.anInt3253;
-				@Pc(152) int local152 = Static4.anInt3329 + local113 - Static4.anInt3253;
-				if (local146 >= 0 && local152 >= 0 && local146 < Static7.anInt5632 && local152 < Static7.anInt5590) {
+		for (@Pc(104) int local104 = 0; local104 < Terrain.anInt3253 + Terrain.anInt3253 + 2; local104++) {
+			for (@Pc(113) int local113 = 0; local113 < Terrain.anInt3253 + Terrain.anInt3253 + 2; local113++) {
+				@Pc(130) int local130 = (local104 - Terrain.anInt3253 << 7) - (Static7.anInt5281 & 0x7F);
+				@Pc(140) int local140 = (local113 - Terrain.anInt3253 << 7) - (Static6.anInt4400 & 0x7F);
+				@Pc(146) int local146 = Static6.anInt4513 + local104 - Terrain.anInt3253;
+				@Pc(152) int local152 = Static4.anInt3329 + local113 - Terrain.anInt3253;
+				if (local146 >= 0 && local152 >= 0 && local146 < Terrain.width && local152 < Terrain.length) {
 					@Pc(176) int local176;
-					if (Static1.anIntArrayArrayArray2 == null) {
-						local176 = Static6.anIntArrayArrayArray14[0][local146][local152] + 128 - Static6.anInt4375;
+					if (Terrain.underwaterTileHeights == null) {
+						local176 = Terrain.surfaceTileHeights[0][local146][local152] + 128 - Static6.anInt4375;
 					} else {
-						local176 = Static1.anIntArrayArrayArray2[0][local146][local152] + 128 - Static6.anInt4375;
+						local176 = Terrain.underwaterTileHeights[0][local146][local152] + 128 - Static6.anInt4375;
 					}
-					@Pc(201) int local201 = Static6.anIntArrayArrayArray14[3][local146][local152] - Static6.anInt4375 - 1000;
-					Static4.aBooleanArrayArray4[local104][local113] = Static9.method759(local130, local201, local176, local140, local99);
+					@Pc(201) int local201 = Terrain.surfaceTileHeights[3][local146][local152] - Static6.anInt4375 - 1000;
+					Terrain.aBooleanArrayArray4[local104][local113] = Static9.method759(local130, local201, local176, local140, local99);
 				} else {
-					Static4.aBooleanArrayArray4[local104][local113] = false;
+					Terrain.aBooleanArrayArray4[local104][local113] = false;
 				}
 			}
 		}
-		for (@Pc(225) int local225 = 0; local225 < Static4.anInt3253 + Static4.anInt3253 + 1; local225++) {
-			for (@Pc(234) int local234 = 0; local234 < Static4.anInt3253 + Static4.anInt3253 + 1; local234++) {
-				Static4.aBooleanArrayArray5[local225][local234] = Static4.aBooleanArrayArray4[local225][local234] || Static4.aBooleanArrayArray4[local225 + 1][local234] || Static4.aBooleanArrayArray4[local225][local234 + 1] || Static4.aBooleanArrayArray4[local225 + 1][local234 + 1];
+		for (@Pc(225) int local225 = 0; local225 < Terrain.anInt3253 + Terrain.anInt3253 + 1; local225++) {
+			for (@Pc(234) int local234 = 0; local234 < Terrain.anInt3253 + Terrain.anInt3253 + 1; local234++) {
+				Terrain.aBooleanArrayArray5[local225][local234] = Terrain.aBooleanArrayArray4[local225][local234] || Terrain.aBooleanArrayArray4[local225 + 1][local234] || Terrain.aBooleanArrayArray4[local225][local234 + 1] || Terrain.aBooleanArrayArray4[local225 + 1][local234 + 1];
 			}
 		}
 		Static3.anIntArray170 = arg6;
@@ -121,8 +121,8 @@ public final class Static25 {
 		Static4.anIntArray309 = arg9;
 		Static3.anIntArray226 = arg10;
 		Static37.method4737();
-		if (Static7.aClass4_Sub19ArrayArrayArray3 != null) {
-			Static35.method4368(true);
+		if (Terrain.underwaterTiles != null) {
+			Terrain.setUnderwater(true);
 			Static31.method3797(arg0, arg1, arg2, null, 0, (byte) 0, arg13, arg14);
 			if (GlRenderer.enabled) {
 				Static3.aBoolean175 = false;
@@ -130,7 +130,7 @@ public final class Static25 {
 				method2772(null);
 				Static27.method3112();
 			}
-			Static35.method4368(false);
+			Terrain.setUnderwater(false);
 		}
 		Static31.method3797(arg0, arg1, arg2, arg5, arg11, arg12, arg13, arg14);
 	}
@@ -518,18 +518,6 @@ public final class Static25 {
 		Static3.aClass26_23.clear();
 	}
 
-	@OriginalMember(owner = "client!nb", name = "b", descriptor = "(III)I")
-	public static int method2926(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
-		@Pc(39) int local39 = Static35.method4331(arg1 + 91923, arg0 + 45365, 4) + (Static35.method4331(arg1 + 37821, arg0 + 10294, 2) - 128 >> 1) + (Static35.method4331(arg1, arg0, 1) - 128 >> 2) - 128;
-		@Pc(47) int local47 = (int) ((double) local39 * 0.3D) + 35;
-		if (local47 < 10) {
-			local47 = 10;
-		} else if (local47 > 60) {
-			local47 = 60;
-		}
-		return local47;
-	}
-
 	@OriginalMember(owner = "client!nb", name = "a", descriptor = "(Ljava/lang/String;ILjava/lang/String;ILjava/lang/String;I)V")
 	public static void method2927(@OriginalArg(0) String arg0, @OriginalArg(1) int arg1, @OriginalArg(2) String arg2, @OriginalArg(3) int arg3, @OriginalArg(4) String arg4) {
 		for (@Pc(7) int local7 = 99; local7 > 0; local7--) {
@@ -577,14 +565,14 @@ public final class Static25 {
 		Static5.anInt4329 = 0;
 		Static1.anInt1052 = 0;
 		Static8.method115();
-		for (@Pc(33) int local33 = 0; local33 < Static5.aClass53_Sub1_Sub1Array1.length; local33++) {
-			if (Static5.aClass53_Sub1_Sub1Array1[local33] != null) {
-				Static5.aClass53_Sub1_Sub1Array1[local33].anInt3985 = -1;
+		for (@Pc(33) int local33 = 0; local33 < Player.players.length; local33++) {
+			if (Player.players[local33] != null) {
+				Player.players[local33].anInt3985 = -1;
 			}
 		}
-		for (@Pc(52) int local52 = 0; local52 < Static3.aClass53_Sub1_Sub2Array1.length; local52++) {
-			if (Static3.aClass53_Sub1_Sub2Array1[local52] != null) {
-				Static3.aClass53_Sub1_Sub2Array1[local52].anInt3985 = -1;
+		for (@Pc(52) int local52 = 0; local52 < Npc.npcs.length; local52++) {
+			if (Npc.npcs[local52] != null) {
+				Npc.npcs[local52].anInt3985 = -1;
 			}
 		}
 		Inv.deleteAll();
@@ -610,15 +598,4 @@ public final class Static25 {
 		}
 	}
 
-	@OriginalMember(owner = "client!nc", name = "a", descriptor = "(III)Lclient!dm;")
-	public static Class42 method2932(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
-		@Pc(7) Class4_Sub19 local7 = Static1.aClass4_Sub19ArrayArrayArray1[arg0][arg1][arg2];
-		if (local7 == null) {
-			return null;
-		} else {
-			@Pc(14) Class42 local14 = local7.aClass42_1;
-			local7.aClass42_1 = null;
-			return local14;
-		}
-	}
 }

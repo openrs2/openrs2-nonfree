@@ -195,7 +195,7 @@ public final class Static19 {
 		Static24.method2697();
 		Static35.method4310();
 		for (@Pc(18) int local18 = 0; local18 < 4; local18++) {
-			Static7.aClass30Array1[local18].method579();
+			PathFinder.collisionMaps[local18].clear();
 		}
 		Static10.method384(false);
 		System.gc();
@@ -203,27 +203,27 @@ public final class Static19 {
 		Static6.anInt4844 = -1;
 		Static4.aBoolean210 = false;
 		Static31.method3733(true);
-		Static7.anInt5479 = 0;
-		Static4.anInt3360 = 0;
-		Static1.anInt5 = 0;
-		Static5.aBoolean294 = false;
-		Static5.anInt3983 = 0;
+		Static7.originZ = 0;
+		Static4.centralZoneX = 0;
+		Static1.centralZoneZ = 0;
+		Static5.dynamicArea = false;
+		Static5.originX = 0;
 		for (@Pc(57) int local57 = 0; local57 < Static7.aClass94Array1.length; local57++) {
 			Static7.aClass94Array1[local57] = null;
 		}
-		Static6.anInt4451 = 0;
+		Npc.size = 0;
 		Static3.anInt2510 = 0;
 		for (@Pc(78) int local78 = 0; local78 < 2048; local78++) {
-			Static5.aClass53_Sub1_Sub1Array1[local78] = null;
+			Player.players[local78] = null;
 			Static6.aClass4_Sub10Array1[local78] = null;
 		}
 		for (@Pc(96) int local96 = 0; local96 < 32768; local96++) {
-			Static3.aClass53_Sub1_Sub2Array1[local96] = null;
+			Npc.npcs[local96] = null;
 		}
 		for (@Pc(110) int local110 = 0; local110 < 4; local110++) {
 			for (@Pc(117) int local117 = 0; local117 < 104; local117++) {
 				for (@Pc(122) int local122 = 0; local122 < 104; local122++) {
-					Static4.aClass112ArrayArrayArray1[local110][local117][local122] = null;
+					Static4.objStacks[local110][local117][local122] = null;
 				}
 			}
 		}

@@ -3,7 +3,7 @@ import dev.openrs2.deob.annotation.OriginalClass;
 import dev.openrs2.deob.annotation.OriginalMember;
 
 @OriginalClass("client!nh")
-public final class Class4_Sub19 extends Node {
+public final class Tile extends Node {
 
 	@OriginalMember(owner = "client!nh", name = "q", descriptor = "B")
 	public byte aByte14;
@@ -15,7 +15,7 @@ public final class Class4_Sub19 extends Node {
 	public Class142 aClass142_1;
 
 	@OriginalMember(owner = "client!nh", name = "v", descriptor = "Lclient!ve;")
-	public Class179 aClass179_1;
+	public Wall wall;
 
 	@OriginalMember(owner = "client!nh", name = "y", descriptor = "Z")
 	public boolean aBoolean256;
@@ -30,16 +30,16 @@ public final class Class4_Sub19 extends Node {
 	public int anInt3553;
 
 	@OriginalMember(owner = "client!nh", name = "G", descriptor = "I")
-	public int anInt3554;
+	public int sceneryLen;
 
 	@OriginalMember(owner = "client!nh", name = "J", descriptor = "Lclient!vl;")
-	public Class182 aClass182_1;
+	public WallDecor wallDecor;
 
 	@OriginalMember(owner = "client!nh", name = "L", descriptor = "Lclient!to;")
 	public Class166 aClass166_1;
 
 	@OriginalMember(owner = "client!nh", name = "P", descriptor = "Lclient!nh;")
-	public Class4_Sub19 aClass4_Sub19_1;
+	public Tile aClass4_Sub19_1;
 
 	@OriginalMember(owner = "client!nh", name = "Q", descriptor = "Lclient!lb;")
 	public Class108 aClass108_1;
@@ -54,33 +54,33 @@ public final class Class4_Sub19 extends Node {
 	public int anInt3559;
 
 	@OriginalMember(owner = "client!nh", name = "V", descriptor = "Lclient!dm;")
-	public Class42 aClass42_1;
+	public GroundDecor groundDecor;
 
 	@OriginalMember(owner = "client!nh", name = "s", descriptor = "[Lclient!co;")
-	public final Class33[] aClass33Array3 = new Class33[5];
+	public final Scenery[] scenery = new Scenery[5];
 
 	@OriginalMember(owner = "client!nh", name = "M", descriptor = "[I")
-	public final int[] anIntArray390 = new int[5];
+	public final int[] interiorFlags = new int[5];
 
 	@OriginalMember(owner = "client!nh", name = "D", descriptor = "I")
-	public int anInt3551 = 0;
+	public int allInteriorFlags = 0;
 
 	@OriginalMember(owner = "client!nh", name = "E", descriptor = "I")
 	public int anInt3552;
 
 	@OriginalMember(owner = "client!nh", name = "N", descriptor = "I")
-	public final int anInt3557;
+	public final int y;
 
 	@OriginalMember(owner = "client!nh", name = "z", descriptor = "I")
-	public final int anInt3548;
+	public final int x;
 
 	@OriginalMember(owner = "client!nh", name = "w", descriptor = "I")
-	public final int anInt3547;
+	public final int z;
 
 	@OriginalMember(owner = "client!nh", name = "<init>", descriptor = "(III)V")
-	public Class4_Sub19(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
-		this.anInt3557 = this.anInt3552 = arg0;
-		this.anInt3548 = arg1;
-		this.anInt3547 = arg2;
+	public Tile(@OriginalArg(0) int y, @OriginalArg(1) int x, @OriginalArg(2) int z) {
+		this.y = this.anInt3552 = y;
+		this.x = x;
+		this.z = z;
 	}
 }

@@ -38,7 +38,7 @@ public final class Static18 {
 
 	@OriginalMember(owner = "client!hb", name = "a", descriptor = "(I[Lclient!ih;)V")
 	public static void method1679(@OriginalArg(0) int arg0, @OriginalArg(1) Class4_Sub12[] arg1) {
-		Static5.aClass4_Sub12ArrayArray2[arg0] = arg1;
+		Terrain.aClass4_Sub12ArrayArray2[arg0] = arg1;
 	}
 
 	@OriginalMember(owner = "client!hc", name = "a", descriptor = "(IB)V")
@@ -579,14 +579,14 @@ public final class Static18 {
 	@OriginalMember(owner = "client!hh", name = "a", descriptor = "(IIIIIIB)V")
 	public static void method4370(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5) {
 		Static5.anInt3635 = 0;
-		for (@Pc(17) int local17 = -1; local17 < Static6.anInt4451 + Static3.anInt2510; local17++) {
+		for (@Pc(17) int local17 = -1; local17 < Npc.size + Static3.anInt2510; local17++) {
 			@Pc(31) PathingEntity local31;
 			if (local17 == -1) {
 				local31 = Player.self;
 			} else if (local17 < Static3.anInt2510) {
-				local31 = Static5.aClass53_Sub1_Sub1Array1[Static4.anIntArray317[local17]];
+				local31 = Player.players[Static4.anIntArray317[local17]];
 			} else {
-				local31 = Static3.aClass53_Sub1_Sub2Array1[Static7.anIntArray595[local17 - Static3.anInt2510]];
+				local31 = Npc.npcs[Npc.ids[local17 - Static3.anInt2510]];
 			}
 			if (local31 != null && local31.method3310()) {
 				if (local31 instanceof Npc) {
@@ -618,7 +618,7 @@ public final class Static18 {
 					@Pc(170) Class94[] local170 = Static7.aClass94Array1;
 					for (@Pc(172) int local172 = 0; local172 < local170.length; local172++) {
 						@Pc(180) Class94 local180 = local170[local172];
-						if (local180 != null && local180.anInt2561 == 1 && local180.anInt2560 == Static7.anIntArray595[local17 - Static3.anInt2510] && Static2.anInt954 % 20 < 10) {
+						if (local180 != null && local180.anInt2561 == 1 && local180.anInt2560 == Npc.ids[local17 - Static3.anInt2510] && Static2.anInt954 % 20 < 10) {
 							@Pc(214) int local214;
 							if (local93.anInt5259 == -1) {
 								local214 = local31.method3306() + 15;

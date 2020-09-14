@@ -913,8 +913,8 @@ public final class SoftwareModel extends Model {
 	@OriginalMember(owner = "client!na", name = "a", descriptor = "(I)V")
 	@Override
 	public final void method3815(@OriginalArg(0) int arg0) {
-		@Pc(3) int local3 = Class109.anIntArray299[arg0];
-		@Pc(7) int local7 = Class109.anIntArray298[arg0];
+		@Pc(3) int local3 = MathUtils.SINE[arg0];
+		@Pc(7) int local7 = MathUtils.COSINE[arg0];
 		for (@Pc(9) int local9 = 0; local9 < this.anInt3440; local9++) {
 			@Pc(29) int local29 = this.anIntArray340[local9] * local3 + this.anIntArray347[local9] * local7 >> 16;
 			this.anIntArray340[local9] = this.anIntArray340[local9] * local7 - this.anIntArray347[local9] * local3 >> 16;
@@ -937,8 +937,8 @@ public final class SoftwareModel extends Model {
 	@OriginalMember(owner = "client!na", name = "c", descriptor = "(I)V")
 	@Override
 	public final void method3832(@OriginalArg(0) int arg0) {
-		@Pc(3) int local3 = Class109.anIntArray299[arg0];
-		@Pc(7) int local7 = Class109.anIntArray298[arg0];
+		@Pc(3) int local3 = MathUtils.SINE[arg0];
+		@Pc(7) int local7 = MathUtils.COSINE[arg0];
 		for (@Pc(9) int local9 = 0; local9 < this.anInt3440; local9++) {
 			@Pc(29) int local29 = this.anIntArray344[local9] * local7 - this.anIntArray340[local9] * local3 >> 16;
 			this.anIntArray340[local9] = this.anIntArray344[local9] * local3 + this.anIntArray340[local9] * local7 >> 16;
@@ -1012,8 +1012,8 @@ public final class SoftwareModel extends Model {
 		@Pc(227) int local227 = 0;
 		@Pc(229) int local229 = 0;
 		if (arg0 != 0) {
-			local227 = Class109.anIntArray299[arg0];
-			local229 = Class109.anIntArray298[arg0];
+			local227 = MathUtils.SINE[arg0];
+			local229 = MathUtils.COSINE[arg0];
 		}
 		@Pc(241) boolean local241 = false;
 		if (arg8 > 0L && Static1.aBoolean8 && local53 > 0) {
@@ -1153,8 +1153,8 @@ public final class SoftwareModel extends Model {
 	@OriginalMember(owner = "client!na", name = "b", descriptor = "(I)V")
 	@Override
 	public final void method3817(@OriginalArg(0) int arg0) {
-		@Pc(3) int local3 = Class109.anIntArray299[arg0];
-		@Pc(7) int local7 = Class109.anIntArray298[arg0];
+		@Pc(3) int local3 = MathUtils.SINE[arg0];
+		@Pc(7) int local7 = MathUtils.COSINE[arg0];
 		for (@Pc(9) int local9 = 0; local9 < this.anInt3440; local9++) {
 			@Pc(29) int local29 = this.anIntArray344[local9] * local3 + this.anIntArray347[local9] * local7 >> 16;
 			this.anIntArray344[local9] = this.anIntArray344[local9] * local7 - this.anIntArray347[local9] * local3 >> 16;
@@ -1269,14 +1269,14 @@ public final class SoftwareModel extends Model {
 			}
 			@Pc(6) int local6 = Static4.anInt3125;
 			@Pc(8) int local8 = Static4.anInt3126;
-			@Pc(12) int local12 = Class109.anIntArray299[0];
-			@Pc(16) int local16 = Class109.anIntArray298[0];
-			@Pc(20) int local20 = Class109.anIntArray299[arg0];
-			@Pc(24) int local24 = Class109.anIntArray298[arg0];
-			@Pc(28) int local28 = Class109.anIntArray299[arg1];
-			@Pc(32) int local32 = Class109.anIntArray298[arg1];
-			@Pc(36) int local36 = Class109.anIntArray299[arg2];
-			@Pc(40) int local40 = Class109.anIntArray298[arg2];
+			@Pc(12) int local12 = MathUtils.SINE[0];
+			@Pc(16) int local16 = MathUtils.COSINE[0];
+			@Pc(20) int local20 = MathUtils.SINE[arg0];
+			@Pc(24) int local24 = MathUtils.COSINE[arg0];
+			@Pc(28) int local28 = MathUtils.SINE[arg1];
+			@Pc(32) int local32 = MathUtils.COSINE[arg1];
+			@Pc(36) int local36 = MathUtils.SINE[arg2];
+			@Pc(40) int local40 = MathUtils.COSINE[arg2];
 			@Pc(50) int local50 = arg4 * local36 + arg5 * local40 >> 16;
 			for (@Pc(52) int local52 = 0; local52 < this.anInt3440; local52++) {
 				@Pc(61) int local61 = this.anIntArray347[local52];
@@ -1377,14 +1377,14 @@ public final class SoftwareModel extends Model {
 			@Pc(79) int local79 = Static4.anIntArray367[local10];
 			@Pc(86) int local86 = this.anIntArray345[arg0] & 0xFFFF;
 			if (local32 >= 50) {
-				@Pc(99) int local99 = (50 - local24) * Class109.anIntArray300[local32 - local24];
+				@Pc(99) int local99 = (50 - local24) * MathUtils.anIntArray300[local32 - local24];
 				Static4.anIntArray381[0] = local1 + (local75 + ((Static4.anIntArray370[local20] - local75) * local99 >> 16) << 9) / 50;
 				Static4.anIntArray377[0] = local3 + (local79 + ((Static4.anIntArray367[local20] - local79) * local99 >> 16) << 9) / 50;
 				local5++;
 				Static4.anIntArray380[0] = local86 + (((this.anIntArray342[arg0] & 0xFFFF) - local86) * local99 >> 16);
 			}
 			if (local28 >= 50) {
-				@Pc(170) int local170 = (50 - local24) * Class109.anIntArray300[local28 - local24];
+				@Pc(170) int local170 = (50 - local24) * MathUtils.anIntArray300[local28 - local24];
 				Static4.anIntArray381[local5] = local1 + (local75 + ((Static4.anIntArray370[local15] - local75) * local170 >> 16) << 9) / 50;
 				Static4.anIntArray377[local5] = local3 + (local79 + ((Static4.anIntArray367[local15] - local79) * local170 >> 16) << 9) / 50;
 				Static4.anIntArray380[local5++] = local86 + (((this.anIntArray346[arg0] & 0xFFFF) - local86) * local170 >> 16);
@@ -1399,13 +1399,13 @@ public final class SoftwareModel extends Model {
 			@Pc(262) int local262 = Static4.anIntArray367[local15];
 			@Pc(269) int local269 = this.anIntArray346[arg0] & 0xFFFF;
 			if (local24 >= 50) {
-				@Pc(282) int local282 = (50 - local28) * Class109.anIntArray300[local24 - local28];
+				@Pc(282) int local282 = (50 - local28) * MathUtils.anIntArray300[local24 - local28];
 				Static4.anIntArray381[local5] = local1 + (local258 + ((Static4.anIntArray370[local10] - local258) * local282 >> 16) << 9) / 50;
 				Static4.anIntArray377[local5] = local3 + (local262 + ((Static4.anIntArray367[local10] - local262) * local282 >> 16) << 9) / 50;
 				Static4.anIntArray380[local5++] = local269 + (((this.anIntArray345[arg0] & 0xFFFF) - local269) * local282 >> 16);
 			}
 			if (local32 >= 50) {
-				@Pc(353) int local353 = (50 - local28) * Class109.anIntArray300[local32 - local28];
+				@Pc(353) int local353 = (50 - local28) * MathUtils.anIntArray300[local32 - local28];
 				Static4.anIntArray381[local5] = local1 + (local258 + ((Static4.anIntArray370[local20] - local258) * local353 >> 16) << 9) / 50;
 				Static4.anIntArray377[local5] = local3 + (local262 + ((Static4.anIntArray367[local20] - local262) * local353 >> 16) << 9) / 50;
 				Static4.anIntArray380[local5++] = local269 + (((this.anIntArray342[arg0] & 0xFFFF) - local269) * local353 >> 16);
@@ -1420,13 +1420,13 @@ public final class SoftwareModel extends Model {
 			@Pc(445) int local445 = Static4.anIntArray367[local20];
 			@Pc(452) int local452 = this.anIntArray342[arg0] & 0xFFFF;
 			if (local28 >= 50) {
-				@Pc(465) int local465 = (50 - local32) * Class109.anIntArray300[local28 - local32];
+				@Pc(465) int local465 = (50 - local32) * MathUtils.anIntArray300[local28 - local32];
 				Static4.anIntArray381[local5] = local1 + (local441 + ((Static4.anIntArray370[local15] - local441) * local465 >> 16) << 9) / 50;
 				Static4.anIntArray377[local5] = local3 + (local445 + ((Static4.anIntArray367[local15] - local445) * local465 >> 16) << 9) / 50;
 				Static4.anIntArray380[local5++] = local452 + (((this.anIntArray346[arg0] & 0xFFFF) - local452) * local465 >> 16);
 			}
 			if (local24 >= 50) {
-				@Pc(536) int local536 = (50 - local32) * Class109.anIntArray300[local24 - local32];
+				@Pc(536) int local536 = (50 - local32) * MathUtils.anIntArray300[local24 - local32];
 				Static4.anIntArray381[local5] = local1 + (local441 + ((Static4.anIntArray370[local10] - local441) * local536 >> 16) << 9) / 50;
 				Static4.anIntArray377[local5] = local3 + (local445 + ((Static4.anIntArray367[local10] - local445) * local536 >> 16) << 9) / 50;
 				Static4.anIntArray380[local5++] = local452 + (((this.anIntArray345[arg0] & 0xFFFF) - local452) * local536 >> 16);
@@ -1891,22 +1891,22 @@ public final class SoftwareModel extends Model {
 						local190 = this.anIntArray340;
 						local190[local188] -= Static4.anInt3442;
 						if (arg4 != 0) {
-							@Pc(218) int local218 = Class109.anIntArray299[arg4];
-							@Pc(222) int local222 = Class109.anIntArray298[arg4];
+							@Pc(218) int local218 = MathUtils.SINE[arg4];
+							@Pc(222) int local222 = MathUtils.COSINE[arg4];
 							@Pc(240) int local240 = this.anIntArray344[local188] * local218 + this.anIntArray347[local188] * local222 + 32767 >> 16;
 							this.anIntArray344[local188] = this.anIntArray344[local188] * local222 + 32767 - this.anIntArray347[local188] * local218 >> 16;
 							this.anIntArray347[local188] = local240;
 						}
 						if (arg2 != 0) {
-							@Pc(272) int local272 = Class109.anIntArray299[arg2];
-							@Pc(276) int local276 = Class109.anIntArray298[arg2];
+							@Pc(272) int local272 = MathUtils.SINE[arg2];
+							@Pc(276) int local276 = MathUtils.COSINE[arg2];
 							@Pc(294) int local294 = this.anIntArray344[local188] * local276 + 32767 - this.anIntArray340[local188] * local272 >> 16;
 							this.anIntArray340[local188] = this.anIntArray344[local188] * local272 + this.anIntArray340[local188] * local276 + 32767 >> 16;
 							this.anIntArray344[local188] = local294;
 						}
 						if (arg3 != 0) {
-							@Pc(326) int local326 = Class109.anIntArray299[arg3];
-							@Pc(330) int local330 = Class109.anIntArray298[arg3];
+							@Pc(326) int local326 = MathUtils.SINE[arg3];
+							@Pc(330) int local330 = MathUtils.COSINE[arg3];
 							@Pc(348) int local348 = this.anIntArray340[local188] * local326 + this.anIntArray347[local188] * local330 + 32767 >> 16;
 							this.anIntArray340[local188] = this.anIntArray340[local188] * local330 + 32767 - this.anIntArray347[local188] * local326 >> 16;
 							this.anIntArray347[local188] = local348;
@@ -2024,14 +2024,14 @@ public final class SoftwareModel extends Model {
 			}
 			@Pc(6) int local6 = Static4.anInt3125;
 			@Pc(8) int local8 = Static4.anInt3126;
-			@Pc(12) int local12 = Class109.anIntArray299[0];
-			@Pc(16) int local16 = Class109.anIntArray298[0];
-			@Pc(20) int local20 = Class109.anIntArray299[arg0];
-			@Pc(24) int local24 = Class109.anIntArray298[arg0];
-			@Pc(28) int local28 = Class109.anIntArray299[arg1];
-			@Pc(32) int local32 = Class109.anIntArray298[arg1];
-			@Pc(36) int local36 = Class109.anIntArray299[arg2];
-			@Pc(40) int local40 = Class109.anIntArray298[arg2];
+			@Pc(12) int local12 = MathUtils.SINE[0];
+			@Pc(16) int local16 = MathUtils.COSINE[0];
+			@Pc(20) int local20 = MathUtils.SINE[arg0];
+			@Pc(24) int local24 = MathUtils.COSINE[arg0];
+			@Pc(28) int local28 = MathUtils.SINE[arg1];
+			@Pc(32) int local32 = MathUtils.COSINE[arg1];
+			@Pc(36) int local36 = MathUtils.SINE[arg2];
+			@Pc(40) int local40 = MathUtils.COSINE[arg2];
 			@Pc(50) int local50 = arg4 * local36 + arg5 * local40 >> 16;
 			for (@Pc(52) int local52 = 0; local52 < this.anInt3440; local52++) {
 				@Pc(61) int local61 = this.anIntArray347[local52];
@@ -2142,22 +2142,22 @@ public final class SoftwareModel extends Model {
 								local1091 = this.anIntArray340;
 								local1091[local1078] -= Static4.anInt3442;
 								if (arg4 != 0) {
-									@Pc(1119) int local1119 = Class109.anIntArray299[arg4];
-									@Pc(1123) int local1123 = Class109.anIntArray298[arg4];
+									@Pc(1119) int local1119 = MathUtils.SINE[arg4];
+									@Pc(1123) int local1123 = MathUtils.COSINE[arg4];
 									@Pc(1141) int local1141 = this.anIntArray344[local1078] * local1119 + this.anIntArray347[local1078] * local1123 + 32767 >> 16;
 									this.anIntArray344[local1078] = this.anIntArray344[local1078] * local1123 + 32767 - this.anIntArray347[local1078] * local1119 >> 16;
 									this.anIntArray347[local1078] = local1141;
 								}
 								if (arg2 != 0) {
-									@Pc(1173) int local1173 = Class109.anIntArray299[arg2];
-									@Pc(1177) int local1177 = Class109.anIntArray298[arg2];
+									@Pc(1173) int local1173 = MathUtils.SINE[arg2];
+									@Pc(1177) int local1177 = MathUtils.COSINE[arg2];
 									@Pc(1195) int local1195 = this.anIntArray344[local1078] * local1177 + 32767 - this.anIntArray340[local1078] * local1173 >> 16;
 									this.anIntArray340[local1078] = this.anIntArray344[local1078] * local1173 + this.anIntArray340[local1078] * local1177 + 32767 >> 16;
 									this.anIntArray344[local1078] = local1195;
 								}
 								if (arg3 != 0) {
-									@Pc(1227) int local1227 = Class109.anIntArray299[arg3];
-									@Pc(1231) int local1231 = Class109.anIntArray298[arg3];
+									@Pc(1227) int local1227 = MathUtils.SINE[arg3];
+									@Pc(1231) int local1231 = MathUtils.COSINE[arg3];
 									@Pc(1249) int local1249 = this.anIntArray340[local1078] * local1227 + this.anIntArray347[local1078] * local1231 + 32767 >> 16;
 									this.anIntArray340[local1078] = this.anIntArray340[local1078] * local1231 + 32767 - this.anIntArray347[local1078] * local1227 >> 16;
 									this.anIntArray347[local1078] = local1249;
@@ -2192,12 +2192,12 @@ public final class SoftwareModel extends Model {
 					Static4.aBoolean247 = false;
 				}
 				@Pc(374) int[] local374 = new int[9];
-				@Pc(380) int local380 = Class109.anIntArray298[arg2] >> 1;
-				@Pc(386) int local386 = Class109.anIntArray299[arg2] >> 1;
-				@Pc(392) int local392 = Class109.anIntArray298[arg3] >> 1;
-				@Pc(398) int local398 = Class109.anIntArray299[arg3] >> 1;
-				@Pc(404) int local404 = Class109.anIntArray298[arg4] >> 1;
-				@Pc(410) int local410 = Class109.anIntArray299[arg4] >> 1;
+				@Pc(380) int local380 = MathUtils.COSINE[arg2] >> 1;
+				@Pc(386) int local386 = MathUtils.SINE[arg2] >> 1;
+				@Pc(392) int local392 = MathUtils.COSINE[arg3] >> 1;
+				@Pc(398) int local398 = MathUtils.SINE[arg3] >> 1;
+				@Pc(404) int local404 = MathUtils.COSINE[arg4] >> 1;
+				@Pc(410) int local410 = MathUtils.SINE[arg4] >> 1;
 				@Pc(418) int local418 = local386 * local404 + 16384 >> 15;
 				@Pc(426) int local426 = local386 * local410 + 16384 >> 15;
 				local374[0] = local392 * local404 + local398 * local426 + 16384 >> 15;
@@ -2494,22 +2494,22 @@ public final class SoftwareModel extends Model {
 				local114 = this.anIntArray340;
 				local114[local108] -= Static4.anInt3442;
 				if (arg3 != 0) {
-					@Pc(142) int local142 = Class109.anIntArray299[arg3];
-					@Pc(146) int local146 = Class109.anIntArray298[arg3];
+					@Pc(142) int local142 = MathUtils.SINE[arg3];
+					@Pc(146) int local146 = MathUtils.COSINE[arg3];
 					@Pc(164) int local164 = this.anIntArray344[local108] * local142 + this.anIntArray347[local108] * local146 + 32767 >> 16;
 					this.anIntArray344[local108] = this.anIntArray344[local108] * local146 + 32767 - this.anIntArray347[local108] * local142 >> 16;
 					this.anIntArray347[local108] = local164;
 				}
 				if (arg1 != 0) {
-					@Pc(196) int local196 = Class109.anIntArray299[arg1];
-					@Pc(200) int local200 = Class109.anIntArray298[arg1];
+					@Pc(196) int local196 = MathUtils.SINE[arg1];
+					@Pc(200) int local200 = MathUtils.COSINE[arg1];
 					@Pc(218) int local218 = this.anIntArray344[local108] * local200 + 32767 - this.anIntArray340[local108] * local196 >> 16;
 					this.anIntArray340[local108] = this.anIntArray344[local108] * local196 + this.anIntArray340[local108] * local200 + 32767 >> 16;
 					this.anIntArray344[local108] = local218;
 				}
 				if (arg2 != 0) {
-					@Pc(250) int local250 = Class109.anIntArray299[arg2];
-					@Pc(254) int local254 = Class109.anIntArray298[arg2];
+					@Pc(250) int local250 = MathUtils.SINE[arg2];
+					@Pc(254) int local254 = MathUtils.COSINE[arg2];
 					@Pc(272) int local272 = this.anIntArray340[local108] * local250 + this.anIntArray347[local108] * local254 + 32767 >> 16;
 					this.anIntArray340[local108] = this.anIntArray340[local108] * local254 + 32767 - this.anIntArray347[local108] * local250 >> 16;
 					this.anIntArray347[local108] = local272;

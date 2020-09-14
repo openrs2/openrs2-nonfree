@@ -49,18 +49,6 @@ public final class Static32 {
 		Static24.method2652(0, 0);
 	}
 
-	@OriginalMember(owner = "client!sa", name = "a", descriptor = "(III)Lclient!vl;")
-	public static Class182 method3881(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
-		@Pc(7) Class4_Sub19 local7 = Static1.aClass4_Sub19ArrayArrayArray1[arg0][arg1][arg2];
-		if (local7 == null) {
-			return null;
-		} else {
-			@Pc(14) Class182 local14 = local7.aClass182_1;
-			local7.aClass182_1 = null;
-			return local14;
-		}
-	}
-
 	@OriginalMember(owner = "client!sa", name = "a", descriptor = "(II)I")
 	public static int method3882(@OriginalArg(0) int arg0) {
 		return arg0 >> 11 & 0x7F;
@@ -260,14 +248,14 @@ public final class Static32 {
 		@Pc(55) int local55 = 0;
 		@Pc(57) int local57 = arg3;
 		if (local53 != 0) {
-			@Pc(67) int local67 = Class109.anIntArray299[local53];
-			@Pc(71) int local71 = Class109.anIntArray298[local53];
+			@Pc(67) int local67 = MathUtils.SINE[local53];
+			@Pc(71) int local71 = MathUtils.COSINE[local53];
 			local46 = -arg3 * local67 >> 16;
 			local57 = arg3 * local71 >> 16;
 		}
 		if (local44 != 0) {
-			@Pc(93) int local93 = Class109.anIntArray298[local44];
-			@Pc(97) int local97 = Class109.anIntArray299[local44];
+			@Pc(93) int local93 = MathUtils.COSINE[local44];
+			@Pc(97) int local97 = MathUtils.SINE[local44];
 			local55 = local57 * local97 >> 16;
 			local57 = local57 * local93 >> 16;
 		}

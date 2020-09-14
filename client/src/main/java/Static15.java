@@ -311,11 +311,11 @@ public final class Static15 {
 		@Pc(20) int local20;
 		@Pc(23) int local23;
 		if (local9 == 1 || local9 == 3) {
-			local20 = arg4.anInt5516;
-			local23 = arg4.anInt5527;
+			local20 = arg4.length;
+			local23 = arg4.width;
 		} else {
-			local20 = arg4.anInt5527;
-			local23 = arg4.anInt5516;
+			local20 = arg4.width;
+			local23 = arg4.length;
 		}
 		@Pc(44) int local44;
 		@Pc(52) int local52;
@@ -336,17 +336,17 @@ public final class Static15 {
 			local74 = arg6;
 		}
 		@Pc(98) int local98 = (local23 << 6) + (arg6 << 7);
-		@Pc(102) int[][] local102 = Static6.anIntArrayArrayArray13[arg3];
+		@Pc(102) int[][] local102 = Terrain.tileHeights[arg3];
 		@Pc(111) int local111 = (arg0 << 7) + (local20 << 6);
 		@Pc(138) int local138 = local102[local44][local82] + local102[local52][local74] + local102[local44][local74] + local102[local52][local82] >> 2;
 		@Pc(140) int local140 = 0;
 		if (arg3 != 0) {
-			@Pc(152) int[][] local152 = Static6.anIntArrayArrayArray13[0];
+			@Pc(152) int[][] local152 = Terrain.tileHeights[0];
 			local140 = local138 - (local152[local44][local82] + local152[local44][local74] + local152[local52][local74] + local152[local52][local82] >> 2);
 		}
 		@Pc(186) int[][] local186 = null;
 		if (arg3 < 3) {
-			local186 = Static6.anIntArrayArrayArray13[arg3 + 1];
+			local186 = Terrain.tileHeights[arg3 + 1];
 		}
 		@Pc(212) Class96 local212 = arg4.method4450(local111, false, arg7, local138, local102, local186, true, arg2, local98, null);
 		Static14.method1210(local212.aClass56_Sub1_3, local111 - arg1, local140, local98 - arg5);
@@ -499,11 +499,11 @@ public final class Static15 {
 	@OriginalMember(owner = "client!fg", name = "a", descriptor = "(IIIZIIIIBII)V")
 	public static void method1337(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4, @OriginalArg(6) int arg5, @OriginalArg(7) int arg6, @OriginalArg(9) int arg7, @OriginalArg(10) int arg8) {
 		if (Player.self.getSize() == 2) {
-			Static30.method418(arg8, arg3, arg5, arg6, arg0, arg4, arg1, arg2, arg7);
+			PathFinder.method418(arg8, arg3, arg5, arg6, arg0, arg4, arg1, arg2, arg7);
 		} else if (Player.self.getSize() > 2) {
-			Static21.method1998(arg6, arg8, arg0, arg3, arg5, arg7, arg4, arg2, Player.self.getSize(), arg1);
+			PathFinder.method1998(arg6, arg8, arg0, arg3, arg5, arg7, arg4, arg2, Player.self.getSize(), arg1);
 		} else {
-			Static22.method2197(arg5, arg8, arg7, arg1, arg4, arg6, arg0, arg2, arg3);
+			PathFinder.method2197(arg5, arg8, arg7, arg1, arg4, arg6, arg0, arg2, arg3);
 		}
 	}
 
@@ -759,7 +759,7 @@ public final class Static15 {
 	}
 
 	@OriginalMember(owner = "client!fl", name = "a", descriptor = "(II[Lclient!ch;[BIIIIZII)V")
-	public static void method1471(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) Class30[] arg2, @OriginalArg(3) byte[] arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) boolean arg8, @OriginalArg(10) int arg9) {
+	public static void method1471(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) CollisionMap[] arg2, @OriginalArg(3) byte[] arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) boolean arg8, @OriginalArg(10) int arg9) {
 		@Pc(10) Buffer local10 = new Buffer(arg3);
 		@Pc(12) int local12 = -1;
 		while (true) {
@@ -783,13 +783,13 @@ public final class Static15 {
 				@Pc(77) int local77 = local69 & 0x3;
 				if (local65 == arg7 && arg6 <= local57 && arg6 + 8 > local57 && arg5 <= local61 && arg5 + 8 > local61) {
 					@Pc(108) LocType local108 = LocTypeList.get(local12);
-					@Pc(125) int local125 = Static29.method3147(local108.anInt5527, local61 & 0x7, local77, local57 & 0x7, arg4, local108.anInt5516) + arg1;
-					@Pc(145) int local145 = arg9 + Static26.method4356(local57 & 0x7, local108.anInt5516, local108.anInt5527, arg4, local61 & 0x7, local77);
+					@Pc(125) int local125 = Static29.method3147(local108.width, local61 & 0x7, local77, local57 & 0x7, arg4, local108.length) + arg1;
+					@Pc(145) int local145 = arg9 + Static26.method4356(local57 & 0x7, local108.length, local108.width, arg4, local61 & 0x7, local77);
 					if (local125 > 0 && local145 > 0 && local125 < 103 && local145 < 103) {
-						@Pc(162) Class30 local162 = null;
+						@Pc(162) CollisionMap local162 = null;
 						if (!arg8) {
 							@Pc(166) int local166 = arg0;
-							if ((Static4.aByteArrayArrayArray17[1][local125][local145] & 0x2) == 2) {
+							if ((Static4.tileFlags[1][local125][local145] & 0x2) == 2) {
 								local166 = arg0 - 1;
 							}
 							if (local166 >= 0) {
@@ -895,8 +895,8 @@ public final class Static15 {
 	@OriginalMember(owner = "client!fm", name = "a", descriptor = "(B)V")
 	public static void method1480() {
 		Static3.anInt5405 = 0;
-		@Pc(13) int local13 = (Player.self.x >> 7) + Static5.anInt3983;
-		@Pc(20) int local20 = Static7.anInt5479 + (Player.self.z >> 7);
+		@Pc(13) int local13 = (Player.self.x >> 7) + Static5.originX;
+		@Pc(20) int local20 = Static7.originZ + (Player.self.z >> 7);
 		if (local13 >= 3053 && local13 <= 3156 && local20 >= 3056 && local20 <= 3136) {
 			Static3.anInt5405 = 1;
 		}

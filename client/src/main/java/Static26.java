@@ -299,7 +299,7 @@ public final class Static26 {
 	}
 
 	@OriginalMember(owner = "client!ng", name = "a", descriptor = "(I[Lclient!ch;[BIIIIIIZI)[I")
-	private static int[] method4355(@OriginalArg(0) int arg0, @OriginalArg(1) Class30[] arg1, @OriginalArg(2) byte[] arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(8) int arg7, @OriginalArg(9) boolean arg8, @OriginalArg(10) int arg9) {
+	private static int[] method4355(@OriginalArg(0) int arg0, @OriginalArg(1) CollisionMap[] arg1, @OriginalArg(2) byte[] arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(8) int arg7, @OriginalArg(9) boolean arg8, @OriginalArg(10) int arg9) {
 		@Pc(7) int local7 = (arg9 & 0x7) * 8;
 		@Pc(13) int local13 = (arg4 & 0x7) * 8;
 		if (!arg8) {
@@ -308,7 +308,7 @@ public final class Static26 {
 					@Pc(38) int local38 = Static35.method4338(local23 & 0x7, arg6, local18 & 0x7) + arg3;
 					@Pc(50) int local50 = arg5 + Static24.method2614(arg6, local18 & 0x7, local23 & 0x7);
 					if (local38 > 0 && local38 < 103 && local50 > 0 && local50 < 103) {
-						arg1[arg7].anIntArrayArray6[local38][local50] &= -2097153;
+						arg1[arg7].flags[local38][local50] &= -2097153;
 					}
 				}
 			}
@@ -377,7 +377,7 @@ public final class Static26 {
 								local300 = arg3 + local7 + 8 - local281;
 							}
 							if (local300 >= 0 && local300 < 104 && local293 >= 0 && local293 < 104) {
-								Static6.anIntArrayArrayArray13[arg7][local300][local293] = Static6.anIntArrayArrayArray13[arg7][local229 + local121][local241 + local129];
+								Terrain.tileHeights[arg7][local300][local293] = Terrain.tileHeights[arg7][local229 + local121][local241 + local129];
 							}
 						}
 					}
@@ -429,7 +429,7 @@ public final class Static26 {
 							}
 							while (local600 > local602) {
 								while (local618 < local638) {
-									Static4.aByteArrayArrayArray16[arg7][local602][local618] = 0;
+									Terrain.aByteArrayArrayArray16[arg7][local602][local618] = 0;
 									local618++;
 								}
 								local602++;
@@ -446,7 +446,7 @@ public final class Static26 {
 												@Pc(766) int local766 = arg3 + Static35.method4338(local729 & 0x7, arg6, local718 & 0x7);
 												@Pc(778) int local778 = Static24.method2614(arg6, local718 & 0x7, local729 & 0x7) + arg5;
 												if (local766 >= 0 && local766 < 104 && local778 >= 0 && local778 < 104) {
-													Static4.aByteArrayArrayArray16[arg7][local766][local778] = local713;
+													Terrain.aByteArrayArrayArray16[arg7][local766][local778] = local713;
 												}
 											}
 										}
@@ -485,8 +485,8 @@ public final class Static26 {
 									@Pc(1014) int local1014 = local905.anInt1320 >> 7;
 									@Pc(1019) int local1019 = local905.anInt1338 >> 7;
 									if (local1019 >= 0 && local1014 >= 0 && local1019 < 104 && local1014 < 104) {
-										local905.aBoolean80 = (Static4.aByteArrayArrayArray17[1][local1019][local1014] & 0x2) != 0;
-										local905.anInt1322 = Static6.anIntArrayArrayArray13[local905.anInt1326][local1019][local1014] - local905.anInt1322;
+										local905.aBoolean80 = (Static4.tileFlags[1][local1019][local1014] & 0x2) != 0;
+										local905.anInt1322 = Terrain.tileHeights[local905.anInt1326][local1019][local1014] - local905.anInt1322;
 										Static27.method3113(local905);
 									}
 								}
@@ -512,7 +512,7 @@ public final class Static26 {
 		@Pc(1097) int local1097 = arg3 + 7;
 		for (@Pc(1099) int local1099 = arg3; local1099 < local1097; local1099++) {
 			for (@Pc(1104) int local1104 = arg5; local1104 < local1093; local1104++) {
-				Static4.aByteArrayArrayArray16[arg7][local1099][local1104] = 0;
+				Terrain.aByteArrayArrayArray16[arg7][local1099][local1104] = 0;
 			}
 		}
 		return local526 ? Static6.anIntArray465 : null;
@@ -569,7 +569,7 @@ public final class Static26 {
 			for (@Pc(37) int local37 = 0; local37 < 13; local37++) {
 				for (@Pc(42) int local42 = 0; local42 < 13; local42++) {
 					@Pc(49) boolean local49 = false;
-					@Pc(57) int local57 = Static7.anIntArrayArrayArray15[local26][local37][local42];
+					@Pc(57) int local57 = Static7.zones[local26][local37][local42];
 					if (local57 != -1) {
 						@Pc(69) int local69 = local57 >> 24 & 0x3;
 						if (!arg0 || local69 == 0) {
@@ -577,10 +577,10 @@ public final class Static26 {
 							@Pc(89) int local89 = local57 >> 14 & 0x3FF;
 							@Pc(95) int local95 = local57 >> 3 & 0x7FF;
 							@Pc(105) int local105 = local95 / 8 + (local89 / 8 << 8);
-							for (@Pc(107) int local107 = 0; local107 < Static7.anIntArray597.length; local107++) {
-								if (Static7.anIntArray597[local107] == local105 && local18[local107] != null) {
+							for (@Pc(107) int local107 = 0; local107 < Static7.mapSquares.length; local107++) {
+								if (Static7.mapSquares[local107] == local105 && local18[local107] != null) {
 									local49 = true;
-									@Pc(151) int[] local151 = method4355(local69, Static7.aClass30Array1, local18[local107], local37 * 8, local89, local42 * 8, local83, local26, arg0, local95);
+									@Pc(151) int[] local151 = method4355(local69, PathFinder.collisionMaps, local18[local107], local37 * 8, local89, local42 * 8, local83, local26, arg0, local95);
 									if (local10 == null && local151 != null) {
 										local10 = local151;
 									}
@@ -608,28 +608,28 @@ public final class Static26 {
 
 	@OriginalMember(owner = "client!nh", name = "a", descriptor = "(Lclient!vc;III)V")
 	public static void method2981(@OriginalArg(0) Entity arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) {
-		if (arg2 < Static7.anInt5632) {
-			@Pc(12) Class4_Sub19 local12 = Static1.aClass4_Sub19ArrayArrayArray1[arg1][arg2 + 1][arg3];
-			if (local12 != null && local12.aClass42_1 != null && local12.aClass42_1.aClass53_2.method3808()) {
-				arg0.method3807(local12.aClass42_1.aClass53_2, 128, 0, 0, true);
+		if (arg2 < Terrain.width) {
+			@Pc(12) Tile local12 = Terrain.tiles[arg1][arg2 + 1][arg3];
+			if (local12 != null && local12.groundDecor != null && local12.groundDecor.aClass53_2.method3808()) {
+				arg0.method3807(local12.groundDecor.aClass53_2, 128, 0, 0, true);
 			}
 		}
-		if (arg3 < Static7.anInt5632) {
-			@Pc(44) Class4_Sub19 local44 = Static1.aClass4_Sub19ArrayArrayArray1[arg1][arg2][arg3 + 1];
-			if (local44 != null && local44.aClass42_1 != null && local44.aClass42_1.aClass53_2.method3808()) {
-				arg0.method3807(local44.aClass42_1.aClass53_2, 0, 0, 128, true);
+		if (arg3 < Terrain.width) {
+			@Pc(44) Tile local44 = Terrain.tiles[arg1][arg2][arg3 + 1];
+			if (local44 != null && local44.groundDecor != null && local44.groundDecor.aClass53_2.method3808()) {
+				arg0.method3807(local44.groundDecor.aClass53_2, 0, 0, 128, true);
 			}
 		}
-		if (arg2 < Static7.anInt5632 && arg3 < Static7.anInt5590) {
-			@Pc(81) Class4_Sub19 local81 = Static1.aClass4_Sub19ArrayArrayArray1[arg1][arg2 + 1][arg3 + 1];
-			if (local81 != null && local81.aClass42_1 != null && local81.aClass42_1.aClass53_2.method3808()) {
-				arg0.method3807(local81.aClass42_1.aClass53_2, 128, 0, 128, true);
+		if (arg2 < Terrain.width && arg3 < Terrain.length) {
+			@Pc(81) Tile local81 = Terrain.tiles[arg1][arg2 + 1][arg3 + 1];
+			if (local81 != null && local81.groundDecor != null && local81.groundDecor.aClass53_2.method3808()) {
+				arg0.method3807(local81.groundDecor.aClass53_2, 128, 0, 128, true);
 			}
 		}
-		if (arg2 < Static7.anInt5632 && arg3 > 0) {
-			@Pc(117) Class4_Sub19 local117 = Static1.aClass4_Sub19ArrayArrayArray1[arg1][arg2 + 1][arg3 - 1];
-			if (local117 != null && local117.aClass42_1 != null && local117.aClass42_1.aClass53_2.method3808()) {
-				arg0.method3807(local117.aClass42_1.aClass53_2, 128, 0, -128, true);
+		if (arg2 < Terrain.width && arg3 > 0) {
+			@Pc(117) Tile local117 = Terrain.tiles[arg1][arg2 + 1][arg3 - 1];
+			if (local117 != null && local117.groundDecor != null && local117.groundDecor.aClass53_2.method3808()) {
+				arg0.method3807(local117.groundDecor.aClass53_2, 128, 0, -128, true);
 			}
 		}
 	}
@@ -822,30 +822,30 @@ public final class Static26 {
 	public static void method3056() {
 		Static5.aClass4_Sub10_Sub1_2.startBitAccess();
 		@Pc(13) int local13 = Static5.aClass4_Sub10_Sub1_2.readBits(8);
-		if (local13 < Static6.anInt4451) {
-			for (@Pc(23) int local23 = local13; local23 < Static6.anInt4451; local23++) {
-				Static2.anIntArray99[Static5.anInt4195++] = Static7.anIntArray595[local23];
+		if (local13 < Npc.size) {
+			for (@Pc(23) int local23 = local13; local23 < Npc.size; local23++) {
+				Static2.anIntArray99[Static5.anInt4195++] = Npc.ids[local23];
 			}
 		}
-		if (local13 > Static6.anInt4451) {
+		if (local13 > Npc.size) {
 			throw new RuntimeException("gnpov1");
 		}
-		Static6.anInt4451 = 0;
+		Npc.size = 0;
 		for (@Pc(62) int local62 = 0; local62 < local13; local62++) {
-			@Pc(73) int local73 = Static7.anIntArray595[local62];
-			@Pc(77) Npc local77 = Static3.aClass53_Sub1_Sub2Array1[local73];
+			@Pc(73) int local73 = Npc.ids[local62];
+			@Pc(77) Npc local77 = Npc.npcs[local73];
 			@Pc(82) int local82 = Static5.aClass4_Sub10_Sub1_2.readBits(1);
 			if (local82 == 0) {
-				Static7.anIntArray595[Static6.anInt4451++] = local73;
+				Npc.ids[Npc.size++] = local73;
 				local77.anInt3990 = Static2.anInt954;
 			} else {
 				@Pc(106) int local106 = Static5.aClass4_Sub10_Sub1_2.readBits(2);
 				if (local106 == 0) {
-					Static7.anIntArray595[Static6.anInt4451++] = local73;
+					Npc.ids[Npc.size++] = local73;
 					local77.anInt3990 = Static2.anInt954;
 					Static7.anIntArray587[Static6.anInt4760++] = local73;
 				} else if (local106 == 1) {
-					Static7.anIntArray595[Static6.anInt4451++] = local73;
+					Npc.ids[Npc.size++] = local73;
 					local77.anInt3990 = Static2.anInt954;
 					@Pc(151) int local151 = Static5.aClass4_Sub10_Sub1_2.readBits(3);
 					local77.method3308(local151, 1);
@@ -854,7 +854,7 @@ public final class Static26 {
 						Static7.anIntArray587[Static6.anInt4760++] = local73;
 					}
 				} else if (local106 == 2) {
-					Static7.anIntArray595[Static6.anInt4451++] = local73;
+					Npc.ids[Npc.size++] = local73;
 					local77.anInt3990 = Static2.anInt954;
 					if (Static5.aClass4_Sub10_Sub1_2.readBits(1) == 1) {
 						@Pc(215) int local215 = Static5.aClass4_Sub10_Sub1_2.readBits(3);
@@ -876,18 +876,4 @@ public final class Static26 {
 		}
 	}
 
-	@OriginalMember(owner = "client!o", name = "b", descriptor = "(III)Lclient!co;")
-	public static Class33 method3062(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
-		@Pc(7) Class4_Sub19 local7 = Static1.aClass4_Sub19ArrayArrayArray1[arg0][arg1][arg2];
-		if (local7 == null) {
-			return null;
-		}
-		for (@Pc(13) int local13 = 0; local13 < local7.anInt3554; local13++) {
-			@Pc(22) Class33 local22 = local7.aClass33Array3[local13];
-			if ((local22.aLong38 >> 29 & 0x3L) == 2L && local22.anInt824 == arg1 && local22.anInt826 == arg2) {
-				return local22;
-			}
-		}
-		return null;
-	}
 }

@@ -115,30 +115,30 @@ public final class Static14 {
 			if (Static7.aByteArrayArray50[local16] != null) {
 				@Pc(32) int local32 = -1;
 				for (@Pc(34) int local34 = 0; local34 < Static6.anInt4744; local34++) {
-					if (Static2.anIntArray127[local34] == Static7.anIntArray597[local16]) {
+					if (Static2.anIntArray127[local34] == Static7.mapSquares[local16]) {
 						local32 = local34;
 						break;
 					}
 				}
 				if (local32 == -1) {
-					Static2.anIntArray127[Static6.anInt4744] = Static7.anIntArray597[local16];
+					Static2.anIntArray127[Static6.anInt4744] = Static7.mapSquares[local16];
 					local32 = Static6.anInt4744++;
 				}
 				@Pc(82) Buffer local82 = new Buffer(Static7.aByteArrayArray50[local16]);
 				@Pc(84) int local84 = 0;
-				while (Static7.aByteArrayArray50[local16].length > local82.position && local84 < 511 && Static6.anInt4451 < 1023) {
+				while (Static7.aByteArrayArray50[local16].length > local82.position && local84 < 511 && Npc.size < 1023) {
 					@Pc(112) int local112 = local84++ << 6 | local32;
 					@Pc(116) int local116 = local82.readUnsignedShort();
 					@Pc(120) int local120 = local116 >> 14;
 					@Pc(126) int local126 = local116 >> 7 & 0x3F;
-					@Pc(139) int local139 = (Static7.anIntArray597[local16] >> 8) * 64 + local126 - Static5.anInt3983;
+					@Pc(139) int local139 = (Static7.mapSquares[local16] >> 8) * 64 + local126 - Static5.originX;
 					@Pc(143) int local143 = local116 & 0x3F;
-					@Pc(155) int local155 = local143 + (Static7.anIntArray597[local16] & 0xFF) * 64 - Static7.anInt5479;
+					@Pc(155) int local155 = local143 + (Static7.mapSquares[local16] & 0xFF) * 64 - Static7.originZ;
 					@Pc(161) NpcType local161 = NpcTypeList.get(local82.readUnsignedShort());
-					if (Static3.aClass53_Sub1_Sub2Array1[local112] == null && (local161.aByte21 & 0x1) > 0 && Static2.anInt1216 == local120 && local139 >= 0 && local161.size + local139 < 104 && local155 >= 0 && local155 + local161.size < 104) {
-						Static3.aClass53_Sub1_Sub2Array1[local112] = new Npc();
-						@Pc(217) Npc local217 = Static3.aClass53_Sub1_Sub2Array1[local112];
-						Static7.anIntArray595[Static6.anInt4451++] = local112;
+					if (Npc.npcs[local112] == null && (local161.aByte21 & 0x1) > 0 && Static2.anInt1216 == local120 && local139 >= 0 && local161.size + local139 < 104 && local155 >= 0 && local155 + local161.size < 104) {
+						Npc.npcs[local112] = new Npc();
+						@Pc(217) Npc local217 = Npc.npcs[local112];
+						Npc.ids[Npc.size++] = local112;
 						local217.anInt3990 = Static2.anInt954;
 						local217.setType(local161);
 						local217.setSize(local217.type.size);
@@ -344,7 +344,7 @@ public final class Static14 {
 		if (Static11.method508(arg0, arg1, arg2)) {
 			@Pc(10) int local10 = arg1 << 7;
 			@Pc(14) int local14 = arg2 << 7;
-			return Static33.method4119(local10 + 1, Static6.anIntArrayArrayArray13[arg0][arg1][arg2] + arg3, local14 + 1) && Static33.method4119(local10 + 128 - 1, Static6.anIntArrayArrayArray13[arg0][arg1 + 1][arg2] + arg3, local14 + 1) && Static33.method4119(local10 + 128 - 1, Static6.anIntArrayArrayArray13[arg0][arg1 + 1][arg2 + 1] + arg3, local14 + 128 - 1) && Static33.method4119(local10 + 1, Static6.anIntArrayArrayArray13[arg0][arg1][arg2 + 1] + arg3, local14 + 128 - 1);
+			return Static33.method4119(local10 + 1, Terrain.tileHeights[arg0][arg1][arg2] + arg3, local14 + 1) && Static33.method4119(local10 + 128 - 1, Terrain.tileHeights[arg0][arg1 + 1][arg2] + arg3, local14 + 1) && Static33.method4119(local10 + 128 - 1, Terrain.tileHeights[arg0][arg1 + 1][arg2 + 1] + arg3, local14 + 128 - 1) && Static33.method4119(local10 + 1, Terrain.tileHeights[arg0][arg1][arg2 + 1] + arg3, local14 + 128 - 1);
 		} else {
 			return false;
 		}
@@ -411,7 +411,7 @@ public final class Static14 {
 								local140 = true;
 							}
 						}
-						@Pc(272) Class33 local272 = Static26.method3062(arg9, local119, local80);
+						@Pc(272) Scenery local272 = Terrain.getScenery(arg9, local119, local80);
 						if (local272 != null) {
 							@Pc(283) int local283 = (int) (local272.aLong38 >> 14) & 0x3F;
 							if (local283 == 9) {
@@ -527,7 +527,7 @@ public final class Static14 {
 								local797 = true;
 							}
 						}
-						@Pc(907) Class33 local907 = Static26.method3062(arg9, local766, local722);
+						@Pc(907) Scenery local907 = Terrain.getScenery(arg9, local766, local722);
 						if (local907 != null) {
 							@Pc(918) int local918 = (int) (local907.aLong38 >> 14) & 0x3F;
 							if (local918 == 9) {

@@ -156,7 +156,7 @@ public final class Class4_Sub12 extends Node {
 	}
 
 	@OriginalMember(owner = "client!ih", name = "a", descriptor = "([[[Lclient!nh;FZ)V")
-	public final void method1867(@OriginalArg(0) Class4_Sub19[][][] arg0, @OriginalArg(1) float arg1, @OriginalArg(2) boolean arg2) {
+	public final void method1867(@OriginalArg(0) Tile[][][] arg0, @OriginalArg(1) float arg1, @OriginalArg(2) boolean arg2) {
 		if (Static3.aClass4_Sub10_4 == null || Static3.aClass4_Sub10_4.bytes.length < this.anInt2353 * 4) {
 			Static3.aClass4_Sub10_4 = new Buffer(this.anInt2353 * 4);
 		} else {
@@ -169,7 +169,7 @@ public final class Class4_Sub12 extends Node {
 		}
 		if (GlRenderer.bigEndian) {
 			for (@Pc(47) int local47 = 0; local47 < this.anInt2350; local47++) {
-				@Pc(68) Class4_Sub19 local68 = arg0[this.anIntArray202[local47]][this.anIntArray204[local47]][this.anIntArray206[local47]];
+				@Pc(68) Tile local68 = arg0[this.anIntArray202[local47]][this.anIntArray204[local47]][this.anIntArray206[local47]];
 				if (local68 != null && local68.aBoolean257) {
 					@Pc(78) int[] local78 = this.anIntArrayArray18[local47];
 					@Pc(111) Buffer local111;
@@ -193,7 +193,7 @@ public final class Class4_Sub12 extends Node {
 			}
 		} else {
 			for (@Pc(149) int local149 = 0; local149 < this.anInt2350; local149++) {
-				@Pc(170) Class4_Sub19 local170 = arg0[this.anIntArray202[local149]][this.anIntArray204[local149]][this.anIntArray206[local149]];
+				@Pc(170) Tile local170 = arg0[this.anIntArray202[local149]][this.anIntArray204[local149]][this.anIntArray206[local149]];
 				if (local170 != null && local170.aBoolean257) {
 					@Pc(180) int[] local180 = this.anIntArrayArray18[local149];
 					@Pc(213) Buffer local213;

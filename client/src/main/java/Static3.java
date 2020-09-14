@@ -8,7 +8,7 @@ public final class Static3 {
 	public static Sprite[] aClass4_Sub3_Sub14Array8;
 
 	@OriginalMember(owner = "client!gf", name = "c", descriptor = "[I")
-	public static int[] anIntArray167;
+	public static int[] mapGroupIds;
 
 	@OriginalMember(owner = "client!gg", name = "m", descriptor = "Lclient!fh;")
 	public static Js5 aClass58_44;
@@ -67,9 +67,6 @@ public final class Static3 {
 	@OriginalMember(owner = "client!he", name = "s", descriptor = "I")
 	public static int anInt2165;
 
-	@OriginalMember(owner = "client!he", name = "t", descriptor = "[[Lclient!ih;")
-	public static Class4_Sub12[][] aClass4_Sub12ArrayArray1;
-
 	@OriginalMember(owner = "client!hg", name = "a", descriptor = "I")
 	public static int anInt2180;
 
@@ -125,7 +122,7 @@ public final class Static3 {
 	public static int[] anIntArray196;
 
 	@OriginalMember(owner = "client!id", name = "f", descriptor = "[I")
-	public static int[] anIntArray197;
+	public static int[] underwaterLocGroupIds;
 
 	@OriginalMember(owner = "client!ig", name = "c", descriptor = "Ljava/nio/ByteBuffer;")
 	public static ByteBuffer aByteBuffer2;
@@ -270,9 +267,6 @@ public final class Static3 {
 
 	@OriginalMember(owner = "client!jd", name = "a", descriptor = "I")
 	public static int anInt2554;
-
-	@OriginalMember(owner = "client!je", name = "j", descriptor = "[[[Lclient!nh;")
-	public static Class4_Sub19[][][] aClass4_Sub19ArrayArrayArray2;
 
 	@OriginalMember(owner = "client!je", name = "m", descriptor = "Lclient!ic;")
 	public static HashTable aClass84_10;
@@ -420,9 +414,6 @@ public final class Static3 {
 
 	@OriginalMember(owner = "client!hk", name = "eb", descriptor = "I")
 	public static int anInt2232 = -1;
-
-	@OriginalMember(owner = "client!hk", name = "hb", descriptor = "[Lclient!p;")
-	public static final Npc[] aClass53_Sub1_Sub2Array1 = new Npc[32768];
 
 	@OriginalMember(owner = "client!hk", name = "jb", descriptor = "I")
 	public static int anInt2235 = 0;

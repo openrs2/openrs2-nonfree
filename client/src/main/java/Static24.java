@@ -53,61 +53,61 @@ public final class Static24 {
 		if (!GlRenderer.enabled || Static4.aBoolean189) {
 			return;
 		}
-		@Pc(22) Class4_Sub19[][][] local22 = Static1.aClass4_Sub19ArrayArrayArray1;
+		@Pc(22) Tile[][][] local22 = Terrain.tiles;
 		for (@Pc(24) int local24 = 0; local24 < local22.length; local24++) {
-			@Pc(32) Class4_Sub19[][] local32 = local22[local24];
+			@Pc(32) Tile[][] local32 = local22[local24];
 			for (@Pc(34) int local34 = 0; local34 < local32.length; local34++) {
 				for (@Pc(44) int local44 = 0; local44 < local32[local34].length; local44++) {
-					@Pc(60) Class4_Sub19 local60 = local32[local34][local44];
+					@Pc(60) Tile local60 = local32[local34][local44];
 					if (local60 != null) {
-						if (local60.aClass42_1 != null && local60.aClass42_1.aClass53_2 instanceof GlModel) {
-							@Pc(76) GlModel local76 = (GlModel) local60.aClass42_1.aClass53_2;
-							if ((Long.MIN_VALUE & local60.aClass42_1.aLong45) == 0L) {
+						if (local60.groundDecor != null && local60.groundDecor.aClass53_2 instanceof GlModel) {
+							@Pc(76) GlModel local76 = (GlModel) local60.groundDecor.aClass53_2;
+							if ((Long.MIN_VALUE & local60.groundDecor.aLong45) == 0L) {
 								local76.method3872(false, true, true, false, true, true);
 							} else {
 								local76.method3872(true, true, true, true, true, true);
 							}
 						}
-						if (local60.aClass182_1 != null) {
-							if (local60.aClass182_1.aClass53_10 instanceof GlModel) {
-								@Pc(118) GlModel local118 = (GlModel) local60.aClass182_1.aClass53_10;
-								if ((local60.aClass182_1.aLong194 & Long.MIN_VALUE) == 0L) {
+						if (local60.wallDecor != null) {
+							if (local60.wallDecor.aClass53_10 instanceof GlModel) {
+								@Pc(118) GlModel local118 = (GlModel) local60.wallDecor.aClass53_10;
+								if ((local60.wallDecor.aLong194 & Long.MIN_VALUE) == 0L) {
 									local118.method3872(false, true, true, false, true, true);
 								} else {
 									local118.method3872(true, true, true, true, true, true);
 								}
 							}
-							if (local60.aClass182_1.aClass53_9 instanceof GlModel) {
-								@Pc(157) GlModel local157 = (GlModel) local60.aClass182_1.aClass53_9;
-								if ((Long.MIN_VALUE & local60.aClass182_1.aLong194) == 0L) {
+							if (local60.wallDecor.aClass53_9 instanceof GlModel) {
+								@Pc(157) GlModel local157 = (GlModel) local60.wallDecor.aClass53_9;
+								if ((Long.MIN_VALUE & local60.wallDecor.aLong194) == 0L) {
 									local157.method3872(false, true, true, false, true, true);
 								} else {
 									local157.method3872(true, true, true, true, true, true);
 								}
 							}
 						}
-						if (local60.aClass179_1 != null) {
-							if (local60.aClass179_1.aClass53_5 instanceof GlModel) {
-								@Pc(199) GlModel local199 = (GlModel) local60.aClass179_1.aClass53_5;
-								if ((Long.MIN_VALUE & local60.aClass179_1.aLong188) == 0L) {
+						if (local60.wall != null) {
+							if (local60.wall.aClass53_5 instanceof GlModel) {
+								@Pc(199) GlModel local199 = (GlModel) local60.wall.aClass53_5;
+								if ((Long.MIN_VALUE & local60.wall.aLong188) == 0L) {
 									local199.method3872(false, true, true, false, true, true);
 								} else {
 									local199.method3872(true, true, true, true, true, true);
 								}
 							}
-							if (local60.aClass179_1.aClass53_4 instanceof GlModel) {
-								@Pc(237) GlModel local237 = (GlModel) local60.aClass179_1.aClass53_4;
-								if ((local60.aClass179_1.aLong188 & Long.MIN_VALUE) == 0L) {
+							if (local60.wall.aClass53_4 instanceof GlModel) {
+								@Pc(237) GlModel local237 = (GlModel) local60.wall.aClass53_4;
+								if ((local60.wall.aLong188 & Long.MIN_VALUE) == 0L) {
 									local237.method3872(false, true, true, false, true, true);
 								} else {
 									local237.method3872(true, true, true, true, true, true);
 								}
 							}
 						}
-						for (@Pc(269) int local269 = 0; local269 < local60.anInt3554; local269++) {
-							if (local60.aClass33Array3[local269].aClass53_1 instanceof GlModel) {
-								@Pc(288) GlModel local288 = (GlModel) local60.aClass33Array3[local269].aClass53_1;
-								if ((Long.MIN_VALUE & local60.aClass33Array3[local269].aLong38) == 0L) {
+						for (@Pc(269) int local269 = 0; local269 < local60.sceneryLen; local269++) {
+							if (local60.scenery[local269].aClass53_1 instanceof GlModel) {
+								@Pc(288) GlModel local288 = (GlModel) local60.scenery[local269].aClass53_1;
+								if ((Long.MIN_VALUE & local60.scenery[local269].aLong38) == 0L) {
 									local288.method3872(false, true, true, false, true, true);
 								} else {
 									local288.method3872(true, true, true, true, true, true);
@@ -119,22 +119,6 @@ public final class Static24 {
 			}
 		}
 		Static4.aBoolean189 = true;
-	}
-
-	@OriginalMember(owner = "client!lj", name = "c", descriptor = "(III)Lclient!co;")
-	public static Class33 method2593(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
-		@Pc(7) Class4_Sub19 local7 = Static1.aClass4_Sub19ArrayArrayArray1[arg0][arg1][arg2];
-		if (local7 == null) {
-			return null;
-		}
-		for (@Pc(13) int local13 = 0; local13 < local7.anInt3554; local13++) {
-			@Pc(22) Class33 local22 = local7.aClass33Array3[local13];
-			if ((local22.aLong38 >> 29 & 0x3L) == 2L && local22.anInt824 == arg1 && local22.anInt826 == arg2) {
-				Static20.method1902(local22);
-				return local22;
-			}
-		}
-		return null;
 	}
 
 	@OriginalMember(owner = "client!lj", name = "a", descriptor = "(ILclient!wf;B)Ljava/lang/String;")
@@ -151,12 +135,6 @@ public final class Static24 {
 	@OriginalMember(owner = "client!lj", name = "a", descriptor = "(Lclient!fh;B)V")
 	public static void method2599(@OriginalArg(0) Js5 arg0) {
 		Static6.aClass58_90 = arg0;
-	}
-
-	@OriginalMember(owner = "client!ll", name = "a", descriptor = "(III)Lclient!ve;")
-	public static Class179 method2611(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
-		@Pc(7) Class4_Sub19 local7 = Static1.aClass4_Sub19ArrayArrayArray1[arg0][arg1][arg2];
-		return local7 == null ? null : local7.aClass179_1;
 	}
 
 	@OriginalMember(owner = "client!ll", name = "a", descriptor = "(IIII)I")
@@ -390,7 +368,7 @@ public final class Static24 {
 			Static19.method1868();
 			Static36.method4447();
 		}
-		Static6.aBoolean313 = !Static10.method456();
+		Static6.aBoolean313 = !Terrain.isAllLevelsVisible();
 		Static26.method2966(GameShell.canvasWidth, GameShell.canvasHeight);
 		if (arg5) {
 			Static11.method516();
@@ -697,7 +675,7 @@ public final class Static24 {
 			Static9.method763();
 			for (@Pc(38) int local38 = 0; local38 < 13; local38++) {
 				for (@Pc(43) int local43 = 0; local43 < 13; local43++) {
-					@Pc(54) int local54 = Static7.anIntArrayArrayArray15[local27][local38][local43];
+					@Pc(54) int local54 = Static7.zones[local27][local38][local43];
 					if (local54 != -1) {
 						@Pc(63) int local63 = local54 >> 24 & 0x3;
 						if (!arg0 || local63 == 0) {
@@ -705,9 +683,9 @@ public final class Static24 {
 							@Pc(83) int local83 = local54 >> 3 & 0x7FF;
 							@Pc(89) int local89 = local54 >> 14 & 0x3FF;
 							@Pc(99) int local99 = (local89 / 8 << 8) + local83 / 8;
-							for (@Pc(101) int local101 = 0; local101 < Static7.anIntArray597.length; local101++) {
-								if (local99 == Static7.anIntArray597[local101] && local13[local101] != null) {
-									Static15.method1471(local27, local38 * 8, Static7.aClass30Array1, local13[local101], local77, (local83 & 0x7) * 8, (local89 & 0x7) * 8, local63, arg0, local43 * 8);
+							for (@Pc(101) int local101 = 0; local101 < Static7.mapSquares.length; local101++) {
+								if (local99 == Static7.mapSquares[local101] && local13[local101] != null) {
+									Static15.method1471(local27, local38 * 8, PathFinder.collisionMaps, local13[local101], local77, (local83 & 0x7) * 8, (local89 & 0x7) * 8, local63, arg0, local43 * 8);
 									break;
 								}
 							}

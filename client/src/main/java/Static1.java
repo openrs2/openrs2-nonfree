@@ -6,7 +6,7 @@ import dev.openrs2.deob.annotation.OriginalMember;
 public final class Static1 {
 
 	@OriginalMember(owner = "client!ab", name = "a", descriptor = "I")
-	public static int anInt5;
+	public static int centralZoneZ;
 
 	@OriginalMember(owner = "client!ab", name = "d", descriptor = "Lclient!ib;")
 	public static Class4_Sub3_Sub10 aClass4_Sub3_Sub10_1;
@@ -25,9 +25,6 @@ public final class Static1 {
 
 	@OriginalMember(owner = "client!af", name = "q", descriptor = "Lsignlink!vk;")
 	public static PrivilegedRequest aClass197_2;
-
-	@OriginalMember(owner = "client!af", name = "C", descriptor = "[[[Lclient!nh;")
-	public static Class4_Sub19[][][] aClass4_Sub19ArrayArrayArray1;
 
 	@OriginalMember(owner = "client!af", name = "E", descriptor = "Lclient!fh;")
 	public static Js5 aClass58_3;
@@ -73,9 +70,6 @@ public final class Static1 {
 
 	@OriginalMember(owner = "client!bb", name = "E", descriptor = "I")
 	public static int anInt243;
-
-	@OriginalMember(owner = "client!bc", name = "q", descriptor = "[[I")
-	public static int[][] anIntArrayArray9;
 
 	@OriginalMember(owner = "client!bc", name = "s", descriptor = "F")
 	public static float aFloat24;
@@ -152,9 +146,6 @@ public final class Static1 {
 	@OriginalMember(owner = "client!ce", name = "b", descriptor = "Ljava/awt/Font;")
 	public static Font aFont1;
 
-	@OriginalMember(owner = "client!cg", name = "c", descriptor = "[[[I")
-	public static int[][][] anIntArrayArrayArray2;
-
 	@OriginalMember(owner = "client!cg", name = "g", descriptor = "Lclient!fh;")
 	public static Js5 aClass58_19;
 
@@ -186,7 +177,7 @@ public final class Static1 {
 	public static int anInt818;
 
 	@OriginalMember(owner = "client!co", name = "r", descriptor = "[I")
-	public static int[] anIntArray59;
+	public static int[] locGroupIds;
 
 	@OriginalMember(owner = "client!da", name = "l", descriptor = "Lclient!fh;")
 	public static Js5 aClass58_22;
@@ -430,9 +421,6 @@ public final class Static1 {
 
 	@OriginalMember(owner = "client!cg", name = "m", descriptor = "I")
 	public static int anInt595 = 0;
-
-	@OriginalMember(owner = "client!ch", name = "r", descriptor = "[I")
-	public static final int[] anIntArray52 = new int[] { 0, 0, 0, 0, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3 };
 
 	@OriginalMember(owner = "client!ci", name = "e", descriptor = "Lclient!dj;")
 	public static final LruHashTable aClass40_5 = new LruHashTable(64);

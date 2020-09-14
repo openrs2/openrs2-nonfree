@@ -219,7 +219,7 @@ public final class Static31 {
 
 	@OriginalMember(owner = "client!ri", name = "c", descriptor = "(III)Lclient!vf;")
 	public static Class180 method3734(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
-		@Pc(7) Class4_Sub19 local7 = Static1.aClass4_Sub19ArrayArrayArray1[arg0][arg1][arg2];
+		@Pc(7) Tile local7 = Terrain.tiles[arg0][arg1][arg2];
 		if (local7 == null) {
 			return null;
 		} else {
@@ -280,7 +280,7 @@ public final class Static31 {
 			if (Static3.aBooleanArray13[4] && Static7.anIntArray626[4] + 128 > local121) {
 				local121 = Static7.anIntArray626[4] + 128;
 			}
-			Static32.method3954(local137, Static11.method522(Player.self.z, Player.self.x, Static7.anInt5334) - 50, local121, local121 * 3 + 600, Static3.anInt2496, arg1, Static7.anInt5412);
+			Static32.method3954(local137, Static11.method522(Player.self.z, Player.self.x, Static7.y) - 50, local121, local121 * 3 + 600, Static3.anInt2496, arg1, Static7.anInt5412);
 		} else if (Static1.anInt772 == 5) {
 			Static12.method698(arg1);
 		}
@@ -371,18 +371,18 @@ public final class Static31 {
 			Static27.method3111(Static2.anInt954, !Preferences.flickeringEffects);
 			Static21.method2078(Static5.anInt3656, Static5.anInt4066, Static2.anInt1931, Static7.anInt5678, Static3.anInt2519);
 			GlRenderer.anInt2085 = Static2.anInt954;
-			Static25.method2728(Static3.anInt2519, Static2.anInt1931, Static7.anInt5678, Static5.anInt4066, Static5.anInt3656, Static1.aByteArrayArrayArray2, Static5.anIntArray440, Static3.anIntArray164, Static7.anIntArray620, Static6.anIntArray489, Static6.anIntArray492, Static7.anInt5334 + 1, local562, Player.self.x >> 7, Player.self.z >> 7);
+			Static25.method2728(Static3.anInt2519, Static2.anInt1931, Static7.anInt5678, Static5.anInt4066, Static5.anInt3656, Static1.aByteArrayArrayArray2, Static5.anIntArray440, Static3.anIntArray164, Static7.anIntArray620, Static6.anIntArray489, Static6.anIntArray492, Static7.y + 1, local562, Player.self.x >> 7, Player.self.z >> 7);
 			Static7.aBoolean123 = true;
 			Static27.method3112();
 			Static21.method2078(0, 0, 0, 0, 0);
 			Static9.method763();
 			Static18.method4370(arg0, Static7.anInt5440, arg1, Static7.anInt5440, arg3, arg4);
 			Static10.method462(arg4, Static7.anInt5440, arg1, Static7.anInt5440, arg3, arg0);
-			Static22.method2360();
+			Terrain.removeAllScenery();
 		} else {
-			Static25.method2728(Static3.anInt2519, Static2.anInt1931, Static7.anInt5678, Static5.anInt4066, Static5.anInt3656, Static1.aByteArrayArrayArray2, Static5.anIntArray440, Static3.anIntArray164, Static7.anIntArray620, Static6.anIntArray489, Static6.anIntArray492, Static7.anInt5334 + 1, local562, Player.self.x >> 7, Player.self.z >> 7);
+			Static25.method2728(Static3.anInt2519, Static2.anInt1931, Static7.anInt5678, Static5.anInt4066, Static5.anInt3656, Static1.aByteArrayArrayArray2, Static5.anIntArray440, Static3.anIntArray164, Static7.anIntArray620, Static6.anIntArray489, Static6.anIntArray492, Static7.y + 1, local562, Player.self.x >> 7, Player.self.z >> 7);
 			Static9.method763();
-			Static22.method2360();
+			Terrain.removeAllScenery();
 			Static18.method4370(arg0, 256, arg1, 256, arg3, arg4);
 			Static10.method462(arg4, 256, arg1, 256, arg3, arg0);
 		}
@@ -523,7 +523,7 @@ public final class Static31 {
 	}
 
 	@OriginalMember(owner = "client!rm", name = "a", descriptor = "([Lclient!ch;B[[[IZ)V")
-	public static void method3778(@OriginalArg(0) Class30[] arg0, @OriginalArg(2) int[][][] arg1, @OriginalArg(3) boolean arg2) {
+	public static void method3778(@OriginalArg(0) CollisionMap[] arg0, @OriginalArg(2) int[][][] arg1, @OriginalArg(3) boolean arg2) {
 		@Pc(9) byte local9;
 		if (arg2) {
 			local9 = 1;
@@ -534,13 +534,13 @@ public final class Static31 {
 			for (@Pc(18) int local18 = 0; local18 < 4; local18++) {
 				for (@Pc(25) int local25 = 0; local25 < 104; local25++) {
 					for (@Pc(32) int local32 = 0; local32 < 104; local32++) {
-						if ((Static4.aByteArrayArrayArray17[local18][local25][local32] & 0x1) == 1) {
+						if ((Static4.tileFlags[local18][local25][local32] & 0x1) == 1) {
 							@Pc(48) int local48 = local18;
-							if ((Static4.aByteArrayArrayArray17[1][local25][local32] & 0x2) == 2) {
+							if ((Static4.tileFlags[1][local25][local32] & 0x2) == 2) {
 								local48 = local18 - 1;
 							}
 							if (local48 >= 0) {
-								arg0[local48].method580(local25, local32);
+								arg0[local48].flagTile(local25, local32);
 							}
 						}
 					}
@@ -572,8 +572,8 @@ public final class Static31 {
 				@Pc(464) int local464 = local458 * 768 >> 8;
 				for (@Pc(466) int local466 = 1; local466 < 103; local466++) {
 					for (@Pc(473) int local473 = 1; local473 < 103; local473++) {
-						@Pc(501) int local501 = Static6.anIntArrayArrayArray13[local154][local473][local466 + 1] - Static6.anIntArrayArrayArray13[local154][local473][local466 - 1];
-						@Pc(521) int local521 = Static6.anIntArrayArrayArray13[local154][local473 + 1][local466] - Static6.anIntArrayArrayArray13[local154][local473 - 1][local466];
+						@Pc(501) int local501 = Terrain.tileHeights[local154][local473][local466 + 1] - Terrain.tileHeights[local154][local473][local466 - 1];
+						@Pc(521) int local521 = Terrain.tileHeights[local154][local473 + 1][local466] - Terrain.tileHeights[local154][local473 - 1][local466];
 						@Pc(535) int local535 = (int) Math.sqrt((double) (local521 * local521 + local501 * local501 + 65536));
 						@Pc(541) int local541 = (local521 << 8) / local535;
 						@Pc(545) int local545 = -65536 / local535;
@@ -598,8 +598,8 @@ public final class Static31 {
 				@Pc(282) int local282 = local276 * 1024 >> 8;
 				for (@Pc(284) int local284 = 1; local284 < 103; local284++) {
 					for (@Pc(289) int local289 = 1; local289 < 103; local289++) {
-						@Pc(317) int local317 = Static6.anIntArrayArrayArray13[local154][local289][local284 + 1] - Static6.anIntArrayArrayArray13[local154][local289][local284 - 1];
-						@Pc(338) int local338 = Static6.anIntArrayArrayArray13[local154][local289 + 1][local284] - Static6.anIntArrayArrayArray13[local154][local289 - 1][local284];
+						@Pc(317) int local317 = Terrain.tileHeights[local154][local289][local284 + 1] - Terrain.tileHeights[local154][local289][local284 - 1];
+						@Pc(338) int local338 = Terrain.tileHeights[local154][local289 + 1][local284] - Terrain.tileHeights[local154][local289 - 1][local284];
 						@Pc(352) int local352 = (int) Math.sqrt((double) (local338 * local338 + local317 * local317 + 65536));
 						@Pc(356) int local356 = -65536 / local352;
 						@Pc(362) int local362 = (local317 << 8) / local352;
@@ -684,17 +684,17 @@ public final class Static31 {
 			for (@Pc(955) int local955 = 1; local955 < 103; local955++) {
 				label770:
 				for (@Pc(962) int local962 = 1; local962 < 103; local962++) {
-					if (arg2 || Static10.method456() || (Static4.aByteArrayArrayArray17[0][local955][local962] & 0x2) != 0 || (Static4.aByteArrayArrayArray17[local154][local955][local962] & 0x10) == 0 && Static35.method4327(local962, local154, local955) == Static2.anInt1216) {
+					if (arg2 || Terrain.isAllLevelsVisible() || (Static4.tileFlags[0][local955][local962] & 0x2) != 0 || (Static4.tileFlags[local154][local955][local962] & 0x10) == 0 && Static35.method4327(local962, local154, local955) == Static2.anInt1216) {
 						if (Static5.anInt3896 > local154) {
 							Static5.anInt3896 = local154;
 						}
 						@Pc(1019) int local1019 = Static2.aByteArrayArrayArray3[local154][local955][local962] & 0xFF;
 						@Pc(1029) int local1029 = Static4.aByteArrayArrayArray15[local154][local955][local962] & 0xFF;
 						if (local1019 > 0 || local1029 > 0) {
-							@Pc(1047) int local1047 = Static6.anIntArrayArrayArray13[local154][local955][local962];
-							@Pc(1057) int local1057 = Static6.anIntArrayArrayArray13[local154][local955 + 1][local962];
-							@Pc(1069) int local1069 = Static6.anIntArrayArrayArray13[local154][local955 + 1][local962 + 1];
-							@Pc(1079) int local1079 = Static6.anIntArrayArrayArray13[local154][local955][local962 + 1];
+							@Pc(1047) int local1047 = Terrain.tileHeights[local154][local955][local962];
+							@Pc(1057) int local1057 = Terrain.tileHeights[local154][local955 + 1][local962];
+							@Pc(1069) int local1069 = Terrain.tileHeights[local154][local955 + 1][local962 + 1];
+							@Pc(1079) int local1079 = Terrain.tileHeights[local154][local955][local962 + 1];
 							if (local154 > 0) {
 								@Pc(1084) boolean local1084 = true;
 								if (local1019 == 0 && Static2.aByteArrayArrayArray4[local154][local955][local962] != 0) {
@@ -730,9 +730,9 @@ public final class Static31 {
 							if (local1029 == 0) {
 								Static22.method4698(local154, local955, local962, 0, 0, -1, local1047, local1057, local1069, local1079, Static35.method4367(local1151, local1233), Static35.method4367(local1151, local1209), Static35.method4367(local1151, local1219), Static35.method4367(local1151, local1227), 0, 0, 0, 0, local1153, 0);
 								if (GlRenderer.enabled && local154 > 0 && local1151 != -1 && Static26.method2971(local1019 - 1).aBoolean286) {
-									Static14.method1207(0, 0, true, false, local955, local962, local1047 - Static6.anIntArrayArrayArray13[0][local955][local962], local1057 - Static6.anIntArrayArrayArray13[0][local955 + 1][local962], local1069 - Static6.anIntArrayArrayArray13[0][local955 + 1][local962 + 1], local1079 - Static6.anIntArrayArrayArray13[0][local955][local962 + 1]);
+									Static14.method1207(0, 0, true, false, local955, local962, local1047 - Terrain.tileHeights[0][local955][local962], local1057 - Terrain.tileHeights[0][local955 + 1][local962], local1069 - Terrain.tileHeights[0][local955 + 1][local962 + 1], local1079 - Terrain.tileHeights[0][local955][local962 + 1]);
 								}
-								if (GlRenderer.enabled && !arg2 && Static2.anIntArrayArray10 != null && local154 == 0) {
+								if (GlRenderer.enabled && !arg2 && Terrain.anIntArrayArray10 != null && local154 == 0) {
 									for (@Pc(1360) int local1360 = local955 - 1; local1360 <= local955 + 1; local1360++) {
 										for (@Pc(1369) int local1369 = local962 - 1; local1369 <= local962 + 1; local1369++) {
 											if ((local1360 != local955 || local962 != local1369) && local1360 >= 0 && local1360 < 104 && local1369 >= 0 && local1369 < 104) {
@@ -740,7 +740,7 @@ public final class Static31 {
 												if (local1417 != 0) {
 													@Pc(1428) Class127 local1428 = Static26.method2935(local1417 - 1);
 													if (local1428.anInt3877 != -1 && Static32.method3920(Static4.anInterface4_1.method444(local1428.anInt3877))) {
-														Static2.anIntArrayArray10[local955][local962] = (local1428.anInt3871 << 24) + local1428.anInt3874;
+														Terrain.anIntArrayArray10[local955][local962] = (local1428.anInt3871 << 24) + local1428.anInt3874;
 														continue label770;
 													}
 												}
@@ -752,9 +752,9 @@ public final class Static31 {
 								@Pc(1474) int local1474 = Static2.aByteArrayArrayArray4[local154][local955][local962] + 1;
 								@Pc(1482) byte local1482 = Static1.aByteArrayArrayArray1[local154][local955][local962];
 								@Pc(1488) Class127 local1488 = Static26.method2935(local1029 - 1);
-								if (GlRenderer.enabled && !arg2 && Static2.anIntArrayArray10 != null && local154 == 0) {
+								if (GlRenderer.enabled && !arg2 && Terrain.anIntArrayArray10 != null && local154 == 0) {
 									if (local1488.anInt3877 != -1 && Static32.method3920(Static4.anInterface4_1.method444(local1488.anInt3877))) {
-										Static2.anIntArrayArray10[local955][local962] = (local1488.anInt3871 << 24) + local1488.anInt3874;
+										Terrain.anIntArrayArray10[local955][local962] = (local1488.anInt3871 << 24) + local1488.anInt3874;
 									} else {
 										label751:
 										for (@Pc(1516) int local1516 = local955 - 1; local1516 <= local955 + 1; local1516++) {
@@ -764,7 +764,7 @@ public final class Static31 {
 													if (local1580 != 0) {
 														@Pc(1590) Class127 local1590 = Static26.method2935(local1580 - 1);
 														if (local1590.anInt3877 != -1 && Static32.method3920(Static4.anInterface4_1.method444(local1590.anInt3877))) {
-															Static2.anIntArrayArray10[local955][local962] = local1590.anInt3874 + (local1590.anInt3871 << 24);
+															Terrain.anIntArrayArray10[local955][local962] = local1590.anInt3874 + (local1590.anInt3871 << 24);
 															break label751;
 														}
 													}
@@ -809,7 +809,7 @@ public final class Static31 {
 								}
 								Static22.method4698(local154, local955, local962, local1474, local1482, local1640, local1047, local1057, local1069, local1079, Static35.method4367(local1151, local1233), Static35.method4367(local1151, local1209), Static35.method4367(local1151, local1219), Static35.method4367(local1151, local1227), Static22.method2286(local1659, local1233), Static22.method2286(local1659, local1209), Static22.method2286(local1659, local1219), Static22.method2286(local1659, local1227), local1153, local1671);
 								if (GlRenderer.enabled && local154 > 0) {
-									Static14.method1207(local1474, local1482, local1659 == -2 || !local1488.aBoolean273, local1151 == -1 || !Static26.method2971(local1019 - 1).aBoolean286, local955, local962, local1047 - Static6.anIntArrayArrayArray13[0][local955][local962], local1057 - Static6.anIntArrayArrayArray13[0][local955 + 1][local962], local1069 - Static6.anIntArrayArrayArray13[0][local955 + 1][local962 + 1], local1079 - Static6.anIntArrayArrayArray13[0][local955][local962 + 1]);
+									Static14.method1207(local1474, local1482, local1659 == -2 || !local1488.aBoolean273, local1151 == -1 || !Static26.method2971(local1019 - 1).aBoolean286, local955, local962, local1047 - Terrain.tileHeights[0][local955][local962], local1057 - Terrain.tileHeights[0][local955 + 1][local962], local1069 - Terrain.tileHeights[0][local955 + 1][local962 + 1], local1079 - Terrain.tileHeights[0][local955][local962 + 1]);
 								}
 							}
 						}
@@ -820,17 +820,17 @@ public final class Static31 {
 				@Pc(1908) float[][] local1908 = new float[105][105];
 				@Pc(1912) float[][] local1912 = new float[105][105];
 				@Pc(1916) float[][] local1916 = new float[105][105];
-				@Pc(1920) int[][] local1920 = Static6.anIntArrayArrayArray13[local154];
+				@Pc(1920) int[][] local1920 = Terrain.tileHeights[local154];
 				@Pc(1922) int local1922 = 1;
 				while (true) {
 					if (local1922 > 103) {
 						if (arg2) {
-							@Pc(2042) Class4_Sub12[] local2042 = Static22.method2389(arg1, Static4.aByteArrayArrayArray15[local154], local1908, Static2.anIntArrayArray10, local144, local1912, Static2.aByteArrayArrayArray4[local154], local152, Static1.aByteArrayArrayArray1[local154], local154, local1916, Static6.anIntArrayArrayArray14[0], Static4.aByteArrayArrayArray17, Static2.aByteArrayArrayArray3[local154], Static6.anIntArrayArrayArray13[local154]);
+							@Pc(2042) Class4_Sub12[] local2042 = Static22.method2389(arg1, Static4.aByteArrayArrayArray15[local154], local1908, Terrain.anIntArrayArray10, local144, local1912, Static2.aByteArrayArrayArray4[local154], local152, Static1.aByteArrayArrayArray1[local154], local154, local1916, Terrain.surfaceTileHeights[0], Static4.tileFlags, Static2.aByteArrayArrayArray3[local154], Terrain.tileHeights[local154]);
 							Static18.method1679(local154, local2042);
 							break;
 						}
-						@Pc(2076) Class4_Sub12[] local2076 = Static22.method2389(arg1, Static4.aByteArrayArrayArray15[local154], local1908, null, local144, local1912, Static2.aByteArrayArrayArray4[local154], local152, Static1.aByteArrayArrayArray1[local154], local154, local1916, null, Static4.aByteArrayArrayArray17, Static2.aByteArrayArrayArray3[local154], Static6.anIntArrayArrayArray13[local154]);
-						@Pc(2100) Class4_Sub12[] local2100 = Static29.method3149(Static4.aByteArrayArrayArray17, Static4.aByteArrayArrayArray15[local154], local152, local1908, local154, Static2.aByteArrayArrayArray4[local154], Static1.aByteArrayArrayArray1[local154], Static6.anIntArrayArrayArray13[local154], Static2.aByteArrayArrayArray3[local154], local1912, local1916);
+						@Pc(2076) Class4_Sub12[] local2076 = Static22.method2389(arg1, Static4.aByteArrayArrayArray15[local154], local1908, null, local144, local1912, Static2.aByteArrayArrayArray4[local154], local152, Static1.aByteArrayArrayArray1[local154], local154, local1916, null, Static4.tileFlags, Static2.aByteArrayArrayArray3[local154], Terrain.tileHeights[local154]);
+						@Pc(2100) Class4_Sub12[] local2100 = Static29.method3149(Static4.tileFlags, Static4.aByteArrayArrayArray15[local154], local152, local1908, local154, Static2.aByteArrayArrayArray4[local154], Static1.aByteArrayArrayArray1[local154], Terrain.tileHeights[local154], Static2.aByteArrayArrayArray3[local154], local1912, local1916);
 						@Pc(2107) Class4_Sub12[] local2107 = new Class4_Sub12[local2076.length + local2100.length];
 						for (@Pc(2109) int local2109 = 0; local2109 < local2076.length; local2109++) {
 							local2107[local2109] = local2076[local2109];
@@ -839,7 +839,7 @@ public final class Static31 {
 							local2107[local2124 + local2076.length] = local2100[local2124];
 						}
 						Static18.method1679(local154, local2107);
-						Static14.method1094(Static1.aByteArrayArrayArray1[local154], Static5.anInt3736, Static5.aClass50Array1, Static6.anIntArrayArrayArray13[local154], Static2.aByteArrayArrayArray3[local154], local1908, Static4.aByteArrayArrayArray15[local154], local1916, local1912, local154, Static2.aByteArrayArrayArray4[local154]);
+						Static14.method1094(Static1.aByteArrayArrayArray1[local154], Static5.anInt3736, Static5.aClass50Array1, Terrain.tileHeights[local154], Static2.aByteArrayArrayArray3[local154], local1908, Static4.aByteArrayArrayArray15[local154], local1916, local1912, local154, Static2.aByteArrayArrayArray4[local154]);
 						break;
 					}
 					for (@Pc(1927) int local1927 = 1; local1927 <= 103; local1927++) {
@@ -865,7 +865,7 @@ public final class Static31 {
 		}
 		for (@Pc(2203) int local2203 = 0; local2203 < 104; local2203++) {
 			for (@Pc(2210) int local2210 = 0; local2210 < 104; local2210++) {
-				if ((Static4.aByteArrayArrayArray17[1][local2203][local2210] & 0x2) == 2) {
+				if ((Static4.tileFlags[1][local2203][local2210] & 0x2) == 2) {
 					Static28.method3253(local2203, local2210);
 				}
 			}
@@ -903,8 +903,8 @@ public final class Static31 {
 						}
 						@Pc(2385) int local2385 = (local2263 + 1 - local2267) * (local2345 + 1 - local2265);
 						if (local2385 >= 8) {
-							@Pc(2403) int local2403 = Static6.anIntArrayArrayArray13[local2345][local2247][local2267] - 240;
-							@Pc(2411) int local2411 = Static6.anIntArrayArrayArray13[local2265][local2247][local2267];
+							@Pc(2403) int local2403 = Terrain.tileHeights[local2345][local2247][local2267] - 240;
+							@Pc(2411) int local2411 = Terrain.tileHeights[local2265][local2247][local2267];
 							Static21.method3284(1, local2247 * 128, local2247 * 128, local2267 * 128, local2263 * 128 + 128, local2403, local2411);
 							for (@Pc(2431) int local2431 = local2265; local2431 <= local2345; local2431++) {
 								for (@Pc(2436) int local2436 = local2267; local2436 <= local2263; local2436++) {
@@ -942,8 +942,8 @@ public final class Static31 {
 						}
 						@Pc(2605) int local2605 = (local2524 + 1 - local2522) * (local2502 + 1 - local2477);
 						if (local2605 >= 8) {
-							@Pc(2623) int local2623 = Static6.anIntArrayArrayArray13[local2524][local2477][local2242] - 240;
-							@Pc(2631) int local2631 = Static6.anIntArrayArrayArray13[local2522][local2477][local2242];
+							@Pc(2623) int local2623 = Terrain.tileHeights[local2524][local2477][local2242] - 240;
+							@Pc(2631) int local2631 = Terrain.tileHeights[local2522][local2477][local2242];
 							Static21.method3284(2, local2477 * 128, local2502 * 128 + 128, local2242 * 128, local2242 * 128, local2623, local2631);
 							for (@Pc(2651) int local2651 = local2522; local2651 <= local2524; local2651++) {
 								for (@Pc(2660) int local2660 = local2477; local2660 <= local2502; local2660++) {
@@ -980,7 +980,7 @@ public final class Static31 {
 							local2707++;
 						}
 						if ((local2731 + 1 - local2709) * (local2707 + 1 - local2705) >= 4) {
-							@Pc(2836) int local2836 = Static6.anIntArrayArrayArray13[local2237][local2705][local2709];
+							@Pc(2836) int local2836 = Terrain.tileHeights[local2237][local2705][local2709];
 							Static21.method3284(4, local2705 * 128, local2707 * 128 + 128, local2709 * 128, local2731 * 128 + 128, local2836, local2836);
 							for (@Pc(2858) int local2858 = local2705; local2858 <= local2707; local2858++) {
 								for (@Pc(2863) int local2863 = local2709; local2863 <= local2731; local2863++) {
@@ -1012,9 +1012,9 @@ public final class Static31 {
 		if (local25 * local25 < local38) {
 			return;
 		}
-		@Pc(48) int local48 = Class109.anIntArray299[local13];
+		@Pc(48) int local48 = MathUtils.SINE[local13];
 		local48 = local48 * 256 / (Static6.anInt4761 + 256);
-		@Pc(60) int local60 = Class109.anIntArray298[local13];
+		@Pc(60) int local60 = MathUtils.COSINE[local13];
 		local60 = local60 * 256 / (Static6.anInt4761 + 256);
 		@Pc(78) int local78 = local60 * arg3 + arg4 * local48 >> 16;
 		@Pc(89) int local89 = arg4 * local60 - arg3 * local48 >> 16;
@@ -1156,10 +1156,10 @@ public final class Static31 {
 		@Pc(21) int local21 = local20 = local7 + 128;
 		@Pc(26) int local26;
 		@Pc(27) int local27 = local26 = local15 + 128;
-		@Pc(37) int local37 = Static6.anIntArrayArrayArray13[arg1][arg6][arg7] - Static6.anInt4375;
-		@Pc(49) int local49 = Static6.anIntArrayArrayArray13[arg1][arg6 + 1][arg7] - Static6.anInt4375;
-		@Pc(63) int local63 = Static6.anIntArrayArrayArray13[arg1][arg6 + 1][arg7 + 1] - Static6.anInt4375;
-		@Pc(75) int local75 = Static6.anIntArrayArrayArray13[arg1][arg6][arg7 + 1] - Static6.anInt4375;
+		@Pc(37) int local37 = Terrain.tileHeights[arg1][arg6][arg7] - Static6.anInt4375;
+		@Pc(49) int local49 = Terrain.tileHeights[arg1][arg6 + 1][arg7] - Static6.anInt4375;
+		@Pc(63) int local63 = Terrain.tileHeights[arg1][arg6 + 1][arg7 + 1] - Static6.anInt4375;
+		@Pc(75) int local75 = Terrain.tileHeights[arg1][arg6][arg7 + 1] - Static6.anInt4375;
 		@Pc(85) int local85 = local15 * arg4 + local7 * arg5 >> 16;
 		local15 = local15 * arg5 - local7 * arg4 >> 16;
 		local7 = local85;
@@ -1262,48 +1262,48 @@ public final class Static31 {
 		@Pc(13) int local13 = arg6 + 16;
 		@Pc(17) int local17 = arg7 - 16;
 		@Pc(21) int local21 = arg7 + 16;
-		for (@Pc(23) int local23 = Static7.anInt6031; local23 < Static5.anInt4309; local23++) {
-			@Pc(30) Class4_Sub19[][] local30 = Static1.aClass4_Sub19ArrayArrayArray1[local23];
-			for (@Pc(32) int local32 = Static6.anInt4978; local32 < Static2.anInt5778; local32++) {
-				for (@Pc(37) int local37 = Static1.anInt890; local37 < Static2.anInt1344; local37++) {
-					@Pc(46) Class4_Sub19 local46 = local30[local32][local37];
-					if (local46 != null) {
-						if (Static4.aBooleanArrayArray5[local32 + Static4.anInt3253 - Static6.anInt4513][local37 + Static4.anInt3253 - Static4.anInt3329] && (arg3 == null || local23 < arg4 || arg3[local23][local32][local37] != arg5)) {
-							local46.aBoolean257 = true;
-							local46.aBoolean255 = true;
-							if (local46.anInt3554 > 0) {
-								local46.aBoolean256 = true;
+		for (@Pc(23) int y = Terrain.firstVisibleLevel; y < Terrain.levels; y++) {
+			@Pc(30) Tile[][] tiles = Terrain.tiles[y];
+			for (@Pc(32) int x = Static6.anInt4978; x < Static2.anInt5778; x++) {
+				for (@Pc(37) int z = Static1.anInt890; z < Static2.anInt1344; z++) {
+					@Pc(46) Tile tile = tiles[x][z];
+					if (tile != null) {
+						if (Terrain.aBooleanArrayArray5[x + Terrain.anInt3253 - Static6.anInt4513][z + Terrain.anInt3253 - Static4.anInt3329] && (arg3 == null || y < arg4 || arg3[y][x][z] != arg5)) {
+							tile.aBoolean257 = true;
+							tile.aBoolean255 = true;
+							if (tile.sceneryLen > 0) {
+								tile.aBoolean256 = true;
 							} else {
-								local46.aBoolean256 = false;
+								tile.aBoolean256 = false;
 							}
 							Static5.anInt3486++;
 						} else {
-							local46.aBoolean257 = false;
-							local46.aBoolean255 = false;
-							local46.anInt3549 = 0;
-							if (local32 >= local9 && local32 <= local13 && local37 >= local17 && local37 <= local21) {
-								if (local46.aClass179_1 != null) {
-									@Pc(103) Class179 local103 = local46.aClass179_1;
-									local103.aClass53_5.method3806(0, local23, local103.anInt5494, local103.anInt5492, local103.anInt5491);
-									if (local103.aClass53_4 != null) {
-										local103.aClass53_4.method3806(0, local23, local103.anInt5494, local103.anInt5492, local103.anInt5491);
+							tile.aBoolean257 = false;
+							tile.aBoolean255 = false;
+							tile.anInt3549 = 0;
+							if (x >= local9 && x <= local13 && z >= local17 && z <= local21) {
+								if (tile.wall != null) {
+									@Pc(103) Wall wall = tile.wall;
+									wall.aClass53_5.method3806(0, y, wall.anInt5494, wall.x, wall.z);
+									if (wall.aClass53_4 != null) {
+										wall.aClass53_4.method3806(0, y, wall.anInt5494, wall.x, wall.z);
 									}
 								}
-								if (local46.aClass182_1 != null) {
-									@Pc(134) Class182 local134 = local46.aClass182_1;
-									local134.aClass53_10.method3806(local134.anInt5631, local23, local134.anInt5627, local134.anInt5626, local134.anInt5624);
-									if (local134.aClass53_9 != null) {
-										local134.aClass53_9.method3806(local134.anInt5631, local23, local134.anInt5627, local134.anInt5626, local134.anInt5624);
+								if (tile.wallDecor != null) {
+									@Pc(134) WallDecor wallDecor = tile.wallDecor;
+									wallDecor.aClass53_10.method3806(wallDecor.anInt5631, y, wallDecor.anInt5627, wallDecor.x, wallDecor.z);
+									if (wallDecor.aClass53_9 != null) {
+										wallDecor.aClass53_9.method3806(wallDecor.anInt5631, y, wallDecor.anInt5627, wallDecor.x, wallDecor.z);
 									}
 								}
-								if (local46.aClass42_1 != null) {
-									@Pc(167) Class42 local167 = local46.aClass42_1;
-									local167.aClass53_2.method3806(0, local23, local167.anInt1130, local167.anInt1129, local167.anInt1128);
+								if (tile.groundDecor != null) {
+									@Pc(167) GroundDecor groundDecor = tile.groundDecor;
+									groundDecor.aClass53_2.method3806(0, y, groundDecor.anInt1130, groundDecor.x, groundDecor.z);
 								}
-								if (local46.aClass33Array3 != null) {
-									for (@Pc(183) int local183 = 0; local183 < local46.anInt3554; local183++) {
-										@Pc(192) Class33 local192 = local46.aClass33Array3[local183];
-										local192.aClass53_1.method3806(local192.anInt814, local23, local192.anInt823, local192.anInt821, local192.anInt827);
+								if (tile.scenery != null) {
+									for (@Pc(183) int i = 0; i < tile.sceneryLen; i++) {
+										@Pc(192) Scenery scenery = tile.scenery[i];
+										scenery.aClass53_1.method3806(scenery.anInt814, y, scenery.anInt823, scenery.anInt821, scenery.anInt827);
 									}
 								}
 							}
@@ -1312,7 +1312,7 @@ public final class Static31 {
 				}
 			}
 		}
-		@Pc(240) boolean local240 = Static6.anIntArrayArrayArray13 == Static1.anIntArrayArrayArray2;
+		@Pc(240) boolean local240 = Terrain.tileHeights == Terrain.underwaterTileHeights;
 		if (GlRenderer.enabled) {
 			@Pc(244) GL local244 = GlRenderer.gl;
 			local244.glPushMatrix();
@@ -1324,75 +1324,75 @@ public final class Static31 {
 				Static10.method316();
 				Static5.anInt3636 = -1;
 				Static6.anInt5120 = -1;
-				for (@Pc(273) int local273 = 0; local273 < Static5.aClass4_Sub12ArrayArray2[0].length; local273++) {
-					@Pc(285) Class4_Sub12 local285 = Static5.aClass4_Sub12ArrayArray2[0][local273];
+				for (@Pc(273) int local273 = 0; local273 < Terrain.aClass4_Sub12ArrayArray2[0].length; local273++) {
+					@Pc(285) Class4_Sub12 local285 = Terrain.aClass4_Sub12ArrayArray2[0][local273];
 					@Pc(294) float local294 = 251.5F - (local285.aBoolean162 ? 1.0F : 0.5F);
 					if (local285.anInt2351 != Static5.anInt3636) {
 						Static5.anInt3636 = local285.anInt2351;
 						Static18.method4372(local285.anInt2351);
 						Static25.method2772(Static12.method723());
 					}
-					local285.method1867(Static1.aClass4_Sub19ArrayArrayArray1, local294, false);
+					local285.method1867(Terrain.tiles, local294, false);
 				}
 				Static10.method314();
 			} else {
-				@Pc(319) int local319 = Static7.anInt6031;
+				@Pc(319) int local319 = Terrain.firstVisibleLevel;
 				while (true) {
-					if (local319 >= Static5.anInt4309) {
-						Static27.method3116(Static6.anInt4513, Static4.anInt3329, Static1.aClass4_Sub19ArrayArrayArray1);
+					if (local319 >= Terrain.levels) {
+						Static27.method3116(Static6.anInt4513, Static4.anInt3329, Terrain.tiles);
 						break;
 					}
-					for (@Pc(324) int local324 = 0; local324 < Static5.aClass4_Sub12ArrayArray2[local319].length; local324++) {
-						@Pc(336) Class4_Sub12 local336 = Static5.aClass4_Sub12ArrayArray2[local319][local324];
+					for (@Pc(324) int local324 = 0; local324 < Terrain.aClass4_Sub12ArrayArray2[local319].length; local324++) {
+						@Pc(336) Class4_Sub12 local336 = Terrain.aClass4_Sub12ArrayArray2[local319][local324];
 						@Pc(350) float local350 = 201.5F - (float) local319 * 50.0F - (local336.aBoolean162 ? 1.0F : 0.5F);
 						if (local336.anInt2356 != -1 && Static32.method3920(Static4.anInterface4_1.method444(local336.anInt2356)) && Preferences.highDetailWater) {
 							Static18.method4372(local336.anInt2351);
 						}
-						local336.method1867(Static1.aClass4_Sub19ArrayArrayArray1, local350, false);
+						local336.method1867(Terrain.tiles, local350, false);
 					}
 					if (local319 == 0 && Preferences.sceneryShadows > 0) {
 						GlRenderer.method1613(101.5F);
-						Static14.method1215(Static6.anInt4513, Static4.anInt3329, Static4.anInt3253, arg1, Static4.aBooleanArrayArray5, Static6.anIntArrayArrayArray13[0]);
+						Static14.method1215(Static6.anInt4513, Static4.anInt3329, Terrain.anInt3253, arg1, Terrain.aBooleanArrayArray5, Terrain.tileHeights[0]);
 					}
 					local319++;
 				}
 			}
 			local244.glPopMatrix();
 		}
-		for (@Pc(400) int local400 = Static7.anInt6031; local400 < Static5.anInt4309; local400++) {
-			@Pc(407) Class4_Sub19[][] local407 = Static1.aClass4_Sub19ArrayArrayArray1[local400];
-			for (@Pc(410) int local410 = -Static4.anInt3253; local410 <= 0; local410++) {
+		for (@Pc(400) int y = Terrain.firstVisibleLevel; y < Terrain.levels; y++) {
+			@Pc(407) Tile[][] tiles = Terrain.tiles[y];
+			for (@Pc(410) int local410 = -Terrain.anInt3253; local410 <= 0; local410++) {
 				@Pc(416) int local416 = Static6.anInt4513 + local410;
 				@Pc(420) int local420 = Static6.anInt4513 - local410;
 				if (local416 >= Static6.anInt4978 || local420 < Static2.anInt5778) {
-					for (@Pc(429) int local429 = -Static4.anInt3253; local429 <= 0; local429++) {
+					for (@Pc(429) int local429 = -Terrain.anInt3253; local429 <= 0; local429++) {
 						@Pc(435) int local435 = Static4.anInt3329 + local429;
 						@Pc(439) int local439 = Static4.anInt3329 - local429;
 						if (local416 >= Static6.anInt4978) {
 							if (local435 >= Static1.anInt890) {
-								@Pc(451) Class4_Sub19 local451 = local407[local416][local435];
-								if (local451 != null && local451.aBoolean257) {
-									Static29.method3493(local451, true);
+								@Pc(451) Tile tile = tiles[local416][local435];
+								if (tile != null && tile.aBoolean257) {
+									Static29.method3493(tile, true);
 								}
 							}
 							if (local439 < Static2.anInt1344) {
-								@Pc(468) Class4_Sub19 local468 = local407[local416][local439];
-								if (local468 != null && local468.aBoolean257) {
-									Static29.method3493(local468, true);
+								@Pc(468) Tile tile = tiles[local416][local439];
+								if (tile != null && tile.aBoolean257) {
+									Static29.method3493(tile, true);
 								}
 							}
 						}
 						if (local420 < Static2.anInt5778) {
 							if (local435 >= Static1.anInt890) {
-								@Pc(488) Class4_Sub19 local488 = local407[local420][local435];
-								if (local488 != null && local488.aBoolean257) {
-									Static29.method3493(local488, true);
+								@Pc(488) Tile tile = tiles[local420][local435];
+								if (tile != null && tile.aBoolean257) {
+									Static29.method3493(tile, true);
 								}
 							}
 							if (local439 < Static2.anInt1344) {
-								@Pc(505) Class4_Sub19 local505 = local407[local420][local439];
-								if (local505 != null && local505.aBoolean257) {
-									Static29.method3493(local505, true);
+								@Pc(505) Tile tile = tiles[local420][local439];
+								if (tile != null && tile.aBoolean257) {
+									Static29.method3493(tile, true);
 								}
 							}
 						}
@@ -1406,40 +1406,40 @@ public final class Static31 {
 				}
 			}
 		}
-		for (@Pc(528) int local528 = Static7.anInt6031; local528 < Static5.anInt4309; local528++) {
-			@Pc(535) Class4_Sub19[][] local535 = Static1.aClass4_Sub19ArrayArrayArray1[local528];
-			for (@Pc(538) int local538 = -Static4.anInt3253; local538 <= 0; local538++) {
+		for (@Pc(528) int y = Terrain.firstVisibleLevel; y < Terrain.levels; y++) {
+			@Pc(535) Tile[][] tiles = Terrain.tiles[y];
+			for (@Pc(538) int local538 = -Terrain.anInt3253; local538 <= 0; local538++) {
 				@Pc(544) int local544 = Static6.anInt4513 + local538;
 				@Pc(548) int local548 = Static6.anInt4513 - local538;
 				if (local544 >= Static6.anInt4978 || local548 < Static2.anInt5778) {
-					for (@Pc(557) int local557 = -Static4.anInt3253; local557 <= 0; local557++) {
+					for (@Pc(557) int local557 = -Terrain.anInt3253; local557 <= 0; local557++) {
 						@Pc(563) int local563 = Static4.anInt3329 + local557;
 						@Pc(567) int local567 = Static4.anInt3329 - local557;
 						if (local544 >= Static6.anInt4978) {
 							if (local563 >= Static1.anInt890) {
-								@Pc(579) Class4_Sub19 local579 = local535[local544][local563];
-								if (local579 != null && local579.aBoolean257) {
-									Static29.method3493(local579, false);
+								@Pc(579) Tile tile = tiles[local544][local563];
+								if (tile != null && tile.aBoolean257) {
+									Static29.method3493(tile, false);
 								}
 							}
 							if (local567 < Static2.anInt1344) {
-								@Pc(596) Class4_Sub19 local596 = local535[local544][local567];
-								if (local596 != null && local596.aBoolean257) {
-									Static29.method3493(local596, false);
+								@Pc(596) Tile tile = tiles[local544][local567];
+								if (tile != null && tile.aBoolean257) {
+									Static29.method3493(tile, false);
 								}
 							}
 						}
 						if (local548 < Static2.anInt5778) {
 							if (local563 >= Static1.anInt890) {
-								@Pc(616) Class4_Sub19 local616 = local535[local548][local563];
-								if (local616 != null && local616.aBoolean257) {
-									Static29.method3493(local616, false);
+								@Pc(616) Tile tile = tiles[local548][local563];
+								if (tile != null && tile.aBoolean257) {
+									Static29.method3493(tile, false);
 								}
 							}
 							if (local567 < Static2.anInt1344) {
-								@Pc(633) Class4_Sub19 local633 = local535[local548][local567];
-								if (local633 != null && local633.aBoolean257) {
-									Static29.method3493(local633, false);
+								@Pc(633) Tile tile = tiles[local548][local567];
+								if (tile != null && tile.aBoolean257) {
+									Static29.method3493(tile, false);
 								}
 							}
 						}

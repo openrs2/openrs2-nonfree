@@ -90,26 +90,26 @@ public final class Static27 {
 	}
 
 	@OriginalMember(owner = "client!oc", name = "a", descriptor = "(BI)Z")
-	public static boolean method3104(@OriginalArg(1) int arg0) {
-		if (Static7.anInt5610 == arg0) {
+	public static boolean setBuildArea(@OriginalArg(1) int buildArea) {
+		if (Static7.buildArea == buildArea) {
 			return false;
 		}
-		Static1.anIntArrayArray9 = new int[104][104];
-		Static7.anIntArrayArray48 = new int[104][104];
-		Static7.anIntArrayArrayArray15 = new int[4][13][13];
+		PathFinder.costs = new int[104][104];
+		PathFinder.parents = new int[104][104];
+		Static7.zones = new int[4][13][13];
 		Static1.anIntArrayArray2 = new int[104][104];
-		for (@Pc(36) int local36 = 0; local36 < 4; local36++) {
-			Static7.aClass30Array1[local36] = new Class30(104, 104);
+		for (@Pc(36) int y = 0; y < 4; y++) {
+			PathFinder.collisionMaps[y] = new CollisionMap(104, 104);
 		}
-		Static4.aByteArrayArrayArray17 = new byte[4][104][104];
+		Static4.tileFlags = new byte[4][104][104];
 		Static1.aByteArrayArrayArray2 = new byte[4][104][104];
-		Static4.aClass112ArrayArrayArray1 = new LinkedList[4][104][104];
+		Static4.objStacks = new LinkedList[4][104][104];
 		if (GlRenderer.enabled) {
 			method3109();
 			Static14.method1205();
 			Static5.aClass187ArrayArray1 = new Class187[13][13];
 		}
-		Static7.anInt5610 = arg0;
+		Static7.buildArea = buildArea;
 		return true;
 	}
 
@@ -285,7 +285,7 @@ public final class Static27 {
 	}
 
 	@OriginalMember(owner = "client!od", name = "a", descriptor = "(II[[[Lclient!nh;)V")
-	public static void method3116(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) Class4_Sub19[][][] arg2) {
+	public static void method3116(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) Tile[][][] arg2) {
 		if (!Preferences.highDetailLighting) {
 			return;
 		}
@@ -329,7 +329,7 @@ public final class Static27 {
 						local141 = Static2.anInt5778 - 1;
 					}
 					for (@Pc(155) int local155 = local133; local155 <= local141; local155++) {
-						@Pc(160) Class4_Sub19 local160 = null;
+						@Pc(160) Tile local160 = null;
 						if (local66 >= 0) {
 							local160 = arg2[local66][local155][local112];
 						}
@@ -642,10 +642,10 @@ public final class Static27 {
 				}
 			}
 			if (arg0.equalsIgnoreCase("::getcgcoord")) {
-				Static26.method4357(null, 0, "x:" + (Player.self.x >> 7) + " z:" + (Player.self.z >> 7) + " groundh:" + Static6.anIntArrayArrayArray13[Static7.anInt5334][Player.self.x >> 7][Player.self.z >> 7]);
+				Static26.method4357(null, 0, "x:" + (Player.self.x >> 7) + " z:" + (Player.self.z >> 7) + " groundh:" + Terrain.tileHeights[Static7.y][Player.self.x >> 7][Player.self.z >> 7]);
 			}
 			if (arg0.equalsIgnoreCase("::getheight")) {
-				Static26.method4357(null, 0, "Height: " + Static6.anIntArrayArrayArray13[Static7.anInt5334][Player.self.x >> 7][Player.self.z >> 7]);
+				Static26.method4357(null, 0, "Height: " + Terrain.tileHeights[Static7.y][Player.self.x >> 7][Player.self.z >> 7]);
 			}
 		}
 		Static3.aClass4_Sub10_Sub1_1.writeOpcode(216);

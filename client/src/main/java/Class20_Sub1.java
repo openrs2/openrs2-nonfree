@@ -182,12 +182,12 @@ public final class Class20_Sub1 extends Class20 {
 						@Pc(545) int local545 = (int) (Math.random() * (double) this.anInt317) + this.anInt340;
 						local545 &= 1023;
 						local535 &= 2047;
-						@Pc(559) int local559 = Class109.anIntArray299[local545] >> 1;
-						@Pc(565) int local565 = Class109.anIntArray298[local535] >> 1;
+						@Pc(559) int local559 = MathUtils.SINE[local545] >> 1;
+						@Pc(565) int local565 = MathUtils.COSINE[local535] >> 1;
 						local520 = local565 * local559 >> 15;
-						@Pc(577) int local577 = Class109.anIntArray299[local535] >> 1;
+						@Pc(577) int local577 = MathUtils.SINE[local535] >> 1;
 						local523 = local577 * local559 >> 15;
-						@Pc(589) int local589 = Class109.anIntArray298[local545] >> 1;
+						@Pc(589) int local589 = MathUtils.COSINE[local545] >> 1;
 						local517 = local589 * -1;
 					}
 					@Pc(598) int local598 = (int) (Math.random() * 255.0D);

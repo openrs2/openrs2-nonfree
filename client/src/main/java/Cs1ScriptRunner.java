@@ -106,10 +106,10 @@ public final class Cs1ScriptRunner {
 					value = Static35.method4311(local375);
 				}
 				if (opcode == 18) {
-					value = Static5.anInt3983 + (Player.self.x >> 7);
+					value = Static5.originX + (Player.self.x >> 7);
 				}
 				if (opcode == 19) {
-					value = (Player.self.z >> 7) + Static7.anInt5479;
+					value = (Player.self.z >> 7) + Static7.originZ;
 				}
 				if (opcode == 20) {
 					value = script[pc++];

@@ -2,16 +2,16 @@ import dev.openrs2.deob.annotation.OriginalClass;
 import dev.openrs2.deob.annotation.OriginalMember;
 
 @OriginalClass("client!vl")
-public final class Class182 {
+public final class WallDecor {
 
 	@OriginalMember(owner = "client!vl", name = "d", descriptor = "I")
-	public int anInt5624;
+	public int z;
 
 	@OriginalMember(owner = "client!vl", name = "e", descriptor = "I")
 	public int anInt5625;
 
 	@OriginalMember(owner = "client!vl", name = "f", descriptor = "I")
-	public int anInt5626;
+	public int x;
 
 	@OriginalMember(owner = "client!vl", name = "g", descriptor = "I")
 	public int anInt5627;

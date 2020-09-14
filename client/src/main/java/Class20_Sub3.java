@@ -474,13 +474,13 @@ public final class Class20_Sub3 extends Class20 {
 			this.anInt3515 = (this.anInt3509 + (this.anInt3511 << 6) >> 7) - 1;
 			this.anInt3510 = this.anInt3512;
 			if (this.anInt3514 < 3) {
-				this.anInt3520 = Static6.anIntArrayArrayArray13[this.anInt3514 + 1][this.anInt3513][this.anInt3508] + Static6.anIntArrayArrayArray13[this.anInt3514 + 1][this.anInt3521][this.anInt3508] + Static6.anIntArrayArrayArray13[this.anInt3514 + 1][this.anInt3513][this.anInt3515] + Static6.anIntArrayArrayArray13[this.anInt3514 + 1][this.anInt3521][this.anInt3515] >> 2;
+				this.anInt3520 = Terrain.tileHeights[this.anInt3514 + 1][this.anInt3513][this.anInt3508] + Terrain.tileHeights[this.anInt3514 + 1][this.anInt3521][this.anInt3508] + Terrain.tileHeights[this.anInt3514 + 1][this.anInt3513][this.anInt3515] + Terrain.tileHeights[this.anInt3514 + 1][this.anInt3521][this.anInt3515] >> 2;
 			} else {
 				this.anInt3520 = this.anInt3510 - 1024;
 			}
 			this.aBoolean252 = true;
-			@Pc(156) int local156 = Class109.anIntArray299[this.anInt3517];
-			@Pc(161) int local161 = Class109.anIntArray298[this.anInt3517];
+			@Pc(156) int local156 = MathUtils.SINE[this.anInt3517];
+			@Pc(161) int local161 = MathUtils.COSINE[this.anInt3517];
 			this.method2960(local156, local161);
 			if (this.aBoolean253) {
 				@Pc(174) Class20_Sub1 local174 = (Class20_Sub1) this.aClass172_2.method4320();

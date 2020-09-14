@@ -709,8 +709,8 @@ public final class GlModel extends Model {
 		@Pc(170) int local170 = 0;
 		@Pc(172) int local172 = 0;
 		if (arg0 != 0) {
-			local170 = Class109.anIntArray299[arg0];
-			local172 = Class109.anIntArray298[arg0];
+			local170 = MathUtils.SINE[arg0];
+			local172 = MathUtils.COSINE[arg0];
 		}
 		if (arg8 > 0L && Static1.aBoolean8 && local79 > 0) {
 			@Pc(196) int local196;
@@ -919,22 +919,22 @@ public final class GlModel extends Model {
 						local214 = this.anIntArray502;
 						local214[local212] -= Static6.anInt4694;
 						if (arg4 != 0) {
-							@Pc(242) int local242 = Class109.anIntArray299[arg4];
-							@Pc(246) int local246 = Class109.anIntArray298[arg4];
+							@Pc(242) int local242 = MathUtils.SINE[arg4];
+							@Pc(246) int local246 = MathUtils.COSINE[arg4];
 							@Pc(264) int local264 = this.anIntArray504[local212] * local242 + this.anIntArray507[local212] * local246 + 32767 >> 16;
 							this.anIntArray504[local212] = this.anIntArray504[local212] * local246 + 32767 - this.anIntArray507[local212] * local242 >> 16;
 							this.anIntArray507[local212] = local264;
 						}
 						if (arg2 != 0) {
-							@Pc(296) int local296 = Class109.anIntArray299[arg2];
-							@Pc(300) int local300 = Class109.anIntArray298[arg2];
+							@Pc(296) int local296 = MathUtils.SINE[arg2];
+							@Pc(300) int local300 = MathUtils.COSINE[arg2];
 							@Pc(318) int local318 = this.anIntArray504[local212] * local300 + 32767 - this.anIntArray502[local212] * local296 >> 16;
 							this.anIntArray502[local212] = this.anIntArray504[local212] * local296 + this.anIntArray502[local212] * local300 + 32767 >> 16;
 							this.anIntArray504[local212] = local318;
 						}
 						if (arg3 != 0) {
-							@Pc(350) int local350 = Class109.anIntArray299[arg3];
-							@Pc(354) int local354 = Class109.anIntArray298[arg3];
+							@Pc(350) int local350 = MathUtils.SINE[arg3];
+							@Pc(354) int local354 = MathUtils.COSINE[arg3];
 							@Pc(372) int local372 = this.anIntArray502[local212] * local350 + this.anIntArray507[local212] * local354 + 32767 >> 16;
 							this.anIntArray502[local212] = this.anIntArray502[local212] * local354 + 32767 - this.anIntArray507[local212] * local350 >> 16;
 							this.anIntArray507[local212] = local372;
@@ -963,22 +963,22 @@ public final class GlModel extends Model {
 									break;
 								}
 								if (arg4 != 0) {
-									@Pc(494) int local494 = Class109.anIntArray299[arg4];
-									@Pc(498) int local498 = Class109.anIntArray298[arg4];
+									@Pc(494) int local494 = MathUtils.SINE[arg4];
+									@Pc(498) int local498 = MathUtils.COSINE[arg4];
 									@Pc(516) int local516 = this.aShortArray90[local484] * local494 + this.aShortArray95[local484] * local498 + 32767 >> 16;
 									this.aShortArray90[local484] = (short) (this.aShortArray90[local484] * local498 + 32767 - this.aShortArray95[local484] * local494 >> 16);
 									this.aShortArray95[local484] = (short) local516;
 								}
 								if (arg2 != 0) {
-									@Pc(550) int local550 = Class109.anIntArray299[arg2];
-									@Pc(554) int local554 = Class109.anIntArray298[arg2];
+									@Pc(550) int local550 = MathUtils.SINE[arg2];
+									@Pc(554) int local554 = MathUtils.COSINE[arg2];
 									@Pc(572) int local572 = this.aShortArray90[local484] * local554 + 32767 - this.aShortArray87[local484] * local550 >> 16;
 									this.aShortArray87[local484] = (short) (this.aShortArray90[local484] * local550 + this.aShortArray87[local484] * local554 + 32767 >> 16);
 									this.aShortArray90[local484] = (short) local572;
 								}
 								if (arg3 != 0) {
-									@Pc(606) int local606 = Class109.anIntArray299[arg3];
-									@Pc(610) int local610 = Class109.anIntArray298[arg3];
+									@Pc(606) int local606 = MathUtils.SINE[arg3];
+									@Pc(610) int local610 = MathUtils.COSINE[arg3];
 									@Pc(628) int local628 = this.aShortArray87[local484] * local606 + this.aShortArray95[local484] * local610 + 32767 >> 16;
 									this.aShortArray87[local484] = (short) (this.aShortArray87[local484] * local610 + 32767 - this.aShortArray95[local484] * local606 >> 16);
 									this.aShortArray95[local484] = (short) local628;
@@ -1143,8 +1143,8 @@ public final class GlModel extends Model {
 	@OriginalMember(owner = "client!s", name = "a", descriptor = "(I)V")
 	@Override
 	public final void method3815(@OriginalArg(0) int arg0) {
-		@Pc(3) int local3 = Class109.anIntArray299[arg0];
-		@Pc(7) int local7 = Class109.anIntArray298[arg0];
+		@Pc(3) int local3 = MathUtils.SINE[arg0];
+		@Pc(7) int local7 = MathUtils.COSINE[arg0];
 		for (@Pc(9) int local9 = 0; local9 < this.anInt4689; local9++) {
 			@Pc(29) int local29 = this.anIntArray502[local9] * local3 + this.anIntArray507[local9] * local7 >> 16;
 			this.anIntArray502[local9] = this.anIntArray502[local9] * local7 - this.anIntArray507[local9] * local3 >> 16;
@@ -1227,8 +1227,8 @@ public final class GlModel extends Model {
 	@OriginalMember(owner = "client!s", name = "c", descriptor = "(I)V")
 	@Override
 	public final void method3832(@OriginalArg(0) int arg0) {
-		@Pc(3) int local3 = Class109.anIntArray299[arg0];
-		@Pc(7) int local7 = Class109.anIntArray298[arg0];
+		@Pc(3) int local3 = MathUtils.SINE[arg0];
+		@Pc(7) int local7 = MathUtils.COSINE[arg0];
 		for (@Pc(9) int local9 = 0; local9 < this.anInt4689; local9++) {
 			@Pc(29) int local29 = this.anIntArray504[local9] * local7 - this.anIntArray502[local9] * local3 >> 16;
 			this.anIntArray502[local9] = this.anIntArray504[local9] * local3 + this.anIntArray502[local9] * local7 >> 16;
@@ -1570,22 +1570,22 @@ public final class GlModel extends Model {
 								local1127 = this.anIntArray502;
 								local1127[local1114] -= Static6.anInt4694;
 								if (arg4 != 0) {
-									@Pc(1155) int local1155 = Class109.anIntArray299[arg4];
-									@Pc(1159) int local1159 = Class109.anIntArray298[arg4];
+									@Pc(1155) int local1155 = MathUtils.SINE[arg4];
+									@Pc(1159) int local1159 = MathUtils.COSINE[arg4];
 									@Pc(1177) int local1177 = this.anIntArray504[local1114] * local1155 + this.anIntArray507[local1114] * local1159 + 32767 >> 16;
 									this.anIntArray504[local1114] = this.anIntArray504[local1114] * local1159 + 32767 - this.anIntArray507[local1114] * local1155 >> 16;
 									this.anIntArray507[local1114] = local1177;
 								}
 								if (arg2 != 0) {
-									@Pc(1209) int local1209 = Class109.anIntArray299[arg2];
-									@Pc(1213) int local1213 = Class109.anIntArray298[arg2];
+									@Pc(1209) int local1209 = MathUtils.SINE[arg2];
+									@Pc(1213) int local1213 = MathUtils.COSINE[arg2];
 									@Pc(1231) int local1231 = this.anIntArray504[local1114] * local1213 + 32767 - this.anIntArray502[local1114] * local1209 >> 16;
 									this.anIntArray502[local1114] = this.anIntArray504[local1114] * local1209 + this.anIntArray502[local1114] * local1213 + 32767 >> 16;
 									this.anIntArray504[local1114] = local1231;
 								}
 								if (arg3 != 0) {
-									@Pc(1263) int local1263 = Class109.anIntArray299[arg3];
-									@Pc(1267) int local1267 = Class109.anIntArray298[arg3];
+									@Pc(1263) int local1263 = MathUtils.SINE[arg3];
+									@Pc(1267) int local1267 = MathUtils.COSINE[arg3];
 									@Pc(1285) int local1285 = this.anIntArray502[local1114] * local1263 + this.anIntArray507[local1114] * local1267 + 32767 >> 16;
 									this.anIntArray502[local1114] = this.anIntArray502[local1114] * local1267 + 32767 - this.anIntArray507[local1114] * local1263 >> 16;
 									this.anIntArray507[local1114] = local1285;
@@ -1616,22 +1616,22 @@ public final class GlModel extends Model {
 											break;
 										}
 										if (arg4 != 0) {
-											@Pc(1418) int local1418 = Class109.anIntArray299[arg4];
-											@Pc(1422) int local1422 = Class109.anIntArray298[arg4];
+											@Pc(1418) int local1418 = MathUtils.SINE[arg4];
+											@Pc(1422) int local1422 = MathUtils.COSINE[arg4];
 											@Pc(1440) int local1440 = this.aShortArray90[local1408] * local1418 + this.aShortArray95[local1408] * local1422 + 32767 >> 16;
 											this.aShortArray90[local1408] = (short) (this.aShortArray90[local1408] * local1422 + 32767 - this.aShortArray95[local1408] * local1418 >> 16);
 											this.aShortArray95[local1408] = (short) local1440;
 										}
 										if (arg2 != 0) {
-											@Pc(1474) int local1474 = Class109.anIntArray299[arg2];
-											@Pc(1478) int local1478 = Class109.anIntArray298[arg2];
+											@Pc(1474) int local1474 = MathUtils.SINE[arg2];
+											@Pc(1478) int local1478 = MathUtils.COSINE[arg2];
 											@Pc(1496) int local1496 = this.aShortArray90[local1408] * local1478 + 32767 - this.aShortArray87[local1408] * local1474 >> 16;
 											this.aShortArray87[local1408] = (short) (this.aShortArray90[local1408] * local1474 + this.aShortArray87[local1408] * local1478 + 32767 >> 16);
 											this.aShortArray90[local1408] = (short) local1496;
 										}
 										if (arg3 != 0) {
-											@Pc(1530) int local1530 = Class109.anIntArray299[arg3];
-											@Pc(1534) int local1534 = Class109.anIntArray298[arg3];
+											@Pc(1530) int local1530 = MathUtils.SINE[arg3];
+											@Pc(1534) int local1534 = MathUtils.COSINE[arg3];
 											@Pc(1552) int local1552 = this.aShortArray87[local1408] * local1530 + this.aShortArray95[local1408] * local1534 + 32767 >> 16;
 											this.aShortArray87[local1408] = (short) (this.aShortArray87[local1408] * local1534 + 32767 - this.aShortArray95[local1408] * local1530 >> 16);
 											this.aShortArray95[local1408] = (short) local1552;
@@ -1665,12 +1665,12 @@ public final class GlModel extends Model {
 					Static6.aBoolean326 = false;
 				}
 				@Pc(410) int[] local410 = new int[9];
-				@Pc(416) int local416 = Class109.anIntArray298[arg2] >> 1;
-				@Pc(422) int local422 = Class109.anIntArray299[arg2] >> 1;
-				@Pc(428) int local428 = Class109.anIntArray298[arg3] >> 1;
-				@Pc(434) int local434 = Class109.anIntArray299[arg3] >> 1;
-				@Pc(440) int local440 = Class109.anIntArray298[arg4] >> 1;
-				@Pc(446) int local446 = Class109.anIntArray299[arg4] >> 1;
+				@Pc(416) int local416 = MathUtils.COSINE[arg2] >> 1;
+				@Pc(422) int local422 = MathUtils.SINE[arg2] >> 1;
+				@Pc(428) int local428 = MathUtils.COSINE[arg3] >> 1;
+				@Pc(434) int local434 = MathUtils.SINE[arg3] >> 1;
+				@Pc(440) int local440 = MathUtils.COSINE[arg4] >> 1;
+				@Pc(446) int local446 = MathUtils.SINE[arg4] >> 1;
 				@Pc(454) int local454 = local422 * local440 + 16384 >> 15;
 				@Pc(462) int local462 = local422 * local446 + 16384 >> 15;
 				local410[0] = local428 * local440 + local434 * local462 + 16384 >> 15;
@@ -1907,8 +1907,8 @@ public final class GlModel extends Model {
 			this.method3815(256);
 			return;
 		}
-		@Pc(10) int local10 = Class109.anIntArray299[256];
-		@Pc(14) int local14 = Class109.anIntArray298[256];
+		@Pc(10) int local10 = MathUtils.SINE[256];
+		@Pc(14) int local14 = MathUtils.COSINE[256];
 		for (@Pc(16) int local16 = 0; local16 < this.anInt4689; local16++) {
 			@Pc(36) int local36 = this.anIntArray502[local16] * local10 + this.anIntArray507[local16] * local14 >> 16;
 			this.anIntArray502[local16] = this.anIntArray502[local16] * local14 - this.anIntArray507[local16] * local10 >> 16;
@@ -2883,8 +2883,8 @@ public final class GlModel extends Model {
 	@OriginalMember(owner = "client!s", name = "b", descriptor = "(I)V")
 	@Override
 	public final void method3817(@OriginalArg(0) int arg0) {
-		@Pc(3) int local3 = Class109.anIntArray299[arg0];
-		@Pc(7) int local7 = Class109.anIntArray298[arg0];
+		@Pc(3) int local3 = MathUtils.SINE[arg0];
+		@Pc(7) int local7 = MathUtils.COSINE[arg0];
 		for (@Pc(9) int local9 = 0; local9 < this.anInt4689; local9++) {
 			@Pc(29) int local29 = this.anIntArray504[local9] * local3 + this.anIntArray507[local9] * local7 >> 16;
 			this.anIntArray504[local9] = this.anIntArray504[local9] * local7 - this.anIntArray507[local9] * local3 >> 16;
@@ -3123,22 +3123,22 @@ public final class GlModel extends Model {
 				local114 = this.anIntArray502;
 				local114[local108] -= Static6.anInt4694;
 				if (arg3 != 0) {
-					@Pc(142) int local142 = Class109.anIntArray299[arg3];
-					@Pc(146) int local146 = Class109.anIntArray298[arg3];
+					@Pc(142) int local142 = MathUtils.SINE[arg3];
+					@Pc(146) int local146 = MathUtils.COSINE[arg3];
 					@Pc(164) int local164 = this.anIntArray504[local108] * local142 + this.anIntArray507[local108] * local146 + 32767 >> 16;
 					this.anIntArray504[local108] = this.anIntArray504[local108] * local146 + 32767 - this.anIntArray507[local108] * local142 >> 16;
 					this.anIntArray507[local108] = local164;
 				}
 				if (arg1 != 0) {
-					@Pc(196) int local196 = Class109.anIntArray299[arg1];
-					@Pc(200) int local200 = Class109.anIntArray298[arg1];
+					@Pc(196) int local196 = MathUtils.SINE[arg1];
+					@Pc(200) int local200 = MathUtils.COSINE[arg1];
 					@Pc(218) int local218 = this.anIntArray504[local108] * local200 + 32767 - this.anIntArray502[local108] * local196 >> 16;
 					this.anIntArray502[local108] = this.anIntArray504[local108] * local196 + this.anIntArray502[local108] * local200 + 32767 >> 16;
 					this.anIntArray504[local108] = local218;
 				}
 				if (arg2 != 0) {
-					@Pc(250) int local250 = Class109.anIntArray299[arg2];
-					@Pc(254) int local254 = Class109.anIntArray298[arg2];
+					@Pc(250) int local250 = MathUtils.SINE[arg2];
+					@Pc(254) int local254 = MathUtils.COSINE[arg2];
 					@Pc(272) int local272 = this.anIntArray502[local108] * local250 + this.anIntArray507[local108] * local254 + 32767 >> 16;
 					this.anIntArray502[local108] = this.anIntArray502[local108] * local254 + 32767 - this.anIntArray507[local108] * local250 >> 16;
 					this.anIntArray507[local108] = local272;

@@ -1465,9 +1465,9 @@ public final class ScriptRunner {
 							continue;
 						}
 						if (opcode == 3308) {
-							@Pc(13263) int local13263 = Static7.anInt5334;
-							@Pc(13270) int local13270 = Static5.anInt3983 + (Player.self.x >> 7);
-							@Pc(13277) int local13277 = Static7.anInt5479 + (Player.self.z >> 7);
+							@Pc(13263) int local13263 = Static7.y;
+							@Pc(13270) int local13270 = Static5.originX + (Player.self.x >> 7);
+							@Pc(13277) int local13277 = Static7.originZ + (Player.self.z >> 7);
 							intStack[isp++] = (local13270 << 14) + (local13263 << 28) + local13277;
 							continue;
 						}
@@ -3663,7 +3663,7 @@ public final class ScriptRunner {
 									@Pc(8430) int local8430 = intStack[isp + 1];
 									@Pc(8436) int local8436 = intStack[isp + 2];
 									@Pc(8442) int local8442 = intStack[isp + 3];
-									Static37.method4773(local8436, (local8424 >> 14 & 0x3FFF) - Static5.anInt3983, local8442, local8430, false, (local8424 & 0x3FFF) - Static7.anInt5479);
+									Static37.method4773(local8436, (local8424 >> 14 & 0x3FFF) - Static5.originX, local8442, local8430, false, (local8424 & 0x3FFF) - Static7.originZ);
 									continue;
 								}
 								if (opcode == 5501) {
@@ -3672,7 +3672,7 @@ public final class ScriptRunner {
 									@Pc(8478) int local8478 = intStack[isp + 1];
 									@Pc(8484) int local8484 = intStack[isp + 2];
 									@Pc(8490) int local8490 = intStack[isp + 3];
-									Static23.method2536(local8478, local8484, (local8472 >> 14 & 0x3FFF) - Static5.anInt3983, (local8472 & 0x3FFF) - Static7.anInt5479, local8490);
+									Static23.method2536(local8478, local8484, (local8472 >> 14 & 0x3FFF) - Static5.originX, (local8472 & 0x3FFF) - Static7.originZ, local8490);
 									continue;
 								}
 								if (opcode == 5502) {
@@ -4103,7 +4103,7 @@ public final class ScriptRunner {
 									continue;
 								}
 								if (opcode == 6102) {
-									intStack[isp++] = Static10.method456() ? 1 : 0;
+									intStack[isp++] = Terrain.isAllLevelsVisible() ? 1 : 0;
 									continue;
 								}
 								if (opcode == 6103) {

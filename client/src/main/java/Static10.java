@@ -164,14 +164,6 @@ public final class Static10 {
 		return (arg0 & 0xFF80) + local7;
 	}
 
-	@OriginalMember(owner = "client!bi", name = "a", descriptor = "(III)I")
-	public static int method303(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1) {
-		@Pc(9) int local9 = arg0 + arg1 * 57;
-		local9 ^= local9 << 13;
-		@Pc(34) int local34 = (local9 * local9 * 15731 + 789221) * local9 + 1376312589 & Integer.MAX_VALUE;
-		return local34 >> 19 & 0xFF;
-	}
-
 	@OriginalMember(owner = "client!bi", name = "a", descriptor = "(I[B)Lclient!gl;")
 	public static Class4_Sub3_Sub5 method304(@OriginalArg(1) byte[] arg0) {
 		if (arg0 == null) {
@@ -296,38 +288,16 @@ public final class Static10 {
 		return local9;
 	}
 
-	@OriginalMember(owner = "client!bk", name = "a", descriptor = "(IIIILclient!vc;Lclient!vc;IIJ)V")
-	public static void method320(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) Entity arg4, @OriginalArg(5) Entity arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) long arg8) {
-		if (arg4 == null && arg5 == null) {
-			return;
-		}
-		@Pc(8) Class179 local8 = new Class179();
-		local8.aLong188 = arg8;
-		local8.anInt5492 = arg1 * 128 + 64;
-		local8.anInt5491 = arg2 * 128 + 64;
-		local8.anInt5494 = arg3;
-		local8.aClass53_5 = arg4;
-		local8.aClass53_4 = arg5;
-		local8.anInt5493 = arg6;
-		local8.anInt5488 = arg7;
-		for (@Pc(42) int local42 = arg0; local42 >= 0; local42--) {
-			if (Static1.aClass4_Sub19ArrayArrayArray1[local42][arg1][arg2] == null) {
-				Static1.aClass4_Sub19ArrayArrayArray1[local42][arg1][arg2] = new Class4_Sub19(local42, arg1, arg2);
-			}
-		}
-		Static1.aClass4_Sub19ArrayArrayArray1[arg0][arg1][arg2].aClass179_1 = local8;
-	}
-
 	@OriginalMember(owner = "client!bl", name = "a", descriptor = "(IIII)V")
-	public static void method344(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) {
-		@Pc(7) Class4_Sub19 local7 = Static1.aClass4_Sub19ArrayArrayArray1[arg0][arg1][arg2];
-		if (local7 == null) {
+	public static void method344(@OriginalArg(0) int y, @OriginalArg(1) int x, @OriginalArg(2) int z, @OriginalArg(3) int arg3) {
+		@Pc(7) Tile tile = Terrain.tiles[y][x][z];
+		if (tile == null) {
 			return;
 		}
-		@Pc(13) Class182 local13 = local7.aClass182_1;
-		if (local13 != null) {
-			local13.anInt5633 = local13.anInt5633 * arg3 / 16;
-			local13.anInt5625 = local13.anInt5625 * arg3 / 16;
+		@Pc(13) WallDecor wallDecor = tile.wallDecor;
+		if (wallDecor != null) {
+			wallDecor.anInt5633 = wallDecor.anInt5633 * arg3 / 16;
+			wallDecor.anInt5625 = wallDecor.anInt5625 * arg3 / 16;
 		}
 	}
 
@@ -340,7 +310,7 @@ public final class Static10 {
 	public static void method383(@OriginalArg(1) Player arg0) {
 		@Pc(20) Class4_Sub11 local20 = (Class4_Sub11) Static5.aClass84_18.get(Base37.encode(arg0.name));
 		if (local20 == null) {
-			Static8.method109(null, arg0.anIntArray422[0], null, arg0.anIntArray426[0], arg0, 0, Static7.anInt5334);
+			Static8.method109(null, arg0.anIntArray422[0], null, arg0.anIntArray426[0], arg0, 0, Static7.y);
 		} else {
 			local20.method1652();
 		}
@@ -541,18 +511,13 @@ public final class Static10 {
 		return arg0.isFileReady(Static4.anInt3250);
 	}
 
-	@OriginalMember(owner = "client!c", name = "a", descriptor = "(Z)Z")
-	public static boolean method456() {
-		return GlRenderer.enabled ? true : Preferences.allLevelsVisible;
-	}
-
 	@OriginalMember(owner = "client!c", name = "a", descriptor = "(IIIIIII)V")
 	public static void method462(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4, @OriginalArg(6) int arg5) {
 		@Pc(7) Class94[] local7 = Static7.aClass94Array1;
 		for (@Pc(16) int local16 = 0; local16 < local7.length; local16++) {
 			@Pc(24) Class94 local24 = local7[local16];
 			if (local24 != null && local24.anInt2561 == 2) {
-				Static29.method3482(arg2 >> 1, local24.anInt2567 * 2, arg3, (local24.anInt2558 - Static5.anInt3983 << 7) + local24.anInt2564, local24.anInt2568 + (local24.anInt2565 - Static7.anInt5479 << 7), arg1, arg4 >> 1);
+				Static29.method3482(arg2 >> 1, local24.anInt2567 * 2, arg3, (local24.anInt2558 - Static5.originX << 7) + local24.anInt2564, local24.anInt2568 + (local24.anInt2565 - Static7.originZ << 7), arg1, arg4 >> 1);
 				if (Static7.anInt5584 > -1 && Static2.anInt954 % 20 < 10) {
 					Static6.aClass4_Sub3_Sub14Array11[local24.anInt2559].method4506(arg5 + Static7.anInt5584 - 12, Static4.anInt3290 + arg0 - 28);
 				}

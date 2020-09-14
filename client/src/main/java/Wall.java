@@ -2,19 +2,19 @@ import dev.openrs2.deob.annotation.OriginalClass;
 import dev.openrs2.deob.annotation.OriginalMember;
 
 @OriginalClass("client!ve")
-public final class Class179 {
+public final class Wall {
 
 	@OriginalMember(owner = "client!ve", name = "b", descriptor = "I")
 	public int anInt5488;
 
 	@OriginalMember(owner = "client!ve", name = "g", descriptor = "I")
-	public int anInt5491;
+	public int z;
 
 	@OriginalMember(owner = "client!ve", name = "h", descriptor = "Lclient!vc;")
 	public Entity aClass53_4;
 
 	@OriginalMember(owner = "client!ve", name = "i", descriptor = "I")
-	public int anInt5492;
+	public int x;
 
 	@OriginalMember(owner = "client!ve", name = "k", descriptor = "I")
 	public int anInt5493;

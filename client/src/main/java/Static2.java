@@ -26,9 +26,6 @@ public final class Static2 {
 	@OriginalMember(owner = "client!di", name = "q", descriptor = "Lclient!dd;")
 	public static Class4_Sub4_Sub1 aClass4_Sub4_Sub1_1;
 
-	@OriginalMember(owner = "client!dj", name = "j", descriptor = "[[I")
-	public static int[][] anIntArrayArray10;
-
 	@OriginalMember(owner = "client!dn", name = "T", descriptor = "[Lclient!uj;")
 	public static Sprite[] aClass4_Sub3_Sub14Array6;
 
@@ -46,9 +43,6 @@ public final class Static2 {
 
 	@OriginalMember(owner = "client!ea", name = "I", descriptor = "Lclient!fh;")
 	public static Js5 aClass58_35;
-
-	@OriginalMember(owner = "client!ef", name = "c", descriptor = "[Lclient!co;")
-	public static Class33[] aClass33Array1;
 
 	@OriginalMember(owner = "client!ef", name = "e", descriptor = "[B")
 	public static byte[] aByteArray10;
@@ -83,9 +77,6 @@ public final class Static2 {
 	@OriginalMember(owner = "client!en", name = "p", descriptor = "[Ljava/lang/String;")
 	public static String[] aStringArray8;
 
-	@OriginalMember(owner = "client!eo", name = "k", descriptor = "[[[I")
-	public static int[][][] anIntArrayArrayArray3;
-
 	@OriginalMember(owner = "client!eo", name = "v", descriptor = "[Lclient!fe;")
 	public static SoftwareIndexedSprite[] aClass56_Sub1Array1;
 
@@ -118,9 +109,6 @@ public final class Static2 {
 
 	@OriginalMember(owner = "client!fd", name = "Cb", descriptor = "[I")
 	public static int[] anIntArray649;
-
-	@OriginalMember(owner = "client!ff", name = "a", descriptor = "I")
-	public static int anInt1742;
 
 	@OriginalMember(owner = "client!ff", name = "c", descriptor = "Lclient!fh;")
 	public static Js5 aClass58_40;
@@ -271,9 +259,6 @@ public final class Static2 {
 
 	@OriginalMember(owner = "client!e", name = "v", descriptor = "Lclient!ll;")
 	public static final LinkedList aClass112_6 = new LinkedList();
-
-	@OriginalMember(owner = "client!e", name = "A", descriptor = "Lclient!ll;")
-	public static LinkedList aClass112_7 = new LinkedList();
 
 	@OriginalMember(owner = "client!ea", name = "y", descriptor = "Lclient!mc;")
 	public static final Class4_Sub16 aClass4_Sub16_2 = new Class4_Sub16(0, 0);

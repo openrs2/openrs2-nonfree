@@ -10,7 +10,7 @@ public final class LocType {
 	private short[] aShortArray116;
 
 	@OriginalMember(owner = "client!vh", name = "d", descriptor = "[I")
-	private int[] anIntArray627;
+	private int[] shapes;
 
 	@OriginalMember(owner = "client!vh", name = "t", descriptor = "[S")
 	private short[] aShortArray117;
@@ -19,7 +19,7 @@ public final class LocType {
 	private short[] aShortArray118;
 
 	@OriginalMember(owner = "client!vh", name = "T", descriptor = "[I")
-	private int[] anIntArray630;
+	private int[] models;
 
 	@OriginalMember(owner = "client!vh", name = "V", descriptor = "[I")
 	public int[] anIntArray631;
@@ -58,7 +58,7 @@ public final class LocType {
 	public int anInt5519 = 0;
 
 	@OriginalMember(owner = "client!vh", name = "s", descriptor = "I")
-	public int anInt5516 = 1;
+	public int length = 1;
 
 	@OriginalMember(owner = "client!vh", name = "M", descriptor = "I")
 	public int anInt5530 = 0;
@@ -76,7 +76,7 @@ public final class LocType {
 	public String[] ops = new String[5];
 
 	@OriginalMember(owner = "client!vh", name = "I", descriptor = "I")
-	public int anInt5527 = 1;
+	public int width = 1;
 
 	@OriginalMember(owner = "client!vh", name = "w", descriptor = "I")
 	public int anInt5517 = -1;
@@ -200,12 +200,12 @@ public final class LocType {
 
 	@OriginalMember(owner = "client!vh", name = "a", descriptor = "(Z)Z")
 	public final boolean method4449() {
-		if (this.anIntArray630 == null) {
+		if (this.models == null) {
 			return true;
 		}
 		@Pc(13) boolean local13 = true;
-		for (@Pc(15) int local15 = 0; local15 < this.anIntArray630.length; local15++) {
-			local13 &= LocTypeList.modelsArchive.isFileReady(this.anIntArray630[local15] & 0xFFFF, 0);
+		for (@Pc(15) int local15 = 0; local15 < this.models.length; local15++) {
+			local13 &= LocTypeList.modelsArchive.isFileReady(this.models[local15] & 0xFFFF, 0);
 		}
 		return local13;
 	}
@@ -214,7 +214,7 @@ public final class LocType {
 	public final Class96 method4450(@OriginalArg(0) int arg0, @OriginalArg(1) boolean arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int[][] arg4, @OriginalArg(5) int[][] arg5, @OriginalArg(6) boolean arg6, @OriginalArg(7) int arg7, @OriginalArg(8) int arg8, @OriginalArg(10) SoftwareIndexedSprite arg9) {
 		if (GlRenderer.enabled) {
 			@Pc(210) long local210;
-			if (this.anIntArray627 == null) {
+			if (this.shapes == null) {
 				local210 = (this.id << 10) + arg7;
 			} else {
 				local210 = arg7 + (this.id << 10) + (arg2 << 3);
@@ -257,7 +257,7 @@ public final class LocType {
 			return Static3.aClass96_1;
 		}
 		@Pc(24) long local24;
-		if (this.anIntArray627 == null) {
+		if (this.shapes == null) {
 			local24 = arg7 + (this.id << 10);
 		} else {
 			local24 = (this.id << 10) + (arg2 << 3) + arg7;
@@ -321,16 +321,16 @@ public final class LocType {
 		if (arg1 == 2 && arg0 > 3) {
 			local18 = !local18;
 		}
-		if (this.anIntArray627 == null) {
+		if (this.shapes == null) {
 			if (arg1 != 10) {
 				return null;
 			}
-			if (this.anIntArray630 == null) {
+			if (this.models == null) {
 				return null;
 			}
-			@Pc(53) int local53 = this.anIntArray630.length;
+			@Pc(53) int local53 = this.models.length;
 			for (@Pc(55) int local55 = 0; local55 < local53; local55++) {
-				@Pc(67) int local67 = this.anIntArray630[local55];
+				@Pc(67) int local67 = this.models[local55];
 				if (local18) {
 					local67 += 65536;
 				}
@@ -354,8 +354,8 @@ public final class LocType {
 			}
 		} else {
 			@Pc(128) int local128 = -1;
-			for (@Pc(130) int local130 = 0; local130 < this.anIntArray627.length; local130++) {
-				if (arg1 == this.anIntArray627[local130]) {
+			for (@Pc(130) int local130 = 0; local130 < this.shapes.length; local130++) {
+				if (arg1 == this.shapes[local130]) {
 					local128 = local130;
 					break;
 				}
@@ -363,7 +363,7 @@ public final class LocType {
 			if (local128 == -1) {
 				return null;
 			}
-			@Pc(159) int local159 = this.anIntArray630[local128];
+			@Pc(159) int local159 = this.models[local128];
 			if (local18) {
 				local159 += 65536;
 			}
@@ -459,20 +459,20 @@ public final class LocType {
 		@Pc(12) int local12 = this.anInt5529 + 64;
 		@Pc(19) int local19 = this.anInt5512 * 5 + 768;
 		@Pc(75) GlModel local75;
-		if (this.anIntArray627 == null) {
+		if (this.shapes == null) {
 			if (arg0 != 10) {
 				return null;
 			}
-			if (this.anIntArray630 == null) {
+			if (this.models == null) {
 				return null;
 			}
-			@Pc(38) int local38 = this.anIntArray630.length;
+			@Pc(38) int local38 = this.models.length;
 			if (local38 == 0) {
 				return null;
 			}
 			@Pc(45) long local45 = 0L;
 			for (@Pc(47) int local47 = 0; local47 < local38; local47++) {
-				local45 = local45 * 67783L + (long) this.anIntArray630[local47];
+				local45 = local45 * 67783L + (long) this.models[local47];
 			}
 			if (arg1) {
 				local45 = ~local45;
@@ -481,7 +481,7 @@ public final class LocType {
 			if (local75 == null) {
 				@Pc(80) Class53_Sub3 local80 = null;
 				for (@Pc(82) int local82 = 0; local82 < local38; local82++) {
-					local80 = Static25.method2752(LocTypeList.modelsArchive, this.anIntArray630[local82] & 0xFFFF);
+					local80 = Static25.method2752(LocTypeList.modelsArchive, this.models[local82] & 0xFFFF);
 					if (local80 == null) {
 						return null;
 					}
@@ -497,8 +497,8 @@ public final class LocType {
 			}
 		} else {
 			@Pc(142) int local142 = -1;
-			for (@Pc(144) int local144 = 0; local144 < this.anIntArray627.length; local144++) {
-				if (this.anIntArray627[local144] == arg0) {
+			for (@Pc(144) int local144 = 0; local144 < this.shapes.length; local144++) {
+				if (this.shapes[local144] == arg0) {
 					local142 = local144;
 					break;
 				}
@@ -506,7 +506,7 @@ public final class LocType {
 			if (local142 == -1) {
 				return null;
 			}
-			@Pc(173) int local173 = this.anIntArray630[local142];
+			@Pc(173) int local173 = this.models[local142];
 			if (arg1) {
 				local173 += 65536;
 			}
@@ -568,22 +568,22 @@ public final class LocType {
 	}
 
 	@OriginalMember(owner = "client!vh", name = "a", descriptor = "(II)Z")
-	public final boolean method4457(@OriginalArg(0) int arg0) {
-		if (this.anIntArray627 != null) {
-			for (@Pc(16) int local16 = 0; local16 < this.anIntArray627.length; local16++) {
-				if (this.anIntArray627[local16] == arg0) {
-					return LocTypeList.modelsArchive.isFileReady(this.anIntArray630[local16] & 0xFFFF, 0);
+	public final boolean isReady(@OriginalArg(0) int shape) {
+		if (this.shapes != null) {
+			for (@Pc(16) int i = 0; i < this.shapes.length; i++) {
+				if (this.shapes[i] == shape) {
+					return LocTypeList.modelsArchive.isFileReady(this.models[i] & 0xFFFF, 0);
 				}
 			}
 			return true;
-		} else if (this.anIntArray630 == null) {
+		} else if (this.models == null) {
 			return true;
-		} else if (arg0 == 10) {
-			@Pc(61) boolean local61 = true;
-			for (@Pc(63) int local63 = 0; local63 < this.anIntArray630.length; local63++) {
-				local61 &= LocTypeList.modelsArchive.isFileReady(this.anIntArray630[local63] & 0xFFFF, 0);
+		} else if (shape == 10) {
+			@Pc(61) boolean ready = true;
+			for (@Pc(63) int i = 0; i < this.models.length; i++) {
+				ready &= LocTypeList.modelsArchive.isFileReady(this.models[i] & 0xFFFF, 0);
 			}
-			return local61;
+			return ready;
 		} else {
 			return true;
 		}
@@ -593,7 +593,7 @@ public final class LocType {
 	public final Class96 method4458(@OriginalArg(0) int arg0, @OriginalArg(1) int[][] arg1, @OriginalArg(2) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4, @OriginalArg(6) boolean arg5, @OriginalArg(7) int arg6, @OriginalArg(8) int arg7, @OriginalArg(9) int arg8, @OriginalArg(10) int[][] arg9, @OriginalArg(11) Class46 arg10, @OriginalArg(12) SoftwareIndexedSprite arg11, @OriginalArg(13) int arg12) {
 		if (!GlRenderer.enabled) {
 			@Pc(182) long local182;
-			if (this.anIntArray627 == null) {
+			if (this.shapes == null) {
 				local182 = (this.id << 10) + arg6;
 			} else {
 				local182 = arg6 + (arg7 << 3) + (this.id << 10);
@@ -629,7 +629,7 @@ public final class LocType {
 			return Static3.aClass96_1;
 		}
 		@Pc(27) long local27;
-		if (this.anIntArray627 == null) {
+		if (this.shapes == null) {
 			local27 = (this.id << 10) + arg6;
 		} else {
 			local27 = arg6 + (arg7 << 3) + (this.id << 10);
@@ -690,12 +690,12 @@ public final class LocType {
 		if (code == 1) {
 			@Pc(1037) int local1037 = buffer.readUnsignedByte();
 			if (local1037 > 0) {
-				if (this.anIntArray630 == null || Static6.aBoolean313) {
-					this.anIntArray630 = new int[local1037];
-					this.anIntArray627 = new int[local1037];
+				if (this.models == null || Static6.aBoolean313) {
+					this.models = new int[local1037];
+					this.shapes = new int[local1037];
 					for (@Pc(1067) int local1067 = 0; local1067 < local1037; local1067++) {
-						this.anIntArray630[local1067] = buffer.readUnsignedShort();
-						this.anIntArray627[local1067] = buffer.readUnsignedByte();
+						this.models[local1067] = buffer.readUnsignedShort();
+						this.shapes[local1067] = buffer.readUnsignedByte();
 					}
 				} else {
 					buffer.position += local1037 * 3;
@@ -706,20 +706,20 @@ public final class LocType {
 		} else if (code == 5) {
 			@Pc(989) int local989 = buffer.readUnsignedByte();
 			if (local989 > 0) {
-				if (this.anIntArray630 == null || Static6.aBoolean313) {
-					this.anIntArray627 = null;
-					this.anIntArray630 = new int[local989];
+				if (this.models == null || Static6.aBoolean313) {
+					this.shapes = null;
+					this.models = new int[local989];
 					for (@Pc(1008) int local1008 = 0; local1008 < local989; local1008++) {
-						this.anIntArray630[local1008] = buffer.readUnsignedShort();
+						this.models[local1008] = buffer.readUnsignedShort();
 					}
 				} else {
 					buffer.position += local989 * 2;
 				}
 			}
 		} else if (code == 14) {
-			this.anInt5527 = buffer.readUnsignedByte();
+			this.width = buffer.readUnsignedByte();
 		} else if (code == 15) {
-			this.anInt5516 = buffer.readUnsignedByte();
+			this.length = buffer.readUnsignedByte();
 		} else if (code == 17) {
 			this.anInt5509 = 0;
 			this.aBoolean374 = false;
@@ -951,7 +951,7 @@ public final class LocType {
 	public final void postDecode() {
 		if (this.anInt5522 == -1) {
 			this.anInt5522 = 0;
-			if (this.anIntArray630 != null && (this.anIntArray627 == null || this.anIntArray627[0] == 10)) {
+			if (this.models != null && (this.shapes == null || this.shapes[0] == 10)) {
 				this.anInt5522 = 1;
 			}
 			for (@Pc(35) int local35 = 0; local35 < 5; local35++) {

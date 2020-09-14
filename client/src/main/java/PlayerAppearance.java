@@ -159,13 +159,13 @@ public final class PlayerAppearance {
 									local410[14] = -local365;
 									local410[12] = -local351;
 								} else {
-									@Pc(457) int local457 = Class109.anIntArray298[local372] >> 1;
-									@Pc(463) int local463 = Class109.anIntArray299[local372] >> 1;
-									@Pc(469) int local469 = Class109.anIntArray298[local386] >> 1;
-									@Pc(475) int local475 = Class109.anIntArray299[local379] >> 1;
-									@Pc(481) int local481 = Class109.anIntArray299[local386] >> 1;
+									@Pc(457) int local457 = MathUtils.COSINE[local372] >> 1;
+									@Pc(463) int local463 = MathUtils.SINE[local372] >> 1;
+									@Pc(469) int local469 = MathUtils.COSINE[local386] >> 1;
+									@Pc(475) int local475 = MathUtils.SINE[local379] >> 1;
+									@Pc(481) int local481 = MathUtils.SINE[local386] >> 1;
 									@Pc(489) int local489 = local463 * local475 + 16384 >> 15;
-									@Pc(495) int local495 = Class109.anIntArray298[local379] >> 1;
+									@Pc(495) int local495 = MathUtils.COSINE[local379] >> 1;
 									@Pc(503) int local503 = local495 * local463 + 16384 >> 15;
 									local410[3] = local457 * local475 + 16384 >> 15;
 									local410[1] = -local475 * local469 + local481 * local503 + 16384 >> 15;

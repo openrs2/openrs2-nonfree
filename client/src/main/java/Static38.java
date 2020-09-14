@@ -5,7 +5,7 @@ import dev.openrs2.deob.annotation.Pc;
 public final class Static38 {
 
 	@OriginalMember(owner = "client!wj", name = "c", descriptor = "(B)V")
-	public static void method4789() {
+	public static void readZonePacket() {
 		if (Static1.anInt552 == 17) {
 			@Pc(15) int local15 = Static5.aClass4_Sub10_Sub1_2.readUnsignedByte();
 			@Pc(26) int local26 = Static1.anInt894 * 2 + (local15 >> 4 & 0xF);
@@ -27,9 +27,9 @@ public final class Static38 {
 				@Pc(126) int local126 = local26 * 64;
 				@Pc(130) int local130 = local34 * 64;
 				@Pc(134) int local134 = local41 * 64;
-				@Pc(161) ProjAnim local161 = new ProjAnim(local55, Static7.anInt5334, local126, local130, Static11.method522(local130, local126, Static7.anInt5334) - local61, local71 + Static2.anInt954, Static2.anInt954 + local75, local79, local89, local51, local67);
+				@Pc(161) ProjAnim local161 = new ProjAnim(local55, Static7.y, local126, local130, Static11.method522(local130, local126, Static7.y) - local61, local71 + Static2.anInt954, Static2.anInt954 + local75, local79, local89, local51, local67);
 				@Pc(165) int local165 = local47 * 64;
-				local161.method3105(Static11.method522(local165, local134, Static7.anInt5334) - local67, local134, Static2.anInt954 + local71, local165);
+				local161.method3105(Static11.method522(local165, local134, Static7.y) - local67, local134, Static2.anInt954 + local71, local165);
 				Static1.aClass112_1.addTail(new ProjAnimNode(local161));
 			}
 		} else if (Static1.anInt552 == 114) {
@@ -40,7 +40,7 @@ public final class Static38 {
 			@Pc(220) int local220 = Static5.aClass4_Sub10_Sub1_2.readUnsignedShort();
 			@Pc(224) int local224 = Static5.aClass4_Sub10_Sub1_2.readUnsignedShort();
 			if (local206 >= 0 && local212 >= 0 && local206 < 104 && local212 < 104) {
-				@Pc(247) LinkedList local247 = Static4.aClass112ArrayArrayArray1[Static7.anInt5334][local206][local212];
+				@Pc(247) LinkedList local247 = Static4.objStacks[Static7.y][local206][local212];
 				if (local247 != null) {
 					for (@Pc(256) ObjStackNode local256 = (ObjStackNode) local247.head(); local256 != null; local256 = (ObjStackNode) local247.next()) {
 						@Pc(262) ObjStack local262 = local256.value;
@@ -102,15 +102,15 @@ public final class Static38 {
 							@Pc(528) int local528 = local425 - 1;
 							local534 = local528 >> 11 & 0xF;
 							@Pc(538) int local538 = local528 & 0x7FF;
-							local542 = Static3.aClass53_Sub1_Sub2Array1[local538];
+							local542 = Npc.npcs[local538];
 						} else {
 							@Pc(549) int local549 = -local425 - 1;
 							local534 = local549 >> 11 & 0xF;
 							@Pc(559) int local559 = local549 & 0x7FF;
-							if (local559 == Static7.anInt2022) {
+							if (local559 == Player.selfId) {
 								local542 = Player.self;
 							} else {
-								local542 = Static5.aClass53_Sub1_Sub1Array1[local559];
+								local542 = Player.players[local559];
 							}
 						}
 						if (local542 != null) {
@@ -118,9 +118,9 @@ public final class Static38 {
 							if (local581.anIntArrayArray7 != null && local581.anIntArrayArray7[local534] != null) {
 								local437 -= local581.anIntArrayArray7[local534][1];
 								@Pc(607) int local607 = local581.anIntArrayArray7[local534][0];
-								@Pc(612) int local612 = Class109.anIntArray299[local542.anInt4031];
+								@Pc(612) int local612 = MathUtils.SINE[local542.anInt4031];
 								@Pc(619) int local619 = local581.anIntArrayArray7[local534][2];
-								@Pc(624) int local624 = Class109.anIntArray298[local542.anInt4031];
+								@Pc(624) int local624 = MathUtils.COSINE[local542.anInt4031];
 								@Pc(634) int local634 = local607 * local624 + local612 * local619 >> 16;
 								local619 = local624 * local619 - local607 * local612 >> 16;
 								local514 += local619;
@@ -128,8 +128,8 @@ public final class Static38 {
 							}
 						}
 					}
-					@Pc(682) ProjAnim local682 = new ProjAnim(local433, Static7.anInt5334, local510, local514, Static11.method522(local514, local510, Static7.anInt5334) - local437, local447 + Static2.anInt954, Static2.anInt954 + local451, local455, local465, local429, local443);
-					local682.method3105(Static11.method522(local502, local506, Static7.anInt5334) - local443, local506, Static2.anInt954 + local447, local502);
+					@Pc(682) ProjAnim local682 = new ProjAnim(local433, Static7.y, local510, local514, Static11.method522(local514, local510, Static7.y) - local437, local447 + Static2.anInt954, Static2.anInt954 + local451, local455, local465, local429, local443);
+					local682.method3105(Static11.method522(local502, local506, Static7.y) - local443, local506, Static2.anInt954 + local447, local502);
 					Static1.aClass112_1.addTail(new ProjAnimNode(local682));
 				}
 			} else if (Static1.anInt552 == 158) {
@@ -142,7 +142,7 @@ public final class Static38 {
 				if (local723 >= 0 && local729 >= 0 && local723 < 104 && local729 < 104) {
 					@Pc(765) int local765 = local729 * 128 + 64;
 					@Pc(771) int local771 = local723 * 128 + 64;
-					@Pc(789) SpotAnim local789 = new SpotAnim(local733, Static7.anInt5334, local771, local765, Static11.method522(local765, local771, Static7.anInt5334) - local737, local741, Static2.anInt954);
+					@Pc(789) SpotAnim local789 = new SpotAnim(local733, Static7.y, local771, local765, Static11.method522(local765, local771, Static7.y) - local737, local741, Static2.anInt954);
 					Static2.aClass112_8.addTail(new SpotAnimNode(local789));
 				}
 			} else if (Static1.anInt552 == 179) {
@@ -150,40 +150,40 @@ public final class Static38 {
 				if (local804 == 65535) {
 					local804 = -1;
 				}
-				@Pc(814) int local814 = Static5.aClass4_Sub10_Sub1_2.readUnsignedByteS();
-				@Pc(818) int local818 = local814 >> 2;
-				@Pc(822) int local822 = local814 & 0x3;
-				@Pc(826) int local826 = Static1.anIntArray52[local818];
-				@Pc(830) int local830 = Static5.aClass4_Sub10_Sub1_2.readUnsignedByte();
-				@Pc(836) int local836 = (local830 & 0x7) + Static1.anInt818;
-				@Pc(844) int local844 = Static1.anInt894 + (local830 >> 4 & 0x7);
-				Static34.method4250(local804, local844, Static7.anInt5334, local836, local826, local822, local818);
+				@Pc(814) int shapeAndAngle = Static5.aClass4_Sub10_Sub1_2.readUnsignedByteS();
+				@Pc(818) int shape = shapeAndAngle >> 2;
+				@Pc(822) int angle = shapeAndAngle & 0x3;
+				@Pc(826) int layer = Loc.LAYERS[shape];
+				@Pc(830) int offset = Static5.aClass4_Sub10_Sub1_2.readUnsignedByte();
+				@Pc(836) int z = (offset & 0x7) + Static1.anInt818;
+				@Pc(844) int x = Static1.anInt894 + (offset >> 4 & 0x7);
+				Static34.method4250(local804, x, Static7.y, z, layer, angle, shape);
 			} else if (Static1.anInt552 == 131) {
-				@Pc(863) int local863 = Static5.aClass4_Sub10_Sub1_2.readUnsignedByteS();
-				@Pc(867) int local867 = local863 >> 2;
-				@Pc(871) int local871 = Static1.anIntArray52[local867];
-				@Pc(875) int local875 = local863 & 0x3;
-				@Pc(879) int local879 = Static5.aClass4_Sub10_Sub1_2.readUnsignedShortLE();
-				@Pc(883) int local883 = Static5.aClass4_Sub10_Sub1_2.readUnsignedByte();
-				@Pc(889) int local889 = (local883 & 0x7) + Static1.anInt818;
-				@Pc(897) int local897 = (local883 >> 4 & 0x7) + Static1.anInt894;
-				if (local897 >= 0 && local889 >= 0 && local897 < 104 && local889 < 104) {
-					Static13.method1011(local879, Static7.anInt5334, local875, local897, -1, local889, local867, local871, 0);
+				@Pc(863) int shapeAndAngle = Static5.aClass4_Sub10_Sub1_2.readUnsignedByteS();
+				@Pc(867) int shape = shapeAndAngle >> 2;
+				@Pc(871) int layer = Loc.LAYERS[shape];
+				@Pc(875) int angle = shapeAndAngle & 0x3;
+				@Pc(879) int id = Static5.aClass4_Sub10_Sub1_2.readUnsignedShortLE();
+				@Pc(883) int offset = Static5.aClass4_Sub10_Sub1_2.readUnsignedByte();
+				@Pc(889) int z = (offset & 0x7) + Static1.anInt818;
+				@Pc(897) int x = (offset >> 4 & 0x7) + Static1.anInt894;
+				if (x >= 0 && z >= 0 && x < 104 && z < 104) {
+					LocList.add(id, x, Static7.y, z, angle, shape, layer, -1, 0);
 				}
 			} else if (Static1.anInt552 == 115) {
-				@Pc(935) int local935 = Static5.aClass4_Sub10_Sub1_2.readUnsignedShort();
-				@Pc(939) int local939 = Static5.aClass4_Sub10_Sub1_2.readUnsignedByte();
-				LocTypeList.get(local935).method4457(local939);
+				@Pc(935) int id = Static5.aClass4_Sub10_Sub1_2.readUnsignedShort();
+				@Pc(939) int shape = Static5.aClass4_Sub10_Sub1_2.readUnsignedByte();
+				LocTypeList.get(id).isReady(shape);
 			} else if (Static1.anInt552 == 232) {
-				@Pc(954) int local954 = Static5.aClass4_Sub10_Sub1_2.readUnsignedByteC();
-				@Pc(960) int local960 = Static1.anInt818 + (local954 & 0x7);
-				@Pc(968) int local968 = (local954 >> 4 & 0x7) + Static1.anInt894;
-				@Pc(972) int local972 = Static5.aClass4_Sub10_Sub1_2.readUnsignedByte();
-				@Pc(976) int local976 = local972 >> 2;
-				@Pc(980) int local980 = Static1.anIntArray52[local976];
-				@Pc(984) int local984 = local972 & 0x3;
-				if (local968 >= 0 && local960 >= 0 && local968 < 104 && local960 < 104) {
-					Static13.method1011(-1, Static7.anInt5334, local984, local968, -1, local960, local976, local980, 0);
+				@Pc(954) int offset = Static5.aClass4_Sub10_Sub1_2.readUnsignedByteC();
+				@Pc(960) int z = Static1.anInt818 + (offset & 0x7);
+				@Pc(968) int x = (offset >> 4 & 0x7) + Static1.anInt894;
+				@Pc(972) int shapeAndAngle = Static5.aClass4_Sub10_Sub1_2.readUnsignedByte();
+				@Pc(976) int shape = shapeAndAngle >> 2;
+				@Pc(980) int layer = Loc.LAYERS[shape];
+				@Pc(984) int angle = shapeAndAngle & 0x3;
+				if (x >= 0 && z >= 0 && x < 104 && z < 104) {
+					LocList.add(-1, x, Static7.y, z, angle, shape, layer, -1, 0);
 				}
 			} else if (Static1.anInt552 == 105) {
 				@Pc(1022) int local1022 = Static5.aClass4_Sub10_Sub1_2.readUnsignedByte();
@@ -207,8 +207,8 @@ public final class Static38 {
 					@Pc(1134) int local1134 = local1042 * 128 + 64;
 					@Pc(1140) int local1140 = local1048 * 128 + 64;
 					@Pc(1146) int local1146 = local1030 * 128 + 64;
-					@Pc(1173) ProjAnim local1173 = new ProjAnim(local1056, Static7.anInt5334, local1146, local1128, Static11.method522(local1128, local1146, Static7.anInt5334) - local1062, Static2.anInt954 + local1072, local1076 + Static2.anInt954, local1080, local1084, local1052, local1068);
-					local1173.method3105(Static11.method522(local1140, local1134, Static7.anInt5334) - local1068, local1134, local1072 + Static2.anInt954, local1140);
+					@Pc(1173) ProjAnim local1173 = new ProjAnim(local1056, Static7.y, local1146, local1128, Static11.method522(local1128, local1146, Static7.y) - local1062, Static2.anInt954 + local1072, local1076 + Static2.anInt954, local1080, local1084, local1052, local1068);
+					local1173.method3105(Static11.method522(local1140, local1134, Static7.y) - local1068, local1134, local1072 + Static2.anInt954, local1140);
 					Static1.aClass112_1.addTail(new ProjAnimNode(local1173));
 				}
 			} else if (Static1.anInt552 == 120) {
@@ -217,7 +217,7 @@ public final class Static38 {
 				@Pc(1218) int local1218 = (local1203 & 0x7) + Static1.anInt818;
 				@Pc(1222) int local1222 = Static5.aClass4_Sub10_Sub1_2.readUnsignedShortA();
 				if (local1212 >= 0 && local1218 >= 0 && local1212 < 104 && local1218 < 104) {
-					@Pc(1245) LinkedList local1245 = Static4.aClass112ArrayArrayArray1[Static7.anInt5334][local1212][local1218];
+					@Pc(1245) LinkedList local1245 = Static4.objStacks[Static7.y][local1212][local1218];
 					if (local1245 != null) {
 						for (@Pc(1253) ObjStackNode local1253 = (ObjStackNode) local1245.head(); local1253 != null; local1253 = (ObjStackNode) local1245.next()) {
 							if ((local1222 & 0x7FFF) == local1253.value.type) {
@@ -226,7 +226,7 @@ public final class Static38 {
 							}
 						}
 						if (local1245.head() == null) {
-							Static4.aClass112ArrayArrayArray1[Static7.anInt5334][local1212][local1218] = null;
+							Static4.objStacks[Static7.y][local1212][local1218] = null;
 						}
 						Static8.method89(local1212, local1218);
 					}
@@ -241,10 +241,10 @@ public final class Static38 {
 					@Pc(1352) ObjStack local1352 = new ObjStack();
 					local1352.count = local1328;
 					local1352.type = local1324;
-					if (Static4.aClass112ArrayArrayArray1[Static7.anInt5334][local1320][local1312] == null) {
-						Static4.aClass112ArrayArrayArray1[Static7.anInt5334][local1320][local1312] = new LinkedList();
+					if (Static4.objStacks[Static7.y][local1320][local1312] == null) {
+						Static4.objStacks[Static7.y][local1320][local1312] = new LinkedList();
 					}
-					Static4.aClass112ArrayArrayArray1[Static7.anInt5334][local1320][local1312].addTail(new ObjStackNode(local1352));
+					Static4.objStacks[Static7.y][local1320][local1312].addTail(new ObjStackNode(local1352));
 					Static8.method89(local1320, local1312);
 				}
 			} else if (Static1.anInt552 == 144) {
@@ -279,14 +279,14 @@ public final class Static38 {
 				@Pc(1589) int local1589 = Static5.aClass4_Sub10_Sub1_2.readUnsignedByteA();
 				@Pc(1597) int local1597 = (local1589 >> 4 & 0x7) + Static1.anInt894;
 				@Pc(1603) int local1603 = Static1.anInt818 + (local1589 & 0x7);
-				if (local1597 >= 0 && local1603 >= 0 && local1597 < 104 && local1603 < 104 && local1581 != Static7.anInt2022) {
+				if (local1597 >= 0 && local1603 >= 0 && local1597 < 104 && local1603 < 104 && local1581 != Player.selfId) {
 					@Pc(1629) ObjStack local1629 = new ObjStack();
 					local1629.count = local1585;
 					local1629.type = local1577;
-					if (Static4.aClass112ArrayArrayArray1[Static7.anInt5334][local1597][local1603] == null) {
-						Static4.aClass112ArrayArrayArray1[Static7.anInt5334][local1597][local1603] = new LinkedList();
+					if (Static4.objStacks[Static7.y][local1597][local1603] == null) {
+						Static4.objStacks[Static7.y][local1597][local1603] = new LinkedList();
 					}
-					Static4.aClass112ArrayArrayArray1[Static7.anInt5334][local1597][local1603].addTail(new ObjStackNode(local1629));
+					Static4.objStacks[Static7.y][local1597][local1603].addTail(new ObjStackNode(local1629));
 					Static8.method89(local1597, local1603);
 				}
 			}
@@ -360,7 +360,7 @@ public final class Static38 {
 			} else {
 				local19 = Static4.anIntArray317[local7];
 			}
-			@Pc(29) Player local29 = Static5.aClass53_Sub1_Sub1Array1[local19];
+			@Pc(29) Player local29 = Player.players[local19];
 			if (local29 != null && local29.anInt4023 > 0) {
 				local29.anInt4023--;
 				if (local29.anInt4023 == 0) {
@@ -368,9 +368,9 @@ public final class Static38 {
 				}
 			}
 		}
-		for (@Pc(57) int local57 = 0; local57 < Static6.anInt4451; local57++) {
-			@Pc(64) int local64 = Static7.anIntArray595[local57];
-			@Pc(68) Npc local68 = Static3.aClass53_Sub1_Sub2Array1[local64];
+		for (@Pc(57) int local57 = 0; local57 < Npc.size; local57++) {
+			@Pc(64) int local64 = Npc.ids[local57];
+			@Pc(68) Npc local68 = Npc.npcs[local64];
 			if (local68 != null && local68.anInt4023 > 0) {
 				local68.anInt4023--;
 				if (local68.anInt4023 == 0) {
@@ -380,21 +380,4 @@ public final class Static38 {
 		}
 	}
 
-	@OriginalMember(owner = "client!wn", name = "a", descriptor = "(IIIILclient!vc;JZ)V")
-	public static void method4826(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) Entity arg4, @OriginalArg(5) long arg5, @OriginalArg(6) boolean arg6) {
-		if (arg4 == null) {
-			return;
-		}
-		@Pc(6) Class42 local6 = new Class42();
-		local6.aClass53_2 = arg4;
-		local6.anInt1129 = arg1 * 128 + 64;
-		local6.anInt1128 = arg2 * 128 + 64;
-		local6.anInt1130 = arg3;
-		local6.aLong45 = arg5;
-		local6.aBoolean63 = arg6;
-		if (Static1.aClass4_Sub19ArrayArrayArray1[arg0][arg1][arg2] == null) {
-			Static1.aClass4_Sub19ArrayArrayArray1[arg0][arg1][arg2] = new Class4_Sub19(arg0, arg1, arg2);
-		}
-		Static1.aClass4_Sub19ArrayArrayArray1[arg0][arg1][arg2].aClass42_1 = local6;
-	}
 }
