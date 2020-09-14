@@ -83,7 +83,7 @@ public final class Static36 {
 	}
 
 	@OriginalMember(owner = "client!vc", name = "a", descriptor = "(IZLclient!fg;ILclient!ho;)V")
-	public static void method3811(@OriginalArg(0) int arg0, @OriginalArg(2) Class4_Sub3_Sub7 arg1, @OriginalArg(3) int arg2, @OriginalArg(4) Class82 arg3) {
+	public static void method3811(@OriginalArg(0) int arg0, @OriginalArg(2) Class4_Sub3_Sub7 arg1, @OriginalArg(3) int arg2, @OriginalArg(4) MelType arg3) {
 		if (arg3.anIntArray188 != null) {
 			@Pc(10) boolean local10 = false;
 			@Pc(15) int[] local15 = new int[arg3.anIntArray188.length];
@@ -361,7 +361,7 @@ public final class Static36 {
 			local255 = Static5.anInt4215 * 5;
 		}
 		for (@Pc(266) Class4_Sub3_Sub7 local266 = (Class4_Sub3_Sub7) Static3.aClass175_12.head(); local266 != null; local266 = (Class4_Sub3_Sub7) Static3.aClass175_12.next()) {
-			@Pc(273) Class82 local273 = Static22.method2191(local266.anInt1760);
+			@Pc(273) MelType local273 = MelTypeList.get(local266.anInt1760);
 			if (Static8.method120(local273)) {
 				if (local266.anInt1760 == Static5.anInt3920) {
 					@Pc(290) int local290 = local57 * local266.anInt1768 / Static3.anInt2965 + arg2;

@@ -200,7 +200,7 @@ public final class Static25 {
 			return;
 		}
 		for (@Pc(153) Class4_Sub17 local153 = (Class4_Sub17) Static3.aClass112_13.head(); local153 != null; local153 = (Class4_Sub17) Static3.aClass112_13.next()) {
-			@Pc(161) Class82 local161 = Static22.method2191(local153.aClass4_Sub3_Sub7_1.anInt1760);
+			@Pc(161) MelType local161 = MelTypeList.get(local153.aClass4_Sub3_Sub7_1.anInt1760);
 			if (Static1.anInt640 == 0 && local153.method2923(Mouse.x, Mouse.y)) {
 				if (!local153.aClass4_Sub3_Sub7_1.aBoolean105) {
 					local153.aClass4_Sub3_Sub7_1.aBoolean105 = true;
@@ -504,12 +504,6 @@ public final class Static25 {
 		Static4.anIntArrayArray32 = null;
 		Static4.anIntArray363 = null;
 		Static4.anIntArrayArray31 = null;
-	}
-
-	@OriginalMember(owner = "client!nb", name = "b", descriptor = "(I)V")
-	public static void method2925() {
-		Static4.aClass26_28.clear();
-		Static3.aClass26_23.clear();
 	}
 
 	@OriginalMember(owner = "client!nb", name = "a", descriptor = "(Ljava/lang/String;ILjava/lang/String;ILjava/lang/String;I)V")

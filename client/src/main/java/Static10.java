@@ -344,11 +344,11 @@ public final class Static10 {
 		Static4.aClass106_4 = null;
 		Static4.aClass106_3 = null;
 		Static1.anInt929 = -1;
-		Static25.method2925();
+		MelTypeList.clear();
 		Static1.aClass130_1 = null;
 		Static3.aClass84_10 = null;
 		Static3.aClass84_9 = null;
-		Static14.method1064(128, 64);
+		MelTypeList.resize(128, 64);
 		VarbitTypeList.resize(64);
 	}
 

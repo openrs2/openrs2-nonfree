@@ -11,7 +11,7 @@ public final class Static11 {
 		} else {
 			Static1.aClass130_1.method3256(Static3.aClass175_12);
 			@Pc(24) Class4_Sub3_Sub7 local24 = (Class4_Sub3_Sub7) Static1.aClass130_1.method3255();
-			@Pc(29) Class82 local29 = Static22.method2191(local24.anInt1760);
+			@Pc(29) MelType local29 = MelTypeList.get(local24.anInt1760);
 			return local29 != null && local29.aBoolean157 && local29.method1810() ? local24 : Static24.method2713();
 		}
 	}

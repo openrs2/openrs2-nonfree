@@ -217,22 +217,6 @@ public final class Static22 {
 		}
 	}
 
-	@OriginalMember(owner = "client!k", name = "a", descriptor = "(ZI)Lclient!ho;")
-	public static Class82 method2191(@OriginalArg(1) int arg0) {
-		@Pc(10) Class82 local10 = (Class82) Static4.aClass26_28.get((long) arg0);
-		if (local10 != null) {
-			return local10;
-		}
-		@Pc(26) byte[] local26 = Static1.aClass58_23.fetchFile(36, arg0);
-		@Pc(30) Class82 local30 = new Class82();
-		local30.anInt2292 = arg0;
-		if (local26 != null) {
-			local30.method1806(new Buffer(local26));
-		}
-		Static4.aClass26_28.put((long) arg0, local30);
-		return local30;
-	}
-
 	@OriginalMember(owner = "client!ka", name = "a", descriptor = "(JB)V")
 	public static void method2192(@OriginalArg(0) long arg0) {
 		if (arg0 == 0L) {

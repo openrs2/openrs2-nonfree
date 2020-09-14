@@ -644,7 +644,7 @@ public final class client extends GameShell {
 				LightTypeList.init(js5Archive2);
 				CursorTypeList.init(js5Archive2, js5Archive8);
 				MsiTypeList.init(js5Archive2, js5Archive8);
-				Static29.method3474(js5Archive2, js5Archive8);
+				MelTypeList.init(js5Archive2, js5Archive8);
 				mainLoadPercentage = 50;
 				mainLoadSecondaryText = LocalisedText.MAINLOAD70B;
 				Equipment.init();

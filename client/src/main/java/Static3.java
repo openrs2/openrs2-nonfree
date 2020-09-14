@@ -259,9 +259,6 @@ public final class Static3 {
 	@OriginalMember(owner = "client!jh", name = "i", descriptor = "I")
 	public static int anInt2586;
 
-	@OriginalMember(owner = "client!jh", name = "k", descriptor = "Lclient!fh;")
-	public static Js5 aClass58_60;
-
 	@OriginalMember(owner = "client!ji", name = "b", descriptor = "I")
 	public static int anInt2587;
 
@@ -480,9 +477,6 @@ public final class Static3 {
 
 	@OriginalMember(owner = "client!im", name = "h", descriptor = "Lclient!jh;")
 	public static Class96 aClass96_1 = new Class96();
-
-	@OriginalMember(owner = "client!im", name = "m", descriptor = "Lclient!cc;")
-	public static SoftLruHashTable aClass26_23 = new SoftLruHashTable(64);
 
 	@OriginalMember(owner = "client!in", name = "p", descriptor = "[I")
 	public static final int[] anIntArray218 = new int[32];

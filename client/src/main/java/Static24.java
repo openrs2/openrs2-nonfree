@@ -458,7 +458,7 @@ public final class Static24 {
 		VarpTypeList.clear();
 		BasTypeList.clear();
 		MsiTypeList.clear();
-		Static25.method2925();
+		MelTypeList.clear();
 		SkyBoxTypeList.clear();
 		SkyBoxSphereTypeList.clear();
 		LightTypeList.clear();
@@ -702,7 +702,7 @@ public final class Static24 {
 			return null;
 		}
 		for (@Pc(22) Class4_Sub3_Sub7 local22 = (Class4_Sub3_Sub7) Static1.aClass130_1.method3250(); local22 != null; local22 = (Class4_Sub3_Sub7) Static1.aClass130_1.method3250()) {
-			@Pc(29) Class82 local29 = Static22.method2191(local22.anInt1760);
+			@Pc(29) MelType local29 = MelTypeList.get(local22.anInt1760);
 			if (local29 != null && local29.aBoolean157 && local29.method1810()) {
 				return local22;
 			}

@@ -1459,7 +1459,7 @@ public final class Static31 {
 		VarpTypeList.clean();
 		BasTypeList.clean();
 		MsiTypeList.clean();
-		Static37.method4717();
+		MelTypeList.clean();
 		SkyBoxTypeList.clean();
 		SkyBoxSphereTypeList.clean();
 		LightTypeList.clean();

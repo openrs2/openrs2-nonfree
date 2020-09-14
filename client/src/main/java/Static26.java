@@ -782,10 +782,4 @@ public final class Static26 {
 		return Static6.aStringArray27[arg0].length() <= 0 ? Static6.aStringArray30[arg0] : Static6.aStringArray30[arg0] + LocalisedText.MINISEPARATOR + Static6.aStringArray27[arg0];
 	}
 
-	@OriginalMember(owner = "client!nl", name = "b", descriptor = "(I)V")
-	public static void method2993() {
-		Static4.aClass26_28.removeSoft();
-		Static3.aClass26_23.removeSoft();
-	}
-
 }

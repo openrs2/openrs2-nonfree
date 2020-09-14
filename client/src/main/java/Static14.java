@@ -173,12 +173,6 @@ public final class Static14 {
 		return local68;
 	}
 
-	@OriginalMember(owner = "client!el", name = "a", descriptor = "(III)V")
-	public static void method1064(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
-		Static4.aClass26_28 = new SoftLruHashTable(arg0);
-		Static3.aClass26_23 = new SoftLruHashTable(arg1);
-	}
-
 	@OriginalMember(owner = "client!el", name = "a", descriptor = "(I)V")
 	public static void method1066() {
 		Static4.aClass26_30.removeSoft();

@@ -4467,7 +4467,7 @@ public final class ScriptRunner {
 								if (opcode == 6800) {
 									isp--;
 									@Pc(8089) int local8089 = intStack[isp];
-									@Pc(8093) Class82 local8093 = Static22.method2191(local8089);
+									@Pc(8093) MelType local8093 = MelTypeList.get(local8089);
 									if (local8093.aString131 == null) {
 										stringStack[ssp++] = "";
 									} else {
@@ -4478,7 +4478,7 @@ public final class ScriptRunner {
 								if (opcode == 6801) {
 									@Pc(8119) int local8119 = isp - 1;
 									@Pc(8122) int local8122 = intStack[local8119];
-									@Pc(8126) Class82 local8126 = Static22.method2191(local8122);
+									@Pc(8126) MelType local8126 = MelTypeList.get(local8122);
 									isp = local8119 + 1;
 									intStack[local8119] = local8126.anInt2277;
 									continue;
@@ -4486,7 +4486,7 @@ public final class ScriptRunner {
 								if (opcode == 6802) {
 									@Pc(8141) int local8141 = isp - 1;
 									@Pc(8144) int local8144 = intStack[local8141];
-									@Pc(8148) Class82 local8148 = Static22.method2191(local8144);
+									@Pc(8148) MelType local8148 = MelTypeList.get(local8144);
 									isp = local8141 + 1;
 									intStack[local8141] = local8148.anInt2270;
 									continue;
@@ -4494,7 +4494,7 @@ public final class ScriptRunner {
 								if (opcode == 6803) {
 									@Pc(8163) int local8163 = isp - 1;
 									@Pc(8166) int local8166 = intStack[local8163];
-									@Pc(8170) Class82 local8170 = Static22.method2191(local8166);
+									@Pc(8170) MelType local8170 = MelTypeList.get(local8166);
 									isp = local8163 + 1;
 									intStack[local8163] = local8170.anInt2284;
 									continue;

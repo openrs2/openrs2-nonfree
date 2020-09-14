@@ -1024,7 +1024,7 @@ public final class Static35 {
 	}
 
 	@OriginalMember(owner = "client!ui", name = "a", descriptor = "(ILclient!fg;Lclient!ho;)V")
-	public static void method4329(@OriginalArg(1) Class4_Sub3_Sub7 arg0, @OriginalArg(2) Class82 arg1) {
+	public static void method4329(@OriginalArg(1) Class4_Sub3_Sub7 arg0, @OriginalArg(2) MelType arg1) {
 		@Pc(5) SoftwareIndexedSprite local5 = arg1.method1808();
 		if (local5 == null) {
 			return;
@@ -1167,7 +1167,7 @@ public final class Static35 {
 
 	@OriginalMember(owner = "client!ul", name = "a", descriptor = "(ILclient!wf;IIIII)V")
 	public static void method4360(@OriginalArg(0) int arg0, @OriginalArg(1) Component arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5) {
-		@Pc(10) Class82 local10 = Static22.method2191(arg3);
+		@Pc(10) MelType local10 = MelTypeList.get(arg3);
 		if (local10 == null || !local10.aBoolean155 || !local10.method1810()) {
 			return;
 		}

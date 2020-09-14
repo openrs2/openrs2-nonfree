@@ -854,13 +854,6 @@ public final class Static29 {
 		local18.anInt1994 = arg1;
 	}
 
-	@OriginalMember(owner = "client!pl", name = "a", descriptor = "(BLclient!fh;Lclient!fh;)V")
-	public static void method3474(@OriginalArg(1) Js5 arg0, @OriginalArg(2) Js5 arg1) {
-		Static1.aClass58_23 = arg0;
-		Static3.aClass58_60 = arg1;
-		Static1.aClass58_23.getGroupCapacity(36);
-	}
-
 	@OriginalMember(owner = "client!pl", name = "a", descriptor = "(IJ)V")
 	public static void method3475(@OriginalArg(1) long arg0) {
 		if (arg0 != 0L) {

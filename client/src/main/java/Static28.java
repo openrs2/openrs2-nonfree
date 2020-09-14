@@ -7,7 +7,7 @@ import dev.openrs2.deob.annotation.Pc;
 public final class Static28 {
 
 	@OriginalMember(owner = "client!ol", name = "a", descriptor = "(Lclient!fg;IIIZILclient!nb;Lclient!ho;)V")
-	public static void method3244(@OriginalArg(0) Class4_Sub3_Sub7 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) boolean arg4, @OriginalArg(6) Class4_Sub17 arg5, @OriginalArg(7) Class82 arg6) {
+	public static void method3244(@OriginalArg(0) Class4_Sub3_Sub7 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) boolean arg4, @OriginalArg(6) Class4_Sub17 arg5, @OriginalArg(7) MelType arg6) {
 		@Pc(3) Class106 local3 = null;
 		if (arg6.anInt2270 == 0) {
 			if ((double) Static3.aFloat68 == 3.0D) {

@@ -270,12 +270,6 @@ public final class Static37 {
 		}
 	}
 
-	@OriginalMember(owner = "client!we", name = "a", descriptor = "(ZI)V")
-	public static void method4717() {
-		Static4.aClass26_28.clean(5);
-		Static3.aClass26_23.clean(5);
-	}
-
 	@OriginalMember(owner = "client!we", name = "a", descriptor = "(I)V")
 	public static void method4718() {
 		Static1.aClass4_Sub6_Sub2_3.method2501();

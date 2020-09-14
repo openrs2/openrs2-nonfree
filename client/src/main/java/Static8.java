@@ -460,14 +460,14 @@ public final class Static8 {
 	}
 
 	@OriginalMember(owner = "client!ak", name = "a", descriptor = "(Lclient!ho;I)Z")
-	public static boolean method120(@OriginalArg(0) Class82 arg0) {
+	public static boolean method120(@OriginalArg(0) MelType arg0) {
 		if (arg0 == null) {
 			return false;
 		} else if (!arg0.aBoolean154) {
 			return false;
 		} else if (!arg0.method1810()) {
 			return false;
-		} else if (Static3.aClass84_10.get((long) arg0.anInt2292) == null) {
+		} else if (Static3.aClass84_10.get((long) arg0.id) == null) {
 			return Static3.aClass84_9.get((long) arg0.anInt2284) == null;
 		} else {
 			return false;

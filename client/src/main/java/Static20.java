@@ -20,7 +20,7 @@ public final class Static20 {
 	private static void method2404(@OriginalArg(0) Class4_Sub3_Sub7 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
 		arg0.anInt1766 = Static3.anInt2969 + (arg1 * (arg0.anInt1768 - Static3.anInt2973) >> 16);
 		arg0.anInt1764 = Static3.anInt2968 + (arg2 * (arg0.anInt1769 - Static3.anInt2967) >> 16);
-		@Pc(32) Class82 local32 = Static22.method2191(arg0.anInt1760);
+		@Pc(32) MelType local32 = MelTypeList.get(arg0.anInt1760);
 		if (local32.anInt2277 != -1) {
 			@Pc(42) IndexedSprite local42 = local32.method1811(false, true);
 			if (local42 != null) {
@@ -902,7 +902,7 @@ public final class Static20 {
 			@Pc(358) int local358 = Static2.anInt1273 >> 1;
 			@Pc(364) int local364 = Static6.anInt4555 >> 2 << 10;
 			method2408(local364, local358);
-			Static14.method1064(1024, 256);
+			MelTypeList.resize(1024, 256);
 			VarbitTypeList.resize(256);
 			Static4.anInt2644 = 20;
 		} else if (Static4.anInt2644 == 20) {

@@ -762,7 +762,7 @@ public final class Static27 {
 		VarpTypeList.removeSoft();
 		BasTypeList.removeSoft();
 		MsiTypeList.removeSoft();
-		Static26.method2993();
+		MelTypeList.removeSoft();
 		SkyBoxTypeList.removeSoft();
 		SkyBoxSphereTypeList.removeSoft();
 		LightTypeList.removeSoft();
