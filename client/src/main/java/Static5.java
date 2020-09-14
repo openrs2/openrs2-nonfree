@@ -6,7 +6,7 @@ import dev.openrs2.deob.annotation.OriginalMember;
 public final class Static5 {
 
 	@OriginalMember(owner = "client!nc", name = "i", descriptor = "[Lclient!ma;")
-	public static Class56[] aClass56Array5;
+	public static IndexedSprite[] aClass56Array5;
 
 	@OriginalMember(owner = "client!nd", name = "t", descriptor = "I")
 	public static int anInt3487;
@@ -171,7 +171,7 @@ public final class Static5 {
 	public static Class4_Sub3_Sub5 aClass4_Sub3_Sub5_3;
 
 	@OriginalMember(owner = "client!pj", name = "a", descriptor = "Lclient!uj;")
-	public static Class4_Sub3_Sub14 aClass4_Sub3_Sub14_4;
+	public static Sprite aClass4_Sub3_Sub14_4;
 
 	@OriginalMember(owner = "client!pj", name = "c", descriptor = "I")
 	public static int anInt4163;

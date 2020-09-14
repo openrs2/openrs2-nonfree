@@ -40,13 +40,13 @@ public final class Class143 {
 	}
 
 	@OriginalMember(owner = "client!qg", name = "a", descriptor = "(IZI)Lclient!fe;")
-	public final Class56_Sub1 method3557(@OriginalArg(1) boolean arg0, @OriginalArg(2) int arg1) {
-		@Pc(23) Class56_Sub1 local23 = (Class56_Sub1) Static5.aClass26_41.get((long) (arg1 << 16 | this.anInt4312 | (arg0 ? 262144 : 0)));
+	public final SoftwareIndexedSprite method3557(@OriginalArg(1) boolean arg0, @OriginalArg(2) int arg1) {
+		@Pc(23) SoftwareIndexedSprite local23 = (SoftwareIndexedSprite) Static5.aClass26_41.get((long) (arg1 << 16 | this.anInt4312 | (arg0 ? 262144 : 0)));
 		if (local23 != null) {
 			return local23;
 		}
 		Static7.aClass58_103.isFileReady(this.anInt4312);
-		@Pc(44) Class56_Sub1 local44 = Static33.method3003(Static7.aClass58_103, this.anInt4312);
+		@Pc(44) SoftwareIndexedSprite local44 = Static33.method3003(Static7.aClass58_103, this.anInt4312);
 		if (local44 != null) {
 			local44.method1311(Static6.anInt4867, Static1.anInt97, Static5.anInt3963);
 			local44.anInt3412 = local44.anInt3408;

@@ -42,14 +42,14 @@ public final class Npc extends PathingEntity {
 		}
 		if (Preferences.characterShadows && local86.aBoolean354) {
 			@Pc(141) Class53_Sub4 local141 = Static12.method745(this.type.aShort46, local54 == null ? local28 : local54, arg0, this.type.size, this.type.aByte20, local75, local54 == null ? this.anInt3970 : this.anInt4046, this.anInt4006, this.z, this.aBoolean284, this.type.aShort47, this.type.aByte19, this.x);
-			if (Static3.aBoolean138) {
-				@Pc(145) float local145 = Static17.method1620();
-				@Pc(147) float local147 = Static17.method1612();
-				Static16.method1589();
-				Static17.method1621(local145, local147 - 150.0F);
+			if (GlRenderer.enabled) {
+				@Pc(145) float local145 = GlRenderer.method1620();
+				@Pc(147) float local147 = GlRenderer.method1612();
+				GlRenderer.disableDepthMask();
+				GlRenderer.method1621(local145, local147 - 150.0F);
 				local141.method3805(0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, -1L, arg9, this.aClass20_Sub3_6);
-				Static16.method1591();
-				Static17.method1621(local145, local147);
+				GlRenderer.enableDepthMask();
+				GlRenderer.method1621(local145, local147);
 			} else {
 				local141.method3805(0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, -1L, arg9, this.aClass20_Sub3_6);
 			}
@@ -75,7 +75,7 @@ public final class Npc extends PathingEntity {
 				}
 			}
 		}
-		if (!Static3.aBoolean138) {
+		if (!GlRenderer.enabled) {
 			if (local189 != null) {
 				local75 = ((Class53_Sub4_Sub1) local75).method2903(local189);
 			}

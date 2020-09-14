@@ -90,15 +90,15 @@ public final class Static37 {
 	}
 
 	@OriginalMember(owner = "client!wc", name = "a", descriptor = "(IIZBLclient!qk;II)Lclient!uj;")
-	public static Class4_Sub3_Sub14 method4676(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) boolean arg2, @OriginalArg(4) PlayerAppearance arg3, @OriginalArg(5) int arg4, @OriginalArg(6) int arg5) {
+	public static Sprite method4676(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) boolean arg2, @OriginalArg(4) PlayerAppearance arg3, @OriginalArg(5) int arg4, @OriginalArg(6) int arg5) {
 		@Pc(23) int local23 = (arg2 ? 65536 : 0) + arg4 + (arg1 << 17) + (arg5 << 19);
 		@Pc(34) long local34 = (long) arg0 * 3147483667L + (long) local23 * 3849834839L;
-		@Pc(40) Class4_Sub3_Sub14 local40 = (Class4_Sub3_Sub14) ObjTypeList.sprites.get(local34);
+		@Pc(40) Sprite local40 = (Sprite) ObjTypeList.sprites.get(local34);
 		if (local40 != null) {
 			return local40;
 		}
 		Static4.aBoolean218 = false;
-		@Pc(58) Class4_Sub3_Sub14 local58 = Static13.method965(arg1, arg2, arg0, false, arg3, arg5, arg4, false);
+		@Pc(58) Sprite local58 = Static13.method965(arg1, arg2, arg0, false, arg3, arg5, arg4, false);
 		if (local58 != null && !Static4.aBoolean218) {
 			ObjTypeList.sprites.put(local34, local58);
 		}
@@ -127,7 +127,7 @@ public final class Static37 {
 	@OriginalMember(owner = "client!wd", name = "a", descriptor = "(IZ)V")
 	public static void method4710(@OriginalArg(1) boolean arg0) {
 		@Pc(11) byte[][] local11;
-		if (Static3.aBoolean138 && arg0) {
+		if (GlRenderer.enabled && arg0) {
 			local11 = Static1.aByteArrayArray3;
 		} else {
 			local11 = Static5.aByteArrayArray31;
@@ -252,7 +252,7 @@ public final class Static37 {
 	public static void method4716(@OriginalArg(1) String arg0, @OriginalArg(2) boolean arg1) {
 		@Pc(17) int local17 = Static5.aClass4_Sub3_Sub5_2.method2261(arg0, 250);
 		@Pc(32) int local32 = Static5.aClass4_Sub3_Sub5_2.method2274(arg0, 250) * 13;
-		if (Static3.aBoolean138) {
+		if (GlRenderer.enabled) {
 			Static18.method1701(6, 6, local17 + 4 + 4, local32 + 8, 0);
 			Static18.method1690(6, 6, local17 + 4 + 4, local32 + 4 + 4, 16777215);
 		} else {
@@ -263,8 +263,8 @@ public final class Static37 {
 		Static8.method66(local17 + 4 + 4, local32 + 4 + 4, 6, 6);
 		if (!arg1) {
 			Static16.method1559(10, 10, local32, local17);
-		} else if (Static3.aBoolean138) {
-			Static17.method1622();
+		} else if (GlRenderer.enabled) {
+			GlRenderer.swapBuffers();
 		} else {
 			try {
 				@Pc(169) Graphics local169 = GameShell.canvas.getGraphics();
@@ -301,7 +301,7 @@ public final class Static37 {
 			}
 			return;
 		}
-		if (Static3.aBoolean138 && GameShell.openWindowJavaScript) {
+		if (GlRenderer.enabled && GameShell.openWindowJavaScript) {
 			try {
 				BrowserControl.call(GameShell.signLink.applet, "openjs", new Object[] { (new URL(GameShell.instance.getCodeBase(), arg0)).toString() });
 				return;

@@ -40,7 +40,7 @@ public final class Static32 {
 	}
 
 	@OriginalMember(owner = "client!sa", name = "a", descriptor = "(ILclient!fh;I)Lclient!ma;")
-	public static Class56 method3878(@OriginalArg(1) Js5 arg0, @OriginalArg(2) int arg1) {
+	public static IndexedSprite method3878(@OriginalArg(1) Js5 arg0, @OriginalArg(2) int arg1) {
 		return Static33.method4131(arg0, arg1) ? Static9.method204() : null;
 	}
 
@@ -158,7 +158,7 @@ public final class Static32 {
 		if (arg2 < 1) {
 			arg2 = 1;
 		}
-		if (Static3.aBoolean138) {
+		if (GlRenderer.enabled) {
 			@Pc(24) int local24 = arg2 - 334;
 			if (local24 < 0) {
 				local24 = 0;
@@ -377,7 +377,7 @@ public final class Static32 {
 					Static1.anInt528 = arg5;
 					Static1.anInt420 = arg6;
 				}
-				if (!Static3.aBoolean138 && !arg7) {
+				if (!GlRenderer.enabled && !arg7) {
 					Static4.aBoolean217 = false;
 					if (local144 < 0 || local148 < 0 || local152 < 0 || local144 > Static4.anInt3129 || local148 > Static4.anInt3129 || local152 > Static4.anInt3129) {
 						Static4.aBoolean217 = true;

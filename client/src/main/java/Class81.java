@@ -20,9 +20,9 @@ public final class Class81 implements Interface2 {
 
 	@OriginalMember(owner = "client!hl", name = "<init>", descriptor = "()V")
 	public Class81() {
-		if (Static3.aBoolean128 && Static3.anInt2081 >= 2) {
+		if (GlRenderer.arbTextureCubeMapSupported && GlRenderer.maxTextureUnits >= 2) {
 			this.method1784();
-			@Pc(19) GL local19 = Static3.aGL1;
+			@Pc(19) GL local19 = GlRenderer.gl;
 			local19.glBindTexture(GL.GL_TEXTURE_CUBE_MAP, this.anIntArray186[0]);
 			local19.glTexParameteri(GL.GL_TEXTURE_CUBE_MAP, GL.GL_TEXTURE_MIN_FILTER, GL.GL_LINEAR);
 			local19.glTexParameteri(GL.GL_TEXTURE_CUBE_MAP, GL.GL_TEXTURE_MAG_FILTER, GL.GL_LINEAR);
@@ -41,7 +41,7 @@ public final class Class81 implements Interface2 {
 			local19.glTexParameteri(GL.GL_TEXTURE_CUBE_MAP, GL.GL_TEXTURE_WRAP_R, GL.GL_CLAMP_TO_EDGE);
 			local19.glTexParameteri(GL.GL_TEXTURE_CUBE_MAP, GL.GL_TEXTURE_WRAP_S, GL.GL_CLAMP_TO_EDGE);
 			local19.glTexParameteri(GL.GL_TEXTURE_CUBE_MAP, GL.GL_TEXTURE_WRAP_T, GL.GL_CLAMP_TO_EDGE);
-			this.aBoolean150 = Static3.anInt2081 < 3;
+			this.aBoolean150 = GlRenderer.maxTextureUnits < 3;
 		}
 		this.method1783();
 	}
@@ -49,7 +49,7 @@ public final class Class81 implements Interface2 {
 	@OriginalMember(owner = "client!hl", name = "a", descriptor = "()V")
 	@Override
 	public final void method3483() {
-		@Pc(1) GL local1 = Static3.aGL1;
+		@Pc(1) GL local1 = GlRenderer.gl;
 		if (Preferences.highDetailLighting) {
 			local1.glCallList(this.anInt2236 + 1);
 		} else {
@@ -60,7 +60,7 @@ public final class Class81 implements Interface2 {
 	@OriginalMember(owner = "client!hl", name = "a", descriptor = "(I)V")
 	@Override
 	public final void method3486(@OriginalArg(0) int arg0) {
-		@Pc(1) GL local1 = Static3.aGL1;
+		@Pc(1) GL local1 = GlRenderer.gl;
 		if (Preferences.highDetailLighting && this.anIntArray186 != null) {
 			local1.glActiveTexture(GL.GL_TEXTURE1);
 			local1.glBindTexture(GL.GL_TEXTURE_CUBE_MAP, this.anIntArray186[arg0 - 1]);
@@ -70,7 +70,7 @@ public final class Class81 implements Interface2 {
 
 	@OriginalMember(owner = "client!hl", name = "d", descriptor = "()V")
 	private void method1783() {
-		@Pc(1) GL local1 = Static3.aGL1;
+		@Pc(1) GL local1 = GlRenderer.gl;
 		this.anInt2236 = local1.glGenLists(2);
 		local1.glNewList(this.anInt2236, GL.GL_COMPILE);
 		if (this.anIntArray186 == null) {
@@ -105,7 +105,7 @@ public final class Class81 implements Interface2 {
 				local1.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_OPERAND1_RGB, GL.GL_SRC_ALPHA);
 				local1.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_COMBINE_ALPHA, GL.GL_REPLACE);
 				local1.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_SRC0_ALPHA, GL.GL_PRIMARY_COLOR);
-				local1.glBindTexture(GL.GL_TEXTURE_2D, Static3.anInt2075);
+				local1.glBindTexture(GL.GL_TEXTURE_2D, GlRenderer.anInt2075);
 				local1.glEnable(GL.GL_TEXTURE_2D);
 			}
 			local1.glActiveTexture(GL.GL_TEXTURE0);
@@ -153,7 +153,7 @@ public final class Class81 implements Interface2 {
 
 	@OriginalMember(owner = "client!hl", name = "e", descriptor = "()V")
 	private void method1784() {
-		@Pc(1) GL local1 = Static3.aGL1;
+		@Pc(1) GL local1 = GlRenderer.gl;
 		if (this.anIntArray186 == null) {
 			this.anIntArray186 = new int[3];
 			local1.glGenTextures(3, this.anIntArray186, 0);
@@ -199,7 +199,7 @@ public final class Class81 implements Interface2 {
 					@Pc(159) int local159;
 					@Pc(163) int local163;
 					@Pc(167) int local167;
-					if (Static3.anInt2081 < 3) {
+					if (GlRenderer.maxTextureUnits < 3) {
 						local159 = local129 / 5;
 						local163 = local137 / 5;
 						local167 = local145 / 5;
@@ -220,15 +220,15 @@ public final class Class81 implements Interface2 {
 			local1.glTexImage2D(local27 + GL.GL_TEXTURE_CUBE_MAP_POSITIVE_X, GL.GL_POINTS, GL.GL_ALPHA, 64, 64, GL.GL_POINTS, GL.GL_ALPHA, GL.GL_UNSIGNED_BYTE, ByteBuffer.wrap(local25));
 			local1.glBindTexture(GL.GL_TEXTURE_CUBE_MAP, this.anIntArray186[2]);
 			local1.glTexImage2D(local27 + GL.GL_TEXTURE_CUBE_MAP_POSITIVE_X, GL.GL_POINTS, GL.GL_ALPHA, 64, 64, GL.GL_POINTS, GL.GL_ALPHA, GL.GL_UNSIGNED_BYTE, ByteBuffer.wrap(local19));
-			Static4.anInt3330 += 12288;
+			GlCleaner.onCardTexture += 12288;
 		}
 	}
 
 	@OriginalMember(owner = "client!hl", name = "b", descriptor = "()V")
 	@Override
 	public final void method3484() {
-		@Pc(1) GL local1 = Static3.aGL1;
-		Static17.method1607(1);
+		@Pc(1) GL local1 = GlRenderer.gl;
+		GlRenderer.setTextureCombineAlphaMode(1);
 		if (Preferences.highDetailLighting) {
 			local1.glCallList(this.anInt2236);
 		} else {

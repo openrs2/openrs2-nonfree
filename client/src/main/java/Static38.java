@@ -68,7 +68,7 @@ public final class Static38 {
 				@Pc(356) byte local356 = Static5.aClass4_Sub10_Sub1_2.readByteC();
 				@Pc(360) int local360 = Static5.aClass4_Sub10_Sub1_2.readUnsignedShortLEA();
 				@Pc(364) int local364 = Static5.aClass4_Sub10_Sub1_2.readUnsignedShort();
-				if (!Static3.aBoolean138) {
+				if (!GlRenderer.enabled) {
 					Static13.method967(local340, local306, local328, local360, local336, local348, local352, local364, local344, local316, local356, local324);
 				}
 			}
@@ -294,7 +294,7 @@ public final class Static38 {
 	}
 
 	@OriginalMember(owner = "client!wj", name = "a", descriptor = "(Lclient!fh;IB)[Lclient!fe;")
-	public static Class56_Sub1[] method4790(@OriginalArg(0) Js5 arg0, @OriginalArg(1) int arg1) {
+	public static SoftwareIndexedSprite[] method4790(@OriginalArg(0) Js5 arg0, @OriginalArg(1) int arg1) {
 		return Static33.method4131(arg0, arg1) ? Static26.method4358() : null;
 	}
 

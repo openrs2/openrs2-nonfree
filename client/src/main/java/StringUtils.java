@@ -223,4 +223,132 @@ public final class StringUtils {
 			return buffer.toString();
 		}
 	}
+
+	@OriginalMember(owner = "client!d", name = "a", descriptor = "(ICLjava/lang/String;)[Ljava/lang/String;")
+	public static String[] split(@OriginalArg(2) String s, @OriginalArg(1) char delim) {
+		@Pc(10) int matches = countMatches(s, delim);
+		@Pc(15) String[] parts = new String[matches + 1];
+		@Pc(17) int part = 0;
+		@Pc(19) int start = 0;
+		for (@Pc(21) int i = 0; i < matches; i++) {
+			@Pc(26) int end;
+			for (end = start; delim != s.charAt(end); end++) {
+			}
+			parts[part++] = s.substring(start, end);
+			start = end + 1;
+		}
+		parts[matches] = s.substring(start);
+		return parts;
+	}
+
+	@OriginalMember(owner = "client!aj", name = "a", descriptor = "(CLjava/lang/String;Z)I")
+	private static int countMatches(@OriginalArg(1) String s, @OriginalArg(0) char c) {
+		@Pc(3) int count = 0;
+		@Pc(10) int len = s.length();
+		for (@Pc(16) int i = 0; i < len; i++) {
+			if (s.charAt(i) == c) {
+				count++;
+			}
+		}
+		return count;
+	}
+
+	@OriginalMember(owner = "client!oj", name = "a", descriptor = "(IIZLjava/lang/String;)Z")
+	private static boolean isIntInternal(@OriginalArg(3) String s) {
+		@Pc(27) boolean negative = false;
+		@Pc(29) boolean valid = false;
+		@Pc(42) int len = s.length();
+		@Pc(44) int value = 0;
+		for (@Pc(46) int i = 0; i < len; i++) {
+			@Pc(53) char c = s.charAt(i);
+			if (i == 0) {
+				if (c == '-') {
+					negative = true;
+					continue;
+				}
+				if (c == '+') {
+					continue;
+				}
+			}
+			@Pc(76) int digit;
+			if (c >= '0' && c <= '9') {
+				digit = c - '0';
+			} else if (c >= 'A' && c <= 'Z') {
+				digit = c - '7';
+			} else if (c >= 'a' && c <= 'z') {
+				digit = c - 'W';
+			} else {
+				return false;
+			}
+			if (digit >= 10) {
+				return false;
+			}
+			if (negative) {
+				digit = -digit;
+			}
+			@Pc(126) int nextValue = digit + value * 10;
+			if (nextValue / 10 != value) {
+				return false;
+			}
+			valid = true;
+			value = nextValue;
+		}
+		return valid;
+	}
+
+	@OriginalMember(owner = "client!pl", name = "a", descriptor = "(Ljava/lang/String;B)Z")
+	public static boolean isInt(@OriginalArg(0) String s) {
+		return isIntInternal(s);
+	}
+
+	@OriginalMember(owner = "client!db", name = "a", descriptor = "(ZLjava/lang/String;)I")
+	public static int parseInt(@OriginalArg(1) String s) {
+		return parseInt(s, 10);
+	}
+
+	@OriginalMember(owner = "client!ql", name = "a", descriptor = "(ILjava/lang/String;IZ)I")
+	public static int parseInt(@OriginalArg(1) String s, @OriginalArg(0) int base) {
+		@Pc(27) boolean negative = false;
+		@Pc(29) boolean valid = false;
+		@Pc(32) int len = s.length();
+		@Pc(34) int value = 0;
+		for (@Pc(42) int i = 0; i < len; i++) {
+			@Pc(53) char c = s.charAt(i);
+			if (i == 0) {
+				if (c == '-') {
+					negative = true;
+					continue;
+				}
+				if (c == '+') {
+					continue;
+				}
+			}
+			@Pc(98) int digit;
+			if (c >= '0' && c <= '9') {
+				digit = c - '0';
+			} else if (c >= 'A' && c <= 'Z') {
+				digit = c - '7';
+			} else if (c >= 'a' && c <= 'z') {
+				digit = c - 'W';
+			} else {
+				throw new NumberFormatException();
+			}
+			if (base <= digit) {
+				throw new NumberFormatException();
+			}
+			if (negative) {
+				digit = -digit;
+			}
+			@Pc(132) int nextValue = digit + base * value;
+			if (nextValue / base != value) {
+				throw new NumberFormatException();
+			}
+			valid = true;
+			value = nextValue;
+		}
+		if (!valid) {
+			throw new NumberFormatException();
+		}
+		return value;
+	}
 }

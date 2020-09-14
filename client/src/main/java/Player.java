@@ -201,7 +201,7 @@ public final class Player extends PathingEntity {
 		@Pc(82) Class46 local82 = this.anInt4005 == -1 || this.aBoolean98 || this.anInt4005 == this.method3314().anInt860 && local27 != null ? null : Static23.method2494(this.anInt4005);
 		@Pc(105) Class53_Sub4 local105 = this.appearance.method3608(this.aClass150Array3, this.anInt4046, this.anInt4011, this.anInt4019, local82, this.anInt3970, local53, this.anInt4000, local27, true, this.anInt4044);
 		@Pc(108) int local108 = Static15.method1228();
-		if (Static3.aBoolean138 && GameShell.maxMemory < 96 && local108 > 50) {
+		if (GlRenderer.enabled && GameShell.maxMemory < 96 && local108 > 50) {
 			Static24.method2567();
 		}
 		if (client.modeWhat != 0 && local108 < 50) {
@@ -221,14 +221,14 @@ public final class Player extends PathingEntity {
 		this.anInt4016 = local105.method3813();
 		if (Preferences.characterShadows && (this.appearance.npcId == -1 || NpcTypeList.get(this.appearance.npcId).aBoolean354)) {
 			@Pc(222) Class53_Sub4 local222 = Static12.method745(0, local82 == null ? local27 : local82, arg0, 1, 240, local105, local82 == null ? this.anInt3970 : this.anInt4046, this.anInt4006, this.z, this.aBoolean284, 0, 160, this.x);
-			if (Static3.aBoolean138) {
-				@Pc(241) float local241 = Static17.method1620();
-				@Pc(243) float local243 = Static17.method1612();
-				Static16.method1589();
-				Static17.method1621(local241, local243 - 150.0F);
+			if (GlRenderer.enabled) {
+				@Pc(241) float local241 = GlRenderer.method1620();
+				@Pc(243) float local243 = GlRenderer.method1612();
+				GlRenderer.disableDepthMask();
+				GlRenderer.method1621(local241, local243 - 150.0F);
 				local222.method3805(0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, -1L, arg9, null);
-				Static16.method1591();
-				Static17.method1621(local241, local243);
+				GlRenderer.enableDepthMask();
+				GlRenderer.method1621(local241, local243);
 			} else {
 				local222.method3805(0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, -1L, arg9, null);
 			}
@@ -305,7 +305,7 @@ public final class Player extends PathingEntity {
 				}
 			}
 		}
-		if (Static3.aBoolean138) {
+		if (GlRenderer.enabled) {
 			this.method3315(local105, local494);
 			local105.aBoolean324 = true;
 			local105.method3805(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, this.aClass20_Sub3_6);
@@ -389,16 +389,16 @@ public final class Player extends PathingEntity {
 		if (local51 == null) {
 			return;
 		}
-		if (!Static3.aBoolean138) {
+		if (!GlRenderer.enabled) {
 			local51.method3805(0, arg5, arg3, arg0, arg11, arg7, arg9, arg14, -1L, arg4, arg2);
 			return;
 		}
-		@Pc(59) float local59 = Static17.method1620();
-		@Pc(61) float local61 = Static17.method1612();
-		Static16.method1589();
-		Static17.method1621(local59, local61 - 150.0F);
+		@Pc(59) float local59 = GlRenderer.method1620();
+		@Pc(61) float local61 = GlRenderer.method1612();
+		GlRenderer.disableDepthMask();
+		GlRenderer.method1621(local59, local61 - 150.0F);
 		local51.method3805(0, arg5, arg3, arg0, arg11, arg7, arg9, arg14, -1L, arg4, arg2);
-		Static16.method1591();
-		Static17.method1621(local59, local61);
+		GlRenderer.enableDepthMask();
+		GlRenderer.method1621(local59, local61);
 	}
 }

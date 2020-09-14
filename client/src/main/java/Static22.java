@@ -312,7 +312,7 @@ public final class Static22 {
 			Static5.anInt3896 = arg1;
 		}
 		@Pc(60) LocType local60 = LocTypeList.get(arg2);
-		if (Static3.aBoolean138 && local60.aBoolean383) {
+		if (GlRenderer.enabled && local60.aBoolean383) {
 			return;
 		}
 		@Pc(78) int local78;
@@ -347,7 +347,7 @@ public final class Static22 {
 		@Pc(167) int local167 = (local81 << 6) + (arg6 << 7);
 		@Pc(193) int local193 = local151[local100][local130] + local151[local102][local130] + local151[local102][local128] + local151[local100][local128] >> 2;
 		@Pc(195) int local195 = 0;
-		if (Static3.aBoolean138 && arg3 != 0) {
+		if (GlRenderer.enabled && arg3 != 0) {
 			@Pc(203) int[][] local203 = Static6.anIntArrayArrayArray13[0];
 			local195 = local193 - (local203[local102][local128] + local203[local102][local130] + local203[local100][local130] + local203[local100][local128] >> 2);
 		}
@@ -377,7 +377,7 @@ public final class Static22 {
 				@Pc(377) Entity local377;
 				if (local60.anInt5523 == -1 && local60.anIntArray633 == null && local60.anIntArray631 == null && !local60.aBoolean379) {
 					@Pc(393) Class96 local393 = local60.method4450(local159, arg8, 22, local193, local151, local253, local330, arg0, local167, null);
-					if (Static3.aBoolean138 && local330) {
+					if (GlRenderer.enabled && local330) {
 						Static14.method1212(local393.aClass56_Sub1_3, local159, local195, local167);
 					}
 					local377 = local393.aClass53_3;
@@ -393,7 +393,7 @@ public final class Static22 {
 			@Pc(493) Entity local493;
 			if (local60.anInt5523 == -1 && local60.anIntArray633 == null && local60.anIntArray631 == null && !local60.aBoolean379) {
 				@Pc(479) Class96 local479 = local60.method4450(local159, arg8, 10, local193, local151, local253, local330, arg9 == 11 ? arg0 + 4 : arg0, local167, null);
-				if (Static3.aBoolean138 && local330) {
+				if (GlRenderer.enabled && local330) {
 					Static14.method1212(local479.aClass56_Sub1_3, local159, local195, local167);
 				}
 				local493 = local479.aClass53_3;
@@ -426,7 +426,7 @@ public final class Static22 {
 			@Pc(666) Entity local666;
 			if (local60.anInt5523 == -1 && local60.anIntArray633 == null && local60.anIntArray631 == null && !local60.aBoolean379) {
 				@Pc(682) Class96 local682 = local60.method4450(local159, arg8, arg9, local193, local151, local253, local330, arg0, local167, null);
-				if (Static3.aBoolean138 && local330) {
+				if (GlRenderer.enabled && local330) {
 					Static14.method1212(local682.aClass56_Sub1_3, local159, local195, local167);
 				}
 				local666 = local682.aClass53_3;
@@ -444,7 +444,7 @@ public final class Static22 {
 			@Pc(796) Entity local796;
 			if (local60.anInt5523 == -1 && local60.anIntArray633 == null && local60.anIntArray631 == null && !local60.aBoolean379) {
 				@Pc(812) Class96 local812 = local60.method4450(local159, arg8, 0, local193, local151, local253, local330, arg0, local167, null);
-				if (Static3.aBoolean138 && local330) {
+				if (GlRenderer.enabled && local330) {
 					Static14.method1212(local812.aClass56_Sub1_3, local159, local195, local167);
 				}
 				local796 = local812.aClass53_3;
@@ -497,7 +497,7 @@ public final class Static22 {
 			@Pc(1119) Entity local1119;
 			if (local60.anInt5523 == -1 && local60.anIntArray633 == null && local60.anIntArray631 == null && !local60.aBoolean379) {
 				@Pc(1135) Class96 local1135 = local60.method4450(local159, arg8, 1, local193, local151, local253, local330, arg0, local167, null);
-				if (Static3.aBoolean138 && local330) {
+				if (GlRenderer.enabled && local330) {
 					Static14.method1212(local1135.aClass56_Sub1_3, local159, local195, local167);
 				}
 				local1119 = local1135.aClass53_3;
@@ -525,12 +525,12 @@ public final class Static22 {
 			@Pc(1295) Entity local1295;
 			if (local60.anInt5523 == -1 && local60.anIntArray633 == null && local60.anIntArray631 == null && !local60.aBoolean379) {
 				@Pc(1329) Class96 local1329 = local60.method4450(local159, arg8, 2, local193, local151, local253, local330, arg0 + 4, local167, null);
-				if (Static3.aBoolean138 && local330) {
+				if (GlRenderer.enabled && local330) {
 					Static14.method1212(local1329.aClass56_Sub1_3, local159, local195, local167);
 				}
 				local1295 = local1329.aClass53_3;
 				@Pc(1358) Class96 local1358 = local60.method4450(local159, arg8, 2, local193, local151, local253, local330, local1265, local167, null);
-				if (Static3.aBoolean138 && local330) {
+				if (GlRenderer.enabled && local330) {
 					Static14.method1212(local1358.aClass56_Sub1_3, local159, local195, local167);
 				}
 				local1309 = local1358.aClass53_3;
@@ -564,7 +564,7 @@ public final class Static22 {
 			@Pc(1631) Entity local1631;
 			if (local60.anInt5523 == -1 && local60.anIntArray633 == null && local60.anIntArray631 == null && !local60.aBoolean379) {
 				@Pc(1647) Class96 local1647 = local60.method4450(local159, arg8, 3, local193, local151, local253, local330, arg0, local167, null);
-				if (Static3.aBoolean138 && local330) {
+				if (GlRenderer.enabled && local330) {
 					Static14.method1212(local1647.aClass56_Sub1_3, local159, local195, local167);
 				}
 				local1631 = local1647.aClass53_3;
@@ -590,7 +590,7 @@ public final class Static22 {
 			@Pc(1796) Entity local1796;
 			if (local60.anInt5523 == -1 && local60.anIntArray633 == null && local60.anIntArray631 == null && !local60.aBoolean379) {
 				@Pc(1812) Class96 local1812 = local60.method4450(local159, arg8, arg9, local193, local151, local253, local330, arg0, local167, null);
-				if (Static3.aBoolean138 && local330) {
+				if (GlRenderer.enabled && local330) {
 					Static14.method1212(local1812.aClass56_Sub1_3, local159, local195, local167);
 				}
 				local1796 = local1812.aClass53_3;
@@ -608,7 +608,7 @@ public final class Static22 {
 			@Pc(1914) Entity local1914;
 			if (local60.anInt5523 == -1 && local60.anIntArray633 == null && local60.anIntArray631 == null && !local60.aBoolean379) {
 				@Pc(1930) Class96 local1930 = local60.method4450(local159, arg8, 4, local193, local151, local253, local330, arg0, local167, null);
-				if (Static3.aBoolean138 && local330) {
+				if (GlRenderer.enabled && local330) {
 					Static14.method1212(local1930.aClass56_Sub1_3, local159, local195, local167);
 				}
 				local1914 = local1930.aClass53_3;
@@ -625,7 +625,7 @@ public final class Static22 {
 			@Pc(2040) Entity local2040;
 			if (local60.anInt5523 == -1 && local60.anIntArray633 == null && local60.anIntArray631 == null && !local60.aBoolean379) {
 				@Pc(2013) Class96 local2013 = local60.method4450(local159, arg8, 4, local193, local151, local253, local330, arg0, local167, null);
-				if (Static3.aBoolean138 && local330) {
+				if (GlRenderer.enabled && local330) {
 					Static14.method1212(local2013.aClass56_Sub1_3, local159 - Static4.anIntArray315[arg0] * 8, local195, local167 - Static6.anIntArray475[arg0] * 8);
 				}
 				local2040 = local2013.aClass53_3;
@@ -642,7 +642,7 @@ public final class Static22 {
 			@Pc(2170) Entity local2170;
 			if (local60.anInt5523 == -1 && local60.anIntArray633 == null && local60.anIntArray631 == null && !local60.aBoolean379) {
 				@Pc(2143) Class96 local2143 = local60.method4450(local159, arg8, 4, local193, local151, local253, local330, arg0 + 4, local167, null);
-				if (Static3.aBoolean138 && local330) {
+				if (GlRenderer.enabled && local330) {
 					Static14.method1212(local2143.aClass56_Sub1_3, local159 - Static3.anIntArray166[arg0] * 8, local195, local167 - Static7.anIntArray646[arg0] * 8);
 				}
 				local2170 = local2143.aClass53_3;
@@ -655,7 +655,7 @@ public final class Static22 {
 			@Pc(2248) Entity local2248;
 			if (local60.anInt5523 == -1 && local60.anIntArray633 == null && local60.anIntArray631 == null && !local60.aBoolean379) {
 				@Pc(2266) Class96 local2266 = local60.method4450(local159, arg8, 4, local193, local151, local253, local330, local2219 + 4, local167, null);
-				if (Static3.aBoolean138 && local330) {
+				if (GlRenderer.enabled && local330) {
 					Static14.method1212(local2266.aClass56_Sub1_3, local159, local195, local167);
 				}
 				local2248 = local2266.aClass53_3;
@@ -676,12 +676,12 @@ public final class Static22 {
 				@Pc(2350) int local2350 = Static3.anIntArray166[arg0] * 8;
 				@Pc(2356) int local2356 = Static7.anIntArray646[arg0] * 8;
 				@Pc(2372) Class96 local2372 = local60.method4450(local159, arg8, 4, local193, local151, local253, local330, arg0 + 4, local167, null);
-				if (Static3.aBoolean138 && local330) {
+				if (GlRenderer.enabled && local330) {
 					Static14.method1212(local2372.aClass56_Sub1_3, local159 - local2350, local195, local167 - local2356);
 				}
 				local2392 = local2372.aClass53_3;
 				@Pc(2410) Class96 local2410 = local60.method4450(local159, arg8, 4, local193, local151, local253, local330, local2328 + 4, local167, null);
-				if (Static3.aBoolean138 && local330) {
+				if (GlRenderer.enabled && local330) {
 					Static14.method1212(local2410.aClass56_Sub1_3, local159 - local2350, local195, local167 - local2356);
 				}
 				local2429 = local2410.aClass53_3;
@@ -978,7 +978,7 @@ public final class Static22 {
 	}
 
 	@OriginalMember(owner = "client!kf", name = "a", descriptor = "(ILclient!fe;)V")
-	public static void method2284(@OriginalArg(1) Class56_Sub1 arg0) {
+	public static void method2284(@OriginalArg(1) SoftwareIndexedSprite arg0) {
 		for (@Pc(7) int local7 = 0; local7 < Static2.anIntArray159.length; local7++) {
 			Static2.anIntArray159[local7] = 0;
 		}
@@ -1236,7 +1236,7 @@ public final class Static22 {
 		}
 		@Pc(6) Buffer local6 = new Buffer(1088);
 		@Pc(11) Buffer local11 = new Buffer(5140);
-		if (Static3.aBoolean126) {
+		if (GlRenderer.bigEndian) {
 			local11.writeFloat(0.0F);
 			local11.writeFloat(1.0F);
 			local11.writeFloat(0.0F);
@@ -1270,7 +1270,7 @@ public final class Static22 {
 				@Pc(141) float local141 = (float) Class109.anIntArray298[local134] / 65535.0F;
 				@Pc(150) float local150 = (float) Class109.anIntArray299[local134] * local116 / 65535.0F;
 				@Pc(159) float local159 = (float) Class109.anIntArray299[local134] * local123 / 65535.0F;
-				if (Static3.aBoolean126) {
+				if (GlRenderer.bigEndian) {
 					local11.writeFloat(local159);
 					local11.writeFloat(local141);
 					local11.writeFloat(local150);
@@ -1288,7 +1288,7 @@ public final class Static22 {
 			if (local100 > 0) {
 				@Pc(216) int local216 = local100 * 15 + 2;
 				@Pc(220) int local220 = local216 - 15;
-				if (Static3.aBoolean126) {
+				if (GlRenderer.bigEndian) {
 					local6.writeShort(0);
 					local6.writeShort(0);
 					for (@Pc(232) int local232 = 1; local232 < 16; local232++) {
@@ -1322,7 +1322,7 @@ public final class Static22 {
 	@OriginalMember(owner = "client!kg", name = "g", descriptor = "()V")
 	public static void method2303() {
 		if (Static4.anInt2868 != -1) {
-			Static25.method2720(Static4.anInt2868, 0, Static4.anInt2857);
+			GlCleaner.deleteTexture(Static4.anInt2868, 0, Static4.anInt2857);
 		}
 		Static4.anInt2868 = -1;
 		Static4.anInt2857 = -1;
@@ -1335,9 +1335,9 @@ public final class Static22 {
 	@OriginalMember(owner = "client!kg", name = "h", descriptor = "()V")
 	public static void method2305() {
 		method2295();
-		if (Static4.anInt2868 == -1 || Static4.anInt2857 != Static4.anInt3332) {
+		if (Static4.anInt2868 == -1 || Static4.anInt2857 != GlCleaner.contextId) {
 			Static4.anInt2868 = Static33.method4173(Static6.anInt5142, Static4.aByteArray29);
-			Static4.anInt2857 = Static4.anInt3332;
+			Static4.anInt2857 = GlCleaner.contextId;
 		}
 	}
 

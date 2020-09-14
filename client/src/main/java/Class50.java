@@ -84,7 +84,7 @@ public final class Class50 {
 		for (@Pc(81) int local81 = 0; local81 < this.aShortArray28.length; local81++) {
 			this.aShortArray28[local81] = (short) arg0.readUnsignedShort();
 		}
-		this.anInt1321 = Static4.anIntArray295[arg0.readUnsignedShort()];
+		this.anInt1321 = ColorUtils.HSL_TO_RGB[arg0.readUnsignedShort()];
 		@Pc(108) int local108 = arg0.readUnsignedByte();
 		this.anInt1323 = local108 & 0x1F;
 		this.anInt1332 = (local108 & 0xE0) << 3;

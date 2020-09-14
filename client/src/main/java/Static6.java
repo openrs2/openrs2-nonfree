@@ -24,7 +24,7 @@ public final class Static6 {
 	public static Js5 aClass58_84;
 
 	@OriginalMember(owner = "client!ql", name = "c", descriptor = "Lclient!kj;")
-	public static Interface3 anInterface3_1;
+	public static TextureProvider anInterface3_1;
 
 	@OriginalMember(owner = "client!ql", name = "f", descriptor = "[I")
 	public static int[] anIntArray465;
@@ -132,10 +132,10 @@ public final class Static6 {
 	public static int anInt4558;
 
 	@OriginalMember(owner = "client!rh", name = "ob", descriptor = "Lclient!ma;")
-	public static Class56 aClass56_1;
+	public static IndexedSprite aClass56_1;
 
 	@OriginalMember(owner = "client!ri", name = "X", descriptor = "[Lclient!uj;")
-	public static Class4_Sub3_Sub14[] aClass4_Sub3_Sub14Array11;
+	public static Sprite[] aClass4_Sub3_Sub14Array11;
 
 	@OriginalMember(owner = "client!ri", name = "ab", descriptor = "[Lclient!we;")
 	public static Class184[] aClass184Array12;
@@ -198,7 +198,7 @@ public final class Static6 {
 	public static Js5 aClass58_89;
 
 	@OriginalMember(owner = "client!se", name = "W", descriptor = "[Lclient!uj;")
-	public static Class4_Sub3_Sub14[] aClass4_Sub3_Sub14Array12;
+	public static Sprite[] aClass4_Sub3_Sub14Array12;
 
 	@OriginalMember(owner = "client!se", name = "Z", descriptor = "Lclient!fh;")
 	public static Js5 aClass58_90;
@@ -225,10 +225,10 @@ public final class Static6 {
 	public static Interface2[] anInterface2Array1;
 
 	@OriginalMember(owner = "client!si", name = "o", descriptor = "Lclient!uj;")
-	public static Class4_Sub3_Sub14 aClass4_Sub3_Sub14_5;
+	public static Sprite aClass4_Sub3_Sub14_5;
 
 	@OriginalMember(owner = "client!si", name = "q", descriptor = "Lclient!uj;")
-	public static Class4_Sub3_Sub14 aClass4_Sub3_Sub14_6;
+	public static Sprite aClass4_Sub3_Sub14_6;
 
 	@OriginalMember(owner = "client!sj", name = "s", descriptor = "[Lclient!l;")
 	public static Class4_Sub15[] aClass4_Sub15Array1;
@@ -261,13 +261,13 @@ public final class Static6 {
 	public static int[] anIntArray544;
 
 	@OriginalMember(owner = "client!tb", name = "k", descriptor = "Lclient!uj;")
-	public static Class4_Sub3_Sub14 aClass4_Sub3_Sub14_7;
+	public static Sprite aClass4_Sub3_Sub14_7;
 
 	@OriginalMember(owner = "client!tc", name = "V", descriptor = "[I")
 	public static int[] anIntArray549;
 
 	@OriginalMember(owner = "client!te", name = "D", descriptor = "Lclient!uj;")
-	public static Class4_Sub3_Sub14 aClass4_Sub3_Sub14_8;
+	public static Sprite aClass4_Sub3_Sub14_8;
 
 	@OriginalMember(owner = "client!tk", name = "b", descriptor = "[I")
 	public static int[] anIntArray559;

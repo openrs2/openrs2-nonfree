@@ -9,7 +9,7 @@ import dev.openrs2.deob.annotation.Pc;
 public final class Class105 {
 
 	@OriginalMember(owner = "client!kg", name = "a", descriptor = "Lclient!vn;")
-	private Class4_Sub3_Sub14_Sub1 aClass4_Sub3_Sub14_Sub1_5;
+	private SoftwareSprite aClass4_Sub3_Sub14_Sub1_5;
 
 	@OriginalMember(owner = "client!kg", name = "e", descriptor = "I")
 	private int anInt2855;
@@ -30,7 +30,7 @@ public final class Class105 {
 	private int anInt2864 = -1;
 
 	@OriginalMember(owner = "client!kg", name = "s", descriptor = "I")
-	private int anInt2866 = -1;
+	private int contextId = -1;
 
 	@OriginalMember(owner = "client!kg", name = "q", descriptor = "Z")
 	private boolean aBoolean198 = true;
@@ -99,7 +99,7 @@ public final class Class105 {
 	private void method2289(@OriginalArg(0) Class105 arg0) {
 		Static22.method2297();
 		Static22.method2305();
-		@Pc(3) GL local3 = Static3.aGL1;
+		@Pc(3) GL local3 = GlRenderer.gl;
 		Static18.method1686(Static4.anIntArray256);
 		Static18.method1698();
 		local3.glClearColor((float) (this.anInt2859 >> 16 & 0xFF) / 255.0F, (float) (this.anInt2859 >> 8 & 0xFF) / 255.0F, (float) (this.anInt2859 & 0xFF) / 255.0F, 0.0F);
@@ -140,9 +140,9 @@ public final class Class105 {
 		if (this.anInt2859 != 0) {
 			local3.glScalef(0.8125F, 0.8125F, 1.0F);
 		}
-		Static4.anInterface4_1.method454(this.anInt2861, this.anInt2858);
-		Static17.method1610(true);
-		if (Static3.aBoolean135) {
+		Static4.anInterface4_1.method454(this.anInt2858, this.anInt2861);
+		GlRenderer.setLightingEnabled(true);
+		if (GlRenderer.arbVboSupported) {
 			local3.glBindBufferARB(GL.GL_ARRAY_BUFFER, 0);
 			local3.glBindBufferARB(GL.GL_ELEMENT_ARRAY_BUFFER, 0);
 		}
@@ -153,12 +153,12 @@ public final class Class105 {
 		local3.glTexCoordPointer(2, GL.GL_FLOAT, 20, Static4.aByteBuffer9.position(12));
 		local3.glDrawElements(GL.GL_TRIANGLE_STRIP, Static4.aByteBuffer10.limit() / 2, GL.GL_UNSIGNED_SHORT, Static4.aByteBuffer10.position(0));
 		local3.glEnableClientState(GL.GL_COLOR_ARRAY);
-		Static17.method1610(false);
+		GlRenderer.setLightingEnabled(false);
 		if (this.anInt2859 != 0) {
 			Static24.method2652(0, 0);
-			Static17.method1597(1);
-			Static17.method1607(0);
-			Static17.method1600(Static4.anInt2868);
+			GlRenderer.setTextureCombineRgbMode(1);
+			GlRenderer.setTextureCombineAlphaMode(0);
+			GlRenderer.setTextureId(Static4.anInt2868);
 			local3.glColorMask(true, true, true, false);
 			local3.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_SRC0_RGB, GL.GL_PREVIOUS);
 			local3.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_OPERAND0_ALPHA, GL.GL_ONE_MINUS_SRC_ALPHA);
@@ -192,7 +192,7 @@ public final class Class105 {
 			local3.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_SRC0_RGB, GL.GL_TEXTURE);
 		}
 		Static9.method209();
-		Static17.method1600(this.anInt2864);
+		GlRenderer.setTextureId(this.anInt2864);
 		local3.glCopyTexImage2D(GL.GL_TEXTURE_2D, GL.GL_POINTS, GL.GL_RGBA, 0, 0, this.anInt2861, this.anInt2861, GL.GL_POINTS);
 		Static18.method1695(Static4.anIntArray256);
 	}
@@ -203,7 +203,7 @@ public final class Class105 {
 		if (local5 == null) {
 			return false;
 		}
-		@Pc(11) GL local11 = Static3.aGL1;
+		@Pc(11) GL local11 = GlRenderer.gl;
 		Static18.method1686(Static4.anIntArray256);
 		Static18.method1698();
 		local11.glClearColor(0.0F, 0.0F, 0.0F, 0.0F);
@@ -246,15 +246,15 @@ public final class Class105 {
 		Static25.method2775((float) -local25, (float) local27, (float) -local29);
 		Static25.method2782(16777215, 0.5F, 0.5F, 0.5F);
 		Static25.method2777();
-		Static16.method1591();
-		Static16.method1588(true);
-		Static17.method1610(true);
+		GlRenderer.enableDepthMask();
+		GlRenderer.setDepthTestEnabled(true);
+		GlRenderer.setLightingEnabled(true);
 		local78.method3822(0, 0, 0, -local86 - local78.method3829(), -local94 - local78.method3813(), 0, -1L);
-		Static17.method1610(false);
-		Static16.method1588(false);
-		Static16.method1589();
+		GlRenderer.setLightingEnabled(false);
+		GlRenderer.setDepthTestEnabled(false);
+		GlRenderer.disableDepthMask();
 		Static9.method209();
-		Static17.method1600(this.anInt2864);
+		GlRenderer.setTextureId(this.anInt2864);
 		local11.glCopyTexImage2D(GL.GL_TEXTURE_2D, GL.GL_POINTS, GL.GL_RGBA, 0, 0, this.anInt2861, this.anInt2861, GL.GL_POINTS);
 		Static18.method1695(Static4.anIntArray256);
 		return true;
@@ -312,17 +312,17 @@ public final class Class105 {
 			return;
 		}
 		if (this.anInt2869 == 0) {
-			Static4.anInterface4_1.method454(this.anInt2861, this.anInt2858);
+			Static4.anInterface4_1.method454(this.anInt2858, this.anInt2861);
 		} else if (this.anInt2864 == -1) {
 			return;
 		} else {
-			Static17.method1600(this.anInt2864);
+			GlRenderer.setTextureId(this.anInt2864);
 		}
 		@Pc(91) int local91 = local27 + arg1;
 		@Pc(95) int local95 = local33 + arg0;
 		@Pc(100) int local100 = local95 + this.anInt2856;
 		@Pc(105) int local105 = local91 + this.anInt2856;
-		@Pc(107) GL local107 = Static3.aGL1;
+		@Pc(107) GL local107 = GlRenderer.gl;
 		local107.glBegin(GL.GL_QUADS);
 		local107.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
 		local107.glTexCoord2f(0.0F, 0.0F);
@@ -341,15 +341,15 @@ public final class Class105 {
 		if (this.anInt2869 == 0) {
 			return;
 		}
-		@Pc(14) boolean local14 = this.anInt2864 == -1 || this.anInt2866 != Static4.anInt3332;
+		@Pc(14) boolean local14 = this.anInt2864 == -1 || this.contextId != GlCleaner.contextId;
 		if (!this.aBoolean198 && !local14) {
 			return;
 		}
 		if (local14) {
-			this.anInt2866 = Static4.anInt3332;
+			this.contextId = GlCleaner.contextId;
 			this.anInt2864 = Static33.method4171(Static6.anInt5136, this.anInt2861, this.anInt2861);
 		} else {
-			Static17.method1600(this.anInt2864);
+			GlRenderer.setTextureId(this.anInt2864);
 			Static33.method4170(Static6.anInt5136, this.anInt2861, this.anInt2861);
 		}
 		if (this.anInt2869 == 1) {
@@ -421,7 +421,7 @@ public final class Class105 {
 	private boolean method2298(@OriginalArg(0) Class105 arg0) {
 		if (this.aClass4_Sub3_Sub14_Sub1_5 == null) {
 			if (this.anInt2869 == 0) {
-				this.aClass4_Sub3_Sub14_Sub1_5 = Static4.anInterface4_1.method452(true, Static4.aFloat74, this.anInt2861, this.anInt2858);
+				this.aClass4_Sub3_Sub14_Sub1_5 = Static4.anInterface4_1.method452(this.anInt2858, true, ColorUtils.brightness, this.anInt2861);
 			} else if (this.anInt2869 == 2) {
 				this.method2304(arg0);
 			} else if (this.anInt2869 == 1) {
@@ -454,7 +454,7 @@ public final class Class105 {
 	private void method2300(@OriginalArg(0) Class105 arg0) {
 		Static22.method2296();
 		Static22.method2295();
-		this.aClass4_Sub3_Sub14_Sub1_5 = new Class4_Sub3_Sub14_Sub1_Sub1(this.anInt2861, this.anInt2861);
+		this.aClass4_Sub3_Sub14_Sub1_5 = new SoftwareAlphaSprite(this.anInt2861, this.anInt2861);
 		Static34.method4223(Static4.anIntArray256);
 		this.aClass4_Sub3_Sub14_Sub1_5.makeTarget();
 		Static23.method2561();
@@ -556,7 +556,7 @@ public final class Class105 {
 		if (local5 == null) {
 			return;
 		}
-		this.aClass4_Sub3_Sub14_Sub1_5 = new Class4_Sub3_Sub14_Sub1(this.anInt2861, this.anInt2861);
+		this.aClass4_Sub3_Sub14_Sub1_5 = new SoftwareSprite(this.anInt2861, this.anInt2861);
 		Static34.method4223(Static4.anIntArray256);
 		this.aClass4_Sub3_Sub14_Sub1_5.makeTarget();
 		Static23.method2561();
@@ -608,7 +608,7 @@ public final class Class105 {
 	@OriginalMember(owner = "client!kg", name = "i", descriptor = "()V")
 	private void method2306() {
 		if (this.anInt2864 != -1) {
-			Static25.method2720(this.anInt2864, 0, this.anInt2866);
+			GlCleaner.deleteTexture(this.anInt2864, 0, this.contextId);
 		}
 		this.aBoolean198 = true;
 		this.anInt2864 = -1;

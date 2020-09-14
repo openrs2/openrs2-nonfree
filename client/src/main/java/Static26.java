@@ -115,7 +115,7 @@ public final class Static26 {
 								local562 = 127;
 							}
 							@Pc(591) int local591 = (local7 + local521 & 0xFC00) + (local521 & 0x380) + local562;
-							local500[((local399 & 0x3F) << 6) + (local213 & 0x3F)] = Static4.anIntArray295[Static35.method4367(local591, 96)];
+							local500[((local399 & 0x3F) << 6) + (local213 & 0x3F)] = ColorUtils.HSL_TO_RGB[Static35.method4367(local591, 96)];
 						} else if (local500 != null) {
 							local500[(local213 & 0x3F) + ((local399 & 0x3F) << 6)] = 0;
 						}
@@ -175,7 +175,7 @@ public final class Static26 {
 
 	@OriginalMember(owner = "client!ne", name = "a", descriptor = "(III)V")
 	public static void method2961(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
-		@Pc(1) GL local1 = Static3.aGL1;
+		@Pc(1) GL local1 = GlRenderer.gl;
 		if (Static5.aBoolean249) {
 			local1.glEnable(GL.GL_POINT_SPRITE);
 			local1.glTexEnvi(GL.GL_POINT_SPRITE, GL.GL_COORD_REPLACE, GL.GL_LINES);
@@ -191,14 +191,14 @@ public final class Static26 {
 		local1.glPushMatrix();
 		local1.glTranslatef((float) -arg0, (float) -arg1, (float) -arg2);
 		local1.glNormal3f(0.0F, -1.0F, 0.0F);
-		if (!Static3.aBoolean139) {
+		if (!GlRenderer.aBoolean139) {
 			local1.glDisable(GL.GL_FOG);
 		}
 	}
 
 	@OriginalMember(owner = "client!ne", name = "g", descriptor = "()V")
 	public static void method2962() {
-		@Pc(1) GL local1 = Static3.aGL1;
+		@Pc(1) GL local1 = GlRenderer.gl;
 		if (Preferences.highDetailLighting) {
 			local1.glEnableClientState(GL.GL_NORMAL_ARRAY);
 		}
@@ -206,7 +206,7 @@ public final class Static26 {
 		local1.glDepthMask(true);
 		local1.glColorMaterial(GL.GL_FRONT, GL.GL_AMBIENT_AND_DIFFUSE);
 		local1.glPopMatrix();
-		if (!Static3.aBoolean139) {
+		if (!GlRenderer.aBoolean139) {
 			local1.glEnable(GL.GL_FOG);
 		}
 		if (Static5.aBoolean249) {
@@ -247,7 +247,7 @@ public final class Static26 {
 
 	@OriginalMember(owner = "client!ne", name = "i", descriptor = "()V")
 	public static void method2969() {
-		@Pc(1) GL local1 = Static3.aGL1;
+		@Pc(1) GL local1 = GlRenderer.gl;
 		if (local1.isExtensionAvailable("GL_ARB_point_parameters")) {
 			@Pc(20) float[] local20 = new float[] { 1.0F, 0.0F, 5.0E-7F };
 			local1.glPointParameterfvARB(GL.GL_POINT_DISTANCE_ATTENUATION, local20, 0);
@@ -459,7 +459,7 @@ public final class Static26 {
 				}
 			}
 		}
-		if (Static3.aBoolean138 && !arg8) {
+		if (GlRenderer.enabled && !arg8) {
 			@Pc(840) Class187 local840 = null;
 			while (true) {
 				while (local101.bytes.length > local101.position) {
@@ -543,10 +543,10 @@ public final class Static26 {
 	}
 
 	@OriginalMember(owner = "client!ng", name = "e", descriptor = "(I)[Lclient!fe;")
-	public static Class56_Sub1[] method4358() {
-		@Pc(4) Class56_Sub1[] local4 = new Class56_Sub1[Static4.anInt2748];
+	public static SoftwareIndexedSprite[] method4358() {
+		@Pc(4) SoftwareIndexedSprite[] local4 = new SoftwareIndexedSprite[Static4.anInt2748];
 		for (@Pc(12) int local12 = 0; local12 < Static4.anInt2748; local12++) {
-			local4[local12] = new Class56_Sub1(Static1.anInt889, Static3.anInt2162, Static5.anIntArray402[local12], Static5.anIntArray391[local12], Static3.anIntArray185[local12], Static7.anIntArray643[local12], Static6.aByteArrayArray36[local12], Static2.anIntArray85);
+			local4[local12] = new SoftwareIndexedSprite(Static1.anInt889, Static3.anInt2162, Static5.anIntArray402[local12], Static5.anIntArray391[local12], Static3.anIntArray185[local12], Static7.anIntArray643[local12], Static6.aByteArrayArray36[local12], Static2.anIntArray85);
 		}
 		Static37.method4670();
 		return local4;
@@ -557,7 +557,7 @@ public final class Static26 {
 		@Pc(10) int[] local10 = null;
 		@Pc(16) byte local16;
 		@Pc(18) byte[][] local18;
-		if (Static3.aBoolean138 && arg0) {
+		if (GlRenderer.enabled && arg0) {
 			local16 = 1;
 			local18 = Static7.aByteArrayArray49;
 		} else {

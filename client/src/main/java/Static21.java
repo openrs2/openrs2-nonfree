@@ -248,8 +248,8 @@ public final class Static21 {
 	}
 
 	@OriginalMember(owner = "client!jc", name = "f", descriptor = "(B)[Lclient!uj;")
-	public static Class4_Sub3_Sub14[] method2000() {
-		@Pc(4) Class4_Sub3_Sub14[] local4 = new Class4_Sub3_Sub14[Static4.anInt2748];
+	public static Sprite[] method2000() {
+		@Pc(4) Sprite[] local4 = new Sprite[Static4.anInt2748];
 		for (@Pc(18) int local18 = 0; local18 < Static4.anInt2748; local18++) {
 			@Pc(29) byte[] local29 = Static6.aByteArrayArray36[local18];
 			@Pc(37) int local37 = Static3.anIntArray185[local18] * Static7.anIntArray643[local18];
@@ -257,10 +257,10 @@ public final class Static21 {
 			for (@Pc(42) int local42 = 0; local42 < local37; local42++) {
 				local40[local42] = Static2.anIntArray85[local29[local42] & 0xFF];
 			}
-			if (Static3.aBoolean138) {
-				local4[local18] = new Class4_Sub3_Sub14_Sub2(Static1.anInt889, Static3.anInt2162, Static5.anIntArray402[local18], Static5.anIntArray391[local18], Static3.anIntArray185[local18], Static7.anIntArray643[local18], local40);
+			if (GlRenderer.enabled) {
+				local4[local18] = new GlSprite(Static1.anInt889, Static3.anInt2162, Static5.anIntArray402[local18], Static5.anIntArray391[local18], Static3.anIntArray185[local18], Static7.anIntArray643[local18], local40);
 			} else {
-				local4[local18] = new Class4_Sub3_Sub14_Sub1(Static1.anInt889, Static3.anInt2162, Static5.anIntArray402[local18], Static5.anIntArray391[local18], Static3.anIntArray185[local18], Static7.anIntArray643[local18], local40);
+				local4[local18] = new SoftwareSprite(Static1.anInt889, Static3.anInt2162, Static5.anIntArray402[local18], Static5.anIntArray391[local18], Static3.anIntArray185[local18], Static7.anIntArray643[local18], local40);
 			}
 		}
 		Static37.method4670();
@@ -277,14 +277,14 @@ public final class Static21 {
 	}
 
 	@OriginalMember(owner = "client!jd", name = "a", descriptor = "(I)Lclient!vn;")
-	public static Class4_Sub3_Sub14_Sub1 method2002() {
+	public static SoftwareSprite method2002() {
 		@Pc(9) byte[] local9 = Static6.aByteArrayArray36[0];
 		@Pc(28) int local28 = Static3.anIntArray185[0] * Static7.anIntArray643[0];
 		@Pc(31) int[] local31 = new int[local28];
 		for (@Pc(33) int local33 = 0; local33 < local28; local33++) {
 			local31[local33] = Static2.anIntArray85[local9[local33] & 0xFF];
 		}
-		@Pc(68) Class4_Sub3_Sub14_Sub1 local68 = new Class4_Sub3_Sub14_Sub1(Static1.anInt889, Static3.anInt2162, Static5.anIntArray402[0], Static5.anIntArray391[0], Static3.anIntArray185[0], Static7.anIntArray643[0], local31);
+		@Pc(68) SoftwareSprite local68 = new SoftwareSprite(Static1.anInt889, Static3.anInt2162, Static5.anIntArray402[0], Static5.anIntArray391[0], Static3.anIntArray185[0], Static7.anIntArray643[0], local31);
 		Static37.method4670();
 		return local68;
 	}
@@ -371,7 +371,7 @@ public final class Static21 {
 		Static22.method2284(null);
 		Static6.anIntArray541 = new int[32768];
 		Static2.anIntArray100 = new int[32768];
-		Static4.aClass4_Sub3_Sub14_Sub1_4 = new Class4_Sub3_Sub14_Sub1(128, 254);
+		Static4.aClass4_Sub3_Sub14_Sub1_4 = new SoftwareSprite(128, 254);
 	}
 
 	@OriginalMember(owner = "client!je", name = "a", descriptor = "(I)V")
@@ -411,7 +411,7 @@ public final class Static21 {
 	public static void method2009(@OriginalArg(0) boolean arg0) {
 		@Pc(11) byte local11;
 		@Pc(13) byte[][] local13;
-		if (Static3.aBoolean138 && arg0) {
+		if (GlRenderer.enabled && arg0) {
 			local11 = 1;
 			local13 = Static7.aByteArrayArray49;
 		} else {
@@ -2125,7 +2125,7 @@ public final class Static21 {
 		if (local85.anIntArray631 != null) {
 			local85 = local85.method4453();
 		}
-		if (!Static3.aBoolean138 || local85 == null || !local85.aBoolean372) {
+		if (!GlRenderer.enabled || local85 == null || !local85.aBoolean372) {
 			return;
 		}
 		if (local67 == 2) {
@@ -2308,8 +2308,8 @@ public final class Static21 {
 	}
 
 	@OriginalMember(owner = "client!jk", name = "c", descriptor = "(B)[Lclient!uj;")
-	public static Class4_Sub3_Sub14[] method2064() {
-		@Pc(4) Class4_Sub3_Sub14[] local4 = new Class4_Sub3_Sub14[Static4.anInt2748];
+	public static Sprite[] method2064() {
+		@Pc(4) Sprite[] local4 = new Sprite[Static4.anInt2748];
 		for (@Pc(16) int local16 = 0; local16 < Static4.anInt2748; local16++) {
 			@Pc(27) int local27 = Static3.anIntArray185[local16] * Static7.anIntArray643[local16];
 			@Pc(31) byte[] local31 = Static6.aByteArrayArray36[local16];
@@ -2319,20 +2319,20 @@ public final class Static21 {
 				for (@Pc(117) int local117 = 0; local117 < local27; local117++) {
 					local115[local117] = Static2.anIntArray85[local31[local117] & 0xFF] | (local112[local117] & 0xFF) << 24;
 				}
-				if (Static3.aBoolean138) {
-					local4[local16] = new Class4_Sub3_Sub14_Sub2_Sub1(Static1.anInt889, Static3.anInt2162, Static5.anIntArray402[local16], Static5.anIntArray391[local16], Static3.anIntArray185[local16], Static7.anIntArray643[local16], local115);
+				if (GlRenderer.enabled) {
+					local4[local16] = new GlAlphaSprite(Static1.anInt889, Static3.anInt2162, Static5.anIntArray402[local16], Static5.anIntArray391[local16], Static3.anIntArray185[local16], Static7.anIntArray643[local16], local115);
 				} else {
-					local4[local16] = new Class4_Sub3_Sub14_Sub1_Sub1(Static1.anInt889, Static3.anInt2162, Static5.anIntArray402[local16], Static5.anIntArray391[local16], Static3.anIntArray185[local16], Static7.anIntArray643[local16], local115);
+					local4[local16] = new SoftwareAlphaSprite(Static1.anInt889, Static3.anInt2162, Static5.anIntArray402[local16], Static5.anIntArray391[local16], Static3.anIntArray185[local16], Static7.anIntArray643[local16], local115);
 				}
 			} else {
 				@Pc(38) int[] local38 = new int[local27];
 				for (@Pc(40) int local40 = 0; local40 < local27; local40++) {
 					local38[local40] = Static2.anIntArray85[local31[local40] & 0xFF];
 				}
-				if (Static3.aBoolean138) {
-					local4[local16] = new Class4_Sub3_Sub14_Sub2(Static1.anInt889, Static3.anInt2162, Static5.anIntArray402[local16], Static5.anIntArray391[local16], Static3.anIntArray185[local16], Static7.anIntArray643[local16], local38);
+				if (GlRenderer.enabled) {
+					local4[local16] = new GlSprite(Static1.anInt889, Static3.anInt2162, Static5.anIntArray402[local16], Static5.anIntArray391[local16], Static3.anIntArray185[local16], Static7.anIntArray643[local16], local38);
 				} else {
-					local4[local16] = new Class4_Sub3_Sub14_Sub1(Static1.anInt889, Static3.anInt2162, Static5.anIntArray402[local16], Static5.anIntArray391[local16], Static3.anIntArray185[local16], Static7.anIntArray643[local16], local38);
+					local4[local16] = new SoftwareSprite(Static1.anInt889, Static3.anInt2162, Static5.anIntArray402[local16], Static5.anIntArray391[local16], Static3.anIntArray185[local16], Static7.anIntArray643[local16], local38);
 				}
 			}
 		}

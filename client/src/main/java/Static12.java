@@ -328,7 +328,7 @@ public final class Static12 {
 									continue;
 								}
 								if (local9.anInt5904 == 1402) {
-									if (!Static3.aBoolean138) {
+									if (!GlRenderer.enabled) {
 										Static28.method3270(local9);
 									}
 									continue;
@@ -752,23 +752,6 @@ public final class Static12 {
 		Static6.aClass112_28 = new LinkedList();
 	}
 
-	@OriginalMember(owner = "client!d", name = "a", descriptor = "(ICLjava/lang/String;)[Ljava/lang/String;")
-	public static String[] method721(@OriginalArg(1) char arg0, @OriginalArg(2) String arg1) {
-		@Pc(10) int local10 = Static8.method114(arg0, arg1);
-		@Pc(15) String[] local15 = new String[local10 + 1];
-		@Pc(17) int local17 = 0;
-		@Pc(19) int local19 = 0;
-		for (@Pc(21) int local21 = 0; local21 < local10; local21++) {
-			@Pc(26) int local26;
-			for (local26 = local19; arg0 != arg1.charAt(local26); local26++) {
-			}
-			local15[local17++] = arg1.substring(local19, local26);
-			local19 = local26 + 1;
-		}
-		local15[local10] = arg1.substring(local19);
-		return local15;
-	}
-
 	@OriginalMember(owner = "client!d", name = "a", descriptor = "(III)V")
 	public static void method722(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
 		@Pc(8) Class4_Sub3_Sub9 local8 = method2322(12, arg0);
@@ -960,11 +943,6 @@ public final class Static12 {
 		}
 	}
 
-	@OriginalMember(owner = "client!db", name = "a", descriptor = "(ZLjava/lang/String;)I")
-	public static int method737(@OriginalArg(1) String arg0) {
-		return Static30.method3614(10, arg0);
-	}
-
 	@OriginalMember(owner = "client!db", name = "a", descriptor = "(ILclient!f;)V")
 	public static void method739(@OriginalArg(1) Player arg0) {
 		@Pc(19) Class4_Sub11 local19 = (Class4_Sub11) Static5.aClass84_18.get(Base37.encode(arg0.name));
@@ -1094,7 +1072,7 @@ public final class Static12 {
 		if (arg2 != 0) {
 			local500.method3815(arg2);
 		}
-		if (Static3.aBoolean138) {
+		if (GlRenderer.enabled) {
 			@Pc(591) Class53_Sub4_Sub2 local591 = (Class53_Sub4_Sub2) local500;
 			if (arg7 != Static11.method522(local438 + arg8, arg12 + local432, Static7.anInt5334) || Static11.method522(local457 + arg8, local435 + arg12, Static7.anInt5334) != arg7) {
 				for (@Pc(615) int local615 = 0; local615 < local591.anInt4689; local615++) {
@@ -1212,10 +1190,10 @@ public final class Static12 {
 
 	@OriginalMember(owner = "client!di", name = "c", descriptor = "()V")
 	public static void method872() {
-		if (!Static3.aBoolean134 || !Static3.aBoolean127) {
+		if (!GlRenderer.arbFboSupported || !GlRenderer.arbTextureRectangleSupported) {
 			return;
 		}
-		@Pc(5) GL local5 = Static3.aGL1;
+		@Pc(5) GL local5 = GlRenderer.gl;
 		@Pc(8) int[] local8 = new int[1];
 		local5.glGetIntegerv(GL.GL_MAX_COLOR_ATTACHMENTS, local8, 0);
 		if (local8[0] >= 2) {

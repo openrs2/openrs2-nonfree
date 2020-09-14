@@ -25,9 +25,9 @@ public final class Class70 implements Interface2 {
 
 	@OriginalMember(owner = "client!gk", name = "<init>", descriptor = "()V")
 	public Class70() {
-		if (this.anInt2099 < 0 && (Static3.aBoolean143 && Static3.anInt2081 >= 2)) {
+		if (this.anInt2099 < 0 && (GlRenderer.arbVertexProgramSupported && GlRenderer.maxTextureUnits >= 2)) {
 			@Pc(19) int[] local19 = new int[1];
-			@Pc(21) GL local21 = Static3.aGL1;
+			@Pc(21) GL local21 = GlRenderer.gl;
 			local21.glGenProgramsARB(1, local19, 0);
 			this.anInt2100 = local19[0];
 			@Pc(42) int[][] local42 = Static27.method3234(0.4F);
@@ -37,7 +37,7 @@ public final class Class70 implements Interface2 {
 				@Pc(67) int[] local67 = local42[local60];
 				@Pc(71) int[] local71 = local53[local60];
 				for (@Pc(73) int local73 = 0; local73 < 64; local73++) {
-					if (Static3.aBoolean126) {
+					if (GlRenderer.bigEndian) {
 						local58.writeFloat((float) local67[local73] / 4096.0F);
 						local58.writeFloat((float) local71[local73] / 4096.0F);
 						local58.writeFloat(1.0F);
@@ -69,14 +69,14 @@ public final class Class70 implements Interface2 {
 	@Override
 	public final void method3483() {
 		if (this.anInt2099 >= 0) {
-			@Pc(5) GL local5 = Static3.aGL1;
+			@Pc(5) GL local5 = GlRenderer.gl;
 			local5.glCallList(this.anInt2099 + 1);
 		}
 	}
 
 	@OriginalMember(owner = "client!gk", name = "e", descriptor = "()V")
 	private void method1642() {
-		@Pc(1) GL local1 = Static3.aGL1;
+		@Pc(1) GL local1 = GlRenderer.gl;
 		this.anInt2099 = local1.glGenLists(2);
 		local1.glNewList(this.anInt2099, GL.GL_COMPILE);
 		local1.glActiveTexture(GL.GL_TEXTURE1);
@@ -111,7 +111,7 @@ public final class Class70 implements Interface2 {
 		if (this.anInt2099 < 0) {
 			return;
 		}
-		@Pc(4) GL local4 = Static3.aGL1;
+		@Pc(4) GL local4 = GlRenderer.gl;
 		@Pc(7) int[] local7 = new int[1];
 		local4.glBindProgramARB(GL.GL_VERTEX_PROGRAM_ARB, this.anInt2100);
 		local4.glProgramStringARB(GL.GL_VERTEX_PROGRAM_ARB, GL.GL_PROGRAM_FORMAT_ASCII_ARB, "!!ARBvp1.0\nATTRIB  iPos         = vertex.position;\nATTRIB  iColour      = vertex.color;\nOUTPUT  oPos         = result.position;\nOUTPUT  oColour      = result.color;\nOUTPUT  oTexCoord0   = result.texcoord[0];\nOUTPUT  oTexCoord1   = result.texcoord[1];\nOUTPUT  oFogCoord    = result.fogcoord;\nPARAM   time         = program.local[65];\nPARAM   turbulence   = program.local[64];\nPARAM   lightAmbient = program.local[66]; \nPARAM   pMatrix[4]   = { state.matrix.projection };\nPARAM   mvMatrix[4]  = { state.matrix.modelview };\nPARAM   ivMatrix[4]  = { state.matrix.texture[1] };\nPARAM   fNoise[64]   = { program.local[0..63] };\nTEMP    noise, clipPos, viewPos, worldPos;\nADDRESS noiseAddr;\nDP4   viewPos.x, mvMatrix[0], iPos;\nDP4   viewPos.y, mvMatrix[1], iPos;\nDP4   viewPos.z, mvMatrix[2], iPos;\nDP4   viewPos.w, mvMatrix[3], iPos;\nDP4   worldPos.x, ivMatrix[0], viewPos;\nDP4   worldPos.y, ivMatrix[1], viewPos;\nDP4   worldPos.z, ivMatrix[2], viewPos;\nDP4   worldPos.w, ivMatrix[3], viewPos;\nADD   noise.x, worldPos.x, worldPos.z;SUB   noise.y, worldPos.z, worldPos.x;MUL   noise, noise, 0.0001220703125;\nFRC   noise, noise;\nMUL   noise, noise, 64;\nARL   noiseAddr.x, noise.x;\nMOV   noise.x, fNoise[noiseAddr.x].x;\nARL   noiseAddr.x, noise.y;\nMOV   noise.y, fNoise[noiseAddr.x].y;\nMUL   noise, noise, turbulence.x;\nMAD   oTexCoord0, worldPos.xzww, 0.0078125, noise;\nMOV   oTexCoord0.w, 1;\nMUL   oTexCoord1.xy, worldPos.xzww, 0.0009765625;\nMOV   oTexCoord1.zw, time.xxxw;\nDP4   clipPos.x, pMatrix[0], viewPos;\nDP4   clipPos.y, pMatrix[1], viewPos;\nDP4   clipPos.z, pMatrix[2], viewPos;\nDP4   clipPos.w, pMatrix[3], viewPos;\nMUL   oColour.xyz, iColour, lightAmbient;\nMOV   oColour.w, 1;\nMOV   oFogCoord.x, clipPos.z;\nMOV   oPos, clipPos; \nEND".length(), "!!ARBvp1.0\nATTRIB  iPos         = vertex.position;\nATTRIB  iColour      = vertex.color;\nOUTPUT  oPos         = result.position;\nOUTPUT  oColour      = result.color;\nOUTPUT  oTexCoord0   = result.texcoord[0];\nOUTPUT  oTexCoord1   = result.texcoord[1];\nOUTPUT  oFogCoord    = result.fogcoord;\nPARAM   time         = program.local[65];\nPARAM   turbulence   = program.local[64];\nPARAM   lightAmbient = program.local[66]; \nPARAM   pMatrix[4]   = { state.matrix.projection };\nPARAM   mvMatrix[4]  = { state.matrix.modelview };\nPARAM   ivMatrix[4]  = { state.matrix.texture[1] };\nPARAM   fNoise[64]   = { program.local[0..63] };\nTEMP    noise, clipPos, viewPos, worldPos;\nADDRESS noiseAddr;\nDP4   viewPos.x, mvMatrix[0], iPos;\nDP4   viewPos.y, mvMatrix[1], iPos;\nDP4   viewPos.z, mvMatrix[2], iPos;\nDP4   viewPos.w, mvMatrix[3], iPos;\nDP4   worldPos.x, ivMatrix[0], viewPos;\nDP4   worldPos.y, ivMatrix[1], viewPos;\nDP4   worldPos.z, ivMatrix[2], viewPos;\nDP4   worldPos.w, ivMatrix[3], viewPos;\nADD   noise.x, worldPos.x, worldPos.z;SUB   noise.y, worldPos.z, worldPos.x;MUL   noise, noise, 0.0001220703125;\nFRC   noise, noise;\nMUL   noise, noise, 64;\nARL   noiseAddr.x, noise.x;\nMOV   noise.x, fNoise[noiseAddr.x].x;\nARL   noiseAddr.x, noise.y;\nMOV   noise.y, fNoise[noiseAddr.x].y;\nMUL   noise, noise, turbulence.x;\nMAD   oTexCoord0, worldPos.xzww, 0.0078125, noise;\nMOV   oTexCoord0.w, 1;\nMUL   oTexCoord1.xy, worldPos.xzww, 0.0009765625;\nMOV   oTexCoord1.zw, time.xxxw;\nDP4   clipPos.x, pMatrix[0], viewPos;\nDP4   clipPos.y, pMatrix[1], viewPos;\nDP4   clipPos.z, pMatrix[2], viewPos;\nDP4   clipPos.w, pMatrix[3], viewPos;\nMUL   oColour.xyz, iColour, lightAmbient;\nMOV   oColour.w, 1;\nMOV   oFogCoord.x, clipPos.z;\nMOV   oPos, clipPos; \nEND");
@@ -127,7 +127,7 @@ public final class Class70 implements Interface2 {
 		if (this.anInt2099 < 0) {
 			return;
 		}
-		@Pc(5) GL local5 = Static3.aGL1;
+		@Pc(5) GL local5 = GlRenderer.gl;
 		local5.glActiveTexture(GL.GL_TEXTURE1);
 		if ((arg0 & 0x80) == 0) {
 			local5.glEnable(Static3.aBoolean160 ? GL.GL_TEXTURE_3D : GL.GL_TEXTURE_2D);
@@ -157,7 +157,7 @@ public final class Class70 implements Interface2 {
 		if (this.anInt2099 < 0) {
 			return;
 		}
-		@Pc(5) GL local5 = Static3.aGL1;
+		@Pc(5) GL local5 = GlRenderer.gl;
 		local5.glCallList(this.anInt2099);
 		local5.glActiveTexture(GL.GL_TEXTURE1);
 		local5.glMatrixMode(GL.GL_TEXTURE);
@@ -167,23 +167,23 @@ public final class Class70 implements Interface2 {
 		local5.glRotatef(-180.0F, 1.0F, 0.0F, 0.0F);
 		local5.glMatrixMode(GL.GL_MODELVIEW);
 		if (!Static3.aBoolean160) {
-			local5.glBindTexture(GL.GL_TEXTURE_2D, Static3.anIntArray198[(int) ((float) (Static3.anInt2085 * 64) * 0.005F) % 64]);
+			local5.glBindTexture(GL.GL_TEXTURE_2D, Static3.anIntArray198[(int) ((float) (GlRenderer.anInt2085 * 64) * 0.005F) % 64]);
 		}
 		local5.glActiveTexture(GL.GL_TEXTURE0);
-		if (this.anInt2101 == Static3.anInt2085) {
+		if (this.anInt2101 == GlRenderer.anInt2085) {
 			return;
 		}
-		@Pc(85) int local85 = (Static3.anInt2085 & 0xFF) * 256;
+		@Pc(85) int local85 = (GlRenderer.anInt2085 & 0xFF) * 256;
 		for (@Pc(87) int local87 = 0; local87 < 64; local87++) {
 			this.aFloatBuffer1.position(local85);
 			local5.glProgramLocalParameter4fvARB(GL.GL_VERTEX_PROGRAM_ARB, local87, this.aFloatBuffer1);
 			local85 += 4;
 		}
 		if (Static3.aBoolean160) {
-			local5.glProgramLocalParameter4fARB(GL.GL_VERTEX_PROGRAM_ARB, 65, (float) Static3.anInt2085 * 0.005F, 0.0F, 0.0F, 1.0F);
+			local5.glProgramLocalParameter4fARB(GL.GL_VERTEX_PROGRAM_ARB, 65, (float) GlRenderer.anInt2085 * 0.005F, 0.0F, 0.0F, 1.0F);
 		} else {
 			local5.glProgramLocalParameter4fARB(GL.GL_VERTEX_PROGRAM_ARB, 65, 0.0F, 0.0F, 0.0F, 1.0F);
 		}
-		this.anInt2101 = Static3.anInt2085;
+		this.anInt2101 = GlRenderer.anInt2085;
 	}
 }

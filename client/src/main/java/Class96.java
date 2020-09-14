@@ -8,5 +8,5 @@ public final class Class96 {
 	public Entity aClass53_3;
 
 	@OriginalMember(owner = "client!jh", name = "g", descriptor = "Lclient!fe;")
-	public Class56_Sub1 aClass56_Sub1_3;
+	public SoftwareIndexedSprite aClass56_Sub1_3;
 }

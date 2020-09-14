@@ -311,7 +311,7 @@ public abstract class GameShell extends Applet implements Runnable, FocusListene
 			return;
 		}
 		fullRedraw = true;
-		if (isJava5OrLater && !Static3.aBoolean138 && MonotonicClock.currentTimeMillis() - lastCanvasReplace > 1000L) {
+		if (isJava5OrLater && !GlRenderer.enabled && MonotonicClock.currentTimeMillis() - lastCanvasReplace > 1000L) {
 			@Pc(27) Rectangle clipBounds = graphics.getClipBounds();
 			if (clipBounds == null || clipBounds.width >= frameWidth && clipBounds.height >= frameHeight) {
 				replaceCanvas = true;

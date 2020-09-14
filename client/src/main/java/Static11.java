@@ -32,7 +32,7 @@ public final class Static11 {
 	}
 
 	@OriginalMember(owner = "client!ca", name = "a", descriptor = "(Lclient!fh;III)[Lclient!ma;")
-	public static Class56[] method495(@OriginalArg(0) Js5 arg0, @OriginalArg(1) int arg1) {
+	public static IndexedSprite[] method495(@OriginalArg(0) Js5 arg0, @OriginalArg(1) int arg1) {
 		return Static9.method197(arg0, arg1, 0) ? Static23.method2456() : null;
 	}
 
@@ -69,7 +69,7 @@ public final class Static11 {
 		Static24.method2697();
 		Static3.aClass40_11.clear();
 		Static3.aClass96_1 = new Class96();
-		((Class24_Sub1) Static4.anInterface4_1).method460();
+		((Js5GlTextureProvider) Static4.anInterface4_1).clear();
 		Static13.method1027();
 		Static5.aClass50Array1 = new Class50[255];
 		Static5.anInt3736 = 0;
@@ -85,7 +85,7 @@ public final class Static11 {
 				local51.anObject5 = null;
 			}
 		}
-		if (Static3.aBoolean138) {
+		if (GlRenderer.enabled) {
 			Static14.method1205();
 			Static10.method300(Preferences.hdr);
 			Static26.method2969();
@@ -272,7 +272,7 @@ public final class Static11 {
 	}
 
 	@OriginalMember(owner = "client!ce", name = "a", descriptor = "(ILclient!wf;IIIILclient!uj;)V")
-	public static void method525(@OriginalArg(0) int arg0, @OriginalArg(1) Component arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(5) int arg4, @OriginalArg(6) Class4_Sub3_Sub14 arg5) {
+	public static void method525(@OriginalArg(0) int arg0, @OriginalArg(1) Component arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(5) int arg4, @OriginalArg(6) Sprite arg5) {
 		if (arg5 == null) {
 			return;
 		}
@@ -288,10 +288,10 @@ public final class Static11 {
 		local57 = local57 * 256 / (Static6.anInt4761 + 256);
 		@Pc(75) int local75 = arg3 * local57 + arg4 * local45 >> 16;
 		@Pc(86) int local86 = local57 * arg4 - arg3 * local45 >> 16;
-		if (Static3.aBoolean138) {
-			((Class4_Sub3_Sub14_Sub2) arg5).method4517(arg1.anInt5893 / 2 + arg0 + local75 - arg5.anInt5602 / 2, arg1.anInt5949 / 2 + arg2 - arg5.anInt5612 / 2 - local86, (Class4_Sub3_Sub14_Sub2) arg1.method4729(false));
+		if (GlRenderer.enabled) {
+			((GlSprite) arg5).method4517(arg1.anInt5893 / 2 + arg0 + local75 - arg5.anInt5602 / 2, arg1.anInt5949 / 2 + arg2 - arg5.anInt5612 / 2 - local86, (GlSprite) arg1.method4729(false));
 		} else {
-			((Class4_Sub3_Sub14_Sub1) arg5).method2171(arg0 + arg1.anInt5893 / 2 + local75 - arg5.anInt5602 / 2, arg1.anInt5949 / 2 + arg2 - arg5.anInt5612 / 2 - local86, arg1.anIntArray672, arg1.anIntArray657);
+			((SoftwareSprite) arg5).method2171(arg0 + arg1.anInt5893 / 2 + local75 - arg5.anInt5602 / 2, arg1.anInt5949 / 2 + arg2 - arg5.anInt5612 / 2 - local86, arg1.anIntArray672, arg1.anIntArray657);
 		}
 	}
 
@@ -446,9 +446,9 @@ public final class Static11 {
 	public static int method557() {
 		if (GameShell.fullScreenFrame != null) {
 			return 3;
-		} else if (Static3.aBoolean138 && Static4.aBoolean184) {
+		} else if (GlRenderer.enabled && Static4.aBoolean184) {
 			return 2;
-		} else if (Static3.aBoolean138 && !Static4.aBoolean184) {
+		} else if (GlRenderer.enabled && !Static4.aBoolean184) {
 			return 1;
 		} else {
 			return 0;
@@ -614,7 +614,7 @@ public final class Static11 {
 			Static7.anIntArray599[local4001] = 0;
 			Static7.anIntArray637[local4001] = 0;
 		}
-		if (Static3.aBoolean138) {
+		if (GlRenderer.enabled) {
 			Static17.method1655();
 		}
 		Static7.aShortArray124 = Static5.aShortArray74 = Static7.aShortArray111 = Static4.aShortArray126 = new short[256];
@@ -753,7 +753,7 @@ public final class Static11 {
 	}
 
 	@OriginalMember(owner = "client!ci", name = "a", descriptor = "(IILclient!fh;)Lclient!uj;")
-	public static Class4_Sub3_Sub14 method583(@OriginalArg(1) int arg0, @OriginalArg(2) Js5 arg1) {
+	public static Sprite method583(@OriginalArg(1) int arg0, @OriginalArg(2) Js5 arg1) {
 		return Static33.method4131(arg1, arg0) ? Static14.method1063() : null;
 	}
 
@@ -790,7 +790,7 @@ public final class Static11 {
 		Player.self = new Player();
 		Player.self.z = 3000;
 		Player.self.x = 3000;
-		if (!Static3.aBoolean138 && client.game == 0) {
+		if (!GlRenderer.enabled && client.game == 0) {
 			Static21.method2005(client.js5Archive8);
 			Static9.method233(10);
 			return;
@@ -801,7 +801,7 @@ public final class Static11 {
 		} else {
 			Static16.method1496();
 		}
-		if (Static3.aBoolean138) {
+		if (GlRenderer.enabled) {
 			Static17.method1655();
 		}
 		Static28.method3322();

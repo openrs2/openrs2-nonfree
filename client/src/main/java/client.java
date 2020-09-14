@@ -319,7 +319,7 @@ public final class client extends GameShell {
 			Static14.method1060(Static3.anInt5398, GameShell.canvasWidth, 0, 0, 0, 0, GameShell.canvasHeight);
 		}
 		Static6.anInt4979++;
-		if (Static3.aBoolean138) {
+		if (GlRenderer.enabled) {
 			label195:
 			for (@Pc(56) int local56 = 0; local56 < 32768; local56++) {
 				@Pc(65) Npc local65 = Static3.aClass53_Sub1_Sub2Array1[local56];
@@ -354,7 +354,7 @@ public final class client extends GameShell {
 				}
 			}
 		}
-		if (!Static3.aBoolean138 && game == 0) {
+		if (!GlRenderer.enabled && game == 0) {
 			Static14.method1059();
 		} else if (Static3.anInt2574 == 0 && Static6.anInt4759 == 0) {
 			if (Static1.anInt772 == 2) {
@@ -661,19 +661,19 @@ public final class client extends GameShell {
 			}
 		} else if (mainLoadState == 90) {
 			if (js5Archive26.fetchAll()) {
-				@Pc(960) Class24_Sub1 local960 = new Class24_Sub1(js5Archive9, js5Archive26, js5Archive8, 20, !Preferences.highDetailTextures);
+				@Pc(960) Js5GlTextureProvider local960 = new Js5GlTextureProvider(js5Archive9, js5Archive8, js5Archive26, 20, !Preferences.highDetailTextures);
 				Static23.method2551(local960);
 				if (Preferences.brightness == 1) {
-					Static23.method2539(0.9F);
+					ColorUtils.setBrightness(0.9F);
 				}
 				if (Preferences.brightness == 2) {
-					Static23.method2539(0.8F);
+					ColorUtils.setBrightness(0.8F);
 				}
 				if (Preferences.brightness == 3) {
-					Static23.method2539(0.7F);
+					ColorUtils.setBrightness(0.7F);
 				}
 				if (Preferences.brightness == 4) {
-					Static23.method2539(0.6F);
+					ColorUtils.setBrightness(0.6F);
 				}
 				mainLoadPercentage = 70;
 				mainLoadSecondaryText = LocalisedText.MAINLOAD90B;
@@ -774,8 +774,8 @@ public final class client extends GameShell {
 	@OriginalMember(owner = "client!client", name = "a", descriptor = "(B)V")
 	@Override
 	protected final void mainQuit() {
-		if (Static3.aBoolean138) {
-			Static17.method1605();
+		if (GlRenderer.enabled) {
+			GlRenderer.quit();
 		}
 		if (GameShell.fullScreenFrame != null) {
 			Static31.method3658(GameShell.signLink, GameShell.fullScreenFrame);
@@ -1130,7 +1130,7 @@ public final class client extends GameShell {
 		if (local173) {
 			Static29.method3430();
 		}
-		if (Static3.aBoolean138) {
+		if (GlRenderer.enabled) {
 			for (@Pc(188) int local188 = 0; local188 < 100; local188++) {
 				Static2.aBooleanArray8[local188] = true;
 			}
@@ -1162,8 +1162,8 @@ public final class client extends GameShell {
 		} else if (Static4.anInt3304 == 40) {
 			Static37.method4716(LocalisedText.CONLOST + "<br>" + LocalisedText.ATTEMPT_TO_REESTABLISH, false);
 		}
-		if (Static3.aBoolean138 && Static4.anInt3304 != 0) {
-			Static17.method1622();
+		if (GlRenderer.enabled && Static4.anInt3304 != 0) {
+			GlRenderer.swapBuffers();
 			for (@Pc(436) int i = 0; i < Static1.anInt113; i++) {
 				Static6.aBooleanArray24[i] = false;
 			}
@@ -1219,8 +1219,8 @@ public final class client extends GameShell {
 		Static9.method763();
 		Keyboard.loop();
 		Mouse.loop();
-		if (Static3.aBoolean138) {
-			Static25.method2719();
+		if (GlRenderer.enabled) {
+			GlCleaner.loop();
 		}
 		if (mouseWheel != null) {
 			@Pc(73) int wheelRotation = mouseWheel.getWheelRotation();

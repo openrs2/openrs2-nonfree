@@ -45,7 +45,7 @@ public final class Class4_Sub3_Sub11 extends SecondaryNode {
 	@OriginalMember(owner = "client!ij", name = "a", descriptor = "(IZLclient!fd;)V")
 	private void method1906(@OriginalArg(0) int arg0, @OriginalArg(2) Buffer arg1) {
 		if (arg0 == 1) {
-			this.aStringArray17 = Static12.method721('<', arg1.readString());
+			this.aStringArray17 = StringUtils.split(arg1.readString(), '<');
 		} else if (arg0 == 2) {
 			@Pc(103) int local103 = arg1.readUnsignedByte();
 			this.anIntArray212 = new int[local103];

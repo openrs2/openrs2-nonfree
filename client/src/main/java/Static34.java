@@ -1069,7 +1069,7 @@ public final class Static34 {
 				local173 = true;
 			}
 		}
-		if (Static3.aBoolean138 && !arg0) {
+		if (GlRenderer.enabled && !arg0) {
 			@Pc(539) Class187 local539 = null;
 			while (true) {
 				while (local108.position < local108.bytes.length) {
@@ -1201,23 +1201,23 @@ public final class Static34 {
 	}
 
 	@OriginalMember(owner = "client!tn", name = "d", descriptor = "(B)Lclient!vn;")
-	public static Class4_Sub3_Sub14_Sub1 method1546() {
+	public static SoftwareSprite method1546() {
 		@Pc(14) byte[] local14 = Static6.aByteArrayArray36[0];
 		@Pc(22) int local22 = Static7.anIntArray643[0] * Static3.anIntArray185[0];
-		@Pc(66) Class4_Sub3_Sub14_Sub1 local66;
+		@Pc(66) SoftwareSprite local66;
 		if (Static5.aBooleanArray22[0]) {
 			@Pc(71) int[] local71 = new int[local22];
 			@Pc(75) byte[] local75 = Static4.aByteArrayArray54[0];
 			for (@Pc(77) int local77 = 0; local77 < local22; local77++) {
 				local71[local77] = (local75[local77] & 0xFF) << 24 | Static2.anIntArray85[local14[local77] & 0xFF];
 			}
-			local66 = new Class4_Sub3_Sub14_Sub1_Sub1(Static1.anInt889, Static3.anInt2162, Static5.anIntArray402[0], Static5.anIntArray391[0], Static3.anIntArray185[0], Static7.anIntArray643[0], local71);
+			local66 = new SoftwareAlphaSprite(Static1.anInt889, Static3.anInt2162, Static5.anIntArray402[0], Static5.anIntArray391[0], Static3.anIntArray185[0], Static7.anIntArray643[0], local71);
 		} else {
 			@Pc(29) int[] local29 = new int[local22];
 			for (@Pc(31) int local31 = 0; local31 < local22; local31++) {
 				local29[local31] = Static2.anIntArray85[local14[local31] & 0xFF];
 			}
-			local66 = new Class4_Sub3_Sub14_Sub1(Static1.anInt889, Static3.anInt2162, Static5.anIntArray402[0], Static5.anIntArray391[0], Static3.anIntArray185[0], Static7.anIntArray643[0], local29);
+			local66 = new SoftwareSprite(Static1.anInt889, Static3.anInt2162, Static5.anIntArray402[0], Static5.anIntArray391[0], Static3.anIntArray185[0], Static7.anIntArray643[0], local29);
 		}
 		Static37.method4670();
 		return local66;
@@ -1236,7 +1236,7 @@ public final class Static34 {
 	}
 
 	@OriginalMember(owner = "client!tn", name = "a", descriptor = "(ILclient!fh;II)[Lclient!uj;")
-	public static Class4_Sub3_Sub14[] method1548(@OriginalArg(0) int arg0, @OriginalArg(1) Js5 arg1) {
+	public static Sprite[] method1548(@OriginalArg(0) int arg0, @OriginalArg(1) Js5 arg1) {
 		return Static9.method197(arg1, arg0, 0) ? Static21.method2000() : null;
 	}
 

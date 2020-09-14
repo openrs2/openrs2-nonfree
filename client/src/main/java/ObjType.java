@@ -291,7 +291,7 @@ public final class ObjType {
 				local62.method3824(this.resizeX, this.resizeY, this.resizeZ);
 			}
 			local62.aBoolean324 = true;
-			if (Static3.aBoolean138) {
+			if (GlRenderer.enabled) {
 				((Class53_Sub4_Sub2) local62).method3872(false, false, false, false, false, true);
 			}
 			ObjTypeList.models.put((long) this.id, local62);

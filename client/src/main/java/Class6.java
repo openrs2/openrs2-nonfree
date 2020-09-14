@@ -16,8 +16,8 @@ public final class Class6 implements Interface2 {
 
 	@OriginalMember(owner = "client!ae", name = "<init>", descriptor = "()V")
 	public Class6() {
-		if (Static3.aBoolean128) {
-			@Pc(11) GL local11 = Static3.aGL1;
+		if (GlRenderer.arbTextureCubeMapSupported) {
+			@Pc(11) GL local11 = GlRenderer.gl;
 			this.anInt96 = local11.glGenLists(2);
 			local11.glNewList(this.anInt96, GL.GL_COMPILE);
 			local11.glActiveTexture(GL.GL_TEXTURE1);
@@ -55,8 +55,8 @@ public final class Class6 implements Interface2 {
 	@OriginalMember(owner = "client!ae", name = "b", descriptor = "()V")
 	@Override
 	public final void method3484() {
-		@Pc(5) GL local5 = Static3.aGL1;
-		Static17.method1607(1);
+		@Pc(5) GL local5 = GlRenderer.gl;
+		GlRenderer.setTextureCombineAlphaMode(1);
 		if (Static5.aClass4_Sub3_Sub10_6 == null || this.anInt96 < 0 || !Preferences.highDetailLighting) {
 			local5.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_SRC0_ALPHA, GL.GL_PRIMARY_COLOR);
 			return;
@@ -77,7 +77,7 @@ public final class Class6 implements Interface2 {
 	@OriginalMember(owner = "client!ae", name = "a", descriptor = "()V")
 	@Override
 	public final void method3483() {
-		@Pc(5) GL local5 = Static3.aGL1;
+		@Pc(5) GL local5 = GlRenderer.gl;
 		if (this.aBoolean7) {
 			local5.glCallList(this.anInt96 + 1);
 			this.aBoolean7 = false;

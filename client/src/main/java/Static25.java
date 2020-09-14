@@ -6,116 +6,6 @@ import dev.openrs2.deob.annotation.Pc;
 
 public final class Static25 {
 
-	@OriginalMember(owner = "client!mh", name = "c", descriptor = "()V")
-	public static synchronized void method2719() {
-		@Pc(1) GL local1 = Static3.aGL1;
-		@Pc(3) int local3 = 0;
-		while (true) {
-			@Pc(8) IntNode local8 = (IntNode) Static4.aClass112_18.removeHead();
-			if (local8 == null) {
-				if (local3 > 0) {
-					local1.glDeleteBuffersARB(local3, Static4.anIntArray319, 0);
-					local3 = 0;
-				}
-				while (true) {
-					@Pc(48) IntNode local48 = (IntNode) Static4.aClass112_19.removeHead();
-					if (local48 == null) {
-						while (true) {
-							@Pc(79) IntNode local79 = (IntNode) Static4.aClass112_20.removeHead();
-							if (local79 == null) {
-								if (local3 > 0) {
-									local1.glDeleteTextures(local3, Static4.anIntArray319, 0);
-								}
-								while (true) {
-									@Pc(119) IntNode local119 = (IntNode) Static4.aClass112_21.removeHead();
-									if (local119 == null) {
-										while (true) {
-											@Pc(136) Class4_Sub28 local136 = (Class4_Sub28) Static4.aClass112_22.removeHead();
-											if (local136 == null) {
-												while (true) {
-													@Pc(167) IntNode local167 = (IntNode) Static4.aClass112_23.removeHead();
-													if (local167 == null) {
-														if (Static4.anInt3331 + Static4.anInt3333 + Static4.anInt3330 > 100663296 && MonotonicClock.currentTimeMillis() > Static4.aLong118 + 60000L) {
-															System.gc();
-															Static4.aLong118 = MonotonicClock.currentTimeMillis();
-														}
-														return;
-													}
-													@Pc(174) int local174 = (int) local167.key;
-													local1.glDeleteObjectARB(local174);
-												}
-											}
-											for (@Pc(141) int local141 = 0; local141 < local136.aClass43Array2.length; local141++) {
-												local1.glDetachObjectARB(local136.anInt4717, local136.aClass43Array2[local141].anInt1199);
-											}
-											local1.glDeleteObjectARB(local136.anInt4717);
-										}
-									}
-									@Pc(126) int local126 = (int) local119.key;
-									local1.glDeleteLists(local126, 1);
-								}
-							}
-							Static4.anIntArray319[local3++] = (int) local79.key;
-							Static4.anInt3330 -= local79.value;
-							if (local3 == 1000) {
-								local1.glDeleteTextures(local3, Static4.anIntArray319, 0);
-								local3 = 0;
-							}
-						}
-					}
-					Static4.anIntArray319[local3++] = (int) local48.key;
-					Static4.anInt3333 -= local48.value;
-					if (local3 == 1000) {
-						local1.glDeleteTextures(local3, Static4.anIntArray319, 0);
-						local3 = 0;
-					}
-				}
-			}
-			Static4.anIntArray319[local3++] = (int) local8.key;
-			Static4.anInt3331 -= local8.value;
-			if (local3 == 1000) {
-				local1.glDeleteBuffersARB(local3, Static4.anIntArray319, 0);
-				local3 = 0;
-			}
-		}
-	}
-
-	@OriginalMember(owner = "client!mh", name = "a", descriptor = "(III)V")
-	public static synchronized void method2720(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
-		if (arg2 == Static4.anInt3332) {
-			@Pc(8) IntNode local8 = new IntNode(arg1);
-			local8.key = arg0;
-			Static4.aClass112_20.addTail(local8);
-		}
-	}
-
-	@OriginalMember(owner = "client!mh", name = "b", descriptor = "(III)V")
-	public static synchronized void method2721(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
-		if (arg2 == Static4.anInt3332) {
-			@Pc(8) IntNode local8 = new IntNode(arg1);
-			local8.key = arg0;
-			Static4.aClass112_18.addTail(local8);
-		}
-	}
-
-	@OriginalMember(owner = "client!mh", name = "c", descriptor = "(III)V")
-	public static synchronized void method2722(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
-		if (arg2 == Static4.anInt3332) {
-			@Pc(8) IntNode local8 = new IntNode(arg1);
-			local8.key = arg0;
-			Static4.aClass112_19.addTail(local8);
-		}
-	}
-
-	@OriginalMember(owner = "client!mh", name = "b", descriptor = "(II)V")
-	public static synchronized void method2723(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
-		if (arg1 == Static4.anInt3332) {
-			@Pc(7) IntNode local7 = new IntNode();
-			local7.key = arg0;
-			Static4.aClass112_23.addTail(local7);
-		}
-	}
-
 	@OriginalMember(owner = "client!mi", name = "b", descriptor = "(B)[Lclient!ub;")
 	public static Class169[] method2725() {
 		if (Static3.aClass169Array1 == null) {
@@ -195,7 +85,7 @@ public final class Static25 {
 			Static2.anInt1344 = Static7.anInt5590;
 		}
 		@Pc(99) short local99;
-		if (Static3.aBoolean138) {
+		if (GlRenderer.enabled) {
 			local99 = 3584;
 		} else {
 			local99 = 3500;
@@ -234,7 +124,7 @@ public final class Static25 {
 		if (Static7.aClass4_Sub19ArrayArrayArray3 != null) {
 			Static35.method4368(true);
 			Static31.method3797(arg0, arg1, arg2, null, 0, (byte) 0, arg13, arg14);
-			if (Static3.aBoolean138) {
+			if (GlRenderer.enabled) {
 				Static3.aBoolean175 = false;
 				Static24.method2652(0, 0);
 				method2772(null);
@@ -246,7 +136,7 @@ public final class Static25 {
 	}
 
 	@OriginalMember(owner = "client!mj", name = "a", descriptor = "(IIBLclient!fh;)[Lclient!vn;")
-	public static Class4_Sub3_Sub14_Sub1[] method2729(@OriginalArg(1) int arg0, @OriginalArg(3) Js5 arg1) {
+	public static SoftwareSprite[] method2729(@OriginalArg(1) int arg0, @OriginalArg(3) Js5 arg1) {
 		return Static9.method197(arg1, arg0, 0) ? Static8.method103() : null;
 	}
 
@@ -337,7 +227,7 @@ public final class Static25 {
 		if (arg0 == null) {
 			arg0 = Static4.aFloatArray39;
 		}
-		@Pc(5) GL local5 = Static3.aGL1;
+		@Pc(5) GL local5 = GlRenderer.gl;
 		local5.glFogfv(GL.GL_FOG_COLOR, arg0, 0);
 	}
 
@@ -375,7 +265,7 @@ public final class Static25 {
 
 	@OriginalMember(owner = "client!mn", name = "d", descriptor = "()V")
 	public static void method2777() {
-		@Pc(1) GL local1 = Static3.aGL1;
+		@Pc(1) GL local1 = GlRenderer.gl;
 		local1.glLightfv(GL.GL_LIGHT0, GL.GL_POSITION, Static4.aFloatArray40, 0);
 		local1.glLightfv(GL.GL_LIGHT1, GL.GL_POSITION, Static4.aFloatArray41, 0);
 	}
@@ -387,7 +277,7 @@ public final class Static25 {
 
 	@OriginalMember(owner = "client!mn", name = "f", descriptor = "()V")
 	public static void method2779() {
-		@Pc(1) GL local1 = Static3.aGL1;
+		@Pc(1) GL local1 = GlRenderer.gl;
 		local1.glColorMaterial(GL.GL_FRONT, GL.GL_AMBIENT_AND_DIFFUSE);
 		local1.glEnable(GL.GL_COLOR_MATERIAL);
 		@Pc(27) float[] local27 = new float[] { 0.0F, 0.0F, 0.0F, 1.0F };
@@ -408,7 +298,7 @@ public final class Static25 {
 		}
 		Static4.anInt3367 = arg0;
 		Static4.anInt3362 = arg1;
-		@Pc(14) GL local14 = Static3.aGL1;
+		@Pc(14) GL local14 = GlRenderer.gl;
 		Static4.aFloatArray39[0] = (float) (arg0 >> 16 & 0xFF) / 255.0F;
 		Static4.aFloatArray39[1] = (float) (arg0 >> 8 & 0xFF) / 255.0F;
 		Static4.aFloatArray39[2] = (float) (arg0 & 0xFF) / 255.0F;
@@ -433,7 +323,7 @@ public final class Static25 {
 		Static4.aFloat82 = arg1;
 		Static4.aFloat81 = arg2;
 		Static4.aFloat80 = arg3;
-		@Pc(25) GL local25 = Static3.aGL1;
+		@Pc(25) GL local25 = GlRenderer.gl;
 		@Pc(34) float local34 = (float) (arg0 >> 16 & 0xFF) / 255.0F;
 		@Pc(43) float local43 = (float) (arg0 >> 8 & 0xFF) / 255.0F;
 		@Pc(50) float local50 = (float) (arg0 & 0xFF) / 255.0F;
@@ -455,19 +345,19 @@ public final class Static25 {
 			if (client.js5Archive8.isFileReady(Static1.anInt771) && client.js5Archive8.isFileReady(Static4.anInt3336)) {
 				Static6.aClass4_Sub3_Sub14_5 = Static31.method3691(client.js5Archive8, Static1.anInt771);
 				Static2.aClass4_Sub3_Sub14_2 = Static31.method3691(client.js5Archive8, Static4.anInt3336);
-				if (Static3.aBoolean138) {
-					if (Static6.aClass4_Sub3_Sub14_5 instanceof Class4_Sub3_Sub14_Sub1_Sub1) {
-						Static6.aClass4_Sub3_Sub14_5 = new Class4_Sub3_Sub14_Sub2_Sub1((Class4_Sub3_Sub14_Sub1) Static6.aClass4_Sub3_Sub14_5);
+				if (GlRenderer.enabled) {
+					if (Static6.aClass4_Sub3_Sub14_5 instanceof SoftwareAlphaSprite) {
+						Static6.aClass4_Sub3_Sub14_5 = new GlAlphaSprite((SoftwareSprite) Static6.aClass4_Sub3_Sub14_5);
 					} else {
-						Static6.aClass4_Sub3_Sub14_5 = new Class4_Sub3_Sub14_Sub2((Class4_Sub3_Sub14_Sub1) Static6.aClass4_Sub3_Sub14_5);
+						Static6.aClass4_Sub3_Sub14_5 = new GlSprite((SoftwareSprite) Static6.aClass4_Sub3_Sub14_5);
 					}
-					if (Static2.aClass4_Sub3_Sub14_2 instanceof Class4_Sub3_Sub14_Sub1_Sub1) {
-						Static2.aClass4_Sub3_Sub14_2 = new Class4_Sub3_Sub14_Sub2_Sub1((Class4_Sub3_Sub14_Sub1) Static2.aClass4_Sub3_Sub14_2);
+					if (Static2.aClass4_Sub3_Sub14_2 instanceof SoftwareAlphaSprite) {
+						Static2.aClass4_Sub3_Sub14_2 = new GlAlphaSprite((SoftwareSprite) Static2.aClass4_Sub3_Sub14_2);
 					} else {
-						Static2.aClass4_Sub3_Sub14_2 = new Class4_Sub3_Sub14_Sub2((Class4_Sub3_Sub14_Sub1) Static2.aClass4_Sub3_Sub14_2);
+						Static2.aClass4_Sub3_Sub14_2 = new GlSprite((SoftwareSprite) Static2.aClass4_Sub3_Sub14_2);
 					}
 				}
-			} else if (Static3.aBoolean138) {
+			} else if (GlRenderer.enabled) {
 				Static18.method1691(local3, local5, local21, 20, Static5.anInt4293, 256 - Static3.anInt2587);
 			} else {
 				Static34.method4213(local3, local5, local21, 20, Static5.anInt4293, 256 - Static3.anInt2587);
@@ -482,7 +372,7 @@ public final class Static25 {
 			Static2.aClass4_Sub3_Sub14_2.method4511(local21 + local3 - Static2.aClass4_Sub3_Sub14_2.width, local5);
 		}
 		Static5.aClass4_Sub3_Sub5_3.method2259(LocalisedText.CHOOSE_OPTION, local3 + 3, local5 + 14, Static1.anInt504, -1);
-		if (Static3.aBoolean138) {
+		if (GlRenderer.enabled) {
 			Static18.method1691(local3, local5 + 20, local21, local13 - 20, Static5.anInt4293, 256 - Static3.anInt2587);
 		} else {
 			Static34.method4213(local3, local5 + 20, local21, local13 - 20, Static5.anInt4293, 256 - Static3.anInt2587);
@@ -492,7 +382,7 @@ public final class Static25 {
 		for (@Pc(215) int local215 = 0; local215 < Static7.anInt5634; local215++) {
 			@Pc(233) int local233 = (Static7.anInt5634 - local215 - 1) * 15 + local5 + 20 + 13;
 			if (local3 < local211 && local21 + local3 > local211 && local233 - 13 < local213 && local233 + 3 > local213) {
-				if (Static3.aBoolean138) {
+				if (GlRenderer.enabled) {
 					Static18.method1691(local3, local233 - 12, local21, 15, Static1.anInt497, 256 - Static3.anInt2586);
 				} else {
 					Static34.method4213(local3, local233 - 12, local21, 15, Static1.anInt497, 256 - Static3.anInt2586);
@@ -503,21 +393,21 @@ public final class Static25 {
 			Static7.aClass4_Sub3_Sub14_9 = Static31.method3691(client.js5Archive8, Static1.anInt593);
 			Static6.aClass4_Sub3_Sub14_8 = Static31.method3691(client.js5Archive8, Static4.anInt2741);
 			Static1.aClass4_Sub3_Sub14_1 = Static31.method3691(client.js5Archive8, Static1.anInt881);
-			if (Static3.aBoolean138) {
-				if (Static7.aClass4_Sub3_Sub14_9 instanceof Class4_Sub3_Sub14_Sub1_Sub1) {
-					Static7.aClass4_Sub3_Sub14_9 = new Class4_Sub3_Sub14_Sub2_Sub1((Class4_Sub3_Sub14_Sub1) Static7.aClass4_Sub3_Sub14_9);
+			if (GlRenderer.enabled) {
+				if (Static7.aClass4_Sub3_Sub14_9 instanceof SoftwareAlphaSprite) {
+					Static7.aClass4_Sub3_Sub14_9 = new GlAlphaSprite((SoftwareSprite) Static7.aClass4_Sub3_Sub14_9);
 				} else {
-					Static7.aClass4_Sub3_Sub14_9 = new Class4_Sub3_Sub14_Sub2((Class4_Sub3_Sub14_Sub1) Static7.aClass4_Sub3_Sub14_9);
+					Static7.aClass4_Sub3_Sub14_9 = new GlSprite((SoftwareSprite) Static7.aClass4_Sub3_Sub14_9);
 				}
-				if (Static6.aClass4_Sub3_Sub14_8 instanceof Class4_Sub3_Sub14_Sub1_Sub1) {
-					Static6.aClass4_Sub3_Sub14_8 = new Class4_Sub3_Sub14_Sub2_Sub1((Class4_Sub3_Sub14_Sub1) Static6.aClass4_Sub3_Sub14_8);
+				if (Static6.aClass4_Sub3_Sub14_8 instanceof SoftwareAlphaSprite) {
+					Static6.aClass4_Sub3_Sub14_8 = new GlAlphaSprite((SoftwareSprite) Static6.aClass4_Sub3_Sub14_8);
 				} else {
-					Static6.aClass4_Sub3_Sub14_8 = new Class4_Sub3_Sub14_Sub2((Class4_Sub3_Sub14_Sub1) Static6.aClass4_Sub3_Sub14_8);
+					Static6.aClass4_Sub3_Sub14_8 = new GlSprite((SoftwareSprite) Static6.aClass4_Sub3_Sub14_8);
 				}
-				if (Static1.aClass4_Sub3_Sub14_1 instanceof Class4_Sub3_Sub14_Sub1_Sub1) {
-					Static1.aClass4_Sub3_Sub14_1 = new Class4_Sub3_Sub14_Sub2_Sub1((Class4_Sub3_Sub14_Sub1) Static1.aClass4_Sub3_Sub14_1);
+				if (Static1.aClass4_Sub3_Sub14_1 instanceof SoftwareAlphaSprite) {
+					Static1.aClass4_Sub3_Sub14_1 = new GlAlphaSprite((SoftwareSprite) Static1.aClass4_Sub3_Sub14_1);
 				} else {
-					Static1.aClass4_Sub3_Sub14_1 = new Class4_Sub3_Sub14_Sub2((Class4_Sub3_Sub14_Sub1) Static1.aClass4_Sub3_Sub14_1);
+					Static1.aClass4_Sub3_Sub14_1 = new GlSprite((SoftwareSprite) Static1.aClass4_Sub3_Sub14_1);
 				}
 			}
 		}

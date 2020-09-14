@@ -26,7 +26,7 @@ public final class Class4_Sub12 extends Node {
 	private int[] anIntArray203;
 
 	@OriginalMember(owner = "client!ih", name = "A", descriptor = "Lclient!lk;")
-	private Class111 aClass111_2;
+	private GlBuffer aClass111_2;
 
 	@OriginalMember(owner = "client!ih", name = "C", descriptor = "[I")
 	private int[] anIntArray204;
@@ -107,7 +107,7 @@ public final class Class4_Sub12 extends Node {
 	public final void method1866() {
 		@Pc(12) Buffer local12 = new Buffer((this.aBoolean161 ? 40 : 36) * this.anInt2357);
 		for (@Pc(14) int local14 = 0; local14 < this.anInt2357; local14++) {
-			if (Static3.aBoolean126) {
+			if (GlRenderer.bigEndian) {
 				local12.writeFloat((float) this.anIntArray203[local14]);
 				local12.writeFloat((float) this.anIntArray207[local14]);
 				local12.writeFloat((float) this.anIntArray205[local14]);
@@ -135,10 +135,10 @@ public final class Class4_Sub12 extends Node {
 				}
 			}
 		}
-		if (Static3.aBoolean135) {
+		if (GlRenderer.arbVboSupported) {
 			@Pc(200) ByteBuffer local200 = ByteBuffer.wrap(local12.bytes, 0, local12.position);
-			this.aClass111_2 = new Class111();
-			this.aClass111_2.method2602(local200);
+			this.aClass111_2 = new GlBuffer();
+			this.aClass111_2.setArrayBuffer(local200);
 		} else {
 			this.aByteBuffer6 = ByteBuffer.allocateDirect(local12.position).order(ByteOrder.nativeOrder());
 			this.aByteBuffer6.put(local12.bytes, 0, local12.position);
@@ -167,7 +167,7 @@ public final class Class4_Sub12 extends Node {
 		} else {
 			Static3.aClass4_Sub10_5.position = 0;
 		}
-		if (Static3.aBoolean126) {
+		if (GlRenderer.bigEndian) {
 			for (@Pc(47) int local47 = 0; local47 < this.anInt2350; local47++) {
 				@Pc(68) Class4_Sub19 local68 = arg0[this.anIntArray202[local47]][this.anIntArray204[local47]][this.anIntArray206[local47]];
 				if (local68 != null && local68.aBoolean257) {
@@ -219,16 +219,16 @@ public final class Class4_Sub12 extends Node {
 		if (Static3.aClass4_Sub10_4.position == 0 && Static3.aClass4_Sub10_5.position == 0) {
 			return;
 		}
-		@Pc(257) GL local257 = Static3.aGL1;
+		@Pc(257) GL local257 = GlRenderer.gl;
 		if (this.anInt2356 == -1 || arg2) {
-			Static17.method1600(-1);
+			GlRenderer.setTextureId(-1);
 			Static24.method2652(0, 0);
 		} else {
 			Static4.anInterface4_1.method451(this.anInt2356);
 		}
 		@Pc(282) int local282 = this.aBoolean161 ? 40 : 36;
 		if (this.aClass111_2 == null) {
-			if (Static3.aBoolean135) {
+			if (GlRenderer.arbVboSupported) {
 				local257.glBindBufferARB(GL.GL_ARRAY_BUFFER, 0);
 			}
 			this.aByteBuffer6.position(0);
@@ -248,7 +248,7 @@ public final class Class4_Sub12 extends Node {
 				local257.glClientActiveTexture(GL.GL_TEXTURE0);
 			}
 		} else {
-			this.aClass111_2.method2604();
+			this.aClass111_2.bindArray();
 			local257.glVertexPointer(3, GL.GL_FLOAT, local282, 0L);
 			local257.glColorPointer(4, GL.GL_UNSIGNED_BYTE, local282, 12L);
 			if (Preferences.highDetailLighting) {
@@ -261,7 +261,7 @@ public final class Class4_Sub12 extends Node {
 				local257.glClientActiveTexture(GL.GL_TEXTURE0);
 			}
 		}
-		if (Static3.aBoolean135) {
+		if (GlRenderer.arbVboSupported) {
 			local257.glBindBufferARB(GL.GL_ELEMENT_ARRAY_BUFFER, 0);
 		}
 		if (Static3.aClass4_Sub10_4.position != 0) {
@@ -272,7 +272,7 @@ public final class Class4_Sub12 extends Node {
 			}
 			Static3.aByteBuffer5.put(Static3.aClass4_Sub10_4.bytes, 0, Static3.aClass4_Sub10_4.position);
 			Static3.aByteBuffer5.flip();
-			Static17.method1613(arg1);
+			GlRenderer.method1613(arg1);
 			local257.glDrawElements(GL.GL_TRIANGLES, Static3.aClass4_Sub10_4.position / 4, GL.GL_UNSIGNED_INT, Static3.aByteBuffer5);
 		}
 		if (Static3.aClass4_Sub10_5.position == 0) {
@@ -285,10 +285,10 @@ public final class Class4_Sub12 extends Node {
 		}
 		Static3.aByteBuffer4.put(Static3.aClass4_Sub10_5.bytes, 0, Static3.aClass4_Sub10_5.position);
 		Static3.aByteBuffer4.flip();
-		Static17.method1613(arg1 - 100.0F);
-		Static16.method1589();
+		GlRenderer.method1613(arg1 - 100.0F);
+		GlRenderer.disableDepthMask();
 		local257.glDrawElements(GL.GL_TRIANGLES, Static3.aClass4_Sub10_5.position / 4, GL.GL_UNSIGNED_INT, Static3.aByteBuffer4);
-		Static16.method1591();
+		GlRenderer.enableDepthMask();
 	}
 
 	@OriginalMember(owner = "client!ih", name = "a", descriptor = "(III[I[IZ)I")

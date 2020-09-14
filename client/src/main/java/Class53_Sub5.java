@@ -70,7 +70,7 @@ public final class Class53_Sub5 extends Entity {
 
 	@OriginalMember(owner = "client!o", name = "a", descriptor = "(ILclient!vg;)V")
 	private void method3057(@OriginalArg(1) Class53_Sub4 arg0) {
-		if (Static3.aBoolean138) {
+		if (GlRenderer.enabled) {
 			@Pc(55) Class53_Sub4_Sub2 local55 = (Class53_Sub4_Sub2) arg0;
 			if ((this.aClass20_Sub3_4 == null || this.aClass20_Sub3_4.aBoolean250) && (local55.aClass158Array3 != null || local55.aClass167Array3 != null)) {
 				this.aClass20_Sub3_4 = new Class20_Sub3(Static2.anInt954, 1, 1);

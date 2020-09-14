@@ -28,7 +28,7 @@ public final class Class135 {
 	private byte[] aByteArray54;
 
 	@OriginalMember(owner = "client!pi", name = "g", descriptor = "Lclient!lk;")
-	private Class111 aClass111_5;
+	private GlBuffer aClass111_5;
 
 	@OriginalMember(owner = "client!pi", name = "h", descriptor = "I")
 	public int anInt4161;
@@ -40,7 +40,7 @@ public final class Class135 {
 	private int[] anIntArray437;
 
 	@OriginalMember(owner = "client!pi", name = "k", descriptor = "Lclient!lk;")
-	private Class111 aClass111_6;
+	private GlBuffer aClass111_6;
 
 	@OriginalMember(owner = "client!pi", name = "l", descriptor = "I")
 	public int anInt4162;
@@ -80,21 +80,21 @@ public final class Class135 {
 
 	@OriginalMember(owner = "client!pi", name = "b", descriptor = "()V")
 	public final void method3433() {
-		@Pc(1) GL local1 = Static3.aGL1;
-		if (Static3.aBoolean135) {
-			this.aClass111_5.method2604();
+		@Pc(1) GL local1 = GlRenderer.gl;
+		if (GlRenderer.arbVboSupported) {
+			this.aClass111_5.bindArray();
 			local1.glInterleavedArrays(GL.GL_C4UB_V3F, 16, 0L);
-			Static3.aBoolean136 = false;
-			this.aClass111_6.method2603();
+			GlRenderer.normalArrayEnabled = false;
+			this.aClass111_6.bindElementArray();
 			local1.glDrawElements(GL.GL_TRIANGLES, this.anInt4162, GL.GL_UNSIGNED_INT, 0L);
 			return;
 		}
-		if (Static3.aBoolean135) {
+		if (GlRenderer.arbVboSupported) {
 			local1.glBindBufferARB(GL.GL_ARRAY_BUFFER, 0);
 			local1.glBindBufferARB(GL.GL_ELEMENT_ARRAY_BUFFER, 0);
 		}
 		local1.glInterleavedArrays(GL.GL_C4UB_V3F, 16, this.aByteBuffer13);
-		Static3.aBoolean136 = false;
+		GlRenderer.normalArrayEnabled = false;
 		local1.glDrawElements(GL.GL_TRIANGLES, this.anInt4162, GL.GL_UNSIGNED_INT, this.aByteBuffer14);
 	}
 
@@ -102,7 +102,7 @@ public final class Class135 {
 	public final void method3434() {
 		@Pc(7) Buffer local7 = new Buffer(this.anInt4162 * 4);
 		@Pc(15) Buffer local15 = new Buffer(this.anInt4161 * 16);
-		if (Static3.aBoolean126) {
+		if (GlRenderer.bigEndian) {
 			for (@Pc(19) int local19 = 0; local19 < this.anInt4161; local19++) {
 				local15.writeByte(this.aByteArray53[local19]);
 				local15.writeByte(this.aByteArray54[local19]);
@@ -129,13 +129,13 @@ public final class Class135 {
 				local7.writeIntLE(this.anIntArray437[local149]);
 			}
 		}
-		if (Static3.aBoolean135) {
-			this.aClass111_5 = new Class111();
+		if (GlRenderer.arbVboSupported) {
+			this.aClass111_5 = new GlBuffer();
 			@Pc(173) ByteBuffer local173 = ByteBuffer.wrap(local15.bytes);
-			this.aClass111_5.method2602(local173);
-			this.aClass111_6 = new Class111();
+			this.aClass111_5.setArrayBuffer(local173);
+			this.aClass111_6 = new GlBuffer();
 			local173 = ByteBuffer.wrap(local7.bytes);
-			this.aClass111_6.method2601(local173);
+			this.aClass111_6.setElementArrayBuffer(local173);
 		} else {
 			this.aByteBuffer13 = ByteBuffer.allocateDirect(local15.position);
 			this.aByteBuffer13.put(local15.bytes);

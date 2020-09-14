@@ -24,7 +24,7 @@ public final class Class158 {
 		this.anInt4864 = arg3;
 		this.anInt4868 = arg2;
 		this.anInt4869 = arg1;
-		if (Static3.aBoolean138 || local5.anInt2433 == -1) {
+		if (GlRenderer.enabled || local5.anInt2433 == -1) {
 			this.aClass89_2 = local5;
 		} else {
 			this.aClass89_2 = Static32.method3982(local5.anInt2433);

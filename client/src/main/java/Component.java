@@ -601,7 +601,7 @@ public final class Component {
 	}
 
 	@OriginalMember(owner = "client!wf", name = "a", descriptor = "(BI)Lclient!uj;")
-	public final Class4_Sub3_Sub14 method4724(@OriginalArg(1) int arg0) {
+	public final Sprite method4724(@OriginalArg(1) int arg0) {
 		Static3.aBoolean178 = false;
 		if (arg0 < 0 || arg0 >= this.anIntArray658.length) {
 			return null;
@@ -610,11 +610,11 @@ public final class Component {
 		if (local27 == -1) {
 			return null;
 		}
-		@Pc(39) Class4_Sub3_Sub14 local39 = (Class4_Sub3_Sub14) Static6.aClass26_48.get((long) local27);
+		@Pc(39) Sprite local39 = (Sprite) Static6.aClass26_48.get((long) local27);
 		if (local39 != null) {
 			return local39;
 		}
-		@Pc(50) Class4_Sub3_Sub14 local50 = Static20.method1917(local27, InterfaceList.spritesArchive);
+		@Pc(50) Sprite local50 = Static20.method1917(local27, InterfaceList.spritesArchive);
 		if (local50 == null) {
 			Static3.aBoolean178 = true;
 		} else {
@@ -862,7 +862,7 @@ public final class Component {
 	}
 
 	@OriginalMember(owner = "client!wf", name = "a", descriptor = "(ZB)Lclient!uj;")
-	public final Class4_Sub3_Sub14 method4729(@OriginalArg(0) boolean arg0) {
+	public final Sprite method4729(@OriginalArg(0) boolean arg0) {
 		Static3.aBoolean178 = false;
 		@Pc(12) int local12;
 		if (arg0) {
@@ -874,11 +874,11 @@ public final class Component {
 			return null;
 		}
 		@Pc(66) long local66 = ((this.aBoolean406 ? 1L : 0L) << 39) + ((long) this.anInt5975 << 36) + (long) local12 + ((this.aBoolean412 ? 1L : 0L) << 35) + ((this.aBoolean404 ? 1L : 0L) << 38) + ((long) this.anInt5934 << 40);
-		@Pc(72) Class4_Sub3_Sub14 local72 = (Class4_Sub3_Sub14) Static6.aClass26_48.get(local66);
+		@Pc(72) Sprite local72 = (Sprite) Static6.aClass26_48.get(local66);
 		if (local72 != null) {
 			return local72;
 		}
-		@Pc(86) Class4_Sub3_Sub14_Sub1 local86;
+		@Pc(86) SoftwareSprite local86;
 		if (this.aBoolean412) {
 			local86 = Static31.method3691(InterfaceList.spritesArchive, local12);
 		} else {
@@ -906,13 +906,13 @@ public final class Component {
 		if (this.anInt5934 != 0) {
 			local86.method2168(this.anInt5934);
 		}
-		@Pc(156) Class4_Sub3_Sub14 local156;
-		if (!Static3.aBoolean138) {
+		@Pc(156) Sprite local156;
+		if (!GlRenderer.enabled) {
 			local156 = local86;
-		} else if (local86 instanceof Class4_Sub3_Sub14_Sub1_Sub1) {
-			local156 = new Class4_Sub3_Sub14_Sub2_Sub1(local86);
+		} else if (local86 instanceof SoftwareAlphaSprite) {
+			local156 = new GlAlphaSprite(local86);
 		} else {
-			local156 = new Class4_Sub3_Sub14_Sub2(local86);
+			local156 = new GlSprite(local86);
 		}
 		Static6.aClass26_48.put(local66, local156);
 		return local156;
@@ -1127,7 +1127,7 @@ public final class Component {
 	}
 
 	@OriginalMember(owner = "client!wf", name = "a", descriptor = "(B[Lclient!ma;)Lclient!gl;")
-	public final Class4_Sub3_Sub5 method4734(@OriginalArg(1) Class56[] arg0) {
+	public final Class4_Sub3_Sub5 method4734(@OriginalArg(1) IndexedSprite[] arg0) {
 		Static3.aBoolean178 = false;
 		if (this.anInt5954 == -1) {
 			return null;
@@ -1151,7 +1151,7 @@ public final class Component {
 		if (this.anIntArray672 != null) {
 			return true;
 		}
-		@Pc(19) Class56_Sub1 local19 = Static33.method3003(InterfaceList.spritesArchive, this.anInt5947);
+		@Pc(19) SoftwareIndexedSprite local19 = Static33.method3003(InterfaceList.spritesArchive, this.anInt5947);
 		if (local19 == null) {
 			return false;
 		}

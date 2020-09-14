@@ -102,13 +102,13 @@ public final class Class82 {
 	}
 
 	@OriginalMember(owner = "client!ho", name = "a", descriptor = "(B)Lclient!fe;")
-	public final Class56_Sub1 method1808() {
-		@Pc(22) Class56_Sub1 local22 = (Class56_Sub1) Static3.aClass26_23.get((long) (this.anInt2279 | 0x20000));
+	public final SoftwareIndexedSprite method1808() {
+		@Pc(22) SoftwareIndexedSprite local22 = (SoftwareIndexedSprite) Static3.aClass26_23.get((long) (this.anInt2279 | 0x20000));
 		if (local22 != null) {
 			return local22;
 		}
 		Static3.aClass58_60.isFileReady(this.anInt2279);
-		@Pc(41) Class56_Sub1 local41 = Static33.method3003(Static3.aClass58_60, this.anInt2279);
+		@Pc(41) SoftwareIndexedSprite local41 = Static33.method3003(Static3.aClass58_60, this.anInt2279);
 		if (local41 != null) {
 			local41.anInt3412 = local41.anInt3408;
 			local41.anInt3404 = 0;
@@ -217,16 +217,16 @@ public final class Class82 {
 	}
 
 	@OriginalMember(owner = "client!ho", name = "a", descriptor = "(ZZZ)Lclient!ma;")
-	public final Class56 method1811(@OriginalArg(0) boolean arg0, @OriginalArg(2) boolean arg1) {
+	public final IndexedSprite method1811(@OriginalArg(0) boolean arg0, @OriginalArg(2) boolean arg1) {
 		@Pc(17) int local17 = arg0 ? this.anInt2291 : this.anInt2277;
-		@Pc(30) Class56 local30 = (Class56) Static3.aClass26_23.get((long) (local17 | (arg0 ? 65536 : 0)));
+		@Pc(30) IndexedSprite local30 = (IndexedSprite) Static3.aClass26_23.get((long) (local17 | (arg0 ? 65536 : 0)));
 		if (local30 != null) {
 			return local30;
 		} else if (Static3.aClass58_60.isFileReady(local17)) {
-			@Pc(49) Class56_Sub1 local49 = Static33.method3003(Static3.aClass58_60, local17);
-			@Pc(55) Class56 local55;
-			if (Static3.aBoolean138 && !arg1) {
-				local55 = new Class56_Sub2(local49);
+			@Pc(49) SoftwareIndexedSprite local49 = Static33.method3003(Static3.aClass58_60, local17);
+			@Pc(55) IndexedSprite local55;
+			if (GlRenderer.enabled && !arg1) {
+				local55 = new GlIndexedSprite(local49);
 			} else {
 				local55 = local49;
 			}

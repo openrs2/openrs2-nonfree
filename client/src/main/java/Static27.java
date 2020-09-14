@@ -104,7 +104,7 @@ public final class Static27 {
 		Static4.aByteArrayArrayArray17 = new byte[4][104][104];
 		Static1.aByteArrayArrayArray2 = new byte[4][104][104];
 		Static4.aClass112ArrayArrayArray1 = new LinkedList[4][104][104];
-		if (Static3.aBoolean138) {
+		if (GlRenderer.enabled) {
 			method3109();
 			Static14.method1205();
 			Static5.aClass187ArrayArray1 = new Class187[13][13];
@@ -289,13 +289,13 @@ public final class Static27 {
 		if (!Preferences.highDetailLighting) {
 			return;
 		}
-		@Pc(4) GL local4 = Static3.aGL1;
+		@Pc(4) GL local4 = GlRenderer.gl;
 		Static24.method2652(0, 0);
-		Static17.method1597(0);
-		Static16.method1595();
-		Static17.method1600(Static3.anInt2075);
+		GlRenderer.setTextureCombineRgbMode(0);
+		GlRenderer.method1595();
+		GlRenderer.setTextureId(GlRenderer.anInt2075);
 		local4.glDepthMask(false);
-		Static17.method1610(false);
+		GlRenderer.setLightingEnabled(false);
 		local4.glBlendFunc(GL.GL_DST_COLOR, GL.GL_ONE);
 		local4.glFogfv(GL.GL_FOG_COLOR, new float[] { 0.0F, 0.0F, 0.0F, 0.0F }, 0);
 		local4.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_SRC0_RGB, GL.GL_CONSTANT);
@@ -334,7 +334,7 @@ public final class Static27 {
 							local160 = arg2[local66][local155][local112];
 						}
 						if (local66 < 0 || local160 != null && local160.aBoolean257) {
-							Static17.method1613(201.5F - (float) local63.anInt1326 * 50.0F - 1.5F);
+							GlRenderer.method1613(201.5F - (float) local63.anInt1326 * 50.0F - 1.5F);
 							local4.glTexEnvfv(GL.GL_TEXTURE_ENV, GL.GL_TEXTURE_ENV_COLOR, new float[] { 0.0F, 0.0F, 0.0F, local63.aFloat33 }, 0);
 							local63.aClass135_1.method3433();
 							continue label71;
@@ -349,7 +349,7 @@ public final class Static27 {
 		local4.glDepthMask(true);
 		local4.glFogfv(GL.GL_FOG_COLOR, Static4.aFloatArray39, 0);
 		local4.glEnableClientState(GL.GL_TEXTURE_COORD_ARRAY);
-		Static17.method1618();
+		GlRenderer.method1618();
 	}
 
 	@OriginalMember(owner = "client!od", name = "a", descriptor = "(IIIII)V")
@@ -384,7 +384,7 @@ public final class Static27 {
 
 	@OriginalMember(owner = "client!od", name = "c", descriptor = "()V")
 	public static void method3118() {
-		@Pc(1) GL local1 = Static3.aGL1;
+		@Pc(1) GL local1 = GlRenderer.gl;
 		for (@Pc(3) int local3 = 0; local3 < 4; local3++) {
 			@Pc(10) int local10 = local3 + 16388;
 			local1.glLightfv(local10, GL.GL_AMBIENT, new float[] { 0.0F, 0.0F, 0.0F, 1.0F }, 0);
@@ -496,7 +496,7 @@ public final class Static27 {
 		if (Static5.aBooleanArray21[arg0]) {
 			Static5.aBooleanArray21[arg0] = false;
 			@Pc(14) int local14 = arg0 + 16384 + 4;
-			@Pc(16) GL local16 = Static3.aGL1;
+			@Pc(16) GL local16 = GlRenderer.gl;
 			local16.glDisable(local14);
 		}
 	}
@@ -504,7 +504,7 @@ public final class Static27 {
 	@OriginalMember(owner = "client!od", name = "a", descriptor = "(ILclient!em;III)V")
 	private static void method3125(@OriginalArg(0) int arg0, @OriginalArg(1) Class50 arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4) {
 		@Pc(5) int local5 = arg0 + 16384 + 4;
-		@Pc(7) GL local7 = Static3.aGL1;
+		@Pc(7) GL local7 = GlRenderer.gl;
 		if (!Static5.aBooleanArray21[arg0]) {
 			local7.glEnable(local5);
 			Static5.aBooleanArray21[arg0] = true;
@@ -554,10 +554,10 @@ public final class Static27 {
 			if (arg0.equalsIgnoreCase("::pcachesize")) {
 				Static26.method4357(null, 0, "Number of player models in cache:" + Static15.method1228());
 			}
-			if (Static3.aBoolean138 && arg0.equalsIgnoreCase("::cardmem")) {
-				System.out.println("oncard_geometry:" + Static4.anInt3331);
-				System.out.println("oncard_2d:" + Static4.anInt3333);
-				System.out.println("oncard_texture:" + Static4.anInt3330);
+			if (GlRenderer.enabled && arg0.equalsIgnoreCase("::cardmem")) {
+				System.out.println("oncard_geometry:" + GlCleaner.onCardGeometry);
+				System.out.println("oncard_2d:" + GlCleaner.onCard2d);
+				System.out.println("oncard_texture:" + GlCleaner.onCardTexture);
 			}
 			if (arg0.equalsIgnoreCase("::clientdrop")) {
 				Static23.method2455();
@@ -598,29 +598,29 @@ public final class Static27 {
 				Static35.method4512(false, 3, 1024, 768);
 			}
 			if (arg0.startsWith("::setba")) {
-				Preferences.buildArea = Static12.method737(arg0.substring(8));
+				Preferences.buildArea = StringUtils.parseInt(arg0.substring(8));
 				Preferences.write(GameShell.signLink);
 				Preferences.sentToServer = false;
 			}
 			if (arg0.startsWith("::setparticles")) {
-				Preferences.setParticles(Static12.method737(arg0.substring(15)));
+				Preferences.setParticles(StringUtils.parseInt(arg0.substring(15)));
 				Preferences.write(GameShell.signLink);
 				Preferences.sentToServer = false;
 			}
 			if (arg0.startsWith("::fps ") && client.modeWhere != 0) {
-				GameShell.setFramesPerSecond(Static12.method737(arg0.substring(6)));
+				GameShell.setFramesPerSecond(StringUtils.parseInt(arg0.substring(6)));
 			}
 			if (arg0.equalsIgnoreCase("::errortest")) {
 				throw new RuntimeException();
 			}
 			if (arg0.startsWith("::rect_debug")) {
-				Static1.anInt268 = Static12.method737(arg0.substring(12).trim());
+				Static1.anInt268 = StringUtils.parseInt(arg0.substring(12).trim());
 				Static26.method4357(null, 0, "rect_debug=" + Static1.anInt268);
 			}
 			if (arg0.equalsIgnoreCase("::qa_op_test")) {
 				Static1.aBoolean26 = true;
 			}
-			if (arg0.startsWith("::hdr") && Static3.aBoolean138 && !Static10.method300(!Static13.method881())) {
+			if (arg0.startsWith("::hdr") && GlRenderer.enabled && !Static10.method300(!Static13.method881())) {
 				Static26.method4357(null, 0, "Failed to enable hdr");
 			}
 			if (arg0.equalsIgnoreCase("::tween")) {
@@ -664,8 +664,8 @@ public final class Static27 {
 	}
 
 	@OriginalMember(owner = "client!of", name = "a", descriptor = "(Z)Lclient!fe;")
-	public static Class56_Sub1 method3187() {
-		@Pc(21) Class56_Sub1 local21 = new Class56_Sub1(Static1.anInt889, Static3.anInt2162, Static5.anIntArray402[0], Static5.anIntArray391[0], Static3.anIntArray185[0], Static7.anIntArray643[0], Static6.aByteArrayArray36[0], Static2.anIntArray85);
+	public static SoftwareIndexedSprite method3187() {
+		@Pc(21) SoftwareIndexedSprite local21 = new SoftwareIndexedSprite(Static1.anInt889, Static3.anInt2162, Static5.anIntArray402[0], Static5.anIntArray391[0], Static3.anIntArray185[0], Static7.anIntArray643[0], Static6.aByteArrayArray36[0], Static2.anIntArray85);
 		Static37.method4670();
 		return local21;
 	}
@@ -803,7 +803,7 @@ public final class Static27 {
 	}
 
 	@OriginalMember(owner = "client!oi", name = "a", descriptor = "(Lclient!fh;BII)[Lclient!uj;")
-	public static Class4_Sub3_Sub14[] method3225(@OriginalArg(0) Js5 arg0, @OriginalArg(3) int arg1) {
+	public static Sprite[] method3225(@OriginalArg(0) Js5 arg0, @OriginalArg(3) int arg1) {
 		return Static9.method197(arg0, arg1, 0) ? Static21.method2064() : null;
 	}
 
@@ -816,49 +816,6 @@ public final class Static27 {
 	public static void method3228(@OriginalArg(0) Js5 arg0) {
 		Static3.aClass58_55 = arg0;
 		Static2.anInt5716 = Static3.aClass58_55.getGroupCapacity(4);
-	}
-
-	@OriginalMember(owner = "client!oj", name = "a", descriptor = "(IIZLjava/lang/String;)Z")
-	public static boolean method3229(@OriginalArg(3) String arg0) {
-		@Pc(27) boolean local27 = false;
-		@Pc(29) boolean local29 = false;
-		@Pc(42) int local42 = arg0.length();
-		@Pc(44) int local44 = 0;
-		for (@Pc(46) int local46 = 0; local46 < local42; local46++) {
-			@Pc(53) char local53 = arg0.charAt(local46);
-			if (local46 == 0) {
-				if (local53 == '-') {
-					local27 = true;
-					continue;
-				}
-				if (local53 == '+') {
-					continue;
-				}
-			}
-			@Pc(76) int local76;
-			if (local53 >= '0' && local53 <= '9') {
-				local76 = local53 - '0';
-			} else if (local53 >= 'A' && local53 <= 'Z') {
-				local76 = local53 - '7';
-			} else if (local53 >= 'a' && local53 <= 'z') {
-				local76 = local53 - 'W';
-			} else {
-				return false;
-			}
-			if (local76 >= 10) {
-				return false;
-			}
-			if (local27) {
-				local76 = -local76;
-			}
-			@Pc(126) int local126 = local76 + local44 * 10;
-			if (local126 / 10 != local44) {
-				return false;
-			}
-			local29 = true;
-			local44 = local126;
-		}
-		return local29;
 	}
 
 	@OriginalMember(owner = "client!oj", name = "a", descriptor = "(I[B)[B")
@@ -877,13 +834,13 @@ public final class Static27 {
 	@OriginalMember(owner = "client!oj", name = "a", descriptor = "(IIIIIIFIZ)[[I")
 	public static int[][] method3234(@OriginalArg(6) float arg0) {
 		@Pc(17) int[][] local17 = new int[256][64];
-		@Pc(21) Class4_Sub1_Sub12 local21 = new Class4_Sub1_Sub12();
+		@Pc(21) TextureOp34 local21 = new TextureOp34();
 		local21.anInt2625 = 4;
 		local21.anInt2631 = 8;
 		local21.anInt2628 = 3;
 		local21.anInt2620 = (int) (arg0 * 4096.0F);
 		local21.aBoolean181 = false;
-		local21.method4700();
+		local21.postDecode();
 		Static11.method524(64, 256);
 		for (@Pc(48) int local48 = 0; local48 < 256; local48++) {
 			local21.method2053(local17[local48], local48);

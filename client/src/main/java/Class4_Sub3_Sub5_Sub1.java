@@ -10,7 +10,7 @@ import dev.openrs2.deob.annotation.Pc;
 public final class Class4_Sub3_Sub5_Sub1 extends Class4_Sub3_Sub5 {
 
 	@OriginalMember(owner = "client!dh", name = "K", descriptor = "I")
-	private int anInt1021;
+	private int contextId;
 
 	@OriginalMember(owner = "client!dh", name = "W", descriptor = "[I")
 	private int[] anIntArray82;
@@ -35,13 +35,13 @@ public final class Class4_Sub3_Sub5_Sub1 extends Class4_Sub3_Sub5 {
 	@Override
 	public final void finalize() throws Throwable {
 		if (this.anInt1024 != -1) {
-			Static25.method2722(this.anInt1024, this.anInt1022, this.anInt1021);
+			GlCleaner.deleteTexture2d(this.anInt1024, this.anInt1022, this.contextId);
 			this.anInt1024 = -1;
 			this.anInt1022 = 0;
 		}
 		if (this.anIntArray82 != null) {
 			for (@Pc(21) int local21 = 0; local21 < this.anIntArray82.length; local21++) {
-				Static24.method2717(this.anIntArray82[local21], this.anInt1021);
+				GlCleaner.deleteList(this.anIntArray82[local21], this.contextId);
 			}
 			this.anIntArray82 = null;
 		}
@@ -51,11 +51,11 @@ public final class Class4_Sub3_Sub5_Sub1 extends Class4_Sub3_Sub5 {
 	@OriginalMember(owner = "client!dh", name = "a", descriptor = "(IIIIIIIZ)V")
 	@Override
 	protected final void method2264(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6) {
-		Static16.method1590();
-		@Pc(2) GL local2 = Static3.aGL1;
-		Static17.method1600(this.anInt1024);
+		GlRenderer.method1590();
+		@Pc(2) GL local2 = GlRenderer.gl;
+		GlRenderer.setTextureId(this.anInt1024);
 		local2.glColor4ub((byte) (arg5 >> 16), (byte) (arg5 >> 8), (byte) arg5, arg6 > 255 ? -1 : (byte) arg6);
-		local2.glTranslatef((float) arg1, (float) (Static3.anInt2083 - arg2), 0.0F);
+		local2.glTranslatef((float) arg1, (float) (GlRenderer.canvasHeight - arg2), 0.0F);
 		local2.glCallList(this.anIntArray82[arg0]);
 		local2.glLoadIdentity();
 	}
@@ -64,28 +64,28 @@ public final class Class4_Sub3_Sub5_Sub1 extends Class4_Sub3_Sub5 {
 	@Override
 	protected final void method2253(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5) {
 		if (Static3.aClass4_Sub3_Sub14_Sub2_1 == null) {
-			Static16.method1590();
-			@Pc(226) GL local226 = Static3.aGL1;
-			Static17.method1600(this.anInt1024);
+			GlRenderer.method1590();
+			@Pc(226) GL local226 = GlRenderer.gl;
+			GlRenderer.setTextureId(this.anInt1024);
 			local226.glColor3ub((byte) (arg5 >> 16), (byte) (arg5 >> 8), (byte) arg5);
-			local226.glTranslatef((float) arg1, (float) (Static3.anInt2083 - arg2), 0.0F);
+			local226.glTranslatef((float) arg1, (float) (GlRenderer.canvasHeight - arg2), 0.0F);
 			local226.glCallList(this.anIntArray82[arg0]);
 			local226.glLoadIdentity();
 			return;
 		}
-		Static16.method1590();
-		@Pc(4) GL local4 = Static3.aGL1;
+		GlRenderer.method1590();
+		@Pc(4) GL local4 = GlRenderer.gl;
 		local4.glColor3ub((byte) (arg5 >> 16), (byte) (arg5 >> 8), (byte) arg5);
-		local4.glTranslatef((float) arg1, (float) (Static3.anInt2083 - arg2), 0.0F);
+		local4.glTranslatef((float) arg1, (float) (GlRenderer.canvasHeight - arg2), 0.0F);
 		@Pc(32) float local32 = (float) (arg0 % 16) / 16.0F;
 		@Pc(39) float local39 = (float) (arg0 / 16) / 16.0F;
 		@Pc(51) float local51 = local32 + (float) this.anIntArray251[arg0] / (float) this.anInt1023;
 		@Pc(63) float local63 = local39 + (float) this.anIntArray246[arg0] / (float) this.anInt1023;
-		Static17.method1600(this.anInt1024);
-		@Pc(68) Class4_Sub3_Sub14_Sub2 local68 = Static3.aClass4_Sub3_Sub14_Sub2_1;
+		GlRenderer.setTextureId(this.anInt1024);
+		@Pc(68) GlSprite local68 = Static3.aClass4_Sub3_Sub14_Sub2_1;
 		local4.glActiveTexture(GL.GL_TEXTURE1);
 		local4.glEnable(GL.GL_TEXTURE_2D);
-		local4.glBindTexture(GL.GL_TEXTURE_2D, local68.anInt5614);
+		local4.glBindTexture(GL.GL_TEXTURE_2D, local68.textureId);
 		local4.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_COMBINE_RGB, GL.GL_REPLACE);
 		local4.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_SRC0_RGB, GL.GL_PREVIOUS);
 		@Pc(98) float local98 = (float) (arg1 - Static3.anInt2150) / (float) local68.anInt5617;
@@ -154,16 +154,16 @@ public final class Class4_Sub3_Sub5_Sub1 extends Class4_Sub3_Sub5 {
 			}
 		}
 		@Pc(153) ByteBuffer local153 = ByteBuffer.wrap(local66);
-		@Pc(155) GL local155 = Static3.aGL1;
+		@Pc(155) GL local155 = GlRenderer.gl;
 		if (this.anInt1024 == -1) {
 			@Pc(162) int[] local162 = new int[1];
 			local155.glGenTextures(1, local162, 0);
 			this.anInt1024 = local162[0];
-			this.anInt1021 = Static4.anInt3332;
+			this.contextId = GlCleaner.contextId;
 		}
-		Static17.method1600(this.anInt1024);
+		GlRenderer.setTextureId(this.anInt1024);
 		local155.glTexImage2D(GL.GL_TEXTURE_2D, GL.GL_POINTS, GL.GL_LUMINANCE_ALPHA, this.anInt1023, this.anInt1023, GL.GL_POINTS, GL.GL_LUMINANCE_ALPHA, GL.GL_UNSIGNED_BYTE, local153);
-		Static4.anInt3333 += local153.limit() - this.anInt1022;
+		GlCleaner.onCard2d += local153.limit() - this.anInt1022;
 		this.anInt1022 = local153.limit();
 		local155.glTexParameteri(GL.GL_TEXTURE_2D, GL.GL_TEXTURE_MIN_FILTER, GL.GL_NEAREST);
 		local155.glTexParameteri(GL.GL_TEXTURE_2D, GL.GL_TEXTURE_MAG_FILTER, GL.GL_NEAREST);
@@ -175,7 +175,7 @@ public final class Class4_Sub3_Sub5_Sub1 extends Class4_Sub3_Sub5 {
 			return;
 		}
 		this.anIntArray82 = new int[256];
-		@Pc(9) GL local9 = Static3.aGL1;
+		@Pc(9) GL local9 = GlRenderer.gl;
 		for (@Pc(11) int local11 = 0; local11 < 256; local11++) {
 			@Pc(21) float local21 = (float) (local11 % 16) / 16.0F;
 			@Pc(28) float local28 = (float) (local11 / 16) / 16.0F;
@@ -195,6 +195,6 @@ public final class Class4_Sub3_Sub5_Sub1 extends Class4_Sub3_Sub5 {
 			local9.glEnd();
 			local9.glEndList();
 		}
-		this.anInt1021 = Static4.anInt3332;
+		this.contextId = GlCleaner.contextId;
 	}
 }

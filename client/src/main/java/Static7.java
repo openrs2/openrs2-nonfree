@@ -35,7 +35,7 @@ public final class Static7 {
 	private static int anInt768;
 
 	@OriginalMember(owner = "client!uf", name = "d", descriptor = "Lclient!uj;")
-	public static Class4_Sub3_Sub14 aClass4_Sub3_Sub14_9;
+	public static Sprite aClass4_Sub3_Sub14_9;
 
 	@OriginalMember(owner = "client!uf", name = "e", descriptor = "I")
 	public static int anInt5331;

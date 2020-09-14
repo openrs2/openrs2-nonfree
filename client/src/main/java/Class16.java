@@ -29,7 +29,7 @@ public final class Class16 implements Interface2 {
 
 	@OriginalMember(owner = "client!bd", name = "d", descriptor = "()V")
 	private void method259() {
-		@Pc(1) GL local1 = Static3.aGL1;
+		@Pc(1) GL local1 = GlRenderer.gl;
 		this.anInt267 = local1.glGenLists(2);
 		local1.glNewList(this.anInt267, GL.GL_COMPILE);
 		local1.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_OPERAND0_RGB, GL.GL_SRC_COLOR);
@@ -99,7 +99,7 @@ public final class Class16 implements Interface2 {
 	@OriginalMember(owner = "client!bd", name = "e", descriptor = "()V")
 	private void method260() {
 		@Pc(2) byte[] local2 = new byte[] { 0, -1 };
-		@Pc(12) GL local12 = Static3.aGL1;
+		@Pc(12) GL local12 = GlRenderer.gl;
 		@Pc(15) int[] local15 = new int[1];
 		local12.glGenTextures(1, local15, 0);
 		local12.glBindTexture(GL.GL_TEXTURE_1D, local15[0]);
@@ -113,16 +113,16 @@ public final class Class16 implements Interface2 {
 	@OriginalMember(owner = "client!bd", name = "a", descriptor = "()V")
 	@Override
 	public final void method3483() {
-		Static3.aGL1.glCallList(this.anInt267 + 1);
+		GlRenderer.gl.glCallList(this.anInt267 + 1);
 	}
 
 	@OriginalMember(owner = "client!bd", name = "b", descriptor = "()V")
 	@Override
 	public final void method3484() {
-		@Pc(1) GL local1 = Static3.aGL1;
-		Static17.method1597(2);
-		Static17.method1607(2);
-		Static16.method1595();
+		@Pc(1) GL local1 = GlRenderer.gl;
+		GlRenderer.setTextureCombineRgbMode(2);
+		GlRenderer.setTextureCombineAlphaMode(2);
+		GlRenderer.method1595();
 		local1.glCallList(this.anInt267);
 		@Pc(12) float local12 = 2662.4001F;
 		@Pc(21) float local21 = local12 + (float) (Static4.anInt3258 - 128) * 0.5F;
@@ -142,20 +142,20 @@ public final class Class16 implements Interface2 {
 	@OriginalMember(owner = "client!bd", name = "a", descriptor = "(I)V")
 	@Override
 	public final void method3486(@OriginalArg(0) int arg0) {
-		@Pc(1) GL local1 = Static3.aGL1;
+		@Pc(1) GL local1 = GlRenderer.gl;
 		local1.glActiveTexture(GL.GL_TEXTURE1);
 		local1.glTexEnvfv(GL.GL_TEXTURE_ENV, GL.GL_TEXTURE_ENV_COLOR, Static4.aFloatArray38, 0);
 		local1.glActiveTexture(GL.GL_TEXTURE0);
 		if ((arg0 & 0x1) == 1) {
 			if (!Static3.aBoolean160) {
-				Static17.method1600(Static3.anIntArray198[Static3.anInt2085 * 64 / 100 % 64]);
-			} else if (this.anInt266 != Static3.anInt2085) {
+				GlRenderer.setTextureId(Static3.anIntArray198[GlRenderer.anInt2085 * 64 / 100 % 64]);
+			} else if (this.anInt266 != GlRenderer.anInt2085) {
 				this.aFloatArray6[0] = 0.0F;
 				this.aFloatArray6[1] = 0.0F;
 				this.aFloatArray6[2] = 0.0F;
-				this.aFloatArray6[3] = (float) Static3.anInt2085 * 0.005F;
+				this.aFloatArray6[3] = (float) GlRenderer.anInt2085 * 0.005F;
 				local1.glTexGenfv(GL.GL_R, GL.GL_OBJECT_PLANE, this.aFloatArray6, 0);
-				this.anInt266 = Static3.anInt2085;
+				this.anInt266 = GlRenderer.anInt2085;
 			}
 		} else if (Static3.aBoolean160) {
 			this.aFloatArray6[0] = 0.0F;
@@ -164,7 +164,7 @@ public final class Class16 implements Interface2 {
 			this.aFloatArray6[3] = 0.0F;
 			local1.glTexGenfv(GL.GL_R, GL.GL_OBJECT_PLANE, this.aFloatArray6, 0);
 		} else {
-			Static17.method1600(Static3.anIntArray198[0]);
+			GlRenderer.setTextureId(Static3.anIntArray198[0]);
 		}
 	}
 }

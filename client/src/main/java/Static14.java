@@ -156,18 +156,18 @@ public final class Static14 {
 	}
 
 	@OriginalMember(owner = "client!ek", name = "b", descriptor = "(B)Lclient!uj;")
-	public static Class4_Sub3_Sub14 method1063() {
+	public static Sprite method1063() {
 		@Pc(9) int local9 = Static7.anIntArray643[0] * Static3.anIntArray185[0];
 		@Pc(22) byte[] local22 = Static6.aByteArrayArray36[0];
 		@Pc(25) int[] local25 = new int[local9];
 		for (@Pc(27) int local27 = 0; local27 < local9; local27++) {
 			local25[local27] = Static2.anIntArray85[local22[local27] & 0xFF];
 		}
-		@Pc(68) Class4_Sub3_Sub14 local68;
-		if (Static3.aBoolean138) {
-			local68 = new Class4_Sub3_Sub14_Sub2(Static1.anInt889, Static3.anInt2162, Static5.anIntArray402[0], Static5.anIntArray391[0], Static3.anIntArray185[0], Static7.anIntArray643[0], local25);
+		@Pc(68) Sprite local68;
+		if (GlRenderer.enabled) {
+			local68 = new GlSprite(Static1.anInt889, Static3.anInt2162, Static5.anIntArray402[0], Static5.anIntArray391[0], Static3.anIntArray185[0], Static7.anIntArray643[0], local25);
 		} else {
-			local68 = new Class4_Sub3_Sub14_Sub1(Static1.anInt889, Static3.anInt2162, Static5.anIntArray402[0], Static5.anIntArray391[0], Static3.anIntArray185[0], Static7.anIntArray643[0], local25);
+			local68 = new SoftwareSprite(Static1.anInt889, Static3.anInt2162, Static5.anIntArray402[0], Static5.anIntArray391[0], Static3.anIntArray185[0], Static7.anIntArray643[0], local25);
 		}
 		Static37.method4670();
 		return local68;
@@ -802,7 +802,7 @@ public final class Static14 {
 	public static void method1205() {
 		Static2.anInt1636 = 13;
 		Static2.anInt1637 = 13;
-		Static2.aClass56_Sub1_2 = new Class56_Sub1(Static2.anInt1636 * 128 + 2, Static2.anInt1637 * 128 + 2, 0);
+		Static2.aClass56_Sub1_2 = new SoftwareIndexedSprite(Static2.anInt1636 * 128 + 2, Static2.anInt1637 * 128 + 2, 0);
 		Static2.aClass103ArrayArray1 = new Class103[Static2.anInt1636][Static2.anInt1637];
 		for (@Pc(32) int local32 = 0; local32 < Static2.anInt1636; local32++) {
 			for (@Pc(37) int local37 = 0; local37 < Static2.anInt1637; local37++) {
@@ -907,7 +907,7 @@ public final class Static14 {
 	}
 
 	@OriginalMember(owner = "client!fb", name = "a", descriptor = "(Lclient!fe;III)V")
-	public static void method1210(@OriginalArg(0) Class56_Sub1 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) {
+	public static void method1210(@OriginalArg(0) SoftwareIndexedSprite arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) {
 		if (arg0 != null) {
 			@Pc(12) int local12 = arg1 - (arg2 * Static4.anInt3366 >> 8) >> 3;
 			@Pc(22) int local22 = arg3 - (arg2 * Static4.anInt3363 >> 8) >> 3;
@@ -923,7 +923,7 @@ public final class Static14 {
 	}
 
 	@OriginalMember(owner = "client!fb", name = "b", descriptor = "(Lclient!fe;III)V")
-	public static void method1212(@OriginalArg(0) Class56_Sub1 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) {
+	public static void method1212(@OriginalArg(0) SoftwareIndexedSprite arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) {
 		if (arg0 != null) {
 			@Pc(12) int local12 = arg1 - (arg2 * Static4.anInt3366 >> 8) >> 3;
 			@Pc(22) int local22 = arg3 - (arg2 * Static4.anInt3363 >> 8) >> 3;
@@ -932,7 +932,7 @@ public final class Static14 {
 	}
 
 	@OriginalMember(owner = "client!fb", name = "c", descriptor = "(Lclient!fe;III)Z")
-	public static boolean method1214(@OriginalArg(0) Class56_Sub1 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) {
+	public static boolean method1214(@OriginalArg(0) SoftwareIndexedSprite arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) {
 		if (arg0 == null) {
 			return false;
 		} else {
@@ -944,11 +944,11 @@ public final class Static14 {
 
 	@OriginalMember(owner = "client!fb", name = "a", descriptor = "(IIII[[Z[[I)V")
 	public static void method1215(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) boolean[][] arg4, @OriginalArg(5) int[][] arg5) {
-		@Pc(1) GL local1 = Static3.aGL1;
-		Static17.method1597(1);
-		Static17.method1607(1);
-		Static16.method1595();
-		Static17.method1610(false);
+		@Pc(1) GL local1 = GlRenderer.gl;
+		GlRenderer.setTextureCombineRgbMode(1);
+		GlRenderer.setTextureCombineAlphaMode(1);
+		GlRenderer.method1595();
+		GlRenderer.setLightingEnabled(false);
 		Static24.method2652(0, 0);
 		local1.glDepthMask(false);
 		for (@Pc(17) int local17 = 0; local17 < Static2.anInt1636; local17++) {
@@ -976,6 +976,6 @@ public final class Static14 {
 		}
 		local1.glEnableClientState(GL.GL_COLOR_ARRAY);
 		local1.glDepthMask(true);
-		Static17.method1618();
+		GlRenderer.method1618();
 	}
 }

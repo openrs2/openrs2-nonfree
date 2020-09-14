@@ -173,13 +173,13 @@ public final class Static9 {
 		if (-arg8.anInt5893 > local74 || local74 > arg8.anInt5893 || -arg8.anInt5949 > local96 || local96 > arg8.anInt5949) {
 			return;
 		}
-		if (Static3.aBoolean138) {
-			Static18.method1696((Class4_Sub3_Sub14_Sub2) arg8.method4729(false));
+		if (GlRenderer.enabled) {
+			Static18.method1696((GlSprite) arg8.method4729(false));
 		} else {
 			Static34.method4218(arg8.anIntArray672, arg8.anIntArray657);
 		}
 		arg7.method2260(arg1, local74 + arg4 + arg8.anInt5893 / 2, arg2 + arg8.anInt5949 / 2 - local96 - arg6 - local85, local79, 50, arg0, 0, 1, 0, 0);
-		if (Static3.aBoolean138) {
+		if (GlRenderer.enabled) {
 			Static18.method1702();
 		} else {
 			Static34.method4228();
@@ -379,12 +379,12 @@ public final class Static9 {
 	}
 
 	@OriginalMember(owner = "client!ao", name = "a", descriptor = "(I)Lclient!ma;")
-	public static Class56 method204() {
-		@Pc(31) Class56 local31;
-		if (Static3.aBoolean138) {
-			local31 = new Class56_Sub2(Static1.anInt889, Static3.anInt2162, Static5.anIntArray402[0], Static5.anIntArray391[0], Static3.anIntArray185[0], Static7.anIntArray643[0], Static6.aByteArrayArray36[0], Static2.anIntArray85);
+	public static IndexedSprite method204() {
+		@Pc(31) IndexedSprite local31;
+		if (GlRenderer.enabled) {
+			local31 = new GlIndexedSprite(Static1.anInt889, Static3.anInt2162, Static5.anIntArray402[0], Static5.anIntArray391[0], Static3.anIntArray185[0], Static7.anIntArray643[0], Static6.aByteArrayArray36[0], Static2.anIntArray85);
 		} else {
-			local31 = new Class56_Sub1(Static1.anInt889, Static3.anInt2162, Static5.anIntArray402[0], Static5.anIntArray391[0], Static3.anIntArray185[0], Static7.anIntArray643[0], Static6.aByteArrayArray36[0], Static2.anIntArray85);
+			local31 = new SoftwareIndexedSprite(Static1.anInt889, Static3.anInt2162, Static5.anIntArray402[0], Static5.anIntArray391[0], Static3.anIntArray185[0], Static7.anIntArray643[0], Static6.aByteArrayArray36[0], Static2.anIntArray85);
 		}
 		Static37.method4670();
 		return local31;
@@ -399,13 +399,13 @@ public final class Static9 {
 
 	@OriginalMember(owner = "client!b", name = "a", descriptor = "()I")
 	public static int method207() {
-		Static3.aGL1.glGenRenderbuffersEXT(1, Static1.anIntArray22, 0);
+		GlRenderer.gl.glGenRenderbuffersEXT(1, Static1.anIntArray22, 0);
 		return Static1.anIntArray22[0];
 	}
 
 	@OriginalMember(owner = "client!b", name = "c", descriptor = "()V")
 	public static void method209() {
-		@Pc(1) GL local1 = Static3.aGL1;
+		@Pc(1) GL local1 = GlRenderer.gl;
 		local1.glMatrixMode(GL.GL_PROJECTION);
 		local1.glPopMatrix();
 		local1.glMatrixMode(GL.GL_MODELVIEW);
@@ -415,19 +415,19 @@ public final class Static9 {
 
 	@OriginalMember(owner = "client!b", name = "d", descriptor = "()I")
 	public static int method210() {
-		Static3.aGL1.glGenFramebuffersEXT(1, Static1.anIntArray22, 0);
+		GlRenderer.gl.glGenFramebuffersEXT(1, Static1.anIntArray22, 0);
 		return Static1.anIntArray22[0];
 	}
 
 	@OriginalMember(owner = "client!b", name = "a", descriptor = "(I)V")
 	public static void method211(@OriginalArg(0) int arg0) {
 		Static1.anIntArray22[0] = arg0;
-		Static3.aGL1.glDeleteFramebuffersEXT(1, Static1.anIntArray22, 0);
+		GlRenderer.gl.glDeleteFramebuffersEXT(1, Static1.anIntArray22, 0);
 	}
 
 	@OriginalMember(owner = "client!b", name = "a", descriptor = "(FFFFFFII)V")
 	public static void method212(@OriginalArg(0) float arg0, @OriginalArg(1) float arg1, @OriginalArg(2) float arg2, @OriginalArg(3) float arg3, @OriginalArg(4) float arg4, @OriginalArg(5) float arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7) {
-		@Pc(1) GL local1 = Static3.aGL1;
+		@Pc(1) GL local1 = GlRenderer.gl;
 		local1.glMatrixMode(GL.GL_PROJECTION);
 		local1.glPushMatrix();
 		local1.glLoadIdentity();
@@ -447,23 +447,23 @@ public final class Static9 {
 	@OriginalMember(owner = "client!b", name = "b", descriptor = "(I)V")
 	public static void method214(@OriginalArg(0) int arg0) {
 		Static1.anIntArray22[0] = arg0;
-		Static3.aGL1.glDeleteRenderbuffersEXT(1, Static1.anIntArray22, 0);
+		GlRenderer.gl.glDeleteRenderbuffersEXT(1, Static1.anIntArray22, 0);
 	}
 
 	@OriginalMember(owner = "client!b", name = "e", descriptor = "()V")
 	public static void method215() {
-		Static3.aGL1.glBindFramebufferEXT(GL.GL_FRAMEBUFFER, --Static1.anInt227 > 0 ? Static1.anIntArray24[Static1.anInt227 - 1] : 0);
+		GlRenderer.gl.glBindFramebufferEXT(GL.GL_FRAMEBUFFER, --Static1.anInt227 > 0 ? Static1.anIntArray24[Static1.anInt227 - 1] : 0);
 	}
 
 	@OriginalMember(owner = "client!b", name = "c", descriptor = "(I)V")
 	public static void method216(@OriginalArg(0) int arg0) {
 		Static1.anIntArray24[Static1.anInt227++] = arg0;
-		Static3.aGL1.glBindFramebufferEXT(GL.GL_FRAMEBUFFER, arg0);
+		GlRenderer.gl.glBindFramebufferEXT(GL.GL_FRAMEBUFFER, arg0);
 	}
 
 	@OriginalMember(owner = "client!b", name = "f", descriptor = "()Z")
 	public static boolean method217() {
-		@Pc(1) GL local1 = Static3.aGL1;
+		@Pc(1) GL local1 = GlRenderer.gl;
 		@Pc(5) int local5 = local1.glCheckFramebufferStatusEXT(GL.GL_FRAMEBUFFER);
 		return local5 == GL.GL_FRAMEBUFFER_COMPLETE;
 	}
@@ -536,8 +536,8 @@ public final class Static9 {
 				client.js5NetQueue.writeLoggedIn(true);
 			}
 		}
-		if (Static3.aBoolean138 && (arg0 == 25 || arg0 == 28 || arg0 == 40)) {
-			Static17.method1608();
+		if (GlRenderer.enabled && (arg0 == 25 || arg0 == 28 || arg0 == 40)) {
+			GlRenderer.method1608();
 		}
 		Static4.anInt3304 = arg0;
 	}

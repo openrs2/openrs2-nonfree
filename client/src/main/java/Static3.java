@@ -1,14 +1,11 @@
 import java.nio.ByteBuffer;
-import javax.media.opengl.GL;
-import javax.media.opengl.GLContext;
-import javax.media.opengl.GLDrawable;
 
 import dev.openrs2.deob.annotation.OriginalMember;
 
 public final class Static3 {
 
 	@OriginalMember(owner = "client!gd", name = "g", descriptor = "[Lclient!uj;")
-	public static Class4_Sub3_Sub14[] aClass4_Sub3_Sub14Array8;
+	public static Sprite[] aClass4_Sub3_Sub14Array8;
 
 	@OriginalMember(owner = "client!gf", name = "c", descriptor = "[I")
 	public static int[] anIntArray167;
@@ -17,109 +14,13 @@ public final class Static3 {
 	public static Js5 aClass58_44;
 
 	@OriginalMember(owner = "client!gg", name = "q", descriptor = "Lclient!vn;")
-	public static Class4_Sub3_Sub14_Sub1 aClass4_Sub3_Sub14_Sub1_2;
+	public static SoftwareSprite aClass4_Sub3_Sub14_Sub1_2;
 
 	@OriginalMember(owner = "client!gg", name = "v", descriptor = "Z")
 	public static boolean aBoolean124;
 
 	@OriginalMember(owner = "client!gh", name = "a", descriptor = "Lclient!fh;")
 	public static Js5 aClass58_59;
-
-	@OriginalMember(owner = "client!gi", name = "c", descriptor = "I")
-	public static int anInt2075;
-
-	@OriginalMember(owner = "client!gi", name = "e", descriptor = "Lgl!javax/media/opengl/GL;")
-	public static GL aGL1;
-
-	@OriginalMember(owner = "client!gi", name = "f", descriptor = "Z")
-	public static boolean aBoolean126;
-
-	@OriginalMember(owner = "client!gi", name = "h", descriptor = "F")
-	public static float aFloat45;
-
-	@OriginalMember(owner = "client!gi", name = "i", descriptor = "Z")
-	public static boolean aBoolean127;
-
-	@OriginalMember(owner = "client!gi", name = "j", descriptor = "Z")
-	public static boolean aBoolean128;
-
-	@OriginalMember(owner = "client!gi", name = "k", descriptor = "I")
-	public static int anInt2077;
-
-	@OriginalMember(owner = "client!gi", name = "l", descriptor = "I")
-	public static int anInt2078;
-
-	@OriginalMember(owner = "client!gi", name = "m", descriptor = "Ljava/lang/String;")
-	public static String aString116;
-
-	@OriginalMember(owner = "client!gi", name = "n", descriptor = "Lgl!javax/media/opengl/GLDrawable;")
-	public static GLDrawable aGLDrawable1;
-
-	@OriginalMember(owner = "client!gi", name = "o", descriptor = "Ljava/lang/String;")
-	public static String aString117;
-
-	@OriginalMember(owner = "client!gi", name = "p", descriptor = "Z")
-	public static boolean aBoolean129;
-
-	@OriginalMember(owner = "client!gi", name = "q", descriptor = "I")
-	public static int anInt2079;
-
-	@OriginalMember(owner = "client!gi", name = "r", descriptor = "Lgl!javax/media/opengl/GLContext;")
-	public static GLContext aGLContext1;
-
-	@OriginalMember(owner = "client!gi", name = "s", descriptor = "Z")
-	public static boolean aBoolean130;
-
-	@OriginalMember(owner = "client!gi", name = "t", descriptor = "I")
-	public static int anInt2080;
-
-	@OriginalMember(owner = "client!gi", name = "u", descriptor = "Z")
-	public static boolean aBoolean131;
-
-	@OriginalMember(owner = "client!gi", name = "v", descriptor = "I")
-	public static int anInt2081;
-
-	@OriginalMember(owner = "client!gi", name = "w", descriptor = "I")
-	public static int anInt2082;
-
-	@OriginalMember(owner = "client!gi", name = "A", descriptor = "Z")
-	public static boolean aBoolean134;
-
-	@OriginalMember(owner = "client!gi", name = "C", descriptor = "F")
-	public static float aFloat47;
-
-	@OriginalMember(owner = "client!gi", name = "E", descriptor = "Z")
-	public static boolean aBoolean135;
-
-	@OriginalMember(owner = "client!gi", name = "G", descriptor = "Z")
-	public static boolean aBoolean137;
-
-	@OriginalMember(owner = "client!gi", name = "H", descriptor = "I")
-	public static int anInt2083;
-
-	@OriginalMember(owner = "client!gi", name = "I", descriptor = "I")
-	public static int anInt2084;
-
-	@OriginalMember(owner = "client!gi", name = "K", descriptor = "Z")
-	public static boolean aBoolean139;
-
-	@OriginalMember(owner = "client!gi", name = "M", descriptor = "I")
-	public static int anInt2086;
-
-	@OriginalMember(owner = "client!gi", name = "O", descriptor = "Z")
-	public static boolean aBoolean141;
-
-	@OriginalMember(owner = "client!gi", name = "Q", descriptor = "I")
-	public static int anInt2088;
-
-	@OriginalMember(owner = "client!gi", name = "T", descriptor = "Z")
-	public static boolean aBoolean143;
-
-	@OriginalMember(owner = "client!gi", name = "U", descriptor = "I")
-	public static int anInt2089;
-
-	@OriginalMember(owner = "client!gi", name = "V", descriptor = "I")
-	public static int anInt2090;
 
 	@OriginalMember(owner = "client!gj", name = "a", descriptor = "I")
 	public static int anInt2092;
@@ -323,7 +224,7 @@ public final class Static3 {
 	public static int anInt2973;
 
 	@OriginalMember(owner = "client!ij", name = "L", descriptor = "Lclient!vn;")
-	public static Class4_Sub3_Sub14_Sub1 aClass4_Sub3_Sub14_Sub1_3;
+	public static SoftwareSprite aClass4_Sub3_Sub14_Sub1_3;
 
 	@OriginalMember(owner = "client!ij", name = "T", descriptor = "I")
 	public static int anInt2394;
@@ -335,7 +236,7 @@ public final class Static3 {
 	public static int anInt2449;
 
 	@OriginalMember(owner = "client!im", name = "k", descriptor = "[Lclient!ma;")
-	public static Class56[] aClass56Array3;
+	public static IndexedSprite[] aClass56Array3;
 
 	@OriginalMember(owner = "client!in", name = "q", descriptor = "Lclient!fh;")
 	public static Js5 aClass58_55;
@@ -412,57 +313,6 @@ public final class Static3 {
 	@OriginalMember(owner = "client!gh", name = "i", descriptor = "I")
 	public static int anInt2582 = 0;
 
-	@OriginalMember(owner = "client!gi", name = "a", descriptor = "I")
-	public static int anInt2073 = 0;
-
-	@OriginalMember(owner = "client!gi", name = "b", descriptor = "I")
-	public static int anInt2074 = -1;
-
-	@OriginalMember(owner = "client!gi", name = "d", descriptor = "Z")
-	public static boolean aBoolean125 = true;
-
-	@OriginalMember(owner = "client!gi", name = "g", descriptor = "I")
-	public static int anInt2076 = -1;
-
-	@OriginalMember(owner = "client!gi", name = "x", descriptor = "Z")
-	public static boolean aBoolean132 = false;
-
-	@OriginalMember(owner = "client!gi", name = "y", descriptor = "Z")
-	public static boolean aBoolean133 = true;
-
-	@OriginalMember(owner = "client!gi", name = "z", descriptor = "F")
-	public static float aFloat46 = 0.0F;
-
-	@OriginalMember(owner = "client!gi", name = "B", descriptor = "[F")
-	public static final float[] aFloatArray20 = new float[16];
-
-	@OriginalMember(owner = "client!gi", name = "D", descriptor = "F")
-	public static float aFloat48 = 0.0F;
-
-	@OriginalMember(owner = "client!gi", name = "F", descriptor = "Z")
-	public static boolean aBoolean136 = true;
-
-	@OriginalMember(owner = "client!gi", name = "J", descriptor = "Z")
-	public static boolean aBoolean138 = false;
-
-	@OriginalMember(owner = "client!gi", name = "L", descriptor = "I")
-	public static int anInt2085 = 0;
-
-	@OriginalMember(owner = "client!gi", name = "N", descriptor = "Z")
-	public static boolean aBoolean140 = false;
-
-	@OriginalMember(owner = "client!gi", name = "P", descriptor = "I")
-	public static int anInt2087 = -1;
-
-	@OriginalMember(owner = "client!gi", name = "R", descriptor = "Z")
-	public static boolean aBoolean142 = true;
-
-	@OriginalMember(owner = "client!gi", name = "S", descriptor = "F")
-	public static final float aFloat49 = 0.09765625F;
-
-	@OriginalMember(owner = "client!gi", name = "W", descriptor = "I")
-	public static int anInt2091 = 0;
-
 	@OriginalMember(owner = "client!gk", name = "d", descriptor = "[F")
 	public static final float[] aFloatArray21 = new float[4];
 
@@ -533,7 +383,7 @@ public final class Static3 {
 	public static int anInt2150 = 0;
 
 	@OriginalMember(owner = "client!hd", name = "c", descriptor = "Lclient!oa;")
-	public static Class4_Sub3_Sub14_Sub2 aClass4_Sub3_Sub14_Sub2_1 = null;
+	public static GlSprite aClass4_Sub3_Sub14_Sub2_1 = null;
 
 	@OriginalMember(owner = "client!hd", name = "d", descriptor = "I")
 	public static int anInt2151 = 0;

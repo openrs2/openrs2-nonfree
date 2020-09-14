@@ -167,12 +167,12 @@ public final class Static36 {
 			return;
 		}
 		@Pc(222) Class4_Sub17 local222 = new Class4_Sub17(arg1);
-		@Pc(224) Class56_Sub1 local224 = null;
+		@Pc(224) SoftwareIndexedSprite local224 = null;
 		if (arg3.anInt2277 != -1) {
 			if (arg1.aBoolean105 && arg3.anInt2291 != -1) {
-				local224 = (Class56_Sub1) arg3.method1811(true, true);
+				local224 = (SoftwareIndexedSprite) arg3.method1811(true, true);
 			} else {
-				local224 = (Class56_Sub1) arg3.method1811(false, true);
+				local224 = (SoftwareIndexedSprite) arg3.method1811(false, true);
 			}
 			if (local224 != null) {
 				if (Static4.anInt2853 > 0 && (Static5.anInt3920 != -1 && arg1.anInt1760 == Static5.anInt3920 || Static2.anInt1874 != -1 && arg3.anInt2284 == Static2.anInt1874)) {
@@ -359,7 +359,7 @@ public final class Static36 {
 
 	@OriginalMember(owner = "client!vh", name = "c", descriptor = "(I)V")
 	public static void method4455() {
-		if (Static4.anInt3304 == 10 && Static3.aBoolean138) {
+		if (Static4.anInt3304 == 10 && GlRenderer.enabled) {
 			Static9.method233(28);
 		}
 		if (Static4.anInt3304 == 30) {
@@ -417,7 +417,7 @@ public final class Static36 {
 
 	@OriginalMember(owner = "client!vl", name = "a", descriptor = "(IIIII)V")
 	public static void method4524(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3) {
-		if (Static3.aBoolean138) {
+		if (GlRenderer.enabled) {
 			Static18.method1693(arg2, arg3, arg1 + arg2, arg0 + arg3);
 			Static18.method1701(arg2, arg3, arg1, arg0, 0);
 		} else {
@@ -438,19 +438,19 @@ public final class Static36 {
 		arg2 += (arg1 - local57) / 2;
 		arg3 += (arg0 - local59) / 2;
 		if (Static4.aClass4_Sub3_Sub14_3 == null || arg1 != Static4.aClass4_Sub3_Sub14_3.width || arg0 != Static4.aClass4_Sub3_Sub14_3.height) {
-			@Pc(117) Class4_Sub3_Sub14_Sub1 local117 = new Class4_Sub3_Sub14_Sub1(arg1, arg0);
+			@Pc(117) SoftwareSprite local117 = new SoftwareSprite(arg1, arg0);
 			Static34.method4224(local117.pixels, arg1, arg0);
 			if (Static3.aClass4_Sub3_Sub22_3.anInt5995 != -1) {
 				Static33.method4205(0, 0, arg1, arg0, Static3.aClass4_Sub3_Sub22_3.anInt5995);
 			}
 			Static19.method2401(0, 0, Static3.anInt2965, Static3.anInt2960, 0, 0, local57, local59);
 			Static20.method2403();
-			if (Static3.aBoolean138) {
-				Static4.aClass4_Sub3_Sub14_3 = new Class4_Sub3_Sub14_Sub2(local117);
+			if (GlRenderer.enabled) {
+				Static4.aClass4_Sub3_Sub14_3 = new GlSprite(local117);
 			} else {
 				Static4.aClass4_Sub3_Sub14_3 = local117;
 			}
-			if (Static3.aBoolean138) {
+			if (GlRenderer.enabled) {
 				Static6.anIntArray561 = null;
 			} else {
 				client.frameBuffer.makeTarget();
@@ -465,7 +465,7 @@ public final class Static36 {
 			local166 = 16777215;
 		}
 		@Pc(207) int local207 = arg2 + Static3.anInt2542 * local57 / Static3.anInt2965;
-		if (Static3.aBoolean138) {
+		if (GlRenderer.enabled) {
 			Static18.method1691(local207, local184, local176, local190, local166, 128);
 			Static18.method1690(local207, local184, local176, local190, local166);
 		} else {
@@ -487,7 +487,7 @@ public final class Static36 {
 				if (local266.anInt1760 == Static5.anInt3920) {
 					@Pc(290) int local290 = local57 * local266.anInt1768 / Static3.anInt2965 + arg2;
 					@Pc(299) int local299 = arg3 + local59 * local266.anInt1769 / Static3.anInt2960;
-					if (Static3.aBoolean138) {
+					if (GlRenderer.enabled) {
 						Static18.method1691(local290 - 2, local299 - 2, 4, 4, 16776960, local255);
 					} else {
 						Static34.method4213(local290 - 2, local299 - 2, 4, 4, 16776960, local255);
@@ -495,7 +495,7 @@ public final class Static36 {
 				} else if (Static2.anInt1874 != -1 && local273.anInt2284 == Static2.anInt1874) {
 					@Pc(349) int local349 = arg2 + local266.anInt1768 * local57 / Static3.anInt2965;
 					@Pc(358) int local358 = arg3 + local59 * local266.anInt1769 / Static3.anInt2960;
-					if (Static3.aBoolean138) {
+					if (GlRenderer.enabled) {
 						Static18.method1691(local349 - 2, local358 - 2, 4, 4, 16776960, local255);
 					} else {
 						Static34.method4213(local349 - 2, local358 - 2, 4, 4, 16776960, local255);

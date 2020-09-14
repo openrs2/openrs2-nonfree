@@ -211,8 +211,8 @@ public final class LocType {
 	}
 
 	@OriginalMember(owner = "client!vh", name = "a", descriptor = "(IZII[[I[[IZIIILclient!fe;)Lclient!jh;")
-	public final Class96 method4450(@OriginalArg(0) int arg0, @OriginalArg(1) boolean arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int[][] arg4, @OriginalArg(5) int[][] arg5, @OriginalArg(6) boolean arg6, @OriginalArg(7) int arg7, @OriginalArg(8) int arg8, @OriginalArg(10) Class56_Sub1 arg9) {
-		if (Static3.aBoolean138) {
+	public final Class96 method4450(@OriginalArg(0) int arg0, @OriginalArg(1) boolean arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int[][] arg4, @OriginalArg(5) int[][] arg5, @OriginalArg(6) boolean arg6, @OriginalArg(7) int arg7, @OriginalArg(8) int arg8, @OriginalArg(10) SoftwareIndexedSprite arg9) {
+		if (GlRenderer.enabled) {
 			@Pc(210) long local210;
 			if (this.anIntArray627 == null) {
 				local210 = (this.id << 10) + arg7;
@@ -221,7 +221,7 @@ public final class LocType {
 			}
 			@Pc(226) Class96 local226 = (Class96) LocTypeList.aClass26_18.get(local210);
 			@Pc(233) Class53_Sub4_Sub2 local233;
-			@Pc(236) Class56_Sub1 local236;
+			@Pc(236) SoftwareIndexedSprite local236;
 			if (local226 == null) {
 				local233 = this.method4456(arg2, false, arg7);
 				if (local233 == null) {
@@ -590,8 +590,8 @@ public final class LocType {
 	}
 
 	@OriginalMember(owner = "client!vh", name = "a", descriptor = "(I[[IIIIIZIII[[ILclient!eg;Lclient!fe;I)Lclient!jh;")
-	public final Class96 method4458(@OriginalArg(0) int arg0, @OriginalArg(1) int[][] arg1, @OriginalArg(2) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4, @OriginalArg(6) boolean arg5, @OriginalArg(7) int arg6, @OriginalArg(8) int arg7, @OriginalArg(9) int arg8, @OriginalArg(10) int[][] arg9, @OriginalArg(11) Class46 arg10, @OriginalArg(12) Class56_Sub1 arg11, @OriginalArg(13) int arg12) {
-		if (!Static3.aBoolean138) {
+	public final Class96 method4458(@OriginalArg(0) int arg0, @OriginalArg(1) int[][] arg1, @OriginalArg(2) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4, @OriginalArg(6) boolean arg5, @OriginalArg(7) int arg6, @OriginalArg(8) int arg7, @OriginalArg(9) int arg8, @OriginalArg(10) int[][] arg9, @OriginalArg(11) Class46 arg10, @OriginalArg(12) SoftwareIndexedSprite arg11, @OriginalArg(13) int arg12) {
+		if (!GlRenderer.enabled) {
 			@Pc(182) long local182;
 			if (this.anIntArray627 == null) {
 				local182 = (this.id << 10) + arg6;

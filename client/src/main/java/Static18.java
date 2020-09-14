@@ -48,12 +48,12 @@ public final class Static18 {
 
 	@OriginalMember(owner = "client!hd", name = "a", descriptor = "(IIIII)V")
 	public static void method1683(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4) {
-		Static16.method1585();
+		GlRenderer.method1585();
 		@Pc(5) float local5 = (float) arg0 + 0.3F;
 		@Pc(10) float local10 = (float) arg2 + 0.3F;
-		@Pc(18) float local18 = (float) Static3.anInt2083 - (float) arg1 - 0.3F;
-		@Pc(26) float local26 = (float) Static3.anInt2083 - (float) arg3 - 0.3F;
-		@Pc(28) GL local28 = Static3.aGL1;
+		@Pc(18) float local18 = (float) GlRenderer.canvasHeight - (float) arg1 - 0.3F;
+		@Pc(26) float local26 = (float) GlRenderer.canvasHeight - (float) arg3 - 0.3F;
+		@Pc(28) GL local28 = GlRenderer.gl;
 		local28.glBegin(GL.GL_LINE_LOOP);
 		local28.glColor3ub((byte) (arg4 >> 16), (byte) (arg4 >> 8), (byte) arg4);
 		local28.glVertex2f(local5, local18);
@@ -63,12 +63,12 @@ public final class Static18 {
 
 	@OriginalMember(owner = "client!hd", name = "a", descriptor = "(IIIIII)V")
 	public static void method1684(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5) {
-		Static16.method1585();
+		GlRenderer.method1585();
 		@Pc(5) float local5 = (float) arg0 + 0.3F;
 		@Pc(12) float local12 = local5 + (float) (arg2 - 1);
-		@Pc(20) float local20 = (float) Static3.anInt2083 - (float) arg1 - 0.3F;
+		@Pc(20) float local20 = (float) GlRenderer.canvasHeight - (float) arg1 - 0.3F;
 		@Pc(27) float local27 = local20 - (float) (arg3 - 1);
-		@Pc(29) GL local29 = Static3.aGL1;
+		@Pc(29) GL local29 = GlRenderer.gl;
 		local29.glBegin(GL.GL_LINE_LOOP);
 		local29.glColor4ub((byte) (arg4 >> 16), (byte) (arg4 >> 8), (byte) arg4, arg5 > 255 ? -1 : (byte) arg5);
 		local29.glVertex2f(local5, local20);
@@ -80,11 +80,11 @@ public final class Static18 {
 
 	@OriginalMember(owner = "client!hd", name = "b", descriptor = "(IIIII)V")
 	private static void method1685(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4) {
-		Static16.method1585();
+		GlRenderer.method1585();
 		@Pc(5) float local5 = (float) arg0 + 0.3F;
 		@Pc(10) float local10 = local5 + (float) arg2;
-		@Pc(18) float local18 = (float) Static3.anInt2083 - (float) arg1 - 0.3F;
-		@Pc(20) GL local20 = Static3.aGL1;
+		@Pc(18) float local18 = (float) GlRenderer.canvasHeight - (float) arg1 - 0.3F;
+		@Pc(20) GL local20 = GlRenderer.gl;
 		local20.glBegin(GL.GL_LINES);
 		local20.glColor4ub((byte) (arg3 >> 16), (byte) (arg3 >> 8), (byte) arg3, arg4 > 255 ? -1 : (byte) arg4);
 		local20.glVertex2f(local5, local18);
@@ -102,7 +102,7 @@ public final class Static18 {
 
 	@OriginalMember(owner = "client!hd", name = "b", descriptor = "(IIIIII)V")
 	public static void method1687(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5) {
-		@Pc(1) GL local1 = Static3.aGL1;
+		@Pc(1) GL local1 = GlRenderer.gl;
 		local1.glLineWidth((float) arg5);
 		method1683(arg0, arg1, arg2, arg3, arg4);
 		local1.glLineWidth(1.0F);
@@ -110,11 +110,11 @@ public final class Static18 {
 
 	@OriginalMember(owner = "client!hd", name = "a", descriptor = "(IIII)V")
 	public static void method1688(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) {
-		Static16.method1585();
+		GlRenderer.method1585();
 		@Pc(5) float local5 = (float) arg0 + 0.3F;
-		@Pc(13) float local13 = (float) Static3.anInt2083 - (float) arg1 - 0.3F;
+		@Pc(13) float local13 = (float) GlRenderer.canvasHeight - (float) arg1 - 0.3F;
 		@Pc(18) float local18 = local13 - (float) arg2;
-		@Pc(20) GL local20 = Static3.aGL1;
+		@Pc(20) GL local20 = GlRenderer.gl;
 		local20.glBegin(GL.GL_LINES);
 		local20.glColor3ub((byte) (arg3 >> 16), (byte) (arg3 >> 8), (byte) arg3);
 		local20.glVertex2f(local5, local13);
@@ -123,25 +123,25 @@ public final class Static18 {
 	}
 
 	@OriginalMember(owner = "client!hd", name = "a", descriptor = "(IIIIIILclient!oa;)V")
-	public static void method1689(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) Class4_Sub3_Sub14_Sub2 arg6) {
+	public static void method1689(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) GlSprite arg6) {
 		if (Static3.anInt2149 - Static3.anInt2152 != arg6.height) {
 			throw new IllegalStateException();
 		}
-		Static16.method1585();
-		Static17.method1600(arg6.anInt5614);
-		Static17.method1597(1);
-		Static17.method1607(0);
+		GlRenderer.method1585();
+		GlRenderer.setTextureId(arg6.textureId);
+		GlRenderer.setTextureCombineRgbMode(1);
+		GlRenderer.setTextureCombineAlphaMode(0);
 		@Pc(22) float local22 = (float) arg0 + 0.3F;
 		@Pc(27) float local27 = (float) arg2 + 0.3F;
-		@Pc(35) float local35 = (float) Static3.anInt2083 - (float) arg1 - 0.3F;
-		@Pc(43) float local43 = (float) Static3.anInt2083 - (float) arg3 - 0.3F;
-		@Pc(45) GL local45 = Static3.aGL1;
+		@Pc(35) float local35 = (float) GlRenderer.canvasHeight - (float) arg1 - 0.3F;
+		@Pc(43) float local43 = (float) GlRenderer.canvasHeight - (float) arg3 - 0.3F;
+		@Pc(45) GL local45 = GlRenderer.gl;
 		local45.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_SRC0_RGB, GL.GL_PREVIOUS);
 		local45.glBegin(GL.GL_LINE_LOOP);
 		local45.glColor4ub((byte) (arg4 >> 16), (byte) (arg4 >> 8), (byte) arg4, arg5 > 255 ? -1 : (byte) arg5);
-		local45.glTexCoord2f((local22 - (float) Static3.anInt2150) / (float) arg6.anInt5617, ((float) Static3.anInt2083 - local35 - (float) Static3.anInt2152) / (float) arg6.anInt5620);
+		local45.glTexCoord2f((local22 - (float) Static3.anInt2150) / (float) arg6.anInt5617, ((float) GlRenderer.canvasHeight - local35 - (float) Static3.anInt2152) / (float) arg6.anInt5620);
 		local45.glVertex2f(local22, local35);
-		local45.glTexCoord2f((local27 - (float) Static3.anInt2150) / (float) arg6.anInt5617, ((float) Static3.anInt2083 - local43 - (float) Static3.anInt2152) / (float) arg6.anInt5620);
+		local45.glTexCoord2f((local27 - (float) Static3.anInt2150) / (float) arg6.anInt5617, ((float) GlRenderer.canvasHeight - local43 - (float) Static3.anInt2152) / (float) arg6.anInt5620);
 		local45.glVertex2f(local27, local43);
 		local45.glEnd();
 		local45.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_SRC0_RGB, GL.GL_TEXTURE);
@@ -149,12 +149,12 @@ public final class Static18 {
 
 	@OriginalMember(owner = "client!hd", name = "c", descriptor = "(IIIII)V")
 	public static void method1690(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4) {
-		Static16.method1585();
+		GlRenderer.method1585();
 		@Pc(5) float local5 = (float) arg0 + 0.3F;
 		@Pc(12) float local12 = local5 + (float) (arg2 - 1);
-		@Pc(20) float local20 = (float) Static3.anInt2083 - (float) arg1 - 0.3F;
+		@Pc(20) float local20 = (float) GlRenderer.canvasHeight - (float) arg1 - 0.3F;
 		@Pc(27) float local27 = local20 - (float) (arg3 - 1);
-		@Pc(29) GL local29 = Static3.aGL1;
+		@Pc(29) GL local29 = GlRenderer.gl;
 		local29.glBegin(GL.GL_LINE_LOOP);
 		local29.glColor3ub((byte) (arg4 >> 16), (byte) (arg4 >> 8), (byte) arg4);
 		local29.glVertex2f(local5, local20);
@@ -166,12 +166,12 @@ public final class Static18 {
 
 	@OriginalMember(owner = "client!hd", name = "c", descriptor = "(IIIIII)V")
 	public static void method1691(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5) {
-		Static16.method1585();
+		GlRenderer.method1585();
 		@Pc(3) float local3 = (float) arg0;
 		@Pc(8) float local8 = local3 + (float) arg2;
-		@Pc(13) float local13 = (float) (Static3.anInt2083 - arg1);
+		@Pc(13) float local13 = (float) (GlRenderer.canvasHeight - arg1);
 		@Pc(18) float local18 = local13 - (float) arg3;
-		@Pc(20) GL local20 = Static3.aGL1;
+		@Pc(20) GL local20 = GlRenderer.gl;
 		local20.glBegin(GL.GL_TRIANGLE_FAN);
 		local20.glColor4ub((byte) (arg4 >> 16), (byte) (arg4 >> 8), (byte) arg4, arg5 > 255 ? -1 : (byte) arg5);
 		local20.glVertex2f(local3, local13);
@@ -195,10 +195,10 @@ public final class Static18 {
 		if (Static3.anInt2149 > arg3) {
 			Static3.anInt2149 = arg3;
 		}
-		@Pc(21) GL local21 = Static3.aGL1;
+		@Pc(21) GL local21 = GlRenderer.gl;
 		local21.glEnable(GL.GL_SCISSOR_TEST);
 		if (Static3.anInt2150 <= Static3.anInt2151 && Static3.anInt2152 <= Static3.anInt2149) {
-			local21.glScissor(Static3.anInt2086 + Static3.anInt2150, Static3.anInt2078 + Static3.anInt2083 - Static3.anInt2149, Static3.anInt2151 - Static3.anInt2150, Static3.anInt2149 - Static3.anInt2152);
+			local21.glScissor(GlRenderer.anInt2086 + Static3.anInt2150, GlRenderer.anInt2078 + GlRenderer.canvasHeight - Static3.anInt2149, Static3.anInt2151 - Static3.anInt2150, Static3.anInt2149 - Static3.anInt2152);
 		} else {
 			local21.glScissor(0, 0, 0, 0);
 		}
@@ -213,20 +213,20 @@ public final class Static18 {
 		if (arg1 < 0) {
 			arg1 = 0;
 		}
-		if (arg2 > Static3.anInt2080) {
-			arg2 = Static3.anInt2080;
+		if (arg2 > GlRenderer.canvasWidth) {
+			arg2 = GlRenderer.canvasWidth;
 		}
-		if (arg3 > Static3.anInt2083) {
-			arg3 = Static3.anInt2083;
+		if (arg3 > GlRenderer.canvasHeight) {
+			arg3 = GlRenderer.canvasHeight;
 		}
 		Static3.anInt2150 = arg0;
 		Static3.anInt2152 = arg1;
 		Static3.anInt2151 = arg2;
 		Static3.anInt2149 = arg3;
-		@Pc(27) GL local27 = Static3.aGL1;
+		@Pc(27) GL local27 = GlRenderer.gl;
 		local27.glEnable(GL.GL_SCISSOR_TEST);
 		if (Static3.anInt2150 <= Static3.anInt2151 && Static3.anInt2152 <= Static3.anInt2149) {
-			local27.glScissor(Static3.anInt2086 + Static3.anInt2150, Static3.anInt2078 + Static3.anInt2083 - Static3.anInt2149, Static3.anInt2151 - Static3.anInt2150, Static3.anInt2149 - Static3.anInt2152);
+			local27.glScissor(GlRenderer.anInt2086 + Static3.anInt2150, GlRenderer.anInt2078 + GlRenderer.canvasHeight - Static3.anInt2149, Static3.anInt2151 - Static3.anInt2150, Static3.anInt2149 - Static3.anInt2152);
 		} else {
 			local27.glScissor(0, 0, 0, 0);
 		}
@@ -239,7 +239,7 @@ public final class Static18 {
 	}
 
 	@OriginalMember(owner = "client!hd", name = "a", descriptor = "(Lclient!oa;)V")
-	public static void method1696(@OriginalArg(0) Class4_Sub3_Sub14_Sub2 arg0) {
+	public static void method1696(@OriginalArg(0) GlSprite arg0) {
 		if (arg0.height != Static3.anInt2149 - Static3.anInt2152) {
 			throw new IllegalArgumentException();
 		}
@@ -248,12 +248,12 @@ public final class Static18 {
 
 	@OriginalMember(owner = "client!hd", name = "a", descriptor = "([IIIII)V")
 	public static void method1697(@OriginalArg(0) int[] arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4) {
-		Static16.method1585();
-		@Pc(2) GL local2 = Static3.aGL1;
-		local2.glRasterPos2i(arg1, Static3.anInt2083 - arg2 - arg4);
+		GlRenderer.method1585();
+		@Pc(2) GL local2 = GlRenderer.gl;
+		local2.glRasterPos2i(arg1, GlRenderer.canvasHeight - arg2 - arg4);
 		local2.glDisable(GL.GL_BLEND);
 		local2.glDisable(GL.GL_ALPHA_TEST);
-		local2.glDrawPixels(arg3, arg4, GL.GL_BGRA, Static3.aBoolean126 ? GL.GL_UNSIGNED_INT_8_8_8_8_REV : GL.GL_UNSIGNED_BYTE, IntBuffer.wrap(arg0));
+		local2.glDrawPixels(arg3, arg4, GL.GL_BGRA, GlRenderer.bigEndian ? GL.GL_UNSIGNED_INT_8_8_8_8_REV : GL.GL_UNSIGNED_BYTE, IntBuffer.wrap(arg0));
 		local2.glEnable(GL.GL_ALPHA_TEST);
 		local2.glEnable(GL.GL_BLEND);
 	}
@@ -262,20 +262,20 @@ public final class Static18 {
 	public static void method1698() {
 		Static3.anInt2150 = 0;
 		Static3.anInt2152 = 0;
-		Static3.anInt2151 = Static3.anInt2080;
-		Static3.anInt2149 = Static3.anInt2083;
-		@Pc(9) GL local9 = Static3.aGL1;
+		Static3.anInt2151 = GlRenderer.canvasWidth;
+		Static3.anInt2149 = GlRenderer.canvasHeight;
+		@Pc(9) GL local9 = GlRenderer.gl;
 		local9.glDisable(GL.GL_SCISSOR_TEST);
 		method1702();
 	}
 
 	@OriginalMember(owner = "client!hd", name = "d", descriptor = "(IIII)V")
 	public static void method1699(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) {
-		Static16.method1585();
+		GlRenderer.method1585();
 		@Pc(5) float local5 = (float) arg0 + 0.3F;
 		@Pc(10) float local10 = local5 + (float) arg2;
-		@Pc(18) float local18 = (float) Static3.anInt2083 - (float) arg1 - 0.3F;
-		@Pc(20) GL local20 = Static3.aGL1;
+		@Pc(18) float local18 = (float) GlRenderer.canvasHeight - (float) arg1 - 0.3F;
+		@Pc(20) GL local20 = GlRenderer.gl;
 		local20.glBegin(GL.GL_LINES);
 		local20.glColor3ub((byte) (arg3 >> 16), (byte) (arg3 >> 8), (byte) arg3);
 		local20.glVertex2f(local5, local18);
@@ -285,17 +285,17 @@ public final class Static18 {
 
 	@OriginalMember(owner = "client!hd", name = "c", descriptor = "()V")
 	public static void method1700() {
-		Static3.aGL1.glClear(GL.GL_DEPTH_BUFFER_BIT | GL.GL_COLOR_BUFFER_BIT);
+		GlRenderer.gl.glClear(GL.GL_DEPTH_BUFFER_BIT | GL.GL_COLOR_BUFFER_BIT);
 	}
 
 	@OriginalMember(owner = "client!hd", name = "d", descriptor = "(IIIII)V")
 	public static void method1701(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4) {
-		Static16.method1585();
+		GlRenderer.method1585();
 		@Pc(3) float local3 = (float) arg0;
 		@Pc(8) float local8 = local3 + (float) arg2;
-		@Pc(13) float local13 = (float) (Static3.anInt2083 - arg1);
+		@Pc(13) float local13 = (float) (GlRenderer.canvasHeight - arg1);
 		@Pc(18) float local18 = local13 - (float) arg3;
-		@Pc(20) GL local20 = Static3.aGL1;
+		@Pc(20) GL local20 = GlRenderer.gl;
 		local20.glBegin(GL.GL_TRIANGLE_FAN);
 		local20.glColor3ub((byte) (arg4 >> 16), (byte) (arg4 >> 8), (byte) arg4);
 		local20.glVertex2f(local3, local13);
@@ -331,7 +331,7 @@ public final class Static18 {
 		Static3.anInt2522 = Static2.anInt954;
 		Static6.aClass185_13 = null;
 		Static3.anInt2047 = -1;
-		if (Static3.aBoolean138) {
+		if (GlRenderer.enabled) {
 			Static7.aBoolean123 = true;
 		}
 		Static6.anInt4679 = -1;
@@ -339,7 +339,7 @@ public final class Static18 {
 			Static1.anInt113 = 0;
 			Static16.method1563();
 		}
-		if (Static3.aBoolean138) {
+		if (GlRenderer.enabled) {
 			method1698();
 		} else {
 			Static34.method4229();
@@ -675,12 +675,12 @@ public final class Static18 {
 					}
 				}
 				if (Static2.anInt954 < local31.anInt3993) {
-					@Pc(525) Class4_Sub3_Sub14 local525 = Static2.aClass4_Sub3_Sub14Array7[0];
-					@Pc(529) Class4_Sub3_Sub14 local529 = Static2.aClass4_Sub3_Sub14Array7[1];
+					@Pc(525) Sprite local525 = Static2.aClass4_Sub3_Sub14Array7[0];
+					@Pc(529) Sprite local529 = Static2.aClass4_Sub3_Sub14Array7[1];
 					@Pc(536) int local536;
 					if (local31 instanceof Npc) {
 						@Pc(541) Npc local541 = (Npc) local31;
-						@Pc(551) Class4_Sub3_Sub14[] local551 = (Class4_Sub3_Sub14[]) Static1.aClass26_5.get((long) local541.type.anInt5240);
+						@Pc(551) Sprite[] local551 = (Sprite[]) Static1.aClass26_5.get((long) local541.type.anInt5240);
 						if (local551 == null) {
 							local551 = Static27.method3225(client.js5Archive8, local541.type.anInt5240);
 							if (local551 != null) {
@@ -707,13 +707,13 @@ public final class Static18 {
 						local525.method4506(local635, local641);
 						@Pc(653) int local653 = local31.anInt4022 * local525.width / 255;
 						@Pc(656) int local656 = local525.height;
-						if (Static3.aBoolean138) {
+						if (GlRenderer.enabled) {
 							method1692(local635, local641, local635 + local653, local656 + local641);
 						} else {
 							Static34.method4220(local635, local641, local653 + local635, local641 + local656);
 						}
 						local529.method4506(local635, local641);
-						if (Static3.aBoolean138) {
+						if (GlRenderer.enabled) {
 							method1693(arg0, arg5, arg4 + arg0, arg2 + arg5);
 						} else {
 							Static34.method4209(arg0, arg5, arg4 + arg0, arg2 + arg5);
@@ -830,13 +830,13 @@ public final class Static18 {
 				}
 				if (Static5.anIntArray562[local854] == 4) {
 					@Pc(1320) int local1320 = (150 - Static5.anIntArray567[local854]) * (Static5.aClass4_Sub3_Sub5_3.method2252(local968) + 100) / 150;
-					if (Static3.aBoolean138) {
+					if (GlRenderer.enabled) {
 						method1692(Static7.anInt5584 + arg0 - 50, arg5, arg0 + Static7.anInt5584 + 50, arg5 + arg2);
 					} else {
 						Static34.method4220(arg0 + Static7.anInt5584 - 50, arg5, Static7.anInt5584 + arg0 + 50, arg2 + arg5);
 					}
 					Static5.aClass4_Sub3_Sub5_3.method2259(local968, Static7.anInt5584 + arg0 + 50 - local1320, arg5 + Static4.anInt3290, local985, 0);
-					if (Static3.aBoolean138) {
+					if (GlRenderer.enabled) {
 						method1693(arg0, arg5, arg4 + arg0, arg5 + arg2);
 					} else {
 						Static34.method4209(arg0, arg5, arg0 + arg4, arg5 + arg2);
@@ -845,7 +845,7 @@ public final class Static18 {
 				if (Static5.anIntArray562[local854] == 5) {
 					@Pc(1408) int local1408 = 0;
 					@Pc(1415) int local1415 = 150 - Static5.anIntArray567[local854];
-					if (Static3.aBoolean138) {
+					if (GlRenderer.enabled) {
 						method1692(arg0, Static4.anInt3290 + arg5 - Static5.aClass4_Sub3_Sub5_3.anInt2820 - 1, arg0 + arg4, Static4.anInt3290 + arg5 + 5);
 					} else {
 						Static34.method4220(arg0, Static4.anInt3290 + arg5 - Static5.aClass4_Sub3_Sub5_3.anInt2820 - 1, arg4 + arg0, arg5 + Static4.anInt3290 + 5);
@@ -856,7 +856,7 @@ public final class Static18 {
 						local1408 = local1415 - 125;
 					}
 					Static5.aClass4_Sub3_Sub5_3.method2271(local968, Static7.anInt5584 + arg0, local1408 + Static4.anInt3290 + arg5, local985, 0);
-					if (Static3.aBoolean138) {
+					if (GlRenderer.enabled) {
 						method1693(arg0, arg5, arg0 + arg4, arg5 + arg2);
 					} else {
 						Static34.method4209(arg0, arg5, arg0 + arg4, arg5 + arg2);

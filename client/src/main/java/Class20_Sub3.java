@@ -166,10 +166,10 @@ public final class Class20_Sub3 extends Class20 {
 
 	@OriginalMember(owner = "client!ne", name = "a", descriptor = "(IIIIIIIII)V")
 	public final void method2953(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) int arg8) {
-		if (this.aBoolean250 || (!this.aBoolean252 || !Static3.aBoolean138)) {
+		if (this.aBoolean250 || (!this.aBoolean252 || !GlRenderer.enabled)) {
 			return;
 		}
-		@Pc(11) GL local11 = Static3.aGL1;
+		@Pc(11) GL local11 = GlRenderer.gl;
 		@Pc(13) int local13 = Static7.anInt5281;
 		@Pc(15) int local15 = Static6.anInt4375;
 		@Pc(17) int local17 = Static6.anInt4400;
@@ -233,7 +233,7 @@ public final class Class20_Sub3 extends Class20 {
 				Static4.anInterface4_1.method451(local113.aClass89_1.anInt2403);
 				local288 = true;
 			} else {
-				Static17.method1600(-1);
+				GlRenderer.setTextureId(-1);
 			}
 			@Pc(313) float local313 = (float) local113.aClass89_1.anInt2399 * Static5.aFloat86;
 			if (local313 > 64.0F) {
@@ -251,7 +251,7 @@ public final class Class20_Sub3 extends Class20 {
 			arg0.glDisable(GL.GL_LIGHTING);
 		}
 		Static5.aClass4_Sub10_7.position = 0;
-		if (Static3.aBoolean126) {
+		if (GlRenderer.bigEndian) {
 			for (@Pc(15) int local15 = arg1 - 1; local15 >= 0; local15--) {
 				@Pc(28) int local28 = Static5.anIntArray387[local15] > 32 ? 32 : Static5.anIntArray387[local15];
 				if (local28 > 0) {
@@ -315,7 +315,7 @@ public final class Class20_Sub3 extends Class20 {
 			}
 		}
 		if (Static5.aClass4_Sub10_7.position != 0) {
-			if (Static3.aBoolean135) {
+			if (GlRenderer.arbVboSupported) {
 				arg0.glBindBufferARB(GL.GL_ARRAY_BUFFER, 0);
 			}
 			if (Static5.aByteBuffer12 == null || Static5.aByteBuffer12.capacity() < Static5.aClass4_Sub10_7.position) {

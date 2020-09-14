@@ -510,7 +510,7 @@ public final class Static28 {
 
 	@OriginalMember(owner = "client!pa", name = "a", descriptor = "(ZLclient!gl;Z)V")
 	public static void method3331(@OriginalArg(0) boolean arg0, @OriginalArg(1) Class4_Sub3_Sub5 arg1) {
-		if (Static3.aBoolean138 || arg0) {
+		if (GlRenderer.enabled || arg0) {
 			@Pc(10) int local10 = GameShell.canvasHeight;
 			@Pc(16) int local16 = local10 * 956 / 503;
 			Static6.aClass4_Sub3_Sub14_7.method4507((GameShell.canvasWidth - local16) / 2, 0, local16, local10);
@@ -518,7 +518,7 @@ public final class Static28 {
 		}
 		arg1.method2271(client.game == 1 ? LocalisedText.GAME1_LOADING : LocalisedText.GAME0_LOADING, GameShell.canvasWidth / 2, GameShell.canvasHeight / 2 - 26, 16777215, -1);
 		@Pc(70) int local70 = GameShell.canvasHeight / 2 - 18;
-		if (Static3.aBoolean138) {
+		if (GlRenderer.enabled) {
 			Static18.method1690(GameShell.canvasWidth / 2 - 152, local70, 304, 34, 9179409);
 			Static18.method1690(GameShell.canvasWidth / 2 - 151, local70 + 1, 302, 32, 0);
 			Static18.method1701(GameShell.canvasWidth / 2 - 150, local70 + 2, client.mainLoadPercentage * 3, 30, 9179409);

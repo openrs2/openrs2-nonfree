@@ -5,7 +5,7 @@ import dev.openrs2.deob.annotation.Pc;
 public final class Static15 {
 
 	@OriginalMember(owner = "client!fb", name = "a", descriptor = "(Lclient!fe;Lclient!fe;IIIZ)V")
-	public static void method1216(@OriginalArg(0) Class56_Sub1 arg0, @OriginalArg(1) Class56_Sub1 arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) boolean arg5) {
+	public static void method1216(@OriginalArg(0) SoftwareIndexedSprite arg0, @OriginalArg(1) SoftwareIndexedSprite arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) boolean arg5) {
 		if (arg2 <= 0 || arg3 <= 0 || arg2 + 16 >= arg1.anInt3408 || arg3 + 16 >= arg1.anInt3413) {
 			return;
 		}
@@ -40,7 +40,7 @@ public final class Static15 {
 	}
 
 	@OriginalMember(owner = "client!fb", name = "a", descriptor = "(Lclient!fe;Lclient!fe;II)Z")
-	public static boolean method1217(@OriginalArg(0) Class56_Sub1 arg0, @OriginalArg(1) Class56_Sub1 arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) {
+	public static boolean method1217(@OriginalArg(0) SoftwareIndexedSprite arg0, @OriginalArg(1) SoftwareIndexedSprite arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) {
 		@Pc(4) int local4 = arg2 + arg0.anInt3404;
 		@Pc(9) int local9 = arg3 + arg0.anInt3405;
 		@Pc(16) int local16 = local4 + local9 * arg1.anInt3408;
@@ -78,7 +78,7 @@ public final class Static15 {
 	}
 
 	@OriginalMember(owner = "client!fb", name = "b", descriptor = "(Lclient!fe;Lclient!fe;II)V")
-	public static void method1218(@OriginalArg(0) Class56_Sub1 arg0, @OriginalArg(1) Class56_Sub1 arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) {
+	public static void method1218(@OriginalArg(0) SoftwareIndexedSprite arg0, @OriginalArg(1) SoftwareIndexedSprite arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) {
 		@Pc(4) int local4 = arg2 + arg0.anInt3404;
 		@Pc(9) int local9 = arg3 + arg0.anInt3405;
 		@Pc(16) int local16 = local4 + local9 * arg1.anInt3408;
@@ -120,7 +120,7 @@ public final class Static15 {
 	}
 
 	@OriginalMember(owner = "client!fb", name = "c", descriptor = "(Lclient!fe;Lclient!fe;II)V")
-	public static void method1219(@OriginalArg(0) Class56_Sub1 arg0, @OriginalArg(1) Class56_Sub1 arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) {
+	public static void method1219(@OriginalArg(0) SoftwareIndexedSprite arg0, @OriginalArg(1) SoftwareIndexedSprite arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) {
 		@Pc(4) int local4 = arg2 + arg0.anInt3404;
 		@Pc(9) int local9 = arg3 + arg0.anInt3405;
 		@Pc(16) int local16 = local4 + local9 * arg1.anInt3408;
@@ -811,7 +811,7 @@ public final class Static15 {
 
 	@OriginalMember(owner = "client!fm", name = "a", descriptor = "(IIII)I")
 	public static int method1474(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(3) int arg2) {
-		@Pc(16) int local16 = Static4.anIntArray295[Static25.method2912(arg2, arg0)];
+		@Pc(16) int local16 = ColorUtils.HSL_TO_RGB[Static25.method2912(arg2, arg0)];
 		if (arg1 > 0) {
 			@Pc(26) int local26 = Static4.anInterface4_1.method450(arg1 & 0xFFFF);
 			if (local26 != 0) {
@@ -869,7 +869,7 @@ public final class Static15 {
 		@Pc(9) int local9 = Static4.anInt3455;
 		@Pc(11) int local11 = Static6.anInt4440;
 		@Pc(19) int local19 = Static3.anInt2394;
-		if (Static3.aBoolean138) {
+		if (GlRenderer.enabled) {
 			Static18.method1701(local3, local9, local11, local19, 6116423);
 			Static18.method1701(local3 + 1, local9 + 1, local11 - 2, 16, 0);
 			Static18.method1690(local3 + 1, local9 + 18, local11 - 2, local19 - 19, 0);

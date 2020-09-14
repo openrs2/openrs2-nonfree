@@ -300,7 +300,7 @@ public abstract class PathingEntity extends Entity {
 		this.z = this.anIntArray426[0] * 128 + arg1 * 64;
 		this.anInt3965 = 0;
 		this.x = this.anIntArray422[0] * 128 + arg1 * 64;
-		if (Static3.aBoolean138 && Player.self == this) {
+		if (GlRenderer.enabled && Player.self == this) {
 			Static17.method1655();
 		}
 		if (this.aClass20_Sub3_6 != null) {
@@ -663,7 +663,7 @@ public abstract class PathingEntity extends Entity {
 
 	@OriginalMember(owner = "client!qc", name = "a", descriptor = "(Lclient!vg;BLclient!vg;)V")
 	protected final void method3315(@OriginalArg(0) Class53_Sub4 arg0, @OriginalArg(2) Class53_Sub4 arg1) {
-		if (Static3.aBoolean138) {
+		if (GlRenderer.enabled) {
 			@Pc(67) Class53_Sub4_Sub2 local67 = (Class53_Sub4_Sub2) arg0;
 			@Pc(70) Class53_Sub4_Sub2 local70 = (Class53_Sub4_Sub2) arg1;
 			if ((this.aClass20_Sub3_6 == null || this.aClass20_Sub3_6.aBoolean250) && (local67.aClass158Array3 != null || local67.aClass167Array3 != null || local70 != null && (local70.aClass158Array3 != null || local70.aClass167Array3 != null))) {

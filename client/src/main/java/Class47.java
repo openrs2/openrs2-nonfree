@@ -15,7 +15,7 @@ public final class Class47 {
 	private int anInt1250;
 
 	@OriginalMember(owner = "client!eh", name = "l", descriptor = "Lclient!vn;")
-	private Class4_Sub3_Sub14_Sub1 aClass4_Sub3_Sub14_Sub1_1;
+	private SoftwareSprite aClass4_Sub3_Sub14_Sub1_1;
 
 	@OriginalMember(owner = "client!eh", name = "a", descriptor = "I")
 	private int anInt1245 = -1;
@@ -65,7 +65,7 @@ public final class Class47 {
 			Static33.method4205(arg1, arg2, arg3, arg4, 0);
 		} else {
 			if (this.aClass4_Sub3_Sub14_Sub1_1 == null) {
-				this.aClass4_Sub3_Sub14_Sub1_1 = Static4.anInterface4_1.method452(false, Static4.aFloat74, this.anInt1250, this.anInt1249);
+				this.aClass4_Sub3_Sub14_Sub1_1 = Static4.anInterface4_1.method452(this.anInt1249, false, ColorUtils.brightness, this.anInt1250);
 			}
 			if (!Static4.anInterface4_1.method443(this.anInt1249)) {
 				Static33.method4205(arg1, arg2, arg3, arg4, 0);
@@ -98,27 +98,27 @@ public final class Class47 {
 
 	@OriginalMember(owner = "client!eh", name = "b", descriptor = "(IIIIIIII)V")
 	public final void method1025(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7) {
-		@Pc(1) GL local1 = Static3.aGL1;
+		@Pc(1) GL local1 = GlRenderer.gl;
 		this.method1029(arg4);
 		arg6 = arg6 + arg0 & 0x7FF;
 		@Pc(14) int local14 = arg1 + arg3;
 		@Pc(18) int local18 = arg2 + arg4;
-		Static16.method1593(false);
-		Static17.method1610(false);
-		Static16.method1588(false);
-		Static16.method1595();
-		Static17.method1606(arg1, local14, arg2, local18);
-		Static16.method1589();
+		GlRenderer.setFogEnabled(false);
+		GlRenderer.setLightingEnabled(false);
+		GlRenderer.setDepthTestEnabled(false);
+		GlRenderer.method1595();
+		GlRenderer.method1606(arg1, local14, arg2, local18);
+		GlRenderer.disableDepthMask();
 		for (@Pc(36) int local36 = this.anInt1247 - 1; local36 >= 0; local36--) {
 			this.aClass105Array2[local36].method2293(this.aClass105_1);
 		}
 		if (this.anInt1249 == -1) {
-			Static17.method1615(arg7);
+			GlRenderer.clearColorBuffer(arg7);
 		} else {
 			if (!Static4.anInterface4_1.method443(this.anInt1249)) {
-				Static17.method1615(arg7);
+				GlRenderer.clearColorBuffer(arg7);
 			}
-			Static4.anInterface4_1.method454(this.anInt1250, this.anInt1249);
+			Static4.anInterface4_1.method454(this.anInt1249, this.anInt1250);
 			@Pc(71) float local71 = (float) arg5 / 512.0F;
 			@Pc(76) float local76 = (float) arg6 / -512.0F;
 			@Pc(86) float local86 = (float) (arg3 - arg4) / ((float) arg4 * 2.0F);
@@ -137,10 +137,10 @@ public final class Class47 {
 		for (@Pc(155) int local155 = this.anInt1247 - 1; local155 >= 0; local155--) {
 			this.aClass105Array2[local155].method2292(arg1, arg2, arg3, arg4, arg5, arg6);
 		}
-		Static16.method1591();
-		Static16.method1588(true);
-		Static17.method1610(true);
-		Static16.method1593(true);
+		GlRenderer.enableDepthMask();
+		GlRenderer.setDepthTestEnabled(true);
+		GlRenderer.setLightingEnabled(true);
+		GlRenderer.setFogEnabled(true);
 	}
 
 	@OriginalMember(owner = "client!eh", name = "a", descriptor = "(I)V")

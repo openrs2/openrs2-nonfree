@@ -51,7 +51,7 @@ public final class Static1 {
 	public static Class106 aClass106_1;
 
 	@OriginalMember(owner = "client!al", name = "S", descriptor = "[Lclient!uj;")
-	public static Class4_Sub3_Sub14[] aClass4_Sub3_Sub14Array1;
+	public static Sprite[] aClass4_Sub3_Sub14Array1;
 
 	@OriginalMember(owner = "client!al", name = "W", descriptor = "[[I")
 	public static int[][] anIntArrayArray2;
@@ -66,7 +66,7 @@ public final class Static1 {
 	public static Class27 aClass27_1;
 
 	@OriginalMember(owner = "client!am", name = "z", descriptor = "[Lclient!uj;")
-	public static Class4_Sub3_Sub14[] aClass4_Sub3_Sub14Array2;
+	public static Sprite[] aClass4_Sub3_Sub14Array2;
 
 	@OriginalMember(owner = "client!an", name = "g", descriptor = "Lclient!fh;")
 	public static Js5 aClass58_7;
@@ -105,7 +105,7 @@ public final class Static1 {
 	public static byte[][] aByteArrayArray4;
 
 	@OriginalMember(owner = "client!bk", name = "f", descriptor = "Lclient!uj;")
-	public static Class4_Sub3_Sub14 aClass4_Sub3_Sub14_1;
+	public static Sprite aClass4_Sub3_Sub14_1;
 
 	@OriginalMember(owner = "client!bk", name = "g", descriptor = "Lclient!ib;")
 	public static Class4_Sub3_Sub10 aClass4_Sub3_Sub10_2;
@@ -174,7 +174,7 @@ public final class Static1 {
 	public static int anInt647;
 
 	@OriginalMember(owner = "client!ck", name = "fb", descriptor = "[Lclient!uj;")
-	public static Class4_Sub3_Sub14[] aClass4_Sub3_Sub14Array3;
+	public static Sprite[] aClass4_Sub3_Sub14Array3;
 
 	@OriginalMember(owner = "client!client", name = "U", descriptor = "I")
 	public static int anInt771;
@@ -495,7 +495,7 @@ public final class Static1 {
 	public static int anInt885 = 0;
 
 	@OriginalMember(owner = "client!db", name = "l", descriptor = "Lclient!fe;")
-	public static Class56_Sub1 aClass56_Sub1_1 = null;
+	public static SoftwareIndexedSprite aClass56_Sub1_1 = null;
 
 	@OriginalMember(owner = "client!db", name = "q", descriptor = "I")
 	public static int anInt891 = 0;

@@ -9,7 +9,7 @@ public final class Class139 implements Interface2 {
 	@Override
 	public final void method3484() {
 		if (Preferences.highDetailLighting) {
-			Static17.method1610(false);
+			GlRenderer.setLightingEnabled(false);
 		}
 	}
 
@@ -17,7 +17,7 @@ public final class Class139 implements Interface2 {
 	@Override
 	public final void method3483() {
 		if (Preferences.highDetailLighting) {
-			Static17.method1610(true);
+			GlRenderer.setLightingEnabled(true);
 		}
 	}
 

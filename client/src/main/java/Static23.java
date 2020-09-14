@@ -119,13 +119,13 @@ public final class Static23 {
 	}
 
 	@OriginalMember(owner = "client!lb", name = "a", descriptor = "(I)[Lclient!ma;")
-	public static Class56[] method2456() {
-		@Pc(8) Class56[] local8 = new Class56[Static4.anInt2748];
+	public static IndexedSprite[] method2456() {
+		@Pc(8) IndexedSprite[] local8 = new IndexedSprite[Static4.anInt2748];
 		for (@Pc(10) int local10 = 0; local10 < Static4.anInt2748; local10++) {
-			if (Static3.aBoolean138) {
-				local8[local10] = new Class56_Sub2(Static1.anInt889, Static3.anInt2162, Static5.anIntArray402[local10], Static5.anIntArray391[local10], Static3.anIntArray185[local10], Static7.anIntArray643[local10], Static6.aByteArrayArray36[local10], Static2.anIntArray85);
+			if (GlRenderer.enabled) {
+				local8[local10] = new GlIndexedSprite(Static1.anInt889, Static3.anInt2162, Static5.anIntArray402[local10], Static5.anIntArray391[local10], Static3.anIntArray185[local10], Static7.anIntArray643[local10], Static6.aByteArrayArray36[local10], Static2.anIntArray85);
 			} else {
-				local8[local10] = new Class56_Sub1(Static1.anInt889, Static3.anInt2162, Static5.anIntArray402[local10], Static5.anIntArray391[local10], Static3.anIntArray185[local10], Static7.anIntArray643[local10], Static6.aByteArrayArray36[local10], Static2.anIntArray85);
+				local8[local10] = new SoftwareIndexedSprite(Static1.anInt889, Static3.anInt2162, Static5.anIntArray402[local10], Static5.anIntArray391[local10], Static3.anIntArray185[local10], Static7.anIntArray643[local10], Static6.aByteArrayArray36[local10], Static2.anIntArray85);
 			}
 		}
 		Static37.method4670();
@@ -190,7 +190,7 @@ public final class Static23 {
 		@Pc(10) int local10 = local7.baseVar;
 		@Pc(13) int local13 = local7.startBit;
 		@Pc(16) int local16 = local7.endBit;
-		@Pc(23) int local23 = Class4_Sub3_Sub16.anIntArray455[local16 - local13];
+		@Pc(23) int local23 = GlSolidColorTexture.BIT_MASKS[local16 - local13];
 		if (arg1 < 0 || arg1 > local23) {
 			arg1 = 0;
 		}
@@ -348,12 +348,6 @@ public final class Static23 {
 		}
 	}
 
-	@OriginalMember(owner = "client!lg", name = "a", descriptor = "(F)V")
-	public static void method2539(@OriginalArg(0) float arg0) {
-		method2541(arg0);
-		method2545();
-	}
-
 	@OriginalMember(owner = "client!lg", name = "a", descriptor = "(II)I")
 	private static int method2540(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
 		@Pc(7) int local7 = arg1 * (arg0 & 0x7F) >> 7;
@@ -363,12 +357,6 @@ public final class Static23 {
 			local7 = 126;
 		}
 		return (arg0 & 0xFF80) + local7;
-	}
-
-	@OriginalMember(owner = "client!lg", name = "b", descriptor = "(F)V")
-	private static void method2541(@OriginalArg(0) float arg0) {
-		Static4.aFloat74 = arg0;
-		Static4.aFloat74 = (float) ((double) Static4.aFloat74 + Math.random() * 0.03D - 0.015D);
 	}
 
 	@OriginalMember(owner = "client!lg", name = "a", descriptor = "(III)V")
@@ -918,76 +906,6 @@ public final class Static23 {
 		}
 	}
 
-	@OriginalMember(owner = "client!lg", name = "b", descriptor = "(II)V")
-	private static void method2545() {
-		@Pc(3) int local3 = 0;
-		for (@Pc(5) int local5 = 0; local5 < 512; local5++) {
-			@Pc(17) double local17 = (double) (local5 >> 3) / 64.0D + 0.0078125D;
-			@Pc(26) double local26 = (double) (local5 & 0x7) / 8.0D + 0.0625D;
-			for (@Pc(28) int local28 = 0; local28 < 128; local28++) {
-				@Pc(36) double local36 = (double) local28 / 128.0D;
-				@Pc(38) double local38 = local36;
-				@Pc(40) double local40 = local36;
-				@Pc(42) double local42 = local36;
-				if (local26 != 0.0D) {
-					@Pc(56) double local56;
-					if (local36 < 0.5D) {
-						local56 = local36 * (local26 + 1.0D);
-					} else {
-						local56 = local36 + local26 - local36 * local26;
-					}
-					@Pc(71) double local71 = local36 * 2.0D - local56;
-					@Pc(75) double local75 = local17 + 0.3333333333333333D;
-					if (local75 > 1.0D) {
-						local75--;
-					}
-					@Pc(89) double local89 = local17 - 0.3333333333333333D;
-					if (local89 < 0.0D) {
-						local89++;
-					}
-					if (local75 * 6.0D < 1.0D) {
-						local38 = local71 + (local56 - local71) * 6.0D * local75;
-					} else if (local75 * 2.0D < 1.0D) {
-						local38 = local56;
-					} else if (local75 * 3.0D < 2.0D) {
-						local38 = local71 + (local56 - local71) * (0.6666666666666666D - local75) * 6.0D;
-					} else {
-						local38 = local71;
-					}
-					if (local17 * 6.0D < 1.0D) {
-						local40 = local71 + (local56 - local71) * 6.0D * local17;
-					} else if (local17 * 2.0D < 1.0D) {
-						local40 = local56;
-					} else if (local17 * 3.0D < 2.0D) {
-						local40 = local71 + (local56 - local71) * (0.6666666666666666D - local17) * 6.0D;
-					} else {
-						local40 = local71;
-					}
-					if (local89 * 6.0D < 1.0D) {
-						local42 = local71 + (local56 - local71) * 6.0D * local89;
-					} else if (local89 * 2.0D < 1.0D) {
-						local42 = local56;
-					} else if (local89 * 3.0D < 2.0D) {
-						local42 = local71 + (local56 - local71) * (0.6666666666666666D - local89) * 6.0D;
-					} else {
-						local42 = local71;
-					}
-				}
-				@Pc(243) double local243 = Math.pow(local38, (double) Static4.aFloat74);
-				@Pc(248) double local248 = Math.pow(local40, (double) Static4.aFloat74);
-				@Pc(253) double local253 = Math.pow(local42, (double) Static4.aFloat74);
-				@Pc(258) int local258 = (int) (local243 * 256.0D);
-				@Pc(263) int local263 = (int) (local248 * 256.0D);
-				@Pc(268) int local268 = (int) (local253 * 256.0D);
-				@Pc(278) int local278 = (local258 << 16) + (local263 << 8) + local268;
-				if (local278 == 0) {
-					local278 = 1;
-				}
-				Static4.anIntArray295[local3++] = local278;
-			}
-		}
-	}
-
 	@OriginalMember(owner = "client!lg", name = "a", descriptor = "()I")
 	public static int method2546() {
 		return Static4.anIntArray297[0] / Static6.anInt5188;
@@ -1015,14 +933,14 @@ public final class Static23 {
 
 	@OriginalMember(owner = "client!lg", name = "a", descriptor = "(IIIIIIIIIIIIIIIIIII)V")
 	public static void method2549(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) int arg8, @OriginalArg(9) int arg9, @OriginalArg(10) int arg10, @OriginalArg(11) int arg11, @OriginalArg(12) int arg12, @OriginalArg(13) int arg13, @OriginalArg(14) int arg14, @OriginalArg(15) int arg15, @OriginalArg(16) int arg16, @OriginalArg(17) int arg17, @OriginalArg(18) int arg18) {
-		@Pc(5) int[] local5 = Static4.anInterface4_1.method445(Static4.aFloat74, arg18);
+		@Pc(5) int[] local5 = Static4.anInterface4_1.method445(arg18, ColorUtils.brightness);
 		if (local5 == null || Static4.anInt3127 > 10) {
 			@Pc(15) int local15 = Static4.anInterface4_1.method446(arg18);
 			Static4.aBoolean218 = true;
 			method2543(arg0, arg1, arg2, arg3, arg4, arg5, method2540(local15, arg6), method2540(local15, arg7), method2540(local15, arg8));
 			return;
 		}
-		Static4.aBoolean220 = Static4.anInterface4_1.method453(arg18);
+		Static4.aBoolean220 = Static4.anInterface4_1.isLowDetail(arg18);
 		Static4.aBoolean219 = Static4.anInterface4_1.method443(arg18);
 		@Pc(48) int local48 = arg4 - arg3;
 		@Pc(52) int local52 = arg1 - arg0;
@@ -1989,7 +1907,7 @@ public final class Static23 {
 	}
 
 	@OriginalMember(owner = "client!lg", name = "a", descriptor = "(Lclient!nk;)V")
-	public static void method2551(@OriginalArg(0) Interface4 arg0) {
+	public static void method2551(@OriginalArg(0) GlTextureProvider arg0) {
 		Static4.anInterface4_1 = arg0;
 	}
 
@@ -2421,7 +2339,7 @@ public final class Static23 {
 			@Pc(324) int local324 = arg3 - arg2;
 			if (Static4.anInt3127 == 0) {
 				do {
-					arg0[local18++] = Static4.anIntArray295[local24 >> 8];
+					arg0[local18++] = ColorUtils.HSL_TO_RGB[local24 >> 8];
 					local24 += arg5;
 					local324--;
 				} while (local324 > 0);
@@ -2429,7 +2347,7 @@ public final class Static23 {
 				@Pc(345) int local345 = Static4.anInt3127;
 				@Pc(349) int local349 = 256 - Static4.anInt3127;
 				do {
-					@Pc(355) int local355 = Static4.anIntArray295[local24 >> 8];
+					@Pc(355) int local355 = ColorUtils.HSL_TO_RGB[local24 >> 8];
 					local24 += arg5;
 					local355 = ((local355 & 0xFF00FF) * local349 >> 8 & 0xFF00FF) + ((local355 & 0xFF00) * local349 >> 8 & 0xFF00);
 					@Pc(383) int local383 = arg0[local18];
@@ -2444,7 +2362,7 @@ public final class Static23 {
 		if (Static4.anInt3127 == 0) {
 			if (local32 > 0) {
 				do {
-					@Pc(46) int local46 = Static4.anIntArray295[local24 >> 8];
+					@Pc(46) int local46 = ColorUtils.HSL_TO_RGB[local24 >> 8];
 					local24 += arg5;
 					arg1 = local18 + 1;
 					arg0[local18] = local46;
@@ -2457,7 +2375,7 @@ public final class Static23 {
 			}
 			@Pc(79) int local79 = arg3 - arg2 & 0x3;
 			if (local79 > 0) {
-				@Pc(87) int local87 = Static4.anIntArray295[local24 >> 8];
+				@Pc(87) int local87 = ColorUtils.HSL_TO_RGB[local24 >> 8];
 				do {
 					arg0[local18++] = local87;
 					local79--;
@@ -2469,7 +2387,7 @@ public final class Static23 {
 		@Pc(102) int local102 = 256 - Static4.anInt3127;
 		if (local32 > 0) {
 			do {
-				@Pc(110) int local110 = Static4.anIntArray295[local24 >> 8];
+				@Pc(110) int local110 = ColorUtils.HSL_TO_RGB[local24 >> 8];
 				local24 += arg5;
 				local110 = ((local110 & 0xFF00FF) * local102 >> 8 & 0xFF00FF) + ((local110 & 0xFF00) * local102 >> 8 & 0xFF00);
 				@Pc(138) int local138 = arg0[local18];
@@ -2489,7 +2407,7 @@ public final class Static23 {
 		if (local259 <= 0) {
 			return;
 		}
-		@Pc(267) int local267 = Static4.anIntArray295[local24 >> 8];
+		@Pc(267) int local267 = ColorUtils.HSL_TO_RGB[local24 >> 8];
 		local267 = ((local267 & 0xFF00FF) * local102 >> 8 & 0xFF00FF) + ((local267 & 0xFF00) * local102 >> 8 & 0xFF00);
 		do {
 			@Pc(291) int local291 = arg0[local18];
@@ -2872,13 +2790,13 @@ public final class Static23 {
 
 	@OriginalMember(owner = "client!lg", name = "b", descriptor = "(IIIIIIIIIIIIIIIIIII)V")
 	public static void method2558(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) int arg8, @OriginalArg(9) int arg9, @OriginalArg(10) int arg10, @OriginalArg(11) int arg11, @OriginalArg(12) int arg12, @OriginalArg(13) int arg13, @OriginalArg(14) int arg14, @OriginalArg(15) int arg15, @OriginalArg(16) int arg16, @OriginalArg(17) int arg17, @OriginalArg(18) int arg18) {
-		@Pc(5) int[] local5 = Static4.anInterface4_1.method445(Static4.aFloat74, arg18);
+		@Pc(5) int[] local5 = Static4.anInterface4_1.method445(arg18, ColorUtils.brightness);
 		if (local5 == null) {
 			@Pc(12) int local12 = Static4.anInterface4_1.method446(arg18);
 			method2543(arg0, arg1, arg2, arg3, arg4, arg5, method2540(local12, arg6), method2540(local12, arg7), method2540(local12, arg8));
 			return;
 		}
-		Static4.aBoolean220 = Static4.anInterface4_1.method453(arg18);
+		Static4.aBoolean220 = Static4.anInterface4_1.isLowDetail(arg18);
 		Static4.aBoolean219 = Static4.anInterface4_1.method443(arg18);
 		@Pc(43) int local43 = arg4 - arg3;
 		@Pc(47) int local47 = arg1 - arg0;

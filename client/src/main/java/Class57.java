@@ -10,7 +10,7 @@ public final class Class57 {
 	public ByteBuffer aByteBuffer1;
 
 	@OriginalMember(owner = "client!ff", name = "i", descriptor = "Lclient!lk;")
-	public Class111 aClass111_1;
+	public GlBuffer aClass111_1;
 
 	@OriginalMember(owner = "client!ff", name = "b", descriptor = "Z")
 	public boolean aBoolean103 = false;

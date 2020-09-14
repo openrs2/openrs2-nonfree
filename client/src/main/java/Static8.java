@@ -133,7 +133,7 @@ public final class Static8 {
 			Static1.anInt772 = 1;
 		}
 		Static6.anInt4457 = 0;
-		if (Static3.aBoolean138 && arg0 && (Math.abs(local95) > 104 || Math.abs(local90) > 104)) {
+		if (GlRenderer.enabled && arg0 && (Math.abs(local95) > 104 || Math.abs(local90) > 104)) {
 			Static17.method1655();
 		}
 		Static31.method3150();
@@ -222,14 +222,14 @@ public final class Static8 {
 		Static4.anInt3253 = arg0;
 		Static3.aClass4_Sub19ArrayArrayArray2 = new Class4_Sub19[4][Static7.anInt5632][Static7.anInt5590];
 		Static6.anIntArrayArrayArray14 = new int[4][Static7.anInt5632 + 1][Static7.anInt5590 + 1];
-		if (Static3.aBoolean138) {
+		if (GlRenderer.enabled) {
 			Static3.aClass4_Sub12ArrayArray1 = new Class4_Sub12[4][];
 		}
 		if (arg1) {
 			Static7.aClass4_Sub19ArrayArrayArray3 = new Class4_Sub19[1][Static7.anInt5632][Static7.anInt5590];
 			Static2.anIntArrayArray10 = new int[Static7.anInt5632][Static7.anInt5590];
 			Static1.anIntArrayArrayArray2 = new int[1][Static7.anInt5632 + 1][Static7.anInt5590 + 1];
-			if (Static3.aBoolean138) {
+			if (GlRenderer.enabled) {
 				Static7.aClass4_Sub12ArrayArray3 = new Class4_Sub12[1][];
 			}
 		} else {
@@ -267,14 +267,14 @@ public final class Static8 {
 	@OriginalMember(owner = "client!ab", name = "a", descriptor = "(IIIFIIZB)[I")
 	public static int[] method12(@OriginalArg(3) float arg0) {
 		@Pc(2) int[] local2 = new int[2048];
-		@Pc(16) Class4_Sub1_Sub12 local16 = new Class4_Sub1_Sub12();
+		@Pc(16) TextureOp34 local16 = new TextureOp34();
 		local16.anInt2620 = (int) (arg0 * 4096.0F);
 		local16.anInt2628 = 4;
 		local16.aBoolean181 = true;
 		local16.anInt2631 = 8;
 		local16.anInt2621 = 35;
 		local16.anInt2625 = 8;
-		local16.method4700();
+		local16.postDecode();
 		Static11.method524(2048, 1);
 		local16.method2053(local2, 0);
 		return local2;
@@ -424,8 +424,8 @@ public final class Static8 {
 	}
 
 	@OriginalMember(owner = "client!af", name = "c", descriptor = "(I)[Lclient!vn;")
-	public static Class4_Sub3_Sub14_Sub1[] method103() {
-		@Pc(8) Class4_Sub3_Sub14_Sub1[] local8 = new Class4_Sub3_Sub14_Sub1[Static4.anInt2748];
+	public static SoftwareSprite[] method103() {
+		@Pc(8) SoftwareSprite[] local8 = new SoftwareSprite[Static4.anInt2748];
 		for (@Pc(10) int local10 = 0; local10 < Static4.anInt2748; local10++) {
 			@Pc(21) int local21 = Static7.anIntArray643[local10] * Static3.anIntArray185[local10];
 			@Pc(24) int[] local24 = new int[local21];
@@ -433,7 +433,7 @@ public final class Static8 {
 			for (@Pc(30) int local30 = 0; local30 < local21; local30++) {
 				local24[local30] = Static2.anIntArray85[local28[local30] & 0xFF];
 			}
-			local8[local10] = new Class4_Sub3_Sub14_Sub1(Static1.anInt889, Static3.anInt2162, Static5.anIntArray402[local10], Static5.anIntArray391[local10], Static3.anIntArray185[local10], Static7.anIntArray643[local10], local24);
+			local8[local10] = new SoftwareSprite(Static1.anInt889, Static3.anInt2162, Static5.anIntArray402[local10], Static5.anIntArray391[local10], Static3.anIntArray185[local10], Static7.anIntArray643[local10], local24);
 		}
 		Static37.method4670();
 		return local8;
@@ -510,25 +510,13 @@ public final class Static8 {
 	@OriginalMember(owner = "client!aj", name = "a", descriptor = "(Lclient!fh;Lclient!fh;B)V")
 	public static void method113(@OriginalArg(0) Js5 arg0, @OriginalArg(1) Js5 arg1) {
 		Static1.aClass4_Sub3_Sub5_1 = method121(arg0, arg1, Static2.anInt914);
-		if (Static3.aBoolean138) {
+		if (GlRenderer.enabled) {
 			Static2.aClass4_Sub3_Sub5_Sub2_2 = Static22.method2194(arg1, Static2.anInt914, arg0);
 		} else {
 			Static2.aClass4_Sub3_Sub5_Sub2_2 = (Class4_Sub3_Sub5_Sub2) Static1.aClass4_Sub3_Sub5_1;
 		}
 		Static5.aClass4_Sub3_Sub5_2 = method121(arg0, arg1, Static7.anInt6040);
 		Static5.aClass4_Sub3_Sub5_3 = method121(arg0, arg1, Static4.anInt3309);
-	}
-
-	@OriginalMember(owner = "client!aj", name = "a", descriptor = "(CLjava/lang/String;Z)I")
-	public static int method114(@OriginalArg(0) char arg0, @OriginalArg(1) String arg1) {
-		@Pc(3) int local3 = 0;
-		@Pc(10) int local10 = arg1.length();
-		for (@Pc(16) int local16 = 0; local16 < local10; local16++) {
-			if (arg1.charAt(local16) == arg0) {
-				local3++;
-			}
-		}
-		return local3;
 	}
 
 	@OriginalMember(owner = "client!aj", name = "a", descriptor = "(B)V")

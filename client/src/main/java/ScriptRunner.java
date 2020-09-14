@@ -1337,8 +1337,8 @@ public final class ScriptRunner {
 							ssp--;
 							@Pc(13921) String local13921 = stringStack[ssp];
 							@Pc(13923) int local13923 = 0;
-							if (Static29.method3473(local13921)) {
-								local13923 = Static12.method737(local13921);
+							if (StringUtils.isInt(local13921)) {
+								local13923 = StringUtils.parseInt(local13921);
 							}
 							Static3.aClass4_Sub10_Sub1_1.writeOpcode(219);
 							Static3.aClass4_Sub10_Sub1_1.writeInt(local13923);
@@ -3824,21 +3824,21 @@ public final class ScriptRunner {
 										local6301 = 4;
 									}
 									Preferences.brightness = local6301;
-									if (!Static3.aBoolean138 || !Preferences.highDetailLighting) {
+									if (!GlRenderer.enabled || !Preferences.highDetailLighting) {
 										if (Preferences.brightness == 1) {
-											Static23.method2539(0.9F);
+											ColorUtils.setBrightness(0.9F);
 										}
 										if (Preferences.brightness == 2) {
-											Static23.method2539(0.8F);
+											ColorUtils.setBrightness(0.8F);
 										}
 										if (Preferences.brightness == 3) {
-											Static23.method2539(0.7F);
+											ColorUtils.setBrightness(0.7F);
 										}
 										if (Preferences.brightness == 4) {
-											Static23.method2539(0.6F);
+											ColorUtils.setBrightness(0.6F);
 										}
 									}
-									if (Static3.aBoolean138) {
+									if (GlRenderer.enabled) {
 										Static17.method1655();
 										if (!Preferences.highDetailLighting) {
 											Static36.method4455();
@@ -3878,7 +3878,7 @@ public final class ScriptRunner {
 								if (opcode == 6006) {
 									isp--;
 									Preferences.highDetailTextures = intStack[isp] == 1;
-									((Class24_Sub1) Static4.anInterface4_1).method457(!Preferences.highDetailTextures);
+									((Js5GlTextureProvider) Static4.anInterface4_1).setLowDetail(!Preferences.highDetailTextures);
 									Preferences.write(GameShell.signLink);
 									Preferences.sentToServer = false;
 									continue;
@@ -3923,25 +3923,25 @@ public final class ScriptRunner {
 									continue;
 								}
 								if (opcode == 6012) {
-									if (Static3.aBoolean138) {
+									if (GlRenderer.enabled) {
 										Static24.method2652(0, 0);
 									}
 									isp--;
 									Preferences.highDetailLighting = intStack[isp] == 1;
-									if (Static3.aBoolean138 && Preferences.highDetailLighting) {
-										Static23.method2539(0.7F);
+									if (GlRenderer.enabled && Preferences.highDetailLighting) {
+										ColorUtils.setBrightness(0.7F);
 									} else {
 										if (Preferences.brightness == 1) {
-											Static23.method2539(0.9F);
+											ColorUtils.setBrightness(0.9F);
 										}
 										if (Preferences.brightness == 2) {
-											Static23.method2539(0.8F);
+											ColorUtils.setBrightness(0.8F);
 										}
 										if (Preferences.brightness == 3) {
-											Static23.method2539(0.7F);
+											ColorUtils.setBrightness(0.7F);
 										}
 										if (Preferences.brightness == 4) {
-											Static23.method2539(0.6F);
+											ColorUtils.setBrightness(0.6F);
 										}
 									}
 									Static36.method4455();
@@ -3952,7 +3952,7 @@ public final class ScriptRunner {
 								if (opcode == 6014) {
 									isp--;
 									Preferences.highDetailWater = intStack[isp] == 1;
-									if (Static3.aBoolean138) {
+									if (GlRenderer.enabled) {
 										Static36.method4455();
 									}
 									Preferences.write(GameShell.signLink);
@@ -3962,7 +3962,7 @@ public final class ScriptRunner {
 								if (opcode == 6015) {
 									isp--;
 									Preferences.fog = intStack[isp] == 1;
-									if (Static3.aBoolean138) {
+									if (GlRenderer.enabled) {
 										Static17.method1655();
 									}
 									Preferences.write(GameShell.signLink);
@@ -3972,7 +3972,7 @@ public final class ScriptRunner {
 								if (opcode == 6016) {
 									isp--;
 									@Pc(6730) int local6730 = intStack[isp];
-									if (Static3.aBoolean138) {
+									if (GlRenderer.enabled) {
 										GameShell.replaceCanvas = true;
 									}
 									if (local6730 < 0 || local6730 > 2) {
@@ -4082,7 +4082,7 @@ public final class ScriptRunner {
 								if (opcode == 6027) {
 									isp--;
 									@Pc(7015) int local7015 = intStack[isp];
-									if (!Static3.aBoolean138) {
+									if (!GlRenderer.enabled) {
 										continue;
 									}
 									if (local7015 < 0 || local7015 > 1) {
@@ -4171,8 +4171,8 @@ public final class ScriptRunner {
 									continue;
 								}
 								if (opcode == 6121) {
-									if (Static3.aBoolean138) {
-										intStack[isp++] = Static3.aBoolean130 ? 1 : 0;
+									if (GlRenderer.enabled) {
+										intStack[isp++] = GlRenderer.arbMultisampleSupported ? 1 : 0;
 									} else {
 										intStack[isp++] = 0;
 									}
@@ -4187,7 +4187,7 @@ public final class ScriptRunner {
 									continue;
 								}
 								if (opcode == 6126) {
-									if (Static3.aBoolean138) {
+									if (GlRenderer.enabled) {
 										intStack[isp++] = Static13.method877() ? 1 : 0;
 									} else {
 										intStack[isp++] = 0;

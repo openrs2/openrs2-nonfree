@@ -15,10 +15,10 @@ public final class Static2 {
 	public static Class4_Sub3_Sub5_Sub2 aClass4_Sub3_Sub5_Sub2_2;
 
 	@OriginalMember(owner = "client!dg", name = "p", descriptor = "[Lclient!uj;")
-	public static Class4_Sub3_Sub14[] aClass4_Sub3_Sub14Array9;
+	public static Sprite[] aClass4_Sub3_Sub14Array9;
 
 	@OriginalMember(owner = "client!dg", name = "q", descriptor = "[Lclient!uj;")
-	public static Class4_Sub3_Sub14[] aClass4_Sub3_Sub14Array10;
+	public static Sprite[] aClass4_Sub3_Sub14Array10;
 
 	@OriginalMember(owner = "client!dg", name = "r", descriptor = "I")
 	public static int anInt2247;
@@ -30,7 +30,7 @@ public final class Static2 {
 	public static int[][] anIntArrayArray10;
 
 	@OriginalMember(owner = "client!dn", name = "T", descriptor = "[Lclient!uj;")
-	public static Class4_Sub3_Sub14[] aClass4_Sub3_Sub14Array6;
+	public static Sprite[] aClass4_Sub3_Sub14Array6;
 
 	@OriginalMember(owner = "client!dn", name = "ab", descriptor = "Lclient!wg;")
 	public static Class4_Sub3_Sub22 aClass4_Sub3_Sub22_1;
@@ -54,7 +54,7 @@ public final class Static2 {
 	public static byte[] aByteArray10;
 
 	@OriginalMember(owner = "client!eg", name = "s", descriptor = "[Lclient!uj;")
-	public static Class4_Sub3_Sub14[] aClass4_Sub3_Sub14Array7;
+	public static Sprite[] aClass4_Sub3_Sub14Array7;
 
 	@OriginalMember(owner = "client!eg", name = "H", descriptor = "I")
 	public static int anInt1244;
@@ -87,7 +87,7 @@ public final class Static2 {
 	public static int[][][] anIntArrayArrayArray3;
 
 	@OriginalMember(owner = "client!eo", name = "v", descriptor = "[Lclient!fe;")
-	public static Class56_Sub1[] aClass56_Sub1Array1;
+	public static SoftwareIndexedSprite[] aClass56_Sub1Array1;
 
 	@OriginalMember(owner = "client!fa", name = "U", descriptor = "I")
 	public static int anInt1626;
@@ -96,13 +96,13 @@ public final class Static2 {
 	public static int anInt1632;
 
 	@OriginalMember(owner = "client!fb", name = "a", descriptor = "[Lclient!fe;")
-	public static Class56_Sub1[] aClass56_Sub1Array2;
+	public static SoftwareIndexedSprite[] aClass56_Sub1Array2;
 
 	@OriginalMember(owner = "client!fb", name = "b", descriptor = "I")
 	public static int anInt1636;
 
 	@OriginalMember(owner = "client!fb", name = "c", descriptor = "Lclient!fe;")
-	public static Class56_Sub1 aClass56_Sub1_2;
+	public static SoftwareIndexedSprite aClass56_Sub1_2;
 
 	@OriginalMember(owner = "client!fb", name = "d", descriptor = "[[Lclient!kc;")
 	public static Class103[][] aClass103ArrayArray1;
@@ -138,7 +138,7 @@ public final class Static2 {
 	public static int anInt1931;
 
 	@OriginalMember(owner = "client!fl", name = "X", descriptor = "Lclient!uj;")
-	public static Class4_Sub3_Sub14 aClass4_Sub3_Sub14_2;
+	public static Sprite aClass4_Sub3_Sub14_2;
 
 	@OriginalMember(owner = "client!fl", name = "bb", descriptor = "Lclient!ib;")
 	public static Class4_Sub3_Sub10 aClass4_Sub3_Sub10_3;
@@ -286,12 +286,6 @@ public final class Static2 {
 
 	@OriginalMember(owner = "client!ea", name = "M", descriptor = "I")
 	public static int anInt1123 = 0;
-
-	@OriginalMember(owner = "client!ec", name = "b", descriptor = "I")
-	public static final int anInt1200 = 35632;
-
-	@OriginalMember(owner = "client!ec", name = "c", descriptor = "[I")
-	public static final int[] anIntArray91 = new int[2];
 
 	@OriginalMember(owner = "client!ed", name = "y", descriptor = "Z")
 	public static boolean aBoolean67 = false;

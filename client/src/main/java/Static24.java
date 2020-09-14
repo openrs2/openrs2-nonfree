@@ -50,7 +50,7 @@ public final class Static24 {
 
 	@OriginalMember(owner = "client!li", name = "b", descriptor = "(I)V")
 	public static void method2567() {
-		if (!Static3.aBoolean138 || Static4.aBoolean189) {
+		if (!GlRenderer.enabled || Static4.aBoolean189) {
 			return;
 		}
 		@Pc(22) Class4_Sub19[][][] local22 = Static1.aClass4_Sub19ArrayArrayArray1;
@@ -203,7 +203,7 @@ public final class Static24 {
 	}
 
 	@OriginalMember(owner = "client!ln", name = "a", descriptor = "(Lclient!fh;BII)Lclient!vn;")
-	public static Class4_Sub3_Sub14_Sub1 method2654(@OriginalArg(0) Js5 arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2) {
+	public static SoftwareSprite method2654(@OriginalArg(0) Js5 arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2) {
 		return Static9.method197(arg0, arg1, arg2) ? Static21.method2002() : null;
 	}
 
@@ -212,7 +212,7 @@ public final class Static24 {
 		if (Static3.aBoolean124) {
 			return;
 		}
-		if (Static3.aBoolean138) {
+		if (GlRenderer.enabled) {
 			Static18.method1700();
 		} else {
 			Static34.method4227();
@@ -227,7 +227,7 @@ public final class Static24 {
 	}
 
 	@OriginalMember(owner = "client!m", name = "a", descriptor = "(Lclient!fh;IB)Lclient!vn;")
-	public static Class4_Sub3_Sub14_Sub1 method2679(@OriginalArg(0) Js5 arg0, @OriginalArg(1) int arg1) {
+	public static SoftwareSprite method2679(@OriginalArg(0) Js5 arg0, @OriginalArg(1) int arg1) {
 		return Static33.method4131(arg0, arg1) ? Static21.method2002() : null;
 	}
 
@@ -243,7 +243,7 @@ public final class Static24 {
 	@OriginalMember(owner = "client!ma", name = "a", descriptor = "(BIIZIIZ)V")
 	public static void method2813(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) boolean arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4, @OriginalArg(6) boolean arg5) {
 		if (arg5) {
-			Static17.method1605();
+			GlRenderer.quit();
 		}
 		if (GameShell.fullScreenFrame != null && (arg4 != 3 || arg0 != Preferences.fullScreenWidth || arg3 != Preferences.fullScreenHeight)) {
 			Static31.method3658(GameShell.signLink, GameShell.fullScreenFrame);
@@ -300,8 +300,8 @@ public final class Static24 {
 				client.mouseWheel.start(GameShell.canvas);
 			}
 		} else {
-			if (Static3.aBoolean138) {
-				Static16.method1587(GameShell.canvasWidth, GameShell.canvasHeight);
+			if (GlRenderer.enabled) {
+				GlRenderer.setCanvasSize(GameShell.canvasWidth, GameShell.canvasHeight);
 			}
 			GameShell.canvas.setSize(GameShell.canvasWidth, GameShell.canvasHeight);
 			if (local83 == GameShell.frame) {
@@ -312,7 +312,7 @@ public final class Static24 {
 			}
 		}
 		if (arg4 == 0 && arg1 > 0) {
-			Static17.method1611(GameShell.canvas);
+			GlRenderer.createAndDestroyContext(GameShell.canvas);
 		}
 		if (arg5 && arg4 > 0) {
 			GameShell.canvas.setIgnoreRepaint(true);
@@ -346,10 +346,10 @@ public final class Static24 {
 				}
 			}
 			if (Static2.aBoolean76) {
-				Static17.method1623(GameShell.canvas, Static2.anInt1125 * 2);
+				GlRenderer.init(GameShell.canvas, Static2.anInt1125 * 2);
 			}
 		}
-		if (!Static3.aBoolean138 && arg4 > 0) {
+		if (!GlRenderer.enabled && arg4 > 0) {
 			method2813(-1, arg1, true, -1, 0, true);
 			return;
 		}
@@ -357,9 +357,9 @@ public final class Static24 {
 			GameShell.thread.setPriority(5);
 			client.frameBuffer = null;
 			Static25.method2915();
-			((Class24_Sub1) Static4.anInterface4_1).method463(200);
+			((Js5GlTextureProvider) Static4.anInterface4_1).resize(200);
 			if (Preferences.highDetailLighting) {
-				Static23.method2539(0.7F);
+				ColorUtils.setBrightness(0.7F);
 			}
 			if (Static5.aClass187ArrayArray1 == null) {
 				Static5.aClass187ArrayArray1 = new Class187[13][13];
@@ -372,19 +372,19 @@ public final class Static24 {
 			client.frameBuffer = FrameBuffer.create(GameShell.canvas, 765, 503);
 			Static25.method2906();
 			Static26.method2951();
-			((Class24_Sub1) Static4.anInterface4_1).method463(20);
+			((Js5GlTextureProvider) Static4.anInterface4_1).resize(20);
 			if (Preferences.highDetailLighting) {
 				if (Preferences.brightness == 1) {
-					Static23.method2539(0.9F);
+					ColorUtils.setBrightness(0.9F);
 				}
 				if (Preferences.brightness == 2) {
-					Static23.method2539(0.8F);
+					ColorUtils.setBrightness(0.8F);
 				}
 				if (Preferences.brightness == 3) {
-					Static23.method2539(0.7F);
+					ColorUtils.setBrightness(0.7F);
 				}
 				if (Preferences.brightness == 4) {
-					Static23.method2539(0.6F);
+					ColorUtils.setBrightness(0.6F);
 				}
 			}
 			Static19.method1868();
@@ -503,8 +503,8 @@ public final class Static24 {
 		Static9.method201();
 		Static30.method3555();
 		Static1.aClass26_3.clear();
-		if (!Static3.aBoolean138) {
-			((Class24_Sub1) Static4.anInterface4_1).method460();
+		if (!GlRenderer.enabled) {
+			((Js5GlTextureProvider) Static4.anInterface4_1).clear();
 		}
 		ClientScriptList.scripts.clear();
 		client.js5Archive0.discardUnpacked();
@@ -651,7 +651,7 @@ public final class Static24 {
 
 	@OriginalMember(owner = "client!mf", name = "a", descriptor = "(IILjava/lang/String;)I")
 	public static int method2703(@OriginalArg(2) String arg0) {
-		return Static30.method3614(16, arg0);
+		return StringUtils.parseInt(arg0, 16);
 	}
 
 	@OriginalMember(owner = "client!mf", name = "a", descriptor = "(Lclient!qc;I)V")
@@ -686,7 +686,7 @@ public final class Static24 {
 	public static void method2708(@OriginalArg(0) boolean arg0) {
 		@Pc(11) byte local11;
 		@Pc(13) byte[][] local13;
-		if (Static3.aBoolean138 && arg0) {
+		if (GlRenderer.enabled && arg0) {
 			local11 = 1;
 			local13 = Static1.aByteArrayArray3;
 		} else {
@@ -737,33 +737,4 @@ public final class Static24 {
 		return null;
 	}
 
-	@OriginalMember(owner = "client!mh", name = "a", descriptor = "(I[Lclient!ec;I)V")
-	public static synchronized void method2715(@OriginalArg(0) int arg0, @OriginalArg(1) Class43[] arg1, @OriginalArg(2) int arg2) {
-		if (arg2 == Static4.anInt3332) {
-			Static4.aClass112_22.addTail(new Class4_Sub28(arg0, arg1));
-		}
-	}
-
-	@OriginalMember(owner = "client!mh", name = "a", descriptor = "()V")
-	public static synchronized void method2716() {
-		Static4.anInt3332++;
-		Static4.aClass112_18.clear();
-		Static4.aClass112_19.clear();
-		Static4.aClass112_20.clear();
-		Static4.aClass112_21.clear();
-		Static4.aClass112_22.clear();
-		Static4.aClass112_23.clear();
-		Static4.anInt3331 = 0;
-		Static4.anInt3333 = 0;
-		Static4.anInt3330 = 0;
-	}
-
-	@OriginalMember(owner = "client!mh", name = "a", descriptor = "(II)V")
-	public static synchronized void method2717(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
-		if (arg1 == Static4.anInt3332) {
-			@Pc(7) IntNode local7 = new IntNode();
-			local7.key = arg0;
-			Static4.aClass112_21.addTail(local7);
-		}
-	}
 }

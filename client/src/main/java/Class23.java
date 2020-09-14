@@ -22,7 +22,7 @@ public final class Class23 implements Interface2 {
 	@OriginalMember(owner = "client!bo", name = "b", descriptor = "()V")
 	@Override
 	public final void method3484() {
-		@Pc(5) GL local5 = Static3.aGL1;
+		@Pc(5) GL local5 = GlRenderer.gl;
 		local5.glCallList(this.anInt419);
 	}
 
@@ -35,14 +35,14 @@ public final class Class23 implements Interface2 {
 	@OriginalMember(owner = "client!bo", name = "a", descriptor = "()V")
 	@Override
 	public final void method3483() {
-		@Pc(5) GL local5 = Static3.aGL1;
+		@Pc(5) GL local5 = GlRenderer.gl;
 		local5.glCallList(this.anInt419 + 1);
 	}
 
 	@OriginalMember(owner = "client!bo", name = "a", descriptor = "(I)V")
 	@Override
 	public final void method3486(@OriginalArg(0) int arg0) {
-		@Pc(7) GL local7 = Static3.aGL1;
+		@Pc(7) GL local7 = GlRenderer.gl;
 		@Pc(16) float local16 = -0.01F * (float) ((arg0 & 0x3) + 1);
 		@Pc(27) float local27 = (float) ((arg0 >> 3 & 0x3) + 1) * 0.01F;
 		@Pc(35) boolean local35 = (arg0 & 0x80) != 0;
@@ -70,17 +70,17 @@ public final class Class23 implements Interface2 {
 		this.aFloatArray9[1] = local43;
 		this.aFloatArray9[0] = 0.0F;
 		this.aFloatArray9[2] = 0.0F;
-		this.aFloatArray9[3] = (float) Static3.anInt2085 * local16;
+		this.aFloatArray9[3] = (float) GlRenderer.anInt2085 * local16;
 		local7.glTexGenfv(GL.GL_T, GL.GL_EYE_PLANE, this.aFloatArray9, 0);
 		local7.glPopMatrix();
 		if (Static3.aBoolean160) {
 			this.aFloatArray9[2] = 0.0F;
-			this.aFloatArray9[3] = local27 * (float) Static3.anInt2085;
+			this.aFloatArray9[3] = local27 * (float) GlRenderer.anInt2085;
 			this.aFloatArray9[1] = 0.0F;
 			this.aFloatArray9[0] = 0.0F;
 			local7.glTexGenfv(GL.GL_R, GL.GL_OBJECT_PLANE, this.aFloatArray9, 0);
 		} else {
-			@Pc(217) int local217 = (int) ((float) Static3.anInt2085 * 64.0F * local27);
+			@Pc(217) int local217 = (int) ((float) GlRenderer.anInt2085 * 64.0F * local27);
 			local7.glBindTexture(GL.GL_TEXTURE_2D, Static3.anIntArray199[local217 % 64]);
 		}
 		local7.glActiveTexture(GL.GL_TEXTURE0);
@@ -88,7 +88,7 @@ public final class Class23 implements Interface2 {
 
 	@OriginalMember(owner = "client!bo", name = "b", descriptor = "(Z)V")
 	private void method399() {
-		@Pc(7) GL local7 = Static3.aGL1;
+		@Pc(7) GL local7 = GlRenderer.gl;
 		this.anInt419 = local7.glGenLists(2);
 		local7.glNewList(this.anInt419, GL.GL_COMPILE);
 		local7.glActiveTexture(GL.GL_TEXTURE1);

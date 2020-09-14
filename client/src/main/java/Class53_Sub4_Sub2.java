@@ -106,7 +106,7 @@ public final class Class53_Sub4_Sub2 extends Class53_Sub4 {
 	private int[][] anIntArrayArray39;
 
 	@OriginalMember(owner = "client!s", name = "bb", descriptor = "Lclient!lk;")
-	private Class111 aClass111_7;
+	private GlBuffer aClass111_7;
 
 	@OriginalMember(owner = "client!s", name = "db", descriptor = "[B")
 	private byte[] aByteArray63;
@@ -841,7 +841,7 @@ public final class Class53_Sub4_Sub2 extends Class53_Sub4 {
 				}
 			}
 		}
-		@Pc(753) GL local753 = Static3.aGL1;
+		@Pc(753) GL local753 = GlRenderer.gl;
 		local753.glPushMatrix();
 		local753.glTranslatef((float) arg5, (float) arg6, (float) arg7);
 		local753.glRotatef((float) arg0 * 0.17578125F, 0.0F, 1.0F, 0.0F);
@@ -1124,7 +1124,7 @@ public final class Class53_Sub4_Sub2 extends Class53_Sub4 {
 		if (this.anInt4691 == 0) {
 			return;
 		}
-		@Pc(5) GL local5 = Static3.aGL1;
+		@Pc(5) GL local5 = GlRenderer.gl;
 		local5.glPushMatrix();
 		if (arg2 != 0) {
 			local5.glRotatef((float) arg2 * 0.17578125F, 1.0F, 0.0F, 0.0F);
@@ -1245,7 +1245,7 @@ public final class Class53_Sub4_Sub2 extends Class53_Sub4 {
 		} else {
 			Static6.aClass4_Sub10_9.position = 0;
 		}
-		if (Static3.aBoolean126) {
+		if (GlRenderer.bigEndian) {
 			for (@Pc(25) int local25 = 0; local25 < this.anInt4690; local25++) {
 				Static6.aClass4_Sub10_9.writeInt(this.aShortArray94[local25]);
 				Static6.aClass4_Sub10_9.writeInt(this.aShortArray97[local25]);
@@ -1258,7 +1258,7 @@ public final class Class53_Sub4_Sub2 extends Class53_Sub4 {
 				Static6.aClass4_Sub10_9.writeIntLE(this.aShortArray98[local55]);
 			}
 		}
-		if (!Static3.aBoolean135) {
+		if (!GlRenderer.arbVboSupported) {
 			@Pc(115) ByteBuffer local115 = ByteBuffer.allocateDirect(Static6.aClass4_Sub10_9.position);
 			local115.put(Static6.aClass4_Sub10_9.bytes, 0, Static6.aClass4_Sub10_9.position);
 			local115.flip();
@@ -1267,9 +1267,9 @@ public final class Class53_Sub4_Sub2 extends Class53_Sub4 {
 			this.aClass57_4.aClass111_1 = null;
 			return;
 		}
-		@Pc(88) Class111 local88 = new Class111();
+		@Pc(88) GlBuffer local88 = new GlBuffer();
 		@Pc(95) ByteBuffer local95 = ByteBuffer.wrap(Static6.aClass4_Sub10_9.bytes, 0, Static6.aClass4_Sub10_9.position);
-		local88.method2602(local95);
+		local88.setArrayBuffer(local95);
 		this.aClass57_4.aBoolean103 = true;
 		this.aClass57_4.aByteBuffer1 = null;
 		this.aClass57_4.aClass111_1 = local88;
@@ -1401,7 +1401,7 @@ public final class Class53_Sub4_Sub2 extends Class53_Sub4 {
 	}
 
 	@OriginalMember(owner = "client!s", name = "a", descriptor = "(Lclient!fe;)Lclient!fe;")
-	public final Class56_Sub1 method3854(@OriginalArg(0) Class56_Sub1 arg0) {
+	public final SoftwareIndexedSprite method3854(@OriginalArg(0) SoftwareIndexedSprite arg0) {
 		if (this.anInt4691 == 0) {
 			return null;
 		}
@@ -1428,9 +1428,9 @@ public final class Class53_Sub4_Sub2 extends Class53_Sub4 {
 		}
 		@Pc(134) int local134 = local40 + 1 - local26;
 		@Pc(140) int local140 = local99 + 1 - local85;
-		@Pc(151) Class56_Sub1 local151;
+		@Pc(151) SoftwareIndexedSprite local151;
 		if (arg0 == null || arg0.aByteArray15.length < local134 * local140) {
-			local151 = new Class56_Sub1(local134, local140, 0);
+			local151 = new SoftwareIndexedSprite(local134, local140, 0);
 		} else {
 			local151 = arg0;
 			arg0.anInt3412 = arg0.anInt3408 = local134;
@@ -1928,7 +1928,7 @@ public final class Class53_Sub4_Sub2 extends Class53_Sub4 {
 
 	@OriginalMember(owner = "client!s", name = "t", descriptor = "()V")
 	private void method3858() {
-		@Pc(1) GL local1 = Static3.aGL1;
+		@Pc(1) GL local1 = GlRenderer.gl;
 		if (this.anInt4690 == 0) {
 			return;
 		}
@@ -1968,38 +1968,38 @@ public final class Class53_Sub4_Sub2 extends Class53_Sub4 {
 			}
 			this.aByte16 = 0;
 		}
-		@Pc(172) Class111 local172 = null;
+		@Pc(172) GlBuffer local172 = null;
 		if (this.aClass57_1.aClass111_1 != null) {
-			this.aClass57_1.aClass111_1.method2604();
+			this.aClass57_1.aClass111_1.bindArray();
 			local172 = this.aClass57_1.aClass111_1;
 			local1.glVertexPointer(3, GL.GL_FLOAT, this.aClass57_1.anInt1745, (long) this.aClass57_1.anInt1744);
 		}
 		if (this.aClass57_5.aClass111_1 != null) {
 			if (local172 != this.aClass57_5.aClass111_1) {
-				this.aClass57_5.aClass111_1.method2604();
+				this.aClass57_5.aClass111_1.bindArray();
 				local172 = this.aClass57_5.aClass111_1;
 			}
 			local1.glColorPointer(4, GL.GL_UNSIGNED_BYTE, this.aClass57_5.anInt1745, (long) this.aClass57_5.anInt1744);
 		}
 		if (Preferences.highDetailLighting && this.aClass57_2.aClass111_1 != null) {
 			if (local172 != this.aClass57_2.aClass111_1) {
-				this.aClass57_2.aClass111_1.method2604();
+				this.aClass57_2.aClass111_1.bindArray();
 				local172 = this.aClass57_2.aClass111_1;
 			}
 			local1.glNormalPointer(GL.GL_FLOAT, this.aClass57_2.anInt1745, (long) this.aClass57_2.anInt1744);
 		}
 		if (this.aClass57_3.aClass111_1 != null) {
 			if (local172 != this.aClass57_3.aClass111_1) {
-				this.aClass57_3.aClass111_1.method2604();
-				@Pc(269) Class111 local269 = this.aClass57_3.aClass111_1;
+				this.aClass57_3.aClass111_1.bindArray();
+				@Pc(269) GlBuffer local269 = this.aClass57_3.aClass111_1;
 			}
 			local1.glTexCoordPointer(2, GL.GL_FLOAT, this.aClass57_3.anInt1745, (long) this.aClass57_3.anInt1744);
 		}
 		if (this.aClass57_4.aClass111_1 != null) {
-			this.aClass57_4.aClass111_1.method2603();
+			this.aClass57_4.aClass111_1.bindElementArray();
 		}
 		if (this.aClass57_1.aClass111_1 == null || this.aClass57_5.aClass111_1 == null || Preferences.highDetailLighting && this.aClass57_2.aClass111_1 == null || this.aClass57_3.aClass111_1 == null) {
-			if (Static3.aBoolean135) {
+			if (GlRenderer.arbVboSupported) {
 				local1.glBindBufferARB(GL.GL_ARRAY_BUFFER, 0);
 			}
 			if (this.aClass57_1.aClass111_1 == null) {
@@ -2019,7 +2019,7 @@ public final class Class53_Sub4_Sub2 extends Class53_Sub4 {
 				local1.glTexCoordPointer(2, GL.GL_FLOAT, this.aClass57_3.anInt1745, this.aClass57_3.aByteBuffer1);
 			}
 		}
-		if (this.aClass57_4.aClass111_1 == null && Static3.aBoolean135) {
+		if (this.aClass57_4.aClass111_1 == null && GlRenderer.arbVboSupported) {
 			local1.glBindBufferARB(GL.GL_ELEMENT_ARRAY_BUFFER, 0);
 		}
 		@Pc(417) int local417 = this.anIntArray505.length - 1;
@@ -2028,7 +2028,7 @@ public final class Class53_Sub4_Sub2 extends Class53_Sub4 {
 			@Pc(434) int local434 = this.anIntArray505[local419 + 1];
 			@Pc(439) short local439 = this.aShortArray91[local427];
 			if (local439 == -1) {
-				Static17.method1600(-1);
+				GlRenderer.setTextureId(-1);
 				Static24.method2652(0, 0);
 			} else {
 				Static4.anInterface4_1.method451(local439 & 0xFFFF);
@@ -2545,7 +2545,7 @@ public final class Class53_Sub4_Sub2 extends Class53_Sub4 {
 			Static6.aClass4_Sub10_9.position = 0;
 		}
 		if (arg1) {
-			if (Static3.aBoolean126) {
+			if (GlRenderer.bigEndian) {
 				for (@Pc(60) int local60 = 0; local60 < this.anInt4688; local60++) {
 					@Pc(71) int local71 = Float.floatToRawIntBits((float) this.anIntArray507[local60]);
 					@Pc(78) int local78 = Float.floatToRawIntBits((float) this.anIntArray504[local60]);
@@ -2675,7 +2675,7 @@ public final class Class53_Sub4_Sub2 extends Class53_Sub4 {
 			@Pc(723) float local723 = 3.0F / (float) this.aShort44;
 			@Pc(734) float local734 = 3.0F / (float) (this.aShort44 + this.aShort44 / 2);
 			Static6.aClass4_Sub10_9.position = this.aClass57_2.anInt1744;
-			if (Static3.aBoolean126) {
+			if (GlRenderer.bigEndian) {
 				for (@Pc(743) int local743 = 0; local743 < this.anInt4691; local743++) {
 					@Pc(752) short local752 = this.aShortArray89[local743];
 					if (local752 == 0) {
@@ -2711,7 +2711,7 @@ public final class Class53_Sub4_Sub2 extends Class53_Sub4 {
 		}
 		if (arg4) {
 			Static6.aClass4_Sub10_9.position = this.aClass57_3.anInt1744;
-			if (Static3.aBoolean126) {
+			if (GlRenderer.bigEndian) {
 				for (@Pc(931) int local931 = 0; local931 < this.anInt4691; local931++) {
 					Static6.aClass4_Sub10_9.writeFloat(this.aFloatArray55[local931]);
 					Static6.aClass4_Sub10_9.writeFloat(this.aFloatArray54[local931]);
@@ -2729,13 +2729,13 @@ public final class Class53_Sub4_Sub2 extends Class53_Sub4 {
 		}
 		Static6.aClass4_Sub10_9.position = local1 * this.anInt4691;
 		if (arg0) {
-			if (Static3.aBoolean129) {
+			if (GlRenderer.aBoolean129) {
 				@Pc(1007) ByteBuffer local1007 = ByteBuffer.wrap(Static6.aClass4_Sub10_9.bytes, 0, Static6.aClass4_Sub10_9.position);
 				if (this.aClass111_7 == null) {
-					this.aClass111_7 = new Class111(true);
-					this.aClass111_7.method2602(local1007);
+					this.aClass111_7 = new GlBuffer(true);
+					this.aClass111_7.setArrayBuffer(local1007);
 				} else {
-					this.aClass111_7.method2600(local1007);
+					this.aClass111_7.updateArrayBuffer(local1007);
 				}
 				if (arg1) {
 					this.aClass57_1.aBoolean103 = true;
@@ -2794,10 +2794,10 @@ public final class Class53_Sub4_Sub2 extends Class53_Sub4 {
 					this.aClass57_3.anInt1745 = local1;
 				}
 			}
-		} else if (Static3.aBoolean135) {
-			@Pc(1211) Class111 local1211 = new Class111();
+		} else if (GlRenderer.arbVboSupported) {
+			@Pc(1211) GlBuffer local1211 = new GlBuffer();
 			@Pc(1218) ByteBuffer local1218 = ByteBuffer.wrap(Static6.aClass4_Sub10_9.bytes, 0, Static6.aClass4_Sub10_9.position);
-			local1211.method2602(local1218);
+			local1211.setArrayBuffer(local1218);
 			if (arg1) {
 				this.aClass57_1.aBoolean103 = true;
 				this.aClass57_1.aByteBuffer1 = null;

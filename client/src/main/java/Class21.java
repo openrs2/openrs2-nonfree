@@ -20,14 +20,14 @@ public final class Class21 implements Interface2 {
 
 	@OriginalMember(owner = "client!bj", name = "<init>", descriptor = "()V")
 	public Class21() {
-		if (Static3.anInt2081 >= 2) {
+		if (GlRenderer.maxTextureUnits >= 2) {
 			@Pc(17) int[] local17 = new int[1];
 			@Pc(20) byte[] local20 = new byte[8];
 			@Pc(22) int local22 = 0;
 			while (local22 < 8) {
 				local20[local22++] = (byte) (local22 * 159 / 8 + 96);
 			}
-			@Pc(40) GL local40 = Static3.aGL1;
+			@Pc(40) GL local40 = GlRenderer.gl;
 			local40.glGenTextures(1, local17, 0);
 			local40.glBindTexture(GL.GL_TEXTURE_1D, local17[0]);
 			local40.glTexImage1D(GL.GL_TEXTURE_1D, GL.GL_POINTS, GL.GL_ALPHA, 8, GL.GL_POINTS, GL.GL_ALPHA, GL.GL_UNSIGNED_BYTE, ByteBuffer.wrap(local20));
@@ -35,7 +35,7 @@ public final class Class21 implements Interface2 {
 			local40.glTexParameteri(GL.GL_TEXTURE_1D, GL.GL_TEXTURE_MAG_FILTER, GL.GL_LINEAR);
 			local40.glTexParameteri(GL.GL_TEXTURE_1D, GL.GL_TEXTURE_WRAP_S, GL.GL_CLAMP_TO_EDGE);
 			this.anInt342 = local17[0];
-			Static1.aBoolean21 = Static3.anInt2081 > 2 && Static3.aBoolean137;
+			Static1.aBoolean21 = GlRenderer.maxTextureUnits > 2 && GlRenderer.extTexture3dSupported;
 			this.method317();
 		}
 	}
@@ -43,7 +43,7 @@ public final class Class21 implements Interface2 {
 	@OriginalMember(owner = "client!bj", name = "b", descriptor = "()V")
 	@Override
 	public final void method3484() {
-		@Pc(1) GL local1 = Static3.aGL1;
+		@Pc(1) GL local1 = GlRenderer.gl;
 		local1.glCallList(this.anInt341);
 	}
 
@@ -56,13 +56,13 @@ public final class Class21 implements Interface2 {
 	@OriginalMember(owner = "client!bj", name = "a", descriptor = "()V")
 	@Override
 	public final void method3483() {
-		@Pc(1) GL local1 = Static3.aGL1;
+		@Pc(1) GL local1 = GlRenderer.gl;
 		local1.glCallList(this.anInt341 + 1);
 	}
 
 	@OriginalMember(owner = "client!bj", name = "g", descriptor = "()V")
 	private void method317() {
-		@Pc(1) GL local1 = Static3.aGL1;
+		@Pc(1) GL local1 = GlRenderer.gl;
 		this.anInt341 = local1.glGenLists(2);
 		local1.glNewList(this.anInt341, GL.GL_COMPILE);
 		local1.glActiveTexture(GL.GL_TEXTURE1);
@@ -126,7 +126,7 @@ public final class Class21 implements Interface2 {
 	@OriginalMember(owner = "client!bj", name = "a", descriptor = "(I)V")
 	@Override
 	public final void method3486(@OriginalArg(0) int arg0) {
-		@Pc(1) GL local1 = Static3.aGL1;
+		@Pc(1) GL local1 = GlRenderer.gl;
 		local1.glActiveTexture(GL.GL_TEXTURE1);
 		if (Static1.aBoolean21 || arg0 >= 0) {
 			local1.glPushMatrix();
@@ -149,7 +149,7 @@ public final class Class21 implements Interface2 {
 				this.aFloatArray8[0] = 0.0F;
 				this.aFloatArray8[1] = 0.0F;
 				this.aFloatArray8[2] = 0.0F;
-				this.aFloatArray8[3] = (float) Static3.anInt2085 * 0.005F;
+				this.aFloatArray8[3] = (float) GlRenderer.anInt2085 * 0.005F;
 				local1.glTexGenfv(GL.GL_R, GL.GL_EYE_PLANE, this.aFloatArray8, 0);
 				local1.glActiveTexture(GL.GL_TEXTURE2);
 			}

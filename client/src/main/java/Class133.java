@@ -37,12 +37,12 @@ public final class Class133 {
 	}
 
 	@OriginalMember(owner = "client!pe", name = "a", descriptor = "(B)Lclient!vn;")
-	public final Class4_Sub3_Sub14_Sub1 method3401() {
-		@Pc(17) Class4_Sub3_Sub14_Sub1 local17 = (Class4_Sub3_Sub14_Sub1) Static6.aClass26_46.get((long) this.anInt4116);
+	public final SoftwareSprite method3401() {
+		@Pc(17) SoftwareSprite local17 = (SoftwareSprite) Static6.aClass26_46.get((long) this.anInt4116);
 		if (local17 != null) {
 			return local17;
 		}
-		@Pc(30) Class4_Sub3_Sub14_Sub1 local30 = Static31.method3691(Static3.aClass58_58, this.anInt4116);
+		@Pc(30) SoftwareSprite local30 = Static31.method3691(Static3.aClass58_58, this.anInt4116);
 		if (local30 != null) {
 			Static6.aClass26_46.put((long) this.anInt4116, local30);
 		}

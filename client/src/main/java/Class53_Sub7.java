@@ -31,7 +31,7 @@ public final class Class53_Sub7 extends Entity {
 	private boolean aBoolean320 = true;
 
 	@OriginalMember(owner = "client!ri", name = "M", descriptor = "Lclient!fe;")
-	private Class56_Sub1 aClass56_Sub1_4 = null;
+	private SoftwareIndexedSprite aClass56_Sub1_4 = null;
 
 	@OriginalMember(owner = "client!ri", name = "W", descriptor = "I")
 	private int anInt4594 = -1;
@@ -84,7 +84,7 @@ public final class Class53_Sub7 extends Entity {
 			this.aBoolean318 = true;
 			if (arg8 instanceof Class53_Sub7) {
 				@Pc(96) Class53_Sub7 local96 = (Class53_Sub7) arg8;
-				if (Static3.aBoolean138) {
+				if (GlRenderer.enabled) {
 					local96.method3732();
 				}
 				this.anInt4568 = local96.anInt4568;
@@ -92,7 +92,7 @@ public final class Class53_Sub7 extends Entity {
 				this.anInt4590 = local96.anInt4590;
 				this.anInt4580 = local96.anInt4580;
 				this.aClass46_3 = local96.aClass46_3;
-			} else if (Static3.aBoolean138) {
+			} else if (GlRenderer.enabled) {
 				@Pc(65) LocType local65 = LocTypeList.get(this.anInt4587);
 				if (local65.anIntArray631 != null) {
 					local65 = local65.method4453();
@@ -105,7 +105,7 @@ public final class Class53_Sub7 extends Entity {
 		if (this.aBoolean318) {
 			this.method3730(arg6);
 		}
-		if (Static3.aBoolean138 && arg8 != null) {
+		if (GlRenderer.enabled && arg8 != null) {
 			this.method3728(true);
 		}
 	}
@@ -114,7 +114,7 @@ public final class Class53_Sub7 extends Entity {
 	@Override
 	public final void method3806(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4) {
 		@Pc(5) Entity local5 = null;
-		if (Static3.aBoolean138) {
+		if (GlRenderer.enabled) {
 			local5 = this.method3728(true);
 		} else {
 			this.method3731(arg4, arg3);
@@ -151,7 +151,7 @@ public final class Class53_Sub7 extends Entity {
 			local17 = local17.method4453();
 		}
 		if (local17 == null) {
-			if (Static3.aBoolean138 && !local12) {
+			if (GlRenderer.enabled && !local12) {
 				this.method3732();
 			}
 			this.anInt4594 = this.anInt4574;
@@ -192,7 +192,7 @@ public final class Class53_Sub7 extends Entity {
 			local202 = Static6.anIntArrayArrayArray13[this.anInt4584 + 1];
 		}
 		@Pc(267) int local267 = local217[local114][local98] + local217[local107][local98] + local217[local114][local124] + local217[local107][local124] >> 2;
-		if (Static3.aBoolean138 && local176) {
+		if (GlRenderer.enabled && local176) {
 			Static14.method1210(this.aClass56_Sub1_4, this.anInt4581, this.anInt4586, this.anInt4591);
 		}
 		@Pc(287) boolean local287 = this.aClass56_Sub1_4 == null;
@@ -207,7 +207,7 @@ public final class Class53_Sub7 extends Entity {
 			this.anInt4571 = local17.id;
 			return null;
 		}
-		if (Static3.aBoolean138 && local176) {
+		if (GlRenderer.enabled && local176) {
 			@Pc(363) int local363 = 0;
 			if (local287) {
 				Static1.aClass56_Sub1_1 = local321.aClass56_Sub1_3;
@@ -216,7 +216,7 @@ public final class Class53_Sub7 extends Entity {
 				@Pc(379) int[][] local379 = Static6.anIntArrayArrayArray13[0];
 				local363 = local267 - (local379[local114][local98] + local379[local107][local98] + local379[local114][local124] + local379[local107][local124] >> 2);
 			}
-			@Pc(414) Class56_Sub1 local414 = local321.aClass56_Sub1_3;
+			@Pc(414) SoftwareIndexedSprite local414 = local321.aClass56_Sub1_3;
 			if (this.aBoolean320 && Static14.method1214(local414, local199, local363, local212)) {
 				this.aBoolean320 = false;
 			}
@@ -382,7 +382,7 @@ public final class Class53_Sub7 extends Entity {
 
 	@OriginalMember(owner = "client!ri", name = "a", descriptor = "(ZLclient!vc;)V")
 	private void method3737(@OriginalArg(1) Entity arg0) {
-		if (Static3.aBoolean138) {
+		if (GlRenderer.enabled) {
 			@Pc(70) Class53_Sub4_Sub2 local70 = (Class53_Sub4_Sub2) arg0;
 			if ((this.aClass20_Sub3_7 == null || this.aClass20_Sub3_7.aBoolean250) && (local70.aClass158Array3 != null || local70.aClass167Array3 != null)) {
 				@Pc(91) LocType local91 = LocTypeList.get(this.anInt4587);

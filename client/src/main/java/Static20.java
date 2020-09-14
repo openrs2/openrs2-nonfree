@@ -22,7 +22,7 @@ public final class Static20 {
 		arg0.anInt1764 = Static3.anInt2968 + (arg2 * (arg0.anInt1769 - Static3.anInt2967) >> 16);
 		@Pc(32) Class82 local32 = Static22.method2191(arg0.anInt1760);
 		if (local32.anInt2277 != -1) {
-			@Pc(42) Class56 local42 = local32.method1811(false, true);
+			@Pc(42) IndexedSprite local42 = local32.method1811(false, true);
 			if (local42 != null) {
 				if (arg0.anInt1766 - (local42.anInt3408 + 1 >> 1) <= Static3.anInt2970 && arg0.anInt1766 + (local42.anInt3408 + 1 >> 1) >= Static3.anInt2969 && arg0.anInt1764 - (local42.anInt3413 + 1 >> 1) <= Static3.anInt2971 && arg0.anInt1764 + (local42.anInt3413 + 1 >> 1) >= Static3.anInt2968) {
 					arg0.aBoolean106 = false;
@@ -216,9 +216,9 @@ public final class Static20 {
 						local35 = 127;
 					}
 					@Pc(57) int local57 = (local29 + arg0 & 0xFC00) + (local29 & 0x380) + local35;
-					local64 = Static4.anIntArray295[Static22.method2286(local57, 96)];
+					local64 = ColorUtils.HSL_TO_RGB[Static22.method2286(local57, 96)];
 				} else if (local14 >= 0) {
-					local64 = Static4.anIntArray295[Static22.method2286(Static4.anInterface4_1.method446(local14), 96)];
+					local64 = ColorUtils.HSL_TO_RGB[Static22.method2286(Static4.anInterface4_1.method446(local14), 96)];
 				} else if (local8.anInt3869 == -1) {
 					local64 = -1;
 				} else {
@@ -230,7 +230,7 @@ public final class Static20 {
 						local94 = 127;
 					}
 					@Pc(116) int local116 = (local88 + arg0 & 0xFC00) + (local88 & 0x380) + local94;
-					local64 = Static4.anIntArray295[Static22.method2286(local116, 96)];
+					local64 = ColorUtils.HSL_TO_RGB[Static22.method2286(local116, 96)];
 				}
 				Static3.anIntArray266[local1 + 1] = local64;
 			}
@@ -815,7 +815,7 @@ public final class Static20 {
 			}
 			local23 += Static6.anInt5188 - 128;
 		}
-		if (Static3.aBoolean138) {
+		if (GlRenderer.enabled) {
 			Static18.method1697(Static4.aClass4_Sub3_Sub14_Sub1_4.pixels, arg1, arg0, Static4.aClass4_Sub3_Sub14_Sub1_4.width, Static4.aClass4_Sub3_Sub14_Sub1_4.height);
 		} else {
 			Static4.aClass4_Sub3_Sub14_Sub1_4.method4510(arg1, arg0);
@@ -823,7 +823,7 @@ public final class Static20 {
 	}
 
 	@OriginalMember(owner = "client!ik", name = "a", descriptor = "(IIBLclient!fh;)Lclient!uj;")
-	public static Class4_Sub3_Sub14 method1917(@OriginalArg(0) int arg0, @OriginalArg(3) Js5 arg1) {
+	public static Sprite method1917(@OriginalArg(0) int arg0, @OriginalArg(3) Js5 arg1) {
 		return Static9.method197(arg1, arg0, 0) ? Static14.method1063() : null;
 	}
 
@@ -1029,7 +1029,7 @@ public final class Static20 {
 		if (Static4.anInt2644 < 100) {
 			method1922();
 		}
-		if (Static3.aBoolean138) {
+		if (GlRenderer.enabled) {
 			Static18.method1693(arg2, arg1, arg2 + arg3, arg0 + arg1);
 		} else {
 			Static34.method4209(arg2, arg1, arg3 + arg2, arg1 + arg0);
@@ -1037,7 +1037,7 @@ public final class Static20 {
 		if (Static4.anInt2644 < 100) {
 			@Pc(47) int local47 = arg3 / 2 + arg2;
 			@Pc(59) int local59 = arg1 + arg0 / 2 - 20 - 18;
-			if (Static3.aBoolean138) {
+			if (GlRenderer.enabled) {
 				Static18.method1701(arg2, arg1, arg3, arg0, 0);
 				Static18.method1690(local47 - 152, local59, 304, 34, 9179409);
 				Static18.method1701(local47 - 150, local59 + 2, Static4.anInt2644 * 3, 30, 9179409);
@@ -1057,10 +1057,10 @@ public final class Static20 {
 		@Pc(177) int local177 = Static7.anInt5231 - (int) ((float) arg0 / Static3.aFloat68);
 		@Pc(190) int local190 = (int) ((float) arg3 / Static3.aFloat68) + Static1.anInt331;
 		@Pc(198) int local198 = (int) ((float) arg0 / Static3.aFloat68) + Static7.anInt5231;
-		if (Static3.aBoolean138) {
+		if (GlRenderer.enabled) {
 			if (Static3.aClass4_Sub3_Sub14_Sub1_2 == null || arg3 != Static3.aClass4_Sub3_Sub14_Sub1_2.width || Static3.aClass4_Sub3_Sub14_Sub1_2.height != arg0) {
 				Static3.aClass4_Sub3_Sub14_Sub1_2 = null;
-				Static3.aClass4_Sub3_Sub14_Sub1_2 = new Class4_Sub3_Sub14_Sub1(arg3, arg0);
+				Static3.aClass4_Sub3_Sub14_Sub1_2 = new SoftwareSprite(arg3, arg0);
 			}
 			Static34.method4224(Static3.aClass4_Sub3_Sub14_Sub1_2.pixels, arg3, arg0);
 			Static19.method2401(local169, local177, local190, local198, 0, 0, arg3, arg0 + 1);
@@ -1188,8 +1188,8 @@ public final class Static20 {
 			GameShell.leftMargin = (GameShell.frameWidth - 765) / 2;
 			GameShell.topMargin = 0;
 		}
-		if (Static3.aBoolean138) {
-			Static16.method1587(GameShell.canvasWidth, GameShell.canvasHeight);
+		if (GlRenderer.enabled) {
+			GlRenderer.setCanvasSize(GameShell.canvasWidth, GameShell.canvasHeight);
 		}
 		GameShell.canvas.setSize(GameShell.canvasWidth, GameShell.canvasHeight);
 		if (local9 == GameShell.frame) {

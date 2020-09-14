@@ -28,7 +28,7 @@ public final class Static4 {
 	public static float aFloat146;
 
 	@OriginalMember(owner = "client!k", name = "b", descriptor = "Lclient!vn;")
-	public static Class4_Sub3_Sub14_Sub1 aClass4_Sub3_Sub14_Sub1_4;
+	public static SoftwareSprite aClass4_Sub3_Sub14_Sub1_4;
 
 	@OriginalMember(owner = "client!k", name = "c", descriptor = "Lclient!kk;")
 	public static Class106 aClass106_3;
@@ -100,7 +100,7 @@ public final class Static4 {
 	public static int anInt3126;
 
 	@OriginalMember(owner = "client!lg", name = "g", descriptor = "Lclient!nk;")
-	public static Interface4 anInterface4_1;
+	public static GlTextureProvider anInterface4_1;
 
 	@OriginalMember(owner = "client!lg", name = "l", descriptor = "I")
 	public static int anInt3128;
@@ -193,7 +193,7 @@ public final class Static4 {
 	public static int anInt3341;
 
 	@OriginalMember(owner = "client!mm", name = "b", descriptor = "Lclient!uj;")
-	public static Class4_Sub3_Sub14 aClass4_Sub3_Sub14_3;
+	public static Sprite aClass4_Sub3_Sub14_3;
 
 	@OriginalMember(owner = "client!mm", name = "g", descriptor = "I")
 	public static int anInt3360;
@@ -351,12 +351,6 @@ public final class Static4 {
 	@OriginalMember(owner = "client!lf", name = "db", descriptor = "[I")
 	public static final int[] anIntArray294 = new int[50];
 
-	@OriginalMember(owner = "client!lg", name = "b", descriptor = "F")
-	public static float aFloat74 = 1.0F;
-
-	@OriginalMember(owner = "client!lg", name = "c", descriptor = "[I")
-	public static final int[] anIntArray295 = new int[65536];
-
 	@OriginalMember(owner = "client!lg", name = "e", descriptor = "Z")
 	public static boolean aBoolean216 = true;
 
@@ -455,42 +449,6 @@ public final class Static4 {
 
 	@OriginalMember(owner = "client!mg", name = "r", descriptor = "I")
 	public static int anInt3327 = 0;
-
-	@OriginalMember(owner = "client!mh", name = "a", descriptor = "I")
-	public static int anInt3330 = 0;
-
-	@OriginalMember(owner = "client!mh", name = "b", descriptor = "I")
-	public static int anInt3331 = 0;
-
-	@OriginalMember(owner = "client!mh", name = "c", descriptor = "I")
-	public static int anInt3332 = 0;
-
-	@OriginalMember(owner = "client!mh", name = "d", descriptor = "J")
-	public static long aLong118 = 0L;
-
-	@OriginalMember(owner = "client!mh", name = "e", descriptor = "Lclient!ll;")
-	public static final LinkedList aClass112_18 = new LinkedList();
-
-	@OriginalMember(owner = "client!mh", name = "f", descriptor = "I")
-	public static int anInt3333 = 0;
-
-	@OriginalMember(owner = "client!mh", name = "g", descriptor = "Lclient!ll;")
-	public static final LinkedList aClass112_19 = new LinkedList();
-
-	@OriginalMember(owner = "client!mh", name = "h", descriptor = "Lclient!ll;")
-	public static final LinkedList aClass112_20 = new LinkedList();
-
-	@OriginalMember(owner = "client!mh", name = "i", descriptor = "Lclient!ll;")
-	public static final LinkedList aClass112_21 = new LinkedList();
-
-	@OriginalMember(owner = "client!mh", name = "j", descriptor = "Lclient!ll;")
-	public static final LinkedList aClass112_22 = new LinkedList();
-
-	@OriginalMember(owner = "client!mh", name = "k", descriptor = "Lclient!ll;")
-	public static final LinkedList aClass112_23 = new LinkedList();
-
-	@OriginalMember(owner = "client!mh", name = "l", descriptor = "[I")
-	public static final int[] anIntArray319 = new int[1000];
 
 	@OriginalMember(owner = "client!mi", name = "b", descriptor = "I")
 	public static int anInt3335 = 0;

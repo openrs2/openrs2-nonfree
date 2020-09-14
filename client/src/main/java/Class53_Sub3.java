@@ -1461,7 +1461,7 @@ public final class Class53_Sub3 extends Entity {
 
 	@OriginalMember(owner = "client!ml", name = "c", descriptor = "(IIIII)Lclient!vg;")
 	public final Class53_Sub4 method2761(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4) {
-		if (Static3.aBoolean138) {
+		if (GlRenderer.enabled) {
 			@Pc(9) Class53_Sub4_Sub2 local9 = new Class53_Sub4_Sub2(this, arg0, arg1, true);
 			local9.method3866();
 			return local9;

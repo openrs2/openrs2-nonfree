@@ -12,7 +12,7 @@ public abstract class Class4_Sub3_Sub5 extends SecondaryNode {
 	private byte[] aByteArray22;
 
 	@OriginalMember(owner = "client!gl", name = "D", descriptor = "[Lclient!ma;")
-	private Class56[] aClass56Array4;
+	private IndexedSprite[] aClass56Array4;
 
 	@OriginalMember(owner = "client!gl", name = "F", descriptor = "[I")
 	private int[] anIntArray248;
@@ -155,7 +155,7 @@ public abstract class Class4_Sub3_Sub5 extends SecondaryNode {
 						if (!local41.equals("reg")) {
 							if (local41.startsWith("img=")) {
 								try {
-									@Pc(109) int local109 = Static12.method737(local41.substring(4));
+									@Pc(109) int local109 = StringUtils.parseInt(local41.substring(4));
 									local9 += this.aClass56Array4[local109].anInt3412;
 									local7 = '\u0000';
 								} catch (@Pc(121) Exception local121) {
@@ -214,8 +214,8 @@ public abstract class Class4_Sub3_Sub5 extends SecondaryNode {
 						if (!local40.equals("reg")) {
 							if (local40.startsWith("img=")) {
 								try {
-									@Pc(108) int local108 = Static12.method737(local40.substring(4));
-									@Pc(113) Class56 local113 = this.aClass56Array4[local108];
+									@Pc(108) int local108 = StringUtils.parseInt(local40.substring(4));
+									@Pc(113) IndexedSprite local113 = this.aClass56Array4[local108];
 									@Pc(124) int local124 = this.anIntArray248 == null ? local113.anInt3410 : this.anIntArray248[local108];
 									if (Static3.anInt2822 == 256) {
 										local113.method2815(arg1, arg2 + this.anInt2820 - local124);
@@ -260,14 +260,14 @@ public abstract class Class4_Sub3_Sub5 extends SecondaryNode {
 					}
 					@Pc(318) int local318 = this.anIntArray250[local171];
 					if (Static3.anInt2829 != -1) {
-						if (Static3.aBoolean138) {
+						if (GlRenderer.enabled) {
 							Static18.method1699(arg1, arg2 + (int) ((double) this.anInt2820 * 0.7D), local318, Static3.anInt2829);
 						} else {
 							Static34.method4214(arg1, arg2 + (int) ((double) this.anInt2820 * 0.7D), local318, Static3.anInt2829);
 						}
 					}
 					if (Static3.anInt2830 != -1) {
-						if (Static3.aBoolean138) {
+						if (GlRenderer.enabled) {
 							Static18.method1699(arg1, arg2 + this.anInt2820 + 1, local318, Static3.anInt2830);
 						} else {
 							Static34.method4214(arg1, arg2 + this.anInt2820 + 1, local318, Static3.anInt2830);
@@ -463,7 +463,7 @@ public abstract class Class4_Sub3_Sub5 extends SecondaryNode {
 	}
 
 	@OriginalMember(owner = "client!gl", name = "a", descriptor = "([Lclient!ma;[I)V")
-	public final void method2267(@OriginalArg(0) Class56[] arg0, @OriginalArg(1) int[] arg1) {
+	public final void method2267(@OriginalArg(0) IndexedSprite[] arg0, @OriginalArg(1) int[] arg1) {
 		if (arg1 != null && arg1.length != arg0.length) {
 			throw new IllegalArgumentException();
 		}
@@ -517,8 +517,8 @@ public abstract class Class4_Sub3_Sub5 extends SecondaryNode {
 										local119 = arg4[local10];
 									}
 									local10++;
-									@Pc(129) int local129 = Static12.method737(local42.substring(4));
-									@Pc(134) Class56 local134 = this.aClass56Array4[local129];
+									@Pc(129) int local129 = StringUtils.parseInt(local42.substring(4));
+									@Pc(134) IndexedSprite local134 = this.aClass56Array4[local129];
 									@Pc(145) int local145 = this.anIntArray248 == null ? local134.anInt3410 : this.anIntArray248[local129];
 									if (Static3.anInt2822 == 256) {
 										local134.method2815(arg1 + local110, arg2 + this.anInt2820 + local119 - local145);
@@ -576,14 +576,14 @@ public abstract class Class4_Sub3_Sub5 extends SecondaryNode {
 					}
 					@Pc(382) int local382 = this.anIntArray250[local200];
 					if (Static3.anInt2829 != -1) {
-						if (Static3.aBoolean138) {
+						if (GlRenderer.enabled) {
 							Static18.method1699(arg1, arg2 + (int) ((double) this.anInt2820 * 0.7D), local382, Static3.anInt2829);
 						} else {
 							Static34.method4214(arg1, arg2 + (int) ((double) this.anInt2820 * 0.7D), local382, Static3.anInt2829);
 						}
 					}
 					if (Static3.anInt2830 != -1) {
-						if (Static3.aBoolean138) {
+						if (GlRenderer.enabled) {
 							Static18.method1699(arg1, arg2 + this.anInt2820, local382, Static3.anInt2830);
 						} else {
 							Static34.method4214(arg1, arg2 + this.anInt2820, local382, Static3.anInt2830);
@@ -696,7 +696,7 @@ public abstract class Class4_Sub3_Sub5 extends SecondaryNode {
 			} else if (arg0.equals("/col")) {
 				Static3.anInt2823 = Static3.anInt2825;
 			} else if (arg0.startsWith("trans=")) {
-				Static3.anInt2822 = Static12.method737(arg0.substring(6));
+				Static3.anInt2822 = StringUtils.parseInt(arg0.substring(6));
 			} else if (arg0.equals("/trans")) {
 				Static3.anInt2822 = Static3.anInt2821;
 			} else if (arg0.startsWith("str=")) {
@@ -807,7 +807,7 @@ public abstract class Class4_Sub3_Sub5 extends SecondaryNode {
 						local23 = '®';
 					} else if (local57.startsWith("img=")) {
 						try {
-							@Pc(337) int local337 = Static12.method737(local57.substring(4));
+							@Pc(337) int local337 = StringUtils.parseInt(local57.substring(4));
 							local11 += this.aClass56Array4[local337].anInt3412;
 							local23 = '\u0000';
 						} catch (@Pc(349) Exception local349) {

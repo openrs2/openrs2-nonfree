@@ -203,7 +203,7 @@ public final class PlayerAppearance {
 					}
 				}
 				local169 = local753.method2761(64, 850, -30, -50, -30);
-				if (Static3.aBoolean138) {
+				if (GlRenderer.enabled) {
 					((Class53_Sub4_Sub2) local169).method3872(false, false, true, false, false, true);
 				}
 				if (arg9) {

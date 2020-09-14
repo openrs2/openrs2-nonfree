@@ -1236,7 +1236,7 @@ public final class Class53_Sub4_Sub1 extends Class53_Sub4 {
 				Static23.method2549(Static4.anIntArray361[local12], Static4.anIntArray361[local17], Static4.anIntArray361[local22], Static4.anIntArray379[local12], Static4.anIntArray379[local17], Static4.anIntArray379[local22], this.anIntArray345[arg0], this.anIntArray346[arg0], this.anIntArray342[arg0], Static4.anIntArray370[local141], Static4.anIntArray370[local146], Static4.anIntArray370[local151], Static4.anIntArray367[local141], Static4.anIntArray367[local146], Static4.anIntArray367[local151], Static4.anIntArray372[local141], Static4.anIntArray372[local146], Static4.anIntArray372[local151], this.aShortArray61[arg0]);
 			}
 		} else if (this.anIntArray342[arg0] == -1) {
-			Static23.method2550(Static4.anIntArray361[local12], Static4.anIntArray361[local17], Static4.anIntArray361[local22], Static4.anIntArray379[local12], Static4.anIntArray379[local17], Static4.anIntArray379[local22], Static4.anIntArray295[this.anIntArray345[arg0] & 0xFFFF]);
+			Static23.method2550(Static4.anIntArray361[local12], Static4.anIntArray361[local17], Static4.anIntArray361[local22], Static4.anIntArray379[local12], Static4.anIntArray379[local17], Static4.anIntArray379[local22], ColorUtils.HSL_TO_RGB[this.anIntArray345[arg0] & 0xFFFF]);
 		} else {
 			Static23.method2543(Static4.anIntArray361[local12], Static4.anIntArray361[local17], Static4.anIntArray361[local22], Static4.anIntArray379[local12], Static4.anIntArray379[local17], Static4.anIntArray379[local22], this.anIntArray345[arg0] & 0xFFFF, this.anIntArray346[arg0] & 0xFFFF, this.anIntArray342[arg0] & 0xFFFF);
 		}
@@ -1463,7 +1463,7 @@ public final class Class53_Sub4_Sub1 extends Class53_Sub4 {
 					Static23.method2549(local610, local614, local618, local598, local602, local606, Static4.anIntArray380[0], Static4.anIntArray380[1], Static4.anIntArray380[2], Static4.anIntArray370[local709], Static4.anIntArray370[local714], Static4.anIntArray370[local719], Static4.anIntArray367[local709], Static4.anIntArray367[local714], Static4.anIntArray367[local719], Static4.anIntArray372[local709], Static4.anIntArray372[local714], Static4.anIntArray372[local719], this.aShortArray61[arg0]);
 				}
 			} else if (this.anIntArray342[arg0] == -1) {
-				Static23.method2550(local610, local614, local618, local598, local602, local606, Static4.anIntArray295[this.anIntArray345[arg0] & 0xFFFF]);
+				Static23.method2550(local610, local614, local618, local598, local602, local606, ColorUtils.HSL_TO_RGB[this.anIntArray345[arg0] & 0xFFFF]);
 			} else {
 				Static23.method2543(local610, local614, local618, local598, local602, local606, Static4.anIntArray380[0], Static4.anIntArray380[1], Static4.anIntArray380[2]);
 			}
@@ -1497,7 +1497,7 @@ public final class Class53_Sub4_Sub1 extends Class53_Sub4 {
 				Static23.method2549(local610, local618, Static4.anIntArray377[3], local598, local606, Static4.anIntArray381[3], Static4.anIntArray380[0], Static4.anIntArray380[2], Static4.anIntArray380[3], Static4.anIntArray370[local962], Static4.anIntArray370[local967], Static4.anIntArray370[local972], Static4.anIntArray367[local962], Static4.anIntArray367[local967], Static4.anIntArray367[local972], Static4.anIntArray372[local962], Static4.anIntArray372[local967], Static4.anIntArray372[local972], local984);
 			}
 		} else if (this.anIntArray342[arg0] == -1) {
-			@Pc(883) int local883 = Static4.anIntArray295[this.anIntArray345[arg0] & 0xFFFF];
+			@Pc(883) int local883 = ColorUtils.HSL_TO_RGB[this.anIntArray345[arg0] & 0xFFFF];
 			Static23.method2550(local610, local614, local618, local598, local602, local606, local883);
 			Static23.method2550(local610, local618, Static4.anIntArray377[3], local598, local606, Static4.anIntArray381[3], local883);
 		} else {

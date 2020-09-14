@@ -588,7 +588,7 @@ public final class NpcType {
 				}
 			}
 			local39 = local597.method2761(this.anInt5254 + 64, this.anInt5239 + 850, -30, -50, -30);
-			if (Static3.aBoolean138) {
+			if (GlRenderer.enabled) {
 				((Class53_Sub4_Sub2) local39).method3872(false, false, false, false, false, true);
 			}
 			NpcTypeList.models.put((long) this.id, local39);
