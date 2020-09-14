@@ -38,8 +38,8 @@ public final class EnumType extends SecondaryNode {
 	private void inverseStrings() {
 		this.inverseTable = new HashTable(this.table.getBucketCount());
 		for (@Pc(22) StringNode node = (StringNode) this.table.head(); node != null; node = (StringNode) this.table.next()) {
-			@Pc(34) EnumInverseNode inverseNode = new EnumInverseNode(node.value, (int) node.key);
-			this.inverseTable.put(StringUtils.longHashCode(node.value), inverseNode);
+			@Pc(34) EnumStringEntry entry = new EnumStringEntry(node.value, (int) node.key);
+			this.inverseTable.put(StringUtils.longHashCode(node.value), entry);
 		}
 	}
 
@@ -119,7 +119,7 @@ public final class EnumType extends SecondaryNode {
 		if (this.inverseTable == null) {
 			this.inverseStrings();
 		}
-		for (@Pc(36) EnumInverseNode node = (EnumInverseNode) this.inverseTable.get(StringUtils.longHashCode(value)); node != null; node = (EnumInverseNode) this.inverseTable.nextWithKey()) {
+		for (@Pc(36) EnumStringEntry node = (EnumStringEntry) this.inverseTable.get(StringUtils.longHashCode(value)); node != null; node = (EnumStringEntry) this.inverseTable.nextWithKey()) {
 			if (node.value.equals(value)) {
 				return true;
 			}
