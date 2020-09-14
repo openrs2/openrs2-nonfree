@@ -115,9 +115,6 @@ public final class Static7 {
 	@OriginalMember(owner = "client!wg", name = "J", descriptor = "[S")
 	public static short[] aShortArray124;
 
-	@OriginalMember(owner = "client!wg", name = "L", descriptor = "Lclient!fh;")
-	public static Js5 aClass58_103;
-
 	@OriginalMember(owner = "client!wh", name = "B", descriptor = "I")
 	public static int anInt6022;
 
@@ -231,9 +228,6 @@ public final class Static7 {
 
 	@OriginalMember(owner = "client!uj", name = "L", descriptor = "Z")
 	public static boolean aBoolean388 = false;
-
-	@OriginalMember(owner = "client!ul", name = "M", descriptor = "Lclient!cc;")
-	public static final SoftLruHashTable aClass26_55 = new SoftLruHashTable(64);
 
 	@OriginalMember(owner = "client!un", name = "t", descriptor = "Lclient!ic;")
 	public static HashTable aClass84_25 = new HashTable(16);

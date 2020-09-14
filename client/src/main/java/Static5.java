@@ -197,9 +197,6 @@ public final class Static5 {
 	@OriginalMember(owner = "client!qb", name = "W", descriptor = "I")
 	public static int anInt4260;
 
-	@OriginalMember(owner = "client!qc", name = "o", descriptor = "I")
-	public static int anInt3963;
-
 	@OriginalMember(owner = "client!qc", name = "O", descriptor = "I")
 	public static int originX;
 
@@ -430,9 +427,6 @@ public final class Static5 {
 
 	@OriginalMember(owner = "client!pf", name = "c", descriptor = "[I")
 	public static final int[] anIntArray432 = new int[2];
-
-	@OriginalMember(owner = "client!pg", name = "l", descriptor = "Lclient!cc;")
-	public static final SoftLruHashTable aClass26_41 = new SoftLruHashTable(64);
 
 	@OriginalMember(owner = "client!ph", name = "ab", descriptor = "I")
 	public static int anInt4156 = 0;

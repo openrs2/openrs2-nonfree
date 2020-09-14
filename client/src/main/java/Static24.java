@@ -457,7 +457,7 @@ public final class Static24 {
 		VarbitTypeList.clear();
 		VarpTypeList.clear();
 		BasTypeList.clear();
-		Static28.method3281();
+		MsiTypeList.clear();
 		Static25.method2925();
 		SkyBoxTypeList.clear();
 		SkyBoxSphereTypeList.clear();

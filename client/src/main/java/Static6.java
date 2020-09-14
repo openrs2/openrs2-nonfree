@@ -215,9 +215,6 @@ public final class Static6 {
 	@OriginalMember(owner = "client!sj", name = "s", descriptor = "[Lclient!l;")
 	public static Class4_Sub15[] aClass4_Sub15Array1;
 
-	@OriginalMember(owner = "client!sk", name = "h", descriptor = "I")
-	public static int anInt4867;
-
 	@OriginalMember(owner = "client!sm", name = "g", descriptor = "[[S")
 	public static short[][] aShortArrayArray6;
 

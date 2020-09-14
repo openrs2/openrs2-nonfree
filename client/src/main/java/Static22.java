@@ -1158,12 +1158,6 @@ public final class Static22 {
 		}
 	}
 
-	@OriginalMember(owner = "client!kl", name = "f", descriptor = "(I)V")
-	public static void method2359() {
-		Static7.aClass26_55.removeSoft();
-		Static5.aClass26_41.removeSoft();
-	}
-
 	@OriginalMember(owner = "client!km", name = "f", descriptor = "(I)V")
 	public static void method2387() {
 		if (!client.advertSuppressed && client.modeWhere != 2) {

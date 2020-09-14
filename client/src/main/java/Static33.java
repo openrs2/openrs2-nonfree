@@ -426,8 +426,8 @@ public final class Static33 {
 
 	@OriginalMember(owner = "client!te", name = "a", descriptor = "(IILclient!vh;IIII)Z")
 	public static boolean method4155(@OriginalArg(1) int arg0, @OriginalArg(2) LocType arg1, @OriginalArg(4) int arg2, @OriginalArg(6) int arg3) {
-		@Pc(10) Class143 local10 = Static15.method1400(arg1.anInt5515);
-		if (local10.anInt4312 == -1) {
+		@Pc(10) MsiType local10 = MsiTypeList.get(arg1.anInt5515);
+		if (local10.spriteId == -1) {
 			return true;
 		}
 		@Pc(22) int local22;
@@ -437,7 +437,7 @@ public final class Static33 {
 		} else {
 			local22 = 0;
 		}
-		@Pc(45) SoftwareIndexedSprite local45 = local10.method3557(arg1.aBoolean382, local22);
+		@Pc(45) SoftwareIndexedSprite local45 = local10.getSprite(arg1.aBoolean382, local22);
 		if (local45 == null) {
 			return false;
 		}

@@ -17,9 +17,6 @@ public final class Static1 {
 	@OriginalMember(owner = "client!ac", name = "T", descriptor = "F")
 	public static float aFloat5;
 
-	@OriginalMember(owner = "client!ae", name = "k", descriptor = "I")
-	public static int anInt97;
-
 	@OriginalMember(owner = "client!af", name = "q", descriptor = "Lsignlink!vk;")
 	public static PrivilegedRequest aClass197_2;
 
@@ -169,9 +166,6 @@ public final class Static1 {
 
 	@OriginalMember(owner = "client!co", name = "r", descriptor = "[I")
 	public static int[] locGroupIds;
-
-	@OriginalMember(owner = "client!da", name = "l", descriptor = "Lclient!fh;")
-	public static Js5 aClass58_22;
 
 	@OriginalMember(owner = "client!da", name = "m", descriptor = "Lclient!ld;")
 	public static Class4_Sub6_Sub2 aClass4_Sub6_Sub2_3;

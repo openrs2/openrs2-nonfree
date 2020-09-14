@@ -148,20 +148,6 @@ public final class Static8 {
 		Static19.method1858();
 	}
 
-	@OriginalMember(owner = "client!ab", name = "a", descriptor = "(ILclient!fh;Lclient!fh;)V")
-	public static void method5(@OriginalArg(1) Js5 arg0, @OriginalArg(2) Js5 arg1) {
-		@Pc(10) int local10 = (int) (Math.random() * 21.0D) - 10;
-		Static1.aClass58_22 = arg1;
-		@Pc(19) int local19 = (int) (Math.random() * 41.0D) - 20;
-		Static7.aClass58_103 = arg0;
-		@Pc(28) int local28 = (int) (Math.random() * 21.0D) - 10;
-		Static1.aClass58_22.getGroupCapacity(34);
-		@Pc(40) int local40 = (int) (Math.random() * 21.0D) - 10;
-		Static6.anInt4867 = local19 + local28;
-		Static5.anInt3963 = local10 + local19;
-		Static1.anInt97 = local19 + local40;
-	}
-
 	@OriginalMember(owner = "client!ab", name = "a", descriptor = "(IBLjava/lang/String;)V")
 	public static void method7(@OriginalArg(0) int arg0, @OriginalArg(2) String arg1) {
 		@Pc(17) String local17 = Static29.method3464(Static14.method1054(arg1));

@@ -761,7 +761,7 @@ public final class Static27 {
 		VarbitTypeList.removeSoft();
 		VarpTypeList.removeSoft();
 		BasTypeList.removeSoft();
-		Static22.method2359();
+		MsiTypeList.removeSoft();
 		Static26.method2993();
 		SkyBoxTypeList.removeSoft();
 		SkyBoxSphereTypeList.removeSoft();

@@ -729,12 +729,6 @@ public final class Static11 {
 		return arg4 == null ? true : Terrain.addScenery(arg0, arg7, arg8, arg9 + 1 - arg7, arg10 + 1 - arg8, arg1, arg2, arg3, arg4, arg5, true, arg6);
 	}
 
-	@OriginalMember(owner = "client!ci", name = "a", descriptor = "(BI)V")
-	public static void method586() {
-		Static7.aClass26_55.clean(5);
-		Static5.aClass26_41.clean(5);
-	}
-
 	@OriginalMember(owner = "client!cj", name = "a", descriptor = "(ZI)V")
 	public static void method605(@OriginalArg(0) boolean arg0) {
 		if (arg0) {

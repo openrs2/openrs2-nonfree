@@ -594,10 +594,10 @@ public final class Static19 {
 									@Pc(819) int local819 = local740[local785][local808];
 									@Pc(823) int local823 = local819 & 0x1FFF;
 									if (local823 != 0) {
-										@Pc(832) Class143 local832 = Static15.method1400(local823 - 1);
+										@Pc(832) MsiType local832 = MsiTypeList.get(local823 - 1);
 										@Pc(838) int local838 = local819 >> 13 & 0x3;
 										@Pc(849) boolean local849 = (local819 >> 15 & 0x1) == 1;
-										@Pc(855) SoftwareIndexedSprite local855 = local832.method3557(local849, local838);
+										@Pc(855) SoftwareIndexedSprite local855 = local832.getSprite(local849, local838);
 										if (local855 != null) {
 											@Pc(864) int local864 = local711 * local855.anInt3408 / 4;
 											@Pc(871) int local871 = local769 * local855.anInt3413 / 4;

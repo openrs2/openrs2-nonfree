@@ -322,12 +322,6 @@ public final class Static28 {
 		}
 	}
 
-	@OriginalMember(owner = "client!on", name = "g", descriptor = "(I)V")
-	public static void method3281() {
-		Static7.aClass26_55.clear();
-		Static5.aClass26_41.clear();
-	}
-
 	@OriginalMember(owner = "client!p", name = "a", descriptor = "(IIIIB)V")
 	public static void method3319(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) {
 		Static6.anInt4393 = -1;

@@ -643,7 +643,7 @@ public final class client extends GameShell {
 				SkyBoxSphereTypeList.init(js5Archive2);
 				LightTypeList.init(js5Archive2);
 				CursorTypeList.init(js5Archive2, js5Archive8);
-				Static8.method5(js5Archive8, js5Archive2);
+				MsiTypeList.init(js5Archive2, js5Archive8);
 				Static29.method3474(js5Archive2, js5Archive8);
 				mainLoadPercentage = 50;
 				mainLoadSecondaryText = LocalisedText.MAINLOAD70B;

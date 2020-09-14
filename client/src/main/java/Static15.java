@@ -532,21 +532,6 @@ public final class Static15 {
 		}
 	}
 
-	@OriginalMember(owner = "client!fi", name = "b", descriptor = "(BI)Lclient!qg;")
-	public static Class143 method1400(@OriginalArg(1) int arg0) {
-		@Pc(10) Class143 local10 = (Class143) Static7.aClass26_55.get((long) arg0);
-		if (local10 != null) {
-			return local10;
-		}
-		@Pc(28) byte[] local28 = Static1.aClass58_22.fetchFile(34, arg0);
-		@Pc(32) Class143 local32 = new Class143();
-		if (local28 != null) {
-			local32.method3556(arg0, new Buffer(local28));
-		}
-		Static7.aClass26_55.put((long) arg0, local32);
-		return local32;
-	}
-
 	@OriginalMember(owner = "client!fi", name = "a", descriptor = "(Lclient!wf;IIB)V")
 	public static void method1401(@OriginalArg(0) Component arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
 		if (Static1.aClass185_1 != null || Static1.aBoolean17 || (arg0 == null || method1403(arg0) == null)) {
