@@ -16,7 +16,7 @@ public final class Static35 {
 	public static void method4298() {
 		for (@Pc(3) int local3 = 0; local3 < Static6.anInt4760; local3++) {
 			@Pc(10) int local10 = Static7.anIntArray587[local3];
-			@Pc(14) Npc local14 = Npc.npcs[local10];
+			@Pc(14) Npc local14 = NpcList.npcs[local10];
 			@Pc(18) int local18 = Static5.aClass4_Sub10_Sub1_2.readUnsignedByte();
 			if ((local18 & 0x1) != 0) {
 				local18 += Static5.aClass4_Sub10_Sub1_2.readUnsignedByte() << 8;
@@ -228,7 +228,7 @@ public final class Static35 {
 				}
 			}
 		}
-		Static20.method1963(Static7.y, Player.self.z, Player.self.x, Static5.anInt4156);
+		Static20.method1963(Static7.y, PlayerList.self.z, PlayerList.self.x, Static5.anInt4156);
 		Static5.anInt4156 = 0;
 	}
 
@@ -244,7 +244,7 @@ public final class Static35 {
 	public static void method4308() {
 		for (@Pc(13) int local13 = 0; local13 < Static6.anInt4760; local13++) {
 			@Pc(24) int local24 = Static7.anIntArray587[local13];
-			@Pc(28) Player local28 = Player.players[local24];
+			@Pc(28) Player local28 = PlayerList.players[local24];
 			@Pc(32) int local32 = Static5.aClass4_Sub10_Sub1_2.readUnsignedByte();
 			if ((local32 & 0x80) != 0) {
 				local32 += Static5.aClass4_Sub10_Sub1_2.readUnsignedByte() << 8;
@@ -289,7 +289,7 @@ public final class Static35 {
 			local28 -= 2000;
 		}
 		if (local28 == 24) {
-			@Pc(46) Player local46 = Player.players[local24];
+			@Pc(46) Player local46 = PlayerList.players[local24];
 			if (local46 != null) {
 				Static6.anInt5177 = Mouse.clickX;
 				Static7.anInt6008 = 2;
@@ -298,7 +298,7 @@ public final class Static35 {
 				Static3.aClass4_Sub10_Sub1_1.writeOpcode(52);
 				Static3.aClass4_Sub10_Sub1_1.writeShort(local24);
 				Static3.aClass4_Sub10_Sub1_1.writeByte(Keyboard.pressedKeys[82] ? 1 : 0);
-				Static15.method1337(Player.self.anIntArray422[0], 0, 0, local46.getSize(), local19, Player.self.anIntArray426[0], 0, local46.getSize(), local15);
+				Static15.method1337(PlayerList.self.anIntArray422[0], 0, 0, local46.getSize(), local19, PlayerList.self.anIntArray426[0], 0, local46.getSize(), local15);
 			}
 		}
 		if (local28 == 17) {
@@ -311,7 +311,7 @@ public final class Static35 {
 			Static5.anInt3884 = local15;
 		}
 		if (local28 == 33) {
-			@Pc(146) Npc local146 = Npc.npcs[local24];
+			@Pc(146) Npc local146 = NpcList.npcs[local24];
 			if (local146 != null) {
 				Static6.anInt5177 = Mouse.clickX;
 				Static7.anInt6008 = 2;
@@ -323,7 +323,7 @@ public final class Static35 {
 				Static3.aClass4_Sub10_Sub1_1.writeShortLE2(local24);
 				Static3.aClass4_Sub10_Sub1_1.writeShort(Static1.anInt314);
 				Static3.aClass4_Sub10_Sub1_1.writeShortLEA(Static1.anInt243);
-				Static15.method1337(Player.self.anIntArray422[0], 0, 0, local146.getSize(), local19, Player.self.anIntArray426[0], 0, local146.getSize(), local15);
+				Static15.method1337(PlayerList.self.anIntArray422[0], 0, 0, local146.getSize(), local19, PlayerList.self.anIntArray426[0], 0, local146.getSize(), local15);
 			}
 		}
 		if (local28 == 40) {
@@ -348,10 +348,10 @@ public final class Static35 {
 			Static3.aClass4_Sub10_Sub1_1.writeByte(Keyboard.pressedKeys[82] ? 1 : 0);
 			Static3.aClass4_Sub10_Sub1_1.writeShort(Static7.originZ + local19);
 			Static3.aClass4_Sub10_Sub1_1.writeShortLEA(local24);
-			Static15.method1337(Player.self.anIntArray422[0], 0, 0, 0, local19, Player.self.anIntArray426[0], 0, 0, local15);
+			Static15.method1337(PlayerList.self.anIntArray422[0], 0, 0, 0, local19, PlayerList.self.anIntArray426[0], 0, 0, local15);
 		}
 		if (local28 == 21) {
-			@Pc(346) Player local346 = Player.players[local24];
+			@Pc(346) Player local346 = PlayerList.players[local24];
 			if (local346 != null) {
 				Static4.anInt3275 = Mouse.clickY;
 				Static6.anInt5177 = Mouse.clickX;
@@ -363,7 +363,7 @@ public final class Static35 {
 				Static3.aClass4_Sub10_Sub1_1.writeShortA(Static1.anInt314);
 				Static3.aClass4_Sub10_Sub1_1.writeByteS(Keyboard.pressedKeys[82] ? 1 : 0);
 				Static3.aClass4_Sub10_Sub1_1.writeShortLEA(Static1.anInt243);
-				Static15.method1337(Player.self.anIntArray422[0], 0, 0, local346.getSize(), local19, Player.self.anIntArray426[0], 0, local346.getSize(), local15);
+				Static15.method1337(PlayerList.self.anIntArray422[0], 0, 0, local346.getSize(), local19, PlayerList.self.anIntArray426[0], 0, local346.getSize(), local15);
 			}
 		}
 		if (local28 == 1004) {
@@ -399,10 +399,10 @@ public final class Static35 {
 			Static3.aClass4_Sub10_Sub1_1.writeShortLEA(local24);
 			Static3.aClass4_Sub10_Sub1_1.writeShortLE2(Static5.originX + local15);
 			Static3.aClass4_Sub10_Sub1_1.writeByteS(Keyboard.pressedKeys[82] ? 1 : 0);
-			Static15.method1337(Player.self.anIntArray422[0], 0, 0, 0, local19, Player.self.anIntArray426[0], 0, 0, local15);
+			Static15.method1337(PlayerList.self.anIntArray422[0], 0, 0, 0, local19, PlayerList.self.anIntArray426[0], 0, 0, local15);
 		}
 		if (local28 == 36) {
-			@Pc(582) Npc local582 = Npc.npcs[local24];
+			@Pc(582) Npc local582 = NpcList.npcs[local24];
 			if (local582 != null) {
 				Static7.anInt6008 = 2;
 				Static2.anInt1629 = 0;
@@ -411,11 +411,11 @@ public final class Static35 {
 				Static3.aClass4_Sub10_Sub1_1.writeOpcode(37);
 				Static3.aClass4_Sub10_Sub1_1.writeByte(Keyboard.pressedKeys[82] ? 1 : 0);
 				Static3.aClass4_Sub10_Sub1_1.writeShortLEA(local24);
-				Static15.method1337(Player.self.anIntArray422[0], 0, 0, local582.getSize(), local19, Player.self.anIntArray426[0], 0, local582.getSize(), local15);
+				Static15.method1337(PlayerList.self.anIntArray422[0], 0, 0, local582.getSize(), local19, PlayerList.self.anIntArray426[0], 0, local582.getSize(), local15);
 			}
 		}
 		if (local28 == 12) {
-			@Pc(649) Player local649 = Player.players[local24];
+			@Pc(649) Player local649 = PlayerList.players[local24];
 			if (local649 != null) {
 				Static7.anInt6008 = 2;
 				Static6.anInt5177 = Mouse.clickX;
@@ -424,7 +424,7 @@ public final class Static35 {
 				Static3.aClass4_Sub10_Sub1_1.writeOpcode(4);
 				Static3.aClass4_Sub10_Sub1_1.writeByte(Keyboard.pressedKeys[82] ? 1 : 0);
 				Static3.aClass4_Sub10_Sub1_1.writeShortA(local24);
-				Static15.method1337(Player.self.anIntArray422[0], 0, 0, local649.getSize(), local19, Player.self.anIntArray426[0], 0, local649.getSize(), local15);
+				Static15.method1337(PlayerList.self.anIntArray422[0], 0, 0, local649.getSize(), local19, PlayerList.self.anIntArray426[0], 0, local649.getSize(), local15);
 			}
 		}
 		if (local28 == 10) {
@@ -437,7 +437,7 @@ public final class Static35 {
 			Static5.anInt3884 = local15;
 		}
 		if (local28 == 25) {
-			@Pc(744) Npc local744 = Npc.npcs[local24];
+			@Pc(744) Npc local744 = NpcList.npcs[local24];
 			if (local744 != null) {
 				Static2.anInt1629 = 0;
 				Static4.anInt3275 = Mouse.clickY;
@@ -446,7 +446,7 @@ public final class Static35 {
 				Static3.aClass4_Sub10_Sub1_1.writeOpcode(33);
 				Static3.aClass4_Sub10_Sub1_1.writeShortLEA(local24);
 				Static3.aClass4_Sub10_Sub1_1.writeByteA(Keyboard.pressedKeys[82] ? 1 : 0);
-				Static15.method1337(Player.self.anIntArray422[0], 0, 0, local744.getSize(), local19, Player.self.anIntArray426[0], 0, local744.getSize(), local15);
+				Static15.method1337(PlayerList.self.anIntArray422[0], 0, 0, local744.getSize(), local19, PlayerList.self.anIntArray426[0], 0, local744.getSize(), local15);
 			}
 		}
 		if (local28 == 1007) {
@@ -481,10 +481,10 @@ public final class Static35 {
 			Static3.aClass4_Sub10_Sub1_1.writeShortLEA(local24);
 			Static3.aClass4_Sub10_Sub1_1.writeByteA(Keyboard.pressedKeys[82] ? 1 : 0);
 			Static3.aClass4_Sub10_Sub1_1.writeShortLE2(local15 + Static5.originX);
-			Static15.method1337(Player.self.anIntArray422[0], 0, 0, 0, local19, Player.self.anIntArray426[0], 0, 0, local15);
+			Static15.method1337(PlayerList.self.anIntArray422[0], 0, 0, 0, local19, PlayerList.self.anIntArray426[0], 0, 0, local15);
 		}
 		if (local28 == 42) {
-			@Pc(969) Npc local969 = Npc.npcs[local24];
+			@Pc(969) Npc local969 = NpcList.npcs[local24];
 			if (local969 != null) {
 				Static2.anInt1629 = 0;
 				Static6.anInt5177 = Mouse.clickX;
@@ -495,11 +495,11 @@ public final class Static35 {
 				Static3.aClass4_Sub10_Sub1_1.writeByteC(Keyboard.pressedKeys[82] ? 1 : 0);
 				Static3.aClass4_Sub10_Sub1_1.writeShort(Static2.anInt1367);
 				Static3.aClass4_Sub10_Sub1_1.writeIntAlt3(Static1.anInt1053);
-				Static15.method1337(Player.self.anIntArray422[0], 0, 0, local969.getSize(), local19, Player.self.anIntArray426[0], 0, local969.getSize(), local15);
+				Static15.method1337(PlayerList.self.anIntArray422[0], 0, 0, local969.getSize(), local19, PlayerList.self.anIntArray426[0], 0, local969.getSize(), local15);
 			}
 		}
 		if (local28 == 31) {
-			@Pc(1044) Player local1044 = Player.players[local24];
+			@Pc(1044) Player local1044 = PlayerList.players[local24];
 			if (local1044 != null) {
 				Static4.anInt3275 = Mouse.clickY;
 				Static2.anInt1629 = 0;
@@ -508,7 +508,7 @@ public final class Static35 {
 				Static3.aClass4_Sub10_Sub1_1.writeOpcode(105);
 				Static3.aClass4_Sub10_Sub1_1.writeShort(local24);
 				Static3.aClass4_Sub10_Sub1_1.writeByte(Keyboard.pressedKeys[82] ? 1 : 0);
-				Static15.method1337(Player.self.anIntArray422[0], 0, 0, local1044.getSize(), local19, Player.self.anIntArray426[0], 0, local1044.getSize(), local15);
+				Static15.method1337(PlayerList.self.anIntArray422[0], 0, 0, local1044.getSize(), local19, PlayerList.self.anIntArray426[0], 0, local1044.getSize(), local15);
 			}
 		}
 		if (local28 == 47) {
@@ -524,7 +524,7 @@ public final class Static35 {
 			}
 		}
 		if (local28 == 59) {
-			@Pc(1170) Npc local1170 = Npc.npcs[local24];
+			@Pc(1170) Npc local1170 = NpcList.npcs[local24];
 			if (local1170 != null) {
 				Static4.anInt3275 = Mouse.clickY;
 				Static6.anInt5177 = Mouse.clickX;
@@ -533,7 +533,7 @@ public final class Static35 {
 				Static3.aClass4_Sub10_Sub1_1.writeOpcode(53);
 				Static3.aClass4_Sub10_Sub1_1.writeShortLEA(local24);
 				Static3.aClass4_Sub10_Sub1_1.writeByteS(Keyboard.pressedKeys[82] ? 1 : 0);
-				Static15.method1337(Player.self.anIntArray422[0], 0, 0, local1170.getSize(), local19, Player.self.anIntArray426[0], 0, local1170.getSize(), local15);
+				Static15.method1337(PlayerList.self.anIntArray422[0], 0, 0, local1170.getSize(), local19, PlayerList.self.anIntArray426[0], 0, local1170.getSize(), local15);
 			}
 		}
 		if (local28 == 51) {
@@ -567,7 +567,7 @@ public final class Static35 {
 			Static3.aClass4_Sub10_Sub1_1.writeInt(Static1.anInt1053);
 		}
 		if (local28 == 29) {
-			@Pc(1354) Player local1354 = Player.players[local24];
+			@Pc(1354) Player local1354 = PlayerList.players[local24];
 			if (local1354 != null) {
 				Static2.anInt1629 = 0;
 				Static4.anInt3275 = Mouse.clickY;
@@ -576,7 +576,7 @@ public final class Static35 {
 				Static3.aClass4_Sub10_Sub1_1.writeOpcode(148);
 				Static3.aClass4_Sub10_Sub1_1.writeShortA(local24);
 				Static3.aClass4_Sub10_Sub1_1.writeByteA(Keyboard.pressedKeys[82] ? 1 : 0);
-				Static15.method1337(Player.self.anIntArray422[0], 0, 0, local1354.getSize(), local19, Player.self.anIntArray426[0], 0, local1354.getSize(), local15);
+				Static15.method1337(PlayerList.self.anIntArray422[0], 0, 0, local1354.getSize(), local19, PlayerList.self.anIntArray426[0], 0, local1354.getSize(), local15);
 			}
 		}
 		if (local28 == 11) {
@@ -604,7 +604,7 @@ public final class Static35 {
 			Static13.method1004(local19, local32, local15);
 		}
 		if (local28 == 39) {
-			@Pc(1545) Npc local1545 = Npc.npcs[local24];
+			@Pc(1545) Npc local1545 = NpcList.npcs[local24];
 			if (local1545 != null) {
 				Static6.anInt5177 = Mouse.clickX;
 				Static4.anInt3275 = Mouse.clickY;
@@ -613,7 +613,7 @@ public final class Static35 {
 				Static3.aClass4_Sub10_Sub1_1.writeOpcode(245);
 				Static3.aClass4_Sub10_Sub1_1.writeShort(local24);
 				Static3.aClass4_Sub10_Sub1_1.writeByteS(Keyboard.pressedKeys[82] ? 1 : 0);
-				Static15.method1337(Player.self.anIntArray422[0], 0, 0, local1545.getSize(), local19, Player.self.anIntArray426[0], 0, local1545.getSize(), local15);
+				Static15.method1337(PlayerList.self.anIntArray422[0], 0, 0, local1545.getSize(), local19, PlayerList.self.anIntArray426[0], 0, local1545.getSize(), local15);
 			}
 		}
 		if (local28 == 15) {
@@ -649,7 +649,7 @@ public final class Static35 {
 			Static5.anInt3884 = local15;
 		}
 		if (local28 == 14) {
-			@Pc(1728) Player local1728 = Player.players[local24];
+			@Pc(1728) Player local1728 = PlayerList.players[local24];
 			if (local1728 != null) {
 				Static7.anInt6008 = 2;
 				Static4.anInt3275 = Mouse.clickY;
@@ -658,7 +658,7 @@ public final class Static35 {
 				Static3.aClass4_Sub10_Sub1_1.writeOpcode(77);
 				Static3.aClass4_Sub10_Sub1_1.writeShortLE2(local24);
 				Static3.aClass4_Sub10_Sub1_1.writeByteS(Keyboard.pressedKeys[82] ? 1 : 0);
-				Static15.method1337(Player.self.anIntArray422[0], 0, 0, local1728.getSize(), local19, Player.self.anIntArray426[0], 0, local1728.getSize(), local15);
+				Static15.method1337(PlayerList.self.anIntArray422[0], 0, 0, local1728.getSize(), local19, PlayerList.self.anIntArray426[0], 0, local1728.getSize(), local15);
 			}
 		}
 		if (local28 == 26) {
@@ -676,11 +676,11 @@ public final class Static35 {
 					Static3.aClass4_Sub10_Sub1_1.writeByte(Static6.anInt3585);
 					Static3.aClass4_Sub10_Sub1_1.writeByte(Static6.anInt4761);
 					Static3.aClass4_Sub10_Sub1_1.writeByte(89);
-					Static3.aClass4_Sub10_Sub1_1.writeShort(Player.self.x);
-					Static3.aClass4_Sub10_Sub1_1.writeShort(Player.self.z);
+					Static3.aClass4_Sub10_Sub1_1.writeShort(PlayerList.self.x);
+					Static3.aClass4_Sub10_Sub1_1.writeShort(PlayerList.self.z);
 					Static3.aClass4_Sub10_Sub1_1.writeByte(Static2.anInt946);
 					Static3.aClass4_Sub10_Sub1_1.writeByte(63);
-					Static15.method1337(Player.self.anIntArray422[0], 0, 0, 0, local19, Player.self.anIntArray426[0], 0, 0, local15);
+					Static15.method1337(PlayerList.self.anIntArray422[0], 0, 0, 0, local19, PlayerList.self.anIntArray426[0], 0, 0, local15);
 				}
 			}
 		}
@@ -713,10 +713,10 @@ public final class Static35 {
 			Static3.aClass4_Sub10_Sub1_1.writeShort(local24);
 			Static3.aClass4_Sub10_Sub1_1.writeShortLE2(local15 + Static5.originX);
 			Static3.aClass4_Sub10_Sub1_1.writeByteS(Keyboard.pressedKeys[82] ? 1 : 0);
-			Static15.method1337(Player.self.anIntArray422[0], 0, 0, 0, local19, Player.self.anIntArray426[0], 0, 0, local15);
+			Static15.method1337(PlayerList.self.anIntArray422[0], 0, 0, 0, local19, PlayerList.self.anIntArray426[0], 0, 0, local15);
 		}
 		if (local28 == 5) {
-			@Pc(2053) Player local2053 = Player.players[local24];
+			@Pc(2053) Player local2053 = PlayerList.players[local24];
 			if (local2053 != null) {
 				Static7.anInt6008 = 2;
 				Static6.anInt5177 = Mouse.clickX;
@@ -727,7 +727,7 @@ public final class Static35 {
 				Static3.aClass4_Sub10_Sub1_1.writeShort(Static2.anInt1367);
 				Static3.aClass4_Sub10_Sub1_1.writeIntLE2(Static1.anInt1053);
 				Static3.aClass4_Sub10_Sub1_1.writeByteS(Keyboard.pressedKeys[82] ? 1 : 0);
-				Static15.method1337(Player.self.anIntArray422[0], 0, 0, local2053.getSize(), local19, Player.self.anIntArray426[0], 0, local2053.getSize(), local15);
+				Static15.method1337(PlayerList.self.anIntArray422[0], 0, 0, local2053.getSize(), local19, PlayerList.self.anIntArray426[0], 0, local2053.getSize(), local15);
 			}
 		}
 		if (local28 == 37) {
@@ -780,7 +780,7 @@ public final class Static35 {
 			Static5.anInt3884 = local15;
 		}
 		if (local28 == 8) {
-			@Pc(2321) Npc local2321 = Npc.npcs[local24];
+			@Pc(2321) Npc local2321 = NpcList.npcs[local24];
 			if (local2321 != null) {
 				Static6.anInt5177 = Mouse.clickX;
 				Static7.anInt6008 = 2;
@@ -789,7 +789,7 @@ public final class Static35 {
 				Static3.aClass4_Sub10_Sub1_1.writeOpcode(12);
 				Static3.aClass4_Sub10_Sub1_1.writeShortLE2(local24);
 				Static3.aClass4_Sub10_Sub1_1.writeByte(Keyboard.pressedKeys[82] ? 1 : 0);
-				Static15.method1337(Player.self.anIntArray422[0], 0, 0, local2321.getSize(), local19, Player.self.anIntArray426[0], 0, local2321.getSize(), local15);
+				Static15.method1337(PlayerList.self.anIntArray422[0], 0, 0, local2321.getSize(), local19, PlayerList.self.anIntArray426[0], 0, local2321.getSize(), local15);
 			}
 		}
 		if (local28 == 35) {
@@ -802,7 +802,7 @@ public final class Static35 {
 			Static5.anInt3884 = local15;
 		}
 		if (local28 == 43) {
-			@Pc(2423) Player local2423 = Player.players[local24];
+			@Pc(2423) Player local2423 = PlayerList.players[local24];
 			if (local2423 != null) {
 				Static4.anInt3275 = Mouse.clickY;
 				Static6.anInt5177 = Mouse.clickX;
@@ -811,7 +811,7 @@ public final class Static35 {
 				Static3.aClass4_Sub10_Sub1_1.writeOpcode(212);
 				Static3.aClass4_Sub10_Sub1_1.writeShortA(local24);
 				Static3.aClass4_Sub10_Sub1_1.writeByteA(Keyboard.pressedKeys[82] ? 1 : 0);
-				Static15.method1337(Player.self.anIntArray422[0], 0, 0, local2423.getSize(), local19, Player.self.anIntArray426[0], 0, local2423.getSize(), local15);
+				Static15.method1337(PlayerList.self.anIntArray422[0], 0, 0, local2423.getSize(), local19, PlayerList.self.anIntArray426[0], 0, local2423.getSize(), local15);
 			}
 		}
 		if (local28 == 16) {
@@ -839,7 +839,7 @@ public final class Static35 {
 			Static3.aClass4_Sub10_Sub1_1.writeShortLE2(Static7.originZ + local19);
 			Static3.aClass4_Sub10_Sub1_1.writeShortLE2(local24);
 			Static3.aClass4_Sub10_Sub1_1.writeShortA(local15 + Static5.originX);
-			Static15.method1337(Player.self.anIntArray422[0], 0, 0, 0, local19, Player.self.anIntArray426[0], 0, 0, local15);
+			Static15.method1337(PlayerList.self.anIntArray422[0], 0, 0, 0, local19, PlayerList.self.anIntArray426[0], 0, 0, local15);
 		}
 		if (local28 == 23 || local28 == 1009) {
 			Static37.method4752(local19, local15, local24, Static6.aStringArray27[arg0]);
@@ -849,7 +849,7 @@ public final class Static35 {
 			Static7.anInt6008 = 2;
 			Static4.anInt3275 = Mouse.clickY;
 			Static6.anInt5177 = Mouse.clickX;
-			@Pc(2659) Npc local2659 = Npc.npcs[local24];
+			@Pc(2659) Npc local2659 = NpcList.npcs[local24];
 			if (local2659 != null) {
 				@Pc(2665) NpcType local2665 = local2659.type;
 				if (local2665.anIntArray590 != null) {
@@ -927,10 +927,10 @@ public final class Static35 {
 			Static3.aClass4_Sub10_Sub1_1.writeShortLE2(Static7.originZ + local19);
 			Static3.aClass4_Sub10_Sub1_1.writeShort(local24);
 			Static3.aClass4_Sub10_Sub1_1.writeShort(local15 + Static5.originX);
-			Static15.method1337(Player.self.anIntArray422[0], 0, 0, 0, local19, Player.self.anIntArray426[0], 0, 0, local15);
+			Static15.method1337(PlayerList.self.anIntArray422[0], 0, 0, 0, local19, PlayerList.self.anIntArray426[0], 0, 0, local15);
 		}
 		if (local28 == 22) {
-			@Pc(3012) Player local3012 = Player.players[local24];
+			@Pc(3012) Player local3012 = PlayerList.players[local24];
 			if (local3012 != null) {
 				Static4.anInt3275 = Mouse.clickY;
 				Static7.anInt6008 = 2;
@@ -939,11 +939,11 @@ public final class Static35 {
 				Static3.aClass4_Sub10_Sub1_1.writeOpcode(96);
 				Static3.aClass4_Sub10_Sub1_1.writeByteA(Keyboard.pressedKeys[82] ? 1 : 0);
 				Static3.aClass4_Sub10_Sub1_1.writeShort(local24);
-				Static15.method1337(Player.self.anIntArray422[0], 0, 0, local3012.getSize(), local19, Player.self.anIntArray426[0], 0, local3012.getSize(), local15);
+				Static15.method1337(PlayerList.self.anIntArray422[0], 0, 0, local3012.getSize(), local19, PlayerList.self.anIntArray426[0], 0, local3012.getSize(), local15);
 			}
 		}
 		if (local28 == 60) {
-			@Pc(3080) Player local3080 = Player.players[local24];
+			@Pc(3080) Player local3080 = PlayerList.players[local24];
 			if (local3080 != null) {
 				Static7.anInt6008 = 2;
 				Static2.anInt1629 = 0;
@@ -952,7 +952,7 @@ public final class Static35 {
 				Static3.aClass4_Sub10_Sub1_1.writeOpcode(223);
 				Static3.aClass4_Sub10_Sub1_1.writeByte(Keyboard.pressedKeys[82] ? 1 : 0);
 				Static3.aClass4_Sub10_Sub1_1.writeShortLEA(local24);
-				Static15.method1337(Player.self.anIntArray422[0], 0, 0, local3080.getSize(), local19, Player.self.anIntArray426[0], 0, local3080.getSize(), local15);
+				Static15.method1337(PlayerList.self.anIntArray422[0], 0, 0, local3080.getSize(), local19, PlayerList.self.anIntArray426[0], 0, local3080.getSize(), local15);
 			}
 		}
 		if (local28 == 1001) {
@@ -987,7 +987,7 @@ public final class Static35 {
 			Static3.aClass4_Sub10_Sub1_1.writeShort(local19 + Static7.originZ);
 			Static3.aClass4_Sub10_Sub1_1.writeShort(Static5.originX + local15);
 			Static3.aClass4_Sub10_Sub1_1.writeByteA(Keyboard.pressedKeys[82] ? 1 : 0);
-			Static15.method1337(Player.self.anIntArray422[0], 0, 0, 0, local19, Player.self.anIntArray426[0], 0, 0, local15);
+			Static15.method1337(PlayerList.self.anIntArray422[0], 0, 0, 0, local19, PlayerList.self.anIntArray426[0], 0, 0, local15);
 		}
 		if (Static2.anInt1334 != 0) {
 			Static2.anInt1334 = 0;
@@ -1119,15 +1119,15 @@ public final class Static35 {
 				@Pc(18) int local18 = Static5.aClass4_Sub10_Sub1_2.readBits(11);
 				if (local18 != 2047) {
 					@Pc(27) boolean local27 = false;
-					if (Player.players[local18] == null) {
+					if (PlayerList.players[local18] == null) {
 						local27 = true;
-						Player.players[local18] = new Player();
+						PlayerList.players[local18] = new Player();
 						if (Static6.aClass4_Sub10Array1[local18] != null) {
-							Player.players[local18].decodeAppearance(Static6.aClass4_Sub10Array1[local18]);
+							PlayerList.players[local18].decodeAppearance(Static6.aClass4_Sub10Array1[local18]);
 						}
 					}
-					Static4.anIntArray317[Static3.anInt2510++] = local18;
-					@Pc(65) Player local65 = Player.players[local18];
+					PlayerList.ids[PlayerList.size++] = local18;
+					@Pc(65) Player local65 = PlayerList.players[local18];
 					local65.anInt3990 = Static2.anInt954;
 					@Pc(75) int local75 = Static1.anIntArray27[Static5.aClass4_Sub10_Sub1_2.readBits(3)];
 					if (local27) {
@@ -1146,7 +1146,7 @@ public final class Static35 {
 					if (local119 > 15) {
 						local119 -= 32;
 					}
-					local65.method1174(Player.self.anIntArray426[0] + local119, local97 == 1, Player.self.anIntArray422[0] + local88);
+					local65.method1174(PlayerList.self.anIntArray426[0] + local119, local97 == 1, PlayerList.self.anIntArray422[0] + local88);
 					continue;
 				}
 			}

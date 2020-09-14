@@ -205,7 +205,7 @@ public final class Static22 {
 			Static7.anIntArray587[Static6.anInt4760++] = 2047;
 		} else if (local19 == 1) {
 			@Pc(42) int local42 = Static5.aClass4_Sub10_Sub1_2.readBits(3);
-			Player.self.method3308(local42, 1);
+			PlayerList.self.method3308(local42, 1);
 			@Pc(54) int local54 = Static5.aClass4_Sub10_Sub1_2.readBits(1);
 			if (local54 == 1) {
 				Static7.anIntArray587[Static6.anInt4760++] = 2047;
@@ -213,12 +213,12 @@ public final class Static22 {
 		} else if (local19 == 2) {
 			if (Static5.aClass4_Sub10_Sub1_2.readBits(1) == 1) {
 				@Pc(82) int local82 = Static5.aClass4_Sub10_Sub1_2.readBits(3);
-				Player.self.method3308(local82, 2);
+				PlayerList.self.method3308(local82, 2);
 				@Pc(92) int local92 = Static5.aClass4_Sub10_Sub1_2.readBits(3);
-				Player.self.method3308(local92, 2);
+				PlayerList.self.method3308(local92, 2);
 			} else {
 				@Pc(104) int local104 = Static5.aClass4_Sub10_Sub1_2.readBits(3);
-				Player.self.method3308(local104, 0);
+				PlayerList.self.method3308(local104, 0);
 			}
 			@Pc(114) int local114 = Static5.aClass4_Sub10_Sub1_2.readBits(1);
 			if (local114 == 1) {
@@ -233,7 +233,7 @@ public final class Static22 {
 			}
 			Static7.y = Static5.aClass4_Sub10_Sub1_2.readBits(2);
 			@Pc(171) int local171 = Static5.aClass4_Sub10_Sub1_2.readBits(7);
-			Player.self.method1174(local137, local142 == 1, local171);
+			PlayerList.self.method1174(local137, local142 == 1, local171);
 		}
 	}
 
@@ -1226,16 +1226,16 @@ public final class Static22 {
 
 	@OriginalMember(owner = "client!km", name = "c", descriptor = "(II)V")
 	public static void method2388(@OriginalArg(0) int arg0) {
-		@Pc(7) int local7 = Static3.anInt2510;
+		@Pc(7) int local7 = PlayerList.size;
 		if (arg0 == 0) {
 			local7 = 1;
 		}
 		for (@Pc(14) int local14 = 0; local14 < local7; local14++) {
 			@Pc(32) Player local32;
 			if (arg0 == 0) {
-				local32 = Player.self;
+				local32 = PlayerList.self;
 			} else {
-				local32 = Player.players[Static4.anIntArray317[local14]];
+				local32 = PlayerList.players[PlayerList.ids[local14]];
 			}
 			if (local32 != null && local32.method3310()) {
 				@Pc(46) int local46 = local32.getSize();
@@ -1280,17 +1280,17 @@ public final class Static22 {
 			@Pc(253) long local253;
 			if (arg0 == 0) {
 				local253 = 8791798054912L;
-				local255 = Player.self;
+				local255 = PlayerList.self;
 			} else {
-				local255 = Player.players[Static4.anIntArray317[local246]];
-				local253 = (long) Static4.anIntArray317[local246] << 32;
+				local255 = PlayerList.players[PlayerList.ids[local246]];
+				local253 = (long) PlayerList.ids[local246] << 32;
 			}
 			if (local255 != null && local255.method3310()) {
 				@Pc(280) int local280 = local255.getSize();
 				if (arg0 == 0 || arg0 == local280) {
 					local255.aBoolean98 = false;
 					local255.aBoolean282 = true;
-					if ((Preferences.manyIdleAnimations && Static3.anInt2510 > 200 || Static3.anInt2510 > 50) && arg0 != 0 && local255.anInt4005 == local255.method3314().anInt860) {
+					if ((Preferences.manyIdleAnimations && PlayerList.size > 200 || PlayerList.size > 50) && arg0 != 0 && local255.anInt4005 == local255.method3314().anInt860) {
 						local255.aBoolean98 = true;
 					}
 					if (local280 == 1) {

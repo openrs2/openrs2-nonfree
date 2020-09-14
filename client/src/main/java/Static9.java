@@ -11,8 +11,8 @@ public final class Static9 {
 
 	@OriginalMember(owner = "client!al", name = "a", descriptor = "(IZZZ)V")
 	public static void method174(@OriginalArg(0) int arg0, @OriginalArg(2) boolean arg1, @OriginalArg(3) boolean arg2) {
-		for (@Pc(7) int local7 = 0; local7 < Npc.size; local7++) {
-			@Pc(20) Npc local20 = Npc.npcs[Npc.ids[local7]];
+		for (@Pc(7) int local7 = 0; local7 < NpcList.size; local7++) {
+			@Pc(20) Npc local20 = NpcList.npcs[NpcList.ids[local7]];
 			if (local20 != null && local20.method3310() && local20.type.method4255()) {
 				@Pc(35) int local35 = local20.getSize();
 				if (arg2) {
@@ -56,9 +56,9 @@ public final class Static9 {
 			}
 		}
 		label206:
-		for (@Pc(249) int local249 = 0; local249 < Npc.size; local249++) {
-			@Pc(258) Npc local258 = Npc.npcs[Npc.ids[local249]];
-			@Pc(267) long local267 = (long) Npc.ids[local249] << 32 | 0x20000000L;
+		for (@Pc(249) int local249 = 0; local249 < NpcList.size; local249++) {
+			@Pc(258) Npc local258 = NpcList.npcs[NpcList.ids[local249]];
+			@Pc(267) long local267 = (long) NpcList.ids[local249] << 32 | 0x20000000L;
 			if (local258 != null && local258.method3310() && local258.type.method4255()) {
 				@Pc(282) int local282 = local258.getSize();
 				if (arg2) {

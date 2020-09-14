@@ -18,7 +18,7 @@ public final class Static24 {
 				return true;
 			}
 		}
-		if (arg0.equalsIgnoreCase(Player.self.name)) {
+		if (arg0.equalsIgnoreCase(PlayerList.self.name)) {
 			return true;
 		} else {
 			return false;

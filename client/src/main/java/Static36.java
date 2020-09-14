@@ -33,30 +33,30 @@ public final class Static36 {
 	@OriginalMember(owner = "client!va", name = "b", descriptor = "(I)V")
 	public static void method4406() {
 		@Pc(6) int local6 = Static5.aClass4_Sub10_Sub1_2.readBits(8);
-		if (Static3.anInt2510 > local6) {
-			for (@Pc(23) int local23 = local6; local23 < Static3.anInt2510; local23++) {
-				Static2.anIntArray99[Static5.anInt4195++] = Static4.anIntArray317[local23];
+		if (PlayerList.size > local6) {
+			for (@Pc(23) int local23 = local6; local23 < PlayerList.size; local23++) {
+				Protocol.removedIds[Protocol.removed++] = PlayerList.ids[local23];
 			}
 		}
-		if (local6 > Static3.anInt2510) {
+		if (local6 > PlayerList.size) {
 			throw new RuntimeException("gppov1");
 		}
-		Static3.anInt2510 = 0;
+		PlayerList.size = 0;
 		for (@Pc(55) int local55 = 0; local55 < local6; local55++) {
-			@Pc(62) int local62 = Static4.anIntArray317[local55];
-			@Pc(66) Player local66 = Player.players[local62];
+			@Pc(62) int local62 = PlayerList.ids[local55];
+			@Pc(66) Player local66 = PlayerList.players[local62];
 			@Pc(73) int local73 = Static5.aClass4_Sub10_Sub1_2.readBits(1);
 			if (local73 == 0) {
-				Static4.anIntArray317[Static3.anInt2510++] = local62;
+				PlayerList.ids[PlayerList.size++] = local62;
 				local66.anInt3990 = Static2.anInt954;
 			} else {
 				@Pc(94) int local94 = Static5.aClass4_Sub10_Sub1_2.readBits(2);
 				if (local94 == 0) {
-					Static4.anIntArray317[Static3.anInt2510++] = local62;
+					PlayerList.ids[PlayerList.size++] = local62;
 					local66.anInt3990 = Static2.anInt954;
 					Static7.anIntArray587[Static6.anInt4760++] = local62;
 				} else if (local94 == 1) {
-					Static4.anIntArray317[Static3.anInt2510++] = local62;
+					PlayerList.ids[PlayerList.size++] = local62;
 					local66.anInt3990 = Static2.anInt954;
 					@Pc(140) int local140 = Static5.aClass4_Sub10_Sub1_2.readBits(3);
 					local66.method3308(local140, 1);
@@ -65,7 +65,7 @@ public final class Static36 {
 						Static7.anIntArray587[Static6.anInt4760++] = local62;
 					}
 				} else if (local94 == 2) {
-					Static4.anIntArray317[Static3.anInt2510++] = local62;
+					PlayerList.ids[PlayerList.size++] = local62;
 					local66.anInt3990 = Static2.anInt954;
 					if (Static5.aClass4_Sub10_Sub1_2.readBits(1) == 1) {
 						@Pc(193) int local193 = Static5.aClass4_Sub10_Sub1_2.readBits(3);
@@ -81,7 +81,7 @@ public final class Static36 {
 						Static7.anIntArray587[Static6.anInt4760++] = local62;
 					}
 				} else if (local94 == 3) {
-					Static2.anIntArray99[Static5.anInt4195++] = local62;
+					Protocol.removedIds[Protocol.removed++] = local62;
 				}
 			}
 		}
@@ -300,7 +300,7 @@ public final class Static36 {
 			Static23.method2455();
 			return true;
 		} catch (@Pc(21) Exception local21) {
-			@Pc(63) String local63 = "T2 - " + Static1.anInt552 + "," + Static3.anInt2273 + "," + Static2.anInt1231 + " - " + Static1.anInt1052 + "," + (Static5.originX + Player.self.anIntArray422[0]) + "," + (Static7.originZ + Player.self.anIntArray426[0]) + " - ";
+			@Pc(63) String local63 = "T2 - " + Static1.anInt552 + "," + Static3.anInt2273 + "," + Static2.anInt1231 + " - " + Static1.anInt1052 + "," + (Static5.originX + PlayerList.self.anIntArray422[0]) + "," + (Static7.originZ + PlayerList.self.anIntArray426[0]) + " - ";
 			for (@Pc(65) int local65 = 0; Static1.anInt1052 > local65 && local65 < 50; local65++) {
 				local63 = local63 + Static5.aClass4_Sub10_Sub1_2.bytes[local65] + ",";
 			}
@@ -384,26 +384,26 @@ public final class Static36 {
 	@OriginalMember(owner = "client!vl", name = "a", descriptor = "(I)V")
 	public static void method4522() {
 		Static6.anInt4760 = 0;
-		Static5.anInt4195 = 0;
+		Protocol.removed = 0;
 		Static26.method3056();
 		Static12.method734();
 		Static35.method4298();
-		for (@Pc(17) int local17 = 0; local17 < Static5.anInt4195; local17++) {
-			@Pc(28) int local28 = Static2.anIntArray99[local17];
-			if (Static2.anInt954 != Npc.npcs[local28].anInt3990) {
-				if (Npc.npcs[local28].type.method4260()) {
-					Static25.method2931(Npc.npcs[local28]);
+		for (@Pc(17) int local17 = 0; local17 < Protocol.removed; local17++) {
+			@Pc(28) int local28 = Protocol.removedIds[local17];
+			if (Static2.anInt954 != NpcList.npcs[local28].anInt3990) {
+				if (NpcList.npcs[local28].type.method4260()) {
+					Static25.method2931(NpcList.npcs[local28]);
 				}
-				Npc.npcs[local28].setType(null);
-				Npc.npcs[local28] = null;
+				NpcList.npcs[local28].setType(null);
+				NpcList.npcs[local28] = null;
 			}
 		}
 		if (Static5.aClass4_Sub10_Sub1_2.position != Static1.anInt1052) {
 			throw new RuntimeException("gnp1 pos:" + Static5.aClass4_Sub10_Sub1_2.position + " psize:" + Static1.anInt1052);
 		}
-		for (@Pc(87) int local87 = 0; local87 < Npc.size; local87++) {
-			if (Npc.npcs[Npc.ids[local87]] == null) {
-				throw new RuntimeException("gnp2 pos:" + local87 + " size:" + Npc.size);
+		for (@Pc(87) int local87 = 0; local87 < NpcList.size; local87++) {
+			if (NpcList.npcs[NpcList.ids[local87]] == null) {
+				throw new RuntimeException("gnp2 pos:" + local87 + " size:" + NpcList.size);
 			}
 		}
 	}

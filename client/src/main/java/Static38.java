@@ -102,15 +102,15 @@ public final class Static38 {
 							@Pc(528) int local528 = local425 - 1;
 							local534 = local528 >> 11 & 0xF;
 							@Pc(538) int local538 = local528 & 0x7FF;
-							local542 = Npc.npcs[local538];
+							local542 = NpcList.npcs[local538];
 						} else {
 							@Pc(549) int local549 = -local425 - 1;
 							local534 = local549 >> 11 & 0xF;
 							@Pc(559) int local559 = local549 & 0x7FF;
-							if (local559 == Player.selfId) {
-								local542 = Player.self;
+							if (local559 == PlayerList.selfId) {
+								local542 = PlayerList.self;
 							} else {
-								local542 = Player.players[local559];
+								local542 = PlayerList.players[local559];
 							}
 						}
 						if (local542 != null) {
@@ -262,7 +262,7 @@ public final class Static38 {
 				@Pc(1451) int local1451 = Static5.aClass4_Sub10_Sub1_2.readUnsignedByte();
 				if (local1419 >= 0 && local1410 >= 0 && local1419 < 104 && local1410 < 104) {
 					@Pc(1474) int local1474 = local1439 + 1;
-					if (local1419 - local1474 <= Player.self.anIntArray422[0] && Player.self.anIntArray422[0] <= local1474 + local1419 && local1410 - local1474 <= Player.self.anIntArray426[0] && local1410 + local1474 >= Player.self.anIntArray426[0] && Preferences.areaSoundsVolume != 0 && local1443 > 0 && Static6.anInt4457 < 50 && local1423 != -1) {
+					if (local1419 - local1474 <= PlayerList.self.anIntArray422[0] && PlayerList.self.anIntArray422[0] <= local1474 + local1419 && local1410 - local1474 <= PlayerList.self.anIntArray426[0] && local1410 + local1474 >= PlayerList.self.anIntArray426[0] && Preferences.areaSoundsVolume != 0 && local1443 > 0 && Static6.anInt4457 < 50 && local1423 != -1) {
 						Static4.anIntArray294[Static6.anInt4457] = local1423;
 						Static7.anIntArray629[Static6.anInt4457] = local1443;
 						Static3.anIntArray217[Static6.anInt4457] = local1447;
@@ -279,7 +279,7 @@ public final class Static38 {
 				@Pc(1589) int local1589 = Static5.aClass4_Sub10_Sub1_2.readUnsignedByteA();
 				@Pc(1597) int local1597 = (local1589 >> 4 & 0x7) + Static1.anInt894;
 				@Pc(1603) int local1603 = Static1.anInt818 + (local1589 & 0x7);
-				if (local1597 >= 0 && local1603 >= 0 && local1597 < 104 && local1603 < 104 && local1581 != Player.selfId) {
+				if (local1597 >= 0 && local1603 >= 0 && local1597 < 104 && local1603 < 104 && local1581 != PlayerList.selfId) {
 					@Pc(1629) ObjStack local1629 = new ObjStack();
 					local1629.count = local1585;
 					local1629.type = local1577;
@@ -325,7 +325,7 @@ public final class Static38 {
 				arg0.anInt4044 = 0;
 				arg0.anInt4011 = 1;
 				arg0.anInt4001 = 0;
-				Static29.method3461(local89, arg0.z, arg0.x, arg0.anInt3970, arg0 == Player.self);
+				Static29.method3461(local89, arg0.z, arg0.x, arg0.anInt3970, arg0 == PlayerList.self);
 			}
 			if (local92 == 2) {
 				arg0.anInt4001 = 0;
@@ -339,7 +339,7 @@ public final class Static38 {
 			arg0.anInt4001 = 0;
 			arg0.anInt4030 = arg0.anInt3965;
 			if (arg0.anInt4007 != -1) {
-				Static29.method3461(Static23.method2494(arg0.anInt4007), arg0.z, arg0.x, arg0.anInt3970, arg0 == Player.self);
+				Static29.method3461(Static23.method2494(arg0.anInt4007), arg0.z, arg0.x, arg0.anInt3970, arg0 == PlayerList.self);
 			}
 		}
 	}
@@ -353,14 +353,14 @@ public final class Static38 {
 
 	@OriginalMember(owner = "client!wn", name = "e", descriptor = "(B)V")
 	public static void method4825() {
-		for (@Pc(7) int local7 = -1; local7 < Static3.anInt2510; local7++) {
+		for (@Pc(7) int local7 = -1; local7 < PlayerList.size; local7++) {
 			@Pc(19) int local19;
 			if (local7 == -1) {
 				local19 = 2047;
 			} else {
-				local19 = Static4.anIntArray317[local7];
+				local19 = PlayerList.ids[local7];
 			}
-			@Pc(29) Player local29 = Player.players[local19];
+			@Pc(29) Player local29 = PlayerList.players[local19];
 			if (local29 != null && local29.anInt4023 > 0) {
 				local29.anInt4023--;
 				if (local29.anInt4023 == 0) {
@@ -368,9 +368,9 @@ public final class Static38 {
 				}
 			}
 		}
-		for (@Pc(57) int local57 = 0; local57 < Npc.size; local57++) {
-			@Pc(64) int local64 = Npc.ids[local57];
-			@Pc(68) Npc local68 = Npc.npcs[local64];
+		for (@Pc(57) int local57 = 0; local57 < NpcList.size; local57++) {
+			@Pc(64) int local64 = NpcList.ids[local57];
+			@Pc(68) Npc local68 = NpcList.npcs[local64];
 			if (local68 != null && local68.anInt4023 > 0) {
 				local68.anInt4023--;
 				if (local68.anInt4023 == 0) {

@@ -154,14 +154,14 @@ public final class Static37 {
 			@Pc(42) PathingEntity entity;
 			if (local16.entityId < 0) {
 				@Pc(33) int playerId = -local16.entityId - 1;
-				if (playerId == Player.selfId) {
-					entity = Player.self;
+				if (playerId == PlayerList.selfId) {
+					entity = PlayerList.self;
 				} else {
-					entity = Player.players[playerId];
+					entity = PlayerList.players[playerId];
 				}
 			} else {
 				@Pc(55) int npcId = local16.entityId - 1;
-				entity = Npc.npcs[npcId];
+				entity = NpcList.npcs[npcId];
 			}
 			if (entity != null) {
 				@Pc(69) LocType type = LocTypeList.get(local16.locId);
@@ -376,22 +376,22 @@ public final class Static37 {
 			}
 			return;
 		}
-		if ((Static4.tileFlags[Static7.y][Player.self.x >> 7][Player.self.z >> 7] & 0x4) != 0) {
-			Static9.method279(0, Player.self.x >> 7, false, Player.self.z >> 7, Terrain.tiles);
+		if ((Static4.tileFlags[Static7.y][PlayerList.self.x >> 7][PlayerList.self.z >> 7] & 0x4) != 0) {
+			Static9.method279(0, PlayerList.self.x >> 7, false, PlayerList.self.z >> 7, Terrain.tiles);
 		}
 		if (Static5.anInt4066 >= 310) {
 			return;
 		}
 		@Pc(175) int local175 = Static7.anInt5678 >> 7;
 		@Pc(179) int local179 = Static3.anInt2519 >> 7;
-		@Pc(184) int local184 = Player.self.z >> 7;
+		@Pc(184) int local184 = PlayerList.self.z >> 7;
 		@Pc(196) int local196;
 		if (local175 >= local184) {
 			local196 = local175 - local184;
 		} else {
 			local196 = local184 - local175;
 		}
-		@Pc(208) int local208 = Player.self.x >> 7;
+		@Pc(208) int local208 = PlayerList.self.x >> 7;
 		@Pc(216) int local216;
 		if (local208 > local179) {
 			local216 = local208 - local179;

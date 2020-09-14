@@ -565,14 +565,14 @@ public final class Static25 {
 		Static5.anInt4329 = 0;
 		Static1.anInt1052 = 0;
 		Static8.method115();
-		for (@Pc(33) int local33 = 0; local33 < Player.players.length; local33++) {
-			if (Player.players[local33] != null) {
-				Player.players[local33].anInt3985 = -1;
+		for (@Pc(33) int local33 = 0; local33 < PlayerList.players.length; local33++) {
+			if (PlayerList.players[local33] != null) {
+				PlayerList.players[local33].anInt3985 = -1;
 			}
 		}
-		for (@Pc(52) int local52 = 0; local52 < Npc.npcs.length; local52++) {
-			if (Npc.npcs[local52] != null) {
-				Npc.npcs[local52].anInt3985 = -1;
+		for (@Pc(52) int local52 = 0; local52 < NpcList.npcs.length; local52++) {
+			if (NpcList.npcs[local52] != null) {
+				NpcList.npcs[local52].anInt3985 = -1;
 			}
 		}
 		Inv.deleteAll();

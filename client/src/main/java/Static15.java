@@ -289,7 +289,7 @@ public final class Static15 {
 				return;
 			}
 		}
-		if (local35.equals(Player.self.name)) {
+		if (local35.equals(PlayerList.self.name)) {
 			Static26.method4357("", 0, LocalisedText.FRIENDCANTADDSELF);
 			return;
 		}
@@ -498,10 +498,10 @@ public final class Static15 {
 
 	@OriginalMember(owner = "client!fg", name = "a", descriptor = "(IIIZIIIIBII)V")
 	public static void method1337(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4, @OriginalArg(6) int arg5, @OriginalArg(7) int arg6, @OriginalArg(9) int arg7, @OriginalArg(10) int arg8) {
-		if (Player.self.getSize() == 2) {
+		if (PlayerList.self.getSize() == 2) {
 			PathFinder.method418(arg8, arg3, arg5, arg6, arg0, arg4, arg1, arg2, arg7);
-		} else if (Player.self.getSize() > 2) {
-			PathFinder.method1998(arg6, arg8, arg0, arg3, arg5, arg7, arg4, arg2, Player.self.getSize(), arg1);
+		} else if (PlayerList.self.getSize() > 2) {
+			PathFinder.method1998(arg6, arg8, arg0, arg3, arg5, arg7, arg4, arg2, PlayerList.self.getSize(), arg1);
 		} else {
 			PathFinder.method2197(arg5, arg8, arg7, arg1, arg4, arg6, arg0, arg2, arg3);
 		}
@@ -745,7 +745,7 @@ public final class Static15 {
 			arg1.z = arg1.anIntArray426[0] * 128 + arg1.getSize() * 64;
 			arg1.method3307();
 		}
-		if (Player.self == arg1 && (arg1.x < 1536 || arg1.z < 1536 || arg1.x >= 11776 || arg1.z >= 11776)) {
+		if (PlayerList.self == arg1 && (arg1.x < 1536 || arg1.z < 1536 || arg1.x >= 11776 || arg1.z >= 11776)) {
 			arg1.anInt3961 = -1;
 			arg1.anInt3966 = 0;
 			arg1.anInt4034 = 0;
@@ -895,8 +895,8 @@ public final class Static15 {
 	@OriginalMember(owner = "client!fm", name = "a", descriptor = "(B)V")
 	public static void method1480() {
 		Static3.anInt5405 = 0;
-		@Pc(13) int local13 = (Player.self.x >> 7) + Static5.originX;
-		@Pc(20) int local20 = Static7.originZ + (Player.self.z >> 7);
+		@Pc(13) int local13 = (PlayerList.self.x >> 7) + Static5.originX;
+		@Pc(20) int local20 = Static7.originZ + (PlayerList.self.z >> 7);
 		if (local13 >= 3053 && local13 <= 3156 && local20 >= 3056 && local20 <= 3136) {
 			Static3.anInt5405 = 1;
 		}

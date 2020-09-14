@@ -322,7 +322,7 @@ public final class client extends GameShell {
 		if (GlRenderer.enabled) {
 			label195:
 			for (@Pc(56) int local56 = 0; local56 < 32768; local56++) {
-				@Pc(65) Npc local65 = Npc.npcs[local56];
+				@Pc(65) Npc local65 = NpcList.npcs[local56];
 				if (local65 != null) {
 					@Pc(71) byte local71 = local65.type.aByte21;
 					if ((local71 & 0x2) > 0 && local65.anInt3965 == 0 && Math.random() * 1000.0D < 10.0D) {

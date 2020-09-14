@@ -56,8 +56,8 @@ public final class Static12 {
 			Static5.aFloat147 += (float) arg0 * Static1.aFloat20 / 40.0F;
 			Static5.aFloat97 += (float) arg0 * Static4.aFloat79 / 40.0F;
 		}
-		@Pc(37) int local37 = Player.self.z + Static1.anInt837;
-		@Pc(42) int local42 = Static1.anInt548 + Player.self.x;
+		@Pc(37) int local37 = PlayerList.self.z + Static1.anInt837;
+		@Pc(42) int local42 = Static1.anInt548 + PlayerList.self.x;
 		if (Static7.anInt5412 - local42 < -500 || Static7.anInt5412 - local42 > 500 || Static3.anInt2496 - local37 < -500 || Static3.anInt2496 - local37 > 500) {
 			Static3.anInt2496 = local37;
 			Static7.anInt5412 = local42;
@@ -632,7 +632,7 @@ public final class Static12 {
 			local12 = Static7.anIntArray626[4] + 128;
 		}
 		@Pc(51) int local51 = (int) Static5.aFloat97 + Static1.anInt242 & 0x7FF;
-		Static32.method3954(local51, Static11.method522(Player.self.z, Player.self.x, Static7.y) - 50, local12, local12 * 3 + 600, Static3.anInt2496, arg0, Static7.anInt5412);
+		Static32.method3954(local51, Static11.method522(PlayerList.self.z, PlayerList.self.x, Static7.y) - 50, local12, local12 * 3 + 600, Static3.anInt2496, arg0, Static7.anInt5412);
 		if (Static3.anInt2519 == local5 && local9 == Static2.anInt1931 && local7 == Static7.anInt5678 && Static5.anInt4066 == local26 && Static5.anInt3656 == local14) {
 			Static1.anInt772 = 1;
 			return;
@@ -853,12 +853,12 @@ public final class Static12 {
 				@Pc(22) int local22 = Static5.aClass4_Sub10_Sub1_2.readBits(15);
 				if (local22 != 32767) {
 					@Pc(31) boolean local31 = false;
-					if (Npc.npcs[local22] == null) {
+					if (NpcList.npcs[local22] == null) {
 						local31 = true;
-						Npc.npcs[local22] = new Npc();
+						NpcList.npcs[local22] = new Npc();
 					}
-					@Pc(49) Npc local49 = Npc.npcs[local22];
-					Npc.ids[Npc.size++] = local22;
+					@Pc(49) Npc local49 = NpcList.npcs[local22];
+					NpcList.ids[NpcList.size++] = local22;
 					local49.anInt3990 = Static2.anInt954;
 					if (local49.type != null && local49.type.method4260()) {
 						Static25.method2931(local49);
@@ -887,7 +887,7 @@ public final class Static12 {
 					if (local49.anInt4009 == 0) {
 						local49.anInt4031 = 0;
 					}
-					local49.method3301(Player.self.anIntArray426[0] + local77, local49.getSize(), local102 + Player.self.anIntArray422[0], local139 == 1);
+					local49.method3301(PlayerList.self.anIntArray426[0] + local77, local49.getSize(), local102 + PlayerList.self.anIntArray422[0], local139 == 1);
 					if (local49.type.method4260()) {
 						Static8.method109(null, local49.anIntArray422[0], local49, local49.anIntArray426[0], null, 0, Static7.y);
 					}

@@ -642,10 +642,10 @@ public final class Static27 {
 				}
 			}
 			if (arg0.equalsIgnoreCase("::getcgcoord")) {
-				Static26.method4357(null, 0, "x:" + (Player.self.x >> 7) + " z:" + (Player.self.z >> 7) + " groundh:" + Terrain.tileHeights[Static7.y][Player.self.x >> 7][Player.self.z >> 7]);
+				Static26.method4357(null, 0, "x:" + (PlayerList.self.x >> 7) + " z:" + (PlayerList.self.z >> 7) + " groundh:" + Terrain.tileHeights[Static7.y][PlayerList.self.x >> 7][PlayerList.self.z >> 7]);
 			}
 			if (arg0.equalsIgnoreCase("::getheight")) {
-				Static26.method4357(null, 0, "Height: " + Terrain.tileHeights[Static7.y][Player.self.x >> 7][Player.self.z >> 7]);
+				Static26.method4357(null, 0, "Height: " + Terrain.tileHeights[Static7.y][PlayerList.self.x >> 7][PlayerList.self.z >> 7]);
 			}
 		}
 		Static3.aClass4_Sub10_Sub1_1.writeOpcode(216);
@@ -692,12 +692,12 @@ public final class Static27 {
 					} else {
 						@Pc(137) int local137 = (Static7.anIntArray601[local3] & 0xFF) * 128;
 						@Pc(145) int local145 = Static7.anIntArray601[local3] >> 16 & 0xFF;
-						@Pc(155) int local155 = local145 * 128 + 64 - Player.self.x;
+						@Pc(155) int local155 = local145 * 128 + 64 - PlayerList.self.x;
 						if (local155 < 0) {
 							local155 = -local155;
 						}
 						@Pc(171) int local171 = Static7.anIntArray601[local3] >> 8 & 0xFF;
-						@Pc(181) int local181 = local171 * 128 + 64 - Player.self.z;
+						@Pc(181) int local181 = local171 * 128 + 64 - PlayerList.self.z;
 						if (local181 < 0) {
 							local181 = -local181;
 						}

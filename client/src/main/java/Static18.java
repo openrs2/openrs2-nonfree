@@ -579,14 +579,14 @@ public final class Static18 {
 	@OriginalMember(owner = "client!hh", name = "a", descriptor = "(IIIIIIB)V")
 	public static void method4370(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5) {
 		Static5.anInt3635 = 0;
-		for (@Pc(17) int local17 = -1; local17 < Npc.size + Static3.anInt2510; local17++) {
+		for (@Pc(17) int local17 = -1; local17 < NpcList.size + PlayerList.size; local17++) {
 			@Pc(31) PathingEntity local31;
 			if (local17 == -1) {
-				local31 = Player.self;
-			} else if (local17 < Static3.anInt2510) {
-				local31 = Player.players[Static4.anIntArray317[local17]];
+				local31 = PlayerList.self;
+			} else if (local17 < PlayerList.size) {
+				local31 = PlayerList.players[PlayerList.ids[local17]];
 			} else {
-				local31 = Npc.npcs[Npc.ids[local17 - Static3.anInt2510]];
+				local31 = NpcList.npcs[NpcList.ids[local17 - PlayerList.size]];
 			}
 			if (local31 != null && local31.method3310()) {
 				if (local31 instanceof Npc) {
@@ -598,7 +598,7 @@ public final class Static18 {
 						continue;
 					}
 				}
-				if (local17 >= Static3.anInt2510) {
+				if (local17 >= PlayerList.size) {
 					@Pc(93) NpcType local93 = ((Npc) local31).type;
 					if (local93.anIntArray590 != null) {
 						local93 = local93.method4265();
@@ -618,7 +618,7 @@ public final class Static18 {
 					@Pc(170) Class94[] local170 = Static7.aClass94Array1;
 					for (@Pc(172) int local172 = 0; local172 < local170.length; local172++) {
 						@Pc(180) Class94 local180 = local170[local172];
-						if (local180 != null && local180.anInt2561 == 1 && local180.anInt2560 == Npc.ids[local17 - Static3.anInt2510] && Static2.anInt954 % 20 < 10) {
+						if (local180 != null && local180.anInt2561 == 1 && local180.anInt2560 == NpcList.ids[local17 - PlayerList.size] && Static2.anInt954 % 20 < 10) {
 							@Pc(214) int local214;
 							if (local93.anInt5259 == -1) {
 								local214 = local31.method3306() + 15;
@@ -651,7 +651,7 @@ public final class Static18 {
 						@Pc(349) Class94[] local349 = Static7.aClass94Array1;
 						for (@Pc(351) int local351 = 0; local351 < local349.length; local351++) {
 							@Pc(363) Class94 local363 = local349[local351];
-							if (local363 != null && local363.anInt2561 == 10 && Static4.anIntArray317[local17] == local363.anInt2560) {
+							if (local363 != null && local363.anInt2561 == 10 && PlayerList.ids[local17] == local363.anInt2560) {
 								Static28.method3325(arg2 >> 1, arg3, arg1, arg4 >> 1, local31.method3306() + 15, local31);
 								if (Static7.anInt5584 > -1) {
 									Static6.aClass4_Sub3_Sub14Array11[local363.anInt2559].method4506(Static7.anInt5584 + arg0 - 12, arg5 + Static4.anInt3290 - local260);
@@ -660,7 +660,7 @@ public final class Static18 {
 						}
 					}
 				}
-				if (local31.aString234 != null && (local17 >= Static3.anInt2510 || Static7.anInt5413 == 0 || Static7.anInt5413 == 3 || Static7.anInt5413 == 1 && Static24.method2562(((Player) local31).name))) {
+				if (local31.aString234 != null && (local17 >= PlayerList.size || Static7.anInt5413 == 0 || Static7.anInt5413 == 3 || Static7.anInt5413 == 1 && Static24.method2562(((Player) local31).name))) {
 					Static28.method3325(arg2 >> 1, arg3, arg1, arg4 >> 1, local31.method3306(), local31);
 					if (Static7.anInt5584 > -1 && Static5.anInt3635 < Static5.anInt5199) {
 						Static5.anIntArray566[Static5.anInt3635] = Static5.aClass4_Sub3_Sub5_3.method2252(local31.aString234) / 2;

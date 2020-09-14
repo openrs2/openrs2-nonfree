@@ -455,9 +455,6 @@ public final class Static5 {
 	@OriginalMember(owner = "client!pj", name = "k", descriptor = "[I")
 	public static final int[] anIntArray441 = new int[128];
 
-	@OriginalMember(owner = "client!pk", name = "Y", descriptor = "I")
-	public static int anInt4195 = 0;
-
 	@OriginalMember(owner = "client!pk", name = "ab", descriptor = "I")
 	public static int anInt4197 = 0;
 

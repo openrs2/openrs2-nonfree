@@ -6,15 +6,6 @@ import dev.openrs2.deob.annotation.Pc;
 @OriginalClass("client!p")
 public final class Npc extends PathingEntity {
 
-	@OriginalMember(owner = "client!hk", name = "hb", descriptor = "[Lclient!p;")
-	public static final Npc[] npcs = new Npc[32768];
-
-	@OriginalMember(owner = "client!uc", name = "T", descriptor = "[I")
-	public static final int[] ids = new int[1024];
-
-	@OriginalMember(owner = "client!rc", name = "c", descriptor = "I")
-	public static int size = 0;
-
 	@OriginalMember(owner = "client!p", name = "oc", descriptor = "Lclient!ua;")
 	public NpcType type;
 

@@ -126,7 +126,7 @@ public final class Static32 {
 				return;
 			}
 		}
-		if (local25.equals(Player.self.name)) {
+		if (local25.equals(PlayerList.self.name)) {
 			Static26.method4357("", 0, LocalisedText.IGNORECANTADDSELF);
 			return;
 		}
@@ -495,7 +495,7 @@ public final class Static32 {
 									local66.anInt4460 = 0;
 									local66.anInt4465 = 0;
 									local66.anInt4461 = local27;
-									Static29.method3461(local61, arg1.z, arg1.x, 0, Player.self == arg1);
+									Static29.method3461(local61, arg1.z, arg1.x, 0, PlayerList.self == arg1);
 								} else if (local69 == 2) {
 									local66.anInt4465 = 0;
 								}
@@ -511,7 +511,7 @@ public final class Static32 {
 							local166.anInt4461 = local27;
 							local166.anInt4464 = 1;
 							local166.anInt4462 = 0;
-							Static29.method3461(local61, arg1.z, arg1.x, 0, arg1 == Player.self);
+							Static29.method3461(local61, arg1.z, arg1.x, 0, arg1 == PlayerList.self);
 						}
 					}
 				}

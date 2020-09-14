@@ -126,7 +126,7 @@ public final class Static14 {
 				}
 				@Pc(82) Buffer local82 = new Buffer(Static7.aByteArrayArray50[local16]);
 				@Pc(84) int local84 = 0;
-				while (Static7.aByteArrayArray50[local16].length > local82.position && local84 < 511 && Npc.size < 1023) {
+				while (Static7.aByteArrayArray50[local16].length > local82.position && local84 < 511 && NpcList.size < 1023) {
 					@Pc(112) int local112 = local84++ << 6 | local32;
 					@Pc(116) int local116 = local82.readUnsignedShort();
 					@Pc(120) int local120 = local116 >> 14;
@@ -135,10 +135,10 @@ public final class Static14 {
 					@Pc(143) int local143 = local116 & 0x3F;
 					@Pc(155) int local155 = local143 + (Static7.mapSquares[local16] & 0xFF) * 64 - Static7.originZ;
 					@Pc(161) NpcType local161 = NpcTypeList.get(local82.readUnsignedShort());
-					if (Npc.npcs[local112] == null && (local161.aByte21 & 0x1) > 0 && Static2.anInt1216 == local120 && local139 >= 0 && local161.size + local139 < 104 && local155 >= 0 && local155 + local161.size < 104) {
-						Npc.npcs[local112] = new Npc();
-						@Pc(217) Npc local217 = Npc.npcs[local112];
-						Npc.ids[Npc.size++] = local112;
+					if (NpcList.npcs[local112] == null && (local161.aByte21 & 0x1) > 0 && Static2.anInt1216 == local120 && local139 >= 0 && local161.size + local139 < 104 && local155 >= 0 && local155 + local161.size < 104) {
+						NpcList.npcs[local112] = new Npc();
+						@Pc(217) Npc local217 = NpcList.npcs[local112];
+						NpcList.ids[NpcList.size++] = local112;
 						local217.anInt3990 = Static2.anInt954;
 						local217.setType(local161);
 						local217.setSize(local217.type.size);

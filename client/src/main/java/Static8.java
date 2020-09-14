@@ -32,9 +32,9 @@ public final class Static8 {
 		@Pc(90) int dz = Static7.originZ - prevOriginZ;
 		@Pc(95) int dx = Static5.originX - prevOriginX;
 		if (loginScreen) {
-			Npc.size = 0;
+			NpcList.size = 0;
 			for (@Pc(166) int i = 0; i < 32768; i++) {
-				@Pc(175) Npc npc = Npc.npcs[i];
+				@Pc(175) Npc npc = NpcList.npcs[i];
 				if (npc != null) {
 					npc.z -= dz * 128;
 					npc.x -= dx * 128;
@@ -45,16 +45,16 @@ public final class Static8 {
 							local233 = npc.anIntArray426;
 							local233[j] -= dz;
 						}
-						Npc.ids[Npc.size++] = i;
+						NpcList.ids[NpcList.size++] = i;
 					} else {
-						Npc.npcs[i].setType(null);
-						Npc.npcs[i] = null;
+						NpcList.npcs[i].setType(null);
+						NpcList.npcs[i] = null;
 					}
 				}
 			}
 		} else {
 			for (@Pc(103) int i = 0; i < 32768; i++) {
-				@Pc(112) Npc npc = Npc.npcs[i];
+				@Pc(112) Npc npc = NpcList.npcs[i];
 				if (npc != null) {
 					for (@Pc(117) int j = 0; j < 10; j++) {
 						@Pc(124) int[] local124 = npc.anIntArray422;
@@ -68,7 +68,7 @@ public final class Static8 {
 			}
 		}
 		for (@Pc(263) int i = 0; i < 2048; i++) {
-			@Pc(272) Player player = Player.players[i];
+			@Pc(272) Player player = PlayerList.players[i];
 			if (player != null) {
 				for (@Pc(277) int j = 0; j < 10; j++) {
 					@Pc(282) int[] local282 = player.anIntArray422;
@@ -91,7 +91,7 @@ public final class Static8 {
 		@Pc(337) byte local337 = 0;
 		Static7.y = y;
 		@Pc(341) byte local341 = 104;
-		Player.self.method1174(localZ, false, localX);
+		PlayerList.self.method1174(localZ, false, localX);
 		@Pc(349) byte local349 = 1;
 		if (dz < 0) {
 			local341 = -1;
@@ -166,29 +166,29 @@ public final class Static8 {
 	public static void method7(@OriginalArg(0) int arg0, @OriginalArg(2) String arg1) {
 		@Pc(17) String local17 = Static29.method3464(Static14.method1054(arg1));
 		@Pc(19) boolean local19 = false;
-		for (@Pc(21) int local21 = 0; local21 < Static3.anInt2510; local21++) {
-			@Pc(30) Player local30 = Player.players[Static4.anIntArray317[local21]];
+		for (@Pc(21) int local21 = 0; local21 < PlayerList.size; local21++) {
+			@Pc(30) Player local30 = PlayerList.players[PlayerList.ids[local21]];
 			if (local30 != null && local30.name != null && local30.name.equalsIgnoreCase(local17)) {
 				local19 = true;
 				if (arg0 == 1) {
 					Static3.aClass4_Sub10_Sub1_1.writeOpcode(212);
-					Static3.aClass4_Sub10_Sub1_1.writeShortA(Static4.anIntArray317[local21]);
+					Static3.aClass4_Sub10_Sub1_1.writeShortA(PlayerList.ids[local21]);
 					Static3.aClass4_Sub10_Sub1_1.writeByteA(0);
 				} else if (arg0 == 4) {
 					Static3.aClass4_Sub10_Sub1_1.writeOpcode(105);
-					Static3.aClass4_Sub10_Sub1_1.writeShort(Static4.anIntArray317[local21]);
+					Static3.aClass4_Sub10_Sub1_1.writeShort(PlayerList.ids[local21]);
 					Static3.aClass4_Sub10_Sub1_1.writeByte(0);
 				} else if (arg0 == 5) {
 					Static3.aClass4_Sub10_Sub1_1.writeOpcode(96);
 					Static3.aClass4_Sub10_Sub1_1.writeByteA(0);
-					Static3.aClass4_Sub10_Sub1_1.writeShort(Static4.anIntArray317[local21]);
+					Static3.aClass4_Sub10_Sub1_1.writeShort(PlayerList.ids[local21]);
 				} else if (arg0 == 6) {
 					Static3.aClass4_Sub10_Sub1_1.writeOpcode(77);
-					Static3.aClass4_Sub10_Sub1_1.writeShortLE2(Static4.anIntArray317[local21]);
+					Static3.aClass4_Sub10_Sub1_1.writeShortLE2(PlayerList.ids[local21]);
 					Static3.aClass4_Sub10_Sub1_1.writeByteS(0);
 				} else if (arg0 == 7) {
 					Static3.aClass4_Sub10_Sub1_1.writeOpcode(52);
-					Static3.aClass4_Sub10_Sub1_1.writeShort(Static4.anIntArray317[local21]);
+					Static3.aClass4_Sub10_Sub1_1.writeShort(PlayerList.ids[local21]);
 					Static3.aClass4_Sub10_Sub1_1.writeByte(0);
 				}
 				break;
@@ -201,9 +201,9 @@ public final class Static8 {
 
 	@OriginalMember(owner = "client!ab", name = "a", descriptor = "(B)V")
 	public static void method8() {
-		for (@Pc(11) int local11 = 0; local11 < Npc.size; local11++) {
-			@Pc(18) int local18 = Npc.ids[local11];
-			@Pc(22) Npc local22 = Npc.npcs[local18];
+		for (@Pc(11) int local11 = 0; local11 < NpcList.size; local11++) {
+			@Pc(18) int local18 = NpcList.ids[local11];
+			@Pc(22) Npc local22 = NpcList.npcs[local18];
 			if (local22 != null) {
 				Static15.method1428(local22.type.size, local22);
 			}

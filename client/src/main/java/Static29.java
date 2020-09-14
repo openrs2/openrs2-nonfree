@@ -1282,7 +1282,7 @@ public final class Static29 {
 												} else if (local1717 > 3) {
 													local1717 = 3;
 												}
-												Static24.method2945(Player.self.anIntArray422[0] + Static5.originX, Static7.originZ + Player.self.anIntArray426[0], local1717);
+												Static24.method2945(PlayerList.self.anIntArray422[0] + Static5.originX, Static7.originZ + PlayerList.self.anIntArray426[0], local1717);
 											}
 											if (Static3.anInt2576 > 0 && Keyboard.pressedKeys[82] && Keyboard.pressedKeys[81]) {
 												if (Static1.anInt528 != -1) {
@@ -1315,14 +1315,14 @@ public final class Static29 {
 												}
 												Static6.anInt4946 = 0;
 											} else if (Static1.anInt528 != -1 && Static2.anInt1767 == 0 && Static6.anInt4946 == 0) {
-												@Pc(1797) int local1797 = (Static1.anInt528 << 1) + 1 - Player.self.getSize() >> 1;
-												@Pc(1809) int local1809 = (Static1.anInt420 << 1) + 1 - Player.self.getSize() >> 1;
+												@Pc(1797) int local1797 = (Static1.anInt528 << 1) + 1 - PlayerList.self.getSize() >> 1;
+												@Pc(1809) int local1809 = (Static1.anInt420 << 1) + 1 - PlayerList.self.getSize() >> 1;
 												Static37.method4661(local1797, 0, local1809);
 												Static6.anInt5177 = Mouse.clickX;
 												Static4.anInt3275 = Mouse.clickY;
 												Static7.anInt6008 = 1;
 												Static2.anInt1629 = 0;
-												Static15.method1337(Player.self.anIntArray422[0], 0, 0, 0, local1809, Player.self.anIntArray426[0], 0, 0, local1797);
+												Static15.method1337(PlayerList.self.anIntArray422[0], 0, 0, 0, local1809, PlayerList.self.anIntArray426[0], 0, 0, local1797);
 											}
 											Static1.anInt528 = -1;
 											method3400();
@@ -1574,17 +1574,17 @@ public final class Static29 {
 
 	@OriginalMember(owner = "client!qa", name = "a", descriptor = "(IIILclient!f;I)V")
 	public static void method3488(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) Player arg2, @OriginalArg(4) int arg3) {
-		if (Player.self == arg2 || Static7.anInt5634 >= 400) {
+		if (PlayerList.self == arg2 || Static7.anInt5634 >= 400) {
 			return;
 		}
 		@Pc(144) String local144;
 		if (arg2.skillLevel == 0) {
 			@Pc(29) boolean local29 = true;
-			if (Player.self.anInt1586 != -1 && arg2.anInt1586 != -1) {
-				@Pc(53) int local53 = arg2.combatLevel >= Player.self.combatLevel ? arg2.combatLevel : Player.self.combatLevel;
-				@Pc(68) int local68 = Player.self.anInt1586 >= arg2.anInt1586 ? arg2.anInt1586 : Player.self.anInt1586;
+			if (PlayerList.self.anInt1586 != -1 && arg2.anInt1586 != -1) {
+				@Pc(53) int local53 = arg2.combatLevel >= PlayerList.self.combatLevel ? arg2.combatLevel : PlayerList.self.combatLevel;
+				@Pc(68) int local68 = PlayerList.self.anInt1586 >= arg2.anInt1586 ? arg2.anInt1586 : PlayerList.self.anInt1586;
 				@Pc(79) int local79 = local53 * 10 / 100 + local68 + 5;
-				@Pc(86) int local86 = Player.self.combatLevel - arg2.combatLevel;
+				@Pc(86) int local86 = PlayerList.self.combatLevel - arg2.combatLevel;
 				if (local86 < 0) {
 					local86 = -local86;
 				}
@@ -1594,9 +1594,9 @@ public final class Static29 {
 			}
 			@Pc(110) String local110 = client.game == 1 ? LocalisedText.RATING : LocalisedText.LEVEL;
 			if (arg2.anInt1576 <= arg2.combatLevel) {
-				local144 = arg2.method1173() + (local29 ? Static20.method1921(Player.self.combatLevel, arg2.combatLevel) : "<col=ffffff>") + " (" + local110 + arg2.combatLevel + ")";
+				local144 = arg2.method1173() + (local29 ? Static20.method1921(PlayerList.self.combatLevel, arg2.combatLevel) : "<col=ffffff>") + " (" + local110 + arg2.combatLevel + ")";
 			} else {
-				local144 = arg2.method1173() + (local29 ? Static20.method1921(Player.self.combatLevel, arg2.combatLevel) : "<col=ffffff>") + " (" + local110 + arg2.combatLevel + "+" + (arg2.anInt1576 - arg2.combatLevel) + ")";
+				local144 = arg2.method1173() + (local29 ? Static20.method1921(PlayerList.self.combatLevel, arg2.combatLevel) : "<col=ffffff>") + " (" + local110 + arg2.combatLevel + "+" + (arg2.anInt1576 - arg2.combatLevel) + ")";
 			}
 		} else {
 			local144 = arg2.method1173() + " (" + LocalisedText.SKILL + arg2.skillLevel + ")";
@@ -1608,11 +1608,11 @@ public final class Static29 {
 				if (Static2.aStringArray40[local269] != null) {
 					@Pc(277) short local277 = 0;
 					if (client.game == 0 && Static2.aStringArray40[local269].equalsIgnoreCase(LocalisedText.ATTACK)) {
-						if (Player.self.combatLevel < arg2.combatLevel) {
+						if (PlayerList.self.combatLevel < arg2.combatLevel) {
 							local277 = 2000;
 						}
-						if (Player.self.team != 0 && arg2.team != 0) {
-							if (arg2.team == Player.self.team) {
+						if (PlayerList.self.team != 0 && arg2.team != 0) {
+							if (arg2.team == PlayerList.self.team) {
 								local277 = 2000;
 							} else {
 								local277 = 0;

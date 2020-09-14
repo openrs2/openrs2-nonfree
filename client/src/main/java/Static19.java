@@ -211,14 +211,14 @@ public final class Static19 {
 		for (@Pc(57) int local57 = 0; local57 < Static7.aClass94Array1.length; local57++) {
 			Static7.aClass94Array1[local57] = null;
 		}
-		Npc.size = 0;
-		Static3.anInt2510 = 0;
+		NpcList.size = 0;
+		PlayerList.size = 0;
 		for (@Pc(78) int local78 = 0; local78 < 2048; local78++) {
-			Player.players[local78] = null;
+			PlayerList.players[local78] = null;
 			Static6.aClass4_Sub10Array1[local78] = null;
 		}
 		for (@Pc(96) int local96 = 0; local96 < 32768; local96++) {
-			Npc.npcs[local96] = null;
+			NpcList.npcs[local96] = null;
 		}
 		for (@Pc(110) int local110 = 0; local110 < 4; local110++) {
 			for (@Pc(117) int local117 = 0; local117 < 104; local117++) {

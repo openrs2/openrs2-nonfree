@@ -311,9 +311,6 @@ public final class Static2 {
 	@OriginalMember(owner = "client!ek", name = "c", descriptor = "Z")
 	public static boolean aBoolean76 = false;
 
-	@OriginalMember(owner = "client!el", name = "e", descriptor = "[I")
-	public static final int[] anIntArray99 = new int[1000];
-
 	@OriginalMember(owner = "client!el", name = "f", descriptor = "Lclient!cc;")
 	public static final SoftLruHashTable aClass26_12 = new SoftLruHashTable(260);
 

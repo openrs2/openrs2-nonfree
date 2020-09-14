@@ -390,7 +390,7 @@ public final class ScriptRunner {
 						@Pc(14656) int local14656 = intStack[isp + 1];
 						for (@Pc(14658) int local14658 = 0; local14658 < Static6.anIntArray550.length; local14658++) {
 							if (local14650 == Static6.anIntArray550[local14658]) {
-								Player.self.appearance.method3604(local14658, local14656);
+								PlayerList.self.appearance.method3604(local14658, local14656);
 								continue label4473;
 							}
 						}
@@ -400,7 +400,7 @@ public final class ScriptRunner {
 								continue label4473;
 							}
 							if (Static6.anIntArray487[local14684] == local14650) {
-								Player.self.appearance.method3604(local14684, local14656);
+								PlayerList.self.appearance.method3604(local14684, local14656);
 								continue label4473;
 							}
 							local14684++;
@@ -410,13 +410,13 @@ public final class ScriptRunner {
 						isp -= 2;
 						@Pc(14722) int local14722 = intStack[isp];
 						@Pc(14728) int local14728 = intStack[isp + 1];
-						Player.self.appearance.setColor(local14722, local14728);
+						PlayerList.self.appearance.setColor(local14722, local14728);
 						continue;
 					}
 					if (opcode == 410) {
 						isp--;
 						@Pc(14748) boolean local14748 = intStack[isp] != 0;
-						Player.self.appearance.setGender(local14748);
+						PlayerList.self.appearance.setGender(local14748);
 						continue;
 					}
 				} else if (opcode >= 1000 && opcode < 1100 || opcode >= 2000 && opcode < 2100) {
@@ -787,7 +787,7 @@ public final class ScriptRunner {
 					}
 					if (opcode == 1202) {
 						local1917.anInt5939 = 3;
-						local1917.anInt5895 = Player.self.appearance.method3611();
+						local1917.anInt5895 = PlayerList.self.appearance.method3611();
 						if (local1917.anInt5968 == -1) {
 							Static12.method779(local1917.id);
 						}
@@ -1326,7 +1326,7 @@ public final class ScriptRunner {
 						}
 						if (opcode == 3101) {
 							isp -= 2;
-							Static38.method4793(Player.self, intStack[isp], intStack[isp + 1]);
+							Static38.method4793(PlayerList.self, intStack[isp], intStack[isp + 1]);
 							continue;
 						}
 						if (opcode == 3103) {
@@ -1466,8 +1466,8 @@ public final class ScriptRunner {
 						}
 						if (opcode == 3308) {
 							@Pc(13263) int local13263 = Static7.y;
-							@Pc(13270) int local13270 = Static5.originX + (Player.self.x >> 7);
-							@Pc(13277) int local13277 = Static7.originZ + (Player.self.z >> 7);
+							@Pc(13270) int local13270 = Static5.originX + (PlayerList.self.x >> 7);
+							@Pc(13277) int local13277 = Static7.originZ + (PlayerList.self.z >> 7);
 							intStack[isp++] = (local13270 << 14) + (local13263 << 28) + local13277;
 							continue;
 						}
@@ -1565,11 +1565,11 @@ public final class ScriptRunner {
 							continue;
 						}
 						if (opcode == 3326) {
-							intStack[isp++] = Player.self.combatLevel;
+							intStack[isp++] = PlayerList.self.combatLevel;
 							continue;
 						}
 						if (opcode == 3327) {
-							intStack[isp++] = Player.self.appearance.female ? 1 : 0;
+							intStack[isp++] = PlayerList.self.appearance.female ? 1 : 0;
 							continue;
 						}
 						if (opcode == 3328) {
@@ -1896,7 +1896,7 @@ public final class ScriptRunner {
 						if (opcode == 3624) {
 							@Pc(12894) int local12894 = isp - 1;
 							@Pc(12897) int local12897 = intStack[local12894];
-							if (Static6.aClass4_Sub15Array1 != null && local12897 < Static4.anInt3260 && Static6.aClass4_Sub15Array1[local12897].aString182.equalsIgnoreCase(Player.self.name)) {
+							if (Static6.aClass4_Sub15Array1 != null && local12897 < Static4.anInt3260 && Static6.aClass4_Sub15Array1[local12897].aString182.equalsIgnoreCase(PlayerList.self.name)) {
 								isp = local12894 + 1;
 								intStack[local12894] = 1;
 								continue;
@@ -2253,7 +2253,7 @@ public final class ScriptRunner {
 							@Pc(11151) int local11151 = ssp - 2;
 							@Pc(11157) String local11157 = stringStack[local11151 + 1];
 							@Pc(11161) String local11161 = stringStack[local11151];
-							if (Player.self.appearance != null && Player.self.appearance.female) {
+							if (PlayerList.self.appearance != null && PlayerList.self.appearance.female) {
 								ssp = local11151 + 1;
 								stringStack[local11151] = local11157;
 								continue;
@@ -2802,10 +2802,10 @@ public final class ScriptRunner {
 								}
 								if (opcode == 5015) {
 									@Pc(4812) String local4812;
-									if (Player.self == null || Player.self.name == null) {
+									if (PlayerList.self == null || PlayerList.self.name == null) {
 										local4812 = Static3.aString132;
 									} else {
-										local4812 = Player.self.method1173();
+										local4812 = PlayerList.self.method1173();
 									}
 									stringStack[ssp++] = local4812;
 									continue;

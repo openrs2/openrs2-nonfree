@@ -822,30 +822,30 @@ public final class Static26 {
 	public static void method3056() {
 		Static5.aClass4_Sub10_Sub1_2.startBitAccess();
 		@Pc(13) int local13 = Static5.aClass4_Sub10_Sub1_2.readBits(8);
-		if (local13 < Npc.size) {
-			for (@Pc(23) int local23 = local13; local23 < Npc.size; local23++) {
-				Static2.anIntArray99[Static5.anInt4195++] = Npc.ids[local23];
+		if (local13 < NpcList.size) {
+			for (@Pc(23) int i = local13; i < NpcList.size; i++) {
+				Protocol.removedIds[Protocol.removed++] = NpcList.ids[i];
 			}
 		}
-		if (local13 > Npc.size) {
+		if (local13 > NpcList.size) {
 			throw new RuntimeException("gnpov1");
 		}
-		Npc.size = 0;
+		NpcList.size = 0;
 		for (@Pc(62) int local62 = 0; local62 < local13; local62++) {
-			@Pc(73) int local73 = Npc.ids[local62];
-			@Pc(77) Npc local77 = Npc.npcs[local73];
+			@Pc(73) int local73 = NpcList.ids[local62];
+			@Pc(77) Npc local77 = NpcList.npcs[local73];
 			@Pc(82) int local82 = Static5.aClass4_Sub10_Sub1_2.readBits(1);
 			if (local82 == 0) {
-				Npc.ids[Npc.size++] = local73;
+				NpcList.ids[NpcList.size++] = local73;
 				local77.anInt3990 = Static2.anInt954;
 			} else {
 				@Pc(106) int local106 = Static5.aClass4_Sub10_Sub1_2.readBits(2);
 				if (local106 == 0) {
-					Npc.ids[Npc.size++] = local73;
+					NpcList.ids[NpcList.size++] = local73;
 					local77.anInt3990 = Static2.anInt954;
 					Static7.anIntArray587[Static6.anInt4760++] = local73;
 				} else if (local106 == 1) {
-					Npc.ids[Npc.size++] = local73;
+					NpcList.ids[NpcList.size++] = local73;
 					local77.anInt3990 = Static2.anInt954;
 					@Pc(151) int local151 = Static5.aClass4_Sub10_Sub1_2.readBits(3);
 					local77.method3308(local151, 1);
@@ -854,7 +854,7 @@ public final class Static26 {
 						Static7.anIntArray587[Static6.anInt4760++] = local73;
 					}
 				} else if (local106 == 2) {
-					Npc.ids[Npc.size++] = local73;
+					NpcList.ids[NpcList.size++] = local73;
 					local77.anInt3990 = Static2.anInt954;
 					if (Static5.aClass4_Sub10_Sub1_2.readBits(1) == 1) {
 						@Pc(215) int local215 = Static5.aClass4_Sub10_Sub1_2.readBits(3);
@@ -870,7 +870,7 @@ public final class Static26 {
 						Static7.anIntArray587[Static6.anInt4760++] = local73;
 					}
 				} else if (local106 == 3) {
-					Static2.anIntArray99[Static5.anInt4195++] = local73;
+					Protocol.removedIds[Protocol.removed++] = local73;
 				}
 			}
 		}

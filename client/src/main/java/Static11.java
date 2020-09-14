@@ -80,7 +80,7 @@ public final class Static11 {
 		Static22.method2411();
 		Static20.method1929();
 		for (@Pc(42) int local42 = 0; local42 < 2048; local42++) {
-			@Pc(51) Player local51 = Player.players[local42];
+			@Pc(51) Player local51 = PlayerList.players[local42];
 			if (local51 != null) {
 				local51.anObject5 = null;
 			}
@@ -535,16 +535,16 @@ public final class Static11 {
 		Static1.anInt837 = (int) (Math.random() * 110.0D) - 55;
 		Static6.anInt4457 = 0;
 		Static27.method4239();
-		Static3.anInt2510 = 0;
-		Npc.size = 0;
+		PlayerList.size = 0;
+		NpcList.size = 0;
 		for (@Pc(3740) int local3740 = 0; local3740 < 2048; local3740++) {
-			Player.players[local3740] = null;
+			PlayerList.players[local3740] = null;
 			Static6.aClass4_Sub10Array1[local3740] = null;
 		}
 		for (@Pc(3756) int local3756 = 0; local3756 < 32768; local3756++) {
-			Npc.npcs[local3756] = null;
+			NpcList.npcs[local3756] = null;
 		}
-		Player.self = Player.players[2047] = new Player();
+		PlayerList.self = PlayerList.players[2047] = new Player();
 		Static1.aClass112_1.clear();
 		Static2.aClass112_8.clear();
 		if (Static4.objStacks != null) {
@@ -775,9 +775,9 @@ public final class Static11 {
 		}
 		Static7.anInt6050 = -1;
 		Static13.method966(Static4.anInt3407);
-		Player.self = new Player();
-		Player.self.z = 3000;
-		Player.self.x = 3000;
+		PlayerList.self = new Player();
+		PlayerList.self.z = 3000;
+		PlayerList.self.x = 3000;
 		if (!GlRenderer.enabled && client.game == 0) {
 			Static21.method2005(client.js5Archive8);
 			Static9.method233(10);

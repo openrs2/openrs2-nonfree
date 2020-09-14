@@ -529,9 +529,6 @@ public final class Static3 {
 	@OriginalMember(owner = "client!j", name = "x", descriptor = "[S")
 	public static final short[] aShortArray35 = new short[] { 960, 957, -21568, -21571, 22464 };
 
-	@OriginalMember(owner = "client!ja", name = "b", descriptor = "I")
-	public static int anInt2510 = 0;
-
 	@OriginalMember(owner = "client!jb", name = "a", descriptor = "I")
 	public static int anInt2522 = -2;
 

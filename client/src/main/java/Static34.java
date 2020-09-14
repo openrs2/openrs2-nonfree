@@ -699,7 +699,7 @@ public final class Static34 {
 		}
 		@Pc(16) Class34 local16 = arg0.method3314();
 		if (arg0.anInt3985 != -1 && arg0.anInt3985 < 32768) {
-			@Pc(31) Npc local31 = Npc.npcs[arg0.anInt3985];
+			@Pc(31) Npc local31 = NpcList.npcs[arg0.anInt3985];
 			if (local31 != null) {
 				@Pc(42) int local42 = arg0.x - local31.x;
 				@Pc(49) int local49 = arg0.z - local31.z;
@@ -710,10 +710,10 @@ public final class Static34 {
 		}
 		if (arg0.anInt3985 >= 32768) {
 			@Pc(87) int local87 = arg0.anInt3985 - 32768;
-			if (local87 == Player.selfId) {
+			if (local87 == PlayerList.selfId) {
 				local87 = 2047;
 			}
-			@Pc(101) Player local101 = Player.players[local87];
+			@Pc(101) Player local101 = PlayerList.players[local87];
 			if (local101 != null) {
 				@Pc(112) int local112 = arg0.x - local101.x;
 				@Pc(119) int local119 = arg0.z - local101.z;
@@ -1264,27 +1264,27 @@ public final class Static34 {
 
 	@OriginalMember(owner = "client!ub", name = "a", descriptor = "(I)V")
 	public static void method4269() {
-		Static5.anInt4195 = 0;
+		Protocol.removed = 0;
 		Static6.anInt4760 = 0;
 		Static22.method2189();
 		Static36.method4406();
 		Static35.method4318();
 		Static35.method4308();
-		for (@Pc(19) int local19 = 0; local19 < Static5.anInt4195; local19++) {
-			@Pc(34) int local34 = Static2.anIntArray99[local19];
-			if (Static2.anInt954 != Player.players[local34].anInt3990) {
-				if (Player.players[local34].soundRadius > 0) {
-					Static12.method739(Player.players[local34]);
+		for (@Pc(19) int local19 = 0; local19 < Protocol.removed; local19++) {
+			@Pc(34) int local34 = Protocol.removedIds[local19];
+			if (Static2.anInt954 != PlayerList.players[local34].anInt3990) {
+				if (PlayerList.players[local34].soundRadius > 0) {
+					Static12.method739(PlayerList.players[local34]);
 				}
-				Player.players[local34] = null;
+				PlayerList.players[local34] = null;
 			}
 		}
 		if (Static5.aClass4_Sub10_Sub1_2.position != Static1.anInt1052) {
 			throw new RuntimeException("gpp1 pos:" + Static5.aClass4_Sub10_Sub1_2.position + " psize:" + Static1.anInt1052);
 		}
-		for (@Pc(85) int local85 = 0; local85 < Static3.anInt2510; local85++) {
-			if (Player.players[Static4.anIntArray317[local85]] == null) {
-				throw new RuntimeException("gpp2 pos:" + local85 + " size:" + Static3.anInt2510);
+		for (@Pc(85) int local85 = 0; local85 < PlayerList.size; local85++) {
+			if (PlayerList.players[PlayerList.ids[local85]] == null) {
+				throw new RuntimeException("gpp2 pos:" + local85 + " size:" + PlayerList.size);
 			}
 		}
 	}

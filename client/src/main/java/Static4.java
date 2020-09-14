@@ -420,9 +420,6 @@ public final class Static4 {
 	@OriginalMember(owner = "client!mf", name = "d", descriptor = "Z")
 	public static boolean aBoolean232 = false;
 
-	@OriginalMember(owner = "client!mg", name = "a", descriptor = "[I")
-	public static final int[] anIntArray317 = new int[2048];
-
 	@OriginalMember(owner = "client!mg", name = "f", descriptor = "[I")
 	public static final int[] anIntArray318 = new int[] { 0, 2, 2, 2, 1, 1, 2, 2, 1, 3, 1, 1 };
 
