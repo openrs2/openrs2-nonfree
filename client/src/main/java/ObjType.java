@@ -244,7 +244,7 @@ public final class ObjType {
 	}
 
 	@OriginalMember(owner = "client!td", name = "a", descriptor = "(IIIILclient!qk;Lclient!eg;I)Lclient!vg;")
-	public final Model method4123(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) PlayerAppearance arg3, @OriginalArg(5) Class46 arg4, @OriginalArg(6) int arg5) {
+	public final Model method4123(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) PlayerAppearance arg3, @OriginalArg(5) SeqType arg4, @OriginalArg(6) int arg5) {
 		if (this.countObj != null && arg1 > 1) {
 			@Pc(13) int local13 = -1;
 			for (@Pc(15) int local15 = 0; local15 < 10; local15++) {

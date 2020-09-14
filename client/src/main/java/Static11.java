@@ -343,7 +343,7 @@ public final class Static11 {
 	@OriginalMember(owner = "client!ce", name = "a", descriptor = "(ILclient!p;BI)V")
 	public static void method529(@OriginalArg(0) int arg0, @OriginalArg(1) Npc arg1, @OriginalArg(3) int arg2) {
 		if (arg0 == arg1.anInt4007 && arg0 != -1) {
-			@Pc(19) Class46 local19 = Static23.method2494(arg0);
+			@Pc(19) SeqType local19 = SeqTypeList.get(arg0);
 			@Pc(22) int local22 = local19.anInt1238;
 			if (local22 == 1) {
 				arg1.anInt3970 = 0;
@@ -356,7 +356,7 @@ public final class Static11 {
 			if (local22 == 2) {
 				arg1.anInt4001 = 0;
 			}
-		} else if (arg0 == -1 || arg1.anInt4007 == -1 || Static23.method2494(arg0).anInt1243 >= Static23.method2494(arg1.anInt4007).anInt1243) {
+		} else if (arg0 == -1 || arg1.anInt4007 == -1 || SeqTypeList.get(arg0).anInt1243 >= SeqTypeList.get(arg1.anInt4007).anInt1243) {
 			arg1.anInt4011 = 1;
 			arg1.anInt4030 = arg1.anInt3965;
 			arg1.anInt4001 = 0;
@@ -365,7 +365,7 @@ public final class Static11 {
 			arg1.anInt4007 = arg0;
 			arg1.anInt4044 = 0;
 			if (arg1.anInt4007 != -1) {
-				Static29.method3461(Static23.method2494(arg1.anInt4007), arg1.z, arg1.x, arg1.anInt3970, false);
+				Static29.method3461(SeqTypeList.get(arg1.anInt4007), arg1.z, arg1.x, arg1.anInt3970, false);
 			}
 		}
 	}
@@ -382,7 +382,7 @@ public final class Static11 {
 					if (local19 == -1) {
 						arg1.aClass150Array3[local29] = null;
 					} else {
-						@Pc(53) Class46 local53 = Static23.method2494(local19);
+						@Pc(53) SeqType local53 = SeqTypeList.get(local19);
 						@Pc(56) int local56 = local53.anInt1238;
 						@Pc(61) Class150 local61 = arg1.aClass150Array3[local29];
 						if (local61 != null) {
@@ -399,7 +399,7 @@ public final class Static11 {
 								} else if (local56 == 2) {
 									local61.anInt4465 = 0;
 								}
-							} else if (local53.anInt1243 >= Static23.method2494(local61.anInt4456).anInt1243) {
+							} else if (local53.anInt1243 >= SeqTypeList.get(local61.anInt4456).anInt1243) {
 								local61 = arg1.aClass150Array3[local29] = null;
 							}
 						}

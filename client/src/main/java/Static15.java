@@ -532,11 +532,6 @@ public final class Static15 {
 		}
 	}
 
-	@OriginalMember(owner = "client!fi", name = "c", descriptor = "(II)I")
-	public static int method1397(@OriginalArg(0) int arg0) {
-		return arg0 >>> 7;
-	}
-
 	@OriginalMember(owner = "client!fi", name = "b", descriptor = "(BI)Lclient!qg;")
 	public static Class143 method1400(@OriginalArg(1) int arg0) {
 		@Pc(10) Class143 local10 = (Class143) Static7.aClass26_55.get((long) arg0);

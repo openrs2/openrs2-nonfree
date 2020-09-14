@@ -1242,7 +1242,7 @@ public final class Protocol {
 						if (local4452 == local4809.anInt3961) {
 							@Pc(4840) Class110 local4840 = Static21.method2004(local4452);
 							if (local4840.aBoolean222 && local4840.anInt3134 != -1) {
-								@Pc(4855) Class46 local4855 = Static23.method2494(local4840.anInt3134);
+								@Pc(4855) SeqType local4855 = SeqTypeList.get(local4840.anInt3134);
 								@Pc(4858) int local4858 = local4855.anInt1238;
 								if (local4858 == 1) {
 									local4822 = false;
@@ -1261,8 +1261,8 @@ public final class Protocol {
 							@Pc(4913) Class110 local4913 = Static21.method2004(local4452);
 							@Pc(4918) Class110 local4918 = Static21.method2004(local4809.anInt3961);
 							if (local4913.anInt3134 != -1 && local4918.anInt3134 != -1) {
-								@Pc(4935) Class46 local4935 = Static23.method2494(local4913.anInt3134);
-								@Pc(4940) Class46 local4940 = Static23.method2494(local4918.anInt3134);
+								@Pc(4935) SeqType local4935 = SeqTypeList.get(local4913.anInt3134);
+								@Pc(4940) SeqType local4940 = SeqTypeList.get(local4918.anInt3134);
 								if (local4935.anInt1243 < local4940.anInt1243) {
 									local4822 = false;
 								}
@@ -1282,7 +1282,7 @@ public final class Protocol {
 						if (local4809.anInt3961 != -1 && client.loop == local4809.anInt3984) {
 							@Pc(5003) int local5003 = Static21.method2004(local4809.anInt3961).anInt3134;
 							if (local5003 != -1) {
-								@Pc(5010) Class46 local5010 = Static23.method2494(local5003);
+								@Pc(5010) SeqType local5010 = SeqTypeList.get(local5003);
 								if (local5010 != null && local5010.anIntArray95 != null) {
 									Static29.method3461(local5010, local4809.z, local4809.x, 0, false);
 								}
@@ -1307,7 +1307,7 @@ public final class Protocol {
 						if (local4452 == local4569.anInt3961) {
 							@Pc(4649) Class110 local4649 = Static21.method2004(local4452);
 							if (local4649.aBoolean222 && local4649.anInt3134 != -1) {
-								@Pc(4663) Class46 local4663 = Static23.method2494(local4649.anInt3134);
+								@Pc(4663) SeqType local4663 = SeqTypeList.get(local4649.anInt3134);
 								@Pc(4666) int local4666 = local4663.anInt1238;
 								if (local4666 == 1) {
 									local4569.anInt4026 = 0;
@@ -1326,8 +1326,8 @@ public final class Protocol {
 							@Pc(4605) Class110 local4605 = Static21.method2004(local4452);
 							@Pc(4610) Class110 local4610 = Static21.method2004(local4569.anInt3961);
 							if (local4605.anInt3134 != -1 && local4610.anInt3134 != -1) {
-								@Pc(4627) Class46 local4627 = Static23.method2494(local4605.anInt3134);
-								@Pc(4632) Class46 local4632 = Static23.method2494(local4610.anInt3134);
+								@Pc(4627) SeqType local4627 = SeqTypeList.get(local4605.anInt3134);
+								@Pc(4632) SeqType local4632 = SeqTypeList.get(local4610.anInt3134);
 								if (local4627.anInt1243 < local4632.anInt1243) {
 									local4586 = false;
 								}
@@ -1350,7 +1350,7 @@ public final class Protocol {
 						if (local4569.anInt3961 != -1 && local4569.anInt3984 == client.loop) {
 							@Pc(4768) int local4768 = Static21.method2004(local4569.anInt3961).anInt3134;
 							if (local4768 != -1) {
-								@Pc(4778) Class46 local4778 = Static23.method2494(local4768);
+								@Pc(4778) SeqType local4778 = SeqTypeList.get(local4768);
 								if (local4778 != null && local4778.anIntArray95 != null) {
 									Static29.method3461(local4778, local4569.z, local4569.x, 0, local4569 == PlayerList.self);
 								}
@@ -2362,7 +2362,7 @@ public final class Protocol {
 			if (local450 == 65535) {
 				local450 = -1;
 			}
-			if (local450 != -1 && player.anInt3961 != -1 && Static23.method2494(Static21.method2004(local450).anInt3134).anInt1243 < Static23.method2494(Static21.method2004(player.anInt3961).anInt3134).anInt1243) {
+			if (local450 != -1 && player.anInt3961 != -1 && SeqTypeList.get(Static21.method2004(local450).anInt3134).anInt1243 < SeqTypeList.get(Static21.method2004(player.anInt3961).anInt3134).anInt1243) {
 				local456 = false;
 			}
 			if (local456) {
@@ -2378,7 +2378,7 @@ public final class Protocol {
 				if (player.anInt3961 != -1 && client.loop == player.anInt3984) {
 					@Pc(553) int local553 = Static21.method2004(player.anInt3961).anInt3134;
 					if (local553 != -1) {
-						@Pc(562) Class46 local562 = Static23.method2494(local553);
+						@Pc(562) SeqType local562 = SeqTypeList.get(local553);
 						if (local562 != null && local562.anIntArray95 != null) {
 							Static29.method3461(local562, player.z, player.x, 0, player == PlayerList.self);
 						}
@@ -2616,7 +2616,7 @@ public final class Protocol {
 				if (local266 == 65535) {
 					local266 = -1;
 				}
-				if (local266 != -1 && npc.anInt3961 != -1 && Static23.method2494(Static21.method2004(local266).anInt3134).anInt1243 < Static23.method2494(Static21.method2004(npc.anInt3961).anInt3134).anInt1243) {
+				if (local266 != -1 && npc.anInt3961 != -1 && SeqTypeList.get(Static21.method2004(local266).anInt3134).anInt1243 < SeqTypeList.get(Static21.method2004(npc.anInt3961).anInt3134).anInt1243) {
 					local272 = false;
 				}
 				if (local272) {
@@ -2632,7 +2632,7 @@ public final class Protocol {
 					if (npc.anInt3961 != -1 && client.loop == npc.anInt3984) {
 						@Pc(358) int local358 = Static21.method2004(npc.anInt3961).anInt3134;
 						if (local358 != -1) {
-							@Pc(365) Class46 local365 = Static23.method2494(local358);
+							@Pc(365) SeqType local365 = SeqTypeList.get(local358);
 							if (local365 != null && local365.anIntArray95 != null) {
 								Static29.method3461(local365, npc.z, npc.x, 0, false);
 							}

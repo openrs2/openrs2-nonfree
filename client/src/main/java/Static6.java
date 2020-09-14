@@ -515,9 +515,6 @@ public final class Static6 {
 	@OriginalMember(owner = "client!ta", name = "E", descriptor = "[S")
 	public static final short[] aShortArray100 = new short[500];
 
-	@OriginalMember(owner = "client!tb", name = "e", descriptor = "Lclient!cc;")
-	public static final SoftLruHashTable aClass26_53 = new SoftLruHashTable(64);
-
 	@OriginalMember(owner = "client!tb", name = "g", descriptor = "Ljava/math/BigInteger;")
 	public static final BigInteger aBigInteger2 = new BigInteger("58778699976184461502525193738213253649000149147835990136706041084440742975821");
 

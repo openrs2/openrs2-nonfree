@@ -388,7 +388,7 @@ public final class Static4 {
 	public static final int[] anIntArray313 = new int[] { 19, 55, 38, 155, 255, 110, 137, 205, 76 };
 
 	@OriginalMember(owner = "client!mc", name = "x", descriptor = "[Lclient!te;")
-	public static final Class4_Sub3_Sub19[] aClass4_Sub3_Sub19Array2 = new Class4_Sub3_Sub19[14];
+	public static final AnimFrameset[] aClass4_Sub3_Sub19Array2 = new AnimFrameset[14];
 
 	@OriginalMember(owner = "client!mc", name = "y", descriptor = "[F")
 	public static final float[] aFloatArray38 = new float[] { 0.073F, 0.169F, 0.24F, 1.0F };

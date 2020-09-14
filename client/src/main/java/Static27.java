@@ -517,12 +517,6 @@ public final class Static27 {
 		local7.glLightfv(local5, GL.GL_POSITION, Static5.aFloatArray43, 0);
 	}
 
-	@OriginalMember(owner = "client!of", name = "f", descriptor = "(B)V")
-	public static void method3180() {
-		Static6.aClass26_53.clear();
-		Static7.aClass26_49.clear();
-	}
-
 	@OriginalMember(owner = "client!of", name = "a", descriptor = "(BLjava/lang/String;)V")
 	public static void method3185(@OriginalArg(1) String arg0) {
 		if (Static3.anInt2576 >= 2) {
@@ -762,7 +756,7 @@ public final class Static27 {
 		LocTypeList.removeSoft();
 		NpcTypeList.removeSoft();
 		ObjTypeList.removeSoft();
-		Static20.method1969();
+		SeqTypeList.removeSoft();
 		Static14.method1203();
 		VarbitTypeList.removeSoft();
 		VarpTypeList.removeSoft();

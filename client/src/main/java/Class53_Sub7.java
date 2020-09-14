@@ -70,7 +70,7 @@ public final class Class53_Sub7 extends Entity {
 	private int anInt4580;
 
 	@OriginalMember(owner = "client!ri", name = "U", descriptor = "Lclient!eg;")
-	private Class46 aClass46_3;
+	private SeqType aClass46_3;
 
 	@OriginalMember(owner = "client!ri", name = "<init>", descriptor = "(IIIIIIIZLclient!vc;)V")
 	public Class53_Sub7(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) boolean arg7, @OriginalArg(8) Entity arg8) {
@@ -253,7 +253,7 @@ public final class Class53_Sub7 extends Entity {
 				local22 = null;
 			}
 			if (local20.anIntArray633 != null) {
-				if (this.aClass46_3 != null && local20.method4465(this.aClass46_3.anInt1223)) {
+				if (this.aClass46_3 != null && local20.method4465(this.aClass46_3.id)) {
 					return;
 				}
 				local7 = local20.method4460();
@@ -262,7 +262,7 @@ public final class Class53_Sub7 extends Entity {
 				}
 			} else if (local20.anInt5523 == -1) {
 				if (local22 != null && local22.anIntArray633 != null) {
-					if (this.aClass46_3 != null && local22.method4465(this.aClass46_3.anInt1223)) {
+					if (this.aClass46_3 != null && local22.method4465(this.aClass46_3.id)) {
 						return;
 					}
 					local7 = local22.method4460();
@@ -282,8 +282,8 @@ public final class Class53_Sub7 extends Entity {
 			this.aClass46_3 = null;
 			return;
 		}
-		if (this.aClass46_3 == null || this.aClass46_3.anInt1223 != local7) {
-			this.aClass46_3 = Static23.method2494(local7);
+		if (this.aClass46_3 == null || this.aClass46_3.id != local7) {
+			this.aClass46_3 = SeqTypeList.get(local7);
 		} else if (this.aClass46_3.anInt1238 == 0) {
 			return;
 		}

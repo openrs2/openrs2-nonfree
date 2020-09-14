@@ -1459,7 +1459,7 @@ public final class Static31 {
 		LocTypeList.clean();
 		NpcTypeList.clean();
 		ObjTypeList.clean();
-		Static32.method3986();
+		SeqTypeList.clean();
 		Static9.method191();
 		VarbitTypeList.clean();
 		VarpTypeList.clean();

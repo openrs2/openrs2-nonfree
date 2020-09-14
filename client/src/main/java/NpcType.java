@@ -431,7 +431,7 @@ public final class NpcType {
 	}
 
 	@OriginalMember(owner = "client!ua", name = "a", descriptor = "(ILclient!eg;BII)Lclient!vg;")
-	public final Model method4266(@OriginalArg(0) int arg0, @OriginalArg(1) Class46 arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3) {
+	public final Model method4266(@OriginalArg(0) int arg0, @OriginalArg(1) SeqType arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3) {
 		if (this.anIntArray590 != null) {
 			@Pc(13) NpcType local13 = this.method4265();
 			return local13 == null ? null : local13.method4266(arg0, arg1, arg2, arg3);
@@ -484,7 +484,7 @@ public final class NpcType {
 	}
 
 	@OriginalMember(owner = "client!ua", name = "a", descriptor = "(IIILclient!eg;Lclient!eg;I[Lclient!re;III)Lclient!vg;")
-	public final Model method4268(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(3) Class46 arg2, @OriginalArg(4) Class46 arg3, @OriginalArg(5) int arg4, @OriginalArg(6) Class150[] arg5, @OriginalArg(7) int arg6, @OriginalArg(8) int arg7, @OriginalArg(9) int arg8) {
+	public final Model method4268(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(3) SeqType arg2, @OriginalArg(4) SeqType arg3, @OriginalArg(5) int arg4, @OriginalArg(6) Class150[] arg5, @OriginalArg(7) int arg6, @OriginalArg(8) int arg7, @OriginalArg(9) int arg8) {
 		if (this.anIntArray590 != null) {
 			@Pc(13) NpcType local13 = this.method4265();
 			return local13 == null ? null : local13.method4268(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
@@ -600,14 +600,14 @@ public final class NpcType {
 		@Pc(731) int local731 = arg5 == null ? 0 : arg5.length;
 		for (@Pc(733) int local733 = 0; local733 < local731; local733++) {
 			if (arg5[local733] != null) {
-				@Pc(752) Class46 local752 = Static23.method2494(arg5[local733].anInt4456);
+				@Pc(752) SeqType local752 = SeqTypeList.get(arg5[local733].anInt4456);
 				if (local752.anIntArray95 != null) {
 					Static2.aClass46Array1[local733] = local752;
 					local718 = true;
 					@Pc(769) int local769 = arg5[local733].anInt4462;
 					@Pc(774) int local774 = arg5[local733].anInt4464;
 					@Pc(779) int local779 = local752.anIntArray95[local769];
-					Static1.aClass4_Sub3_Sub19Array1[local733] = Static32.method3984(local779 >>> 16);
+					Static1.aClass4_Sub3_Sub19Array1[local733] = SeqTypeList.getAnimFrameset(local779 >>> 16);
 					local779 &= 65535;
 					Static5.anIntArray398[local733] = local779;
 					if (Static1.aClass4_Sub3_Sub19Array1[local733] != null) {
@@ -619,7 +619,7 @@ public final class NpcType {
 						Static6.anIntArray528[local733] = local752.anIntArray94[local769];
 						Static1.anIntArray47[local733] = arg5[local733].anInt4460;
 						@Pc(861) int local861 = local752.anIntArray95[local774];
-						Static5.aClass4_Sub3_Sub19Array3[local733] = Static32.method3984(local861 >>> 16);
+						Static5.aClass4_Sub3_Sub19Array3[local733] = SeqTypeList.getAnimFrameset(local861 >>> 16);
 						local861 &= 65535;
 						Static4.anIntArray654[local733] = local861;
 						if (Static5.aClass4_Sub3_Sub19Array3[local733] != null) {
@@ -644,13 +644,13 @@ public final class NpcType {
 		}
 		@Pc(956) int local956 = -1;
 		@Pc(958) int local958 = -1;
-		@Pc(960) Class4_Sub3_Sub19 local960 = null;
-		@Pc(962) Class4_Sub3_Sub19 local962 = null;
+		@Pc(960) AnimFrameset local960 = null;
+		@Pc(962) AnimFrameset local962 = null;
 		@Pc(964) int local964 = 0;
 		if (arg3 != null) {
 			@Pc(973) int local973 = arg3.anIntArray95[arg0];
 			@Pc(977) int local977 = local973 >>> 16;
-			local960 = Static32.method3984(local977);
+			local960 = SeqTypeList.getAnimFrameset(local977);
 			local958 = local973 & 0xFFFF;
 			if (local960 != null) {
 				local722 |= local960.method4151(local958);
@@ -665,7 +665,7 @@ public final class NpcType {
 				if (local1040 == local977) {
 					local962 = local960;
 				} else {
-					local962 = Static32.method3984(local956 >>> 16);
+					local962 = SeqTypeList.getAnimFrameset(local956 >>> 16);
 				}
 				if (local962 != null) {
 					local722 |= local962.method4151(local956);
@@ -676,13 +676,13 @@ public final class NpcType {
 		@Pc(1080) int local1080 = -1;
 		@Pc(1082) int local1082 = -1;
 		@Pc(1084) int local1084 = 0;
-		@Pc(1086) Class4_Sub3_Sub19 local1086 = null;
-		@Pc(1088) Class4_Sub3_Sub19 local1088 = null;
+		@Pc(1086) AnimFrameset local1086 = null;
+		@Pc(1088) AnimFrameset local1088 = null;
 		if (arg2 != null) {
 			@Pc(1096) int local1096 = arg2.anIntArray95[arg7];
 			@Pc(1100) int local1100 = local1096 >>> 16;
 			local1082 = local1096 & 0xFFFF;
-			local1086 = Static32.method3984(local1100);
+			local1086 = SeqTypeList.getAnimFrameset(local1100);
 			if (local1086 != null) {
 				local722 |= local1086.method4151(local1082);
 				local720 |= local1086.method4150(local1082);
@@ -696,7 +696,7 @@ public final class NpcType {
 				if (local1162 == local1100) {
 					local1088 = local1086;
 				} else {
-					local1088 = Static32.method3984(local1080 >>> 16);
+					local1088 = SeqTypeList.getAnimFrameset(local1080 >>> 16);
 				}
 				if (local1088 != null) {
 					local722 |= local1088.method4151(local1080);

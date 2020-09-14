@@ -269,12 +269,12 @@ public abstract class PathingEntity extends Entity {
 
 	@OriginalMember(owner = "client!qc", name = "a", descriptor = "(BIIIZ)V")
 	public final void method3301(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) boolean arg3) {
-		if (this.anInt4007 != -1 && Static23.method2494(this.anInt4007).anInt1237 == 1) {
+		if (this.anInt4007 != -1 && SeqTypeList.get(this.anInt4007).anInt1237 == 1) {
 			this.anInt4007 = -1;
 		}
 		if (this.anInt3961 != -1) {
 			@Pc(39) Class110 local39 = Static21.method2004(this.anInt3961);
-			if (local39.aBoolean222 && Static23.method2494(local39.anInt3134).anInt1237 == 1) {
+			if (local39.aBoolean222 && SeqTypeList.get(local39.anInt3134).anInt1237 == 1) {
 				this.anInt3961 = -1;
 			}
 		}
@@ -547,7 +547,7 @@ public abstract class PathingEntity extends Entity {
 			local6--;
 			local15++;
 		}
-		if (this.anInt4007 != -1 && Static23.method2494(this.anInt4007).anInt1237 == 1) {
+		if (this.anInt4007 != -1 && SeqTypeList.get(this.anInt4007).anInt1237 == 1) {
 			this.anInt4007 = -1;
 		}
 		if (arg0 == 1) {
@@ -555,7 +555,7 @@ public abstract class PathingEntity extends Entity {
 		}
 		if (this.anInt3961 != -1) {
 			@Pc(58) Class110 local58 = Static21.method2004(this.anInt3961);
-			if (local58.aBoolean222 && Static23.method2494(local58.anInt3134).anInt1237 == 1) {
+			if (local58.aBoolean222 && SeqTypeList.get(local58.anInt3134).anInt1237 == 1) {
 				this.anInt3961 = -1;
 			}
 		}

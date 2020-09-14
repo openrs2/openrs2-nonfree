@@ -285,19 +285,6 @@ public final class Static32 {
 		return local25;
 	}
 
-	@OriginalMember(owner = "client!sh", name = "d", descriptor = "(II)Lclient!te;")
-	public static Class4_Sub3_Sub19 method3984(@OriginalArg(0) int arg0) {
-		@Pc(19) Class4_Sub3_Sub19 local19 = (Class4_Sub3_Sub19) Static7.aClass26_49.get((long) arg0);
-		if (local19 != null) {
-			return local19;
-		}
-		@Pc(31) Class4_Sub3_Sub19 local31 = Static37.method4756(arg0, Static2.aClass58_35, Static7.aClass58_101);
-		if (local31 != null) {
-			Static7.aClass26_49.put((long) arg0, local31);
-		}
-		return local31;
-	}
-
 	@OriginalMember(owner = "client!sh", name = "a", descriptor = "(Lclient!wf;IB)I")
 	public static int method3985(@OriginalArg(0) Component arg0, @OriginalArg(1) int arg1) {
 		if (!Static12.method687(arg0).method3266(arg1) && arg0.anObjectArray18 == null) {
@@ -307,12 +294,6 @@ public final class Static32 {
 		} else {
 			return arg0.anIntArray666[arg1];
 		}
-	}
-
-	@OriginalMember(owner = "client!si", name = "a", descriptor = "(IB)V")
-	public static void method3986() {
-		Static6.aClass26_53.clean(5);
-		Static7.aClass26_49.clean(5);
 	}
 
 	@OriginalMember(owner = "client!si", name = "a", descriptor = "(Lclient!to;IIIIIIZ)V")
@@ -472,7 +453,7 @@ public final class Static32 {
 					if (local23 == -1) {
 						arg1.aClass150Array3[local33] = null;
 					} else {
-						@Pc(61) Class46 local61 = Static23.method2494(local23);
+						@Pc(61) SeqType local61 = SeqTypeList.get(local23);
 						@Pc(66) Class150 local66 = arg1.aClass150Array3[local33];
 						@Pc(69) int local69 = local61.anInt1238;
 						if (local66 != null) {
@@ -489,7 +470,7 @@ public final class Static32 {
 								} else if (local69 == 2) {
 									local66.anInt4465 = 0;
 								}
-							} else if (local61.anInt1243 >= Static23.method2494(local66.anInt4456).anInt1243) {
+							} else if (local61.anInt1243 >= SeqTypeList.get(local66.anInt4456).anInt1243) {
 								local66 = arg1.aClass150Array3[local33] = null;
 							}
 						}
@@ -519,7 +500,7 @@ public final class Static32 {
 			return;
 		}
 		if (arg0.anInt4007 != -1 && arg0.anInt3996 == 0) {
-			@Pc(41) Class46 local41 = Static23.method2494(arg0.anInt4007);
+			@Pc(41) SeqType local41 = SeqTypeList.get(arg0.anInt4007);
 			if (arg0.anInt4030 > 0 && local41.anInt1240 == 0) {
 				arg0.anInt4037++;
 				return;
@@ -532,7 +513,7 @@ public final class Static32 {
 		if (arg0.anInt3961 != -1 && client.loop >= arg0.anInt3984) {
 			@Pc(95) Class110 local95 = Static21.method2004(arg0.anInt3961);
 			if (local95.aBoolean222 && local95.anInt3134 != -1) {
-				@Pc(110) Class46 local110 = Static23.method2494(local95.anInt3134);
+				@Pc(110) SeqType local110 = SeqTypeList.get(local95.anInt3134);
 				if (arg0.anInt4030 > 0 && local110.anInt1240 == 0) {
 					arg0.anInt4037++;
 					return;

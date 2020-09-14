@@ -13,27 +13,27 @@ public abstract class Model extends Entity {
 	public abstract void method3815(@OriginalArg(0) int arg0);
 
 	@OriginalMember(owner = "client!vg", name = "a", descriptor = "(Lclient!te;ILclient!te;IIILclient!te;ILclient!te;III[ZZ)V")
-	public final void method3816(@OriginalArg(0) Class4_Sub3_Sub19 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) Class4_Sub3_Sub19 arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) Class4_Sub3_Sub19 arg6, @OriginalArg(7) int arg7, @OriginalArg(8) Class4_Sub3_Sub19 arg8, @OriginalArg(9) int arg9, @OriginalArg(10) int arg10, @OriginalArg(11) int arg11, @OriginalArg(12) boolean[] arg12, @OriginalArg(13) boolean arg13) {
+	public final void method3816(@OriginalArg(0) AnimFrameset arg0, @OriginalArg(1) int arg1, @OriginalArg(2) AnimFrameset arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) AnimFrameset arg6, @OriginalArg(7) int arg7, @OriginalArg(8) AnimFrameset arg8, @OriginalArg(9) int arg9, @OriginalArg(10) int arg10, @OriginalArg(11) int arg11, @OriginalArg(12) boolean[] arg12, @OriginalArg(13) boolean arg13) {
 		if (arg1 == -1) {
 			return;
 		}
 		if (arg12 == null || arg7 == -1) {
 			this.method3835(arg0, arg1, arg2, arg3, arg4, arg5, arg13);
 		} else if (this.method3830()) {
-			@Pc(27) Class1 local27 = arg0.aClass1Array1[arg1];
-			@Pc(30) Class4_Sub2 local30 = local27.aClass4_Sub2_1;
-			@Pc(32) Class1 local32 = null;
+			@Pc(27) AnimFrame local27 = arg0.frames[arg1];
+			@Pc(30) AnimBase local30 = local27.base;
+			@Pc(32) AnimFrame local32 = null;
 			if (arg2 != null) {
-				local32 = arg2.aClass1Array1[arg3];
-				if (local32.aClass4_Sub2_1 != local30) {
+				local32 = arg2.frames[arg3];
+				if (local32.base != local30) {
 					local32 = null;
 				}
 			}
-			@Pc(50) Class1 local50 = arg6.aClass1Array1[arg7];
-			@Pc(52) Class1 local52 = null;
+			@Pc(50) AnimFrame local50 = arg6.frames[arg7];
+			@Pc(52) AnimFrame local52 = null;
 			if (arg8 != null) {
-				local52 = arg8.aClass1Array1[arg9];
-				if (local52.aClass4_Sub2_1 != local30) {
+				local52 = arg8.frames[arg9];
+				if (local52.base != local30) {
 					local52 = null;
 				}
 			}
@@ -71,7 +71,7 @@ public abstract class Model extends Entity {
 	public abstract void method3824(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2);
 
 	@OriginalMember(owner = "client!vg", name = "a", descriptor = "(Lclient!af;Lclient!a;Lclient!a;II[ZZZI[I)V")
-	private void method3825(@OriginalArg(0) Class4_Sub2 arg0, @OriginalArg(1) Class1 arg1, @OriginalArg(2) Class1 arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) boolean[] arg5, @OriginalArg(6) boolean arg6, @OriginalArg(7) boolean arg7, @OriginalArg(8) int arg8, @OriginalArg(9) int[] arg9) {
+	private void method3825(@OriginalArg(0) AnimBase arg0, @OriginalArg(1) AnimFrame arg1, @OriginalArg(2) AnimFrame arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) boolean[] arg5, @OriginalArg(6) boolean arg6, @OriginalArg(7) boolean arg7, @OriginalArg(8) int arg8, @OriginalArg(9) int[] arg9) {
 		if (arg2 == null || arg3 == 0) {
 			for (@Pc(5) int local5 = 0; local5 < arg1.anInt1; local5++) {
 				@Pc(14) short local14 = arg1.aShortArray3[local5];
@@ -254,16 +254,16 @@ public abstract class Model extends Entity {
 	protected abstract void method3834(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3);
 
 	@OriginalMember(owner = "client!vg", name = "a", descriptor = "(Lclient!te;ILclient!te;IIIZ)V")
-	public final void method3835(@OriginalArg(0) Class4_Sub3_Sub19 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) Class4_Sub3_Sub19 arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) boolean arg6) {
+	public final void method3835(@OriginalArg(0) AnimFrameset arg0, @OriginalArg(1) int arg1, @OriginalArg(2) AnimFrameset arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) boolean arg6) {
 		if (arg1 == -1 || !this.method3830()) {
 			return;
 		}
-		@Pc(12) Class1 local12 = arg0.aClass1Array1[arg1];
-		@Pc(15) Class4_Sub2 local15 = local12.aClass4_Sub2_1;
-		@Pc(17) Class1 local17 = null;
+		@Pc(12) AnimFrame local12 = arg0.frames[arg1];
+		@Pc(15) AnimBase local15 = local12.base;
+		@Pc(17) AnimFrame local17 = null;
 		if (arg2 != null) {
-			local17 = arg2.aClass1Array1[arg3];
-			if (local17.aClass4_Sub2_1 != local15) {
+			local17 = arg2.frames[arg3];
+			if (local17.base != local15) {
 				local17 = null;
 			}
 		}
@@ -281,16 +281,16 @@ public abstract class Model extends Entity {
 	public abstract int method3838();
 
 	@OriginalMember(owner = "client!vg", name = "a", descriptor = "(Lclient!te;ILclient!te;IIIIZ[I)V")
-	public final void method3839(@OriginalArg(0) Class4_Sub3_Sub19 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) Class4_Sub3_Sub19 arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) boolean arg7, @OriginalArg(8) int[] arg8) {
+	public final void method3839(@OriginalArg(0) AnimFrameset arg0, @OriginalArg(1) int arg1, @OriginalArg(2) AnimFrameset arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) boolean arg7, @OriginalArg(8) int[] arg8) {
 		if (arg1 == -1 || !this.method3830()) {
 			return;
 		}
-		@Pc(12) Class1 local12 = arg0.aClass1Array1[arg1];
-		@Pc(15) Class4_Sub2 local15 = local12.aClass4_Sub2_1;
-		@Pc(17) Class1 local17 = null;
+		@Pc(12) AnimFrame local12 = arg0.frames[arg1];
+		@Pc(15) AnimBase local15 = local12.base;
+		@Pc(17) AnimFrame local17 = null;
 		if (arg2 != null) {
-			local17 = arg2.aClass1Array1[arg3];
-			if (local17.aClass4_Sub2_1 != local15) {
+			local17 = arg2.frames[arg3];
+			if (local17.base != local15) {
 				local17 = null;
 			}
 		}
@@ -348,12 +348,12 @@ public abstract class Model extends Entity {
 	protected abstract void method3843(@OriginalArg(0) int arg0, @OriginalArg(1) int[] arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) boolean arg5);
 
 	@OriginalMember(owner = "client!vg", name = "a", descriptor = "(Lclient!te;I)V")
-	public final void method3844(@OriginalArg(0) Class4_Sub3_Sub19 arg0, @OriginalArg(1) int arg1) {
+	public final void method3844(@OriginalArg(0) AnimFrameset arg0, @OriginalArg(1) int arg1) {
 		if (arg1 == -1 || !this.method3830()) {
 			return;
 		}
-		@Pc(12) Class1 local12 = arg0.aClass1Array1[arg1];
-		@Pc(15) Class4_Sub2 local15 = local12.aClass4_Sub2_1;
+		@Pc(12) AnimFrame local12 = arg0.frames[arg1];
+		@Pc(15) AnimBase local15 = local12.base;
 		for (@Pc(17) int local17 = 0; local17 < local12.anInt1; local17++) {
 			@Pc(26) short local26 = local12.aShortArray3[local17];
 			if (local15.aBooleanArray1[local26]) {

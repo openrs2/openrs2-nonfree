@@ -675,32 +675,6 @@ public final class Static37 {
 		}
 	}
 
-	@OriginalMember(owner = "client!wg", name = "a", descriptor = "(BILclient!fh;Lclient!fh;Z)Lclient!te;")
-	public static Class4_Sub3_Sub19 method4756(@OriginalArg(1) int arg0, @OriginalArg(2) Js5 arg1, @OriginalArg(3) Js5 arg2) {
-		@Pc(7) boolean local7 = true;
-		@Pc(12) int[] local12 = arg1.getFileIds(arg0);
-		for (@Pc(14) int local14 = 0; local14 < local12.length; local14++) {
-			@Pc(30) byte[] local30 = arg1.fetchFileNoDiscard(arg0, local12[local14]);
-			if (local30 == null) {
-				local7 = false;
-			} else {
-				@Pc(52) int local52 = (local30[0] & 0xFF) << 8 | local30[1] & 0xFF;
-				@Pc(60) byte[] local60 = arg2.fetchFileNoDiscard(local52, 0);
-				if (local60 == null) {
-					local7 = false;
-				}
-			}
-		}
-		if (!local7) {
-			return null;
-		}
-		try {
-			return new Class4_Sub3_Sub19(arg1, arg2, arg0, false);
-		} catch (@Pc(97) Exception local97) {
-			return null;
-		}
-	}
-
 	@OriginalMember(owner = "client!wg", name = "a", descriptor = "([[FII[[I[[F[[ILclient!ih;IIZF[[FIIIIII)I")
 	public static int method4757(@OriginalArg(0) float[][] arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int[][] arg3, @OriginalArg(4) float[][] arg4, @OriginalArg(5) int[][] arg5, @OriginalArg(6) Class4_Sub12 arg6, @OriginalArg(7) int arg7, @OriginalArg(8) int arg8, @OriginalArg(9) boolean arg9, @OriginalArg(10) float arg10, @OriginalArg(11) float[][] arg11, @OriginalArg(12) int arg12, @OriginalArg(13) int arg13, @OriginalArg(15) int arg14, @OriginalArg(16) int arg15, @OriginalArg(17) int arg16) {
 		if (arg12 == 1) {
@@ -923,13 +897,6 @@ public final class Static37 {
 			Static1.anInt891 = Mouse.clickY;
 			Static4.anInt2663 = Mouse.clickX;
 		}
-	}
-
-	@OriginalMember(owner = "client!wj", name = "a", descriptor = "(Lclient!fh;Lclient!fh;Lclient!fh;I)V")
-	public static void method4785(@OriginalArg(0) Js5 arg0, @OriginalArg(1) Js5 arg1, @OriginalArg(2) Js5 arg2) {
-		Static3.aClass58_44 = arg0;
-		Static2.aClass58_35 = arg2;
-		Static7.aClass58_101 = arg1;
 	}
 
 }

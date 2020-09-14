@@ -917,7 +917,7 @@ public final class Static12 {
 	}
 
 	@OriginalMember(owner = "client!dc", name = "a", descriptor = "(IILclient!eg;IIILclient!vg;IIIZIII)Lclient!vg;")
-	public static Model method745(@OriginalArg(0) int arg0, @OriginalArg(2) Class46 arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4, @OriginalArg(6) Model arg5, @OriginalArg(7) int arg6, @OriginalArg(8) int arg7, @OriginalArg(9) int arg8, @OriginalArg(10) boolean arg9, @OriginalArg(11) int arg10, @OriginalArg(12) int arg11, @OriginalArg(13) int arg12) {
+	public static Model method745(@OriginalArg(0) int arg0, @OriginalArg(2) SeqType arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4, @OriginalArg(6) Model arg5, @OriginalArg(7) int arg6, @OriginalArg(8) int arg7, @OriginalArg(9) int arg8, @OriginalArg(10) boolean arg9, @OriginalArg(11) int arg10, @OriginalArg(12) int arg11, @OriginalArg(13) int arg12) {
 		@Pc(23) long local23 = ((long) arg10 << 32) + (long) ((arg4 << 24) + (arg11 << 16) + arg3) + ((long) arg0 << 48);
 		@Pc(33) Model local33 = (Model) Static6.aClass26_50.get(local23);
 		if (local33 == null) {
@@ -999,10 +999,10 @@ public final class Static12 {
 		if (local457 > local392) {
 			local457 = local392;
 		}
-		@Pc(475) Class4_Sub3_Sub19 local475 = null;
+		@Pc(475) AnimFrameset local475 = null;
 		if (arg1 != null) {
 			arg6 = arg1.anIntArray95[arg6];
-			local475 = Static32.method3984(arg6 >> 16);
+			local475 = SeqTypeList.getAnimFrameset(arg6 >> 16);
 			arg6 &= 65535;
 		}
 		@Pc(500) Model local500;

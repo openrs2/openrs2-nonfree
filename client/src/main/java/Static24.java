@@ -452,7 +452,7 @@ public final class Static24 {
 		LocTypeList.clear();
 		NpcTypeList.clear();
 		ObjTypeList.clear();
-		Static27.method3180();
+		SeqTypeList.clear();
 		Static31.method3745();
 		VarbitTypeList.clear();
 		VarpTypeList.clear();
@@ -629,7 +629,7 @@ public final class Static24 {
 
 	@OriginalMember(owner = "client!mf", name = "a", descriptor = "(Lclient!qc;I)V")
 	public static void method2705(@OriginalArg(0) PathingEntity arg0) {
-		if (client.loop == arg0.anInt3966 || arg0.anInt4007 == -1 || arg0.anInt3996 != 0 || arg0.anInt4044 + 1 > Static23.method2494(arg0.anInt4007).anIntArray94[arg0.anInt3970]) {
+		if (client.loop == arg0.anInt3966 || arg0.anInt4007 == -1 || arg0.anInt3996 != 0 || arg0.anInt4044 + 1 > SeqTypeList.get(arg0.anInt4007).anIntArray94[arg0.anInt3970]) {
 			@Pc(41) int local41 = arg0.anInt3966 - arg0.anInt4034;
 			@Pc(46) int local46 = client.loop - arg0.anInt4034;
 			@Pc(57) int local57 = arg0.anInt3973 * 128 + arg0.getSize() * 64;

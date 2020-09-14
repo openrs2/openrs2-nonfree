@@ -4,10 +4,10 @@ import dev.openrs2.deob.annotation.OriginalMember;
 import dev.openrs2.deob.annotation.Pc;
 
 @OriginalClass("client!eg")
-public final class Class46 {
+public final class SeqType {
 
 	@OriginalMember(owner = "client!eg", name = "a", descriptor = "I")
-	public int anInt1223;
+	public int id;
 
 	@OriginalMember(owner = "client!eg", name = "b", descriptor = "[Z")
 	public boolean[] aBooleanArray6;
@@ -64,16 +64,16 @@ public final class Class46 {
 	public final Model method1014(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) Model arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4) {
 		@Pc(10) int local10 = this.anIntArray94[arg1];
 		arg1 = this.anIntArray95[arg1];
-		@Pc(21) Class4_Sub3_Sub19 local21 = Static32.method3984(arg1 >> 16);
+		@Pc(21) AnimFrameset local21 = SeqTypeList.getAnimFrameset(arg1 >> 16);
 		arg1 &= 65535;
 		if (local21 == null) {
 			return arg2.method3831(true, true, true);
 		}
-		@Pc(35) Class4_Sub3_Sub19 local35 = null;
+		@Pc(35) AnimFrameset local35 = null;
 		arg3 &= 3;
 		if ((this.aBoolean70 || Static6.aBoolean258) && arg0 != -1 && this.anIntArray95.length > arg0) {
 			arg0 = this.anIntArray95[arg0];
-			local35 = Static32.method3984(arg0 >> 16);
+			local35 = SeqTypeList.getAnimFrameset(arg0 >> 16);
 			arg0 &= 65535;
 		}
 		@Pc(124) Model local124;
@@ -117,7 +117,7 @@ public final class Class46 {
 	}
 
 	@OriginalMember(owner = "client!eg", name = "a", descriptor = "(Lclient!fd;Z)V")
-	public final void method1016(@OriginalArg(0) Buffer arg0) {
+	public final void decode(@OriginalArg(0) Buffer arg0) {
 		while (true) {
 			@Pc(14) int local14 = arg0.readUnsignedByte();
 			if (local14 == 0) {
@@ -131,33 +131,33 @@ public final class Class46 {
 	public final Model method1017(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) Model arg2, @OriginalArg(4) int arg3) {
 		@Pc(8) int local8 = this.anIntArray94[arg3];
 		@Pc(19) int local19 = this.anIntArray95[arg3];
-		@Pc(25) Class4_Sub3_Sub19 local25 = Static32.method3984(local19 >> 16);
+		@Pc(25) AnimFrameset local25 = SeqTypeList.getAnimFrameset(local19 >> 16);
 		local19 &= 65535;
 		if (local25 == null) {
 			return arg2.method3831(true, true, true);
 		}
-		@Pc(39) Class4_Sub3_Sub19 local39 = null;
+		@Pc(39) AnimFrameset local39 = null;
 		if ((this.aBoolean70 || Static6.aBoolean258) && arg1 != -1 && arg1 < this.anIntArray95.length) {
 			arg1 = this.anIntArray95[arg1];
-			local39 = Static32.method3984(arg1 >> 16);
+			local39 = SeqTypeList.getAnimFrameset(arg1 >> 16);
 			arg1 &= 65535;
 		}
-		@Pc(73) Class4_Sub3_Sub19 local73 = null;
+		@Pc(73) AnimFrameset local73 = null;
 		@Pc(75) int local75 = 0;
 		@Pc(77) int local77 = 0;
-		@Pc(79) Class4_Sub3_Sub19 local79 = null;
+		@Pc(79) AnimFrameset local79 = null;
 		if (this.anIntArray93 != null) {
 			if (arg3 < this.anIntArray93.length) {
 				local77 = this.anIntArray93[arg3];
 				if (local77 != 65535) {
-					local73 = Static32.method3984(local77 >> 16);
+					local73 = SeqTypeList.getAnimFrameset(local77 >> 16);
 					local77 &= 65535;
 				}
 			}
 			if ((this.aBoolean70 || Static6.aBoolean258) && arg1 != -1 && arg1 < this.anIntArray93.length) {
 				local75 = this.anIntArray93[arg1];
 				if (local75 != 65535) {
-					local79 = Static32.method3984(local75 >> 16);
+					local79 = SeqTypeList.getAnimFrameset(local75 >> 16);
 					local75 &= 65535;
 				}
 			}
@@ -188,15 +188,15 @@ public final class Class46 {
 	public final Model method1018(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) Model arg2, @OriginalArg(4) int arg3) {
 		@Pc(8) int local8 = this.anIntArray94[arg0];
 		arg0 = this.anIntArray95[arg0];
-		@Pc(27) Class4_Sub3_Sub19 local27 = Static32.method3984(arg0 >> 16);
+		@Pc(27) AnimFrameset local27 = SeqTypeList.getAnimFrameset(arg0 >> 16);
 		arg0 &= 65535;
 		if (local27 == null) {
 			return arg2.method3836(true, true, true);
 		}
-		@Pc(43) Class4_Sub3_Sub19 local43 = null;
+		@Pc(43) AnimFrameset local43 = null;
 		if ((this.aBoolean70 || Static6.aBoolean258) && arg3 != -1 && arg3 < this.anIntArray95.length) {
 			arg3 = this.anIntArray95[arg3];
-			local43 = Static32.method3984(arg3 >> 16);
+			local43 = SeqTypeList.getAnimFrameset(arg3 >> 16);
 			arg3 &= 65535;
 		}
 		@Pc(102) Model local102;
@@ -283,16 +283,16 @@ public final class Class46 {
 	public final Model method1021(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) Model arg4) {
 		@Pc(10) int local10 = this.anIntArray94[arg2];
 		arg2 = this.anIntArray95[arg2];
-		@Pc(21) Class4_Sub3_Sub19 local21 = Static32.method3984(arg2 >> 16);
+		@Pc(21) AnimFrameset local21 = SeqTypeList.getAnimFrameset(arg2 >> 16);
 		arg2 &= 65535;
 		if (local21 == null) {
 			return arg4.method3833(true, true, true);
 		}
 		arg3 &= 3;
-		@Pc(40) Class4_Sub3_Sub19 local40 = null;
+		@Pc(40) AnimFrameset local40 = null;
 		if ((this.aBoolean70 || Static6.aBoolean258) && arg0 != -1 && arg0 < this.anIntArray95.length) {
 			arg0 = this.anIntArray95[arg0];
-			local40 = Static32.method3984(arg0 >> 16);
+			local40 = SeqTypeList.getAnimFrameset(arg0 >> 16);
 			arg0 &= 65535;
 		}
 		@Pc(116) Model local116;
@@ -336,7 +336,7 @@ public final class Class46 {
 	}
 
 	@OriginalMember(owner = "client!eg", name = "a", descriptor = "(B)V")
-	public final void method1022() {
+	public final void postDecode() {
 		if (this.anInt1240 == -1) {
 			if (this.aBooleanArray6 == null) {
 				this.anInt1240 = 0;

@@ -29,8 +29,8 @@ public final class Npc extends PathingEntity {
 		if (this.type == null) {
 			return;
 		}
-		@Pc(28) Class46 local28 = this.anInt4007 != -1 && this.anInt3996 == 0 ? Static23.method2494(this.anInt4007) : null;
-		@Pc(54) Class46 local54 = this.anInt4005 == -1 || this.anInt4005 == this.method3314().anInt860 && local28 != null ? null : Static23.method2494(this.anInt4005);
+		@Pc(28) SeqType local28 = this.anInt4007 != -1 && this.anInt3996 == 0 ? SeqTypeList.get(this.anInt4007) : null;
+		@Pc(54) SeqType local54 = this.anInt4005 == -1 || this.anInt4005 == this.method3314().anInt860 && local28 != null ? null : SeqTypeList.get(this.anInt4005);
 		@Pc(75) Model local75 = this.type.method4268(this.anInt3970, this.anInt4000, local54, local28, this.anInt4011, this.aClass150Array3, this.anInt4019, this.anInt4046, this.anInt4044);
 		if (local75 == null) {
 			return;
@@ -125,8 +125,8 @@ public final class Npc extends PathingEntity {
 			return;
 		}
 		if (!this.aBoolean285) {
-			@Pc(28) Class46 local28 = this.anInt4007 != -1 && this.anInt3996 == 0 ? Static23.method2494(this.anInt4007) : null;
-			@Pc(52) Class46 local52 = this.anInt4005 == -1 || this.anInt4005 == this.method3314().anInt860 && local28 != null ? null : Static23.method2494(this.anInt4005);
+			@Pc(28) SeqType local28 = this.anInt4007 != -1 && this.anInt3996 == 0 ? SeqTypeList.get(this.anInt4007) : null;
+			@Pc(52) SeqType local52 = this.anInt4005 == -1 || this.anInt4005 == this.method3314().anInt860 && local28 != null ? null : SeqTypeList.get(this.anInt4005);
 			@Pc(73) Model local73 = this.type.method4268(this.anInt3970, this.anInt4000, local52, local28, this.anInt4011, this.aClass150Array3, this.anInt4019, this.anInt4046, this.anInt4044);
 			if (local73 == null) {
 				return;

@@ -420,7 +420,7 @@ public final class Static1 {
 	public static int anInt640 = 0;
 
 	@OriginalMember(owner = "client!cj", name = "C", descriptor = "[Lclient!te;")
-	public static final Class4_Sub3_Sub19[] aClass4_Sub3_Sub19Array1 = new Class4_Sub3_Sub19[14];
+	public static final AnimFrameset[] aClass4_Sub3_Sub19Array1 = new AnimFrameset[14];
 
 	@OriginalMember(owner = "client!cj", name = "X", descriptor = "J")
 	public static long aLong32 = 0L;

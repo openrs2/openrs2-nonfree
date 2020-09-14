@@ -68,7 +68,7 @@ public final class PlayerAppearance {
 	}
 
 	@OriginalMember(owner = "client!qk", name = "a", descriptor = "([Lclient!re;IIILclient!eg;IIZILclient!eg;ZI)Lclient!vg;")
-	public final Model method3608(@OriginalArg(0) Class150[] arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) Class46 arg4, @OriginalArg(5) int arg5, @OriginalArg(7) boolean arg6, @OriginalArg(8) int arg7, @OriginalArg(9) Class46 arg8, @OriginalArg(10) boolean arg9, @OriginalArg(11) int arg10) {
+	public final Model method3608(@OriginalArg(0) Class150[] arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) SeqType arg4, @OriginalArg(5) int arg5, @OriginalArg(7) boolean arg6, @OriginalArg(8) int arg7, @OriginalArg(9) SeqType arg8, @OriginalArg(10) boolean arg9, @OriginalArg(11) int arg10) {
 		if (this.npcId != -1) {
 			return NpcTypeList.get(this.npcId).method4268(arg5, arg7, arg4, arg8, arg2, arg0, arg3, arg1, arg10);
 		}
@@ -219,14 +219,14 @@ public final class PlayerAppearance {
 		@Pc(860) int local860 = arg0 == null ? 0 : arg0.length;
 		for (@Pc(862) int local862 = 0; local862 < local860; local862++) {
 			if (arg0[local862] != null) {
-				@Pc(881) Class46 local881 = Static23.method2494(arg0[local862].anInt4456);
+				@Pc(881) SeqType local881 = SeqTypeList.get(arg0[local862].anInt4456);
 				if (local881.anIntArray95 != null) {
 					local846 = true;
 					Static5.aClass46Array2[local862] = local881;
 					@Pc(896) int local896 = arg0[local862].anInt4462;
 					@Pc(901) int local901 = arg0[local862].anInt4464;
 					@Pc(906) int local906 = local881.anIntArray95[local896];
-					Static5.aClass4_Sub3_Sub19Array4[local862] = Static32.method3984(local906 >>> 16);
+					Static5.aClass4_Sub3_Sub19Array4[local862] = SeqTypeList.getAnimFrameset(local906 >>> 16);
 					local906 &= 65535;
 					Static3.anIntArray190[local862] = local906;
 					if (Static5.aClass4_Sub3_Sub19Array4[local862] != null) {
@@ -238,7 +238,7 @@ public final class PlayerAppearance {
 						Static6.anIntArray483[local862] = local881.anIntArray94[local896];
 						Static3.anIntArray181[local862] = arg0[local862].anInt4460;
 						@Pc(1002) int local1002 = local881.anIntArray95[local901];
-						Static4.aClass4_Sub3_Sub19Array2[local862] = Static32.method3984(local1002 >>> 16);
+						Static4.aClass4_Sub3_Sub19Array2[local862] = SeqTypeList.getAnimFrameset(local1002 >>> 16);
 						local1002 &= 65535;
 						Static3.anIntArray211[local862] = local1002;
 						if (Static4.aClass4_Sub3_Sub19Array2[local862] != null) {
@@ -257,14 +257,14 @@ public final class PlayerAppearance {
 		if (local846 || arg8 != null || arg4 != null) {
 			@Pc(1064) int local1064 = -1;
 			@Pc(1066) int local1066 = -1;
-			@Pc(1068) Class4_Sub3_Sub19 local1068 = null;
+			@Pc(1068) AnimFrameset local1068 = null;
 			@Pc(1070) int local1070 = 0;
-			@Pc(1072) Class4_Sub3_Sub19 local1072 = null;
+			@Pc(1072) AnimFrameset local1072 = null;
 			if (arg8 != null) {
 				@Pc(1080) int local1080 = arg8.anIntArray95[arg5];
 				@Pc(1084) int local1084 = local1080 >>> 16;
 				local1064 = local1080 & 0xFFFF;
-				local1068 = Static32.method3984(local1084);
+				local1068 = SeqTypeList.getAnimFrameset(local1084);
 				if (local1068 != null) {
 					local850 |= local1068.method4151(local1064);
 					local848 |= local1068.method4150(local1064);
@@ -278,7 +278,7 @@ public final class PlayerAppearance {
 					if (local1138 == local1084) {
 						local1072 = local1068;
 					} else {
-						local1072 = Static32.method3984(local1066 >>> 16);
+						local1072 = SeqTypeList.getAnimFrameset(local1066 >>> 16);
 					}
 					if (local1072 != null) {
 						local850 |= local1072.method4151(local1066);
@@ -289,12 +289,12 @@ public final class PlayerAppearance {
 			@Pc(1180) int local1180 = -1;
 			@Pc(1182) int local1182 = 0;
 			@Pc(1184) int local1184 = -1;
-			@Pc(1186) Class4_Sub3_Sub19 local1186 = null;
-			@Pc(1188) Class4_Sub3_Sub19 local1188 = null;
+			@Pc(1186) AnimFrameset local1186 = null;
+			@Pc(1188) AnimFrameset local1188 = null;
 			if (arg4 != null) {
 				@Pc(1196) int local1196 = arg4.anIntArray95[arg1];
 				@Pc(1200) int local1200 = local1196 >>> 16;
-				local1188 = Static32.method3984(local1200);
+				local1188 = SeqTypeList.getAnimFrameset(local1200);
 				local1184 = local1196 & 0xFFFF;
 				if (local1188 != null) {
 					local850 |= local1188.method4151(local1184);
@@ -309,7 +309,7 @@ public final class PlayerAppearance {
 					if (local1264 == local1200) {
 						local1186 = local1188;
 					} else {
-						local1186 = Static32.method3984(local1180 >>> 16);
+						local1186 = SeqTypeList.getAnimFrameset(local1180 >>> 16);
 					}
 					if (local1186 != null) {
 						local850 |= local1186.method4151(local1180);
@@ -348,7 +348,7 @@ public final class PlayerAppearance {
 	}
 
 	@OriginalMember(owner = "client!qk", name = "a", descriptor = "(ILclient!eg;IIIIII)Lclient!vg;")
-	public final Model method3609(@OriginalArg(1) Class46 arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4, @OriginalArg(6) int arg5, @OriginalArg(7) int arg6) {
+	public final Model method3609(@OriginalArg(1) SeqType arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4, @OriginalArg(6) int arg5, @OriginalArg(7) int arg6) {
 		@Pc(14) long local14 = (long) arg2 << 32 | (long) (arg1 << 16) | (long) arg5;
 		@Pc(24) Model local24 = (Model) Static3.aClass26_27.get(local14);
 		if (local24 == null) {
@@ -419,7 +419,7 @@ public final class PlayerAppearance {
 	}
 
 	@OriginalMember(owner = "client!qk", name = "a", descriptor = "(ILclient!eg;IBI)Lclient!vg;")
-	public final Model method3612(@OriginalArg(0) int arg0, @OriginalArg(1) Class46 arg1, @OriginalArg(2) int arg2, @OriginalArg(4) int arg3) {
+	public final Model method3612(@OriginalArg(0) int arg0, @OriginalArg(1) SeqType arg1, @OriginalArg(2) int arg2, @OriginalArg(4) int arg3) {
 		if (this.npcId != -1) {
 			return NpcTypeList.get(this.npcId).method4266(arg2, arg1, arg0, arg3);
 		}

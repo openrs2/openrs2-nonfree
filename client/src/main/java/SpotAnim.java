@@ -46,7 +46,7 @@ public final class SpotAnim extends Entity {
 	public final int anInt3665;
 
 	@OriginalMember(owner = "client!o", name = "F", descriptor = "Lclient!eg;")
-	private Class46 aClass46_1;
+	private SeqType aClass46_1;
 
 	@OriginalMember(owner = "client!o", name = "<init>", descriptor = "(IIIIIII)V")
 	public SpotAnim(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6) {
@@ -61,7 +61,7 @@ public final class SpotAnim extends Entity {
 			this.aBoolean265 = true;
 		} else {
 			this.aBoolean265 = false;
-			this.aClass46_1 = Static23.method2494(local45);
+			this.aClass46_1 = SeqTypeList.get(local45);
 		}
 		if (this.anInt3665 == arg6) {
 			Static29.method3461(this.aClass46_1, this.anInt3653, this.anInt3647, this.anInt3666, false);

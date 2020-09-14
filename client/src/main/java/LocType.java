@@ -590,7 +590,7 @@ public final class LocType {
 	}
 
 	@OriginalMember(owner = "client!vh", name = "a", descriptor = "(I[[IIIIIZIII[[ILclient!eg;Lclient!fe;I)Lclient!jh;")
-	public final Class96 method4458(@OriginalArg(0) int arg0, @OriginalArg(1) int[][] arg1, @OriginalArg(2) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4, @OriginalArg(6) boolean arg5, @OriginalArg(7) int arg6, @OriginalArg(8) int arg7, @OriginalArg(9) int arg8, @OriginalArg(10) int[][] arg9, @OriginalArg(11) Class46 arg10, @OriginalArg(12) SoftwareIndexedSprite arg11, @OriginalArg(13) int arg12) {
+	public final Class96 method4458(@OriginalArg(0) int arg0, @OriginalArg(1) int[][] arg1, @OriginalArg(2) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4, @OriginalArg(6) boolean arg5, @OriginalArg(7) int arg6, @OriginalArg(8) int arg7, @OriginalArg(9) int arg8, @OriginalArg(10) int[][] arg9, @OriginalArg(11) SeqType arg10, @OriginalArg(12) SoftwareIndexedSprite arg11, @OriginalArg(13) int arg12) {
 		if (!GlRenderer.enabled) {
 			@Pc(182) long local182;
 			if (this.shapes == null) {

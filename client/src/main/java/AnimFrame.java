@@ -4,7 +4,7 @@ import dev.openrs2.deob.annotation.OriginalMember;
 import dev.openrs2.deob.annotation.Pc;
 
 @OriginalClass("client!a")
-public final class Class1 {
+public final class AnimFrame {
 
 	@OriginalMember(owner = "client!a", name = "e", descriptor = "Z")
 	public boolean aBoolean1 = false;
@@ -16,7 +16,7 @@ public final class Class1 {
 	public boolean aBoolean2 = false;
 
 	@OriginalMember(owner = "client!a", name = "p", descriptor = "Lclient!af;")
-	public Class4_Sub2 aClass4_Sub2_1 = null;
+	public AnimBase base = null;
 
 	@OriginalMember(owner = "client!a", name = "c", descriptor = "[S")
 	public final short[] aShortArray3;
@@ -37,10 +37,10 @@ public final class Class1 {
 	public final byte[] aByteArray1;
 
 	@OriginalMember(owner = "client!a", name = "<init>", descriptor = "([BLclient!af;)V")
-	public Class1(@OriginalArg(0) byte[] arg0, @OriginalArg(1) Class4_Sub2 arg1) {
-		this.aClass4_Sub2_1 = arg1;
-		@Pc(21) Buffer local21 = new Buffer(arg0);
-		@Pc(26) Buffer local26 = new Buffer(arg0);
+	public AnimFrame(@OriginalArg(0) byte[] bytes, @OriginalArg(1) AnimBase base) {
+		this.base = base;
+		@Pc(21) Buffer local21 = new Buffer(bytes);
+		@Pc(26) Buffer local26 = new Buffer(bytes);
 		local21.position = 2;
 		@Pc(33) int local33 = local21.readUnsignedByte();
 		@Pc(35) int local35 = 0;
@@ -48,7 +48,7 @@ public final class Class1 {
 		@Pc(39) int local39 = -1;
 		local26.position = local21.position + local33;
 		for (@Pc(47) int local47 = 0; local47 < local33; local47++) {
-			@Pc(56) int local56 = this.aClass4_Sub2_1.anIntArray11[local47];
+			@Pc(56) int local56 = this.base.anIntArray11[local47];
 			if (local56 == 0) {
 				local37 = local47;
 			}
@@ -97,7 +97,7 @@ public final class Class1 {
 				local35++;
 			}
 		}
-		if (local26.position != arg0.length) {
+		if (local26.position != bytes.length) {
 			throw new RuntimeException();
 		}
 		this.anInt1 = local35;

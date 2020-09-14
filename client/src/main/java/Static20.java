@@ -1328,12 +1328,6 @@ public final class Static20 {
 		}
 	}
 
-	@OriginalMember(owner = "client!ja", name = "b", descriptor = "(I)V")
-	public static void method1969() {
-		Static6.aClass26_53.removeSoft();
-		Static7.aClass26_49.removeSoft();
-	}
-
 	@OriginalMember(owner = "client!ja", name = "a", descriptor = "(IBI)V")
 	public static void method1970(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1) {
 		Static1.anInt929 = Static3.anInt2961 + Static3.anInt2960 - arg1 - 1;

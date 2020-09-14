@@ -126,23 +126,6 @@ public final class Static23 {
 		Static29.method3543(local10, arg1 << local13 & local40 | Static1.anIntArray2[local10] & ~local40);
 	}
 
-	@OriginalMember(owner = "client!ld", name = "b", descriptor = "(II)Lclient!eg;")
-	public static Class46 method2494(@OriginalArg(0) int arg0) {
-		@Pc(10) Class46 local10 = (Class46) Static6.aClass26_53.get((long) arg0);
-		if (local10 != null) {
-			return local10;
-		}
-		@Pc(25) byte[] local25 = Static3.aClass58_44.fetchFile(Static15.method1397(arg0), Static35.method4299(arg0));
-		@Pc(29) Class46 local29 = new Class46();
-		local29.anInt1223 = arg0;
-		if (local25 != null) {
-			local29.method1016(new Buffer(local25));
-		}
-		local29.method1022();
-		Static6.aClass26_53.put((long) arg0, local29);
-		return local29;
-	}
-
 	@OriginalMember(owner = "client!ld", name = "a", descriptor = "(Lclient!fh;I)V")
 	public static void method2508(@OriginalArg(0) Js5 arg0) {
 		Static3.aClass58_100 = arg0;

@@ -254,7 +254,7 @@ public final class Static13 {
 	public static void method939(@OriginalArg(1) PathingEntity arg0) {
 		arg0.aBoolean284 = false;
 		if (arg0.anInt4005 != -1) {
-			@Pc(19) Class46 local19 = Static23.method2494(arg0.anInt4005);
+			@Pc(19) SeqType local19 = SeqTypeList.get(arg0.anInt4005);
 			if (local19 == null || local19.anIntArray95 == null) {
 				arg0.anInt4005 = -1;
 			} else {
@@ -284,7 +284,7 @@ public final class Static13 {
 			} else {
 				label303:
 				{
-					@Pc(166) Class46 local166 = Static23.method2494(local152);
+					@Pc(166) SeqType local166 = SeqTypeList.get(local152);
 					if (local149.aBoolean222) {
 						if (local166.anInt1240 == 3) {
 							if (arg0.anInt4030 > 0 && arg0.anInt4034 <= client.loop && client.loop > arg0.anInt3966) {
@@ -342,7 +342,7 @@ public final class Static13 {
 			}
 		}
 		if (arg0.anInt4007 != -1 && arg0.anInt3996 <= 1) {
-			@Pc(458) Class46 local458 = Static23.method2494(arg0.anInt4007);
+			@Pc(458) SeqType local458 = SeqTypeList.get(arg0.anInt4007);
 			if (local458.anInt1240 == 3) {
 				if (arg0.anInt4030 > 0 && client.loop >= arg0.anInt4034 && arg0.anInt3966 < client.loop) {
 					arg0.anInt4007 = -1;
@@ -352,7 +352,7 @@ public final class Static13 {
 			}
 		}
 		if (arg0.anInt4007 != -1 && arg0.anInt3996 == 0) {
-			@Pc(538) Class46 local538 = Static23.method2494(arg0.anInt4007);
+			@Pc(538) SeqType local538 = SeqTypeList.get(arg0.anInt4007);
 			if (local538 == null || local538.anIntArray95 == null) {
 				arg0.anInt4007 = -1;
 			} else {
@@ -394,7 +394,7 @@ public final class Static13 {
 				if (local760.anInt4461 > 0) {
 					local760.anInt4461--;
 				} else {
-					@Pc(782) Class46 local782 = Static23.method2494(local760.anInt4456);
+					@Pc(782) SeqType local782 = SeqTypeList.get(local760.anInt4456);
 					if (local782 == null || local782.anIntArray95 == null) {
 						arg0.aClass150Array3[local746] = null;
 					} else {

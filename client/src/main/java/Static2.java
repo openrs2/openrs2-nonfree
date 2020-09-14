@@ -41,9 +41,6 @@ public final class Static2 {
 	@OriginalMember(owner = "client!ea", name = "H", descriptor = "[I")
 	public static int[] anIntArray85;
 
-	@OriginalMember(owner = "client!ea", name = "I", descriptor = "Lclient!fh;")
-	public static Js5 aClass58_35;
-
 	@OriginalMember(owner = "client!ef", name = "e", descriptor = "[B")
 	public static byte[] aByteArray10;
 
@@ -384,7 +381,7 @@ public final class Static2 {
 	public static final LinkedList aClass112_10 = new LinkedList();
 
 	@OriginalMember(owner = "client!fm", name = "h", descriptor = "[Lclient!eg;")
-	public static final Class46[] aClass46Array1 = new Class46[14];
+	public static final SeqType[] aClass46Array1 = new SeqType[14];
 
 	@OriginalMember(owner = "client!fm", name = "j", descriptor = "I")
 	public static int anInt1943 = 0;

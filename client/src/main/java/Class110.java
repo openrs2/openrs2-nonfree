@@ -123,7 +123,7 @@ public final class Class110 {
 		if (this.anInt3134 == -1 || arg2 == -1) {
 			local113 = local9.method3836(true, true, true);
 		} else {
-			local113 = Static23.method2494(this.anInt3134).method1018(arg2, arg1, local9, arg0);
+			local113 = SeqTypeList.get(this.anInt3134).method1018(arg2, arg1, local9, arg0);
 		}
 		if (this.anInt3133 != 128 || this.anInt3144 != 128) {
 			local113.method3824(this.anInt3133, this.anInt3144, this.anInt3133);

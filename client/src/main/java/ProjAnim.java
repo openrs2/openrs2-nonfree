@@ -91,7 +91,7 @@ public final class ProjAnim extends Entity {
 	public final int anInt3722;
 
 	@OriginalMember(owner = "client!oc", name = "L", descriptor = "Lclient!eg;")
-	private final Class46 aClass46_2;
+	private final SeqType aClass46_2;
 
 	@OriginalMember(owner = "client!oc", name = "<init>", descriptor = "(IIIIIIIIIII)V")
 	public ProjAnim(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) int arg8, @OriginalArg(9) int arg9, @OriginalArg(10) int arg10) {
@@ -111,7 +111,7 @@ public final class ProjAnim extends Entity {
 		if (local61 == -1) {
 			this.aClass46_2 = null;
 		} else {
-			this.aClass46_2 = Static23.method2494(local61);
+			this.aClass46_2 = SeqTypeList.get(local61);
 		}
 	}
 

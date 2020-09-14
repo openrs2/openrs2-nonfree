@@ -300,7 +300,7 @@ public final class Static5 {
 	public static final HashTable aClass84_16 = new HashTable(16);
 
 	@OriginalMember(owner = "client!nh", name = "U", descriptor = "[Lclient!eg;")
-	public static final Class46[] aClass46Array2 = new Class46[14];
+	public static final SeqType[] aClass46Array2 = new SeqType[14];
 
 	@OriginalMember(owner = "client!ni", name = "n", descriptor = "[I")
 	public static final int[] anIntArray681 = new int[] { 1, 4 };
@@ -402,7 +402,7 @@ public final class Static5 {
 	public static final SoftLruHashTable aClass26_42 = new SoftLruHashTable(64);
 
 	@OriginalMember(owner = "client!ok", name = "i", descriptor = "[Lclient!te;")
-	public static final Class4_Sub3_Sub19[] aClass4_Sub3_Sub19Array3 = new Class4_Sub3_Sub19[14];
+	public static final AnimFrameset[] aClass4_Sub3_Sub19Array3 = new AnimFrameset[14];
 
 	@OriginalMember(owner = "client!ok", name = "j", descriptor = "I")
 	public static int anInt3897 = 0;
@@ -456,7 +456,7 @@ public final class Static5 {
 	public static int anInt4197 = 0;
 
 	@OriginalMember(owner = "client!pl", name = "u", descriptor = "[Lclient!te;")
-	public static final Class4_Sub3_Sub19[] aClass4_Sub3_Sub19Array4 = new Class4_Sub3_Sub19[14];
+	public static final AnimFrameset[] aClass4_Sub3_Sub19Array4 = new AnimFrameset[14];
 
 	@OriginalMember(owner = "client!pl", name = "v", descriptor = "Lclient!ai;")
 	public static Interface1 anInterface1_1 = null;

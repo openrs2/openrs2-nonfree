@@ -761,7 +761,7 @@ public final class Static29 {
 	}
 
 	@OriginalMember(owner = "client!pk", name = "a", descriptor = "(Lclient!eg;IIIZZ)V")
-	public static void method3461(@OriginalArg(0) Class46 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) boolean arg4) {
+	public static void method3461(@OriginalArg(0) SeqType arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) boolean arg4) {
 		if (Static6.anInt4457 >= 50 || (arg0 == null || arg0.anIntArrayArray11 == null || arg0.anIntArrayArray11.length <= arg3 || arg0.anIntArrayArray11[arg3] == null)) {
 			return;
 		}
@@ -2433,7 +2433,7 @@ public final class Static29 {
 							local113 = local19.anInt5891;
 						}
 						if (local113 != -1) {
-							@Pc(129) Class46 local129 = Static23.method2494(local113);
+							@Pc(129) SeqType local129 = SeqTypeList.get(local113);
 							if (local129 != null) {
 								local19.anInt5897 += Static5.anInt4156;
 								while (local129.anIntArray94[local19.anInt5892] < local19.anInt5897) {

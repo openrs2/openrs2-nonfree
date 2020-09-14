@@ -7,11 +7,6 @@ import dev.openrs2.deob.annotation.Pc;
 
 public final class Static35 {
 
-	@OriginalMember(owner = "client!uc", name = "a", descriptor = "(ZI)I")
-	public static int method4299(@OriginalArg(1) int arg0) {
-		return arg0 & 0x7F;
-	}
-
 	@OriginalMember(owner = "client!uc", name = "a", descriptor = "(I[Ljava/lang/String;)[Ljava/lang/String;")
 	public static String[] method4300(@OriginalArg(1) String[] arg0) {
 		@Pc(13) String[] local13 = new String[5];

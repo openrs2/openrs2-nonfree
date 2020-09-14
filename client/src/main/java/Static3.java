@@ -10,9 +10,6 @@ public final class Static3 {
 	@OriginalMember(owner = "client!gf", name = "c", descriptor = "[I")
 	public static int[] mapGroupIds;
 
-	@OriginalMember(owner = "client!gg", name = "m", descriptor = "Lclient!fh;")
-	public static Js5 aClass58_44;
-
 	@OriginalMember(owner = "client!gg", name = "q", descriptor = "Lclient!vn;")
 	public static SoftwareSprite aClass4_Sub3_Sub14_Sub1_2;
 
