@@ -140,12 +140,6 @@ public final class Static25 {
 		return Static9.method197(arg1, arg0, 0) ? Static8.method103() : null;
 	}
 
-	@OriginalMember(owner = "client!ml", name = "a", descriptor = "(Lclient!fh;II)Lclient!ml;")
-	public static Class53_Sub3 method2752(@OriginalArg(0) Js5 arg0, @OriginalArg(1) int arg1) {
-		@Pc(5) byte[] local5 = arg0.fetchFile(arg1, 0);
-		return local5 == null ? null : new Class53_Sub3(local5);
-	}
-
 	@OriginalMember(owner = "client!ml", name = "a", descriptor = "([[III)I")
 	public static int method2762(@OriginalArg(0) int[][] arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
 		@Pc(3) int local3 = arg1 >> 7;

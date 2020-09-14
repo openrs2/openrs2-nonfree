@@ -6,6 +6,12 @@ import dev.openrs2.deob.annotation.Pc;
 @OriginalClass("client!ml")
 public final class Class53_Sub3 extends Entity {
 
+	@OriginalMember(owner = "client!ml", name = "a", descriptor = "(Lclient!fh;II)Lclient!ml;")
+	public static Class53_Sub3 create(@OriginalArg(0) Js5 archive, @OriginalArg(1) int id) {
+		@Pc(5) byte[] bytes = archive.fetchFile(id, 0);
+		return bytes == null ? null : new Class53_Sub3(bytes);
+	}
+
 	@OriginalMember(owner = "client!ml", name = "m", descriptor = "[S")
 	public short[] aShortArray51;
 

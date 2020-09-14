@@ -534,7 +534,7 @@ public final class Component {
 		} else if (local14 == 1) {
 			@Pc(61) Model local61 = (Model) Static1.aClass26_1.get((long) (local17 + (local14 << 16)));
 			if (local61 == null) {
-				@Pc(68) Class53_Sub3 local68 = Static25.method2752(InterfaceList.modelsArchive, local17);
+				@Pc(68) Class53_Sub3 local68 = Class53_Sub3.create(InterfaceList.modelsArchive, local17);
 				if (local68 == null) {
 					Static3.aBoolean178 = true;
 					return null;

@@ -130,12 +130,6 @@ public final class Static9 {
 		}
 	}
 
-	@OriginalMember(owner = "client!am", name = "a", descriptor = "(II)V")
-	public static void method191() {
-		Static5.aClass26_45.clean(5);
-		Static7.aClass26_57.clean(5);
-	}
-
 	@OriginalMember(owner = "client!am", name = "a", descriptor = "(Lclient!ll;III)V")
 	public static void method193(@OriginalArg(0) LinkedList arg0, @OriginalArg(1) int arg1, @OriginalArg(3) int arg2) {
 		Static3.aClass112_13.clear();

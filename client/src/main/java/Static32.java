@@ -511,7 +511,7 @@ public final class Static32 {
 			}
 		}
 		if (arg0.anInt3961 != -1 && client.loop >= arg0.anInt3984) {
-			@Pc(95) Class110 local95 = Static21.method2004(arg0.anInt3961);
+			@Pc(95) SpotAnimType local95 = SpotAnimTypeList.get(arg0.anInt3961);
 			if (local95.aBoolean222 && local95.anInt3134 != -1) {
 				@Pc(110) SeqType local110 = SeqTypeList.get(local95.anInt3134);
 				if (arg0.anInt4030 > 0 && local110.anInt1240 == 0) {

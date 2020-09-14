@@ -107,7 +107,7 @@ public final class ProjAnim extends Entity {
 		this.anInt3720 = arg0;
 		this.anInt3727 = arg7;
 		this.anInt3722 = arg10;
-		@Pc(61) int local61 = Static21.method2004(this.anInt3720).anInt3134;
+		@Pc(61) int local61 = SpotAnimTypeList.get(this.anInt3720).anInt3134;
 		if (local61 == -1) {
 			this.aClass46_2 = null;
 		} else {
@@ -219,7 +219,7 @@ public final class ProjAnim extends Entity {
 
 	@OriginalMember(owner = "client!oc", name = "a", descriptor = "(Z)Lclient!vg;")
 	private Model method3108() {
-		@Pc(14) Class110 local14 = Static21.method2004(this.anInt3720);
+		@Pc(14) SpotAnimType local14 = SpotAnimTypeList.get(this.anInt3720);
 		@Pc(24) Model local24 = local14.method2569(this.anInt3718, this.anInt3725, this.anInt3708);
 		if (local24 == null) {
 			return null;

@@ -757,7 +757,7 @@ public final class Static27 {
 		NpcTypeList.removeSoft();
 		ObjTypeList.removeSoft();
 		SeqTypeList.removeSoft();
-		Static14.method1203();
+		SpotAnimTypeList.removeSoft();
 		VarbitTypeList.removeSoft();
 		VarpTypeList.removeSoft();
 		BasTypeList.removeSoft();

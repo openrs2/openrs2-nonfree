@@ -451,7 +451,7 @@ public final class NpcType {
 				}
 				@Pc(87) Class53_Sub3[] local87 = new Class53_Sub3[this.anIntArray588.length];
 				for (@Pc(89) int local89 = 0; local89 < this.anIntArray588.length; local89++) {
-					local87[local89] = Static25.method2752(NpcTypeList.modelsArchive, this.anIntArray588[local89]);
+					local87[local89] = Class53_Sub3.create(NpcTypeList.modelsArchive, this.anIntArray588[local89]);
 				}
 				@Pc(122) Class53_Sub3 local122;
 				if (local87.length == 1) {
@@ -503,7 +503,7 @@ public final class NpcType {
 			@Pc(81) Class53_Sub3[] local81 = new Class53_Sub3[this.anIntArray589.length];
 			for (@Pc(83) int local83 = 0; local83 < this.anIntArray589.length; local83++) {
 				if (this.anIntArray589[local83] != -1) {
-					local81[local83] = Static25.method2752(NpcTypeList.modelsArchive, this.anIntArray589[local83]);
+					local81[local83] = Class53_Sub3.create(NpcTypeList.modelsArchive, this.anIntArray589[local83]);
 					if (this.anIntArrayArray46 != null && this.anIntArrayArray46[local83] != null && local81[local83] != null) {
 						local81[local83].method2743(this.anIntArrayArray46[local83][0], this.anIntArrayArray46[local83][1], this.anIntArrayArray46[local83][2]);
 					}

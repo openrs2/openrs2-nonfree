@@ -264,7 +264,7 @@ public final class Player extends PathingEntity {
 		@Pc(494) Model local494 = null;
 		this.method3312(local105, arg0);
 		if (!this.aBoolean98 && this.anInt3961 != -1 && this.anInt4026 != -1) {
-			@Pc(518) Class110 local518 = Static21.method2004(this.anInt3961);
+			@Pc(518) SpotAnimType local518 = SpotAnimTypeList.get(this.anInt3961);
 			local494 = local518.method2569(this.anInt3976, this.anInt3968, this.anInt4026);
 			if (local494 != null) {
 				local494.method3823(0, -this.anInt3971, 0);

@@ -199,7 +199,7 @@ public final class Class105 {
 
 	@OriginalMember(owner = "client!kg", name = "b", descriptor = "(Lclient!kg;)Z")
 	private boolean method2290(@OriginalArg(0) Class105 arg0) {
-		@Pc(5) Class53_Sub3 local5 = Static25.method2752(Static2.aClass58_37, this.anInt2858);
+		@Pc(5) Class53_Sub3 local5 = Class53_Sub3.create(Static2.aClass58_37, this.anInt2858);
 		if (local5 == null) {
 			return false;
 		}
@@ -552,7 +552,7 @@ public final class Class105 {
 
 	@OriginalMember(owner = "client!kg", name = "f", descriptor = "(Lclient!kg;)V")
 	private void method2304(@OriginalArg(0) Class105 arg0) {
-		@Pc(5) Class53_Sub3 local5 = Static25.method2752(Static2.aClass58_37, this.anInt2858);
+		@Pc(5) Class53_Sub3 local5 = Class53_Sub3.create(Static2.aClass58_37, this.anInt2858);
 		if (local5 == null) {
 			return;
 		}

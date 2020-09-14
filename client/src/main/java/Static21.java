@@ -109,22 +109,6 @@ public final class Static21 {
 		}
 	}
 
-	@OriginalMember(owner = "client!jd", name = "a", descriptor = "(II)Lclient!li;")
-	public static Class110 method2004(@OriginalArg(1) int arg0) {
-		@Pc(10) Class110 local10 = (Class110) Static5.aClass26_45.get((long) arg0);
-		if (local10 != null) {
-			return local10;
-		}
-		@Pc(25) byte[] local25 = Static6.aClass58_89.fetchFile(Static28.method3257(arg0), Static19.method1848(arg0));
-		@Pc(29) Class110 local29 = new Class110();
-		local29.anInt3138 = arg0;
-		if (local25 != null) {
-			local29.method2568(new Buffer(local25));
-		}
-		Static5.aClass26_45.put((long) arg0, local29);
-		return local29;
-	}
-
 	@OriginalMember(owner = "client!jd", name = "a", descriptor = "(BLclient!fh;)V")
 	public static void method2005(@OriginalArg(1) Js5 arg0) {
 		Static2.aClass56_Sub1Array1 = Static38.method4790(arg0, Static4.anInt3250);

@@ -273,7 +273,7 @@ public abstract class PathingEntity extends Entity {
 			this.anInt4007 = -1;
 		}
 		if (this.anInt3961 != -1) {
-			@Pc(39) Class110 local39 = Static21.method2004(this.anInt3961);
+			@Pc(39) SpotAnimType local39 = SpotAnimTypeList.get(this.anInt3961);
 			if (local39.aBoolean222 && SeqTypeList.get(local39.anInt3134).anInt1237 == 1) {
 				this.anInt3961 = -1;
 			}
@@ -554,7 +554,7 @@ public abstract class PathingEntity extends Entity {
 			local15++;
 		}
 		if (this.anInt3961 != -1) {
-			@Pc(58) Class110 local58 = Static21.method2004(this.anInt3961);
+			@Pc(58) SpotAnimType local58 = SpotAnimTypeList.get(this.anInt3961);
 			if (local58.aBoolean222 && SeqTypeList.get(local58.anInt3134).anInt1237 == 1) {
 				this.anInt3961 = -1;
 			}

@@ -336,7 +336,7 @@ public final class LocType {
 				}
 				local3 = (Class53_Sub3) LocTypeList.aClass26_43.get((long) local67);
 				if (local3 == null) {
-					local3 = Static25.method2752(LocTypeList.modelsArchive, local67 & 0xFFFF);
+					local3 = Class53_Sub3.create(LocTypeList.modelsArchive, local67 & 0xFFFF);
 					if (local3 == null) {
 						return null;
 					}
@@ -369,7 +369,7 @@ public final class LocType {
 			}
 			local3 = (Class53_Sub3) LocTypeList.aClass26_43.get((long) local159);
 			if (local3 == null) {
-				local3 = Static25.method2752(LocTypeList.modelsArchive, local159 & 0xFFFF);
+				local3 = Class53_Sub3.create(LocTypeList.modelsArchive, local159 & 0xFFFF);
 				if (local3 == null) {
 					return null;
 				}
@@ -481,7 +481,7 @@ public final class LocType {
 			if (local75 == null) {
 				@Pc(80) Class53_Sub3 local80 = null;
 				for (@Pc(82) int local82 = 0; local82 < local38; local82++) {
-					local80 = Static25.method2752(LocTypeList.modelsArchive, this.models[local82] & 0xFFFF);
+					local80 = Class53_Sub3.create(LocTypeList.modelsArchive, this.models[local82] & 0xFFFF);
 					if (local80 == null) {
 						return null;
 					}
@@ -512,7 +512,7 @@ public final class LocType {
 			}
 			local75 = (GlModel) LocTypeList.aClass26_43.get((long) local173);
 			if (local75 == null) {
-				@Pc(197) Class53_Sub3 local197 = Static25.method2752(LocTypeList.modelsArchive, local173 & 0xFFFF);
+				@Pc(197) Class53_Sub3 local197 = Class53_Sub3.create(LocTypeList.modelsArchive, local173 & 0xFFFF);
 				if (local197 == null) {
 					return null;
 				}

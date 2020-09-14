@@ -4,7 +4,7 @@ import dev.openrs2.deob.annotation.OriginalMember;
 import dev.openrs2.deob.annotation.Pc;
 
 @OriginalClass("client!li")
-public final class Class110 {
+public final class SpotAnimType {
 
 	@OriginalMember(owner = "client!li", name = "i", descriptor = "[S")
 	private short[] aShortArray45;
@@ -13,7 +13,7 @@ public final class Class110 {
 	private int anInt3136;
 
 	@OriginalMember(owner = "client!li", name = "n", descriptor = "I")
-	public int anInt3138;
+	public int id;
 
 	@OriginalMember(owner = "client!li", name = "v", descriptor = "[S")
 	private short[] aShortArray47;
@@ -49,60 +49,60 @@ public final class Class110 {
 	private int anInt3132 = 0;
 
 	@OriginalMember(owner = "client!li", name = "a", descriptor = "(IILclient!fd;)V")
-	private void method2564(@OriginalArg(0) int arg0, @OriginalArg(2) Buffer arg1) {
-		if (arg0 == 1) {
-			this.anInt3136 = arg1.readUnsignedShort();
-		} else if (arg0 == 2) {
-			this.anInt3134 = arg1.readUnsignedShort();
-		} else if (arg0 == 4) {
-			this.anInt3133 = arg1.readUnsignedShort();
-		} else if (arg0 == 5) {
-			this.anInt3144 = arg1.readUnsignedShort();
-		} else if (arg0 == 6) {
-			this.anInt3137 = arg1.readUnsignedShort();
-		} else if (arg0 == 7) {
-			this.anInt3130 = arg1.readUnsignedByte();
-		} else if (arg0 == 8) {
-			this.anInt3132 = arg1.readUnsignedByte();
-		} else if (arg0 == 9) {
+	private void decode(@OriginalArg(2) Buffer buffer, @OriginalArg(0) int code) {
+		if (code == 1) {
+			this.anInt3136 = buffer.readUnsignedShort();
+		} else if (code == 2) {
+			this.anInt3134 = buffer.readUnsignedShort();
+		} else if (code == 4) {
+			this.anInt3133 = buffer.readUnsignedShort();
+		} else if (code == 5) {
+			this.anInt3144 = buffer.readUnsignedShort();
+		} else if (code == 6) {
+			this.anInt3137 = buffer.readUnsignedShort();
+		} else if (code == 7) {
+			this.anInt3130 = buffer.readUnsignedByte();
+		} else if (code == 8) {
+			this.anInt3132 = buffer.readUnsignedByte();
+		} else if (code == 9) {
 			this.aBoolean221 = true;
-		} else if (arg0 == 10) {
+		} else if (code == 10) {
 			this.aBoolean222 = true;
-		} else if (arg0 == 40) {
-			@Pc(93) int local93 = arg1.readUnsignedByte();
+		} else if (code == 40) {
+			@Pc(93) int local93 = buffer.readUnsignedByte();
 			this.aShortArray45 = new short[local93];
 			this.aShortArray49 = new short[local93];
 			for (@Pc(103) int local103 = 0; local103 < local93; local103++) {
-				this.aShortArray49[local103] = (short) arg1.readUnsignedShort();
-				this.aShortArray45[local103] = (short) arg1.readUnsignedShort();
+				this.aShortArray49[local103] = (short) buffer.readUnsignedShort();
+				this.aShortArray45[local103] = (short) buffer.readUnsignedShort();
 			}
-		} else if (arg0 == 41) {
-			@Pc(141) int local141 = arg1.readUnsignedByte();
+		} else if (code == 41) {
+			@Pc(141) int local141 = buffer.readUnsignedByte();
 			this.aShortArray47 = new short[local141];
 			this.aShortArray48 = new short[local141];
 			for (@Pc(151) int local151 = 0; local151 < local141; local151++) {
-				this.aShortArray47[local151] = (short) arg1.readUnsignedShort();
-				this.aShortArray48[local151] = (short) arg1.readUnsignedShort();
+				this.aShortArray47[local151] = (short) buffer.readUnsignedShort();
+				this.aShortArray48[local151] = (short) buffer.readUnsignedShort();
 			}
 		}
 	}
 
 	@OriginalMember(owner = "client!li", name = "a", descriptor = "(Lclient!fd;Z)V")
-	public final void method2568(@OriginalArg(0) Buffer arg0) {
+	public final void decode(@OriginalArg(0) Buffer buffer) {
 		while (true) {
-			@Pc(9) int local9 = arg0.readUnsignedByte();
-			if (local9 == 0) {
+			@Pc(9) int code = buffer.readUnsignedByte();
+			if (code == 0) {
 				return;
 			}
-			this.method2564(local9, arg0);
+			this.decode(buffer, code);
 		}
 	}
 
 	@OriginalMember(owner = "client!li", name = "a", descriptor = "(IIIB)Lclient!vg;")
 	public final Model method2569(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
-		@Pc(9) Model local9 = (Model) Static7.aClass26_57.get((long) this.anInt3138);
-		if (local9 == null) {
-			@Pc(22) Class53_Sub3 local22 = Static25.method2752(Static3.aClass58_64, this.anInt3136);
+		@Pc(9) Model model = (Model) SpotAnimTypeList.models.get(this.id);
+		if (model == null) {
+			@Pc(22) Class53_Sub3 local22 = Class53_Sub3.create(SpotAnimTypeList.modelsArchive, this.anInt3136);
 			if (local22 == null) {
 				return null;
 			}
@@ -116,14 +116,14 @@ public final class Class110 {
 					local22.method2753(this.aShortArray47[local57], this.aShortArray48[local57]);
 				}
 			}
-			local9 = local22.method2761(this.anInt3130 + 64, this.anInt3132 + 850, -30, -50, -30);
-			Static7.aClass26_57.put((long) this.anInt3138, local9);
+			model = local22.method2761(this.anInt3130 + 64, this.anInt3132 + 850, -30, -50, -30);
+			SpotAnimTypeList.models.put(this.id, model);
 		}
 		@Pc(113) Model local113;
 		if (this.anInt3134 == -1 || arg2 == -1) {
-			local113 = local9.method3836(true, true, true);
+			local113 = model.method3836(true, true, true);
 		} else {
-			local113 = SeqTypeList.get(this.anInt3134).method1018(arg2, arg1, local9, arg0);
+			local113 = SeqTypeList.get(this.anInt3134).method1018(arg2, arg1, model, arg0);
 		}
 		if (this.anInt3133 != 128 || this.anInt3144 != 128) {
 			local113.method3824(this.anInt3133, this.anInt3144, this.anInt3133);

@@ -453,7 +453,7 @@ public final class Static24 {
 		NpcTypeList.clear();
 		ObjTypeList.clear();
 		SeqTypeList.clear();
-		Static31.method3745();
+		SpotAnimTypeList.clear();
 		VarbitTypeList.clear();
 		VarpTypeList.clear();
 		BasTypeList.clear();

@@ -182,9 +182,6 @@ public final class Static6 {
 	@OriginalMember(owner = "client!s", name = "Ab", descriptor = "F")
 	public static float aFloat120;
 
-	@OriginalMember(owner = "client!sd", name = "i", descriptor = "Lclient!fh;")
-	public static Js5 aClass58_89;
-
 	@OriginalMember(owner = "client!se", name = "W", descriptor = "[Lclient!uj;")
 	public static Sprite[] aClass4_Sub3_Sub14Array12;
 

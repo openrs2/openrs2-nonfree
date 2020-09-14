@@ -277,7 +277,7 @@ public final class Static13 {
 			}
 		}
 		if (arg0.anInt3961 != -1 && client.loop >= arg0.anInt3984) {
-			@Pc(149) Class110 local149 = Static21.method2004(arg0.anInt3961);
+			@Pc(149) SpotAnimType local149 = SpotAnimTypeList.get(arg0.anInt3961);
 			@Pc(152) int local152 = local149.anInt3134;
 			if (local152 == -1) {
 				arg0.anInt3961 = -1;

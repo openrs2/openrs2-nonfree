@@ -249,11 +249,6 @@ public final class Static19 {
 		}
 	}
 
-	@OriginalMember(owner = "client!id", name = "a", descriptor = "(IB)I")
-	public static int method1848(@OriginalArg(0) int arg0) {
-		return arg0 & 0xFF;
-	}
-
 	@OriginalMember(owner = "client!ig", name = "b", descriptor = "()V")
 	public static void method1855() {
 		Static3.aBoolean160 = GlRenderer.extTexture3dSupported;

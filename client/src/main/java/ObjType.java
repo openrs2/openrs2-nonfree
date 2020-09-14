@@ -192,14 +192,14 @@ public final class ObjType {
 		if (local4 == -1) {
 			return null;
 		}
-		@Pc(51) Class53_Sub3 local51 = Static25.method2752(ObjTypeList.modelsArchive, local4);
+		@Pc(51) Class53_Sub3 local51 = Class53_Sub3.create(ObjTypeList.modelsArchive, local4);
 		if (local11 != -1) {
-			@Pc(59) Class53_Sub3 local59 = Static25.method2752(ObjTypeList.modelsArchive, local11);
+			@Pc(59) Class53_Sub3 local59 = Class53_Sub3.create(ObjTypeList.modelsArchive, local11);
 			if (local28 == -1) {
 				@Pc(73) Class53_Sub3[] local73 = new Class53_Sub3[] { local51, local59 };
 				local51 = new Class53_Sub3(local73, 2);
 			} else {
-				@Pc(86) Class53_Sub3 local86 = Static25.method2752(ObjTypeList.modelsArchive, local28);
+				@Pc(86) Class53_Sub3 local86 = Class53_Sub3.create(ObjTypeList.modelsArchive, local28);
 				@Pc(101) Class53_Sub3[] local101 = new Class53_Sub3[] { local51, local59, local86 };
 				local51 = new Class53_Sub3(local101, 3);
 			}
@@ -258,7 +258,7 @@ public final class ObjType {
 		}
 		@Pc(62) Model local62 = (Model) ObjTypeList.models.get((long) this.id);
 		if (local62 == null) {
-			@Pc(72) Class53_Sub3 local72 = Static25.method2752(ObjTypeList.modelsArchive, this.model);
+			@Pc(72) Class53_Sub3 local72 = Class53_Sub3.create(ObjTypeList.modelsArchive, this.model);
 			if (local72 == null) {
 				return null;
 			}
@@ -329,9 +329,9 @@ public final class ObjType {
 		if (local17 == -1) {
 			return null;
 		}
-		@Pc(36) Class53_Sub3 local36 = Static25.method2752(ObjTypeList.modelsArchive, local17);
+		@Pc(36) Class53_Sub3 local36 = Class53_Sub3.create(ObjTypeList.modelsArchive, local17);
 		if (local14 != -1) {
-			@Pc(47) Class53_Sub3 local47 = Static25.method2752(ObjTypeList.modelsArchive, local14);
+			@Pc(47) Class53_Sub3 local47 = Class53_Sub3.create(ObjTypeList.modelsArchive, local14);
 			@Pc(58) Class53_Sub3[] local58 = new Class53_Sub3[] { local36, local47 };
 			local36 = new Class53_Sub3(local58, 2);
 		}
@@ -466,7 +466,7 @@ public final class ObjType {
 
 	@OriginalMember(owner = "client!td", name = "a", descriptor = "(Lclient!qk;I)Lclient!na;")
 	public final SoftwareModel method4135(@OriginalArg(0) PlayerAppearance arg0) {
-		@Pc(11) Class53_Sub3 local11 = Static25.method2752(ObjTypeList.modelsArchive, this.model);
+		@Pc(11) Class53_Sub3 local11 = Class53_Sub3.create(ObjTypeList.modelsArchive, this.model);
 		if (local11 == null) {
 			return null;
 		}

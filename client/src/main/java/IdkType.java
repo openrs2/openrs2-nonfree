@@ -36,7 +36,7 @@ public final class IdkType {
 		@Pc(10) int local10 = 0;
 		for (@Pc(17) int local17 = 0; local17 < 5; local17++) {
 			if (this.anIntArray450[local17] != -1) {
-				local8[local10++] = Static25.method2752(IdkTypeList.modelsArchive, this.anIntArray450[local17]);
+				local8[local10++] = Class53_Sub3.create(IdkTypeList.modelsArchive, this.anIntArray450[local17]);
 			}
 		}
 		@Pc(51) Class53_Sub3 local51 = new Class53_Sub3(local8, local10);
@@ -60,7 +60,7 @@ public final class IdkType {
 		}
 		@Pc(16) Class53_Sub3[] local16 = new Class53_Sub3[this.anIntArray449.length];
 		for (@Pc(27) int local27 = 0; local27 < this.anIntArray449.length; local27++) {
-			local16[local27] = Static25.method2752(IdkTypeList.modelsArchive, this.anIntArray449[local27]);
+			local16[local27] = Class53_Sub3.create(IdkTypeList.modelsArchive, this.anIntArray449[local27]);
 		}
 		@Pc(60) Class53_Sub3 local60;
 		if (local16.length == 1) {

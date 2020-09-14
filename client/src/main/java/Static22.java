@@ -1164,12 +1164,6 @@ public final class Static22 {
 		Static5.aClass26_41.removeSoft();
 	}
 
-	@OriginalMember(owner = "client!kl", name = "a", descriptor = "(ILclient!fh;Lclient!fh;)V")
-	public static void method2362(@OriginalArg(1) Js5 arg0, @OriginalArg(2) Js5 arg1) {
-		Static6.aClass58_89 = arg0;
-		Static3.aClass58_64 = arg1;
-	}
-
 	@OriginalMember(owner = "client!km", name = "f", descriptor = "(I)V")
 	public static void method2387() {
 		if (!client.advertSuppressed && client.modeWhere != 2) {

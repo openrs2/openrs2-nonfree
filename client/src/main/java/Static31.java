@@ -224,12 +224,6 @@ public final class Static31 {
 		}
 	}
 
-	@OriginalMember(owner = "client!rk", name = "c", descriptor = "(I)V")
-	public static void method3745() {
-		Static5.aClass26_45.clear();
-		Static7.aClass26_57.clear();
-	}
-
 	@OriginalMember(owner = "client!rk", name = "a", descriptor = "(IIIZII)V")
 	public static void method3746(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) boolean arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4) {
 		Static2.anInt1997++;
@@ -1460,7 +1454,7 @@ public final class Static31 {
 		NpcTypeList.clean();
 		ObjTypeList.clean();
 		SeqTypeList.clean();
-		Static9.method191();
+		SpotAnimTypeList.clean();
 		VarbitTypeList.clean();
 		VarpTypeList.clean();
 		BasTypeList.clean();

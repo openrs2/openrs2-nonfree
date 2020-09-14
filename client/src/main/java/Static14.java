@@ -787,12 +787,6 @@ public final class Static14 {
 		return -1;
 	}
 
-	@OriginalMember(owner = "client!fa", name = "f", descriptor = "(B)V")
-	public static void method1203() {
-		Static5.aClass26_45.removeSoft();
-		Static7.aClass26_57.removeSoft();
-	}
-
 	@OriginalMember(owner = "client!fb", name = "a", descriptor = "(II)V")
 	public static void method1205() {
 		Static2.anInt1636 = 13;

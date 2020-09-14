@@ -245,11 +245,6 @@ public final class Static28 {
 		Terrain.tiles[3][x][z] = null;
 	}
 
-	@OriginalMember(owner = "client!om", name = "b", descriptor = "(II)I")
-	public static int method3257(@OriginalArg(0) int arg0) {
-		return arg0 >>> 8;
-	}
-
 	@OriginalMember(owner = "client!on", name = "a", descriptor = "(ILclient!wf;)V")
 	public static void method3270(@OriginalArg(1) Component arg0) {
 		if (arg0.anInt5900 == Static3.anInt2522) {
