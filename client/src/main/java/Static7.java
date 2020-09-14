@@ -271,9 +271,6 @@ public final class Static7 {
 	@OriginalMember(owner = "client!vb", name = "S", descriptor = "[I")
 	public static final int[] anIntArray625 = new int[5];
 
-	@OriginalMember(owner = "client!vb", name = "V", descriptor = "Lclient!cc;")
-	public static final SoftLruHashTable aClass26_56 = new SoftLruHashTable(64);
-
 	@OriginalMember(owner = "client!vb", name = "ab", descriptor = "I")
 	public static int anInt5473 = 1;
 

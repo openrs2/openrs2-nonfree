@@ -55,9 +55,6 @@ public final class Static3 {
 	@OriginalMember(owner = "client!hc", name = "d", descriptor = "F")
 	public static float aFloat63;
 
-	@OriginalMember(owner = "client!he", name = "n", descriptor = "Lclient!fh;")
-	public static Js5 aClass58_48;
-
 	@OriginalMember(owner = "client!he", name = "o", descriptor = "I")
 	public static int anInt2162;
 

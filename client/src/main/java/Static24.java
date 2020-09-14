@@ -448,7 +448,7 @@ public final class Static24 {
 	public static void method2697() {
 		FloTypeList.clear();
 		FluTypeList.clear();
-		Static36.method4448();
+		IdkTypeList.clear();
 		LocTypeList.clear();
 		NpcTypeList.clear();
 		ObjTypeList.clear();

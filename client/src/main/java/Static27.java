@@ -752,7 +752,7 @@ public final class Static27 {
 	private static void method4709() {
 		FloTypeList.removeSoft();
 		FluTypeList.removeSoft();
-		Static28.method3329();
+		IdkTypeList.removeSoft();
 		LocTypeList.removeSoft();
 		NpcTypeList.removeSoft();
 		ObjTypeList.removeSoft();

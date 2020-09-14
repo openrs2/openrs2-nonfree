@@ -388,18 +388,18 @@ public final class ScriptRunner {
 						isp -= 2;
 						@Pc(14650) int local14650 = intStack[isp];
 						@Pc(14656) int local14656 = intStack[isp + 1];
-						for (@Pc(14658) int local14658 = 0; local14658 < Static6.anIntArray550.length; local14658++) {
-							if (local14650 == Static6.anIntArray550[local14658]) {
+						for (@Pc(14658) int local14658 = 0; local14658 < PlayerAppearance.anIntArray550.length; local14658++) {
+							if (local14650 == PlayerAppearance.anIntArray550[local14658]) {
 								PlayerList.self.appearance.method3604(local14658, local14656);
 								continue label4473;
 							}
 						}
 						@Pc(14684) int local14684 = 0;
 						while (true) {
-							if (Static6.anIntArray487.length <= local14684) {
+							if (PlayerAppearance.anIntArray487.length <= local14684) {
 								continue label4473;
 							}
-							if (Static6.anIntArray487[local14684] == local14650) {
+							if (PlayerAppearance.anIntArray487[local14684] == local14650) {
 								PlayerList.self.appearance.method3604(local14684, local14656);
 								continue label4473;
 							}

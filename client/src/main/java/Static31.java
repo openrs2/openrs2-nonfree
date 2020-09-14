@@ -1455,7 +1455,7 @@ public final class Static31 {
 	public static void method3798() {
 		FloTypeList.clean();
 		FluTypeList.clean();
-		Static21.method2082();
+		IdkTypeList.clean();
 		LocTypeList.clean();
 		NpcTypeList.clean();
 		ObjTypeList.clean();

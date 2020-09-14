@@ -171,21 +171,6 @@ public final class Static19 {
 		Static11.method572(arg1.length - 1, arg1, 0, arg0);
 	}
 
-	@OriginalMember(owner = "client!i", name = "b", descriptor = "(II)Lclient!qa;")
-	public static Class140 method1816(@OriginalArg(1) int arg0) {
-		@Pc(6) Class140 local6 = (Class140) Static7.aClass26_56.get((long) arg0);
-		if (local6 != null) {
-			return local6;
-		}
-		@Pc(27) byte[] local27 = Static6.aClass58_85.fetchFile(3, arg0);
-		@Pc(31) Class140 local31 = new Class140();
-		if (local27 != null) {
-			local31.method3496(new Buffer(local27));
-		}
-		Static7.aClass26_56.put((long) arg0, local31);
-		return local31;
-	}
-
 	@OriginalMember(owner = "client!ia", name = "a", descriptor = "(Z)V")
 	public static void method1818() {
 		if (Protocol.socket != null) {

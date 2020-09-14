@@ -576,11 +576,6 @@ public final class Static21 {
 		Static28.method3270(local4);
 	}
 
-	@OriginalMember(owner = "client!jm", name = "a", descriptor = "(II)V")
-	public static void method2082() {
-		Static7.aClass26_56.clean(5);
-	}
-
 	@OriginalMember(owner = "client!jn", name = "c", descriptor = "([I[IIIIIIII)V")
 	public static void method2182(@OriginalArg(0) int[] arg0, @OriginalArg(1) int[] arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4, @OriginalArg(6) int arg5, @OriginalArg(7) int arg6, @OriginalArg(8) int arg7) {
 		@Pc(2) int local2 = -arg4;

@@ -6,6 +6,15 @@ import dev.openrs2.deob.annotation.Pc;
 @OriginalClass("client!qk")
 public final class PlayerAppearance {
 
+	@OriginalMember(owner = "client!ca", name = "V", descriptor = "[I")
+	public static final int[] anIntArray46 = new int[] { 8, 11, 4, 6, 9, 7, 10, 0 };
+
+	@OriginalMember(owner = "client!rh", name = "jb", descriptor = "[I")
+	public static final int[] anIntArray487 = new int[] { 7, 8, 9, 10, 11, 12, 13, 15 };
+
+	@OriginalMember(owner = "client!td", name = "n", descriptor = "[I")
+	public static final int[] anIntArray550 = new int[] { 0, 1, 2, 3, 4, 5, 6, 14 };
+
 	@OriginalMember(owner = "client!qk", name = "b", descriptor = "J")
 	private long checksum;
 
@@ -31,10 +40,10 @@ public final class PlayerAppearance {
 	private int[][] anIntArrayArray37;
 
 	@OriginalMember(owner = "client!qk", name = "a", descriptor = "(BII)V")
-	public final void method3604(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1) {
-		@Pc(7) int local7 = Static1.anIntArray46[arg0];
-		if (this.identikit[local7] != 0 && Static19.method1816(arg1) != null) {
-			this.identikit[local7] = Integer.MIN_VALUE | arg1;
+	public final void method3604(@OriginalArg(1) int arg0, @OriginalArg(2) int id) {
+		@Pc(7) int local7 = anIntArray46[arg0];
+		if (this.identikit[local7] != 0 && IdkTypeList.get(id) != null) {
+			this.identikit[local7] = Integer.MIN_VALUE | id;
 			this.updateChecksum();
 		}
 	}
@@ -104,7 +113,7 @@ public final class PlayerAppearance {
 			for (@Pc(176) int local176 = 0; local176 < 12; local176++) {
 				@Pc(185) int local185 = local51[local176];
 				if ((local185 & 0x40000000) == 0) {
-					if ((Integer.MIN_VALUE & local185) != 0 && !Static19.method1816(local185 & 0x3FFFFFFF).method3494()) {
+					if ((Integer.MIN_VALUE & local185) != 0 && !IdkTypeList.get(local185 & 0x3FFFFFFF).method3494()) {
 						local174 = true;
 					}
 				} else if (!ObjTypeList.get(local185 & 0x3FFFFFFF).method4128(this.female)) {
@@ -129,7 +138,7 @@ public final class PlayerAppearance {
 							local250[local252] = local273;
 						}
 					} else if ((Integer.MIN_VALUE & local259) != 0) {
-						@Pc(294) Class53_Sub3 local294 = Static19.method1816(local259 & 0x3FFFFFFF).method3490();
+						@Pc(294) Class53_Sub3 local294 = IdkTypeList.get(local259 & 0x3FFFFFFF).method3490();
 						if (local294 != null) {
 							local250[local252] = local294;
 						}
@@ -354,19 +363,19 @@ public final class PlayerAppearance {
 		if (local24 == null) {
 			@Pc(30) int local30 = 0;
 			@Pc(33) Class53_Sub3[] local33 = new Class53_Sub3[3];
-			if (!Static19.method1816(arg5).method3497() || !Static19.method1816(arg1).method3497() || !Static19.method1816(arg2).method3497()) {
+			if (!IdkTypeList.get(arg5).method3497() || !IdkTypeList.get(arg1).method3497() || !IdkTypeList.get(arg2).method3497()) {
 				return null;
 			}
-			@Pc(65) Class53_Sub3 local65 = Static19.method1816(arg5).method3489();
+			@Pc(65) Class53_Sub3 local65 = IdkTypeList.get(arg5).method3489();
 			if (local65 != null) {
 				local30++;
 				local33[0] = local65;
 			}
-			@Pc(78) Class53_Sub3 local78 = Static19.method1816(arg1).method3489();
+			@Pc(78) Class53_Sub3 local78 = IdkTypeList.get(arg1).method3489();
 			if (local78 != null) {
 				local33[local30++] = local78;
 			}
-			@Pc(92) Class53_Sub3 local92 = Static19.method1816(arg2).method3489();
+			@Pc(92) Class53_Sub3 local92 = IdkTypeList.get(arg2).method3489();
 			if (local92 != null) {
 				local33[local30++] = local92;
 			}
@@ -396,11 +405,11 @@ public final class PlayerAppearance {
 		}
 		if (identikit == null) {
 			identikit = new int[12];
-			for (@Pc(25) int local25 = 0; local25 < 8; local25++) {
-				for (@Pc(30) int local30 = 0; local30 < Static1.anInt119; local30++) {
-					@Pc(37) Class140 local37 = Static19.method1816(local30);
-					if (local37 != null && !local37.aBoolean298 && (female ? Static6.anIntArray487[local25] : Static6.anIntArray550[local25]) == local37.anInt4231) {
-						identikit[Static1.anIntArray46[local25]] = Integer.MIN_VALUE | local30;
+			for (@Pc(25) int i = 0; i < 8; i++) {
+				for (@Pc(30) int id = 0; id < IdkTypeList.capacity; id++) {
+					@Pc(37) IdkType type = IdkTypeList.get(id);
+					if (type != null && !type.aBoolean298 && (female ? anIntArray487[i] : anIntArray550[i]) == type.anInt4231) {
+						identikit[anIntArray46[i]] = Integer.MIN_VALUE | id;
 						break;
 					}
 				}
@@ -429,7 +438,7 @@ public final class PlayerAppearance {
 			for (@Pc(35) int local35 = 0; local35 < 12; local35++) {
 				@Pc(43) int local43 = this.identikit[local35];
 				if ((local43 & 0x40000000) == 0) {
-					if ((Integer.MIN_VALUE & local43) != 0 && !Static19.method1816(local43 & 0x3FFFFFFF).method3497()) {
+					if ((Integer.MIN_VALUE & local43) != 0 && !IdkTypeList.get(local43 & 0x3FFFFFFF).method3497()) {
 						local33 = true;
 					}
 				} else if (!ObjTypeList.get(local43 & 0x3FFFFFFF).method4134(this.female)) {
@@ -449,7 +458,7 @@ public final class PlayerAppearance {
 						local93[local95++] = local122;
 					}
 				} else if ((Integer.MIN_VALUE & local105) != 0) {
-					@Pc(145) Class53_Sub3 local145 = Static19.method1816(local105 & 0x3FFFFFFF).method3489();
+					@Pc(145) Class53_Sub3 local145 = IdkTypeList.get(local105 & 0x3FFFFFFF).method3489();
 					if (local145 != null) {
 						local93[local95++] = local145;
 					}

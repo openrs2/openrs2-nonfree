@@ -26,9 +26,6 @@ public final class Static1 {
 	@OriginalMember(owner = "client!af", name = "E", descriptor = "Lclient!fh;")
 	public static Js5 aClass58_3;
 
-	@OriginalMember(owner = "client!ah", name = "e", descriptor = "I")
-	public static int anInt119;
-
 	@OriginalMember(owner = "client!aj", name = "c", descriptor = "[[[B")
 	public static byte[][][] aByteArrayArrayArray1;
 
@@ -373,9 +370,6 @@ public final class Static1 {
 
 	@OriginalMember(owner = "client!c", name = "L", descriptor = "[[[I")
 	public static final int[][][] anIntArrayArrayArray1 = new int[2][][];
-
-	@OriginalMember(owner = "client!ca", name = "V", descriptor = "[I")
-	public static final int[] anIntArray46 = new int[] { 8, 11, 4, 6, 9, 7, 10, 0 };
 
 	@OriginalMember(owner = "client!cc", name = "c", descriptor = "I")
 	public static int anInt528 = -1;

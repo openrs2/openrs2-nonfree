@@ -493,11 +493,6 @@ public final class Static28 {
 		Static15.method1480();
 	}
 
-	@OriginalMember(owner = "client!pa", name = "b", descriptor = "(B)V")
-	public static void method3329() {
-		Static7.aClass26_56.removeSoft();
-	}
-
 	@OriginalMember(owner = "client!pa", name = "a", descriptor = "(ZLclient!gl;Z)V")
 	public static void method3331(@OriginalArg(0) boolean arg0, @OriginalArg(1) Class4_Sub3_Sub5 arg1) {
 		if (GlRenderer.enabled || arg0) {

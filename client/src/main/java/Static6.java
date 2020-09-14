@@ -104,9 +104,6 @@ public final class Static6 {
 	@OriginalMember(owner = "client!ra", name = "w", descriptor = "I")
 	public static int anInt4440;
 
-	@OriginalMember(owner = "client!rb", name = "a", descriptor = "Lclient!fh;")
-	public static Js5 aClass58_85;
-
 	@OriginalMember(owner = "client!rb", name = "c", descriptor = "F")
 	public static float aFloat108;
 
@@ -353,9 +350,6 @@ public final class Static6 {
 	@OriginalMember(owner = "client!rh", name = "ib", descriptor = "Z")
 	public static boolean aBoolean317 = false;
 
-	@OriginalMember(owner = "client!rh", name = "jb", descriptor = "[I")
-	public static final int[] anIntArray487 = new int[] { 7, 8, 9, 10, 11, 12, 13, 15 };
-
 	@OriginalMember(owner = "client!rh", name = "kb", descriptor = "I")
 	public static int anInt4555 = (int) (Math.random() * 17.0D) - 8;
 
@@ -520,9 +514,6 @@ public final class Static6 {
 
 	@OriginalMember(owner = "client!tb", name = "j", descriptor = "I")
 	public static int anInt5016 = 0;
-
-	@OriginalMember(owner = "client!td", name = "n", descriptor = "[I")
-	public static final int[] anIntArray550 = new int[] { 0, 1, 2, 3, 4, 5, 6, 14 };
 
 	@OriginalMember(owner = "client!td", name = "cb", descriptor = "I")
 	public static int anInt5088 = 0;

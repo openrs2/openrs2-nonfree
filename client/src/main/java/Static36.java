@@ -270,11 +270,6 @@ public final class Static36 {
 		Static2.aClass4_Sub3_Sub14_2 = null;
 	}
 
-	@OriginalMember(owner = "client!vh", name = "a", descriptor = "(B)V")
-	public static void method4448() {
-		Static7.aClass26_56.clear();
-	}
-
 	@OriginalMember(owner = "client!vh", name = "c", descriptor = "(I)V")
 	public static void method4455() {
 		if (Static4.anInt3304 == 10 && GlRenderer.enabled) {
@@ -297,13 +292,6 @@ public final class Static36 {
 				}
 			}
 		}
-	}
-
-	@OriginalMember(owner = "client!vl", name = "a", descriptor = "(ILclient!fh;Lclient!fh;)V")
-	public static void method4523(@OriginalArg(1) Js5 arg0, @OriginalArg(2) Js5 arg1) {
-		Static3.aClass58_48 = arg0;
-		Static6.aClass58_85 = arg1;
-		Static1.anInt119 = Static6.aClass58_85.getGroupCapacity(3);
 	}
 
 	@OriginalMember(owner = "client!vl", name = "a", descriptor = "(IIIII)V")
