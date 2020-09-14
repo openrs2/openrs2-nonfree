@@ -206,11 +206,6 @@ public final class Static36 {
 		}
 	}
 
-	@OriginalMember(owner = "client!vc", name = "a", descriptor = "(Lclient!fh;I)V")
-	public static void method3814(@OriginalArg(0) Js5 arg0) {
-		Static1.aClass58_2 = arg0;
-	}
-
 	@OriginalMember(owner = "client!vd", name = "a", descriptor = "(B)Ljava/lang/String;")
 	public static String method4436() {
 		@Pc(5) String local5 = "www";

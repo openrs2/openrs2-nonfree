@@ -199,8 +199,8 @@ public final class Static20 {
 
 	@OriginalMember(owner = "client!ii", name = "c", descriptor = "(II)V")
 	private static void method2408(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
-		for (@Pc(1) int local1 = 0; local1 < Static2.anInt5716; local1++) {
-			@Pc(8) Class127 local8 = Static26.method2935(local1);
+		for (@Pc(1) int local1 = 0; local1 < FloTypeList.capacity; local1++) {
+			@Pc(8) FloType local8 = FloTypeList.get(local1);
 			if (local8 != null) {
 				@Pc(14) int local14 = local8.anInt3877;
 				if (local14 >= 0 && !Static4.anInterface4_1.method441(local14)) {
@@ -888,7 +888,7 @@ public final class Static20 {
 			}
 			Static28.method3249();
 			@Pc(309) int local309 = Static3.anInt2965 >> 6;
-			Static3.anIntArray266 = new int[Static2.anInt5716 + 1];
+			Static3.anIntArray266 = new int[FloTypeList.capacity + 1];
 			@Pc(318) int local318 = Static3.anInt2960 >> 6;
 			Static3.aByteArrayArrayArray11 = new byte[local309][local318][];
 			Static3.anIntArrayArrayArray6 = new int[local309][local318][];
@@ -991,11 +991,6 @@ public final class Static20 {
 		}
 		Static7.aBoolean401 = true;
 		Static5.aBoolean248 = true;
-	}
-
-	@OriginalMember(owner = "client!il", name = "b", descriptor = "(I)V")
-	public static void method1925() {
-		Static2.aClass26_16.removeSoft();
 	}
 
 	@OriginalMember(owner = "client!im", name = "a", descriptor = "(IBIII)V")
@@ -1279,7 +1274,7 @@ public final class Static20 {
 		}
 		for (@Pc(31) Class4_Sub11 local31 = (Class4_Sub11) Static2.aClass112_9.head(); local31 != null; local31 = (Class4_Sub11) Static2.aClass112_9.next()) {
 			@Pc(40) byte local40 = 1;
-			@Pc(45) Class34 local45 = local31.aClass53_Sub1_Sub2_1.method3314();
+			@Pc(45) BasType local45 = local31.aClass53_Sub1_Sub2_1.method3314();
 			if (local31.aClass53_Sub1_Sub2_1.anInt4005 == local45.anInt860) {
 				local40 = 0;
 			} else if (local31.aClass53_Sub1_Sub2_1.anInt4005 == local45.anInt831 || local31.aClass53_Sub1_Sub2_1.anInt4005 == local45.anInt829 || local31.aClass53_Sub1_Sub2_1.anInt4005 == local45.anInt857 || local31.aClass53_Sub1_Sub2_1.anInt4005 == local45.anInt867) {
@@ -1306,7 +1301,7 @@ public final class Static20 {
 		}
 		for (@Pc(217) Class4_Sub11 local217 = (Class4_Sub11) Static5.aClass84_18.head(); local217 != null; local217 = (Class4_Sub11) Static5.aClass84_18.next()) {
 			@Pc(222) byte local222 = 1;
-			@Pc(227) Class34 local227 = local217.aClass53_Sub1_Sub1_1.method3314();
+			@Pc(227) BasType local227 = local217.aClass53_Sub1_Sub1_1.method3314();
 			if (local227.anInt860 == local217.aClass53_Sub1_Sub1_1.anInt4005) {
 				local222 = 0;
 			} else if (local227.anInt831 == local217.aClass53_Sub1_Sub1_1.anInt4005 || local227.anInt829 == local217.aClass53_Sub1_Sub1_1.anInt4005 || local217.aClass53_Sub1_Sub1_1.anInt4005 == local227.anInt857 || local217.aClass53_Sub1_Sub1_1.anInt4005 == local227.anInt867) {

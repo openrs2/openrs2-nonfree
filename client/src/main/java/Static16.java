@@ -442,11 +442,6 @@ public final class Static16 {
 		}
 	}
 
-	@OriginalMember(owner = "client!gd", name = "a", descriptor = "(Lclient!fh;B)V")
-	public static void method1560(@OriginalArg(0) Js5 arg0) {
-		Static3.aClass58_52 = arg0;
-	}
-
 	@OriginalMember(owner = "client!ge", name = "a", descriptor = "(IILclient!fd;)Lclient!wg;")
 	public static Class4_Sub3_Sub22 method1562(@OriginalArg(0) int arg0, @OriginalArg(2) Buffer arg1) {
 		@Pc(41) Class4_Sub3_Sub22 local41 = new Class4_Sub3_Sub22(arg0, arg1.readString(), arg1.readString(), arg1.readInt(), arg1.readInt(), arg1.readUnsignedByte() == 1, arg1.readUnsignedByte());

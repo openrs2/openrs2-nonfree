@@ -301,11 +301,6 @@ public final class Static10 {
 		}
 	}
 
-	@OriginalMember(owner = "client!bl", name = "a", descriptor = "(ILclient!fh;)V")
-	public static void method346(@OriginalArg(1) Js5 arg0) {
-		Static4.aClass58_54 = arg0;
-	}
-
 	@OriginalMember(owner = "client!bn", name = "a", descriptor = "(ILclient!f;)V")
 	public static void method383(@OriginalArg(1) Player arg0) {
 		@Pc(20) Class4_Sub11 local20 = (Class4_Sub11) Static5.aClass84_18.get(Base37.encode(arg0.name));
@@ -474,7 +469,7 @@ public final class Static10 {
 			}
 		}
 		@Pc(33) int local33 = local4.anInt5252;
-		@Pc(37) Class34 local37 = arg0.method3314();
+		@Pc(37) BasType local37 = arg0.method3314();
 		if (arg0.anInt4005 == local37.anInt860) {
 			local33 = local4.anInt5251;
 		} else if (arg0.anInt4005 == local37.anInt831 || arg0.anInt4005 == local37.anInt829 || arg0.anInt4005 == local37.anInt857 || local37.anInt867 == arg0.anInt4005) {
@@ -488,7 +483,7 @@ public final class Static10 {
 	@OriginalMember(owner = "client!bo", name = "a", descriptor = "(Lclient!f;B)I")
 	public static int method396(@OriginalArg(0) Player arg0) {
 		@Pc(8) int local8 = arg0.walkSound;
-		@Pc(12) Class34 local12 = arg0.method3314();
+		@Pc(12) BasType local12 = arg0.method3314();
 		if (arg0.anInt4005 == local12.anInt860) {
 			local8 = arg0.idleSound;
 		} else if (local12.anInt831 == arg0.anInt4005 || arg0.anInt4005 == local12.anInt829 || local12.anInt857 == arg0.anInt4005 || arg0.anInt4005 == local12.anInt867) {

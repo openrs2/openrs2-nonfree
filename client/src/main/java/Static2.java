@@ -101,9 +101,6 @@ public final class Static2 {
 	@OriginalMember(owner = "client!fb", name = "e", descriptor = "I")
 	public static int anInt1637;
 
-	@OriginalMember(owner = "client!fd", name = "Q", descriptor = "I")
-	public static int anInt5716;
-
 	@OriginalMember(owner = "client!fd", name = "ib", descriptor = "I")
 	public static int anInt5734;
 
@@ -302,9 +299,6 @@ public final class Static2 {
 	@OriginalMember(owner = "client!ei", name = "M", descriptor = "I")
 	public static int anInt1273 = (int) (Math.random() * 33.0D) - 16;
 
-	@OriginalMember(owner = "client!ej", name = "p", descriptor = "Lclient!cc;")
-	public static final SoftLruHashTable aClass26_11 = new SoftLruHashTable(4);
-
 	@OriginalMember(owner = "client!ek", name = "c", descriptor = "Z")
 	public static boolean aBoolean76 = false;
 
@@ -370,9 +364,6 @@ public final class Static2 {
 
 	@OriginalMember(owner = "client!fj", name = "Z", descriptor = "I")
 	public static int anInt1874 = -1;
-
-	@OriginalMember(owner = "client!fj", name = "ab", descriptor = "Lclient!cc;")
-	public static final SoftLruHashTable aClass26_16 = new SoftLruHashTable(16);
 
 	@OriginalMember(owner = "client!fj", name = "eb", descriptor = "I")
 	public static int anInt1877 = 0;

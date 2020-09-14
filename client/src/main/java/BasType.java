@@ -4,7 +4,7 @@ import dev.openrs2.deob.annotation.OriginalMember;
 import dev.openrs2.deob.annotation.Pc;
 
 @OriginalClass("client!d")
-public final class Class34 {
+public final class BasType {
 
 	@OriginalMember(owner = "client!d", name = "F", descriptor = "[[I")
 	public int[][] anIntArrayArray7;
@@ -106,105 +106,105 @@ public final class Class34 {
 	public int anInt863 = 0;
 
 	@OriginalMember(owner = "client!d", name = "a", descriptor = "(Lclient!fd;B)V")
-	public final void method720(@OriginalArg(0) Buffer arg0) {
+	public final void decode(@OriginalArg(0) Buffer buffer) {
 		while (true) {
-			@Pc(17) int local17 = arg0.readUnsignedByte();
-			if (local17 == 0) {
+			@Pc(17) int code = buffer.readUnsignedByte();
+			if (code == 0) {
 				return;
 			}
-			this.method724(local17, arg0);
+			this.method724(buffer, code);
 		}
 	}
 
 	@OriginalMember(owner = "client!d", name = "a", descriptor = "(IILclient!fd;)V")
-	private void method724(@OriginalArg(1) int arg0, @OriginalArg(2) Buffer arg1) {
-		if (arg0 == 1) {
-			this.anInt860 = arg1.readUnsignedShort();
-			this.anInt846 = arg1.readUnsignedShort();
+	private void method724(@OriginalArg(2) Buffer buffer, @OriginalArg(1) int code) {
+		if (code == 1) {
+			this.anInt860 = buffer.readUnsignedShort();
+			this.anInt846 = buffer.readUnsignedShort();
 			if (this.anInt860 == 65535) {
 				this.anInt860 = -1;
 			}
 			if (this.anInt846 == 65535) {
 				this.anInt846 = -1;
 			}
-		} else if (arg0 == 2) {
-			this.anInt854 = arg1.readUnsignedShort();
-		} else if (arg0 == 3) {
-			this.anInt833 = arg1.readUnsignedShort();
-		} else if (arg0 == 4) {
-			this.anInt852 = arg1.readUnsignedShort();
-		} else if (arg0 == 5) {
-			this.anInt861 = arg1.readUnsignedShort();
-		} else if (arg0 == 6) {
-			this.anInt831 = arg1.readUnsignedShort();
-		} else if (arg0 == 7) {
-			this.anInt829 = arg1.readUnsignedShort();
-		} else if (arg0 == 8) {
-			this.anInt867 = arg1.readUnsignedShort();
-		} else if (arg0 == 9) {
-			this.anInt857 = arg1.readUnsignedShort();
-		} else if (arg0 == 26) {
-			this.anInt844 = (short) (arg1.readUnsignedByte() * 4);
-			this.anInt847 = (short) (arg1.readUnsignedByte() * 4);
-		} else if (arg0 == 27) {
+		} else if (code == 2) {
+			this.anInt854 = buffer.readUnsignedShort();
+		} else if (code == 3) {
+			this.anInt833 = buffer.readUnsignedShort();
+		} else if (code == 4) {
+			this.anInt852 = buffer.readUnsignedShort();
+		} else if (code == 5) {
+			this.anInt861 = buffer.readUnsignedShort();
+		} else if (code == 6) {
+			this.anInt831 = buffer.readUnsignedShort();
+		} else if (code == 7) {
+			this.anInt829 = buffer.readUnsignedShort();
+		} else if (code == 8) {
+			this.anInt867 = buffer.readUnsignedShort();
+		} else if (code == 9) {
+			this.anInt857 = buffer.readUnsignedShort();
+		} else if (code == 26) {
+			this.anInt844 = (short) (buffer.readUnsignedByte() * 4);
+			this.anInt847 = (short) (buffer.readUnsignedByte() * 4);
+		} else if (code == 27) {
 			if (this.anIntArrayArray7 == null) {
 				this.anIntArrayArray7 = new int[12][];
 			}
-			@Pc(138) int local138 = arg1.readUnsignedByte();
+			@Pc(138) int local138 = buffer.readUnsignedByte();
 			this.anIntArrayArray7[local138] = new int[6];
 			for (@Pc(146) int local146 = 0; local146 < 6; local146++) {
-				this.anIntArrayArray7[local138][local146] = arg1.readShort();
+				this.anIntArrayArray7[local138][local146] = buffer.readShort();
 			}
-		} else if (arg0 == 29) {
-			this.anInt830 = arg1.readUnsignedByte();
-		} else if (arg0 == 30) {
-			this.anInt862 = arg1.readUnsignedShort();
-		} else if (arg0 == 31) {
-			this.anInt856 = arg1.readUnsignedByte();
-		} else if (arg0 == 32) {
-			this.anInt838 = arg1.readUnsignedShort();
-		} else if (arg0 == 33) {
-			this.anInt850 = arg1.readShort();
-		} else if (arg0 == 34) {
-			this.anInt863 = arg1.readUnsignedByte();
-		} else if (arg0 == 35) {
-			this.anInt848 = arg1.readUnsignedShort();
-		} else if (arg0 == 36) {
-			this.anInt851 = arg1.readShort();
-		} else if (arg0 == 37) {
-			this.anInt841 = arg1.readUnsignedByte();
-		} else if (arg0 == 38) {
-			this.anInt834 = arg1.readUnsignedShort();
-		} else if (arg0 == 39) {
-			this.anInt832 = arg1.readUnsignedShort();
-		} else if (arg0 == 40) {
-			this.anInt828 = arg1.readUnsignedShort();
-		} else if (arg0 == 41) {
-			this.anInt855 = arg1.readUnsignedShort();
-		} else if (arg0 == 42) {
-			this.anInt840 = arg1.readUnsignedShort();
-		} else if (arg0 == 43) {
-			arg1.readUnsignedShort();
-		} else if (arg0 == 44) {
-			arg1.readUnsignedShort();
-		} else if (arg0 == 45) {
-			arg1.readUnsignedShort();
-		} else if (arg0 == 46) {
-			this.anInt843 = arg1.readUnsignedShort();
-		} else if (arg0 == 47) {
-			this.anInt839 = arg1.readUnsignedShort();
-		} else if (arg0 == 48) {
-			this.anInt835 = arg1.readUnsignedShort();
-		} else if (arg0 == 49) {
-			this.anInt853 = arg1.readUnsignedShort();
-		} else if (arg0 == 50) {
-			this.anInt842 = arg1.readUnsignedShort();
-		} else if (arg0 == 51) {
-			this.anInt865 = arg1.readUnsignedShort();
+		} else if (code == 29) {
+			this.anInt830 = buffer.readUnsignedByte();
+		} else if (code == 30) {
+			this.anInt862 = buffer.readUnsignedShort();
+		} else if (code == 31) {
+			this.anInt856 = buffer.readUnsignedByte();
+		} else if (code == 32) {
+			this.anInt838 = buffer.readUnsignedShort();
+		} else if (code == 33) {
+			this.anInt850 = buffer.readShort();
+		} else if (code == 34) {
+			this.anInt863 = buffer.readUnsignedByte();
+		} else if (code == 35) {
+			this.anInt848 = buffer.readUnsignedShort();
+		} else if (code == 36) {
+			this.anInt851 = buffer.readShort();
+		} else if (code == 37) {
+			this.anInt841 = buffer.readUnsignedByte();
+		} else if (code == 38) {
+			this.anInt834 = buffer.readUnsignedShort();
+		} else if (code == 39) {
+			this.anInt832 = buffer.readUnsignedShort();
+		} else if (code == 40) {
+			this.anInt828 = buffer.readUnsignedShort();
+		} else if (code == 41) {
+			this.anInt855 = buffer.readUnsignedShort();
+		} else if (code == 42) {
+			this.anInt840 = buffer.readUnsignedShort();
+		} else if (code == 43) {
+			buffer.readUnsignedShort();
+		} else if (code == 44) {
+			buffer.readUnsignedShort();
+		} else if (code == 45) {
+			buffer.readUnsignedShort();
+		} else if (code == 46) {
+			this.anInt843 = buffer.readUnsignedShort();
+		} else if (code == 47) {
+			this.anInt839 = buffer.readUnsignedShort();
+		} else if (code == 48) {
+			this.anInt835 = buffer.readUnsignedShort();
+		} else if (code == 49) {
+			this.anInt853 = buffer.readUnsignedShort();
+		} else if (code == 50) {
+			this.anInt842 = buffer.readUnsignedShort();
+		} else if (code == 51) {
+			this.anInt865 = buffer.readUnsignedShort();
 		}
 	}
 
 	@OriginalMember(owner = "client!d", name = "b", descriptor = "(I)V")
-	public final void method725() {
+	public final void postDecode() {
 	}
 }

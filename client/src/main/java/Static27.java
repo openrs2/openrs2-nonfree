@@ -7,7 +7,7 @@ import dev.openrs2.deob.annotation.Pc;
 public final class Static27 {
 
 	@OriginalMember(owner = "client!ob", name = "a", descriptor = "(Lclient!ic;Lclient!oh;B)Lclient!ih;")
-	public static Class4_Sub12 method4237(@OriginalArg(0) HashTable arg0, @OriginalArg(1) Class127 arg1) {
+	public static Class4_Sub12 method4237(@OriginalArg(0) HashTable arg0, @OriginalArg(1) FloType arg1) {
 		@Pc(27) long local27 = ((long) arg1.anInt3868 << 56) + ((long) arg1.anInt3874 << 32) + (long) (arg1.anInt3876 + (arg1.anInt3877 + 1 << 16));
 		@Pc(39) Class4_Sub12 local39 = (Class4_Sub12) arg0.get(local27);
 		if (local39 == null) {
@@ -754,15 +754,10 @@ public final class Static27 {
 		}
 	}
 
-	@OriginalMember(owner = "client!og", name = "g", descriptor = "(I)V")
-	private static void method4707() {
-		Static3.aClass26_24.removeSoft();
-	}
-
 	@OriginalMember(owner = "client!og", name = "h", descriptor = "(B)V")
 	private static void method4709() {
-		method4707();
-		Static28.method3258();
+		FloTypeList.removeSoft();
+		FluTypeList.removeSoft();
 		Static28.method3329();
 		LocTypeList.removeSoft();
 		NpcTypeList.removeSoft();
@@ -771,12 +766,12 @@ public final class Static27 {
 		Static14.method1203();
 		VarbitTypeList.removeSoft();
 		VarpTypeList.removeSoft();
-		Static21.method2048();
+		BasTypeList.removeSoft();
 		Static22.method2359();
 		Static26.method2993();
-		Static29.method3302();
-		Static20.method1925();
-		Static35.method4296();
+		SkyBoxTypeList.removeSoft();
+		SkyBoxSphereTypeList.removeSoft();
+		LightTypeList.removeSoft();
 		Static8.method91();
 		Static14.method1172();
 		Static20.method1974();
@@ -810,12 +805,6 @@ public final class Static27 {
 	@OriginalMember(owner = "client!oi", name = "a", descriptor = "(BI)Ljava/lang/String;")
 	public static String method3226(@OriginalArg(1) int arg0) {
 		return (arg0 >> 24 & 0xFF) + "." + (arg0 >> 16 & 0xFF) + "." + (arg0 >> 8 & 0xFF) + "." + (arg0 & 0xFF);
-	}
-
-	@OriginalMember(owner = "client!oi", name = "a", descriptor = "(Lclient!fh;I)V")
-	public static void method3228(@OriginalArg(0) Js5 arg0) {
-		Static3.aClass58_55 = arg0;
-		Static2.anInt5716 = Static3.aClass58_55.getGroupCapacity(4);
 	}
 
 	@OriginalMember(owner = "client!oj", name = "a", descriptor = "(I[B)[B")

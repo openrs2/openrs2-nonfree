@@ -56,7 +56,7 @@ public final class Static26 {
 				if (local194 > local242) {
 					@Pc(253) int local253 = local15[local242][local231] & 0xFF;
 					if (local253 > 0) {
-						@Pc(265) Class131 local265 = method2971(local253 - 1);
+						@Pc(265) FluType local265 = FluTypeList.get(local253 - 1);
 						local199[local231] += local265.anInt4058;
 						local202[local231] += local265.anInt4064;
 						local205[local231] += local265.anInt4075;
@@ -68,7 +68,7 @@ public final class Static26 {
 				if (local308 >= 0) {
 					@Pc(322) int local322 = local15[local308][local231] & 0xFF;
 					if (local322 > 0) {
-						@Pc(334) Class131 local334 = method2971(local322 - 1);
+						@Pc(334) FluType local334 = FluTypeList.get(local322 - 1);
 						local199[local231] -= local334.anInt4058;
 						local202[local231] -= local334.anInt4064;
 						local205[local231] -= local334.anInt4075;
@@ -123,21 +123,6 @@ public final class Static26 {
 				}
 			}
 		}
-	}
-
-	@OriginalMember(owner = "client!nc", name = "a", descriptor = "(BI)Lclient!oh;")
-	public static Class127 method2935(@OriginalArg(1) int arg0) {
-		@Pc(6) Class127 local6 = (Class127) Static3.aClass26_24.get((long) arg0);
-		if (local6 != null) {
-			return local6;
-		}
-		@Pc(27) byte[] local27 = Static3.aClass58_55.fetchFile(4, arg0);
-		@Pc(31) Class127 local31 = new Class127();
-		if (local27 != null) {
-			local31.method3221(arg0, new Buffer(local27));
-		}
-		Static3.aClass26_24.put((long) arg0, local31);
-		return local31;
 	}
 
 	@OriginalMember(owner = "client!nd", name = "a", descriptor = "(ILclient!wf;)Lclient!wf;")
@@ -267,21 +252,6 @@ public final class Static26 {
 		Static5.aShortArrayArray4 = new short[32][768];
 		Static5.anIntArray387 = new int[1600];
 		Static5.anIntArray388 = new int[32];
-	}
-
-	@OriginalMember(owner = "client!nf", name = "a", descriptor = "(IZ)Lclient!pa;")
-	public static Class131 method2971(@OriginalArg(0) int arg0) {
-		@Pc(10) Class131 local10 = (Class131) Static1.aClass26_6.get((long) arg0);
-		if (local10 != null) {
-			return local10;
-		}
-		@Pc(20) byte[] local20 = Static1.aClass58_2.fetchFile(1, arg0);
-		@Pc(24) Class131 local24 = new Class131();
-		if (local20 != null) {
-			local24.method3326(new Buffer(local20), arg0);
-		}
-		Static1.aClass26_6.put((long) arg0, local24);
-		return local24;
 	}
 
 	@OriginalMember(owner = "client!nf", name = "a", descriptor = "(I)V")
@@ -472,7 +442,7 @@ public final class Static26 {
 							for (@Pc(897) int local897 = 0; local897 < local893; local897++) {
 								@Pc(905) Class50 local905 = new Class50(local101);
 								if (local905.anInt1323 == 31) {
-									@Pc(916) Class178 local916 = Static11.method494(local101.readUnsignedShort());
+									@Pc(916) LightType local916 = LightTypeList.get(local101.readUnsignedShort());
 									local905.method1073(local916.anInt5484, local916.anInt5480, local916.anInt5482, local916.anInt5481);
 								}
 								@Pc(932) int local932 = local905.anInt1338 >> 7;

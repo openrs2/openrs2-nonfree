@@ -193,7 +193,7 @@ public final class Player extends PathingEntity {
 			return;
 		}
 		@Pc(27) Class46 local27 = this.anInt4007 != -1 && this.anInt3996 == 0 ? Static23.method2494(this.anInt4007) : null;
-		@Pc(31) Class34 local31 = this.method3314();
+		@Pc(31) BasType local31 = this.method3314();
 		@Pc(53) boolean local53 = local31.anInt844 != 0 || local31.anInt847 != 0 || local31.anInt850 != 0 || local31.anInt851 != 0;
 		@Pc(82) Class46 local82 = this.anInt4005 == -1 || this.aBoolean98 || this.anInt4005 == this.method3314().anInt860 && local27 != null ? null : Static23.method2494(this.anInt4005);
 		@Pc(105) Model local105 = this.appearance.method3608(this.aClass150Array3, this.anInt4046, this.anInt4011, this.anInt4019, local82, this.anInt3970, local53, this.anInt4000, local27, true, this.anInt4044);

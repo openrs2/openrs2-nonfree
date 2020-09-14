@@ -7,11 +7,6 @@ import dev.openrs2.deob.annotation.Pc;
 
 public final class Static35 {
 
-	@OriginalMember(owner = "client!uc", name = "f", descriptor = "(B)V")
-	public static void method4296() {
-		Static6.aClass26_54.removeSoft();
-	}
-
 	@OriginalMember(owner = "client!uc", name = "a", descriptor = "(ZI)I")
 	public static int method4299(@OriginalArg(1) int arg0) {
 		return arg0 & 0x7F;
@@ -989,11 +984,6 @@ public final class Static35 {
 		return local29 & Static1.anIntArray2[local16] >> local19;
 	}
 
-	@OriginalMember(owner = "client!uf", name = "a", descriptor = "(I)V")
-	public static void method4313() {
-		Static1.aClass26_6.clear();
-	}
-
 	@OriginalMember(owner = "client!ug", name = "d", descriptor = "(I)V")
 	public static void method4321() {
 		for (@Pc(14) SpotAnimNode local14 = (SpotAnimNode) Static2.aClass112_8.head(); local14 != null; local14 = (SpotAnimNode) Static2.aClass112_8.next()) {
@@ -1242,21 +1232,6 @@ public final class Static35 {
 	@OriginalMember(owner = "client!ul", name = "g", descriptor = "(I)V")
 	public static void method4363() {
 		Static2.anIntArray97 = Static8.method12(0.4F);
-	}
-
-	@OriginalMember(owner = "client!ul", name = "b", descriptor = "(IB)Lclient!qm;")
-	public static Class145 method4364(@OriginalArg(0) int arg0) {
-		@Pc(10) Class145 local10 = (Class145) Static6.aClass26_52.get((long) arg0);
-		if (local10 != null) {
-			return local10;
-		}
-		@Pc(22) byte[] local22 = Static3.aClass58_52.fetchFile(29, arg0);
-		@Pc(26) Class145 local26 = new Class145();
-		if (local22 != null) {
-			local26.method3618(arg0, new Buffer(local22));
-		}
-		Static6.aClass26_52.put((long) arg0, local26);
-		return local26;
 	}
 
 	@OriginalMember(owner = "client!um", name = "a", descriptor = "(ZII)I")

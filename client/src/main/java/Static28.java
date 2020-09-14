@@ -250,16 +250,6 @@ public final class Static28 {
 		return arg0 >>> 8;
 	}
 
-	@OriginalMember(owner = "client!om", name = "e", descriptor = "(B)V")
-	public static void method3258() {
-		Static1.aClass26_6.removeSoft();
-	}
-
-	@OriginalMember(owner = "client!on", name = "b", descriptor = "(BI)V")
-	public static void method3268() {
-		Static6.aClass26_51.clean(5);
-	}
-
 	@OriginalMember(owner = "client!on", name = "a", descriptor = "(ILclient!wf;)V")
 	public static void method3270(@OriginalArg(1) Component arg0) {
 		if (arg0.anInt5900 == Static3.anInt2522) {

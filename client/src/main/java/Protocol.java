@@ -1757,7 +1757,7 @@ public final class Protocol {
 							}
 						}
 						if (local542 != null) {
-							@Pc(581) Class34 local581 = local542.method3314();
+							@Pc(581) BasType local581 = local542.method3314();
 							if (local581.anIntArrayArray7 != null && local581.anIntArrayArray7[local534] != null) {
 								local437 -= local581.anIntArrayArray7[local534][1];
 								@Pc(607) int local607 = local581.anIntArrayArray7[local534][0];

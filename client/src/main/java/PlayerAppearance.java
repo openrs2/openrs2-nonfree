@@ -135,9 +135,9 @@ public final class PlayerAppearance {
 						}
 					}
 				}
-				@Pc(306) Class34 local306 = null;
+				@Pc(306) BasType local306 = null;
 				if (this.basId != -1) {
-					local306 = Static37.method4776(this.basId);
+					local306 = BasTypeList.get(this.basId);
 				}
 				if (local306 != null && local306.anIntArrayArray7 != null) {
 					for (@Pc(326) int local326 = 0; local326 < local306.anIntArrayArray7.length; local326++) {

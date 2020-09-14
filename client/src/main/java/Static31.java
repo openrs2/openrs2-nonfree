@@ -47,11 +47,6 @@ public final class Static31 {
 		method3652(arg0, arg1, arg2, local28 + 1);
 	}
 
-	@OriginalMember(owner = "client!rc", name = "a", descriptor = "(I)V")
-	public static void method3653() {
-		Static6.aClass26_54.clear();
-	}
-
 	@OriginalMember(owner = "client!rc", name = "a", descriptor = "(II)Lclient!ke;")
 	public static Class4_Sub3_Sub5_Sub2 method3656(@OriginalArg(1) int arg0) {
 		@Pc(6) Class4_Sub3_Sub5_Sub2 local6 = (Class4_Sub3_Sub5_Sub2) Static1.aClass26_3.get((long) arg0);
@@ -332,7 +327,7 @@ public final class Static31 {
 			}
 			if (Static6.anInt4863 >= 0) {
 				GlRenderer.clearDepthBuffer();
-				@Pc(427) Class47 local427 = Static13.method936(Static4.anInt5826, Static1.anInt466, Static6.anInt4863, Static5.anInt4303);
+				@Pc(427) Class47 local427 = SkyBoxTypeList.method936(Static6.anInt4863, Static4.anInt5826, Static1.anInt466, Static5.anInt4303);
 				local427.method1025(Static5.anInt3774, arg0, arg4, arg3, arg1, Static5.anInt4066, Static5.anInt3656, local398);
 			} else {
 				GlRenderer.clearColorAndDepthBuffers(local398);
@@ -346,7 +341,7 @@ public final class Static31 {
 			Static34.method4209(arg0, arg4, arg3 + arg0, arg4 + arg1);
 			Static23.method2561();
 			if (Static6.anInt4863 >= 0) {
-				@Pc(328) Class47 local328 = Static13.method936(Static4.anInt5826, Static1.anInt466, Static6.anInt4863, Static5.anInt4303);
+				@Pc(328) Class47 local328 = SkyBoxTypeList.method936(Static6.anInt4863, Static4.anInt5826, Static1.anInt466, Static5.anInt4303);
 				local328.method1024(Static5.anInt3774, arg0, arg4, arg3, arg1, Static5.anInt4066, Static5.anInt3656);
 			} else {
 				Static33.method4205(arg0, arg4, arg3, arg1, 0);
@@ -623,7 +618,7 @@ public final class Static31 {
 					if (local679 < 104) {
 						@Pc(694) int local694 = Static2.aByteArrayArrayArray3[local154][local679][local670] & 0xFF;
 						if (local694 > 0) {
-							@Pc(706) Class131 local706 = Static26.method2971(local694 - 1);
+							@Pc(706) FluType local706 = FluTypeList.get(local694 - 1);
 							@Pc(707) int[] local707 = Static6.anIntArray491;
 							local707[local670] += local706.anInt4058;
 							local707 = Static7.anIntArray650;
@@ -639,7 +634,7 @@ public final class Static31 {
 					if (local749 >= 0) {
 						@Pc(765) int local765 = Static2.aByteArrayArrayArray3[local154][local749][local670] & 0xFF;
 						if (local765 > 0) {
-							@Pc(774) Class131 local774 = Static26.method2971(local765 - 1);
+							@Pc(774) FluType local774 = FluTypeList.get(local765 - 1);
 							@Pc(775) int[] local775 = Static6.anIntArray491;
 							local775[local670] -= local774.anInt4058;
 							local775 = Static7.anIntArray650;
@@ -700,7 +695,7 @@ public final class Static31 {
 								if (local1019 == 0 && Static2.aByteArrayArrayArray4[local154][local955][local962] != 0) {
 									local1084 = false;
 								}
-								if (local1029 > 0 && !Static26.method2935(local1029 - 1).aBoolean274) {
+								if (local1029 > 0 && !FloTypeList.get(local1029 - 1).aBoolean274) {
 									local1084 = false;
 								}
 								if (local1084 && local1047 == local1057 && local1069 == local1047 && local1047 == local1079) {
@@ -729,7 +724,7 @@ public final class Static31 {
 							@Pc(1233) int local1233 = local152[local955][local962];
 							if (local1029 == 0) {
 								Static22.method4698(local154, local955, local962, 0, 0, -1, local1047, local1057, local1069, local1079, Static35.method4367(local1151, local1233), Static35.method4367(local1151, local1209), Static35.method4367(local1151, local1219), Static35.method4367(local1151, local1227), 0, 0, 0, 0, local1153, 0);
-								if (GlRenderer.enabled && local154 > 0 && local1151 != -1 && Static26.method2971(local1019 - 1).aBoolean286) {
+								if (GlRenderer.enabled && local154 > 0 && local1151 != -1 && FluTypeList.get(local1019 - 1).aBoolean286) {
 									Static14.method1207(0, 0, true, false, local955, local962, local1047 - Terrain.tileHeights[0][local955][local962], local1057 - Terrain.tileHeights[0][local955 + 1][local962], local1069 - Terrain.tileHeights[0][local955 + 1][local962 + 1], local1079 - Terrain.tileHeights[0][local955][local962 + 1]);
 								}
 								if (GlRenderer.enabled && !arg2 && Terrain.anIntArrayArray10 != null && local154 == 0) {
@@ -738,7 +733,7 @@ public final class Static31 {
 											if ((local1360 != local955 || local962 != local1369) && local1360 >= 0 && local1360 < 104 && local1369 >= 0 && local1369 < 104) {
 												@Pc(1417) int local1417 = Static4.aByteArrayArrayArray15[local154][local1360][local1369] & 0xFF;
 												if (local1417 != 0) {
-													@Pc(1428) Class127 local1428 = Static26.method2935(local1417 - 1);
+													@Pc(1428) FloType local1428 = FloTypeList.get(local1417 - 1);
 													if (local1428.anInt3877 != -1 && Static32.method3920(Static4.anInterface4_1.method444(local1428.anInt3877))) {
 														Terrain.anIntArrayArray10[local955][local962] = (local1428.anInt3871 << 24) + local1428.anInt3874;
 														continue label770;
@@ -751,7 +746,7 @@ public final class Static31 {
 							} else {
 								@Pc(1474) int local1474 = Static2.aByteArrayArrayArray4[local154][local955][local962] + 1;
 								@Pc(1482) byte local1482 = Static1.aByteArrayArrayArray1[local154][local955][local962];
-								@Pc(1488) Class127 local1488 = Static26.method2935(local1029 - 1);
+								@Pc(1488) FloType local1488 = FloTypeList.get(local1029 - 1);
 								if (GlRenderer.enabled && !arg2 && Terrain.anIntArrayArray10 != null && local154 == 0) {
 									if (local1488.anInt3877 != -1 && Static32.method3920(Static4.anInterface4_1.method444(local1488.anInt3877))) {
 										Terrain.anIntArrayArray10[local955][local962] = (local1488.anInt3871 << 24) + local1488.anInt3874;
@@ -762,7 +757,7 @@ public final class Static31 {
 												if ((local1516 != local955 || local1529 != local962) && local1516 >= 0 && local1516 < 104 && local1529 >= 0 && local1529 < 104) {
 													@Pc(1580) int local1580 = Static4.aByteArrayArrayArray15[local154][local1516][local1529] & 0xFF;
 													if (local1580 != 0) {
-														@Pc(1590) Class127 local1590 = Static26.method2935(local1580 - 1);
+														@Pc(1590) FloType local1590 = FloTypeList.get(local1580 - 1);
 														if (local1590.anInt3877 != -1 && Static32.method3920(Static4.anInterface4_1.method444(local1590.anInt3877))) {
 															Terrain.anIntArrayArray10[local955][local962] = local1590.anInt3874 + (local1590.anInt3871 << 24);
 															break label751;
@@ -809,7 +804,7 @@ public final class Static31 {
 								}
 								Static22.method4698(local154, local955, local962, local1474, local1482, local1640, local1047, local1057, local1069, local1079, Static35.method4367(local1151, local1233), Static35.method4367(local1151, local1209), Static35.method4367(local1151, local1219), Static35.method4367(local1151, local1227), Static22.method2286(local1659, local1233), Static22.method2286(local1659, local1209), Static22.method2286(local1659, local1219), Static22.method2286(local1659, local1227), local1153, local1671);
 								if (GlRenderer.enabled && local154 > 0) {
-									Static14.method1207(local1474, local1482, local1659 == -2 || !local1488.aBoolean273, local1151 == -1 || !Static26.method2971(local1019 - 1).aBoolean286, local955, local962, local1047 - Terrain.tileHeights[0][local955][local962], local1057 - Terrain.tileHeights[0][local955 + 1][local962], local1069 - Terrain.tileHeights[0][local955 + 1][local962 + 1], local1079 - Terrain.tileHeights[0][local955][local962 + 1]);
+									Static14.method1207(local1474, local1482, local1659 == -2 || !local1488.aBoolean273, local1151 == -1 || !FluTypeList.get(local1019 - 1).aBoolean286, local955, local962, local1047 - Terrain.tileHeights[0][local955][local962], local1057 - Terrain.tileHeights[0][local955 + 1][local962], local1069 - Terrain.tileHeights[0][local955 + 1][local962 + 1], local1079 - Terrain.tileHeights[0][local955][local962 + 1]);
 								}
 							}
 						}
@@ -1458,8 +1453,8 @@ public final class Static31 {
 
 	@OriginalMember(owner = "client!ro", name = "e", descriptor = "(B)V")
 	public static void method3798() {
-		Static18.method2323();
-		Static12.method775();
+		FloTypeList.clean();
+		FluTypeList.clean();
 		Static21.method2082();
 		LocTypeList.clean();
 		NpcTypeList.clean();
@@ -1468,12 +1463,12 @@ public final class Static31 {
 		Static9.method191();
 		VarbitTypeList.clean();
 		VarpTypeList.clean();
-		Static28.method3268();
+		BasTypeList.clean();
 		Static11.method586();
 		Static37.method4717();
-		Static30.method3594();
-		Static34.method4235();
-		Static14.method1067();
+		SkyBoxTypeList.clean();
+		SkyBoxSphereTypeList.clean();
+		LightTypeList.clean();
 		Static37.method4727();
 		Static32.method3951();
 		Static20.method1942();

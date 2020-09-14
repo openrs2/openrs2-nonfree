@@ -115,9 +115,6 @@ public final class Static3 {
 	@OriginalMember(owner = "client!ho", name = "U", descriptor = "I")
 	public static int anInt2296;
 
-	@OriginalMember(owner = "client!id", name = "d", descriptor = "Lclient!fh;")
-	public static Js5 aClass58_52;
-
 	@OriginalMember(owner = "client!id", name = "e", descriptor = "[I")
 	public static int[] anIntArray196;
 
@@ -234,9 +231,6 @@ public final class Static3 {
 
 	@OriginalMember(owner = "client!im", name = "k", descriptor = "[Lclient!ma;")
 	public static IndexedSprite[] aClass56Array3;
-
-	@OriginalMember(owner = "client!in", name = "q", descriptor = "Lclient!fh;")
-	public static Js5 aClass58_55;
 
 	@OriginalMember(owner = "client!io", name = "E", descriptor = "I")
 	public static int anInt2496;
@@ -507,9 +501,6 @@ public final class Static3 {
 
 	@OriginalMember(owner = "client!in", name = "A", descriptor = "[I")
 	public static final int[] anIntArray219 = new int[32];
-
-	@OriginalMember(owner = "client!io", name = "B", descriptor = "Lclient!cc;")
-	public static final SoftLruHashTable aClass26_24 = new SoftLruHashTable(64);
 
 	@OriginalMember(owner = "client!io", name = "G", descriptor = "[Z")
 	public static final boolean[] aBooleanArray11 = new boolean[8];

@@ -509,9 +509,9 @@ public final class NpcType {
 					}
 				}
 			}
-			@Pc(146) Class34 local146 = null;
+			@Pc(146) BasType local146 = null;
 			if (this.anInt5261 != -1) {
-				local146 = Static37.method4776(this.anInt5261);
+				local146 = BasTypeList.get(this.anInt5261);
 			}
 			if (local146 != null && local146.anIntArrayArray7 != null) {
 				for (@Pc(165) int local165 = 0; local165 < local146.anIntArrayArray7.length; local165++) {

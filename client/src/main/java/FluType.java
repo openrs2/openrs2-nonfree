@@ -4,7 +4,7 @@ import dev.openrs2.deob.annotation.OriginalMember;
 import dev.openrs2.deob.annotation.Pc;
 
 @OriginalClass("client!pa")
-public final class Class131 {
+public final class FluType {
 
 	@OriginalMember(owner = "client!pa", name = "b", descriptor = "I")
 	public int anInt4058;
@@ -31,29 +31,29 @@ public final class Class131 {
 	public int anInt4068 = 128;
 
 	@OriginalMember(owner = "client!pa", name = "a", descriptor = "(Lclient!fd;II)V")
-	public final void method3326(@OriginalArg(0) Buffer arg0, @OriginalArg(2) int arg1) {
+	public final void decode(@OriginalArg(0) Buffer buffer, @OriginalArg(2) int id) {
 		while (true) {
-			@Pc(13) int local13 = arg0.readUnsignedByte();
-			if (local13 == 0) {
+			@Pc(13) int code = buffer.readUnsignedByte();
+			if (code == 0) {
 				return;
 			}
-			this.method3328(arg1, arg0, local13);
+			this.decode(buffer, code, id);
 		}
 	}
 
 	@OriginalMember(owner = "client!pa", name = "a", descriptor = "(ILclient!fd;IB)V")
-	private void method3328(@OriginalArg(0) int arg0, @OriginalArg(1) Buffer arg1, @OriginalArg(2) int arg2) {
-		if (arg2 == 1) {
-			this.anInt4067 = arg1.readUnsignedMedium();
+	private void decode(@OriginalArg(1) Buffer buffer, @OriginalArg(2) int code, @OriginalArg(0) int id) {
+		if (code == 1) {
+			this.anInt4067 = buffer.readUnsignedMedium();
 			this.method3330(this.anInt4067);
-		} else if (arg2 == 2) {
-			this.anInt4074 = arg1.readUnsignedShort();
+		} else if (code == 2) {
+			this.anInt4074 = buffer.readUnsignedShort();
 			if (this.anInt4074 == 65535) {
 				this.anInt4074 = -1;
 			}
-		} else if (arg2 == 3) {
-			this.anInt4068 = arg1.readUnsignedShort();
-		} else if (arg2 == 4) {
+		} else if (code == 3) {
+			this.anInt4068 = buffer.readUnsignedShort();
+		} else if (code == 4) {
 			this.aBoolean286 = false;
 		}
 	}

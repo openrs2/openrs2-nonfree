@@ -4,7 +4,7 @@ import dev.openrs2.deob.annotation.OriginalMember;
 import dev.openrs2.deob.annotation.Pc;
 
 @OriginalClass("client!qm")
-public final class Class145 {
+public final class SkyBoxType {
 
 	@OriginalMember(owner = "client!qm", name = "i", descriptor = "[I")
 	public int[] anIntArray466;
@@ -16,27 +16,27 @@ public final class Class145 {
 	public int anInt4405 = -1;
 
 	@OriginalMember(owner = "client!qm", name = "a", descriptor = "(IIILclient!fd;)V")
-	private void method3617(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) Buffer arg2) {
-		if (arg0 == 1) {
-			this.anInt4405 = arg2.readUnsignedShort();
-		} else if (arg0 == 2) {
-			this.anIntArray466 = new int[arg2.readUnsignedByte()];
+	private void decode(@OriginalArg(3) Buffer buffer, @OriginalArg(2) int id, @OriginalArg(1) int code) {
+		if (code == 1) {
+			this.anInt4405 = buffer.readUnsignedShort();
+		} else if (code == 2) {
+			this.anIntArray466 = new int[buffer.readUnsignedByte()];
 			for (@Pc(26) int local26 = 0; local26 < this.anIntArray466.length; local26++) {
-				this.anIntArray466[local26] = arg2.readUnsignedShort();
+				this.anIntArray466[local26] = buffer.readUnsignedShort();
 			}
-		} else if (arg0 == 3) {
-			this.anInt4399 = arg2.readUnsignedByte();
+		} else if (code == 3) {
+			this.anInt4399 = buffer.readUnsignedByte();
 		}
 	}
 
 	@OriginalMember(owner = "client!qm", name = "a", descriptor = "(IILclient!fd;)V")
-	public final void method3618(@OriginalArg(1) int arg0, @OriginalArg(2) Buffer arg1) {
+	public final void decode(@OriginalArg(2) Buffer buffer, @OriginalArg(1) int id) {
 		while (true) {
-			@Pc(15) int local15 = arg1.readUnsignedByte();
-			if (local15 == 0) {
+			@Pc(15) int code = buffer.readUnsignedByte();
+			if (code == 0) {
 				return;
 			}
-			this.method3617(local15, arg0, arg1);
+			this.decode(buffer, id, code);
 		}
 	}
 }

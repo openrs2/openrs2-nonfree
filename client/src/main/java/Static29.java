@@ -189,7 +189,7 @@ public final class Static29 {
 				@Pc(30) int local30 = arg8[local12][local17] & 0xFF;
 				@Pc(38) int local38 = arg1[local12][local17] & 0xFF;
 				if (local38 != 0) {
-					@Pc(48) Class127 local48 = Static26.method2935(local38 - 1);
+					@Pc(48) FloType local48 = FloTypeList.get(local38 - 1);
 					if (local48.anInt3869 == -1) {
 						continue;
 					}
@@ -218,7 +218,7 @@ public final class Static29 {
 					@Pc(212) int local212 = arg1[local12 + 1][local17 - 1] & 0xFF;
 					@Pc(224) int local224 = arg1[local12 + 1][local17 + 1] & 0xFF;
 					if (local188 != 0 && local38 != local188) {
-						@Pc(239) Class127 local239 = Static26.method2935(local188 - 1);
+						@Pc(239) FloType local239 = FloTypeList.get(local188 - 1);
 						if (local239.aBoolean275 && local239.anInt3869 != -1) {
 							@Pc(256) byte local256 = arg5[local12 - 1][local17 + 1];
 							@Pc(266) byte local266 = arg6[local12 - 1][local17 + 1];
@@ -239,7 +239,7 @@ public final class Static29 {
 						}
 					}
 					if (local200 != 0 && local38 != local200) {
-						@Pc(363) Class127 local363 = Static26.method2935(local200 - 1);
+						@Pc(363) FloType local363 = FloTypeList.get(local200 - 1);
 						if (local363.aBoolean275 && local363.anInt3869 != -1) {
 							@Pc(380) byte local380 = arg6[local12 - 1][local17 - 1];
 							@Pc(390) byte local390 = arg5[local12 - 1][local17 - 1];
@@ -259,7 +259,7 @@ public final class Static29 {
 						}
 					}
 					if (local212 != 0 && local38 != local212) {
-						@Pc(471) Class127 local471 = Static26.method2935(local212 - 1);
+						@Pc(471) FloType local471 = FloTypeList.get(local212 - 1);
 						if (local471.aBoolean275 && local471.anInt3869 != -1) {
 							@Pc(492) byte local492 = arg6[local12 + 1][local17 - 1];
 							@Pc(502) byte local502 = arg5[local12 + 1][local17 - 1];
@@ -279,7 +279,7 @@ public final class Static29 {
 						}
 					}
 					if (local224 != 0 && local38 != local224) {
-						@Pc(596) Class127 local596 = Static26.method2935(local224 - 1);
+						@Pc(596) FloType local596 = FloTypeList.get(local224 - 1);
 						if (local596.aBoolean275 && local596.anInt3869 != -1) {
 							@Pc(617) byte local617 = arg6[local12 + 1][local17 + 1];
 							@Pc(627) byte local627 = arg5[local12 + 1][local17 + 1];
@@ -299,7 +299,7 @@ public final class Static29 {
 						}
 					}
 					if (local146 != 0 && local146 != local38) {
-						@Pc(715) Class127 local715 = Static26.method2935(local146 - 1);
+						@Pc(715) FloType local715 = FloTypeList.get(local146 - 1);
 						if (local715.aBoolean275 && local715.anInt3869 != -1) {
 							local127 = Static6.anIntArray474[(arg6[local12][local17 + 1] + 2 & 0x3) + arg5[local12][local17 + 1] * 4];
 							for (@Pc(749) int local749 = 0; local749 < 8; local749++) {
@@ -314,7 +314,7 @@ public final class Static29 {
 						}
 					}
 					if (local156 != 0 && local156 != local38) {
-						@Pc(785) Class127 local785 = Static26.method2935(local156 - 1);
+						@Pc(785) FloType local785 = FloTypeList.get(local156 - 1);
 						if (local785.aBoolean275 && local785.anInt3869 != -1) {
 							local132 = Static6.anIntArray474[(arg6[local12 - 1][local17] + 3 & 0x3) + arg5[local12 - 1][local17] * 4];
 							for (@Pc(818) int local818 = 0; local818 < 8; local818++) {
@@ -329,7 +329,7 @@ public final class Static29 {
 						}
 					}
 					if (local166 != 0 && local166 != local38) {
-						@Pc(860) Class127 local860 = Static26.method2935(local166 - 1);
+						@Pc(860) FloType local860 = FloTypeList.get(local166 - 1);
 						if (local860.aBoolean275 && local860.anInt3869 != -1) {
 							local134 = Static6.anIntArray474[arg5[local12][local17 - 1] * 4 + (arg6[local12][local17 - 1] & 0x3)];
 							for (@Pc(893) int local893 = 0; local893 < 8; local893++) {
@@ -344,7 +344,7 @@ public final class Static29 {
 						}
 					}
 					if (local176 != 0 && local176 != local38) {
-						@Pc(941) Class127 local941 = Static26.method2935(local176 - 1);
+						@Pc(941) FloType local941 = FloTypeList.get(local176 - 1);
 						if (local941.aBoolean275 && local941.anInt3869 != -1) {
 							local136 = Static6.anIntArray474[arg5[local12 + 1][local17] * 4 + (arg6[local12 + 1][local17] + 1 & 0x3)];
 							for (@Pc(975) int local975 = 0; local975 < 8; local975++) {
@@ -364,7 +364,7 @@ public final class Static29 {
 						@Pc(1028) boolean[] local1028 = Static2.aBooleanArrayArray2[local166 == local1006 ? local134 : 0];
 						@Pc(1037) boolean[] local1037 = Static2.aBooleanArrayArray2[local1006 == local176 ? local136 : 0];
 						@Pc(1050) boolean[] local1050 = Static2.aBooleanArrayArray2[local146 == local1006 ? local127 : 0];
-						@Pc(1056) Class127 local1056 = Static26.method2935(local1006 - 1);
+						@Pc(1056) FloType local1056 = FloTypeList.get(local1006 - 1);
 						@Pc(1061) Class4_Sub12 local1061 = Static27.method4237(local10, local1056);
 						local1061.anInt2352 += 5;
 						local1061.anInt2352 += local1050.length - 2;
@@ -392,7 +392,7 @@ public final class Static29 {
 				@Pc(1195) int local1195 = arg1[local1137][local1144] & 0xFF;
 				@Pc(1203) int local1203 = arg8[local1137][local1144] & 0xFF;
 				if (local1195 != 0) {
-					@Pc(1215) Class127 local1215 = Static26.method2935(local1195 - 1);
+					@Pc(1215) FloType local1215 = FloTypeList.get(local1195 - 1);
 					if (local1215.anInt3869 == -1) {
 						continue;
 					}
@@ -423,7 +423,7 @@ public final class Static29 {
 					if (local1416 == 0 || local1195 == local1416) {
 						local1416 = 0;
 					} else {
-						@Pc(1454) Class127 local1454 = Static26.method2935(local1416 - 1);
+						@Pc(1454) FloType local1454 = FloTypeList.get(local1416 - 1);
 						if (local1454.aBoolean275 && local1454.anInt3869 != -1) {
 							@Pc(1476) byte local1476 = arg6[local1137 - 1][local1144 + 1];
 							@Pc(1486) byte local1486 = arg5[local1137 - 1][local1144 + 1];
@@ -450,7 +450,7 @@ public final class Static29 {
 					if (local1404 == 0 || local1195 == local1404) {
 						local1404 = 0;
 					} else {
-						@Pc(1572) Class127 local1572 = Static26.method2935(local1404 - 1);
+						@Pc(1572) FloType local1572 = FloTypeList.get(local1404 - 1);
 						if (local1572.aBoolean275 && local1572.anInt3869 != -1) {
 							@Pc(1591) byte local1591 = arg6[local1137 - 1][local1144 - 1];
 							@Pc(1601) byte local1601 = arg5[local1137 - 1][local1144 - 1];
@@ -476,7 +476,7 @@ public final class Static29 {
 					if (local1428 == 0 || local1428 == local1195) {
 						local1428 = 0;
 					} else {
-						@Pc(1694) Class127 local1694 = Static26.method2935(local1428 - 1);
+						@Pc(1694) FloType local1694 = FloTypeList.get(local1428 - 1);
 						if (local1694.aBoolean275 && local1694.anInt3869 != -1) {
 							@Pc(1711) byte local1711 = arg6[local1137 + 1][local1144 - 1];
 							@Pc(1721) byte local1721 = arg5[local1137 + 1][local1144 - 1];
@@ -502,7 +502,7 @@ public final class Static29 {
 					if (local1440 == 0 || local1440 == local1195) {
 						local1440 = 0;
 					} else {
-						@Pc(1810) Class127 local1810 = Static26.method2935(local1440 - 1);
+						@Pc(1810) FloType local1810 = FloTypeList.get(local1440 - 1);
 						if (local1810.aBoolean275 && local1810.anInt3869 != -1) {
 							@Pc(1827) byte local1827 = arg6[local1137 + 1][local1144 + 1];
 							@Pc(1837) byte local1837 = arg5[local1137 + 1][local1144 + 1];
@@ -526,7 +526,7 @@ public final class Static29 {
 						}
 					}
 					if (local1392 != 0 && local1392 != local1195) {
-						@Pc(1926) Class127 local1926 = Static26.method2935(local1392 - 1);
+						@Pc(1926) FloType local1926 = FloTypeList.get(local1392 - 1);
 						if (local1926.aBoolean275 && local1926.anInt3869 != -1) {
 							local1346 = Static6.anIntArray474[arg5[local1137][local1144 + 1] * 4 + (arg6[local1137][local1144 + 1] + 2 & 0x3)];
 							for (@Pc(1960) int local1960 = 0; local1960 < 8; local1960++) {
@@ -541,7 +541,7 @@ public final class Static29 {
 						}
 					}
 					if (local1362 != 0 && local1195 != local1362) {
-						@Pc(2003) Class127 local2003 = Static26.method2935(local1362 - 1);
+						@Pc(2003) FloType local2003 = FloTypeList.get(local1362 - 1);
 						if (local2003.aBoolean275 && local2003.anInt3869 != -1) {
 							local1348 = Static6.anIntArray474[arg5[local1137 - 1][local1144] * 4 + (arg6[local1137 - 1][local1144] + 3 & 0x3)];
 							for (@Pc(2036) int local2036 = 0; local2036 < 8; local2036++) {
@@ -556,7 +556,7 @@ public final class Static29 {
 						}
 					}
 					if (local1382 != 0 && local1195 != local1382) {
-						@Pc(2080) Class127 local2080 = Static26.method2935(local1382 - 1);
+						@Pc(2080) FloType local2080 = FloTypeList.get(local1382 - 1);
 						if (local2080.aBoolean275 && local2080.anInt3869 != -1) {
 							local1350 = Static6.anIntArray474[arg5[local1137][local1144 - 1] * 4 + (arg6[local1137][local1144 - 1] & 0x3)];
 							for (@Pc(2113) int local2113 = 0; local2113 < 8; local2113++) {
@@ -571,7 +571,7 @@ public final class Static29 {
 						}
 					}
 					if (local1372 != 0 && local1195 != local1372) {
-						@Pc(2147) Class127 local2147 = Static26.method2935(local1372 - 1);
+						@Pc(2147) FloType local2147 = FloTypeList.get(local1372 - 1);
 						if (local2147.aBoolean275 && local2147.anInt3869 != -1) {
 							local1352 = Static6.anIntArray474[arg5[local1137 + 1][local1144] * 4 + (arg6[local1137 + 1][local1144] + 1 & 0x3)];
 							for (@Pc(2184) int local2184 = 0; local2184 < 8; local2184++) {
@@ -591,7 +591,7 @@ public final class Static29 {
 						@Pc(2244) boolean[] local2244 = Static2.aBooleanArrayArray2[local2226 == local1362 ? local1348 : 0];
 						@Pc(2257) boolean[] local2257 = Static2.aBooleanArrayArray2[local2226 == local1382 ? local1350 : 0];
 						@Pc(2266) boolean[] local2266 = Static2.aBooleanArrayArray2[local2226 == local1372 ? local1352 : 0];
-						@Pc(2272) Class127 local2272 = Static26.method2935(local2226 - 1);
+						@Pc(2272) FloType local2272 = FloTypeList.get(local2226 - 1);
 						@Pc(2277) Class4_Sub12 local2277 = Static27.method4237(local10, local2272);
 						@Pc(2293) int local2293 = Static15.method1474(arg2[local1137][local1144], local2272.anInt3877, local2272.anInt3869) << 8 | 0xFF;
 						@Pc(2311) int local2311 = Static15.method1474(arg2[local1137 + 1][local1144], local2272.anInt3877, local2272.anInt3869) << 8 | 0xFF;
@@ -2469,12 +2469,6 @@ public final class Static29 {
 				}
 			}
 		}
-	}
-
-	@OriginalMember(owner = "client!qc", name = "a", descriptor = "(I)V")
-	public static void method3302() {
-		Static6.aClass26_52.removeSoft();
-		Static2.aClass26_11.removeSoft();
 	}
 
 	@OriginalMember(owner = "client!qc", name = "b", descriptor = "(IIII)Z")

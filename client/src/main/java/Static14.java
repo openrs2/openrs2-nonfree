@@ -184,11 +184,6 @@ public final class Static14 {
 		Static4.aClass26_30.removeSoft();
 	}
 
-	@OriginalMember(owner = "client!el", name = "b", descriptor = "(II)V")
-	public static void method1067() {
-		Static6.aClass26_54.clean(5);
-	}
-
 	@OriginalMember(owner = "client!el", name = "a", descriptor = "(IIIBIIIII)V")
 	public static void method1069(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4, @OriginalArg(6) int arg5, @OriginalArg(7) int arg6, @OriginalArg(8) int arg7) {
 		if (InterfaceList.load(arg0)) {
@@ -385,7 +380,7 @@ public final class Static14 {
 							if (local138 == 0) {
 								continue;
 							}
-							@Pc(156) Class127 local156 = Static26.method2935(local138 - 1);
+							@Pc(156) FloType local156 = FloTypeList.get(local138 - 1);
 							if (local156.anInt3869 == -1) {
 								continue;
 							}
@@ -396,7 +391,7 @@ public final class Static14 {
 								continue;
 							}
 						} else if (local138 != 0) {
-							@Pc(212) Class127 local212 = Static26.method2935(local138 - 1);
+							@Pc(212) FloType local212 = FloTypeList.get(local138 - 1);
 							if (local212.anInt3869 == -1) {
 								@Pc(237) byte local237 = arg10[local119][local80];
 								if (local237 != 0) {
@@ -508,7 +503,7 @@ public final class Static14 {
 							if (local795 == 0) {
 								continue;
 							}
-							@Pc(810) Class127 local810 = Static26.method2935(local795 - 1);
+							@Pc(810) FloType local810 = FloTypeList.get(local795 - 1);
 							if (local810.anInt3869 == -1) {
 								continue;
 							}
@@ -517,7 +512,7 @@ public final class Static14 {
 								continue;
 							}
 						} else if (local795 != 0) {
-							@Pc(859) Class127 local859 = Static26.method2935(local795 - 1);
+							@Pc(859) FloType local859 = FloTypeList.get(local795 - 1);
 							if (local859.anInt3869 == -1) {
 								Static19.method1778(local22, Static2.anIntArrayArray16[arg10[local766][local722]], arg7, local722, local766, local34, arg5, arg8, arg0[local766][local722], arg3);
 								continue;

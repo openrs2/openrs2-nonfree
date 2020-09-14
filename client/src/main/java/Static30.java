@@ -964,12 +964,6 @@ public final class Static30 {
 		return Base37.decodeLowerCase(arg0);
 	}
 
-	@OriginalMember(owner = "client!qj", name = "c", descriptor = "(II)V")
-	public static void method3594() {
-		Static6.aClass26_52.clean(5);
-		Static2.aClass26_11.clean(5);
-	}
-
 	@OriginalMember(owner = "client!qj", name = "a", descriptor = "()V")
 	public static void method3596() {
 		@Pc(1) GL local1 = GlRenderer.gl;
@@ -1318,11 +1312,6 @@ public final class Static30 {
 				Static2.anInt1641 = -4;
 			}
 		}
-	}
-
-	@OriginalMember(owner = "client!qk", name = "a", descriptor = "(I)V")
-	public static void method3601() {
-		Static6.aClass26_51.clear();
 	}
 
 	@OriginalMember(owner = "client!qk", name = "a", descriptor = "(IBI)I")

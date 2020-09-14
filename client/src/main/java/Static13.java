@@ -430,12 +430,6 @@ public final class Static13 {
 		}
 	}
 
-	@OriginalMember(owner = "client!dm", name = "b", descriptor = "(I)V")
-	public static void method941() {
-		Static6.aClass26_52.clear();
-		Static2.aClass26_11.clear();
-	}
-
 	@OriginalMember(owner = "client!dn", name = "a", descriptor = "(IZIZLclient!qk;IIIZ)Lclient!uj;")
 	public static Sprite method965(@OriginalArg(0) int arg0, @OriginalArg(1) boolean arg1, @OriginalArg(2) int arg2, @OriginalArg(3) boolean arg3, @OriginalArg(4) PlayerAppearance arg4, @OriginalArg(6) int arg5, @OriginalArg(7) int arg6, @OriginalArg(8) boolean arg7) {
 		@Pc(9) ObjType local9 = ObjTypeList.get(arg6);
@@ -648,27 +642,6 @@ public final class Static13 {
 		for (@Pc(15) int local15 = 0; local15 < 100; local15++) {
 			Static2.aBooleanArray8[local15] = true;
 		}
-	}
-
-	@OriginalMember(owner = "client!ea", name = "a", descriptor = "(IBIII)Lclient!eh;")
-	public static Class47 method936(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3) {
-		@Pc(39) long local39 = (long) arg2 & 0xFFFFL | ((long) arg0 & 0xFFFFL) << 48 | ((long) arg1 & 0xFFFFL) << 32 | ((long) arg3 & 0xFFFFL) << 16;
-		@Pc(45) Class47 local45 = (Class47) Static2.aClass26_11.get(local39);
-		if (local45 != null) {
-			return local45;
-		}
-		@Pc(52) Class105[] local52 = null;
-		@Pc(56) Class145 local56 = Static35.method4364(arg2);
-		if (local56.anIntArray466 != null) {
-			local52 = new Class105[local56.anIntArray466.length];
-			for (@Pc(68) int local68 = 0; local68 < local52.length; local68++) {
-				@Pc(83) Class153 local83 = Static37.method4731(local56.anIntArray466[local68]);
-				local52[local68] = new Class105(local83.anInt4706, local83.anInt4698, local83.anInt4696, local83.anInt4697, local83.anInt4700, local83.anInt4707, local83.anInt4703, local83.aBoolean327);
-			}
-		}
-		@Pc(120) Class47 local120 = new Class47(local56.anInt4405, local52, local56.anInt4399, arg0, arg1, arg3);
-		Static2.aClass26_11.put(local39, local120);
-		return local120;
 	}
 
 	@OriginalMember(owner = "client!ed", name = "a", descriptor = "(IJII)Z")

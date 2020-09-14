@@ -16,21 +16,6 @@ public final class Static11 {
 		}
 	}
 
-	@OriginalMember(owner = "client!ca", name = "a", descriptor = "(IB)Lclient!vd;")
-	public static Class178 method494(@OriginalArg(0) int arg0) {
-		@Pc(10) Class178 local10 = (Class178) Static6.aClass26_54.get((long) arg0);
-		if (local10 != null) {
-			return local10;
-		}
-		@Pc(28) byte[] local28 = Static4.aClass58_54.fetchFile(31, arg0);
-		@Pc(32) Class178 local32 = new Class178();
-		if (local28 != null) {
-			local32.method4438(new Buffer(local28), arg0);
-		}
-		Static6.aClass26_54.put((long) arg0, local32);
-		return local32;
-	}
-
 	@OriginalMember(owner = "client!ca", name = "a", descriptor = "(Lclient!fh;III)[Lclient!ma;")
 	public static IndexedSprite[] method495(@OriginalArg(0) Js5 arg0, @OriginalArg(1) int arg1) {
 		return Static9.method197(arg0, arg1, 0) ? Static23.method2456() : null;

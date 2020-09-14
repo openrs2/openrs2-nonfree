@@ -328,7 +328,7 @@ public abstract class PathingEntity extends Entity {
 
 	@OriginalMember(owner = "client!qc", name = "a", descriptor = "(ILclient!vg;)V")
 	protected final void method3305(@OriginalArg(1) Model arg0) {
-		@Pc(9) Class34 local9 = this.method3314();
+		@Pc(9) BasType local9 = this.method3314();
 		if (local9.anInt850 == 0 && local9.anInt851 == 0) {
 			return;
 		}
@@ -608,7 +608,7 @@ public abstract class PathingEntity extends Entity {
 		Static6.anInt4907 = 0;
 		Static4.anInt2747 = 0;
 		Static5.anInt3525 = 0;
-		@Pc(9) Class34 local9 = this.method3314();
+		@Pc(9) BasType local9 = this.method3314();
 		@Pc(16) int local16 = local9.anInt844;
 		@Pc(19) int local19 = local9.anInt847;
 		if (local16 == 0 || local19 == 0) {
@@ -659,9 +659,9 @@ public abstract class PathingEntity extends Entity {
 	}
 
 	@OriginalMember(owner = "client!qc", name = "c", descriptor = "(B)Lclient!d;")
-	public final Class34 method3314() {
+	public final BasType method3314() {
 		@Pc(15) int local15 = this.method3303();
-		return local15 == -1 ? Static5.aClass34_1 : Static37.method4776(local15);
+		return local15 == -1 ? Static5.aClass34_1 : BasTypeList.get(local15);
 	}
 
 	@OriginalMember(owner = "client!qc", name = "a", descriptor = "(Lclient!vg;BLclient!vg;)V")

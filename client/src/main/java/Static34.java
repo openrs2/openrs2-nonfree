@@ -668,11 +668,6 @@ public final class Static34 {
 		}
 	}
 
-	@OriginalMember(owner = "client!tl", name = "a", descriptor = "(II)V")
-	public static void method4235() {
-		Static2.aClass26_16.clean(5);
-	}
-
 	@OriginalMember(owner = "client!tl", name = "a", descriptor = "(ILjava/lang/String;)V")
 	public static void method4236(@OriginalArg(1) String arg0) {
 		if (Static6.aClass4_Sub15Array1 == null) {
@@ -697,7 +692,7 @@ public final class Static34 {
 		if (arg0.anInt4009 == 0) {
 			return;
 		}
-		@Pc(16) Class34 local16 = arg0.method3314();
+		@Pc(16) BasType local16 = arg0.method3314();
 		if (arg0.anInt3985 != -1 && arg0.anInt3985 < 32768) {
 			@Pc(31) Npc local31 = NpcList.npcs[arg0.anInt3985];
 			if (local31 != null) {
@@ -1082,7 +1077,7 @@ public final class Static34 {
 							for (@Pc(590) int local590 = 0; local590 < local585; local590++) {
 								@Pc(598) Class50 local598 = new Class50(local108);
 								if (local598.anInt1323 == 31) {
-									@Pc(608) Class178 local608 = Static11.method494(local108.readUnsignedShort());
+									@Pc(608) LightType local608 = LightTypeList.get(local108.readUnsignedShort());
 									local598.method1073(local608.anInt5484, local608.anInt5480, local608.anInt5482, local608.anInt5481);
 								}
 								local598.anInt1338 += arg4 << 7;

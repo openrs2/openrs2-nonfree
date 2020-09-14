@@ -132,11 +132,6 @@ public final class Static24 {
 		}
 	}
 
-	@OriginalMember(owner = "client!lj", name = "a", descriptor = "(Lclient!fh;B)V")
-	public static void method2599(@OriginalArg(0) Js5 arg0) {
-		Static6.aClass58_90 = arg0;
-	}
-
 	@OriginalMember(owner = "client!ll", name = "a", descriptor = "(IIII)I")
 	public static int method2614(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2) {
 		arg0 &= 3;
@@ -451,8 +446,8 @@ public final class Static24 {
 
 	@OriginalMember(owner = "client!me", name = "a", descriptor = "(I)V")
 	public static void method2697() {
-		Static32.method3956();
-		Static35.method4313();
+		FloTypeList.clear();
+		FluTypeList.clear();
 		Static36.method4448();
 		LocTypeList.clear();
 		NpcTypeList.clear();
@@ -461,12 +456,12 @@ public final class Static24 {
 		Static31.method3745();
 		VarbitTypeList.clear();
 		VarpTypeList.clear();
-		Static30.method3601();
+		BasTypeList.clear();
 		Static28.method3281();
 		Static25.method2925();
-		Static13.method941();
-		Static37.method4649();
-		Static31.method3653();
+		SkyBoxTypeList.clear();
+		SkyBoxSphereTypeList.clear();
+		LightTypeList.clear();
 		Static34.method4270();
 		Static10.method898();
 		Static31.method3688();

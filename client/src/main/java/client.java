@@ -622,15 +622,15 @@ public final class client extends GameShell {
 				mainLoadSecondaryText = LocalisedText.MAINLOAD70 + local647 / 11 + "%";
 			} else {
 				ParamTypeList.init(js5Archive2);
-				Static27.method3228(js5Archive2);
-				Static36.method3814(js5Archive2);
+				FloTypeList.init(js5Archive2);
+				FluTypeList.init(js5Archive2);
 				Static36.method4523(js5Archive7, js5Archive2);
 				LocTypeList.init(js5Archive16, js5Archive7);
 				NpcTypeList.init(js5Archive18, js5Archive7);
 				ObjTypeList.init(js5Archive19, js5Archive7, Static2.aClass4_Sub3_Sub5_Sub2_2);
 				StructTypeList.init(js5Archive2);
 				Static37.method4785(js5Archive20, js5Archive1, js5Archive0);
-				Static32.method3884(js5Archive2);
+				BasTypeList.init(js5Archive2);
 				Static22.method2362(js5Archive21, js5Archive7);
 				VarbitTypeList.init(js5Archive22);
 				VarpTypeList.init(js5Archive2);
@@ -639,9 +639,9 @@ public final class client extends GameShell {
 				EnumTypeList.init(js5Archive17);
 				Static16.method1521(js5Archive25, new Class128(), js5Archive24);
 				Static15.method1473(js5Archive24, js5Archive25);
-				Static16.method1560(js5Archive2);
-				Static24.method2599(js5Archive2);
-				Static10.method346(js5Archive2);
+				SkyBoxTypeList.init(js5Archive2);
+				SkyBoxSphereTypeList.init(js5Archive2);
+				LightTypeList.init(js5Archive2);
 				Static11.method514(js5Archive2, js5Archive8);
 				Static8.method5(js5Archive8, js5Archive2);
 				Static29.method3474(js5Archive2, js5Archive8);

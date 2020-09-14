@@ -11,9 +11,6 @@ public final class Static1 {
 	@OriginalMember(owner = "client!ab", name = "d", descriptor = "Lclient!ib;")
 	public static Class4_Sub3_Sub10 aClass4_Sub3_Sub10_1;
 
-	@OriginalMember(owner = "client!ab", name = "e", descriptor = "Lclient!fh;")
-	public static Js5 aClass58_2;
-
 	@OriginalMember(owner = "client!ab", name = "j", descriptor = "Lsignlink!vk;")
 	public static PrivilegedRequest aClass197_1;
 
@@ -386,17 +383,11 @@ public final class Static1 {
 	@OriginalMember(owner = "client!cc", name = "h", descriptor = "[I")
 	public static final int[] anIntArray47 = new int[14];
 
-	@OriginalMember(owner = "client!cd", name = "g", descriptor = "Lclient!cc;")
-	public static final SoftLruHashTable aClass26_6 = new SoftLruHashTable(64);
-
 	@OriginalMember(owner = "client!ce", name = "a", descriptor = "I")
 	public static int anInt547 = 0;
 
 	@OriginalMember(owner = "client!ce", name = "c", descriptor = "I")
 	public static int anInt548 = 0;
-
-	@OriginalMember(owner = "client!ce", name = "d", descriptor = "I")
-	public static int anInt549 = 0;
 
 	@OriginalMember(owner = "client!cf", name = "U", descriptor = "F")
 	public static float aFloat20 = 0.0F;

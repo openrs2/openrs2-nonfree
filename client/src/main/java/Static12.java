@@ -1042,11 +1042,6 @@ public final class Static12 {
 		return local500;
 	}
 
-	@OriginalMember(owner = "client!de", name = "b", descriptor = "(IZ)V")
-	public static void method775() {
-		Static1.aClass26_6.clean(5);
-	}
-
 	@OriginalMember(owner = "client!de", name = "a", descriptor = "(BZ)V")
 	public static void method777(@OriginalArg(1) boolean arg0) {
 		Static21.method2050(arg0, GameShell.canvasWidth, Static3.anInt5398, GameShell.canvasHeight);

@@ -243,7 +243,7 @@ public final class Static5 {
 	public static int anInt3486 = 0;
 
 	@OriginalMember(owner = "client!nd", name = "y", descriptor = "Lclient!d;")
-	public static final Class34 aClass34_1 = new Class34();
+	public static final BasType aClass34_1 = new BasType();
 
 	@OriginalMember(owner = "client!ne", name = "k", descriptor = "Lclient!ak;")
 	public static SecondaryHashTable aClass10_1 = new SecondaryHashTable(8);

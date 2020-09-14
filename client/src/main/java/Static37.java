@@ -29,11 +29,6 @@ public final class Static37 {
 		}
 	}
 
-	@OriginalMember(owner = "client!wa", name = "s", descriptor = "(I)V")
-	public static void method4649() {
-		Static2.aClass26_16.clear();
-	}
-
 	@OriginalMember(owner = "client!wb", name = "a", descriptor = "(IIII)V")
 	public static void method4661(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(3) int arg2) {
 		if (arg1 == 0) {
@@ -465,21 +460,6 @@ public final class Static37 {
 		Static6.aClass26_46.clean(5);
 	}
 
-	@OriginalMember(owner = "client!wf", name = "b", descriptor = "(BI)Lclient!sa;")
-	public static Class153 method4731(@OriginalArg(1) int arg0) {
-		@Pc(10) Class153 local10 = (Class153) Static2.aClass26_16.get((long) arg0);
-		if (local10 != null) {
-			return local10;
-		}
-		@Pc(22) byte[] local22 = Static6.aClass58_90.fetchFile(30, arg0);
-		@Pc(26) Class153 local26 = new Class153();
-		if (local22 != null) {
-			local26.method3886(arg0, new Buffer(local22));
-		}
-		Static2.aClass26_16.put((long) arg0, local26);
-		return local26;
-	}
-
 	@OriginalMember(owner = "client!wf", name = "a", descriptor = "(BII)V")
 	public static void method4736(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1) {
 		Protocol.outboundBuffer.writeOpcode(178);
@@ -800,22 +780,6 @@ public final class Static37 {
 			Static2.anInt1931 = Static11.method522(Static7.anInt5678, Static3.anInt2519, Static7.y) - Static4.anInt3131;
 		}
 		Static1.anInt772 = 2;
-	}
-
-	@OriginalMember(owner = "client!wh", name = "a", descriptor = "(II)Lclient!d;")
-	public static Class34 method4776(@OriginalArg(1) int arg0) {
-		@Pc(10) Class34 local10 = (Class34) Static6.aClass26_51.get((long) arg0);
-		if (local10 != null) {
-			return local10;
-		}
-		@Pc(27) byte[] local27 = Static6.aClass58_84.fetchFile(32, arg0);
-		@Pc(31) Class34 local31 = new Class34();
-		if (local27 != null) {
-			local31.method720(new Buffer(local27));
-		}
-		local31.method725();
-		Static6.aClass26_51.put((long) arg0, local31);
-		return local31;
 	}
 
 	@OriginalMember(owner = "client!wi", name = "a", descriptor = "(IIIIIZII)Z")

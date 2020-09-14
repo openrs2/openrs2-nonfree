@@ -642,7 +642,7 @@ public final class Component {
 
 	@OriginalMember(owner = "client!wf", name = "a", descriptor = "(I)Lclient!eh;")
 	public final Class47 method4726() {
-		return this.anInt5972 == -1 ? null : Static13.method936(this.anInt5916, this.anInt5977, this.anInt5972, this.anInt5898);
+		return this.anInt5972 == -1 ? null : SkyBoxTypeList.method936(this.anInt5972, this.anInt5916, this.anInt5977, this.anInt5898);
 	}
 
 	@OriginalMember(owner = "client!wf", name = "a", descriptor = "(Lclient!fd;I)V")

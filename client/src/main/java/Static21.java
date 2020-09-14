@@ -405,11 +405,6 @@ public final class Static21 {
 		return arg0;
 	}
 
-	@OriginalMember(owner = "client!jj", name = "f", descriptor = "(B)V")
-	public static void method2048() {
-		Static6.aClass26_51.removeSoft();
-	}
-
 	@OriginalMember(owner = "client!jj", name = "a", descriptor = "(ZIIII)V")
 	public static void method2050(@OriginalArg(0) boolean arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3) {
 		if (InterfaceList.load(arg2)) {

@@ -20,9 +20,6 @@ public final class Static6 {
 	@OriginalMember(owner = "client!qk", name = "s", descriptor = "Lclient!kk;")
 	public static Class106 aClass106_7;
 
-	@OriginalMember(owner = "client!ql", name = "a", descriptor = "Lclient!fh;")
-	public static Js5 aClass58_84;
-
 	@OriginalMember(owner = "client!ql", name = "c", descriptor = "Lclient!kj;")
 	public static TextureProvider anInterface3_1;
 
@@ -193,9 +190,6 @@ public final class Static6 {
 
 	@OriginalMember(owner = "client!se", name = "W", descriptor = "[Lclient!uj;")
 	public static Sprite[] aClass4_Sub3_Sub14Array12;
-
-	@OriginalMember(owner = "client!se", name = "Z", descriptor = "Lclient!fh;")
-	public static Js5 aClass58_90;
 
 	@OriginalMember(owner = "client!se", name = "eb", descriptor = "I")
 	public static int anInt4793;
@@ -458,9 +452,6 @@ public final class Static6 {
 	@OriginalMember(owner = "client!sg", name = "g", descriptor = "[I")
 	public static final int[] anIntArray519 = new int[] { 16, 32, 64, 128 };
 
-	@OriginalMember(owner = "client!sh", name = "T", descriptor = "Lclient!cc;")
-	public static final SoftLruHashTable aClass26_51 = new SoftLruHashTable(64);
-
 	@OriginalMember(owner = "client!sh", name = "Z", descriptor = "I")
 	public static int anInt4835 = 0;
 
@@ -490,9 +481,6 @@ public final class Static6 {
 
 	@OriginalMember(owner = "client!sk", name = "i", descriptor = "J")
 	public static long aLong169 = 0L;
-
-	@OriginalMember(owner = "client!sm", name = "a", descriptor = "Lclient!cc;")
-	public static final SoftLruHashTable aClass26_52 = new SoftLruHashTable(16);
 
 	@OriginalMember(owner = "client!sm", name = "f", descriptor = "I")
 	public static int anInt4907 = 0;
@@ -598,9 +586,6 @@ public final class Static6 {
 
 	@OriginalMember(owner = "client!ti", name = "S", descriptor = "I")
 	public static int anInt5173 = -2;
-
-	@OriginalMember(owner = "client!ti", name = "V", descriptor = "Lclient!cc;")
-	public static final SoftLruHashTable aClass26_54 = new SoftLruHashTable(64);
 
 	@OriginalMember(owner = "client!ti", name = "X", descriptor = "I")
 	public static int anInt5177 = 0;

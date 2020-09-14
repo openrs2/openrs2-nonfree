@@ -54,11 +54,6 @@ public final class Static32 {
 		return arg0 >> 11 & 0x7F;
 	}
 
-	@OriginalMember(owner = "client!sa", name = "a", descriptor = "(BLclient!fh;)V")
-	public static void method3884(@OriginalArg(1) Js5 arg0) {
-		Static6.aClass58_84 = arg0;
-	}
-
 	@OriginalMember(owner = "client!sa", name = "a", descriptor = "(IB)V")
 	public static void method3885(@OriginalArg(0) int arg0) {
 		if (Static7.anIntArray678 == null || Static7.anIntArray678.length < arg0) {
@@ -264,11 +259,6 @@ public final class Static32 {
 		Static3.anInt2519 = arg6 - local55;
 		Static5.anInt3656 = arg0;
 		Static5.anInt4066 = arg2;
-	}
-
-	@OriginalMember(owner = "client!sg", name = "a", descriptor = "(I)V")
-	public static void method3956() {
-		Static3.aClass26_24.clear();
 	}
 
 	@OriginalMember(owner = "client!sh", name = "a", descriptor = "(ZI)V")
@@ -522,7 +512,7 @@ public final class Static32 {
 
 	@OriginalMember(owner = "client!sl", name = "a", descriptor = "(Lclient!qc;B)V")
 	public static void method4024(@OriginalArg(0) PathingEntity arg0) {
-		@Pc(5) Class34 local5 = arg0.method3314();
+		@Pc(5) BasType local5 = arg0.method3314();
 		arg0.anInt4005 = local5.anInt860;
 		if (arg0.anInt3965 == 0) {
 			arg0.anInt4037 = 0;

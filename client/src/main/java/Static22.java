@@ -1372,7 +1372,7 @@ public final class Static22 {
 					}
 				}
 				if (local74 != 0) {
-					@Pc(252) Class131 local252 = Static26.method2971((local74 & 0xFF) - 1);
+					@Pc(252) FluType local252 = FluTypeList.get((local74 & 0xFF) - 1);
 					local9[local11][local23] = (local252.anInt4074 + 1 << 16) + local252.anInt4068;
 				}
 			}
