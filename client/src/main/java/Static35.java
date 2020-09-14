@@ -12,111 +12,6 @@ public final class Static35 {
 		Static6.aClass26_54.removeSoft();
 	}
 
-	@OriginalMember(owner = "client!uc", name = "f", descriptor = "(I)V")
-	public static void method4298() {
-		for (@Pc(3) int local3 = 0; local3 < Static6.anInt4760; local3++) {
-			@Pc(10) int local10 = Static7.anIntArray587[local3];
-			@Pc(14) Npc local14 = NpcList.npcs[local10];
-			@Pc(18) int local18 = Static5.aClass4_Sub10_Sub1_2.readUnsignedByte();
-			if ((local18 & 0x1) != 0) {
-				local18 += Static5.aClass4_Sub10_Sub1_2.readUnsignedByte() << 8;
-			}
-			if ((local18 & 0x40) != 0) {
-				@Pc(43) int local43 = Static5.aClass4_Sub10_Sub1_2.readUnsignedByteC();
-				@Pc(49) int local49 = Static5.aClass4_Sub10_Sub1_2.readUnsignedByteS();
-				local14.method3304(Static2.anInt954, local49, local43);
-				local14.anInt3993 = Static2.anInt954 + 300;
-				local14.anInt4022 = Static5.aClass4_Sub10_Sub1_2.readUnsignedByteC();
-			}
-			if ((local18 & 0x100) != 0) {
-				@Pc(74) int local74 = Static5.aClass4_Sub10_Sub1_2.readUnsignedByteA();
-				@Pc(77) int[] local77 = new int[local74];
-				@Pc(80) int[] local80 = new int[local74];
-				@Pc(83) int[] local83 = new int[local74];
-				for (@Pc(85) int local85 = 0; local85 < local74; local85++) {
-					@Pc(96) int local96 = Static5.aClass4_Sub10_Sub1_2.readUnsignedShortLE();
-					if (local96 == 65535) {
-						local96 = -1;
-					}
-					local83[local85] = local96;
-					local77[local85] = Static5.aClass4_Sub10_Sub1_2.readUnsignedByteC();
-					local80[local85] = Static5.aClass4_Sub10_Sub1_2.readUnsignedShortLEA();
-				}
-				Static11.method555(local83, local14, local80, local77);
-			}
-			if ((local18 & 0x10) != 0) {
-				@Pc(141) int local141 = Static5.aClass4_Sub10_Sub1_2.readUnsignedByteA();
-				@Pc(145) int local145 = Static5.aClass4_Sub10_Sub1_2.readUnsignedByteS();
-				local14.method3304(Static2.anInt954, local145, local141);
-			}
-			if ((local18 & 0x2) != 0) {
-				if (local14.type.method4260()) {
-					Static25.method2931(local14);
-				}
-				local14.setType(NpcTypeList.get(Static5.aClass4_Sub10_Sub1_2.readUnsignedShortA()));
-				local14.setSize(local14.type.size);
-				local14.anInt4009 = local14.type.anInt5243;
-				local14.basId = local14.type.anInt5261;
-				if (local14.type.method4260()) {
-					Static8.method109(null, local14.anIntArray422[0], local14, local14.anIntArray426[0], null, 0, Static7.y);
-				}
-			}
-			if ((local18 & 0x200) != 0) {
-				local14.anInt4014 = Static5.aClass4_Sub10_Sub1_2.readUnsignedShortLEA();
-				local14.anInt4003 = Static5.aClass4_Sub10_Sub1_2.readUnsignedShort();
-			}
-			if ((local18 & 0x20) != 0) {
-				@Pc(238) int local238 = Static5.aClass4_Sub10_Sub1_2.readUnsignedShort();
-				if (local238 == 65535) {
-					local238 = -1;
-				}
-				@Pc(250) int local250 = Static5.aClass4_Sub10_Sub1_2.readUnsignedByteS();
-				Static11.method529(local238, local14, local250);
-			}
-			if ((local18 & 0x4) != 0) {
-				@Pc(266) int local266 = Static5.aClass4_Sub10_Sub1_2.readUnsignedShortA();
-				@Pc(270) int local270 = Static5.aClass4_Sub10_Sub1_2.readInt();
-				@Pc(272) boolean local272 = true;
-				if (local266 == 65535) {
-					local266 = -1;
-				}
-				if (local266 != -1 && local14.anInt3961 != -1 && Static23.method2494(Static21.method2004(local266).anInt3134).anInt1243 < Static23.method2494(Static21.method2004(local14.anInt3961).anInt3134).anInt1243) {
-					local272 = false;
-				}
-				if (local272) {
-					local14.anInt3968 = 0;
-					local14.anInt4026 = 0;
-					local14.anInt3976 = 1;
-					local14.anInt3984 = (local270 & 0xFFFF) + Static2.anInt954;
-					if (local14.anInt3984 > Static2.anInt954) {
-						local14.anInt4026 = -1;
-					}
-					local14.anInt3971 = local270 >> 16;
-					local14.anInt3961 = local266;
-					if (local14.anInt3961 != -1 && Static2.anInt954 == local14.anInt3984) {
-						@Pc(358) int local358 = Static21.method2004(local14.anInt3961).anInt3134;
-						if (local358 != -1) {
-							@Pc(365) Class46 local365 = Static23.method2494(local358);
-							if (local365 != null && local365.anIntArray95 != null) {
-								Static29.method3461(local365, local14.z, local14.x, 0, false);
-							}
-						}
-					}
-				}
-			}
-			if ((local18 & 0x8) != 0) {
-				local14.anInt3985 = Static5.aClass4_Sub10_Sub1_2.readUnsignedShortLE();
-				if (local14.anInt3985 == 65535) {
-					local14.anInt3985 = -1;
-				}
-			}
-			if ((local18 & 0x80) != 0) {
-				local14.aString234 = Static5.aClass4_Sub10_Sub1_2.readString();
-				local14.anInt4023 = 100;
-			}
-		}
-	}
-
 	@OriginalMember(owner = "client!uc", name = "a", descriptor = "(ZI)I")
 	public static int method4299(@OriginalArg(1) int arg0) {
 		return arg0 & 0x7F;
@@ -160,7 +55,7 @@ public final class Static35 {
 			Static7.anInt5634 = 1;
 			Static2.anIntArray160[0] = Static7.anInt6050;
 		}
-		Static26.method2964((long) Static2.anInt954);
+		Static26.method2964((long) client.loop);
 		if (Static3.anInt5398 != -1) {
 			Static27.method4243(Static3.anInt5398);
 		}
@@ -172,7 +67,7 @@ public final class Static35 {
 			Static2.aBooleanArray8[local80] = false;
 		}
 		Static7.aClass185_15 = null;
-		Static3.anInt2522 = Static2.anInt954;
+		Static3.anInt2522 = client.loop;
 		Static3.anInt2047 = -1;
 		Static6.anInt4679 = -1;
 		Static6.aClass185_13 = null;
@@ -240,19 +135,6 @@ public final class Static35 {
 		}
 	}
 
-	@OriginalMember(owner = "client!ud", name = "a", descriptor = "(I)V")
-	public static void method4308() {
-		for (@Pc(13) int local13 = 0; local13 < Static6.anInt4760; local13++) {
-			@Pc(24) int local24 = Static7.anIntArray587[local13];
-			@Pc(28) Player local28 = PlayerList.players[local24];
-			@Pc(32) int local32 = Static5.aClass4_Sub10_Sub1_2.readUnsignedByte();
-			if ((local32 & 0x80) != 0) {
-				local32 += Static5.aClass4_Sub10_Sub1_2.readUnsignedByte() << 8;
-			}
-			Static30.method3565(local24, local32, local28);
-		}
-	}
-
 	@OriginalMember(owner = "client!ud", name = "a", descriptor = "(Lclient!wf;BIII)V")
 	public static void method4309(@OriginalArg(0) Component arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3) {
 		if (GlRenderer.enabled) {
@@ -295,17 +177,17 @@ public final class Static35 {
 				Static7.anInt6008 = 2;
 				Static2.anInt1629 = 0;
 				Static4.anInt3275 = Mouse.clickY;
-				Static3.aClass4_Sub10_Sub1_1.writeOpcode(52);
-				Static3.aClass4_Sub10_Sub1_1.writeShort(local24);
-				Static3.aClass4_Sub10_Sub1_1.writeByte(Keyboard.pressedKeys[82] ? 1 : 0);
+				Protocol.outboundBuffer.writeOpcode(52);
+				Protocol.outboundBuffer.writeShort(local24);
+				Protocol.outboundBuffer.writeByte(Keyboard.pressedKeys[82] ? 1 : 0);
 				Static15.method1337(PlayerList.self.anIntArray422[0], 0, 0, local46.getSize(), local19, PlayerList.self.anIntArray426[0], 0, local46.getSize(), local15);
 			}
 		}
 		if (local28 == 17) {
-			Static3.aClass4_Sub10_Sub1_1.writeOpcode(95);
-			Static3.aClass4_Sub10_Sub1_1.writeShort(local24);
-			Static3.aClass4_Sub10_Sub1_1.writeIntAlt3(local19);
-			Static3.aClass4_Sub10_Sub1_1.writeShortLEA(local15);
+			Protocol.outboundBuffer.writeOpcode(95);
+			Protocol.outboundBuffer.writeShort(local24);
+			Protocol.outboundBuffer.writeIntAlt3(local19);
+			Protocol.outboundBuffer.writeShortLEA(local15);
 			Static2.anInt2246 = 0;
 			Static1.aClass185_3 = InterfaceList.getComponent(local19);
 			Static5.anInt3884 = local15;
@@ -317,12 +199,12 @@ public final class Static35 {
 				Static7.anInt6008 = 2;
 				Static4.anInt3275 = Mouse.clickY;
 				Static2.anInt1629 = 0;
-				Static3.aClass4_Sub10_Sub1_1.writeOpcode(160);
-				Static3.aClass4_Sub10_Sub1_1.writeByteC(Keyboard.pressedKeys[82] ? 1 : 0);
-				Static3.aClass4_Sub10_Sub1_1.writeIntLE2(Static5.anInt4302);
-				Static3.aClass4_Sub10_Sub1_1.writeShortLE2(local24);
-				Static3.aClass4_Sub10_Sub1_1.writeShort(Static1.anInt314);
-				Static3.aClass4_Sub10_Sub1_1.writeShortLEA(Static1.anInt243);
+				Protocol.outboundBuffer.writeOpcode(160);
+				Protocol.outboundBuffer.writeByteC(Keyboard.pressedKeys[82] ? 1 : 0);
+				Protocol.outboundBuffer.writeIntLE2(Static5.anInt4302);
+				Protocol.outboundBuffer.writeShortLE2(local24);
+				Protocol.outboundBuffer.writeShort(Static1.anInt314);
+				Protocol.outboundBuffer.writeShortLEA(Static1.anInt243);
 				Static15.method1337(PlayerList.self.anIntArray422[0], 0, 0, local146.getSize(), local19, PlayerList.self.anIntArray426[0], 0, local146.getSize(), local15);
 			}
 		}
@@ -331,11 +213,11 @@ public final class Static35 {
 			Static7.anInt6008 = 2;
 			Static6.anInt5177 = Mouse.clickX;
 			Static2.anInt1629 = 0;
-			Static3.aClass4_Sub10_Sub1_1.writeOpcode(134);
-			Static3.aClass4_Sub10_Sub1_1.writeByteS(Keyboard.pressedKeys[82] ? 1 : 0);
-			Static3.aClass4_Sub10_Sub1_1.writeShortA(Integer.MAX_VALUE & (int) (local32 >>> 32));
-			Static3.aClass4_Sub10_Sub1_1.writeShortA(Static7.originZ + local19);
-			Static3.aClass4_Sub10_Sub1_1.writeShortLEA(Static5.originX + local15);
+			Protocol.outboundBuffer.writeOpcode(134);
+			Protocol.outboundBuffer.writeByteS(Keyboard.pressedKeys[82] ? 1 : 0);
+			Protocol.outboundBuffer.writeShortA(Integer.MAX_VALUE & (int) (local32 >>> 32));
+			Protocol.outboundBuffer.writeShortA(Static7.originZ + local19);
+			Protocol.outboundBuffer.writeShortLEA(Static5.originX + local15);
 			Static13.method1004(local19, local32, local15);
 		}
 		if (local28 == 46) {
@@ -343,11 +225,11 @@ public final class Static35 {
 			Static6.anInt5177 = Mouse.clickX;
 			Static7.anInt6008 = 2;
 			Static4.anInt3275 = Mouse.clickY;
-			Static3.aClass4_Sub10_Sub1_1.writeOpcode(227);
-			Static3.aClass4_Sub10_Sub1_1.writeShort(local15 + Static5.originX);
-			Static3.aClass4_Sub10_Sub1_1.writeByte(Keyboard.pressedKeys[82] ? 1 : 0);
-			Static3.aClass4_Sub10_Sub1_1.writeShort(Static7.originZ + local19);
-			Static3.aClass4_Sub10_Sub1_1.writeShortLEA(local24);
+			Protocol.outboundBuffer.writeOpcode(227);
+			Protocol.outboundBuffer.writeShort(local15 + Static5.originX);
+			Protocol.outboundBuffer.writeByte(Keyboard.pressedKeys[82] ? 1 : 0);
+			Protocol.outboundBuffer.writeShort(Static7.originZ + local19);
+			Protocol.outboundBuffer.writeShortLEA(local24);
 			Static15.method1337(PlayerList.self.anIntArray422[0], 0, 0, 0, local19, PlayerList.self.anIntArray426[0], 0, 0, local15);
 		}
 		if (local28 == 21) {
@@ -357,12 +239,12 @@ public final class Static35 {
 				Static6.anInt5177 = Mouse.clickX;
 				Static7.anInt6008 = 2;
 				Static2.anInt1629 = 0;
-				Static3.aClass4_Sub10_Sub1_1.writeOpcode(123);
-				Static3.aClass4_Sub10_Sub1_1.writeShortLEA(local24);
-				Static3.aClass4_Sub10_Sub1_1.writeInt(Static5.anInt4302);
-				Static3.aClass4_Sub10_Sub1_1.writeShortA(Static1.anInt314);
-				Static3.aClass4_Sub10_Sub1_1.writeByteS(Keyboard.pressedKeys[82] ? 1 : 0);
-				Static3.aClass4_Sub10_Sub1_1.writeShortLEA(Static1.anInt243);
+				Protocol.outboundBuffer.writeOpcode(123);
+				Protocol.outboundBuffer.writeShortLEA(local24);
+				Protocol.outboundBuffer.writeInt(Static5.anInt4302);
+				Protocol.outboundBuffer.writeShortA(Static1.anInt314);
+				Protocol.outboundBuffer.writeByteS(Keyboard.pressedKeys[82] ? 1 : 0);
+				Protocol.outboundBuffer.writeShortLEA(Static1.anInt243);
 				Static15.method1337(PlayerList.self.anIntArray422[0], 0, 0, local346.getSize(), local19, PlayerList.self.anIntArray426[0], 0, local346.getSize(), local15);
 			}
 		}
@@ -371,19 +253,19 @@ public final class Static35 {
 			Static6.anInt5177 = Mouse.clickX;
 			Static2.anInt1629 = 0;
 			Static7.anInt6008 = 2;
-			Static3.aClass4_Sub10_Sub1_1.writeOpcode(72);
-			Static3.aClass4_Sub10_Sub1_1.writeShort(local24);
+			Protocol.outboundBuffer.writeOpcode(72);
+			Protocol.outboundBuffer.writeShort(local24);
 		}
 		if (local28 == 19) {
 			if (local24 == 0) {
 				Static2.anInt1767 = 1;
 				Static27.method3186(Static7.y, local15, local19);
 			} else if (local24 == 1) {
-				Static3.aClass4_Sub10_Sub1_1.writeOpcode(204);
-				Static3.aClass4_Sub10_Sub1_1.writeShortA(local19 + Static7.originZ);
-				Static3.aClass4_Sub10_Sub1_1.writeShortA(Static2.anInt1367);
-				Static3.aClass4_Sub10_Sub1_1.writeIntAlt3(Static1.anInt1053);
-				Static3.aClass4_Sub10_Sub1_1.writeShortLE2(local15 + Static5.originX);
+				Protocol.outboundBuffer.writeOpcode(204);
+				Protocol.outboundBuffer.writeShortA(local19 + Static7.originZ);
+				Protocol.outboundBuffer.writeShortA(Static2.anInt1367);
+				Protocol.outboundBuffer.writeIntAlt3(Static1.anInt1053);
+				Protocol.outboundBuffer.writeShortLE2(local15 + Static5.originX);
 			}
 		}
 		if (local28 == 28) {
@@ -391,14 +273,14 @@ public final class Static35 {
 			Static7.anInt6008 = 2;
 			Static6.anInt5177 = Mouse.clickX;
 			Static2.anInt1629 = 0;
-			Static3.aClass4_Sub10_Sub1_1.writeOpcode(119);
-			Static3.aClass4_Sub10_Sub1_1.writeIntAlt3(Static5.anInt4302);
-			Static3.aClass4_Sub10_Sub1_1.writeShort(Static7.originZ + local19);
-			Static3.aClass4_Sub10_Sub1_1.writeShortA(Static1.anInt243);
-			Static3.aClass4_Sub10_Sub1_1.writeShortLE2(Static1.anInt314);
-			Static3.aClass4_Sub10_Sub1_1.writeShortLEA(local24);
-			Static3.aClass4_Sub10_Sub1_1.writeShortLE2(Static5.originX + local15);
-			Static3.aClass4_Sub10_Sub1_1.writeByteS(Keyboard.pressedKeys[82] ? 1 : 0);
+			Protocol.outboundBuffer.writeOpcode(119);
+			Protocol.outboundBuffer.writeIntAlt3(Static5.anInt4302);
+			Protocol.outboundBuffer.writeShort(Static7.originZ + local19);
+			Protocol.outboundBuffer.writeShortA(Static1.anInt243);
+			Protocol.outboundBuffer.writeShortLE2(Static1.anInt314);
+			Protocol.outboundBuffer.writeShortLEA(local24);
+			Protocol.outboundBuffer.writeShortLE2(Static5.originX + local15);
+			Protocol.outboundBuffer.writeByteS(Keyboard.pressedKeys[82] ? 1 : 0);
 			Static15.method1337(PlayerList.self.anIntArray422[0], 0, 0, 0, local19, PlayerList.self.anIntArray426[0], 0, 0, local15);
 		}
 		if (local28 == 36) {
@@ -408,9 +290,9 @@ public final class Static35 {
 				Static2.anInt1629 = 0;
 				Static6.anInt5177 = Mouse.clickX;
 				Static4.anInt3275 = Mouse.clickY;
-				Static3.aClass4_Sub10_Sub1_1.writeOpcode(37);
-				Static3.aClass4_Sub10_Sub1_1.writeByte(Keyboard.pressedKeys[82] ? 1 : 0);
-				Static3.aClass4_Sub10_Sub1_1.writeShortLEA(local24);
+				Protocol.outboundBuffer.writeOpcode(37);
+				Protocol.outboundBuffer.writeByte(Keyboard.pressedKeys[82] ? 1 : 0);
+				Protocol.outboundBuffer.writeShortLEA(local24);
 				Static15.method1337(PlayerList.self.anIntArray422[0], 0, 0, local582.getSize(), local19, PlayerList.self.anIntArray426[0], 0, local582.getSize(), local15);
 			}
 		}
@@ -421,17 +303,17 @@ public final class Static35 {
 				Static6.anInt5177 = Mouse.clickX;
 				Static2.anInt1629 = 0;
 				Static4.anInt3275 = Mouse.clickY;
-				Static3.aClass4_Sub10_Sub1_1.writeOpcode(4);
-				Static3.aClass4_Sub10_Sub1_1.writeByte(Keyboard.pressedKeys[82] ? 1 : 0);
-				Static3.aClass4_Sub10_Sub1_1.writeShortA(local24);
+				Protocol.outboundBuffer.writeOpcode(4);
+				Protocol.outboundBuffer.writeByte(Keyboard.pressedKeys[82] ? 1 : 0);
+				Protocol.outboundBuffer.writeShortA(local24);
 				Static15.method1337(PlayerList.self.anIntArray422[0], 0, 0, local649.getSize(), local19, PlayerList.self.anIntArray426[0], 0, local649.getSize(), local15);
 			}
 		}
 		if (local28 == 10) {
-			Static3.aClass4_Sub10_Sub1_1.writeOpcode(102);
-			Static3.aClass4_Sub10_Sub1_1.writeInt(local19);
-			Static3.aClass4_Sub10_Sub1_1.writeShortA(local15);
-			Static3.aClass4_Sub10_Sub1_1.writeShort(local24);
+			Protocol.outboundBuffer.writeOpcode(102);
+			Protocol.outboundBuffer.writeInt(local19);
+			Protocol.outboundBuffer.writeShortA(local15);
+			Protocol.outboundBuffer.writeShort(local24);
 			Static2.anInt2246 = 0;
 			Static1.aClass185_3 = InterfaceList.getComponent(local19);
 			Static5.anInt3884 = local15;
@@ -443,9 +325,9 @@ public final class Static35 {
 				Static4.anInt3275 = Mouse.clickY;
 				Static7.anInt6008 = 2;
 				Static6.anInt5177 = Mouse.clickX;
-				Static3.aClass4_Sub10_Sub1_1.writeOpcode(33);
-				Static3.aClass4_Sub10_Sub1_1.writeShortLEA(local24);
-				Static3.aClass4_Sub10_Sub1_1.writeByteA(Keyboard.pressedKeys[82] ? 1 : 0);
+				Protocol.outboundBuffer.writeOpcode(33);
+				Protocol.outboundBuffer.writeShortLEA(local24);
+				Protocol.outboundBuffer.writeByteA(Keyboard.pressedKeys[82] ? 1 : 0);
 				Static15.method1337(PlayerList.self.anIntArray422[0], 0, 0, local744.getSize(), local19, PlayerList.self.anIntArray426[0], 0, local744.getSize(), local15);
 			}
 		}
@@ -454,21 +336,21 @@ public final class Static35 {
 			Static2.anInt1629 = 0;
 			Static4.anInt3275 = Mouse.clickY;
 			Static7.anInt6008 = 2;
-			Static3.aClass4_Sub10_Sub1_1.writeOpcode(176);
-			Static3.aClass4_Sub10_Sub1_1.writeShort(local24);
+			Protocol.outboundBuffer.writeOpcode(176);
+			Protocol.outboundBuffer.writeShort(local24);
 		}
 		if (local28 == 4) {
 			Static7.anInt6008 = 2;
 			Static4.anInt3275 = Mouse.clickY;
 			Static2.anInt1629 = 0;
 			Static6.anInt5177 = Mouse.clickX;
-			Static3.aClass4_Sub10_Sub1_1.writeOpcode(89);
-			Static3.aClass4_Sub10_Sub1_1.writeShort((int) (local32 >>> 32) & Integer.MAX_VALUE);
-			Static3.aClass4_Sub10_Sub1_1.writeByteC(Keyboard.pressedKeys[82] ? 1 : 0);
-			Static3.aClass4_Sub10_Sub1_1.writeShortLEA(Static5.originX + local15);
-			Static3.aClass4_Sub10_Sub1_1.writeShortLE2(Static2.anInt1367);
-			Static3.aClass4_Sub10_Sub1_1.writeShort(Static7.originZ + local19);
-			Static3.aClass4_Sub10_Sub1_1.writeIntAlt3(Static1.anInt1053);
+			Protocol.outboundBuffer.writeOpcode(89);
+			Protocol.outboundBuffer.writeShort((int) (local32 >>> 32) & Integer.MAX_VALUE);
+			Protocol.outboundBuffer.writeByteC(Keyboard.pressedKeys[82] ? 1 : 0);
+			Protocol.outboundBuffer.writeShortLEA(Static5.originX + local15);
+			Protocol.outboundBuffer.writeShortLE2(Static2.anInt1367);
+			Protocol.outboundBuffer.writeShort(Static7.originZ + local19);
+			Protocol.outboundBuffer.writeIntAlt3(Static1.anInt1053);
 			Static13.method1004(local19, local32, local15);
 		}
 		if (local28 == 6) {
@@ -476,11 +358,11 @@ public final class Static35 {
 			Static2.anInt1629 = 0;
 			Static7.anInt6008 = 2;
 			Static4.anInt3275 = Mouse.clickY;
-			Static3.aClass4_Sub10_Sub1_1.writeOpcode(232);
-			Static3.aClass4_Sub10_Sub1_1.writeShortLE2(local19 + Static7.originZ);
-			Static3.aClass4_Sub10_Sub1_1.writeShortLEA(local24);
-			Static3.aClass4_Sub10_Sub1_1.writeByteA(Keyboard.pressedKeys[82] ? 1 : 0);
-			Static3.aClass4_Sub10_Sub1_1.writeShortLE2(local15 + Static5.originX);
+			Protocol.outboundBuffer.writeOpcode(232);
+			Protocol.outboundBuffer.writeShortLE2(local19 + Static7.originZ);
+			Protocol.outboundBuffer.writeShortLEA(local24);
+			Protocol.outboundBuffer.writeByteA(Keyboard.pressedKeys[82] ? 1 : 0);
+			Protocol.outboundBuffer.writeShortLE2(local15 + Static5.originX);
 			Static15.method1337(PlayerList.self.anIntArray422[0], 0, 0, 0, local19, PlayerList.self.anIntArray426[0], 0, 0, local15);
 		}
 		if (local28 == 42) {
@@ -490,11 +372,11 @@ public final class Static35 {
 				Static6.anInt5177 = Mouse.clickX;
 				Static4.anInt3275 = Mouse.clickY;
 				Static7.anInt6008 = 2;
-				Static3.aClass4_Sub10_Sub1_1.writeOpcode(155);
-				Static3.aClass4_Sub10_Sub1_1.writeShortA(local24);
-				Static3.aClass4_Sub10_Sub1_1.writeByteC(Keyboard.pressedKeys[82] ? 1 : 0);
-				Static3.aClass4_Sub10_Sub1_1.writeShort(Static2.anInt1367);
-				Static3.aClass4_Sub10_Sub1_1.writeIntAlt3(Static1.anInt1053);
+				Protocol.outboundBuffer.writeOpcode(155);
+				Protocol.outboundBuffer.writeShortA(local24);
+				Protocol.outboundBuffer.writeByteC(Keyboard.pressedKeys[82] ? 1 : 0);
+				Protocol.outboundBuffer.writeShort(Static2.anInt1367);
+				Protocol.outboundBuffer.writeIntAlt3(Static1.anInt1053);
 				Static15.method1337(PlayerList.self.anIntArray422[0], 0, 0, local969.getSize(), local19, PlayerList.self.anIntArray426[0], 0, local969.getSize(), local15);
 			}
 		}
@@ -505,9 +387,9 @@ public final class Static35 {
 				Static2.anInt1629 = 0;
 				Static6.anInt5177 = Mouse.clickX;
 				Static7.anInt6008 = 2;
-				Static3.aClass4_Sub10_Sub1_1.writeOpcode(105);
-				Static3.aClass4_Sub10_Sub1_1.writeShort(local24);
-				Static3.aClass4_Sub10_Sub1_1.writeByte(Keyboard.pressedKeys[82] ? 1 : 0);
+				Protocol.outboundBuffer.writeOpcode(105);
+				Protocol.outboundBuffer.writeShort(local24);
+				Protocol.outboundBuffer.writeByte(Keyboard.pressedKeys[82] ? 1 : 0);
 				Static15.method1337(PlayerList.self.anIntArray422[0], 0, 0, local1044.getSize(), local19, PlayerList.self.anIntArray426[0], 0, local1044.getSize(), local15);
 			}
 		}
@@ -518,9 +400,9 @@ public final class Static35 {
 			} else if (Static3.anInt2576 > 0 && Keyboard.pressedKeys[82] && Keyboard.pressedKeys[81]) {
 				Static24.method2945(Static5.originX + local15, Static7.originZ + local19, Static7.y);
 			} else {
-				Static3.aClass4_Sub10_Sub1_1.writeOpcode(85);
-				Static3.aClass4_Sub10_Sub1_1.writeShortLEA(Static5.originX + local15);
-				Static3.aClass4_Sub10_Sub1_1.writeShortLE2(Static7.originZ + local19);
+				Protocol.outboundBuffer.writeOpcode(85);
+				Protocol.outboundBuffer.writeShortLEA(Static5.originX + local15);
+				Protocol.outboundBuffer.writeShortLE2(Static7.originZ + local19);
 			}
 		}
 		if (local28 == 59) {
@@ -530,26 +412,26 @@ public final class Static35 {
 				Static6.anInt5177 = Mouse.clickX;
 				Static2.anInt1629 = 0;
 				Static7.anInt6008 = 2;
-				Static3.aClass4_Sub10_Sub1_1.writeOpcode(53);
-				Static3.aClass4_Sub10_Sub1_1.writeShortLEA(local24);
-				Static3.aClass4_Sub10_Sub1_1.writeByteS(Keyboard.pressedKeys[82] ? 1 : 0);
+				Protocol.outboundBuffer.writeOpcode(53);
+				Protocol.outboundBuffer.writeShortLEA(local24);
+				Protocol.outboundBuffer.writeByteS(Keyboard.pressedKeys[82] ? 1 : 0);
 				Static15.method1337(PlayerList.self.anIntArray422[0], 0, 0, local1170.getSize(), local19, PlayerList.self.anIntArray426[0], 0, local1170.getSize(), local15);
 			}
 		}
 		if (local28 == 51) {
-			Static3.aClass4_Sub10_Sub1_1.writeOpcode(88);
-			Static3.aClass4_Sub10_Sub1_1.writeShortLEA(local24);
-			Static3.aClass4_Sub10_Sub1_1.writeIntAlt3Reverse(local19);
-			Static3.aClass4_Sub10_Sub1_1.writeShortLEA(local15);
+			Protocol.outboundBuffer.writeOpcode(88);
+			Protocol.outboundBuffer.writeShortLEA(local24);
+			Protocol.outboundBuffer.writeIntAlt3Reverse(local19);
+			Protocol.outboundBuffer.writeShortLEA(local15);
 			Static2.anInt2246 = 0;
 			Static1.aClass185_3 = InterfaceList.getComponent(local19);
 			Static5.anInt3884 = local15;
 		}
 		if (local28 == 13) {
-			Static3.aClass4_Sub10_Sub1_1.writeOpcode(242);
-			Static3.aClass4_Sub10_Sub1_1.writeShortLEA(local15);
-			Static3.aClass4_Sub10_Sub1_1.writeShortLEA(local24);
-			Static3.aClass4_Sub10_Sub1_1.writeIntAlt3Reverse(local19);
+			Protocol.outboundBuffer.writeOpcode(242);
+			Protocol.outboundBuffer.writeShortLEA(local15);
+			Protocol.outboundBuffer.writeShortLEA(local24);
+			Protocol.outboundBuffer.writeIntAlt3Reverse(local19);
 			Static2.anInt2246 = 0;
 			Static1.aClass185_3 = InterfaceList.getComponent(local19);
 			Static5.anInt3884 = local15;
@@ -560,11 +442,11 @@ public final class Static35 {
 			Static28.method3270(Static6.aClass185_14);
 		}
 		if (local28 == 1) {
-			Static3.aClass4_Sub10_Sub1_1.writeOpcode(40);
-			Static3.aClass4_Sub10_Sub1_1.writeIntAlt3Reverse(local19);
-			Static3.aClass4_Sub10_Sub1_1.writeShort(Static2.anInt1367);
-			Static3.aClass4_Sub10_Sub1_1.writeShortLE2(local15);
-			Static3.aClass4_Sub10_Sub1_1.writeInt(Static1.anInt1053);
+			Protocol.outboundBuffer.writeOpcode(40);
+			Protocol.outboundBuffer.writeIntAlt3Reverse(local19);
+			Protocol.outboundBuffer.writeShort(Static2.anInt1367);
+			Protocol.outboundBuffer.writeShortLE2(local15);
+			Protocol.outboundBuffer.writeInt(Static1.anInt1053);
 		}
 		if (local28 == 29) {
 			@Pc(1354) Player local1354 = PlayerList.players[local24];
@@ -573,15 +455,15 @@ public final class Static35 {
 				Static4.anInt3275 = Mouse.clickY;
 				Static6.anInt5177 = Mouse.clickX;
 				Static7.anInt6008 = 2;
-				Static3.aClass4_Sub10_Sub1_1.writeOpcode(148);
-				Static3.aClass4_Sub10_Sub1_1.writeShortA(local24);
-				Static3.aClass4_Sub10_Sub1_1.writeByteA(Keyboard.pressedKeys[82] ? 1 : 0);
+				Protocol.outboundBuffer.writeOpcode(148);
+				Protocol.outboundBuffer.writeShortA(local24);
+				Protocol.outboundBuffer.writeByteA(Keyboard.pressedKeys[82] ? 1 : 0);
 				Static15.method1337(PlayerList.self.anIntArray422[0], 0, 0, local1354.getSize(), local19, PlayerList.self.anIntArray426[0], 0, local1354.getSize(), local15);
 			}
 		}
 		if (local28 == 11) {
-			Static3.aClass4_Sub10_Sub1_1.writeOpcode(158);
-			Static3.aClass4_Sub10_Sub1_1.writeInt(local19);
+			Protocol.outboundBuffer.writeOpcode(158);
+			Protocol.outboundBuffer.writeInt(local19);
 			@Pc(1434) Component local1434 = InterfaceList.getComponent(local19);
 			if (local1434.cs1Scripts != null && local1434.cs1Scripts[0][0] == 5) {
 				@Pc(1452) int local1452 = local1434.cs1Scripts[0][1];
@@ -596,11 +478,11 @@ public final class Static35 {
 			Static7.anInt6008 = 2;
 			Static2.anInt1629 = 0;
 			Static4.anInt3275 = Mouse.clickY;
-			Static3.aClass4_Sub10_Sub1_1.writeOpcode(159);
-			Static3.aClass4_Sub10_Sub1_1.writeShortLEA(local15 + Static5.originX);
-			Static3.aClass4_Sub10_Sub1_1.writeShort(Static7.originZ + local19);
-			Static3.aClass4_Sub10_Sub1_1.writeByte(Keyboard.pressedKeys[82] ? 1 : 0);
-			Static3.aClass4_Sub10_Sub1_1.writeShortLEA((int) (local32 >>> 32) & Integer.MAX_VALUE);
+			Protocol.outboundBuffer.writeOpcode(159);
+			Protocol.outboundBuffer.writeShortLEA(local15 + Static5.originX);
+			Protocol.outboundBuffer.writeShort(Static7.originZ + local19);
+			Protocol.outboundBuffer.writeByte(Keyboard.pressedKeys[82] ? 1 : 0);
+			Protocol.outboundBuffer.writeShortLEA((int) (local32 >>> 32) & Integer.MAX_VALUE);
 			Static13.method1004(local19, local32, local15);
 		}
 		if (local28 == 39) {
@@ -610,20 +492,20 @@ public final class Static35 {
 				Static4.anInt3275 = Mouse.clickY;
 				Static2.anInt1629 = 0;
 				Static7.anInt6008 = 2;
-				Static3.aClass4_Sub10_Sub1_1.writeOpcode(245);
-				Static3.aClass4_Sub10_Sub1_1.writeShort(local24);
-				Static3.aClass4_Sub10_Sub1_1.writeByteS(Keyboard.pressedKeys[82] ? 1 : 0);
+				Protocol.outboundBuffer.writeOpcode(245);
+				Protocol.outboundBuffer.writeShort(local24);
+				Protocol.outboundBuffer.writeByteS(Keyboard.pressedKeys[82] ? 1 : 0);
 				Static15.method1337(PlayerList.self.anIntArray422[0], 0, 0, local1545.getSize(), local19, PlayerList.self.anIntArray426[0], 0, local1545.getSize(), local15);
 			}
 		}
 		if (local28 == 15) {
-			Static3.aClass4_Sub10_Sub1_1.writeOpcode(58);
-			Static3.aClass4_Sub10_Sub1_1.writeShort(local24);
-			Static3.aClass4_Sub10_Sub1_1.writeIntAlt3(local19);
-			Static3.aClass4_Sub10_Sub1_1.writeShort(Static1.anInt314);
-			Static3.aClass4_Sub10_Sub1_1.writeShort(local15);
-			Static3.aClass4_Sub10_Sub1_1.writeShortA(Static1.anInt243);
-			Static3.aClass4_Sub10_Sub1_1.writeIntAlt3(Static5.anInt4302);
+			Protocol.outboundBuffer.writeOpcode(58);
+			Protocol.outboundBuffer.writeShort(local24);
+			Protocol.outboundBuffer.writeIntAlt3(local19);
+			Protocol.outboundBuffer.writeShort(Static1.anInt314);
+			Protocol.outboundBuffer.writeShort(local15);
+			Protocol.outboundBuffer.writeShortA(Static1.anInt243);
+			Protocol.outboundBuffer.writeIntAlt3(Static5.anInt4302);
 			Static2.anInt2246 = 0;
 			Static1.aClass185_3 = InterfaceList.getComponent(local19);
 			Static5.anInt3884 = local15;
@@ -635,15 +517,15 @@ public final class Static35 {
 				local1662 = Static36.method4402(local1660);
 			}
 			if (local1662) {
-				Static3.aClass4_Sub10_Sub1_1.writeOpcode(158);
-				Static3.aClass4_Sub10_Sub1_1.writeInt(local19);
+				Protocol.outboundBuffer.writeOpcode(158);
+				Protocol.outboundBuffer.writeInt(local19);
 			}
 		}
 		if (local28 == 30) {
-			Static3.aClass4_Sub10_Sub1_1.writeOpcode(81);
-			Static3.aClass4_Sub10_Sub1_1.writeShortLE2(local15);
-			Static3.aClass4_Sub10_Sub1_1.writeShortLEA(local24);
-			Static3.aClass4_Sub10_Sub1_1.writeIntLE2(local19);
+			Protocol.outboundBuffer.writeOpcode(81);
+			Protocol.outboundBuffer.writeShortLE2(local15);
+			Protocol.outboundBuffer.writeShortLEA(local24);
+			Protocol.outboundBuffer.writeIntLE2(local19);
 			Static2.anInt2246 = 0;
 			Static1.aClass185_3 = InterfaceList.getComponent(local19);
 			Static5.anInt3884 = local15;
@@ -655,9 +537,9 @@ public final class Static35 {
 				Static4.anInt3275 = Mouse.clickY;
 				Static2.anInt1629 = 0;
 				Static6.anInt5177 = Mouse.clickX;
-				Static3.aClass4_Sub10_Sub1_1.writeOpcode(77);
-				Static3.aClass4_Sub10_Sub1_1.writeShortLE2(local24);
-				Static3.aClass4_Sub10_Sub1_1.writeByteS(Keyboard.pressedKeys[82] ? 1 : 0);
+				Protocol.outboundBuffer.writeOpcode(77);
+				Protocol.outboundBuffer.writeShortLE2(local24);
+				Protocol.outboundBuffer.writeByteS(Keyboard.pressedKeys[82] ? 1 : 0);
 				Static15.method1337(PlayerList.self.anIntArray422[0], 0, 0, local1728.getSize(), local19, PlayerList.self.anIntArray426[0], 0, local1728.getSize(), local15);
 			}
 		}
@@ -669,17 +551,17 @@ public final class Static35 {
 					Static24.method2945(local15 + Static5.originX, local19 + Static7.originZ, Static7.y);
 				} else {
 					Static37.method4661(local15, 1, local19);
-					Static3.aClass4_Sub10_Sub1_1.writeByte(Static2.anInt1941);
-					Static3.aClass4_Sub10_Sub1_1.writeByte(Static7.anInt5798);
-					Static3.aClass4_Sub10_Sub1_1.writeShort((int) Static5.aFloat97);
-					Static3.aClass4_Sub10_Sub1_1.writeByte(57);
-					Static3.aClass4_Sub10_Sub1_1.writeByte(Static6.anInt3585);
-					Static3.aClass4_Sub10_Sub1_1.writeByte(Static6.anInt4761);
-					Static3.aClass4_Sub10_Sub1_1.writeByte(89);
-					Static3.aClass4_Sub10_Sub1_1.writeShort(PlayerList.self.x);
-					Static3.aClass4_Sub10_Sub1_1.writeShort(PlayerList.self.z);
-					Static3.aClass4_Sub10_Sub1_1.writeByte(Static2.anInt946);
-					Static3.aClass4_Sub10_Sub1_1.writeByte(63);
+					Protocol.outboundBuffer.writeByte(Static2.anInt1941);
+					Protocol.outboundBuffer.writeByte(Static7.anInt5798);
+					Protocol.outboundBuffer.writeShort((int) Static5.aFloat97);
+					Protocol.outboundBuffer.writeByte(57);
+					Protocol.outboundBuffer.writeByte(Static6.anInt3585);
+					Protocol.outboundBuffer.writeByte(Static6.anInt4761);
+					Protocol.outboundBuffer.writeByte(89);
+					Protocol.outboundBuffer.writeShort(PlayerList.self.x);
+					Protocol.outboundBuffer.writeShort(PlayerList.self.z);
+					Protocol.outboundBuffer.writeByte(Static2.anInt946);
+					Protocol.outboundBuffer.writeByte(63);
 					Static15.method1337(PlayerList.self.anIntArray422[0], 0, 0, 0, local19, PlayerList.self.anIntArray426[0], 0, 0, local15);
 				}
 			}
@@ -706,13 +588,13 @@ public final class Static35 {
 			Static7.anInt6008 = 2;
 			Static2.anInt1629 = 0;
 			Static4.anInt3275 = Mouse.clickY;
-			Static3.aClass4_Sub10_Sub1_1.writeOpcode(28);
-			Static3.aClass4_Sub10_Sub1_1.writeShortLEA(local19 + Static7.originZ);
-			Static3.aClass4_Sub10_Sub1_1.writeInt(Static1.anInt1053);
-			Static3.aClass4_Sub10_Sub1_1.writeShortLE2(Static2.anInt1367);
-			Static3.aClass4_Sub10_Sub1_1.writeShort(local24);
-			Static3.aClass4_Sub10_Sub1_1.writeShortLE2(local15 + Static5.originX);
-			Static3.aClass4_Sub10_Sub1_1.writeByteS(Keyboard.pressedKeys[82] ? 1 : 0);
+			Protocol.outboundBuffer.writeOpcode(28);
+			Protocol.outboundBuffer.writeShortLEA(local19 + Static7.originZ);
+			Protocol.outboundBuffer.writeInt(Static1.anInt1053);
+			Protocol.outboundBuffer.writeShortLE2(Static2.anInt1367);
+			Protocol.outboundBuffer.writeShort(local24);
+			Protocol.outboundBuffer.writeShortLE2(local15 + Static5.originX);
+			Protocol.outboundBuffer.writeByteS(Keyboard.pressedKeys[82] ? 1 : 0);
 			Static15.method1337(PlayerList.self.anIntArray422[0], 0, 0, 0, local19, PlayerList.self.anIntArray426[0], 0, 0, local15);
 		}
 		if (local28 == 5) {
@@ -722,11 +604,11 @@ public final class Static35 {
 				Static6.anInt5177 = Mouse.clickX;
 				Static4.anInt3275 = Mouse.clickY;
 				Static2.anInt1629 = 0;
-				Static3.aClass4_Sub10_Sub1_1.writeOpcode(224);
-				Static3.aClass4_Sub10_Sub1_1.writeShortA(local24);
-				Static3.aClass4_Sub10_Sub1_1.writeShort(Static2.anInt1367);
-				Static3.aClass4_Sub10_Sub1_1.writeIntLE2(Static1.anInt1053);
-				Static3.aClass4_Sub10_Sub1_1.writeByteS(Keyboard.pressedKeys[82] ? 1 : 0);
+				Protocol.outboundBuffer.writeOpcode(224);
+				Protocol.outboundBuffer.writeShortA(local24);
+				Protocol.outboundBuffer.writeShort(Static2.anInt1367);
+				Protocol.outboundBuffer.writeIntLE2(Static1.anInt1053);
+				Protocol.outboundBuffer.writeByteS(Keyboard.pressedKeys[82] ? 1 : 0);
 				Static15.method1337(PlayerList.self.anIntArray422[0], 0, 0, local2053.getSize(), local19, PlayerList.self.anIntArray426[0], 0, local2053.getSize(), local15);
 			}
 		}
@@ -735,11 +617,11 @@ public final class Static35 {
 			Static7.anInt6008 = 2;
 			Static4.anInt3275 = Mouse.clickY;
 			Static6.anInt5177 = Mouse.clickX;
-			Static3.aClass4_Sub10_Sub1_1.writeOpcode(48);
-			Static3.aClass4_Sub10_Sub1_1.writeShort(Static5.originX + local15);
-			Static3.aClass4_Sub10_Sub1_1.writeShortA((int) (local32 >>> 32) & Integer.MAX_VALUE);
-			Static3.aClass4_Sub10_Sub1_1.writeByteS(Keyboard.pressedKeys[82] ? 1 : 0);
-			Static3.aClass4_Sub10_Sub1_1.writeShort(Static7.originZ + local19);
+			Protocol.outboundBuffer.writeOpcode(48);
+			Protocol.outboundBuffer.writeShort(Static5.originX + local15);
+			Protocol.outboundBuffer.writeShortA((int) (local32 >>> 32) & Integer.MAX_VALUE);
+			Protocol.outboundBuffer.writeByteS(Keyboard.pressedKeys[82] ? 1 : 0);
+			Protocol.outboundBuffer.writeShort(Static7.originZ + local19);
 			Static13.method1004(local19, local32, local15);
 		}
 		if (local28 == 34) {
@@ -762,19 +644,19 @@ public final class Static35 {
 			return;
 		}
 		if (local28 == 49) {
-			Static3.aClass4_Sub10_Sub1_1.writeOpcode(145);
-			Static3.aClass4_Sub10_Sub1_1.writeShortA(local15);
-			Static3.aClass4_Sub10_Sub1_1.writeIntAlt3(local19);
-			Static3.aClass4_Sub10_Sub1_1.writeShortA(local24);
+			Protocol.outboundBuffer.writeOpcode(145);
+			Protocol.outboundBuffer.writeShortA(local15);
+			Protocol.outboundBuffer.writeIntAlt3(local19);
+			Protocol.outboundBuffer.writeShortA(local24);
 			Static2.anInt2246 = 0;
 			Static1.aClass185_3 = InterfaceList.getComponent(local19);
 			Static5.anInt3884 = local15;
 		}
 		if (local28 == 58) {
-			Static3.aClass4_Sub10_Sub1_1.writeOpcode(214);
-			Static3.aClass4_Sub10_Sub1_1.writeShortLEA(local15);
-			Static3.aClass4_Sub10_Sub1_1.writeShortA(local24);
-			Static3.aClass4_Sub10_Sub1_1.writeInt(local19);
+			Protocol.outboundBuffer.writeOpcode(214);
+			Protocol.outboundBuffer.writeShortLEA(local15);
+			Protocol.outboundBuffer.writeShortA(local24);
+			Protocol.outboundBuffer.writeInt(local19);
 			Static2.anInt2246 = 0;
 			Static1.aClass185_3 = InterfaceList.getComponent(local19);
 			Static5.anInt3884 = local15;
@@ -786,17 +668,17 @@ public final class Static35 {
 				Static7.anInt6008 = 2;
 				Static2.anInt1629 = 0;
 				Static4.anInt3275 = Mouse.clickY;
-				Static3.aClass4_Sub10_Sub1_1.writeOpcode(12);
-				Static3.aClass4_Sub10_Sub1_1.writeShortLE2(local24);
-				Static3.aClass4_Sub10_Sub1_1.writeByte(Keyboard.pressedKeys[82] ? 1 : 0);
+				Protocol.outboundBuffer.writeOpcode(12);
+				Protocol.outboundBuffer.writeShortLE2(local24);
+				Protocol.outboundBuffer.writeByte(Keyboard.pressedKeys[82] ? 1 : 0);
 				Static15.method1337(PlayerList.self.anIntArray422[0], 0, 0, local2321.getSize(), local19, PlayerList.self.anIntArray426[0], 0, local2321.getSize(), local15);
 			}
 		}
 		if (local28 == 35) {
-			Static3.aClass4_Sub10_Sub1_1.writeOpcode(103);
-			Static3.aClass4_Sub10_Sub1_1.writeIntAlt3Reverse(local19);
-			Static3.aClass4_Sub10_Sub1_1.writeShortLE2(local15);
-			Static3.aClass4_Sub10_Sub1_1.writeShort(local24);
+			Protocol.outboundBuffer.writeOpcode(103);
+			Protocol.outboundBuffer.writeIntAlt3Reverse(local19);
+			Protocol.outboundBuffer.writeShortLE2(local15);
+			Protocol.outboundBuffer.writeShort(local24);
 			Static2.anInt2246 = 0;
 			Static1.aClass185_3 = InterfaceList.getComponent(local19);
 			Static5.anInt3884 = local15;
@@ -808,9 +690,9 @@ public final class Static35 {
 				Static6.anInt5177 = Mouse.clickX;
 				Static2.anInt1629 = 0;
 				Static7.anInt6008 = 2;
-				Static3.aClass4_Sub10_Sub1_1.writeOpcode(212);
-				Static3.aClass4_Sub10_Sub1_1.writeShortA(local24);
-				Static3.aClass4_Sub10_Sub1_1.writeByteA(Keyboard.pressedKeys[82] ? 1 : 0);
+				Protocol.outboundBuffer.writeOpcode(212);
+				Protocol.outboundBuffer.writeShortA(local24);
+				Protocol.outboundBuffer.writeByteA(Keyboard.pressedKeys[82] ? 1 : 0);
 				Static15.method1337(PlayerList.self.anIntArray422[0], 0, 0, local2423.getSize(), local19, PlayerList.self.anIntArray426[0], 0, local2423.getSize(), local15);
 			}
 		}
@@ -819,14 +701,14 @@ public final class Static35 {
 			Static7.anInt6008 = 2;
 			Static6.anInt5177 = Mouse.clickX;
 			Static2.anInt1629 = 0;
-			Static3.aClass4_Sub10_Sub1_1.writeOpcode(116);
-			Static3.aClass4_Sub10_Sub1_1.writeShort(Static1.anInt314);
-			Static3.aClass4_Sub10_Sub1_1.writeShortLEA(local15 + Static5.originX);
-			Static3.aClass4_Sub10_Sub1_1.writeShortLEA((int) (local32 >>> 32) & Integer.MAX_VALUE);
-			Static3.aClass4_Sub10_Sub1_1.writeIntLE2(Static5.anInt4302);
-			Static3.aClass4_Sub10_Sub1_1.writeByteC(Keyboard.pressedKeys[82] ? 1 : 0);
-			Static3.aClass4_Sub10_Sub1_1.writeShortLE2(Static7.originZ + local19);
-			Static3.aClass4_Sub10_Sub1_1.writeShortLE2(Static1.anInt243);
+			Protocol.outboundBuffer.writeOpcode(116);
+			Protocol.outboundBuffer.writeShort(Static1.anInt314);
+			Protocol.outboundBuffer.writeShortLEA(local15 + Static5.originX);
+			Protocol.outboundBuffer.writeShortLEA((int) (local32 >>> 32) & Integer.MAX_VALUE);
+			Protocol.outboundBuffer.writeIntLE2(Static5.anInt4302);
+			Protocol.outboundBuffer.writeByteC(Keyboard.pressedKeys[82] ? 1 : 0);
+			Protocol.outboundBuffer.writeShortLE2(Static7.originZ + local19);
+			Protocol.outboundBuffer.writeShortLE2(Static1.anInt243);
 			Static13.method1004(local19, local32, local15);
 		}
 		if (local28 == 44) {
@@ -834,11 +716,11 @@ public final class Static35 {
 			Static6.anInt5177 = Mouse.clickX;
 			Static2.anInt1629 = 0;
 			Static7.anInt6008 = 2;
-			Static3.aClass4_Sub10_Sub1_1.writeOpcode(3);
-			Static3.aClass4_Sub10_Sub1_1.writeByteC(Keyboard.pressedKeys[82] ? 1 : 0);
-			Static3.aClass4_Sub10_Sub1_1.writeShortLE2(Static7.originZ + local19);
-			Static3.aClass4_Sub10_Sub1_1.writeShortLE2(local24);
-			Static3.aClass4_Sub10_Sub1_1.writeShortA(local15 + Static5.originX);
+			Protocol.outboundBuffer.writeOpcode(3);
+			Protocol.outboundBuffer.writeByteC(Keyboard.pressedKeys[82] ? 1 : 0);
+			Protocol.outboundBuffer.writeShortLE2(Static7.originZ + local19);
+			Protocol.outboundBuffer.writeShortLE2(local24);
+			Protocol.outboundBuffer.writeShortA(local15 + Static5.originX);
 			Static15.method1337(PlayerList.self.anIntArray422[0], 0, 0, 0, local19, PlayerList.self.anIntArray426[0], 0, 0, local15);
 		}
 		if (local28 == 23 || local28 == 1009) {
@@ -856,8 +738,8 @@ public final class Static35 {
 					local2665 = local2665.method4265();
 				}
 				if (local2665 != null) {
-					Static3.aClass4_Sub10_Sub1_1.writeOpcode(65);
-					Static3.aClass4_Sub10_Sub1_1.writeShortLE2(local2665.id);
+					Protocol.outboundBuffer.writeOpcode(65);
+					Protocol.outboundBuffer.writeShortLE2(local2665.id);
 				}
 			}
 		}
@@ -869,11 +751,11 @@ public final class Static35 {
 			Static7.anInt6008 = 2;
 			Static6.anInt5177 = Mouse.clickX;
 			Static2.anInt1629 = 0;
-			Static3.aClass4_Sub10_Sub1_1.writeOpcode(60);
-			Static3.aClass4_Sub10_Sub1_1.writeShortA(local19 + Static7.originZ);
-			Static3.aClass4_Sub10_Sub1_1.writeShortLE2((int) (local32 >>> 32) & Integer.MAX_VALUE);
-			Static3.aClass4_Sub10_Sub1_1.writeByte(Keyboard.pressedKeys[82] ? 1 : 0);
-			Static3.aClass4_Sub10_Sub1_1.writeShortLE2(Static5.originX + local15);
+			Protocol.outboundBuffer.writeOpcode(60);
+			Protocol.outboundBuffer.writeShortA(local19 + Static7.originZ);
+			Protocol.outboundBuffer.writeShortLE2((int) (local32 >>> 32) & Integer.MAX_VALUE);
+			Protocol.outboundBuffer.writeByte(Keyboard.pressedKeys[82] ? 1 : 0);
+			Protocol.outboundBuffer.writeShortLE2(Static5.originX + local15);
 			Static13.method1004(local19, local32, local15);
 		}
 		if (local28 == 41) {
@@ -881,38 +763,38 @@ public final class Static35 {
 			Static2.anInt1629 = 0;
 			Static6.anInt5177 = Mouse.clickX;
 			Static4.anInt3275 = Mouse.clickY;
-			Static3.aClass4_Sub10_Sub1_1.writeOpcode(92);
-			Static3.aClass4_Sub10_Sub1_1.writeByteS(Keyboard.pressedKeys[82] ? 1 : 0);
-			Static3.aClass4_Sub10_Sub1_1.writeShortLE2((int) (local32 >>> 32) & Integer.MAX_VALUE);
-			Static3.aClass4_Sub10_Sub1_1.writeShortA(local15 + Static5.originX);
-			Static3.aClass4_Sub10_Sub1_1.writeShortA(local19 + Static7.originZ);
+			Protocol.outboundBuffer.writeOpcode(92);
+			Protocol.outboundBuffer.writeByteS(Keyboard.pressedKeys[82] ? 1 : 0);
+			Protocol.outboundBuffer.writeShortLE2((int) (local32 >>> 32) & Integer.MAX_VALUE);
+			Protocol.outboundBuffer.writeShortA(local15 + Static5.originX);
+			Protocol.outboundBuffer.writeShortA(local19 + Static7.originZ);
 			Static13.method1004(local19, local32, local15);
 		}
 		if (local28 == 50) {
-			Static3.aClass4_Sub10_Sub1_1.writeOpcode(177);
-			Static3.aClass4_Sub10_Sub1_1.writeIntAlt3Reverse(local19);
-			Static3.aClass4_Sub10_Sub1_1.writeShort(local24);
-			Static3.aClass4_Sub10_Sub1_1.writeIntLE2(Static1.anInt1053);
-			Static3.aClass4_Sub10_Sub1_1.writeShortLE2(local15);
-			Static3.aClass4_Sub10_Sub1_1.writeShortLE2(Static2.anInt1367);
+			Protocol.outboundBuffer.writeOpcode(177);
+			Protocol.outboundBuffer.writeIntAlt3Reverse(local19);
+			Protocol.outboundBuffer.writeShort(local24);
+			Protocol.outboundBuffer.writeIntLE2(Static1.anInt1053);
+			Protocol.outboundBuffer.writeShortLE2(local15);
+			Protocol.outboundBuffer.writeShortLE2(Static2.anInt1367);
 			Static2.anInt2246 = 0;
 			Static1.aClass185_3 = InterfaceList.getComponent(local19);
 			Static5.anInt3884 = local15;
 		}
 		if (local28 == 20) {
-			Static3.aClass4_Sub10_Sub1_1.writeOpcode(124);
-			Static3.aClass4_Sub10_Sub1_1.writeShortLEA(local15);
-			Static3.aClass4_Sub10_Sub1_1.writeShortLEA(local24);
-			Static3.aClass4_Sub10_Sub1_1.writeIntLE2(local19);
+			Protocol.outboundBuffer.writeOpcode(124);
+			Protocol.outboundBuffer.writeShortLEA(local15);
+			Protocol.outboundBuffer.writeShortLEA(local24);
+			Protocol.outboundBuffer.writeIntLE2(local19);
 			Static2.anInt2246 = 0;
 			Static1.aClass185_3 = InterfaceList.getComponent(local19);
 			Static5.anInt3884 = local15;
 		}
 		if (local28 == 2) {
-			Static3.aClass4_Sub10_Sub1_1.writeOpcode(205);
-			Static3.aClass4_Sub10_Sub1_1.writeIntAlt3Reverse(local19);
-			Static3.aClass4_Sub10_Sub1_1.writeShortLE2(local15);
-			Static3.aClass4_Sub10_Sub1_1.writeShortA(local24);
+			Protocol.outboundBuffer.writeOpcode(205);
+			Protocol.outboundBuffer.writeIntAlt3Reverse(local19);
+			Protocol.outboundBuffer.writeShortLE2(local15);
+			Protocol.outboundBuffer.writeShortA(local24);
 			Static2.anInt2246 = 0;
 			Static1.aClass185_3 = InterfaceList.getComponent(local19);
 			Static5.anInt3884 = local15;
@@ -922,11 +804,11 @@ public final class Static35 {
 			Static6.anInt5177 = Mouse.clickX;
 			Static4.anInt3275 = Mouse.clickY;
 			Static2.anInt1629 = 0;
-			Static3.aClass4_Sub10_Sub1_1.writeOpcode(54);
-			Static3.aClass4_Sub10_Sub1_1.writeByte(Keyboard.pressedKeys[82] ? 1 : 0);
-			Static3.aClass4_Sub10_Sub1_1.writeShortLE2(Static7.originZ + local19);
-			Static3.aClass4_Sub10_Sub1_1.writeShort(local24);
-			Static3.aClass4_Sub10_Sub1_1.writeShort(local15 + Static5.originX);
+			Protocol.outboundBuffer.writeOpcode(54);
+			Protocol.outboundBuffer.writeByte(Keyboard.pressedKeys[82] ? 1 : 0);
+			Protocol.outboundBuffer.writeShortLE2(Static7.originZ + local19);
+			Protocol.outboundBuffer.writeShort(local24);
+			Protocol.outboundBuffer.writeShort(local15 + Static5.originX);
 			Static15.method1337(PlayerList.self.anIntArray422[0], 0, 0, 0, local19, PlayerList.self.anIntArray426[0], 0, 0, local15);
 		}
 		if (local28 == 22) {
@@ -936,9 +818,9 @@ public final class Static35 {
 				Static7.anInt6008 = 2;
 				Static6.anInt5177 = Mouse.clickX;
 				Static2.anInt1629 = 0;
-				Static3.aClass4_Sub10_Sub1_1.writeOpcode(96);
-				Static3.aClass4_Sub10_Sub1_1.writeByteA(Keyboard.pressedKeys[82] ? 1 : 0);
-				Static3.aClass4_Sub10_Sub1_1.writeShort(local24);
+				Protocol.outboundBuffer.writeOpcode(96);
+				Protocol.outboundBuffer.writeByteA(Keyboard.pressedKeys[82] ? 1 : 0);
+				Protocol.outboundBuffer.writeShort(local24);
 				Static15.method1337(PlayerList.self.anIntArray422[0], 0, 0, local3012.getSize(), local19, PlayerList.self.anIntArray426[0], 0, local3012.getSize(), local15);
 			}
 		}
@@ -949,17 +831,17 @@ public final class Static35 {
 				Static2.anInt1629 = 0;
 				Static6.anInt5177 = Mouse.clickX;
 				Static4.anInt3275 = Mouse.clickY;
-				Static3.aClass4_Sub10_Sub1_1.writeOpcode(223);
-				Static3.aClass4_Sub10_Sub1_1.writeByte(Keyboard.pressedKeys[82] ? 1 : 0);
-				Static3.aClass4_Sub10_Sub1_1.writeShortLEA(local24);
+				Protocol.outboundBuffer.writeOpcode(223);
+				Protocol.outboundBuffer.writeByte(Keyboard.pressedKeys[82] ? 1 : 0);
+				Protocol.outboundBuffer.writeShortLEA(local24);
 				Static15.method1337(PlayerList.self.anIntArray422[0], 0, 0, local3080.getSize(), local19, PlayerList.self.anIntArray426[0], 0, local3080.getSize(), local15);
 			}
 		}
 		if (local28 == 1001) {
 			@Pc(3148) Component local3148 = InterfaceList.getComponent(local19);
 			if (local3148 == null || local3148.anIntArray661[local15] < 100000) {
-				Static3.aClass4_Sub10_Sub1_1.writeOpcode(72);
-				Static3.aClass4_Sub10_Sub1_1.writeShort(local24);
+				Protocol.outboundBuffer.writeOpcode(72);
+				Protocol.outboundBuffer.writeShort(local24);
 			} else {
 				Static26.method4357("", 0, local3148.anIntArray661[local15] + " x " + ObjTypeList.get(local24).name);
 			}
@@ -968,8 +850,8 @@ public final class Static35 {
 			Static5.anInt3884 = local15;
 		}
 		if (local28 == 18) {
-			Static3.aClass4_Sub10_Sub1_1.writeOpcode(158);
-			Static3.aClass4_Sub10_Sub1_1.writeInt(local19);
+			Protocol.outboundBuffer.writeOpcode(158);
+			Protocol.outboundBuffer.writeInt(local19);
 			@Pc(3216) Component local3216 = InterfaceList.getComponent(local19);
 			if (local3216.cs1Scripts != null && local3216.cs1Scripts[0][0] == 5) {
 				@Pc(3240) int local3240 = local3216.cs1Scripts[0][1];
@@ -982,11 +864,11 @@ public final class Static35 {
 			Static7.anInt6008 = 2;
 			Static4.anInt3275 = Mouse.clickY;
 			Static6.anInt5177 = Mouse.clickX;
-			Static3.aClass4_Sub10_Sub1_1.writeOpcode(8);
-			Static3.aClass4_Sub10_Sub1_1.writeShortLEA(local24);
-			Static3.aClass4_Sub10_Sub1_1.writeShort(local19 + Static7.originZ);
-			Static3.aClass4_Sub10_Sub1_1.writeShort(Static5.originX + local15);
-			Static3.aClass4_Sub10_Sub1_1.writeByteA(Keyboard.pressedKeys[82] ? 1 : 0);
+			Protocol.outboundBuffer.writeOpcode(8);
+			Protocol.outboundBuffer.writeShortLEA(local24);
+			Protocol.outboundBuffer.writeShort(local19 + Static7.originZ);
+			Protocol.outboundBuffer.writeShort(Static5.originX + local15);
+			Protocol.outboundBuffer.writeByteA(Keyboard.pressedKeys[82] ? 1 : 0);
 			Static15.method1337(PlayerList.self.anIntArray422[0], 0, 0, 0, local19, PlayerList.self.anIntArray426[0], 0, 0, local15);
 		}
 		if (Static2.anInt1334 != 0) {
@@ -1112,56 +994,13 @@ public final class Static35 {
 		Static1.aClass26_6.clear();
 	}
 
-	@OriginalMember(owner = "client!ug", name = "a", descriptor = "(B)V")
-	public static void method4318() {
-		while (true) {
-			if (Static5.aClass4_Sub10_Sub1_2.readableBits(Static1.anInt1052) >= 11) {
-				@Pc(18) int local18 = Static5.aClass4_Sub10_Sub1_2.readBits(11);
-				if (local18 != 2047) {
-					@Pc(27) boolean local27 = false;
-					if (PlayerList.players[local18] == null) {
-						local27 = true;
-						PlayerList.players[local18] = new Player();
-						if (Static6.aClass4_Sub10Array1[local18] != null) {
-							PlayerList.players[local18].decodeAppearance(Static6.aClass4_Sub10Array1[local18]);
-						}
-					}
-					PlayerList.ids[PlayerList.size++] = local18;
-					@Pc(65) Player local65 = PlayerList.players[local18];
-					local65.anInt3990 = Static2.anInt954;
-					@Pc(75) int local75 = Static1.anIntArray27[Static5.aClass4_Sub10_Sub1_2.readBits(3)];
-					if (local27) {
-						local65.anInt4017 = local65.anInt4031 = local75;
-					}
-					@Pc(88) int local88 = Static5.aClass4_Sub10_Sub1_2.readBits(5);
-					if (local88 > 15) {
-						local88 -= 32;
-					}
-					@Pc(97) int local97 = Static5.aClass4_Sub10_Sub1_2.readBits(1);
-					@Pc(102) int local102 = Static5.aClass4_Sub10_Sub1_2.readBits(1);
-					if (local102 == 1) {
-						Static7.anIntArray587[Static6.anInt4760++] = local18;
-					}
-					@Pc(119) int local119 = Static5.aClass4_Sub10_Sub1_2.readBits(5);
-					if (local119 > 15) {
-						local119 -= 32;
-					}
-					local65.method1174(PlayerList.self.anIntArray426[0] + local119, local97 == 1, PlayerList.self.anIntArray422[0] + local88);
-					continue;
-				}
-			}
-			Static5.aClass4_Sub10_Sub1_2.finishBitAccess();
-			return;
-		}
-	}
-
 	@OriginalMember(owner = "client!ug", name = "d", descriptor = "(I)V")
 	public static void method4321() {
 		for (@Pc(14) SpotAnimNode local14 = (SpotAnimNode) Static2.aClass112_8.head(); local14 != null; local14 = (SpotAnimNode) Static2.aClass112_8.next()) {
 			@Pc(20) SpotAnim local20 = local14.value;
 			if (local20.anInt3655 != Static7.y || local20.aBoolean265) {
 				local14.unlink();
-			} else if (Static2.anInt954 >= local20.anInt3665) {
+			} else if (client.loop >= local20.anInt3665) {
 				local20.method3058(Static5.anInt4156);
 				if (local20.aBoolean265) {
 					local14.unlink();
@@ -1329,12 +1168,12 @@ public final class Static35 {
 
 	@OriginalMember(owner = "client!uk", name = "a", descriptor = "(ZIIII)V")
 	public static void method4339(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3) {
-		Static3.aClass4_Sub10_Sub1_1.position = 0;
-		Static3.aClass4_Sub10_Sub1_1.writeByte(20);
-		Static3.aClass4_Sub10_Sub1_1.writeByte(arg3);
-		Static3.aClass4_Sub10_Sub1_1.writeByte(arg2);
-		Static3.aClass4_Sub10_Sub1_1.writeShort(arg0);
-		Static3.aClass4_Sub10_Sub1_1.writeShort(arg1);
+		Protocol.outboundBuffer.position = 0;
+		Protocol.outboundBuffer.writeByte(20);
+		Protocol.outboundBuffer.writeByte(arg3);
+		Protocol.outboundBuffer.writeByte(arg2);
+		Protocol.outboundBuffer.writeShort(arg0);
+		Protocol.outboundBuffer.writeShort(arg1);
 		Static2.anInt1213 = 0;
 		Static6.anInt4759 = 1;
 		Static6.anInt5173 = -3;
@@ -1448,9 +1287,9 @@ public final class Static35 {
 		}
 		try {
 			if (++Static2.anInt1213 > 2000) {
-				if (Static3.aClass52_7 != null) {
-					Static3.aClass52_7.close();
-					Static3.aClass52_7 = null;
+				if (Protocol.socket != null) {
+					Protocol.socket.close();
+					Protocol.socket = null;
 				}
 				if (Static4.anInt3409 >= 1) {
 					Static6.anInt5173 = -5;
@@ -1477,16 +1316,16 @@ public final class Static35 {
 				if (Static7.aClass197_5.status != 1) {
 					return;
 				}
-				Static3.aClass52_7 = new BufferedSocket((Socket) Static7.aClass197_5.result, GameShell.signLink);
+				Protocol.socket = new BufferedSocket((Socket) Static7.aClass197_5.result, GameShell.signLink);
 				Static7.aClass197_5 = null;
-				Static3.aClass52_7.write(Static3.aClass4_Sub10_Sub1_1.bytes, Static3.aClass4_Sub10_Sub1_1.position);
+				Protocol.socket.write(Protocol.outboundBuffer.bytes, Protocol.outboundBuffer.position);
 				if (client.musicChannel != null) {
 					client.musicChannel.method2996();
 				}
 				if (client.soundChannel != null) {
 					client.soundChannel.method2996();
 				}
-				@Pc(129) int local129 = Static3.aClass52_7.read();
+				@Pc(129) int local129 = Protocol.socket.read();
 				if (client.musicChannel != null) {
 					client.musicChannel.method2996();
 				}
@@ -1496,38 +1335,38 @@ public final class Static35 {
 				if (local129 != 21) {
 					Static6.anInt5173 = local129;
 					Static6.anInt4759 = 0;
-					Static3.aClass52_7.close();
-					Static3.aClass52_7 = null;
+					Protocol.socket.close();
+					Protocol.socket = null;
 					return;
 				}
 				Static6.anInt4759 = 3;
 			}
 			if (Static6.anInt4759 == 3) {
-				if (Static3.aClass52_7.available() < 1) {
+				if (Protocol.socket.available() < 1) {
 					return;
 				}
-				Static2.aStringArray8 = new String[Static3.aClass52_7.read()];
+				Static2.aStringArray8 = new String[Protocol.socket.read()];
 				Static6.anInt4759 = 4;
 			}
 			if (Static6.anInt4759 == 4) {
-				if (Static3.aClass52_7.available() < Static2.aStringArray8.length * 8) {
+				if (Protocol.socket.available() < Static2.aStringArray8.length * 8) {
 					return;
 				}
-				Static5.aClass4_Sub10_Sub1_2.position = 0;
-				Static3.aClass52_7.read(Static5.aClass4_Sub10_Sub1_2.bytes, 0, Static2.aStringArray8.length * 8);
+				Protocol.inboundBuffer.position = 0;
+				Protocol.socket.read(Protocol.inboundBuffer.bytes, 0, Static2.aStringArray8.length * 8);
 				for (@Pc(199) int local199 = 0; local199 < Static2.aStringArray8.length; local199++) {
-					Static2.aStringArray8[local199] = Base37.decodeLowerCase(Static5.aClass4_Sub10_Sub1_2.readLong());
+					Static2.aStringArray8[local199] = Base37.decodeLowerCase(Protocol.inboundBuffer.readLong());
 				}
 				Static6.anInt4759 = 0;
 				Static6.anInt5173 = 21;
-				Static3.aClass52_7.close();
-				Static3.aClass52_7 = null;
+				Protocol.socket.close();
+				Protocol.socket = null;
 				return;
 			}
 		} catch (@Pc(226) IOException local226) {
-			if (Static3.aClass52_7 != null) {
-				Static3.aClass52_7.close();
-				Static3.aClass52_7 = null;
+			if (Protocol.socket != null) {
+				Protocol.socket.close();
+				Protocol.socket = null;
 			}
 			if (Static4.anInt3409 >= 1) {
 				Static6.anInt4759 = 0;

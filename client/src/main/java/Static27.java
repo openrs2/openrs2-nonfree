@@ -570,7 +570,7 @@ public final class Static27 {
 			}
 			if (arg0.equalsIgnoreCase("::breakcon")) {
 				GameShell.signLink.breakConnection();
-				Static3.aClass52_7.breakConnection();
+				Protocol.socket.breakConnection();
 				client.js5NetQueue.breakConnection();
 			}
 			if (arg0.equalsIgnoreCase("::replacecanvas")) {
@@ -648,9 +648,9 @@ public final class Static27 {
 				Static26.method4357(null, 0, "Height: " + Terrain.tileHeights[Static7.y][PlayerList.self.x >> 7][PlayerList.self.z >> 7]);
 			}
 		}
-		Static3.aClass4_Sub10_Sub1_1.writeOpcode(216);
-		Static3.aClass4_Sub10_Sub1_1.writeByte(arg0.length() - 1);
-		Static3.aClass4_Sub10_Sub1_1.writeString(arg0.substring(2));
+		Protocol.outboundBuffer.writeOpcode(216);
+		Protocol.outboundBuffer.writeByte(arg0.length() - 1);
+		Protocol.outboundBuffer.writeString(arg0.substring(2));
 	}
 
 	@OriginalMember(owner = "client!of", name = "c", descriptor = "(III)V")
@@ -738,8 +738,8 @@ public final class Static27 {
 			}
 			Static4.aBoolean210 = false;
 		} else if (Preferences.musicVolume != 0 && Static6.anInt4844 != -1 && !Static16.method1550()) {
-			Static3.aClass4_Sub10_Sub1_1.writeOpcode(250);
-			Static3.aClass4_Sub10_Sub1_1.writeInt(Static6.anInt4844);
+			Protocol.outboundBuffer.writeOpcode(250);
+			Protocol.outboundBuffer.writeInt(Static6.anInt4844);
 			Static6.anInt4844 = -1;
 		}
 	}
@@ -850,9 +850,9 @@ public final class Static27 {
 
 	@OriginalMember(owner = "client!ok", name = "a", descriptor = "(BI)I")
 	public static int method3235(@OriginalArg(1) int arg0) {
-		if (Static3.aClass52_7 != null) {
-			Static3.aClass52_7.close();
-			Static3.aClass52_7 = null;
+		if (Protocol.socket != null) {
+			Protocol.socket.close();
+			Protocol.socket = null;
 		}
 		Static6.anInt4618++;
 		if (Static6.anInt4618 > 4) {

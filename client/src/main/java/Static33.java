@@ -148,134 +148,6 @@ public final class Static33 {
 		}
 	}
 
-	@OriginalMember(owner = "client!ta", name = "a", descriptor = "(ZI)V")
-	public static void readRebuildPacket(@OriginalArg(0) boolean dynamic) {
-		Static5.dynamicArea = dynamic;
-		if (!Static5.dynamicArea) {
-			@Pc(377) boolean buildAreaChanged = Static27.setBuildArea(Static5.aClass4_Sub10_Sub1_2.readUnsignedByteS());
-			@Pc(381) int zoneZ = Static5.aClass4_Sub10_Sub1_2.readUnsignedShort();
-			@Pc(389) int mapSquares = (Static1.anInt1052 - Static5.aClass4_Sub10_Sub1_2.position) / 16;
-			Static5.xteaKeys = new int[mapSquares][4];
-			for (@Pc(395) int i = 0; i < mapSquares; i++) {
-				for (@Pc(404) int j = 0; j < 4; j++) {
-					Static5.xteaKeys[i][j] = Static5.aClass4_Sub10_Sub1_2.readIntLE();
-				}
-			}
-			@Pc(425) int y = Static5.aClass4_Sub10_Sub1_2.readUnsignedByteC();
-			@Pc(429) int localX = Static5.aClass4_Sub10_Sub1_2.readUnsignedShortA();
-			@Pc(433) int localZ = Static5.aClass4_Sub10_Sub1_2.readUnsignedShort();
-			@Pc(435) boolean tutorialIsland = false;
-			@Pc(439) int zoneX = Static5.aClass4_Sub10_Sub1_2.readUnsignedShort();
-			if ((zoneX / 8 == 48 || zoneX / 8 == 49) && zoneZ / 8 == 48) {
-				tutorialIsland = true;
-			}
-			Static4.underwaterMapGroupIds = new int[mapSquares];
-			if (zoneX / 8 == 48 && zoneZ / 8 == 148) {
-				tutorialIsland = true;
-			}
-			Static3.mapGroupIds = new int[mapSquares];
-			Static1.aByteArrayArray4 = new byte[mapSquares][];
-			Static3.underwaterLocGroupIds = new int[mapSquares];
-			Static1.locGroupIds = new int[mapSquares];
-			Static7.aByteArrayArray50 = null;
-			Static7.aByteArrayArray49 = new byte[mapSquares][];
-			Static5.aByteArrayArray31 = new byte[mapSquares][];
-			Static6.anIntArray570 = null;
-			Static1.aByteArrayArray3 = new byte[mapSquares][];
-			Static7.mapSquares = new int[mapSquares];
-			@Pc(504) int i = 0;
-			for (@Pc(510) int mapX = (zoneX - 6) / 8; mapX <= (zoneX + 6) / 8; mapX++) {
-				for (@Pc(523) int mapZ = (zoneZ - 6) / 8; mapZ <= (zoneZ + 6) / 8; mapZ++) {
-					@Pc(536) int mapSquare = (mapX << 8) + mapZ;
-					if (tutorialIsland && (mapZ == 49 || mapZ == 149 || mapZ == 147 || mapX == 50 || mapX == 49 && mapZ == 47)) {
-						Static7.mapSquares[i] = mapSquare;
-						Static3.mapGroupIds[i] = -1;
-						Static1.locGroupIds[i] = -1;
-						Static4.underwaterMapGroupIds[i] = -1;
-						Static3.underwaterLocGroupIds[i] = -1;
-					} else {
-						Static7.mapSquares[i] = mapSquare;
-						Static3.mapGroupIds[i] = client.js5Archive5.getGroupId("m" + mapX + "_" + mapZ);
-						Static1.locGroupIds[i] = client.js5Archive5.getGroupId("l" + mapX + "_" + mapZ);
-						Static4.underwaterMapGroupIds[i] = client.js5Archive5.getGroupId("um" + mapX + "_" + mapZ);
-						Static3.underwaterLocGroupIds[i] = client.js5Archive5.getGroupId("ul" + mapX + "_" + mapZ);
-					}
-					i++;
-				}
-			}
-			Static8.method2(false, zoneX, buildAreaChanged, localZ, localX, zoneZ, y);
-			return;
-		}
-		@Pc(19) int localY = Static5.aClass4_Sub10_Sub1_2.readUnsignedShortLEA();
-		@Pc(23) int zoneY = Static5.aClass4_Sub10_Sub1_2.readUnsignedShortA();
-		@Pc(27) int zoneX = Static5.aClass4_Sub10_Sub1_2.readUnsignedShortLE();
-		Static5.aClass4_Sub10_Sub1_2.startBitAccess();
-		for (@Pc(32) int y = 0; y < 4; y++) {
-			for (@Pc(39) int x = 0; x < 13; x++) {
-				for (@Pc(46) int z = 0; z < 13; z++) {
-					@Pc(56) int local56 = Static5.aClass4_Sub10_Sub1_2.readBits(1);
-					if (local56 == 1) {
-						Static7.zones[y][x][z] = Static5.aClass4_Sub10_Sub1_2.readBits(26);
-					} else {
-						Static7.zones[y][x][z] = -1;
-					}
-				}
-			}
-		}
-		Static5.aClass4_Sub10_Sub1_2.finishBitAccess();
-		@Pc(104) int mapSquares = (Static1.anInt1052 - Static5.aClass4_Sub10_Sub1_2.position) / 16;
-		Static5.xteaKeys = new int[mapSquares][4];
-		for (@Pc(110) int i = 0; i < mapSquares; i++) {
-			for (@Pc(115) int j = 0; j < 4; j++) {
-				Static5.xteaKeys[i][j] = Static5.aClass4_Sub10_Sub1_2.readIntAlt3();
-			}
-		}
-		@Pc(138) int localX = Static5.aClass4_Sub10_Sub1_2.readUnsignedShort();
-		@Pc(144) boolean buildAreaChanged = Static27.setBuildArea(Static5.aClass4_Sub10_Sub1_2.readUnsignedByteS());
-		@Pc(148) int y = Static5.aClass4_Sub10_Sub1_2.readUnsignedByteA();
-		Static3.underwaterLocGroupIds = new int[mapSquares];
-		Static7.aByteArrayArray50 = null;
-		Static7.aByteArrayArray49 = new byte[mapSquares][];
-		Static7.mapSquares = new int[mapSquares];
-		Static6.anIntArray570 = null;
-		Static4.underwaterMapGroupIds = new int[mapSquares];
-		Static3.mapGroupIds = new int[mapSquares];
-		Static1.aByteArrayArray3 = new byte[mapSquares][];
-		Static5.aByteArrayArray31 = new byte[mapSquares][];
-		Static1.locGroupIds = new int[mapSquares];
-		Static1.aByteArrayArray4 = new byte[mapSquares][];
-		@Pc(182) int i = 0;
-		for (@Pc(184) int y0 = 0; y0 < 4; y0++) {
-			for (@Pc(189) int x = 0; x < 13; x++) {
-				for (@Pc(194) int z = 0; z < 13; z++) {
-					@Pc(207) int zone = Static7.zones[y0][x][z];
-					if (zone != -1) {
-						@Pc(217) int srcX = zone >> 14 & 0x3FF;
-						@Pc(223) int srcZ = zone >> 3 & 0x7FF;
-						@Pc(233) int mapSquare = (srcX / 8 << 8) + srcZ / 8;
-						for (@Pc(235) int local235 = 0; local235 < i; local235++) {
-							if (Static7.mapSquares[local235] == mapSquare) {
-								mapSquare = -1;
-								break;
-							}
-						}
-						if (mapSquare != -1) {
-							Static7.mapSquares[i] = mapSquare;
-							@Pc(272) int mapX = mapSquare >> 8 & 0xFF;
-							@Pc(276) int mapZ = mapSquare & 0xFF;
-							Static3.mapGroupIds[i] = client.js5Archive5.getGroupId("m" + mapX + "_" + mapZ);
-							Static1.locGroupIds[i] = client.js5Archive5.getGroupId("l" + mapX + "_" + mapZ);
-							Static4.underwaterMapGroupIds[i] = client.js5Archive5.getGroupId("um" + mapX + "_" + mapZ);
-							Static3.underwaterLocGroupIds[i] = client.js5Archive5.getGroupId("ul" + mapX + "_" + mapZ);
-							i++;
-						}
-					}
-				}
-			}
-		}
-		Static8.method2(false, zoneX, buildAreaChanged, localY, localX, zoneY, y);
-	}
-
 	@OriginalMember(owner = "client!ta", name = "b", descriptor = "(ZI)V")
 	public static void method4092(@OriginalArg(1) int arg0) {
 		@Pc(14) Class4_Sub3_Sub9 local14 = Static12.method2322(6, arg0);
@@ -925,9 +797,9 @@ public final class Static33 {
 		if (GlRenderer.enabled) {
 			Static23.method1936(true);
 		}
-		if (GameShell.frame != null && Static3.aClass52_7 != null && Static4.anInt3304 == 25) {
-			Static3.aClass4_Sub10_Sub1_1.writeOpcode(236);
-			Static3.aClass4_Sub10_Sub1_1.writeInt(1057001181);
+		if (GameShell.frame != null && Protocol.socket != null && Static4.anInt3304 == 25) {
+			Protocol.outboundBuffer.writeOpcode(236);
+			Protocol.outboundBuffer.writeInt(1057001181);
 		}
 		if (!Static5.dynamicArea) {
 			@Pc(822) int x0 = (Static4.centralZoneX - 6) / 8;
@@ -947,8 +819,8 @@ public final class Static33 {
 			Static9.method233(10);
 		} else {
 			Static9.method233(30);
-			if (Static3.aClass52_7 != null) {
-				Static3.aClass4_Sub10_Sub1_1.writeOpcode(113);
+			if (Protocol.socket != null) {
+				Protocol.outboundBuffer.writeOpcode(113);
 			}
 		}
 		Static35.method4306();
@@ -1084,7 +956,7 @@ public final class Static33 {
 			@Pc(672) Class94[] local672 = Static7.aClass94Array1;
 			while (local672.length > local670) {
 				@Pc(684) Class94 local684 = local672[local670];
-				if (local684 != null && local684.anInt2561 != 0 && Static2.anInt954 % 20 < 10) {
+				if (local684 != null && local684.anInt2561 != 0 && client.loop % 20 < 10) {
 					if (local684.anInt2561 == 1 && local684.anInt2560 >= 0 && local684.anInt2560 < NpcList.npcs.length) {
 						@Pc(717) Npc local717 = NpcList.npcs[local684.anInt2560];
 						if (local717 != null) {

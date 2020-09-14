@@ -374,9 +374,6 @@ public final class Static6 {
 	@OriginalMember(owner = "client!rk", name = "t", descriptor = "[I")
 	public static int[] anIntArray492 = new int[2];
 
-	@OriginalMember(owner = "client!rk", name = "w", descriptor = "[Lclient!fd;")
-	public static final Buffer[] aClass4_Sub10Array1 = new Buffer[2048];
-
 	@OriginalMember(owner = "client!rl", name = "r", descriptor = "I")
 	public static int anInt4617 = 0;
 
@@ -448,9 +445,6 @@ public final class Static6 {
 
 	@OriginalMember(owner = "client!sd", name = "f", descriptor = "I")
 	public static int anInt4759 = 0;
-
-	@OriginalMember(owner = "client!sd", name = "g", descriptor = "I")
-	public static int anInt4760 = 0;
 
 	@OriginalMember(owner = "client!sd", name = "h", descriptor = "I")
 	public static int anInt4761 = 0;

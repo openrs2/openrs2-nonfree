@@ -1365,13 +1365,13 @@ public final class Static20 {
 	public static void method1976() {
 		for (@Pc(16) ProjAnimNode local16 = (ProjAnimNode) Static1.aClass112_1.head(); local16 != null; local16 = (ProjAnimNode) Static1.aClass112_1.next()) {
 			@Pc(22) ProjAnim local22 = local16.value;
-			if (local22.anInt3717 != Static7.y || Static2.anInt954 > local22.anInt3707) {
+			if (local22.anInt3717 != Static7.y || client.loop > local22.anInt3707) {
 				local16.unlink();
-			} else if (local22.anInt3719 <= Static2.anInt954) {
+			} else if (local22.anInt3719 <= client.loop) {
 				if (local22.anInt3713 > 0) {
 					@Pc(61) Npc local61 = NpcList.npcs[local22.anInt3713 - 1];
 					if (local61 != null && local61.x >= 0 && local61.x < 13312 && local61.z >= 0 && local61.z < 13312) {
-						local22.method3105(Static11.method522(local61.z, local61.x, local22.anInt3717) - local22.anInt3722, local61.x, Static2.anInt954, local61.z);
+						local22.method3105(Static11.method522(local61.z, local61.x, local22.anInt3717) - local22.anInt3722, local61.x, client.loop, local61.z);
 					}
 				}
 				if (local22.anInt3713 < 0) {
@@ -1383,7 +1383,7 @@ public final class Static20 {
 						local118 = PlayerList.players[local113];
 					}
 					if (local118 != null && local118.x >= 0 && local118.x < 13312 && local118.z >= 0 && local118.z < 13312) {
-						local22.method3105(Static11.method522(local118.z, local118.x, local22.anInt3717) - local22.anInt3722, local118.x, Static2.anInt954, local118.z);
+						local22.method3105(Static11.method522(local118.z, local118.x, local22.anInt3717) - local22.anInt3722, local118.x, client.loop, local118.z);
 					}
 				}
 				local22.method3103(Static5.anInt4156);

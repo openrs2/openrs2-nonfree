@@ -648,7 +648,7 @@ public final class Static34 {
 
 	@OriginalMember(owner = "client!tl", name = "a", descriptor = "(Lclient!qc;Z)V")
 	public static void method4234(@OriginalArg(0) PathingEntity arg0) {
-		@Pc(13) int local13 = arg0.anInt4034 - Static2.anInt954;
+		@Pc(13) int local13 = arg0.anInt4034 - client.loop;
 		@Pc(25) int local25 = arg0.anInt3973 * 128 + arg0.getSize() * 64;
 		@Pc(37) int local37 = arg0.anInt4033 * 128 + arg0.getSize() * 64;
 		if (arg0.anInt4008 == 0) {
@@ -687,8 +687,8 @@ public final class Static34 {
 			local16++;
 		}
 		if (Static6.aClass4_Sub15Array1.length > local16 && Static6.aClass4_Sub15Array1[local16] != null) {
-			Static3.aClass4_Sub10_Sub1_1.writeOpcode(75);
-			Static3.aClass4_Sub10_Sub1_1.writeLong(Static6.aClass4_Sub15Array1[local16].key);
+			Protocol.outboundBuffer.writeOpcode(75);
+			Protocol.outboundBuffer.writeLong(Static6.aClass4_Sub15Array1[local16].key);
 		}
 	}
 
@@ -1260,33 +1260,6 @@ public final class Static34 {
 	@OriginalMember(owner = "client!ua", name = "a", descriptor = "(Lclient!fh;B)V")
 	public static void method4264(@OriginalArg(0) Js5 arg0) {
 		Static2.aClass58_40 = arg0;
-	}
-
-	@OriginalMember(owner = "client!ub", name = "a", descriptor = "(I)V")
-	public static void method4269() {
-		Protocol.removed = 0;
-		Static6.anInt4760 = 0;
-		Static22.method2189();
-		Static36.method4406();
-		Static35.method4318();
-		Static35.method4308();
-		for (@Pc(19) int local19 = 0; local19 < Protocol.removed; local19++) {
-			@Pc(34) int local34 = Protocol.removedIds[local19];
-			if (Static2.anInt954 != PlayerList.players[local34].anInt3990) {
-				if (PlayerList.players[local34].soundRadius > 0) {
-					Static12.method739(PlayerList.players[local34]);
-				}
-				PlayerList.players[local34] = null;
-			}
-		}
-		if (Static5.aClass4_Sub10_Sub1_2.position != Static1.anInt1052) {
-			throw new RuntimeException("gpp1 pos:" + Static5.aClass4_Sub10_Sub1_2.position + " psize:" + Static1.anInt1052);
-		}
-		for (@Pc(85) int local85 = 0; local85 < PlayerList.size; local85++) {
-			if (PlayerList.players[PlayerList.ids[local85]] == null) {
-				throw new RuntimeException("gpp2 pos:" + local85 + " size:" + PlayerList.size);
-			}
-		}
 	}
 
 	@OriginalMember(owner = "client!ub", name = "a", descriptor = "(Z)V")

@@ -555,15 +555,15 @@ public final class Static25 {
 	public static void method2930() {
 		Static1.aBoolean17 = false;
 		Static7.anInt5634 = 0;
-		Static1.anInt552 = -1;
-		Static3.aClass4_Sub10_Sub1_1.position = 0;
+		Protocol.opcode = -1;
+		Protocol.outboundBuffer.position = 0;
 		Static4.anInt3335 = -1;
 		Static3.anInt2273 = -1;
 		Static2.anInt1231 = -1;
 		Static3.anInt2583 = 0;
-		Static5.aClass4_Sub10_Sub1_2.position = 0;
+		Protocol.inboundBuffer.position = 0;
 		Static5.anInt4329 = 0;
-		Static1.anInt1052 = 0;
+		Protocol.length = 0;
 		Static8.method115();
 		for (@Pc(33) int local33 = 0; local33 < PlayerList.players.length; local33++) {
 			if (PlayerList.players[local33] != null) {

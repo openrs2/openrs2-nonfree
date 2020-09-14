@@ -301,8 +301,8 @@ public final class Static15 {
 		Static2.aBooleanArray7[Static6.anInt5214] = false;
 		Static6.anInt5214++;
 		Static3.anInt2102 = Static6.anInt4979;
-		Static3.aClass4_Sub10_Sub1_1.writeOpcode(26);
-		Static3.aClass4_Sub10_Sub1_1.writeLong(arg0);
+		Protocol.outboundBuffer.writeOpcode(26);
+		Protocol.outboundBuffer.writeLong(arg0);
 	}
 
 	@OriginalMember(owner = "client!fd", name = "a", descriptor = "(IIIILclient!vh;BIII)V")
@@ -729,9 +729,9 @@ public final class Static15 {
 
 	@OriginalMember(owner = "client!fj", name = "a", descriptor = "(IILclient!qc;)V")
 	public static void method1428(@OriginalArg(1) int arg0, @OriginalArg(2) PathingEntity arg1) {
-		if (Static2.anInt954 < arg1.anInt4034) {
+		if (client.loop < arg1.anInt4034) {
 			Static34.method4234(arg1);
-		} else if (arg1.anInt3966 < Static2.anInt954) {
+		} else if (arg1.anInt3966 < client.loop) {
 			Static32.method4024(arg1);
 		} else {
 			Static24.method2705(arg1);

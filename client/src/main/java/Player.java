@@ -283,10 +283,10 @@ public final class Player extends PathingEntity {
 		}
 		@Pc(572) Model local572 = null;
 		if (!this.aBoolean98 && this.anObject5 != null) {
-			if (this.anInt4010 <= Static2.anInt954) {
+			if (this.anInt4010 <= client.loop) {
 				this.anObject5 = null;
 			}
-			if (this.anInt4042 <= Static2.anInt954 && Static2.anInt954 < this.anInt4010) {
+			if (this.anInt4042 <= client.loop && client.loop < this.anInt4010) {
 				if (this.anObject5 instanceof Class53_Sub7) {
 					local572 = (Model) ((Class53_Sub7) this.anObject5).method3735();
 				} else {

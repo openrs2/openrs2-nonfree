@@ -77,11 +77,11 @@ public final class Static32 {
 			return;
 		}
 		Static3.anInt2142 = 0;
-		if (!Static1.aBoolean38 && Static3.aClass52_7 != null) {
-			Static3.aClass4_Sub10_Sub1_1.writeOpcode(137);
+		if (!Static1.aBoolean38 && Protocol.socket != null) {
+			Protocol.outboundBuffer.writeOpcode(137);
 			try {
-				Static3.aClass52_7.write(Static3.aClass4_Sub10_Sub1_1.bytes, Static3.aClass4_Sub10_Sub1_1.position);
-				Static3.aClass4_Sub10_Sub1_1.position = 0;
+				Protocol.socket.write(Protocol.outboundBuffer.bytes, Protocol.outboundBuffer.position);
+				Protocol.outboundBuffer.position = 0;
 			} catch (@Pc(52) IOException local52) {
 				Static1.aBoolean38 = true;
 			}
@@ -134,8 +134,8 @@ public final class Static32 {
 		Static3.aStringArray18[Static6.anInt4516] = Static30.method423(arg1);
 		Static2.aBooleanArray5[Static6.anInt4516++] = arg0;
 		Static3.anInt2102 = Static6.anInt4979;
-		Static3.aClass4_Sub10_Sub1_1.writeOpcode(197);
-		Static3.aClass4_Sub10_Sub1_1.writeLong(arg1);
+		Protocol.outboundBuffer.writeOpcode(197);
+		Protocol.outboundBuffer.writeLong(arg1);
 	}
 
 	@OriginalMember(owner = "client!sd", name = "a", descriptor = "(IZZIII)V")
@@ -539,7 +539,7 @@ public final class Static32 {
 				return;
 			}
 		}
-		if (arg0.anInt3961 != -1 && Static2.anInt954 >= arg0.anInt3984) {
+		if (arg0.anInt3961 != -1 && client.loop >= arg0.anInt3984) {
 			@Pc(95) Class110 local95 = Static21.method2004(arg0.anInt3961);
 			if (local95.aBoolean222 && local95.anInt3134 != -1) {
 				@Pc(110) Class46 local110 = Static23.method2494(local95.anInt3134);

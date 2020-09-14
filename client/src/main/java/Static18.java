@@ -317,7 +317,7 @@ public final class Static18 {
 
 	@OriginalMember(owner = "client!he", name = "a", descriptor = "(I)V")
 	public static void method1714() {
-		Static26.method2964((long) Static2.anInt954);
+		Static26.method2964((long) client.loop);
 		if (Static3.anInt5398 != -1) {
 			Static27.method4243(Static3.anInt5398);
 		}
@@ -328,7 +328,7 @@ public final class Static18 {
 			Static1.aBooleanArray2[local17] = Static2.aBooleanArray8[local17];
 			Static2.aBooleanArray8[local17] = false;
 		}
-		Static3.anInt2522 = Static2.anInt954;
+		Static3.anInt2522 = client.loop;
 		Static6.aClass185_13 = null;
 		Static3.anInt2047 = -1;
 		if (GlRenderer.enabled) {
@@ -618,7 +618,7 @@ public final class Static18 {
 					@Pc(170) Class94[] local170 = Static7.aClass94Array1;
 					for (@Pc(172) int local172 = 0; local172 < local170.length; local172++) {
 						@Pc(180) Class94 local180 = local170[local172];
-						if (local180 != null && local180.anInt2561 == 1 && local180.anInt2560 == NpcList.ids[local17 - PlayerList.size] && Static2.anInt954 % 20 < 10) {
+						if (local180 != null && local180.anInt2561 == 1 && local180.anInt2560 == NpcList.ids[local17 - PlayerList.size] && client.loop % 20 < 10) {
 							@Pc(214) int local214;
 							if (local93.anInt5259 == -1) {
 								local214 = local31.method3306() + 15;
@@ -674,7 +674,7 @@ public final class Static18 {
 						Static5.anInt3635++;
 					}
 				}
-				if (Static2.anInt954 < local31.anInt3993) {
+				if (client.loop < local31.anInt3993) {
 					@Pc(525) Sprite local525 = Static2.aClass4_Sub3_Sub14Array7[0];
 					@Pc(529) Sprite local529 = Static2.aClass4_Sub3_Sub14Array7[1];
 					@Pc(536) int local536;
@@ -721,7 +721,7 @@ public final class Static18 {
 					}
 				}
 				for (@Pc(707) int local707 = 0; local707 < 4; local707++) {
-					if (local31.anIntArray425[local707] > Static2.anInt954) {
+					if (local31.anIntArray425[local707] > client.loop) {
 						@Pc(742) int local742;
 						if (local31 instanceof Npc) {
 							@Pc(729) Npc local729 = (Npc) local31;

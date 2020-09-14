@@ -194,7 +194,7 @@ public final class ProjAnim extends Entity {
 		if (GlRenderer.enabled) {
 			@Pc(4) GlModel local4 = (GlModel) arg0;
 			if ((this.aClass20_Sub3_5 == null || this.aClass20_Sub3_5.aBoolean250) && (local4.aClass158Array3 != null || local4.aClass167Array3 != null)) {
-				this.aClass20_Sub3_5 = new Class20_Sub3(Static2.anInt954, 1, 1);
+				this.aClass20_Sub3_5 = new Class20_Sub3(client.loop, 1, 1);
 			}
 			if (this.aClass20_Sub3_5 != null) {
 				this.aClass20_Sub3_5.method2967(local4.aClass158Array3, local4.aClass167Array3, false, local4.anIntArray507, local4.anIntArray504, local4.anIntArray502);
@@ -202,7 +202,7 @@ public final class ProjAnim extends Entity {
 		} else {
 			@Pc(51) SoftwareModel local51 = (SoftwareModel) arg0;
 			if ((this.aClass20_Sub3_5 == null || this.aClass20_Sub3_5.aBoolean250) && (local51.aClass158Array2 != null || local51.aClass167Array2 != null)) {
-				this.aClass20_Sub3_5 = new Class20_Sub3(Static2.anInt954, 1, 1);
+				this.aClass20_Sub3_5 = new Class20_Sub3(client.loop, 1, 1);
 			}
 			if (this.aClass20_Sub3_5 != null) {
 				this.aClass20_Sub3_5.method2967(local51.aClass158Array2, local51.aClass167Array2, false, local51.anIntArray347, local51.anIntArray344, local51.anIntArray340);

@@ -298,7 +298,7 @@ public final class Class53_Sub7 extends Entity {
 		if (this.anInt4580 < 0 || this.aClass46_3.anIntArray95.length <= this.anInt4580) {
 			this.anInt4580 = -1;
 		}
-		this.anInt4590 = Static2.anInt954 - this.anInt4568;
+		this.anInt4590 = client.loop - this.anInt4568;
 	}
 
 	@OriginalMember(owner = "client!ri", name = "b", descriptor = "(III)V")
@@ -314,7 +314,7 @@ public final class Class53_Sub7 extends Entity {
 					return;
 				}
 			}
-			@Pc(35) int local35 = Static2.anInt954 - this.anInt4590;
+			@Pc(35) int local35 = client.loop - this.anInt4590;
 			if (local35 > 100 && this.aClass46_3.anInt1242 > 0) {
 				@Pc(53) int local53 = this.aClass46_3.anIntArray95.length - this.aClass46_3.anInt1242;
 				while (this.anInt4574 < local53 && this.aClass46_3.anIntArray94[this.anInt4574] < local35) {
@@ -356,7 +356,7 @@ public final class Class53_Sub7 extends Entity {
 				}
 			}
 			this.anInt4568 = local35;
-			this.anInt4590 = Static2.anInt954 - local35;
+			this.anInt4590 = client.loop - local35;
 			return;
 		}
 	}
@@ -390,7 +390,7 @@ public final class Class53_Sub7 extends Entity {
 					local91 = local91.method4453();
 				}
 				if (local91 != null) {
-					this.aClass20_Sub3_7 = new Class20_Sub3(Static2.anInt954, local91.width, local91.length);
+					this.aClass20_Sub3_7 = new Class20_Sub3(client.loop, local91.width, local91.length);
 				}
 			}
 			if (this.aClass20_Sub3_7 != null) {
@@ -404,7 +404,7 @@ public final class Class53_Sub7 extends Entity {
 					local28 = local28.method4453();
 				}
 				if (local28 != null) {
-					this.aClass20_Sub3_7 = new Class20_Sub3(Static2.anInt954, local28.width, local28.length);
+					this.aClass20_Sub3_7 = new Class20_Sub3(client.loop, local28.width, local28.length);
 				}
 			}
 			if (this.aClass20_Sub3_7 != null) {

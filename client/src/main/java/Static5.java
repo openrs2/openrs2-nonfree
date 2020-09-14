@@ -305,9 +305,6 @@ public final class Static5 {
 	@OriginalMember(owner = "client!ni", name = "n", descriptor = "[I")
 	public static final int[] anIntArray681 = new int[] { 1, 4 };
 
-	@OriginalMember(owner = "client!nj", name = "j", descriptor = "Lclient!wa;")
-	public static final Packet aClass4_Sub10_Sub1_2 = new Packet(65536);
-
 	@OriginalMember(owner = "client!nl", name = "c", descriptor = "[I")
 	public static final int[] anIntArray392 = new int[] { 0, 4, 4, 8, 0, 0, 8, 0, 0 };
 

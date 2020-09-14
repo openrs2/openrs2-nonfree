@@ -99,8 +99,8 @@ public final class Static12 {
 
 	@OriginalMember(owner = "client!client", name = "g", descriptor = "(I)V")
 	public static void method685() {
-		Static3.aClass4_Sub10_Sub1_1.writeOpcode(218);
-		Static3.aClass4_Sub10_Sub1_1.writeLong(0L);
+		Protocol.outboundBuffer.writeOpcode(218);
+		Protocol.outboundBuffer.writeLong(0L);
 	}
 
 	@OriginalMember(owner = "client!client", name = "a", descriptor = "(Lclient!wf;)Lclient!on;")
@@ -208,7 +208,7 @@ public final class Static12 {
 						if (local9.aByteArray74 != null) {
 							for (@Pc(245) int local245 = 0; local245 < local9.aByteArray74.length; local245++) {
 								if (Keyboard.pressedKeys[local9.aByteArray74[local245]]) {
-									if (local9.anIntArray659 == null || Static2.anInt954 >= local9.anIntArray659[local245]) {
+									if (local9.anIntArray659 == null || client.loop >= local9.anIntArray659[local245]) {
 										@Pc(281) byte local281 = local9.aByteArray73[local245];
 										if (local281 == 0 || ((local281 & 0x8) == 0 || !Keyboard.pressedKeys[86] && !Keyboard.pressedKeys[82] && !Keyboard.pressedKeys[81]) && ((local281 & 0x2) == 0 || Keyboard.pressedKeys[86]) && ((local281 & 0x1) == 0 || Keyboard.pressedKeys[82]) && ((local281 & 0x4) == 0 || Keyboard.pressedKeys[81])) {
 											Static37.method4752(local9.id, -1, local245 + 1, "");
@@ -219,7 +219,7 @@ public final class Static12 {
 											if (local341 == 0) {
 												local9.anIntArray659[local245] = Integer.MAX_VALUE;
 											} else {
-												local9.anIntArray659[local245] = Static2.anInt954 + local341;
+												local9.anIntArray659[local245] = client.loop + local341;
 											}
 										}
 									}
@@ -289,8 +289,8 @@ public final class Static12 {
 												Static21.method2063();
 												continue;
 											}
-											Static3.aClass4_Sub10_Sub1_1.writeOpcode(251);
-											Static3.aClass4_Sub10_Sub1_1.writeIntAlt3Reverse(local550[0] << 28 | local550[1] << 14 | local550[2]);
+											Protocol.outboundBuffer.writeOpcode(251);
+											Protocol.outboundBuffer.writeIntAlt3Reverse(local550[0] << 28 | local550[1] << 14 | local550[2]);
 										}
 										Static1.anInt640 = 1;
 										Static1.aBoolean49 = false;
@@ -843,59 +843,6 @@ public final class Static12 {
 				arg3.anInt2125 = (int) (Math.random() * (double) (arg3.anInt2116 - arg3.anInt2119)) + arg3.anInt2119;
 				arg3.aClass4_Sub6_Sub4_2 = local254;
 			}
-		}
-	}
-
-	@OriginalMember(owner = "client!db", name = "a", descriptor = "(I)V")
-	public static void method734() {
-		while (true) {
-			if (Static5.aClass4_Sub10_Sub1_2.readableBits(Static1.anInt1052) >= 27) {
-				@Pc(22) int local22 = Static5.aClass4_Sub10_Sub1_2.readBits(15);
-				if (local22 != 32767) {
-					@Pc(31) boolean local31 = false;
-					if (NpcList.npcs[local22] == null) {
-						local31 = true;
-						NpcList.npcs[local22] = new Npc();
-					}
-					@Pc(49) Npc local49 = NpcList.npcs[local22];
-					NpcList.ids[NpcList.size++] = local22;
-					local49.anInt3990 = Static2.anInt954;
-					if (local49.type != null && local49.type.method4260()) {
-						Static25.method2931(local49);
-					}
-					@Pc(77) int local77 = Static5.aClass4_Sub10_Sub1_2.readBits(5);
-					if (local77 > 15) {
-						local77 -= 32;
-					}
-					@Pc(89) int local89 = Static1.anIntArray27[Static5.aClass4_Sub10_Sub1_2.readBits(3)];
-					if (local31) {
-						local49.anInt4017 = local49.anInt4031 = local89;
-					}
-					@Pc(102) int local102 = Static5.aClass4_Sub10_Sub1_2.readBits(5);
-					local49.setType(NpcTypeList.get(Static5.aClass4_Sub10_Sub1_2.readBits(14)));
-					@Pc(116) int local116 = Static5.aClass4_Sub10_Sub1_2.readBits(1);
-					if (local102 > 15) {
-						local102 -= 32;
-					}
-					if (local116 == 1) {
-						Static7.anIntArray587[Static6.anInt4760++] = local22;
-					}
-					@Pc(139) int local139 = Static5.aClass4_Sub10_Sub1_2.readBits(1);
-					local49.setSize(local49.type.size);
-					local49.basId = local49.type.anInt5261;
-					local49.anInt4009 = local49.type.anInt5243;
-					if (local49.anInt4009 == 0) {
-						local49.anInt4031 = 0;
-					}
-					local49.method3301(PlayerList.self.anIntArray426[0] + local77, local49.getSize(), local102 + PlayerList.self.anIntArray422[0], local139 == 1);
-					if (local49.type.method4260()) {
-						Static8.method109(null, local49.anIntArray422[0], local49, local49.anIntArray426[0], null, 0, Static7.y);
-					}
-					continue;
-				}
-			}
-			Static5.aClass4_Sub10_Sub1_2.finishBitAccess();
-			return;
 		}
 	}
 

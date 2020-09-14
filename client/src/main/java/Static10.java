@@ -214,8 +214,8 @@ public final class Static10 {
 					Static2.aBooleanArray7[local36] = Static2.aBooleanArray7[local36 + 1];
 				}
 				Static3.anInt2102 = Static6.anInt4979;
-				Static3.aClass4_Sub10_Sub1_1.writeOpcode(172);
-				Static3.aClass4_Sub10_Sub1_1.writeLong(arg0);
+				Protocol.outboundBuffer.writeOpcode(172);
+				Protocol.outboundBuffer.writeLong(arg0);
 				break;
 			}
 		}
@@ -518,7 +518,7 @@ public final class Static10 {
 			@Pc(24) Class94 local24 = local7[local16];
 			if (local24 != null && local24.anInt2561 == 2) {
 				Static29.method3482(arg2 >> 1, local24.anInt2567 * 2, arg3, (local24.anInt2558 - Static5.originX << 7) + local24.anInt2564, local24.anInt2568 + (local24.anInt2565 - Static7.originZ << 7), arg1, arg4 >> 1);
-				if (Static7.anInt5584 > -1 && Static2.anInt954 % 20 < 10) {
+				if (Static7.anInt5584 > -1 && client.loop % 20 < 10) {
 					Static6.aClass4_Sub3_Sub14Array11[local24.anInt2559].method4506(arg5 + Static7.anInt5584 - 12, Static4.anInt3290 + arg0 - 28);
 				}
 			}
@@ -574,7 +574,7 @@ public final class Static10 {
 			}
 		} else if (local4 == 327) {
 			arg0.anInt5944 = 150;
-			arg0.anInt5976 = (int) (Math.sin((double) Static2.anInt954 / 40.0D) * 256.0D) & 0x7FF;
+			arg0.anInt5976 = (int) (Math.sin((double) client.loop / 40.0D) * 256.0D) & 0x7FF;
 			arg0.anInt5895 = -1;
 			arg0.anInt5939 = 5;
 		} else if (local4 == 328) {
@@ -582,7 +582,7 @@ public final class Static10 {
 				arg0.anInt5895 = 0;
 			} else {
 				arg0.anInt5944 = 150;
-				arg0.anInt5976 = (int) (Math.sin((double) Static2.anInt954 / 40.0D) * 256.0D) & 0x7FF;
+				arg0.anInt5976 = (int) (Math.sin((double) client.loop / 40.0D) * 256.0D) & 0x7FF;
 				arg0.anInt5939 = 5;
 				arg0.anInt5895 = ((int) Base37.encode(PlayerList.self.name) << 11) + 2047;
 				arg0.anInt5892 = PlayerList.self.anInt4046;

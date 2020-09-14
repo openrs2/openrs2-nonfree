@@ -7,6 +7,9 @@ public final class PlayerList {
 	@OriginalMember(owner = "client!mg", name = "a", descriptor = "[I")
 	public static final int[] ids = new int[2048];
 
+	@OriginalMember(owner = "client!rk", name = "w", descriptor = "[Lclient!fd;")
+	public static final Buffer[] appearanceCache = new Buffer[2048];
+
 	@OriginalMember(owner = "client!ja", name = "b", descriptor = "I")
 	public static int size = 0;
 

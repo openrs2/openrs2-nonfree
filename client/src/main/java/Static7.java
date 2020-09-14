@@ -163,9 +163,6 @@ public final class Static7 {
 	@OriginalMember(owner = "client!u", name = "a", descriptor = "I")
 	public static int anInt5228 = -1;
 
-	@OriginalMember(owner = "client!u", name = "g", descriptor = "[I")
-	public static final int[] anIntArray587 = new int[2048];
-
 	@OriginalMember(owner = "client!u", name = "j", descriptor = "S")
 	public static short aShort45 = 256;
 

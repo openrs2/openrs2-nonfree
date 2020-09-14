@@ -368,9 +368,9 @@ public final class Static31 {
 		Static9.method763();
 		@Pc(562) byte local562 = Static11.method561() == 2 ? (byte) Static2.anInt1997 : 1;
 		if (GlRenderer.enabled) {
-			Static27.method3111(Static2.anInt954, !Preferences.flickeringEffects);
+			Static27.method3111(client.loop, !Preferences.flickeringEffects);
 			Static21.method2078(Static5.anInt3656, Static5.anInt4066, Static2.anInt1931, Static7.anInt5678, Static3.anInt2519);
-			GlRenderer.anInt2085 = Static2.anInt954;
+			GlRenderer.anInt2085 = client.loop;
 			Static25.method2728(Static3.anInt2519, Static2.anInt1931, Static7.anInt5678, Static5.anInt4066, Static5.anInt3656, Static1.aByteArrayArrayArray2, Static5.anIntArray440, Static3.anIntArray164, Static7.anIntArray620, Static6.anIntArray489, Static6.anIntArray492, Static7.y + 1, local562, PlayerList.self.x >> 7, PlayerList.self.z >> 7);
 			Static7.aBoolean123 = true;
 			Static27.method3112();

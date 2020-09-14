@@ -510,11 +510,11 @@ public final class Static11 {
 		Static4.anInt3335 = -1;
 		Static5.anInt4329 = 0;
 		Static3.anInt2273 = -1;
-		Static3.aClass4_Sub10_Sub1_1.position = 0;
+		Protocol.outboundBuffer.position = 0;
 		Static2.anInt1231 = -1;
 		Static3.anInt2583 = 0;
-		Static1.anInt552 = -1;
-		Static5.aClass4_Sub10_Sub1_2.position = 0;
+		Protocol.opcode = -1;
+		Protocol.inboundBuffer.position = 0;
 		for (@Pc(45) int local45 = 0; local45 < Static7.aClass94Array1.length; local45++) {
 			Static7.aClass94Array1[local45] = null;
 		}
@@ -539,7 +539,7 @@ public final class Static11 {
 		NpcList.size = 0;
 		for (@Pc(3740) int local3740 = 0; local3740 < 2048; local3740++) {
 			PlayerList.players[local3740] = null;
-			Static6.aClass4_Sub10Array1[local3740] = null;
+			PlayerList.appearanceCache[local3740] = null;
 		}
 		for (@Pc(3756) int local3756 = 0; local3756 < 32768; local3756++) {
 			NpcList.npcs[local3756] = null;

@@ -185,9 +185,6 @@ public final class Static2 {
 	@OriginalMember(owner = "client!de", name = "m", descriptor = "I")
 	public static final int anInt946 = 0;
 
-	@OriginalMember(owner = "client!de", name = "x", descriptor = "I")
-	public static int anInt954 = 0;
-
 	@OriginalMember(owner = "client!df", name = "h", descriptor = "I")
 	public static int anInt959 = 0;
 

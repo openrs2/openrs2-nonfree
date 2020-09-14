@@ -235,6 +235,9 @@ public final class client extends GameShell {
 	@OriginalMember(owner = "client!sc", name = "fb", descriptor = "Lclient!tj;")
 	public static AudioChannel soundChannel;
 
+	@OriginalMember(owner = "client!de", name = "x", descriptor = "I")
+	public static int loop = 0;
+
 	@OriginalMember(owner = "client!va", name = "f", descriptor = "Lclient!client;")
 	public static client instance;
 
@@ -398,7 +401,7 @@ public final class client extends GameShell {
 												Static4.aBoolean206 = false;
 												Static6.aString269 = null;
 											}
-											if (Static2.anInt954 % 1500 == 0) {
+											if (loop % 1500 == 0) {
 												Static22.method2387();
 											}
 											return;
@@ -785,9 +788,9 @@ public final class client extends GameShell {
 			MouseRecorder.instance.running = false;
 		}
 		MouseRecorder.instance = null;
-		if (Static3.aClass52_7 != null) {
-			Static3.aClass52_7.close();
-			Static3.aClass52_7 = null;
+		if (Protocol.socket != null) {
+			Protocol.socket.close();
+			Protocol.socket = null;
 		}
 		Keyboard.stop(GameShell.canvas);
 		Mouse.stop(GameShell.canvas);
@@ -1205,8 +1208,8 @@ public final class client extends GameShell {
 		if (Static4.anInt3304 == 1000) {
 			return;
 		}
-		Static2.anInt954++;
-		if (Static2.anInt954 % 1000 == 1) {
+		loop++;
+		if (loop % 1000 == 1) {
 			@Pc(25) GregorianCalendar local25 = new GregorianCalendar();
 			Static2.anInt1976 = local25.get(11) * 600 + local25.get(12) * 10 + local25.get(13) / 6;
 			Static5.aRandom1.setSeed((long) Static2.anInt1976);

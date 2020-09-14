@@ -271,9 +271,6 @@ public final class Static3 {
 	@OriginalMember(owner = "client!je", name = "m", descriptor = "Lclient!ic;")
 	public static HashTable aClass84_10;
 
-	@OriginalMember(owner = "client!jf", name = "d", descriptor = "Lclient!eo;")
-	public static BufferedSocket aClass52_7;
-
 	@OriginalMember(owner = "client!jh", name = "i", descriptor = "I")
 	public static int anInt2586;
 
@@ -408,9 +405,6 @@ public final class Static3 {
 
 	@OriginalMember(owner = "client!hj", name = "e", descriptor = "[I")
 	public static final int[] anIntArray181 = new int[14];
-
-	@OriginalMember(owner = "client!hk", name = "ab", descriptor = "Lclient!wa;")
-	public static final Packet aClass4_Sub10_Sub1_1 = new Packet(5000);
 
 	@OriginalMember(owner = "client!hk", name = "eb", descriptor = "I")
 	public static int anInt2232 = -1;

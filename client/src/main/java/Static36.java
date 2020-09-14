@@ -1,5 +1,3 @@
-import java.io.IOException;
-
 import dev.openrs2.deob.annotation.OriginalArg;
 import dev.openrs2.deob.annotation.OriginalMember;
 import dev.openrs2.deob.annotation.Pc;
@@ -28,63 +26,6 @@ public final class Static36 {
 	public static void method4405(@OriginalArg(0) int arg0) {
 		@Pc(10) Class4_Sub3_Sub9 local10 = Static12.method2322(11, arg0);
 		local10.method1519();
-	}
-
-	@OriginalMember(owner = "client!va", name = "b", descriptor = "(I)V")
-	public static void method4406() {
-		@Pc(6) int local6 = Static5.aClass4_Sub10_Sub1_2.readBits(8);
-		if (PlayerList.size > local6) {
-			for (@Pc(23) int local23 = local6; local23 < PlayerList.size; local23++) {
-				Protocol.removedIds[Protocol.removed++] = PlayerList.ids[local23];
-			}
-		}
-		if (local6 > PlayerList.size) {
-			throw new RuntimeException("gppov1");
-		}
-		PlayerList.size = 0;
-		for (@Pc(55) int local55 = 0; local55 < local6; local55++) {
-			@Pc(62) int local62 = PlayerList.ids[local55];
-			@Pc(66) Player local66 = PlayerList.players[local62];
-			@Pc(73) int local73 = Static5.aClass4_Sub10_Sub1_2.readBits(1);
-			if (local73 == 0) {
-				PlayerList.ids[PlayerList.size++] = local62;
-				local66.anInt3990 = Static2.anInt954;
-			} else {
-				@Pc(94) int local94 = Static5.aClass4_Sub10_Sub1_2.readBits(2);
-				if (local94 == 0) {
-					PlayerList.ids[PlayerList.size++] = local62;
-					local66.anInt3990 = Static2.anInt954;
-					Static7.anIntArray587[Static6.anInt4760++] = local62;
-				} else if (local94 == 1) {
-					PlayerList.ids[PlayerList.size++] = local62;
-					local66.anInt3990 = Static2.anInt954;
-					@Pc(140) int local140 = Static5.aClass4_Sub10_Sub1_2.readBits(3);
-					local66.method3308(local140, 1);
-					@Pc(150) int local150 = Static5.aClass4_Sub10_Sub1_2.readBits(1);
-					if (local150 == 1) {
-						Static7.anIntArray587[Static6.anInt4760++] = local62;
-					}
-				} else if (local94 == 2) {
-					PlayerList.ids[PlayerList.size++] = local62;
-					local66.anInt3990 = Static2.anInt954;
-					if (Static5.aClass4_Sub10_Sub1_2.readBits(1) == 1) {
-						@Pc(193) int local193 = Static5.aClass4_Sub10_Sub1_2.readBits(3);
-						local66.method3308(local193, 2);
-						@Pc(205) int local205 = Static5.aClass4_Sub10_Sub1_2.readBits(3);
-						local66.method3308(local205, 2);
-					} else {
-						@Pc(219) int local219 = Static5.aClass4_Sub10_Sub1_2.readBits(3);
-						local66.method3308(local219, 0);
-					}
-					@Pc(229) int local229 = Static5.aClass4_Sub10_Sub1_2.readBits(1);
-					if (local229 == 1) {
-						Static7.anIntArray587[Static6.anInt4760++] = local62;
-					}
-				} else if (local94 == 3) {
-					Protocol.removedIds[Protocol.removed++] = local62;
-				}
-			}
-		}
 	}
 
 	@OriginalMember(owner = "client!vb", name = "a", descriptor = "(BIIII)V")
@@ -292,24 +233,6 @@ public final class Static36 {
 		}
 	}
 
-	@OriginalMember(owner = "client!ve", name = "b", descriptor = "(I)Z")
-	public static boolean method4442() {
-		try {
-			return Static21.method3287();
-		} catch (@Pc(16) IOException local16) {
-			Static23.method2455();
-			return true;
-		} catch (@Pc(21) Exception local21) {
-			@Pc(63) String local63 = "T2 - " + Static1.anInt552 + "," + Static3.anInt2273 + "," + Static2.anInt1231 + " - " + Static1.anInt1052 + "," + (Static5.originX + PlayerList.self.anIntArray422[0]) + "," + (Static7.originZ + PlayerList.self.anIntArray426[0]) + " - ";
-			for (@Pc(65) int local65 = 0; Static1.anInt1052 > local65 && local65 < 50; local65++) {
-				local63 = local63 + Static5.aClass4_Sub10_Sub1_2.bytes[local65] + ",";
-			}
-			TracingException.report(local21, local63);
-			Static19.method1818();
-			return true;
-		}
-	}
-
 	@OriginalMember(owner = "client!ve", name = "a", descriptor = "(BIIII)I")
 	public static int method4443(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3) {
 		@Pc(9) int local9 = arg2 & 0xF;
@@ -377,33 +300,6 @@ public final class Static36 {
 				for (@Pc(24) int local24 = 0; local24 < 104; local24++) {
 					Static1.aByteArrayArrayArray2[local12][local17][local24] = arg0;
 				}
-			}
-		}
-	}
-
-	@OriginalMember(owner = "client!vl", name = "a", descriptor = "(I)V")
-	public static void method4522() {
-		Static6.anInt4760 = 0;
-		Protocol.removed = 0;
-		Static26.method3056();
-		Static12.method734();
-		Static35.method4298();
-		for (@Pc(17) int local17 = 0; local17 < Protocol.removed; local17++) {
-			@Pc(28) int local28 = Protocol.removedIds[local17];
-			if (Static2.anInt954 != NpcList.npcs[local28].anInt3990) {
-				if (NpcList.npcs[local28].type.method4260()) {
-					Static25.method2931(NpcList.npcs[local28]);
-				}
-				NpcList.npcs[local28].setType(null);
-				NpcList.npcs[local28] = null;
-			}
-		}
-		if (Static5.aClass4_Sub10_Sub1_2.position != Static1.anInt1052) {
-			throw new RuntimeException("gnp1 pos:" + Static5.aClass4_Sub10_Sub1_2.position + " psize:" + Static1.anInt1052);
-		}
-		for (@Pc(87) int local87 = 0; local87 < NpcList.size; local87++) {
-			if (NpcList.npcs[NpcList.ids[local87]] == null) {
-				throw new RuntimeException("gnp2 pos:" + local87 + " size:" + NpcList.size);
 			}
 		}
 	}
@@ -718,7 +614,7 @@ public final class Static36 {
 
 	@OriginalMember(owner = "client!w", name = "e", descriptor = "(I)V")
 	public static void method4567() {
-		Static3.aClass4_Sub10_Sub1_1.writeOpcode(156);
-		Static3.aClass4_Sub10_Sub1_1.writeShort(Static7.anInt5426);
+		Protocol.outboundBuffer.writeOpcode(156);
+		Protocol.outboundBuffer.writeShort(Static7.anInt5426);
 	}
 }

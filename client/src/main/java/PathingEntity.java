@@ -6,6 +6,9 @@ import dev.openrs2.deob.annotation.Pc;
 @OriginalClass("client!qc")
 public abstract class PathingEntity extends Entity {
 
+	@OriginalMember(owner = "client!be", name = "j", descriptor = "[I")
+	public static final int[] ANGLES = new int[] { 768, 1024, 1280, 512, 1536, 256, 0, 1792 };
+
 	@OriginalMember(owner = "client!qc", name = "t", descriptor = "I")
 	public int anInt3966;
 
@@ -667,7 +670,7 @@ public abstract class PathingEntity extends Entity {
 			@Pc(67) GlModel local67 = (GlModel) arg0;
 			@Pc(70) GlModel local70 = (GlModel) arg1;
 			if ((this.aClass20_Sub3_6 == null || this.aClass20_Sub3_6.aBoolean250) && (local67.aClass158Array3 != null || local67.aClass167Array3 != null || local70 != null && (local70.aClass158Array3 != null || local70.aClass167Array3 != null))) {
-				this.aClass20_Sub3_6 = new Class20_Sub3(Static2.anInt954, this.getSize(), this.getSize());
+				this.aClass20_Sub3_6 = new Class20_Sub3(client.loop, this.getSize(), this.getSize());
 			}
 			if (this.aClass20_Sub3_6 != null) {
 				this.aClass20_Sub3_6.method2967(local67.aClass158Array3, local67.aClass167Array3, false, local67.anIntArray507, local67.anIntArray504, local67.anIntArray502);
@@ -676,7 +679,7 @@ public abstract class PathingEntity extends Entity {
 			@Pc(4) SoftwareModel local4 = (SoftwareModel) arg1;
 			@Pc(7) SoftwareModel local7 = (SoftwareModel) arg0;
 			if ((this.aClass20_Sub3_6 == null || this.aClass20_Sub3_6.aBoolean250) && (local7.aClass158Array2 != null || local7.aClass167Array2 != null || local4 != null && (local4.aClass158Array2 != null || local4.aClass167Array2 != null))) {
-				this.aClass20_Sub3_6 = new Class20_Sub3(Static2.anInt954, this.getSize(), this.getSize());
+				this.aClass20_Sub3_6 = new Class20_Sub3(client.loop, this.getSize(), this.getSize());
 			}
 			if (this.aClass20_Sub3_6 != null) {
 				this.aClass20_Sub3_6.method2967(local7.aClass158Array2, local7.aClass167Array2, false, local7.anIntArray347, local7.anIntArray344, local7.anIntArray340);

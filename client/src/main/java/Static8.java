@@ -171,25 +171,25 @@ public final class Static8 {
 			if (local30 != null && local30.name != null && local30.name.equalsIgnoreCase(local17)) {
 				local19 = true;
 				if (arg0 == 1) {
-					Static3.aClass4_Sub10_Sub1_1.writeOpcode(212);
-					Static3.aClass4_Sub10_Sub1_1.writeShortA(PlayerList.ids[local21]);
-					Static3.aClass4_Sub10_Sub1_1.writeByteA(0);
+					Protocol.outboundBuffer.writeOpcode(212);
+					Protocol.outboundBuffer.writeShortA(PlayerList.ids[local21]);
+					Protocol.outboundBuffer.writeByteA(0);
 				} else if (arg0 == 4) {
-					Static3.aClass4_Sub10_Sub1_1.writeOpcode(105);
-					Static3.aClass4_Sub10_Sub1_1.writeShort(PlayerList.ids[local21]);
-					Static3.aClass4_Sub10_Sub1_1.writeByte(0);
+					Protocol.outboundBuffer.writeOpcode(105);
+					Protocol.outboundBuffer.writeShort(PlayerList.ids[local21]);
+					Protocol.outboundBuffer.writeByte(0);
 				} else if (arg0 == 5) {
-					Static3.aClass4_Sub10_Sub1_1.writeOpcode(96);
-					Static3.aClass4_Sub10_Sub1_1.writeByteA(0);
-					Static3.aClass4_Sub10_Sub1_1.writeShort(PlayerList.ids[local21]);
+					Protocol.outboundBuffer.writeOpcode(96);
+					Protocol.outboundBuffer.writeByteA(0);
+					Protocol.outboundBuffer.writeShort(PlayerList.ids[local21]);
 				} else if (arg0 == 6) {
-					Static3.aClass4_Sub10_Sub1_1.writeOpcode(77);
-					Static3.aClass4_Sub10_Sub1_1.writeShortLE2(PlayerList.ids[local21]);
-					Static3.aClass4_Sub10_Sub1_1.writeByteS(0);
+					Protocol.outboundBuffer.writeOpcode(77);
+					Protocol.outboundBuffer.writeShortLE2(PlayerList.ids[local21]);
+					Protocol.outboundBuffer.writeByteS(0);
 				} else if (arg0 == 7) {
-					Static3.aClass4_Sub10_Sub1_1.writeOpcode(52);
-					Static3.aClass4_Sub10_Sub1_1.writeShort(PlayerList.ids[local21]);
-					Static3.aClass4_Sub10_Sub1_1.writeByte(0);
+					Protocol.outboundBuffer.writeOpcode(52);
+					Protocol.outboundBuffer.writeShort(PlayerList.ids[local21]);
+					Protocol.outboundBuffer.writeByte(0);
 				}
 				break;
 			}
@@ -245,9 +245,9 @@ public final class Static8 {
 
 	@OriginalMember(owner = "client!ab", name = "a", descriptor = "(IJ)V")
 	public static void method13(@OriginalArg(1) long arg0) {
-		Static3.aClass4_Sub10_Sub1_1.position = 0;
-		Static3.aClass4_Sub10_Sub1_1.writeByte(21);
-		Static3.aClass4_Sub10_Sub1_1.writeLong(arg0);
+		Protocol.outboundBuffer.position = 0;
+		Protocol.outboundBuffer.writeByte(21);
+		Protocol.outboundBuffer.writeLong(arg0);
 		Static6.anInt5173 = -3;
 		Static2.anInt1213 = 0;
 		Static4.anInt3409 = 0;

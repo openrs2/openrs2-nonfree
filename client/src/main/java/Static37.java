@@ -37,15 +37,15 @@ public final class Static37 {
 	@OriginalMember(owner = "client!wb", name = "a", descriptor = "(IIII)V")
 	public static void method4661(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(3) int arg2) {
 		if (arg1 == 0) {
-			Static3.aClass4_Sub10_Sub1_1.writeOpcode(230);
+			Protocol.outboundBuffer.writeOpcode(230);
 		}
 		if (arg1 == 1) {
-			Static3.aClass4_Sub10_Sub1_1.writeOpcode(207);
+			Protocol.outboundBuffer.writeOpcode(207);
 		}
-		Static3.aClass4_Sub10_Sub1_1.writeByteS(++Static1.aByte1);
-		Static3.aClass4_Sub10_Sub1_1.writeByte(Keyboard.pressedKeys[82] ? 1 : 0);
-		Static3.aClass4_Sub10_Sub1_1.writeShort(Static7.originZ + arg2);
-		Static3.aClass4_Sub10_Sub1_1.writeShortLEA(arg0 + Static5.originX);
+		Protocol.outboundBuffer.writeByteS(++Static1.aByte1);
+		Protocol.outboundBuffer.writeByte(Keyboard.pressedKeys[82] ? 1 : 0);
+		Protocol.outboundBuffer.writeShort(Static7.originZ + arg2);
+		Protocol.outboundBuffer.writeShortLEA(arg0 + Static5.originX);
 	}
 
 	@OriginalMember(owner = "client!wb", name = "c", descriptor = "(I)I")
@@ -212,10 +212,10 @@ public final class Static37 {
 					@Pc(277) int local277 = local16.anInt4995;
 					entity.anInt4032 = local16.x * 128 + width * 64;
 					entity.anInt3975 = local161;
-					entity.anInt4042 = local16.anInt4997 + Static2.anInt954;
+					entity.anInt4042 = local16.anInt4997 + client.loop;
 					@Pc(300) int local300 = local16.anInt5007;
 					entity.anObject5 = local163;
-					entity.anInt4010 = local16.anInt4999 + Static2.anInt954;
+					entity.anInt4010 = local16.anInt4999 + client.loop;
 					if (local300 < local277) {
 						@Pc(315) int local315 = local277;
 						local277 = local300;
@@ -482,9 +482,9 @@ public final class Static37 {
 
 	@OriginalMember(owner = "client!wf", name = "a", descriptor = "(BII)V")
 	public static void method4736(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1) {
-		Static3.aClass4_Sub10_Sub1_1.writeOpcode(178);
-		Static3.aClass4_Sub10_Sub1_1.writeShortLE2(arg0);
-		Static3.aClass4_Sub10_Sub1_1.writeIntAlt3(arg1);
+		Protocol.outboundBuffer.writeOpcode(178);
+		Protocol.outboundBuffer.writeShortLE2(arg0);
+		Protocol.outboundBuffer.writeIntAlt3(arg1);
 	}
 
 	@OriginalMember(owner = "client!wf", name = "a", descriptor = "()V")
@@ -644,54 +644,54 @@ public final class Static37 {
 			return;
 		}
 		if (arg2 == 1) {
-			Static3.aClass4_Sub10_Sub1_1.writeOpcode(94);
-			Static3.aClass4_Sub10_Sub1_1.writeInt(arg0);
-			Static3.aClass4_Sub10_Sub1_1.writeShort(arg1);
+			Protocol.outboundBuffer.writeOpcode(94);
+			Protocol.outboundBuffer.writeInt(arg0);
+			Protocol.outboundBuffer.writeShort(arg1);
 		}
 		if (arg2 == 2) {
-			Static3.aClass4_Sub10_Sub1_1.writeOpcode(201);
-			Static3.aClass4_Sub10_Sub1_1.writeInt(arg0);
-			Static3.aClass4_Sub10_Sub1_1.writeShort(arg1);
+			Protocol.outboundBuffer.writeOpcode(201);
+			Protocol.outboundBuffer.writeInt(arg0);
+			Protocol.outboundBuffer.writeShort(arg1);
 		}
 		if (arg2 == 3) {
-			Static3.aClass4_Sub10_Sub1_1.writeOpcode(30);
-			Static3.aClass4_Sub10_Sub1_1.writeInt(arg0);
-			Static3.aClass4_Sub10_Sub1_1.writeShort(arg1);
+			Protocol.outboundBuffer.writeOpcode(30);
+			Protocol.outboundBuffer.writeInt(arg0);
+			Protocol.outboundBuffer.writeShort(arg1);
 		}
 		if (arg2 == 4) {
-			Static3.aClass4_Sub10_Sub1_1.writeOpcode(61);
-			Static3.aClass4_Sub10_Sub1_1.writeInt(arg0);
-			Static3.aClass4_Sub10_Sub1_1.writeShort(arg1);
+			Protocol.outboundBuffer.writeOpcode(61);
+			Protocol.outboundBuffer.writeInt(arg0);
+			Protocol.outboundBuffer.writeShort(arg1);
 		}
 		if (arg2 == 5) {
-			Static3.aClass4_Sub10_Sub1_1.writeOpcode(66);
-			Static3.aClass4_Sub10_Sub1_1.writeInt(arg0);
-			Static3.aClass4_Sub10_Sub1_1.writeShort(arg1);
+			Protocol.outboundBuffer.writeOpcode(66);
+			Protocol.outboundBuffer.writeInt(arg0);
+			Protocol.outboundBuffer.writeShort(arg1);
 		}
 		if (arg2 == 6) {
-			Static3.aClass4_Sub10_Sub1_1.writeOpcode(7);
-			Static3.aClass4_Sub10_Sub1_1.writeInt(arg0);
-			Static3.aClass4_Sub10_Sub1_1.writeShort(arg1);
+			Protocol.outboundBuffer.writeOpcode(7);
+			Protocol.outboundBuffer.writeInt(arg0);
+			Protocol.outboundBuffer.writeShort(arg1);
 		}
 		if (arg2 == 7) {
-			Static3.aClass4_Sub10_Sub1_1.writeOpcode(108);
-			Static3.aClass4_Sub10_Sub1_1.writeInt(arg0);
-			Static3.aClass4_Sub10_Sub1_1.writeShort(arg1);
+			Protocol.outboundBuffer.writeOpcode(108);
+			Protocol.outboundBuffer.writeInt(arg0);
+			Protocol.outboundBuffer.writeShort(arg1);
 		}
 		if (arg2 == 8) {
-			Static3.aClass4_Sub10_Sub1_1.writeOpcode(255);
-			Static3.aClass4_Sub10_Sub1_1.writeInt(arg0);
-			Static3.aClass4_Sub10_Sub1_1.writeShort(arg1);
+			Protocol.outboundBuffer.writeOpcode(255);
+			Protocol.outboundBuffer.writeInt(arg0);
+			Protocol.outboundBuffer.writeShort(arg1);
 		}
 		if (arg2 == 9) {
-			Static3.aClass4_Sub10_Sub1_1.writeOpcode(97);
-			Static3.aClass4_Sub10_Sub1_1.writeInt(arg0);
-			Static3.aClass4_Sub10_Sub1_1.writeShort(arg1);
+			Protocol.outboundBuffer.writeOpcode(97);
+			Protocol.outboundBuffer.writeInt(arg0);
+			Protocol.outboundBuffer.writeShort(arg1);
 		}
 		if (arg2 == 10) {
-			Static3.aClass4_Sub10_Sub1_1.writeOpcode(10);
-			Static3.aClass4_Sub10_Sub1_1.writeInt(arg0);
-			Static3.aClass4_Sub10_Sub1_1.writeShort(arg1);
+			Protocol.outboundBuffer.writeOpcode(10);
+			Protocol.outboundBuffer.writeInt(arg0);
+			Protocol.outboundBuffer.writeShort(arg1);
 		}
 	}
 

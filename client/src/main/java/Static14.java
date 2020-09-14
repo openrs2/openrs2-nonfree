@@ -69,11 +69,11 @@ public final class Static14 {
 						Static21.method2019(local231);
 					}
 					if (Static7.aClass185_16 != null && Static12.method691(Static1.aClass185_1) != null) {
-						Static3.aClass4_Sub10_Sub1_1.writeOpcode(0);
-						Static3.aClass4_Sub10_Sub1_1.writeIntLE2(Static1.aClass185_1.id);
-						Static3.aClass4_Sub10_Sub1_1.writeIntAlt3(Static7.aClass185_16.id);
-						Static3.aClass4_Sub10_Sub1_1.writeShortA(Static7.aClass185_16.anInt5968);
-						Static3.aClass4_Sub10_Sub1_1.writeShortLEA(Static1.aClass185_1.anInt5968);
+						Protocol.outboundBuffer.writeOpcode(0);
+						Protocol.outboundBuffer.writeIntLE2(Static1.aClass185_1.id);
+						Protocol.outboundBuffer.writeIntAlt3(Static7.aClass185_16.id);
+						Protocol.outboundBuffer.writeShortA(Static7.aClass185_16.anInt5968);
+						Protocol.outboundBuffer.writeShortLEA(Static1.aClass185_1.anInt5968);
 					}
 				} else if ((Static3.anInt5400 == 1 || Static13.method1005(Static7.anInt5634 - 1)) && Static7.anInt5634 > 2) {
 					Static31.method3783();
@@ -139,10 +139,10 @@ public final class Static14 {
 						NpcList.npcs[local112] = new Npc();
 						@Pc(217) Npc local217 = NpcList.npcs[local112];
 						NpcList.ids[NpcList.size++] = local112;
-						local217.anInt3990 = Static2.anInt954;
+						local217.anInt3990 = client.loop;
 						local217.setType(local161);
 						local217.setSize(local217.type.size);
-						local217.anInt4017 = local217.anInt4031 = Static1.anIntArray27[local217.type.aByte18];
+						local217.anInt4017 = local217.anInt4031 = PathingEntity.ANGLES[local217.type.aByte18];
 						local217.anInt4009 = local217.type.anInt5243;
 						if (local217.anInt4009 == 0) {
 							local217.anInt4031 = 0;
@@ -612,9 +612,9 @@ public final class Static14 {
 		}
 		try {
 			if (++Static4.anInt2974 > 1500) {
-				if (Static3.aClass52_7 != null) {
-					Static3.aClass52_7.close();
-					Static3.aClass52_7 = null;
+				if (Protocol.socket != null) {
+					Protocol.socket.close();
+					Protocol.socket = null;
 				}
 				if (Static5.anInt4216 >= 1) {
 					Static2.anInt1641 = -5;
@@ -641,16 +641,16 @@ public final class Static14 {
 				if (Static7.aClass197_5.status != 1) {
 					return;
 				}
-				Static3.aClass52_7 = new BufferedSocket((Socket) Static7.aClass197_5.result, GameShell.signLink);
+				Protocol.socket = new BufferedSocket((Socket) Static7.aClass197_5.result, GameShell.signLink);
 				Static7.aClass197_5 = null;
-				Static3.aClass52_7.write(Static3.aClass4_Sub10_Sub1_1.bytes, Static3.aClass4_Sub10_Sub1_1.position);
+				Protocol.socket.write(Protocol.outboundBuffer.bytes, Protocol.outboundBuffer.position);
 				if (client.musicChannel != null) {
 					client.musicChannel.method2996();
 				}
 				if (client.soundChannel != null) {
 					client.soundChannel.method2996();
 				}
-				@Pc(131) int local131 = Static3.aClass52_7.read();
+				@Pc(131) int local131 = Protocol.socket.read();
 				if (client.musicChannel != null) {
 					client.musicChannel.method2996();
 				}
@@ -660,35 +660,35 @@ public final class Static14 {
 				if (local131 != 101) {
 					Static2.anInt1641 = local131;
 					Static6.anInt5117 = 0;
-					Static3.aClass52_7.close();
-					Static3.aClass52_7 = null;
+					Protocol.socket.close();
+					Protocol.socket = null;
 					return;
 				}
 				Static6.anInt5117 = 3;
 			}
 			if (Static6.anInt5117 == 3) {
-				if (Static3.aClass52_7.available() < 2) {
+				if (Protocol.socket.available() < 2) {
 					return;
 				}
-				@Pc(185) int local185 = Static3.aClass52_7.read() << 8 | Static3.aClass52_7.read();
+				@Pc(185) int local185 = Protocol.socket.read() << 8 | Protocol.socket.read();
 				Static37.method4720(local185);
 				if (client.worldId == -1) {
 					Static6.anInt5117 = 0;
 					Static2.anInt1641 = 6;
-					Static3.aClass52_7.close();
-					Static3.aClass52_7 = null;
+					Protocol.socket.close();
+					Protocol.socket = null;
 					return;
 				}
 				Static6.anInt5117 = 0;
-				Static3.aClass52_7.close();
-				Static3.aClass52_7 = null;
+				Protocol.socket.close();
+				Protocol.socket = null;
 				Static8.method101();
 				return;
 			}
 		} catch (@Pc(217) IOException local217) {
-			if (Static3.aClass52_7 != null) {
-				Static3.aClass52_7.close();
-				Static3.aClass52_7 = null;
+			if (Protocol.socket != null) {
+				Protocol.socket.close();
+				Protocol.socket = null;
 			}
 			if (Static5.anInt4216 < 1) {
 				Static5.anInt4216++;

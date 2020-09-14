@@ -381,7 +381,7 @@ public final class Static24 {
 		if (Static3.anInt5398 != -1) {
 			Static12.method777(true);
 		}
-		if (Static3.aClass52_7 != null && (Static4.anInt3304 == 30 || Static4.anInt3304 == 25)) {
+		if (Protocol.socket != null && (Static4.anInt3304 == 30 || Static4.anInt3304 == 25)) {
 			Static21.method2001();
 		}
 		for (@Pc(490) int local490 = 0; local490 < 100; local490++) {
@@ -585,7 +585,7 @@ public final class Static24 {
 			Static4.anInt2665++;
 		}
 		Static3.anInt2297 += arg0;
-		@Pc(247) int local247 = (arg0 + (Static2.anInt954 & 0x1)) / 2;
+		@Pc(247) int local247 = (arg0 + (client.loop & 0x1)) / 2;
 		if (local247 <= 0) {
 			return;
 		}
@@ -634,9 +634,9 @@ public final class Static24 {
 
 	@OriginalMember(owner = "client!mf", name = "a", descriptor = "(Lclient!qc;I)V")
 	public static void method2705(@OriginalArg(0) PathingEntity arg0) {
-		if (Static2.anInt954 == arg0.anInt3966 || arg0.anInt4007 == -1 || arg0.anInt3996 != 0 || arg0.anInt4044 + 1 > Static23.method2494(arg0.anInt4007).anIntArray94[arg0.anInt3970]) {
+		if (client.loop == arg0.anInt3966 || arg0.anInt4007 == -1 || arg0.anInt3996 != 0 || arg0.anInt4044 + 1 > Static23.method2494(arg0.anInt4007).anIntArray94[arg0.anInt3970]) {
 			@Pc(41) int local41 = arg0.anInt3966 - arg0.anInt4034;
-			@Pc(46) int local46 = Static2.anInt954 - arg0.anInt4034;
+			@Pc(46) int local46 = client.loop - arg0.anInt4034;
 			@Pc(57) int local57 = arg0.anInt3973 * 128 + arg0.getSize() * 64;
 			@Pc(71) int local71 = arg0.anInt4033 * 128 + arg0.getSize() * 64;
 			@Pc(82) int local82 = arg0.anInt4013 * 128 + arg0.getSize() * 64;

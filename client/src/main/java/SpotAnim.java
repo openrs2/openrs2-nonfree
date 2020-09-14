@@ -73,7 +73,7 @@ public final class SpotAnim extends Entity {
 		if (GlRenderer.enabled) {
 			@Pc(55) GlModel local55 = (GlModel) arg0;
 			if ((this.aClass20_Sub3_4 == null || this.aClass20_Sub3_4.aBoolean250) && (local55.aClass158Array3 != null || local55.aClass167Array3 != null)) {
-				this.aClass20_Sub3_4 = new Class20_Sub3(Static2.anInt954, 1, 1);
+				this.aClass20_Sub3_4 = new Class20_Sub3(client.loop, 1, 1);
 			}
 			if (this.aClass20_Sub3_4 != null) {
 				this.aClass20_Sub3_4.method2967(local55.aClass158Array3, local55.aClass167Array3, false, local55.anIntArray507, local55.anIntArray504, local55.anIntArray502);
@@ -81,7 +81,7 @@ public final class SpotAnim extends Entity {
 		} else {
 			@Pc(8) SoftwareModel local8 = (SoftwareModel) arg0;
 			if ((this.aClass20_Sub3_4 == null || this.aClass20_Sub3_4.aBoolean250) && (local8.aClass158Array2 != null || local8.aClass167Array2 != null)) {
-				this.aClass20_Sub3_4 = new Class20_Sub3(Static2.anInt954, 1, 1);
+				this.aClass20_Sub3_4 = new Class20_Sub3(client.loop, 1, 1);
 			}
 			if (this.aClass20_Sub3_4 != null) {
 				this.aClass20_Sub3_4.method2967(local8.aClass158Array2, local8.aClass167Array2, false, local8.anIntArray347, local8.anIntArray344, local8.anIntArray340);

@@ -38,8 +38,8 @@ public final class Static23 {
 	@OriginalMember(owner = "client!lb", name = "b", descriptor = "(B)V")
 	public static void method2455() {
 		if (Static1.anInt885 <= 0) {
-			Static2.aClass52_1 = Static3.aClass52_7;
-			Static3.aClass52_7 = null;
+			Static2.aClass52_1 = Protocol.socket;
+			Protocol.socket = null;
 			Static9.method233(40);
 		} else {
 			Static19.method1818();

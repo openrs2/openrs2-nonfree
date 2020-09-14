@@ -188,9 +188,9 @@ public final class Static19 {
 
 	@OriginalMember(owner = "client!ia", name = "a", descriptor = "(Z)V")
 	public static void method1818() {
-		if (Static3.aClass52_7 != null) {
-			Static3.aClass52_7.close();
-			Static3.aClass52_7 = null;
+		if (Protocol.socket != null) {
+			Protocol.socket.close();
+			Protocol.socket = null;
 		}
 		Static24.method2697();
 		Static35.method4310();
@@ -215,7 +215,7 @@ public final class Static19 {
 		PlayerList.size = 0;
 		for (@Pc(78) int local78 = 0; local78 < 2048; local78++) {
 			PlayerList.players[local78] = null;
-			Static6.aClass4_Sub10Array1[local78] = null;
+			PlayerList.appearanceCache[local78] = null;
 		}
 		for (@Pc(96) int local96 = 0; local96 < 32768; local96++) {
 			NpcList.npcs[local96] = null;

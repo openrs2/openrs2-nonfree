@@ -193,50 +193,6 @@ public final class Static22 {
 		}
 	}
 
-	@OriginalMember(owner = "client!k", name = "a", descriptor = "(I)V")
-	public static void method2189() {
-		Static5.aClass4_Sub10_Sub1_2.startBitAccess();
-		@Pc(7) int local7 = Static5.aClass4_Sub10_Sub1_2.readBits(1);
-		if (local7 == 0) {
-			return;
-		}
-		@Pc(19) int local19 = Static5.aClass4_Sub10_Sub1_2.readBits(2);
-		if (local19 == 0) {
-			Static7.anIntArray587[Static6.anInt4760++] = 2047;
-		} else if (local19 == 1) {
-			@Pc(42) int local42 = Static5.aClass4_Sub10_Sub1_2.readBits(3);
-			PlayerList.self.method3308(local42, 1);
-			@Pc(54) int local54 = Static5.aClass4_Sub10_Sub1_2.readBits(1);
-			if (local54 == 1) {
-				Static7.anIntArray587[Static6.anInt4760++] = 2047;
-			}
-		} else if (local19 == 2) {
-			if (Static5.aClass4_Sub10_Sub1_2.readBits(1) == 1) {
-				@Pc(82) int local82 = Static5.aClass4_Sub10_Sub1_2.readBits(3);
-				PlayerList.self.method3308(local82, 2);
-				@Pc(92) int local92 = Static5.aClass4_Sub10_Sub1_2.readBits(3);
-				PlayerList.self.method3308(local92, 2);
-			} else {
-				@Pc(104) int local104 = Static5.aClass4_Sub10_Sub1_2.readBits(3);
-				PlayerList.self.method3308(local104, 0);
-			}
-			@Pc(114) int local114 = Static5.aClass4_Sub10_Sub1_2.readBits(1);
-			if (local114 == 1) {
-				Static7.anIntArray587[Static6.anInt4760++] = 2047;
-			}
-		} else if (local19 == 3) {
-			@Pc(137) int local137 = Static5.aClass4_Sub10_Sub1_2.readBits(7);
-			@Pc(142) int local142 = Static5.aClass4_Sub10_Sub1_2.readBits(1);
-			@Pc(147) int local147 = Static5.aClass4_Sub10_Sub1_2.readBits(1);
-			if (local147 == 1) {
-				Static7.anIntArray587[Static6.anInt4760++] = 2047;
-			}
-			Static7.y = Static5.aClass4_Sub10_Sub1_2.readBits(2);
-			@Pc(171) int local171 = Static5.aClass4_Sub10_Sub1_2.readBits(7);
-			PlayerList.self.method1174(local137, local142 == 1, local171);
-		}
-	}
-
 	@OriginalMember(owner = "client!k", name = "a", descriptor = "(IIIIIBII)V")
 	public static void method2190(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(6) int arg5, @OriginalArg(7) int arg6) {
 		@Pc(11) int local11 = Static8.method9(Static4.anInt3086, arg6, Static5.anInt4230);
@@ -291,8 +247,8 @@ public final class Static22 {
 					Static2.aBooleanArray5[local38] = Static2.aBooleanArray5[local38 + 1];
 				}
 				Static3.anInt2102 = Static6.anInt4979;
-				Static3.aClass4_Sub10_Sub1_1.writeOpcode(142);
-				Static3.aClass4_Sub10_Sub1_1.writeLong(arg0);
+				Protocol.outboundBuffer.writeOpcode(142);
+				Protocol.outboundBuffer.writeLong(arg0);
 				break;
 			}
 		}
@@ -895,23 +851,23 @@ public final class Static22 {
 				if (Static7.aClass197_5.status != 1) {
 					return -1;
 				}
-				Static3.aClass52_7 = new BufferedSocket((Socket) Static7.aClass197_5.result, GameShell.signLink);
+				Protocol.socket = new BufferedSocket((Socket) Static7.aClass197_5.result, GameShell.signLink);
 				Static7.aClass197_5 = null;
 				@Pc(79) int checksum = 0;
 				if (WorldList.loaded) {
 					checksum = WorldList.checksum;
 				}
-				Static3.aClass4_Sub10_Sub1_1.position = 0;
-				Static3.aClass4_Sub10_Sub1_1.writeByte(23);
-				Static3.aClass4_Sub10_Sub1_1.writeInt(checksum);
-				Static3.aClass52_7.write(Static3.aClass4_Sub10_Sub1_1.bytes, Static3.aClass4_Sub10_Sub1_1.position);
+				Protocol.outboundBuffer.position = 0;
+				Protocol.outboundBuffer.writeByte(23);
+				Protocol.outboundBuffer.writeInt(checksum);
+				Protocol.socket.write(Protocol.outboundBuffer.bytes, Protocol.outboundBuffer.position);
 				if (client.musicChannel != null) {
 					client.musicChannel.method2996();
 				}
 				if (client.soundChannel != null) {
 					client.soundChannel.method2996();
 				}
-				@Pc(117) int local117 = Static3.aClass52_7.read();
+				@Pc(117) int local117 = Protocol.socket.read();
 				if (client.musicChannel != null) {
 					client.musicChannel.method2996();
 				}
@@ -924,12 +880,12 @@ public final class Static22 {
 				Static7.anInt5319 = 2;
 			}
 			if (Static7.anInt5319 == 2) {
-				if (Static3.aClass52_7.available() < 2) {
+				if (Protocol.socket.available() < 2) {
 					return -1;
 				}
-				Static6.anInt4617 = Static3.aClass52_7.read();
+				Static6.anInt4617 = Protocol.socket.read();
 				Static6.anInt4617 <<= 8;
-				Static6.anInt4617 += Static3.aClass52_7.read();
+				Static6.anInt4617 += Protocol.socket.read();
 				Static2.aByteArray10 = new byte[Static6.anInt4617];
 				Static2.anInt1123 = 0;
 				Static7.anInt5319 = 3;
@@ -937,14 +893,14 @@ public final class Static22 {
 			if (Static7.anInt5319 != 3) {
 				return -1;
 			}
-			@Pc(189) int local189 = Static3.aClass52_7.available();
+			@Pc(189) int local189 = Protocol.socket.available();
 			if (local189 < 1) {
 				return -1;
 			}
 			if (local189 > Static6.anInt4617 - Static2.anInt1123) {
 				local189 = Static6.anInt4617 - Static2.anInt1123;
 			}
-			Static3.aClass52_7.read(Static2.aByteArray10, Static2.anInt1123, local189);
+			Protocol.socket.read(Static2.aByteArray10, Static2.anInt1123, local189);
 			Static2.anInt1123 += local189;
 			if (Static2.anInt1123 < Static6.anInt4617) {
 				return -1;
@@ -957,11 +913,11 @@ public final class Static22 {
 						WorldList.sorted[i++] = world;
 					}
 				}
-				Static3.aClass52_7.close();
+				Protocol.socket.close();
 				Static2.aByteArray10 = null;
 				Static7.anInt5319 = 0;
 				Static6.anInt4618 = 0;
-				Static3.aClass52_7 = null;
+				Protocol.socket = null;
 				Static6.aLong169 = MonotonicClock.currentTimeMillis();
 				return 0;
 			} else {
@@ -1344,7 +1300,7 @@ public final class Static22 {
 							}
 						}
 					}
-					if (local255.anObject5 == null || Static2.anInt954 < local255.anInt4042 || local255.anInt4010 <= Static2.anInt954) {
+					if (local255.anObject5 == null || client.loop < local255.anInt4042 || local255.anInt4010 <= client.loop) {
 						local255.aBoolean282 = false;
 						local255.anInt4006 = Static11.method522(local255.z, local255.x, Static7.y);
 						Static11.method637(Static7.y, local255.x, local255.z, local255.anInt4006, (local280 - 1) * 64 + 60, local255, local255.anInt4031, local253, local255.aBoolean284);

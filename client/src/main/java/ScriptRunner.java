@@ -1340,23 +1340,23 @@ public final class ScriptRunner {
 							if (StringUtils.isInt(local13921)) {
 								local13923 = StringUtils.parseInt(local13921);
 							}
-							Static3.aClass4_Sub10_Sub1_1.writeOpcode(219);
-							Static3.aClass4_Sub10_Sub1_1.writeInt(local13923);
+							Protocol.outboundBuffer.writeOpcode(219);
+							Protocol.outboundBuffer.writeInt(local13923);
 							continue;
 						}
 						if (opcode == 3105) {
 							ssp--;
 							@Pc(13955) String local13955 = stringStack[ssp];
-							Static3.aClass4_Sub10_Sub1_1.writeOpcode(149);
-							Static3.aClass4_Sub10_Sub1_1.writeLong(Base37.encode(local13955));
+							Protocol.outboundBuffer.writeOpcode(149);
+							Protocol.outboundBuffer.writeLong(Base37.encode(local13955));
 							continue;
 						}
 						if (opcode == 3106) {
 							ssp--;
 							@Pc(13986) String local13986 = stringStack[ssp];
-							Static3.aClass4_Sub10_Sub1_1.writeOpcode(164);
-							Static3.aClass4_Sub10_Sub1_1.writeByte(local13986.length() + 1);
-							Static3.aClass4_Sub10_Sub1_1.writeString(local13986);
+							Protocol.outboundBuffer.writeOpcode(164);
+							Protocol.outboundBuffer.writeByte(local13986.length() + 1);
+							Protocol.outboundBuffer.writeString(local13986);
 							continue;
 						}
 						if (opcode == 3107) {
@@ -1387,8 +1387,8 @@ public final class ScriptRunner {
 						if (opcode == 3110) {
 							isp--;
 							@Pc(14098) int local14098 = intStack[isp];
-							Static3.aClass4_Sub10_Sub1_1.writeOpcode(231);
-							Static3.aClass4_Sub10_Sub1_1.writeShort(local14098);
+							Protocol.outboundBuffer.writeOpcode(231);
+							Protocol.outboundBuffer.writeShort(local14098);
 							continue;
 						}
 					} else if (opcode < 3300) {
@@ -1409,7 +1409,7 @@ public final class ScriptRunner {
 						}
 					} else if (opcode < 3400) {
 						if (opcode == 3300) {
-							intStack[isp++] = Static2.anInt954;
+							intStack[isp++] = client.loop;
 							continue;
 						}
 						if (opcode == 3301) {
@@ -2572,10 +2572,10 @@ public final class ScriptRunner {
 									Static7.anInt5413 = intStack[isp];
 									Static6.anInt4837 = intStack[isp + 1];
 									Static6.anInt5016 = intStack[isp + 2];
-									Static3.aClass4_Sub10_Sub1_1.writeOpcode(234);
-									Static3.aClass4_Sub10_Sub1_1.writeByte(Static7.anInt5413);
-									Static3.aClass4_Sub10_Sub1_1.writeByte(Static6.anInt4837);
-									Static3.aClass4_Sub10_Sub1_1.writeByte(Static6.anInt5016);
+									Protocol.outboundBuffer.writeOpcode(234);
+									Protocol.outboundBuffer.writeByte(Static7.anInt5413);
+									Protocol.outboundBuffer.writeByte(Static6.anInt4837);
+									Protocol.outboundBuffer.writeByte(Static6.anInt5016);
 									continue;
 								}
 								if (opcode == 5002) {
@@ -2584,10 +2584,10 @@ public final class ScriptRunner {
 									isp -= 2;
 									@Pc(4012) int local4012 = intStack[isp];
 									@Pc(4018) int local4018 = intStack[isp + 1];
-									Static3.aClass4_Sub10_Sub1_1.writeOpcode(90);
-									Static3.aClass4_Sub10_Sub1_1.writeLong(Base37.encode(local4007));
-									Static3.aClass4_Sub10_Sub1_1.writeByte(local4012 - 1);
-									Static3.aClass4_Sub10_Sub1_1.writeByte(local4018);
+									Protocol.outboundBuffer.writeOpcode(90);
+									Protocol.outboundBuffer.writeLong(Base37.encode(local4007));
+									Protocol.outboundBuffer.writeByte(local4012 - 1);
+									Protocol.outboundBuffer.writeByte(local4018);
 									continue;
 								}
 								if (opcode == 5003) {
@@ -2740,13 +2740,13 @@ public final class ScriptRunner {
 											local4156 = 5;
 										}
 									}
-									Static3.aClass4_Sub10_Sub1_1.writeOpcode(186);
-									Static3.aClass4_Sub10_Sub1_1.writeByte(0);
-									@Pc(4616) int local4616 = Static3.aClass4_Sub10_Sub1_1.position;
-									Static3.aClass4_Sub10_Sub1_1.writeByte(local4154);
-									Static3.aClass4_Sub10_Sub1_1.writeByte(local4156);
-									WordPack.writeString(Static3.aClass4_Sub10_Sub1_1, local4125);
-									Static3.aClass4_Sub10_Sub1_1.writeByteLength(Static3.aClass4_Sub10_Sub1_1.position - local4616);
+									Protocol.outboundBuffer.writeOpcode(186);
+									Protocol.outboundBuffer.writeByte(0);
+									@Pc(4616) int local4616 = Protocol.outboundBuffer.position;
+									Protocol.outboundBuffer.writeByte(local4154);
+									Protocol.outboundBuffer.writeByte(local4156);
+									WordPack.writeString(Protocol.outboundBuffer, local4125);
+									Protocol.outboundBuffer.writeByteLength(Protocol.outboundBuffer.position - local4616);
 									continue;
 								}
 								if (opcode == 5009) {
@@ -2754,12 +2754,12 @@ public final class ScriptRunner {
 									@Pc(4647) String local4647 = stringStack[ssp];
 									@Pc(4653) String local4653 = stringStack[ssp + 1];
 									if (Static3.anInt2576 != 0 || (!Static1.aBoolean47 || Static5.aBoolean287) && !Static2.aBoolean67) {
-										Static3.aClass4_Sub10_Sub1_1.writeOpcode(157);
-										Static3.aClass4_Sub10_Sub1_1.writeByte(0);
-										@Pc(4680) int local4680 = Static3.aClass4_Sub10_Sub1_1.position;
-										Static3.aClass4_Sub10_Sub1_1.writeLong(Base37.encode(local4647));
-										WordPack.writeString(Static3.aClass4_Sub10_Sub1_1, local4653);
-										Static3.aClass4_Sub10_Sub1_1.writeByteLength(Static3.aClass4_Sub10_Sub1_1.position - local4680);
+										Protocol.outboundBuffer.writeOpcode(157);
+										Protocol.outboundBuffer.writeByte(0);
+										@Pc(4680) int local4680 = Protocol.outboundBuffer.position;
+										Protocol.outboundBuffer.writeLong(Base37.encode(local4647));
+										WordPack.writeString(Protocol.outboundBuffer, local4653);
+										Protocol.outboundBuffer.writeByteLength(Protocol.outboundBuffer.position - local4680);
 									}
 									continue;
 								}
@@ -2904,35 +2904,35 @@ public final class ScriptRunner {
 									continue;
 								}
 								if (opcode == 5059) {
-									Static3.aClass4_Sub10_Sub1_1.writeOpcode(222);
-									Static3.aClass4_Sub10_Sub1_1.writeByte(0);
-									@Pc(5125) int local5125 = Static3.aClass4_Sub10_Sub1_1.position;
-									Static3.aClass4_Sub10_Sub1_1.writeByte(0);
-									Static3.aClass4_Sub10_Sub1_1.writeShort(Static1.aClass27_1.anInt540);
-									Static1.aClass27_1.aClass4_Sub3_Sub11_1.method1911(Static1.aClass27_1.anIntArray48, Static3.aClass4_Sub10_Sub1_1);
-									Static3.aClass4_Sub10_Sub1_1.writeByteLength(Static3.aClass4_Sub10_Sub1_1.position - local5125);
+									Protocol.outboundBuffer.writeOpcode(222);
+									Protocol.outboundBuffer.writeByte(0);
+									@Pc(5125) int local5125 = Protocol.outboundBuffer.position;
+									Protocol.outboundBuffer.writeByte(0);
+									Protocol.outboundBuffer.writeShort(Static1.aClass27_1.anInt540);
+									Static1.aClass27_1.aClass4_Sub3_Sub11_1.method1911(Static1.aClass27_1.anIntArray48, Protocol.outboundBuffer);
+									Protocol.outboundBuffer.writeByteLength(Protocol.outboundBuffer.position - local5125);
 									continue;
 								}
 								if (opcode == 5060) {
 									ssp--;
 									@Pc(5165) String local5165 = stringStack[ssp];
-									Static3.aClass4_Sub10_Sub1_1.writeOpcode(42);
-									Static3.aClass4_Sub10_Sub1_1.writeByte(0);
-									@Pc(5178) int local5178 = Static3.aClass4_Sub10_Sub1_1.position;
-									Static3.aClass4_Sub10_Sub1_1.writeLong(Base37.encode(local5165));
-									Static3.aClass4_Sub10_Sub1_1.writeShort(Static1.aClass27_1.anInt540);
-									Static1.aClass27_1.aClass4_Sub3_Sub11_1.method1911(Static1.aClass27_1.anIntArray48, Static3.aClass4_Sub10_Sub1_1);
-									Static3.aClass4_Sub10_Sub1_1.writeByteLength(Static3.aClass4_Sub10_Sub1_1.position - local5178);
+									Protocol.outboundBuffer.writeOpcode(42);
+									Protocol.outboundBuffer.writeByte(0);
+									@Pc(5178) int local5178 = Protocol.outboundBuffer.position;
+									Protocol.outboundBuffer.writeLong(Base37.encode(local5165));
+									Protocol.outboundBuffer.writeShort(Static1.aClass27_1.anInt540);
+									Static1.aClass27_1.aClass4_Sub3_Sub11_1.method1911(Static1.aClass27_1.anIntArray48, Protocol.outboundBuffer);
+									Protocol.outboundBuffer.writeByteLength(Protocol.outboundBuffer.position - local5178);
 									continue;
 								}
 								if (opcode == 5061) {
-									Static3.aClass4_Sub10_Sub1_1.writeOpcode(222);
-									Static3.aClass4_Sub10_Sub1_1.writeByte(0);
-									@Pc(5227) int local5227 = Static3.aClass4_Sub10_Sub1_1.position;
-									Static3.aClass4_Sub10_Sub1_1.writeByte(1);
-									Static3.aClass4_Sub10_Sub1_1.writeShort(Static1.aClass27_1.anInt540);
-									Static1.aClass27_1.aClass4_Sub3_Sub11_1.method1911(Static1.aClass27_1.anIntArray48, Static3.aClass4_Sub10_Sub1_1);
-									Static3.aClass4_Sub10_Sub1_1.writeByteLength(Static3.aClass4_Sub10_Sub1_1.position - local5227);
+									Protocol.outboundBuffer.writeOpcode(222);
+									Protocol.outboundBuffer.writeByte(0);
+									@Pc(5227) int local5227 = Protocol.outboundBuffer.position;
+									Protocol.outboundBuffer.writeByte(1);
+									Protocol.outboundBuffer.writeShort(Static1.aClass27_1.anInt540);
+									Static1.aClass27_1.aClass4_Sub3_Sub11_1.method1911(Static1.aClass27_1.anIntArray48, Protocol.outboundBuffer);
+									Protocol.outboundBuffer.writeByteLength(Protocol.outboundBuffer.position - local5227);
 									continue;
 								}
 								if (opcode == 5062) {
@@ -3493,11 +3493,11 @@ public final class ScriptRunner {
 									isp--;
 									@Pc(8729) int local8729 = intStack[isp];
 									@Pc(8733) String local8733 = stringStack[ssp];
-									Static3.aClass4_Sub10_Sub1_1.writeOpcode(243);
-									Static3.aClass4_Sub10_Sub1_1.writeByte(Static19.method1791(local8733) + Static19.method1791(local8724) + 1);
-									Static3.aClass4_Sub10_Sub1_1.writeString(local8733);
-									Static3.aClass4_Sub10_Sub1_1.writeString(local8724);
-									Static3.aClass4_Sub10_Sub1_1.writeByte(local8729);
+									Protocol.outboundBuffer.writeOpcode(243);
+									Protocol.outboundBuffer.writeByte(Static19.method1791(local8733) + Static19.method1791(local8724) + 1);
+									Protocol.outboundBuffer.writeString(local8733);
+									Protocol.outboundBuffer.writeString(local8724);
+									Protocol.outboundBuffer.writeByte(local8729);
 									continue;
 								}
 								if (opcode == 5401) {
