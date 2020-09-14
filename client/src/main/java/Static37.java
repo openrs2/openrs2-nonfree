@@ -454,12 +454,6 @@ public final class Static37 {
 		}
 	}
 
-	@OriginalMember(owner = "client!wf", name = "a", descriptor = "(II)V")
-	public static void method4727() {
-		Static5.aClass26_42.clean(5);
-		Static6.aClass26_46.clean(5);
-	}
-
 	@OriginalMember(owner = "client!wf", name = "a", descriptor = "(BII)V")
 	public static void method4736(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1) {
 		Protocol.outboundBuffer.writeOpcode(178);

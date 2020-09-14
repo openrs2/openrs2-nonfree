@@ -41,12 +41,6 @@ public final class Static11 {
 		}
 	}
 
-	@OriginalMember(owner = "client!cc", name = "a", descriptor = "(Lclient!fh;ILclient!fh;)V")
-	public static void method514(@OriginalArg(0) Js5 arg0, @OriginalArg(2) Js5 arg1) {
-		Static3.aClass58_58 = arg1;
-		Static1.aClass58_3 = arg0;
-	}
-
 	@OriginalMember(owner = "client!cc", name = "b", descriptor = "(I)V")
 	public static void method516() {
 		Static35.method4310();

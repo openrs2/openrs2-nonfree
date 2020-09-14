@@ -341,9 +341,6 @@ public final class Static6 {
 	@OriginalMember(owner = "client!rh", name = "W", descriptor = "I")
 	public static int anInt4546 = 0;
 
-	@OriginalMember(owner = "client!rh", name = "ab", descriptor = "Lclient!cc;")
-	public static final SoftLruHashTable aClass26_46 = new SoftLruHashTable(2);
-
 	@OriginalMember(owner = "client!rh", name = "ib", descriptor = "Z")
 	public static boolean aBoolean317 = false;
 

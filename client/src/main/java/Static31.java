@@ -1463,7 +1463,7 @@ public final class Static31 {
 		SkyBoxTypeList.clean();
 		SkyBoxSphereTypeList.clean();
 		LightTypeList.clean();
-		Static37.method4727();
+		CursorTypeList.clean();
 		Static32.method3951();
 		Static20.method1942();
 		Static32.method4030();

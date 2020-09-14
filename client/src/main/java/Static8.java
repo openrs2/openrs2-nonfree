@@ -348,12 +348,6 @@ public final class Static8 {
 		Static29.method3478(Static7.y, arg0, arg1, Static11.method522(arg1 * 128 + 64, arg0 * 128 + 64, Static7.y), local35.value, local155, local104, local102);
 	}
 
-	@OriginalMember(owner = "client!ae", name = "c", descriptor = "(I)V")
-	public static void method91() {
-		Static5.aClass26_42.removeSoft();
-		Static6.aClass26_46.removeSoft();
-	}
-
 	@OriginalMember(owner = "client!af", name = "a", descriptor = "(IIIIBII)V")
 	public static void method100(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(5) int arg4, @OriginalArg(6) int arg5) {
 		if (Static2.anInt902 <= arg4 - arg0 && arg0 + arg4 <= Static3.anInt2553 && arg2 - arg0 >= Static4.anInt3086 && Static5.anInt4230 >= arg0 + arg2) {

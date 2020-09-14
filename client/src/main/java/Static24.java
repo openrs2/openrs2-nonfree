@@ -462,7 +462,7 @@ public final class Static24 {
 		SkyBoxTypeList.clear();
 		SkyBoxSphereTypeList.clear();
 		LightTypeList.clear();
-		Static34.method4270();
+		CursorTypeList.clear();
 		Static10.method898();
 		Static31.method3688();
 		if (client.modeWhat != 0) {

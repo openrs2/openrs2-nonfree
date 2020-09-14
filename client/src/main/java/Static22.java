@@ -1573,21 +1573,6 @@ public final class Static22 {
 		return local1492;
 	}
 
-	@OriginalMember(owner = "client!km", name = "d", descriptor = "(II)Lclient!pe;")
-	public static Class133 method2390(@OriginalArg(1) int arg0) {
-		@Pc(14) Class133 local14 = (Class133) Static5.aClass26_42.get((long) arg0);
-		if (local14 != null) {
-			return local14;
-		}
-		@Pc(28) byte[] local28 = Static1.aClass58_3.fetchFile(33, arg0);
-		@Pc(32) Class133 local32 = new Class133();
-		if (local28 != null) {
-			local32.method3398(arg0, new Buffer(local28));
-		}
-		Static5.aClass26_42.put((long) arg0, local32);
-		return local32;
-	}
-
 	@OriginalMember(owner = "client!kn", name = "c", descriptor = "(I)V")
 	public static void method2411() {
 		if (Static3.aBoolean124) {

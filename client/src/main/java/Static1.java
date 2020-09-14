@@ -23,9 +23,6 @@ public final class Static1 {
 	@OriginalMember(owner = "client!af", name = "q", descriptor = "Lsignlink!vk;")
 	public static PrivilegedRequest aClass197_2;
 
-	@OriginalMember(owner = "client!af", name = "E", descriptor = "Lclient!fh;")
-	public static Js5 aClass58_3;
-
 	@OriginalMember(owner = "client!aj", name = "c", descriptor = "[[[B")
 	public static byte[][][] aByteArrayArrayArray1;
 

@@ -1257,10 +1257,4 @@ public final class Static34 {
 		Static2.aClass58_40 = arg0;
 	}
 
-	@OriginalMember(owner = "client!ub", name = "a", descriptor = "(Z)V")
-	public static void method4270() {
-		Static5.aClass26_42.clear();
-		Static6.aClass26_46.clear();
-	}
-
 }

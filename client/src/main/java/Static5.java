@@ -398,9 +398,6 @@ public final class Static5 {
 	@OriginalMember(owner = "client!ok", name = "g", descriptor = "I")
 	public static int anInt3896 = 99;
 
-	@OriginalMember(owner = "client!ok", name = "h", descriptor = "Lclient!cc;")
-	public static final SoftLruHashTable aClass26_42 = new SoftLruHashTable(64);
-
 	@OriginalMember(owner = "client!ok", name = "i", descriptor = "[Lclient!te;")
 	public static final AnimFrameset[] aClass4_Sub3_Sub19Array3 = new AnimFrameset[14];
 

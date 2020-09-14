@@ -238,9 +238,6 @@ public final class Static3 {
 	@OriginalMember(owner = "client!ja", name = "n", descriptor = "I")
 	public static int anInt2519;
 
-	@OriginalMember(owner = "client!ja", name = "p", descriptor = "Lclient!fh;")
-	public static Js5 aClass58_58;
-
 	@OriginalMember(owner = "client!jb", name = "f", descriptor = "Lclient!ib;")
 	public static Class4_Sub3_Sub10 aClass4_Sub3_Sub10_4;
 

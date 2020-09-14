@@ -515,12 +515,12 @@ public final class Static13 {
 			return;
 		}
 		if (arg0 != -1) {
-			@Pc(23) Class133 local23 = Static22.method2390(arg0);
-			@Pc(27) SoftwareSprite local27 = local23.method3401();
+			@Pc(23) CursorType local23 = CursorTypeList.get(arg0);
+			@Pc(27) SoftwareSprite local27 = local23.getSprite();
 			if (local27 == null) {
 				arg0 = -1;
 			} else {
-				GameShell.signLink.setCursor(GameShell.canvas, local27.anInt5602, local27.anInt5612, local27.getPixels(), new Point(local23.anInt4119, local23.anInt4111));
+				GameShell.signLink.setCursor(GameShell.canvas, local27.anInt5602, local27.anInt5612, local27.getPixels(), new Point(local23.hotSpotX, local23.hotSpotY));
 				Static7.anInt5345 = arg0;
 			}
 		}
