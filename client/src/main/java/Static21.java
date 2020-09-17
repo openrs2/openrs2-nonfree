@@ -160,7 +160,7 @@ public final class Static21 {
 			Static8.method66(local43 + Static5.aClass4_Sub3_Sub5_3.method2252(local26), 15, arg0 + 4, arg2);
 			return;
 		}
-		@Pc(62) Class4_Sub3_Sub5 local62 = arg1.method4734(Static3.aClass56Array3);
+		@Pc(62) Font local62 = arg1.method4734(Static3.aClass56Array3);
 		if (local62 == null) {
 			local62 = Static5.aClass4_Sub3_Sub5_3;
 		}

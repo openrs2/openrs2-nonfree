@@ -1172,7 +1172,7 @@ public final class Static35 {
 			return;
 		}
 		@Pc(384) int local384 = 0;
-		@Pc(386) Class4_Sub3_Sub5 local386 = Static1.aClass4_Sub3_Sub5_1;
+		@Pc(386) Font local386 = Static1.aClass4_Sub3_Sub5_1;
 		if (local10.anInt2270 == 1) {
 			local386 = Static5.aClass4_Sub3_Sub5_2;
 		}

@@ -464,7 +464,7 @@ public final class Static30 {
 										Static34.method4221(local128, local122, local38.anInt5893, local38.anInt5949, local1782, 256 - (local117 & 0xFF));
 									}
 								} else if (local38.type == 4) {
-									@Pc(1944) Class4_Sub3_Sub5 local1944 = local38.method4734(Static3.aClass56Array3);
+									@Pc(1944) Font local1944 = local38.method4734(Static3.aClass56Array3);
 									if (local1944 != null) {
 										@Pc(1957) String local1957 = local38.aString351;
 										@Pc(1964) int local1964;
@@ -716,7 +716,7 @@ public final class Static30 {
 									}
 								} else {
 									if (local38.type == 7) {
-										@Pc(3183) Class4_Sub3_Sub5 local3183 = local38.method4734(Static3.aClass56Array3);
+										@Pc(3183) Font local3183 = local38.method4734(Static3.aClass56Array3);
 										if (local3183 == null) {
 											if (Static3.aBoolean178) {
 												Static28.method3270(local38);
@@ -750,7 +750,7 @@ public final class Static30 {
 									}
 									if (local38.type == 8 && Static2.aClass185_4 == local38 && Static4.anInt3493 == Static5.anInt5840) {
 										@Pc(3363) int local3363 = 0;
-										@Pc(3365) Class4_Sub3_Sub5 local3365 = Static5.aClass4_Sub3_Sub5_2;
+										@Pc(3365) Font local3365 = Static5.aClass4_Sub3_Sub5_2;
 										@Pc(3367) int local3367 = 0;
 										@Pc(3370) String local3370 = local38.aString351;
 										@Pc(3375) String local3375 = Cs1ScriptRunner.interpolate(local38, local3370);

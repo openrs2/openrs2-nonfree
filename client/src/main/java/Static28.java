@@ -483,7 +483,7 @@ public final class Static28 {
 	}
 
 	@OriginalMember(owner = "client!pa", name = "a", descriptor = "(ZLclient!gl;Z)V")
-	public static void method3331(@OriginalArg(0) boolean arg0, @OriginalArg(1) Class4_Sub3_Sub5 arg1) {
+	public static void method3331(@OriginalArg(0) boolean arg0, @OriginalArg(1) Font arg1) {
 		if (GlRenderer.enabled || arg0) {
 			@Pc(10) int local10 = GameShell.canvasHeight;
 			@Pc(16) int local16 = local10 * 956 / 503;

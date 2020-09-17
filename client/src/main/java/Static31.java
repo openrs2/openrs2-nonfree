@@ -1,13 +1,4 @@
 import java.awt.Frame;
-import java.io.ByteArrayInputStream;
-import java.io.IOException;
-import java.io.InvalidClassException;
-import java.io.ObjectInputStream;
-import java.io.OptionalDataException;
-import java.io.StreamCorruptedException;
-import java.lang.reflect.Field;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
 import javax.media.opengl.GL;
 
 import dev.openrs2.deob.annotation.OriginalArg;
@@ -48,13 +39,13 @@ public final class Static31 {
 	}
 
 	@OriginalMember(owner = "client!rc", name = "a", descriptor = "(II)Lclient!ke;")
-	public static Class4_Sub3_Sub5_Sub2 method3656(@OriginalArg(1) int arg0) {
-		@Pc(6) Class4_Sub3_Sub5_Sub2 local6 = (Class4_Sub3_Sub5_Sub2) Static1.aClass26_3.get((long) arg0);
+	public static SoftwareFont method3656(@OriginalArg(1) int arg0) {
+		@Pc(6) SoftwareFont local6 = (SoftwareFont) Static1.aClass26_3.get((long) arg0);
 		if (local6 != null) {
 			return local6;
 		}
 		@Pc(22) byte[] local22 = client.js5Archive13.fetchFile(arg0, 0);
-		@Pc(35) Class4_Sub3_Sub5_Sub2 local35 = new Class4_Sub3_Sub5_Sub2(local22);
+		@Pc(35) SoftwareFont local35 = new SoftwareFont(local22);
 		local35.method2267(Static3.aClass56Array3, null);
 		Static1.aClass26_3.put((long) arg0, local35);
 		return local35;

@@ -7,25 +7,25 @@ import dev.openrs2.deob.annotation.OriginalMember;
 import dev.openrs2.deob.annotation.Pc;
 
 @OriginalClass("client!dh")
-public final class Class4_Sub3_Sub5_Sub1 extends Class4_Sub3_Sub5 {
+public final class GlFont extends Font {
 
 	@OriginalMember(owner = "client!dh", name = "K", descriptor = "I")
 	private int contextId;
 
 	@OriginalMember(owner = "client!dh", name = "W", descriptor = "[I")
-	private int[] anIntArray82;
+	private int[] listIds;
 
 	@OriginalMember(owner = "client!dh", name = "Y", descriptor = "I")
 	private int anInt1023;
 
 	@OriginalMember(owner = "client!dh", name = "X", descriptor = "I")
-	private int anInt1022 = 0;
+	private int size = 0;
 
 	@OriginalMember(owner = "client!dh", name = "Z", descriptor = "I")
-	private int anInt1024 = -1;
+	private int textureId = -1;
 
 	@OriginalMember(owner = "client!dh", name = "<init>", descriptor = "([B[I[I[I[I[[B)V")
-	public Class4_Sub3_Sub5_Sub1(@OriginalArg(0) byte[] arg0, @OriginalArg(1) int[] arg1, @OriginalArg(2) int[] arg2, @OriginalArg(3) int[] arg3, @OriginalArg(4) int[] arg4, @OriginalArg(5) byte[][] arg5) {
+	public GlFont(@OriginalArg(0) byte[] arg0, @OriginalArg(1) int[] arg1, @OriginalArg(2) int[] arg2, @OriginalArg(3) int[] arg3, @OriginalArg(4) int[] arg4, @OriginalArg(5) byte[][] arg5) {
 		super(arg0, arg1, arg2, arg3, arg4);
 		this.method868(arg5);
 		this.method869();
@@ -34,16 +34,16 @@ public final class Class4_Sub3_Sub5_Sub1 extends Class4_Sub3_Sub5 {
 	@OriginalMember(owner = "client!dh", name = "finalize", descriptor = "()V")
 	@Override
 	public final void finalize() throws Throwable {
-		if (this.anInt1024 != -1) {
-			GlCleaner.deleteTexture2d(this.anInt1024, this.anInt1022, this.contextId);
-			this.anInt1024 = -1;
-			this.anInt1022 = 0;
+		if (this.textureId != -1) {
+			GlCleaner.deleteTexture2d(this.textureId, this.size, this.contextId);
+			this.textureId = -1;
+			this.size = 0;
 		}
-		if (this.anIntArray82 != null) {
-			for (@Pc(21) int local21 = 0; local21 < this.anIntArray82.length; local21++) {
-				GlCleaner.deleteList(this.anIntArray82[local21], this.contextId);
+		if (this.listIds != null) {
+			for (@Pc(21) int i = 0; i < this.listIds.length; i++) {
+				GlCleaner.deleteList(this.listIds[i], this.contextId);
 			}
-			this.anIntArray82 = null;
+			this.listIds = null;
 		}
 		super.finalize();
 	}
@@ -52,12 +52,12 @@ public final class Class4_Sub3_Sub5_Sub1 extends Class4_Sub3_Sub5 {
 	@Override
 	protected final void method2264(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6) {
 		GlRenderer.method1590();
-		@Pc(2) GL local2 = GlRenderer.gl;
-		GlRenderer.setTextureId(this.anInt1024);
-		local2.glColor4ub((byte) (arg5 >> 16), (byte) (arg5 >> 8), (byte) arg5, arg6 > 255 ? -1 : (byte) arg6);
-		local2.glTranslatef((float) arg1, (float) (GlRenderer.canvasHeight - arg2), 0.0F);
-		local2.glCallList(this.anIntArray82[arg0]);
-		local2.glLoadIdentity();
+		@Pc(2) GL gl = GlRenderer.gl;
+		GlRenderer.setTextureId(this.textureId);
+		gl.glColor4ub((byte) (arg5 >> 16), (byte) (arg5 >> 8), (byte) arg5, arg6 > 255 ? -1 : (byte) arg6);
+		gl.glTranslatef((float) arg1, (float) (GlRenderer.canvasHeight - arg2), 0.0F);
+		gl.glCallList(this.listIds[arg0]);
+		gl.glLoadIdentity();
 	}
 
 	@OriginalMember(owner = "client!dh", name = "a", descriptor = "(IIIIIIZ)V")
@@ -65,57 +65,57 @@ public final class Class4_Sub3_Sub5_Sub1 extends Class4_Sub3_Sub5 {
 	protected final void method2253(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5) {
 		if (Static3.aClass4_Sub3_Sub14_Sub2_1 == null) {
 			GlRenderer.method1590();
-			@Pc(226) GL local226 = GlRenderer.gl;
-			GlRenderer.setTextureId(this.anInt1024);
-			local226.glColor3ub((byte) (arg5 >> 16), (byte) (arg5 >> 8), (byte) arg5);
-			local226.glTranslatef((float) arg1, (float) (GlRenderer.canvasHeight - arg2), 0.0F);
-			local226.glCallList(this.anIntArray82[arg0]);
-			local226.glLoadIdentity();
+			@Pc(226) GL gl = GlRenderer.gl;
+			GlRenderer.setTextureId(this.textureId);
+			gl.glColor3ub((byte) (arg5 >> 16), (byte) (arg5 >> 8), (byte) arg5);
+			gl.glTranslatef((float) arg1, (float) (GlRenderer.canvasHeight - arg2), 0.0F);
+			gl.glCallList(this.listIds[arg0]);
+			gl.glLoadIdentity();
 			return;
 		}
 		GlRenderer.method1590();
-		@Pc(4) GL local4 = GlRenderer.gl;
-		local4.glColor3ub((byte) (arg5 >> 16), (byte) (arg5 >> 8), (byte) arg5);
-		local4.glTranslatef((float) arg1, (float) (GlRenderer.canvasHeight - arg2), 0.0F);
+		@Pc(4) GL gl = GlRenderer.gl;
+		gl.glColor3ub((byte) (arg5 >> 16), (byte) (arg5 >> 8), (byte) arg5);
+		gl.glTranslatef((float) arg1, (float) (GlRenderer.canvasHeight - arg2), 0.0F);
 		@Pc(32) float local32 = (float) (arg0 % 16) / 16.0F;
 		@Pc(39) float local39 = (float) (arg0 / 16) / 16.0F;
 		@Pc(51) float local51 = local32 + (float) this.anIntArray251[arg0] / (float) this.anInt1023;
 		@Pc(63) float local63 = local39 + (float) this.anIntArray246[arg0] / (float) this.anInt1023;
-		GlRenderer.setTextureId(this.anInt1024);
+		GlRenderer.setTextureId(this.textureId);
 		@Pc(68) GlSprite local68 = Static3.aClass4_Sub3_Sub14_Sub2_1;
-		local4.glActiveTexture(GL.GL_TEXTURE1);
-		local4.glEnable(GL.GL_TEXTURE_2D);
-		local4.glBindTexture(GL.GL_TEXTURE_2D, local68.textureId);
-		local4.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_COMBINE_RGB, GL.GL_REPLACE);
-		local4.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_SRC0_RGB, GL.GL_PREVIOUS);
+		gl.glActiveTexture(GL.GL_TEXTURE1);
+		gl.glEnable(GL.GL_TEXTURE_2D);
+		gl.glBindTexture(GL.GL_TEXTURE_2D, local68.textureId);
+		gl.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_COMBINE_RGB, GL.GL_REPLACE);
+		gl.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_SRC0_RGB, GL.GL_PREVIOUS);
 		@Pc(98) float local98 = (float) (arg1 - Static3.anInt2150) / (float) local68.anInt5617;
 		@Pc(107) float local107 = (float) (arg2 - Static3.anInt2152) / (float) local68.anInt5620;
 		@Pc(118) float local118 = (float) (arg1 + arg3 - Static3.anInt2150) / (float) local68.anInt5617;
 		@Pc(129) float local129 = (float) (arg2 + arg4 - Static3.anInt2152) / (float) local68.anInt5620;
-		local4.glBegin(GL.GL_TRIANGLE_FAN);
-		local4.glMultiTexCoord2f(GL.GL_TEXTURE1, local118, local107);
-		local4.glTexCoord2f(local51, local39);
-		local4.glVertex2f((float) this.anIntArray251[arg0], 0.0F);
-		local4.glMultiTexCoord2f(GL.GL_TEXTURE1, local98, local107);
-		local4.glTexCoord2f(local32, local39);
-		local4.glVertex2f(0.0F, 0.0F);
-		local4.glMultiTexCoord2f(GL.GL_TEXTURE1, local98, local129);
-		local4.glTexCoord2f(local32, local63);
-		local4.glVertex2f(0.0F, (float) -this.anIntArray246[arg0]);
-		local4.glMultiTexCoord2f(GL.GL_TEXTURE1, local118, local129);
-		local4.glTexCoord2f(local51, local63);
-		local4.glVertex2f((float) this.anIntArray251[arg0], (float) -this.anIntArray246[arg0]);
-		local4.glEnd();
-		local4.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_COMBINE_RGB, GL.GL_MODULATE);
-		local4.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_SRC0_RGB, GL.GL_TEXTURE);
-		local4.glDisable(GL.GL_TEXTURE_2D);
-		local4.glActiveTexture(GL.GL_TEXTURE0);
-		local4.glLoadIdentity();
+		gl.glBegin(GL.GL_TRIANGLE_FAN);
+		gl.glMultiTexCoord2f(GL.GL_TEXTURE1, local118, local107);
+		gl.glTexCoord2f(local51, local39);
+		gl.glVertex2f((float) this.anIntArray251[arg0], 0.0F);
+		gl.glMultiTexCoord2f(GL.GL_TEXTURE1, local98, local107);
+		gl.glTexCoord2f(local32, local39);
+		gl.glVertex2f(0.0F, 0.0F);
+		gl.glMultiTexCoord2f(GL.GL_TEXTURE1, local98, local129);
+		gl.glTexCoord2f(local32, local63);
+		gl.glVertex2f(0.0F, (float) -this.anIntArray246[arg0]);
+		gl.glMultiTexCoord2f(GL.GL_TEXTURE1, local118, local129);
+		gl.glTexCoord2f(local51, local63);
+		gl.glVertex2f((float) this.anIntArray251[arg0], (float) -this.anIntArray246[arg0]);
+		gl.glEnd();
+		gl.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_COMBINE_RGB, GL.GL_MODULATE);
+		gl.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_SRC0_RGB, GL.GL_TEXTURE);
+		gl.glDisable(GL.GL_TEXTURE_2D);
+		gl.glActiveTexture(GL.GL_TEXTURE0);
+		gl.glLoadIdentity();
 	}
 
 	@OriginalMember(owner = "client!dh", name = "a", descriptor = "([[B)V")
 	private void method868(@OriginalArg(0) byte[][] arg0) {
-		if (this.anInt1024 != -1) {
+		if (this.textureId != -1) {
 			return;
 		}
 		this.anInt1023 = 0;
@@ -154,46 +154,46 @@ public final class Class4_Sub3_Sub5_Sub1 extends Class4_Sub3_Sub5 {
 			}
 		}
 		@Pc(153) ByteBuffer local153 = ByteBuffer.wrap(local66);
-		@Pc(155) GL local155 = GlRenderer.gl;
-		if (this.anInt1024 == -1) {
+		@Pc(155) GL gl = GlRenderer.gl;
+		if (this.textureId == -1) {
 			@Pc(162) int[] local162 = new int[1];
-			local155.glGenTextures(1, local162, 0);
-			this.anInt1024 = local162[0];
+			gl.glGenTextures(1, local162, 0);
+			this.textureId = local162[0];
 			this.contextId = GlCleaner.contextId;
 		}
-		GlRenderer.setTextureId(this.anInt1024);
-		local155.glTexImage2D(GL.GL_TEXTURE_2D, GL.GL_POINTS, GL.GL_LUMINANCE_ALPHA, this.anInt1023, this.anInt1023, GL.GL_POINTS, GL.GL_LUMINANCE_ALPHA, GL.GL_UNSIGNED_BYTE, local153);
-		GlCleaner.onCard2d += local153.limit() - this.anInt1022;
-		this.anInt1022 = local153.limit();
-		local155.glTexParameteri(GL.GL_TEXTURE_2D, GL.GL_TEXTURE_MIN_FILTER, GL.GL_NEAREST);
-		local155.glTexParameteri(GL.GL_TEXTURE_2D, GL.GL_TEXTURE_MAG_FILTER, GL.GL_NEAREST);
+		GlRenderer.setTextureId(this.textureId);
+		gl.glTexImage2D(GL.GL_TEXTURE_2D, GL.GL_POINTS, GL.GL_LUMINANCE_ALPHA, this.anInt1023, this.anInt1023, GL.GL_POINTS, GL.GL_LUMINANCE_ALPHA, GL.GL_UNSIGNED_BYTE, local153);
+		GlCleaner.onCard2d += local153.limit() - this.size;
+		this.size = local153.limit();
+		gl.glTexParameteri(GL.GL_TEXTURE_2D, GL.GL_TEXTURE_MIN_FILTER, GL.GL_NEAREST);
+		gl.glTexParameteri(GL.GL_TEXTURE_2D, GL.GL_TEXTURE_MAG_FILTER, GL.GL_NEAREST);
 	}
 
 	@OriginalMember(owner = "client!dh", name = "b", descriptor = "()V")
 	private void method869() {
-		if (this.anIntArray82 != null) {
+		if (this.listIds != null) {
 			return;
 		}
-		this.anIntArray82 = new int[256];
-		@Pc(9) GL local9 = GlRenderer.gl;
+		this.listIds = new int[256];
+		@Pc(9) GL gl = GlRenderer.gl;
 		for (@Pc(11) int local11 = 0; local11 < 256; local11++) {
 			@Pc(21) float local21 = (float) (local11 % 16) / 16.0F;
 			@Pc(28) float local28 = (float) (local11 / 16) / 16.0F;
 			@Pc(40) float local40 = local21 + (float) this.anIntArray251[local11] / (float) this.anInt1023;
 			@Pc(52) float local52 = local28 + (float) this.anIntArray246[local11] / (float) this.anInt1023;
-			this.anIntArray82[local11] = local9.glGenLists(1);
-			local9.glNewList(this.anIntArray82[local11], GL.GL_COMPILE);
-			local9.glBegin(GL.GL_TRIANGLE_FAN);
-			local9.glTexCoord2f(local40, local28);
-			local9.glVertex2f((float) this.anIntArray251[local11], 0.0F);
-			local9.glTexCoord2f(local21, local28);
-			local9.glVertex2f(0.0F, 0.0F);
-			local9.glTexCoord2f(local21, local52);
-			local9.glVertex2f(0.0F, (float) -this.anIntArray246[local11]);
-			local9.glTexCoord2f(local40, local52);
-			local9.glVertex2f((float) this.anIntArray251[local11], (float) -this.anIntArray246[local11]);
-			local9.glEnd();
-			local9.glEndList();
+			this.listIds[local11] = gl.glGenLists(1);
+			gl.glNewList(this.listIds[local11], GL.GL_COMPILE);
+			gl.glBegin(GL.GL_TRIANGLE_FAN);
+			gl.glTexCoord2f(local40, local28);
+			gl.glVertex2f((float) this.anIntArray251[local11], 0.0F);
+			gl.glTexCoord2f(local21, local28);
+			gl.glVertex2f(0.0F, 0.0F);
+			gl.glTexCoord2f(local21, local52);
+			gl.glVertex2f(0.0F, (float) -this.anIntArray246[local11]);
+			gl.glTexCoord2f(local40, local52);
+			gl.glVertex2f((float) this.anIntArray251[local11], (float) -this.anIntArray246[local11]);
+			gl.glEnd();
+			gl.glEndList();
 		}
 		this.contextId = GlCleaner.contextId;
 	}

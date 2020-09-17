@@ -333,11 +333,11 @@ public final class Static16 {
 	}
 
 	@OriginalMember(owner = "client!ga", name = "a", descriptor = "([BB)Lclient!ke;")
-	public static Class4_Sub3_Sub5_Sub2 method4658(@OriginalArg(0) byte[] arg0) {
+	public static SoftwareFont method4658(@OriginalArg(0) byte[] arg0) {
 		if (arg0 == null) {
 			return null;
 		} else {
-			@Pc(24) Class4_Sub3_Sub5_Sub2 local24 = new Class4_Sub3_Sub5_Sub2(arg0, Static5.anIntArray402, Static5.anIntArray391, Static3.anIntArray185, Static7.anIntArray643, Static6.aByteArrayArray36);
+			@Pc(24) SoftwareFont local24 = new SoftwareFont(arg0, Static5.anIntArray402, Static5.anIntArray391, Static3.anIntArray185, Static7.anIntArray643, Static6.aByteArrayArray36);
 			Static37.method4670();
 			return local24;
 		}

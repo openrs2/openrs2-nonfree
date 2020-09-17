@@ -1,5 +1,4 @@
 import java.awt.Color;
-import java.awt.Font;
 import java.awt.Graphics;
 import javax.media.opengl.GL;
 
@@ -148,7 +147,7 @@ public final class Static9 {
 	}
 
 	@OriginalMember(owner = "client!am", name = "a", descriptor = "(ILjava/lang/String;IIIIIILclient!gl;Lclient!wf;)V")
-	public static void method194(@OriginalArg(0) int arg0, @OriginalArg(1) String arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4, @OriginalArg(6) int arg5, @OriginalArg(7) int arg6, @OriginalArg(8) Class4_Sub3_Sub5 arg7, @OriginalArg(9) Component arg8) {
+	public static void method194(@OriginalArg(0) int arg0, @OriginalArg(1) String arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4, @OriginalArg(6) int arg5, @OriginalArg(7) int arg6, @OriginalArg(8) Font arg7, @OriginalArg(9) Component arg8) {
 		@Pc(14) int local14 = arg5 * arg5 + arg3 * arg3;
 		@Pc(21) int local21 = (int) Static5.aFloat97 + Static6.anInt3585 & 0x7FF;
 		@Pc(33) int local33 = Math.max(arg8.anInt5893 / 2, arg8.anInt5949 / 2) + 10;
@@ -295,7 +294,7 @@ public final class Static9 {
 		try {
 			@Pc(2) Graphics local2 = GameShell.canvas.getGraphics();
 			if (Static1.aFont1 == null) {
-				Static1.aFont1 = new Font("Helvetica", 1, 13);
+				Static1.aFont1 = new java.awt.Font("Helvetica", 1, 13);
 				Static1.aFontMetrics1 = GameShell.canvas.getFontMetrics(Static1.aFont1);
 			}
 			if (arg1) {

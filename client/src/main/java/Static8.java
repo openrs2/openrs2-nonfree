@@ -416,7 +416,7 @@ public final class Static8 {
 		if (GlRenderer.enabled) {
 			Static2.aClass4_Sub3_Sub5_Sub2_2 = Static22.method2194(arg1, Static2.anInt914, arg0);
 		} else {
-			Static2.aClass4_Sub3_Sub5_Sub2_2 = (Class4_Sub3_Sub5_Sub2) Static1.aClass4_Sub3_Sub5_1;
+			Static2.aClass4_Sub3_Sub5_Sub2_2 = (SoftwareFont) Static1.aClass4_Sub3_Sub5_1;
 		}
 		Static5.aClass4_Sub3_Sub5_2 = method121(arg0, arg1, Static7.anInt6040);
 		Static5.aClass4_Sub3_Sub5_3 = method121(arg0, arg1, Static4.anInt3309);
@@ -447,7 +447,7 @@ public final class Static8 {
 	}
 
 	@OriginalMember(owner = "client!ak", name = "a", descriptor = "(Lclient!fh;Lclient!fh;III)Lclient!gl;")
-	public static Class4_Sub3_Sub5 method121(@OriginalArg(0) Js5 arg0, @OriginalArg(1) Js5 arg1, @OriginalArg(3) int arg2) {
+	public static Font method121(@OriginalArg(0) Js5 arg0, @OriginalArg(1) Js5 arg1, @OriginalArg(3) int arg2) {
 		return Static9.method197(arg0, arg2, 0) ? Static10.method304(arg1.fetchFile(arg2, 0)) : null;
 	}
 

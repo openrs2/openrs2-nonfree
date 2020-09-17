@@ -114,7 +114,7 @@ public final class Static5 {
 	public static int anInt3815;
 
 	@OriginalMember(owner = "client!of", name = "Z", descriptor = "Lclient!gl;")
-	public static Class4_Sub3_Sub5 aClass4_Sub3_Sub5_2;
+	public static Font aClass4_Sub3_Sub5_2;
 
 	@OriginalMember(owner = "client!og", name = "kb", descriptor = "Lclient!ib;")
 	public static Class4_Sub3_Sub10 aClass4_Sub3_Sub10_6;
@@ -156,7 +156,7 @@ public final class Static5 {
 	public static Class4_Sub6_Sub3 aClass4_Sub6_Sub3_2;
 
 	@OriginalMember(owner = "client!ph", name = "db", descriptor = "Lclient!gl;")
-	public static Class4_Sub3_Sub5 aClass4_Sub3_Sub5_3;
+	public static Font aClass4_Sub3_Sub5_3;
 
 	@OriginalMember(owner = "client!pj", name = "a", descriptor = "Lclient!uj;")
 	public static Sprite aClass4_Sub3_Sub14_4;

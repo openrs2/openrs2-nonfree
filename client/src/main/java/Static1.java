@@ -1,4 +1,3 @@
-import java.awt.Font;
 import java.awt.FontMetrics;
 
 import dev.openrs2.deob.annotation.OriginalMember;
@@ -123,13 +122,13 @@ public final class Static1 {
 	public static Class4_Sub6_Sub2 aClass4_Sub6_Sub2_2;
 
 	@OriginalMember(owner = "client!cc", name = "a", descriptor = "Lclient!gl;")
-	public static Class4_Sub3_Sub5 aClass4_Sub3_Sub5_1;
+	public static Font aClass4_Sub3_Sub5_1;
 
 	@OriginalMember(owner = "client!cd", name = "f", descriptor = "Lclient!om;")
 	public static Class130 aClass130_1;
 
 	@OriginalMember(owner = "client!ce", name = "b", descriptor = "Ljava/awt/Font;")
-	public static Font aFont1;
+	public static java.awt.Font aFont1;
 
 	@OriginalMember(owner = "client!cg", name = "h", descriptor = "F")
 	public static float aFloat21;

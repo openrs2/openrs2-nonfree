@@ -1127,16 +1127,16 @@ public final class Component {
 	}
 
 	@OriginalMember(owner = "client!wf", name = "a", descriptor = "(B[Lclient!ma;)Lclient!gl;")
-	public final Class4_Sub3_Sub5 method4734(@OriginalArg(1) IndexedSprite[] arg0) {
+	public final Font method4734(@OriginalArg(1) IndexedSprite[] arg0) {
 		Static3.aBoolean178 = false;
 		if (this.anInt5954 == -1) {
 			return null;
 		}
-		@Pc(28) Class4_Sub3_Sub5 local28 = (Class4_Sub3_Sub5) Static1.aClass26_4.get((long) this.anInt5954);
+		@Pc(28) Font local28 = (Font) Static1.aClass26_4.get((long) this.anInt5954);
 		if (local28 != null) {
 			return local28;
 		}
-		@Pc(42) Class4_Sub3_Sub5 local42 = Static8.method121(InterfaceList.spritesArchive, InterfaceList.fontMetricsArchive, this.anInt5954);
+		@Pc(42) Font local42 = Static8.method121(InterfaceList.spritesArchive, InterfaceList.fontMetricsArchive, this.anInt5954);
 		if (local42 == null) {
 			Static3.aBoolean178 = true;
 		} else {

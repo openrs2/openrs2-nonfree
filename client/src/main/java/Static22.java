@@ -1,5 +1,3 @@
-import java.io.IOException;
-import java.net.Socket;
 import java.nio.ByteBuffer;
 
 import dev.openrs2.deob.annotation.OriginalArg;
@@ -571,7 +569,7 @@ public final class Static22 {
 	}
 
 	@OriginalMember(owner = "client!ka", name = "a", descriptor = "(ILclient!fh;ILclient!fh;I)Lclient!ke;")
-	public static Class4_Sub3_Sub5_Sub2 method2194(@OriginalArg(1) Js5 arg0, @OriginalArg(2) int arg1, @OriginalArg(3) Js5 arg2) {
+	public static SoftwareFont method2194(@OriginalArg(1) Js5 arg0, @OriginalArg(2) int arg1, @OriginalArg(3) Js5 arg2) {
 		return Static9.method197(arg2, arg1, 0) ? Static16.method4658(arg0.fetchFile(arg1, 0)) : null;
 	}
 

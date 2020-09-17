@@ -4,19 +4,19 @@ import dev.openrs2.deob.annotation.OriginalMember;
 import dev.openrs2.deob.annotation.Pc;
 
 @OriginalClass("client!ke")
-public final class Class4_Sub3_Sub5_Sub2 extends Class4_Sub3_Sub5 {
+public final class SoftwareFont extends Font {
 
 	@OriginalMember(owner = "client!ke", name = "K", descriptor = "[[B")
 	private byte[][] aByteArrayArray18 = new byte[256][];
 
 	@OriginalMember(owner = "client!ke", name = "<init>", descriptor = "([B[I[I[I[I[[B)V")
-	public Class4_Sub3_Sub5_Sub2(@OriginalArg(0) byte[] arg0, @OriginalArg(1) int[] arg1, @OriginalArg(2) int[] arg2, @OriginalArg(3) int[] arg3, @OriginalArg(4) int[] arg4, @OriginalArg(5) byte[][] arg5) {
+	public SoftwareFont(@OriginalArg(0) byte[] arg0, @OriginalArg(1) int[] arg1, @OriginalArg(2) int[] arg2, @OriginalArg(3) int[] arg3, @OriginalArg(4) int[] arg4, @OriginalArg(5) byte[][] arg5) {
 		super(arg0, arg1, arg2, arg3, arg4);
 		this.aByteArrayArray18 = arg5;
 	}
 
 	@OriginalMember(owner = "client!ke", name = "<init>", descriptor = "([B)V")
-	public Class4_Sub3_Sub5_Sub2(@OriginalArg(0) byte[] arg0) {
+	public SoftwareFont(@OriginalArg(0) byte[] arg0) {
 		super(arg0);
 	}
 

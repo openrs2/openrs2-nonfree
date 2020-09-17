@@ -165,15 +165,15 @@ public final class Static10 {
 	}
 
 	@OriginalMember(owner = "client!bi", name = "a", descriptor = "(I[B)Lclient!gl;")
-	public static Class4_Sub3_Sub5 method304(@OriginalArg(1) byte[] arg0) {
+	public static Font method304(@OriginalArg(1) byte[] arg0) {
 		if (arg0 == null) {
 			return null;
 		}
-		@Pc(27) Class4_Sub3_Sub5 local27;
+		@Pc(27) Font local27;
 		if (GlRenderer.enabled) {
-			local27 = new Class4_Sub3_Sub5_Sub1(arg0, Static5.anIntArray402, Static5.anIntArray391, Static3.anIntArray185, Static7.anIntArray643, Static6.aByteArrayArray36);
+			local27 = new GlFont(arg0, Static5.anIntArray402, Static5.anIntArray391, Static3.anIntArray185, Static7.anIntArray643, Static6.aByteArrayArray36);
 		} else {
-			local27 = new Class4_Sub3_Sub5_Sub2(arg0, Static5.anIntArray402, Static5.anIntArray391, Static3.anIntArray185, Static7.anIntArray643, Static6.aByteArrayArray36);
+			local27 = new SoftwareFont(arg0, Static5.anIntArray402, Static5.anIntArray391, Static3.anIntArray185, Static7.anIntArray643, Static6.aByteArrayArray36);
 		}
 		Static37.method4670();
 		return local27;
