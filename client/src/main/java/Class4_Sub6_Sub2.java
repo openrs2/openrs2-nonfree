@@ -834,7 +834,7 @@ public final class Class4_Sub6_Sub2 extends Class4_Sub6 {
 		arg0.method4163();
 		@Pc(9) boolean local9 = true;
 		@Pc(24) int[] local24 = new int[] { 22050 };
-		for (@Pc(36) Class4_Sub14 local36 = (Class4_Sub14) arg0.aClass84_23.head(); local36 != null; local36 = (Class4_Sub14) arg0.aClass84_23.next()) {
+		for (@Pc(36) ByteArrayNode local36 = (ByteArrayNode) arg0.aClass84_23.head(); local36 != null; local36 = (ByteArrayNode) arg0.aClass84_23.next()) {
 			@Pc(43) int local43 = (int) local36.key;
 			@Pc(53) Class4_Sub23 local53 = (Class4_Sub23) this.aClass84_15.get((long) local43);
 			if (local53 == null) {
@@ -845,7 +845,7 @@ public final class Class4_Sub6_Sub2 extends Class4_Sub6 {
 				}
 				this.aClass84_15.put((long) local43, local53);
 			}
-			if (!local53.method3566(local24, arg2, local36.aByteArray18)) {
+			if (!local53.method3566(local24, arg2, local36.value)) {
 				local9 = false;
 			}
 		}

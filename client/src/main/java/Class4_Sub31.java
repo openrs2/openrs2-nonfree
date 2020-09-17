@@ -348,12 +348,12 @@ public final class Class4_Sub31 extends Node {
 						@Pc(173) int local173 = local69 >> 16 & 0x7F;
 						if (local173 > 0) {
 							@Pc(179) int local179 = local15[local161];
-							@Pc(187) Class4_Sub14 local187 = (Class4_Sub14) this.aClass84_23.get((long) local179);
+							@Pc(187) ByteArrayNode local187 = (ByteArrayNode) this.aClass84_23.get((long) local179);
 							if (local187 == null) {
-								local187 = new Class4_Sub14(new byte[128]);
+								local187 = new ByteArrayNode(new byte[128]);
 								this.aClass84_23.put((long) local179, local187);
 							}
-							local187.aByteArray18[local167] = 1;
+							local187.value[local167] = 1;
 						}
 					}
 					local29.method1659(local51);
