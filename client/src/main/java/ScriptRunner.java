@@ -12,7 +12,7 @@ public final class ScriptRunner {
 	private static final String[] stringStack = new String[1000];
 
 	@OriginalMember(owner = "client!va", name = "c", descriptor = "[Lclient!ui;")
-	private static final StackFrame[] callStack = new StackFrame[50];
+	private static final GoSubFrame[] callStack = new GoSubFrame[50];
 
 	@OriginalMember(owner = "client!fd", name = "nb", descriptor = "I")
 	private static int fp = 0;
@@ -104,7 +104,7 @@ public final class ScriptRunner {
 						if (fp == 0) {
 							return;
 						}
-						@Pc(242) StackFrame frame = callStack[--fp];
+						@Pc(242) GoSubFrame frame = callStack[--fp];
 						stringLocals = frame.stringLocals;
 						script = frame.script;
 						pc = frame.pc;
@@ -187,7 +187,7 @@ public final class ScriptRunner {
 						}
 						isp -= callee.intArgs;
 						ssp -= callee.stringArgs;
-						@Pc(534) StackFrame frame = new StackFrame();
+						@Pc(534) GoSubFrame frame = new GoSubFrame();
 						frame.intLocals = intLocals;
 						frame.stringLocals = stringLocals;
 						frame.pc = pc;

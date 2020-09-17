@@ -2,7 +2,7 @@ import dev.openrs2.deob.annotation.OriginalClass;
 import dev.openrs2.deob.annotation.OriginalMember;
 
 @OriginalClass("client!ui")
-public final class StackFrame {
+public final class GoSubFrame {
 
 	@OriginalMember(owner = "client!ui", name = "a", descriptor = "Lclient!jl;")
 	public ClientScript script;
