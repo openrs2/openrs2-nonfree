@@ -681,7 +681,7 @@ public final class Static29 {
 					@Pc(189) int[] local189 = local148.anIntArray504;
 					local189[local183] += Static11.method522(arg2 + local148.anIntArray502[local183], arg5 + local148.anIntArray507[local183], Static7.y) - arg4;
 				}
-				local148.aClass15_1.aBoolean15 = false;
+				local148.bounds.valid = false;
 				local148.aClass57_1.aBoolean103 = false;
 			}
 		} else {

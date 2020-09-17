@@ -76,7 +76,7 @@ public final class GlModel extends Model {
 	private Class57 aClass57_5;
 
 	@OriginalMember(owner = "client!s", name = "P", descriptor = "Lclient!ba;")
-	public Class15 aClass15_1;
+	public BoundingBox bounds;
 
 	@OriginalMember(owner = "client!s", name = "R", descriptor = "[B")
 	private byte[] aByteArray62;
@@ -211,7 +211,7 @@ public final class GlModel extends Model {
 		if (arg0.aShortArray54 != null) {
 			this.aShortArray88 = new short[this.anInt4690];
 		}
-		this.aClass15_1 = new Class15();
+		this.bounds = new BoundingBox();
 		this.aClass57_1 = new Class57();
 		this.aClass57_5 = new Class57();
 		if (Preferences.highDetailLighting) {
@@ -624,10 +624,10 @@ public final class GlModel extends Model {
 	@OriginalMember(owner = "client!s", name = "c", descriptor = "()I")
 	@Override
 	public final int method3818() {
-		if (!this.aClass15_1.aBoolean15) {
-			this.method3865();
+		if (!this.bounds.valid) {
+			this.calculateBounds();
 		}
-		return this.aClass15_1.aShort3;
+		return this.bounds.aShort3;
 	}
 
 	@OriginalMember(owner = "client!s", name = "a", descriptor = "(SS)V")
@@ -657,10 +657,10 @@ public final class GlModel extends Model {
 	@OriginalMember(owner = "client!s", name = "i", descriptor = "()I")
 	@Override
 	public final int method3829() {
-		if (!this.aClass15_1.aBoolean15) {
-			this.method3865();
+		if (!this.bounds.valid) {
+			this.calculateBounds();
 		}
-		return this.aClass15_1.aShort4;
+		return this.bounds.aShort4;
 	}
 
 	@OriginalMember(owner = "client!s", name = "a", descriptor = "(IIIIIIIIJILclient!ne;)V")
@@ -669,12 +669,12 @@ public final class GlModel extends Model {
 		if (this.anInt4691 == 0) {
 			return;
 		}
-		if (!this.aClass15_1.aBoolean15) {
-			this.method3865();
+		if (!this.bounds.valid) {
+			this.calculateBounds();
 		}
-		@Pc(13) short local13 = this.aClass15_1.aShort7;
-		@Pc(17) short local17 = this.aClass15_1.aShort8;
-		@Pc(21) short local21 = this.aClass15_1.aShort2;
+		@Pc(13) short local13 = this.bounds.aShort7;
+		@Pc(17) short local17 = this.bounds.aShort8;
+		@Pc(21) short local21 = this.bounds.aShort2;
 		if (arg10 != null) {
 			arg10.method2970(arg0, arg9, arg5, arg6, arg7);
 		}
@@ -736,10 +736,10 @@ public final class GlModel extends Model {
 				@Pc(244) int local244 = -999999;
 				@Pc(246) int local246 = 999999;
 				@Pc(248) int local248 = -999999;
-				@Pc(252) short local252 = this.aClass15_1.aShort4;
-				@Pc(256) short local256 = this.aClass15_1.aShort5;
-				@Pc(260) short local260 = this.aClass15_1.aShort3;
-				@Pc(264) short local264 = this.aClass15_1.aShort6;
+				@Pc(252) short local252 = this.bounds.aShort4;
+				@Pc(256) short local256 = this.bounds.aShort5;
+				@Pc(260) short local260 = this.bounds.aShort3;
+				@Pc(264) short local264 = this.bounds.aShort6;
 				@Pc(299) int[] local299 = new int[] { local252, local256, local252, local256, local252, local256, local252, local256 };
 				@Pc(334) int[] local334 = new int[] { local260, local260, local264, local264, local260, local260, local264, local264 };
 				@Pc(369) int[] local369 = new int[] { local17, local17, local17, local17, local21, local21, local21, local21 };
@@ -1075,10 +1075,10 @@ public final class GlModel extends Model {
 	@OriginalMember(owner = "client!s", name = "b", descriptor = "()I")
 	@Override
 	public final int method3813() {
-		if (!this.aClass15_1.aBoolean15) {
-			this.method3865();
+		if (!this.bounds.valid) {
+			this.calculateBounds();
 		}
-		return this.aClass15_1.aShort8;
+		return this.bounds.aShort8;
 	}
 
 	@OriginalMember(owner = "client!s", name = "o", descriptor = "()I")
@@ -1102,7 +1102,7 @@ public final class GlModel extends Model {
 			this.aShortArray87[local34] = this.aShortArray95[local34];
 			this.aShortArray95[local34] = (short) -local43;
 		}
-		this.aClass15_1.aBoolean15 = false;
+		this.bounds.valid = false;
 		this.aClass57_1.aBoolean103 = false;
 		if (this.aClass57_2 != null) {
 			this.aClass57_2.aBoolean103 = false;
@@ -1112,10 +1112,10 @@ public final class GlModel extends Model {
 	@OriginalMember(owner = "client!s", name = "f", descriptor = "()I")
 	@Override
 	public final int method3826() {
-		if (!this.aClass15_1.aBoolean15) {
-			this.method3865();
+		if (!this.bounds.valid) {
+			this.calculateBounds();
 		}
-		return this.aClass15_1.aShort7;
+		return this.bounds.aShort7;
 	}
 
 	@OriginalMember(owner = "client!s", name = "a", descriptor = "(IIIIIIIJ)V")
@@ -1150,7 +1150,7 @@ public final class GlModel extends Model {
 			this.anIntArray502[local9] = this.anIntArray502[local9] * local7 - this.anIntArray507[local9] * local3 >> 16;
 			this.anIntArray507[local9] = local29;
 		}
-		this.aClass15_1.aBoolean15 = false;
+		this.bounds.valid = false;
 		this.aClass57_1.aBoolean103 = false;
 	}
 
@@ -1168,7 +1168,7 @@ public final class GlModel extends Model {
 			this.aShortArray95[local33] = (short) -this.aShortArray95[local33];
 			this.aShortArray87[local33] = (short) -this.aShortArray87[local33];
 		}
-		this.aClass15_1.aBoolean15 = false;
+		this.bounds.valid = false;
 		this.aClass57_1.aBoolean103 = false;
 		if (this.aClass57_2 != null) {
 			this.aClass57_2.aBoolean103 = false;
@@ -1190,7 +1190,7 @@ public final class GlModel extends Model {
 			this.aShortArray94[local39] = this.aShortArray98[local39];
 			this.aShortArray98[local39] = local48;
 		}
-		this.aClass15_1.aBoolean15 = false;
+		this.bounds.valid = false;
 		this.aClass57_1.aBoolean103 = false;
 		if (this.aClass57_2 != null) {
 			this.aClass57_2.aBoolean103 = false;
@@ -1234,7 +1234,7 @@ public final class GlModel extends Model {
 			this.anIntArray502[local9] = this.anIntArray504[local9] * local3 + this.anIntArray502[local9] * local7 >> 16;
 			this.anIntArray504[local9] = local29;
 		}
-		this.aClass15_1.aBoolean15 = false;
+		this.bounds.valid = false;
 		this.aClass57_1.aBoolean103 = false;
 	}
 
@@ -1296,10 +1296,10 @@ public final class GlModel extends Model {
 		}
 		if (arg0 && arg1) {
 			local3.aClass57_1 = this.aClass57_1;
-			local3.aClass15_1 = this.aClass15_1;
+			local3.bounds = this.bounds;
 		} else {
 			local3.aClass57_1 = new Class57();
-			local3.aClass15_1 = new Class15();
+			local3.bounds = new BoundingBox();
 		}
 		if (arg2) {
 			local3.aShortArray92 = this.aShortArray92;
@@ -1394,10 +1394,10 @@ public final class GlModel extends Model {
 	@OriginalMember(owner = "client!s", name = "l", descriptor = "()I")
 	@Override
 	public final int method3841() {
-		if (!this.aClass15_1.aBoolean15) {
-			this.method3865();
+		if (!this.bounds.valid) {
+			this.calculateBounds();
 		}
-		return this.aClass15_1.aShort6;
+		return this.bounds.aShort6;
 	}
 
 	@OriginalMember(owner = "client!s", name = "a", descriptor = "(Lclient!fe;)Lclient!fe;")
@@ -1405,26 +1405,26 @@ public final class GlModel extends Model {
 		if (this.anInt4691 == 0) {
 			return null;
 		}
-		if (!this.aClass15_1.aBoolean15) {
-			this.method3865();
+		if (!this.bounds.valid) {
+			this.calculateBounds();
 		}
 		@Pc(26) int local26;
 		@Pc(40) int local40;
 		if (Static4.anInt3366 > 0) {
-			local26 = this.aClass15_1.aShort4 - (this.aClass15_1.aShort2 * Static4.anInt3366 >> 8) >> 3;
-			local40 = this.aClass15_1.aShort5 - (this.aClass15_1.aShort8 * Static4.anInt3366 >> 8) >> 3;
+			local26 = this.bounds.aShort4 - (this.bounds.aShort2 * Static4.anInt3366 >> 8) >> 3;
+			local40 = this.bounds.aShort5 - (this.bounds.aShort8 * Static4.anInt3366 >> 8) >> 3;
 		} else {
-			local26 = this.aClass15_1.aShort4 - (this.aClass15_1.aShort8 * Static4.anInt3366 >> 8) >> 3;
-			local40 = this.aClass15_1.aShort5 - (this.aClass15_1.aShort2 * Static4.anInt3366 >> 8) >> 3;
+			local26 = this.bounds.aShort4 - (this.bounds.aShort8 * Static4.anInt3366 >> 8) >> 3;
+			local40 = this.bounds.aShort5 - (this.bounds.aShort2 * Static4.anInt3366 >> 8) >> 3;
 		}
 		@Pc(85) int local85;
 		@Pc(99) int local99;
 		if (Static4.anInt3363 > 0) {
-			local85 = this.aClass15_1.aShort3 - (this.aClass15_1.aShort2 * Static4.anInt3363 >> 8) >> 3;
-			local99 = this.aClass15_1.aShort6 - (this.aClass15_1.aShort8 * Static4.anInt3363 >> 8) >> 3;
+			local85 = this.bounds.aShort3 - (this.bounds.aShort2 * Static4.anInt3363 >> 8) >> 3;
+			local99 = this.bounds.aShort6 - (this.bounds.aShort8 * Static4.anInt3363 >> 8) >> 3;
 		} else {
-			local85 = this.aClass15_1.aShort3 - (this.aClass15_1.aShort8 * Static4.anInt3363 >> 8) >> 3;
-			local99 = this.aClass15_1.aShort6 - (this.aClass15_1.aShort2 * Static4.anInt3363 >> 8) >> 3;
+			local85 = this.bounds.aShort3 - (this.bounds.aShort8 * Static4.anInt3363 >> 8) >> 3;
+			local99 = this.bounds.aShort6 - (this.bounds.aShort2 * Static4.anInt3363 >> 8) >> 3;
 		}
 		@Pc(134) int local134 = local40 + 1 - local26;
 		@Pc(140) int local140 = local99 + 1 - local85;
@@ -1919,7 +1919,7 @@ public final class GlModel extends Model {
 			this.aShortArray87[local64] = (short) (this.aShortArray87[local64] * local14 - this.aShortArray95[local64] * local10 >> 16);
 			this.aShortArray95[local64] = (short) local84;
 		}
-		this.aClass15_1.aBoolean15 = false;
+		this.bounds.valid = false;
 		this.aClass57_1.aBoolean103 = false;
 		if (this.aClass57_2 != null) {
 			this.aClass57_2.aBoolean103 = false;
@@ -2045,10 +2045,10 @@ public final class GlModel extends Model {
 	@OriginalMember(owner = "client!s", name = "k", descriptor = "()I")
 	@Override
 	public final int method3838() {
-		if (!this.aClass15_1.aBoolean15) {
-			this.method3865();
+		if (!this.bounds.valid) {
+			this.calculateBounds();
 		}
-		return this.aClass15_1.aShort5;
+		return this.bounds.aShort5;
 	}
 
 	@OriginalMember(owner = "client!s", name = "d", descriptor = "()V")
@@ -2059,7 +2059,7 @@ public final class GlModel extends Model {
 			this.anIntArray504[local1] = this.anIntArray504[local1] + 7 >> 4;
 			this.anIntArray502[local1] = this.anIntArray502[local1] + 7 >> 4;
 		}
-		this.aClass15_1.aBoolean15 = false;
+		this.bounds.valid = false;
 		this.aClass57_1.aBoolean103 = false;
 	}
 
@@ -2071,19 +2071,19 @@ public final class GlModel extends Model {
 			this.anIntArray504[local1] = this.anIntArray504[local1] * arg1 >> 7;
 			this.anIntArray502[local1] = this.anIntArray502[local1] * arg2 >> 7;
 		}
-		this.aClass15_1.aBoolean15 = false;
+		this.bounds.valid = false;
 		this.aClass57_1.aBoolean103 = false;
 	}
 
 	@OriginalMember(owner = "client!s", name = "a", descriptor = "(IILclient!s;[[I[[IIII)V")
 	public final void method3859(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) GlModel arg2, @OriginalArg(3) int[][] arg3, @OriginalArg(4) int[][] arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7) {
-		if (!arg2.aClass15_1.aBoolean15) {
-			arg2.method3865();
+		if (!arg2.bounds.valid) {
+			arg2.calculateBounds();
 		}
-		@Pc(11) int local11 = arg5 + arg2.aClass15_1.aShort4;
-		@Pc(17) int local17 = arg5 + arg2.aClass15_1.aShort5;
-		@Pc(23) int local23 = arg7 + arg2.aClass15_1.aShort3;
-		@Pc(29) int local29 = arg7 + arg2.aClass15_1.aShort6;
+		@Pc(11) int local11 = arg5 + arg2.bounds.aShort4;
+		@Pc(17) int local17 = arg5 + arg2.bounds.aShort5;
+		@Pc(23) int local23 = arg7 + arg2.bounds.aShort3;
+		@Pc(29) int local29 = arg7 + arg2.bounds.aShort6;
 		if ((arg0 == 1 || arg0 == 2 || arg0 == 3 || arg0 == 5) && (local11 < 0 || local17 + 128 >> 7 >= arg3.length || local23 < 0 || local29 + 128 >> 7 >= arg3[0].length)) {
 			return;
 		}
@@ -2117,7 +2117,7 @@ public final class GlModel extends Model {
 				this.anIntArray504[local150] = this.anIntArray504[local150] + local244 - arg6;
 			}
 		} else if (arg0 == 2) {
-			@Pc(266) short local266 = arg2.aClass15_1.aShort8;
+			@Pc(266) short local266 = arg2.bounds.aShort8;
 			for (@Pc(268) int local268 = 0; local268 < this.anInt4688; local268++) {
 				@Pc(281) int local281 = (this.anIntArray504[local268] << 16) / local266;
 				if (local281 < arg1) {
@@ -2138,7 +2138,7 @@ public final class GlModel extends Model {
 			@Pc(412) int local412 = (arg1 >> 8 & 0xFF) * 4;
 			this.method3840(arg3, arg5, arg6, arg7, local404, local412);
 		} else if (arg0 == 4) {
-			@Pc(432) int local432 = arg2.aClass15_1.aShort2 - arg2.aClass15_1.aShort8;
+			@Pc(432) int local432 = arg2.bounds.aShort2 - arg2.bounds.aShort8;
 			for (@Pc(434) int local434 = 0; local434 < this.anInt4688; local434++) {
 				@Pc(445) int local445 = this.anIntArray507[local434] + arg5;
 				@Pc(452) int local452 = this.anIntArray502[local434] + arg7;
@@ -2152,7 +2152,7 @@ public final class GlModel extends Model {
 				this.anIntArray504[local434] = this.anIntArray504[local434] + local528 + local432 - arg6;
 			}
 		} else if (arg0 == 5) {
-			@Pc(556) int local556 = arg2.aClass15_1.aShort2 - arg2.aClass15_1.aShort8;
+			@Pc(556) int local556 = arg2.bounds.aShort2 - arg2.bounds.aShort8;
 			for (@Pc(558) int local558 = 0; local558 < this.anInt4688; local558++) {
 				@Pc(569) int local569 = this.anIntArray507[local558] + arg5;
 				@Pc(576) int local576 = this.anIntArray502[local558] + arg7;
@@ -2171,7 +2171,7 @@ public final class GlModel extends Model {
 			}
 		}
 		this.aClass57_1.aBoolean103 = false;
-		this.aClass15_1.aBoolean15 = false;
+		this.bounds.valid = false;
 	}
 
 	@OriginalMember(owner = "client!s", name = "f", descriptor = "(I)V")
@@ -2229,15 +2229,15 @@ public final class GlModel extends Model {
 		}
 		@Pc(92) int[] local92 = local2.anIntArray506;
 		@Pc(95) short[] local95 = local2.aShortArray93;
-		if (!local2.aClass15_1.aBoolean15) {
-			local2.method3865();
+		if (!local2.bounds.valid) {
+			local2.calculateBounds();
 		}
-		@Pc(105) short local105 = local2.aClass15_1.aShort8;
-		@Pc(109) short local109 = local2.aClass15_1.aShort2;
-		@Pc(113) short local113 = local2.aClass15_1.aShort4;
-		@Pc(117) short local117 = local2.aClass15_1.aShort5;
-		@Pc(121) short local121 = local2.aClass15_1.aShort3;
-		@Pc(125) short local125 = local2.aClass15_1.aShort6;
+		@Pc(105) short local105 = local2.bounds.aShort8;
+		@Pc(109) short local109 = local2.bounds.aShort2;
+		@Pc(113) short local113 = local2.bounds.aShort4;
+		@Pc(117) short local117 = local2.bounds.aShort5;
+		@Pc(121) short local121 = local2.bounds.aShort3;
+		@Pc(125) short local125 = local2.bounds.aShort6;
 		for (@Pc(127) int local127 = 0; local127 < this.anInt4688; local127++) {
 			@Pc(138) int local138 = this.anIntArray504[local127] - arg2;
 			if (local138 >= local105 && local138 <= local109) {
@@ -2343,7 +2343,7 @@ public final class GlModel extends Model {
 			this.aShortArray95[local34] = this.aShortArray87[local34];
 			this.aShortArray87[local34] = (short) -local43;
 		}
-		this.aClass15_1.aBoolean15 = false;
+		this.bounds.valid = false;
 		this.aClass57_1.aBoolean103 = false;
 		if (this.aClass57_2 != null) {
 			this.aClass57_2.aBoolean103 = false;
@@ -2361,7 +2361,7 @@ public final class GlModel extends Model {
 			local7 = this.anIntArray502;
 			local7[local1] += arg2;
 		}
-		this.aClass15_1.aBoolean15 = false;
+		this.bounds.valid = false;
 		this.aClass57_1.aBoolean103 = false;
 	}
 
@@ -2372,12 +2372,12 @@ public final class GlModel extends Model {
 			this.anIntArray507[local1] = -this.anIntArray507[local1];
 			this.anIntArray502[local1] = -this.anIntArray502[local1];
 		}
-		this.aClass15_1.aBoolean15 = false;
+		this.bounds.valid = false;
 		this.aClass57_1.aBoolean103 = false;
 	}
 
 	@OriginalMember(owner = "client!s", name = "v", descriptor = "()V")
-	private void method3865() {
+	private void calculateBounds() {
 		@Pc(1) int local1 = 32767;
 		@Pc(3) int local3 = 32767;
 		@Pc(5) int local5 = 32767;
@@ -2417,15 +2417,15 @@ public final class GlModel extends Model {
 				local15 = local91;
 			}
 		}
-		this.aClass15_1.aShort4 = (short) local1;
-		this.aClass15_1.aShort5 = (short) local7;
-		this.aClass15_1.aShort8 = (short) local3;
-		this.aClass15_1.aShort2 = (short) local9;
-		this.aClass15_1.aShort3 = (short) local5;
-		this.aClass15_1.aShort6 = (short) local11;
-		this.aClass15_1.aShort7 = (short) (Math.sqrt((double) local13) + 0.99D);
+		this.bounds.aShort4 = (short) local1;
+		this.bounds.aShort5 = (short) local7;
+		this.bounds.aShort8 = (short) local3;
+		this.bounds.aShort2 = (short) local9;
+		this.bounds.aShort3 = (short) local5;
+		this.bounds.aShort6 = (short) local11;
+		this.bounds.aShort7 = (short) (Math.sqrt((double) local13) + 0.99D);
 		Math.sqrt((double) local15);
-		this.aClass15_1.aBoolean15 = true;
+		this.bounds.valid = true;
 	}
 
 	@OriginalMember(owner = "client!s", name = "w", descriptor = "()V")
@@ -2513,7 +2513,7 @@ public final class GlModel extends Model {
 			this.anIntArray507[local1] = this.anIntArray502[local1];
 			this.anIntArray502[local1] = -local10;
 		}
-		this.aClass15_1.aBoolean15 = false;
+		this.bounds.valid = false;
 		this.aClass57_1.aBoolean103 = false;
 	}
 
@@ -2862,10 +2862,10 @@ public final class GlModel extends Model {
 	@OriginalMember(owner = "client!s", name = "m", descriptor = "()I")
 	@Override
 	public final int method3842() {
-		if (!this.aClass15_1.aBoolean15) {
-			this.method3865();
+		if (!this.bounds.valid) {
+			this.calculateBounds();
 		}
-		return this.aClass15_1.aShort2;
+		return this.bounds.aShort2;
 	}
 
 	@OriginalMember(owner = "client!s", name = "g", descriptor = "()V")
@@ -2876,7 +2876,7 @@ public final class GlModel extends Model {
 			this.anIntArray502[local1] = this.anIntArray507[local1];
 			this.anIntArray507[local1] = -local10;
 		}
-		this.aClass15_1.aBoolean15 = false;
+		this.bounds.valid = false;
 		this.aClass57_1.aBoolean103 = false;
 	}
 
@@ -2890,7 +2890,7 @@ public final class GlModel extends Model {
 			this.anIntArray504[local9] = this.anIntArray504[local9] * local7 - this.anIntArray507[local9] * local3 >> 16;
 			this.anIntArray507[local9] = local29;
 		}
-		this.aClass15_1.aBoolean15 = false;
+		this.bounds.valid = false;
 		this.aClass57_1.aBoolean103 = false;
 	}
 
@@ -2908,8 +2908,8 @@ public final class GlModel extends Model {
 			}
 			if (arg0) {
 				if (this.aClass57_1.aBoolean103) {
-					if (!this.aClass15_1.aBoolean15) {
-						this.method3865();
+					if (!this.bounds.valid) {
+						this.calculateBounds();
 					}
 					this.anIntArray507 = null;
 					this.anIntArray504 = null;
@@ -2991,10 +2991,10 @@ public final class GlModel extends Model {
 			arg3.aClass57_1 = new Class57();
 		}
 		arg3.aClass57_1.aBoolean103 = false;
-		if (arg3.aClass15_1 == null) {
-			arg3.aClass15_1 = new Class15();
+		if (arg3.bounds == null) {
+			arg3.bounds = new BoundingBox();
 		}
-		arg3.aClass15_1.aBoolean15 = false;
+		arg3.bounds.valid = false;
 		if (arg0) {
 			arg3.aByteArray63 = this.aByteArray63;
 		} else {

@@ -985,7 +985,7 @@ public final class Static12 {
 					local621[local615] += Static11.method522(arg8 + local591.anIntArray502[local615], arg12 + local591.anIntArray507[local615], Static7.y) - arg7;
 				}
 				local591.aClass57_1.aBoolean103 = false;
-				local591.aClass15_1.aBoolean15 = false;
+				local591.bounds.valid = false;
 			}
 		} else {
 			@Pc(660) SoftwareModel local660 = (SoftwareModel) local500;

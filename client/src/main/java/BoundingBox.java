@@ -2,7 +2,7 @@ import dev.openrs2.deob.annotation.OriginalClass;
 import dev.openrs2.deob.annotation.OriginalMember;
 
 @OriginalClass("client!ba")
-public final class Class15 {
+public final class BoundingBox {
 
 	@OriginalMember(owner = "client!ba", name = "a", descriptor = "S")
 	public short aShort2;
@@ -26,5 +26,5 @@ public final class Class15 {
 	public short aShort8;
 
 	@OriginalMember(owner = "client!ba", name = "c", descriptor = "Z")
-	public boolean aBoolean15 = false;
+	public boolean valid = false;
 }
