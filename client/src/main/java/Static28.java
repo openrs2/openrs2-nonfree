@@ -389,7 +389,7 @@ public final class Static28 {
 
 	@OriginalMember(owner = "client!pa", name = "a", descriptor = "(II)[B")
 	public static byte[] method3321(@OriginalArg(0) int arg0) {
-		@Pc(18) Class4_Sub3_Sub20 local18 = (Class4_Sub3_Sub20) Static7.aClass40_15.get((long) arg0);
+		@Pc(18) ByteArraySecondaryNode local18 = (ByteArraySecondaryNode) Static7.aClass40_15.get((long) arg0);
 		if (local18 == null) {
 			@Pc(24) byte[] local24 = new byte[512];
 			@Pc(30) Random local30 = new Random((long) arg0);
@@ -403,10 +403,10 @@ public final class Static28 {
 				local24[local60] = local24[local55];
 				local24[local55] = local24[511 - local45] = local64;
 			}
-			local18 = new Class4_Sub3_Sub20(local24);
+			local18 = new ByteArraySecondaryNode(local24);
 			Static7.aClass40_15.put((long) arg0, local18);
 		}
-		return local18.aByteArray69;
+		return local18.value;
 	}
 
 	@OriginalMember(owner = "client!pa", name = "a", descriptor = "(I)V")
