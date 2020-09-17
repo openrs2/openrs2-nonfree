@@ -113,12 +113,6 @@ public final class Static37 {
 		}
 	}
 
-	@OriginalMember(owner = "client!wc", name = "a", descriptor = "(II)V")
-	public static void method4678(@OriginalArg(0) int arg0) {
-		@Pc(6) Class4_Sub3_Sub9 local6 = Static12.method2322(3, arg0);
-		local6.method1519();
-	}
-
 	@OriginalMember(owner = "client!wd", name = "a", descriptor = "(IZ)V")
 	public static void method4710(@OriginalArg(1) boolean arg0) {
 		@Pc(11) byte[][] local11;

@@ -538,8 +538,8 @@ public final class Static11 {
 		LocList.locs = new LinkedList();
 		Static7.anInt5497 = 0;
 		Static6.anInt5214 = 0;
-		Static12.method778();
-		Static16.method1566();
+		VarpDomain.clear();
+		DelayedStateChange.clear();
 		Static1.anInt212 = 0;
 		Static3.anInt2497 = 0;
 		Static5.anInt3490 = 0;
@@ -550,8 +550,8 @@ public final class Static11 {
 		Static4.anInt3131 = 0;
 		Static5.anInt4165 = 0;
 		Static6.anInt4838 = 0;
-		for (@Pc(3857) int local3857 = 0; local3857 < Static6.anIntArray462.length; local3857++) {
-			Static6.anIntArray462[local3857] = -1;
+		for (@Pc(3857) int i = 0; i < VarcDomain.varcs.length; i++) {
+			VarcDomain.varcs[i] = -1;
 		}
 		if (Static3.anInt5398 != -1) {
 			InterfaceList.discard(Static3.anInt5398);

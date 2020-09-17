@@ -166,9 +166,9 @@ public final class NpcType {
 		}
 		@Pc(10) int local10 = -1;
 		if (this.anInt5237 != -1) {
-			local10 = Static35.method4311(this.anInt5237);
+			local10 = VarpDomain.getVarbit(this.anInt5237);
 		} else if (this.anInt5266 != -1) {
-			local10 = Static1.anIntArray2[this.anInt5266];
+			local10 = VarpDomain.varps[this.anInt5266];
 		}
 		if (local10 < 0 || local10 >= this.anIntArray590.length - 1 || this.anIntArray590[local10] == -1) {
 			@Pc(60) int local60 = this.anIntArray590[this.anIntArray590.length - 1];
@@ -418,9 +418,9 @@ public final class NpcType {
 	public final NpcType method4265() {
 		@Pc(13) int local13 = -1;
 		if (this.anInt5237 != -1) {
-			local13 = Static35.method4311(this.anInt5237);
+			local13 = VarpDomain.getVarbit(this.anInt5237);
 		} else if (this.anInt5266 != -1) {
-			local13 = Static1.anIntArray2[this.anInt5266];
+			local13 = VarpDomain.varps[this.anInt5266];
 		}
 		if (local13 < 0 || local13 >= this.anIntArray590.length - 1 || this.anIntArray590[local13] == -1) {
 			@Pc(68) int local68 = this.anIntArray590[this.anIntArray590.length - 1];

@@ -96,11 +96,11 @@ public final class Protocol {
 		Static3.anInt2583 = 0;
 		Static4.anInt3335 = opcode;
 		if (opcode == 163) {
-			for (@Pc(130) int local130 = 0; local130 < Static1.anIntArray2.length; local130++) {
-				if (Static1.anIntArray2[local130] != Static1.anIntArray62[local130]) {
-					Static1.anIntArray2[local130] = Static1.anIntArray62[local130];
-					Static29.method3534(local130);
-					Static3.anIntArray225[Static1.anInt788++ & 0x1F] = local130;
+			for (@Pc(130) int i = 0; i < VarpDomain.varps.length; i++) {
+				if (VarpDomain.varps[i] != VarpDomain.serverVarps[i]) {
+					VarpDomain.varps[i] = VarpDomain.serverVarps[i];
+					Static29.method3534(i);
+					VarpDomain.updatedVarps[VarpDomain.updatedVarpsWriterIndex++ & 0x1F] = i;
 				}
 			}
 			opcode = -1;
@@ -158,7 +158,7 @@ public final class Protocol {
 			@Pc(360) int local360 = inboundBuffer.readUnsignedShortLEA();
 			@Pc(364) byte local364 = inboundBuffer.readByteC();
 			if (Static35.method4381(local356)) {
-				Static10.method397(local360, local364);
+				DelayedStateChange.setVarcServer(local360, local364);
 			}
 			opcode = -1;
 			return true;
@@ -334,7 +334,7 @@ public final class Protocol {
 			@Pc(1085) String local1085 = inboundBuffer.readString();
 			@Pc(1089) int local1089 = inboundBuffer.readIntAlt3Reverse();
 			if (Static35.method4381(local1079)) {
-				Static21.method2079(local1089, local1085);
+				DelayedStateChange.method2079(local1089, local1085);
 			}
 			opcode = -1;
 			return true;
@@ -343,7 +343,7 @@ public final class Protocol {
 			@Pc(1118) int local1118 = inboundBuffer.readIntAlt3();
 			@Pc(1122) int local1122 = inboundBuffer.readUnsignedShortA();
 			if (Static35.method4381(local1114)) {
-				Static19.method1773(local1122, local1118);
+				DelayedStateChange.method1773(local1118, local1122);
 			}
 			opcode = -1;
 			return true;
@@ -352,7 +352,7 @@ public final class Protocol {
 			@Pc(1148) int local1148 = inboundBuffer.readIntLE();
 			@Pc(1152) int local1152 = inboundBuffer.readUnsignedShort();
 			if (Static35.method4381(local1152)) {
-				Static10.method397(local1144, local1148);
+				DelayedStateChange.setVarcServer(local1144, local1148);
 			}
 			opcode = -1;
 			return true;
@@ -396,7 +396,7 @@ public final class Protocol {
 			}
 			@Pc(1300) int local1300 = inboundBuffer.readIntLE();
 			if (Static35.method4381(local1285)) {
-				Static29.method3471(1, -1, local1300, local1289);
+				DelayedStateChange.method3471(local1300, 1, local1289, -1);
 			}
 			opcode = -1;
 			return true;
@@ -407,7 +407,7 @@ public final class Protocol {
 		} else if (opcode == 138) {
 			@Pc(1336) int local1336 = inboundBuffer.readUnsignedShortLEA();
 			@Pc(1340) int local1340 = inboundBuffer.readIntAlt3();
-			Static30.method3550(local1340, local1336);
+			VarpDomain.setVarbitServer(local1336, local1340);
 			opcode = -1;
 			return true;
 		} else if (opcode == 96) {
@@ -627,7 +627,7 @@ public final class Protocol {
 		} else if (opcode == 10) {
 			@Pc(2208) int local2208 = inboundBuffer.readIntAlt3Reverse();
 			@Pc(2212) int local2212 = inboundBuffer.readUnsignedShortA();
-			Static8.method173(local2212, local2208);
+			VarpDomain.setVarpServer(local2212, local2208);
 			opcode = -1;
 			return true;
 		} else if (opcode == 100) {
@@ -687,10 +687,10 @@ public final class Protocol {
 			if (Static35.method4381(local2382)) {
 				@Pc(2395) Component local2395 = InterfaceList.getComponent(local2367);
 				if (local2395.if3) {
-					Static31.method3716(local2386, local2367, local2373);
+					DelayedStateChange.method3716(local2367, local2373, local2386);
 					@Pc(2409) ObjType local2409 = ObjTypeList.get(local2373);
-					Static13.method1019(local2409.yAngle2d, local2409.zoom2d, local2409.xAngle2d, local2367);
-					Static36.method4433(local2409.yOffset2d, local2409.anInt5062, local2409.xOffset2d, local2367);
+					DelayedStateChange.method1019(local2367, local2409.xAngle2d, local2409.yAngle2d, local2409.zoom2d);
+					DelayedStateChange.method4433(local2367, local2409.xOffset2d, local2409.yOffset2d, local2409.anInt5062);
 				} else if (local2373 == -1) {
 					local2395.anInt5939 = 0;
 					opcode = -1;
@@ -713,7 +713,7 @@ public final class Protocol {
 			@Pc(2494) int local2494 = inboundBuffer.readShortA();
 			@Pc(2498) int local2498 = inboundBuffer.readShortLE();
 			if (Static35.method4381(local2488)) {
-				Static12.method726(local2482, local2494, local2498);
+				DelayedStateChange.method726(local2482, local2494, local2498);
 			}
 			opcode = -1;
 			return true;
@@ -723,7 +723,7 @@ public final class Protocol {
 			@Pc(2531) int local2531 = inboundBuffer.readUnsignedShortA();
 			@Pc(2535) int local2535 = inboundBuffer.readIntLE();
 			if (Static35.method4381(local2523)) {
-				Static21.method2021(local2531 + (local2527 << 16), local2535);
+				DelayedStateChange.method2021(local2535, local2531 + (local2527 << 16));
 			}
 			opcode = -1;
 			return true;
@@ -856,7 +856,7 @@ public final class Protocol {
 			@Pc(3028) int local3028 = inboundBuffer.readUnsignedShortLE();
 			@Pc(3032) int local3032 = inboundBuffer.readIntLE();
 			if (Static35.method4381(local3024)) {
-				Static13.method1019(local3020, local3016, local3028, local3032);
+				DelayedStateChange.method1019(local3032, local3028, local3020, local3016);
 			}
 			opcode = -1;
 			return true;
@@ -873,7 +873,7 @@ public final class Protocol {
 			@Pc(3095) int local3095 = inboundBuffer.readShort();
 			@Pc(3101) int local3101 = inboundBuffer.readUnsignedShortLEA();
 			if (Static35.method4381(local3101)) {
-				Static38.method4824(local3091, local3095);
+				DelayedStateChange.method4824(local3091, local3095);
 			}
 			opcode = -1;
 			return true;
@@ -957,7 +957,7 @@ public final class Protocol {
 			@Pc(3451) int local3451 = inboundBuffer.readUnsignedShortLEA();
 			@Pc(3455) int local3455 = inboundBuffer.readUnsignedShortLEA();
 			if (Static35.method4381(local3451)) {
-				Static29.method3471(7, local3435, local3441, local3447 << 16 | local3455);
+				DelayedStateChange.method3471(local3441, 7, local3447 << 16 | local3455, local3435);
 			}
 			opcode = -1;
 			return true;
@@ -1075,10 +1075,10 @@ public final class Protocol {
 			opcode = -1;
 			return true;
 		} else if (opcode == 78) {
-			Static12.method778();
+			VarpDomain.clear();
 			Static21.method2062();
 			opcode = -1;
-			Static1.anInt788 += 32;
+			VarpDomain.updatedVarpsWriterIndex += 32;
 			return true;
 		} else if (opcode == 177) {
 			@Pc(3952) int local3952 = inboundBuffer.readUnsignedByte();
@@ -1145,14 +1145,14 @@ public final class Protocol {
 			@Pc(4166) String local4166 = inboundBuffer.readString();
 			@Pc(4170) int local4170 = inboundBuffer.readUnsignedShortLEA();
 			if (Static35.method4381(local4162)) {
-				Static31.method3779(local4166, local4170);
+				DelayedStateChange.setVarcstrServer(local4170, local4166);
 			}
 			opcode = -1;
 			return true;
 		} else if (opcode == 137) {
 			@Pc(4190) int local4190 = inboundBuffer.readUnsignedShortLE();
 			@Pc(4194) int local4194 = inboundBuffer.readUnsignedByte();
-			Static30.method3550(local4194, local4190);
+			VarpDomain.setVarbitServer(local4190, local4194);
 			opcode = -1;
 			return true;
 		} else if (opcode == 72) {
@@ -1378,7 +1378,7 @@ public final class Protocol {
 			@Pc(5087) int local5087 = inboundBuffer.readUnsignedShortA();
 			@Pc(5091) String local5091 = inboundBuffer.readString();
 			if (Static35.method4381(local5087)) {
-				Static31.method3779(local5091, local5083);
+				DelayedStateChange.setVarcstrServer(local5083, local5091);
 			}
 			opcode = -1;
 			return true;
@@ -1472,7 +1472,7 @@ public final class Protocol {
 			@Pc(5423) int local5423 = inboundBuffer.readUnsignedShortLE();
 			@Pc(5427) int local5427 = inboundBuffer.readUnsignedByte();
 			if (Static35.method4381(local5423)) {
-				Static33.method2997(local5419, local5427);
+				DelayedStateChange.method2997(local5419, local5427);
 			}
 			opcode = -1;
 			return true;
@@ -1498,7 +1498,7 @@ public final class Protocol {
 		} else if (opcode == 38) {
 			@Pc(5517) byte local5517 = inboundBuffer.readByte();
 			@Pc(5521) int local5521 = inboundBuffer.readUnsignedShortLE();
-			Static8.method173(local5521, local5517);
+			VarpDomain.setVarpServer(local5521, local5517);
 			opcode = -1;
 			return true;
 		} else if (opcode == 194) {
@@ -1587,7 +1587,7 @@ public final class Protocol {
 			@Pc(5837) int local5837 = inboundBuffer.readUnsignedShort();
 			@Pc(5841) int local5841 = inboundBuffer.readInt();
 			if (Static35.method4381(local5837)) {
-				Static29.method3471(2, -1, local5841, local5828);
+				DelayedStateChange.method3471(local5841, 2, local5828, -1);
 			}
 			opcode = -1;
 			return true;
@@ -1616,7 +1616,7 @@ public final class Protocol {
 				if (PlayerList.self.appearance != null) {
 					local5951 = PlayerList.self.appearance.method3611();
 				}
-				Static29.method3471(3, -1, local5941, local5951);
+				DelayedStateChange.method3471(local5941, 3, local5951, -1);
 			}
 			opcode = -1;
 			return true;
@@ -1625,7 +1625,7 @@ public final class Protocol {
 			@Pc(5985) int local5985 = inboundBuffer.readIntAlt3Reverse();
 			@Pc(5989) int local5989 = inboundBuffer.readUnsignedShortLEA();
 			if (Static35.method4381(local5989)) {
-				Static12.method722(local5985, local5979);
+				DelayedStateChange.method722(local5985, local5979);
 			}
 			opcode = -1;
 			return true;

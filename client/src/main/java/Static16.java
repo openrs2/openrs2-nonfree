@@ -455,13 +455,6 @@ public final class Static16 {
 		return 6;
 	}
 
-	@OriginalMember(owner = "client!gf", name = "b", descriptor = "(B)V")
-	public static void method1566() {
-		Static3.aClass84_8.clear();
-		Static1.aClass175_4.clear();
-		Static3.aClass175_11.clear();
-	}
-
 	@OriginalMember(owner = "client!gg", name = "c", descriptor = "(I)V")
 	public static void method1576() {
 		for (@Pc(7) int local7 = -1; local7 < PlayerList.size; local7++) {

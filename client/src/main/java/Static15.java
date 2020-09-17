@@ -242,12 +242,6 @@ public final class Static15 {
 		}
 	}
 
-	@OriginalMember(owner = "client!fc", name = "a", descriptor = "(II)V")
-	public static void method1224(@OriginalArg(0) int arg0) {
-		@Pc(8) Class4_Sub3_Sub9 local8 = Static12.method2322(10, arg0);
-		local8.method1519();
-	}
-
 	@OriginalMember(owner = "client!fc", name = "a", descriptor = "(BIIII)V")
 	public static void method1227(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3) {
 		if (Preferences.soundEffectsVolume == 0 || arg2 == 0 || Static6.anInt4457 >= 50 || arg1 == -1) {

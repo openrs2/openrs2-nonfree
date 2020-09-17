@@ -463,9 +463,6 @@ public final class Static3 {
 	@OriginalMember(owner = "client!ij", name = "M", descriptor = "[I")
 	public static final int[] anIntArray211 = new int[14];
 
-	@OriginalMember(owner = "client!ij", name = "N", descriptor = "Lclient!ic;")
-	public static final HashTable aClass84_8 = new HashTable(16);
-
 	@OriginalMember(owner = "client!ik", name = "B", descriptor = "Z")
 	public static boolean aBoolean166 = false;
 
@@ -474,12 +471,6 @@ public final class Static3 {
 
 	@OriginalMember(owner = "client!im", name = "h", descriptor = "Lclient!jh;")
 	public static Class96 aClass96_1 = new Class96();
-
-	@OriginalMember(owner = "client!in", name = "p", descriptor = "[I")
-	public static final int[] anIntArray218 = new int[32];
-
-	@OriginalMember(owner = "client!in", name = "A", descriptor = "[I")
-	public static final int[] anIntArray219 = new int[32];
 
 	@OriginalMember(owner = "client!io", name = "G", descriptor = "[Z")
 	public static final boolean[] aBooleanArray11 = new boolean[8];
@@ -531,12 +522,6 @@ public final class Static3 {
 
 	@OriginalMember(owner = "client!jh", name = "e", descriptor = "Lclient!ll;")
 	public static final LinkedList aClass112_14 = new LinkedList();
-
-	@OriginalMember(owner = "client!jh", name = "h", descriptor = "Lclient!uk;")
-	public static final SecondaryLinkedList aClass175_11 = new SecondaryLinkedList();
-
-	@OriginalMember(owner = "client!jh", name = "j", descriptor = "[I")
-	public static final int[] anIntArray225 = new int[32];
 
 	@OriginalMember(owner = "client!jh", name = "l", descriptor = "Z")
 	public static boolean aBoolean178 = false;

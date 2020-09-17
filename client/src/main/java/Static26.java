@@ -617,29 +617,6 @@ public final class Static26 {
 		return local13 * local34 >> 12;
 	}
 
-	@OriginalMember(owner = "client!nh", name = "d", descriptor = "(B)Lclient!g;")
-	public static Class4_Sub3_Sub9 method2984() {
-		@Pc(10) Class4_Sub3_Sub9 local10 = (Class4_Sub3_Sub9) Static3.aClass175_11.head();
-		if (local10 != null) {
-			local10.unlink();
-			local10.unlinkSecondary();
-			return local10;
-		}
-		@Pc(35) Class4_Sub3_Sub9 local35;
-		do {
-			local35 = (Class4_Sub3_Sub9) Static1.aClass175_4.head();
-			if (local35 == null) {
-				return null;
-			}
-			if (local35.method1522() > MonotonicClock.currentTimeMillis()) {
-				return null;
-			}
-			local35.unlink();
-			local35.unlinkSecondary();
-		} while ((local35.secondaryKey & Long.MIN_VALUE) == 0L);
-		return local35;
-	}
-
 	@OriginalMember(owner = "client!ni", name = "a", descriptor = "(B)V")
 	public static void method4812() {
 		if (!Static3.aBoolean177) {

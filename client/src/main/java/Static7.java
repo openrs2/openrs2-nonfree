@@ -229,9 +229,6 @@ public final class Static7 {
 	@OriginalMember(owner = "client!uj", name = "L", descriptor = "Z")
 	public static boolean aBoolean388 = false;
 
-	@OriginalMember(owner = "client!un", name = "t", descriptor = "Lclient!ic;")
-	public static HashTable aClass84_25 = new HashTable(16);
-
 	@OriginalMember(owner = "client!un", name = "u", descriptor = "Lclient!wf;")
 	public static Component aClass185_15 = null;
 

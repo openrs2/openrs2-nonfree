@@ -443,9 +443,6 @@ public final class Static5 {
 	@OriginalMember(owner = "client!pj", name = "k", descriptor = "[I")
 	public static final int[] anIntArray441 = new int[128];
 
-	@OriginalMember(owner = "client!pk", name = "ab", descriptor = "I")
-	public static int anInt4197 = 0;
-
 	@OriginalMember(owner = "client!pl", name = "u", descriptor = "[Lclient!te;")
 	public static final AnimFrameset[] aClass4_Sub3_Sub19Array4 = new AnimFrameset[14];
 

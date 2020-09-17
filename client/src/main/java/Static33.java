@@ -148,12 +148,6 @@ public final class Static33 {
 		}
 	}
 
-	@OriginalMember(owner = "client!ta", name = "b", descriptor = "(ZI)V")
-	public static void method4092(@OriginalArg(1) int arg0) {
-		@Pc(14) Class4_Sub3_Sub9 local14 = Static12.method2322(6, arg0);
-		local14.method1519();
-	}
-
 	@OriginalMember(owner = "client!tc", name = "a", descriptor = "(Lclient!wf;B)V")
 	public static void method4118(@OriginalArg(0) Component arg0) {
 		@Pc(3) Component local3 = Static26.method2942(arg0);
@@ -574,13 +568,6 @@ public final class Static33 {
 		} else {
 			Static8.method2(false, Static4.centralZoneX, false, PlayerList.self.anIntArray426[0], PlayerList.self.anIntArray422[0], Static1.centralZoneZ, Static7.y);
 		}
-	}
-
-	@OriginalMember(owner = "client!tj", name = "a", descriptor = "(IIZ)V")
-	public static void method2997(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
-		@Pc(4) Class4_Sub3_Sub9 local4 = Static12.method2322(7, arg0);
-		local4.method1520();
-		local4.anInt1993 = arg1;
 	}
 
 	@OriginalMember(owner = "client!tj", name = "c", descriptor = "(I)V")

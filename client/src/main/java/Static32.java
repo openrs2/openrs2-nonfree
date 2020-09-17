@@ -697,12 +697,6 @@ public final class Static32 {
 		}
 	}
 
-	@OriginalMember(owner = "client!sl", name = "d", descriptor = "(II)V")
-	public static void method4026(@OriginalArg(0) int arg0) {
-		@Pc(14) Class4_Sub3_Sub9 local14 = Static12.method2322(7, arg0);
-		local14.method1519();
-	}
-
 	@OriginalMember(owner = "client!sm", name = "b", descriptor = "(II)V")
 	public static void method4030() {
 		Static4.aClass26_30.clean(5);

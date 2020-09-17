@@ -457,8 +457,8 @@ public final class Static35 {
 			@Pc(1434) Component local1434 = InterfaceList.getComponent(local19);
 			if (local1434.cs1Scripts != null && local1434.cs1Scripts[0][0] == 5) {
 				@Pc(1452) int local1452 = local1434.cs1Scripts[0][1];
-				if (local1434.cs1ComparisonOperands[0] != Static1.anIntArray2[local1452]) {
-					Static1.anIntArray2[local1452] = local1434.cs1ComparisonOperands[0];
+				if (local1434.cs1ComparisonOperands[0] != VarpDomain.varps[local1452]) {
+					VarpDomain.varps[local1452] = local1434.cs1ComparisonOperands[0];
 					Static29.method3534(local1452);
 				}
 			}
@@ -845,7 +845,7 @@ public final class Static35 {
 			@Pc(3216) Component local3216 = InterfaceList.getComponent(local19);
 			if (local3216.cs1Scripts != null && local3216.cs1Scripts[0][0] == 5) {
 				@Pc(3240) int local3240 = local3216.cs1Scripts[0][1];
-				Static1.anIntArray2[local3240] = 1 - Static1.anIntArray2[local3240];
+				VarpDomain.varps[local3240] = 1 - VarpDomain.varps[local3240];
 				Static29.method3534(local3240);
 			}
 		}
@@ -916,18 +916,6 @@ public final class Static35 {
 		}
 	}
 
-	@OriginalMember(owner = "client!ue", name = "a", descriptor = "(II)V")
-	public static void method676(@OriginalArg(0) int arg0) {
-		@Pc(10) Class4_Sub3_Sub9 local10 = Static12.method2322(9, arg0);
-		local10.method1519();
-	}
-
-	@OriginalMember(owner = "client!ue", name = "b", descriptor = "(IZ)V")
-	public static void method680(@OriginalArg(0) int arg0) {
-		@Pc(13) Class4_Sub3_Sub9 local13 = Static12.method2322(5, arg0);
-		local13.method1519();
-	}
-
 	@OriginalMember(owner = "client!uf", name = "a", descriptor = "()V")
 	public static void method4310() {
 		if (Terrain.surfaceTiles != null) {
@@ -967,16 +955,6 @@ public final class Static35 {
 				Terrain.aClass33Array1[local103] = null;
 			}
 		}
-	}
-
-	@OriginalMember(owner = "client!uf", name = "a", descriptor = "(BI)I")
-	public static int method4311(@OriginalArg(1) int arg0) {
-		@Pc(13) VarbitType local13 = VarbitTypeList.get(arg0);
-		@Pc(16) int local16 = local13.baseVar;
-		@Pc(19) int local19 = local13.startBit;
-		@Pc(22) int local22 = local13.endBit;
-		@Pc(29) int local29 = GlSolidColorTexture.BIT_MASKS[local22 - local19];
-		return local29 & Static1.anIntArray2[local16] >> local19;
 	}
 
 	@OriginalMember(owner = "client!ug", name = "d", descriptor = "(I)V")

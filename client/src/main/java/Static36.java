@@ -22,21 +22,6 @@ public final class Static36 {
 		Static28.method3249();
 	}
 
-	@OriginalMember(owner = "client!va", name = "a", descriptor = "(II)V")
-	public static void method4405(@OriginalArg(0) int arg0) {
-		@Pc(10) Class4_Sub3_Sub9 local10 = Static12.method2322(11, arg0);
-		local10.method1519();
-	}
-
-	@OriginalMember(owner = "client!vb", name = "a", descriptor = "(BIIII)V")
-	public static void method4433(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3) {
-		@Pc(6) Class4_Sub3_Sub9 local6 = Static12.method2322(10, arg3);
-		local6.method1520();
-		local6.anInt2001 = arg0;
-		local6.anInt1994 = arg1;
-		local6.anInt1993 = arg2;
-	}
-
 	@OriginalMember(owner = "client!vb", name = "a", descriptor = "(JZIII)Ljava/lang/String;")
 	public static String method4434(@OriginalArg(0) long arg0, @OriginalArg(1) boolean arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3) {
 		@Pc(3) char local3 = ',';

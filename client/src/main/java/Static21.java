@@ -4,12 +4,6 @@ import dev.openrs2.deob.annotation.Pc;
 
 public final class Static21 {
 
-	@OriginalMember(owner = "client!jc", name = "a", descriptor = "(II)V")
-	public static void method1994(@OriginalArg(1) int arg0) {
-		@Pc(6) Class4_Sub3_Sub9 local6 = Static12.method2322(8, arg0);
-		local6.method1519();
-	}
-
 	@OriginalMember(owner = "client!jc", name = "a", descriptor = "(CZ)Z")
 	public static boolean method1996(@OriginalArg(0) char arg0) {
 		return arg0 >= 'A' && arg0 <= 'Z' || arg0 >= 'a' && arg0 <= 'z';
@@ -359,20 +353,13 @@ public final class Static21 {
 		ScriptRunner.method519(arg0, 200000);
 	}
 
-	@OriginalMember(owner = "client!ji", name = "a", descriptor = "(IIB)V")
-	public static void method2021(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
-		@Pc(8) Class4_Sub3_Sub9 local8 = Static12.method2322(13, arg1);
-		local8.method1520();
-		local8.anInt1993 = arg0;
-	}
-
 	@OriginalMember(owner = "client!ji", name = "a", descriptor = "(I[F)[F")
 	public static float[] method2023(@OriginalArg(0) int arg0, @OriginalArg(1) float[] arg1) {
 		if (arg1 == null) {
 			return null;
 		}
 		if (arg0 != -5899) {
-			method2021(49, 92);
+			DelayedStateChange.method2021(92, 49);
 		}
 		@Pc(20) float[] local20 = new float[arg1.length];
 		ArrayUtils.copy(arg1, 0, local20, 0, arg1.length);
@@ -532,13 +519,6 @@ public final class Static21 {
 		Static6.anInt4558 = arg2;
 		Static6.anInt4403 = arg0;
 		Static4.anInt3258 = arg1;
-	}
-
-	@OriginalMember(owner = "client!jm", name = "a", descriptor = "(IILjava/lang/String;)V")
-	public static void method2079(@OriginalArg(1) int arg0, @OriginalArg(2) String arg1) {
-		@Pc(13) Class4_Sub3_Sub9 local13 = Static12.method2322(3, arg0);
-		local13.method1520();
-		local13.aString109 = arg1;
 	}
 
 	@OriginalMember(owner = "client!jm", name = "a", descriptor = "(IIIIIII)V")

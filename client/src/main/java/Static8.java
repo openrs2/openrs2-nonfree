@@ -432,12 +432,6 @@ public final class Static8 {
 		}
 	}
 
-	@OriginalMember(owner = "client!ah", name = "a", descriptor = "(II)V")
-	public static void method111(@OriginalArg(0) int arg0) {
-		@Pc(8) Class4_Sub3_Sub9 local8 = Static12.method2322(12, arg0);
-		local8.method1519();
-	}
-
 	@OriginalMember(owner = "client!aj", name = "a", descriptor = "(Lclient!fh;Lclient!fh;B)V")
 	public static void method113(@OriginalArg(0) Js5 arg0, @OriginalArg(1) Js5 arg1) {
 		Static1.aClass4_Sub3_Sub5_1 = method121(arg0, arg1, Static2.anInt914);
@@ -479,15 +473,4 @@ public final class Static8 {
 		return Static9.method197(arg0, arg2, 0) ? Static10.method304(arg1.fetchFile(arg2, 0)) : null;
 	}
 
-	@OriginalMember(owner = "client!al", name = "a", descriptor = "(IBI)V")
-	public static void method173(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1) {
-		Static1.anIntArray62[arg0] = arg1;
-		@Pc(21) Class4_Sub5 local21 = (Class4_Sub5) Static7.aClass84_25.get((long) arg0);
-		if (local21 == null) {
-			@Pc(28) Class4_Sub5 local28 = new Class4_Sub5(4611686018427387905L);
-			Static7.aClass84_25.put((long) arg0, local28);
-		} else if (local21.aLong17 != 4611686018427387905L) {
-			local21.aLong17 = MonotonicClock.currentTimeMillis() + 500L | 0x4000000000000000L;
-		}
-	}
 }

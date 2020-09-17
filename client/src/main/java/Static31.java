@@ -172,14 +172,6 @@ public final class Static31 {
 		return Static9.method197(arg0, arg1, 0) ? Static34.method1546() : null;
 	}
 
-	@OriginalMember(owner = "client!rh", name = "a", descriptor = "(IIII)V")
-	public static void method3716(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(3) int arg2) {
-		@Pc(12) Class4_Sub3_Sub9 local12 = Static12.method2322(9, arg1);
-		local12.method1520();
-		local12.anInt2001 = arg0;
-		local12.anInt1993 = arg2;
-	}
-
 	@OriginalMember(owner = "client!ri", name = "b", descriptor = "(ZI)V")
 	public static void method3733(@OriginalArg(0) boolean arg0) {
 		for (@Pc(8) Class4_Sub11 local8 = (Class4_Sub11) Static1.aClass112_2.head(); local8 != null; local8 = (Class4_Sub11) Static1.aClass112_2.next()) {
@@ -981,13 +973,6 @@ public final class Static31 {
 				}
 			}
 		}
-	}
-
-	@OriginalMember(owner = "client!rm", name = "a", descriptor = "(Ljava/lang/String;IB)V")
-	public static void method3779(@OriginalArg(0) String arg0, @OriginalArg(1) int arg1) {
-		@Pc(8) Class4_Sub3_Sub9 local8 = Static12.method2322(2, arg1);
-		local8.method1520();
-		local8.aString109 = arg0;
 	}
 
 	@OriginalMember(owner = "client!rm", name = "a", descriptor = "(Lclient!ma;ILclient!wf;BIII)V")

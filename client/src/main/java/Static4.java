@@ -408,9 +408,6 @@ public final class Static4 {
 	@OriginalMember(owner = "client!mg", name = "f", descriptor = "[I")
 	public static final int[] anIntArray318 = new int[] { 0, 2, 2, 2, 1, 1, 2, 2, 1, 3, 1, 1 };
 
-	@OriginalMember(owner = "client!mg", name = "r", descriptor = "I")
-	public static int anInt3327 = 0;
-
 	@OriginalMember(owner = "client!mi", name = "b", descriptor = "I")
 	public static int anInt3335 = 0;
 

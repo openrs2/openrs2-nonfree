@@ -112,20 +112,6 @@ public final class Static23 {
 		Static2.aFloat26 = Static4.aFloat85;
 	}
 
-	@OriginalMember(owner = "client!lc", name = "b", descriptor = "(III)V")
-	public static void method1937(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1) {
-		@Pc(7) VarbitType local7 = VarbitTypeList.get(arg0);
-		@Pc(10) int local10 = local7.baseVar;
-		@Pc(13) int local13 = local7.startBit;
-		@Pc(16) int local16 = local7.endBit;
-		@Pc(23) int local23 = GlSolidColorTexture.BIT_MASKS[local16 - local13];
-		if (arg1 < 0 || arg1 > local23) {
-			arg1 = 0;
-		}
-		@Pc(40) int local40 = local23 << local13;
-		Static29.method3543(local10, arg1 << local13 & local40 | Static1.anIntArray2[local10] & ~local40);
-	}
-
 	@OriginalMember(owner = "client!ld", name = "a", descriptor = "(Lclient!fh;I)V")
 	public static void method2508(@OriginalArg(0) Js5 arg0) {
 		Static3.aClass58_100 = arg0;
@@ -3566,9 +3552,4 @@ public final class Static23 {
 		method2547(Static6.anInt5185, Static6.anInt5183, Static6.anInt5186, Static6.anInt5187);
 	}
 
-	@OriginalMember(owner = "client!lh", name = "a", descriptor = "(IZ)V")
-	public static void method4822(@OriginalArg(0) int arg0) {
-		@Pc(13) Class4_Sub3_Sub9 local13 = Static12.method2322(2, arg0);
-		local13.method1519();
-	}
 }

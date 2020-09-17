@@ -431,9 +431,9 @@ public final class LocType {
 	public final LocType method4453() {
 		@Pc(1) int local1 = -1;
 		if (this.anInt5535 != -1) {
-			local1 = Static35.method4311(this.anInt5535);
+			local1 = VarpDomain.getVarbit(this.anInt5535);
 		} else if (this.anInt5531 != -1) {
-			local1 = Static1.anIntArray2[this.anInt5531];
+			local1 = VarpDomain.varps[this.anInt5531];
 		}
 		if (local1 < 0 || this.anIntArray631.length - 1 <= local1 || this.anIntArray631[local1] == -1) {
 			@Pc(61) int local61 = this.anIntArray631[this.anIntArray631.length - 1];

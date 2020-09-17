@@ -54,13 +54,13 @@ public final class Cs1ScriptRunner {
 					}
 				}
 				if (opcode == 5) {
-					value = Static1.anIntArray2[script[pc++]];
+					value = VarpDomain.varps[script[pc++]];
 				}
 				if (opcode == 6) {
 					value = Class65.anIntArray165[Static7.anIntArray599[script[pc++]] - 1];
 				}
 				if (opcode == 7) {
-					value = Static1.anIntArray2[script[pc++]] * 100 / 46875;
+					value = VarpDomain.varps[script[pc++]] * 100 / 46875;
 				}
 				if (opcode == 8) {
 					value = PlayerList.self.combatLevel;
@@ -96,14 +96,14 @@ public final class Cs1ScriptRunner {
 				}
 				if (opcode == 13) {
 					@Pc(345) int local345 = pc + 1;
-					@Pc(348) int local348 = Static1.anIntArray2[script[pc]];
+					@Pc(348) int local348 = VarpDomain.varps[script[pc]];
 					pc = local345 + 1;
 					@Pc(353) int local353 = script[local345];
 					value = (0x1 << local353 & local348) == 0 ? 0 : 1;
 				}
 				if (opcode == 14) {
 					@Pc(375) int local375 = script[pc++];
-					value = Static35.method4311(local375);
+					value = VarpDomain.getVarbit(local375);
 				}
 				if (opcode == 18) {
 					value = Static5.originX + (PlayerList.self.x >> 7);

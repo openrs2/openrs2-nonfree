@@ -7,13 +7,6 @@ import dev.openrs2.deob.annotation.Pc;
 
 public final class Static19 {
 
-	@OriginalMember(owner = "client!hk", name = "a", descriptor = "(IZI)V")
-	public static void method1773(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1) {
-		@Pc(14) Class4_Sub3_Sub9 local14 = Static12.method2322(6, arg1);
-		local14.method1520();
-		local14.anInt1993 = arg0;
-	}
-
 	@OriginalMember(owner = "client!hk", name = "g", descriptor = "(I)Lclient!gb;")
 	public static World method1777() {
 		return WorldList.sorted.length <= Static6.anInt3224 ? null : WorldList.sorted[Static6.anInt3224++];
@@ -214,7 +207,7 @@ public final class Static19 {
 		}
 		Static24.method2563();
 		Static7.anInt5426 = 0;
-		Static12.method778();
+		VarpDomain.clear();
 		Static11.method605(true);
 		try {
 			BrowserControl.call(GameShell.signLink.applet, "loggedout");

@@ -8,20 +8,6 @@ import dev.openrs2.deob.annotation.Pc;
 
 public final class Static30 {
 
-	@OriginalMember(owner = "client!qg", name = "a", descriptor = "(III)V")
-	public static void method3550(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1) {
-		@Pc(7) VarbitType local7 = VarbitTypeList.get(arg1);
-		@Pc(10) int local10 = local7.baseVar;
-		@Pc(13) int local13 = local7.startBit;
-		@Pc(16) int local16 = local7.endBit;
-		@Pc(39) int local39 = GlSolidColorTexture.BIT_MASKS[local16 - local13];
-		if (arg0 < 0 || arg0 > local39) {
-			arg0 = 0;
-		}
-		@Pc(57) int local57 = local39 << local13;
-		Static8.method173(local10, arg0 << local13 & local57 | ~local57 & Static1.anIntArray62[local10]);
-	}
-
 	@OriginalMember(owner = "client!qg", name = "a", descriptor = "(I)V")
 	public static void method3551() {
 		try {

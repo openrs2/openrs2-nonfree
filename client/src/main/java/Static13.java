@@ -879,15 +879,6 @@ public final class Static13 {
 		}
 	}
 
-	@OriginalMember(owner = "client!eg", name = "a", descriptor = "(IIIIB)V")
-	public static void method1019(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) {
-		@Pc(10) Class4_Sub3_Sub9 local10 = Static12.method2322(8, arg3);
-		local10.method1520();
-		local10.anInt2001 = arg0;
-		local10.anInt1994 = arg1;
-		local10.anInt1993 = arg2;
-	}
-
 	@OriginalMember(owner = "client!eh", name = "b", descriptor = "()V")
 	public static void method1027() {
 		Static22.method2303();

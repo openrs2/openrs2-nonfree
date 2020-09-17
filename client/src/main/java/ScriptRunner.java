@@ -55,13 +55,13 @@ public final class ScriptRunner {
 					}
 					if (opcode == 1) {
 						@Pc(70) int local70 = intOperands[pc];
-						intStack[isp++] = Static1.anIntArray2[local70];
+						intStack[isp++] = VarpDomain.varps[local70];
 						continue;
 					}
 					if (opcode == 2) {
 						@Pc(89) int local89 = intOperands[pc];
 						isp--;
-						Static29.method3543(local89, intStack[isp]);
+						VarpDomain.setVarpClient(local89, intStack[isp]);
 						continue;
 					}
 					if (opcode == 3) {
@@ -115,13 +115,13 @@ public final class ScriptRunner {
 					}
 					if (opcode == 25) {
 						@Pc(270) int local270 = intOperands[pc];
-						intStack[isp++] = Static35.method4311(local270);
+						intStack[isp++] = VarpDomain.getVarbit(local270);
 						continue;
 					}
 					if (opcode == 27) {
 						@Pc(287) int local287 = intOperands[pc];
 						isp--;
-						Static23.method1937(local287, intStack[isp]);
+						VarpDomain.setVarbitClient(local287, intStack[isp]);
 						continue;
 					}
 					if (opcode == 31) {
@@ -205,14 +205,14 @@ public final class ScriptRunner {
 						continue;
 					}
 					if (opcode == 42) {
-						intStack[isp++] = Static6.anIntArray462[intOperands[pc]];
+						intStack[isp++] = VarcDomain.varcs[intOperands[pc]];
 						continue;
 					}
 					if (opcode == 43) {
 						@Pc(605) int local605 = intOperands[pc];
 						isp--;
-						Static6.anIntArray462[local605] = intStack[isp];
-						Static29.method3396(local605);
+						VarcDomain.varcs[local605] = intStack[isp];
+						DelayedStateChange.setVarcClient(local605);
 						continue;
 					}
 					if (opcode == 44) {
@@ -259,7 +259,7 @@ public final class ScriptRunner {
 						throw new RuntimeException();
 					}
 					if (opcode == 47) {
-						@Pc(771) String local771 = Static1.aStringArray3[intOperands[pc]];
+						@Pc(771) String local771 = VarcDomain.varcstrs[intOperands[pc]];
 						if (local771 == null) {
 							local771 = "null";
 						}
@@ -269,8 +269,8 @@ public final class ScriptRunner {
 					if (opcode == 48) {
 						@Pc(790) int local790 = intOperands[pc];
 						ssp--;
-						Static1.aStringArray3[local790] = stringStack[ssp];
-						Static23.method4822(local790);
+						VarcDomain.varcstrs[local790] = stringStack[ssp];
+						DelayedStateChange.setVarcstrClient(local790);
 						continue;
 					}
 					if (opcode == 51) {
@@ -449,7 +449,7 @@ public final class ScriptRunner {
 						Static28.method3270(local885);
 						Static33.method4118(local885);
 						if (local885.anInt5968 == -1) {
-							Static36.method4405(local885.id);
+							DelayedStateChange.method4405(local885.id);
 						}
 						continue;
 					}
@@ -488,7 +488,7 @@ public final class ScriptRunner {
 							Static28.method3270(local885);
 						}
 						if (local885.anInt5968 == -1) {
-							Static32.method4026(local885.id);
+							DelayedStateChange.method4026(local885.id);
 						}
 						continue;
 					}
@@ -535,7 +535,7 @@ public final class ScriptRunner {
 						}
 						Static28.method3270(local1190);
 						if (local1190.anInt5968 == -1) {
-							Static8.method111(local1190.id);
+							DelayedStateChange.method111(local1190.id);
 						}
 						continue;
 					}
@@ -544,7 +544,7 @@ public final class ScriptRunner {
 						local1190.anInt5933 = intStack[isp];
 						Static28.method3270(local1190);
 						if (local1190.anInt5968 == -1) {
-							Static33.method4092(local1190.id);
+							DelayedStateChange.method4092(local1190.id);
 						}
 						continue;
 					}
@@ -590,7 +590,7 @@ public final class ScriptRunner {
 						local1190.anInt5895 = intStack[isp];
 						Static28.method3270(local1190);
 						if (local1190.anInt5968 == -1) {
-							Static12.method779(local1190.id);
+							DelayedStateChange.method779(local1190.id);
 						}
 						continue;
 					}
@@ -604,8 +604,8 @@ public final class ScriptRunner {
 						local1190.anInt5918 = intStack[isp + 5];
 						Static28.method3270(local1190);
 						if (local1190.anInt5968 == -1) {
-							Static21.method1994(local1190.id);
-							Static15.method1224(local1190.id);
+							DelayedStateChange.method1994(local1190.id);
+							DelayedStateChange.method1224(local1190.id);
 						}
 						continue;
 					}
@@ -620,7 +620,7 @@ public final class ScriptRunner {
 							Static28.method3270(local1190);
 						}
 						if (local1190.anInt5968 == -1) {
-							Static35.method680(local1190.id);
+							DelayedStateChange.method680(local1190.id);
 						}
 						continue;
 					}
@@ -638,7 +638,7 @@ public final class ScriptRunner {
 							Static28.method3270(local1190);
 						}
 						if (local1190.anInt5968 == -1) {
-							Static37.method4678(local1190.id);
+							DelayedStateChange.method4678(local1190.id);
 						}
 						continue;
 					}
@@ -714,7 +714,7 @@ public final class ScriptRunner {
 						local1190.anInt5918 = intStack[isp];
 						Static28.method3270(local1190);
 						if (local1190.anInt5968 == -1) {
-							Static21.method1994(local1190.id);
+							DelayedStateChange.method1994(local1190.id);
 						}
 						continue;
 					}
@@ -740,9 +740,9 @@ public final class ScriptRunner {
 						@Pc(1955) int local1955 = intStack[isp + 1];
 						@Pc(1959) int local1959 = intStack[isp];
 						if (local1917.anInt5968 == -1) {
-							Static35.method676(local1917.id);
-							Static21.method1994(local1917.id);
-							Static15.method1224(local1917.id);
+							DelayedStateChange.method676(local1917.id);
+							DelayedStateChange.method1994(local1917.id);
+							DelayedStateChange.method1224(local1917.id);
 						}
 						if (local1959 == -1) {
 							local1917.anInt5939 = 1;
@@ -781,7 +781,7 @@ public final class ScriptRunner {
 						isp--;
 						local1917.anInt5895 = intStack[isp];
 						if (local1917.anInt5968 == -1) {
-							Static12.method779(local1917.id);
+							DelayedStateChange.method779(local1917.id);
 						}
 						continue;
 					}
@@ -789,7 +789,7 @@ public final class ScriptRunner {
 						local1917.anInt5939 = 3;
 						local1917.anInt5895 = PlayerList.self.appearance.method3611();
 						if (local1917.anInt5968 == -1) {
-							Static12.method779(local1917.id);
+							DelayedStateChange.method779(local1917.id);
 						}
 						continue;
 					}
@@ -798,7 +798,7 @@ public final class ScriptRunner {
 						isp--;
 						local1917.anInt5895 = intStack[isp];
 						if (local1917.anInt5968 == -1) {
-							Static12.method779(local1917.id);
+							DelayedStateChange.method779(local1917.id);
 						}
 						continue;
 					}
@@ -807,7 +807,7 @@ public final class ScriptRunner {
 						isp--;
 						local1917.anInt5895 = intStack[isp];
 						if (local1917.anInt5968 == -1) {
-							Static12.method779(local1917.id);
+							DelayedStateChange.method779(local1917.id);
 						}
 						continue;
 					}

@@ -494,13 +494,6 @@ public final class Static10 {
 		return local8;
 	}
 
-	@OriginalMember(owner = "client!bo", name = "a", descriptor = "(III)V")
-	public static void method397(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
-		@Pc(8) Class4_Sub3_Sub9 local8 = Static12.method2322(1, arg0);
-		local8.method1520();
-		local8.anInt1993 = arg1;
-	}
-
 	@OriginalMember(owner = "client!bo", name = "a", descriptor = "(ILclient!fh;)Z")
 	public static boolean method398(@OriginalArg(1) Js5 arg0) {
 		return arg0.isFileReady(Static4.anInt3250);

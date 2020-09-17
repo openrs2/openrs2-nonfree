@@ -197,9 +197,9 @@ public final class MelType {
 		}
 		@Pc(35) int local35;
 		if (this.anInt2294 == -1) {
-			local35 = Static35.method4311(this.anInt2282);
+			local35 = VarpDomain.getVarbit(this.anInt2282);
 		} else {
-			local35 = Static1.anIntArray2[this.anInt2294];
+			local35 = VarpDomain.varps[this.anInt2294];
 		}
 		if (this.anInt2276 > local35 || this.anInt2275 < local35) {
 			return false;
@@ -208,9 +208,9 @@ public final class MelType {
 		} else {
 			@Pc(80) int local80;
 			if (this.anInt2271 == -1) {
-				local80 = Static35.method4311(this.anInt2267);
+				local80 = VarpDomain.getVarbit(this.anInt2267);
 			} else {
-				local80 = Static1.anIntArray2[this.anInt2271];
+				local80 = VarpDomain.varps[this.anInt2271];
 			}
 			return local80 >= this.anInt2285 && this.anInt2265 >= local80;
 		}

@@ -212,9 +212,6 @@ public final class Static1 {
 	@OriginalMember(owner = "client!aa", name = "e", descriptor = "[I")
 	public static final int[] anIntArray1 = new int[] { 1, 1, 0, 0, 0, 8, 0, 0, 8 };
 
-	@OriginalMember(owner = "client!aa", name = "f", descriptor = "[I")
-	public static final int[] anIntArray2 = new int[2500];
-
 	@OriginalMember(owner = "client!ae", name = "c", descriptor = "[S")
 	public static final short[] aShortArray11 = new short[] { -10304, 9104, -1, -1, -1 };
 
@@ -284,9 +281,6 @@ public final class Static1 {
 	@OriginalMember(owner = "client!bc", name = "u", descriptor = "I")
 	public static int anInt925 = 0;
 
-	@OriginalMember(owner = "client!bc", name = "v", descriptor = "[Ljava/lang/String;")
-	public static final String[] aStringArray3 = new String[1000];
-
 	@OriginalMember(owner = "client!bc", name = "z", descriptor = "I")
 	public static int anInt929 = -1;
 
@@ -316,9 +310,6 @@ public final class Static1 {
 
 	@OriginalMember(owner = "client!bg", name = "u", descriptor = "[Lclient!t;")
 	public static final Class160[] aClass160Array1 = new Class160[6];
-
-	@OriginalMember(owner = "client!bh", name = "b", descriptor = "Lclient!uk;")
-	public static final SecondaryLinkedList aClass175_4 = new SecondaryLinkedList();
 
 	@OriginalMember(owner = "client!bh", name = "d", descriptor = "I")
 	public static int anInt1047 = -1;
@@ -410,9 +401,6 @@ public final class Static1 {
 	@OriginalMember(owner = "client!client", name = "cb", descriptor = "I")
 	public static int anInt777 = 0;
 
-	@OriginalMember(owner = "client!cm", name = "b", descriptor = "I")
-	public static int anInt788 = 0;
-
 	@OriginalMember(owner = "client!cm", name = "c", descriptor = "I")
 	public static int anInt789 = 0;
 
@@ -433,9 +421,6 @@ public final class Static1 {
 
 	@OriginalMember(owner = "client!da", name = "o", descriptor = "I")
 	public static int anInt876 = 0;
-
-	@OriginalMember(owner = "client!da", name = "u", descriptor = "[I")
-	public static final int[] anIntArray62 = new int[2500];
 
 	@OriginalMember(owner = "client!db", name = "h", descriptor = "I")
 	public static int anInt885 = 0;
