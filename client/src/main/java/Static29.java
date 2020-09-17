@@ -1315,7 +1315,7 @@ public final class Static29 {
 												Static4.anInt3275 = Mouse.clickY;
 												Static7.anInt6008 = 1;
 												Static2.anInt1629 = 0;
-												Static15.method1337(PlayerList.self.anIntArray422[0], 0, 0, 0, local1809, PlayerList.self.anIntArray426[0], 0, 0, local1797);
+												PathFinder.findPath(PlayerList.self.anIntArray422[0], PlayerList.self.anIntArray426[0], local1797, local1809, 0, 0, 0, 0, 0);
 											}
 											Static1.anInt528 = -1;
 											method3400();

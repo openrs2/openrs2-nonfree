@@ -614,18 +614,18 @@ public final class Static9 {
 			return false;
 		} else {
 			@Pc(40) byte local40 = 0;
-			PathFinder.anIntArray479[0] = arg1;
+			PathFinder.queueX[0] = arg1;
 			@Pc(55) int local55 = 0;
 			@Pc(58) int local58 = local40 + 1;
-			PathFinder.anIntArray653[0] = arg3;
+			PathFinder.queueZ[0] = arg3;
 			Static1.aByteArrayArrayArray2[Static7.y][arg1][arg3] = local14;
 			while (local58 != local55) {
-				@Pc(77) int local77 = PathFinder.anIntArray479[local55] & 0xFFFF;
-				@Pc(85) int local85 = PathFinder.anIntArray479[local55] >> 16 & 0xFF;
-				@Pc(93) int local93 = PathFinder.anIntArray479[local55] >> 24 & 0xFF;
-				@Pc(101) int local101 = PathFinder.anIntArray653[local55] >> 16 & 0xFF;
+				@Pc(77) int local77 = PathFinder.queueX[local55] & 0xFFFF;
+				@Pc(85) int local85 = PathFinder.queueX[local55] >> 16 & 0xFF;
+				@Pc(93) int local93 = PathFinder.queueX[local55] >> 24 & 0xFF;
+				@Pc(101) int local101 = PathFinder.queueZ[local55] >> 16 & 0xFF;
 				@Pc(103) boolean local103 = false;
-				@Pc(109) int local109 = PathFinder.anIntArray653[local55] & 0xFFFF;
+				@Pc(109) int local109 = PathFinder.queueZ[local55] & 0xFFFF;
 				@Pc(111) boolean local111 = false;
 				local55 = local55 + 1 & 0xFFF;
 				if ((Static4.tileFlags[Static7.y][local77][local109] & 0x4) == 0) {
@@ -703,56 +703,56 @@ public final class Static9 {
 				}
 				if (!local103) {
 					if (local77 >= 1 && Static1.aByteArrayArrayArray2[Static7.y][local77 - 1][local109] != local14) {
-						PathFinder.anIntArray479[local58] = local77 - 1 | 0x120000 | 0xD3000000;
-						PathFinder.anIntArray653[local58] = local109 | 0x130000;
+						PathFinder.queueX[local58] = local77 - 1 | 0x120000 | 0xD3000000;
+						PathFinder.queueZ[local58] = local109 | 0x130000;
 						local58 = local58 + 1 & 0xFFF;
 						Static1.aByteArrayArrayArray2[Static7.y][local77 - 1][local109] = local14;
 					}
 					@Pc(611) int local611 = local109 + 1;
 					if (local611 < 104) {
 						if (local77 - 1 >= 0 && local14 != Static1.aByteArrayArrayArray2[Static7.y][local77 - 1][local611] && (Static4.tileFlags[Static7.y][local77][local611] & 0x4) == 0 && (Static4.tileFlags[Static7.y][local77 - 1][local611 - 1] & 0x4) == 0) {
-							PathFinder.anIntArray479[local58] = local77 - 1 | 0x52000000 | 0x120000;
-							PathFinder.anIntArray653[local58] = local611 | 0x130000;
+							PathFinder.queueX[local58] = local77 - 1 | 0x52000000 | 0x120000;
+							PathFinder.queueZ[local58] = local611 | 0x130000;
 							Static1.aByteArrayArrayArray2[Static7.y][local77 - 1][local611] = local14;
 							local58 = local58 + 1 & 0xFFF;
 						}
 						if (local14 != Static1.aByteArrayArrayArray2[Static7.y][local77][local611]) {
-							PathFinder.anIntArray479[local58] = local77 | 0x520000 | 0x13000000;
-							PathFinder.anIntArray653[local58] = local611 | 0x530000;
+							PathFinder.queueX[local58] = local77 | 0x520000 | 0x13000000;
+							PathFinder.queueZ[local58] = local611 | 0x530000;
 							Static1.aByteArrayArrayArray2[Static7.y][local77][local611] = local14;
 							local58 = local58 + 1 & 0xFFF;
 						}
 						if (local77 + 1 < 104 && local14 != Static1.aByteArrayArrayArray2[Static7.y][local77 + 1][local611] && (Static4.tileFlags[Static7.y][local77][local611] & 0x4) == 0 && (Static4.tileFlags[Static7.y][local77 + 1][local611 - 1] & 0x4) == 0) {
-							PathFinder.anIntArray479[local58] = local77 + 1 | 0x520000 | 0x92000000;
-							PathFinder.anIntArray653[local58] = local611 | 0x530000;
+							PathFinder.queueX[local58] = local77 + 1 | 0x520000 | 0x92000000;
+							PathFinder.queueZ[local58] = local611 | 0x530000;
 							Static1.aByteArrayArrayArray2[Static7.y][local77 + 1][local611] = local14;
 							local58 = local58 + 1 & 0xFFF;
 						}
 					}
 					@Pc(824) int local824 = local611 - 1;
 					if (local77 + 1 < 104 && Static1.aByteArrayArrayArray2[Static7.y][local77 + 1][local824] != local14) {
-						PathFinder.anIntArray479[local58] = local77 + 1 | 0x53000000 | 0x920000;
-						PathFinder.anIntArray653[local58] = local824 | 0x930000;
+						PathFinder.queueX[local58] = local77 + 1 | 0x53000000 | 0x920000;
+						PathFinder.queueZ[local58] = local824 | 0x930000;
 						local58 = local58 + 1 & 0xFFF;
 						Static1.aByteArrayArrayArray2[Static7.y][local77 + 1][local824] = local14;
 					}
 					@Pc(876) int local876 = local824 - 1;
 					if (local876 >= 0) {
 						if (local77 - 1 >= 0 && Static1.aByteArrayArrayArray2[Static7.y][local77 - 1][local876] != local14 && (Static4.tileFlags[Static7.y][local77][local876] & 0x4) == 0 && (Static4.tileFlags[Static7.y][local77 - 1][local876 + 1] & 0x4) == 0) {
-							PathFinder.anIntArray479[local58] = 0x12000000 | 0xD20000 | local77 - 1;
-							PathFinder.anIntArray653[local58] = local876 | 0xD30000;
+							PathFinder.queueX[local58] = 0x12000000 | 0xD20000 | local77 - 1;
+							PathFinder.queueZ[local58] = local876 | 0xD30000;
 							local58 = local58 + 1 & 0xFFF;
 							Static1.aByteArrayArrayArray2[Static7.y][local77 - 1][local876] = local14;
 						}
 						if (local14 != Static1.aByteArrayArrayArray2[Static7.y][local77][local876]) {
-							PathFinder.anIntArray479[local58] = 0x93000000 | 0xD20000 | local77;
-							PathFinder.anIntArray653[local58] = local876 | 0xD30000;
+							PathFinder.queueX[local58] = 0x93000000 | 0xD20000 | local77;
+							PathFinder.queueZ[local58] = local876 | 0xD30000;
 							local58 = local58 + 1 & 0xFFF;
 							Static1.aByteArrayArrayArray2[Static7.y][local77][local876] = local14;
 						}
 						if (local77 + 1 < 104 && Static1.aByteArrayArrayArray2[Static7.y][local77 + 1][local876] != local14 && (Static4.tileFlags[Static7.y][local77][local876] & 0x4) == 0 && (Static4.tileFlags[Static7.y][local77 + 1][local876 + 1] & 0x4) == 0) {
-							PathFinder.anIntArray479[local58] = local77 + 1 | 0xD2000000 | 0x920000;
-							PathFinder.anIntArray653[local58] = local876 | 0x930000;
+							PathFinder.queueX[local58] = local77 + 1 | 0xD2000000 | 0x920000;
+							PathFinder.queueZ[local58] = local876 | 0x930000;
 							local58 = local58 + 1 & 0xFFF;
 							Static1.aByteArrayArrayArray2[Static7.y][local77 + 1][local876] = local14;
 						}

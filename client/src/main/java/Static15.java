@@ -496,17 +496,6 @@ public final class Static15 {
 		}
 	}
 
-	@OriginalMember(owner = "client!fg", name = "a", descriptor = "(IIIZIIIIBII)V")
-	public static void method1337(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4, @OriginalArg(6) int arg5, @OriginalArg(7) int arg6, @OriginalArg(9) int arg7, @OriginalArg(10) int arg8) {
-		if (PlayerList.self.getSize() == 2) {
-			PathFinder.method418(arg8, arg3, arg5, arg6, arg0, arg4, arg1, arg2, arg7);
-		} else if (PlayerList.self.getSize() > 2) {
-			PathFinder.method1998(arg6, arg8, arg0, arg3, arg5, arg7, arg4, arg2, PlayerList.self.getSize(), arg1);
-		} else {
-			PathFinder.method2197(arg5, arg8, arg7, arg1, arg4, arg6, arg0, arg2, arg3);
-		}
-	}
-
 	@OriginalMember(owner = "client!fg", name = "a", descriptor = "(BIII)I")
 	public static int method1339(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2) {
 		if (arg2 > 243) {

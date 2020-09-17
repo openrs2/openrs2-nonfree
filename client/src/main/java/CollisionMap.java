@@ -6,6 +6,15 @@ import dev.openrs2.deob.annotation.Pc;
 @OriginalClass("client!ch")
 public final class CollisionMap {
 
+	@OriginalMember(owner = "client!ve", name = "a", descriptor = "(IIIIIIIII)Z")
+	private static boolean isInsideRect(@OriginalArg(7) int x, @OriginalArg(0) int z, @OriginalArg(8) int width, @OriginalArg(3) int length, @OriginalArg(1) int destX, @OriginalArg(4) int destZ, @OriginalArg(5) int destWidth, @OriginalArg(2) int destLength) {
+		if (destX + destWidth > x && width + x > destX) {
+			return z < destLength + destZ && destZ < length + z;
+		} else {
+			return false;
+		}
+	}
+
 	@OriginalMember(owner = "client!ch", name = "u", descriptor = "I")
 	private final int width;
 
@@ -284,25 +293,25 @@ public final class CollisionMap {
 	}
 
 	@OriginalMember(owner = "client!ch", name = "a", descriptor = "(IIIIIIIII)Z")
-	public final boolean method570(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4, @OriginalArg(6) int arg5, @OriginalArg(7) int arg6, @OriginalArg(8) int arg7) {
-		if (arg2 <= 1) {
-			@Pc(39) int local39 = arg3 + arg5 - 1;
-			@Pc(45) int local45 = arg4 + arg6 - 1;
-			if (arg7 >= arg4 && local45 >= arg7 && arg3 <= arg0 && arg0 <= local39) {
+	public final boolean isInsideOrOutsideRect(@OriginalArg(8) int x, @OriginalArg(0) int z, @OriginalArg(3) int size, @OriginalArg(5) int destX, @OriginalArg(4) int destZ, @OriginalArg(7) int destWidth, @OriginalArg(6) int destLength, @OriginalArg(2) int destBlockedSides) {
+		if (size <= 1) {
+			@Pc(39) int destZ1 = destZ + destLength - 1;
+			@Pc(45) int destX1 = destX + destWidth - 1;
+			if (x >= destX && destX1 >= x && destZ <= z && z <= destZ1) {
 				return true;
-			} else if (arg4 - 1 == arg7 && arg3 <= arg0 && arg0 <= local39 && (this.flags[arg7 - this.xOffset][arg0 - this.zOffset] & 0x8) == 0 && (arg1 & 0x8) == 0) {
+			} else if (destX - 1 == x && destZ <= z && z <= destZ1 && (this.flags[x - this.xOffset][z - this.zOffset] & 0x8) == 0 && (destBlockedSides & 0x8) == 0) {
 				return true;
-			} else if (arg7 == local45 + 1 && arg0 >= arg3 && arg0 <= local39 && (this.flags[arg7 - this.xOffset][arg0 - this.zOffset] & 0x80) == 0 && (arg1 & 0x2) == 0) {
+			} else if (x == destX1 + 1 && z >= destZ && z <= destZ1 && (this.flags[x - this.xOffset][z - this.zOffset] & 0x80) == 0 && (destBlockedSides & 0x2) == 0) {
 				return true;
-			} else if (arg3 - 1 == arg0 && arg4 <= arg7 && arg7 <= local45 && (this.flags[arg7 - this.xOffset][arg0 - this.zOffset] & 0x2) == 0 && (arg1 & 0x4) == 0) {
+			} else if (destZ - 1 == z && destX <= x && x <= destX1 && (this.flags[x - this.xOffset][z - this.zOffset] & 0x2) == 0 && (destBlockedSides & 0x4) == 0) {
 				return true;
 			} else {
-				return arg0 == local39 + 1 && arg7 >= arg4 && arg7 <= local45 && (this.flags[arg7 - this.xOffset][arg0 - this.zOffset] & 0x20) == 0 && (arg1 & 0x1) == 0;
+				return z == destZ1 + 1 && x >= destX && x <= destX1 && (this.flags[x - this.xOffset][z - this.zOffset] & 0x20) == 0 && (destBlockedSides & 0x1) == 0;
 			}
-		} else if (Static36.method4440(arg0, arg4, arg5, arg2, arg3, arg6, arg7, arg2)) {
+		} else if (isInsideRect(x, z, size, size, destX, destZ, destWidth, destLength)) {
 			return true;
 		} else {
-			return this.method578(arg5, arg2, arg7, arg6, arg2, arg0, arg4, arg1, arg3);
+			return this.isOutsideRect(x, z, size, size, destX, destZ, destWidth, destLength, destBlockedSides);
 		}
 	}
 
@@ -493,243 +502,243 @@ public final class CollisionMap {
 	}
 
 	@OriginalMember(owner = "client!ch", name = "a", descriptor = "(IIIIBIII)Z")
-	public final boolean method574(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(5) int arg4, @OriginalArg(6) int arg5, @OriginalArg(7) int arg6) {
-		if (arg5 == 1) {
-			if (arg4 == arg3 && arg0 == arg2) {
+	public final boolean isAtWall(@OriginalArg(3) int x, @OriginalArg(2) int z, @OriginalArg(6) int size, @OriginalArg(5) int destX, @OriginalArg(0) int destZ, @OriginalArg(7) int destType, @OriginalArg(1) int destAngle) {
+		if (size == 1) {
+			if (destX == x && destZ == z) {
 				return true;
 			}
-		} else if (arg3 <= arg4 && arg4 <= arg3 + arg5 - 1 && arg0 >= arg0 && arg0 <= arg5 + arg0 - 1) {
+		} else if (x <= destX && destX <= x + size - 1 && destZ >= destZ && destZ <= size + destZ - 1) {
 			return true;
 		}
-		arg0 -= this.zOffset;
-		arg4 -= this.xOffset;
-		arg2 -= this.zOffset;
-		arg3 -= this.xOffset;
-		if (arg5 == 1) {
-			if (arg6 == 0) {
-				if (arg1 == 0) {
-					if (arg3 == arg4 - 1 && arg2 == arg0) {
+		destZ -= this.zOffset;
+		destX -= this.xOffset;
+		z -= this.zOffset;
+		x -= this.xOffset;
+		if (size == 1) {
+			if (destType == 0) {
+				if (destAngle == 0) {
+					if (x == destX - 1 && z == destZ) {
 						return true;
 					}
-					if (arg4 == arg3 && arg2 == arg0 + 1 && (this.flags[arg3][arg2] & 0x2C0120) == 0) {
+					if (destX == x && z == destZ + 1 && (this.flags[x][z] & 0x2C0120) == 0) {
 						return true;
 					}
-					if (arg4 == arg3 && arg2 == arg0 - 1 && (this.flags[arg3][arg2] & 0x2C0102) == 0) {
+					if (destX == x && z == destZ - 1 && (this.flags[x][z] & 0x2C0102) == 0) {
 						return true;
 					}
-				} else if (arg1 == 1) {
-					if (arg4 == arg3 && arg2 == arg0 + 1) {
+				} else if (destAngle == 1) {
+					if (destX == x && z == destZ + 1) {
 						return true;
 					}
-					if (arg3 == arg4 - 1 && arg0 == arg2 && (this.flags[arg3][arg2] & 0x2C0108) == 0) {
+					if (x == destX - 1 && destZ == z && (this.flags[x][z] & 0x2C0108) == 0) {
 						return true;
 					}
-					if (arg3 == arg4 + 1 && arg0 == arg2 && (this.flags[arg3][arg2] & 0x2C0180) == 0) {
+					if (x == destX + 1 && destZ == z && (this.flags[x][z] & 0x2C0180) == 0) {
 						return true;
 					}
-				} else if (arg1 == 2) {
-					if (arg3 == arg4 + 1 && arg2 == arg0) {
+				} else if (destAngle == 2) {
+					if (x == destX + 1 && z == destZ) {
 						return true;
 					}
-					if (arg4 == arg3 && arg2 == arg0 + 1 && (this.flags[arg3][arg2] & 0x2C0120) == 0) {
+					if (destX == x && z == destZ + 1 && (this.flags[x][z] & 0x2C0120) == 0) {
 						return true;
 					}
-					if (arg4 == arg3 && arg0 - 1 == arg2 && (this.flags[arg3][arg2] & 0x2C0102) == 0) {
+					if (destX == x && destZ - 1 == z && (this.flags[x][z] & 0x2C0102) == 0) {
 						return true;
 					}
-				} else if (arg1 == 3) {
-					if (arg4 == arg3 && arg0 - 1 == arg2) {
+				} else if (destAngle == 3) {
+					if (destX == x && destZ - 1 == z) {
 						return true;
 					}
-					if (arg3 == arg4 - 1 && arg0 == arg2 && (this.flags[arg3][arg2] & 0x2C0108) == 0) {
+					if (x == destX - 1 && destZ == z && (this.flags[x][z] & 0x2C0108) == 0) {
 						return true;
 					}
-					if (arg4 + 1 == arg3 && arg0 == arg2 && (this.flags[arg3][arg2] & 0x2C0180) == 0) {
-						return true;
-					}
-				}
-			}
-			if (arg6 == 2) {
-				if (arg1 == 0) {
-					if (arg3 == arg4 - 1 && arg0 == arg2) {
-						return true;
-					}
-					if (arg3 == arg4 && arg2 == arg0 + 1) {
-						return true;
-					}
-					if (arg3 == arg4 + 1 && arg0 == arg2 && (this.flags[arg3][arg2] & 0x2C0180) == 0) {
-						return true;
-					}
-					if (arg3 == arg4 && arg2 == arg0 - 1 && (this.flags[arg3][arg2] & 0x2C0102) == 0) {
-						return true;
-					}
-				} else if (arg1 == 1) {
-					if (arg4 - 1 == arg3 && arg0 == arg2 && (this.flags[arg3][arg2] & 0x2C0108) == 0) {
-						return true;
-					}
-					if (arg3 == arg4 && arg2 == arg0 + 1) {
-						return true;
-					}
-					if (arg4 + 1 == arg3 && arg0 == arg2) {
-						return true;
-					}
-					if (arg4 == arg3 && arg0 - 1 == arg2 && (this.flags[arg3][arg2] & 0x2C0102) == 0) {
-						return true;
-					}
-				} else if (arg1 == 2) {
-					if (arg4 - 1 == arg3 && arg0 == arg2 && (this.flags[arg3][arg2] & 0x2C0108) == 0) {
-						return true;
-					}
-					if (arg3 == arg4 && arg0 + 1 == arg2 && (this.flags[arg3][arg2] & 0x2C0120) == 0) {
-						return true;
-					}
-					if (arg4 + 1 == arg3 && arg0 == arg2) {
-						return true;
-					}
-					if (arg4 == arg3 && arg2 == arg0 - 1) {
-						return true;
-					}
-				} else if (arg1 == 3) {
-					if (arg4 - 1 == arg3 && arg0 == arg2) {
-						return true;
-					}
-					if (arg4 == arg3 && arg2 == arg0 + 1 && (this.flags[arg3][arg2] & 0x2C0120) == 0) {
-						return true;
-					}
-					if (arg3 == arg4 + 1 && arg2 == arg0 && (this.flags[arg3][arg2] & 0x2C0180) == 0) {
-						return true;
-					}
-					if (arg3 == arg4 && arg2 == arg0 - 1) {
+					if (destX + 1 == x && destZ == z && (this.flags[x][z] & 0x2C0180) == 0) {
 						return true;
 					}
 				}
 			}
-			if (arg6 == 9) {
-				if (arg3 == arg4 && arg0 + 1 == arg2 && (this.flags[arg3][arg2] & 0x20) == 0) {
+			if (destType == 2) {
+				if (destAngle == 0) {
+					if (x == destX - 1 && destZ == z) {
+						return true;
+					}
+					if (x == destX && z == destZ + 1) {
+						return true;
+					}
+					if (x == destX + 1 && destZ == z && (this.flags[x][z] & 0x2C0180) == 0) {
+						return true;
+					}
+					if (x == destX && z == destZ - 1 && (this.flags[x][z] & 0x2C0102) == 0) {
+						return true;
+					}
+				} else if (destAngle == 1) {
+					if (destX - 1 == x && destZ == z && (this.flags[x][z] & 0x2C0108) == 0) {
+						return true;
+					}
+					if (x == destX && z == destZ + 1) {
+						return true;
+					}
+					if (destX + 1 == x && destZ == z) {
+						return true;
+					}
+					if (destX == x && destZ - 1 == z && (this.flags[x][z] & 0x2C0102) == 0) {
+						return true;
+					}
+				} else if (destAngle == 2) {
+					if (destX - 1 == x && destZ == z && (this.flags[x][z] & 0x2C0108) == 0) {
+						return true;
+					}
+					if (x == destX && destZ + 1 == z && (this.flags[x][z] & 0x2C0120) == 0) {
+						return true;
+					}
+					if (destX + 1 == x && destZ == z) {
+						return true;
+					}
+					if (destX == x && z == destZ - 1) {
+						return true;
+					}
+				} else if (destAngle == 3) {
+					if (destX - 1 == x && destZ == z) {
+						return true;
+					}
+					if (destX == x && z == destZ + 1 && (this.flags[x][z] & 0x2C0120) == 0) {
+						return true;
+					}
+					if (x == destX + 1 && z == destZ && (this.flags[x][z] & 0x2C0180) == 0) {
+						return true;
+					}
+					if (x == destX && z == destZ - 1) {
+						return true;
+					}
+				}
+			}
+			if (destType == 9) {
+				if (x == destX && destZ + 1 == z && (this.flags[x][z] & 0x20) == 0) {
 					return true;
 				}
-				if (arg4 == arg3 && arg0 - 1 == arg2 && (this.flags[arg3][arg2] & 0x2) == 0) {
+				if (destX == x && destZ - 1 == z && (this.flags[x][z] & 0x2) == 0) {
 					return true;
 				}
-				if (arg4 - 1 == arg3 && arg2 == arg0 && (this.flags[arg3][arg2] & 0x8) == 0) {
+				if (destX - 1 == x && z == destZ && (this.flags[x][z] & 0x8) == 0) {
 					return true;
 				}
-				if (arg3 == arg4 + 1 && arg2 == arg0 && (this.flags[arg3][arg2] & 0x80) == 0) {
+				if (x == destX + 1 && z == destZ && (this.flags[x][z] & 0x80) == 0) {
 					return true;
 				}
 			}
 		} else {
-			@Pc(89) int local89 = arg3 + arg5 - 1;
-			@Pc(95) int local95 = arg5 + arg2 - 1;
-			if (arg6 == 0) {
-				if (arg1 == 0) {
-					if (arg4 - arg5 == arg3 && arg2 <= arg0 && local95 >= arg0) {
+			@Pc(89) int x1 = x + size - 1;
+			@Pc(95) int z1 = size + z - 1;
+			if (destType == 0) {
+				if (destAngle == 0) {
+					if (destX - size == x && z <= destZ && z1 >= destZ) {
 						return true;
 					}
-					if (arg4 >= arg3 && arg4 <= local89 && arg0 + 1 == arg2 && (this.flags[arg4][arg2] & 0x2C0120) == 0) {
+					if (destX >= x && destX <= x1 && destZ + 1 == z && (this.flags[destX][z] & 0x2C0120) == 0) {
 						return true;
 					}
-					if (arg4 >= arg3 && arg4 <= local89 && arg0 - arg5 == arg2 && (this.flags[arg4][local95] & 0x2C0102) == 0) {
+					if (destX >= x && destX <= x1 && destZ - size == z && (this.flags[destX][z1] & 0x2C0102) == 0) {
 						return true;
 					}
-				} else if (arg1 == 1) {
-					if (arg3 <= arg4 && arg4 <= local89 && arg0 + 1 == arg2) {
+				} else if (destAngle == 1) {
+					if (x <= destX && destX <= x1 && destZ + 1 == z) {
 						return true;
 					}
-					if (arg4 - arg5 == arg3 && arg2 <= arg0 && arg0 <= local95 && (this.flags[local89][arg0] & 0x2C0108) == 0) {
+					if (destX - size == x && z <= destZ && destZ <= z1 && (this.flags[x1][destZ] & 0x2C0108) == 0) {
 						return true;
 					}
-					if (arg4 + 1 == arg3 && arg2 <= arg0 && arg0 <= local95 && (this.flags[arg3][arg0] & 0x2C0180) == 0) {
+					if (destX + 1 == x && z <= destZ && destZ <= z1 && (this.flags[x][destZ] & 0x2C0180) == 0) {
 						return true;
 					}
-				} else if (arg1 == 2) {
-					if (arg3 == arg4 + 1 && arg2 <= arg0 && local95 >= arg0) {
+				} else if (destAngle == 2) {
+					if (x == destX + 1 && z <= destZ && z1 >= destZ) {
 						return true;
 					}
-					if (arg4 >= arg3 && arg4 <= local89 && arg2 == arg0 + 1 && (this.flags[arg4][arg2] & 0x2C0120) == 0) {
+					if (destX >= x && destX <= x1 && z == destZ + 1 && (this.flags[destX][z] & 0x2C0120) == 0) {
 						return true;
 					}
-					if (arg4 >= arg3 && arg4 <= local89 && arg2 == arg0 - arg5 && (this.flags[arg4][local95] & 0x2C0102) == 0) {
+					if (destX >= x && destX <= x1 && z == destZ - size && (this.flags[destX][z1] & 0x2C0102) == 0) {
 						return true;
 					}
-				} else if (arg1 == 3) {
-					if (arg3 <= arg4 && local89 >= arg4 && arg2 == arg0 - arg5) {
+				} else if (destAngle == 3) {
+					if (x <= destX && x1 >= destX && z == destZ - size) {
 						return true;
 					}
-					if (arg3 == arg4 - arg5 && arg2 <= arg0 && local95 >= arg0 && (this.flags[local89][arg0] & 0x2C0108) == 0) {
+					if (x == destX - size && z <= destZ && z1 >= destZ && (this.flags[x1][destZ] & 0x2C0108) == 0) {
 						return true;
 					}
-					if (arg4 + 1 == arg3 && arg2 <= arg0 && local95 >= arg0 && (this.flags[arg3][arg0] & 0x2C0180) == 0) {
-						return true;
-					}
-				}
-			}
-			if (arg6 == 2) {
-				if (arg1 == 0) {
-					if (arg4 - arg5 == arg3 && arg0 >= arg2 && local95 >= arg0) {
-						return true;
-					}
-					if (arg4 >= arg3 && local89 >= arg4 && arg0 + 1 == arg2) {
-						return true;
-					}
-					if (arg3 == arg4 + 1 && arg0 >= arg2 && local95 >= arg0 && (this.flags[arg3][arg0] & 0x2C0180) == 0) {
-						return true;
-					}
-					if (arg3 <= arg4 && local89 >= arg4 && arg2 == arg0 - arg5 && (this.flags[arg4][local95] & 0x2C0102) == 0) {
-						return true;
-					}
-				} else if (arg1 == 1) {
-					if (arg3 == arg4 - arg5 && arg0 >= arg2 && arg0 <= local95 && (this.flags[local89][arg0] & 0x2C0108) == 0) {
-						return true;
-					}
-					if (arg3 <= arg4 && arg4 <= local89 && arg0 + 1 == arg2) {
-						return true;
-					}
-					if (arg3 == arg4 + 1 && arg2 <= arg0 && arg0 <= local95) {
-						return true;
-					}
-					if (arg3 <= arg4 && local89 >= arg4 && arg2 == arg0 - arg5 && (this.flags[arg4][local95] & 0x2C0102) == 0) {
-						return true;
-					}
-				} else if (arg1 == 2) {
-					if (arg3 == arg4 - arg5 && arg2 <= arg0 && local95 >= arg0 && (this.flags[local89][arg0] & 0x2C0108) == 0) {
-						return true;
-					}
-					if (arg3 <= arg4 && arg4 <= local89 && arg0 + 1 == arg2 && (this.flags[arg4][arg2] & 0x2C0120) == 0) {
-						return true;
-					}
-					if (arg3 == arg4 + 1 && arg0 >= arg2 && local95 >= arg0) {
-						return true;
-					}
-					if (arg4 >= arg3 && local89 >= arg4 && arg2 == arg0 - arg5) {
-						return true;
-					}
-				} else if (arg1 == 3) {
-					if (arg3 == arg4 - arg5 && arg0 >= arg2 && arg0 <= local95) {
-						return true;
-					}
-					if (arg4 >= arg3 && arg4 <= local89 && arg0 + 1 == arg2 && (this.flags[arg4][arg2] & 0x2C0120) == 0) {
-						return true;
-					}
-					if (arg4 + 1 == arg3 && arg2 <= arg0 && arg0 <= local95 && (this.flags[arg3][arg0] & 0x2C0180) == 0) {
-						return true;
-					}
-					if (arg4 >= arg3 && local89 >= arg4 && arg2 == arg0 - arg5) {
+					if (destX + 1 == x && z <= destZ && z1 >= destZ && (this.flags[x][destZ] & 0x2C0180) == 0) {
 						return true;
 					}
 				}
 			}
-			if (arg6 == 9) {
-				if (arg4 >= arg3 && local89 >= arg4 && arg0 + 1 == arg2 && (this.flags[arg4][arg2] & 0x2C0120) == 0) {
+			if (destType == 2) {
+				if (destAngle == 0) {
+					if (destX - size == x && destZ >= z && z1 >= destZ) {
+						return true;
+					}
+					if (destX >= x && x1 >= destX && destZ + 1 == z) {
+						return true;
+					}
+					if (x == destX + 1 && destZ >= z && z1 >= destZ && (this.flags[x][destZ] & 0x2C0180) == 0) {
+						return true;
+					}
+					if (x <= destX && x1 >= destX && z == destZ - size && (this.flags[destX][z1] & 0x2C0102) == 0) {
+						return true;
+					}
+				} else if (destAngle == 1) {
+					if (x == destX - size && destZ >= z && destZ <= z1 && (this.flags[x1][destZ] & 0x2C0108) == 0) {
+						return true;
+					}
+					if (x <= destX && destX <= x1 && destZ + 1 == z) {
+						return true;
+					}
+					if (x == destX + 1 && z <= destZ && destZ <= z1) {
+						return true;
+					}
+					if (x <= destX && x1 >= destX && z == destZ - size && (this.flags[destX][z1] & 0x2C0102) == 0) {
+						return true;
+					}
+				} else if (destAngle == 2) {
+					if (x == destX - size && z <= destZ && z1 >= destZ && (this.flags[x1][destZ] & 0x2C0108) == 0) {
+						return true;
+					}
+					if (x <= destX && destX <= x1 && destZ + 1 == z && (this.flags[destX][z] & 0x2C0120) == 0) {
+						return true;
+					}
+					if (x == destX + 1 && destZ >= z && z1 >= destZ) {
+						return true;
+					}
+					if (destX >= x && x1 >= destX && z == destZ - size) {
+						return true;
+					}
+				} else if (destAngle == 3) {
+					if (x == destX - size && destZ >= z && destZ <= z1) {
+						return true;
+					}
+					if (destX >= x && destX <= x1 && destZ + 1 == z && (this.flags[destX][z] & 0x2C0120) == 0) {
+						return true;
+					}
+					if (destX + 1 == x && z <= destZ && destZ <= z1 && (this.flags[x][destZ] & 0x2C0180) == 0) {
+						return true;
+					}
+					if (destX >= x && x1 >= destX && z == destZ - size) {
+						return true;
+					}
+				}
+			}
+			if (destType == 9) {
+				if (destX >= x && x1 >= destX && destZ + 1 == z && (this.flags[destX][z] & 0x2C0120) == 0) {
 					return true;
 				}
-				if (arg3 <= arg4 && local89 >= arg4 && arg0 - arg5 == arg2 && (this.flags[arg4][local95] & 0x2C0102) == 0) {
+				if (x <= destX && x1 >= destX && destZ - size == z && (this.flags[destX][z1] & 0x2C0102) == 0) {
 					return true;
 				}
-				if (arg4 - arg5 == arg3 && arg0 >= arg2 && arg0 <= local95 && (this.flags[local89][arg0] & 0x2C0108) == 0) {
+				if (destX - size == x && destZ >= z && destZ <= z1 && (this.flags[x1][destZ] & 0x2C0108) == 0) {
 					return true;
 				}
-				if (arg4 + 1 == arg3 && arg0 >= arg2 && arg0 <= local95 && (this.flags[arg3][arg0] & 0x2C0180) == 0) {
+				if (destX + 1 == x && destZ >= z && destZ <= z1 && (this.flags[x][destZ] & 0x2C0180) == 0) {
 					return true;
 				}
 			}
@@ -831,115 +840,115 @@ public final class CollisionMap {
 	}
 
 	@OriginalMember(owner = "client!ch", name = "a", descriptor = "(IIIIIIII)Z")
-	public final boolean method577(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4, @OriginalArg(6) int arg5, @OriginalArg(7) int arg6) {
-		if (arg6 == 1) {
-			if (arg1 == arg0 && arg2 == arg3) {
+	public final boolean isAtWallDecor(@OriginalArg(1) int x, @OriginalArg(4) int z, @OriginalArg(7) int size, @OriginalArg(0) int destX, @OriginalArg(2) int destZ, @OriginalArg(5) int destType, @OriginalArg(6) int destAngle) {
+		if (size == 1) {
+			if (x == destX && destZ == z) {
 				return true;
 			}
-		} else if (arg1 <= arg0 && arg0 <= arg1 + arg6 - 1 && arg2 <= arg2 && arg6 + arg2 - 1 >= arg2) {
+		} else if (x <= destX && destX <= x + size - 1 && destZ <= destZ && size + destZ - 1 >= destZ) {
 			return true;
 		}
-		arg3 -= this.zOffset;
-		arg1 -= this.xOffset;
-		arg0 -= this.xOffset;
-		arg2 -= this.zOffset;
-		if (arg6 == 1) {
-			if (arg4 == 6 || arg4 == 7) {
-				if (arg4 == 7) {
-					arg5 = arg5 + 2 & 0x3;
+		z -= this.zOffset;
+		x -= this.xOffset;
+		destX -= this.xOffset;
+		destZ -= this.zOffset;
+		if (size == 1) {
+			if (destType == 6 || destType == 7) {
+				if (destType == 7) {
+					destAngle = destAngle + 2 & 0x3;
 				}
-				if (arg5 == 0) {
-					if (arg0 + 1 == arg1 && arg2 == arg3 && (this.flags[arg1][arg3] & 0x80) == 0) {
+				if (destAngle == 0) {
+					if (destX + 1 == x && destZ == z && (this.flags[x][z] & 0x80) == 0) {
 						return true;
 					}
-					if (arg0 == arg1 && arg2 - 1 == arg3 && (this.flags[arg1][arg3] & 0x2) == 0) {
+					if (destX == x && destZ - 1 == z && (this.flags[x][z] & 0x2) == 0) {
 						return true;
 					}
-				} else if (arg5 == 1) {
-					if (arg0 - 1 == arg1 && arg3 == arg2 && (this.flags[arg1][arg3] & 0x8) == 0) {
+				} else if (destAngle == 1) {
+					if (destX - 1 == x && z == destZ && (this.flags[x][z] & 0x8) == 0) {
 						return true;
 					}
-					if (arg1 == arg0 && arg3 == arg2 - 1 && (this.flags[arg1][arg3] & 0x2) == 0) {
+					if (x == destX && z == destZ - 1 && (this.flags[x][z] & 0x2) == 0) {
 						return true;
 					}
-				} else if (arg5 == 2) {
-					if (arg0 - 1 == arg1 && arg2 == arg3 && (this.flags[arg1][arg3] & 0x8) == 0) {
+				} else if (destAngle == 2) {
+					if (destX - 1 == x && destZ == z && (this.flags[x][z] & 0x8) == 0) {
 						return true;
 					}
-					if (arg0 == arg1 && arg3 == arg2 + 1 && (this.flags[arg1][arg3] & 0x20) == 0) {
+					if (destX == x && z == destZ + 1 && (this.flags[x][z] & 0x20) == 0) {
 						return true;
 					}
-				} else if (arg5 == 3) {
-					if (arg0 + 1 == arg1 && arg2 == arg3 && (this.flags[arg1][arg3] & 0x80) == 0) {
+				} else if (destAngle == 3) {
+					if (destX + 1 == x && destZ == z && (this.flags[x][z] & 0x80) == 0) {
 						return true;
 					}
-					if (arg1 == arg0 && arg3 == arg2 + 1 && (this.flags[arg1][arg3] & 0x20) == 0) {
+					if (x == destX && z == destZ + 1 && (this.flags[x][z] & 0x20) == 0) {
 						return true;
 					}
 				}
 			}
-			if (arg4 == 8) {
-				if (arg0 == arg1 && arg3 == arg2 + 1 && (this.flags[arg1][arg3] & 0x20) == 0) {
+			if (destType == 8) {
+				if (destX == x && z == destZ + 1 && (this.flags[x][z] & 0x20) == 0) {
 					return true;
 				}
-				if (arg1 == arg0 && arg2 - 1 == arg3 && (this.flags[arg1][arg3] & 0x2) == 0) {
+				if (x == destX && destZ - 1 == z && (this.flags[x][z] & 0x2) == 0) {
 					return true;
 				}
-				if (arg0 - 1 == arg1 && arg2 == arg3 && (this.flags[arg1][arg3] & 0x8) == 0) {
+				if (destX - 1 == x && destZ == z && (this.flags[x][z] & 0x8) == 0) {
 					return true;
 				}
-				if (arg1 == arg0 + 1 && arg3 == arg2 && (this.flags[arg1][arg3] & 0x80) == 0) {
+				if (x == destX + 1 && z == destZ && (this.flags[x][z] & 0x80) == 0) {
 					return true;
 				}
 			}
 		} else {
-			@Pc(89) int local89 = arg1 + arg6 - 1;
-			@Pc(95) int local95 = arg3 + arg6 - 1;
-			if (arg4 == 6 || arg4 == 7) {
-				if (arg4 == 7) {
-					arg5 = arg5 + 2 & 0x3;
+			@Pc(89) int x1 = x + size - 1;
+			@Pc(95) int z1 = z + size - 1;
+			if (destType == 6 || destType == 7) {
+				if (destType == 7) {
+					destAngle = destAngle + 2 & 0x3;
 				}
-				if (arg5 == 0) {
-					if (arg1 == arg0 + 1 && arg2 >= arg3 && arg2 <= local95 && (this.flags[arg1][arg2] & 0x80) == 0) {
+				if (destAngle == 0) {
+					if (x == destX + 1 && destZ >= z && destZ <= z1 && (this.flags[x][destZ] & 0x80) == 0) {
 						return true;
 					}
-					if (arg0 >= arg1 && local89 >= arg0 && arg3 == arg2 - arg6 && (this.flags[arg0][local95] & 0x2) == 0) {
+					if (destX >= x && x1 >= destX && z == destZ - size && (this.flags[destX][z1] & 0x2) == 0) {
 						return true;
 					}
-				} else if (arg5 == 1) {
-					if (arg1 == arg0 - arg6 && arg2 >= arg3 && arg2 <= local95 && (this.flags[local89][arg2] & 0x8) == 0) {
+				} else if (destAngle == 1) {
+					if (x == destX - size && destZ >= z && destZ <= z1 && (this.flags[x1][destZ] & 0x8) == 0) {
 						return true;
 					}
-					if (arg1 <= arg0 && local89 >= arg0 && arg3 == arg2 - arg6 && (this.flags[arg0][local95] & 0x2) == 0) {
+					if (x <= destX && x1 >= destX && z == destZ - size && (this.flags[destX][z1] & 0x2) == 0) {
 						return true;
 					}
-				} else if (arg5 == 2) {
-					if (arg1 == arg0 - arg6 && arg3 <= arg2 && arg2 <= local95 && (this.flags[local89][arg2] & 0x8) == 0) {
+				} else if (destAngle == 2) {
+					if (x == destX - size && z <= destZ && destZ <= z1 && (this.flags[x1][destZ] & 0x8) == 0) {
 						return true;
 					}
-					if (arg0 >= arg1 && arg0 <= local89 && arg3 == arg2 + 1 && (this.flags[arg0][arg3] & 0x20) == 0) {
+					if (destX >= x && destX <= x1 && z == destZ + 1 && (this.flags[destX][z] & 0x20) == 0) {
 						return true;
 					}
-				} else if (arg5 == 3) {
-					if (arg1 == arg0 + 1 && arg2 >= arg3 && local95 >= arg2 && (this.flags[arg1][arg2] & 0x80) == 0) {
+				} else if (destAngle == 3) {
+					if (x == destX + 1 && destZ >= z && z1 >= destZ && (this.flags[x][destZ] & 0x80) == 0) {
 						return true;
 					}
-					if (arg0 >= arg1 && local89 >= arg0 && arg2 + 1 == arg3 && (this.flags[arg0][arg3] & 0x20) == 0) {
+					if (destX >= x && x1 >= destX && destZ + 1 == z && (this.flags[destX][z] & 0x20) == 0) {
 						return true;
 					}
 				}
 			}
-			if (arg4 == 8) {
-				if (arg1 <= arg0 && arg0 <= local89 && arg2 + 1 == arg3 && (this.flags[arg0][arg3] & 0x20) == 0) {
+			if (destType == 8) {
+				if (x <= destX && destX <= x1 && destZ + 1 == z && (this.flags[destX][z] & 0x20) == 0) {
 					return true;
 				}
-				if (arg1 <= arg0 && arg0 <= local89 && arg2 - arg6 == arg3 && (this.flags[arg0][local95] & 0x2) == 0) {
+				if (x <= destX && destX <= x1 && destZ - size == z && (this.flags[destX][z1] & 0x2) == 0) {
 					return true;
 				}
-				if (arg0 - arg6 == arg1 && arg2 >= arg3 && arg2 <= local95 && (this.flags[local89][arg2] & 0x8) == 0) {
+				if (destX - size == x && destZ >= z && destZ <= z1 && (this.flags[x1][destZ] & 0x8) == 0) {
 					return true;
 				}
-				if (arg0 + 1 == arg1 && arg2 >= arg3 && local95 >= arg2 && (this.flags[arg1][arg2] & 0x80) == 0) {
+				if (destX + 1 == x && destZ >= z && z1 >= destZ && (this.flags[x][destZ] & 0x80) == 0) {
 					return true;
 				}
 			}
@@ -948,42 +957,42 @@ public final class CollisionMap {
 	}
 
 	@OriginalMember(owner = "client!ch", name = "a", descriptor = "(IIIIIIIIII)Z")
-	private boolean method578(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(5) int arg4, @OriginalArg(6) int arg5, @OriginalArg(7) int arg6, @OriginalArg(8) int arg7, @OriginalArg(9) int arg8) {
-		@Pc(9) int local9 = arg4 + arg2;
-		@Pc(13) int local13 = arg6 + arg3;
-		@Pc(17) int local17 = arg1 + arg5;
-		@Pc(22) int local22 = arg8 + arg0;
-		if (local13 == arg2 && (arg7 & 0x2) == 0) {
-			@Pc(51) int local51 = arg5 <= arg8 ? arg8 : arg5;
-			@Pc(62) int local62 = local22 <= local17 ? local22 : local17;
-			while (local62 > local51) {
-				if ((this.flags[local13 - this.xOffset - 1][local51 - this.zOffset] & 0x8) == 0) {
+	private boolean isOutsideRect(@OriginalArg(2) int x, @OriginalArg(6) int z, @OriginalArg(5) int width, @OriginalArg(1) int length, @OriginalArg(7) int destX, @OriginalArg(9) int destZ, @OriginalArg(3) int destWidth, @OriginalArg(0) int destLength, @OriginalArg(8) int destBlockedSides) {
+		@Pc(9) int x1 = width + x;
+		@Pc(13) int destX1 = destX + destWidth;
+		@Pc(17) int z1 = length + z;
+		@Pc(22) int destZ1 = destZ + destLength;
+		if (destX1 == x && (destBlockedSides & 0x2) == 0) {
+			@Pc(51) int z0 = destZ >= z ? destZ : z;
+			@Pc(62) int zMax = z1 >= destZ1 ? destZ1 : z1;
+			while (z0 < zMax) {
+				if ((this.flags[destX1 - this.xOffset - 1][z0 - this.zOffset] & 0x8) == 0) {
 					return true;
 				}
-				local51++;
+				z0++;
 			}
-		} else if (local9 == arg6 && (arg7 & 0x8) == 0) {
-			@Pc(238) int local238 = arg5 > arg8 ? arg5 : arg8;
-			@Pc(245) int local245 = local17 >= local22 ? local22 : local17;
-			while (local245 > local238) {
-				if ((this.flags[arg6 - this.xOffset][local238 - this.zOffset] & 0x80) == 0) {
+		} else if (x1 == destX && (destBlockedSides & 0x8) == 0) {
+			@Pc(238) int z0 = z > destZ ? z : destZ;
+			@Pc(245) int zMax = z1 >= destZ1 ? destZ1 : z1;
+			while (z0 < zMax) {
+				if ((this.flags[destX - this.xOffset][z0 - this.zOffset] & 0x80) == 0) {
 					return true;
 				}
-				local238++;
+				z0++;
 			}
-		} else if (local22 == arg5 && (arg7 & 0x1) == 0) {
-			@Pc(125) int local125 = arg2 > arg6 ? arg2 : arg6;
-			@Pc(136) int local136 = local13 <= local9 ? local13 : local9;
-			while (local136 > local125) {
-				if ((this.flags[local125 - this.xOffset][local22 - this.zOffset - 1] & 0x2) == 0) {
+		} else if (destZ1 == z && (destBlockedSides & 0x1) == 0) {
+			@Pc(125) int x0 = x > destX ? x : destX;
+			@Pc(136) int xMax = x1 >= destX1 ? destX1 : x1;
+			while (x0 < xMax) {
+				if ((this.flags[x0 - this.xOffset][destZ1 - this.zOffset - 1] & 0x2) == 0) {
 					return true;
 				}
-				local125++;
+				x0++;
 			}
-		} else if (local17 == arg8 && (arg7 & 0x4) == 0) {
-			@Pc(186) int local186 = local13 > local9 ? local9 : local13;
-			for (@Pc(197) int local197 = arg2 <= arg6 ? arg6 : arg2; local197 < local186; local197++) {
-				if ((this.flags[local197 - this.xOffset][arg8 - this.zOffset] & 0x20) == 0) {
+		} else if (z1 == destZ && (destBlockedSides & 0x4) == 0) {
+			@Pc(186) int xMax = destX1 > x1 ? x1 : destX1;
+			for (@Pc(197) int x0 = destX >= x ? destX : x; x0 < xMax; x0++) {
+				if ((this.flags[x0 - this.xOffset][destZ - this.zOffset] & 0x20) == 0) {
 					return true;
 				}
 			}

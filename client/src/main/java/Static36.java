@@ -219,15 +219,6 @@ public final class Static36 {
 		return "http://" + local5 + ".openrs2.dev/l=" + client.language + "/a=" + client.affiliate + local12 + "/";
 	}
 
-	@OriginalMember(owner = "client!ve", name = "a", descriptor = "(IIIIIIIII)Z")
-	public static boolean method4440(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(7) int arg6, @OriginalArg(8) int arg7) {
-		if (arg1 + arg5 > arg6 && arg7 + arg6 > arg1) {
-			return arg0 < arg2 + arg4 && arg4 < arg3 + arg0;
-		} else {
-			return false;
-		}
-	}
-
 	@OriginalMember(owner = "client!ve", name = "a", descriptor = "(BIIII)I")
 	public static int method4443(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3) {
 		@Pc(9) int local9 = arg2 & 0xF;

@@ -664,9 +664,9 @@ public final class Static13 {
 			if (local12 != 0) {
 				local52 = (local52 << local12 & 0xF) + (local52 >> 4 - local12);
 			}
-			Static15.method1337(PlayerList.self.anIntArray422[0], 0, local52, local63, arg0, PlayerList.self.anIntArray426[0], 0, local66, arg2);
+			PathFinder.findPath(PlayerList.self.anIntArray422[0], PlayerList.self.anIntArray426[0], arg2, arg0, 0, local63, local66, 0, local52);
 		} else {
-			Static15.method1337(PlayerList.self.anIntArray422[0], local12, 0, 0, arg0, PlayerList.self.anIntArray426[0], local23 + 1, 0, arg2);
+			PathFinder.findPath(PlayerList.self.anIntArray422[0], PlayerList.self.anIntArray426[0], arg2, arg0, local23 + 1, 0, 0, local12, 0);
 		}
 		return true;
 	}
