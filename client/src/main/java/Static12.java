@@ -893,7 +893,7 @@ public final class Static12 {
 			}
 			@Pc(83) int[] local83 = new int[] { 64, 96, 128 };
 			@Pc(89) int[][] local89 = new int[3][local41];
-			@Pc(107) Class53_Sub3 local107 = new Class53_Sub3(local41 * 3 + 1, local41 * 2 * 3 - local41, 0);
+			@Pc(107) RawModel local107 = new RawModel(local41 * 3 + 1, local41 * 2 * 3 - local41, 0);
 			@Pc(113) int local113 = local107.method2763(0, 0);
 			for (@Pc(115) int local115 = 0; local115 < 3; local115++) {
 				@Pc(126) int local126 = local83[local115];
@@ -919,7 +919,7 @@ public final class Static12 {
 					}
 				}
 			}
-			local33 = local107.method2761(64, 768, -50, -10, -50);
+			local33 = local107.createModel(64, 768, -50, -10, -50);
 			Static6.aClass26_50.put(local23, local33);
 		}
 		@Pc(377) int local377 = arg3 * 64 - 1;

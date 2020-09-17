@@ -102,7 +102,7 @@ public final class SpotAnimType {
 	public final Model method2569(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
 		@Pc(9) Model model = (Model) SpotAnimTypeList.models.get(this.id);
 		if (model == null) {
-			@Pc(22) Class53_Sub3 local22 = Class53_Sub3.create(SpotAnimTypeList.modelsArchive, this.anInt3136);
+			@Pc(22) RawModel local22 = RawModel.create(SpotAnimTypeList.modelsArchive, this.anInt3136);
 			if (local22 == null) {
 				return null;
 			}
@@ -116,7 +116,7 @@ public final class SpotAnimType {
 					local22.method2753(this.aShortArray47[local57], this.aShortArray48[local57]);
 				}
 			}
-			model = local22.method2761(this.anInt3130 + 64, this.anInt3132 + 850, -30, -50, -30);
+			model = local22.createModel(this.anInt3130 + 64, this.anInt3132 + 850, -30, -50, -30);
 			SpotAnimTypeList.models.put(this.id, model);
 		}
 		@Pc(113) Model local113;

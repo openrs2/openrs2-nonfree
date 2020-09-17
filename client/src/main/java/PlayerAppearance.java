@@ -129,16 +129,16 @@ public final class PlayerAppearance {
 				}
 			}
 			if (local169 == null) {
-				@Pc(250) Class53_Sub3[] local250 = new Class53_Sub3[12];
+				@Pc(250) RawModel[] local250 = new RawModel[12];
 				for (@Pc(252) int local252 = 0; local252 < 12; local252++) {
 					@Pc(259) int local259 = local51[local252];
 					if ((local259 & 0x40000000) != 0) {
-						@Pc(273) Class53_Sub3 local273 = ObjTypeList.get(local259 & 0x3FFFFFFF).method4121(this.female);
+						@Pc(273) RawModel local273 = ObjTypeList.get(local259 & 0x3FFFFFFF).method4121(this.female);
 						if (local273 != null) {
 							local250[local252] = local273;
 						}
 					} else if ((Integer.MIN_VALUE & local259) != 0) {
-						@Pc(294) Class53_Sub3 local294 = IdkTypeList.get(local259 & 0x3FFFFFFF).method3490();
+						@Pc(294) RawModel local294 = IdkTypeList.get(local259 & 0x3FFFFFFF).method3490();
 						if (local294 != null) {
 							local250[local252] = local294;
 						}
@@ -202,7 +202,7 @@ public final class PlayerAppearance {
 						}
 					}
 				}
-				@Pc(753) Class53_Sub3 local753 = new Class53_Sub3(local250, local250.length);
+				@Pc(753) RawModel local753 = new RawModel(local250, local250.length);
 				for (@Pc(755) int local755 = 0; local755 < 5; local755++) {
 					if (Static6.aShortArrayArray6[local755].length > this.colors[local755]) {
 						local753.method2768(Static7.aShortArray113[local755], Static6.aShortArrayArray6[local755][this.colors[local755]]);
@@ -211,7 +211,7 @@ public final class PlayerAppearance {
 						local753.method2768(Static4.aShortArray46[local755], Static1.aShortArrayArray1[local755][this.colors[local755]]);
 					}
 				}
-				local169 = local753.method2761(64, 850, -30, -50, -30);
+				local169 = local753.createModel(64, 850, -30, -50, -30);
 				if (GlRenderer.enabled) {
 					((GlModel) local169).method3872(false, false, true, false, false, true);
 				}
@@ -362,24 +362,24 @@ public final class PlayerAppearance {
 		@Pc(24) Model local24 = (Model) Static3.aClass26_27.get(local14);
 		if (local24 == null) {
 			@Pc(30) int local30 = 0;
-			@Pc(33) Class53_Sub3[] local33 = new Class53_Sub3[3];
+			@Pc(33) RawModel[] local33 = new RawModel[3];
 			if (!IdkTypeList.get(arg5).method3497() || !IdkTypeList.get(arg1).method3497() || !IdkTypeList.get(arg2).method3497()) {
 				return null;
 			}
-			@Pc(65) Class53_Sub3 local65 = IdkTypeList.get(arg5).method3489();
+			@Pc(65) RawModel local65 = IdkTypeList.get(arg5).method3489();
 			if (local65 != null) {
 				local30++;
 				local33[0] = local65;
 			}
-			@Pc(78) Class53_Sub3 local78 = IdkTypeList.get(arg1).method3489();
+			@Pc(78) RawModel local78 = IdkTypeList.get(arg1).method3489();
 			if (local78 != null) {
 				local33[local30++] = local78;
 			}
-			@Pc(92) Class53_Sub3 local92 = IdkTypeList.get(arg2).method3489();
+			@Pc(92) RawModel local92 = IdkTypeList.get(arg2).method3489();
 			if (local92 != null) {
 				local33[local30++] = local92;
 			}
-			@Pc(105) Class53_Sub3 local105 = new Class53_Sub3(local33, local30);
+			@Pc(105) RawModel local105 = new RawModel(local33, local30);
 			for (@Pc(107) int local107 = 0; local107 < 5; local107++) {
 				if (Static6.aShortArrayArray6[local107].length > this.colors[local107]) {
 					local105.method2768(Static7.aShortArray113[local107], Static6.aShortArrayArray6[local107][this.colors[local107]]);
@@ -388,7 +388,7 @@ public final class PlayerAppearance {
 					local105.method2768(Static4.aShortArray46[local107], Static1.aShortArrayArray1[local107][this.colors[local107]]);
 				}
 			}
-			local24 = local105.method2761(64, 768, -50, -10, -50);
+			local24 = local105.createModel(64, 768, -50, -10, -50);
 			Static3.aClass26_27.put(local14, local24);
 		}
 		if (arg0 != null) {
@@ -448,23 +448,23 @@ public final class PlayerAppearance {
 			if (local33) {
 				return null;
 			}
-			@Pc(93) Class53_Sub3[] local93 = new Class53_Sub3[12];
+			@Pc(93) RawModel[] local93 = new RawModel[12];
 			@Pc(95) int local95 = 0;
 			for (@Pc(97) int local97 = 0; local97 < 12; local97++) {
 				@Pc(105) int local105 = this.identikit[local97];
 				if ((local105 & 0x40000000) != 0) {
-					@Pc(122) Class53_Sub3 local122 = ObjTypeList.get(local105 & 0x3FFFFFFF).method4125(this.female);
+					@Pc(122) RawModel local122 = ObjTypeList.get(local105 & 0x3FFFFFFF).method4125(this.female);
 					if (local122 != null) {
 						local93[local95++] = local122;
 					}
 				} else if ((Integer.MIN_VALUE & local105) != 0) {
-					@Pc(145) Class53_Sub3 local145 = IdkTypeList.get(local105 & 0x3FFFFFFF).method3489();
+					@Pc(145) RawModel local145 = IdkTypeList.get(local105 & 0x3FFFFFFF).method3489();
 					if (local145 != null) {
 						local93[local95++] = local145;
 					}
 				}
 			}
-			@Pc(162) Class53_Sub3 local162 = new Class53_Sub3(local93, local95);
+			@Pc(162) RawModel local162 = new RawModel(local93, local95);
 			for (@Pc(164) int local164 = 0; local164 < 5; local164++) {
 				if (Static6.aShortArrayArray6[local164].length > this.colors[local164]) {
 					local162.method2768(Static7.aShortArray113[local164], Static6.aShortArrayArray6[local164][this.colors[local164]]);
@@ -473,7 +473,7 @@ public final class PlayerAppearance {
 					local162.method2768(Static4.aShortArray46[local164], Static1.aShortArrayArray1[local164][this.colors[local164]]);
 				}
 			}
-			local28 = local162.method2761(64, 768, -50, -10, -50);
+			local28 = local162.createModel(64, 768, -50, -10, -50);
 			Static3.aClass26_27.put(this.checksum, local28);
 		}
 		if (arg1 != null) {

@@ -52,7 +52,7 @@ public final class Static4 {
 	public static ByteBuffer aByteBuffer10;
 
 	@OriginalMember(owner = "client!kg", name = "o", descriptor = "Lclient!ml;")
-	public static Class53_Sub3 aClass53_Sub3_1;
+	public static RawModel aClass53_Sub3_1;
 
 	@OriginalMember(owner = "client!kg", name = "v", descriptor = "[B")
 	public static byte[] aByteArray29;

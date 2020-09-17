@@ -804,7 +804,7 @@ public final class Static22 {
 		if (Static4.aClass53_Sub3_1 != null) {
 			return;
 		}
-		@Pc(10) Class53_Sub3 local10 = Static4.aClass53_Sub3_1 = new Class53_Sub3(260, 480, 0);
+		@Pc(10) RawModel local10 = Static4.aClass53_Sub3_1 = new RawModel(260, 480, 0);
 		@Pc(13) int[] local13 = local10.anIntArray329;
 		@Pc(16) int[] local16 = local10.anIntArray324;
 		@Pc(19) int[] local19 = local10.anIntArray326;

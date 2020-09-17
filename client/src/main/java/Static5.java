@@ -258,7 +258,7 @@ public final class Static5 {
 	public static final boolean aBoolean254 = false;
 
 	@OriginalMember(owner = "client!ng", name = "z", descriptor = "[Lclient!ml;")
-	public static final Class53_Sub3[] aClass53_Sub3Array3 = new Class53_Sub3[4];
+	public static final RawModel[] aClass53_Sub3Array3 = new RawModel[4];
 
 	@OriginalMember(owner = "client!ng", name = "J", descriptor = "[I")
 	public static final int[] anIntArray615 = new int[8];

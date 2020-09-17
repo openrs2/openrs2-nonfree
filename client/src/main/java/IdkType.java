@@ -31,15 +31,15 @@ public final class IdkType {
 	public int anInt4231 = -1;
 
 	@OriginalMember(owner = "client!qa", name = "b", descriptor = "(I)Lclient!ml;")
-	public final Class53_Sub3 method3489() {
-		@Pc(8) Class53_Sub3[] local8 = new Class53_Sub3[5];
+	public final RawModel method3489() {
+		@Pc(8) RawModel[] local8 = new RawModel[5];
 		@Pc(10) int local10 = 0;
 		for (@Pc(17) int local17 = 0; local17 < 5; local17++) {
 			if (this.anIntArray450[local17] != -1) {
-				local8[local10++] = Class53_Sub3.create(IdkTypeList.modelsArchive, this.anIntArray450[local17]);
+				local8[local10++] = RawModel.create(IdkTypeList.modelsArchive, this.anIntArray450[local17]);
 			}
 		}
-		@Pc(51) Class53_Sub3 local51 = new Class53_Sub3(local8, local10);
+		@Pc(51) RawModel local51 = new RawModel(local8, local10);
 		if (this.aShortArray75 != null) {
 			for (@Pc(58) int local58 = 0; local58 < this.aShortArray75.length; local58++) {
 				local51.method2768(this.aShortArray75[local58], this.aShortArray76[local58]);
@@ -54,19 +54,19 @@ public final class IdkType {
 	}
 
 	@OriginalMember(owner = "client!qa", name = "a", descriptor = "(B)Lclient!ml;")
-	public final Class53_Sub3 method3490() {
+	public final RawModel method3490() {
 		if (this.anIntArray449 == null) {
 			return null;
 		}
-		@Pc(16) Class53_Sub3[] local16 = new Class53_Sub3[this.anIntArray449.length];
+		@Pc(16) RawModel[] local16 = new RawModel[this.anIntArray449.length];
 		for (@Pc(27) int local27 = 0; local27 < this.anIntArray449.length; local27++) {
-			local16[local27] = Class53_Sub3.create(IdkTypeList.modelsArchive, this.anIntArray449[local27]);
+			local16[local27] = RawModel.create(IdkTypeList.modelsArchive, this.anIntArray449[local27]);
 		}
-		@Pc(60) Class53_Sub3 local60;
+		@Pc(60) RawModel local60;
 		if (local16.length == 1) {
 			local60 = local16[0];
 		} else {
-			local60 = new Class53_Sub3(local16, local16.length);
+			local60 = new RawModel(local16, local16.length);
 		}
 		if (this.aShortArray75 != null) {
 			for (@Pc(72) int local72 = 0; local72 < this.aShortArray75.length; local72++) {

@@ -449,15 +449,15 @@ public final class NpcType {
 				if (local52) {
 					return null;
 				}
-				@Pc(87) Class53_Sub3[] local87 = new Class53_Sub3[this.anIntArray588.length];
+				@Pc(87) RawModel[] local87 = new RawModel[this.anIntArray588.length];
 				for (@Pc(89) int local89 = 0; local89 < this.anIntArray588.length; local89++) {
-					local87[local89] = Class53_Sub3.create(NpcTypeList.modelsArchive, this.anIntArray588[local89]);
+					local87[local89] = RawModel.create(NpcTypeList.modelsArchive, this.anIntArray588[local89]);
 				}
-				@Pc(122) Class53_Sub3 local122;
+				@Pc(122) RawModel local122;
 				if (local87.length == 1) {
 					local122 = local87[0];
 				} else {
-					local122 = new Class53_Sub3(local87, local87.length);
+					local122 = new RawModel(local87, local87.length);
 				}
 				if (this.aShortArray106 != null) {
 					for (@Pc(132) int local132 = 0; local132 < this.aShortArray106.length; local132++) {
@@ -473,7 +473,7 @@ public final class NpcType {
 						local122.method2753(this.aShortArray108[local184], this.aShortArray107[local184]);
 					}
 				}
-				local40 = local122.method2761(64, 768, -50, -10, -50);
+				local40 = local122.createModel(64, 768, -50, -10, -50);
 				NpcTypeList.headModels.put((long) this.id, local40);
 			}
 			if (arg1 != null) {
@@ -500,10 +500,10 @@ public final class NpcType {
 			if (local44) {
 				return null;
 			}
-			@Pc(81) Class53_Sub3[] local81 = new Class53_Sub3[this.anIntArray589.length];
+			@Pc(81) RawModel[] local81 = new RawModel[this.anIntArray589.length];
 			for (@Pc(83) int local83 = 0; local83 < this.anIntArray589.length; local83++) {
 				if (this.anIntArray589[local83] != -1) {
-					local81[local83] = Class53_Sub3.create(NpcTypeList.modelsArchive, this.anIntArray589[local83]);
+					local81[local83] = RawModel.create(NpcTypeList.modelsArchive, this.anIntArray589[local83]);
 					if (this.anIntArrayArray46 != null && this.anIntArrayArray46[local83] != null && local81[local83] != null) {
 						local81[local83].method2743(this.anIntArrayArray46[local83][0], this.anIntArrayArray46[local83][1], this.anIntArrayArray46[local83][2]);
 					}
@@ -567,11 +567,11 @@ public final class NpcType {
 					}
 				}
 			}
-			@Pc(597) Class53_Sub3 local597;
+			@Pc(597) RawModel local597;
 			if (local81.length == 1) {
 				local597 = local81[0];
 			} else {
-				local597 = new Class53_Sub3(local81, local81.length);
+				local597 = new RawModel(local81, local81.length);
 			}
 			if (this.aShortArray106 != null) {
 				for (@Pc(610) int local610 = 0; local610 < this.aShortArray106.length; local610++) {
@@ -587,7 +587,7 @@ public final class NpcType {
 					local597.method2753(this.aShortArray108[local665], this.aShortArray107[local665]);
 				}
 			}
-			local39 = local597.method2761(this.anInt5254 + 64, this.anInt5239 + 850, -30, -50, -30);
+			local39 = local597.createModel(this.anInt5254 + 64, this.anInt5239 + 850, -30, -50, -30);
 			if (GlRenderer.enabled) {
 				((GlModel) local39).method3872(false, false, false, false, false, true);
 			}

@@ -137,39 +137,39 @@ public final class SoftwareModel extends Model {
 	}
 
 	@OriginalMember(owner = "client!na", name = "<init>", descriptor = "(Lclient!ml;IIIII)V")
-	public SoftwareModel(@OriginalArg(0) Class53_Sub3 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5) {
-		arg0.method2764();
-		arg0.method2744();
-		this.anInt3440 = arg0.anInt3356;
-		this.anInt3438 = arg0.anInt3355;
-		this.anIntArray347 = arg0.anIntArray329;
-		this.anIntArray344 = arg0.anIntArray324;
-		this.anIntArray340 = arg0.anIntArray326;
-		this.anInt3439 = arg0.anInt3353;
-		this.anIntArray343 = arg0.anIntArray331;
-		this.anIntArray348 = arg0.anIntArray330;
-		this.anIntArray339 = arg0.anIntArray332;
-		this.aByteArray41 = arg0.aByteArray37;
-		this.aByteArray42 = arg0.aByteArray33;
-		this.aByte12 = arg0.aByte11;
-		this.aShortArray63 = arg0.aShortArray53;
-		this.anIntArrayArray29 = arg0.anIntArrayArray27;
-		this.anIntArrayArray30 = arg0.anIntArrayArray26;
-		this.aShortArray62 = arg0.aShortArray54;
-		this.particleEmitters = arg0.particleEmitters;
-		this.particleEffectors = arg0.particleEffectors;
-		this.aShortArray64 = arg0.aShortArray52;
+	public SoftwareModel(@OriginalArg(0) RawModel model, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5) {
+		model.method2764();
+		model.method2744();
+		this.anInt3440 = model.anInt3356;
+		this.anInt3438 = model.anInt3355;
+		this.anIntArray347 = model.anIntArray329;
+		this.anIntArray344 = model.anIntArray324;
+		this.anIntArray340 = model.anIntArray326;
+		this.anInt3439 = model.anInt3353;
+		this.anIntArray343 = model.anIntArray331;
+		this.anIntArray348 = model.anIntArray330;
+		this.anIntArray339 = model.anIntArray332;
+		this.aByteArray41 = model.aByteArray37;
+		this.aByteArray42 = model.aByteArray33;
+		this.aByte12 = model.aByte11;
+		this.aShortArray63 = model.aShortArray53;
+		this.anIntArrayArray29 = model.anIntArrayArray27;
+		this.anIntArrayArray30 = model.anIntArrayArray26;
+		this.aShortArray62 = model.aShortArray54;
+		this.particleEmitters = model.particleEmitters;
+		this.particleEffectors = model.particleEffectors;
+		this.aShortArray64 = model.aShortArray52;
 		@Pc(117) int local117 = (int) Math.sqrt((double) (arg3 * arg3 + arg4 * arg4 + arg5 * arg5));
 		@Pc(123) int local123 = arg2 * local117 >> 8;
 		this.anIntArray345 = new int[this.anInt3439];
 		this.anIntArray346 = new int[this.anInt3439];
 		this.anIntArray342 = new int[this.anInt3439];
-		if (arg0.aShortArray51 == null) {
+		if (model.aShortArray51 == null) {
 			this.aShortArray61 = null;
 		} else {
 			this.aShortArray61 = new short[this.anInt3439];
 			for (@Pc(148) int local148 = 0; local148 < this.anInt3439; local148++) {
-				@Pc(157) short local157 = arg0.aShortArray51[local148];
+				@Pc(157) short local157 = model.aShortArray51[local148];
 				if (local157 != -1 && Static4.anInterface4_1.method441(local157)) {
 					this.aShortArray61[local148] = local157;
 				} else {
@@ -177,16 +177,16 @@ public final class SoftwareModel extends Model {
 				}
 			}
 		}
-		if (arg0.anInt3352 > 0 && arg0.aByteArray35 != null) {
-			@Pc(192) int[] local192 = new int[arg0.anInt3352];
+		if (model.anInt3352 > 0 && model.aByteArray35 != null) {
+			@Pc(192) int[] local192 = new int[model.anInt3352];
 			for (@Pc(194) int local194 = 0; local194 < this.anInt3439; local194++) {
-				if (arg0.aByteArray35[local194] != -1) {
-					local192[arg0.aByteArray35[local194] & 0xFF]++;
+				if (model.aByteArray35[local194] != -1) {
+					local192[model.aByteArray35[local194] & 0xFF]++;
 				}
 			}
 			this.anInt3437 = 0;
-			for (@Pc(223) int local223 = 0; local223 < arg0.anInt3352; local223++) {
-				if (local192[local223] > 0 && arg0.aByteArray38[local223] == 0) {
+			for (@Pc(223) int local223 = 0; local223 < model.anInt3352; local223++) {
+				if (local192[local223] > 0 && model.aByteArray38[local223] == 0) {
 					this.anInt3437++;
 				}
 			}
@@ -194,11 +194,11 @@ public final class SoftwareModel extends Model {
 			this.anIntArray353 = new int[this.anInt3437];
 			this.anIntArray341 = new int[this.anInt3437];
 			@Pc(261) int local261 = 0;
-			for (@Pc(263) int local263 = 0; local263 < arg0.anInt3352; local263++) {
-				if (local192[local263] > 0 && arg0.aByteArray38[local263] == 0) {
-					this.anIntArray351[local261] = arg0.aShortArray59[local263] & 0xFFFF;
-					this.anIntArray353[local261] = arg0.aShortArray56[local263] & 0xFFFF;
-					this.anIntArray341[local261] = arg0.aShortArray57[local263] & 0xFFFF;
+			for (@Pc(263) int local263 = 0; local263 < model.anInt3352; local263++) {
+				if (local192[local263] > 0 && model.aByteArray38[local263] == 0) {
+					this.anIntArray351[local261] = model.aShortArray59[local263] & 0xFFFF;
+					this.anIntArray353[local261] = model.aShortArray56[local263] & 0xFFFF;
+					this.anIntArray341[local261] = model.aShortArray57[local263] & 0xFFFF;
 					local192[local263] = local261++;
 				} else {
 					local192[local263] = -1;
@@ -206,10 +206,10 @@ public final class SoftwareModel extends Model {
 			}
 			this.aByteArray43 = new byte[this.anInt3439];
 			for (@Pc(325) int local325 = 0; local325 < this.anInt3439; local325++) {
-				if (arg0.aByteArray35[local325] == -1) {
+				if (model.aByteArray35[local325] == -1) {
 					this.aByteArray43[local325] = -1;
 				} else {
-					this.aByteArray43[local325] = (byte) local192[arg0.aByteArray35[local325] & 0xFF];
+					this.aByteArray43[local325] = (byte) local192[model.aByteArray35[local325] & 0xFF];
 					if (this.aByteArray43[local325] == -1 && this.aShortArray61 != null) {
 						this.aShortArray61[local325] = -1;
 					}
@@ -218,16 +218,16 @@ public final class SoftwareModel extends Model {
 		}
 		for (@Pc(372) int local372 = 0; local372 < this.anInt3439; local372++) {
 			@Pc(381) byte local381;
-			if (arg0.aByteArray40 == null) {
+			if (model.aByteArray40 == null) {
 				local381 = 0;
 			} else {
-				local381 = arg0.aByteArray40[local372];
+				local381 = model.aByteArray40[local372];
 			}
 			@Pc(392) byte local392;
-			if (arg0.aByteArray33 == null) {
+			if (model.aByteArray33 == null) {
 				local392 = 0;
 			} else {
-				local392 = arg0.aByteArray33[local372];
+				local392 = model.aByteArray33[local372];
 			}
 			@Pc(403) short local403;
 			if (this.aShortArray61 == null) {
@@ -243,35 +243,35 @@ public final class SoftwareModel extends Model {
 			}
 			if (local403 == -1) {
 				if (local381 == 0) {
-					@Pc(431) int local431 = arg0.aShortArray53[local372] & 0xFFFF;
+					@Pc(431) int local431 = model.aShortArray53[local372] & 0xFFFF;
 					@Pc(450) Class31 local450;
-					if (arg0.aClass31Array2 == null || arg0.aClass31Array2[this.anIntArray343[local372]] == null) {
-						local450 = arg0.aClass31Array1[this.anIntArray343[local372]];
+					if (model.aClass31Array2 == null || model.aClass31Array2[this.anIntArray343[local372]] == null) {
+						local450 = model.aClass31Array1[this.anIntArray343[local372]];
 					} else {
-						local450 = arg0.aClass31Array2[this.anIntArray343[local372]];
+						local450 = model.aClass31Array2[this.anIntArray343[local372]];
 					}
 					@Pc(483) int local483 = arg1 + (arg3 * local450.anInt621 + arg4 * local450.anInt619 + arg5 * local450.anInt625) / (local123 * local450.anInt620) << 17;
 					this.anIntArray345[local372] = local483 | Static25.method2912(local431, local483 >> 17);
 					@Pc(513) Class31 local513;
-					if (arg0.aClass31Array2 == null || arg0.aClass31Array2[this.anIntArray348[local372]] == null) {
-						local513 = arg0.aClass31Array1[this.anIntArray348[local372]];
+					if (model.aClass31Array2 == null || model.aClass31Array2[this.anIntArray348[local372]] == null) {
+						local513 = model.aClass31Array1[this.anIntArray348[local372]];
 					} else {
-						local513 = arg0.aClass31Array2[this.anIntArray348[local372]];
+						local513 = model.aClass31Array2[this.anIntArray348[local372]];
 					}
 					@Pc(546) int local546 = arg1 + (arg3 * local513.anInt621 + arg4 * local513.anInt619 + arg5 * local513.anInt625) / (local123 * local513.anInt620) << 17;
 					this.anIntArray346[local372] = local546 | Static25.method2912(local431, local546 >> 17);
 					@Pc(576) Class31 local576;
-					if (arg0.aClass31Array2 == null || arg0.aClass31Array2[this.anIntArray339[local372]] == null) {
-						local576 = arg0.aClass31Array1[this.anIntArray339[local372]];
+					if (model.aClass31Array2 == null || model.aClass31Array2[this.anIntArray339[local372]] == null) {
+						local576 = model.aClass31Array1[this.anIntArray339[local372]];
 					} else {
-						local576 = arg0.aClass31Array2[this.anIntArray339[local372]];
+						local576 = model.aClass31Array2[this.anIntArray339[local372]];
 					}
 					@Pc(609) int local609 = arg1 + (arg3 * local576.anInt621 + arg4 * local576.anInt619 + arg5 * local576.anInt625) / (local123 * local576.anInt620) << 17;
 					this.anIntArray342[local372] = local609 | Static25.method2912(local431, local609 >> 17);
 				} else if (local381 == 1) {
-					@Pc(629) Class120 local629 = arg0.aClass120Array1[local372];
+					@Pc(629) Class120 local629 = model.aClass120Array1[local372];
 					@Pc(654) int local654 = arg1 + (arg3 * local629.anInt3342 + arg4 * local629.anInt3339 + arg5 * local629.anInt3343) / (local123 + local123 / 2) << 17;
-					this.anIntArray345[local372] = local654 | Static25.method2912(arg0.aShortArray53[local372] & 0xFFFF, local654 >> 17);
+					this.anIntArray345[local372] = local654 | Static25.method2912(model.aShortArray53[local372] & 0xFFFF, local654 >> 17);
 					this.anIntArray342[local372] = -1;
 				} else if (local381 == 3) {
 					this.anIntArray345[local372] = 128;
@@ -281,31 +281,31 @@ public final class SoftwareModel extends Model {
 				}
 			} else if (local381 == 0) {
 				@Pc(717) Class31 local717;
-				if (arg0.aClass31Array2 == null || arg0.aClass31Array2[this.anIntArray343[local372]] == null) {
-					local717 = arg0.aClass31Array1[this.anIntArray343[local372]];
+				if (model.aClass31Array2 == null || model.aClass31Array2[this.anIntArray343[local372]] == null) {
+					local717 = model.aClass31Array1[this.anIntArray343[local372]];
 				} else {
-					local717 = arg0.aClass31Array2[this.anIntArray343[local372]];
+					local717 = model.aClass31Array2[this.anIntArray343[local372]];
 				}
 				@Pc(748) int local748 = arg1 + (arg3 * local717.anInt621 + arg4 * local717.anInt619 + arg5 * local717.anInt625) / (local123 * local717.anInt620);
 				this.anIntArray345[local372] = Static25.method2914(local748);
 				@Pc(773) Class31 local773;
-				if (arg0.aClass31Array2 == null || arg0.aClass31Array2[this.anIntArray348[local372]] == null) {
-					local773 = arg0.aClass31Array1[this.anIntArray348[local372]];
+				if (model.aClass31Array2 == null || model.aClass31Array2[this.anIntArray348[local372]] == null) {
+					local773 = model.aClass31Array1[this.anIntArray348[local372]];
 				} else {
-					local773 = arg0.aClass31Array2[this.anIntArray348[local372]];
+					local773 = model.aClass31Array2[this.anIntArray348[local372]];
 				}
 				@Pc(804) int local804 = arg1 + (arg3 * local773.anInt621 + arg4 * local773.anInt619 + arg5 * local773.anInt625) / (local123 * local773.anInt620);
 				this.anIntArray346[local372] = Static25.method2914(local804);
 				@Pc(829) Class31 local829;
-				if (arg0.aClass31Array2 == null || arg0.aClass31Array2[this.anIntArray339[local372]] == null) {
-					local829 = arg0.aClass31Array1[this.anIntArray339[local372]];
+				if (model.aClass31Array2 == null || model.aClass31Array2[this.anIntArray339[local372]] == null) {
+					local829 = model.aClass31Array1[this.anIntArray339[local372]];
 				} else {
-					local829 = arg0.aClass31Array2[this.anIntArray339[local372]];
+					local829 = model.aClass31Array2[this.anIntArray339[local372]];
 				}
 				@Pc(860) int local860 = arg1 + (arg3 * local829.anInt621 + arg4 * local829.anInt619 + arg5 * local829.anInt625) / (local123 * local829.anInt620);
 				this.anIntArray342[local372] = Static25.method2914(local860);
 			} else if (local381 == 1) {
-				@Pc(875) Class120 local875 = arg0.aClass120Array1[local372];
+				@Pc(875) Class120 local875 = model.aClass120Array1[local372];
 				@Pc(898) int local898 = arg1 + (arg3 * local875.anInt3342 + arg4 * local875.anInt3339 + arg5 * local875.anInt3343) / (local123 + local123 / 2);
 				this.anIntArray345[local372] = Static25.method2914(local898);
 				this.anIntArray342[local372] = -1;

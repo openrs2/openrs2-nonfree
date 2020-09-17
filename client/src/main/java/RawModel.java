@@ -4,12 +4,12 @@ import dev.openrs2.deob.annotation.OriginalMember;
 import dev.openrs2.deob.annotation.Pc;
 
 @OriginalClass("client!ml")
-public final class Class53_Sub3 extends Entity {
+public final class RawModel extends Entity {
 
 	@OriginalMember(owner = "client!ml", name = "a", descriptor = "(Lclient!fh;II)Lclient!ml;")
-	public static Class53_Sub3 create(@OriginalArg(0) Js5 archive, @OriginalArg(1) int id) {
+	public static RawModel create(@OriginalArg(0) Js5 archive, @OriginalArg(1) int id) {
 		@Pc(5) byte[] bytes = archive.fetchFile(id, 0);
-		return bytes == null ? null : new Class53_Sub3(bytes);
+		return bytes == null ? null : new RawModel(bytes);
 	}
 
 	@OriginalMember(owner = "client!ml", name = "m", descriptor = "[S")
@@ -160,20 +160,20 @@ public final class Class53_Sub3 extends Entity {
 	public int anInt3355 = 0;
 
 	@OriginalMember(owner = "client!ml", name = "<init>", descriptor = "()V")
-	private Class53_Sub3() {
+	private RawModel() {
 	}
 
 	@OriginalMember(owner = "client!ml", name = "<init>", descriptor = "([B)V")
-	public Class53_Sub3(@OriginalArg(0) byte[] arg0) {
-		if (arg0[arg0.length - 1] == -1 && arg0[arg0.length - 2] == -1) {
-			this.method2755(arg0);
+	public RawModel(@OriginalArg(0) byte[] bytes) {
+		if (bytes[bytes.length - 1] == -1 && bytes[bytes.length - 2] == -1) {
+			this.decodeNew(bytes);
 		} else {
-			this.method2751(arg0);
+			this.decodeOld(bytes);
 		}
 	}
 
 	@OriginalMember(owner = "client!ml", name = "<init>", descriptor = "(III)V")
-	public Class53_Sub3(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
+	public RawModel(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
 		this.anIntArray329 = new int[arg0];
 		this.anIntArray324 = new int[arg0];
 		this.anIntArray326 = new int[arg0];
@@ -191,7 +191,7 @@ public final class Class53_Sub3 extends Entity {
 	}
 
 	@OriginalMember(owner = "client!ml", name = "<init>", descriptor = "([Lclient!ml;I)V")
-	public Class53_Sub3(@OriginalArg(0) Class53_Sub3[] arg0, @OriginalArg(1) int arg1) {
+	public RawModel(@OriginalArg(0) RawModel[] arg0, @OriginalArg(1) int arg1) {
 		@Pc(18) boolean local18 = false;
 		@Pc(20) boolean local20 = false;
 		@Pc(22) boolean local22 = false;
@@ -205,7 +205,7 @@ public final class Class53_Sub3 extends Entity {
 		@Pc(41) int local41 = 0;
 		this.aByte11 = -1;
 		for (@Pc(46) int local46 = 0; local46 < arg1; local46++) {
-			@Pc(53) Class53_Sub3 local53 = arg0[local46];
+			@Pc(53) RawModel local53 = arg0[local46];
 			if (local53 != null) {
 				this.anInt3356 += local53.anInt3356;
 				this.anInt3353 += local53.anInt3353;
@@ -288,7 +288,7 @@ public final class Class53_Sub3 extends Entity {
 		@Pc(342) int local342 = 0;
 		for (@Pc(344) int local344 = 0; local344 < arg1; local344++) {
 			@Pc(352) short local352 = (short) (0x1 << local344);
-			@Pc(356) Class53_Sub3 local356 = arg0[local344];
+			@Pc(356) RawModel local356 = arg0[local344];
 			if (local356 != null) {
 				for (@Pc(360) int local360 = 0; local360 < local356.anInt3353; local360++) {
 					if (local18 && local356.aByteArray40 != null) {
@@ -342,7 +342,7 @@ public final class Class53_Sub3 extends Entity {
 		@Pc(609) int local609 = 0;
 		this.anInt3355 = this.anInt3356;
 		for (@Pc(615) int local615 = 0; local615 < arg1; local615++) {
-			@Pc(622) Class53_Sub3 local622 = arg0[local615];
+			@Pc(622) RawModel local622 = arg0[local615];
 			@Pc(627) short local627 = (short) (0x1 << local615);
 			if (local622 != null) {
 				for (@Pc(631) int local631 = 0; local631 < local622.anInt3353; local631++) {
@@ -379,7 +379,7 @@ public final class Class53_Sub3 extends Entity {
 	}
 
 	@OriginalMember(owner = "client!ml", name = "<init>", descriptor = "(Lclient!ml;ZZZZ)V")
-	public Class53_Sub3(@OriginalArg(0) Class53_Sub3 arg0, @OriginalArg(1) boolean arg1, @OriginalArg(2) boolean arg2, @OriginalArg(3) boolean arg3, @OriginalArg(4) boolean arg4) {
+	public RawModel(@OriginalArg(0) RawModel arg0, @OriginalArg(1) boolean arg1, @OriginalArg(2) boolean arg2, @OriginalArg(3) boolean arg3, @OriginalArg(4) boolean arg4) {
 		this.anInt3356 = arg0.anInt3356;
 		this.anInt3355 = arg0.anInt3355;
 		this.anInt3353 = arg0.anInt3353;
@@ -460,7 +460,7 @@ public final class Class53_Sub3 extends Entity {
 	}
 
 	@OriginalMember(owner = "client!ml", name = "a", descriptor = "(Lclient!ml;IS)I")
-	private int method2741(@OriginalArg(0) Class53_Sub3 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) short arg2) {
+	private int method2741(@OriginalArg(0) RawModel arg0, @OriginalArg(1) int arg1, @OriginalArg(2) short arg2) {
 		@Pc(4) int local4 = arg0.anIntArray329[arg1];
 		@Pc(9) int local9 = arg0.anIntArray324[arg1];
 		@Pc(14) int local14 = arg0.anIntArray326[arg1];
@@ -640,7 +640,7 @@ public final class Class53_Sub3 extends Entity {
 	@OriginalMember(owner = "client!ml", name = "a", descriptor = "(III)Lclient!vc;")
 	@Override
 	public final Entity method3809() {
-		return this.method2761(this.aShort33, this.aShort29, -50, -10, -50);
+		return this.createModel(this.aShort33, this.aShort29, -50, -10, -50);
 	}
 
 	@OriginalMember(owner = "client!ml", name = "g", descriptor = "()V")
@@ -657,8 +657,8 @@ public final class Class53_Sub3 extends Entity {
 	}
 
 	@OriginalMember(owner = "client!ml", name = "h", descriptor = "()Lclient!ml;")
-	public final Class53_Sub3 method2749() {
-		@Pc(3) Class53_Sub3 local3 = new Class53_Sub3();
+	public final RawModel method2749() {
+		@Pc(3) RawModel local3 = new RawModel();
 		if (this.aByteArray40 != null) {
 			local3.aByteArray40 = new byte[this.anInt3353];
 			for (@Pc(13) int local13 = 0; local13 < this.anInt3353; local13++) {
@@ -707,15 +707,15 @@ public final class Class53_Sub3 extends Entity {
 	}
 
 	@OriginalMember(owner = "client!ml", name = "a", descriptor = "([B)V")
-	private void method2751(@OriginalArg(0) byte[] arg0) {
+	private void decodeOld(@OriginalArg(0) byte[] bytes) {
 		@Pc(1) boolean local1 = false;
 		@Pc(3) boolean local3 = false;
-		@Pc(8) Buffer local8 = new Buffer(arg0);
-		@Pc(13) Buffer local13 = new Buffer(arg0);
-		@Pc(18) Buffer local18 = new Buffer(arg0);
-		@Pc(23) Buffer local23 = new Buffer(arg0);
-		@Pc(28) Buffer local28 = new Buffer(arg0);
-		local8.position = arg0.length - 18;
+		@Pc(8) Buffer local8 = new Buffer(bytes);
+		@Pc(13) Buffer local13 = new Buffer(bytes);
+		@Pc(18) Buffer local18 = new Buffer(bytes);
+		@Pc(23) Buffer local23 = new Buffer(bytes);
+		@Pc(28) Buffer local28 = new Buffer(bytes);
+		local8.position = bytes.length - 18;
 		@Pc(38) int local38 = local8.readUnsignedShort();
 		@Pc(42) int local42 = local8.readUnsignedShort();
 		@Pc(46) int local46 = local8.readUnsignedByte();
@@ -1003,15 +1003,15 @@ public final class Class53_Sub3 extends Entity {
 	}
 
 	@OriginalMember(owner = "client!ml", name = "b", descriptor = "([B)V")
-	private void method2755(@OriginalArg(0) byte[] arg0) {
-		@Pc(4) Buffer local4 = new Buffer(arg0);
-		@Pc(9) Buffer local9 = new Buffer(arg0);
-		@Pc(14) Buffer local14 = new Buffer(arg0);
-		@Pc(19) Buffer local19 = new Buffer(arg0);
-		@Pc(24) Buffer local24 = new Buffer(arg0);
-		@Pc(29) Buffer local29 = new Buffer(arg0);
-		@Pc(34) Buffer local34 = new Buffer(arg0);
-		local4.position = arg0.length - 23;
+	private void decodeNew(@OriginalArg(0) byte[] bytes) {
+		@Pc(4) Buffer local4 = new Buffer(bytes);
+		@Pc(9) Buffer local9 = new Buffer(bytes);
+		@Pc(14) Buffer local14 = new Buffer(bytes);
+		@Pc(19) Buffer local19 = new Buffer(bytes);
+		@Pc(24) Buffer local24 = new Buffer(bytes);
+		@Pc(29) Buffer local29 = new Buffer(bytes);
+		@Pc(34) Buffer local34 = new Buffer(bytes);
+		local4.position = bytes.length - 23;
 		@Pc(44) int local44 = local4.readUnsignedShort();
 		@Pc(48) int local48 = local4.readUnsignedShort();
 		@Pc(52) int local52 = local4.readUnsignedByte();
@@ -1378,7 +1378,7 @@ public final class Class53_Sub3 extends Entity {
 	}
 
 	@OriginalMember(owner = "client!ml", name = "b", descriptor = "(IIIII)Lclient!na;")
-	public final SoftwareModel method2759(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4) {
+	public final SoftwareModel createSoftwareModel(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4) {
 		return new SoftwareModel(this, arg0, arg1, arg2, arg3, arg4);
 	}
 
@@ -1393,7 +1393,7 @@ public final class Class53_Sub3 extends Entity {
 	@OriginalMember(owner = "client!ml", name = "a", descriptor = "(Lclient!vc;IIIZ)V")
 	@Override
 	public final void method3807(@OriginalArg(0) Entity arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) boolean arg4) {
-		@Pc(2) Class53_Sub3 local2 = (Class53_Sub3) arg0;
+		@Pc(2) RawModel local2 = (RawModel) arg0;
 		local2.method2765();
 		local2.method2764();
 		Static4.anInt3354++;
@@ -1466,11 +1466,11 @@ public final class Class53_Sub3 extends Entity {
 	}
 
 	@OriginalMember(owner = "client!ml", name = "c", descriptor = "(IIIII)Lclient!vg;")
-	public final Model method2761(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4) {
+	public final Model createModel(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4) {
 		if (GlRenderer.enabled) {
-			@Pc(9) GlModel local9 = new GlModel(this, arg0, arg1, true);
-			local9.method3866();
-			return local9;
+			@Pc(9) GlModel model = new GlModel(this, arg0, arg1, true);
+			model.method3866();
+			return model;
 		} else {
 			return new SoftwareModel(this, arg0, arg1, arg2, arg3, arg4);
 		}
@@ -1601,7 +1601,7 @@ public final class Class53_Sub3 extends Entity {
 	}
 
 	@OriginalMember(owner = "client!ml", name = "a", descriptor = "(II[[I[[IIIIZZ)Lclient!ml;")
-	public final Class53_Sub3 method2766(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int[][] arg2, @OriginalArg(3) int[][] arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6) {
+	public final RawModel method2766(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int[][] arg2, @OriginalArg(3) int[][] arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6) {
 		this.method2765();
 		@Pc(6) int local6 = arg4 + this.aShort27;
 		@Pc(11) int local11 = arg4 + this.aShort34;
@@ -1626,7 +1626,7 @@ public final class Class53_Sub3 extends Entity {
 				return this;
 			}
 		}
-		@Pc(147) Class53_Sub3 local147 = new Class53_Sub3();
+		@Pc(147) RawModel local147 = new RawModel();
 		local147.anInt3356 = this.anInt3356;
 		local147.anInt3355 = this.anInt3355;
 		local147.anInt3353 = this.anInt3353;

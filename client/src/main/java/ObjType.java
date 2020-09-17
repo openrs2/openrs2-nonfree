@@ -180,7 +180,7 @@ public final class ObjType {
 	}
 
 	@OriginalMember(owner = "client!td", name = "a", descriptor = "(ZZ)Lclient!ml;")
-	public final Class53_Sub3 method4121(@OriginalArg(0) boolean arg0) {
+	public final RawModel method4121(@OriginalArg(0) boolean arg0) {
 		@Pc(4) int local4 = this.anInt5081;
 		@Pc(11) int local11 = this.anInt5049;
 		@Pc(28) int local28 = this.anInt5071;
@@ -192,16 +192,16 @@ public final class ObjType {
 		if (local4 == -1) {
 			return null;
 		}
-		@Pc(51) Class53_Sub3 local51 = Class53_Sub3.create(ObjTypeList.modelsArchive, local4);
+		@Pc(51) RawModel local51 = RawModel.create(ObjTypeList.modelsArchive, local4);
 		if (local11 != -1) {
-			@Pc(59) Class53_Sub3 local59 = Class53_Sub3.create(ObjTypeList.modelsArchive, local11);
+			@Pc(59) RawModel local59 = RawModel.create(ObjTypeList.modelsArchive, local11);
 			if (local28 == -1) {
-				@Pc(73) Class53_Sub3[] local73 = new Class53_Sub3[] { local51, local59 };
-				local51 = new Class53_Sub3(local73, 2);
+				@Pc(73) RawModel[] local73 = new RawModel[] { local51, local59 };
+				local51 = new RawModel(local73, 2);
 			} else {
-				@Pc(86) Class53_Sub3 local86 = Class53_Sub3.create(ObjTypeList.modelsArchive, local28);
-				@Pc(101) Class53_Sub3[] local101 = new Class53_Sub3[] { local51, local59, local86 };
-				local51 = new Class53_Sub3(local101, 3);
+				@Pc(86) RawModel local86 = RawModel.create(ObjTypeList.modelsArchive, local28);
+				@Pc(101) RawModel[] local101 = new RawModel[] { local51, local59, local86 };
+				local51 = new RawModel(local101, 3);
 			}
 		}
 		if (!arg0 && (this.manWearXOff != 0 || this.manWearYOff != 0 || this.manWearZOff != 0)) {
@@ -258,7 +258,7 @@ public final class ObjType {
 		}
 		@Pc(62) Model local62 = (Model) ObjTypeList.models.get((long) this.id);
 		if (local62 == null) {
-			@Pc(72) Class53_Sub3 local72 = Class53_Sub3.create(ObjTypeList.modelsArchive, this.model);
+			@Pc(72) RawModel local72 = RawModel.create(ObjTypeList.modelsArchive, this.model);
 			if (local72 == null) {
 				return null;
 			}
@@ -286,7 +286,7 @@ public final class ObjType {
 					}
 				}
 			}
-			local62 = local72.method2761(this.ambient + 64, this.contrast + 768, -50, -10, -50);
+			local62 = local72.createModel(this.ambient + 64, this.contrast + 768, -50, -10, -50);
 			if (this.resizeX != 128 || this.resizeY != 128 || this.resizeZ != 128) {
 				local62.method3824(this.resizeX, this.resizeY, this.resizeZ);
 			}
@@ -319,7 +319,7 @@ public final class ObjType {
 	}
 
 	@OriginalMember(owner = "client!td", name = "a", descriptor = "(IZ)Lclient!ml;")
-	public final Class53_Sub3 method4125(@OriginalArg(1) boolean arg0) {
+	public final RawModel method4125(@OriginalArg(1) boolean arg0) {
 		@Pc(14) int local14 = this.manHead2;
 		@Pc(17) int local17 = this.manHead;
 		if (arg0) {
@@ -329,11 +329,11 @@ public final class ObjType {
 		if (local17 == -1) {
 			return null;
 		}
-		@Pc(36) Class53_Sub3 local36 = Class53_Sub3.create(ObjTypeList.modelsArchive, local17);
+		@Pc(36) RawModel local36 = RawModel.create(ObjTypeList.modelsArchive, local17);
 		if (local14 != -1) {
-			@Pc(47) Class53_Sub3 local47 = Class53_Sub3.create(ObjTypeList.modelsArchive, local14);
-			@Pc(58) Class53_Sub3[] local58 = new Class53_Sub3[] { local36, local47 };
-			local36 = new Class53_Sub3(local58, 2);
+			@Pc(47) RawModel local47 = RawModel.create(ObjTypeList.modelsArchive, local14);
+			@Pc(58) RawModel[] local58 = new RawModel[] { local36, local47 };
+			local36 = new RawModel(local58, 2);
 		}
 		if (this.recolorSource != null) {
 			for (@Pc(69) int local69 = 0; local69 < this.recolorSource.length; local69++) {
@@ -466,7 +466,7 @@ public final class ObjType {
 
 	@OriginalMember(owner = "client!td", name = "a", descriptor = "(Lclient!qk;I)Lclient!na;")
 	public final SoftwareModel method4135(@OriginalArg(0) PlayerAppearance arg0) {
-		@Pc(11) Class53_Sub3 local11 = Class53_Sub3.create(ObjTypeList.modelsArchive, this.model);
+		@Pc(11) RawModel local11 = RawModel.create(ObjTypeList.modelsArchive, this.model);
 		if (local11 == null) {
 			return null;
 		}
@@ -494,7 +494,7 @@ public final class ObjType {
 				}
 			}
 		}
-		@Pc(168) SoftwareModel local168 = local11.method2759(this.ambient + 64, this.contrast + 768, -50, -10, -50);
+		@Pc(168) SoftwareModel local168 = local11.createSoftwareModel(this.ambient + 64, this.contrast + 768, -50, -10, -50);
 		if (this.resizeX != 128 || this.resizeY != 128 || this.resizeZ != 128) {
 			local168.method3824(this.resizeX, this.resizeY, this.resizeZ);
 		}
