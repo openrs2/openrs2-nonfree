@@ -2071,7 +2071,7 @@ public final class Protocol {
 		readSelfPlayerInfo();
 		readPlayerInfo();
 		readNewPlayerInfo();
-		readPlayerExtendedInfo();
+		readExtendedPlayerInfo();
 		for (@Pc(19) int i = 0; i < removedCount; i++) {
 			@Pc(34) int id = removedIds[i];
 			if (client.loop != PlayerList.players[id].anInt3990) {
@@ -2236,7 +2236,7 @@ public final class Protocol {
 	}
 
 	@OriginalMember(owner = "client!ud", name = "a", descriptor = "(I)V")
-	private static void readPlayerExtendedInfo() {
+	private static void readExtendedPlayerInfo() {
 		for (@Pc(13) int i = 0; i < extendedCount; i++) {
 			@Pc(24) int id = extendedIds[i];
 			@Pc(28) Player player = PlayerList.players[id];
@@ -2244,12 +2244,12 @@ public final class Protocol {
 			if ((flags & 0x80) != 0) {
 				flags += inboundBuffer.readUnsignedByte() << 8;
 			}
-			readPlayerExtendedInfo(player, id, flags);
+			readExtendedPlayerInfo(player, id, flags);
 		}
 	}
 
 	@OriginalMember(owner = "client!qh", name = "a", descriptor = "(IIILclient!f;)V")
-	private static void readPlayerExtendedInfo(@OriginalArg(3) Player player, @OriginalArg(0) int id, @OriginalArg(1) int flags) {
+	private static void readExtendedPlayerInfo(@OriginalArg(3) Player player, @OriginalArg(0) int id, @OriginalArg(1) int flags) {
 		if ((flags & 0x1) != 0) {
 			@Pc(14) int local14 = inboundBuffer.readUnsignedShortSmart();
 			@Pc(18) int local18 = inboundBuffer.readUnsignedByte();
