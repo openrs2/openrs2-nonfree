@@ -519,7 +519,7 @@ public final class Static27 {
 
 	@OriginalMember(owner = "client!of", name = "a", descriptor = "(BLjava/lang/String;)V")
 	public static void method3185(@OriginalArg(1) String arg0) {
-		if (Static3.anInt2576 >= 2) {
+		if (LoginManager.staffModLevel >= 2) {
 			if (arg0.equalsIgnoreCase("::gc")) {
 				method4709();
 				for (@Pc(20) int local20 = 0; local20 < 10; local20++) {
@@ -829,27 +829,6 @@ public final class Static27 {
 			local21.method2053(local17[local48], local48);
 		}
 		return local17;
-	}
-
-	@OriginalMember(owner = "client!ok", name = "a", descriptor = "(BI)I")
-	public static int method3235(@OriginalArg(1) int arg0) {
-		if (Protocol.socket != null) {
-			Protocol.socket.close();
-			Protocol.socket = null;
-		}
-		Static6.anInt4618++;
-		if (Static6.anInt4618 > 4) {
-			Static7.anInt5319 = 0;
-			Static6.anInt4618 = 0;
-			return arg0;
-		}
-		Static7.anInt5319 = 0;
-		if (client.worldListDefaultPort == client.worldListPort) {
-			client.worldListPort = client.worldListAlternatePort;
-		} else {
-			client.worldListPort = client.worldListDefaultPort;
-		}
-		return -1;
 	}
 
 }

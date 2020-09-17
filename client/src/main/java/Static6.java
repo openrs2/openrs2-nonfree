@@ -284,9 +284,6 @@ public final class Static6 {
 	@OriginalMember(owner = "client!qo", name = "b", descriptor = "[[I")
 	public static final int[][] anIntArrayArray38 = new int[2][8];
 
-	@OriginalMember(owner = "client!r", name = "k", descriptor = "I")
-	public static int anInt3224 = 1;
-
 	@OriginalMember(owner = "client!r", name = "s", descriptor = "[[I")
 	public static final int[][] anIntArrayArray25 = new int[][] { { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }, { 12, 8, 4, 0, 13, 9, 5, 1, 14, 10, 6, 2, 15, 11, 7, 3 }, { 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0 }, { 3, 7, 11, 15, 2, 6, 10, 14, 1, 5, 9, 13, 0, 4, 8, 12 } };
 
@@ -304,9 +301,6 @@ public final class Static6 {
 
 	@OriginalMember(owner = "client!re", name = "c", descriptor = "I")
 	public static int anInt4457 = 0;
-
-	@OriginalMember(owner = "client!re", name = "d", descriptor = "I")
-	public static int anInt4458 = 0;
 
 	@OriginalMember(owner = "client!re", name = "l", descriptor = "Ljava/lang/String;")
 	public static String aString268 = null;
@@ -346,12 +340,6 @@ public final class Static6 {
 
 	@OriginalMember(owner = "client!rk", name = "t", descriptor = "[I")
 	public static int[] anIntArray492 = new int[2];
-
-	@OriginalMember(owner = "client!rl", name = "r", descriptor = "I")
-	public static int anInt4617 = 0;
-
-	@OriginalMember(owner = "client!rl", name = "t", descriptor = "I")
-	public static int anInt4618 = 0;
 
 	@OriginalMember(owner = "client!rl", name = "u", descriptor = "[I")
 	public static final int[] anIntArray494 = new int[] { 2047, 16383, 65535 };
@@ -413,9 +401,6 @@ public final class Static6 {
 	@OriginalMember(owner = "client!sd", name = "c", descriptor = "Z")
 	public static boolean aBoolean330 = false;
 
-	@OriginalMember(owner = "client!sd", name = "f", descriptor = "I")
-	public static int anInt4759 = 0;
-
 	@OriginalMember(owner = "client!sd", name = "h", descriptor = "I")
 	public static int anInt4761 = 0;
 
@@ -455,9 +440,6 @@ public final class Static6 {
 	@OriginalMember(owner = "client!sk", name = "e", descriptor = "Z")
 	public static boolean aBoolean335 = true;
 
-	@OriginalMember(owner = "client!sk", name = "i", descriptor = "J")
-	public static long aLong169 = 0L;
-
 	@OriginalMember(owner = "client!sm", name = "f", descriptor = "I")
 	public static int anInt4907 = 0;
 
@@ -491,17 +473,11 @@ public final class Static6 {
 	@OriginalMember(owner = "client!ta", name = "E", descriptor = "[S")
 	public static final short[] aShortArray100 = new short[500];
 
-	@OriginalMember(owner = "client!tb", name = "g", descriptor = "Ljava/math/BigInteger;")
-	public static final BigInteger aBigInteger2 = new BigInteger("58778699976184461502525193738213253649000149147835990136706041084440742975821");
-
 	@OriginalMember(owner = "client!tb", name = "j", descriptor = "I")
 	public static int anInt5016 = 0;
 
 	@OriginalMember(owner = "client!td", name = "cb", descriptor = "I")
 	public static int anInt5088 = 0;
-
-	@OriginalMember(owner = "client!te", name = "A", descriptor = "I")
-	public static int anInt5117 = 0;
 
 	@OriginalMember(owner = "client!te", name = "F", descriptor = "I")
 	public static int anInt5120 = -1;
@@ -554,9 +530,6 @@ public final class Static6 {
 	@OriginalMember(owner = "client!th", name = "p", descriptor = "[I")
 	public static final int[] anIntArray555 = new int[1];
 
-	@OriginalMember(owner = "client!ti", name = "S", descriptor = "I")
-	public static int anInt5173 = -2;
-
 	@OriginalMember(owner = "client!ti", name = "X", descriptor = "I")
 	public static int anInt5177 = 0;
 
@@ -568,9 +541,6 @@ public final class Static6 {
 
 	@OriginalMember(owner = "client!tj", name = "h", descriptor = "Z")
 	public static boolean aBoolean258 = false;
-
-	@OriginalMember(owner = "client!tj", name = "q", descriptor = "J")
-	public static long aLong127 = 0L;
 
 	@OriginalMember(owner = "client!tj", name = "s", descriptor = "I")
 	public static int anInt3585 = 0;

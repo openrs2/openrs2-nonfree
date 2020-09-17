@@ -266,7 +266,7 @@ public final class Static15 {
 		if (arg0 == 0L) {
 			return;
 		}
-		if (Static6.anInt5214 >= 100 && !Static7.aBoolean399 || Static6.anInt5214 >= 200) {
+		if (Static6.anInt5214 >= 100 && !LoginManager.playerMember || Static6.anInt5214 >= 200) {
 			Static26.method4357("", 0, LocalisedText.FRIENDLISTFULL);
 			return;
 		}
@@ -348,8 +348,8 @@ public final class Static15 {
 
 	@OriginalMember(owner = "client!fd", name = "l", descriptor = "(I)V")
 	public static void method4619() {
-		if (Static3.anInt2574 == 5) {
-			Static3.anInt2574 = 6;
+		if (LoginManager.step == 5) {
+			LoginManager.step = 6;
 		}
 	}
 

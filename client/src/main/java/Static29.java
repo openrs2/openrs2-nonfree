@@ -868,7 +868,7 @@ public final class Static29 {
 		}
 		ReflectionCheck.loop(Protocol.outboundBuffer);
 		synchronized (MouseRecorder.instance.lock) {
-			if (!Static5.aBoolean277) {
+			if (!MouseRecorder.enabled) {
 				MouseRecorder.instance.samples = 0;
 			} else if (Mouse.clickButton != 0 || MouseRecorder.instance.samples >= 40) {
 				Protocol.outboundBuffer.writeOpcode(199);
@@ -1253,7 +1253,7 @@ public final class Static29 {
 											if (Static1.aClass185_1 != null) {
 												Static14.method1047();
 											}
-											if (Static3.anInt2576 > 0 && Keyboard.pressedKeys[82] && Keyboard.pressedKeys[81] && Static3.anInt2885 != 0) {
+											if (LoginManager.staffModLevel > 0 && Keyboard.pressedKeys[82] && Keyboard.pressedKeys[81] && Static3.anInt2885 != 0) {
 												@Pc(1717) int local1717 = Static7.y - Static3.anInt2885;
 												if (local1717 < 0) {
 													local1717 = 0;
@@ -1262,7 +1262,7 @@ public final class Static29 {
 												}
 												Static24.method2945(PlayerList.self.anIntArray422[0] + Static5.originX, Static7.originZ + PlayerList.self.anIntArray426[0], local1717);
 											}
-											if (Static3.anInt2576 > 0 && Keyboard.pressedKeys[82] && Keyboard.pressedKeys[81]) {
+											if (LoginManager.staffModLevel > 0 && Keyboard.pressedKeys[82] && Keyboard.pressedKeys[81]) {
 												if (Static1.anInt528 != -1) {
 													Static24.method2945(Static1.anInt528 + Static5.originX, Static1.anInt420 + Static7.originZ, Static7.y);
 												}

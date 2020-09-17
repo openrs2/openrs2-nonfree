@@ -45,7 +45,7 @@ public final class Cs1ScriptRunner {
 					@Pc(129) Component local129 = InterfaceList.getComponent(local118);
 					pc = local114 + 1;
 					@Pc(134) int local134 = script[local114];
-					if (local134 != -1 && (!ObjTypeList.get(local134).members || Static7.aBoolean370)) {
+					if (local134 != -1 && (!ObjTypeList.get(local134).members || LoginManager.mapMembers)) {
 						for (@Pc(147) int local147 = 0; local147 < local129.anIntArray660.length; local147++) {
 							if (local129.anIntArray660[local147] == local134 + 1) {
 								value += local129.anIntArray661[local147];
@@ -79,7 +79,7 @@ public final class Cs1ScriptRunner {
 					@Pc(276) Component local276 = InterfaceList.getComponent(local265);
 					pc = local261 + 1;
 					@Pc(281) int local281 = script[local261];
-					if (local281 != -1 && (!ObjTypeList.get(local281).members || Static7.aBoolean370)) {
+					if (local281 != -1 && (!ObjTypeList.get(local281).members || LoginManager.mapMembers)) {
 						for (@Pc(295) int local295 = 0; local295 < local276.anIntArray660.length; local295++) {
 							if (local281 + 1 == local276.anIntArray660[local295]) {
 								value = 999999999;

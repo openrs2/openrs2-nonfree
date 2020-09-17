@@ -359,7 +359,7 @@ public final class client extends GameShell {
 		}
 		if (!GlRenderer.enabled && game == 0) {
 			Static14.method1059();
-		} else if (Static3.anInt2574 == 0 && Static6.anInt4759 == 0) {
+		} else if (LoginManager.step == 0 && CreateManager.step == 0) {
 			if (Static1.anInt772 == 2) {
 				Static23.method2537();
 			} else {
@@ -728,11 +728,11 @@ public final class client extends GameShell {
 				mainLoadPercentage = 85;
 			}
 		} else if (mainLoadState == 135) {
-			@Pc(1200) int local1200 = Static22.method2285();
-			if (local1200 == -1) {
+			@Pc(1200) int reply = WorldList.fetch();
+			if (reply == -1) {
 				mainLoadSecondaryText = LocalisedText.MAINLOAD135;
 				mainLoadPercentage = 95;
-			} else if (local1200 == 7 || local1200 == 9) {
+			} else if (reply == 7 || reply == 9) {
 				this.error("worldlistfull");
 				Static9.method233(1000);
 			} else if (WorldList.loaded) {
@@ -740,7 +740,7 @@ public final class client extends GameShell {
 				mainLoadState = 140;
 				mainLoadSecondaryText = LocalisedText.MAINLOAD135B;
 			} else {
-				this.error("worldlistio_" + local1200);
+				this.error("worldlistio_" + reply);
 				Static9.method233(1000);
 			}
 		} else if (mainLoadState == 140) {
@@ -1240,17 +1240,17 @@ public final class client extends GameShell {
 		}
 		if (Static4.anInt3304 == 10) {
 			this.method683();
-			Static35.method4382();
-			Static14.method1100();
-			Static30.method3600();
+			CreateManager.loop();
+			LoginManager.loopAuto();
+			LoginManager.loop();
 		} else if (Static4.anInt3304 == 30) {
 			Static29.method3476();
 		} else if (Static4.anInt3304 == 40) {
-			Static30.method3600();
-			if (Static2.anInt1641 != -3) {
-				if (Static2.anInt1641 == 15) {
+			LoginManager.loop();
+			if (LoginManager.reply != -3) {
+				if (LoginManager.reply == 15) {
 					Static25.method2930();
-				} else if (Static2.anInt1641 != 2) {
+				} else if (LoginManager.reply != 2) {
 					Static19.method1818();
 				}
 			}

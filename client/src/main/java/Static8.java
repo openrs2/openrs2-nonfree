@@ -229,17 +229,6 @@ public final class Static8 {
 		return local2;
 	}
 
-	@OriginalMember(owner = "client!ab", name = "a", descriptor = "(IJ)V")
-	public static void method13(@OriginalArg(1) long arg0) {
-		Protocol.outboundBuffer.position = 0;
-		Protocol.outboundBuffer.writeByte(21);
-		Protocol.outboundBuffer.writeLong(arg0);
-		Static6.anInt5173 = -3;
-		Static2.anInt1213 = 0;
-		Static4.anInt3409 = 0;
-		Static6.anInt4759 = 1;
-	}
-
 	@OriginalMember(owner = "client!ac", name = "a", descriptor = "(IIIII)V")
 	public static void method66(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3) {
 		for (@Pc(3) int local3 = 0; local3 < Static1.anInt113; local3++) {
@@ -341,17 +330,6 @@ public final class Static8 {
 		} else {
 			Static14.method1082(arg0, arg5, arg4, arg1, arg3, arg2);
 		}
-	}
-
-	@OriginalMember(owner = "client!af", name = "d", descriptor = "(B)V")
-	public static void method101() {
-		Static3.anInt2582 = 0;
-		Static3.anInt2574 = 1;
-		Static1.aBoolean38 = false;
-		Static5.anInt3570 = 0;
-		Static6.anInt4458 = 0;
-		Static5.anInt4324 = -1;
-		Static2.anInt1641 = -3;
 	}
 
 	@OriginalMember(owner = "client!af", name = "c", descriptor = "(I)[Lclient!vn;")

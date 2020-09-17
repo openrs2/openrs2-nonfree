@@ -773,7 +773,7 @@ public final class Static13 {
 					}
 					if (local168 != 0L) {
 						@Pc(227) LocType local227 = LocTypeList.get(Integer.MAX_VALUE & (int) (local168 >>> 32));
-						if (!local227.members || Static7.aBoolean370) {
+						if (!local227.members || LoginManager.mapMembers) {
 							@Pc(235) int local235 = local227.anInt5526;
 							if (local227.anIntArray631 != null) {
 								for (@Pc(241) int local241 = 0; local241 < local227.anIntArray631.length; local241++) {

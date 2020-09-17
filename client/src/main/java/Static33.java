@@ -595,7 +595,7 @@ public final class Static33 {
 			if (Static2.aClass4_Sub3_Sub22_1 == null || !client.js5Archive23.isGroupNameValid(Static2.aClass4_Sub3_Sub22_1.aString358 + "_labels")) {
 				Static7.aClass138_14 = new Class138(0);
 			} else if (client.js5Archive23.isFileReady(Static2.aClass4_Sub3_Sub22_1.aString358 + "_labels")) {
-				Static7.aClass138_14 = Static16.method1555(client.js5Archive23, Static2.aClass4_Sub3_Sub22_1.aString358 + "_labels", Static7.aBoolean370);
+				Static7.aClass138_14 = Static16.method1555(client.js5Archive23, Static2.aClass4_Sub3_Sub22_1.aString358 + "_labels", LoginManager.mapMembers);
 			} else {
 				Static3.anInt2886++;
 				local12 = false;

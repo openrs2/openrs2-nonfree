@@ -284,7 +284,7 @@ public final class Static12 {
 										@Pc(550) int[] local550 = new int[3];
 										local545.method4758(local534, local542, local550);
 										if (local550 != null) {
-											if (Keyboard.pressedKeys[82] && Static3.anInt2576 > 0) {
+											if (Keyboard.pressedKeys[82] && LoginManager.staffModLevel > 0) {
 												Static24.method2945(local550[1], local550[2], local550[0]);
 												Static21.method2063();
 												continue;

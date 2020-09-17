@@ -69,7 +69,7 @@ public final class Preferences {
 	public static int particles = 2;
 
 	@OriginalMember(owner = "client!ol", name = "t", descriptor = "I")
-	public static int anInt3909 = 0;
+	public static int favouriteWorlds = 0;
 
 	@OriginalMember(owner = "client!no", name = "ab", descriptor = "I")
 	public static int displayMode = 0;
@@ -126,7 +126,7 @@ public final class Preferences {
 		hdr = false;
 		buildArea = 0;
 		customCursors = true;
-		anInt3909 = 0;
+		favouriteWorlds = 0;
 		aBoolean293 = false;
 		try {
 			@Pc(84) PrivilegedRequest request = signLink.openPreferences("openrs2");
@@ -250,7 +250,7 @@ public final class Preferences {
 			setParticles(particles);
 		}
 		if (version >= 5) {
-			anInt3909 = buffer.readInt();
+			favouriteWorlds = buffer.readInt();
 		}
 		if (version >= 6) {
 			displayMode = buffer.readUnsignedByte();
@@ -320,7 +320,7 @@ public final class Preferences {
 		buffer.writeShort(fullScreenWidth);
 		buffer.writeShort(fullScreenHeight);
 		buffer.writeByte(getParticles());
-		buffer.writeInt(anInt3909);
+		buffer.writeInt(favouriteWorlds);
 		buffer.writeByte(displayMode);
 		buffer.writeByte(safeMode ? 1 : 0);
 		buffer.writeByte(aBoolean293 ? 1 : 0);

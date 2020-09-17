@@ -1493,7 +1493,7 @@ public final class ScriptRunner {
 							continue;
 						}
 						if (opcode == 3312) {
-							intStack[isp++] = Static7.aBoolean370 ? 1 : 0;
+							intStack[isp++] = LoginManager.mapMembers ? 1 : 0;
 							continue;
 						}
 						if (opcode == 3313) {
@@ -1521,8 +1521,8 @@ public final class ScriptRunner {
 							continue;
 						}
 						if (opcode == 3316) {
-							if (Static3.anInt2576 >= 2) {
-								intStack[isp++] = Static3.anInt2576;
+							if (LoginManager.staffModLevel >= 2) {
+								intStack[isp++] = LoginManager.staffModLevel;
 							} else {
 								intStack[isp++] = 0;
 							}
@@ -1545,7 +1545,7 @@ public final class ScriptRunner {
 							continue;
 						}
 						if (opcode == 3323) {
-							if (Static2.anInt1877 >= 5 && Static2.anInt1877 <= 9) {
+							if (LoginManager.playerModLevel >= 5 && LoginManager.playerModLevel <= 9) {
 								intStack[isp++] = 1;
 								continue;
 							}
@@ -1553,15 +1553,15 @@ public final class ScriptRunner {
 							continue;
 						}
 						if (opcode == 3324) {
-							if (Static2.anInt1877 >= 5 && Static2.anInt1877 <= 9) {
-								intStack[isp++] = Static2.anInt1877;
+							if (LoginManager.playerModLevel >= 5 && LoginManager.playerModLevel <= 9) {
+								intStack[isp++] = LoginManager.playerModLevel;
 								continue;
 							}
 							intStack[isp++] = 0;
 							continue;
 						}
 						if (opcode == 3325) {
-							intStack[isp++] = Static7.aBoolean399 ? 1 : 0;
+							intStack[isp++] = LoginManager.playerMember ? 1 : 0;
 							continue;
 						}
 						if (opcode == 3326) {
@@ -1573,11 +1573,11 @@ public final class ScriptRunner {
 							continue;
 						}
 						if (opcode == 3328) {
-							intStack[isp++] = Static1.aBoolean47 && !Static5.aBoolean287 ? 1 : 0;
+							intStack[isp++] = LoginManager.playerUnderage && !LoginManager.parentalChatConsent ? 1 : 0;
 							continue;
 						}
 						if (opcode == 3329) {
-							intStack[isp++] = Static2.aBoolean67 ? 1 : 0;
+							intStack[isp++] = LoginManager.mapQuickChat ? 1 : 0;
 							continue;
 						}
 						if (opcode == 3330) {
@@ -1604,7 +1604,7 @@ public final class ScriptRunner {
 							continue;
 						}
 						if (opcode == 3333) {
-							intStack[isp++] = Static1.anInt1047;
+							intStack[isp++] = LoginManager.type;
 							continue;
 						}
 						if (opcode == 3335) {
@@ -2625,7 +2625,7 @@ public final class ScriptRunner {
 										Static27.method3185(local4125);
 										continue;
 									}
-									if (Static3.anInt2576 == 0 && (Static1.aBoolean47 && !Static5.aBoolean287 || Static2.aBoolean67)) {
+									if (LoginManager.staffModLevel == 0 && (LoginManager.playerUnderage && !LoginManager.parentalChatConsent || LoginManager.mapQuickChat)) {
 										continue;
 									}
 									@Pc(4152) String local4152 = local4125.toLowerCase();
@@ -2753,7 +2753,7 @@ public final class ScriptRunner {
 									ssp -= 2;
 									@Pc(4647) String local4647 = stringStack[ssp];
 									@Pc(4653) String local4653 = stringStack[ssp + 1];
-									if (Static3.anInt2576 != 0 || (!Static1.aBoolean47 || Static5.aBoolean287) && !Static2.aBoolean67) {
+									if (LoginManager.staffModLevel != 0 || (!LoginManager.playerUnderage || LoginManager.parentalChatConsent) && !LoginManager.mapQuickChat) {
 										Protocol.outboundBuffer.writeOpcode(157);
 										Protocol.outboundBuffer.writeByte(0);
 										@Pc(4680) int local4680 = Protocol.outboundBuffer.position;
@@ -2803,7 +2803,7 @@ public final class ScriptRunner {
 								if (opcode == 5015) {
 									@Pc(4812) String local4812;
 									if (PlayerList.self == null || PlayerList.self.name == null) {
-										local4812 = Static3.aString132;
+										local4812 = LoginManager.username;
 									} else {
 										local4812 = PlayerList.self.method1173();
 									}
@@ -3747,8 +3747,8 @@ public final class ScriptRunner {
 									@Pc(5950) int local5950 = intStack[isp];
 									@Pc(5954) String local5954 = stringStack[ssp];
 									@Pc(5960) String local5960 = stringStack[ssp + 1];
-									if (Static4.anInt3304 == 10 && Static6.anInt5117 == 0 && Static3.anInt2574 == 0 && Static6.anInt4759 == 0 && Static7.anInt5319 == 0) {
-										Static30.method3615(local5960, local5954, local5950);
+									if (Static4.anInt3304 == 10 && LoginManager.autoStep == 0 && LoginManager.step == 0 && CreateManager.step == 0 && WorldList.step == 0) {
+										LoginManager.login(local5954, local5960, local5950);
 									}
 									continue;
 								}
@@ -3757,60 +3757,60 @@ public final class ScriptRunner {
 									continue;
 								}
 								if (opcode == 5602) {
-									if (Static3.anInt2574 == 0) {
-										Static2.anInt1641 = -2;
+									if (LoginManager.step == 0) {
+										LoginManager.reply = -2;
 									}
 									continue;
 								}
 								if (opcode == 5603) {
 									isp -= 4;
-									if (Static4.anInt3304 == 10 && Static6.anInt5117 == 0 && Static3.anInt2574 == 0 && Static6.anInt4759 == 0 && Static7.anInt5319 == 0) {
-										Static35.method4339(intStack[isp + 2], intStack[isp + 3], intStack[isp + 1], intStack[isp]);
+									if (Static4.anInt3304 == 10 && LoginManager.autoStep == 0 && LoginManager.step == 0 && CreateManager.step == 0 && WorldList.step == 0) {
+										CreateManager.checkInfo(intStack[isp], intStack[isp + 1], intStack[isp + 2], intStack[isp + 3]);
 									}
 									continue;
 								}
 								if (opcode == 5604) {
 									ssp--;
-									if (Static4.anInt3304 == 10 && Static6.anInt5117 == 0 && Static3.anInt2574 == 0 && Static6.anInt4759 == 0 && Static7.anInt5319 == 0) {
-										Static8.method13(Base37.encode(stringStack[ssp]));
+									if (Static4.anInt3304 == 10 && LoginManager.autoStep == 0 && LoginManager.step == 0 && CreateManager.step == 0 && WorldList.step == 0) {
+										CreateManager.checkName(Base37.encode(stringStack[ssp]));
 									}
 									continue;
 								}
 								if (opcode == 5605) {
 									isp -= 7;
 									ssp -= 3;
-									if (Static4.anInt3304 == 10 && Static6.anInt5117 == 0 && Static3.anInt2574 == 0 && Static6.anInt4759 == 0 && Static7.anInt5319 == 0) {
-										Static30.method3553(intStack[isp + 6] == 1, intStack[isp], intStack[isp + 4] == 1, intStack[isp + 3], stringStack[ssp + 2], intStack[isp + 1], intStack[isp + 2], Base37.encode(stringStack[ssp]), intStack[isp + 5] == 1, stringStack[ssp + 1]);
+									if (Static4.anInt3304 == 10 && LoginManager.autoStep == 0 && LoginManager.step == 0 && CreateManager.step == 0 && WorldList.step == 0) {
+										CreateManager.createAccount(Base37.encode(stringStack[ssp]), stringStack[ssp + 1], stringStack[ssp + 2], intStack[isp], intStack[isp + 1], intStack[isp + 2], intStack[isp + 3], intStack[isp + 4] == 1, intStack[isp + 5] == 1, intStack[isp + 6] == 1);
 									}
 									continue;
 								}
 								if (opcode == 5606) {
-									if (Static6.anInt4759 == 0) {
-										Static6.anInt5173 = -2;
+									if (CreateManager.step == 0) {
+										CreateManager.reply = -2;
 									}
 									continue;
 								}
 								if (opcode == 5607) {
-									intStack[isp++] = Static2.anInt1641;
+									intStack[isp++] = LoginManager.reply;
 									continue;
 								}
 								if (opcode == 5608) {
-									intStack[isp++] = Static3.anInt2582;
+									intStack[isp++] = LoginManager.hopTime;
 									continue;
 								}
 								if (opcode == 5609) {
-									intStack[isp++] = Static6.anInt5173;
+									intStack[isp++] = CreateManager.reply;
 									continue;
 								}
 								if (opcode == 5610) {
 									for (@Pc(6245) int local6245 = 0; local6245 < 5; local6245++) {
-										stringStack[ssp++] = Static2.aStringArray8.length > local6245 ? Static29.method3464(Static2.aStringArray8[local6245]) : "";
+										stringStack[ssp++] = CreateManager.suggestedNames.length > local6245 ? Static29.method3464(CreateManager.suggestedNames[local6245]) : "";
 									}
-									Static2.aStringArray8 = null;
+									CreateManager.suggestedNames = null;
 									continue;
 								}
 								if (opcode == 5611) {
-									intStack[isp++] = Static5.anInt4324;
+									intStack[isp++] = LoginManager.disallowResult;
 									continue;
 								}
 							} else if (opcode < 6100) {
@@ -4330,16 +4330,16 @@ public final class ScriptRunner {
 								}
 							} else if (opcode < 6600) {
 								if (opcode == 6500) {
-									if (Static4.anInt3304 == 10 && Static6.anInt5117 == 0 && Static3.anInt2574 == 0 && Static6.anInt4759 == 0) {
-										intStack[isp++] = Static22.method2285() == -1 ? 0 : 1;
+									if (Static4.anInt3304 == 10 && LoginManager.autoStep == 0 && LoginManager.step == 0 && CreateManager.step == 0) {
+										intStack[isp++] = WorldList.fetch() == -1 ? 0 : 1;
 										continue;
 									}
 									intStack[isp++] = 1;
 									continue;
 								}
 								if (opcode == 6501) {
-									@Pc(7710) World local7710 = Static20.method1991();
-									if (local7710 == null) {
+									@Pc(7710) World world = WorldList.head();
+									if (world == null) {
 										@Pc(7758) int local7758 = isp + 1;
 										intStack[isp] = -1;
 										intStack[local7758++] = 0;
@@ -4352,22 +4352,22 @@ public final class ScriptRunner {
 										intStack[local7758] = 0;
 									} else {
 										@Pc(7716) int local7716 = isp + 1;
-										intStack[isp] = local7710.id;
-										intStack[local7716++] = local7710.flags;
+										intStack[isp] = world.id;
+										intStack[local7716++] = world.flags;
 										@Pc(7728) int local7728 = ssp + 1;
-										stringStack[ssp] = local7710.activity;
-										@Pc(7735) Country local7735 = local7710.getCountry();
-										intStack[local7716++] = local7735.flag;
+										stringStack[ssp] = world.activity;
+										@Pc(7735) Country country = world.getCountry();
+										intStack[local7716++] = country.flag;
 										ssp = local7728 + 1;
-										stringStack[local7728] = local7735.name;
+										stringStack[local7728] = country.name;
 										isp = local7716 + 1;
-										intStack[local7716] = local7710.players;
+										intStack[local7716] = world.players;
 									}
 									continue;
 								}
 								if (opcode == 6502) {
-									@Pc(7796) World local7796 = Static19.method1777();
-									if (local7796 == null) {
+									@Pc(7796) World world = WorldList.next();
+									if (world == null) {
 										@Pc(7801) int local7801 = isp + 1;
 										intStack[isp] = -1;
 										intStack[local7801++] = 0;
@@ -4380,25 +4380,25 @@ public final class ScriptRunner {
 										intStack[local7801] = 0;
 									} else {
 										@Pc(7833) int local7833 = isp + 1;
-										intStack[isp] = local7796.id;
-										intStack[local7833++] = local7796.flags;
+										intStack[isp] = world.id;
+										intStack[local7833++] = world.flags;
 										@Pc(7845) int local7845 = ssp + 1;
-										stringStack[ssp] = local7796.activity;
-										@Pc(7852) Country local7852 = local7796.getCountry();
-										intStack[local7833++] = local7852.flag;
+										stringStack[ssp] = world.activity;
+										@Pc(7852) Country country = world.getCountry();
+										intStack[local7833++] = country.flag;
 										ssp = local7845 + 1;
-										stringStack[local7845] = local7852.name;
+										stringStack[local7845] = country.name;
 										isp = local7833 + 1;
-										intStack[local7833] = local7796.players;
+										intStack[local7833] = world.players;
 									}
 									continue;
 								}
 								if (opcode == 6503) {
 									@Pc(7880) int local7880 = isp - 1;
-									@Pc(7883) int local7883 = intStack[local7880];
-									if (Static4.anInt3304 == 10 && Static6.anInt5117 == 0 && Static3.anInt2574 == 0 && Static6.anInt4759 == 0) {
+									@Pc(7883) int id = intStack[local7880];
+									if (Static4.anInt3304 == 10 && LoginManager.autoStep == 0 && LoginManager.step == 0 && CreateManager.step == 0) {
 										isp = local7880 + 1;
-										intStack[local7880] = Static37.method4720(local7883) ? 1 : 0;
+										intStack[local7880] = WorldList.switchWorld(id) ? 1 : 0;
 										continue;
 									}
 									isp = local7880 + 1;
@@ -4407,19 +4407,19 @@ public final class ScriptRunner {
 								}
 								if (opcode == 6504) {
 									isp--;
-									Preferences.anInt3909 = intStack[isp];
+									Preferences.favouriteWorlds = intStack[isp];
 									Preferences.write(GameShell.signLink);
 									continue;
 								}
 								if (opcode == 6505) {
-									intStack[isp++] = Preferences.anInt3909;
+									intStack[isp++] = Preferences.favouriteWorlds;
 									continue;
 								}
 								if (opcode == 6506) {
 									@Pc(7950) int local7950 = isp - 1;
-									@Pc(7953) int local7953 = intStack[local7950];
-									@Pc(7957) World local7957 = WorldList.get(local7953);
-									if (local7957 == null) {
+									@Pc(7953) int id = intStack[local7950];
+									@Pc(7957) World world = WorldList.get(id);
+									if (world == null) {
 										@Pc(7963) int local7963 = local7950 + 1;
 										intStack[local7950] = -1;
 										@Pc(7968) int local7968 = ssp + 1;
@@ -4431,25 +4431,25 @@ public final class ScriptRunner {
 										intStack[local7963] = 0;
 									} else {
 										@Pc(7990) int local7990 = local7950 + 1;
-										intStack[local7950] = local7957.flags;
+										intStack[local7950] = world.flags;
 										@Pc(7996) int local7996 = ssp + 1;
-										stringStack[ssp] = local7957.activity;
-										@Pc(8003) Country local8003 = local7957.getCountry();
-										intStack[local7990++] = local8003.flag;
+										stringStack[ssp] = world.activity;
+										@Pc(8003) Country country = world.getCountry();
+										intStack[local7990++] = country.flag;
 										ssp = local7996 + 1;
-										stringStack[local7996] = local8003.name;
+										stringStack[local7996] = country.name;
 										isp = local7990 + 1;
-										intStack[local7990] = local7957.players;
+										intStack[local7990] = world.players;
 									}
 									continue;
 								}
 								if (opcode == 6507) {
 									isp -= 4;
-									@Pc(8031) int local8031 = intStack[isp];
-									@Pc(8044) boolean local8044 = intStack[isp + 1] == 1;
-									@Pc(8050) int local8050 = intStack[isp + 2];
-									@Pc(8063) boolean local8063 = intStack[isp + 3] == 1;
-									WorldList.sort(local8031, local8044, local8050, local8063);
+									@Pc(8031) int primaryField = intStack[isp];
+									@Pc(8044) boolean primaryDesc = intStack[isp + 1] == 1;
+									@Pc(8050) int secondaryField = intStack[isp + 2];
+									@Pc(8063) boolean secondaryDesc = intStack[isp + 3] == 1;
+									WorldList.sort(primaryField, primaryDesc, secondaryField, secondaryDesc);
 									continue;
 								}
 							} else if (opcode < 6700) {

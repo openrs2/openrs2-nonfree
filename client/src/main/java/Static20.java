@@ -919,7 +919,7 @@ public final class Static20 {
 			Static4.anInt2644 = 50;
 			GameShell.resetTimer();
 		} else if (Static4.anInt2644 == 50) {
-			method2407(new Buffer(Static3.aClass58_65.fetchFile(Static3.aClass4_Sub3_Sub22_3.aString358, "loc")), Static7.aBoolean370);
+			method2407(new Buffer(Static3.aClass58_65.fetchFile(Static3.aClass4_Sub3_Sub22_3.aString358, "loc")), LoginManager.mapMembers);
 			Static4.anInt2644 = 60;
 			Static32.method3917(true);
 			GameShell.resetTimer();
@@ -928,7 +928,7 @@ public final class Static20 {
 				if (!Static3.aClass58_65.isFileReady(Static3.aClass4_Sub3_Sub22_3.aString358 + "_labels")) {
 					return;
 				}
-				Static3.aClass138_6 = Static16.method1555(Static3.aClass58_65, Static3.aClass4_Sub3_Sub22_3.aString358 + "_labels", Static7.aBoolean370);
+				Static3.aClass138_6 = Static16.method1555(Static3.aClass58_65, Static3.aClass4_Sub3_Sub22_3.aString358 + "_labels", LoginManager.mapMembers);
 			} else {
 				Static3.aClass138_6 = new Class138(0);
 			}
@@ -1347,9 +1347,4 @@ public final class Static20 {
 		}
 	}
 
-	@OriginalMember(owner = "client!jc", name = "d", descriptor = "(I)Lclient!gb;")
-	public static World method1991() {
-		Static6.anInt3224 = 0;
-		return Static19.method1777();
-	}
 }

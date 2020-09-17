@@ -98,7 +98,7 @@ public final class TracingException extends RuntimeException {
 			if (signLink.applet == null) {
 				return;
 			}
-			@Pc(115) PrivilegedRequest request = signLink.openUrlStream(new URL(signLink.applet.getCodeBase(), "clienterror.ws?c=" + clientVersion + "&u=" + Static1.aLong23 + "&v1=" + SignLink.javaVendor + "&v2=" + SignLink.javaVersion + "&e=" + encodedMessage));
+			@Pc(115) PrivilegedRequest request = signLink.openUrlStream(new URL(signLink.applet.getCodeBase(), "clienterror.ws?c=" + clientVersion + "&u=" + LoginManager.encodedUsername + "&v1=" + SignLink.javaVendor + "&v2=" + SignLink.javaVersion + "&e=" + encodedMessage));
 			while (request.status == 0) {
 				ThreadUtils.sleep(1L);
 			}

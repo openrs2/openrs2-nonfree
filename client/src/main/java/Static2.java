@@ -1,5 +1,4 @@
 import java.awt.Image;
-import java.math.BigInteger;
 
 import dev.openrs2.deob.annotation.OriginalMember;
 
@@ -38,9 +37,6 @@ public final class Static2 {
 	@OriginalMember(owner = "client!ea", name = "H", descriptor = "[I")
 	public static int[] anIntArray85;
 
-	@OriginalMember(owner = "client!ef", name = "e", descriptor = "[B")
-	public static byte[] aByteArray10;
-
 	@OriginalMember(owner = "client!eg", name = "s", descriptor = "[Lclient!uj;")
 	public static Sprite[] aClass4_Sub3_Sub14Array7;
 
@@ -67,9 +63,6 @@ public final class Static2 {
 
 	@OriginalMember(owner = "client!en", name = "e", descriptor = "I")
 	public static int anInt1344;
-
-	@OriginalMember(owner = "client!en", name = "p", descriptor = "[Ljava/lang/String;")
-	public static String[] aStringArray8;
 
 	@OriginalMember(owner = "client!eo", name = "v", descriptor = "[Lclient!fe;")
 	public static SoftwareIndexedSprite[] aClass56_Sub1Array1;
@@ -251,15 +244,6 @@ public final class Static2 {
 	@OriginalMember(owner = "client!ea", name = "K", descriptor = "I")
 	public static int anInt1121 = 1;
 
-	@OriginalMember(owner = "client!ea", name = "M", descriptor = "I")
-	public static int anInt1123 = 0;
-
-	@OriginalMember(owner = "client!ed", name = "y", descriptor = "Z")
-	public static boolean aBoolean67 = false;
-
-	@OriginalMember(owner = "client!ed", name = "A", descriptor = "I")
-	public static int anInt1213 = 0;
-
 	@OriginalMember(owner = "client!ed", name = "F", descriptor = "[Z")
 	public static final boolean[] aBooleanArray5 = new boolean[100];
 
@@ -274,9 +258,6 @@ public final class Static2 {
 
 	@OriginalMember(owner = "client!eg", name = "m", descriptor = "I")
 	public static int anInt1231 = 0;
-
-	@OriginalMember(owner = "client!eg", name = "D", descriptor = "Ljava/lang/String;")
-	public static String aString76 = "";
 
 	@OriginalMember(owner = "client!ei", name = "D", descriptor = "Lclient!ic;")
 	public static final HashTable aClass84_5 = new HashTable(512);
@@ -305,9 +286,6 @@ public final class Static2 {
 	@OriginalMember(owner = "client!eo", name = "a", descriptor = "I")
 	public static final int anInt1360 = 5063219;
 
-	@OriginalMember(owner = "client!eo", name = "b", descriptor = "Ljava/math/BigInteger;")
-	public static final BigInteger aBigInteger1 = new BigInteger("7162900525229798032761816791230527296329313291232324290237849263501208207972894053929065636522363163621000728841182238772712427862772219676577293600221789");
-
 	@OriginalMember(owner = "client!eo", name = "l", descriptor = "I")
 	public static int anInt1367 = -1;
 
@@ -335,9 +313,6 @@ public final class Static2 {
 	@OriginalMember(owner = "client!fa", name = "eb", descriptor = "I")
 	public static int anInt1634 = 0;
 
-	@OriginalMember(owner = "client!fc", name = "e", descriptor = "I")
-	public static int anInt1641 = -2;
-
 	@OriginalMember(owner = "client!fd", name = "t", descriptor = "[Ljava/lang/String;")
 	public static final String[] aStringArray40 = new String[8];
 
@@ -352,9 +327,6 @@ public final class Static2 {
 
 	@OriginalMember(owner = "client!fj", name = "Z", descriptor = "I")
 	public static int anInt1874 = -1;
-
-	@OriginalMember(owner = "client!fj", name = "eb", descriptor = "I")
-	public static int anInt1877 = 0;
 
 	@OriginalMember(owner = "client!fl", name = "W", descriptor = "Lclient!ll;")
 	public static final LinkedList aClass112_9 = new LinkedList();

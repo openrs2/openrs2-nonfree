@@ -1,6 +1,3 @@
-import java.io.IOException;
-import java.net.Socket;
-
 import dev.openrs2.deob.annotation.OriginalArg;
 import dev.openrs2.deob.annotation.OriginalMember;
 import dev.openrs2.deob.annotation.Pc;
@@ -387,7 +384,7 @@ public final class Static35 {
 			if (local24 == 0) {
 				Static6.anInt4946 = 1;
 				Static27.method3186(Static7.y, local15, local19);
-			} else if (Static3.anInt2576 > 0 && Keyboard.pressedKeys[82] && Keyboard.pressedKeys[81]) {
+			} else if (LoginManager.staffModLevel > 0 && Keyboard.pressedKeys[82] && Keyboard.pressedKeys[81]) {
 				Static24.method2945(Static5.originX + local15, Static7.originZ + local19, Static7.y);
 			} else {
 				Protocol.outboundBuffer.writeOpcode(85);
@@ -537,7 +534,7 @@ public final class Static35 {
 			if (local24 == 0) {
 				Static27.method3186(Static7.y, local15, local19);
 			} else if (local24 == 1) {
-				if (Static3.anInt2576 > 0 && Keyboard.pressedKeys[82] && Keyboard.pressedKeys[81]) {
+				if (LoginManager.staffModLevel > 0 && Keyboard.pressedKeys[82] && Keyboard.pressedKeys[81]) {
 					Static24.method2945(local15 + Static5.originX, local19 + Static7.originZ, Static7.y);
 				} else {
 					Static37.method4661(local15, 1, local19);
@@ -1129,20 +1126,6 @@ public final class Static35 {
 		}
 	}
 
-	@OriginalMember(owner = "client!uk", name = "a", descriptor = "(ZIIII)V")
-	public static void method4339(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3) {
-		Protocol.outboundBuffer.position = 0;
-		Protocol.outboundBuffer.writeByte(20);
-		Protocol.outboundBuffer.writeByte(arg3);
-		Protocol.outboundBuffer.writeByte(arg2);
-		Protocol.outboundBuffer.writeShort(arg0);
-		Protocol.outboundBuffer.writeShort(arg1);
-		Static2.anInt1213 = 0;
-		Static6.anInt4759 = 1;
-		Static6.anInt5173 = -3;
-		Static4.anInt3409 = 0;
-	}
-
 	@OriginalMember(owner = "client!ul", name = "a", descriptor = "(ILclient!wf;IIIII)V")
 	public static void method4360(@OriginalArg(0) int arg0, @OriginalArg(1) Component arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5) {
 		@Pc(10) MelType local10 = MelTypeList.get(arg3);
@@ -1226,110 +1209,6 @@ public final class Static35 {
 		Static7.anInt5426 = arg0 + 1 & 0xFFFF;
 		Static1.aBoolean50 = true;
 		return true;
-	}
-
-	@OriginalMember(owner = "client!un", name = "c", descriptor = "(B)V")
-	public static void method4382() {
-		if (Static6.anInt4759 == 0) {
-			return;
-		}
-		try {
-			if (++Static2.anInt1213 > 2000) {
-				if (Protocol.socket != null) {
-					Protocol.socket.close();
-					Protocol.socket = null;
-				}
-				if (Static4.anInt3409 >= 1) {
-					Static6.anInt5173 = -5;
-					Static6.anInt4759 = 0;
-					return;
-				}
-				Static2.anInt1213 = 0;
-				Static6.anInt4759 = 1;
-				Static4.anInt3409++;
-				if (client.port == client.defaultPort) {
-					client.port = client.alternatePort;
-				} else {
-					client.port = client.defaultPort;
-				}
-			}
-			if (Static6.anInt4759 == 1) {
-				Static7.aClass197_5 = GameShell.signLink.openSocket(client.hostname, client.port);
-				Static6.anInt4759 = 2;
-			}
-			if (Static6.anInt4759 == 2) {
-				if (Static7.aClass197_5.status == 2) {
-					throw new IOException();
-				}
-				if (Static7.aClass197_5.status != 1) {
-					return;
-				}
-				Protocol.socket = new BufferedSocket((Socket) Static7.aClass197_5.result, GameShell.signLink);
-				Static7.aClass197_5 = null;
-				Protocol.socket.write(Protocol.outboundBuffer.bytes, Protocol.outboundBuffer.position);
-				if (client.musicChannel != null) {
-					client.musicChannel.method2996();
-				}
-				if (client.soundChannel != null) {
-					client.soundChannel.method2996();
-				}
-				@Pc(129) int local129 = Protocol.socket.read();
-				if (client.musicChannel != null) {
-					client.musicChannel.method2996();
-				}
-				if (client.soundChannel != null) {
-					client.soundChannel.method2996();
-				}
-				if (local129 != 21) {
-					Static6.anInt5173 = local129;
-					Static6.anInt4759 = 0;
-					Protocol.socket.close();
-					Protocol.socket = null;
-					return;
-				}
-				Static6.anInt4759 = 3;
-			}
-			if (Static6.anInt4759 == 3) {
-				if (Protocol.socket.available() < 1) {
-					return;
-				}
-				Static2.aStringArray8 = new String[Protocol.socket.read()];
-				Static6.anInt4759 = 4;
-			}
-			if (Static6.anInt4759 == 4) {
-				if (Protocol.socket.available() < Static2.aStringArray8.length * 8) {
-					return;
-				}
-				Protocol.inboundBuffer.position = 0;
-				Protocol.socket.read(Protocol.inboundBuffer.bytes, 0, Static2.aStringArray8.length * 8);
-				for (@Pc(199) int local199 = 0; local199 < Static2.aStringArray8.length; local199++) {
-					Static2.aStringArray8[local199] = Base37.decodeLowerCase(Protocol.inboundBuffer.readLong());
-				}
-				Static6.anInt4759 = 0;
-				Static6.anInt5173 = 21;
-				Protocol.socket.close();
-				Protocol.socket = null;
-				return;
-			}
-		} catch (@Pc(226) IOException local226) {
-			if (Protocol.socket != null) {
-				Protocol.socket.close();
-				Protocol.socket = null;
-			}
-			if (Static4.anInt3409 >= 1) {
-				Static6.anInt4759 = 0;
-				Static6.anInt5173 = -4;
-			} else {
-				Static2.anInt1213 = 0;
-				Static6.anInt4759 = 1;
-				if (client.port == client.defaultPort) {
-					client.port = client.alternatePort;
-				} else {
-					client.port = client.defaultPort;
-				}
-				Static4.anInt3409++;
-			}
-		}
 	}
 
 }

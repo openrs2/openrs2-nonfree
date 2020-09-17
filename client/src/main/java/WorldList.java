@@ -1,10 +1,26 @@
+import java.io.IOException;
+import java.net.Socket;
+import java.net.URL;
+
 import dev.openrs2.deob.annotation.OriginalArg;
 import dev.openrs2.deob.annotation.OriginalMember;
 import dev.openrs2.deob.annotation.Pc;
 
 public final class WorldList {
+	@OriginalMember(owner = "client!ud", name = "a", descriptor = "I")
+	public static int step = 0;
+
+	@OriginalMember(owner = "client!rl", name = "t", descriptor = "I")
+	private static int errors = 0;
+
+	@OriginalMember(owner = "client!ue", name = "G", descriptor = "J")
+	private static long openTime = 0L;
+
+	@OriginalMember(owner = "client!sk", name = "i", descriptor = "J")
+	private static long closeTime = 0L;
+
 	@OriginalMember(owner = "client!kf", name = "t", descriptor = "I")
-	public static int checksum;
+	private static int checksum;
 
 	@OriginalMember(owner = "client!sm", name = "e", descriptor = "Z")
 	public static boolean loaded = false;
@@ -27,8 +43,20 @@ public final class WorldList {
 	@OriginalMember(owner = "client!je", name = "d", descriptor = "[Lclient!gb;")
 	public static World[] sorted = new World[0];
 
+	@OriginalMember(owner = "client!r", name = "k", descriptor = "I")
+	private static int iterator = 1;
+
+	@OriginalMember(owner = "client!ef", name = "e", descriptor = "[B")
+	private static byte[] buffer;
+
+	@OriginalMember(owner = "client!ea", name = "M", descriptor = "I")
+	private static int bufferOff = 0;
+
+	@OriginalMember(owner = "client!rl", name = "r", descriptor = "I")
+	private static int bufferLen = 0;
+
 	@OriginalMember(owner = "client!gd", name = "a", descriptor = "(B[B)Z")
-	public static boolean decode(@OriginalArg(1) byte[] bytes) {
+	private static boolean decode(@OriginalArg(1) byte[] bytes) {
 		@Pc(8) Buffer buffer = new Buffer(bytes);
 		@Pc(12) int updated = buffer.readUnsignedByte();
 		if (updated != 1) {
@@ -169,5 +197,168 @@ public final class WorldList {
 		} else {
 			return x.id - y.id;
 		}
+	}
+
+	@OriginalMember(owner = "client!we", name = "a", descriptor = "(BI)Z")
+	public static boolean switchWorld(@OriginalArg(1) int id) {
+		@Pc(8) World world = get(id);
+		if (world == null) {
+			return false;
+		} else if (SignLink.anInt6106 == 1 || SignLink.anInt6106 == 2 || client.modeWhere == 2) {
+			client.hostname = world.hostname;
+			client.worldId = world.id;
+			if (client.modeWhere != 0) {
+				client.alternatePort = client.worldId + 50000;
+				client.defaultPort = client.worldId + 40000;
+				client.port = client.defaultPort;
+			}
+			return true;
+		} else {
+			@Pc(52) String port = "";
+			@Pc(54) String settings = "";
+			if (client.settings != null) {
+				settings = "/p=" + client.settings;
+			}
+			if (client.modeWhere != 0) {
+				port = ":" + (world.id + 7000);
+			}
+			@Pc(130) String url = "http://" + world.hostname + port + "/l=" + client.language + "/a=" + client.affiliate + settings + "/j" + (client.javaScript ? "1" : "0") + ",o" + (client.objectTag ? "1" : "0") + ",a2,m" + (client.advertSuppressed ? "1" : "0");
+			try {
+				client.instance.getAppletContext().showDocument(new URL(url), "_self");
+				return true;
+			} catch (@Pc(140) Exception ex) {
+				return false;
+			}
+		}
+	}
+
+	@OriginalMember(owner = "client!jc", name = "d", descriptor = "(I)Lclient!gb;")
+	public static World head() {
+		iterator = 0;
+		return next();
+	}
+
+	@OriginalMember(owner = "client!hk", name = "g", descriptor = "(I)Lclient!gb;")
+	public static World next() {
+		return iterator >= sorted.length ? null : sorted[iterator++];
+	}
+
+	@OriginalMember(owner = "client!kf", name = "a", descriptor = "(I)I")
+	public static int fetch() {
+		try {
+			if (step == 0) {
+				if (MonotonicClock.currentTimeMillis() - 5000L < closeTime) {
+					return 0;
+				}
+				Protocol.socketRequest = GameShell.signLink.openSocket(client.worldListHostname, client.worldListPort);
+				openTime = MonotonicClock.currentTimeMillis();
+				step = 1;
+			}
+			if (MonotonicClock.currentTimeMillis() > openTime + 30000L) {
+				return close(1000);
+			}
+			if (step == 1) {
+				if (Protocol.socketRequest.status == 2) {
+					return close(1001);
+				}
+				if (Protocol.socketRequest.status != 1) {
+					return -1;
+				}
+				Protocol.socket = new BufferedSocket((Socket) Protocol.socketRequest.result, GameShell.signLink);
+				Protocol.socketRequest = null;
+				@Pc(79) int checksum = 0;
+				if (loaded) {
+					checksum = WorldList.checksum;
+				}
+				Protocol.outboundBuffer.position = 0;
+				Protocol.outboundBuffer.writeByte(23);
+				Protocol.outboundBuffer.writeInt(checksum);
+				Protocol.socket.write(Protocol.outboundBuffer.bytes, Protocol.outboundBuffer.position);
+				if (client.musicChannel != null) {
+					client.musicChannel.method2996();
+				}
+				if (client.soundChannel != null) {
+					client.soundChannel.method2996();
+				}
+				@Pc(117) int reply = Protocol.socket.read();
+				if (client.musicChannel != null) {
+					client.musicChannel.method2996();
+				}
+				if (client.soundChannel != null) {
+					client.soundChannel.method2996();
+				}
+				if (reply != 0) {
+					return close(reply);
+				}
+				step = 2;
+			}
+			if (step == 2) {
+				if (Protocol.socket.available() < 2) {
+					return -1;
+				}
+				bufferLen = Protocol.socket.read();
+				bufferLen <<= 8;
+				bufferLen += Protocol.socket.read();
+				buffer = new byte[bufferLen];
+				bufferOff = 0;
+				step = 3;
+			}
+			if (step != 3) {
+				return -1;
+			}
+			@Pc(189) int n = Protocol.socket.available();
+			if (n < 1) {
+				return -1;
+			}
+			if (n > bufferLen - bufferOff) {
+				n = bufferLen - bufferOff;
+			}
+			Protocol.socket.read(buffer, bufferOff, n);
+			bufferOff += n;
+			if (bufferOff < bufferLen) {
+				return -1;
+			} else if (decode(buffer)) {
+				@Pc(233) int i = 0;
+				sorted = new World[size];
+				for (@Pc(238) int id = minId; id <= maxId; id++) {
+					@Pc(249) World world = get(id);
+					if (world != null) {
+						sorted[i++] = world;
+					}
+				}
+				Protocol.socket.close();
+				buffer = null;
+				step = 0;
+				errors = 0;
+				Protocol.socket = null;
+				closeTime = MonotonicClock.currentTimeMillis();
+				return 0;
+			} else {
+				return close(1002);
+			}
+		} catch (@Pc(278) IOException ex) {
+			return close(1003);
+		}
+	}
+
+	@OriginalMember(owner = "client!ok", name = "a", descriptor = "(BI)I")
+	private static int close(@OriginalArg(1) int reply) {
+		if (Protocol.socket != null) {
+			Protocol.socket.close();
+			Protocol.socket = null;
+		}
+		errors++;
+		if (errors > 4) {
+			step = 0;
+			errors = 0;
+			return reply;
+		}
+		step = 0;
+		if (client.worldListDefaultPort == client.worldListPort) {
+			client.worldListPort = client.worldListAlternatePort;
+		} else {
+			client.worldListPort = client.worldListDefaultPort;
+		}
+		return -1;
 	}
 }

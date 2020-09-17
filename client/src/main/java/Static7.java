@@ -106,9 +106,6 @@ public final class Static7 {
 	@OriginalMember(owner = "client!wa", name = "Ub", descriptor = "[I")
 	public static int[] anIntArray650;
 
-	@OriginalMember(owner = "client!wb", name = "D", descriptor = "Lsignlink!vk;")
-	public static PrivilegedRequest aClass197_5;
-
 	@OriginalMember(owner = "client!wb", name = "J", descriptor = "I")
 	public static int anInt5798;
 
@@ -169,17 +166,11 @@ public final class Static7 {
 	@OriginalMember(owner = "client!uc", name = "ab", descriptor = "[I")
 	public static final int[] anIntArray598 = new int[100];
 
-	@OriginalMember(owner = "client!ud", name = "a", descriptor = "I")
-	public static int anInt5319 = 0;
-
 	@OriginalMember(owner = "client!ud", name = "k", descriptor = "[I")
 	public static final int[] anIntArray599 = new int[25];
 
 	@OriginalMember(owner = "client!ue", name = "m", descriptor = "S")
 	public static short aShort11 = 32767;
-
-	@OriginalMember(owner = "client!ue", name = "G", descriptor = "J")
-	public static long aLong35 = 0L;
 
 	@OriginalMember(owner = "client!uf", name = "a", descriptor = "[Z")
 	public static final boolean[] aBooleanArray25 = new boolean[] { true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, false };
@@ -265,9 +256,6 @@ public final class Static7 {
 	@OriginalMember(owner = "client!vb", name = "ab", descriptor = "I")
 	public static int anInt5473 = 1;
 
-	@OriginalMember(owner = "client!vb", name = "bb", descriptor = "Z")
-	public static boolean aBoolean370 = false;
-
 	@OriginalMember(owner = "client!vc", name = "l", descriptor = "[I")
 	public static final int[] anIntArray501 = new int[25];
 
@@ -318,9 +306,6 @@ public final class Static7 {
 
 	@OriginalMember(owner = "client!wc", name = "c", descriptor = "[Lclient!jd;")
 	public static final Class94[] aClass94Array1 = new Class94[8];
-
-	@OriginalMember(owner = "client!wd", name = "qb", descriptor = "Z")
-	public static boolean aBoolean399 = false;
 
 	@OriginalMember(owner = "client!wd", name = "yb", descriptor = "[I")
 	public static final int[] anIntArray656 = new int[32];

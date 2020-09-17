@@ -280,9 +280,6 @@ public final class Static3 {
 	@OriginalMember(owner = "client!gh", name = "d", descriptor = "I")
 	public static int anInt2579 = 0;
 
-	@OriginalMember(owner = "client!gh", name = "i", descriptor = "I")
-	public static int anInt2582 = 0;
-
 	@OriginalMember(owner = "client!gk", name = "d", descriptor = "[F")
 	public static final float[] aFloatArray21 = new float[4];
 
@@ -409,9 +406,6 @@ public final class Static3 {
 	@OriginalMember(owner = "client!ho", name = "T", descriptor = "[I")
 	public static final int[] anIntArray190 = new int[14];
 
-	@OriginalMember(owner = "client!i", name = "a", descriptor = "Ljava/lang/String;")
-	public static String aString132 = "";
-
 	@OriginalMember(owner = "client!i", name = "b", descriptor = "I")
 	public static int anInt2297 = 0;
 
@@ -504,12 +498,6 @@ public final class Static3 {
 
 	@OriginalMember(owner = "client!je", name = "e", descriptor = "I")
 	public static int anInt2571 = -1;
-
-	@OriginalMember(owner = "client!je", name = "h", descriptor = "I")
-	public static int anInt2574 = 0;
-
-	@OriginalMember(owner = "client!je", name = "k", descriptor = "I")
-	public static int anInt2576 = 0;
 
 	@OriginalMember(owner = "client!jf", name = "a", descriptor = "Lclient!ll;")
 	public static final LinkedList aClass112_26 = new LinkedList();

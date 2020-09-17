@@ -7,11 +7,6 @@ import dev.openrs2.deob.annotation.Pc;
 
 public final class Static19 {
 
-	@OriginalMember(owner = "client!hk", name = "g", descriptor = "(I)Lclient!gb;")
-	public static World method1777() {
-		return WorldList.sorted.length <= Static6.anInt3224 ? null : WorldList.sorted[Static6.anInt3224++];
-	}
-
 	@OriginalMember(owner = "client!hk", name = "a", descriptor = "(Lclient!em;[I[[FIILclient!pi;[[FI[[FI[[I)V")
 	public static void method1778(@OriginalArg(0) Class50 arg0, @OriginalArg(1) int[] arg1, @OriginalArg(2) float[][] arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) Class135 arg5, @OriginalArg(6) float[][] arg6, @OriginalArg(8) float[][] arg7, @OriginalArg(9) int arg8, @OriginalArg(10) int[][] arg9) {
 		@Pc(11) int[] local11 = new int[arg1.length / 2];

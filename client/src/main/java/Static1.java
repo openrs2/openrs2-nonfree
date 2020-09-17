@@ -104,9 +104,6 @@ public final class Static1 {
 	@OriginalMember(owner = "client!bn", name = "I", descriptor = "F")
 	public static float aFloat15;
 
-	@OriginalMember(owner = "client!bo", name = "b", descriptor = "J")
-	public static long aLong23;
-
 	@OriginalMember(owner = "client!bo", name = "o", descriptor = "Ljava/awt/FontMetrics;")
 	public static FontMetrics aFontMetrics1;
 
@@ -311,9 +308,6 @@ public final class Static1 {
 	@OriginalMember(owner = "client!bg", name = "u", descriptor = "[Lclient!t;")
 	public static final Class160[] aClass160Array1 = new Class160[6];
 
-	@OriginalMember(owner = "client!bh", name = "d", descriptor = "I")
-	public static int anInt1047 = -1;
-
 	@OriginalMember(owner = "client!bi", name = "s", descriptor = "I")
 	public static int anInt315 = 0;
 
@@ -403,9 +397,6 @@ public final class Static1 {
 
 	@OriginalMember(owner = "client!cm", name = "c", descriptor = "I")
 	public static int anInt789 = 0;
-
-	@OriginalMember(owner = "client!cm", name = "d", descriptor = "Z")
-	public static boolean aBoolean47 = false;
 
 	@OriginalMember(owner = "client!d", name = "j", descriptor = "I")
 	public static int anInt837 = 0;

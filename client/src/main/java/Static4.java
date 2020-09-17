@@ -270,9 +270,6 @@ public final class Static4 {
 	@OriginalMember(owner = "client!km", name = "db", descriptor = "I")
 	public static int anInt2959 = 0;
 
-	@OriginalMember(owner = "client!kn", name = "E", descriptor = "I")
-	public static int anInt2974 = 0;
-
 	@OriginalMember(owner = "client!kn", name = "G", descriptor = "[I")
 	public static final int[] anIntArray267 = new int[256];
 
@@ -366,9 +363,6 @@ public final class Static4 {
 	@OriginalMember(owner = "client!ma", name = "e", descriptor = "I")
 	public static int anInt3407 = -1;
 
-	@OriginalMember(owner = "client!ma", name = "h", descriptor = "I")
-	public static int anInt3409 = 0;
-
 	@OriginalMember(owner = "client!mb", name = "b", descriptor = "I")
 	public static int anInt3493 = 0;
 
@@ -461,9 +455,6 @@ public final class Static4 {
 
 	@OriginalMember(owner = "client!mo", name = "db", descriptor = "[I")
 	public static final int[] anIntArray336 = new int[32];
-
-	@OriginalMember(owner = "client!mo", name = "eb", descriptor = "Z")
-	public static boolean aBoolean241 = false;
 
 	@OriginalMember(owner = "client!na", name = "z", descriptor = "Lclient!na;")
 	public static final SoftwareModel aClass53_Sub4_Sub1_1 = new SoftwareModel();

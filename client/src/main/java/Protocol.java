@@ -1,12 +1,22 @@
 import java.io.IOException;
+import java.math.BigInteger;
 
 import dev.openrs2.deob.annotation.OriginalArg;
 import dev.openrs2.deob.annotation.OriginalMember;
 import dev.openrs2.deob.annotation.Pc;
 
 public final class Protocol {
+	@OriginalMember(owner = "client!tb", name = "g", descriptor = "Ljava/math/BigInteger;")
+	public static final BigInteger EXPONENT = new BigInteger("58778699976184461502525193738213253649000149147835990136706041084440742975821");
+
+	@OriginalMember(owner = "client!eo", name = "b", descriptor = "Ljava/math/BigInteger;")
+	public static final BigInteger MODULUS = new BigInteger("7162900525229798032761816791230527296329313291232324290237849263501208207972894053929065636522363163621000728841182238772712427862772219676577293600221789");
+
 	@OriginalMember(owner = "client!ka", name = "a", descriptor = "[I")
 	private static final int[] PACKET_LENGTHS = new int[] { 0, -2, -2, 0, 1, 0, 0, 0, 1, 0, 6, 8, 0, 0, 0, 0, 0, 15, 8, 20, 0, 0, 0, 3, 0, -2, 4, 0, 0, 0, -1, 12, 0, 3, -2, 9, 0, 0, 3, 0, 7, 0, 6, -2, -1, 0, 8, 7, 0, -2, 0, 0, 2, -2, -1, 1, 0, 0, 0, -1, 5, 0, 0, 7, 0, 10, 0, 0, 0, 0, 0, 0, 2, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 8, 0, 10, 12, 0, 0, 8, 0, 2, 0, 2, 0, -1, 3, 0, 0, 4, -1, 15, 0, 0, 0, 0, 0, 17, 0, 12, 7, 3, -2, 0, 0, 0, 3, 0, 0, 0, 0, 0, -1, 0, 0, 6, 3, 4, 0, 14, 0, 6, -2, 3, 6, 0, 0, 0, 0, 0, 6, 0, 0, 2, 8, 0, 5, 8, 10, 6, 0, -2, 2, 0, 6, 0, 0, 0, 14, 0, 6, 0, 28, 0, 2, 0, 0, 0, 8, -2, -1, 0, 5, 11, 0, 4, 0, 0, -1, 12, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, -2, 0, 0, 0, 0, 6, 0, 0, 0, 0, 0, 0, 6, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, -1, -1, 0, 0, 5, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 10, 0, 0, 0, 0, 3, 8, 0, 0, -1, 0, 0, 0, 0, 0, -1, -2, 0, 0 };
+
+	@OriginalMember(owner = "client!wb", name = "D", descriptor = "Lsignlink!vk;")
+	public static PrivilegedRequest socketRequest;
 
 	@OriginalMember(owner = "client!jf", name = "d", descriptor = "Lclient!eo;")
 	public static BufferedSocket socket;
@@ -518,7 +528,7 @@ public final class Protocol {
 						Static6.aClass4_Sub15Array1[local1653].aByte5 = local1619;
 						Static6.aClass4_Sub15Array1[local1653].aString181 = local1625;
 						Static3.anInt2616 = Static6.anInt4979;
-						if (Static1.aLong23 == local1598) {
+						if (LoginManager.encodedUsername == local1598) {
 							Static5.aByte13 = local1619;
 						}
 						opcode = -1;
@@ -539,7 +549,7 @@ public final class Protocol {
 					Static6.aClass4_Sub15Array1 = new Class4_Sub15[100];
 				}
 				Static6.aClass4_Sub15Array1[local1653 + 1] = local1629;
-				if (local1598 == Static1.aLong23) {
+				if (local1598 == LoginManager.encodedUsername) {
 					Static5.aByte13 = local1619;
 				}
 				Static4.anInt3260++;
@@ -739,7 +749,7 @@ public final class Protocol {
 			while (true) {
 				if (local2585 >= 100) {
 					if (local2583 <= 1) {
-						if (Static1.aBoolean47 && !Static5.aBoolean287 || Static2.aBoolean67) {
+						if (LoginManager.playerUnderage && !LoginManager.parentalChatConsent || LoginManager.mapQuickChat) {
 							local2559 = true;
 						} else {
 							for (@Pc(2623) int local2623 = 0; local2623 < Static6.anInt4516; local2623++) {
@@ -822,7 +832,7 @@ public final class Protocol {
 					break;
 				}
 				if (local2859 <= 1) {
-					if (Static1.aBoolean47 && !Static5.aBoolean287 || Static2.aBoolean67) {
+					if (LoginManager.playerUnderage && !LoginManager.parentalChatConsent || LoginManager.mapQuickChat) {
 						local2861 = true;
 					} else {
 						for (@Pc(2899) int local2899 = 0; local2899 < Static6.anInt4516; local2899++) {
@@ -919,7 +929,7 @@ public final class Protocol {
 				local3217[local3219].anInt2988 = inboundBuffer.readUnsignedShort();
 				local3217[local3219].aByte5 = inboundBuffer.readByte();
 				local3217[local3219].aString181 = inboundBuffer.readString();
-				if (Static1.aLong23 == local3217[local3219].key) {
+				if (LoginManager.encodedUsername == local3217[local3219].key) {
 					Static5.aByte13 = local3217[local3219].aByte5;
 				}
 			}
@@ -2315,7 +2325,7 @@ public final class Protocol {
 				@Pc(264) long local264 = Base37.encode(player.name);
 				@Pc(266) boolean local266 = false;
 				if (local236 <= 1) {
-					if (!local244 && (Static1.aBoolean47 && !Static5.aBoolean287 || Static2.aBoolean67)) {
+					if (!local244 && (LoginManager.playerUnderage && !LoginManager.parentalChatConsent || LoginManager.mapQuickChat)) {
 						local266 = true;
 					} else {
 						for (@Pc(284) int local284 = 0; local284 < Static6.anInt4516; local284++) {

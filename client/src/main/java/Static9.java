@@ -469,7 +469,7 @@ public final class Static9 {
 		}
 		@Pc(28) boolean local28 = arg0 == 5 || arg0 == 10 || arg0 == 28;
 		if (arg0 == 40) {
-			Static8.method101();
+			LoginManager.method101();
 		}
 		if (arg0 != 40 && Static2.aClass52_1 != null) {
 			Static2.aClass52_1.close();
