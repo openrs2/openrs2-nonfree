@@ -1030,7 +1030,7 @@ public final class Static29 {
 			@Pc(689) int type = change.getType();
 			@Pc(693) int id = change.getId();
 			if (type == 1) {
-				VarcDomain.varcs[id] = change.primaryIntArg;
+				VarcDomain.varcs[id] = change.intArg1;
 				VarcDomain.updatedVarcs[VarcDomain.updatedVarcsWriterIndex++ & 0x1F] = id;
 			} else if (type == 2) {
 				VarcDomain.varcstrs[id] = change.stringArg;
@@ -1043,9 +1043,9 @@ public final class Static29 {
 				}
 			} else if (type == 4) {
 				@Pc(732) Component local732 = InterfaceList.getComponent(id);
-				@Pc(735) int local735 = change.primaryIntArg;
-				@Pc(738) int local738 = change.secondaryIntArg;
-				@Pc(741) int local741 = change.tertiaryIntArg;
+				@Pc(735) int local735 = change.intArg1;
+				@Pc(738) int local738 = change.intArg2;
+				@Pc(741) int local741 = change.intArg3;
 				if (local732.anInt5939 != local735 || local738 != local732.anInt5895 || local732.anInt5913 != local741) {
 					local732.anInt5895 = local738;
 					local732.anInt5913 = local741;
@@ -1054,15 +1054,15 @@ public final class Static29 {
 				}
 			} else if (type == 5) {
 				@Pc(1137) Component local1137 = InterfaceList.getComponent(id);
-				if (local1137.anInt5891 != change.primaryIntArg || change.primaryIntArg == -1) {
+				if (local1137.anInt5891 != change.intArg1 || change.intArg1 == -1) {
 					local1137.anInt5892 = 0;
-					local1137.anInt5891 = change.primaryIntArg;
+					local1137.anInt5891 = change.intArg1;
 					local1137.anInt5979 = 1;
 					local1137.anInt5897 = 0;
 					Static28.method3270(local1137);
 				}
 			} else if (type == 6) {
-				@Pc(1084) int local1084 = change.primaryIntArg;
+				@Pc(1084) int local1084 = change.intArg1;
 				@Pc(1090) int local1090 = local1084 >> 5 & 0x1F;
 				@Pc(1094) Component local1094 = InterfaceList.getComponent(id);
 				@Pc(1100) int local1100 = local1084 >> 10 & 0x1F;
@@ -1074,16 +1074,16 @@ public final class Static29 {
 				}
 			} else if (type == 7) {
 				@Pc(790) Component local790 = InterfaceList.getComponent(id);
-				@Pc(800) boolean local800 = change.primaryIntArg == 1;
+				@Pc(800) boolean local800 = change.intArg1 == 1;
 				if (local790.aBoolean417 != local800) {
 					local790.aBoolean417 = local800;
 					Static28.method3270(local790);
 				}
 			} else if (type == 8) {
 				@Pc(825) Component local825 = InterfaceList.getComponent(id);
-				if (local825.anInt5944 != change.primaryIntArg || change.secondaryIntArg != local825.anInt5976 || change.tertiaryIntArg != local825.anInt5918) {
-					local825.anInt5976 = change.secondaryIntArg;
-					local825.anInt5918 = change.tertiaryIntArg;
+				if (local825.anInt5944 != change.intArg1 || change.intArg2 != local825.anInt5976 || change.intArg3 != local825.anInt5918) {
+					local825.anInt5976 = change.intArg2;
+					local825.anInt5918 = change.intArg3;
 					if (local825.anInt5938 != -1) {
 						if (local825.anInt5957 > 0) {
 							local825.anInt5918 = local825.anInt5918 * 32 / local825.anInt5957;
@@ -1091,34 +1091,34 @@ public final class Static29 {
 							local825.anInt5918 = local825.anInt5918 * 32 / local825.anInt5927;
 						}
 					}
-					local825.anInt5944 = change.primaryIntArg;
+					local825.anInt5944 = change.intArg1;
 					Static28.method3270(local825);
 				}
 			} else if (type == 9) {
 				@Pc(905) Component local905 = InterfaceList.getComponent(id);
-				if (local905.anInt5938 != change.primaryIntArg || local905.anInt5962 != change.secondaryIntArg) {
-					local905.anInt5962 = change.secondaryIntArg;
-					local905.anInt5938 = change.primaryIntArg;
+				if (local905.anInt5938 != change.intArg1 || local905.anInt5962 != change.intArg2) {
+					local905.anInt5962 = change.intArg2;
+					local905.anInt5938 = change.intArg1;
 					Static28.method3270(local905);
 				}
 			} else if (type == 10) {
 				@Pc(1044) Component local1044 = InterfaceList.getComponent(id);
-				if (local1044.anInt5963 != change.primaryIntArg || change.secondaryIntArg != local1044.anInt5906 || local1044.anInt5886 != change.tertiaryIntArg) {
-					local1044.anInt5906 = change.secondaryIntArg;
-					local1044.anInt5963 = change.primaryIntArg;
-					local1044.anInt5886 = change.tertiaryIntArg;
+				if (local1044.anInt5963 != change.intArg1 || change.intArg2 != local1044.anInt5906 || local1044.anInt5886 != change.intArg3) {
+					local1044.anInt5906 = change.intArg2;
+					local1044.anInt5963 = change.intArg1;
+					local1044.anInt5886 = change.intArg3;
 					Static28.method3270(local1044);
 				}
 			} else if (type == 11) {
 				@Pc(948) Component local948 = InterfaceList.getComponent(id);
-				local948.anInt5960 = local948.anInt5928 = change.primaryIntArg;
-				local948.anInt5888 = local948.anInt5951 = change.secondaryIntArg;
+				local948.anInt5960 = local948.anInt5928 = change.intArg1;
+				local948.anInt5888 = local948.anInt5951 = change.intArg2;
 				local948.aByte25 = 0;
 				local948.aByte26 = 0;
 				Static28.method3270(local948);
 			} else if (type == 12) {
 				@Pc(996) Component local996 = InterfaceList.getComponent(id);
-				@Pc(999) int local999 = change.primaryIntArg;
+				@Pc(999) int local999 = change.intArg1;
 				if (local996 != null && local996.type == 0) {
 					if (local996.anInt5887 - local996.anInt5949 < local999) {
 						local999 = local996.anInt5887 - local996.anInt5949;
@@ -1133,7 +1133,7 @@ public final class Static29 {
 				}
 			} else if (type == 13) {
 				@Pc(986) Component local986 = InterfaceList.getComponent(id);
-				local986.anInt5901 = change.primaryIntArg;
+				local986.anInt5901 = change.intArg1;
 			}
 		}
 		if (Static7.anInt6008 != 0) {

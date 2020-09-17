@@ -29,7 +29,7 @@ public final class DelayedStateChange extends SecondaryNode {
 	public static void setVarcServer(@OriginalArg(0) int id, @OriginalArg(1) int value) {
 		@Pc(8) DelayedStateChange change = create(1, id);
 		change.pushServer();
-		change.primaryIntArg = value;
+		change.intArg1 = value;
 	}
 
 	@OriginalMember(owner = "client!pe", name = "a", descriptor = "(II)V")
@@ -68,9 +68,9 @@ public final class DelayedStateChange extends SecondaryNode {
 	public static void method3471(@OriginalArg(2) int id, @OriginalArg(0) int arg0, @OriginalArg(3) int arg3, @OriginalArg(1) int arg1) {
 		@Pc(18) DelayedStateChange change = create(4, id);
 		change.pushServer();
-		change.primaryIntArg = arg0;
-		change.secondaryIntArg = arg3;
-		change.tertiaryIntArg = arg1;
+		change.intArg1 = arg0;
+		change.intArg2 = arg3;
+		change.intArg3 = arg1;
 	}
 
 	@OriginalMember(owner = "client!df", name = "a", descriptor = "(II)V")
@@ -83,7 +83,7 @@ public final class DelayedStateChange extends SecondaryNode {
 	public static void method4824(@OriginalArg(1) int id, @OriginalArg(2) int arg1) {
 		@Pc(4) DelayedStateChange change = create(5, id);
 		change.pushServer();
-		change.primaryIntArg = arg1;
+		change.intArg1 = arg1;
 	}
 
 	@OriginalMember(owner = "client!ue", name = "b", descriptor = "(IZ)V")
@@ -96,7 +96,7 @@ public final class DelayedStateChange extends SecondaryNode {
 	public static void method1773(@OriginalArg(2) int id, @OriginalArg(0) int arg0) {
 		@Pc(14) DelayedStateChange change = create(6, id);
 		change.pushServer();
-		change.primaryIntArg = arg0;
+		change.intArg1 = arg0;
 	}
 
 	@OriginalMember(owner = "client!ta", name = "b", descriptor = "(ZI)V")
@@ -109,7 +109,7 @@ public final class DelayedStateChange extends SecondaryNode {
 	public static void method2997(@OriginalArg(0) int id, @OriginalArg(1) int arg1) {
 		@Pc(4) DelayedStateChange change = create(7, id);
 		change.pushServer();
-		change.primaryIntArg = arg1;
+		change.intArg1 = arg1;
 	}
 
 	@OriginalMember(owner = "client!sl", name = "d", descriptor = "(II)V")
@@ -122,9 +122,9 @@ public final class DelayedStateChange extends SecondaryNode {
 	public static void method1019(@OriginalArg(3) int id, @OriginalArg(2) int arg2, @OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
 		@Pc(10) DelayedStateChange change = create(8, id);
 		change.pushServer();
-		change.secondaryIntArg = arg0;
-		change.tertiaryIntArg = arg1;
-		change.primaryIntArg = arg2;
+		change.intArg2 = arg0;
+		change.intArg3 = arg1;
+		change.intArg1 = arg2;
 	}
 
 	@OriginalMember(owner = "client!jc", name = "a", descriptor = "(II)V")
@@ -137,8 +137,8 @@ public final class DelayedStateChange extends SecondaryNode {
 	public static void method3716(@OriginalArg(1) int id, @OriginalArg(3) int arg2, @OriginalArg(0) int arg0) {
 		@Pc(12) DelayedStateChange change = create(9, id);
 		change.pushServer();
-		change.secondaryIntArg = arg0;
-		change.primaryIntArg = arg2;
+		change.intArg2 = arg0;
+		change.intArg1 = arg2;
 	}
 
 	@OriginalMember(owner = "client!ue", name = "a", descriptor = "(II)V")
@@ -151,9 +151,9 @@ public final class DelayedStateChange extends SecondaryNode {
 	public static void method4433(@OriginalArg(4) int id, @OriginalArg(3) int arg2, @OriginalArg(1) int arg0, @OriginalArg(2) int arg1) {
 		@Pc(6) DelayedStateChange change = create(10, id);
 		change.pushServer();
-		change.secondaryIntArg = arg0;
-		change.tertiaryIntArg = arg1;
-		change.primaryIntArg = arg2;
+		change.intArg2 = arg0;
+		change.intArg3 = arg1;
+		change.intArg1 = arg2;
 	}
 
 	@OriginalMember(owner = "client!fc", name = "a", descriptor = "(II)V")
@@ -166,8 +166,8 @@ public final class DelayedStateChange extends SecondaryNode {
 	public static void method726(@OriginalArg(1) int id, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2) {
 		@Pc(12) DelayedStateChange change = create(11, id);
 		change.pushServer();
-		change.primaryIntArg = arg1;
-		change.secondaryIntArg = arg2;
+		change.intArg1 = arg1;
+		change.intArg2 = arg2;
 	}
 
 	@OriginalMember(owner = "client!va", name = "a", descriptor = "(II)V")
@@ -180,7 +180,7 @@ public final class DelayedStateChange extends SecondaryNode {
 	public static void method722(@OriginalArg(0) int id, @OriginalArg(1) int arg1) {
 		@Pc(8) DelayedStateChange change = create(12, id);
 		change.pushServer();
-		change.primaryIntArg = arg1;
+		change.intArg1 = arg1;
 	}
 
 	@OriginalMember(owner = "client!ah", name = "a", descriptor = "(II)V")
@@ -193,7 +193,7 @@ public final class DelayedStateChange extends SecondaryNode {
 	public static void method2021(@OriginalArg(1) int id, @OriginalArg(0) int arg0) {
 		@Pc(8) DelayedStateChange change = create(13, id);
 		change.pushServer();
-		change.primaryIntArg = arg0;
+		change.intArg1 = arg0;
 	}
 
 	@OriginalMember(owner = "client!nh", name = "d", descriptor = "(B)Lclient!g;")
@@ -227,13 +227,13 @@ public final class DelayedStateChange extends SecondaryNode {
 	}
 
 	@OriginalMember(owner = "client!g", name = "A", descriptor = "I")
-	public int primaryIntArg;
+	public int intArg1;
 
 	@OriginalMember(owner = "client!g", name = "C", descriptor = "I")
-	public int tertiaryIntArg;
+	public int intArg3;
 
 	@OriginalMember(owner = "client!g", name = "O", descriptor = "I")
-	public int secondaryIntArg;
+	public int intArg2;
 
 	@OriginalMember(owner = "client!g", name = "R", descriptor = "Ljava/lang/String;")
 	public String stringArg;
