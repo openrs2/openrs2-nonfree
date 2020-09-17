@@ -2821,13 +2821,13 @@ public final class ScriptRunner {
 								if (opcode == 5050) {
 									isp--;
 									@Pc(4852) int local4852 = intStack[isp];
-									stringStack[ssp++] = Static20.method1961(local4852).aString362;
+									stringStack[ssp++] = QuickChatCatTypeList.get(local4852).aString362;
 									continue;
 								}
 								if (opcode == 5051) {
 									@Pc(4872) int local4872 = isp - 1;
 									@Pc(4875) int local4875 = intStack[local4872];
-									@Pc(4879) Class4_Sub3_Sub23 local4879 = Static20.method1961(local4875);
+									@Pc(4879) QuickChatCatType local4879 = QuickChatCatTypeList.get(local4875);
 									if (local4879.anIntArray677 == null) {
 										isp = local4872 + 1;
 										intStack[local4872] = 0;
@@ -2841,7 +2841,7 @@ public final class ScriptRunner {
 									@Pc(4903) int local4903 = isp - 2;
 									@Pc(4909) int local4909 = intStack[local4903 + 1];
 									@Pc(4913) int local4913 = intStack[local4903];
-									@Pc(4917) Class4_Sub3_Sub23 local4917 = Static20.method1961(local4913);
+									@Pc(4917) QuickChatCatType local4917 = QuickChatCatTypeList.get(local4913);
 									@Pc(4922) int local4922 = local4917.anIntArray677[local4909];
 									isp = local4903 + 1;
 									intStack[local4903] = local4922;
@@ -2850,7 +2850,7 @@ public final class ScriptRunner {
 								if (opcode == 5053) {
 									@Pc(4934) int local4934 = isp - 1;
 									@Pc(4937) int local4937 = intStack[local4934];
-									@Pc(4943) Class4_Sub3_Sub23 local4943 = Static20.method1961(local4937);
+									@Pc(4943) QuickChatCatType local4943 = QuickChatCatTypeList.get(local4937);
 									if (local4943.anIntArray676 == null) {
 										isp = local4934 + 1;
 										intStack[local4934] = 0;
@@ -2865,19 +2865,19 @@ public final class ScriptRunner {
 									@Pc(4972) int local4972 = intStack[local4968];
 									@Pc(4978) int local4978 = intStack[local4968 + 1];
 									isp = local4968 + 1;
-									intStack[local4968] = Static20.method1961(local4972).anIntArray676[local4978];
+									intStack[local4968] = QuickChatCatTypeList.get(local4972).anIntArray676[local4978];
 									continue;
 								}
 								if (opcode == 5055) {
 									isp--;
 									@Pc(5000) int local5000 = intStack[isp];
-									stringStack[ssp++] = Static26.method2991(local5000).method1913();
+									stringStack[ssp++] = QuickChatPhraseTypeList.get(local5000).method1913();
 									continue;
 								}
 								if (opcode == 5056) {
 									@Pc(5018) int local5018 = isp - 1;
 									@Pc(5021) int local5021 = intStack[local5018];
-									@Pc(5025) Class4_Sub3_Sub11 local5025 = Static26.method2991(local5021);
+									@Pc(5025) QuickChatPhraseType local5025 = QuickChatPhraseTypeList.get(local5021);
 									if (local5025.anIntArray212 == null) {
 										isp = local5018 + 1;
 										intStack[local5018] = 0;
@@ -2892,14 +2892,14 @@ public final class ScriptRunner {
 									@Pc(5055) int local5055 = intStack[local5051];
 									@Pc(5061) int local5061 = intStack[local5051 + 1];
 									isp = local5051 + 1;
-									intStack[local5051] = Static26.method2991(local5055).anIntArray212[local5061];
+									intStack[local5051] = QuickChatPhraseTypeList.get(local5055).anIntArray212[local5061];
 									continue;
 								}
 								if (opcode == 5058) {
 									Static1.aClass27_1 = new Class27();
 									isp--;
 									Static1.aClass27_1.anInt540 = intStack[isp];
-									Static1.aClass27_1.aClass4_Sub3_Sub11_1 = Static26.method2991(Static1.aClass27_1.anInt540);
+									Static1.aClass27_1.aClass4_Sub3_Sub11_1 = QuickChatPhraseTypeList.get(Static1.aClass27_1.anInt540);
 									Static1.aClass27_1.anIntArray48 = new int[Static1.aClass27_1.aClass4_Sub3_Sub11_1.method1903()];
 									continue;
 								}
@@ -2940,7 +2940,7 @@ public final class ScriptRunner {
 									@Pc(5263) int local5263 = intStack[local5259];
 									@Pc(5269) int local5269 = intStack[local5259 + 1];
 									isp = local5259 + 1;
-									intStack[local5259] = Static20.method1961(local5263).aCharArray4[local5269];
+									intStack[local5259] = QuickChatCatTypeList.get(local5263).aCharArray4[local5269];
 									continue;
 								}
 								if (opcode == 5063) {
@@ -2948,7 +2948,7 @@ public final class ScriptRunner {
 									@Pc(5292) int local5292 = intStack[local5288];
 									@Pc(5298) int local5298 = intStack[local5288 + 1];
 									isp = local5288 + 1;
-									intStack[local5288] = Static20.method1961(local5292).aCharArray5[local5298];
+									intStack[local5288] = QuickChatCatTypeList.get(local5292).aCharArray5[local5298];
 									continue;
 								}
 								if (opcode == 5064) {
@@ -2960,7 +2960,7 @@ public final class ScriptRunner {
 										intStack[local5316] = -1;
 									} else {
 										isp = local5316 + 1;
-										intStack[local5316] = Static20.method1961(local5326).method4777((char) local5322);
+										intStack[local5316] = QuickChatCatTypeList.get(local5326).method4777((char) local5322);
 									}
 									continue;
 								}
@@ -2973,7 +2973,7 @@ public final class ScriptRunner {
 										intStack[local5357] = -1;
 									} else {
 										isp = local5357 + 1;
-										intStack[local5357] = Static20.method1961(local5367).method4774((char) local5363);
+										intStack[local5357] = QuickChatCatTypeList.get(local5367).method4774((char) local5363);
 									}
 									continue;
 								}
@@ -2981,14 +2981,14 @@ public final class ScriptRunner {
 									@Pc(5396) int local5396 = isp - 1;
 									@Pc(5399) int local5399 = intStack[local5396];
 									isp = local5396 + 1;
-									intStack[local5396] = Static26.method2991(local5399).method1903();
+									intStack[local5396] = QuickChatPhraseTypeList.get(local5399).method1903();
 									continue;
 								}
 								if (opcode == 5067) {
 									@Pc(5417) int local5417 = isp - 2;
 									@Pc(5421) int local5421 = intStack[local5417];
 									@Pc(5427) int local5427 = intStack[local5417 + 1];
-									@Pc(5434) int local5434 = Static26.method2991(local5421).method1905(local5427);
+									@Pc(5434) int local5434 = QuickChatPhraseTypeList.get(local5421).method1905(local5427);
 									isp = local5417 + 1;
 									intStack[local5417] = local5434;
 									continue;
@@ -3012,7 +3012,7 @@ public final class ScriptRunner {
 									@Pc(5498) int local5498 = intStack[local5494];
 									@Pc(5504) int local5504 = intStack[local5494 + 2];
 									@Pc(5510) int local5510 = intStack[local5494 + 1];
-									@Pc(5514) Class4_Sub3_Sub11 local5514 = Static26.method2991(local5498);
+									@Pc(5514) QuickChatPhraseType local5514 = QuickChatPhraseTypeList.get(local5498);
 									if (local5514.method1905(local5510) != 0) {
 										throw new RuntimeException("bad command");
 									}

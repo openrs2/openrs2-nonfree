@@ -4,7 +4,7 @@ import dev.openrs2.deob.annotation.OriginalMember;
 import dev.openrs2.deob.annotation.Pc;
 
 @OriginalClass("client!wh")
-public final class Class4_Sub3_Sub23 extends SecondaryNode {
+public final class QuickChatCatType extends SecondaryNode {
 
 	@OriginalMember(owner = "client!wh", name = "z", descriptor = "[I")
 	public int[] anIntArray676;
@@ -22,13 +22,13 @@ public final class Class4_Sub3_Sub23 extends SecondaryNode {
 	public char[] aCharArray5;
 
 	@OriginalMember(owner = "client!wh", name = "a", descriptor = "(BLclient!fd;)V")
-	public final void method4772(@OriginalArg(1) Buffer arg0) {
+	public final void decode(@OriginalArg(1) Buffer buffer) {
 		while (true) {
-			@Pc(5) int local5 = arg0.readUnsignedByte();
-			if (local5 == 0) {
+			@Pc(5) int code = buffer.readUnsignedByte();
+			if (code == 0) {
 				return;
 			}
-			this.method4779(arg0, local5);
+			this.decode(buffer, code);
 		}
 	}
 
@@ -73,28 +73,28 @@ public final class Class4_Sub3_Sub23 extends SecondaryNode {
 	}
 
 	@OriginalMember(owner = "client!wh", name = "a", descriptor = "(ILclient!fd;I)V")
-	private void method4779(@OriginalArg(1) Buffer arg0, @OriginalArg(2) int arg1) {
-		if (arg1 == 1) {
-			this.aString362 = arg0.readString();
-		} else if (arg1 == 2) {
-			@Pc(95) int local95 = arg0.readUnsignedByte();
+	private void decode(@OriginalArg(1) Buffer buffer, @OriginalArg(2) int code) {
+		if (code == 1) {
+			this.aString362 = buffer.readString();
+		} else if (code == 2) {
+			@Pc(95) int local95 = buffer.readUnsignedByte();
 			this.anIntArray677 = new int[local95];
 			this.aCharArray4 = new char[local95];
 			for (@Pc(105) int local105 = 0; local105 < local95; local105++) {
-				this.anIntArray677[local105] = arg0.readUnsignedShort();
-				@Pc(119) byte local119 = arg0.readByte();
+				this.anIntArray677[local105] = buffer.readUnsignedShort();
+				@Pc(119) byte local119 = buffer.readByte();
 				this.aCharArray4[local105] = local119 == 0 ? 0 : Cp1252Charset.decodeChar(local119);
 			}
-		} else if (arg1 == 3) {
-			@Pc(39) int local39 = arg0.readUnsignedByte();
+		} else if (code == 3) {
+			@Pc(39) int local39 = buffer.readUnsignedByte();
 			this.aCharArray5 = new char[local39];
 			this.anIntArray676 = new int[local39];
 			for (@Pc(49) int local49 = 0; local49 < local39; local49++) {
-				this.anIntArray676[local49] = arg0.readUnsignedShort();
-				@Pc(69) byte local69 = arg0.readByte();
+				this.anIntArray676[local49] = buffer.readUnsignedShort();
+				@Pc(69) byte local69 = buffer.readByte();
 				this.aCharArray5[local49] = local69 == 0 ? 0 : Cp1252Charset.decodeChar(local69);
 			}
-		} else if (arg1 != 4) {
+		} else if (code != 4) {
 		}
 	}
 }

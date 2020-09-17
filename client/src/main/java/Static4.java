@@ -123,9 +123,6 @@ public final class Static4 {
 	@OriginalMember(owner = "client!ln", name = "Y", descriptor = "I")
 	public static int anInt3260;
 
-	@OriginalMember(owner = "client!m", name = "d", descriptor = "Lclient!fh;")
-	public static Js5 aClass58_72;
-
 	@OriginalMember(owner = "client!m", name = "i", descriptor = "[I")
 	public static int[] anIntArray309;
 
@@ -254,9 +251,6 @@ public final class Static4 {
 
 	@OriginalMember(owner = "client!kc", name = "c", descriptor = "[B")
 	public static final byte[] aByteArray21 = new byte[16384];
-
-	@OriginalMember(owner = "client!kf", name = "u", descriptor = "Lclient!dj;")
-	public static final LruHashTable aClass40_12 = new LruHashTable(64);
 
 	@OriginalMember(owner = "client!kg", name = "d", descriptor = "[I")
 	public static final int[] anIntArray256 = new int[4];

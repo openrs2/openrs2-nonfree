@@ -772,12 +772,6 @@ public final class Static15 {
 		}
 	}
 
-	@OriginalMember(owner = "client!fl", name = "a", descriptor = "(Lclient!fh;ILclient!fh;)V")
-	public static void method1473(@OriginalArg(0) Js5 arg0, @OriginalArg(2) Js5 arg1) {
-		Static2.aClass58_26 = arg1;
-		Static6.aClass58_91 = arg0;
-	}
-
 	@OriginalMember(owner = "client!fm", name = "a", descriptor = "(IIII)I")
 	public static int method1474(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(3) int arg2) {
 		@Pc(16) int local16 = ColorUtils.HSL_TO_RGB[Static25.method2912(arg2, arg0)];

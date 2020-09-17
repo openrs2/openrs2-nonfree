@@ -449,9 +449,6 @@ public final class Static5 {
 	@OriginalMember(owner = "client!pl", name = "u", descriptor = "[Lclient!te;")
 	public static final AnimFrameset[] aClass4_Sub3_Sub19Array4 = new AnimFrameset[14];
 
-	@OriginalMember(owner = "client!pl", name = "v", descriptor = "Lclient!ai;")
-	public static Interface1 anInterface1_1 = null;
-
 	@OriginalMember(owner = "client!pl", name = "y", descriptor = "I")
 	public static int anInt4210 = 0;
 

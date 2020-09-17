@@ -1111,17 +1111,6 @@ public final class Static20 {
 		}
 	}
 
-	@OriginalMember(owner = "client!in", name = "a", descriptor = "(JII[I)Ljava/lang/String;")
-	public static String method1940(@OriginalArg(0) long arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int[] arg2) {
-		if (Static5.anInterface1_1 != null) {
-			@Pc(18) String local18 = Static5.anInterface1_1.method3224(arg0, arg2, arg1);
-			if (local18 != null) {
-				return local18;
-			}
-		}
-		return Long.toString(arg0);
-	}
-
 	@OriginalMember(owner = "client!in", name = "a", descriptor = "(ZI)V")
 	public static void method1942() {
 		Static6.aClass26_48.clean(50);
@@ -1242,29 +1231,6 @@ public final class Static20 {
 			}
 		}
 		return 0L;
-	}
-
-	@OriginalMember(owner = "client!j", name = "a", descriptor = "(II)Lclient!wh;")
-	public static Class4_Sub3_Sub23 method1961(@OriginalArg(0) int arg0) {
-		@Pc(10) Class4_Sub3_Sub23 local10 = (Class4_Sub3_Sub23) Static4.aClass40_12.get((long) arg0);
-		if (local10 != null) {
-			return local10;
-		}
-		@Pc(26) byte[] local26;
-		if (arg0 >= 32768) {
-			local26 = Static2.aClass58_26.fetchFile(0, arg0 & 0x7FFF);
-		} else {
-			local26 = Static6.aClass58_91.fetchFile(0, arg0);
-		}
-		@Pc(38) Class4_Sub3_Sub23 local38 = new Class4_Sub3_Sub23();
-		if (local26 != null) {
-			local38.method4772(new Buffer(local26));
-		}
-		if (arg0 >= 32768) {
-			local38.method4778();
-		}
-		Static4.aClass40_12.put((long) arg0, local38);
-		return local38;
 	}
 
 	@OriginalMember(owner = "client!j", name = "a", descriptor = "(IIIII)V")

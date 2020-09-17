@@ -1204,7 +1204,7 @@ public final class Protocol {
 			if (!local4305 && Static3.anInt5405 == 0) {
 				Static4.aLongArray24[Static1.anInt595] = local4295;
 				Static1.anInt595 = (Static1.anInt595 + 1) % 100;
-				@Pc(4375) String local4375 = Static26.method2991(local4303).method1909(inboundBuffer);
+				@Pc(4375) String local4375 = QuickChatPhraseTypeList.get(local4303).method1909(inboundBuffer);
 				if (local4299 == 2 || local4299 == 3) {
 					Static25.method2927("<img=1>" + Base37.decodeTitleCase(local4270), local4303, Base37.decodeTitleCase(local4278), 20, local4375);
 				} else if (local4299 == 1) {
@@ -1414,7 +1414,7 @@ public final class Protocol {
 			if (!local5131 && Static3.anInt5405 == 0) {
 				Static4.aLongArray24[Static1.anInt595] = local5137;
 				Static1.anInt595 = (Static1.anInt595 + 1) % 100;
-				@Pc(5214) String local5214 = Static26.method2991(local5129).method1909(inboundBuffer);
+				@Pc(5214) String local5214 = QuickChatPhraseTypeList.get(local5129).method1909(inboundBuffer);
 				if (local5125 == 2) {
 					Static25.method2927("<img=1>" + Base37.decodeTitleCase(local5111), local5129, null, 18, local5214);
 				} else if (local5125 == 1) {
@@ -1604,7 +1604,7 @@ public final class Protocol {
 		} else if (opcode == 221) {
 			@Pc(5909) long local5909 = inboundBuffer.readLong();
 			@Pc(5913) int local5913 = inboundBuffer.readUnsignedShort();
-			@Pc(5920) String local5920 = Static26.method2991(local5913).method1909(inboundBuffer);
+			@Pc(5920) String local5920 = QuickChatPhraseTypeList.get(local5913).method1909(inboundBuffer);
 			Static25.method2927(Base37.decodeTitleCase(local5909), local5913, null, 19, local5920);
 			opcode = -1;
 			return true;

@@ -5,7 +5,7 @@ import dev.openrs2.deob.annotation.OriginalMember;
 public final class Class27 {
 
 	@OriginalMember(owner = "client!cd", name = "a", descriptor = "Lclient!ij;")
-	public Class4_Sub3_Sub11 aClass4_Sub3_Sub11_1;
+	public QuickChatPhraseType aClass4_Sub3_Sub11_1;
 
 	@OriginalMember(owner = "client!cd", name = "b", descriptor = "I")
 	public int anInt540;

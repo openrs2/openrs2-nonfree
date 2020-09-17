@@ -134,9 +134,6 @@ public final class Static1 {
 	@OriginalMember(owner = "client!ce", name = "b", descriptor = "Ljava/awt/Font;")
 	public static Font aFont1;
 
-	@OriginalMember(owner = "client!cg", name = "g", descriptor = "Lclient!fh;")
-	public static Js5 aClass58_19;
-
 	@OriginalMember(owner = "client!cg", name = "h", descriptor = "F")
 	public static float aFloat21;
 
@@ -385,9 +382,6 @@ public final class Static1 {
 
 	@OriginalMember(owner = "client!cg", name = "m", descriptor = "I")
 	public static int anInt595 = 0;
-
-	@OriginalMember(owner = "client!ci", name = "e", descriptor = "Lclient!dj;")
-	public static final LruHashTable aClass40_5 = new LruHashTable(64);
 
 	@OriginalMember(owner = "client!ci", name = "f", descriptor = "Lclient!qk;")
 	public static final PlayerAppearance aClass144_1 = new PlayerAppearance();

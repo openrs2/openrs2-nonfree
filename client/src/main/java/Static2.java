@@ -8,9 +8,6 @@ public final class Static2 {
 	@OriginalMember(owner = "client!dc", name = "z", descriptor = "I")
 	public static int anInt914;
 
-	@OriginalMember(owner = "client!de", name = "p", descriptor = "Lclient!fh;")
-	public static Js5 aClass58_26;
-
 	@OriginalMember(owner = "client!df", name = "d", descriptor = "Lclient!ke;")
 	public static Class4_Sub3_Sub5_Sub2 aClass4_Sub3_Sub5_Sub2_2;
 
@@ -160,9 +157,6 @@ public final class Static2 {
 
 	@OriginalMember(owner = "client!dc", name = "p", descriptor = "[I")
 	public static final int[] anIntArray64 = new int[] { 2, 2, 4, 0, 1, 8, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0 };
-
-	@OriginalMember(owner = "client!dc", name = "x", descriptor = "I")
-	public static int anInt912 = 0;
 
 	@OriginalMember(owner = "client!dc", name = "B", descriptor = "I")
 	public static int anInt915 = 0;

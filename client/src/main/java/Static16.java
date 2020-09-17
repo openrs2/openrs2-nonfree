@@ -299,19 +299,6 @@ public final class Static16 {
 		}
 	}
 
-	@OriginalMember(owner = "client!g", name = "a", descriptor = "(BLclient!fh;Lclient!ai;Lclient!fh;)V")
-	public static void method1521(@OriginalArg(1) Js5 arg0, @OriginalArg(2) Interface1 arg1, @OriginalArg(3) Js5 arg2) {
-		Static1.aClass58_19 = arg2;
-		Static4.aClass58_72 = arg0;
-		Static5.anInterface1_1 = arg1;
-		if (Static1.aClass58_19 != null) {
-			Static2.anInt912 = Static1.aClass58_19.getGroupCapacity(1);
-		}
-		if (Static4.aClass58_72 != null) {
-			Static7.anInt6046 = Static4.aClass58_72.getGroupCapacity(1);
-		}
-	}
-
 	@OriginalMember(owner = "client!g", name = "a", descriptor = "(Lclient!fh;BII)[Lclient!fe;")
 	public static SoftwareIndexedSprite[] method1523(@OriginalArg(0) Js5 arg0, @OriginalArg(3) int arg1) {
 		return Static9.method197(arg0, arg1, 0) ? Static26.method4358() : null;

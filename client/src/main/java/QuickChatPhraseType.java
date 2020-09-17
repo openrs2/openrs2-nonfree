@@ -4,7 +4,7 @@ import dev.openrs2.deob.annotation.OriginalMember;
 import dev.openrs2.deob.annotation.Pc;
 
 @OriginalClass("client!ij")
-public final class Class4_Sub3_Sub11 extends SecondaryNode {
+public final class QuickChatPhraseType extends SecondaryNode {
 
 	@OriginalMember(owner = "client!ij", name = "z", descriptor = "[I")
 	private int[] anIntArray210;
@@ -43,40 +43,40 @@ public final class Class4_Sub3_Sub11 extends SecondaryNode {
 	}
 
 	@OriginalMember(owner = "client!ij", name = "a", descriptor = "(IZLclient!fd;)V")
-	private void method1906(@OriginalArg(0) int arg0, @OriginalArg(2) Buffer arg1) {
-		if (arg0 == 1) {
-			this.aStringArray17 = StringUtils.split(arg1.readString(), '<');
-		} else if (arg0 == 2) {
-			@Pc(103) int local103 = arg1.readUnsignedByte();
+	private void decode(@OriginalArg(2) Buffer buffer, @OriginalArg(0) int code) {
+		if (code == 1) {
+			this.aStringArray17 = StringUtils.split(buffer.readString(), '<');
+		} else if (code == 2) {
+			@Pc(103) int local103 = buffer.readUnsignedByte();
 			this.anIntArray212 = new int[local103];
 			for (@Pc(109) int local109 = 0; local109 < local103; local109++) {
-				this.anIntArray212[local109] = arg1.readUnsignedShort();
+				this.anIntArray212[local109] = buffer.readUnsignedShort();
 			}
-		} else if (arg0 == 3) {
-			@Pc(27) int local27 = arg1.readUnsignedByte();
+		} else if (code == 3) {
+			@Pc(27) int local27 = buffer.readUnsignedByte();
 			this.anIntArrayArray20 = new int[local27][];
 			this.anIntArray210 = new int[local27];
 			for (@Pc(37) int local37 = 0; local37 < local27; local37++) {
-				@Pc(48) int local48 = arg1.readUnsignedShort();
+				@Pc(48) int local48 = buffer.readUnsignedShort();
 				this.anIntArray210[local37] = local48;
 				this.anIntArrayArray20[local37] = new int[Static5.anIntArray456[local48]];
 				for (@Pc(63) int local63 = 0; local63 < Static5.anIntArray456[local48]; local63++) {
-					this.anIntArrayArray20[local37][local63] = arg1.readUnsignedShort();
+					this.anIntArrayArray20[local37][local63] = buffer.readUnsignedShort();
 				}
 			}
-		} else if (arg0 == 4) {
+		} else if (code == 4) {
 			this.aBoolean163 = false;
 		}
 	}
 
 	@OriginalMember(owner = "client!ij", name = "a", descriptor = "(Lclient!fd;I)V")
-	public final void method1908(@OriginalArg(0) Buffer arg0) {
+	public final void decode(@OriginalArg(0) Buffer buffer) {
 		while (true) {
-			@Pc(14) int local14 = arg0.readUnsignedByte();
-			if (local14 == 0) {
+			@Pc(14) int code = buffer.readUnsignedByte();
+			if (code == 0) {
 				return;
 			}
-			this.method1906(local14, arg0);
+			this.decode(buffer, code);
 		}
 	}
 
@@ -86,7 +86,7 @@ public final class Class4_Sub3_Sub11 extends SecondaryNode {
 		if (this.anIntArray210 != null) {
 			for (@Pc(21) int local21 = 0; local21 < this.anIntArray210.length; local21++) {
 				local16.append(this.aStringArray17[local21]);
-				local16.append(Static20.method1940(arg0.readVarLong(Static3.anIntArray191[this.anIntArray210[local21]]), this.anIntArray210[local21], this.anIntArrayArray20[local21]));
+				local16.append(QuickChatPhraseTypeList.method1940(arg0.readVarLong(Static3.anIntArray191[this.anIntArray210[local21]]), this.anIntArray210[local21], this.anIntArrayArray20[local21]));
 			}
 		}
 		local16.append(this.aStringArray17[this.aStringArray17.length - 1]);

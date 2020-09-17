@@ -349,9 +349,6 @@ public final class Static7 {
 	@OriginalMember(owner = "client!wj", name = "x", descriptor = "[I")
 	public static final int[] anIntArray679 = new int[] { 12543016, 15504954, 15914854, 16773818 };
 
-	@OriginalMember(owner = "client!wk", name = "a", descriptor = "I")
-	public static int anInt6046 = 0;
-
 	@OriginalMember(owner = "client!wk", name = "c", descriptor = "Ljava/util/Calendar;")
 	public static final Calendar aCalendar2 = Calendar.getInstance();
 

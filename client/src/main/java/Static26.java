@@ -754,29 +754,6 @@ public final class Static26 {
 		Static32.method3981(4);
 	}
 
-	@OriginalMember(owner = "client!nl", name = "a", descriptor = "(IZ)Lclient!ij;")
-	public static Class4_Sub3_Sub11 method2991(@OriginalArg(0) int arg0) {
-		@Pc(10) Class4_Sub3_Sub11 local10 = (Class4_Sub3_Sub11) Static1.aClass40_5.get((long) arg0);
-		if (local10 != null) {
-			return local10;
-		}
-		@Pc(25) byte[] local25;
-		if (arg0 < 32768) {
-			local25 = Static1.aClass58_19.fetchFile(1, arg0);
-		} else {
-			local25 = Static4.aClass58_72.fetchFile(1, arg0 & 0x7FFF);
-		}
-		@Pc(39) Class4_Sub3_Sub11 local39 = new Class4_Sub3_Sub11();
-		if (local25 != null) {
-			local39.method1908(new Buffer(local25));
-		}
-		if (arg0 >= 32768) {
-			local39.method1910();
-		}
-		Static1.aClass40_5.put((long) arg0, local39);
-		return local39;
-	}
-
 	@OriginalMember(owner = "client!nl", name = "a", descriptor = "(BI)Ljava/lang/String;")
 	public static String method2992(@OriginalArg(1) int arg0) {
 		return Static6.aStringArray27[arg0].length() <= 0 ? Static6.aStringArray30[arg0] : Static6.aStringArray30[arg0] + LocalisedText.MINISEPARATOR + Static6.aStringArray27[arg0];
