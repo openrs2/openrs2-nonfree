@@ -305,9 +305,6 @@ public final class Static1 {
 	@OriginalMember(owner = "client!bf", name = "l", descriptor = "[I")
 	public static final int[] anIntArray35 = new int[] { 256, 128, 86, 64 };
 
-	@OriginalMember(owner = "client!bg", name = "u", descriptor = "[Lclient!t;")
-	public static final Class160[] aClass160Array1 = new Class160[6];
-
 	@OriginalMember(owner = "client!bi", name = "s", descriptor = "I")
 	public static int anInt315 = 0;
 

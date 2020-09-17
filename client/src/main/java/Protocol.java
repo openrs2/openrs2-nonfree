@@ -1640,12 +1640,12 @@ public final class Protocol {
 			opcode = -1;
 			return true;
 		} else if (opcode == 19) {
-			@Pc(6012) int local6012 = inboundBuffer.readUnsignedByte();
+			@Pc(6012) int slot = inboundBuffer.readUnsignedByte();
 			if (inboundBuffer.readUnsignedByte() == 0) {
-				Static1.aClass160Array1[local6012] = new Class160();
+				StockMarketManager.offers[slot] = new StockMarketOffer();
 			} else {
 				inboundBuffer.position--;
-				Static1.aClass160Array1[local6012] = new Class160(inboundBuffer);
+				StockMarketManager.offers[slot] = new StockMarketOffer(inboundBuffer);
 			}
 			opcode = -1;
 			Static6.anInt4996 = Static6.anInt4979;

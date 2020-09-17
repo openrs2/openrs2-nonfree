@@ -579,8 +579,8 @@ public final class Static11 {
 		Static6.aClass4_Sub15Array1 = null;
 		Static2.aString108 = null;
 		Static4.anInt3260 = 0;
-		for (@Pc(3987) int local3987 = 0; local3987 < 6; local3987++) {
-			Static1.aClass160Array1[local3987] = new Class160();
+		for (@Pc(3987) int i = 0; i < 6; i++) {
+			StockMarketManager.offers[i] = new StockMarketOffer();
 		}
 		for (@Pc(4001) int local4001 = 0; local4001 < 25; local4001++) {
 			Static7.anIntArray501[local4001] = 0;

@@ -1966,48 +1966,48 @@ public final class ScriptRunner {
 							@Pc(3628) int local3628 = isp - 1;
 							@Pc(3631) int local3631 = intStack[local3628];
 							isp = local3628 + 1;
-							intStack[local3628] = Static1.aClass160Array1[local3631].method4078();
+							intStack[local3628] = StockMarketManager.offers[local3631].getType();
 							continue;
 						}
 						if (opcode == 3904) {
 							@Pc(3650) int local3650 = isp - 1;
 							@Pc(3653) int local3653 = intStack[local3650];
 							isp = local3650 + 1;
-							intStack[local3650] = Static1.aClass160Array1[local3653].anInt4983;
+							intStack[local3650] = StockMarketManager.offers[local3653].item;
 							continue;
 						}
 						if (opcode == 3905) {
 							@Pc(3670) int local3670 = isp - 1;
 							@Pc(3673) int local3673 = intStack[local3670];
 							isp = local3670 + 1;
-							intStack[local3670] = Static1.aClass160Array1[local3673].anInt4982;
+							intStack[local3670] = StockMarketManager.offers[local3673].price;
 							continue;
 						}
 						if (opcode == 3906) {
 							@Pc(3690) int local3690 = isp - 1;
 							@Pc(3693) int local3693 = intStack[local3690];
 							isp = local3690 + 1;
-							intStack[local3690] = Static1.aClass160Array1[local3693].anInt4976;
+							intStack[local3690] = StockMarketManager.offers[local3693].count;
 							continue;
 						}
 						if (opcode == 3907) {
 							@Pc(3708) int local3708 = isp - 1;
 							@Pc(3711) int local3711 = intStack[local3708];
 							isp = local3708 + 1;
-							intStack[local3708] = Static1.aClass160Array1[local3711].anInt4980;
+							intStack[local3708] = StockMarketManager.offers[local3711].completedCount;
 							continue;
 						}
 						if (opcode == 3908) {
 							@Pc(3726) int local3726 = isp - 1;
 							@Pc(3729) int local3729 = intStack[local3726];
 							isp = local3726 + 1;
-							intStack[local3726] = Static1.aClass160Array1[local3729].anInt4981;
+							intStack[local3726] = StockMarketManager.offers[local3729].completedGold;
 							continue;
 						}
 						if (opcode == 3910) {
 							@Pc(3745) int local3745 = isp - 1;
 							@Pc(3748) int local3748 = intStack[local3745];
-							@Pc(3754) int local3754 = Static1.aClass160Array1[local3748].method4081();
+							@Pc(3754) int local3754 = StockMarketManager.offers[local3748].getStatus();
 							isp = local3745 + 1;
 							intStack[local3745] = local3754 == 0 ? 1 : 0;
 							continue;
@@ -2015,7 +2015,7 @@ public final class ScriptRunner {
 						if (opcode == 3911) {
 							@Pc(3776) int local3776 = isp - 1;
 							@Pc(3779) int local3779 = intStack[local3776];
-							@Pc(3785) int local3785 = Static1.aClass160Array1[local3779].method4081();
+							@Pc(3785) int local3785 = StockMarketManager.offers[local3779].getStatus();
 							isp = local3776 + 1;
 							intStack[local3776] = local3785 == 2 ? 1 : 0;
 							continue;
@@ -2023,7 +2023,7 @@ public final class ScriptRunner {
 						if (opcode == 3912) {
 							@Pc(3803) int local3803 = isp - 1;
 							@Pc(3806) int local3806 = intStack[local3803];
-							@Pc(3814) int local3814 = Static1.aClass160Array1[local3806].method4081();
+							@Pc(3814) int local3814 = StockMarketManager.offers[local3806].getStatus();
 							isp = local3803 + 1;
 							intStack[local3803] = local3814 == 5 ? 1 : 0;
 							continue;
@@ -2031,7 +2031,7 @@ public final class ScriptRunner {
 						if (opcode == 3913) {
 							@Pc(3835) int local3835 = isp - 1;
 							@Pc(3838) int local3838 = intStack[local3835];
-							@Pc(3844) int local3844 = Static1.aClass160Array1[local3838].method4081();
+							@Pc(3844) int local3844 = StockMarketManager.offers[local3838].getStatus();
 							isp = local3835 + 1;
 							intStack[local3835] = local3844 == 1 ? 1 : 0;
 							continue;
