@@ -1178,7 +1178,7 @@ public final class Protocol {
 			@Pc(4288) long local4288 = (long) inboundBuffer.readUnsignedMedium();
 			@Pc(4295) long local4295 = (local4283 << 32) + local4288;
 			@Pc(4299) int local4299 = inboundBuffer.readUnsignedByte();
-			@Pc(4303) int local4303 = inboundBuffer.readUnsignedShort();
+			@Pc(4303) int phraseId = inboundBuffer.readUnsignedShort();
 			@Pc(4305) boolean local4305 = false;
 			@Pc(4307) int local4307 = 0;
 			label1529:
@@ -1204,13 +1204,13 @@ public final class Protocol {
 			if (!local4305 && Static3.anInt5405 == 0) {
 				Static4.aLongArray24[Static1.anInt595] = local4295;
 				Static1.anInt595 = (Static1.anInt595 + 1) % 100;
-				@Pc(4375) String local4375 = QuickChatPhraseTypeList.get(local4303).method1909(inboundBuffer);
+				@Pc(4375) String message = QuickChatPhraseTypeList.get(phraseId).decodeMessage(inboundBuffer);
 				if (local4299 == 2 || local4299 == 3) {
-					Static25.method2927("<img=1>" + Base37.decodeTitleCase(local4270), local4303, Base37.decodeTitleCase(local4278), 20, local4375);
+					Static25.method2927("<img=1>" + Base37.decodeTitleCase(local4270), phraseId, Base37.decodeTitleCase(local4278), 20, message);
 				} else if (local4299 == 1) {
-					Static25.method2927("<img=0>" + Base37.decodeTitleCase(local4270), local4303, Base37.decodeTitleCase(local4278), 20, local4375);
+					Static25.method2927("<img=0>" + Base37.decodeTitleCase(local4270), phraseId, Base37.decodeTitleCase(local4278), 20, message);
 				} else {
-					Static25.method2927(Base37.decodeTitleCase(local4270), local4303, Base37.decodeTitleCase(local4278), 20, local4375);
+					Static25.method2927(Base37.decodeTitleCase(local4270), phraseId, Base37.decodeTitleCase(local4278), 20, message);
 				}
 			}
 			opcode = -1;
@@ -1387,7 +1387,7 @@ public final class Protocol {
 			@Pc(5116) long local5116 = (long) inboundBuffer.readUnsignedShort();
 			@Pc(5121) long local5121 = (long) inboundBuffer.readUnsignedMedium();
 			@Pc(5125) int local5125 = inboundBuffer.readUnsignedByte();
-			@Pc(5129) int local5129 = inboundBuffer.readUnsignedShort();
+			@Pc(5129) int phraseId = inboundBuffer.readUnsignedShort();
 			@Pc(5131) boolean local5131 = false;
 			@Pc(5137) long local5137 = (local5116 << 32) + local5121;
 			@Pc(5139) int local5139 = 0;
@@ -1414,13 +1414,13 @@ public final class Protocol {
 			if (!local5131 && Static3.anInt5405 == 0) {
 				Static4.aLongArray24[Static1.anInt595] = local5137;
 				Static1.anInt595 = (Static1.anInt595 + 1) % 100;
-				@Pc(5214) String local5214 = QuickChatPhraseTypeList.get(local5129).method1909(inboundBuffer);
+				@Pc(5214) String message = QuickChatPhraseTypeList.get(phraseId).decodeMessage(inboundBuffer);
 				if (local5125 == 2) {
-					Static25.method2927("<img=1>" + Base37.decodeTitleCase(local5111), local5129, null, 18, local5214);
+					Static25.method2927("<img=1>" + Base37.decodeTitleCase(local5111), phraseId, null, 18, message);
 				} else if (local5125 == 1) {
-					Static25.method2927("<img=0>" + Base37.decodeTitleCase(local5111), local5129, null, 18, local5214);
+					Static25.method2927("<img=0>" + Base37.decodeTitleCase(local5111), phraseId, null, 18, message);
 				} else {
-					Static25.method2927(Base37.decodeTitleCase(local5111), local5129, null, 18, local5214);
+					Static25.method2927(Base37.decodeTitleCase(local5111), phraseId, null, 18, message);
 				}
 			}
 			opcode = -1;
@@ -1603,9 +1603,9 @@ public final class Protocol {
 			return true;
 		} else if (opcode == 221) {
 			@Pc(5909) long local5909 = inboundBuffer.readLong();
-			@Pc(5913) int local5913 = inboundBuffer.readUnsignedShort();
-			@Pc(5920) String local5920 = QuickChatPhraseTypeList.get(local5913).method1909(inboundBuffer);
-			Static25.method2927(Base37.decodeTitleCase(local5909), local5913, null, 19, local5920);
+			@Pc(5913) int phraseId = inboundBuffer.readUnsignedShort();
+			@Pc(5920) String message = QuickChatPhraseTypeList.get(phraseId).decodeMessage(inboundBuffer);
+			Static25.method2927(Base37.decodeTitleCase(local5909), phraseId, null, 19, message);
 			opcode = -1;
 			return true;
 		} else if (opcode == 199) {
@@ -2328,28 +2328,28 @@ public final class Protocol {
 				}
 				if (!local266 && Static3.anInt5405 == 0) {
 					Static5.aClass4_Sub10_8.position = 0;
-					@Pc(314) int local314 = -1;
+					@Pc(314) int phraseId = -1;
 					inboundBuffer.readBytesReverse(Static5.aClass4_Sub10_8.bytes, local248);
 					Static5.aClass4_Sub10_8.position = 0;
-					@Pc(333) String local333;
+					@Pc(333) String message;
 					if (local244) {
 						local232 &= 32767;
-						@Pc(343) Class27 local343 = Static24.method2701(Static5.aClass4_Sub10_8);
-						local314 = local343.anInt540;
-						local333 = local343.aClass4_Sub3_Sub11_1.method1909(Static5.aClass4_Sub10_8);
+						@Pc(343) QuickChatPhrase phrase = QuickChatPhrase.decode(Static5.aClass4_Sub10_8);
+						phraseId = phrase.id;
+						message = phrase.type.decodeMessage(Static5.aClass4_Sub10_8);
 					} else {
-						local333 = Static17.method2265(Static30.method3569(WordPack.readString(Static5.aClass4_Sub10_8)));
+						message = Static17.method2265(Static30.method3569(WordPack.readString(Static5.aClass4_Sub10_8)));
 					}
-					player.aString234 = local333.trim();
+					player.aString234 = message.trim();
 					player.anInt3998 = local232 & 0xFF;
 					player.anInt4023 = 150;
 					player.anInt3981 = local232 >> 8;
 					if (local236 == 2) {
-						Static25.method2927("<img=1>" + player.method1173(), local314, null, local244 ? 17 : 1, local333);
+						Static25.method2927("<img=1>" + player.method1173(), phraseId, null, local244 ? 17 : 1, message);
 					} else if (local236 == 1) {
-						Static25.method2927("<img=0>" + player.method1173(), local314, null, local244 ? 17 : 1, local333);
+						Static25.method2927("<img=0>" + player.method1173(), phraseId, null, local244 ? 17 : 1, message);
 					} else {
-						Static25.method2927(player.method1173(), local314, null, local244 ? 17 : 2, local333);
+						Static25.method2927(player.method1173(), phraseId, null, local244 ? 17 : 2, message);
 					}
 				}
 			}

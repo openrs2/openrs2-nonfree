@@ -48,7 +48,7 @@ public final class Static1 {
 	public static int anInt212;
 
 	@OriginalMember(owner = "client!am", name = "y", descriptor = "Lclient!cd;")
-	public static Class27 aClass27_1;
+	public static QuickChatPhrase aClass27_1;
 
 	@OriginalMember(owner = "client!am", name = "z", descriptor = "[Lclient!uj;")
 	public static Sprite[] aClass4_Sub3_Sub14Array2;

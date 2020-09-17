@@ -13,7 +13,7 @@ public final class QuickChatPhraseTypeList {
 	private static Js5 globalArchive;
 
 	@OriginalMember(owner = "client!pl", name = "v", descriptor = "Lclient!ai;")
-	private static Interface1 anInterface1_1 = null;
+	private static QuickChatCommandDecoder commandDecoder = null;
 
 	@OriginalMember(owner = "client!dc", name = "x", descriptor = "I")
 	public static int capacity = 0;
@@ -22,10 +22,10 @@ public final class QuickChatPhraseTypeList {
 	public static int globalCapacity = 0;
 
 	@OriginalMember(owner = "client!g", name = "a", descriptor = "(BLclient!fh;Lclient!ai;Lclient!fh;)V")
-	public static void init(@OriginalArg(3) Js5 archive, @OriginalArg(1) Js5 globalArchive, @OriginalArg(2) Interface1 arg1) {
+	public static void init(@OriginalArg(3) Js5 archive, @OriginalArg(1) Js5 globalArchive, @OriginalArg(2) QuickChatCommandDecoder textDecoder) {
 		QuickChatPhraseTypeList.archive = archive;
 		QuickChatPhraseTypeList.globalArchive = globalArchive;
-		anInterface1_1 = arg1;
+		QuickChatPhraseTypeList.commandDecoder = textDecoder;
 		if (QuickChatPhraseTypeList.archive != null) {
 			capacity = QuickChatPhraseTypeList.archive.getGroupCapacity(1);
 		}
@@ -58,13 +58,13 @@ public final class QuickChatPhraseTypeList {
 	}
 
 	@OriginalMember(owner = "client!in", name = "a", descriptor = "(JII[I)Ljava/lang/String;")
-	public static String method1940(@OriginalArg(0) long arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int[] arg2) {
-		if (anInterface1_1 != null) {
-			@Pc(18) String local18 = anInterface1_1.method3224(arg0, arg2, arg1);
-			if (local18 != null) {
-				return local18;
+	public static String decodeCommand(@OriginalArg(2) int command, @OriginalArg(3) int[] params, @OriginalArg(0) long value) {
+		if (commandDecoder != null) {
+			@Pc(18) String s = commandDecoder.decode(command, params, value);
+			if (s != null) {
+				return s;
 			}
 		}
-		return Long.toString(arg0);
+		return Long.toString(value);
 	}
 }

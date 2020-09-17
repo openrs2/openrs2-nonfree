@@ -503,7 +503,7 @@ public final class Static24 {
 		@Pc(27) int local27 = (arg0 ? QuickChatPhraseTypeList.globalCapacity : QuickChatPhraseTypeList.capacity) + local17;
 		for (@Pc(29) int local29 = local17; local29 < local27; local29++) {
 			@Pc(40) QuickChatPhraseType local40 = QuickChatPhraseTypeList.get(local29);
-			if (local40.aBoolean163 && local40.method1913().toLowerCase().indexOf(arg1) != -1) {
+			if (local40.searchable && local40.getText().toLowerCase().indexOf(arg1) != -1) {
 				if (local19 >= 50) {
 					Static2.anInt5734 = -1;
 					Static7.aShortArray114 = null;
@@ -524,17 +524,9 @@ public final class Static24 {
 		@Pc(118) String[] local118 = new String[Static2.anInt5734];
 		Static7.aShortArray114 = local8;
 		for (@Pc(122) int local122 = 0; local122 < Static2.anInt5734; local122++) {
-			local118[local122] = QuickChatPhraseTypeList.get(local8[local122]).method1913();
+			local118[local122] = QuickChatPhraseTypeList.get(local8[local122]).getText();
 		}
 		Static12.method714(Static7.aShortArray114, local118);
-	}
-
-	@OriginalMember(owner = "client!me", name = "a", descriptor = "(ILclient!fd;)Lclient!cd;")
-	public static Class27 method2701(@OriginalArg(1) Buffer arg0) {
-		@Pc(7) Class27 local7 = new Class27();
-		local7.anInt540 = arg0.readUnsignedShort();
-		local7.aClass4_Sub3_Sub11_1 = QuickChatPhraseTypeList.get(local7.anInt540);
-		return local7;
 	}
 
 	@OriginalMember(owner = "client!mf", name = "a", descriptor = "(II)V")

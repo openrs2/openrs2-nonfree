@@ -155,9 +155,6 @@ public final class Static2 {
 	@OriginalMember(owner = "client!dc", name = "m", descriptor = "I")
 	public static int anInt902 = 0;
 
-	@OriginalMember(owner = "client!dc", name = "p", descriptor = "[I")
-	public static final int[] anIntArray64 = new int[] { 2, 2, 4, 0, 1, 8, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0 };
-
 	@OriginalMember(owner = "client!dc", name = "B", descriptor = "I")
 	public static int anInt915 = 0;
 

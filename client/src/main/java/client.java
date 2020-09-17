@@ -637,7 +637,7 @@ public final class client extends GameShell {
 				InterfaceList.init(js5Archive3, js5Archive7, js5Archive8, js5Archive13);
 				InvTypeList.init(js5Archive2);
 				EnumTypeList.init(js5Archive17);
-				QuickChatPhraseTypeList.init(js5Archive24, js5Archive25, new Class128());
+				QuickChatPhraseTypeList.init(js5Archive24, js5Archive25, new Js5QuickChatCommandDecoder());
 				QuickChatCatTypeList.init(js5Archive24, js5Archive25);
 				SkyBoxTypeList.init(js5Archive2);
 				SkyBoxSphereTypeList.init(js5Archive2);

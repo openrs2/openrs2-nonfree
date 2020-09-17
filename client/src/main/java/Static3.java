@@ -415,9 +415,6 @@ public final class Static3 {
 	@OriginalMember(owner = "client!i", name = "b", descriptor = "I")
 	public static int anInt2297 = 0;
 
-	@OriginalMember(owner = "client!ia", name = "d", descriptor = "[I")
-	public static final int[] anIntArray191 = new int[] { 2, 2, 4, 2, 1, 8, 4, 1, 4, 4, 2, 1, 1, 1, 4, 1 };
-
 	@OriginalMember(owner = "client!ia", name = "i", descriptor = "Lclient!wf;")
 	public static Component aClass185_5 = null;
 

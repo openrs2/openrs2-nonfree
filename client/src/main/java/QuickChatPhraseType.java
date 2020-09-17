@@ -6,66 +6,75 @@ import dev.openrs2.deob.annotation.Pc;
 @OriginalClass("client!ij")
 public final class QuickChatPhraseType extends SecondaryNode {
 
+	@OriginalMember(owner = "client!qe", name = "f", descriptor = "[I")
+	private static final int[] DYNAMIC_COMMAND_PARAM_LENGTHS = new int[] { 1, 0, 0, 0, 1, 0, 2, 1, 1, 1, 0, 2, 0, 0, 1, 0 };
+
+	@OriginalMember(owner = "client!ia", name = "d", descriptor = "[I")
+	private static final int[] DYNAMIC_COMMAND_DECODE_BYTES = new int[] { 2, 2, 4, 2, 1, 8, 4, 1, 4, 4, 2, 1, 1, 1, 4, 1 };
+
+	@OriginalMember(owner = "client!dc", name = "p", descriptor = "[I")
+	public static final int[] DYNAMIC_COMMAND_ENCODE_BYTES = new int[] { 2, 2, 4, 0, 1, 8, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0 };
+
 	@OriginalMember(owner = "client!ij", name = "z", descriptor = "[I")
-	private int[] anIntArray210;
+	private int[] dynamicCommands;
 
 	@OriginalMember(owner = "client!ij", name = "A", descriptor = "[[I")
-	private int[][] anIntArrayArray20;
+	private int[][] dynamicCommandParams;
 
 	@OriginalMember(owner = "client!ij", name = "O", descriptor = "[I")
-	public int[] anIntArray212;
+	public int[] automaticResponses;
 
 	@OriginalMember(owner = "client!ij", name = "S", descriptor = "[Ljava/lang/String;")
-	private String[] aStringArray17;
+	private String[] text;
 
 	@OriginalMember(owner = "client!ij", name = "H", descriptor = "Z")
-	public boolean aBoolean163 = true;
+	public boolean searchable = true;
 
 	@OriginalMember(owner = "client!ij", name = "d", descriptor = "(I)I")
-	public final int method1903() {
-		return this.anIntArray210 == null ? 0 : this.anIntArray210.length;
+	public final int getDynamicCommandCount() {
+		return this.dynamicCommands == null ? 0 : this.dynamicCommands.length;
 	}
 
 	@OriginalMember(owner = "client!ij", name = "a", descriptor = "(III)I")
-	public final int method1904(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1) {
-		if (this.anIntArray210 == null || arg1 < 0 || arg1 > this.anIntArray210.length) {
+	public final int getDynamicCommandParam(@OriginalArg(2) int i, @OriginalArg(0) int j) {
+		if (this.dynamicCommands == null || i < 0 || i > this.dynamicCommands.length) {
 			return -1;
-		} else if (this.anIntArrayArray20[arg1] == null || arg0 < 0 || arg0 > this.anIntArrayArray20[arg1].length) {
+		} else if (this.dynamicCommandParams[i] == null || j < 0 || j > this.dynamicCommandParams[i].length) {
 			return -1;
 		} else {
-			return this.anIntArrayArray20[arg1][arg0];
+			return this.dynamicCommandParams[i][j];
 		}
 	}
 
 	@OriginalMember(owner = "client!ij", name = "a", descriptor = "(II)I")
-	public final int method1905(@OriginalArg(0) int arg0) {
-		return this.anIntArray210 == null || arg0 < 0 || arg0 > this.anIntArray210.length ? -1 : this.anIntArray210[arg0];
+	public final int getDynamicCommand(@OriginalArg(0) int i) {
+		return this.dynamicCommands == null || i < 0 || i > this.dynamicCommands.length ? -1 : this.dynamicCommands[i];
 	}
 
 	@OriginalMember(owner = "client!ij", name = "a", descriptor = "(IZLclient!fd;)V")
 	private void decode(@OriginalArg(2) Buffer buffer, @OriginalArg(0) int code) {
 		if (code == 1) {
-			this.aStringArray17 = StringUtils.split(buffer.readString(), '<');
+			this.text = StringUtils.split(buffer.readString(), '<');
 		} else if (code == 2) {
-			@Pc(103) int local103 = buffer.readUnsignedByte();
-			this.anIntArray212 = new int[local103];
-			for (@Pc(109) int local109 = 0; local109 < local103; local109++) {
-				this.anIntArray212[local109] = buffer.readUnsignedShort();
+			@Pc(103) int len = buffer.readUnsignedByte();
+			this.automaticResponses = new int[len];
+			for (@Pc(109) int i = 0; i < len; i++) {
+				this.automaticResponses[i] = buffer.readUnsignedShort();
 			}
 		} else if (code == 3) {
-			@Pc(27) int local27 = buffer.readUnsignedByte();
-			this.anIntArrayArray20 = new int[local27][];
-			this.anIntArray210 = new int[local27];
-			for (@Pc(37) int local37 = 0; local37 < local27; local37++) {
-				@Pc(48) int local48 = buffer.readUnsignedShort();
-				this.anIntArray210[local37] = local48;
-				this.anIntArrayArray20[local37] = new int[Static5.anIntArray456[local48]];
-				for (@Pc(63) int local63 = 0; local63 < Static5.anIntArray456[local48]; local63++) {
-					this.anIntArrayArray20[local37][local63] = buffer.readUnsignedShort();
+			@Pc(27) int len = buffer.readUnsignedByte();
+			this.dynamicCommandParams = new int[len][];
+			this.dynamicCommands = new int[len];
+			for (@Pc(37) int i = 0; i < len; i++) {
+				@Pc(48) int command = buffer.readUnsignedShort();
+				this.dynamicCommands[i] = command;
+				this.dynamicCommandParams[i] = new int[DYNAMIC_COMMAND_PARAM_LENGTHS[command]];
+				for (@Pc(63) int j = 0; j < DYNAMIC_COMMAND_PARAM_LENGTHS[command]; j++) {
+					this.dynamicCommandParams[i][j] = buffer.readUnsignedShort();
 				}
 			}
 		} else if (code == 4) {
-			this.aBoolean163 = false;
+			this.searchable = false;
 		}
 	}
 
@@ -81,51 +90,51 @@ public final class QuickChatPhraseType extends SecondaryNode {
 	}
 
 	@OriginalMember(owner = "client!ij", name = "a", descriptor = "(ILclient!fd;)Ljava/lang/String;")
-	public final String method1909(@OriginalArg(1) Buffer arg0) {
-		@Pc(16) StringBuffer local16 = new StringBuffer(80);
-		if (this.anIntArray210 != null) {
-			for (@Pc(21) int local21 = 0; local21 < this.anIntArray210.length; local21++) {
-				local16.append(this.aStringArray17[local21]);
-				local16.append(QuickChatPhraseTypeList.method1940(arg0.readVarLong(Static3.anIntArray191[this.anIntArray210[local21]]), this.anIntArray210[local21], this.anIntArrayArray20[local21]));
+	public final String decodeMessage(@OriginalArg(1) Buffer buffer) {
+		@Pc(16) StringBuffer s = new StringBuffer(80);
+		if (this.dynamicCommands != null) {
+			for (@Pc(21) int i = 0; i < this.dynamicCommands.length; i++) {
+				s.append(this.text[i]);
+				s.append(QuickChatPhraseTypeList.decodeCommand(this.dynamicCommands[i], this.dynamicCommandParams[i], buffer.readVarLong(DYNAMIC_COMMAND_DECODE_BYTES[this.dynamicCommands[i]])));
 			}
 		}
-		local16.append(this.aStringArray17[this.aStringArray17.length - 1]);
-		return local16.toString();
+		s.append(this.text[this.text.length - 1]);
+		return s.toString();
 	}
 
 	@OriginalMember(owner = "client!ij", name = "e", descriptor = "(I)V")
 	public final void method1910() {
-		if (this.anIntArray212 != null) {
-			for (@Pc(20) int local20 = 0; local20 < this.anIntArray212.length; local20++) {
-				this.anIntArray212[local20] |= 32768;
+		if (this.automaticResponses != null) {
+			for (@Pc(20) int i = 0; i < this.automaticResponses.length; i++) {
+				this.automaticResponses[i] |= 32768;
 			}
 		}
 	}
 
 	@OriginalMember(owner = "client!ij", name = "a", descriptor = "([IBLclient!fd;)V")
-	public final void method1911(@OriginalArg(0) int[] arg0, @OriginalArg(2) Buffer arg1) {
-		if (this.anIntArray210 == null) {
+	public final void encodeMessage(@OriginalArg(2) Buffer buffer, @OriginalArg(0) int[] values) {
+		if (this.dynamicCommands == null) {
 			return;
 		}
-		for (@Pc(13) int local13 = 0; local13 < this.anIntArray210.length && local13 < arg0.length; local13++) {
-			@Pc(29) int local29 = Static2.anIntArray64[this.method1905(local13)];
-			if (local29 > 0) {
-				arg1.writeVarLong((long) arg0[local13], local29);
+		for (@Pc(13) int i = 0; i < this.dynamicCommands.length && i < values.length; i++) {
+			@Pc(29) int bytes = DYNAMIC_COMMAND_ENCODE_BYTES[this.getDynamicCommand(i)];
+			if (bytes > 0) {
+				buffer.writeVarLong(values[i], bytes);
 			}
 		}
 	}
 
 	@OriginalMember(owner = "client!ij", name = "f", descriptor = "(I)Ljava/lang/String;")
-	public final String method1913() {
-		@Pc(6) StringBuffer local6 = new StringBuffer(80);
-		if (this.aStringArray17 == null) {
+	public final String getText() {
+		@Pc(6) StringBuffer s = new StringBuffer(80);
+		if (this.text == null) {
 			return "";
 		}
-		local6.append(this.aStringArray17[0]);
-		for (@Pc(31) int local31 = 1; local31 < this.aStringArray17.length; local31++) {
-			local6.append("...");
-			local6.append(this.aStringArray17[local31]);
+		s.append(this.text[0]);
+		for (@Pc(31) int i = 1; i < this.text.length; i++) {
+			s.append("...");
+			s.append(this.text[i]);
 		}
-		return local6.toString();
+		return s.toString();
 	}
 }
