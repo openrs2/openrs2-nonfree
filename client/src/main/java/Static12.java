@@ -739,7 +739,7 @@ public final class Static12 {
 
 	@OriginalMember(owner = "client!co", name = "b", descriptor = "(I)V")
 	public static void method719() {
-		Static6.aClass112_28 = new LinkedList();
+		ReflectionCheck.queue = new LinkedList();
 	}
 
 	@OriginalMember(owner = "client!d", name = "a", descriptor = "(I)[F")

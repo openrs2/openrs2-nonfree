@@ -943,7 +943,7 @@ public final class Protocol {
 			Static6.aClass4_Sub15Array1 = local3217;
 			return true;
 		} else if (opcode == 173) {
-			Static22.method4689(GameShell.signLink, length, inboundBuffer);
+			ReflectionCheck.push(inboundBuffer, length, GameShell.signLink);
 			opcode = -1;
 			return true;
 		} else if (opcode == 115 || opcode == 111 || opcode == 17 || opcode == 144 || opcode == 114 || opcode == 133 || opcode == 47 || opcode == 158 || opcode == 105 || opcode == 120 || opcode == 60 || opcode == 179 || opcode == 232 || opcode == 131) {

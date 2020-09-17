@@ -356,9 +356,6 @@ public final class Static6 {
 	@OriginalMember(owner = "client!rl", name = "u", descriptor = "[I")
 	public static final int[] anIntArray494 = new int[] { 2047, 16383, 65535 };
 
-	@OriginalMember(owner = "client!rl", name = "x", descriptor = "Lclient!ll;")
-	public static LinkedList aClass112_28 = new LinkedList();
-
 	@OriginalMember(owner = "client!rm", name = "hb", descriptor = "I")
 	public static int anInt4659 = 0;
 

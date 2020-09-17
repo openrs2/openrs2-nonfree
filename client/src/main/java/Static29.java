@@ -866,7 +866,7 @@ public final class Static29 {
 		if (Static4.anInt3304 != 30) {
 			return;
 		}
-		Static31.method3753(Protocol.outboundBuffer);
+		ReflectionCheck.loop(Protocol.outboundBuffer);
 		synchronized (MouseRecorder.instance.lock) {
 			if (!Static5.aBoolean277) {
 				MouseRecorder.instance.samples = 0;

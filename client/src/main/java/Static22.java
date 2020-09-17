@@ -23,69 +23,6 @@ public final class Static22 {
 		}
 	}
 
-	@OriginalMember(owner = "client!jo", name = "a", descriptor = "(Lsignlink!pm;IBLclient!fd;)V")
-	public static void method4689(@OriginalArg(0) SignLink arg0, @OriginalArg(1) int arg1, @OriginalArg(3) Buffer arg2) {
-		@Pc(9) Class4_Sub29 local9 = new Class4_Sub29();
-		local9.anInt4857 = arg2.readUnsignedByte();
-		local9.anInt4858 = arg2.readInt();
-		local9.anIntArray527 = new int[local9.anInt4857];
-		local9.aByteArrayArrayArray19 = new byte[local9.anInt4857][][];
-		local9.aClass197Array1 = new PrivilegedRequest[local9.anInt4857];
-		local9.aClass197Array2 = new PrivilegedRequest[local9.anInt4857];
-		local9.anIntArray529 = new int[local9.anInt4857];
-		local9.anIntArray526 = new int[local9.anInt4857];
-		for (@Pc(57) int local57 = 0; local57 < local9.anInt4857; local57++) {
-			try {
-				@Pc(69) int local69 = arg2.readUnsignedByte();
-				if (local69 == 0 || local69 == 1 || local69 == 2) {
-					@Pc(88) String local88 = arg2.readString();
-					@Pc(90) int local90 = 0;
-					@Pc(94) String local94 = arg2.readString();
-					if (local69 == 1) {
-						local90 = arg2.readInt();
-					}
-					local9.anIntArray527[local57] = local69;
-					local9.anIntArray526[local57] = local90;
-					local9.aClass197Array1[local57] = arg0.getDeclaredField(Static33.method4156(local88), local94);
-				} else if (local69 == 3 || local69 == 4) {
-					@Pc(137) String local137 = arg2.readString();
-					@Pc(141) String local141 = arg2.readString();
-					@Pc(145) int local145 = arg2.readUnsignedByte();
-					@Pc(148) String[] local148 = new String[local145];
-					for (@Pc(150) int local150 = 0; local150 < local145; local150++) {
-						local148[local150] = arg2.readString();
-					}
-					@Pc(169) byte[][] local169 = new byte[local145][];
-					if (local69 == 3) {
-						for (@Pc(174) int local174 = 0; local174 < local145; local174++) {
-							@Pc(185) int local185 = arg2.readInt();
-							local169[local174] = new byte[local185];
-							arg2.readBytes(local169[local174], local185);
-						}
-					}
-					@Pc(204) Class[] local204 = new Class[local145];
-					local9.anIntArray527[local57] = local69;
-					for (@Pc(211) int local211 = 0; local211 < local145; local211++) {
-						local204[local211] = Static33.method4156(local148[local211]);
-					}
-					local9.aClass197Array2[local57] = arg0.getDeclaredMethod(Static33.method4156(local137), local141, local204);
-					local9.aByteArrayArrayArray19[local57] = local169;
-				}
-			} catch (@Pc(244) ClassNotFoundException local244) {
-				local9.anIntArray529[local57] = -1;
-			} catch (@Pc(251) SecurityException local251) {
-				local9.anIntArray529[local57] = -2;
-			} catch (@Pc(258) NullPointerException local258) {
-				local9.anIntArray529[local57] = -3;
-			} catch (@Pc(265) Exception local265) {
-				local9.anIntArray529[local57] = -4;
-			} catch (@Pc(272) Throwable local272) {
-				local9.anIntArray529[local57] = -5;
-			}
-		}
-		Static6.aClass112_28.addTail(local9);
-	}
-
 	@OriginalMember(owner = "client!jo", name = "a", descriptor = "(ILclient!vh;III)V")
 	public static void method4690(@OriginalArg(0) int arg0, @OriginalArg(1) LocType arg1, @OriginalArg(2) int arg2, @OriginalArg(4) int arg3) {
 		for (@Pc(15) Class4_Sub11 local15 = (Class4_Sub11) Static1.aClass112_2.head(); local15 != null; local15 = (Class4_Sub11) Static1.aClass112_2.next()) {
