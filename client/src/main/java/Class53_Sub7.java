@@ -384,7 +384,7 @@ public final class Class53_Sub7 extends Entity {
 	private void method3737(@OriginalArg(1) Entity arg0) {
 		if (GlRenderer.enabled) {
 			@Pc(70) GlModel local70 = (GlModel) arg0;
-			if ((this.aClass20_Sub3_7 == null || this.aClass20_Sub3_7.stopped) && (local70.aClass158Array3 != null || local70.aClass167Array3 != null)) {
+			if ((this.aClass20_Sub3_7 == null || this.aClass20_Sub3_7.stopped) && (local70.particleEmitters != null || local70.particleEffectors != null)) {
 				@Pc(91) LocType local91 = LocTypeList.get(this.anInt4587);
 				if (local91.anIntArray631 != null) {
 					local91 = local91.method4453();
@@ -394,11 +394,11 @@ public final class Class53_Sub7 extends Entity {
 				}
 			}
 			if (this.aClass20_Sub3_7 != null) {
-				this.aClass20_Sub3_7.method2967(local70.aClass158Array3, local70.aClass167Array3, false, local70.anIntArray507, local70.anIntArray504, local70.anIntArray502);
+				this.aClass20_Sub3_7.method2967(local70.particleEmitters, local70.particleEffectors, false, local70.anIntArray507, local70.anIntArray504, local70.anIntArray502);
 			}
 		} else {
 			@Pc(8) SoftwareModel local8 = (SoftwareModel) arg0;
-			if ((this.aClass20_Sub3_7 == null || this.aClass20_Sub3_7.stopped) && (local8.aClass158Array2 != null || local8.aClass167Array2 != null)) {
+			if ((this.aClass20_Sub3_7 == null || this.aClass20_Sub3_7.stopped) && (local8.particleEmitters != null || local8.particleEffectors != null)) {
 				@Pc(28) LocType local28 = LocTypeList.get(this.anInt4587);
 				if (local28.anIntArray631 != null) {
 					local28 = local28.method4453();
@@ -408,7 +408,7 @@ public final class Class53_Sub7 extends Entity {
 				}
 			}
 			if (this.aClass20_Sub3_7 != null) {
-				this.aClass20_Sub3_7.method2967(local8.aClass158Array2, local8.aClass167Array2, false, local8.anIntArray347, local8.anIntArray344, local8.anIntArray340);
+				this.aClass20_Sub3_7.method2967(local8.particleEmitters, local8.particleEffectors, false, local8.anIntArray347, local8.anIntArray344, local8.anIntArray340);
 			}
 		}
 		this.aBoolean319 = true;

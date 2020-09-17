@@ -52,7 +52,7 @@ public final class GlModel extends Model {
 	private short[] aShortArray92;
 
 	@OriginalMember(owner = "client!s", name = "B", descriptor = "[Lclient!u;")
-	public ParticleEffector[] aClass167Array3;
+	public ModelParticleEffector[] particleEffectors;
 
 	@OriginalMember(owner = "client!s", name = "C", descriptor = "Lclient!rj;")
 	private Class152 aClass152_1;
@@ -115,7 +115,7 @@ public final class GlModel extends Model {
 	private int[][] anIntArrayArray40;
 
 	@OriginalMember(owner = "client!s", name = "lb", descriptor = "[Lclient!sk;")
-	public ParticleEmitter[] aClass158Array3;
+	public ModelParticleEmitter[] particleEmitters;
 
 	@OriginalMember(owner = "client!s", name = "F", descriptor = "I")
 	public int anInt4689 = 0;
@@ -190,8 +190,8 @@ public final class GlModel extends Model {
 		this.anIntArray502 = arg0.anIntArray326;
 		this.anIntArray503 = arg0.anIntArray323;
 		this.aShortArray96 = arg0.aShortArray52;
-		this.aClass158Array3 = arg0.particleEmitters;
-		this.aClass167Array3 = arg0.particleEffectors;
+		this.particleEmitters = arg0.particleEmitters;
+		this.particleEffectors = arg0.particleEffectors;
 		@Pc(292) int local292 = this.anInt4690 * 3;
 		this.aShortArray95 = new short[local292];
 		this.aShortArray90 = new short[local292];
@@ -1358,8 +1358,8 @@ public final class GlModel extends Model {
 		local3.anIntArray506 = this.anIntArray506;
 		local3.aShort43 = this.aShort43;
 		local3.aShort44 = this.aShort44;
-		local3.aClass158Array3 = this.aClass158Array3;
-		local3.aClass167Array3 = this.aClass167Array3;
+		local3.particleEmitters = this.particleEmitters;
+		local3.particleEffectors = this.particleEffectors;
 		local3.aShortArray96 = this.aShortArray96;
 		local3.aShortArray88 = this.aShortArray88;
 		return local3;
@@ -3077,8 +3077,8 @@ public final class GlModel extends Model {
 		arg3.aBoolean324 = this.aBoolean324;
 		arg3.aShortArray96 = this.aShortArray96;
 		arg3.aShortArray88 = this.aShortArray88;
-		arg3.aClass158Array3 = this.aClass158Array3;
-		arg3.aClass167Array3 = this.aClass167Array3;
+		arg3.particleEmitters = this.particleEmitters;
+		arg3.particleEffectors = this.particleEffectors;
 		return arg3;
 	}
 

@@ -4,16 +4,16 @@ import dev.openrs2.deob.annotation.OriginalMember;
 import dev.openrs2.deob.annotation.Pc;
 
 @OriginalClass("client!lb")
-public final class SecondarySceneGraphLinkedList {
+public final class SecondaryParticleLinkedList {
 
 	@OriginalMember(owner = "client!lb", name = "l", descriptor = "Lclient!r;")
-	private SecondarySceneGraphNode cursor;
+	private SecondaryParticleNode cursor;
 
 	@OriginalMember(owner = "client!lb", name = "e", descriptor = "Lclient!r;")
-	public final SecondarySceneGraphNode sentinel = new SecondarySceneGraphNode();
+	public final SecondaryParticleNode sentinel = new SecondaryParticleNode();
 
 	@OriginalMember(owner = "client!lb", name = "<init>", descriptor = "()V")
-	public SecondarySceneGraphLinkedList() {
+	public SecondaryParticleLinkedList() {
 		this.sentinel.secondaryNext = this.sentinel;
 		this.sentinel.secondaryPrev = this.sentinel;
 	}
@@ -21,7 +21,7 @@ public final class SecondarySceneGraphLinkedList {
 	@OriginalMember(owner = "client!lb", name = "b", descriptor = "(I)V")
 	public final void clear() {
 		while (true) {
-			@Pc(5) SecondarySceneGraphNode node = this.sentinel.secondaryNext;
+			@Pc(5) SecondaryParticleNode node = this.sentinel.secondaryNext;
 			if (node == this.sentinel) {
 				this.cursor = null;
 				return;
@@ -31,8 +31,8 @@ public final class SecondarySceneGraphLinkedList {
 	}
 
 	@OriginalMember(owner = "client!lb", name = "c", descriptor = "(B)Lclient!r;")
-	public final SecondarySceneGraphNode head() {
-		@Pc(18) SecondarySceneGraphNode node = this.sentinel.secondaryNext;
+	public final SecondaryParticleNode head() {
+		@Pc(18) SecondaryParticleNode node = this.sentinel.secondaryNext;
 		if (node == this.sentinel) {
 			this.cursor = null;
 			return null;
@@ -43,7 +43,7 @@ public final class SecondarySceneGraphLinkedList {
 	}
 
 	@OriginalMember(owner = "client!lb", name = "a", descriptor = "(ILclient!r;)V")
-	public final void addTail(@OriginalArg(1) SecondarySceneGraphNode node) {
+	public final void addTail(@OriginalArg(1) SecondaryParticleNode node) {
 		if (node.secondaryPrev != null) {
 			node.unlinkSecondary();
 		}
@@ -54,8 +54,8 @@ public final class SecondarySceneGraphLinkedList {
 	}
 
 	@OriginalMember(owner = "client!lb", name = "d", descriptor = "(B)Lclient!r;")
-	public final SecondarySceneGraphNode next() {
-		@Pc(2) SecondarySceneGraphNode node = this.cursor;
+	public final SecondaryParticleNode next() {
+		@Pc(2) SecondaryParticleNode node = this.cursor;
 		if (this.sentinel == node) {
 			this.cursor = null;
 			return null;

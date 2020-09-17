@@ -55,7 +55,7 @@ public final class SoftwareModel extends Model {
 	public int[] anIntArray344;
 
 	@OriginalMember(owner = "client!na", name = "I", descriptor = "[Lclient!u;")
-	public ParticleEffector[] aClass167Array2;
+	public ModelParticleEffector[] particleEffectors;
 
 	@OriginalMember(owner = "client!na", name = "J", descriptor = "[S")
 	private short[] aShortArray63;
@@ -85,7 +85,7 @@ public final class SoftwareModel extends Model {
 	private int[] anIntArray348;
 
 	@OriginalMember(owner = "client!na", name = "U", descriptor = "[Lclient!sk;")
-	public ParticleEmitter[] aClass158Array2;
+	public ModelParticleEmitter[] particleEmitters;
 
 	@OriginalMember(owner = "client!na", name = "X", descriptor = "[I")
 	private int[] anIntArray351;
@@ -156,8 +156,8 @@ public final class SoftwareModel extends Model {
 		this.anIntArrayArray29 = arg0.anIntArrayArray27;
 		this.anIntArrayArray30 = arg0.anIntArrayArray26;
 		this.aShortArray62 = arg0.aShortArray54;
-		this.aClass158Array2 = arg0.particleEmitters;
-		this.aClass167Array2 = arg0.particleEffectors;
+		this.particleEmitters = arg0.particleEmitters;
+		this.particleEffectors = arg0.particleEffectors;
 		this.aShortArray64 = arg0.aShortArray52;
 		@Pc(117) int local117 = (int) Math.sqrt((double) (arg3 * arg3 + arg4 * arg4 + arg5 * arg5));
 		@Pc(123) int local123 = arg2 * local117 >> 8;
@@ -346,11 +346,11 @@ public final class SoftwareModel extends Model {
 				local26 |= local55.aByteArray42 != null;
 				local28 |= local55.aShortArray61 != null;
 				local30 |= local55.aByteArray43 != null;
-				if (local55.aClass158Array2 != null) {
-					local41 += local55.aClass158Array2.length;
+				if (local55.particleEmitters != null) {
+					local41 += local55.particleEmitters.length;
 				}
-				if (local55.aClass167Array2 != null) {
-					local43 += local55.aClass167Array2.length;
+				if (local55.particleEffectors != null) {
+					local43 += local55.particleEffectors.length;
 				}
 			}
 		}
@@ -381,10 +381,10 @@ public final class SoftwareModel extends Model {
 			this.anIntArray341 = new int[this.anInt3437];
 		}
 		if (local41 > 0) {
-			this.aClass158Array2 = new ParticleEmitter[local41];
+			this.particleEmitters = new ModelParticleEmitter[local41];
 		}
 		if (local43 > 0) {
-			this.aClass167Array2 = new ParticleEffector[local43];
+			this.particleEffectors = new ModelParticleEffector[local43];
 		}
 		this.aShortArray63 = new short[this.anInt3439];
 		this.anInt3440 = 0;
@@ -425,15 +425,15 @@ public final class SoftwareModel extends Model {
 					}
 					this.anInt3439++;
 				}
-				if (local276.aClass158Array2 != null) {
-					for (@Pc(452) int local452 = 0; local452 < local276.aClass158Array2.length; local452++) {
-						this.aClass158Array2[local267] = new ParticleEmitter(local276.aClass158Array2[local452].type, local276.aClass158Array2[local452].anInt4869 + this.anInt3440, local276.aClass158Array2[local452].anInt4868 + this.anInt3440, local276.aClass158Array2[local452].anInt4864 + this.anInt3440);
+				if (local276.particleEmitters != null) {
+					for (@Pc(452) int local452 = 0; local452 < local276.particleEmitters.length; local452++) {
+						this.particleEmitters[local267] = new ModelParticleEmitter(local276.particleEmitters[local452].type, local276.particleEmitters[local452].anInt4869 + this.anInt3440, local276.particleEmitters[local452].anInt4868 + this.anInt3440, local276.particleEmitters[local452].anInt4864 + this.anInt3440);
 						local267++;
 					}
 				}
-				if (local276.aClass167Array2 != null) {
-					for (@Pc(501) int local501 = 0; local501 < local276.aClass167Array2.length; local501++) {
-						this.aClass167Array2[local265] = new ParticleEffector(local276.aClass167Array2[local501].type, local276.aClass167Array2[local501].anInt5232 + this.anInt3440);
+				if (local276.particleEffectors != null) {
+					for (@Pc(501) int local501 = 0; local501 < local276.particleEffectors.length; local501++) {
+						this.particleEffectors[local265] = new ModelParticleEffector(local276.particleEffectors[local501].type, local276.particleEffectors[local501].anInt5232 + this.anInt3440);
 						local265++;
 					}
 				}
@@ -1569,8 +1569,8 @@ public final class SoftwareModel extends Model {
 		arg2.aShortArray62 = this.aShortArray62;
 		arg2.aBoolean324 = this.aBoolean324;
 		arg2.aBoolean244 = false;
-		arg2.aClass158Array2 = this.aClass158Array2;
-		arg2.aClass167Array2 = this.aClass167Array2;
+		arg2.particleEmitters = this.particleEmitters;
+		arg2.particleEffectors = this.particleEffectors;
 		return arg2;
 	}
 

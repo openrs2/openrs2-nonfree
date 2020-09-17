@@ -99,7 +99,7 @@ public final class Npc extends PathingEntity {
 		}
 		if (this.aClass20_Sub3_6 != null) {
 			@Pc(352) GlModel local352 = (GlModel) local189;
-			this.aClass20_Sub3_6.method2967(local352.aClass158Array3, local352.aClass167Array3, true, local352.anIntArray507, local352.anIntArray504, local352.anIntArray502);
+			this.aClass20_Sub3_6.method2967(local352.particleEmitters, local352.particleEffectors, true, local352.anIntArray507, local352.anIntArray504, local352.anIntArray502);
 		}
 		local189.method3805(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, this.aClass20_Sub3_6);
 	}

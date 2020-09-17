@@ -2,24 +2,45 @@ import dev.openrs2.deob.annotation.OriginalArg;
 import dev.openrs2.deob.annotation.OriginalClass;
 import dev.openrs2.deob.annotation.OriginalMember;
 
-@OriginalClass("client!u")
-public final class ParticleEffector {
+@OriginalClass("client!wn")
+public final class ParticleEffector extends SecondaryNode {
 
-	@OriginalMember(owner = "client!u", name = "i", descriptor = "Lclient!dc;")
-	public final ParticleEffectorType type;
+	@OriginalMember(owner = "client!wn", name = "z", descriptor = "I")
+	public int anInt6084;
 
-	@OriginalMember(owner = "client!u", name = "f", descriptor = "I")
-	public final int anInt5232;
+	@OriginalMember(owner = "client!wn", name = "A", descriptor = "I")
+	public int anInt6085;
 
-	@OriginalMember(owner = "client!u", name = "<init>", descriptor = "(II)V")
-	public ParticleEffector(@OriginalArg(0) int id, @OriginalArg(1) int arg1) {
-		this.type = ParticleEffectorTypeList.get(id);
-		this.anInt5232 = arg1;
+	@OriginalMember(owner = "client!wn", name = "F", descriptor = "I")
+	public int anInt6087;
+
+	@OriginalMember(owner = "client!wn", name = "G", descriptor = "I")
+	public int anInt6088;
+
+	@OriginalMember(owner = "client!wn", name = "H", descriptor = "I")
+	public int anInt6089;
+
+	@OriginalMember(owner = "client!wn", name = "I", descriptor = "I")
+	public int anInt6090;
+
+	@OriginalMember(owner = "client!wn", name = "J", descriptor = "I")
+	public int anInt6091;
+
+	@OriginalMember(owner = "client!wn", name = "O", descriptor = "I")
+	public int anInt6095;
+
+	@OriginalMember(owner = "client!wn", name = "D", descriptor = "Lclient!u;")
+	public final ModelParticleEffector effector;
+
+	@OriginalMember(owner = "client!wn", name = "<init>", descriptor = "(Lclient!u;Lclient!ne;)V")
+	public ParticleEffector(@OriginalArg(0) ModelParticleEffector effector, @OriginalArg(1) ParticleSystem system) {
+		this.effector = effector;
 	}
 
-	@OriginalMember(owner = "client!u", name = "<init>", descriptor = "(Lclient!dc;I)V")
-	public ParticleEffector(@OriginalArg(0) ParticleEffectorType type, @OriginalArg(1) int arg1) {
-		this.anInt5232 = arg1;
-		this.type = type;
+	@OriginalMember(owner = "client!wn", name = "a", descriptor = "(IIII)V")
+	public final void method4827(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2) {
+		this.anInt6090 = arg0;
+		this.anInt6084 = arg2;
+		this.anInt6085 = arg1;
 	}
 }

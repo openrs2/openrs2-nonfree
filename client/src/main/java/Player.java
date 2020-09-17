@@ -309,7 +309,7 @@ public final class Player extends PathingEntity {
 			if (local494 != null) {
 				if (this.aClass20_Sub3_6 != null) {
 					@Pc(736) GlModel local736 = (GlModel) local494;
-					this.aClass20_Sub3_6.method2967(local736.aClass158Array3, local736.aClass167Array3, true, local736.anIntArray507, local736.anIntArray504, local736.anIntArray502);
+					this.aClass20_Sub3_6.method2967(local736.particleEmitters, local736.particleEffectors, true, local736.anIntArray507, local736.anIntArray504, local736.anIntArray502);
 				}
 				local494.aBoolean324 = true;
 				local494.method3805(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, this.aClass20_Sub3_6);

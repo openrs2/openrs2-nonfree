@@ -2139,7 +2139,7 @@ public final class Static29 {
 											}
 											@Pc(2028) int local2028 = local2001 + 2 - local2013;
 											@Pc(2030) Particle local2030 = null;
-											@Pc(2032) ParticleEmitterNode local2032 = null;
+											@Pc(2032) ParticleEmitter local2032 = null;
 											@Pc(2034) int local2034 = -1;
 											@Pc(2040) Particle local2040 = (Particle) local8.particles.head();
 											while (true) {
@@ -2228,8 +2228,8 @@ public final class Static29 {
 										} else {
 											@Pc(2339) int local2339 = Static5.anInt3506 + Static4.anInt3125;
 											@Pc(2343) int local2343 = Static5.anInt3503 + Static4.anInt3126;
-											@Pc(2347) SecondarySceneGraphNode local2347 = local8.particles.sentinel;
-											for (@Pc(2350) SecondarySceneGraphNode local2350 = local2347.secondaryNext; local2350 != local2347; local2350 = local2350.secondaryNext) {
+											@Pc(2347) SecondaryParticleNode local2347 = local8.particles.sentinel;
+											for (@Pc(2350) SecondaryParticleNode local2350 = local2347.secondaryNext; local2350 != local2347; local2350 = local2350.secondaryNext) {
 												@Pc(2356) Particle local2356 = (Particle) local2350;
 												if (local2356.emitter != null && !local2356.emitter.system.stopped) {
 													if ((byte) (local2356.emitter.system.aLong124 & 0xFFL) != local8.aByte14) {

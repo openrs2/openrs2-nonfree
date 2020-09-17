@@ -2,13 +2,13 @@ import dev.openrs2.deob.annotation.OriginalClass;
 import dev.openrs2.deob.annotation.OriginalMember;
 
 @OriginalClass("client!r")
-public class SecondarySceneGraphNode extends SceneGraphNode {
+public class SecondaryParticleNode extends ParticleNode {
 
 	@OriginalMember(owner = "client!r", name = "o", descriptor = "Lclient!r;")
-	public SecondarySceneGraphNode secondaryNext;
+	public SecondaryParticleNode secondaryNext;
 
 	@OriginalMember(owner = "client!r", name = "q", descriptor = "Lclient!r;")
-	public SecondarySceneGraphNode secondaryPrev;
+	public SecondaryParticleNode secondaryPrev;
 
 	@OriginalMember(owner = "client!r", name = "c", descriptor = "(I)V")
 	public final void unlinkSecondary() {

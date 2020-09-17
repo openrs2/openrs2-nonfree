@@ -13,7 +13,7 @@ public final class ParticleManager {
 	public static int poolWriterIndex = 0;
 
 	@OriginalMember(owner = "client!ne", name = "z", descriptor = "Lclient!ug;")
-	public static SceneGraphLinkedList systems;
+	public static ParticleLinkedList systems;
 
 	@OriginalMember(owner = "client!ne", name = "o", descriptor = "[Lclient!lm;")
 	public static Particle[] pool;
@@ -37,7 +37,7 @@ public final class ParticleManager {
 	public static void init(@OriginalArg(0) Js5 archive) {
 		poolReaderIndex = 0;
 		poolWriterIndex = 0;
-		systems = new SceneGraphLinkedList();
+		systems = new ParticleLinkedList();
 		pool = new Particle[1024];
 		ParticleEmitterTypeList.init(archive);
 		ParticleEffectorTypeList.init(archive);

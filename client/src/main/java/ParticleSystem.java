@@ -8,7 +8,7 @@ import dev.openrs2.deob.annotation.OriginalMember;
 import dev.openrs2.deob.annotation.Pc;
 
 @OriginalClass("client!ne")
-public final class ParticleSystem extends SceneGraphNode {
+public final class ParticleSystem extends ParticleNode {
 
 	@OriginalMember(owner = "client!ne", name = "q", descriptor = "J")
 	private long aLong123;
@@ -56,7 +56,7 @@ public final class ParticleSystem extends SceneGraphNode {
 	public boolean stopped = false;
 
 	@OriginalMember(owner = "client!ne", name = "v", descriptor = "Lclient!ug;")
-	private SceneGraphLinkedList emitters = new SceneGraphLinkedList();
+	private ParticleLinkedList emitters = new ParticleLinkedList();
 
 	@OriginalMember(owner = "client!ne", name = "D", descriptor = "I")
 	private int anInt3507 = 0;
@@ -96,12 +96,12 @@ public final class ParticleSystem extends SceneGraphNode {
 	}
 
 	@OriginalMember(owner = "client!ne", name = "a", descriptor = "([Lclient!sk;Z[I[I[I)V")
-	private void method2948(@OriginalArg(0) ParticleEmitter[] emitters, @OriginalArg(1) boolean arg1, @OriginalArg(2) int[] arg2, @OriginalArg(3) int[] arg3, @OriginalArg(4) int[] arg4) {
+	private void method2948(@OriginalArg(0) ModelParticleEmitter[] emitters, @OriginalArg(1) boolean arg1, @OriginalArg(2) int[] arg2, @OriginalArg(3) int[] arg3, @OriginalArg(4) int[] arg4) {
 		for (@Pc(1) int local1 = 0; local1 < 8; local1++) {
 			Static5.aBooleanArray19[local1] = false;
 		}
 		label79:
-		for (@Pc(16) ParticleEmitterNode node = (ParticleEmitterNode) this.emitters.head(); node != null; node = (ParticleEmitterNode) this.emitters.next()) {
+		for (@Pc(16) ParticleEmitter node = (ParticleEmitter) this.emitters.head(); node != null; node = (ParticleEmitter) this.emitters.next()) {
 			if (emitters != null) {
 				for (@Pc(22) int local22 = 0; local22 < emitters.length; local22++) {
 					if (node.emitter == emitters[local22]) {
@@ -125,13 +125,13 @@ public final class ParticleSystem extends SceneGraphNode {
 		}
 		for (@Pc(71) int i = 0; i < emitters.length && this.anInt3507 != 8; i++) {
 			if (!Static5.aBooleanArray19[i]) {
-				@Pc(94) ParticleEmitterNode node = new ParticleEmitterNode(emitters[i], this, this.aLong124);
+				@Pc(94) ParticleEmitter node = new ParticleEmitter(emitters[i], this, this.aLong124);
 				this.emitters.addTail(node);
 				this.anInt3507++;
 				Static5.aBooleanArray19[i] = true;
 			}
 		}
-		for (@Pc(117) ParticleEmitterNode node = (ParticleEmitterNode) this.emitters.head(); node != null; node = (ParticleEmitterNode) this.emitters.next()) {
+		for (@Pc(117) ParticleEmitter node = (ParticleEmitter) this.emitters.head(); node != null; node = (ParticleEmitter) this.emitters.next()) {
 			for (@Pc(121) int i = 0; i < emitters.length; i++) {
 				if (Static5.aBooleanArray19[i] && emitters[i] == node.emitter) {
 					node.method309(arg2[node.emitter.anInt4864], arg3[node.emitter.anInt4869], arg2[node.emitter.anInt4869], arg3[node.emitter.anInt4864], arg3[node.emitter.anInt4868], arg2[node.emitter.anInt4868], arg4[node.emitter.anInt4868], arg4[node.emitter.anInt4869], arg4[node.emitter.anInt4864]);
@@ -147,7 +147,7 @@ public final class ParticleSystem extends SceneGraphNode {
 			return;
 		}
 		if (arg0 != this.anInt3517) {
-			for (@Pc(13) ParticleEmitterNode node = (ParticleEmitterNode) this.emitters.head(); node != null; node = (ParticleEmitterNode) this.emitters.next()) {
+			for (@Pc(13) ParticleEmitter node = (ParticleEmitter) this.emitters.head(); node != null; node = (ParticleEmitter) this.emitters.next()) {
 				node.aBoolean19 = true;
 			}
 		}
@@ -187,9 +187,9 @@ public final class ParticleSystem extends SceneGraphNode {
 			Static26.method2962();
 			return;
 		}
-		@Pc(104) SceneGraphNode sentinel = this.emitters.sentinel;
-		for (@Pc(107) SceneGraphNode node = sentinel.next; node != sentinel; node = node.next) {
-			@Pc(113) ParticleEmitterNode emitterNode = (ParticleEmitterNode) node;
+		@Pc(104) ParticleNode sentinel = this.emitters.sentinel;
+		for (@Pc(107) ParticleNode node = sentinel.next; node != sentinel; node = node.next) {
+			@Pc(113) ParticleEmitter emitterNode = (ParticleEmitter) node;
 			for (@Pc(115) int local115 = 0; local115 < local79; local115++) {
 				Static5.anIntArray387[local115] = 0;
 			}
@@ -197,8 +197,8 @@ public final class ParticleSystem extends SceneGraphNode {
 				Static5.anIntArray388[local126] = 0;
 			}
 			Static5.anInt3519 = 0;
-			@Pc(141) SceneGraphNode particlesSentinel = emitterNode.particles.sentinel;
-			for (@Pc(144) SceneGraphNode particleNode = particlesSentinel.next; particleNode != particlesSentinel; particleNode = particleNode.next) {
+			@Pc(141) ParticleNode particlesSentinel = emitterNode.particles.sentinel;
+			for (@Pc(144) ParticleNode particleNode = particlesSentinel.next; particleNode != particlesSentinel; particleNode = particleNode.next) {
 				@Pc(150) Particle particle = (Particle) particleNode;
 				if (!particle.aBoolean228) {
 					@Pc(161) int local161 = (particle.anInt3228 >> 12) - local13;
@@ -339,14 +339,14 @@ public final class ParticleSystem extends SceneGraphNode {
 	@OriginalMember(owner = "client!ne", name = "e", descriptor = "()V")
 	public final void remove() {
 		this.stopped = true;
-		for (@Pc(8) ParticleEffectorNode node = (ParticleEffectorNode) this.effectors.head(); node != null; node = (ParticleEffectorNode) this.effectors.next()) {
+		for (@Pc(8) ParticleEffector node = (ParticleEffector) this.effectors.head(); node != null; node = (ParticleEffector) this.effectors.next()) {
 			if (node.effector.type.anInt907 == 1) {
 				node.unlinkSecondary();
 			}
 		}
 		this.particles = new Particle[8192];
 		this.anInt3499 = 0;
-		this.emitters = new SceneGraphLinkedList();
+		this.emitters = new ParticleLinkedList();
 		this.anInt3507 = 0;
 		this.effectors = new LinkedList();
 		this.anInt3522 = 0;
@@ -377,7 +377,7 @@ public final class ParticleSystem extends SceneGraphNode {
 
 	@OriginalMember(owner = "client!ne", name = "a", descriptor = "(II)V")
 	private void method2960(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
-		for (@Pc(5) ParticleEffectorNode node = (ParticleEffectorNode) this.effectors.head(); node != null; node = (ParticleEffectorNode) this.effectors.next()) {
+		for (@Pc(5) ParticleEffector node = (ParticleEffector) this.effectors.head(); node != null; node = (ParticleEffector) this.effectors.next()) {
 			node.anInt6095 = node.anInt6084 + this.anInt3518;
 			node.anInt6089 = node.anInt6085 + this.anInt3512;
 			node.anInt6087 = node.anInt6090 + this.anInt3509;
@@ -394,12 +394,12 @@ public final class ParticleSystem extends SceneGraphNode {
 	}
 
 	@OriginalMember(owner = "client!ne", name = "a", descriptor = "([Lclient!u;Z[I[I[I)V")
-	private void method2965(@OriginalArg(0) ParticleEffector[] effectors, @OriginalArg(1) boolean arg1, @OriginalArg(2) int[] arg2, @OriginalArg(3) int[] arg3, @OriginalArg(4) int[] arg4) {
+	private void method2965(@OriginalArg(0) ModelParticleEffector[] effectors, @OriginalArg(1) boolean arg1, @OriginalArg(2) int[] arg2, @OriginalArg(3) int[] arg3, @OriginalArg(4) int[] arg4) {
 		for (@Pc(1) int local1 = 0; local1 < 8; local1++) {
 			Static5.aBooleanArray18[local1] = false;
 		}
 		label88:
-		for (@Pc(16) ParticleEffectorNode node = (ParticleEffectorNode) this.effectors.head(); node != null; node = (ParticleEffectorNode) this.effectors.next()) {
+		for (@Pc(16) ParticleEffector node = (ParticleEffector) this.effectors.head(); node != null; node = (ParticleEffector) this.effectors.next()) {
 			if (effectors != null) {
 				for (@Pc(22) int i = 0; i < effectors.length; i++) {
 					if (node.effector == effectors[i]) {
@@ -422,21 +422,21 @@ public final class ParticleSystem extends SceneGraphNode {
 		}
 		for (@Pc(72) int i = 0; i < effectors.length && this.anInt3522 != 8; i++) {
 			if (!Static5.aBooleanArray18[i]) {
-				@Pc(87) ParticleEffectorNode node = null;
+				@Pc(87) ParticleEffector node = null;
 				if (effectors[i].type.anInt907 == 1 && ParticleManager.anInt3524 < 32) {
-					node = new ParticleEffectorNode(effectors[i], this);
+					node = new ParticleEffector(effectors[i], this);
 					ParticleManager.aClass10_1.put((long) effectors[i].type.id, node);
 					ParticleManager.anInt3524++;
 				}
 				if (node == null) {
-					node = new ParticleEffectorNode(effectors[i], this);
+					node = new ParticleEffector(effectors[i], this);
 				}
 				this.effectors.addTail(node);
 				this.anInt3522++;
 				Static5.aBooleanArray18[i] = true;
 			}
 		}
-		for (@Pc(152) ParticleEffectorNode node = (ParticleEffectorNode) this.effectors.head(); node != null; node = (ParticleEffectorNode) this.effectors.next()) {
+		for (@Pc(152) ParticleEffector node = (ParticleEffector) this.effectors.head(); node != null; node = (ParticleEffector) this.effectors.next()) {
 			for (@Pc(156) int i = 0; i < effectors.length; i++) {
 				if (Static5.aBooleanArray18[i] && effectors[i] == node.effector) {
 					node.method4827(arg4[node.effector.anInt5232], arg3[node.effector.anInt5232], arg2[node.effector.anInt5232]);
@@ -447,7 +447,7 @@ public final class ParticleSystem extends SceneGraphNode {
 	}
 
 	@OriginalMember(owner = "client!ne", name = "a", descriptor = "([Lclient!sk;[Lclient!u;Z[I[I[I)V")
-	public final void method2967(@OriginalArg(0) ParticleEmitter[] emitters, @OriginalArg(1) ParticleEffector[] effectors, @OriginalArg(2) boolean arg2, @OriginalArg(3) int[] arg3, @OriginalArg(4) int[] arg4, @OriginalArg(5) int[] arg5) {
+	public final void method2967(@OriginalArg(0) ModelParticleEmitter[] emitters, @OriginalArg(1) ModelParticleEffector[] effectors, @OriginalArg(2) boolean arg2, @OriginalArg(3) int[] arg3, @OriginalArg(4) int[] arg4, @OriginalArg(5) int[] arg5) {
 		if (!this.stopped) {
 			this.method2948(emitters, arg2, arg3, arg4, arg5);
 			this.method2965(effectors, arg2, arg3, arg4, arg5);
@@ -483,7 +483,7 @@ public final class ParticleSystem extends SceneGraphNode {
 			@Pc(161) int local161 = MathUtils.COSINE[this.anInt3517];
 			this.method2960(local156, local161);
 			if (this.aBoolean253) {
-				@Pc(174) ParticleEmitterNode node = (ParticleEmitterNode) this.emitters.head();
+				@Pc(174) ParticleEmitter node = (ParticleEmitter) this.emitters.head();
 				while (true) {
 					if (node == null) {
 						this.aBoolean253 = false;
@@ -492,11 +492,11 @@ public final class ParticleSystem extends SceneGraphNode {
 					for (@Pc(178) int i = 0; i < node.type.anInt2418; i++) {
 						node.method307(1, local156, true, local161, this.aLong124);
 					}
-					node = (ParticleEmitterNode) this.emitters.next();
+					node = (ParticleEmitter) this.emitters.next();
 				}
 			}
 			@Pc(210) int local210 = (int) (loop - this.aLong124);
-			for (@Pc(216) ParticleEmitterNode node = (ParticleEmitterNode) this.emitters.head(); node != null; node = (ParticleEmitterNode) this.emitters.next()) {
+			for (@Pc(216) ParticleEmitter node = (ParticleEmitter) this.emitters.head(); node != null; node = (ParticleEmitter) this.emitters.next()) {
 				node.method307(local210, local156, local18 < 10, local161, loop);
 			}
 		}

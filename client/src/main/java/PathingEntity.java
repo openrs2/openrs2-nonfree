@@ -669,20 +669,20 @@ public abstract class PathingEntity extends Entity {
 		if (GlRenderer.enabled) {
 			@Pc(67) GlModel local67 = (GlModel) arg0;
 			@Pc(70) GlModel local70 = (GlModel) arg1;
-			if ((this.aClass20_Sub3_6 == null || this.aClass20_Sub3_6.stopped) && (local67.aClass158Array3 != null || local67.aClass167Array3 != null || local70 != null && (local70.aClass158Array3 != null || local70.aClass167Array3 != null))) {
+			if ((this.aClass20_Sub3_6 == null || this.aClass20_Sub3_6.stopped) && (local67.particleEmitters != null || local67.particleEffectors != null || local70 != null && (local70.particleEmitters != null || local70.particleEffectors != null))) {
 				this.aClass20_Sub3_6 = new ParticleSystem(client.loop, this.getSize(), this.getSize());
 			}
 			if (this.aClass20_Sub3_6 != null) {
-				this.aClass20_Sub3_6.method2967(local67.aClass158Array3, local67.aClass167Array3, false, local67.anIntArray507, local67.anIntArray504, local67.anIntArray502);
+				this.aClass20_Sub3_6.method2967(local67.particleEmitters, local67.particleEffectors, false, local67.anIntArray507, local67.anIntArray504, local67.anIntArray502);
 			}
 		} else {
 			@Pc(4) SoftwareModel local4 = (SoftwareModel) arg1;
 			@Pc(7) SoftwareModel local7 = (SoftwareModel) arg0;
-			if ((this.aClass20_Sub3_6 == null || this.aClass20_Sub3_6.stopped) && (local7.aClass158Array2 != null || local7.aClass167Array2 != null || local4 != null && (local4.aClass158Array2 != null || local4.aClass167Array2 != null))) {
+			if ((this.aClass20_Sub3_6 == null || this.aClass20_Sub3_6.stopped) && (local7.particleEmitters != null || local7.particleEffectors != null || local4 != null && (local4.particleEmitters != null || local4.particleEffectors != null))) {
 				this.aClass20_Sub3_6 = new ParticleSystem(client.loop, this.getSize(), this.getSize());
 			}
 			if (this.aClass20_Sub3_6 != null) {
-				this.aClass20_Sub3_6.method2967(local7.aClass158Array2, local7.aClass167Array2, false, local7.anIntArray347, local7.anIntArray344, local7.anIntArray340);
+				this.aClass20_Sub3_6.method2967(local7.particleEmitters, local7.particleEffectors, false, local7.anIntArray347, local7.anIntArray344, local7.anIntArray340);
 			}
 		}
 		this.aBoolean285 = true;

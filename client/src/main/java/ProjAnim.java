@@ -193,19 +193,19 @@ public final class ProjAnim extends Entity {
 	private void method3106(@OriginalArg(1) Model arg0) {
 		if (GlRenderer.enabled) {
 			@Pc(4) GlModel local4 = (GlModel) arg0;
-			if ((this.aClass20_Sub3_5 == null || this.aClass20_Sub3_5.stopped) && (local4.aClass158Array3 != null || local4.aClass167Array3 != null)) {
+			if ((this.aClass20_Sub3_5 == null || this.aClass20_Sub3_5.stopped) && (local4.particleEmitters != null || local4.particleEffectors != null)) {
 				this.aClass20_Sub3_5 = new ParticleSystem(client.loop, 1, 1);
 			}
 			if (this.aClass20_Sub3_5 != null) {
-				this.aClass20_Sub3_5.method2967(local4.aClass158Array3, local4.aClass167Array3, false, local4.anIntArray507, local4.anIntArray504, local4.anIntArray502);
+				this.aClass20_Sub3_5.method2967(local4.particleEmitters, local4.particleEffectors, false, local4.anIntArray507, local4.anIntArray504, local4.anIntArray502);
 			}
 		} else {
 			@Pc(51) SoftwareModel local51 = (SoftwareModel) arg0;
-			if ((this.aClass20_Sub3_5 == null || this.aClass20_Sub3_5.stopped) && (local51.aClass158Array2 != null || local51.aClass167Array2 != null)) {
+			if ((this.aClass20_Sub3_5 == null || this.aClass20_Sub3_5.stopped) && (local51.particleEmitters != null || local51.particleEffectors != null)) {
 				this.aClass20_Sub3_5 = new ParticleSystem(client.loop, 1, 1);
 			}
 			if (this.aClass20_Sub3_5 != null) {
-				this.aClass20_Sub3_5.method2967(local51.aClass158Array2, local51.aClass167Array2, false, local51.anIntArray347, local51.anIntArray344, local51.anIntArray340);
+				this.aClass20_Sub3_5.method2967(local51.particleEmitters, local51.particleEffectors, false, local51.anIntArray347, local51.anIntArray344, local51.anIntArray340);
 			}
 		}
 		this.aBoolean267 = true;

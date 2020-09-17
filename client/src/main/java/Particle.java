@@ -4,7 +4,7 @@ import dev.openrs2.deob.annotation.OriginalMember;
 import dev.openrs2.deob.annotation.Pc;
 
 @OriginalClass("client!lm")
-public final class Particle extends SecondarySceneGraphNode {
+public final class Particle extends SecondaryParticleNode {
 
 	@OriginalMember(owner = "client!lm", name = "z", descriptor = "I")
 	private int anInt3232;
@@ -16,7 +16,7 @@ public final class Particle extends SecondarySceneGraphNode {
 	public boolean aBoolean228 = false;
 
 	@OriginalMember(owner = "client!lm", name = "G", descriptor = "Lclient!bi;")
-	public ParticleEmitterNode emitter;
+	public ParticleEmitter emitter;
 
 	@OriginalMember(owner = "client!lm", name = "u", descriptor = "I")
 	public int anInt3228;
@@ -49,7 +49,7 @@ public final class Particle extends SecondarySceneGraphNode {
 	private int anInt3233;
 
 	@OriginalMember(owner = "client!lm", name = "<init>", descriptor = "(Lclient!bi;IIIIIIIII)V")
-	public Particle(@OriginalArg(0) ParticleEmitterNode emitter, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) int arg8, @OriginalArg(9) int arg9) {
+	public Particle(@OriginalArg(0) ParticleEmitter emitter, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) int arg8, @OriginalArg(9) int arg9) {
 		this.emitter = emitter;
 		this.anInt3228 = arg1 << Static4.anInt3227;
 		this.anInt3229 = arg2 << Static4.anInt3227;
@@ -140,7 +140,7 @@ public final class Particle extends SecondarySceneGraphNode {
 		}
 		@Pc(406) Node sentinel = system.effectors.sentinel;
 		for (@Pc(409) Node node = sentinel.next; node != sentinel; node = node.next) {
-			@Pc(415) ParticleEffectorNode effectorNode = (ParticleEffectorNode) node;
+			@Pc(415) ParticleEffector effectorNode = (ParticleEffector) node;
 			@Pc(419) ParticleEffectorType effectorType = effectorNode.effector.type;
 			if (effectorType.anInt907 != 1) {
 				@Pc(429) int local429 = local21 - effectorNode.anInt6095;
@@ -190,7 +190,7 @@ public final class Particle extends SecondarySceneGraphNode {
 		}
 		if (type.anIntArray216 != null) {
 			for (@Pc(693) int local693 = 0; local693 < type.anIntArray216.length; local693++) {
-				@Pc(708) ParticleEffectorNode effectorNode = (ParticleEffectorNode) ParticleManager.aClass10_1.get((long) type.anIntArray216[local693]);
+				@Pc(708) ParticleEffector effectorNode = (ParticleEffector) ParticleManager.aClass10_1.get((long) type.anIntArray216[local693]);
 				while (effectorNode != null) {
 					@Pc(714) ParticleEffectorType local714 = effectorNode.effector.type;
 					@Pc(719) int local719 = local21 - effectorNode.anInt6095;
@@ -198,7 +198,7 @@ public final class Particle extends SecondarySceneGraphNode {
 					@Pc(729) int local729 = local31 - effectorNode.anInt6087;
 					@Pc(742) long local742 = (long) (local719 * local719 + local724 * local724 + local729 * local729);
 					if (local742 > local714.aLong39) {
-						effectorNode = (ParticleEffectorNode) ParticleManager.aClass10_1.nextWithKey();
+						effectorNode = (ParticleEffector) ParticleManager.aClass10_1.nextWithKey();
 					} else {
 						@Pc(758) int local758 = (int) Math.sqrt((double) local742);
 						if (local758 == 0) {
@@ -206,7 +206,7 @@ public final class Particle extends SecondarySceneGraphNode {
 						}
 						@Pc(786) long local786 = (long) (local719 * effectorNode.anInt6091 + local724 * local714.anInt903 + local729 * effectorNode.anInt6088) * 65535L / (long) (local714.anInt904 * local758);
 						if (local786 < (long) local714.anInt906) {
-							effectorNode = (ParticleEffectorNode) ParticleManager.aClass10_1.nextWithKey();
+							effectorNode = (ParticleEffector) ParticleManager.aClass10_1.nextWithKey();
 						} else {
 							@Pc(800) int local800 = 0;
 							if (local714.anInt895 == 1) {
@@ -238,7 +238,7 @@ public final class Particle extends SecondarySceneGraphNode {
 								this.anInt3229 += (local714.anInt903 - local800) * arg1;
 								this.anInt3230 += (effectorNode.anInt6088 - local800) * arg1;
 							}
-							effectorNode = (ParticleEffectorNode) ParticleManager.aClass10_1.nextWithKey();
+							effectorNode = (ParticleEffector) ParticleManager.aClass10_1.nextWithKey();
 						}
 					}
 				}
@@ -337,7 +337,7 @@ public final class Particle extends SecondarySceneGraphNode {
 			tile = Terrain.tiles[y][x][z] = new Tile(y, x, z);
 		}
 		if (tile.particles == null) {
-			tile.particles = new SecondarySceneGraphLinkedList();
+			tile.particles = new SecondaryParticleLinkedList();
 			tile.aByte14 = (byte) (arg0 & 0xFFL);
 		} else if (tile.aByte14 != (byte) (arg0 & 0xFFL)) {
 			tile.particles.clear();
@@ -369,7 +369,7 @@ public final class Particle extends SecondarySceneGraphNode {
 	}
 
 	@OriginalMember(owner = "client!lm", name = "a", descriptor = "(Lclient!bi;IIIIIIIII)V")
-	public final void method2632(@OriginalArg(0) ParticleEmitterNode emitter, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) int arg8, @OriginalArg(9) int arg9) {
+	public final void method2632(@OriginalArg(0) ParticleEmitter emitter, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) int arg8, @OriginalArg(9) int arg9) {
 		this.emitter = emitter;
 		this.anInt3228 = arg1 << Static4.anInt3227;
 		this.anInt3229 = arg2 << Static4.anInt3227;

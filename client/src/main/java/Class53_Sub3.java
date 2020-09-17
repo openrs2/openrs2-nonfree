@@ -61,7 +61,7 @@ public final class Class53_Sub3 extends Entity {
 	public byte[] aByteArray34;
 
 	@OriginalMember(owner = "client!ml", name = "H", descriptor = "[Lclient!sk;")
-	public ParticleEmitter[] particleEmitters;
+	public ModelParticleEmitter[] particleEmitters;
 
 	@OriginalMember(owner = "client!ml", name = "I", descriptor = "[I")
 	public int[] anIntArray325;
@@ -100,7 +100,7 @@ public final class Class53_Sub3 extends Entity {
 	public byte[] aByteArray38;
 
 	@OriginalMember(owner = "client!ml", name = "X", descriptor = "[Lclient!u;")
-	public ParticleEffector[] particleEffectors;
+	public ModelParticleEffector[] particleEffectors;
 
 	@OriginalMember(owner = "client!ml", name = "Y", descriptor = "[B")
 	public byte[] aByteArray39;
@@ -260,10 +260,10 @@ public final class Class53_Sub3 extends Entity {
 			this.aByteArray35 = new byte[this.anInt3353];
 		}
 		if (local39 > 0) {
-			this.particleEmitters = new ParticleEmitter[local39];
+			this.particleEmitters = new ModelParticleEmitter[local39];
 		}
 		if (local41 > 0) {
-			this.particleEffectors = new ParticleEffector[local41];
+			this.particleEffectors = new ModelParticleEffector[local41];
 		}
 		this.aShortArray53 = new short[this.anInt3353];
 		this.aShortArray54 = new short[this.anInt3353];
@@ -326,14 +326,14 @@ public final class Class53_Sub3 extends Entity {
 						@Pc(531) int local531 = this.method2741(local356, local356.particleEmitters[local516].anInt4869, local352);
 						@Pc(541) int local541 = this.method2741(local356, local356.particleEmitters[local516].anInt4868, local352);
 						@Pc(551) int local551 = this.method2741(local356, local356.particleEmitters[local516].anInt4864, local352);
-						this.particleEmitters[local340] = new ParticleEmitter(local356.particleEmitters[local516].type, local531, local541, local551);
+						this.particleEmitters[local340] = new ModelParticleEmitter(local356.particleEmitters[local516].type, local531, local541, local551);
 						local340++;
 					}
 				}
 				if (local356.particleEffectors != null) {
 					for (@Pc(574) int local574 = 0; local574 < local356.particleEffectors.length; local574++) {
 						@Pc(589) int local589 = this.method2741(local356, local356.particleEffectors[local574].anInt5232, local352);
-						this.particleEffectors[local342] = new ParticleEffector(local356.particleEffectors[local574].type, local589);
+						this.particleEffectors[local342] = new ModelParticleEffector(local356.particleEffectors[local574].type, local589);
 						local342++;
 					}
 				}
@@ -1328,18 +1328,18 @@ public final class Class53_Sub3 extends Entity {
 		local4.position = local240;
 		@Pc(1180) int local1180 = local4.readUnsignedByte();
 		if (local1180 > 0) {
-			this.particleEmitters = new ParticleEmitter[local1180];
+			this.particleEmitters = new ModelParticleEmitter[local1180];
 			for (@Pc(1188) int local1188 = 0; local1188 < local1180; local1188++) {
 				@Pc(1195) int local1195 = local4.readUnsignedShort();
 				@Pc(1199) int local1199 = local4.readUnsignedShort();
-				this.particleEmitters[local1188] = new ParticleEmitter(local1195, this.anIntArray331[local1199], this.anIntArray330[local1199], this.anIntArray332[local1199]);
+				this.particleEmitters[local1188] = new ModelParticleEmitter(local1195, this.anIntArray331[local1199], this.anIntArray330[local1199], this.anIntArray332[local1199]);
 			}
 		}
 		@Pc(1225) int local1225 = local4.readUnsignedByte();
 		if (local1225 > 0) {
-			this.particleEffectors = new ParticleEffector[local1225];
+			this.particleEffectors = new ModelParticleEffector[local1225];
 			for (@Pc(1233) int local1233 = 0; local1233 < local1225; local1233++) {
-				this.particleEffectors[local1233] = new ParticleEffector(local4.readUnsignedShort(), local4.readUnsignedShort());
+				this.particleEffectors[local1233] = new ModelParticleEffector(local4.readUnsignedShort(), local4.readUnsignedShort());
 			}
 		}
 	}
