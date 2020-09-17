@@ -14,17 +14,8 @@ public final class Static5 {
 	@OriginalMember(owner = "client!nd", name = "z", descriptor = "I")
 	public static int anInt3490;
 
-	@OriginalMember(owner = "client!ne", name = "o", descriptor = "[Lclient!lm;")
-	public static Class20_Sub2_Sub1[] aClass20_Sub2_Sub1Array1;
-
 	@OriginalMember(owner = "client!ne", name = "w", descriptor = "I")
 	public static int anInt3503;
-
-	@OriginalMember(owner = "client!ne", name = "y", descriptor = "I")
-	public static int anInt3504;
-
-	@OriginalMember(owner = "client!ne", name = "z", descriptor = "Lclient!ug;")
-	public static Class172 aClass172_3;
 
 	@OriginalMember(owner = "client!ne", name = "C", descriptor = "I")
 	public static int anInt3506;
@@ -242,26 +233,8 @@ public final class Static5 {
 	@OriginalMember(owner = "client!nd", name = "y", descriptor = "Lclient!d;")
 	public static final BasType aClass34_1 = new BasType();
 
-	@OriginalMember(owner = "client!ne", name = "k", descriptor = "Lclient!ak;")
-	public static SecondaryHashTable aClass10_1 = new SecondaryHashTable(8);
-
 	@OriginalMember(owner = "client!ne", name = "l", descriptor = "Z")
 	public static boolean aBoolean249 = false;
-
-	@OriginalMember(owner = "client!ne", name = "p", descriptor = "I")
-	public static int anInt3500 = 0;
-
-	@OriginalMember(owner = "client!ne", name = "r", descriptor = "I")
-	public static int anInt3501 = 0;
-
-	@OriginalMember(owner = "client!ne", name = "s", descriptor = "I")
-	public static int anInt3502 = 0;
-
-	@OriginalMember(owner = "client!ne", name = "A", descriptor = "Z")
-	public static final boolean aBoolean251 = false;
-
-	@OriginalMember(owner = "client!ne", name = "B", descriptor = "I")
-	public static int anInt3505 = 0;
 
 	@OriginalMember(owner = "client!ne", name = "S", descriptor = "I")
 	public static int anInt3519 = 0;
@@ -274,9 +247,6 @@ public final class Static5 {
 
 	@OriginalMember(owner = "client!ne", name = "Y", descriptor = "[Z")
 	public static final boolean[] aBooleanArray19 = new boolean[8];
-
-	@OriginalMember(owner = "client!ne", name = "eb", descriptor = "I")
-	public static int anInt3524 = 0;
 
 	@OriginalMember(owner = "client!ne", name = "fb", descriptor = "F")
 	public static float aFloat86 = 1.0F;
@@ -292,9 +262,6 @@ public final class Static5 {
 
 	@OriginalMember(owner = "client!ng", name = "J", descriptor = "[I")
 	public static final int[] anIntArray615 = new int[8];
-
-	@OriginalMember(owner = "client!nh", name = "O", descriptor = "Lclient!ic;")
-	public static final HashTable aClass84_16 = new HashTable(16);
 
 	@OriginalMember(owner = "client!nh", name = "U", descriptor = "[Lclient!eg;")
 	public static final SeqType[] aClass46Array2 = new SeqType[14];

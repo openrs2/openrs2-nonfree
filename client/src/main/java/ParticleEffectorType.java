@@ -4,7 +4,7 @@ import dev.openrs2.deob.annotation.OriginalMember;
 import dev.openrs2.deob.annotation.Pc;
 
 @OriginalClass("client!dc")
-public final class Class37 {
+public final class ParticleEffectorType {
 
 	@OriginalMember(owner = "client!dc", name = "b", descriptor = "I")
 	public int anInt892;
@@ -19,7 +19,7 @@ public final class Class37 {
 	public int anInt898;
 
 	@OriginalMember(owner = "client!dc", name = "k", descriptor = "I")
-	public int anInt900;
+	public int id;
 
 	@OriginalMember(owner = "client!dc", name = "n", descriptor = "I")
 	public int anInt903;
@@ -49,7 +49,7 @@ public final class Class37 {
 	public int anInt908 = 0;
 
 	@OriginalMember(owner = "client!dc", name = "a", descriptor = "(Lclient!fd;II)V")
-	private void method740(@OriginalArg(0) Buffer arg0, @OriginalArg(2) int arg1) {
+	private void decode(@OriginalArg(0) Buffer arg0, @OriginalArg(2) int arg1) {
 		if (arg1 == 1) {
 			this.anInt893 = arg0.readUnsignedShort();
 		} else if (arg1 == 2) {
@@ -73,7 +73,7 @@ public final class Class37 {
 	}
 
 	@OriginalMember(owner = "client!dc", name = "a", descriptor = "(B)V")
-	public final void method743() {
+	public final void postDecode() {
 		this.anInt906 = MathUtils.COSINE[this.anInt893];
 		this.anInt904 = (int) Math.sqrt((double) (this.anInt892 * this.anInt892 + this.anInt898 * this.anInt898 + this.anInt903 * this.anInt903));
 		if (this.anInt911 == 0) {
@@ -93,13 +93,13 @@ public final class Class37 {
 	}
 
 	@OriginalMember(owner = "client!dc", name = "a", descriptor = "(Lclient!fd;B)V")
-	public final void method746(@OriginalArg(0) Buffer arg0) {
+	public final void decode(@OriginalArg(0) Buffer buffer) {
 		while (true) {
-			@Pc(10) int local10 = arg0.readUnsignedByte();
-			if (local10 == 0) {
+			@Pc(10) int code = buffer.readUnsignedByte();
+			if (code == 0) {
 				return;
 			}
-			this.method740(arg0, local10);
+			this.decode(buffer, code);
 		}
 	}
 }

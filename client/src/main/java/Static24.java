@@ -473,8 +473,8 @@ public final class Static24 {
 		}
 		Static10.method301();
 		Static30.method420();
-		Static9.method201();
-		Static30.method3555();
+		ParticleEmitterTypeList.clear();
+		ParticleEffectorTypeList.clear();
 		Static1.aClass26_3.clear();
 		if (!GlRenderer.enabled) {
 			((Js5GlTextureProvider) Static4.anInterface4_1).clear();

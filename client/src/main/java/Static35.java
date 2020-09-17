@@ -42,7 +42,7 @@ public final class Static35 {
 			Static7.anInt5634 = 1;
 			Static2.anIntArray160[0] = Static7.anInt6050;
 		}
-		Static26.method2964((long) client.loop);
+		ParticleManager.redraw((long) client.loop);
 		if (Static3.anInt5398 != -1) {
 			Static27.method4243(Static3.anInt5398);
 		}

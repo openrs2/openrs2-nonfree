@@ -28,7 +28,7 @@ public abstract class PathingEntity extends Entity {
 	public int anInt3984;
 
 	@OriginalMember(owner = "client!qc", name = "ab", descriptor = "Lclient!ne;")
-	protected Class20_Sub3 aClass20_Sub3_6;
+	protected ParticleSystem aClass20_Sub3_6;
 
 	@OriginalMember(owner = "client!qc", name = "ob", descriptor = "I")
 	public int z;
@@ -669,8 +669,8 @@ public abstract class PathingEntity extends Entity {
 		if (GlRenderer.enabled) {
 			@Pc(67) GlModel local67 = (GlModel) arg0;
 			@Pc(70) GlModel local70 = (GlModel) arg1;
-			if ((this.aClass20_Sub3_6 == null || this.aClass20_Sub3_6.aBoolean250) && (local67.aClass158Array3 != null || local67.aClass167Array3 != null || local70 != null && (local70.aClass158Array3 != null || local70.aClass167Array3 != null))) {
-				this.aClass20_Sub3_6 = new Class20_Sub3(client.loop, this.getSize(), this.getSize());
+			if ((this.aClass20_Sub3_6 == null || this.aClass20_Sub3_6.stopped) && (local67.aClass158Array3 != null || local67.aClass167Array3 != null || local70 != null && (local70.aClass158Array3 != null || local70.aClass167Array3 != null))) {
+				this.aClass20_Sub3_6 = new ParticleSystem(client.loop, this.getSize(), this.getSize());
 			}
 			if (this.aClass20_Sub3_6 != null) {
 				this.aClass20_Sub3_6.method2967(local67.aClass158Array3, local67.aClass167Array3, false, local67.anIntArray507, local67.anIntArray504, local67.anIntArray502);
@@ -678,8 +678,8 @@ public abstract class PathingEntity extends Entity {
 		} else {
 			@Pc(4) SoftwareModel local4 = (SoftwareModel) arg1;
 			@Pc(7) SoftwareModel local7 = (SoftwareModel) arg0;
-			if ((this.aClass20_Sub3_6 == null || this.aClass20_Sub3_6.aBoolean250) && (local7.aClass158Array2 != null || local7.aClass167Array2 != null || local4 != null && (local4.aClass158Array2 != null || local4.aClass167Array2 != null))) {
-				this.aClass20_Sub3_6 = new Class20_Sub3(client.loop, this.getSize(), this.getSize());
+			if ((this.aClass20_Sub3_6 == null || this.aClass20_Sub3_6.stopped) && (local7.aClass158Array2 != null || local7.aClass167Array2 != null || local4 != null && (local4.aClass158Array2 != null || local4.aClass167Array2 != null))) {
+				this.aClass20_Sub3_6 = new ParticleSystem(client.loop, this.getSize(), this.getSize());
 			}
 			if (this.aClass20_Sub3_6 != null) {
 				this.aClass20_Sub3_6.method2967(local7.aClass158Array2, local7.aClass167Array2, false, local7.anIntArray347, local7.anIntArray344, local7.anIntArray340);

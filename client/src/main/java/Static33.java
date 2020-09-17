@@ -514,27 +514,6 @@ public final class Static33 {
 		return method4168(Static6.anInt5133, arg0, 128, 128, Static6.anInt5144, Static6.anInt5144, arg0, Static6.anInt5147, arg1);
 	}
 
-	@OriginalMember(owner = "client!ti", name = "c", descriptor = "(II)Lclient!dc;")
-	public static Class37 method4201(@OriginalArg(0) int arg0) {
-		@Pc(6) Class37 local6 = (Class37) Static3.aClass26_21.get((long) arg0);
-		if (local6 != null) {
-			return local6;
-		}
-		@Pc(21) byte[] local21 = Static2.aClass58_40.fetchFile(1, arg0);
-		@Pc(25) Class37 local25 = new Class37();
-		local25.anInt900 = arg0;
-		if (local21 != null) {
-			local25.method746(new Buffer(local21));
-		}
-		local25.method743();
-		if (local25.anInt907 == 2 && Static5.aClass84_16.get((long) arg0) == null) {
-			Static5.aClass84_16.put((long) arg0, new IntNode(Static1.anInt876));
-			Static6.aClass37Array1[Static1.anInt876++] = local25;
-		}
-		Static3.aClass26_21.put((long) arg0, local25);
-		return local25;
-	}
-
 	@OriginalMember(owner = "client!ti", name = "f", descriptor = "(B)V")
 	public static void method4202() {
 		if (Terrain.isAllLevelsVisible() || Static2.anInt1216 == Static7.y) {

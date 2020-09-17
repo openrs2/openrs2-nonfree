@@ -1252,9 +1252,4 @@ public final class Static34 {
 		}
 	}
 
-	@OriginalMember(owner = "client!ua", name = "a", descriptor = "(Lclient!fh;B)V")
-	public static void method4264(@OriginalArg(0) Js5 arg0) {
-		Static2.aClass58_40 = arg0;
-	}
-
 }

@@ -42,7 +42,7 @@ public final class Tile extends Node {
 	public Tile aClass4_Sub19_1;
 
 	@OriginalMember(owner = "client!nh", name = "Q", descriptor = "Lclient!lb;")
-	public Class108 aClass108_1;
+	public SecondarySceneGraphLinkedList particles;
 
 	@OriginalMember(owner = "client!nh", name = "R", descriptor = "I")
 	public int anInt3558;

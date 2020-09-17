@@ -1,5 +1,3 @@
-import java.io.IOException;
-import java.net.Socket;
 import javax.media.opengl.GL;
 
 import dev.openrs2.deob.annotation.OriginalArg;
@@ -265,8 +263,8 @@ public final class Static30 {
 								@Pc(950) String local950 = "Cache:" + Static36.method4434((long) local929, true, 2, 0) + "% (" + local923 + "%)";
 								Static1.aClass4_Sub3_Sub5_1.method2275(local950, local787, local841, 16776960, -1);
 								@Pc(958) int local958 = local841 + 12;
-								if (Static5.anInt3504 > 0) {
-									Static1.aClass4_Sub3_Sub5_1.method2275("Particles: " + Static5.anInt3505 + " / " + Static5.anInt3504, local787, local958, 16776960, -1);
+								if (ParticleManager.particles > 0) {
+									Static1.aClass4_Sub3_Sub5_1.method2275("Particles: " + ParticleManager.running + " / " + ParticleManager.particles, local787, local958, 16776960, -1);
 								}
 								@Pc(983) int local983 = local958 + 12;
 								Static2.aBooleanArray8[local89] = true;
@@ -841,11 +839,6 @@ public final class Static30 {
 				}
 			}
 		}
-	}
-
-	@OriginalMember(owner = "client!qg", name = "b", descriptor = "(I)V")
-	public static void method3555() {
-		Static3.aClass26_21.clear();
 	}
 
 	@OriginalMember(owner = "client!qh", name = "a", descriptor = "(CZ)C")

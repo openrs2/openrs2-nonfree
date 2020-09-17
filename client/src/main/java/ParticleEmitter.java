@@ -4,7 +4,7 @@ import dev.openrs2.deob.annotation.OriginalMember;
 import dev.openrs2.deob.annotation.Pc;
 
 @OriginalClass("client!sk")
-public final class Class158 {
+public final class ParticleEmitter {
 
 	@OriginalMember(owner = "client!sk", name = "c", descriptor = "I")
 	public final int anInt4864;
@@ -16,25 +16,25 @@ public final class Class158 {
 	public final int anInt4869;
 
 	@OriginalMember(owner = "client!sk", name = "g", descriptor = "Lclient!ik;")
-	public final Class89 aClass89_2;
+	public final ParticleEmitterType type;
 
 	@OriginalMember(owner = "client!sk", name = "<init>", descriptor = "(IIII)V")
-	public Class158(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) {
-		@Pc(5) Class89 local5 = Static32.method3982(arg0);
+	public ParticleEmitter(@OriginalArg(0) int id, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) {
+		@Pc(5) ParticleEmitterType type = ParticleEmitterTypeList.get(id);
 		this.anInt4864 = arg3;
 		this.anInt4868 = arg2;
 		this.anInt4869 = arg1;
-		if (GlRenderer.enabled || local5.anInt2433 == -1) {
-			this.aClass89_2 = local5;
+		if (GlRenderer.enabled || type.softwareId == -1) {
+			this.type = type;
 		} else {
-			this.aClass89_2 = Static32.method3982(local5.anInt2433);
+			this.type = ParticleEmitterTypeList.get(type.softwareId);
 		}
 	}
 
 	@OriginalMember(owner = "client!sk", name = "<init>", descriptor = "(Lclient!ik;III)V")
-	public Class158(@OriginalArg(0) Class89 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) {
+	public ParticleEmitter(@OriginalArg(0) ParticleEmitterType type, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) {
 		this.anInt4869 = arg1;
-		this.aClass89_2 = arg0;
+		this.type = type;
 		this.anInt4864 = arg3;
 		this.anInt4868 = arg2;
 	}

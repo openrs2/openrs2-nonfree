@@ -94,9 +94,6 @@ public final class Static2 {
 	@OriginalMember(owner = "client!fd", name = "Cb", descriptor = "[I")
 	public static int[] anIntArray649;
 
-	@OriginalMember(owner = "client!ff", name = "c", descriptor = "Lclient!fh;")
-	public static Js5 aClass58_40;
-
 	@OriginalMember(owner = "client!ff", name = "d", descriptor = "Lclient!wf;")
 	public static Component aClass185_4;
 

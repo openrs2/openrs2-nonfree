@@ -312,7 +312,7 @@ public final class Static18 {
 
 	@OriginalMember(owner = "client!he", name = "a", descriptor = "(I)V")
 	public static void method1714() {
-		Static26.method2964((long) client.loop);
+		ParticleManager.redraw((long) client.loop);
 		if (Static3.anInt5398 != -1) {
 			Static27.method4243(Static3.anInt5398);
 		}

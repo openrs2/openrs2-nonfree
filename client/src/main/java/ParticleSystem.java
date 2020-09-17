@@ -8,7 +8,7 @@ import dev.openrs2.deob.annotation.OriginalMember;
 import dev.openrs2.deob.annotation.Pc;
 
 @OriginalClass("client!ne")
-public final class Class20_Sub3 extends Class20 {
+public final class ParticleSystem extends SceneGraphNode {
 
 	@OriginalMember(owner = "client!ne", name = "q", descriptor = "J")
 	private long aLong123;
@@ -53,16 +53,16 @@ public final class Class20_Sub3 extends Class20 {
 	public int anInt3499 = 0;
 
 	@OriginalMember(owner = "client!ne", name = "u", descriptor = "Z")
-	public boolean aBoolean250 = false;
+	public boolean stopped = false;
 
 	@OriginalMember(owner = "client!ne", name = "v", descriptor = "Lclient!ug;")
-	private Class172 aClass172_2 = new Class172();
+	private SceneGraphLinkedList emitters = new SceneGraphLinkedList();
 
 	@OriginalMember(owner = "client!ne", name = "D", descriptor = "I")
 	private int anInt3507 = 0;
 
 	@OriginalMember(owner = "client!ne", name = "E", descriptor = "Lclient!ll;")
-	public LinkedList aClass112_24 = new LinkedList();
+	public LinkedList effectors = new LinkedList();
 
 	@OriginalMember(owner = "client!ne", name = "I", descriptor = "Z")
 	private boolean aBoolean252 = false;
@@ -80,61 +80,61 @@ public final class Class20_Sub3 extends Class20 {
 	private final int anInt3511;
 
 	@OriginalMember(owner = "client!ne", name = "t", descriptor = "[Lclient!lm;")
-	public Class20_Sub2_Sub1[] aClass20_Sub2_Sub1Array2;
+	public Particle[] particles;
 
 	@OriginalMember(owner = "client!ne", name = "n", descriptor = "J")
 	private final long aLong122;
 
 	@OriginalMember(owner = "client!ne", name = "<init>", descriptor = "(III)V")
-	public Class20_Sub3(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
+	public ParticleSystem(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
 		this.anInt3516 = arg1;
 		this.anInt3511 = arg2;
-		this.aClass20_Sub2_Sub1Array2 = new Class20_Sub2_Sub1[8192];
+		this.particles = new Particle[8192];
 		this.aLong122 = arg0;
 		this.aBoolean253 = true;
-		Static5.aClass172_3.method4322(this);
+		ParticleManager.systems.addTail(this);
 	}
 
 	@OriginalMember(owner = "client!ne", name = "a", descriptor = "([Lclient!sk;Z[I[I[I)V")
-	private void method2948(@OriginalArg(0) Class158[] arg0, @OriginalArg(1) boolean arg1, @OriginalArg(2) int[] arg2, @OriginalArg(3) int[] arg3, @OriginalArg(4) int[] arg4) {
+	private void method2948(@OriginalArg(0) ParticleEmitter[] emitters, @OriginalArg(1) boolean arg1, @OriginalArg(2) int[] arg2, @OriginalArg(3) int[] arg3, @OriginalArg(4) int[] arg4) {
 		for (@Pc(1) int local1 = 0; local1 < 8; local1++) {
 			Static5.aBooleanArray19[local1] = false;
 		}
 		label79:
-		for (@Pc(16) Class20_Sub1 local16 = (Class20_Sub1) this.aClass172_2.method4320(); local16 != null; local16 = (Class20_Sub1) this.aClass172_2.method4315()) {
-			if (arg0 != null) {
-				for (@Pc(22) int local22 = 0; local22 < arg0.length; local22++) {
-					if (local16.aClass158_1 == arg0[local22]) {
+		for (@Pc(16) ParticleEmitterNode node = (ParticleEmitterNode) this.emitters.head(); node != null; node = (ParticleEmitterNode) this.emitters.next()) {
+			if (emitters != null) {
+				for (@Pc(22) int local22 = 0; local22 < emitters.length; local22++) {
+					if (node.emitter == emitters[local22]) {
 						Static5.aBooleanArray19[local22] = true;
-						local16.aBoolean20 = false;
+						node.aBoolean20 = false;
 						continue label79;
 					}
 				}
 			}
 			if (!arg1) {
-				if (local16.anInt325 == 0) {
-					local16.method2944();
+				if (node.particlesSize == 0) {
+					node.unlink();
 					this.anInt3507--;
 				} else {
-					local16.aBoolean20 = true;
+					node.aBoolean20 = true;
 				}
 			}
 		}
-		if (arg0 == null) {
+		if (emitters == null) {
 			return;
 		}
-		for (@Pc(71) int local71 = 0; local71 < arg0.length && this.anInt3507 != 8; local71++) {
-			if (!Static5.aBooleanArray19[local71]) {
-				@Pc(94) Class20_Sub1 local94 = new Class20_Sub1(arg0[local71], this, this.aLong124);
-				this.aClass172_2.method4322(local94);
+		for (@Pc(71) int i = 0; i < emitters.length && this.anInt3507 != 8; i++) {
+			if (!Static5.aBooleanArray19[i]) {
+				@Pc(94) ParticleEmitterNode node = new ParticleEmitterNode(emitters[i], this, this.aLong124);
+				this.emitters.addTail(node);
 				this.anInt3507++;
-				Static5.aBooleanArray19[local71] = true;
+				Static5.aBooleanArray19[i] = true;
 			}
 		}
-		for (@Pc(117) Class20_Sub1 local117 = (Class20_Sub1) this.aClass172_2.method4320(); local117 != null; local117 = (Class20_Sub1) this.aClass172_2.method4315()) {
-			for (@Pc(121) int local121 = 0; local121 < arg0.length; local121++) {
-				if (Static5.aBooleanArray19[local121] && arg0[local121] == local117.aClass158_1) {
-					local117.method309(arg2[local117.aClass158_1.anInt4864], arg3[local117.aClass158_1.anInt4869], arg2[local117.aClass158_1.anInt4869], arg3[local117.aClass158_1.anInt4864], arg3[local117.aClass158_1.anInt4868], arg2[local117.aClass158_1.anInt4868], arg4[local117.aClass158_1.anInt4868], arg4[local117.aClass158_1.anInt4869], arg4[local117.aClass158_1.anInt4864]);
+		for (@Pc(117) ParticleEmitterNode node = (ParticleEmitterNode) this.emitters.head(); node != null; node = (ParticleEmitterNode) this.emitters.next()) {
+			for (@Pc(121) int i = 0; i < emitters.length; i++) {
+				if (Static5.aBooleanArray19[i] && emitters[i] == node.emitter) {
+					node.method309(arg2[node.emitter.anInt4864], arg3[node.emitter.anInt4869], arg2[node.emitter.anInt4869], arg3[node.emitter.anInt4864], arg3[node.emitter.anInt4868], arg2[node.emitter.anInt4868], arg4[node.emitter.anInt4868], arg4[node.emitter.anInt4869], arg4[node.emitter.anInt4864]);
 					break;
 				}
 			}
@@ -143,12 +143,12 @@ public final class Class20_Sub3 extends Class20 {
 
 	@OriginalMember(owner = "client!ne", name = "a", descriptor = "(IIIII)V")
 	public final void method2949(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4) {
-		if (this.aBoolean250) {
+		if (this.stopped) {
 			return;
 		}
 		if (arg0 != this.anInt3517) {
-			for (@Pc(13) Class20_Sub1 local13 = (Class20_Sub1) this.aClass172_2.method4320(); local13 != null; local13 = (Class20_Sub1) this.aClass172_2.method4315()) {
-				local13.aBoolean19 = true;
+			for (@Pc(13) ParticleEmitterNode node = (ParticleEmitterNode) this.emitters.head(); node != null; node = (ParticleEmitterNode) this.emitters.next()) {
+				node.aBoolean19 = true;
 			}
 		}
 		this.aLong123 = this.aLong124;
@@ -166,7 +166,7 @@ public final class Class20_Sub3 extends Class20 {
 
 	@OriginalMember(owner = "client!ne", name = "a", descriptor = "(IIIIIIIII)V")
 	public final void method2953(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) int arg8) {
-		if (this.aBoolean250 || (!this.aBoolean252 || !GlRenderer.enabled)) {
+		if (this.stopped || (!this.aBoolean252 || !GlRenderer.enabled)) {
 			return;
 		}
 		@Pc(11) GL local11 = GlRenderer.gl;
@@ -181,15 +181,15 @@ public final class Class20_Sub3 extends Class20 {
 		@Pc(73) int local73 = local41 + (-local44 * arg2 - (this.anInt3510 - this.anInt3520) * arg1 >> 16);
 		@Pc(79) int local79 = local56 + 2 - local73;
 		if (local79 >= 1600) {
-			if (Static5.aBoolean251) {
+			if (ParticleManager.DEBUG) {
 				System.out.println("Model too big for particles - radixsize:" + local79 + " maxmodelsize:" + 1600);
 			}
 			Static26.method2962();
 			return;
 		}
-		@Pc(104) Class20 local104 = this.aClass172_2.aClass20_11;
-		for (@Pc(107) Class20 local107 = local104.aClass20_9; local107 != local104; local107 = local107.aClass20_9) {
-			@Pc(113) Class20_Sub1 local113 = (Class20_Sub1) local107;
+		@Pc(104) SceneGraphNode sentinel = this.emitters.sentinel;
+		for (@Pc(107) SceneGraphNode node = sentinel.next; node != sentinel; node = node.next) {
+			@Pc(113) ParticleEmitterNode emitterNode = (ParticleEmitterNode) node;
 			for (@Pc(115) int local115 = 0; local115 < local79; local115++) {
 				Static5.anIntArray387[local115] = 0;
 			}
@@ -197,13 +197,13 @@ public final class Class20_Sub3 extends Class20 {
 				Static5.anIntArray388[local126] = 0;
 			}
 			Static5.anInt3519 = 0;
-			@Pc(141) Class20 local141 = local113.aClass172_1.aClass20_11;
-			for (@Pc(144) Class20 local144 = local141.aClass20_9; local144 != local141; local144 = local144.aClass20_9) {
-				@Pc(150) Class20_Sub2_Sub1 local150 = (Class20_Sub2_Sub1) local144;
-				if (!local150.aBoolean228) {
-					@Pc(161) int local161 = (local150.anInt3228 >> 12) - local13;
-					@Pc(168) int local168 = (local150.anInt3229 >> 12) - local15;
-					@Pc(175) int local175 = (local150.anInt3230 >> 12) - local17;
+			@Pc(141) SceneGraphNode particlesSentinel = emitterNode.particles.sentinel;
+			for (@Pc(144) SceneGraphNode particleNode = particlesSentinel.next; particleNode != particlesSentinel; particleNode = particleNode.next) {
+				@Pc(150) Particle particle = (Particle) particleNode;
+				if (!particle.aBoolean228) {
+					@Pc(161) int local161 = (particle.anInt3228 >> 12) - local13;
+					@Pc(168) int local168 = (particle.anInt3229 >> 12) - local15;
+					@Pc(175) int local175 = (particle.anInt3230 >> 12) - local17;
 					local175 = local175 * arg4 - local161 * arg3 >> 16;
 					@Pc(197) int local197 = (local168 * arg1 + local175 * arg2 >> 16) - local73;
 					if (local197 < 0) {
@@ -212,11 +212,11 @@ public final class Class20_Sub3 extends Class20 {
 						local197 = local79 - 1;
 					}
 					if (Static5.anIntArray387[local197] < 32) {
-						Static5.aShortArrayArray3[local197][Static5.anIntArray387[local197]++] = local150.aShort21;
+						Static5.aShortArrayArray3[local197][Static5.anIntArray387[local197]++] = particle.aShort21;
 					} else {
 						if (Static5.anIntArray387[local197] == 32) {
 							if (Static5.anInt3519 == 32) {
-								if (Static5.aBoolean251) {
+								if (ParticleManager.DEBUG) {
 									System.out.println("Overflowed model-based radix sort");
 								}
 								continue;
@@ -224,23 +224,23 @@ public final class Class20_Sub3 extends Class20 {
 							@Pc(244) int[] local244 = Static5.anIntArray387;
 							local244[local197] += Static5.anInt3519++ + 1;
 						}
-						Static5.aShortArrayArray4[Static5.anIntArray387[local197] - 32 - 1][Static5.anIntArray388[Static5.anIntArray387[local197] - 32 - 1]++] = local150.aShort21;
+						Static5.aShortArrayArray4[Static5.anIntArray387[local197] - 32 - 1][Static5.anIntArray388[Static5.anIntArray387[local197] - 32 - 1]++] = particle.aShort21;
 					}
 				}
 			}
 			@Pc(288) boolean local288 = false;
-			if (Static5.aBoolean249 && local113.aClass89_1.anInt2403 != -1) {
-				Static4.anInterface4_1.method451(local113.aClass89_1.anInt2403);
+			if (Static5.aBoolean249 && emitterNode.type.anInt2403 != -1) {
+				Static4.anInterface4_1.method451(emitterNode.type.anInt2403);
 				local288 = true;
 			} else {
 				GlRenderer.setTextureId(-1);
 			}
-			@Pc(313) float local313 = (float) local113.aClass89_1.anInt2399 * Static5.aFloat86;
+			@Pc(313) float local313 = (float) emitterNode.type.anInt2399 * Static5.aFloat86;
 			if (local313 > 64.0F) {
 				local313 = 64.0F;
 			}
 			local11.glPointSize(local313);
-			this.method2955(local11, local79, local288, local113.aClass89_1.aBoolean167);
+			this.method2955(local11, local79, local288, emitterNode.type.aBoolean167);
 		}
 		Static26.method2962();
 	}
@@ -252,28 +252,28 @@ public final class Class20_Sub3 extends Class20 {
 		}
 		Static5.aClass4_Sub10_7.position = 0;
 		if (GlRenderer.bigEndian) {
-			for (@Pc(15) int local15 = arg1 - 1; local15 >= 0; local15--) {
-				@Pc(28) int local28 = Static5.anIntArray387[local15] > 32 ? 32 : Static5.anIntArray387[local15];
+			for (@Pc(15) int i = arg1 - 1; i >= 0; i--) {
+				@Pc(28) int local28 = Static5.anIntArray387[i] > 32 ? 32 : Static5.anIntArray387[i];
 				if (local28 > 0) {
-					for (@Pc(34) int local34 = local28 - 1; local34 >= 0; local34--) {
-						@Pc(45) Class20_Sub2_Sub1 local45 = this.aClass20_Sub2_Sub1Array2[Static5.aShortArrayArray3[local15][local34]];
-						Static5.aClass4_Sub10_7.writeFloat((float) (local45.anInt3228 >> 12));
-						Static5.aClass4_Sub10_7.writeFloat((float) (local45.anInt3229 >> 12));
-						Static5.aClass4_Sub10_7.writeFloat((float) (local45.anInt3230 >> 12));
-						@Pc(72) int local72 = local45.anInt3231;
+					for (@Pc(34) int j = local28 - 1; j >= 0; j--) {
+						@Pc(45) Particle particle = this.particles[Static5.aShortArrayArray3[i][j]];
+						Static5.aClass4_Sub10_7.writeFloat((float) (particle.anInt3228 >> 12));
+						Static5.aClass4_Sub10_7.writeFloat((float) (particle.anInt3229 >> 12));
+						Static5.aClass4_Sub10_7.writeFloat((float) (particle.anInt3230 >> 12));
+						@Pc(72) int local72 = particle.anInt3231;
 						Static5.aClass4_Sub10_7.writeByte((byte) (local72 >> 16));
 						Static5.aClass4_Sub10_7.writeByte((byte) (local72 >> 8));
 						Static5.aClass4_Sub10_7.writeByte((byte) local72);
 						Static5.aClass4_Sub10_7.writeByte((byte) (local72 >> 24));
 					}
-					if (Static5.anIntArray387[local15] > 32) {
-						@Pc(113) int local113 = Static5.anIntArray387[local15] - 32 - 1;
-						for (@Pc(119) int local119 = Static5.anIntArray388[local113] - 1; local119 >= 0; local119--) {
-							@Pc(130) Class20_Sub2_Sub1 local130 = this.aClass20_Sub2_Sub1Array2[Static5.aShortArrayArray4[local113][local119]];
-							Static5.aClass4_Sub10_7.writeFloat((float) (local130.anInt3228 >> 12));
-							Static5.aClass4_Sub10_7.writeFloat((float) (local130.anInt3229 >> 12));
-							Static5.aClass4_Sub10_7.writeFloat((float) (local130.anInt3230 >> 12));
-							@Pc(157) int local157 = local130.anInt3231;
+					if (Static5.anIntArray387[i] > 32) {
+						@Pc(113) int local113 = Static5.anIntArray387[i] - 32 - 1;
+						for (@Pc(119) int j = Static5.anIntArray388[local113] - 1; j >= 0; j--) {
+							@Pc(130) Particle particle = this.particles[Static5.aShortArrayArray4[local113][j]];
+							Static5.aClass4_Sub10_7.writeFloat((float) (particle.anInt3228 >> 12));
+							Static5.aClass4_Sub10_7.writeFloat((float) (particle.anInt3229 >> 12));
+							Static5.aClass4_Sub10_7.writeFloat((float) (particle.anInt3230 >> 12));
+							@Pc(157) int local157 = particle.anInt3231;
 							Static5.aClass4_Sub10_7.writeByte((byte) (local157 >> 16));
 							Static5.aClass4_Sub10_7.writeByte((byte) (local157 >> 8));
 							Static5.aClass4_Sub10_7.writeByte((byte) local157);
@@ -283,11 +283,11 @@ public final class Class20_Sub3 extends Class20 {
 				}
 			}
 		} else {
-			for (@Pc(192) int local192 = arg1 - 1; local192 >= 0; local192--) {
-				@Pc(205) int local205 = Static5.anIntArray387[local192] > 32 ? 32 : Static5.anIntArray387[local192];
+			for (@Pc(192) int i = arg1 - 1; i >= 0; i--) {
+				@Pc(205) int local205 = Static5.anIntArray387[i] > 32 ? 32 : Static5.anIntArray387[i];
 				if (local205 > 0) {
-					for (@Pc(211) int local211 = local205 - 1; local211 >= 0; local211--) {
-						@Pc(222) Class20_Sub2_Sub1 local222 = this.aClass20_Sub2_Sub1Array2[Static5.aShortArrayArray3[local192][local211]];
+					for (@Pc(211) int j = local205 - 1; j >= 0; j--) {
+						@Pc(222) Particle local222 = this.particles[Static5.aShortArrayArray3[i][j]];
 						Static5.aClass4_Sub10_7.writeFloatLE((float) (local222.anInt3228 >> 12));
 						Static5.aClass4_Sub10_7.writeFloatLE((float) (local222.anInt3229 >> 12));
 						Static5.aClass4_Sub10_7.writeFloatLE((float) (local222.anInt3230 >> 12));
@@ -297,14 +297,14 @@ public final class Class20_Sub3 extends Class20 {
 						Static5.aClass4_Sub10_7.writeByte((byte) local249);
 						Static5.aClass4_Sub10_7.writeByte((byte) (local249 >> 24));
 					}
-					if (Static5.anIntArray387[local192] > 32) {
-						@Pc(290) int local290 = Static5.anIntArray387[local192] - 32 - 1;
-						for (@Pc(296) int local296 = Static5.anIntArray388[local290] - 1; local296 >= 0; local296--) {
-							@Pc(307) Class20_Sub2_Sub1 local307 = this.aClass20_Sub2_Sub1Array2[Static5.aShortArrayArray4[local290][local296]];
-							Static5.aClass4_Sub10_7.writeFloatLE((float) (local307.anInt3228 >> 12));
-							Static5.aClass4_Sub10_7.writeFloatLE((float) (local307.anInt3229 >> 12));
-							Static5.aClass4_Sub10_7.writeFloatLE((float) (local307.anInt3230 >> 12));
-							@Pc(334) int local334 = local307.anInt3231;
+					if (Static5.anIntArray387[i] > 32) {
+						@Pc(290) int local290 = Static5.anIntArray387[i] - 32 - 1;
+						for (@Pc(296) int j = Static5.anIntArray388[local290] - 1; j >= 0; j--) {
+							@Pc(307) Particle particle = this.particles[Static5.aShortArrayArray4[local290][j]];
+							Static5.aClass4_Sub10_7.writeFloatLE((float) (particle.anInt3228 >> 12));
+							Static5.aClass4_Sub10_7.writeFloatLE((float) (particle.anInt3229 >> 12));
+							Static5.aClass4_Sub10_7.writeFloatLE((float) (particle.anInt3230 >> 12));
+							@Pc(334) int local334 = particle.anInt3231;
 							Static5.aClass4_Sub10_7.writeByte((byte) (local334 >> 16));
 							Static5.aClass4_Sub10_7.writeByte((byte) (local334 >> 8));
 							Static5.aClass4_Sub10_7.writeByte((byte) local334);
@@ -337,20 +337,20 @@ public final class Class20_Sub3 extends Class20 {
 	}
 
 	@OriginalMember(owner = "client!ne", name = "e", descriptor = "()V")
-	public final void method2958() {
-		this.aBoolean250 = true;
-		for (@Pc(8) Class4_Sub3_Sub24 local8 = (Class4_Sub3_Sub24) this.aClass112_24.head(); local8 != null; local8 = (Class4_Sub3_Sub24) this.aClass112_24.next()) {
-			if (local8.aClass167_1.aClass37_1.anInt907 == 1) {
-				local8.unlinkSecondary();
+	public final void remove() {
+		this.stopped = true;
+		for (@Pc(8) ParticleEffectorNode node = (ParticleEffectorNode) this.effectors.head(); node != null; node = (ParticleEffectorNode) this.effectors.next()) {
+			if (node.effector.type.anInt907 == 1) {
+				node.unlinkSecondary();
 			}
 		}
-		this.aClass20_Sub2_Sub1Array2 = new Class20_Sub2_Sub1[8192];
+		this.particles = new Particle[8192];
 		this.anInt3499 = 0;
-		this.aClass172_2 = new Class172();
+		this.emitters = new SceneGraphLinkedList();
 		this.anInt3507 = 0;
-		this.aClass112_24 = new LinkedList();
+		this.effectors = new LinkedList();
 		this.anInt3522 = 0;
-		this.method2944();
+		this.unlink();
 	}
 
 	@OriginalMember(owner = "client!ne", name = "f", descriptor = "()I")
@@ -377,69 +377,69 @@ public final class Class20_Sub3 extends Class20 {
 
 	@OriginalMember(owner = "client!ne", name = "a", descriptor = "(II)V")
 	private void method2960(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
-		for (@Pc(5) Class4_Sub3_Sub24 local5 = (Class4_Sub3_Sub24) this.aClass112_24.head(); local5 != null; local5 = (Class4_Sub3_Sub24) this.aClass112_24.next()) {
-			local5.anInt6095 = local5.anInt6084 + this.anInt3518;
-			local5.anInt6089 = local5.anInt6085 + this.anInt3512;
-			local5.anInt6087 = local5.anInt6090 + this.anInt3509;
+		for (@Pc(5) ParticleEffectorNode node = (ParticleEffectorNode) this.effectors.head(); node != null; node = (ParticleEffectorNode) this.effectors.next()) {
+			node.anInt6095 = node.anInt6084 + this.anInt3518;
+			node.anInt6089 = node.anInt6085 + this.anInt3512;
+			node.anInt6087 = node.anInt6090 + this.anInt3509;
 			if (this.anInt3517 == 0) {
-				local5.anInt6091 = local5.aClass167_1.aClass37_1.anInt898;
-				local5.anInt6088 = local5.aClass167_1.aClass37_1.anInt892;
+				node.anInt6091 = node.effector.type.anInt898;
+				node.anInt6088 = node.effector.type.anInt892;
 			} else {
-				@Pc(36) int local36 = local5.aClass167_1.aClass37_1.anInt898;
-				@Pc(41) int local41 = local5.aClass167_1.aClass37_1.anInt892;
-				local5.anInt6091 = local41 * arg0 + local36 * arg1 >> 16;
-				local5.anInt6088 = local41 * arg1 - local36 * arg0 >> 16;
+				@Pc(36) int local36 = node.effector.type.anInt898;
+				@Pc(41) int local41 = node.effector.type.anInt892;
+				node.anInt6091 = local41 * arg0 + local36 * arg1 >> 16;
+				node.anInt6088 = local41 * arg1 - local36 * arg0 >> 16;
 			}
 		}
 	}
 
 	@OriginalMember(owner = "client!ne", name = "a", descriptor = "([Lclient!u;Z[I[I[I)V")
-	private void method2965(@OriginalArg(0) Class167[] arg0, @OriginalArg(1) boolean arg1, @OriginalArg(2) int[] arg2, @OriginalArg(3) int[] arg3, @OriginalArg(4) int[] arg4) {
+	private void method2965(@OriginalArg(0) ParticleEffector[] effectors, @OriginalArg(1) boolean arg1, @OriginalArg(2) int[] arg2, @OriginalArg(3) int[] arg3, @OriginalArg(4) int[] arg4) {
 		for (@Pc(1) int local1 = 0; local1 < 8; local1++) {
 			Static5.aBooleanArray18[local1] = false;
 		}
 		label88:
-		for (@Pc(16) Class4_Sub3_Sub24 local16 = (Class4_Sub3_Sub24) this.aClass112_24.head(); local16 != null; local16 = (Class4_Sub3_Sub24) this.aClass112_24.next()) {
-			if (arg0 != null) {
-				for (@Pc(22) int local22 = 0; local22 < arg0.length; local22++) {
-					if (local16.aClass167_1 == arg0[local22]) {
-						Static5.aBooleanArray18[local22] = true;
+		for (@Pc(16) ParticleEffectorNode node = (ParticleEffectorNode) this.effectors.head(); node != null; node = (ParticleEffectorNode) this.effectors.next()) {
+			if (effectors != null) {
+				for (@Pc(22) int i = 0; i < effectors.length; i++) {
+					if (node.effector == effectors[i]) {
+						Static5.aBooleanArray18[i] = true;
 						continue label88;
 					}
 				}
 			}
 			if (!arg1) {
-				local16.unlink();
+				node.unlink();
 				this.anInt3522--;
-				if (local16.isSecondaryLinked()) {
-					local16.unlinkSecondary();
-					Static5.anInt3524--;
+				if (node.isSecondaryLinked()) {
+					node.unlinkSecondary();
+					ParticleManager.anInt3524--;
 				}
 			}
 		}
-		if (arg0 == null) {
+		if (effectors == null) {
 			return;
 		}
-		for (@Pc(72) int local72 = 0; local72 < arg0.length && this.anInt3522 != 8; local72++) {
-			if (!Static5.aBooleanArray18[local72]) {
-				@Pc(87) Class4_Sub3_Sub24 local87 = null;
-				if (arg0[local72].aClass37_1.anInt907 == 1 && Static5.anInt3524 < 32) {
-					local87 = new Class4_Sub3_Sub24(arg0[local72], this);
-					Static5.aClass10_1.put((long) arg0[local72].aClass37_1.anInt900, local87);
-					Static5.anInt3524++;
+		for (@Pc(72) int i = 0; i < effectors.length && this.anInt3522 != 8; i++) {
+			if (!Static5.aBooleanArray18[i]) {
+				@Pc(87) ParticleEffectorNode node = null;
+				if (effectors[i].type.anInt907 == 1 && ParticleManager.anInt3524 < 32) {
+					node = new ParticleEffectorNode(effectors[i], this);
+					ParticleManager.aClass10_1.put((long) effectors[i].type.id, node);
+					ParticleManager.anInt3524++;
 				}
-				if (local87 == null) {
-					local87 = new Class4_Sub3_Sub24(arg0[local72], this);
+				if (node == null) {
+					node = new ParticleEffectorNode(effectors[i], this);
 				}
-				this.aClass112_24.addTail(local87);
+				this.effectors.addTail(node);
 				this.anInt3522++;
-				Static5.aBooleanArray18[local72] = true;
+				Static5.aBooleanArray18[i] = true;
 			}
 		}
-		for (@Pc(152) Class4_Sub3_Sub24 local152 = (Class4_Sub3_Sub24) this.aClass112_24.head(); local152 != null; local152 = (Class4_Sub3_Sub24) this.aClass112_24.next()) {
-			for (@Pc(156) int local156 = 0; local156 < arg0.length; local156++) {
-				if (Static5.aBooleanArray18[local156] && arg0[local156] == local152.aClass167_1) {
-					local152.method4827(arg4[local152.aClass167_1.anInt5232], arg3[local152.aClass167_1.anInt5232], arg2[local152.aClass167_1.anInt5232]);
+		for (@Pc(152) ParticleEffectorNode node = (ParticleEffectorNode) this.effectors.head(); node != null; node = (ParticleEffectorNode) this.effectors.next()) {
+			for (@Pc(156) int i = 0; i < effectors.length; i++) {
+				if (Static5.aBooleanArray18[i] && effectors[i] == node.effector) {
+					node.method4827(arg4[node.effector.anInt5232], arg3[node.effector.anInt5232], arg2[node.effector.anInt5232]);
 					break;
 				}
 			}
@@ -447,15 +447,15 @@ public final class Class20_Sub3 extends Class20 {
 	}
 
 	@OriginalMember(owner = "client!ne", name = "a", descriptor = "([Lclient!sk;[Lclient!u;Z[I[I[I)V")
-	public final void method2967(@OriginalArg(0) Class158[] arg0, @OriginalArg(1) Class167[] arg1, @OriginalArg(2) boolean arg2, @OriginalArg(3) int[] arg3, @OriginalArg(4) int[] arg4, @OriginalArg(5) int[] arg5) {
-		if (!this.aBoolean250) {
-			this.method2948(arg0, arg2, arg3, arg4, arg5);
-			this.method2965(arg1, arg2, arg3, arg4, arg5);
+	public final void method2967(@OriginalArg(0) ParticleEmitter[] emitters, @OriginalArg(1) ParticleEffector[] effectors, @OriginalArg(2) boolean arg2, @OriginalArg(3) int[] arg3, @OriginalArg(4) int[] arg4, @OriginalArg(5) int[] arg5) {
+		if (!this.stopped) {
+			this.method2948(emitters, arg2, arg3, arg4, arg5);
+			this.method2965(effectors, arg2, arg3, arg4, arg5);
 		}
 	}
 
 	@OriginalMember(owner = "client!ne", name = "b", descriptor = "(J)Z")
-	public final boolean method2968(@OriginalArg(0) long arg0) {
+	public final boolean redraw(@OriginalArg(0) long loop) {
 		@Pc(8) long local8;
 		if (this.aLong122 > this.aLong123) {
 			local8 = this.aLong122;
@@ -464,7 +464,7 @@ public final class Class20_Sub3 extends Class20 {
 		}
 		@Pc(18) int local18 = (int) (this.aLong124 - local8);
 		if (local18 > 750) {
-			this.method2958();
+			this.remove();
 			return false;
 		}
 		if (this.aLong123 > 0L) {
@@ -483,24 +483,24 @@ public final class Class20_Sub3 extends Class20 {
 			@Pc(161) int local161 = MathUtils.COSINE[this.anInt3517];
 			this.method2960(local156, local161);
 			if (this.aBoolean253) {
-				@Pc(174) Class20_Sub1 local174 = (Class20_Sub1) this.aClass172_2.method4320();
+				@Pc(174) ParticleEmitterNode node = (ParticleEmitterNode) this.emitters.head();
 				while (true) {
-					if (local174 == null) {
+					if (node == null) {
 						this.aBoolean253 = false;
 						break;
 					}
-					for (@Pc(178) int local178 = 0; local178 < local174.aClass89_1.anInt2418; local178++) {
-						local174.method307(1, local156, true, local161, this.aLong124);
+					for (@Pc(178) int i = 0; i < node.type.anInt2418; i++) {
+						node.method307(1, local156, true, local161, this.aLong124);
 					}
-					local174 = (Class20_Sub1) this.aClass172_2.method4315();
+					node = (ParticleEmitterNode) this.emitters.next();
 				}
 			}
-			@Pc(210) int local210 = (int) (arg0 - this.aLong124);
-			for (@Pc(216) Class20_Sub1 local216 = (Class20_Sub1) this.aClass172_2.method4320(); local216 != null; local216 = (Class20_Sub1) this.aClass172_2.method4315()) {
-				local216.method307(local210, local156, local18 < 10, local161, arg0);
+			@Pc(210) int local210 = (int) (loop - this.aLong124);
+			for (@Pc(216) ParticleEmitterNode node = (ParticleEmitterNode) this.emitters.head(); node != null; node = (ParticleEmitterNode) this.emitters.next()) {
+				node.method307(local210, local156, local18 < 10, local161, loop);
 			}
 		}
-		this.aLong124 = arg0;
+		this.aLong124 = loop;
 		return true;
 	}
 

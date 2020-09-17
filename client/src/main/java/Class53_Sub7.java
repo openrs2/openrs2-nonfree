@@ -7,7 +7,7 @@ import dev.openrs2.deob.annotation.Pc;
 public final class Class53_Sub7 extends Entity {
 
 	@OriginalMember(owner = "client!ri", name = "C", descriptor = "Lclient!ne;")
-	private Class20_Sub3 aClass20_Sub3_7;
+	private ParticleSystem aClass20_Sub3_7;
 
 	@OriginalMember(owner = "client!ri", name = "v", descriptor = "Z")
 	private boolean aBoolean318 = false;
@@ -135,7 +135,7 @@ public final class Class53_Sub7 extends Entity {
 
 	@OriginalMember(owner = "client!ri", name = "a", descriptor = "(IIIIIIIIJILclient!ne;)V")
 	@Override
-	public final void method3805(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) long arg8, @OriginalArg(9) int arg9, @OriginalArg(10) Class20_Sub3 arg10) {
+	public final void method3805(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) long arg8, @OriginalArg(9) int arg9, @OriginalArg(10) ParticleSystem arg10) {
 		@Pc(7) Entity local7 = this.method3735();
 		if (local7 != null) {
 			this.method3737(local7);
@@ -384,13 +384,13 @@ public final class Class53_Sub7 extends Entity {
 	private void method3737(@OriginalArg(1) Entity arg0) {
 		if (GlRenderer.enabled) {
 			@Pc(70) GlModel local70 = (GlModel) arg0;
-			if ((this.aClass20_Sub3_7 == null || this.aClass20_Sub3_7.aBoolean250) && (local70.aClass158Array3 != null || local70.aClass167Array3 != null)) {
+			if ((this.aClass20_Sub3_7 == null || this.aClass20_Sub3_7.stopped) && (local70.aClass158Array3 != null || local70.aClass167Array3 != null)) {
 				@Pc(91) LocType local91 = LocTypeList.get(this.anInt4587);
 				if (local91.anIntArray631 != null) {
 					local91 = local91.method4453();
 				}
 				if (local91 != null) {
-					this.aClass20_Sub3_7 = new Class20_Sub3(client.loop, local91.width, local91.length);
+					this.aClass20_Sub3_7 = new ParticleSystem(client.loop, local91.width, local91.length);
 				}
 			}
 			if (this.aClass20_Sub3_7 != null) {
@@ -398,13 +398,13 @@ public final class Class53_Sub7 extends Entity {
 			}
 		} else {
 			@Pc(8) SoftwareModel local8 = (SoftwareModel) arg0;
-			if ((this.aClass20_Sub3_7 == null || this.aClass20_Sub3_7.aBoolean250) && (local8.aClass158Array2 != null || local8.aClass167Array2 != null)) {
+			if ((this.aClass20_Sub3_7 == null || this.aClass20_Sub3_7.stopped) && (local8.aClass158Array2 != null || local8.aClass167Array2 != null)) {
 				@Pc(28) LocType local28 = LocTypeList.get(this.anInt4587);
 				if (local28.anIntArray631 != null) {
 					local28 = local28.method4453();
 				}
 				if (local28 != null) {
-					this.aClass20_Sub3_7 = new Class20_Sub3(client.loop, local28.width, local28.length);
+					this.aClass20_Sub3_7 = new ParticleSystem(client.loop, local28.width, local28.length);
 				}
 			}
 			if (this.aClass20_Sub3_7 != null) {
@@ -418,7 +418,7 @@ public final class Class53_Sub7 extends Entity {
 	@Override
 	public final void finalize() {
 		if (this.aClass20_Sub3_7 != null) {
-			this.aClass20_Sub3_7.method2958();
+			this.aClass20_Sub3_7.remove();
 		}
 	}
 }

@@ -2116,7 +2116,7 @@ public final class Static29 {
 											break;
 										}
 									}
-									if (local8.aClass108_1 != null) {
+									if (local8.particles != null) {
 										if (GlRenderer.enabled) {
 											@Pc(1905) GL local1905 = GlRenderer.gl;
 											GlRenderer.method1613(var8);
@@ -2138,30 +2138,30 @@ public final class Static29 {
 												local2013 = local2001 - 1597;
 											}
 											@Pc(2028) int local2028 = local2001 + 2 - local2013;
-											@Pc(2030) Class20_Sub2_Sub1 local2030 = null;
-											@Pc(2032) Class20_Sub1 local2032 = null;
+											@Pc(2030) Particle local2030 = null;
+											@Pc(2032) ParticleEmitterNode local2032 = null;
 											@Pc(2034) int local2034 = -1;
-											@Pc(2040) Class20_Sub2_Sub1 local2040 = (Class20_Sub2_Sub1) local8.aClass108_1.method2458();
+											@Pc(2040) Particle local2040 = (Particle) local8.particles.head();
 											while (true) {
 												label1054:
 												{
 													if (local2040 != null) {
-														if (local2040.aClass20_Sub1_1 == null || local2040.aClass20_Sub1_1.aClass20_Sub3_1.aBoolean250) {
-															local2040.method2944();
+														if (local2040.emitter == null || local2040.emitter.system.stopped) {
+															local2040.unlink();
 															break label1054;
 														}
-														if ((byte) (local2040.aClass20_Sub1_1.aClass20_Sub3_1.aLong124 & 0xFFL) != local8.aByte14) {
-															local8.aClass108_1 = null;
+														if ((byte) (local2040.emitter.system.aLong124 & 0xFFL) != local8.aByte14) {
+															local8.particles = null;
 															break;
 														}
 														if (local2030 == null) {
 															local2030 = local2040;
-															local2032 = local2040.aClass20_Sub1_1;
-															local2034 = local2032.aClass89_1.anInt2399;
+															local2032 = local2040.emitter;
+															local2034 = local2032.type.anInt2399;
 															break label1054;
 														}
 													}
-													if (local2030 != null && (local2040 == null || local2040.aClass20_Sub1_1 != local2032 || local2040.aClass20_Sub1_1.aClass89_1.anInt2399 != local2034)) {
+													if (local2030 != null && (local2040 == null || local2040.emitter != local2032 || local2040.emitter.type.anInt2399 != local2034)) {
 														for (@Pc(2097) int local2097 = 0; local2097 < local2028; local2097++) {
 															Static5.anIntArray387[local2097] = 0;
 														}
@@ -2169,8 +2169,8 @@ public final class Static29 {
 															Static5.anIntArray388[local2108] = 0;
 														}
 														Static5.anInt3519 = 0;
-														for (@Pc(2121) Class20_Sub2_Sub1 local2121 = local2030; local2121 != local2040; local2121 = (Class20_Sub2_Sub1) local2121.aClass20_Sub2_5) {
-															if (local2121.aClass20_Sub1_1 != null) {
+														for (@Pc(2121) Particle local2121 = local2030; local2121 != local2040; local2121 = (Particle) local2121.secondaryNext) {
+															if (local2121.emitter != null) {
 																@Pc(2134) int local2134 = (local2121.anInt3228 >> 12) - Static7.anInt5281;
 																@Pc(2141) int local2141 = (local2121.anInt3229 >> 12) - Static6.anInt4375;
 																@Pc(2148) int local2148 = (local2121.anInt3230 >> 12) - Static6.anInt4400;
@@ -2181,7 +2181,7 @@ public final class Static29 {
 																} else {
 																	if (Static5.anIntArray387[local2148] == 32) {
 																		if (Static5.anInt3519 == 32) {
-																			if (Static5.aBoolean251) {
+																			if (ParticleManager.DEBUG) {
 																				System.out.println("Overflowed world-based radix sort");
 																			}
 																			break;
@@ -2195,13 +2195,13 @@ public final class Static29 {
 																	}
 																}
 															}
-															if (local2121.aClass20_Sub2_5 == local8.aClass108_1.aClass20_Sub2_1) {
+															if (local2121.secondaryNext == local8.particles.sentinel) {
 																break;
 															}
 														}
 														@Pc(2270) boolean local2270 = false;
-														if (Static5.aBoolean249 && local2032.aClass89_1.anInt2403 != -1) {
-															Static4.anInterface4_1.method451(local2032.aClass89_1.anInt2403);
+														if (Static5.aBoolean249 && local2032.type.anInt2403 != -1) {
+															Static4.anInterface4_1.method451(local2032.type.anInt2403);
 															local2270 = true;
 														} else {
 															GlRenderer.setTextureId(-1);
@@ -2211,29 +2211,29 @@ public final class Static29 {
 															local2293 = 64.0F;
 														}
 														local1905.glPointSize(local2293);
-														local2032.aClass20_Sub3_1.method2955(local1905, local2028, local2270, local2032.aClass89_1.aBoolean167);
+														local2032.system.method2955(local1905, local2028, local2270, local2032.type.aBoolean167);
 														if (local2040 != null) {
 															local2030 = local2040;
-															local2032 = local2040.aClass20_Sub1_1;
-															local2034 = local2040.aClass20_Sub1_1.aClass89_1.anInt2399;
+															local2032 = local2040.emitter;
+															local2034 = local2040.emitter.type.anInt2399;
 														}
 													}
 													if (local2040 == null) {
 														break;
 													}
 												}
-												local2040 = (Class20_Sub2_Sub1) local8.aClass108_1.method2461();
+												local2040 = (Particle) local8.particles.next();
 											}
 											Static26.method2962();
 										} else {
 											@Pc(2339) int local2339 = Static5.anInt3506 + Static4.anInt3125;
 											@Pc(2343) int local2343 = Static5.anInt3503 + Static4.anInt3126;
-											@Pc(2347) Class20_Sub2 local2347 = local8.aClass108_1.aClass20_Sub2_1;
-											for (@Pc(2350) Class20_Sub2 local2350 = local2347.aClass20_Sub2_5; local2350 != local2347; local2350 = local2350.aClass20_Sub2_5) {
-												@Pc(2356) Class20_Sub2_Sub1 local2356 = (Class20_Sub2_Sub1) local2350;
-												if (local2356.aClass20_Sub1_1 != null && !local2356.aClass20_Sub1_1.aClass20_Sub3_1.aBoolean250) {
-													if ((byte) (local2356.aClass20_Sub1_1.aClass20_Sub3_1.aLong124 & 0xFFL) != local8.aByte14) {
-														local8.aClass108_1 = null;
+											@Pc(2347) SecondarySceneGraphNode local2347 = local8.particles.sentinel;
+											for (@Pc(2350) SecondarySceneGraphNode local2350 = local2347.secondaryNext; local2350 != local2347; local2350 = local2350.secondaryNext) {
+												@Pc(2356) Particle local2356 = (Particle) local2350;
+												if (local2356.emitter != null && !local2356.emitter.system.stopped) {
+													if ((byte) (local2356.emitter.system.aLong124 & 0xFFL) != local8.aByte14) {
+														local8.particles = null;
 														break;
 													}
 													@Pc(2387) int local2387 = (local2356.anInt3228 >> 12) - Static7.anInt5281;
@@ -2251,7 +2251,7 @@ public final class Static29 {
 														if (local2468 == 0) {
 															local2468 = 1;
 														}
-														Static33.method4206(local2456, local2464, (local2356.aClass20_Sub1_1.aClass89_1.anInt2399 << 16) / local2468, local2356.anInt3231, local2356.anInt3231 >> 24 & 0xFF);
+														Static33.method4206(local2456, local2464, (local2356.emitter.type.anInt2399 << 16) / local2468, local2356.anInt3231, local2356.anInt3231 >> 24 & 0xFF);
 													}
 												}
 											}

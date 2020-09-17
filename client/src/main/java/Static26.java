@@ -140,16 +140,6 @@ public final class Static26 {
 		return null;
 	}
 
-	@OriginalMember(owner = "client!ne", name = "a", descriptor = "(Lclient!fh;)V")
-	public static void method2950(@OriginalArg(0) Js5 arg0) {
-		Static5.anInt3501 = 0;
-		Static5.anInt3502 = 0;
-		Static5.aClass172_3 = new Class172();
-		Static5.aClass20_Sub2_Sub1Array1 = new Class20_Sub2_Sub1[1024];
-		Static23.method2508(arg0);
-		Static34.method4264(arg0);
-	}
-
 	@OriginalMember(owner = "client!ne", name = "a", descriptor = "()V")
 	public static void method2951() {
 		Static5.aShortArrayArray3 = null;
@@ -197,31 +187,6 @@ public final class Static26 {
 		if (Static5.aBoolean249) {
 			local1.glTexEnvi(GL.GL_POINT_SPRITE, GL.GL_COORD_REPLACE, GL.GL_POINTS);
 			local1.glDisable(GL.GL_POINT_SPRITE);
-		}
-	}
-
-	@OriginalMember(owner = "client!ne", name = "h", descriptor = "()V")
-	public static void method2963() {
-		Static5.aClass10_1 = new SecondaryHashTable(8);
-		Static5.anInt3524 = 0;
-		for (@Pc(11) Class20_Sub3 local11 = (Class20_Sub3) Static5.aClass172_3.method4320(); local11 != null; local11 = (Class20_Sub3) Static5.aClass172_3.method4315()) {
-			local11.method2958();
-		}
-	}
-
-	@OriginalMember(owner = "client!ne", name = "a", descriptor = "(J)V")
-	public static void method2964(@OriginalArg(0) long arg0) {
-		Static5.anInt3500 = Static5.anInt3504;
-		Static5.anInt3505 = 0;
-		Static5.anInt3504 = 0;
-		@Pc(8) long local8 = MonotonicClock.currentTimeMillis();
-		for (@Pc(13) Class20_Sub3 local13 = (Class20_Sub3) Static5.aClass172_3.method4320(); local13 != null; local13 = (Class20_Sub3) Static5.aClass172_3.method4315()) {
-			if (local13.method2968(arg0)) {
-				Static5.anInt3505++;
-			}
-		}
-		if (Static5.aBoolean251 && arg0 % 100L == 0L) {
-			System.out.println("Particle system count: " + Static5.aClass172_3.method4316() + ", running: " + Static5.anInt3505 + ". Particles: " + Static5.anInt3504 + ". Time taken: " + (MonotonicClock.currentTimeMillis() - local8) + "ms");
 		}
 	}
 

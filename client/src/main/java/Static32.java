@@ -269,22 +269,6 @@ public final class Static32 {
 		}
 	}
 
-	@OriginalMember(owner = "client!sh", name = "c", descriptor = "(II)Lclient!ik;")
-	public static Class89 method3982(@OriginalArg(1) int arg0) {
-		@Pc(6) Class89 local6 = (Class89) Static4.aClass26_29.get((long) arg0);
-		if (local6 != null) {
-			return local6;
-		}
-		@Pc(21) byte[] local21 = Static3.aClass58_100.fetchFile(0, arg0);
-		@Pc(25) Class89 local25 = new Class89();
-		if (local21 != null) {
-			local25.method1915(new Buffer(local21));
-		}
-		local25.method1919();
-		Static4.aClass26_29.put((long) arg0, local25);
-		return local25;
-	}
-
 	@OriginalMember(owner = "client!sh", name = "a", descriptor = "(Lclient!wf;IB)I")
 	public static int method3985(@OriginalArg(0) Component arg0, @OriginalArg(1) int arg1) {
 		if (!Static12.method687(arg0).method3266(arg1) && arg0.anObjectArray18 == null) {

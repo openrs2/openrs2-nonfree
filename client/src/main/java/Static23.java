@@ -112,11 +112,6 @@ public final class Static23 {
 		Static2.aFloat26 = Static4.aFloat85;
 	}
 
-	@OriginalMember(owner = "client!ld", name = "a", descriptor = "(Lclient!fh;I)V")
-	public static void method2508(@OriginalArg(0) Js5 arg0) {
-		Static3.aClass58_100 = arg0;
-	}
-
 	@OriginalMember(owner = "client!lf", name = "c", descriptor = "(IIIIII)V")
 	public static void method2536(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4) {
 		Static3.anInt2497 = arg3;

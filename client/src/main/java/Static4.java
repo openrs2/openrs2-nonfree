@@ -303,9 +303,6 @@ public final class Static4 {
 	@OriginalMember(owner = "client!lf", name = "U", descriptor = "S")
 	public static short aShort18 = 1;
 
-	@OriginalMember(owner = "client!lf", name = "X", descriptor = "Lclient!cc;")
-	public static final SoftLruHashTable aClass26_29 = new SoftLruHashTable(64);
-
 	@OriginalMember(owner = "client!lf", name = "ab", descriptor = "[I")
 	public static final int[] anIntArray293 = new int[200];
 

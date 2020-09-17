@@ -52,7 +52,7 @@ public final class GlModel extends Model {
 	private short[] aShortArray92;
 
 	@OriginalMember(owner = "client!s", name = "B", descriptor = "[Lclient!u;")
-	public Class167[] aClass167Array3;
+	public ParticleEffector[] aClass167Array3;
 
 	@OriginalMember(owner = "client!s", name = "C", descriptor = "Lclient!rj;")
 	private Class152 aClass152_1;
@@ -115,7 +115,7 @@ public final class GlModel extends Model {
 	private int[][] anIntArrayArray40;
 
 	@OriginalMember(owner = "client!s", name = "lb", descriptor = "[Lclient!sk;")
-	public Class158[] aClass158Array3;
+	public ParticleEmitter[] aClass158Array3;
 
 	@OriginalMember(owner = "client!s", name = "F", descriptor = "I")
 	public int anInt4689 = 0;
@@ -190,8 +190,8 @@ public final class GlModel extends Model {
 		this.anIntArray502 = arg0.anIntArray326;
 		this.anIntArray503 = arg0.anIntArray323;
 		this.aShortArray96 = arg0.aShortArray52;
-		this.aClass158Array3 = arg0.aClass158Array1;
-		this.aClass167Array3 = arg0.aClass167Array1;
+		this.aClass158Array3 = arg0.particleEmitters;
+		this.aClass167Array3 = arg0.particleEffectors;
 		@Pc(292) int local292 = this.anInt4690 * 3;
 		this.aShortArray95 = new short[local292];
 		this.aShortArray90 = new short[local292];
@@ -665,7 +665,7 @@ public final class GlModel extends Model {
 
 	@OriginalMember(owner = "client!s", name = "a", descriptor = "(IIIIIIIIJILclient!ne;)V")
 	@Override
-	public final void method3805(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) long arg8, @OriginalArg(9) int arg9, @OriginalArg(10) Class20_Sub3 arg10) {
+	public final void method3805(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) long arg8, @OriginalArg(9) int arg9, @OriginalArg(10) ParticleSystem arg10) {
 		if (this.anInt4691 == 0) {
 			return;
 		}

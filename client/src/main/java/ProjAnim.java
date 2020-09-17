@@ -7,7 +7,7 @@ import dev.openrs2.deob.annotation.Pc;
 public final class ProjAnim extends Entity {
 
 	@OriginalMember(owner = "client!oc", name = "q", descriptor = "Lclient!ne;")
-	private Class20_Sub3 aClass20_Sub3_5;
+	private ParticleSystem aClass20_Sub3_5;
 
 	@OriginalMember(owner = "client!oc", name = "u", descriptor = "I")
 	private int anInt3711;
@@ -156,7 +156,7 @@ public final class ProjAnim extends Entity {
 
 	@OriginalMember(owner = "client!oc", name = "a", descriptor = "(IIIIIIIIJILclient!ne;)V")
 	@Override
-	public final void method3805(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) long arg8, @OriginalArg(9) int arg9, @OriginalArg(10) Class20_Sub3 arg10) {
+	public final void method3805(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) long arg8, @OriginalArg(9) int arg9, @OriginalArg(10) ParticleSystem arg10) {
 		@Pc(7) Model local7 = this.method3108();
 		if (local7 != null) {
 			this.method3106(local7);
@@ -193,16 +193,16 @@ public final class ProjAnim extends Entity {
 	private void method3106(@OriginalArg(1) Model arg0) {
 		if (GlRenderer.enabled) {
 			@Pc(4) GlModel local4 = (GlModel) arg0;
-			if ((this.aClass20_Sub3_5 == null || this.aClass20_Sub3_5.aBoolean250) && (local4.aClass158Array3 != null || local4.aClass167Array3 != null)) {
-				this.aClass20_Sub3_5 = new Class20_Sub3(client.loop, 1, 1);
+			if ((this.aClass20_Sub3_5 == null || this.aClass20_Sub3_5.stopped) && (local4.aClass158Array3 != null || local4.aClass167Array3 != null)) {
+				this.aClass20_Sub3_5 = new ParticleSystem(client.loop, 1, 1);
 			}
 			if (this.aClass20_Sub3_5 != null) {
 				this.aClass20_Sub3_5.method2967(local4.aClass158Array3, local4.aClass167Array3, false, local4.anIntArray507, local4.anIntArray504, local4.anIntArray502);
 			}
 		} else {
 			@Pc(51) SoftwareModel local51 = (SoftwareModel) arg0;
-			if ((this.aClass20_Sub3_5 == null || this.aClass20_Sub3_5.aBoolean250) && (local51.aClass158Array2 != null || local51.aClass167Array2 != null)) {
-				this.aClass20_Sub3_5 = new Class20_Sub3(client.loop, 1, 1);
+			if ((this.aClass20_Sub3_5 == null || this.aClass20_Sub3_5.stopped) && (local51.aClass158Array2 != null || local51.aClass167Array2 != null)) {
+				this.aClass20_Sub3_5 = new ParticleSystem(client.loop, 1, 1);
 			}
 			if (this.aClass20_Sub3_5 != null) {
 				this.aClass20_Sub3_5.method2967(local51.aClass158Array2, local51.aClass167Array2, false, local51.anIntArray347, local51.anIntArray344, local51.anIntArray340);

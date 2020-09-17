@@ -290,11 +290,6 @@ public final class Static9 {
 		Static5.aDouble11 = arg0;
 	}
 
-	@OriginalMember(owner = "client!ao", name = "a", descriptor = "(B)V")
-	public static void method201() {
-		Static4.aClass26_29.clear();
-	}
-
 	@OriginalMember(owner = "client!ao", name = "a", descriptor = "(Ljava/awt/Color;ZZILjava/lang/String;)V")
 	public static void method202(@OriginalArg(0) Color arg0, @OriginalArg(1) boolean arg1, @OriginalArg(3) int arg2, @OriginalArg(4) String arg3) {
 		try {

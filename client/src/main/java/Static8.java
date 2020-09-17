@@ -139,7 +139,7 @@ public final class Static8 {
 		Static31.method3150();
 		Static2.aClass112_8.clear();
 		Static1.aClass112_1.clear();
-		Static26.method2963();
+		ParticleManager.clear();
 	}
 
 	@OriginalMember(owner = "client!aa", name = "a", descriptor = "(I)V")

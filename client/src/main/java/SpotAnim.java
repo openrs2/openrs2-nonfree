@@ -7,7 +7,7 @@ import dev.openrs2.deob.annotation.Pc;
 public final class SpotAnim extends Entity {
 
 	@OriginalMember(owner = "client!o", name = "E", descriptor = "Lclient!ne;")
-	private Class20_Sub3 aClass20_Sub3_4;
+	private ParticleSystem aClass20_Sub3_4;
 
 	@OriginalMember(owner = "client!o", name = "z", descriptor = "I")
 	private final int anInt3659 = -1;
@@ -72,16 +72,16 @@ public final class SpotAnim extends Entity {
 	private void method3057(@OriginalArg(1) Model arg0) {
 		if (GlRenderer.enabled) {
 			@Pc(55) GlModel local55 = (GlModel) arg0;
-			if ((this.aClass20_Sub3_4 == null || this.aClass20_Sub3_4.aBoolean250) && (local55.aClass158Array3 != null || local55.aClass167Array3 != null)) {
-				this.aClass20_Sub3_4 = new Class20_Sub3(client.loop, 1, 1);
+			if ((this.aClass20_Sub3_4 == null || this.aClass20_Sub3_4.stopped) && (local55.aClass158Array3 != null || local55.aClass167Array3 != null)) {
+				this.aClass20_Sub3_4 = new ParticleSystem(client.loop, 1, 1);
 			}
 			if (this.aClass20_Sub3_4 != null) {
 				this.aClass20_Sub3_4.method2967(local55.aClass158Array3, local55.aClass167Array3, false, local55.anIntArray507, local55.anIntArray504, local55.anIntArray502);
 			}
 		} else {
 			@Pc(8) SoftwareModel local8 = (SoftwareModel) arg0;
-			if ((this.aClass20_Sub3_4 == null || this.aClass20_Sub3_4.aBoolean250) && (local8.aClass158Array2 != null || local8.aClass167Array2 != null)) {
-				this.aClass20_Sub3_4 = new Class20_Sub3(client.loop, 1, 1);
+			if ((this.aClass20_Sub3_4 == null || this.aClass20_Sub3_4.stopped) && (local8.aClass158Array2 != null || local8.aClass167Array2 != null)) {
+				this.aClass20_Sub3_4 = new ParticleSystem(client.loop, 1, 1);
 			}
 			if (this.aClass20_Sub3_4 != null) {
 				this.aClass20_Sub3_4.method2967(local8.aClass158Array2, local8.aClass167Array2, false, local8.anIntArray347, local8.anIntArray344, local8.anIntArray340);
@@ -138,7 +138,7 @@ public final class SpotAnim extends Entity {
 
 	@OriginalMember(owner = "client!o", name = "a", descriptor = "(IIIIIIIIJILclient!ne;)V")
 	@Override
-	public final void method3805(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) long arg8, @OriginalArg(9) int arg9, @OriginalArg(10) Class20_Sub3 arg10) {
+	public final void method3805(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) long arg8, @OriginalArg(9) int arg9, @OriginalArg(10) ParticleSystem arg10) {
 		@Pc(7) Model local7 = this.method3060();
 		if (local7 != null) {
 			this.method3057(local7);

@@ -1,4 +1,3 @@
-import java.math.BigInteger;
 import java.nio.ByteBuffer;
 
 import dev.openrs2.deob.annotation.OriginalMember;
@@ -391,9 +390,6 @@ public final class Static6 {
 
 	@OriginalMember(owner = "client!sc", name = "jb", descriptor = "[Ljava/lang/String;")
 	public static final String[] aStringArray27 = new String[500];
-
-	@OriginalMember(owner = "client!sd", name = "a", descriptor = "[Lclient!dc;")
-	public static final Class37[] aClass37Array1 = new Class37[8];
 
 	@OriginalMember(owner = "client!sd", name = "b", descriptor = "Lclient!cc;")
 	public static final SoftLruHashTable aClass26_50 = new SoftLruHashTable(32);

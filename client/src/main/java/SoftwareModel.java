@@ -55,7 +55,7 @@ public final class SoftwareModel extends Model {
 	public int[] anIntArray344;
 
 	@OriginalMember(owner = "client!na", name = "I", descriptor = "[Lclient!u;")
-	public Class167[] aClass167Array2;
+	public ParticleEffector[] aClass167Array2;
 
 	@OriginalMember(owner = "client!na", name = "J", descriptor = "[S")
 	private short[] aShortArray63;
@@ -85,7 +85,7 @@ public final class SoftwareModel extends Model {
 	private int[] anIntArray348;
 
 	@OriginalMember(owner = "client!na", name = "U", descriptor = "[Lclient!sk;")
-	public Class158[] aClass158Array2;
+	public ParticleEmitter[] aClass158Array2;
 
 	@OriginalMember(owner = "client!na", name = "X", descriptor = "[I")
 	private int[] anIntArray351;
@@ -156,8 +156,8 @@ public final class SoftwareModel extends Model {
 		this.anIntArrayArray29 = arg0.anIntArrayArray27;
 		this.anIntArrayArray30 = arg0.anIntArrayArray26;
 		this.aShortArray62 = arg0.aShortArray54;
-		this.aClass158Array2 = arg0.aClass158Array1;
-		this.aClass167Array2 = arg0.aClass167Array1;
+		this.aClass158Array2 = arg0.particleEmitters;
+		this.aClass167Array2 = arg0.particleEffectors;
 		this.aShortArray64 = arg0.aShortArray52;
 		@Pc(117) int local117 = (int) Math.sqrt((double) (arg3 * arg3 + arg4 * arg4 + arg5 * arg5));
 		@Pc(123) int local123 = arg2 * local117 >> 8;
@@ -381,10 +381,10 @@ public final class SoftwareModel extends Model {
 			this.anIntArray341 = new int[this.anInt3437];
 		}
 		if (local41 > 0) {
-			this.aClass158Array2 = new Class158[local41];
+			this.aClass158Array2 = new ParticleEmitter[local41];
 		}
 		if (local43 > 0) {
-			this.aClass167Array2 = new Class167[local43];
+			this.aClass167Array2 = new ParticleEffector[local43];
 		}
 		this.aShortArray63 = new short[this.anInt3439];
 		this.anInt3440 = 0;
@@ -427,13 +427,13 @@ public final class SoftwareModel extends Model {
 				}
 				if (local276.aClass158Array2 != null) {
 					for (@Pc(452) int local452 = 0; local452 < local276.aClass158Array2.length; local452++) {
-						this.aClass158Array2[local267] = new Class158(local276.aClass158Array2[local452].aClass89_2, local276.aClass158Array2[local452].anInt4869 + this.anInt3440, local276.aClass158Array2[local452].anInt4868 + this.anInt3440, local276.aClass158Array2[local452].anInt4864 + this.anInt3440);
+						this.aClass158Array2[local267] = new ParticleEmitter(local276.aClass158Array2[local452].type, local276.aClass158Array2[local452].anInt4869 + this.anInt3440, local276.aClass158Array2[local452].anInt4868 + this.anInt3440, local276.aClass158Array2[local452].anInt4864 + this.anInt3440);
 						local267++;
 					}
 				}
 				if (local276.aClass167Array2 != null) {
 					for (@Pc(501) int local501 = 0; local501 < local276.aClass167Array2.length; local501++) {
-						this.aClass167Array2[local265] = new Class167(local276.aClass167Array2[local501].aClass37_1, local276.aClass167Array2[local501].anInt5232 + this.anInt3440);
+						this.aClass167Array2[local265] = new ParticleEffector(local276.aClass167Array2[local501].type, local276.aClass167Array2[local501].anInt5232 + this.anInt3440);
 						local265++;
 					}
 				}
@@ -541,7 +541,7 @@ public final class SoftwareModel extends Model {
 	}
 
 	@OriginalMember(owner = "client!na", name = "a", descriptor = "(ZZJIILclient!ne;)V")
-	private void method2902(@OriginalArg(0) boolean arg0, @OriginalArg(1) boolean arg1, @OriginalArg(2) long arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) Class20_Sub3 arg5) {
+	private void method2902(@OriginalArg(0) boolean arg0, @OriginalArg(1) boolean arg1, @OriginalArg(2) long arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) ParticleSystem arg5) {
 		if (arg4 >= 1600) {
 			return;
 		}
@@ -699,12 +699,12 @@ public final class SoftwareModel extends Model {
 							this.method2904(local677[local679]);
 						} else {
 							@Pc(701) int local701 = (local686 >> 16) - 1;
-							@Pc(706) Class20_Sub2_Sub1 local706 = arg5.aClass20_Sub2_Sub1Array2[local701];
+							@Pc(706) Particle local706 = arg5.particles[local701];
 							@Pc(712) int local712 = Static4.anIntArray375[local701] * 400;
 							if (local712 == 0) {
 								local712 = 1;
 							}
-							Static33.method4206(Static4.anIntArray362[local701], Static4.anIntArray357[local701], (local706.aClass20_Sub1_1.aClass89_1.anInt2399 << 16) / local712, local706.anInt3231, local706.anInt3231 >> 24 & 0xFF);
+							Static33.method4206(Static4.anIntArray362[local701], Static4.anIntArray357[local701], (local706.emitter.type.anInt2399 << 16) / local712, local706.anInt3231, local706.anInt3231 >> 24 & 0xFF);
 						}
 					}
 				}
@@ -717,12 +717,12 @@ public final class SoftwareModel extends Model {
 							this.method2904(local756[local758]);
 						} else {
 							@Pc(782) int local782 = (local767 >> 16) - 1;
-							@Pc(787) Class20_Sub2_Sub1 local787 = arg5.aClass20_Sub2_Sub1Array2[local782];
+							@Pc(787) Particle local787 = arg5.particles[local782];
 							@Pc(793) int local793 = Static4.anIntArray375[local782] * 400;
 							if (local793 == 0) {
 								local793 = 1;
 							}
-							Static33.method4206(Static4.anIntArray362[local782], Static4.anIntArray357[local782], (local787.aClass20_Sub1_1.aClass89_1.anInt2399 << 16) / local793, local787.anInt3231, local787.anInt3231 >> 24 & 0xFF);
+							Static33.method4206(Static4.anIntArray362[local782], Static4.anIntArray357[local782], (local787.emitter.type.anInt2399 << 16) / local793, local787.anInt3231, local787.anInt3231 >> 24 & 0xFF);
 						}
 					}
 				}
@@ -866,12 +866,12 @@ public final class SoftwareModel extends Model {
 					local1279 = Static4.anIntArray358[local1136] / local1271;
 				}
 				for (@Pc(1291) int local1291 = Static4.anIntArray365[local1109]; Static4.anIntArray368[local1291] + arg3 > local1279; local1291 = Static4.anIntArray365[local1109++]) {
-					@Pc(1303) Class20_Sub2_Sub1 local1303 = arg5.aClass20_Sub2_Sub1Array2[local1291];
+					@Pc(1303) Particle local1303 = arg5.particles[local1291];
 					@Pc(1309) int local1309 = Static4.anIntArray375[local1291] * 400;
 					if (local1309 == 0) {
 						local1309 = 1;
 					}
-					Static33.method4206(Static4.anIntArray362[local1291], Static4.anIntArray357[local1291], (local1303.aClass20_Sub1_1.aClass89_1.anInt2399 << 16) / local1309, local1303.anInt3231, local1303.anInt3231 >> 24 & 0xFF);
+					Static33.method4206(Static4.anIntArray362[local1291], Static4.anIntArray357[local1291], (local1303.emitter.type.anInt2399 << 16) / local1309, local1303.anInt3231, local1303.anInt3231 >> 24 & 0xFF);
 					if (local1109 >= local7) {
 						break;
 					}
@@ -900,12 +900,12 @@ public final class SoftwareModel extends Model {
 		}
 		@Pc(1405) int local1405 = Static4.anIntArray365[local1109];
 		while (local1109 < local7) {
-			@Pc(1413) Class20_Sub2_Sub1 local1413 = arg5.aClass20_Sub2_Sub1Array2[local1405];
+			@Pc(1413) Particle local1413 = arg5.particles[local1405];
 			@Pc(1419) int local1419 = Static4.anIntArray375[local1405] * 400;
 			if (local1419 == 0) {
 				local1419 = 1;
 			}
-			Static33.method4206(Static4.anIntArray362[local1405], Static4.anIntArray357[local1405], (local1413.aClass20_Sub1_1.aClass89_1.anInt2399 << 16) / local1419, local1413.anInt3231, local1413.anInt3231 >> 24 & 0xFF);
+			Static33.method4206(Static4.anIntArray362[local1405], Static4.anIntArray357[local1405], (local1413.emitter.type.anInt2399 << 16) / local1419, local1413.anInt3231, local1413.anInt3231 >> 24 & 0xFF);
 			local1405 = Static4.anIntArray365[local1109++];
 		}
 	}
@@ -963,7 +963,7 @@ public final class SoftwareModel extends Model {
 
 	@OriginalMember(owner = "client!na", name = "a", descriptor = "(IIIIIIIIJILclient!ne;)V")
 	@Override
-	public final void method3805(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) long arg8, @OriginalArg(9) int arg9, @OriginalArg(10) Class20_Sub3 arg10) {
+	public final void method3805(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) long arg8, @OriginalArg(9) int arg9, @OriginalArg(10) ParticleSystem arg10) {
 		if (!this.aBoolean244) {
 			this.method2909();
 		}
@@ -1120,8 +1120,8 @@ public final class SoftwareModel extends Model {
 		if (arg10 != null) {
 			@Pc(754) int local754 = Static5.anInt3506 + local223;
 			@Pc(758) int local758 = Static5.anInt3503 + local225;
-			for (@Pc(760) int local760 = 0; local760 < arg10.aClass20_Sub2_Sub1Array2.length; local760++) {
-				@Pc(770) Class20_Sub2_Sub1 local770 = arg10.aClass20_Sub2_Sub1Array2[local760];
+			for (@Pc(760) int local760 = 0; local760 < arg10.particles.length; local760++) {
+				@Pc(770) Particle local770 = arg10.particles[local760];
 				if (local770 == null || local770.aBoolean228) {
 					Static4.anIntArray368[local760] = Integer.MIN_VALUE;
 				} else {

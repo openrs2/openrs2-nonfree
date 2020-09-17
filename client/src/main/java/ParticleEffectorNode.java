@@ -3,7 +3,7 @@ import dev.openrs2.deob.annotation.OriginalClass;
 import dev.openrs2.deob.annotation.OriginalMember;
 
 @OriginalClass("client!wn")
-public final class Class4_Sub3_Sub24 extends SecondaryNode {
+public final class ParticleEffectorNode extends SecondaryNode {
 
 	@OriginalMember(owner = "client!wn", name = "z", descriptor = "I")
 	public int anInt6084;
@@ -30,11 +30,11 @@ public final class Class4_Sub3_Sub24 extends SecondaryNode {
 	public int anInt6095;
 
 	@OriginalMember(owner = "client!wn", name = "D", descriptor = "Lclient!u;")
-	public final Class167 aClass167_1;
+	public final ParticleEffector effector;
 
 	@OriginalMember(owner = "client!wn", name = "<init>", descriptor = "(Lclient!u;Lclient!ne;)V")
-	public Class4_Sub3_Sub24(@OriginalArg(0) Class167 arg0, @OriginalArg(1) Class20_Sub3 arg1) {
-		this.aClass167_1 = arg0;
+	public ParticleEffectorNode(@OriginalArg(0) ParticleEffector effector, @OriginalArg(1) ParticleSystem system) {
+		this.effector = effector;
 	}
 
 	@OriginalMember(owner = "client!wn", name = "a", descriptor = "(IIII)V")

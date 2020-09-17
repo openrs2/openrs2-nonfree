@@ -88,9 +88,6 @@ public final class Static3 {
 	@OriginalMember(owner = "client!hh", name = "a", descriptor = "I")
 	public static int anInt5397;
 
-	@OriginalMember(owner = "client!hh", name = "k", descriptor = "Lclient!fh;")
-	public static Js5 aClass58_100;
-
 	@OriginalMember(owner = "client!hi", name = "g", descriptor = "F")
 	public static float aFloat51;
 
@@ -357,9 +354,6 @@ public final class Static3 {
 
 	@OriginalMember(owner = "client!hd", name = "e", descriptor = "I")
 	public static int anInt2152 = 0;
-
-	@OriginalMember(owner = "client!he", name = "p", descriptor = "Lclient!cc;")
-	public static final SoftLruHashTable aClass26_21 = new SoftLruHashTable(64);
 
 	@OriginalMember(owner = "client!he", name = "B", descriptor = "Z")
 	public static boolean aBoolean147 = true;

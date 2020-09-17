@@ -718,7 +718,7 @@ public final class client extends GameShell {
 				mainLoadPercentage = 85;
 			} else if (js5Archive23.isFileReady("details")) {
 				Static19.method2393(js5Archive23);
-				Static26.method2950(js5Archive27);
+				ParticleManager.init(js5Archive27);
 				Static13.method1028(js5Archive7);
 				mainLoadState = 135;
 				mainLoadPercentage = 95;
