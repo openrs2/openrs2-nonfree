@@ -31,7 +31,7 @@ public final class Static4 {
 	public static SoftwareSprite aClass4_Sub3_Sub14_Sub1_4;
 
 	@OriginalMember(owner = "client!k", name = "c", descriptor = "Lclient!kk;")
-	public static Class106 aClass106_3;
+	public static WorldMapFont aClass106_3;
 
 	@OriginalMember(owner = "client!k", name = "d", descriptor = "I")
 	public static int anInt2741;
@@ -145,7 +145,7 @@ public final class Static4 {
 	public static int anInt3309;
 
 	@OriginalMember(owner = "client!me", name = "d", descriptor = "Lclient!kk;")
-	public static Class106 aClass106_4;
+	public static WorldMapFont aClass106_4;
 
 	@OriginalMember(owner = "client!mf", name = "j", descriptor = "[I")
 	public static int[] underwaterMapGroupIds;
@@ -154,7 +154,7 @@ public final class Static4 {
 	public static int anInt3317;
 
 	@OriginalMember(owner = "client!mg", name = "g", descriptor = "Lclient!kk;")
-	public static Class106 aClass106_5;
+	public static WorldMapFont aClass106_5;
 
 	@OriginalMember(owner = "client!mg", name = "t", descriptor = "B")
 	public static byte aByte6;
@@ -260,9 +260,6 @@ public final class Static4 {
 
 	@OriginalMember(owner = "client!kg", name = "w", descriptor = "I")
 	public static int anInt2868 = -1;
-
-	@OriginalMember(owner = "client!kk", name = "d", descriptor = "I")
-	public static final int anInt2888 = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!\"£$%^&*()-_=+[{]};:'@#~,<.>/?\\| ÄËÏÖÜäëïöüÿßÁÀÉÈÍÌÓÒÚÙáàéèíìóòúùÂÊÎÔÛâêîôûÆæãÃõÕçÇ".length();
 
 	@OriginalMember(owner = "client!kl", name = "Z", descriptor = "Lclient!ic;")
 	public static HashTable aClass84_13 = new HashTable(8);

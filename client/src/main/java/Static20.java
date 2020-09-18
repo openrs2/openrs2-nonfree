@@ -936,42 +936,42 @@ public final class Static20 {
 			Static4.anInt2644 = 70;
 			GameShell.resetTimer();
 		} else if (Static4.anInt2644 == 70) {
-			Static6.aClass106_7 = new Class106(11, true, GameShell.canvas);
+			Static6.aClass106_7 = new WorldMapFont(11, true, GameShell.canvas);
 			Static4.anInt2644 = 73;
 			Static32.method3917(true);
 			GameShell.resetTimer();
 		} else if (Static4.anInt2644 == 73) {
-			Static4.aClass106_3 = new Class106(12, true, GameShell.canvas);
+			Static4.aClass106_3 = new WorldMapFont(12, true, GameShell.canvas);
 			Static4.anInt2644 = 76;
 			Static32.method3917(true);
 			GameShell.resetTimer();
 		} else if (Static4.anInt2644 == 76) {
-			Static4.aClass106_5 = new Class106(14, true, GameShell.canvas);
+			Static4.aClass106_5 = new WorldMapFont(14, true, GameShell.canvas);
 			Static4.anInt2644 = 79;
 			Static32.method3917(true);
 			GameShell.resetTimer();
 		} else if (Static4.anInt2644 == 79) {
-			Static4.aClass106_4 = new Class106(17, true, GameShell.canvas);
+			Static4.aClass106_4 = new WorldMapFont(17, true, GameShell.canvas);
 			Static4.anInt2644 = 82;
 			Static32.method3917(true);
 			GameShell.resetTimer();
 		} else if (Static4.anInt2644 == 82) {
-			Static1.aClass106_1 = new Class106(19, true, GameShell.canvas);
+			Static1.aClass106_1 = new WorldMapFont(19, true, GameShell.canvas);
 			Static4.anInt2644 = 85;
 			Static32.method3917(true);
 			GameShell.resetTimer();
 		} else if (Static4.anInt2644 == 85) {
-			Static2.aClass106_2 = new Class106(22, true, GameShell.canvas);
+			Static2.aClass106_2 = new WorldMapFont(22, true, GameShell.canvas);
 			Static4.anInt2644 = 88;
 			Static32.method3917(true);
 			GameShell.resetTimer();
 		} else if (Static4.anInt2644 == 88) {
-			Static5.aClass106_6 = new Class106(26, true, GameShell.canvas);
+			Static5.aClass106_6 = new WorldMapFont(26, true, GameShell.canvas);
 			Static4.anInt2644 = 91;
 			Static32.method3917(true);
 			GameShell.resetTimer();
 		} else {
-			Static6.aClass106_8 = new Class106(30, true, GameShell.canvas);
+			Static6.aClass106_8 = new WorldMapFont(30, true, GameShell.canvas);
 			Static4.anInt2644 = 100;
 			Static32.method3917(true);
 			GameShell.resetTimer();

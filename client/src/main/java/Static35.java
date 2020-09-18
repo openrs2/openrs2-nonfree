@@ -1020,7 +1020,7 @@ public final class Static35 {
 				if (local32 - 1 > local49) {
 					local56 = local56.substring(0, local56.length() - 4);
 				}
-				@Pc(77) int local77 = Static4.aClass106_5.method2326(local56);
+				@Pc(77) int local77 = Static4.aClass106_5.getStringWidth(local56);
 				if (local34 < local77) {
 					local34 = local77;
 				}
@@ -1066,7 +1066,7 @@ public final class Static35 {
 				if (local353 < local32 - 1) {
 					local364 = local364.substring(0, local364.length() - 4);
 				}
-				Static4.aClass106_5.method2330(local364, local105, local167, arg1.anInt2286);
+				Static4.aClass106_5.renderStringCenter(local364, local105, local167, arg1.anInt2286);
 				local167 += Static4.aClass106_5.method2332();
 			}
 		}

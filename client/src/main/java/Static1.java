@@ -32,7 +32,7 @@ public final class Static1 {
 	public static int anInt131;
 
 	@OriginalMember(owner = "client!al", name = "R", descriptor = "Lclient!kk;")
-	public static Class106 aClass106_1;
+	public static WorldMapFont aClass106_1;
 
 	@OriginalMember(owner = "client!al", name = "S", descriptor = "[Lclient!uj;")
 	public static Sprite[] aClass4_Sub3_Sub14Array1;

@@ -17,7 +17,7 @@ public final class Static6 {
 	public static int anInt4375;
 
 	@OriginalMember(owner = "client!qk", name = "s", descriptor = "Lclient!kk;")
-	public static Class106 aClass106_7;
+	public static WorldMapFont aClass106_7;
 
 	@OriginalMember(owner = "client!ql", name = "c", descriptor = "Lclient!kj;")
 	public static TextureProvider anInterface3_1;
@@ -137,7 +137,7 @@ public final class Static6 {
 	public static boolean aBoolean321;
 
 	@OriginalMember(owner = "client!rl", name = "q", descriptor = "Lclient!kk;")
-	public static Class106 aClass106_8;
+	public static WorldMapFont aClass106_8;
 
 	@OriginalMember(owner = "client!rn", name = "w", descriptor = "F")
 	public static float aFloat90;

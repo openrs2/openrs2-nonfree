@@ -140,7 +140,7 @@ public final class Static2 {
 	public static int anInt5778;
 
 	@OriginalMember(owner = "client!gb", name = "r", descriptor = "Lclient!kk;")
-	public static Class106 aClass106_2;
+	public static WorldMapFont aClass106_2;
 
 	@OriginalMember(owner = "client!dc", name = "m", descriptor = "I")
 	public static int anInt902 = 0;

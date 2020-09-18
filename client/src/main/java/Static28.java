@@ -8,7 +8,7 @@ public final class Static28 {
 
 	@OriginalMember(owner = "client!ol", name = "a", descriptor = "(Lclient!fg;IIIZILclient!nb;Lclient!ho;)V")
 	public static void method3244(@OriginalArg(0) Class4_Sub3_Sub7 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) boolean arg4, @OriginalArg(6) Class4_Sub17 arg5, @OriginalArg(7) MelType arg6) {
-		@Pc(3) Class106 local3 = null;
+		@Pc(3) WorldMapFont local3 = null;
 		if (arg6.anInt2270 == 0) {
 			if ((double) Static3.aFloat68 == 3.0D) {
 				local3 = Static6.aClass106_7;
@@ -72,7 +72,7 @@ public final class Static28 {
 			if (local141 - 1 > local192) {
 				local199 = local199.substring(0, local199.length() - 4);
 			}
-			@Pc(221) int local221 = local3.method2326(local199);
+			@Pc(221) int local221 = local3.getStringWidth(local199);
 			if (local190 < local221) {
 				local190 = local221;
 			}
@@ -94,11 +94,11 @@ public final class Static28 {
 			if (local141 - 1 > local343) {
 				local354 = local354.substring(0, local354.length() - 4);
 			}
-			@Pc(376) int local376 = local3.method2326(local354);
+			@Pc(376) int local376 = local3.getStringWidth(local354);
 			if (local190 < local376) {
 				local190 = local376;
 			}
-			local3.method2330(local354, arg0.anInt1766, local188, local123);
+			local3.renderStringCenter(local354, arg0.anInt1766, local188, local123);
 			local188 += local3.method2332();
 		}
 	}
