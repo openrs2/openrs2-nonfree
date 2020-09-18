@@ -121,41 +121,6 @@ public final class Static29 {
 		Static8.method66(Static6.anInt4440, Static3.anInt2394, Static5.anInt3890, Static4.anInt3455);
 	}
 
-	@OriginalMember(owner = "client!pf", name = "a", descriptor = "([Lclient!ec;)Lclient!pf;")
-	public static Class134 method3402(@OriginalArg(0) GlShader[] arg0) {
-		for (@Pc(1) int local1 = 0; local1 < arg0.length; local1++) {
-			if (arg0[local1] == null || arg0[local1].id <= 0) {
-				return null;
-			}
-		}
-		@Pc(20) GL local20 = GlRenderer.gl;
-		@Pc(23) int local23 = local20.glCreateProgramObjectARB();
-		for (@Pc(25) int local25 = 0; local25 < arg0.length; local25++) {
-			local20.glAttachObjectARB(local23, arg0[local25].id);
-		}
-		local20.glLinkProgramARB(local23);
-		local20.glGetObjectParameterivARB(local23, GL.GL_LINK_STATUS, Static5.anIntArray432, 0);
-		if (Static5.anIntArray432[0] == 0) {
-			if (Static5.anIntArray432[0] == 0) {
-				System.out.println("Shader linking failed:");
-			}
-			local20.glGetObjectParameterivARB(local23, GL.GL_INFO_LOG_LENGTH, Static5.anIntArray432, 1);
-			if (Static5.anIntArray432[1] > 1) {
-				@Pc(74) byte[] local74 = new byte[Static5.anIntArray432[1]];
-				local20.glGetInfoLogARB(local23, Static5.anIntArray432[1], Static5.anIntArray432, 0, local74, 0);
-				System.out.println(new String(local74));
-			}
-			if (Static5.anIntArray432[0] == 0) {
-				for (@Pc(96) int local96 = 0; local96 < arg0.length; local96++) {
-					local20.glDetachObjectARB(local23, arg0[local96].id);
-				}
-				local20.glDeleteObjectARB(local23);
-				return null;
-			}
-		}
-		return new Class134(local23, arg0);
-	}
-
 	@OriginalMember(owner = "client!pg", name = "a", descriptor = "(IIIIIII)I")
 	public static int method3147(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(6) int arg5) {
 		arg4 &= 3;

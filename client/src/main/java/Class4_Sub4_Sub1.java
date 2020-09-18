@@ -9,16 +9,16 @@ import dev.openrs2.deob.annotation.Pc;
 public final class Class4_Sub4_Sub1 extends Class4_Sub4 {
 
 	@OriginalMember(owner = "client!dd", name = "E", descriptor = "Lclient!pf;")
-	private Class134 aClass134_1;
+	private GlProgram aClass134_1;
 
 	@OriginalMember(owner = "client!dd", name = "H", descriptor = "Lclient!pf;")
-	private Class134 aClass134_2;
+	private GlProgram aClass134_2;
 
 	@OriginalMember(owner = "client!dd", name = "M", descriptor = "Lclient!pf;")
-	private Class134 aClass134_3;
+	private GlProgram aClass134_3;
 
 	@OriginalMember(owner = "client!dd", name = "N", descriptor = "Lclient!pf;")
-	private Class134 aClass134_4;
+	private GlProgram aClass134_4;
 
 	@OriginalMember(owner = "client!dd", name = "O", descriptor = "[I")
 	private int[] anIntArray66;
@@ -52,7 +52,7 @@ public final class Class4_Sub4_Sub1 extends Class4_Sub4 {
 			Static9.method216(this.anInt933);
 			local1.glDrawBuffer(GL.GL_COLOR_ATTACHMENT0);
 			local1.glViewport(0, 0, 256, 256);
-			@Pc(272) int local272 = this.aClass134_4.anInt4123;
+			@Pc(272) int local272 = this.aClass134_4.id;
 			local1.glUseProgramObjectARB(local272);
 			local1.glUniform1iARB(local1.glGetUniformLocation(local272, "sceneTex"), 0);
 			local1.glUniform3fARB(local1.glGetUniformLocation(local272, "params"), Static2.aFloat26, 0.0F, 0.0F);
@@ -114,7 +114,7 @@ public final class Class4_Sub4_Sub1 extends Class4_Sub4 {
 			Static9.method216(this.anInt933);
 			local1.glDrawBuffer(GL.GL_COLOR_ATTACHMENT0);
 			local1.glViewport(0, 0, 256, 256);
-			@Pc(195) int local195 = this.aClass134_2.anInt4123;
+			@Pc(195) int local195 = this.aClass134_2.id;
 			local1.glUseProgramObjectARB(local195);
 			local1.glUniform1iARB(local1.glGetUniformLocation(local195, "sceneTex"), 0);
 			local1.glUniform3fARB(local1.glGetUniformLocation(local195, "params"), Static2.aFloat26, 0.0F, 0.0F);
@@ -131,7 +131,7 @@ public final class Class4_Sub4_Sub1 extends Class4_Sub4 {
 		}
 		local1.glDrawBuffer(GL.GL_COLOR_ATTACHMENT1);
 		GlRenderer.setTextureId(this.anInt937);
-		@Pc(342) int local342 = this.aClass134_3.anInt4123;
+		@Pc(342) int local342 = this.aClass134_3.id;
 		local1.glUseProgramObjectARB(local342);
 		local1.glUniform1iARB(local1.glGetUniformLocation(local342, "baseTex"), 0);
 		local1.glUniform3fARB(local1.glGetUniformLocation(local342, "step"), 0.00390625F, 0.0F, 0.0F);
@@ -162,7 +162,7 @@ public final class Class4_Sub4_Sub1 extends Class4_Sub4 {
 		local1.glPopMatrix();
 		local1.glMatrixMode(GL.GL_MODELVIEW);
 		Static9.method215();
-		@Pc(462) int local462 = this.aClass134_1.anInt4123;
+		@Pc(462) int local462 = this.aClass134_1.id;
 		local1.glUseProgramObjectARB(local462);
 		local1.glUniform1iARB(local1.glGetUniformLocation(local462, "sceneTex"), 0);
 		local1.glUniform1iARB(local1.glGetUniformLocation(local462, "bloomTex"), 1);
@@ -296,10 +296,10 @@ public final class Class4_Sub4_Sub1 extends Class4_Sub4 {
 			}
 		}
 		Static9.method215();
-		this.aClass134_4 = Static29.method3402(new GlShader[] { GlShader.create("#extension GL_ARB_texture_rectangle : enable\nuniform vec3 params;\nuniform sampler2DRect sceneTex;\nconst vec3 lumCoef = vec3(0.2126, 0.7152, 0.0722);\nvoid main() {\n    vec3 col = texture2DRect(sceneTex, gl_TexCoord[0].xy).rgb;\n    gl_FragColor = vec4(col*step(params.x, dot(lumCoef, col)), 1.0);\n}\n", GlShader.GL_FRAGMENT_SHADER) });
-		this.aClass134_2 = Static29.method3402(new GlShader[] { GlShader.create("uniform vec3 params;\nuniform sampler2D sceneTex;\nconst vec3 lumCoef = vec3(0.2126, 0.7152, 0.0722);\nvoid main() {\n    vec3 col = texture2D(sceneTex, gl_TexCoord[0].xy).rgb;\n    gl_FragColor = vec4(col*step(params.x, dot(lumCoef, col)), 1.0);\n}\n", GlShader.GL_FRAGMENT_SHADER) });
-		this.aClass134_1 = Static29.method3402(new GlShader[] { GlShader.create("#extension GL_ARB_texture_rectangle : enable\nuniform vec3 params;\nuniform vec3 dimScale;\nuniform sampler2D bloomTex;\nuniform sampler2DRect sceneTex;\nconst vec3 lumCoef = vec3(0.2126, 0.7152, 0.0722);\nvoid main() {\n\t vec3 bloomCol = texture2D(bloomTex, gl_TexCoord[1].xy).rgb;\n\t vec3 sceneCol = texture2DRect(sceneTex, gl_TexCoord[0].xy).rgb;\n\t float preLum = 0.99*dot(lumCoef, sceneCol)+0.01;\n    float postLum = preLum*(1.0+(preLum/params.y))/(preLum+1.0);\n\t gl_FragColor = vec4(sceneCol*(postLum/preLum)+bloomCol*params.x, 1.0);\n}\n", GlShader.GL_FRAGMENT_SHADER) });
-		this.aClass134_3 = Static29.method3402(new GlShader[] { GlShader.create("uniform vec3 step;\nuniform sampler2D baseTex;\nvoid main() {\n\tvec4 fragCol = texture2D(baseTex, gl_TexCoord[0].xy)*0.091396265;\n\tfragCol += texture2D(baseTex, gl_TexCoord[0].xy+(-1.0*step.xy))*0.088584304;\n\tfragCol += texture2D(baseTex, gl_TexCoord[0].xy+( 1.0*step.xy))*0.088584304;\n\tfragCol += texture2D(baseTex, gl_TexCoord[0].xy+(-2.0*step.xy))*0.08065692;\n\tfragCol += texture2D(baseTex, gl_TexCoord[0].xy+( 2.0*step.xy))*0.08065692;\n\tfragCol += texture2D(baseTex, gl_TexCoord[0].xy+(-3.0*step.xy))*0.068989515;\n\tfragCol += texture2D(baseTex, gl_TexCoord[0].xy+( 3.0*step.xy))*0.068989515;\n\tfragCol += texture2D(baseTex, gl_TexCoord[0].xy+(-4.0*step.xy))*0.055434637;\n\tfragCol += texture2D(baseTex, gl_TexCoord[0].xy+( 4.0*step.xy))*0.055434637;\n\tfragCol += texture2D(baseTex, gl_TexCoord[0].xy+(-5.0*step.xy))*0.04184426;\n\tfragCol += texture2D(baseTex, gl_TexCoord[0].xy+( 5.0*step.xy))*0.04184426;\n\tfragCol += texture2D(baseTex, gl_TexCoord[0].xy+(-6.0*step.xy))*0.029672023;\n\tfragCol += texture2D(baseTex, gl_TexCoord[0].xy+( 6.0*step.xy))*0.029672023;\n\tfragCol += texture2D(baseTex, gl_TexCoord[0].xy+(-7.0*step.xy))*0.019765828;\n\tfragCol += texture2D(baseTex, gl_TexCoord[0].xy+( 7.0*step.xy))*0.019765828;\n\tfragCol += texture2D(baseTex, gl_TexCoord[0].xy+(-8.0*step.xy))*0.012369139;\n\tfragCol += texture2D(baseTex, gl_TexCoord[0].xy+( 8.0*step.xy))*0.012369139;\n\tgl_FragColor = fragCol;\n}\n", GlShader.GL_FRAGMENT_SHADER) });
+		this.aClass134_4 = GlProgram.create(new GlShader[] { GlShader.create("#extension GL_ARB_texture_rectangle : enable\nuniform vec3 params;\nuniform sampler2DRect sceneTex;\nconst vec3 lumCoef = vec3(0.2126, 0.7152, 0.0722);\nvoid main() {\n    vec3 col = texture2DRect(sceneTex, gl_TexCoord[0].xy).rgb;\n    gl_FragColor = vec4(col*step(params.x, dot(lumCoef, col)), 1.0);\n}\n", GlShader.GL_FRAGMENT_SHADER) });
+		this.aClass134_2 = GlProgram.create(new GlShader[] { GlShader.create("uniform vec3 params;\nuniform sampler2D sceneTex;\nconst vec3 lumCoef = vec3(0.2126, 0.7152, 0.0722);\nvoid main() {\n    vec3 col = texture2D(sceneTex, gl_TexCoord[0].xy).rgb;\n    gl_FragColor = vec4(col*step(params.x, dot(lumCoef, col)), 1.0);\n}\n", GlShader.GL_FRAGMENT_SHADER) });
+		this.aClass134_1 = GlProgram.create(new GlShader[] { GlShader.create("#extension GL_ARB_texture_rectangle : enable\nuniform vec3 params;\nuniform vec3 dimScale;\nuniform sampler2D bloomTex;\nuniform sampler2DRect sceneTex;\nconst vec3 lumCoef = vec3(0.2126, 0.7152, 0.0722);\nvoid main() {\n\t vec3 bloomCol = texture2D(bloomTex, gl_TexCoord[1].xy).rgb;\n\t vec3 sceneCol = texture2DRect(sceneTex, gl_TexCoord[0].xy).rgb;\n\t float preLum = 0.99*dot(lumCoef, sceneCol)+0.01;\n    float postLum = preLum*(1.0+(preLum/params.y))/(preLum+1.0);\n\t gl_FragColor = vec4(sceneCol*(postLum/preLum)+bloomCol*params.x, 1.0);\n}\n", GlShader.GL_FRAGMENT_SHADER) });
+		this.aClass134_3 = GlProgram.create(new GlShader[] { GlShader.create("uniform vec3 step;\nuniform sampler2D baseTex;\nvoid main() {\n\tvec4 fragCol = texture2D(baseTex, gl_TexCoord[0].xy)*0.091396265;\n\tfragCol += texture2D(baseTex, gl_TexCoord[0].xy+(-1.0*step.xy))*0.088584304;\n\tfragCol += texture2D(baseTex, gl_TexCoord[0].xy+( 1.0*step.xy))*0.088584304;\n\tfragCol += texture2D(baseTex, gl_TexCoord[0].xy+(-2.0*step.xy))*0.08065692;\n\tfragCol += texture2D(baseTex, gl_TexCoord[0].xy+( 2.0*step.xy))*0.08065692;\n\tfragCol += texture2D(baseTex, gl_TexCoord[0].xy+(-3.0*step.xy))*0.068989515;\n\tfragCol += texture2D(baseTex, gl_TexCoord[0].xy+( 3.0*step.xy))*0.068989515;\n\tfragCol += texture2D(baseTex, gl_TexCoord[0].xy+(-4.0*step.xy))*0.055434637;\n\tfragCol += texture2D(baseTex, gl_TexCoord[0].xy+( 4.0*step.xy))*0.055434637;\n\tfragCol += texture2D(baseTex, gl_TexCoord[0].xy+(-5.0*step.xy))*0.04184426;\n\tfragCol += texture2D(baseTex, gl_TexCoord[0].xy+( 5.0*step.xy))*0.04184426;\n\tfragCol += texture2D(baseTex, gl_TexCoord[0].xy+(-6.0*step.xy))*0.029672023;\n\tfragCol += texture2D(baseTex, gl_TexCoord[0].xy+( 6.0*step.xy))*0.029672023;\n\tfragCol += texture2D(baseTex, gl_TexCoord[0].xy+(-7.0*step.xy))*0.019765828;\n\tfragCol += texture2D(baseTex, gl_TexCoord[0].xy+( 7.0*step.xy))*0.019765828;\n\tfragCol += texture2D(baseTex, gl_TexCoord[0].xy+(-8.0*step.xy))*0.012369139;\n\tfragCol += texture2D(baseTex, gl_TexCoord[0].xy+( 8.0*step.xy))*0.012369139;\n\tgl_FragColor = fragCol;\n}\n", GlShader.GL_FRAGMENT_SHADER) });
 		return this.aClass134_2 != null && this.aClass134_4 != null && this.aClass134_1 != null && this.aClass134_3 != null;
 	}
 }
