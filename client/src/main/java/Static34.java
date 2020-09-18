@@ -1132,35 +1132,35 @@ public final class Static34 {
 	}
 
 	@OriginalMember(owner = "client!tm", name = "a", descriptor = "(IIBIIIII)V")
-	public static void method4250(@OriginalArg(0) int arg0, @OriginalArg(1) int x, @OriginalArg(3) int y, @OriginalArg(4) int z, @OriginalArg(5) int layer, @OriginalArg(6) int angle, @OriginalArg(7) int shape) {
+	public static void method4250(@OriginalArg(0) int seqId, @OriginalArg(1) int x, @OriginalArg(3) int y, @OriginalArg(4) int z, @OriginalArg(5) int layer, @OriginalArg(6) int angle, @OriginalArg(7) int shape) {
 		if (x < 0 || z < 0 || x >= 103 || z >= 103) {
 			return;
 		}
 		if (layer == 0) {
 			@Pc(22) Wall wall = Terrain.getWall(y, x, z);
 			if (wall != null) {
-				@Pc(32) int local32 = (int) (wall.aLong188 >>> 32) & Integer.MAX_VALUE;
+				@Pc(32) int locId = (int) (wall.pickKey >>> 32) & Integer.MAX_VALUE;
 				if (shape == 2) {
-					wall.aClass53_5 = new Class53_Sub7(local32, 2, angle + 4, y, x, z, arg0, false, wall.aClass53_5);
-					wall.aClass53_4 = new Class53_Sub7(local32, 2, angle + 1 & 0x3, y, x, z, arg0, false, wall.aClass53_4);
+					wall.aClass53_5 = new Loc(locId, 2, angle + 4, y, x, z, seqId, false, wall.aClass53_5);
+					wall.aClass53_4 = new Loc(locId, 2, angle + 1 & 0x3, y, x, z, seqId, false, wall.aClass53_4);
 				} else {
-					wall.aClass53_5 = new Class53_Sub7(local32, shape, angle, y, x, z, arg0, false, wall.aClass53_5);
+					wall.aClass53_5 = new Loc(locId, shape, angle, y, x, z, seqId, false, wall.aClass53_5);
 				}
 			}
 		}
 		if (layer == 1) {
 			@Pc(98) WallDecor wallDecor = Terrain.getWallDecor(y, x, z);
 			if (wallDecor != null) {
-				@Pc(109) int local109 = Integer.MAX_VALUE & (int) (wallDecor.aLong194 >>> 32);
+				@Pc(109) int locId = Integer.MAX_VALUE & (int) (wallDecor.pickKey >>> 32);
 				if (shape == 4 || shape == 5) {
-					wallDecor.aClass53_10 = new Class53_Sub7(local109, 4, angle, y, x, z, arg0, false, wallDecor.aClass53_10);
+					wallDecor.aClass53_10 = new Loc(locId, 4, angle, y, x, z, seqId, false, wallDecor.aClass53_10);
 				} else if (shape == 6) {
-					wallDecor.aClass53_10 = new Class53_Sub7(local109, 4, angle + 4, y, x, z, arg0, false, wallDecor.aClass53_10);
+					wallDecor.aClass53_10 = new Loc(locId, 4, angle + 4, y, x, z, seqId, false, wallDecor.aClass53_10);
 				} else if (shape == 7) {
-					wallDecor.aClass53_10 = new Class53_Sub7(local109, 4, (angle + 2 & 0x3) + 4, y, x, z, arg0, false, wallDecor.aClass53_10);
+					wallDecor.aClass53_10 = new Loc(locId, 4, (angle + 2 & 0x3) + 4, y, x, z, seqId, false, wallDecor.aClass53_10);
 				} else if (shape == 8) {
-					wallDecor.aClass53_10 = new Class53_Sub7(local109, 4, angle + 4, y, x, z, arg0, false, wallDecor.aClass53_10);
-					wallDecor.aClass53_9 = new Class53_Sub7(local109, 4, (angle + 2 & 0x3) + 4, y, x, z, arg0, false, wallDecor.aClass53_9);
+					wallDecor.aClass53_10 = new Loc(locId, 4, angle + 4, y, x, z, seqId, false, wallDecor.aClass53_10);
+					wallDecor.aClass53_9 = new Loc(locId, 4, (angle + 2 & 0x3) + 4, y, x, z, seqId, false, wallDecor.aClass53_9);
 				}
 			}
 		}
@@ -1170,13 +1170,13 @@ public final class Static34 {
 			}
 			@Pc(246) Scenery scenery = Terrain.getScenery(y, x, z);
 			if (scenery != null) {
-				scenery.aClass53_1 = new Class53_Sub7((int) (scenery.aLong38 >>> 32) & Integer.MAX_VALUE, shape, angle, y, x, z, arg0, false, scenery.aClass53_1);
+				scenery.aClass53_1 = new Loc((int) (scenery.pickKey >>> 32) & Integer.MAX_VALUE, shape, angle, y, x, z, seqId, false, scenery.aClass53_1);
 			}
 		}
 		if (layer == 3) {
 			@Pc(280) GroundDecor groundDecor = Terrain.getGroundDecor(y, x, z);
 			if (groundDecor != null) {
-				groundDecor.aClass53_2 = new Class53_Sub7(Integer.MAX_VALUE & (int) (groundDecor.aLong45 >>> 32), 22, angle, y, x, z, arg0, false, groundDecor.aClass53_2);
+				groundDecor.aClass53_2 = new Loc(Integer.MAX_VALUE & (int) (groundDecor.pickKey >>> 32), 22, angle, y, x, z, seqId, false, groundDecor.aClass53_2);
 			}
 		}
 	}
@@ -1216,18 +1216,6 @@ public final class Static34 {
 		}
 		Static37.method4670();
 		return local66;
-	}
-
-	@OriginalMember(owner = "client!tn", name = "a", descriptor = "(III)Z")
-	public static boolean method1547(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
-		if (arg1 == 11) {
-			arg1 = 10;
-		}
-		@Pc(15) LocType local15 = LocTypeList.get(arg0);
-		if (arg1 >= 5 && arg1 <= 8) {
-			arg1 = 4;
-		}
-		return local15.isReady(arg1);
 	}
 
 	@OriginalMember(owner = "client!tn", name = "a", descriptor = "(ILclient!fh;II)[Lclient!uj;")

@@ -48,27 +48,6 @@ public final class Static37 {
 		return Static2.aBoolean68 && Keyboard.pressedKeys[81] && Static7.anInt5634 > 2 ? Static2.anIntArray160[Static7.anInt5634 - 2] : Static2.anIntArray160[Static7.anInt5634 - 1];
 	}
 
-	@OriginalMember(owner = "client!wb", name = "a", descriptor = "(IIIJ)Z")
-	public static boolean method4669(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) long arg3) {
-		@Pc(7) Tile local7 = Terrain.tiles[arg0][arg1][arg2];
-		if (local7 == null) {
-			return false;
-		} else if (local7.wall != null && local7.wall.aLong188 == arg3) {
-			return true;
-		} else if (local7.wallDecor != null && local7.wallDecor.aLong194 == arg3) {
-			return true;
-		} else if (local7.groundDecor != null && local7.groundDecor.aLong45 == arg3) {
-			return true;
-		} else {
-			for (@Pc(46) int local46 = 0; local46 < local7.sceneryLen; local46++) {
-				if (local7.scenery[local46].aLong38 == arg3) {
-					return true;
-				}
-			}
-			return false;
-		}
-	}
-
 	@OriginalMember(owner = "client!wb", name = "c", descriptor = "(Z)V")
 	public static void method4670() {
 		Static5.anIntArray402 = null;
@@ -195,7 +174,7 @@ public final class Static37 {
 					}
 				}
 				if (local163 != null) {
-					LocList.add(-1, local16.x, Static7.y, local16.z, 0, 0, layer, local16.anInt4999 + 1, local16.anInt4997 + 1);
+					ChangeLocRequest.push(-1, local16.x, Static7.y, local16.z, 0, 0, layer, local16.anInt4997 + 1, local16.anInt4999 + 1);
 					entity.anInt4027 = local16.z * 128 + length * 64;
 					@Pc(274) int local274 = local16.anInt4994;
 					@Pc(277) int local277 = local16.anInt4995;
@@ -221,18 +200,6 @@ public final class Static37 {
 					entity.anInt4038 = local335 + local16.z;
 					entity.anInt4018 = local274 + local16.z;
 				}
-			}
-		}
-	}
-
-	@OriginalMember(owner = "client!wd", name = "j", descriptor = "(I)V")
-	public static void method4714() {
-		for (@Pc(6) Loc loc = (Loc) LocList.locs.head(); loc != null; loc = (Loc) LocList.locs.next()) {
-			if (loc.anInt4436 == -1) {
-				loc.anInt4446 = 0;
-				Static16.method4654(loc);
-			} else {
-				loc.unlink();
 			}
 		}
 	}
@@ -545,12 +512,6 @@ public final class Static37 {
 		}
 	}
 
-	@OriginalMember(owner = "client!wf", name = "b", descriptor = "(III)J")
-	public static long method4739(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
-		@Pc(7) Tile local7 = Terrain.tiles[arg0][arg1][arg2];
-		return local7 == null || local7.wallDecor == null ? 0L : local7.wallDecor.aLong194;
-	}
-
 	@OriginalMember(owner = "client!wg", name = "a", descriptor = "(IIIILjava/lang/String;)V")
 	public static void method4752(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(4) String arg3) {
 		@Pc(4) Component local4 = Static23.method2425(arg0, arg1);
@@ -707,7 +668,7 @@ public final class Static37 {
 
 	@OriginalMember(owner = "client!wi", name = "a", descriptor = "(IIIIIZII)Z")
 	public static boolean method4780(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(4) int arg2, @OriginalArg(6) int arg3, @OriginalArg(7) int arg4) {
-		@Pc(21) long local21 = Static25.method2726(arg1, arg4, arg3);
+		@Pc(21) long local21 = Terrain.getWallPickKey(arg1, arg4, arg3);
 		if (local21 != 0L) {
 			@Pc(32) int local32 = (int) local21 >> 20 & 0x3;
 			@Pc(39) int local39 = (int) local21 >> 14 & 0x1F;
@@ -781,7 +742,7 @@ public final class Static37 {
 				return false;
 			}
 		}
-		@Pc(418) long local418 = Static20.method1960(arg1, arg4, arg3);
+		@Pc(418) long local418 = Terrain.getSceneryPickKey(arg1, arg4, arg3);
 		if (local418 != 0L) {
 			@Pc(430) int local430 = (int) local418 >> 20 & 0x3;
 			@Pc(437) int local437 = Integer.MAX_VALUE & (int) (local418 >>> 32);
@@ -811,7 +772,7 @@ public final class Static37 {
 				return false;
 			}
 		}
-		@Pc(573) long local573 = Static22.method2414(arg1, arg4, arg3);
+		@Pc(573) long local573 = Terrain.getGroundDecorPickKey(arg1, arg4, arg3);
 		if (local573 != 0L) {
 			@Pc(585) int local585 = (int) (local573 >>> 32) & Integer.MAX_VALUE;
 			@Pc(592) int local592 = (int) local573 >> 20 & 0x3;

@@ -114,183 +114,183 @@ public final class Static16 {
 				method1497(0L, local30, local46, "", Static5.aString236, (short) 26, -1);
 			}
 		}
-		@Pc(103) long local103 = -1L;
-		for (@Pc(105) int local105 = 0; local105 < Static7.anInt5623; local105++) {
-			@Pc(112) long local112 = Static5.aLongArray57[local105];
-			@Pc(117) int local117 = (int) local112 & 0x7F;
-			@Pc(124) int local124 = (int) local112 >> 7 & 0x7F;
-			@Pc(131) int local131 = Integer.MAX_VALUE & (int) (local112 >>> 32);
-			@Pc(138) int local138 = (int) local112 >> 29 & 0x3;
-			if (local103 != local112) {
-				local103 = local112;
-				if (local138 == 2 && Static37.method4669(Static7.y, local117, local124, local112)) {
-					@Pc(163) LocType local163 = LocTypeList.get(local131);
-					if (local163.anIntArray631 != null) {
-						local163 = local163.method4453();
+		@Pc(103) long prevKey = -1L;
+		for (@Pc(105) int i = 0; i < Static7.pickKeysSize; i++) {
+			@Pc(112) long key = Static5.pickKeys[i];
+			@Pc(117) int x = (int) key & 0x7F;
+			@Pc(124) int z = (int) key >> 7 & 0x7F;
+			@Pc(131) int id = Integer.MAX_VALUE & (int) (key >>> 32);
+			@Pc(138) int pickType = (int) key >> 29 & 0x3;
+			if (prevKey != key) {
+				prevKey = key;
+				if (pickType == 2 && Terrain.isPickKeyValid(Static7.y, x, z, key)) {
+					@Pc(163) LocType type = LocTypeList.get(id);
+					if (type.multiLocs != null) {
+						type = type.getMultiLoc();
 					}
-					if (local163 == null) {
+					if (type == null) {
 						continue;
 					}
 					if (Static2.anInt1334 == 1) {
-						method1497(local112, local117, local124, Static7.aString365 + " -> <col=00ffff>" + local163.name, LocalisedText.USE, (short) 16, Static2.anInt1937);
+						method1497(key, x, z, Static7.aString365 + " -> <col=00ffff>" + type.name, LocalisedText.USE, (short) 16, Static2.anInt1937);
 					} else if (Static3.aBoolean177) {
-						@Pc(215) ParamType local215 = Static5.anInt4224 == -1 ? null : ParamTypeList.get(Static5.anInt4224);
-						if ((Static5.anInt3560 & 0x4) != 0 && (local215 == null || local163.getParam(Static5.anInt4224, local215.defaultInt) != local215.defaultInt)) {
-							method1497(local112, local117, local124, Static2.aString81 + " -> <col=00ffff>" + local163.name, Static4.aString140, (short) 4, Static6.anInt4466);
+						@Pc(215) ParamType param = Static5.anInt4224 == -1 ? null : ParamTypeList.get(Static5.anInt4224);
+						if ((Static5.anInt3560 & 0x4) != 0 && (param == null || type.getParam(Static5.anInt4224, param.defaultInt) != param.defaultInt)) {
+							method1497(key, x, z, Static2.aString81 + " -> <col=00ffff>" + type.name, Static4.aString140, (short) 4, Static6.anInt4466);
 						}
 					} else {
-						@Pc(267) String[] local267 = local163.ops;
+						@Pc(267) String[] ops = type.ops;
 						if (Static5.aBoolean254) {
-							local267 = Static35.method4300(local267);
+							ops = Static35.method4300(ops);
 						}
-						if (local267 != null) {
-							for (@Pc(278) int local278 = 4; local278 >= 0; local278--) {
-								if (local267[local278] != null) {
+						if (ops != null) {
+							for (@Pc(278) int j = 4; j >= 0; j--) {
+								if (ops[j] != null) {
 									@Pc(294) short local294 = 0;
-									if (local278 == 0) {
+									if (j == 0) {
 										local294 = 41;
 									}
-									if (local278 == 1) {
+									if (j == 1) {
 										local294 = 37;
 									}
-									if (local278 == 2) {
+									if (j == 2) {
 										local294 = 32;
 									}
-									if (local278 == 3) {
+									if (j == 3) {
 										local294 = 40;
 									}
-									if (local278 == 4) {
+									if (j == 4) {
 										local294 = 1005;
 									}
-									@Pc(327) int local327 = -1;
-									if (local278 == local163.anInt5513) {
-										local327 = local163.anInt5551;
+									@Pc(327) int cursor = -1;
+									if (j == type.cursor1Op) {
+										cursor = type.cursor1;
 									}
-									if (local163.anInt5533 == local278) {
-										local327 = local163.anInt5528;
+									if (j == type.cursor2Op) {
+										cursor = type.cursor2;
 									}
-									method1497(local112, local117, local124, "<col=00ffff>" + local163.name, local267[local278], local294, local327);
+									method1497(key, x, z, "<col=00ffff>" + type.name, ops[j], local294, cursor);
 								}
 							}
 						}
-						method1497((long) local163.id, local117, local124, "<col=00ffff>" + local163.name, LocalisedText.EXAMINE, (short) 1007, Static3.anInt2232);
+						method1497(type.id, x, z, "<col=00ffff>" + type.name, LocalisedText.EXAMINE, (short) 1007, Static3.anInt2232);
 					}
 				}
-				if (local138 == 1) {
-					@Pc(394) Npc local394 = NpcList.npcs[local131];
-					if ((local394.type.size & 0x1) == 0 && (local394.x & 0x7F) == 0 && (local394.z & 0x7F) == 0 || (local394.type.size & 0x1) == 1 && (local394.x & 0x7F) == 64 && (local394.z & 0x7F) == 64) {
-						@Pc(450) int local450 = local394.x - (local394.type.size - 1) * 64;
-						@Pc(462) int local462 = local394.z + 64 - local394.type.size * 64;
-						for (@Pc(464) int local464 = 0; local464 < NpcList.size; local464++) {
-							@Pc(477) Npc local477 = NpcList.npcs[NpcList.ids[local464]];
-							if (local477 != null && !local477.aBoolean281 && local477 != local394 && local477.aBoolean282) {
-								@Pc(501) int local501 = local477.x - (local477.type.size - 1) * 64;
-								@Pc(512) int local512 = local477.z - (local477.type.size - 1) * 64;
-								if (local501 >= local450 && local477.type.size <= local394.type.size - (local501 - local450 >> 7) && local512 >= local462 && local394.type.size - (local512 - local462 >> 7) >= local477.type.size) {
-									Static33.method4152(local477.type, local124, NpcList.ids[local464], local117);
-									local477.aBoolean281 = true;
+				if (pickType == 1) {
+					@Pc(394) Npc npc = NpcList.npcs[id];
+					if ((npc.type.size & 0x1) == 0 && (npc.x & 0x7F) == 0 && (npc.z & 0x7F) == 0 || (npc.type.size & 0x1) == 1 && (npc.x & 0x7F) == 64 && (npc.z & 0x7F) == 64) {
+						@Pc(450) int local450 = npc.x - (npc.type.size - 1) * 64;
+						@Pc(462) int local462 = npc.z + 64 - npc.type.size * 64;
+						for (@Pc(464) int j = 0; j < NpcList.size; j++) {
+							@Pc(477) Npc other = NpcList.npcs[NpcList.ids[j]];
+							if (other != null && !other.aBoolean281 && other != npc && other.aBoolean282) {
+								@Pc(501) int local501 = other.x - (other.type.size - 1) * 64;
+								@Pc(512) int local512 = other.z - (other.type.size - 1) * 64;
+								if (local501 >= local450 && other.type.size <= npc.type.size - (local501 - local450 >> 7) && local512 >= local462 && npc.type.size - (local512 - local462 >> 7) >= other.type.size) {
+									Static33.method4152(other.type, z, NpcList.ids[j], x);
+									other.aBoolean281 = true;
 								}
 							}
 						}
-						for (@Pc(568) int local568 = 0; local568 < PlayerList.size; local568++) {
-							@Pc(577) Player local577 = PlayerList.players[PlayerList.ids[local568]];
-							if (local577 != null && !local577.aBoolean281 && local577.aBoolean282) {
-								@Pc(597) int local597 = local577.x - (local577.getSize() - 1) * 64;
-								@Pc(609) int local609 = local577.z - (local577.getSize() - 1) * 64;
-								if (local597 >= local450 && local577.getSize() <= local394.type.size - (local597 - local450 >> 7) && local462 <= local609 && local577.getSize() <= local394.type.size - (local609 - local462 >> 7)) {
-									Static29.method3488(local124, PlayerList.ids[local568], local577, local117);
-									local577.aBoolean281 = true;
+						for (@Pc(568) int j = 0; j < PlayerList.size; j++) {
+							@Pc(577) Player other = PlayerList.players[PlayerList.ids[j]];
+							if (other != null && !other.aBoolean281 && other.aBoolean282) {
+								@Pc(597) int local597 = other.x - (other.getSize() - 1) * 64;
+								@Pc(609) int local609 = other.z - (other.getSize() - 1) * 64;
+								if (local597 >= local450 && other.getSize() <= npc.type.size - (local597 - local450 >> 7) && local462 <= local609 && other.getSize() <= npc.type.size - (local609 - local462 >> 7)) {
+									Static29.method3488(z, PlayerList.ids[j], other, x);
+									other.aBoolean281 = true;
 								}
 							}
 						}
 					}
-					if (local394.aBoolean281) {
+					if (npc.aBoolean281) {
 						continue;
 					}
-					Static33.method4152(local394.type, local124, local131, local117);
-					local394.aBoolean281 = true;
+					Static33.method4152(npc.type, z, id, x);
+					npc.aBoolean281 = true;
 				}
-				if (local138 == 0) {
-					@Pc(682) Player local682 = PlayerList.players[local131];
-					if ((local682.x & 0x7F) == 64 && (local682.z & 0x7F) == 64) {
-						@Pc(709) int local709 = local682.x - (local682.getSize() - 1) * 64;
-						@Pc(721) int local721 = local682.z - (local682.getSize() - 1) * 64;
-						for (@Pc(723) int local723 = 0; local723 < NpcList.size; local723++) {
-							@Pc(736) Npc local736 = NpcList.npcs[NpcList.ids[local723]];
-							if (local736 != null && !local736.aBoolean281 && local736.aBoolean282) {
-								@Pc(756) int local756 = local736.x - (local736.type.size - 1) * 64;
-								@Pc(768) int local768 = local736.z - (local736.type.size - 1) * 64;
-								if (local709 <= local756 && local736.type.size <= local682.getSize() - (local756 - local709 >> 7) && local721 <= local768 && local736.type.size <= local682.getSize() - (local768 - local721 >> 7)) {
-									Static33.method4152(local736.type, local124, NpcList.ids[local723], local117);
-									local736.aBoolean281 = true;
+				if (pickType == 0) {
+					@Pc(682) Player player = PlayerList.players[id];
+					if ((player.x & 0x7F) == 64 && (player.z & 0x7F) == 64) {
+						@Pc(709) int local709 = player.x - (player.getSize() - 1) * 64;
+						@Pc(721) int local721 = player.z - (player.getSize() - 1) * 64;
+						for (@Pc(723) int j = 0; j < NpcList.size; j++) {
+							@Pc(736) Npc other = NpcList.npcs[NpcList.ids[j]];
+							if (other != null && !other.aBoolean281 && other.aBoolean282) {
+								@Pc(756) int local756 = other.x - (other.type.size - 1) * 64;
+								@Pc(768) int local768 = other.z - (other.type.size - 1) * 64;
+								if (local709 <= local756 && other.type.size <= player.getSize() - (local756 - local709 >> 7) && local721 <= local768 && other.type.size <= player.getSize() - (local768 - local721 >> 7)) {
+									Static33.method4152(other.type, z, NpcList.ids[j], x);
+									other.aBoolean281 = true;
 								}
 							}
 						}
-						for (@Pc(827) int local827 = 0; local827 < PlayerList.size; local827++) {
-							@Pc(840) Player local840 = PlayerList.players[PlayerList.ids[local827]];
-							if (local840 != null && !local840.aBoolean281 && local840 != local682 && local840.aBoolean282) {
-								@Pc(865) int local865 = local840.x - (local840.getSize() - 1) * 64;
-								@Pc(877) int local877 = local840.z + 64 - local840.getSize() * 64;
-								if (local865 >= local709 && local840.getSize() <= local682.getSize() - (local865 - local709 >> 7) && local721 <= local877 && local840.getSize() <= local682.getSize() - (local877 - local721 >> 7)) {
-									Static29.method3488(local124, PlayerList.ids[local827], local840, local117);
-									local840.aBoolean281 = true;
+						for (@Pc(827) int j = 0; j < PlayerList.size; j++) {
+							@Pc(840) Player other = PlayerList.players[PlayerList.ids[j]];
+							if (other != null && !other.aBoolean281 && other != player && other.aBoolean282) {
+								@Pc(865) int local865 = other.x - (other.getSize() - 1) * 64;
+								@Pc(877) int local877 = other.z + 64 - other.getSize() * 64;
+								if (local865 >= local709 && other.getSize() <= player.getSize() - (local865 - local709 >> 7) && local721 <= local877 && other.getSize() <= player.getSize() - (local877 - local721 >> 7)) {
+									Static29.method3488(z, PlayerList.ids[j], other, x);
+									other.aBoolean281 = true;
 								}
 							}
 						}
 					}
-					if (local682.aBoolean281) {
+					if (player.aBoolean281) {
 						continue;
 					}
-					Static29.method3488(local124, local131, local682, local117);
-					local682.aBoolean281 = true;
+					Static29.method3488(z, id, player, x);
+					player.aBoolean281 = true;
 				}
-				if (local138 == 3) {
-					@Pc(952) LinkedList local952 = Static4.objStacks[Static7.y][local117][local124];
-					if (local952 != null) {
-						for (@Pc(960) ObjStackNode local960 = (ObjStackNode) local952.tail(); local960 != null; local960 = (ObjStackNode) local952.prev()) {
-							@Pc(967) int local967 = local960.value.type;
-							@Pc(971) ObjType local971 = ObjTypeList.get(local967);
+				if (pickType == 3) {
+					@Pc(952) LinkedList objStacks = Static4.objStacks[Static7.y][x][z];
+					if (objStacks != null) {
+						for (@Pc(960) ObjStackNode node = (ObjStackNode) objStacks.tail(); node != null; node = (ObjStackNode) objStacks.prev()) {
+							@Pc(967) int objId = node.value.type;
+							@Pc(971) ObjType type = ObjTypeList.get(objId);
 							if (Static2.anInt1334 == 1) {
-								method1497((long) local967, local117, local124, Static7.aString365 + " -> <col=ff9040>" + local971.name, LocalisedText.USE, (short) 28, Static2.anInt1937);
+								method1497(objId, x, z, Static7.aString365 + " -> <col=ff9040>" + type.name, LocalisedText.USE, (short) 28, Static2.anInt1937);
 							} else if (Static3.aBoolean177) {
-								@Pc(986) ParamType local986 = Static5.anInt4224 == -1 ? null : ParamTypeList.get(Static5.anInt4224);
-								if ((Static5.anInt3560 & 0x1) != 0 && (local986 == null || local971.getParam(Static5.anInt4224, local986.defaultInt) != local986.defaultInt)) {
-									method1497((long) local967, local117, local124, Static2.aString81 + " -> <col=ff9040>" + local971.name, Static4.aString140, (short) 48, Static6.anInt4466);
+								@Pc(986) ParamType param = Static5.anInt4224 == -1 ? null : ParamTypeList.get(Static5.anInt4224);
+								if ((Static5.anInt3560 & 0x1) != 0 && (param == null || type.getParam(Static5.anInt4224, param.defaultInt) != param.defaultInt)) {
+									method1497(objId, x, z, Static2.aString81 + " -> <col=ff9040>" + type.name, Static4.aString140, (short) 48, Static6.anInt4466);
 								}
 							} else {
-								@Pc(1043) String[] local1043 = local971.ops;
+								@Pc(1043) String[] ops = type.ops;
 								if (Static5.aBoolean254) {
-									local1043 = Static35.method4300(local1043);
+									ops = Static35.method4300(ops);
 								}
-								for (@Pc(1052) int local1052 = 4; local1052 >= 0; local1052--) {
-									if (local1043 != null && local1043[local1052] != null) {
-										@Pc(1067) int local1067 = -1;
-										if (local971.cursor1Op == local1052) {
-											local1067 = local971.cursor1;
+								for (@Pc(1052) int j = 4; j >= 0; j--) {
+									if (ops != null && ops[j] != null) {
+										@Pc(1067) int cursor = -1;
+										if (j == type.cursor1Op) {
+											cursor = type.cursor1;
 										}
-										if (local971.cursor2Op == local1052) {
-											local1067 = local971.cursor2;
+										if (j == type.cursor2Op) {
+											cursor = type.cursor2;
 										}
 										@Pc(1096) byte local1096 = 0;
-										if (local1052 == 0) {
+										if (j == 0) {
 											local1096 = 45;
 										}
-										if (local1052 == 1) {
+										if (j == 1) {
 											local1096 = 46;
 										}
-										if (local1052 == 2) {
+										if (j == 2) {
 											local1096 = 38;
 										}
-										if (local1052 == 3) {
+										if (j == 3) {
 											local1096 = 6;
 										}
-										if (local1052 == 4) {
+										if (j == 4) {
 											local1096 = 44;
 										}
-										method1497((long) local967, local117, local124, "<col=ff9040>" + local971.name, local1043[local1052], local1096, local1067);
+										method1497(objId, x, z, "<col=ff9040>" + type.name, ops[j], local1096, cursor);
 									}
 								}
-								method1497((long) local967, local117, local124, "<col=ff9040>" + local971.name, LocalisedText.EXAMINE, (short) 1004, Static3.anInt2232);
+								method1497(objId, x, z, "<col=ff9040>" + type.name, LocalisedText.EXAMINE, (short) 1004, Static3.anInt2232);
 							}
 						}
 					}
@@ -302,34 +302,6 @@ public final class Static16 {
 	@OriginalMember(owner = "client!g", name = "a", descriptor = "(Lclient!fh;BII)[Lclient!fe;")
 	public static SoftwareIndexedSprite[] method1523(@OriginalArg(0) Js5 arg0, @OriginalArg(3) int arg1) {
 		return Static9.method197(arg0, arg1, 0) ? Static26.method4358() : null;
-	}
-
-	@OriginalMember(owner = "client!ga", name = "a", descriptor = "(Lclient!ra;B)V")
-	public static void method4654(@OriginalArg(0) Loc loc) {
-		@Pc(5) int local5 = -1;
-		@Pc(7) int local7 = 0;
-		@Pc(9) long local9 = 0L;
-		if (loc.layer == 0) {
-			local9 = Static25.method2726(loc.y, loc.x, loc.z);
-		}
-		if (loc.layer == 1) {
-			local9 = Static37.method4739(loc.y, loc.x, loc.z);
-		}
-		@Pc(45) int local45 = 0;
-		if (loc.layer == 2) {
-			local9 = Static20.method1960(loc.y, loc.x, loc.z);
-		}
-		if (loc.layer == 3) {
-			local9 = Static22.method2414(loc.y, loc.x, loc.z);
-		}
-		if (local9 != 0L) {
-			local7 = (int) local9 >> 14 & 0x1F;
-			local45 = (int) local9 >> 20 & 0x3;
-			local5 = Integer.MAX_VALUE & (int) (local9 >>> 32);
-		}
-		loc.anInt4444 = local45;
-		loc.anInt4443 = local7;
-		loc.anInt4439 = local5;
 	}
 
 	@OriginalMember(owner = "client!ga", name = "a", descriptor = "([BB)Lclient!ke;")

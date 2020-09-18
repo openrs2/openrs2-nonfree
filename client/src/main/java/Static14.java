@@ -1,5 +1,3 @@
-import java.io.IOException;
-import java.net.Socket;
 import javax.media.opengl.GL;
 
 import dev.openrs2.deob.annotation.OriginalArg;
@@ -402,10 +400,10 @@ public final class Static14 {
 						}
 						@Pc(272) Scenery local272 = Terrain.getScenery(arg9, local119, local80);
 						if (local272 != null) {
-							@Pc(283) int local283 = (int) (local272.aLong38 >> 14) & 0x3F;
+							@Pc(283) int local283 = (int) (local272.pickKey >> 14) & 0x3F;
 							if (local283 == 9) {
 								@Pc(289) int[] local289 = null;
-								@Pc(297) int local297 = (int) (local272.aLong38 >> 20) & 0x3;
+								@Pc(297) int local297 = (int) (local272.pickKey >> 20) & 0x3;
 								if ((local297 & 0x1) == 0) {
 									@Pc(315) boolean local315 = local119 - 1 >= local94;
 									if (!local315 && local61 >= local80 + 1) {
@@ -518,10 +516,10 @@ public final class Static14 {
 						}
 						@Pc(907) Scenery local907 = Terrain.getScenery(arg9, local766, local722);
 						if (local907 != null) {
-							@Pc(918) int local918 = (int) (local907.aLong38 >> 14) & 0x3F;
+							@Pc(918) int local918 = (int) (local907.pickKey >> 14) & 0x3F;
 							if (local918 == 9) {
 								@Pc(925) int[] local925 = null;
-								@Pc(933) int local933 = (int) (local907.aLong38 >> 20) & 0x3;
+								@Pc(933) int local933 = (int) (local907.pickKey >> 20) & 0x3;
 								if ((local933 & 0x1) == 0) {
 									@Pc(946) boolean local946 = local741 <= local766 - 1;
 									@Pc(959) boolean local959 = local766 + 1 <= local749;

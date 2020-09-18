@@ -66,7 +66,7 @@ public final class Class4_Sub11 extends Node {
 	public final void method1652() {
 		@Pc(9) int local9 = this.anInt2115;
 		if (this.aClass181_1 != null) {
-			@Pc(96) LocType local96 = this.aClass181_1.method4453();
+			@Pc(96) LocType local96 = this.aClass181_1.getMultiLoc();
 			if (local96 == null) {
 				this.anInt2119 = 0;
 				this.anInt2123 = 0;
@@ -87,8 +87,8 @@ public final class Class4_Sub11 extends Node {
 			if (local9 != local21) {
 				this.anInt2115 = local21;
 				@Pc(36) NpcType local36 = this.aClass53_Sub1_Sub2_1.type;
-				if (local36.anIntArray590 != null) {
-					local36 = local36.method4265();
+				if (local36.multiNpcs != null) {
+					local36 = local36.getMultiNpc();
 				}
 				if (local36 == null) {
 					this.anInt2127 = this.anInt2123 = 0;

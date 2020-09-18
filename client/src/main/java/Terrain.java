@@ -152,7 +152,7 @@ public final class Terrain {
 		}
 		for (@Pc(13) int i = 0; i < tile.sceneryLen; i++) {
 			@Pc(22) Scenery scenery = tile.scenery[i];
-			if ((scenery.aLong38 >> 29 & 0x3L) == 2L && scenery.xMin == x && scenery.zMin == z) {
+			if ((scenery.pickKey >> 29 & 0x3L) == 2L && scenery.xMin == x && scenery.zMin == z) {
 				return scenery;
 			}
 		}
@@ -166,12 +166,12 @@ public final class Terrain {
 	}
 
 	@OriginalMember(owner = "client!bk", name = "a", descriptor = "(IIIILclient!vc;Lclient!vc;IIJ)V")
-	public static void setWall(@OriginalArg(0) int y, @OriginalArg(1) int x, @OriginalArg(2) int z, @OriginalArg(3) int arg3, @OriginalArg(4) Entity arg4, @OriginalArg(5) Entity arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) long arg8) {
+	public static void setWall(@OriginalArg(0) int y, @OriginalArg(1) int x, @OriginalArg(2) int z, @OriginalArg(3) int arg3, @OriginalArg(4) Entity arg4, @OriginalArg(5) Entity arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) long pickKey) {
 		if (arg4 == null && arg5 == null) {
 			return;
 		}
 		@Pc(8) Wall wall = new Wall();
-		wall.aLong188 = arg8;
+		wall.pickKey = pickKey;
 		wall.x = x * 128 + 64;
 		wall.z = z * 128 + 64;
 		wall.anInt5494 = arg3;
@@ -193,7 +193,7 @@ public final class Terrain {
 			return;
 		}
 		@Pc(6) WallDecor wallDecor = new WallDecor();
-		wallDecor.aLong194 = arg10;
+		wallDecor.pickKey = arg10;
 		wallDecor.x = x * 128 + 64;
 		wallDecor.z = z * 128 + 64;
 		wallDecor.anInt5627 = arg3;
@@ -212,7 +212,7 @@ public final class Terrain {
 	}
 
 	@OriginalMember(owner = "client!wn", name = "a", descriptor = "(IIIILclient!vc;JZ)V")
-	public static void setGroundDecor(@OriginalArg(0) int y, @OriginalArg(1) int x, @OriginalArg(2) int z, @OriginalArg(3) int arg3, @OriginalArg(4) Entity arg4, @OriginalArg(5) long arg5, @OriginalArg(6) boolean arg6) {
+	public static void setGroundDecor(@OriginalArg(0) int y, @OriginalArg(1) int x, @OriginalArg(2) int z, @OriginalArg(3) int arg3, @OriginalArg(4) Entity arg4, @OriginalArg(5) long pickKey, @OriginalArg(6) boolean arg6) {
 		if (arg4 == null) {
 			return;
 		}
@@ -221,7 +221,7 @@ public final class Terrain {
 		groundDecor.x = x * 128 + 64;
 		groundDecor.z = z * 128 + 64;
 		groundDecor.anInt1130 = arg3;
-		groundDecor.aLong45 = arg5;
+		groundDecor.pickKey = pickKey;
 		groundDecor.aBoolean63 = arg6;
 		if (tiles[y][x][z] == null) {
 			tiles[y][x][z] = new Tile(y, x, z);
@@ -230,7 +230,7 @@ public final class Terrain {
 	}
 
 	@OriginalMember(owner = "client!l", name = "a", descriptor = "(IIIIIIIILclient!vc;IZJ)Z")
-	public static boolean addScenery(@OriginalArg(0) int y, @OriginalArg(1) int x, @OriginalArg(2) int z, @OriginalArg(3) int width, @OriginalArg(4) int length, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) Entity arg8, @OriginalArg(9) int arg9, @OriginalArg(10) boolean arg10, @OriginalArg(11) long arg11) {
+	private static boolean addScenery(@OriginalArg(0) int y, @OriginalArg(1) int x, @OriginalArg(2) int z, @OriginalArg(3) int width, @OriginalArg(4) int length, @OriginalArg(5) int centerXFine, @OriginalArg(6) int centerYFine, @OriginalArg(7) int arg7, @OriginalArg(8) Entity arg8, @OriginalArg(9) int arg9, @OriginalArg(10) boolean arg10, @OriginalArg(11) long pickKey) {
 		@Pc(6) boolean underwater = tileHeights == underwaterTileHeights;
 		@Pc(8) int local8 = 0;
 		for (@Pc(10) int x0 = x; x0 < x + width; x0++) {
@@ -245,10 +245,10 @@ public final class Terrain {
 			}
 		}
 		@Pc(58) Scenery scenery = new Scenery();
-		scenery.aLong38 = arg11;
+		scenery.pickKey = pickKey;
 		scenery.y = y;
-		scenery.anInt821 = arg5;
-		scenery.anInt827 = arg6;
+		scenery.centerXFine = centerXFine;
+		scenery.centerYFine = centerYFine;
 		scenery.anInt823 = arg7;
 		scenery.aClass53_1 = arg8;
 		scenery.anInt814 = arg9;
@@ -302,7 +302,7 @@ public final class Terrain {
 	}
 
 	@OriginalMember(owner = "client!ij", name = "a", descriptor = "(Lclient!co;)V")
-	public static void removeScenery(@OriginalArg(0) Scenery scenery) {
+	private static void removeScenery(@OriginalArg(0) Scenery scenery) {
 		for (@Pc(2) int x = scenery.xMin; x <= scenery.xMax; x++) {
 			for (@Pc(9) int z = scenery.zMin; z <= scenery.zMax; z++) {
 				@Pc(22) Tile tile = tiles[scenery.y][x][z];
@@ -362,7 +362,7 @@ public final class Terrain {
 		}
 		for (@Pc(13) int i = 0; i < tile.sceneryLen; i++) {
 			@Pc(22) Scenery scenery = tile.scenery[i];
-			if ((scenery.aLong38 >> 29 & 0x3L) == 2L && scenery.xMin == x && scenery.zMin == z) {
+			if ((scenery.pickKey >> 29 & 0x3L) == 2L && scenery.xMin == x && scenery.zMin == z) {
 				removeScenery(scenery);
 				return scenery;
 			}
@@ -404,5 +404,105 @@ public final class Terrain {
 			tile.groundDecor = null;
 			return groundDecor;
 		}
+	}
+
+	@OriginalMember(owner = "client!mi", name = "a", descriptor = "(III)J")
+	public static long getWallPickKey(@OriginalArg(0) int y, @OriginalArg(1) int x, @OriginalArg(2) int z) {
+		@Pc(7) Tile tile = tiles[y][x][z];
+		return tile == null || tile.wall == null ? 0L : tile.wall.pickKey;
+	}
+
+	@OriginalMember(owner = "client!wf", name = "b", descriptor = "(III)J")
+	public static long getWallDecorPickKey(@OriginalArg(0) int y, @OriginalArg(1) int x, @OriginalArg(2) int z) {
+		@Pc(7) Tile tile = tiles[y][x][z];
+		return tile == null || tile.wallDecor == null ? 0L : tile.wallDecor.pickKey;
+	}
+
+	@OriginalMember(owner = "client!j", name = "a", descriptor = "(III)J")
+	public static long getSceneryPickKey(@OriginalArg(0) int y, @OriginalArg(1) int x, @OriginalArg(2) int z) {
+		@Pc(7) Tile tile = tiles[y][x][z];
+		if (tile == null) {
+			return 0L;
+		}
+		for (@Pc(13) int i = 0; i < tile.sceneryLen; i++) {
+			@Pc(22) Scenery scenery = tile.scenery[i];
+			if ((scenery.pickKey >> 29 & 0x3L) == 2L && scenery.xMin == x && scenery.zMin == z) {
+				return scenery.pickKey;
+			}
+		}
+		return 0L;
+	}
+
+	@OriginalMember(owner = "client!kn", name = "a", descriptor = "(III)J")
+	public static long getGroundDecorPickKey(@OriginalArg(0) int y, @OriginalArg(1) int x, @OriginalArg(2) int z) {
+		@Pc(7) Tile tile = tiles[y][x][z];
+		return tile == null || tile.groundDecor == null ? 0L : tile.groundDecor.pickKey;
+	}
+
+	@OriginalMember(owner = "client!wb", name = "a", descriptor = "(IIIJ)Z")
+	public static boolean isPickKeyValid(@OriginalArg(0) int y, @OriginalArg(1) int x, @OriginalArg(2) int z, @OriginalArg(3) long pickKey) {
+		@Pc(7) Tile tile = tiles[y][x][z];
+		if (tile == null) {
+			return false;
+		} else if (tile.wall != null && tile.wall.pickKey == pickKey) {
+			return true;
+		} else if (tile.wallDecor != null && tile.wallDecor.pickKey == pickKey) {
+			return true;
+		} else if (tile.groundDecor != null && tile.groundDecor.pickKey == pickKey) {
+			return true;
+		} else {
+			for (@Pc(46) int i = 0; i < tile.sceneryLen; i++) {
+				if (tile.scenery[i].pickKey == pickKey) {
+					return true;
+				}
+			}
+			return false;
+		}
+	}
+
+	@OriginalMember(owner = "client!ka", name = "a", descriptor = "(IIIIIILclient!vc;IJ)Z")
+	public static boolean method2196(@OriginalArg(0) int y, @OriginalArg(1) int x, @OriginalArg(2) int z, @OriginalArg(3) int arg3, @OriginalArg(4) int width, @OriginalArg(5) int length, @OriginalArg(6) Entity arg6, @OriginalArg(8) long pickKey) {
+		if (arg6 == null) {
+			return true;
+		} else {
+			@Pc(11) int centerXFine = x * 128 + width * 64;
+			@Pc(19) int centerYFine = z * 128 + length * 64;
+			return addScenery(y, x, z, width, length, centerXFine, centerYFine, arg3, arg6, 0, false, pickKey);
+		}
+	}
+
+	@OriginalMember(owner = "client!ck", name = "a", descriptor = "(IIIIILclient!vc;IJZ)Z")
+	public static boolean method637(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) Entity arg5, @OriginalArg(6) int arg6, @OriginalArg(7) long arg7, @OriginalArg(8) boolean arg8) {
+		if (arg5 == null) {
+			return true;
+		}
+		@Pc(7) int local7 = arg1 - arg4;
+		@Pc(11) int local11 = arg2 - arg4;
+		@Pc(15) int local15 = arg1 + arg4;
+		@Pc(19) int local19 = arg2 + arg4;
+		if (arg8) {
+			if (arg6 > 640 && arg6 < 1408) {
+				local19 += 128;
+			}
+			if (arg6 > 1152 && arg6 < 1920) {
+				local15 += 128;
+			}
+			if (arg6 > 1664 || arg6 < 384) {
+				local11 -= 128;
+			}
+			if (arg6 > 128 && arg6 < 896) {
+				local7 -= 128;
+			}
+		}
+		@Pc(53) int local53 = local7 / 128;
+		@Pc(57) int local57 = local11 / 128;
+		@Pc(61) int local61 = local15 / 128;
+		@Pc(65) int local65 = local19 / 128;
+		return addScenery(arg0, local53, local57, local61 + 1 - local53, local65 + 1 - local57, arg1, arg2, arg3, arg5, arg6, true, arg7);
+	}
+
+	@OriginalMember(owner = "client!ci", name = "a", descriptor = "(IIIILclient!vc;IJIIII)Z")
+	public static boolean method584(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) Entity arg4, @OriginalArg(5) int arg5, @OriginalArg(6) long arg6, @OriginalArg(7) int arg7, @OriginalArg(8) int arg8, @OriginalArg(9) int arg9, @OriginalArg(10) int arg10) {
+		return arg4 == null ? true : addScenery(arg0, arg7, arg8, arg9 + 1 - arg7, arg10 + 1 - arg8, arg1, arg2, arg3, arg4, arg5, true, arg6);
 	}
 }

@@ -232,7 +232,7 @@ public final class Static28 {
 				local30.anInt3552--;
 				for (@Pc(40) int local40 = 0; local40 < local30.sceneryLen; local40++) {
 					@Pc(49) Scenery local49 = local30.scenery[local40];
-					if ((local49.aLong38 >> 29 & 0x3L) == 2L && local49.xMin == x && local49.zMin == z) {
+					if ((local49.pickKey >> 29 & 0x3L) == 2L && local49.xMin == x && local49.zMin == z) {
 						local49.y--;
 					}
 				}

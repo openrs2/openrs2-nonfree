@@ -28,7 +28,7 @@ public final class NpcType {
 	private int[] anIntArray589;
 
 	@OriginalMember(owner = "client!ua", name = "E", descriptor = "[I")
-	public int[] anIntArray590;
+	public int[] multiNpcs;
 
 	@OriginalMember(owner = "client!ua", name = "F", descriptor = "[S")
 	private short[] aShortArray108;
@@ -100,10 +100,10 @@ public final class NpcType {
 	public int size = 1;
 
 	@OriginalMember(owner = "client!ua", name = "bb", descriptor = "I")
-	private int anInt5266 = -1;
+	private int multiNpcVarp = -1;
 
 	@OriginalMember(owner = "client!ua", name = "l", descriptor = "I")
-	private int anInt5237 = -1;
+	private int multiNpcVarbit = -1;
 
 	@OriginalMember(owner = "client!ua", name = "db", descriptor = "B")
 	public byte aByte20 = -16;
@@ -160,19 +160,19 @@ public final class NpcType {
 	public boolean aBoolean359 = false;
 
 	@OriginalMember(owner = "client!ua", name = "a", descriptor = "(I)Z")
-	public final boolean method4255() {
-		if (this.anIntArray590 == null) {
+	public final boolean isMultiNpcValid() {
+		if (this.multiNpcs == null) {
 			return true;
 		}
-		@Pc(10) int local10 = -1;
-		if (this.anInt5237 != -1) {
-			local10 = VarpDomain.getVarbit(this.anInt5237);
-		} else if (this.anInt5266 != -1) {
-			local10 = VarpDomain.varps[this.anInt5266];
+		@Pc(10) int value = -1;
+		if (this.multiNpcVarbit != -1) {
+			value = VarpDomain.getVarbit(this.multiNpcVarbit);
+		} else if (this.multiNpcVarp != -1) {
+			value = VarpDomain.varps[this.multiNpcVarp];
 		}
-		if (local10 < 0 || local10 >= this.anIntArray590.length - 1 || this.anIntArray590[local10] == -1) {
-			@Pc(60) int local60 = this.anIntArray590[this.anIntArray590.length - 1];
-			return local60 != -1;
+		if (value < 0 || value >= this.multiNpcs.length - 1 || this.multiNpcs[value] == -1) {
+			@Pc(60) int defaultMultiNpc = this.multiNpcs[this.multiNpcs.length - 1];
+			return defaultMultiNpc != -1;
 		} else {
 			return true;
 		}
@@ -255,30 +255,30 @@ public final class NpcType {
 		} else if (code == 103) {
 			this.anInt5243 = buffer.readUnsignedShort();
 		} else if (code == 106 || code == 118) {
-			this.anInt5237 = buffer.readUnsignedShort();
-			@Pc(248) int local248 = -1;
-			if (this.anInt5237 == 65535) {
-				this.anInt5237 = -1;
+			this.multiNpcVarbit = buffer.readUnsignedShort();
+			@Pc(248) int defaultMultiNpc = -1;
+			if (this.multiNpcVarbit == 65535) {
+				this.multiNpcVarbit = -1;
 			}
-			this.anInt5266 = buffer.readUnsignedShort();
-			if (this.anInt5266 == 65535) {
-				this.anInt5266 = -1;
+			this.multiNpcVarp = buffer.readUnsignedShort();
+			if (this.multiNpcVarp == 65535) {
+				this.multiNpcVarp = -1;
 			}
 			if (code == 118) {
-				local248 = buffer.readUnsignedShort();
-				if (local248 == 65535) {
-					local248 = -1;
+				defaultMultiNpc = buffer.readUnsignedShort();
+				if (defaultMultiNpc == 65535) {
+					defaultMultiNpc = -1;
 				}
 			}
-			@Pc(289) int local289 = buffer.readUnsignedByte();
-			this.anIntArray590 = new int[local289 + 2];
-			for (@Pc(297) int local297 = 0; local297 <= local289; local297++) {
-				this.anIntArray590[local297] = buffer.readUnsignedShort();
-				if (this.anIntArray590[local297] == 65535) {
-					this.anIntArray590[local297] = -1;
+			@Pc(289) int len = buffer.readUnsignedByte();
+			this.multiNpcs = new int[len + 2];
+			for (@Pc(297) int i = 0; i <= len; i++) {
+				this.multiNpcs[i] = buffer.readUnsignedShort();
+				if (this.multiNpcs[i] == 65535) {
+					this.multiNpcs[i] = -1;
 				}
 			}
-			this.anIntArray590[local289 + 1] = local248;
+			this.multiNpcs[len + 1] = defaultMultiNpc;
 		} else if (code == 107) {
 			this.aBoolean357 = false;
 		} else if (code == 109) {
@@ -375,12 +375,12 @@ public final class NpcType {
 
 	@OriginalMember(owner = "client!ua", name = "b", descriptor = "(I)Z")
 	public final boolean method4260() {
-		if (this.anIntArray590 == null) {
+		if (this.multiNpcs == null) {
 			return this.anInt5251 != -1 || this.anInt5252 != -1 || this.anInt5248 != -1;
 		}
-		for (@Pc(30) int local30 = 0; local30 < this.anIntArray590.length; local30++) {
-			if (this.anIntArray590[local30] != -1) {
-				@Pc(54) NpcType local54 = NpcTypeList.get(this.anIntArray590[local30]);
+		for (@Pc(30) int local30 = 0; local30 < this.multiNpcs.length; local30++) {
+			if (this.multiNpcs[local30] != -1) {
+				@Pc(54) NpcType local54 = NpcTypeList.get(this.multiNpcs[local30]);
 				if (local54.anInt5251 != -1 || local54.anInt5252 != -1 || local54.anInt5248 != -1) {
 					return true;
 				}
@@ -415,25 +415,25 @@ public final class NpcType {
 	}
 
 	@OriginalMember(owner = "client!ua", name = "d", descriptor = "(I)Lclient!ua;")
-	public final NpcType method4265() {
-		@Pc(13) int local13 = -1;
-		if (this.anInt5237 != -1) {
-			local13 = VarpDomain.getVarbit(this.anInt5237);
-		} else if (this.anInt5266 != -1) {
-			local13 = VarpDomain.varps[this.anInt5266];
+	public final NpcType getMultiNpc() {
+		@Pc(13) int value = -1;
+		if (this.multiNpcVarbit != -1) {
+			value = VarpDomain.getVarbit(this.multiNpcVarbit);
+		} else if (this.multiNpcVarp != -1) {
+			value = VarpDomain.varps[this.multiNpcVarp];
 		}
-		if (local13 < 0 || local13 >= this.anIntArray590.length - 1 || this.anIntArray590[local13] == -1) {
-			@Pc(68) int local68 = this.anIntArray590[this.anIntArray590.length - 1];
-			return local68 == -1 ? null : NpcTypeList.get(local68);
+		if (value < 0 || value >= this.multiNpcs.length - 1 || this.multiNpcs[value] == -1) {
+			@Pc(68) int defaultMultiNpc = this.multiNpcs[this.multiNpcs.length - 1];
+			return defaultMultiNpc == -1 ? null : NpcTypeList.get(defaultMultiNpc);
 		} else {
-			return NpcTypeList.get(this.anIntArray590[local13]);
+			return NpcTypeList.get(this.multiNpcs[value]);
 		}
 	}
 
 	@OriginalMember(owner = "client!ua", name = "a", descriptor = "(ILclient!eg;BII)Lclient!vg;")
 	public final Model method4266(@OriginalArg(0) int arg0, @OriginalArg(1) SeqType arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3) {
-		if (this.anIntArray590 != null) {
-			@Pc(13) NpcType local13 = this.method4265();
+		if (this.multiNpcs != null) {
+			@Pc(13) NpcType local13 = this.getMultiNpc();
 			return local13 == null ? null : local13.method4266(arg0, arg1, arg2, arg3);
 		} else if (this.anIntArray588 == null) {
 			return null;
@@ -485,8 +485,8 @@ public final class NpcType {
 
 	@OriginalMember(owner = "client!ua", name = "a", descriptor = "(IIILclient!eg;Lclient!eg;I[Lclient!re;III)Lclient!vg;")
 	public final Model method4268(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(3) SeqType arg2, @OriginalArg(4) SeqType arg3, @OriginalArg(5) int arg4, @OriginalArg(6) Class150[] arg5, @OriginalArg(7) int arg6, @OriginalArg(8) int arg7, @OriginalArg(9) int arg8) {
-		if (this.anIntArray590 != null) {
-			@Pc(13) NpcType local13 = this.method4265();
+		if (this.multiNpcs != null) {
+			@Pc(13) NpcType local13 = this.getMultiNpc();
 			return local13 == null ? null : local13.method4268(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		}
 		@Pc(39) Model local39 = (Model) NpcTypeList.models.get((long) this.id);

@@ -721,8 +721,8 @@ public final class Static35 {
 			@Pc(2659) Npc local2659 = NpcList.npcs[local24];
 			if (local2659 != null) {
 				@Pc(2665) NpcType local2665 = local2659.type;
-				if (local2665.anIntArray590 != null) {
-					local2665 = local2665.method4265();
+				if (local2665.multiNpcs != null) {
+					local2665 = local2665.getMultiNpc();
 				}
 				if (local2665 != null) {
 					Protocol.outboundBuffer.writeOpcode(65);
@@ -965,7 +965,7 @@ public final class Static35 {
 				if (local20.aBoolean265) {
 					local14.unlink();
 				} else {
-					Static11.method637(local20.anInt3655, local20.anInt3647, local20.anInt3653, local20.anInt3648, 60, local20, 0, -1L, false);
+					Terrain.method637(local20.anInt3655, local20.anInt3647, local20.anInt3653, local20.anInt3648, 60, local20, 0, -1L, false);
 				}
 			}
 		}

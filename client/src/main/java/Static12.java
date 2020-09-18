@@ -822,29 +822,29 @@ public final class Static12 {
 	}
 
 	@OriginalMember(owner = "client!db", name = "a", descriptor = "(IIIIIIII)V")
-	public static void method736(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4, @OriginalArg(6) int arg5, @OriginalArg(7) int arg6) {
-		if (arg5 < 1 || arg2 < 1 || arg5 > 102 || arg2 > 102) {
+	public static void method736(@OriginalArg(1) int y, @OriginalArg(2) int angle, @OriginalArg(3) int z, @OriginalArg(4) int layer, @OriginalArg(5) int id, @OriginalArg(6) int x, @OriginalArg(7) int shape) {
+		if (x < 1 || z < 1 || x > 102 || z > 102) {
 			return;
 		}
-		if (!Terrain.isAllLevelsVisible() && (Static4.tileFlags[0][arg5][arg2] & 0x2) == 0) {
-			@Pc(39) int local39 = arg0;
-			if ((Static4.tileFlags[arg0][arg5][arg2] & 0x8) != 0) {
+		if (!Terrain.isAllLevelsVisible() && (Static4.tileFlags[0][x][z] & 0x2) == 0) {
+			@Pc(39) int local39 = y;
+			if ((Static4.tileFlags[y][x][z] & 0x8) != 0) {
 				local39 = 0;
 			}
 			if (local39 != Static2.anInt1216) {
 				return;
 			}
 		}
-		@Pc(64) int local64 = arg0;
-		if (arg0 < 3 && (Static4.tileFlags[1][arg5][arg2] & 0x2) == 2) {
-			local64 = arg0 + 1;
+		@Pc(64) int local64 = y;
+		if (y < 3 && (Static4.tileFlags[1][x][z] & 0x2) == 2) {
+			local64 = y + 1;
 		}
-		Static21.method2018(arg0, local64, arg2, PathFinder.collisionMaps[arg0], arg3, arg5);
-		if (arg4 >= 0) {
-			@Pc(97) boolean local97 = Preferences.groundDecoration;
+		Static21.method2018(y, local64, z, PathFinder.collisionMaps[y], layer, x);
+		if (id >= 0) {
+			@Pc(97) boolean prevGroundDecoration = Preferences.groundDecoration;
 			Preferences.groundDecoration = true;
-			Static22.method2193(arg1, arg0, arg4, local64, arg5, false, arg2, PathFinder.collisionMaps[arg0], false, arg6);
-			Preferences.groundDecoration = local97;
+			Static22.method2193(angle, y, id, local64, x, false, z, PathFinder.collisionMaps[y], false, shape);
+			Preferences.groundDecoration = prevGroundDecoration;
 		}
 	}
 

@@ -627,9 +627,9 @@ public final class Protocol {
 					}
 				}
 			}
-			for (@Pc(2157) Loc loc = (Loc) LocList.locs.head(); loc != null; loc = (Loc) LocList.locs.next()) {
+			for (@Pc(2157) ChangeLocRequest loc = (ChangeLocRequest) ChangeLocRequest.queue.head(); loc != null; loc = (ChangeLocRequest) ChangeLocRequest.queue.next()) {
 				if (Static1.anInt894 <= loc.x && loc.x < Static1.anInt894 + 8 && Static1.anInt818 <= loc.z && Static1.anInt818 + 8 > loc.z && Static7.y == loc.y) {
-					loc.anInt4436 = 0;
+					loc.resetLoops = 0;
 				}
 			}
 			opcode = -1;
@@ -1821,7 +1821,7 @@ public final class Protocol {
 				@Pc(889) int z = (offset & 0x7) + Static1.anInt818;
 				@Pc(897) int x = (offset >> 4 & 0x7) + Static1.anInt894;
 				if (x >= 0 && z >= 0 && x < 104 && z < 104) {
-					LocList.add(id, x, Static7.y, z, angle, shape, layer, -1, 0);
+					ChangeLocRequest.push(id, x, Static7.y, z, angle, shape, layer, 0, -1);
 				}
 			} else if (opcode == 115) {
 				@Pc(935) int id = inboundBuffer.readUnsignedShort();
@@ -1836,7 +1836,7 @@ public final class Protocol {
 				@Pc(980) int layer = Loc.LAYERS[shape];
 				@Pc(984) int angle = shapeAndAngle & 0x3;
 				if (x >= 0 && z >= 0 && x < 104 && z < 104) {
-					LocList.add(-1, x, Static7.y, z, angle, shape, layer, -1, 0);
+					ChangeLocRequest.push(-1, x, Static7.y, z, angle, shape, layer, 0, -1);
 				}
 			} else if (opcode == 105) {
 				@Pc(1022) int local1022 = inboundBuffer.readUnsignedByte();

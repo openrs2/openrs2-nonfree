@@ -62,7 +62,7 @@ public final class Static24 {
 					if (local60 != null) {
 						if (local60.groundDecor != null && local60.groundDecor.aClass53_2 instanceof GlModel) {
 							@Pc(76) GlModel local76 = (GlModel) local60.groundDecor.aClass53_2;
-							if ((Long.MIN_VALUE & local60.groundDecor.aLong45) == 0L) {
+							if ((Long.MIN_VALUE & local60.groundDecor.pickKey) == 0L) {
 								local76.method3872(false, true, true, false, true, true);
 							} else {
 								local76.method3872(true, true, true, true, true, true);
@@ -71,7 +71,7 @@ public final class Static24 {
 						if (local60.wallDecor != null) {
 							if (local60.wallDecor.aClass53_10 instanceof GlModel) {
 								@Pc(118) GlModel local118 = (GlModel) local60.wallDecor.aClass53_10;
-								if ((local60.wallDecor.aLong194 & Long.MIN_VALUE) == 0L) {
+								if ((local60.wallDecor.pickKey & Long.MIN_VALUE) == 0L) {
 									local118.method3872(false, true, true, false, true, true);
 								} else {
 									local118.method3872(true, true, true, true, true, true);
@@ -79,7 +79,7 @@ public final class Static24 {
 							}
 							if (local60.wallDecor.aClass53_9 instanceof GlModel) {
 								@Pc(157) GlModel local157 = (GlModel) local60.wallDecor.aClass53_9;
-								if ((Long.MIN_VALUE & local60.wallDecor.aLong194) == 0L) {
+								if ((Long.MIN_VALUE & local60.wallDecor.pickKey) == 0L) {
 									local157.method3872(false, true, true, false, true, true);
 								} else {
 									local157.method3872(true, true, true, true, true, true);
@@ -89,7 +89,7 @@ public final class Static24 {
 						if (local60.wall != null) {
 							if (local60.wall.aClass53_5 instanceof GlModel) {
 								@Pc(199) GlModel local199 = (GlModel) local60.wall.aClass53_5;
-								if ((Long.MIN_VALUE & local60.wall.aLong188) == 0L) {
+								if ((Long.MIN_VALUE & local60.wall.pickKey) == 0L) {
 									local199.method3872(false, true, true, false, true, true);
 								} else {
 									local199.method3872(true, true, true, true, true, true);
@@ -97,7 +97,7 @@ public final class Static24 {
 							}
 							if (local60.wall.aClass53_4 instanceof GlModel) {
 								@Pc(237) GlModel local237 = (GlModel) local60.wall.aClass53_4;
-								if ((local60.wall.aLong188 & Long.MIN_VALUE) == 0L) {
+								if ((local60.wall.pickKey & Long.MIN_VALUE) == 0L) {
 									local237.method3872(false, true, true, false, true, true);
 								} else {
 									local237.method3872(true, true, true, true, true, true);
@@ -107,7 +107,7 @@ public final class Static24 {
 						for (@Pc(269) int local269 = 0; local269 < local60.sceneryLen; local269++) {
 							if (local60.scenery[local269].aClass53_1 instanceof GlModel) {
 								@Pc(288) GlModel local288 = (GlModel) local60.scenery[local269].aClass53_1;
-								if ((Long.MIN_VALUE & local60.scenery[local269].aLong38) == 0L) {
+								if ((Long.MIN_VALUE & local60.scenery[local269].pickKey) == 0L) {
 									local288.method3872(false, true, true, false, true, true);
 								} else {
 									local288.method3872(true, true, true, true, true, true);

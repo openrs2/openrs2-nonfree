@@ -39,32 +39,6 @@ public final class Static22 {
 		}
 	}
 
-	@OriginalMember(owner = "client!jo", name = "d", descriptor = "(I)V")
-	public static void method4692() {
-		for (@Pc(8) Loc loc = (Loc) LocList.locs.head(); loc != null; loc = (Loc) LocList.locs.next()) {
-			if (loc.anInt4436 > 0) {
-				loc.anInt4436--;
-			}
-			if (loc.anInt4436 != 0) {
-				if (loc.anInt4446 > 0) {
-					loc.anInt4446--;
-				}
-				if (loc.anInt4446 == 0 && loc.x >= 1 && loc.z >= 1 && loc.x <= 102 && loc.z <= 102 && (loc.id < 0 || Static34.method1547(loc.id, loc.shape))) {
-					Static12.method736(loc.y, loc.angle, loc.z, loc.layer, loc.id, loc.x, loc.shape);
-					loc.anInt4446 = -1;
-					if (loc.id == loc.anInt4439 && loc.anInt4439 == -1) {
-						loc.unlink();
-					} else if (loc.id == loc.anInt4439 && loc.angle == loc.anInt4444 && loc.shape == loc.anInt4443) {
-						loc.unlink();
-					}
-				}
-			} else if (loc.anInt4439 < 0 || Static34.method1547(loc.anInt4439, loc.anInt4443)) {
-				Static12.method736(loc.y, loc.anInt4444, loc.z, loc.layer, loc.anInt4439, loc.x, loc.anInt4443);
-				loc.unlink();
-			}
-		}
-	}
-
 	@OriginalMember(owner = "client!jo", name = "a", descriptor = "(IIIIIIIIII)V")
 	public static void method4693(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) int arg8) {
 		if (Static2.anInt902 <= arg8 && arg8 <= Static3.anInt2553 && Static2.anInt902 <= arg0 && Static3.anInt2553 >= arg0 && Static2.anInt902 <= arg3 && Static3.anInt2553 >= arg3 && Static2.anInt902 <= arg4 && arg4 <= Static3.anInt2553 && arg5 >= Static4.anInt3086 && arg5 <= Static5.anInt4230 && arg1 >= Static4.anInt3086 && Static5.anInt4230 >= arg1 && arg7 >= Static4.anInt3086 && Static5.anInt4230 >= arg7 && Static4.anInt3086 <= arg6 && Static5.anInt4230 >= arg6) {
@@ -226,7 +200,7 @@ public final class Static22 {
 			@Pc(203) int[][] local203 = Terrain.tileHeights[0];
 			local195 = local193 - (local203[local102][local128] + local203[local102][local130] + local203[local100][local130] + local203[local100][local128] >> 2);
 		}
-		@Pc(250) long local250 = (long) (x | z << 7 | shape << 14 | angle << 20 | 0x40000000);
+		@Pc(250) long pickKey = (long) (x | z << 7 | shape << 14 | angle << 20 | 0x40000000);
 		@Pc(253) int[][] local253 = null;
 		if (arg5) {
 			local253 = Terrain.surfaceTileHeights[0];
@@ -234,49 +208,49 @@ public final class Static22 {
 			local253 = Terrain.tileHeights[arg3 + 1];
 		}
 		if (type.anInt5522 == 0 || arg5) {
-			local250 |= Long.MIN_VALUE;
+			pickKey |= Long.MIN_VALUE;
 		}
 		if (type.anInt5517 == 1) {
-			local250 |= 4194304L;
+			pickKey |= 0x400000L;
 		}
 		if (type.aBoolean384) {
-			local250 |= 2147483648L;
+			pickKey |= 0x80000000L;
 		}
 		if (type.method4463()) {
 			Static8.method109(type, x, null, z, null, angle, y);
 		}
-		@Pc(321) long local321 = local250 | (long) id << 32;
+		@Pc(321) long pickKey2 = pickKey | (long) id << 32;
 		@Pc(330) boolean local330 = type.aBoolean372 & !arg5;
 		if (shape == 22) {
 			if (Preferences.groundDecoration || type.anInt5522 != 0 || type.anInt5509 == 1 || type.aBoolean376) {
 				@Pc(377) Entity local377;
-				if (type.anInt5523 == -1 && type.anIntArray633 == null && type.anIntArray631 == null && !type.aBoolean379) {
+				if (type.anInt5523 == -1 && type.anIntArray633 == null && type.multiLocs == null && !type.aBoolean379) {
 					@Pc(393) Class96 local393 = type.method4450(local159, arg8, 22, local193, local151, local253, local330, angle, local167, null);
 					if (GlRenderer.enabled && local330) {
 						Static14.method1212(local393.aClass56_Sub1_3, local159, local195, local167);
 					}
 					local377 = local393.aClass53_3;
 				} else {
-					local377 = new Class53_Sub7(id, 22, angle, arg3, x, z, -1, type.aBoolean380, null);
+					local377 = new Loc(id, 22, angle, arg3, x, z, -1, type.aBoolean380, null);
 				}
-				Terrain.setGroundDecor(y, x, z, local193, local377, local321, type.aBoolean371);
+				Terrain.setGroundDecor(y, x, z, local193, local377, pickKey2, type.aBoolean371);
 				if (type.anInt5509 == 1 && arg7 != null) {
 					arg7.flagGroundDecor(x, z);
 				}
 			}
 		} else if (shape == 10 || shape == 11) {
 			@Pc(493) Entity local493;
-			if (type.anInt5523 == -1 && type.anIntArray633 == null && type.anIntArray631 == null && !type.aBoolean379) {
+			if (type.anInt5523 == -1 && type.anIntArray633 == null && type.multiLocs == null && !type.aBoolean379) {
 				@Pc(479) Class96 local479 = type.method4450(local159, arg8, 10, local193, local151, local253, local330, shape == 11 ? angle + 4 : angle, local167, null);
 				if (GlRenderer.enabled && local330) {
 					Static14.method1212(local479.aClass56_Sub1_3, local159, local195, local167);
 				}
 				local493 = local479.aClass53_3;
 			} else {
-				local493 = new Class53_Sub7(id, 10, shape == 11 ? angle + 4 : angle, arg3, x, z, -1, type.aBoolean380, null);
+				local493 = new Loc(id, 10, shape == 11 ? angle + 4 : angle, arg3, x, z, -1, type.aBoolean380, null);
 			}
 			if (local493 != null) {
-				@Pc(532) boolean local532 = method2196(y, x, z, local193, width, length, local493, local321);
+				@Pc(532) boolean local532 = Terrain.method2196(y, x, z, local193, width, length, local493, pickKey2);
 				if (type.aBoolean377 && local532 && arg8) {
 					@Pc(542) int local542 = 15;
 					if (local493 instanceof Model) {
@@ -299,16 +273,16 @@ public final class Static22 {
 			}
 		} else if (shape >= 12) {
 			@Pc(666) Entity local666;
-			if (type.anInt5523 == -1 && type.anIntArray633 == null && type.anIntArray631 == null && !type.aBoolean379) {
+			if (type.anInt5523 == -1 && type.anIntArray633 == null && type.multiLocs == null && !type.aBoolean379) {
 				@Pc(682) Class96 local682 = type.method4450(local159, arg8, shape, local193, local151, local253, local330, angle, local167, null);
 				if (GlRenderer.enabled && local330) {
 					Static14.method1212(local682.aClass56_Sub1_3, local159, local195, local167);
 				}
 				local666 = local682.aClass53_3;
 			} else {
-				local666 = new Class53_Sub7(id, shape, angle, arg3, x, z, -1, type.aBoolean380, null);
+				local666 = new Loc(id, shape, angle, arg3, x, z, -1, type.aBoolean380, null);
 			}
-			method2196(y, x, z, local193, 1, 1, local666, local321);
+			Terrain.method2196(y, x, z, local193, 1, 1, local666, pickKey2);
 			if (arg8 && shape >= 12 && shape <= 17 && shape != 13 && y > 0 && type.anInt5544 != 0) {
 				Static4.anIntArrayArrayArray9[y][x][z] |= 4;
 			}
@@ -317,16 +291,16 @@ public final class Static22 {
 			}
 		} else if (shape == 0) {
 			@Pc(796) Entity local796;
-			if (type.anInt5523 == -1 && type.anIntArray633 == null && type.anIntArray631 == null && !type.aBoolean379) {
+			if (type.anInt5523 == -1 && type.anIntArray633 == null && type.multiLocs == null && !type.aBoolean379) {
 				@Pc(812) Class96 local812 = type.method4450(local159, arg8, 0, local193, local151, local253, local330, angle, local167, null);
 				if (GlRenderer.enabled && local330) {
 					Static14.method1212(local812.aClass56_Sub1_3, local159, local195, local167);
 				}
 				local796 = local812.aClass53_3;
 			} else {
-				local796 = new Class53_Sub7(id, 0, angle, arg3, x, z, -1, type.aBoolean380, null);
+				local796 = new Loc(id, 0, angle, arg3, x, z, -1, type.aBoolean380, null);
 			}
-			Terrain.setWall(y, x, z, local193, local796, null, Static2.anIntArray651[angle], 0, local321);
+			Terrain.setWall(y, x, z, local193, local796, null, Static2.anIntArray651[angle], 0, pickKey2);
 			if (arg8) {
 				if (angle == 0) {
 					if (type.aBoolean377) {
@@ -370,16 +344,16 @@ public final class Static22 {
 			}
 		} else if (shape == 1) {
 			@Pc(1119) Entity local1119;
-			if (type.anInt5523 == -1 && type.anIntArray633 == null && type.anIntArray631 == null && !type.aBoolean379) {
+			if (type.anInt5523 == -1 && type.anIntArray633 == null && type.multiLocs == null && !type.aBoolean379) {
 				@Pc(1135) Class96 local1135 = type.method4450(local159, arg8, 1, local193, local151, local253, local330, angle, local167, null);
 				if (GlRenderer.enabled && local330) {
 					Static14.method1212(local1135.aClass56_Sub1_3, local159, local195, local167);
 				}
 				local1119 = local1135.aClass53_3;
 			} else {
-				local1119 = new Class53_Sub7(id, 1, angle, arg3, x, z, -1, type.aBoolean380, null);
+				local1119 = new Loc(id, 1, angle, arg3, x, z, -1, type.aBoolean380, null);
 			}
-			Terrain.setWall(y, x, z, local193, local1119, null, Static6.anIntArray519[angle], 0, local321);
+			Terrain.setWall(y, x, z, local193, local1119, null, Static6.anIntArray519[angle], 0, pickKey2);
 			if (type.aBoolean377 && arg8) {
 				if (angle == 0) {
 					Static5.aByteArrayArrayArray18[y][x][z + 1] = 50;
@@ -398,7 +372,7 @@ public final class Static22 {
 			@Pc(1265) int local1265 = angle + 1 & 0x3;
 			@Pc(1309) Entity local1309;
 			@Pc(1295) Entity local1295;
-			if (type.anInt5523 == -1 && type.anIntArray633 == null && type.anIntArray631 == null && !type.aBoolean379) {
+			if (type.anInt5523 == -1 && type.anIntArray633 == null && type.multiLocs == null && !type.aBoolean379) {
 				@Pc(1329) Class96 local1329 = type.method4450(local159, arg8, 2, local193, local151, local253, local330, angle + 4, local167, null);
 				if (GlRenderer.enabled && local330) {
 					Static14.method1212(local1329.aClass56_Sub1_3, local159, local195, local167);
@@ -410,10 +384,10 @@ public final class Static22 {
 				}
 				local1309 = local1358.aClass53_3;
 			} else {
-				local1295 = new Class53_Sub7(id, 2, angle + 4, arg3, x, z, -1, type.aBoolean380, null);
-				local1309 = new Class53_Sub7(id, 2, local1265, arg3, x, z, -1, type.aBoolean380, null);
+				local1295 = new Loc(id, 2, angle + 4, arg3, x, z, -1, type.aBoolean380, null);
+				local1309 = new Loc(id, 2, local1265, arg3, x, z, -1, type.aBoolean380, null);
 			}
-			Terrain.setWall(y, x, z, local193, local1295, local1309, Static2.anIntArray651[angle], Static2.anIntArray651[local1265], local321);
+			Terrain.setWall(y, x, z, local193, local1295, local1309, Static2.anIntArray651[angle], Static2.anIntArray651[local1265], pickKey2);
 			if (type.anInt5544 == 1 && arg8) {
 				if (angle == 0) {
 					Static4.anIntArrayArrayArray9[y][x][z] |= 1;
@@ -437,16 +411,16 @@ public final class Static22 {
 			}
 		} else if (shape == 3) {
 			@Pc(1631) Entity local1631;
-			if (type.anInt5523 == -1 && type.anIntArray633 == null && type.anIntArray631 == null && !type.aBoolean379) {
+			if (type.anInt5523 == -1 && type.anIntArray633 == null && type.multiLocs == null && !type.aBoolean379) {
 				@Pc(1647) Class96 local1647 = type.method4450(local159, arg8, 3, local193, local151, local253, local330, angle, local167, null);
 				if (GlRenderer.enabled && local330) {
 					Static14.method1212(local1647.aClass56_Sub1_3, local159, local195, local167);
 				}
 				local1631 = local1647.aClass53_3;
 			} else {
-				local1631 = new Class53_Sub7(id, 3, angle, arg3, x, z, -1, type.aBoolean380, null);
+				local1631 = new Loc(id, 3, angle, arg3, x, z, -1, type.aBoolean380, null);
 			}
-			Terrain.setWall(y, x, z, local193, local1631, null, Static6.anIntArray519[angle], 0, local321);
+			Terrain.setWall(y, x, z, local193, local1631, null, Static6.anIntArray519[angle], 0, pickKey2);
 			if (type.aBoolean377 && arg8) {
 				if (angle == 0) {
 					Static5.aByteArrayArrayArray18[y][x][z + 1] = 50;
@@ -463,16 +437,16 @@ public final class Static22 {
 			}
 		} else if (shape == 9) {
 			@Pc(1796) Entity local1796;
-			if (type.anInt5523 == -1 && type.anIntArray633 == null && type.anIntArray631 == null && !type.aBoolean379) {
+			if (type.anInt5523 == -1 && type.anIntArray633 == null && type.multiLocs == null && !type.aBoolean379) {
 				@Pc(1812) Class96 local1812 = type.method4450(local159, arg8, shape, local193, local151, local253, local330, angle, local167, null);
 				if (GlRenderer.enabled && local330) {
 					Static14.method1212(local1812.aClass56_Sub1_3, local159, local195, local167);
 				}
 				local1796 = local1812.aClass53_3;
 			} else {
-				local1796 = new Class53_Sub7(id, shape, angle, arg3, x, z, -1, type.aBoolean380, null);
+				local1796 = new Loc(id, shape, angle, arg3, x, z, -1, type.aBoolean380, null);
 			}
-			method2196(y, x, z, local193, 1, 1, local1796, local321);
+			Terrain.method2196(y, x, z, local193, 1, 1, local1796, pickKey2);
 			if (type.anInt5509 != 0 && arg7 != null) {
 				arg7.method567(type.aBoolean374, !type.aBoolean385, length, width, z, x);
 			}
@@ -481,73 +455,73 @@ public final class Static22 {
 			}
 		} else if (shape == 4) {
 			@Pc(1914) Entity local1914;
-			if (type.anInt5523 == -1 && type.anIntArray633 == null && type.anIntArray631 == null && !type.aBoolean379) {
+			if (type.anInt5523 == -1 && type.anIntArray633 == null && type.multiLocs == null && !type.aBoolean379) {
 				@Pc(1930) Class96 local1930 = type.method4450(local159, arg8, 4, local193, local151, local253, local330, angle, local167, null);
 				if (GlRenderer.enabled && local330) {
 					Static14.method1212(local1930.aClass56_Sub1_3, local159, local195, local167);
 				}
 				local1914 = local1930.aClass53_3;
 			} else {
-				local1914 = new Class53_Sub7(id, 4, angle, arg3, x, z, -1, type.aBoolean380, null);
+				local1914 = new Loc(id, 4, angle, arg3, x, z, -1, type.aBoolean380, null);
 			}
-			Terrain.setWallDecor(y, x, z, local193, local1914, null, Static2.anIntArray651[angle], 0, 0, 0, local321);
+			Terrain.setWallDecor(y, x, z, local193, local1914, null, Static2.anIntArray651[angle], 0, 0, 0, pickKey2);
 		} else if (shape == 5) {
-			@Pc(1967) long local1967 = Static25.method2726(y, x, z);
+			@Pc(1967) long local1967 = Terrain.getWallPickKey(y, x, z);
 			@Pc(1969) int local1969 = 16;
 			if (local1967 != 0L) {
 				local1969 = LocTypeList.get((int) (local1967 >>> 32) & Integer.MAX_VALUE).anInt5507;
 			}
 			@Pc(2040) Entity local2040;
-			if (type.anInt5523 == -1 && type.anIntArray633 == null && type.anIntArray631 == null && !type.aBoolean379) {
+			if (type.anInt5523 == -1 && type.anIntArray633 == null && type.multiLocs == null && !type.aBoolean379) {
 				@Pc(2013) Class96 local2013 = type.method4450(local159, arg8, 4, local193, local151, local253, local330, angle, local167, null);
 				if (GlRenderer.enabled && local330) {
 					Static14.method1212(local2013.aClass56_Sub1_3, local159 - Static4.anIntArray315[angle] * 8, local195, local167 - Static6.anIntArray475[angle] * 8);
 				}
 				local2040 = local2013.aClass53_3;
 			} else {
-				local2040 = new Class53_Sub7(id, 4, angle, arg3, x, z, -1, type.aBoolean380, null);
+				local2040 = new Loc(id, 4, angle, arg3, x, z, -1, type.aBoolean380, null);
 			}
-			Terrain.setWallDecor(y, x, z, local193, local2040, null, Static2.anIntArray651[angle], 0, Static4.anIntArray315[angle] * local1969, Static6.anIntArray475[angle] * local1969, local321);
+			Terrain.setWallDecor(y, x, z, local193, local2040, null, Static2.anIntArray651[angle], 0, Static4.anIntArray315[angle] * local1969, Static6.anIntArray475[angle] * local1969, pickKey2);
 		} else if (shape == 6) {
-			@Pc(2089) long local2089 = Static25.method2726(y, x, z);
+			@Pc(2089) long local2089 = Terrain.getWallPickKey(y, x, z);
 			@Pc(2091) int local2091 = 8;
 			if (local2089 != 0L) {
 				local2091 = LocTypeList.get(Integer.MAX_VALUE & (int) (local2089 >>> 32)).anInt5507 / 2;
 			}
 			@Pc(2170) Entity local2170;
-			if (type.anInt5523 == -1 && type.anIntArray633 == null && type.anIntArray631 == null && !type.aBoolean379) {
+			if (type.anInt5523 == -1 && type.anIntArray633 == null && type.multiLocs == null && !type.aBoolean379) {
 				@Pc(2143) Class96 local2143 = type.method4450(local159, arg8, 4, local193, local151, local253, local330, angle + 4, local167, null);
 				if (GlRenderer.enabled && local330) {
 					Static14.method1212(local2143.aClass56_Sub1_3, local159 - Static3.anIntArray166[angle] * 8, local195, local167 - Static7.anIntArray646[angle] * 8);
 				}
 				local2170 = local2143.aClass53_3;
 			} else {
-				local2170 = new Class53_Sub7(id, 4, angle + 4, arg3, x, z, -1, type.aBoolean380, null);
+				local2170 = new Loc(id, 4, angle + 4, arg3, x, z, -1, type.aBoolean380, null);
 			}
-			Terrain.setWallDecor(y, x, z, local193, local2170, null, 256, angle, Static3.anIntArray166[angle] * local2091, Static7.anIntArray646[angle] * local2091, local321);
+			Terrain.setWallDecor(y, x, z, local193, local2170, null, 256, angle, Static3.anIntArray166[angle] * local2091, Static7.anIntArray646[angle] * local2091, pickKey2);
 		} else if (shape == 7) {
 			@Pc(2219) int local2219 = angle + 2 & 0x3;
 			@Pc(2248) Entity local2248;
-			if (type.anInt5523 == -1 && type.anIntArray633 == null && type.anIntArray631 == null && !type.aBoolean379) {
+			if (type.anInt5523 == -1 && type.anIntArray633 == null && type.multiLocs == null && !type.aBoolean379) {
 				@Pc(2266) Class96 local2266 = type.method4450(local159, arg8, 4, local193, local151, local253, local330, local2219 + 4, local167, null);
 				if (GlRenderer.enabled && local330) {
 					Static14.method1212(local2266.aClass56_Sub1_3, local159, local195, local167);
 				}
 				local2248 = local2266.aClass53_3;
 			} else {
-				local2248 = new Class53_Sub7(id, 4, local2219 + 4, arg3, x, z, -1, type.aBoolean380, null);
+				local2248 = new Loc(id, 4, local2219 + 4, arg3, x, z, -1, type.aBoolean380, null);
 			}
-			Terrain.setWallDecor(y, x, z, local193, local2248, null, 256, local2219, 0, 0, local321);
+			Terrain.setWallDecor(y, x, z, local193, local2248, null, 256, local2219, 0, 0, pickKey2);
 		} else if (shape == 8) {
 			@Pc(2300) int local2300 = 8;
-			@Pc(2305) long local2305 = Static25.method2726(y, x, z);
+			@Pc(2305) long local2305 = Terrain.getWallPickKey(y, x, z);
 			if (local2305 != 0L) {
 				local2300 = LocTypeList.get((int) (local2305 >>> 32) & Integer.MAX_VALUE).anInt5507 / 2;
 			}
 			@Pc(2328) int local2328 = angle + 2 & 0x3;
 			@Pc(2392) Entity local2392;
 			@Pc(2429) Entity local2429;
-			if (type.anInt5523 == -1 && type.anIntArray633 == null && type.anIntArray631 == null && !type.aBoolean379) {
+			if (type.anInt5523 == -1 && type.anIntArray633 == null && type.multiLocs == null && !type.aBoolean379) {
 				@Pc(2350) int local2350 = Static3.anIntArray166[angle] * 8;
 				@Pc(2356) int local2356 = Static7.anIntArray646[angle] * 8;
 				@Pc(2372) Class96 local2372 = type.method4450(local159, arg8, 4, local193, local151, local253, local330, angle + 4, local167, null);
@@ -561,27 +535,16 @@ public final class Static22 {
 				}
 				local2429 = local2410.aClass53_3;
 			} else {
-				local2392 = new Class53_Sub7(id, 4, angle + 4, arg3, x, z, -1, type.aBoolean380, null);
-				local2429 = new Class53_Sub7(id, 4, local2328 + 4, arg3, x, z, -1, type.aBoolean380, null);
+				local2392 = new Loc(id, 4, angle + 4, arg3, x, z, -1, type.aBoolean380, null);
+				local2429 = new Loc(id, 4, local2328 + 4, arg3, x, z, -1, type.aBoolean380, null);
 			}
-			Terrain.setWallDecor(y, x, z, local193, local2392, local2429, 256, angle, local2300 * Static3.anIntArray166[angle], local2300 * Static7.anIntArray646[angle], local321);
+			Terrain.setWallDecor(y, x, z, local193, local2392, local2429, 256, angle, local2300 * Static3.anIntArray166[angle], local2300 * Static7.anIntArray646[angle], pickKey2);
 		}
 	}
 
 	@OriginalMember(owner = "client!ka", name = "a", descriptor = "(ILclient!fh;ILclient!fh;I)Lclient!ke;")
 	public static SoftwareFont method2194(@OriginalArg(1) Js5 arg0, @OriginalArg(2) int arg1, @OriginalArg(3) Js5 arg2) {
 		return Static9.method197(arg2, arg1, 0) ? Static16.method4658(arg0.fetchFile(arg1, 0)) : null;
-	}
-
-	@OriginalMember(owner = "client!ka", name = "a", descriptor = "(IIIIIILclient!vc;IJ)Z")
-	private static boolean method2196(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) Entity arg6, @OriginalArg(8) long arg7) {
-		if (arg6 == null) {
-			return true;
-		} else {
-			@Pc(11) int local11 = arg1 * 128 + arg4 * 64;
-			@Pc(19) int local19 = arg2 * 128 + arg5 * 64;
-			return Terrain.addScenery(arg0, arg1, arg2, arg4, arg5, local11, local19, arg3, arg6, 0, false, arg7);
-		}
 	}
 
 	@OriginalMember(owner = "client!ke", name = "a", descriptor = "([I[BIIIIIIII)V")
@@ -1112,12 +1075,12 @@ public final class Static22 {
 					if (local255.anObject5 == null || client.loop < local255.anInt4042 || local255.anInt4010 <= client.loop) {
 						local255.aBoolean282 = false;
 						local255.anInt4006 = Static11.method522(local255.z, local255.x, Static7.y);
-						Static11.method637(Static7.y, local255.x, local255.z, local255.anInt4006, (local280 - 1) * 64 + 60, local255, local255.anInt4031, local253, local255.aBoolean284);
+						Terrain.method637(Static7.y, local255.x, local255.z, local255.anInt4006, (local280 - 1) * 64 + 60, local255, local255.anInt4031, local253, local255.aBoolean284);
 					} else {
 						local255.aBoolean98 = false;
 						local255.aBoolean282 = false;
 						local255.anInt4006 = Static11.method522(local255.z, local255.x, Static7.y);
-						Static11.method584(Static7.y, local255.x, local255.z, local255.anInt4006, local255, local255.anInt4031, local253, local255.anInt4043, local255.anInt4018, local255.anInt4041, local255.anInt4038);
+						Terrain.method584(Static7.y, local255.x, local255.z, local255.anInt4006, local255, local255.anInt4031, local253, local255.anInt4043, local255.anInt4018, local255.anInt4041, local255.anInt4038);
 					}
 				}
 			}
@@ -1400,12 +1363,6 @@ public final class Static22 {
 	@OriginalMember(owner = "client!kn", name = "a", descriptor = "(Z)V")
 	public static void method2413() {
 		ObjTypeList.models.clear();
-	}
-
-	@OriginalMember(owner = "client!kn", name = "a", descriptor = "(III)J")
-	public static long method2414(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
-		@Pc(7) Tile local7 = Terrain.tiles[arg0][arg1][arg2];
-		return local7 == null || local7.groundDecor == null ? 0L : local7.groundDecor.aLong45;
 	}
 
 }

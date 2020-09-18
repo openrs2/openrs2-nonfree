@@ -535,7 +535,7 @@ public final class Static11 {
 				}
 			}
 		}
-		LocList.locs = new LinkedList();
+		ChangeLocRequest.queue = new LinkedList();
 		Static7.anInt5497 = 0;
 		Static6.anInt5214 = 0;
 		VarpDomain.clear();
@@ -724,11 +724,6 @@ public final class Static11 {
 		return Static33.method4131(arg1, arg0) ? Static14.method1063() : null;
 	}
 
-	@OriginalMember(owner = "client!ci", name = "a", descriptor = "(IIIILclient!vc;IJIIII)Z")
-	public static boolean method584(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) Entity arg4, @OriginalArg(5) int arg5, @OriginalArg(6) long arg6, @OriginalArg(7) int arg7, @OriginalArg(8) int arg8, @OriginalArg(9) int arg9, @OriginalArg(10) int arg10) {
-		return arg4 == null ? true : Terrain.addScenery(arg0, arg7, arg8, arg9 + 1 - arg7, arg10 + 1 - arg8, arg1, arg2, arg3, arg4, arg5, true, arg6);
-	}
-
 	@OriginalMember(owner = "client!cj", name = "a", descriptor = "(ZI)V")
 	public static void method605(@OriginalArg(0) boolean arg0) {
 		if (arg0) {
@@ -799,33 +794,4 @@ public final class Static11 {
 		return arg0 >= '0' && arg0 <= '9' || arg0 >= 'A' && arg0 <= 'Z' || arg0 >= 'a' && arg0 <= 'z';
 	}
 
-	@OriginalMember(owner = "client!ck", name = "a", descriptor = "(IIIIILclient!vc;IJZ)Z")
-	public static boolean method637(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) Entity arg5, @OriginalArg(6) int arg6, @OriginalArg(7) long arg7, @OriginalArg(8) boolean arg8) {
-		if (arg5 == null) {
-			return true;
-		}
-		@Pc(7) int local7 = arg1 - arg4;
-		@Pc(11) int local11 = arg2 - arg4;
-		@Pc(15) int local15 = arg1 + arg4;
-		@Pc(19) int local19 = arg2 + arg4;
-		if (arg8) {
-			if (arg6 > 640 && arg6 < 1408) {
-				local19 += 128;
-			}
-			if (arg6 > 1152 && arg6 < 1920) {
-				local15 += 128;
-			}
-			if (arg6 > 1664 || arg6 < 384) {
-				local11 -= 128;
-			}
-			if (arg6 > 128 && arg6 < 896) {
-				local7 -= 128;
-			}
-		}
-		@Pc(53) int local53 = local7 / 128;
-		@Pc(57) int local57 = local11 / 128;
-		@Pc(61) int local61 = local15 / 128;
-		@Pc(65) int local65 = local19 / 128;
-		return Terrain.addScenery(arg0, local53, local57, local61 + 1 - local53, local65 + 1 - local57, arg1, arg2, arg3, arg5, arg6, true, arg7);
-	}
 }

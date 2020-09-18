@@ -290,7 +290,7 @@ public final class Static7 {
 	public static final int[] anIntArray638 = new int[100];
 
 	@OriginalMember(owner = "client!vl", name = "c", descriptor = "I")
-	public static int anInt5623 = 0;
+	public static int pickKeysSize = 0;
 
 	@OriginalMember(owner = "client!vl", name = "n", descriptor = "Z")
 	public static boolean aBoolean389 = false;

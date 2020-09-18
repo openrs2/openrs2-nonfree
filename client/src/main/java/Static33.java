@@ -244,8 +244,8 @@ public final class Static33 {
 		if (Static7.anInt5634 >= 400) {
 			return;
 		}
-		if (arg0.anIntArray590 != null) {
-			arg0 = arg0.method4265();
+		if (arg0.multiNpcs != null) {
+			arg0 = arg0.getMultiNpc();
 		}
 		if (arg0 == null || !arg0.aBoolean357) {
 			return;
@@ -734,7 +734,7 @@ public final class Static33 {
 		}
 		Static16.method2014();
 		Static9.method763();
-		Static37.method4714();
+		ChangeLocRequest.flush();
 		Static24.method2697();
 		Static4.aBoolean189 = false;
 		if (GlRenderer.enabled) {
@@ -824,8 +824,8 @@ public final class Static33 {
 				@Pc(277) int local277 = Static3.anIntArray189[local258] * 4 + 2 - PlayerList.self.x / 32;
 				@Pc(292) int local292 = Static2.anIntArray187[local258] * 4 + 2 - PlayerList.self.z / 32;
 				@Pc(298) LocType local298 = LocTypeList.get(Static1.anIntArray15[local258]);
-				if (local298.anIntArray631 != null) {
-					local298 = local298.method4453();
+				if (local298.multiLocs != null) {
+					local298 = local298.getMultiLoc();
 					if (local298 == null || local298.anInt5526 == -1) {
 						continue;
 					}
@@ -846,8 +846,8 @@ public final class Static33 {
 				@Pc(407) Npc local407 = NpcList.npcs[NpcList.ids[local394]];
 				if (local407 != null && local407.method3310()) {
 					@Pc(418) NpcType local418 = local407.type;
-					if (local418 != null && local418.anIntArray590 != null) {
-						local418 = local418.method4265();
+					if (local418 != null && local418.multiNpcs != null) {
+						local418 = local418.getMultiNpc();
 					}
 					if (local418 != null && local418.aBoolean356 && local418.aBoolean357) {
 						@Pc(448) int local448 = local407.x / 32 - PlayerList.self.x / 32;

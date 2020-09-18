@@ -152,8 +152,8 @@ public final class Static20 {
 										@Pc(202) int local202 = arg0.readUnsignedByte();
 										local198--;
 										@Pc(207) LocType local207 = LocTypeList.get(local198);
-										if (local207.anIntArray631 != null) {
-											local207 = local207.method4453();
+										if (local207.multiLocs != null) {
+											local207 = local207.getMultiLoc();
 											if (local207 == null || local207.anInt5526 == -1) {
 												continue;
 											}
@@ -1218,21 +1218,6 @@ public final class Static20 {
 		}
 	}
 
-	@OriginalMember(owner = "client!j", name = "a", descriptor = "(III)J")
-	public static long method1960(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
-		@Pc(7) Tile local7 = Terrain.tiles[arg0][arg1][arg2];
-		if (local7 == null) {
-			return 0L;
-		}
-		for (@Pc(13) int local13 = 0; local13 < local7.sceneryLen; local13++) {
-			@Pc(22) Scenery local22 = local7.scenery[local13];
-			if ((local22.aLong38 >> 29 & 0x3L) == 2L && local22.xMin == arg1 && local22.zMin == arg2) {
-				return local22.aLong38;
-			}
-		}
-		return 0L;
-	}
-
 	@OriginalMember(owner = "client!j", name = "a", descriptor = "(IIIII)V")
 	public static void method1963(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3) {
 		for (@Pc(10) Class4_Sub11 local10 = (Class4_Sub11) Static1.aClass112_2.head(); local10 != null; local10 = (Class4_Sub11) Static1.aClass112_2.next()) {
@@ -1342,7 +1327,7 @@ public final class Static20 {
 					}
 				}
 				local22.method3103(Static5.anInt4156);
-				Static11.method637(Static7.y, (int) local22.aDouble8, (int) local22.aDouble10, (int) local22.aDouble5, 60, local22, local22.anInt3723, -1L, false);
+				Terrain.method637(Static7.y, (int) local22.aDouble8, (int) local22.aDouble10, (int) local22.aDouble5, 60, local22, local22.anInt3723, -1L, false);
 			}
 		}
 	}

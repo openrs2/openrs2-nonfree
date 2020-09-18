@@ -12,7 +12,7 @@ public final class Static9 {
 	public static void method174(@OriginalArg(0) int arg0, @OriginalArg(2) boolean arg1, @OriginalArg(3) boolean arg2) {
 		for (@Pc(7) int local7 = 0; local7 < NpcList.size; local7++) {
 			@Pc(20) Npc local20 = NpcList.npcs[NpcList.ids[local7]];
-			if (local20 != null && local20.method3310() && local20.type.method4255()) {
+			if (local20 != null && local20.method3310() && local20.type.isMultiNpcValid()) {
 				@Pc(35) int local35 = local20.getSize();
 				if (arg2) {
 					if (!local20.type.aBoolean359) {
@@ -58,7 +58,7 @@ public final class Static9 {
 		for (@Pc(249) int local249 = 0; local249 < NpcList.size; local249++) {
 			@Pc(258) Npc local258 = NpcList.npcs[NpcList.ids[local249]];
 			@Pc(267) long local267 = (long) NpcList.ids[local249] << 32 | 0x20000000L;
-			if (local258 != null && local258.method3310() && local258.type.method4255()) {
+			if (local258 != null && local258.method3310() && local258.type.isMultiNpcValid()) {
 				@Pc(282) int local282 = local258.getSize();
 				if (arg2) {
 					if (!local258.type.aBoolean359) {
@@ -124,7 +124,7 @@ public final class Static9 {
 				}
 				local258.aBoolean282 = false;
 				local258.anInt4006 = Static11.method522(local258.z, local258.x, Static7.y);
-				Static11.method637(Static7.y, local258.x, local258.z, local258.anInt4006, local282 * 64 + 60 - 64, local258, local258.anInt4031, local267, local258.aBoolean284);
+				Terrain.method637(Static7.y, local258.x, local258.z, local258.anInt4006, local282 * 64 + 60 - 64, local258, local258.anInt4031, local267, local258.aBoolean284);
 			}
 		}
 	}
@@ -649,8 +649,8 @@ public final class Static9 {
 							}
 							if (arg4[local137][local77][local109].scenery != null) {
 								for (@Pc(285) int local285 = 0; local285 < arg4[local137][local77][local109].sceneryLen; local285++) {
-									@Pc(316) int local316 = (int) (arg4[local137][local77][local109].scenery[local285].aLong38 >> 14 & 0x3FL);
-									@Pc(333) int local333 = (int) (arg4[local137][local77][local109].scenery[local285].aLong38 >> 20 & 0x3L);
+									@Pc(316) int local316 = (int) (arg4[local137][local77][local109].scenery[local285].pickKey >> 14 & 0x3FL);
+									@Pc(333) int local333 = (int) (arg4[local137][local77][local109].scenery[local285].pickKey >> 20 & 0x3L);
 									if (local316 == 21) {
 										local316 = 19;
 									}

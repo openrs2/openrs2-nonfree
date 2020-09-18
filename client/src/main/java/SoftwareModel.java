@@ -607,7 +607,7 @@ public final class SoftwareModel extends Model {
 					}
 				} else {
 					if (arg1 && this.method2901(Static7.anInt5333 + Static4.anInt3125, Static1.anInt3 + Static4.anInt3126, Static4.anIntArray361[local51], Static4.anIntArray361[local56], Static4.anIntArray361[local61], local65, local69, local73)) {
-						Static5.aLongArray57[Static7.anInt5623++] = arg2;
+						Static5.pickKeys[Static7.pickKeysSize++] = arg2;
 						arg1 = false;
 					}
 					if ((local65 - local69) * (Static4.anIntArray361[local61] - Static4.anIntArray361[local56]) - (Static4.anIntArray361[local51] - Static4.anIntArray361[local56]) * (local73 - local69) > 0) {
@@ -1079,7 +1079,7 @@ public final class SoftwareModel extends Model {
 				}
 				if (Static7.anInt5333 >= local301 && Static7.anInt5333 <= local303 && Static1.anInt3 >= local305 && Static1.anInt3 <= local307) {
 					if (this.aBoolean324) {
-						Static5.aLongArray57[Static7.anInt5623++] = arg8;
+						Static5.pickKeys[Static7.pickKeysSize++] = arg8;
 					} else {
 						local241 = true;
 					}

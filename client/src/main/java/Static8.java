@@ -111,7 +111,7 @@ public final class Static8 {
 				}
 			}
 		}
-		for (@Pc(443) Loc loc = (Loc) LocList.locs.head(); loc != null; loc = (Loc) LocList.locs.next()) {
+		for (@Pc(443) ChangeLocRequest loc = (ChangeLocRequest) ChangeLocRequest.queue.head(); loc != null; loc = (ChangeLocRequest) ChangeLocRequest.queue.next()) {
 			loc.z -= dz;
 			loc.x -= dx;
 			if (loc.x < 0 || loc.z < 0 || loc.x >= 104 || loc.z >= 104) {
@@ -376,7 +376,7 @@ public final class Static8 {
 			local9.anInt2117 = (local156 + arg1) * 128;
 			local9.anInt2115 = arg0.anInt5521;
 			local9.anInt2112 = (local168 + arg3) * 128;
-			if (arg0.anIntArray631 != null) {
+			if (arg0.multiLocs != null) {
 				local9.aBoolean146 = true;
 				local9.method1652();
 			}
@@ -387,9 +387,9 @@ public final class Static8 {
 		} else if (arg2 != null) {
 			local9.aClass53_Sub1_Sub2_1 = arg2;
 			@Pc(86) NpcType local86 = arg2.type;
-			if (local86.anIntArray590 != null) {
+			if (local86.multiNpcs != null) {
 				local9.aBoolean146 = true;
-				local86 = local86.method4265();
+				local86 = local86.getMultiNpc();
 			}
 			if (local86 != null) {
 				local9.anInt2117 = (local86.size + arg1) * 128;

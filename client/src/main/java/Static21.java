@@ -237,13 +237,13 @@ public final class Static21 {
 	public static void method2018(@OriginalArg(1) int y, @OriginalArg(2) int arg1, @OriginalArg(3) int z, @OriginalArg(4) CollisionMap arg3, @OriginalArg(5) int arg4, @OriginalArg(6) int x) {
 		@Pc(9) long local9 = 0L;
 		if (arg4 == 0) {
-			local9 = Static25.method2726(y, x, z);
+			local9 = Terrain.getWallPickKey(y, x, z);
 		} else if (arg4 == 1) {
-			local9 = Static37.method4739(y, x, z);
+			local9 = Terrain.getWallDecorPickKey(y, x, z);
 		} else if (arg4 == 2) {
-			local9 = Static20.method1960(y, x, z);
+			local9 = Terrain.getSceneryPickKey(y, x, z);
 		} else if (arg4 == 3) {
-			local9 = Static22.method2414(y, x, z);
+			local9 = Terrain.getGroundDecorPickKey(y, x, z);
 		}
 		@Pc(67) int shape = (int) local9 >> 14 & 0x1F;
 		@Pc(74) int id = Integer.MAX_VALUE & (int) (local9 >>> 32);
@@ -289,60 +289,60 @@ public final class Static21 {
 				arg3.unflagGroundDecor(x, z);
 			}
 		}
-		if (type.anIntArray631 != null) {
-			type = type.method4453();
+		if (type.multiLocs != null) {
+			type = type.getMultiLoc();
 		}
 		if (!GlRenderer.enabled || type == null || !type.aBoolean372) {
 			return;
 		}
 		if (shape == 2) {
-			if (local105 instanceof Class53_Sub7) {
-				((Class53_Sub7) local105).method3732();
+			if (local105 instanceof Loc) {
+				((Loc) local105).method3732();
 			} else {
 				Static15.method4592(x, 0, angle + 4, arg1, type, 0, z, shape);
 			}
-			if (local107 instanceof Class53_Sub7) {
-				((Class53_Sub7) local107).method3732();
+			if (local107 instanceof Loc) {
+				((Loc) local107).method3732();
 			} else {
 				Static15.method4592(x, 0, angle + 1 & 0x3, arg1, type, 0, z, shape);
 			}
 		} else if (shape == 5) {
-			if (local105 instanceof Class53_Sub7) {
-				((Class53_Sub7) local105).method3732();
+			if (local105 instanceof Loc) {
+				((Loc) local105).method3732();
 			} else {
 				Static15.method4592(x, Static4.anIntArray315[angle] * 8, angle, arg1, type, Static6.anIntArray475[angle] * 8, z, 4);
 			}
 		} else if (shape == 6) {
-			if (local105 instanceof Class53_Sub7) {
-				((Class53_Sub7) local105).method3732();
+			if (local105 instanceof Loc) {
+				((Loc) local105).method3732();
 			} else {
 				Static15.method4592(x, Static3.anIntArray166[angle] * 8, angle + 4, arg1, type, Static7.anIntArray646[angle] * 8, z, 4);
 			}
 		} else if (shape == 7) {
-			if (local105 instanceof Class53_Sub7) {
-				((Class53_Sub7) local105).method3732();
+			if (local105 instanceof Loc) {
+				((Loc) local105).method3732();
 			} else {
 				Static15.method4592(x, 0, (angle + 2 & 0x3) + 4, arg1, type, 0, z, 4);
 			}
 		} else if (shape == 8) {
-			if (local105 instanceof Class53_Sub7) {
-				((Class53_Sub7) local105).method3732();
+			if (local105 instanceof Loc) {
+				((Loc) local105).method3732();
 			} else {
 				Static15.method4592(x, Static3.anIntArray166[angle] * 8, angle + 4, arg1, type, Static7.anIntArray646[angle] * 8, z, 4);
 			}
-			if (local107 instanceof Class53_Sub7) {
-				((Class53_Sub7) local107).method3732();
+			if (local107 instanceof Loc) {
+				((Loc) local107).method3732();
 			} else {
 				Static15.method4592(x, Static3.anIntArray166[angle] * 8, (angle + 2 & 0x3) + 4, arg1, type, Static7.anIntArray646[angle] * 8, z, 4);
 			}
 		} else if (shape == 11) {
-			if (local105 instanceof Class53_Sub7) {
-				((Class53_Sub7) local105).method3732();
+			if (local105 instanceof Loc) {
+				((Loc) local105).method3732();
 			} else {
 				Static15.method4592(x, 0, angle + 4, arg1, type, 0, z, 10);
 			}
-		} else if (local105 instanceof Class53_Sub7) {
-			((Class53_Sub7) local105).method3732();
+		} else if (local105 instanceof Loc) {
+			((Loc) local105).method3732();
 		} else {
 			Static15.method4592(x, 0, angle, arg1, type, 0, z, shape);
 		}

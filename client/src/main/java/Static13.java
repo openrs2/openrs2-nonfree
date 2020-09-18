@@ -761,24 +761,24 @@ public final class Static13 {
 			Static6.anInt4434 = 0;
 			for (@Pc(147) int local147 = 0; local147 < 104; local147++) {
 				for (@Pc(154) int local154 = 0; local154 < 104; local154++) {
-					@Pc(168) long local168 = Static22.method2414(arg0, local147, local154);
+					@Pc(168) long local168 = Terrain.getGroundDecorPickKey(arg0, local147, local154);
 					if (local168 == 0L) {
-						local168 = Static20.method1960(arg0, local147, local154);
+						local168 = Terrain.getSceneryPickKey(arg0, local147, local154);
 					}
 					if (local168 == 0L) {
-						local168 = Static25.method2726(arg0, local147, local154);
+						local168 = Terrain.getWallPickKey(arg0, local147, local154);
 					}
 					if (local168 == 0L) {
-						local168 = Static37.method4739(arg0, local147, local154);
+						local168 = Terrain.getWallDecorPickKey(arg0, local147, local154);
 					}
 					if (local168 != 0L) {
 						@Pc(227) LocType local227 = LocTypeList.get(Integer.MAX_VALUE & (int) (local168 >>> 32));
 						if (!local227.members || LoginManager.mapMembers) {
 							@Pc(235) int local235 = local227.anInt5526;
-							if (local227.anIntArray631 != null) {
-								for (@Pc(241) int local241 = 0; local241 < local227.anIntArray631.length; local241++) {
-									if (local227.anIntArray631[local241] != -1) {
-										@Pc(264) LocType local264 = LocTypeList.get(local227.anIntArray631[local241]);
+							if (local227.multiLocs != null) {
+								for (@Pc(241) int local241 = 0; local241 < local227.multiLocs.length; local241++) {
+									if (local227.multiLocs[local241] != -1) {
+										@Pc(264) LocType local264 = LocTypeList.get(local227.multiLocs[local241]);
 										if (local264.anInt5526 >= 0) {
 											local235 = local264.anInt5526;
 										}

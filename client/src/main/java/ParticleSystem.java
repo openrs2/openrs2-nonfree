@@ -74,10 +74,10 @@ public final class ParticleSystem extends ParticleNode {
 	private boolean aBoolean253 = false;
 
 	@OriginalMember(owner = "client!ne", name = "O", descriptor = "I")
-	private final int anInt3516;
+	private final int width;
 
 	@OriginalMember(owner = "client!ne", name = "J", descriptor = "I")
-	private final int anInt3511;
+	private final int length;
 
 	@OriginalMember(owner = "client!ne", name = "t", descriptor = "[Lclient!lm;")
 	public Particle[] particles;
@@ -86,11 +86,11 @@ public final class ParticleSystem extends ParticleNode {
 	private final long aLong122;
 
 	@OriginalMember(owner = "client!ne", name = "<init>", descriptor = "(III)V")
-	public ParticleSystem(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
-		this.anInt3516 = arg1;
-		this.anInt3511 = arg2;
+	public ParticleSystem(@OriginalArg(0) int loop, @OriginalArg(1) int width, @OriginalArg(2) int length) {
+		this.width = width;
+		this.length = length;
 		this.particles = new Particle[8192];
-		this.aLong122 = arg0;
+		this.aLong122 = loop;
 		this.aBoolean253 = true;
 		ParticleManager.systems.addTail(this);
 	}
@@ -468,10 +468,10 @@ public final class ParticleSystem extends ParticleNode {
 			return false;
 		}
 		if (this.aLong123 > 0L) {
-			this.anInt3513 = this.anInt3518 - (this.anInt3516 << 6) >> 7;
-			this.anInt3521 = (this.anInt3518 + (this.anInt3516 << 6) >> 7) - 1;
-			this.anInt3508 = this.anInt3509 - (this.anInt3511 << 6) >> 7;
-			this.anInt3515 = (this.anInt3509 + (this.anInt3511 << 6) >> 7) - 1;
+			this.anInt3513 = this.anInt3518 - (this.width << 6) >> 7;
+			this.anInt3521 = (this.anInt3518 + (this.width << 6) >> 7) - 1;
+			this.anInt3508 = this.anInt3509 - (this.length << 6) >> 7;
+			this.anInt3515 = (this.anInt3509 + (this.length << 6) >> 7) - 1;
 			this.anInt3510 = this.anInt3512;
 			if (this.anInt3514 < 3) {
 				this.anInt3520 = Terrain.tileHeights[this.anInt3514 + 1][this.anInt3513][this.anInt3508] + Terrain.tileHeights[this.anInt3514 + 1][this.anInt3521][this.anInt3508] + Terrain.tileHeights[this.anInt3514 + 1][this.anInt3513][this.anInt3515] + Terrain.tileHeights[this.anInt3514 + 1][this.anInt3521][this.anInt3515] >> 2;

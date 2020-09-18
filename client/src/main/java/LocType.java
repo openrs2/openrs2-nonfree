@@ -22,7 +22,7 @@ public final class LocType {
 	private int[] models;
 
 	@OriginalMember(owner = "client!vh", name = "V", descriptor = "[I")
-	public int[] anIntArray631;
+	public int[] multiLocs;
 
 	@OriginalMember(owner = "client!vh", name = "fb", descriptor = "[S")
 	private short[] aShortArray119;
@@ -40,7 +40,7 @@ public final class LocType {
 	public int id;
 
 	@OriginalMember(owner = "client!vh", name = "p", descriptor = "I")
-	public int anInt5513 = -1;
+	public int cursor1Op = -1;
 
 	@OriginalMember(owner = "client!vh", name = "o", descriptor = "I")
 	private int anInt5512 = 0;
@@ -70,7 +70,7 @@ public final class LocType {
 	public int anInt5538 = 0;
 
 	@OriginalMember(owner = "client!vh", name = "P", descriptor = "I")
-	public int anInt5533 = -1;
+	public int cursor2Op = -1;
 
 	@OriginalMember(owner = "client!vh", name = "S", descriptor = "[Ljava/lang/String;")
 	public String[] ops = new String[5];
@@ -94,13 +94,13 @@ public final class LocType {
 	public int anInt5509 = 2;
 
 	@OriginalMember(owner = "client!vh", name = "X", descriptor = "I")
-	private int anInt5535 = -1;
+	private int multiLocVarbit = -1;
 
 	@OriginalMember(owner = "client!vh", name = "db", descriptor = "Z")
 	public boolean aBoolean377 = true;
 
 	@OriginalMember(owner = "client!vh", name = "J", descriptor = "I")
-	public int anInt5528 = -1;
+	public int cursor2 = -1;
 
 	@OriginalMember(owner = "client!vh", name = "L", descriptor = "Z")
 	public boolean aBoolean374 = true;
@@ -148,7 +148,7 @@ public final class LocType {
 	public int anInt5546 = 0;
 
 	@OriginalMember(owner = "client!vh", name = "yb", descriptor = "I")
-	public int anInt5551 = -1;
+	public int cursor1 = -1;
 
 	@OriginalMember(owner = "client!vh", name = "C", descriptor = "I")
 	public int anInt5522 = -1;
@@ -160,7 +160,7 @@ public final class LocType {
 	public int anInt5515 = -1;
 
 	@OriginalMember(owner = "client!vh", name = "N", descriptor = "I")
-	private int anInt5531 = -1;
+	private int multiLocVarp = -1;
 
 	@OriginalMember(owner = "client!vh", name = "vb", descriptor = "I")
 	private int anInt5548 = 128;
@@ -428,18 +428,18 @@ public final class LocType {
 	}
 
 	@OriginalMember(owner = "client!vh", name = "b", descriptor = "(I)Lclient!vh;")
-	public final LocType method4453() {
-		@Pc(1) int local1 = -1;
-		if (this.anInt5535 != -1) {
-			local1 = VarpDomain.getVarbit(this.anInt5535);
-		} else if (this.anInt5531 != -1) {
-			local1 = VarpDomain.varps[this.anInt5531];
+	public final LocType getMultiLoc() {
+		@Pc(1) int value = -1;
+		if (this.multiLocVarbit != -1) {
+			value = VarpDomain.getVarbit(this.multiLocVarbit);
+		} else if (this.multiLocVarp != -1) {
+			value = VarpDomain.varps[this.multiLocVarp];
 		}
-		if (local1 < 0 || this.anIntArray631.length - 1 <= local1 || this.anIntArray631[local1] == -1) {
-			@Pc(61) int local61 = this.anIntArray631[this.anIntArray631.length - 1];
-			return local61 == -1 ? null : LocTypeList.get(local61);
+		if (value < 0 || value >= this.multiLocs.length - 1 || this.multiLocs[value] == -1) {
+			@Pc(61) int defaultMultiLoc = this.multiLocs[this.multiLocs.length - 1];
+			return defaultMultiLoc == -1 ? null : LocTypeList.get(defaultMultiLoc);
 		} else {
-			return LocTypeList.get(this.anIntArray631[local1]);
+			return LocTypeList.get(this.multiLocs[value]);
 		}
 	}
 
@@ -798,30 +798,30 @@ public final class LocType {
 		} else if (code == 75) {
 			this.anInt5517 = buffer.readUnsignedByte();
 		} else if (code == 77 || code == 92) {
-			@Pc(732) int local732 = -1;
-			this.anInt5535 = buffer.readUnsignedShort();
-			if (this.anInt5535 == 65535) {
-				this.anInt5535 = -1;
+			@Pc(732) int defaultMultiLoc = -1;
+			this.multiLocVarbit = buffer.readUnsignedShort();
+			if (this.multiLocVarbit == 65535) {
+				this.multiLocVarbit = -1;
 			}
-			this.anInt5531 = buffer.readUnsignedShort();
-			if (this.anInt5531 == 65535) {
-				this.anInt5531 = -1;
+			this.multiLocVarp = buffer.readUnsignedShort();
+			if (this.multiLocVarp == 65535) {
+				this.multiLocVarp = -1;
 			}
 			if (code == 92) {
-				local732 = buffer.readUnsignedShort();
-				if (local732 == 65535) {
-					local732 = -1;
+				defaultMultiLoc = buffer.readUnsignedShort();
+				if (defaultMultiLoc == 65535) {
+					defaultMultiLoc = -1;
 				}
 			}
-			@Pc(778) int local778 = buffer.readUnsignedByte();
-			this.anIntArray631 = new int[local778 + 2];
-			for (@Pc(786) int local786 = 0; local786 <= local778; local786++) {
-				this.anIntArray631[local786] = buffer.readUnsignedShort();
-				if (this.anIntArray631[local786] == 65535) {
-					this.anIntArray631[local786] = -1;
+			@Pc(778) int len = buffer.readUnsignedByte();
+			this.multiLocs = new int[len + 2];
+			for (@Pc(786) int i = 0; i <= len; i++) {
+				this.multiLocs[i] = buffer.readUnsignedShort();
+				if (this.multiLocs[i] == 65535) {
+					this.multiLocs[i] = -1;
 				}
 			}
-			this.anIntArray631[local778 + 1] = local732;
+			this.multiLocs[len + 1] = defaultMultiLoc;
 		} else if (code == 78) {
 			this.anInt5521 = buffer.readUnsignedShort();
 			this.anInt5519 = buffer.readUnsignedByte();
@@ -861,11 +861,11 @@ public final class LocType {
 		} else if (code == 98) {
 			this.aBoolean379 = true;
 		} else if (code == 99) {
-			this.anInt5513 = buffer.readUnsignedByte();
-			this.anInt5551 = buffer.readUnsignedShort();
+			this.cursor1Op = buffer.readUnsignedByte();
+			this.cursor1 = buffer.readUnsignedShort();
 		} else if (code == 100) {
-			this.anInt5533 = buffer.readUnsignedByte();
-			this.anInt5528 = buffer.readUnsignedShort();
+			this.cursor2Op = buffer.readUnsignedByte();
+			this.cursor2 = buffer.readUnsignedShort();
 		} else if (code == 101) {
 			this.anInt5546 = buffer.readUnsignedByte();
 		} else if (code == 102) {
@@ -915,13 +915,13 @@ public final class LocType {
 
 	@OriginalMember(owner = "client!vh", name = "f", descriptor = "(I)Z")
 	public final boolean method4463() {
-		if (this.anIntArray631 == null) {
+		if (this.multiLocs == null) {
 			return this.anInt5521 != -1 || this.anIntArray632 != null;
 		}
-		for (@Pc(31) int local31 = 0; local31 < this.anIntArray631.length; local31++) {
-			if (this.anIntArray631[local31] != -1) {
-				@Pc(54) LocType local54 = LocTypeList.get(this.anIntArray631[local31]);
-				if (local54.anInt5521 != -1 || local54.anIntArray632 != null) {
+		for (@Pc(31) int i = 0; i < this.multiLocs.length; i++) {
+			if (this.multiLocs[i] != -1) {
+				@Pc(54) LocType type = LocTypeList.get(this.multiLocs[i]);
+				if (type.anInt5521 != -1 || type.anIntArray632 != null) {
 					return true;
 				}
 			}

@@ -23,7 +23,7 @@ public final class Scenery {
 	public int y;
 
 	@OriginalMember(owner = "client!co", name = "l", descriptor = "I")
-	public int anInt821;
+	public int centerXFine;
 
 	@OriginalMember(owner = "client!co", name = "n", descriptor = "I")
 	public int anInt823;
@@ -38,8 +38,8 @@ public final class Scenery {
 	public int zMin;
 
 	@OriginalMember(owner = "client!co", name = "t", descriptor = "I")
-	public int anInt827;
+	public int centerYFine;
 
 	@OriginalMember(owner = "client!co", name = "u", descriptor = "J")
-	public long aLong38 = 0L;
+	public long pickKey = 0L;
 }

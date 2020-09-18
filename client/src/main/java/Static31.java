@@ -326,9 +326,9 @@ public final class Static31 {
 		}
 		if (Static1.aBoolean17 || Static4.anInt3341 < arg0 || Static4.anInt3341 >= arg3 + arg0 || arg4 > Static5.anInt5848 || Static5.anInt5848 >= arg1 + arg4) {
 			Static1.aBoolean8 = false;
-			Static7.anInt5623 = 0;
+			Static7.pickKeysSize = 0;
 		} else {
-			Static7.anInt5623 = 0;
+			Static7.pickKeysSize = 0;
 			Static1.aBoolean8 = true;
 			@Pc(515) int local515 = Static4.anInt3123;
 			@Pc(517) int local517 = Static1.anInt403;
@@ -1155,7 +1155,7 @@ public final class Static31 {
 								if (tile.scenery != null) {
 									for (@Pc(183) int i = 0; i < tile.sceneryLen; i++) {
 										@Pc(192) Scenery scenery = tile.scenery[i];
-										scenery.aClass53_1.method3806(scenery.anInt814, y, scenery.anInt823, scenery.anInt821, scenery.anInt827);
+										scenery.aClass53_1.method3806(scenery.anInt814, y, scenery.anInt823, scenery.centerXFine, scenery.centerYFine);
 									}
 								}
 							}

@@ -586,8 +586,8 @@ public final class Static18 {
 			if (local31 != null && local31.method3310()) {
 				if (local31 instanceof Npc) {
 					@Pc(70) NpcType local70 = ((Npc) local31).type;
-					if (local70.anIntArray590 != null) {
-						local70 = local70.method4265();
+					if (local70.multiNpcs != null) {
+						local70 = local70.getMultiNpc();
 					}
 					if (local70 == null) {
 						continue;
@@ -595,8 +595,8 @@ public final class Static18 {
 				}
 				if (local17 >= PlayerList.size) {
 					@Pc(93) NpcType local93 = ((Npc) local31).type;
-					if (local93.anIntArray590 != null) {
-						local93 = local93.method4265();
+					if (local93.multiNpcs != null) {
+						local93 = local93.getMultiNpc();
 					}
 					if (local93.anInt5238 >= 0 && local93.anInt5238 < Static1.aClass4_Sub3_Sub14Array1.length) {
 						@Pc(129) int local129;

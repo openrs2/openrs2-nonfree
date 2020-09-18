@@ -37,8 +37,8 @@ public final class Npc extends PathingEntity {
 		}
 		this.anInt4016 = local75.method3813();
 		@Pc(86) NpcType local86 = this.type;
-		if (local86.anIntArray590 != null) {
-			local86 = local86.method4265();
+		if (local86.multiNpcs != null) {
+			local86 = local86.getMultiNpc();
 		}
 		if (Preferences.characterShadows && local86.aBoolean354) {
 			@Pc(141) Model local141 = Static12.method745(this.type.aShort46, local54 == null ? local28 : local54, arg0, this.type.size, this.type.aByte20, local75, local54 == null ? this.anInt3970 : this.anInt4046, this.anInt4006, this.z, this.aBoolean284, this.type.aShort47, this.type.aByte19, this.x);
@@ -141,8 +141,8 @@ public final class Npc extends PathingEntity {
 	@OriginalMember(owner = "client!p", name = "a", descriptor = "(Z)I")
 	@Override
 	protected final int method3303() {
-		if (this.type.anIntArray590 != null) {
-			@Pc(17) NpcType local17 = this.type.method4265();
+		if (this.type.multiNpcs != null) {
+			@Pc(17) NpcType local17 = this.type.getMultiNpc();
 			if (local17 != null && local17.anInt5261 != -1) {
 				return local17.anInt5261;
 			}

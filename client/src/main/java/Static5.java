@@ -339,7 +339,7 @@ public final class Static5 {
 	public static float aFloat147 = 128.0F;
 
 	@OriginalMember(owner = "client!og", name = "gb", descriptor = "[J")
-	public static final long[] aLongArray57 = new long[1000];
+	public static final long[] pickKeys = new long[1000];
 
 	@OriginalMember(owner = "client!oi", name = "g", descriptor = "[Ljava/lang/String;")
 	public static final String[] aStringArray24 = new String[5];

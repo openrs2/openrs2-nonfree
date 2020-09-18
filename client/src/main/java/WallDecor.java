@@ -32,5 +32,5 @@ public final class WallDecor {
 	public int anInt5633;
 
 	@OriginalMember(owner = "client!vl", name = "s", descriptor = "J")
-	public long aLong194 = 0L;
+	public long pickKey = 0L;
 }

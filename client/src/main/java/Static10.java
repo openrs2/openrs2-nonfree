@@ -462,8 +462,8 @@ public final class Static10 {
 	@OriginalMember(owner = "client!bo", name = "a", descriptor = "(BLclient!p;)I")
 	public static int method395(@OriginalArg(1) Npc arg0) {
 		@Pc(4) NpcType local4 = arg0.type;
-		if (local4.anIntArray590 != null) {
-			local4 = local4.method4265();
+		if (local4.multiNpcs != null) {
+			local4 = local4.getMultiNpc();
 			if (local4 == null) {
 				return -1;
 			}
