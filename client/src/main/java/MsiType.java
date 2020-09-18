@@ -40,8 +40,8 @@ public final class MsiType {
 	}
 
 	@OriginalMember(owner = "client!qg", name = "a", descriptor = "(IZI)Lclient!fe;")
-	public final SoftwareIndexedSprite getSprite(@OriginalArg(1) boolean arg0, @OriginalArg(2) int arg1) {
-		@Pc(23) SoftwareIndexedSprite sprite = (SoftwareIndexedSprite) MsiTypeList.sprites.get(arg1 << 16 | this.spriteId | (arg0 ? 262144 : 0));
+	public final SoftwareIndexedSprite getSprite(@OriginalArg(1) boolean arg0, @OriginalArg(2) int angle) {
+		@Pc(23) SoftwareIndexedSprite sprite = (SoftwareIndexedSprite) MsiTypeList.sprites.get(angle << 16 | this.spriteId | (arg0 ? 262144 : 0));
 		if (sprite != null) {
 			return sprite;
 		}
@@ -54,10 +54,10 @@ public final class MsiType {
 			if (arg0) {
 				newSprite.method1312();
 			}
-			for (@Pc(66) int local66 = 0; local66 < arg1; local66++) {
+			for (@Pc(66) int i = 0; i < angle; i++) {
 				newSprite.method1313();
 			}
-			MsiTypeList.sprites.put(this.spriteId | arg1 << 16 | (arg0 ? 262144 : 0), newSprite);
+			MsiTypeList.sprites.put(this.spriteId | angle << 16 | (arg0 ? 262144 : 0), newSprite);
 		}
 		return newSprite;
 	}

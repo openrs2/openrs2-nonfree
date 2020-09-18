@@ -419,38 +419,38 @@ public final class Static33 {
 	}
 
 	@OriginalMember(owner = "client!te", name = "a", descriptor = "(IILclient!vh;IIII)Z")
-	public static boolean method4155(@OriginalArg(1) int arg0, @OriginalArg(2) LocType arg1, @OriginalArg(4) int arg2, @OriginalArg(6) int arg3) {
-		@Pc(10) MsiType local10 = MsiTypeList.get(arg1.anInt5515);
-		if (local10.spriteId == -1) {
+	public static boolean method4155(@OriginalArg(1) int z, @OriginalArg(2) LocType locType, @OriginalArg(4) int x, @OriginalArg(6) int angle) {
+		@Pc(10) MsiType msiType = MsiTypeList.get(locType.mapSceneId);
+		if (msiType.spriteId == -1) {
 			return true;
 		}
-		@Pc(22) int local22;
-		if (arg1.aBoolean378) {
-			arg3 += arg1.anInt5546;
-			local22 = arg3 & 0x3;
+		@Pc(22) int angle2;
+		if (locType.mapSceneRotated) {
+			angle += locType.mapSceneAngleOffset;
+			angle2 = angle & 0x3;
 		} else {
-			local22 = 0;
+			angle2 = 0;
 		}
-		@Pc(45) SoftwareIndexedSprite local45 = local10.getSprite(arg1.aBoolean382, local22);
-		if (local45 == null) {
+		@Pc(45) SoftwareIndexedSprite sprite = msiType.getSprite(locType.aBoolean382, angle2);
+		if (sprite == null) {
 			return false;
 		}
-		@Pc(53) int local53 = arg1.width;
-		@Pc(56) int local56 = arg1.length;
-		if ((local22 & 0x1) == 1) {
-			local53 = arg1.length;
-			local56 = arg1.width;
+		@Pc(53) int width = locType.width;
+		@Pc(56) int length = locType.length;
+		if ((angle2 & 0x1) == 1) {
+			width = locType.length;
+			length = locType.width;
 		}
-		@Pc(73) int local73 = local45.anInt3412;
-		@Pc(76) int local76 = local45.anInt3410;
-		if (local10.aBoolean303) {
-			local73 = local53 * 4;
-			local76 = local56 * 4;
+		@Pc(73) int local73 = sprite.anInt3412;
+		@Pc(76) int local76 = sprite.anInt3410;
+		if (msiType.aBoolean303) {
+			local73 = width * 4;
+			local76 = length * 4;
 		}
-		if (local10.anInt4306 == 0) {
-			local45.method1315(arg2 * 4 + 48, (104 - arg0 - local56) * 4 + 48, local73, local76);
+		if (msiType.anInt4306 == 0) {
+			sprite.method1315(x * 4 + 48, (104 - z - length) * 4 + 48, local73, local76);
 		} else {
-			local45.method1316(arg2 * 4 + 48, (104 - local56 - arg0) * 4 + 48, local73, local76, local10.anInt4306);
+			sprite.method1316(x * 4 + 48, (104 - length - z) * 4 + 48, local73, local76, msiType.anInt4306);
 		}
 		return true;
 	}

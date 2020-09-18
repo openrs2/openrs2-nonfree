@@ -106,7 +106,7 @@ public final class LocType {
 	public boolean aBoolean374 = true;
 
 	@OriginalMember(owner = "client!vh", name = "ib", descriptor = "Z")
-	public boolean aBoolean378 = false;
+	public boolean mapSceneRotated = false;
 
 	@OriginalMember(owner = "client!vh", name = "H", descriptor = "I")
 	public int anInt5526 = -1;
@@ -145,7 +145,7 @@ public final class LocType {
 	public boolean aBoolean382 = false;
 
 	@OriginalMember(owner = "client!vh", name = "qb", descriptor = "I")
-	public int anInt5546 = 0;
+	public int mapSceneAngleOffset = 0;
 
 	@OriginalMember(owner = "client!vh", name = "yb", descriptor = "I")
 	public int cursor1 = -1;
@@ -157,7 +157,7 @@ public final class LocType {
 	private boolean aBoolean381 = false;
 
 	@OriginalMember(owner = "client!vh", name = "r", descriptor = "I")
-	public int anInt5515 = -1;
+	public int mapSceneId = -1;
 
 	@OriginalMember(owner = "client!vh", name = "N", descriptor = "I")
 	private int multiLocVarp = -1;
@@ -857,7 +857,7 @@ public final class LocType {
 		} else if (code == 96) {
 			this.aBoolean384 = true;
 		} else if (code == 97) {
-			this.aBoolean378 = true;
+			this.mapSceneRotated = true;
 		} else if (code == 98) {
 			this.aBoolean379 = true;
 		} else if (code == 99) {
@@ -867,9 +867,9 @@ public final class LocType {
 			this.cursor2Op = buffer.readUnsignedByte();
 			this.cursor2 = buffer.readUnsignedShort();
 		} else if (code == 101) {
-			this.anInt5546 = buffer.readUnsignedByte();
+			this.mapSceneAngleOffset = buffer.readUnsignedByte();
 		} else if (code == 102) {
-			this.anInt5515 = buffer.readUnsignedShort();
+			this.mapSceneId = buffer.readUnsignedShort();
 		} else if (code == 103) {
 			this.anInt5544 = 0;
 		} else if (code == 104) {

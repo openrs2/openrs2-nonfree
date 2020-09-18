@@ -579,20 +579,20 @@ public final class Static19 {
 							if (local785 >= 0 && local785 <= local740.length - 1) {
 								@Pc(808) int local808 = ((local742 + Static3.anInt2967 & 0x3F) << 6) + (local684 + Static3.anInt2973 & 0x3F);
 								if (local740[local785] != null) {
-									@Pc(819) int local819 = local740[local785][local808];
-									@Pc(823) int local823 = local819 & 0x1FFF;
-									if (local823 != 0) {
-										@Pc(832) MsiType local832 = MsiTypeList.get(local823 - 1);
-										@Pc(838) int local838 = local819 >> 13 & 0x3;
-										@Pc(849) boolean local849 = (local819 >> 15 & 0x1) == 1;
-										@Pc(855) SoftwareIndexedSprite local855 = local832.getSprite(local849, local838);
-										if (local855 != null) {
-											@Pc(864) int local864 = local711 * local855.anInt3408 / 4;
-											@Pc(871) int local871 = local769 * local855.anInt3413 / 4;
-											if (local832.aBoolean303) {
-												@Pc(880) int local880 = local819 >> 16 & 0xF;
-												@Pc(886) int local886 = local819 >> 20 & 0xF;
-												if ((local838 & 0x1) == 1) {
+									@Pc(819) int mapScene = local740[local785][local808];
+									@Pc(823) int mapSceneId = mapScene & 0x1FFF;
+									if (mapSceneId != 0) {
+										@Pc(832) MsiType type = MsiTypeList.get(mapSceneId - 1);
+										@Pc(838) int angle = mapScene >> 13 & 0x3;
+										@Pc(849) boolean local849 = (mapScene >> 15 & 0x1) == 1;
+										@Pc(855) SoftwareIndexedSprite sprite = type.getSprite(local849, angle);
+										if (sprite != null) {
+											@Pc(864) int local864 = local711 * sprite.anInt3408 / 4;
+											@Pc(871) int local871 = local769 * sprite.anInt3413 / 4;
+											if (type.aBoolean303) {
+												@Pc(880) int local880 = mapScene >> 16 & 0xF;
+												@Pc(886) int local886 = mapScene >> 20 & 0xF;
+												if ((angle & 0x1) == 1) {
 													@Pc(893) int local893 = local880;
 													local880 = local886;
 													local886 = local893;
@@ -601,10 +601,10 @@ public final class Static19 {
 												local871 = local886 * local769;
 											}
 											if (local864 != 0 && local871 != 0) {
-												if (local832.anInt4306 == 0) {
-													local855.method1315(local717, local775 + local769 - local871, local864, local871);
+												if (type.anInt4306 == 0) {
+													sprite.method1315(local717, local775 + local769 - local871, local864, local871);
 												} else {
-													local855.method1316(local717, local775 + local769 - local871, local864, local871, local832.anInt4306);
+													sprite.method1316(local717, local775 + local769 - local871, local864, local871, type.anInt4306);
 												}
 											}
 										}
