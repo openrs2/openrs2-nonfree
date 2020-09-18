@@ -169,6 +169,6 @@ public final class Class47 {
 				this.aClass105Array2[this.anInt1247++] = local48;
 			}
 		}
-		Static16.method2017(this.anInt1247 - 1, this.aClass105Array2, 0, local36);
+		ArrayUtils.sort(local36, this.aClass105Array2, 0, this.anInt1247 - 1);
 	}
 }

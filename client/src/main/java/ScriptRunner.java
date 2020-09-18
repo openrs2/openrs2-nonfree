@@ -3431,27 +3431,27 @@ public final class ScriptRunner {
 									continue;
 								}
 								if (opcode == 5302) {
-									@Pc(5750) Class169[] local5750 = Static25.method2725();
+									@Pc(5750) DisplayMode[] local5750 = DisplayMode.getModes();
 									intStack[isp++] = local5750.length;
 									continue;
 								}
 								if (opcode == 5303) {
 									@Pc(5766) int local5766 = isp - 1;
 									@Pc(5769) int local5769 = intStack[local5766];
-									@Pc(5772) Class169[] local5772 = Static25.method2725();
-									intStack[local5766++] = local5772[local5769].anInt5276;
+									@Pc(5772) DisplayMode[] local5772 = DisplayMode.getModes();
+									intStack[local5766++] = local5772[local5769].width;
 									isp = local5766 + 1;
-									intStack[local5766] = local5772[local5769].anInt5275;
+									intStack[local5766] = local5772[local5769].height;
 									continue;
 								}
 								if (opcode == 5305) {
 									@Pc(5796) int local5796 = Preferences.fullScreenWidth;
 									@Pc(5798) int local5798 = Preferences.fullScreenHeight;
 									@Pc(5800) int local5800 = -1;
-									@Pc(5803) Class169[] local5803 = Static25.method2725();
+									@Pc(5803) DisplayMode[] local5803 = DisplayMode.getModes();
 									for (@Pc(5805) int local5805 = 0; local5805 < local5803.length; local5805++) {
-										@Pc(5813) Class169 local5813 = local5803[local5805];
-										if (local5813.anInt5276 == local5796 && local5813.anInt5275 == local5798) {
+										@Pc(5813) DisplayMode local5813 = local5803[local5805];
+										if (local5813.width == local5796 && local5813.height == local5798) {
 											local5800 = local5805;
 											break;
 										}

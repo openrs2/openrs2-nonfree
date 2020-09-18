@@ -51,22 +51,6 @@ public final class Static31 {
 		return local35;
 	}
 
-	@OriginalMember(owner = "client!re", name = "a", descriptor = "(Lsignlink!pm;Ljava/awt/Frame;Z)V")
-	public static void method3658(@OriginalArg(0) SignLink arg0, @OriginalArg(1) Frame arg1) {
-		while (true) {
-			@Pc(10) PrivilegedRequest local10 = arg0.exitFullScreen(arg1);
-			while (local10.status == 0) {
-				ThreadUtils.sleep(10L);
-			}
-			if (local10.status == 1) {
-				arg1.setVisible(false);
-				arg1.dispose();
-				return;
-			}
-			ThreadUtils.sleep(100L);
-		}
-	}
-
 	@OriginalMember(owner = "client!re", name = "a", descriptor = "(IS)Z")
 	public static boolean method3659(@OriginalArg(1) short arg0) {
 		if (arg0 == 58 || arg0 == 35 || arg0 == 17 || arg0 == 10 || arg0 == 51 || arg0 == 9 || arg0 == 15 || arg0 == 50) {

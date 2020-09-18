@@ -358,4 +358,40 @@ public final class ArrayUtils {
 			dest[off++] = value;
 		}
 	}
+
+	@OriginalMember(owner = "client!gh", name = "a", descriptor = "(I[Ljava/lang/Object;II[I)V")
+	public static void sort(@OriginalArg(4) int[] keys, @OriginalArg(1) Object[] values, @OriginalArg(2) int lo, @OriginalArg(0) int hi) {
+		if (hi <= lo) {
+			return;
+		}
+		@Pc(10) int mid = (lo + hi) / 2;
+		@Pc(12) int i = lo;
+		@Pc(16) int pivotKey = keys[mid];
+		keys[mid] = keys[hi];
+		keys[hi] = pivotKey;
+		@Pc(30) Object pivotValue = values[mid];
+		values[mid] = values[hi];
+		values[hi] = pivotValue;
+		for (@Pc(42) int j = lo; j < hi; j++) {
+			if (pivotKey + (j & 0x1) > keys[j]) {
+				@Pc(68) int key = keys[j];
+				keys[j] = keys[i];
+				keys[i] = key;
+				@Pc(82) Object value = values[j];
+				values[j] = values[i];
+				values[i++] = value;
+			}
+		}
+		keys[hi] = keys[i];
+		keys[i] = pivotKey;
+		values[hi] = values[i];
+		values[i] = pivotValue;
+		sort(keys, values, lo, i - 1);
+		sort(keys, values, i + 1, hi);
+	}
+
+	@OriginalMember(owner = "client!bb", name = "a", descriptor = "([IB[Ljava/lang/Object;)V")
+	public static void sort(@OriginalArg(0) int[] keys, @OriginalArg(2) Object[] values) {
+		sort(keys, values, 0, keys.length - 1);
+	}
 }

@@ -448,11 +448,6 @@ public final class Static9 {
 		}
 	}
 
-	@OriginalMember(owner = "client!bb", name = "a", descriptor = "([IB[Ljava/lang/Object;)V")
-	public static void method232(@OriginalArg(0) int[] arg0, @OriginalArg(2) Object[] arg1) {
-		Static16.method2017(arg0.length - 1, arg1, 0, arg0);
-	}
-
 	@OriginalMember(owner = "client!bb", name = "a", descriptor = "(IB)V")
 	public static void method233(@OriginalArg(0) int arg0) {
 		if (arg0 == Static4.anInt3304) {

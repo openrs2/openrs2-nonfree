@@ -49,9 +49,6 @@ public final class Static3 {
 	@OriginalMember(owner = "client!gn", name = "D", descriptor = "I")
 	public static int anInt2120;
 
-	@OriginalMember(owner = "client!hb", name = "h", descriptor = "[Lclient!ub;")
-	public static Class169[] aClass169Array1;
-
 	@OriginalMember(owner = "client!hc", name = "d", descriptor = "F")
 	public static float aFloat63;
 

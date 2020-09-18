@@ -1,5 +1,3 @@
-import java.awt.Frame;
-
 import dev.openrs2.deob.annotation.OriginalArg;
 import dev.openrs2.deob.annotation.OriginalMember;
 import dev.openrs2.deob.annotation.Pc;
@@ -235,40 +233,6 @@ public final class Static8 {
 			if (arg2 < Static6.anIntArray540[local3] + Static5.anIntArray383[local3] && arg2 + arg0 > Static6.anIntArray540[local3] && Static7.anIntArray638[local3] + Static7.anIntArray616[local3] > arg3 && arg3 + arg1 > Static7.anIntArray638[local3]) {
 				Static2.aBooleanArray8[local3] = true;
 			}
-		}
-	}
-
-	@OriginalMember(owner = "client!ac", name = "a", descriptor = "(IIIILsignlink!pm;I)Ljava/awt/Frame;")
-	public static Frame method67(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(4) SignLink arg3) {
-		if (!arg3.isFullScreenSupported()) {
-			return null;
-		}
-		@Pc(26) Class169[] local26 = Static11.method610(arg3);
-		if (local26 == null) {
-			return null;
-		}
-		@Pc(34) boolean local34 = false;
-		for (@Pc(36) int local36 = 0; local36 < local26.length; local36++) {
-			if (arg1 == local26[local36].anInt5276 && arg2 == local26[local36].anInt5275 && (!local34 || arg0 < local26[local36].anInt5279)) {
-				local34 = true;
-				arg0 = local26[local36].anInt5279;
-			}
-		}
-		if (!local34) {
-			return null;
-		}
-		@Pc(109) PrivilegedRequest local109 = arg3.enterFullScreen(arg1, arg2, arg0);
-		while (local109.status == 0) {
-			ThreadUtils.sleep(10L);
-		}
-		@Pc(124) Frame local124 = (Frame) local109.result;
-		if (local124 == null) {
-			return null;
-		} else if (local109.status == 2) {
-			Static31.method3658(arg3, local124);
-			return null;
-		} else {
-			return local124;
 		}
 	}
 

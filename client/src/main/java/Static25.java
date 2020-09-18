@@ -6,41 +6,6 @@ import dev.openrs2.deob.annotation.Pc;
 
 public final class Static25 {
 
-	@OriginalMember(owner = "client!mi", name = "b", descriptor = "(B)[Lclient!ub;")
-	public static Class169[] method2725() {
-		if (Static3.aClass169Array1 == null) {
-			@Pc(9) Class169[] local9 = Static11.method610(GameShell.signLink);
-			@Pc(13) Class169[] local13 = new Class169[local9.length];
-			@Pc(15) int local15 = 0;
-			label54:
-			for (@Pc(17) int local17 = 0; local17 < local9.length; local17++) {
-				@Pc(25) Class169 local25 = local9[local17];
-				if ((local25.anInt5279 <= 0 || local25.anInt5279 >= 24) && local25.anInt5276 >= 800 && local25.anInt5275 >= 600) {
-					for (@Pc(46) int local46 = 0; local46 < local15; local46++) {
-						@Pc(53) Class169 local53 = local13[local46];
-						if (local25.anInt5276 == local53.anInt5276 && local53.anInt5275 == local25.anInt5275) {
-							if (local53.anInt5279 < local25.anInt5279) {
-								local13[local46] = local25;
-							}
-							continue label54;
-						}
-					}
-					local13[local15] = local25;
-					local15++;
-				}
-			}
-			Static3.aClass169Array1 = new Class169[local15];
-			ArrayUtils.copy(local13, 0, Static3.aClass169Array1, 0, local15);
-			@Pc(107) int[] local107 = new int[Static3.aClass169Array1.length];
-			for (@Pc(109) int local109 = 0; local109 < Static3.aClass169Array1.length; local109++) {
-				@Pc(117) Class169 local117 = Static3.aClass169Array1[local109];
-				local107[local109] = local117.anInt5275 * local117.anInt5276;
-			}
-			Static9.method232(local107, Static3.aClass169Array1);
-		}
-		return Static3.aClass169Array1;
-	}
-
 	@OriginalMember(owner = "client!mj", name = "a", descriptor = "(IIIII[[[B[I[I[I[I[IIBII)V")
 	public static void method2728(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) byte[][][] arg5, @OriginalArg(6) int[] arg6, @OriginalArg(7) int[] arg7, @OriginalArg(8) int[] arg8, @OriginalArg(9) int[] arg9, @OriginalArg(10) int[] arg10, @OriginalArg(11) int arg11, @OriginalArg(12) byte arg12, @OriginalArg(13) int arg13, @OriginalArg(14) int arg14) {
 		if (arg0 < 0) {

@@ -12,7 +12,7 @@ public class Buffer extends Node {
 	private static int crc32(@OriginalArg(0) byte[] bytes, @OriginalArg(3) int off, @OriginalArg(1) int len) {
 		@Pc(7) int crc = -1;
 		for (@Pc(9) int i = off; i < len; i++) {
-			crc = Class169.CRC32_TABLE[(crc ^ bytes[i]) & 0xFF] ^ crc >>> 8;
+			crc = DisplayMode.CRC32_TABLE[(crc ^ bytes[i]) & 0xFF] ^ crc >>> 8;
 		}
 		return ~crc;
 	}

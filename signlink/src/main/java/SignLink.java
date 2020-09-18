@@ -571,8 +571,8 @@ public final class SignLink implements Runnable {
 	}
 
 	@OriginalMember(owner = "signlink!pm", name = "a", descriptor = "(IIIBI)Lsignlink!vk;")
-	public final PrivilegedRequest enterFullScreen(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1, @OriginalArg(4) int arg2) {
-		return this.enqueue(6, arg1 + (arg0 << 16), arg2 << 16, null);
+	public final PrivilegedRequest enterFullScreen(@OriginalArg(1) int width, @OriginalArg(2) int height, @OriginalArg(4) int bitDepth) {
+		return this.enqueue(6, height + (width << 16), bitDepth << 16, null);
 	}
 
 	@OriginalMember(owner = "signlink!pm", name = "a", descriptor = "(ZLjava/lang/String;Ljava/lang/Class;)Lsignlink!vk;")

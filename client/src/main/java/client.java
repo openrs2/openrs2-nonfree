@@ -781,7 +781,7 @@ public final class client extends GameShell {
 			GlRenderer.quit();
 		}
 		if (GameShell.fullScreenFrame != null) {
-			Static31.method3658(GameShell.signLink, GameShell.fullScreenFrame);
+			DisplayMode.exitFullScreen(GameShell.signLink, GameShell.fullScreenFrame);
 			GameShell.fullScreenFrame = null;
 		}
 		if (MouseRecorder.instance != null) {

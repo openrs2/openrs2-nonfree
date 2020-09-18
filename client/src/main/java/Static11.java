@@ -764,31 +764,6 @@ public final class Static11 {
 		Static9.method233(28);
 	}
 
-	@OriginalMember(owner = "client!cj", name = "a", descriptor = "(ILsignlink!pm;)[Lclient!ub;")
-	public static Class169[] method610(@OriginalArg(1) SignLink arg0) {
-		if (!arg0.isFullScreenSupported()) {
-			return new Class169[0];
-		}
-		@Pc(17) PrivilegedRequest local17 = arg0.getDisplayModes();
-		while (local17.status == 0) {
-			ThreadUtils.sleep(10L);
-		}
-		if (local17.status == 2) {
-			return new Class169[0];
-		}
-		@Pc(39) int[] local39 = (int[]) local17.result;
-		@Pc(45) Class169[] local45 = new Class169[local39.length >> 2];
-		for (@Pc(53) int local53 = 0; local53 < local45.length; local53++) {
-			@Pc(65) Class169 local65 = new Class169();
-			local45[local53] = local65;
-			local65.anInt5276 = local39[local53 << 2];
-			local65.anInt5275 = local39[(local53 << 2) + 1];
-			local65.anInt5279 = local39[(local53 << 2) + 2];
-			local65.anInt5277 = local39[(local53 << 2) + 3];
-		}
-		return local45;
-	}
-
 	@OriginalMember(owner = "client!ck", name = "a", descriptor = "(ZC)Z")
 	public static boolean method636(@OriginalArg(1) char arg0) {
 		return arg0 >= '0' && arg0 <= '9' || arg0 >= 'A' && arg0 <= 'Z' || arg0 >= 'a' && arg0 <= 'z';

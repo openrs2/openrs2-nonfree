@@ -470,35 +470,4 @@ public final class Static16 {
 		Static25.method2775((float) Static4.anInt3068, (float) Static7.anInt5363, (float) Static6.anInt5211);
 	}
 
-	@OriginalMember(owner = "client!gh", name = "a", descriptor = "(I[Ljava/lang/Object;II[I)V")
-	public static void method2017(@OriginalArg(0) int arg0, @OriginalArg(1) Object[] arg1, @OriginalArg(2) int arg2, @OriginalArg(4) int[] arg3) {
-		if (arg0 <= arg2) {
-			return;
-		}
-		@Pc(10) int local10 = (arg2 + arg0) / 2;
-		@Pc(12) int local12 = arg2;
-		@Pc(16) int local16 = arg3[local10];
-		arg3[local10] = arg3[arg0];
-		arg3[arg0] = local16;
-		@Pc(30) Object local30 = arg1[local10];
-		arg1[local10] = arg1[arg0];
-		arg1[arg0] = local30;
-		for (@Pc(42) int local42 = arg2; local42 < arg0; local42++) {
-			if (local16 + (local42 & 0x1) > arg3[local42]) {
-				@Pc(68) int local68 = arg3[local42];
-				arg3[local42] = arg3[local12];
-				arg3[local12] = local68;
-				@Pc(82) Object local82 = arg1[local42];
-				arg1[local42] = arg1[local12];
-				arg1[local12++] = local82;
-			}
-		}
-		arg3[arg0] = arg3[local12];
-		arg3[local12] = local16;
-		arg1[arg0] = arg1[local12];
-		arg1[local12] = local30;
-		method2017(local12 - 1, arg1, arg2, arg3);
-		method2017(arg0, arg1, local12 + 1, arg3);
-	}
-
 }

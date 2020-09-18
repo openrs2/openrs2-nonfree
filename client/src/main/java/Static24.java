@@ -219,11 +219,11 @@ public final class Static24 {
 			GlRenderer.quit();
 		}
 		if (GameShell.fullScreenFrame != null && (arg4 != 3 || arg0 != Preferences.fullScreenWidth || arg3 != Preferences.fullScreenHeight)) {
-			Static31.method3658(GameShell.signLink, GameShell.fullScreenFrame);
+			DisplayMode.exitFullScreen(GameShell.signLink, GameShell.fullScreenFrame);
 			GameShell.fullScreenFrame = null;
 		}
 		if (arg4 == 3 && GameShell.fullScreenFrame == null) {
-			GameShell.fullScreenFrame = Static8.method67(0, arg0, arg3, GameShell.signLink);
+			GameShell.fullScreenFrame = DisplayMode.enterFullScreen(GameShell.signLink, arg0, arg3, 0);
 			if (GameShell.fullScreenFrame != null) {
 				Preferences.fullScreenWidth = arg0;
 				Preferences.fullScreenHeight = arg3;
