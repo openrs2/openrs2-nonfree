@@ -4,11 +4,6 @@ import dev.openrs2.deob.annotation.Pc;
 
 public final class Static21 {
 
-	@OriginalMember(owner = "client!jc", name = "a", descriptor = "(CZ)Z")
-	public static boolean method1996(@OriginalArg(0) char arg0) {
-		return arg0 >= 'A' && arg0 <= 'Z' || arg0 >= 'a' && arg0 <= 'z';
-	}
-
 	@OriginalMember(owner = "client!jc", name = "e", descriptor = "(B)I")
 	public static int method1997() {
 		if ((double) Static3.aFloat69 == 3.0D) {

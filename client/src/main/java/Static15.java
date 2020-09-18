@@ -815,11 +815,6 @@ public final class Static15 {
 		}
 	}
 
-	@OriginalMember(owner = "client!fm", name = "a", descriptor = "(ZC)Z")
-	public static boolean method1478(@OriginalArg(1) char arg0) {
-		return arg0 >= '0' && arg0 <= '9';
-	}
-
 	@OriginalMember(owner = "client!fm", name = "a", descriptor = "(Z)V")
 	public static void method1479() {
 		@Pc(3) int local3 = Static5.anInt3890;

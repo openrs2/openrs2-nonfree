@@ -764,9 +764,4 @@ public final class Static11 {
 		Static9.method233(28);
 	}
 
-	@OriginalMember(owner = "client!ck", name = "a", descriptor = "(ZC)Z")
-	public static boolean method636(@OriginalArg(1) char arg0) {
-		return arg0 >= '0' && arg0 <= '9' || arg0 >= 'A' && arg0 <= 'Z' || arg0 >= 'a' && arg0 <= 'z';
-	}
-
 }

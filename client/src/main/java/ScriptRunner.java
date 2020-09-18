@@ -2337,21 +2337,21 @@ public final class ScriptRunner {
 							@Pc(11412) int local11412 = isp - 1;
 							@Pc(11415) int local11415 = intStack[local11412];
 							isp = local11412 + 1;
-							intStack[local11412] = Static11.method636((char) local11415) ? 1 : 0;
+							intStack[local11412] = CharUtils.isLetterOrDigit((char) local11415) ? 1 : 0;
 							continue;
 						}
 						if (opcode == 4115) {
 							@Pc(11434) int local11434 = isp - 1;
 							@Pc(11437) int local11437 = intStack[local11434];
 							isp = local11434 + 1;
-							intStack[local11434] = Static21.method1996((char) local11437) ? 1 : 0;
+							intStack[local11434] = CharUtils.isLetter((char) local11437) ? 1 : 0;
 							continue;
 						}
 						if (opcode == 4116) {
 							@Pc(11456) int local11456 = isp - 1;
 							@Pc(11459) int local11459 = intStack[local11456];
 							isp = local11456 + 1;
-							intStack[local11456] = Static15.method1478((char) local11459) ? 1 : 0;
+							intStack[local11456] = CharUtils.isDigit((char) local11459) ? 1 : 0;
 							continue;
 						}
 						if (opcode == 4117) {
