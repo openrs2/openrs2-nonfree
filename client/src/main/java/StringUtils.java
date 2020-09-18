@@ -351,4 +351,28 @@ public final class StringUtils {
 		}
 		return value;
 	}
+
+	@OriginalMember(owner = "client!gl", name = "b", descriptor = "(Ljava/lang/String;)Ljava/lang/String;")
+	public static String escape(@OriginalArg(0) String s) {
+		@Pc(2) int len = s.length();
+		@Pc(4) int escapedLen = 0;
+		for (@Pc(6) int i = 0; i < len; i++) {
+			@Pc(13) char c = s.charAt(i);
+			if (c == '<' || c == '>') {
+				escapedLen += 3;
+			}
+		}
+		@Pc(29) StringBuffer buffer = new StringBuffer(len + escapedLen);
+		for (@Pc(31) int i = 0; i < len; i++) {
+			@Pc(38) char c = s.charAt(i);
+			if (c == '<') {
+				buffer.append("<lt>");
+			} else if (c == '>') {
+				buffer.append("<gt>");
+			} else {
+				buffer.append(c);
+			}
+		}
+		return buffer.toString();
+	}
 }

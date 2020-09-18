@@ -559,7 +559,7 @@ public final class Protocol {
 			return true;
 		} else if (opcode == 104) {
 			@Pc(1858) long local1858 = inboundBuffer.readLong();
-			@Pc(1865) String local1865 = Static17.method2265(Static30.method3569(WordPack.readString(inboundBuffer)));
+			@Pc(1865) String local1865 = StringUtils.escape(Static30.method3569(WordPack.readString(inboundBuffer)));
 			Static26.method4357(Base37.decodeTitleCase(local1858), 6, local1865);
 			opcode = -1;
 			return true;
@@ -771,7 +771,7 @@ public final class Protocol {
 			if (!local2559 && Static3.anInt5405 == 0) {
 				Static4.aLongArray24[Static1.anInt595] = local2579;
 				Static1.anInt595 = (Static1.anInt595 + 1) % 100;
-				@Pc(2663) String local2663 = Static17.method2265(Static30.method3569(WordPack.readString(inboundBuffer)));
+				@Pc(2663) String local2663 = StringUtils.escape(Static30.method3569(WordPack.readString(inboundBuffer)));
 				if (local2583 == 2 || local2583 == 3) {
 					Static26.method4357("<img=1>" + Base37.decodeTitleCase(local2563), 7, local2663);
 				} else if (local2583 == 1) {
@@ -848,7 +848,7 @@ public final class Protocol {
 			if (!local2861 && Static3.anInt5405 == 0) {
 				Static4.aLongArray24[Static1.anInt595] = local2855;
 				Static1.anInt595 = (Static1.anInt595 + 1) % 100;
-				@Pc(2939) String local2939 = Static17.method2265(Static30.method3569(WordPack.readString(inboundBuffer)));
+				@Pc(2939) String local2939 = StringUtils.escape(Static30.method3569(WordPack.readString(inboundBuffer)));
 				if (local2859 == 2 || local2859 == 3) {
 					Static26.method2982("<img=1>" + Base37.decodeTitleCase(local2830), Base37.decodeTitleCase(local2838), local2939);
 				} else if (local2859 == 1) {
@@ -2348,7 +2348,7 @@ public final class Protocol {
 						phraseId = phrase.id;
 						message = phrase.type.decodeMessage(Static5.aClass4_Sub10_8);
 					} else {
-						message = Static17.method2265(Static30.method3569(WordPack.readString(Static5.aClass4_Sub10_8)));
+						message = StringUtils.escape(Static30.method3569(WordPack.readString(Static5.aClass4_Sub10_8)));
 					}
 					player.aString234 = message.trim();
 					player.anInt3998 = local232 & 0xFF;

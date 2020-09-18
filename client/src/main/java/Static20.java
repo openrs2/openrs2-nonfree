@@ -740,17 +740,6 @@ public final class Static20 {
 		return local3;
 	}
 
-	@OriginalMember(owner = "client!ij", name = "a", descriptor = "(IC)Z")
-	public static boolean method1907(@OriginalArg(1) char arg0) {
-		if (arg0 >= ' ' && arg0 <= '~') {
-			return true;
-		} else if (arg0 >= ' ' && arg0 <= 'ÿ') {
-			return true;
-		} else {
-			return arg0 == '€' || arg0 == 'Œ' || arg0 == '—' || arg0 == 'œ' || arg0 == 'Ÿ';
-		}
-	}
-
 	@OriginalMember(owner = "client!ik", name = "a", descriptor = "(III)V")
 	public static void method1916(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1) {
 		if (Static2.anInt1943 > 0) {

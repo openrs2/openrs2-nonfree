@@ -65,4 +65,44 @@ public final class IntUtils {
 		v += v >>> 16;
 		return v & 0xFF;
 	}
+
+	@OriginalMember(owner = "client!oh", name = "b", descriptor = "(II)I")
+	public static int signum(@OriginalArg(1) int v) {
+		if (v > 0) {
+			return 1;
+		} else if (v < 0) {
+			return -1;
+		} else {
+			return 0;
+		}
+	}
+
+	@OriginalMember(owner = "client!pj", name = "a", descriptor = "(ZIZ)Ljava/lang/String;")
+	public static String toString(@OriginalArg(1) int v) {
+		return v < 0 ? Integer.toString(v) : toStringInternal(v);
+	}
+
+	@OriginalMember(owner = "client!hn", name = "a", descriptor = "(IIIZ)Ljava/lang/String;")
+	private static String toStringInternal(@OriginalArg(0) int v) {
+		if (v < 0) {
+			return Integer.toString(v, 10);
+		}
+		@Pc(46) int len = 2;
+		for (@Pc(50) int temp = v / 10; temp != 0; temp /= 10) {
+			len++;
+		}
+		@Pc(65) char[] chars = new char[len];
+		chars[0] = '+';
+		for (@Pc(73) int i = len - 1; i > 0; i--) {
+			@Pc(78) int prevValue = v;
+			v /= 10;
+			@Pc(89) int digit = prevValue - v * 10;
+			if (digit >= 10) {
+				chars[i] = (char) (digit + 87);
+			} else {
+				chars[i] = (char) (digit + 48);
+			}
+		}
+		return new String(chars);
+	}
 }

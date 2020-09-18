@@ -2228,7 +2228,7 @@ public final class ScriptRunner {
 							@Pc(11050) int local11050 = ssp - 1;
 							@Pc(11053) String local11053 = stringStack[local11050];
 							ssp = local11050 + 1;
-							stringStack[local11050] = local11053 + Static29.method3436(local11048);
+							stringStack[local11050] = local11053 + IntUtils.toString(local11048);
 							continue;
 						}
 						if (opcode == 4103) {
@@ -2270,7 +2270,7 @@ public final class ScriptRunner {
 						}
 						if (opcode == 4107) {
 							ssp -= 2;
-							intStack[isp++] = Static27.method3220(StringUtils.compare(stringStack[ssp], stringStack[ssp + 1], client.language));
+							intStack[isp++] = IntUtils.signum(StringUtils.compare(stringStack[ssp], stringStack[ssp + 1], client.language));
 							continue;
 						}
 						if (opcode == 4108) {
@@ -2311,7 +2311,7 @@ public final class ScriptRunner {
 							@Pc(11329) int local11329 = ssp - 1;
 							@Pc(11332) String local11332 = stringStack[local11329];
 							ssp = local11329 + 1;
-							stringStack[local11329] = Static17.method2265(local11332);
+							stringStack[local11329] = StringUtils.escape(local11332);
 							continue;
 						}
 						if (opcode == 4112) {
@@ -2330,7 +2330,7 @@ public final class ScriptRunner {
 							@Pc(11387) int local11387 = isp - 1;
 							@Pc(11390) int local11390 = intStack[local11387];
 							isp = local11387 + 1;
-							intStack[local11387] = Static20.method1907((char) local11390) ? 1 : 0;
+							intStack[local11387] = Cp1252Charset.isPrintable((char) local11390) ? 1 : 0;
 							continue;
 						}
 						if (opcode == 4114) {
@@ -2432,7 +2432,7 @@ public final class ScriptRunner {
 							@Pc(11712) boolean local11712 = intStack[local11703] != 0;
 							isp = local11703 - 1;
 							@Pc(11717) int local11717 = intStack[isp];
-							stringStack[ssp++] = Static36.method4434((long) local11717, local11712, 0, client.language);
+							stringStack[ssp++] = LongUtils.fixedPointToString((long) local11717, local11712, 0, client.language);
 							continue;
 						}
 					} else if (opcode < 4300) {

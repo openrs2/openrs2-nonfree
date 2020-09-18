@@ -22,51 +22,6 @@ public final class Static36 {
 		Static28.method3249();
 	}
 
-	@OriginalMember(owner = "client!vb", name = "a", descriptor = "(JZIII)Ljava/lang/String;")
-	public static String method4434(@OriginalArg(0) long arg0, @OriginalArg(1) boolean arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3) {
-		@Pc(3) char local3 = ',';
-		@Pc(5) char local5 = '.';
-		@Pc(11) boolean local11 = false;
-		if (arg3 == 0) {
-			local5 = ',';
-			local3 = '.';
-		}
-		if (arg3 == 2) {
-			local5 = ' ';
-		}
-		if (arg0 < 0L) {
-			local11 = true;
-			arg0 = -arg0;
-		}
-		@Pc(53) StringBuffer local53 = new StringBuffer(26);
-		if (arg2 > 0) {
-			for (@Pc(58) int local58 = 0; local58 < arg2; local58++) {
-				@Pc(68) int local68 = (int) arg0;
-				arg0 /= 10L;
-				local53.append((char) (local68 + 48 - (int) arg0 * 10));
-			}
-			local53.append(local3);
-		}
-		@Pc(93) int local93 = 0;
-		while (true) {
-			@Pc(96) int local96 = (int) arg0;
-			arg0 /= 10L;
-			local53.append((char) (local96 + 48 - (int) arg0 * 10));
-			if (arg0 == 0L) {
-				if (local11) {
-					local53.append('-');
-				}
-				return local53.reverse().toString();
-			}
-			if (arg1) {
-				local93++;
-				if (local93 % 3 == 0) {
-					local53.append(local5);
-				}
-			}
-		}
-	}
-
 	@OriginalMember(owner = "client!vc", name = "a", descriptor = "(IZLclient!fg;ILclient!ho;)V")
 	public static void method3811(@OriginalArg(0) int arg0, @OriginalArg(2) Class4_Sub3_Sub7 arg1, @OriginalArg(3) int arg2, @OriginalArg(4) MelType arg3) {
 		if (arg3.anIntArray188 != null) {

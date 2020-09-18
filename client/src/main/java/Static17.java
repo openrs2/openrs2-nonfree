@@ -238,30 +238,6 @@ public final class Static17 {
 		Static3.anInt2094 = 0;
 	}
 
-	@OriginalMember(owner = "client!gl", name = "b", descriptor = "(Ljava/lang/String;)Ljava/lang/String;")
-	public static String method2265(@OriginalArg(0) String arg0) {
-		@Pc(2) int local2 = arg0.length();
-		@Pc(4) int local4 = 0;
-		for (@Pc(6) int local6 = 0; local6 < local2; local6++) {
-			@Pc(13) char local13 = arg0.charAt(local6);
-			if (local13 == '<' || local13 == '>') {
-				local4 += 3;
-			}
-		}
-		@Pc(29) StringBuffer local29 = new StringBuffer(local2 + local4);
-		for (@Pc(31) int local31 = 0; local31 < local2; local31++) {
-			@Pc(38) char local38 = arg0.charAt(local31);
-			if (local38 == '<') {
-				local29.append("<lt>");
-			} else if (local38 == '>') {
-				local29.append("<gt>");
-			} else {
-				local29.append(local38);
-			}
-		}
-		return local29.toString();
-	}
-
 	@OriginalMember(owner = "client!gl", name = "a", descriptor = "([[B[[B[I[I[III)I")
 	public static int method2270(@OriginalArg(0) byte[][] arg0, @OriginalArg(1) byte[][] arg1, @OriginalArg(2) int[] arg2, @OriginalArg(3) int[] arg3, @OriginalArg(4) int[] arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6) {
 		@Pc(3) int local3 = arg2[arg5];

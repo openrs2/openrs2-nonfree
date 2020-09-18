@@ -260,7 +260,7 @@ public final class Static30 {
 								}
 								@Pc(923) int local923 = local883 * 100 / local885;
 								@Pc(929) int local929 = local881 * 10000 / local885;
-								@Pc(950) String local950 = "Cache:" + Static36.method4434((long) local929, true, 2, 0) + "% (" + local923 + "%)";
+								@Pc(950) String local950 = "Cache:" + LongUtils.fixedPointToString((long) local929, true, 2, 0) + "% (" + local923 + "%)";
 								Static1.aClass4_Sub3_Sub5_1.method2275(local950, local787, local841, 16776960, -1);
 								@Pc(958) int local958 = local841 + 12;
 								if (ParticleManager.particles > 0) {

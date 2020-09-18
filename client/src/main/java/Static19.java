@@ -81,30 +81,6 @@ public final class Static19 {
 		NpcTypeList.models.clear();
 	}
 
-	@OriginalMember(owner = "client!hn", name = "a", descriptor = "(IIIZ)Ljava/lang/String;")
-	public static String method4377(@OriginalArg(0) int arg0) {
-		if (arg0 < 0) {
-			return Integer.toString(arg0, 10);
-		}
-		@Pc(46) int local46 = 2;
-		for (@Pc(50) int local50 = arg0 / 10; local50 != 0; local50 /= 10) {
-			local46++;
-		}
-		@Pc(65) char[] local65 = new char[local46];
-		local65[0] = '+';
-		for (@Pc(73) int local73 = local46 - 1; local73 > 0; local73--) {
-			@Pc(78) int local78 = arg0;
-			arg0 /= 10;
-			@Pc(89) int local89 = local78 - arg0 * 10;
-			if (local89 >= 10) {
-				local65[local73] = (char) (local89 + 87);
-			} else {
-				local65[local73] = (char) (local89 + 48);
-			}
-		}
-		return new String(local65);
-	}
-
 	@OriginalMember(owner = "client!hn", name = "a", descriptor = "(IIIIII)V")
 	public static void method4379(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4) {
 		Static18.method1656(Static5.anIntArrayArray36[arg3], arg2, arg1 - arg4, arg4 + arg1);

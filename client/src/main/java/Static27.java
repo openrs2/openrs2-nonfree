@@ -780,17 +780,6 @@ public final class Static27 {
 		Static6.aClass26_50.clean(5);
 	}
 
-	@OriginalMember(owner = "client!oh", name = "b", descriptor = "(II)I")
-	public static int method3220(@OriginalArg(1) int arg0) {
-		if (arg0 > 0) {
-			return 1;
-		} else if (arg0 < 0) {
-			return -1;
-		} else {
-			return 0;
-		}
-	}
-
 	@OriginalMember(owner = "client!oi", name = "a", descriptor = "(Lclient!fh;BII)[Lclient!uj;")
 	public static Sprite[] method3225(@OriginalArg(0) Js5 arg0, @OriginalArg(3) int arg1) {
 		return Static9.method197(arg0, arg1, 0) ? Static21.method2064() : null;

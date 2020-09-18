@@ -262,4 +262,15 @@ public final class Cp1252Charset {
 		}
 		return false;
 	}
+
+	@OriginalMember(owner = "client!ij", name = "a", descriptor = "(IC)Z")
+	public static boolean isPrintable(@OriginalArg(1) char c) {
+		if (c >= ' ' && c <= '~') {
+			return true;
+		} else if (c >= ' ' && c <= 'ÿ') {
+			return true;
+		} else {
+			return c == '€' || c == 'Œ' || c == '—' || c == 'œ' || c == 'Ÿ';
+		}
+	}
 }

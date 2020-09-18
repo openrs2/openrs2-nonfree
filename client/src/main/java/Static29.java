@@ -714,11 +714,6 @@ public final class Static29 {
 		}
 	}
 
-	@OriginalMember(owner = "client!pj", name = "a", descriptor = "(ZIZ)Ljava/lang/String;")
-	public static String method3436(@OriginalArg(1) int arg0) {
-		return arg0 < 0 ? Integer.toString(arg0) : Static19.method4377(arg0);
-	}
-
 	@OriginalMember(owner = "client!pk", name = "a", descriptor = "(Lclient!eg;IIIZZ)V")
 	public static void method3461(@OriginalArg(0) SeqType arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) boolean arg4) {
 		if (Static6.anInt4457 >= 50 || (arg0 == null || arg0.anIntArrayArray11 == null || arg0.anIntArrayArray11.length <= arg3 || arg0.anIntArrayArray11[arg3] == null)) {
