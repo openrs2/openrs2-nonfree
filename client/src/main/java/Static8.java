@@ -25,7 +25,7 @@ public final class Static8 {
 		@Pc(59) int prevOriginZ = Static7.originZ;
 		Static5.originX = zoneX * 8 - 48;
 		Static7.originZ = zoneZ * 8 - 48;
-		Static2.aClass4_Sub3_Sub22_1 = Static19.method2394(Static4.centralZoneX * 8, Static1.centralZoneZ * 8);
+		Static2.aClass4_Sub3_Sub22_1 = MapAreaList.getContainingSource(Static4.centralZoneX * 8, Static1.centralZoneZ * 8);
 		Static7.aClass138_14 = null;
 		@Pc(90) int dz = Static7.originZ - prevOriginZ;
 		@Pc(95) int dx = Static5.originX - prevOriginX;
@@ -399,12 +399,12 @@ public final class Static8 {
 	public static boolean method120(@OriginalArg(0) MelType arg0) {
 		if (arg0 == null) {
 			return false;
-		} else if (!arg0.aBoolean154) {
+		} else if (!arg0.worldMapVisible) {
 			return false;
 		} else if (!arg0.method1810()) {
 			return false;
 		} else if (Static3.aClass84_10.get((long) arg0.id) == null) {
-			return Static3.aClass84_9.get((long) arg0.anInt2284) == null;
+			return Static3.aClass84_9.get((long) arg0.category) == null;
 		} else {
 			return false;
 		}

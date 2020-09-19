@@ -30,9 +30,6 @@ public final class Static4 {
 	@OriginalMember(owner = "client!k", name = "b", descriptor = "Lclient!vn;")
 	public static SoftwareSprite aClass4_Sub3_Sub14_Sub1_4;
 
-	@OriginalMember(owner = "client!k", name = "c", descriptor = "Lclient!kk;")
-	public static WorldMapFont aClass106_3;
-
 	@OriginalMember(owner = "client!k", name = "d", descriptor = "I")
 	public static int anInt2741;
 
@@ -144,17 +141,11 @@ public final class Static4 {
 	@OriginalMember(owner = "client!me", name = "c", descriptor = "I")
 	public static int anInt3309;
 
-	@OriginalMember(owner = "client!me", name = "d", descriptor = "Lclient!kk;")
-	public static WorldMapFont aClass106_4;
-
 	@OriginalMember(owner = "client!mf", name = "j", descriptor = "[I")
 	public static int[] underwaterMapGroupIds;
 
 	@OriginalMember(owner = "client!mf", name = "l", descriptor = "I")
 	public static int anInt3317;
-
-	@OriginalMember(owner = "client!mg", name = "g", descriptor = "Lclient!kk;")
-	public static WorldMapFont aClass106_5;
 
 	@OriginalMember(owner = "client!mg", name = "t", descriptor = "B")
 	public static byte aByte6;
@@ -221,9 +212,6 @@ public final class Static4 {
 
 	@OriginalMember(owner = "client!jk", name = "t", descriptor = "I")
 	public static int anInt2643 = -1;
-
-	@OriginalMember(owner = "client!jk", name = "u", descriptor = "I")
-	public static int anInt2644 = 0;
 
 	@OriginalMember(owner = "client!jl", name = "M", descriptor = "I")
 	public static int anInt2663 = 0;

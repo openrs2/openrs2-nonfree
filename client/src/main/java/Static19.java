@@ -334,38 +334,6 @@ public final class Static19 {
 		Static3.aByteBuffer4 = null;
 	}
 
-	@OriginalMember(owner = "client!ii", name = "a", descriptor = "(Lclient!fh;)V")
-	public static void method2393(@OriginalArg(0) Js5 arg0) {
-		Static3.aClass58_65 = arg0;
-		Static3.aClass84_14.clear();
-		@Pc(9) int local9 = Static3.aClass58_65.getGroupId("details");
-		@Pc(14) int[] local14 = Static3.aClass58_65.getFileIds(local9);
-		for (@Pc(16) int local16 = 0; local16 < local14.length; local16++) {
-			Static3.aClass84_14.put((long) local14[local16], Static16.method1562(local14[local16], new Buffer(Static3.aClass58_65.fetchFile(local9, local14[local16]))));
-		}
-	}
-
-	@OriginalMember(owner = "client!ii", name = "a", descriptor = "(II)Lclient!wg;")
-	public static Class4_Sub3_Sub22 method2394(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
-		for (@Pc(4) Class4_Sub3_Sub22 local4 = (Class4_Sub3_Sub22) Static3.aClass84_14.head(); local4 != null; local4 = (Class4_Sub3_Sub22) Static3.aClass84_14.next()) {
-			if (local4.aBoolean420 && local4.method4754(arg0, arg1)) {
-				return local4;
-			}
-		}
-		return null;
-	}
-
-	@OriginalMember(owner = "client!ii", name = "b", descriptor = "(II)Lclient!uk;")
-	public static SecondaryLinkedList method2395(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
-		@Pc(3) SecondaryLinkedList local3 = new SecondaryLinkedList();
-		for (@Pc(8) Class4_Sub3_Sub22 local8 = (Class4_Sub3_Sub22) Static3.aClass84_14.head(); local8 != null; local8 = (Class4_Sub3_Sub22) Static3.aClass84_14.next()) {
-			if (local8.aBoolean420 && local8.method4754(arg0, arg1)) {
-				local3.addTail(local8);
-			}
-		}
-		return local3;
-	}
-
 	@OriginalMember(owner = "client!ii", name = "a", descriptor = "(IIII)V")
 	public static void method2396(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
 		@Pc(3) int local3 = Static3.anInt2972 - Static3.anInt2973;
@@ -404,8 +372,8 @@ public final class Static19 {
 							@Pc(231) int local231 = (local219 << 6) + local225;
 							@Pc(250) int local250;
 							if (local213 < 0 || local213 > local142.length - 1 || local142[local213] == null) {
-								if (Static3.aClass4_Sub3_Sub22_3.anInt5995 != -1) {
-									local250 = Static3.aClass4_Sub3_Sub22_3.anInt5995;
+								if (WorldMap.currentMap.backgroundColor != -1) {
+									local250 = WorldMap.currentMap.backgroundColor;
 								} else if ((local17 + Static3.anInt2973 & 0x4) == (local172 + Static3.anInt2967 & 0x4)) {
 									local250 = Static3.anIntArray266[FloType.anInt549 + 1];
 								} else {
@@ -521,8 +489,8 @@ public final class Static19 {
 						@Pc(93) int local93 = (arg1 * (local68 + 1) >> 16) + Static3.anInt2968;
 						@Pc(97) int local97 = local93 - local81;
 						@Pc(104) int local104;
-						if (Static3.aClass4_Sub3_Sub22_3.anInt5995 != -1) {
-							local104 = Static3.aClass4_Sub3_Sub22_3.anInt5995;
+						if (WorldMap.currentMap.backgroundColor != -1) {
+							local104 = WorldMap.currentMap.backgroundColor;
 						} else if ((local17 + Static3.anInt2973 & 0x4) == (local68 + Static3.anInt2967 & 0x4)) {
 							local104 = Static3.anIntArray266[FloType.anInt549 + 1];
 						} else {
@@ -665,9 +633,9 @@ public final class Static19 {
 
 	@OriginalMember(owner = "client!ii", name = "c", descriptor = "()V")
 	public static void method2400() {
-		for (@Pc(1) int local1 = 0; local1 < Static3.aClass138_6.anInt4219; local1++) {
-			if (Static3.aClass138_6.aClass4_Sub3_Sub7Array1[local1] != null) {
-				Static3.aClass175_12.addTail(Static3.aClass138_6.aClass4_Sub3_Sub7Array1[local1]);
+		for (@Pc(1) int local1 = 0; local1 < Static3.aClass138_6.size; local1++) {
+			if (Static3.aClass138_6.elements[local1] != null) {
+				Static3.aClass175_12.addTail(Static3.aClass138_6.elements[local1]);
 			}
 		}
 	}
@@ -684,8 +652,4 @@ public final class Static19 {
 		Static3.anInt2971 = arg7;
 	}
 
-	@OriginalMember(owner = "client!ii", name = "a", descriptor = "(I)V")
-	public static void method2402(@OriginalArg(0) int arg0) {
-		Static3.aClass4_Sub3_Sub22_3 = (Class4_Sub3_Sub22) Static3.aClass84_14.get((long) arg0);
-	}
 }

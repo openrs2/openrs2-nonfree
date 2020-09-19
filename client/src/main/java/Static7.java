@@ -77,7 +77,7 @@ public final class Static7 {
 	public static short[] aShortArray114;
 
 	@OriginalMember(owner = "client!vc", name = "a", descriptor = "Lclient!po;")
-	public static Class138 aClass138_14;
+	public static MapElementList aClass138_14;
 
 	@OriginalMember(owner = "client!vd", name = "c", descriptor = "I")
 	public static int originZ;

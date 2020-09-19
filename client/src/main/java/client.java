@@ -717,7 +717,7 @@ public final class client extends GameShell {
 				mainLoadSecondaryText = LocalisedText.MAINLOAD130 + (js5Archive13.getPercentageComplete() / 20 + 85) + "%";
 				mainLoadPercentage = 85;
 			} else if (js5Archive23.isFileReady("details")) {
-				Static19.method2393(js5Archive23);
+				MapAreaList.init(js5Archive23);
 				ParticleManager.init(js5Archive27);
 				Static13.method1028(js5Archive7);
 				mainLoadState = 135;

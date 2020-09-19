@@ -5,13 +5,13 @@ import dev.openrs2.deob.annotation.Pc;
 public final class Static11 {
 
 	@OriginalMember(owner = "client!ca", name = "f", descriptor = "(B)Lclient!fg;")
-	public static Class4_Sub3_Sub7 method492() {
+	public static MapElement method492() {
 		if (Static3.aClass175_12 == null) {
 			return null;
 		} else {
 			Static1.aClass130_1.method3256(Static3.aClass175_12);
-			@Pc(24) Class4_Sub3_Sub7 local24 = (Class4_Sub3_Sub7) Static1.aClass130_1.method3255();
-			@Pc(29) MelType local29 = MelTypeList.get(local24.anInt1760);
+			@Pc(24) MapElement local24 = (MapElement) Static1.aClass130_1.method3255();
+			@Pc(29) MelType local29 = MelTypeList.get(local24.id);
 			return local29 != null && local29.aBoolean157 && local29.method1810() ? local24 : Static24.method2713();
 		}
 	}

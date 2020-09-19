@@ -130,17 +130,11 @@ public final class Static3 {
 	@OriginalMember(owner = "client!ih", name = "G", descriptor = "Ljava/nio/ByteBuffer;")
 	public static ByteBuffer aByteBuffer5;
 
-	@OriginalMember(owner = "client!ii", name = "b", descriptor = "Lclient!fh;")
-	public static Js5 aClass58_65;
-
-	@OriginalMember(owner = "client!ii", name = "d", descriptor = "Lclient!wg;")
-	public static Class4_Sub3_Sub22 aClass4_Sub3_Sub22_3;
-
 	@OriginalMember(owner = "client!ii", name = "e", descriptor = "I")
 	public static int anInt2960;
 
 	@OriginalMember(owner = "client!ii", name = "f", descriptor = "Lclient!po;")
-	public static Class138 aClass138_6;
+	public static MapElementList aClass138_6;
 
 	@OriginalMember(owner = "client!ii", name = "g", descriptor = "I")
 	public static int anInt2961;
@@ -432,9 +426,6 @@ public final class Static3 {
 
 	@OriginalMember(owner = "client!ig", name = "g", descriptor = "[I")
 	public static int[] anIntArray199 = null;
-
-	@OriginalMember(owner = "client!ii", name = "a", descriptor = "Lclient!ic;")
-	public static final HashTable aClass84_14 = new HashTable(16);
 
 	@OriginalMember(owner = "client!ii", name = "c", descriptor = "Lclient!uk;")
 	public static final SecondaryLinkedList aClass175_12 = new SecondaryLinkedList();

@@ -335,35 +335,6 @@ public final class Static16 {
 		return Static4.aFloatArray64;
 	}
 
-	@OriginalMember(owner = "client!gd", name = "a", descriptor = "(Lclient!fh;ILjava/lang/String;Z)Lclient!po;")
-	public static Class138 method1555(@OriginalArg(0) Js5 arg0, @OriginalArg(2) String arg1, @OriginalArg(3) boolean arg2) {
-		@Pc(10) int local10 = arg0.getGroupId(arg1);
-		if (local10 == -1) {
-			return new Class138(0);
-		}
-		@Pc(23) int[] local23 = arg0.getFileIds(local10);
-		@Pc(29) Class138 local29 = new Class138(local23.length);
-		@Pc(31) int local31 = 0;
-		@Pc(39) int local39 = 0;
-		while (true) {
-			while (local29.anInt4219 > local31) {
-				@Pc(59) Buffer local59 = new Buffer(arg0.fetchFile(local10, local23[local39++]));
-				@Pc(63) int local63 = local59.readInt();
-				@Pc(67) int local67 = local59.readUnsignedShort();
-				@Pc(71) int local71 = local59.readUnsignedByte();
-				if (!arg2 && local71 == 1) {
-					local29.anInt4219--;
-				} else {
-					local29.anIntArray448[local31] = local63;
-					local29.aClass4_Sub3_Sub7Array1[local31] = new Class4_Sub3_Sub7();
-					local29.aClass4_Sub3_Sub7Array1[local31].anInt1760 = local67;
-					local31++;
-				}
-			}
-			return local29;
-		}
-	}
-
 	@OriginalMember(owner = "client!gd", name = "a", descriptor = "(I)V")
 	public static void method1556() {
 		Static5.aClass56Array5 = null;
@@ -399,17 +370,6 @@ public final class Static16 {
 				Static6.aBooleanArray24[local11] = true;
 			}
 		}
-	}
-
-	@OriginalMember(owner = "client!ge", name = "a", descriptor = "(IILclient!fd;)Lclient!wg;")
-	public static Class4_Sub3_Sub22 method1562(@OriginalArg(0) int arg0, @OriginalArg(2) Buffer arg1) {
-		@Pc(41) Class4_Sub3_Sub22 local41 = new Class4_Sub3_Sub22(arg0, arg1.readString(), arg1.readString(), arg1.readInt(), arg1.readInt(), arg1.readUnsignedByte() == 1, arg1.readUnsignedByte());
-		@Pc(49) int local49 = arg1.readUnsignedByte();
-		for (@Pc(51) int local51 = 0; local51 < local49; local51++) {
-			local41.aClass112_31.addTail(new Class4_Sub7(arg1.readUnsignedByte(), arg1.readUnsignedByte(), arg1.readUnsignedShort(), arg1.readUnsignedShort(), arg1.readUnsignedShort(), arg1.readUnsignedShort(), arg1.readUnsignedShort(), arg1.readUnsignedShort(), arg1.readUnsignedShort(), arg1.readUnsignedShort()));
-		}
-		local41.method4759();
-		return local41;
 	}
 
 	@OriginalMember(owner = "client!gf", name = "a", descriptor = "(B)V")

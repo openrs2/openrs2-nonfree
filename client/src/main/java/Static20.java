@@ -17,11 +17,11 @@ public final class Static20 {
 	}
 
 	@OriginalMember(owner = "client!ii", name = "a", descriptor = "(Lclient!fg;IIII)V")
-	private static void method2404(@OriginalArg(0) Class4_Sub3_Sub7 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
-		arg0.anInt1766 = Static3.anInt2969 + (arg1 * (arg0.anInt1768 - Static3.anInt2973) >> 16);
-		arg0.anInt1764 = Static3.anInt2968 + (arg2 * (arg0.anInt1769 - Static3.anInt2967) >> 16);
-		@Pc(32) MelType local32 = MelTypeList.get(arg0.anInt1760);
-		if (local32.anInt2277 != -1) {
+	private static void method2404(@OriginalArg(0) MapElement arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
+		arg0.anInt1766 = Static3.anInt2969 + (arg1 * (arg0.x - Static3.anInt2973) >> 16);
+		arg0.anInt1764 = Static3.anInt2968 + (arg2 * (arg0.z - Static3.anInt2967) >> 16);
+		@Pc(32) MelType local32 = MelTypeList.get(arg0.id);
+		if (local32.sprite != -1) {
 			@Pc(42) IndexedSprite local42 = local32.method1811(false, true);
 			if (local42 != null) {
 				if (arg0.anInt1766 - (local42.anInt3408 + 1 >> 1) <= Static3.anInt2970 && arg0.anInt1766 + (local42.anInt3408 + 1 >> 1) >= Static3.anInt2969 && arg0.anInt1764 - (local42.anInt3413 + 1 >> 1) <= Static3.anInt2971 && arg0.anInt1764 + (local42.anInt3413 + 1 >> 1) >= Static3.anInt2968) {
@@ -32,20 +32,15 @@ public final class Static20 {
 				return;
 			}
 		}
-		if (arg0.anInt1768 >= Static3.anInt2973 && arg0.anInt1768 <= Static3.anInt2972 && arg0.anInt1769 >= Static3.anInt2967 && arg0.anInt1769 <= Static3.anInt2966) {
+		if (arg0.x >= Static3.anInt2973 && arg0.x <= Static3.anInt2972 && arg0.z >= Static3.anInt2967 && arg0.z <= Static3.anInt2966) {
 			arg0.aBoolean106 = false;
 		} else {
 			arg0.aBoolean106 = true;
 		}
 	}
 
-	@OriginalMember(owner = "client!ii", name = "b", descriptor = "(I)Lclient!wg;")
-	public static Class4_Sub3_Sub22 method2405(@OriginalArg(0) int arg0) {
-		return (Class4_Sub3_Sub22) Static3.aClass84_14.get((long) arg0);
-	}
-
 	@OriginalMember(owner = "client!ii", name = "b", descriptor = "(Lclient!fd;)V")
-	private static void method2406(@OriginalArg(0) Buffer arg0) {
+	public static void method2406(@OriginalArg(0) Buffer arg0) {
 		label83:
 		while (true) {
 			if (arg0.position < arg0.bytes.length) {
@@ -105,7 +100,7 @@ public final class Static20 {
 	}
 
 	@OriginalMember(owner = "client!ii", name = "a", descriptor = "(Lclient!fd;Z)V")
-	private static void method2407(@OriginalArg(0) Buffer arg0, @OriginalArg(1) boolean arg1) {
+	public static void method2407(@OriginalArg(0) Buffer arg0, @OriginalArg(1) boolean arg1) {
 		label125:
 		while (true) {
 			if (arg0.position < arg0.bytes.length) {
@@ -159,11 +154,11 @@ public final class Static20 {
 											}
 										}
 										if ((!local207.members || arg1) && local207.anInt5526 != -1) {
-											@Pc(236) Class4_Sub3_Sub7 local236 = new Class4_Sub3_Sub7();
-											local236.anInt1760 = local207.anInt5526;
-											local236.anInt1763 = local202;
-											local236.anInt1768 = local68 * 64 + local74;
-											local236.anInt1769 = local72 * 64 + 64 - local79;
+											@Pc(236) MapElement local236 = new MapElement();
+											local236.id = local207.anInt5526;
+											local236.y = local202;
+											local236.x = local68 * 64 + local74;
+											local236.z = local72 * 64 + 64 - local79;
 											Static3.aClass175_12.addTail(local236);
 										}
 									}
@@ -198,7 +193,7 @@ public final class Static20 {
 	}
 
 	@OriginalMember(owner = "client!ii", name = "c", descriptor = "(II)V")
-	private static void method2408(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
+	public static void method2408(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
 		for (@Pc(1) int local1 = 0; local1 < FloTypeList.capacity; local1++) {
 			@Pc(8) FloType local8 = FloTypeList.get(local1);
 			if (local8 != null) {
@@ -722,17 +717,17 @@ public final class Static20 {
 	@OriginalMember(owner = "client!ii", name = "b", descriptor = "(IIII)Lclient!ll;")
 	public static LinkedList method2410(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
 		@Pc(3) LinkedList local3 = new LinkedList();
-		for (@Pc(8) Class4_Sub3_Sub7 local8 = (Class4_Sub3_Sub7) Static3.aClass175_12.head(); local8 != null; local8 = (Class4_Sub3_Sub7) Static3.aClass175_12.next()) {
+		for (@Pc(8) MapElement local8 = (MapElement) Static3.aClass175_12.head(); local8 != null; local8 = (MapElement) Static3.aClass175_12.next()) {
 			method2404(local8, arg0, arg1);
 			local3.addTail(local8);
 		}
 		@Pc(29) int[] local29 = new int[3];
-		for (@Pc(31) int local31 = 0; local31 < Static3.aClass138_6.anInt4219; local31++) {
-			@Pc(40) Class4_Sub3_Sub7 local40 = Static3.aClass138_6.aClass4_Sub3_Sub7Array1[local31];
-			@Pc(67) boolean local67 = Static3.aClass4_Sub3_Sub22_3.method4753(Static3.aClass138_6.anIntArray448[local31] & 0x3FFF, Static3.aClass138_6.anIntArray448[local31] >> 28 & 0x3, local29, Static3.aClass138_6.anIntArray448[local31] >> 14 & 0x3FFF);
+		for (@Pc(31) int local31 = 0; local31 < Static3.aClass138_6.size; local31++) {
+			@Pc(40) MapElement local40 = Static3.aClass138_6.elements[local31];
+			@Pc(67) boolean local67 = WorldMap.currentMap.convertSourceToDisplay(Static3.aClass138_6.positions[local31] >> 28 & 0x3, Static3.aClass138_6.positions[local31] >> 14 & 0x3FFF, Static3.aClass138_6.positions[local31] & 0x3FFF, local29);
 			if (local67) {
-				local40.anInt1768 = local29[1] - Static3.anInt2962;
-				local40.anInt1769 = Static3.anInt2960 + Static3.anInt2961 - local29[2] - 1;
+				local40.x = local29[1] - Static3.anInt2962;
+				local40.z = Static3.anInt2960 + Static3.anInt2961 - local29[2] - 1;
 				method2404(local40, arg0, arg1);
 				local3.addTail(local40);
 			}
@@ -812,162 +807,6 @@ public final class Static20 {
 		}
 	}
 
-	@OriginalMember(owner = "client!il", name = "a", descriptor = "(B)V")
-	private static void method1922() {
-		if (Static3.aClass4_Sub3_Sub22_3 == null) {
-			return;
-		}
-		if (Static4.anInt2644 < 10) {
-			if (!Static3.aClass58_65.isFileReady(Static3.aClass4_Sub3_Sub22_3.aString358)) {
-				Static4.anInt2644 = client.js5Archive23.getPercentageComplete(Static3.aClass4_Sub3_Sub22_3.aString358) / 10;
-				return;
-			}
-			Static30.method3597();
-			Static4.anInt2644 = 10;
-		}
-		if (Static4.anInt2644 == 10) {
-			Static3.anInt2962 = Static3.aClass4_Sub3_Sub22_3.anInt5991 >> 6 << 6;
-			Static3.anInt2965 = (Static3.aClass4_Sub3_Sub22_3.anInt6002 >> 6 << 6) + 64 - Static3.anInt2962;
-			Static3.anInt2961 = Static3.aClass4_Sub3_Sub22_3.anInt5996 >> 6 << 6;
-			@Pc(70) int[] local70 = new int[3];
-			Static3.anInt2960 = (Static3.aClass4_Sub3_Sub22_3.anInt6007 >> 6 << 6) + 64 - Static3.anInt2961;
-			@Pc(84) int local84 = -1;
-			@Pc(86) int local86 = -1;
-			if (Static3.aClass4_Sub3_Sub22_3.method4753(Static7.originZ + (PlayerList.self.z >> 7), Static7.y, local70, (PlayerList.self.x >> 7) + Static5.originX)) {
-				local86 = local70[1] - Static3.anInt2962;
-				local84 = Static3.anInt2961 + Static3.anInt2960 - local70[2] - 1;
-			}
-			if (!Static2.aBoolean82 && local86 >= 0 && Static3.anInt2965 > local86 && local84 >= 0 && Static3.anInt2960 > local84) {
-				@Pc(153) int local153 = local84 + (int) (Math.random() * 10.0D) - 5;
-				Static7.anInt5231 = local153;
-				@Pc(164) int local164 = local86 + (int) (Math.random() * 10.0D) - 5;
-				Static1.anInt331 = local164;
-			} else if (Static6.anInt4953 == -1 || Static3.anInt2571 == -1) {
-				Static3.aClass4_Sub3_Sub22_3.method4755(local70, Static3.aClass4_Sub3_Sub22_3.anInt5992 & 0x3FFF, Static3.aClass4_Sub3_Sub22_3.anInt5992 >> 14 & 0x3FFF);
-				Static7.anInt5231 = Static3.anInt2961 + Static3.anInt2960 - local70[2] - 1;
-				Static1.anInt331 = local70[1] - Static3.anInt2962;
-			} else {
-				Static3.aClass4_Sub3_Sub22_3.method4755(local70, Static3.anInt2571, Static6.anInt4953);
-				Static3.anInt2571 = -1;
-				Static6.anInt4953 = -1;
-				Static2.aBoolean82 = false;
-				if (local70 != null) {
-					Static7.anInt5231 = Static3.anInt2960 + Static3.anInt2961 - local70[2] - 1;
-					Static1.anInt331 = local70[1] - Static3.anInt2962;
-				}
-			}
-			if (Static3.aClass4_Sub3_Sub22_3.anInt6006 == 37) {
-				Static3.aFloat68 = 3.0F;
-				Static3.aFloat69 = 3.0F;
-			} else if (Static3.aClass4_Sub3_Sub22_3.anInt6006 == 50) {
-				Static3.aFloat68 = 4.0F;
-				Static3.aFloat69 = 4.0F;
-			} else if (Static3.aClass4_Sub3_Sub22_3.anInt6006 == 75) {
-				Static3.aFloat68 = 6.0F;
-				Static3.aFloat69 = 6.0F;
-			} else if (Static3.aClass4_Sub3_Sub22_3.anInt6006 == 100) {
-				Static3.aFloat68 = 8.0F;
-				Static3.aFloat69 = 8.0F;
-			} else if (Static3.aClass4_Sub3_Sub22_3.anInt6006 == 200) {
-				Static3.aFloat68 = 16.0F;
-				Static3.aFloat69 = 16.0F;
-			} else {
-				Static3.aFloat68 = 8.0F;
-				Static3.aFloat69 = 8.0F;
-			}
-			Static28.method3249();
-			@Pc(309) int local309 = Static3.anInt2965 >> 6;
-			Static3.anIntArray266 = new int[FloTypeList.capacity + 1];
-			@Pc(318) int local318 = Static3.anInt2960 >> 6;
-			Static3.aByteArrayArrayArray11 = new byte[local309][local318][];
-			Static3.anIntArrayArrayArray6 = new int[local309][local318][];
-			Static3.aByteArrayArrayArray12 = new byte[local309][local318][];
-			Static3.aByteArrayArrayArray13 = new byte[local309][local318][];
-			Static3.anIntArrayArrayArray7 = new int[local309][local318][];
-			Static3.aByteArrayArrayArray10 = new byte[local309][local318][];
-			Static3.aByteArrayArrayArray14 = new byte[local309][local318][];
-			Static3.aClass112_13 = new LinkedList();
-			Static1.aClass130_1 = new Class130();
-			@Pc(358) int local358 = Static2.anInt1273 >> 1;
-			@Pc(364) int local364 = Static6.anInt4555 >> 2 << 10;
-			method2408(local364, local358);
-			MelTypeList.resize(1024, 256);
-			VarbitTypeList.resize(256);
-			Static4.anInt2644 = 20;
-		} else if (Static4.anInt2644 == 20) {
-			Static26.method2934(new Buffer(Static3.aClass58_65.fetchFile(Static3.aClass4_Sub3_Sub22_3.aString358, "underlay")));
-			Static4.anInt2644 = 30;
-			Static32.method3917(true);
-			GameShell.resetTimer();
-		} else if (Static4.anInt2644 == 30) {
-			Static19.method2398(new Buffer(Static3.aClass58_65.fetchFile(Static3.aClass4_Sub3_Sub22_3.aString358, "overlay")));
-			Static4.anInt2644 = 40;
-			GameShell.resetTimer();
-		} else if (Static4.anInt2644 == 40) {
-			method2406(new Buffer(Static3.aClass58_65.fetchFile(Static3.aClass4_Sub3_Sub22_3.aString358, "overlay2")));
-			Static4.anInt2644 = 50;
-			GameShell.resetTimer();
-		} else if (Static4.anInt2644 == 50) {
-			method2407(new Buffer(Static3.aClass58_65.fetchFile(Static3.aClass4_Sub3_Sub22_3.aString358, "loc")), LoginManager.mapMembers);
-			Static4.anInt2644 = 60;
-			Static32.method3917(true);
-			GameShell.resetTimer();
-		} else if (Static4.anInt2644 == 60) {
-			if (Static3.aClass58_65.isGroupNameValid(Static3.aClass4_Sub3_Sub22_3.aString358 + "_labels")) {
-				if (!Static3.aClass58_65.isFileReady(Static3.aClass4_Sub3_Sub22_3.aString358 + "_labels")) {
-					return;
-				}
-				Static3.aClass138_6 = Static16.method1555(Static3.aClass58_65, Static3.aClass4_Sub3_Sub22_3.aString358 + "_labels", LoginManager.mapMembers);
-			} else {
-				Static3.aClass138_6 = new Class138(0);
-			}
-			Static19.method2400();
-			Static4.anInt2644 = 70;
-			GameShell.resetTimer();
-		} else if (Static4.anInt2644 == 70) {
-			Static6.aClass106_7 = new WorldMapFont(11, true, GameShell.canvas);
-			Static4.anInt2644 = 73;
-			Static32.method3917(true);
-			GameShell.resetTimer();
-		} else if (Static4.anInt2644 == 73) {
-			Static4.aClass106_3 = new WorldMapFont(12, true, GameShell.canvas);
-			Static4.anInt2644 = 76;
-			Static32.method3917(true);
-			GameShell.resetTimer();
-		} else if (Static4.anInt2644 == 76) {
-			Static4.aClass106_5 = new WorldMapFont(14, true, GameShell.canvas);
-			Static4.anInt2644 = 79;
-			Static32.method3917(true);
-			GameShell.resetTimer();
-		} else if (Static4.anInt2644 == 79) {
-			Static4.aClass106_4 = new WorldMapFont(17, true, GameShell.canvas);
-			Static4.anInt2644 = 82;
-			Static32.method3917(true);
-			GameShell.resetTimer();
-		} else if (Static4.anInt2644 == 82) {
-			Static1.aClass106_1 = new WorldMapFont(19, true, GameShell.canvas);
-			Static4.anInt2644 = 85;
-			Static32.method3917(true);
-			GameShell.resetTimer();
-		} else if (Static4.anInt2644 == 85) {
-			Static2.aClass106_2 = new WorldMapFont(22, true, GameShell.canvas);
-			Static4.anInt2644 = 88;
-			Static32.method3917(true);
-			GameShell.resetTimer();
-		} else if (Static4.anInt2644 == 88) {
-			Static5.aClass106_6 = new WorldMapFont(26, true, GameShell.canvas);
-			Static4.anInt2644 = 91;
-			Static32.method3917(true);
-			GameShell.resetTimer();
-		} else {
-			Static6.aClass106_8 = new WorldMapFont(30, true, GameShell.canvas);
-			Static4.anInt2644 = 100;
-			Static32.method3917(true);
-			GameShell.resetTimer();
-			System.gc();
-		}
-	}
-
 	@OriginalMember(owner = "client!il", name = "b", descriptor = "(B)V")
 	public static void method1924() {
 		if (Static7.aBoolean401) {
@@ -984,25 +823,25 @@ public final class Static20 {
 
 	@OriginalMember(owner = "client!im", name = "a", descriptor = "(IBIII)V")
 	public static void method1928(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3) {
-		if (Static4.anInt2644 < 100) {
-			method1922();
+		if (WorldMap.loadPercentage < 100) {
+			WorldMap.load();
 		}
 		if (GlRenderer.enabled) {
 			Static18.method1693(arg2, arg1, arg2 + arg3, arg0 + arg1);
 		} else {
 			Static34.method4209(arg2, arg1, arg3 + arg2, arg1 + arg0);
 		}
-		if (Static4.anInt2644 < 100) {
+		if (WorldMap.loadPercentage < 100) {
 			@Pc(47) int local47 = arg3 / 2 + arg2;
 			@Pc(59) int local59 = arg1 + arg0 / 2 - 20 - 18;
 			if (GlRenderer.enabled) {
 				Static18.method1701(arg2, arg1, arg3, arg0, 0);
 				Static18.method1690(local47 - 152, local59, 304, 34, 9179409);
-				Static18.method1701(local47 - 150, local59 + 2, Static4.anInt2644 * 3, 30, 9179409);
+				Static18.method1701(local47 - 150, local59 + 2, WorldMap.loadPercentage * 3, 30, 9179409);
 			} else {
 				Static33.method4205(arg2, arg1, arg3, arg0, 0);
 				Static34.method4222(local47 - 152, local59, 304, 34, 9179409);
-				Static33.method4205(local47 - 150, local59 + 2, Static4.anInt2644 * 3, 30, 9179409);
+				Static33.method4205(local47 - 150, local59 + 2, WorldMap.loadPercentage * 3, 30, 9179409);
 			}
 			Static5.aClass4_Sub3_Sub5_3.method2271(LocalisedText.LOADINGDOTDOTDOT, local47, local59 + 20, 16777215, -1);
 			return;

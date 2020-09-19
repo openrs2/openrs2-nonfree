@@ -31,9 +31,6 @@ public final class Static1 {
 	@OriginalMember(owner = "client!ak", name = "k", descriptor = "I")
 	public static int anInt131;
 
-	@OriginalMember(owner = "client!al", name = "R", descriptor = "Lclient!kk;")
-	public static WorldMapFont aClass106_1;
-
 	@OriginalMember(owner = "client!al", name = "S", descriptor = "[Lclient!uj;")
 	public static Sprite[] aClass4_Sub3_Sub14Array1;
 

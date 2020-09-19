@@ -180,8 +180,8 @@ public final class Static10 {
 	}
 
 	@OriginalMember(owner = "client!bi", name = "b", descriptor = "(I)Lclient!wg;")
-	public static Class4_Sub3_Sub22 method305() {
-		return Static3.aClass4_Sub3_Sub22_3;
+	public static MapArea method305() {
+		return WorldMap.currentMap;
 	}
 
 	@OriginalMember(owner = "client!bi", name = "a", descriptor = "(IIIBI)V")
@@ -313,11 +313,11 @@ public final class Static10 {
 
 	@OriginalMember(owner = "client!bn", name = "a", descriptor = "(ZB)V")
 	public static void method384(@OriginalArg(0) boolean arg0) {
-		Static4.anInt2644 = 0;
+		WorldMap.loadPercentage = 0;
 		Static3.aClass112_13 = null;
 		Static3.aByteArrayArrayArray12 = null;
-		if (arg0 && Static3.aClass4_Sub3_Sub22_3 != null) {
-			Static3.anInt2554 = Static3.aClass4_Sub3_Sub22_3.anInt5993;
+		if (arg0 && WorldMap.currentMap != null) {
+			Static3.anInt2554 = WorldMap.currentMap.id;
 		} else {
 			Static3.anInt2554 = -1;
 		}
@@ -329,20 +329,20 @@ public final class Static10 {
 		Static3.anIntArrayArrayArray7 = null;
 		Static3.aByteArrayArrayArray11 = null;
 		Static3.aByteArrayArrayArray13 = null;
-		Static3.aClass4_Sub3_Sub22_3 = null;
+		WorldMap.currentMap = null;
 		Static3.aClass175_12.clear();
-		Static4.aClass106_5 = null;
-		Static6.aClass106_8 = null;
-		Static1.aClass106_1 = null;
-		Static5.aClass106_6 = null;
-		Static6.aClass106_7 = null;
+		WorldMap.font14 = null;
+		WorldMap.font30 = null;
+		WorldMap.font19 = null;
+		WorldMap.font26 = null;
+		WorldMap.font11 = null;
 		Static4.aClass4_Sub3_Sub14_3 = null;
 		Static6.anInt4393 = -1;
 		Static3.aClass138_6 = null;
-		Static2.aClass106_2 = null;
+		WorldMap.font22 = null;
 		Static3.aClass4_Sub3_Sub14_Sub1_2 = null;
-		Static4.aClass106_4 = null;
-		Static4.aClass106_3 = null;
+		WorldMap.font17 = null;
+		WorldMap.font12 = null;
 		Static1.anInt929 = -1;
 		MelTypeList.clear();
 		Static1.aClass130_1 = null;

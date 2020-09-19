@@ -7,99 +7,99 @@ import dev.openrs2.deob.annotation.Pc;
 public final class Static28 {
 
 	@OriginalMember(owner = "client!ol", name = "a", descriptor = "(Lclient!fg;IIIZILclient!nb;Lclient!ho;)V")
-	public static void method3244(@OriginalArg(0) Class4_Sub3_Sub7 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) boolean arg4, @OriginalArg(6) Class4_Sub17 arg5, @OriginalArg(7) MelType arg6) {
-		@Pc(3) WorldMapFont local3 = null;
-		if (arg6.anInt2270 == 0) {
+	public static void method3244(@OriginalArg(0) MapElement element, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) boolean arg4, @OriginalArg(6) Class4_Sub17 arg5, @OriginalArg(7) MelType type) {
+		@Pc(3) WorldMapFont font = null;
+		if (type.textSize == 0) {
 			if ((double) Static3.aFloat68 == 3.0D) {
-				local3 = Static6.aClass106_7;
+				font = WorldMap.font11;
 			}
 			if ((double) Static3.aFloat68 == 4.0D) {
-				local3 = Static4.aClass106_3;
+				font = WorldMap.font12;
 			}
 			if ((double) Static3.aFloat68 == 6.0D) {
-				local3 = Static4.aClass106_5;
+				font = WorldMap.font14;
 			}
 			if ((double) Static3.aFloat68 >= 8.0D) {
-				local3 = Static4.aClass106_4;
+				font = WorldMap.font17;
 			}
-		} else if (arg6.anInt2270 == 1) {
+		} else if (type.textSize == 1) {
 			if ((double) Static3.aFloat68 == 3.0D) {
-				local3 = Static4.aClass106_5;
+				font = WorldMap.font14;
 			}
 			if ((double) Static3.aFloat68 == 4.0D) {
-				local3 = Static4.aClass106_4;
+				font = WorldMap.font17;
 			}
 			if ((double) Static3.aFloat68 == 6.0D) {
-				local3 = Static1.aClass106_1;
+				font = WorldMap.font19;
 			}
 			if ((double) Static3.aFloat68 >= 8.0D) {
-				local3 = Static2.aClass106_2;
+				font = WorldMap.font22;
 			}
-		} else if (arg6.anInt2270 == 2) {
+		} else if (type.textSize == 2) {
 			if ((double) Static3.aFloat68 == 3.0D) {
-				local3 = Static1.aClass106_1;
+				font = WorldMap.font19;
 			}
 			if ((double) Static3.aFloat68 == 4.0D) {
-				local3 = Static2.aClass106_2;
+				font = WorldMap.font22;
 			}
 			if ((double) Static3.aFloat68 == 6.0D) {
-				local3 = Static5.aClass106_6;
+				font = WorldMap.font26;
 			}
 			if ((double) Static3.aFloat68 >= 8.0D) {
-				local3 = Static6.aClass106_8;
+				font = WorldMap.font30;
 			}
 		}
-		if (local3 == null) {
+		if (font == null) {
 			return;
 		}
-		@Pc(123) int local123 = arg6.anInt2286;
-		if (arg0.aBoolean105 && arg6.anInt2287 != -1) {
-			local123 = arg6.anInt2287;
+		@Pc(123) int textColor = type.textColor;
+		if (element.hover && type.hoverTextColor != -1) {
+			textColor = type.hoverTextColor;
 		}
-		@Pc(141) int local141 = Static1.aClass4_Sub3_Sub5_1.method2279(arg6.aString131, null, Static5.aStringArray24);
-		@Pc(144) int local144 = arg0.anInt1764;
+		@Pc(141) int local141 = Static1.aClass4_Sub3_Sub5_1.method2279(type.text, null, Static5.aStringArray24);
+		@Pc(144) int local144 = element.anInt1764;
 		@Pc(164) int local164;
 		if (arg4) {
-			local164 = local144 - local3.method2328() * local141 / 2;
+			local164 = local144 - font.method2328() * local141 / 2;
 		} else {
-			local164 = local144 - arg2 - (local141 - 1) * local3.method2332() - local3.method2328() / 2;
+			local164 = local144 - arg2 - (local141 - 1) * font.method2332() - font.method2328() / 2;
 		}
-		@Pc(181) int local181 = local164 - local3.method2328();
-		@Pc(188) int local188 = local164 + local3.method2328() / 2;
+		@Pc(181) int local181 = local164 - font.method2328();
+		@Pc(188) int local188 = local164 + font.method2328() / 2;
 		@Pc(190) int local190 = 0;
 		for (@Pc(192) int local192 = 0; local192 < local141; local192++) {
 			@Pc(199) String local199 = Static5.aStringArray24[local192];
 			if (local141 - 1 > local192) {
 				local199 = local199.substring(0, local199.length() - 4);
 			}
-			@Pc(221) int local221 = local3.getStringWidth(local199);
+			@Pc(221) int local221 = font.getStringWidth(local199);
 			if (local190 < local221) {
 				local190 = local221;
 			}
 		}
-		arg5.anInt3456 = arg0.anInt1766 + arg1 - local190 / 2;
-		arg5.anInt3466 = arg1 + arg0.anInt1766 + local190 / 2;
+		arg5.anInt3456 = element.anInt1766 + arg1 - local190 / 2;
+		arg5.anInt3466 = arg1 + element.anInt1766 + local190 / 2;
 		arg5.anInt3464 = local181 + arg3;
-		arg5.anInt3465 = arg3 + local181 + local3.method2332() * local141;
+		arg5.anInt3465 = arg3 + local181 + font.method2332() * local141;
 		@Pc(274) int local274 = local181 + 2;
-		@Pc(284) int local284 = arg0.anInt1766 - local190 / 2 - 5;
-		if (arg6.anInt2274 != 0) {
-			Static34.method4213(local284, local274, local190 + 10, local181 + local141 * local3.method2332() + 1 - local274, arg6.anInt2274, arg6.anInt2274 >>> 24);
+		@Pc(284) int local284 = element.anInt1766 - local190 / 2 - 5;
+		if (type.fillColor != 0) {
+			Static34.method4213(local284, local274, local190 + 10, local181 + local141 * font.method2332() + 1 - local274, type.fillColor, type.fillColor >>> 24);
 		}
-		if (arg6.anInt2280 != 0) {
-			Static34.method4221(local284, local274, local190 + 10, local3.method2332() * local141 + local181 + 1 - local274, arg6.anInt2280, arg6.anInt2280 >>> 24);
+		if (type.outlineColor != 0) {
+			Static34.method4221(local284, local274, local190 + 10, font.method2332() * local141 + local181 + 1 - local274, type.outlineColor, type.outlineColor >>> 24);
 		}
 		for (@Pc(343) int local343 = 0; local343 < local141; local343++) {
 			@Pc(354) String local354 = Static5.aStringArray24[local343];
 			if (local141 - 1 > local343) {
 				local354 = local354.substring(0, local354.length() - 4);
 			}
-			@Pc(376) int local376 = local3.getStringWidth(local354);
+			@Pc(376) int local376 = font.getStringWidth(local354);
 			if (local190 < local376) {
 				local190 = local376;
 			}
-			local3.renderStringCenter(local354, arg0.anInt1766, local188, local123);
-			local188 += local3.method2332();
+			font.renderStringCenter(local354, element.anInt1766, local188, textColor);
+			local188 += font.method2332();
 		}
 	}
 

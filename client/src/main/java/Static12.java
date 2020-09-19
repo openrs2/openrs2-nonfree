@@ -277,12 +277,12 @@ public final class Static12 {
 										@Pc(530) int local530 = Static7.anInt5231 + local522;
 										@Pc(534) int local534 = local526 + Static3.anInt2962;
 										@Pc(542) int local542 = Static3.anInt2960 + Static3.anInt2961 - local530 - 1;
-										@Pc(545) Class4_Sub3_Sub22 local545 = Static10.method305();
+										@Pc(545) MapArea local545 = Static10.method305();
 										if (local545 == null) {
 											continue;
 										}
 										@Pc(550) int[] local550 = new int[3];
-										local545.method4758(local534, local542, local550);
+										local545.convertDisplayToSource(local534, local542, local550);
 										if (local550 != null) {
 											if (Keyboard.pressedKeys[82] && LoginManager.staffModLevel > 0) {
 												Static24.method2945(local550[1], local550[2], local550[0]);

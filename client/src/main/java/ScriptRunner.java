@@ -3085,21 +3085,21 @@ public final class ScriptRunner {
 								if (opcode == 5206) {
 									@Pc(9428) int local9428 = isp - 1;
 									@Pc(9431) int local9431 = intStack[local9428];
-									@Pc(9441) Class4_Sub3_Sub22 local9441 = Static19.method2394(local9431 >> 14 & 0x3FFF, local9431 & 0x3FFF);
+									@Pc(9441) MapArea local9441 = MapAreaList.getContainingSource(local9431 >> 14 & 0x3FFF, local9431 & 0x3FFF);
 									if (local9441 == null) {
 										isp = local9428 + 1;
 										intStack[local9428] = -1;
 									} else {
 										isp = local9428 + 1;
-										intStack[local9428] = local9441.anInt5993;
+										intStack[local9428] = local9441.id;
 									}
 									continue;
 								}
 								if (opcode == 5207) {
 									isp--;
-									@Pc(9470) Class4_Sub3_Sub22 local9470 = Static20.method2405(intStack[isp]);
-									if (local9470 != null && local9470.aString359 != null) {
-										stringStack[ssp++] = local9470.aString359;
+									@Pc(9470) MapArea local9470 = MapAreaList.get(intStack[isp]);
+									if (local9470 != null && local9470.name != null) {
+										stringStack[ssp++] = local9470.name;
 										continue;
 									}
 									stringStack[ssp++] = "";
@@ -3122,7 +3122,7 @@ public final class ScriptRunner {
 								if (opcode == 5210) {
 									@Pc(9539) int local9539 = isp - 1;
 									@Pc(9542) int local9542 = intStack[local9539];
-									@Pc(9545) Class4_Sub3_Sub22 local9545 = Static20.method2405(local9542);
+									@Pc(9545) MapArea local9545 = MapAreaList.get(local9542);
 									if (local9545 == null) {
 										@Pc(9570) int local9570 = local9539 + 1;
 										intStack[local9539] = 0;
@@ -3130,16 +3130,16 @@ public final class ScriptRunner {
 										intStack[local9570] = 0;
 									} else {
 										@Pc(9550) int local9550 = local9539 + 1;
-										intStack[local9539] = local9545.anInt5992 >> 14 & 0x3FFF;
+										intStack[local9539] = local9545.defaultPosition >> 14 & 0x3FFF;
 										isp = local9550 + 1;
-										intStack[local9550] = local9545.anInt5992 & 0x3FFF;
+										intStack[local9550] = local9545.defaultPosition & 0x3FFF;
 									}
 									continue;
 								}
 								if (opcode == 5211) {
 									@Pc(9585) int local9585 = isp - 1;
 									@Pc(9588) int local9588 = intStack[local9585];
-									@Pc(9591) Class4_Sub3_Sub22 local9591 = Static20.method2405(local9588);
+									@Pc(9591) MapArea local9591 = MapAreaList.get(local9588);
 									if (local9591 == null) {
 										@Pc(9618) int local9618 = local9585 + 1;
 										intStack[local9585] = 0;
@@ -3147,14 +3147,14 @@ public final class ScriptRunner {
 										intStack[local9618] = 0;
 									} else {
 										@Pc(9597) int local9597 = local9585 + 1;
-										intStack[local9585] = local9591.anInt6002 - local9591.anInt5991;
+										intStack[local9585] = local9591.displayMaxX - local9591.displayMinX;
 										isp = local9597 + 1;
-										intStack[local9597] = local9591.anInt6007 - local9591.anInt5996;
+										intStack[local9597] = local9591.displayMaxZ - local9591.displayMinZ;
 									}
 									continue;
 								}
 								if (opcode == 5212) {
-									@Pc(9635) Class4_Sub3_Sub7 local9635 = Static11.method492();
+									@Pc(9635) MapElement local9635 = Static11.method492();
 									if (local9635 == null) {
 										@Pc(9641) int local9641 = isp + 1;
 										intStack[isp] = -1;
@@ -3162,15 +3162,15 @@ public final class ScriptRunner {
 										intStack[local9641] = -1;
 									} else {
 										@Pc(9653) int local9653 = isp + 1;
-										intStack[isp] = local9635.anInt1760;
-										@Pc(9678) int local9678 = Static3.anInt2962 + local9635.anInt1768 << 14 | local9635.anInt1763 << 28 | Static3.anInt2961 + Static3.anInt2960 - local9635.anInt1769 - 1;
+										intStack[isp] = local9635.id;
+										@Pc(9678) int local9678 = Static3.anInt2962 + local9635.x << 14 | local9635.y << 28 | Static3.anInt2961 + Static3.anInt2960 - local9635.z - 1;
 										isp = local9653 + 1;
 										intStack[local9653] = local9678;
 									}
 									continue;
 								}
 								if (opcode == 5213) {
-									@Pc(9692) Class4_Sub3_Sub7 local9692 = Static24.method2713();
+									@Pc(9692) MapElement local9692 = Static24.method2713();
 									if (local9692 == null) {
 										@Pc(9733) int local9733 = isp + 1;
 										intStack[isp] = -1;
@@ -3178,8 +3178,8 @@ public final class ScriptRunner {
 										intStack[local9733] = -1;
 									} else {
 										@Pc(9697) int local9697 = isp + 1;
-										intStack[isp] = local9692.anInt1760;
-										@Pc(9723) int local9723 = Static3.anInt2960 + Static3.anInt2961 - local9692.anInt1769 - 1 | local9692.anInt1763 << 28 | local9692.anInt1768 + Static3.anInt2962 << 14;
+										intStack[isp] = local9692.id;
+										@Pc(9723) int local9723 = Static3.anInt2960 + Static3.anInt2961 - local9692.z - 1 | local9692.y << 28 | local9692.x + Static3.anInt2962 << 14;
 										isp = local9697 + 1;
 										intStack[local9697] = local9723;
 									}
@@ -3188,9 +3188,9 @@ public final class ScriptRunner {
 								if (opcode == 5214) {
 									isp--;
 									@Pc(9750) int local9750 = intStack[isp];
-									@Pc(9753) Class4_Sub3_Sub22 local9753 = Static10.method305();
+									@Pc(9753) MapArea local9753 = Static10.method305();
 									if (local9753 != null) {
-										@Pc(9775) boolean local9775 = local9753.method4753(local9750 & 0x3FFF, local9750 >> 28 & 0x3, Static2.anIntArray162, local9750 >> 14 & 0x3FFF);
+										@Pc(9775) boolean local9775 = local9753.convertSourceToDisplay(local9750 >> 28 & 0x3, local9750 >> 14 & 0x3FFF, local9750 & 0x3FFF, Static2.anIntArray162);
 										if (local9775) {
 											Static20.method1970(Static2.anIntArray162[1], Static2.anIntArray162[2]);
 										}
@@ -3201,10 +3201,10 @@ public final class ScriptRunner {
 									@Pc(9792) int local9792 = isp - 2;
 									@Pc(9798) int local9798 = intStack[local9792 + 1];
 									@Pc(9802) int local9802 = intStack[local9792];
-									@Pc(9812) SecondaryLinkedList local9812 = Static19.method2395(local9802 >> 14 & 0x3FFF, local9802 & 0x3FFF);
+									@Pc(9812) SecondaryLinkedList local9812 = MapAreaList.getAllContainingSource(local9802 >> 14 & 0x3FFF, local9802 & 0x3FFF);
 									@Pc(9814) boolean local9814 = false;
-									for (@Pc(9819) Class4_Sub3_Sub22 local9819 = (Class4_Sub3_Sub22) local9812.head(); local9819 != null; local9819 = (Class4_Sub3_Sub22) local9812.next()) {
-										if (local9819.anInt5993 == local9798) {
+									for (@Pc(9819) MapArea local9819 = (MapArea) local9812.head(); local9819 != null; local9819 = (MapArea) local9812.next()) {
+										if (local9819.id == local9798) {
 											local9814 = true;
 											break;
 										}
@@ -3221,18 +3221,18 @@ public final class ScriptRunner {
 								if (opcode == 5218) {
 									@Pc(9861) int local9861 = isp - 1;
 									@Pc(9864) int local9864 = intStack[local9861];
-									@Pc(9867) Class4_Sub3_Sub22 local9867 = Static20.method2405(local9864);
+									@Pc(9867) MapArea local9867 = MapAreaList.get(local9864);
 									if (local9867 == null) {
 										isp = local9861 + 1;
 										intStack[local9861] = -1;
 									} else {
 										isp = local9861 + 1;
-										intStack[local9861] = local9867.anInt6006;
+										intStack[local9861] = local9867.defaultZoom;
 									}
 									continue;
 								}
 								if (opcode == 5220) {
-									intStack[isp++] = Static4.anInt2644 == 100 ? 1 : 0;
+									intStack[isp++] = WorldMap.loadPercentage == 100 ? 1 : 0;
 									continue;
 								}
 								if (opcode == 5221) {
@@ -3242,14 +3242,14 @@ public final class ScriptRunner {
 									continue;
 								}
 								if (opcode == 5222) {
-									@Pc(9933) Class4_Sub3_Sub22 local9933 = Static10.method305();
+									@Pc(9933) MapArea local9933 = Static10.method305();
 									if (local9933 == null) {
 										@Pc(9938) int local9938 = isp + 1;
 										intStack[isp] = -1;
 										isp = local9938 + 1;
 										intStack[local9938] = -1;
 									} else {
-										@Pc(9963) boolean local9963 = local9933.method4758(Static3.anInt2962 + Static1.anInt331, Static3.anInt2960 + Static3.anInt2961 - Static7.anInt5231 - 1, Static2.anIntArray162);
+										@Pc(9963) boolean local9963 = local9933.convertDisplayToSource(Static3.anInt2962 + Static1.anInt331, Static3.anInt2960 + Static3.anInt2961 - Static7.anInt5231 - 1, Static2.anIntArray162);
 										if (local9963) {
 											@Pc(9980) int local9980 = isp + 1;
 											intStack[isp] = Static2.anIntArray162[1];
@@ -3274,14 +3274,14 @@ public final class ScriptRunner {
 								if (opcode == 5224) {
 									@Pc(10031) int local10031 = isp - 1;
 									@Pc(10034) int local10034 = intStack[local10031];
-									@Pc(10039) Class4_Sub3_Sub22 local10039 = Static10.method305();
+									@Pc(10039) MapArea local10039 = Static10.method305();
 									if (local10039 == null) {
 										@Pc(10045) int local10045 = local10031 + 1;
 										intStack[local10031] = -1;
 										isp = local10045 + 1;
 										intStack[local10045] = -1;
 									} else {
-										@Pc(10072) boolean local10072 = local10039.method4753(local10034 & 0x3FFF, local10034 >> 28 & 0x3, Static2.anIntArray162, local10034 >> 14 & 0x3FFF);
+										@Pc(10072) boolean local10072 = local10039.convertSourceToDisplay(local10034 >> 28 & 0x3, local10034 >> 14 & 0x3FFF, local10034 & 0x3FFF, Static2.anIntArray162);
 										if (local10072) {
 											@Pc(10077) int local10077 = local10031 + 1;
 											intStack[local10031] = Static2.anIntArray162[1];
@@ -3299,14 +3299,14 @@ public final class ScriptRunner {
 								if (opcode == 5225) {
 									@Pc(10109) int local10109 = isp - 1;
 									@Pc(10112) int local10112 = intStack[local10109];
-									@Pc(10115) Class4_Sub3_Sub22 local10115 = Static10.method305();
+									@Pc(10115) MapArea local10115 = Static10.method305();
 									if (local10115 == null) {
 										@Pc(10164) int local10164 = local10109 + 1;
 										intStack[local10109] = -1;
 										isp = local10164 + 1;
 										intStack[local10164] = -1;
 									} else {
-										@Pc(10131) boolean local10131 = local10115.method4758(local10112 >> 14 & 0x3FFF, local10112 & 0x3FFF, Static2.anIntArray162);
+										@Pc(10131) boolean local10131 = local10115.convertDisplayToSource(local10112 >> 14 & 0x3FFF, local10112 & 0x3FFF, Static2.anIntArray162);
 										if (local10131) {
 											@Pc(10136) int local10136 = local10109 + 1;
 											intStack[local10109] = Static2.anIntArray162[1];
@@ -3411,7 +3411,7 @@ public final class ScriptRunner {
 									continue;
 								}
 								if (opcode == 5235) {
-									intStack[isp++] = Static3.aClass4_Sub3_Sub22_3 == null ? -1 : Static3.aClass4_Sub3_Sub22_3.anInt5993;
+									intStack[isp++] = WorldMap.currentMap == null ? -1 : WorldMap.currentMap.id;
 									continue;
 								}
 							} else if (opcode < 5400) {
@@ -4468,10 +4468,10 @@ public final class ScriptRunner {
 									isp--;
 									@Pc(8089) int local8089 = intStack[isp];
 									@Pc(8093) MelType local8093 = MelTypeList.get(local8089);
-									if (local8093.aString131 == null) {
+									if (local8093.text == null) {
 										stringStack[ssp++] = "";
 									} else {
-										stringStack[ssp++] = local8093.aString131;
+										stringStack[ssp++] = local8093.text;
 									}
 									continue;
 								}
@@ -4480,7 +4480,7 @@ public final class ScriptRunner {
 									@Pc(8122) int local8122 = intStack[local8119];
 									@Pc(8126) MelType local8126 = MelTypeList.get(local8122);
 									isp = local8119 + 1;
-									intStack[local8119] = local8126.anInt2277;
+									intStack[local8119] = local8126.sprite;
 									continue;
 								}
 								if (opcode == 6802) {
@@ -4488,7 +4488,7 @@ public final class ScriptRunner {
 									@Pc(8144) int local8144 = intStack[local8141];
 									@Pc(8148) MelType local8148 = MelTypeList.get(local8144);
 									isp = local8141 + 1;
-									intStack[local8141] = local8148.anInt2270;
+									intStack[local8141] = local8148.textSize;
 									continue;
 								}
 								if (opcode == 6803) {
@@ -4496,7 +4496,7 @@ public final class ScriptRunner {
 									@Pc(8166) int local8166 = intStack[local8163];
 									@Pc(8170) MelType local8170 = MelTypeList.get(local8166);
 									isp = local8163 + 1;
-									intStack[local8163] = local8170.anInt2284;
+									intStack[local8163] = local8170.category;
 									continue;
 								}
 							}

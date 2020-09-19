@@ -16,7 +16,7 @@ public final class MelType {
 	public int[] anIntArray188;
 
 	@OriginalMember(owner = "client!ho", name = "o", descriptor = "I")
-	public int anInt2274;
+	public int fillColor;
 
 	@OriginalMember(owner = "client!ho", name = "p", descriptor = "I")
 	private int anInt2275;
@@ -25,13 +25,13 @@ public final class MelType {
 	private int anInt2276;
 
 	@OriginalMember(owner = "client!ho", name = "t", descriptor = "Ljava/lang/String;")
-	public String aString130;
+	public String opBase;
 
 	@OriginalMember(owner = "client!ho", name = "x", descriptor = "I")
-	public int anInt2280;
+	public int outlineColor;
 
 	@OriginalMember(owner = "client!ho", name = "z", descriptor = "Ljava/lang/String;")
-	public String aString131;
+	public String text;
 
 	@OriginalMember(owner = "client!ho", name = "B", descriptor = "I")
 	public int anInt2283;
@@ -40,34 +40,34 @@ public final class MelType {
 	private int anInt2285;
 
 	@OriginalMember(owner = "client!ho", name = "F", descriptor = "I")
-	public int anInt2286;
+	public int textColor;
 
 	@OriginalMember(owner = "client!ho", name = "L", descriptor = "I")
 	public int id;
 
 	@OriginalMember(owner = "client!ho", name = "b", descriptor = "Z")
-	public boolean aBoolean154 = true;
+	public boolean worldMapVisible = true;
 
 	@OriginalMember(owner = "client!ho", name = "k", descriptor = "I")
 	private int anInt2271 = -1;
 
 	@OriginalMember(owner = "client!ho", name = "i", descriptor = "I")
-	public int anInt2270 = 0;
+	public int textSize = 0;
 
 	@OriginalMember(owner = "client!ho", name = "g", descriptor = "Z")
-	public boolean aBoolean155 = false;
+	public boolean miniMapVisible = false;
 
 	@OriginalMember(owner = "client!ho", name = "s", descriptor = "I")
-	public int anInt2277 = -1;
+	public int sprite = -1;
 
 	@OriginalMember(owner = "client!ho", name = "q", descriptor = "Z")
-	public boolean aBoolean156 = true;
+	public boolean randomizePosition = true;
 
 	@OriginalMember(owner = "client!ho", name = "v", descriptor = "[Ljava/lang/String;")
-	public final String[] aStringArray15 = new String[5];
+	public final String[] ops = new String[5];
 
 	@OriginalMember(owner = "client!ho", name = "C", descriptor = "I")
-	public int anInt2284 = -1;
+	public int category = -1;
 
 	@OriginalMember(owner = "client!ho", name = "A", descriptor = "I")
 	private int anInt2282 = -1;
@@ -82,13 +82,13 @@ public final class MelType {
 	private int anInt2294 = -1;
 
 	@OriginalMember(owner = "client!ho", name = "w", descriptor = "I")
-	private int anInt2279 = -1;
+	private int worldMapSprite = -1;
 
 	@OriginalMember(owner = "client!ho", name = "G", descriptor = "I")
-	public int anInt2287 = -1;
+	public int hoverTextColor = -1;
 
 	@OriginalMember(owner = "client!ho", name = "K", descriptor = "I")
-	public int anInt2291 = -1;
+	public int hoverSprite = -1;
 
 	@OriginalMember(owner = "client!ho", name = "a", descriptor = "(Lclient!fd;I)V")
 	public final void decode(@OriginalArg(0) Buffer buffer) {
@@ -103,18 +103,18 @@ public final class MelType {
 
 	@OriginalMember(owner = "client!ho", name = "a", descriptor = "(B)Lclient!fe;")
 	public final SoftwareIndexedSprite method1808() {
-		@Pc(22) SoftwareIndexedSprite local22 = (SoftwareIndexedSprite) MelTypeList.sprites.get((long) (this.anInt2279 | 0x20000));
+		@Pc(22) SoftwareIndexedSprite local22 = (SoftwareIndexedSprite) MelTypeList.sprites.get((long) (this.worldMapSprite | 0x20000));
 		if (local22 != null) {
 			return local22;
 		}
-		MelTypeList.spritesArchive.isFileReady(this.anInt2279);
-		@Pc(41) SoftwareIndexedSprite local41 = Static33.method3003(MelTypeList.spritesArchive, this.anInt2279);
+		MelTypeList.spritesArchive.isFileReady(this.worldMapSprite);
+		@Pc(41) SoftwareIndexedSprite local41 = Static33.method3003(MelTypeList.spritesArchive, this.worldMapSprite);
 		if (local41 != null) {
 			local41.anInt3412 = local41.anInt3408;
 			local41.anInt3404 = 0;
 			local41.anInt3410 = local41.anInt3413;
 			local41.anInt3405 = 0;
-			MelTypeList.sprites.put((long) (this.anInt2279 | 0x20000), local41);
+			MelTypeList.sprites.put((long) (this.worldMapSprite | 0x20000), local41);
 		}
 		return local41;
 	}
@@ -122,27 +122,27 @@ public final class MelType {
 	@OriginalMember(owner = "client!ho", name = "a", descriptor = "(IILclient!fd;)V")
 	private void decode(@OriginalArg(2) Buffer buffer, @OriginalArg(1) int code) {
 		if (code == 1) {
-			this.anInt2277 = buffer.readUnsignedShort();
+			this.sprite = buffer.readUnsignedShort();
 		} else if (code == 2) {
-			this.anInt2291 = buffer.readUnsignedShort();
+			this.hoverSprite = buffer.readUnsignedShort();
 		} else if (code == 3) {
-			this.aString131 = buffer.readString();
+			this.text = buffer.readString();
 		} else if (code == 4) {
-			this.anInt2286 = buffer.readUnsignedMedium();
+			this.textColor = buffer.readUnsignedMedium();
 		} else if (code == 5) {
-			this.anInt2287 = buffer.readUnsignedMedium();
+			this.hoverTextColor = buffer.readUnsignedMedium();
 		} else if (code == 6) {
-			this.anInt2270 = buffer.readUnsignedByte();
+			this.textSize = buffer.readUnsignedByte();
 		} else if (code == 7) {
-			@Pc(301) int local301 = buffer.readUnsignedByte();
-			if ((local301 & 0x2) == 2) {
-				this.aBoolean155 = true;
+			@Pc(301) int flags = buffer.readUnsignedByte();
+			if ((flags & 0x2) == 2) {
+				this.miniMapVisible = true;
 			}
-			if ((local301 & 0x1) == 0) {
-				this.aBoolean154 = false;
+			if ((flags & 0x1) == 0) {
+				this.worldMapVisible = false;
 			}
 		} else if (code == 8) {
-			this.aBoolean156 = buffer.readUnsignedByte() == 1;
+			this.randomizePosition = buffer.readUnsignedByte() == 1;
 		} else if (code == 9) {
 			this.anInt2282 = buffer.readUnsignedShort();
 			if (this.anInt2282 == 65535) {
@@ -155,7 +155,7 @@ public final class MelType {
 			this.anInt2276 = buffer.readInt();
 			this.anInt2275 = buffer.readInt();
 		} else if (code >= 10 && code <= 14) {
-			this.aStringArray15[code - 10] = buffer.readString();
+			this.ops[code - 10] = buffer.readString();
 		} else if (code == 15) {
 			@Pc(262) int local262 = buffer.readUnsignedByte();
 			this.anIntArray188 = new int[local262 * 2];
@@ -167,11 +167,11 @@ public final class MelType {
 		} else if (code == 16) {
 			this.aBoolean157 = false;
 		} else if (code == 17) {
-			this.aString130 = buffer.readString();
+			this.opBase = buffer.readString();
 		} else if (code == 18) {
-			this.anInt2279 = buffer.readUnsignedShort();
+			this.worldMapSprite = buffer.readUnsignedShort();
 		} else if (code == 19) {
-			this.anInt2284 = buffer.readUnsignedShort();
+			this.category = buffer.readUnsignedShort();
 		} else if (code == 20) {
 			this.anInt2267 = buffer.readUnsignedShort();
 			if (this.anInt2267 == 65535) {
@@ -184,9 +184,9 @@ public final class MelType {
 			this.anInt2285 = buffer.readInt();
 			this.anInt2265 = buffer.readInt();
 		} else if (code == 21) {
-			this.anInt2280 = buffer.readInt();
+			this.outlineColor = buffer.readInt();
 		} else if (code == 22) {
-			this.anInt2274 = buffer.readInt();
+			this.fillColor = buffer.readInt();
 		}
 	}
 
@@ -218,7 +218,7 @@ public final class MelType {
 
 	@OriginalMember(owner = "client!ho", name = "a", descriptor = "(ZZZ)Lclient!ma;")
 	public final IndexedSprite method1811(@OriginalArg(0) boolean arg0, @OriginalArg(2) boolean arg1) {
-		@Pc(17) int local17 = arg0 ? this.anInt2291 : this.anInt2277;
+		@Pc(17) int local17 = arg0 ? this.hoverSprite : this.sprite;
 		@Pc(30) IndexedSprite local30 = (IndexedSprite) MelTypeList.sprites.get((long) (local17 | (arg0 ? 65536 : 0)));
 		if (local30 != null) {
 			return local30;

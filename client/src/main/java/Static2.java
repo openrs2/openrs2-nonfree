@@ -26,7 +26,7 @@ public final class Static2 {
 	public static Sprite[] aClass4_Sub3_Sub14Array6;
 
 	@OriginalMember(owner = "client!dn", name = "ab", descriptor = "Lclient!wg;")
-	public static Class4_Sub3_Sub22 aClass4_Sub3_Sub22_1;
+	public static MapArea aClass4_Sub3_Sub22_1;
 
 	@OriginalMember(owner = "client!e", name = "F", descriptor = "[[[B")
 	public static byte[][][] aByteArrayArrayArray3;
@@ -138,9 +138,6 @@ public final class Static2 {
 
 	@OriginalMember(owner = "client!ga", name = "e", descriptor = "I")
 	public static int anInt5778;
-
-	@OriginalMember(owner = "client!gb", name = "r", descriptor = "Lclient!kk;")
-	public static WorldMapFont aClass106_2;
 
 	@OriginalMember(owner = "client!dc", name = "m", descriptor = "I")
 	public static int anInt902 = 0;

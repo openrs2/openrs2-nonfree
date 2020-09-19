@@ -122,9 +122,6 @@ public final class Static5 {
 	@OriginalMember(owner = "client!og", name = "lb", descriptor = "I")
 	public static int anInt5848;
 
-	@OriginalMember(owner = "client!oh", name = "n", descriptor = "Lclient!kk;")
-	public static WorldMapFont aClass106_6;
-
 	@OriginalMember(owner = "client!oi", name = "h", descriptor = "F")
 	public static float aFloat96;
 

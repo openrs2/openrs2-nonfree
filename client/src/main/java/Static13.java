@@ -790,7 +790,7 @@ public final class Static13 {
 								@Pc(284) MelType local284 = MelTypeList.get(local235);
 								@Pc(288) int local288 = local147;
 								@Pc(293) int local293 = local154;
-								if (local284 != null && local284.aBoolean156) {
+								if (local284 != null && local284.randomizePosition) {
 									local280 = true;
 								}
 								if (local280) {

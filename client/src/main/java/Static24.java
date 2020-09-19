@@ -419,7 +419,7 @@ public final class Static24 {
 		Static2.aBoolean82 = arg0;
 		Static6.anInt4953 = arg2;
 		Static3.anInt2571 = arg1;
-		Static19.method2402(arg3);
+		WorldMap.setCurrentMap(arg3);
 		Static3.aClass84_10 = new HashTable(8);
 		Static3.aClass84_9 = new HashTable(8);
 	}
@@ -689,12 +689,12 @@ public final class Static24 {
 	}
 
 	@OriginalMember(owner = "client!mg", name = "a", descriptor = "(I)Lclient!fg;")
-	public static Class4_Sub3_Sub7 method2713() {
+	public static MapElement method2713() {
 		if (Static3.aClass175_12 == null) {
 			return null;
 		}
-		for (@Pc(22) Class4_Sub3_Sub7 local22 = (Class4_Sub3_Sub7) Static1.aClass130_1.method3250(); local22 != null; local22 = (Class4_Sub3_Sub7) Static1.aClass130_1.method3250()) {
-			@Pc(29) MelType local29 = MelTypeList.get(local22.anInt1760);
+		for (@Pc(22) MapElement local22 = (MapElement) Static1.aClass130_1.method3250(); local22 != null; local22 = (MapElement) Static1.aClass130_1.method3250()) {
+			@Pc(29) MelType local29 = MelTypeList.get(local22.id);
 			if (local29 != null && local29.aBoolean157 && local29.method1810()) {
 				return local22;
 			}

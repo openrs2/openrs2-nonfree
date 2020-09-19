@@ -135,8 +135,8 @@ public final class Static9 {
 		if (Static6.aBoolean317) {
 			return;
 		}
-		for (@Pc(23) Class4_Sub3_Sub7 local23 = (Class4_Sub3_Sub7) arg0.head(); local23 != null; local23 = (Class4_Sub3_Sub7) arg0.next()) {
-			@Pc(30) MelType local30 = MelTypeList.get(local23.anInt1760);
+		for (@Pc(23) MapElement local23 = (MapElement) arg0.head(); local23 != null; local23 = (MapElement) arg0.next()) {
+			@Pc(30) MelType local30 = MelTypeList.get(local23.id);
 			if (Static8.method120(local30)) {
 				Static36.method3811(arg1, local23, arg2, local30);
 				if (local23.aBoolean106) {
