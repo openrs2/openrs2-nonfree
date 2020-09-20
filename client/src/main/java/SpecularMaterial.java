@@ -7,7 +7,7 @@ import dev.openrs2.deob.annotation.OriginalMember;
 import dev.openrs2.deob.annotation.Pc;
 
 @OriginalClass("client!hl")
-public final class Class81 implements Material {
+public final class SpecularMaterial implements Material {
 
 	@OriginalMember(owner = "client!hl", name = "a", descriptor = "I")
 	private int anInt2236 = -1;
@@ -19,7 +19,7 @@ public final class Class81 implements Material {
 	private int[] anIntArray186 = null;
 
 	@OriginalMember(owner = "client!hl", name = "<init>", descriptor = "()V")
-	public Class81() {
+	public SpecularMaterial() {
 		if (GlRenderer.arbTextureCubeMapSupported && GlRenderer.maxTextureUnits >= 2) {
 			this.method1784();
 			@Pc(19) GL local19 = GlRenderer.gl;

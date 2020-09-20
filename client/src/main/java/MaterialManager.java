@@ -19,11 +19,11 @@ public final class MaterialManager {
 	public static void init() {
 		Static19.method1855();
 		materials = new Material[8];
-		materials[1] = new Class81();
-		materials[2] = new Class70();
-		materials[3] = new WaterMaterial();
-		materials[4] = new Class16();
-		materials[5] = new Class23();
+		materials[1] = new SpecularMaterial();
+		materials[2] = new LiquidMaterial();
+		materials[3] = new UnderwaterMaterial();
+		materials[4] = new WaterMaterial();
+		materials[5] = new WaterfallMaterial();
 		materials[6] = new UnlitMaterial();
 		materials[7] = new Class6();
 	}
