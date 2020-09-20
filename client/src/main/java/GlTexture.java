@@ -233,7 +233,7 @@ public final class GlTexture extends SecondaryNode {
 			return false;
 		}
 		@Pc(10) GL gl = GlRenderer.gl;
-		@Pc(13) int flags = Static15.method1323();
+		@Pc(13) int flags = MaterialManager.getFlags();
 		if ((flags & 0x1) == 0) {
 			if (this.textureId != -1 && this.anInt4971 == arg2) {
 				GlRenderer.setTextureId(this.textureId);
@@ -304,11 +304,11 @@ public final class GlTexture extends SecondaryNode {
 		}
 		if ((flags & 0x8) == 0) {
 			if (this.anInt4970 == 0 && this.anInt4968 == 0) {
-				GlRenderer.method1595();
+				GlRenderer.resetTextureMatrix();
 			} else {
-				@Pc(367) float local367 = (float) (GlRenderer.anInt2085 * this.anInt4970) / (float) this.anInt4971;
-				@Pc(377) float local377 = (float) (GlRenderer.anInt2085 * this.anInt4968) / (float) this.anInt4971;
-				GlRenderer.method1609(local377, local367, 0.0F);
+				@Pc(367) float y = (float) (GlRenderer.anInt2085 * this.anInt4970) / (float) this.anInt4971;
+				@Pc(377) float x = (float) (GlRenderer.anInt2085 * this.anInt4968) / (float) this.anInt4971;
+				GlRenderer.translateTextureMatrix(x, y, 0.0F);
 			}
 		}
 		return true;

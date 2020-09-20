@@ -46,7 +46,7 @@ public final class Static32 {
 
 	@OriginalMember(owner = "client!sa", name = "a", descriptor = "(B)V")
 	public static void method3879() {
-		Static24.method2652(0, 0);
+		MaterialManager.setMaterial(0, 0);
 	}
 
 	@OriginalMember(owner = "client!sa", name = "a", descriptor = "(II)I")
@@ -259,14 +259,6 @@ public final class Static32 {
 		Static3.anInt2519 = arg6 - local55;
 		Static5.anInt3656 = arg0;
 		Static5.anInt4066 = arg2;
-	}
-
-	@OriginalMember(owner = "client!sh", name = "a", descriptor = "(ZI)V")
-	public static void method3981(@OriginalArg(1) int arg0) {
-		if (Static7.anInt5330 == arg0) {
-			@Pc(16) Interface2 local16 = Static6.anInterface2Array1[arg0];
-			local16.method3486(Static1.anInt214);
-		}
 	}
 
 	@OriginalMember(owner = "client!sh", name = "a", descriptor = "(Lclient!wf;IB)I")

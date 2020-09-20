@@ -12,5 +12,5 @@ public interface TextureProvider {
 	boolean isTextureReady(@OriginalArg(0) int id);
 
 	@OriginalMember(owner = "client!kj", name = "a", descriptor = "(IB)Lclient!mi;")
-	Material getMaterial(@OriginalArg(0) int id);
+	TextureMeta getMetadata(@OriginalArg(0) int id);
 }

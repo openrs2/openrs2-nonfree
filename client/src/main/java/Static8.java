@@ -140,12 +140,6 @@ public final class Static8 {
 		ParticleManager.clear();
 	}
 
-	@OriginalMember(owner = "client!aa", name = "a", descriptor = "(I)V")
-	public static void method3() {
-		Static6.anInterface2Array1 = null;
-		Static19.method1858();
-	}
-
 	@OriginalMember(owner = "client!ab", name = "a", descriptor = "(IBLjava/lang/String;)V")
 	public static void method7(@OriginalArg(0) int arg0, @OriginalArg(2) String arg1) {
 		@Pc(17) String local17 = Static29.method3464(Static14.method1054(arg1));

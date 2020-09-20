@@ -1625,7 +1625,7 @@ public final class Static29 {
 														Static26.method2989(local65);
 													}
 													@Pc(115) int local115 = Terrain.surfaceTileHeights[0][local18][local21] + Terrain.surfaceTileHeights[0][local18 + 1][local21] + Terrain.surfaceTileHeights[0][local18][local21 + 1] + Terrain.surfaceTileHeights[0][local18 + 1][local21 + 1] >> 2;
-													Static24.method2652(3, -local115);
+													MaterialManager.setMaterial(3, -local115);
 													var8 = 201.5F;
 													GlRenderer.method1613(var8);
 												} else {

@@ -548,19 +548,6 @@ public final class Static13 {
 		Static5.aClass112_27.addTail(local3);
 	}
 
-	@OriginalMember(owner = "client!dn", name = "f", descriptor = "(I)V")
-	public static void method968() {
-		Static19.method1855();
-		Static6.anInterface2Array1 = new Interface2[8];
-		Static6.anInterface2Array1[1] = new Class81();
-		Static6.anInterface2Array1[2] = new Class70();
-		Static6.anInterface2Array1[3] = new Class21();
-		Static6.anInterface2Array1[4] = new Class16();
-		Static6.anInterface2Array1[5] = new Class23();
-		Static6.anInterface2Array1[6] = new Class139();
-		Static6.anInterface2Array1[7] = new Class6();
-	}
-
 	@OriginalMember(owner = "client!dn", name = "a", descriptor = "([IIIIII)V")
 	private static void method970(@OriginalArg(0) int[] arg0, @OriginalArg(1) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4) {
 		@Pc(7) Tile local7 = Terrain.tiles[arg2][arg3][arg4];

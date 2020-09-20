@@ -146,35 +146,6 @@ public final class Static24 {
 		}
 	}
 
-	@OriginalMember(owner = "client!ln", name = "a", descriptor = "(III)V")
-	public static void method2652(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
-		if (arg0 == 8) {
-			arg0 = 4;
-		}
-		if (arg0 == 4 && !Preferences.highDetailWater) {
-			arg0 = 2;
-			arg1 = 2;
-		}
-		if (Static7.anInt5330 != arg0) {
-			if (Static3.aBoolean175) {
-				return;
-			}
-			if (Static7.anInt5330 != 0) {
-				Static6.anInterface2Array1[Static7.anInt5330].method3483();
-			}
-			if (arg0 != 0) {
-				@Pc(42) Interface2 local42 = Static6.anInterface2Array1[arg0];
-				local42.method3484();
-				local42.method3486(arg1);
-			}
-			Static1.anInt214 = arg1;
-			Static7.anInt5330 = arg0;
-		} else if (arg0 != 0 && Static1.anInt214 != arg1) {
-			Static6.anInterface2Array1[arg0].method3486(arg1);
-			Static1.anInt214 = arg1;
-		}
-	}
-
 	@OriginalMember(owner = "client!ln", name = "a", descriptor = "(Lclient!fh;BII)Lclient!vn;")
 	public static SoftwareSprite method2654(@OriginalArg(0) Js5 arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2) {
 		return Static9.method197(arg0, arg1, arg2) ? Static21.method2002() : null;

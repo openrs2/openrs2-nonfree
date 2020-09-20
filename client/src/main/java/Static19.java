@@ -223,54 +223,54 @@ public final class Static19 {
 
 	@OriginalMember(owner = "client!ig", name = "c", descriptor = "()V")
 	private static void method1856() {
-		@Pc(1) GL local1 = GlRenderer.gl;
+		@Pc(1) GL gl = GlRenderer.gl;
 		if (Static3.aBoolean160) {
-			@Pc(6) int[] local6 = new int[1];
-			local1.glGenTextures(1, local6, 0);
-			local1.glBindTexture(GL.GL_TEXTURE_3D, local6[0]);
+			@Pc(6) int[] ids = new int[1];
+			gl.glGenTextures(1, ids, 0);
+			gl.glBindTexture(GL.GL_TEXTURE_3D, ids[0]);
 			Static3.aByteBuffer3.position(0);
-			local1.glTexImage3D(GL.GL_TEXTURE_3D, GL.GL_POINTS, GL.GL_LUMINANCE_ALPHA, 64, 64, 64, GL.GL_POINTS, GL.GL_LUMINANCE_ALPHA, GL.GL_UNSIGNED_BYTE, Static3.aByteBuffer3);
-			local1.glTexParameteri(GL.GL_TEXTURE_3D, GL.GL_TEXTURE_MIN_FILTER, GL.GL_LINEAR);
-			local1.glTexParameteri(GL.GL_TEXTURE_3D, GL.GL_TEXTURE_MAG_FILTER, GL.GL_LINEAR);
-			Static3.anInt2342 = local6[0];
+			gl.glTexImage3D(GL.GL_TEXTURE_3D, GL.GL_POINTS, GL.GL_LUMINANCE_ALPHA, 64, 64, 64, GL.GL_POINTS, GL.GL_LUMINANCE_ALPHA, GL.GL_UNSIGNED_BYTE, Static3.aByteBuffer3);
+			gl.glTexParameteri(GL.GL_TEXTURE_3D, GL.GL_TEXTURE_MIN_FILTER, GL.GL_LINEAR);
+			gl.glTexParameteri(GL.GL_TEXTURE_3D, GL.GL_TEXTURE_MAG_FILTER, GL.GL_LINEAR);
+			Static3.anInt2342 = ids[0];
 			GlCleaner.onCardTexture += Static3.aByteBuffer3.limit() * 2;
 			return;
 		}
 		Static3.anIntArray198 = new int[64];
-		local1.glGenTextures(64, Static3.anIntArray198, 0);
-		for (@Pc(65) int local65 = 0; local65 < 64; local65++) {
-			GlRenderer.setTextureId(Static3.anIntArray198[local65]);
-			Static3.aByteBuffer3.position(local65 * 64 * 64 * 2);
-			local1.glTexImage2D(GL.GL_TEXTURE_2D, GL.GL_POINTS, GL.GL_LUMINANCE_ALPHA, 64, 64, GL.GL_POINTS, GL.GL_LUMINANCE_ALPHA, GL.GL_UNSIGNED_BYTE, Static3.aByteBuffer3);
-			local1.glTexParameteri(GL.GL_TEXTURE_2D, GL.GL_TEXTURE_MIN_FILTER, GL.GL_LINEAR);
-			local1.glTexParameteri(GL.GL_TEXTURE_2D, GL.GL_TEXTURE_MAG_FILTER, GL.GL_LINEAR);
+		gl.glGenTextures(64, Static3.anIntArray198, 0);
+		for (@Pc(65) int i = 0; i < 64; i++) {
+			GlRenderer.setTextureId(Static3.anIntArray198[i]);
+			Static3.aByteBuffer3.position(i * 64 * 64 * 2);
+			gl.glTexImage2D(GL.GL_TEXTURE_2D, GL.GL_POINTS, GL.GL_LUMINANCE_ALPHA, 64, 64, GL.GL_POINTS, GL.GL_LUMINANCE_ALPHA, GL.GL_UNSIGNED_BYTE, Static3.aByteBuffer3);
+			gl.glTexParameteri(GL.GL_TEXTURE_2D, GL.GL_TEXTURE_MIN_FILTER, GL.GL_LINEAR);
+			gl.glTexParameteri(GL.GL_TEXTURE_2D, GL.GL_TEXTURE_MAG_FILTER, GL.GL_LINEAR);
 		}
 		GlCleaner.onCardTexture += Static3.aByteBuffer3.limit() * 2;
 	}
 
 	@OriginalMember(owner = "client!ig", name = "d", descriptor = "()V")
 	private static void method1857() {
-		@Pc(1) GL local1 = GlRenderer.gl;
+		@Pc(1) GL gl = GlRenderer.gl;
 		if (Static3.aBoolean160) {
-			@Pc(6) int[] local6 = new int[1];
-			local1.glGenTextures(1, local6, 0);
-			local1.glBindTexture(GL.GL_TEXTURE_3D, local6[0]);
+			@Pc(6) int[] ids = new int[1];
+			gl.glGenTextures(1, ids, 0);
+			gl.glBindTexture(GL.GL_TEXTURE_3D, ids[0]);
 			Static3.aByteBuffer2.position(0);
-			local1.glTexImage3D(GL.GL_TEXTURE_3D, GL.GL_POINTS, GL.GL_LUMINANCE_ALPHA, 64, 64, 64, GL.GL_POINTS, GL.GL_LUMINANCE_ALPHA, GL.GL_UNSIGNED_BYTE, Static3.aByteBuffer2);
-			local1.glTexParameteri(GL.GL_TEXTURE_3D, GL.GL_TEXTURE_MIN_FILTER, GL.GL_LINEAR);
-			local1.glTexParameteri(GL.GL_TEXTURE_3D, GL.GL_TEXTURE_MAG_FILTER, GL.GL_LINEAR);
-			Static3.anInt2341 = local6[0];
+			gl.glTexImage3D(GL.GL_TEXTURE_3D, GL.GL_POINTS, GL.GL_LUMINANCE_ALPHA, 64, 64, 64, GL.GL_POINTS, GL.GL_LUMINANCE_ALPHA, GL.GL_UNSIGNED_BYTE, Static3.aByteBuffer2);
+			gl.glTexParameteri(GL.GL_TEXTURE_3D, GL.GL_TEXTURE_MIN_FILTER, GL.GL_LINEAR);
+			gl.glTexParameteri(GL.GL_TEXTURE_3D, GL.GL_TEXTURE_MAG_FILTER, GL.GL_LINEAR);
+			Static3.anInt2341 = ids[0];
 			GlCleaner.onCardTexture += Static3.aByteBuffer2.limit() * 2;
 			return;
 		}
 		Static3.anIntArray199 = new int[64];
-		local1.glGenTextures(64, Static3.anIntArray199, 0);
-		for (@Pc(65) int local65 = 0; local65 < 64; local65++) {
-			GlRenderer.setTextureId(Static3.anIntArray199[local65]);
-			Static3.aByteBuffer2.position(local65 * 64 * 64 * 2);
-			local1.glTexImage2D(GL.GL_TEXTURE_2D, GL.GL_POINTS, GL.GL_LUMINANCE_ALPHA, 64, 64, GL.GL_POINTS, GL.GL_LUMINANCE_ALPHA, GL.GL_UNSIGNED_BYTE, Static3.aByteBuffer2);
-			local1.glTexParameteri(GL.GL_TEXTURE_2D, GL.GL_TEXTURE_MIN_FILTER, GL.GL_LINEAR);
-			local1.glTexParameteri(GL.GL_TEXTURE_2D, GL.GL_TEXTURE_MAG_FILTER, GL.GL_LINEAR);
+		gl.glGenTextures(64, Static3.anIntArray199, 0);
+		for (@Pc(65) int i = 0; i < 64; i++) {
+			GlRenderer.setTextureId(Static3.anIntArray199[i]);
+			Static3.aByteBuffer2.position(i * 64 * 64 * 2);
+			gl.glTexImage2D(GL.GL_TEXTURE_2D, GL.GL_POINTS, GL.GL_LUMINANCE_ALPHA, 64, 64, GL.GL_POINTS, GL.GL_LUMINANCE_ALPHA, GL.GL_UNSIGNED_BYTE, Static3.aByteBuffer2);
+			gl.glTexParameteri(GL.GL_TEXTURE_2D, GL.GL_TEXTURE_MIN_FILTER, GL.GL_LINEAR);
+			gl.glTexParameteri(GL.GL_TEXTURE_2D, GL.GL_TEXTURE_MAG_FILTER, GL.GL_LINEAR);
 		}
 		GlCleaner.onCardTexture += Static3.aByteBuffer2.limit() * 2;
 	}
@@ -278,28 +278,28 @@ public final class Static19 {
 	@OriginalMember(owner = "client!ig", name = "e", descriptor = "()V")
 	public static void method1858() {
 		if (Static3.anInt2342 != -1) {
-			@Pc(4) GL local4 = GlRenderer.gl;
-			@Pc(11) int[] local11 = new int[] { Static3.anInt2342 };
-			local4.glDeleteTextures(1, local11, 0);
+			@Pc(4) GL gl = GlRenderer.gl;
+			@Pc(11) int[] ids = new int[] { Static3.anInt2342 };
+			gl.glDeleteTextures(1, ids, 0);
 			Static3.anInt2342 = -1;
 			GlCleaner.onCardTexture -= Static3.aByteBuffer3.limit() * 2;
 		}
 		if (Static3.anIntArray198 != null) {
-			@Pc(29) GL local29 = GlRenderer.gl;
-			local29.glDeleteTextures(64, Static3.anIntArray198, 0);
+			@Pc(29) GL gl = GlRenderer.gl;
+			gl.glDeleteTextures(64, Static3.anIntArray198, 0);
 			Static3.anIntArray198 = null;
 			GlCleaner.onCardTexture -= Static3.aByteBuffer3.limit() * 2;
 		}
 		if (Static3.anInt2341 != -1) {
-			@Pc(48) GL local48 = GlRenderer.gl;
-			@Pc(55) int[] local55 = new int[] { Static3.anInt2341 };
-			local48.glDeleteTextures(1, local55, 0);
+			@Pc(48) GL gl = GlRenderer.gl;
+			@Pc(55) int[] ids = new int[] { Static3.anInt2341 };
+			gl.glDeleteTextures(1, ids, 0);
 			Static3.anInt2341 = -1;
 			GlCleaner.onCardTexture -= Static3.aByteBuffer2.limit() * 2;
 		}
 		if (Static3.anIntArray199 != null) {
-			@Pc(73) GL local73 = GlRenderer.gl;
-			local73.glDeleteTextures(64, Static3.anIntArray199, 0);
+			@Pc(73) GL gl = GlRenderer.gl;
+			gl.glDeleteTextures(64, Static3.anIntArray199, 0);
 			Static3.anIntArray199 = null;
 			GlCleaner.onCardTexture -= Static3.aByteBuffer2.limit() * 2;
 		}

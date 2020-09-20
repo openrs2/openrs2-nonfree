@@ -9,7 +9,7 @@ import dev.openrs2.deob.annotation.OriginalMember;
 import dev.openrs2.deob.annotation.Pc;
 
 @OriginalClass("client!gk")
-public final class Class70 implements Interface2 {
+public final class Class70 implements Material {
 
 	@OriginalMember(owner = "client!gk", name = "a", descriptor = "I")
 	private int anInt2099 = -1;
@@ -61,13 +61,13 @@ public final class Class70 implements Interface2 {
 
 	@OriginalMember(owner = "client!gk", name = "c", descriptor = "()I")
 	@Override
-	public final int method3485() {
+	public final int getFlags() {
 		return 0;
 	}
 
 	@OriginalMember(owner = "client!gk", name = "a", descriptor = "()V")
 	@Override
-	public final void method3483() {
+	public final void unbind() {
 		if (this.anInt2099 >= 0) {
 			@Pc(5) GL local5 = GlRenderer.gl;
 			local5.glCallList(this.anInt2099 + 1);
@@ -123,25 +123,25 @@ public final class Class70 implements Interface2 {
 
 	@OriginalMember(owner = "client!gk", name = "a", descriptor = "(I)V")
 	@Override
-	public final void method3486(@OriginalArg(0) int arg0) {
+	public final void setArgument(@OriginalArg(0) int arg) {
 		if (this.anInt2099 < 0) {
 			return;
 		}
 		@Pc(5) GL local5 = GlRenderer.gl;
 		local5.glActiveTexture(GL.GL_TEXTURE1);
-		if ((arg0 & 0x80) == 0) {
+		if ((arg & 0x80) == 0) {
 			local5.glEnable(Static3.aBoolean160 ? GL.GL_TEXTURE_3D : GL.GL_TEXTURE_2D);
 		} else {
 			local5.glDisable(Static3.aBoolean160 ? GL.GL_TEXTURE_3D : GL.GL_TEXTURE_2D);
 		}
 		local5.glActiveTexture(GL.GL_TEXTURE0);
-		if ((arg0 & 0x40) == 0) {
+		if ((arg & 0x40) == 0) {
 			local5.glGetFloatv(GL.GL_LIGHT_MODEL_AMBIENT, Static3.aFloatArray21, 0);
 			local5.glProgramLocalParameter4fvARB(GL.GL_VERTEX_PROGRAM_ARB, 66, Static3.aFloatArray21, 0);
 		} else {
 			local5.glProgramLocalParameter4fARB(GL.GL_VERTEX_PROGRAM_ARB, 66, 1.0F, 1.0F, 1.0F, 1.0F);
 		}
-		@Pc(58) int local58 = arg0 & 0x3;
+		@Pc(58) int local58 = arg & 0x3;
 		if (local58 == 2) {
 			local5.glProgramLocalParameter4fARB(GL.GL_VERTEX_PROGRAM_ARB, 64, 0.05F, 1.0F, 1.0F, 1.0F);
 		} else if (local58 == 3) {
@@ -153,7 +153,7 @@ public final class Class70 implements Interface2 {
 
 	@OriginalMember(owner = "client!gk", name = "b", descriptor = "()V")
 	@Override
-	public final void method3484() {
+	public final void bind() {
 		if (this.anInt2099 < 0) {
 			return;
 		}

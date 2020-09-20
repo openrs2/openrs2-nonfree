@@ -868,8 +868,8 @@ public final class Static18 {
 		Static4.aFloatArray38[0] = (float) (arg0 >> 16 & 0xFF) / 255.0F;
 		Static4.aFloatArray38[2] = (float) (arg0 & 0xFF) / 255.0F;
 		Static4.aFloatArray38[1] = (float) (arg0 >> 8 & 0xFF) / 255.0F;
-		Static32.method3981(3);
-		Static32.method3981(4);
+		MaterialManager.resetArgument(3);
+		MaterialManager.resetArgument(4);
 	}
 
 	@OriginalMember(owner = "client!hh", name = "a", descriptor = "(IIIII)V")

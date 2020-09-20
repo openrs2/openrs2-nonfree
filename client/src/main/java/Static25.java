@@ -84,8 +84,8 @@ public final class Static25 {
 			Terrain.setUnderwater(true);
 			Static31.method3797(arg0, arg1, arg2, null, 0, (byte) 0, arg13, arg14);
 			if (GlRenderer.enabled) {
-				Static3.aBoolean175 = false;
-				Static24.method2652(0, 0);
+				MaterialManager.renderingUnderwater = false;
+				MaterialManager.setMaterial(0, 0);
 				method2772(null);
 				Static27.method3112();
 			}

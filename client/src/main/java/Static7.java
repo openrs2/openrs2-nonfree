@@ -175,9 +175,6 @@ public final class Static7 {
 	@OriginalMember(owner = "client!uf", name = "a", descriptor = "[Z")
 	public static final boolean[] aBooleanArray25 = new boolean[] { true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, false };
 
-	@OriginalMember(owner = "client!uf", name = "c", descriptor = "I")
-	public static int anInt5330 = 0;
-
 	@OriginalMember(owner = "client!uf", name = "g", descriptor = "I")
 	public static int anInt5333 = 0;
 

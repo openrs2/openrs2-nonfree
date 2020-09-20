@@ -6,7 +6,7 @@ import dev.openrs2.deob.annotation.OriginalMember;
 import dev.openrs2.deob.annotation.Pc;
 
 @OriginalClass("client!ae")
-public final class Class6 implements Interface2 {
+public final class Class6 implements Material {
 
 	@OriginalMember(owner = "client!ae", name = "b", descriptor = "Z")
 	private boolean aBoolean7 = false;
@@ -54,7 +54,7 @@ public final class Class6 implements Interface2 {
 
 	@OriginalMember(owner = "client!ae", name = "b", descriptor = "()V")
 	@Override
-	public final void method3484() {
+	public final void bind() {
 		@Pc(5) GL local5 = GlRenderer.gl;
 		GlRenderer.setTextureCombineAlphaMode(1);
 		if (Static5.aClass4_Sub3_Sub10_6 == null || this.anInt96 < 0 || !Preferences.highDetailLighting) {
@@ -76,7 +76,7 @@ public final class Class6 implements Interface2 {
 
 	@OriginalMember(owner = "client!ae", name = "a", descriptor = "()V")
 	@Override
-	public final void method3483() {
+	public final void unbind() {
 		@Pc(5) GL local5 = GlRenderer.gl;
 		if (this.aBoolean7) {
 			local5.glCallList(this.anInt96 + 1);
@@ -88,12 +88,12 @@ public final class Class6 implements Interface2 {
 
 	@OriginalMember(owner = "client!ae", name = "c", descriptor = "()I")
 	@Override
-	public final int method3485() {
+	public final int getFlags() {
 		return 4;
 	}
 
 	@OriginalMember(owner = "client!ae", name = "a", descriptor = "(I)V")
 	@Override
-	public final void method3486(@OriginalArg(0) int arg0) {
+	public final void setArgument(@OriginalArg(0) int arg) {
 	}
 }

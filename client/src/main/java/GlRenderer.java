@@ -149,7 +149,7 @@ public final class GlRenderer {
 	public static int anInt2085 = 0;
 
 	@OriginalMember(owner = "client!gi", name = "N", descriptor = "Z")
-	public static boolean aBoolean140 = false;
+	public static boolean textureMatrixModified = false;
 
 	@OriginalMember(owner = "client!gi", name = "P", descriptor = "I")
 	public static int textureId = -1;
@@ -204,13 +204,13 @@ public final class GlRenderer {
 
 	@OriginalMember(owner = "client!gi", name = "a", descriptor = "()V")
 	public static void method1585() {
-		Static24.method2652(0, 0);
+		MaterialManager.setMaterial(0, 0);
 		method1601();
 		setTextureId(-1);
 		setLightingEnabled(false);
 		setDepthTestEnabled(false);
 		setFogEnabled(false);
-		method1595();
+		resetTextureMatrix();
 	}
 
 	@OriginalMember(owner = "client!gi", name = "b", descriptor = "()V")
@@ -245,14 +245,14 @@ public final class GlRenderer {
 
 	@OriginalMember(owner = "client!gi", name = "d", descriptor = "()V")
 	public static void method1590() {
-		Static24.method2652(0, 0);
+		MaterialManager.setMaterial(0, 0);
 		method1601();
 		setTextureCombineRgbMode(0);
 		setTextureCombineAlphaMode(0);
 		setLightingEnabled(false);
 		setDepthTestEnabled(false);
 		setFogEnabled(false);
-		method1595();
+		resetTextureMatrix();
 	}
 
 	@OriginalMember(owner = "client!gi", name = "e", descriptor = "()V")
@@ -349,25 +349,25 @@ public final class GlRenderer {
 	}
 
 	@OriginalMember(owner = "client!gi", name = "f", descriptor = "()V")
-	public static void method1595() {
-		if (aBoolean140) {
+	public static void resetTextureMatrix() {
+		if (textureMatrixModified) {
 			gl.glMatrixMode(GL.GL_TEXTURE);
 			gl.glLoadIdentity();
 			gl.glMatrixMode(GL.GL_MODELVIEW);
-			aBoolean140 = false;
+			textureMatrixModified = false;
 		}
 	}
 
 	@OriginalMember(owner = "client!gi", name = "g", descriptor = "()V")
 	public static void method1596() {
-		Static24.method2652(0, 0);
+		MaterialManager.setMaterial(0, 0);
 		method1601();
 		setTextureCombineRgbMode(1);
 		setTextureCombineAlphaMode(1);
 		setLightingEnabled(false);
 		setDepthTestEnabled(false);
 		setFogEnabled(false);
-		method1595();
+		resetTextureMatrix();
 	}
 
 	@OriginalMember(owner = "client!gi", name = "a", descriptor = "(I)V")
@@ -484,7 +484,7 @@ public final class GlRenderer {
 		if (gl != null) {
 			try {
 				Static13.method882();
-				Static8.method3();
+				MaterialManager.quit();
 			} catch (@Pc(6) Throwable ex) {
 			}
 			gl = null;
@@ -563,14 +563,14 @@ public final class GlRenderer {
 	}
 
 	@OriginalMember(owner = "client!gi", name = "a", descriptor = "(FFF)V")
-	public static void method1609(@OriginalArg(0) float arg0, @OriginalArg(1) float arg1, @OriginalArg(2) float arg2) {
+	public static void translateTextureMatrix(@OriginalArg(0) float x, @OriginalArg(1) float y, @OriginalArg(2) float z) {
 		gl.glMatrixMode(GL.GL_TEXTURE);
-		if (aBoolean140) {
+		if (textureMatrixModified) {
 			gl.glLoadIdentity();
 		}
-		gl.glTranslatef(arg0, arg1, arg2);
+		gl.glTranslatef(x, y, z);
 		gl.glMatrixMode(GL.GL_MODELVIEW);
-		aBoolean140 = true;
+		textureMatrixModified = true;
 	}
 
 	@OriginalMember(owner = "client!gi", name = "d", descriptor = "(Z)V")
@@ -758,7 +758,7 @@ public final class GlRenderer {
 		gl.glBindTexture(GL.GL_TEXTURE_2D, anInt2075);
 		gl.glTexImage2D(GL.GL_TEXTURE_2D, GL.GL_POINTS, 4, 1, 1, GL.GL_POINTS, GL.GL_RGBA, GL.GL_UNSIGNED_BYTE, IntBuffer.wrap(new int[] { -1 }));
 		Static27.method3120();
-		Static13.method968();
+		MaterialManager.init();
 		Static12.method872();
 	}
 
@@ -852,13 +852,13 @@ public final class GlRenderer {
 
 	@OriginalMember(owner = "client!gi", name = "u", descriptor = "()V")
 	public static void method1625() {
-		Static24.method2652(0, 0);
+		MaterialManager.setMaterial(0, 0);
 		method1601();
 		setTextureCombineRgbMode(0);
 		setTextureCombineAlphaMode(0);
 		setLightingEnabled(false);
 		setDepthTestEnabled(false);
 		setFogEnabled(false);
-		method1595();
+		resetTextureMatrix();
 	}
 }

@@ -222,7 +222,7 @@ public final class Class4_Sub12 extends Node {
 		@Pc(257) GL local257 = GlRenderer.gl;
 		if (this.anInt2356 == -1 || arg2) {
 			GlRenderer.setTextureId(-1);
-			Static24.method2652(0, 0);
+			MaterialManager.setMaterial(0, 0);
 		} else {
 			Static4.anInterface4_1.method451(this.anInt2356);
 		}

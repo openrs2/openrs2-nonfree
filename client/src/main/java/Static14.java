@@ -827,9 +827,9 @@ public final class Static14 {
 		@Pc(1) GL local1 = GlRenderer.gl;
 		GlRenderer.setTextureCombineRgbMode(1);
 		GlRenderer.setTextureCombineAlphaMode(1);
-		GlRenderer.method1595();
+		GlRenderer.resetTextureMatrix();
 		GlRenderer.setLightingEnabled(false);
-		Static24.method2652(0, 0);
+		MaterialManager.setMaterial(0, 0);
 		local1.glDepthMask(false);
 		for (@Pc(17) int local17 = 0; local17 < Static2.anInt1636; local17++) {
 			label52:

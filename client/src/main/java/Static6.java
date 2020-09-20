@@ -193,9 +193,6 @@ public final class Static6 {
 	@OriginalMember(owner = "client!sh", name = "eb", descriptor = "I")
 	public static int anInt4838;
 
-	@OriginalMember(owner = "client!si", name = "h", descriptor = "[Lclient!cl;")
-	public static Interface2[] anInterface2Array1;
-
 	@OriginalMember(owner = "client!si", name = "o", descriptor = "Lclient!uj;")
 	public static Sprite aClass4_Sub3_Sub14_5;
 

@@ -3924,7 +3924,7 @@ public final class ScriptRunner {
 								}
 								if (opcode == 6012) {
 									if (GlRenderer.enabled) {
-										Static24.method2652(0, 0);
+										MaterialManager.setMaterial(0, 0);
 									}
 									isp--;
 									Preferences.highDetailLighting = intStack[isp] == 1;

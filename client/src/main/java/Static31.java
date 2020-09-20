@@ -1,4 +1,3 @@
-import java.awt.Frame;
 import javax.media.opengl.GL;
 
 import dev.openrs2.deob.annotation.OriginalArg;
@@ -1155,8 +1154,8 @@ public final class Static31 {
 			local244.glTranslatef((float) -arg0, (float) -arg1, (float) -arg2);
 			if (local240) {
 				Static30.method3596();
-				Static24.method2652(3, -1);
-				Static3.aBoolean175 = true;
+				MaterialManager.setMaterial(3, -1);
+				MaterialManager.renderingUnderwater = true;
 				Static10.method316();
 				Static5.anInt3636 = -1;
 				Static6.anInt5120 = -1;

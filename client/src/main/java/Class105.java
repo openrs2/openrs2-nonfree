@@ -155,7 +155,7 @@ public final class Class105 {
 		local3.glEnableClientState(GL.GL_COLOR_ARRAY);
 		GlRenderer.setLightingEnabled(false);
 		if (this.anInt2859 != 0) {
-			Static24.method2652(0, 0);
+			MaterialManager.setMaterial(0, 0);
 			GlRenderer.setTextureCombineRgbMode(1);
 			GlRenderer.setTextureCombineAlphaMode(0);
 			GlRenderer.setTextureId(Static4.anInt2868);

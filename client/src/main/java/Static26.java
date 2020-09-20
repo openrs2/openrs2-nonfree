@@ -156,7 +156,7 @@ public final class Static26 {
 			local1.glTexEnvi(GL.GL_POINT_SPRITE, GL.GL_COORD_REPLACE, GL.GL_LINES);
 		}
 		local1.glDepthMask(false);
-		Static24.method2652(0, 0);
+		MaterialManager.setMaterial(0, 0);
 		local1.glColorMaterial(GL.GL_FRONT, GL.GL_DIFFUSE);
 		local1.glMaterialfv(GL.GL_FRONT, GL.GL_AMBIENT, Static4.aFloatArray36, 0);
 		if (Preferences.highDetailLighting) {
@@ -692,8 +692,8 @@ public final class Static26 {
 	@OriginalMember(owner = "client!nj", name = "a", descriptor = "(II)V")
 	public static void method2989(@OriginalArg(1) int arg0) {
 		Static2.anInt2245 = arg0;
-		Static32.method3981(3);
-		Static32.method3981(4);
+		MaterialManager.resetArgument(3);
+		MaterialManager.resetArgument(4);
 	}
 
 	@OriginalMember(owner = "client!nl", name = "a", descriptor = "(BI)Ljava/lang/String;")

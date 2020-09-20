@@ -6,7 +6,7 @@ import dev.openrs2.deob.annotation.OriginalMember;
 import dev.openrs2.deob.annotation.Pc;
 
 @OriginalClass("client!bo")
-public final class Class23 implements Interface2 {
+public final class Class23 implements Material {
 
 	@OriginalMember(owner = "client!bo", name = "p", descriptor = "I")
 	private int anInt419;
@@ -21,32 +21,32 @@ public final class Class23 implements Interface2 {
 
 	@OriginalMember(owner = "client!bo", name = "b", descriptor = "()V")
 	@Override
-	public final void method3484() {
+	public final void bind() {
 		@Pc(5) GL local5 = GlRenderer.gl;
 		local5.glCallList(this.anInt419);
 	}
 
 	@OriginalMember(owner = "client!bo", name = "c", descriptor = "()I")
 	@Override
-	public final int method3485() {
+	public final int getFlags() {
 		return 0;
 	}
 
 	@OriginalMember(owner = "client!bo", name = "a", descriptor = "()V")
 	@Override
-	public final void method3483() {
+	public final void unbind() {
 		@Pc(5) GL local5 = GlRenderer.gl;
 		local5.glCallList(this.anInt419 + 1);
 	}
 
 	@OriginalMember(owner = "client!bo", name = "a", descriptor = "(I)V")
 	@Override
-	public final void method3486(@OriginalArg(0) int arg0) {
+	public final void setArgument(@OriginalArg(0) int arg) {
 		@Pc(7) GL local7 = GlRenderer.gl;
-		@Pc(16) float local16 = -0.01F * (float) ((arg0 & 0x3) + 1);
-		@Pc(27) float local27 = (float) ((arg0 >> 3 & 0x3) + 1) * 0.01F;
-		@Pc(35) boolean local35 = (arg0 & 0x80) != 0;
-		@Pc(43) float local43 = (arg0 & 0x40) == 0 ? 4.8828125E-4F : 9.765625E-4F;
+		@Pc(16) float local16 = -0.01F * (float) ((arg & 0x3) + 1);
+		@Pc(27) float local27 = (float) ((arg >> 3 & 0x3) + 1) * 0.01F;
+		@Pc(35) boolean local35 = (arg & 0x80) != 0;
+		@Pc(43) float local43 = (arg & 0x40) == 0 ? 4.8828125E-4F : 9.765625E-4F;
 		if (local35) {
 			this.aFloatArray9[0] = local43;
 			this.aFloatArray9[1] = 0.0F;

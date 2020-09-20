@@ -253,9 +253,6 @@ public final class Static1 {
 	@OriginalMember(owner = "client!am", name = "o", descriptor = "Lclient!ll;")
 	public static final LinkedList aClass112_2 = new LinkedList();
 
-	@OriginalMember(owner = "client!am", name = "B", descriptor = "I")
-	public static int anInt214 = 0;
-
 	@OriginalMember(owner = "client!b", name = "a", descriptor = "[I")
 	public static final int[] anIntArray22 = new int[1];
 

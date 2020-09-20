@@ -59,7 +59,7 @@ public final class TextureOp36 extends TextureOp {
 		} else if (this.anInt1842 >= 0) {
 			@Pc(21) int local21 = Static1.anInt379;
 			@Pc(23) int local23 = Static2.anInt1626;
-			@Pc(34) int local34 = Static6.anInterface3_1.getMaterial(this.anInt1842).lowDetail ? 64 : 128;
+			@Pc(34) int local34 = Static6.anInterface3_1.getMetadata(this.anInt1842).lowDetail ? 64 : 128;
 			this.anIntArray126 = Static6.anInterface3_1.method415(this.anInt1842, local34, 1.0F, local34);
 			this.anInt1838 = local34;
 			this.anInt1831 = local34;

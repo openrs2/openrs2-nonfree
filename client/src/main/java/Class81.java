@@ -7,7 +7,7 @@ import dev.openrs2.deob.annotation.OriginalMember;
 import dev.openrs2.deob.annotation.Pc;
 
 @OriginalClass("client!hl")
-public final class Class81 implements Interface2 {
+public final class Class81 implements Material {
 
 	@OriginalMember(owner = "client!hl", name = "a", descriptor = "I")
 	private int anInt2236 = -1;
@@ -48,7 +48,7 @@ public final class Class81 implements Interface2 {
 
 	@OriginalMember(owner = "client!hl", name = "a", descriptor = "()V")
 	@Override
-	public final void method3483() {
+	public final void unbind() {
 		@Pc(1) GL local1 = GlRenderer.gl;
 		if (Preferences.highDetailLighting) {
 			local1.glCallList(this.anInt2236 + 1);
@@ -59,11 +59,11 @@ public final class Class81 implements Interface2 {
 
 	@OriginalMember(owner = "client!hl", name = "a", descriptor = "(I)V")
 	@Override
-	public final void method3486(@OriginalArg(0) int arg0) {
+	public final void setArgument(@OriginalArg(0) int arg) {
 		@Pc(1) GL local1 = GlRenderer.gl;
 		if (Preferences.highDetailLighting && this.anIntArray186 != null) {
 			local1.glActiveTexture(GL.GL_TEXTURE1);
-			local1.glBindTexture(GL.GL_TEXTURE_CUBE_MAP, this.anIntArray186[arg0 - 1]);
+			local1.glBindTexture(GL.GL_TEXTURE_CUBE_MAP, this.anIntArray186[arg - 1]);
 			local1.glActiveTexture(GL.GL_TEXTURE0);
 		}
 	}
@@ -147,7 +147,7 @@ public final class Class81 implements Interface2 {
 
 	@OriginalMember(owner = "client!hl", name = "c", descriptor = "()I")
 	@Override
-	public final int method3485() {
+	public final int getFlags() {
 		return 4;
 	}
 
@@ -226,7 +226,7 @@ public final class Class81 implements Interface2 {
 
 	@OriginalMember(owner = "client!hl", name = "b", descriptor = "()V")
 	@Override
-	public final void method3484() {
+	public final void bind() {
 		@Pc(1) GL local1 = GlRenderer.gl;
 		GlRenderer.setTextureCombineAlphaMode(1);
 		if (Preferences.highDetailLighting) {

@@ -7,7 +7,7 @@ import dev.openrs2.deob.annotation.OriginalMember;
 import dev.openrs2.deob.annotation.Pc;
 
 @OriginalClass("client!bd")
-public final class Class16 implements Interface2 {
+public final class Class16 implements Material {
 
 	@OriginalMember(owner = "client!bd", name = "a", descriptor = "I")
 	private int anInt265 = -1;
@@ -92,7 +92,7 @@ public final class Class16 implements Interface2 {
 
 	@OriginalMember(owner = "client!bd", name = "c", descriptor = "()I")
 	@Override
-	public final int method3485() {
+	public final int getFlags() {
 		return 15;
 	}
 
@@ -112,17 +112,17 @@ public final class Class16 implements Interface2 {
 
 	@OriginalMember(owner = "client!bd", name = "a", descriptor = "()V")
 	@Override
-	public final void method3483() {
+	public final void unbind() {
 		GlRenderer.gl.glCallList(this.anInt267 + 1);
 	}
 
 	@OriginalMember(owner = "client!bd", name = "b", descriptor = "()V")
 	@Override
-	public final void method3484() {
+	public final void bind() {
 		@Pc(1) GL local1 = GlRenderer.gl;
 		GlRenderer.setTextureCombineRgbMode(2);
 		GlRenderer.setTextureCombineAlphaMode(2);
-		GlRenderer.method1595();
+		GlRenderer.resetTextureMatrix();
 		local1.glCallList(this.anInt267);
 		@Pc(12) float local12 = 2662.4001F;
 		@Pc(21) float local21 = local12 + (float) (Static4.anInt3258 - 128) * 0.5F;
@@ -141,12 +141,12 @@ public final class Class16 implements Interface2 {
 
 	@OriginalMember(owner = "client!bd", name = "a", descriptor = "(I)V")
 	@Override
-	public final void method3486(@OriginalArg(0) int arg0) {
+	public final void setArgument(@OriginalArg(0) int arg) {
 		@Pc(1) GL local1 = GlRenderer.gl;
 		local1.glActiveTexture(GL.GL_TEXTURE1);
 		local1.glTexEnvfv(GL.GL_TEXTURE_ENV, GL.GL_TEXTURE_ENV_COLOR, Static4.aFloatArray38, 0);
 		local1.glActiveTexture(GL.GL_TEXTURE0);
-		if ((arg0 & 0x1) == 1) {
+		if ((arg & 0x1) == 1) {
 			if (!Static3.aBoolean160) {
 				GlRenderer.setTextureId(Static3.anIntArray198[GlRenderer.anInt2085 * 64 / 100 % 64]);
 			} else if (this.anInt266 != GlRenderer.anInt2085) {

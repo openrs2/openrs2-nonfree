@@ -290,9 +290,9 @@ public final class Static27 {
 			return;
 		}
 		@Pc(4) GL local4 = GlRenderer.gl;
-		Static24.method2652(0, 0);
+		MaterialManager.setMaterial(0, 0);
 		GlRenderer.setTextureCombineRgbMode(0);
-		GlRenderer.method1595();
+		GlRenderer.resetTextureMatrix();
 		GlRenderer.setTextureId(GlRenderer.anInt2075);
 		local4.glDepthMask(false);
 		GlRenderer.setLightingEnabled(false);

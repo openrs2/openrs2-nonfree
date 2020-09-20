@@ -106,7 +106,7 @@ public final class Class47 {
 		GlRenderer.setFogEnabled(false);
 		GlRenderer.setLightingEnabled(false);
 		GlRenderer.setDepthTestEnabled(false);
-		GlRenderer.method1595();
+		GlRenderer.resetTextureMatrix();
 		GlRenderer.method1606(arg1, local14, arg2, local18);
 		GlRenderer.disableDepthMask();
 		for (@Pc(36) int local36 = this.anInt1247 - 1; local36 >= 0; local36--) {

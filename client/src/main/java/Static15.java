@@ -474,11 +474,6 @@ public final class Static15 {
 		}
 	}
 
-	@OriginalMember(owner = "client!ff", name = "a", descriptor = "(B)I")
-	public static int method1323() {
-		return Static7.anInt5330 == 0 ? 0 : Static6.anInterface2Array1[Static7.anInt5330].method3485();
-	}
-
 	@OriginalMember(owner = "client!ff", name = "a", descriptor = "(Lclient!tf;B)V")
 	public static void method1324(@OriginalArg(0) Class4_Sub6 arg0) {
 		arg0.aBoolean289 = false;

@@ -3,11 +3,11 @@ import dev.openrs2.deob.annotation.OriginalClass;
 import dev.openrs2.deob.annotation.OriginalMember;
 
 @OriginalClass("client!q")
-public final class Class139 implements Interface2 {
+public final class Class139 implements Material {
 
 	@OriginalMember(owner = "client!q", name = "b", descriptor = "()V")
 	@Override
-	public final void method3484() {
+	public final void bind() {
 		if (Preferences.highDetailLighting) {
 			GlRenderer.setLightingEnabled(false);
 		}
@@ -15,7 +15,7 @@ public final class Class139 implements Interface2 {
 
 	@OriginalMember(owner = "client!q", name = "a", descriptor = "()V")
 	@Override
-	public final void method3483() {
+	public final void unbind() {
 		if (Preferences.highDetailLighting) {
 			GlRenderer.setLightingEnabled(true);
 		}
@@ -23,12 +23,12 @@ public final class Class139 implements Interface2 {
 
 	@OriginalMember(owner = "client!q", name = "a", descriptor = "(I)V")
 	@Override
-	public final void method3486(@OriginalArg(0) int arg0) {
+	public final void setArgument(@OriginalArg(0) int arg) {
 	}
 
 	@OriginalMember(owner = "client!q", name = "c", descriptor = "()I")
 	@Override
-	public final int method3485() {
+	public final int getFlags() {
 		return 0;
 	}
 }

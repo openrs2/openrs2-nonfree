@@ -469,9 +469,6 @@ public final class Static3 {
 	@OriginalMember(owner = "client!jc", name = "R", descriptor = "I")
 	public static int anInt2553 = 100;
 
-	@OriginalMember(owner = "client!jc", name = "S", descriptor = "Z")
-	public static boolean aBoolean175 = false;
-
 	@OriginalMember(owner = "client!jd", name = "d", descriptor = "Z")
 	public static boolean aBoolean176 = false;
 

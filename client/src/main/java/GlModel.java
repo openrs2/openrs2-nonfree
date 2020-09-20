@@ -2029,7 +2029,7 @@ public final class GlModel extends Model {
 			@Pc(439) short local439 = this.aShortArray91[local427];
 			if (local439 == -1) {
 				GlRenderer.setTextureId(-1);
-				Static24.method2652(0, 0);
+				MaterialManager.setMaterial(0, 0);
 			} else {
 				Static4.anInterface4_1.method451(local439 & 0xFFFF);
 			}
