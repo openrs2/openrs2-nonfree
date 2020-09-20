@@ -649,7 +649,7 @@ public final class Static33 {
 			}
 		}
 		if (GlRenderer.enabled) {
-			Static27.method3110();
+			LightingManager.method3110();
 		}
 		if (GlRenderer.enabled) {
 			Static37.method4677();
@@ -685,7 +685,7 @@ public final class Static33 {
 		Static32.method3917(true);
 		Static31.method3778(PathFinder.collisionMaps, Static5.dynamicArea ? Static7.zones : (int[][][]) null, false);
 		if (GlRenderer.enabled) {
-			Static27.method3122();
+			LightingManager.method3122();
 		}
 		Static32.method3917(true);
 		@Pc(630) int local630 = Static5.anInt3896;

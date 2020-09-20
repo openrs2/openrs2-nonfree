@@ -338,22 +338,22 @@ public final class Static14 {
 	}
 
 	@OriginalMember(owner = "client!en", name = "a", descriptor = "(B[[BI[Lclient!em;[[I[[B[[F[[B[[F[[FI[[B)V")
-	public static void method1094(@OriginalArg(1) byte[][] arg0, @OriginalArg(2) int arg1, @OriginalArg(3) Class50[] arg2, @OriginalArg(4) int[][] arg3, @OriginalArg(5) byte[][] arg4, @OriginalArg(6) float[][] arg5, @OriginalArg(7) byte[][] arg6, @OriginalArg(8) float[][] arg7, @OriginalArg(9) float[][] arg8, @OriginalArg(10) int arg9, @OriginalArg(11) byte[][] arg10) {
+	public static void method1094(@OriginalArg(1) byte[][] arg0, @OriginalArg(2) int arg1, @OriginalArg(3) Light[] arg2, @OriginalArg(4) int[][] arg3, @OriginalArg(5) byte[][] arg4, @OriginalArg(6) float[][] arg5, @OriginalArg(7) byte[][] arg6, @OriginalArg(8) float[][] arg7, @OriginalArg(9) float[][] arg8, @OriginalArg(10) int arg9, @OriginalArg(11) byte[][] arg10) {
 		for (@Pc(11) int local11 = 0; local11 < arg1; local11++) {
-			@Pc(22) Class50 local22 = arg2[local11];
+			@Pc(22) Light local22 = arg2[local11];
 			if (local22.anInt1326 == arg9) {
 				@Pc(34) Class135 local34 = new Class135();
-				@Pc(43) int local43 = (local22.anInt1320 >> 7) - local22.anInt1318;
+				@Pc(43) int local43 = (local22.z >> 7) - local22.radius;
 				@Pc(45) int local45 = 0;
 				if (local43 < 0) {
 					local45 = -local43;
 					local43 = 0;
 				}
-				@Pc(61) int local61 = local22.anInt1318 + (local22.anInt1320 >> 7);
+				@Pc(61) int local61 = local22.radius + (local22.z >> 7);
 				if (local61 > 103) {
 					local61 = 103;
 				}
-				@Pc(78) int local78 = (local22.anInt1338 >> 7) - local22.anInt1318;
+				@Pc(78) int local78 = (local22.x >> 7) - local22.radius;
 				for (@Pc(80) int local80 = local43; local80 <= local61; local80++) {
 					@Pc(88) short local88 = local22.aShortArray28[local45];
 					@Pc(94) int local94 = (local88 >> 8) + local78;
@@ -473,8 +473,8 @@ public final class Static14 {
 				}
 				local34.method3432();
 				@Pc(698) int local698 = 0;
-				if ((local22.anInt1320 >> 7) - local22.anInt1318 < 0) {
-					local698 = local22.anInt1318 - (local22.anInt1320 >> 7);
+				if ((local22.z >> 7) - local22.radius < 0) {
+					local698 = local22.radius - (local22.z >> 7);
 				}
 				for (@Pc(722) int local722 = local43; local722 <= local61; local722++) {
 					@Pc(734) short local734 = local22.aShortArray28[local698];

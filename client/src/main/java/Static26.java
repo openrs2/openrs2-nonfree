@@ -405,24 +405,24 @@ public final class Static26 {
 						@Pc(893) int local893 = local101.readUnsignedByte();
 						if (local893 > 0) {
 							for (@Pc(897) int local897 = 0; local897 < local893; local897++) {
-								@Pc(905) Class50 local905 = new Class50(local101);
+								@Pc(905) Light local905 = new Light(local101);
 								if (local905.anInt1323 == 31) {
 									@Pc(916) LightType local916 = LightTypeList.get(local101.readUnsignedShort());
 									local905.method1073(local916.anInt5484, local916.anInt5480, local916.anInt5482, local916.anInt5481);
 								}
-								@Pc(932) int local932 = local905.anInt1338 >> 7;
-								@Pc(937) int local937 = local905.anInt1320 >> 7;
+								@Pc(932) int local932 = local905.x >> 7;
+								@Pc(937) int local937 = local905.z >> 7;
 								if (local905.anInt1326 == arg0 && local932 >= local13 && local13 + 8 > local932 && local7 <= local937 && local7 + 8 > local937) {
-									@Pc(987) int local987 = (arg3 << 7) + Static31.method3802(local905.anInt1338 & 0x3FF, arg6, local905.anInt1320 & 0x3FF);
-									@Pc(1003) int local1003 = (arg5 << 7) + Static22.method2188(local905.anInt1320 & 0x3FF, local905.anInt1338 & 0x3FF, arg6);
-									local905.anInt1338 = local987;
-									local905.anInt1320 = local1003;
-									@Pc(1014) int local1014 = local905.anInt1320 >> 7;
-									@Pc(1019) int local1019 = local905.anInt1338 >> 7;
+									@Pc(987) int local987 = (arg3 << 7) + Static31.method3802(local905.x & 0x3FF, arg6, local905.z & 0x3FF);
+									@Pc(1003) int local1003 = (arg5 << 7) + Static22.method2188(local905.z & 0x3FF, local905.x & 0x3FF, arg6);
+									local905.x = local987;
+									local905.z = local1003;
+									@Pc(1014) int local1014 = local905.z >> 7;
+									@Pc(1019) int local1019 = local905.x >> 7;
 									if (local1019 >= 0 && local1014 >= 0 && local1019 < 104 && local1014 < 104) {
 										local905.aBoolean80 = (Static4.tileFlags[1][local1019][local1014] & 0x2) != 0;
-										local905.anInt1322 = Terrain.tileHeights[local905.anInt1326][local1019][local1014] - local905.anInt1322;
-										Static27.method3113(local905);
+										local905.y = Terrain.tileHeights[local905.anInt1326][local1019][local1014] - local905.y;
+										LightingManager.addLight(local905);
 									}
 								}
 							}

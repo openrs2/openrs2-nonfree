@@ -50,8 +50,8 @@ public final class Static11 {
 		Static3.aClass96_1 = new Class96();
 		((Js5GlTextureProvider) Static4.anInterface4_1).clear();
 		Static13.method1027();
-		Static5.aClass50Array1 = new Class50[255];
-		Static5.anInt3736 = 0;
+		LightingManager.lights = new Light[255];
+		LightingManager.lightCount = 0;
 		Static32.method3876();
 		Static14.method1211();
 		Static16.method1556();

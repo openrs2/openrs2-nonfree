@@ -87,7 +87,7 @@ public final class Static25 {
 				MaterialManager.renderingUnderwater = false;
 				MaterialManager.setMaterial(0, 0);
 				method2772(null);
-				Static27.method3112();
+				LightingManager.method3112();
 			}
 			Terrain.setUnderwater(false);
 		}

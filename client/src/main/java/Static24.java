@@ -308,7 +308,7 @@ public final class Static24 {
 			if (Static5.aClass187ArrayArray1 == null) {
 				Static5.aClass187ArrayArray1 = new Class187[13][13];
 			}
-			Static27.method3109();
+			LightingManager.method3109();
 			Static14.method1205();
 			Static36.method4447();
 		} else if (arg4 == 0 && arg1 > 0) {

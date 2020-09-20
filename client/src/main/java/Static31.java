@@ -323,12 +323,12 @@ public final class Static31 {
 		Static9.method763();
 		@Pc(562) byte local562 = Static11.method561() == 2 ? (byte) Static2.anInt1997 : 1;
 		if (GlRenderer.enabled) {
-			Static27.method3111(client.loop, !Preferences.flickeringEffects);
+			LightingManager.method3111(client.loop, !Preferences.flickeringEffects);
 			Static21.method2078(Static5.anInt3656, Static5.anInt4066, Static2.anInt1931, Static7.anInt5678, Static3.anInt2519);
 			GlRenderer.anInt2085 = client.loop;
 			Static25.method2728(Static3.anInt2519, Static2.anInt1931, Static7.anInt5678, Static5.anInt4066, Static5.anInt3656, Static1.aByteArrayArrayArray2, Static5.anIntArray440, Static3.anIntArray164, Static7.anIntArray620, Static6.anIntArray489, Static6.anIntArray492, Static7.y + 1, local562, PlayerList.self.x >> 7, PlayerList.self.z >> 7);
 			Static7.aBoolean123 = true;
-			Static27.method3112();
+			LightingManager.method3112();
 			Static21.method2078(0, 0, 0, 0, 0);
 			Static9.method763();
 			Static18.method4370(arg0, Static7.anInt5440, arg1, Static7.anInt5440, arg3, arg4);
@@ -681,7 +681,7 @@ public final class Static31 {
 							local2107[local2124 + local2076.length] = local2100[local2124];
 						}
 						Static18.method1679(local154, local2107);
-						Static14.method1094(Static1.aByteArrayArrayArray1[local154], Static5.anInt3736, Static5.aClass50Array1, Terrain.tileHeights[local154], Static2.aByteArrayArrayArray3[local154], local1908, Static4.aByteArrayArrayArray15[local154], local1916, local1912, local154, Static2.aByteArrayArrayArray4[local154]);
+						Static14.method1094(Static1.aByteArrayArrayArray1[local154], LightingManager.lightCount, LightingManager.lights, Terrain.tileHeights[local154], Static2.aByteArrayArrayArray3[local154], local1908, Static4.aByteArrayArrayArray15[local154], local1916, local1912, local154, Static2.aByteArrayArrayArray4[local154]);
 						break;
 					}
 					for (@Pc(1927) int local1927 = 1; local1927 <= 103; local1927++) {
@@ -1174,7 +1174,7 @@ public final class Static31 {
 				@Pc(319) int local319 = Terrain.firstVisibleLevel;
 				while (true) {
 					if (local319 >= Terrain.levels) {
-						Static27.method3116(Static6.anInt4513, Static4.anInt3329, Terrain.tiles);
+						LightingManager.method3116(Static6.anInt4513, Static4.anInt3329, Terrain.tiles);
 						break;
 					}
 					for (@Pc(324) int local324 = 0; local324 < Terrain.aClass4_Sub12ArrayArray2[local319].length; local324++) {

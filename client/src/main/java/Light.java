@@ -4,10 +4,10 @@ import dev.openrs2.deob.annotation.OriginalMember;
 import dev.openrs2.deob.annotation.Pc;
 
 @OriginalClass("client!em")
-public final class Class50 {
+public final class Light {
 
 	@OriginalMember(owner = "client!em", name = "b", descriptor = "I")
-	public final int anInt1318;
+	public final int radius;
 
 	@OriginalMember(owner = "client!em", name = "d", descriptor = "Z")
 	public final boolean aBoolean78;
@@ -16,13 +16,13 @@ public final class Class50 {
 	public final short[] aShortArray28;
 
 	@OriginalMember(owner = "client!em", name = "f", descriptor = "I")
-	public int anInt1320;
+	public int z;
 
 	@OriginalMember(owner = "client!em", name = "g", descriptor = "I")
-	public final int anInt1321;
+	public final int color;
 
 	@OriginalMember(owner = "client!em", name = "h", descriptor = "I")
-	public int anInt1322;
+	public int y;
 
 	@OriginalMember(owner = "client!em", name = "i", descriptor = "I")
 	public final int anInt1323;
@@ -43,7 +43,7 @@ public final class Class50 {
 	private int anInt1328;
 
 	@OriginalMember(owner = "client!em", name = "u", descriptor = "F")
-	public float aFloat32;
+	public float quadraticAttenuation;
 
 	@OriginalMember(owner = "client!em", name = "v", descriptor = "I")
 	private int anInt1329;
@@ -58,34 +58,34 @@ public final class Class50 {
 	public float aFloat33;
 
 	@OriginalMember(owner = "client!em", name = "G", descriptor = "I")
-	public int anInt1338;
+	public int x;
 
 	@OriginalMember(owner = "client!em", name = "j", descriptor = "[F")
-	public final float[] aFloatArray16 = new float[4];
+	public final float[] diffuse = new float[4];
 
 	@OriginalMember(owner = "client!em", name = "s", descriptor = "Z")
 	public boolean aBoolean80 = false;
 
 	@OriginalMember(owner = "client!em", name = "<init>", descriptor = "(Lclient!fd;)V")
-	public Class50(@OriginalArg(0) Buffer arg0) {
+	public Light(@OriginalArg(0) Buffer buffer) {
 		if (Static2.anIntArray97 == null) {
 			Static35.method4363();
 		}
-		this.anInt1326 = arg0.readUnsignedByte();
+		this.anInt1326 = buffer.readUnsignedByte();
 		this.aBoolean78 = (this.anInt1326 & 0x10) != 0;
 		this.aBoolean79 = (this.anInt1326 & 0x8) != 0;
 		this.anInt1326 &= 7;
-		this.anInt1338 = arg0.readUnsignedShort();
-		this.anInt1320 = arg0.readUnsignedShort();
-		this.anInt1322 = arg0.readUnsignedShort();
-		this.anInt1318 = arg0.readUnsignedByte();
+		this.x = buffer.readUnsignedShort();
+		this.z = buffer.readUnsignedShort();
+		this.y = buffer.readUnsignedShort();
+		this.radius = buffer.readUnsignedByte();
 		this.method1075();
-		this.aShortArray28 = new short[this.anInt1318 * 2 + 1];
-		for (@Pc(81) int local81 = 0; local81 < this.aShortArray28.length; local81++) {
-			this.aShortArray28[local81] = (short) arg0.readUnsignedShort();
+		this.aShortArray28 = new short[this.radius * 2 + 1];
+		for (@Pc(81) int i = 0; i < this.aShortArray28.length; i++) {
+			this.aShortArray28[i] = (short) buffer.readUnsignedShort();
 		}
-		this.anInt1321 = ColorUtils.HSL_TO_RGB[arg0.readUnsignedShort()];
-		@Pc(108) int local108 = arg0.readUnsignedByte();
+		this.color = ColorUtils.HSL_TO_RGB[buffer.readUnsignedShort()];
+		@Pc(108) int local108 = buffer.readUnsignedByte();
 		this.anInt1323 = local108 & 0x1F;
 		this.anInt1332 = (local108 & 0xE0) << 3;
 		if (this.anInt1323 != 31) {
@@ -189,8 +189,8 @@ public final class Class50 {
 
 	@OriginalMember(owner = "client!em", name = "b", descriptor = "(I)V")
 	private void method1075() {
-		@Pc(14) int local14 = (this.anInt1318 << 7) + 64;
-		this.aFloat32 = 1.0F / (float) (local14 * local14);
+		@Pc(14) int local14 = (this.radius << 7) + 64;
+		this.quadraticAttenuation = 1.0F / (float) (local14 * local14);
 	}
 
 	@OriginalMember(owner = "client!em", name = "a", descriptor = "(ZZI)V")
@@ -216,8 +216,8 @@ public final class Class50 {
 		}
 		this.aFloat33 = (float) ((local56 * this.anInt1331 >> 11) + this.anInt1329) / 2048.0F;
 		@Pc(120) float local120 = this.aFloat33 / 255.0F;
-		this.aFloatArray16[2] = local120 * (float) (this.anInt1321 & 0xFF);
-		this.aFloatArray16[0] = (float) (this.anInt1321 >> 16 & 0xFF) * local120;
-		this.aFloatArray16[1] = (float) (this.anInt1321 >> 8 & 0xFF) * local120;
+		this.diffuse[2] = local120 * (float) (this.color & 0xFF);
+		this.diffuse[0] = (float) (this.color >> 16 & 0xFF) * local120;
+		this.diffuse[1] = (float) (this.color >> 8 & 0xFF) * local120;
 	}
 }

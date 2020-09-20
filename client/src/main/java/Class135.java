@@ -155,7 +155,7 @@ public final class Class135 {
 	}
 
 	@OriginalMember(owner = "client!pi", name = "a", descriptor = "(Lclient!em;IIIFFF)I")
-	public final int method3435(@OriginalArg(0) Class50 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) float arg4, @OriginalArg(5) float arg5, @OriginalArg(6) float arg6) {
+	public final int method3435(@OriginalArg(0) Light arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) float arg4, @OriginalArg(5) float arg5, @OriginalArg(6) float arg6) {
 		@Pc(1) long local1 = 0L;
 		if ((arg1 & 0x7F) == 0 || (arg3 & 0x7F) == 0) {
 			local1 = arg1 + (arg3 << 16);
@@ -164,16 +164,16 @@ public final class Class135 {
 				return local23.value;
 			}
 		}
-		@Pc(31) int local31 = arg0.anInt1321;
-		@Pc(37) float local37 = (float) (arg0.anInt1338 - arg1);
-		@Pc(43) float local43 = (float) (arg0.anInt1322 - arg2);
-		@Pc(49) float local49 = (float) (arg0.anInt1320 - arg3);
+		@Pc(31) int local31 = arg0.color;
+		@Pc(37) float local37 = (float) (arg0.x - arg1);
+		@Pc(43) float local43 = (float) (arg0.y - arg2);
+		@Pc(49) float local49 = (float) (arg0.z - arg3);
 		@Pc(64) float local64 = (float) Math.sqrt((double) (local37 * local37 + local43 * local43 + local49 * local49));
 		@Pc(68) float local68 = 1.0F / local64;
 		local37 *= local68;
 		local43 *= local68;
 		local49 *= local68;
-		@Pc(90) float local90 = local64 / (float) ((arg0.anInt1318 << 7) + 64);
+		@Pc(90) float local90 = local64 / (float) ((arg0.radius << 7) + 64);
 		@Pc(96) float local96 = 1.0F - local90 * local90;
 		if (local96 < 0.0F) {
 			local96 = 0.0F;

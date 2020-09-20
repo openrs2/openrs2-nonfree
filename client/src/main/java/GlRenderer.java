@@ -510,7 +510,7 @@ public final class GlRenderer {
 			}
 			drawable = null;
 		}
-		Static27.method3123();
+		LightingManager.method3123();
 		enabled = false;
 	}
 
@@ -757,7 +757,7 @@ public final class GlRenderer {
 		anInt2075 = local2[0];
 		gl.glBindTexture(GL.GL_TEXTURE_2D, anInt2075);
 		gl.glTexImage2D(GL.GL_TEXTURE_2D, GL.GL_POINTS, 4, 1, 1, GL.GL_POINTS, GL.GL_RGBA, GL.GL_UNSIGNED_BYTE, IntBuffer.wrap(new int[] { -1 }));
-		Static27.method3120();
+		LightingManager.method3120();
 		MaterialManager.init();
 		Static12.method872();
 	}
@@ -847,7 +847,7 @@ public final class GlRenderer {
 		gl.glMatrixMode(GL.GL_MODELVIEW);
 		gl.glLoadIdentity();
 		Static25.method2779();
-		Static27.method3118();
+		LightingManager.method3118();
 	}
 
 	@OriginalMember(owner = "client!gi", name = "u", descriptor = "()V")

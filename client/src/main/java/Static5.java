@@ -68,48 +68,6 @@ public final class Static5 {
 	@OriginalMember(owner = "client!oc", name = "bb", descriptor = "I")
 	public static int anInt3731;
 
-	@OriginalMember(owner = "client!od", name = "a", descriptor = "I")
-	public static int anInt3732;
-
-	@OriginalMember(owner = "client!od", name = "b", descriptor = "I")
-	public static int anInt3733;
-
-	@OriginalMember(owner = "client!od", name = "c", descriptor = "[Lclient!em;")
-	public static Class50[] aClass50Array1;
-
-	@OriginalMember(owner = "client!od", name = "d", descriptor = "I")
-	public static int anInt3734;
-
-	@OriginalMember(owner = "client!od", name = "e", descriptor = "I")
-	public static int anInt3735;
-
-	@OriginalMember(owner = "client!od", name = "f", descriptor = "[[[I")
-	public static int[][][] anIntArrayArrayArray10;
-
-	@OriginalMember(owner = "client!od", name = "g", descriptor = "[Z")
-	public static boolean[] aBooleanArray20;
-
-	@OriginalMember(owner = "client!od", name = "i", descriptor = "I")
-	public static int anInt3737;
-
-	@OriginalMember(owner = "client!od", name = "j", descriptor = "[I")
-	public static int[] anIntArray403;
-
-	@OriginalMember(owner = "client!od", name = "k", descriptor = "I")
-	public static int anInt3738;
-
-	@OriginalMember(owner = "client!od", name = "l", descriptor = "[Z")
-	public static boolean[] aBooleanArray21;
-
-	@OriginalMember(owner = "client!od", name = "m", descriptor = "I")
-	public static int anInt3739;
-
-	@OriginalMember(owner = "client!od", name = "n", descriptor = "I")
-	public static int anInt3740;
-
-	@OriginalMember(owner = "client!od", name = "o", descriptor = "[I")
-	public static int[] anIntArray404;
-
 	@OriginalMember(owner = "client!of", name = "W", descriptor = "I")
 	public static int anInt3815;
 
@@ -322,12 +280,6 @@ public final class Static5 {
 
 	@OriginalMember(owner = "client!oc", name = "B", descriptor = "I")
 	public static int anInt3715 = 0;
-
-	@OriginalMember(owner = "client!od", name = "h", descriptor = "I")
-	public static int anInt3736 = 0;
-
-	@OriginalMember(owner = "client!od", name = "p", descriptor = "[F")
-	public static final float[] aFloatArray43 = new float[] { 0.0F, 0.0F, 0.0F, 1.0F };
 
 	@OriginalMember(owner = "client!og", name = "Z", descriptor = "I")
 	public static final int anInt5840 = 50;

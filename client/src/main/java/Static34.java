@@ -1075,19 +1075,19 @@ public final class Static34 {
 						@Pc(585) int local585 = local108.readUnsignedByte();
 						if (local585 > 0) {
 							for (@Pc(590) int local590 = 0; local590 < local585; local590++) {
-								@Pc(598) Class50 local598 = new Class50(local108);
+								@Pc(598) Light local598 = new Light(local108);
 								if (local598.anInt1323 == 31) {
 									@Pc(608) LightType local608 = LightTypeList.get(local108.readUnsignedShort());
 									local598.method1073(local608.anInt5484, local608.anInt5480, local608.anInt5482, local608.anInt5481);
 								}
-								local598.anInt1338 += arg4 << 7;
-								local598.anInt1320 += arg3 << 7;
-								@Pc(640) int local640 = local598.anInt1338 >> 7;
-								@Pc(645) int local645 = local598.anInt1320 >> 7;
+								local598.x += arg4 << 7;
+								local598.z += arg3 << 7;
+								@Pc(640) int local640 = local598.x >> 7;
+								@Pc(645) int local645 = local598.z >> 7;
 								if (local640 >= 0 && local645 >= 0 && local640 < 104 && local645 < 104) {
 									local598.aBoolean80 = (Static4.tileFlags[1][local640][local645] & 0x2) != 0;
-									local598.anInt1322 = Terrain.tileHeights[local598.anInt1326][local640][local645] - local598.anInt1322;
-									Static27.method3113(local598);
+									local598.y = Terrain.tileHeights[local598.anInt1326][local640][local645] - local598.y;
+									LightingManager.addLight(local598);
 								}
 							}
 						}
