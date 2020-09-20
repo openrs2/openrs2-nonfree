@@ -3,7 +3,7 @@ import dev.openrs2.deob.annotation.OriginalClass;
 import dev.openrs2.deob.annotation.OriginalMember;
 
 @OriginalClass("client!q")
-public final class Class139 implements Material {
+public final class UnlitMaterial implements Material {
 
 	@OriginalMember(owner = "client!q", name = "b", descriptor = "()V")
 	@Override

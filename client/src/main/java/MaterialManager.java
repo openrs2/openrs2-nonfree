@@ -24,7 +24,7 @@ public final class MaterialManager {
 		materials[3] = new WaterMaterial();
 		materials[4] = new Class16();
 		materials[5] = new Class23();
-		materials[6] = new Class139();
+		materials[6] = new UnlitMaterial();
 		materials[7] = new Class6();
 	}
 
