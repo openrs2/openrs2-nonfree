@@ -235,12 +235,6 @@ public final class Static13 {
 		Static2.anInt1029 = -1;
 	}
 
-	@OriginalMember(owner = "client!dj", name = "a", descriptor = "(ILclient!fh;I)Lclient!qh;")
-	public static Class4_Sub23 method887(@OriginalArg(0) int arg0, @OriginalArg(1) Js5 arg1) {
-		@Pc(17) byte[] local17 = arg1.fetchFile(arg0);
-		return local17 == null ? null : new Class4_Sub23(local17);
-	}
-
 	@OriginalMember(owner = "client!dj", name = "a", descriptor = "(II)Ljava/lang/String;")
 	private static String method892(@OriginalArg(1) int arg0) {
 		if (arg0 >= 100000) {

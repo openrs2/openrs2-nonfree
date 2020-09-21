@@ -22,7 +22,7 @@ public final class Class4_Sub6_Sub2 extends Class4_Sub6 {
 	private int anInt3090;
 
 	@OriginalMember(owner = "client!ld", name = "Nb", descriptor = "Lclient!tg;")
-	private Song aClass4_Sub31_1;
+	private Song song;
 
 	@OriginalMember(owner = "client!ld", name = "Ob", descriptor = "I")
 	private int anInt3091;
@@ -91,13 +91,13 @@ public final class Class4_Sub6_Sub2 extends Class4_Sub6 {
 	private final Class4_Sub9[][] aClass4_Sub9ArrayArray2 = new Class4_Sub9[16][128];
 
 	@OriginalMember(owner = "client!ld", name = "Gb", descriptor = "Lclient!go;")
-	private final Class72 aClass72_1 = new Class72();
+	private final MidiDecoder decoder = new MidiDecoder();
 
 	@OriginalMember(owner = "client!ld", name = "Mb", descriptor = "Lclient!bn;")
 	private final Class4_Sub6_Sub1 aClass4_Sub6_Sub1_1 = new Class4_Sub6_Sub1(this);
 
 	@OriginalMember(owner = "client!ld", name = "ob", descriptor = "Lclient!ic;")
-	private final HashTable aClass84_15 = new HashTable(128);
+	private final HashTable instruments = new HashTable(128);
 
 	@OriginalMember(owner = "client!ld", name = "<init>", descriptor = "()V")
 	public Class4_Sub6_Sub2() {
@@ -196,34 +196,34 @@ public final class Class4_Sub6_Sub2 extends Class4_Sub6 {
 	}
 
 	@OriginalMember(owner = "client!ld", name = "a", descriptor = "(ZILclient!tg;Z)V")
-	private synchronized void method2483(@OriginalArg(0) boolean arg0, @OriginalArg(2) Song arg1, @OriginalArg(3) boolean arg2) {
+	private synchronized void method2483(@OriginalArg(0) boolean arg0, @OriginalArg(2) Song song, @OriginalArg(3) boolean arg2) {
 		this.method2510(arg2);
-		this.aClass72_1.method1661(arg1.midiBytes);
+		this.decoder.init(song.midiBytes);
 		this.aLong110 = 0L;
 		this.aBoolean212 = arg0;
-		@Pc(24) int local24 = this.aClass72_1.method1668();
-		for (@Pc(26) int local26 = 0; local26 < local24; local26++) {
-			this.aClass72_1.method1663(local26);
-			this.aClass72_1.method1659(local26);
-			this.aClass72_1.method1670(local26);
+		@Pc(24) int tracks = this.decoder.getTrackCount();
+		for (@Pc(26) int i = 0; i < tracks; i++) {
+			this.decoder.loadTrackPosition(i);
+			this.decoder.addDeltaTime(i);
+			this.decoder.saveTrackPosition(i);
 		}
-		this.anInt3089 = this.aClass72_1.method1666();
-		this.anInt3090 = this.aClass72_1.anIntArray173[this.anInt3089];
-		this.aLong111 = this.aClass72_1.method1657(this.anInt3090);
+		this.anInt3089 = this.decoder.getNextTrack();
+		this.anInt3090 = this.decoder.times[this.anInt3089];
+		this.aLong111 = this.decoder.method1657(this.anInt3090);
 	}
 
 	@OriginalMember(owner = "client!ld", name = "d", descriptor = "(B)V")
 	public final synchronized void method2484() {
-		for (@Pc(7) Class4_Sub23 local7 = (Class4_Sub23) this.aClass84_15.head(); local7 != null; local7 = (Class4_Sub23) this.aClass84_15.next()) {
-			local7.unlink();
+		for (@Pc(7) Instrument instrument = (Instrument) this.instruments.head(); instrument != null; instrument = (Instrument) this.instruments.next()) {
+			instrument.unlink();
 		}
 	}
 
 	@OriginalMember(owner = "client!ld", name = "b", descriptor = "(I)V")
 	@Override
 	public final synchronized void method3345(@OriginalArg(0) int arg0) {
-		if (this.aClass72_1.method1664()) {
-			@Pc(18) int local18 = this.aClass72_1.anInt2129 * this.anInt3085 / Static7.sampleRate;
+		if (this.decoder.isValid()) {
+			@Pc(18) int local18 = this.decoder.division * this.anInt3085 / Static7.sampleRate;
 			do {
 				@Pc(27) long local27 = this.aLong110 + (long) arg0 * (long) local18;
 				if (this.aLong111 - local27 >= 0L) {
@@ -235,7 +235,7 @@ public final class Class4_Sub6_Sub2 extends Class4_Sub6 {
 				arg0 -= local58;
 				this.aClass4_Sub6_Sub1_1.method3345(local58);
 				this.method2498();
-			} while (this.aClass72_1.method1664());
+			} while (this.decoder.isValid());
 		}
 		this.aClass4_Sub6_Sub1_1.method3345(arg0);
 	}
@@ -257,7 +257,7 @@ public final class Class4_Sub6_Sub2 extends Class4_Sub6 {
 				}
 			}
 		}
-		@Pc(112) Class4_Sub23 local112 = (Class4_Sub23) this.aClass84_15.get((long) this.anIntArray284[arg1]);
+		@Pc(112) Instrument local112 = (Instrument) this.instruments.get((long) this.anIntArray284[arg1]);
 		if (local112 == null) {
 			return;
 		}
@@ -545,14 +545,14 @@ public final class Class4_Sub6_Sub2 extends Class4_Sub6 {
 
 	@OriginalMember(owner = "client!ld", name = "e", descriptor = "(B)Z")
 	public final synchronized boolean method2497() {
-		return this.aClass72_1.method1664();
+		return this.decoder.isValid();
 	}
 
 	@OriginalMember(owner = "client!ld", name = "a", descriptor = "([III)V")
 	@Override
 	public final synchronized void method3348(@OriginalArg(0) int[] arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
-		if (this.aClass72_1.method1664()) {
-			@Pc(18) int local18 = this.anInt3085 * this.aClass72_1.anInt2129 / Static7.sampleRate;
+		if (this.decoder.isValid()) {
+			@Pc(18) int local18 = this.anInt3085 * this.decoder.division / Static7.sampleRate;
 			do {
 				@Pc(27) long local27 = (long) local18 * (long) arg2 + this.aLong110;
 				if (this.aLong111 - local27 >= 0L) {
@@ -565,7 +565,7 @@ public final class Class4_Sub6_Sub2 extends Class4_Sub6 {
 				this.aClass4_Sub6_Sub1_1.method3348(arg0, arg1, local59);
 				arg1 += local59;
 				this.method2498();
-			} while (this.aClass72_1.method1664());
+			} while (this.decoder.isValid());
 		}
 		this.aClass4_Sub6_Sub1_1.method3348(arg0, arg1, arg2);
 	}
@@ -581,50 +581,50 @@ public final class Class4_Sub6_Sub2 extends Class4_Sub6 {
 		@Pc(8) int local8 = this.anInt3089;
 		@Pc(11) int local11 = this.anInt3090;
 		@Pc(14) long local14 = this.aLong111;
-		if (this.aClass4_Sub31_1 != null && this.anInt3091 == local11) {
-			this.method2483(this.aBoolean212, this.aClass4_Sub31_1, this.aBoolean213);
+		if (this.song != null && this.anInt3091 == local11) {
+			this.method2483(this.aBoolean212, this.song, this.aBoolean213);
 			this.method2498();
 			return;
 		}
 		while (local11 == this.anInt3090) {
-			while (local11 == this.aClass72_1.anIntArray173[local8]) {
-				this.aClass72_1.method1663(local8);
-				@Pc(71) int local71 = this.aClass72_1.method1671(local8);
+			while (local11 == this.decoder.times[local8]) {
+				this.decoder.loadTrackPosition(local8);
+				@Pc(71) int local71 = this.decoder.getNextEvent(local8);
 				if (local71 == 1) {
-					this.aClass72_1.method1660();
-					this.aClass72_1.method1670(local8);
-					if (this.aClass72_1.method1665()) {
-						if (this.aClass4_Sub31_1 != null) {
-							this.method2504(this.aBoolean212, this.aClass4_Sub31_1);
+					this.decoder.loadEndOfTrackPosition();
+					this.decoder.saveTrackPosition(local8);
+					if (this.decoder.hasNextTrack()) {
+						if (this.song != null) {
+							this.method2504(this.aBoolean212, this.song);
 							this.method2498();
 							return;
 						}
 						if (!this.aBoolean212 || local11 == 0) {
 							this.method2499(true);
-							this.aClass72_1.method1658();
+							this.decoder.release();
 							return;
 						}
-						this.aClass72_1.method1662(local14);
+						this.decoder.method1662(local14);
 					}
 					break;
 				}
 				if ((local71 & 0x80) != 0) {
 					this.method2492(local71);
 				}
-				this.aClass72_1.method1659(local8);
-				this.aClass72_1.method1670(local8);
+				this.decoder.addDeltaTime(local8);
+				this.decoder.saveTrackPosition(local8);
 			}
-			local8 = this.aClass72_1.method1666();
-			local11 = this.aClass72_1.anIntArray173[local8];
-			local14 = this.aClass72_1.method1657(local11);
+			local8 = this.decoder.getNextTrack();
+			local11 = this.decoder.times[local8];
+			local14 = this.decoder.method1657(local11);
 		}
 		this.aLong111 = local14;
 		this.anInt3090 = local11;
 		this.anInt3089 = local8;
-		if (this.aClass4_Sub31_1 != null && this.anInt3091 < local11) {
+		if (this.song != null && this.anInt3091 < local11) {
 			this.anInt3089 = -1;
 			this.anInt3090 = this.anInt3091;
-			this.aLong111 = this.aClass72_1.method1657(this.anInt3090);
+			this.aLong111 = this.decoder.method1657(this.anInt3090);
 		}
 	}
 
@@ -817,41 +817,41 @@ public final class Class4_Sub6_Sub2 extends Class4_Sub6 {
 
 	@OriginalMember(owner = "client!ld", name = "g", descriptor = "(B)V")
 	public final synchronized void method2509() {
-		for (@Pc(19) Class4_Sub23 local19 = (Class4_Sub23) this.aClass84_15.head(); local19 != null; local19 = (Class4_Sub23) this.aClass84_15.next()) {
+		for (@Pc(19) Instrument local19 = (Instrument) this.instruments.head(); local19 != null; local19 = (Instrument) this.instruments.next()) {
 			local19.method3570();
 		}
 	}
 
 	@OriginalMember(owner = "client!ld", name = "c", descriptor = "(IZ)V")
 	private synchronized void method2510(@OriginalArg(1) boolean arg0) {
-		this.aClass72_1.method1658();
-		this.aClass4_Sub31_1 = null;
+		this.decoder.release();
+		this.song = null;
 		this.method2499(arg0);
 	}
 
 	@OriginalMember(owner = "client!ld", name = "a", descriptor = "(IILclient!tg;Lclient!fh;Lclient!jk;)Z")
-	public final synchronized boolean method2511(@OriginalArg(2) Song arg0, @OriginalArg(3) Js5 arg1, @OriginalArg(4) Class98 arg2) {
-		arg0.method4163();
-		@Pc(9) boolean local9 = true;
-		@Pc(24) int[] local24 = new int[] { 22050 };
-		for (@Pc(36) ByteArrayNode local36 = (ByteArrayNode) arg0.aClass84_23.head(); local36 != null; local36 = (ByteArrayNode) arg0.aClass84_23.next()) {
-			@Pc(43) int local43 = (int) local36.key;
-			@Pc(53) Class4_Sub23 local53 = (Class4_Sub23) this.aClass84_15.get((long) local43);
-			if (local53 == null) {
-				local53 = Static13.method887(local43, arg1);
-				if (local53 == null) {
-					local9 = false;
+	public final synchronized boolean method2511(@OriginalArg(2) Song song, @OriginalArg(3) Js5 archive, @OriginalArg(4) Class98 arg2) {
+		song.createPrograms();
+		@Pc(9) boolean valid = true;
+		@Pc(24) int[] samplingRates = new int[] { 22050 };
+		for (@Pc(36) ByteArrayNode node = (ByteArrayNode) song.programs.head(); node != null; node = (ByteArrayNode) song.programs.next()) {
+			@Pc(43) int program = (int) node.key;
+			@Pc(53) Instrument instrument = (Instrument) this.instruments.get(program);
+			if (instrument == null) {
+				instrument = Instrument.create(archive, program);
+				if (instrument == null) {
+					valid = false;
 					continue;
 				}
-				this.aClass84_15.put((long) local43, local53);
+				this.instruments.put(program, instrument);
 			}
-			if (!local53.method3566(local24, arg2, local36.value)) {
-				local9 = false;
+			if (!instrument.method3566(samplingRates, arg2, node.value)) {
+				valid = false;
 			}
 		}
-		if (local9) {
-			arg0.method4164();
+		if (valid) {
+			song.releasePrograms();
 		}
-		return local9;
+		return valid;
 	}
 }

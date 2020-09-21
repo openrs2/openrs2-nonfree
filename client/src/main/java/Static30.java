@@ -1047,28 +1047,28 @@ public final class Static30 {
 	}
 
 	@OriginalMember(owner = "client!qn", name = "a", descriptor = "(Lclient!fh;)Z")
-	private static boolean method3628(@OriginalArg(0) Js5 arg0) {
+	private static boolean method3628(@OriginalArg(0) Js5 archive) {
 		if (!Static6.aBoolean308) {
-			@Pc(7) byte[] local7 = arg0.fetchFile(0, 0);
-			if (local7 == null) {
+			@Pc(7) byte[] bytes = archive.fetchFile(0, 0);
+			if (bytes == null) {
 				return false;
 			}
-			method3630(local7);
+			method3630(bytes);
 			Static6.aBoolean308 = true;
 		}
 		return true;
 	}
 
 	@OriginalMember(owner = "client!qn", name = "a", descriptor = "([BI)V")
-	public static void method3629(@OriginalArg(0) byte[] arg0) {
-		Static6.aByteArray59 = arg0;
+	public static void method3629(@OriginalArg(0) byte[] bytes) {
+		Static6.aByteArray59 = bytes;
 		Static6.anInt4418 = 0;
 		Static6.anInt4421 = 0;
 	}
 
 	@OriginalMember(owner = "client!qn", name = "a", descriptor = "([B)V")
-	private static void method3630(@OriginalArg(0) byte[] arg0) {
-		method3629(arg0);
+	private static void method3630(@OriginalArg(0) byte[] bytes) {
+		method3629(bytes);
 		Static6.anInt4413 = 0x1 << method3637(4);
 		Static6.anInt4415 = 0x1 << method3637(4);
 		Static6.aFloatArray50 = new float[Static6.anInt4415];
@@ -1165,12 +1165,12 @@ public final class Static30 {
 	}
 
 	@OriginalMember(owner = "client!qn", name = "a", descriptor = "(Lclient!fh;II)Lclient!qn;")
-	public static Class4_Sub24 method3636(@OriginalArg(0) Js5 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
-		if (method3628(arg0)) {
-			@Pc(16) byte[] local16 = arg0.fetchFile(arg1, arg2);
-			return local16 == null ? null : new Class4_Sub24(local16);
+	public static Class4_Sub24 method3636(@OriginalArg(0) Js5 archive, @OriginalArg(1) int groupId, @OriginalArg(2) int fileId) {
+		if (method3628(archive)) {
+			@Pc(16) byte[] bytes = archive.fetchFile(groupId, fileId);
+			return bytes == null ? null : new Class4_Sub24(bytes);
 		} else {
-			arg0.isFileReady(arg1, arg2);
+			archive.isFileReady(groupId, fileId);
 			return null;
 		}
 	}

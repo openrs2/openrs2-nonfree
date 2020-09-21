@@ -20,7 +20,7 @@ public final class Static12 {
 		try {
 			if (Static5.anInt4357 == 2) {
 				if (Static7.aClass4_Sub31_2 == null) {
-					Static7.aClass4_Sub31_2 = Static33.method4165(Static2.aClass58_42, Static7.anInt6022, Static2.anInt1244);
+					Static7.aClass4_Sub31_2 = Song.create(Static2.aClass58_42, Static7.anInt6022, Static2.anInt1244);
 					if (Static7.aClass4_Sub31_2 == null) {
 						return false;
 					}

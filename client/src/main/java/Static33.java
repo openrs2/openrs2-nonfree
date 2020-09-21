@@ -455,12 +455,6 @@ public final class Static33 {
 		return true;
 	}
 
-	@OriginalMember(owner = "client!tg", name = "a", descriptor = "(Lclient!fh;II)Lclient!tg;")
-	public static Song method4165(@OriginalArg(0) Js5 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
-		@Pc(5) byte[] local5 = arg0.fetchFile(arg1, arg2);
-		return local5 == null ? null : new Song(new Buffer(local5));
-	}
-
 	@OriginalMember(owner = "client!th", name = "a", descriptor = "(IIIIII[B)V")
 	public static void method4166(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) byte[] arg6) {
 		@Pc(6) ByteBuffer local6 = arg6 == null ? null : ByteBuffer.wrap(arg6);

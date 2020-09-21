@@ -6,8 +6,14 @@ import dev.openrs2.deob.annotation.Pc;
 @OriginalClass("client!tg")
 public final class Song extends Node {
 
+	@OriginalMember(owner = "client!tg", name = "a", descriptor = "(Lclient!fh;II)Lclient!tg;")
+	public static Song create(@OriginalArg(0) Js5 archive, @OriginalArg(1) int groupId, @OriginalArg(2) int fileId) {
+		@Pc(5) byte[] bytes = archive.fetchFile(groupId, fileId);
+		return bytes == null ? null : new Song(new Buffer(bytes));
+	}
+
 	@OriginalMember(owner = "client!tg", name = "p", descriptor = "Lclient!ic;")
-	public HashTable aClass84_23;
+	public HashTable programs;
 
 	@OriginalMember(owner = "client!tg", name = "o", descriptor = "[B")
 	public final byte[] midiBytes;
@@ -297,74 +303,74 @@ public final class Song extends Node {
 	}
 
 	@OriginalMember(owner = "client!tg", name = "a", descriptor = "()V")
-	public final void method4163() {
-		if (this.aClass84_23 != null) {
+	public final void createPrograms() {
+		if (this.programs != null) {
 			return;
 		}
-		this.aClass84_23 = new HashTable(16);
-		@Pc(12) int[] local12 = new int[16];
-		@Pc(15) int[] local15 = new int[16];
-		local12[9] = local15[9] = 128;
-		@Pc(29) Class72 local29 = new Class72(this.midiBytes);
-		@Pc(32) int local32 = local29.method1668();
-		for (@Pc(34) int local34 = 0; local34 < local32; local34++) {
-			local29.method1663(local34);
-			local29.method1659(local34);
-			local29.method1670(local34);
+		this.programs = new HashTable(16);
+		@Pc(12) int[] banks = new int[16];
+		@Pc(15) int[] programs = new int[16];
+		banks[9] = programs[9] = 128;
+		@Pc(29) MidiDecoder song = new MidiDecoder(this.midiBytes);
+		@Pc(32) int tracks = song.getTrackCount();
+		for (@Pc(34) int i = 0; i < tracks; i++) {
+			song.loadTrackPosition(i);
+			song.addDeltaTime(i);
+			song.saveTrackPosition(i);
 		}
-		label53:
+		track:
 		do {
 			while (true) {
-				@Pc(51) int local51 = local29.method1666();
-				@Pc(56) int local56 = local29.anIntArray173[local51];
-				while (local29.anIntArray173[local51] == local56) {
-					local29.method1663(local51);
-					@Pc(69) int local69 = local29.method1671(local51);
-					if (local69 == 1) {
-						local29.method1660();
-						local29.method1670(local51);
-						continue label53;
+				@Pc(51) int track = song.getNextTrack();
+				@Pc(56) int time = song.times[track];
+				while (song.times[track] == time) {
+					song.loadTrackPosition(track);
+					@Pc(69) int event = song.getNextEvent(track);
+					if (event == 1) {
+						song.loadEndOfTrackPosition();
+						song.saveTrackPosition(track);
+						continue track;
 					}
-					@Pc(85) int local85 = local69 & 0xF0;
-					if (local85 == 176) {
-						@Pc(92) int local92 = local69 & 0xF;
-						@Pc(98) int local98 = local69 >> 8 & 0x7F;
-						@Pc(104) int local104 = local69 >> 16 & 0x7F;
-						if (local98 == 0) {
-							local12[local92] = (local12[local92] & 0xFFE03FFF) + (local104 << 14);
+					@Pc(85) int status = event & 0xF0;
+					if (status == 176) {
+						@Pc(92) int channel = event & 0xF;
+						@Pc(98) int controller = event >> 8 & 0x7F;
+						@Pc(104) int value = event >> 16 & 0x7F;
+						if (controller == 0) {
+							banks[channel] = (banks[channel] & 0xFFE03FFF) + (value << 14);
 						}
-						if (local98 == 32) {
-							local12[local92] = (local12[local92] & 0xFFFFC07F) + (local104 << 7);
+						if (controller == 32) {
+							banks[channel] = (banks[channel] & 0xFFFFC07F) + (value << 7);
 						}
 					}
-					if (local85 == 192) {
-						@Pc(140) int local140 = local69 & 0xF;
-						@Pc(146) int local146 = local69 >> 8 & 0x7F;
-						local15[local140] = local12[local140] + local146;
+					if (status == 192) {
+						@Pc(140) int channel = event & 0xF;
+						@Pc(146) int program = event >> 8 & 0x7F;
+						programs[channel] = banks[channel] + program;
 					}
-					if (local85 == 144) {
-						@Pc(161) int local161 = local69 & 0xF;
-						@Pc(167) int local167 = local69 >> 8 & 0x7F;
-						@Pc(173) int local173 = local69 >> 16 & 0x7F;
-						if (local173 > 0) {
-							@Pc(179) int local179 = local15[local161];
-							@Pc(187) ByteArrayNode local187 = (ByteArrayNode) this.aClass84_23.get((long) local179);
-							if (local187 == null) {
-								local187 = new ByteArrayNode(new byte[128]);
-								this.aClass84_23.put((long) local179, local187);
+					if (status == 144) {
+						@Pc(161) int channel = event & 0xF;
+						@Pc(167) int key = event >> 8 & 0x7F;
+						@Pc(173) int velocity = event >> 16 & 0x7F;
+						if (velocity > 0) {
+							@Pc(179) int program = programs[channel];
+							@Pc(187) ByteArrayNode node = (ByteArrayNode) this.programs.get(program);
+							if (node == null) {
+								node = new ByteArrayNode(new byte[128]);
+								this.programs.put(program, node);
 							}
-							local187.value[local167] = 1;
+							node.value[key] = 1;
 						}
 					}
-					local29.method1659(local51);
-					local29.method1670(local51);
+					song.addDeltaTime(track);
+					song.saveTrackPosition(track);
 				}
 			}
-		} while (!local29.method1665());
+		} while (!song.hasNextTrack());
 	}
 
 	@OriginalMember(owner = "client!tg", name = "b", descriptor = "()V")
-	public final void method4164() {
-		this.aClass84_23 = null;
+	public final void releasePrograms() {
+		this.programs = null;
 	}
 }

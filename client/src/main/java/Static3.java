@@ -316,9 +316,6 @@ public final class Static3 {
 	@OriginalMember(owner = "client!gm", name = "f", descriptor = "J")
 	public static long aLong67 = 0L;
 
-	@OriginalMember(owner = "client!go", name = "b", descriptor = "[B")
-	public static final byte[] aByteArray16 = new byte[] { 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 0, 1, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
-
 	@OriginalMember(owner = "client!hb", name = "b", descriptor = "I")
 	public static int anInt2140 = 0;
 

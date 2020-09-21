@@ -46,8 +46,8 @@ public final class Class4_Sub24 extends Node {
 	private int anInt4424;
 
 	@OriginalMember(owner = "client!qn", name = "<init>", descriptor = "([B)V")
-	public Class4_Sub24(@OriginalArg(0) byte[] arg0) {
-		this.method3631(arg0);
+	public Class4_Sub24(@OriginalArg(0) byte[] bytes) {
+		this.decode(bytes);
 	}
 
 	@OriginalMember(owner = "client!qn", name = "b", descriptor = "(I)[F")
@@ -259,27 +259,27 @@ public final class Class4_Sub24 extends Node {
 	}
 
 	@OriginalMember(owner = "client!qn", name = "b", descriptor = "([B)V")
-	private void method3631(@OriginalArg(0) byte[] arg0) {
-		@Pc(4) Buffer local4 = new Buffer(arg0);
-		this.anInt4417 = local4.readInt();
-		this.anInt4414 = local4.readInt();
-		this.anInt4419 = local4.readInt();
-		this.anInt4420 = local4.readInt();
+	private void decode(@OriginalArg(0) byte[] bytes) {
+		@Pc(4) Buffer buffer = new Buffer(bytes);
+		this.anInt4417 = buffer.readInt();
+		this.anInt4414 = buffer.readInt();
+		this.anInt4419 = buffer.readInt();
+		this.anInt4420 = buffer.readInt();
 		if (this.anInt4420 < 0) {
 			this.anInt4420 = ~this.anInt4420;
 			this.aBoolean309 = true;
 		}
-		@Pc(40) int local40 = local4.readInt();
+		@Pc(40) int local40 = buffer.readInt();
 		this.aByteArrayArray37 = new byte[local40][];
 		for (@Pc(46) int local46 = 0; local46 < local40; local46++) {
 			@Pc(51) int local51 = 0;
 			@Pc(55) int local55;
 			do {
-				local55 = local4.readUnsignedByte();
+				local55 = buffer.readUnsignedByte();
 				local51 += local55;
 			} while (local55 >= 255);
 			@Pc(67) byte[] local67 = new byte[local51];
-			local4.readBytes(local67, local51);
+			buffer.readBytes(local67, local51);
 			this.aByteArrayArray37[local46] = local67;
 		}
 	}

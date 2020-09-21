@@ -41,7 +41,7 @@ public final class Class4_Sub9 extends Node {
 	public int anInt1294;
 
 	@OriginalMember(owner = "client!ej", name = "J", descriptor = "Lclient!qh;")
-	public Class4_Sub23 aClass4_Sub23_1;
+	public Instrument aClass4_Sub23_1;
 
 	@OriginalMember(owner = "client!ej", name = "K", descriptor = "I")
 	public int anInt1296;
