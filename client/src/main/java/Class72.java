@@ -77,7 +77,7 @@ public final class Class72 {
 		while (local27 < local12) {
 			@Pc(35) int local35 = this.aClass4_Sub10_3.readInt();
 			@Pc(40) int local40 = this.aClass4_Sub10_3.readInt();
-			if (local35 == 1297379947) {
+			if (local35 == 0x4D54726B) {
 				this.anIntArray176[local27] = this.aClass4_Sub10_3.position;
 				local27++;
 			}

@@ -22,7 +22,7 @@ public final class Class4_Sub6_Sub2 extends Class4_Sub6 {
 	private int anInt3090;
 
 	@OriginalMember(owner = "client!ld", name = "Nb", descriptor = "Lclient!tg;")
-	private Class4_Sub31 aClass4_Sub31_1;
+	private Song aClass4_Sub31_1;
 
 	@OriginalMember(owner = "client!ld", name = "Ob", descriptor = "I")
 	private int anInt3091;
@@ -196,9 +196,9 @@ public final class Class4_Sub6_Sub2 extends Class4_Sub6 {
 	}
 
 	@OriginalMember(owner = "client!ld", name = "a", descriptor = "(ZILclient!tg;Z)V")
-	private synchronized void method2483(@OriginalArg(0) boolean arg0, @OriginalArg(2) Class4_Sub31 arg1, @OriginalArg(3) boolean arg2) {
+	private synchronized void method2483(@OriginalArg(0) boolean arg0, @OriginalArg(2) Song arg1, @OriginalArg(3) boolean arg2) {
 		this.method2510(arg2);
-		this.aClass72_1.method1661(arg1.aByteArray67);
+		this.aClass72_1.method1661(arg1.midiBytes);
 		this.aLong110 = 0L;
 		this.aBoolean212 = arg0;
 		@Pc(24) int local24 = this.aClass72_1.method1668();
@@ -722,7 +722,7 @@ public final class Class4_Sub6_Sub2 extends Class4_Sub6 {
 	}
 
 	@OriginalMember(owner = "client!ld", name = "a", descriptor = "(ZLclient!tg;B)V")
-	public final synchronized void method2504(@OriginalArg(0) boolean arg0, @OriginalArg(1) Class4_Sub31 arg1) {
+	public final synchronized void method2504(@OriginalArg(0) boolean arg0, @OriginalArg(1) Song arg1) {
 		this.method2483(arg0, arg1, true);
 	}
 
@@ -830,7 +830,7 @@ public final class Class4_Sub6_Sub2 extends Class4_Sub6 {
 	}
 
 	@OriginalMember(owner = "client!ld", name = "a", descriptor = "(IILclient!tg;Lclient!fh;Lclient!jk;)Z")
-	public final synchronized boolean method2511(@OriginalArg(2) Class4_Sub31 arg0, @OriginalArg(3) Js5 arg1, @OriginalArg(4) Class98 arg2) {
+	public final synchronized boolean method2511(@OriginalArg(2) Song arg0, @OriginalArg(3) Js5 arg1, @OriginalArg(4) Class98 arg2) {
 		arg0.method4163();
 		@Pc(9) boolean local9 = true;
 		@Pc(24) int[] local24 = new int[] { 22050 };
