@@ -4,6 +4,7 @@ import java.awt.Canvas;
 import java.awt.Container;
 import java.awt.Frame;
 import java.awt.Graphics;
+import java.awt.Graphics2D;
 import java.awt.Insets;
 import java.awt.Rectangle;
 import java.awt.event.ActionEvent;
@@ -109,6 +110,8 @@ public abstract class GameShell extends Applet implements Runnable, FocusListene
 
 	@OriginalMember(owner = "client!ck", name = "db", descriptor = "I")
 	public static int canvasHeight;
+
+	public static double canvasScale = 1.0;
 
 	@OriginalMember(owner = "client!sj", name = "w", descriptor = "I")
 	public static int leftMargin = 0;
@@ -262,6 +265,14 @@ public abstract class GameShell extends Applet implements Runnable, FocusListene
 		container.add(canvas);
 		canvas.setSize(canvasWidth, canvasHeight);
 		canvas.setVisible(true);
+		Graphics g = canvas.getGraphics();
+		if (g != null) {
+			if (g instanceof Graphics2D) {
+				canvasScale = ((Graphics2D) g).getTransform().getScaleX();
+			} else {
+				canvasScale = 1.0;
+			}
+		}
 		if (container == frame) {
 			@Pc(57) Insets insets = frame.getInsets();
 			canvas.setLocation(insets.left + leftMargin, topMargin + insets.top);
@@ -370,6 +381,14 @@ public abstract class GameShell extends Applet implements Runnable, FocusListene
 			fullRedraw = true;
 			canvas.setSize(canvasWidth, canvasHeight);
 			canvas.setVisible(true);
+			Graphics g = canvas.getGraphics();
+			if (g != null) {
+				if (g instanceof Graphics2D) {
+					canvasScale = ((Graphics2D) g).getTransform().getScaleX();
+				} else {
+					canvasScale = 1.0;
+				}
+			}
 			if (frame != null && fullScreenFrame == null) {
 				@Pc(86) Insets insets = frame.getInsets();
 				canvas.setLocation(insets.left + leftMargin, topMargin + insets.top);

@@ -215,7 +215,7 @@ public final class GlRenderer {
 
 	@OriginalMember(owner = "client!gi", name = "b", descriptor = "()V")
 	private static void method1586() {
-		gl.glViewport(anInt2082 + anInt2086, anInt2079 + anInt2078, anInt2088, anInt2089);
+		gl.glViewport((int) ((anInt2082 + anInt2086) * GameShell.canvasScale + 0.5), (int) ((anInt2079 + anInt2078) * GameShell.canvasScale + 0.5), (int) (anInt2088 * GameShell.canvasScale + 0.5), (int) (anInt2089 * GameShell.canvasScale + 0.5));
 	}
 
 	@OriginalMember(owner = "client!gi", name = "b", descriptor = "(II)V")
@@ -316,6 +316,7 @@ public final class GlRenderer {
 				ThreadUtils.sleep(1000L);
 			}
 			gl = GlRenderer.context.getGL();
+			gl.glLineWidth((float) GameShell.canvasScale);
 			enabled = true;
 			canvasWidth = canvas.getSize().width;
 			canvasHeight = canvas.getSize().height;

@@ -742,4 +742,6 @@ public interface GL {
 
 	@OriginalMember(owner = "gl!javax/media/opengl/GL", name = "glLineWidth", descriptor = "(F)V")
 	void glLineWidth(@OriginalArg(0) float width);
+
+	void glPixelZoom(float xfactor, float yfactor);
 }

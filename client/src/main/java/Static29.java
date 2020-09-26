@@ -2170,7 +2170,7 @@ public final class Static29 {
 														if (local2293 > 64.0F) {
 															local2293 = 64.0F;
 														}
-														local1905.glPointSize(local2293);
+														local1905.glPointSize((float) (local2293 * GameShell.canvasScale));
 														local2032.system.method2955(local1905, local2028, local2270, local2032.type.aBoolean167);
 														if (local2040 != null) {
 															local2030 = local2040;

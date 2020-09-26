@@ -239,7 +239,7 @@ public final class ParticleSystem extends ParticleNode {
 			if (local313 > 64.0F) {
 				local313 = 64.0F;
 			}
-			local11.glPointSize(local313);
+			local11.glPointSize((float) (local313 * GameShell.canvasScale));
 			this.method2955(local11, local79, local288, emitterNode.type.aBoolean167);
 		}
 		Static26.method2962();

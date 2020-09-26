@@ -400,7 +400,7 @@ public final class Static9 {
 		local1.glPushMatrix();
 		local1.glLoadIdentity();
 		local1.glGetIntegerv(GL.GL_VIEWPORT, Static1.anIntArray23, 0);
-		local1.glViewport(0, 0, arg6, arg7);
+		local1.glViewport(0, 0, (int) (arg6 * GameShell.canvasScale + 0.5), (int) (arg7 * GameShell.canvasScale + 0.5));
 	}
 
 	@OriginalMember(owner = "client!b", name = "a", descriptor = "(FFFFII)V")

@@ -98,9 +98,9 @@ public final class Static18 {
 	@OriginalMember(owner = "client!hd", name = "b", descriptor = "(IIIIII)V")
 	public static void method1687(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5) {
 		@Pc(1) GL local1 = GlRenderer.gl;
-		local1.glLineWidth((float) arg5);
+		local1.glLineWidth((float) (arg5 * GameShell.canvasScale));
 		method1683(arg0, arg1, arg2, arg3, arg4);
-		local1.glLineWidth(1.0F);
+		local1.glLineWidth((float) GameShell.canvasScale);
 	}
 
 	@OriginalMember(owner = "client!hd", name = "a", descriptor = "(IIII)V")
@@ -193,7 +193,7 @@ public final class Static18 {
 		@Pc(21) GL local21 = GlRenderer.gl;
 		local21.glEnable(GL.GL_SCISSOR_TEST);
 		if (Static3.anInt2150 <= Static3.anInt2151 && Static3.anInt2152 <= Static3.anInt2149) {
-			local21.glScissor(GlRenderer.anInt2086 + Static3.anInt2150, GlRenderer.anInt2078 + GlRenderer.canvasHeight - Static3.anInt2149, Static3.anInt2151 - Static3.anInt2150, Static3.anInt2149 - Static3.anInt2152);
+			local21.glScissor((int) ((GlRenderer.anInt2086 + Static3.anInt2150) * GameShell.canvasScale + 0.5), (int) ((GlRenderer.anInt2078 + GlRenderer.canvasHeight - Static3.anInt2149) * GameShell.canvasScale + 0.5), (int) ((Static3.anInt2151 - Static3.anInt2150) * GameShell.canvasScale + 0.5), (int) ((Static3.anInt2149 - Static3.anInt2152) * GameShell.canvasScale + 0.5));
 		} else {
 			local21.glScissor(0, 0, 0, 0);
 		}
@@ -221,7 +221,7 @@ public final class Static18 {
 		@Pc(27) GL local27 = GlRenderer.gl;
 		local27.glEnable(GL.GL_SCISSOR_TEST);
 		if (Static3.anInt2150 <= Static3.anInt2151 && Static3.anInt2152 <= Static3.anInt2149) {
-			local27.glScissor(GlRenderer.anInt2086 + Static3.anInt2150, GlRenderer.anInt2078 + GlRenderer.canvasHeight - Static3.anInt2149, Static3.anInt2151 - Static3.anInt2150, Static3.anInt2149 - Static3.anInt2152);
+			local27.glScissor((int) ((GlRenderer.anInt2086 + Static3.anInt2150) * GameShell.canvasScale + 0.5), (int) ((GlRenderer.anInt2078 + GlRenderer.canvasHeight - Static3.anInt2149) * GameShell.canvasScale + 0.5), (int) ((Static3.anInt2151 - Static3.anInt2150) * GameShell.canvasScale + 0.5), (int) ((Static3.anInt2149 - Static3.anInt2152) * GameShell.canvasScale + 0.5));
 		} else {
 			local27.glScissor(0, 0, 0, 0);
 		}
@@ -248,7 +248,9 @@ public final class Static18 {
 		local2.glRasterPos2i(arg1, GlRenderer.canvasHeight - arg2 - arg4);
 		local2.glDisable(GL.GL_BLEND);
 		local2.glDisable(GL.GL_ALPHA_TEST);
+		local2.glPixelZoom((float) GameShell.canvasScale, (float) GameShell.canvasScale);
 		local2.glDrawPixels(arg3, arg4, GL.GL_BGRA, GlRenderer.bigEndian ? GL.GL_UNSIGNED_INT_8_8_8_8_REV : GL.GL_UNSIGNED_BYTE, IntBuffer.wrap(arg0));
+		local2.glPixelZoom(1, 1);
 		local2.glEnable(GL.GL_ALPHA_TEST);
 		local2.glEnable(GL.GL_BLEND);
 	}
