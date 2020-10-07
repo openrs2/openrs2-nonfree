@@ -156,7 +156,7 @@ public final class Static36 {
 		if (client.settings != null) {
 			local12 = "/p=" + client.settings;
 		}
-		return "http://" + local5 + ".openrs2.dev/l=" + client.language + "/a=" + client.affiliate + local12 + "/";
+		return "http://" + local5 + ".openrs2.org/l=" + client.language + "/a=" + client.affiliate + local12 + "/";
 	}
 
 	@OriginalMember(owner = "client!ve", name = "a", descriptor = "(BIIII)I")
