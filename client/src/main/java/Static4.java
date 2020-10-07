@@ -373,7 +373,7 @@ public final class Static4 {
 	public static int anInt3304 = 0;
 
 	@OriginalMember(owner = "client!md", name = "o", descriptor = "[Lclient!ag;")
-	public static final Class7[] aClass7Array1 = new Class7[50];
+	public static final SynthSound[] aClass7Array1 = new SynthSound[50];
 
 	@OriginalMember(owner = "client!me", name = "g", descriptor = "Lclient!on;")
 	public static final Class4_Sub21 aClass4_Sub21_1 = new Class4_Sub21(0, -1);

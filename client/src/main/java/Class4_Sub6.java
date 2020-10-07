@@ -9,7 +9,7 @@ public abstract class Class4_Sub6 extends Node {
 	public int anInt4094;
 
 	@OriginalMember(owner = "client!tf", name = "p", descriptor = "Lclient!eb;")
-	public Class4_Sub8 aClass4_Sub8_5;
+	public Sound aClass4_Sub8_5;
 
 	@OriginalMember(owner = "client!tf", name = "q", descriptor = "Lclient!tf;")
 	public Class4_Sub6 aClass4_Sub6_8;

@@ -4,19 +4,19 @@ import dev.openrs2.deob.annotation.OriginalMember;
 import dev.openrs2.deob.annotation.Pc;
 
 @OriginalClass("client!qh")
-public final class Instrument extends Node {
+public final class MidiInstrument extends Node {
 
 	@OriginalMember(owner = "client!dj", name = "a", descriptor = "(ILclient!fh;I)Lclient!qh;")
-	public static Instrument create(@OriginalArg(1) Js5 archive, @OriginalArg(0) int id) {
+	public static MidiInstrument create(@OriginalArg(1) Js5 archive, @OriginalArg(0) int id) {
 		@Pc(17) byte[] bytes = archive.fetchFile(id);
-		return bytes == null ? null : new Instrument(bytes);
+		return bytes == null ? null : new MidiInstrument(bytes);
 	}
 
 	@OriginalMember(owner = "client!qh", name = "p", descriptor = "[B")
 	public final byte[] aByteArray56;
 
 	@OriginalMember(owner = "client!qh", name = "s", descriptor = "[Lclient!pb;")
-	public final Class4_Sub8_Sub1[] aClass4_Sub8_Sub1Array1;
+	public final PcmSound[] aClass4_Sub8_Sub1Array1;
 
 	@OriginalMember(owner = "client!qh", name = "t", descriptor = "I")
 	public final int anInt4326;
@@ -37,14 +37,14 @@ public final class Instrument extends Node {
 	public final byte[] aByteArray58;
 
 	@OriginalMember(owner = "client!qh", name = "<init>", descriptor = "([B)V")
-	public Instrument(@OriginalArg(0) byte[] bytes) {
+	private MidiInstrument(@OriginalArg(0) byte[] bytes) {
 		@Pc(9) int local9 = 0;
 		this.aByteArray56 = new byte[128];
 		this.aByteArray58 = new byte[128];
 		this.aByteArray57 = new byte[128];
 		this.aClass157Array1 = new Class157[128];
 		this.aShortArray80 = new short[128];
-		this.aClass4_Sub8_Sub1Array1 = new Class4_Sub8_Sub1[128];
+		this.aClass4_Sub8_Sub1Array1 = new PcmSound[128];
 		@Pc(38) Buffer buffer = new Buffer(bytes);
 		while (buffer.bytes[local9 + buffer.position] != 0) {
 			local9++;
@@ -381,7 +381,7 @@ public final class Instrument extends Node {
 	public final boolean method3566(@OriginalArg(0) int[] samplingRates, @OriginalArg(1) Class98 arg1, @OriginalArg(3) byte[] keys) {
 		@Pc(15) boolean valid = true;
 		@Pc(17) int local17 = 0;
-		@Pc(19) Class4_Sub8_Sub1 local19 = null;
+		@Pc(19) PcmSound local19 = null;
 		for (@Pc(21) int i = 0; i < 128; i++) {
 			if (keys == null || keys[i] != 0) {
 				@Pc(40) int local40 = this.anIntArray458[i];

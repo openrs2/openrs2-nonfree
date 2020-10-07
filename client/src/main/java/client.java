@@ -235,6 +235,9 @@ public final class client extends GameShell {
 	@OriginalMember(owner = "client!sc", name = "fb", descriptor = "Lclient!tj;")
 	public static AudioChannel soundChannel;
 
+	@OriginalMember(owner = "client!vf", name = "g", descriptor = "Lclient!ud;")
+	public static Resampler resampler;
+
 	@OriginalMember(owner = "client!de", name = "x", descriptor = "I")
 	public static int loop = 0;
 
@@ -561,7 +564,7 @@ public final class client extends GameShell {
 			soundChannel = AudioChannel.create(GameShell.canvas, GameShell.signLink, 1, 2048);
 			Static5.aClass4_Sub6_Sub3_2 = new Class4_Sub6_Sub3();
 			soundChannel.method3008(Static5.aClass4_Sub6_Sub3_2);
-			Static7.aClass170_1 = new Class170(22050, Static7.sampleRate);
+			resampler = new Resampler(22050, Static7.sampleRate);
 			Static7.anInt5611 = js5Archive6.getGroupId("scape main");
 			mainLoadSecondaryText = LocalisedText.MAINLOAD45B;
 			mainLoadState = 50;

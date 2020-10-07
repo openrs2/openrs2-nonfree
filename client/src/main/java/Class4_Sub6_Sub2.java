@@ -214,7 +214,7 @@ public final class Class4_Sub6_Sub2 extends Class4_Sub6 {
 
 	@OriginalMember(owner = "client!ld", name = "d", descriptor = "(B)V")
 	public final synchronized void method2484() {
-		for (@Pc(7) Instrument instrument = (Instrument) this.instruments.head(); instrument != null; instrument = (Instrument) this.instruments.next()) {
+		for (@Pc(7) MidiInstrument instrument = (MidiInstrument) this.instruments.head(); instrument != null; instrument = (MidiInstrument) this.instruments.next()) {
 			instrument.unlink();
 		}
 	}
@@ -257,11 +257,11 @@ public final class Class4_Sub6_Sub2 extends Class4_Sub6 {
 				}
 			}
 		}
-		@Pc(112) Instrument local112 = (Instrument) this.instruments.get((long) this.anIntArray284[arg1]);
+		@Pc(112) MidiInstrument local112 = (MidiInstrument) this.instruments.get((long) this.anIntArray284[arg1]);
 		if (local112 == null) {
 			return;
 		}
-		@Pc(121) Class4_Sub8_Sub1 local121 = local112.aClass4_Sub8_Sub1Array1[arg2];
+		@Pc(121) PcmSound local121 = local112.aClass4_Sub8_Sub1Array1[arg2];
 		if (local121 == null) {
 			return;
 		}
@@ -680,10 +680,10 @@ public final class Class4_Sub6_Sub2 extends Class4_Sub6 {
 
 	@OriginalMember(owner = "client!ld", name = "a", descriptor = "(Lclient!ej;BZ)V")
 	public final void method2502(@OriginalArg(0) Class4_Sub9 arg0, @OriginalArg(2) boolean arg1) {
-		@Pc(8) int local8 = arg0.aClass4_Sub8_Sub1_1.aByteArray52.length;
+		@Pc(8) int local8 = arg0.aClass4_Sub8_Sub1_1.samples.length;
 		@Pc(35) int local35;
 		if (arg1 && arg0.aClass4_Sub8_Sub1_1.aBoolean288) {
-			@Pc(22) int local22 = local8 + local8 - arg0.aClass4_Sub8_Sub1_1.anInt4084;
+			@Pc(22) int local22 = local8 + local8 - arg0.aClass4_Sub8_Sub1_1.start;
 			local35 = (int) ((long) local22 * (long) this.anIntArray279[arg0.anInt1301] >> 6);
 			@Pc(39) int local39 = local8 << 8;
 			if (local39 <= local35) {
@@ -717,7 +717,7 @@ public final class Class4_Sub6_Sub2 extends Class4_Sub6 {
 			@Pc(97) double local97 = Math.sin((double) (arg0.anInt1284 & 0x1FF) * 0.01227184630308513D);
 			local31 += (int) (local97 * (double) local88);
 		}
-		@Pc(132) int local132 = (int) ((double) (arg0.aClass4_Sub8_Sub1_1.anInt4085 * 256) * Math.pow(2.0D, (double) local31 * 3.255208333333333E-4D) / (double) Static7.sampleRate + 0.5D);
+		@Pc(132) int local132 = (int) ((double) (arg0.aClass4_Sub8_Sub1_1.rate * 256) * Math.pow(2.0D, (double) local31 * 3.255208333333333E-4D) / (double) Static7.sampleRate + 0.5D);
 		return local132 < 1 ? 1 : local132;
 	}
 
@@ -817,7 +817,7 @@ public final class Class4_Sub6_Sub2 extends Class4_Sub6 {
 
 	@OriginalMember(owner = "client!ld", name = "g", descriptor = "(B)V")
 	public final synchronized void method2509() {
-		for (@Pc(19) Instrument local19 = (Instrument) this.instruments.head(); local19 != null; local19 = (Instrument) this.instruments.next()) {
+		for (@Pc(19) MidiInstrument local19 = (MidiInstrument) this.instruments.head(); local19 != null; local19 = (MidiInstrument) this.instruments.next()) {
 			local19.method3570();
 		}
 	}
@@ -836,9 +836,9 @@ public final class Class4_Sub6_Sub2 extends Class4_Sub6 {
 		@Pc(24) int[] samplingRates = new int[] { 22050 };
 		for (@Pc(36) ByteArrayNode node = (ByteArrayNode) song.programs.head(); node != null; node = (ByteArrayNode) song.programs.next()) {
 			@Pc(43) int program = (int) node.key;
-			@Pc(53) Instrument instrument = (Instrument) this.instruments.get(program);
+			@Pc(53) MidiInstrument instrument = (MidiInstrument) this.instruments.get(program);
 			if (instrument == null) {
-				instrument = Instrument.create(archive, program);
+				instrument = MidiInstrument.create(archive, program);
 				if (instrument == null) {
 					valid = false;
 					continue;

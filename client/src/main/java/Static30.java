@@ -969,20 +969,6 @@ public final class Static30 {
 		Static12.method714(Static7.aShortArray114, local118);
 	}
 
-	@OriginalMember(owner = "client!qk", name = "a", descriptor = "(IBI)I")
-	public static int method3603(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1) {
-		if (arg1 > 22050) {
-			arg0 = arg1;
-			arg1 = 22050;
-		}
-		while (arg1 != 0) {
-			@Pc(32) int local32 = arg0 % arg1;
-			arg0 = arg1;
-			arg1 = local32;
-		}
-		return arg0;
-	}
-
 	@OriginalMember(owner = "client!qk", name = "a", descriptor = "(IBIIII)V")
 	private static void method3607(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4) {
 		@Pc(11) int local11 = (arg0 - 32) * arg0 / arg2;

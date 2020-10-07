@@ -337,13 +337,13 @@ public class AudioChannel {
 								if (local96 == null) {
 									break label100;
 								}
-								@Pc(101) Class4_Sub8 local101 = local96.aClass4_Sub8_5;
-								if (local101 == null || local101.anInt4083 <= local62) {
+								@Pc(101) Sound local101 = local96.aClass4_Sub8_5;
+								if (local101 == null || local101.position <= local62) {
 									local96.aBoolean289 = true;
 									@Pc(125) int local125 = local96.method3346();
 									local45 += local125;
 									if (local101 != null) {
-										local101.anInt4083 += local125;
+										local101.position += local125;
 									}
 									if (local45 >= this.anInt3577) {
 										break label106;

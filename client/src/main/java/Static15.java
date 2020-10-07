@@ -478,7 +478,7 @@ public final class Static15 {
 	public static void method1324(@OriginalArg(0) Class4_Sub6 arg0) {
 		arg0.aBoolean289 = false;
 		if (arg0.aClass4_Sub8_5 != null) {
-			arg0.aClass4_Sub8_5.anInt4083 = 0;
+			arg0.aClass4_Sub8_5.position = 0;
 		}
 		for (@Pc(25) Class4_Sub6 local25 = arg0.method3350(); local25 != null; local25 = arg0.method3349()) {
 			method1324(local25);

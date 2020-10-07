@@ -11,7 +11,7 @@ public final class Class4_Sub9 extends Node {
 	public Class4_Sub6_Sub4 aClass4_Sub6_Sub4_1;
 
 	@OriginalMember(owner = "client!ej", name = "u", descriptor = "Lclient!pb;")
-	public Class4_Sub8_Sub1 aClass4_Sub8_Sub1_1;
+	public PcmSound aClass4_Sub8_Sub1_1;
 
 	@OriginalMember(owner = "client!ej", name = "w", descriptor = "I")
 	public int anInt1284;
@@ -41,7 +41,7 @@ public final class Class4_Sub9 extends Node {
 	public int anInt1294;
 
 	@OriginalMember(owner = "client!ej", name = "J", descriptor = "Lclient!qh;")
-	public Instrument aClass4_Sub23_1;
+	public MidiInstrument aClass4_Sub23_1;
 
 	@OriginalMember(owner = "client!ej", name = "K", descriptor = "I")
 	public int anInt1296;

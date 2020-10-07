@@ -263,14 +263,14 @@ public final class Static27 {
 		for (@Pc(3) int local3 = 0; local3 < Static6.anInt4457; local3++) {
 			@Pc(10) int local10 = Static3.anIntArray217[local3]--;
 			if (Static3.anIntArray217[local3] >= -10) {
-				@Pc(89) Class7 local89 = Static4.aClass7Array1[local3];
+				@Pc(89) SynthSound local89 = Static4.aClass7Array1[local3];
 				if (local89 == null) {
-					local89 = Static8.method106(client.js5Archive4, Static4.anIntArray294[local3], 0);
+					local89 = SynthSound.create(client.js5Archive4, Static4.anIntArray294[local3], 0);
 					if (local89 == null) {
 						continue;
 					}
 					@Pc(104) int[] local104 = Static3.anIntArray217;
-					local104[local3] += local89.method105();
+					local104[local3] += local89.getStart();
 					Static4.aClass7Array1[local3] = local89;
 				}
 				if (Static3.anIntArray217[local3] < 0) {
@@ -300,7 +300,7 @@ public final class Static27 {
 						local223 = (local137 - local192) * Preferences.areaSoundsVolume * Static1.anIntArray21[local3] / local137 >> 8;
 					}
 					if (local223 > 0) {
-						@Pc(240) Class4_Sub8_Sub1 local240 = local89.method107().method3338(Static7.aClass170_1);
+						@Pc(240) PcmSound local240 = local89.toPcmSound().resample(client.resampler);
 						@Pc(245) Class4_Sub6_Sub4 local245 = Static28.method3385(local240, local223);
 						local245.method3359(Static7.anIntArray629[local3] - 1);
 						Static5.aClass4_Sub6_Sub3_2.method2674(local245);

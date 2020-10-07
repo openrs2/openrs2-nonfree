@@ -67,36 +67,36 @@ public final class Class146 {
 	}
 
 	@OriginalMember(owner = "client!qo", name = "a", descriptor = "(Lclient!fd;Lclient!h;)V")
-	public final void method3642(@OriginalArg(0) Buffer arg0, @OriginalArg(1) Class73 arg1) {
-		@Pc(3) int local3 = arg0.readUnsignedByte();
+	public final void decode(@OriginalArg(0) Buffer buffer, @OriginalArg(1) Envelope envelope) {
+		@Pc(3) int local3 = buffer.readUnsignedByte();
 		this.anIntArray471[0] = local3 >> 4;
 		this.anIntArray471[1] = local3 & 0xF;
 		if (local3 == 0) {
 			this.anIntArray472[0] = this.anIntArray472[1] = 0;
 			return;
 		}
-		this.anIntArray472[0] = arg0.readUnsignedShort();
-		this.anIntArray472[1] = arg0.readUnsignedShort();
-		@Pc(37) int local37 = arg0.readUnsignedByte();
-		for (@Pc(39) int local39 = 0; local39 < 2; local39++) {
-			for (@Pc(44) int local44 = 0; local44 < this.anIntArray471[local39]; local44++) {
-				this.anIntArrayArrayArray12[local39][0][local44] = arg0.readUnsignedShort();
-				this.anIntArrayArrayArray11[local39][0][local44] = arg0.readUnsignedShort();
+		this.anIntArray472[0] = buffer.readUnsignedShort();
+		this.anIntArray472[1] = buffer.readUnsignedShort();
+		@Pc(37) int local37 = buffer.readUnsignedByte();
+		for (@Pc(39) int i = 0; i < 2; i++) {
+			for (@Pc(44) int j = 0; j < this.anIntArray471[i]; j++) {
+				this.anIntArrayArrayArray12[i][0][j] = buffer.readUnsignedShort();
+				this.anIntArrayArrayArray11[i][0][j] = buffer.readUnsignedShort();
 			}
 		}
-		for (@Pc(78) int local78 = 0; local78 < 2; local78++) {
-			for (@Pc(83) int local83 = 0; local83 < this.anIntArray471[local78]; local83++) {
-				if ((local37 & 0x1 << local78 * 4 << local83) == 0) {
-					this.anIntArrayArrayArray12[local78][1][local83] = this.anIntArrayArrayArray12[local78][0][local83];
-					this.anIntArrayArrayArray11[local78][1][local83] = this.anIntArrayArrayArray11[local78][0][local83];
+		for (@Pc(78) int i = 0; i < 2; i++) {
+			for (@Pc(83) int j = 0; j < this.anIntArray471[i]; j++) {
+				if ((local37 & 0x1 << i * 4 << j) == 0) {
+					this.anIntArrayArrayArray12[i][1][j] = this.anIntArrayArrayArray12[i][0][j];
+					this.anIntArrayArrayArray11[i][1][j] = this.anIntArrayArrayArray11[i][0][j];
 				} else {
-					this.anIntArrayArrayArray12[local78][1][local83] = arg0.readUnsignedShort();
-					this.anIntArrayArrayArray11[local78][1][local83] = arg0.readUnsignedShort();
+					this.anIntArrayArrayArray12[i][1][j] = buffer.readUnsignedShort();
+					this.anIntArrayArrayArray11[i][1][j] = buffer.readUnsignedShort();
 				}
 			}
 		}
 		if (local37 != 0 || this.anIntArray472[1] != this.anIntArray472[0]) {
-			arg1.method1676(arg0);
+			envelope.decodeStages(buffer);
 		}
 	}
 

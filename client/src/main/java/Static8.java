@@ -306,12 +306,6 @@ public final class Static8 {
 		return local8;
 	}
 
-	@OriginalMember(owner = "client!ag", name = "a", descriptor = "(Lclient!fh;II)Lclient!ag;")
-	public static Class7 method106(@OriginalArg(0) Js5 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
-		@Pc(5) byte[] local5 = arg0.fetchFile(arg1, arg2);
-		return local5 == null ? null : new Class7(new Buffer(local5));
-	}
-
 	@OriginalMember(owner = "client!ah", name = "a", descriptor = "(ILclient!vh;ILclient!p;ILclient!f;II)V")
 	public static void method109(@OriginalArg(1) LocType arg0, @OriginalArg(2) int arg1, @OriginalArg(3) Npc arg2, @OriginalArg(4) int arg3, @OriginalArg(5) Player arg4, @OriginalArg(6) int arg5, @OriginalArg(7) int arg6) {
 		@Pc(9) Class4_Sub11 local9 = new Class4_Sub11();
