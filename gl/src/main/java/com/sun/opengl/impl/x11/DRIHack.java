@@ -3,9 +3,9 @@ package com.sun.opengl.impl.x11;
 import java.security.AccessController;
 import java.security.PrivilegedAction;
 
-import dev.openrs2.deob.annotation.OriginalClass;
-import dev.openrs2.deob.annotation.OriginalMember;
 import jaggl.X11.dri;
+import org.openrs2.deob.annotation.OriginalClass;
+import org.openrs2.deob.annotation.OriginalMember;
 
 @OriginalClass("gl!com/sun/opengl/impl/x11/DRIHack")
 public final class DRIHack {

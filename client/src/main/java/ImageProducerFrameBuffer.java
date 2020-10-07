@@ -8,10 +8,10 @@ import java.awt.image.ImageConsumer;
 import java.awt.image.ImageObserver;
 import java.awt.image.ImageProducer;
 
-import dev.openrs2.deob.annotation.OriginalArg;
-import dev.openrs2.deob.annotation.OriginalClass;
-import dev.openrs2.deob.annotation.OriginalMember;
-import dev.openrs2.deob.annotation.Pc;
+import org.openrs2.deob.annotation.OriginalArg;
+import org.openrs2.deob.annotation.OriginalClass;
+import org.openrs2.deob.annotation.OriginalMember;
+import org.openrs2.deob.annotation.Pc;
 
 @OriginalClass("client!tm")
 public final class ImageProducerFrameBuffer extends FrameBuffer implements ImageProducer, ImageObserver {

@@ -1,4 +1,4 @@
-import dev.openrs2.deob.annotation.OriginalMember;
+import org.openrs2.deob.annotation.OriginalMember;
 
 public final class PlayerList {
 	@OriginalMember(owner = "client!nc", name = "e", descriptor = "[Lclient!f;")

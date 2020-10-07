@@ -5,10 +5,10 @@ import java.security.ProtectionDomain;
 import java.security.cert.Certificate;
 import java.util.Hashtable;
 
-import dev.openrs2.deob.annotation.OriginalArg;
-import dev.openrs2.deob.annotation.OriginalClass;
-import dev.openrs2.deob.annotation.OriginalMember;
-import dev.openrs2.deob.annotation.Pc;
+import org.openrs2.deob.annotation.OriginalArg;
+import org.openrs2.deob.annotation.OriginalClass;
+import org.openrs2.deob.annotation.OriginalMember;
+import org.openrs2.deob.annotation.Pc;
 
 @OriginalClass("loader!d")
 public final class UnpackerClassLoader extends ClassLoader {

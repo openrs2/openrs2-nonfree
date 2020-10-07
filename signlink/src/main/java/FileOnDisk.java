@@ -3,10 +3,10 @@ import java.io.File;
 import java.io.IOException;
 import java.io.RandomAccessFile;
 
-import dev.openrs2.deob.annotation.OriginalArg;
-import dev.openrs2.deob.annotation.OriginalClass;
-import dev.openrs2.deob.annotation.OriginalMember;
-import dev.openrs2.deob.annotation.Pc;
+import org.openrs2.deob.annotation.OriginalArg;
+import org.openrs2.deob.annotation.OriginalClass;
+import org.openrs2.deob.annotation.OriginalMember;
+import org.openrs2.deob.annotation.Pc;
 
 @OriginalClass("signlink!kd")
 public final class FileOnDisk {

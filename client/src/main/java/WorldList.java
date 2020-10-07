@@ -2,9 +2,9 @@ import java.io.IOException;
 import java.net.Socket;
 import java.net.URL;
 
-import dev.openrs2.deob.annotation.OriginalArg;
-import dev.openrs2.deob.annotation.OriginalMember;
-import dev.openrs2.deob.annotation.Pc;
+import org.openrs2.deob.annotation.OriginalArg;
+import org.openrs2.deob.annotation.OriginalMember;
+import org.openrs2.deob.annotation.Pc;
 
 public final class WorldList {
 	@OriginalMember(owner = "client!ud", name = "a", descriptor = "I")

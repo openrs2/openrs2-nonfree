@@ -6,9 +6,9 @@ import javax.media.opengl.GLCapabilitiesChooser;
 import javax.media.opengl.GLDrawable;
 import javax.media.opengl.GLDrawableFactory;
 
-import dev.openrs2.deob.annotation.OriginalArg;
-import dev.openrs2.deob.annotation.OriginalClass;
-import dev.openrs2.deob.annotation.OriginalMember;
+import org.openrs2.deob.annotation.OriginalArg;
+import org.openrs2.deob.annotation.OriginalClass;
+import org.openrs2.deob.annotation.OriginalMember;
 
 @OriginalClass("gl!jaggl/jogl_wrapper/GLDrawableFactoryImpl")
 public final class GLDrawableFactoryImpl extends GLDrawableFactory {

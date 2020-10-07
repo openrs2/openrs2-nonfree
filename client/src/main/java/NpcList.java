@@ -1,4 +1,4 @@
-import dev.openrs2.deob.annotation.OriginalMember;
+import org.openrs2.deob.annotation.OriginalMember;
 
 public final class NpcList {
 	@OriginalMember(owner = "client!hk", name = "hb", descriptor = "[Lclient!p;")

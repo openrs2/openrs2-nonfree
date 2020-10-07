@@ -1,10 +1,10 @@
 import java.nio.IntBuffer;
 import javax.media.opengl.GL;
 
-import dev.openrs2.deob.annotation.OriginalArg;
-import dev.openrs2.deob.annotation.OriginalClass;
-import dev.openrs2.deob.annotation.OriginalMember;
-import dev.openrs2.deob.annotation.Pc;
+import org.openrs2.deob.annotation.OriginalArg;
+import org.openrs2.deob.annotation.OriginalClass;
+import org.openrs2.deob.annotation.OriginalMember;
+import org.openrs2.deob.annotation.Pc;
 
 @OriginalClass("client!ib")
 public final class Class4_Sub3_Sub10 extends SecondaryNode {

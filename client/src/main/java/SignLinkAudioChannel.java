@@ -1,8 +1,8 @@
 import java.awt.Component;
 
-import dev.openrs2.deob.annotation.OriginalArg;
-import dev.openrs2.deob.annotation.OriginalClass;
-import dev.openrs2.deob.annotation.OriginalMember;
+import org.openrs2.deob.annotation.OriginalArg;
+import org.openrs2.deob.annotation.OriginalClass;
+import org.openrs2.deob.annotation.OriginalMember;
 
 @OriginalClass("client!nm")
 public final class SignLinkAudioChannel extends AudioChannel {

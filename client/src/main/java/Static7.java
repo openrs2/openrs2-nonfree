@@ -1,6 +1,6 @@
 import java.util.Calendar;
 
-import dev.openrs2.deob.annotation.OriginalMember;
+import org.openrs2.deob.annotation.OriginalMember;
 
 public final class Static7 {
 

@@ -1,5 +1,5 @@
-import dev.openrs2.deob.annotation.OriginalArg;
-import dev.openrs2.deob.annotation.OriginalMember;
+import org.openrs2.deob.annotation.OriginalArg;
+import org.openrs2.deob.annotation.OriginalMember;
 
 public final class CharUtils {
 	@OriginalMember(owner = "client!fm", name = "a", descriptor = "(ZC)Z")

@@ -1,6 +1,6 @@
-import dev.openrs2.deob.annotation.OriginalArg;
-import dev.openrs2.deob.annotation.OriginalMember;
-import dev.openrs2.deob.annotation.Pc;
+import org.openrs2.deob.annotation.OriginalArg;
+import org.openrs2.deob.annotation.OriginalMember;
+import org.openrs2.deob.annotation.Pc;
 
 public final class SkyBoxSphereTypeList {
 	@OriginalMember(owner = "client!fj", name = "ab", descriptor = "Lclient!cc;")

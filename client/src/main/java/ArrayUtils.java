@@ -1,6 +1,6 @@
-import dev.openrs2.deob.annotation.OriginalArg;
-import dev.openrs2.deob.annotation.OriginalMember;
-import dev.openrs2.deob.annotation.Pc;
+import org.openrs2.deob.annotation.OriginalArg;
+import org.openrs2.deob.annotation.OriginalMember;
+import org.openrs2.deob.annotation.Pc;
 
 public final class ArrayUtils {
 	@OriginalMember(owner = "client!ad", name = "a", descriptor = "([BI[BII)V")

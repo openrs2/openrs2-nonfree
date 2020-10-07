@@ -1,4 +1,4 @@
-import dev.openrs2.deob.annotation.OriginalMember;
+import org.openrs2.deob.annotation.OriginalMember;
 
 public final class StockMarketManager {
 	@OriginalMember(owner = "client!bg", name = "u", descriptor = "[Lclient!t;")

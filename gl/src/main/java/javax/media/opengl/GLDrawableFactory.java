@@ -1,9 +1,9 @@
 package javax.media.opengl;
 
-import dev.openrs2.deob.annotation.OriginalArg;
-import dev.openrs2.deob.annotation.OriginalClass;
-import dev.openrs2.deob.annotation.OriginalMember;
 import jaggl.jogl_wrapper.GLDrawableFactoryImpl;
+import org.openrs2.deob.annotation.OriginalArg;
+import org.openrs2.deob.annotation.OriginalClass;
+import org.openrs2.deob.annotation.OriginalMember;
 
 @OriginalClass("gl!javax/media/opengl/GLDrawableFactory")
 public abstract class GLDrawableFactory {

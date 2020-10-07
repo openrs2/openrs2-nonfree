@@ -1,4 +1,4 @@
-import dev.openrs2.deob.annotation.OriginalMember;
+import org.openrs2.deob.annotation.OriginalMember;
 
 public final class Text {
 	@OriginalMember(owner = "client!jo", name = "N", descriptor = "Ljava/lang/String;")

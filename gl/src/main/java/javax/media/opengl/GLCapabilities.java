@@ -1,9 +1,9 @@
 package javax.media.opengl;
 
-import dev.openrs2.deob.annotation.OriginalClass;
-import dev.openrs2.deob.annotation.OriginalMember;
-import dev.openrs2.deob.annotation.Pc;
 import jaggl.jagglcaps;
+import org.openrs2.deob.annotation.OriginalClass;
+import org.openrs2.deob.annotation.OriginalMember;
+import org.openrs2.deob.annotation.Pc;
 
 @OriginalClass("gl!javax/media/opengl/GLCapabilities")
 public final class GLCapabilities extends jagglcaps implements Cloneable {

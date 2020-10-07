@@ -1,8 +1,8 @@
 import java.util.Date;
 
-import dev.openrs2.deob.annotation.OriginalArg;
-import dev.openrs2.deob.annotation.OriginalMember;
-import dev.openrs2.deob.annotation.Pc;
+import org.openrs2.deob.annotation.OriginalArg;
+import org.openrs2.deob.annotation.OriginalMember;
+import org.openrs2.deob.annotation.Pc;
 
 public final class ScriptRunner {
 	@OriginalMember(owner = "client!tm", name = "O", descriptor = "[I")

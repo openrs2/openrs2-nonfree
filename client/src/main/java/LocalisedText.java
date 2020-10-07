@@ -1,5 +1,5 @@
-import dev.openrs2.deob.annotation.OriginalArg;
-import dev.openrs2.deob.annotation.OriginalMember;
+import org.openrs2.deob.annotation.OriginalArg;
+import org.openrs2.deob.annotation.OriginalMember;
 
 public final class LocalisedText {
 	@OriginalMember(owner = "client!hb", name = "a", descriptor = "Ljava/lang/String;")
