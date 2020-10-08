@@ -48,7 +48,7 @@ public final class Static14 {
 			@Pc(150) int local150 = Static1.aClass185_2.anInt5932 + local31 - Static2.anInt1633;
 			@Pc(159) int local159 = local65 + Static1.aClass185_2.anInt5931 - Static6.anInt5182;
 			if (Static1.aClass185_1.anObjectArray11 != null && Static3.aBoolean173) {
-				@Pc(169) Class4_Sub13 local169 = new Class4_Sub13();
+				@Pc(169) HookRequest local169 = new HookRequest();
 				local169.mouseY = local159;
 				local169.source = Static1.aClass185_1;
 				local169.mouseX = local150;
@@ -58,7 +58,7 @@ public final class Static14 {
 			if (Mouse.pressedButton == 0) {
 				if (Static3.aBoolean173) {
 					if (Static1.aClass185_1.anObjectArray7 != null) {
-						@Pc(231) Class4_Sub13 local231 = new Class4_Sub13();
+						@Pc(231) HookRequest local231 = new HookRequest();
 						local231.target = Static7.aClass185_16;
 						local231.source = Static1.aClass185_1;
 						local231.mouseX = local150;
@@ -601,7 +601,7 @@ public final class Static14 {
 		for (@Pc(26) int local26 = 0; local26 < local24.length; local26++) {
 			@Pc(34) Component local34 = local24[local26];
 			if (local34.anObjectArray22 != null) {
-				@Pc(42) Class4_Sub13 local42 = new Class4_Sub13();
+				@Pc(42) HookRequest local42 = new HookRequest();
 				local42.arguments = local34.anObjectArray22;
 				local42.source = local34;
 				ScriptRunner.method519(local42, 2000000);

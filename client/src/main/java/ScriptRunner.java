@@ -4573,7 +4573,7 @@ public final class ScriptRunner {
 	}
 
 	@OriginalMember(owner = "client!cc", name = "a", descriptor = "(Lclient!io;ZI)V")
-	public static void method519(@OriginalArg(0) Class4_Sub13 arg0, @OriginalArg(2) int maxCycles) {
+	public static void method519(@OriginalArg(0) HookRequest arg0, @OriginalArg(2) int maxCycles) {
 		@Pc(8) Object[] args = arg0.arguments;
 		@Pc(14) int scriptId = (Integer) args[0];
 		@Pc(18) ClientScript script = ClientScriptList.get(scriptId);

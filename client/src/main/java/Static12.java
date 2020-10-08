@@ -176,7 +176,7 @@ public final class Static12 {
 							continue;
 						}
 						if (local9.aBoolean407 && Mouse.x >= local61 && Mouse.y >= local63 && Mouse.x < local65 && Mouse.y < local67) {
-							for (@Pc(164) Class4_Sub13 local164 = (Class4_Sub13) Static3.aClass112_14.head(); local164 != null; local164 = (Class4_Sub13) Static3.aClass112_14.next()) {
+							for (@Pc(164) HookRequest local164 = (HookRequest) Static3.aClass112_14.head(); local164 != null; local164 = (HookRequest) Static3.aClass112_14.next()) {
 								if (local164.aBoolean172) {
 									local164.unlink();
 									local164.source.aBoolean414 = false;
@@ -241,7 +241,7 @@ public final class Static12 {
 						}
 						if (local9.aBoolean403 || local9.anInt5904 != 0) {
 							if (local209 && Static3.anInt2885 != 0 && local9.anObjectArray20 != null) {
-								@Pc(418) Class4_Sub13 local418 = new Class4_Sub13();
+								@Pc(418) HookRequest local418 = new HookRequest();
 								local418.aBoolean172 = true;
 								local418.source = local9;
 								local418.mouseY = Static3.anInt2885;
@@ -337,7 +337,7 @@ public final class Static12 {
 							if (!local9.aBoolean408 && local223) {
 								local9.aBoolean408 = true;
 								if (local9.anObjectArray29 != null) {
-									@Pc(737) Class4_Sub13 local737 = new Class4_Sub13();
+									@Pc(737) HookRequest local737 = new HookRequest();
 									local737.aBoolean172 = true;
 									local737.source = local9;
 									local737.mouseX = Mouse.clickX - local50;
@@ -347,7 +347,7 @@ public final class Static12 {
 								}
 							}
 							if (local9.aBoolean408 && local214 && local9.anObjectArray15 != null) {
-								@Pc(773) Class4_Sub13 local773 = new Class4_Sub13();
+								@Pc(773) HookRequest local773 = new HookRequest();
 								local773.aBoolean172 = true;
 								local773.source = local9;
 								local773.mouseX = Mouse.x - local50;
@@ -358,7 +358,7 @@ public final class Static12 {
 							if (local9.aBoolean408 && !local214) {
 								local9.aBoolean408 = false;
 								if (local9.anObjectArray30 != null) {
-									@Pc(812) Class4_Sub13 local812 = new Class4_Sub13();
+									@Pc(812) HookRequest local812 = new HookRequest();
 									local812.aBoolean172 = true;
 									local812.source = local9;
 									local812.mouseX = Mouse.x - local50;
@@ -368,7 +368,7 @@ public final class Static12 {
 								}
 							}
 							if (local214 && local9.anObjectArray8 != null) {
-								@Pc(845) Class4_Sub13 local845 = new Class4_Sub13();
+								@Pc(845) HookRequest local845 = new HookRequest();
 								local845.aBoolean172 = true;
 								local845.source = local9;
 								local845.mouseX = Mouse.x - local50;
@@ -379,7 +379,7 @@ public final class Static12 {
 							if (!local9.aBoolean414 && local209) {
 								local9.aBoolean414 = true;
 								if (local9.anObjectArray26 != null) {
-									@Pc(884) Class4_Sub13 local884 = new Class4_Sub13();
+									@Pc(884) HookRequest local884 = new HookRequest();
 									local884.aBoolean172 = true;
 									local884.source = local9;
 									local884.mouseX = Mouse.x - local50;
@@ -389,7 +389,7 @@ public final class Static12 {
 								}
 							}
 							if (local9.aBoolean414 && local209 && local9.anObjectArray9 != null) {
-								@Pc(920) Class4_Sub13 local920 = new Class4_Sub13();
+								@Pc(920) HookRequest local920 = new HookRequest();
 								local920.aBoolean172 = true;
 								local920.source = local9;
 								local920.mouseX = Mouse.x - local50;
@@ -400,7 +400,7 @@ public final class Static12 {
 							if (local9.aBoolean414 && !local209) {
 								local9.aBoolean414 = false;
 								if (local9.anObjectArray28 != null) {
-									@Pc(959) Class4_Sub13 local959 = new Class4_Sub13();
+									@Pc(959) HookRequest local959 = new HookRequest();
 									local959.aBoolean172 = true;
 									local959.source = local9;
 									local959.mouseX = Mouse.x - local50;
@@ -410,14 +410,14 @@ public final class Static12 {
 								}
 							}
 							if (local9.anObjectArray16 != null) {
-								@Pc(990) Class4_Sub13 local990 = new Class4_Sub13();
+								@Pc(990) HookRequest local990 = new HookRequest();
 								local990.source = local9;
 								local990.arguments = local9.anObjectArray16;
 								Static2.aClass112_6.addTail(local990);
 							}
 							if (local9.anObjectArray27 != null && VarcDomain.updatedVarcsWriterIndex > local9.anInt5940) {
 								if (local9.anIntArray673 == null || VarcDomain.updatedVarcsWriterIndex - local9.anInt5940 > 32) {
-									@Pc(1021) Class4_Sub13 local1021 = new Class4_Sub13();
+									@Pc(1021) HookRequest local1021 = new HookRequest();
 									local1021.source = local9;
 									local1021.arguments = local9.anObjectArray27;
 									Static3.aClass112_14.addTail(local1021);
@@ -427,7 +427,7 @@ public final class Static12 {
 										@Pc(1045) int local1045 = VarcDomain.updatedVarcs[local1036 & 0x1F];
 										for (@Pc(1047) int local1047 = 0; local1047 < local9.anIntArray673.length; local1047++) {
 											if (local9.anIntArray673[local1047] == local1045) {
-												@Pc(1062) Class4_Sub13 local1062 = new Class4_Sub13();
+												@Pc(1062) HookRequest local1062 = new HookRequest();
 												local1062.source = local9;
 												local1062.arguments = local9.anObjectArray27;
 												Static3.aClass112_14.addTail(local1062);
@@ -440,7 +440,7 @@ public final class Static12 {
 							}
 							if (local9.anObjectArray21 != null && VarcDomain.updatedVarcstrsWriterIndex > local9.anInt5952) {
 								if (local9.anIntArray665 == null || VarcDomain.updatedVarcstrsWriterIndex - local9.anInt5952 > 32) {
-									@Pc(1101) Class4_Sub13 local1101 = new Class4_Sub13();
+									@Pc(1101) HookRequest local1101 = new HookRequest();
 									local1101.source = local9;
 									local1101.arguments = local9.anObjectArray21;
 									Static3.aClass112_14.addTail(local1101);
@@ -450,7 +450,7 @@ public final class Static12 {
 										@Pc(1125) int local1125 = VarcDomain.updatedVarcstrs[local1116 & 0x1F];
 										for (@Pc(1127) int local1127 = 0; local1127 < local9.anIntArray665.length; local1127++) {
 											if (local9.anIntArray665[local1127] == local1125) {
-												@Pc(1142) Class4_Sub13 local1142 = new Class4_Sub13();
+												@Pc(1142) HookRequest local1142 = new HookRequest();
 												local1142.source = local9;
 												local1142.arguments = local9.anObjectArray21;
 												Static3.aClass112_14.addTail(local1142);
@@ -463,7 +463,7 @@ public final class Static12 {
 							}
 							if (local9.anObjectArray24 != null && VarpDomain.updatedVarpsWriterIndex > local9.anInt5936) {
 								if (local9.anIntArray669 == null || VarpDomain.updatedVarpsWriterIndex - local9.anInt5936 > 32) {
-									@Pc(1181) Class4_Sub13 local1181 = new Class4_Sub13();
+									@Pc(1181) HookRequest local1181 = new HookRequest();
 									local1181.source = local9;
 									local1181.arguments = local9.anObjectArray24;
 									Static3.aClass112_14.addTail(local1181);
@@ -473,7 +473,7 @@ public final class Static12 {
 										@Pc(1205) int varp = VarpDomain.updatedVarps[i & 0x1F];
 										for (@Pc(1207) int local1207 = 0; local1207 < local9.anIntArray669.length; local1207++) {
 											if (local9.anIntArray669[local1207] == varp) {
-												@Pc(1222) Class4_Sub13 local1222 = new Class4_Sub13();
+												@Pc(1222) HookRequest local1222 = new HookRequest();
 												local1222.source = local9;
 												local1222.arguments = local9.anObjectArray24;
 												Static3.aClass112_14.addTail(local1222);
@@ -486,7 +486,7 @@ public final class Static12 {
 							}
 							if (local9.anObjectArray3 != null && Static2.anInt959 > local9.anInt5941) {
 								if (local9.anIntArray670 == null || Static2.anInt959 - local9.anInt5941 > 32) {
-									@Pc(1261) Class4_Sub13 local1261 = new Class4_Sub13();
+									@Pc(1261) HookRequest local1261 = new HookRequest();
 									local1261.source = local9;
 									local1261.arguments = local9.anObjectArray3;
 									Static3.aClass112_14.addTail(local1261);
@@ -496,7 +496,7 @@ public final class Static12 {
 										@Pc(1285) int local1285 = Static7.anIntArray656[local1276 & 0x1F];
 										for (@Pc(1287) int local1287 = 0; local1287 < local9.anIntArray670.length; local1287++) {
 											if (local9.anIntArray670[local1287] == local1285) {
-												@Pc(1302) Class4_Sub13 local1302 = new Class4_Sub13();
+												@Pc(1302) HookRequest local1302 = new HookRequest();
 												local1302.source = local9;
 												local1302.arguments = local9.anObjectArray3;
 												Static3.aClass112_14.addTail(local1302);
@@ -509,7 +509,7 @@ public final class Static12 {
 							}
 							if (local9.anObjectArray25 != null && Static5.anInt4210 > local9.anInt5942) {
 								if (local9.anIntArray667 == null || Static5.anInt4210 - local9.anInt5942 > 32) {
-									@Pc(1341) Class4_Sub13 local1341 = new Class4_Sub13();
+									@Pc(1341) HookRequest local1341 = new HookRequest();
 									local1341.source = local9;
 									local1341.arguments = local9.anObjectArray25;
 									Static3.aClass112_14.addTail(local1341);
@@ -519,7 +519,7 @@ public final class Static12 {
 										@Pc(1365) int local1365 = Static4.anIntArray336[local1356 & 0x1F];
 										for (@Pc(1367) int local1367 = 0; local1367 < local9.anIntArray667.length; local1367++) {
 											if (local9.anIntArray667[local1367] == local1365) {
-												@Pc(1382) Class4_Sub13 local1382 = new Class4_Sub13();
+												@Pc(1382) HookRequest local1382 = new HookRequest();
 												local1382.source = local9;
 												local1382.arguments = local9.anObjectArray25;
 												Static3.aClass112_14.addTail(local1382);
@@ -531,31 +531,31 @@ public final class Static12 {
 								local9.anInt5942 = Static5.anInt4210;
 							}
 							if (Static6.anInt5189 > local9.anInt5945 && local9.anObjectArray6 != null) {
-								@Pc(1412) Class4_Sub13 local1412 = new Class4_Sub13();
+								@Pc(1412) HookRequest local1412 = new HookRequest();
 								local1412.source = local9;
 								local1412.arguments = local9.anObjectArray6;
 								Static3.aClass112_14.addTail(local1412);
 							}
 							if (Static3.anInt2102 > local9.anInt5945 && local9.anObjectArray12 != null) {
-								@Pc(1434) Class4_Sub13 local1434 = new Class4_Sub13();
+								@Pc(1434) HookRequest local1434 = new HookRequest();
 								local1434.source = local9;
 								local1434.arguments = local9.anObjectArray12;
 								Static3.aClass112_14.addTail(local1434);
 							}
 							if (Static3.anInt2616 > local9.anInt5945 && local9.anObjectArray23 != null) {
-								@Pc(1456) Class4_Sub13 local1456 = new Class4_Sub13();
+								@Pc(1456) HookRequest local1456 = new HookRequest();
 								local1456.source = local9;
 								local1456.arguments = local9.anObjectArray23;
 								Static3.aClass112_14.addTail(local1456);
 							}
 							if (Static6.anInt4996 > local9.anInt5945 && local9.anObjectArray14 != null) {
-								@Pc(1478) Class4_Sub13 local1478 = new Class4_Sub13();
+								@Pc(1478) HookRequest local1478 = new HookRequest();
 								local1478.source = local9;
 								local1478.arguments = local9.anObjectArray14;
 								Static3.aClass112_14.addTail(local1478);
 							}
 							if (Static1.anInt925 > local9.anInt5945 && local9.anObjectArray31 != null) {
-								@Pc(1500) Class4_Sub13 local1500 = new Class4_Sub13();
+								@Pc(1500) HookRequest local1500 = new HookRequest();
 								local1500.source = local9;
 								local1500.arguments = local9.anObjectArray31;
 								Static3.aClass112_14.addTail(local1500);
@@ -563,7 +563,7 @@ public final class Static12 {
 							local9.anInt5945 = Static6.anInt4979;
 							if (local9.anObjectArray10 != null) {
 								for (@Pc(1519) int local1519 = 0; local1519 < Static6.anInt5088; local1519++) {
-									@Pc(1526) Class4_Sub13 local1526 = new Class4_Sub13();
+									@Pc(1526) HookRequest local1526 = new HookRequest();
 									local1526.source = local9;
 									local1526.keyCode = Static5.anIntArray441[local1519];
 									local1526.keyChar = Static5.anIntArray419[local1519];
@@ -572,7 +572,7 @@ public final class Static12 {
 								}
 							}
 							if (Static1.aBoolean35 && local9.anObjectArray5 != null) {
-								@Pc(1558) Class4_Sub13 local1558 = new Class4_Sub13();
+								@Pc(1558) HookRequest local1558 = new HookRequest();
 								local1558.source = local9;
 								local1558.arguments = local9.anObjectArray5;
 								Static3.aClass112_14.addTail(local1558);

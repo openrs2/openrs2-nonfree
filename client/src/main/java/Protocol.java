@@ -576,7 +576,7 @@ public final class Protocol {
 			}
 			local1895[0] = Integer.valueOf(inboundBuffer.readInt());
 			if (Static35.method4381(local1885)) {
-				@Pc(1953) Class4_Sub13 local1953 = new Class4_Sub13();
+				@Pc(1953) HookRequest local1953 = new HookRequest();
 				local1953.arguments = local1895;
 				Static21.method2019(local1953);
 			}

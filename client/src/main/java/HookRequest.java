@@ -2,7 +2,7 @@ import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
 
 @OriginalClass("client!io")
-public final class Class4_Sub13 extends Node {
+public final class HookRequest extends Node {
 
 	@OriginalMember(owner = "client!io", name = "o", descriptor = "Lclient!wf;")
 	public Component target;

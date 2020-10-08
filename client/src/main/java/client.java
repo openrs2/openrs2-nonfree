@@ -373,25 +373,25 @@ public final class client extends GameShell {
 			}
 		}
 		while (true) {
-			@Pc(389) Class4_Sub13 local389;
+			@Pc(389) HookRequest local389;
 			@Pc(395) Component local395;
 			@Pc(406) Component local406;
 			do {
-				local389 = (Class4_Sub13) Static2.aClass112_6.removeHead();
+				local389 = (HookRequest) Static2.aClass112_6.removeHead();
 				if (local389 == null) {
 					while (true) {
-						@Pc(440) Class4_Sub13 local440;
+						@Pc(440) HookRequest local440;
 						@Pc(448) Component local448;
 						@Pc(460) Component local460;
 						do {
-							local440 = (Class4_Sub13) Static2.aClass112_10.removeHead();
+							local440 = (HookRequest) Static2.aClass112_10.removeHead();
 							if (local440 == null) {
 								while (true) {
-									@Pc(489) Class4_Sub13 local489;
+									@Pc(489) HookRequest local489;
 									@Pc(496) Component local496;
 									@Pc(505) Component local505;
 									do {
-										local489 = (Class4_Sub13) Static3.aClass112_14.removeHead();
+										local489 = (HookRequest) Static3.aClass112_14.removeHead();
 										if (local489 == null) {
 											if (Static1.aClass185_1 != null) {
 												Static14.method1047();

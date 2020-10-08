@@ -344,7 +344,7 @@ public final class Static21 {
 	}
 
 	@OriginalMember(owner = "client!jh", name = "a", descriptor = "(ZLclient!io;)V")
-	public static void method2019(@OriginalArg(1) Class4_Sub13 arg0) {
+	public static void method2019(@OriginalArg(1) HookRequest arg0) {
 		ScriptRunner.method519(arg0, 200000);
 	}
 
@@ -520,7 +520,7 @@ public final class Static21 {
 	public static void method2081(@OriginalArg(0) int targetMask, @OriginalArg(1) int targetParam, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5) {
 		@Pc(4) Component local4 = Static23.method2425(arg5, arg3);
 		if (local4 != null && local4.anObjectArray13 != null) {
-			@Pc(15) Class4_Sub13 local15 = new Class4_Sub13();
+			@Pc(15) HookRequest local15 = new HookRequest();
 			local15.arguments = local4.anObjectArray13;
 			local15.source = local4;
 			method2019(local15);

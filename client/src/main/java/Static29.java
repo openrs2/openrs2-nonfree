@@ -1189,23 +1189,23 @@ public final class Static29 {
 		while (true) {
 			@Pc(1562) Component local1562;
 			@Pc(1550) Component local1550;
-			@Pc(1542) Class4_Sub13 local1542;
+			@Pc(1542) HookRequest local1542;
 			do {
-				local1542 = (Class4_Sub13) Static2.aClass112_6.removeHead();
+				local1542 = (HookRequest) Static2.aClass112_6.removeHead();
 				if (local1542 == null) {
 					while (true) {
 						@Pc(1611) Component local1611;
 						@Pc(1600) Component local1600;
-						@Pc(1593) Class4_Sub13 local1593;
+						@Pc(1593) HookRequest local1593;
 						do {
-							local1593 = (Class4_Sub13) Static2.aClass112_10.removeHead();
+							local1593 = (HookRequest) Static2.aClass112_10.removeHead();
 							if (local1593 == null) {
 								while (true) {
 									@Pc(1660) Component local1660;
 									@Pc(1650) Component local1650;
-									@Pc(1643) Class4_Sub13 local1643;
+									@Pc(1643) HookRequest local1643;
 									do {
-										local1643 = (Class4_Sub13) Static3.aClass112_14.removeHead();
+										local1643 = (HookRequest) Static3.aClass112_14.removeHead();
 										if (local1643 == null) {
 											if (Static5.aClass185_12 == null) {
 												Static1.anInt640 = 0;
@@ -1455,7 +1455,7 @@ public final class Static29 {
 					}
 				}
 				if (arg1 == 0 && local15.anObjectArray19 != null) {
-					@Pc(64) Class4_Sub13 local64 = new Class4_Sub13();
+					@Pc(64) HookRequest local64 = new HookRequest();
 					local64.source = local15;
 					local64.arguments = local15.anObjectArray19;
 					Static21.method2019(local64);
@@ -1467,7 +1467,7 @@ public final class Static29 {
 							continue;
 						}
 					}
-					@Pc(123) Class4_Sub13 local123 = new Class4_Sub13();
+					@Pc(123) HookRequest local123 = new HookRequest();
 					local123.arguments = local15.anObjectArray4;
 					local123.source = local15;
 					Static21.method2019(local123);

@@ -327,7 +327,7 @@ public final class Static11 {
 			Static3.aClass185_5 = arg2;
 		}
 		if (arg0 && arg2.anObjectArray32 != null && (local108 != arg2.anInt5893 || local13 != arg2.anInt5949)) {
-			@Pc(298) Class4_Sub13 local298 = new Class4_Sub13();
+			@Pc(298) HookRequest local298 = new HookRequest();
 			local298.arguments = arg2.anObjectArray32;
 			local298.source = arg2;
 			Static3.aClass112_14.addTail(local298);
