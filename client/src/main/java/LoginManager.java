@@ -13,7 +13,7 @@ public final class LoginManager {
 	public static int step = 0;
 
 	@OriginalMember(owner = "client!bh", name = "d", descriptor = "I")
-	public static int type = -1;
+	public static int anInt1407 = -1;
 
 	@OriginalMember(owner = "client!re", name = "d", descriptor = "I")
 	private static int loops = 0;
@@ -76,8 +76,8 @@ public final class LoginManager {
 	public static boolean mapMembers = false;
 
 	@OriginalMember(owner = "client!ql", name = "a", descriptor = "(Ljava/lang/String;Ljava/lang/String;IB)V")
-	public static void login(@OriginalArg(1) String username, @OriginalArg(0) String password, @OriginalArg(2) int type) {
-		LoginManager.type = type;
+	public static void login(@OriginalArg(1) String username, @OriginalArg(0) String password, @OriginalArg(2) int arg2) {
+		LoginManager.anInt1407 = arg2;
 		LoginManager.username = username;
 		LoginManager.password = password;
 		if (LoginManager.username.equals("") || LoginManager.password.equals("")) {
@@ -200,7 +200,7 @@ public final class LoginManager {
 				}
 				buffer.writeShort(Protocol.outboundBuffer.position + Buffer.getStringLength(client.settings) + 163);
 				buffer.writeInt(550);
-				buffer.writeByte(type);
+				buffer.writeByte(anInt1407);
 				buffer.writeByte(client.advertSuppressed ? 1 : 0);
 				buffer.writeByte(1);
 				buffer.writeByte(Static11.method557());

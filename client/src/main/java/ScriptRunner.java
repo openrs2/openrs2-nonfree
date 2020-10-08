@@ -1604,7 +1604,7 @@ public final class ScriptRunner {
 							continue;
 						}
 						if (opcode == 3333) {
-							intStack[isp++] = LoginManager.type;
+							intStack[isp++] = LoginManager.anInt1407;
 							continue;
 						}
 						if (opcode == 3335) {
