@@ -57,8 +57,8 @@ public final class Static29 {
 					@Pc(99) int local99 = Static6.anIntArray543[Static7.anInt5634 - 1];
 					@Pc(105) int local105 = Static2.anIntArray117[Static7.anInt5634 - 1];
 					@Pc(109) Component local109 = InterfaceList.getComponent(local99);
-					@Pc(112) Class4_Sub21 local112 = Static12.method687(local109);
-					if (local112.method3269() || local112.method3279()) {
+					@Pc(112) ServerActiveProperties local112 = Static12.method687(local109);
+					if (local112.isObjSwapEnabled() || local112.isObjReplaceEnabled()) {
 						Static2.anInt1267 = 0;
 						Static5.aBoolean276 = false;
 						if (Static5.aClass185_10 != null) {
@@ -1119,35 +1119,35 @@ public final class Static29 {
 			if (Mouse.pressedButton == 0) {
 				if (Static5.aBoolean276 && Static2.anInt1267 >= 5) {
 					if (Static5.aClass185_10 == Static6.aClass185_13 && Static4.anInt2989 != Static1.anInt91) {
-						@Pc(1306) Component local1306 = Static5.aClass185_10;
+						@Pc(1306) Component component = Static5.aClass185_10;
 						@Pc(1312) byte local1312 = 0;
-						if (Static7.anInt5935 == 1 && local1306.anInt5904 == 206) {
+						if (Static7.anInt5935 == 1 && component.anInt5904 == 206) {
 							local1312 = 1;
 						}
-						if (local1306.anIntArray660[Static4.anInt2989] <= 0) {
+						if (component.objTypes[Static4.anInt2989] <= 0) {
 							local1312 = 0;
 						}
-						if (Static12.method687(local1306).method3279()) {
-							@Pc(1343) int local1343 = Static4.anInt2989;
-							@Pc(1345) int local1345 = Static1.anInt91;
-							local1306.anIntArray660[local1343] = local1306.anIntArray660[local1345];
-							local1306.anIntArray661[local1343] = local1306.anIntArray661[local1345];
-							local1306.anIntArray660[local1345] = -1;
-							local1306.anIntArray661[local1345] = 0;
+						if (Static12.method687(component).isObjReplaceEnabled()) {
+							@Pc(1343) int destSlot = Static4.anInt2989;
+							@Pc(1345) int sourceSlot = Static1.anInt91;
+							component.objTypes[destSlot] = component.objTypes[sourceSlot];
+							component.objCounts[destSlot] = component.objCounts[sourceSlot];
+							component.objTypes[sourceSlot] = -1;
+							component.objCounts[sourceSlot] = 0;
 						} else if (local1312 == 1) {
-							@Pc(1380) int local1380 = Static1.anInt91;
-							@Pc(1382) int local1382 = Static4.anInt2989;
-							while (local1382 != local1380) {
-								if (local1382 < local1380) {
-									local1306.method4733(local1380, local1380 - 1);
-									local1380--;
-								} else if (local1380 < local1382) {
-									local1306.method4733(local1380, local1380 + 1);
-									local1380++;
+							@Pc(1380) int sourceSlot = Static1.anInt91;
+							@Pc(1382) int destSlot = Static4.anInt2989;
+							while (destSlot != sourceSlot) {
+								if (destSlot < sourceSlot) {
+									component.swapObjs(sourceSlot, sourceSlot - 1);
+									sourceSlot--;
+								} else if (sourceSlot < destSlot) {
+									component.swapObjs(sourceSlot, sourceSlot + 1);
+									sourceSlot++;
 								}
 							}
 						} else {
-							local1306.method4733(Static1.anInt91, Static4.anInt2989);
+							component.swapObjs(Static1.anInt91, Static4.anInt2989);
 						}
 						Protocol.outboundBuffer.writeOpcode(6);
 						Protocol.outboundBuffer.writeShortLEA(Static4.anInt2989);

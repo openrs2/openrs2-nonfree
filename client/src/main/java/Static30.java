@@ -69,7 +69,7 @@ public final class Static30 {
 					@Pc(117) int local117 = local38.anInt5903;
 					@Pc(122) int local122 = local38.anInt5888 + arg7;
 					@Pc(128) int local128 = local38.anInt5960 + arg0;
-					if (Static1.aBoolean26 && (Static12.method687(local38).anInt3947 != 0 || local38.type == 0) && local117 > 127) {
+					if (Static1.aBoolean26 && (Static12.method687(local38).events != 0 || local38.type == 0) && local117 > 127) {
 						local117 = 127;
 					}
 					if (local38 == Static1.aClass185_1) {
@@ -346,14 +346,14 @@ public final class Static30 {
 												local1359 += local38.anIntArray663[local1338];
 												local1369 += local38.anIntArray664[local1338];
 											}
-											if (local38.anIntArray660[local1338] > 0) {
-												@Pc(1402) int local1402 = local38.anIntArray660[local1338] - 1;
+											if (local38.objTypes[local1338] > 0) {
+												@Pc(1402) int local1402 = local38.objTypes[local1338] - 1;
 												if (local1369 + 32 > arg8 && local1369 < arg5 && arg6 < local1359 + 32 && local1359 < arg4 || local38 == Static5.aClass185_10 && Static1.anInt91 == local1338) {
 													@Pc(1463) Sprite local1463;
 													if (Static2.anInt1334 == 1 && local1338 == Static1.anInt314 && local38.id == Static5.anInt4302) {
-														local1463 = Static37.method4676(local38.anIntArray661[local1338], 2, local38.aBoolean405, null, local1402, 0);
+														local1463 = Static37.method4676(local38.objCounts[local1338], 2, local38.aBoolean405, null, local1402, 0);
 													} else {
-														local1463 = Static37.method4676(local38.anIntArray661[local1338], 1, local38.aBoolean405, null, local1402, 3153952);
+														local1463 = Static37.method4676(local38.objCounts[local1338], 1, local38.aBoolean405, null, local1402, 3153952);
 													}
 													if (Static4.aBoolean218) {
 														Static2.aBooleanArray8[local89] = true;
@@ -726,13 +726,13 @@ public final class Static30 {
 										@Pc(3195) int local3195 = 0;
 										for (@Pc(3197) int local3197 = 0; local3197 < local38.anInt5950; local3197++) {
 											for (@Pc(3203) int local3203 = 0; local3203 < local38.anInt5927; local3203++) {
-												if (local38.anIntArray660[local3195] > 0) {
-													@Pc(3224) ObjType local3224 = ObjTypeList.get(local38.anIntArray660[local3195] - 1);
+												if (local38.objTypes[local3195] > 0) {
+													@Pc(3224) ObjType local3224 = ObjTypeList.get(local38.objTypes[local3195] - 1);
 													@Pc(3246) String local3246;
-													if (local3224.stackable != 1 && local38.anIntArray661[local3195] == 1) {
+													if (local3224.stackable != 1 && local38.objCounts[local3195] == 1) {
 														local3246 = "<col=ff9040>" + local3224.name + "</col>";
 													} else {
-														local3246 = "<col=ff9040>" + local3224.name + "</col> x" + Static26.method4816(local38.anIntArray661[local3195]);
+														local3246 = "<col=ff9040>" + local3224.name + "</col> x" + Static26.method4816(local38.objCounts[local3195]);
 													}
 													@Pc(3276) int local3276 = local128 + local3203 * (local38.anInt5943 + 115);
 													@Pc(3285) int local3285 = (local38.anInt5964 + 12) * local3197 + local122;

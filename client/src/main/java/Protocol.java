@@ -118,33 +118,33 @@ public final class Protocol {
 		} else if (opcode == 34) {
 			@Pc(180) int local180 = inboundBuffer.readInt();
 			@Pc(184) int local184 = inboundBuffer.readUnsignedShort();
-			@Pc(193) Component local193;
+			@Pc(193) Component component;
 			if (local180 >= 0) {
-				local193 = InterfaceList.getComponent(local180);
+				component = InterfaceList.getComponent(local180);
 			} else {
-				local193 = null;
+				component = null;
 			}
 			if (local180 < -70000) {
 				local184 += 32768;
 			}
 			while (inboundBuffer.position < length) {
-				@Pc(213) int local213 = 0;
-				@Pc(217) int local217 = inboundBuffer.readUnsignedShortSmart();
-				@Pc(221) int local221 = inboundBuffer.readUnsignedShort();
-				if (local221 != 0) {
-					local213 = inboundBuffer.readUnsignedByte();
-					if (local213 == 255) {
-						local213 = inboundBuffer.readInt();
+				@Pc(213) int count = 0;
+				@Pc(217) int slot = inboundBuffer.readUnsignedShortSmart();
+				@Pc(221) int id = inboundBuffer.readUnsignedShort();
+				if (id != 0) {
+					count = inboundBuffer.readUnsignedByte();
+					if (count == 255) {
+						count = inboundBuffer.readInt();
 					}
 				}
-				if (local193 != null && local217 >= 0 && local193.anIntArray660.length > local217) {
-					local193.anIntArray660[local217] = local221;
-					local193.anIntArray661[local217] = local213;
+				if (component != null && slot >= 0 && component.objTypes.length > slot) {
+					component.objTypes[slot] = id;
+					component.objCounts[slot] = count;
 				}
-				Inv.set(local184, local217, local221 - 1, local213);
+				Inv.set(local184, slot, id - 1, count);
 			}
-			if (local193 != null) {
-				Static28.method3270(local193);
+			if (component != null) {
+				Static28.method3270(component);
 			}
 			Static21.method2062();
 			Static7.anIntArray656[Static2.anInt959++ & 0x1F] = local184 & 0x7FFF;
@@ -324,15 +324,15 @@ public final class Protocol {
 			if (Static35.method4381(local996)) {
 				for (@Pc(1003) int local1003 = local981; local1003 <= local977; local1003++) {
 					@Pc(1015) long local1015 = ((long) local973 << 32) + (long) local1003;
-					@Pc(1021) Class4_Sub21 local1021 = (Class4_Sub21) Static2.aClass84_5.get(local1015);
-					@Pc(1037) Class4_Sub21 local1037;
+					@Pc(1021) ServerActiveProperties local1021 = (ServerActiveProperties) Static2.aClass84_5.get(local1015);
+					@Pc(1037) ServerActiveProperties local1037;
 					if (local1021 != null) {
-						local1037 = new Class4_Sub21(local967, local1021.anInt3939);
+						local1037 = new ServerActiveProperties(local967, local1021.targetParam);
 						local1021.unlink();
 					} else if (local1003 == -1) {
-						local1037 = new Class4_Sub21(local967, InterfaceList.getComponent(local973).aClass4_Sub21_2.anInt3939);
+						local1037 = new ServerActiveProperties(local967, InterfaceList.getComponent(local973).serverActiveProperties.targetParam);
 					} else {
-						local1037 = new Class4_Sub21(local967, -1);
+						local1037 = new ServerActiveProperties(local967, -1);
 					}
 					Static2.aClass84_5.put(local1015, local1037);
 				}
@@ -472,15 +472,15 @@ public final class Protocol {
 			if (Static35.method4381(local1494)) {
 				for (@Pc(1520) int local1520 = local1502; local1520 <= local1498; local1520++) {
 					@Pc(1535) long local1535 = ((long) local1486 << 32) + (long) local1520;
-					@Pc(1541) Class4_Sub21 local1541 = (Class4_Sub21) Static2.aClass84_5.get(local1535);
-					@Pc(1556) Class4_Sub21 local1556;
+					@Pc(1541) ServerActiveProperties local1541 = (ServerActiveProperties) Static2.aClass84_5.get(local1535);
+					@Pc(1556) ServerActiveProperties local1556;
 					if (local1541 != null) {
-						local1556 = new Class4_Sub21(local1541.anInt3947, local1490);
+						local1556 = new ServerActiveProperties(local1541.events, local1490);
 						local1541.unlink();
 					} else if (local1520 == -1) {
-						local1556 = new Class4_Sub21(InterfaceList.getComponent(local1486).aClass4_Sub21_2.anInt3947, local1490);
+						local1556 = new ServerActiveProperties(InterfaceList.getComponent(local1486).serverActiveProperties.events, local1490);
 					} else {
-						local1556 = new Class4_Sub21(0, local1490);
+						local1556 = new ServerActiveProperties(0, local1490);
 					}
 					Static2.aClass84_5.put(local1535, local1556);
 				}
@@ -1172,12 +1172,12 @@ public final class Protocol {
 			return true;
 		} else if (opcode == 26) {
 			@Pc(4226) int local4226 = inboundBuffer.readIntAlt3Reverse();
-			@Pc(4232) Component local4232 = InterfaceList.getComponent(local4226);
-			for (@Pc(4234) int local4234 = 0; local4234 < local4232.anIntArray660.length; local4234++) {
-				local4232.anIntArray660[local4234] = -1;
-				local4232.anIntArray660[local4234] = 0;
+			@Pc(4232) Component component = InterfaceList.getComponent(local4226);
+			for (@Pc(4234) int slot = 0; slot < component.objTypes.length; slot++) {
+				component.objTypes[slot] = -1;
+				component.objTypes[slot] = 0;
 			}
-			Static28.method3270(local4232);
+			Static28.method3270(component);
 			opcode = -1;
 			return true;
 		} else if (opcode == 99) {
@@ -1517,34 +1517,34 @@ public final class Protocol {
 			if (local5536 < -70000) {
 				local5540 += 32768;
 			}
-			@Pc(5557) Component local5557;
+			@Pc(5557) Component component;
 			if (local5536 < 0) {
-				local5557 = null;
+				component = null;
 			} else {
-				local5557 = InterfaceList.getComponent(local5536);
+				component = InterfaceList.getComponent(local5536);
 			}
-			if (local5557 != null) {
-				for (@Pc(5570) int local5570 = 0; local5570 < local5557.anIntArray660.length; local5570++) {
-					local5557.anIntArray660[local5570] = 0;
-					local5557.anIntArray661[local5570] = 0;
+			if (component != null) {
+				for (@Pc(5570) int slot = 0; slot < component.objTypes.length; slot++) {
+					component.objTypes[slot] = 0;
+					component.objCounts[slot] = 0;
 				}
 			}
 			Inv.clear(local5540);
-			@Pc(5595) int local5595 = inboundBuffer.readUnsignedShort();
-			for (@Pc(5597) int local5597 = 0; local5597 < local5595; local5597++) {
-				@Pc(5608) int local5608 = inboundBuffer.readUnsignedShort();
-				@Pc(5612) int local5612 = inboundBuffer.readUnsignedByteC();
-				if (local5612 == 255) {
-					local5612 = inboundBuffer.readInt();
+			@Pc(5595) int len = inboundBuffer.readUnsignedShort();
+			for (@Pc(5597) int i = 0; i < len; i++) {
+				@Pc(5608) int id = inboundBuffer.readUnsignedShort();
+				@Pc(5612) int count = inboundBuffer.readUnsignedByteC();
+				if (count == 255) {
+					count = inboundBuffer.readInt();
 				}
-				if (local5557 != null && local5597 < local5557.anIntArray660.length) {
-					local5557.anIntArray660[local5597] = local5608;
-					local5557.anIntArray661[local5597] = local5612;
+				if (component != null && i < component.objTypes.length) {
+					component.objTypes[i] = id;
+					component.objCounts[i] = count;
 				}
-				Inv.set(local5540, local5597, local5608 - 1, local5612);
+				Inv.set(local5540, i, id - 1, count);
 			}
-			if (local5557 != null) {
-				Static28.method3270(local5557);
+			if (component != null) {
+				Static28.method3270(component);
 			}
 			Static21.method2062();
 			Static7.anIntArray656[Static2.anInt959++ & 0x1F] = local5540 & 0x7FFF;

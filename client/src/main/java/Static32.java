@@ -49,11 +49,6 @@ public final class Static32 {
 		MaterialManager.setMaterial(0, 0);
 	}
 
-	@OriginalMember(owner = "client!sa", name = "a", descriptor = "(II)I")
-	public static int method3882(@OriginalArg(0) int arg0) {
-		return arg0 >> 11 & 0x7F;
-	}
-
 	@OriginalMember(owner = "client!sa", name = "a", descriptor = "(IB)V")
 	public static void method3885(@OriginalArg(0) int arg0) {
 		if (Static7.anIntArray678 == null || Static7.anIntArray678.length < arg0) {
@@ -263,7 +258,7 @@ public final class Static32 {
 
 	@OriginalMember(owner = "client!sh", name = "a", descriptor = "(Lclient!wf;IB)I")
 	public static int method3985(@OriginalArg(0) Component arg0, @OriginalArg(1) int arg1) {
-		if (!Static12.method687(arg0).method3266(arg1) && arg0.anObjectArray18 == null) {
+		if (!Static12.method687(arg0).isButtonEnabled(arg1) && arg0.anObjectArray18 == null) {
 			return -1;
 		} else if (arg0.anIntArray666 == null || arg0.anIntArray666.length <= arg1) {
 			return -1;

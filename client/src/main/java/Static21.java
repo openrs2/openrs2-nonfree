@@ -517,7 +517,7 @@ public final class Static21 {
 	}
 
 	@OriginalMember(owner = "client!jm", name = "a", descriptor = "(IIIIIII)V")
-	public static void method2081(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5) {
+	public static void method2081(@OriginalArg(0) int targetMask, @OriginalArg(1) int targetParam, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5) {
 		@Pc(4) Component local4 = Static23.method2425(arg5, arg3);
 		if (local4 != null && local4.anObjectArray13 != null) {
 			@Pc(15) Class4_Sub13 local15 = new Class4_Sub13();
@@ -527,11 +527,11 @@ public final class Static21 {
 		}
 		Static3.aBoolean177 = true;
 		Static7.anInt6050 = arg2;
-		Static5.anInt4224 = arg1;
+		Static5.anInt4224 = targetParam;
 		Static2.anInt1367 = arg3;
 		Static6.anInt4466 = arg4;
 		Static1.anInt1053 = arg5;
-		Static5.anInt3560 = arg0;
+		Static5.anInt3560 = targetMask;
 		Static28.method3270(local4);
 	}
 

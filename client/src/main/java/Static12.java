@@ -104,14 +104,14 @@ public final class Static12 {
 	}
 
 	@OriginalMember(owner = "client!client", name = "a", descriptor = "(Lclient!wf;)Lclient!on;")
-	public static Class4_Sub21 method687(@OriginalArg(0) Component arg0) {
-		@Pc(13) Class4_Sub21 local13 = (Class4_Sub21) Static2.aClass84_5.get(((long) arg0.id << 32) + (long) arg0.anInt5968);
-		return local13 == null ? arg0.aClass4_Sub21_2 : local13;
+	public static ServerActiveProperties method687(@OriginalArg(0) Component arg0) {
+		@Pc(13) ServerActiveProperties local13 = (ServerActiveProperties) Static2.aClass84_5.get(((long) arg0.id << 32) + (long) arg0.anInt5968);
+		return local13 == null ? arg0.serverActiveProperties : local13;
 	}
 
 	@OriginalMember(owner = "client!client", name = "b", descriptor = "(Lclient!wf;)Lclient!wf;")
 	public static Component method691(@OriginalArg(0) Component arg0) {
-		@Pc(4) int local4 = method687(arg0).method3271();
+		@Pc(4) int local4 = method687(arg0).getDragDepth();
 		if (local4 == 0) {
 			return null;
 		}
@@ -127,7 +127,7 @@ public final class Static12 {
 	@OriginalMember(owner = "client!client", name = "c", descriptor = "(Lclient!wf;)Z")
 	public static boolean method692(@OriginalArg(0) Component arg0) {
 		if (Static1.aBoolean26) {
-			if (method687(arg0).anInt3947 != 0) {
+			if (method687(arg0).events != 0) {
 				return false;
 			}
 			if (arg0.type == 0) {
@@ -141,7 +141,7 @@ public final class Static12 {
 	public static void method693(@OriginalArg(0) Component[] arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7) {
 		for (@Pc(1) int local1 = 0; local1 < arg0.length; local1++) {
 			@Pc(9) Component local9 = arg0[local1];
-			if (local9 != null && local9.anInt5937 == arg1 && (!local9.if3 || local9.type == 0 || local9.aBoolean403 || method687(local9).anInt3947 != 0 || local9 == Static1.aClass185_2 || local9.anInt5904 == 1338) && (!local9.if3 || !method692(local9))) {
+			if (local9 != null && local9.anInt5937 == arg1 && (!local9.if3 || local9.type == 0 || local9.aBoolean403 || method687(local9).events != 0 || local9 == Static1.aClass185_2 || local9.anInt5904 == 1338) && (!local9.if3 || !method692(local9))) {
 				@Pc(50) int local50 = local9.anInt5960 + arg6;
 				@Pc(55) int local55 = local9.anInt5888 + arg7;
 				@Pc(61) int local61;
@@ -231,7 +231,7 @@ public final class Static12 {
 						if (local223) {
 							Static15.method1401(local9, Mouse.clickX - local50, Mouse.clickY - local55);
 						}
-						if (Static1.aClass185_1 != null && Static1.aClass185_1 != local9 && local209 && method687(local9).method3265()) {
+						if (Static1.aClass185_1 != null && Static1.aClass185_1 != local9 && local209 && method687(local9).isDragTarget()) {
 							Static7.aClass185_16 = local9;
 						}
 						if (local9 == Static1.aClass185_2) {
@@ -1007,7 +1007,7 @@ public final class Static12 {
 
 	@OriginalMember(owner = "client!df", name = "a", descriptor = "(BLclient!wf;)Ljava/lang/String;")
 	public static String method780(@OriginalArg(1) Component arg0) {
-		if (method687(arg0).method3273() == 0) {
+		if (method687(arg0).getTargetMask() == 0) {
 			return null;
 		} else if (arg0.aString355 == null || arg0.aString355.trim().length() == 0) {
 			return Static1.aBoolean26 ? "Hidden-use" : null;

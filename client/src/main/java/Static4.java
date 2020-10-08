@@ -375,9 +375,6 @@ public final class Static4 {
 	@OriginalMember(owner = "client!md", name = "o", descriptor = "[Lclient!ag;")
 	public static final SynthSound[] aClass7Array1 = new SynthSound[50];
 
-	@OriginalMember(owner = "client!me", name = "g", descriptor = "Lclient!on;")
-	public static final Class4_Sub21 aClass4_Sub21_1 = new Class4_Sub21(0, -1);
-
 	@OriginalMember(owner = "client!mf", name = "d", descriptor = "Z")
 	public static boolean aBoolean232 = false;
 

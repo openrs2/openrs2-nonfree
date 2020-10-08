@@ -1115,7 +1115,7 @@ public final class ScriptRunner {
 					} else if (opcode < 1900) {
 						@Pc(3170) Component local3170 = local846 ? Static3.aClass185_8 : Static4.aClass185_9;
 						if (opcode == 1800) {
-							intStack[isp++] = Static12.method687(local3170).method3273();
+							intStack[isp++] = Static12.method687(local3170).getTargetMask();
 							continue;
 						}
 						if (opcode == 1801) {
@@ -1295,7 +1295,7 @@ public final class ScriptRunner {
 						isp--;
 						@Pc(3273) Component local3273 = InterfaceList.getComponent(intStack[isp]);
 						if (opcode == 2800) {
-							intStack[isp++] = Static12.method687(local3273).method3273();
+							intStack[isp++] = Static12.method687(local3273).getTargetMask();
 							continue;
 						}
 						if (opcode == 2801) {

@@ -6,6 +6,9 @@ import org.openrs2.deob.annotation.Pc;
 @OriginalClass("client!wf")
 public final class Component {
 
+	@OriginalMember(owner = "client!me", name = "g", descriptor = "Lclient!on;")
+	private static final ServerActiveProperties DEFAULT_SERVER_ACTIVE_PROPERTIES = new ServerActiveProperties(0, -1);
+
 	@OriginalMember(owner = "client!wf", name = "d", descriptor = "[Ljava/lang/Object;")
 	public Object[] anObjectArray3;
 
@@ -64,13 +67,13 @@ public final class Component {
 	public Object[] anObjectArray12;
 
 	@OriginalMember(owner = "client!wf", name = "db", descriptor = "[I")
-	public int[] anIntArray660;
+	public int[] objTypes;
 
 	@OriginalMember(owner = "client!wf", name = "fb", descriptor = "[Ljava/lang/Object;")
 	public Object[] anObjectArray13;
 
 	@OriginalMember(owner = "client!wf", name = "ib", descriptor = "[I")
-	public int[] anIntArray661;
+	public int[] objCounts;
 
 	@OriginalMember(owner = "client!wf", name = "jb", descriptor = "[Ljava/lang/Object;")
 	public Object[] anObjectArray14;
@@ -418,7 +421,7 @@ public final class Component {
 	public int anInt5952 = 0;
 
 	@OriginalMember(owner = "client!wf", name = "h", descriptor = "Lclient!on;")
-	public Class4_Sub21 aClass4_Sub21_2 = Static4.aClass4_Sub21_1;
+	public ServerActiveProperties serverActiveProperties = DEFAULT_SERVER_ACTIVE_PROPERTIES;
 
 	@OriginalMember(owner = "client!wf", name = "id", descriptor = "I")
 	public int anInt5966 = 0;
@@ -705,8 +708,8 @@ public final class Component {
 		if (this.type == 2) {
 			this.aByte24 = 3;
 			this.aByte27 = 3;
-			this.anIntArray661 = new int[this.anInt5950 * this.anInt5927];
-			this.anIntArray660 = new int[this.anInt5927 * this.anInt5950];
+			this.objCounts = new int[this.anInt5950 * this.anInt5927];
+			this.objTypes = new int[this.anInt5927 * this.anInt5950];
 			@Pc(282) int local282 = buffer.readUnsignedByte();
 			@Pc(286) int local286 = buffer.readUnsignedByte();
 			if (local282 == 1) {
@@ -802,8 +805,8 @@ public final class Component {
 		if (this.type == 7) {
 			this.aByte27 = 3;
 			this.aByte24 = 3;
-			this.anIntArray661 = new int[this.anInt5927 * this.anInt5950];
-			this.anIntArray660 = new int[this.anInt5950 * this.anInt5927];
+			this.objCounts = new int[this.anInt5927 * this.anInt5950];
+			this.objTypes = new int[this.anInt5950 * this.anInt5927];
 			this.anInt5924 = buffer.readUnsignedByte();
 			this.anInt5954 = buffer.readUnsignedShort();
 			if (this.anInt5954 == 65535) {
@@ -858,7 +861,7 @@ public final class Component {
 		if (this.anInt5912 == 6) {
 			local217 |= 1;
 		}
-		this.aClass4_Sub21_2 = new Class4_Sub21(local217, -1);
+		this.serverActiveProperties = new ServerActiveProperties(local217, -1);
 	}
 
 	@OriginalMember(owner = "client!wf", name = "a", descriptor = "(ZB)Lclient!uj;")
@@ -1074,7 +1077,7 @@ public final class Component {
 		this.anInt5953 = buffer.readUnsignedByte();
 		this.aBoolean402 = buffer.readUnsignedByte() == 1;
 		this.aString355 = buffer.readString();
-		if (Static32.method3882(local460) != 0) {
+		if (ServerActiveProperties.getTargetMask(local460) != 0) {
 			local661 = buffer.readUnsignedShort();
 			if (local661 == 65535) {
 				local661 = -1;
@@ -1088,7 +1091,7 @@ public final class Component {
 				this.anInt5890 = -1;
 			}
 		}
-		this.aClass4_Sub21_2 = new Class4_Sub21(local460, local661);
+		this.serverActiveProperties = new ServerActiveProperties(local460, local661);
 		this.anObjectArray22 = this.method4740(buffer);
 		this.anObjectArray26 = this.method4740(buffer);
 		this.anObjectArray28 = this.method4740(buffer);
@@ -1117,13 +1120,13 @@ public final class Component {
 	}
 
 	@OriginalMember(owner = "client!wf", name = "a", descriptor = "(IBI)V")
-	public final void method4733(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1) {
-		@Pc(8) int local8 = this.anIntArray660[arg0];
-		this.anIntArray660[arg0] = this.anIntArray660[arg1];
-		this.anIntArray660[arg1] = local8;
-		local8 = this.anIntArray661[arg0];
-		this.anIntArray661[arg0] = this.anIntArray661[arg1];
-		this.anIntArray661[arg1] = local8;
+	public final void swapObjs(@OriginalArg(0) int i, @OriginalArg(2) int j) {
+		@Pc(8) int temp = this.objTypes[i];
+		this.objTypes[i] = this.objTypes[j];
+		this.objTypes[j] = temp;
+		temp = this.objCounts[i];
+		this.objCounts[i] = this.objCounts[j];
+		this.objCounts[j] = temp;
 	}
 
 	@OriginalMember(owner = "client!wf", name = "a", descriptor = "(B[Lclient!ma;)Lclient!gl;")

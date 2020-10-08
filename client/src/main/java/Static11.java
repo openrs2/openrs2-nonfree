@@ -310,7 +310,7 @@ public final class Static11 {
 		if (arg2.aByte27 == 4) {
 			arg2.anInt5949 = arg2.anInt5970 * arg2.anInt5893 / arg2.anInt5908;
 		}
-		if (Static1.aBoolean26 && (Static12.method687(arg2).anInt3947 != 0 || arg2.type == 0)) {
+		if (Static1.aBoolean26 && (Static12.method687(arg2).events != 0 || arg2.type == 0)) {
 			if (arg2.anInt5949 < 5 && arg2.anInt5893 < 5) {
 				arg2.anInt5949 = 5;
 				arg2.anInt5893 = 5;

@@ -530,7 +530,7 @@ public final class Static37 {
 		if (local4.anInt5904 > 0) {
 			local40 = Static36.method4402(local4);
 		}
-		if (!local40 || !Static12.method687(local4).method3266(arg2 - 1)) {
+		if (!local40 || !Static12.method687(local4).isButtonEnabled(arg2 - 1)) {
 			return;
 		}
 		if (arg2 == 1) {

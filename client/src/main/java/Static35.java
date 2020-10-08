@@ -615,8 +615,8 @@ public final class Static35 {
 			@Pc(2187) Component local2187 = Static23.method2425(local19, local15);
 			if (local2187 != null) {
 				Static26.method4812();
-				@Pc(2195) Class4_Sub21 local2195 = Static12.method687(local2187);
-				Static21.method2081(local2195.method3273(), local2195.anInt3939, local2187.anInt5890, local15, local2187.anInt5930, local19);
+				@Pc(2195) ServerActiveProperties local2195 = Static12.method687(local2187);
+				Static21.method2081(local2195.getTargetMask(), local2195.targetParam, local2187.anInt5890, local15, local2187.anInt5930, local19);
 				Static2.anInt1334 = 0;
 				Static4.aString140 = Static12.method780(local2187);
 				if (Static4.aString140 == null) {
@@ -826,11 +826,11 @@ public final class Static35 {
 		}
 		if (local28 == 1001) {
 			@Pc(3148) Component local3148 = InterfaceList.getComponent(local19);
-			if (local3148 == null || local3148.anIntArray661[local15] < 100000) {
+			if (local3148 == null || local3148.objCounts[local15] < 100000) {
 				Protocol.outboundBuffer.writeOpcode(72);
 				Protocol.outboundBuffer.writeShort(local24);
 			} else {
-				Static26.method4357("", 0, local3148.anIntArray661[local15] + " x " + ObjTypeList.get(local24).name);
+				Static26.method4357("", 0, local3148.objCounts[local15] + " x " + ObjTypeList.get(local24).name);
 			}
 			Static2.anInt2246 = 0;
 			Static1.aClass185_3 = InterfaceList.getComponent(local19);

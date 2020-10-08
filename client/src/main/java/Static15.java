@@ -568,14 +568,14 @@ public final class Static15 {
 					if (arg2 >= local187 && arg1 >= local195 && local187 + 32 > arg2 && arg1 < local195 + 32) {
 						Static4.anInt2989 = local160;
 						Static6.aClass185_13 = arg0;
-						if (arg0.anIntArray660[local160] > 0) {
-							@Pc(257) Class4_Sub21 local257 = Static12.method687(arg0);
-							@Pc(266) ObjType local266 = ObjTypeList.get(arg0.anIntArray660[local160] - 1);
-							if (Static2.anInt1334 == 1 && local257.method3282()) {
+						if (arg0.objTypes[local160] > 0) {
+							@Pc(257) ServerActiveProperties local257 = Static12.method687(arg0);
+							@Pc(266) ObjType local266 = ObjTypeList.get(arg0.objTypes[local160] - 1);
+							if (Static2.anInt1334 == 1 && local257.isObjOpsEnabled()) {
 								if (Static5.anInt4302 != arg0.id || Static1.anInt314 != local160) {
 									Static16.method1497((long) local266.id, local160, arg0.id, Static7.aString365 + " -> <col=ff9040>" + local266.name, LocalisedText.USE, (short) 15, -1);
 								}
-							} else if (Static3.aBoolean177 && local257.method3282()) {
+							} else if (Static3.aBoolean177 && local257.isObjOpsEnabled()) {
 								@Pc(290) ParamType local290 = Static5.anInt4224 == -1 ? null : ParamTypeList.get(Static5.anInt4224);
 								if ((Static5.anInt3560 & 0x10) != 0 && (local290 == null || local266.getParam(Static5.anInt4224, local290.defaultInt) != local290.defaultInt)) {
 									Static16.method1497((long) local266.id, local160, arg0.id, Static2.aString81 + " -> <col=ff9040>" + local266.name, Static4.aString140, (short) 50, Static6.anInt4466);
@@ -585,7 +585,7 @@ public final class Static15 {
 								if (Static5.aBoolean254) {
 									local340 = Static35.method4300(local340);
 								}
-								if (local257.method3282()) {
+								if (local257.isObjOpsEnabled()) {
 									for (@Pc(353) int local353 = 4; local353 >= 3; local353--) {
 										if (local340 != null && local340[local353] != null) {
 											@Pc(373) byte local373;
@@ -598,10 +598,10 @@ public final class Static15 {
 										}
 									}
 								}
-								if (local257.method3275()) {
+								if (local257.isObjUseEnabled()) {
 									Static16.method1497((long) local266.id, local160, arg0.id, "<col=ff9040>" + local266.name, LocalisedText.USE, (short) 9, Static2.anInt1937);
 								}
-								if (local257.method3282() && local340 != null) {
+								if (local257.isObjOpsEnabled() && local340 != null) {
 									for (@Pc(444) int local444 = 2; local444 >= 0; local444--) {
 										if (local340[local444] != null) {
 											@Pc(455) byte local455 = 0;
@@ -673,14 +673,14 @@ public final class Static15 {
 					Static16.method1497((long) (local767 + 1), arg0.anInt5968, arg0.id, arg0.aString352, local774, (short) 23, Static32.method3985(arg0, local767));
 				}
 			}
-			if (Static12.method687(arg0).method3274()) {
+			if (Static12.method687(arg0).isResumePauseButtonEnabled()) {
 				if (arg0.aString354 == null) {
 					Static16.method1497(0L, arg0.anInt5968, arg0.id, "", LocalisedText.CONTINUE, (short) 3, -1);
 				} else {
 					Static16.method1497(0L, arg0.anInt5968, arg0.id, "", arg0.aString354, (short) 3, -1);
 				}
 			}
-		} else if (Static12.method687(arg0).method3280() && (Static5.anInt3560 & 0x20) != 0) {
+		} else if (Static12.method687(arg0).isUseTarget() && (Static5.anInt3560 & 0x20) != 0) {
 			Static16.method1497(0L, arg0.anInt5968, arg0.id, Static2.aString81 + " -> " + arg0.aString352, Static4.aString140, (short) 1, Static6.anInt4466);
 		}
 	}

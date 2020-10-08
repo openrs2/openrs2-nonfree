@@ -131,7 +131,7 @@ public final class Static36 {
 		} else {
 			arg2.anInt5888 = arg1 - (arg2.anInt5951 * arg1 >> 14) - arg2.anInt5949;
 		}
-		if (!Static1.aBoolean26 || Static12.method687(arg2).anInt3947 == 0 && arg2.type != 0) {
+		if (!Static1.aBoolean26 || Static12.method687(arg2).events == 0 && arg2.type != 0) {
 			return;
 		}
 		if (arg2.anInt5888 < 0) {
