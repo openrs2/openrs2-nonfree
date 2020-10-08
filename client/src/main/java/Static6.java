@@ -200,7 +200,7 @@ public final class Static6 {
 	public static Sprite aClass4_Sub3_Sub14_6;
 
 	@OriginalMember(owner = "client!sj", name = "s", descriptor = "[Lclient!l;")
-	public static Class4_Sub15[] aClass4_Sub15Array1;
+	public static ClanMember[] aClass4_Sub15Array1;
 
 	@OriginalMember(owner = "client!sm", name = "g", descriptor = "[[S")
 	public static short[][] aShortArrayArray6;

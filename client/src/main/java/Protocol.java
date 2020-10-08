@@ -502,7 +502,7 @@ public final class Protocol {
 				}
 				@Pc(1779) long local1779 = local1598 & Long.MAX_VALUE;
 				@Pc(1781) int local1781;
-				for (local1781 = 0; Static4.anInt3260 > local1781 && (Static6.aClass4_Sub15Array1[local1781].key != local1779 || local1602 != Static6.aClass4_Sub15Array1[local1781].anInt2988); local1781++) {
+				for (local1781 = 0; Static4.anInt3260 > local1781 && (Static6.aClass4_Sub15Array1[local1781].key != local1779 || local1602 != Static6.aClass4_Sub15Array1[local1781].world); local1781++) {
 				}
 				if (local1781 < Static4.anInt3260) {
 					while (local1781 < Static4.anInt3260 - 1) {
@@ -514,19 +514,19 @@ public final class Protocol {
 				}
 			} else {
 				@Pc(1625) String local1625 = inboundBuffer.readString();
-				@Pc(1629) Class4_Sub15 local1629 = new Class4_Sub15();
+				@Pc(1629) ClanMember local1629 = new ClanMember();
 				local1629.key = local1598;
-				local1629.aString182 = Base37.decodeLowerCase(local1629.key);
-				local1629.aByte5 = local1619;
-				local1629.anInt2988 = local1602;
-				local1629.aString181 = local1625;
+				local1629.username = Base37.decodeLowerCase(local1629.key);
+				local1629.rank = local1619;
+				local1629.world = local1602;
+				local1629.worldName = local1625;
 				@Pc(1653) int local1653;
 				for (local1653 = Static4.anInt3260 - 1; local1653 >= 0; local1653--) {
-					@Pc(1663) int local1663 = Static6.aClass4_Sub15Array1[local1653].aString182.compareTo(local1629.aString182);
+					@Pc(1663) int local1663 = Static6.aClass4_Sub15Array1[local1653].username.compareTo(local1629.username);
 					if (local1663 == 0) {
-						Static6.aClass4_Sub15Array1[local1653].anInt2988 = local1602;
-						Static6.aClass4_Sub15Array1[local1653].aByte5 = local1619;
-						Static6.aClass4_Sub15Array1[local1653].aString181 = local1625;
+						Static6.aClass4_Sub15Array1[local1653].world = local1602;
+						Static6.aClass4_Sub15Array1[local1653].rank = local1619;
+						Static6.aClass4_Sub15Array1[local1653].worldName = local1625;
 						Static3.anInt2616 = Static6.anInt4979;
 						if (LoginManager.encodedUsername == local1598) {
 							Static5.aByte13 = local1619;
@@ -546,7 +546,7 @@ public final class Protocol {
 					Static6.aClass4_Sub15Array1[local1720 + 1] = Static6.aClass4_Sub15Array1[local1720];
 				}
 				if (Static4.anInt3260 == 0) {
-					Static6.aClass4_Sub15Array1 = new Class4_Sub15[100];
+					Static6.aClass4_Sub15Array1 = new ClanMember[100];
 				}
 				Static6.aClass4_Sub15Array1[local1653 + 1] = local1629;
 				if (local1598 == LoginManager.encodedUsername) {
@@ -921,16 +921,16 @@ public final class Protocol {
 				return true;
 			}
 			Static4.anInt3260 = local3204;
-			@Pc(3217) Class4_Sub15[] local3217 = new Class4_Sub15[100];
+			@Pc(3217) ClanMember[] local3217 = new ClanMember[100];
 			for (@Pc(3219) int local3219 = 0; local3219 < Static4.anInt3260; local3219++) {
-				local3217[local3219] = new Class4_Sub15();
+				local3217[local3219] = new ClanMember();
 				local3217[local3219].key = inboundBuffer.readLong();
-				local3217[local3219].aString182 = Base37.decodeLowerCase(local3217[local3219].key);
-				local3217[local3219].anInt2988 = inboundBuffer.readUnsignedShort();
-				local3217[local3219].aByte5 = inboundBuffer.readByte();
-				local3217[local3219].aString181 = inboundBuffer.readString();
+				local3217[local3219].username = Base37.decodeLowerCase(local3217[local3219].key);
+				local3217[local3219].world = inboundBuffer.readUnsignedShort();
+				local3217[local3219].rank = inboundBuffer.readByte();
+				local3217[local3219].worldName = inboundBuffer.readString();
 				if (LoginManager.encodedUsername == local3217[local3219].key) {
-					Static5.aByte13 = local3217[local3219].aByte5;
+					Static5.aByte13 = local3217[local3219].rank;
 				}
 			}
 			@Pc(3291) int local3291 = Static4.anInt3260;
@@ -938,8 +938,8 @@ public final class Protocol {
 				local3291--;
 				@Pc(3297) boolean local3297 = true;
 				for (@Pc(3299) int local3299 = 0; local3299 < local3291; local3299++) {
-					if (local3217[local3299].aString182.compareTo(local3217[local3299 + 1].aString182) > 0) {
-						@Pc(3321) Class4_Sub15 local3321 = local3217[local3299];
+					if (local3217[local3299].username.compareTo(local3217[local3299 + 1].username) > 0) {
+						@Pc(3321) ClanMember local3321 = local3217[local3299];
 						local3217[local3299] = local3217[local3299 + 1];
 						local3217[local3299 + 1] = local3321;
 						local3297 = false;

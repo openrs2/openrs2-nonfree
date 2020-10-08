@@ -1812,7 +1812,7 @@ public final class ScriptRunner {
 							isp--;
 							@Pc(12645) int local12645 = intStack[isp];
 							if (Static2.aString108 != null && local12645 < Static4.anInt3260) {
-								stringStack[ssp++] = Static29.method3464(Static6.aClass4_Sub15Array1[local12645].aString182);
+								stringStack[ssp++] = Static29.method3464(Static6.aClass4_Sub15Array1[local12645].username);
 								continue;
 							}
 							stringStack[ssp++] = "";
@@ -1823,7 +1823,7 @@ public final class ScriptRunner {
 							@Pc(12681) int local12681 = intStack[local12678];
 							if (Static2.aString108 != null && Static4.anInt3260 > local12681) {
 								isp = local12678 + 1;
-								intStack[local12678] = Static6.aClass4_Sub15Array1[local12681].anInt2988;
+								intStack[local12678] = Static6.aClass4_Sub15Array1[local12681].world;
 								continue;
 							}
 							isp = local12678 + 1;
@@ -1835,7 +1835,7 @@ public final class ScriptRunner {
 							@Pc(12719) int local12719 = intStack[local12716];
 							if (Static2.aString108 != null && Static4.anInt3260 > local12719) {
 								isp = local12716 + 1;
-								intStack[local12716] = Static6.aClass4_Sub15Array1[local12719].aByte5;
+								intStack[local12716] = Static6.aClass4_Sub15Array1[local12719].rank;
 								continue;
 							}
 							isp = local12716 + 1;
@@ -1896,7 +1896,7 @@ public final class ScriptRunner {
 						if (opcode == 3624) {
 							@Pc(12894) int local12894 = isp - 1;
 							@Pc(12897) int local12897 = intStack[local12894];
-							if (Static6.aClass4_Sub15Array1 != null && local12897 < Static4.anInt3260 && Static6.aClass4_Sub15Array1[local12897].aString182.equalsIgnoreCase(PlayerList.self.name)) {
+							if (Static6.aClass4_Sub15Array1 != null && local12897 < Static4.anInt3260 && Static6.aClass4_Sub15Array1[local12897].username.equalsIgnoreCase(PlayerList.self.name)) {
 								isp = local12894 + 1;
 								intStack[local12894] = 1;
 								continue;
@@ -1917,7 +1917,7 @@ public final class ScriptRunner {
 							isp--;
 							@Pc(12954) int local12954 = intStack[isp];
 							if (Static2.aString108 != null && Static4.anInt3260 > local12954) {
-								stringStack[ssp++] = Static6.aClass4_Sub15Array1[local12954].aString181;
+								stringStack[ssp++] = Static6.aClass4_Sub15Array1[local12954].worldName;
 								continue;
 							}
 							stringStack[ssp++] = "";
