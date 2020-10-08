@@ -22,6 +22,11 @@ public class Buffer extends Node {
 		return crc32(bytes, 0, len);
 	}
 
+	@OriginalMember(owner = "client!hm", name = "a", descriptor = "(BLjava/lang/String;)I")
+	public static int getStringLength(@OriginalArg(1) String value) {
+		return value.length() + 1;
+	}
+
 	@OriginalMember(owner = "client!fd", name = "I", descriptor = "[B")
 	public byte[] bytes;
 

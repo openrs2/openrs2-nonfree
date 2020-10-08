@@ -198,7 +198,7 @@ public final class LoginManager {
 				} else {
 					buffer.writeByte(16);
 				}
-				buffer.writeShort(Protocol.outboundBuffer.position + Static19.method1791(client.settings) + 163);
+				buffer.writeShort(Protocol.outboundBuffer.position + Buffer.getStringLength(client.settings) + 163);
 				buffer.writeInt(550);
 				buffer.writeByte(type);
 				buffer.writeByte(client.advertSuppressed ? 1 : 0);

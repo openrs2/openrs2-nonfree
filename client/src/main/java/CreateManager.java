@@ -69,7 +69,7 @@ public final class CreateManager {
 		rsaBuffer.rsaEncrypt(Protocol.EXPONENT, Protocol.MODULUS);
 		@Pc(118) Buffer xteaBuffer = new Buffer(350);
 		xteaBuffer.writeString(email);
-		@Pc(131) int padding = 8 - Static19.method1791(email) % 8;
+		@Pc(131) int padding = 8 - Buffer.getStringLength(email) % 8;
 		for (@Pc(133) int i = 0; i < padding; i++) {
 			xteaBuffer.writeByte((int) (Math.random() * 255.0D));
 		}

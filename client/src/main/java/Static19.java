@@ -71,11 +71,6 @@ public final class Static19 {
 		arg5.method3431(local11);
 	}
 
-	@OriginalMember(owner = "client!hm", name = "a", descriptor = "(BLjava/lang/String;)I")
-	public static int method1791(@OriginalArg(1) String arg0) {
-		return arg0.length() + 1;
-	}
-
 	@OriginalMember(owner = "client!hn", name = "b", descriptor = "(I)V")
 	public static void method4376() {
 		NpcTypeList.models.clear();

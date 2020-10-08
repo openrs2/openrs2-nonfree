@@ -3494,7 +3494,7 @@ public final class ScriptRunner {
 									@Pc(8729) int local8729 = intStack[isp];
 									@Pc(8733) String local8733 = stringStack[ssp];
 									Protocol.outboundBuffer.writeOpcode(243);
-									Protocol.outboundBuffer.writeByte(Static19.method1791(local8733) + Static19.method1791(local8724) + 1);
+									Protocol.outboundBuffer.writeByte(Buffer.getStringLength(local8733) + Buffer.getStringLength(local8724) + 1);
 									Protocol.outboundBuffer.writeString(local8733);
 									Protocol.outboundBuffer.writeString(local8724);
 									Protocol.outboundBuffer.writeByte(local8729);
