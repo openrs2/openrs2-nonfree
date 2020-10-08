@@ -9,8 +9,8 @@ public final class Static11 {
 		if (Static3.aClass175_12 == null) {
 			return null;
 		} else {
-			Static1.aClass130_1.method3256(Static3.aClass175_12);
-			@Pc(24) MapElement local24 = (MapElement) Static1.aClass130_1.method3255();
+			Static1.aClass130_1.init(Static3.aClass175_12);
+			@Pc(24) MapElement local24 = (MapElement) Static1.aClass130_1.head();
 			@Pc(29) MelType local29 = MelTypeList.get(local24.id);
 			return local29 != null && local29.aBoolean157 && local29.method1810() ? local24 : Static24.method2713();
 		}

@@ -113,7 +113,7 @@ public final class WorldMap {
 			Static3.aByteArrayArrayArray10 = new byte[local309][local318][];
 			Static3.aByteArrayArrayArray14 = new byte[local309][local318][];
 			Static3.aClass112_13 = new LinkedList();
-			Static1.aClass130_1 = new Class130();
+			Static1.aClass130_1 = new SecondaryLinkedListIterator();
 			@Pc(358) int local358 = Static2.anInt1273 >> 1;
 			@Pc(364) int local364 = Static6.anInt4555 >> 2 << 10;
 			Static20.method2408(local364, local358);

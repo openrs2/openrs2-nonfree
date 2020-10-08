@@ -664,7 +664,7 @@ public final class Static24 {
 		if (Static3.aClass175_12 == null) {
 			return null;
 		}
-		for (@Pc(22) MapElement local22 = (MapElement) Static1.aClass130_1.method3250(); local22 != null; local22 = (MapElement) Static1.aClass130_1.method3250()) {
+		for (@Pc(22) MapElement local22 = (MapElement) Static1.aClass130_1.next(); local22 != null; local22 = (MapElement) Static1.aClass130_1.next()) {
 			@Pc(29) MelType local29 = MelTypeList.get(local22.id);
 			if (local29 != null && local29.aBoolean157 && local29.method1810()) {
 				return local22;

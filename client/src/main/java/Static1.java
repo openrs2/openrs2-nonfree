@@ -122,7 +122,7 @@ public final class Static1 {
 	public static Font aClass4_Sub3_Sub5_1;
 
 	@OriginalMember(owner = "client!cd", name = "f", descriptor = "Lclient!om;")
-	public static Class130 aClass130_1;
+	public static SecondaryLinkedListIterator aClass130_1;
 
 	@OriginalMember(owner = "client!ce", name = "b", descriptor = "Ljava/awt/Font;")
 	public static java.awt.Font aFont1;
