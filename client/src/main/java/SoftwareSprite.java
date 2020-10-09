@@ -21,10 +21,10 @@ public class SoftwareSprite extends Sprite {
 	}
 
 	@OriginalMember(owner = "client!vn", name = "<init>", descriptor = "(II)V")
-	public SoftwareSprite(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
-		this.pixels = new int[arg0 * arg1];
-		this.width = this.anInt5602 = arg0;
-		this.height = this.anInt5612 = arg1;
+	public SoftwareSprite(@OriginalArg(0) int width, @OriginalArg(1) int height) {
+		this.pixels = new int[width * height];
+		this.width = this.anInt5602 = width;
+		this.height = this.anInt5612 = height;
 		this.anInt5606 = this.anInt5604 = 0;
 	}
 

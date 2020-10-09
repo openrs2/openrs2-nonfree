@@ -17,9 +17,9 @@ public final class TextureOp29 extends TextureOp {
 	@OriginalMember(owner = "client!km", name = "a", descriptor = "(II)[I")
 	@Override
 	public final int[] method4694(@OriginalArg(1) int arg0) {
-		@Pc(9) int[] local9 = this.aClass35_41.method730(arg0);
-		if (this.aClass35_41.aBoolean51) {
-			this.method2391(this.aClass35_41.method729());
+		@Pc(9) int[] local9 = this.monochromeImageCache.get(arg0);
+		if (this.monochromeImageCache.invalid) {
+			this.method2391(this.monochromeImageCache.get());
 		}
 		return local9;
 	}
@@ -27,12 +27,12 @@ public final class TextureOp29 extends TextureOp {
 	@OriginalMember(owner = "client!km", name = "b", descriptor = "(II)[[I")
 	@Override
 	public final int[][] method4695(@OriginalArg(0) int arg0) {
-		@Pc(15) int[][] local15 = this.aClass114_41.method2696(arg0);
-		if (this.aClass114_41.aBoolean230) {
+		@Pc(15) int[][] local15 = this.colorImageCache.get(arg0);
+		if (this.colorImageCache.invalid) {
 			@Pc(26) int local26 = Static2.anInt1626;
 			@Pc(28) int local28 = Static1.anInt379;
 			@Pc(32) int[][] local32 = new int[local28][local26];
-			@Pc(37) int[][][] local37 = this.aClass114_41.method2694();
+			@Pc(37) int[][][] local37 = this.colorImageCache.get();
 			this.method2391(local32);
 			for (@Pc(43) int local43 = 0; local43 < Static1.anInt379; local43++) {
 				@Pc(50) int[][] local50 = local37[local43];
@@ -69,7 +69,7 @@ public final class TextureOp29 extends TextureOp {
 				}
 			}
 		} else if (code == 1) {
-			this.aBoolean397 = buffer.readUnsignedByte() == 1;
+			this.monochrome = buffer.readUnsignedByte() == 1;
 		}
 	}
 

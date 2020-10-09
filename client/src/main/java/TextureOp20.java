@@ -30,8 +30,8 @@ public final class TextureOp20 extends TextureOp {
 	@OriginalMember(owner = "client!la", name = "a", descriptor = "(II)[I")
 	@Override
 	public final int[] method4694(@OriginalArg(1) int arg0) {
-		@Pc(19) int[] local19 = this.aClass35_41.method730(arg0);
-		if (this.aClass35_41.aBoolean51) {
+		@Pc(19) int[] local19 = this.monochromeImageCache.get(arg0);
+		if (this.monochromeImageCache.invalid) {
 			@Pc(29) int local29 = Static2.anInt1626 / this.anInt3022;
 			@Pc(34) int local34 = Static1.anInt379 / this.anInt3026;
 			@Pc(53) int[] local53;
@@ -56,8 +56,8 @@ public final class TextureOp20 extends TextureOp {
 	@OriginalMember(owner = "client!la", name = "b", descriptor = "(II)[[I")
 	@Override
 	public final int[][] method4695(@OriginalArg(0) int arg0) {
-		@Pc(20) int[][] local20 = this.aClass114_41.method2696(arg0);
-		if (this.aClass114_41.aBoolean230) {
+		@Pc(20) int[][] local20 = this.colorImageCache.get(arg0);
+		if (this.colorImageCache.invalid) {
 			@Pc(29) int local29 = Static2.anInt1626 / this.anInt3022;
 			@Pc(34) int local34 = Static1.anInt379 / this.anInt3026;
 			@Pc(53) int[][] local53;

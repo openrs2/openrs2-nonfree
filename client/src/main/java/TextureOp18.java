@@ -9,8 +9,8 @@ public final class TextureOp18 extends TextureOp39 {
 	@OriginalMember(owner = "client!wd", name = "b", descriptor = "(II)[[I")
 	@Override
 	public final int[][] method4695(@OriginalArg(0) int arg0) {
-		@Pc(17) int[][] local17 = this.aClass114_41.method2696(arg0);
-		if (this.aClass114_41.aBoolean230 && this.method4702()) {
+		@Pc(17) int[][] local17 = this.colorImageCache.get(arg0);
+		if (this.colorImageCache.invalid && this.method4702()) {
 			@Pc(30) int[] local30 = local17[1];
 			@Pc(34) int[] local34 = local17[2];
 			@Pc(42) int local42 = this.anInt5834 * (arg0 % this.anInt5834);

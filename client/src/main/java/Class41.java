@@ -74,7 +74,7 @@ public abstract class Class41 {
 						local138 &= 4095;
 						local167 *= this.anInt3770;
 						@Pc(183) int local183 = this.anInt3770 * local115 >> 12;
-						@Pc(187) int local187 = Class35.anIntArray61[local138];
+						@Pc(187) int local187 = MonochromeImageCache.anIntArray61[local138];
 						@Pc(191) int local191 = local159 + 1;
 						@Pc(195) int local195 = local167 >> 12;
 						@Pc(199) int local199 = local195 + 1;
@@ -87,7 +87,7 @@ public abstract class Class41 {
 							local214 = 0;
 						}
 						@Pc(222) int local222 = local159 & 0xFF;
-						@Pc(226) int local226 = Class35.anIntArray61[local167];
+						@Pc(226) int local226 = MonochromeImageCache.anIntArray61[local167];
 						@Pc(237) int local237;
 						if (local183 > local199) {
 							local237 = local199 & 0xFF;
@@ -99,7 +99,7 @@ public abstract class Class41 {
 						@Pc(253) int local253 = local123 >> 12;
 						@Pc(257) int local257 = local123 & 0xFFF;
 						@Pc(261) int local261 = local257 - 4096;
-						@Pc(265) int local265 = Class35.anIntArray61[local257];
+						@Pc(265) int local265 = MonochromeImageCache.anIntArray61[local257];
 						@Pc(269) int local269 = local253 + 1;
 						@Pc(276) int local276;
 						if (local130 > local269) {

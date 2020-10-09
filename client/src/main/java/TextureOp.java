@@ -11,7 +11,7 @@ public abstract class TextureOp extends Node {
 		buffer.readUnsignedByte();
 		@Pc(13) int type = buffer.readUnsignedByte();
 		@Pc(17) TextureOp op = create(type);
-		op.anInt5832 = buffer.readUnsignedByte();
+		op.imageCacheCapacity = buffer.readUnsignedByte();
 		@Pc(26) int codes = buffer.readUnsignedByte();
 		for (@Pc(28) int i = 0; i < codes; i++) {
 			@Pc(35) int code = buffer.readUnsignedByte();
@@ -109,29 +109,29 @@ public abstract class TextureOp extends Node {
 	}
 
 	@OriginalMember(owner = "client!jo", name = "z", descriptor = "Lclient!md;")
-	protected Class114 aClass114_41;
+	protected ColorImageCache colorImageCache;
 
 	@OriginalMember(owner = "client!jo", name = "F", descriptor = "Lclient!da;")
-	protected Class35 aClass35_41;
+	protected MonochromeImageCache monochromeImageCache;
 
 	@OriginalMember(owner = "client!jo", name = "R", descriptor = "I")
-	public int anInt5832;
+	public int imageCacheCapacity;
 
 	@OriginalMember(owner = "client!jo", name = "y", descriptor = "Z")
-	public boolean aBoolean397;
+	public boolean monochrome;
 
 	@OriginalMember(owner = "client!jo", name = "D", descriptor = "[Lclient!jo;")
 	public final TextureOp[] aClass4_Sub1Array42;
 
 	@OriginalMember(owner = "client!jo", name = "<init>", descriptor = "(IZ)V")
 	protected TextureOp(@OriginalArg(0) int arg0, @OriginalArg(1) boolean arg1) {
-		this.aBoolean397 = arg1;
+		this.monochrome = arg1;
 		this.aClass4_Sub1Array42 = new TextureOp[arg0];
 	}
 
 	@OriginalMember(owner = "client!jo", name = "a", descriptor = "(IIB)[[I")
 	protected final int[][] method4686(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
-		if (!this.aClass4_Sub1Array42[arg0].aBoolean397) {
+		if (!this.aClass4_Sub1Array42[arg0].monochrome) {
 			return this.aClass4_Sub1Array42[arg0].method4695(arg1);
 		}
 		@Pc(27) int[][] local27 = new int[3][];
@@ -167,29 +167,29 @@ public abstract class TextureOp extends Node {
 	}
 
 	@OriginalMember(owner = "client!jo", name = "e", descriptor = "(I)V")
-	public void method4696() {
-		if (this.aBoolean397) {
-			this.aClass35_41.method733();
-			this.aClass35_41 = null;
+	public void clearImageCache() {
+		if (this.monochrome) {
+			this.monochromeImageCache.clear();
+			this.monochromeImageCache = null;
 		} else {
-			this.aClass114_41.method2693();
-			this.aClass114_41 = null;
+			this.colorImageCache.clear();
+			this.colorImageCache = null;
 		}
 	}
 
 	@OriginalMember(owner = "client!jo", name = "a", descriptor = "(III)V")
-	public final void method4697(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1) {
-		@Pc(12) int local12 = this.anInt5832 == 255 ? arg0 : this.anInt5832;
-		if (this.aBoolean397) {
-			this.aClass35_41 = new Class35(local12, arg0, arg1);
+	public final void createImageCache(@OriginalArg(0) int height, @OriginalArg(2) int width) {
+		@Pc(12) int capacity = this.imageCacheCapacity == 255 ? height : this.imageCacheCapacity;
+		if (this.monochrome) {
+			this.monochromeImageCache = new MonochromeImageCache(capacity, height, width);
 		} else {
-			this.aClass114_41 = new Class114(local12, arg0, arg1);
+			this.colorImageCache = new ColorImageCache(capacity, height, width);
 		}
 	}
 
 	@OriginalMember(owner = "client!jo", name = "b", descriptor = "(III)[I")
 	protected final int[] method4699(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1) {
-		return this.aClass4_Sub1Array42[arg1].aBoolean397 ? this.aClass4_Sub1Array42[arg1].method4694(arg0) : this.aClass4_Sub1Array42[arg1].method4695(arg0)[0];
+		return this.aClass4_Sub1Array42[arg1].monochrome ? this.aClass4_Sub1Array42[arg1].method4694(arg0) : this.aClass4_Sub1Array42[arg1].method4695(arg0)[0];
 	}
 
 	@OriginalMember(owner = "client!jo", name = "e", descriptor = "(B)V")

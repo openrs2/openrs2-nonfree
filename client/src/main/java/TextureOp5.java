@@ -20,8 +20,8 @@ public final class TextureOp5 extends TextureOp {
 	@OriginalMember(owner = "client!vi", name = "b", descriptor = "(II)[[I")
 	@Override
 	public final int[][] method4695(@OriginalArg(0) int arg0) {
-		@Pc(11) int[][] local11 = this.aClass114_41.method2696(arg0);
-		if (this.aClass114_41.aBoolean230) {
+		@Pc(11) int[][] local11 = this.colorImageCache.get(arg0);
+		if (this.colorImageCache.invalid) {
 			@Pc(32) int local32 = this.anInt5587 + this.anInt5587 + 1;
 			@Pc(36) int local36 = 65536 / local32;
 			@Pc(44) int local44 = this.anInt5586 + this.anInt5586 + 1;
@@ -91,15 +91,15 @@ public final class TextureOp5 extends TextureOp {
 		} else if (code == 1) {
 			this.anInt5587 = buffer.readUnsignedByte();
 		} else if (code == 2) {
-			this.aBoolean397 = buffer.readUnsignedByte() == 1;
+			this.monochrome = buffer.readUnsignedByte() == 1;
 		}
 	}
 
 	@OriginalMember(owner = "client!vi", name = "a", descriptor = "(II)[I")
 	@Override
 	public final int[] method4694(@OriginalArg(1) int arg0) {
-		@Pc(19) int[] local19 = this.aClass35_41.method730(arg0);
-		if (this.aClass35_41.aBoolean51) {
+		@Pc(19) int[] local19 = this.monochromeImageCache.get(arg0);
+		if (this.monochromeImageCache.invalid) {
 			@Pc(33) int local33 = this.anInt5587 + this.anInt5587 + 1;
 			@Pc(37) int local37 = 65536 / local33;
 			@Pc(45) int local45 = this.anInt5586 + this.anInt5586 + 1;

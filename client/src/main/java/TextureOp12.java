@@ -23,8 +23,8 @@ public final class TextureOp12 extends TextureOp {
 	@OriginalMember(owner = "client!vb", name = "a", descriptor = "(II)[I")
 	@Override
 	public final int[] method4694(@OriginalArg(1) int arg0) {
-		@Pc(17) int[] local17 = this.aClass35_41.method730(arg0);
-		if (this.aClass35_41.aBoolean51) {
+		@Pc(17) int[] local17 = this.monochromeImageCache.get(arg0);
+		if (this.monochromeImageCache.invalid) {
 			@Pc(26) int local26 = Static6.anIntArray478[arg0];
 			@Pc(32) int local32 = local26 - 2048 >> 1;
 			for (@Pc(34) int local34 = 0; local34 < Static2.anInt1626; local34++) {

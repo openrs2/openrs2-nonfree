@@ -101,7 +101,7 @@ public final class TextureOp34 extends TextureOp {
 			local65 = local48 == 2 ? arg0 - arg5 : -arg5 - arg0;
 		}
 		@Pc(92) int local92 = this.aByteArray19[arg3 + local39] & 0x3;
-		@Pc(96) int local96 = Class35.anIntArray61[arg0];
+		@Pc(96) int local96 = MonochromeImageCache.anIntArray61[arg0];
 		@Pc(115) int local115;
 		if (local92 > 1) {
 			local115 = local92 == 2 ? local35 - arg5 : -local35 - arg5;
@@ -130,8 +130,8 @@ public final class TextureOp34 extends TextureOp {
 	@OriginalMember(owner = "client!jj", name = "a", descriptor = "(II)[I")
 	@Override
 	public final int[] method4694(@OriginalArg(1) int arg0) {
-		@Pc(15) int[] local15 = this.aClass35_41.method730(arg0);
-		if (this.aClass35_41.aBoolean51) {
+		@Pc(15) int[] local15 = this.monochromeImageCache.get(arg0);
+		if (this.monochromeImageCache.invalid) {
 			this.method2053(local15, arg0);
 		}
 		return local15;
@@ -149,7 +149,7 @@ public final class TextureOp34 extends TextureOp {
 			@Pc(62) int local62 = local58 >> 12;
 			local58 &= 4095;
 			@Pc(75) int local75 = this.aByteArray19[local62 & 0xFF] & 0xFF;
-			@Pc(79) int local79 = Class35.anIntArray61[local58];
+			@Pc(79) int local79 = MonochromeImageCache.anIntArray61[local58];
 			@Pc(83) int local83 = local62 + 1;
 			if (local52 <= local83) {
 				local83 = 0;
@@ -180,7 +180,7 @@ public final class TextureOp34 extends TextureOp {
 			@Pc(235) int local235 = local211 * this.anInt2625 >> 12;
 			local217 &= 4095;
 			@Pc(248) int local248 = this.aByteArray19[local221 & 0xFF] & 0xFF;
-			@Pc(252) int local252 = Class35.anIntArray61[local217];
+			@Pc(252) int local252 = MonochromeImageCache.anIntArray61[local217];
 			@Pc(256) int local256 = local221 + 1;
 			if (local256 >= local235) {
 				local256 = 0;
@@ -207,7 +207,7 @@ public final class TextureOp34 extends TextureOp {
 					local364 = 0;
 				}
 				@Pc(392) int local392 = this.aByteArray19[local364 & 0xFF] & 0xFF;
-				@Pc(396) int local396 = Class35.anIntArray61[local349];
+				@Pc(396) int local396 = MonochromeImageCache.anIntArray61[local349];
 				if (this.aBoolean181 && local314 == this.anInt2628 - 1) {
 					for (@Pc(447) int local447 = 0; local447 < Static2.anInt1626; local447++) {
 						@Pc(461) int local461 = Static4.anIntArray231[local447] * this.anInt2631;

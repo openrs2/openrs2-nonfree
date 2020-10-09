@@ -299,9 +299,6 @@ public final class Static5 {
 	@OriginalMember(owner = "client!oj", name = "g", descriptor = "Z")
 	public static boolean aBoolean276 = false;
 
-	@OriginalMember(owner = "client!ok", name = "d", descriptor = "Lclient!ol;")
-	public static final Class4_Sub20 aClass4_Sub20_1 = new Class4_Sub20(0, 0);
-
 	@OriginalMember(owner = "client!ok", name = "f", descriptor = "F")
 	public static float aFloat97 = 0.0F;
 

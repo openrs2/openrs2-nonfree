@@ -229,9 +229,6 @@ public final class Static2 {
 	@OriginalMember(owner = "client!e", name = "v", descriptor = "Lclient!ll;")
 	public static final LinkedList aClass112_6 = new LinkedList();
 
-	@OriginalMember(owner = "client!ea", name = "y", descriptor = "Lclient!mc;")
-	public static final Class4_Sub16 aClass4_Sub16_2 = new Class4_Sub16(0, 0);
-
 	@OriginalMember(owner = "client!ea", name = "G", descriptor = "[[Z")
 	public static final boolean[][] aBooleanArrayArray2 = new boolean[][] { { true, true, true }, { false, false }, { false, true }, { true, false }, { false, true, true }, { true, false, true }, { false, true, false }, { true, false, false } };
 

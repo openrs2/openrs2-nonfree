@@ -49,8 +49,8 @@ public class TextureOp39 extends TextureOp {
 
 	@OriginalMember(owner = "client!og", name = "e", descriptor = "(I)V")
 	@Override
-	public final void method4696() {
-		super.method4696();
+	public final void clearImageCache() {
+		super.clearImageCache();
 		this.anIntArray655 = null;
 	}
 
@@ -63,8 +63,8 @@ public class TextureOp39 extends TextureOp {
 	@OriginalMember(owner = "client!og", name = "b", descriptor = "(II)[[I")
 	@Override
 	public int[][] method4695(@OriginalArg(0) int arg0) {
-		@Pc(16) int[][] local16 = this.aClass114_41.method2696(arg0);
-		if (this.aClass114_41.aBoolean230 && this.method4702()) {
+		@Pc(16) int[][] local16 = this.colorImageCache.get(arg0);
+		if (this.colorImageCache.invalid && this.method4702()) {
 			@Pc(32) int[] local32 = local16[0];
 			@Pc(36) int[] local36 = local16[1];
 			@Pc(40) int[] local40 = local16[2];
