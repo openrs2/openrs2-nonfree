@@ -704,7 +704,7 @@ public final class SoftwareModel extends Model {
 							if (local712 == 0) {
 								local712 = 1;
 							}
-							Static33.method4206(Static4.anIntArray362[local701], Static4.anIntArray357[local701], (local706.emitter.type.anInt2399 << 16) / local712, local706.anInt3231, local706.anInt3231 >> 24 & 0xFF);
+							SoftwareRaster.method4206(Static4.anIntArray362[local701], Static4.anIntArray357[local701], (local706.emitter.type.anInt2399 << 16) / local712, local706.anInt3231, local706.anInt3231 >> 24 & 0xFF);
 						}
 					}
 				}
@@ -722,7 +722,7 @@ public final class SoftwareModel extends Model {
 							if (local793 == 0) {
 								local793 = 1;
 							}
-							Static33.method4206(Static4.anIntArray362[local782], Static4.anIntArray357[local782], (local787.emitter.type.anInt2399 << 16) / local793, local787.anInt3231, local787.anInt3231 >> 24 & 0xFF);
+							SoftwareRaster.method4206(Static4.anIntArray362[local782], Static4.anIntArray357[local782], (local787.emitter.type.anInt2399 << 16) / local793, local787.anInt3231, local787.anInt3231 >> 24 & 0xFF);
 						}
 					}
 				}
@@ -871,7 +871,7 @@ public final class SoftwareModel extends Model {
 					if (local1309 == 0) {
 						local1309 = 1;
 					}
-					Static33.method4206(Static4.anIntArray362[local1291], Static4.anIntArray357[local1291], (local1303.emitter.type.anInt2399 << 16) / local1309, local1303.anInt3231, local1303.anInt3231 >> 24 & 0xFF);
+					SoftwareRaster.method4206(Static4.anIntArray362[local1291], Static4.anIntArray357[local1291], (local1303.emitter.type.anInt2399 << 16) / local1309, local1303.anInt3231, local1303.anInt3231 >> 24 & 0xFF);
 					if (local1109 >= local7) {
 						break;
 					}
@@ -905,7 +905,7 @@ public final class SoftwareModel extends Model {
 			if (local1419 == 0) {
 				local1419 = 1;
 			}
-			Static33.method4206(Static4.anIntArray362[local1405], Static4.anIntArray357[local1405], (local1413.emitter.type.anInt2399 << 16) / local1419, local1413.anInt3231, local1413.anInt3231 >> 24 & 0xFF);
+			SoftwareRaster.method4206(Static4.anIntArray362[local1405], Static4.anIntArray357[local1405], (local1413.emitter.type.anInt2399 << 16) / local1419, local1413.anInt3231, local1413.anInt3231 >> 24 & 0xFF);
 			local1405 = Static4.anIntArray365[local1109++];
 		}
 	}

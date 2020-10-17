@@ -323,18 +323,18 @@ public final class Static23 {
 									if (local268 < 0) {
 										return;
 									}
-									method2554(Static6.anIntArray561, local276, local163 >> 16, local137 >> 16, local128, local86);
+									method2554(SoftwareRaster.pixels, local276, local163 >> 16, local137 >> 16, local128, local86);
 									local137 += local60;
 									local163 += local36;
 									local128 += local98;
-									local276 += Static6.anInt5188;
+									local276 += SoftwareRaster.width;
 								}
 							}
-							method2554(Static6.anIntArray561, local276, local136 >> 16, local137 >> 16, local128, local86);
+							method2554(SoftwareRaster.pixels, local276, local136 >> 16, local137 >> 16, local128, local86);
 							local137 += local60;
 							local136 += local48;
 							local128 += local98;
-							local276 += Static6.anInt5188;
+							local276 += SoftwareRaster.width;
 						}
 					} else {
 						@Pc(189) int local189 = arg2 - arg1;
@@ -348,18 +348,18 @@ public final class Static23 {
 									if (local189 < 0) {
 										return;
 									}
-									method2554(Static6.anIntArray561, local197, local137 >> 16, local163 >> 16, local128, local86);
+									method2554(SoftwareRaster.pixels, local197, local137 >> 16, local163 >> 16, local128, local86);
 									local137 += local60;
 									local163 += local36;
 									local128 += local98;
-									local197 += Static6.anInt5188;
+									local197 += SoftwareRaster.width;
 								}
 							}
-							method2554(Static6.anIntArray561, local197, local137 >> 16, local136 >> 16, local128, local86);
+							method2554(SoftwareRaster.pixels, local197, local137 >> 16, local136 >> 16, local128, local86);
 							local137 += local60;
 							local136 += local48;
 							local128 += local98;
-							local197 += Static6.anInt5188;
+							local197 += SoftwareRaster.width;
 						}
 					}
 				} else {
@@ -388,18 +388,18 @@ public final class Static23 {
 									if (local401 < 0) {
 										return;
 									}
-									method2554(Static6.anIntArray561, local409, local375 >> 16, local348 >> 16, local128, local86);
+									method2554(SoftwareRaster.pixels, local409, local375 >> 16, local348 >> 16, local128, local86);
 									local375 += local36;
 									local348 += local48;
 									local128 += local98;
-									local409 += Static6.anInt5188;
+									local409 += SoftwareRaster.width;
 								}
 							}
-							method2554(Static6.anIntArray561, local409, local349 >> 16, local348 >> 16, local128, local86);
+							method2554(SoftwareRaster.pixels, local409, local349 >> 16, local348 >> 16, local128, local86);
 							local349 += local60;
 							local348 += local48;
 							local128 += local98;
-							local409 += Static6.anInt5188;
+							local409 += SoftwareRaster.width;
 						}
 					} else {
 						@Pc(480) int local480 = arg1 - arg2;
@@ -413,18 +413,18 @@ public final class Static23 {
 									if (local480 < 0) {
 										return;
 									}
-									method2554(Static6.anIntArray561, local488, local348 >> 16, local375 >> 16, local128, local86);
+									method2554(SoftwareRaster.pixels, local488, local348 >> 16, local375 >> 16, local128, local86);
 									local375 += local36;
 									local348 += local48;
 									local128 += local98;
-									local488 += Static6.anInt5188;
+									local488 += SoftwareRaster.width;
 								}
 							}
-							method2554(Static6.anIntArray561, local488, local348 >> 16, local349 >> 16, local128, local86);
+							method2554(SoftwareRaster.pixels, local488, local348 >> 16, local349 >> 16, local128, local86);
 							local349 += local60;
 							local348 += local48;
 							local128 += local98;
-							local488 += Static6.anInt5188;
+							local488 += SoftwareRaster.width;
 						}
 					}
 				}
@@ -464,18 +464,18 @@ public final class Static23 {
 									if (local722 < 0) {
 										return;
 									}
-									method2554(Static6.anIntArray561, local730, local617 >> 16, local591 >> 16, local582, local86);
+									method2554(SoftwareRaster.pixels, local730, local617 >> 16, local591 >> 16, local582, local86);
 									local591 += local48;
 									local617 += local60;
 									local582 += local98;
-									local730 += Static6.anInt5188;
+									local730 += SoftwareRaster.width;
 								}
 							}
-							method2554(Static6.anIntArray561, local730, local590 >> 16, local591 >> 16, local582, local86);
+							method2554(SoftwareRaster.pixels, local730, local590 >> 16, local591 >> 16, local582, local86);
 							local591 += local48;
 							local590 += local36;
 							local582 += local98;
-							local730 += Static6.anInt5188;
+							local730 += SoftwareRaster.width;
 						}
 					} else {
 						@Pc(643) int local643 = arg0 - arg2;
@@ -489,18 +489,18 @@ public final class Static23 {
 									if (local643 < 0) {
 										return;
 									}
-									method2554(Static6.anIntArray561, local651, local591 >> 16, local617 >> 16, local582, local86);
+									method2554(SoftwareRaster.pixels, local651, local591 >> 16, local617 >> 16, local582, local86);
 									local591 += local48;
 									local617 += local60;
 									local582 += local98;
-									local651 += Static6.anInt5188;
+									local651 += SoftwareRaster.width;
 								}
 							}
-							method2554(Static6.anIntArray561, local651, local591 >> 16, local590 >> 16, local582, local86);
+							method2554(SoftwareRaster.pixels, local651, local591 >> 16, local590 >> 16, local582, local86);
 							local591 += local48;
 							local590 += local36;
 							local582 += local98;
-							local651 += Static6.anInt5188;
+							local651 += SoftwareRaster.width;
 						}
 					}
 				} else {
@@ -529,18 +529,18 @@ public final class Static23 {
 									if (local846 < 0) {
 										return;
 									}
-									method2554(Static6.anIntArray561, local854, local829 >> 16, local802 >> 16, local582, local86);
+									method2554(SoftwareRaster.pixels, local854, local829 >> 16, local802 >> 16, local582, local86);
 									local829 += local60;
 									local802 += local36;
 									local582 += local98;
-									local854 += Static6.anInt5188;
+									local854 += SoftwareRaster.width;
 								}
 							}
-							method2554(Static6.anIntArray561, local854, local803 >> 16, local802 >> 16, local582, local86);
+							method2554(SoftwareRaster.pixels, local854, local803 >> 16, local802 >> 16, local582, local86);
 							local803 += local48;
 							local802 += local36;
 							local582 += local98;
-							local854 += Static6.anInt5188;
+							local854 += SoftwareRaster.width;
 						}
 					} else {
 						@Pc(925) int local925 = arg2 - arg0;
@@ -554,18 +554,18 @@ public final class Static23 {
 									if (local925 < 0) {
 										return;
 									}
-									method2554(Static6.anIntArray561, local933, local802 >> 16, local829 >> 16, local582, local86);
+									method2554(SoftwareRaster.pixels, local933, local802 >> 16, local829 >> 16, local582, local86);
 									local829 += local60;
 									local802 += local36;
 									local582 += local98;
-									local933 += Static6.anInt5188;
+									local933 += SoftwareRaster.width;
 								}
 							}
-							method2554(Static6.anIntArray561, local933, local802 >> 16, local803 >> 16, local582, local86);
+							method2554(SoftwareRaster.pixels, local933, local802 >> 16, local803 >> 16, local582, local86);
 							local803 += local48;
 							local802 += local36;
 							local582 += local98;
-							local933 += Static6.anInt5188;
+							local933 += SoftwareRaster.width;
 						}
 					}
 				}
@@ -604,18 +604,18 @@ public final class Static23 {
 								if (local1076 < 0) {
 									return;
 								}
-								method2554(Static6.anIntArray561, local1084, local1033 >> 16, local1059 >> 16, local1024, local86);
+								method2554(SoftwareRaster.pixels, local1084, local1033 >> 16, local1059 >> 16, local1024, local86);
 								local1033 += local36;
 								local1059 += local48;
 								local1024 += local98;
-								local1084 += Static6.anInt5188;
+								local1084 += SoftwareRaster.width;
 							}
 						}
-						method2554(Static6.anIntArray561, local1084, local1033 >> 16, local1032 >> 16, local1024, local86);
+						method2554(SoftwareRaster.pixels, local1084, local1033 >> 16, local1032 >> 16, local1024, local86);
 						local1033 += local36;
 						local1032 += local60;
 						local1024 += local98;
-						local1084 += Static6.anInt5188;
+						local1084 += SoftwareRaster.width;
 					}
 				} else {
 					@Pc(1155) int local1155 = arg1 - arg0;
@@ -629,18 +629,18 @@ public final class Static23 {
 								if (local1155 < 0) {
 									return;
 								}
-								method2554(Static6.anIntArray561, local1163, local1059 >> 16, local1033 >> 16, local1024, local86);
+								method2554(SoftwareRaster.pixels, local1163, local1059 >> 16, local1033 >> 16, local1024, local86);
 								local1033 += local36;
 								local1059 += local48;
 								local1024 += local98;
-								local1163 += Static6.anInt5188;
+								local1163 += SoftwareRaster.width;
 							}
 						}
-						method2554(Static6.anIntArray561, local1163, local1032 >> 16, local1033 >> 16, local1024, local86);
+						method2554(SoftwareRaster.pixels, local1163, local1032 >> 16, local1033 >> 16, local1024, local86);
 						local1033 += local36;
 						local1032 += local60;
 						local1024 += local98;
-						local1163 += Static6.anInt5188;
+						local1163 += SoftwareRaster.width;
 					}
 				}
 			} else {
@@ -669,18 +669,18 @@ public final class Static23 {
 								if (local1279 < 0) {
 									return;
 								}
-								method2554(Static6.anIntArray561, local1287, local1262 >> 16, local1235 >> 16, local1024, local86);
+								method2554(SoftwareRaster.pixels, local1287, local1262 >> 16, local1235 >> 16, local1024, local86);
 								local1262 += local48;
 								local1235 += local60;
 								local1024 += local98;
-								local1287 += Static6.anInt5188;
+								local1287 += SoftwareRaster.width;
 							}
 						}
-						method2554(Static6.anIntArray561, local1287, local1236 >> 16, local1235 >> 16, local1024, local86);
+						method2554(SoftwareRaster.pixels, local1287, local1236 >> 16, local1235 >> 16, local1024, local86);
 						local1236 += local36;
 						local1235 += local60;
 						local1024 += local98;
-						local1287 += Static6.anInt5188;
+						local1287 += SoftwareRaster.width;
 					}
 				} else {
 					@Pc(1358) int local1358 = arg0 - arg1;
@@ -694,18 +694,18 @@ public final class Static23 {
 								if (local1358 < 0) {
 									return;
 								}
-								method2554(Static6.anIntArray561, local1366, local1235 >> 16, local1262 >> 16, local1024, local86);
+								method2554(SoftwareRaster.pixels, local1366, local1235 >> 16, local1262 >> 16, local1024, local86);
 								local1262 += local48;
 								local1235 += local60;
 								local1024 += local98;
-								local1366 += Static6.anInt5188;
+								local1366 += SoftwareRaster.width;
 							}
 						}
-						method2554(Static6.anIntArray561, local1366, local1235 >> 16, local1236 >> 16, local1024, local86);
+						method2554(SoftwareRaster.pixels, local1366, local1235 >> 16, local1236 >> 16, local1024, local86);
 						local1236 += local36;
 						local1235 += local60;
 						local1024 += local98;
-						local1366 += Static6.anInt5188;
+						local1366 += SoftwareRaster.width;
 					}
 				}
 			}
@@ -800,7 +800,7 @@ public final class Static23 {
 
 	@OriginalMember(owner = "client!lg", name = "a", descriptor = "()I")
 	public static int method2546() {
-		return Static4.anIntArray297[0] / Static6.anInt5188;
+		return Static4.anIntArray297[0] / SoftwareRaster.width;
 	}
 
 	@OriginalMember(owner = "client!lg", name = "a", descriptor = "(IIII)V")
@@ -811,16 +811,16 @@ public final class Static23 {
 		if (Static4.anIntArray297.length < Static4.anInt3128) {
 			Static4.anIntArray297 = new int[IntUtils.clp2(Static4.anInt3128)];
 		}
-		@Pc(23) int local23 = arg1 * Static6.anInt5188 + arg0;
+		@Pc(23) int local23 = arg1 * SoftwareRaster.width + arg0;
 		for (@Pc(25) int local25 = 0; local25 < Static4.anInt3128; local25++) {
 			Static4.anIntArray297[local25] = local23;
-			local23 += Static6.anInt5188;
+			local23 += SoftwareRaster.width;
 		}
 	}
 
 	@OriginalMember(owner = "client!lg", name = "b", descriptor = "()I")
 	public static int method2548() {
-		return Static4.anIntArray297[0] % Static6.anInt5188;
+		return Static4.anIntArray297[0] % SoftwareRaster.width;
 	}
 
 	@OriginalMember(owner = "client!lg", name = "a", descriptor = "(IIIIIIIIIIIIIIIIIII)V")
@@ -912,21 +912,21 @@ public final class Static23 {
 									if (local375 < 0) {
 										return;
 									}
-									method2557(Static6.anIntArray561, local5, local383, local301 >> 16, local327 >> 16, local292, local136, local347, local353, local359, local192, local222, local252);
+									method2557(SoftwareRaster.pixels, local5, local383, local301 >> 16, local327 >> 16, local292, local136, local347, local353, local359, local192, local222, local252);
 									local301 += local100;
 									local327 += local85;
 									local292 += local148;
-									local383 += Static6.anInt5188;
+									local383 += SoftwareRaster.width;
 									local347 += local202;
 									local353 += local232;
 									local359 += local262;
 								}
 							}
-							method2557(Static6.anIntArray561, local5, local383, local301 >> 16, local300 >> 16, local292, local136, local347, local353, local359, local192, local222, local252);
+							method2557(SoftwareRaster.pixels, local5, local383, local301 >> 16, local300 >> 16, local292, local136, local347, local353, local359, local192, local222, local252);
 							local301 += local100;
 							local300 += local70;
 							local292 += local148;
-							local383 += Static6.anInt5188;
+							local383 += SoftwareRaster.width;
 							local347 += local202;
 							local353 += local232;
 							local359 += local262;
@@ -943,21 +943,21 @@ public final class Static23 {
 									if (local492 < 0) {
 										return;
 									}
-									method2557(Static6.anIntArray561, local5, local500, local327 >> 16, local301 >> 16, local292, local136, local347, local353, local359, local192, local222, local252);
+									method2557(SoftwareRaster.pixels, local5, local500, local327 >> 16, local301 >> 16, local292, local136, local347, local353, local359, local192, local222, local252);
 									local301 += local100;
 									local327 += local85;
 									local292 += local148;
-									local500 += Static6.anInt5188;
+									local500 += SoftwareRaster.width;
 									local347 += local202;
 									local353 += local232;
 									local359 += local262;
 								}
 							}
-							method2557(Static6.anIntArray561, local5, local500, local300 >> 16, local301 >> 16, local292, local136, local347, local353, local359, local192, local222, local252);
+							method2557(SoftwareRaster.pixels, local5, local500, local300 >> 16, local301 >> 16, local292, local136, local347, local353, local359, local192, local222, local252);
 							local301 += local100;
 							local300 += local70;
 							local292 += local148;
-							local500 += Static6.anInt5188;
+							local500 += SoftwareRaster.width;
 							local347 += local202;
 							local353 += local232;
 							local359 += local262;
@@ -993,21 +993,21 @@ public final class Static23 {
 									if (local802 < 0) {
 										return;
 									}
-									method2557(Static6.anIntArray561, local5, local810, local610 >> 16, local637 >> 16, local292, local136, local657, local663, local669, local192, local222, local252);
+									method2557(SoftwareRaster.pixels, local5, local810, local610 >> 16, local637 >> 16, local292, local136, local657, local663, local669, local192, local222, local252);
 									local637 += local85;
 									local610 += local70;
 									local292 += local148;
-									local810 += Static6.anInt5188;
+									local810 += SoftwareRaster.width;
 									local657 += local202;
 									local663 += local232;
 									local669 += local262;
 								}
 							}
-							method2557(Static6.anIntArray561, local5, local810, local610 >> 16, local611 >> 16, local292, local136, local657, local663, local669, local192, local222, local252);
+							method2557(SoftwareRaster.pixels, local5, local810, local610 >> 16, local611 >> 16, local292, local136, local657, local663, local669, local192, local222, local252);
 							local611 += local100;
 							local610 += local70;
 							local292 += local148;
-							local810 += Static6.anInt5188;
+							local810 += SoftwareRaster.width;
 							local657 += local202;
 							local663 += local232;
 							local669 += local262;
@@ -1024,21 +1024,21 @@ public final class Static23 {
 									if (local685 < 0) {
 										return;
 									}
-									method2557(Static6.anIntArray561, local5, local693, local637 >> 16, local610 >> 16, local292, local136, local657, local663, local669, local192, local222, local252);
+									method2557(SoftwareRaster.pixels, local5, local693, local637 >> 16, local610 >> 16, local292, local136, local657, local663, local669, local192, local222, local252);
 									local637 += local85;
 									local610 += local70;
 									local292 += local148;
-									local693 += Static6.anInt5188;
+									local693 += SoftwareRaster.width;
 									local657 += local202;
 									local663 += local232;
 									local669 += local262;
 								}
 							}
-							method2557(Static6.anIntArray561, local5, local693, local611 >> 16, local610 >> 16, local292, local136, local657, local663, local669, local192, local222, local252);
+							method2557(SoftwareRaster.pixels, local5, local693, local611 >> 16, local610 >> 16, local292, local136, local657, local663, local669, local192, local222, local252);
 							local611 += local100;
 							local610 += local70;
 							local292 += local148;
-							local693 += Static6.anInt5188;
+							local693 += SoftwareRaster.width;
 							local657 += local202;
 							local663 += local232;
 							local669 += local262;
@@ -1085,21 +1085,21 @@ public final class Static23 {
 									if (local1025 < 0) {
 										return;
 									}
-									method2557(Static6.anIntArray561, local5, local1033, local951 >> 16, local977 >> 16, local942, local136, local997, local1003, local1009, local192, local222, local252);
+									method2557(SoftwareRaster.pixels, local5, local1033, local951 >> 16, local977 >> 16, local942, local136, local997, local1003, local1009, local192, local222, local252);
 									local951 += local70;
 									local977 += local100;
 									local942 += local148;
-									local1033 += Static6.anInt5188;
+									local1033 += SoftwareRaster.width;
 									local997 += local202;
 									local1003 += local232;
 									local1009 += local262;
 								}
 							}
-							method2557(Static6.anIntArray561, local5, local1033, local951 >> 16, local950 >> 16, local942, local136, local997, local1003, local1009, local192, local222, local252);
+							method2557(SoftwareRaster.pixels, local5, local1033, local951 >> 16, local950 >> 16, local942, local136, local997, local1003, local1009, local192, local222, local252);
 							local951 += local70;
 							local950 += local85;
 							local942 += local148;
-							local1033 += Static6.anInt5188;
+							local1033 += SoftwareRaster.width;
 							local997 += local202;
 							local1003 += local232;
 							local1009 += local262;
@@ -1116,21 +1116,21 @@ public final class Static23 {
 									if (local1142 < 0) {
 										return;
 									}
-									method2557(Static6.anIntArray561, local5, local1150, local977 >> 16, local951 >> 16, local942, local136, local997, local1003, local1009, local192, local222, local252);
+									method2557(SoftwareRaster.pixels, local5, local1150, local977 >> 16, local951 >> 16, local942, local136, local997, local1003, local1009, local192, local222, local252);
 									local951 += local70;
 									local977 += local100;
 									local942 += local148;
-									local1150 += Static6.anInt5188;
+									local1150 += SoftwareRaster.width;
 									local997 += local202;
 									local1003 += local232;
 									local1009 += local262;
 								}
 							}
-							method2557(Static6.anIntArray561, local5, local1150, local950 >> 16, local951 >> 16, local942, local136, local997, local1003, local1009, local192, local222, local252);
+							method2557(SoftwareRaster.pixels, local5, local1150, local950 >> 16, local951 >> 16, local942, local136, local997, local1003, local1009, local192, local222, local252);
 							local951 += local70;
 							local950 += local85;
 							local942 += local148;
-							local1150 += Static6.anInt5188;
+							local1150 += SoftwareRaster.width;
 							local997 += local202;
 							local1003 += local232;
 							local1009 += local262;
@@ -1166,21 +1166,21 @@ public final class Static23 {
 									if (local1326 < 0) {
 										return;
 									}
-									method2557(Static6.anIntArray561, local5, local1334, local1287 >> 16, local1260 >> 16, local942, local136, local1307, local1313, local1319, local192, local222, local252);
+									method2557(SoftwareRaster.pixels, local5, local1334, local1287 >> 16, local1260 >> 16, local942, local136, local1307, local1313, local1319, local192, local222, local252);
 									local1287 += local100;
 									local1260 += local85;
 									local942 += local148;
-									local1334 += Static6.anInt5188;
+									local1334 += SoftwareRaster.width;
 									local1307 += local202;
 									local1313 += local232;
 									local1319 += local262;
 								}
 							}
-							method2557(Static6.anIntArray561, local5, local1334, local1261 >> 16, local1260 >> 16, local942, local136, local1307, local1313, local1319, local192, local222, local252);
+							method2557(SoftwareRaster.pixels, local5, local1334, local1261 >> 16, local1260 >> 16, local942, local136, local1307, local1313, local1319, local192, local222, local252);
 							local1261 += local70;
 							local1260 += local85;
 							local942 += local148;
-							local1334 += Static6.anInt5188;
+							local1334 += SoftwareRaster.width;
 							local1307 += local202;
 							local1313 += local232;
 							local1319 += local262;
@@ -1197,21 +1197,21 @@ public final class Static23 {
 									if (local1443 < 0) {
 										return;
 									}
-									method2557(Static6.anIntArray561, local5, local1451, local1260 >> 16, local1287 >> 16, local942, local136, local1307, local1313, local1319, local192, local222, local252);
+									method2557(SoftwareRaster.pixels, local5, local1451, local1260 >> 16, local1287 >> 16, local942, local136, local1307, local1313, local1319, local192, local222, local252);
 									local1287 += local100;
 									local1260 += local85;
 									local942 += local148;
-									local1451 += Static6.anInt5188;
+									local1451 += SoftwareRaster.width;
 									local1307 += local202;
 									local1313 += local232;
 									local1319 += local262;
 								}
 							}
-							method2557(Static6.anIntArray561, local5, local1451, local1260 >> 16, local1261 >> 16, local942, local136, local1307, local1313, local1319, local192, local222, local252);
+							method2557(SoftwareRaster.pixels, local5, local1451, local1260 >> 16, local1261 >> 16, local942, local136, local1307, local1313, local1319, local192, local222, local252);
 							local1261 += local70;
 							local1260 += local85;
 							local942 += local148;
-							local1451 += Static6.anInt5188;
+							local1451 += SoftwareRaster.width;
 							local1307 += local202;
 							local1313 += local232;
 							local1319 += local262;
@@ -1257,21 +1257,21 @@ public final class Static23 {
 								if (local1654 < 0) {
 									return;
 								}
-								method2557(Static6.anIntArray561, local5, local1662, local1589 >> 16, local1615 >> 16, local1580, local136, local1635, local1641, local1647, local192, local222, local252);
+								method2557(SoftwareRaster.pixels, local5, local1662, local1589 >> 16, local1615 >> 16, local1580, local136, local1635, local1641, local1647, local192, local222, local252);
 								local1589 += local85;
 								local1615 += local70;
 								local1580 += local148;
-								local1662 += Static6.anInt5188;
+								local1662 += SoftwareRaster.width;
 								local1635 += local202;
 								local1641 += local232;
 								local1647 += local262;
 							}
 						}
-						method2557(Static6.anIntArray561, local5, local1662, local1589 >> 16, local1588 >> 16, local1580, local136, local1635, local1641, local1647, local192, local222, local252);
+						method2557(SoftwareRaster.pixels, local5, local1662, local1589 >> 16, local1588 >> 16, local1580, local136, local1635, local1641, local1647, local192, local222, local252);
 						local1589 += local85;
 						local1588 += local100;
 						local1580 += local148;
-						local1662 += Static6.anInt5188;
+						local1662 += SoftwareRaster.width;
 						local1635 += local202;
 						local1641 += local232;
 						local1647 += local262;
@@ -1288,21 +1288,21 @@ public final class Static23 {
 								if (local1771 < 0) {
 									return;
 								}
-								method2557(Static6.anIntArray561, local5, local1779, local1615 >> 16, local1589 >> 16, local1580, local136, local1635, local1641, local1647, local192, local222, local252);
+								method2557(SoftwareRaster.pixels, local5, local1779, local1615 >> 16, local1589 >> 16, local1580, local136, local1635, local1641, local1647, local192, local222, local252);
 								local1589 += local85;
 								local1615 += local70;
 								local1580 += local148;
-								local1779 += Static6.anInt5188;
+								local1779 += SoftwareRaster.width;
 								local1635 += local202;
 								local1641 += local232;
 								local1647 += local262;
 							}
 						}
-						method2557(Static6.anIntArray561, local5, local1779, local1588 >> 16, local1589 >> 16, local1580, local136, local1635, local1641, local1647, local192, local222, local252);
+						method2557(SoftwareRaster.pixels, local5, local1779, local1588 >> 16, local1589 >> 16, local1580, local136, local1635, local1641, local1647, local192, local222, local252);
 						local1589 += local85;
 						local1588 += local100;
 						local1580 += local148;
-						local1779 += Static6.anInt5188;
+						local1779 += SoftwareRaster.width;
 						local1635 += local202;
 						local1641 += local232;
 						local1647 += local262;
@@ -1338,21 +1338,21 @@ public final class Static23 {
 								if (local1955 < 0) {
 									return;
 								}
-								method2557(Static6.anIntArray561, local5, local1963, local1916 >> 16, local1889 >> 16, local1580, local136, local1936, local1942, local1948, local192, local222, local252);
+								method2557(SoftwareRaster.pixels, local5, local1963, local1916 >> 16, local1889 >> 16, local1580, local136, local1936, local1942, local1948, local192, local222, local252);
 								local1916 += local70;
 								local1889 += local100;
 								local1580 += local148;
-								local1963 += Static6.anInt5188;
+								local1963 += SoftwareRaster.width;
 								local1936 += local202;
 								local1942 += local232;
 								local1948 += local262;
 							}
 						}
-						method2557(Static6.anIntArray561, local5, local1963, local1890 >> 16, local1889 >> 16, local1580, local136, local1936, local1942, local1948, local192, local222, local252);
+						method2557(SoftwareRaster.pixels, local5, local1963, local1890 >> 16, local1889 >> 16, local1580, local136, local1936, local1942, local1948, local192, local222, local252);
 						local1890 += local85;
 						local1889 += local100;
 						local1580 += local148;
-						local1963 += Static6.anInt5188;
+						local1963 += SoftwareRaster.width;
 						local1936 += local202;
 						local1942 += local232;
 						local1948 += local262;
@@ -1369,21 +1369,21 @@ public final class Static23 {
 								if (local2072 < 0) {
 									return;
 								}
-								method2557(Static6.anIntArray561, local5, local2080, local1889 >> 16, local1916 >> 16, local1580, local136, local1936, local1942, local1948, local192, local222, local252);
+								method2557(SoftwareRaster.pixels, local5, local2080, local1889 >> 16, local1916 >> 16, local1580, local136, local1936, local1942, local1948, local192, local222, local252);
 								local1916 += local70;
 								local1889 += local100;
 								local1580 += local148;
-								local2080 += Static6.anInt5188;
+								local2080 += SoftwareRaster.width;
 								local1936 += local202;
 								local1942 += local232;
 								local1948 += local262;
 							}
 						}
-						method2557(Static6.anIntArray561, local5, local2080, local1889 >> 16, local1890 >> 16, local1580, local136, local1936, local1942, local1948, local192, local222, local252);
+						method2557(SoftwareRaster.pixels, local5, local2080, local1889 >> 16, local1890 >> 16, local1580, local136, local1936, local1942, local1948, local192, local222, local252);
 						local1890 += local85;
 						local1889 += local100;
 						local1580 += local148;
-						local2080 += Static6.anInt5188;
+						local2080 += SoftwareRaster.width;
 						local1936 += local202;
 						local1942 += local232;
 						local1948 += local262;
@@ -1440,16 +1440,16 @@ public final class Static23 {
 									if (local119 < 0) {
 										return;
 									}
-									method2544(Static6.anIntArray561, local127, arg6, local73 >> 16, local93 >> 16);
+									method2544(SoftwareRaster.pixels, local127, arg6, local73 >> 16, local93 >> 16);
 									local73 += local31;
 									local93 += local16;
-									local127 += Static6.anInt5188;
+									local127 += SoftwareRaster.width;
 								}
 							}
-							method2544(Static6.anIntArray561, local127, arg6, local73 >> 16, local72 >> 16);
+							method2544(SoftwareRaster.pixels, local127, arg6, local73 >> 16, local72 >> 16);
 							local73 += local31;
 							local72 += local1;
-							local127 += Static6.anInt5188;
+							local127 += SoftwareRaster.width;
 						}
 					} else {
 						@Pc(186) int local186 = arg2 - arg1;
@@ -1463,16 +1463,16 @@ public final class Static23 {
 									if (local186 < 0) {
 										return;
 									}
-									method2544(Static6.anIntArray561, local194, arg6, local93 >> 16, local73 >> 16);
+									method2544(SoftwareRaster.pixels, local194, arg6, local93 >> 16, local73 >> 16);
 									local73 += local31;
 									local93 += local16;
-									local194 += Static6.anInt5188;
+									local194 += SoftwareRaster.width;
 								}
 							}
-							method2544(Static6.anIntArray561, local194, arg6, local72 >> 16, local73 >> 16);
+							method2544(SoftwareRaster.pixels, local194, arg6, local72 >> 16, local73 >> 16);
 							local73 += local31;
 							local72 += local1;
-							local194 += Static6.anInt5188;
+							local194 += SoftwareRaster.width;
 						}
 					}
 				} else {
@@ -1500,16 +1500,16 @@ public final class Static23 {
 									if (local301 < 0) {
 										return;
 									}
-									method2544(Static6.anIntArray561, local309, arg6, local275 >> 16, local254 >> 16);
+									method2544(SoftwareRaster.pixels, local309, arg6, local275 >> 16, local254 >> 16);
 									local275 += local16;
 									local254 += local1;
-									local309 += Static6.anInt5188;
+									local309 += SoftwareRaster.width;
 								}
 							}
-							method2544(Static6.anIntArray561, local309, arg6, local255 >> 16, local254 >> 16);
+							method2544(SoftwareRaster.pixels, local309, arg6, local255 >> 16, local254 >> 16);
 							local255 += local31;
 							local254 += local1;
-							local309 += Static6.anInt5188;
+							local309 += SoftwareRaster.width;
 						}
 					} else {
 						@Pc(368) int local368 = arg1 - arg2;
@@ -1523,16 +1523,16 @@ public final class Static23 {
 									if (local368 < 0) {
 										return;
 									}
-									method2544(Static6.anIntArray561, local376, arg6, local254 >> 16, local275 >> 16);
+									method2544(SoftwareRaster.pixels, local376, arg6, local254 >> 16, local275 >> 16);
 									local275 += local16;
 									local254 += local1;
-									local376 += Static6.anInt5188;
+									local376 += SoftwareRaster.width;
 								}
 							}
-							method2544(Static6.anIntArray561, local376, arg6, local254 >> 16, local255 >> 16);
+							method2544(SoftwareRaster.pixels, local376, arg6, local254 >> 16, local255 >> 16);
 							local255 += local31;
 							local254 += local1;
-							local376 += Static6.anInt5188;
+							local376 += SoftwareRaster.width;
 						}
 					}
 				}
@@ -1570,16 +1570,16 @@ public final class Static23 {
 									if (local503 < 0) {
 										return;
 									}
-									method2544(Static6.anIntArray561, local511, arg6, local457 >> 16, local477 >> 16);
+									method2544(SoftwareRaster.pixels, local511, arg6, local457 >> 16, local477 >> 16);
 									local457 += local1;
 									local477 += local31;
-									local511 += Static6.anInt5188;
+									local511 += SoftwareRaster.width;
 								}
 							}
-							method2544(Static6.anIntArray561, local511, arg6, local457 >> 16, local456 >> 16);
+							method2544(SoftwareRaster.pixels, local511, arg6, local457 >> 16, local456 >> 16);
 							local457 += local1;
 							local456 += local16;
-							local511 += Static6.anInt5188;
+							local511 += SoftwareRaster.width;
 						}
 					} else {
 						@Pc(570) int local570 = arg0 - arg2;
@@ -1593,16 +1593,16 @@ public final class Static23 {
 									if (local570 < 0) {
 										return;
 									}
-									method2544(Static6.anIntArray561, local578, arg6, local477 >> 16, local457 >> 16);
+									method2544(SoftwareRaster.pixels, local578, arg6, local477 >> 16, local457 >> 16);
 									local457 += local1;
 									local477 += local31;
-									local578 += Static6.anInt5188;
+									local578 += SoftwareRaster.width;
 								}
 							}
-							method2544(Static6.anIntArray561, local578, arg6, local456 >> 16, local457 >> 16);
+							method2544(SoftwareRaster.pixels, local578, arg6, local456 >> 16, local457 >> 16);
 							local457 += local1;
 							local456 += local16;
-							local578 += Static6.anInt5188;
+							local578 += SoftwareRaster.width;
 						}
 					}
 				} else {
@@ -1630,16 +1630,16 @@ public final class Static23 {
 									if (local676 < 0) {
 										return;
 									}
-									method2544(Static6.anIntArray561, local684, arg6, local659 >> 16, local638 >> 16);
+									method2544(SoftwareRaster.pixels, local684, arg6, local659 >> 16, local638 >> 16);
 									local659 += local31;
 									local638 += local16;
-									local684 += Static6.anInt5188;
+									local684 += SoftwareRaster.width;
 								}
 							}
-							method2544(Static6.anIntArray561, local684, arg6, local639 >> 16, local638 >> 16);
+							method2544(SoftwareRaster.pixels, local684, arg6, local639 >> 16, local638 >> 16);
 							local639 += local1;
 							local638 += local16;
-							local684 += Static6.anInt5188;
+							local684 += SoftwareRaster.width;
 						}
 					} else {
 						@Pc(743) int local743 = arg2 - arg0;
@@ -1653,16 +1653,16 @@ public final class Static23 {
 									if (local743 < 0) {
 										return;
 									}
-									method2544(Static6.anIntArray561, local751, arg6, local638 >> 16, local659 >> 16);
+									method2544(SoftwareRaster.pixels, local751, arg6, local638 >> 16, local659 >> 16);
 									local659 += local31;
 									local638 += local16;
-									local751 += Static6.anInt5188;
+									local751 += SoftwareRaster.width;
 								}
 							}
-							method2544(Static6.anIntArray561, local751, arg6, local638 >> 16, local639 >> 16);
+							method2544(SoftwareRaster.pixels, local751, arg6, local638 >> 16, local639 >> 16);
 							local639 += local1;
 							local638 += local16;
-							local751 += Static6.anInt5188;
+							local751 += SoftwareRaster.width;
 						}
 					}
 				}
@@ -1699,16 +1699,16 @@ public final class Static23 {
 								if (local866 < 0) {
 									return;
 								}
-								method2544(Static6.anIntArray561, local874, arg6, local829 >> 16, local849 >> 16);
+								method2544(SoftwareRaster.pixels, local874, arg6, local829 >> 16, local849 >> 16);
 								local829 += local16;
 								local849 += local1;
-								local874 += Static6.anInt5188;
+								local874 += SoftwareRaster.width;
 							}
 						}
-						method2544(Static6.anIntArray561, local874, arg6, local829 >> 16, local828 >> 16);
+						method2544(SoftwareRaster.pixels, local874, arg6, local829 >> 16, local828 >> 16);
 						local829 += local16;
 						local828 += local31;
-						local874 += Static6.anInt5188;
+						local874 += SoftwareRaster.width;
 					}
 				} else {
 					@Pc(933) int local933 = arg1 - arg0;
@@ -1722,16 +1722,16 @@ public final class Static23 {
 								if (local933 < 0) {
 									return;
 								}
-								method2544(Static6.anIntArray561, local941, arg6, local849 >> 16, local829 >> 16);
+								method2544(SoftwareRaster.pixels, local941, arg6, local849 >> 16, local829 >> 16);
 								local829 += local16;
 								local849 += local1;
-								local941 += Static6.anInt5188;
+								local941 += SoftwareRaster.width;
 							}
 						}
-						method2544(Static6.anIntArray561, local941, arg6, local828 >> 16, local829 >> 16);
+						method2544(SoftwareRaster.pixels, local941, arg6, local828 >> 16, local829 >> 16);
 						local829 += local16;
 						local828 += local31;
-						local941 += Static6.anInt5188;
+						local941 += SoftwareRaster.width;
 					}
 				}
 			} else {
@@ -1759,16 +1759,16 @@ public final class Static23 {
 								if (local1039 < 0) {
 									return;
 								}
-								method2544(Static6.anIntArray561, local1047, arg6, local1022 >> 16, local1001 >> 16);
+								method2544(SoftwareRaster.pixels, local1047, arg6, local1022 >> 16, local1001 >> 16);
 								local1022 += local1;
 								local1001 += local31;
-								local1047 += Static6.anInt5188;
+								local1047 += SoftwareRaster.width;
 							}
 						}
-						method2544(Static6.anIntArray561, local1047, arg6, local1002 >> 16, local1001 >> 16);
+						method2544(SoftwareRaster.pixels, local1047, arg6, local1002 >> 16, local1001 >> 16);
 						local1002 += local16;
 						local1001 += local31;
-						local1047 += Static6.anInt5188;
+						local1047 += SoftwareRaster.width;
 					}
 				} else {
 					@Pc(1106) int local1106 = arg0 - arg1;
@@ -1782,16 +1782,16 @@ public final class Static23 {
 								if (local1106 < 0) {
 									return;
 								}
-								method2544(Static6.anIntArray561, local1114, arg6, local1001 >> 16, local1022 >> 16);
+								method2544(SoftwareRaster.pixels, local1114, arg6, local1001 >> 16, local1022 >> 16);
 								local1022 += local1;
 								local1001 += local31;
-								local1114 += Static6.anInt5188;
+								local1114 += SoftwareRaster.width;
 							}
 						}
-						method2544(Static6.anIntArray561, local1114, arg6, local1001 >> 16, local1002 >> 16);
+						method2544(SoftwareRaster.pixels, local1114, arg6, local1001 >> 16, local1002 >> 16);
 						local1002 += local16;
 						local1001 += local31;
-						local1114 += Static6.anInt5188;
+						local1114 += SoftwareRaster.width;
 					}
 				}
 			}
@@ -2321,8 +2321,8 @@ public final class Static23 {
 	@OriginalMember(owner = "client!lg", name = "c", descriptor = "(II)V")
 	public static void method2556(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
 		@Pc(3) int local3 = Static4.anIntArray297[0];
-		@Pc(7) int local7 = local3 / Static6.anInt5188;
-		@Pc(13) int local13 = local3 - local7 * Static6.anInt5188;
+		@Pc(7) int local7 = local3 / SoftwareRaster.width;
+		@Pc(13) int local13 = local3 - local7 * SoftwareRaster.width;
 		Static4.anInt3125 = arg0 - local13;
 		Static4.anInt3126 = arg1 - local7;
 		Static7.anInt5437 = -Static4.anInt3125;
@@ -2768,21 +2768,21 @@ public final class Static23 {
 									if (local370 < 0) {
 										return;
 									}
-									method2560(Static6.anIntArray561, local5, local378, local296 >> 16, local322 >> 16, local287, local131, local342, local348, local354, local187, local217, local247);
+									method2560(SoftwareRaster.pixels, local5, local378, local296 >> 16, local322 >> 16, local287, local131, local342, local348, local354, local187, local217, local247);
 									local296 += local95;
 									local322 += local80;
 									local287 += local143;
-									local378 += Static6.anInt5188;
+									local378 += SoftwareRaster.width;
 									local342 += local197;
 									local348 += local227;
 									local354 += local257;
 								}
 							}
-							method2560(Static6.anIntArray561, local5, local378, local296 >> 16, local295 >> 16, local287, local131, local342, local348, local354, local187, local217, local247);
+							method2560(SoftwareRaster.pixels, local5, local378, local296 >> 16, local295 >> 16, local287, local131, local342, local348, local354, local187, local217, local247);
 							local296 += local95;
 							local295 += local65;
 							local287 += local143;
-							local378 += Static6.anInt5188;
+							local378 += SoftwareRaster.width;
 							local342 += local197;
 							local348 += local227;
 							local354 += local257;
@@ -2799,21 +2799,21 @@ public final class Static23 {
 									if (local487 < 0) {
 										return;
 									}
-									method2560(Static6.anIntArray561, local5, local495, local322 >> 16, local296 >> 16, local287, local131, local342, local348, local354, local187, local217, local247);
+									method2560(SoftwareRaster.pixels, local5, local495, local322 >> 16, local296 >> 16, local287, local131, local342, local348, local354, local187, local217, local247);
 									local296 += local95;
 									local322 += local80;
 									local287 += local143;
-									local495 += Static6.anInt5188;
+									local495 += SoftwareRaster.width;
 									local342 += local197;
 									local348 += local227;
 									local354 += local257;
 								}
 							}
-							method2560(Static6.anIntArray561, local5, local495, local295 >> 16, local296 >> 16, local287, local131, local342, local348, local354, local187, local217, local247);
+							method2560(SoftwareRaster.pixels, local5, local495, local295 >> 16, local296 >> 16, local287, local131, local342, local348, local354, local187, local217, local247);
 							local296 += local95;
 							local295 += local65;
 							local287 += local143;
-							local495 += Static6.anInt5188;
+							local495 += SoftwareRaster.width;
 							local342 += local197;
 							local348 += local227;
 							local354 += local257;
@@ -2849,21 +2849,21 @@ public final class Static23 {
 									if (local797 < 0) {
 										return;
 									}
-									method2560(Static6.anIntArray561, local5, local805, local605 >> 16, local632 >> 16, local287, local131, local652, local658, local664, local187, local217, local247);
+									method2560(SoftwareRaster.pixels, local5, local805, local605 >> 16, local632 >> 16, local287, local131, local652, local658, local664, local187, local217, local247);
 									local632 += local80;
 									local605 += local65;
 									local287 += local143;
-									local805 += Static6.anInt5188;
+									local805 += SoftwareRaster.width;
 									local652 += local197;
 									local658 += local227;
 									local664 += local257;
 								}
 							}
-							method2560(Static6.anIntArray561, local5, local805, local605 >> 16, local606 >> 16, local287, local131, local652, local658, local664, local187, local217, local247);
+							method2560(SoftwareRaster.pixels, local5, local805, local605 >> 16, local606 >> 16, local287, local131, local652, local658, local664, local187, local217, local247);
 							local606 += local95;
 							local605 += local65;
 							local287 += local143;
-							local805 += Static6.anInt5188;
+							local805 += SoftwareRaster.width;
 							local652 += local197;
 							local658 += local227;
 							local664 += local257;
@@ -2880,21 +2880,21 @@ public final class Static23 {
 									if (local680 < 0) {
 										return;
 									}
-									method2560(Static6.anIntArray561, local5, local688, local632 >> 16, local605 >> 16, local287, local131, local652, local658, local664, local187, local217, local247);
+									method2560(SoftwareRaster.pixels, local5, local688, local632 >> 16, local605 >> 16, local287, local131, local652, local658, local664, local187, local217, local247);
 									local632 += local80;
 									local605 += local65;
 									local287 += local143;
-									local688 += Static6.anInt5188;
+									local688 += SoftwareRaster.width;
 									local652 += local197;
 									local658 += local227;
 									local664 += local257;
 								}
 							}
-							method2560(Static6.anIntArray561, local5, local688, local606 >> 16, local605 >> 16, local287, local131, local652, local658, local664, local187, local217, local247);
+							method2560(SoftwareRaster.pixels, local5, local688, local606 >> 16, local605 >> 16, local287, local131, local652, local658, local664, local187, local217, local247);
 							local606 += local95;
 							local605 += local65;
 							local287 += local143;
-							local688 += Static6.anInt5188;
+							local688 += SoftwareRaster.width;
 							local652 += local197;
 							local658 += local227;
 							local664 += local257;
@@ -2941,21 +2941,21 @@ public final class Static23 {
 									if (local1020 < 0) {
 										return;
 									}
-									method2560(Static6.anIntArray561, local5, local1028, local946 >> 16, local972 >> 16, local937, local131, local992, local998, local1004, local187, local217, local247);
+									method2560(SoftwareRaster.pixels, local5, local1028, local946 >> 16, local972 >> 16, local937, local131, local992, local998, local1004, local187, local217, local247);
 									local946 += local65;
 									local972 += local95;
 									local937 += local143;
-									local1028 += Static6.anInt5188;
+									local1028 += SoftwareRaster.width;
 									local992 += local197;
 									local998 += local227;
 									local1004 += local257;
 								}
 							}
-							method2560(Static6.anIntArray561, local5, local1028, local946 >> 16, local945 >> 16, local937, local131, local992, local998, local1004, local187, local217, local247);
+							method2560(SoftwareRaster.pixels, local5, local1028, local946 >> 16, local945 >> 16, local937, local131, local992, local998, local1004, local187, local217, local247);
 							local946 += local65;
 							local945 += local80;
 							local937 += local143;
-							local1028 += Static6.anInt5188;
+							local1028 += SoftwareRaster.width;
 							local992 += local197;
 							local998 += local227;
 							local1004 += local257;
@@ -2972,21 +2972,21 @@ public final class Static23 {
 									if (local1137 < 0) {
 										return;
 									}
-									method2560(Static6.anIntArray561, local5, local1145, local972 >> 16, local946 >> 16, local937, local131, local992, local998, local1004, local187, local217, local247);
+									method2560(SoftwareRaster.pixels, local5, local1145, local972 >> 16, local946 >> 16, local937, local131, local992, local998, local1004, local187, local217, local247);
 									local946 += local65;
 									local972 += local95;
 									local937 += local143;
-									local1145 += Static6.anInt5188;
+									local1145 += SoftwareRaster.width;
 									local992 += local197;
 									local998 += local227;
 									local1004 += local257;
 								}
 							}
-							method2560(Static6.anIntArray561, local5, local1145, local945 >> 16, local946 >> 16, local937, local131, local992, local998, local1004, local187, local217, local247);
+							method2560(SoftwareRaster.pixels, local5, local1145, local945 >> 16, local946 >> 16, local937, local131, local992, local998, local1004, local187, local217, local247);
 							local946 += local65;
 							local945 += local80;
 							local937 += local143;
-							local1145 += Static6.anInt5188;
+							local1145 += SoftwareRaster.width;
 							local992 += local197;
 							local998 += local227;
 							local1004 += local257;
@@ -3022,21 +3022,21 @@ public final class Static23 {
 									if (local1321 < 0) {
 										return;
 									}
-									method2560(Static6.anIntArray561, local5, local1329, local1282 >> 16, local1255 >> 16, local937, local131, local1302, local1308, local1314, local187, local217, local247);
+									method2560(SoftwareRaster.pixels, local5, local1329, local1282 >> 16, local1255 >> 16, local937, local131, local1302, local1308, local1314, local187, local217, local247);
 									local1282 += local95;
 									local1255 += local80;
 									local937 += local143;
-									local1329 += Static6.anInt5188;
+									local1329 += SoftwareRaster.width;
 									local1302 += local197;
 									local1308 += local227;
 									local1314 += local257;
 								}
 							}
-							method2560(Static6.anIntArray561, local5, local1329, local1256 >> 16, local1255 >> 16, local937, local131, local1302, local1308, local1314, local187, local217, local247);
+							method2560(SoftwareRaster.pixels, local5, local1329, local1256 >> 16, local1255 >> 16, local937, local131, local1302, local1308, local1314, local187, local217, local247);
 							local1256 += local65;
 							local1255 += local80;
 							local937 += local143;
-							local1329 += Static6.anInt5188;
+							local1329 += SoftwareRaster.width;
 							local1302 += local197;
 							local1308 += local227;
 							local1314 += local257;
@@ -3053,21 +3053,21 @@ public final class Static23 {
 									if (local1438 < 0) {
 										return;
 									}
-									method2560(Static6.anIntArray561, local5, local1446, local1255 >> 16, local1282 >> 16, local937, local131, local1302, local1308, local1314, local187, local217, local247);
+									method2560(SoftwareRaster.pixels, local5, local1446, local1255 >> 16, local1282 >> 16, local937, local131, local1302, local1308, local1314, local187, local217, local247);
 									local1282 += local95;
 									local1255 += local80;
 									local937 += local143;
-									local1446 += Static6.anInt5188;
+									local1446 += SoftwareRaster.width;
 									local1302 += local197;
 									local1308 += local227;
 									local1314 += local257;
 								}
 							}
-							method2560(Static6.anIntArray561, local5, local1446, local1255 >> 16, local1256 >> 16, local937, local131, local1302, local1308, local1314, local187, local217, local247);
+							method2560(SoftwareRaster.pixels, local5, local1446, local1255 >> 16, local1256 >> 16, local937, local131, local1302, local1308, local1314, local187, local217, local247);
 							local1256 += local65;
 							local1255 += local80;
 							local937 += local143;
-							local1446 += Static6.anInt5188;
+							local1446 += SoftwareRaster.width;
 							local1302 += local197;
 							local1308 += local227;
 							local1314 += local257;
@@ -3113,21 +3113,21 @@ public final class Static23 {
 								if (local1649 < 0) {
 									return;
 								}
-								method2560(Static6.anIntArray561, local5, local1657, local1584 >> 16, local1610 >> 16, local1575, local131, local1630, local1636, local1642, local187, local217, local247);
+								method2560(SoftwareRaster.pixels, local5, local1657, local1584 >> 16, local1610 >> 16, local1575, local131, local1630, local1636, local1642, local187, local217, local247);
 								local1584 += local80;
 								local1610 += local65;
 								local1575 += local143;
-								local1657 += Static6.anInt5188;
+								local1657 += SoftwareRaster.width;
 								local1630 += local197;
 								local1636 += local227;
 								local1642 += local257;
 							}
 						}
-						method2560(Static6.anIntArray561, local5, local1657, local1584 >> 16, local1583 >> 16, local1575, local131, local1630, local1636, local1642, local187, local217, local247);
+						method2560(SoftwareRaster.pixels, local5, local1657, local1584 >> 16, local1583 >> 16, local1575, local131, local1630, local1636, local1642, local187, local217, local247);
 						local1584 += local80;
 						local1583 += local95;
 						local1575 += local143;
-						local1657 += Static6.anInt5188;
+						local1657 += SoftwareRaster.width;
 						local1630 += local197;
 						local1636 += local227;
 						local1642 += local257;
@@ -3144,21 +3144,21 @@ public final class Static23 {
 								if (local1766 < 0) {
 									return;
 								}
-								method2560(Static6.anIntArray561, local5, local1774, local1610 >> 16, local1584 >> 16, local1575, local131, local1630, local1636, local1642, local187, local217, local247);
+								method2560(SoftwareRaster.pixels, local5, local1774, local1610 >> 16, local1584 >> 16, local1575, local131, local1630, local1636, local1642, local187, local217, local247);
 								local1584 += local80;
 								local1610 += local65;
 								local1575 += local143;
-								local1774 += Static6.anInt5188;
+								local1774 += SoftwareRaster.width;
 								local1630 += local197;
 								local1636 += local227;
 								local1642 += local257;
 							}
 						}
-						method2560(Static6.anIntArray561, local5, local1774, local1583 >> 16, local1584 >> 16, local1575, local131, local1630, local1636, local1642, local187, local217, local247);
+						method2560(SoftwareRaster.pixels, local5, local1774, local1583 >> 16, local1584 >> 16, local1575, local131, local1630, local1636, local1642, local187, local217, local247);
 						local1584 += local80;
 						local1583 += local95;
 						local1575 += local143;
-						local1774 += Static6.anInt5188;
+						local1774 += SoftwareRaster.width;
 						local1630 += local197;
 						local1636 += local227;
 						local1642 += local257;
@@ -3194,21 +3194,21 @@ public final class Static23 {
 								if (local1950 < 0) {
 									return;
 								}
-								method2560(Static6.anIntArray561, local5, local1958, local1911 >> 16, local1884 >> 16, local1575, local131, local1931, local1937, local1943, local187, local217, local247);
+								method2560(SoftwareRaster.pixels, local5, local1958, local1911 >> 16, local1884 >> 16, local1575, local131, local1931, local1937, local1943, local187, local217, local247);
 								local1911 += local65;
 								local1884 += local95;
 								local1575 += local143;
-								local1958 += Static6.anInt5188;
+								local1958 += SoftwareRaster.width;
 								local1931 += local197;
 								local1937 += local227;
 								local1943 += local257;
 							}
 						}
-						method2560(Static6.anIntArray561, local5, local1958, local1885 >> 16, local1884 >> 16, local1575, local131, local1931, local1937, local1943, local187, local217, local247);
+						method2560(SoftwareRaster.pixels, local5, local1958, local1885 >> 16, local1884 >> 16, local1575, local131, local1931, local1937, local1943, local187, local217, local247);
 						local1885 += local80;
 						local1884 += local95;
 						local1575 += local143;
-						local1958 += Static6.anInt5188;
+						local1958 += SoftwareRaster.width;
 						local1931 += local197;
 						local1937 += local227;
 						local1943 += local257;
@@ -3225,21 +3225,21 @@ public final class Static23 {
 								if (local2067 < 0) {
 									return;
 								}
-								method2560(Static6.anIntArray561, local5, local2075, local1884 >> 16, local1911 >> 16, local1575, local131, local1931, local1937, local1943, local187, local217, local247);
+								method2560(SoftwareRaster.pixels, local5, local2075, local1884 >> 16, local1911 >> 16, local1575, local131, local1931, local1937, local1943, local187, local217, local247);
 								local1911 += local65;
 								local1884 += local95;
 								local1575 += local143;
-								local2075 += Static6.anInt5188;
+								local2075 += SoftwareRaster.width;
 								local1931 += local197;
 								local1937 += local227;
 								local1943 += local257;
 							}
 						}
-						method2560(Static6.anIntArray561, local5, local2075, local1884 >> 16, local1885 >> 16, local1575, local131, local1931, local1937, local1943, local187, local217, local247);
+						method2560(SoftwareRaster.pixels, local5, local2075, local1884 >> 16, local1885 >> 16, local1575, local131, local1931, local1937, local1943, local187, local217, local247);
 						local1885 += local80;
 						local1884 += local95;
 						local1575 += local143;
-						local2075 += Static6.anInt5188;
+						local2075 += SoftwareRaster.width;
 						local1931 += local197;
 						local1937 += local227;
 						local1943 += local257;
@@ -3544,7 +3544,7 @@ public final class Static23 {
 
 	@OriginalMember(owner = "client!lg", name = "e", descriptor = "()V")
 	public static void method2561() {
-		method2547(Static6.anInt5185, Static6.anInt5183, Static6.anInt5186, Static6.anInt5187);
+		method2547(SoftwareRaster.clipX, SoftwareRaster.clipY, SoftwareRaster.clipWidth, SoftwareRaster.clipHeight);
 	}
 
 }

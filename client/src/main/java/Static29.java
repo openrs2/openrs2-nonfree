@@ -2211,7 +2211,7 @@ public final class Static29 {
 														if (local2468 == 0) {
 															local2468 = 1;
 														}
-														Static33.method4206(local2456, local2464, (local2356.emitter.type.anInt2399 << 16) / local2468, local2356.anInt3231, local2356.anInt3231 >> 24 & 0xFF);
+														SoftwareRaster.method4206(local2456, local2464, (local2356.emitter.type.anInt2399 << 16) / local2468, local2356.anInt3231, local2356.anInt3231 >> 24 & 0xFF);
 													}
 												}
 											}

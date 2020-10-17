@@ -167,15 +167,15 @@ public final class Static9 {
 			return;
 		}
 		if (GlRenderer.enabled) {
-			Static18.method1696((GlSprite) arg8.method4729(false));
+			GlRaster.setMask((GlSprite) arg8.method4729(false));
 		} else {
-			Static34.method4218(arg8.anIntArray672, arg8.anIntArray657);
+			SoftwareRaster.setMask(arg8.anIntArray672, arg8.anIntArray657);
 		}
 		arg7.method2260(arg1, local74 + arg4 + arg8.anInt5893 / 2, arg2 + arg8.anInt5949 / 2 - local96 - arg6 - local85, local79, 50, arg0, 0, 1, 0, 0);
 		if (GlRenderer.enabled) {
-			Static18.method1702();
+			GlRaster.resetMask();
 		} else {
-			Static34.method4228();
+			SoftwareRaster.resetMask();
 		}
 	}
 

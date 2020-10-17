@@ -567,8 +567,8 @@ public final class Static22 {
 
 	@OriginalMember(owner = "client!ke", name = "a", descriptor = "([I[BIIIIIIIII[I[I)V")
 	public static void method2281(@OriginalArg(0) int[] arg0, @OriginalArg(1) byte[] arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) int arg8, @OriginalArg(9) int arg9, @OriginalArg(10) int arg10, @OriginalArg(11) int[] arg11, @OriginalArg(12) int[] arg12) {
-		@Pc(3) int local3 = arg2 - Static6.anInt5185;
-		@Pc(7) int local7 = arg3 - Static6.anInt5183;
+		@Pc(3) int local3 = arg2 - SoftwareRaster.clipX;
+		@Pc(7) int local7 = arg3 - SoftwareRaster.clipY;
 		for (@Pc(9) int local9 = local7; local9 < local7 + arg5; local9++) {
 			@Pc(18) int local18 = arg11[local9];
 			@Pc(22) int local22 = arg12[local9];
@@ -602,7 +602,7 @@ public final class Static22 {
 				if (arg1[arg7++] == 0) {
 					arg8++;
 				} else {
-					Static6.anIntArray561[arg8++] = arg6;
+					SoftwareRaster.pixels[arg8++] = arg6;
 				}
 			}
 			arg7 += local86 + arg10;

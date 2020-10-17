@@ -158,9 +158,9 @@ public final class Static32 {
 					@Pc(114) int local114 = arg2 * local50 * 512 / (local85 * 334);
 					@Pc(121) int local121 = (arg4 - local114) / 2;
 					if (arg1) {
-						Static18.method1698();
-						Static18.method1701(arg3, arg0, local121, arg2, 0);
-						Static18.method1701(arg3 + arg4 - local121, arg0, local121, arg2, 0);
+						GlRaster.resetClip();
+						GlRaster.fillRect(arg3, arg0, local121, arg2, 0);
+						GlRaster.fillRect(arg3 + arg4 - local121, arg0, local121, arg2, 0);
 					}
 					arg4 -= local121 * 2;
 					arg3 += local121;
@@ -173,9 +173,9 @@ public final class Static32 {
 					@Pc(189) int local189 = arg4 * 334 * local160 / (local50 * 512);
 					@Pc(195) int local195 = (arg2 - local189) / 2;
 					if (arg1) {
-						Static18.method1698();
-						Static18.method1701(arg3, arg0, arg4, local195, 0);
-						Static18.method1701(arg3, arg0 + arg2 - local195, arg4, local195, 0);
+						GlRaster.resetClip();
+						GlRaster.fillRect(arg3, arg0, arg4, local195, 0);
+						GlRaster.fillRect(arg3, arg0 + arg2 - local195, arg4, local195, 0);
 					}
 					arg2 -= local195 * 2;
 					arg0 += local195;

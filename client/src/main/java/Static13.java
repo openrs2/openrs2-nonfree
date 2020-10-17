@@ -140,7 +140,7 @@ public final class Static13 {
 		}
 		@Pc(4) GL local4 = GlRenderer.gl;
 		GlRenderer.method1596();
-		Static18.method1698();
+		GlRaster.resetClip();
 		local4.glDisable(GL.GL_BLEND);
 		local4.glDisable(GL.GL_ALPHA_TEST);
 		GlRenderer.disableDepthMask();
@@ -454,13 +454,13 @@ public final class Static13 {
 				return null;
 			}
 		}
-		@Pc(116) int[] local116 = Static6.anIntArray561;
-		@Pc(118) int local118 = Static6.anInt5184;
+		@Pc(116) int[] local116 = SoftwareRaster.pixels;
+		@Pc(118) int local118 = SoftwareRaster.height;
 		@Pc(121) int[] local121 = new int[4];
-		@Pc(123) int local123 = Static6.anInt5188;
-		Static34.method4223(local121);
+		@Pc(123) int local123 = SoftwareRaster.width;
+		SoftwareRaster.getClip(local121);
 		@Pc(131) SoftwareSprite local131 = new SoftwareSprite(36, 32);
-		Static34.method4224(local131.pixels, 36, 32);
+		SoftwareRaster.setPixels(local131.pixels, 36, 32);
 		Static23.method2561();
 		Static23.method2556(16, 16);
 		Static4.aBoolean216 = false;
@@ -478,23 +478,23 @@ public final class Static13 {
 			if (arg0 >= 2) {
 				local131.method2174(16777215);
 			}
-			Static34.method4224(local131.pixels, 36, 32);
+			SoftwareRaster.setPixels(local131.pixels, 36, 32);
 		}
 		if (arg5 != 0) {
 			local131.method2168(arg5);
 		}
 		if (local9.certificateTemplate != -1) {
-			local68.method4506(0, 0);
+			local68.renderTransparent(0, 0);
 		} else if (local9.lentTemplate != -1) {
-			Static34.method4224(local68.pixels, 36, 32);
-			local131.method4506(0, 0);
+			SoftwareRaster.setPixels(local68.pixels, 36, 32);
+			local131.renderTransparent(0, 0);
 			local131 = local68;
 		}
 		if (arg1 && (local9.stackable == 1 || arg2 != 1) && arg2 != -1) {
 			ObjTypeList.aClass4_Sub3_Sub5_Sub2_1.method2259(method892(arg2), 0, 9, 16776960, 1);
 		}
-		Static34.method4224(local116, local123, local118);
-		Static34.method4226(local121);
+		SoftwareRaster.setPixels(local116, local123, local118);
+		SoftwareRaster.setClip(local121);
 		Static23.method2561();
 		Static4.aBoolean216 = true;
 		return GlRenderer.enabled && !arg7 ? new GlSprite(local131) : local131;
@@ -514,7 +514,7 @@ public final class Static13 {
 			if (local27 == null) {
 				arg0 = -1;
 			} else {
-				GameShell.signLink.setCursor(GameShell.canvas, local27.anInt5602, local27.anInt5612, local27.getPixels(), new Point(local23.hotSpotX, local23.hotSpotY));
+				GameShell.signLink.setCursor(GameShell.canvas, local27.innerWidth, local27.innerHeight, local27.getPixels(), new Point(local23.hotSpotX, local23.hotSpotY));
 				Static7.anInt5345 = arg0;
 			}
 		}
@@ -809,7 +809,7 @@ public final class Static13 {
 			for (@Pc(522) int local522 = 1; local522 < 103; local522++) {
 				if ((Static4.tileFlags[arg0][local522][local517] & 0x18) == 0 && !Static37.method4780(local504, arg0, local515, local517, local522)) {
 					if (GlRenderer.enabled) {
-						Static6.anIntArray561 = null;
+						SoftwareRaster.pixels = null;
 					} else {
 						client.frameBuffer.makeTarget();
 					}
@@ -817,7 +817,7 @@ public final class Static13 {
 				}
 				if (arg0 < 3 && (Static4.tileFlags[arg0 + 1][local522][local517] & 0x8) != 0 && !Static37.method4780(local504, arg0 + 1, local515, local517, local522)) {
 					if (GlRenderer.enabled) {
-						Static6.anIntArray561 = null;
+						SoftwareRaster.pixels = null;
 					} else {
 						client.frameBuffer.makeTarget();
 					}
@@ -838,7 +838,7 @@ public final class Static13 {
 			Static5.aClass4_Sub3_Sub14_4 = Static3.aClass4_Sub3_Sub14_Sub1_3;
 		}
 		if (GlRenderer.enabled) {
-			Static6.anIntArray561 = null;
+			SoftwareRaster.pixels = null;
 		} else {
 			client.frameBuffer.makeTarget();
 		}

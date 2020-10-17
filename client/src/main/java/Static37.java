@@ -209,11 +209,11 @@ public final class Static37 {
 		@Pc(17) int local17 = Static5.aClass4_Sub3_Sub5_2.method2261(arg0, 250);
 		@Pc(32) int local32 = Static5.aClass4_Sub3_Sub5_2.method2274(arg0, 250) * 13;
 		if (GlRenderer.enabled) {
-			Static18.method1701(6, 6, local17 + 4 + 4, local32 + 8, 0);
-			Static18.method1690(6, 6, local17 + 4 + 4, local32 + 4 + 4, 16777215);
+			GlRaster.fillRect(6, 6, local17 + 4 + 4, local32 + 8, 0);
+			GlRaster.drawRect(6, 6, local17 + 4 + 4, local32 + 4 + 4, 16777215);
 		} else {
-			Static33.method4205(6, 6, local17 + 8, local32 + 4 + 4, 0);
-			Static34.method4222(6, 6, local17 + 4 + 4, local32 + 8, 16777215);
+			SoftwareRaster.fillRect(6, 6, local17 + 8, local32 + 4 + 4, 0);
+			SoftwareRaster.drawRect(6, 6, local17 + 4 + 4, local32 + 8, 16777215);
 		}
 		Static5.aClass4_Sub3_Sub5_2.method2255(arg0, 10, 10, local17, local32, 16777215, -1, 1, 1, 0);
 		Static8.method66(local17 + 4 + 4, local32 + 4 + 4, 6, 6);
@@ -676,7 +676,7 @@ public final class Static37 {
 			@Pc(50) LocType local50 = LocTypeList.get(local46);
 			if (local50.mapSceneId == -1) {
 				@Pc(56) int local56 = arg0;
-				@Pc(58) int[] local58 = Static6.anIntArray561;
+				@Pc(58) int[] local58 = SoftwareRaster.pixels;
 				@Pc(75) int local75 = arg4 * 4 + (52736 - arg3 * 512) * 4 + 24624;
 				if (local21 > 0L) {
 					local56 = arg2;
@@ -751,7 +751,7 @@ public final class Static37 {
 			if (local448.mapSceneId == -1) {
 				if (local444 == 9) {
 					@Pc(459) int local459 = 15658734;
-					@Pc(461) int[] local461 = Static6.anIntArray561;
+					@Pc(461) int[] local461 = SoftwareRaster.pixels;
 					if (local418 > 0L) {
 						local459 = 15597568;
 					}

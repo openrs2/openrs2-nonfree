@@ -157,14 +157,14 @@ public final class Static24 {
 			return;
 		}
 		if (GlRenderer.enabled) {
-			Static18.method1700();
+			GlRaster.clear();
 		} else {
-			Static34.method4227();
+			SoftwareRaster.clear();
 		}
 		Static6.aClass4_Sub3_Sub14_7 = Static11.method583(Static6.anInt4677, arg0);
 		@Pc(24) int local24 = GameShell.canvasHeight;
 		@Pc(30) int local30 = local24 * 956 / 503;
-		Static6.aClass4_Sub3_Sub14_7.method4507((GameShell.canvasWidth - local30) / 2, 0, local30, local24);
+		Static6.aClass4_Sub3_Sub14_7.renderResizedTransparent((GameShell.canvasWidth - local30) / 2, 0, local30, local24);
 		Static6.aClass56_1 = Static32.method3878(arg0, Static1.anInt322);
 		Static6.aClass56_1.method2815(GameShell.canvasWidth / 2 - Static6.aClass56_1.anInt3408 / 2, 18);
 		Static3.aBoolean124 = true;
@@ -264,7 +264,7 @@ public final class Static24 {
 				Static35.method4310();
 				client.frameBuffer = null;
 				client.frameBuffer = FrameBuffer.create(GameShell.canvas, GameShell.canvasWidth, GameShell.canvasHeight);
-				Static34.method4227();
+				SoftwareRaster.clear();
 				if (Static4.anInt3304 == 5) {
 					Static28.method3331(true, Static5.aClass4_Sub3_Sub5_3);
 				} else {

@@ -328,21 +328,6 @@ public final class Static3 {
 	@OriginalMember(owner = "client!hc", name = "c", descriptor = "I")
 	public static int anInt2886 = 0;
 
-	@OriginalMember(owner = "client!hd", name = "a", descriptor = "I")
-	public static int anInt2149 = 0;
-
-	@OriginalMember(owner = "client!hd", name = "b", descriptor = "I")
-	public static int anInt2150 = 0;
-
-	@OriginalMember(owner = "client!hd", name = "c", descriptor = "Lclient!oa;")
-	public static GlSprite aClass4_Sub3_Sub14_Sub2_1 = null;
-
-	@OriginalMember(owner = "client!hd", name = "d", descriptor = "I")
-	public static int anInt2151 = 0;
-
-	@OriginalMember(owner = "client!hd", name = "e", descriptor = "I")
-	public static int anInt2152 = 0;
-
 	@OriginalMember(owner = "client!he", name = "B", descriptor = "Z")
 	public static boolean aBoolean147 = true;
 

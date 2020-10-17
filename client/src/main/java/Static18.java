@@ -1,6 +1,3 @@
-import java.nio.IntBuffer;
-import javax.media.opengl.GL;
-
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -41,272 +38,6 @@ public final class Static18 {
 		Terrain.aClass4_Sub12ArrayArray2[arg0] = arg1;
 	}
 
-	@OriginalMember(owner = "client!hd", name = "a", descriptor = "(IIIII)V")
-	public static void method1683(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4) {
-		GlRenderer.method1585();
-		@Pc(5) float local5 = (float) arg0 + 0.3F;
-		@Pc(10) float local10 = (float) arg2 + 0.3F;
-		@Pc(18) float local18 = (float) GlRenderer.canvasHeight - (float) arg1 - 0.3F;
-		@Pc(26) float local26 = (float) GlRenderer.canvasHeight - (float) arg3 - 0.3F;
-		@Pc(28) GL local28 = GlRenderer.gl;
-		local28.glBegin(GL.GL_LINE_LOOP);
-		local28.glColor3ub((byte) (arg4 >> 16), (byte) (arg4 >> 8), (byte) arg4);
-		local28.glVertex2f(local5, local18);
-		local28.glVertex2f(local10, local26);
-		local28.glEnd();
-	}
-
-	@OriginalMember(owner = "client!hd", name = "a", descriptor = "(IIIIII)V")
-	public static void method1684(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5) {
-		GlRenderer.method1585();
-		@Pc(5) float local5 = (float) arg0 + 0.3F;
-		@Pc(12) float local12 = local5 + (float) (arg2 - 1);
-		@Pc(20) float local20 = (float) GlRenderer.canvasHeight - (float) arg1 - 0.3F;
-		@Pc(27) float local27 = local20 - (float) (arg3 - 1);
-		@Pc(29) GL local29 = GlRenderer.gl;
-		local29.glBegin(GL.GL_LINE_LOOP);
-		local29.glColor4ub((byte) (arg4 >> 16), (byte) (arg4 >> 8), (byte) arg4, arg5 > 255 ? -1 : (byte) arg5);
-		local29.glVertex2f(local5, local20);
-		local29.glVertex2f(local5, local27);
-		local29.glVertex2f(local12, local27);
-		local29.glVertex2f(local12, local20);
-		local29.glEnd();
-	}
-
-	@OriginalMember(owner = "client!hd", name = "b", descriptor = "(IIIII)V")
-	private static void method1685(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4) {
-		GlRenderer.method1585();
-		@Pc(5) float local5 = (float) arg0 + 0.3F;
-		@Pc(10) float local10 = local5 + (float) arg2;
-		@Pc(18) float local18 = (float) GlRenderer.canvasHeight - (float) arg1 - 0.3F;
-		@Pc(20) GL local20 = GlRenderer.gl;
-		local20.glBegin(GL.GL_LINES);
-		local20.glColor4ub((byte) (arg3 >> 16), (byte) (arg3 >> 8), (byte) arg3, arg4 > 255 ? -1 : (byte) arg4);
-		local20.glVertex2f(local5, local18);
-		local20.glVertex2f(local10, local18);
-		local20.glEnd();
-	}
-
-	@OriginalMember(owner = "client!hd", name = "a", descriptor = "([I)V")
-	public static void method1686(@OriginalArg(0) int[] arg0) {
-		arg0[0] = Static3.anInt2150;
-		arg0[1] = Static3.anInt2152;
-		arg0[2] = Static3.anInt2151;
-		arg0[3] = Static3.anInt2149;
-	}
-
-	@OriginalMember(owner = "client!hd", name = "b", descriptor = "(IIIIII)V")
-	public static void method1687(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5) {
-		@Pc(1) GL local1 = GlRenderer.gl;
-		local1.glLineWidth((float) (arg5 * GameShell.canvasScale));
-		method1683(arg0, arg1, arg2, arg3, arg4);
-		local1.glLineWidth((float) GameShell.canvasScale);
-	}
-
-	@OriginalMember(owner = "client!hd", name = "a", descriptor = "(IIII)V")
-	public static void method1688(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) {
-		GlRenderer.method1585();
-		@Pc(5) float local5 = (float) arg0 + 0.3F;
-		@Pc(13) float local13 = (float) GlRenderer.canvasHeight - (float) arg1 - 0.3F;
-		@Pc(18) float local18 = local13 - (float) arg2;
-		@Pc(20) GL local20 = GlRenderer.gl;
-		local20.glBegin(GL.GL_LINES);
-		local20.glColor3ub((byte) (arg3 >> 16), (byte) (arg3 >> 8), (byte) arg3);
-		local20.glVertex2f(local5, local13);
-		local20.glVertex2f(local5, local18);
-		local20.glEnd();
-	}
-
-	@OriginalMember(owner = "client!hd", name = "a", descriptor = "(IIIIIILclient!oa;)V")
-	public static void method1689(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) GlSprite arg6) {
-		if (Static3.anInt2149 - Static3.anInt2152 != arg6.height) {
-			throw new IllegalStateException();
-		}
-		GlRenderer.method1585();
-		GlRenderer.setTextureId(arg6.textureId);
-		GlRenderer.setTextureCombineRgbMode(1);
-		GlRenderer.setTextureCombineAlphaMode(0);
-		@Pc(22) float local22 = (float) arg0 + 0.3F;
-		@Pc(27) float local27 = (float) arg2 + 0.3F;
-		@Pc(35) float local35 = (float) GlRenderer.canvasHeight - (float) arg1 - 0.3F;
-		@Pc(43) float local43 = (float) GlRenderer.canvasHeight - (float) arg3 - 0.3F;
-		@Pc(45) GL local45 = GlRenderer.gl;
-		local45.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_SRC0_RGB, GL.GL_PREVIOUS);
-		local45.glBegin(GL.GL_LINE_LOOP);
-		local45.glColor4ub((byte) (arg4 >> 16), (byte) (arg4 >> 8), (byte) arg4, arg5 > 255 ? -1 : (byte) arg5);
-		local45.glTexCoord2f((local22 - (float) Static3.anInt2150) / (float) arg6.anInt5617, ((float) GlRenderer.canvasHeight - local35 - (float) Static3.anInt2152) / (float) arg6.anInt5620);
-		local45.glVertex2f(local22, local35);
-		local45.glTexCoord2f((local27 - (float) Static3.anInt2150) / (float) arg6.anInt5617, ((float) GlRenderer.canvasHeight - local43 - (float) Static3.anInt2152) / (float) arg6.anInt5620);
-		local45.glVertex2f(local27, local43);
-		local45.glEnd();
-		local45.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_SRC0_RGB, GL.GL_TEXTURE);
-	}
-
-	@OriginalMember(owner = "client!hd", name = "c", descriptor = "(IIIII)V")
-	public static void method1690(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4) {
-		GlRenderer.method1585();
-		@Pc(5) float local5 = (float) arg0 + 0.3F;
-		@Pc(12) float local12 = local5 + (float) (arg2 - 1);
-		@Pc(20) float local20 = (float) GlRenderer.canvasHeight - (float) arg1 - 0.3F;
-		@Pc(27) float local27 = local20 - (float) (arg3 - 1);
-		@Pc(29) GL local29 = GlRenderer.gl;
-		local29.glBegin(GL.GL_LINE_LOOP);
-		local29.glColor3ub((byte) (arg4 >> 16), (byte) (arg4 >> 8), (byte) arg4);
-		local29.glVertex2f(local5, local20);
-		local29.glVertex2f(local5, local27);
-		local29.glVertex2f(local12, local27);
-		local29.glVertex2f(local12, local20);
-		local29.glEnd();
-	}
-
-	@OriginalMember(owner = "client!hd", name = "c", descriptor = "(IIIIII)V")
-	public static void method1691(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5) {
-		GlRenderer.method1585();
-		@Pc(3) float local3 = (float) arg0;
-		@Pc(8) float local8 = local3 + (float) arg2;
-		@Pc(13) float local13 = (float) (GlRenderer.canvasHeight - arg1);
-		@Pc(18) float local18 = local13 - (float) arg3;
-		@Pc(20) GL local20 = GlRenderer.gl;
-		local20.glBegin(GL.GL_TRIANGLE_FAN);
-		local20.glColor4ub((byte) (arg4 >> 16), (byte) (arg4 >> 8), (byte) arg4, arg5 > 255 ? -1 : (byte) arg5);
-		local20.glVertex2f(local3, local13);
-		local20.glVertex2f(local3, local18);
-		local20.glVertex2f(local8, local18);
-		local20.glVertex2f(local8, local13);
-		local20.glEnd();
-	}
-
-	@OriginalMember(owner = "client!hd", name = "b", descriptor = "(IIII)V")
-	public static void method1692(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) {
-		if (Static3.anInt2150 < arg0) {
-			Static3.anInt2150 = arg0;
-		}
-		if (Static3.anInt2152 < arg1) {
-			Static3.anInt2152 = arg1;
-		}
-		if (Static3.anInt2151 > arg2) {
-			Static3.anInt2151 = arg2;
-		}
-		if (Static3.anInt2149 > arg3) {
-			Static3.anInt2149 = arg3;
-		}
-		@Pc(21) GL local21 = GlRenderer.gl;
-		local21.glEnable(GL.GL_SCISSOR_TEST);
-		if (Static3.anInt2150 <= Static3.anInt2151 && Static3.anInt2152 <= Static3.anInt2149) {
-			local21.glScissor((int) ((GlRenderer.anInt2086 + Static3.anInt2150) * GameShell.canvasScale + 0.5), (int) ((GlRenderer.anInt2078 + GlRenderer.canvasHeight - Static3.anInt2149) * GameShell.canvasScale + 0.5), (int) ((Static3.anInt2151 - Static3.anInt2150) * GameShell.canvasScale + 0.5), (int) ((Static3.anInt2149 - Static3.anInt2152) * GameShell.canvasScale + 0.5));
-		} else {
-			local21.glScissor(0, 0, 0, 0);
-		}
-		method1702();
-	}
-
-	@OriginalMember(owner = "client!hd", name = "c", descriptor = "(IIII)V")
-	public static void method1693(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) {
-		if (arg0 < 0) {
-			arg0 = 0;
-		}
-		if (arg1 < 0) {
-			arg1 = 0;
-		}
-		if (arg2 > GlRenderer.canvasWidth) {
-			arg2 = GlRenderer.canvasWidth;
-		}
-		if (arg3 > GlRenderer.canvasHeight) {
-			arg3 = GlRenderer.canvasHeight;
-		}
-		Static3.anInt2150 = arg0;
-		Static3.anInt2152 = arg1;
-		Static3.anInt2151 = arg2;
-		Static3.anInt2149 = arg3;
-		@Pc(27) GL local27 = GlRenderer.gl;
-		local27.glEnable(GL.GL_SCISSOR_TEST);
-		if (Static3.anInt2150 <= Static3.anInt2151 && Static3.anInt2152 <= Static3.anInt2149) {
-			local27.glScissor((int) ((GlRenderer.anInt2086 + Static3.anInt2150) * GameShell.canvasScale + 0.5), (int) ((GlRenderer.anInt2078 + GlRenderer.canvasHeight - Static3.anInt2149) * GameShell.canvasScale + 0.5), (int) ((Static3.anInt2151 - Static3.anInt2150) * GameShell.canvasScale + 0.5), (int) ((Static3.anInt2149 - Static3.anInt2152) * GameShell.canvasScale + 0.5));
-		} else {
-			local27.glScissor(0, 0, 0, 0);
-		}
-		method1702();
-	}
-
-	@OriginalMember(owner = "client!hd", name = "b", descriptor = "([I)V")
-	public static void method1695(@OriginalArg(0) int[] arg0) {
-		method1693(arg0[0], arg0[1], arg0[2], arg0[3]);
-	}
-
-	@OriginalMember(owner = "client!hd", name = "a", descriptor = "(Lclient!oa;)V")
-	public static void method1696(@OriginalArg(0) GlSprite arg0) {
-		if (arg0.height != Static3.anInt2149 - Static3.anInt2152) {
-			throw new IllegalArgumentException();
-		}
-		Static3.aClass4_Sub3_Sub14_Sub2_1 = arg0;
-	}
-
-	@OriginalMember(owner = "client!hd", name = "a", descriptor = "([IIIII)V")
-	public static void method1697(@OriginalArg(0) int[] arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4) {
-		GlRenderer.method1585();
-		@Pc(2) GL local2 = GlRenderer.gl;
-		local2.glRasterPos2i(arg1, GlRenderer.canvasHeight - arg2 - arg4);
-		local2.glDisable(GL.GL_BLEND);
-		local2.glDisable(GL.GL_ALPHA_TEST);
-		local2.glPixelZoom((float) GameShell.canvasScale, (float) GameShell.canvasScale);
-		local2.glDrawPixels(arg3, arg4, GL.GL_BGRA, GlRenderer.bigEndian ? GL.GL_UNSIGNED_INT_8_8_8_8_REV : GL.GL_UNSIGNED_BYTE, IntBuffer.wrap(arg0));
-		local2.glPixelZoom(1, 1);
-		local2.glEnable(GL.GL_ALPHA_TEST);
-		local2.glEnable(GL.GL_BLEND);
-	}
-
-	@OriginalMember(owner = "client!hd", name = "b", descriptor = "()V")
-	public static void method1698() {
-		Static3.anInt2150 = 0;
-		Static3.anInt2152 = 0;
-		Static3.anInt2151 = GlRenderer.canvasWidth;
-		Static3.anInt2149 = GlRenderer.canvasHeight;
-		@Pc(9) GL local9 = GlRenderer.gl;
-		local9.glDisable(GL.GL_SCISSOR_TEST);
-		method1702();
-	}
-
-	@OriginalMember(owner = "client!hd", name = "d", descriptor = "(IIII)V")
-	public static void method1699(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) {
-		GlRenderer.method1585();
-		@Pc(5) float local5 = (float) arg0 + 0.3F;
-		@Pc(10) float local10 = local5 + (float) arg2;
-		@Pc(18) float local18 = (float) GlRenderer.canvasHeight - (float) arg1 - 0.3F;
-		@Pc(20) GL local20 = GlRenderer.gl;
-		local20.glBegin(GL.GL_LINES);
-		local20.glColor3ub((byte) (arg3 >> 16), (byte) (arg3 >> 8), (byte) arg3);
-		local20.glVertex2f(local5, local18);
-		local20.glVertex2f(local10, local18);
-		local20.glEnd();
-	}
-
-	@OriginalMember(owner = "client!hd", name = "c", descriptor = "()V")
-	public static void method1700() {
-		GlRenderer.gl.glClear(GL.GL_DEPTH_BUFFER_BIT | GL.GL_COLOR_BUFFER_BIT);
-	}
-
-	@OriginalMember(owner = "client!hd", name = "d", descriptor = "(IIIII)V")
-	public static void method1701(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4) {
-		GlRenderer.method1585();
-		@Pc(3) float local3 = (float) arg0;
-		@Pc(8) float local8 = local3 + (float) arg2;
-		@Pc(13) float local13 = (float) (GlRenderer.canvasHeight - arg1);
-		@Pc(18) float local18 = local13 - (float) arg3;
-		@Pc(20) GL local20 = GlRenderer.gl;
-		local20.glBegin(GL.GL_TRIANGLE_FAN);
-		local20.glColor3ub((byte) (arg4 >> 16), (byte) (arg4 >> 8), (byte) arg4);
-		local20.glVertex2f(local3, local13);
-		local20.glVertex2f(local3, local18);
-		local20.glVertex2f(local8, local18);
-		local20.glVertex2f(local8, local13);
-		local20.glEnd();
-	}
-
-	@OriginalMember(owner = "client!hd", name = "d", descriptor = "()V")
-	public static void method1702() {
-		Static3.aClass4_Sub3_Sub14_Sub2_1 = null;
-	}
-
 	@OriginalMember(owner = "client!he", name = "b", descriptor = "(B)V")
 	public static void method1713() {
 		Static6.aClass26_50.removeSoft();
@@ -337,9 +68,9 @@ public final class Static18 {
 			Static16.method1563();
 		}
 		if (GlRenderer.enabled) {
-			method1698();
+			GlRaster.resetClip();
 		} else {
-			Static34.method4229();
+			SoftwareRaster.resetClip();
 		}
 		Static5.anInt4156 = 0;
 	}
@@ -361,15 +92,15 @@ public final class Static18 {
 				if (arg2 == null) {
 					break;
 				}
-				@Pc(14) int local14 = local8 - Static3.anInt2152;
-				if (local4 < arg2[local14] + Static3.anInt2150) {
-					local4 = arg2[local14] + Static3.anInt2150;
+				@Pc(14) int local14 = local8 - GlRaster.clipY;
+				if (local4 < arg2[local14] + GlRaster.clipX) {
+					local4 = arg2[local14] + GlRaster.clipX;
 				}
-				if (local6 > arg2[local14] + arg3[local14] + Static3.anInt2150) {
-					local6 = arg2[local14] + arg3[local14] + Static3.anInt2150;
+				if (local6 > arg2[local14] + arg3[local14] + GlRaster.clipX) {
+					local6 = arg2[local14] + arg3[local14] + GlRaster.clipX;
 				}
 			} while (local4 >= local6);
-			method1685(local4, local8, local6 - local4, arg0, arg1);
+			GlRaster.drawHorizontalLineAlpha(local4, local8, local6 - local4, arg0, arg1);
 		}
 	}
 
@@ -433,7 +164,7 @@ public final class Static18 {
 
 	@OriginalMember(owner = "client!hg", name = "a", descriptor = "([IIIII[I[I)V")
 	private static void method1736(@OriginalArg(0) int[] arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int[] arg4, @OriginalArg(6) int[] arg5) {
-		if (arg4 != null && Static3.anInt2149 - Static3.anInt2152 != arg4.length) {
+		if (arg4 != null && GlRaster.clipHeight - GlRaster.clipY != arg4.length) {
 			throw new IllegalStateException();
 		}
 		method1740();
@@ -489,8 +220,8 @@ public final class Static18 {
 		}
 		method1737(0, Static3.anInt2186);
 		@Pc(17) int local17 = Static3.anIntArray180[1];
-		if (local17 < Static3.anInt2152) {
-			local17 = Static3.anInt2152;
+		if (local17 < GlRaster.clipY) {
+			local17 = GlRaster.clipY;
 		}
 		@Pc(26) int local26;
 		for (local26 = 0; local26 < Static3.anInt2186; local26 += 4) {
@@ -525,7 +256,7 @@ public final class Static18 {
 		while (local3 >= local1) {
 			local5++;
 			Static3.anInt2183 = local5;
-			if (local5 >= Static3.anInt2149) {
+			if (local5 >= GlRaster.clipHeight) {
 				return false;
 			}
 			@Pc(18) int local18 = Static3.anInt2180;
@@ -609,7 +340,7 @@ public final class Static18 {
 						}
 						Static28.method3325(arg2 >> 1, arg3, arg1, arg4 >> 1, local129, local31);
 						if (Static7.anInt5584 > -1) {
-							Static1.aClass4_Sub3_Sub14Array1[local93.anInt5238].method4506(arg0 + Static7.anInt5584 - 12, arg5 + Static4.anInt3290 - 30);
+							Static1.aClass4_Sub3_Sub14Array1[local93.anInt5238].renderTransparent(arg0 + Static7.anInt5584 - 12, arg5 + Static4.anInt3290 - 30);
 						}
 					}
 					@Pc(170) Class94[] local170 = Static7.aClass94Array1;
@@ -624,7 +355,7 @@ public final class Static18 {
 							}
 							Static28.method3325(arg2 >> 1, arg3, arg1, arg4 >> 1, local214, local31);
 							if (Static7.anInt5584 > -1) {
-								Static6.aClass4_Sub3_Sub14Array11[local180.anInt2559].method4506(arg0 + Static7.anInt5584 - 12, arg5 + Static4.anInt3290 - 28);
+								Static6.aClass4_Sub3_Sub14Array11[local180.anInt2559].renderTransparent(arg0 + Static7.anInt5584 - 12, arg5 + Static4.anInt3290 - 28);
 							}
 						}
 					}
@@ -635,11 +366,11 @@ public final class Static18 {
 						Static28.method3325(arg2 >> 1, arg3, arg1, arg4 >> 1, local31.method3306() + 15, local31);
 						if (Static7.anInt5584 > -1) {
 							if (local263.pkIcon != -1) {
-								Static3.aClass4_Sub3_Sub14Array8[local263.pkIcon].method4506(arg0 + Static7.anInt5584 - 12, Static4.anInt3290 + arg5 - 30);
+								Static3.aClass4_Sub3_Sub14Array8[local263.pkIcon].renderTransparent(arg0 + Static7.anInt5584 - 12, Static4.anInt3290 + arg5 - 30);
 								local260 += 25;
 							}
 							if (local263.prayerIcon != -1) {
-								Static1.aClass4_Sub3_Sub14Array1[local263.prayerIcon].method4506(Static7.anInt5584 + arg0 - 12, arg5 + Static4.anInt3290 - local260);
+								Static1.aClass4_Sub3_Sub14Array1[local263.prayerIcon].renderTransparent(Static7.anInt5584 + arg0 - 12, arg5 + Static4.anInt3290 - local260);
 								local260 += 25;
 							}
 						}
@@ -651,7 +382,7 @@ public final class Static18 {
 							if (local363 != null && local363.anInt2561 == 10 && PlayerList.ids[local17] == local363.anInt2560) {
 								Static28.method3325(arg2 >> 1, arg3, arg1, arg4 >> 1, local31.method3306() + 15, local31);
 								if (Static7.anInt5584 > -1) {
-									Static6.aClass4_Sub3_Sub14Array11[local363.anInt2559].method4506(Static7.anInt5584 + arg0 - 12, arg5 + Static4.anInt3290 - local260);
+									Static6.aClass4_Sub3_Sub14Array11[local363.anInt2559].renderTransparent(Static7.anInt5584 + arg0 - 12, arg5 + Static4.anInt3290 - local260);
 								}
 							}
 						}
@@ -701,19 +432,19 @@ public final class Static18 {
 					if (Static7.anInt5584 > -1) {
 						@Pc(635) int local635 = Static7.anInt5584 + arg0 - (local525.width >> 1);
 						@Pc(641) int local641 = Static4.anInt3290 + arg5 - 3;
-						local525.method4506(local635, local641);
+						local525.renderTransparent(local635, local641);
 						@Pc(653) int local653 = local31.anInt4022 * local525.width / 255;
 						@Pc(656) int local656 = local525.height;
 						if (GlRenderer.enabled) {
-							method1692(local635, local641, local635 + local653, local656 + local641);
+							GlRaster.shrinkClip(local635, local641, local635 + local653, local656 + local641);
 						} else {
-							Static34.method4220(local635, local641, local653 + local635, local641 + local656);
+							SoftwareRaster.shrinkClip(local635, local641, local653 + local635, local641 + local656);
 						}
-						local529.method4506(local635, local641);
+						local529.renderTransparent(local635, local641);
 						if (GlRenderer.enabled) {
-							method1693(arg0, arg5, arg4 + arg0, arg2 + arg5);
+							GlRaster.setClip(arg0, arg5, arg4 + arg0, arg2 + arg5);
 						} else {
-							Static34.method4209(arg0, arg5, arg4 + arg0, arg2 + arg5);
+							SoftwareRaster.setClip(arg0, arg5, arg4 + arg0, arg2 + arg5);
 						}
 					}
 				}
@@ -744,7 +475,7 @@ public final class Static18 {
 								Static7.anInt5584 += 15;
 								Static4.anInt3290 -= 10;
 							}
-							Static2.aClass4_Sub3_Sub14Array10[local31.anIntArray424[local707]].method4506(Static7.anInt5584 + arg0 - 12, arg5 + Static4.anInt3290 - 12);
+							Static2.aClass4_Sub3_Sub14Array10[local31.anIntArray424[local707]].renderTransparent(Static7.anInt5584 + arg0 - 12, arg5 + Static4.anInt3290 - 12);
 							Static1.aClass4_Sub3_Sub5_1.method2271(Integer.toString(local31.anIntArray423[local707]), arg0 + Static7.anInt5584 - 1, arg5 + Static4.anInt3290 + 3, 16777215, 0);
 						}
 					}
@@ -828,24 +559,24 @@ public final class Static18 {
 				if (Static5.anIntArray562[local854] == 4) {
 					@Pc(1320) int local1320 = (150 - Static5.anIntArray567[local854]) * (Static5.aClass4_Sub3_Sub5_3.method2252(local968) + 100) / 150;
 					if (GlRenderer.enabled) {
-						method1692(Static7.anInt5584 + arg0 - 50, arg5, arg0 + Static7.anInt5584 + 50, arg5 + arg2);
+						GlRaster.shrinkClip(Static7.anInt5584 + arg0 - 50, arg5, arg0 + Static7.anInt5584 + 50, arg5 + arg2);
 					} else {
-						Static34.method4220(arg0 + Static7.anInt5584 - 50, arg5, Static7.anInt5584 + arg0 + 50, arg2 + arg5);
+						SoftwareRaster.shrinkClip(arg0 + Static7.anInt5584 - 50, arg5, Static7.anInt5584 + arg0 + 50, arg2 + arg5);
 					}
 					Static5.aClass4_Sub3_Sub5_3.method2259(local968, Static7.anInt5584 + arg0 + 50 - local1320, arg5 + Static4.anInt3290, local985, 0);
 					if (GlRenderer.enabled) {
-						method1693(arg0, arg5, arg4 + arg0, arg5 + arg2);
+						GlRaster.setClip(arg0, arg5, arg4 + arg0, arg5 + arg2);
 					} else {
-						Static34.method4209(arg0, arg5, arg0 + arg4, arg5 + arg2);
+						SoftwareRaster.setClip(arg0, arg5, arg0 + arg4, arg5 + arg2);
 					}
 				}
 				if (Static5.anIntArray562[local854] == 5) {
 					@Pc(1408) int local1408 = 0;
 					@Pc(1415) int local1415 = 150 - Static5.anIntArray567[local854];
 					if (GlRenderer.enabled) {
-						method1692(arg0, Static4.anInt3290 + arg5 - Static5.aClass4_Sub3_Sub5_3.anInt2820 - 1, arg0 + arg4, Static4.anInt3290 + arg5 + 5);
+						GlRaster.shrinkClip(arg0, Static4.anInt3290 + arg5 - Static5.aClass4_Sub3_Sub5_3.anInt2820 - 1, arg0 + arg4, Static4.anInt3290 + arg5 + 5);
 					} else {
-						Static34.method4220(arg0, Static4.anInt3290 + arg5 - Static5.aClass4_Sub3_Sub5_3.anInt2820 - 1, arg4 + arg0, arg5 + Static4.anInt3290 + 5);
+						SoftwareRaster.shrinkClip(arg0, Static4.anInt3290 + arg5 - Static5.aClass4_Sub3_Sub5_3.anInt2820 - 1, arg4 + arg0, arg5 + Static4.anInt3290 + 5);
 					}
 					if (local1415 < 25) {
 						local1408 = local1415 - 25;
@@ -854,9 +585,9 @@ public final class Static18 {
 					}
 					Static5.aClass4_Sub3_Sub5_3.method2271(local968, Static7.anInt5584 + arg0, local1408 + Static4.anInt3290 + arg5, local985, 0);
 					if (GlRenderer.enabled) {
-						method1693(arg0, arg5, arg0 + arg4, arg5 + arg2);
+						GlRaster.setClip(arg0, arg5, arg0 + arg4, arg5 + arg2);
 					} else {
-						Static34.method4209(arg0, arg5, arg0 + arg4, arg5 + arg2);
+						SoftwareRaster.setClip(arg0, arg5, arg0 + arg4, arg5 + arg2);
 					}
 				}
 			} else {

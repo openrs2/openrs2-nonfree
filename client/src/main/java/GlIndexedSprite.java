@@ -176,7 +176,7 @@ public final class GlIndexedSprite extends IndexedSprite {
 		}
 		GlRenderer.method1596();
 		GlRenderer.setTextureId(arg2.textureId);
-		arg2.method4521(1);
+		arg2.setFilterMode(1);
 		@Pc(11) GL local11 = GlRenderer.gl;
 		GlRenderer.setTextureId(this.anInt3418);
 		this.method2818();
@@ -185,10 +185,10 @@ public final class GlIndexedSprite extends IndexedSprite {
 		local11.glBindTexture(GL.GL_TEXTURE_2D, arg2.textureId);
 		local11.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_COMBINE_RGB, GL.GL_REPLACE);
 		local11.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_SRC0_RGB, GL.GL_PREVIOUS);
-		@Pc(47) float local47 = (float) (arg0 - Static3.anInt2150) / (float) arg2.anInt5617;
-		@Pc(56) float local56 = (float) (arg1 - Static3.anInt2152) / (float) arg2.anInt5620;
-		@Pc(68) float local68 = (float) (arg0 + this.anInt3408 - Static3.anInt2150) / (float) arg2.anInt5617;
-		@Pc(80) float local80 = (float) (arg1 + this.anInt3413 - Static3.anInt2152) / (float) arg2.anInt5620;
+		@Pc(47) float local47 = (float) (arg0 - GlRaster.clipX) / (float) arg2.powerOfTwoWidth;
+		@Pc(56) float local56 = (float) (arg1 - GlRaster.clipY) / (float) arg2.powerOfTwoHeight;
+		@Pc(68) float local68 = (float) (arg0 + this.anInt3408 - GlRaster.clipX) / (float) arg2.powerOfTwoWidth;
+		@Pc(80) float local80 = (float) (arg1 + this.anInt3413 - GlRaster.clipY) / (float) arg2.powerOfTwoHeight;
 		arg0 += this.anInt3404;
 		arg1 += this.anInt3405;
 		local11.glBegin(GL.GL_TRIANGLE_FAN);

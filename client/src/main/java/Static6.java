@@ -232,21 +232,6 @@ public final class Static6 {
 	@OriginalMember(owner = "client!te", name = "D", descriptor = "Lclient!uj;")
 	public static Sprite aClass4_Sub3_Sub14_8;
 
-	@OriginalMember(owner = "client!tk", name = "b", descriptor = "[I")
-	public static int[] anIntArray559;
-
-	@OriginalMember(owner = "client!tk", name = "c", descriptor = "[I")
-	public static int[] anIntArray560;
-
-	@OriginalMember(owner = "client!tk", name = "d", descriptor = "I")
-	public static int anInt5184;
-
-	@OriginalMember(owner = "client!tk", name = "g", descriptor = "[I")
-	public static int[] anIntArray561;
-
-	@OriginalMember(owner = "client!tk", name = "i", descriptor = "I")
-	public static int anInt5188;
-
 	@OriginalMember(owner = "client!tm", name = "A", descriptor = "[I")
 	public static int[] anIntArray570;
 
@@ -531,18 +516,6 @@ public final class Static6 {
 
 	@OriginalMember(owner = "client!tj", name = "s", descriptor = "I")
 	public static int anInt3585 = 0;
-
-	@OriginalMember(owner = "client!tk", name = "a", descriptor = "I")
-	public static int anInt5183 = 0;
-
-	@OriginalMember(owner = "client!tk", name = "e", descriptor = "I")
-	public static int anInt5185 = 0;
-
-	@OriginalMember(owner = "client!tk", name = "f", descriptor = "I")
-	public static int anInt5186 = 0;
-
-	@OriginalMember(owner = "client!tk", name = "h", descriptor = "I")
-	public static int anInt5187 = 0;
 
 	@OriginalMember(owner = "client!tl", name = "a", descriptor = "I")
 	public static int anInt5189 = 0;

@@ -47,6 +47,6 @@ public abstract class FrameBuffer {
 
 	@OriginalMember(owner = "client!ob", name = "b", descriptor = "(I)V")
 	public final void makeTarget() {
-		Static34.method4224(this.pixels, this.width, this.height);
+		SoftwareRaster.setPixels(this.pixels, this.width, this.height);
 	}
 }

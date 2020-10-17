@@ -507,7 +507,7 @@ public final class Static10 {
 			if (local24 != null && local24.anInt2561 == 2) {
 				Static29.method3482(arg2 >> 1, local24.anInt2567 * 2, arg3, (local24.anInt2558 - Static5.originX << 7) + local24.anInt2564, local24.anInt2568 + (local24.anInt2565 - Static7.originZ << 7), arg1, arg4 >> 1);
 				if (Static7.anInt5584 > -1 && client.loop % 20 < 10) {
-					Static6.aClass4_Sub3_Sub14Array11[local24.anInt2559].method4506(arg5 + Static7.anInt5584 - 12, Static4.anInt3290 + arg0 - 28);
+					Static6.aClass4_Sub3_Sub14Array11[local24.anInt2559].renderTransparent(arg5 + Static7.anInt5584 - 12, Static4.anInt3290 + arg0 - 28);
 				}
 			}
 		}

@@ -93,30 +93,30 @@ public final class WorldMapFont {
 		@Pc(21) int width = src[index + 3];
 		@Pc(27) int height = src[index + 4];
 		@Pc(47) int srcIndex = src[index] * 16384 + src[index + 1] * 128 + src[index + 2];
-		@Pc(53) int destIndex = local7 + local15 * Static6.anInt5188;
-		@Pc(57) int destStride = Static6.anInt5188 - width;
+		@Pc(53) int destIndex = local7 + local15 * SoftwareRaster.width;
+		@Pc(57) int destStride = SoftwareRaster.width - width;
 		@Pc(59) int srcStride = 0;
-		if (local15 < Static6.anInt5183) {
-			@Pc(66) int local66 = Static6.anInt5183 - local15;
+		if (local15 < SoftwareRaster.clipY) {
+			@Pc(66) int local66 = SoftwareRaster.clipY - local15;
 			height -= local66;
-			local15 = Static6.anInt5183;
+			local15 = SoftwareRaster.clipY;
 			srcIndex += local66 * width;
-			destIndex += local66 * Static6.anInt5188;
+			destIndex += local66 * SoftwareRaster.width;
 		}
-		if (local15 + height >= Static6.anInt5187) {
-			height -= local15 + height + 1 - Static6.anInt5187;
+		if (local15 + height >= SoftwareRaster.clipHeight) {
+			height -= local15 + height + 1 - SoftwareRaster.clipHeight;
 		}
-		if (local7 < Static6.anInt5185) {
-			@Pc(106) int local106 = Static6.anInt5185 - local7;
+		if (local7 < SoftwareRaster.clipX) {
+			@Pc(106) int local106 = SoftwareRaster.clipX - local7;
 			width -= local106;
-			local7 = Static6.anInt5185;
+			local7 = SoftwareRaster.clipX;
 			srcIndex += local106;
 			destIndex += local106;
 			srcStride = local106;
 			destStride += local106;
 		}
-		if (local7 + width >= Static6.anInt5186) {
-			@Pc(141) int local141 = local7 + width + 1 - Static6.anInt5186;
+		if (local7 + width >= SoftwareRaster.clipWidth) {
+			@Pc(141) int local141 = local7 + width + 1 - SoftwareRaster.clipWidth;
 			width -= local141;
 			srcStride += local141;
 			destStride += local141;
@@ -125,9 +125,9 @@ public final class WorldMapFont {
 			return;
 		}
 		if (this.grayscale) {
-			this.renderGlyphGrayscale(Static6.anIntArray561, src, color, srcIndex, destIndex, width, height, destStride, srcStride);
+			this.renderGlyphGrayscale(SoftwareRaster.pixels, src, color, srcIndex, destIndex, width, height, destStride, srcStride);
 		} else {
-			this.renderGlyphMono(Static6.anIntArray561, src, color, srcIndex, destIndex, width, height, destStride, srcStride);
+			this.renderGlyphMono(SoftwareRaster.pixels, src, color, srcIndex, destIndex, width, height, destStride, srcStride);
 		}
 	}
 
@@ -140,7 +140,7 @@ public final class WorldMapFont {
 	public final void renderStringCenter(@OriginalArg(0) String s, @OriginalArg(1) int x, @OriginalArg(2) int y, @OriginalArg(3) int color) {
 		@Pc(5) int halfWidth = this.getStringWidth(s) / 2;
 		@Pc(8) int local8 = this.method2328();
-		if (x - halfWidth <= Static6.anInt5186 && (x + halfWidth >= Static6.anInt5185 && (y - local8 <= Static6.anInt5187 && y >= 0))) {
+		if (x - halfWidth <= SoftwareRaster.clipWidth && (x + halfWidth >= SoftwareRaster.clipX && (y - local8 <= SoftwareRaster.clipHeight && y >= 0))) {
 			this.renderString(s, x - halfWidth, y, color, true);
 		}
 	}

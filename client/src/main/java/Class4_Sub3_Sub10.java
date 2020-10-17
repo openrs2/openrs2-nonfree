@@ -138,8 +138,8 @@ public final class Class4_Sub3_Sub10 extends SecondaryNode {
 		}
 		arg0.method1834();
 		arg1.method1834();
-		Static18.method1686(Static3.anIntArray195);
-		Static18.method1698();
+		GlRaster.getClip(Static3.anIntArray195);
+		GlRaster.resetClip();
 		Static9.method216(GlRenderer.method1614());
 		gl.glPushAttrib(GL.GL_VIEWPORT_BIT);
 		GlRenderer.setFogEnabled(false);
@@ -213,7 +213,7 @@ public final class Class4_Sub3_Sub10 extends SecondaryNode {
 		gl.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_COMBINE_ALPHA, GL.GL_MODULATE);
 		gl.glDisable(GL.GL_TEXTURE_2D);
 		gl.glActiveTexture(GL.GL_TEXTURE0);
-		Static18.method1695(Static3.anIntArray195);
+		GlRaster.setClip(Static3.anIntArray195);
 		return local203 ? this : local10;
 	}
 

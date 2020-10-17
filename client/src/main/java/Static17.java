@@ -44,15 +44,15 @@ public final class Static17 {
 			@Pc(6) int local6 = Static3.anInt2092;
 			@Pc(8) int local8 = Static3.anInt2098;
 			if (arg2 != null) {
-				@Pc(14) int local14 = local8 - Static6.anInt5183;
-				if (local4 < arg2[local14] + Static6.anInt5185) {
-					local4 = arg2[local14] + Static6.anInt5185;
+				@Pc(14) int local14 = local8 - SoftwareRaster.clipY;
+				if (local4 < arg2[local14] + SoftwareRaster.clipX) {
+					local4 = arg2[local14] + SoftwareRaster.clipX;
 				}
-				if (local6 > arg2[local14] + arg3[local14] + Static6.anInt5185) {
-					local6 = arg2[local14] + arg3[local14] + Static6.anInt5185;
+				if (local6 > arg2[local14] + arg3[local14] + SoftwareRaster.clipX) {
+					local6 = arg2[local14] + arg3[local14] + SoftwareRaster.clipX;
 				}
 			}
-			Static34.method4225(local4, local8, local6 - local4, arg0, arg1);
+			SoftwareRaster.method4225(local4, local8, local6 - local4, arg0, arg1);
 		}
 	}
 
@@ -74,7 +74,7 @@ public final class Static17 {
 		while (local3 >= local1) {
 			local5++;
 			Static3.anInt2098 = local5;
-			if (local5 >= Static6.anInt5187) {
+			if (local5 >= SoftwareRaster.clipHeight) {
 				return false;
 			}
 			@Pc(18) int local18 = Static3.anInt2096;
@@ -153,7 +153,7 @@ public final class Static17 {
 
 	@OriginalMember(owner = "client!gj", name = "a", descriptor = "([IIIII[I[I)V")
 	private static void method1633(@OriginalArg(0) int[] arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int[] arg4, @OriginalArg(6) int[] arg5) {
-		if (arg4 != null && Static6.anInt5187 - Static6.anInt5183 != arg4.length) {
+		if (arg4 != null && SoftwareRaster.clipHeight - SoftwareRaster.clipY != arg4.length) {
 			throw new IllegalStateException();
 		}
 		method1636();
@@ -172,8 +172,8 @@ public final class Static17 {
 		}
 		method1626(0, Static3.anInt2094);
 		@Pc(17) int local17 = Static3.anIntArray169[1];
-		if (local17 < Static6.anInt5183) {
-			local17 = Static6.anInt5183;
+		if (local17 < SoftwareRaster.clipY) {
+			local17 = SoftwareRaster.clipY;
 		}
 		@Pc(26) int local26;
 		for (local26 = 0; local26 < Static3.anInt2094; local26 += 4) {

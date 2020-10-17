@@ -311,24 +311,24 @@ public final class Static25 {
 					}
 				}
 			} else if (GlRenderer.enabled) {
-				Static18.method1691(local3, local5, local21, 20, Static5.anInt4293, 256 - Static3.anInt2587);
+				GlRaster.fillRectAlpha(local3, local5, local21, 20, Static5.anInt4293, 256 - Static3.anInt2587);
 			} else {
-				Static34.method4213(local3, local5, local21, 20, Static5.anInt4293, 256 - Static3.anInt2587);
+				SoftwareRaster.fillRectAlpha(local3, local5, local21, 20, Static5.anInt4293, 256 - Static3.anInt2587);
 			}
 		}
 		if (Static6.aClass4_Sub3_Sub14_5 != null && Static2.aClass4_Sub3_Sub14_2 != null) {
 			@Pc(128) int local128 = (local21 - Static2.aClass4_Sub3_Sub14_2.width * 2) / Static6.aClass4_Sub3_Sub14_5.width;
 			for (@Pc(130) int local130 = 0; local130 < local128; local130++) {
-				Static6.aClass4_Sub3_Sub14_5.method4506(local130 * Static6.aClass4_Sub3_Sub14_5.width + local3 + Static2.aClass4_Sub3_Sub14_2.width, local5);
+				Static6.aClass4_Sub3_Sub14_5.renderTransparent(local130 * Static6.aClass4_Sub3_Sub14_5.width + local3 + Static2.aClass4_Sub3_Sub14_2.width, local5);
 			}
-			Static2.aClass4_Sub3_Sub14_2.method4506(local3, local5);
-			Static2.aClass4_Sub3_Sub14_2.method4511(local21 + local3 - Static2.aClass4_Sub3_Sub14_2.width, local5);
+			Static2.aClass4_Sub3_Sub14_2.renderTransparent(local3, local5);
+			Static2.aClass4_Sub3_Sub14_2.renderHorizontalFlipTransparent(local21 + local3 - Static2.aClass4_Sub3_Sub14_2.width, local5);
 		}
 		Static5.aClass4_Sub3_Sub5_3.method2259(LocalisedText.CHOOSE_OPTION, local3 + 3, local5 + 14, Static1.anInt504, -1);
 		if (GlRenderer.enabled) {
-			Static18.method1691(local3, local5 + 20, local21, local13 - 20, Static5.anInt4293, 256 - Static3.anInt2587);
+			GlRaster.fillRectAlpha(local3, local5 + 20, local21, local13 - 20, Static5.anInt4293, 256 - Static3.anInt2587);
 		} else {
-			Static34.method4213(local3, local5 + 20, local21, local13 - 20, Static5.anInt4293, 256 - Static3.anInt2587);
+			SoftwareRaster.fillRectAlpha(local3, local5 + 20, local21, local13 - 20, Static5.anInt4293, 256 - Static3.anInt2587);
 		}
 		@Pc(211) int local211 = Mouse.x;
 		@Pc(213) int local213 = Mouse.y;
@@ -336,9 +336,9 @@ public final class Static25 {
 			@Pc(233) int local233 = (Static7.anInt5634 - local215 - 1) * 15 + local5 + 20 + 13;
 			if (local3 < local211 && local21 + local3 > local211 && local233 - 13 < local213 && local233 + 3 > local213) {
 				if (GlRenderer.enabled) {
-					Static18.method1691(local3, local233 - 12, local21, 15, Static1.anInt497, 256 - Static3.anInt2586);
+					GlRaster.fillRectAlpha(local3, local233 - 12, local21, 15, Static1.anInt497, 256 - Static3.anInt2586);
 				} else {
-					Static34.method4213(local3, local233 - 12, local21, 15, Static1.anInt497, 256 - Static3.anInt2586);
+					SoftwareRaster.fillRectAlpha(local3, local233 - 12, local21, 15, Static1.anInt497, 256 - Static3.anInt2586);
 				}
 			}
 		}
@@ -367,15 +367,15 @@ public final class Static25 {
 		if (Static7.aClass4_Sub3_Sub14_9 != null && Static6.aClass4_Sub3_Sub14_8 != null && Static1.aClass4_Sub3_Sub14_1 != null) {
 			@Pc(413) int local413 = (local21 - Static1.aClass4_Sub3_Sub14_1.width * 2) / Static7.aClass4_Sub3_Sub14_9.width;
 			for (@Pc(415) int local415 = 0; local415 < local413; local415++) {
-				Static7.aClass4_Sub3_Sub14_9.method4506(Static1.aClass4_Sub3_Sub14_1.width + local3 + Static7.aClass4_Sub3_Sub14_9.width * local415, local13 + local5 - Static7.aClass4_Sub3_Sub14_9.height);
+				Static7.aClass4_Sub3_Sub14_9.renderTransparent(Static1.aClass4_Sub3_Sub14_1.width + local3 + Static7.aClass4_Sub3_Sub14_9.width * local415, local13 + local5 - Static7.aClass4_Sub3_Sub14_9.height);
 			}
 			@Pc(455) int local455 = (local13 - Static1.aClass4_Sub3_Sub14_1.height - 20) / Static6.aClass4_Sub3_Sub14_8.height;
 			for (@Pc(457) int local457 = 0; local457 < local455; local457++) {
-				Static6.aClass4_Sub3_Sub14_8.method4506(local3, local5 + Static6.aClass4_Sub3_Sub14_8.height * local457 + 20);
-				Static6.aClass4_Sub3_Sub14_8.method4511(local3 + local21 - Static6.aClass4_Sub3_Sub14_8.width, local457 * Static6.aClass4_Sub3_Sub14_8.height + local5 + 20);
+				Static6.aClass4_Sub3_Sub14_8.renderTransparent(local3, local5 + Static6.aClass4_Sub3_Sub14_8.height * local457 + 20);
+				Static6.aClass4_Sub3_Sub14_8.renderHorizontalFlipTransparent(local3 + local21 - Static6.aClass4_Sub3_Sub14_8.width, local457 * Static6.aClass4_Sub3_Sub14_8.height + local5 + 20);
 			}
-			Static1.aClass4_Sub3_Sub14_1.method4506(local3, local13 + local5 - Static1.aClass4_Sub3_Sub14_1.height);
-			Static1.aClass4_Sub3_Sub14_1.method4511(local21 + local3 - Static1.aClass4_Sub3_Sub14_1.width, local13 + local5 - Static1.aClass4_Sub3_Sub14_1.height);
+			Static1.aClass4_Sub3_Sub14_1.renderTransparent(local3, local13 + local5 - Static1.aClass4_Sub3_Sub14_1.height);
+			Static1.aClass4_Sub3_Sub14_1.renderHorizontalFlipTransparent(local21 + local3 - Static1.aClass4_Sub3_Sub14_1.width, local13 + local5 - Static1.aClass4_Sub3_Sub14_1.height);
 		}
 		for (@Pc(518) int local518 = 0; local518 < Static7.anInt5634; local518++) {
 			@Pc(535) int local535 = local5 + (Static7.anInt5634 - local518 - 1) * 15 + 13 + 20;

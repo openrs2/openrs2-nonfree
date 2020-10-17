@@ -84,10 +84,10 @@ public final class Static28 {
 		@Pc(274) int local274 = local181 + 2;
 		@Pc(284) int local284 = element.anInt1766 - local190 / 2 - 5;
 		if (type.fillColor != 0) {
-			Static34.method4213(local284, local274, local190 + 10, local181 + local141 * font.method2332() + 1 - local274, type.fillColor, type.fillColor >>> 24);
+			SoftwareRaster.fillRectAlpha(local284, local274, local190 + 10, local181 + local141 * font.method2332() + 1 - local274, type.fillColor, type.fillColor >>> 24);
 		}
 		if (type.outlineColor != 0) {
-			Static34.method4221(local284, local274, local190 + 10, font.method2332() * local141 + local181 + 1 - local274, type.outlineColor, type.outlineColor >>> 24);
+			SoftwareRaster.drawRectAlpha(local284, local274, local190 + 10, font.method2332() * local141 + local181 + 1 - local274, type.outlineColor, type.outlineColor >>> 24);
 		}
 		for (@Pc(343) int local343 = 0; local343 < local141; local343++) {
 			@Pc(354) String local354 = Static5.aStringArray24[local343];
@@ -474,10 +474,10 @@ public final class Static28 {
 	@OriginalMember(owner = "client!pa", name = "a", descriptor = "(IIIIZ)V")
 	public static void method3327(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) {
 		if (Static7.anInt6008 == 1) {
-			Static6.aClass4_Sub3_Sub14Array12[Static2.anInt1629 / 100].method4506(Static6.anInt5177 - 8, Static4.anInt3275 - 8);
+			Static6.aClass4_Sub3_Sub14Array12[Static2.anInt1629 / 100].renderTransparent(Static6.anInt5177 - 8, Static4.anInt3275 - 8);
 		}
 		if (Static7.anInt6008 == 2) {
-			Static6.aClass4_Sub3_Sub14Array12[Static2.anInt1629 / 100 + 4].method4506(Static6.anInt5177 - 8, Static4.anInt3275 - 8);
+			Static6.aClass4_Sub3_Sub14Array12[Static2.anInt1629 / 100 + 4].renderTransparent(Static6.anInt5177 - 8, Static4.anInt3275 - 8);
 		}
 		Static15.method1480();
 	}
@@ -487,21 +487,21 @@ public final class Static28 {
 		if (GlRenderer.enabled || arg0) {
 			@Pc(10) int local10 = GameShell.canvasHeight;
 			@Pc(16) int local16 = local10 * 956 / 503;
-			Static6.aClass4_Sub3_Sub14_7.method4507((GameShell.canvasWidth - local16) / 2, 0, local16, local10);
+			Static6.aClass4_Sub3_Sub14_7.renderResizedTransparent((GameShell.canvasWidth - local16) / 2, 0, local16, local10);
 			Static6.aClass56_1.method2815(GameShell.canvasWidth / 2 - Static6.aClass56_1.anInt3408 / 2, 18);
 		}
 		arg1.method2271(client.game == 1 ? LocalisedText.GAME1_LOADING : LocalisedText.GAME0_LOADING, GameShell.canvasWidth / 2, GameShell.canvasHeight / 2 - 26, 16777215, -1);
 		@Pc(70) int local70 = GameShell.canvasHeight / 2 - 18;
 		if (GlRenderer.enabled) {
-			Static18.method1690(GameShell.canvasWidth / 2 - 152, local70, 304, 34, 9179409);
-			Static18.method1690(GameShell.canvasWidth / 2 - 151, local70 + 1, 302, 32, 0);
-			Static18.method1701(GameShell.canvasWidth / 2 - 150, local70 + 2, client.mainLoadPercentage * 3, 30, 9179409);
-			Static18.method1701(GameShell.canvasWidth / 2 + client.mainLoadPercentage * 3 - 150, local70 + 2, 300 - client.mainLoadPercentage * 3, 30, 0);
+			GlRaster.drawRect(GameShell.canvasWidth / 2 - 152, local70, 304, 34, 9179409);
+			GlRaster.drawRect(GameShell.canvasWidth / 2 - 151, local70 + 1, 302, 32, 0);
+			GlRaster.fillRect(GameShell.canvasWidth / 2 - 150, local70 + 2, client.mainLoadPercentage * 3, 30, 9179409);
+			GlRaster.fillRect(GameShell.canvasWidth / 2 + client.mainLoadPercentage * 3 - 150, local70 + 2, 300 - client.mainLoadPercentage * 3, 30, 0);
 		} else {
-			Static34.method4222(GameShell.canvasWidth / 2 - 152, local70, 304, 34, 9179409);
-			Static34.method4222(GameShell.canvasWidth / 2 - 151, local70 + 1, 302, 32, 0);
-			Static33.method4205(GameShell.canvasWidth / 2 - 150, local70 + 2, client.mainLoadPercentage * 3, 30, 9179409);
-			Static33.method4205(client.mainLoadPercentage * 3 + GameShell.canvasWidth / 2 - 150, local70 + 2, 300 - client.mainLoadPercentage * 3, 30, 0);
+			SoftwareRaster.drawRect(GameShell.canvasWidth / 2 - 152, local70, 304, 34, 9179409);
+			SoftwareRaster.drawRect(GameShell.canvasWidth / 2 - 151, local70 + 1, 302, 32, 0);
+			SoftwareRaster.fillRect(GameShell.canvasWidth / 2 - 150, local70 + 2, client.mainLoadPercentage * 3, 30, 9179409);
+			SoftwareRaster.fillRect(client.mainLoadPercentage * 3 + GameShell.canvasWidth / 2 - 150, local70 + 2, 300 - client.mainLoadPercentage * 3, 30, 0);
 		}
 		arg1.method2271(client.mainLoadSecondaryText, GameShell.canvasWidth / 2, GameShell.canvasHeight / 2 + 4, 16777215, -1);
 	}

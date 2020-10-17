@@ -272,7 +272,7 @@ public final class Static31 {
 		}
 		Static37.method4721();
 		if (GlRenderer.enabled) {
-			Static18.method1693(arg0, arg4, arg0 + arg3, arg1 + arg4);
+			GlRaster.setClip(arg0, arg4, arg0 + arg3, arg1 + arg4);
 			@Pc(363) float local363 = (float) Static5.anInt4066 * 0.17578125F;
 			@Pc(368) float local368 = (float) Static5.anInt3656 * 0.17578125F;
 			if (Static1.anInt772 == 3) {
@@ -298,13 +298,13 @@ public final class Static31 {
 			GlRenderer.setDepthTestEnabled(true);
 			GlRenderer.setFogEnabled(true);
 		} else {
-			Static34.method4209(arg0, arg4, arg3 + arg0, arg4 + arg1);
+			SoftwareRaster.setClip(arg0, arg4, arg3 + arg0, arg4 + arg1);
 			Static23.method2561();
 			if (Static6.anInt4863 >= 0) {
 				@Pc(328) Class47 local328 = SkyBoxTypeList.method936(Static6.anInt4863, Static4.anInt5826, Static1.anInt466, Static5.anInt4303);
 				local328.method1024(Static5.anInt3774, arg0, arg4, arg3, arg1, Static5.anInt4066, Static5.anInt3656);
 			} else {
-				Static33.method4205(arg0, arg4, arg3, arg1, 0);
+				SoftwareRaster.fillRect(arg0, arg4, arg3, arg1, 0);
 			}
 		}
 		if (Static1.aBoolean17 || Static4.anInt3341 < arg0 || Static4.anInt3341 >= arg3 + arg0 || arg4 > Static5.anInt5848 || Static5.anInt5848 >= arg1 + arg4) {
@@ -353,9 +353,9 @@ public final class Static31 {
 		}
 		if (Static3.aBoolean366) {
 			if (GlRenderer.enabled) {
-				Static18.method1701(arg0, arg4, arg3, arg1, 0);
+				GlRaster.fillRect(arg0, arg4, arg3, arg1, 0);
 			} else {
-				Static33.method4205(arg0, arg4, arg3, arg1, 0);
+				SoftwareRaster.fillRect(arg0, arg4, arg3, arg1, 0);
 			}
 			Static37.method4716(LocalisedText.LOADING, false);
 		}

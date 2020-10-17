@@ -38,39 +38,39 @@ public final class SoftwareIndexedSprite extends IndexedSprite {
 	public final void method2816(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
 		@Pc(4) int local4 = arg0 + this.anInt3404;
 		@Pc(9) int local9 = arg1 + this.anInt3405;
-		@Pc(15) int local15 = local4 + local9 * Static6.anInt5188;
+		@Pc(15) int local15 = local4 + local9 * SoftwareRaster.width;
 		@Pc(17) int local17 = 0;
 		@Pc(20) int local20 = this.anInt3413;
 		@Pc(23) int local23 = this.anInt3408;
-		@Pc(27) int local27 = Static6.anInt5188 - local23;
+		@Pc(27) int local27 = SoftwareRaster.width - local23;
 		@Pc(29) int local29 = 0;
-		if (local9 < Static6.anInt5183) {
-			@Pc(36) int local36 = Static6.anInt5183 - local9;
+		if (local9 < SoftwareRaster.clipY) {
+			@Pc(36) int local36 = SoftwareRaster.clipY - local9;
 			local20 -= local36;
-			local9 = Static6.anInt5183;
+			local9 = SoftwareRaster.clipY;
 			local17 = local36 * local23;
-			local15 += local36 * Static6.anInt5188;
+			local15 += local36 * SoftwareRaster.width;
 		}
-		if (local9 + local20 > Static6.anInt5187) {
-			local20 -= local9 + local20 - Static6.anInt5187;
+		if (local9 + local20 > SoftwareRaster.clipHeight) {
+			local20 -= local9 + local20 - SoftwareRaster.clipHeight;
 		}
-		if (local4 < Static6.anInt5185) {
-			@Pc(74) int local74 = Static6.anInt5185 - local4;
+		if (local4 < SoftwareRaster.clipX) {
+			@Pc(74) int local74 = SoftwareRaster.clipX - local4;
 			local23 -= local74;
-			local4 = Static6.anInt5185;
+			local4 = SoftwareRaster.clipX;
 			local17 += local74;
 			local15 += local74;
 			local29 = local74;
 			local27 += local74;
 		}
-		if (local4 + local23 > Static6.anInt5186) {
-			@Pc(107) int local107 = local4 + local23 - Static6.anInt5186;
+		if (local4 + local23 > SoftwareRaster.clipWidth) {
+			@Pc(107) int local107 = local4 + local23 - SoftwareRaster.clipWidth;
 			local23 -= local107;
 			local29 += local107;
 			local27 += local107;
 		}
 		if (local23 > 0 && local20 > 0) {
-			Static15.method1319(Static6.anIntArray561, this.aByteArray15, this.anIntArray120, local17, local15, local23, local20, local27, local29, arg2);
+			Static15.method1319(SoftwareRaster.pixels, this.aByteArray15, this.anIntArray120, local17, local15, local23, local20, local27, local29, arg2);
 		}
 	}
 
@@ -227,17 +227,17 @@ public final class SoftwareIndexedSprite extends IndexedSprite {
 		@Pc(269) int local269 = local233 + 15 >> 4;
 		@Pc(273) int local273 = local237 >> 4;
 		@Pc(279) int local279 = local243 + 15 >> 4;
-		if (local263 < Static6.anInt5185) {
-			local263 = Static6.anInt5185;
+		if (local263 < SoftwareRaster.clipX) {
+			local263 = SoftwareRaster.clipX;
 		}
-		if (local269 > Static6.anInt5186) {
-			local269 = Static6.anInt5186;
+		if (local269 > SoftwareRaster.clipWidth) {
+			local269 = SoftwareRaster.clipWidth;
 		}
-		if (local273 < Static6.anInt5183) {
-			local273 = Static6.anInt5183;
+		if (local273 < SoftwareRaster.clipY) {
+			local273 = SoftwareRaster.clipY;
 		}
-		if (local279 > Static6.anInt5187) {
-			local279 = Static6.anInt5187;
+		if (local279 > SoftwareRaster.clipHeight) {
+			local279 = SoftwareRaster.clipHeight;
 		}
 		@Pc(303) int local303 = local263 - local269;
 		if (local303 >= 0) {
@@ -247,7 +247,7 @@ public final class SoftwareIndexedSprite extends IndexedSprite {
 		if (local310 >= 0) {
 			return;
 		}
-		@Pc(319) int local319 = local273 * Static6.anInt5188 + local263;
+		@Pc(319) int local319 = local273 * SoftwareRaster.width + local263;
 		@Pc(324) double local324 = 1.6777216E7D / (double) 4096;
 		@Pc(333) int local333 = (int) Math.floor(Math.sin(local23) * local324 + 0.5D);
 		@Pc(342) int local342 = (int) Math.floor(Math.cos(local23) * local324 + 0.5D);
@@ -268,13 +268,13 @@ public final class SoftwareIndexedSprite extends IndexedSprite {
 							if (local435 == 0) {
 								local388++;
 							} else {
-								Static6.anIntArray561[local388++] = local435;
+								SoftwareRaster.pixels[local388++] = local435;
 							}
 							local394++;
 						}
 					}
 					local384++;
-					local319 += Static6.anInt5188;
+					local319 += SoftwareRaster.width;
 				}
 			} else if (local333 < 0) {
 				@Pc(457) int local457 = local310;
@@ -297,7 +297,7 @@ public final class SoftwareIndexedSprite extends IndexedSprite {
 							if (local543 == 0) {
 								local461++;
 							} else {
-								Static6.anIntArray561[local461++] = local543;
+								SoftwareRaster.pixels[local461++] = local543;
 							}
 							local471 += local333;
 							local473++;
@@ -305,7 +305,7 @@ public final class SoftwareIndexedSprite extends IndexedSprite {
 					}
 					local457++;
 					local368 -= local333;
-					local319 += Static6.anInt5188;
+					local319 += SoftwareRaster.width;
 				}
 			} else {
 				@Pc(571) int local571 = local310;
@@ -328,7 +328,7 @@ public final class SoftwareIndexedSprite extends IndexedSprite {
 							if (local659 == 0) {
 								local575++;
 							} else {
-								Static6.anIntArray561[local575++] = local659;
+								SoftwareRaster.pixels[local575++] = local659;
 							}
 							local585 += local333;
 							local587++;
@@ -336,7 +336,7 @@ public final class SoftwareIndexedSprite extends IndexedSprite {
 					}
 					local571++;
 					local368 -= local333;
-					local319 += Static6.anInt5188;
+					local319 += SoftwareRaster.width;
 				}
 			}
 		} else if (local342 < 0) {
@@ -361,7 +361,7 @@ public final class SoftwareIndexedSprite extends IndexedSprite {
 							if (local777 == 0) {
 								local695++;
 							} else {
-								Static6.anIntArray561[local695++] = local777;
+								SoftwareRaster.pixels[local695++] = local777;
 							}
 							local703 += local342;
 							local707++;
@@ -369,7 +369,7 @@ public final class SoftwareIndexedSprite extends IndexedSprite {
 					}
 					local691++;
 					local378 += local342;
-					local319 += Static6.anInt5188;
+					local319 += SoftwareRaster.width;
 				}
 			} else if (local333 < 0) {
 				@Pc(807) int local807 = local310;
@@ -403,7 +403,7 @@ public final class SoftwareIndexedSprite extends IndexedSprite {
 						if (local940 == 0) {
 							local811++;
 						} else {
-							Static6.anIntArray561[local811++] = local940;
+							SoftwareRaster.pixels[local811++] = local940;
 						}
 						local819 += local342;
 						local827 += local333;
@@ -412,7 +412,7 @@ public final class SoftwareIndexedSprite extends IndexedSprite {
 					local807++;
 					local368 -= local333;
 					local378 += local342;
-					local319 += Static6.anInt5188;
+					local319 += SoftwareRaster.width;
 				}
 			} else {
 				@Pc(976) int local976 = local310;
@@ -446,7 +446,7 @@ public final class SoftwareIndexedSprite extends IndexedSprite {
 						if (local1111 == 0) {
 							local980++;
 						} else {
-							Static6.anIntArray561[local980++] = local1111;
+							SoftwareRaster.pixels[local980++] = local1111;
 						}
 						local988 += local342;
 						local996 += local333;
@@ -455,7 +455,7 @@ public final class SoftwareIndexedSprite extends IndexedSprite {
 					local976++;
 					local368 -= local333;
 					local378 += local342;
-					local319 += Static6.anInt5188;
+					local319 += SoftwareRaster.width;
 				}
 			}
 		} else if (local333 == 0) {
@@ -479,7 +479,7 @@ public final class SoftwareIndexedSprite extends IndexedSprite {
 						if (local1237 == 0) {
 							local1153++;
 						} else {
-							Static6.anIntArray561[local1153++] = local1237;
+							SoftwareRaster.pixels[local1153++] = local1237;
 						}
 						local1161 += local342;
 						local1165++;
@@ -487,7 +487,7 @@ public final class SoftwareIndexedSprite extends IndexedSprite {
 				}
 				local1149++;
 				local378 += local342;
-				local319 += Static6.anInt5188;
+				local319 += SoftwareRaster.width;
 			}
 		} else if (local333 < 0) {
 			@Pc(1267) int local1267 = local310;
@@ -521,7 +521,7 @@ public final class SoftwareIndexedSprite extends IndexedSprite {
 					if (local1402 == 0) {
 						local1271++;
 					} else {
-						Static6.anIntArray561[local1271++] = local1402;
+						SoftwareRaster.pixels[local1271++] = local1402;
 					}
 					local1279 += local342;
 					local1287 += local333;
@@ -530,7 +530,7 @@ public final class SoftwareIndexedSprite extends IndexedSprite {
 				local1267++;
 				local368 -= local333;
 				local378 += local342;
-				local319 += Static6.anInt5188;
+				local319 += SoftwareRaster.width;
 			}
 		} else {
 			@Pc(1438) int local1438 = local310;
@@ -564,7 +564,7 @@ public final class SoftwareIndexedSprite extends IndexedSprite {
 					if (local1575 == 0) {
 						local1442++;
 					} else {
-						Static6.anIntArray561[local1442++] = local1575;
+						SoftwareRaster.pixels[local1442++] = local1575;
 					}
 					local1450 += local342;
 					local1458 += local333;
@@ -573,7 +573,7 @@ public final class SoftwareIndexedSprite extends IndexedSprite {
 				local1438++;
 				local368 -= local333;
 				local378 += local342;
-				local319 += Static6.anInt5188;
+				local319 += SoftwareRaster.width;
 			}
 		}
 	}
@@ -604,30 +604,30 @@ public final class SoftwareIndexedSprite extends IndexedSprite {
 		if (local5 < local15) {
 			arg3 = ((local5 << 16) + local27 - local9 - 1) / local27;
 		}
-		@Pc(121) int local121 = arg0 + arg1 * Static6.anInt5188;
-		@Pc(125) int local125 = Static6.anInt5188 - arg2;
-		if (arg1 + arg3 > Static6.anInt5187) {
-			arg3 -= arg1 + arg3 - Static6.anInt5187;
+		@Pc(121) int local121 = arg0 + arg1 * SoftwareRaster.width;
+		@Pc(125) int local125 = SoftwareRaster.width - arg2;
+		if (arg1 + arg3 > SoftwareRaster.clipHeight) {
+			arg3 -= arg1 + arg3 - SoftwareRaster.clipHeight;
 		}
-		if (arg1 < Static6.anInt5183) {
-			@Pc(145) int local145 = Static6.anInt5183 - arg1;
+		if (arg1 < SoftwareRaster.clipY) {
+			@Pc(145) int local145 = SoftwareRaster.clipY - arg1;
 			arg3 -= local145;
-			local121 += local145 * Static6.anInt5188;
+			local121 += local145 * SoftwareRaster.width;
 			local9 += local27 * local145;
 		}
-		if (arg0 + arg2 > Static6.anInt5186) {
-			@Pc(172) int local172 = arg0 + arg2 - Static6.anInt5186;
+		if (arg0 + arg2 > SoftwareRaster.clipWidth) {
+			@Pc(172) int local172 = arg0 + arg2 - SoftwareRaster.clipWidth;
 			arg2 -= local172;
 			local125 += local172;
 		}
-		if (arg0 < Static6.anInt5185) {
-			@Pc(187) int local187 = Static6.anInt5185 - arg0;
+		if (arg0 < SoftwareRaster.clipX) {
+			@Pc(187) int local187 = SoftwareRaster.clipX - arg0;
 			arg2 -= local187;
 			local121 += local187;
 			local7 += local21 * local187;
 			local125 += local187;
 		}
-		Static15.method1317(Static6.anIntArray561, this.aByteArray15, this.anIntArray120, local7, local9, local121, local125, arg2, arg3, local21, local27, local2);
+		Static15.method1317(SoftwareRaster.pixels, this.aByteArray15, this.anIntArray120, local7, local9, local121, local125, arg2, arg3, local21, local27, local2);
 	}
 
 	@OriginalMember(owner = "client!fe", name = "a", descriptor = "(IIIII)V")
@@ -656,30 +656,30 @@ public final class SoftwareIndexedSprite extends IndexedSprite {
 		if (local5 < local15) {
 			arg3 = ((local5 << 16) + local27 - local9 - 1) / local27;
 		}
-		@Pc(121) int local121 = arg0 + arg1 * Static6.anInt5188;
-		@Pc(125) int local125 = Static6.anInt5188 - arg2;
-		if (arg1 + arg3 > Static6.anInt5187) {
-			arg3 -= arg1 + arg3 - Static6.anInt5187;
+		@Pc(121) int local121 = arg0 + arg1 * SoftwareRaster.width;
+		@Pc(125) int local125 = SoftwareRaster.width - arg2;
+		if (arg1 + arg3 > SoftwareRaster.clipHeight) {
+			arg3 -= arg1 + arg3 - SoftwareRaster.clipHeight;
 		}
-		if (arg1 < Static6.anInt5183) {
-			@Pc(145) int local145 = Static6.anInt5183 - arg1;
+		if (arg1 < SoftwareRaster.clipY) {
+			@Pc(145) int local145 = SoftwareRaster.clipY - arg1;
 			arg3 -= local145;
-			local121 += local145 * Static6.anInt5188;
+			local121 += local145 * SoftwareRaster.width;
 			local9 += local27 * local145;
 		}
-		if (arg0 + arg2 > Static6.anInt5186) {
-			@Pc(172) int local172 = arg0 + arg2 - Static6.anInt5186;
+		if (arg0 + arg2 > SoftwareRaster.clipWidth) {
+			@Pc(172) int local172 = arg0 + arg2 - SoftwareRaster.clipWidth;
 			arg2 -= local172;
 			local125 += local172;
 		}
-		if (arg0 < Static6.anInt5185) {
-			@Pc(187) int local187 = Static6.anInt5185 - arg0;
+		if (arg0 < SoftwareRaster.clipX) {
+			@Pc(187) int local187 = SoftwareRaster.clipX - arg0;
 			arg2 -= local187;
 			local121 += local187;
 			local7 += local21 * local187;
 			local125 += local187;
 		}
-		Static15.method1318(Static6.anIntArray561, this.aByteArray15, this.anIntArray120, local7, local9, local121, local125, arg2, arg3, local21, local27, local2, arg4);
+		Static15.method1318(SoftwareRaster.pixels, this.aByteArray15, this.anIntArray120, local7, local9, local121, local125, arg2, arg3, local21, local27, local2, arg4);
 	}
 
 	@OriginalMember(owner = "client!fe", name = "a", descriptor = "(II)V")
@@ -687,39 +687,39 @@ public final class SoftwareIndexedSprite extends IndexedSprite {
 	public final void method2815(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
 		@Pc(4) int local4 = arg0 + this.anInt3404;
 		@Pc(9) int local9 = arg1 + this.anInt3405;
-		@Pc(15) int local15 = local4 + local9 * Static6.anInt5188;
+		@Pc(15) int local15 = local4 + local9 * SoftwareRaster.width;
 		@Pc(17) int local17 = 0;
 		@Pc(20) int local20 = this.anInt3413;
 		@Pc(23) int local23 = this.anInt3408;
-		@Pc(27) int local27 = Static6.anInt5188 - local23;
+		@Pc(27) int local27 = SoftwareRaster.width - local23;
 		@Pc(29) int local29 = 0;
-		if (local9 < Static6.anInt5183) {
-			@Pc(36) int local36 = Static6.anInt5183 - local9;
+		if (local9 < SoftwareRaster.clipY) {
+			@Pc(36) int local36 = SoftwareRaster.clipY - local9;
 			local20 -= local36;
-			local9 = Static6.anInt5183;
+			local9 = SoftwareRaster.clipY;
 			local17 = local36 * local23;
-			local15 += local36 * Static6.anInt5188;
+			local15 += local36 * SoftwareRaster.width;
 		}
-		if (local9 + local20 > Static6.anInt5187) {
-			local20 -= local9 + local20 - Static6.anInt5187;
+		if (local9 + local20 > SoftwareRaster.clipHeight) {
+			local20 -= local9 + local20 - SoftwareRaster.clipHeight;
 		}
-		if (local4 < Static6.anInt5185) {
-			@Pc(74) int local74 = Static6.anInt5185 - local4;
+		if (local4 < SoftwareRaster.clipX) {
+			@Pc(74) int local74 = SoftwareRaster.clipX - local4;
 			local23 -= local74;
-			local4 = Static6.anInt5185;
+			local4 = SoftwareRaster.clipX;
 			local17 += local74;
 			local15 += local74;
 			local29 = local74;
 			local27 += local74;
 		}
-		if (local4 + local23 > Static6.anInt5186) {
-			@Pc(107) int local107 = local4 + local23 - Static6.anInt5186;
+		if (local4 + local23 > SoftwareRaster.clipWidth) {
+			@Pc(107) int local107 = local4 + local23 - SoftwareRaster.clipWidth;
 			local23 -= local107;
 			local29 += local107;
 			local27 += local107;
 		}
 		if (local23 > 0 && local20 > 0) {
-			Static15.method1310(Static6.anIntArray561, this.aByteArray15, this.anIntArray120, local17, local15, local23, local20, local27, local29);
+			Static15.method1310(SoftwareRaster.pixels, this.aByteArray15, this.anIntArray120, local17, local15, local23, local20, local27, local29);
 		}
 	}
 
@@ -744,7 +744,7 @@ public final class SoftwareIndexedSprite extends IndexedSprite {
 
 	@OriginalMember(owner = "client!fe", name = "a", descriptor = "(II[I[I)V")
 	public final void method1321(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int[] arg2, @OriginalArg(3) int[] arg3) {
-		if (Static6.anInt5187 - Static6.anInt5183 != arg2.length) {
+		if (SoftwareRaster.clipHeight - SoftwareRaster.clipY != arg2.length) {
 			throw new IllegalStateException();
 		}
 		@Pc(14) int local14 = arg0 + this.anInt3404;
@@ -752,30 +752,30 @@ public final class SoftwareIndexedSprite extends IndexedSprite {
 		@Pc(21) int local21 = 0;
 		@Pc(24) int local24 = this.anInt3413;
 		@Pc(27) int local27 = this.anInt3408;
-		@Pc(31) int local31 = Static6.anInt5188 - local27;
+		@Pc(31) int local31 = SoftwareRaster.width - local27;
 		@Pc(33) int local33 = 0;
-		@Pc(39) int local39 = local14 + local19 * Static6.anInt5188;
-		if (local19 < Static6.anInt5183) {
-			@Pc(46) int local46 = Static6.anInt5183 - local19;
+		@Pc(39) int local39 = local14 + local19 * SoftwareRaster.width;
+		if (local19 < SoftwareRaster.clipY) {
+			@Pc(46) int local46 = SoftwareRaster.clipY - local19;
 			local24 -= local46;
-			local19 = Static6.anInt5183;
+			local19 = SoftwareRaster.clipY;
 			local21 = local46 * local27;
-			local39 += local46 * Static6.anInt5188;
+			local39 += local46 * SoftwareRaster.width;
 		}
-		if (local19 + local24 > Static6.anInt5187) {
-			local24 -= local19 + local24 - Static6.anInt5187;
+		if (local19 + local24 > SoftwareRaster.clipHeight) {
+			local24 -= local19 + local24 - SoftwareRaster.clipHeight;
 		}
-		if (local14 < Static6.anInt5185) {
-			@Pc(84) int local84 = Static6.anInt5185 - local14;
+		if (local14 < SoftwareRaster.clipX) {
+			@Pc(84) int local84 = SoftwareRaster.clipX - local14;
 			local27 -= local84;
-			local14 = Static6.anInt5185;
+			local14 = SoftwareRaster.clipX;
 			local21 += local84;
 			local39 += local84;
 			local33 = local84;
 			local31 += local84;
 		}
-		if (local14 + local27 > Static6.anInt5186) {
-			@Pc(117) int local117 = local14 + local27 - Static6.anInt5186;
+		if (local14 + local27 > SoftwareRaster.clipWidth) {
+			@Pc(117) int local117 = local14 + local27 - SoftwareRaster.clipWidth;
 			local27 -= local117;
 			local33 += local117;
 			local31 += local117;
@@ -783,8 +783,8 @@ public final class SoftwareIndexedSprite extends IndexedSprite {
 		if (local27 <= 0 || local24 <= 0) {
 			return;
 		}
-		@Pc(138) int local138 = local14 - Static6.anInt5185;
-		@Pc(142) int local142 = local19 - Static6.anInt5183;
+		@Pc(138) int local138 = local14 - SoftwareRaster.clipX;
+		@Pc(142) int local142 = local19 - SoftwareRaster.clipY;
 		for (@Pc(144) int local144 = local142; local144 < local142 + local24; local144++) {
 			@Pc(153) int local153 = arg2[local144];
 			@Pc(157) int local157 = arg3[local144];
@@ -819,7 +819,7 @@ public final class SoftwareIndexedSprite extends IndexedSprite {
 				if (local245 == 0) {
 					local39++;
 				} else {
-					Static6.anIntArray561[local39++] = local245;
+					SoftwareRaster.pixels[local39++] = local245;
 				}
 			}
 			local21 += local221 + local33;

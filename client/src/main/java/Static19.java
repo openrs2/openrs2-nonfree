@@ -378,7 +378,7 @@ public final class Static19 {
 									if (local250 == 0) {
 										local250 = 1;
 									}
-									Static33.method4205(local166, local203, local42, local197, local250);
+									SoftwareRaster.fillRect(local166, local203, local42, local197, local250);
 									continue;
 								}
 							} else {
@@ -390,7 +390,7 @@ public final class Static19 {
 							@Pc(316) int local316 = local146[local213] == null ? 0 : Static3.anIntArray266[local146[local213][local231] & 0xFF];
 							@Pc(332) int local332 = local154[local213] == null ? 0 : Static3.anIntArray266[local154[local213][local231] & 0xFF];
 							if (local316 == 0 && local332 == 0) {
-								Static33.method4205(local166, local203, local42, local197, local250);
+								SoftwareRaster.fillRect(local166, local203, local42, local197, local250);
 							} else {
 								if (local316 != 0) {
 									if (local316 == -1) {
@@ -399,9 +399,9 @@ public final class Static19 {
 									@Pc(362) byte local362 = local150[local213] == null ? 0 : local150[local213][local231];
 									@Pc(366) int local366 = local362 & 0xFC;
 									if (local366 == 0 || local42 <= 1 || local197 <= 1) {
-										Static33.method4205(local166, local203, local42, local197, local316);
+										SoftwareRaster.fillRect(local166, local203, local42, local197, local316);
 									} else {
-										Static20.method2409(Static6.anIntArray561, local166, local203, local250, local316, local42, local197, local366 >> 2, local362 & 0x3, true);
+										Static20.method2409(SoftwareRaster.pixels, local166, local203, local250, local316, local42, local197, local366 >> 2, local362 & 0x3, true);
 									}
 								}
 								if (local332 != 0) {
@@ -411,9 +411,9 @@ public final class Static19 {
 									@Pc(409) byte local409 = local158[local213][local231];
 									@Pc(413) int local413 = local409 & 0xFC;
 									if (local413 == 0 || local42 <= 1 || local197 <= 1) {
-										Static33.method4205(local166, local203, local42, local197, local332);
+										SoftwareRaster.fillRect(local166, local203, local42, local197, local332);
 									}
-									Static20.method2409(Static6.anIntArray561, local166, local203, 0, local332, local42, local197, local413 >> 2, local409 & 0x3, local316 == 0);
+									Static20.method2409(SoftwareRaster.pixels, local166, local203, 0, local332, local42, local197, local413 >> 2, local409 & 0x3, local316 == 0);
 								}
 							}
 							if (local162[local213] != null) {
@@ -437,40 +437,40 @@ public final class Static19 {
 										local459 -= 4;
 									}
 									if (local459 == 1) {
-										Static34.method4212(local166, local203, local197, local484);
+										SoftwareRaster.drawVerticalLine(local166, local203, local197, local484);
 									} else if (local459 == 2) {
-										Static34.method4214(local166, local203, local42, local484);
+										SoftwareRaster.drawHorizontalLine(local166, local203, local42, local484);
 									} else if (local459 == 3) {
-										Static34.method4212(local467, local203, local197, local484);
+										SoftwareRaster.drawVerticalLine(local467, local203, local197, local484);
 									} else if (local459 == 4) {
-										Static34.method4214(local166, local477, local42, local484);
+										SoftwareRaster.drawHorizontalLine(local166, local477, local42, local484);
 									} else if (local459 == 9) {
-										Static34.method4212(local166, local203, local197, 16777215);
-										Static34.method4214(local166, local203, local42, local484);
+										SoftwareRaster.drawVerticalLine(local166, local203, local197, 16777215);
+										SoftwareRaster.drawHorizontalLine(local166, local203, local42, local484);
 									} else if (local459 == 10) {
-										Static34.method4212(local467, local203, local197, 16777215);
-										Static34.method4214(local166, local203, local42, local484);
+										SoftwareRaster.drawVerticalLine(local467, local203, local197, 16777215);
+										SoftwareRaster.drawHorizontalLine(local166, local203, local42, local484);
 									} else if (local459 == 11) {
-										Static34.method4212(local467, local203, local197, 16777215);
-										Static34.method4214(local166, local477, local42, local484);
+										SoftwareRaster.drawVerticalLine(local467, local203, local197, 16777215);
+										SoftwareRaster.drawHorizontalLine(local166, local477, local42, local484);
 									} else if (local459 == 12) {
-										Static34.method4212(local166, local203, local197, 16777215);
-										Static34.method4214(local166, local477, local42, local484);
+										SoftwareRaster.drawVerticalLine(local166, local203, local197, 16777215);
+										SoftwareRaster.drawHorizontalLine(local166, local477, local42, local484);
 									} else if (local459 == 17) {
-										Static34.method4214(local166, local203, 1, local484);
+										SoftwareRaster.drawHorizontalLine(local166, local203, 1, local484);
 									} else if (local459 == 18) {
-										Static34.method4214(local467, local203, 1, local484);
+										SoftwareRaster.drawHorizontalLine(local467, local203, 1, local484);
 									} else if (local459 == 19) {
-										Static34.method4214(local467, local477, 1, local484);
+										SoftwareRaster.drawHorizontalLine(local467, local477, 1, local484);
 									} else if (local459 == 20) {
-										Static34.method4214(local166, local477, 1, local484);
+										SoftwareRaster.drawHorizontalLine(local166, local477, 1, local484);
 									} else if (local459 == 25) {
 										for (@Pc(644) int local644 = 0; local644 < local197; local644++) {
-											Static34.method4214(local166 + local644, local477 - local644, 1, local484);
+											SoftwareRaster.drawHorizontalLine(local166 + local644, local477 - local644, 1, local484);
 										}
 									} else if (local459 == 26) {
 										for (@Pc(664) int local664 = 0; local664 < local197; local664++) {
-											Static34.method4214(local166 + local664, local203 + local664, 1, local484);
+											SoftwareRaster.drawHorizontalLine(local166 + local664, local203 + local664, 1, local484);
 										}
 									}
 								}
@@ -494,7 +494,7 @@ public final class Static19 {
 						if (local104 == 0) {
 							local104 = 1;
 						}
-						Static33.method4205(local62, local81, local42, local97, local104);
+						SoftwareRaster.fillRect(local62, local81, local42, local97, local104);
 					}
 				}
 			}

@@ -788,18 +788,18 @@ public final class Static33 {
 	public static void method3010(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) Component arg2, @OriginalArg(3) int arg3) {
 		Static9.method763();
 		if (GlRenderer.enabled) {
-			Static18.method1693(arg0, arg3, arg2.anInt5893 + arg0, arg2.anInt5949 + arg3);
+			GlRaster.setClip(arg0, arg3, arg2.anInt5893 + arg0, arg2.anInt5949 + arg3);
 		} else {
-			Static34.method4209(arg0, arg3, arg0 + arg2.anInt5893, arg3 + arg2.anInt5949);
+			SoftwareRaster.setClip(arg0, arg3, arg0 + arg2.anInt5893, arg3 + arg2.anInt5949);
 		}
 		if (Static5.anInt5206 != 2 && Static5.anInt5206 != 5 && Static5.aClass4_Sub3_Sub14_4 != null) {
 			@Pc(92) int local92 = (int) Static5.aFloat97 + Static6.anInt3585 & 0x7FF;
 			@Pc(101) int local101 = 464 - PlayerList.self.z / 32;
 			@Pc(109) int local109 = PlayerList.self.x / 32 + 48;
 			if (GlRenderer.enabled) {
-				((GlSprite) Static5.aClass4_Sub3_Sub14_4).method4519(arg0, arg3, arg2.anInt5893, arg2.anInt5949, local109, local101, local92, Static6.anInt4761 + 256, (GlSprite) arg2.method4729(false));
+				((GlSprite) Static5.aClass4_Sub3_Sub14_4).renderRotatedTransparent(arg0, arg3, arg2.anInt5893, arg2.anInt5949, local109, local101, local92, Static6.anInt4761 + 256, (GlSprite) arg2.method4729(false));
 			} else {
-				((SoftwareSprite) Static5.aClass4_Sub3_Sub14_4).method2167(arg0, arg3, arg2.anInt5893, arg2.anInt5949, local109, local101, local92, Static6.anInt4761 + 256, arg2.anIntArray672, arg2.anIntArray657);
+				((SoftwareSprite) Static5.aClass4_Sub3_Sub14_4).renderRotatedTransparent(arg0, arg3, arg2.anInt5893, arg2.anInt5949, local109, local101, local92, Static6.anInt4761 + 256, arg2.anIntArray672, arg2.anIntArray657);
 			}
 			if (Static7.aClass138_14 != null) {
 				for (@Pc(158) int local158 = 0; local158 < Static7.aClass138_14.size; local158++) {
@@ -926,201 +926,19 @@ public final class Static33 {
 				Static11.method525(arg0, arg2, arg3, local895, local917, Static1.aClass4_Sub3_Sub14Array2[Static3.aBoolean147 ? 1 : 0]);
 			}
 			if (GlRenderer.enabled) {
-				Static18.method1701(arg0 + arg2.anInt5893 / 2 - 1, arg2.anInt5949 / 2 + arg3 - 1, 3, 3, 16777215);
+				GlRaster.fillRect(arg0 + arg2.anInt5893 / 2 - 1, arg2.anInt5949 / 2 + arg3 - 1, 3, 3, 16777215);
 			} else {
-				method4205(arg0 + arg2.anInt5893 / 2 - 1, arg2.anInt5949 / 2 + arg3 - 1, 3, 3, 16777215);
+				SoftwareRaster.fillRect(arg0 + arg2.anInt5893 / 2 - 1, arg2.anInt5949 / 2 + arg3 - 1, 3, 3, 16777215);
 			}
 		} else if (GlRenderer.enabled) {
 			@Pc(64) Sprite local64 = arg2.method4729(false);
 			if (local64 != null) {
-				local64.method4506(arg0, arg3);
+				local64.renderTransparent(arg0, arg3);
 			}
 		} else {
-			Static34.method4210(arg0, arg3, arg2.anIntArray672, arg2.anIntArray657);
+			SoftwareRaster.method4210(arg0, arg3, arg2.anIntArray672, arg2.anIntArray657);
 		}
 		Static6.aBooleanArray24[arg1] = true;
 	}
 
-	@OriginalMember(owner = "client!tk", name = "a", descriptor = "(IIIII)V")
-	public static void method4204(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4) {
-		@Pc(3) int local3 = arg2 - arg0;
-		@Pc(7) int local7 = arg3 - arg1;
-		if (local7 == 0) {
-			if (local3 >= 0) {
-				Static34.method4214(arg0, arg1, local3 + 1, arg4);
-			} else {
-				Static34.method4214(arg0 + local3, arg1, 1 - local3, arg4);
-			}
-		} else if (local3 != 0) {
-			if (local3 + local7 < 0) {
-				arg0 += local3;
-				local3 = -local3;
-				arg1 += local7;
-				local7 = -local7;
-			}
-			if (local3 > local7) {
-				@Pc(78) int local78 = arg1 << 16;
-				@Pc(82) int local82 = local78 + 32768;
-				arg3 = local7 << 16;
-				@Pc(96) int local96 = (int) Math.floor((double) arg3 / (double) local3 + 0.5D);
-				@Pc(100) int local100 = local3 + arg0;
-				if (arg0 < Static6.anInt5185) {
-					local82 += local96 * (Static6.anInt5185 - arg0);
-					arg0 = Static6.anInt5185;
-				}
-				if (local100 >= Static6.anInt5186) {
-					local100 = Static6.anInt5186 - 1;
-				}
-				while (arg0 <= local100) {
-					@Pc(127) int local127 = local82 >> 16;
-					if (local127 >= Static6.anInt5183 && local127 < Static6.anInt5187) {
-						Static6.anIntArray561[arg0 + local127 * Static6.anInt5188] = arg4;
-					}
-					local82 += local96;
-					arg0++;
-				}
-			} else {
-				@Pc(152) int local152 = arg0 << 16;
-				@Pc(156) int local156 = local152 + 32768;
-				arg2 = local3 << 16;
-				@Pc(170) int local170 = (int) Math.floor((double) arg2 / (double) local7 + 0.5D);
-				@Pc(174) int local174 = local7 + arg1;
-				if (arg1 < Static6.anInt5183) {
-					local156 += local170 * (Static6.anInt5183 - arg1);
-					arg1 = Static6.anInt5183;
-				}
-				if (local174 >= Static6.anInt5187) {
-					local174 = Static6.anInt5187 - 1;
-				}
-				while (arg1 <= local174) {
-					@Pc(201) int local201 = local156 >> 16;
-					if (local201 >= Static6.anInt5185 && local201 < Static6.anInt5186) {
-						Static6.anIntArray561[local201 + arg1 * Static6.anInt5188] = arg4;
-					}
-					local156 += local170;
-					arg1++;
-				}
-			}
-		} else if (local7 >= 0) {
-			Static34.method4212(arg0, arg1, local7 + 1, arg4);
-		} else {
-			Static34.method4212(arg0, arg1 + local7, 1 - local7, arg4);
-		}
-	}
-
-	@OriginalMember(owner = "client!tk", name = "b", descriptor = "(IIIII)V")
-	public static void method4205(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4) {
-		if (arg0 < Static6.anInt5185) {
-			arg2 -= Static6.anInt5185 - arg0;
-			arg0 = Static6.anInt5185;
-		}
-		if (arg1 < Static6.anInt5183) {
-			arg3 -= Static6.anInt5183 - arg1;
-			arg1 = Static6.anInt5183;
-		}
-		if (arg0 + arg2 > Static6.anInt5186) {
-			arg2 = Static6.anInt5186 - arg0;
-		}
-		if (arg1 + arg3 > Static6.anInt5187) {
-			arg3 = Static6.anInt5187 - arg1;
-		}
-		@Pc(43) int local43 = Static6.anInt5188 - arg2;
-		@Pc(49) int local49 = arg0 + arg1 * Static6.anInt5188;
-		for (@Pc(52) int local52 = -arg3; local52 < 0; local52++) {
-			for (@Pc(57) int local57 = -arg2; local57 < 0; local57++) {
-				Static6.anIntArray561[local49++] = arg4;
-			}
-			local49 += local43;
-		}
-	}
-
-	@OriginalMember(owner = "client!tk", name = "c", descriptor = "(IIIII)V")
-	public static void method4206(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4) {
-		if (arg4 == 0) {
-			return;
-		}
-		if (arg4 == 256) {
-			Static34.method4208(arg0, arg1, arg2, arg3);
-			return;
-		}
-		if (arg2 < 0) {
-			arg2 = -arg2;
-		}
-		@Pc(20) int local20 = 256 - arg4;
-		@Pc(28) int local28 = (arg3 >> 16 & 0xFF) * arg4;
-		@Pc(36) int local36 = (arg3 >> 8 & 0xFF) * arg4;
-		@Pc(42) int local42 = (arg3 & 0xFF) * arg4;
-		@Pc(46) int local46 = arg1 - arg2;
-		if (local46 < Static6.anInt5183) {
-			local46 = Static6.anInt5183;
-		}
-		@Pc(57) int local57 = arg1 + arg2 + 1;
-		if (local57 > Static6.anInt5187) {
-			local57 = Static6.anInt5187;
-		}
-		@Pc(64) int local64 = local46;
-		@Pc(68) int local68 = arg2 * arg2;
-		@Pc(70) int local70 = 0;
-		@Pc(74) int local74 = arg1 - local46;
-		@Pc(78) int local78 = local74 * local74;
-		@Pc(82) int local82 = local78 - local74;
-		if (arg1 > local57) {
-			arg1 = local57;
-		}
-		while (local64 < arg1) {
-			while (local82 <= local68 || local78 <= local68) {
-				local78 += local70 + local70;
-				local82 += local70++ + local70;
-			}
-			@Pc(116) int local116 = arg0 + 1 - local70;
-			if (local116 < Static6.anInt5185) {
-				local116 = Static6.anInt5185;
-			}
-			@Pc(125) int local125 = arg0 + local70;
-			if (local125 > Static6.anInt5186) {
-				local125 = Static6.anInt5186;
-			}
-			@Pc(136) int local136 = local116 + local64 * Static6.anInt5188;
-			for (@Pc(138) int local138 = local116; local138 < local125; local138++) {
-				@Pc(151) int local151 = (Static6.anIntArray561[local136] >> 16 & 0xFF) * local20;
-				@Pc(161) int local161 = (Static6.anIntArray561[local136] >> 8 & 0xFF) * local20;
-				@Pc(169) int local169 = (Static6.anIntArray561[local136] & 0xFF) * local20;
-				@Pc(191) int local191 = (local28 + local151 >> 8 << 16) + (local36 + local161 >> 8 << 8) + (local42 + local169 >> 8);
-				Static6.anIntArray561[local136++] = local191;
-			}
-			local64++;
-			local78 -= local74-- + local74;
-			local82 -= local74 + local74;
-		}
-		@Pc(215) int local215 = arg2;
-		@Pc(218) int local218 = -local74;
-		@Pc(224) int local224 = local218 * local218 + local68;
-		@Pc(228) int local228 = local224 - arg2;
-		@Pc(232) int local232 = local224 - local218;
-		while (local64 < local57) {
-			while (local232 > local68 && local228 > local68) {
-				local232 -= local215-- + local215;
-				local228 -= local215 + local215;
-			}
-			@Pc(259) int local259 = arg0 - local215;
-			if (local259 < Static6.anInt5185) {
-				local259 = Static6.anInt5185;
-			}
-			@Pc(268) int local268 = arg0 + local215;
-			if (local268 > Static6.anInt5186 - 1) {
-				local268 = Static6.anInt5186 - 1;
-			}
-			@Pc(283) int local283 = local259 + local64 * Static6.anInt5188;
-			for (@Pc(285) int local285 = local259; local285 <= local268; local285++) {
-				@Pc(298) int local298 = (Static6.anIntArray561[local283] >> 16 & 0xFF) * local20;
-				@Pc(308) int local308 = (Static6.anIntArray561[local283] >> 8 & 0xFF) * local20;
-				@Pc(316) int local316 = (Static6.anIntArray561[local283] & 0xFF) * local20;
-				@Pc(338) int local338 = (local28 + local298 >> 8 << 16) + (local36 + local308 >> 8 << 8) + (local42 + local316 >> 8);
-				Static6.anIntArray561[local283++] = local338;
-			}
-			local64++;
-			local232 += local218 + local218;
-			local228 += local218++ + local218;
-		}
-	}
 }

@@ -268,9 +268,9 @@ public final class Static11 {
 		@Pc(75) int local75 = arg3 * local57 + arg4 * local45 >> 16;
 		@Pc(86) int local86 = local57 * arg4 - arg3 * local45 >> 16;
 		if (GlRenderer.enabled) {
-			((GlSprite) arg5).method4517(arg1.anInt5893 / 2 + arg0 + local75 - arg5.anInt5602 / 2, arg1.anInt5949 / 2 + arg2 - arg5.anInt5612 / 2 - local86, (GlSprite) arg1.method4729(false));
+			((GlSprite) arg5).renderTransparentMasked(arg1.anInt5893 / 2 + arg0 + local75 - arg5.innerWidth / 2, arg1.anInt5949 / 2 + arg2 - arg5.innerHeight / 2 - local86, (GlSprite) arg1.method4729(false));
 		} else {
-			((SoftwareSprite) arg5).method2171(arg0 + arg1.anInt5893 / 2 + local75 - arg5.anInt5602 / 2, arg1.anInt5949 / 2 + arg2 - arg5.anInt5612 / 2 - local86, arg1.anIntArray672, arg1.anIntArray657);
+			((SoftwareSprite) arg5).renderTransparentMasked(arg0 + arg1.anInt5893 / 2 + local75 - arg5.innerWidth / 2, arg1.anInt5949 / 2 + arg2 - arg5.innerHeight / 2 - local86, arg1.anIntArray672, arg1.anIntArray657);
 		}
 	}
 

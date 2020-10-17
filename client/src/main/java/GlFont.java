@@ -63,7 +63,7 @@ public final class GlFont extends Font {
 	@OriginalMember(owner = "client!dh", name = "a", descriptor = "(IIIIIIZ)V")
 	@Override
 	protected final void method2253(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5) {
-		if (Static3.aClass4_Sub3_Sub14_Sub2_1 == null) {
+		if (GlRaster.mask == null) {
 			GlRenderer.method1590();
 			@Pc(226) GL gl = GlRenderer.gl;
 			GlRenderer.setTextureId(this.textureId);
@@ -82,16 +82,16 @@ public final class GlFont extends Font {
 		@Pc(51) float local51 = local32 + (float) this.anIntArray251[arg0] / (float) this.anInt1023;
 		@Pc(63) float local63 = local39 + (float) this.anIntArray246[arg0] / (float) this.anInt1023;
 		GlRenderer.setTextureId(this.textureId);
-		@Pc(68) GlSprite local68 = Static3.aClass4_Sub3_Sub14_Sub2_1;
+		@Pc(68) GlSprite local68 = GlRaster.mask;
 		gl.glActiveTexture(GL.GL_TEXTURE1);
 		gl.glEnable(GL.GL_TEXTURE_2D);
 		gl.glBindTexture(GL.GL_TEXTURE_2D, local68.textureId);
 		gl.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_COMBINE_RGB, GL.GL_REPLACE);
 		gl.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_SRC0_RGB, GL.GL_PREVIOUS);
-		@Pc(98) float local98 = (float) (arg1 - Static3.anInt2150) / (float) local68.anInt5617;
-		@Pc(107) float local107 = (float) (arg2 - Static3.anInt2152) / (float) local68.anInt5620;
-		@Pc(118) float local118 = (float) (arg1 + arg3 - Static3.anInt2150) / (float) local68.anInt5617;
-		@Pc(129) float local129 = (float) (arg2 + arg4 - Static3.anInt2152) / (float) local68.anInt5620;
+		@Pc(98) float local98 = (float) (arg1 - GlRaster.clipX) / (float) local68.powerOfTwoWidth;
+		@Pc(107) float local107 = (float) (arg2 - GlRaster.clipY) / (float) local68.powerOfTwoHeight;
+		@Pc(118) float local118 = (float) (arg1 + arg3 - GlRaster.clipX) / (float) local68.powerOfTwoWidth;
+		@Pc(129) float local129 = (float) (arg2 + arg4 - GlRaster.clipY) / (float) local68.powerOfTwoHeight;
 		gl.glBegin(GL.GL_TRIANGLE_FAN);
 		gl.glMultiTexCoord2f(GL.GL_TEXTURE1, local118, local107);
 		gl.glTexCoord2f(local51, local39);

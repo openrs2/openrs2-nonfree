@@ -100,8 +100,8 @@ public final class Class105 {
 		Static22.method2297();
 		Static22.method2305();
 		@Pc(3) GL local3 = GlRenderer.gl;
-		Static18.method1686(Static4.anIntArray256);
-		Static18.method1698();
+		GlRaster.getClip(Static4.anIntArray256);
+		GlRaster.resetClip();
 		local3.glClearColor((float) (this.anInt2859 >> 16 & 0xFF) / 255.0F, (float) (this.anInt2859 >> 8 & 0xFF) / 255.0F, (float) (this.anInt2859 & 0xFF) / 255.0F, 0.0F);
 		local3.glClear(GL.GL_DEPTH_BUFFER_BIT | GL.GL_COLOR_BUFFER_BIT);
 		@Pc(39) int local39 = 0;
@@ -194,7 +194,7 @@ public final class Class105 {
 		Static9.method209();
 		GlRenderer.setTextureId(this.anInt2864);
 		local3.glCopyTexImage2D(GL.GL_TEXTURE_2D, GL.GL_POINTS, GL.GL_RGBA, 0, 0, this.anInt2861, this.anInt2861, GL.GL_POINTS);
-		Static18.method1695(Static4.anIntArray256);
+		GlRaster.setClip(Static4.anIntArray256);
 	}
 
 	@OriginalMember(owner = "client!kg", name = "b", descriptor = "(Lclient!kg;)Z")
@@ -204,8 +204,8 @@ public final class Class105 {
 			return false;
 		}
 		@Pc(11) GL local11 = GlRenderer.gl;
-		Static18.method1686(Static4.anIntArray256);
-		Static18.method1698();
+		GlRaster.getClip(Static4.anIntArray256);
+		GlRaster.resetClip();
 		local11.glClearColor(0.0F, 0.0F, 0.0F, 0.0F);
 		local11.glClear(GL.GL_DEPTH_BUFFER_BIT | GL.GL_COLOR_BUFFER_BIT);
 		@Pc(25) int local25 = 0;
@@ -256,7 +256,7 @@ public final class Class105 {
 		Static9.method209();
 		GlRenderer.setTextureId(this.anInt2864);
 		local11.glCopyTexImage2D(GL.GL_TEXTURE_2D, GL.GL_POINTS, GL.GL_RGBA, 0, 0, this.anInt2861, this.anInt2861, GL.GL_POINTS);
-		Static18.method1695(Static4.anIntArray256);
+		GlRaster.setClip(Static4.anIntArray256);
 		return true;
 	}
 
@@ -269,29 +269,29 @@ public final class Class105 {
 		@Pc(15) int local15 = 0;
 		@Pc(17) int local17 = 0;
 		@Pc(19) int local19 = 0;
-		@Pc(23) int local23 = Static6.anInt5188 - local2;
-		if (local5 > Static6.anInt5187) {
-			local5 -= local5 - Static6.anInt5187;
+		@Pc(23) int local23 = SoftwareRaster.width - local2;
+		if (local5 > SoftwareRaster.clipHeight) {
+			local5 -= local5 - SoftwareRaster.clipHeight;
 		}
-		if (Static6.anInt5183 > 0) {
-			@Pc(37) int local37 = Static6.anInt5183;
+		if (SoftwareRaster.clipY > 0) {
+			@Pc(37) int local37 = SoftwareRaster.clipY;
 			local5 -= local37;
-			local19 = local37 * Static6.anInt5188;
+			local19 = local37 * SoftwareRaster.width;
 			local17 = local13 * local37;
 		}
-		if (local2 > Static6.anInt5186) {
-			@Pc(60) int local60 = local2 - Static6.anInt5186;
+		if (local2 > SoftwareRaster.clipWidth) {
+			@Pc(60) int local60 = local2 - SoftwareRaster.clipWidth;
 			local2 -= local60;
 			local23 += local60;
 		}
-		if (Static6.anInt5185 > 0) {
-			@Pc(73) int local73 = Static6.anInt5185;
+		if (SoftwareRaster.clipX > 0) {
+			@Pc(73) int local73 = SoftwareRaster.clipX;
 			local2 -= local73;
 			local19 += local73;
 			local15 = local9 * local73;
 			local23 += local73;
 		}
-		this.method2307(Static6.anIntArray561, this.anInt2859, local15, local17, local19, local23, local2, local5, local9, local13);
+		this.method2307(SoftwareRaster.pixels, this.anInt2859, local15, local17, local19, local23, local2, local5, local9, local13);
 	}
 
 	@OriginalMember(owner = "client!kg", name = "a", descriptor = "(IIIIII)V")
@@ -446,7 +446,7 @@ public final class Class105 {
 		local27 += (arg3 - this.anInt2856) / 2;
 		local33 += (arg2 - this.anInt2856) / 2;
 		if (local27 < arg3 && local27 + this.anInt2856 > 0 && local33 < arg2 && local33 + this.anInt2856 > 0 && this.method2298(arg6)) {
-			this.aClass4_Sub3_Sub14_Sub1_5.method4507(local33 + arg0, local27 + arg1, this.anInt2856, this.anInt2856);
+			this.aClass4_Sub3_Sub14_Sub1_5.renderResizedTransparent(local33 + arg0, local27 + arg1, this.anInt2856, this.anInt2856);
 		}
 	}
 
@@ -455,10 +455,10 @@ public final class Class105 {
 		Static22.method2296();
 		Static22.method2295();
 		this.aClass4_Sub3_Sub14_Sub1_5 = new SoftwareAlphaSprite(this.anInt2861, this.anInt2861);
-		Static34.method4223(Static4.anIntArray256);
+		SoftwareRaster.getClip(Static4.anIntArray256);
 		this.aClass4_Sub3_Sub14_Sub1_5.makeTarget();
 		Static23.method2561();
-		Static33.method4205(0, 0, this.anInt2861, this.anInt2861, 0);
+		SoftwareRaster.fillRect(0, 0, this.anInt2861, this.anInt2861, 0);
 		@Pc(26) int local26 = 0;
 		@Pc(28) int local28 = 0;
 		@Pc(30) int local30 = 256;
@@ -500,9 +500,9 @@ public final class Class105 {
 			local172.method2911(0, 0, 0, 0, 0, 0, local240);
 		}
 		if (this.anInt2859 == 0) {
-			for (@Pc(260) int local260 = 0; local260 < Static6.anIntArray561.length; local260++) {
-				if (Static6.anIntArray561[local260] != 0) {
-					@Pc(269) int[] local269 = Static6.anIntArray561;
+			for (@Pc(260) int local260 = 0; local260 < SoftwareRaster.pixels.length; local260++) {
+				if (SoftwareRaster.pixels[local260] != 0) {
+					@Pc(269) int[] local269 = SoftwareRaster.pixels;
 					local269[local260] |= -16777216;
 				}
 			}
@@ -511,7 +511,7 @@ public final class Class105 {
 			this.method2291();
 		}
 		client.frameBuffer.makeTarget();
-		Static34.method4226(Static4.anIntArray256);
+		SoftwareRaster.setClip(Static4.anIntArray256);
 		Static23.method2561();
 	}
 
@@ -522,32 +522,32 @@ public final class Class105 {
 		@Pc(17) int local17 = local15;
 		@Pc(21) int local21 = 8388608 / local15;
 		@Pc(25) int local25 = 8388608 / local15;
-		@Pc(31) int local31 = local6 + local6 * Static6.anInt5188;
-		@Pc(35) int local35 = Static6.anInt5188 - local15;
+		@Pc(31) int local31 = local6 + local6 * SoftwareRaster.width;
+		@Pc(35) int local35 = SoftwareRaster.width - local15;
 		@Pc(37) int local37 = 0;
 		@Pc(39) int local39 = 0;
-		if (local6 + local15 > Static6.anInt5187) {
-			local17 = local15 + Static6.anInt5187 - local6 - local15;
+		if (local6 + local15 > SoftwareRaster.clipHeight) {
+			local17 = local15 + SoftwareRaster.clipHeight - local6 - local15;
 		}
-		if (local6 < Static6.anInt5183) {
-			@Pc(59) int local59 = Static6.anInt5183 - local6;
+		if (local6 < SoftwareRaster.clipY) {
+			@Pc(59) int local59 = SoftwareRaster.clipY - local6;
 			local17 -= local59;
-			local31 += local59 * Static6.anInt5188;
+			local31 += local59 * SoftwareRaster.width;
 			local39 = local25 * local59;
 		}
-		if (local6 + local15 > Static6.anInt5186) {
-			@Pc(86) int local86 = local6 + local15 - Static6.anInt5186;
+		if (local6 + local15 > SoftwareRaster.clipWidth) {
+			@Pc(86) int local86 = local6 + local15 - SoftwareRaster.clipWidth;
 			local15 -= local86;
 			local35 += local86;
 		}
-		if (local6 < Static6.anInt5185) {
-			@Pc(101) int local101 = Static6.anInt5185 - local6;
+		if (local6 < SoftwareRaster.clipX) {
+			@Pc(101) int local101 = SoftwareRaster.clipX - local6;
 			local15 -= local101;
 			local31 += local101;
 			local37 = local21 * local101;
 			local35 += local101;
 		}
-		this.method2288(Static6.anIntArray561, this.anInt2859, local37, local39, local31, local35, local15, local17, local21, local25);
+		this.method2288(SoftwareRaster.pixels, this.anInt2859, local37, local39, local31, local35, local15, local17, local21, local25);
 	}
 
 	@OriginalMember(owner = "client!kg", name = "f", descriptor = "(Lclient!kg;)V")
@@ -557,10 +557,10 @@ public final class Class105 {
 			return;
 		}
 		this.aClass4_Sub3_Sub14_Sub1_5 = new SoftwareSprite(this.anInt2861, this.anInt2861);
-		Static34.method4223(Static4.anIntArray256);
+		SoftwareRaster.getClip(Static4.anIntArray256);
 		this.aClass4_Sub3_Sub14_Sub1_5.makeTarget();
 		Static23.method2561();
-		Static33.method4205(0, 0, this.anInt2861, this.anInt2861, 0);
+		SoftwareRaster.fillRect(0, 0, this.anInt2861, this.anInt2861, 0);
 		@Pc(33) int local33 = 0;
 		@Pc(35) int local35 = 0;
 		@Pc(37) int local37 = 256;
@@ -601,7 +601,7 @@ public final class Class105 {
 			local167.method2911(0, 0, 0, -local186, -local193, 0, (local179 << 9) / this.anInt2861);
 		}
 		client.frameBuffer.makeTarget();
-		Static34.method4226(Static4.anIntArray256);
+		SoftwareRaster.setClip(Static4.anIntArray256);
 		Static23.method2561();
 	}
 

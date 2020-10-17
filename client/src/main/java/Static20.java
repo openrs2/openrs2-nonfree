@@ -235,35 +235,35 @@ public final class Static20 {
 	@OriginalMember(owner = "client!ii", name = "a", descriptor = "([IIIIIIIIIZ)V")
 	public static void method2409(@OriginalArg(0) int[] arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) int arg8, @OriginalArg(9) boolean arg9) {
 		@Pc(1) int local1 = arg1;
-		if (arg1 >= Static6.anInt5186) {
+		if (arg1 >= SoftwareRaster.clipWidth) {
 			return;
 		}
-		if (arg1 < Static6.anInt5185) {
-			local1 = Static6.anInt5185;
+		if (arg1 < SoftwareRaster.clipX) {
+			local1 = SoftwareRaster.clipX;
 		}
 		@Pc(14) int local14 = arg1 + arg5;
-		if (local14 <= Static6.anInt5185) {
+		if (local14 <= SoftwareRaster.clipX) {
 			return;
 		}
-		if (local14 > Static6.anInt5186) {
-			local14 = Static6.anInt5186;
+		if (local14 > SoftwareRaster.clipWidth) {
+			local14 = SoftwareRaster.clipWidth;
 		}
 		@Pc(25) int local25 = arg2;
-		if (arg2 >= Static6.anInt5187) {
+		if (arg2 >= SoftwareRaster.clipHeight) {
 			return;
 		}
-		if (arg2 < Static6.anInt5183) {
-			local25 = Static6.anInt5183;
+		if (arg2 < SoftwareRaster.clipY) {
+			local25 = SoftwareRaster.clipY;
 		}
 		@Pc(38) int local38 = arg2 + arg6;
-		if (local38 <= Static6.anInt5183) {
+		if (local38 <= SoftwareRaster.clipY) {
 			return;
 		}
-		if (local38 > Static6.anInt5187) {
-			local38 = Static6.anInt5187;
+		if (local38 > SoftwareRaster.clipHeight) {
+			local38 = SoftwareRaster.clipHeight;
 		}
-		@Pc(53) int local53 = local25 * Static6.anInt5188 + local1;
-		@Pc(59) int local59 = Static6.anInt5188 + local1 - local14;
+		@Pc(53) int local53 = local25 * SoftwareRaster.width + local1;
+		@Pc(59) int local59 = SoftwareRaster.width + local1 - local14;
 		@Pc(63) int local63 = local1 - arg1;
 		@Pc(67) int local67 = local14 - arg1;
 		@Pc(71) int local71 = local25 - arg2;
@@ -736,13 +736,13 @@ public final class Static20 {
 	}
 
 	@OriginalMember(owner = "client!ik", name = "a", descriptor = "(III)V")
-	public static void method1916(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1) {
+	public static void method1916(@OriginalArg(1) int y, @OriginalArg(2) int x) {
 		if (Static2.anInt1943 > 0) {
 			Static24.method2702(Static2.anInt1943);
 			Static2.anInt1943 = 0;
 		}
 		@Pc(15) int local15 = 0;
-		@Pc(23) int local23 = Static6.anInt5188 * arg0;
+		@Pc(23) int local23 = SoftwareRaster.width * y;
 		@Pc(27) int local27 = 0;
 		for (@Pc(29) int local29 = 1; local29 < 255; local29++) {
 			@Pc(49) int local49 = (256 - local29) * Static4.anIntArray314[local29] / 256;
@@ -751,7 +751,7 @@ public final class Static20 {
 			}
 			local15 += local49;
 			for (@Pc(61) int local61 = local49; local61 < 128; local61++) {
-				@Pc(74) int local74 = Static6.anIntArray561[arg1 + local23++];
+				@Pc(74) int local74 = SoftwareRaster.pixels[x + local23++];
 				@Pc(79) int local79 = Static2.anIntArray100[local15++];
 				if (local79 == 0) {
 					Static4.aClass4_Sub3_Sub14_Sub1_4.pixels[local27++] = local74;
@@ -769,14 +769,14 @@ public final class Static20 {
 				}
 			}
 			for (@Pc(160) int local160 = 0; local160 < local49; local160++) {
-				Static4.aClass4_Sub3_Sub14_Sub1_4.pixels[local27++] = Static6.anIntArray561[arg1 + local23++];
+				Static4.aClass4_Sub3_Sub14_Sub1_4.pixels[local27++] = SoftwareRaster.pixels[x + local23++];
 			}
-			local23 += Static6.anInt5188 - 128;
+			local23 += SoftwareRaster.width - 128;
 		}
 		if (GlRenderer.enabled) {
-			Static18.method1697(Static4.aClass4_Sub3_Sub14_Sub1_4.pixels, arg1, arg0, Static4.aClass4_Sub3_Sub14_Sub1_4.width, Static4.aClass4_Sub3_Sub14_Sub1_4.height);
+			GlRaster.drawPixels(Static4.aClass4_Sub3_Sub14_Sub1_4.pixels, x, y, Static4.aClass4_Sub3_Sub14_Sub1_4.width, Static4.aClass4_Sub3_Sub14_Sub1_4.height);
 		} else {
-			Static4.aClass4_Sub3_Sub14_Sub1_4.method4510(arg1, arg0);
+			Static4.aClass4_Sub3_Sub14_Sub1_4.render(x, y);
 		}
 	}
 
@@ -827,21 +827,21 @@ public final class Static20 {
 			WorldMap.load();
 		}
 		if (GlRenderer.enabled) {
-			Static18.method1693(arg2, arg1, arg2 + arg3, arg0 + arg1);
+			GlRaster.setClip(arg2, arg1, arg2 + arg3, arg0 + arg1);
 		} else {
-			Static34.method4209(arg2, arg1, arg3 + arg2, arg1 + arg0);
+			SoftwareRaster.setClip(arg2, arg1, arg3 + arg2, arg1 + arg0);
 		}
 		if (WorldMap.loadPercentage < 100) {
 			@Pc(47) int local47 = arg3 / 2 + arg2;
 			@Pc(59) int local59 = arg1 + arg0 / 2 - 20 - 18;
 			if (GlRenderer.enabled) {
-				Static18.method1701(arg2, arg1, arg3, arg0, 0);
-				Static18.method1690(local47 - 152, local59, 304, 34, 9179409);
-				Static18.method1701(local47 - 150, local59 + 2, WorldMap.loadPercentage * 3, 30, 9179409);
+				GlRaster.fillRect(arg2, arg1, arg3, arg0, 0);
+				GlRaster.drawRect(local47 - 152, local59, 304, 34, 9179409);
+				GlRaster.fillRect(local47 - 150, local59 + 2, WorldMap.loadPercentage * 3, 30, 9179409);
 			} else {
-				Static33.method4205(arg2, arg1, arg3, arg0, 0);
-				Static34.method4222(local47 - 152, local59, 304, 34, 9179409);
-				Static33.method4205(local47 - 150, local59 + 2, WorldMap.loadPercentage * 3, 30, 9179409);
+				SoftwareRaster.fillRect(arg2, arg1, arg3, arg0, 0);
+				SoftwareRaster.drawRect(local47 - 152, local59, 304, 34, 9179409);
+				SoftwareRaster.fillRect(local47 - 150, local59 + 2, WorldMap.loadPercentage * 3, 30, 9179409);
 			}
 			Static5.aClass4_Sub3_Sub5_3.method2271(LocalisedText.LOADINGDOTDOTDOT, local47, local59 + 20, 16777215, -1);
 			return;
@@ -859,14 +859,14 @@ public final class Static20 {
 				Static3.aClass4_Sub3_Sub14_Sub1_2 = null;
 				Static3.aClass4_Sub3_Sub14_Sub1_2 = new SoftwareSprite(arg3, arg0);
 			}
-			Static34.method4224(Static3.aClass4_Sub3_Sub14_Sub1_2.pixels, arg3, arg0);
+			SoftwareRaster.setPixels(Static3.aClass4_Sub3_Sub14_Sub1_2.pixels, arg3, arg0);
 			Static19.method2401(local169, local177, local190, local198, 0, 0, arg3, arg0 + 1);
 			method2403();
 			@Pc(268) LinkedList local268 = Static19.method2397();
 			Static9.method193(local268, arg2, arg1);
 			Static3.aClass4_Sub3_Sub14_Sub1_2.method2169();
-			Static18.method1697(Static3.aClass4_Sub3_Sub14_Sub1_2.pixels, arg2, arg1, arg3, arg0);
-			Static6.anIntArray561 = null;
+			GlRaster.drawPixels(Static3.aClass4_Sub3_Sub14_Sub1_2.pixels, arg2, arg1, arg3, arg0);
+			SoftwareRaster.pixels = null;
 		} else {
 			Static19.method2401(local169, local177, local190, local198, arg2, arg1, arg3 + arg2, arg0 + arg1 + 1);
 			method2403();

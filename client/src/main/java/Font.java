@@ -261,16 +261,16 @@ public abstract class Font extends SecondaryNode {
 					@Pc(318) int local318 = this.anIntArray250[local171];
 					if (Static3.anInt2829 != -1) {
 						if (GlRenderer.enabled) {
-							Static18.method1699(arg1, arg2 + (int) ((double) this.anInt2820 * 0.7D), local318, Static3.anInt2829);
+							GlRaster.drawHorizontalLine(arg1, arg2 + (int) ((double) this.anInt2820 * 0.7D), local318, Static3.anInt2829);
 						} else {
-							Static34.method4214(arg1, arg2 + (int) ((double) this.anInt2820 * 0.7D), local318, Static3.anInt2829);
+							SoftwareRaster.drawHorizontalLine(arg1, arg2 + (int) ((double) this.anInt2820 * 0.7D), local318, Static3.anInt2829);
 						}
 					}
 					if (Static3.anInt2830 != -1) {
 						if (GlRenderer.enabled) {
-							Static18.method1699(arg1, arg2 + this.anInt2820 + 1, local318, Static3.anInt2830);
+							GlRaster.drawHorizontalLine(arg1, arg2 + this.anInt2820 + 1, local318, Static3.anInt2830);
 						} else {
-							Static34.method4214(arg1, arg2 + this.anInt2820 + 1, local318, Static3.anInt2830);
+							SoftwareRaster.drawHorizontalLine(arg1, arg2 + this.anInt2820 + 1, local318, Static3.anInt2830);
 						}
 					}
 					arg1 += local318;
@@ -577,16 +577,16 @@ public abstract class Font extends SecondaryNode {
 					@Pc(382) int local382 = this.anIntArray250[local200];
 					if (Static3.anInt2829 != -1) {
 						if (GlRenderer.enabled) {
-							Static18.method1699(arg1, arg2 + (int) ((double) this.anInt2820 * 0.7D), local382, Static3.anInt2829);
+							GlRaster.drawHorizontalLine(arg1, arg2 + (int) ((double) this.anInt2820 * 0.7D), local382, Static3.anInt2829);
 						} else {
-							Static34.method4214(arg1, arg2 + (int) ((double) this.anInt2820 * 0.7D), local382, Static3.anInt2829);
+							SoftwareRaster.drawHorizontalLine(arg1, arg2 + (int) ((double) this.anInt2820 * 0.7D), local382, Static3.anInt2829);
 						}
 					}
 					if (Static3.anInt2830 != -1) {
 						if (GlRenderer.enabled) {
-							Static18.method1699(arg1, arg2 + this.anInt2820, local382, Static3.anInt2830);
+							GlRaster.drawHorizontalLine(arg1, arg2 + this.anInt2820, local382, Static3.anInt2830);
 						} else {
-							Static34.method4214(arg1, arg2 + this.anInt2820, local382, Static3.anInt2830);
+							SoftwareRaster.drawHorizontalLine(arg1, arg2 + this.anInt2820, local382, Static3.anInt2830);
 						}
 					}
 					arg1 += local382;

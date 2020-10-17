@@ -62,13 +62,13 @@ public final class Class47 {
 		this.method1029(arg4);
 		arg6 = arg6 + arg0 & 0x7FF;
 		if (this.anInt1249 == -1) {
-			Static33.method4205(arg1, arg2, arg3, arg4, 0);
+			SoftwareRaster.fillRect(arg1, arg2, arg3, arg4, 0);
 		} else {
 			if (this.aClass4_Sub3_Sub14_Sub1_1 == null) {
 				this.aClass4_Sub3_Sub14_Sub1_1 = Static4.anInterface4_1.method452(this.anInt1249, false, ColorUtils.brightness, this.anInt1250);
 			}
 			if (!Static4.anInterface4_1.method443(this.anInt1249)) {
-				Static33.method4205(arg1, arg2, arg3, arg4, 0);
+				SoftwareRaster.fillRect(arg1, arg2, arg3, arg4, 0);
 			}
 			if (this.aClass4_Sub3_Sub14_Sub1_1 != null) {
 				@Pc(47) int local47 = arg5 * arg4 / -512;
@@ -86,7 +86,7 @@ public final class Class47 {
 				}
 				for (@Pc(93) int local93 = local59 - arg4; local93 < arg3; local93 += arg4) {
 					for (@Pc(100) int local100 = local47 - arg4; local100 < arg4; local100 += arg4) {
-						this.aClass4_Sub3_Sub14_Sub1_1.method4507(local93 + arg1, local100 + arg2, arg4, arg4);
+						this.aClass4_Sub3_Sub14_Sub1_1.renderResizedTransparent(local93 + arg1, local100 + arg2, arg4, arg4);
 					}
 				}
 			}

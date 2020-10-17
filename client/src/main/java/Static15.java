@@ -817,13 +817,13 @@ public final class Static15 {
 		@Pc(11) int local11 = Static6.anInt4440;
 		@Pc(19) int local19 = Static3.anInt2394;
 		if (GlRenderer.enabled) {
-			Static18.method1701(local3, local9, local11, local19, 6116423);
-			Static18.method1701(local3 + 1, local9 + 1, local11 - 2, 16, 0);
-			Static18.method1690(local3 + 1, local9 + 18, local11 - 2, local19 - 19, 0);
+			GlRaster.fillRect(local3, local9, local11, local19, 6116423);
+			GlRaster.fillRect(local3 + 1, local9 + 1, local11 - 2, 16, 0);
+			GlRaster.drawRect(local3 + 1, local9 + 18, local11 - 2, local19 - 19, 0);
 		} else {
-			Static33.method4205(local3, local9, local11, local19, 6116423);
-			Static33.method4205(local3 + 1, local9 + 1, local11 - 2, 16, 0);
-			Static34.method4222(local3 + 1, local9 + 18, local11 - 2, local19 - 19, 0);
+			SoftwareRaster.fillRect(local3, local9, local11, local19, 6116423);
+			SoftwareRaster.fillRect(local3 + 1, local9 + 1, local11 - 2, 16, 0);
+			SoftwareRaster.drawRect(local3 + 1, local9 + 18, local11 - 2, local19 - 19, 0);
 		}
 		Static5.aClass4_Sub3_Sub5_3.method2259(LocalisedText.CHOOSE_OPTION, local3 + 3, local9 + 14, 6116423, -1);
 		@Pc(100) int local100 = Mouse.x;
