@@ -24,7 +24,7 @@ public final class Static20 {
 		if (local32.sprite != -1) {
 			@Pc(42) IndexedSprite local42 = local32.method1811(false, true);
 			if (local42 != null) {
-				if (arg0.anInt1766 - (local42.anInt3408 + 1 >> 1) <= Static3.anInt2970 && arg0.anInt1766 + (local42.anInt3408 + 1 >> 1) >= Static3.anInt2969 && arg0.anInt1764 - (local42.anInt3413 + 1 >> 1) <= Static3.anInt2971 && arg0.anInt1764 + (local42.anInt3413 + 1 >> 1) >= Static3.anInt2968) {
+				if (arg0.anInt1766 - (local42.width + 1 >> 1) <= Static3.anInt2970 && arg0.anInt1766 + (local42.width + 1 >> 1) >= Static3.anInt2969 && arg0.anInt1764 - (local42.height + 1 >> 1) <= Static3.anInt2971 && arg0.anInt1764 + (local42.height + 1 >> 1) >= Static3.anInt2968) {
 					arg0.aBoolean106 = false;
 				} else {
 					arg0.aBoolean106 = true;
@@ -780,11 +780,6 @@ public final class Static20 {
 		}
 	}
 
-	@OriginalMember(owner = "client!ik", name = "a", descriptor = "(IIBLclient!fh;)Lclient!uj;")
-	public static Sprite method1917(@OriginalArg(0) int arg0, @OriginalArg(3) Js5 arg1) {
-		return Static9.method197(arg1, arg0, 0) ? Static14.method1063() : null;
-	}
-
 	@OriginalMember(owner = "client!il", name = "a", descriptor = "(IBI)Ljava/lang/String;")
 	public static String method1921(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1) {
 		@Pc(8) int local8 = arg0 - arg1;
@@ -843,7 +838,7 @@ public final class Static20 {
 				SoftwareRaster.drawRect(local47 - 152, local59, 304, 34, 9179409);
 				SoftwareRaster.fillRect(local47 - 150, local59 + 2, WorldMap.loadPercentage * 3, 30, 9179409);
 			}
-			Static5.aClass4_Sub3_Sub5_3.method2271(LocalisedText.LOADINGDOTDOTDOT, local47, local59 + 20, 16777215, -1);
+			Fonts.b12Full.method2271(LocalisedText.LOADINGDOTDOTDOT, local47, local59 + 20, 16777215, -1);
 			return;
 		}
 		Static7.anInt5680 = (int) ((float) (arg0 * 2) / Static3.aFloat68);
@@ -886,14 +881,14 @@ public final class Static20 {
 		@Pc(310) int local310 = arg3 + arg2 - 5;
 		@Pc(312) int local312 = 16776960;
 		@Pc(318) int local318 = arg1 + arg0 - 8;
-		Static5.aClass4_Sub3_Sub5_2.method2275("Fps:" + GameShell.framesPerSecond, local310, local318, 16776960, -1);
+		Fonts.p12Full.method2275("Fps:" + GameShell.framesPerSecond, local310, local318, 16776960, -1);
 		@Pc(334) Runtime local334 = Runtime.getRuntime();
 		local318 -= 15;
 		@Pc(344) int local344 = (int) ((local334.totalMemory() - local334.freeMemory()) / 1024L);
 		if (local344 > 65536) {
 			local312 = 16711680;
 		}
-		Static5.aClass4_Sub3_Sub5_2.method2275("Mem:" + local344 + "k", local310, local318, local312, -1);
+		Fonts.p12Full.method2275("Mem:" + local344 + "k", local310, local318, local312, -1);
 		@Pc(368) int local368 = local318 - 15;
 	}
 

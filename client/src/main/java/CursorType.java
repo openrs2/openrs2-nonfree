@@ -42,7 +42,7 @@ public final class CursorType {
 		if (sprite != null) {
 			return sprite;
 		}
-		@Pc(30) SoftwareSprite newSprite = Static31.method3691(CursorTypeList.spritesArchive, this.spriteId);
+		@Pc(30) SoftwareSprite newSprite = SpriteLoader.loadSoftwareAlphaSprite(CursorTypeList.spritesArchive, this.spriteId);
 		if (newSprite != null) {
 			CursorTypeList.sprites.put(this.spriteId, newSprite);
 		}

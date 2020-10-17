@@ -6,30 +6,30 @@ import org.openrs2.deob.annotation.OriginalMember;
 public abstract class IndexedSprite {
 
 	@OriginalMember(owner = "client!ma", name = "a", descriptor = "I")
-	public int anInt3404;
+	public int xOffset;
 
 	@OriginalMember(owner = "client!ma", name = "b", descriptor = "I")
-	public int anInt3405;
+	public int yOffset;
 
 	@OriginalMember(owner = "client!ma", name = "g", descriptor = "I")
-	public int anInt3408;
+	public int width;
 
 	@OriginalMember(owner = "client!ma", name = "i", descriptor = "I")
-	public int anInt3410;
+	public int innerHeight;
 
 	@OriginalMember(owner = "client!ma", name = "k", descriptor = "I")
-	public int anInt3412;
+	public int innerWidth;
 
 	@OriginalMember(owner = "client!ma", name = "l", descriptor = "I")
-	public int anInt3413;
+	public int height;
 
 	@OriginalMember(owner = "client!ma", name = "<init>", descriptor = "()V")
 	protected IndexedSprite() {
 	}
 
 	@OriginalMember(owner = "client!ma", name = "a", descriptor = "(II)V")
-	public abstract void method2815(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1);
+	public abstract void renderTransparent(@OriginalArg(0) int x, @OriginalArg(1) int y);
 
 	@OriginalMember(owner = "client!ma", name = "a", descriptor = "(III)V")
-	public abstract void method2816(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2);
+	public abstract void renderAlpha(@OriginalArg(0) int x, @OriginalArg(1) int y, @OriginalArg(2) int alpha);
 }

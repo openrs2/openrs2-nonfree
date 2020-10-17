@@ -4,26 +4,11 @@ import org.openrs2.deob.annotation.OriginalMember;
 
 public final class Static2 {
 
-	@OriginalMember(owner = "client!dc", name = "z", descriptor = "I")
-	public static int anInt914;
-
-	@OriginalMember(owner = "client!df", name = "d", descriptor = "Lclient!ke;")
-	public static SoftwareFont aClass4_Sub3_Sub5_Sub2_2;
-
-	@OriginalMember(owner = "client!dg", name = "p", descriptor = "[Lclient!uj;")
-	public static Sprite[] aClass4_Sub3_Sub14Array9;
-
-	@OriginalMember(owner = "client!dg", name = "q", descriptor = "[Lclient!uj;")
-	public static Sprite[] aClass4_Sub3_Sub14Array10;
-
 	@OriginalMember(owner = "client!dg", name = "r", descriptor = "I")
 	public static int anInt2247;
 
 	@OriginalMember(owner = "client!di", name = "q", descriptor = "Lclient!dd;")
 	public static Class4_Sub4_Sub1 aClass4_Sub4_Sub1_1;
-
-	@OriginalMember(owner = "client!dn", name = "T", descriptor = "[Lclient!uj;")
-	public static Sprite[] aClass4_Sub3_Sub14Array6;
 
 	@OriginalMember(owner = "client!dn", name = "ab", descriptor = "Lclient!wg;")
 	public static MapArea aClass4_Sub3_Sub22_1;
@@ -33,12 +18,6 @@ public final class Static2 {
 
 	@OriginalMember(owner = "client!ea", name = "E", descriptor = "Ljava/awt/Image;")
 	public static Image anImage2;
-
-	@OriginalMember(owner = "client!ea", name = "H", descriptor = "[I")
-	public static int[] anIntArray85;
-
-	@OriginalMember(owner = "client!eg", name = "s", descriptor = "[Lclient!uj;")
-	public static Sprite[] aClass4_Sub3_Sub14Array7;
 
 	@OriginalMember(owner = "client!eg", name = "H", descriptor = "I")
 	public static int anInt1244;
@@ -69,12 +48,6 @@ public final class Static2 {
 
 	@OriginalMember(owner = "client!fa", name = "U", descriptor = "I")
 	public static int anInt1626;
-
-	@OriginalMember(owner = "client!fa", name = "ab", descriptor = "I")
-	public static int anInt1632;
-
-	@OriginalMember(owner = "client!fb", name = "a", descriptor = "[Lclient!fe;")
-	public static SoftwareIndexedSprite[] aClass56_Sub1Array2;
 
 	@OriginalMember(owner = "client!fb", name = "b", descriptor = "I")
 	public static int anInt1636;
@@ -123,9 +96,6 @@ public final class Static2 {
 
 	@OriginalMember(owner = "client!fo", name = "n", descriptor = "Lclient!fh;")
 	public static Js5 aClass58_42;
-
-	@OriginalMember(owner = "client!fo", name = "o", descriptor = "I")
-	public static int anInt1975;
 
 	@OriginalMember(owner = "client!fo", name = "p", descriptor = "I")
 	public static int anInt1976;

@@ -56,7 +56,7 @@ public final class Static28 {
 		if (element.hover && type.hoverTextColor != -1) {
 			textColor = type.hoverTextColor;
 		}
-		@Pc(141) int local141 = Static1.aClass4_Sub3_Sub5_1.method2279(type.text, null, Static5.aStringArray24);
+		@Pc(141) int local141 = Fonts.p11Full.method2279(type.text, null, Static5.aStringArray24);
 		@Pc(144) int local144 = element.anInt1764;
 		@Pc(164) int local164;
 		if (arg4) {
@@ -127,9 +127,9 @@ public final class Static28 {
 			Static8.method66(Static6.anInt4440, Static3.anInt2394, Static5.anInt3890, Static4.anInt3455);
 		} else {
 			Static8.method66(Static6.anInt4440, Static3.anInt2394, Static5.anInt3890, Static4.anInt3455);
-			@Pc(75) int local75 = Static5.aClass4_Sub3_Sub5_3.method2252(LocalisedText.CHOOSE_OPTION);
+			@Pc(75) int local75 = Fonts.b12Full.method2252(LocalisedText.CHOOSE_OPTION);
 			for (@Pc(77) int local77 = 0; local77 < Static7.anInt5634; local77++) {
-				@Pc(86) int local86 = Static5.aClass4_Sub3_Sub5_3.method2252(Static26.method2992(local77));
+				@Pc(86) int local86 = Fonts.b12Full.method2252(Static26.method2992(local77));
 				if (local86 > local75) {
 					local75 = local86;
 				}
@@ -474,10 +474,10 @@ public final class Static28 {
 	@OriginalMember(owner = "client!pa", name = "a", descriptor = "(IIIIZ)V")
 	public static void method3327(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) {
 		if (Static7.anInt6008 == 1) {
-			Static6.aClass4_Sub3_Sub14Array12[Static2.anInt1629 / 100].renderTransparent(Static6.anInt5177 - 8, Static4.anInt3275 - 8);
+			Sprites.cross[Static2.anInt1629 / 100].renderTransparent(Static6.anInt5177 - 8, Static4.anInt3275 - 8);
 		}
 		if (Static7.anInt6008 == 2) {
-			Static6.aClass4_Sub3_Sub14Array12[Static2.anInt1629 / 100 + 4].renderTransparent(Static6.anInt5177 - 8, Static4.anInt3275 - 8);
+			Sprites.cross[Static2.anInt1629 / 100 + 4].renderTransparent(Static6.anInt5177 - 8, Static4.anInt3275 - 8);
 		}
 		Static15.method1480();
 	}
@@ -485,10 +485,10 @@ public final class Static28 {
 	@OriginalMember(owner = "client!pa", name = "a", descriptor = "(ZLclient!gl;Z)V")
 	public static void method3331(@OriginalArg(0) boolean arg0, @OriginalArg(1) Font arg1) {
 		if (GlRenderer.enabled || arg0) {
-			@Pc(10) int local10 = GameShell.canvasHeight;
-			@Pc(16) int local16 = local10 * 956 / 503;
-			Static6.aClass4_Sub3_Sub14_7.renderResizedTransparent((GameShell.canvasWidth - local16) / 2, 0, local16, local10);
-			Static6.aClass56_1.method2815(GameShell.canvasWidth / 2 - Static6.aClass56_1.anInt3408 / 2, 18);
+			@Pc(10) int height = GameShell.canvasHeight;
+			@Pc(16) int width = height * 956 / 503;
+			TitleScreen.titleBg.renderResizedTransparent((GameShell.canvasWidth - width) / 2, 0, width, height);
+			TitleScreen.logo.renderTransparent(GameShell.canvasWidth / 2 - TitleScreen.logo.width / 2, 18);
 		}
 		arg1.method2271(client.game == 1 ? LocalisedText.GAME1_LOADING : LocalisedText.GAME0_LOADING, GameShell.canvasWidth / 2, GameShell.canvasHeight / 2 - 26, 16777215, -1);
 		@Pc(70) int local70 = GameShell.canvasHeight / 2 - 18;

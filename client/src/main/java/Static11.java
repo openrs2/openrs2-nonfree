@@ -16,11 +16,6 @@ public final class Static11 {
 		}
 	}
 
-	@OriginalMember(owner = "client!ca", name = "a", descriptor = "(Lclient!fh;III)[Lclient!ma;")
-	public static IndexedSprite[] method495(@OriginalArg(0) Js5 arg0, @OriginalArg(1) int arg1) {
-		return Static9.method197(arg0, arg1, 0) ? Static23.method2456() : null;
-	}
-
 	@OriginalMember(owner = "client!cb", name = "a", descriptor = "(III)Z")
 	public static boolean method508(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
 		@Pc(7) int local7 = Terrain.anIntArrayArrayArray3[arg0][arg1][arg2];
@@ -56,7 +51,7 @@ public final class Static11 {
 		Static14.method1211();
 		Static16.method1556();
 		Static10.method384(false);
-		Static22.method2411();
+		TitleScreen.clear();
 		Static20.method1929();
 		for (@Pc(42) int local42 = 0; local42 < 2048; local42++) {
 			@Pc(51) Player local51 = PlayerList.players[local42];
@@ -69,15 +64,15 @@ public final class Static11 {
 			Static10.method300(Preferences.hdr);
 			Static26.method2969();
 		}
-		Static8.method113(client.js5Archive8, client.js5Archive13);
-		Static35.method667(client.js5Archive8);
+		Fonts.load(client.js5Archive8, client.js5Archive13);
+		Sprites.load(client.js5Archive8);
 		Static6.aClass4_Sub3_Sub14_5 = null;
 		Static6.aClass4_Sub3_Sub14_8 = null;
 		Static2.aClass4_Sub3_Sub14_2 = null;
 		Static7.aClass4_Sub3_Sub14_9 = null;
 		Static1.aClass4_Sub3_Sub14_1 = null;
 		if (Static4.anInt3304 == 5) {
-			Static24.method2675(client.js5Archive8);
+			TitleScreen.load(client.js5Archive8);
 		}
 		if (Static4.anInt3304 == 10) {
 			method605(false);
@@ -428,54 +423,6 @@ public final class Static11 {
 		}
 	}
 
-	@OriginalMember(owner = "client!cf", name = "a", descriptor = "(Lclient!fh;I)I")
-	public static int method558(@OriginalArg(0) Js5 arg0) {
-		@Pc(5) int local5 = 0;
-		if (arg0.isFileReady(Static3.anInt2120)) {
-			local5++;
-		}
-		if (arg0.isFileReady(Static6.anInt4363)) {
-			local5++;
-		}
-		if (arg0.isFileReady(Static5.anInt4281)) {
-			local5++;
-		}
-		if (arg0.isFileReady(Static2.anInt1975)) {
-			local5++;
-		}
-		if (arg0.isFileReady(Static5.anInt4207)) {
-			local5++;
-		}
-		if (arg0.isFileReady(Static7.anInt5332)) {
-			local5++;
-		}
-		if (arg0.isFileReady(Static7.anInt5230)) {
-			local5++;
-		}
-		if (arg0.isFileReady(Static6.anInt3786)) {
-			local5++;
-		}
-		if (arg0.isFileReady(Static3.anInt2296)) {
-			local5++;
-		}
-		if (arg0.isFileReady(Static5.anInt4163)) {
-			local5++;
-		}
-		if (arg0.isFileReady(Static3.anInt2449)) {
-			local5++;
-		}
-		if (arg0.isFileReady(Static2.anInt1632)) {
-			local5++;
-		}
-		if (arg0.isFileReady(Static1.anInt130)) {
-			local5++;
-		}
-		if (arg0.isFileReady(Static6.anInt4371)) {
-			local5++;
-		}
-		return local5;
-	}
-
 	@OriginalMember(owner = "client!cg", name = "a", descriptor = "(I)V")
 	public static void method559() {
 		client.instance.loadMiscNatives();
@@ -717,11 +664,6 @@ public final class Static11 {
 				}
 			}
 		}
-	}
-
-	@OriginalMember(owner = "client!ci", name = "a", descriptor = "(IILclient!fh;)Lclient!uj;")
-	public static Sprite method583(@OriginalArg(1) int arg0, @OriginalArg(2) Js5 arg1) {
-		return Static33.method4131(arg1, arg0) ? Static14.method1063() : null;
 	}
 
 	@OriginalMember(owner = "client!cj", name = "a", descriptor = "(ZI)V")

@@ -477,16 +477,6 @@ public final class Static26 {
 		Static25.method2927(arg0, -1, null, arg1, arg2);
 	}
 
-	@OriginalMember(owner = "client!ng", name = "e", descriptor = "(I)[Lclient!fe;")
-	public static SoftwareIndexedSprite[] method4358() {
-		@Pc(4) SoftwareIndexedSprite[] local4 = new SoftwareIndexedSprite[Static4.anInt2748];
-		for (@Pc(12) int local12 = 0; local12 < Static4.anInt2748; local12++) {
-			local4[local12] = new SoftwareIndexedSprite(Static1.anInt889, Static3.anInt2162, Static5.anIntArray402[local12], Static5.anIntArray391[local12], Static3.anIntArray185[local12], Static7.anIntArray643[local12], Static6.aByteArrayArray36[local12], Static2.anIntArray85);
-		}
-		Static37.method4670();
-		return local4;
-	}
-
 	@OriginalMember(owner = "client!ng", name = "a", descriptor = "(ZZ)V")
 	public static void method4359(@OriginalArg(0) boolean arg0) {
 		@Pc(10) int[] local10 = null;

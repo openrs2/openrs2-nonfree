@@ -63,24 +63,24 @@ public final class Static36 {
 					} else {
 						local290 = 300 - Static5.anInt4215 * 3;
 					}
-					SoftwareRaster.method4206(arg1.anInt1766, arg1.anInt1764, local224.anInt3408 / 2 + 7, 16776960, local290);
-					SoftwareRaster.method4206(arg1.anInt1766, arg1.anInt1764, local224.anInt3408 / 2 + 5, 16776960, local290);
-					SoftwareRaster.method4206(arg1.anInt1766, arg1.anInt1764, local224.anInt3408 / 2 + 3, 16776960, local290);
-					SoftwareRaster.method4206(arg1.anInt1766, arg1.anInt1764, local224.anInt3408 / 2 + 1, 16776960, local290);
-					SoftwareRaster.method4206(arg1.anInt1766, arg1.anInt1764, local224.anInt3408 / 2, 16776960, local290);
+					SoftwareRaster.method4206(arg1.anInt1766, arg1.anInt1764, local224.width / 2 + 7, 16776960, local290);
+					SoftwareRaster.method4206(arg1.anInt1766, arg1.anInt1764, local224.width / 2 + 5, 16776960, local290);
+					SoftwareRaster.method4206(arg1.anInt1766, arg1.anInt1764, local224.width / 2 + 3, 16776960, local290);
+					SoftwareRaster.method4206(arg1.anInt1766, arg1.anInt1764, local224.width / 2 + 1, 16776960, local290);
+					SoftwareRaster.method4206(arg1.anInt1766, arg1.anInt1764, local224.width / 2, 16776960, local290);
 				}
-				local224.method2815(arg1.anInt1766 - (local224.anInt3408 >> 1), arg1.anInt1764 - (local224.anInt3413 >> 1));
-				local222.anInt3461 = (local224.anInt3413 >> 1) + arg2 + arg1.anInt1764;
-				local222.anInt3457 = arg0 + arg1.anInt1766 - (local224.anInt3408 >> 1);
-				local222.anInt3462 = (local224.anInt3408 >> 1) + arg0 + arg1.anInt1766;
-				local222.anInt3459 = arg2 + arg1.anInt1764 - (local224.anInt3413 >> 1);
+				local224.renderTransparent(arg1.anInt1766 - (local224.width >> 1), arg1.anInt1764 - (local224.height >> 1));
+				local222.anInt3461 = (local224.height >> 1) + arg2 + arg1.anInt1764;
+				local222.anInt3457 = arg0 + arg1.anInt1766 - (local224.width >> 1);
+				local222.anInt3462 = (local224.width >> 1) + arg0 + arg1.anInt1766;
+				local222.anInt3459 = arg2 + arg1.anInt1764 - (local224.height >> 1);
 			}
 		}
 		if (arg3.text != null) {
 			if (local224 == null) {
 				Static28.method3244(arg1, arg0, 0, arg2, true, local222, arg3);
 			} else {
-				Static28.method3244(arg1, arg0, (local224.anInt3413 >> 1) + 5, arg2, false, local222, arg3);
+				Static28.method3244(arg1, arg0, (local224.height >> 1) + 5, arg2, false, local222, arg3);
 			}
 		}
 		if (local222.method2923(Mouse.x, Mouse.y) && arg3.ops != null) {

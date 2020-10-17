@@ -21,9 +21,6 @@ public final class Static4 {
 	@OriginalMember(owner = "client!jo", name = "C", descriptor = "I")
 	public static int anInt5826;
 
-	@OriginalMember(owner = "client!jo", name = "P", descriptor = "[[B")
-	public static byte[][] aByteArrayArray54;
-
 	@OriginalMember(owner = "client!jo", name = "Q", descriptor = "F")
 	public static float aFloat146;
 
@@ -32,9 +29,6 @@ public final class Static4 {
 
 	@OriginalMember(owner = "client!k", name = "d", descriptor = "I")
 	public static int anInt2741;
-
-	@OriginalMember(owner = "client!ka", name = "e", descriptor = "I")
-	public static int anInt2748;
 
 	@OriginalMember(owner = "client!ka", name = "g", descriptor = "Lclient!wf;")
 	public static Component aClass185_9;
@@ -137,9 +131,6 @@ public final class Static4 {
 
 	@OriginalMember(owner = "client!me", name = "b", descriptor = "[[[I")
 	public static int[][][] anIntArrayArrayArray9;
-
-	@OriginalMember(owner = "client!me", name = "c", descriptor = "I")
-	public static int anInt3309;
 
 	@OriginalMember(owner = "client!mf", name = "j", descriptor = "[I")
 	public static int[] underwaterMapGroupIds;

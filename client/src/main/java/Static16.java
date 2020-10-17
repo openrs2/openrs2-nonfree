@@ -299,22 +299,6 @@ public final class Static16 {
 		}
 	}
 
-	@OriginalMember(owner = "client!g", name = "a", descriptor = "(Lclient!fh;BII)[Lclient!fe;")
-	public static SoftwareIndexedSprite[] method1523(@OriginalArg(0) Js5 arg0, @OriginalArg(3) int arg1) {
-		return Static9.method197(arg0, arg1, 0) ? Static26.method4358() : null;
-	}
-
-	@OriginalMember(owner = "client!ga", name = "a", descriptor = "([BB)Lclient!ke;")
-	public static SoftwareFont method4658(@OriginalArg(0) byte[] arg0) {
-		if (arg0 == null) {
-			return null;
-		} else {
-			@Pc(24) SoftwareFont local24 = new SoftwareFont(arg0, Static5.anIntArray402, Static5.anIntArray391, Static3.anIntArray185, Static7.anIntArray643, Static6.aByteArrayArray36);
-			Static37.method4670();
-			return local24;
-		}
-	}
-
 	@OriginalMember(owner = "client!gb", name = "e", descriptor = "(I)Z")
 	public static boolean method1550() {
 		return Static5.anInt4357 == 0 ? Static1.aClass4_Sub6_Sub2_3.method2497() : true;
@@ -337,23 +321,23 @@ public final class Static16 {
 
 	@OriginalMember(owner = "client!gd", name = "a", descriptor = "(I)V")
 	public static void method1556() {
-		Static5.aClass56Array5 = null;
-		Static2.aClass4_Sub3_Sub5_Sub2_2 = null;
-		Static3.aClass56Array3 = null;
-		Static2.aClass4_Sub3_Sub14Array6 = null;
-		Static6.aClass4_Sub3_Sub14Array12 = null;
-		Static5.aClass4_Sub3_Sub5_2 = null;
-		Static6.aClass4_Sub3_Sub14Array11 = null;
-		Static1.aClass4_Sub3_Sub14Array1 = null;
-		Static5.aClass4_Sub3_Sub5_3 = null;
-		Static3.aClass4_Sub3_Sub14Array8 = null;
-		Static1.aClass4_Sub3_Sub5_1 = null;
-		Static6.aClass4_Sub3_Sub14_6 = null;
-		Static2.aClass4_Sub3_Sub14Array7 = null;
-		Static2.aClass4_Sub3_Sub14Array9 = null;
-		Static1.aClass4_Sub3_Sub14Array2 = null;
-		Static1.aClass4_Sub3_Sub14Array3 = null;
-		Static2.aClass4_Sub3_Sub14Array10 = null;
+		Sprites.scrollbar = null;
+		Fonts.p11FullSoftware = null;
+		Sprites.nameIcons = null;
+		Sprites.mapDots = null;
+		Sprites.cross = null;
+		Fonts.p12Full = null;
+		Sprites.hintHeadIcons = null;
+		Sprites.headIconsPrayer = null;
+		Fonts.b12Full = null;
+		Sprites.headIconsPk = null;
+		Fonts.p11Full = null;
+		Sprites.compass = null;
+		Sprites.hitBarDefault = null;
+		Sprites.hintMapEdge = null;
+		Sprites.mapFlag = null;
+		Sprites.hintMapMarkers = null;
+		Sprites.hitMarks = null;
 	}
 
 	@OriginalMember(owner = "client!gd", name = "b", descriptor = "(I)V")
@@ -380,11 +364,6 @@ public final class Static16 {
 			Static30.method3554(Static7.anInt5589, -1412584499, Static1.aClass185_2.anInt5967, Static4.aClass185Array3, GameShell.canvasHeight, GameShell.canvasWidth, 0, Static4.anInt3317, 0);
 			Static4.aClass185Array3 = null;
 		}
-	}
-
-	@OriginalMember(owner = "client!gf", name = "a", descriptor = "(I)I")
-	public static int method1565() {
-		return 6;
 	}
 
 	@OriginalMember(owner = "client!gg", name = "c", descriptor = "(I)V")

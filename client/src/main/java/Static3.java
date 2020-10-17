@@ -4,17 +4,11 @@ import org.openrs2.deob.annotation.OriginalMember;
 
 public final class Static3 {
 
-	@OriginalMember(owner = "client!gd", name = "g", descriptor = "[Lclient!uj;")
-	public static Sprite[] aClass4_Sub3_Sub14Array8;
-
 	@OriginalMember(owner = "client!gf", name = "c", descriptor = "[I")
 	public static int[] mapGroupIds;
 
 	@OriginalMember(owner = "client!gg", name = "q", descriptor = "Lclient!vn;")
 	public static SoftwareSprite aClass4_Sub3_Sub14_Sub1_2;
-
-	@OriginalMember(owner = "client!gg", name = "v", descriptor = "Z")
-	public static boolean aBoolean124;
 
 	@OriginalMember(owner = "client!gh", name = "a", descriptor = "Lclient!fh;")
 	public static Js5 aClass58_59;
@@ -46,14 +40,8 @@ public final class Static3 {
 	@OriginalMember(owner = "client!gm", name = "a", descriptor = "[I")
 	public static int[] anIntArray170;
 
-	@OriginalMember(owner = "client!gn", name = "D", descriptor = "I")
-	public static int anInt2120;
-
 	@OriginalMember(owner = "client!hc", name = "d", descriptor = "F")
 	public static float aFloat63;
-
-	@OriginalMember(owner = "client!he", name = "o", descriptor = "I")
-	public static int anInt2162;
 
 	@OriginalMember(owner = "client!he", name = "s", descriptor = "I")
 	public static int anInt2165;
@@ -88,9 +76,6 @@ public final class Static3 {
 	@OriginalMember(owner = "client!hi", name = "g", descriptor = "F")
 	public static float aFloat51;
 
-	@OriginalMember(owner = "client!hk", name = "S", descriptor = "[I")
-	public static int[] anIntArray185;
-
 	@OriginalMember(owner = "client!ho", name = "e", descriptor = "F")
 	public static float aFloat54;
 
@@ -99,9 +84,6 @@ public final class Static3 {
 
 	@OriginalMember(owner = "client!ho", name = "D", descriptor = "Lclient!ll;")
 	public static LinkedList aClass112_13;
-
-	@OriginalMember(owner = "client!ho", name = "U", descriptor = "I")
-	public static int anInt2296;
 
 	@OriginalMember(owner = "client!id", name = "e", descriptor = "[I")
 	public static int[] anIntArray196;
@@ -207,12 +189,6 @@ public final class Static3 {
 
 	@OriginalMember(owner = "client!il", name = "b", descriptor = "Lclient!ic;")
 	public static HashTable aClass84_9;
-
-	@OriginalMember(owner = "client!il", name = "e", descriptor = "I")
-	public static int anInt2449;
-
-	@OriginalMember(owner = "client!im", name = "k", descriptor = "[Lclient!ma;")
-	public static IndexedSprite[] aClass56Array3;
 
 	@OriginalMember(owner = "client!io", name = "E", descriptor = "I")
 	public static int anInt2496;

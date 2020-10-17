@@ -5,9 +5,6 @@ import org.openrs2.deob.annotation.OriginalMember;
 
 public final class Static5 {
 
-	@OriginalMember(owner = "client!nc", name = "i", descriptor = "[Lclient!ma;")
-	public static IndexedSprite[] aClass56Array5;
-
 	@OriginalMember(owner = "client!nd", name = "t", descriptor = "I")
 	public static int anInt3487;
 
@@ -41,9 +38,6 @@ public final class Static5 {
 	@OriginalMember(owner = "client!nh", name = "u", descriptor = "I")
 	public static int anInt3546;
 
-	@OriginalMember(owner = "client!nh", name = "W", descriptor = "[I")
-	public static int[] anIntArray391;
-
 	@OriginalMember(owner = "client!nh", name = "X", descriptor = "I")
 	public static int anInt3560;
 
@@ -59,9 +53,6 @@ public final class Static5 {
 	@OriginalMember(owner = "client!ob", name = "x", descriptor = "I")
 	public static int anInt5205;
 
-	@OriginalMember(owner = "client!oc", name = "p", descriptor = "[I")
-	public static int[] anIntArray402;
-
 	@OriginalMember(owner = "client!oc", name = "ab", descriptor = "Lclient!wf;")
 	public static Component aClass185_10;
 
@@ -70,9 +61,6 @@ public final class Static5 {
 
 	@OriginalMember(owner = "client!of", name = "W", descriptor = "I")
 	public static int anInt3815;
-
-	@OriginalMember(owner = "client!of", name = "Z", descriptor = "Lclient!gl;")
-	public static Font aClass4_Sub3_Sub5_2;
 
 	@OriginalMember(owner = "client!og", name = "kb", descriptor = "Lclient!ib;")
 	public static Class4_Sub3_Sub10 aClass4_Sub3_Sub10_6;
@@ -110,14 +98,8 @@ public final class Static5 {
 	@OriginalMember(owner = "client!ph", name = "X", descriptor = "Lclient!lo;")
 	public static Class4_Sub6_Sub3 aClass4_Sub6_Sub3_2;
 
-	@OriginalMember(owner = "client!ph", name = "db", descriptor = "Lclient!gl;")
-	public static Font aClass4_Sub3_Sub5_3;
-
 	@OriginalMember(owner = "client!pj", name = "a", descriptor = "Lclient!uj;")
 	public static Sprite aClass4_Sub3_Sub14_4;
-
-	@OriginalMember(owner = "client!pj", name = "c", descriptor = "I")
-	public static int anInt4163;
 
 	@OriginalMember(owner = "client!pj", name = "f", descriptor = "I")
 	public static int anInt4165;
@@ -127,9 +109,6 @@ public final class Static5 {
 
 	@OriginalMember(owner = "client!pk", name = "X", descriptor = "F")
 	public static float aFloat102;
-
-	@OriginalMember(owner = "client!pl", name = "q", descriptor = "I")
-	public static int anInt4207;
 
 	@OriginalMember(owner = "client!pn", name = "h", descriptor = "I")
 	public static int anInt4215;
@@ -149,14 +128,8 @@ public final class Static5 {
 	@OriginalMember(owner = "client!qc", name = "xb", descriptor = "[[I")
 	public static int[][] anIntArrayArray36;
 
-	@OriginalMember(owner = "client!qd", name = "I", descriptor = "I")
-	public static int anInt4281;
-
 	@OriginalMember(owner = "client!qe", name = "n", descriptor = "I")
 	public static int anInt4293;
-
-	@OriginalMember(owner = "client!qf", name = "k", descriptor = "[Z")
-	public static boolean[] aBooleanArray22;
 
 	@OriginalMember(owner = "client!qf", name = "l", descriptor = "I")
 	public static int anInt4302;

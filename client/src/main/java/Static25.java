@@ -94,11 +94,6 @@ public final class Static25 {
 		Static31.method3797(arg0, arg1, arg2, arg5, arg11, arg12, arg13, arg14);
 	}
 
-	@OriginalMember(owner = "client!mj", name = "a", descriptor = "(IIBLclient!fh;)[Lclient!vn;")
-	public static SoftwareSprite[] method2729(@OriginalArg(1) int arg0, @OriginalArg(3) Js5 arg1) {
-		return Static9.method197(arg1, arg0, 0) ? Static8.method103() : null;
-	}
-
 	@OriginalMember(owner = "client!ml", name = "a", descriptor = "([[III)I")
 	public static int method2762(@OriginalArg(0) int[][] arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
 		@Pc(3) int local3 = arg1 >> 7;
@@ -296,8 +291,8 @@ public final class Static25 {
 		@Pc(21) int local21 = Static6.anInt4440;
 		if (Static6.aClass4_Sub3_Sub14_5 == null || Static2.aClass4_Sub3_Sub14_2 == null) {
 			if (client.js5Archive8.isFileReady(Static1.anInt771) && client.js5Archive8.isFileReady(Static4.anInt3336)) {
-				Static6.aClass4_Sub3_Sub14_5 = Static31.method3691(client.js5Archive8, Static1.anInt771);
-				Static2.aClass4_Sub3_Sub14_2 = Static31.method3691(client.js5Archive8, Static4.anInt3336);
+				Static6.aClass4_Sub3_Sub14_5 = SpriteLoader.loadSoftwareAlphaSprite(client.js5Archive8, Static1.anInt771);
+				Static2.aClass4_Sub3_Sub14_2 = SpriteLoader.loadSoftwareAlphaSprite(client.js5Archive8, Static4.anInt3336);
 				if (GlRenderer.enabled) {
 					if (Static6.aClass4_Sub3_Sub14_5 instanceof SoftwareAlphaSprite) {
 						Static6.aClass4_Sub3_Sub14_5 = new GlAlphaSprite((SoftwareSprite) Static6.aClass4_Sub3_Sub14_5);
@@ -324,7 +319,7 @@ public final class Static25 {
 			Static2.aClass4_Sub3_Sub14_2.renderTransparent(local3, local5);
 			Static2.aClass4_Sub3_Sub14_2.renderHorizontalFlipTransparent(local21 + local3 - Static2.aClass4_Sub3_Sub14_2.width, local5);
 		}
-		Static5.aClass4_Sub3_Sub5_3.method2259(LocalisedText.CHOOSE_OPTION, local3 + 3, local5 + 14, Static1.anInt504, -1);
+		Fonts.b12Full.method2259(LocalisedText.CHOOSE_OPTION, local3 + 3, local5 + 14, Static1.anInt504, -1);
 		if (GlRenderer.enabled) {
 			GlRaster.fillRectAlpha(local3, local5 + 20, local21, local13 - 20, Static5.anInt4293, 256 - Static3.anInt2587);
 		} else {
@@ -343,9 +338,9 @@ public final class Static25 {
 			}
 		}
 		if ((Static7.aClass4_Sub3_Sub14_9 == null || Static6.aClass4_Sub3_Sub14_8 == null || Static1.aClass4_Sub3_Sub14_1 == null) && client.js5Archive8.isFileReady(Static1.anInt593) && client.js5Archive8.isFileReady(Static4.anInt2741) && client.js5Archive8.isFileReady(Static1.anInt881)) {
-			Static7.aClass4_Sub3_Sub14_9 = Static31.method3691(client.js5Archive8, Static1.anInt593);
-			Static6.aClass4_Sub3_Sub14_8 = Static31.method3691(client.js5Archive8, Static4.anInt2741);
-			Static1.aClass4_Sub3_Sub14_1 = Static31.method3691(client.js5Archive8, Static1.anInt881);
+			Static7.aClass4_Sub3_Sub14_9 = SpriteLoader.loadSoftwareAlphaSprite(client.js5Archive8, Static1.anInt593);
+			Static6.aClass4_Sub3_Sub14_8 = SpriteLoader.loadSoftwareAlphaSprite(client.js5Archive8, Static4.anInt2741);
+			Static1.aClass4_Sub3_Sub14_1 = SpriteLoader.loadSoftwareAlphaSprite(client.js5Archive8, Static1.anInt881);
 			if (GlRenderer.enabled) {
 				if (Static7.aClass4_Sub3_Sub14_9 instanceof SoftwareAlphaSprite) {
 					Static7.aClass4_Sub3_Sub14_9 = new GlAlphaSprite((SoftwareSprite) Static7.aClass4_Sub3_Sub14_9);
@@ -383,7 +378,7 @@ public final class Static25 {
 			if (local211 > local3 && local21 + local3 > local211 && local535 - 13 < local213 && local535 + 3 > local213) {
 				local537 = Static4.anInt2920;
 			}
-			Static5.aClass4_Sub3_Sub5_3.method2259(Static26.method2992(local518), local3 + 3, local535, local537, 0);
+			Fonts.b12Full.method2259(Static26.method2992(local518), local3 + 3, local535, local537, 0);
 		}
 		Static16.method1559(Static5.anInt3890, Static4.anInt3455, Static3.anInt2394, Static6.anInt4440);
 	}

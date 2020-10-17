@@ -39,11 +39,6 @@ public final class Static32 {
 		}
 	}
 
-	@OriginalMember(owner = "client!sa", name = "a", descriptor = "(ILclient!fh;I)Lclient!ma;")
-	public static IndexedSprite method3878(@OriginalArg(1) Js5 arg0, @OriginalArg(2) int arg1) {
-		return Static33.method4131(arg0, arg1) ? Static9.method204() : null;
-	}
-
 	@OriginalMember(owner = "client!sa", name = "a", descriptor = "(B)V")
 	public static void method3879() {
 		MaterialManager.setMaterial(0, 0);

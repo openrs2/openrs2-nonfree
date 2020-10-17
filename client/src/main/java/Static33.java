@@ -228,17 +228,6 @@ public final class Static33 {
 		return false;
 	}
 
-	@OriginalMember(owner = "client!td", name = "a", descriptor = "(Lclient!fh;II)Z")
-	public static boolean method4131(@OriginalArg(0) Js5 arg0, @OriginalArg(2) int arg1) {
-		@Pc(13) byte[] local13 = arg0.fetchFile(arg1);
-		if (local13 == null) {
-			return false;
-		} else {
-			Static29.method3542(local13);
-			return true;
-		}
-	}
-
 	@OriginalMember(owner = "client!te", name = "a", descriptor = "(Lclient!ua;IIII)V")
 	public static void method4152(@OriginalArg(0) NpcType arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3) {
 		if (Static7.anInt5634 >= 400) {
@@ -441,8 +430,8 @@ public final class Static33 {
 			width = locType.length;
 			length = locType.width;
 		}
-		@Pc(73) int local73 = sprite.anInt3412;
-		@Pc(76) int local76 = sprite.anInt3410;
+		@Pc(73) int local73 = sprite.innerWidth;
+		@Pc(76) int local76 = sprite.innerHeight;
 		if (msiType.aBoolean303) {
 			local73 = width * 4;
 			local76 = length * 4;
@@ -635,7 +624,7 @@ public final class Static33 {
 		}
 		Static31.method3733(false);
 		if (GlRenderer.enabled) {
-			Static2.aClass56_Sub1_2.method1309();
+			Static2.aClass56_Sub1_2.clear();
 			for (@Pc(492) int local492 = 0; local492 < 13; local492++) {
 				for (@Pc(499) int local499 = 0; local499 < 13; local499++) {
 					Static2.aClass103ArrayArray1[local492][local499].aBoolean197 = true;
@@ -765,11 +754,6 @@ public final class Static33 {
 		GameShell.resetTimer();
 	}
 
-	@OriginalMember(owner = "client!tj", name = "a", descriptor = "(IILclient!fh;I)Lclient!fe;")
-	public static SoftwareIndexedSprite method3003(@OriginalArg(2) Js5 arg0, @OriginalArg(3) int arg1) {
-		return Static9.method197(arg0, arg1, 0) ? Static27.method3187() : null;
-	}
-
 	@OriginalMember(owner = "client!tj", name = "e", descriptor = "(I)V")
 	public static void method3007() {
 		if (Static7.aBoolean401) {
@@ -832,7 +816,7 @@ public final class Static33 {
 					if (local347 != null) {
 						@Pc(362) int local362 = local329 * 4 + 2 - PlayerList.self.x / 32;
 						@Pc(374) int local374 = local334 * 4 + 2 - PlayerList.self.z / 32;
-						Static11.method525(arg0, arg2, arg3, local362, local374, Static2.aClass4_Sub3_Sub14Array6[0]);
+						Static11.method525(arg0, arg2, arg3, local362, local374, Sprites.mapDots[0]);
 					}
 				}
 			}
@@ -847,7 +831,7 @@ public final class Static33 {
 						@Pc(448) int local448 = local407.x / 32 - PlayerList.self.x / 32;
 						@Pc(459) int local459 = local407.z / 32 - PlayerList.self.z / 32;
 						if (local418.anInt5267 == -1) {
-							Static11.method525(arg0, arg2, arg3, local448, local459, Static2.aClass4_Sub3_Sub14Array6[1]);
+							Static11.method525(arg0, arg2, arg3, local448, local459, Sprites.mapDots[1]);
 						} else {
 							Static35.method4360(arg3, arg2, arg0, local418.anInt5267, local448, local459);
 						}
@@ -879,13 +863,13 @@ public final class Static33 {
 						local588 = true;
 					}
 					if (local522) {
-						Static11.method525(arg0, arg2, arg3, local520, local533, Static2.aClass4_Sub3_Sub14Array6[3]);
+						Static11.method525(arg0, arg2, arg3, local520, local533, Sprites.mapDots[3]);
 					} else if (local567) {
-						Static11.method525(arg0, arg2, arg3, local520, local533, Static2.aClass4_Sub3_Sub14Array6[5]);
+						Static11.method525(arg0, arg2, arg3, local520, local533, Sprites.mapDots[5]);
 					} else if (local588) {
-						Static11.method525(arg0, arg2, arg3, local520, local533, Static2.aClass4_Sub3_Sub14Array6[4]);
+						Static11.method525(arg0, arg2, arg3, local520, local533, Sprites.mapDots[4]);
 					} else {
-						Static11.method525(arg0, arg2, arg3, local520, local533, Static2.aClass4_Sub3_Sub14Array6[2]);
+						Static11.method525(arg0, arg2, arg3, local520, local533, Sprites.mapDots[2]);
 					}
 				}
 			}
@@ -923,7 +907,7 @@ public final class Static33 {
 			if (Static6.anInt4506 != 0) {
 				@Pc(895) int local895 = Static6.anInt4506 * 4 + PlayerList.self.getSize() * 2 + 2 - PlayerList.self.x / 32 - 2;
 				@Pc(917) int local917 = Static3.anInt2140 * 4 + PlayerList.self.getSize() * 2 + 2 - PlayerList.self.z / 32 - 2;
-				Static11.method525(arg0, arg2, arg3, local895, local917, Static1.aClass4_Sub3_Sub14Array2[Static3.aBoolean147 ? 1 : 0]);
+				Static11.method525(arg0, arg2, arg3, local895, local917, Sprites.mapFlag[Static3.aBoolean147 ? 1 : 0]);
 			}
 			if (GlRenderer.enabled) {
 				GlRaster.fillRect(arg0 + arg2.anInt5893 / 2 - 1, arg2.anInt5949 / 2 + arg3 - 1, 3, 3, 16777215);

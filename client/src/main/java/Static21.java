@@ -19,26 +19,6 @@ public final class Static21 {
 		}
 	}
 
-	@OriginalMember(owner = "client!jc", name = "f", descriptor = "(B)[Lclient!uj;")
-	public static Sprite[] method2000() {
-		@Pc(4) Sprite[] local4 = new Sprite[Static4.anInt2748];
-		for (@Pc(18) int local18 = 0; local18 < Static4.anInt2748; local18++) {
-			@Pc(29) byte[] local29 = Static6.aByteArrayArray36[local18];
-			@Pc(37) int local37 = Static3.anIntArray185[local18] * Static7.anIntArray643[local18];
-			@Pc(40) int[] local40 = new int[local37];
-			for (@Pc(42) int local42 = 0; local42 < local37; local42++) {
-				local40[local42] = Static2.anIntArray85[local29[local42] & 0xFF];
-			}
-			if (GlRenderer.enabled) {
-				local4[local18] = new GlSprite(Static1.anInt889, Static3.anInt2162, Static5.anIntArray402[local18], Static5.anIntArray391[local18], Static3.anIntArray185[local18], Static7.anIntArray643[local18], local40);
-			} else {
-				local4[local18] = new SoftwareSprite(Static1.anInt889, Static3.anInt2162, Static5.anIntArray402[local18], Static5.anIntArray391[local18], Static3.anIntArray185[local18], Static7.anIntArray643[local18], local40);
-			}
-		}
-		Static37.method4670();
-		return local4;
-	}
-
 	@OriginalMember(owner = "client!jc", name = "a", descriptor = "(Z)V")
 	public static void method2001() {
 		Protocol.outboundBuffer.writeOpcode(86);
@@ -46,19 +26,6 @@ public final class Static21 {
 		Protocol.outboundBuffer.writeShort(GameShell.canvasWidth);
 		Protocol.outboundBuffer.writeShort(GameShell.canvasHeight);
 		Protocol.outboundBuffer.writeByte(Static2.anInt1125);
-	}
-
-	@OriginalMember(owner = "client!jd", name = "a", descriptor = "(I)Lclient!vn;")
-	public static SoftwareSprite method2002() {
-		@Pc(9) byte[] local9 = Static6.aByteArrayArray36[0];
-		@Pc(28) int local28 = Static3.anIntArray185[0] * Static7.anIntArray643[0];
-		@Pc(31) int[] local31 = new int[local28];
-		for (@Pc(33) int local33 = 0; local33 < local28; local33++) {
-			local31[local33] = Static2.anIntArray85[local9[local33] & 0xFF];
-		}
-		@Pc(68) SoftwareSprite local68 = new SoftwareSprite(Static1.anInt889, Static3.anInt2162, Static5.anIntArray402[0], Static5.anIntArray391[0], Static3.anIntArray185[0], Static7.anIntArray643[0], local31);
-		Static37.method4670();
-		return local68;
 	}
 
 	@OriginalMember(owner = "client!jd", name = "a", descriptor = "(IIIIII)Z")
@@ -100,7 +67,7 @@ public final class Static21 {
 
 	@OriginalMember(owner = "client!jd", name = "a", descriptor = "(BLclient!fh;)V")
 	public static void method2005(@OriginalArg(1) Js5 arg0) {
-		Static2.aClass56_Sub1Array1 = Static38.method4790(arg0, Static4.anInt3250);
+		Static2.aClass56_Sub1Array1 = SpriteLoader.loadSoftwareIndexedSpritesAutoDetect(arg0, Static4.anInt3250);
 		Static3.anIntArray196 = new int[256];
 		for (@Pc(15) int local15 = 0; local15 < 3; local15++) {
 			@Pc(27) float local27 = (float) (Static7.anIntArray679[local15] >> 16 & 0xFF);
@@ -151,13 +118,13 @@ public final class Static21 {
 		}
 		@Pc(26) String local26 = Static35.method4328();
 		if (arg1 == null) {
-			@Pc(43) int local43 = Static5.aClass4_Sub3_Sub5_3.method2263(local26, arg0 + 4, arg2 + 15, Static5.aRandom1, Static2.anInt1976);
-			Static8.method66(local43 + Static5.aClass4_Sub3_Sub5_3.method2252(local26), 15, arg0 + 4, arg2);
+			@Pc(43) int local43 = Fonts.b12Full.method2263(local26, arg0 + 4, arg2 + 15, Static5.aRandom1, Static2.anInt1976);
+			Static8.method66(local43 + Fonts.b12Full.method2252(local26), 15, arg0 + 4, arg2);
 			return;
 		}
-		@Pc(62) Font local62 = arg1.method4734(Static3.aClass56Array3);
+		@Pc(62) Font local62 = arg1.method4734(Sprites.nameIcons);
 		if (local62 == null) {
-			local62 = Static5.aClass4_Sub3_Sub5_3;
+			local62 = Fonts.b12Full;
 		}
 		local62.method2269(local26, arg0, arg2, arg1.anInt5893, arg1.anInt5949, arg1.anInt5933, arg1.anInt5934, arg1.anInt5924, arg1.anInt5922, Static5.aRandom1, Static2.anInt1976, Static7.anIntArray600);
 		Static8.method66(Static7.anIntArray600[2], Static7.anIntArray600[3], Static7.anIntArray600[0], Static7.anIntArray600[1]);
@@ -455,39 +422,6 @@ public final class Static21 {
 			Static28.method3270(Static6.aClass185_14);
 			Static6.aClass185_14 = null;
 		}
-	}
-
-	@OriginalMember(owner = "client!jk", name = "c", descriptor = "(B)[Lclient!uj;")
-	public static Sprite[] method2064() {
-		@Pc(4) Sprite[] local4 = new Sprite[Static4.anInt2748];
-		for (@Pc(16) int local16 = 0; local16 < Static4.anInt2748; local16++) {
-			@Pc(27) int local27 = Static3.anIntArray185[local16] * Static7.anIntArray643[local16];
-			@Pc(31) byte[] local31 = Static6.aByteArrayArray36[local16];
-			if (Static5.aBooleanArray22[local16]) {
-				@Pc(112) byte[] local112 = Static4.aByteArrayArray54[local16];
-				@Pc(115) int[] local115 = new int[local27];
-				for (@Pc(117) int local117 = 0; local117 < local27; local117++) {
-					local115[local117] = Static2.anIntArray85[local31[local117] & 0xFF] | (local112[local117] & 0xFF) << 24;
-				}
-				if (GlRenderer.enabled) {
-					local4[local16] = new GlAlphaSprite(Static1.anInt889, Static3.anInt2162, Static5.anIntArray402[local16], Static5.anIntArray391[local16], Static3.anIntArray185[local16], Static7.anIntArray643[local16], local115);
-				} else {
-					local4[local16] = new SoftwareAlphaSprite(Static1.anInt889, Static3.anInt2162, Static5.anIntArray402[local16], Static5.anIntArray391[local16], Static3.anIntArray185[local16], Static7.anIntArray643[local16], local115);
-				}
-			} else {
-				@Pc(38) int[] local38 = new int[local27];
-				for (@Pc(40) int local40 = 0; local40 < local27; local40++) {
-					local38[local40] = Static2.anIntArray85[local31[local40] & 0xFF];
-				}
-				if (GlRenderer.enabled) {
-					local4[local16] = new GlSprite(Static1.anInt889, Static3.anInt2162, Static5.anIntArray402[local16], Static5.anIntArray391[local16], Static3.anIntArray185[local16], Static7.anIntArray643[local16], local38);
-				} else {
-					local4[local16] = new SoftwareSprite(Static1.anInt889, Static3.anInt2162, Static5.anIntArray402[local16], Static5.anIntArray391[local16], Static3.anIntArray185[local16], Static7.anIntArray643[local16], local38);
-				}
-			}
-		}
-		Static37.method4670();
-		return local4;
 	}
 
 	@OriginalMember(owner = "client!jl", name = "a", descriptor = "(II)V")

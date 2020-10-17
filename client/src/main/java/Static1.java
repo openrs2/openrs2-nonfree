@@ -25,14 +25,8 @@ public final class Static1 {
 	@OriginalMember(owner = "client!ak", name = "i", descriptor = "[[[B")
 	public static byte[][][] aByteArrayArrayArray2;
 
-	@OriginalMember(owner = "client!ak", name = "j", descriptor = "I")
-	public static int anInt130;
-
 	@OriginalMember(owner = "client!ak", name = "k", descriptor = "I")
 	public static int anInt131;
-
-	@OriginalMember(owner = "client!al", name = "S", descriptor = "[Lclient!uj;")
-	public static Sprite[] aClass4_Sub3_Sub14Array1;
 
 	@OriginalMember(owner = "client!al", name = "W", descriptor = "[[I")
 	public static int[][] anIntArrayArray2;
@@ -45,9 +39,6 @@ public final class Static1 {
 
 	@OriginalMember(owner = "client!am", name = "y", descriptor = "Lclient!cd;")
 	public static QuickChatPhrase aClass27_1;
-
-	@OriginalMember(owner = "client!am", name = "z", descriptor = "[Lclient!uj;")
-	public static Sprite[] aClass4_Sub3_Sub14Array2;
 
 	@OriginalMember(owner = "client!an", name = "g", descriptor = "Lclient!fh;")
 	public static Js5 aClass58_7;
@@ -118,9 +109,6 @@ public final class Static1 {
 	@OriginalMember(owner = "client!cb", name = "m", descriptor = "Lclient!ld;")
 	public static Class4_Sub6_Sub2 aClass4_Sub6_Sub2_2;
 
-	@OriginalMember(owner = "client!cc", name = "a", descriptor = "Lclient!gl;")
-	public static Font aClass4_Sub3_Sub5_1;
-
 	@OriginalMember(owner = "client!cd", name = "f", descriptor = "Lclient!om;")
 	public static SecondaryLinkedListIterator aClass130_1;
 
@@ -142,9 +130,6 @@ public final class Static1 {
 	@OriginalMember(owner = "client!cj", name = "I", descriptor = "I")
 	public static int anInt647;
 
-	@OriginalMember(owner = "client!ck", name = "fb", descriptor = "[Lclient!uj;")
-	public static Sprite[] aClass4_Sub3_Sub14Array3;
-
 	@OriginalMember(owner = "client!client", name = "U", descriptor = "I")
 	public static int anInt771;
 
@@ -165,9 +150,6 @@ public final class Static1 {
 
 	@OriginalMember(owner = "client!db", name = "e", descriptor = "[I")
 	public static int[] anIntArray63;
-
-	@OriginalMember(owner = "client!db", name = "n", descriptor = "I")
-	public static int anInt889;
 
 	@OriginalMember(owner = "client!db", name = "o", descriptor = "I")
 	public static int anInt890;
@@ -300,9 +282,6 @@ public final class Static1 {
 
 	@OriginalMember(owner = "client!bi", name = "s", descriptor = "I")
 	public static int anInt315 = 0;
-
-	@OriginalMember(owner = "client!bi", name = "B", descriptor = "I")
-	public static int anInt322 = -1;
 
 	@OriginalMember(owner = "client!bj", name = "b", descriptor = "Z")
 	public static boolean aBoolean21 = false;

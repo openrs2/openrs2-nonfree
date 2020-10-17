@@ -491,7 +491,7 @@ public final class Static13 {
 			local131 = local68;
 		}
 		if (arg1 && (local9.stackable == 1 || arg2 != 1) && arg2 != -1) {
-			ObjTypeList.aClass4_Sub3_Sub5_Sub2_1.method2259(method892(arg2), 0, 9, 16776960, 1);
+			ObjTypeList.font.method2259(method892(arg2), 0, 9, 16776960, 1);
 		}
 		SoftwareRaster.setPixels(local116, local123, local118);
 		SoftwareRaster.setClip(local121);

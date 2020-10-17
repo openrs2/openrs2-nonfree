@@ -46,11 +46,11 @@ public final class MsiType {
 			return sprite;
 		}
 		MsiTypeList.spritesArchive.isFileReady(this.spriteId);
-		@Pc(44) SoftwareIndexedSprite newSprite = Static33.method3003(MsiTypeList.spritesArchive, this.spriteId);
+		@Pc(44) SoftwareIndexedSprite newSprite = SpriteLoader.loadSoftwareIndexedSprite(MsiTypeList.spritesArchive, this.spriteId);
 		if (newSprite != null) {
 			newSprite.method1311(MsiTypeList.anInt4867, MsiTypeList.anInt97, MsiTypeList.anInt3963);
-			newSprite.anInt3412 = newSprite.anInt3408;
-			newSprite.anInt3410 = newSprite.anInt3413;
+			newSprite.innerWidth = newSprite.width;
+			newSprite.innerHeight = newSprite.height;
 			if (arg0) {
 				newSprite.method1312();
 			}

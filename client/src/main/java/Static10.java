@@ -164,21 +164,6 @@ public final class Static10 {
 		return (arg0 & 0xFF80) + local7;
 	}
 
-	@OriginalMember(owner = "client!bi", name = "a", descriptor = "(I[B)Lclient!gl;")
-	public static Font method304(@OriginalArg(1) byte[] arg0) {
-		if (arg0 == null) {
-			return null;
-		}
-		@Pc(27) Font local27;
-		if (GlRenderer.enabled) {
-			local27 = new GlFont(arg0, Static5.anIntArray402, Static5.anIntArray391, Static3.anIntArray185, Static7.anIntArray643, Static6.aByteArrayArray36);
-		} else {
-			local27 = new SoftwareFont(arg0, Static5.anIntArray402, Static5.anIntArray391, Static3.anIntArray185, Static7.anIntArray643, Static6.aByteArrayArray36);
-		}
-		Static37.method4670();
-		return local27;
-	}
-
 	@OriginalMember(owner = "client!bi", name = "b", descriptor = "(I)Lclient!wg;")
 	public static MapArea method305() {
 		return WorldMap.currentMap;
@@ -268,9 +253,9 @@ public final class Static10 {
 			Static8.method66(Static6.anInt4440, Static3.anInt2394, Static5.anInt3890, Static4.anInt3455);
 		} else {
 			Static8.method66(Static6.anInt4440, Static3.anInt2394, Static5.anInt3890, Static4.anInt3455);
-			@Pc(93) int local93 = Static5.aClass4_Sub3_Sub5_3.method2252(LocalisedText.CHOOSE_OPTION);
+			@Pc(93) int local93 = Fonts.b12Full.method2252(LocalisedText.CHOOSE_OPTION);
 			for (@Pc(95) int local95 = 0; local95 < Static7.anInt5634; local95++) {
-				@Pc(108) int local108 = Static5.aClass4_Sub3_Sub5_3.method2252(Static26.method2992(local95));
+				@Pc(108) int local108 = Fonts.b12Full.method2252(Static26.method2992(local95));
 				if (local93 < local108) {
 					local93 = local108;
 				}
@@ -454,11 +439,6 @@ public final class Static10 {
 		}
 	}
 
-	@OriginalMember(owner = "client!bo", name = "a", descriptor = "(Z)I")
-	public static int method393() {
-		return 2;
-	}
-
 	@OriginalMember(owner = "client!bo", name = "a", descriptor = "(BLclient!p;)I")
 	public static int method395(@OriginalArg(1) Npc arg0) {
 		@Pc(4) NpcType local4 = arg0.type;
@@ -507,34 +487,10 @@ public final class Static10 {
 			if (local24 != null && local24.anInt2561 == 2) {
 				Static29.method3482(arg2 >> 1, local24.anInt2567 * 2, arg3, (local24.anInt2558 - Static5.originX << 7) + local24.anInt2564, local24.anInt2568 + (local24.anInt2565 - Static7.originZ << 7), arg1, arg4 >> 1);
 				if (Static7.anInt5584 > -1 && client.loop % 20 < 10) {
-					Static6.aClass4_Sub3_Sub14Array11[local24.anInt2559].renderTransparent(arg5 + Static7.anInt5584 - 12, Static4.anInt3290 + arg0 - 28);
+					Sprites.hintHeadIcons[local24.anInt2559].renderTransparent(arg5 + Static7.anInt5584 - 12, Static4.anInt3290 + arg0 - 28);
 				}
 			}
 		}
-	}
-
-	@OriginalMember(owner = "client!c", name = "a", descriptor = "(Lclient!fh;Lclient!fh;I)I")
-	public static int method464(@OriginalArg(0) Js5 arg0, @OriginalArg(1) Js5 arg1) {
-		@Pc(1) int local1 = 0;
-		if (arg1.isFileReady(Static2.anInt914)) {
-			local1++;
-		}
-		if (arg1.isFileReady(Static7.anInt6040)) {
-			local1++;
-		}
-		if (arg1.isFileReady(Static4.anInt3309)) {
-			local1++;
-		}
-		if (arg0.isFileReady(Static2.anInt914)) {
-			local1++;
-		}
-		if (arg0.isFileReady(Static7.anInt6040)) {
-			local1++;
-		}
-		if (arg0.isFileReady(Static4.anInt3309)) {
-			local1++;
-		}
-		return local1;
 	}
 
 	@OriginalMember(owner = "client!c", name = "a", descriptor = "(Lclient!wf;I)V")

@@ -231,7 +231,7 @@ public final class Static30 {
 								}
 								@Pc(787) int local787 = local128 + local38.anInt5893;
 								@Pc(791) int local791 = local122 + 15;
-								Static5.aClass4_Sub3_Sub5_2.method2275("Fps:" + GameShell.framesPerSecond, local787, local791, 16776960, -1);
+								Fonts.p12Full.method2275("Fps:" + GameShell.framesPerSecond, local787, local791, 16776960, -1);
 								@Pc(807) Runtime local807 = Runtime.getRuntime();
 								local791 += 15;
 								@Pc(817) int local817 = (int) ((local807.totalMemory() - local807.freeMemory()) / 1024L);
@@ -239,7 +239,7 @@ public final class Static30 {
 								if (local817 > 65536) {
 									local819 = 16711680;
 								}
-								Static5.aClass4_Sub3_Sub5_2.method2275("Mem:" + local817 + "k", local787, local791, local819, -1);
+								Fonts.p12Full.method2275("Mem:" + local817 + "k", local787, local791, local819, -1);
 								@Pc(841) int local841 = local791 + 15;
 								if (GlRenderer.enabled) {
 									@Pc(846) int local846 = 16776960;
@@ -247,7 +247,7 @@ public final class Static30 {
 									if (local854 > 65536) {
 										local846 = 16711680;
 									}
-									Static5.aClass4_Sub3_Sub5_2.method2275("Card:" + local854 + "k", local787, local841, local846, -1);
+									Fonts.p12Full.method2275("Card:" + local854 + "k", local787, local841, local846, -1);
 									local841 += 15;
 								}
 								@Pc(881) int local881 = 0;
@@ -261,10 +261,10 @@ public final class Static30 {
 								@Pc(923) int local923 = local883 * 100 / local885;
 								@Pc(929) int local929 = local881 * 10000 / local885;
 								@Pc(950) String local950 = "Cache:" + LongUtils.fixedPointToString((long) local929, true, 2, 0) + "% (" + local923 + "%)";
-								Static1.aClass4_Sub3_Sub5_1.method2275(local950, local787, local841, 16776960, -1);
+								Fonts.p11Full.method2275(local950, local787, local841, 16776960, -1);
 								@Pc(958) int local958 = local841 + 12;
 								if (ParticleManager.particles > 0) {
-									Static1.aClass4_Sub3_Sub5_1.method2275("Particles: " + ParticleManager.running + " / " + ParticleManager.particles, local787, local958, 16776960, -1);
+									Fonts.p11Full.method2275("Particles: " + ParticleManager.running + " / " + ParticleManager.particles, local787, local958, 16776960, -1);
 								}
 								@Pc(983) int local983 = local958 + 12;
 								Static2.aBooleanArray8[local89] = true;
@@ -464,7 +464,7 @@ public final class Static30 {
 										SoftwareRaster.drawRectAlpha(local128, local122, local38.anInt5893, local38.anInt5949, local1782, 256 - (local117 & 0xFF));
 									}
 								} else if (local38.type == 4) {
-									@Pc(1944) Font local1944 = local38.method4734(Static3.aClass56Array3);
+									@Pc(1944) Font local1944 = local38.method4734(Sprites.nameIcons);
 									if (local1944 != null) {
 										@Pc(1957) String local1957 = local38.aString351;
 										@Pc(1964) int local1964;
@@ -716,7 +716,7 @@ public final class Static30 {
 									}
 								} else {
 									if (local38.type == 7) {
-										@Pc(3183) Font local3183 = local38.method4734(Static3.aClass56Array3);
+										@Pc(3183) Font local3183 = local38.method4734(Sprites.nameIcons);
 										if (local3183 == null) {
 											if (Static3.aBoolean178) {
 												Static28.method3270(local38);
@@ -750,7 +750,7 @@ public final class Static30 {
 									}
 									if (local38.type == 8 && Static2.aClass185_4 == local38 && Static4.anInt3493 == Static5.anInt5840) {
 										@Pc(3363) int local3363 = 0;
-										@Pc(3365) Font local3365 = Static5.aClass4_Sub3_Sub5_2;
+										@Pc(3365) Font local3365 = Fonts.p12Full;
 										@Pc(3367) int local3367 = 0;
 										@Pc(3370) String local3370 = local38.aString351;
 										@Pc(3375) String local3375 = Cs1ScriptRunner.interpolate(local38, local3370);
@@ -972,11 +972,11 @@ public final class Static30 {
 	@OriginalMember(owner = "client!qk", name = "a", descriptor = "(IBIIII)V")
 	private static void method3607(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4) {
 		@Pc(11) int local11 = (arg0 - 32) * arg0 / arg2;
-		Static5.aClass56Array5[0].method2815(arg1, arg3);
+		Sprites.scrollbar[0].renderTransparent(arg1, arg3);
 		if (local11 < 8) {
 			local11 = 8;
 		}
-		Static5.aClass56Array5[1].method2815(arg1, arg0 + arg3 - 16);
+		Sprites.scrollbar[1].renderTransparent(arg1, arg0 + arg3 - 16);
 		@Pc(53) int local53 = arg4 * (arg0 - local11 - 32) / (arg2 - arg0);
 		if (!GlRenderer.enabled) {
 			SoftwareRaster.fillRect(arg1, arg3 + 16, 16, arg0 - 32, Static3.anInt2193);
@@ -1011,7 +1011,7 @@ public final class Static30 {
 		}
 		@Pc(37) int local37 = Math.min(arg0.anInt5893 / 2, arg0.anInt5949 / 2);
 		if (local18 <= local37 * local37) {
-			Static11.method525(arg2, arg0, arg4, arg5, arg3, Static1.aClass4_Sub3_Sub14Array3[arg6]);
+			Static11.method525(arg2, arg0, arg4, arg5, arg3, Sprites.hintMapMarkers[arg6]);
 			return;
 		}
 		@Pc(43) int local43 = local37 - 10;
@@ -1026,9 +1026,9 @@ public final class Static30 {
 		@Pc(108) int local108 = (int) ((double) local43 * Math.sin(local101));
 		@Pc(115) int local115 = (int) ((double) local43 * Math.cos(local101));
 		if (GlRenderer.enabled) {
-			((GlSprite) Static2.aClass4_Sub3_Sub14Array9[arg6]).renderRotatedTransparent((arg2 + arg0.anInt5893 / 2 + local108) * 16, (arg4 + arg0.anInt5949 / 2 - local115) * 16, (int) (local101 * 10430.378D));
+			((GlSprite) Sprites.hintMapEdge[arg6]).renderRotatedTransparent((arg2 + arg0.anInt5893 / 2 + local108) * 16, (arg4 + arg0.anInt5949 / 2 - local115) * 16, (int) (local101 * 10430.378D));
 		} else {
-			((SoftwareSprite) Static2.aClass4_Sub3_Sub14Array9[arg6]).renderRotatedTransparent(arg2 + arg0.anInt5893 / 2 + local108 - 10, arg0.anInt5949 / 2 + arg4 - local115 - 10, local101);
+			((SoftwareSprite) Sprites.hintMapEdge[arg6]).renderRotatedTransparent(arg2 + arg0.anInt5893 / 2 + local108 - 10, arg0.anInt5949 / 2 + arg4 - local115 - 10, local101);
 		}
 	}
 

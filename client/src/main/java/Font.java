@@ -12,7 +12,7 @@ public abstract class Font extends SecondaryNode {
 	private byte[] aByteArray22;
 
 	@OriginalMember(owner = "client!gl", name = "D", descriptor = "[Lclient!ma;")
-	private IndexedSprite[] aClass56Array4;
+	private IndexedSprite[] nameIcons;
 
 	@OriginalMember(owner = "client!gl", name = "F", descriptor = "[I")
 	private int[] anIntArray248;
@@ -156,7 +156,7 @@ public abstract class Font extends SecondaryNode {
 							if (local41.startsWith("img=")) {
 								try {
 									@Pc(109) int local109 = StringUtils.parseInt(local41.substring(4));
-									local9 += this.aClass56Array4[local109].anInt3412;
+									local9 += this.nameIcons[local109].innerWidth;
 									local7 = '\u0000';
 								} catch (@Pc(121) Exception local121) {
 								}
@@ -215,14 +215,14 @@ public abstract class Font extends SecondaryNode {
 							if (local40.startsWith("img=")) {
 								try {
 									@Pc(108) int local108 = StringUtils.parseInt(local40.substring(4));
-									@Pc(113) IndexedSprite local113 = this.aClass56Array4[local108];
-									@Pc(124) int local124 = this.anIntArray248 == null ? local113.anInt3410 : this.anIntArray248[local108];
+									@Pc(113) IndexedSprite local113 = this.nameIcons[local108];
+									@Pc(124) int local124 = this.anIntArray248 == null ? local113.innerHeight : this.anIntArray248[local108];
 									if (Static3.anInt2822 == 256) {
-										local113.method2815(arg1, arg2 + this.anInt2820 - local124);
+										local113.renderTransparent(arg1, arg2 + this.anInt2820 - local124);
 									} else {
-										local113.method2816(arg1, arg2 + this.anInt2820 - local124, Static3.anInt2822);
+										local113.renderAlpha(arg1, arg2 + this.anInt2820 - local124, Static3.anInt2822);
 									}
-									arg1 += local113.anInt3412;
+									arg1 += local113.innerWidth;
 									local8 = '\u0000';
 								} catch (@Pc(156) Exception local156) {
 								}
@@ -463,11 +463,11 @@ public abstract class Font extends SecondaryNode {
 	}
 
 	@OriginalMember(owner = "client!gl", name = "a", descriptor = "([Lclient!ma;[I)V")
-	public final void method2267(@OriginalArg(0) IndexedSprite[] arg0, @OriginalArg(1) int[] arg1) {
-		if (arg1 != null && arg1.length != arg0.length) {
+	public final void setNameIcons(@OriginalArg(0) IndexedSprite[] nameIcons, @OriginalArg(1) int[] arg1) {
+		if (arg1 != null && arg1.length != nameIcons.length) {
 			throw new IllegalArgumentException();
 		}
-		this.aClass56Array4 = arg0;
+		this.nameIcons = nameIcons;
 		this.anIntArray248 = arg1;
 	}
 
@@ -518,14 +518,14 @@ public abstract class Font extends SecondaryNode {
 									}
 									local10++;
 									@Pc(129) int local129 = StringUtils.parseInt(local42.substring(4));
-									@Pc(134) IndexedSprite local134 = this.aClass56Array4[local129];
-									@Pc(145) int local145 = this.anIntArray248 == null ? local134.anInt3410 : this.anIntArray248[local129];
+									@Pc(134) IndexedSprite local134 = this.nameIcons[local129];
+									@Pc(145) int local145 = this.anIntArray248 == null ? local134.innerHeight : this.anIntArray248[local129];
 									if (Static3.anInt2822 == 256) {
-										local134.method2815(arg1 + local110, arg2 + this.anInt2820 + local119 - local145);
+										local134.renderTransparent(arg1 + local110, arg2 + this.anInt2820 + local119 - local145);
 									} else {
-										local134.method2816(arg1 + local110, arg2 + this.anInt2820 + local119 - local145, Static3.anInt2822);
+										local134.renderAlpha(arg1 + local110, arg2 + this.anInt2820 + local119 - local145, Static3.anInt2822);
 									}
-									arg1 += local134.anInt3412;
+									arg1 += local134.innerWidth;
 									local8 = '\u0000';
 								} catch (@Pc(185) Exception local185) {
 								}
@@ -808,7 +808,7 @@ public abstract class Font extends SecondaryNode {
 					} else if (local57.startsWith("img=")) {
 						try {
 							@Pc(337) int local337 = StringUtils.parseInt(local57.substring(4));
-							local11 += this.aClass56Array4[local337].anInt3412;
+							local11 += this.nameIcons[local337].innerWidth;
 							local23 = '\u0000';
 						} catch (@Pc(349) Exception local349) {
 						}

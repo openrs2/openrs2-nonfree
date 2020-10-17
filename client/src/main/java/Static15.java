@@ -6,11 +6,11 @@ public final class Static15 {
 
 	@OriginalMember(owner = "client!fb", name = "a", descriptor = "(Lclient!fe;Lclient!fe;IIIZ)V")
 	public static void method1216(@OriginalArg(0) SoftwareIndexedSprite arg0, @OriginalArg(1) SoftwareIndexedSprite arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) boolean arg5) {
-		if (arg2 <= 0 || arg3 <= 0 || arg2 + 16 >= arg1.anInt3408 || arg3 + 16 >= arg1.anInt3413) {
+		if (arg2 <= 0 || arg3 <= 0 || arg2 + 16 >= arg1.width || arg3 + 16 >= arg1.height) {
 			return;
 		}
-		@Pc(23) int local23 = arg2 + arg3 * arg1.anInt3408;
-		@Pc(28) int local28 = arg1.anInt3408 - 16;
+		@Pc(23) int local23 = arg2 + arg3 * arg1.width;
+		@Pc(28) int local28 = arg1.width - 16;
 		@Pc(32) short local32;
 		@Pc(34) byte local34;
 		@Pc(41) short local41;
@@ -32,29 +32,29 @@ public final class Static15 {
 			local41 = -255;
 		}
 		if (arg5) {
-			Static14.method1206(arg1.aByteArray15, arg0.aByteArray15, local32, local23, local28, local34, local41);
+			Static14.method1206(arg1.pixels, arg0.pixels, local32, local23, local28, local34, local41);
 		} else {
-			method1222(arg1.aByteArray15, arg0.aByteArray15, local32, local23, local28, local34, local41);
+			method1222(arg1.pixels, arg0.pixels, local32, local23, local28, local34, local41);
 		}
 		method1220(arg2, arg3, 16, 16);
 	}
 
 	@OriginalMember(owner = "client!fb", name = "a", descriptor = "(Lclient!fe;Lclient!fe;II)Z")
 	public static boolean method1217(@OriginalArg(0) SoftwareIndexedSprite arg0, @OriginalArg(1) SoftwareIndexedSprite arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) {
-		@Pc(4) int local4 = arg2 + arg0.anInt3404;
-		@Pc(9) int local9 = arg3 + arg0.anInt3405;
-		@Pc(16) int local16 = local4 + local9 * arg1.anInt3408;
-		@Pc(19) int local19 = arg0.anInt3413;
-		@Pc(22) int local22 = arg0.anInt3408;
-		@Pc(27) int local27 = arg1.anInt3408 - local22;
+		@Pc(4) int local4 = arg2 + arg0.xOffset;
+		@Pc(9) int local9 = arg3 + arg0.yOffset;
+		@Pc(16) int local16 = local4 + local9 * arg1.width;
+		@Pc(19) int local19 = arg0.height;
+		@Pc(22) int local22 = arg0.width;
+		@Pc(27) int local27 = arg1.width - local22;
 		if (local9 <= 0) {
 			@Pc(33) int local33 = 1 - local9;
 			local19 -= local33;
-			local16 += local33 * arg1.anInt3408;
+			local16 += local33 * arg1.width;
 			local9 = 1;
 		}
-		if (local9 + local19 >= arg1.anInt3413) {
-			@Pc(61) int local61 = local9 + local19 + 1 - arg1.anInt3413;
+		if (local9 + local19 >= arg1.height) {
+			@Pc(61) int local61 = local9 + local19 + 1 - arg1.height;
 			local19 -= local61;
 		}
 		if (local4 <= 0) {
@@ -64,14 +64,14 @@ public final class Static15 {
 			local27 += local71;
 			local4 = 1;
 		}
-		if (local4 + local22 >= arg1.anInt3408) {
-			@Pc(100) int local100 = local4 + local22 + 1 - arg1.anInt3408;
+		if (local4 + local22 >= arg1.width) {
+			@Pc(100) int local100 = local4 + local22 + 1 - arg1.width;
 			local22 -= local100;
 			local27 += local100;
 		}
 		if (local22 > 0 && local19 > 0) {
-			@Pc(125) int local125 = local27 + arg1.anInt3408 * 7;
-			return method1221(arg1.aByteArray15, local16, local22, local19, local125);
+			@Pc(125) int local125 = local27 + arg1.width * 7;
+			return method1221(arg1.pixels, local16, local22, local19, local125);
 		} else {
 			return false;
 		}
@@ -79,23 +79,23 @@ public final class Static15 {
 
 	@OriginalMember(owner = "client!fb", name = "b", descriptor = "(Lclient!fe;Lclient!fe;II)V")
 	public static void method1218(@OriginalArg(0) SoftwareIndexedSprite arg0, @OriginalArg(1) SoftwareIndexedSprite arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) {
-		@Pc(4) int local4 = arg2 + arg0.anInt3404;
-		@Pc(9) int local9 = arg3 + arg0.anInt3405;
-		@Pc(16) int local16 = local4 + local9 * arg1.anInt3408;
+		@Pc(4) int local4 = arg2 + arg0.xOffset;
+		@Pc(9) int local9 = arg3 + arg0.yOffset;
+		@Pc(16) int local16 = local4 + local9 * arg1.width;
 		@Pc(18) int local18 = 0;
-		@Pc(21) int local21 = arg0.anInt3413;
-		@Pc(24) int local24 = arg0.anInt3408;
-		@Pc(29) int local29 = arg1.anInt3408 - local24;
+		@Pc(21) int local21 = arg0.height;
+		@Pc(24) int local24 = arg0.width;
+		@Pc(29) int local29 = arg1.width - local24;
 		@Pc(31) int local31 = 0;
 		if (local9 <= 0) {
 			@Pc(37) int local37 = 1 - local9;
 			local21 -= local37;
 			local18 = local37 * local24;
-			local16 += local37 * arg1.anInt3408;
+			local16 += local37 * arg1.width;
 			local9 = 1;
 		}
-		if (local9 + local21 >= arg1.anInt3413) {
-			@Pc(71) int local71 = local9 + local21 + 1 - arg1.anInt3413;
+		if (local9 + local21 >= arg1.height) {
+			@Pc(71) int local71 = local9 + local21 + 1 - arg1.height;
 			local21 -= local71;
 		}
 		if (local4 <= 0) {
@@ -107,37 +107,37 @@ public final class Static15 {
 			local29 += local81;
 			local4 = 1;
 		}
-		if (local4 + local24 >= arg1.anInt3408) {
-			@Pc(118) int local118 = local4 + local24 + 1 - arg1.anInt3408;
+		if (local4 + local24 >= arg1.width) {
+			@Pc(118) int local118 = local4 + local24 + 1 - arg1.width;
 			local24 -= local118;
 			local31 += local118;
 			local29 += local118;
 		}
 		if (local24 > 0 && local21 > 0) {
-			Static14.method1209(arg1.aByteArray15, arg0.aByteArray15, local18, local16, local24, local21, local29, local31);
+			Static14.method1209(arg1.pixels, arg0.pixels, local18, local16, local24, local21, local29, local31);
 			method1220(local4, local9, local24, local21);
 		}
 	}
 
 	@OriginalMember(owner = "client!fb", name = "c", descriptor = "(Lclient!fe;Lclient!fe;II)V")
 	public static void method1219(@OriginalArg(0) SoftwareIndexedSprite arg0, @OriginalArg(1) SoftwareIndexedSprite arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) {
-		@Pc(4) int local4 = arg2 + arg0.anInt3404;
-		@Pc(9) int local9 = arg3 + arg0.anInt3405;
-		@Pc(16) int local16 = local4 + local9 * arg1.anInt3408;
+		@Pc(4) int local4 = arg2 + arg0.xOffset;
+		@Pc(9) int local9 = arg3 + arg0.yOffset;
+		@Pc(16) int local16 = local4 + local9 * arg1.width;
 		@Pc(18) int local18 = 0;
-		@Pc(21) int local21 = arg0.anInt3413;
-		@Pc(24) int local24 = arg0.anInt3408;
-		@Pc(29) int local29 = arg1.anInt3408 - local24;
+		@Pc(21) int local21 = arg0.height;
+		@Pc(24) int local24 = arg0.width;
+		@Pc(29) int local29 = arg1.width - local24;
 		@Pc(31) int local31 = 0;
 		if (local9 <= 0) {
 			@Pc(37) int local37 = 1 - local9;
 			local21 -= local37;
 			local18 = local37 * local24;
-			local16 += local37 * arg1.anInt3408;
+			local16 += local37 * arg1.width;
 			local9 = 1;
 		}
-		if (local9 + local21 >= arg1.anInt3413) {
-			@Pc(71) int local71 = local9 + local21 + 1 - arg1.anInt3413;
+		if (local9 + local21 >= arg1.height) {
+			@Pc(71) int local71 = local9 + local21 + 1 - arg1.height;
 			local21 -= local71;
 		}
 		if (local4 <= 0) {
@@ -149,14 +149,14 @@ public final class Static15 {
 			local29 += local81;
 			local4 = 1;
 		}
-		if (local4 + local24 >= arg1.anInt3408) {
-			@Pc(118) int local118 = local4 + local24 + 1 - arg1.anInt3408;
+		if (local4 + local24 >= arg1.width) {
+			@Pc(118) int local118 = local4 + local24 + 1 - arg1.width;
 			local24 -= local118;
 			local31 += local118;
 			local29 += local118;
 		}
 		if (local24 > 0 && local21 > 0) {
-			Static14.method1208(arg1.aByteArray15, arg0.aByteArray15, local18, local16, local24, local21, local29, local31);
+			Static14.method1208(arg1.pixels, arg0.pixels, local18, local16, local24, local21, local29, local31);
 			method1220(local4, local9, local24, local21);
 		}
 	}
@@ -350,127 +350,6 @@ public final class Static15 {
 	public static void method4619() {
 		if (LoginManager.step == 5) {
 			LoginManager.step = 6;
-		}
-	}
-
-	@OriginalMember(owner = "client!fe", name = "a", descriptor = "([I[B[IIIIIIII)V")
-	public static void method1310(@OriginalArg(0) int[] arg0, @OriginalArg(1) byte[] arg1, @OriginalArg(2) int[] arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4, @OriginalArg(6) int arg5, @OriginalArg(7) int arg6, @OriginalArg(8) int arg7, @OriginalArg(9) int arg8) {
-		@Pc(4) int local4 = -(arg5 >> 2);
-		arg5 = -(arg5 & 0x3);
-		for (@Pc(12) int local12 = -arg6; local12 < 0; local12++) {
-			for (@Pc(16) int local16 = local4; local16 < 0; local16++) {
-				@Pc(21) int local21 = arg3 + 1;
-				@Pc(23) byte local23 = arg1[arg3];
-				@Pc(28) int local28;
-				if (local23 == 0) {
-					local28 = arg4 + 1;
-				} else {
-					local28 = arg4 + 1;
-					arg0[arg4] = arg2[local23 & 0xFF];
-				}
-				@Pc(39) int local39 = local21 + 1;
-				@Pc(41) byte local41 = arg1[local21];
-				@Pc(46) int local46;
-				if (local41 == 0) {
-					local46 = local28 + 1;
-				} else {
-					local46 = local28 + 1;
-					arg0[local28] = arg2[local41 & 0xFF];
-				}
-				@Pc(57) int local57 = local39 + 1;
-				@Pc(59) byte local59 = arg1[local39];
-				@Pc(64) int local64;
-				if (local59 == 0) {
-					local64 = local46 + 1;
-				} else {
-					local64 = local46 + 1;
-					arg0[local46] = arg2[local59 & 0xFF];
-				}
-				arg3 = local57 + 1;
-				@Pc(77) byte local77 = arg1[local57];
-				if (local77 == 0) {
-					arg4 = local64 + 1;
-				} else {
-					arg4 = local64 + 1;
-					arg0[local64] = arg2[local77 & 0xFF];
-				}
-			}
-			for (@Pc(94) int local94 = arg5; local94 < 0; local94++) {
-				@Pc(101) byte local101 = arg1[arg3++];
-				if (local101 == 0) {
-					arg4++;
-				} else {
-					arg0[arg4++] = arg2[local101 & 0xFF];
-				}
-			}
-			arg4 += arg7;
-			arg3 += arg8;
-		}
-	}
-
-	@OriginalMember(owner = "client!fe", name = "a", descriptor = "([I[B[IIIIIIIIII)V")
-	public static void method1317(@OriginalArg(0) int[] arg0, @OriginalArg(1) byte[] arg1, @OriginalArg(2) int[] arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) int arg8, @OriginalArg(9) int arg9, @OriginalArg(10) int arg10, @OriginalArg(11) int arg11) {
-		@Pc(1) int local1 = arg3;
-		for (@Pc(4) int local4 = -arg8; local4 < 0; local4++) {
-			@Pc(12) int local12 = (arg4 >> 16) * arg11;
-			for (@Pc(15) int local15 = -arg7; local15 < 0; local15++) {
-				@Pc(25) byte local25 = arg1[(arg3 >> 16) + local12];
-				if (local25 == 0) {
-					arg5++;
-				} else {
-					arg0[arg5++] = arg2[local25 & 0xFF];
-				}
-				arg3 += arg9;
-			}
-			arg4 += arg10;
-			arg3 = local1;
-			arg5 += arg6;
-		}
-	}
-
-	@OriginalMember(owner = "client!fe", name = "a", descriptor = "([I[B[IIIIIIIIIII)V")
-	public static void method1318(@OriginalArg(0) int[] arg0, @OriginalArg(1) byte[] arg1, @OriginalArg(2) int[] arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) int arg8, @OriginalArg(9) int arg9, @OriginalArg(10) int arg10, @OriginalArg(11) int arg11, @OriginalArg(12) int arg12) {
-		@Pc(1) int local1 = arg3;
-		@Pc(7) int local7 = arg12 >> 16 & 0xFF;
-		@Pc(13) int local13 = arg12 >> 8 & 0xFF;
-		@Pc(17) int local17 = arg12 & 0xFF;
-		for (@Pc(20) int local20 = -arg8; local20 < 0; local20++) {
-			@Pc(28) int local28 = (arg4 >> 16) * arg11;
-			for (@Pc(31) int local31 = -arg7; local31 < 0; local31++) {
-				@Pc(41) byte local41 = arg1[(arg3 >> 16) + local28];
-				if (local41 == 0) {
-					arg5++;
-				} else {
-					@Pc(49) int local49 = arg2[local41 & 0xFF];
-					@Pc(55) int local55 = local49 >> 16 & 0xFF;
-					@Pc(61) int local61 = local49 >> 8 & 0xFF;
-					@Pc(65) int local65 = local49 & 0xFF;
-					arg0[arg5++] = (local55 * local7 >> 8 << 16) + (local61 * local13 >> 8 << 8) + (local65 * local17 >> 8);
-				}
-				arg3 += arg9;
-			}
-			arg4 += arg10;
-			arg3 = local1;
-			arg5 += arg6;
-		}
-	}
-
-	@OriginalMember(owner = "client!fe", name = "b", descriptor = "([I[B[IIIIIIII)V")
-	public static void method1319(@OriginalArg(0) int[] arg0, @OriginalArg(1) byte[] arg1, @OriginalArg(2) int[] arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) int arg8, @OriginalArg(9) int arg9) {
-		@Pc(3) int local3 = 256 - arg9;
-		for (@Pc(6) int local6 = -arg6; local6 < 0; local6++) {
-			for (@Pc(11) int local11 = -arg5; local11 < 0; local11++) {
-				@Pc(18) byte local18 = arg1[arg3++];
-				if (local18 == 0) {
-					arg4++;
-				} else {
-					@Pc(26) int local26 = arg2[local18 & 0xFF];
-					@Pc(30) int local30 = arg0[arg4];
-					arg0[arg4++] = ((local26 & 0xFF00FF) * arg9 + (local30 & 0xFF00FF) * local3 & 0xFF00FF00) + ((local26 & 0xFF00) * arg9 + (local30 & 0xFF00) * local3 & 0xFF0000) >> 8;
-				}
-			}
-			arg4 += arg7;
-			arg3 += arg8;
 		}
 	}
 
@@ -825,7 +704,7 @@ public final class Static15 {
 			SoftwareRaster.fillRect(local3 + 1, local9 + 1, local11 - 2, 16, 0);
 			SoftwareRaster.drawRect(local3 + 1, local9 + 18, local11 - 2, local19 - 19, 0);
 		}
-		Static5.aClass4_Sub3_Sub5_3.method2259(LocalisedText.CHOOSE_OPTION, local3 + 3, local9 + 14, 6116423, -1);
+		Fonts.b12Full.method2259(LocalisedText.CHOOSE_OPTION, local3 + 3, local9 + 14, 6116423, -1);
 		@Pc(100) int local100 = Mouse.x;
 		@Pc(102) int local102 = Mouse.y;
 		for (@Pc(104) int local104 = 0; local104 < Static7.anInt5634; local104++) {
@@ -834,7 +713,7 @@ public final class Static15 {
 			if (local100 > local3 && local3 + local11 > local100 && local102 > local125 - 13 && local102 < local125 + 3) {
 				local127 = 16776960;
 			}
-			Static5.aClass4_Sub3_Sub5_3.method2259(Static26.method2992(local104), local3 + 3, local125, local127, 0);
+			Fonts.b12Full.method2259(Static26.method2992(local104), local3 + 3, local125, local127, 0);
 		}
 		Static16.method1559(Static5.anInt3890, Static4.anInt3455, Static3.anInt2394, Static6.anInt4440);
 	}

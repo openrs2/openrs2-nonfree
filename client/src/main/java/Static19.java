@@ -526,8 +526,8 @@ public final class Static19 {
 										@Pc(849) boolean local849 = (mapScene >> 15 & 0x1) == 1;
 										@Pc(855) SoftwareIndexedSprite sprite = type.getSprite(local849, angle);
 										if (sprite != null) {
-											@Pc(864) int local864 = local711 * sprite.anInt3408 / 4;
-											@Pc(871) int local871 = local769 * sprite.anInt3413 / 4;
+											@Pc(864) int local864 = local711 * sprite.width / 4;
+											@Pc(871) int local871 = local769 * sprite.height / 4;
 											if (type.aBoolean303) {
 												@Pc(880) int local880 = mapScene >> 16 & 0xF;
 												@Pc(886) int local886 = mapScene >> 20 & 0xF;

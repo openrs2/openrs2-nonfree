@@ -146,35 +146,6 @@ public final class Static24 {
 		}
 	}
 
-	@OriginalMember(owner = "client!ln", name = "a", descriptor = "(Lclient!fh;BII)Lclient!vn;")
-	public static SoftwareSprite method2654(@OriginalArg(0) Js5 arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2) {
-		return Static9.method197(arg0, arg1, arg2) ? Static21.method2002() : null;
-	}
-
-	@OriginalMember(owner = "client!m", name = "a", descriptor = "(ILclient!fh;)V")
-	public static void method2675(@OriginalArg(1) Js5 arg0) {
-		if (Static3.aBoolean124) {
-			return;
-		}
-		if (GlRenderer.enabled) {
-			GlRaster.clear();
-		} else {
-			SoftwareRaster.clear();
-		}
-		Static6.aClass4_Sub3_Sub14_7 = Static11.method583(Static6.anInt4677, arg0);
-		@Pc(24) int local24 = GameShell.canvasHeight;
-		@Pc(30) int local30 = local24 * 956 / 503;
-		Static6.aClass4_Sub3_Sub14_7.renderResizedTransparent((GameShell.canvasWidth - local30) / 2, 0, local30, local24);
-		Static6.aClass56_1 = Static32.method3878(arg0, Static1.anInt322);
-		Static6.aClass56_1.method2815(GameShell.canvasWidth / 2 - Static6.aClass56_1.anInt3408 / 2, 18);
-		Static3.aBoolean124 = true;
-	}
-
-	@OriginalMember(owner = "client!m", name = "a", descriptor = "(Lclient!fh;IB)Lclient!vn;")
-	public static SoftwareSprite method2679(@OriginalArg(0) Js5 arg0, @OriginalArg(1) int arg1) {
-		return Static33.method4131(arg0, arg1) ? Static21.method2002() : null;
-	}
-
 	@OriginalMember(owner = "client!m", name = "a", descriptor = "(II)V")
 	public static void method2680(@OriginalArg(1) int arg0) {
 		Static3.anIntArray164 = new int[arg0];
@@ -266,7 +237,7 @@ public final class Static24 {
 				client.frameBuffer = FrameBuffer.create(GameShell.canvas, GameShell.canvasWidth, GameShell.canvasHeight);
 				SoftwareRaster.clear();
 				if (Static4.anInt3304 == 5) {
-					Static28.method3331(true, Static5.aClass4_Sub3_Sub5_3);
+					Static28.method3331(true, Fonts.b12Full);
 				} else {
 					Static37.method4716(LocalisedText.LOADING, false);
 				}
@@ -361,27 +332,6 @@ public final class Static24 {
 		@Pc(32) String local32 = "::tele " + arg2 + "," + (arg0 >> 6) + "," + (arg1 >> 6) + "," + (arg0 & 0x3F) + "," + (arg1 & 0x3F);
 		System.out.println(local32);
 		Static27.method3185(local32);
-	}
-
-	@OriginalMember(owner = "client!mb", name = "a", descriptor = "(Lclient!fh;I)V")
-	public static void method2946(@OriginalArg(0) Js5 arg0) {
-		Static2.anInt914 = arg0.getGroupId("p11_full");
-		Static7.anInt6040 = arg0.getGroupId("p12_full");
-		Static4.anInt3309 = arg0.getGroupId("b12_full");
-		Static3.anInt2120 = arg0.getGroupId("hitmarks");
-		Static6.anInt4363 = arg0.getGroupId("hitbar_default");
-		Static5.anInt4281 = arg0.getGroupId("headicons_pk");
-		Static2.anInt1975 = arg0.getGroupId("headicons_prayer");
-		Static5.anInt4207 = arg0.getGroupId("hint_headicons");
-		Static7.anInt5332 = arg0.getGroupId("hint_mapmarkers");
-		Static7.anInt5230 = arg0.getGroupId("mapflag");
-		Static6.anInt3786 = arg0.getGroupId("cross");
-		Static3.anInt2296 = arg0.getGroupId("mapdots");
-		Static5.anInt4163 = arg0.getGroupId("scrollbar");
-		Static3.anInt2449 = arg0.getGroupId("name_icons");
-		Static2.anInt1632 = arg0.getGroupId("floorshadows");
-		Static1.anInt130 = arg0.getGroupId("compass");
-		Static6.anInt4371 = arg0.getGroupId("hint_mapedge");
 	}
 
 	@OriginalMember(owner = "client!mb", name = "a", descriptor = "(ZIIII)V")

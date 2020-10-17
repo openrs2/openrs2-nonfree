@@ -6,42 +6,163 @@ import org.openrs2.deob.annotation.Pc;
 @OriginalClass("client!fe")
 public final class SoftwareIndexedSprite extends IndexedSprite {
 
+	@OriginalMember(owner = "client!fe", name = "a", descriptor = "([I[B[IIIIIIII)V")
+	private static void method1310(@OriginalArg(0) int[] arg0, @OriginalArg(1) byte[] arg1, @OriginalArg(2) int[] arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4, @OriginalArg(6) int arg5, @OriginalArg(7) int arg6, @OriginalArg(8) int arg7, @OriginalArg(9) int arg8) {
+		@Pc(4) int local4 = -(arg5 >> 2);
+		arg5 = -(arg5 & 0x3);
+		for (@Pc(12) int local12 = -arg6; local12 < 0; local12++) {
+			for (@Pc(16) int local16 = local4; local16 < 0; local16++) {
+				@Pc(21) int local21 = arg3 + 1;
+				@Pc(23) byte local23 = arg1[arg3];
+				@Pc(28) int local28;
+				if (local23 == 0) {
+					local28 = arg4 + 1;
+				} else {
+					local28 = arg4 + 1;
+					arg0[arg4] = arg2[local23 & 0xFF];
+				}
+				@Pc(39) int local39 = local21 + 1;
+				@Pc(41) byte local41 = arg1[local21];
+				@Pc(46) int local46;
+				if (local41 == 0) {
+					local46 = local28 + 1;
+				} else {
+					local46 = local28 + 1;
+					arg0[local28] = arg2[local41 & 0xFF];
+				}
+				@Pc(57) int local57 = local39 + 1;
+				@Pc(59) byte local59 = arg1[local39];
+				@Pc(64) int local64;
+				if (local59 == 0) {
+					local64 = local46 + 1;
+				} else {
+					local64 = local46 + 1;
+					arg0[local46] = arg2[local59 & 0xFF];
+				}
+				arg3 = local57 + 1;
+				@Pc(77) byte local77 = arg1[local57];
+				if (local77 == 0) {
+					arg4 = local64 + 1;
+				} else {
+					arg4 = local64 + 1;
+					arg0[local64] = arg2[local77 & 0xFF];
+				}
+			}
+			for (@Pc(94) int local94 = arg5; local94 < 0; local94++) {
+				@Pc(101) byte local101 = arg1[arg3++];
+				if (local101 == 0) {
+					arg4++;
+				} else {
+					arg0[arg4++] = arg2[local101 & 0xFF];
+				}
+			}
+			arg4 += arg7;
+			arg3 += arg8;
+		}
+	}
+
+	@OriginalMember(owner = "client!fe", name = "a", descriptor = "([I[B[IIIIIIIIII)V")
+	private static void method1317(@OriginalArg(0) int[] arg0, @OriginalArg(1) byte[] arg1, @OriginalArg(2) int[] arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) int arg8, @OriginalArg(9) int arg9, @OriginalArg(10) int arg10, @OriginalArg(11) int arg11) {
+		@Pc(1) int local1 = arg3;
+		for (@Pc(4) int local4 = -arg8; local4 < 0; local4++) {
+			@Pc(12) int local12 = (arg4 >> 16) * arg11;
+			for (@Pc(15) int local15 = -arg7; local15 < 0; local15++) {
+				@Pc(25) byte local25 = arg1[(arg3 >> 16) + local12];
+				if (local25 == 0) {
+					arg5++;
+				} else {
+					arg0[arg5++] = arg2[local25 & 0xFF];
+				}
+				arg3 += arg9;
+			}
+			arg4 += arg10;
+			arg3 = local1;
+			arg5 += arg6;
+		}
+	}
+
+	@OriginalMember(owner = "client!fe", name = "a", descriptor = "([I[B[IIIIIIIIIII)V")
+	private static void method1318(@OriginalArg(0) int[] arg0, @OriginalArg(1) byte[] arg1, @OriginalArg(2) int[] arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) int arg8, @OriginalArg(9) int arg9, @OriginalArg(10) int arg10, @OriginalArg(11) int arg11, @OriginalArg(12) int arg12) {
+		@Pc(1) int local1 = arg3;
+		@Pc(7) int local7 = arg12 >> 16 & 0xFF;
+		@Pc(13) int local13 = arg12 >> 8 & 0xFF;
+		@Pc(17) int local17 = arg12 & 0xFF;
+		for (@Pc(20) int local20 = -arg8; local20 < 0; local20++) {
+			@Pc(28) int local28 = (arg4 >> 16) * arg11;
+			for (@Pc(31) int local31 = -arg7; local31 < 0; local31++) {
+				@Pc(41) byte local41 = arg1[(arg3 >> 16) + local28];
+				if (local41 == 0) {
+					arg5++;
+				} else {
+					@Pc(49) int local49 = arg2[local41 & 0xFF];
+					@Pc(55) int local55 = local49 >> 16 & 0xFF;
+					@Pc(61) int local61 = local49 >> 8 & 0xFF;
+					@Pc(65) int local65 = local49 & 0xFF;
+					arg0[arg5++] = (local55 * local7 >> 8 << 16) + (local61 * local13 >> 8 << 8) + (local65 * local17 >> 8);
+				}
+				arg3 += arg9;
+			}
+			arg4 += arg10;
+			arg3 = local1;
+			arg5 += arg6;
+		}
+	}
+
+	@OriginalMember(owner = "client!fe", name = "b", descriptor = "([I[B[IIIIIIII)V")
+	private static void method1319(@OriginalArg(0) int[] arg0, @OriginalArg(1) byte[] arg1, @OriginalArg(2) int[] arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) int arg8, @OriginalArg(9) int arg9) {
+		@Pc(3) int local3 = 256 - arg9;
+		for (@Pc(6) int local6 = -arg6; local6 < 0; local6++) {
+			for (@Pc(11) int local11 = -arg5; local11 < 0; local11++) {
+				@Pc(18) byte local18 = arg1[arg3++];
+				if (local18 == 0) {
+					arg4++;
+				} else {
+					@Pc(26) int local26 = arg2[local18 & 0xFF];
+					@Pc(30) int local30 = arg0[arg4];
+					arg0[arg4++] = ((local26 & 0xFF00FF) * arg9 + (local30 & 0xFF00FF) * local3 & 0xFF00FF00) + ((local26 & 0xFF00) * arg9 + (local30 & 0xFF00) * local3 & 0xFF0000) >> 8;
+				}
+			}
+			arg4 += arg7;
+			arg3 += arg8;
+		}
+	}
+
 	@OriginalMember(owner = "client!fe", name = "n", descriptor = "[B")
-	public byte[] aByteArray15;
+	public byte[] pixels;
 
 	@OriginalMember(owner = "client!fe", name = "m", descriptor = "[I")
-	public final int[] anIntArray120;
+	public final int[] palette;
 
 	@OriginalMember(owner = "client!fe", name = "<init>", descriptor = "(IIIIII[B[I)V")
-	public SoftwareIndexedSprite(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) byte[] arg6, @OriginalArg(7) int[] arg7) {
-		this.anInt3412 = arg0;
-		this.anInt3410 = arg1;
-		this.anInt3404 = arg2;
-		this.anInt3405 = arg3;
-		this.anInt3408 = arg4;
-		this.anInt3413 = arg5;
-		this.aByteArray15 = arg6;
-		this.anIntArray120 = arg7;
+	public SoftwareIndexedSprite(@OriginalArg(0) int innerWidth, @OriginalArg(1) int innerHeight, @OriginalArg(2) int xOffset, @OriginalArg(3) int yOffset, @OriginalArg(4) int width, @OriginalArg(5) int height, @OriginalArg(6) byte[] pixels, @OriginalArg(7) int[] palette) {
+		this.innerWidth = innerWidth;
+		this.innerHeight = innerHeight;
+		this.xOffset = xOffset;
+		this.yOffset = yOffset;
+		this.width = width;
+		this.height = height;
+		this.pixels = pixels;
+		this.palette = palette;
 	}
 
 	@OriginalMember(owner = "client!fe", name = "<init>", descriptor = "(III)V")
-	public SoftwareIndexedSprite(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
-		this.anInt3412 = this.anInt3408 = arg0;
-		this.anInt3410 = this.anInt3413 = arg1;
-		this.anInt3404 = this.anInt3405 = 0;
-		this.aByteArray15 = new byte[arg0 * arg1];
-		this.anIntArray120 = new int[arg2];
+	public SoftwareIndexedSprite(@OriginalArg(0) int width, @OriginalArg(1) int height, @OriginalArg(2) int paletteSize) {
+		this.innerWidth = this.width = width;
+		this.innerHeight = this.height = height;
+		this.xOffset = this.yOffset = 0;
+		this.pixels = new byte[width * height];
+		this.palette = new int[paletteSize];
 	}
 
 	@OriginalMember(owner = "client!fe", name = "a", descriptor = "(III)V")
 	@Override
-	public final void method2816(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
-		@Pc(4) int local4 = arg0 + this.anInt3404;
-		@Pc(9) int local9 = arg1 + this.anInt3405;
+	public final void renderAlpha(@OriginalArg(0) int x, @OriginalArg(1) int y, @OriginalArg(2) int alpha) {
+		@Pc(4) int local4 = x + this.xOffset;
+		@Pc(9) int local9 = y + this.yOffset;
 		@Pc(15) int local15 = local4 + local9 * SoftwareRaster.width;
 		@Pc(17) int local17 = 0;
-		@Pc(20) int local20 = this.anInt3413;
-		@Pc(23) int local23 = this.anInt3408;
+		@Pc(20) int local20 = this.height;
+		@Pc(23) int local23 = this.width;
 		@Pc(27) int local27 = SoftwareRaster.width - local23;
 		@Pc(29) int local29 = 0;
 		if (local9 < SoftwareRaster.clipY) {
@@ -70,109 +191,109 @@ public final class SoftwareIndexedSprite extends IndexedSprite {
 			local27 += local107;
 		}
 		if (local23 > 0 && local20 > 0) {
-			Static15.method1319(SoftwareRaster.pixels, this.aByteArray15, this.anIntArray120, local17, local15, local23, local20, local27, local29, arg2);
+			method1319(SoftwareRaster.pixels, this.pixels, this.palette, local17, local15, local23, local20, local27, local29, alpha);
 		}
 	}
 
 	@OriginalMember(owner = "client!fe", name = "a", descriptor = "()V")
-	public final void method1309() {
-		@Pc(1) int local1 = 0;
-		@Pc(7) int local7 = this.aByteArray15.length - 7;
-		while (local1 < local7) {
-			@Pc(14) int local14 = local1 + 1;
-			this.aByteArray15[local1] = 0;
-			this.aByteArray15[local14++] = 0;
-			this.aByteArray15[local14++] = 0;
-			this.aByteArray15[local14++] = 0;
-			this.aByteArray15[local14++] = 0;
-			this.aByteArray15[local14++] = 0;
-			this.aByteArray15[local14++] = 0;
-			local1 = local14 + 1;
-			this.aByteArray15[local14] = 0;
+	public final void clear() {
+		@Pc(1) int off = 0;
+		@Pc(7) int len = this.pixels.length - 7;
+		while (off < len) {
+			@Pc(14) int off2 = off + 1;
+			this.pixels[off] = 0;
+			this.pixels[off2++] = 0;
+			this.pixels[off2++] = 0;
+			this.pixels[off2++] = 0;
+			this.pixels[off2++] = 0;
+			this.pixels[off2++] = 0;
+			this.pixels[off2++] = 0;
+			off = off2 + 1;
+			this.pixels[off2] = 0;
 		}
-		@Pc(60) int local60 = local7 + 7;
-		while (local1 < local60) {
-			this.aByteArray15[local1++] = 0;
+		@Pc(60) int len2 = len + 7;
+		while (off < len2) {
+			this.pixels[off++] = 0;
 		}
 	}
 
 	@OriginalMember(owner = "client!fe", name = "b", descriptor = "(III)V")
 	public final void method1311(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
-		for (@Pc(1) int local1 = 0; local1 < this.anIntArray120.length; local1++) {
-			@Pc(15) int local15 = this.anIntArray120[local1] >> 16 & 0xFF;
+		for (@Pc(1) int local1 = 0; local1 < this.palette.length; local1++) {
+			@Pc(15) int local15 = this.palette[local1] >> 16 & 0xFF;
 			@Pc(19) int local19 = local15 + arg0;
 			if (local19 < 0) {
 				local19 = 0;
 			} else if (local19 > 255) {
 				local19 = 255;
 			}
-			@Pc(38) int local38 = this.anIntArray120[local1] >> 8 & 0xFF;
+			@Pc(38) int local38 = this.palette[local1] >> 8 & 0xFF;
 			@Pc(42) int local42 = local38 + arg1;
 			if (local42 < 0) {
 				local42 = 0;
 			} else if (local42 > 255) {
 				local42 = 255;
 			}
-			@Pc(59) int local59 = this.anIntArray120[local1] & 0xFF;
+			@Pc(59) int local59 = this.palette[local1] & 0xFF;
 			@Pc(63) int local63 = local59 + arg2;
 			if (local63 < 0) {
 				local63 = 0;
 			} else if (local63 > 255) {
 				local63 = 255;
 			}
-			this.anIntArray120[local1] = (local19 << 16) + (local42 << 8) + local63;
+			this.palette[local1] = (local19 << 16) + (local42 << 8) + local63;
 		}
 	}
 
 	@OriginalMember(owner = "client!fe", name = "b", descriptor = "()V")
 	public final void method1312() {
-		@Pc(6) byte[] local6 = new byte[this.anInt3408 * this.anInt3413];
+		@Pc(6) byte[] local6 = new byte[this.width * this.height];
 		@Pc(8) int local8 = 0;
-		for (@Pc(13) int local13 = this.anInt3413 - 1; local13 >= 0; local13--) {
-			for (@Pc(17) int local17 = 0; local17 < this.anInt3408; local17++) {
-				local6[local8++] = this.aByteArray15[local17 + local13 * this.anInt3408];
+		for (@Pc(13) int local13 = this.height - 1; local13 >= 0; local13--) {
+			for (@Pc(17) int local17 = 0; local17 < this.width; local17++) {
+				local6[local8++] = this.pixels[local17 + local13 * this.width];
 			}
 		}
-		this.aByteArray15 = local6;
-		this.anInt3405 = this.anInt3410 - this.anInt3413 - this.anInt3405;
+		this.pixels = local6;
+		this.yOffset = this.innerHeight - this.height - this.yOffset;
 	}
 
 	@OriginalMember(owner = "client!fe", name = "c", descriptor = "()V")
 	public final void method1313() {
-		@Pc(6) byte[] local6 = new byte[this.anInt3408 * this.anInt3413];
+		@Pc(6) byte[] local6 = new byte[this.width * this.height];
 		@Pc(8) int local8 = 0;
-		for (@Pc(10) int local10 = 0; local10 < this.anInt3408; local10++) {
-			for (@Pc(19) int local19 = this.anInt3413 - 1; local19 >= 0; local19--) {
-				local6[local8++] = this.aByteArray15[local10 + local19 * this.anInt3408];
+		for (@Pc(10) int local10 = 0; local10 < this.width; local10++) {
+			for (@Pc(19) int local19 = this.height - 1; local19 >= 0; local19--) {
+				local6[local8++] = this.pixels[local10 + local19 * this.width];
 			}
 		}
-		this.aByteArray15 = local6;
-		@Pc(44) int local44 = this.anInt3405;
-		this.anInt3405 = this.anInt3404;
-		this.anInt3404 = this.anInt3410 - this.anInt3413 - local44;
-		local44 = this.anInt3413;
-		this.anInt3413 = this.anInt3408;
-		this.anInt3408 = local44;
-		local44 = this.anInt3410;
-		this.anInt3410 = this.anInt3412;
-		this.anInt3412 = local44;
+		this.pixels = local6;
+		@Pc(44) int local44 = this.yOffset;
+		this.yOffset = this.xOffset;
+		this.xOffset = this.innerHeight - this.height - local44;
+		local44 = this.height;
+		this.height = this.width;
+		this.width = local44;
+		local44 = this.innerHeight;
+		this.innerHeight = this.innerWidth;
+		this.innerWidth = local44;
 	}
 
 	@OriginalMember(owner = "client!fe", name = "a", descriptor = "(IIIIII)V")
 	public final void method1314(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4) {
-		arg0 -= this.anInt3404 << 4;
-		arg1 -= this.anInt3405 << 4;
+		arg0 -= this.xOffset << 4;
+		arg1 -= this.yOffset << 4;
 		@Pc(23) double local23 = (double) (arg4 & 0xFFFF) * 9.587379924285257E-5D;
 		@Pc(33) int local33 = (int) Math.floor(Math.sin(local23) * (double) 4096 + 0.5D);
 		@Pc(43) int local43 = (int) Math.floor(Math.cos(local23) * (double) 4096 + 0.5D);
 		@Pc(53) int local53 = -arg0 * local43 + -arg1 * local33;
 		@Pc(64) int local64 = --arg0 * local33 + -arg1 * local43;
-		@Pc(78) int local78 = ((this.anInt3408 << 4) - arg0) * local43 + -arg1 * local33;
-		@Pc(93) int local93 = -((this.anInt3408 << 4) - arg0) * local33 + -arg1 * local43;
-		@Pc(107) int local107 = -arg0 * local43 + ((this.anInt3413 << 4) - arg1) * local33;
-		@Pc(122) int local122 = --arg0 * local33 + ((this.anInt3413 << 4) - arg1) * local43;
-		@Pc(140) int local140 = ((this.anInt3408 << 4) - arg0) * local43 + ((this.anInt3413 << 4) - arg1) * local33;
-		@Pc(159) int local159 = -((this.anInt3408 << 4) - arg0) * local33 + ((this.anInt3413 << 4) - arg1) * local43;
+		@Pc(78) int local78 = ((this.width << 4) - arg0) * local43 + -arg1 * local33;
+		@Pc(93) int local93 = -((this.width << 4) - arg0) * local33 + -arg1 * local43;
+		@Pc(107) int local107 = -arg0 * local43 + ((this.height << 4) - arg1) * local33;
+		@Pc(122) int local122 = --arg0 * local33 + ((this.height << 4) - arg1) * local43;
+		@Pc(140) int local140 = ((this.width << 4) - arg0) * local43 + ((this.height << 4) - arg1) * local33;
+		@Pc(159) int local159 = -((this.width << 4) - arg0) * local33 + ((this.height << 4) - arg1) * local43;
 		@Pc(164) int local164;
 		@Pc(166) int local166;
 		if (local53 < local78) {
@@ -262,9 +383,9 @@ public final class SoftwareIndexedSprite extends IndexedSprite {
 				while (local384 < 0) {
 					@Pc(388) int local388 = local319;
 					@Pc(394) int local394 = local303;
-					if (local368 >= 0 && local378 >= 0 && local368 - (this.anInt3408 << 12) < 0 && local378 - (this.anInt3413 << 12) < 0) {
+					if (local368 >= 0 && local378 >= 0 && local368 - (this.width << 12) < 0 && local378 - (this.height << 12) < 0) {
 						while (local394 < 0) {
-							@Pc(435) int local435 = this.anIntArray120[this.aByteArray15[(local378 >> 12) * this.anInt3408 + (local368 >> 12)]];
+							@Pc(435) int local435 = this.palette[this.pixels[(local378 >> 12) * this.width + (local368 >> 12)]];
 							if (local435 == 0) {
 								local388++;
 							} else {
@@ -282,8 +403,8 @@ public final class SoftwareIndexedSprite extends IndexedSprite {
 					@Pc(461) int local461 = local319;
 					@Pc(471) int local471 = local378 + (local350 * local333 >> 4);
 					@Pc(473) int local473 = local303;
-					if (local368 >= 0 && local368 - (this.anInt3408 << 12) < 0) {
-						if ((local492 = local471 - (this.anInt3413 << 12)) >= 0) {
+					if (local368 >= 0 && local368 - (this.width << 12) < 0) {
+						if ((local492 = local471 - (this.height << 12)) >= 0) {
 							local492 = (local333 - local492) / local333;
 							local473 = local303 + local492;
 							local471 += local333 * local492;
@@ -293,7 +414,7 @@ public final class SoftwareIndexedSprite extends IndexedSprite {
 							local473 = local492;
 						}
 						while (local473 < 0) {
-							@Pc(543) int local543 = this.anIntArray120[this.aByteArray15[(local471 >> 12) * this.anInt3408 + (local368 >> 12)]];
+							@Pc(543) int local543 = this.palette[this.pixels[(local471 >> 12) * this.width + (local368 >> 12)]];
 							if (local543 == 0) {
 								local461++;
 							} else {
@@ -313,18 +434,18 @@ public final class SoftwareIndexedSprite extends IndexedSprite {
 					@Pc(575) int local575 = local319;
 					@Pc(585) int local585 = local378 + (local350 * local333 >> 4);
 					@Pc(587) int local587 = local303;
-					if (local368 >= 0 && local368 - (this.anInt3408 << 12) < 0) {
+					if (local368 >= 0 && local368 - (this.width << 12) < 0) {
 						if (local585 < 0) {
 							local492 = (local333 - local585 - 1) / local333;
 							local587 = local303 + local492;
 							local585 += local333 * local492;
 							local575 = local319 + local492;
 						}
-						if ((local492 = (local585 + 1 - (this.anInt3413 << 12) - local333) / local333) > local587) {
+						if ((local492 = (local585 + 1 - (this.height << 12) - local333) / local333) > local587) {
 							local587 = local492;
 						}
 						while (local587 < 0) {
-							@Pc(659) int local659 = this.anIntArray120[this.aByteArray15[(local585 >> 12) * this.anInt3408 + (local368 >> 12)]];
+							@Pc(659) int local659 = this.palette[this.pixels[(local585 >> 12) * this.width + (local368 >> 12)]];
 							if (local659 == 0) {
 								local575++;
 							} else {
@@ -346,8 +467,8 @@ public final class SoftwareIndexedSprite extends IndexedSprite {
 					@Pc(695) int local695 = local319;
 					@Pc(703) int local703 = local368 + (local350 * local342 >> 4);
 					@Pc(707) int local707 = local303;
-					if (local378 >= 0 && local378 - (this.anInt3413 << 12) < 0) {
-						if ((local492 = local703 - (this.anInt3408 << 12)) >= 0) {
+					if (local378 >= 0 && local378 - (this.height << 12) < 0) {
+						if ((local492 = local703 - (this.width << 12)) >= 0) {
 							local492 = (local342 - local492) / local342;
 							local707 = local303 + local492;
 							local703 += local342 * local492;
@@ -357,7 +478,7 @@ public final class SoftwareIndexedSprite extends IndexedSprite {
 							local707 = local492;
 						}
 						while (local707 < 0) {
-							@Pc(777) int local777 = this.anIntArray120[this.aByteArray15[(local378 >> 12) * this.anInt3408 + (local703 >> 12)]];
+							@Pc(777) int local777 = this.palette[this.pixels[(local378 >> 12) * this.width + (local703 >> 12)]];
 							if (local777 == 0) {
 								local695++;
 							} else {
@@ -378,7 +499,7 @@ public final class SoftwareIndexedSprite extends IndexedSprite {
 					@Pc(819) int local819 = local368 + (local350 * local342 >> 4);
 					@Pc(827) int local827 = local378 + (local350 * local333 >> 4);
 					@Pc(829) int local829 = local303;
-					if ((local492 = local819 - (this.anInt3408 << 12)) >= 0) {
+					if ((local492 = local819 - (this.width << 12)) >= 0) {
 						local492 = (local342 - local492) / local342;
 						local829 = local303 + local492;
 						local819 += local342 * local492;
@@ -388,7 +509,7 @@ public final class SoftwareIndexedSprite extends IndexedSprite {
 					if ((local492 = (local819 - local342) / local342) > local829) {
 						local829 = local492;
 					}
-					if ((local492 = local827 - (this.anInt3413 << 12)) >= 0) {
+					if ((local492 = local827 - (this.height << 12)) >= 0) {
 						local492 = (local333 - local492) / local333;
 						local829 += local492;
 						local819 += local342 * local492;
@@ -399,7 +520,7 @@ public final class SoftwareIndexedSprite extends IndexedSprite {
 						local829 = local492;
 					}
 					while (local829 < 0) {
-						@Pc(940) int local940 = this.anIntArray120[this.aByteArray15[(local827 >> 12) * this.anInt3408 + (local819 >> 12)]];
+						@Pc(940) int local940 = this.palette[this.pixels[(local827 >> 12) * this.width + (local819 >> 12)]];
 						if (local940 == 0) {
 							local811++;
 						} else {
@@ -421,7 +542,7 @@ public final class SoftwareIndexedSprite extends IndexedSprite {
 					@Pc(988) int local988 = local368 + (local350 * local342 >> 4);
 					@Pc(996) int local996 = local378 + (local350 * local333 >> 4);
 					@Pc(998) int local998 = local303;
-					if ((local492 = local988 - (this.anInt3408 << 12)) >= 0) {
+					if ((local492 = local988 - (this.width << 12)) >= 0) {
 						local492 = (local342 - local492) / local342;
 						local998 = local303 + local492;
 						local988 += local342 * local492;
@@ -438,11 +559,11 @@ public final class SoftwareIndexedSprite extends IndexedSprite {
 						local996 += local333 * local492;
 						local980 += local492;
 					}
-					if ((local492 = (local996 + 1 - (this.anInt3413 << 12) - local333) / local333) > local998) {
+					if ((local492 = (local996 + 1 - (this.height << 12) - local333) / local333) > local998) {
 						local998 = local492;
 					}
 					while (local998 < 0) {
-						@Pc(1111) int local1111 = this.anIntArray120[this.aByteArray15[(local996 >> 12) * this.anInt3408 + (local988 >> 12)]];
+						@Pc(1111) int local1111 = this.palette[this.pixels[(local996 >> 12) * this.width + (local988 >> 12)]];
 						if (local1111 == 0) {
 							local980++;
 						} else {
@@ -464,18 +585,18 @@ public final class SoftwareIndexedSprite extends IndexedSprite {
 				@Pc(1153) int local1153 = local319;
 				@Pc(1161) int local1161 = local368 + (local350 * local342 >> 4);
 				@Pc(1165) int local1165 = local303;
-				if (local378 >= 0 && local378 - (this.anInt3413 << 12) < 0) {
+				if (local378 >= 0 && local378 - (this.height << 12) < 0) {
 					if (local1161 < 0) {
 						local492 = (local342 - local1161 - 1) / local342;
 						local1165 = local303 + local492;
 						local1161 += local342 * local492;
 						local1153 = local319 + local492;
 					}
-					if ((local492 = (local1161 + 1 - (this.anInt3408 << 12) - local342) / local342) > local1165) {
+					if ((local492 = (local1161 + 1 - (this.width << 12) - local342) / local342) > local1165) {
 						local1165 = local492;
 					}
 					while (local1165 < 0) {
-						@Pc(1237) int local1237 = this.anIntArray120[this.aByteArray15[(local378 >> 12) * this.anInt3408 + (local1161 >> 12)]];
+						@Pc(1237) int local1237 = this.palette[this.pixels[(local378 >> 12) * this.width + (local1161 >> 12)]];
 						if (local1237 == 0) {
 							local1153++;
 						} else {
@@ -503,10 +624,10 @@ public final class SoftwareIndexedSprite extends IndexedSprite {
 					local1287 += local333 * local492;
 					local1271 = local319 + local492;
 				}
-				if ((local492 = (local1279 + 1 - (this.anInt3408 << 12) - local342) / local342) > local1289) {
+				if ((local492 = (local1279 + 1 - (this.width << 12) - local342) / local342) > local1289) {
 					local1289 = local492;
 				}
-				if ((local492 = local1287 - (this.anInt3413 << 12)) >= 0) {
+				if ((local492 = local1287 - (this.height << 12)) >= 0) {
 					local492 = (local333 - local492) / local333;
 					local1289 += local492;
 					local1279 += local342 * local492;
@@ -517,7 +638,7 @@ public final class SoftwareIndexedSprite extends IndexedSprite {
 					local1289 = local492;
 				}
 				while (local1289 < 0) {
-					@Pc(1402) int local1402 = this.anIntArray120[this.aByteArray15[(local1287 >> 12) * this.anInt3408 + (local1279 >> 12)]];
+					@Pc(1402) int local1402 = this.palette[this.pixels[(local1287 >> 12) * this.width + (local1279 >> 12)]];
 					if (local1402 == 0) {
 						local1271++;
 					} else {
@@ -546,7 +667,7 @@ public final class SoftwareIndexedSprite extends IndexedSprite {
 					local1458 += local333 * local492;
 					local1442 = local319 + local492;
 				}
-				if ((local492 = (local1450 + 1 - (this.anInt3408 << 12) - local342) / local342) > local1460) {
+				if ((local492 = (local1450 + 1 - (this.width << 12) - local342) / local342) > local1460) {
 					local1460 = local492;
 				}
 				if (local1458 < 0) {
@@ -556,11 +677,11 @@ public final class SoftwareIndexedSprite extends IndexedSprite {
 					local1458 += local333 * local492;
 					local1442 += local492;
 				}
-				if ((local492 = (local1458 + 1 - (this.anInt3413 << 12) - local333) / local333) > local1460) {
+				if ((local492 = (local1458 + 1 - (this.height << 12) - local333) / local333) > local1460) {
 					local1460 = local492;
 				}
 				while (local1460 < 0) {
-					@Pc(1575) int local1575 = this.anIntArray120[this.aByteArray15[(local1458 >> 12) * this.anInt3408 + (local1450 >> 12)]];
+					@Pc(1575) int local1575 = this.palette[this.pixels[(local1458 >> 12) * this.width + (local1450 >> 12)]];
 					if (local1575 == 0) {
 						local1442++;
 					} else {
@@ -580,23 +701,23 @@ public final class SoftwareIndexedSprite extends IndexedSprite {
 
 	@OriginalMember(owner = "client!fe", name = "a", descriptor = "(IIII)V")
 	public final void method1315(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) {
-		@Pc(2) int local2 = this.anInt3408;
-		@Pc(5) int local5 = this.anInt3413;
+		@Pc(2) int local2 = this.width;
+		@Pc(5) int local5 = this.height;
 		@Pc(7) int local7 = 0;
 		@Pc(9) int local9 = 0;
-		@Pc(12) int local12 = this.anInt3412;
-		@Pc(15) int local15 = this.anInt3410;
+		@Pc(12) int local12 = this.innerWidth;
+		@Pc(15) int local15 = this.innerHeight;
 		@Pc(21) int local21 = (local12 << 16) / arg2;
 		@Pc(27) int local27 = (local15 << 16) / arg3;
-		if (this.anInt3404 > 0) {
-			@Pc(41) int local41 = ((this.anInt3404 << 16) + local21 - 1) / local21;
+		if (this.xOffset > 0) {
+			@Pc(41) int local41 = ((this.xOffset << 16) + local21 - 1) / local21;
 			arg0 += local41;
-			local7 = local41 * local21 - (this.anInt3404 << 16);
+			local7 = local41 * local21 - (this.xOffset << 16);
 		}
-		if (this.anInt3405 > 0) {
-			@Pc(70) int local70 = ((this.anInt3405 << 16) + local27 - 1) / local27;
+		if (this.yOffset > 0) {
+			@Pc(70) int local70 = ((this.yOffset << 16) + local27 - 1) / local27;
 			arg1 += local70;
-			local9 = local70 * local27 - (this.anInt3405 << 16);
+			local9 = local70 * local27 - (this.yOffset << 16);
 		}
 		if (local2 < local12) {
 			arg2 = ((local2 << 16) + local21 - local7 - 1) / local21;
@@ -627,28 +748,28 @@ public final class SoftwareIndexedSprite extends IndexedSprite {
 			local7 += local21 * local187;
 			local125 += local187;
 		}
-		Static15.method1317(SoftwareRaster.pixels, this.aByteArray15, this.anIntArray120, local7, local9, local121, local125, arg2, arg3, local21, local27, local2);
+		method1317(SoftwareRaster.pixels, this.pixels, this.palette, local7, local9, local121, local125, arg2, arg3, local21, local27, local2);
 	}
 
 	@OriginalMember(owner = "client!fe", name = "a", descriptor = "(IIIII)V")
 	public final void method1316(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4) {
-		@Pc(2) int local2 = this.anInt3408;
-		@Pc(5) int local5 = this.anInt3413;
+		@Pc(2) int local2 = this.width;
+		@Pc(5) int local5 = this.height;
 		@Pc(7) int local7 = 0;
 		@Pc(9) int local9 = 0;
-		@Pc(12) int local12 = this.anInt3412;
-		@Pc(15) int local15 = this.anInt3410;
+		@Pc(12) int local12 = this.innerWidth;
+		@Pc(15) int local15 = this.innerHeight;
 		@Pc(21) int local21 = (local12 << 16) / arg2;
 		@Pc(27) int local27 = (local15 << 16) / arg3;
-		if (this.anInt3404 > 0) {
-			@Pc(41) int local41 = ((this.anInt3404 << 16) + local21 - 1) / local21;
+		if (this.xOffset > 0) {
+			@Pc(41) int local41 = ((this.xOffset << 16) + local21 - 1) / local21;
 			arg0 += local41;
-			local7 = local41 * local21 - (this.anInt3404 << 16);
+			local7 = local41 * local21 - (this.xOffset << 16);
 		}
-		if (this.anInt3405 > 0) {
-			@Pc(70) int local70 = ((this.anInt3405 << 16) + local27 - 1) / local27;
+		if (this.yOffset > 0) {
+			@Pc(70) int local70 = ((this.yOffset << 16) + local27 - 1) / local27;
 			arg1 += local70;
-			local9 = local70 * local27 - (this.anInt3405 << 16);
+			local9 = local70 * local27 - (this.yOffset << 16);
 		}
 		if (local2 < local12) {
 			arg2 = ((local2 << 16) + local21 - local7 - 1) / local21;
@@ -679,18 +800,18 @@ public final class SoftwareIndexedSprite extends IndexedSprite {
 			local7 += local21 * local187;
 			local125 += local187;
 		}
-		Static15.method1318(SoftwareRaster.pixels, this.aByteArray15, this.anIntArray120, local7, local9, local121, local125, arg2, arg3, local21, local27, local2, arg4);
+		method1318(SoftwareRaster.pixels, this.pixels, this.palette, local7, local9, local121, local125, arg2, arg3, local21, local27, local2, arg4);
 	}
 
 	@OriginalMember(owner = "client!fe", name = "a", descriptor = "(II)V")
 	@Override
-	public final void method2815(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
-		@Pc(4) int local4 = arg0 + this.anInt3404;
-		@Pc(9) int local9 = arg1 + this.anInt3405;
+	public final void renderTransparent(@OriginalArg(0) int x, @OriginalArg(1) int y) {
+		@Pc(4) int local4 = x + this.xOffset;
+		@Pc(9) int local9 = y + this.yOffset;
 		@Pc(15) int local15 = local4 + local9 * SoftwareRaster.width;
 		@Pc(17) int local17 = 0;
-		@Pc(20) int local20 = this.anInt3413;
-		@Pc(23) int local23 = this.anInt3408;
+		@Pc(20) int local20 = this.height;
+		@Pc(23) int local23 = this.width;
 		@Pc(27) int local27 = SoftwareRaster.width - local23;
 		@Pc(29) int local29 = 0;
 		if (local9 < SoftwareRaster.clipY) {
@@ -719,39 +840,39 @@ public final class SoftwareIndexedSprite extends IndexedSprite {
 			local27 += local107;
 		}
 		if (local23 > 0 && local20 > 0) {
-			Static15.method1310(SoftwareRaster.pixels, this.aByteArray15, this.anIntArray120, local17, local15, local23, local20, local27, local29);
+			method1310(SoftwareRaster.pixels, this.pixels, this.palette, local17, local15, local23, local20, local27, local29);
 		}
 	}
 
 	@OriginalMember(owner = "client!fe", name = "d", descriptor = "()V")
 	public final void method1320() {
-		if (this.anInt3408 == this.anInt3412 && this.anInt3413 == this.anInt3410) {
+		if (this.width == this.innerWidth && this.height == this.innerHeight) {
 			return;
 		}
-		@Pc(17) byte[] local17 = new byte[this.anInt3412 * this.anInt3410];
+		@Pc(17) byte[] local17 = new byte[this.innerWidth * this.innerHeight];
 		@Pc(19) int local19 = 0;
-		for (@Pc(21) int local21 = 0; local21 < this.anInt3413; local21++) {
-			for (@Pc(27) int local27 = 0; local27 < this.anInt3408; local27++) {
-				local17[local27 + this.anInt3404 + (local21 + this.anInt3405) * this.anInt3412] = this.aByteArray15[local19++];
+		for (@Pc(21) int local21 = 0; local21 < this.height; local21++) {
+			for (@Pc(27) int local27 = 0; local27 < this.width; local27++) {
+				local17[local27 + this.xOffset + (local21 + this.yOffset) * this.innerWidth] = this.pixels[local19++];
 			}
 		}
-		this.aByteArray15 = local17;
-		this.anInt3408 = this.anInt3412;
-		this.anInt3413 = this.anInt3410;
-		this.anInt3404 = 0;
-		this.anInt3405 = 0;
+		this.pixels = local17;
+		this.width = this.innerWidth;
+		this.height = this.innerHeight;
+		this.xOffset = 0;
+		this.yOffset = 0;
 	}
 
 	@OriginalMember(owner = "client!fe", name = "a", descriptor = "(II[I[I)V")
-	public final void method1321(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int[] arg2, @OriginalArg(3) int[] arg3) {
-		if (SoftwareRaster.clipHeight - SoftwareRaster.clipY != arg2.length) {
+	public final void renderTransparentMasked(@OriginalArg(0) int x, @OriginalArg(1) int y, @OriginalArg(2) int[] maskXs, @OriginalArg(3) int[] maskWidths) {
+		if (SoftwareRaster.clipHeight - SoftwareRaster.clipY != maskXs.length) {
 			throw new IllegalStateException();
 		}
-		@Pc(14) int local14 = arg0 + this.anInt3404;
-		@Pc(19) int local19 = arg1 + this.anInt3405;
+		@Pc(14) int local14 = x + this.xOffset;
+		@Pc(19) int local19 = y + this.yOffset;
 		@Pc(21) int local21 = 0;
-		@Pc(24) int local24 = this.anInt3413;
-		@Pc(27) int local27 = this.anInt3408;
+		@Pc(24) int local24 = this.height;
+		@Pc(27) int local27 = this.width;
 		@Pc(31) int local31 = SoftwareRaster.width - local27;
 		@Pc(33) int local33 = 0;
 		@Pc(39) int local39 = local14 + local19 * SoftwareRaster.width;
@@ -786,8 +907,8 @@ public final class SoftwareIndexedSprite extends IndexedSprite {
 		@Pc(138) int local138 = local14 - SoftwareRaster.clipX;
 		@Pc(142) int local142 = local19 - SoftwareRaster.clipY;
 		for (@Pc(144) int local144 = local142; local144 < local142 + local24; local144++) {
-			@Pc(153) int local153 = arg2[local144];
-			@Pc(157) int local157 = arg3[local144];
+			@Pc(153) int local153 = maskXs[local144];
+			@Pc(157) int local157 = maskWidths[local144];
 			@Pc(159) int local159 = local27;
 			if (local138 > local153) {
 				@Pc(166) int local166 = local138 - local153;
@@ -815,7 +936,7 @@ public final class SoftwareIndexedSprite extends IndexedSprite {
 				local221 = local159 - local157;
 			}
 			for (@Pc(234) int local234 = -local157; local234 < 0; local234++) {
-				@Pc(245) int local245 = this.anIntArray120[this.aByteArray15[local21++]];
+				@Pc(245) int local245 = this.palette[this.pixels[local21++]];
 				if (local245 == 0) {
 					local39++;
 				} else {

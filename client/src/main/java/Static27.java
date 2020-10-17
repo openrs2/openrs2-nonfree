@@ -251,13 +251,6 @@ public final class Static27 {
 		Static1.anInt420 = -1;
 	}
 
-	@OriginalMember(owner = "client!of", name = "a", descriptor = "(Z)Lclient!fe;")
-	public static SoftwareIndexedSprite method3187() {
-		@Pc(21) SoftwareIndexedSprite local21 = new SoftwareIndexedSprite(Static1.anInt889, Static3.anInt2162, Static5.anIntArray402[0], Static5.anIntArray391[0], Static3.anIntArray185[0], Static7.anIntArray643[0], Static6.aByteArrayArray36[0], Static2.anIntArray85);
-		Static37.method4670();
-		return local21;
-	}
-
 	@OriginalMember(owner = "client!og", name = "f", descriptor = "(B)V")
 	public static void method4704() {
 		for (@Pc(3) int local3 = 0; local3 < Static6.anInt4457; local3++) {
@@ -372,11 +365,6 @@ public final class Static27 {
 	@OriginalMember(owner = "client!oh", name = "a", descriptor = "(II)V")
 	public static void method3219() {
 		Static6.aClass26_50.clean(5);
-	}
-
-	@OriginalMember(owner = "client!oi", name = "a", descriptor = "(Lclient!fh;BII)[Lclient!uj;")
-	public static Sprite[] method3225(@OriginalArg(0) Js5 arg0, @OriginalArg(3) int arg1) {
-		return Static9.method197(arg0, arg1, 0) ? Static21.method2064() : null;
 	}
 
 	@OriginalMember(owner = "client!oi", name = "a", descriptor = "(BI)Ljava/lang/String;")

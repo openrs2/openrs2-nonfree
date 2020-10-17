@@ -48,16 +48,6 @@ public final class Static37 {
 		return Static2.aBoolean68 && Keyboard.pressedKeys[81] && Static7.anInt5634 > 2 ? Static2.anIntArray160[Static7.anInt5634 - 2] : Static2.anIntArray160[Static7.anInt5634 - 1];
 	}
 
-	@OriginalMember(owner = "client!wb", name = "c", descriptor = "(Z)V")
-	public static void method4670() {
-		Static5.anIntArray402 = null;
-		Static2.anIntArray85 = null;
-		Static3.anIntArray185 = null;
-		Static7.anIntArray643 = null;
-		Static5.anIntArray391 = null;
-		Static6.aByteArrayArray36 = null;
-	}
-
 	@OriginalMember(owner = "client!wc", name = "a", descriptor = "(Lclient!fd;Z)Lclient!am;")
 	public static Class11_Sub1 method4674(@OriginalArg(0) Buffer arg0) {
 		return new Class11_Sub1(arg0.readShort(), arg0.readShort(), arg0.readShort(), arg0.readShort(), arg0.readUnsignedMedium(), arg0.readUnsignedMedium(), arg0.readUnsignedByte());
@@ -206,8 +196,8 @@ public final class Static37 {
 
 	@OriginalMember(owner = "client!wd", name = "a", descriptor = "(BLjava/lang/String;Z)V")
 	public static void method4716(@OriginalArg(1) String arg0, @OriginalArg(2) boolean arg1) {
-		@Pc(17) int local17 = Static5.aClass4_Sub3_Sub5_2.method2261(arg0, 250);
-		@Pc(32) int local32 = Static5.aClass4_Sub3_Sub5_2.method2274(arg0, 250) * 13;
+		@Pc(17) int local17 = Fonts.p12Full.method2261(arg0, 250);
+		@Pc(32) int local32 = Fonts.p12Full.method2274(arg0, 250) * 13;
 		if (GlRenderer.enabled) {
 			GlRaster.fillRect(6, 6, local17 + 4 + 4, local32 + 8, 0);
 			GlRaster.drawRect(6, 6, local17 + 4 + 4, local32 + 4 + 4, 16777215);
@@ -215,7 +205,7 @@ public final class Static37 {
 			SoftwareRaster.fillRect(6, 6, local17 + 8, local32 + 4 + 4, 0);
 			SoftwareRaster.drawRect(6, 6, local17 + 4 + 4, local32 + 8, 16777215);
 		}
-		Static5.aClass4_Sub3_Sub5_2.method2255(arg0, 10, 10, local17, local32, 16777215, -1, 1, 1, 0);
+		Fonts.p12Full.method2255(arg0, 10, 10, local17, local32, 16777215, -1, 1, 1, 0);
 		Static8.method66(local17 + 4 + 4, local32 + 4 + 4, 6, 6);
 		if (!arg1) {
 			Static16.method1559(10, 10, local32, local17);

@@ -1429,16 +1429,16 @@ public final class GlModel extends Model {
 		@Pc(134) int local134 = local40 + 1 - local26;
 		@Pc(140) int local140 = local99 + 1 - local85;
 		@Pc(151) SoftwareIndexedSprite local151;
-		if (arg0 == null || arg0.aByteArray15.length < local134 * local140) {
+		if (arg0 == null || arg0.pixels.length < local134 * local140) {
 			local151 = new SoftwareIndexedSprite(local134, local140, 0);
 		} else {
 			local151 = arg0;
-			arg0.anInt3412 = arg0.anInt3408 = local134;
-			arg0.anInt3410 = arg0.anInt3413 = local140;
-			arg0.method1309();
+			arg0.innerWidth = arg0.width = local134;
+			arg0.innerHeight = arg0.height = local140;
+			arg0.clear();
 		}
-		local151.anInt3404 = local26;
-		local151.anInt3405 = local85;
+		local151.xOffset = local26;
+		local151.yOffset = local85;
 		if (Static6.anIntArray509.length < this.anInt4691) {
 			Static6.anIntArray509 = new int[this.anInt4691];
 			Static6.anIntArray508 = new int[this.anInt4691];
@@ -1469,7 +1469,7 @@ public final class GlModel extends Model {
 				@Pc(322) int local322 = Static6.anIntArray508[local297];
 				@Pc(326) int local326 = Static6.anIntArray508[local302];
 				if ((local306 - local310) * (local322 - local326) - (local322 - local318) * (local314 - local310) > 0) {
-					Static23.method2552(local151.aByteArray15, local318, local322, local326, local306, local310, local314, local134);
+					Static23.method2552(local151.pixels, local318, local322, local326, local306, local310, local314, local134);
 				}
 			}
 		}

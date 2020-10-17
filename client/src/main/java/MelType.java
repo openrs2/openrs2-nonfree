@@ -108,12 +108,12 @@ public final class MelType {
 			return local22;
 		}
 		MelTypeList.spritesArchive.isFileReady(this.worldMapSprite);
-		@Pc(41) SoftwareIndexedSprite local41 = Static33.method3003(MelTypeList.spritesArchive, this.worldMapSprite);
+		@Pc(41) SoftwareIndexedSprite local41 = SpriteLoader.loadSoftwareIndexedSprite(MelTypeList.spritesArchive, this.worldMapSprite);
 		if (local41 != null) {
-			local41.anInt3412 = local41.anInt3408;
-			local41.anInt3404 = 0;
-			local41.anInt3410 = local41.anInt3413;
-			local41.anInt3405 = 0;
+			local41.innerWidth = local41.width;
+			local41.xOffset = 0;
+			local41.innerHeight = local41.height;
+			local41.yOffset = 0;
 			MelTypeList.sprites.put((long) (this.worldMapSprite | 0x20000), local41);
 		}
 		return local41;
@@ -223,7 +223,7 @@ public final class MelType {
 		if (local30 != null) {
 			return local30;
 		} else if (MelTypeList.spritesArchive.isFileReady(local17)) {
-			@Pc(49) SoftwareIndexedSprite local49 = Static33.method3003(MelTypeList.spritesArchive, local17);
+			@Pc(49) SoftwareIndexedSprite local49 = SpriteLoader.loadSoftwareIndexedSprite(MelTypeList.spritesArchive, local17);
 			@Pc(55) IndexedSprite local55;
 			if (GlRenderer.enabled && !arg1) {
 				local55 = new GlIndexedSprite(local49);
@@ -231,10 +231,10 @@ public final class MelType {
 				local55 = local49;
 			}
 			if (local55 != null) {
-				local55.anInt3410 = local55.anInt3413;
-				local55.anInt3405 = 0;
-				local55.anInt3412 = local55.anInt3408;
-				local55.anInt3404 = 0;
+				local55.innerHeight = local55.height;
+				local55.yOffset = 0;
+				local55.innerWidth = local55.width;
+				local55.xOffset = 0;
 				MelTypeList.sprites.put((long) ((arg0 ? 65536 : 0) | local17), local55);
 			}
 			return local55;

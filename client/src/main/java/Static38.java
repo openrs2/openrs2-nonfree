@@ -4,11 +4,6 @@ import org.openrs2.deob.annotation.Pc;
 
 public final class Static38 {
 
-	@OriginalMember(owner = "client!wj", name = "a", descriptor = "(Lclient!fh;IB)[Lclient!fe;")
-	public static SoftwareIndexedSprite[] method4790(@OriginalArg(0) Js5 arg0, @OriginalArg(1) int arg1) {
-		return Static33.method4131(arg0, arg1) ? Static26.method4358() : null;
-	}
-
 	@OriginalMember(owner = "client!wk", name = "a", descriptor = "(I)V")
 	public static void method4791() {
 		Static5.aByteArrayArrayArray18 = null;

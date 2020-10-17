@@ -4,9 +4,6 @@ import org.openrs2.deob.annotation.OriginalMember;
 
 public final class Static7 {
 
-	@OriginalMember(owner = "client!u", name = "c", descriptor = "I")
-	public static int anInt5230;
-
 	@OriginalMember(owner = "client!u", name = "e", descriptor = "I")
 	public static int anInt5231;
 
@@ -39,9 +36,6 @@ public final class Static7 {
 
 	@OriginalMember(owner = "client!uf", name = "e", descriptor = "I")
 	public static int anInt5331;
-
-	@OriginalMember(owner = "client!uf", name = "f", descriptor = "I")
-	public static int anInt5332;
 
 	@OriginalMember(owner = "client!uf", name = "h", descriptor = "I")
 	public static int y;
@@ -88,9 +82,6 @@ public final class Static7 {
 	@OriginalMember(owner = "client!vi", name = "Z", descriptor = "I")
 	public static int anInt5589;
 
-	@OriginalMember(owner = "client!vm", name = "V", descriptor = "[I")
-	public static int[] anIntArray643;
-
 	@OriginalMember(owner = "client!vm", name = "Y", descriptor = "F")
 	public static float aFloat144;
 
@@ -117,9 +108,6 @@ public final class Static7 {
 
 	@OriginalMember(owner = "client!wi", name = "d", descriptor = "I")
 	public static int anInt6030;
-
-	@OriginalMember(owner = "client!wj", name = "p", descriptor = "I")
-	public static int anInt6040;
 
 	@OriginalMember(owner = "client!wl", name = "y", descriptor = "F")
 	public static float aFloat154;

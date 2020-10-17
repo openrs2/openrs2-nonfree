@@ -6,18 +6,6 @@ import org.openrs2.deob.annotation.Pc;
 
 public final class Static14 {
 
-	@OriginalMember(owner = "client!ei", name = "a", descriptor = "(Lclient!fh;I)I")
-	public static int method1046(@OriginalArg(0) Js5 arg0) {
-		@Pc(5) int local5 = 0;
-		if (arg0.isFileReady(Static6.anInt4677)) {
-			local5++;
-		}
-		if (arg0.isFileReady(Static1.anInt322)) {
-			local5++;
-		}
-		return local5;
-	}
-
 	@OriginalMember(owner = "client!ei", name = "f", descriptor = "(I)V")
 	public static void method1047() {
 		Static28.method3270(Static1.aClass185_1);
@@ -151,24 +139,6 @@ public final class Static14 {
 				}
 			}
 		}
-	}
-
-	@OriginalMember(owner = "client!ek", name = "b", descriptor = "(B)Lclient!uj;")
-	public static Sprite method1063() {
-		@Pc(9) int local9 = Static7.anIntArray643[0] * Static3.anIntArray185[0];
-		@Pc(22) byte[] local22 = Static6.aByteArrayArray36[0];
-		@Pc(25) int[] local25 = new int[local9];
-		for (@Pc(27) int local27 = 0; local27 < local9; local27++) {
-			local25[local27] = Static2.anIntArray85[local22[local27] & 0xFF];
-		}
-		@Pc(68) Sprite local68;
-		if (GlRenderer.enabled) {
-			local68 = new GlSprite(Static1.anInt889, Static3.anInt2162, Static5.anIntArray402[0], Static5.anIntArray391[0], Static3.anIntArray185[0], Static7.anIntArray643[0], local25);
-		} else {
-			local68 = new SoftwareSprite(Static1.anInt889, Static3.anInt2162, Static5.anIntArray402[0], Static5.anIntArray391[0], Static3.anIntArray185[0], Static7.anIntArray643[0], local25);
-		}
-		Static37.method4670();
-		return local68;
 	}
 
 	@OriginalMember(owner = "client!el", name = "a", descriptor = "(I)V")
@@ -319,11 +289,6 @@ public final class Static14 {
 				}
 			}
 		}
-	}
-
-	@OriginalMember(owner = "client!en", name = "d", descriptor = "(I)I")
-	public static int method1084() {
-		return 14;
 	}
 
 	@OriginalMember(owner = "client!en", name = "a", descriptor = "(IIII)Z")
@@ -724,9 +689,9 @@ public final class Static14 {
 		@Pc(43) int local43 = local19 - (local29 * Static4.anInt3366 >> 8) >> 3;
 		@Pc(53) int local53 = local33 - (local29 * Static4.anInt3363 >> 8) >> 3;
 		if (arg0 != 0 && arg0 != 1 && (arg2 || arg3)) {
-			Static15.method1216(Static2.aClass56_Sub1Array2[arg0], Static2.aClass56_Sub1_2, local43 + 1, local53 + 1, arg1, arg2);
+			Static15.method1216(Sprites.floorShadows[arg0], Static2.aClass56_Sub1_2, local43 + 1, local53 + 1, arg1, arg2);
 		} else {
-			Static15.method1219(Static2.aClass56_Sub1Array2[1], Static2.aClass56_Sub1_2, local43 + 1, local53 + 1);
+			Static15.method1219(Sprites.floorShadows[1], Static2.aClass56_Sub1_2, local43 + 1, local53 + 1);
 		}
 	}
 
@@ -798,7 +763,7 @@ public final class Static14 {
 	@OriginalMember(owner = "client!fb", name = "a", descriptor = "()V")
 	public static void method1211() {
 		Static2.aClass56_Sub1_2 = null;
-		Static2.aClass56_Sub1Array2 = null;
+		Sprites.floorShadows = null;
 		Static2.aClass103ArrayArray1 = null;
 	}
 

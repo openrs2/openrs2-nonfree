@@ -542,11 +542,6 @@ public final class Static22 {
 		}
 	}
 
-	@OriginalMember(owner = "client!ka", name = "a", descriptor = "(ILclient!fh;ILclient!fh;I)Lclient!ke;")
-	public static SoftwareFont method2194(@OriginalArg(1) Js5 arg0, @OriginalArg(2) int arg1, @OriginalArg(3) Js5 arg2) {
-		return Static9.method197(arg2, arg1, 0) ? Static16.method4658(arg0.fetchFile(arg1, 0)) : null;
-	}
-
 	@OriginalMember(owner = "client!ke", name = "a", descriptor = "([I[BIIIIIIII)V")
 	public static void method2280(@OriginalArg(0) int[] arg0, @OriginalArg(1) byte[] arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) int arg8, @OriginalArg(9) int arg9) {
 		arg2 = ((arg2 & 0xFF00FF) * arg9 & 0xFF00FF00) + ((arg2 & 0xFF00) * arg9 & 0xFF0000) >> 8;
@@ -700,11 +695,11 @@ public final class Static22 {
 			return;
 		}
 		@Pc(127) int local127 = 0;
-		for (@Pc(129) int local129 = 0; local129 < arg0.anInt3413; local129++) {
-			for (@Pc(139) int local139 = 0; local139 < arg0.anInt3408; local139++) {
-				if (arg0.aByteArray15[local127++] != 0) {
-					@Pc(161) int local161 = local139 + arg0.anInt3404 + 16;
-					@Pc(168) int local168 = local129 + arg0.anInt3405 + 16;
+		for (@Pc(129) int local129 = 0; local129 < arg0.height; local129++) {
+			for (@Pc(139) int local139 = 0; local139 < arg0.width; local139++) {
+				if (arg0.pixels[local127++] != 0) {
+					@Pc(161) int local161 = local139 + arg0.xOffset + 16;
+					@Pc(168) int local168 = local129 + arg0.yOffset + 16;
 					@Pc(174) int local174 = (local168 << 7) + local161;
 					Static2.anIntArray159[local174] = 0;
 				}
@@ -1349,15 +1344,6 @@ public final class Static22 {
 		}
 		Static11.method563(local1500, local1492);
 		return local1492;
-	}
-
-	@OriginalMember(owner = "client!kn", name = "c", descriptor = "(I)V")
-	public static void method2411() {
-		if (Static3.aBoolean124) {
-			Static3.aBoolean124 = false;
-			Static6.aClass4_Sub3_Sub14_7 = null;
-			Static6.aClass56_1 = null;
-		}
 	}
 
 	@OriginalMember(owner = "client!kn", name = "a", descriptor = "(Z)V")

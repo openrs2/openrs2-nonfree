@@ -45,7 +45,7 @@ public final class Static31 {
 		}
 		@Pc(22) byte[] local22 = client.js5Archive13.fetchFile(arg0, 0);
 		@Pc(35) SoftwareFont local35 = new SoftwareFont(local22);
-		local35.method2267(Static3.aClass56Array3, null);
+		local35.setNameIcons(Sprites.nameIcons, null);
 		Static1.aClass26_3.put((long) arg0, local35);
 		return local35;
 	}
@@ -139,11 +139,6 @@ public final class Static31 {
 		Static6.aClass26_48.clear();
 		Static1.aClass26_1.clear();
 		Static1.aClass26_4.clear();
-	}
-
-	@OriginalMember(owner = "client!rg", name = "a", descriptor = "(Lclient!fh;IZI)Lclient!vn;")
-	public static SoftwareSprite method3691(@OriginalArg(0) Js5 arg0, @OriginalArg(1) int arg1) {
-		return Static9.method197(arg0, arg1, 0) ? Static34.method1546() : null;
 	}
 
 	@OriginalMember(owner = "client!ri", name = "b", descriptor = "(ZI)V")
@@ -854,9 +849,9 @@ public final class Static31 {
 		@Pc(78) int local78 = local60 * arg3 + arg4 * local48 >> 16;
 		@Pc(89) int local89 = arg4 * local60 - arg3 * local48 >> 16;
 		if (GlRenderer.enabled) {
-			((GlIndexedSprite) arg0).method2820(local78 + arg2.anInt5893 / 2 + arg1 - arg0.anInt3412 / 2, arg2.anInt5949 / 2 + arg5 - local89 - arg0.anInt3410 / 2, (GlSprite) arg2.method4729(false));
+			((GlIndexedSprite) arg0).renderTransparentMasked(local78 + arg2.anInt5893 / 2 + arg1 - arg0.innerWidth / 2, arg2.anInt5949 / 2 + arg5 - local89 - arg0.innerHeight / 2, (GlSprite) arg2.method4729(false));
 		} else {
-			((SoftwareIndexedSprite) arg0).method1321(local78 + arg1 + arg2.anInt5893 / 2 - arg0.anInt3412 / 2, arg5 + arg2.anInt5949 / 2 - local89 - arg0.anInt3410 / 2, arg2.anIntArray672, arg2.anIntArray657);
+			((SoftwareIndexedSprite) arg0).renderTransparentMasked(local78 + arg1 + arg2.anInt5893 / 2 - arg0.innerWidth / 2, arg5 + arg2.anInt5949 / 2 - local89 - arg0.innerHeight / 2, arg2.anIntArray672, arg2.anIntArray657);
 		}
 	}
 
@@ -885,9 +880,9 @@ public final class Static31 {
 
 	@OriginalMember(owner = "client!rm", name = "f", descriptor = "(B)V")
 	public static void method3783() {
-		@Pc(9) int local9 = Static5.aClass4_Sub3_Sub5_3.method2252(LocalisedText.CHOOSE_OPTION);
+		@Pc(9) int local9 = Fonts.b12Full.method2252(LocalisedText.CHOOSE_OPTION);
 		for (@Pc(11) int local11 = 0; local11 < Static7.anInt5634; local11++) {
-			@Pc(20) int local20 = Static5.aClass4_Sub3_Sub5_3.method2252(Static26.method2992(local11));
+			@Pc(20) int local20 = Fonts.b12Full.method2252(Static26.method2992(local11));
 			if (local20 > local9) {
 				local9 = local20;
 			}
@@ -973,12 +968,6 @@ public final class Static31 {
 		Static2.anImage2 = null;
 		Static1.aFont1 = null;
 		Static1.aFontMetrics1 = null;
-	}
-
-	@OriginalMember(owner = "client!rn", name = "a", descriptor = "(ILclient!fh;)V")
-	public static void method3154(@OriginalArg(1) Js5 arg0) {
-		Static6.anInt4677 = arg0.getGroupId("titlebg");
-		Static1.anInt322 = arg0.getGroupId("logo");
 	}
 
 	@OriginalMember(owner = "client!rn", name = "a", descriptor = "(Lclient!qf;IIIIIIIZ)V")

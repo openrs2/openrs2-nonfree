@@ -1102,7 +1102,7 @@ public final class Protocol {
 			@Pc(3976) Class94 local3976 = new Class94();
 			local3976.anInt2561 = local3960;
 			local3976.anInt2559 = inboundBuffer.readUnsignedByte();
-			if (local3976.anInt2559 >= 0 && local3976.anInt2559 < Static6.aClass4_Sub3_Sub14Array11.length) {
+			if (local3976.anInt2559 >= 0 && local3976.anInt2559 < Sprites.hintHeadIcons.length) {
 				if (local3976.anInt2561 == 1 || local3976.anInt2561 == 10) {
 					local3976.anInt2560 = inboundBuffer.readUnsignedShort();
 					@Pc(4011) Packet local4011 = inboundBuffer;

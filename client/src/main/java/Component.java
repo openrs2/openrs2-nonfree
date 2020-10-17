@@ -617,7 +617,7 @@ public final class Component {
 		if (local39 != null) {
 			return local39;
 		}
-		@Pc(50) Sprite local50 = Static20.method1917(local27, InterfaceList.spritesArchive);
+		@Pc(50) Sprite local50 = SpriteLoader.loadSprite(InterfaceList.spritesArchive, local27);
 		if (local50 == null) {
 			Static3.aBoolean178 = true;
 		} else {
@@ -883,9 +883,9 @@ public final class Component {
 		}
 		@Pc(86) SoftwareSprite local86;
 		if (this.aBoolean412) {
-			local86 = Static31.method3691(InterfaceList.spritesArchive, local12);
+			local86 = SpriteLoader.loadSoftwareAlphaSprite(InterfaceList.spritesArchive, local12);
 		} else {
-			local86 = Static24.method2654(InterfaceList.spritesArchive, local12, 0);
+			local86 = SpriteLoader.loadSoftwareSprite(InterfaceList.spritesArchive, local12, 0);
 		}
 		if (local86 == null) {
 			Static3.aBoolean178 = true;
@@ -1130,7 +1130,7 @@ public final class Component {
 	}
 
 	@OriginalMember(owner = "client!wf", name = "a", descriptor = "(B[Lclient!ma;)Lclient!gl;")
-	public final Font method4734(@OriginalArg(1) IndexedSprite[] arg0) {
+	public final Font method4734(@OriginalArg(1) IndexedSprite[] nameIcons) {
 		Static3.aBoolean178 = false;
 		if (this.anInt5954 == -1) {
 			return null;
@@ -1139,11 +1139,11 @@ public final class Component {
 		if (local28 != null) {
 			return local28;
 		}
-		@Pc(42) Font local42 = Static8.method121(InterfaceList.spritesArchive, InterfaceList.fontMetricsArchive, this.anInt5954);
+		@Pc(42) Font local42 = SpriteLoader.loadFont(InterfaceList.spritesArchive, InterfaceList.fontMetricsArchive, this.anInt5954);
 		if (local42 == null) {
 			Static3.aBoolean178 = true;
 		} else {
-			local42.method2267(arg0, null);
+			local42.setNameIcons(nameIcons, null);
 			Static1.aClass26_4.put((long) this.anInt5954, local42);
 		}
 		return local42;
@@ -1154,24 +1154,24 @@ public final class Component {
 		if (this.anIntArray672 != null) {
 			return true;
 		}
-		@Pc(19) SoftwareIndexedSprite local19 = Static33.method3003(InterfaceList.spritesArchive, this.anInt5947);
+		@Pc(19) SoftwareIndexedSprite local19 = SpriteLoader.loadSoftwareIndexedSprite(InterfaceList.spritesArchive, this.anInt5947);
 		if (local19 == null) {
 			return false;
 		}
 		local19.method1320();
-		this.anIntArray657 = new int[local19.anInt3413];
-		this.anIntArray672 = new int[local19.anInt3413];
-		for (@Pc(44) int local44 = 0; local44 < local19.anInt3413; local44++) {
+		this.anIntArray657 = new int[local19.height];
+		this.anIntArray672 = new int[local19.height];
+		for (@Pc(44) int local44 = 0; local44 < local19.height; local44++) {
 			@Pc(54) int local54 = 0;
-			for (@Pc(56) int local56 = 0; local56 < local19.anInt3408; local56++) {
-				if (local19.aByteArray15[local56 + local44 * local19.anInt3408] != 0) {
+			for (@Pc(56) int local56 = 0; local56 < local19.width; local56++) {
+				if (local19.pixels[local56 + local44 * local19.width] != 0) {
 					local54 = local56;
 					break;
 				}
 			}
-			@Pc(88) int local88 = local19.anInt3408;
-			for (@Pc(90) int local90 = local54; local90 < local19.anInt3408; local90++) {
-				if (local19.aByteArray15[local19.anInt3408 * local44 + local90] == 0) {
+			@Pc(88) int local88 = local19.width;
+			for (@Pc(90) int local90 = local54; local90 < local19.width; local90++) {
+				if (local19.pixels[local19.width * local44 + local90] == 0) {
 					local88 = local90;
 					break;
 				}

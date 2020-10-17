@@ -47,8 +47,8 @@ public final class Class103 {
 
 	@OriginalMember(owner = "client!kc", name = "a", descriptor = "(Lclient!fe;II)Z")
 	public final boolean method2236(@OriginalArg(0) SoftwareIndexedSprite arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
-		@Pc(2) byte[] local2 = arg0.aByteArray15;
-		@Pc(5) int local5 = arg0.anInt3408;
+		@Pc(2) byte[] local2 = arg0.pixels;
+		@Pc(5) int local5 = arg0.width;
 		@Pc(19) int local19 = arg1 * 128 + (arg2 * 128 + 1) * local5 + 1;
 		@Pc(21) int local21 = 0;
 		for (@Pc(23) int local23 = -128; local23 < 0; local23++) {

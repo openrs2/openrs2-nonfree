@@ -246,17 +246,6 @@ public final class Static9 {
 		}
 	}
 
-	@OriginalMember(owner = "client!an", name = "a", descriptor = "(ILclient!fh;II)Z")
-	public static boolean method197(@OriginalArg(1) Js5 arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2) {
-		@Pc(9) byte[] local9 = arg0.fetchFile(arg1, arg2);
-		if (local9 == null) {
-			return false;
-		} else {
-			Static29.method3542(local9);
-			return true;
-		}
-	}
-
 	@OriginalMember(owner = "client!an", name = "a", descriptor = "(I)V")
 	public static void method198() {
 		ObjTypeList.sprites.clear();
@@ -340,18 +329,6 @@ public final class Static9 {
 		} catch (@Pc(243) Exception local243) {
 			GameShell.canvas.repaint();
 		}
-	}
-
-	@OriginalMember(owner = "client!ao", name = "a", descriptor = "(I)Lclient!ma;")
-	public static IndexedSprite method204() {
-		@Pc(31) IndexedSprite local31;
-		if (GlRenderer.enabled) {
-			local31 = new GlIndexedSprite(Static1.anInt889, Static3.anInt2162, Static5.anIntArray402[0], Static5.anIntArray391[0], Static3.anIntArray185[0], Static7.anIntArray643[0], Static6.aByteArrayArray36[0], Static2.anIntArray85);
-		} else {
-			local31 = new SoftwareIndexedSprite(Static1.anInt889, Static3.anInt2162, Static5.anIntArray402[0], Static5.anIntArray391[0], Static3.anIntArray185[0], Static7.anIntArray643[0], Static6.aByteArrayArray36[0], Static2.anIntArray85);
-		}
-		Static37.method4670();
-		return local31;
 	}
 
 	@OriginalMember(owner = "client!ao", name = "a", descriptor = "(III[[III)I")
@@ -476,9 +453,9 @@ public final class Static9 {
 			Static22.method2387();
 		}
 		if (arg0 == 5) {
-			Static24.method2675(client.js5Archive8);
+			TitleScreen.load(client.js5Archive8);
 		} else {
-			Static22.method2411();
+			TitleScreen.clear();
 		}
 		@Pc(114) boolean local114 = Static4.anInt3304 == 5 || Static4.anInt3304 == 10 || Static4.anInt3304 == 28;
 		if (local114 != local28) {

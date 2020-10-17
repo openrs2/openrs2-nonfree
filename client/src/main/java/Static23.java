@@ -46,20 +46,6 @@ public final class Static23 {
 		}
 	}
 
-	@OriginalMember(owner = "client!lb", name = "a", descriptor = "(I)[Lclient!ma;")
-	public static IndexedSprite[] method2456() {
-		@Pc(8) IndexedSprite[] local8 = new IndexedSprite[Static4.anInt2748];
-		for (@Pc(10) int local10 = 0; local10 < Static4.anInt2748; local10++) {
-			if (GlRenderer.enabled) {
-				local8[local10] = new GlIndexedSprite(Static1.anInt889, Static3.anInt2162, Static5.anIntArray402[local10], Static5.anIntArray391[local10], Static3.anIntArray185[local10], Static7.anIntArray643[local10], Static6.aByteArrayArray36[local10], Static2.anIntArray85);
-			} else {
-				local8[local10] = new SoftwareIndexedSprite(Static1.anInt889, Static3.anInt2162, Static5.anIntArray402[local10], Static5.anIntArray391[local10], Static3.anIntArray185[local10], Static7.anIntArray643[local10], Static6.aByteArrayArray36[local10], Static2.anIntArray85);
-			}
-		}
-		Static37.method4670();
-		return local8;
-	}
-
 	@OriginalMember(owner = "client!lb", name = "a", descriptor = "(I[I[III)V")
 	public static void method2459(@OriginalArg(0) int arg0, @OriginalArg(1) int[] arg1, @OriginalArg(2) int[] arg2, @OriginalArg(4) int arg3) {
 		if (arg3 >= arg0) {

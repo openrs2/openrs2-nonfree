@@ -31,7 +31,7 @@ public final class ObjTypeList {
 	public static Js5 modelsArchive;
 
 	@OriginalMember(owner = "client!be", name = "h", descriptor = "Lclient!ke;")
-	public static SoftwareFont aClass4_Sub3_Sub5_Sub2_1;
+	public static SoftwareFont font;
 
 	@OriginalMember(owner = "client!ul", name = "a", descriptor = "(IB)Lclient!td;")
 	public static ObjType get(@OriginalArg(0) int id) {
@@ -74,13 +74,13 @@ public final class ObjTypeList {
 	}
 
 	@OriginalMember(owner = "client!f", name = "a", descriptor = "(Lclient!fh;Lclient!ke;IZLclient!fh;)V")
-	public static void init(@OriginalArg(0) Js5 objArchive, @OriginalArg(4) Js5 modelsArchive, @OriginalArg(1) SoftwareFont arg1) {
+	public static void init(@OriginalArg(0) Js5 objArchive, @OriginalArg(4) Js5 modelsArchive, @OriginalArg(1) SoftwareFont font) {
 		ObjTypeList.modelsArchive = modelsArchive;
 		ObjTypeList.objArchive = objArchive;
 		allowMembers = true;
 		@Pc(11) int maxGroupId = ObjTypeList.objArchive.capacity() - 1;
 		capacity = maxGroupId * 256 + ObjTypeList.objArchive.getGroupCapacity(maxGroupId);
-		aClass4_Sub3_Sub5_Sub2_1 = arg1;
+		ObjTypeList.font = font;
 		defaultInventoryOps = new String[] { null, null, null, null, LocalisedText.DROP };
 		defaultOps = new String[] { null, null, LocalisedText.TAKE, null, null };
 	}

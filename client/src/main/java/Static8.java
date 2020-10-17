@@ -290,22 +290,6 @@ public final class Static8 {
 		}
 	}
 
-	@OriginalMember(owner = "client!af", name = "c", descriptor = "(I)[Lclient!vn;")
-	public static SoftwareSprite[] method103() {
-		@Pc(8) SoftwareSprite[] local8 = new SoftwareSprite[Static4.anInt2748];
-		for (@Pc(10) int local10 = 0; local10 < Static4.anInt2748; local10++) {
-			@Pc(21) int local21 = Static7.anIntArray643[local10] * Static3.anIntArray185[local10];
-			@Pc(24) int[] local24 = new int[local21];
-			@Pc(28) byte[] local28 = Static6.aByteArrayArray36[local10];
-			for (@Pc(30) int local30 = 0; local30 < local21; local30++) {
-				local24[local30] = Static2.anIntArray85[local28[local30] & 0xFF];
-			}
-			local8[local10] = new SoftwareSprite(Static1.anInt889, Static3.anInt2162, Static5.anIntArray402[local10], Static5.anIntArray391[local10], Static3.anIntArray185[local10], Static7.anIntArray643[local10], local24);
-		}
-		Static37.method4670();
-		return local8;
-	}
-
 	@OriginalMember(owner = "client!ah", name = "a", descriptor = "(ILclient!vh;ILclient!p;ILclient!f;II)V")
 	public static void method109(@OriginalArg(1) LocType arg0, @OriginalArg(2) int arg1, @OriginalArg(3) Npc arg2, @OriginalArg(4) int arg3, @OriginalArg(5) Player arg4, @OriginalArg(6) int arg5, @OriginalArg(7) int arg6) {
 		@Pc(9) Class4_Sub11 local9 = new Class4_Sub11();
@@ -362,18 +346,6 @@ public final class Static8 {
 		}
 	}
 
-	@OriginalMember(owner = "client!aj", name = "a", descriptor = "(Lclient!fh;Lclient!fh;B)V")
-	public static void method113(@OriginalArg(0) Js5 arg0, @OriginalArg(1) Js5 arg1) {
-		Static1.aClass4_Sub3_Sub5_1 = method121(arg0, arg1, Static2.anInt914);
-		if (GlRenderer.enabled) {
-			Static2.aClass4_Sub3_Sub5_Sub2_2 = Static22.method2194(arg1, Static2.anInt914, arg0);
-		} else {
-			Static2.aClass4_Sub3_Sub5_Sub2_2 = (SoftwareFont) Static1.aClass4_Sub3_Sub5_1;
-		}
-		Static5.aClass4_Sub3_Sub5_2 = method121(arg0, arg1, Static7.anInt6040);
-		Static5.aClass4_Sub3_Sub5_3 = method121(arg0, arg1, Static4.anInt3309);
-	}
-
 	@OriginalMember(owner = "client!aj", name = "a", descriptor = "(B)V")
 	public static void method115() {
 		Static5.anInt5206 = 0;
@@ -396,11 +368,6 @@ public final class Static8 {
 		} else {
 			return false;
 		}
-	}
-
-	@OriginalMember(owner = "client!ak", name = "a", descriptor = "(Lclient!fh;Lclient!fh;III)Lclient!gl;")
-	public static Font method121(@OriginalArg(0) Js5 arg0, @OriginalArg(1) Js5 arg1, @OriginalArg(3) int arg2) {
-		return Static9.method197(arg0, arg2, 0) ? Static10.method304(arg1.fetchFile(arg2, 0)) : null;
 	}
 
 }

@@ -534,8 +534,8 @@ public final class client extends GameShell {
 			if (percentage == 100) {
 				mainLoadSecondaryText = LocalisedText.MAINLOAD40B;
 				mainLoadPercentage = 20;
-				Static24.method2946(js5Archive8);
-				Static31.method3154(js5Archive8);
+				Sprites.init(js5Archive8);
+				TitleScreen.init(js5Archive8);
 				Static24.method2711(js5Archive8);
 				mainLoadState = 41;
 			} else {
@@ -570,29 +570,29 @@ public final class client extends GameShell {
 			mainLoadState = 50;
 			mainLoadPercentage = 30;
 		} else if (mainLoadState == 50) {
-			@Pc(540) int local540 = Static10.method464(js5Archive13, js5Archive8);
-			@Pc(543) int local543 = Static16.method1565();
-			if (local540 >= local543) {
+			@Pc(540) int ready = Fonts.getReady(js5Archive8, js5Archive13);
+			@Pc(543) int total = Fonts.getTotal();
+			if (ready >= total) {
 				mainLoadSecondaryText = LocalisedText.MAINLOAD50B;
 				mainLoadState = 60;
 				mainLoadPercentage = 35;
 			} else {
 				mainLoadPercentage = 35;
-				mainLoadSecondaryText = LocalisedText.MAINLOAD50 + local540 * 100 / local543 + "%";
+				mainLoadSecondaryText = LocalisedText.MAINLOAD50 + ready * 100 / total + "%";
 			}
 		} else if (mainLoadState == 60) {
-			@Pc(582) int local582 = Static14.method1046(js5Archive8);
-			@Pc(585) int local585 = Static10.method393();
-			if (local585 <= local582) {
+			@Pc(582) int ready = TitleScreen.getReady(js5Archive8);
+			@Pc(585) int total = TitleScreen.getTotal();
+			if (total <= ready) {
 				mainLoadState = 65;
 				mainLoadPercentage = 40;
 				mainLoadSecondaryText = LocalisedText.MAINLOAD60B;
 			} else {
 				mainLoadPercentage = 40;
-				mainLoadSecondaryText = LocalisedText.MAINLOAD60 + local582 * 100 / local585 + "%";
+				mainLoadSecondaryText = LocalisedText.MAINLOAD60 + ready * 100 / total + "%";
 			}
 		} else if (mainLoadState == 65) {
-			Static8.method113(js5Archive8, js5Archive13);
+			Fonts.load(js5Archive8, js5Archive13);
 			mainLoadSecondaryText = LocalisedText.MAINLOAD65B;
 			mainLoadPercentage = 45;
 			Static9.method233(5);
@@ -630,7 +630,7 @@ public final class client extends GameShell {
 				IdkTypeList.init(js5Archive2, js5Archive7);
 				LocTypeList.init(js5Archive16, js5Archive7);
 				NpcTypeList.init(js5Archive18, js5Archive7);
-				ObjTypeList.init(js5Archive19, js5Archive7, Static2.aClass4_Sub3_Sub5_Sub2_2);
+				ObjTypeList.init(js5Archive19, js5Archive7, Fonts.p11FullSoftware);
 				StructTypeList.init(js5Archive2);
 				SeqTypeList.init(js5Archive20, js5Archive0, js5Archive1);
 				BasTypeList.init(js5Archive2);
@@ -654,15 +654,15 @@ public final class client extends GameShell {
 				mainLoadState = 80;
 			}
 		} else if (mainLoadState == 80) {
-			@Pc(884) int local884 = Static11.method558(js5Archive8);
-			@Pc(887) int local887 = Static14.method1084();
-			if (local884 >= local887) {
-				Static35.method667(js5Archive8);
+			@Pc(884) int ready = Sprites.getReady(js5Archive8);
+			@Pc(887) int total = Sprites.getTotal();
+			if (ready >= total) {
+				Sprites.load(js5Archive8);
 				mainLoadSecondaryText = LocalisedText.MAINLOAD80B;
 				mainLoadPercentage = 60;
 				mainLoadState = 90;
 			} else {
-				mainLoadSecondaryText = LocalisedText.MAINLOAD80 + local884 * 100 / local887 + "%";
+				mainLoadSecondaryText = LocalisedText.MAINLOAD80 + ready * 100 / total + "%";
 				mainLoadPercentage = 60;
 			}
 		} else if (mainLoadState == 90) {
@@ -1144,7 +1144,7 @@ public final class client extends GameShell {
 		if (Static4.anInt3304 == 0) {
 			Static9.method202(null, local173, mainLoadPercentage, mainLoadSecondaryText);
 		} else if (Static4.anInt3304 == 5) {
-			Static28.method3331(false, Static5.aClass4_Sub3_Sub5_3);
+			Static28.method3331(false, Fonts.b12Full);
 		} else if (Static4.anInt3304 == 10) {
 			Static18.method1714();
 		} else if (Static4.anInt3304 == 25 || Static4.anInt3304 == 28) {
