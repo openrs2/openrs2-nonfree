@@ -1091,54 +1091,54 @@ public final class Protocol {
 			VarpDomain.updatedVarpsWriterIndex += 32;
 			return true;
 		} else if (opcode == 177) {
-			@Pc(3952) int local3952 = inboundBuffer.readUnsignedByte();
-			@Pc(3956) int local3956 = local3952 >> 5;
-			@Pc(3960) int local3960 = local3952 & 0x1F;
-			if (local3960 == 0) {
-				Static7.aClass94Array1[local3956] = null;
+			@Pc(3952) int indexAndType = inboundBuffer.readUnsignedByte();
+			@Pc(3956) int index = indexAndType >> 5;
+			@Pc(3960) int type = indexAndType & 0x1F;
+			if (type == 0) {
+				HintArrowManager.HINT_ARROWS[index] = null;
 				opcode = -1;
 				return true;
 			}
-			@Pc(3976) Class94 local3976 = new Class94();
-			local3976.anInt2561 = local3960;
-			local3976.anInt2559 = inboundBuffer.readUnsignedByte();
-			if (local3976.anInt2559 >= 0 && local3976.anInt2559 < Sprites.hintHeadIcons.length) {
-				if (local3976.anInt2561 == 1 || local3976.anInt2561 == 10) {
-					local3976.anInt2560 = inboundBuffer.readUnsignedShort();
-					@Pc(4011) Packet local4011 = inboundBuffer;
-					local4011.position += 5;
-				} else if (local3976.anInt2561 >= 2 && local3976.anInt2561 <= 6) {
-					if (local3976.anInt2561 == 2) {
-						local3976.anInt2564 = 64;
-						local3976.anInt2568 = 64;
+			@Pc(3976) HintArrow hintArrow = new HintArrow();
+			hintArrow.type = type;
+			hintArrow.headIcon = inboundBuffer.readUnsignedByte();
+			if (hintArrow.headIcon >= 0 && hintArrow.headIcon < Sprites.hintHeadIcons.length) {
+				if (hintArrow.type == 1 || hintArrow.type == 10) {
+					hintArrow.target = inboundBuffer.readUnsignedShort();
+					@Pc(4011) Packet inboundBuffer = Protocol.inboundBuffer;
+					inboundBuffer.position += 5;
+				} else if (hintArrow.type >= 2 && hintArrow.type <= 6) {
+					if (hintArrow.type == 2) {
+						hintArrow.xOffset = 64;
+						hintArrow.zOffset = 64;
 					}
-					if (local3976.anInt2561 == 3) {
-						local3976.anInt2568 = 64;
-						local3976.anInt2564 = 0;
+					if (hintArrow.type == 3) {
+						hintArrow.zOffset = 64;
+						hintArrow.xOffset = 0;
 					}
-					if (local3976.anInt2561 == 4) {
-						local3976.anInt2564 = 128;
-						local3976.anInt2568 = 64;
+					if (hintArrow.type == 4) {
+						hintArrow.xOffset = 128;
+						hintArrow.zOffset = 64;
 					}
-					if (local3976.anInt2561 == 5) {
-						local3976.anInt2564 = 64;
-						local3976.anInt2568 = 0;
+					if (hintArrow.type == 5) {
+						hintArrow.xOffset = 64;
+						hintArrow.zOffset = 0;
 					}
-					if (local3976.anInt2561 == 6) {
-						local3976.anInt2568 = 128;
-						local3976.anInt2564 = 64;
+					if (hintArrow.type == 6) {
+						hintArrow.zOffset = 128;
+						hintArrow.xOffset = 64;
 					}
-					local3976.anInt2561 = 2;
-					local3976.anInt2558 = inboundBuffer.readUnsignedShort();
-					local3976.anInt2565 = inboundBuffer.readUnsignedShort();
-					local3976.anInt2567 = inboundBuffer.readUnsignedByte();
-					local3976.anInt2562 = inboundBuffer.readUnsignedShort();
+					hintArrow.type = 2;
+					hintArrow.x = inboundBuffer.readUnsignedShort();
+					hintArrow.z = inboundBuffer.readUnsignedShort();
+					hintArrow.yOffset = inboundBuffer.readUnsignedByte();
+					hintArrow.radius = inboundBuffer.readUnsignedShort();
 				}
-				local3976.anInt2563 = inboundBuffer.readUnsignedShort();
-				if (local3976.anInt2563 == 65535) {
-					local3976.anInt2563 = -1;
+				hintArrow.model = inboundBuffer.readUnsignedShort();
+				if (hintArrow.model == 65535) {
+					hintArrow.model = -1;
 				}
-				Static7.aClass94Array1[local3956] = local3976;
+				HintArrowManager.HINT_ARROWS[index] = hintArrow;
 			}
 			opcode = -1;
 			return true;

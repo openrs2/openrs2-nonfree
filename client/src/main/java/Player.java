@@ -231,30 +231,30 @@ public final class Player extends PathingEntity {
 			}
 		}
 		if (PlayerList.self == this) {
-			for (@Pc(275) int local275 = Static7.aClass94Array1.length - 1; local275 >= 0; local275--) {
-				@Pc(282) Class94 local282 = Static7.aClass94Array1[local275];
-				if (local282 != null && local282.anInt2563 != -1) {
-					if (local282.anInt2561 == 1 && local282.anInt2560 >= 0 && local282.anInt2560 < NpcList.npcs.length) {
-						@Pc(315) Npc local315 = NpcList.npcs[local282.anInt2560];
+			for (@Pc(275) int local275 = HintArrowManager.HINT_ARROWS.length - 1; local275 >= 0; local275--) {
+				@Pc(282) HintArrow local282 = HintArrowManager.HINT_ARROWS[local275];
+				if (local282 != null && local282.model != -1) {
+					if (local282.type == 1 && local282.target >= 0 && local282.target < NpcList.npcs.length) {
+						@Pc(315) Npc local315 = NpcList.npcs[local282.target];
 						if (local315 != null) {
 							@Pc(329) int local329 = local315.x / 32 - PlayerList.self.x / 32;
 							@Pc(339) int local339 = local315.z / 32 - PlayerList.self.z / 32;
-							this.method1175(arg3, local339, null, arg2, arg9, arg1, arg0, arg5, local329, arg6, local282.anInt2563, arg4, 360000, local105, arg7);
+							this.method1175(arg3, local339, null, arg2, arg9, arg1, arg0, arg5, local329, arg6, local282.model, arg4, 360000, local105, arg7);
 						}
 					}
-					if (local282.anInt2561 == 2) {
-						@Pc(378) int local378 = (local282.anInt2558 - Static5.originX) * 4 + 2 - PlayerList.self.x / 32;
-						@Pc(393) int local393 = (local282.anInt2565 - Static7.originZ) * 4 + 2 - PlayerList.self.z / 32;
-						@Pc(398) int local398 = local282.anInt2562 * 4;
+					if (local282.type == 2) {
+						@Pc(378) int local378 = (local282.x - Static5.originX) * 4 + 2 - PlayerList.self.x / 32;
+						@Pc(393) int local393 = (local282.z - Static7.originZ) * 4 + 2 - PlayerList.self.z / 32;
+						@Pc(398) int local398 = local282.radius * 4;
 						local398 *= local398;
-						this.method1175(arg3, local393, null, arg2, arg9, arg1, arg0, arg5, local378, arg6, local282.anInt2563, arg4, local398, local105, arg7);
+						this.method1175(arg3, local393, null, arg2, arg9, arg1, arg0, arg5, local378, arg6, local282.model, arg4, local398, local105, arg7);
 					}
-					if (local282.anInt2561 == 10 && local282.anInt2560 >= 0 && PlayerList.players.length > local282.anInt2560) {
-						@Pc(442) Player local442 = PlayerList.players[local282.anInt2560];
+					if (local282.type == 10 && local282.target >= 0 && PlayerList.players.length > local282.target) {
+						@Pc(442) Player local442 = PlayerList.players[local282.target];
 						if (local442 != null) {
 							@Pc(455) int local455 = local442.x / 32 - PlayerList.self.x / 32;
 							@Pc(466) int local466 = local442.z / 32 - PlayerList.self.z / 32;
-							this.method1175(arg3, local466, null, arg2, arg9, arg1, arg0, arg5, local455, arg6, local282.anInt2563, arg4, 360000, local105, arg7);
+							this.method1175(arg3, local466, null, arg2, arg9, arg1, arg0, arg5, local455, arg6, local282.model, arg4, 360000, local105, arg7);
 						}
 					}
 				}

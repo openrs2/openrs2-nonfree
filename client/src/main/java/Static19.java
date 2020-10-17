@@ -152,8 +152,8 @@ public final class Static19 {
 		Static1.centralZoneZ = 0;
 		Static5.dynamicArea = false;
 		Static5.originX = 0;
-		for (@Pc(57) int local57 = 0; local57 < Static7.aClass94Array1.length; local57++) {
-			Static7.aClass94Array1[local57] = null;
+		for (@Pc(57) int local57 = 0; local57 < HintArrowManager.HINT_ARROWS.length; local57++) {
+			HintArrowManager.HINT_ARROWS[local57] = null;
 		}
 		NpcList.size = 0;
 		PlayerList.size = 0;

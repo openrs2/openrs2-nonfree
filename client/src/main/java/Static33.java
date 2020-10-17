@@ -874,31 +874,31 @@ public final class Static33 {
 				}
 			}
 			@Pc(670) int local670 = 0;
-			@Pc(672) Class94[] local672 = Static7.aClass94Array1;
+			@Pc(672) HintArrow[] local672 = HintArrowManager.HINT_ARROWS;
 			while (local672.length > local670) {
-				@Pc(684) Class94 local684 = local672[local670];
-				if (local684 != null && local684.anInt2561 != 0 && client.loop % 20 < 10) {
-					if (local684.anInt2561 == 1 && local684.anInt2560 >= 0 && local684.anInt2560 < NpcList.npcs.length) {
-						@Pc(717) Npc local717 = NpcList.npcs[local684.anInt2560];
+				@Pc(684) HintArrow local684 = local672[local670];
+				if (local684 != null && local684.type != 0 && client.loop % 20 < 10) {
+					if (local684.type == 1 && local684.target >= 0 && local684.target < NpcList.npcs.length) {
+						@Pc(717) Npc local717 = NpcList.npcs[local684.target];
 						if (local717 != null) {
 							@Pc(731) int local731 = local717.z / 32 - PlayerList.self.z / 32;
 							@Pc(742) int local742 = local717.x / 32 - PlayerList.self.x / 32;
-							Static30.method3619(arg2, 360000, arg0, local731, arg3, local742, local684.anInt2559);
+							Static30.method3619(arg2, 360000, arg0, local731, arg3, local742, local684.headIcon);
 						}
 					}
-					if (local684.anInt2561 == 2) {
-						@Pc(774) int local774 = (local684.anInt2565 - Static7.originZ) * 4 + 2 - PlayerList.self.z / 32;
-						@Pc(779) int local779 = local684.anInt2562 * 4;
-						@Pc(795) int local795 = (local684.anInt2558 - Static5.originX) * 4 + 2 - PlayerList.self.x / 32;
+					if (local684.type == 2) {
+						@Pc(774) int local774 = (local684.z - Static7.originZ) * 4 + 2 - PlayerList.self.z / 32;
+						@Pc(779) int local779 = local684.radius * 4;
+						@Pc(795) int local795 = (local684.x - Static5.originX) * 4 + 2 - PlayerList.self.x / 32;
 						local779 *= local779;
-						Static30.method3619(arg2, local779, arg0, local774, arg3, local795, local684.anInt2559);
+						Static30.method3619(arg2, local779, arg0, local774, arg3, local795, local684.headIcon);
 					}
-					if (local684.anInt2561 == 10 && local684.anInt2560 >= 0 && local684.anInt2560 < PlayerList.players.length) {
-						@Pc(834) Player local834 = PlayerList.players[local684.anInt2560];
+					if (local684.type == 10 && local684.target >= 0 && local684.target < PlayerList.players.length) {
+						@Pc(834) Player local834 = PlayerList.players[local684.target];
 						if (local834 != null) {
 							@Pc(847) int local847 = local834.x / 32 - PlayerList.self.x / 32;
 							@Pc(858) int local858 = local834.z / 32 - PlayerList.self.z / 32;
-							Static30.method3619(arg2, 360000, arg0, local858, arg3, local847, local684.anInt2559);
+							Static30.method3619(arg2, 360000, arg0, local858, arg3, local847, local684.headIcon);
 						}
 					}
 				}

@@ -441,8 +441,8 @@ public final class Static11 {
 		Static3.anInt2583 = 0;
 		Protocol.opcode = -1;
 		Protocol.inboundBuffer.position = 0;
-		for (@Pc(45) int local45 = 0; local45 < Static7.aClass94Array1.length; local45++) {
-			Static7.aClass94Array1[local45] = null;
+		for (@Pc(45) int local45 = 0; local45 < HintArrowManager.HINT_ARROWS.length; local45++) {
+			HintArrowManager.HINT_ARROWS[local45] = null;
 		}
 		Static1.aBoolean17 = false;
 		Static7.anInt5634 = 0;

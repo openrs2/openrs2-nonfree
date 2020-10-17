@@ -343,10 +343,10 @@ public final class Static18 {
 							Sprites.headIconsPrayer[local93.anInt5238].renderTransparent(arg0 + Static7.anInt5584 - 12, arg5 + Static4.anInt3290 - 30);
 						}
 					}
-					@Pc(170) Class94[] local170 = Static7.aClass94Array1;
+					@Pc(170) HintArrow[] local170 = HintArrowManager.HINT_ARROWS;
 					for (@Pc(172) int local172 = 0; local172 < local170.length; local172++) {
-						@Pc(180) Class94 local180 = local170[local172];
-						if (local180 != null && local180.anInt2561 == 1 && local180.anInt2560 == NpcList.ids[local17 - PlayerList.size] && client.loop % 20 < 10) {
+						@Pc(180) HintArrow local180 = local170[local172];
+						if (local180 != null && local180.type == 1 && local180.target == NpcList.ids[local17 - PlayerList.size] && client.loop % 20 < 10) {
 							@Pc(214) int local214;
 							if (local93.anInt5259 == -1) {
 								local214 = local31.method3306() + 15;
@@ -355,7 +355,7 @@ public final class Static18 {
 							}
 							Static28.method3325(arg2 >> 1, arg3, arg1, arg4 >> 1, local214, local31);
 							if (Static7.anInt5584 > -1) {
-								Sprites.hintHeadIcons[local180.anInt2559].renderTransparent(arg0 + Static7.anInt5584 - 12, arg5 + Static4.anInt3290 - 28);
+								Sprites.hintHeadIcons[local180.headIcon].renderTransparent(arg0 + Static7.anInt5584 - 12, arg5 + Static4.anInt3290 - 28);
 							}
 						}
 					}
@@ -376,13 +376,13 @@ public final class Static18 {
 						}
 					}
 					if (local17 >= 0) {
-						@Pc(349) Class94[] local349 = Static7.aClass94Array1;
+						@Pc(349) HintArrow[] local349 = HintArrowManager.HINT_ARROWS;
 						for (@Pc(351) int local351 = 0; local351 < local349.length; local351++) {
-							@Pc(363) Class94 local363 = local349[local351];
-							if (local363 != null && local363.anInt2561 == 10 && PlayerList.ids[local17] == local363.anInt2560) {
+							@Pc(363) HintArrow local363 = local349[local351];
+							if (local363 != null && local363.type == 10 && PlayerList.ids[local17] == local363.target) {
 								Static28.method3325(arg2 >> 1, arg3, arg1, arg4 >> 1, local31.method3306() + 15, local31);
 								if (Static7.anInt5584 > -1) {
-									Sprites.hintHeadIcons[local363.anInt2559].renderTransparent(Static7.anInt5584 + arg0 - 12, arg5 + Static4.anInt3290 - local260);
+									Sprites.hintHeadIcons[local363.headIcon].renderTransparent(Static7.anInt5584 + arg0 - 12, arg5 + Static4.anInt3290 - local260);
 								}
 							}
 						}

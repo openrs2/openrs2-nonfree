@@ -481,13 +481,13 @@ public final class Static10 {
 
 	@OriginalMember(owner = "client!c", name = "a", descriptor = "(IIIIIII)V")
 	public static void method462(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4, @OriginalArg(6) int arg5) {
-		@Pc(7) Class94[] local7 = Static7.aClass94Array1;
-		for (@Pc(16) int local16 = 0; local16 < local7.length; local16++) {
-			@Pc(24) Class94 local24 = local7[local16];
-			if (local24 != null && local24.anInt2561 == 2) {
-				Static29.method3482(arg2 >> 1, local24.anInt2567 * 2, arg3, (local24.anInt2558 - Static5.originX << 7) + local24.anInt2564, local24.anInt2568 + (local24.anInt2565 - Static7.originZ << 7), arg1, arg4 >> 1);
+		@Pc(7) HintArrow[] hintArrows = HintArrowManager.HINT_ARROWS;
+		for (@Pc(16) int i = 0; i < hintArrows.length; i++) {
+			@Pc(24) HintArrow hintArrow = hintArrows[i];
+			if (hintArrow != null && hintArrow.type == 2) {
+				Static29.method3482(arg2 >> 1, hintArrow.yOffset * 2, arg3, (hintArrow.x - Static5.originX << 7) + hintArrow.xOffset, hintArrow.zOffset + (hintArrow.z - Static7.originZ << 7), arg1, arg4 >> 1);
 				if (Static7.anInt5584 > -1 && client.loop % 20 < 10) {
-					Sprites.hintHeadIcons[local24.anInt2559].renderTransparent(arg5 + Static7.anInt5584 - 12, Static4.anInt3290 + arg0 - 28);
+					Sprites.hintHeadIcons[hintArrow.headIcon].renderTransparent(arg5 + Static7.anInt5584 - 12, Static4.anInt3290 + arg0 - 28);
 				}
 			}
 		}

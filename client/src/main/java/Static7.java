@@ -268,9 +268,6 @@ public final class Static7 {
 	@OriginalMember(owner = "client!wc", name = "b", descriptor = "I")
 	public static int anInt5803 = 0;
 
-	@OriginalMember(owner = "client!wc", name = "c", descriptor = "[Lclient!jd;")
-	public static final Class94[] aClass94Array1 = new Class94[8];
-
 	@OriginalMember(owner = "client!wd", name = "yb", descriptor = "[I")
 	public static final int[] anIntArray656 = new int[32];
 
