@@ -7,16 +7,16 @@ import org.openrs2.deob.annotation.Pc;
 public final class IdkType {
 
 	@OriginalMember(owner = "client!qa", name = "a", descriptor = "[S")
-	private short[] aShortArray75;
+	private short[] recolorSource;
 
 	@OriginalMember(owner = "client!qa", name = "d", descriptor = "[S")
-	private short[] aShortArray76;
+	private short[] recolorDestination;
 
 	@OriginalMember(owner = "client!qa", name = "e", descriptor = "[S")
-	private short[] aShortArray77;
+	private short[] retextureSource;
 
 	@OriginalMember(owner = "client!qa", name = "m", descriptor = "[S")
-	private short[] aShortArray78;
+	private short[] retextureDestination;
 
 	@OriginalMember(owner = "client!qa", name = "o", descriptor = "[I")
 	private int[] anIntArray449;
@@ -32,25 +32,25 @@ public final class IdkType {
 
 	@OriginalMember(owner = "client!qa", name = "b", descriptor = "(I)Lclient!ml;")
 	public final RawModel method3489() {
-		@Pc(8) RawModel[] local8 = new RawModel[5];
-		@Pc(10) int local10 = 0;
-		for (@Pc(17) int local17 = 0; local17 < 5; local17++) {
-			if (this.anIntArray450[local17] != -1) {
-				local8[local10++] = RawModel.create(IdkTypeList.modelsArchive, this.anIntArray450[local17]);
+		@Pc(8) RawModel[] models = new RawModel[5];
+		@Pc(10) int len = 0;
+		for (@Pc(17) int i = 0; i < 5; i++) {
+			if (this.anIntArray450[i] != -1) {
+				models[len++] = RawModel.create(IdkTypeList.modelsArchive, this.anIntArray450[i]);
 			}
 		}
-		@Pc(51) RawModel local51 = new RawModel(local8, local10);
-		if (this.aShortArray75 != null) {
-			for (@Pc(58) int local58 = 0; local58 < this.aShortArray75.length; local58++) {
-				local51.method2768(this.aShortArray75[local58], this.aShortArray76[local58]);
+		@Pc(51) RawModel model = new RawModel(models, len);
+		if (this.recolorSource != null) {
+			for (@Pc(58) int i = 0; i < this.recolorSource.length; i++) {
+				model.recolor(this.recolorSource[i], this.recolorDestination[i]);
 			}
 		}
-		if (this.aShortArray77 != null) {
-			for (@Pc(81) int local81 = 0; local81 < this.aShortArray77.length; local81++) {
-				local51.method2753(this.aShortArray77[local81], this.aShortArray78[local81]);
+		if (this.retextureSource != null) {
+			for (@Pc(81) int i = 0; i < this.retextureSource.length; i++) {
+				model.retexture(this.retextureSource[i], this.retextureDestination[i]);
 			}
 		}
-		return local51;
+		return model;
 	}
 
 	@OriginalMember(owner = "client!qa", name = "a", descriptor = "(B)Lclient!ml;")
@@ -58,27 +58,27 @@ public final class IdkType {
 		if (this.anIntArray449 == null) {
 			return null;
 		}
-		@Pc(16) RawModel[] local16 = new RawModel[this.anIntArray449.length];
-		for (@Pc(27) int local27 = 0; local27 < this.anIntArray449.length; local27++) {
-			local16[local27] = RawModel.create(IdkTypeList.modelsArchive, this.anIntArray449[local27]);
+		@Pc(16) RawModel[] models = new RawModel[this.anIntArray449.length];
+		for (@Pc(27) int i = 0; i < this.anIntArray449.length; i++) {
+			models[i] = RawModel.create(IdkTypeList.modelsArchive, this.anIntArray449[i]);
 		}
-		@Pc(60) RawModel local60;
-		if (local16.length == 1) {
-			local60 = local16[0];
+		@Pc(60) RawModel model;
+		if (models.length == 1) {
+			model = models[0];
 		} else {
-			local60 = new RawModel(local16, local16.length);
+			model = new RawModel(models, models.length);
 		}
-		if (this.aShortArray75 != null) {
-			for (@Pc(72) int local72 = 0; local72 < this.aShortArray75.length; local72++) {
-				local60.method2768(this.aShortArray75[local72], this.aShortArray76[local72]);
+		if (this.recolorSource != null) {
+			for (@Pc(72) int i = 0; i < this.recolorSource.length; i++) {
+				model.recolor(this.recolorSource[i], this.recolorDestination[i]);
 			}
 		}
-		if (this.aShortArray77 != null) {
-			for (@Pc(96) int local96 = 0; local96 < this.aShortArray77.length; local96++) {
-				local60.method2753(this.aShortArray77[local96], this.aShortArray78[local96]);
+		if (this.retextureSource != null) {
+			for (@Pc(96) int i = 0; i < this.retextureSource.length; i++) {
+				model.retexture(this.retextureSource[i], this.retextureDestination[i]);
 			}
 		}
-		return local60;
+		return model;
 	}
 
 	@OriginalMember(owner = "client!qa", name = "a", descriptor = "(ILclient!fd;Z)V")
@@ -95,19 +95,19 @@ public final class IdkType {
 			this.aBoolean298 = true;
 		} else if (code == 40) {
 			@Pc(55) int local55 = buffer.readUnsignedByte();
-			this.aShortArray76 = new short[local55];
-			this.aShortArray75 = new short[local55];
+			this.recolorDestination = new short[local55];
+			this.recolorSource = new short[local55];
 			for (@Pc(65) int local65 = 0; local65 < local55; local65++) {
-				this.aShortArray75[local65] = (short) buffer.readUnsignedShort();
-				this.aShortArray76[local65] = (short) buffer.readUnsignedShort();
+				this.recolorSource[local65] = (short) buffer.readUnsignedShort();
+				this.recolorDestination[local65] = (short) buffer.readUnsignedShort();
 			}
 		} else if (code == 41) {
 			@Pc(124) int local124 = buffer.readUnsignedByte();
-			this.aShortArray78 = new short[local124];
-			this.aShortArray77 = new short[local124];
+			this.retextureDestination = new short[local124];
+			this.retextureSource = new short[local124];
 			for (@Pc(134) int local134 = 0; local134 < local124; local134++) {
-				this.aShortArray77[local134] = (short) buffer.readUnsignedShort();
-				this.aShortArray78[local134] = (short) buffer.readUnsignedShort();
+				this.retextureSource[local134] = (short) buffer.readUnsignedShort();
+				this.retextureDestination[local134] = (short) buffer.readUnsignedShort();
 			}
 		} else if (code >= 60 && code < 70) {
 			this.anIntArray450[code - 60] = buffer.readUnsignedShort();

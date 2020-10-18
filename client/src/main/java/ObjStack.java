@@ -17,7 +17,7 @@ public final class ObjStack extends Entity {
 
 	@OriginalMember(owner = "client!he", name = "b", descriptor = "()I")
 	@Override
-	public final int method3813() {
+	public final int getMinY() {
 		return this.anInt2163;
 	}
 
@@ -27,7 +27,7 @@ public final class ObjStack extends Entity {
 		@Pc(17) Model local17 = ObjTypeList.get(this.type).method4123(0, this.count, -1, null, null, 0);
 		if (local17 != null) {
 			local17.method3805(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
-			this.anInt2163 = local17.method3813();
+			this.anInt2163 = local17.getMinY();
 		}
 	}
 

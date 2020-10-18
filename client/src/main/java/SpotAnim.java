@@ -76,7 +76,7 @@ public final class SpotAnim extends Entity {
 				this.aClass20_Sub3_4 = new ParticleSystem(client.loop, 1, 1);
 			}
 			if (this.aClass20_Sub3_4 != null) {
-				this.aClass20_Sub3_4.method2967(local55.particleEmitters, local55.particleEffectors, false, local55.anIntArray507, local55.anIntArray504, local55.anIntArray502);
+				this.aClass20_Sub3_4.method2967(local55.particleEmitters, local55.particleEffectors, false, local55.vertexX, local55.vertexY, local55.vertexZ);
 			}
 		} else {
 			@Pc(8) SoftwareModel local8 = (SoftwareModel) arg0;
@@ -84,7 +84,7 @@ public final class SpotAnim extends Entity {
 				this.aClass20_Sub3_4 = new ParticleSystem(client.loop, 1, 1);
 			}
 			if (this.aClass20_Sub3_4 != null) {
-				this.aClass20_Sub3_4.method2967(local8.particleEmitters, local8.particleEffectors, false, local8.anIntArray347, local8.anIntArray344, local8.anIntArray340);
+				this.aClass20_Sub3_4.method2967(local8.particleEmitters, local8.particleEffectors, false, local8.vertexX, local8.vertexY, local8.vertexZ);
 			}
 		}
 		this.aBoolean264 = true;
@@ -143,13 +143,13 @@ public final class SpotAnim extends Entity {
 		if (local7 != null) {
 			this.method3057(local7);
 			local7.method3805(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, this.aClass20_Sub3_4);
-			this.anInt3662 = local7.method3813();
+			this.anInt3662 = local7.getMinY();
 		}
 	}
 
 	@OriginalMember(owner = "client!o", name = "b", descriptor = "()I")
 	@Override
-	public final int method3813() {
+	public final int getMinY() {
 		return this.anInt3662;
 	}
 }

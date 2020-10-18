@@ -7,16 +7,16 @@ import org.openrs2.deob.annotation.Pc;
 public final class LocType {
 
 	@OriginalMember(owner = "client!vh", name = "a", descriptor = "[S")
-	private short[] aShortArray116;
+	private short[] recolorDestination;
 
 	@OriginalMember(owner = "client!vh", name = "d", descriptor = "[I")
 	private int[] shapes;
 
 	@OriginalMember(owner = "client!vh", name = "t", descriptor = "[S")
-	private short[] aShortArray117;
+	private short[] retextureDestination;
 
 	@OriginalMember(owner = "client!vh", name = "E", descriptor = "[S")
-	private short[] aShortArray118;
+	private short[] retextureSource;
 
 	@OriginalMember(owner = "client!vh", name = "T", descriptor = "[I")
 	private int[] models;
@@ -25,7 +25,7 @@ public final class LocType {
 	public int[] multiLocs;
 
 	@OriginalMember(owner = "client!vh", name = "fb", descriptor = "[S")
-	private short[] aShortArray119;
+	private short[] recolorSource;
 
 	@OriginalMember(owner = "client!vh", name = "lb", descriptor = "Lclient!ic;")
 	private HashTable params;
@@ -82,7 +82,7 @@ public final class LocType {
 	public int anInt5517 = -1;
 
 	@OriginalMember(owner = "client!vh", name = "F", descriptor = "I")
-	private int anInt5524 = 0;
+	private int translateX = 0;
 
 	@OriginalMember(owner = "client!vh", name = "v", descriptor = "Z")
 	private boolean aBoolean373 = false;
@@ -112,7 +112,7 @@ public final class LocType {
 	public int anInt5526 = -1;
 
 	@OriginalMember(owner = "client!vh", name = "Y", descriptor = "I")
-	private int anInt5536 = 0;
+	private int translateY = 0;
 
 	@OriginalMember(owner = "client!vh", name = "nb", descriptor = "S")
 	private short aShort48 = -1;
@@ -163,22 +163,22 @@ public final class LocType {
 	private int multiLocVarp = -1;
 
 	@OriginalMember(owner = "client!vh", name = "vb", descriptor = "I")
-	private int anInt5548 = 128;
+	private int resizeZ = 128;
 
 	@OriginalMember(owner = "client!vh", name = "K", descriptor = "I")
 	private int anInt5529 = 0;
 
 	@OriginalMember(owner = "client!vh", name = "eb", descriptor = "I")
-	private int anInt5541 = 0;
+	private int translateZ = 0;
 
 	@OriginalMember(owner = "client!vh", name = "zb", descriptor = "I")
-	private int anInt5552 = 128;
+	private int resizeY = 128;
 
 	@OriginalMember(owner = "client!vh", name = "Cb", descriptor = "Z")
 	public boolean aBoolean384 = false;
 
 	@OriginalMember(owner = "client!vh", name = "Z", descriptor = "I")
-	private int anInt5537 = 128;
+	private int resizeX = 128;
 
 	@OriginalMember(owner = "client!vh", name = "jb", descriptor = "Z")
 	public boolean aBoolean379 = false;
@@ -284,7 +284,7 @@ public final class LocType {
 				local69.aShort33 = (short) (this.anInt5529 + 64);
 				local69.aShort29 = (short) (this.anInt5512 * 5 + 768);
 				local60 = local69;
-				local69.method2764();
+				local69.calculateNormals();
 			} else {
 				local60 = new SoftwareModel(local69, this.anInt5529 + 64, this.anInt5512 * 5 + 768, -50, -10, -50);
 			}
@@ -379,52 +379,52 @@ public final class LocType {
 				LocTypeList.aClass26_43.put((long) local159, local3);
 			}
 		}
-		@Pc(213) boolean local213;
-		if (this.anInt5537 == 128 && this.anInt5552 == 128 && this.anInt5548 == 128) {
-			local213 = false;
+		@Pc(213) boolean rescale;
+		if (this.resizeX == 128 && this.resizeY == 128 && this.resizeZ == 128) {
+			rescale = false;
 		} else {
-			local213 = true;
+			rescale = true;
 		}
-		@Pc(229) boolean local229;
-		if (this.anInt5524 == 0 && this.anInt5536 == 0 && this.anInt5541 == 0) {
-			local229 = false;
+		@Pc(229) boolean translate;
+		if (this.translateX == 0 && this.translateY == 0 && this.translateZ == 0) {
+			translate = false;
 		} else {
-			local229 = true;
+			translate = true;
 		}
-		@Pc(262) RawModel local262 = new RawModel(local3, arg0 == 0 && !local213 && !local229, this.aShortArray119 == null, this.aShortArray118 == null, true);
+		@Pc(262) RawModel model = new RawModel(local3, arg0 == 0 && !rescale && !translate, this.recolorSource == null, this.retextureSource == null, true);
 		if (arg1 == 4 && arg0 > 3) {
-			local262.method2740();
-			local262.method2743(45, 0, -45);
+			model.method2740();
+			model.translate(45, 0, -45);
 		}
 		arg0 &= 3;
 		if (arg0 == 1) {
-			local262.method2742();
+			model.method2742();
 		} else if (arg0 == 2) {
-			local262.method2745();
+			model.method2745();
 		} else if (arg0 == 3) {
-			local262.method2747();
+			model.method2747();
 		}
-		if (this.aShortArray119 != null) {
-			for (@Pc(313) int local313 = 0; local313 < this.aShortArray119.length; local313++) {
-				if (this.aByteArray70 == null || this.aByteArray70.length <= local313) {
-					local262.method2768(this.aShortArray119[local313], this.aShortArray116[local313]);
+		if (this.recolorSource != null) {
+			for (@Pc(313) int i = 0; i < this.recolorSource.length; i++) {
+				if (this.aByteArray70 == null || this.aByteArray70.length <= i) {
+					model.recolor(this.recolorSource[i], this.recolorDestination[i]);
 				} else {
-					local262.method2768(this.aShortArray119[local313], Static5.aShortArray74[this.aByteArray70[local313] & 0xFF]);
+					model.recolor(this.recolorSource[i], Static5.aShortArray74[this.aByteArray70[i] & 0xFF]);
 				}
 			}
 		}
-		if (this.aShortArray118 != null) {
-			for (@Pc(364) int local364 = 0; local364 < this.aShortArray118.length; local364++) {
-				local262.method2753(this.aShortArray118[local364], this.aShortArray117[local364]);
+		if (this.retextureSource != null) {
+			for (@Pc(364) int i = 0; i < this.retextureSource.length; i++) {
+				model.retexture(this.retextureSource[i], this.retextureDestination[i]);
 			}
 		}
-		if (local213) {
-			local262.method2767(this.anInt5537, this.anInt5552, this.anInt5548);
+		if (rescale) {
+			model.resize(this.resizeX, this.resizeY, this.resizeZ);
 		}
-		if (local229) {
-			local262.method2743(this.anInt5524, this.anInt5536, this.anInt5541);
+		if (translate) {
+			model.translate(this.translateX, this.translateY, this.translateZ);
 		}
-		return local262;
+		return model;
 	}
 
 	@OriginalMember(owner = "client!vh", name = "b", descriptor = "(I)Lclient!vh;")
@@ -521,12 +521,12 @@ public final class LocType {
 			}
 		}
 		@Pc(218) boolean local218 = this.aBoolean381;
-		@Pc(234) boolean local234 = this.anInt5552 == 128 && this.anInt5536 == 0;
+		@Pc(234) boolean local234 = this.resizeY == 128 && this.translateY == 0;
 		if (arg0 == 2 && arg2 > 3) {
 			local218 = !local218;
 		}
-		@Pc(276) boolean local276 = arg2 == 0 && this.anInt5537 == 128 && this.anInt5548 == 128 && this.anInt5524 == 0 && this.anInt5541 == 0 && !local218;
-		@Pc(326) GlModel local326 = local75.method3852(local276, local234, this.aShortArray119 == null, local75.method3847() == local12, arg2 == 0 && !local218, true, local75.method3869() == local19, !local218, this.aShortArray118 == null);
+		@Pc(276) boolean local276 = arg2 == 0 && this.resizeX == 128 && this.resizeZ == 128 && this.translateX == 0 && this.translateZ == 0 && !local218;
+		@Pc(326) GlModel local326 = local75.method3852(local276, local234, this.recolorSource == null, local75.method3847() == local12, arg2 == 0 && !local218, true, local75.method3869() == local19, !local218, this.retextureSource == null);
 		if (local218) {
 			local326.method3850();
 		}
@@ -542,21 +542,21 @@ public final class LocType {
 		} else if (arg2 == 3) {
 			local326.method3848();
 		}
-		if (this.aShortArray119 != null) {
-			for (@Pc(386) int local386 = 0; local386 < this.aShortArray119.length; local386++) {
-				local326.method3867(this.aShortArray119[local386], this.aShortArray116[local386]);
+		if (this.recolorSource != null) {
+			for (@Pc(386) int local386 = 0; local386 < this.recolorSource.length; local386++) {
+				local326.method3867(this.recolorSource[local386], this.recolorDestination[local386]);
 			}
 		}
-		if (this.aShortArray118 != null) {
-			for (@Pc(410) int local410 = 0; local410 < this.aShortArray118.length; local410++) {
-				local326.method3845(this.aShortArray118[local410], this.aShortArray117[local410]);
+		if (this.retextureSource != null) {
+			for (@Pc(410) int local410 = 0; local410 < this.retextureSource.length; local410++) {
+				local326.retexture(this.retextureSource[local410], this.retextureDestination[local410]);
 			}
 		}
-		if (this.anInt5537 != 128 || this.anInt5552 != 128 || this.anInt5548 != 128) {
-			local326.method3824(this.anInt5537, this.anInt5552, this.anInt5548);
+		if (this.resizeX != 128 || this.resizeY != 128 || this.resizeZ != 128) {
+			local326.method3824(this.resizeX, this.resizeY, this.resizeZ);
 		}
-		if (this.anInt5524 != 0 || this.anInt5536 != 0 || this.anInt5541 != 0) {
-			local326.method3823(this.anInt5524, this.anInt5536, this.anInt5541);
+		if (this.translateX != 0 || this.translateY != 0 || this.translateZ != 0) {
+			local326.method3823(this.translateX, this.translateY, this.translateZ);
 		}
 		if (local12 != local326.method3847()) {
 			local326.method3855(local12);
@@ -753,19 +753,19 @@ public final class LocType {
 			}
 		} else if (code == 40) {
 			@Pc(913) int local913 = buffer.readUnsignedByte();
-			this.aShortArray119 = new short[local913];
-			this.aShortArray116 = new short[local913];
+			this.recolorSource = new short[local913];
+			this.recolorDestination = new short[local913];
 			for (@Pc(923) int local923 = 0; local923 < local913; local923++) {
-				this.aShortArray119[local923] = (short) buffer.readUnsignedShort();
-				this.aShortArray116[local923] = (short) buffer.readUnsignedShort();
+				this.recolorSource[local923] = (short) buffer.readUnsignedShort();
+				this.recolorDestination[local923] = (short) buffer.readUnsignedShort();
 			}
 		} else if (code == 41) {
 			@Pc(875) int local875 = buffer.readUnsignedByte();
-			this.aShortArray117 = new short[local875];
-			this.aShortArray118 = new short[local875];
+			this.retextureDestination = new short[local875];
+			this.retextureSource = new short[local875];
 			for (@Pc(885) int local885 = 0; local885 < local875; local885++) {
-				this.aShortArray118[local885] = (short) buffer.readUnsignedShort();
-				this.aShortArray117[local885] = (short) buffer.readUnsignedShort();
+				this.retextureSource[local885] = (short) buffer.readUnsignedShort();
+				this.retextureDestination[local885] = (short) buffer.readUnsignedShort();
 			}
 		} else if (code == 42) {
 			@Pc(188) int local188 = buffer.readUnsignedByte();
@@ -778,19 +778,19 @@ public final class LocType {
 		} else if (code == 64) {
 			this.aBoolean377 = false;
 		} else if (code == 65) {
-			this.anInt5537 = buffer.readUnsignedShort();
+			this.resizeX = buffer.readUnsignedShort();
 		} else if (code == 66) {
-			this.anInt5552 = buffer.readUnsignedShort();
+			this.resizeY = buffer.readUnsignedShort();
 		} else if (code == 67) {
-			this.anInt5548 = buffer.readUnsignedShort();
+			this.resizeZ = buffer.readUnsignedShort();
 		} else if (code == 69) {
 			this.anInt5538 = buffer.readUnsignedByte();
 		} else if (code == 70) {
-			this.anInt5524 = buffer.readShort();
+			this.translateX = buffer.readShort();
 		} else if (code == 71) {
-			this.anInt5536 = buffer.readShort();
+			this.translateY = buffer.readShort();
 		} else if (code == 72) {
-			this.anInt5541 = buffer.readShort();
+			this.translateZ = buffer.readShort();
 		} else if (code == 73) {
 			this.aBoolean376 = true;
 		} else if (code == 74) {

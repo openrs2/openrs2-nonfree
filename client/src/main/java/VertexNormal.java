@@ -3,29 +3,29 @@ import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
 
 @OriginalClass("client!ci")
-public final class Class31 {
+public final class VertexNormal {
 
 	@OriginalMember(owner = "client!ci", name = "a", descriptor = "I")
-	public int anInt619;
+	public int y;
 
 	@OriginalMember(owner = "client!ci", name = "b", descriptor = "I")
-	public int anInt620;
+	public int triangles;
 
 	@OriginalMember(owner = "client!ci", name = "c", descriptor = "I")
-	public int anInt621;
+	public int x;
 
 	@OriginalMember(owner = "client!ci", name = "i", descriptor = "I")
-	public int anInt625;
+	public int z;
 
 	@OriginalMember(owner = "client!ci", name = "<init>", descriptor = "()V")
-	public Class31() {
+	public VertexNormal() {
 	}
 
 	@OriginalMember(owner = "client!ci", name = "<init>", descriptor = "(Lclient!ci;)V")
-	public Class31(@OriginalArg(0) Class31 arg0) {
-		this.anInt625 = arg0.anInt625;
-		this.anInt620 = arg0.anInt620;
-		this.anInt621 = arg0.anInt621;
-		this.anInt619 = arg0.anInt619;
+	public VertexNormal(@OriginalArg(0) VertexNormal normal) {
+		this.z = normal.z;
+		this.triangles = normal.triangles;
+		this.x = normal.x;
+		this.y = normal.y;
 	}
 }

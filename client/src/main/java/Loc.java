@@ -379,7 +379,7 @@ public final class Loc extends Entity {
 
 	@OriginalMember(owner = "client!ri", name = "b", descriptor = "()I")
 	@Override
-	public final int method3813() {
+	public final int getMinY() {
 		return this.anInt4575;
 	}
 
@@ -397,7 +397,7 @@ public final class Loc extends Entity {
 				}
 			}
 			if (this.particleSystem != null) {
-				this.particleSystem.method2967(model.particleEmitters, model.particleEffectors, false, model.anIntArray507, model.anIntArray504, model.anIntArray502);
+				this.particleSystem.method2967(model.particleEmitters, model.particleEffectors, false, model.vertexX, model.vertexY, model.vertexZ);
 			}
 		} else {
 			@Pc(8) SoftwareModel model = (SoftwareModel) arg0;
@@ -411,7 +411,7 @@ public final class Loc extends Entity {
 				}
 			}
 			if (this.particleSystem != null) {
-				this.particleSystem.method2967(model.particleEmitters, model.particleEffectors, false, model.anIntArray347, model.anIntArray344, model.anIntArray340);
+				this.particleSystem.method2967(model.particleEmitters, model.particleEffectors, false, model.vertexX, model.vertexY, model.vertexZ);
 			}
 		}
 		this.aBoolean319 = true;

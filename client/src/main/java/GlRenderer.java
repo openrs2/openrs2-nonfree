@@ -64,9 +64,6 @@ public final class GlRenderer {
 	@OriginalMember(owner = "client!gi", name = "o", descriptor = "Ljava/lang/String;")
 	private static String vendor;
 
-	@OriginalMember(owner = "client!gi", name = "p", descriptor = "Z")
-	public static boolean aBoolean129;
-
 	@OriginalMember(owner = "client!gi", name = "q", descriptor = "I")
 	public static int anInt2079;
 
@@ -719,7 +716,7 @@ public final class GlRenderer {
 			if (v >= 9200 || x) {
 				arbTextureFloatSupported = false;
 			}
-			aBoolean129 = arbVboSupported;
+			GlModel.arbVboSupported = arbVboSupported;
 			aBoolean139 = false;
 		}
 		if (arbVboSupported) {

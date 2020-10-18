@@ -1389,13 +1389,6 @@ public final class Static31 {
 		Static6.aFloat116 = local89;
 	}
 
-	@OriginalMember(owner = "client!s", name = "a", descriptor = "([SI)[S")
-	public static short[] method3860(@OriginalArg(0) short[] arg0, @OriginalArg(1) int arg1) {
-		@Pc(2) short[] local2 = new short[arg1];
-		ArrayUtils.copy(arg0, 0, local2, 0, arg1);
-		return local2;
-	}
-
 	@OriginalMember(owner = "client!s", name = "a", descriptor = "(ISIB)I")
 	public static int method3863(@OriginalArg(0) int arg0, @OriginalArg(1) short arg1, @OriginalArg(2) int arg2, @OriginalArg(3) byte arg3) {
 		@Pc(5) int local5 = ColorUtils.HSL_TO_RGB[Static25.method2912(arg0, arg2)];

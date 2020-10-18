@@ -156,7 +156,7 @@ public final class Player extends PathingEntity {
 
 	@OriginalMember(owner = "client!f", name = "b", descriptor = "()I")
 	@Override
-	public final int method3813() {
+	public final int getMinY() {
 		return this.anInt4016;
 	}
 
@@ -215,7 +215,7 @@ public final class Player extends PathingEntity {
 		if (local105 == null) {
 			return;
 		}
-		this.anInt4016 = local105.method3813();
+		this.anInt4016 = local105.getMinY();
 		if (Preferences.characterShadows && (this.appearance.npcId == -1 || NpcTypeList.get(this.appearance.npcId).aBoolean354)) {
 			@Pc(222) Model local222 = Static12.method745(0, local82 == null ? local27 : local82, arg0, 1, 240, local105, local82 == null ? this.anInt3970 : this.anInt4046, this.anInt4006, this.z, this.aBoolean284, 0, 160, this.x);
 			if (GlRenderer.enabled) {
@@ -309,7 +309,7 @@ public final class Player extends PathingEntity {
 			if (local494 != null) {
 				if (this.aClass20_Sub3_6 != null) {
 					@Pc(736) GlModel local736 = (GlModel) local494;
-					this.aClass20_Sub3_6.method2967(local736.particleEmitters, local736.particleEffectors, true, local736.anIntArray507, local736.anIntArray504, local736.anIntArray502);
+					this.aClass20_Sub3_6.method2967(local736.particleEmitters, local736.particleEffectors, true, local736.vertexX, local736.vertexY, local736.vertexZ);
 				}
 				local494.aBoolean324 = true;
 				local494.method3805(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, this.aClass20_Sub3_6);

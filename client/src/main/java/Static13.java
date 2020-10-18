@@ -472,7 +472,7 @@ public final class Static13 {
 		}
 		@Pc(174) int local174 = local145 * MathUtils.COSINE[local9.xAngle2d] >> 16;
 		@Pc(191) int local191 = MathUtils.SINE[local9.xAngle2d] * local145 >> 16;
-		local61.method3822(local9.yAngle2d, local9.anInt5062, local9.xAngle2d, local9.xOffset2d, local191 + local9.yOffset2d - local61.method3813() / 2, local9.yOffset2d + local174, -1L);
+		local61.method3822(local9.yAngle2d, local9.anInt5062, local9.xAngle2d, local9.xOffset2d, local191 + local9.yOffset2d - local61.getMinY() / 2, local9.yOffset2d + local174, -1L);
 		if (arg0 >= 1) {
 			local131.method2174(1);
 			if (arg0 >= 2) {

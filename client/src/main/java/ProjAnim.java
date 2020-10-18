@@ -161,7 +161,7 @@ public final class ProjAnim extends Entity {
 		if (local7 != null) {
 			this.method3106(local7);
 			local7.method3805(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, this.aClass20_Sub3_5);
-			this.anInt3730 = local7.method3813();
+			this.anInt3730 = local7.getMinY();
 		}
 	}
 
@@ -197,7 +197,7 @@ public final class ProjAnim extends Entity {
 				this.aClass20_Sub3_5 = new ParticleSystem(client.loop, 1, 1);
 			}
 			if (this.aClass20_Sub3_5 != null) {
-				this.aClass20_Sub3_5.method2967(local4.particleEmitters, local4.particleEffectors, false, local4.anIntArray507, local4.anIntArray504, local4.anIntArray502);
+				this.aClass20_Sub3_5.method2967(local4.particleEmitters, local4.particleEffectors, false, local4.vertexX, local4.vertexY, local4.vertexZ);
 			}
 		} else {
 			@Pc(51) SoftwareModel local51 = (SoftwareModel) arg0;
@@ -205,7 +205,7 @@ public final class ProjAnim extends Entity {
 				this.aClass20_Sub3_5 = new ParticleSystem(client.loop, 1, 1);
 			}
 			if (this.aClass20_Sub3_5 != null) {
-				this.aClass20_Sub3_5.method2967(local51.particleEmitters, local51.particleEffectors, false, local51.anIntArray347, local51.anIntArray344, local51.anIntArray340);
+				this.aClass20_Sub3_5.method2967(local51.particleEmitters, local51.particleEffectors, false, local51.vertexX, local51.vertexY, local51.vertexZ);
 			}
 		}
 		this.aBoolean267 = true;
@@ -213,7 +213,7 @@ public final class ProjAnim extends Entity {
 
 	@OriginalMember(owner = "client!oc", name = "b", descriptor = "()I")
 	@Override
-	public final int method3813() {
+	public final int getMinY() {
 		return this.anInt3730;
 	}
 

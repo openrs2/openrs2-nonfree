@@ -224,8 +224,8 @@ public final class Class105 {
 		}
 		local5.method2748();
 		@Pc(78) Model local78 = local5.createModel(64, 768, -local25, -local27, -local29);
-		@Pc(86) int local86 = (local78.method3838() - local78.method3829()) / 2;
-		@Pc(94) int local94 = (local78.method3842() - local78.method3813()) / 2;
+		@Pc(86) int local86 = (local78.getMaxX() - local78.getMinX()) / 2;
+		@Pc(94) int local94 = (local78.getMaxY() - local78.getMinY()) / 2;
 		@Pc(101) int local101 = local86 > local94 ? local86 : local94;
 		Static9.method212((float) -local101, (float) local101, (float) -local101, (float) local101, 2048.0F, -2048.0F, this.anInt2861, this.anInt2861);
 		if (this.anInt2865 != 0) {
@@ -249,7 +249,7 @@ public final class Class105 {
 		GlRenderer.enableDepthMask();
 		GlRenderer.setDepthTestEnabled(true);
 		GlRenderer.setLightingEnabled(true);
-		local78.method3822(0, 0, 0, -local86 - local78.method3829(), -local94 - local78.method3813(), 0, -1L);
+		local78.method3822(0, 0, 0, -local86 - local78.getMinX(), -local94 - local78.getMinY(), 0, -1L);
 		GlRenderer.setLightingEnabled(false);
 		GlRenderer.setDepthTestEnabled(false);
 		GlRenderer.disableDepthMask();
@@ -488,10 +488,10 @@ public final class Class105 {
 			local30 = local30 * local123 + 32767 - local26 * local119 >> 16;
 			local26 = local135;
 		}
-		ArrayUtils.fill(Static4.aClass53_Sub3_1.aShortArray53, 0, Static4.aClass53_Sub3_1.anInt3353, (short) Static4.anInterface4_1.method446(this.anInt2858));
+		ArrayUtils.fill(Static4.aClass53_Sub3_1.triangleColors, 0, Static4.aClass53_Sub3_1.triangleCount, (short) Static4.anInterface4_1.method446(this.anInt2858));
 		@Pc(172) SoftwareModel local172 = Static4.aClass53_Sub3_1.createSoftwareModel(64, 512, -local26, -local28, -local30);
-		@Pc(178) int local178 = local172.method3838() - local172.method3829();
-		@Pc(184) int local184 = local172.method3842() - local172.method3813();
+		@Pc(178) int local178 = local172.getMaxX() - local172.getMinX();
+		@Pc(184) int local184 = local172.getMaxY() - local172.getMinY();
 		if (local178 > local184) {
 			@Pc(208) int local208 = this.anInt2859 == 0 ? (local178 << 9) / this.anInt2861 : (local178 * 16 << 9) / (this.anInt2861 * 13);
 			local172.method2911(0, 0, 0, 0, 0, 0, local208);
@@ -591,10 +591,10 @@ public final class Class105 {
 			local33 = local142;
 		}
 		@Pc(167) SoftwareModel local167 = local5.createSoftwareModel(64, 768, -local33, -local35, -local37);
-		@Pc(173) int local173 = local167.method3838() - local167.method3829();
-		@Pc(179) int local179 = local167.method3842() - local167.method3813();
-		@Pc(186) int local186 = local167.method3829() + local173 / 2;
-		@Pc(193) int local193 = local167.method3813() + local179 / 2;
+		@Pc(173) int local173 = local167.getMaxX() - local167.getMinX();
+		@Pc(179) int local179 = local167.getMaxY() - local167.getMinY();
+		@Pc(186) int local186 = local167.getMinX() + local173 / 2;
+		@Pc(193) int local193 = local167.getMinY() + local179 / 2;
 		if (local173 > local179) {
 			local167.method2911(0, 0, 0, -local186, -local193, 0, (local173 << 9) / this.anInt2861);
 		} else {

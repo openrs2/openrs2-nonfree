@@ -7,7 +7,7 @@ import org.openrs2.deob.annotation.Pc;
 public final class NpcType {
 
 	@OriginalMember(owner = "client!ua", name = "c", descriptor = "[S")
-	private short[] aShortArray106;
+	private short[] recolorSource;
 
 	@OriginalMember(owner = "client!ua", name = "h", descriptor = "[[I")
 	private int[][] anIntArrayArray45;
@@ -16,7 +16,7 @@ public final class NpcType {
 	private HashTable params;
 
 	@OriginalMember(owner = "client!ua", name = "p", descriptor = "[S")
-	private short[] aShortArray107;
+	private short[] retextureDestination;
 
 	@OriginalMember(owner = "client!ua", name = "r", descriptor = "[I")
 	private int[] anIntArray588;
@@ -31,13 +31,13 @@ public final class NpcType {
 	public int[] multiNpcs;
 
 	@OriginalMember(owner = "client!ua", name = "F", descriptor = "[S")
-	private short[] aShortArray108;
+	private short[] rextureSource;
 
 	@OriginalMember(owner = "client!ua", name = "M", descriptor = "I")
 	public int id;
 
 	@OriginalMember(owner = "client!ua", name = "Q", descriptor = "[S")
-	private short[] aShortArray109;
+	private short[] recolorDestination;
 
 	@OriginalMember(owner = "client!ua", name = "jb", descriptor = "[B")
 	private byte[] aByteArray68;
@@ -210,19 +210,19 @@ public final class NpcType {
 			}
 		} else if (code == 40) {
 			@Pc(117) int local117 = buffer.readUnsignedByte();
-			this.aShortArray106 = new short[local117];
-			this.aShortArray109 = new short[local117];
+			this.recolorSource = new short[local117];
+			this.recolorDestination = new short[local117];
 			for (@Pc(127) int local127 = 0; local127 < local117; local127++) {
-				this.aShortArray106[local127] = (short) buffer.readUnsignedShort();
-				this.aShortArray109[local127] = (short) buffer.readUnsignedShort();
+				this.recolorSource[local127] = (short) buffer.readUnsignedShort();
+				this.recolorDestination[local127] = (short) buffer.readUnsignedShort();
 			}
 		} else if (code == 41) {
 			@Pc(869) int local869 = buffer.readUnsignedByte();
-			this.aShortArray108 = new short[local869];
-			this.aShortArray107 = new short[local869];
+			this.rextureSource = new short[local869];
+			this.retextureDestination = new short[local869];
 			for (@Pc(879) int local879 = 0; local879 < local869; local879++) {
-				this.aShortArray108[local879] = (short) buffer.readUnsignedShort();
-				this.aShortArray107[local879] = (short) buffer.readUnsignedShort();
+				this.rextureSource[local879] = (short) buffer.readUnsignedShort();
+				this.retextureDestination[local879] = (short) buffer.readUnsignedShort();
 			}
 		} else if (code == 42) {
 			@Pc(840) int local840 = buffer.readUnsignedByte();
@@ -459,18 +459,18 @@ public final class NpcType {
 				} else {
 					local122 = new RawModel(local87, local87.length);
 				}
-				if (this.aShortArray106 != null) {
-					for (@Pc(132) int local132 = 0; local132 < this.aShortArray106.length; local132++) {
-						if (this.aByteArray68 == null || this.aByteArray68.length <= local132) {
-							local122.method2768(this.aShortArray106[local132], this.aShortArray109[local132]);
+				if (this.recolorSource != null) {
+					for (@Pc(132) int i = 0; i < this.recolorSource.length; i++) {
+						if (this.aByteArray68 == null || this.aByteArray68.length <= i) {
+							local122.recolor(this.recolorSource[i], this.recolorDestination[i]);
 						} else {
-							local122.method2768(this.aShortArray106[local132], Static7.aShortArray111[this.aByteArray68[local132] & 0xFF]);
+							local122.recolor(this.recolorSource[i], Static7.aShortArray111[this.aByteArray68[i] & 0xFF]);
 						}
 					}
 				}
-				if (this.aShortArray108 != null) {
-					for (@Pc(184) int local184 = 0; local184 < this.aShortArray108.length; local184++) {
-						local122.method2753(this.aShortArray108[local184], this.aShortArray107[local184]);
+				if (this.rextureSource != null) {
+					for (@Pc(184) int i = 0; i < this.rextureSource.length; i++) {
+						local122.retexture(this.rextureSource[i], this.retextureDestination[i]);
 					}
 				}
 				local40 = local122.createModel(64, 768, -50, -10, -50);
@@ -505,7 +505,7 @@ public final class NpcType {
 				if (this.anIntArray589[local83] != -1) {
 					local81[local83] = RawModel.create(NpcTypeList.modelsArchive, this.anIntArray589[local83]);
 					if (this.anIntArrayArray46 != null && this.anIntArrayArray46[local83] != null && local81[local83] != null) {
-						local81[local83].method2743(this.anIntArrayArray46[local83][0], this.anIntArrayArray46[local83][1], this.anIntArrayArray46[local83][2]);
+						local81[local83].translate(this.anIntArrayArray46[local83][0], this.anIntArrayArray46[local83][1], this.anIntArrayArray46[local83][2]);
 					}
 				}
 			}
@@ -562,7 +562,7 @@ public final class NpcType {
 							local81[local165].method2754(local200, local221, local228);
 						}
 						if (local193 != 0 || local214 != 0 || local207 != 0) {
-							local81[local165].method2743(local193, local214, local207);
+							local81[local165].translate(local193, local214, local207);
 						}
 					}
 				}
@@ -573,18 +573,18 @@ public final class NpcType {
 			} else {
 				local597 = new RawModel(local81, local81.length);
 			}
-			if (this.aShortArray106 != null) {
-				for (@Pc(610) int local610 = 0; local610 < this.aShortArray106.length; local610++) {
-					if (this.aByteArray68 == null || local610 >= this.aByteArray68.length) {
-						local597.method2768(this.aShortArray106[local610], this.aShortArray109[local610]);
+			if (this.recolorSource != null) {
+				for (@Pc(610) int i = 0; i < this.recolorSource.length; i++) {
+					if (this.aByteArray68 == null || i >= this.aByteArray68.length) {
+						local597.recolor(this.recolorSource[i], this.recolorDestination[i]);
 					} else {
-						local597.method2768(this.aShortArray106[local610], Static7.aShortArray111[this.aByteArray68[local610] & 0xFF]);
+						local597.recolor(this.recolorSource[i], Static7.aShortArray111[this.aByteArray68[i] & 0xFF]);
 					}
 				}
 			}
-			if (this.aShortArray108 != null) {
-				for (@Pc(665) int local665 = 0; local665 < this.aShortArray108.length; local665++) {
-					local597.method2753(this.aShortArray108[local665], this.aShortArray107[local665]);
+			if (this.rextureSource != null) {
+				for (@Pc(665) int i = 0; i < this.rextureSource.length; i++) {
+					local597.retexture(this.rextureSource[i], this.retextureDestination[i]);
 				}
 			}
 			local39 = local597.createModel(this.anInt5254 + 64, this.anInt5239 + 850, -30, -50, -30);

@@ -134,7 +134,7 @@ public final class ParticleSystem extends ParticleNode {
 		for (@Pc(117) ParticleEmitter node = (ParticleEmitter) this.emitters.head(); node != null; node = (ParticleEmitter) this.emitters.next()) {
 			for (@Pc(121) int i = 0; i < emitters.length; i++) {
 				if (Static5.aBooleanArray19[i] && emitters[i] == node.emitter) {
-					node.method309(arg2[node.emitter.anInt4864], arg3[node.emitter.anInt4869], arg2[node.emitter.anInt4869], arg3[node.emitter.anInt4864], arg3[node.emitter.anInt4868], arg2[node.emitter.anInt4868], arg4[node.emitter.anInt4868], arg4[node.emitter.anInt4869], arg4[node.emitter.anInt4864]);
+					node.method309(arg2[node.emitter.triangleVertexC], arg3[node.emitter.triangleVertexA], arg2[node.emitter.triangleVertexA], arg3[node.emitter.triangleVertexC], arg3[node.emitter.triangleVertexB], arg2[node.emitter.triangleVertexB], arg4[node.emitter.triangleVertexB], arg4[node.emitter.triangleVertexA], arg4[node.emitter.triangleVertexC]);
 					break;
 				}
 			}
@@ -439,7 +439,7 @@ public final class ParticleSystem extends ParticleNode {
 		for (@Pc(152) ParticleEffector node = (ParticleEffector) this.effectors.head(); node != null; node = (ParticleEffector) this.effectors.next()) {
 			for (@Pc(156) int i = 0; i < effectors.length; i++) {
 				if (Static5.aBooleanArray18[i] && effectors[i] == node.effector) {
-					node.method4827(arg4[node.effector.anInt5232], arg3[node.effector.anInt5232], arg2[node.effector.anInt5232]);
+					node.method4827(arg4[node.effector.vertex], arg3[node.effector.vertex], arg2[node.effector.vertex]);
 					break;
 				}
 			}

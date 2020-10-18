@@ -9,17 +9,17 @@ public final class ModelParticleEffector {
 	public final ParticleEffectorType type;
 
 	@OriginalMember(owner = "client!u", name = "f", descriptor = "I")
-	public final int anInt5232;
+	public final int vertex;
 
 	@OriginalMember(owner = "client!u", name = "<init>", descriptor = "(II)V")
-	public ModelParticleEffector(@OriginalArg(0) int id, @OriginalArg(1) int arg1) {
+	public ModelParticleEffector(@OriginalArg(0) int id, @OriginalArg(1) int vertex) {
 		this.type = ParticleEffectorTypeList.get(id);
-		this.anInt5232 = arg1;
+		this.vertex = vertex;
 	}
 
 	@OriginalMember(owner = "client!u", name = "<init>", descriptor = "(Lclient!dc;I)V")
-	public ModelParticleEffector(@OriginalArg(0) ParticleEffectorType type, @OriginalArg(1) int arg1) {
-		this.anInt5232 = arg1;
+	public ModelParticleEffector(@OriginalArg(0) ParticleEffectorType type, @OriginalArg(1) int vertex) {
+		this.vertex = vertex;
 		this.type = type;
 	}
 }

@@ -254,7 +254,7 @@ public final class Static22 {
 				if (type.aBoolean377 && local532 && arg8) {
 					@Pc(542) int local542 = 15;
 					if (local493 instanceof Model) {
-						local542 = ((Model) local493).method3826() / 4;
+						local542 = ((Model) local493).getBoundingCylinderRadius() / 4;
 						if (local542 > 30) {
 							local542 = 30;
 						}
@@ -763,13 +763,13 @@ public final class Static22 {
 			return;
 		}
 		@Pc(10) RawModel local10 = Static4.aClass53_Sub3_1 = new RawModel(260, 480, 0);
-		@Pc(13) int[] local13 = local10.anIntArray329;
-		@Pc(16) int[] local16 = local10.anIntArray324;
-		@Pc(19) int[] local19 = local10.anIntArray326;
-		@Pc(22) int[] local22 = local10.anIntArray331;
-		@Pc(25) int[] local25 = local10.anIntArray330;
-		@Pc(28) int[] local28 = local10.anIntArray332;
-		local10.anInt3356 = 2;
+		@Pc(13) int[] local13 = local10.vertexX;
+		@Pc(16) int[] local16 = local10.vertexY;
+		@Pc(19) int[] local19 = local10.vertexZ;
+		@Pc(22) int[] local22 = local10.triangleVertexA;
+		@Pc(25) int[] local25 = local10.triangleVertexB;
+		@Pc(28) int[] local28 = local10.triangleVertexC;
+		local10.vertexCount = 2;
 		local13[0] = 0;
 		local16[0] = 128;
 		local19[0] = 0;
@@ -785,41 +785,41 @@ public final class Static22 {
 				@Pc(95) int local95 = MathUtils.COSINE[local89] >> 9;
 				@Pc(105) int local105 = (MathUtils.SINE[local89] >> 1) * local72 >> 23;
 				@Pc(115) int local115 = (MathUtils.SINE[local89] >> 1) * local78 >> 23;
-				local13[local10.anInt3356] = local115;
-				local16[local10.anInt3356] = local95;
-				local19[local10.anInt3356] = -local105;
-				local10.anInt3356++;
+				local13[local10.vertexCount] = local115;
+				local16[local10.vertexCount] = local95;
+				local19[local10.vertexCount] = -local105;
+				local10.vertexCount++;
 			}
 			if (local57 > 0) {
 				@Pc(147) int local147 = local57 * 15 + 2;
 				@Pc(151) int local151 = local147 - 15;
-				local22[local10.anInt3353] = 0;
-				local25[local10.anInt3353] = local151;
-				local28[local10.anInt3353] = local147;
-				local10.anInt3353++;
+				local22[local10.triangleCount] = 0;
+				local25[local10.triangleCount] = local151;
+				local28[local10.triangleCount] = local147;
+				local10.triangleCount++;
 				for (@Pc(174) int local174 = 1; local174 < 15; local174++) {
 					@Pc(181) int local181 = local151 + 1;
 					@Pc(185) int local185 = local147 + 1;
-					local22[local10.anInt3353] = local151;
-					local25[local10.anInt3353] = local181;
-					local28[local10.anInt3353] = local147;
-					local10.anInt3353++;
-					local22[local10.anInt3353] = local181;
-					local25[local10.anInt3353] = local185;
-					local28[local10.anInt3353] = local147;
-					local10.anInt3353++;
+					local22[local10.triangleCount] = local151;
+					local25[local10.triangleCount] = local181;
+					local28[local10.triangleCount] = local147;
+					local10.triangleCount++;
+					local22[local10.triangleCount] = local181;
+					local25[local10.triangleCount] = local185;
+					local28[local10.triangleCount] = local147;
+					local10.triangleCount++;
 					local151 = local181;
 					local147 = local185;
 				}
-				local22[local10.anInt3353] = local147;
-				local25[local10.anInt3353] = local151;
-				local28[local10.anInt3353] = 1;
-				local10.anInt3353++;
+				local22[local10.triangleCount] = local147;
+				local25[local10.triangleCount] = local151;
+				local28[local10.triangleCount] = 1;
+				local10.triangleCount++;
 			}
 		}
-		local10.anInt3355 = local10.anInt3356;
+		local10.anInt3355 = local10.vertexCount;
 		local10.aByteArray35 = null;
-		local10.aShortArray51 = null;
+		local10.triangleTextures = null;
 		local10.anIntArray325 = null;
 		local10.anIntArray323 = null;
 		local10.aByteArray37 = null;

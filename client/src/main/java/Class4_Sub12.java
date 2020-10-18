@@ -26,7 +26,7 @@ public final class Class4_Sub12 extends Node {
 	private int[] anIntArray203;
 
 	@OriginalMember(owner = "client!ih", name = "A", descriptor = "Lclient!lk;")
-	private GlBuffer aClass111_2;
+	private GlVertexBufferObject aClass111_2;
 
 	@OriginalMember(owner = "client!ih", name = "C", descriptor = "[I")
 	private int[] anIntArray204;
@@ -137,7 +137,7 @@ public final class Class4_Sub12 extends Node {
 		}
 		if (GlRenderer.arbVboSupported) {
 			@Pc(200) ByteBuffer local200 = ByteBuffer.wrap(local12.bytes, 0, local12.position);
-			this.aClass111_2 = new GlBuffer();
+			this.aClass111_2 = new GlVertexBufferObject();
 			this.aClass111_2.setArrayBuffer(local200);
 		} else {
 			this.aByteBuffer6 = ByteBuffer.allocateDirect(local12.position).order(ByteOrder.nativeOrder());

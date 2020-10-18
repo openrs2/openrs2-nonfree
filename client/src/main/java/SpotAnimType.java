@@ -7,7 +7,7 @@ import org.openrs2.deob.annotation.Pc;
 public final class SpotAnimType {
 
 	@OriginalMember(owner = "client!li", name = "i", descriptor = "[S")
-	private short[] aShortArray45;
+	private short[] recolorDestination;
 
 	@OriginalMember(owner = "client!li", name = "l", descriptor = "I")
 	private int anInt3136;
@@ -16,13 +16,13 @@ public final class SpotAnimType {
 	public int id;
 
 	@OriginalMember(owner = "client!li", name = "v", descriptor = "[S")
-	private short[] aShortArray47;
+	private short[] retextureSource;
 
 	@OriginalMember(owner = "client!li", name = "w", descriptor = "[S")
-	private short[] aShortArray48;
+	private short[] retextureDestination;
 
 	@OriginalMember(owner = "client!li", name = "x", descriptor = "[S")
-	private short[] aShortArray49;
+	private short[] recolorSource;
 
 	@OriginalMember(owner = "client!li", name = "a", descriptor = "I")
 	private int anInt3130 = 0;
@@ -70,19 +70,19 @@ public final class SpotAnimType {
 			this.aBoolean222 = true;
 		} else if (code == 40) {
 			@Pc(93) int local93 = buffer.readUnsignedByte();
-			this.aShortArray45 = new short[local93];
-			this.aShortArray49 = new short[local93];
+			this.recolorDestination = new short[local93];
+			this.recolorSource = new short[local93];
 			for (@Pc(103) int local103 = 0; local103 < local93; local103++) {
-				this.aShortArray49[local103] = (short) buffer.readUnsignedShort();
-				this.aShortArray45[local103] = (short) buffer.readUnsignedShort();
+				this.recolorSource[local103] = (short) buffer.readUnsignedShort();
+				this.recolorDestination[local103] = (short) buffer.readUnsignedShort();
 			}
 		} else if (code == 41) {
 			@Pc(141) int local141 = buffer.readUnsignedByte();
-			this.aShortArray47 = new short[local141];
-			this.aShortArray48 = new short[local141];
+			this.retextureSource = new short[local141];
+			this.retextureDestination = new short[local141];
 			for (@Pc(151) int local151 = 0; local151 < local141; local151++) {
-				this.aShortArray47[local151] = (short) buffer.readUnsignedShort();
-				this.aShortArray48[local151] = (short) buffer.readUnsignedShort();
+				this.retextureSource[local151] = (short) buffer.readUnsignedShort();
+				this.retextureDestination[local151] = (short) buffer.readUnsignedShort();
 			}
 		}
 	}
@@ -106,14 +106,14 @@ public final class SpotAnimType {
 			if (local22 == null) {
 				return null;
 			}
-			if (this.aShortArray49 != null) {
-				for (@Pc(34) int local34 = 0; local34 < this.aShortArray49.length; local34++) {
-					local22.method2768(this.aShortArray49[local34], this.aShortArray45[local34]);
+			if (this.recolorSource != null) {
+				for (@Pc(34) int i = 0; i < this.recolorSource.length; i++) {
+					local22.recolor(this.recolorSource[i], this.recolorDestination[i]);
 				}
 			}
-			if (this.aShortArray47 != null) {
-				for (@Pc(57) int local57 = 0; local57 < this.aShortArray47.length; local57++) {
-					local22.method2753(this.aShortArray47[local57], this.aShortArray48[local57]);
+			if (this.retextureSource != null) {
+				for (@Pc(57) int i = 0; i < this.retextureSource.length; i++) {
+					local22.retexture(this.retextureSource[i], this.retextureDestination[i]);
 				}
 			}
 			model = local22.createModel(this.anInt3130 + 64, this.anInt3132 + 850, -30, -50, -30);

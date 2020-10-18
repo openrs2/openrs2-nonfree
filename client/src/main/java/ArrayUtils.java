@@ -394,4 +394,29 @@ public final class ArrayUtils {
 	public static void sort(@OriginalArg(0) int[] keys, @OriginalArg(2) Object[] values) {
 		sort(keys, values, 0, keys.length - 1);
 	}
+
+	@OriginalMember(owner = "client!s", name = "a", descriptor = "([SI)[S")
+	public static short[] copyOf(@OriginalArg(0) short[] array, @OriginalArg(1) int len) {
+		@Pc(2) short[] copy = new short[len];
+		ArrayUtils.copy(array, 0, copy, 0, len);
+		return copy;
+	}
+
+	@OriginalMember(owner = "client!li", name = "a", descriptor = "([II)[I")
+	public static int[] copyOf(@OriginalArg(0) int[] array) {
+		if (array == null) {
+			return null;
+		} else {
+			@Pc(18) int[] copy = new int[array.length];
+			ArrayUtils.copy(array, 0, copy, 0, array.length);
+			return copy;
+		}
+	}
+
+	@OriginalMember(owner = "client!s", name = "a", descriptor = "([FI)[F")
+	public static float[] copyOf(@OriginalArg(0) float[] array, @OriginalArg(1) int len) {
+		@Pc(2) float[] copy = new float[len];
+		ArrayUtils.copy(array, 0, copy, 0, len);
+		return copy;
+	}
 }

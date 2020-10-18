@@ -28,7 +28,7 @@ public final class Class135 {
 	private byte[] aByteArray54;
 
 	@OriginalMember(owner = "client!pi", name = "g", descriptor = "Lclient!lk;")
-	private GlBuffer aClass111_5;
+	private GlVertexBufferObject aClass111_5;
 
 	@OriginalMember(owner = "client!pi", name = "h", descriptor = "I")
 	public int anInt4161;
@@ -40,7 +40,7 @@ public final class Class135 {
 	private int[] anIntArray437;
 
 	@OriginalMember(owner = "client!pi", name = "k", descriptor = "Lclient!lk;")
-	private GlBuffer aClass111_6;
+	private GlVertexBufferObject aClass111_6;
 
 	@OriginalMember(owner = "client!pi", name = "l", descriptor = "I")
 	public int anInt4162;
@@ -130,10 +130,10 @@ public final class Class135 {
 			}
 		}
 		if (GlRenderer.arbVboSupported) {
-			this.aClass111_5 = new GlBuffer();
+			this.aClass111_5 = new GlVertexBufferObject();
 			@Pc(173) ByteBuffer local173 = ByteBuffer.wrap(local15.bytes);
 			this.aClass111_5.setArrayBuffer(local173);
-			this.aClass111_6 = new GlBuffer();
+			this.aClass111_6 = new GlVertexBufferObject();
 			local173 = ByteBuffer.wrap(local7.bytes);
 			this.aClass111_6.setElementArrayBuffer(local173);
 		} else {

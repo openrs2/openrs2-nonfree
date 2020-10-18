@@ -427,7 +427,7 @@ public abstract class PathingEntity extends Entity {
 			this.anInt3972 += this.anInt4039;
 			if (this.anInt3972 != 0) {
 				@Pc(445) int local445 = this.anInt3972 >> 5 & 0x7FF;
-				@Pc(450) int local450 = arg0.method3813() / 2;
+				@Pc(450) int local450 = arg0.getMinY() / 2;
 				arg0.method3823(0, -local450, 0);
 				arg0.method3817(local445);
 				arg0.method3823(0, local450, 0);
@@ -522,7 +522,7 @@ public abstract class PathingEntity extends Entity {
 			return;
 		}
 		@Pc(840) int local840 = this.anInt3997 >> 5 & 0x7FF;
-		@Pc(845) int local845 = arg0.method3813() / 2;
+		@Pc(845) int local845 = arg0.getMinY() / 2;
 		arg0.method3823(0, -local845, 0);
 		arg0.method3832(local840);
 		arg0.method3823(0, local845, 0);
@@ -673,7 +673,7 @@ public abstract class PathingEntity extends Entity {
 				this.aClass20_Sub3_6 = new ParticleSystem(client.loop, this.getSize(), this.getSize());
 			}
 			if (this.aClass20_Sub3_6 != null) {
-				this.aClass20_Sub3_6.method2967(local67.particleEmitters, local67.particleEffectors, false, local67.anIntArray507, local67.anIntArray504, local67.anIntArray502);
+				this.aClass20_Sub3_6.method2967(local67.particleEmitters, local67.particleEffectors, false, local67.vertexX, local67.vertexY, local67.vertexZ);
 			}
 		} else {
 			@Pc(4) SoftwareModel local4 = (SoftwareModel) arg1;
@@ -682,7 +682,7 @@ public abstract class PathingEntity extends Entity {
 				this.aClass20_Sub3_6 = new ParticleSystem(client.loop, this.getSize(), this.getSize());
 			}
 			if (this.aClass20_Sub3_6 != null) {
-				this.aClass20_Sub3_6.method2967(local7.particleEmitters, local7.particleEffectors, false, local7.anIntArray347, local7.anIntArray344, local7.anIntArray340);
+				this.aClass20_Sub3_6.method2967(local7.particleEmitters, local7.particleEffectors, false, local7.vertexX, local7.vertexY, local7.vertexZ);
 			}
 		}
 		this.aBoolean285 = true;

@@ -37,17 +37,6 @@ public final class Static24 {
 		Static1.anInt772 = 1;
 	}
 
-	@OriginalMember(owner = "client!li", name = "a", descriptor = "([II)[I")
-	public static int[] method2566(@OriginalArg(0) int[] arg0) {
-		if (arg0 == null) {
-			return null;
-		} else {
-			@Pc(18) int[] local18 = new int[arg0.length];
-			ArrayUtils.copy(arg0, 0, local18, 0, arg0.length);
-			return local18;
-		}
-	}
-
 	@OriginalMember(owner = "client!li", name = "b", descriptor = "(I)V")
 	public static void method2567() {
 		if (!GlRenderer.enabled || Static4.aBoolean189) {

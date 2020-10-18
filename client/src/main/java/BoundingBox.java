@@ -5,25 +5,25 @@ import org.openrs2.deob.annotation.OriginalMember;
 public final class BoundingBox {
 
 	@OriginalMember(owner = "client!ba", name = "a", descriptor = "S")
-	public short aShort2;
+	public short maxY;
 
 	@OriginalMember(owner = "client!ba", name = "b", descriptor = "S")
-	public short aShort3;
+	public short minZ;
 
 	@OriginalMember(owner = "client!ba", name = "d", descriptor = "S")
-	public short aShort4;
+	public short minX;
 
 	@OriginalMember(owner = "client!ba", name = "e", descriptor = "S")
-	public short aShort5;
+	public short maxX;
 
 	@OriginalMember(owner = "client!ba", name = "f", descriptor = "S")
-	public short aShort6;
+	public short maxZ;
 
 	@OriginalMember(owner = "client!ba", name = "g", descriptor = "S")
-	public short aShort7;
+	public short cylinderRadius;
 
 	@OriginalMember(owner = "client!ba", name = "h", descriptor = "S")
-	public short aShort8;
+	public short minY;
 
 	@OriginalMember(owner = "client!ba", name = "c", descriptor = "Z")
 	public boolean valid = false;

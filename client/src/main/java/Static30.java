@@ -626,7 +626,7 @@ public final class Static30 {
 											if (local2665 == null) {
 												Static28.method3270(local38);
 											} else {
-												local2677 = -local2665.method3813() / 2;
+												local2677 = -local2665.getMinY() / 2;
 											}
 										}
 									} else if (local38.anInt5939 == 5) {

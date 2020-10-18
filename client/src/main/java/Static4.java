@@ -375,12 +375,6 @@ public final class Static4 {
 	@OriginalMember(owner = "client!mi", name = "b", descriptor = "I")
 	public static int anInt3335 = 0;
 
-	@OriginalMember(owner = "client!ml", name = "p", descriptor = "[I")
-	public static final int[] anIntArray321 = MathUtils.COSINE;
-
-	@OriginalMember(owner = "client!ml", name = "u", descriptor = "[I")
-	public static final int[] anIntArray322 = MathUtils.SINE;
-
 	@OriginalMember(owner = "client!ml", name = "y", descriptor = "I")
 	public static int anInt3354 = 0;
 

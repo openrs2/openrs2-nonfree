@@ -53,7 +53,7 @@ public abstract class Model extends Entity {
 	public abstract void method3817(@OriginalArg(0) int arg0);
 
 	@OriginalMember(owner = "client!vg", name = "c", descriptor = "()I")
-	public abstract int method3818();
+	public abstract int getMinZ();
 
 	@OriginalMember(owner = "client!vg", name = "d", descriptor = "()V")
 	protected abstract void method3819();
@@ -221,10 +221,10 @@ public abstract class Model extends Entity {
 	}
 
 	@OriginalMember(owner = "client!vg", name = "b", descriptor = "()I")
-	public abstract int method3813();
+	public abstract int getMinY();
 
 	@OriginalMember(owner = "client!vg", name = "f", descriptor = "()I")
-	public abstract int method3826();
+	public abstract int getBoundingCylinderRadius();
 
 	@OriginalMember(owner = "client!vg", name = "a", descriptor = "(IIIIIIIIJILclient!ne;)V")
 	public abstract void method3805(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) long arg8, @OriginalArg(9) int arg9, @OriginalArg(10) ParticleSystem arg10);
@@ -236,7 +236,7 @@ public abstract class Model extends Entity {
 	public abstract void method3828();
 
 	@OriginalMember(owner = "client!vg", name = "i", descriptor = "()I")
-	public abstract int method3829();
+	public abstract int getMinX();
 
 	@OriginalMember(owner = "client!vg", name = "j", descriptor = "()Z")
 	protected abstract boolean method3830();
@@ -278,7 +278,7 @@ public abstract class Model extends Entity {
 	protected abstract void method3837(@OriginalArg(0) int arg0, @OriginalArg(1) int[] arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) boolean arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int[] arg7);
 
 	@OriginalMember(owner = "client!vg", name = "k", descriptor = "()I")
-	public abstract int method3838();
+	public abstract int getMaxX();
 
 	@OriginalMember(owner = "client!vg", name = "a", descriptor = "(Lclient!te;ILclient!te;IIIIZ[I)V")
 	public final void method3839(@OriginalArg(0) AnimFrameset arg0, @OriginalArg(1) int arg1, @OriginalArg(2) AnimFrameset arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) boolean arg7, @OriginalArg(8) int[] arg8) {
@@ -339,10 +339,10 @@ public abstract class Model extends Entity {
 	}
 
 	@OriginalMember(owner = "client!vg", name = "l", descriptor = "()I")
-	public abstract int method3841();
+	public abstract int getMaxZ();
 
 	@OriginalMember(owner = "client!vg", name = "m", descriptor = "()I")
-	public abstract int method3842();
+	public abstract int getMaxY();
 
 	@OriginalMember(owner = "client!vg", name = "a", descriptor = "(I[IIIIZ)V")
 	protected abstract void method3843(@OriginalArg(0) int arg0, @OriginalArg(1) int[] arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) boolean arg5);

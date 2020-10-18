@@ -205,19 +205,19 @@ public final class ObjType {
 			}
 		}
 		if (!arg0 && (this.manWearXOff != 0 || this.manWearYOff != 0 || this.manWearZOff != 0)) {
-			local51.method2743(this.manWearXOff, this.manWearYOff, this.manWearZOff);
+			local51.translate(this.manWearXOff, this.manWearYOff, this.manWearZOff);
 		}
 		if (arg0 && (this.womanWearXOff != 0 || this.womanWearYOff != 0 || this.womanWearZOff != 0)) {
-			local51.method2743(this.womanWearXOff, this.womanWearYOff, this.womanWearZOff);
+			local51.translate(this.womanWearXOff, this.womanWearYOff, this.womanWearZOff);
 		}
 		if (this.recolorSource != null) {
-			for (@Pc(167) int local167 = 0; local167 < this.recolorSource.length; local167++) {
-				local51.method2768(this.recolorSource[local167], this.recolorDestination[local167]);
+			for (@Pc(167) int i = 0; i < this.recolorSource.length; i++) {
+				local51.recolor(this.recolorSource[i], this.recolorDestination[i]);
 			}
 		}
 		if (this.retextureSource != null) {
-			for (@Pc(191) int local191 = 0; local191 < this.retextureSource.length; local191++) {
-				local51.method2753(this.retextureSource[local191], this.retextureDestination[local191]);
+			for (@Pc(191) int i = 0; i < this.retextureSource.length; i++) {
+				local51.retexture(this.retextureSource[i], this.retextureDestination[i]);
 			}
 		}
 		return local51;
@@ -263,26 +263,26 @@ public final class ObjType {
 				return null;
 			}
 			if (this.recolorSource != null) {
-				for (@Pc(83) int local83 = 0; local83 < this.recolorSource.length; local83++) {
-					if (this.recolorDestinationPalette == null || local83 >= this.recolorDestinationPalette.length) {
-						local72.method2768(this.recolorSource[local83], this.recolorDestination[local83]);
+				for (@Pc(83) int i = 0; i < this.recolorSource.length; i++) {
+					if (this.recolorDestinationPalette == null || i >= this.recolorDestinationPalette.length) {
+						local72.recolor(this.recolorSource[i], this.recolorDestination[i]);
 					} else {
-						local72.method2768(this.recolorSource[local83], Static4.aShortArray126[this.recolorDestinationPalette[local83] & 0xFF]);
+						local72.recolor(this.recolorSource[i], Static4.aShortArray126[this.recolorDestinationPalette[i] & 0xFF]);
 					}
 				}
 			}
 			if (this.retextureSource != null) {
-				for (@Pc(131) int local131 = 0; local131 < this.retextureSource.length; local131++) {
-					local72.method2753(this.retextureSource[local131], this.retextureDestination[local131]);
+				for (@Pc(131) int i = 0; i < this.retextureSource.length; i++) {
+					local72.retexture(this.retextureSource[i], this.retextureDestination[i]);
 				}
 			}
 			if (arg3 != null) {
-				for (@Pc(154) int local154 = 0; local154 < 5; local154++) {
-					if (arg3.colors[local154] < Static6.aShortArrayArray6[local154].length) {
-						local72.method2768(Static7.aShortArray113[local154], Static6.aShortArrayArray6[local154][arg3.colors[local154]]);
+				for (@Pc(154) int i = 0; i < 5; i++) {
+					if (arg3.colors[i] < Static6.aShortArrayArray6[i].length) {
+						local72.recolor(Static7.aShortArray113[i], Static6.aShortArrayArray6[i][arg3.colors[i]]);
 					}
-					if (arg3.colors[local154] < Static1.aShortArrayArray1[local154].length) {
-						local72.method2768(Static4.aShortArray46[local154], Static1.aShortArrayArray1[local154][arg3.colors[local154]]);
+					if (arg3.colors[i] < Static1.aShortArrayArray1[i].length) {
+						local72.recolor(Static4.aShortArray46[i], Static1.aShortArrayArray1[i][arg3.colors[i]]);
 					}
 				}
 			}
@@ -336,13 +336,13 @@ public final class ObjType {
 			local36 = new RawModel(local58, 2);
 		}
 		if (this.recolorSource != null) {
-			for (@Pc(69) int local69 = 0; local69 < this.recolorSource.length; local69++) {
-				local36.method2768(this.recolorSource[local69], this.recolorDestination[local69]);
+			for (@Pc(69) int i = 0; i < this.recolorSource.length; i++) {
+				local36.recolor(this.recolorSource[i], this.recolorDestination[i]);
 			}
 		}
 		if (this.retextureSource != null) {
-			for (@Pc(96) int local96 = 0; local96 < this.retextureSource.length; local96++) {
-				local36.method2753(this.retextureSource[local96], this.retextureDestination[local96]);
+			for (@Pc(96) int i = 0; i < this.retextureSource.length; i++) {
+				local36.retexture(this.retextureSource[i], this.retextureDestination[i]);
 			}
 		}
 		return local36;
@@ -471,26 +471,26 @@ public final class ObjType {
 			return null;
 		}
 		if (this.recolorSource != null) {
-			for (@Pc(23) int local23 = 0; local23 < this.recolorSource.length; local23++) {
-				if (this.recolorDestinationPalette == null || this.recolorDestinationPalette.length <= local23) {
-					local11.method2768(this.recolorSource[local23], this.recolorDestination[local23]);
+			for (@Pc(23) int i = 0; i < this.recolorSource.length; i++) {
+				if (this.recolorDestinationPalette == null || this.recolorDestinationPalette.length <= i) {
+					local11.recolor(this.recolorSource[i], this.recolorDestination[i]);
 				} else {
-					local11.method2768(this.recolorSource[local23], Static4.aShortArray126[this.recolorDestinationPalette[local23] & 0xFF]);
+					local11.recolor(this.recolorSource[i], Static4.aShortArray126[this.recolorDestinationPalette[i] & 0xFF]);
 				}
 			}
 		}
 		if (this.retextureSource != null) {
-			for (@Pc(73) int local73 = 0; local73 < this.retextureSource.length; local73++) {
-				local11.method2753(this.retextureSource[local73], this.retextureDestination[local73]);
+			for (@Pc(73) int i = 0; i < this.retextureSource.length; i++) {
+				local11.retexture(this.retextureSource[i], this.retextureDestination[i]);
 			}
 		}
 		if (arg0 != null) {
-			for (@Pc(100) int local100 = 0; local100 < 5; local100++) {
-				if (Static6.aShortArrayArray6[local100].length > arg0.colors[local100]) {
-					local11.method2768(Static7.aShortArray113[local100], Static6.aShortArrayArray6[local100][arg0.colors[local100]]);
+			for (@Pc(100) int i = 0; i < 5; i++) {
+				if (Static6.aShortArrayArray6[i].length > arg0.colors[i]) {
+					local11.recolor(Static7.aShortArray113[i], Static6.aShortArrayArray6[i][arg0.colors[i]]);
 				}
-				if (Static1.aShortArrayArray1[local100].length > arg0.colors[local100]) {
-					local11.method2768(Static4.aShortArray46[local100], Static1.aShortArrayArray1[local100][arg0.colors[local100]]);
+				if (Static1.aShortArrayArray1[i].length > arg0.colors[i]) {
+					local11.recolor(Static4.aShortArray46[i], Static1.aShortArrayArray1[i][arg0.colors[i]]);
 				}
 			}
 		}

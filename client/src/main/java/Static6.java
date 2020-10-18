@@ -127,9 +127,6 @@ public final class Static6 {
 	@OriginalMember(owner = "client!s", name = "cb", descriptor = "[J")
 	public static long[] aLongArray43;
 
-	@OriginalMember(owner = "client!s", name = "gb", descriptor = "Ljava/nio/ByteBuffer;")
-	public static ByteBuffer aByteBuffer15;
-
 	@OriginalMember(owner = "client!s", name = "pb", descriptor = "I")
 	public static int anInt4692;
 
@@ -297,9 +294,6 @@ public final class Static6 {
 
 	@OriginalMember(owner = "client!ro", name = "K", descriptor = "I")
 	public static int anInt4679 = -1;
-
-	@OriginalMember(owner = "client!s", name = "Q", descriptor = "Lclient!fd;")
-	public static Buffer aClass4_Sub10_9 = new Buffer(10000);
 
 	@OriginalMember(owner = "client!s", name = "eb", descriptor = "Lclient!s;")
 	public static GlModel aClass53_Sub4_Sub2_1 = new GlModel();

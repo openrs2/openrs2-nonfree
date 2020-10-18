@@ -631,10 +631,10 @@ public final class Static29 {
 			local24 = local32.createModel(64, 768, -50, -10, -50);
 			Static4.aClass26_30.put(local18, local24);
 		}
-		@Pc(53) int local53 = arg1.method3829();
-		@Pc(56) int local56 = arg1.method3838();
-		@Pc(59) int local59 = arg1.method3818();
-		@Pc(62) int local62 = arg1.method3841();
+		@Pc(53) int local53 = arg1.getMinX();
+		@Pc(56) int local56 = arg1.getMaxX();
+		@Pc(59) int local59 = arg1.getMinZ();
+		@Pc(62) int local62 = arg1.getMaxZ();
 		@Pc(68) Model local68 = local24.method3836(true, true, true);
 		if (arg0 != 0) {
 			local68.method3815(arg0);
@@ -642,21 +642,21 @@ public final class Static29 {
 		if (GlRenderer.enabled) {
 			@Pc(148) GlModel local148 = (GlModel) local68;
 			if (Static11.method522(arg2 + local59, arg5 + local53, Static7.y) != arg4 || arg4 != Static11.method522(arg2 + local62, local56 + arg5, Static7.y)) {
-				for (@Pc(183) int local183 = 0; local183 < local148.anInt4689; local183++) {
-					@Pc(189) int[] local189 = local148.anIntArray504;
-					local189[local183] += Static11.method522(arg2 + local148.anIntArray502[local183], arg5 + local148.anIntArray507[local183], Static7.y) - arg4;
+				for (@Pc(183) int local183 = 0; local183 < local148.vertexCount; local183++) {
+					@Pc(189) int[] local189 = local148.vertexY;
+					local189[local183] += Static11.method522(arg2 + local148.vertexZ[local183], arg5 + local148.vertexX[local183], Static7.y) - arg4;
 				}
 				local148.bounds.valid = false;
-				local148.aClass57_1.aBoolean103 = false;
+				local148.vertexBuffer.valid = false;
 			}
 		} else {
 			@Pc(78) SoftwareModel local78 = (SoftwareModel) local68;
 			if (arg4 != Static11.method522(arg2 + local59, local53 + arg5, Static7.y) || Static11.method522(local62 + arg2, local56 + arg5, Static7.y) != arg4) {
-				for (@Pc(108) int local108 = 0; local108 < local78.anInt3440; local108++) {
-					@Pc(114) int[] local114 = local78.anIntArray344;
-					local114[local108] += Static11.method522(local78.anIntArray340[local108] + arg2, arg5 + local78.anIntArray347[local108], Static7.y) - arg4;
+				for (@Pc(108) int local108 = 0; local108 < local78.vertexCount; local108++) {
+					@Pc(114) int[] local114 = local78.vertexY;
+					local114[local108] += Static11.method522(local78.vertexZ[local108] + arg2, arg5 + local78.vertexX[local108], Static7.y) - arg4;
 				}
-				local78.aBoolean244 = false;
+				local78.boundsValid = false;
 			}
 		}
 		return local68;
@@ -1426,7 +1426,7 @@ public final class Static29 {
 			for (@Pc(46) int i = 0; i < tile.sceneryLen; i++) {
 				@Pc(55) Scenery scenery = tile.scenery[i];
 				if ((scenery.pickKey & 0x400000L) == 4194304L) {
-					@Pc(66) int local66 = scenery.aClass53_1.method3813();
+					@Pc(66) int local66 = scenery.aClass53_1.getMinY();
 					if (local66 != -32768 && local66 < local34) {
 						local34 = local66;
 					}
@@ -1797,7 +1797,7 @@ public final class Static29 {
 													local616.aClass53_4.method3805(0, Static2.anInt2247, Static5.anInt3487, Static6.anInt4794, Static3.anInt2272, local616.x - Static7.anInt5281, local616.anInt5494 - Static6.anInt4375, local616.z - Static6.anInt4400, local616.pickKey, local24, null);
 												}
 											}
-											if (local619 != null && !Static14.method1089(local27, local18, local21, local619.aClass53_10.method3813())) {
+											if (local619 != null && !Static14.method1089(local27, local18, local21, local619.aClass53_10.getMinY())) {
 												if (GlRenderer.enabled) {
 													GlRenderer.method1613(var8 - 0.5F);
 												}
@@ -2033,7 +2033,7 @@ public final class Static29 {
 												}
 												@Pc(1697) Scenery local1697 = Terrain.aClass33Array1[local1619];
 												local1697.anInt815 = Static2.anInt1871;
-												if (!Static21.method2003(local27, local1697.xMin, local1697.xMax, local1697.zMin, local1697.zMax, local1697.aClass53_1.method3813())) {
+												if (!Static21.method2003(local27, local1697.xMin, local1697.xMax, local1697.zMin, local1697.zMax, local1697.aClass53_1.getMinY())) {
 													if (GlRenderer.enabled) {
 														if ((local1697.pickKey & 0xFC000L) == 147456L) {
 															LightingManager.method3114(Static7.anInt5281, Static6.anInt4375, Static6.anInt4400, local24, local18, local21);
@@ -2258,7 +2258,7 @@ public final class Static29 {
 			}
 			if (local8.anInt3558 != 0) {
 				@Pc(2706) WallDecor local2706 = local8.wallDecor;
-				if (local2706 != null && !Static14.method1089(local27, local18, local21, local2706.aClass53_10.method3813())) {
+				if (local2706 != null && !Static14.method1089(local27, local18, local21, local2706.aClass53_10.getMinY())) {
 					if ((local2706.anInt5629 & local8.anInt3558) != 0) {
 						if (GlRenderer.enabled) {
 							LightingManager.method3114(Static7.anInt5281, Static6.anInt4375, Static6.anInt4400, local24, local18, local21);

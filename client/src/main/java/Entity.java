@@ -26,5 +26,5 @@ public abstract class Entity {
 	}
 
 	@OriginalMember(owner = "client!vc", name = "b", descriptor = "()I")
-	public abstract int method3813();
+	public abstract int getMinY();
 }

@@ -11,13 +11,13 @@ import org.openrs2.deob.annotation.Pc;
 public final class Class103 {
 
 	@OriginalMember(owner = "client!kc", name = "d", descriptor = "Lclient!lk;")
-	private GlBuffer aClass111_3;
+	private GlVertexBufferObject aClass111_3;
 
 	@OriginalMember(owner = "client!kc", name = "f", descriptor = "Ljava/nio/ByteBuffer;")
 	private ByteBuffer aByteBuffer7;
 
 	@OriginalMember(owner = "client!kc", name = "g", descriptor = "Lclient!lk;")
-	private GlBuffer aClass111_4;
+	private GlVertexBufferObject aClass111_4;
 
 	@OriginalMember(owner = "client!kc", name = "h", descriptor = "Ljava/nio/ByteBuffer;")
 	private ByteBuffer aByteBuffer8;
@@ -146,7 +146,7 @@ public final class Class103 {
 		}
 		if (GlRenderer.arbVboSupported) {
 			@Pc(112) ByteBuffer local112 = ByteBuffer.wrap(local4.bytes, 0, local4.position);
-			this.aClass111_4 = new GlBuffer();
+			this.aClass111_4 = new GlVertexBufferObject();
 			this.aClass111_4.setArrayBuffer(local112);
 		} else {
 			this.aByteBuffer7 = ByteBuffer.allocateDirect(local4.position).order(ByteOrder.nativeOrder());
@@ -175,7 +175,7 @@ public final class Class103 {
 		}
 		if (GlRenderer.arbVboSupported) {
 			@Pc(293) ByteBuffer local293 = ByteBuffer.wrap(local147.bytes, 0, local147.position);
-			this.aClass111_3 = new GlBuffer();
+			this.aClass111_3 = new GlVertexBufferObject();
 			this.aClass111_3.setElementArrayBuffer(local293);
 		} else {
 			this.aByteBuffer8 = ByteBuffer.allocateDirect(local147.position).order(ByteOrder.nativeOrder());
