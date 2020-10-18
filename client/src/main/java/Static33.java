@@ -556,7 +556,7 @@ public final class Static33 {
 		if (Static7.aClass138_14 == null) {
 			if (Static2.aClass4_Sub3_Sub22_1 == null || !client.js5Archive23.isGroupNameValid(Static2.aClass4_Sub3_Sub22_1.group + "_labels")) {
 				Static7.aClass138_14 = new MapElementList(0);
-			} else if (client.js5Archive23.isFileReady(Static2.aClass4_Sub3_Sub22_1.group + "_labels")) {
+			} else if (client.js5Archive23.isGroupReady(Static2.aClass4_Sub3_Sub22_1.group + "_labels")) {
 				Static7.aClass138_14 = MapElementList.create(client.js5Archive23, Static2.aClass4_Sub3_Sub22_1.group + "_labels", LoginManager.mapMembers);
 			} else {
 				Static3.anInt2886++;

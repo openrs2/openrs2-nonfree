@@ -433,7 +433,7 @@ public final class Js5 {
 	}
 
 	@OriginalMember(owner = "client!fh", name = "b", descriptor = "(Ljava/lang/String;I)Z")
-	public final boolean isFileReady(@OriginalArg(0) String group) {
+	public final boolean isGroupReady(@OriginalArg(0) String group) {
 		if (this.isIndexReady()) {
 			group = group.toLowerCase();
 			@Pc(28) int groupId = this.index.groupNameHashTable.get(StringUtils.hashCode(group));

@@ -44,7 +44,7 @@ public final class WorldMap {
 			return;
 		}
 		if (loadPercentage < 10) {
-			if (!MapAreaList.archive.isFileReady(currentMap.group)) {
+			if (!MapAreaList.archive.isGroupReady(currentMap.group)) {
 				loadPercentage = client.js5Archive23.getPercentageComplete(currentMap.group) / 10;
 				return;
 			}
@@ -140,7 +140,7 @@ public final class WorldMap {
 			GameShell.resetTimer();
 		} else if (loadPercentage == 60) {
 			if (MapAreaList.archive.isGroupNameValid(currentMap.group + "_labels")) {
-				if (!MapAreaList.archive.isFileReady(currentMap.group + "_labels")) {
+				if (!MapAreaList.archive.isGroupReady(currentMap.group + "_labels")) {
 					return;
 				}
 				Static3.aClass138_6 = MapElementList.create(MapAreaList.archive, currentMap.group + "_labels", LoginManager.mapMembers);
