@@ -13,25 +13,25 @@ public final class MapElementList {
 			return new MapElementList(0);
 		}
 		@Pc(23) int[] fileIds = archive.getFileIds(groupId);
-		@Pc(29) MapElementList local29 = new MapElementList(fileIds.length);
+		@Pc(29) MapElementList list = new MapElementList(fileIds.length);
 		@Pc(31) int i = 0;
 		@Pc(39) int j = 0;
 		while (true) {
-			while (i < local29.size) {
+			while (i < list.size) {
 				@Pc(59) Buffer buffer = new Buffer(archive.fetchFile(groupId, fileIds[j++]));
 				@Pc(63) int position = buffer.readInt();
 				@Pc(67) int id = buffer.readUnsignedShort();
 				@Pc(71) int members = buffer.readUnsignedByte();
 				if (!allowMembers && members == 1) {
-					local29.size--;
+					list.size--;
 				} else {
-					local29.positions[i] = position;
-					local29.elements[i] = new MapElement();
-					local29.elements[i].id = id;
+					list.positions[i] = position;
+					list.elements[i] = new MapElement();
+					list.elements[i].id = id;
 					i++;
 				}
 			}
-			return local29;
+			return list;
 		}
 	}
 
