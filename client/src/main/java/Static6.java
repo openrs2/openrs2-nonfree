@@ -1,5 +1,3 @@
-import java.nio.ByteBuffer;
-
 import org.openrs2.deob.annotation.OriginalMember;
 
 public final class Static6 {
