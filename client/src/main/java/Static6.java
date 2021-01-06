@@ -20,66 +20,6 @@ public final class Static6 {
 	@OriginalMember(owner = "client!qm", name = "h", descriptor = "I")
 	public static int anInt4403;
 
-	@OriginalMember(owner = "client!qn", name = "o", descriptor = "I")
-	public static int anInt4413;
-
-	@OriginalMember(owner = "client!qn", name = "p", descriptor = "[F")
-	public static float[] aFloatArray45;
-
-	@OriginalMember(owner = "client!qn", name = "q", descriptor = "[I")
-	public static int[] anIntArray468;
-
-	@OriginalMember(owner = "client!qn", name = "s", descriptor = "[Lclient!sf;")
-	public static Class155[] aClass155Array1;
-
-	@OriginalMember(owner = "client!qn", name = "t", descriptor = "[B")
-	public static byte[] aByteArray59;
-
-	@OriginalMember(owner = "client!qn", name = "u", descriptor = "[F")
-	public static float[] aFloatArray46;
-
-	@OriginalMember(owner = "client!qn", name = "v", descriptor = "[F")
-	public static float[] aFloatArray47;
-
-	@OriginalMember(owner = "client!qn", name = "w", descriptor = "I")
-	public static int anInt4415;
-
-	@OriginalMember(owner = "client!qn", name = "y", descriptor = "[F")
-	public static float[] aFloatArray48;
-
-	@OriginalMember(owner = "client!qn", name = "B", descriptor = "[F")
-	public static float[] aFloatArray49;
-
-	@OriginalMember(owner = "client!qn", name = "C", descriptor = "[I")
-	public static int[] anIntArray469;
-
-	@OriginalMember(owner = "client!qn", name = "D", descriptor = "[F")
-	public static float[] aFloatArray50;
-
-	@OriginalMember(owner = "client!qn", name = "F", descriptor = "[Lclient!rd;")
-	public static Class149[] aClass149Array1;
-
-	@OriginalMember(owner = "client!qn", name = "H", descriptor = "I")
-	public static int anInt4418;
-
-	@OriginalMember(owner = "client!qn", name = "K", descriptor = "I")
-	public static int anInt4421;
-
-	@OriginalMember(owner = "client!qn", name = "M", descriptor = "[Z")
-	public static boolean[] aBooleanArray23;
-
-	@OriginalMember(owner = "client!qn", name = "N", descriptor = "[F")
-	public static float[] aFloatArray51;
-
-	@OriginalMember(owner = "client!qn", name = "O", descriptor = "[Lclient!bf;")
-	public static Class18[] aClass18Array1;
-
-	@OriginalMember(owner = "client!qn", name = "Q", descriptor = "[I")
-	public static int[] anIntArray470;
-
-	@OriginalMember(owner = "client!qn", name = "R", descriptor = "[Lclient!pd;")
-	public static Class132[] aClass132Array1;
-
 	@OriginalMember(owner = "client!qo", name = "c", descriptor = "I")
 	public static int anInt4425;
 
@@ -217,9 +157,6 @@ public final class Static6 {
 
 	@OriginalMember(owner = "client!qm", name = "c", descriptor = "I")
 	public static int anInt4398 = 1;
-
-	@OriginalMember(owner = "client!qn", name = "G", descriptor = "Z")
-	public static boolean aBoolean308 = false;
 
 	@OriginalMember(owner = "client!qo", name = "a", descriptor = "[[F")
 	public static final float[][] aFloatArrayArray2 = new float[2][8];

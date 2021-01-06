@@ -24,17 +24,6 @@ public final class Static23 {
 		}
 	}
 
-	@OriginalMember(owner = "client!l", name = "a", descriptor = "(IZI)I")
-	public static int method2426(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1) {
-		@Pc(7) int local7 = 0;
-		while (arg1 > 0) {
-			local7 = arg0 & 0x1 | local7 << 1;
-			arg0 >>>= 1;
-			arg1--;
-		}
-		return local7;
-	}
-
 	@OriginalMember(owner = "client!lb", name = "b", descriptor = "(B)V")
 	public static void method2455() {
 		if (Static1.anInt885 <= 0) {

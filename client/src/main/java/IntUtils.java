@@ -105,4 +105,15 @@ public final class IntUtils {
 		}
 		return new String(chars);
 	}
+
+	@OriginalMember(owner = "client!l", name = "a", descriptor = "(IZI)I")
+	public static int bitReverse(@OriginalArg(0) int in, @OriginalArg(2) int len) {
+		@Pc(7) int out = 0;
+		while (len > 0) {
+			out = in & 0x1 | out << 1;
+			in >>>= 1;
+			len--;
+		}
+		return out;
+	}
 }
