@@ -188,12 +188,12 @@ public final class VorbisSound extends Node {
 	}
 
 	@OriginalMember(owner = "client!qn", name = "a", descriptor = "(Lclient!fh;II)Lclient!qn;")
-	public static VorbisSound create(@OriginalArg(0) Js5 archive, @OriginalArg(1) int groupId, @OriginalArg(2) int fileId) {
+	public static VorbisSound create(@OriginalArg(0) Js5 archive, @OriginalArg(1) int group, @OriginalArg(2) int file) {
 		if (isHeaderReady(archive)) {
-			@Pc(16) byte[] bytes = archive.fetchFile(groupId, fileId);
+			@Pc(16) byte[] bytes = archive.fetchFile(group, file);
 			return bytes == null ? null : new VorbisSound(bytes);
 		} else {
-			archive.isFileReady(groupId, fileId);
+			archive.isFileReady(group, file);
 			return null;
 		}
 	}

@@ -830,7 +830,7 @@ public final class Class4_Sub6_Sub2 extends Class4_Sub6 {
 	}
 
 	@OriginalMember(owner = "client!ld", name = "a", descriptor = "(IILclient!tg;Lclient!fh;Lclient!jk;)Z")
-	public final synchronized boolean method2511(@OriginalArg(2) Song song, @OriginalArg(3) Js5 archive, @OriginalArg(4) Class98 arg2) {
+	public final synchronized boolean method2511(@OriginalArg(2) Song song, @OriginalArg(3) Js5 archive, @OriginalArg(4) SoundBank arg2) {
 		song.createPrograms();
 		@Pc(9) boolean valid = true;
 		@Pc(24) int[] samplingRates = new int[] { 22050 };

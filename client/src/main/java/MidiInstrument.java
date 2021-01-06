@@ -378,7 +378,7 @@ public final class MidiInstrument extends Node {
 	}
 
 	@OriginalMember(owner = "client!qh", name = "a", descriptor = "([ILclient!jk;I[B)Z")
-	public final boolean method3566(@OriginalArg(0) int[] samplingRates, @OriginalArg(1) Class98 arg1, @OriginalArg(3) byte[] keys) {
+	public final boolean method3566(@OriginalArg(0) int[] samplingRates, @OriginalArg(1) SoundBank arg1, @OriginalArg(3) byte[] keys) {
 		@Pc(15) boolean valid = true;
 		@Pc(17) int local17 = 0;
 		@Pc(19) PcmSound local19 = null;
@@ -390,9 +390,9 @@ public final class MidiInstrument extends Node {
 						local17 = local40;
 						@Pc(51) int local51 = local40 - 1;
 						if ((local51 & 0x1) == 0) {
-							local19 = arg1.method2061(samplingRates, local51 >> 2);
+							local19 = arg1.getSynthSound(local51 >> 2, samplingRates);
 						} else {
-							local19 = arg1.method2058(samplingRates, local51 >> 2);
+							local19 = arg1.getVorbisSound(local51 >> 2, samplingRates);
 						}
 						if (local19 == null) {
 							valid = false;

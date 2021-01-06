@@ -116,7 +116,7 @@ public final class Static1 {
 	public static int anInt611;
 
 	@OriginalMember(owner = "client!ci", name = "n", descriptor = "Lclient!jk;")
-	public static Class98 aClass98_1;
+	public static SoundBank aClass98_1;
 
 	@OriginalMember(owner = "client!cj", name = "I", descriptor = "I")
 	public static int anInt647;

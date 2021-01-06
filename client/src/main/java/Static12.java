@@ -26,7 +26,7 @@ public final class Static12 {
 					}
 				}
 				if (Static1.aClass98_1 == null) {
-					Static1.aClass98_1 = new Class98(Static6.aClass58_93, Static2.aClass58_41);
+					Static1.aClass98_1 = new SoundBank(Static6.aClass58_93, Static2.aClass58_41);
 				}
 				if (Static1.aClass4_Sub6_Sub2_3.method2511(Static7.aClass4_Sub31_2, Static3.aClass58_59, Static1.aClass98_1)) {
 					Static1.aClass4_Sub6_Sub2_3.method2509();
