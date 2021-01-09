@@ -381,7 +381,7 @@ public final class Protocol {
 			Static7.anIntArray501[local1198] = local1190;
 			Static7.anIntArray599[local1198] = 1;
 			for (@Pc(1212) int local1212 = 0; local1212 < 98; local1212++) {
-				if (local1194 >= Class65.anIntArray165[local1212]) {
+				if (local1194 >= PlayerSkillXpTable.EXPERIENCE_FOR_LEVEL[local1212]) {
 					Static7.anIntArray599[local1198] = local1212 + 2;
 				}
 			}

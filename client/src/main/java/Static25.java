@@ -10,13 +10,13 @@ public final class Static25 {
 	public static void method2728(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) byte[][][] arg5, @OriginalArg(6) int[] arg6, @OriginalArg(7) int[] arg7, @OriginalArg(8) int[] arg8, @OriginalArg(9) int[] arg9, @OriginalArg(10) int[] arg10, @OriginalArg(11) int arg11, @OriginalArg(12) byte arg12, @OriginalArg(13) int arg13, @OriginalArg(14) int arg14) {
 		if (arg0 < 0) {
 			arg0 = 0;
-		} else if (arg0 >= Terrain.width * 128) {
-			arg0 = Terrain.width * 128 - 1;
+		} else if (arg0 >= SceneGraph.width * 128) {
+			arg0 = SceneGraph.width * 128 - 1;
 		}
 		if (arg2 < 0) {
 			arg2 = 0;
-		} else if (arg2 >= Terrain.length * 128) {
-			arg2 = Terrain.length * 128 - 1;
+		} else if (arg2 >= SceneGraph.length * 128) {
+			arg2 = SceneGraph.length * 128 - 1;
 		}
 		Static2.anInt2247 = MathUtils.SINE[arg3];
 		Static5.anInt3487 = MathUtils.COSINE[arg3];
@@ -27,21 +27,21 @@ public final class Static25 {
 		Static6.anInt4400 = arg2;
 		Static6.anInt4513 = arg0 / 128;
 		Static4.anInt3329 = arg2 / 128;
-		Static6.anInt4978 = Static6.anInt4513 - Terrain.anInt3253;
+		Static6.anInt4978 = Static6.anInt4513 - SceneGraph.anInt3253;
 		if (Static6.anInt4978 < 0) {
 			Static6.anInt4978 = 0;
 		}
-		Static1.anInt890 = Static4.anInt3329 - Terrain.anInt3253;
+		Static1.anInt890 = Static4.anInt3329 - SceneGraph.anInt3253;
 		if (Static1.anInt890 < 0) {
 			Static1.anInt890 = 0;
 		}
-		Static2.anInt5778 = Static6.anInt4513 + Terrain.anInt3253;
-		if (Static2.anInt5778 > Terrain.width) {
-			Static2.anInt5778 = Terrain.width;
+		Static2.anInt5778 = Static6.anInt4513 + SceneGraph.anInt3253;
+		if (Static2.anInt5778 > SceneGraph.width) {
+			Static2.anInt5778 = SceneGraph.width;
 		}
-		Static2.anInt1344 = Static4.anInt3329 + Terrain.anInt3253;
-		if (Static2.anInt1344 > Terrain.length) {
-			Static2.anInt1344 = Terrain.length;
+		Static2.anInt1344 = Static4.anInt3329 + SceneGraph.anInt3253;
+		if (Static2.anInt1344 > SceneGraph.length) {
+			Static2.anInt1344 = SceneGraph.length;
 		}
 		@Pc(99) short local99;
 		if (GlRenderer.enabled) {
@@ -49,29 +49,29 @@ public final class Static25 {
 		} else {
 			local99 = 3500;
 		}
-		for (@Pc(104) int local104 = 0; local104 < Terrain.anInt3253 + Terrain.anInt3253 + 2; local104++) {
-			for (@Pc(113) int local113 = 0; local113 < Terrain.anInt3253 + Terrain.anInt3253 + 2; local113++) {
-				@Pc(130) int local130 = (local104 - Terrain.anInt3253 << 7) - (Static7.anInt5281 & 0x7F);
-				@Pc(140) int local140 = (local113 - Terrain.anInt3253 << 7) - (Static6.anInt4400 & 0x7F);
-				@Pc(146) int local146 = Static6.anInt4513 + local104 - Terrain.anInt3253;
-				@Pc(152) int local152 = Static4.anInt3329 + local113 - Terrain.anInt3253;
-				if (local146 >= 0 && local152 >= 0 && local146 < Terrain.width && local152 < Terrain.length) {
+		for (@Pc(104) int local104 = 0; local104 < SceneGraph.anInt3253 + SceneGraph.anInt3253 + 2; local104++) {
+			for (@Pc(113) int local113 = 0; local113 < SceneGraph.anInt3253 + SceneGraph.anInt3253 + 2; local113++) {
+				@Pc(130) int local130 = (local104 - SceneGraph.anInt3253 << 7) - (Static7.anInt5281 & 0x7F);
+				@Pc(140) int local140 = (local113 - SceneGraph.anInt3253 << 7) - (Static6.anInt4400 & 0x7F);
+				@Pc(146) int local146 = Static6.anInt4513 + local104 - SceneGraph.anInt3253;
+				@Pc(152) int local152 = Static4.anInt3329 + local113 - SceneGraph.anInt3253;
+				if (local146 >= 0 && local152 >= 0 && local146 < SceneGraph.width && local152 < SceneGraph.length) {
 					@Pc(176) int local176;
-					if (Terrain.underwaterTileHeights == null) {
-						local176 = Terrain.surfaceTileHeights[0][local146][local152] + 128 - Static6.anInt4375;
+					if (SceneGraph.underwaterTileHeights == null) {
+						local176 = SceneGraph.surfaceTileHeights[0][local146][local152] + 128 - Static6.anInt4375;
 					} else {
-						local176 = Terrain.underwaterTileHeights[0][local146][local152] + 128 - Static6.anInt4375;
+						local176 = SceneGraph.underwaterTileHeights[0][local146][local152] + 128 - Static6.anInt4375;
 					}
-					@Pc(201) int local201 = Terrain.surfaceTileHeights[3][local146][local152] - Static6.anInt4375 - 1000;
-					Terrain.aBooleanArrayArray4[local104][local113] = Static9.method759(local130, local201, local176, local140, local99);
+					@Pc(201) int local201 = SceneGraph.surfaceTileHeights[3][local146][local152] - Static6.anInt4375 - 1000;
+					SceneGraph.aBooleanArrayArray4[local104][local113] = Static9.method759(local130, local201, local176, local140, local99);
 				} else {
-					Terrain.aBooleanArrayArray4[local104][local113] = false;
+					SceneGraph.aBooleanArrayArray4[local104][local113] = false;
 				}
 			}
 		}
-		for (@Pc(225) int local225 = 0; local225 < Terrain.anInt3253 + Terrain.anInt3253 + 1; local225++) {
-			for (@Pc(234) int local234 = 0; local234 < Terrain.anInt3253 + Terrain.anInt3253 + 1; local234++) {
-				Terrain.aBooleanArrayArray5[local225][local234] = Terrain.aBooleanArrayArray4[local225][local234] || Terrain.aBooleanArrayArray4[local225 + 1][local234] || Terrain.aBooleanArrayArray4[local225][local234 + 1] || Terrain.aBooleanArrayArray4[local225 + 1][local234 + 1];
+		for (@Pc(225) int local225 = 0; local225 < SceneGraph.anInt3253 + SceneGraph.anInt3253 + 1; local225++) {
+			for (@Pc(234) int local234 = 0; local234 < SceneGraph.anInt3253 + SceneGraph.anInt3253 + 1; local234++) {
+				SceneGraph.aBooleanArrayArray5[local225][local234] = SceneGraph.aBooleanArrayArray4[local225][local234] || SceneGraph.aBooleanArrayArray4[local225 + 1][local234] || SceneGraph.aBooleanArrayArray4[local225][local234 + 1] || SceneGraph.aBooleanArrayArray4[local225 + 1][local234 + 1];
 			}
 		}
 		Static3.anIntArray170 = arg6;
@@ -80,8 +80,8 @@ public final class Static25 {
 		Static4.anIntArray309 = arg9;
 		Static3.anIntArray226 = arg10;
 		Static37.method4737();
-		if (Terrain.underwaterTiles != null) {
-			Terrain.setUnderwater(true);
+		if (SceneGraph.underwaterTiles != null) {
+			SceneGraph.setUnderwater(true);
 			Static31.method3797(arg0, arg1, arg2, null, 0, (byte) 0, arg13, arg14);
 			if (GlRenderer.enabled) {
 				MaterialManager.renderingUnderwater = false;
@@ -89,7 +89,7 @@ public final class Static25 {
 				method2772(null);
 				LightingManager.method3112();
 			}
-			Terrain.setUnderwater(false);
+			SceneGraph.setUnderwater(false);
 		}
 		Static31.method3797(arg0, arg1, arg2, arg5, arg11, arg12, arg13, arg14);
 	}

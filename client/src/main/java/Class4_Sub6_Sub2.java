@@ -261,7 +261,7 @@ public final class Class4_Sub6_Sub2 extends Class4_Sub6 {
 		if (local112 == null) {
 			return;
 		}
-		@Pc(121) PcmSound local121 = local112.aClass4_Sub8_Sub1Array1[arg2];
+		@Pc(121) PcmSound local121 = local112.sounds[arg2];
 		if (local121 == null) {
 			return;
 		}
@@ -340,7 +340,7 @@ public final class Class4_Sub6_Sub2 extends Class4_Sub6 {
 					if (local12.aClass4_Sub6_Sub4_1.method3372()) {
 						this.aClass4_Sub6_Sub1_1.aClass4_Sub6_Sub3_1.method2674(local12.aClass4_Sub6_Sub4_1);
 					}
-					local12.method1057();
+					local12.release();
 				}
 				if (local12.anInt1288 < 0) {
 					this.aClass4_Sub9ArrayArray2[local12.anInt1301][local12.anInt1296] = null;
@@ -735,7 +735,7 @@ public final class Class4_Sub6_Sub2 extends Class4_Sub6 {
 	public final boolean method2506(@OriginalArg(0) Class4_Sub9 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(4) int[] arg3) {
 		arg0.anInt1303 = Static7.sampleRate / 100;
 		if (arg0.anInt1288 >= 0 && (arg0.aClass4_Sub6_Sub4_1 == null || arg0.aClass4_Sub6_Sub4_1.method3365())) {
-			arg0.method1057();
+			arg0.release();
 			arg0.unlink();
 			if (arg0.anInt1283 > 0 && this.aClass4_Sub9ArrayArray1[arg0.anInt1301][arg0.anInt1283] == arg0) {
 				this.aClass4_Sub9ArrayArray1[arg0.anInt1301][arg0.anInt1283] = null;
@@ -805,7 +805,7 @@ public final class Class4_Sub6_Sub2 extends Class4_Sub6 {
 		if (arg0.aClass4_Sub6_Sub4_1.method3372()) {
 			this.aClass4_Sub6_Sub1_1.aClass4_Sub6_Sub3_1.method2674(arg0.aClass4_Sub6_Sub4_1);
 		}
-		arg0.method1057();
+		arg0.release();
 		if (arg0.anInt1288 >= 0) {
 			arg0.unlink();
 			if (arg0.anInt1283 > 0 && this.aClass4_Sub9ArrayArray1[arg0.anInt1301][arg0.anInt1283] == arg0) {
@@ -817,8 +817,8 @@ public final class Class4_Sub6_Sub2 extends Class4_Sub6 {
 
 	@OriginalMember(owner = "client!ld", name = "g", descriptor = "(B)V")
 	public final synchronized void method2509() {
-		for (@Pc(19) MidiInstrument local19 = (MidiInstrument) this.instruments.head(); local19 != null; local19 = (MidiInstrument) this.instruments.next()) {
-			local19.method3570();
+		for (@Pc(19) MidiInstrument instrument = (MidiInstrument) this.instruments.head(); instrument != null; instrument = (MidiInstrument) this.instruments.next()) {
+			instrument.release();
 		}
 	}
 
@@ -830,7 +830,7 @@ public final class Class4_Sub6_Sub2 extends Class4_Sub6 {
 	}
 
 	@OriginalMember(owner = "client!ld", name = "a", descriptor = "(IILclient!tg;Lclient!fh;Lclient!jk;)Z")
-	public final synchronized boolean method2511(@OriginalArg(2) Song song, @OriginalArg(3) Js5 archive, @OriginalArg(4) SoundBank arg2) {
+	public final synchronized boolean method2511(@OriginalArg(2) Song song, @OriginalArg(3) Js5 archive, @OriginalArg(4) SoundBank bank) {
 		song.createPrograms();
 		@Pc(9) boolean valid = true;
 		@Pc(24) int[] samplingRates = new int[] { 22050 };
@@ -845,7 +845,7 @@ public final class Class4_Sub6_Sub2 extends Class4_Sub6 {
 				}
 				this.instruments.put(program, instrument);
 			}
-			if (!instrument.method3566(samplingRates, arg2, node.value)) {
+			if (!instrument.method3566(samplingRates, bank, node.value)) {
 				valid = false;
 			}
 		}

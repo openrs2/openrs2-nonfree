@@ -118,7 +118,7 @@ public final class Class105 {
 				local43 = this.anInt2862 - arg0.anInt2862;
 			}
 		}
-		Static9.method213(-1.0F, 1.0F, -1.0F, 1.0F, this.anInt2861, this.anInt2861);
+		GlFrameBufferAllocator.switchToOrthoCamera(-1.0F, 1.0F, -1.0F, 1.0F, this.anInt2861, this.anInt2861);
 		if (this.anInt2865 != 0) {
 			@Pc(96) int local96 = MathUtils.SINE[this.anInt2865];
 			@Pc(101) int local101 = MathUtils.COSINE[this.anInt2865];
@@ -191,7 +191,7 @@ public final class Class105 {
 			local3.glBlendFunc(GL.GL_SRC_ALPHA, GL.GL_ONE_MINUS_SRC_ALPHA);
 			local3.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_SRC0_RGB, GL.GL_TEXTURE);
 		}
-		Static9.method209();
+		GlFrameBufferAllocator.restoreCamera();
 		GlRenderer.setTextureId(this.anInt2864);
 		local3.glCopyTexImage2D(GL.GL_TEXTURE_2D, GL.GL_POINTS, GL.GL_RGBA, 0, 0, this.anInt2861, this.anInt2861, GL.GL_POINTS);
 		GlRaster.setClip(Static4.anIntArray256);
@@ -227,7 +227,7 @@ public final class Class105 {
 		@Pc(86) int local86 = (local78.getMaxX() - local78.getMinX()) / 2;
 		@Pc(94) int local94 = (local78.getMaxY() - local78.getMinY()) / 2;
 		@Pc(101) int local101 = local86 > local94 ? local86 : local94;
-		Static9.method212((float) -local101, (float) local101, (float) -local101, (float) local101, 2048.0F, -2048.0F, this.anInt2861, this.anInt2861);
+		GlFrameBufferAllocator.switchToOrthoCamera((float) -local101, (float) local101, (float) -local101, (float) local101, 2048.0F, -2048.0F, this.anInt2861, this.anInt2861);
 		if (this.anInt2865 != 0) {
 			@Pc(126) int local126 = MathUtils.SINE[this.anInt2865];
 			@Pc(131) int local131 = MathUtils.COSINE[this.anInt2865];
@@ -253,7 +253,7 @@ public final class Class105 {
 		GlRenderer.setLightingEnabled(false);
 		GlRenderer.setDepthTestEnabled(false);
 		GlRenderer.disableDepthMask();
-		Static9.method209();
+		GlFrameBufferAllocator.restoreCamera();
 		GlRenderer.setTextureId(this.anInt2864);
 		local11.glCopyTexImage2D(GL.GL_TEXTURE_2D, GL.GL_POINTS, GL.GL_RGBA, 0, 0, this.anInt2861, this.anInt2861, GL.GL_POINTS);
 		GlRaster.setClip(Static4.anIntArray256);
@@ -347,10 +347,10 @@ public final class Class105 {
 		}
 		if (local14) {
 			this.contextId = GlCleaner.contextId;
-			this.anInt2864 = Static33.method4171(Static6.anInt5136, this.anInt2861, this.anInt2861);
+			this.anInt2864 = GlTextureAllocator.allocateTextureAndStorage2d(GlTextureAllocator.GL_RGBA, this.anInt2861, this.anInt2861);
 		} else {
 			GlRenderer.setTextureId(this.anInt2864);
-			Static33.method4170(Static6.anInt5136, this.anInt2861, this.anInt2861);
+			GlTextureAllocator.allocateTextureStorage2d(GlTextureAllocator.GL_RGBA, this.anInt2861, this.anInt2861);
 		}
 		if (this.anInt2869 == 1) {
 			this.method2289(arg0);

@@ -74,7 +74,7 @@ public final class Static37 {
 		if (Static5.aClass187ArrayArray1 == null) {
 			return;
 		}
-		@Pc(8) Class187 local8 = new Class187();
+		@Pc(8) Environment local8 = new Environment();
 		for (@Pc(10) int local10 = 0; local10 < 13; local10++) {
 			for (@Pc(15) int local15 = 0; local15 < 13; local15++) {
 				Static5.aClass187ArrayArray1[local10][local15] = local8;
@@ -138,27 +138,27 @@ public final class Static37 {
 				@Pc(112) int local112 = local16.x + (width >> 1);
 				@Pc(120) int local120 = local16.z + (length >> 1);
 				@Pc(130) int local130 = local16.z + (length + 1 >> 1);
-				@Pc(134) int[][] local134 = Terrain.tileHeights[Static7.y];
+				@Pc(134) int[][] local134 = SceneGraph.tileHeights[Static7.y];
 				@Pc(161) int local161 = local134[local105][local120] + local134[local112][local120] + local134[local112][local130] + local134[local105][local130] >> 2;
 				@Pc(163) Entity local163 = null;
 				@Pc(168) int layer = Loc.LAYERS[local16.shape];
 				if (layer == 0) {
-					@Pc(234) Wall wall = Terrain.getWall(Static7.y, local16.x, local16.z);
+					@Pc(234) Wall wall = SceneGraph.getWall(Static7.y, local16.x, local16.z);
 					if (wall != null) {
 						local163 = wall.aClass53_5;
 					}
 				} else if (layer == 1) {
-					@Pc(219) WallDecor wallDecor = Terrain.getWallDecor(Static7.y, local16.x, local16.z);
+					@Pc(219) WallDecor wallDecor = SceneGraph.getWallDecor(Static7.y, local16.x, local16.z);
 					if (wallDecor != null) {
 						local163 = wallDecor.aClass53_10;
 					}
 				} else if (layer == 2) {
-					@Pc(205) Scenery scenery = Terrain.getScenery(Static7.y, local16.x, local16.z);
+					@Pc(205) Scenery scenery = SceneGraph.getScenery(Static7.y, local16.x, local16.z);
 					if (scenery != null) {
 						local163 = scenery.aClass53_1;
 					}
 				} else if (layer == 3) {
-					@Pc(192) GroundDecor groundDecor = Terrain.getGroundDecor(Static7.y, local16.x, local16.z);
+					@Pc(192) GroundDecor groundDecor = SceneGraph.getGroundDecor(Static7.y, local16.x, local16.z);
 					if (groundDecor != null) {
 						local163 = groundDecor.aClass53_2;
 					}
@@ -279,12 +279,12 @@ public final class Static37 {
 		if (Static1.anInt772 != 1) {
 			@Pc(94) int local94 = Static11.method522(Static7.anInt5678, Static3.anInt2519, Static7.y);
 			if (local94 - Static2.anInt1931 < 800 && (Static4.tileFlags[Static7.y][Static3.anInt2519 >> 7][Static7.anInt5678 >> 7] & 0x4) != 0) {
-				Static9.method279(1, Static3.anInt2519 >> 7, false, Static7.anInt5678 >> 7, Terrain.tiles);
+				Static9.method279(1, Static3.anInt2519 >> 7, false, Static7.anInt5678 >> 7, SceneGraph.tiles);
 			}
 			return;
 		}
 		if ((Static4.tileFlags[Static7.y][PlayerList.self.x >> 7][PlayerList.self.z >> 7] & 0x4) != 0) {
-			Static9.method279(0, PlayerList.self.x >> 7, false, PlayerList.self.z >> 7, Terrain.tiles);
+			Static9.method279(0, PlayerList.self.x >> 7, false, PlayerList.self.z >> 7, SceneGraph.tiles);
 		}
 		if (Static5.anInt4066 >= 310) {
 			return;
@@ -319,7 +319,7 @@ public final class Static37 {
 					local179--;
 				}
 				if ((Static4.tileFlags[Static7.y][local179][local175] & 0x4) != 0) {
-					Static9.method279(1, local179, false, local175, Terrain.tiles);
+					Static9.method279(1, local179, false, local175, SceneGraph.tiles);
 					break;
 				}
 				local399 += local397;
@@ -331,7 +331,7 @@ public final class Static37 {
 					}
 					local399 -= 65536;
 					if ((Static4.tileFlags[Static7.y][local179][local175] & 0x4) != 0) {
-						Static9.method279(1, local179, false, local175, Terrain.tiles);
+						Static9.method279(1, local179, false, local175, SceneGraph.tiles);
 						break;
 					}
 				}
@@ -347,7 +347,7 @@ public final class Static37 {
 				local175--;
 			}
 			if ((Static4.tileFlags[Static7.y][local179][local175] & 0x4) != 0) {
-				Static9.method279(1, local179, false, local175, Terrain.tiles);
+				Static9.method279(1, local179, false, local175, SceneGraph.tiles);
 				break;
 			}
 			local293 += local299;
@@ -359,7 +359,7 @@ public final class Static37 {
 					local179--;
 				}
 				if ((Static4.tileFlags[Static7.y][local179][local175] & 0x4) != 0) {
-					Static9.method279(1, local179, false, local175, Terrain.tiles);
+					Static9.method279(1, local179, false, local175, SceneGraph.tiles);
 					break;
 				}
 			}
@@ -375,10 +375,10 @@ public final class Static37 {
 
 	@OriginalMember(owner = "client!wf", name = "a", descriptor = "()V")
 	public static void method4737() {
-		Terrain.anInt4112 = 0;
+		SceneGraph.anInt4112 = 0;
 		label194:
-		for (@Pc(3) int local3 = 0; local3 < Terrain.anInt1742; local3++) {
-			@Pc(10) Class184 local10 = Terrain.aClass184Array13[local3];
+		for (@Pc(3) int local3 = 0; local3 < SceneGraph.anInt1742; local3++) {
+			@Pc(10) Class184 local10 = SceneGraph.aClass184Array13[local3];
 			if (Static3.anIntArray170 != null) {
 				for (@Pc(14) int local14 = 0; local14 < Static3.anIntArray170.length; local14++) {
 					if (Static3.anIntArray170[local14] != -1000000 && (local10.anInt5872 <= Static3.anIntArray170[local14] || local10.anInt5881 <= Static3.anIntArray170[local14]) && (local10.anInt5862 <= Static5.anIntArray399[local14] || local10.anInt5877 <= Static5.anIntArray399[local14]) && (local10.anInt5862 >= Static1.anIntArray63[local14] || local10.anInt5877 >= Static1.anIntArray63[local14]) && (local10.anInt5860 <= Static4.anIntArray309[local14] || local10.anInt5879 <= Static4.anIntArray309[local14]) && (local10.anInt5860 >= Static3.anIntArray226[local14] || local10.anInt5879 >= Static3.anIntArray226[local14])) {
@@ -387,19 +387,19 @@ public final class Static37 {
 				}
 			}
 			if (local10.anInt5866 == 1) {
-				@Pc(100) int local100 = local10.anInt5867 + Terrain.anInt3253 - Static6.anInt4513;
-				if (local100 >= 0 && local100 <= Terrain.anInt3253 + Terrain.anInt3253) {
-					@Pc(115) int local115 = local10.anInt5876 + Terrain.anInt3253 - Static4.anInt3329;
+				@Pc(100) int local100 = local10.anInt5867 + SceneGraph.anInt3253 - Static6.anInt4513;
+				if (local100 >= 0 && local100 <= SceneGraph.anInt3253 + SceneGraph.anInt3253) {
+					@Pc(115) int local115 = local10.anInt5876 + SceneGraph.anInt3253 - Static4.anInt3329;
 					if (local115 < 0) {
 						local115 = 0;
 					}
-					@Pc(126) int local126 = local10.anInt5870 + Terrain.anInt3253 - Static4.anInt3329;
-					if (local126 > Terrain.anInt3253 + Terrain.anInt3253) {
-						local126 = Terrain.anInt3253 + Terrain.anInt3253;
+					@Pc(126) int local126 = local10.anInt5870 + SceneGraph.anInt3253 - Static4.anInt3329;
+					if (local126 > SceneGraph.anInt3253 + SceneGraph.anInt3253) {
+						local126 = SceneGraph.anInt3253 + SceneGraph.anInt3253;
 					}
 					@Pc(137) boolean local137 = false;
 					while (local115 <= local126) {
-						if (Terrain.aBooleanArrayArray5[local100][local115++]) {
+						if (SceneGraph.aBooleanArrayArray5[local100][local115++]) {
 							local137 = true;
 							break;
 						}
@@ -419,23 +419,23 @@ public final class Static37 {
 						local10.anInt5874 = (local10.anInt5879 - Static6.anInt4400 << 8) / local158;
 						local10.anInt5869 = (local10.anInt5872 - Static6.anInt4375 << 8) / local158;
 						local10.anInt5868 = (local10.anInt5881 - Static6.anInt4375 << 8) / local158;
-						Terrain.aClass184Array12[Terrain.anInt4112++] = local10;
+						SceneGraph.aClass184Array12[SceneGraph.anInt4112++] = local10;
 					}
 				}
 			} else if (local10.anInt5866 == 2) {
-				@Pc(234) int local234 = local10.anInt5876 + Terrain.anInt3253 - Static4.anInt3329;
-				if (local234 >= 0 && local234 <= Terrain.anInt3253 + Terrain.anInt3253) {
-					@Pc(249) int local249 = local10.anInt5867 + Terrain.anInt3253 - Static6.anInt4513;
+				@Pc(234) int local234 = local10.anInt5876 + SceneGraph.anInt3253 - Static4.anInt3329;
+				if (local234 >= 0 && local234 <= SceneGraph.anInt3253 + SceneGraph.anInt3253) {
+					@Pc(249) int local249 = local10.anInt5867 + SceneGraph.anInt3253 - Static6.anInt4513;
 					if (local249 < 0) {
 						local249 = 0;
 					}
-					@Pc(260) int local260 = local10.anInt5858 + Terrain.anInt3253 - Static6.anInt4513;
-					if (local260 > Terrain.anInt3253 + Terrain.anInt3253) {
-						local260 = Terrain.anInt3253 + Terrain.anInt3253;
+					@Pc(260) int local260 = local10.anInt5858 + SceneGraph.anInt3253 - Static6.anInt4513;
+					if (local260 > SceneGraph.anInt3253 + SceneGraph.anInt3253) {
+						local260 = SceneGraph.anInt3253 + SceneGraph.anInt3253;
 					}
 					@Pc(271) boolean local271 = false;
 					while (local249 <= local260) {
-						if (Terrain.aBooleanArrayArray5[local249++][local234]) {
+						if (SceneGraph.aBooleanArrayArray5[local249++][local234]) {
 							local271 = true;
 							break;
 						}
@@ -455,34 +455,34 @@ public final class Static37 {
 						local10.anInt5878 = (local10.anInt5877 - Static7.anInt5281 << 8) / local292;
 						local10.anInt5869 = (local10.anInt5872 - Static6.anInt4375 << 8) / local292;
 						local10.anInt5868 = (local10.anInt5881 - Static6.anInt4375 << 8) / local292;
-						Terrain.aClass184Array12[Terrain.anInt4112++] = local10;
+						SceneGraph.aClass184Array12[SceneGraph.anInt4112++] = local10;
 					}
 				}
 			} else if (local10.anInt5866 == 4) {
 				@Pc(366) int local366 = local10.anInt5872 - Static6.anInt4375;
 				if (local366 > 128) {
-					@Pc(377) int local377 = local10.anInt5876 + Terrain.anInt3253 - Static4.anInt3329;
+					@Pc(377) int local377 = local10.anInt5876 + SceneGraph.anInt3253 - Static4.anInt3329;
 					if (local377 < 0) {
 						local377 = 0;
 					}
-					@Pc(388) int local388 = local10.anInt5870 + Terrain.anInt3253 - Static4.anInt3329;
-					if (local388 > Terrain.anInt3253 + Terrain.anInt3253) {
-						local388 = Terrain.anInt3253 + Terrain.anInt3253;
+					@Pc(388) int local388 = local10.anInt5870 + SceneGraph.anInt3253 - Static4.anInt3329;
+					if (local388 > SceneGraph.anInt3253 + SceneGraph.anInt3253) {
+						local388 = SceneGraph.anInt3253 + SceneGraph.anInt3253;
 					}
 					if (local377 <= local388) {
-						@Pc(408) int local408 = local10.anInt5867 + Terrain.anInt3253 - Static6.anInt4513;
+						@Pc(408) int local408 = local10.anInt5867 + SceneGraph.anInt3253 - Static6.anInt4513;
 						if (local408 < 0) {
 							local408 = 0;
 						}
-						@Pc(419) int local419 = local10.anInt5858 + Terrain.anInt3253 - Static6.anInt4513;
-						if (local419 > Terrain.anInt3253 + Terrain.anInt3253) {
-							local419 = Terrain.anInt3253 + Terrain.anInt3253;
+						@Pc(419) int local419 = local10.anInt5858 + SceneGraph.anInt3253 - Static6.anInt4513;
+						if (local419 > SceneGraph.anInt3253 + SceneGraph.anInt3253) {
+							local419 = SceneGraph.anInt3253 + SceneGraph.anInt3253;
 						}
 						@Pc(430) boolean local430 = false;
 						label166:
 						for (@Pc(432) int local432 = local408; local432 <= local419; local432++) {
 							for (@Pc(437) int local437 = local377; local437 <= local388; local437++) {
-								if (Terrain.aBooleanArrayArray5[local432][local437]) {
+								if (SceneGraph.aBooleanArrayArray5[local432][local437]) {
 									local430 = true;
 									break label166;
 								}
@@ -494,7 +494,7 @@ public final class Static37 {
 							local10.anInt5878 = (local10.anInt5877 - Static7.anInt5281 << 8) / local366;
 							local10.anInt5864 = (local10.anInt5860 - Static6.anInt4400 << 8) / local366;
 							local10.anInt5874 = (local10.anInt5879 - Static6.anInt4400 << 8) / local366;
-							Terrain.aClass184Array12[Terrain.anInt4112++] = local10;
+							SceneGraph.aClass184Array12[SceneGraph.anInt4112++] = local10;
 						}
 					}
 				}
@@ -658,7 +658,7 @@ public final class Static37 {
 
 	@OriginalMember(owner = "client!wi", name = "a", descriptor = "(IIIIIZII)Z")
 	public static boolean method4780(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(4) int arg2, @OriginalArg(6) int arg3, @OriginalArg(7) int arg4) {
-		@Pc(21) long local21 = Terrain.getWallPickKey(arg1, arg4, arg3);
+		@Pc(21) long local21 = SceneGraph.getWallPickKey(arg1, arg4, arg3);
 		if (local21 != 0L) {
 			@Pc(32) int local32 = (int) local21 >> 20 & 0x3;
 			@Pc(39) int local39 = (int) local21 >> 14 & 0x1F;
@@ -732,7 +732,7 @@ public final class Static37 {
 				return false;
 			}
 		}
-		@Pc(418) long local418 = Terrain.getSceneryPickKey(arg1, arg4, arg3);
+		@Pc(418) long local418 = SceneGraph.getSceneryPickKey(arg1, arg4, arg3);
 		if (local418 != 0L) {
 			@Pc(430) int local430 = (int) local418 >> 20 & 0x3;
 			@Pc(437) int local437 = Integer.MAX_VALUE & (int) (local418 >>> 32);
@@ -762,7 +762,7 @@ public final class Static37 {
 				return false;
 			}
 		}
-		@Pc(573) long local573 = Terrain.getGroundDecorPickKey(arg1, arg4, arg3);
+		@Pc(573) long local573 = SceneGraph.getGroundDecorPickKey(arg1, arg4, arg3);
 		if (local573 != 0L) {
 			@Pc(585) int local585 = (int) (local573 >>> 32) & Integer.MAX_VALUE;
 			@Pc(592) int local592 = (int) local573 >> 20 & 0x3;

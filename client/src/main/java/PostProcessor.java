@@ -3,51 +3,51 @@ import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
 
 @OriginalClass("client!bc")
-public abstract class Class4_Sub4 extends Node {
+public abstract class PostProcessor extends Node {
 
 	@OriginalMember(owner = "client!bc", name = "t", descriptor = "Z")
-	public boolean aBoolean54;
+	public boolean enabled;
 
 	@OriginalMember(owner = "client!bc", name = "d", descriptor = "(B)I")
-	public final int method753() {
+	public final int getColorAttachments() {
 		return 1;
 	}
 
 	@OriginalMember(owner = "client!bc", name = "a", descriptor = "()I")
-	public int method754() {
+	public int getColorDepth() {
 		return 0;
 	}
 
 	@OriginalMember(owner = "client!bc", name = "b", descriptor = "(I)Z")
-	public final boolean method755() {
-		return this.aBoolean54;
+	public final boolean isEnabled() {
+		return this.enabled;
 	}
 
 	@OriginalMember(owner = "client!bc", name = "c", descriptor = "(I)V")
-	public abstract void method756(@OriginalArg(0) int arg0);
+	public abstract void postProcess(@OriginalArg(0) int colorAttachment);
 
 	@OriginalMember(owner = "client!bc", name = "b", descriptor = "()V")
-	public abstract void method760();
+	public abstract void quit();
 
 	@OriginalMember(owner = "client!bc", name = "b", descriptor = "(IIIII)V")
-	public abstract void method761(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4);
+	public abstract void preProcess(@OriginalArg(0) int colorAttachment, @OriginalArg(1) int width, @OriginalArg(2) int height, @OriginalArg(3) int colorBuffer, @OriginalArg(4) int depthBuffer);
 
 	@OriginalMember(owner = "client!bc", name = "c", descriptor = "()Z")
-	public abstract boolean method762();
+	public abstract boolean init();
 
 	@OriginalMember(owner = "client!bc", name = "e", descriptor = "(I)Z")
-	public final boolean method764() {
+	public final boolean hasAlpha() {
 		return false;
 	}
 
 	@OriginalMember(owner = "client!bc", name = "a", descriptor = "(II)V")
-	public abstract void method765(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1);
+	public abstract void setSize(@OriginalArg(0) int width, @OriginalArg(1) int height);
 
 	@OriginalMember(owner = "client!bc", name = "d", descriptor = "()Z")
-	public abstract boolean method766();
+	public abstract boolean isInitialised();
 
 	@OriginalMember(owner = "client!bc", name = "e", descriptor = "(B)Z")
-	public final boolean method767() {
+	public final boolean hasDepthTexture() {
 		return false;
 	}
 }

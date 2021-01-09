@@ -330,17 +330,17 @@ public final class Static15 {
 			local74 = arg6;
 		}
 		@Pc(98) int local98 = (local23 << 6) + (arg6 << 7);
-		@Pc(102) int[][] local102 = Terrain.tileHeights[arg3];
+		@Pc(102) int[][] local102 = SceneGraph.tileHeights[arg3];
 		@Pc(111) int local111 = (arg0 << 7) + (local20 << 6);
 		@Pc(138) int local138 = local102[local44][local82] + local102[local52][local74] + local102[local44][local74] + local102[local52][local82] >> 2;
 		@Pc(140) int local140 = 0;
 		if (arg3 != 0) {
-			@Pc(152) int[][] local152 = Terrain.tileHeights[0];
+			@Pc(152) int[][] local152 = SceneGraph.tileHeights[0];
 			local140 = local138 - (local152[local44][local82] + local152[local44][local74] + local152[local52][local74] + local152[local52][local82] >> 2);
 		}
 		@Pc(186) int[][] local186 = null;
 		if (arg3 < 3) {
-			local186 = Terrain.tileHeights[arg3 + 1];
+			local186 = SceneGraph.tileHeights[arg3 + 1];
 		}
 		@Pc(212) Class96 local212 = arg4.method4450(local111, false, arg7, local138, local102, local186, true, arg2, local98, null);
 		Static14.method1210(local212.aClass56_Sub1_3, local111 - arg1, local140, local98 - arg5);

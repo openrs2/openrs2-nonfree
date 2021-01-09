@@ -33,14 +33,14 @@ public final class Static21 {
 		if (arg1 != arg2 || arg3 != arg4) {
 			for (@Pc(110) int local110 = arg1; local110 <= arg2; local110++) {
 				for (@Pc(115) int local115 = arg3; local115 <= arg4; local115++) {
-					if (Terrain.anIntArrayArrayArray3[arg0][local110][local115] == -Static2.anInt1871) {
+					if (SceneGraph.anIntArrayArrayArray3[arg0][local110][local115] == -Static2.anInt1871) {
 						return false;
 					}
 				}
 			}
 			@Pc(140) int local140 = (arg1 << 7) + 1;
 			@Pc(146) int local146 = (arg3 << 7) + 2;
-			@Pc(156) int local156 = Terrain.tileHeights[arg0][arg1][arg3] + arg5;
+			@Pc(156) int local156 = SceneGraph.tileHeights[arg0][arg1][arg3] + arg5;
 			if (!Static33.method4119(local140, local156, local146)) {
 				return false;
 			}
@@ -59,7 +59,7 @@ public final class Static21 {
 		} else if (Static11.method508(arg0, arg1, arg3)) {
 			@Pc(16) int local16 = arg1 << 7;
 			@Pc(20) int local20 = arg3 << 7;
-			return Static33.method4119(local16 + 1, Terrain.tileHeights[arg0][arg1][arg3] + arg5, local20 + 1) && Static33.method4119(local16 + 128 - 1, Terrain.tileHeights[arg0][arg1 + 1][arg3] + arg5, local20 + 1) && Static33.method4119(local16 + 128 - 1, Terrain.tileHeights[arg0][arg1 + 1][arg3 + 1] + arg5, local20 + 128 - 1) && Static33.method4119(local16 + 1, Terrain.tileHeights[arg0][arg1][arg3 + 1] + arg5, local20 + 128 - 1);
+			return Static33.method4119(local16 + 1, SceneGraph.tileHeights[arg0][arg1][arg3] + arg5, local20 + 1) && Static33.method4119(local16 + 128 - 1, SceneGraph.tileHeights[arg0][arg1 + 1][arg3] + arg5, local20 + 1) && Static33.method4119(local16 + 128 - 1, SceneGraph.tileHeights[arg0][arg1 + 1][arg3 + 1] + arg5, local20 + 128 - 1) && Static33.method4119(local16 + 1, SceneGraph.tileHeights[arg0][arg1][arg3 + 1] + arg5, local20 + 128 - 1);
 		} else {
 			return false;
 		}
@@ -192,20 +192,20 @@ public final class Static21 {
 		local3.anInt5879 = arg4;
 		local3.anInt5872 = arg5;
 		local3.anInt5881 = arg6;
-		Terrain.aClass184Array13[Terrain.anInt1742++] = local3;
+		SceneGraph.aClass184Array13[SceneGraph.anInt1742++] = local3;
 	}
 
 	@OriginalMember(owner = "client!jh", name = "a", descriptor = "(BIIILclient!ch;II)V")
 	public static void method2018(@OriginalArg(1) int y, @OriginalArg(2) int arg1, @OriginalArg(3) int z, @OriginalArg(4) CollisionMap arg3, @OriginalArg(5) int arg4, @OriginalArg(6) int x) {
 		@Pc(9) long local9 = 0L;
 		if (arg4 == 0) {
-			local9 = Terrain.getWallPickKey(y, x, z);
+			local9 = SceneGraph.getWallPickKey(y, x, z);
 		} else if (arg4 == 1) {
-			local9 = Terrain.getWallDecorPickKey(y, x, z);
+			local9 = SceneGraph.getWallDecorPickKey(y, x, z);
 		} else if (arg4 == 2) {
-			local9 = Terrain.getSceneryPickKey(y, x, z);
+			local9 = SceneGraph.getSceneryPickKey(y, x, z);
 		} else if (arg4 == 3) {
-			local9 = Terrain.getGroundDecorPickKey(y, x, z);
+			local9 = SceneGraph.getGroundDecorPickKey(y, x, z);
 		}
 		@Pc(67) int shape = (int) local9 >> 14 & 0x1F;
 		@Pc(74) int id = Integer.MAX_VALUE & (int) (local9 >>> 32);
@@ -220,7 +220,7 @@ public final class Static21 {
 		@Pc(105) Entity local105 = null;
 		@Pc(107) Entity local107 = null;
 		if (arg4 == 0) {
-			@Pc(117) Wall wall = Terrain.removeWall(y, x, z);
+			@Pc(117) Wall wall = SceneGraph.removeWall(y, x, z);
 			if (wall != null) {
 				local107 = wall.aClass53_4;
 				local105 = wall.aClass53_5;
@@ -229,13 +229,13 @@ public final class Static21 {
 				arg3.unflagWall(angle, !type.aBoolean385, x, shape, type.aBoolean374, z);
 			}
 		} else if (arg4 == 1) {
-			@Pc(155) WallDecor wallDecor = Terrain.removeWallDecor(y, x, z);
+			@Pc(155) WallDecor wallDecor = SceneGraph.removeWallDecor(y, x, z);
 			if (wallDecor != null) {
 				local105 = wallDecor.aClass53_10;
 				local107 = wallDecor.aClass53_9;
 			}
 		} else if (arg4 == 2) {
-			@Pc(173) Scenery scenery = Terrain.method2593(y, x, z);
+			@Pc(173) Scenery scenery = SceneGraph.method2593(y, x, z);
 			if (scenery != null) {
 				local105 = scenery.aClass53_1;
 			}
@@ -243,7 +243,7 @@ public final class Static21 {
 				arg3.method568(angle, z, type.length, type.aBoolean374, x, type.width, !type.aBoolean385);
 			}
 		} else if (arg4 == 3) {
-			@Pc(238) GroundDecor groundDecor = Terrain.removeGroundDecor(y, x, z);
+			@Pc(238) GroundDecor groundDecor = SceneGraph.removeGroundDecor(y, x, z);
 			if (groundDecor != null) {
 				local105 = groundDecor.aClass53_2;
 			}

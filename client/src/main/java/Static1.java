@@ -226,18 +226,6 @@ public final class Static1 {
 	@OriginalMember(owner = "client!am", name = "o", descriptor = "Lclient!ll;")
 	public static final LinkedList aClass112_2 = new LinkedList();
 
-	@OriginalMember(owner = "client!b", name = "a", descriptor = "[I")
-	public static final int[] anIntArray22 = new int[1];
-
-	@OriginalMember(owner = "client!b", name = "b", descriptor = "[I")
-	public static final int[] anIntArray23 = new int[4];
-
-	@OriginalMember(owner = "client!b", name = "c", descriptor = "[I")
-	public static final int[] anIntArray24 = new int[4];
-
-	@OriginalMember(owner = "client!b", name = "d", descriptor = "I")
-	public static int anInt227 = 0;
-
 	@OriginalMember(owner = "client!bb", name = "C", descriptor = "I")
 	public static int anInt242 = 0;
 

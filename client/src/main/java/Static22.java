@@ -48,35 +48,6 @@ public final class Static22 {
 		}
 	}
 
-	@OriginalMember(owner = "client!jo", name = "a", descriptor = "(IIIIIIIIIIIIIIIIIIII)V")
-	public static void method4698(@OriginalArg(0) int y, @OriginalArg(1) int x, @OriginalArg(2) int z, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) int arg8, @OriginalArg(9) int arg9, @OriginalArg(10) int arg10, @OriginalArg(11) int arg11, @OriginalArg(12) int arg12, @OriginalArg(13) int arg13, @OriginalArg(14) int arg14, @OriginalArg(15) int arg15, @OriginalArg(16) int arg16, @OriginalArg(17) int arg17, @OriginalArg(18) int arg18, @OriginalArg(19) int arg19) {
-		if (arg3 == 0) {
-			@Pc(12) Class142 local12 = new Class142(arg10, arg11, arg12, arg13, -1, arg18, false);
-			for (@Pc(14) int y0 = y; y0 >= 0; y0--) {
-				if (Terrain.tiles[y0][x][z] == null) {
-					Terrain.tiles[y0][x][z] = new Tile(y0, x, z);
-				}
-			}
-			Terrain.tiles[y][x][z].aClass142_1 = local12;
-		} else if (arg3 == 1) {
-			@Pc(74) Class142 local74 = new Class142(arg14, arg15, arg16, arg17, arg5, arg19, arg6 == arg7 && arg6 == arg8 && arg6 == arg9);
-			for (@Pc(76) int y0 = y; y0 >= 0; y0--) {
-				if (Terrain.tiles[y0][x][z] == null) {
-					Terrain.tiles[y0][x][z] = new Tile(y0, x, z);
-				}
-			}
-			Terrain.tiles[y][x][z].aClass142_1 = local74;
-		} else {
-			@Pc(134) Class166 local134 = new Class166(arg3, arg4, arg5, x, z, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16, arg17, arg18, arg19);
-			for (@Pc(136) int y0 = y; y0 >= 0; y0--) {
-				if (Terrain.tiles[y0][x][z] == null) {
-					Terrain.tiles[y0][x][z] = new Tile(y0, x, z);
-				}
-			}
-			Terrain.tiles[y][x][z].aClass166_1 = local134;
-		}
-	}
-
 	@OriginalMember(owner = "client!jo", name = "b", descriptor = "(IIIIII)V")
 	public static void method4701(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4) {
 		@Pc(11) int local11 = Static8.method9(Static4.anInt3086, arg2, Static5.anInt4230);
@@ -149,7 +120,7 @@ public final class Static22 {
 
 	@OriginalMember(owner = "client!ka", name = "a", descriptor = "(IIIIIIZILclient!ch;ZI)V")
 	public static void method2193(@OriginalArg(0) int angle, @OriginalArg(1) int y, @OriginalArg(2) int id, @OriginalArg(3) int arg3, @OriginalArg(4) int x, @OriginalArg(6) boolean arg5, @OriginalArg(7) int z, @OriginalArg(8) CollisionMap arg7, @OriginalArg(9) boolean arg8, @OriginalArg(10) int shape) {
-		if (arg8 && !Terrain.isAllLevelsVisible() && (Static4.tileFlags[0][x][z] & 0x2) == 0) {
+		if (arg8 && !SceneGraph.isAllLevelsVisible() && (Static4.tileFlags[0][x][z] & 0x2) == 0) {
 			if ((Static4.tileFlags[y][x][z] & 0x10) != 0) {
 				return;
 			}
@@ -191,21 +162,21 @@ public final class Static22 {
 			local130 = (length >> 1) + z;
 			local128 = z + (length + 1 >> 1);
 		}
-		@Pc(151) int[][] local151 = Terrain.tileHeights[arg3];
+		@Pc(151) int[][] local151 = SceneGraph.tileHeights[arg3];
 		@Pc(159) int local159 = (width << 6) + (x << 7);
 		@Pc(167) int local167 = (length << 6) + (z << 7);
 		@Pc(193) int local193 = local151[local100][local130] + local151[local102][local130] + local151[local102][local128] + local151[local100][local128] >> 2;
 		@Pc(195) int local195 = 0;
 		if (GlRenderer.enabled && arg3 != 0) {
-			@Pc(203) int[][] local203 = Terrain.tileHeights[0];
+			@Pc(203) int[][] local203 = SceneGraph.tileHeights[0];
 			local195 = local193 - (local203[local102][local128] + local203[local102][local130] + local203[local100][local130] + local203[local100][local128] >> 2);
 		}
 		@Pc(250) long pickKey = (long) (x | z << 7 | shape << 14 | angle << 20 | 0x40000000);
 		@Pc(253) int[][] local253 = null;
 		if (arg5) {
-			local253 = Terrain.surfaceTileHeights[0];
+			local253 = SceneGraph.surfaceTileHeights[0];
 		} else if (arg3 < 3) {
-			local253 = Terrain.tileHeights[arg3 + 1];
+			local253 = SceneGraph.tileHeights[arg3 + 1];
 		}
 		if (type.anInt5522 == 0 || arg5) {
 			pickKey |= Long.MIN_VALUE;
@@ -233,7 +204,7 @@ public final class Static22 {
 				} else {
 					local377 = new Loc(id, 22, angle, arg3, x, z, -1, type.aBoolean380, null);
 				}
-				Terrain.setGroundDecor(y, x, z, local193, local377, pickKey2, type.aBoolean371);
+				SceneGraph.setGroundDecor(y, x, z, local193, local377, pickKey2, type.aBoolean371);
 				if (type.anInt5509 == 1 && arg7 != null) {
 					arg7.flagGroundDecor(x, z);
 				}
@@ -250,7 +221,7 @@ public final class Static22 {
 				local493 = new Loc(id, 10, shape == 11 ? angle + 4 : angle, arg3, x, z, -1, type.aBoolean380, null);
 			}
 			if (local493 != null) {
-				@Pc(532) boolean local532 = Terrain.method2196(y, x, z, local193, width, length, local493, pickKey2);
+				@Pc(532) boolean local532 = SceneGraph.method2196(y, x, z, local193, width, length, local493, pickKey2);
 				if (type.aBoolean377 && local532 && arg8) {
 					@Pc(542) int local542 = 15;
 					if (local493 instanceof Model) {
@@ -282,7 +253,7 @@ public final class Static22 {
 			} else {
 				local666 = new Loc(id, shape, angle, arg3, x, z, -1, type.aBoolean380, null);
 			}
-			Terrain.method2196(y, x, z, local193, 1, 1, local666, pickKey2);
+			SceneGraph.method2196(y, x, z, local193, 1, 1, local666, pickKey2);
 			if (arg8 && shape >= 12 && shape <= 17 && shape != 13 && y > 0 && type.anInt5544 != 0) {
 				Static4.anIntArrayArrayArray9[y][x][z] |= 4;
 			}
@@ -300,7 +271,7 @@ public final class Static22 {
 			} else {
 				local796 = new Loc(id, 0, angle, arg3, x, z, -1, type.aBoolean380, null);
 			}
-			Terrain.setWall(y, x, z, local193, local796, null, Static2.anIntArray651[angle], 0, pickKey2);
+			SceneGraph.setWall(y, x, z, local193, local796, null, Static2.anIntArray651[angle], 0, pickKey2);
 			if (arg8) {
 				if (angle == 0) {
 					if (type.aBoolean377) {
@@ -353,7 +324,7 @@ public final class Static22 {
 			} else {
 				local1119 = new Loc(id, 1, angle, arg3, x, z, -1, type.aBoolean380, null);
 			}
-			Terrain.setWall(y, x, z, local193, local1119, null, Static6.anIntArray519[angle], 0, pickKey2);
+			SceneGraph.setWall(y, x, z, local193, local1119, null, Static6.anIntArray519[angle], 0, pickKey2);
 			if (type.aBoolean377 && arg8) {
 				if (angle == 0) {
 					Static5.aByteArrayArrayArray18[y][x][z + 1] = 50;
@@ -387,7 +358,7 @@ public final class Static22 {
 				local1295 = new Loc(id, 2, angle + 4, arg3, x, z, -1, type.aBoolean380, null);
 				local1309 = new Loc(id, 2, local1265, arg3, x, z, -1, type.aBoolean380, null);
 			}
-			Terrain.setWall(y, x, z, local193, local1295, local1309, Static2.anIntArray651[angle], Static2.anIntArray651[local1265], pickKey2);
+			SceneGraph.setWall(y, x, z, local193, local1295, local1309, Static2.anIntArray651[angle], Static2.anIntArray651[local1265], pickKey2);
 			if (type.anInt5544 == 1 && arg8) {
 				if (angle == 0) {
 					Static4.anIntArrayArrayArray9[y][x][z] |= 1;
@@ -420,7 +391,7 @@ public final class Static22 {
 			} else {
 				local1631 = new Loc(id, 3, angle, arg3, x, z, -1, type.aBoolean380, null);
 			}
-			Terrain.setWall(y, x, z, local193, local1631, null, Static6.anIntArray519[angle], 0, pickKey2);
+			SceneGraph.setWall(y, x, z, local193, local1631, null, Static6.anIntArray519[angle], 0, pickKey2);
 			if (type.aBoolean377 && arg8) {
 				if (angle == 0) {
 					Static5.aByteArrayArrayArray18[y][x][z + 1] = 50;
@@ -446,7 +417,7 @@ public final class Static22 {
 			} else {
 				local1796 = new Loc(id, shape, angle, arg3, x, z, -1, type.aBoolean380, null);
 			}
-			Terrain.method2196(y, x, z, local193, 1, 1, local1796, pickKey2);
+			SceneGraph.method2196(y, x, z, local193, 1, 1, local1796, pickKey2);
 			if (type.anInt5509 != 0 && arg7 != null) {
 				arg7.method567(type.aBoolean374, !type.aBoolean385, length, width, z, x);
 			}
@@ -464,9 +435,9 @@ public final class Static22 {
 			} else {
 				local1914 = new Loc(id, 4, angle, arg3, x, z, -1, type.aBoolean380, null);
 			}
-			Terrain.setWallDecor(y, x, z, local193, local1914, null, Static2.anIntArray651[angle], 0, 0, 0, pickKey2);
+			SceneGraph.setWallDecor(y, x, z, local193, local1914, null, Static2.anIntArray651[angle], 0, 0, 0, pickKey2);
 		} else if (shape == 5) {
-			@Pc(1967) long local1967 = Terrain.getWallPickKey(y, x, z);
+			@Pc(1967) long local1967 = SceneGraph.getWallPickKey(y, x, z);
 			@Pc(1969) int local1969 = 16;
 			if (local1967 != 0L) {
 				local1969 = LocTypeList.get((int) (local1967 >>> 32) & Integer.MAX_VALUE).anInt5507;
@@ -481,9 +452,9 @@ public final class Static22 {
 			} else {
 				local2040 = new Loc(id, 4, angle, arg3, x, z, -1, type.aBoolean380, null);
 			}
-			Terrain.setWallDecor(y, x, z, local193, local2040, null, Static2.anIntArray651[angle], 0, Static4.anIntArray315[angle] * local1969, Static6.anIntArray475[angle] * local1969, pickKey2);
+			SceneGraph.setWallDecor(y, x, z, local193, local2040, null, Static2.anIntArray651[angle], 0, Static4.anIntArray315[angle] * local1969, Static6.anIntArray475[angle] * local1969, pickKey2);
 		} else if (shape == 6) {
-			@Pc(2089) long local2089 = Terrain.getWallPickKey(y, x, z);
+			@Pc(2089) long local2089 = SceneGraph.getWallPickKey(y, x, z);
 			@Pc(2091) int local2091 = 8;
 			if (local2089 != 0L) {
 				local2091 = LocTypeList.get(Integer.MAX_VALUE & (int) (local2089 >>> 32)).anInt5507 / 2;
@@ -498,7 +469,7 @@ public final class Static22 {
 			} else {
 				local2170 = new Loc(id, 4, angle + 4, arg3, x, z, -1, type.aBoolean380, null);
 			}
-			Terrain.setWallDecor(y, x, z, local193, local2170, null, 256, angle, Static3.anIntArray166[angle] * local2091, Static7.anIntArray646[angle] * local2091, pickKey2);
+			SceneGraph.setWallDecor(y, x, z, local193, local2170, null, 256, angle, Static3.anIntArray166[angle] * local2091, Static7.anIntArray646[angle] * local2091, pickKey2);
 		} else if (shape == 7) {
 			@Pc(2219) int local2219 = angle + 2 & 0x3;
 			@Pc(2248) Entity local2248;
@@ -511,10 +482,10 @@ public final class Static22 {
 			} else {
 				local2248 = new Loc(id, 4, local2219 + 4, arg3, x, z, -1, type.aBoolean380, null);
 			}
-			Terrain.setWallDecor(y, x, z, local193, local2248, null, 256, local2219, 0, 0, pickKey2);
+			SceneGraph.setWallDecor(y, x, z, local193, local2248, null, 256, local2219, 0, 0, pickKey2);
 		} else if (shape == 8) {
 			@Pc(2300) int local2300 = 8;
-			@Pc(2305) long local2305 = Terrain.getWallPickKey(y, x, z);
+			@Pc(2305) long local2305 = SceneGraph.getWallPickKey(y, x, z);
 			if (local2305 != 0L) {
 				local2300 = LocTypeList.get((int) (local2305 >>> 32) & Integer.MAX_VALUE).anInt5507 / 2;
 			}
@@ -538,7 +509,7 @@ public final class Static22 {
 				local2392 = new Loc(id, 4, angle + 4, arg3, x, z, -1, type.aBoolean380, null);
 				local2429 = new Loc(id, 4, local2328 + 4, arg3, x, z, -1, type.aBoolean380, null);
 			}
-			Terrain.setWallDecor(y, x, z, local193, local2392, local2429, 256, angle, local2300 * Static3.anIntArray166[angle], local2300 * Static7.anIntArray646[angle], pickKey2);
+			SceneGraph.setWallDecor(y, x, z, local193, local2392, local2429, 256, angle, local2300 * Static3.anIntArray166[angle], local2300 * Static7.anIntArray646[angle], pickKey2);
 		}
 	}
 
@@ -932,7 +903,7 @@ public final class Static22 {
 	public static void method2305() {
 		method2295();
 		if (Static4.anInt2868 == -1 || Static4.anInt2857 != GlCleaner.contextId) {
-			Static4.anInt2868 = Static33.method4173(Static6.anInt5142, Static4.aByteArray29);
+			Static4.anInt2868 = GlTextureAllocator.allocateTextureAndStorage2d(GlTextureAllocator.GL_ALPHA, Static4.aByteArray29);
 			Static4.anInt2857 = GlCleaner.contextId;
 		}
 	}
@@ -1070,12 +1041,12 @@ public final class Static22 {
 					if (local255.anObject5 == null || client.loop < local255.anInt4042 || local255.anInt4010 <= client.loop) {
 						local255.aBoolean282 = false;
 						local255.anInt4006 = Static11.method522(local255.z, local255.x, Static7.y);
-						Terrain.method637(Static7.y, local255.x, local255.z, local255.anInt4006, (local280 - 1) * 64 + 60, local255, local255.anInt4031, local253, local255.aBoolean284);
+						SceneGraph.method637(Static7.y, local255.x, local255.z, local255.anInt4006, (local280 - 1) * 64 + 60, local255, local255.anInt4031, local253, local255.aBoolean284);
 					} else {
 						local255.aBoolean98 = false;
 						local255.aBoolean282 = false;
 						local255.anInt4006 = Static11.method522(local255.z, local255.x, Static7.y);
-						Terrain.method584(Static7.y, local255.x, local255.z, local255.anInt4006, local255, local255.anInt4031, local253, local255.anInt4043, local255.anInt4018, local255.anInt4041, local255.anInt4038);
+						SceneGraph.method584(Static7.y, local255.x, local255.z, local255.anInt4006, local255, local255.anInt4031, local253, local255.anInt4043, local255.anInt4018, local255.anInt4041, local255.anInt4038);
 					}
 				}
 			}

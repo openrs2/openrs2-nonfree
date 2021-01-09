@@ -4088,7 +4088,7 @@ public final class ScriptRunner {
 									if (local7015 < 0 || local7015 > 1) {
 										local7015 = 0;
 									}
-									Static10.method300(local7015 == 1);
+									Static10.setHdrEnabled(local7015 == 1);
 									continue;
 								}
 								if (opcode == 6028) {
@@ -4103,7 +4103,7 @@ public final class ScriptRunner {
 									continue;
 								}
 								if (opcode == 6102) {
-									intStack[isp++] = Terrain.isAllLevelsVisible() ? 1 : 0;
+									intStack[isp++] = SceneGraph.isAllLevelsVisible() ? 1 : 0;
 									continue;
 								}
 								if (opcode == 6103) {
@@ -4188,7 +4188,7 @@ public final class ScriptRunner {
 								}
 								if (opcode == 6126) {
 									if (GlRenderer.enabled) {
-										intStack[isp++] = Static13.method877() ? 1 : 0;
+										intStack[isp++] = PostProcessorManager.isBloomSupported() ? 1 : 0;
 									} else {
 										intStack[isp++] = 0;
 									}

@@ -245,10 +245,10 @@ public final class GlTexture extends SecondaryNode {
 					this.contextId = GlCleaner.contextId;
 				}
 				GlRenderer.setTextureId(this.textureId);
-				if (this.aBoolean343 && Static13.method881()) {
+				if (this.aBoolean343 && PostProcessorManager.isBloomEnabled()) {
 					@Pc(64) float[] local64 = this.texture.method2648(arg2, this.aBoolean341, arg0, spritesArchive, arg2);
 					if (this.anInt4969 == 2) {
-						Static33.method4070(Static6.anInt5133, Static6.anInt5139, arg2, arg2, Static6.anInt5136, Static6.anInt5146, local64);
+						Static33.method4070(GlTextureAllocator.GL_TEXTURE_2D, GlTextureAllocator.GL_RGBA16F, arg2, arg2, GlTextureAllocator.GL_RGBA, GlTextureAllocator.GL_FLOAT, local64);
 						gl.glTexParameteri(GL.GL_TEXTURE_2D, GL.GL_TEXTURE_MIN_FILTER, GL.GL_LINEAR_MIPMAP_LINEAR);
 						gl.glTexParameteri(GL.GL_TEXTURE_2D, GL.GL_TEXTURE_MAG_FILTER, GL.GL_LINEAR);
 						GlCleaner.onCardTexture += local64.length * 4 / 3 - this.textureSize;
@@ -264,7 +264,7 @@ public final class GlTexture extends SecondaryNode {
 					@Pc(148) int local148 = GlRenderer.bigEndian ? 33639 : 5121;
 					@Pc(160) int[] local160 = this.texture.method2646(arg2, arg2, spritesArchive, 0.7D, arg0, this.aBoolean341);
 					if (this.anInt4969 == 2) {
-						Static33.method4072(Static6.anInt5133, Static6.anInt5136, arg2, arg2, Static6.anInt5137, local148, local160);
+						Static33.method4072(GlTextureAllocator.GL_TEXTURE_2D, GlTextureAllocator.GL_RGBA, arg2, arg2, GlTextureAllocator.GL_BGRA, local148, local160);
 						gl.glTexParameteri(GL.GL_TEXTURE_2D, GL.GL_TEXTURE_MIN_FILTER, GL.GL_LINEAR_MIPMAP_LINEAR);
 						gl.glTexParameteri(GL.GL_TEXTURE_2D, GL.GL_TEXTURE_MAG_FILTER, GL.GL_LINEAR);
 						GlCleaner.onCardTexture += local160.length * 4 / 3 - this.textureSize;

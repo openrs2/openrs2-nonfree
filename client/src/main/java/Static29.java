@@ -1413,7 +1413,7 @@ public final class Static29 {
 		local3.aClass53_8 = arg6;
 		local3.aClass53_6 = arg7;
 		@Pc(34) int local34 = 0;
-		@Pc(42) Tile tile = Terrain.tiles[y][x][z];
+		@Pc(42) Tile tile = SceneGraph.tiles[y][x][z];
 		if (tile != null) {
 			for (@Pc(46) int i = 0; i < tile.sceneryLen; i++) {
 				@Pc(55) Scenery scenery = tile.scenery[i];
@@ -1426,10 +1426,10 @@ public final class Static29 {
 			}
 		}
 		local3.anInt5499 = -local34;
-		if (Terrain.tiles[y][x][z] == null) {
-			Terrain.tiles[y][x][z] = new Tile(y, x, z);
+		if (SceneGraph.tiles[y][x][z] == null) {
+			SceneGraph.tiles[y][x][z] = new Tile(y, x, z);
 		}
-		Terrain.tiles[y][x][z].aClass180_1 = local3;
+		SceneGraph.tiles[y][x][z].aClass180_1 = local3;
 	}
 
 	@OriginalMember(owner = "client!po", name = "a", descriptor = "(Z[Lclient!wf;I)V")
@@ -1600,11 +1600,11 @@ public final class Static29 {
 											local21 = local8.z;
 											local24 = local8.anInt3552;
 											local27 = local8.y;
-											local31 = Terrain.tiles[local24];
+											local31 = SceneGraph.tiles[local24];
 											var8 = 0.0F;
 											if (GlRenderer.enabled) {
-												if (Terrain.underwaterTileHeights == Terrain.tileHeights) {
-													@Pc(44) int local44 = Terrain.anIntArrayArray10[local18][local21];
+												if (SceneGraph.underwaterTileHeights == SceneGraph.tileHeights) {
+													@Pc(44) int local44 = SceneGraph.anIntArrayArray10[local18][local21];
 													@Pc(48) int local48 = local44 & 0xFFFFFF;
 													if (local48 != Static5.anInt3636) {
 														Static5.anInt3636 = local48;
@@ -1616,7 +1616,7 @@ public final class Static29 {
 														Static6.anInt5120 = local65;
 														Static26.method2989(local65);
 													}
-													@Pc(115) int local115 = Terrain.surfaceTileHeights[0][local18][local21] + Terrain.surfaceTileHeights[0][local18 + 1][local21] + Terrain.surfaceTileHeights[0][local18][local21 + 1] + Terrain.surfaceTileHeights[0][local18 + 1][local21 + 1] >> 2;
+													@Pc(115) int local115 = SceneGraph.surfaceTileHeights[0][local18][local21] + SceneGraph.surfaceTileHeights[0][local18 + 1][local21] + SceneGraph.surfaceTileHeights[0][local18][local21 + 1] + SceneGraph.surfaceTileHeights[0][local18 + 1][local21 + 1] >> 2;
 													MaterialManager.setMaterial(3, -local115);
 													var8 = 201.5F;
 													GlRenderer.method1613(var8);
@@ -1630,7 +1630,7 @@ public final class Static29 {
 											}
 											if (arg1) {
 												if (local24 > 0) {
-													@Pc(153) Tile local153 = Terrain.tiles[local24 - 1][local18][local21];
+													@Pc(153) Tile local153 = SceneGraph.tiles[local24 - 1][local18][local21];
 													if (local153 != null && local153.aBoolean255) {
 														continue;
 													}
@@ -1668,18 +1668,18 @@ public final class Static29 {
 												if (GlRenderer.enabled) {
 													GlRenderer.method1613(201.5F - (float) (local287.y + 1) * 50.0F);
 												}
-												if (local287.aClass142_1 == null) {
-													if (local287.aClass166_1 != null) {
+												if (local287.plainTile == null) {
+													if (local287.shapedTile != null) {
 														if (Static11.method508(0, local18, local21)) {
-															Static32.method3987(local287.aClass166_1, Static2.anInt2247, Static5.anInt3487, Static6.anInt4794, Static3.anInt2272, local18, local21, true);
+															Static32.method3987(local287.shapedTile, Static2.anInt2247, Static5.anInt3487, Static6.anInt4794, Static3.anInt2272, local18, local21, true);
 														} else {
-															Static32.method3987(local287.aClass166_1, Static2.anInt2247, Static5.anInt3487, Static6.anInt4794, Static3.anInt2272, local18, local21, false);
+															Static32.method3987(local287.shapedTile, Static2.anInt2247, Static5.anInt3487, Static6.anInt4794, Static3.anInt2272, local18, local21, false);
 														}
 													}
 												} else if (Static11.method508(0, local18, local21)) {
-													Static31.method3155(local287.aClass142_1, 0, Static2.anInt2247, Static5.anInt3487, Static6.anInt4794, Static3.anInt2272, local18, local21, true);
+													Static31.method3155(local287.plainTile, 0, Static2.anInt2247, Static5.anInt3487, Static6.anInt4794, Static3.anInt2272, local18, local21, true);
 												} else {
-													Static31.method3155(local287.aClass142_1, 0, Static2.anInt2247, Static5.anInt3487, Static6.anInt4794, Static3.anInt2272, local18, local21, false);
+													Static31.method3155(local287.plainTile, 0, Static2.anInt2247, Static5.anInt3487, Static6.anInt4794, Static3.anInt2272, local18, local21, false);
 												}
 												@Pc(363) Wall local363 = local287.wall;
 												if (local363 != null) {
@@ -1706,21 +1706,21 @@ public final class Static29 {
 												}
 											}
 											@Pc(469) boolean local469 = false;
-											if (local8.aClass142_1 == null) {
-												if (local8.aClass166_1 != null) {
+											if (local8.plainTile == null) {
+												if (local8.shapedTile != null) {
 													if (Static11.method508(local27, local18, local21)) {
-														Static32.method3987(local8.aClass166_1, Static2.anInt2247, Static5.anInt3487, Static6.anInt4794, Static3.anInt2272, local18, local21, true);
+														Static32.method3987(local8.shapedTile, Static2.anInt2247, Static5.anInt3487, Static6.anInt4794, Static3.anInt2272, local18, local21, true);
 													} else {
 														local469 = true;
-														Static32.method3987(local8.aClass166_1, Static2.anInt2247, Static5.anInt3487, Static6.anInt4794, Static3.anInt2272, local18, local21, false);
+														Static32.method3987(local8.shapedTile, Static2.anInt2247, Static5.anInt3487, Static6.anInt4794, Static3.anInt2272, local18, local21, false);
 													}
 												}
 											} else if (Static11.method508(local27, local18, local21)) {
-												Static31.method3155(local8.aClass142_1, local27, Static2.anInt2247, Static5.anInt3487, Static6.anInt4794, Static3.anInt2272, local18, local21, true);
+												Static31.method3155(local8.plainTile, local27, Static2.anInt2247, Static5.anInt3487, Static6.anInt4794, Static3.anInt2272, local18, local21, true);
 											} else {
 												local469 = true;
-												if (local8.aClass142_1.anInt4299 != 12345678 || Static2.aBoolean101 && local24 <= Static5.anInt3715) {
-													Static31.method3155(local8.aClass142_1, local27, Static2.anInt2247, Static5.anInt3487, Static6.anInt4794, Static3.anInt2272, local18, local21, false);
+												if (local8.plainTile.anInt4299 != 12345678 || Static2.aBoolean101 && local24 <= Static5.anInt3715) {
+													Static31.method3155(local8.plainTile, local27, Static2.anInt2247, Static5.anInt3487, Static6.anInt4794, Static3.anInt2272, local18, local21, false);
 												}
 											}
 											if (local469) {
@@ -1911,21 +1911,21 @@ public final class Static29 {
 																if (local1332 == 0) {
 																	@Pc(1335) int local1335 = local1319 - 64;
 																	@Pc(1336) int local1336 = local1324 + 64;
-																	if (local1336 < local1335 && local18 > 0 && local21 < Terrain.length - 1) {
+																	if (local1336 < local1335 && local18 > 0 && local21 < SceneGraph.length - 1) {
 																		LightingManager.method3114(Static7.anInt5281, Static6.anInt4375, Static6.anInt4400, local24, local18 - 1, local21 + 1);
 																		break label1037;
 																	}
 																} else if (local1332 == 1) {
 																	@Pc(1362) int local1362 = local1319 + 64;
 																	@Pc(1363) int local1363 = local1324 + 64;
-																	if (local1363 < -local1362 && local18 < Terrain.width - 1 && local21 < Terrain.length - 1) {
+																	if (local1363 < -local1362 && local18 < SceneGraph.width - 1 && local21 < SceneGraph.length - 1) {
 																		LightingManager.method3114(Static7.anInt5281, Static6.anInt4375, Static6.anInt4400, local24, local18 + 1, local21 + 1);
 																		break label1037;
 																	}
 																} else if (local1332 == 2) {
 																	@Pc(1393) int local1393 = local1319 + 64;
 																	@Pc(1394) int local1394 = local1324 - 64;
-																	if (local1394 > local1393 && local18 < Terrain.width - 1 && local21 > 0) {
+																	if (local1394 > local1393 && local18 < SceneGraph.width - 1 && local21 > 0) {
 																		LightingManager.method3114(Static7.anInt5281, Static6.anInt4375, Static6.anInt4400, local24, local18 + 1, local21 - 1);
 																		break label1037;
 																	}
@@ -1985,7 +1985,7 @@ public final class Static29 {
 															}
 														}
 													}
-													Terrain.aClass33Array1[local1486++] = local1496;
+													SceneGraph.aClass33Array1[local1486++] = local1496;
 													@Pc(1577) int local1577 = Static6.anInt4513 - local1496.xMin;
 													@Pc(1582) int local1582 = local1496.xMax - Static6.anInt4513;
 													if (local1582 > local1577) {
@@ -2004,7 +2004,7 @@ public final class Static29 {
 												@Pc(1617) int local1617 = -50;
 												@Pc(1619) int local1619 = -1;
 												for (@Pc(1621) int local1621 = 0; local1621 < local1486; local1621++) {
-													@Pc(1628) Scenery local1628 = Terrain.aClass33Array1[local1621];
+													@Pc(1628) Scenery local1628 = SceneGraph.aClass33Array1[local1621];
 													if (local1628.anInt815 != Static2.anInt1871) {
 														if (local1628.anInt811 > local1617) {
 															local1617 = local1628.anInt811;
@@ -2012,8 +2012,8 @@ public final class Static29 {
 														} else if (local1628.anInt811 == local1617) {
 															@Pc(1651) int local1651 = local1628.centerXFine - Static7.anInt5281;
 															@Pc(1656) int local1656 = local1628.centerYFine - Static6.anInt4400;
-															@Pc(1663) int local1663 = Terrain.aClass33Array1[local1619].centerXFine - Static7.anInt5281;
-															@Pc(1670) int local1670 = Terrain.aClass33Array1[local1619].centerYFine - Static6.anInt4400;
+															@Pc(1663) int local1663 = SceneGraph.aClass33Array1[local1619].centerXFine - Static7.anInt5281;
+															@Pc(1670) int local1670 = SceneGraph.aClass33Array1[local1619].centerYFine - Static6.anInt4400;
 															if (local1651 * local1651 + local1656 * local1656 > local1663 * local1663 + local1670 * local1670) {
 																local1619 = local1621;
 															}
@@ -2023,7 +2023,7 @@ public final class Static29 {
 												if (local1619 == -1) {
 													break;
 												}
-												@Pc(1697) Scenery local1697 = Terrain.aClass33Array1[local1619];
+												@Pc(1697) Scenery local1697 = SceneGraph.aClass33Array1[local1619];
 												local1697.anInt815 = Static2.anInt1871;
 												if (!Static21.method2003(local27, local1697.xMin, local1697.xMax, local1697.zMin, local1697.zMax, local1697.aClass53_1.getMinY())) {
 													if (GlRenderer.enabled) {
@@ -2074,11 +2074,11 @@ public final class Static29 {
 											GlRenderer.method1613(var8);
 											Static26.method2961(Static7.anInt5281, Static6.anInt4375, Static6.anInt4400);
 											@Pc(1920) int local1920 = local8.x * 128 + 64 - Static7.anInt5281;
-											@Pc(1932) int local1932 = Terrain.tileHeights[local24][local8.x][local8.z] - Static6.anInt4375;
+											@Pc(1932) int local1932 = SceneGraph.tileHeights[local24][local8.x][local8.z] - Static6.anInt4375;
 											@Pc(1941) int local1941 = local8.z * 128 + 64 - Static6.anInt4400;
 											@Pc(1966) int local1966;
 											if (local24 < 3) {
-												local1966 = Terrain.tileHeights[local24][local8.x][local8.z] - Terrain.tileHeights[local24 + 1][local8.x][local8.z];
+												local1966 = SceneGraph.tileHeights[local24][local8.x][local8.z] - SceneGraph.tileHeights[local24 + 1][local8.x][local8.z];
 											} else {
 												local1966 = 1024;
 											}
@@ -2302,8 +2302,8 @@ public final class Static29 {
 					}
 				}
 			}
-			if (local24 < Terrain.levels - 1) {
-				@Pc(2985) Tile local2985 = Terrain.tiles[local24 + 1][local18][local21];
+			if (local24 < SceneGraph.levels - 1) {
+				@Pc(2985) Tile local2985 = SceneGraph.tiles[local24 + 1][local18][local21];
 				if (local2985 != null && local2985.aBoolean255) {
 					Static3.aClass112_26.addTail(local2985);
 				}
@@ -2408,7 +2408,7 @@ public final class Static29 {
 		}
 		@Pc(10) int local10 = arg1 << 7;
 		@Pc(14) int local14 = arg2 << 7;
-		@Pc(24) int local24 = Terrain.tileHeights[arg0][arg1][arg2] - 1;
+		@Pc(24) int local24 = SceneGraph.tileHeights[arg0][arg1][arg2] - 1;
 		@Pc(28) int local28 = local24 - 120;
 		@Pc(32) int local32 = local24 - 230;
 		@Pc(36) int local36 = local24 - 238;
@@ -2561,21 +2561,21 @@ public final class Static29 {
 		for (@Pc(60) int local60 = arg3; local60 < arg4 + arg3; local60++) {
 			for (@Pc(71) int local71 = arg0; local71 < arg2 + arg0; local71++) {
 				if (local71 >= 0 && local71 < 104 && local60 >= 0 && local60 < 104) {
-					Terrain.tileHeights[arg1][local71][local60] = arg1 > 0 ? Terrain.tileHeights[arg1 - 1][local71][local60] : 0;
+					SceneGraph.tileHeights[arg1][local71][local60] = arg1 > 0 ? SceneGraph.tileHeights[arg1 - 1][local71][local60] : 0;
 				}
 			}
 		}
 		if (arg0 > 0 && arg0 < 104) {
 			for (@Pc(133) int local133 = arg3 + 1; local133 < arg3 + arg4; local133++) {
 				if (local133 >= 0 && local133 < 104) {
-					Terrain.tileHeights[arg1][arg0][local133] = Terrain.tileHeights[arg1][arg0 - 1][local133];
+					SceneGraph.tileHeights[arg1][arg0][local133] = SceneGraph.tileHeights[arg1][arg0 - 1][local133];
 				}
 			}
 		}
 		if (arg3 > 0 && arg3 < 104) {
 			for (@Pc(182) int local182 = arg0 + 1; local182 < arg0 + arg2; local182++) {
 				if (local182 >= 0 && local182 < 104) {
-					Terrain.tileHeights[arg1][local182][arg3] = Terrain.tileHeights[arg1][local182][arg3 - 1];
+					SceneGraph.tileHeights[arg1][local182][arg3] = SceneGraph.tileHeights[arg1][local182][arg3 - 1];
 				}
 			}
 		}
@@ -2583,19 +2583,19 @@ public final class Static29 {
 			return;
 		}
 		if (arg1 == 0) {
-			if (arg0 > 0 && Terrain.tileHeights[arg1][arg0 - 1][arg3] != 0) {
-				Terrain.tileHeights[arg1][arg0][arg3] = Terrain.tileHeights[arg1][arg0 - 1][arg3];
-			} else if (arg3 > 0 && Terrain.tileHeights[arg1][arg0][arg3 - 1] != 0) {
-				Terrain.tileHeights[arg1][arg0][arg3] = Terrain.tileHeights[arg1][arg0][arg3 - 1];
-			} else if (arg0 > 0 && arg3 > 0 && Terrain.tileHeights[arg1][arg0 - 1][arg3 - 1] != 0) {
-				Terrain.tileHeights[arg1][arg0][arg3] = Terrain.tileHeights[arg1][arg0 - 1][arg3 - 1];
+			if (arg0 > 0 && SceneGraph.tileHeights[arg1][arg0 - 1][arg3] != 0) {
+				SceneGraph.tileHeights[arg1][arg0][arg3] = SceneGraph.tileHeights[arg1][arg0 - 1][arg3];
+			} else if (arg3 > 0 && SceneGraph.tileHeights[arg1][arg0][arg3 - 1] != 0) {
+				SceneGraph.tileHeights[arg1][arg0][arg3] = SceneGraph.tileHeights[arg1][arg0][arg3 - 1];
+			} else if (arg0 > 0 && arg3 > 0 && SceneGraph.tileHeights[arg1][arg0 - 1][arg3 - 1] != 0) {
+				SceneGraph.tileHeights[arg1][arg0][arg3] = SceneGraph.tileHeights[arg1][arg0 - 1][arg3 - 1];
 			}
-		} else if (arg0 > 0 && Terrain.tileHeights[arg1 - 1][arg0 - 1][arg3] != Terrain.tileHeights[arg1][arg0 - 1][arg3]) {
-			Terrain.tileHeights[arg1][arg0][arg3] = Terrain.tileHeights[arg1][arg0 - 1][arg3];
-		} else if (arg3 > 0 && Terrain.tileHeights[arg1 - 1][arg0][arg3 - 1] != Terrain.tileHeights[arg1][arg0][arg3 - 1]) {
-			Terrain.tileHeights[arg1][arg0][arg3] = Terrain.tileHeights[arg1][arg0][arg3 - 1];
-		} else if (arg0 > 0 && arg3 > 0 && Terrain.tileHeights[arg1 - 1][arg0 - 1][arg3 - 1] != Terrain.tileHeights[arg1][arg0 - 1][arg3 - 1]) {
-			Terrain.tileHeights[arg1][arg0][arg3] = Terrain.tileHeights[arg1][arg0 - 1][arg3 - 1];
+		} else if (arg0 > 0 && SceneGraph.tileHeights[arg1 - 1][arg0 - 1][arg3] != SceneGraph.tileHeights[arg1][arg0 - 1][arg3]) {
+			SceneGraph.tileHeights[arg1][arg0][arg3] = SceneGraph.tileHeights[arg1][arg0 - 1][arg3];
+		} else if (arg3 > 0 && SceneGraph.tileHeights[arg1 - 1][arg0][arg3 - 1] != SceneGraph.tileHeights[arg1][arg0][arg3 - 1]) {
+			SceneGraph.tileHeights[arg1][arg0][arg3] = SceneGraph.tileHeights[arg1][arg0][arg3 - 1];
+		} else if (arg0 > 0 && arg3 > 0 && SceneGraph.tileHeights[arg1 - 1][arg0 - 1][arg3 - 1] != SceneGraph.tileHeights[arg1][arg0 - 1][arg3 - 1]) {
+			SceneGraph.tileHeights[arg1][arg0][arg3] = SceneGraph.tileHeights[arg1][arg0 - 1][arg3 - 1];
 		}
 	}
 

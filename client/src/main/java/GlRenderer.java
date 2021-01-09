@@ -481,7 +481,7 @@ public final class GlRenderer {
 	public static void quit() {
 		if (gl != null) {
 			try {
-				Static13.method882();
+				PostProcessorManager.quit();
 				MaterialManager.quit();
 			} catch (@Pc(6) Throwable ex) {
 			}
@@ -757,7 +757,7 @@ public final class GlRenderer {
 		gl.glTexImage2D(GL.GL_TEXTURE_2D, GL.GL_POINTS, 4, 1, 1, GL.GL_POINTS, GL.GL_RGBA, GL.GL_UNSIGNED_BYTE, IntBuffer.wrap(new int[] { -1 }));
 		LightingManager.method3120();
 		MaterialManager.init();
-		Static12.method872();
+		PostProcessorManager.init();
 	}
 
 	@OriginalMember(owner = "client!gi", name = "r", descriptor = "()F")

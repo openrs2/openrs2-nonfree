@@ -9,7 +9,7 @@ import org.openrs2.deob.annotation.Pc;
 public class AudioChannel {
 
 	@OriginalMember(owner = "client!jk", name = "w", descriptor = "Lclient!im;")
-	public static AudioThread thread;
+	private static AudioThread thread;
 
 	@OriginalMember(owner = "client!ln", name = "T", descriptor = "I")
 	private static int threadPriority;

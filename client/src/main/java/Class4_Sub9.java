@@ -68,7 +68,7 @@ public final class Class4_Sub9 extends Node {
 	public int anInt1304;
 
 	@OriginalMember(owner = "client!ej", name = "b", descriptor = "(I)V")
-	public final void method1057() {
+	public final void release() {
 		this.aClass4_Sub6_Sub4_1 = null;
 		this.aClass157_1 = null;
 		this.aClass4_Sub23_1 = null;

@@ -7,9 +7,6 @@ public final class Static2 {
 	@OriginalMember(owner = "client!dg", name = "r", descriptor = "I")
 	public static int anInt2247;
 
-	@OriginalMember(owner = "client!di", name = "q", descriptor = "Lclient!dd;")
-	public static Class4_Sub4_Sub1 aClass4_Sub4_Sub1_1;
-
 	@OriginalMember(owner = "client!dn", name = "ab", descriptor = "Lclient!wg;")
 	public static MapArea aClass4_Sub3_Sub22_1;
 
@@ -141,54 +138,6 @@ public final class Static2 {
 
 	@OriginalMember(owner = "client!dg", name = "s", descriptor = "I")
 	public static int anInt2248 = 0;
-
-	@OriginalMember(owner = "client!di", name = "a", descriptor = "I")
-	public static int anInt1025 = 0;
-
-	@OriginalMember(owner = "client!di", name = "b", descriptor = "I")
-	public static int anInt1026 = 0;
-
-	@OriginalMember(owner = "client!di", name = "c", descriptor = "I")
-	public static int anInt1027 = -1;
-
-	@OriginalMember(owner = "client!di", name = "d", descriptor = "I")
-	public static int anInt1028 = -1;
-
-	@OriginalMember(owner = "client!di", name = "e", descriptor = "I")
-	public static int anInt1029 = -1;
-
-	@OriginalMember(owner = "client!di", name = "f", descriptor = "Lclient!ll;")
-	public static final LinkedList aClass112_5 = new LinkedList();
-
-	@OriginalMember(owner = "client!di", name = "g", descriptor = "Z")
-	public static boolean aBoolean57 = true;
-
-	@OriginalMember(owner = "client!di", name = "h", descriptor = "Z")
-	public static boolean aBoolean58 = false;
-
-	@OriginalMember(owner = "client!di", name = "i", descriptor = "Z")
-	public static boolean aBoolean59 = false;
-
-	@OriginalMember(owner = "client!di", name = "j", descriptor = "Z")
-	public static boolean aBoolean60 = true;
-
-	@OriginalMember(owner = "client!di", name = "k", descriptor = "I")
-	public static int anInt1030 = 0;
-
-	@OriginalMember(owner = "client!di", name = "l", descriptor = "Z")
-	public static boolean aBoolean61 = false;
-
-	@OriginalMember(owner = "client!di", name = "m", descriptor = "Z")
-	public static boolean aBoolean62 = true;
-
-	@OriginalMember(owner = "client!di", name = "n", descriptor = "[I")
-	public static final int[] anIntArray83 = new int[2];
-
-	@OriginalMember(owner = "client!di", name = "o", descriptor = "I")
-	public static int anInt1031 = -1;
-
-	@OriginalMember(owner = "client!di", name = "p", descriptor = "I")
-	public static int anInt1032 = -1;
 
 	@OriginalMember(owner = "client!dm", name = "a", descriptor = "I")
 	public static int anInt1125 = 0;

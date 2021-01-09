@@ -18,16 +18,16 @@ public final class LightingManager {
 	public static Light[] lights;
 
 	@OriginalMember(owner = "client!od", name = "d", descriptor = "I")
-	public static int anInt3734;
+	private static int anInt3734;
 
 	@OriginalMember(owner = "client!od", name = "e", descriptor = "I")
-	public static int anInt3735;
+	private static int anInt3735;
 
 	@OriginalMember(owner = "client!od", name = "f", descriptor = "[[[I")
-	public static int[][][] anIntArrayArrayArray10;
+	private static int[][][] anIntArrayArrayArray10;
 
 	@OriginalMember(owner = "client!od", name = "i", descriptor = "I")
-	public static int anInt3737;
+	private static int anInt3737;
 
 	@OriginalMember(owner = "client!od", name = "j", descriptor = "[I")
 	public static int[] anIntArray403;
@@ -39,13 +39,13 @@ public final class LightingManager {
 	private static boolean[] enabledLights;
 
 	@OriginalMember(owner = "client!od", name = "m", descriptor = "I")
-	public static int anInt3739;
+	private static int anInt3739;
 
 	@OriginalMember(owner = "client!od", name = "n", descriptor = "I")
-	public static int anInt3740;
+	private static int anInt3740;
 
 	@OriginalMember(owner = "client!od", name = "o", descriptor = "[I")
-	public static int[] anIntArray404;
+	private static int[] anIntArray404;
 
 	@OriginalMember(owner = "client!od", name = "g", descriptor = "[Z")
 	private static boolean[] aBooleanArray20;

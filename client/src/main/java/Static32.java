@@ -256,7 +256,7 @@ public final class Static32 {
 	}
 
 	@OriginalMember(owner = "client!si", name = "a", descriptor = "(Lclient!to;IIIIIIZ)V")
-	public static void method3987(@OriginalArg(0) Class166 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) boolean arg7) {
+	public static void method3987(@OriginalArg(0) ShapedTile arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) boolean arg7) {
 		@Pc(3) int local3 = arg0.anIntArray583.length;
 		for (@Pc(5) int local5 = 0; local5 < local3; local5++) {
 			@Pc(15) int local15 = arg0.anIntArray583[local5] - Static7.anInt5281;

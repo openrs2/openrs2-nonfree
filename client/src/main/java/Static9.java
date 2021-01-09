@@ -124,7 +124,7 @@ public final class Static9 {
 				}
 				local258.aBoolean282 = false;
 				local258.anInt4006 = Static11.method522(local258.z, local258.x, Static7.y);
-				Terrain.method637(Static7.y, local258.x, local258.z, local258.anInt4006, local282 * 64 + 60 - 64, local258, local258.anInt4031, local267, local258.aBoolean284);
+				SceneGraph.method637(Static7.y, local258.x, local258.z, local258.anInt4006, local282 * 64 + 60 - 64, local258, local258.anInt4031, local267, local258.aBoolean284);
 			}
 		}
 	}
@@ -204,26 +204,26 @@ public final class Static9 {
 			@Pc(37) int local37 = arg0.readUnsignedByte();
 			if (local37 == 0) {
 				if (arg2) {
-					Terrain.tileHeights[0][arg9 + arg10][arg8 + arg6] = Terrain.surfaceTileHeights[0][arg9 + arg10][arg8 + arg6];
+					SceneGraph.tileHeights[0][arg9 + arg10][arg8 + arg6] = SceneGraph.surfaceTileHeights[0][arg9 + arg10][arg8 + arg6];
 				} else if (arg3 == 0) {
-					Terrain.tileHeights[0][arg9 + arg10][arg6 + arg8] = -PerlinNoise.getTileHeight(arg4 + 932731, arg5 + 556238) * 8;
+					SceneGraph.tileHeights[0][arg9 + arg10][arg6 + arg8] = -PerlinNoise.getTileHeight(arg4 + 932731, arg5 + 556238) * 8;
 				} else {
-					Terrain.tileHeights[arg3][arg10 + arg9][arg8 + arg6] = Terrain.tileHeights[arg3 - 1][arg10 + arg9][arg6 + arg8] - 240;
+					SceneGraph.tileHeights[arg3][arg10 + arg9][arg8 + arg6] = SceneGraph.tileHeights[arg3 - 1][arg10 + arg9][arg6 + arg8] - 240;
 				}
 				break;
 			}
 			if (local37 == 1) {
 				@Pc(132) int local132 = arg0.readUnsignedByte();
 				if (arg2) {
-					Terrain.tileHeights[0][arg9 + arg10][arg8 + arg6] = local132 * 8 + Terrain.surfaceTileHeights[0][arg9 + arg10][arg8 + arg6];
+					SceneGraph.tileHeights[0][arg9 + arg10][arg8 + arg6] = local132 * 8 + SceneGraph.surfaceTileHeights[0][arg9 + arg10][arg8 + arg6];
 				} else {
 					if (local132 == 1) {
 						local132 = 0;
 					}
 					if (arg3 == 0) {
-						Terrain.tileHeights[0][arg9 + arg10][arg6 + arg8] = -local132 * 8;
+						SceneGraph.tileHeights[0][arg9 + arg10][arg6 + arg8] = -local132 * 8;
 					} else {
-						Terrain.tileHeights[arg3][arg10 + arg9][arg8 + arg6] = Terrain.tileHeights[arg3 - 1][arg9 + arg10][arg8 + arg6] - local132 * 8;
+						SceneGraph.tileHeights[arg3][arg10 + arg9][arg8 + arg6] = SceneGraph.tileHeights[arg3 - 1][arg9 + arg10][arg8 + arg6] - local132 * 8;
 					}
 				}
 				break;
@@ -336,77 +336,6 @@ public final class Static9 {
 		@Pc(31) int local31 = arg0 * arg3[arg1 + 1][arg4] + arg3[arg1][arg4] * (128 - arg0) >> 7;
 		@Pc(58) int local58 = arg3[arg1][arg4 + 1] * (128 - arg0) + arg0 * arg3[arg1 + 1][arg4 + 1] >> 7;
 		return local31 * (128 - arg2) + local58 * arg2 >> 7;
-	}
-
-	@OriginalMember(owner = "client!b", name = "a", descriptor = "()I")
-	public static int method207() {
-		GlRenderer.gl.glGenRenderbuffersEXT(1, Static1.anIntArray22, 0);
-		return Static1.anIntArray22[0];
-	}
-
-	@OriginalMember(owner = "client!b", name = "c", descriptor = "()V")
-	public static void method209() {
-		@Pc(1) GL local1 = GlRenderer.gl;
-		local1.glMatrixMode(GL.GL_PROJECTION);
-		local1.glPopMatrix();
-		local1.glMatrixMode(GL.GL_MODELVIEW);
-		local1.glPopMatrix();
-		local1.glViewport(Static1.anIntArray23[0], Static1.anIntArray23[1], Static1.anIntArray23[2], Static1.anIntArray23[3]);
-	}
-
-	@OriginalMember(owner = "client!b", name = "d", descriptor = "()I")
-	public static int method210() {
-		GlRenderer.gl.glGenFramebuffersEXT(1, Static1.anIntArray22, 0);
-		return Static1.anIntArray22[0];
-	}
-
-	@OriginalMember(owner = "client!b", name = "a", descriptor = "(I)V")
-	public static void method211(@OriginalArg(0) int arg0) {
-		Static1.anIntArray22[0] = arg0;
-		GlRenderer.gl.glDeleteFramebuffersEXT(1, Static1.anIntArray22, 0);
-	}
-
-	@OriginalMember(owner = "client!b", name = "a", descriptor = "(FFFFFFII)V")
-	public static void method212(@OriginalArg(0) float arg0, @OriginalArg(1) float arg1, @OriginalArg(2) float arg2, @OriginalArg(3) float arg3, @OriginalArg(4) float arg4, @OriginalArg(5) float arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7) {
-		@Pc(1) GL local1 = GlRenderer.gl;
-		local1.glMatrixMode(GL.GL_PROJECTION);
-		local1.glPushMatrix();
-		local1.glLoadIdentity();
-		local1.glOrtho((double) arg0, (double) arg1, (double) arg2, (double) arg3, (double) arg4, (double) arg5);
-		local1.glMatrixMode(GL.GL_MODELVIEW);
-		local1.glPushMatrix();
-		local1.glLoadIdentity();
-		local1.glGetIntegerv(GL.GL_VIEWPORT, Static1.anIntArray23, 0);
-		local1.glViewport(0, 0, (int) (arg6 * GameShell.canvasScale + 0.5), (int) (arg7 * GameShell.canvasScale + 0.5));
-	}
-
-	@OriginalMember(owner = "client!b", name = "a", descriptor = "(FFFFII)V")
-	public static void method213(@OriginalArg(0) float arg0, @OriginalArg(1) float arg1, @OriginalArg(2) float arg2, @OriginalArg(3) float arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5) {
-		method212(arg0, arg1, arg2, arg3, -1.0F, 1.0F, arg4, arg5);
-	}
-
-	@OriginalMember(owner = "client!b", name = "b", descriptor = "(I)V")
-	public static void method214(@OriginalArg(0) int arg0) {
-		Static1.anIntArray22[0] = arg0;
-		GlRenderer.gl.glDeleteRenderbuffersEXT(1, Static1.anIntArray22, 0);
-	}
-
-	@OriginalMember(owner = "client!b", name = "e", descriptor = "()V")
-	public static void method215() {
-		GlRenderer.gl.glBindFramebufferEXT(GL.GL_FRAMEBUFFER, --Static1.anInt227 > 0 ? Static1.anIntArray24[Static1.anInt227 - 1] : 0);
-	}
-
-	@OriginalMember(owner = "client!b", name = "c", descriptor = "(I)V")
-	public static void method216(@OriginalArg(0) int arg0) {
-		Static1.anIntArray24[Static1.anInt227++] = arg0;
-		GlRenderer.gl.glBindFramebufferEXT(GL.GL_FRAMEBUFFER, arg0);
-	}
-
-	@OriginalMember(owner = "client!b", name = "f", descriptor = "()Z")
-	public static boolean method217() {
-		@Pc(1) GL local1 = GlRenderer.gl;
-		@Pc(5) int local5 = local1.glCheckFramebufferStatusEXT(GL.GL_FRAMEBUFFER);
-		return local5 == GL.GL_FRAMEBUFFER_COMPLETE;
 	}
 
 	@OriginalMember(owner = "client!bb", name = "a", descriptor = "(II)V")
@@ -621,8 +550,8 @@ public final class Static9 {
 					}
 				}
 				if (local111) {
-					if (Static5.anIntArray440[arg0] < Terrain.tileHeights[Static7.y + 1][local77][local109]) {
-						Static5.anIntArray440[arg0] = Terrain.tileHeights[Static7.y + 1][local77][local109];
+					if (Static5.anIntArray440[arg0] < SceneGraph.tileHeights[Static7.y + 1][local77][local109]) {
+						Static5.anIntArray440[arg0] = SceneGraph.tileHeights[Static7.y + 1][local77][local109];
 					}
 					@Pc(505) int local505 = local77 << 7;
 					@Pc(509) int local509 = local109 << 7;

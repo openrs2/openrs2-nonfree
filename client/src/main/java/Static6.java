@@ -353,54 +353,6 @@ public final class Static6 {
 	@OriginalMember(owner = "client!te", name = "F", descriptor = "I")
 	public static int anInt5120 = -1;
 
-	@OriginalMember(owner = "client!th", name = "a", descriptor = "I")
-	public static final int anInt5133 = 3553;
-
-	@OriginalMember(owner = "client!th", name = "b", descriptor = "I")
-	public static final int anInt5134 = 34037;
-
-	@OriginalMember(owner = "client!th", name = "c", descriptor = "I")
-	public static final int anInt5135 = 6407;
-
-	@OriginalMember(owner = "client!th", name = "d", descriptor = "I")
-	public static final int anInt5136 = 6408;
-
-	@OriginalMember(owner = "client!th", name = "e", descriptor = "I")
-	public static final int anInt5137 = 32993;
-
-	@OriginalMember(owner = "client!th", name = "f", descriptor = "I")
-	public static final int anInt5138 = 34843;
-
-	@OriginalMember(owner = "client!th", name = "g", descriptor = "I")
-	public static final int anInt5139 = 34842;
-
-	@OriginalMember(owner = "client!th", name = "h", descriptor = "I")
-	public static final int anInt5140 = 34837;
-
-	@OriginalMember(owner = "client!th", name = "i", descriptor = "I")
-	public static final int anInt5141 = 34836;
-
-	@OriginalMember(owner = "client!th", name = "j", descriptor = "I")
-	public static final int anInt5142 = 6406;
-
-	@OriginalMember(owner = "client!th", name = "k", descriptor = "I")
-	public static final int anInt5143 = 6402;
-
-	@OriginalMember(owner = "client!th", name = "l", descriptor = "I")
-	public static final int anInt5144 = 9729;
-
-	@OriginalMember(owner = "client!th", name = "m", descriptor = "I")
-	public static final int anInt5145 = 9728;
-
-	@OriginalMember(owner = "client!th", name = "n", descriptor = "I")
-	public static final int anInt5146 = 5126;
-
-	@OriginalMember(owner = "client!th", name = "o", descriptor = "I")
-	public static final int anInt5147 = 5121;
-
-	@OriginalMember(owner = "client!th", name = "p", descriptor = "[I")
-	public static final int[] anIntArray555 = new int[1];
-
 	@OriginalMember(owner = "client!ti", name = "X", descriptor = "I")
 	public static int anInt5177 = 0;
 

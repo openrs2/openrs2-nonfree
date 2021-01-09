@@ -179,27 +179,27 @@ public final class VorbisFloor {
 		if (lo >= hi) {
 			return;
 		}
-		@Pc(5) int pivot = lo;
-		@Pc(9) int pivotValue = currentXList[lo];
+		@Pc(5) int mid = lo;
+		@Pc(9) int pivot = currentXList[lo];
 		@Pc(13) int tempY = y[lo];
 		@Pc(17) boolean tempStep2Flag = step2Flag[lo];
 		for (@Pc(21) int i = lo + 1; i <= hi; i++) {
 			@Pc(28) int value = currentXList[i];
-			if (value < pivotValue) {
-				currentXList[pivot] = value;
-				y[pivot] = y[i];
-				step2Flag[pivot] = step2Flag[i];
-				pivot++;
-				currentXList[i] = currentXList[pivot];
-				y[i] = y[pivot];
-				step2Flag[i] = step2Flag[pivot];
+			if (value < pivot) {
+				currentXList[mid] = value;
+				y[mid] = y[i];
+				step2Flag[mid] = step2Flag[i];
+				mid++;
+				currentXList[i] = currentXList[mid];
+				y[i] = y[mid];
+				step2Flag[i] = step2Flag[mid];
 			}
 		}
-		currentXList[pivot] = pivotValue;
-		y[pivot] = tempY;
-		step2Flag[pivot] = tempStep2Flag;
-		this.sort(lo, pivot - 1);
-		this.sort(pivot + 1, hi);
+		currentXList[mid] = pivot;
+		y[mid] = tempY;
+		step2Flag[mid] = tempStep2Flag;
+		this.sort(lo, mid - 1);
+		this.sort(mid + 1, hi);
 	}
 
 	@OriginalMember(owner = "client!bf", name = "b", descriptor = "()Z")

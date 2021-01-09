@@ -42,7 +42,7 @@ public final class Static24 {
 		if (!GlRenderer.enabled || Static4.aBoolean189) {
 			return;
 		}
-		@Pc(22) Tile[][][] local22 = Terrain.tiles;
+		@Pc(22) Tile[][][] local22 = SceneGraph.tiles;
 		for (@Pc(24) int local24 = 0; local24 < local22.length; local24++) {
 			@Pc(32) Tile[][] local32 = local22[local24];
 			for (@Pc(34) int local34 = 0; local34 < local32.length; local34++) {
@@ -221,7 +221,7 @@ public final class Static24 {
 		if (arg5 && arg4 > 0) {
 			GameShell.canvas.setIgnoreRepaint(true);
 			if (!Static2.aBoolean76) {
-				Static35.method4310();
+				SceneGraph.clear();
 				client.frameBuffer = null;
 				client.frameBuffer = FrameBuffer.create(GameShell.canvas, GameShell.canvasWidth, GameShell.canvasHeight);
 				SoftwareRaster.clear();
@@ -233,7 +233,7 @@ public final class Static24 {
 				try {
 					@Pc(268) Graphics graphics = GameShell.canvas.getGraphics();
 					client.frameBuffer.draw(graphics);
-				} catch (@Pc(276) Exception local276) {
+				} catch (@Pc(276) Exception ex) {
 				}
 				Static29.method3430();
 				if (arg1 == 0) {
@@ -241,11 +241,11 @@ public final class Static24 {
 				} else {
 					client.frameBuffer = null;
 				}
-				@Pc(299) PrivilegedRequest local299 = GameShell.signLink.loadGlNatives(client.instance.getClass());
-				while (local299.status == 0) {
+				@Pc(299) PrivilegedRequest request = GameShell.signLink.loadGlNatives(client.instance.getClass());
+				while (request.status == 0) {
 					ThreadUtils.sleep(100L);
 				}
-				if (local299.status == 1) {
+				if (request.status == 1) {
 					Static2.aBoolean76 = true;
 				}
 			}
@@ -266,7 +266,7 @@ public final class Static24 {
 				ColorUtils.setBrightness(0.7F);
 			}
 			if (Static5.aClass187ArrayArray1 == null) {
-				Static5.aClass187ArrayArray1 = new Class187[13][13];
+				Static5.aClass187ArrayArray1 = new Environment[13][13];
 			}
 			LightingManager.method3109();
 			Static14.method1205();
@@ -294,7 +294,7 @@ public final class Static24 {
 			Static19.method1868();
 			Static36.method4447();
 		}
-		Static6.aBoolean313 = !Terrain.isAllLevelsVisible();
+		Static6.aBoolean313 = !SceneGraph.isAllLevelsVisible();
 		Static26.method2966(GameShell.canvasWidth, GameShell.canvasHeight);
 		if (arg5) {
 			Static11.method516();

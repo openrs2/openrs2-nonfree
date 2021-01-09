@@ -474,7 +474,7 @@ public final class ParticleSystem extends ParticleNode {
 			this.anInt3515 = (this.anInt3509 + (this.length << 6) >> 7) - 1;
 			this.anInt3510 = this.anInt3512;
 			if (this.anInt3514 < 3) {
-				this.anInt3520 = Terrain.tileHeights[this.anInt3514 + 1][this.anInt3513][this.anInt3508] + Terrain.tileHeights[this.anInt3514 + 1][this.anInt3521][this.anInt3508] + Terrain.tileHeights[this.anInt3514 + 1][this.anInt3513][this.anInt3515] + Terrain.tileHeights[this.anInt3514 + 1][this.anInt3521][this.anInt3515] >> 2;
+				this.anInt3520 = SceneGraph.tileHeights[this.anInt3514 + 1][this.anInt3513][this.anInt3508] + SceneGraph.tileHeights[this.anInt3514 + 1][this.anInt3521][this.anInt3508] + SceneGraph.tileHeights[this.anInt3514 + 1][this.anInt3513][this.anInt3515] + SceneGraph.tileHeights[this.anInt3514 + 1][this.anInt3521][this.anInt3515] >> 2;
 			} else {
 				this.anInt3520 = this.anInt3510 - 1024;
 			}

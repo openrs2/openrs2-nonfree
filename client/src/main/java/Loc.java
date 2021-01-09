@@ -148,7 +148,7 @@ public final class Loc extends Entity {
 
 	@OriginalMember(owner = "client!ri", name = "a", descriptor = "(ZI)Lclient!vc;")
 	private Entity method3728(@OriginalArg(0) boolean arg0) {
-		@Pc(12) boolean underwater = Terrain.tileHeights != Terrain.surfaceTileHeights;
+		@Pc(12) boolean underwater = SceneGraph.tileHeights != SceneGraph.surfaceTileHeights;
 		@Pc(17) LocType type = LocTypeList.get(this.locId);
 		if (type.multiLocs != null) {
 			type = type.getMultiLoc();
@@ -188,11 +188,11 @@ public final class Loc extends Entity {
 		@Pc(199) int local199 = (width << 6) + (this.x << 7);
 		@Pc(202) int[][] local202 = null;
 		@Pc(212) int local212 = (this.z << 7) + (length << 6);
-		@Pc(217) int[][] local217 = Terrain.tileHeights[this.y];
+		@Pc(217) int[][] local217 = SceneGraph.tileHeights[this.y];
 		if (underwater) {
-			local202 = Terrain.surfaceTileHeights[0];
+			local202 = SceneGraph.surfaceTileHeights[0];
 		} else if (this.y < 3) {
-			local202 = Terrain.tileHeights[this.y + 1];
+			local202 = SceneGraph.tileHeights[this.y + 1];
 		}
 		@Pc(267) int local267 = local217[local114][local98] + local217[local107][local98] + local217[local114][local124] + local217[local107][local124] >> 2;
 		if (GlRenderer.enabled && local176) {
@@ -216,7 +216,7 @@ public final class Loc extends Entity {
 				Static1.aClass56_Sub1_1 = local321.aClass56_Sub1_3;
 			}
 			if (this.y != 0) {
-				@Pc(379) int[][] local379 = Terrain.tileHeights[0];
+				@Pc(379) int[][] local379 = SceneGraph.tileHeights[0];
 				local363 = local267 - (local379[local114][local98] + local379[local107][local98] + local379[local114][local124] + local379[local107][local124] >> 2);
 			}
 			@Pc(414) SoftwareIndexedSprite local414 = local321.aClass56_Sub1_3;

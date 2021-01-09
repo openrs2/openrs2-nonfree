@@ -296,7 +296,7 @@ public final class Static14 {
 		if (Static11.method508(arg0, arg1, arg2)) {
 			@Pc(10) int local10 = arg1 << 7;
 			@Pc(14) int local14 = arg2 << 7;
-			return Static33.method4119(local10 + 1, Terrain.tileHeights[arg0][arg1][arg2] + arg3, local14 + 1) && Static33.method4119(local10 + 128 - 1, Terrain.tileHeights[arg0][arg1 + 1][arg2] + arg3, local14 + 1) && Static33.method4119(local10 + 128 - 1, Terrain.tileHeights[arg0][arg1 + 1][arg2 + 1] + arg3, local14 + 128 - 1) && Static33.method4119(local10 + 1, Terrain.tileHeights[arg0][arg1][arg2 + 1] + arg3, local14 + 128 - 1);
+			return Static33.method4119(local10 + 1, SceneGraph.tileHeights[arg0][arg1][arg2] + arg3, local14 + 1) && Static33.method4119(local10 + 128 - 1, SceneGraph.tileHeights[arg0][arg1 + 1][arg2] + arg3, local14 + 1) && Static33.method4119(local10 + 128 - 1, SceneGraph.tileHeights[arg0][arg1 + 1][arg2 + 1] + arg3, local14 + 128 - 1) && Static33.method4119(local10 + 1, SceneGraph.tileHeights[arg0][arg1][arg2 + 1] + arg3, local14 + 128 - 1);
 		} else {
 			return false;
 		}
@@ -363,7 +363,7 @@ public final class Static14 {
 								local140 = true;
 							}
 						}
-						@Pc(272) Scenery local272 = Terrain.getScenery(arg9, local119, local80);
+						@Pc(272) Scenery local272 = SceneGraph.getScenery(arg9, local119, local80);
 						if (local272 != null) {
 							@Pc(283) int local283 = (int) (local272.pickKey >> 14) & 0x3F;
 							if (local283 == 9) {
@@ -479,7 +479,7 @@ public final class Static14 {
 								local797 = true;
 							}
 						}
-						@Pc(907) Scenery local907 = Terrain.getScenery(arg9, local766, local722);
+						@Pc(907) Scenery local907 = SceneGraph.getScenery(arg9, local766, local722);
 						if (local907 != null) {
 							@Pc(918) int local918 = (int) (local907.pickKey >> 14) & 0x3F;
 							if (local918 == 9) {

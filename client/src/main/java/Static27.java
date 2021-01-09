@@ -105,7 +105,7 @@ public final class Static27 {
 		if (GlRenderer.enabled) {
 			LightingManager.method3109();
 			Static14.method1205();
-			Static5.aClass187ArrayArray1 = new Class187[13][13];
+			Static5.aClass187ArrayArray1 = new Environment[13][13];
 		}
 		Static7.buildArea = buildArea;
 		return true;
@@ -208,7 +208,7 @@ public final class Static27 {
 			if (arg0.equalsIgnoreCase("::qa_op_test")) {
 				Static1.aBoolean26 = true;
 			}
-			if (arg0.startsWith("::hdr") && GlRenderer.enabled && !Static10.method300(!Static13.method881())) {
+			if (arg0.startsWith("::hdr") && GlRenderer.enabled && !Static10.setHdrEnabled(!PostProcessorManager.isBloomEnabled())) {
 				Static26.method4357(null, 0, "Failed to enable hdr");
 			}
 			if (arg0.equalsIgnoreCase("::tween")) {
@@ -230,10 +230,10 @@ public final class Static27 {
 				}
 			}
 			if (arg0.equalsIgnoreCase("::getcgcoord")) {
-				Static26.method4357(null, 0, "x:" + (PlayerList.self.x >> 7) + " z:" + (PlayerList.self.z >> 7) + " groundh:" + Terrain.tileHeights[Static7.y][PlayerList.self.x >> 7][PlayerList.self.z >> 7]);
+				Static26.method4357(null, 0, "x:" + (PlayerList.self.x >> 7) + " z:" + (PlayerList.self.z >> 7) + " groundh:" + SceneGraph.tileHeights[Static7.y][PlayerList.self.x >> 7][PlayerList.self.z >> 7]);
 			}
 			if (arg0.equalsIgnoreCase("::getheight")) {
-				Static26.method4357(null, 0, "Height: " + Terrain.tileHeights[Static7.y][PlayerList.self.x >> 7][PlayerList.self.z >> 7]);
+				Static26.method4357(null, 0, "Height: " + SceneGraph.tileHeights[Static7.y][PlayerList.self.x >> 7][PlayerList.self.z >> 7]);
 			}
 		}
 		Protocol.outboundBuffer.writeOpcode(216);

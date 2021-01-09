@@ -1,4 +1,3 @@
-import java.nio.ByteBuffer;
 import java.nio.FloatBuffer;
 import java.nio.IntBuffer;
 import java.security.InvalidParameterException;
@@ -166,8 +165,8 @@ public final class Static33 {
 
 	@OriginalMember(owner = "client!tc", name = "c", descriptor = "(III)Z")
 	public static boolean method4119(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
-		for (@Pc(1) int local1 = 0; local1 < Terrain.anInt4112; local1++) {
-			@Pc(8) Class184 local8 = Terrain.aClass184Array12[local1];
+		for (@Pc(1) int local1 = 0; local1 < SceneGraph.anInt4112; local1++) {
+			@Pc(8) Class184 local8 = SceneGraph.aClass184Array12[local1];
 			if (local8.anInt5873 == 1) {
 				@Pc(17) int local17 = local8.anInt5862 - arg0;
 				if (local17 > 0) {
@@ -326,7 +325,7 @@ public final class Static33 {
 			arg2 = 1000000;
 			Static6.aBoolean335 = false;
 		}
-		@Pc(17) Class187 local17 = Static5.aClass187ArrayArray1[arg3][arg1];
+		@Pc(17) Environment local17 = Static5.aClass187ArrayArray1[arg3][arg1];
 		@Pc(27) float local27 = local17.aFloat148 * ((float) arg0 * 0.1F + 0.7F);
 		@Pc(30) int local30 = local17.anInt6034;
 		@Pc(33) float local33 = local17.aFloat150;
@@ -444,62 +443,9 @@ public final class Static33 {
 		return true;
 	}
 
-	@OriginalMember(owner = "client!th", name = "a", descriptor = "(IIIIII[B)V")
-	public static void method4166(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) byte[] arg6) {
-		@Pc(6) ByteBuffer local6 = arg6 == null ? null : ByteBuffer.wrap(arg6);
-		GlRenderer.gl.glTexImage2D(arg0, GL.GL_POINTS, arg1, arg2, arg3, GL.GL_POINTS, arg4, arg5, local6);
-	}
-
-	@OriginalMember(owner = "client!th", name = "a", descriptor = "(III)V")
-	public static void method4167(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
-		method4166(Static6.anInt5134, arg0, arg1, arg2, Static6.anInt5135, Static6.anInt5147, null);
-	}
-
-	@OriginalMember(owner = "client!th", name = "a", descriptor = "(IIIIIIII[B)I")
-	public static int method4168(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) byte[] arg8) {
-		@Pc(1) GL local1 = GlRenderer.gl;
-		@Pc(3) int local3 = method4172();
-		if (arg0 == 3553) {
-			GlRenderer.setTextureId(local3);
-		} else {
-			local1.glBindTexture(arg0, local3);
-		}
-		method4166(arg0, arg1, arg2, arg3, arg6, arg7, arg8);
-		local1.glTexParameteri(GL.GL_TEXTURE_2D, GL.GL_TEXTURE_MIN_FILTER, arg4);
-		local1.glTexParameteri(GL.GL_TEXTURE_2D, GL.GL_TEXTURE_MAG_FILTER, arg5);
-		return local3;
-	}
-
-	@OriginalMember(owner = "client!th", name = "a", descriptor = "(I)V")
-	public static void method4169(@OriginalArg(0) int arg0) {
-		Static6.anIntArray555[0] = arg0;
-		GlRenderer.gl.glDeleteTextures(1, Static6.anIntArray555, 0);
-	}
-
-	@OriginalMember(owner = "client!th", name = "b", descriptor = "(III)V")
-	public static void method4170(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
-		method4166(Static6.anInt5133, arg0, arg1, arg2, Static6.anInt5135, Static6.anInt5147, null);
-	}
-
-	@OriginalMember(owner = "client!th", name = "c", descriptor = "(III)I")
-	public static int method4171(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
-		return method4168(Static6.anInt5133, arg0, arg1, arg2, Static6.anInt5144, Static6.anInt5144, arg0, Static6.anInt5147, null);
-	}
-
-	@OriginalMember(owner = "client!th", name = "a", descriptor = "()I")
-	public static int method4172() {
-		GlRenderer.gl.glGenTextures(1, Static6.anIntArray555, 0);
-		return Static6.anIntArray555[0];
-	}
-
-	@OriginalMember(owner = "client!th", name = "a", descriptor = "(III[B)I")
-	public static int method4173(@OriginalArg(0) int arg0, @OriginalArg(3) byte[] arg1) {
-		return method4168(Static6.anInt5133, arg0, 128, 128, Static6.anInt5144, Static6.anInt5144, arg0, Static6.anInt5147, arg1);
-	}
-
 	@OriginalMember(owner = "client!ti", name = "f", descriptor = "(B)V")
 	public static void method4202() {
-		if (Terrain.isAllLevelsVisible() || Static2.anInt1216 == Static7.y) {
+		if (SceneGraph.isAllLevelsVisible() || Static2.anInt1216 == Static7.y) {
 			Static12.method638();
 			if (Static7.y != Static6.anInt4709) {
 				Static16.method2014();
@@ -611,7 +557,7 @@ public final class Static33 {
 				}
 			}
 		}
-		Terrain.init(GlRenderer.enabled ? 28 : 25, hasUnderwaterLevel);
+		SceneGraph.init(GlRenderer.enabled ? 28 : 25, hasUnderwaterLevel);
 		for (@Pc(430) int i = 0; i < 4; i++) {
 			PathFinder.collisionMaps[i].clear();
 		}
@@ -677,14 +623,14 @@ public final class Static33 {
 		}
 		if (local630 >= Static7.y - 1) {
 		}
-		if (Terrain.isAllLevelsVisible()) {
-			Terrain.setFirstVisibleLevel(0);
+		if (SceneGraph.isAllLevelsVisible()) {
+			SceneGraph.setFirstVisibleLevel(0);
 		} else {
-			Terrain.setFirstVisibleLevel(Static5.anInt3896);
+			SceneGraph.setFirstVisibleLevel(Static5.anInt3896);
 		}
 		Static38.method4791();
 		if (GlRenderer.enabled && hasUnderwaterLevel) {
-			Terrain.setUnderwater(true);
+			SceneGraph.setUnderwater(true);
 			Static31.method3803(true);
 			if (!Static5.dynamicArea) {
 				Static21.method2009(true);
@@ -701,12 +647,12 @@ public final class Static33 {
 			Static31.method3778(PathFinder.collisionMaps, Static5.dynamicArea ? Static7.zones : (int[][][]) null, true);
 			Static32.method3917(true);
 			Static38.method4791();
-			Terrain.setUnderwater(false);
+			SceneGraph.setUnderwater(false);
 		}
 		if (GlRenderer.enabled) {
 			for (@Pc(718) int local718 = 0; local718 < 13; local718++) {
 				for (@Pc(723) int local723 = 0; local723 < 13; local723++) {
-					Static2.aClass103ArrayArray1[local718][local723].method2238(Terrain.tileHeights[0], local718 * 8, local723 * 8);
+					Static2.aClass103ArrayArray1[local718][local723].method2238(SceneGraph.tileHeights[0], local718 * 8, local723 * 8);
 				}
 			}
 		}

@@ -137,7 +137,7 @@ public final class Static19 {
 			Protocol.socket = null;
 		}
 		Static24.method2697();
-		Static35.method4310();
+		SceneGraph.clear();
 		for (@Pc(18) int local18 = 0; local18 < 4; local18++) {
 			PathFinder.collisionMaps[local18].clear();
 		}

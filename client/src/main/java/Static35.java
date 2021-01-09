@@ -870,47 +870,6 @@ public final class Static35 {
 		}
 	}
 
-	@OriginalMember(owner = "client!uf", name = "a", descriptor = "()V")
-	public static void method4310() {
-		if (Terrain.surfaceTiles != null) {
-			for (@Pc(3) int local3 = 0; local3 < Terrain.surfaceTiles.length; local3++) {
-				for (@Pc(9) int local9 = 0; local9 < Terrain.width; local9++) {
-					for (@Pc(14) int local14 = 0; local14 < Terrain.length; local14++) {
-						Terrain.surfaceTiles[local3][local9][local14] = null;
-					}
-				}
-			}
-		}
-		Terrain.aClass4_Sub12ArrayArray1 = null;
-		if (Terrain.underwaterTiles != null) {
-			for (@Pc(38) int local38 = 0; local38 < Terrain.underwaterTiles.length; local38++) {
-				for (@Pc(44) int local44 = 0; local44 < Terrain.width; local44++) {
-					for (@Pc(49) int local49 = 0; local49 < Terrain.length; local49++) {
-						Terrain.underwaterTiles[local38][local44][local49] = null;
-					}
-				}
-			}
-		}
-		Terrain.aClass4_Sub12ArrayArray3 = null;
-		Terrain.anInt1742 = 0;
-		if (Terrain.aClass184Array13 != null) {
-			for (@Pc(75) int local75 = 0; local75 < Terrain.anInt1742; local75++) {
-				Terrain.aClass184Array13[local75] = null;
-			}
-		}
-		if (Terrain.scenery != null) {
-			for (@Pc(88) int local88 = 0; local88 < Terrain.sceneryLen; local88++) {
-				Terrain.scenery[local88] = null;
-			}
-			Terrain.sceneryLen = 0;
-		}
-		if (Terrain.aClass33Array1 != null) {
-			for (@Pc(103) int local103 = 0; local103 < Terrain.aClass33Array1.length; local103++) {
-				Terrain.aClass33Array1[local103] = null;
-			}
-		}
-	}
-
 	@OriginalMember(owner = "client!ug", name = "d", descriptor = "(I)V")
 	public static void method4321() {
 		for (@Pc(14) SpotAnimNode local14 = (SpotAnimNode) Static2.aClass112_8.head(); local14 != null; local14 = (SpotAnimNode) Static2.aClass112_8.next()) {
@@ -922,7 +881,7 @@ public final class Static35 {
 				if (local20.aBoolean265) {
 					local14.unlink();
 				} else {
-					Terrain.method637(local20.anInt3655, local20.anInt3647, local20.anInt3653, local20.anInt3648, 60, local20, 0, -1L, false);
+					SceneGraph.method637(local20.anInt3655, local20.anInt3647, local20.anInt3653, local20.anInt3648, 60, local20, 0, -1L, false);
 				}
 			}
 		}

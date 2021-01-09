@@ -124,10 +124,10 @@ public final class TracingException extends RuntimeException {
 	}
 
 	@OriginalMember(owner = "client!bk", name = "c", descriptor = "Ljava/lang/String;")
-	public String message;
+	private String message;
 
 	@OriginalMember(owner = "client!bk", name = "h", descriptor = "Ljava/lang/Throwable;")
-	public final Throwable cause;
+	private final Throwable cause;
 
 	@OriginalMember(owner = "client!bk", name = "<init>", descriptor = "(Ljava/lang/Throwable;Ljava/lang/String;)V")
 	private TracingException(@OriginalArg(0) Throwable cause, @OriginalArg(1) String message) {

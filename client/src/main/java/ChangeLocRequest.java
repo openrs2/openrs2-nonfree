@@ -90,17 +90,17 @@ public final class ChangeLocRequest extends Node {
 		@Pc(7) int originalShape = 0;
 		@Pc(9) long pickKey = 0L;
 		if (loc.layer == 0) {
-			pickKey = Terrain.getWallPickKey(loc.y, loc.x, loc.z);
+			pickKey = SceneGraph.getWallPickKey(loc.y, loc.x, loc.z);
 		}
 		if (loc.layer == 1) {
-			pickKey = Terrain.getWallDecorPickKey(loc.y, loc.x, loc.z);
+			pickKey = SceneGraph.getWallDecorPickKey(loc.y, loc.x, loc.z);
 		}
 		@Pc(45) int originalAngle = 0;
 		if (loc.layer == 2) {
-			pickKey = Terrain.getSceneryPickKey(loc.y, loc.x, loc.z);
+			pickKey = SceneGraph.getSceneryPickKey(loc.y, loc.x, loc.z);
 		}
 		if (loc.layer == 3) {
-			pickKey = Terrain.getGroundDecorPickKey(loc.y, loc.x, loc.z);
+			pickKey = SceneGraph.getGroundDecorPickKey(loc.y, loc.x, loc.z);
 		}
 		if (pickKey != 0L) {
 			originalShape = (int) pickKey >> 14 & 0x1F;

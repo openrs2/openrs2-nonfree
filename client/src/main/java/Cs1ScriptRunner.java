@@ -57,7 +57,7 @@ public final class Cs1ScriptRunner {
 					value = VarpDomain.varps[script[pc++]];
 				}
 				if (opcode == 6) {
-					value = Class65.anIntArray165[Static7.anIntArray599[script[pc++]] - 1];
+					value = PlayerSkillXpTable.EXPERIENCE_FOR_LEVEL[Static7.anIntArray599[script[pc++]] - 1];
 				}
 				if (opcode == 7) {
 					value = VarpDomain.varps[script[pc++]] * 100 / 46875;

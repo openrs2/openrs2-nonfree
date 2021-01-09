@@ -12,7 +12,7 @@ public final class Tile extends Node {
 	public boolean aBoolean255;
 
 	@OriginalMember(owner = "client!nh", name = "t", descriptor = "Lclient!qf;")
-	public Class142 aClass142_1;
+	public PlainTile plainTile;
 
 	@OriginalMember(owner = "client!nh", name = "v", descriptor = "Lclient!ve;")
 	public Wall wall;
@@ -36,7 +36,7 @@ public final class Tile extends Node {
 	public WallDecor wallDecor;
 
 	@OriginalMember(owner = "client!nh", name = "L", descriptor = "Lclient!to;")
-	public Class166 aClass166_1;
+	public ShapedTile shapedTile;
 
 	@OriginalMember(owner = "client!nh", name = "P", descriptor = "Lclient!nh;")
 	public Tile aClass4_Sub19_1;

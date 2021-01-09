@@ -367,7 +367,7 @@ public final class Static34 {
 						}
 						while (local216 > local231) {
 							while (local233 < local252) {
-								Terrain.aByteArrayArrayArray16[local201][local231][local233] = 0;
+								SceneGraph.aByteArrayArrayArray16[local201][local231][local233] = 0;
 								local233++;
 							}
 							local231++;
@@ -379,7 +379,7 @@ public final class Static34 {
 								for (@Pc(325) int local325 = local307 + arg4; local325 < local307 + arg4 + 4; local325++) {
 									for (@Pc(337) int local337 = arg3 + local312; local337 < local312 + arg3 + 4; local337++) {
 										if (local325 >= 0 && local325 < 104 && local337 >= 0 && local337 < 104) {
-											Terrain.aByteArrayArrayArray16[local201][local325][local337] = local321;
+											SceneGraph.aByteArrayArrayArray16[local201][local325][local337] = local321;
 										}
 									}
 								}
@@ -412,7 +412,7 @@ public final class Static34 {
 						}
 						while (local393 > local426) {
 							while (local430 > local409) {
-								Terrain.aByteArrayArrayArray16[local201][local426][local409] = Terrain.aByteArrayArrayArray16[local201 - 1][local426][local409];
+								SceneGraph.aByteArrayArrayArray16[local201][local426][local409] = SceneGraph.aByteArrayArrayArray16[local201 - 1][local426][local409];
 								local409++;
 							}
 							local426++;
@@ -423,12 +423,12 @@ public final class Static34 {
 			}
 		}
 		if (GlRenderer.enabled && !arg0) {
-			@Pc(539) Class187 local539 = null;
+			@Pc(539) Environment local539 = null;
 			while (true) {
 				while (local108.position < local108.bytes.length) {
 					@Pc(549) int local549 = local108.readUnsignedByte();
 					if (local549 == 0) {
-						local539 = new Class187(local108);
+						local539 = new Environment(local108);
 					} else if (local549 == 1) {
 						@Pc(585) int local585 = local108.readUnsignedByte();
 						if (local585 > 0) {
@@ -444,14 +444,14 @@ public final class Static34 {
 								@Pc(645) int local645 = local598.z >> 7;
 								if (local640 >= 0 && local645 >= 0 && local640 < 104 && local645 < 104) {
 									local598.aBoolean80 = (Static4.tileFlags[1][local640][local645] & 0x2) != 0;
-									local598.y = Terrain.tileHeights[local598.anInt1326][local640][local645] - local598.y;
+									local598.y = SceneGraph.tileHeights[local598.anInt1326][local640][local645] - local598.y;
 									LightingManager.addLight(local598);
 								}
 							}
 						}
 					} else if (local549 == 2) {
 						if (local539 == null) {
-							local539 = new Class187();
+							local539 = new Environment();
 						}
 						local539.method4786(local108);
 					} else {
@@ -459,7 +459,7 @@ public final class Static34 {
 					}
 				}
 				if (local539 == null) {
-					local539 = new Class187();
+					local539 = new Environment();
 				}
 				for (@Pc(704) int local704 = 0; local704 < 8; local704++) {
 					for (@Pc(709) int local709 = 0; local709 < 8; local709++) {
@@ -480,7 +480,7 @@ public final class Static34 {
 						@Pc(784) int local784 = (arg3 >> 2) + local772;
 						@Pc(790) int local790 = (arg4 >> 2) + local767;
 						if (local790 >= 0 && local790 < 26 && local784 >= 0 && local784 < 26) {
-							Terrain.aByteArrayArrayArray16[local760][local790][local784] = 0;
+							SceneGraph.aByteArrayArrayArray16[local760][local790][local784] = 0;
 						}
 					}
 				}
@@ -495,7 +495,7 @@ public final class Static34 {
 			return;
 		}
 		if (layer == 0) {
-			@Pc(22) Wall wall = Terrain.getWall(y, x, z);
+			@Pc(22) Wall wall = SceneGraph.getWall(y, x, z);
 			if (wall != null) {
 				@Pc(32) int locId = (int) (wall.pickKey >>> 32) & Integer.MAX_VALUE;
 				if (shape == 2) {
@@ -507,7 +507,7 @@ public final class Static34 {
 			}
 		}
 		if (layer == 1) {
-			@Pc(98) WallDecor wallDecor = Terrain.getWallDecor(y, x, z);
+			@Pc(98) WallDecor wallDecor = SceneGraph.getWallDecor(y, x, z);
 			if (wallDecor != null) {
 				@Pc(109) int locId = Integer.MAX_VALUE & (int) (wallDecor.pickKey >>> 32);
 				if (shape == 4 || shape == 5) {
@@ -526,13 +526,13 @@ public final class Static34 {
 			if (shape == 11) {
 				shape = 10;
 			}
-			@Pc(246) Scenery scenery = Terrain.getScenery(y, x, z);
+			@Pc(246) Scenery scenery = SceneGraph.getScenery(y, x, z);
 			if (scenery != null) {
 				scenery.aClass53_1 = new Loc((int) (scenery.pickKey >>> 32) & Integer.MAX_VALUE, shape, angle, y, x, z, seqId, false, scenery.aClass53_1);
 			}
 		}
 		if (layer == 3) {
-			@Pc(280) GroundDecor groundDecor = Terrain.getGroundDecor(y, x, z);
+			@Pc(280) GroundDecor groundDecor = SceneGraph.getGroundDecor(y, x, z);
 			if (groundDecor != null) {
 				groundDecor.aClass53_2 = new Loc(Integer.MAX_VALUE & (int) (groundDecor.pickKey >>> 32), 22, angle, y, x, z, seqId, false, groundDecor.aClass53_2);
 			}

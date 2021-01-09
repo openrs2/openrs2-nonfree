@@ -993,14 +993,14 @@ public final class Static20 {
 		@Pc(11) int local11 = arg3 - 1;
 		@Pc(15) int local15 = arg3 + arg5;
 		for (@Pc(17) int local17 = arg1; local17 <= arg1 + 1; local17++) {
-			if (local17 != Terrain.levels) {
+			if (local17 != SceneGraph.levels) {
 				for (@Pc(28) int local28 = local3; local28 <= local7; local28++) {
-					if (local28 >= 0 && local28 < Terrain.width) {
+					if (local28 >= 0 && local28 < SceneGraph.width) {
 						for (@Pc(39) int local39 = local11; local39 <= local15; local39++) {
-							if (local39 >= 0 && local39 < Terrain.length && (!local1 || local28 >= local7 || local39 >= local15 || local39 < arg3 && local28 != arg2)) {
-								@Pc(71) Tile local71 = Terrain.tiles[local17][local28][local39];
+							if (local39 >= 0 && local39 < SceneGraph.length && (!local1 || local28 >= local7 || local39 >= local15 || local39 < arg3 && local28 != arg2)) {
+								@Pc(71) Tile local71 = SceneGraph.tiles[local17][local28][local39];
 								if (local71 != null) {
-									@Pc(158) int local158 = (Terrain.tileHeights[local17][local28][local39] + Terrain.tileHeights[local17][local28 + 1][local39] + Terrain.tileHeights[local17][local28][local39 + 1] + Terrain.tileHeights[local17][local28 + 1][local39 + 1]) / 4 - (Terrain.tileHeights[arg1][arg2][arg3] + Terrain.tileHeights[arg1][arg2 + 1][arg3] + Terrain.tileHeights[arg1][arg2][arg3 + 1] + Terrain.tileHeights[arg1][arg2 + 1][arg3 + 1]) / 4;
+									@Pc(158) int local158 = (SceneGraph.tileHeights[local17][local28][local39] + SceneGraph.tileHeights[local17][local28 + 1][local39] + SceneGraph.tileHeights[local17][local28][local39 + 1] + SceneGraph.tileHeights[local17][local28 + 1][local39 + 1]) / 4 - (SceneGraph.tileHeights[arg1][arg2][arg3] + SceneGraph.tileHeights[arg1][arg2 + 1][arg3] + SceneGraph.tileHeights[arg1][arg2][arg3 + 1] + SceneGraph.tileHeights[arg1][arg2 + 1][arg3 + 1]) / 4;
 									@Pc(161) Wall local161 = local71.wall;
 									if (local161 != null) {
 										if (local161.aClass53_5.method3808()) {
@@ -1150,7 +1150,7 @@ public final class Static20 {
 					}
 				}
 				local22.method3103(Static5.anInt4156);
-				Terrain.method637(Static7.y, (int) local22.aDouble8, (int) local22.aDouble10, (int) local22.aDouble5, 60, local22, local22.anInt3723, -1L, false);
+				SceneGraph.method637(Static7.y, (int) local22.aDouble8, (int) local22.aDouble10, (int) local22.aDouble5, 60, local22, local22.anInt3723, -1L, false);
 			}
 		}
 	}

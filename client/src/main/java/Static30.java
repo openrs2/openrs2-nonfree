@@ -303,7 +303,7 @@ public final class Static30 {
 								}
 							}
 							if (GlRenderer.enabled && local38.anInt5904 == 1407) {
-								Static13.method874(local128, local122, local38.anInt5893, local38.anInt5949);
+								PostProcessorManager.setViewport(local128, local122, local38.anInt5893, local38.anInt5949);
 							}
 							method3554(local128 - local38.anInt5932, local38.id, local89, arg3, local298, local309, local259, local122 - local38.anInt5931, local266);
 							if (local38.aClass185Array4 != null) {
@@ -321,7 +321,7 @@ public final class Static30 {
 								Static14.method1069(local1207.anInt4620, local259, local122, local128, local298, local266, local309, local89);
 							}
 							if (GlRenderer.enabled && local38.anInt5904 == 1407) {
-								Static13.method880();
+								PostProcessorManager.process();
 								Static7.aBoolean123 = true;
 							}
 							if (GlRenderer.enabled) {
@@ -912,12 +912,12 @@ public final class Static30 {
 		local1.glPushAttrib(GL.GL_FOG_BIT);
 		local1.glFogf(GL.GL_FOG_START, 3072.0F);
 		GlRenderer.disableDepthMask();
-		for (@Pc(19) int local19 = 0; local19 < Terrain.aClass4_Sub12ArrayArray1[0].length; local19++) {
-			@Pc(31) Class4_Sub12 local31 = Terrain.aClass4_Sub12ArrayArray1[0][local19];
+		for (@Pc(19) int local19 = 0; local19 < SceneGraph.aClass4_Sub12ArrayArray1[0].length; local19++) {
+			@Pc(31) Class4_Sub12 local31 = SceneGraph.aClass4_Sub12ArrayArray1[0][local19];
 			if (local31.anInt2356 >= 0 && Static32.method3920(Static4.anInterface4_1.method444(local31.anInt2356))) {
 				local1.glColor4fv(Static16.method1553(local31.anInt2351), 0);
 				@Pc(58) float local58 = 201.5F - (local31.aBoolean162 ? 1.0F : 0.5F);
-				local31.method1867(Terrain.tiles, local58, true);
+				local31.method1867(SceneGraph.tiles, local58, true);
 			}
 		}
 		local1.glEnableClientState(GL.GL_COLOR_ARRAY);
@@ -929,7 +929,7 @@ public final class Static30 {
 
 	@OriginalMember(owner = "client!qj", name = "f", descriptor = "(B)V")
 	public static void method3597() {
-		Static35.method4310();
+		SceneGraph.clear();
 		for (@Pc(12) int local12 = 0; local12 < 4; local12++) {
 			PathFinder.collisionMaps[local12].clear();
 		}

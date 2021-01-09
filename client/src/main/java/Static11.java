@@ -18,7 +18,7 @@ public final class Static11 {
 
 	@OriginalMember(owner = "client!cb", name = "a", descriptor = "(III)Z")
 	public static boolean method508(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
-		@Pc(7) int local7 = Terrain.anIntArrayArrayArray3[arg0][arg1][arg2];
+		@Pc(7) int local7 = SceneGraph.anIntArrayArrayArray3[arg0][arg1][arg2];
 		if (local7 == -Static2.anInt1871) {
 			return false;
 		} else if (local7 == Static2.anInt1871) {
@@ -26,11 +26,11 @@ public final class Static11 {
 		} else {
 			@Pc(22) int local22 = arg1 << 7;
 			@Pc(26) int local26 = arg2 << 7;
-			if (Static33.method4119(local22 + 1, Terrain.tileHeights[arg0][arg1][arg2], local26 + 1) && Static33.method4119(local22 + 128 - 1, Terrain.tileHeights[arg0][arg1 + 1][arg2], local26 + 1) && Static33.method4119(local22 + 128 - 1, Terrain.tileHeights[arg0][arg1 + 1][arg2 + 1], local26 + 128 - 1) && Static33.method4119(local22 + 1, Terrain.tileHeights[arg0][arg1][arg2 + 1], local26 + 128 - 1)) {
-				Terrain.anIntArrayArrayArray3[arg0][arg1][arg2] = Static2.anInt1871;
+			if (Static33.method4119(local22 + 1, SceneGraph.tileHeights[arg0][arg1][arg2], local26 + 1) && Static33.method4119(local22 + 128 - 1, SceneGraph.tileHeights[arg0][arg1 + 1][arg2], local26 + 1) && Static33.method4119(local22 + 128 - 1, SceneGraph.tileHeights[arg0][arg1 + 1][arg2 + 1], local26 + 128 - 1) && Static33.method4119(local22 + 1, SceneGraph.tileHeights[arg0][arg1][arg2 + 1], local26 + 128 - 1)) {
+				SceneGraph.anIntArrayArrayArray3[arg0][arg1][arg2] = Static2.anInt1871;
 				return true;
 			} else {
-				Terrain.anIntArrayArrayArray3[arg0][arg1][arg2] = -Static2.anInt1871;
+				SceneGraph.anIntArrayArrayArray3[arg0][arg1][arg2] = -Static2.anInt1871;
 				return false;
 			}
 		}
@@ -38,7 +38,7 @@ public final class Static11 {
 
 	@OriginalMember(owner = "client!cc", name = "b", descriptor = "(I)V")
 	public static void method516() {
-		Static35.method4310();
+		SceneGraph.clear();
 		Static31.method3150();
 		Static24.method2697();
 		Static3.aClass40_11.clear();
@@ -61,7 +61,7 @@ public final class Static11 {
 		}
 		if (GlRenderer.enabled) {
 			Static14.method1205();
-			Static10.method300(Preferences.hdr);
+			Static10.setHdrEnabled(Preferences.hdr);
 			Static26.method2969();
 		}
 		Fonts.load(client.js5Archive8, client.js5Archive13);
@@ -200,7 +200,7 @@ public final class Static11 {
 
 	@OriginalMember(owner = "client!cd", name = "a", descriptor = "(IZII)I")
 	public static int method522(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2) {
-		if (Terrain.tileHeights == null) {
+		if (SceneGraph.tileHeights == null) {
 			return 0;
 		}
 		@Pc(12) int local12 = arg1 >> 7;
@@ -214,8 +214,8 @@ public final class Static11 {
 		}
 		@Pc(61) int local61 = arg0 & 0x7F;
 		@Pc(70) int local70 = arg1 & 0x7F;
-		@Pc(98) int local98 = Terrain.tileHeights[local38][local12][local16] * (128 - local70) + local70 * Terrain.tileHeights[local38][local12 + 1][local16] >> 7;
-		@Pc(128) int local128 = Terrain.tileHeights[local38][local12 + 1][local16 + 1] * local70 + (128 - local70) * Terrain.tileHeights[local38][local12][local16 + 1] >> 7;
+		@Pc(98) int local98 = SceneGraph.tileHeights[local38][local12][local16] * (128 - local70) + local70 * SceneGraph.tileHeights[local38][local12 + 1][local16] >> 7;
+		@Pc(128) int local128 = SceneGraph.tileHeights[local38][local12 + 1][local16 + 1] * local70 + (128 - local70) * SceneGraph.tileHeights[local38][local12][local16 + 1] >> 7;
 		return local128 * local61 + local98 * (128 - local61) >> 7;
 	}
 
@@ -551,7 +551,7 @@ public final class Static11 {
 	public static int method561() {
 		if (Static2.aBoolean119) {
 			return 0;
-		} else if (Terrain.isAllLevelsVisible()) {
+		} else if (SceneGraph.isAllLevelsVisible()) {
 			return Preferences.roofsVisible ? 2 : 1;
 		} else {
 			return 1;

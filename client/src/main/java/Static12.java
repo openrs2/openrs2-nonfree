@@ -1,6 +1,5 @@
 import java.util.Date;
 import java.util.Random;
-import javax.media.opengl.GL;
 
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -826,7 +825,7 @@ public final class Static12 {
 		if (x < 1 || z < 1 || x > 102 || z > 102) {
 			return;
 		}
-		if (!Terrain.isAllLevelsVisible() && (Static4.tileFlags[0][x][z] & 0x2) == 0) {
+		if (!SceneGraph.isAllLevelsVisible() && (Static4.tileFlags[0][x][z] & 0x2) == 0) {
 			@Pc(39) int local39 = y;
 			if ((Static4.tileFlags[y][x][z] & 0x8) != 0) {
 				local39 = 0;
@@ -1016,91 +1015,4 @@ public final class Static12 {
 		}
 	}
 
-	@OriginalMember(owner = "client!di", name = "a", descriptor = "()V")
-	public static void method870() {
-		@Pc(1) int local1 = 0;
-		@Pc(3) int local3 = 0;
-		@Pc(5) boolean local5 = true;
-		@Pc(7) boolean local7 = false;
-		for (@Pc(12) Class4_Sub4 local12 = (Class4_Sub4) Static2.aClass112_5.head(); local12 != null; local12 = (Class4_Sub4) Static2.aClass112_5.next()) {
-			@Pc(17) int local17 = local12.method754();
-			if (local17 > local1) {
-				local1 = local17;
-			}
-			local5 |= local12.method764();
-			local7 |= local12.method767();
-			local3 += local12.method753();
-		}
-		@Pc(55) int local55;
-		if (local1 == 2) {
-			local55 = local5 ? Static6.anInt5141 : Static6.anInt5140;
-		} else if (local1 == 1) {
-			local55 = local5 ? Static6.anInt5139 : Static6.anInt5138;
-		} else {
-			local55 = local5 ? Static6.anInt5136 : Static6.anInt5135;
-		}
-		if (local55 != Static2.anInt1031) {
-			Static2.anInt1031 = local55;
-			Static2.aBoolean60 = true;
-		}
-		@Pc(86) int local86 = Static2.anInt1030 > 2 ? 2 : Static2.anInt1030;
-		@Pc(93) int local93 = local3 > 2 ? 2 : local3;
-		if (local86 != local93) {
-			Static2.aBoolean60 = true;
-			Static2.aBoolean62 = true;
-		}
-		if (local7 != Static2.aBoolean61) {
-			Static2.aBoolean59 = local7;
-			Static2.aBoolean57 = true;
-		}
-		Static2.anInt1030 = local3;
-	}
-
-	@OriginalMember(owner = "client!di", name = "b", descriptor = "()Z")
-	public static boolean method871() {
-		if (Static13.method881()) {
-			return true;
-		} else if (!Static13.method877()) {
-			return false;
-		} else if (Static13.method875(Static2.aClass4_Sub4_Sub1_1)) {
-			return true;
-		} else {
-			method873();
-			return false;
-		}
-	}
-
-	@OriginalMember(owner = "client!di", name = "c", descriptor = "()V")
-	public static void method872() {
-		if (!GlRenderer.arbFboSupported || !GlRenderer.arbTextureRectangleSupported) {
-			return;
-		}
-		@Pc(5) GL local5 = GlRenderer.gl;
-		@Pc(8) int[] local8 = new int[1];
-		local5.glGetIntegerv(GL.GL_MAX_COLOR_ATTACHMENTS, local8, 0);
-		if (local8[0] >= 2) {
-			local5.glGenTextures(2, Static2.anIntArray83, 0);
-			Static2.anInt1028 = Static9.method210();
-		}
-		for (@Pc(29) Node local29 = Static2.aClass112_5.head(); local29 != null; local29 = Static2.aClass112_5.next()) {
-			@Pc(34) Class4_Sub4 local34 = (Class4_Sub4) local29;
-			if (!local34.method762()) {
-				local34.unlink();
-			}
-		}
-		if (Static2.aClass4_Sub4_Sub1_1 == null) {
-			Static2.aClass4_Sub4_Sub1_1 = new Class4_Sub4_Sub1();
-		}
-		if (!Static2.aClass4_Sub4_Sub1_1.method766() && !Static2.aClass4_Sub4_Sub1_1.method762()) {
-			Static2.aClass4_Sub4_Sub1_1.method760();
-		}
-		method870();
-	}
-
-	@OriginalMember(owner = "client!di", name = "d", descriptor = "()V")
-	public static void method873() {
-		if (Static2.aClass4_Sub4_Sub1_1.method755()) {
-			Static13.method876(Static2.aClass4_Sub4_Sub1_1);
-		}
-	}
 }

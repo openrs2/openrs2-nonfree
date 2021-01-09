@@ -26,10 +26,10 @@ public final class WorldList {
 	public static boolean loaded = false;
 
 	@OriginalMember(owner = "client!rl", name = "o", descriptor = "I")
-	public static int minId;
+	private static int minId;
 
 	@OriginalMember(owner = "client!cj", name = "F", descriptor = "I")
-	public static int maxId;
+	private static int maxId;
 
 	@OriginalMember(owner = "client!gh", name = "f", descriptor = "I")
 	public static int size;
@@ -41,7 +41,7 @@ public final class WorldList {
 	private static World[] worlds;
 
 	@OriginalMember(owner = "client!je", name = "d", descriptor = "[Lclient!gb;")
-	public static World[] sorted = new World[0];
+	private static World[] sorted = new World[0];
 
 	@OriginalMember(owner = "client!r", name = "k", descriptor = "I")
 	private static int iterator = 1;

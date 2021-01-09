@@ -19,7 +19,7 @@ public final class Song extends Node {
 	public final byte[] midiBytes;
 
 	@OriginalMember(owner = "client!tg", name = "<init>", descriptor = "(Lclient!fd;)V")
-	public Song(@OriginalArg(0) Buffer in) {
+	private Song(@OriginalArg(0) Buffer in) {
 		in.position = in.bytes.length - 3;
 		@Pc(12) int tracks = in.readUnsignedByte();
 		@Pc(16) int division = in.readUnsignedShort();

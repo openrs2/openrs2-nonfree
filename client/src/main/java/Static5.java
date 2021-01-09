@@ -117,7 +117,7 @@ public final class Static5 {
 	public static int anInt4224;
 
 	@OriginalMember(owner = "client!qa", name = "t", descriptor = "[[Lclient!wj;")
-	public static Class187[][] aClass187ArrayArray1;
+	public static Environment[][] aClass187ArrayArray1;
 
 	@OriginalMember(owner = "client!qb", name = "W", descriptor = "I")
 	public static int anInt4260;

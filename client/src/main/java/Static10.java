@@ -128,19 +128,19 @@ public final class Static10 {
 	}
 
 	@OriginalMember(owner = "client!bi", name = "a", descriptor = "(ZI)Z")
-	public static boolean method300(@OriginalArg(0) boolean arg0) {
-		@Pc(13) boolean local13 = Static13.method881();
-		if (arg0 == local13) {
+	public static boolean setHdrEnabled(@OriginalArg(0) boolean enabled) {
+		@Pc(13) boolean current = PostProcessorManager.isBloomEnabled();
+		if (enabled == current) {
 			return true;
 		}
-		if (!arg0) {
-			Static12.method873();
-		} else if (!Static13.method879() || !Static13.method877() || !Static12.method871()) {
-			arg0 = false;
+		if (!enabled) {
+			PostProcessorManager.disableBloom();
+		} else if (!PostProcessorManager.isFrameBufferSupported() || !PostProcessorManager.isBloomSupported() || !PostProcessorManager.enableBloom()) {
+			enabled = false;
 		}
-		Preferences.hdr = arg0;
+		Preferences.hdr = enabled;
 		Preferences.write(GameShell.signLink);
-		if (local13 == arg0) {
+		if (current == enabled) {
 			return false;
 		} else {
 			((Js5GlTextureProvider) Static4.anInterface4_1).clear();
@@ -275,7 +275,7 @@ public final class Static10 {
 
 	@OriginalMember(owner = "client!bl", name = "a", descriptor = "(IIII)V")
 	public static void method344(@OriginalArg(0) int y, @OriginalArg(1) int x, @OriginalArg(2) int z, @OriginalArg(3) int arg3) {
-		@Pc(7) Tile tile = Terrain.tiles[y][x][z];
+		@Pc(7) Tile tile = SceneGraph.tiles[y][x][z];
 		if (tile == null) {
 			return;
 		}

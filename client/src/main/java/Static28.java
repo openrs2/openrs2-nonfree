@@ -202,7 +202,7 @@ public final class Static28 {
 					if (local109 < 3 && (Static4.tileFlags[1][local85][local98] & 0x2) == 2) {
 						local109++;
 					}
-					@Pc(148) int local148 = local63 + (Terrain.aByteArrayArrayArray16[local109][local85][local98] & 0xFF) * 8 - Terrain.tileHeights[local109][local85][local98];
+					@Pc(148) int local148 = local63 + (SceneGraph.aByteArrayArrayArray16[local109][local85][local98] & 0xFF) * 8 - SceneGraph.tileHeights[local109][local85][local98];
 					if (local148 > local35) {
 						local35 = local148;
 					}
@@ -225,9 +225,9 @@ public final class Static28 {
 
 	@OriginalMember(owner = "client!om", name = "a", descriptor = "(II)V")
 	public static void method3253(@OriginalArg(0) int x, @OriginalArg(1) int z) {
-		@Pc(7) Tile local7 = Terrain.tiles[0][x][z];
+		@Pc(7) Tile local7 = SceneGraph.tiles[0][x][z];
 		for (@Pc(9) int y = 0; y < 3; y++) {
-			@Pc(30) Tile local30 = Terrain.tiles[y][x][z] = Terrain.tiles[y + 1][x][z];
+			@Pc(30) Tile local30 = SceneGraph.tiles[y][x][z] = SceneGraph.tiles[y + 1][x][z];
 			if (local30 != null) {
 				local30.anInt3552--;
 				for (@Pc(40) int local40 = 0; local40 < local30.sceneryLen; local40++) {
@@ -238,11 +238,11 @@ public final class Static28 {
 				}
 			}
 		}
-		if (Terrain.tiles[0][x][z] == null) {
-			Terrain.tiles[0][x][z] = new Tile(0, x, z);
+		if (SceneGraph.tiles[0][x][z] == null) {
+			SceneGraph.tiles[0][x][z] = new Tile(0, x, z);
 		}
-		Terrain.tiles[0][x][z].aClass4_Sub19_1 = local7;
-		Terrain.tiles[3][x][z] = null;
+		SceneGraph.tiles[0][x][z].aClass4_Sub19_1 = local7;
+		SceneGraph.tiles[3][x][z] = null;
 	}
 
 	@OriginalMember(owner = "client!on", name = "a", descriptor = "(ILclient!wf;)V")

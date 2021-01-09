@@ -286,11 +286,11 @@ public final class Particle extends SecondaryParticleNode {
 		@Pc(1217) int x = this.anInt3228 >> 19;
 		@Pc(1222) int z = this.anInt3230 >> 19;
 		@Pc(1227) int local1227 = this.anInt3229 >> Static4.anInt3227;
-		if (local1227 > 0 || local1227 < -65535 || x < 0 || x >= Terrain.width || z < 0 || z >= Terrain.length) {
+		if (local1227 > 0 || local1227 < -65535 || x < 0 || x >= SceneGraph.width || z < 0 || z >= SceneGraph.length) {
 			this.method2630();
 			return;
 		}
-		@Pc(1247) int[][][] local1247 = Terrain.tileHeights;
+		@Pc(1247) int[][][] local1247 = SceneGraph.tileHeights;
 		@Pc(1256) int local1256 = local1247[system.anInt3514][x][z];
 		@Pc(1271) int local1271;
 		if (system.anInt3514 < 3) {
@@ -332,9 +332,9 @@ public final class Particle extends SecondaryParticleNode {
 			this.method2630();
 			return;
 		}
-		@Pc(1427) Tile tile = Terrain.tiles[y][x][z];
+		@Pc(1427) Tile tile = SceneGraph.tiles[y][x][z];
 		if (tile == null) {
-			tile = Terrain.tiles[y][x][z] = new Tile(y, x, z);
+			tile = SceneGraph.tiles[y][x][z] = new Tile(y, x, z);
 		}
 		if (tile.particles == null) {
 			tile.particles = new SecondaryParticleLinkedList();

@@ -6,13 +6,13 @@ public final class Static8 {
 
 	@OriginalMember(owner = "client!aa", name = "a", descriptor = "(ZIIZIIII)V")
 	public static void method2(@OriginalArg(0) boolean loginScreen, @OriginalArg(2) int zoneX, @OriginalArg(3) boolean buildAreaChanged, @OriginalArg(4) int localZ, @OriginalArg(5) int localX, @OriginalArg(6) int zoneZ, @OriginalArg(7) int y) {
-		if (!buildAreaChanged && Static4.centralZoneX == zoneX && Static1.centralZoneZ == zoneZ && (Static2.anInt1216 == y || Terrain.isAllLevelsVisible())) {
+		if (!buildAreaChanged && Static4.centralZoneX == zoneX && Static1.centralZoneZ == zoneZ && (Static2.anInt1216 == y || SceneGraph.isAllLevelsVisible())) {
 			return;
 		}
 		Static1.centralZoneZ = zoneZ;
 		Static2.anInt1216 = y;
 		Static4.centralZoneX = zoneX;
-		if (Terrain.isAllLevelsVisible()) {
+		if (SceneGraph.isAllLevelsVisible()) {
 			Static2.anInt1216 = 0;
 		}
 		if (loginScreen) {

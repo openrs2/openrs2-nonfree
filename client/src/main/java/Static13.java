@@ -7,234 +7,6 @@ import org.openrs2.deob.annotation.Pc;
 
 public final class Static13 {
 
-	@OriginalMember(owner = "client!di", name = "a", descriptor = "(IIII)Z")
-	public static boolean method874(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) {
-		if (Static2.anInt1028 == -1 || Static2.aClass112_5.isEmpty()) {
-			Static2.aBoolean58 = false;
-			return false;
-		}
-		Static2.anInt1026 = arg0;
-		Static2.anInt1025 = arg1;
-		@Pc(16) boolean local16 = false;
-		if (Static2.anInt1029 != arg2 || Static2.anInt1027 != arg3) {
-			Static2.anInt1029 = arg2;
-			Static2.anInt1027 = arg3;
-			for (@Pc(30) Node local30 = Static2.aClass112_5.head(); local30 != Static2.aClass112_5.sentinel; local30 = local30.next) {
-				((Class4_Sub4) local30).method765(Static2.anInt1029, Static2.anInt1027);
-			}
-			Static2.aBoolean60 = true;
-			Static2.aBoolean57 = true;
-		}
-		@Pc(49) GL local49 = GlRenderer.gl;
-		if (Static2.aBoolean57) {
-			if (Static2.anInt1032 != -1 && Static2.aBoolean59 != Static2.aBoolean61) {
-				if (Static2.aBoolean61) {
-					Static33.method4169(Static2.anInt1032);
-				} else {
-					Static9.method214(Static2.anInt1032);
-				}
-				Static2.anInt1032 = -1;
-			}
-			if (Static2.anInt1032 == -1) {
-				Static2.aBoolean61 = Static2.aBoolean59;
-				if (Static2.aBoolean61) {
-					Static2.anInt1032 = Static33.method4172();
-				} else {
-					Static2.anInt1032 = Static9.method207();
-				}
-				Static2.aBoolean62 = true;
-			}
-			if (Static2.aBoolean61) {
-				local49.glBindTexture(GL.GL_TEXTURE_RECTANGLE, Static2.anInt1032);
-				Static33.method4166(Static6.anInt5134, Static6.anInt5143, Static2.anInt1029, Static2.anInt1027, Static6.anInt5143, Static6.anInt5147, null);
-			} else {
-				local49.glBindRenderbufferEXT(GL.GL_RENDERBUFFER, Static2.anInt1032);
-				local49.glRenderbufferStorageEXT(GL.GL_RENDERBUFFER, GL.GL_DEPTH_COMPONENT, Static2.anInt1029, Static2.anInt1027);
-			}
-			Static2.aBoolean57 = false;
-			local16 = true;
-		}
-		if (Static2.aBoolean60) {
-			local49.glBindTexture(GL.GL_TEXTURE_RECTANGLE, Static2.anIntArray83[0]);
-			Static33.method4167(Static2.anInt1031, Static2.anInt1029, Static2.anInt1027);
-			local49.glTexParameteri(GL.GL_TEXTURE_2D, GL.GL_TEXTURE_MIN_FILTER, GL.GL_LINEAR);
-			local49.glTexParameteri(GL.GL_TEXTURE_2D, GL.GL_TEXTURE_MAG_FILTER, GL.GL_LINEAR);
-			if (Static2.anInt1030 > 1) {
-				local49.glBindTexture(GL.GL_TEXTURE_RECTANGLE, Static2.anIntArray83[1]);
-				Static33.method4167(Static2.anInt1031, Static2.anInt1029, Static2.anInt1027);
-				local49.glTexParameteri(GL.GL_TEXTURE_2D, GL.GL_TEXTURE_MIN_FILTER, GL.GL_LINEAR);
-				local49.glTexParameteri(GL.GL_TEXTURE_2D, GL.GL_TEXTURE_MAG_FILTER, GL.GL_LINEAR);
-			} else {
-				local49.glBindTexture(GL.GL_TEXTURE_RECTANGLE, Static2.anIntArray83[1]);
-				Static33.method4167(Static2.anInt1031, 0, 0);
-			}
-			Static2.aBoolean60 = false;
-			local16 = true;
-		}
-		Static9.method216(Static2.anInt1028);
-		if (Static2.aBoolean62) {
-			local49.glFramebufferTexture2DEXT(GL.GL_FRAMEBUFFER, GL.GL_COLOR_ATTACHMENT0, GL.GL_TEXTURE_RECTANGLE, Static2.anIntArray83[0], 0);
-			local49.glFramebufferTexture2DEXT(GL.GL_FRAMEBUFFER, GL.GL_COLOR_ATTACHMENT1, GL.GL_TEXTURE_RECTANGLE, Static2.anInt1030 > 1 ? Static2.anIntArray83[1] : 0, 0);
-			if (Static2.aBoolean61) {
-				local49.glFramebufferTexture2DEXT(GL.GL_FRAMEBUFFER, GL.GL_DEPTH_ATTACHMENT, GL.GL_TEXTURE_RECTANGLE, Static2.anInt1032, 0);
-			} else {
-				local49.glFramebufferRenderbufferEXT(GL.GL_FRAMEBUFFER, GL.GL_DEPTH_ATTACHMENT, GL.GL_RENDERBUFFER, Static2.anInt1032);
-			}
-			local49.glDrawBuffer(GL.GL_COLOR_ATTACHMENT0);
-			Static2.aBoolean62 = false;
-			local16 = true;
-		}
-		if (local16) {
-			if (Static9.method217()) {
-				Static2.aBoolean58 = true;
-			} else {
-				Static9.method215();
-				Static2.aBoolean60 = true;
-				Static2.aBoolean57 = true;
-				Static2.aBoolean62 = true;
-				Static2.aBoolean58 = false;
-			}
-		}
-		GlRenderer.method1584(-Static2.anInt1026, Static2.anInt1025 + Static2.anInt1027 - GlRenderer.canvasHeight);
-		return Static2.aBoolean58;
-	}
-
-	@OriginalMember(owner = "client!di", name = "a", descriptor = "(Lclient!bc;)Z")
-	public static boolean method875(@OriginalArg(0) Class4_Sub4 arg0) {
-		if (Static2.anInt1028 != -1) {
-			if (arg0.method766() || arg0.method762()) {
-				if (Static2.anInt1029 != -1 && Static2.anInt1027 != -1) {
-					arg0.method765(Static2.anInt1029, Static2.anInt1027);
-				}
-				arg0.aBoolean54 = true;
-				Static2.aClass112_5.addTail(arg0);
-				Static12.method870();
-				return true;
-			}
-			arg0.method760();
-		}
-		return false;
-	}
-
-	@OriginalMember(owner = "client!di", name = "a", descriptor = "(Lclient!bc;Z)V")
-	public static void method876(@OriginalArg(0) Class4_Sub4 arg0) {
-		arg0.aBoolean54 = false;
-		arg0.unlink();
-		Static12.method870();
-	}
-
-	@OriginalMember(owner = "client!di", name = "e", descriptor = "()Z")
-	public static boolean method877() {
-		return Static2.anInt1028 != -1 && Static2.aClass4_Sub4_Sub1_1.method766();
-	}
-
-	@OriginalMember(owner = "client!di", name = "g", descriptor = "()Z")
-	public static boolean method879() {
-		return Static2.anInt1028 != -1;
-	}
-
-	@OriginalMember(owner = "client!di", name = "h", descriptor = "()V")
-	public static void method880() {
-		if (!Static2.aBoolean58) {
-			return;
-		}
-		@Pc(4) GL local4 = GlRenderer.gl;
-		GlRenderer.method1596();
-		GlRaster.resetClip();
-		local4.glDisable(GL.GL_BLEND);
-		local4.glDisable(GL.GL_ALPHA_TEST);
-		GlRenderer.disableDepthMask();
-		@Pc(15) int local15 = 0;
-		@Pc(17) int local17 = 1;
-		@Pc(29) Class4_Sub4 local29;
-		for (@Pc(22) Class4_Sub4 local22 = (Class4_Sub4) Static2.aClass112_5.head(); local22 != null; local22 = local29) {
-			local29 = (Class4_Sub4) Static2.aClass112_5.next();
-			@Pc(33) int local33 = local22.method753();
-			for (@Pc(35) int local35 = 0; local35 < local33; local35++) {
-				local22.method761(local35, Static2.anInt1029, Static2.anInt1027, Static2.anIntArray83[local15], Static2.anInt1032);
-				if (local29 == null && local35 == local33 - 1) {
-					Static2.anInt1025 = GlRenderer.canvasHeight - Static2.anInt1025;
-					GlRenderer.method1584(0, 0);
-					local4.glDrawBuffer(GL.GL_COLOR_ATTACHMENT0);
-					Static9.method215();
-					local4.glBegin(GL.GL_QUADS);
-					local4.glTexCoord2f(0.0F, 0.0F);
-					local4.glMultiTexCoord2f(GL.GL_TEXTURE1, 0.0F, 0.0F);
-					local4.glVertex2i(Static2.anInt1026, Static2.anInt1025 - Static2.anInt1027);
-					local4.glTexCoord2f((float) Static2.anInt1029, 0.0F);
-					local4.glMultiTexCoord2f(GL.GL_TEXTURE1, 1.0F, 0.0F);
-					local4.glVertex2i(Static2.anInt1026 + Static2.anInt1029, Static2.anInt1025 - Static2.anInt1027);
-					local4.glTexCoord2f((float) Static2.anInt1029, (float) Static2.anInt1027);
-					local4.glMultiTexCoord2f(GL.GL_TEXTURE1, 1.0F, 1.0F);
-					local4.glVertex2i(Static2.anInt1026 + Static2.anInt1029, Static2.anInt1025);
-					local4.glTexCoord2f(0.0F, (float) Static2.anInt1027);
-					local4.glMultiTexCoord2f(GL.GL_TEXTURE1, 0.0F, 1.0F);
-					local4.glVertex2i(Static2.anInt1026, Static2.anInt1025);
-					local4.glEnd();
-				} else {
-					local4.glDrawBuffer(local17 + GL.GL_COLOR_ATTACHMENT0);
-					local4.glBegin(GL.GL_QUADS);
-					local4.glTexCoord2f(0.0F, 0.0F);
-					local4.glMultiTexCoord2f(GL.GL_TEXTURE1, 0.0F, 0.0F);
-					local4.glVertex2i(0, 0);
-					local4.glTexCoord2f((float) Static2.anInt1029, 0.0F);
-					local4.glMultiTexCoord2f(GL.GL_TEXTURE1, 1.0F, 0.0F);
-					local4.glVertex2i(Static2.anInt1029, 0);
-					local4.glTexCoord2f((float) Static2.anInt1029, (float) Static2.anInt1027);
-					local4.glMultiTexCoord2f(GL.GL_TEXTURE1, 1.0F, 1.0F);
-					local4.glVertex2i(Static2.anInt1029, Static2.anInt1027);
-					local4.glTexCoord2f(0.0F, (float) Static2.anInt1027);
-					local4.glMultiTexCoord2f(GL.GL_TEXTURE1, 0.0F, 1.0F);
-					local4.glVertex2i(0, Static2.anInt1027);
-					local4.glEnd();
-				}
-				local22.method756(local35);
-				local17 = local17 + 1 & 0x1;
-				local15 = local15 + 1 & 0x1;
-			}
-		}
-		local4.glEnable(GL.GL_ALPHA_TEST);
-		local4.glEnable(GL.GL_BLEND);
-		GlRenderer.enableDepthMask();
-	}
-
-	@OriginalMember(owner = "client!di", name = "i", descriptor = "()Z")
-	public static boolean method881() {
-		return Static2.anInt1028 != -1 && Static2.aClass4_Sub4_Sub1_1.method755();
-	}
-
-	@OriginalMember(owner = "client!di", name = "j", descriptor = "()V")
-	public static void method882() {
-		if (Static2.anInt1028 != -1) {
-			Static9.method211(Static2.anInt1028);
-			Static2.anInt1028 = -1;
-			GlRenderer.gl.glDeleteTextures(2, Static2.anIntArray83, 0);
-			Static2.anIntArray83[0] = -1;
-			Static2.anIntArray83[1] = -1;
-		}
-		if (Static2.anInt1032 != -1) {
-			if (Static2.aBoolean61) {
-				Static33.method4169(Static2.anInt1032);
-			} else {
-				Static9.method214(Static2.anInt1032);
-			}
-			Static2.anInt1032 = -1;
-		}
-		if (!Static2.aClass112_5.isEmpty()) {
-			for (@Pc(39) Node local39 = Static2.aClass112_5.head(); local39 != Static2.aClass112_5.sentinel; local39 = local39.next) {
-				((Class4_Sub4) local39).method760();
-			}
-		}
-		if (Static2.aClass4_Sub4_Sub1_1 != null && Static2.aClass4_Sub4_Sub1_1.method766()) {
-			Static2.aClass4_Sub4_Sub1_1.method760();
-		}
-		Static2.aBoolean60 = true;
-		Static2.aBoolean57 = true;
-		Static2.aBoolean62 = true;
-		Static2.anInt1027 = -1;
-		Static2.anInt1029 = -1;
-	}
-
 	@OriginalMember(owner = "client!dj", name = "a", descriptor = "(II)Ljava/lang/String;")
 	private static String method892(@OriginalArg(1) int arg0) {
 		if (arg0 >= 100000) {
@@ -544,11 +316,11 @@ public final class Static13 {
 
 	@OriginalMember(owner = "client!dn", name = "a", descriptor = "([IIIIII)V")
 	private static void method970(@OriginalArg(0) int[] arg0, @OriginalArg(1) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4) {
-		@Pc(7) Tile local7 = Terrain.tiles[arg2][arg3][arg4];
+		@Pc(7) Tile local7 = SceneGraph.tiles[arg2][arg3][arg4];
 		if (local7 == null) {
 			return;
 		}
-		@Pc(13) Class142 local13 = local7.aClass142_1;
+		@Pc(13) PlainTile local13 = local7.plainTile;
 		if (local13 != null) {
 			@Pc(18) int local18 = local13.anInt4294;
 			if (local18 != 0) {
@@ -562,7 +334,7 @@ public final class Static13 {
 			}
 			return;
 		}
-		@Pc(58) Class166 local58 = local7.aClass166_1;
+		@Pc(58) ShapedTile local58 = local7.shapedTile;
 		if (local58 == null) {
 			return;
 		}
@@ -681,10 +453,10 @@ public final class Static13 {
 
 	@OriginalMember(owner = "client!ee", name = "a", descriptor = "(III)V")
 	public static void method1008() {
-		for (@Pc(1) int local1 = 0; local1 < Terrain.levels; local1++) {
-			for (@Pc(6) int local6 = 0; local6 < Terrain.width; local6++) {
-				for (@Pc(11) int local11 = 0; local11 < Terrain.length; local11++) {
-					@Pc(22) Tile local22 = Terrain.tiles[local1][local6][local11];
+		for (@Pc(1) int local1 = 0; local1 < SceneGraph.levels; local1++) {
+			for (@Pc(6) int local6 = 0; local6 < SceneGraph.width; local6++) {
+				for (@Pc(11) int local11 = 0; local11 < SceneGraph.length; local11++) {
+					@Pc(22) Tile local22 = SceneGraph.tiles[local1][local6][local11];
 					if (local22 != null) {
 						@Pc(27) Wall local27 = local22.wall;
 						if (local27 != null && local27.aClass53_5.method3808()) {
@@ -742,15 +514,15 @@ public final class Static13 {
 			Static6.anInt4434 = 0;
 			for (@Pc(147) int local147 = 0; local147 < 104; local147++) {
 				for (@Pc(154) int local154 = 0; local154 < 104; local154++) {
-					@Pc(168) long local168 = Terrain.getGroundDecorPickKey(arg0, local147, local154);
+					@Pc(168) long local168 = SceneGraph.getGroundDecorPickKey(arg0, local147, local154);
 					if (local168 == 0L) {
-						local168 = Terrain.getSceneryPickKey(arg0, local147, local154);
+						local168 = SceneGraph.getSceneryPickKey(arg0, local147, local154);
 					}
 					if (local168 == 0L) {
-						local168 = Terrain.getWallPickKey(arg0, local147, local154);
+						local168 = SceneGraph.getWallPickKey(arg0, local147, local154);
 					}
 					if (local168 == 0L) {
-						local168 = Terrain.getWallDecorPickKey(arg0, local147, local154);
+						local168 = SceneGraph.getWallDecorPickKey(arg0, local147, local154);
 					}
 					if (local168 != 0L) {
 						@Pc(227) LocType local227 = LocTypeList.get(Integer.MAX_VALUE & (int) (local168 >>> 32));

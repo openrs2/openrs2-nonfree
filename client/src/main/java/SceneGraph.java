@@ -2,7 +2,7 @@ import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
-public final class Terrain {
+public final class SceneGraph {
 	@OriginalMember(owner = "client!af", name = "C", descriptor = "[[[Lclient!nh;")
 	public static Tile[][][] tiles;
 
@@ -71,8 +71,8 @@ public final class Terrain {
 
 	@OriginalMember(owner = "client!li", name = "h", descriptor = "[[Z")
 	public static boolean[][] aBooleanArrayArray5;
-	@OriginalMember(owner = "client!l", name = "r", descriptor = "[[Z")
 
+	@OriginalMember(owner = "client!l", name = "r", descriptor = "[[Z")
 	public static boolean[][] aBooleanArrayArray4;
 
 	@OriginalMember(owner = "client!mi", name = "c", descriptor = "[[[B")
@@ -235,7 +235,7 @@ public final class Terrain {
 		@Pc(8) int local8 = 0;
 		for (@Pc(10) int x0 = x; x0 < x + width; x0++) {
 			for (@Pc(17) int z0 = z; z0 < z + length; z0++) {
-				if (x0 < 0 || z0 < 0 || x0 >= Terrain.width || z0 >= Terrain.length) {
+				if (x0 < 0 || z0 < 0 || x0 >= SceneGraph.width || z0 >= SceneGraph.length) {
 					return false;
 				}
 				@Pc(42) Tile tile = tiles[y][x0][z0];
@@ -296,7 +296,7 @@ public final class Terrain {
 			}
 		}
 		if (arg10) {
-			Terrain.scenery[sceneryLen++] = scenery;
+			SceneGraph.scenery[sceneryLen++] = scenery;
 		}
 		return true;
 	}
@@ -347,9 +347,9 @@ public final class Terrain {
 	@OriginalMember(owner = "client!kl", name = "a", descriptor = "()V")
 	public static void removeAllScenery() {
 		for (@Pc(1) int i = 0; i < sceneryLen; i++) {
-			@Pc(8) Scenery scenery = Terrain.scenery[i];
+			@Pc(8) Scenery scenery = SceneGraph.scenery[i];
 			removeScenery(scenery);
-			Terrain.scenery[i] = null;
+			SceneGraph.scenery[i] = null;
 		}
 		sceneryLen = 0;
 	}
@@ -504,5 +504,75 @@ public final class Terrain {
 	@OriginalMember(owner = "client!ci", name = "a", descriptor = "(IIIILclient!vc;IJIIII)Z")
 	public static boolean method584(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) Entity arg4, @OriginalArg(5) int arg5, @OriginalArg(6) long arg6, @OriginalArg(7) int arg7, @OriginalArg(8) int arg8, @OriginalArg(9) int arg9, @OriginalArg(10) int arg10) {
 		return arg4 == null ? true : addScenery(arg0, arg7, arg8, arg9 + 1 - arg7, arg10 + 1 - arg8, arg1, arg2, arg3, arg4, arg5, true, arg6);
+	}
+
+	@OriginalMember(owner = "client!jo", name = "a", descriptor = "(IIIIIIIIIIIIIIIIIIII)V")
+	public static void setTile(@OriginalArg(0) int y, @OriginalArg(1) int x, @OriginalArg(2) int z, @OriginalArg(3) int shape, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) int arg8, @OriginalArg(9) int arg9, @OriginalArg(10) int arg10, @OriginalArg(11) int arg11, @OriginalArg(12) int arg12, @OriginalArg(13) int arg13, @OriginalArg(14) int arg14, @OriginalArg(15) int arg15, @OriginalArg(16) int arg16, @OriginalArg(17) int arg17, @OriginalArg(18) int arg18, @OriginalArg(19) int arg19) {
+		if (shape == 0) {
+			@Pc(12) PlainTile plainTile = new PlainTile(arg10, arg11, arg12, arg13, -1, arg18, false);
+			for (@Pc(14) int y0 = y; y0 >= 0; y0--) {
+				if (tiles[y0][x][z] == null) {
+					tiles[y0][x][z] = new Tile(y0, x, z);
+				}
+			}
+			tiles[y][x][z].plainTile = plainTile;
+		} else if (shape == 1) {
+			@Pc(74) PlainTile local74 = new PlainTile(arg14, arg15, arg16, arg17, arg5, arg19, arg6 == arg7 && arg6 == arg8 && arg6 == arg9);
+			for (@Pc(76) int y0 = y; y0 >= 0; y0--) {
+				if (tiles[y0][x][z] == null) {
+					tiles[y0][x][z] = new Tile(y0, x, z);
+				}
+			}
+			tiles[y][x][z].plainTile = local74;
+		} else {
+			@Pc(134) ShapedTile shapedTile = new ShapedTile(shape, arg4, arg5, x, z, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16, arg17, arg18, arg19);
+			for (@Pc(136) int y0 = y; y0 >= 0; y0--) {
+				if (tiles[y0][x][z] == null) {
+					tiles[y0][x][z] = new Tile(y0, x, z);
+				}
+			}
+			tiles[y][x][z].shapedTile = shapedTile;
+		}
+	}
+
+	@OriginalMember(owner = "client!uf", name = "a", descriptor = "()V")
+	public static void clear() {
+		if (surfaceTiles != null) {
+			for (@Pc(3) int y = 0; y < surfaceTiles.length; y++) {
+				for (@Pc(9) int x = 0; x < width; x++) {
+					for (@Pc(14) int z = 0; z < length; z++) {
+						surfaceTiles[y][x][z] = null;
+					}
+				}
+			}
+		}
+		aClass4_Sub12ArrayArray1 = null;
+		if (underwaterTiles != null) {
+			for (@Pc(38) int y = 0; y < underwaterTiles.length; y++) {
+				for (@Pc(44) int x = 0; x < width; x++) {
+					for (@Pc(49) int z = 0; z < length; z++) {
+						underwaterTiles[y][x][z] = null;
+					}
+				}
+			}
+		}
+		aClass4_Sub12ArrayArray3 = null;
+		anInt1742 = 0;
+		if (aClass184Array13 != null) {
+			for (@Pc(75) int i = 0; i < anInt1742; i++) {
+				aClass184Array13[i] = null;
+			}
+		}
+		if (scenery != null) {
+			for (@Pc(88) int i = 0; i < sceneryLen; i++) {
+				scenery[i] = null;
+			}
+			sceneryLen = 0;
+		}
+		if (aClass33Array1 != null) {
+			for (@Pc(103) int i = 0; i < aClass33Array1.length; i++) {
+				aClass33Array1[i] = null;
+			}
+		}
 	}
 }

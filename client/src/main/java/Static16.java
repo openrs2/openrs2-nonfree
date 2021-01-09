@@ -81,7 +81,7 @@ public final class Static16 {
 		@Pc(7) int local7 = 0;
 		for (@Pc(13) int local13 = 0; local13 < 104; local13++) {
 			for (@Pc(18) int local18 = 0; local18 < 104; local18++) {
-				if (Static9.method279(local7, local13, true, local18, Terrain.tiles)) {
+				if (Static9.method279(local7, local13, true, local18, SceneGraph.tiles)) {
 					local7++;
 				}
 				if (local7 >= 512) {
@@ -123,7 +123,7 @@ public final class Static16 {
 			@Pc(138) int pickType = (int) key >> 29 & 0x3;
 			if (prevKey != key) {
 				prevKey = key;
-				if (pickType == 2 && Terrain.isPickKeyValid(Static7.y, x, z, key)) {
+				if (pickType == 2 && SceneGraph.isPickKeyValid(Static7.y, x, z, key)) {
 					@Pc(163) LocType type = LocTypeList.get(id);
 					if (type.multiLocs != null) {
 						type = type.getMultiLoc();

@@ -4,7 +4,7 @@ import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
 @OriginalClass("client!wj")
-public final class Class187 {
+public final class Environment {
 
 	@OriginalMember(owner = "client!wj", name = "o", descriptor = "F")
 	public float aFloat152 = 0.25F;
@@ -46,7 +46,7 @@ public final class Class187 {
 	public Class4_Sub3_Sub10 aClass4_Sub3_Sub10_7;
 
 	@OriginalMember(owner = "client!wj", name = "<init>", descriptor = "()V")
-	public Class187() {
+	public Environment() {
 		this.anInt6034 = Static4.anInt3364;
 		this.aFloat149 = 1.2F;
 		this.anInt6033 = -50;
@@ -62,58 +62,58 @@ public final class Class187 {
 	}
 
 	@OriginalMember(owner = "client!wj", name = "<init>", descriptor = "(Lclient!fd;)V")
-	public Class187(@OriginalArg(0) Buffer arg0) {
-		@Pc(16) int local16 = arg0.readUnsignedByte();
-		if ((local16 & 0x1) == 0) {
+	public Environment(@OriginalArg(0) Buffer buffer) {
+		@Pc(16) int flags = buffer.readUnsignedByte();
+		if ((flags & 0x1) == 0) {
 			this.anInt6034 = Static4.anInt3364;
 		} else {
-			this.anInt6034 = arg0.readInt();
+			this.anInt6034 = buffer.readInt();
 		}
-		if ((local16 & 0x2) == 0) {
+		if ((flags & 0x2) == 0) {
 			this.aFloat148 = 1.1523438F;
 		} else {
-			this.aFloat148 = (float) arg0.readUnsignedShort() / 256.0F;
+			this.aFloat148 = (float) buffer.readUnsignedShort() / 256.0F;
 		}
-		if ((local16 & 0x4) == 0) {
+		if ((flags & 0x4) == 0) {
 			this.aFloat150 = 0.69921875F;
 		} else {
-			this.aFloat150 = (float) arg0.readUnsignedShort() / 256.0F;
+			this.aFloat150 = (float) buffer.readUnsignedShort() / 256.0F;
 		}
-		if ((local16 & 0x8) == 0) {
+		if ((flags & 0x8) == 0) {
 			this.aFloat149 = 1.2F;
 		} else {
-			this.aFloat149 = (float) arg0.readUnsignedShort() / 256.0F;
+			this.aFloat149 = (float) buffer.readUnsignedShort() / 256.0F;
 		}
-		if ((local16 & 0x10) == 0) {
+		if ((flags & 0x10) == 0) {
 			this.anInt6033 = -50;
 			this.anInt6035 = -50;
 			this.anInt6037 = -60;
 		} else {
-			this.anInt6035 = arg0.readShort();
-			this.anInt6037 = arg0.readShort();
-			this.anInt6033 = arg0.readShort();
+			this.anInt6035 = buffer.readShort();
+			this.anInt6037 = buffer.readShort();
+			this.anInt6033 = buffer.readShort();
 		}
-		if ((local16 & 0x20) == 0) {
+		if ((flags & 0x20) == 0) {
 			this.anInt6036 = Static4.anInt3365;
 		} else {
-			this.anInt6036 = arg0.readInt();
+			this.anInt6036 = buffer.readInt();
 		}
-		if ((local16 & 0x40) == 0) {
+		if ((flags & 0x40) == 0) {
 			this.anInt6043 = 0;
 		} else {
-			this.anInt6043 = arg0.readUnsignedShort();
+			this.anInt6043 = buffer.readUnsignedShort();
 		}
-		if ((local16 & 0x80) != 0) {
-			this.aClass4_Sub3_Sub10_7 = Static19.method1838(arg0.readUnsignedShort(), arg0.readUnsignedShort(), arg0.readUnsignedShort(), arg0.readUnsignedShort(), arg0.readUnsignedShort(), arg0.readUnsignedShort());
+		if ((flags & 0x80) != 0) {
+			this.aClass4_Sub3_Sub10_7 = Static19.method1838(buffer.readUnsignedShort(), buffer.readUnsignedShort(), buffer.readUnsignedShort(), buffer.readUnsignedShort(), buffer.readUnsignedShort(), buffer.readUnsignedShort());
 		} else if (Defaults.skyboxTextures != null) {
 			this.aClass4_Sub3_Sub10_7 = Static19.method1838(Defaults.skyboxTextures[0], Defaults.skyboxTextures[1], Defaults.skyboxTextures[2], Defaults.skyboxTextures[3], Defaults.skyboxTextures[4], Defaults.skyboxTextures[5]);
 		}
 	}
 
 	@OriginalMember(owner = "client!wj", name = "a", descriptor = "(Lclient!fd;I)V")
-	public final void method4786(@OriginalArg(0) Buffer arg0) {
-		this.aFloat151 = (float) (arg0.readUnsignedByte() * 8) / 255.0F;
-		this.aFloat152 = (float) (arg0.readUnsignedByte() * 8) / 255.0F;
-		this.aFloat153 = (float) (arg0.readUnsignedByte() * 8) / 255.0F;
+	public final void method4786(@OriginalArg(0) Buffer buffer) {
+		this.aFloat151 = (float) (buffer.readUnsignedByte() * 8) / 255.0F;
+		this.aFloat152 = (float) (buffer.readUnsignedByte() * 8) / 255.0F;
+		this.aFloat153 = (float) (buffer.readUnsignedByte() * 8) / 255.0F;
 	}
 }
