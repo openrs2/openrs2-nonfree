@@ -377,7 +377,7 @@ public final class Protocol {
 			return true;
 		} else if (opcode == 95) {
 			Static21.method2062();
-			Static3.anInt2048 = inboundBuffer.readShort();
+			Static3.weight = inboundBuffer.readShort();
 			Static1.anInt925 = Static6.anInt4979;
 			opcode = -1;
 			return true;
@@ -386,20 +386,20 @@ public final class Protocol {
 			@Pc(1190) int boostedLevel = inboundBuffer.readUnsignedByte();
 			@Pc(1194) int experience = inboundBuffer.readIntAlt3Reverse();
 			@Pc(1198) int skill = inboundBuffer.readUnsignedByte();
-			Static7.anIntArray637[skill] = experience;
-			Static7.anIntArray501[skill] = boostedLevel;
-			Static7.anIntArray599[skill] = 1;
+			PlayerSkillXpTable.experience[skill] = experience;
+			PlayerSkillXpTable.boostedLevels[skill] = boostedLevel;
+			PlayerSkillXpTable.baseLevels[skill] = 1;
 			for (@Pc(1212) int baseLevel = 0; baseLevel < 98; baseLevel++) {
 				if (experience >= PlayerSkillXpTable.EXPERIENCE_FOR_LEVEL[baseLevel]) {
-					Static7.anIntArray599[skill] = baseLevel + 2;
+					PlayerSkillXpTable.baseLevels[skill] = baseLevel + 2;
 				}
 			}
-			Static4.anIntArray336[Static5.anInt4210++ & 0x1F] = skill;
+			PlayerSkillXpTable.updatedSkills[PlayerSkillXpTable.updatedSkillsWriterIndex++ & 0x1F] = skill;
 			opcode = -1;
 			return true;
 		} else if (opcode == 8) {
 			Static21.method2062();
-			Static2.anInt2248 = inboundBuffer.readUnsignedByte();
+			Static2.runEnergy = inboundBuffer.readUnsignedByte();
 			Static1.anInt925 = Static6.anInt4979;
 			opcode = -1;
 			return true;

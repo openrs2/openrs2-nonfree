@@ -145,14 +145,8 @@ public final class Static7 {
 	@OriginalMember(owner = "client!ub", name = "l", descriptor = "I")
 	public static int anInt5283 = 0;
 
-	@OriginalMember(owner = "client!ud", name = "k", descriptor = "[I")
-	public static final int[] anIntArray599 = new int[25];
-
 	@OriginalMember(owner = "client!ue", name = "m", descriptor = "S")
 	public static short aShort11 = 32767;
-
-	@OriginalMember(owner = "client!uf", name = "a", descriptor = "[Z")
-	public static final boolean[] aBooleanArray25 = new boolean[] { true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, false };
 
 	@OriginalMember(owner = "client!uf", name = "g", descriptor = "I")
 	public static int anInt5333 = 0;
@@ -211,9 +205,6 @@ public final class Static7 {
 	@OriginalMember(owner = "client!vb", name = "ab", descriptor = "I")
 	public static int anInt5473 = 1;
 
-	@OriginalMember(owner = "client!vc", name = "l", descriptor = "[I")
-	public static final int[] anIntArray501 = new int[25];
-
 	@OriginalMember(owner = "client!vd", name = "a", descriptor = "Lclient!dj;")
 	public static final LruHashTable aClass40_15 = new LruHashTable(16);
 
@@ -234,9 +225,6 @@ public final class Static7 {
 
 	@OriginalMember(owner = "client!vi", name = "T", descriptor = "I")
 	public static int anInt5584 = -1;
-
-	@OriginalMember(owner = "client!vi", name = "ab", descriptor = "[I")
-	public static final int[] anIntArray637 = new int[25];
 
 	@OriginalMember(owner = "client!vi", name = "cb", descriptor = "[I")
 	public static final int[] anIntArray638 = new int[100];

@@ -239,7 +239,7 @@ public final class Static3 {
 	public static int anInt2047 = -1;
 
 	@OriginalMember(owner = "client!gf", name = "f", descriptor = "I")
-	public static int anInt2048 = 0;
+	public static int weight = 0;
 
 	@OriginalMember(owner = "client!gh", name = "d", descriptor = "I")
 	public static int anInt2579 = 0;

@@ -308,9 +308,6 @@ public final class Static5 {
 	@OriginalMember(owner = "client!pl", name = "u", descriptor = "[Lclient!te;")
 	public static final AnimFrameset[] aClass4_Sub3_Sub19Array4 = new AnimFrameset[14];
 
-	@OriginalMember(owner = "client!pl", name = "y", descriptor = "I")
-	public static int anInt4210 = 0;
-
 	@OriginalMember(owner = "client!pn", name = "c", descriptor = "Z")
 	public static boolean aBoolean297 = false;
 

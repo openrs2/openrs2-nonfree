@@ -499,16 +499,16 @@ public final class Static12 {
 								}
 								local9.anInt5941 = Inv.updatedInventoriesWriterIndex;
 							}
-							if (local9.anObjectArray25 != null && Static5.anInt4210 > local9.anInt5942) {
-								if (local9.anIntArray667 == null || Static5.anInt4210 - local9.anInt5942 > 32) {
+							if (local9.anObjectArray25 != null && PlayerSkillXpTable.updatedSkillsWriterIndex > local9.anInt5942) {
+								if (local9.anIntArray667 == null || PlayerSkillXpTable.updatedSkillsWriterIndex - local9.anInt5942 > 32) {
 									@Pc(1341) HookRequest local1341 = new HookRequest();
 									local1341.source = local9;
 									local1341.arguments = local9.anObjectArray25;
 									Static3.aClass112_14.addTail(local1341);
 								} else {
 									label502:
-									for (@Pc(1356) int local1356 = local9.anInt5942; local1356 < Static5.anInt4210; local1356++) {
-										@Pc(1365) int local1365 = Static4.anIntArray336[local1356 & 0x1F];
+									for (@Pc(1356) int local1356 = local9.anInt5942; local1356 < PlayerSkillXpTable.updatedSkillsWriterIndex; local1356++) {
+										@Pc(1365) int local1365 = PlayerSkillXpTable.updatedSkills[local1356 & 0x1F];
 										for (@Pc(1367) int local1367 = 0; local1367 < local9.anIntArray667.length; local1367++) {
 											if (local9.anIntArray667[local1367] == local1365) {
 												@Pc(1382) HookRequest local1382 = new HookRequest();
@@ -520,7 +520,7 @@ public final class Static12 {
 										}
 									}
 								}
-								local9.anInt5942 = Static5.anInt4210;
+								local9.anInt5942 = PlayerSkillXpTable.updatedSkillsWriterIndex;
 							}
 							if (Static6.anInt5189 > local9.anInt5945 && local9.anObjectArray6 != null) {
 								@Pc(1412) HookRequest local1412 = new HookRequest();

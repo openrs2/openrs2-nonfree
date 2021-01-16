@@ -509,9 +509,9 @@ public final class Static11 {
 			StockMarketManager.offers[i] = new StockMarketOffer();
 		}
 		for (@Pc(4001) int local4001 = 0; local4001 < 25; local4001++) {
-			Static7.anIntArray501[local4001] = 0;
-			Static7.anIntArray599[local4001] = 0;
-			Static7.anIntArray637[local4001] = 0;
+			PlayerSkillXpTable.boostedLevels[local4001] = 0;
+			PlayerSkillXpTable.baseLevels[local4001] = 0;
+			PlayerSkillXpTable.experience[local4001] = 0;
 		}
 		if (GlRenderer.enabled) {
 			Static17.method1655();

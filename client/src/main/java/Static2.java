@@ -131,7 +131,7 @@ public final class Static2 {
 	public static int anInt2246 = 0;
 
 	@OriginalMember(owner = "client!dg", name = "s", descriptor = "I")
-	public static int anInt2248 = 0;
+	public static int runEnergy = 0;
 
 	@OriginalMember(owner = "client!dm", name = "a", descriptor = "I")
 	public static int anInt1125 = 0;

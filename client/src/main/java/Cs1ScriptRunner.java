@@ -21,7 +21,7 @@ public final class Cs1ScriptRunner {
 					return accumulator;
 				}
 				if (opcode == 1) {
-					value = Static7.anIntArray501[script[pc++]];
+					value = PlayerSkillXpTable.boostedLevels[script[pc++]];
 				}
 				if (opcode == 15) {
 					nextAccumulatorMode = 1;
@@ -33,22 +33,22 @@ public final class Cs1ScriptRunner {
 					nextAccumulatorMode = 3;
 				}
 				if (opcode == 2) {
-					value = Static7.anIntArray599[script[pc++]];
+					value = PlayerSkillXpTable.baseLevels[script[pc++]];
 				}
 				if (opcode == 3) {
-					value = Static7.anIntArray637[script[pc++]];
+					value = PlayerSkillXpTable.experience[script[pc++]];
 				}
 				if (opcode == 4) {
-					@Pc(114) int local114 = pc + 1;
-					@Pc(118) int local118 = script[pc] << 16;
-					local118 += script[local114++];
-					@Pc(129) Component local129 = InterfaceList.getComponent(local118);
-					pc = local114 + 1;
-					@Pc(134) int local134 = script[local114];
-					if (local134 != -1 && (!ObjTypeList.get(local134).members || LoginManager.mapMembers)) {
-						for (@Pc(147) int local147 = 0; local147 < local129.objTypes.length; local147++) {
-							if (local129.objTypes[local147] == local134 + 1) {
-								value += local129.objCounts[local147];
+					@Pc(114) int pc2 = pc + 1;
+					@Pc(118) int componentId = script[pc] << 16;
+					componentId += script[pc2++];
+					@Pc(129) Component otherComponent = InterfaceList.getComponent(componentId);
+					pc = pc2 + 1;
+					@Pc(134) int objType = script[pc2];
+					if (objType != -1 && (!ObjTypeList.get(objType).members || LoginManager.mapMembers)) {
+						for (@Pc(147) int slot = 0; slot < otherComponent.objTypes.length; slot++) {
+							if (otherComponent.objTypes[slot] == objType + 1) {
+								value += otherComponent.objCounts[slot];
 							}
 						}
 					}
@@ -57,7 +57,7 @@ public final class Cs1ScriptRunner {
 					value = VarpDomain.varps[script[pc++]];
 				}
 				if (opcode == 6) {
-					value = PlayerSkillXpTable.EXPERIENCE_FOR_LEVEL[Static7.anIntArray599[script[pc++]] - 1];
+					value = PlayerSkillXpTable.EXPERIENCE_FOR_LEVEL[PlayerSkillXpTable.baseLevels[script[pc++]] - 1];
 				}
 				if (opcode == 7) {
 					value = VarpDomain.varps[script[pc++]] * 100 / 46875;
@@ -66,22 +66,22 @@ public final class Cs1ScriptRunner {
 					value = PlayerList.self.combatLevel;
 				}
 				if (opcode == 9) {
-					for (@Pc(237) int local237 = 0; local237 < 25; local237++) {
-						if (Static7.aBooleanArray25[local237]) {
-							value += Static7.anIntArray599[local237];
+					for (@Pc(237) int skill = 0; skill < 25; skill++) {
+						if (PlayerSkillXpTable.ENABLED_SKILLS[skill]) {
+							value += PlayerSkillXpTable.baseLevels[skill];
 						}
 					}
 				}
 				if (opcode == 10) {
-					@Pc(261) int local261 = pc + 1;
-					@Pc(265) int local265 = script[pc] << 16;
-					local265 += script[local261++];
-					@Pc(276) Component local276 = InterfaceList.getComponent(local265);
-					pc = local261 + 1;
-					@Pc(281) int local281 = script[local261];
-					if (local281 != -1 && (!ObjTypeList.get(local281).members || LoginManager.mapMembers)) {
-						for (@Pc(295) int local295 = 0; local295 < local276.objTypes.length; local295++) {
-							if (local281 + 1 == local276.objTypes[local295]) {
+					@Pc(261) int pc2 = pc + 1;
+					@Pc(265) int componentId = script[pc] << 16;
+					componentId += script[pc2++];
+					@Pc(276) Component otherComponent = InterfaceList.getComponent(componentId);
+					pc = pc2 + 1;
+					@Pc(281) int objType = script[pc2];
+					if (objType != -1 && (!ObjTypeList.get(objType).members || LoginManager.mapMembers)) {
+						for (@Pc(295) int slot = 0; slot < otherComponent.objTypes.length; slot++) {
+							if (objType + 1 == otherComponent.objTypes[slot]) {
 								value = 999999999;
 								break;
 							}
@@ -89,21 +89,21 @@ public final class Cs1ScriptRunner {
 					}
 				}
 				if (opcode == 11) {
-					value = Static2.anInt2248;
+					value = Static2.runEnergy;
 				}
 				if (opcode == 12) {
-					value = Static3.anInt2048;
+					value = Static3.weight;
 				}
 				if (opcode == 13) {
-					@Pc(345) int local345 = pc + 1;
-					@Pc(348) int local348 = VarpDomain.varps[script[pc]];
-					pc = local345 + 1;
-					@Pc(353) int local353 = script[local345];
-					value = (0x1 << local353 & local348) == 0 ? 0 : 1;
+					@Pc(345) int pc2 = pc + 1;
+					@Pc(348) int varpValue = VarpDomain.varps[script[pc]];
+					pc = pc2 + 1;
+					@Pc(353) int bit = script[pc2];
+					value = (0x1 << bit & varpValue) == 0 ? 0 : 1;
 				}
 				if (opcode == 14) {
-					@Pc(375) int local375 = script[pc++];
-					value = VarpDomain.getVarbit(local375);
+					@Pc(375) int varbit = script[pc++];
+					value = VarpDomain.getVarbit(varbit);
 				}
 				if (opcode == 18) {
 					value = Static5.originX + (PlayerList.self.xFine >> 7);

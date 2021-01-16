@@ -400,9 +400,6 @@ public final class Static4 {
 	@OriginalMember(owner = "client!mn", name = "m", descriptor = "I")
 	public static int anInt3367 = -1;
 
-	@OriginalMember(owner = "client!mo", name = "db", descriptor = "[I")
-	public static final int[] anIntArray336 = new int[32];
-
 	@OriginalMember(owner = "client!na", name = "z", descriptor = "Lclient!na;")
 	public static final SoftwareModel aClass53_Sub4_Sub1_1 = new SoftwareModel();
 

@@ -1447,21 +1447,21 @@ public final class ScriptRunner {
 							@Pc(13209) int local13209 = isp - 1;
 							@Pc(13212) int local13212 = intStack[local13209];
 							isp = local13209 + 1;
-							intStack[local13209] = Static7.anIntArray501[local13212];
+							intStack[local13209] = PlayerSkillXpTable.boostedLevels[local13212];
 							continue;
 						}
 						if (opcode == 3306) {
 							@Pc(13227) int local13227 = isp - 1;
 							@Pc(13230) int local13230 = intStack[local13227];
 							isp = local13227 + 1;
-							intStack[local13227] = Static7.anIntArray599[local13230];
+							intStack[local13227] = PlayerSkillXpTable.baseLevels[local13230];
 							continue;
 						}
 						if (opcode == 3307) {
 							@Pc(13245) int local13245 = isp - 1;
 							@Pc(13248) int local13248 = intStack[local13245];
 							isp = local13245 + 1;
-							intStack[local13245] = Static7.anIntArray637[local13248];
+							intStack[local13245] = PlayerSkillXpTable.experience[local13248];
 							continue;
 						}
 						if (opcode == 3308) {
@@ -1537,11 +1537,11 @@ public final class ScriptRunner {
 							continue;
 						}
 						if (opcode == 3321) {
-							intStack[isp++] = Static2.anInt2248;
+							intStack[isp++] = Static2.runEnergy;
 							continue;
 						}
 						if (opcode == 3322) {
-							intStack[isp++] = Static3.anInt2048;
+							intStack[isp++] = Static3.weight;
 							continue;
 						}
 						if (opcode == 3323) {
