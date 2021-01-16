@@ -17,72 +17,72 @@ public final class Class6 implements Material {
 	@OriginalMember(owner = "client!ae", name = "<init>", descriptor = "()V")
 	public Class6() {
 		if (GlRenderer.arbTextureCubeMapSupported) {
-			@Pc(11) GL local11 = GlRenderer.gl;
-			this.anInt96 = local11.glGenLists(2);
-			local11.glNewList(this.anInt96, GL.GL_COMPILE);
-			local11.glActiveTexture(GL.GL_TEXTURE1);
-			local11.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_COMBINE_RGB, GL.GL_INTERPOLATE);
-			local11.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_SRC2_RGB, GL.GL_PREVIOUS);
-			local11.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_COMBINE_ALPHA, GL.GL_REPLACE);
-			local11.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_SRC0_ALPHA, GL.GL_PRIMARY_COLOR);
-			local11.glTexGeni(GL.GL_S, GL.GL_TEXTURE_GEN_MODE, GL.GL_REFLECTION_MAP);
-			local11.glTexGeni(GL.GL_T, GL.GL_TEXTURE_GEN_MODE, GL.GL_REFLECTION_MAP);
-			local11.glTexGeni(GL.GL_R, GL.GL_TEXTURE_GEN_MODE, GL.GL_REFLECTION_MAP);
-			local11.glEnable(GL.GL_TEXTURE_GEN_S);
-			local11.glEnable(GL.GL_TEXTURE_GEN_T);
-			local11.glEnable(GL.GL_TEXTURE_GEN_R);
-			local11.glEnable(GL.GL_TEXTURE_CUBE_MAP);
-			local11.glActiveTexture(GL.GL_TEXTURE0);
-			local11.glEndList();
-			local11.glNewList(this.anInt96 + 1, GL.GL_COMPILE);
-			local11.glActiveTexture(GL.GL_TEXTURE1);
-			local11.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_COMBINE_RGB, GL.GL_MODULATE);
-			local11.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_SRC2_RGB, GL.GL_CONSTANT);
-			local11.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_COMBINE_ALPHA, GL.GL_MODULATE);
-			local11.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_SRC0_ALPHA, GL.GL_TEXTURE);
-			local11.glDisable(GL.GL_TEXTURE_GEN_S);
-			local11.glDisable(GL.GL_TEXTURE_GEN_T);
-			local11.glDisable(GL.GL_TEXTURE_GEN_R);
-			local11.glDisable(GL.GL_TEXTURE_CUBE_MAP);
-			local11.glMatrixMode(GL.GL_TEXTURE);
-			local11.glLoadIdentity();
-			local11.glMatrixMode(GL.GL_MODELVIEW);
-			local11.glActiveTexture(GL.GL_TEXTURE0);
-			local11.glEndList();
+			@Pc(11) GL gl = GlRenderer.gl;
+			this.anInt96 = gl.glGenLists(2);
+			gl.glNewList(this.anInt96, GL.GL_COMPILE);
+			gl.glActiveTexture(GL.GL_TEXTURE1);
+			gl.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_COMBINE_RGB, GL.GL_INTERPOLATE);
+			gl.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_SRC2_RGB, GL.GL_PREVIOUS);
+			gl.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_COMBINE_ALPHA, GL.GL_REPLACE);
+			gl.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_SRC0_ALPHA, GL.GL_PRIMARY_COLOR);
+			gl.glTexGeni(GL.GL_S, GL.GL_TEXTURE_GEN_MODE, GL.GL_REFLECTION_MAP);
+			gl.glTexGeni(GL.GL_T, GL.GL_TEXTURE_GEN_MODE, GL.GL_REFLECTION_MAP);
+			gl.glTexGeni(GL.GL_R, GL.GL_TEXTURE_GEN_MODE, GL.GL_REFLECTION_MAP);
+			gl.glEnable(GL.GL_TEXTURE_GEN_S);
+			gl.glEnable(GL.GL_TEXTURE_GEN_T);
+			gl.glEnable(GL.GL_TEXTURE_GEN_R);
+			gl.glEnable(GL.GL_TEXTURE_CUBE_MAP);
+			gl.glActiveTexture(GL.GL_TEXTURE0);
+			gl.glEndList();
+			gl.glNewList(this.anInt96 + 1, GL.GL_COMPILE);
+			gl.glActiveTexture(GL.GL_TEXTURE1);
+			gl.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_COMBINE_RGB, GL.GL_MODULATE);
+			gl.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_SRC2_RGB, GL.GL_CONSTANT);
+			gl.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_COMBINE_ALPHA, GL.GL_MODULATE);
+			gl.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_SRC0_ALPHA, GL.GL_TEXTURE);
+			gl.glDisable(GL.GL_TEXTURE_GEN_S);
+			gl.glDisable(GL.GL_TEXTURE_GEN_T);
+			gl.glDisable(GL.GL_TEXTURE_GEN_R);
+			gl.glDisable(GL.GL_TEXTURE_CUBE_MAP);
+			gl.glMatrixMode(GL.GL_TEXTURE);
+			gl.glLoadIdentity();
+			gl.glMatrixMode(GL.GL_MODELVIEW);
+			gl.glActiveTexture(GL.GL_TEXTURE0);
+			gl.glEndList();
 		}
 	}
 
 	@OriginalMember(owner = "client!ae", name = "b", descriptor = "()V")
 	@Override
 	public final void bind() {
-		@Pc(5) GL local5 = GlRenderer.gl;
+		@Pc(5) GL gl = GlRenderer.gl;
 		GlRenderer.setTextureCombineAlphaMode(1);
 		if (Static5.aClass4_Sub3_Sub10_6 == null || this.anInt96 < 0 || !Preferences.highDetailLighting) {
-			local5.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_SRC0_ALPHA, GL.GL_PRIMARY_COLOR);
+			gl.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_SRC0_ALPHA, GL.GL_PRIMARY_COLOR);
 			return;
 		}
-		local5.glCallList(this.anInt96);
-		local5.glActiveTexture(GL.GL_TEXTURE1);
+		gl.glCallList(this.anInt96);
+		gl.glActiveTexture(GL.GL_TEXTURE1);
 		Static5.aClass4_Sub3_Sub10_6.method1834();
-		local5.glMatrixMode(GL.GL_TEXTURE);
-		local5.glLoadIdentity();
-		local5.glRotatef(-((float) Static6.anInt4403 * 360.0F) / 2048.0F, 0.0F, 1.0F, 0.0F);
-		local5.glRotatef(-((float) Static4.anInt3258 * 360.0F) / 2048.0F, 1.0F, 0.0F, 0.0F);
-		local5.glScalef(-1.0F, 1.0F, 1.0F);
-		local5.glMatrixMode(GL.GL_MODELVIEW);
-		local5.glActiveTexture(GL.GL_TEXTURE0);
+		gl.glMatrixMode(GL.GL_TEXTURE);
+		gl.glLoadIdentity();
+		gl.glRotatef(-((float) Static6.anInt4403 * 360.0F) / 2048.0F, 0.0F, 1.0F, 0.0F);
+		gl.glRotatef(-((float) Static4.anInt3258 * 360.0F) / 2048.0F, 1.0F, 0.0F, 0.0F);
+		gl.glScalef(-1.0F, 1.0F, 1.0F);
+		gl.glMatrixMode(GL.GL_MODELVIEW);
+		gl.glActiveTexture(GL.GL_TEXTURE0);
 		this.aBoolean7 = true;
 	}
 
 	@OriginalMember(owner = "client!ae", name = "a", descriptor = "()V")
 	@Override
 	public final void unbind() {
-		@Pc(5) GL local5 = GlRenderer.gl;
+		@Pc(5) GL gl = GlRenderer.gl;
 		if (this.aBoolean7) {
-			local5.glCallList(this.anInt96 + 1);
+			gl.glCallList(this.anInt96 + 1);
 			this.aBoolean7 = false;
 		} else {
-			local5.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_SRC0_ALPHA, GL.GL_TEXTURE);
+			gl.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_SRC0_ALPHA, GL.GL_TEXTURE);
 		}
 	}
 

@@ -169,7 +169,7 @@ public final class ParticleSystem extends ParticleNode {
 		if (this.stopped || (!this.aBoolean252 || !GlRenderer.enabled)) {
 			return;
 		}
-		@Pc(11) GL local11 = GlRenderer.gl;
+		@Pc(11) GL gl = GlRenderer.gl;
 		@Pc(13) int local13 = Static7.anInt5281;
 		@Pc(15) int local15 = Static6.anInt4375;
 		@Pc(17) int local17 = Static6.anInt4400;
@@ -239,16 +239,16 @@ public final class ParticleSystem extends ParticleNode {
 			if (local313 > 64.0F) {
 				local313 = 64.0F;
 			}
-			local11.glPointSize((float) (local313 * GameShell.canvasScale));
-			this.method2955(local11, local79, local288, emitterNode.type.aBoolean167);
+			gl.glPointSize((float) (local313 * GameShell.canvasScale));
+			this.method2955(gl, local79, local288, emitterNode.type.aBoolean167);
 		}
 		Static26.method2962();
 	}
 
 	@OriginalMember(owner = "client!ne", name = "a", descriptor = "(Lgl!javax/media/opengl/GL;IZZ)V")
-	public final void method2955(@OriginalArg(0) GL arg0, @OriginalArg(1) int arg1, @OriginalArg(2) boolean arg2, @OriginalArg(3) boolean arg3) {
+	public final void method2955(@OriginalArg(0) GL gl, @OriginalArg(1) int arg1, @OriginalArg(2) boolean arg2, @OriginalArg(3) boolean arg3) {
 		if (!arg3 && Preferences.highDetailLighting) {
-			arg0.glDisable(GL.GL_LIGHTING);
+			gl.glDisable(GL.GL_LIGHTING);
 		}
 		Static5.aClass4_Sub10_7.position = 0;
 		if (GlRenderer.bigEndian) {
@@ -316,7 +316,7 @@ public final class ParticleSystem extends ParticleNode {
 		}
 		if (Static5.aClass4_Sub10_7.position != 0) {
 			if (GlRenderer.arbVboSupported) {
-				arg0.glBindBufferARB(GL.GL_ARRAY_BUFFER, 0);
+				gl.glBindBufferARB(GL.GL_ARRAY_BUFFER, 0);
 			}
 			if (Static5.aByteBuffer12 == null || Static5.aByteBuffer12.capacity() < Static5.aClass4_Sub10_7.position) {
 				Static5.aByteBuffer12 = ByteBuffer.allocateDirect(Static5.aClass4_Sub10_7.position).order(ByteOrder.nativeOrder());
@@ -326,13 +326,13 @@ public final class ParticleSystem extends ParticleNode {
 			Static5.aByteBuffer12.put(Static5.aClass4_Sub10_7.bytes, 0, Static5.aClass4_Sub10_7.position);
 			Static5.aByteBuffer12.flip();
 			Static5.aByteBuffer12.position(0);
-			arg0.glVertexPointer(3, GL.GL_FLOAT, 16, Static5.aByteBuffer12);
+			gl.glVertexPointer(3, GL.GL_FLOAT, 16, Static5.aByteBuffer12);
 			Static5.aByteBuffer12.position(12);
-			arg0.glColorPointer(4, GL.GL_UNSIGNED_BYTE, 16, Static5.aByteBuffer12);
-			arg0.glDrawArrays(GL.GL_POINTS, 0, Static5.aClass4_Sub10_7.position >> 4);
+			gl.glColorPointer(4, GL.GL_UNSIGNED_BYTE, 16, Static5.aByteBuffer12);
+			gl.glDrawArrays(GL.GL_POINTS, 0, Static5.aClass4_Sub10_7.position >> 4);
 		}
 		if (!arg3 && Preferences.highDetailLighting) {
-			arg0.glEnable(GL.GL_LIGHTING);
+			gl.glEnable(GL.GL_LIGHTING);
 		}
 	}
 

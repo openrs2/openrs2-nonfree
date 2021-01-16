@@ -98,7 +98,7 @@ public final class Class47 {
 
 	@OriginalMember(owner = "client!eh", name = "b", descriptor = "(IIIIIIII)V")
 	public final void method1025(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7) {
-		@Pc(1) GL local1 = GlRenderer.gl;
+		@Pc(1) GL gl = GlRenderer.gl;
 		this.method1029(arg4);
 		arg6 = arg6 + arg0 & 0x7FF;
 		@Pc(14) int local14 = arg1 + arg3;
@@ -122,17 +122,17 @@ public final class Class47 {
 			@Pc(71) float local71 = (float) arg5 / 512.0F;
 			@Pc(76) float local76 = (float) arg6 / -512.0F;
 			@Pc(86) float local86 = (float) (arg3 - arg4) / ((float) arg4 * 2.0F);
-			local1.glBegin(GL.GL_QUADS);
-			local1.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-			local1.glTexCoord2f(local76 - local86, local71);
-			local1.glVertex2i(arg1, arg2);
-			local1.glTexCoord2f(local76 - local86, local71 + 1.0F);
-			local1.glVertex2i(arg1, local18);
-			local1.glTexCoord2f(local86 + local76 + 1.0F, local71 + 1.0F);
-			local1.glVertex2i(local14, local18);
-			local1.glTexCoord2f(local86 + local76 + 1.0F, local71);
-			local1.glVertex2i(local14, arg2);
-			local1.glEnd();
+			gl.glBegin(GL.GL_QUADS);
+			gl.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
+			gl.glTexCoord2f(local76 - local86, local71);
+			gl.glVertex2i(arg1, arg2);
+			gl.glTexCoord2f(local76 - local86, local71 + 1.0F);
+			gl.glVertex2i(arg1, local18);
+			gl.glTexCoord2f(local86 + local76 + 1.0F, local71 + 1.0F);
+			gl.glVertex2i(local14, local18);
+			gl.glTexCoord2f(local86 + local76 + 1.0F, local71);
+			gl.glVertex2i(local14, arg2);
+			gl.glEnd();
 		}
 		for (@Pc(155) int local155 = this.anInt1247 - 1; local155 >= 0; local155--) {
 			this.aClass105Array2[local155].method2292(arg1, arg2, arg3, arg4, arg5, arg6);

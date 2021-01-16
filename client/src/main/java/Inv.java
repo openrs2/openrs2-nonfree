@@ -6,6 +6,12 @@ import org.openrs2.deob.annotation.Pc;
 @OriginalClass("client!nd")
 public final class Inv extends Node {
 
+	@OriginalMember(owner = "client!wd", name = "yb", descriptor = "[I")
+	public static final int[] updatedInventories = new int[32];
+
+	@OriginalMember(owner = "client!df", name = "h", descriptor = "I")
+	public static int updatedInventoriesWriterIndex = 0;
+
 	@OriginalMember(owner = "client!nj", name = "i", descriptor = "Lclient!ic;")
 	private static HashTable inventories = new HashTable(32);
 

@@ -261,44 +261,6 @@ public final class Static15 {
 		return Static2.aClass26_12.size();
 	}
 
-	@OriginalMember(owner = "client!fc", name = "a", descriptor = "(IJ)V")
-	public static void method1229(@OriginalArg(1) long arg0) {
-		if (arg0 == 0L) {
-			return;
-		}
-		if (Static6.anInt5214 >= 100 && !LoginManager.playerMember || Static6.anInt5214 >= 200) {
-			Static26.method4357("", 0, LocalisedText.FRIENDLISTFULL);
-			return;
-		}
-		@Pc(35) String local35 = Base37.decodeTitleCase(arg0);
-		for (@Pc(37) int local37 = 0; local37 < Static6.anInt5214; local37++) {
-			if (arg0 == Static7.aLongArray54[local37]) {
-				Static26.method4357("", 0, local35 + LocalisedText.FRIENDLISTDUPE);
-				return;
-			}
-		}
-		for (@Pc(69) int local69 = 0; local69 < Static6.anInt4516; local69++) {
-			if (arg0 == Static3.aLongArray16[local69]) {
-				Static26.method4357("", 0, LocalisedText.REMOVEIGNORE1 + local35 + LocalisedText.REMOVEIGNORE2);
-				return;
-			}
-		}
-		if (local35.equals(PlayerList.self.name)) {
-			Static26.method4357("", 0, LocalisedText.FRIENDCANTADDSELF);
-			return;
-		}
-		Static4.aStringArray23[Static6.anInt5214] = local35;
-		Static7.aLongArray54[Static6.anInt5214] = arg0;
-		Static4.anIntArray293[Static6.anInt5214] = 0;
-		Static4.aStringArray22[Static6.anInt5214] = "";
-		Static6.anIntArray517[Static6.anInt5214] = 0;
-		Static2.aBooleanArray7[Static6.anInt5214] = false;
-		Static6.anInt5214++;
-		Static3.anInt2102 = Static6.anInt4979;
-		Protocol.outboundBuffer.writeOpcode(26);
-		Protocol.outboundBuffer.writeLong(arg0);
-	}
-
 	@OriginalMember(owner = "client!fd", name = "a", descriptor = "(IIIILclient!vh;BIII)V")
 	public static void method4592(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) LocType arg4, @OriginalArg(6) int arg5, @OriginalArg(7) int arg6, @OriginalArg(8) int arg7) {
 		@Pc(9) int local9 = arg2 & 0x3;
@@ -356,8 +318,8 @@ public final class Static15 {
 	@OriginalMember(owner = "client!ff", name = "a", descriptor = "(Lclient!tf;B)V")
 	public static void method1324(@OriginalArg(0) Class4_Sub6 arg0) {
 		arg0.aBoolean289 = false;
-		if (arg0.aClass4_Sub8_5 != null) {
-			arg0.aClass4_Sub8_5.position = 0;
+		if (arg0.sound != null) {
+			arg0.sound.position = 0;
 		}
 		for (@Pc(25) Class4_Sub6 local25 = arg0.method3350(); local25 != null; local25 = arg0.method3349()) {
 			method1324(local25);
@@ -448,7 +410,7 @@ public final class Static15 {
 						Static4.anInt2989 = local160;
 						Static6.aClass185_13 = arg0;
 						if (arg0.objTypes[local160] > 0) {
-							@Pc(257) ServerActiveProperties local257 = Static12.method687(arg0);
+							@Pc(257) ServerActiveProperties local257 = InterfaceList.getServerActiveProperties(arg0);
 							@Pc(266) ObjType local266 = ObjTypeList.get(arg0.objTypes[local160] - 1);
 							if (Static2.anInt1334 == 1 && local257.isObjOpsEnabled()) {
 								if (Static5.anInt4302 != arg0.id || Static1.anInt314 != local160) {
@@ -552,14 +514,14 @@ public final class Static15 {
 					Static16.method1497((long) (local767 + 1), arg0.anInt5968, arg0.id, arg0.aString352, local774, (short) 23, Static32.method3985(arg0, local767));
 				}
 			}
-			if (Static12.method687(arg0).isResumePauseButtonEnabled()) {
+			if (InterfaceList.getServerActiveProperties(arg0).isResumePauseButtonEnabled()) {
 				if (arg0.aString354 == null) {
 					Static16.method1497(0L, arg0.anInt5968, arg0.id, "", LocalisedText.CONTINUE, (short) 3, -1);
 				} else {
 					Static16.method1497(0L, arg0.anInt5968, arg0.id, "", arg0.aString354, (short) 3, -1);
 				}
 			}
-		} else if (Static12.method687(arg0).isUseTarget() && (Static5.anInt3560 & 0x20) != 0) {
+		} else if (InterfaceList.getServerActiveProperties(arg0).isUseTarget() && (Static5.anInt3560 & 0x20) != 0) {
 			Static16.method1497(0L, arg0.anInt5968, arg0.id, Static2.aString81 + " -> " + arg0.aString352, Static4.aString140, (short) 1, Static6.anInt4466);
 		}
 	}
@@ -573,22 +535,22 @@ public final class Static15 {
 		} else {
 			Static24.method2705(arg1);
 		}
-		if (arg1.x < 128 || arg1.z < 128 || arg1.x >= 13184 || arg1.z >= 13184) {
+		if (arg1.xFine < 128 || arg1.zFine < 128 || arg1.xFine >= 13184 || arg1.zFine >= 13184) {
 			arg1.anInt3966 = 0;
 			arg1.anInt4034 = 0;
-			arg1.anInt3961 = -1;
-			arg1.anInt4007 = -1;
-			arg1.x = arg1.anIntArray422[0] * 128 + arg1.getSize() * 64;
-			arg1.z = arg1.anIntArray426[0] * 128 + arg1.getSize() * 64;
+			arg1.spotAnimId = -1;
+			arg1.seqId = -1;
+			arg1.xFine = arg1.movementQueueX[0] * 128 + arg1.getSize() * 64;
+			arg1.zFine = arg1.movementQueueZ[0] * 128 + arg1.getSize() * 64;
 			arg1.method3307();
 		}
-		if (PlayerList.self == arg1 && (arg1.x < 1536 || arg1.z < 1536 || arg1.x >= 11776 || arg1.z >= 11776)) {
-			arg1.anInt3961 = -1;
+		if (PlayerList.self == arg1 && (arg1.xFine < 1536 || arg1.zFine < 1536 || arg1.xFine >= 11776 || arg1.zFine >= 11776)) {
+			arg1.spotAnimId = -1;
 			arg1.anInt3966 = 0;
 			arg1.anInt4034 = 0;
-			arg1.anInt4007 = -1;
-			arg1.x = arg1.anIntArray422[0] * 128 + arg1.getSize() * 64;
-			arg1.z = arg1.anIntArray426[0] * 128 + arg1.getSize() * 64;
+			arg1.seqId = -1;
+			arg1.xFine = arg1.movementQueueX[0] * 128 + arg1.getSize() * 64;
+			arg1.zFine = arg1.movementQueueZ[0] * 128 + arg1.getSize() * 64;
 			arg1.method3307();
 		}
 		Static34.method4247(arg1);
@@ -721,8 +683,8 @@ public final class Static15 {
 	@OriginalMember(owner = "client!fm", name = "a", descriptor = "(B)V")
 	public static void method1480() {
 		Static3.anInt5405 = 0;
-		@Pc(13) int local13 = (PlayerList.self.x >> 7) + Static5.originX;
-		@Pc(20) int local20 = Static7.originZ + (PlayerList.self.z >> 7);
+		@Pc(13) int local13 = (PlayerList.self.xFine >> 7) + Static5.originX;
+		@Pc(20) int local20 = Static7.originZ + (PlayerList.self.zFine >> 7);
 		if (local13 >= 3053 && local13 <= 3156 && local20 >= 3056 && local20 <= 3136) {
 			Static3.anInt5405 = 1;
 		}

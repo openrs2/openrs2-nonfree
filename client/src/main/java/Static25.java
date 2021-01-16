@@ -175,8 +175,8 @@ public final class Static25 {
 		if (arg0 == null) {
 			arg0 = Static4.aFloatArray39;
 		}
-		@Pc(5) GL local5 = GlRenderer.gl;
-		local5.glFogfv(GL.GL_FOG_COLOR, arg0, 0);
+		@Pc(5) GL gl = GlRenderer.gl;
+		gl.glFogfv(GL.GL_FOG_COLOR, arg0, 0);
 	}
 
 	@OriginalMember(owner = "client!mn", name = "a", descriptor = "()F")
@@ -213,9 +213,9 @@ public final class Static25 {
 
 	@OriginalMember(owner = "client!mn", name = "d", descriptor = "()V")
 	public static void method2777() {
-		@Pc(1) GL local1 = GlRenderer.gl;
-		local1.glLightfv(GL.GL_LIGHT0, GL.GL_POSITION, Static4.aFloatArray40, 0);
-		local1.glLightfv(GL.GL_LIGHT1, GL.GL_POSITION, Static4.aFloatArray41, 0);
+		@Pc(1) GL gl = GlRenderer.gl;
+		gl.glLightfv(GL.GL_LIGHT0, GL.GL_POSITION, Static4.aFloatArray40, 0);
+		gl.glLightfv(GL.GL_LIGHT1, GL.GL_POSITION, Static4.aFloatArray41, 0);
 	}
 
 	@OriginalMember(owner = "client!mn", name = "e", descriptor = "()I")
@@ -225,15 +225,15 @@ public final class Static25 {
 
 	@OriginalMember(owner = "client!mn", name = "f", descriptor = "()V")
 	public static void method2779() {
-		@Pc(1) GL local1 = GlRenderer.gl;
-		local1.glColorMaterial(GL.GL_FRONT, GL.GL_AMBIENT_AND_DIFFUSE);
-		local1.glEnable(GL.GL_COLOR_MATERIAL);
+		@Pc(1) GL gl = GlRenderer.gl;
+		gl.glColorMaterial(GL.GL_FRONT, GL.GL_AMBIENT_AND_DIFFUSE);
+		gl.glEnable(GL.GL_COLOR_MATERIAL);
 		@Pc(27) float[] local27 = new float[] { 0.0F, 0.0F, 0.0F, 1.0F };
-		local1.glLightfv(GL.GL_LIGHT0, GL.GL_AMBIENT, local27, 0);
-		local1.glEnable(GL.GL_LIGHT0);
+		gl.glLightfv(GL.GL_LIGHT0, GL.GL_AMBIENT, local27, 0);
+		gl.glEnable(GL.GL_LIGHT0);
 		@Pc(55) float[] local55 = new float[] { 0.0F, 0.0F, 0.0F, 1.0F };
-		local1.glLightfv(GL.GL_LIGHT1, GL.GL_AMBIENT, local55, 0);
-		local1.glEnable(GL.GL_LIGHT1);
+		gl.glLightfv(GL.GL_LIGHT1, GL.GL_AMBIENT, local55, 0);
+		gl.glEnable(GL.GL_LIGHT1);
 		Static4.anInt3361 = -1;
 		Static4.anInt3367 = -1;
 		method2774();
@@ -246,20 +246,20 @@ public final class Static25 {
 		}
 		Static4.anInt3367 = arg0;
 		Static4.anInt3362 = arg1;
-		@Pc(14) GL local14 = GlRenderer.gl;
+		@Pc(14) GL gl = GlRenderer.gl;
 		Static4.aFloatArray39[0] = (float) (arg0 >> 16 & 0xFF) / 255.0F;
 		Static4.aFloatArray39[1] = (float) (arg0 >> 8 & 0xFF) / 255.0F;
 		Static4.aFloatArray39[2] = (float) (arg0 & 0xFF) / 255.0F;
-		local14.glFogi(GL.GL_FOG_MODE, GL.GL_LINEAR);
-		local14.glFogf(GL.GL_FOG_DENSITY, 0.95F);
-		local14.glHint(GL.GL_FOG_HINT, GL.GL_FASTEST);
+		gl.glFogi(GL.GL_FOG_MODE, GL.GL_LINEAR);
+		gl.glFogf(GL.GL_FOG_DENSITY, 0.95F);
+		gl.glHint(GL.GL_FOG_HINT, GL.GL_FASTEST);
 		@Pc(67) int local67 = 3072 - arg1;
 		if (local67 < 50) {
 			local67 = 50;
 		}
-		local14.glFogf(GL.GL_FOG_START, (float) local67);
-		local14.glFogf(GL.GL_FOG_END, (float) 3328);
-		local14.glFogfv(GL.GL_FOG_COLOR, Static4.aFloatArray39, 0);
+		gl.glFogf(GL.GL_FOG_START, (float) local67);
+		gl.glFogf(GL.GL_FOG_END, (float) 3328);
+		gl.glFogfv(GL.GL_FOG_COLOR, Static4.aFloatArray39, 0);
 	}
 
 	@OriginalMember(owner = "client!mn", name = "a", descriptor = "(IFFF)V")
@@ -271,16 +271,16 @@ public final class Static25 {
 		Static4.aFloat82 = arg1;
 		Static4.aFloat81 = arg2;
 		Static4.aFloat80 = arg3;
-		@Pc(25) GL local25 = GlRenderer.gl;
+		@Pc(25) GL gl = GlRenderer.gl;
 		@Pc(34) float local34 = (float) (arg0 >> 16 & 0xFF) / 255.0F;
 		@Pc(43) float local43 = (float) (arg0 >> 8 & 0xFF) / 255.0F;
 		@Pc(50) float local50 = (float) (arg0 & 0xFF) / 255.0F;
 		@Pc(75) float[] local75 = new float[] { arg1 * local34, arg1 * local43, arg1 * local50, 1.0F };
-		local25.glLightModelfv(GL.GL_LIGHT_MODEL_AMBIENT, local75, 0);
+		gl.glLightModelfv(GL.GL_LIGHT_MODEL_AMBIENT, local75, 0);
 		@Pc(105) float[] local105 = new float[] { arg2 * local34, arg2 * local43, arg2 * local50, 1.0F };
-		local25.glLightfv(GL.GL_LIGHT0, GL.GL_DIFFUSE, local105, 0);
+		gl.glLightfv(GL.GL_LIGHT0, GL.GL_DIFFUSE, local105, 0);
 		@Pc(139) float[] local139 = new float[] { -arg3 * local34, -arg3 * local43, -arg3 * local50, 1.0F };
-		local25.glLightfv(GL.GL_LIGHT1, GL.GL_DIFFUSE, local139, 0);
+		gl.glLightfv(GL.GL_LIGHT1, GL.GL_DIFFUSE, local139, 0);
 	}
 
 	@OriginalMember(owner = "client!mo", name = "a", descriptor = "(Z)V")
@@ -507,37 +507,23 @@ public final class Static25 {
 		Static5.anInt4329 = 0;
 		Protocol.length = 0;
 		Static8.method115();
-		for (@Pc(33) int local33 = 0; local33 < PlayerList.players.length; local33++) {
-			if (PlayerList.players[local33] != null) {
-				PlayerList.players[local33].anInt3985 = -1;
+		for (@Pc(33) int i = 0; i < PlayerList.players.length; i++) {
+			if (PlayerList.players[i] != null) {
+				PlayerList.players[i].anInt3985 = -1;
 			}
 		}
-		for (@Pc(52) int local52 = 0; local52 < NpcList.npcs.length; local52++) {
-			if (NpcList.npcs[local52] != null) {
-				NpcList.npcs[local52].anInt3985 = -1;
+		for (@Pc(52) int i = 0; i < NpcList.npcs.length; i++) {
+			if (NpcList.npcs[i] != null) {
+				NpcList.npcs[i].anInt3985 = -1;
 			}
 		}
 		Inv.deleteAll();
 		Static1.anInt772 = 1;
 		Static9.method233(30);
-		for (@Pc(82) int local82 = 0; local82 < 100; local82++) {
-			Static2.aBooleanArray8[local82] = true;
+		for (@Pc(82) int i = 0; i < 100; i++) {
+			Static2.aBooleanArray8[i] = true;
 		}
 		Static21.method2001();
-	}
-
-	@OriginalMember(owner = "client!nb", name = "a", descriptor = "(BLclient!p;)V")
-	public static void method2931(@OriginalArg(1) Npc arg0) {
-		for (@Pc(14) Class4_Sub11 local14 = (Class4_Sub11) Static2.aClass112_9.head(); local14 != null; local14 = (Class4_Sub11) Static2.aClass112_9.next()) {
-			if (arg0 == local14.aClass53_Sub1_Sub2_1) {
-				if (local14.aClass4_Sub6_Sub4_3 != null) {
-					Static5.aClass4_Sub6_Sub3_2.method2670(local14.aClass4_Sub6_Sub4_3);
-					local14.aClass4_Sub6_Sub4_3 = null;
-				}
-				local14.unlink();
-				return;
-			}
-		}
 	}
 
 }

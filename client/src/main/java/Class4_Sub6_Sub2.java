@@ -281,9 +281,9 @@ public final class Class4_Sub6_Sub2 extends Class4_Sub6 {
 		local130.anInt1288 = -1;
 		local130.anInt1304 = 0;
 		if (this.anIntArray279[arg1] == 0) {
-			local130.aClass4_Sub6_Sub4_1 = Static28.method3384(local121, this.method2503(local130), this.method2476(local130), this.method2480(local130));
+			local130.aClass4_Sub6_Sub4_1 = Class4_Sub6_Sub4.create(local121, this.method2503(local130), this.method2476(local130), this.method2480(local130));
 		} else {
-			local130.aClass4_Sub6_Sub4_1 = Static28.method3384(local121, this.method2503(local130), 0, this.method2480(local130));
+			local130.aClass4_Sub6_Sub4_1 = Class4_Sub6_Sub4.create(local121, this.method2503(local130), 0, this.method2480(local130));
 			this.method2502(local130, local112.aShortArray80[arg2] < 0);
 		}
 		if (local112.aShortArray80[arg2] < 0) {

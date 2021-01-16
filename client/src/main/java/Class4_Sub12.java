@@ -219,7 +219,7 @@ public final class Class4_Sub12 extends Node {
 		if (Static3.aClass4_Sub10_4.position == 0 && Static3.aClass4_Sub10_5.position == 0) {
 			return;
 		}
-		@Pc(257) GL local257 = GlRenderer.gl;
+		@Pc(257) GL gl = GlRenderer.gl;
 		if (this.anInt2356 == -1 || arg2) {
 			GlRenderer.setTextureId(-1);
 			MaterialManager.setMaterial(0, 0);
@@ -229,40 +229,40 @@ public final class Class4_Sub12 extends Node {
 		@Pc(282) int local282 = this.aBoolean161 ? 40 : 36;
 		if (this.aClass111_2 == null) {
 			if (GlRenderer.arbVboSupported) {
-				local257.glBindBufferARB(GL.GL_ARRAY_BUFFER, 0);
+				gl.glBindBufferARB(GL.GL_ARRAY_BUFFER, 0);
 			}
 			this.aByteBuffer6.position(0);
-			local257.glVertexPointer(3, GL.GL_FLOAT, local282, this.aByteBuffer6);
+			gl.glVertexPointer(3, GL.GL_FLOAT, local282, this.aByteBuffer6);
 			this.aByteBuffer6.position(12);
-			local257.glColorPointer(4, GL.GL_UNSIGNED_BYTE, local282, this.aByteBuffer6);
+			gl.glColorPointer(4, GL.GL_UNSIGNED_BYTE, local282, this.aByteBuffer6);
 			if (Preferences.highDetailLighting) {
 				this.aByteBuffer6.position(16);
-				local257.glNormalPointer(GL.GL_FLOAT, local282, this.aByteBuffer6);
+				gl.glNormalPointer(GL.GL_FLOAT, local282, this.aByteBuffer6);
 			}
 			this.aByteBuffer6.position(28);
-			local257.glTexCoordPointer(2, GL.GL_FLOAT, local282, this.aByteBuffer6);
+			gl.glTexCoordPointer(2, GL.GL_FLOAT, local282, this.aByteBuffer6);
 			if (this.aBoolean161) {
-				local257.glClientActiveTexture(Static10.method315());
+				gl.glClientActiveTexture(Static10.method315());
 				this.aByteBuffer6.position(36);
-				local257.glTexCoordPointer(1, GL.GL_FLOAT, local282, this.aByteBuffer6);
-				local257.glClientActiveTexture(GL.GL_TEXTURE0);
+				gl.glTexCoordPointer(1, GL.GL_FLOAT, local282, this.aByteBuffer6);
+				gl.glClientActiveTexture(GL.GL_TEXTURE0);
 			}
 		} else {
 			this.aClass111_2.bindArray();
-			local257.glVertexPointer(3, GL.GL_FLOAT, local282, 0L);
-			local257.glColorPointer(4, GL.GL_UNSIGNED_BYTE, local282, 12L);
+			gl.glVertexPointer(3, GL.GL_FLOAT, local282, 0L);
+			gl.glColorPointer(4, GL.GL_UNSIGNED_BYTE, local282, 12L);
 			if (Preferences.highDetailLighting) {
-				local257.glNormalPointer(GL.GL_FLOAT, local282, 16L);
+				gl.glNormalPointer(GL.GL_FLOAT, local282, 16L);
 			}
-			local257.glTexCoordPointer(2, GL.GL_FLOAT, local282, 28L);
+			gl.glTexCoordPointer(2, GL.GL_FLOAT, local282, 28L);
 			if (this.aBoolean161) {
-				local257.glClientActiveTexture(Static10.method315());
-				local257.glTexCoordPointer(1, GL.GL_FLOAT, local282, 36L);
-				local257.glClientActiveTexture(GL.GL_TEXTURE0);
+				gl.glClientActiveTexture(Static10.method315());
+				gl.glTexCoordPointer(1, GL.GL_FLOAT, local282, 36L);
+				gl.glClientActiveTexture(GL.GL_TEXTURE0);
 			}
 		}
 		if (GlRenderer.arbVboSupported) {
-			local257.glBindBufferARB(GL.GL_ELEMENT_ARRAY_BUFFER, 0);
+			gl.glBindBufferARB(GL.GL_ELEMENT_ARRAY_BUFFER, 0);
 		}
 		if (Static3.aClass4_Sub10_4.position != 0) {
 			if (Static3.aByteBuffer5 == null || Static3.aByteBuffer5.capacity() < Static3.aClass4_Sub10_4.position) {
@@ -273,7 +273,7 @@ public final class Class4_Sub12 extends Node {
 			Static3.aByteBuffer5.put(Static3.aClass4_Sub10_4.bytes, 0, Static3.aClass4_Sub10_4.position);
 			Static3.aByteBuffer5.flip();
 			GlRenderer.method1613(arg1);
-			local257.glDrawElements(GL.GL_TRIANGLES, Static3.aClass4_Sub10_4.position / 4, GL.GL_UNSIGNED_INT, Static3.aByteBuffer5);
+			gl.glDrawElements(GL.GL_TRIANGLES, Static3.aClass4_Sub10_4.position / 4, GL.GL_UNSIGNED_INT, Static3.aByteBuffer5);
 		}
 		if (Static3.aClass4_Sub10_5.position == 0) {
 			return;
@@ -287,7 +287,7 @@ public final class Class4_Sub12 extends Node {
 		Static3.aByteBuffer4.flip();
 		GlRenderer.method1613(arg1 - 100.0F);
 		GlRenderer.disableDepthMask();
-		local257.glDrawElements(GL.GL_TRIANGLES, Static3.aClass4_Sub10_5.position / 4, GL.GL_UNSIGNED_INT, Static3.aByteBuffer4);
+		gl.glDrawElements(GL.GL_TRIANGLES, Static3.aClass4_Sub10_5.position / 4, GL.GL_UNSIGNED_INT, Static3.aByteBuffer4);
 		GlRenderer.enableDepthMask();
 	}
 

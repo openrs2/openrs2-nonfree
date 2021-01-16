@@ -10,10 +10,10 @@ public final class ChangeLocRequest extends Node {
 	public static LinkedList queue = new LinkedList();
 
 	@OriginalMember(owner = "client!ee", name = "a", descriptor = "(IIIIIIBIII)V")
-	public static void push(@OriginalArg(0) int id, @OriginalArg(3) int x, @OriginalArg(1) int y, @OriginalArg(5) int z, @OriginalArg(2) int angle, @OriginalArg(7) int shape, @OriginalArg(8) int layer, @OriginalArg(9) int setLoops, @OriginalArg(4) int resetLoops) {
+	public static void push(@OriginalArg(0) int id, @OriginalArg(3) int x, @OriginalArg(1) int level, @OriginalArg(5) int z, @OriginalArg(2) int angle, @OriginalArg(7) int shape, @OriginalArg(8) int layer, @OriginalArg(9) int setLoops, @OriginalArg(4) int resetLoops) {
 		@Pc(5) ChangeLocRequest loc = null;
 		for (@Pc(10) ChangeLocRequest l = (ChangeLocRequest) queue.head(); l != null; l = (ChangeLocRequest) queue.next()) {
-			if (y == l.y && x == l.x && l.z == z && layer == l.layer) {
+			if (level == l.level && x == l.x && l.z == z && layer == l.layer) {
 				loc = l;
 				break;
 			}
@@ -21,7 +21,7 @@ public final class ChangeLocRequest extends Node {
 		if (loc == null) {
 			loc = new ChangeLocRequest();
 			loc.z = z;
-			loc.y = y;
+			loc.level = level;
 			loc.layer = layer;
 			loc.x = x;
 			init(loc);
@@ -45,7 +45,7 @@ public final class ChangeLocRequest extends Node {
 					loc.setLoops--;
 				}
 				if (loc.setLoops == 0 && loc.x >= 1 && loc.z >= 1 && loc.x <= 102 && loc.z <= 102 && (loc.id < 0 || isShapeReady(loc.id, loc.shape))) {
-					Static12.method736(loc.y, loc.angle, loc.z, loc.layer, loc.id, loc.x, loc.shape);
+					Static12.method736(loc.level, loc.angle, loc.z, loc.layer, loc.id, loc.x, loc.shape);
 					loc.setLoops = -1;
 					if (loc.id == loc.originalId && loc.originalId == -1) {
 						loc.unlink();
@@ -54,7 +54,7 @@ public final class ChangeLocRequest extends Node {
 					}
 				}
 			} else if (loc.originalId < 0 || isShapeReady(loc.originalId, loc.originalShape)) {
-				Static12.method736(loc.y, loc.originalAngle, loc.z, loc.layer, loc.originalId, loc.x, loc.originalShape);
+				Static12.method736(loc.level, loc.originalAngle, loc.z, loc.layer, loc.originalId, loc.x, loc.originalShape);
 				loc.unlink();
 			}
 		}
@@ -88,24 +88,24 @@ public final class ChangeLocRequest extends Node {
 	private static void init(@OriginalArg(0) ChangeLocRequest loc) {
 		@Pc(5) int originalId = -1;
 		@Pc(7) int originalShape = 0;
-		@Pc(9) long pickKey = 0L;
+		@Pc(9) long key = 0L;
 		if (loc.layer == 0) {
-			pickKey = SceneGraph.getWallPickKey(loc.y, loc.x, loc.z);
+			key = SceneGraph.getWallKey(loc.level, loc.x, loc.z);
 		}
 		if (loc.layer == 1) {
-			pickKey = SceneGraph.getWallDecorPickKey(loc.y, loc.x, loc.z);
+			key = SceneGraph.getWallDecorKey(loc.level, loc.x, loc.z);
 		}
 		@Pc(45) int originalAngle = 0;
 		if (loc.layer == 2) {
-			pickKey = SceneGraph.getSceneryPickKey(loc.y, loc.x, loc.z);
+			key = SceneGraph.getSceneryKey(loc.level, loc.x, loc.z);
 		}
 		if (loc.layer == 3) {
-			pickKey = SceneGraph.getGroundDecorPickKey(loc.y, loc.x, loc.z);
+			key = SceneGraph.getGroundDecorKey(loc.level, loc.x, loc.z);
 		}
-		if (pickKey != 0L) {
-			originalShape = (int) pickKey >> 14 & 0x1F;
-			originalAngle = (int) pickKey >> 20 & 0x3;
-			originalId = Integer.MAX_VALUE & (int) (pickKey >>> 32);
+		if (key != 0L) {
+			originalShape = (int) key >> 14 & 0x1F;
+			originalAngle = (int) key >> 20 & 0x3;
+			originalId = Integer.MAX_VALUE & (int) (key >>> 32);
 		}
 		loc.originalAngle = originalAngle;
 		loc.originalShape = originalShape;
@@ -122,7 +122,7 @@ public final class ChangeLocRequest extends Node {
 	private int layer;
 
 	@OriginalMember(owner = "client!ra", name = "u", descriptor = "I")
-	public int y;
+	public int level;
 
 	@OriginalMember(owner = "client!ra", name = "v", descriptor = "I")
 	private int originalId;
@@ -134,10 +134,10 @@ public final class ChangeLocRequest extends Node {
 	public int shape;
 
 	@OriginalMember(owner = "client!ra", name = "A", descriptor = "I")
-	public int originalShape;
+	private int originalShape;
 
 	@OriginalMember(owner = "client!ra", name = "B", descriptor = "I")
-	public int originalAngle;
+	private int originalAngle;
 
 	@OriginalMember(owner = "client!ra", name = "D", descriptor = "I")
 	public int x;

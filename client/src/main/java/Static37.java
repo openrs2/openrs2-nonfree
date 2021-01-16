@@ -86,11 +86,11 @@ public final class Static37 {
 	public static void method4710(@OriginalArg(1) boolean arg0) {
 		@Pc(11) byte[][] local11;
 		if (GlRenderer.enabled && arg0) {
-			local11 = Static1.aByteArrayArray3;
+			local11 = Static1.underwaterLocBytes;
 		} else {
-			local11 = Static5.aByteArrayArray31;
+			local11 = Static5.locBytes;
 		}
-		@Pc(29) int local29 = Static1.aByteArrayArray4.length;
+		@Pc(29) int local29 = Static1.mapBytes.length;
 		for (@Pc(31) int local31 = 0; local31 < local29; local31++) {
 			@Pc(42) byte[] local42 = local11[local31];
 			if (local42 != null) {
@@ -123,7 +123,7 @@ public final class Static37 {
 			}
 			if (entity != null) {
 				@Pc(69) LocType type = LocTypeList.get(local16.locId);
-				if (Static7.y < 3) {
+				if (Player.level < 3) {
 				}
 				@Pc(88) int width;
 				@Pc(85) int length;
@@ -138,33 +138,33 @@ public final class Static37 {
 				@Pc(112) int local112 = local16.x + (width >> 1);
 				@Pc(120) int local120 = local16.z + (length >> 1);
 				@Pc(130) int local130 = local16.z + (length + 1 >> 1);
-				@Pc(134) int[][] local134 = SceneGraph.tileHeights[Static7.y];
+				@Pc(134) int[][] local134 = SceneGraph.tileHeights[Player.level];
 				@Pc(161) int local161 = local134[local105][local120] + local134[local112][local120] + local134[local112][local130] + local134[local105][local130] >> 2;
 				@Pc(163) Entity local163 = null;
 				@Pc(168) int layer = Loc.LAYERS[local16.shape];
 				if (layer == 0) {
-					@Pc(234) Wall wall = SceneGraph.getWall(Static7.y, local16.x, local16.z);
+					@Pc(234) Wall wall = SceneGraph.getWall(Player.level, local16.x, local16.z);
 					if (wall != null) {
-						local163 = wall.aClass53_5;
+						local163 = wall.primary;
 					}
 				} else if (layer == 1) {
-					@Pc(219) WallDecor wallDecor = SceneGraph.getWallDecor(Static7.y, local16.x, local16.z);
+					@Pc(219) WallDecor wallDecor = SceneGraph.getWallDecor(Player.level, local16.x, local16.z);
 					if (wallDecor != null) {
-						local163 = wallDecor.aClass53_10;
+						local163 = wallDecor.primary;
 					}
 				} else if (layer == 2) {
-					@Pc(205) Scenery scenery = SceneGraph.getScenery(Static7.y, local16.x, local16.z);
+					@Pc(205) Scenery scenery = SceneGraph.getScenery(Player.level, local16.x, local16.z);
 					if (scenery != null) {
-						local163 = scenery.aClass53_1;
+						local163 = scenery.entity;
 					}
 				} else if (layer == 3) {
-					@Pc(192) GroundDecor groundDecor = SceneGraph.getGroundDecor(Static7.y, local16.x, local16.z);
+					@Pc(192) GroundDecor groundDecor = SceneGraph.getGroundDecor(Player.level, local16.x, local16.z);
 					if (groundDecor != null) {
-						local163 = groundDecor.aClass53_2;
+						local163 = groundDecor.entity;
 					}
 				}
 				if (local163 != null) {
-					ChangeLocRequest.push(-1, local16.x, Static7.y, local16.z, 0, 0, layer, local16.anInt4997 + 1, local16.anInt4999 + 1);
+					ChangeLocRequest.push(-1, local16.x, Player.level, local16.z, 0, 0, layer, local16.anInt4997 + 1, local16.anInt4999 + 1);
 					entity.anInt4027 = local16.z * 128 + length * 64;
 					@Pc(274) int local274 = local16.anInt4994;
 					@Pc(277) int local277 = local16.anInt4995;
@@ -213,9 +213,9 @@ public final class Static37 {
 			GlRenderer.swapBuffers();
 		} else {
 			try {
-				@Pc(169) Graphics local169 = GameShell.canvas.getGraphics();
-				client.frameBuffer.draw(local169);
-			} catch (@Pc(177) Exception local177) {
+				@Pc(169) Graphics graphics = GameShell.canvas.getGraphics();
+				client.frameBuffer.draw(graphics);
+			} catch (@Pc(177) Exception ex) {
 				GameShell.canvas.repaint();
 			}
 		}
@@ -229,28 +229,28 @@ public final class Static37 {
 	}
 
 	@OriginalMember(owner = "client!we", name = "a", descriptor = "(ILjava/lang/String;Z)V")
-	public static void method4719(@OriginalArg(1) String arg0, @OriginalArg(2) boolean arg1) {
-		if (!arg1) {
+	public static void openUrl(@OriginalArg(1) String url, @OriginalArg(2) boolean newTab) {
+		if (!newTab) {
 			try {
 				BrowserControl.call(GameShell.signLink.applet, "loggedout");
-			} catch (@Pc(51) Throwable local51) {
+			} catch (@Pc(51) Throwable ex) {
 			}
 			try {
-				GameShell.instance.getAppletContext().showDocument(new URL(GameShell.instance.getCodeBase(), arg0), "_top");
-			} catch (@Pc(63) Exception local63) {
+				GameShell.instance.getAppletContext().showDocument(new URL(GameShell.instance.getCodeBase(), url), "_top");
+			} catch (@Pc(63) Exception ex) {
 			}
 			return;
 		}
 		if (GlRenderer.enabled && GameShell.openWindowJavaScript) {
 			try {
-				BrowserControl.call(GameShell.signLink.applet, "openjs", new Object[] { (new URL(GameShell.instance.getCodeBase(), arg0)).toString() });
+				BrowserControl.call(GameShell.signLink.applet, "openjs", new Object[] { (new URL(GameShell.instance.getCodeBase(), url)).toString() });
 				return;
-			} catch (@Pc(29) Throwable local29) {
+			} catch (@Pc(29) Throwable ex) {
 			}
 		}
 		try {
-			GameShell.instance.getAppletContext().showDocument(new URL(GameShell.instance.getCodeBase(), arg0), "_blank");
-		} catch (@Pc(41) Exception local41) {
+			GameShell.instance.getAppletContext().showDocument(new URL(GameShell.instance.getCodeBase(), url), "_blank");
+		} catch (@Pc(41) Exception ex) {
 		}
 	}
 
@@ -266,7 +266,7 @@ public final class Static37 {
 				Static1.aByteArrayArrayArray2[local29][local27][local34] = local19;
 			}
 		}
-		if (Static7.y == 3) {
+		if (Player.level == 3) {
 			return;
 		}
 		for (@Pc(59) int local59 = 0; local59 < 2; local59++) {
@@ -277,28 +277,28 @@ public final class Static37 {
 			Static6.anIntArray489[local59] = 0;
 		}
 		if (Static1.anInt772 != 1) {
-			@Pc(94) int local94 = Static11.method522(Static7.anInt5678, Static3.anInt2519, Static7.y);
-			if (local94 - Static2.anInt1931 < 800 && (Static4.tileFlags[Static7.y][Static3.anInt2519 >> 7][Static7.anInt5678 >> 7] & 0x4) != 0) {
+			@Pc(94) int local94 = SceneGraph.method522(Player.level, Static3.anInt2519, Static7.anInt5678);
+			if (local94 - Static2.anInt1931 < 800 && (Static4.tileFlags[Player.level][Static3.anInt2519 >> 7][Static7.anInt5678 >> 7] & 0x4) != 0) {
 				Static9.method279(1, Static3.anInt2519 >> 7, false, Static7.anInt5678 >> 7, SceneGraph.tiles);
 			}
 			return;
 		}
-		if ((Static4.tileFlags[Static7.y][PlayerList.self.x >> 7][PlayerList.self.z >> 7] & 0x4) != 0) {
-			Static9.method279(0, PlayerList.self.x >> 7, false, PlayerList.self.z >> 7, SceneGraph.tiles);
+		if ((Static4.tileFlags[Player.level][PlayerList.self.xFine >> 7][PlayerList.self.zFine >> 7] & 0x4) != 0) {
+			Static9.method279(0, PlayerList.self.xFine >> 7, false, PlayerList.self.zFine >> 7, SceneGraph.tiles);
 		}
 		if (Static5.anInt4066 >= 310) {
 			return;
 		}
 		@Pc(175) int local175 = Static7.anInt5678 >> 7;
 		@Pc(179) int local179 = Static3.anInt2519 >> 7;
-		@Pc(184) int local184 = PlayerList.self.z >> 7;
+		@Pc(184) int local184 = PlayerList.self.zFine >> 7;
 		@Pc(196) int local196;
 		if (local175 >= local184) {
 			local196 = local175 - local184;
 		} else {
 			local196 = local184 - local175;
 		}
-		@Pc(208) int local208 = PlayerList.self.x >> 7;
+		@Pc(208) int local208 = PlayerList.self.xFine >> 7;
 		@Pc(216) int local216;
 		if (local208 > local179) {
 			local216 = local208 - local179;
@@ -318,7 +318,7 @@ public final class Static37 {
 				} else if (local208 < local179) {
 					local179--;
 				}
-				if ((Static4.tileFlags[Static7.y][local179][local175] & 0x4) != 0) {
+				if ((Static4.tileFlags[Player.level][local179][local175] & 0x4) != 0) {
 					Static9.method279(1, local179, false, local175, SceneGraph.tiles);
 					break;
 				}
@@ -330,7 +330,7 @@ public final class Static37 {
 						local175--;
 					}
 					local399 -= 65536;
-					if ((Static4.tileFlags[Static7.y][local179][local175] & 0x4) != 0) {
+					if ((Static4.tileFlags[Player.level][local179][local175] & 0x4) != 0) {
 						Static9.method279(1, local179, false, local175, SceneGraph.tiles);
 						break;
 					}
@@ -346,7 +346,7 @@ public final class Static37 {
 			} else if (local184 < local175) {
 				local175--;
 			}
-			if ((Static4.tileFlags[Static7.y][local179][local175] & 0x4) != 0) {
+			if ((Static4.tileFlags[Player.level][local179][local175] & 0x4) != 0) {
 				Static9.method279(1, local179, false, local175, SceneGraph.tiles);
 				break;
 			}
@@ -358,7 +358,7 @@ public final class Static37 {
 				} else if (local179 > local208) {
 					local179--;
 				}
-				if ((Static4.tileFlags[Static7.y][local179][local175] & 0x4) != 0) {
+				if ((Static4.tileFlags[Player.level][local179][local175] & 0x4) != 0) {
 					Static9.method279(1, local179, false, local175, SceneGraph.tiles);
 					break;
 				}
@@ -520,7 +520,7 @@ public final class Static37 {
 		if (local4.anInt5904 > 0) {
 			local40 = Static36.method4402(local4);
 		}
-		if (!local40 || !Static12.method687(local4).isButtonEnabled(arg2 - 1)) {
+		if (!local40 || !InterfaceList.getServerActiveProperties(local4).isButtonEnabled(arg2 - 1)) {
 			return;
 		}
 		if (arg2 == 1) {
@@ -651,14 +651,14 @@ public final class Static37 {
 		if (arg4 && Static5.anInt3490 >= 100) {
 			Static3.anInt2519 = Static4.anInt2977 * 128 + 64;
 			Static7.anInt5678 = Static5.anInt4165 * 128 + 64;
-			Static2.anInt1931 = Static11.method522(Static7.anInt5678, Static3.anInt2519, Static7.y) - Static4.anInt3131;
+			Static2.anInt1931 = SceneGraph.method522(Player.level, Static3.anInt2519, Static7.anInt5678) - Static4.anInt3131;
 		}
 		Static1.anInt772 = 2;
 	}
 
 	@OriginalMember(owner = "client!wi", name = "a", descriptor = "(IIIIIZII)Z")
 	public static boolean method4780(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(4) int arg2, @OriginalArg(6) int arg3, @OriginalArg(7) int arg4) {
-		@Pc(21) long local21 = SceneGraph.getWallPickKey(arg1, arg4, arg3);
+		@Pc(21) long local21 = SceneGraph.getWallKey(arg1, arg4, arg3);
 		if (local21 != 0L) {
 			@Pc(32) int local32 = (int) local21 >> 20 & 0x3;
 			@Pc(39) int local39 = (int) local21 >> 14 & 0x1F;
@@ -732,7 +732,7 @@ public final class Static37 {
 				return false;
 			}
 		}
-		@Pc(418) long local418 = SceneGraph.getSceneryPickKey(arg1, arg4, arg3);
+		@Pc(418) long local418 = SceneGraph.getSceneryKey(arg1, arg4, arg3);
 		if (local418 != 0L) {
 			@Pc(430) int local430 = (int) local418 >> 20 & 0x3;
 			@Pc(437) int local437 = Integer.MAX_VALUE & (int) (local418 >>> 32);
@@ -762,7 +762,7 @@ public final class Static37 {
 				return false;
 			}
 		}
-		@Pc(573) long local573 = SceneGraph.getGroundDecorPickKey(arg1, arg4, arg3);
+		@Pc(573) long local573 = SceneGraph.getGroundDecorKey(arg1, arg4, arg3);
 		if (local573 != 0L) {
 			@Pc(585) int local585 = (int) (local573 >>> 32) & Integer.MAX_VALUE;
 			@Pc(592) int local592 = (int) local573 >> 20 & 0x3;

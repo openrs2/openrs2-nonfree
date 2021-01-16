@@ -118,7 +118,7 @@ public final class Static21 {
 		}
 		@Pc(26) String local26 = Static35.method4328();
 		if (arg1 == null) {
-			@Pc(43) int local43 = Fonts.b12Full.method2263(local26, arg0 + 4, arg2 + 15, Static5.aRandom1, Static2.anInt1976);
+			@Pc(43) int local43 = Fonts.b12Full.method2263(local26, arg0 + 4, arg2 + 15, client.random, client.seed);
 			Static8.method66(local43 + Fonts.b12Full.method2252(local26), 15, arg0 + 4, arg2);
 			return;
 		}
@@ -126,34 +126,34 @@ public final class Static21 {
 		if (local62 == null) {
 			local62 = Fonts.b12Full;
 		}
-		local62.method2269(local26, arg0, arg2, arg1.anInt5893, arg1.anInt5949, arg1.anInt5933, arg1.anInt5934, arg1.anInt5924, arg1.anInt5922, Static5.aRandom1, Static2.anInt1976, Static7.anIntArray600);
+		local62.method2269(local26, arg0, arg2, arg1.anInt5893, arg1.anInt5949, arg1.anInt5933, arg1.anInt5934, arg1.anInt5924, arg1.anInt5922, client.random, client.seed, Static7.anIntArray600);
 		Static8.method66(Static7.anIntArray600[2], Static7.anIntArray600[3], Static7.anIntArray600[0], Static7.anIntArray600[1]);
 	}
 
 	@OriginalMember(owner = "client!je", name = "a", descriptor = "(ZI)V")
-	public static void method2009(@OriginalArg(0) boolean arg0) {
-		@Pc(11) byte local11;
-		@Pc(13) byte[][] local13;
-		if (GlRenderer.enabled && arg0) {
-			local11 = 1;
-			local13 = Static7.aByteArrayArray49;
+	public static void method2009(@OriginalArg(0) boolean underwater) {
+		@Pc(11) byte levels;
+		@Pc(13) byte[][] bytes;
+		if (GlRenderer.enabled && underwater) {
+			levels = 1;
+			bytes = Static7.underwaterMapBytes;
 		} else {
-			local11 = 4;
-			local13 = Static1.aByteArrayArray4;
+			levels = 4;
+			bytes = Static1.mapBytes;
 		}
-		@Pc(22) int local22 = local13.length;
-		for (@Pc(24) int local24 = 0; local24 < local22; local24++) {
+		@Pc(22) int maps = bytes.length;
+		for (@Pc(24) int i = 0; i < maps; i++) {
 			@Pc(33) int[] local33 = null;
-			@Pc(39) int local39 = Static7.mapSquares[local24] >> 8;
-			@Pc(43) byte[] local43 = local13[local24];
-			@Pc(49) int local49 = Static7.mapSquares[local24] & 0xFF;
-			@Pc(56) int local56 = local39 * 64 - Static5.originX;
-			@Pc(63) int local63 = local49 * 64 - Static7.originZ;
-			if (local43 != null) {
+			@Pc(39) int mapX = Static7.mapSquares[i] >> 8;
+			@Pc(43) byte[] mapBytes = bytes[i];
+			@Pc(49) int mapZ = Static7.mapSquares[i] & 0xFF;
+			@Pc(56) int x = mapX * 64 - Static5.originX;
+			@Pc(63) int z = mapZ * 64 - Static7.originZ;
+			if (mapBytes != null) {
 				Static9.method763();
-				local33 = Static34.method4248(arg0, PathFinder.collisionMaps, Static7.originZ, local63, local56, Static5.originX, local43);
+				local33 = Static34.method4248(underwater, PathFinder.collisionMaps, Static7.originZ, z, x, Static5.originX, mapBytes);
 			}
-			if (!arg0 && Static4.centralZoneX / 8 == local39 && local49 == Static1.centralZoneZ / 8) {
+			if (!underwater && Static4.centralZoneX / 8 == mapX && mapZ == Static1.centralZoneZ / 8) {
 				if (local33 == null) {
 					Static6.anInt4863 = -1;
 				} else {
@@ -165,14 +165,14 @@ public final class Static21 {
 				}
 			}
 		}
-		for (@Pc(131) int local131 = 0; local131 < local22; local131++) {
-			@Pc(144) int local144 = (Static7.mapSquares[local131] & 0xFF) * 64 - Static7.originZ;
-			@Pc(154) int local154 = (Static7.mapSquares[local131] >> 8) * 64 - Static5.originX;
-			@Pc(158) byte[] local158 = local13[local131];
-			if (local158 == null && Static1.centralZoneZ < 800) {
+		for (@Pc(131) int i = 0; i < maps; i++) {
+			@Pc(144) int z = (Static7.mapSquares[i] & 0xFF) * 64 - Static7.originZ;
+			@Pc(154) int x = (Static7.mapSquares[i] >> 8) * 64 - Static5.originX;
+			@Pc(158) byte[] mapBytes = bytes[i];
+			if (mapBytes == null && Static1.centralZoneZ < 800) {
 				Static9.method763();
-				for (@Pc(169) int local169 = 0; local169 < local11; local169++) {
-					Static29.method3536(local154, local169, 64, local144, 64);
+				for (@Pc(169) int level = 0; level < levels; level++) {
+					Static29.method3536(x, level, 64, z, 64);
 				}
 			}
 		}
@@ -196,56 +196,56 @@ public final class Static21 {
 	}
 
 	@OriginalMember(owner = "client!jh", name = "a", descriptor = "(BIIILclient!ch;II)V")
-	public static void method2018(@OriginalArg(1) int y, @OriginalArg(2) int arg1, @OriginalArg(3) int z, @OriginalArg(4) CollisionMap arg3, @OriginalArg(5) int arg4, @OriginalArg(6) int x) {
-		@Pc(9) long local9 = 0L;
+	public static void method2018(@OriginalArg(1) int level, @OriginalArg(2) int arg1, @OriginalArg(3) int z, @OriginalArg(4) CollisionMap arg3, @OriginalArg(5) int arg4, @OriginalArg(6) int x) {
+		@Pc(9) long key = 0L;
 		if (arg4 == 0) {
-			local9 = SceneGraph.getWallPickKey(y, x, z);
+			key = SceneGraph.getWallKey(level, x, z);
 		} else if (arg4 == 1) {
-			local9 = SceneGraph.getWallDecorPickKey(y, x, z);
+			key = SceneGraph.getWallDecorKey(level, x, z);
 		} else if (arg4 == 2) {
-			local9 = SceneGraph.getSceneryPickKey(y, x, z);
+			key = SceneGraph.getSceneryKey(level, x, z);
 		} else if (arg4 == 3) {
-			local9 = SceneGraph.getGroundDecorPickKey(y, x, z);
+			key = SceneGraph.getGroundDecorKey(level, x, z);
 		}
-		@Pc(67) int shape = (int) local9 >> 14 & 0x1F;
-		@Pc(74) int id = Integer.MAX_VALUE & (int) (local9 >>> 32);
-		@Pc(81) int angle = (int) local9 >> 20 & 0x3;
+		@Pc(67) int shape = (int) key >> 14 & 0x1F;
+		@Pc(74) int id = Integer.MAX_VALUE & (int) (key >>> 32);
+		@Pc(81) int angle = (int) key >> 20 & 0x3;
 		@Pc(85) LocType type = LocTypeList.get(id);
-		if (type.method4463()) {
-			Static22.method4690(z, type, y, x);
+		if (type.hasAreaSound()) {
+			AreaSoundManager.remove(level, x, z, type);
 		}
-		if (local9 == 0L) {
+		if (key == 0L) {
 			return;
 		}
 		@Pc(105) Entity local105 = null;
 		@Pc(107) Entity local107 = null;
 		if (arg4 == 0) {
-			@Pc(117) Wall wall = SceneGraph.removeWall(y, x, z);
+			@Pc(117) Wall wall = SceneGraph.removeWall(level, x, z);
 			if (wall != null) {
-				local107 = wall.aClass53_4;
-				local105 = wall.aClass53_5;
+				local107 = wall.secondary;
+				local105 = wall.primary;
 			}
 			if (type.anInt5509 != 0) {
-				arg3.unflagWall(angle, !type.aBoolean385, x, shape, type.aBoolean374, z);
+				arg3.unflagWall(x, z, shape, angle, type.aBoolean374, !type.aBoolean385);
 			}
 		} else if (arg4 == 1) {
-			@Pc(155) WallDecor wallDecor = SceneGraph.removeWallDecor(y, x, z);
+			@Pc(155) WallDecor wallDecor = SceneGraph.removeWallDecor(level, x, z);
 			if (wallDecor != null) {
-				local105 = wallDecor.aClass53_10;
-				local107 = wallDecor.aClass53_9;
+				local105 = wallDecor.primary;
+				local107 = wallDecor.secondary;
 			}
 		} else if (arg4 == 2) {
-			@Pc(173) Scenery scenery = SceneGraph.method2593(y, x, z);
+			@Pc(173) Scenery scenery = SceneGraph.removeScenery(level, x, z);
 			if (scenery != null) {
-				local105 = scenery.aClass53_1;
+				local105 = scenery.entity;
 			}
 			if (type.anInt5509 != 0 && x + type.width < 104 && type.width + z < 104 && x + type.length < 104 && type.length + z < 104) {
-				arg3.method568(angle, z, type.length, type.aBoolean374, x, type.width, !type.aBoolean385);
+				arg3.unflagScenery(x, z, type.width, type.length, angle, type.aBoolean374, !type.aBoolean385);
 			}
 		} else if (arg4 == 3) {
-			@Pc(238) GroundDecor groundDecor = SceneGraph.removeGroundDecor(y, x, z);
+			@Pc(238) GroundDecor groundDecor = SceneGraph.removeGroundDecor(level, x, z);
 			if (groundDecor != null) {
-				local105 = groundDecor.aClass53_2;
+				local105 = groundDecor.entity;
 			}
 			if (type.anInt5509 == 1) {
 				arg3.unflagGroundDecor(x, z);
@@ -388,22 +388,22 @@ public final class Static21 {
 
 	@OriginalMember(owner = "client!jk", name = "b", descriptor = "(B)V")
 	public static void method2062() {
-		for (@Pc(6) Class4_Sub27 local6 = (Class4_Sub27) Static4.aClass84_13.head(); local6 != null; local6 = (Class4_Sub27) Static4.aClass84_13.next()) {
-			@Pc(11) int local11 = local6.anInt4620;
-			if (InterfaceList.load(local11)) {
-				@Pc(17) boolean local17 = true;
-				@Pc(21) Component[] local21 = InterfaceList.components[local11];
-				for (@Pc(23) int local23 = 0; local23 < local21.length; local23++) {
-					if (local21[local23] != null) {
-						local17 = local21[local23].if3;
+		for (@Pc(6) SubInterface subInterface = (SubInterface) InterfaceList.subInterfaces.head(); subInterface != null; subInterface = (SubInterface) InterfaceList.subInterfaces.next()) {
+			@Pc(11) int interfaceId = subInterface.id;
+			if (InterfaceList.load(interfaceId)) {
+				@Pc(17) boolean if3 = true;
+				@Pc(21) Component[] components = InterfaceList.components[interfaceId];
+				for (@Pc(23) int i = 0; i < components.length; i++) {
+					if (components[i] != null) {
+						if3 = components[i].if3;
 						break;
 					}
 				}
-				if (!local17) {
-					@Pc(50) int local50 = (int) local6.key;
-					@Pc(54) Component local54 = InterfaceList.getComponent(local50);
-					if (local54 != null) {
-						Static28.method3270(local54);
+				if (!if3) {
+					@Pc(50) int componentId = (int) subInterface.key;
+					@Pc(54) Component component = InterfaceList.getComponent(componentId);
+					if (component != null) {
+						Static28.method3270(component);
 					}
 				}
 			}
@@ -413,9 +413,9 @@ public final class Static21 {
 	@OriginalMember(owner = "client!jk", name = "a", descriptor = "(I)V")
 	public static void method2063() {
 		Protocol.outboundBuffer.writeOpcode(189);
-		for (@Pc(14) Class4_Sub27 local14 = (Class4_Sub27) Static4.aClass84_13.head(); local14 != null; local14 = (Class4_Sub27) Static4.aClass84_13.next()) {
-			if (local14.anInt4619 == 0) {
-				Static28.method3246(true, local14);
+		for (@Pc(14) SubInterface local14 = (SubInterface) InterfaceList.subInterfaces.head(); local14 != null; local14 = (SubInterface) InterfaceList.subInterfaces.next()) {
+			if (local14.type == 0) {
+				InterfaceList.closeSubInterface(local14, true);
 			}
 		}
 		if (Static6.aClass185_14 != null) {

@@ -375,4 +375,30 @@ public final class StringUtils {
 		}
 		return buffer.toString();
 	}
+
+	@OriginalMember(owner = "client!qh", name = "a", descriptor = "(ZLjava/lang/String;)Ljava/lang/String;")
+	public static String formatChatMessage(@OriginalArg(1) String in) {
+		@Pc(4) int len = in.length();
+		@Pc(12) char[] out = new char[len];
+		@Pc(18) byte mode = 2;
+		for (@Pc(20) int i = 0; i < len; i++) {
+			@Pc(27) char c = in.charAt(i);
+			if (mode == 0) {
+				c = Character.toLowerCase(c);
+			} else if (mode == 2 || Character.isUpperCase(c)) {
+				c = CharUtils.toTitleCase(c);
+			}
+			if (Character.isLetter(c)) {
+				mode = 0;
+			} else if (c == '.' || c == '?' || c == '!') {
+				mode = 2;
+			} else if (!Character.isSpaceChar(c)) {
+				mode = 1;
+			} else if (mode != 2) {
+				mode = 1;
+			}
+			out[i] = c;
+		}
+		return new String(out);
+	}
 }

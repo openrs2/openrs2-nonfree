@@ -5,16 +5,16 @@ import org.openrs2.deob.annotation.OriginalMember;
 public final class GroundDecor {
 
 	@OriginalMember(owner = "client!dm", name = "b", descriptor = "J")
-	public long pickKey;
+	public long key;
 
 	@OriginalMember(owner = "client!dm", name = "d", descriptor = "Lclient!vc;")
-	public Entity aClass53_2;
+	public Entity entity;
 
 	@OriginalMember(owner = "client!dm", name = "f", descriptor = "I")
-	public int z;
+	public int zFine;
 
 	@OriginalMember(owner = "client!dm", name = "g", descriptor = "I")
-	public int x;
+	public int xFine;
 
 	@OriginalMember(owner = "client!dm", name = "h", descriptor = "I")
 	public int anInt1130;

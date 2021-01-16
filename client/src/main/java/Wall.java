@@ -8,23 +8,23 @@ public final class Wall {
 	public int anInt5488;
 
 	@OriginalMember(owner = "client!ve", name = "g", descriptor = "I")
-	public int z;
+	public int zFine;
 
 	@OriginalMember(owner = "client!ve", name = "h", descriptor = "Lclient!vc;")
-	public Entity aClass53_4;
+	public Entity secondary;
 
 	@OriginalMember(owner = "client!ve", name = "i", descriptor = "I")
-	public int x;
+	public int xFine;
 
 	@OriginalMember(owner = "client!ve", name = "k", descriptor = "I")
 	public int anInt5493;
 
 	@OriginalMember(owner = "client!ve", name = "l", descriptor = "Lclient!vc;")
-	public Entity aClass53_5;
+	public Entity primary;
 
 	@OriginalMember(owner = "client!ve", name = "m", descriptor = "I")
 	public int anInt5494;
 
 	@OriginalMember(owner = "client!ve", name = "e", descriptor = "J")
-	public long pickKey = 0L;
+	public long key = 0L;
 }

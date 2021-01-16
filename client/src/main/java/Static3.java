@@ -310,9 +310,6 @@ public final class Static3 {
 	@OriginalMember(owner = "client!hh", name = "b", descriptor = "Z")
 	public static boolean aBoolean366 = true;
 
-	@OriginalMember(owner = "client!hh", name = "c", descriptor = "I")
-	public static int anInt5398 = -1;
-
 	@OriginalMember(owner = "client!hh", name = "e", descriptor = "I")
 	public static int anInt5400 = 0;
 
@@ -336,9 +333,6 @@ public final class Static3 {
 
 	@OriginalMember(owner = "client!hn", name = "l", descriptor = "I")
 	public static int anInt5405 = 0;
-
-	@OriginalMember(owner = "client!hn", name = "m", descriptor = "[Ljava/lang/String;")
-	public static final String[] aStringArray37 = new String[] { "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat" };
 
 	@OriginalMember(owner = "client!ho", name = "n", descriptor = "I")
 	public static int anInt2273 = 0;
@@ -421,17 +415,11 @@ public final class Static3 {
 	@OriginalMember(owner = "client!jb", name = "a", descriptor = "I")
 	public static int anInt2522 = -2;
 
-	@OriginalMember(owner = "client!jb", name = "l", descriptor = "[Ljava/lang/String;")
-	public static final String[] aStringArray18 = new String[100];
-
 	@OriginalMember(owner = "client!jc", name = "R", descriptor = "I")
 	public static int anInt2553 = 100;
 
 	@OriginalMember(owner = "client!jd", name = "d", descriptor = "Z")
 	public static boolean aBoolean176 = false;
-
-	@OriginalMember(owner = "client!jd", name = "h", descriptor = "[J")
-	public static final long[] aLongArray16 = new long[100];
 
 	@OriginalMember(owner = "client!je", name = "e", descriptor = "I")
 	public static int anInt2571 = -1;

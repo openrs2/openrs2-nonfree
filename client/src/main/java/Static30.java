@@ -29,8 +29,8 @@ public final class Static30 {
 				Static7.aClass4_Sub31_2 = null;
 				Static1.aClass98_1 = null;
 			}
-		} catch (@Pc(62) Exception local62) {
-			local62.printStackTrace();
+		} catch (@Pc(62) Exception ex) {
+			ex.printStackTrace();
 			Static1.aClass4_Sub6_Sub2_3.method2501();
 			Static7.aClass4_Sub31_2 = null;
 			Static2.aClass58_42 = null;
@@ -69,7 +69,7 @@ public final class Static30 {
 					@Pc(117) int local117 = local38.anInt5903;
 					@Pc(122) int local122 = local38.anInt5888 + arg7;
 					@Pc(128) int local128 = local38.anInt5960 + arg0;
-					if (Static1.aBoolean26 && (Static12.method687(local38).events != 0 || local38.type == 0) && local117 > 127) {
+					if (Static1.aBoolean26 && (InterfaceList.getServerActiveProperties(local38).events != 0 || local38.type == 0) && local117 > 127) {
 						local117 = 127;
 					}
 					if (local38 == Static1.aClass185_1) {
@@ -167,8 +167,8 @@ public final class Static30 {
 								local521 = (Static6.anInt4761 + 256) * local521 >> 8;
 								@Pc(540) int local540 = local502 * local491 + local509 * local521 >> 11;
 								@Pc(551) int local551 = local521 * local491 - local502 * local509 >> 11;
-								@Pc(567) int local567 = PlayerList.self.x + local540 + 64 - PlayerList.self.getSize() * 64 >> 7;
-								@Pc(583) int local583 = PlayerList.self.z + 64 - local551 - PlayerList.self.getSize() * 64 >> 7;
+								@Pc(567) int local567 = PlayerList.self.xFine + local540 + 64 - PlayerList.self.getSize() * 64 >> 7;
+								@Pc(583) int local583 = PlayerList.self.zFine + 64 - local551 - PlayerList.self.getSize() * 64 >> 7;
 								if (Static3.aBoolean177 && (Static5.anInt3560 & 0x40) != 0) {
 									@Pc(597) Component local597 = Static23.method2425(Static1.anInt1053, Static2.anInt1367);
 									if (local597 == null) {
@@ -309,16 +309,16 @@ public final class Static30 {
 							if (local38.aClass185Array4 != null) {
 								method3554(local128 - local38.anInt5932, local38.id, local89, local38.aClass185Array4, local298, local309, local259, local122 - local38.anInt5931, local266);
 							}
-							@Pc(1207) Class4_Sub27 local1207 = (Class4_Sub27) Static4.aClass84_13.get((long) local38.id);
+							@Pc(1207) SubInterface local1207 = (SubInterface) InterfaceList.subInterfaces.get((long) local38.id);
 							if (local1207 != null) {
-								if (local1207.anInt4619 == 0 && !Static1.aBoolean17 && Static4.anInt3341 >= local266 && Static5.anInt5848 >= local259 && local309 > Static4.anInt3341 && Static5.anInt5848 < local298 && !Static1.aBoolean26) {
+								if (local1207.type == 0 && !Static1.aBoolean17 && Static4.anInt3341 >= local266 && Static5.anInt5848 >= local259 && local309 > Static4.anInt3341 && Static5.anInt5848 < local298 && !Static1.aBoolean26) {
 									Static6.aShortArray100[0] = 1006;
 									Static2.anIntArray160[0] = Static7.anInt6050;
 									Static6.aStringArray30[0] = LocalisedText.CANCEL;
 									Static6.aStringArray27[0] = "";
 									Static7.anInt5634 = 1;
 								}
-								Static14.method1069(local1207.anInt4620, local259, local122, local128, local298, local266, local309, local89);
+								Static14.method1069(local1207.id, local259, local122, local128, local298, local266, local309, local89);
 							}
 							if (GlRenderer.enabled && local38.anInt5904 == 1407) {
 								PostProcessorManager.process();
@@ -841,55 +841,24 @@ public final class Static30 {
 		}
 	}
 
-	@OriginalMember(owner = "client!qh", name = "a", descriptor = "(CZ)C")
-	private static char method3568(@OriginalArg(0) char arg0) {
-		return arg0 == 'µ' || arg0 == 'ƒ' ? arg0 : Character.toTitleCase(arg0);
-	}
-
-	@OriginalMember(owner = "client!qh", name = "a", descriptor = "(ZLjava/lang/String;)Ljava/lang/String;")
-	public static String method3569(@OriginalArg(1) String arg0) {
-		@Pc(4) int local4 = arg0.length();
-		@Pc(12) char[] local12 = new char[local4];
-		@Pc(18) byte local18 = 2;
-		for (@Pc(20) int local20 = 0; local20 < local4; local20++) {
-			@Pc(27) char local27 = arg0.charAt(local20);
-			if (local18 == 0) {
-				local27 = Character.toLowerCase(local27);
-			} else if (local18 == 2 || Character.isUpperCase(local27)) {
-				local27 = method3568(local27);
-			}
-			if (Character.isLetter(local27)) {
-				local18 = 0;
-			} else if (local27 == '.' || local27 == '?' || local27 == '!') {
-				local18 = 2;
-			} else if (!Character.isSpaceChar(local27)) {
-				local18 = 1;
-			} else if (local18 != 2) {
-				local18 = 1;
-			}
-			local12[local20] = local27;
-		}
-		return new String(local12);
-	}
-
 	@OriginalMember(owner = "client!qi", name = "a", descriptor = "(Ljava/lang/String;I)V")
-	public static void method419(@OriginalArg(0) String arg0) {
-		client.settings = arg0;
+	public static void setSettings(@OriginalArg(0) String settings) {
+		client.settings = settings;
 		if (GameShell.signLink.applet == null) {
 			return;
 		}
 		try {
-			@Pc(15) String local15 = GameShell.signLink.applet.getParameter("cookieprefix");
-			@Pc(24) String local24 = GameShell.signLink.applet.getParameter("cookiehost");
-			@Pc(39) String local39 = local15 + "settings=" + arg0 + "; version=1; path=/; domain=" + local24;
-			@Pc(54) String local54;
-			if (arg0.length() == 0) {
-				local54 = local39 + "; Expires=Thu, 01-Jan-1970 00:00:00 GMT; Max-Age=0";
+			@Pc(15) String cookiePrefix = GameShell.signLink.applet.getParameter("cookieprefix");
+			@Pc(24) String cookieHost = GameShell.signLink.applet.getParameter("cookiehost");
+			@Pc(39) String cookie = cookiePrefix + "settings=" + settings + "; version=1; path=/; domain=" + cookieHost;
+			@Pc(54) String cookie2;
+			if (settings.length() == 0) {
+				cookie2 = cookie + "; Expires=Thu, 01-Jan-1970 00:00:00 GMT; Max-Age=0";
 			} else {
-				local54 = local39 + "; Expires=" + Static12.method742(MonotonicClock.currentTimeMillis() + 94608000000L) + "; Max-Age=" + 94608000L;
+				cookie2 = cookie + "; Expires=" + TimeUtils.formatHttpDate(MonotonicClock.currentTimeMillis() + 94608000000L) + "; Max-Age=" + 94608000L;
 			}
-			BrowserControl.eval(GameShell.signLink.applet, "document.cookie=\"" + local54 + "\"");
-		} catch (@Pc(92) Throwable local92) {
+			BrowserControl.eval(GameShell.signLink.applet, "document.cookie=\"" + cookie2 + "\"");
+		} catch (@Pc(92) Throwable ex) {
 		}
 	}
 
@@ -905,25 +874,25 @@ public final class Static30 {
 
 	@OriginalMember(owner = "client!qj", name = "a", descriptor = "()V")
 	public static void method3596() {
-		@Pc(1) GL local1 = GlRenderer.gl;
-		local1.glDisableClientState(GL.GL_COLOR_ARRAY);
+		@Pc(1) GL gl = GlRenderer.gl;
+		gl.glDisableClientState(GL.GL_COLOR_ARRAY);
 		GlRenderer.setLightingEnabled(false);
-		local1.glDisable(GL.GL_DEPTH_TEST);
-		local1.glPushAttrib(GL.GL_FOG_BIT);
-		local1.glFogf(GL.GL_FOG_START, 3072.0F);
+		gl.glDisable(GL.GL_DEPTH_TEST);
+		gl.glPushAttrib(GL.GL_FOG_BIT);
+		gl.glFogf(GL.GL_FOG_START, 3072.0F);
 		GlRenderer.disableDepthMask();
 		for (@Pc(19) int local19 = 0; local19 < SceneGraph.aClass4_Sub12ArrayArray1[0].length; local19++) {
 			@Pc(31) Class4_Sub12 local31 = SceneGraph.aClass4_Sub12ArrayArray1[0][local19];
 			if (local31.anInt2356 >= 0 && Static32.method3920(Static4.anInterface4_1.method444(local31.anInt2356))) {
-				local1.glColor4fv(Static16.method1553(local31.anInt2351), 0);
+				gl.glColor4fv(Static16.method1553(local31.anInt2351), 0);
 				@Pc(58) float local58 = 201.5F - (local31.aBoolean162 ? 1.0F : 0.5F);
 				local31.method1867(SceneGraph.tiles, local58, true);
 			}
 		}
-		local1.glEnableClientState(GL.GL_COLOR_ARRAY);
+		gl.glEnableClientState(GL.GL_COLOR_ARRAY);
 		GlRenderer.method1618();
-		local1.glEnable(GL.GL_DEPTH_TEST);
-		local1.glPopAttrib();
+		gl.glEnable(GL.GL_DEPTH_TEST);
+		gl.glPopAttrib();
 		GlRenderer.enableDepthMask();
 	}
 

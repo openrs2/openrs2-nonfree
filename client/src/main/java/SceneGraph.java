@@ -22,10 +22,10 @@ public final class SceneGraph {
 	public static int[][][] underwaterTileHeights;
 
 	@OriginalMember(owner = "client!v", name = "q", descriptor = "[[Lclient!ih;")
-	public static Class4_Sub12[][] aClass4_Sub12ArrayArray3;
+	private static Class4_Sub12[][] aClass4_Sub12ArrayArray3;
 
 	@OriginalMember(owner = "client!je", name = "j", descriptor = "[[[Lclient!nh;")
-	public static Tile[][][] surfaceTiles;
+	private static Tile[][][] surfaceTiles;
 
 	@OriginalMember(owner = "client!sn", name = "T", descriptor = "[[[I")
 	public static int[][][] surfaceTileHeights;
@@ -64,7 +64,7 @@ public final class SceneGraph {
 	public static Scenery[] scenery;
 
 	@OriginalMember(owner = "client!jl", name = "K", descriptor = "I")
-	public static int sceneryLen = 0;
+	private static int sceneryLen = 0;
 
 	@OriginalMember(owner = "client!ef", name = "c", descriptor = "[Lclient!co;")
 	public static Scenery[] aClass33Array1;
@@ -133,26 +133,26 @@ public final class SceneGraph {
 	}
 
 	@OriginalMember(owner = "client!ll", name = "a", descriptor = "(III)Lclient!ve;")
-	public static Wall getWall(@OriginalArg(0) int y, @OriginalArg(1) int x, @OriginalArg(2) int z) {
-		@Pc(7) Tile tile = tiles[y][x][z];
+	public static Wall getWall(@OriginalArg(0) int level, @OriginalArg(1) int x, @OriginalArg(2) int z) {
+		@Pc(7) Tile tile = tiles[level][x][z];
 		return tile == null ? null : tile.wall;
 	}
 
 	@OriginalMember(owner = "client!td", name = "a", descriptor = "(III)Lclient!vl;")
-	public static WallDecor getWallDecor(@OriginalArg(0) int y, @OriginalArg(1) int x, @OriginalArg(2) int z) {
-		@Pc(7) Tile tile = tiles[y][x][z];
+	public static WallDecor getWallDecor(@OriginalArg(0) int level, @OriginalArg(1) int x, @OriginalArg(2) int z) {
+		@Pc(7) Tile tile = tiles[level][x][z];
 		return tile == null ? null : tile.wallDecor;
 	}
 
 	@OriginalMember(owner = "client!o", name = "b", descriptor = "(III)Lclient!co;")
-	public static Scenery getScenery(@OriginalArg(0) int y, @OriginalArg(1) int x, @OriginalArg(2) int z) {
-		@Pc(7) Tile tile = tiles[y][x][z];
+	public static Scenery getScenery(@OriginalArg(0) int level, @OriginalArg(1) int x, @OriginalArg(2) int z) {
+		@Pc(7) Tile tile = tiles[level][x][z];
 		if (tile == null) {
 			return null;
 		}
 		for (@Pc(13) int i = 0; i < tile.sceneryLen; i++) {
 			@Pc(22) Scenery scenery = tile.scenery[i];
-			if ((scenery.pickKey >> 29 & 0x3L) == 2L && scenery.xMin == x && scenery.zMin == z) {
+			if ((scenery.key >> 29 & 0x3L) == 2L && scenery.xMin == x && scenery.zMin == z) {
 				return scenery;
 			}
 		}
@@ -160,68 +160,68 @@ public final class SceneGraph {
 	}
 
 	@OriginalMember(owner = "client!ce", name = "a", descriptor = "(III)Lclient!dm;")
-	public static GroundDecor getGroundDecor(@OriginalArg(0) int y, @OriginalArg(1) int x, @OriginalArg(2) int z) {
-		@Pc(7) Tile tile = tiles[y][x][z];
+	public static GroundDecor getGroundDecor(@OriginalArg(0) int level, @OriginalArg(1) int x, @OriginalArg(2) int z) {
+		@Pc(7) Tile tile = tiles[level][x][z];
 		return tile == null || tile.groundDecor == null ? null : tile.groundDecor;
 	}
 
 	@OriginalMember(owner = "client!bk", name = "a", descriptor = "(IIIILclient!vc;Lclient!vc;IIJ)V")
-	public static void setWall(@OriginalArg(0) int y, @OriginalArg(1) int x, @OriginalArg(2) int z, @OriginalArg(3) int arg3, @OriginalArg(4) Entity arg4, @OriginalArg(5) Entity arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) long pickKey) {
+	public static void setWall(@OriginalArg(0) int level, @OriginalArg(1) int x, @OriginalArg(2) int z, @OriginalArg(3) int arg3, @OriginalArg(4) Entity arg4, @OriginalArg(5) Entity arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) long key) {
 		if (arg4 == null && arg5 == null) {
 			return;
 		}
 		@Pc(8) Wall wall = new Wall();
-		wall.pickKey = pickKey;
-		wall.x = x * 128 + 64;
-		wall.z = z * 128 + 64;
+		wall.key = key;
+		wall.xFine = x * 128 + 64;
+		wall.zFine = z * 128 + 64;
 		wall.anInt5494 = arg3;
-		wall.aClass53_5 = arg4;
-		wall.aClass53_4 = arg5;
+		wall.primary = arg4;
+		wall.secondary = arg5;
 		wall.anInt5493 = arg6;
 		wall.anInt5488 = arg7;
-		for (@Pc(42) int y0 = y; y0 >= 0; y0--) {
-			if (tiles[y0][x][z] == null) {
-				tiles[y0][x][z] = new Tile(y0, x, z);
+		for (@Pc(42) int level0 = level; level0 >= 0; level0--) {
+			if (tiles[level0][x][z] == null) {
+				tiles[level0][x][z] = new Tile(level0, x, z);
 			}
 		}
-		tiles[y][x][z].wall = wall;
+		tiles[level][x][z].wall = wall;
 	}
 
 	@OriginalMember(owner = "client!ao", name = "a", descriptor = "(IIIILclient!vc;Lclient!vc;IIIIJ)V")
-	public static void setWallDecor(@OriginalArg(0) int y, @OriginalArg(1) int x, @OriginalArg(2) int z, @OriginalArg(3) int arg3, @OriginalArg(4) Entity arg4, @OriginalArg(5) Entity arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) int arg8, @OriginalArg(9) int arg9, @OriginalArg(10) long arg10) {
+	public static void setWallDecor(@OriginalArg(0) int level, @OriginalArg(1) int x, @OriginalArg(2) int z, @OriginalArg(3) int arg3, @OriginalArg(4) Entity arg4, @OriginalArg(5) Entity arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) int arg8, @OriginalArg(9) int arg9, @OriginalArg(10) long arg10) {
 		if (arg4 == null) {
 			return;
 		}
 		@Pc(6) WallDecor wallDecor = new WallDecor();
-		wallDecor.pickKey = arg10;
-		wallDecor.x = x * 128 + 64;
-		wallDecor.z = z * 128 + 64;
+		wallDecor.key = arg10;
+		wallDecor.xFine = x * 128 + 64;
+		wallDecor.zFine = z * 128 + 64;
 		wallDecor.anInt5627 = arg3;
-		wallDecor.aClass53_10 = arg4;
-		wallDecor.aClass53_9 = arg5;
+		wallDecor.primary = arg4;
+		wallDecor.secondary = arg5;
 		wallDecor.anInt5629 = arg6;
 		wallDecor.anInt5631 = arg7;
 		wallDecor.anInt5633 = arg8;
 		wallDecor.anInt5625 = arg9;
-		for (@Pc(46) int y0 = y; y0 >= 0; y0--) {
-			if (tiles[y0][x][z] == null) {
-				tiles[y0][x][z] = new Tile(y0, x, z);
+		for (@Pc(46) int level0 = level; level0 >= 0; level0--) {
+			if (tiles[level0][x][z] == null) {
+				tiles[level0][x][z] = new Tile(level0, x, z);
 			}
 		}
-		tiles[y][x][z].wallDecor = wallDecor;
+		tiles[level][x][z].wallDecor = wallDecor;
 	}
 
 	@OriginalMember(owner = "client!wn", name = "a", descriptor = "(IIIILclient!vc;JZ)V")
-	public static void setGroundDecor(@OriginalArg(0) int y, @OriginalArg(1) int x, @OriginalArg(2) int z, @OriginalArg(3) int arg3, @OriginalArg(4) Entity arg4, @OriginalArg(5) long pickKey, @OriginalArg(6) boolean arg6) {
+	public static void setGroundDecor(@OriginalArg(0) int y, @OriginalArg(1) int x, @OriginalArg(2) int z, @OriginalArg(3) int arg3, @OriginalArg(4) Entity arg4, @OriginalArg(5) long key, @OriginalArg(6) boolean arg6) {
 		if (arg4 == null) {
 			return;
 		}
 		@Pc(6) GroundDecor groundDecor = new GroundDecor();
-		groundDecor.aClass53_2 = arg4;
-		groundDecor.x = x * 128 + 64;
-		groundDecor.z = z * 128 + 64;
+		groundDecor.entity = arg4;
+		groundDecor.xFine = x * 128 + 64;
+		groundDecor.zFine = z * 128 + 64;
 		groundDecor.anInt1130 = arg3;
-		groundDecor.pickKey = pickKey;
+		groundDecor.key = key;
 		groundDecor.aBoolean63 = arg6;
 		if (tiles[y][x][z] == null) {
 			tiles[y][x][z] = new Tile(y, x, z);
@@ -230,7 +230,7 @@ public final class SceneGraph {
 	}
 
 	@OriginalMember(owner = "client!l", name = "a", descriptor = "(IIIIIIIILclient!vc;IZJ)Z")
-	private static boolean addScenery(@OriginalArg(0) int y, @OriginalArg(1) int x, @OriginalArg(2) int z, @OriginalArg(3) int width, @OriginalArg(4) int length, @OriginalArg(5) int centerXFine, @OriginalArg(6) int centerYFine, @OriginalArg(7) int arg7, @OriginalArg(8) Entity arg8, @OriginalArg(9) int arg9, @OriginalArg(10) boolean arg10, @OriginalArg(11) long pickKey) {
+	private static boolean addScenery(@OriginalArg(0) int level, @OriginalArg(1) int x, @OriginalArg(2) int z, @OriginalArg(3) int width, @OriginalArg(4) int length, @OriginalArg(5) int centerXFine, @OriginalArg(6) int centerZFine, @OriginalArg(7) int arg7, @OriginalArg(8) Entity entity, @OriginalArg(9) int arg9, @OriginalArg(10) boolean arg10, @OriginalArg(11) long key) {
 		@Pc(6) boolean underwater = tileHeights == underwaterTileHeights;
 		@Pc(8) int local8 = 0;
 		for (@Pc(10) int x0 = x; x0 < x + width; x0++) {
@@ -238,19 +238,19 @@ public final class SceneGraph {
 				if (x0 < 0 || z0 < 0 || x0 >= SceneGraph.width || z0 >= SceneGraph.length) {
 					return false;
 				}
-				@Pc(42) Tile tile = tiles[y][x0][z0];
+				@Pc(42) Tile tile = tiles[level][x0][z0];
 				if (tile != null && tile.sceneryLen >= 5) {
 					return false;
 				}
 			}
 		}
 		@Pc(58) Scenery scenery = new Scenery();
-		scenery.pickKey = pickKey;
-		scenery.y = y;
+		scenery.key = key;
+		scenery.level = level;
 		scenery.centerXFine = centerXFine;
-		scenery.centerYFine = centerYFine;
+		scenery.centerZFine = centerZFine;
 		scenery.anInt823 = arg7;
-		scenery.aClass53_1 = arg8;
+		scenery.entity = entity;
 		scenery.anInt814 = arg9;
 		scenery.xMin = x;
 		scenery.zMin = z;
@@ -271,12 +271,12 @@ public final class SceneGraph {
 				if (z0 < z + length - 1) {
 					interiorFlags += 2;
 				}
-				for (@Pc(141) int y0 = y; y0 >= 0; y0--) {
-					if (tiles[y0][x0][z0] == null) {
-						tiles[y0][x0][z0] = new Tile(y0, x0, z0);
+				for (@Pc(141) int level0 = level; level0 >= 0; level0--) {
+					if (tiles[level0][x0][z0] == null) {
+						tiles[level0][x0][z0] = new Tile(level0, x0, z0);
 					}
 				}
-				@Pc(174) Tile tile = tiles[y][x0][z0];
+				@Pc(174) Tile tile = tiles[level][x0][z0];
 				tile.scenery[tile.sceneryLen] = scenery;
 				tile.interiorFlags[tile.sceneryLen] = interiorFlags;
 				tile.allInteriorFlags |= interiorFlags;
@@ -305,7 +305,7 @@ public final class SceneGraph {
 	private static void removeScenery(@OriginalArg(0) Scenery scenery) {
 		for (@Pc(2) int x = scenery.xMin; x <= scenery.xMax; x++) {
 			for (@Pc(9) int z = scenery.zMin; z <= scenery.zMax; z++) {
-				@Pc(22) Tile tile = tiles[scenery.y][x][z];
+				@Pc(22) Tile tile = tiles[scenery.level][x][z];
 				if (tile != null) {
 					for (@Pc(26) int i = 0; i < tile.sceneryLen; i++) {
 						if (tile.scenery[i] == scenery) {
@@ -333,12 +333,12 @@ public final class SceneGraph {
 	}
 
 	@OriginalMember(owner = "client!ae", name = "b", descriptor = "(I)V")
-	public static void setFirstVisibleLevel(@OriginalArg(0) int y) {
-		firstVisibleLevel = y;
+	public static void setFirstVisibleLevel(@OriginalArg(0) int level) {
+		firstVisibleLevel = level;
 		for (@Pc(3) int x = 0; x < width; x++) {
 			for (@Pc(8) int z = 0; z < length; z++) {
-				if (tiles[y][x][z] == null) {
-					tiles[y][x][z] = new Tile(y, x, z);
+				if (tiles[level][x][z] == null) {
+					tiles[level][x][z] = new Tile(level, x, z);
 				}
 			}
 		}
@@ -355,14 +355,14 @@ public final class SceneGraph {
 	}
 
 	@OriginalMember(owner = "client!lj", name = "c", descriptor = "(III)Lclient!co;")
-	public static Scenery method2593(@OriginalArg(0) int y, @OriginalArg(1) int x, @OriginalArg(2) int z) {
-		@Pc(7) Tile tile = tiles[y][x][z];
+	public static Scenery removeScenery(@OriginalArg(0) int level, @OriginalArg(1) int x, @OriginalArg(2) int z) {
+		@Pc(7) Tile tile = tiles[level][x][z];
 		if (tile == null) {
 			return null;
 		}
 		for (@Pc(13) int i = 0; i < tile.sceneryLen; i++) {
 			@Pc(22) Scenery scenery = tile.scenery[i];
-			if ((scenery.pickKey >> 29 & 0x3L) == 2L && scenery.xMin == x && scenery.zMin == z) {
+			if ((scenery.key >> 29 & 0x3L) == 2L && scenery.xMin == x && scenery.zMin == z) {
 				removeScenery(scenery);
 				return scenery;
 			}
@@ -371,8 +371,8 @@ public final class SceneGraph {
 	}
 
 	@OriginalMember(owner = "client!ko", name = "a", descriptor = "(III)Lclient!ve;")
-	public static Wall removeWall(@OriginalArg(0) int y, @OriginalArg(1) int x, @OriginalArg(2) int z) {
-		@Pc(7) Tile tile = tiles[y][x][z];
+	public static Wall removeWall(@OriginalArg(0) int level, @OriginalArg(1) int x, @OriginalArg(2) int z) {
+		@Pc(7) Tile tile = tiles[level][x][z];
 		if (tile == null) {
 			return null;
 		} else {
@@ -383,8 +383,8 @@ public final class SceneGraph {
 	}
 
 	@OriginalMember(owner = "client!sa", name = "a", descriptor = "(III)Lclient!vl;")
-	public static WallDecor removeWallDecor(@OriginalArg(0) int y, @OriginalArg(1) int x, @OriginalArg(2) int z) {
-		@Pc(7) Tile tile = tiles[y][x][z];
+	public static WallDecor removeWallDecor(@OriginalArg(0) int level, @OriginalArg(1) int x, @OriginalArg(2) int z) {
+		@Pc(7) Tile tile = tiles[level][x][z];
 		if (tile == null) {
 			return null;
 		} else {
@@ -395,8 +395,8 @@ public final class SceneGraph {
 	}
 
 	@OriginalMember(owner = "client!nc", name = "a", descriptor = "(III)Lclient!dm;")
-	public static GroundDecor removeGroundDecor(@OriginalArg(0) int y, @OriginalArg(1) int x, @OriginalArg(2) int z) {
-		@Pc(7) Tile tile = tiles[y][x][z];
+	public static GroundDecor removeGroundDecor(@OriginalArg(0) int level, @OriginalArg(1) int x, @OriginalArg(2) int z) {
+		@Pc(7) Tile tile = tiles[level][x][z];
 		if (tile == null) {
 			return null;
 		} else {
@@ -407,52 +407,52 @@ public final class SceneGraph {
 	}
 
 	@OriginalMember(owner = "client!mi", name = "a", descriptor = "(III)J")
-	public static long getWallPickKey(@OriginalArg(0) int y, @OriginalArg(1) int x, @OriginalArg(2) int z) {
-		@Pc(7) Tile tile = tiles[y][x][z];
-		return tile == null || tile.wall == null ? 0L : tile.wall.pickKey;
+	public static long getWallKey(@OriginalArg(0) int level, @OriginalArg(1) int x, @OriginalArg(2) int z) {
+		@Pc(7) Tile tile = tiles[level][x][z];
+		return tile == null || tile.wall == null ? 0L : tile.wall.key;
 	}
 
 	@OriginalMember(owner = "client!wf", name = "b", descriptor = "(III)J")
-	public static long getWallDecorPickKey(@OriginalArg(0) int y, @OriginalArg(1) int x, @OriginalArg(2) int z) {
-		@Pc(7) Tile tile = tiles[y][x][z];
-		return tile == null || tile.wallDecor == null ? 0L : tile.wallDecor.pickKey;
+	public static long getWallDecorKey(@OriginalArg(0) int level, @OriginalArg(1) int x, @OriginalArg(2) int z) {
+		@Pc(7) Tile tile = tiles[level][x][z];
+		return tile == null || tile.wallDecor == null ? 0L : tile.wallDecor.key;
 	}
 
 	@OriginalMember(owner = "client!j", name = "a", descriptor = "(III)J")
-	public static long getSceneryPickKey(@OriginalArg(0) int y, @OriginalArg(1) int x, @OriginalArg(2) int z) {
-		@Pc(7) Tile tile = tiles[y][x][z];
+	public static long getSceneryKey(@OriginalArg(0) int level, @OriginalArg(1) int x, @OriginalArg(2) int z) {
+		@Pc(7) Tile tile = tiles[level][x][z];
 		if (tile == null) {
 			return 0L;
 		}
 		for (@Pc(13) int i = 0; i < tile.sceneryLen; i++) {
 			@Pc(22) Scenery scenery = tile.scenery[i];
-			if ((scenery.pickKey >> 29 & 0x3L) == 2L && scenery.xMin == x && scenery.zMin == z) {
-				return scenery.pickKey;
+			if ((scenery.key >> 29 & 0x3L) == 2L && scenery.xMin == x && scenery.zMin == z) {
+				return scenery.key;
 			}
 		}
 		return 0L;
 	}
 
 	@OriginalMember(owner = "client!kn", name = "a", descriptor = "(III)J")
-	public static long getGroundDecorPickKey(@OriginalArg(0) int y, @OriginalArg(1) int x, @OriginalArg(2) int z) {
-		@Pc(7) Tile tile = tiles[y][x][z];
-		return tile == null || tile.groundDecor == null ? 0L : tile.groundDecor.pickKey;
+	public static long getGroundDecorKey(@OriginalArg(0) int level, @OriginalArg(1) int x, @OriginalArg(2) int z) {
+		@Pc(7) Tile tile = tiles[level][x][z];
+		return tile == null || tile.groundDecor == null ? 0L : tile.groundDecor.key;
 	}
 
 	@OriginalMember(owner = "client!wb", name = "a", descriptor = "(IIIJ)Z")
-	public static boolean isPickKeyValid(@OriginalArg(0) int y, @OriginalArg(1) int x, @OriginalArg(2) int z, @OriginalArg(3) long pickKey) {
-		@Pc(7) Tile tile = tiles[y][x][z];
+	public static boolean isLocValid(@OriginalArg(0) int level, @OriginalArg(1) int x, @OriginalArg(2) int z, @OriginalArg(3) long key) {
+		@Pc(7) Tile tile = tiles[level][x][z];
 		if (tile == null) {
 			return false;
-		} else if (tile.wall != null && tile.wall.pickKey == pickKey) {
+		} else if (tile.wall != null && tile.wall.key == key) {
 			return true;
-		} else if (tile.wallDecor != null && tile.wallDecor.pickKey == pickKey) {
+		} else if (tile.wallDecor != null && tile.wallDecor.key == key) {
 			return true;
-		} else if (tile.groundDecor != null && tile.groundDecor.pickKey == pickKey) {
+		} else if (tile.groundDecor != null && tile.groundDecor.key == key) {
 			return true;
 		} else {
 			for (@Pc(46) int i = 0; i < tile.sceneryLen; i++) {
-				if (tile.scenery[i].pickKey == pickKey) {
+				if (tile.scenery[i].key == key) {
 					return true;
 				}
 			}
@@ -461,13 +461,13 @@ public final class SceneGraph {
 	}
 
 	@OriginalMember(owner = "client!ka", name = "a", descriptor = "(IIIIIILclient!vc;IJ)Z")
-	public static boolean method2196(@OriginalArg(0) int y, @OriginalArg(1) int x, @OriginalArg(2) int z, @OriginalArg(3) int arg3, @OriginalArg(4) int width, @OriginalArg(5) int length, @OriginalArg(6) Entity arg6, @OriginalArg(8) long pickKey) {
+	public static boolean method2196(@OriginalArg(0) int level, @OriginalArg(1) int x, @OriginalArg(2) int z, @OriginalArg(3) int arg3, @OriginalArg(4) int width, @OriginalArg(5) int length, @OriginalArg(6) Entity arg6, @OriginalArg(8) long key) {
 		if (arg6 == null) {
 			return true;
 		} else {
 			@Pc(11) int centerXFine = x * 128 + width * 64;
-			@Pc(19) int centerYFine = z * 128 + length * 64;
-			return addScenery(y, x, z, width, length, centerXFine, centerYFine, arg3, arg6, 0, false, pickKey);
+			@Pc(19) int centerZFine = z * 128 + length * 64;
+			return addScenery(level, x, z, width, length, centerXFine, centerZFine, arg3, arg6, 0, false, key);
 		}
 	}
 
@@ -507,51 +507,199 @@ public final class SceneGraph {
 	}
 
 	@OriginalMember(owner = "client!jo", name = "a", descriptor = "(IIIIIIIIIIIIIIIIIIII)V")
-	public static void setTile(@OriginalArg(0) int y, @OriginalArg(1) int x, @OriginalArg(2) int z, @OriginalArg(3) int shape, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) int arg8, @OriginalArg(9) int arg9, @OriginalArg(10) int arg10, @OriginalArg(11) int arg11, @OriginalArg(12) int arg12, @OriginalArg(13) int arg13, @OriginalArg(14) int arg14, @OriginalArg(15) int arg15, @OriginalArg(16) int arg16, @OriginalArg(17) int arg17, @OriginalArg(18) int arg18, @OriginalArg(19) int arg19) {
+	public static void setTile(@OriginalArg(0) int level, @OriginalArg(1) int x, @OriginalArg(2) int z, @OriginalArg(3) int shape, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) int arg8, @OriginalArg(9) int arg9, @OriginalArg(10) int arg10, @OriginalArg(11) int arg11, @OriginalArg(12) int arg12, @OriginalArg(13) int arg13, @OriginalArg(14) int arg14, @OriginalArg(15) int arg15, @OriginalArg(16) int arg16, @OriginalArg(17) int arg17, @OriginalArg(18) int arg18, @OriginalArg(19) int arg19) {
 		if (shape == 0) {
 			@Pc(12) PlainTile plainTile = new PlainTile(arg10, arg11, arg12, arg13, -1, arg18, false);
-			for (@Pc(14) int y0 = y; y0 >= 0; y0--) {
-				if (tiles[y0][x][z] == null) {
-					tiles[y0][x][z] = new Tile(y0, x, z);
+			for (@Pc(14) int level0 = level; level0 >= 0; level0--) {
+				if (tiles[level0][x][z] == null) {
+					tiles[level0][x][z] = new Tile(level0, x, z);
 				}
 			}
-			tiles[y][x][z].plainTile = plainTile;
+			tiles[level][x][z].plainTile = plainTile;
 		} else if (shape == 1) {
 			@Pc(74) PlainTile local74 = new PlainTile(arg14, arg15, arg16, arg17, arg5, arg19, arg6 == arg7 && arg6 == arg8 && arg6 == arg9);
-			for (@Pc(76) int y0 = y; y0 >= 0; y0--) {
-				if (tiles[y0][x][z] == null) {
-					tiles[y0][x][z] = new Tile(y0, x, z);
+			for (@Pc(76) int level0 = level; level0 >= 0; level0--) {
+				if (tiles[level0][x][z] == null) {
+					tiles[level0][x][z] = new Tile(level0, x, z);
 				}
 			}
-			tiles[y][x][z].plainTile = local74;
+			tiles[level][x][z].plainTile = local74;
 		} else {
 			@Pc(134) ShapedTile shapedTile = new ShapedTile(shape, arg4, arg5, x, z, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16, arg17, arg18, arg19);
-			for (@Pc(136) int y0 = y; y0 >= 0; y0--) {
-				if (tiles[y0][x][z] == null) {
-					tiles[y0][x][z] = new Tile(y0, x, z);
+			for (@Pc(136) int level0 = level; level0 >= 0; level0--) {
+				if (tiles[level0][x][z] == null) {
+					tiles[level0][x][z] = new Tile(level0, x, z);
 				}
 			}
-			tiles[y][x][z].shapedTile = shapedTile;
+			tiles[level][x][z].shapedTile = shapedTile;
+		}
+	}
+
+	@OriginalMember(owner = "client!pn", name = "a", descriptor = "(IIIILclient!vc;JLclient!vc;Lclient!vc;)V")
+	public static void setObjStack(@OriginalArg(0) int y, @OriginalArg(1) int x, @OriginalArg(2) int z, @OriginalArg(3) int arg3, @OriginalArg(4) Entity primary, @OriginalArg(5) long key, @OriginalArg(6) Entity secondary, @OriginalArg(7) Entity tertiary) {
+		@Pc(3) ObjStackEntity entity = new ObjStackEntity();
+		entity.primary = primary;
+		entity.xFine = x * 128 + 64;
+		entity.zFine = z * 128 + 64;
+		entity.anInt5501 = arg3;
+		entity.key = key;
+		entity.secondary = secondary;
+		entity.tertiary = tertiary;
+		@Pc(34) int local34 = 0;
+		@Pc(42) Tile tile = tiles[y][x][z];
+		if (tile != null) {
+			for (@Pc(46) int i = 0; i < tile.sceneryLen; i++) {
+				@Pc(55) Scenery scenery = tile.scenery[i];
+				if ((scenery.key & 0x400000L) == 0x400000L) {
+					@Pc(66) int minY = scenery.entity.getMinY();
+					if (minY != -32768 && minY < local34) {
+						local34 = minY;
+					}
+				}
+			}
+		}
+		entity.anInt5499 = -local34;
+		if (tiles[y][x][z] == null) {
+			tiles[y][x][z] = new Tile(y, x, z);
+		}
+		tiles[y][x][z].objStack = entity;
+	}
+
+	@OriginalMember(owner = "client!ri", name = "c", descriptor = "(III)Lclient!vf;")
+	public static ObjStackEntity removeObjStack(@OriginalArg(0) int level, @OriginalArg(1) int x, @OriginalArg(2) int z) {
+		@Pc(7) Tile tile = tiles[level][x][z];
+		if (tile == null) {
+			return null;
+		} else {
+			@Pc(14) ObjStackEntity entity = tile.objStack;
+			tile.objStack = null;
+			return entity;
+		}
+	}
+
+	@OriginalMember(owner = "client!bl", name = "a", descriptor = "(IIII)V")
+	public static void method344(@OriginalArg(0) int level, @OriginalArg(1) int x, @OriginalArg(2) int z, @OriginalArg(3) int arg3) {
+		@Pc(7) Tile tile = tiles[level][x][z];
+		if (tile == null) {
+			return;
+		}
+		@Pc(13) WallDecor wallDecor = tile.wallDecor;
+		if (wallDecor != null) {
+			wallDecor.anInt5633 = wallDecor.anInt5633 * arg3 / 16;
+			wallDecor.anInt5625 = wallDecor.anInt5625 * arg3 / 16;
+		}
+	}
+
+	@OriginalMember(owner = "client!cd", name = "a", descriptor = "(IZII)I")
+	public static int method522(@OriginalArg(3) int level, @OriginalArg(2) int xFine, @OriginalArg(0) int zFine) {
+		if (tileHeights == null) {
+			return 0;
+		}
+		@Pc(12) int x = xFine >> 7;
+		@Pc(16) int z = zFine >> 7;
+		if (x < 0 || z < 0 || x > 103 || z > 103) {
+			return 0;
+		}
+		@Pc(38) int virtualLevel = level;
+		if (level < 3 && (Static4.tileFlags[1][x][z] & 0x2) == 2) {
+			virtualLevel = level + 1;
+		}
+		@Pc(61) int local61 = zFine & 0x7F;
+		@Pc(70) int local70 = xFine & 0x7F;
+		@Pc(98) int local98 = tileHeights[virtualLevel][x][z] * (128 - local70) + local70 * tileHeights[virtualLevel][x + 1][z] >> 7;
+		@Pc(128) int local128 = tileHeights[virtualLevel][x + 1][z + 1] * local70 + (128 - local70) * tileHeights[virtualLevel][x][z + 1] >> 7;
+		return local128 * local61 + local98 * (128 - local61) >> 7;
+	}
+
+	@OriginalMember(owner = "client!om", name = "a", descriptor = "(II)V")
+	public static void method3253(@OriginalArg(0) int x, @OriginalArg(1) int z) {
+		@Pc(7) Tile local7 = tiles[0][x][z];
+		for (@Pc(9) int level = 0; level < 3; level++) {
+			@Pc(30) Tile tile = tiles[level][x][z] = tiles[level + 1][x][z];
+			if (tile != null) {
+				tile.virtualLevel--;
+				for (@Pc(40) int i = 0; i < tile.sceneryLen; i++) {
+					@Pc(49) Scenery scenery = tile.scenery[i];
+					if ((scenery.key >> 29 & 0x3L) == 2L && scenery.xMin == x && scenery.zMin == z) {
+						scenery.level--;
+					}
+				}
+			}
+		}
+		if (tiles[0][x][z] == null) {
+			tiles[0][x][z] = new Tile(0, x, z);
+		}
+		tiles[0][x][z].aClass4_Sub19_1 = local7;
+		tiles[3][x][z] = null;
+	}
+
+	@OriginalMember(owner = "client!tm", name = "a", descriptor = "(IIBIIIII)V")
+	public static void method4250(@OriginalArg(3) int level, @OriginalArg(1) int x, @OriginalArg(4) int z, @OriginalArg(5) int layer, @OriginalArg(7) int shape, @OriginalArg(6) int angle, @OriginalArg(0) int seqId) {
+		if (x < 0 || z < 0 || x >= 103 || z >= 103) {
+			return;
+		}
+		if (layer == 0) {
+			@Pc(22) Wall wall = getWall(level, x, z);
+			if (wall != null) {
+				@Pc(32) int locId = (int) (wall.key >>> 32) & Integer.MAX_VALUE;
+				if (shape == 2) {
+					wall.primary = new Loc(locId, 2, angle + 4, level, x, z, seqId, false, wall.primary);
+					wall.secondary = new Loc(locId, 2, angle + 1 & 0x3, level, x, z, seqId, false, wall.secondary);
+				} else {
+					wall.primary = new Loc(locId, shape, angle, level, x, z, seqId, false, wall.primary);
+				}
+			}
+		}
+		if (layer == 1) {
+			@Pc(98) WallDecor wallDecor = getWallDecor(level, x, z);
+			if (wallDecor != null) {
+				@Pc(109) int locId = Integer.MAX_VALUE & (int) (wallDecor.key >>> 32);
+				if (shape == 4 || shape == 5) {
+					wallDecor.primary = new Loc(locId, 4, angle, level, x, z, seqId, false, wallDecor.primary);
+				} else if (shape == 6) {
+					wallDecor.primary = new Loc(locId, 4, angle + 4, level, x, z, seqId, false, wallDecor.primary);
+				} else if (shape == 7) {
+					wallDecor.primary = new Loc(locId, 4, (angle + 2 & 0x3) + 4, level, x, z, seqId, false, wallDecor.primary);
+				} else if (shape == 8) {
+					wallDecor.primary = new Loc(locId, 4, angle + 4, level, x, z, seqId, false, wallDecor.primary);
+					wallDecor.secondary = new Loc(locId, 4, (angle + 2 & 0x3) + 4, level, x, z, seqId, false, wallDecor.secondary);
+				}
+			}
+		}
+		if (layer == 2) {
+			if (shape == 11) {
+				shape = 10;
+			}
+			@Pc(246) Scenery scenery = getScenery(level, x, z);
+			if (scenery != null) {
+				scenery.entity = new Loc((int) (scenery.key >>> 32) & Integer.MAX_VALUE, shape, angle, level, x, z, seqId, false, scenery.entity);
+			}
+		}
+		if (layer == 3) {
+			@Pc(280) GroundDecor groundDecor = getGroundDecor(level, x, z);
+			if (groundDecor != null) {
+				groundDecor.entity = new Loc(Integer.MAX_VALUE & (int) (groundDecor.key >>> 32), 22, angle, level, x, z, seqId, false, groundDecor.entity);
+			}
 		}
 	}
 
 	@OriginalMember(owner = "client!uf", name = "a", descriptor = "()V")
 	public static void clear() {
 		if (surfaceTiles != null) {
-			for (@Pc(3) int y = 0; y < surfaceTiles.length; y++) {
+			for (@Pc(3) int level = 0; level < surfaceTiles.length; level++) {
 				for (@Pc(9) int x = 0; x < width; x++) {
 					for (@Pc(14) int z = 0; z < length; z++) {
-						surfaceTiles[y][x][z] = null;
+						surfaceTiles[level][x][z] = null;
 					}
 				}
 			}
 		}
 		aClass4_Sub12ArrayArray1 = null;
 		if (underwaterTiles != null) {
-			for (@Pc(38) int y = 0; y < underwaterTiles.length; y++) {
+			for (@Pc(38) int level = 0; level < underwaterTiles.length; level++) {
 				for (@Pc(44) int x = 0; x < width; x++) {
 					for (@Pc(49) int z = 0; z < length; z++) {
-						underwaterTiles[y][x][z] = null;
+						underwaterTiles[level][x][z] = null;
 					}
 				}
 			}

@@ -111,7 +111,7 @@ public final class Static6 {
 	public static Sprite aClass4_Sub3_Sub14_5;
 
 	@OriginalMember(owner = "client!sj", name = "s", descriptor = "[Lclient!l;")
-	public static ClanMember[] aClass4_Sub15Array1;
+	public static ClanMember[] clanMembers;
 
 	@OriginalMember(owner = "client!sm", name = "g", descriptor = "[[S")
 	public static short[][] aShortArrayArray6;
@@ -141,7 +141,7 @@ public final class Static6 {
 	public static Sprite aClass4_Sub3_Sub14_8;
 
 	@OriginalMember(owner = "client!tm", name = "A", descriptor = "[I")
-	public static int[] anIntArray570;
+	public static int[] npcGroupIds;
 
 	@OriginalMember(owner = "client!tm", name = "G", descriptor = "I")
 	public static int anInt5211;
@@ -199,9 +199,6 @@ public final class Static6 {
 
 	@OriginalMember(owner = "client!rg", name = "ab", descriptor = "I")
 	public static int anInt4506 = 0;
-
-	@OriginalMember(owner = "client!rg", name = "mb", descriptor = "I")
-	public static int anInt4516 = 0;
 
 	@OriginalMember(owner = "client!rh", name = "W", descriptor = "I")
 	public static int anInt4546 = 0;
@@ -275,9 +272,6 @@ public final class Static6 {
 	@OriginalMember(owner = "client!sd", name = "h", descriptor = "I")
 	public static int anInt4761 = 0;
 
-	@OriginalMember(owner = "client!se", name = "ab", descriptor = "[I")
-	public static final int[] anIntArray517 = new int[200];
-
 	@OriginalMember(owner = "client!sg", name = "b", descriptor = "Lclient!wf;")
 	public static Component aClass185_14 = null;
 
@@ -298,9 +292,6 @@ public final class Static6 {
 
 	@OriginalMember(owner = "client!sj", name = "p", descriptor = "I")
 	public static int anInt4856 = 0;
-
-	@OriginalMember(owner = "client!sj", name = "x", descriptor = "[Ljava/lang/String;")
-	public static final String[] aStringArray28 = new String[] { "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" };
 
 	@OriginalMember(owner = "client!sj", name = "A", descriptor = "[I")
 	public static final int[] anIntArray528 = new int[14];
@@ -371,6 +362,4 @@ public final class Static6 {
 	@OriginalMember(owner = "client!tl", name = "a", descriptor = "I")
 	public static int anInt5189 = 0;
 
-	@OriginalMember(owner = "client!tm", name = "J", descriptor = "I")
-	public static int anInt5214 = 0;
 }

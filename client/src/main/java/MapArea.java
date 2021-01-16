@@ -69,9 +69,9 @@ public final class MapArea extends SecondaryNode {
 	}
 
 	@OriginalMember(owner = "client!wg", name = "a", descriptor = "(III[II)Z")
-	public final boolean convertSourceToDisplay(@OriginalArg(2) int y, @OriginalArg(4) int x, @OriginalArg(0) int z, @OriginalArg(3) int[] position) {
+	public final boolean convertSourceToDisplay(@OriginalArg(2) int level, @OriginalArg(4) int x, @OriginalArg(0) int z, @OriginalArg(3) int[] position) {
 		for (@Pc(16) MapAreaChunk chunk = (MapAreaChunk) this.chunks.head(); chunk != null; chunk = (MapAreaChunk) this.chunks.next()) {
-			if (chunk.containsSource(y, x, z)) {
+			if (chunk.containsSource(level, x, z)) {
 				chunk.convertSourceToDisplay(x, z, position);
 				return true;
 			}

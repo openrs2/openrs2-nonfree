@@ -55,7 +55,7 @@ public final class LocType {
 	public int anInt5507 = 16;
 
 	@OriginalMember(owner = "client!vh", name = "y", descriptor = "I")
-	public int anInt5519 = 0;
+	public int soundRadius = 0;
 
 	@OriginalMember(owner = "client!vh", name = "s", descriptor = "I")
 	public int length = 1;
@@ -136,10 +136,10 @@ public final class LocType {
 	public int anInt5544 = -1;
 
 	@OriginalMember(owner = "client!vh", name = "A", descriptor = "I")
-	public int anInt5521 = -1;
+	public int sound = -1;
 
 	@OriginalMember(owner = "client!vh", name = "G", descriptor = "I")
-	public int anInt5525 = 255;
+	public int soundVolume = 255;
 
 	@OriginalMember(owner = "client!vh", name = "ub", descriptor = "Z")
 	public boolean aBoolean382 = false;
@@ -199,15 +199,15 @@ public final class LocType {
 	public int[] anIntArray633 = null;
 
 	@OriginalMember(owner = "client!vh", name = "a", descriptor = "(Z)Z")
-	public final boolean method4449() {
+	public final boolean isReady() {
 		if (this.models == null) {
 			return true;
 		}
-		@Pc(13) boolean local13 = true;
-		for (@Pc(15) int local15 = 0; local15 < this.models.length; local15++) {
-			local13 &= LocTypeList.modelsArchive.isFileReady(this.models[local15] & 0xFFFF, 0);
+		@Pc(13) boolean ready = true;
+		for (@Pc(15) int i = 0; i < this.models.length; i++) {
+			ready &= LocTypeList.modelsArchive.isFileReady(this.models[i] & 0xFFFF, 0);
 		}
-		return local13;
+		return ready;
 	}
 
 	@OriginalMember(owner = "client!vh", name = "a", descriptor = "(IZII[[I[[IZIIILclient!fe;)Lclient!jh;")
@@ -823,12 +823,12 @@ public final class LocType {
 			}
 			this.multiLocs[len + 1] = defaultMultiLoc;
 		} else if (code == 78) {
-			this.anInt5521 = buffer.readUnsignedShort();
-			this.anInt5519 = buffer.readUnsignedByte();
+			this.sound = buffer.readUnsignedShort();
+			this.soundRadius = buffer.readUnsignedByte();
 		} else if (code == 79) {
 			this.anInt5555 = buffer.readUnsignedShort();
 			this.anInt5530 = buffer.readUnsignedShort();
-			this.anInt5519 = buffer.readUnsignedByte();
+			this.soundRadius = buffer.readUnsignedByte();
 			@Pc(323) int local323 = buffer.readUnsignedByte();
 			this.anIntArray632 = new int[local323];
 			for (@Pc(329) int local329 = 0; local329 < local323; local329++) {
@@ -873,7 +873,7 @@ public final class LocType {
 		} else if (code == 103) {
 			this.anInt5544 = 0;
 		} else if (code == 104) {
-			this.anInt5525 = buffer.readUnsignedByte();
+			this.soundVolume = buffer.readUnsignedByte();
 		} else if (code == 105) {
 			this.aBoolean382 = true;
 		} else if (code == 106) {
@@ -896,8 +896,8 @@ public final class LocType {
 		} else if (code == 249) {
 			@Pc(600) int size = buffer.readUnsignedByte();
 			if (this.params == null) {
-				@Pc(608) int bucketCount = IntUtils.clp2(size);
-				this.params = new HashTable(bucketCount);
+				@Pc(608) int buckets = IntUtils.clp2(size);
+				this.params = new HashTable(buckets);
 			}
 			for (@Pc(616) int i = 0; i < size; i++) {
 				@Pc(628) boolean string = buffer.readUnsignedByte() == 1;
@@ -914,14 +914,14 @@ public final class LocType {
 	}
 
 	@OriginalMember(owner = "client!vh", name = "f", descriptor = "(I)Z")
-	public final boolean method4463() {
+	public final boolean hasAreaSound() {
 		if (this.multiLocs == null) {
-			return this.anInt5521 != -1 || this.anIntArray632 != null;
+			return this.sound != -1 || this.anIntArray632 != null;
 		}
 		for (@Pc(31) int i = 0; i < this.multiLocs.length; i++) {
 			if (this.multiLocs[i] != -1) {
 				@Pc(54) LocType type = LocTypeList.get(this.multiLocs[i]);
-				if (type.anInt5521 != -1 || type.anIntArray632 != null) {
+				if (type.sound != -1 || type.anIntArray632 != null) {
 					return true;
 				}
 			}

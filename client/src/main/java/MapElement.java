@@ -5,7 +5,7 @@ import org.openrs2.deob.annotation.OriginalMember;
 public final class MapElement extends SecondaryNode {
 
 	@OriginalMember(owner = "client!fg", name = "E", descriptor = "I")
-	public int y;
+	public int level;
 
 	@OriginalMember(owner = "client!fg", name = "F", descriptor = "I")
 	public int anInt1764;

@@ -788,7 +788,7 @@ public final class GlModel extends Model {
 				}
 				if (Static7.anInt5333 >= local242 && Static7.anInt5333 <= local244 && Static1.anInt3 >= local246 && Static1.anInt3 <= local248) {
 					if (this.aBoolean324) {
-						Static5.pickKeys[Static7.pickKeysSize++] = arg8;
+						Static5.keys[Static7.keysSize++] = arg8;
 					} else {
 						if (Static6.anIntArray509.length < this.anInt4691) {
 							Static6.anIntArray509 = new int[this.anInt4691];
@@ -807,7 +807,7 @@ public final class GlModel extends Model {
 									@Pc(712) short local712 = this.aShortArray97[local698];
 									@Pc(717) short local717 = this.aShortArray98[local698];
 									if (this.method3868(Static7.anInt5333, Static1.anInt3, Static6.anIntArray508[local707], Static6.anIntArray508[local712], Static6.anIntArray508[local717], Static6.anIntArray509[local707], Static6.anIntArray509[local712], Static6.anIntArray509[local717])) {
-										Static5.pickKeys[Static7.pickKeysSize++] = arg8;
+										Static5.keys[Static7.keysSize++] = arg8;
 										break label124;
 									}
 									local698++;
@@ -850,12 +850,12 @@ public final class GlModel extends Model {
 				}
 			}
 		}
-		@Pc(753) GL local753 = GlRenderer.gl;
-		local753.glPushMatrix();
-		local753.glTranslatef((float) arg5, (float) arg6, (float) arg7);
-		local753.glRotatef((float) arg0 * 0.17578125F, 0.0F, 1.0F, 0.0F);
+		@Pc(753) GL gl = GlRenderer.gl;
+		gl.glPushMatrix();
+		gl.glTranslatef((float) arg5, (float) arg6, (float) arg7);
+		gl.glRotatef((float) arg0 * 0.17578125F, 0.0F, 1.0F, 0.0F);
 		this.method3858();
-		local753.glPopMatrix();
+		gl.glPopMatrix();
 		if (arg10 != null) {
 			arg10.method2953(arg0, arg1, arg2, arg3, arg4, arg9, arg5, arg6, arg7);
 		}

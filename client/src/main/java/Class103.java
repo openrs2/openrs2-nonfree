@@ -90,37 +90,37 @@ public final class Class103 {
 			}
 			local74 += local5 - 128;
 		}
-		@Pc(145) GL local145 = GlRenderer.gl;
+		@Pc(145) GL gl = GlRenderer.gl;
 		@Pc(148) ByteBuffer local148 = ByteBuffer.wrap(Static4.aByteArray21);
 		local148.limit(16384);
 		GlRenderer.setTextureId(this.textureId);
-		local145.glTexImage2D(GL.GL_TEXTURE_2D, GL.GL_POINTS, GL.GL_ALPHA, 128, 128, GL.GL_POINTS, GL.GL_ALPHA, GL.GL_UNSIGNED_BYTE, local148);
+		gl.glTexImage2D(GL.GL_TEXTURE_2D, GL.GL_POINTS, GL.GL_ALPHA, 128, 128, GL.GL_POINTS, GL.GL_ALPHA, GL.GL_UNSIGNED_BYTE, local148);
 		return true;
 	}
 
 	@OriginalMember(owner = "client!kc", name = "a", descriptor = "()V")
 	public final void method2237() {
-		@Pc(1) GL local1 = GlRenderer.gl;
+		@Pc(1) GL gl = GlRenderer.gl;
 		GlRenderer.setTextureId(this.textureId);
 		if (this.aClass111_4 == null) {
 			if (GlRenderer.arbVboSupported) {
-				local1.glBindBufferARB(GL.GL_ARRAY_BUFFER, 0);
+				gl.glBindBufferARB(GL.GL_ARRAY_BUFFER, 0);
 			}
-			local1.glInterleavedArrays(GL.GL_T2F_V3F, 20, this.aByteBuffer7);
+			gl.glInterleavedArrays(GL.GL_T2F_V3F, 20, this.aByteBuffer7);
 			GlRenderer.normalArrayEnabled = false;
 		} else {
 			this.aClass111_4.bindArray();
-			local1.glInterleavedArrays(GL.GL_T2F_V3F, 20, 0L);
+			gl.glInterleavedArrays(GL.GL_T2F_V3F, 20, 0L);
 			GlRenderer.normalArrayEnabled = false;
 		}
 		if (this.aClass111_3 == null) {
 			if (GlRenderer.arbVboSupported) {
-				local1.glBindBufferARB(GL.GL_ELEMENT_ARRAY_BUFFER, 0);
+				gl.glBindBufferARB(GL.GL_ELEMENT_ARRAY_BUFFER, 0);
 			}
-			local1.glDrawElements(GL.GL_TRIANGLES, 384, GL.GL_UNSIGNED_INT, this.aByteBuffer8);
+			gl.glDrawElements(GL.GL_TRIANGLES, 384, GL.GL_UNSIGNED_INT, this.aByteBuffer8);
 		} else {
 			this.aClass111_3.bindElementArray();
-			local1.glDrawElements(GL.GL_TRIANGLES, 384, GL.GL_UNSIGNED_INT, 0L);
+			gl.glDrawElements(GL.GL_TRIANGLES, 384, GL.GL_UNSIGNED_INT, 0L);
 		}
 	}
 

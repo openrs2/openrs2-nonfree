@@ -3,7 +3,9 @@ import java.awt.Graphics;
 import java.awt.Insets;
 import java.io.IOException;
 import java.net.Socket;
+import java.util.Calendar;
 import java.util.GregorianCalendar;
+import java.util.Random;
 
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
@@ -238,6 +240,12 @@ public final class client extends GameShell {
 	@OriginalMember(owner = "client!vf", name = "g", descriptor = "Lclient!ud;")
 	public static Resampler resampler;
 
+	@OriginalMember(owner = "client!pn", name = "f", descriptor = "Ljava/util/Random;")
+	public static final Random random = new Random();
+
+	@OriginalMember(owner = "client!fo", name = "p", descriptor = "I")
+	public static int seed;
+
 	@OriginalMember(owner = "client!de", name = "x", descriptor = "I")
 	public static int loop = 0;
 
@@ -314,6 +322,18 @@ public final class client extends GameShell {
 		return new Js5(js5Providers[archive], discardPacked, discardUnpacked);
 	}
 
+	@OriginalMember(owner = "client!bg", name = "a", descriptor = "(IILclient!fd;)V")
+	public static void setUid(@OriginalArg(2) Buffer buffer, @OriginalArg(1) int off) {
+		if (uid == null) {
+			return;
+		}
+		try {
+			uid.seek(0L);
+			uid.write(buffer.bytes, off, 24);
+		} catch (@Pc(14) Exception ex) {
+		}
+	}
+
 	@OriginalMember(owner = "client!client", name = "f", descriptor = "(I)V")
 	private void method683() {
 		for (Static6.anInt5088 = 0; Keyboard.nextKey() && Static6.anInt5088 < 128; Static6.anInt5088++) {
@@ -321,8 +341,8 @@ public final class client extends GameShell {
 			Static5.anIntArray419[Static6.anInt5088] = Keyboard.keyChar;
 		}
 		Static5.anInt4156++;
-		if (Static3.anInt5398 != -1) {
-			Static14.method1060(Static3.anInt5398, GameShell.canvasWidth, 0, 0, 0, 0, GameShell.canvasHeight);
+		if (InterfaceList.topLevelInterface != -1) {
+			Static14.method1060(InterfaceList.topLevelInterface, GameShell.canvasWidth, 0, 0, 0, 0, GameShell.canvasHeight);
 		}
 		Static6.anInt4979++;
 		if (GlRenderer.enabled) {
@@ -331,32 +351,32 @@ public final class client extends GameShell {
 				@Pc(65) Npc local65 = NpcList.npcs[local56];
 				if (local65 != null) {
 					@Pc(71) byte local71 = local65.type.aByte21;
-					if ((local71 & 0x2) > 0 && local65.anInt3965 == 0 && Math.random() * 1000.0D < 10.0D) {
+					if ((local71 & 0x2) > 0 && local65.movementQueueSize == 0 && Math.random() * 1000.0D < 10.0D) {
 						@Pc(98) int local98 = (int) Math.round(Math.random() * 2.0D - 1.0D);
 						@Pc(106) int local106 = (int) Math.round(Math.random() * 2.0D - 1.0D);
 						if (local98 != 0 || local106 != 0) {
-							local65.aByteArray51[0] = 1;
-							local65.anIntArray422[0] = local98 + (local65.x >> 7);
-							local65.anIntArray426[0] = (local65.z >> 7) + local106;
-							PathFinder.collisionMaps[Static7.y].method568(0, local65.z >> 7, local65.getSize(), false, local65.x >> 7, local65.getSize(), false);
-							if (local65.anIntArray422[0] >= 0 && local65.anIntArray422[0] <= 104 - local65.getSize() && local65.anIntArray426[0] >= 0 && local65.anIntArray426[0] <= 104 - local65.getSize() && PathFinder.collisionMaps[Static7.y].method575(local65.anIntArray426[0], local65.z >> 7, local65.anIntArray422[0], local65.x >> 7)) {
+							local65.movementQueueSpeed[0] = 1;
+							local65.movementQueueX[0] = local98 + (local65.xFine >> 7);
+							local65.movementQueueZ[0] = (local65.zFine >> 7) + local106;
+							PathFinder.collisionMaps[Player.level].unflagScenery(local65.xFine >> 7, local65.zFine >> 7, local65.getSize(), local65.getSize(), 0, false, false);
+							if (local65.movementQueueX[0] >= 0 && local65.movementQueueX[0] <= 104 - local65.getSize() && local65.movementQueueZ[0] >= 0 && local65.movementQueueZ[0] <= 104 - local65.getSize() && PathFinder.collisionMaps[Player.level].method575(local65.movementQueueZ[0], local65.zFine >> 7, local65.movementQueueX[0], local65.xFine >> 7)) {
 								if (local65.getSize() > 1) {
-									for (@Pc(240) int local240 = local65.anIntArray422[0]; local240 < local65.anIntArray422[0] + local65.getSize(); local240++) {
-										for (@Pc(256) int local256 = local65.anIntArray426[0]; local65.anIntArray426[0] + local65.getSize() > local256; local256++) {
-											if ((PathFinder.collisionMaps[Static7.y].flags[local240][local256] & 0x2401FF) != 0) {
+									for (@Pc(240) int local240 = local65.movementQueueX[0]; local240 < local65.movementQueueX[0] + local65.getSize(); local240++) {
+										for (@Pc(256) int local256 = local65.movementQueueZ[0]; local65.movementQueueZ[0] + local65.getSize() > local256; local256++) {
+											if ((PathFinder.collisionMaps[Player.level].flags[local240][local256] & 0x2401FF) != 0) {
 												continue label195;
 											}
 										}
 									}
 								}
-								local65.anInt3965 = 1;
+								local65.movementQueueSize = 1;
 							}
 						}
 					}
 					Static32.method4024(local65);
 					Static34.method4247(local65);
 					Static13.method939(local65);
-					PathFinder.collisionMaps[Static7.y].method567(false, false, local65.getSize(), local65.getSize(), local65.z >> 7, local65.x >> 7);
+					PathFinder.collisionMaps[Player.level].flagScenery(local65.xFine >> 7, local65.zFine >> 7, local65.getSize(), local65.getSize(), false, false);
 				}
 			}
 		}
@@ -398,7 +418,7 @@ public final class client extends GameShell {
 											}
 											if (Static1.aClass197_1 != null && Static1.aClass197_1.status == 1) {
 												if (Static1.aClass197_1.result != null) {
-													Static37.method4719(Static6.aString269, Static4.aBoolean206);
+													Static37.openUrl(Static6.aString269, Static4.aBoolean206);
 												}
 												Static1.aClass197_1 = null;
 												Static4.aBoolean206 = false;
@@ -565,7 +585,7 @@ public final class client extends GameShell {
 			Static5.aClass4_Sub6_Sub3_2 = new Class4_Sub6_Sub3();
 			soundChannel.method3008(Static5.aClass4_Sub6_Sub3_2);
 			resampler = new Resampler(22050, Static7.sampleRate);
-			Static7.anInt5611 = js5Archive6.getGroupId("scape main");
+			Static7.titleSong = js5Archive6.getGroupId("scape main");
 			mainLoadSecondaryText = LocalisedText.MAINLOAD45B;
 			mainLoadState = 50;
 			mainLoadPercentage = 30;
@@ -1199,7 +1219,7 @@ public final class client extends GameShell {
 		if (Static7.aBoolean422) {
 			Static31.method3798();
 		}
-		if (Preferences.safeMode && Static4.anInt3304 == 10 && Static3.anInt5398 != -1) {
+		if (Preferences.safeMode && Static4.anInt3304 == 10 && InterfaceList.topLevelInterface != -1) {
 			Preferences.safeMode = false;
 			Preferences.write(GameShell.signLink);
 		}
@@ -1213,9 +1233,9 @@ public final class client extends GameShell {
 		}
 		loop++;
 		if (loop % 1000 == 1) {
-			@Pc(25) GregorianCalendar local25 = new GregorianCalendar();
-			Static2.anInt1976 = local25.get(11) * 600 + local25.get(12) * 10 + local25.get(13) / 6;
-			Static5.aRandom1.setSeed((long) Static2.anInt1976);
+			@Pc(25) GregorianCalendar calendar = new GregorianCalendar();
+			seed = calendar.get(Calendar.HOUR_OF_DAY) * 600 + calendar.get(Calendar.MINUTE) * 10 + calendar.get(Calendar.SECOND) / 6;
+			random.setSeed(seed);
 		}
 		this.js5NetworkLoop();
 		if (js5MasterIndex != null) {
@@ -1254,7 +1274,7 @@ public final class client extends GameShell {
 				if (LoginManager.reply == 15) {
 					Static25.method2930();
 				} else if (LoginManager.reply != 2) {
-					Static19.method1818();
+					Static19.logout();
 				}
 			}
 		}

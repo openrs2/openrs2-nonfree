@@ -6,6 +6,9 @@ import org.openrs2.deob.annotation.Pc;
 @OriginalClass("client!d")
 public final class BasType {
 
+	@OriginalMember(owner = "client!nd", name = "y", descriptor = "Lclient!d;")
+	public static final BasType DEFAULT = new BasType();
+
 	@OriginalMember(owner = "client!d", name = "F", descriptor = "[[I")
 	public int[][] anIntArrayArray7;
 
@@ -79,7 +82,7 @@ public final class BasType {
 	public int anInt861 = -1;
 
 	@OriginalMember(owner = "client!d", name = "K", descriptor = "I")
-	public int anInt860 = -1;
+	public int idleSeqId = -1;
 
 	@OriginalMember(owner = "client!d", name = "P", descriptor = "I")
 	public int anInt865 = -1;
@@ -112,17 +115,17 @@ public final class BasType {
 			if (code == 0) {
 				return;
 			}
-			this.method724(buffer, code);
+			this.decode(buffer, code);
 		}
 	}
 
 	@OriginalMember(owner = "client!d", name = "a", descriptor = "(IILclient!fd;)V")
-	private void method724(@OriginalArg(2) Buffer buffer, @OriginalArg(1) int code) {
+	private void decode(@OriginalArg(2) Buffer buffer, @OriginalArg(1) int code) {
 		if (code == 1) {
-			this.anInt860 = buffer.readUnsignedShort();
+			this.idleSeqId = buffer.readUnsignedShort();
 			this.anInt846 = buffer.readUnsignedShort();
-			if (this.anInt860 == 65535) {
-				this.anInt860 = -1;
+			if (this.idleSeqId == 65535) {
+				this.idleSeqId = -1;
 			}
 			if (this.anInt846 == 65535) {
 				this.anInt846 = -1;

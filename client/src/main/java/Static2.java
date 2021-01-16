@@ -94,9 +94,6 @@ public final class Static2 {
 	@OriginalMember(owner = "client!fo", name = "n", descriptor = "Lclient!fh;")
 	public static Js5 aClass58_42;
 
-	@OriginalMember(owner = "client!fo", name = "p", descriptor = "I")
-	public static int anInt1976;
-
 	@OriginalMember(owner = "client!g", name = "B", descriptor = "[I")
 	public static int[] anIntArray159;
 
@@ -123,9 +120,6 @@ public final class Static2 {
 
 	@OriginalMember(owner = "client!de", name = "m", descriptor = "I")
 	public static final int anInt946 = 0;
-
-	@OriginalMember(owner = "client!df", name = "h", descriptor = "I")
-	public static int anInt959 = 0;
 
 	@OriginalMember(owner = "client!dg", name = "l", descriptor = "I")
 	public static int anInt2245 = 128;
@@ -154,9 +148,6 @@ public final class Static2 {
 	@OriginalMember(owner = "client!ea", name = "K", descriptor = "I")
 	public static int anInt1121 = 1;
 
-	@OriginalMember(owner = "client!ed", name = "F", descriptor = "[Z")
-	public static final boolean[] aBooleanArray5 = new boolean[100];
-
 	@OriginalMember(owner = "client!ed", name = "G", descriptor = "I")
 	public static int anInt1216 = 0;
 
@@ -168,9 +159,6 @@ public final class Static2 {
 
 	@OriginalMember(owner = "client!eg", name = "m", descriptor = "I")
 	public static int anInt1231 = 0;
-
-	@OriginalMember(owner = "client!ei", name = "D", descriptor = "Lclient!ic;")
-	public static final HashTable aClass84_5 = new HashTable(512);
 
 	@OriginalMember(owner = "client!ei", name = "E", descriptor = "I")
 	public static int anInt1267 = 0;
@@ -232,14 +220,8 @@ public final class Static2 {
 	@OriginalMember(owner = "client!fi", name = "hb", descriptor = "[I")
 	public static final int[] anIntArray127 = new int[64];
 
-	@OriginalMember(owner = "client!fj", name = "X", descriptor = "[Z")
-	public static final boolean[] aBooleanArray7 = new boolean[200];
-
 	@OriginalMember(owner = "client!fj", name = "Z", descriptor = "I")
 	public static int anInt1874 = -1;
-
-	@OriginalMember(owner = "client!fl", name = "W", descriptor = "Lclient!ll;")
-	public static final LinkedList aClass112_9 = new LinkedList();
 
 	@OriginalMember(owner = "client!fl", name = "cb", descriptor = "I")
 	public static int anInt1937 = -1;

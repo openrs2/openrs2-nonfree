@@ -46,8 +46,8 @@ public final class Static18 {
 	@OriginalMember(owner = "client!he", name = "a", descriptor = "(I)V")
 	public static void method1714() {
 		ParticleManager.redraw((long) client.loop);
-		if (Static3.anInt5398 != -1) {
-			Static27.method4243(Static3.anInt5398);
+		if (InterfaceList.topLevelInterface != -1) {
+			Static27.method4243(InterfaceList.topLevelInterface);
 		}
 		for (@Pc(17) int local17 = 0; local17 < Static1.anInt113; local17++) {
 			if (Static2.aBooleanArray8[local17]) {
@@ -63,7 +63,7 @@ public final class Static18 {
 			Static7.aBoolean123 = true;
 		}
 		Static6.anInt4679 = -1;
-		if (Static3.anInt5398 != -1) {
+		if (InterfaceList.topLevelInterface != -1) {
 			Static1.anInt113 = 0;
 			Static16.method1563();
 		}
@@ -388,7 +388,7 @@ public final class Static18 {
 						}
 					}
 				}
-				if (local31.aString234 != null && (local17 >= PlayerList.size || Static7.anInt5413 == 0 || Static7.anInt5413 == 3 || Static7.anInt5413 == 1 && Static24.method2562(((Player) local31).name))) {
+				if (local31.aString234 != null && (local17 >= PlayerList.size || Static7.anInt5413 == 0 || Static7.anInt5413 == 3 || Static7.anInt5413 == 1 && FriendsList.contains(((Player) local31).name))) {
 					Static28.method3325(arg2 >> 1, arg3, arg1, arg4 >> 1, local31.method3306(), local31);
 					if (Static7.anInt5584 > -1 && Static5.anInt3635 < Static5.anInt5199) {
 						Static5.anIntArray566[Static5.anInt3635] = Fonts.b12Full.method2252(local31.aString234) / 2;

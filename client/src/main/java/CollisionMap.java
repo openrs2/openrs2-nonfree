@@ -58,20 +58,20 @@ public final class CollisionMap {
 	}
 
 	@OriginalMember(owner = "client!ch", name = "a", descriptor = "(ZZIIIII)V")
-	public final void method567(@OriginalArg(0) boolean arg0, @OriginalArg(1) boolean arg1, @OriginalArg(2) int length, @OriginalArg(3) int width, @OriginalArg(4) int z, @OriginalArg(6) int x) {
+	public final void flagScenery(@OriginalArg(6) int x, @OriginalArg(4) int z, @OriginalArg(3) int width, @OriginalArg(2) int length, @OriginalArg(0) boolean blockProjectiles, @OriginalArg(1) boolean blockRoutes) {
 		z -= this.zOffset;
-		@Pc(12) int flags = 256;
+		@Pc(12) int flags = 0x100;
 		x -= this.xOffset;
-		if (arg0) {
+		if (blockProjectiles) {
 			flags = 0x20100;
 		}
-		if (arg1) {
+		if (blockRoutes) {
 			flags |= 0x40000000;
 		}
 		for (@Pc(32) int x0 = x; x0 < x + width; x0++) {
-			if (x0 >= 0 && this.width > x0) {
+			if (x0 >= 0 && x0 < this.width) {
 				for (@Pc(54) int z0 = z; z0 < z + length; z0++) {
-					if (z0 >= 0 && this.length > z0) {
+					if (z0 >= 0 && z0 < this.length) {
 						this.flag(x0, z0, flags);
 					}
 				}
@@ -80,25 +80,25 @@ public final class CollisionMap {
 	}
 
 	@OriginalMember(owner = "client!ch", name = "a", descriptor = "(IIIIZIIZ)V")
-	public final void method568(@OriginalArg(0) int angle, @OriginalArg(1) int z, @OriginalArg(2) int arg2, @OriginalArg(4) boolean arg3, @OriginalArg(5) int x, @OriginalArg(6) int arg5, @OriginalArg(7) boolean arg6) {
+	public final void unflagScenery(@OriginalArg(5) int x, @OriginalArg(1) int z, @OriginalArg(6) int width, @OriginalArg(2) int length, @OriginalArg(0) int angle, @OriginalArg(4) boolean blockProjectiles, @OriginalArg(7) boolean blockRoutes) {
 		z -= this.zOffset;
 		if (angle == 1 || angle == 3) {
-			@Pc(23) int local23 = arg5;
-			arg5 = arg2;
-			arg2 = local23;
+			@Pc(23) int temp = width;
+			width = length;
+			length = temp;
 		}
 		x -= this.xOffset;
 		@Pc(34) int flags = 0x100;
-		if (arg3) {
+		if (blockProjectiles) {
 			flags = 0x20100;
 		}
-		if (arg6) {
+		if (blockRoutes) {
 			flags |= 0x40000000;
 		}
-		for (@Pc(49) int x0 = x; x0 < x + arg5; x0++) {
-			if (x0 >= 0 && this.width > x0) {
-				for (@Pc(70) int z0 = z; z0 < arg2 + z; z0++) {
-					if (z0 >= 0 && this.length > z0) {
+		for (@Pc(49) int x0 = x; x0 < x + width; x0++) {
+			if (x0 >= 0 && x0 < this.width) {
+				for (@Pc(70) int z0 = z; z0 < length + z; z0++) {
+					if (z0 >= 0 && z0 < this.length) {
 						this.unflag(x0, z0, flags);
 					}
 				}
@@ -107,188 +107,188 @@ public final class CollisionMap {
 	}
 
 	@OriginalMember(owner = "client!ch", name = "a", descriptor = "(IZIIZII)V")
-	public final void unflagWall(@OriginalArg(0) int angle, @OriginalArg(1) boolean arg1, @OriginalArg(2) int x, @OriginalArg(3) int shape, @OriginalArg(4) boolean arg4, @OriginalArg(6) int z) {
+	public final void unflagWall(@OriginalArg(2) int x, @OriginalArg(6) int z, @OriginalArg(3) int shape, @OriginalArg(0) int angle, @OriginalArg(4) boolean blockProjectiles, @OriginalArg(1) boolean blockRoutes) {
 		x -= this.xOffset;
 		z -= this.zOffset;
 		if (shape == 0) {
 			if (angle == 0) {
-				this.unflag(x, z, 128);
-				this.unflag(x - 1, z, 8);
+				this.unflag(x, z, 0x80);
+				this.unflag(x - 1, z, 0x8);
 			}
 			if (angle == 1) {
-				this.unflag(x, z, 2);
-				this.unflag(x, z + 1, 32);
+				this.unflag(x, z, 0x2);
+				this.unflag(x, z + 1, 0x20);
 			}
 			if (angle == 2) {
-				this.unflag(x, z, 8);
-				this.unflag(x + 1, z, 128);
+				this.unflag(x, z, 0x8);
+				this.unflag(x + 1, z, 0x80);
 			}
 			if (angle == 3) {
-				this.unflag(x, z, 32);
-				this.unflag(x, z - 1, 2);
+				this.unflag(x, z, 0x20);
+				this.unflag(x, z - 1, 0x2);
 			}
 		}
 		if (shape == 1 || shape == 3) {
 			if (angle == 0) {
-				this.unflag(x, z, 1);
-				this.unflag(x - 1, z + 1, 16);
+				this.unflag(x, z, 0x1);
+				this.unflag(x - 1, z + 1, 0x10);
 			}
 			if (angle == 1) {
-				this.unflag(x, z, 4);
-				this.unflag(x + 1, z + 1, 64);
+				this.unflag(x, z, 0x4);
+				this.unflag(x + 1, z + 1, 0x40);
 			}
 			if (angle == 2) {
-				this.unflag(x, z, 16);
-				this.unflag(x + 1, z - 1, 1);
+				this.unflag(x, z, 0x10);
+				this.unflag(x + 1, z - 1, 0x1);
 			}
 			if (angle == 3) {
-				this.unflag(x, z, 64);
-				this.unflag(x - 1, z - 1, 4);
+				this.unflag(x, z, 0x40);
+				this.unflag(x - 1, z - 1, 0x4);
 			}
 		}
 		if (shape == 2) {
 			if (angle == 0) {
-				this.unflag(x, z, 130);
-				this.unflag(x - 1, z, 8);
-				this.unflag(x, z + 1, 32);
+				this.unflag(x, z, 0x82);
+				this.unflag(x - 1, z, 0x8);
+				this.unflag(x, z + 1, 0x20);
 			}
 			if (angle == 1) {
-				this.unflag(x, z, 10);
-				this.unflag(x, z + 1, 32);
-				this.unflag(x + 1, z, 128);
+				this.unflag(x, z, 0xA);
+				this.unflag(x, z + 1, 0x20);
+				this.unflag(x + 1, z, 0x80);
 			}
 			if (angle == 2) {
-				this.unflag(x, z, 40);
-				this.unflag(x + 1, z, 128);
-				this.unflag(x, z - 1, 2);
+				this.unflag(x, z, 0x28);
+				this.unflag(x + 1, z, 0x80);
+				this.unflag(x, z - 1, 0x2);
 			}
 			if (angle == 3) {
-				this.unflag(x, z, 160);
-				this.unflag(x, z - 1, 2);
-				this.unflag(x - 1, z, 8);
+				this.unflag(x, z, 0xA0);
+				this.unflag(x, z - 1, 0x2);
+				this.unflag(x - 1, z, 0x8);
 			}
 		}
-		if (arg4) {
+		if (blockProjectiles) {
 			if (shape == 0) {
 				if (angle == 0) {
-					this.unflag(x, z, 65536);
-					this.unflag(x - 1, z, 4096);
+					this.unflag(x, z, 0x10000);
+					this.unflag(x - 1, z, 0x1000);
 				}
 				if (angle == 1) {
-					this.unflag(x, z, 1024);
-					this.unflag(x, z + 1, 16384);
+					this.unflag(x, z, 0x400);
+					this.unflag(x, z + 1, 0x4000);
 				}
 				if (angle == 2) {
-					this.unflag(x, z, 4096);
-					this.unflag(x + 1, z, 65536);
+					this.unflag(x, z, 0x1000);
+					this.unflag(x + 1, z, 0x10000);
 				}
 				if (angle == 3) {
-					this.unflag(x, z, 16384);
-					this.unflag(x, z - 1, 1024);
+					this.unflag(x, z, 0x4000);
+					this.unflag(x, z - 1, 0x400);
 				}
 			}
 			if (shape == 1 || shape == 3) {
 				if (angle == 0) {
-					this.unflag(x, z, 512);
-					this.unflag(x - 1, z + 1, 8192);
+					this.unflag(x, z, 0x200);
+					this.unflag(x - 1, z + 1, 0x2000);
 				}
 				if (angle == 1) {
-					this.unflag(x, z, 2048);
-					this.unflag(x + 1, z + 1, 32768);
+					this.unflag(x, z, 0x800);
+					this.unflag(x + 1, z + 1, 0x8000);
 				}
 				if (angle == 2) {
-					this.unflag(x, z, 8192);
-					this.unflag(x + 1, z - 1, 512);
+					this.unflag(x, z, 0x2000);
+					this.unflag(x + 1, z - 1, 0x200);
 				}
 				if (angle == 3) {
-					this.unflag(x, z, 32768);
-					this.unflag(x - 1, z - 1, 2048);
+					this.unflag(x, z, 0x8000);
+					this.unflag(x - 1, z - 1, 0x800);
 				}
 			}
 			if (shape == 2) {
 				if (angle == 0) {
-					this.unflag(x, z, 66560);
-					this.unflag(x - 1, z, 4096);
-					this.unflag(x, z + 1, 16384);
+					this.unflag(x, z, 0x10400);
+					this.unflag(x - 1, z, 0x1000);
+					this.unflag(x, z + 1, 0x4000);
 				}
 				if (angle == 1) {
-					this.unflag(x, z, 5120);
-					this.unflag(x, z + 1, 16384);
-					this.unflag(x + 1, z, 65536);
+					this.unflag(x, z, 0x1400);
+					this.unflag(x, z + 1, 0x4000);
+					this.unflag(x + 1, z, 0x10000);
 				}
 				if (angle == 2) {
-					this.unflag(x, z, 20480);
-					this.unflag(x + 1, z, 65536);
-					this.unflag(x, z - 1, 1024);
+					this.unflag(x, z, 0x5000);
+					this.unflag(x + 1, z, 0x10000);
+					this.unflag(x, z - 1, 0x400);
 				}
 				if (angle == 3) {
-					this.unflag(x, z, 81920);
-					this.unflag(x, z - 1, 1024);
-					this.unflag(x - 1, z, 4096);
+					this.unflag(x, z, 0x14000);
+					this.unflag(x, z - 1, 0x400);
+					this.unflag(x - 1, z, 0x1000);
 				}
 			}
 		}
-		if (!arg1) {
+		if (!blockRoutes) {
 			return;
 		}
 		if (shape == 0) {
 			if (angle == 0) {
-				this.unflag(x, z, 536870912);
-				this.unflag(x - 1, z, 33554432);
+				this.unflag(x, z, 0x20000000);
+				this.unflag(x - 1, z, 0x2000000);
 			}
 			if (angle == 1) {
-				this.unflag(x, z, 8388608);
-				this.unflag(x, z + 1, 134217728);
+				this.unflag(x, z, 0x800000);
+				this.unflag(x, z + 1, 0x8000000);
 			}
 			if (angle == 2) {
-				this.unflag(x, z, 33554432);
-				this.unflag(x + 1, z, 536870912);
+				this.unflag(x, z, 0x2000000);
+				this.unflag(x + 1, z, 0x20000000);
 			}
 			if (angle == 3) {
-				this.unflag(x, z, 134217728);
-				this.unflag(x, z - 1, 8388608);
+				this.unflag(x, z, 0x8000000);
+				this.unflag(x, z - 1, 0x800000);
 			}
 		}
 		if (shape == 1 || shape == 3) {
 			if (angle == 0) {
-				this.unflag(x, z, 4194304);
-				this.unflag(x - 1, z + 1, 67108864);
+				this.unflag(x, z, 0x400000);
+				this.unflag(x - 1, z + 1, 0x4000000);
 			}
 			if (angle == 1) {
-				this.unflag(x, z, 16777216);
-				this.unflag(x + 1, z + 1, 268435456);
+				this.unflag(x, z, 0x1000000);
+				this.unflag(x + 1, z + 1, 0x10000000);
 			}
 			if (angle == 2) {
-				this.unflag(x, z, 67108864);
-				this.unflag(x + 1, z - 1, 4194304);
+				this.unflag(x, z, 0x4000000);
+				this.unflag(x + 1, z - 1, 0x400000);
 			}
 			if (angle == 3) {
-				this.unflag(x, z, 268435456);
-				this.unflag(x - 1, z - 1, 16777216);
+				this.unflag(x, z, 0x10000000);
+				this.unflag(x - 1, z - 1, 0x1000000);
 			}
 		}
 		if (shape != 2) {
 			return;
 		}
 		if (angle == 0) {
-			this.unflag(x, z, 545259520);
-			this.unflag(x - 1, z, 33554432);
-			this.unflag(x, z + 1, 134217728);
+			this.unflag(x, z, 0x20800000);
+			this.unflag(x - 1, z, 0x2000000);
+			this.unflag(x, z + 1, 0x8000000);
 		}
 		if (angle == 1) {
-			this.unflag(x, z, 41943040);
-			this.unflag(x, z + 1, 134217728);
-			this.unflag(x + 1, z, 536870912);
+			this.unflag(x, z, 0x2800000);
+			this.unflag(x, z + 1, 0x8000000);
+			this.unflag(x + 1, z, 0x20000000);
 		}
 		if (angle == 2) {
-			this.unflag(x, z, 167772160);
-			this.unflag(x + 1, z, 536870912);
-			this.unflag(x, z - 1, 8388608);
+			this.unflag(x, z, 0xA000000);
+			this.unflag(x + 1, z, 0x20000000);
+			this.unflag(x, z - 1, 0x800000);
 		}
 		if (angle == 3) {
-			this.unflag(x, z, 671088640);
-			this.unflag(x, z - 1, 8388608);
-			this.unflag(x - 1, z, 33554432);
+			this.unflag(x, z, 0x28000000);
+			this.unflag(x, z - 1, 0x800000);
+			this.unflag(x - 1, z, 0x2000000);
 		}
 	}
 
@@ -316,188 +316,188 @@ public final class CollisionMap {
 	}
 
 	@OriginalMember(owner = "client!ch", name = "a", descriptor = "(IIZZIII)V")
-	public final void flagWall(@OriginalArg(0) int z, @OriginalArg(2) boolean arg1, @OriginalArg(3) boolean arg2, @OriginalArg(4) int x, @OriginalArg(5) int shape, @OriginalArg(6) int angle) {
+	public final void flagWall(@OriginalArg(4) int x, @OriginalArg(0) int z, @OriginalArg(5) int shape, @OriginalArg(6) int angle, @OriginalArg(2) boolean blockProjectiles, @OriginalArg(3) boolean blockRoutes) {
 		z -= this.zOffset;
 		x -= this.xOffset;
 		if (shape == 0) {
 			if (angle == 0) {
-				this.flag(x, z, 128);
-				this.flag(x - 1, z, 8);
+				this.flag(x, z, 0x80);
+				this.flag(x - 1, z, 0x8);
 			}
 			if (angle == 1) {
-				this.flag(x, z, 2);
-				this.flag(x, z + 1, 32);
+				this.flag(x, z, 0x2);
+				this.flag(x, z + 1, 0x20);
 			}
 			if (angle == 2) {
-				this.flag(x, z, 8);
-				this.flag(x + 1, z, 128);
+				this.flag(x, z, 0x8);
+				this.flag(x + 1, z, 0x80);
 			}
 			if (angle == 3) {
-				this.flag(x, z, 32);
-				this.flag(x, z - 1, 2);
+				this.flag(x, z, 0x20);
+				this.flag(x, z - 1, 0x2);
 			}
 		}
 		if (shape == 1 || shape == 3) {
 			if (angle == 0) {
-				this.flag(x, z, 1);
-				this.flag(x - 1, z + 1, 16);
+				this.flag(x, z, 0x1);
+				this.flag(x - 1, z + 1, 0x10);
 			}
 			if (angle == 1) {
-				this.flag(x, z, 4);
-				this.flag(x + 1, z + 1, 64);
+				this.flag(x, z, 0x4);
+				this.flag(x + 1, z + 1, 0x40);
 			}
 			if (angle == 2) {
-				this.flag(x, z, 16);
-				this.flag(x + 1, z - 1, 1);
+				this.flag(x, z, 0x10);
+				this.flag(x + 1, z - 1, 0x1);
 			}
 			if (angle == 3) {
-				this.flag(x, z, 64);
-				this.flag(x - 1, z - 1, 4);
+				this.flag(x, z, 0x40);
+				this.flag(x - 1, z - 1, 0x4);
 			}
 		}
 		if (shape == 2) {
 			if (angle == 0) {
-				this.flag(x, z, 130);
-				this.flag(x - 1, z, 8);
-				this.flag(x, z + 1, 32);
+				this.flag(x, z, 0x82);
+				this.flag(x - 1, z, 0x8);
+				this.flag(x, z + 1, 0x20);
 			}
 			if (angle == 1) {
-				this.flag(x, z, 10);
-				this.flag(x, z + 1, 32);
-				this.flag(x + 1, z, 128);
+				this.flag(x, z, 0xA);
+				this.flag(x, z + 1, 0x20);
+				this.flag(x + 1, z, 0x80);
 			}
 			if (angle == 2) {
-				this.flag(x, z, 40);
-				this.flag(x + 1, z, 128);
-				this.flag(x, z - 1, 2);
+				this.flag(x, z, 0x28);
+				this.flag(x + 1, z, 0x80);
+				this.flag(x, z - 1, 0x2);
 			}
 			if (angle == 3) {
-				this.flag(x, z, 160);
-				this.flag(x, z - 1, 2);
-				this.flag(x - 1, z, 8);
+				this.flag(x, z, 0xA0);
+				this.flag(x, z - 1, 0x2);
+				this.flag(x - 1, z, 0x8);
 			}
 		}
-		if (arg1) {
+		if (blockProjectiles) {
 			if (shape == 0) {
 				if (angle == 0) {
-					this.flag(x, z, 65536);
-					this.flag(x - 1, z, 4096);
+					this.flag(x, z, 0x10000);
+					this.flag(x - 1, z, 0x1000);
 				}
 				if (angle == 1) {
-					this.flag(x, z, 1024);
-					this.flag(x, z + 1, 16384);
+					this.flag(x, z, 0x400);
+					this.flag(x, z + 1, 0x4000);
 				}
 				if (angle == 2) {
-					this.flag(x, z, 4096);
-					this.flag(x + 1, z, 65536);
+					this.flag(x, z, 0x1000);
+					this.flag(x + 1, z, 0x10000);
 				}
 				if (angle == 3) {
-					this.flag(x, z, 16384);
-					this.flag(x, z - 1, 1024);
+					this.flag(x, z, 0x4000);
+					this.flag(x, z - 1, 0x400);
 				}
 			}
 			if (shape == 1 || shape == 3) {
 				if (angle == 0) {
-					this.flag(x, z, 512);
-					this.flag(x - 1, z + 1, 8192);
+					this.flag(x, z, 0x200);
+					this.flag(x - 1, z + 1, 0x2000);
 				}
 				if (angle == 1) {
-					this.flag(x, z, 2048);
-					this.flag(x + 1, z + 1, 32768);
+					this.flag(x, z, 0x800);
+					this.flag(x + 1, z + 1, 0x8000);
 				}
 				if (angle == 2) {
-					this.flag(x, z, 8192);
-					this.flag(x + 1, z - 1, 512);
+					this.flag(x, z, 0x2000);
+					this.flag(x + 1, z - 1, 0x200);
 				}
 				if (angle == 3) {
-					this.flag(x, z, 32768);
-					this.flag(x - 1, z - 1, 2048);
+					this.flag(x, z, 0x8000);
+					this.flag(x - 1, z - 1, 0x800);
 				}
 			}
 			if (shape == 2) {
 				if (angle == 0) {
-					this.flag(x, z, 66560);
-					this.flag(x - 1, z, 4096);
-					this.flag(x, z + 1, 16384);
+					this.flag(x, z, 0x10400);
+					this.flag(x - 1, z, 0x1000);
+					this.flag(x, z + 1, 0x4000);
 				}
 				if (angle == 1) {
-					this.flag(x, z, 5120);
-					this.flag(x, z + 1, 16384);
-					this.flag(x + 1, z, 65536);
+					this.flag(x, z, 0x1400);
+					this.flag(x, z + 1, 0x4000);
+					this.flag(x + 1, z, 0x10000);
 				}
 				if (angle == 2) {
-					this.flag(x, z, 20480);
-					this.flag(x + 1, z, 65536);
-					this.flag(x, z - 1, 1024);
+					this.flag(x, z, 0x5000);
+					this.flag(x + 1, z, 0x10000);
+					this.flag(x, z - 1, 0x400);
 				}
 				if (angle == 3) {
-					this.flag(x, z, 81920);
-					this.flag(x, z - 1, 1024);
-					this.flag(x - 1, z, 4096);
+					this.flag(x, z, 0x14000);
+					this.flag(x, z - 1, 0x400);
+					this.flag(x - 1, z, 0x1000);
 				}
 			}
 		}
-		if (!arg2) {
+		if (!blockRoutes) {
 			return;
 		}
 		if (shape == 0) {
 			if (angle == 0) {
-				this.flag(x, z, 536870912);
-				this.flag(x - 1, z, 33554432);
+				this.flag(x, z, 0x20000000);
+				this.flag(x - 1, z, 0x2000000);
 			}
 			if (angle == 1) {
-				this.flag(x, z, 8388608);
-				this.flag(x, z + 1, 134217728);
+				this.flag(x, z, 0x800000);
+				this.flag(x, z + 1, 0x8000000);
 			}
 			if (angle == 2) {
-				this.flag(x, z, 33554432);
-				this.flag(x + 1, z, 536870912);
+				this.flag(x, z, 0x2000000);
+				this.flag(x + 1, z, 0x20000000);
 			}
 			if (angle == 3) {
-				this.flag(x, z, 134217728);
-				this.flag(x, z - 1, 8388608);
+				this.flag(x, z, 0x8000000);
+				this.flag(x, z - 1, 0x800000);
 			}
 		}
 		if (shape == 1 || shape == 3) {
 			if (angle == 0) {
-				this.flag(x, z, 4194304);
-				this.flag(x - 1, z + 1, 67108864);
+				this.flag(x, z, 0x400000);
+				this.flag(x - 1, z + 1, 0x4000000);
 			}
 			if (angle == 1) {
-				this.flag(x, z, 16777216);
-				this.flag(x + 1, z + 1, 268435456);
+				this.flag(x, z, 0x1000000);
+				this.flag(x + 1, z + 1, 0x10000000);
 			}
 			if (angle == 2) {
-				this.flag(x, z, 67108864);
-				this.flag(x + 1, z - 1, 4194304);
+				this.flag(x, z, 0x4000000);
+				this.flag(x + 1, z - 1, 0x400000);
 			}
 			if (angle == 3) {
-				this.flag(x, z, 268435456);
-				this.flag(x - 1, z - 1, 16777216);
+				this.flag(x, z, 0x10000000);
+				this.flag(x - 1, z - 1, 0x1000000);
 			}
 		}
 		if (shape != 2) {
 			return;
 		}
 		if (angle == 0) {
-			this.flag(x, z, 545259520);
-			this.flag(x - 1, z, 33554432);
-			this.flag(x, z + 1, 134217728);
+			this.flag(x, z, 0x20800000);
+			this.flag(x - 1, z, 0x2000000);
+			this.flag(x, z + 1, 0x8000000);
 		}
 		if (angle == 1) {
-			this.flag(x, z, 41943040);
-			this.flag(x, z + 1, 134217728);
-			this.flag(x + 1, z, 536870912);
+			this.flag(x, z, 0x2800000);
+			this.flag(x, z + 1, 0x8000000);
+			this.flag(x + 1, z, 0x20000000);
 		}
 		if (angle == 2) {
-			this.flag(x, z, 167772160);
-			this.flag(x + 1, z, 536870912);
-			this.flag(x, z - 1, 8388608);
+			this.flag(x, z, 0xA000000);
+			this.flag(x + 1, z, 0x20000000);
+			this.flag(x, z - 1, 0x800000);
 		}
 		if (angle == 3) {
-			this.flag(x, z, 671088640);
-			this.flag(x, z - 1, 8388608);
-			this.flag(x - 1, z, 33554432);
+			this.flag(x, z, 0x28000000);
+			this.flag(x, z - 1, 0x800000);
+			this.flag(x - 1, z, 0x2000000);
 		}
 	}
 
@@ -1005,9 +1005,9 @@ public final class CollisionMap {
 		for (@Pc(11) int x = 0; x < this.width; x++) {
 			for (@Pc(21) int z = 0; z < this.length; z++) {
 				if (x == 0 || z == 0 || this.width - 5 <= x || z >= this.length - 5) {
-					this.flags[x][z] = 16777215;
+					this.flags[x][z] = 0xFFFFFF;
 				} else {
-					this.flags[x][z] = 2097152;
+					this.flags[x][z] = 0x200000;
 				}
 			}
 		}
@@ -1017,7 +1017,7 @@ public final class CollisionMap {
 	public final void flagTile(@OriginalArg(0) int x, @OriginalArg(1) int z) {
 		x -= this.xOffset;
 		z -= this.zOffset;
-		this.flags[x][z] |= 2097152;
+		this.flags[x][z] |= 0x200000;
 	}
 
 	@OriginalMember(owner = "client!ch", name = "b", descriptor = "(III)V")

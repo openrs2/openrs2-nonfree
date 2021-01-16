@@ -20,7 +20,7 @@ public final class Static7 {
 	public static int[][][] zones;
 
 	@OriginalMember(owner = "client!uc", name = "Z", descriptor = "[[B")
-	public static byte[][] aByteArrayArray49;
+	public static byte[][] underwaterMapBytes;
 
 	@OriginalMember(owner = "client!ue", name = "n", descriptor = "I")
 	public static int anInt742;
@@ -37,11 +37,8 @@ public final class Static7 {
 	@OriginalMember(owner = "client!uf", name = "e", descriptor = "I")
 	public static int anInt5331;
 
-	@OriginalMember(owner = "client!uf", name = "h", descriptor = "I")
-	public static int y;
-
 	@OriginalMember(owner = "client!uj", name = "I", descriptor = "I")
-	public static int anInt5611;
+	public static int titleSong;
 
 	@OriginalMember(owner = "client!uk", name = "h", descriptor = "I")
 	public static int anInt5363;
@@ -62,7 +59,7 @@ public final class Static7 {
 	public static int anInt5437;
 
 	@OriginalMember(owner = "client!va", name = "i", descriptor = "[[B")
-	public static byte[][] aByteArrayArray50;
+	public static byte[][] npcBytes;
 
 	@OriginalMember(owner = "client!vb", name = "X", descriptor = "[S")
 	public static short[] aShortArray113;
@@ -175,9 +172,6 @@ public final class Static7 {
 	@OriginalMember(owner = "client!ui", name = "g", descriptor = "[[S")
 	public static final short[][] aShortArrayArray8 = new short[][] { { 6554, 115, 10304, 28, 5702, 7756, 5681, 4510, -31835, 22437, 2859, -11339, 16, 5157, 10446, 3658, -27314, -21965, 472, 580, 784, 21966, 28950, -15697, -14002 }, { 9104, 10275, 7595, 3610, 7975, 8526, 918, -26734, 24466, 10145, -6882, 5027, 1457, 16565, -30545, 25486, 24, 5392, 10429, 3673, -27335, -21957, 192, 687, 412, 21821, 28835, -15460, -14019 }, new short[0], new short[0], new short[0] };
 
-	@OriginalMember(owner = "client!uj", name = "F", descriptor = "[J")
-	public static final long[] aLongArray54 = new long[200];
-
 	@OriginalMember(owner = "client!uj", name = "H", descriptor = "I")
 	public static int buildArea = -1;
 
@@ -235,9 +229,6 @@ public final class Static7 {
 	@OriginalMember(owner = "client!vf", name = "b", descriptor = "[S")
 	public static final short[] aShortArray115 = new short[] { 6798, 8741, 25238, 4626, 4550 };
 
-	@OriginalMember(owner = "client!vf", name = "c", descriptor = "I")
-	public static int anInt5497 = 0;
-
 	@OriginalMember(owner = "client!vh", name = "f", descriptor = "Lclient!wf;")
 	public static Component aClass185_16 = null;
 
@@ -254,7 +245,7 @@ public final class Static7 {
 	public static final int[] anIntArray638 = new int[100];
 
 	@OriginalMember(owner = "client!vl", name = "c", descriptor = "I")
-	public static int pickKeysSize = 0;
+	public static int keysSize = 0;
 
 	@OriginalMember(owner = "client!vl", name = "n", descriptor = "Z")
 	public static boolean aBoolean389 = false;
@@ -267,9 +258,6 @@ public final class Static7 {
 
 	@OriginalMember(owner = "client!wc", name = "b", descriptor = "I")
 	public static int anInt5803 = 0;
-
-	@OriginalMember(owner = "client!wd", name = "yb", descriptor = "[I")
-	public static final int[] anIntArray656 = new int[32];
 
 	@OriginalMember(owner = "client!we", name = "u", descriptor = "Z")
 	public static boolean aBoolean401 = false;

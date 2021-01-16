@@ -131,7 +131,7 @@ public final class Static19 {
 	}
 
 	@OriginalMember(owner = "client!ia", name = "a", descriptor = "(Z)V")
-	public static void method1818() {
+	public static void logout() {
 		if (Protocol.socket != null) {
 			Protocol.socket.close();
 			Protocol.socket = null;
@@ -146,7 +146,7 @@ public final class Static19 {
 		Static13.method971();
 		Static6.anInt4844 = -1;
 		Static4.aBoolean210 = false;
-		Static31.method3733(true);
+		AreaSoundManager.clear(true);
 		Static7.originZ = 0;
 		Static4.centralZoneX = 0;
 		Static1.centralZoneZ = 0;
@@ -157,17 +157,17 @@ public final class Static19 {
 		}
 		NpcList.size = 0;
 		PlayerList.size = 0;
-		for (@Pc(78) int local78 = 0; local78 < 2048; local78++) {
-			PlayerList.players[local78] = null;
-			PlayerList.appearanceCache[local78] = null;
+		for (@Pc(78) int i = 0; i < 2048; i++) {
+			PlayerList.players[i] = null;
+			PlayerList.appearanceCache[i] = null;
 		}
-		for (@Pc(96) int local96 = 0; local96 < 32768; local96++) {
-			NpcList.npcs[local96] = null;
+		for (@Pc(96) int i = 0; i < 32768; i++) {
+			NpcList.npcs[i] = null;
 		}
-		for (@Pc(110) int local110 = 0; local110 < 4; local110++) {
-			for (@Pc(117) int local117 = 0; local117 < 104; local117++) {
-				for (@Pc(122) int local122 = 0; local122 < 104; local122++) {
-					Static4.objStacks[local110][local117][local122] = null;
+		for (@Pc(110) int level = 0; level < 4; level++) {
+			for (@Pc(117) int x = 0; x < 104; x++) {
+				for (@Pc(122) int z = 0; z < 104; z++) {
+					Static4.objStacks[level][x][z] = null;
 				}
 			}
 		}
@@ -182,13 +182,13 @@ public final class Static19 {
 	}
 
 	@OriginalMember(owner = "client!ib", name = "a", descriptor = "(Lgl!javax/media/opengl/GL;IIII)Z")
-	public static boolean method1837(@OriginalArg(0) GL arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4) {
+	public static boolean method1837(@OriginalArg(0) GL gl, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4) {
 		GlRenderer.setTextureId(arg4);
-		arg0.glFramebufferTexture2DEXT(GL.GL_FRAMEBUFFER, GL.GL_COLOR_ATTACHMENT0, arg2, arg1, 0);
-		arg0.glReadBuffer(GL.GL_COLOR_ATTACHMENT0);
-		@Pc(15) int local15 = arg0.glCheckFramebufferStatusEXT(GL.GL_FRAMEBUFFER);
+		gl.glFramebufferTexture2DEXT(GL.GL_FRAMEBUFFER, GL.GL_COLOR_ATTACHMENT0, arg2, arg1, 0);
+		gl.glReadBuffer(GL.GL_COLOR_ATTACHMENT0);
+		@Pc(15) int local15 = gl.glCheckFramebufferStatusEXT(GL.GL_FRAMEBUFFER);
 		if (local15 == GL.GL_FRAMEBUFFER_COMPLETE) {
-			arg0.glCopyTexImage2D(GL.GL_TEXTURE_2D, GL.GL_POINTS, GL.GL_RGB, 0, 0, arg3, arg3, GL.GL_POINTS);
+			gl.glCopyTexImage2D(GL.GL_TEXTURE_2D, GL.GL_POINTS, GL.GL_RGB, 0, 0, arg3, arg3, GL.GL_POINTS);
 			return true;
 		} else {
 			return false;

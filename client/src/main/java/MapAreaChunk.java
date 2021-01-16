@@ -12,7 +12,7 @@ public final class MapAreaChunk extends Node {
 	private final int sourceMinX;
 
 	@OriginalMember(owner = "client!e", name = "u", descriptor = "I")
-	private final int displayY;
+	private final int displayLevel;
 
 	@OriginalMember(owner = "client!e", name = "y", descriptor = "I")
 	private final int sourceMinZ;
@@ -24,7 +24,7 @@ public final class MapAreaChunk extends Node {
 	private final int sourceMaxX;
 
 	@OriginalMember(owner = "client!e", name = "p", descriptor = "I")
-	private final int sourceY;
+	private final int sourceLevel;
 
 	@OriginalMember(owner = "client!e", name = "r", descriptor = "I")
 	public final int displayMaxZ;
@@ -36,22 +36,22 @@ public final class MapAreaChunk extends Node {
 	public final int displayMaxX;
 
 	@OriginalMember(owner = "client!e", name = "<init>", descriptor = "(IIIIIIIIII)V")
-	public MapAreaChunk(@OriginalArg(0) int sourceY, @OriginalArg(1) int displayY, @OriginalArg(2) int sourceMinX, @OriginalArg(3) int sourceMinZ, @OriginalArg(4) int sourceMaxX, @OriginalArg(5) int sourceMaxZ, @OriginalArg(6) int displayMinX, @OriginalArg(7) int displayMinZ, @OriginalArg(8) int displayMaxX, @OriginalArg(9) int displayMaxZ) {
+	public MapAreaChunk(@OriginalArg(0) int sourceLevel, @OriginalArg(1) int displayLevel, @OriginalArg(2) int sourceMinX, @OriginalArg(3) int sourceMinZ, @OriginalArg(4) int sourceMaxX, @OriginalArg(5) int sourceMaxZ, @OriginalArg(6) int displayMinX, @OriginalArg(7) int displayMinZ, @OriginalArg(8) int displayMaxX, @OriginalArg(9) int displayMaxZ) {
 		this.displayMinX = displayMinX;
 		this.sourceMinX = sourceMinX;
-		this.displayY = displayY;
+		this.displayLevel = displayLevel;
 		this.sourceMinZ = sourceMinZ;
 		this.sourceMaxZ = sourceMaxZ;
 		this.sourceMaxX = sourceMaxX;
-		this.sourceY = sourceY;
+		this.sourceLevel = sourceLevel;
 		this.displayMaxZ = displayMaxZ;
 		this.displayMinZ = displayMinZ;
 		this.displayMaxX = displayMaxX;
 	}
 
 	@OriginalMember(owner = "client!e", name = "a", descriptor = "(BIII)Z")
-	public final boolean containsSource(@OriginalArg(3) int y, @OriginalArg(1) int x, @OriginalArg(2) int z) {
-		return this.sourceY == y && x >= this.sourceMinX && x <= this.sourceMaxX && z >= this.sourceMinZ && this.sourceMaxZ >= z;
+	public final boolean containsSource(@OriginalArg(3) int level, @OriginalArg(1) int x, @OriginalArg(2) int z) {
+		return this.sourceLevel == level && x >= this.sourceMinX && x <= this.sourceMaxX && z >= this.sourceMinZ && this.sourceMaxZ >= z;
 	}
 
 	@OriginalMember(owner = "client!e", name = "a", descriptor = "(III)Z")
@@ -66,7 +66,7 @@ public final class MapAreaChunk extends Node {
 
 	@OriginalMember(owner = "client!e", name = "a", descriptor = "(IIB[I)V")
 	public final void convertSourceToDisplay(@OriginalArg(1) int x, @OriginalArg(0) int z, @OriginalArg(3) int[] position) {
-		position[0] = this.displayY;
+		position[0] = this.displayLevel;
 		position[2] = this.displayMinZ + z - this.sourceMinZ;
 		position[1] = this.displayMinX + x - this.sourceMinX;
 	}
@@ -74,7 +74,7 @@ public final class MapAreaChunk extends Node {
 	@OriginalMember(owner = "client!e", name = "a", descriptor = "(II[II)V")
 	public final void convertDisplayToSource(@OriginalArg(1) int x, @OriginalArg(0) int z, @OriginalArg(2) int[] position) {
 		position[1] = x + this.sourceMinX - this.displayMinX;
-		position[0] = this.sourceY;
+		position[0] = this.sourceLevel;
 		position[2] = this.sourceMinZ + z - this.displayMinZ;
 	}
 }

@@ -16,4 +16,9 @@ public final class CharUtils {
 	public static boolean isLetterOrDigit(@OriginalArg(1) char c) {
 		return c >= '0' && c <= '9' || c >= 'A' && c <= 'Z' || c >= 'a' && c <= 'z';
 	}
+
+	@OriginalMember(owner = "client!qh", name = "a", descriptor = "(CZ)C")
+	public static char toTitleCase(@OriginalArg(0) char c) {
+		return c == 'µ' || c == 'ƒ' ? c : Character.toTitleCase(c);
+	}
 }

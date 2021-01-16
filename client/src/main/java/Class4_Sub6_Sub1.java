@@ -61,9 +61,9 @@ public final class Class4_Sub6_Sub1 extends Class4_Sub6 {
 				}
 				arg1.anInt1294 += local28 * local39 - 1048576;
 				if (this.aClass4_Sub6_Sub2_1.anIntArray279[arg1.anInt1301] == 0) {
-					arg1.aClass4_Sub6_Sub4_1 = Static28.method3384(arg1.aClass4_Sub8_Sub1_1, local59.method3368(), local59.method3381(), local59.method3388());
+					arg1.aClass4_Sub6_Sub4_1 = Class4_Sub6_Sub4.create(arg1.aClass4_Sub8_Sub1_1, local59.method3368(), local59.method3381(), local59.method3388());
 				} else {
-					arg1.aClass4_Sub6_Sub4_1 = Static28.method3384(arg1.aClass4_Sub8_Sub1_1, local59.method3368(), 0, local59.method3388());
+					arg1.aClass4_Sub6_Sub4_1 = Class4_Sub6_Sub4.create(arg1.aClass4_Sub8_Sub1_1, local59.method3368(), 0, local59.method3388());
 					this.aClass4_Sub6_Sub2_1.method2502(arg1, arg1.aClass4_Sub23_1.aShortArray80[arg1.anInt1296] < 0);
 					arg1.aClass4_Sub6_Sub4_1.method3379(local63, local59.method3381());
 				}
@@ -136,9 +136,9 @@ public final class Class4_Sub6_Sub1 extends Class4_Sub6 {
 			arg1.anInt1294 = local28 * arg0 + arg1.anInt1294 & 0xFFFFF;
 			if (arg0 >= local38) {
 				if (this.aClass4_Sub6_Sub2_1.anIntArray279[arg1.anInt1301] == 0) {
-					arg1.aClass4_Sub6_Sub4_1 = Static28.method3384(arg1.aClass4_Sub8_Sub1_1, arg1.aClass4_Sub6_Sub4_1.method3368(), arg1.aClass4_Sub6_Sub4_1.method3381(), arg1.aClass4_Sub6_Sub4_1.method3388());
+					arg1.aClass4_Sub6_Sub4_1 = Class4_Sub6_Sub4.create(arg1.aClass4_Sub8_Sub1_1, arg1.aClass4_Sub6_Sub4_1.method3368(), arg1.aClass4_Sub6_Sub4_1.method3381(), arg1.aClass4_Sub6_Sub4_1.method3388());
 				} else {
-					arg1.aClass4_Sub6_Sub4_1 = Static28.method3384(arg1.aClass4_Sub8_Sub1_1, arg1.aClass4_Sub6_Sub4_1.method3368(), 0, arg1.aClass4_Sub6_Sub4_1.method3388());
+					arg1.aClass4_Sub6_Sub4_1 = Class4_Sub6_Sub4.create(arg1.aClass4_Sub8_Sub1_1, arg1.aClass4_Sub6_Sub4_1.method3368(), 0, arg1.aClass4_Sub6_Sub4_1.method3388());
 					this.aClass4_Sub6_Sub2_1.method2502(arg1, arg1.aClass4_Sub23_1.aShortArray80[arg1.anInt1296] < 0);
 				}
 				if (arg1.aClass4_Sub23_1.aShortArray80[arg1.anInt1296] < 0) {

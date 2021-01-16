@@ -7,7 +7,7 @@ import org.openrs2.deob.annotation.Pc;
 public final class PlayerAppearance {
 
 	@OriginalMember(owner = "client!ca", name = "V", descriptor = "[I")
-	public static final int[] anIntArray46 = new int[] { 8, 11, 4, 6, 9, 7, 10, 0 };
+	private static final int[] anIntArray46 = new int[] { 8, 11, 4, 6, 9, 7, 10, 0 };
 
 	@OriginalMember(owner = "client!rh", name = "jb", descriptor = "[I")
 	public static final int[] anIntArray487 = new int[] { 7, 8, 9, 10, 11, 12, 13, 15 };

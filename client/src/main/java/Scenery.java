@@ -14,13 +14,13 @@ public final class Scenery {
 	public int anInt815;
 
 	@OriginalMember(owner = "client!co", name = "g", descriptor = "Lclient!vc;")
-	public Entity aClass53_1;
+	public Entity entity;
 
 	@OriginalMember(owner = "client!co", name = "h", descriptor = "I")
 	public int zMax;
 
 	@OriginalMember(owner = "client!co", name = "j", descriptor = "I")
-	public int y;
+	public int level;
 
 	@OriginalMember(owner = "client!co", name = "l", descriptor = "I")
 	public int centerXFine;
@@ -38,8 +38,8 @@ public final class Scenery {
 	public int zMin;
 
 	@OriginalMember(owner = "client!co", name = "t", descriptor = "I")
-	public int centerYFine;
+	public int centerZFine;
 
 	@OriginalMember(owner = "client!co", name = "u", descriptor = "J")
-	public long pickKey = 0L;
+	public long key = 0L;
 }

@@ -131,9 +131,9 @@ public final class Static26 {
 			return InterfaceList.getComponent(arg0.anInt5937);
 		}
 		@Pc(20) int local20 = arg0.id >>> 16;
-		@Pc(33) HashTableIterator local33 = new HashTableIterator(Static4.aClass84_13);
-		for (@Pc(38) Class4_Sub27 local38 = (Class4_Sub27) local33.head(); local38 != null; local38 = (Class4_Sub27) local33.next()) {
-			if (local20 == local38.anInt4620) {
+		@Pc(33) HashTableIterator local33 = new HashTableIterator(InterfaceList.subInterfaces);
+		for (@Pc(38) SubInterface local38 = (SubInterface) local33.head(); local38 != null; local38 = (SubInterface) local33.next()) {
+			if (local20 == local38.id) {
 				return InterfaceList.getComponent((int) local38.key);
 			}
 		}
@@ -150,43 +150,43 @@ public final class Static26 {
 
 	@OriginalMember(owner = "client!ne", name = "a", descriptor = "(III)V")
 	public static void method2961(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
-		@Pc(1) GL local1 = GlRenderer.gl;
+		@Pc(1) GL gl = GlRenderer.gl;
 		if (Static5.aBoolean249) {
-			local1.glEnable(GL.GL_POINT_SPRITE);
-			local1.glTexEnvi(GL.GL_POINT_SPRITE, GL.GL_COORD_REPLACE, GL.GL_LINES);
+			gl.glEnable(GL.GL_POINT_SPRITE);
+			gl.glTexEnvi(GL.GL_POINT_SPRITE, GL.GL_COORD_REPLACE, GL.GL_LINES);
 		}
-		local1.glDepthMask(false);
+		gl.glDepthMask(false);
 		MaterialManager.setMaterial(0, 0);
-		local1.glColorMaterial(GL.GL_FRONT, GL.GL_DIFFUSE);
-		local1.glMaterialfv(GL.GL_FRONT, GL.GL_AMBIENT, Static4.aFloatArray36, 0);
+		gl.glColorMaterial(GL.GL_FRONT, GL.GL_DIFFUSE);
+		gl.glMaterialfv(GL.GL_FRONT, GL.GL_AMBIENT, Static4.aFloatArray36, 0);
 		if (Preferences.highDetailLighting) {
-			local1.glDisableClientState(GL.GL_NORMAL_ARRAY);
+			gl.glDisableClientState(GL.GL_NORMAL_ARRAY);
 		}
-		local1.glDisableClientState(GL.GL_TEXTURE_COORD_ARRAY);
-		local1.glPushMatrix();
-		local1.glTranslatef((float) -arg0, (float) -arg1, (float) -arg2);
-		local1.glNormal3f(0.0F, -1.0F, 0.0F);
+		gl.glDisableClientState(GL.GL_TEXTURE_COORD_ARRAY);
+		gl.glPushMatrix();
+		gl.glTranslatef((float) -arg0, (float) -arg1, (float) -arg2);
+		gl.glNormal3f(0.0F, -1.0F, 0.0F);
 		if (!GlRenderer.aBoolean139) {
-			local1.glDisable(GL.GL_FOG);
+			gl.glDisable(GL.GL_FOG);
 		}
 	}
 
 	@OriginalMember(owner = "client!ne", name = "g", descriptor = "()V")
 	public static void method2962() {
-		@Pc(1) GL local1 = GlRenderer.gl;
+		@Pc(1) GL gl = GlRenderer.gl;
 		if (Preferences.highDetailLighting) {
-			local1.glEnableClientState(GL.GL_NORMAL_ARRAY);
+			gl.glEnableClientState(GL.GL_NORMAL_ARRAY);
 		}
-		local1.glEnableClientState(GL.GL_TEXTURE_COORD_ARRAY);
-		local1.glDepthMask(true);
-		local1.glColorMaterial(GL.GL_FRONT, GL.GL_AMBIENT_AND_DIFFUSE);
-		local1.glPopMatrix();
+		gl.glEnableClientState(GL.GL_TEXTURE_COORD_ARRAY);
+		gl.glDepthMask(true);
+		gl.glColorMaterial(GL.GL_FRONT, GL.GL_AMBIENT_AND_DIFFUSE);
+		gl.glPopMatrix();
 		if (!GlRenderer.aBoolean139) {
-			local1.glEnable(GL.GL_FOG);
+			gl.glEnable(GL.GL_FOG);
 		}
 		if (Static5.aBoolean249) {
-			local1.glTexEnvi(GL.GL_POINT_SPRITE, GL.GL_COORD_REPLACE, GL.GL_POINTS);
-			local1.glDisable(GL.GL_POINT_SPRITE);
+			gl.glTexEnvi(GL.GL_POINT_SPRITE, GL.GL_COORD_REPLACE, GL.GL_POINTS);
+			gl.glDisable(GL.GL_POINT_SPRITE);
 		}
 	}
 
@@ -197,20 +197,20 @@ public final class Static26 {
 
 	@OriginalMember(owner = "client!ne", name = "i", descriptor = "()V")
 	public static void method2969() {
-		@Pc(1) GL local1 = GlRenderer.gl;
-		if (local1.isExtensionAvailable("GL_ARB_point_parameters")) {
+		@Pc(1) GL gl = GlRenderer.gl;
+		if (gl.isExtensionAvailable("GL_ARB_point_parameters")) {
 			@Pc(20) float[] local20 = new float[] { 1.0F, 0.0F, 5.0E-7F };
-			local1.glPointParameterfvARB(GL.GL_POINT_DISTANCE_ATTENUATION, local20, 0);
+			gl.glPointParameterfvARB(GL.GL_POINT_DISTANCE_ATTENUATION, local20, 0);
 			@Pc(28) FloatBuffer local28 = FloatBuffer.allocate(1);
-			local1.glGetFloatv(GL.GL_POINT_SIZE_MAX, local28);
+			gl.glGetFloatv(GL.GL_POINT_SIZE_MAX, local28);
 			@Pc(36) float local36 = local28.get(0);
 			if (local36 > 64.0F) {
 				local36 = 64.0F;
 			}
-			local1.glPointParameterfARB(GL.GL_POINT_SIZE_MIN, 1.0F);
-			local1.glPointParameterfARB(GL.GL_POINT_SIZE_MAX, local36);
+			gl.glPointParameterfARB(GL.GL_POINT_SIZE_MIN, 1.0F);
+			gl.glPointParameterfARB(GL.GL_POINT_SIZE_MAX, local36);
 		}
-		if (local1.isExtensionAvailable("GL_ARB_point_sprite")) {
+		if (gl.isExtensionAvailable("GL_ARB_point_sprite")) {
 			Static5.aBoolean249 = true;
 		}
 		Static5.aShortArrayArray3 = new short[1600][32];
@@ -478,34 +478,34 @@ public final class Static26 {
 	}
 
 	@OriginalMember(owner = "client!ng", name = "a", descriptor = "(ZZ)V")
-	public static void method4359(@OriginalArg(0) boolean arg0) {
+	public static void method4359(@OriginalArg(0) boolean underwater) {
 		@Pc(10) int[] local10 = null;
-		@Pc(16) byte local16;
-		@Pc(18) byte[][] local18;
-		if (GlRenderer.enabled && arg0) {
-			local16 = 1;
-			local18 = Static7.aByteArrayArray49;
+		@Pc(16) byte levels;
+		@Pc(18) byte[][] bytes;
+		if (GlRenderer.enabled && underwater) {
+			levels = 1;
+			bytes = Static7.underwaterMapBytes;
 		} else {
-			local16 = 4;
-			local18 = Static1.aByteArrayArray4;
+			levels = 4;
+			bytes = Static1.mapBytes;
 		}
-		for (@Pc(26) int local26 = 0; local26 < local16; local26++) {
+		for (@Pc(26) int destLevel = 0; destLevel < levels; destLevel++) {
 			Static9.method763();
-			for (@Pc(37) int local37 = 0; local37 < 13; local37++) {
-				for (@Pc(42) int local42 = 0; local42 < 13; local42++) {
-					@Pc(49) boolean local49 = false;
-					@Pc(57) int local57 = Static7.zones[local26][local37][local42];
-					if (local57 != -1) {
-						@Pc(69) int local69 = local57 >> 24 & 0x3;
-						if (!arg0 || local69 == 0) {
-							@Pc(83) int local83 = local57 >> 1 & 0x3;
-							@Pc(89) int local89 = local57 >> 14 & 0x3FF;
-							@Pc(95) int local95 = local57 >> 3 & 0x7FF;
-							@Pc(105) int local105 = local95 / 8 + (local89 / 8 << 8);
-							for (@Pc(107) int local107 = 0; local107 < Static7.mapSquares.length; local107++) {
-								if (Static7.mapSquares[local107] == local105 && local18[local107] != null) {
-									local49 = true;
-									@Pc(151) int[] local151 = method4355(local69, PathFinder.collisionMaps, local18[local107], local37 * 8, local89, local42 * 8, local83, local26, arg0, local95);
+			for (@Pc(37) int destX = 0; destX < 13; destX++) {
+				for (@Pc(42) int destZ = 0; destZ < 13; destZ++) {
+					@Pc(49) boolean valid = false;
+					@Pc(57) int zone = Static7.zones[destLevel][destX][destZ];
+					if (zone != -1) {
+						@Pc(69) int srcLevel = zone >> 24 & 0x3;
+						if (!underwater || srcLevel == 0) {
+							@Pc(83) int angle = zone >> 1 & 0x3;
+							@Pc(89) int srcX = zone >> 14 & 0x3FF;
+							@Pc(95) int srcZ = zone >> 3 & 0x7FF;
+							@Pc(105) int srcMapSquare = srcZ / 8 + (srcX / 8 << 8);
+							for (@Pc(107) int i = 0; i < Static7.mapSquares.length; i++) {
+								if (Static7.mapSquares[i] == srcMapSquare && bytes[i] != null) {
+									valid = true;
+									@Pc(151) int[] local151 = method4355(srcLevel, PathFinder.collisionMaps, bytes[i], destX * 8, srcX, destZ * 8, angle, destLevel, underwater, srcZ);
 									if (local10 == null && local151 != null) {
 										local10 = local151;
 									}
@@ -514,8 +514,8 @@ public final class Static26 {
 							}
 						}
 					}
-					if (!local49) {
-						Static29.method3536(local37 * 8, local26, 8, local42 * 8, 8);
+					if (!valid) {
+						Static29.method3536(destX * 8, destLevel, 8, destZ * 8, 8);
 					}
 				}
 			}
@@ -535,26 +535,26 @@ public final class Static26 {
 	public static void method2981(@OriginalArg(0) Entity arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) {
 		if (arg2 < SceneGraph.width) {
 			@Pc(12) Tile local12 = SceneGraph.tiles[arg1][arg2 + 1][arg3];
-			if (local12 != null && local12.groundDecor != null && local12.groundDecor.aClass53_2.method3808()) {
-				arg0.method3807(local12.groundDecor.aClass53_2, 128, 0, 0, true);
+			if (local12 != null && local12.groundDecor != null && local12.groundDecor.entity.method3808()) {
+				arg0.method3807(local12.groundDecor.entity, 128, 0, 0, true);
 			}
 		}
 		if (arg3 < SceneGraph.width) {
 			@Pc(44) Tile local44 = SceneGraph.tiles[arg1][arg2][arg3 + 1];
-			if (local44 != null && local44.groundDecor != null && local44.groundDecor.aClass53_2.method3808()) {
-				arg0.method3807(local44.groundDecor.aClass53_2, 0, 0, 128, true);
+			if (local44 != null && local44.groundDecor != null && local44.groundDecor.entity.method3808()) {
+				arg0.method3807(local44.groundDecor.entity, 0, 0, 128, true);
 			}
 		}
 		if (arg2 < SceneGraph.width && arg3 < SceneGraph.length) {
 			@Pc(81) Tile local81 = SceneGraph.tiles[arg1][arg2 + 1][arg3 + 1];
-			if (local81 != null && local81.groundDecor != null && local81.groundDecor.aClass53_2.method3808()) {
-				arg0.method3807(local81.groundDecor.aClass53_2, 128, 0, 128, true);
+			if (local81 != null && local81.groundDecor != null && local81.groundDecor.entity.method3808()) {
+				arg0.method3807(local81.groundDecor.entity, 128, 0, 128, true);
 			}
 		}
 		if (arg2 < SceneGraph.width && arg3 > 0) {
 			@Pc(117) Tile local117 = SceneGraph.tiles[arg1][arg2 + 1][arg3 - 1];
-			if (local117 != null && local117.groundDecor != null && local117.groundDecor.aClass53_2.method3808()) {
-				arg0.method3807(local117.groundDecor.aClass53_2, 128, 0, -128, true);
+			if (local117 != null && local117.groundDecor != null && local117.groundDecor.entity.method3808()) {
+				arg0.method3807(local117.groundDecor.entity, 128, 0, -128, true);
 			}
 		}
 	}

@@ -22,25 +22,25 @@ public final class SpecularMaterial implements Material {
 	public SpecularMaterial() {
 		if (GlRenderer.arbTextureCubeMapSupported && GlRenderer.maxTextureUnits >= 2) {
 			this.method1784();
-			@Pc(19) GL local19 = GlRenderer.gl;
-			local19.glBindTexture(GL.GL_TEXTURE_CUBE_MAP, this.anIntArray186[0]);
-			local19.glTexParameteri(GL.GL_TEXTURE_CUBE_MAP, GL.GL_TEXTURE_MIN_FILTER, GL.GL_LINEAR);
-			local19.glTexParameteri(GL.GL_TEXTURE_CUBE_MAP, GL.GL_TEXTURE_MAG_FILTER, GL.GL_LINEAR);
-			local19.glTexParameteri(GL.GL_TEXTURE_CUBE_MAP, GL.GL_TEXTURE_WRAP_R, GL.GL_CLAMP_TO_EDGE);
-			local19.glTexParameteri(GL.GL_TEXTURE_CUBE_MAP, GL.GL_TEXTURE_WRAP_S, GL.GL_CLAMP_TO_EDGE);
-			local19.glTexParameteri(GL.GL_TEXTURE_CUBE_MAP, GL.GL_TEXTURE_WRAP_T, GL.GL_CLAMP_TO_EDGE);
-			local19.glBindTexture(GL.GL_TEXTURE_CUBE_MAP, this.anIntArray186[1]);
-			local19.glTexParameteri(GL.GL_TEXTURE_CUBE_MAP, GL.GL_TEXTURE_MIN_FILTER, GL.GL_LINEAR);
-			local19.glTexParameteri(GL.GL_TEXTURE_CUBE_MAP, GL.GL_TEXTURE_MAG_FILTER, GL.GL_LINEAR);
-			local19.glTexParameteri(GL.GL_TEXTURE_CUBE_MAP, GL.GL_TEXTURE_WRAP_R, GL.GL_CLAMP_TO_EDGE);
-			local19.glTexParameteri(GL.GL_TEXTURE_CUBE_MAP, GL.GL_TEXTURE_WRAP_S, GL.GL_CLAMP_TO_EDGE);
-			local19.glTexParameteri(GL.GL_TEXTURE_CUBE_MAP, GL.GL_TEXTURE_WRAP_T, GL.GL_CLAMP_TO_EDGE);
-			local19.glBindTexture(GL.GL_TEXTURE_CUBE_MAP, this.anIntArray186[2]);
-			local19.glTexParameteri(GL.GL_TEXTURE_CUBE_MAP, GL.GL_TEXTURE_MIN_FILTER, GL.GL_LINEAR);
-			local19.glTexParameteri(GL.GL_TEXTURE_CUBE_MAP, GL.GL_TEXTURE_MAG_FILTER, GL.GL_LINEAR);
-			local19.glTexParameteri(GL.GL_TEXTURE_CUBE_MAP, GL.GL_TEXTURE_WRAP_R, GL.GL_CLAMP_TO_EDGE);
-			local19.glTexParameteri(GL.GL_TEXTURE_CUBE_MAP, GL.GL_TEXTURE_WRAP_S, GL.GL_CLAMP_TO_EDGE);
-			local19.glTexParameteri(GL.GL_TEXTURE_CUBE_MAP, GL.GL_TEXTURE_WRAP_T, GL.GL_CLAMP_TO_EDGE);
+			@Pc(19) GL gl = GlRenderer.gl;
+			gl.glBindTexture(GL.GL_TEXTURE_CUBE_MAP, this.anIntArray186[0]);
+			gl.glTexParameteri(GL.GL_TEXTURE_CUBE_MAP, GL.GL_TEXTURE_MIN_FILTER, GL.GL_LINEAR);
+			gl.glTexParameteri(GL.GL_TEXTURE_CUBE_MAP, GL.GL_TEXTURE_MAG_FILTER, GL.GL_LINEAR);
+			gl.glTexParameteri(GL.GL_TEXTURE_CUBE_MAP, GL.GL_TEXTURE_WRAP_R, GL.GL_CLAMP_TO_EDGE);
+			gl.glTexParameteri(GL.GL_TEXTURE_CUBE_MAP, GL.GL_TEXTURE_WRAP_S, GL.GL_CLAMP_TO_EDGE);
+			gl.glTexParameteri(GL.GL_TEXTURE_CUBE_MAP, GL.GL_TEXTURE_WRAP_T, GL.GL_CLAMP_TO_EDGE);
+			gl.glBindTexture(GL.GL_TEXTURE_CUBE_MAP, this.anIntArray186[1]);
+			gl.glTexParameteri(GL.GL_TEXTURE_CUBE_MAP, GL.GL_TEXTURE_MIN_FILTER, GL.GL_LINEAR);
+			gl.glTexParameteri(GL.GL_TEXTURE_CUBE_MAP, GL.GL_TEXTURE_MAG_FILTER, GL.GL_LINEAR);
+			gl.glTexParameteri(GL.GL_TEXTURE_CUBE_MAP, GL.GL_TEXTURE_WRAP_R, GL.GL_CLAMP_TO_EDGE);
+			gl.glTexParameteri(GL.GL_TEXTURE_CUBE_MAP, GL.GL_TEXTURE_WRAP_S, GL.GL_CLAMP_TO_EDGE);
+			gl.glTexParameteri(GL.GL_TEXTURE_CUBE_MAP, GL.GL_TEXTURE_WRAP_T, GL.GL_CLAMP_TO_EDGE);
+			gl.glBindTexture(GL.GL_TEXTURE_CUBE_MAP, this.anIntArray186[2]);
+			gl.glTexParameteri(GL.GL_TEXTURE_CUBE_MAP, GL.GL_TEXTURE_MIN_FILTER, GL.GL_LINEAR);
+			gl.glTexParameteri(GL.GL_TEXTURE_CUBE_MAP, GL.GL_TEXTURE_MAG_FILTER, GL.GL_LINEAR);
+			gl.glTexParameteri(GL.GL_TEXTURE_CUBE_MAP, GL.GL_TEXTURE_WRAP_R, GL.GL_CLAMP_TO_EDGE);
+			gl.glTexParameteri(GL.GL_TEXTURE_CUBE_MAP, GL.GL_TEXTURE_WRAP_S, GL.GL_CLAMP_TO_EDGE);
+			gl.glTexParameteri(GL.GL_TEXTURE_CUBE_MAP, GL.GL_TEXTURE_WRAP_T, GL.GL_CLAMP_TO_EDGE);
 			this.aBoolean150 = GlRenderer.maxTextureUnits < 3;
 		}
 		this.method1783();
@@ -49,100 +49,100 @@ public final class SpecularMaterial implements Material {
 	@OriginalMember(owner = "client!hl", name = "a", descriptor = "()V")
 	@Override
 	public final void unbind() {
-		@Pc(1) GL local1 = GlRenderer.gl;
+		@Pc(1) GL gl = GlRenderer.gl;
 		if (Preferences.highDetailLighting) {
-			local1.glCallList(this.anInt2236 + 1);
+			gl.glCallList(this.anInt2236 + 1);
 		} else {
-			local1.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_SRC0_ALPHA, GL.GL_TEXTURE);
+			gl.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_SRC0_ALPHA, GL.GL_TEXTURE);
 		}
 	}
 
 	@OriginalMember(owner = "client!hl", name = "a", descriptor = "(I)V")
 	@Override
 	public final void setArgument(@OriginalArg(0) int arg) {
-		@Pc(1) GL local1 = GlRenderer.gl;
+		@Pc(1) GL gl = GlRenderer.gl;
 		if (Preferences.highDetailLighting && this.anIntArray186 != null) {
-			local1.glActiveTexture(GL.GL_TEXTURE1);
-			local1.glBindTexture(GL.GL_TEXTURE_CUBE_MAP, this.anIntArray186[arg - 1]);
-			local1.glActiveTexture(GL.GL_TEXTURE0);
+			gl.glActiveTexture(GL.GL_TEXTURE1);
+			gl.glBindTexture(GL.GL_TEXTURE_CUBE_MAP, this.anIntArray186[arg - 1]);
+			gl.glActiveTexture(GL.GL_TEXTURE0);
 		}
 	}
 
 	@OriginalMember(owner = "client!hl", name = "d", descriptor = "()V")
 	private void method1783() {
-		@Pc(1) GL local1 = GlRenderer.gl;
-		this.anInt2236 = local1.glGenLists(2);
-		local1.glNewList(this.anInt2236, GL.GL_COMPILE);
+		@Pc(1) GL gl = GlRenderer.gl;
+		this.anInt2236 = gl.glGenLists(2);
+		gl.glNewList(this.anInt2236, GL.GL_COMPILE);
 		if (this.anIntArray186 == null) {
-			local1.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_SRC0_ALPHA, GL.GL_PRIMARY_COLOR);
+			gl.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_SRC0_ALPHA, GL.GL_PRIMARY_COLOR);
 		} else {
-			local1.glActiveTexture(GL.GL_TEXTURE1);
-			local1.glTexGeni(GL.GL_S, GL.GL_TEXTURE_GEN_MODE, GL.GL_NORMAL_MAP);
-			local1.glTexGeni(GL.GL_T, GL.GL_TEXTURE_GEN_MODE, GL.GL_NORMAL_MAP);
-			local1.glTexGeni(GL.GL_R, GL.GL_TEXTURE_GEN_MODE, GL.GL_NORMAL_MAP);
-			local1.glEnable(GL.GL_TEXTURE_GEN_S);
-			local1.glEnable(GL.GL_TEXTURE_GEN_T);
-			local1.glEnable(GL.GL_TEXTURE_GEN_R);
-			local1.glEnable(GL.GL_TEXTURE_CUBE_MAP);
-			local1.glMatrixMode(GL.GL_TEXTURE);
-			local1.glLoadIdentity();
-			local1.glRotatef(22.5F, 1.0F, 0.0F, 0.0F);
-			local1.glMatrixMode(GL.GL_MODELVIEW);
+			gl.glActiveTexture(GL.GL_TEXTURE1);
+			gl.glTexGeni(GL.GL_S, GL.GL_TEXTURE_GEN_MODE, GL.GL_NORMAL_MAP);
+			gl.glTexGeni(GL.GL_T, GL.GL_TEXTURE_GEN_MODE, GL.GL_NORMAL_MAP);
+			gl.glTexGeni(GL.GL_R, GL.GL_TEXTURE_GEN_MODE, GL.GL_NORMAL_MAP);
+			gl.glEnable(GL.GL_TEXTURE_GEN_S);
+			gl.glEnable(GL.GL_TEXTURE_GEN_T);
+			gl.glEnable(GL.GL_TEXTURE_GEN_R);
+			gl.glEnable(GL.GL_TEXTURE_CUBE_MAP);
+			gl.glMatrixMode(GL.GL_TEXTURE);
+			gl.glLoadIdentity();
+			gl.glRotatef(22.5F, 1.0F, 0.0F, 0.0F);
+			gl.glMatrixMode(GL.GL_MODELVIEW);
 			if (this.aBoolean150) {
-				local1.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_COMBINE_RGB, GL.GL_ADD);
-				local1.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_OPERAND0_RGB, GL.GL_SRC_ALPHA);
-				local1.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_COMBINE_ALPHA, GL.GL_REPLACE);
-				local1.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_SRC0_ALPHA, GL.GL_PRIMARY_COLOR);
+				gl.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_COMBINE_RGB, GL.GL_ADD);
+				gl.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_OPERAND0_RGB, GL.GL_SRC_ALPHA);
+				gl.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_COMBINE_ALPHA, GL.GL_REPLACE);
+				gl.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_SRC0_ALPHA, GL.GL_PRIMARY_COLOR);
 			} else {
-				local1.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_COMBINE_RGB, GL.GL_REPLACE);
-				local1.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_SRC0_RGB, GL.GL_PREVIOUS);
-				local1.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_COMBINE_ALPHA, GL.GL_MODULATE);
-				local1.glActiveTexture(GL.GL_TEXTURE2);
-				local1.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_TEXTURE_ENV_MODE, GL.GL_COMBINE);
-				local1.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_COMBINE_RGB, GL.GL_ADD);
-				local1.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_SRC0_RGB, GL.GL_PREVIOUS);
-				local1.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_SRC1_RGB, GL.GL_PREVIOUS);
-				local1.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_OPERAND1_RGB, GL.GL_SRC_ALPHA);
-				local1.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_COMBINE_ALPHA, GL.GL_REPLACE);
-				local1.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_SRC0_ALPHA, GL.GL_PRIMARY_COLOR);
-				local1.glBindTexture(GL.GL_TEXTURE_2D, GlRenderer.anInt2075);
-				local1.glEnable(GL.GL_TEXTURE_2D);
+				gl.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_COMBINE_RGB, GL.GL_REPLACE);
+				gl.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_SRC0_RGB, GL.GL_PREVIOUS);
+				gl.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_COMBINE_ALPHA, GL.GL_MODULATE);
+				gl.glActiveTexture(GL.GL_TEXTURE2);
+				gl.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_TEXTURE_ENV_MODE, GL.GL_COMBINE);
+				gl.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_COMBINE_RGB, GL.GL_ADD);
+				gl.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_SRC0_RGB, GL.GL_PREVIOUS);
+				gl.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_SRC1_RGB, GL.GL_PREVIOUS);
+				gl.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_OPERAND1_RGB, GL.GL_SRC_ALPHA);
+				gl.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_COMBINE_ALPHA, GL.GL_REPLACE);
+				gl.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_SRC0_ALPHA, GL.GL_PRIMARY_COLOR);
+				gl.glBindTexture(GL.GL_TEXTURE_2D, GlRenderer.anInt2075);
+				gl.glEnable(GL.GL_TEXTURE_2D);
 			}
-			local1.glActiveTexture(GL.GL_TEXTURE0);
+			gl.glActiveTexture(GL.GL_TEXTURE0);
 		}
-		local1.glEndList();
-		local1.glNewList(this.anInt2236 + 1, GL.GL_COMPILE);
+		gl.glEndList();
+		gl.glNewList(this.anInt2236 + 1, GL.GL_COMPILE);
 		if (this.anIntArray186 == null) {
-			local1.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_SRC0_ALPHA, GL.GL_TEXTURE);
+			gl.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_SRC0_ALPHA, GL.GL_TEXTURE);
 		} else {
-			local1.glActiveTexture(GL.GL_TEXTURE1);
-			local1.glDisable(GL.GL_TEXTURE_GEN_S);
-			local1.glDisable(GL.GL_TEXTURE_GEN_T);
-			local1.glDisable(GL.GL_TEXTURE_GEN_R);
-			local1.glDisable(GL.GL_TEXTURE_CUBE_MAP);
-			local1.glMatrixMode(GL.GL_TEXTURE);
-			local1.glLoadIdentity();
-			local1.glMatrixMode(GL.GL_MODELVIEW);
+			gl.glActiveTexture(GL.GL_TEXTURE1);
+			gl.glDisable(GL.GL_TEXTURE_GEN_S);
+			gl.glDisable(GL.GL_TEXTURE_GEN_T);
+			gl.glDisable(GL.GL_TEXTURE_GEN_R);
+			gl.glDisable(GL.GL_TEXTURE_CUBE_MAP);
+			gl.glMatrixMode(GL.GL_TEXTURE);
+			gl.glLoadIdentity();
+			gl.glMatrixMode(GL.GL_MODELVIEW);
 			if (this.aBoolean150) {
-				local1.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_COMBINE_RGB, GL.GL_MODULATE);
-				local1.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_OPERAND0_RGB, GL.GL_SRC_COLOR);
-				local1.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_COMBINE_ALPHA, GL.GL_MODULATE);
-				local1.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_SRC0_ALPHA, GL.GL_TEXTURE);
+				gl.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_COMBINE_RGB, GL.GL_MODULATE);
+				gl.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_OPERAND0_RGB, GL.GL_SRC_COLOR);
+				gl.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_COMBINE_ALPHA, GL.GL_MODULATE);
+				gl.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_SRC0_ALPHA, GL.GL_TEXTURE);
 			} else {
-				local1.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_COMBINE_RGB, GL.GL_MODULATE);
-				local1.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_SRC0_RGB, GL.GL_TEXTURE);
-				local1.glActiveTexture(GL.GL_TEXTURE2);
-				local1.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_TEXTURE_ENV_MODE, GL.GL_MODULATE);
-				local1.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_COMBINE_RGB, GL.GL_MODULATE);
-				local1.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_SRC0_RGB, GL.GL_TEXTURE);
-				local1.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_OPERAND1_RGB, GL.GL_SRC_COLOR);
-				local1.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_COMBINE_ALPHA, GL.GL_MODULATE);
-				local1.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_SRC0_ALPHA, GL.GL_TEXTURE);
-				local1.glDisable(GL.GL_TEXTURE_2D);
+				gl.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_COMBINE_RGB, GL.GL_MODULATE);
+				gl.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_SRC0_RGB, GL.GL_TEXTURE);
+				gl.glActiveTexture(GL.GL_TEXTURE2);
+				gl.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_TEXTURE_ENV_MODE, GL.GL_MODULATE);
+				gl.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_COMBINE_RGB, GL.GL_MODULATE);
+				gl.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_SRC0_RGB, GL.GL_TEXTURE);
+				gl.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_OPERAND1_RGB, GL.GL_SRC_COLOR);
+				gl.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_COMBINE_ALPHA, GL.GL_MODULATE);
+				gl.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_SRC0_ALPHA, GL.GL_TEXTURE);
+				gl.glDisable(GL.GL_TEXTURE_2D);
 			}
-			local1.glActiveTexture(GL.GL_TEXTURE0);
+			gl.glActiveTexture(GL.GL_TEXTURE0);
 		}
-		local1.glEndList();
+		gl.glEndList();
 	}
 
 	@OriginalMember(owner = "client!hl", name = "c", descriptor = "()I")
@@ -153,10 +153,10 @@ public final class SpecularMaterial implements Material {
 
 	@OriginalMember(owner = "client!hl", name = "e", descriptor = "()V")
 	private void method1784() {
-		@Pc(1) GL local1 = GlRenderer.gl;
+		@Pc(1) GL gl = GlRenderer.gl;
 		if (this.anIntArray186 == null) {
 			this.anIntArray186 = new int[3];
-			local1.glGenTextures(3, this.anIntArray186, 0);
+			gl.glGenTextures(3, this.anIntArray186, 0);
 		}
 		@Pc(19) byte[] local19 = new byte[4096];
 		@Pc(22) byte[] local22 = new byte[4096];
@@ -214,12 +214,12 @@ public final class SpecularMaterial implements Material {
 					local32++;
 				}
 			}
-			local1.glBindTexture(GL.GL_TEXTURE_CUBE_MAP, this.anIntArray186[0]);
-			local1.glTexImage2D(local27 + GL.GL_TEXTURE_CUBE_MAP_POSITIVE_X, GL.GL_POINTS, GL.GL_ALPHA, 64, 64, GL.GL_POINTS, GL.GL_ALPHA, GL.GL_UNSIGNED_BYTE, ByteBuffer.wrap(local22));
-			local1.glBindTexture(GL.GL_TEXTURE_CUBE_MAP, this.anIntArray186[1]);
-			local1.glTexImage2D(local27 + GL.GL_TEXTURE_CUBE_MAP_POSITIVE_X, GL.GL_POINTS, GL.GL_ALPHA, 64, 64, GL.GL_POINTS, GL.GL_ALPHA, GL.GL_UNSIGNED_BYTE, ByteBuffer.wrap(local25));
-			local1.glBindTexture(GL.GL_TEXTURE_CUBE_MAP, this.anIntArray186[2]);
-			local1.glTexImage2D(local27 + GL.GL_TEXTURE_CUBE_MAP_POSITIVE_X, GL.GL_POINTS, GL.GL_ALPHA, 64, 64, GL.GL_POINTS, GL.GL_ALPHA, GL.GL_UNSIGNED_BYTE, ByteBuffer.wrap(local19));
+			gl.glBindTexture(GL.GL_TEXTURE_CUBE_MAP, this.anIntArray186[0]);
+			gl.glTexImage2D(local27 + GL.GL_TEXTURE_CUBE_MAP_POSITIVE_X, GL.GL_POINTS, GL.GL_ALPHA, 64, 64, GL.GL_POINTS, GL.GL_ALPHA, GL.GL_UNSIGNED_BYTE, ByteBuffer.wrap(local22));
+			gl.glBindTexture(GL.GL_TEXTURE_CUBE_MAP, this.anIntArray186[1]);
+			gl.glTexImage2D(local27 + GL.GL_TEXTURE_CUBE_MAP_POSITIVE_X, GL.GL_POINTS, GL.GL_ALPHA, 64, 64, GL.GL_POINTS, GL.GL_ALPHA, GL.GL_UNSIGNED_BYTE, ByteBuffer.wrap(local25));
+			gl.glBindTexture(GL.GL_TEXTURE_CUBE_MAP, this.anIntArray186[2]);
+			gl.glTexImage2D(local27 + GL.GL_TEXTURE_CUBE_MAP_POSITIVE_X, GL.GL_POINTS, GL.GL_ALPHA, 64, 64, GL.GL_POINTS, GL.GL_ALPHA, GL.GL_UNSIGNED_BYTE, ByteBuffer.wrap(local19));
 			GlCleaner.onCardTexture += 12288;
 		}
 	}
@@ -227,12 +227,12 @@ public final class SpecularMaterial implements Material {
 	@OriginalMember(owner = "client!hl", name = "b", descriptor = "()V")
 	@Override
 	public final void bind() {
-		@Pc(1) GL local1 = GlRenderer.gl;
+		@Pc(1) GL gl = GlRenderer.gl;
 		GlRenderer.setTextureCombineAlphaMode(1);
 		if (Preferences.highDetailLighting) {
-			local1.glCallList(this.anInt2236);
+			gl.glCallList(this.anInt2236);
 		} else {
-			local1.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_SRC0_ALPHA, GL.GL_PRIMARY_COLOR);
+			gl.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_SRC0_ALPHA, GL.GL_PRIMARY_COLOR);
 		}
 	}
 }

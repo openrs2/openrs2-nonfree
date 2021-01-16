@@ -8,23 +8,6 @@ import org.openrs2.deob.annotation.Pc;
 
 public final class Static24 {
 
-	@OriginalMember(owner = "client!li", name = "a", descriptor = "(ILjava/lang/String;)Z")
-	public static boolean method2562(@OriginalArg(1) String arg0) {
-		if (arg0 == null) {
-			return false;
-		}
-		for (@Pc(20) int local20 = 0; local20 < Static6.anInt5214; local20++) {
-			if (arg0.equalsIgnoreCase(Static4.aStringArray23[local20])) {
-				return true;
-			}
-		}
-		if (arg0.equalsIgnoreCase(PlayerList.self.name)) {
-			return true;
-		} else {
-			return false;
-		}
-	}
-
 	@OriginalMember(owner = "client!li", name = "a", descriptor = "(B)V")
 	public static void method2563() {
 		for (@Pc(7) int local7 = 0; local7 < 5; local7++) {
@@ -49,26 +32,26 @@ public final class Static24 {
 				for (@Pc(44) int local44 = 0; local44 < local32[local34].length; local44++) {
 					@Pc(60) Tile local60 = local32[local34][local44];
 					if (local60 != null) {
-						if (local60.groundDecor != null && local60.groundDecor.aClass53_2 instanceof GlModel) {
-							@Pc(76) GlModel local76 = (GlModel) local60.groundDecor.aClass53_2;
-							if ((Long.MIN_VALUE & local60.groundDecor.pickKey) == 0L) {
+						if (local60.groundDecor != null && local60.groundDecor.entity instanceof GlModel) {
+							@Pc(76) GlModel local76 = (GlModel) local60.groundDecor.entity;
+							if ((Long.MIN_VALUE & local60.groundDecor.key) == 0L) {
 								local76.method3872(false, true, true, false, true, true);
 							} else {
 								local76.method3872(true, true, true, true, true, true);
 							}
 						}
 						if (local60.wallDecor != null) {
-							if (local60.wallDecor.aClass53_10 instanceof GlModel) {
-								@Pc(118) GlModel local118 = (GlModel) local60.wallDecor.aClass53_10;
-								if ((local60.wallDecor.pickKey & Long.MIN_VALUE) == 0L) {
+							if (local60.wallDecor.primary instanceof GlModel) {
+								@Pc(118) GlModel local118 = (GlModel) local60.wallDecor.primary;
+								if ((local60.wallDecor.key & Long.MIN_VALUE) == 0L) {
 									local118.method3872(false, true, true, false, true, true);
 								} else {
 									local118.method3872(true, true, true, true, true, true);
 								}
 							}
-							if (local60.wallDecor.aClass53_9 instanceof GlModel) {
-								@Pc(157) GlModel local157 = (GlModel) local60.wallDecor.aClass53_9;
-								if ((Long.MIN_VALUE & local60.wallDecor.pickKey) == 0L) {
+							if (local60.wallDecor.secondary instanceof GlModel) {
+								@Pc(157) GlModel local157 = (GlModel) local60.wallDecor.secondary;
+								if ((Long.MIN_VALUE & local60.wallDecor.key) == 0L) {
 									local157.method3872(false, true, true, false, true, true);
 								} else {
 									local157.method3872(true, true, true, true, true, true);
@@ -76,17 +59,17 @@ public final class Static24 {
 							}
 						}
 						if (local60.wall != null) {
-							if (local60.wall.aClass53_5 instanceof GlModel) {
-								@Pc(199) GlModel local199 = (GlModel) local60.wall.aClass53_5;
-								if ((Long.MIN_VALUE & local60.wall.pickKey) == 0L) {
+							if (local60.wall.primary instanceof GlModel) {
+								@Pc(199) GlModel local199 = (GlModel) local60.wall.primary;
+								if ((Long.MIN_VALUE & local60.wall.key) == 0L) {
 									local199.method3872(false, true, true, false, true, true);
 								} else {
 									local199.method3872(true, true, true, true, true, true);
 								}
 							}
-							if (local60.wall.aClass53_4 instanceof GlModel) {
-								@Pc(237) GlModel local237 = (GlModel) local60.wall.aClass53_4;
-								if ((local60.wall.pickKey & Long.MIN_VALUE) == 0L) {
+							if (local60.wall.secondary instanceof GlModel) {
+								@Pc(237) GlModel local237 = (GlModel) local60.wall.secondary;
+								if ((local60.wall.key & Long.MIN_VALUE) == 0L) {
 									local237.method3872(false, true, true, false, true, true);
 								} else {
 									local237.method3872(true, true, true, true, true, true);
@@ -94,9 +77,9 @@ public final class Static24 {
 							}
 						}
 						for (@Pc(269) int local269 = 0; local269 < local60.sceneryLen; local269++) {
-							if (local60.scenery[local269].aClass53_1 instanceof GlModel) {
-								@Pc(288) GlModel local288 = (GlModel) local60.scenery[local269].aClass53_1;
-								if ((Long.MIN_VALUE & local60.scenery[local269].pickKey) == 0L) {
+							if (local60.scenery[local269].entity instanceof GlModel) {
+								@Pc(288) GlModel local288 = (GlModel) local60.scenery[local269].entity;
+								if ((Long.MIN_VALUE & local60.scenery[local269].key) == 0L) {
 									local288.method3872(false, true, true, false, true, true);
 								} else {
 									local288.method3872(true, true, true, true, true, true);
@@ -112,7 +95,7 @@ public final class Static24 {
 
 	@OriginalMember(owner = "client!lj", name = "a", descriptor = "(ILclient!wf;B)Ljava/lang/String;")
 	public static String method2597(@OriginalArg(0) int arg0, @OriginalArg(1) Component arg1) {
-		if (!Static12.method687(arg1).isButtonEnabled(arg0) && arg1.anObjectArray18 == null) {
+		if (!InterfaceList.getServerActiveProperties(arg1).isButtonEnabled(arg0) && arg1.anObjectArray18 == null) {
 			return null;
 		} else if (arg1.aStringArray43 == null || arg0 >= arg1.aStringArray43.length || arg1.aStringArray43[arg0] == null || arg1.aStringArray43[arg0].trim().length() == 0) {
 			return Static1.aBoolean26 ? "Hidden-" + arg0 : null;
@@ -304,7 +287,7 @@ public final class Static24 {
 		} else {
 			Static4.aBoolean184 = true;
 		}
-		if (Static3.anInt5398 != -1) {
+		if (InterfaceList.topLevelInterface != -1) {
 			Static12.method777(true);
 		}
 		if (Protocol.socket != null && (Static4.anInt3304 == 30 || Static4.anInt3304 == 25)) {
@@ -332,15 +315,6 @@ public final class Static24 {
 		WorldMap.setCurrentMap(arg3);
 		Static3.aClass84_10 = new HashTable(8);
 		Static3.aClass84_9 = new HashTable(8);
-	}
-
-	@OriginalMember(owner = "client!mc", name = "b", descriptor = "(BI)V")
-	public static void method2689(@OriginalArg(1) int arg0) {
-		for (@Pc(16) Node local16 = Static2.aClass84_5.head(); local16 != null; local16 = Static2.aClass84_5.next()) {
-			if ((local16.key >> 48 & 0xFFFFL) == (long) arg0) {
-				local16.unlink();
-			}
-		}
 	}
 
 	@OriginalMember(owner = "client!mc", name = "a", descriptor = "(ILclient!fh;IBIIZ)V")
@@ -531,30 +505,30 @@ public final class Static24 {
 
 	@OriginalMember(owner = "client!mf", name = "a", descriptor = "(Lclient!qc;I)V")
 	public static void method2705(@OriginalArg(0) PathingEntity arg0) {
-		if (client.loop == arg0.anInt3966 || arg0.anInt4007 == -1 || arg0.anInt3996 != 0 || arg0.anInt4044 + 1 > SeqTypeList.get(arg0.anInt4007).anIntArray94[arg0.anInt3970]) {
+		if (client.loop == arg0.anInt3966 || arg0.seqId == -1 || arg0.anInt3996 != 0 || arg0.anInt4044 + 1 > SeqTypeList.get(arg0.seqId).anIntArray94[arg0.anInt3970]) {
 			@Pc(41) int local41 = arg0.anInt3966 - arg0.anInt4034;
 			@Pc(46) int local46 = client.loop - arg0.anInt4034;
 			@Pc(57) int local57 = arg0.anInt3973 * 128 + arg0.getSize() * 64;
 			@Pc(71) int local71 = arg0.anInt4033 * 128 + arg0.getSize() * 64;
 			@Pc(82) int local82 = arg0.anInt4013 * 128 + arg0.getSize() * 64;
 			@Pc(95) int local95 = arg0.anInt4025 * 128 + arg0.getSize() * 64;
-			arg0.z = ((local41 - local46) * local71 + local46 * local95) / local41;
-			arg0.x = (local57 * (local41 - local46) + local82 * local46) / local41;
+			arg0.zFine = ((local41 - local46) * local71 + local46 * local95) / local41;
+			arg0.xFine = (local57 * (local41 - local46) + local82 * local46) / local41;
 		}
 		if (arg0.anInt4008 == 0) {
-			arg0.anInt4017 = 1024;
+			arg0.targetAngle = 1024;
 		}
 		if (arg0.anInt4008 == 1) {
-			arg0.anInt4017 = 1536;
+			arg0.targetAngle = 1536;
 		}
 		if (arg0.anInt4008 == 2) {
-			arg0.anInt4017 = 0;
+			arg0.targetAngle = 0;
 		}
-		arg0.anInt4037 = 0;
+		arg0.movementBlockedLoops = 0;
 		if (arg0.anInt4008 == 3) {
-			arg0.anInt4017 = 512;
+			arg0.targetAngle = 512;
 		}
-		arg0.anInt4031 = arg0.anInt4017;
+		arg0.angle = arg0.targetAngle;
 	}
 
 	@OriginalMember(owner = "client!mg", name = "a", descriptor = "(ZI)V")
@@ -563,9 +537,9 @@ public final class Static24 {
 		@Pc(13) byte[][] local13;
 		if (GlRenderer.enabled && arg0) {
 			local11 = 1;
-			local13 = Static1.aByteArrayArray3;
+			local13 = Static1.underwaterLocBytes;
 		} else {
-			local13 = Static5.aByteArrayArray31;
+			local13 = Static5.locBytes;
 			local11 = 4;
 		}
 		for (@Pc(27) int local27 = 0; local27 < local11; local27++) {

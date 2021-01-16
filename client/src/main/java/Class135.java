@@ -80,22 +80,22 @@ public final class Class135 {
 
 	@OriginalMember(owner = "client!pi", name = "b", descriptor = "()V")
 	public final void method3433() {
-		@Pc(1) GL local1 = GlRenderer.gl;
+		@Pc(1) GL gl = GlRenderer.gl;
 		if (GlRenderer.arbVboSupported) {
 			this.aClass111_5.bindArray();
-			local1.glInterleavedArrays(GL.GL_C4UB_V3F, 16, 0L);
+			gl.glInterleavedArrays(GL.GL_C4UB_V3F, 16, 0L);
 			GlRenderer.normalArrayEnabled = false;
 			this.aClass111_6.bindElementArray();
-			local1.glDrawElements(GL.GL_TRIANGLES, this.anInt4162, GL.GL_UNSIGNED_INT, 0L);
+			gl.glDrawElements(GL.GL_TRIANGLES, this.anInt4162, GL.GL_UNSIGNED_INT, 0L);
 			return;
 		}
 		if (GlRenderer.arbVboSupported) {
-			local1.glBindBufferARB(GL.GL_ARRAY_BUFFER, 0);
-			local1.glBindBufferARB(GL.GL_ELEMENT_ARRAY_BUFFER, 0);
+			gl.glBindBufferARB(GL.GL_ARRAY_BUFFER, 0);
+			gl.glBindBufferARB(GL.GL_ELEMENT_ARRAY_BUFFER, 0);
 		}
-		local1.glInterleavedArrays(GL.GL_C4UB_V3F, 16, this.aByteBuffer13);
+		gl.glInterleavedArrays(GL.GL_C4UB_V3F, 16, this.aByteBuffer13);
 		GlRenderer.normalArrayEnabled = false;
-		local1.glDrawElements(GL.GL_TRIANGLES, this.anInt4162, GL.GL_UNSIGNED_INT, this.aByteBuffer14);
+		gl.glDrawElements(GL.GL_TRIANGLES, this.anInt4162, GL.GL_UNSIGNED_INT, this.aByteBuffer14);
 	}
 
 	@OriginalMember(owner = "client!pi", name = "c", descriptor = "()V")

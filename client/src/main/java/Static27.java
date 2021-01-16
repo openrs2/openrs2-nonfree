@@ -96,8 +96,8 @@ public final class Static27 {
 		PathFinder.parents = new int[104][104];
 		Static7.zones = new int[4][13][13];
 		Static1.anIntArrayArray2 = new int[104][104];
-		for (@Pc(36) int y = 0; y < 4; y++) {
-			PathFinder.collisionMaps[y] = new CollisionMap(104, 104);
+		for (@Pc(36) int level = 0; level < 4; level++) {
+			PathFinder.collisionMaps[level] = new CollisionMap(104, 104);
 		}
 		Static4.tileFlags = new byte[4][104][104];
 		Static1.aByteArrayArrayArray2 = new byte[4][104][104];
@@ -230,10 +230,10 @@ public final class Static27 {
 				}
 			}
 			if (arg0.equalsIgnoreCase("::getcgcoord")) {
-				Static26.method4357(null, 0, "x:" + (PlayerList.self.x >> 7) + " z:" + (PlayerList.self.z >> 7) + " groundh:" + SceneGraph.tileHeights[Static7.y][PlayerList.self.x >> 7][PlayerList.self.z >> 7]);
+				Static26.method4357(null, 0, "x:" + (PlayerList.self.xFine >> 7) + " z:" + (PlayerList.self.zFine >> 7) + " groundh:" + SceneGraph.tileHeights[Player.level][PlayerList.self.xFine >> 7][PlayerList.self.zFine >> 7]);
 			}
 			if (arg0.equalsIgnoreCase("::getheight")) {
-				Static26.method4357(null, 0, "Height: " + SceneGraph.tileHeights[Static7.y][PlayerList.self.x >> 7][PlayerList.self.z >> 7]);
+				Static26.method4357(null, 0, "Height: " + SceneGraph.tileHeights[Player.level][PlayerList.self.xFine >> 7][PlayerList.self.zFine >> 7]);
 			}
 		}
 		Protocol.outboundBuffer.writeOpcode(216);
@@ -273,12 +273,12 @@ public final class Static27 {
 					} else {
 						@Pc(137) int local137 = (Static7.anIntArray601[local3] & 0xFF) * 128;
 						@Pc(145) int local145 = Static7.anIntArray601[local3] >> 16 & 0xFF;
-						@Pc(155) int local155 = local145 * 128 + 64 - PlayerList.self.x;
+						@Pc(155) int local155 = local145 * 128 + 64 - PlayerList.self.xFine;
 						if (local155 < 0) {
 							local155 = -local155;
 						}
 						@Pc(171) int local171 = Static7.anIntArray601[local3] >> 8 & 0xFF;
-						@Pc(181) int local181 = local171 * 128 + 64 - PlayerList.self.z;
+						@Pc(181) int local181 = local171 * 128 + 64 - PlayerList.self.zFine;
 						if (local181 < 0) {
 							local181 = -local181;
 						}
@@ -294,7 +294,7 @@ public final class Static27 {
 					}
 					if (local223 > 0) {
 						@Pc(240) PcmSound local240 = local89.toPcmSound().resample(client.resampler);
-						@Pc(245) Class4_Sub6_Sub4 local245 = Static28.method3385(local240, local223);
+						@Pc(245) Class4_Sub6_Sub4 local245 = Class4_Sub6_Sub4.create(local240, local223);
 						local245.method3359(Static7.anIntArray629[local3] - 1);
 						Static5.aClass4_Sub6_Sub3_2.method2674(local245);
 					}

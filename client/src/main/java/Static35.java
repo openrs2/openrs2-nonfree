@@ -43,8 +43,8 @@ public final class Static35 {
 			Static2.anIntArray160[0] = Static7.anInt6050;
 		}
 		ParticleManager.redraw((long) client.loop);
-		if (Static3.anInt5398 != -1) {
-			Static27.method4243(Static3.anInt5398);
+		if (InterfaceList.topLevelInterface != -1) {
+			Static27.method4243(InterfaceList.topLevelInterface);
 		}
 		for (@Pc(80) int local80 = 0; local80 < Static1.anInt113; local80++) {
 			if (Static2.aBooleanArray8[local80]) {
@@ -61,7 +61,7 @@ public final class Static35 {
 		if (GlRenderer.enabled) {
 			Static7.aBoolean123 = true;
 		}
-		if (Static3.anInt5398 != -1) {
+		if (InterfaceList.topLevelInterface != -1) {
 			Static1.anInt113 = 0;
 			Static16.method1563();
 		}
@@ -110,7 +110,7 @@ public final class Static35 {
 				}
 			}
 		}
-		Static20.method1963(Static7.y, PlayerList.self.z, PlayerList.self.x, Static5.anInt4156);
+		AreaSoundManager.redraw(Player.level, PlayerList.self.xFine, PlayerList.self.zFine, Static5.anInt4156);
 		Static5.anInt4156 = 0;
 	}
 
@@ -167,7 +167,7 @@ public final class Static35 {
 				Protocol.outboundBuffer.writeOpcode(52);
 				Protocol.outboundBuffer.writeShort(local24);
 				Protocol.outboundBuffer.writeByte(Keyboard.pressedKeys[82] ? 1 : 0);
-				PathFinder.findPath(PlayerList.self.anIntArray422[0], PlayerList.self.anIntArray426[0], local15, local19, 0, local46.getSize(), local46.getSize(), 0, 0);
+				PathFinder.findPath(PlayerList.self.movementQueueX[0], PlayerList.self.movementQueueZ[0], local15, local19, 0, local46.getSize(), local46.getSize(), 0, 0);
 			}
 		}
 		if (local28 == 17) {
@@ -192,7 +192,7 @@ public final class Static35 {
 				Protocol.outboundBuffer.writeShortLE2(local24);
 				Protocol.outboundBuffer.writeShort(Static1.anInt314);
 				Protocol.outboundBuffer.writeShortLEA(Static1.anInt243);
-				PathFinder.findPath(PlayerList.self.anIntArray422[0], PlayerList.self.anIntArray426[0], local15, local19, 0, local146.getSize(), local146.getSize(), 0, 0);
+				PathFinder.findPath(PlayerList.self.movementQueueX[0], PlayerList.self.movementQueueZ[0], local15, local19, 0, local146.getSize(), local146.getSize(), 0, 0);
 			}
 		}
 		if (local28 == 40) {
@@ -217,7 +217,7 @@ public final class Static35 {
 			Protocol.outboundBuffer.writeByte(Keyboard.pressedKeys[82] ? 1 : 0);
 			Protocol.outboundBuffer.writeShort(Static7.originZ + local19);
 			Protocol.outboundBuffer.writeShortLEA(local24);
-			PathFinder.findPath(PlayerList.self.anIntArray422[0], PlayerList.self.anIntArray426[0], local15, local19, 0, 0, 0, 0, 0);
+			PathFinder.findPath(PlayerList.self.movementQueueX[0], PlayerList.self.movementQueueZ[0], local15, local19, 0, 0, 0, 0, 0);
 		}
 		if (local28 == 21) {
 			@Pc(346) Player local346 = PlayerList.players[local24];
@@ -232,7 +232,7 @@ public final class Static35 {
 				Protocol.outboundBuffer.writeShortA(Static1.anInt314);
 				Protocol.outboundBuffer.writeByteS(Keyboard.pressedKeys[82] ? 1 : 0);
 				Protocol.outboundBuffer.writeShortLEA(Static1.anInt243);
-				PathFinder.findPath(PlayerList.self.anIntArray422[0], PlayerList.self.anIntArray426[0], local15, local19, 0, local346.getSize(), local346.getSize(), 0, 0);
+				PathFinder.findPath(PlayerList.self.movementQueueX[0], PlayerList.self.movementQueueZ[0], local15, local19, 0, local346.getSize(), local346.getSize(), 0, 0);
 			}
 		}
 		if (local28 == 1004) {
@@ -246,7 +246,7 @@ public final class Static35 {
 		if (local28 == 19) {
 			if (local24 == 0) {
 				Static2.anInt1767 = 1;
-				Static27.method3186(Static7.y, local15, local19);
+				Static27.method3186(Player.level, local15, local19);
 			} else if (local24 == 1) {
 				Protocol.outboundBuffer.writeOpcode(204);
 				Protocol.outboundBuffer.writeShortA(local19 + Static7.originZ);
@@ -268,7 +268,7 @@ public final class Static35 {
 			Protocol.outboundBuffer.writeShortLEA(local24);
 			Protocol.outboundBuffer.writeShortLE2(Static5.originX + local15);
 			Protocol.outboundBuffer.writeByteS(Keyboard.pressedKeys[82] ? 1 : 0);
-			PathFinder.findPath(PlayerList.self.anIntArray422[0], PlayerList.self.anIntArray426[0], local15, local19, 0, 0, 0, 0, 0);
+			PathFinder.findPath(PlayerList.self.movementQueueX[0], PlayerList.self.movementQueueZ[0], local15, local19, 0, 0, 0, 0, 0);
 		}
 		if (local28 == 36) {
 			@Pc(582) Npc local582 = NpcList.npcs[local24];
@@ -280,7 +280,7 @@ public final class Static35 {
 				Protocol.outboundBuffer.writeOpcode(37);
 				Protocol.outboundBuffer.writeByte(Keyboard.pressedKeys[82] ? 1 : 0);
 				Protocol.outboundBuffer.writeShortLEA(local24);
-				PathFinder.findPath(PlayerList.self.anIntArray422[0], PlayerList.self.anIntArray426[0], local15, local19, 0, local582.getSize(), local582.getSize(), 0, 0);
+				PathFinder.findPath(PlayerList.self.movementQueueX[0], PlayerList.self.movementQueueZ[0], local15, local19, 0, local582.getSize(), local582.getSize(), 0, 0);
 			}
 		}
 		if (local28 == 12) {
@@ -293,7 +293,7 @@ public final class Static35 {
 				Protocol.outboundBuffer.writeOpcode(4);
 				Protocol.outboundBuffer.writeByte(Keyboard.pressedKeys[82] ? 1 : 0);
 				Protocol.outboundBuffer.writeShortA(local24);
-				PathFinder.findPath(PlayerList.self.anIntArray422[0], PlayerList.self.anIntArray426[0], local15, local19, 0, local649.getSize(), local649.getSize(), 0, 0);
+				PathFinder.findPath(PlayerList.self.movementQueueX[0], PlayerList.self.movementQueueZ[0], local15, local19, 0, local649.getSize(), local649.getSize(), 0, 0);
 			}
 		}
 		if (local28 == 10) {
@@ -315,7 +315,7 @@ public final class Static35 {
 				Protocol.outboundBuffer.writeOpcode(33);
 				Protocol.outboundBuffer.writeShortLEA(local24);
 				Protocol.outboundBuffer.writeByteA(Keyboard.pressedKeys[82] ? 1 : 0);
-				PathFinder.findPath(PlayerList.self.anIntArray422[0], PlayerList.self.anIntArray426[0], local15, local19, 0, local744.getSize(), local744.getSize(), 0, 0);
+				PathFinder.findPath(PlayerList.self.movementQueueX[0], PlayerList.self.movementQueueZ[0], local15, local19, 0, local744.getSize(), local744.getSize(), 0, 0);
 			}
 		}
 		if (local28 == 1007) {
@@ -350,7 +350,7 @@ public final class Static35 {
 			Protocol.outboundBuffer.writeShortLEA(local24);
 			Protocol.outboundBuffer.writeByteA(Keyboard.pressedKeys[82] ? 1 : 0);
 			Protocol.outboundBuffer.writeShortLE2(local15 + Static5.originX);
-			PathFinder.findPath(PlayerList.self.anIntArray422[0], PlayerList.self.anIntArray426[0], local15, local19, 0, 0, 0, 0, 0);
+			PathFinder.findPath(PlayerList.self.movementQueueX[0], PlayerList.self.movementQueueZ[0], local15, local19, 0, 0, 0, 0, 0);
 		}
 		if (local28 == 42) {
 			@Pc(969) Npc local969 = NpcList.npcs[local24];
@@ -364,7 +364,7 @@ public final class Static35 {
 				Protocol.outboundBuffer.writeByteC(Keyboard.pressedKeys[82] ? 1 : 0);
 				Protocol.outboundBuffer.writeShort(Static2.anInt1367);
 				Protocol.outboundBuffer.writeIntAlt3(Static1.anInt1053);
-				PathFinder.findPath(PlayerList.self.anIntArray422[0], PlayerList.self.anIntArray426[0], local15, local19, 0, local969.getSize(), local969.getSize(), 0, 0);
+				PathFinder.findPath(PlayerList.self.movementQueueX[0], PlayerList.self.movementQueueZ[0], local15, local19, 0, local969.getSize(), local969.getSize(), 0, 0);
 			}
 		}
 		if (local28 == 31) {
@@ -377,15 +377,15 @@ public final class Static35 {
 				Protocol.outboundBuffer.writeOpcode(105);
 				Protocol.outboundBuffer.writeShort(local24);
 				Protocol.outboundBuffer.writeByte(Keyboard.pressedKeys[82] ? 1 : 0);
-				PathFinder.findPath(PlayerList.self.anIntArray422[0], PlayerList.self.anIntArray426[0], local15, local19, 0, local1044.getSize(), local1044.getSize(), 0, 0);
+				PathFinder.findPath(PlayerList.self.movementQueueX[0], PlayerList.self.movementQueueZ[0], local15, local19, 0, local1044.getSize(), local1044.getSize(), 0, 0);
 			}
 		}
 		if (local28 == 47) {
 			if (local24 == 0) {
 				Static6.anInt4946 = 1;
-				Static27.method3186(Static7.y, local15, local19);
+				Static27.method3186(Player.level, local15, local19);
 			} else if (LoginManager.staffModLevel > 0 && Keyboard.pressedKeys[82] && Keyboard.pressedKeys[81]) {
-				Static24.method2945(Static5.originX + local15, Static7.originZ + local19, Static7.y);
+				Static24.method2945(Static5.originX + local15, Static7.originZ + local19, Player.level);
 			} else {
 				Protocol.outboundBuffer.writeOpcode(85);
 				Protocol.outboundBuffer.writeShortLEA(Static5.originX + local15);
@@ -402,7 +402,7 @@ public final class Static35 {
 				Protocol.outboundBuffer.writeOpcode(53);
 				Protocol.outboundBuffer.writeShortLEA(local24);
 				Protocol.outboundBuffer.writeByteS(Keyboard.pressedKeys[82] ? 1 : 0);
-				PathFinder.findPath(PlayerList.self.anIntArray422[0], PlayerList.self.anIntArray426[0], local15, local19, 0, local1170.getSize(), local1170.getSize(), 0, 0);
+				PathFinder.findPath(PlayerList.self.movementQueueX[0], PlayerList.self.movementQueueZ[0], local15, local19, 0, local1170.getSize(), local1170.getSize(), 0, 0);
 			}
 		}
 		if (local28 == 51) {
@@ -445,7 +445,7 @@ public final class Static35 {
 				Protocol.outboundBuffer.writeOpcode(148);
 				Protocol.outboundBuffer.writeShortA(local24);
 				Protocol.outboundBuffer.writeByteA(Keyboard.pressedKeys[82] ? 1 : 0);
-				PathFinder.findPath(PlayerList.self.anIntArray422[0], PlayerList.self.anIntArray426[0], local15, local19, 0, local1354.getSize(), local1354.getSize(), 0, 0);
+				PathFinder.findPath(PlayerList.self.movementQueueX[0], PlayerList.self.movementQueueZ[0], local15, local19, 0, local1354.getSize(), local1354.getSize(), 0, 0);
 			}
 		}
 		if (local28 == 11) {
@@ -482,7 +482,7 @@ public final class Static35 {
 				Protocol.outboundBuffer.writeOpcode(245);
 				Protocol.outboundBuffer.writeShort(local24);
 				Protocol.outboundBuffer.writeByteS(Keyboard.pressedKeys[82] ? 1 : 0);
-				PathFinder.findPath(PlayerList.self.anIntArray422[0], PlayerList.self.anIntArray426[0], local15, local19, 0, local1545.getSize(), local1545.getSize(), 0, 0);
+				PathFinder.findPath(PlayerList.self.movementQueueX[0], PlayerList.self.movementQueueZ[0], local15, local19, 0, local1545.getSize(), local1545.getSize(), 0, 0);
 			}
 		}
 		if (local28 == 15) {
@@ -527,15 +527,15 @@ public final class Static35 {
 				Protocol.outboundBuffer.writeOpcode(77);
 				Protocol.outboundBuffer.writeShortLE2(local24);
 				Protocol.outboundBuffer.writeByteS(Keyboard.pressedKeys[82] ? 1 : 0);
-				PathFinder.findPath(PlayerList.self.anIntArray422[0], PlayerList.self.anIntArray426[0], local15, local19, 0, local1728.getSize(), local1728.getSize(), 0, 0);
+				PathFinder.findPath(PlayerList.self.movementQueueX[0], PlayerList.self.movementQueueZ[0], local15, local19, 0, local1728.getSize(), local1728.getSize(), 0, 0);
 			}
 		}
 		if (local28 == 26) {
 			if (local24 == 0) {
-				Static27.method3186(Static7.y, local15, local19);
+				Static27.method3186(Player.level, local15, local19);
 			} else if (local24 == 1) {
 				if (LoginManager.staffModLevel > 0 && Keyboard.pressedKeys[82] && Keyboard.pressedKeys[81]) {
-					Static24.method2945(local15 + Static5.originX, local19 + Static7.originZ, Static7.y);
+					Static24.method2945(local15 + Static5.originX, local19 + Static7.originZ, Player.level);
 				} else {
 					Static37.method4661(local15, 1, local19);
 					Protocol.outboundBuffer.writeByte(Static2.anInt1941);
@@ -545,11 +545,11 @@ public final class Static35 {
 					Protocol.outboundBuffer.writeByte(Static6.anInt3585);
 					Protocol.outboundBuffer.writeByte(Static6.anInt4761);
 					Protocol.outboundBuffer.writeByte(89);
-					Protocol.outboundBuffer.writeShort(PlayerList.self.x);
-					Protocol.outboundBuffer.writeShort(PlayerList.self.z);
+					Protocol.outboundBuffer.writeShort(PlayerList.self.xFine);
+					Protocol.outboundBuffer.writeShort(PlayerList.self.zFine);
 					Protocol.outboundBuffer.writeByte(Static2.anInt946);
 					Protocol.outboundBuffer.writeByte(63);
-					PathFinder.findPath(PlayerList.self.anIntArray422[0], PlayerList.self.anIntArray426[0], local15, local19, 0, 0, 0, 0, 0);
+					PathFinder.findPath(PlayerList.self.movementQueueX[0], PlayerList.self.movementQueueZ[0], local15, local19, 0, 0, 0, 0, 0);
 				}
 			}
 		}
@@ -582,7 +582,7 @@ public final class Static35 {
 			Protocol.outboundBuffer.writeShort(local24);
 			Protocol.outboundBuffer.writeShortLE2(local15 + Static5.originX);
 			Protocol.outboundBuffer.writeByteS(Keyboard.pressedKeys[82] ? 1 : 0);
-			PathFinder.findPath(PlayerList.self.anIntArray422[0], PlayerList.self.anIntArray426[0], local15, local19, 0, 0, 0, 0, 0);
+			PathFinder.findPath(PlayerList.self.movementQueueX[0], PlayerList.self.movementQueueZ[0], local15, local19, 0, 0, 0, 0, 0);
 		}
 		if (local28 == 5) {
 			@Pc(2053) Player local2053 = PlayerList.players[local24];
@@ -596,7 +596,7 @@ public final class Static35 {
 				Protocol.outboundBuffer.writeShort(Static2.anInt1367);
 				Protocol.outboundBuffer.writeIntLE2(Static1.anInt1053);
 				Protocol.outboundBuffer.writeByteS(Keyboard.pressedKeys[82] ? 1 : 0);
-				PathFinder.findPath(PlayerList.self.anIntArray422[0], PlayerList.self.anIntArray426[0], local15, local19, 0, local2053.getSize(), local2053.getSize(), 0, 0);
+				PathFinder.findPath(PlayerList.self.movementQueueX[0], PlayerList.self.movementQueueZ[0], local15, local19, 0, local2053.getSize(), local2053.getSize(), 0, 0);
 			}
 		}
 		if (local28 == 37) {
@@ -615,7 +615,7 @@ public final class Static35 {
 			@Pc(2187) Component local2187 = Static23.method2425(local19, local15);
 			if (local2187 != null) {
 				Static26.method4812();
-				@Pc(2195) ServerActiveProperties local2195 = Static12.method687(local2187);
+				@Pc(2195) ServerActiveProperties local2195 = InterfaceList.getServerActiveProperties(local2187);
 				Static21.method2081(local2195.getTargetMask(), local2195.targetParam, local2187.anInt5890, local15, local2187.anInt5930, local19);
 				Static2.anInt1334 = 0;
 				Static4.aString140 = Static12.method780(local2187);
@@ -658,7 +658,7 @@ public final class Static35 {
 				Protocol.outboundBuffer.writeOpcode(12);
 				Protocol.outboundBuffer.writeShortLE2(local24);
 				Protocol.outboundBuffer.writeByte(Keyboard.pressedKeys[82] ? 1 : 0);
-				PathFinder.findPath(PlayerList.self.anIntArray422[0], PlayerList.self.anIntArray426[0], local15, local19, 0, local2321.getSize(), local2321.getSize(), 0, 0);
+				PathFinder.findPath(PlayerList.self.movementQueueX[0], PlayerList.self.movementQueueZ[0], local15, local19, 0, local2321.getSize(), local2321.getSize(), 0, 0);
 			}
 		}
 		if (local28 == 35) {
@@ -680,7 +680,7 @@ public final class Static35 {
 				Protocol.outboundBuffer.writeOpcode(212);
 				Protocol.outboundBuffer.writeShortA(local24);
 				Protocol.outboundBuffer.writeByteA(Keyboard.pressedKeys[82] ? 1 : 0);
-				PathFinder.findPath(PlayerList.self.anIntArray422[0], PlayerList.self.anIntArray426[0], local15, local19, 0, local2423.getSize(), local2423.getSize(), 0, 0);
+				PathFinder.findPath(PlayerList.self.movementQueueX[0], PlayerList.self.movementQueueZ[0], local15, local19, 0, local2423.getSize(), local2423.getSize(), 0, 0);
 			}
 		}
 		if (local28 == 16) {
@@ -708,7 +708,7 @@ public final class Static35 {
 			Protocol.outboundBuffer.writeShortLE2(Static7.originZ + local19);
 			Protocol.outboundBuffer.writeShortLE2(local24);
 			Protocol.outboundBuffer.writeShortA(local15 + Static5.originX);
-			PathFinder.findPath(PlayerList.self.anIntArray422[0], PlayerList.self.anIntArray426[0], local15, local19, 0, 0, 0, 0, 0);
+			PathFinder.findPath(PlayerList.self.movementQueueX[0], PlayerList.self.movementQueueZ[0], local15, local19, 0, 0, 0, 0, 0);
 		}
 		if (local28 == 23 || local28 == 1009) {
 			Static37.method4752(local19, local15, local24, Static6.aStringArray27[arg0]);
@@ -796,7 +796,7 @@ public final class Static35 {
 			Protocol.outboundBuffer.writeShortLE2(Static7.originZ + local19);
 			Protocol.outboundBuffer.writeShort(local24);
 			Protocol.outboundBuffer.writeShort(local15 + Static5.originX);
-			PathFinder.findPath(PlayerList.self.anIntArray422[0], PlayerList.self.anIntArray426[0], local15, local19, 0, 0, 0, 0, 0);
+			PathFinder.findPath(PlayerList.self.movementQueueX[0], PlayerList.self.movementQueueZ[0], local15, local19, 0, 0, 0, 0, 0);
 		}
 		if (local28 == 22) {
 			@Pc(3012) Player local3012 = PlayerList.players[local24];
@@ -808,7 +808,7 @@ public final class Static35 {
 				Protocol.outboundBuffer.writeOpcode(96);
 				Protocol.outboundBuffer.writeByteA(Keyboard.pressedKeys[82] ? 1 : 0);
 				Protocol.outboundBuffer.writeShort(local24);
-				PathFinder.findPath(PlayerList.self.anIntArray422[0], PlayerList.self.anIntArray426[0], local15, local19, 0, local3012.getSize(), local3012.getSize(), 0, 0);
+				PathFinder.findPath(PlayerList.self.movementQueueX[0], PlayerList.self.movementQueueZ[0], local15, local19, 0, local3012.getSize(), local3012.getSize(), 0, 0);
 			}
 		}
 		if (local28 == 60) {
@@ -821,7 +821,7 @@ public final class Static35 {
 				Protocol.outboundBuffer.writeOpcode(223);
 				Protocol.outboundBuffer.writeByte(Keyboard.pressedKeys[82] ? 1 : 0);
 				Protocol.outboundBuffer.writeShortLEA(local24);
-				PathFinder.findPath(PlayerList.self.anIntArray422[0], PlayerList.self.anIntArray426[0], local15, local19, 0, local3080.getSize(), local3080.getSize(), 0, 0);
+				PathFinder.findPath(PlayerList.self.movementQueueX[0], PlayerList.self.movementQueueZ[0], local15, local19, 0, local3080.getSize(), local3080.getSize(), 0, 0);
 			}
 		}
 		if (local28 == 1001) {
@@ -856,7 +856,7 @@ public final class Static35 {
 			Protocol.outboundBuffer.writeShort(local19 + Static7.originZ);
 			Protocol.outboundBuffer.writeShort(Static5.originX + local15);
 			Protocol.outboundBuffer.writeByteA(Keyboard.pressedKeys[82] ? 1 : 0);
-			PathFinder.findPath(PlayerList.self.anIntArray422[0], PlayerList.self.anIntArray426[0], local15, local19, 0, 0, 0, 0, 0);
+			PathFinder.findPath(PlayerList.self.movementQueueX[0], PlayerList.self.movementQueueZ[0], local15, local19, 0, 0, 0, 0, 0);
 		}
 		if (Static2.anInt1334 != 0) {
 			Static2.anInt1334 = 0;
@@ -874,7 +874,7 @@ public final class Static35 {
 	public static void method4321() {
 		for (@Pc(14) SpotAnimNode local14 = (SpotAnimNode) Static2.aClass112_8.head(); local14 != null; local14 = (SpotAnimNode) Static2.aClass112_8.next()) {
 			@Pc(20) SpotAnim local20 = local14.value;
-			if (local20.anInt3655 != Static7.y || local20.aBoolean265) {
+			if (local20.anInt3655 != Player.level || local20.aBoolean265) {
 				local14.unlink();
 			} else if (client.loop >= local20.anInt3665) {
 				local20.method3058(Static5.anInt4156);

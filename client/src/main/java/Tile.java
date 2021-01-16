@@ -24,7 +24,7 @@ public final class Tile extends Node {
 	public int anInt3549;
 
 	@OriginalMember(owner = "client!nh", name = "B", descriptor = "Lclient!vf;")
-	public Class180 aClass180_1;
+	public ObjStackEntity objStack;
 
 	@OriginalMember(owner = "client!nh", name = "F", descriptor = "I")
 	public int anInt3553;
@@ -66,10 +66,10 @@ public final class Tile extends Node {
 	public int allInteriorFlags = 0;
 
 	@OriginalMember(owner = "client!nh", name = "E", descriptor = "I")
-	public int anInt3552;
+	public int virtualLevel;
 
 	@OriginalMember(owner = "client!nh", name = "N", descriptor = "I")
-	public final int y;
+	public final int level;
 
 	@OriginalMember(owner = "client!nh", name = "z", descriptor = "I")
 	public final int x;
@@ -78,8 +78,8 @@ public final class Tile extends Node {
 	public final int z;
 
 	@OriginalMember(owner = "client!nh", name = "<init>", descriptor = "(III)V")
-	public Tile(@OriginalArg(0) int y, @OriginalArg(1) int x, @OriginalArg(2) int z) {
-		this.y = this.anInt3552 = y;
+	public Tile(@OriginalArg(0) int level, @OriginalArg(1) int x, @OriginalArg(2) int z) {
+		this.level = this.virtualLevel = level;
 		this.x = x;
 		this.z = z;
 	}

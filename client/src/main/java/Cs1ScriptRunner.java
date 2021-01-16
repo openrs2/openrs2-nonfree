@@ -106,10 +106,10 @@ public final class Cs1ScriptRunner {
 					value = VarpDomain.getVarbit(local375);
 				}
 				if (opcode == 18) {
-					value = Static5.originX + (PlayerList.self.x >> 7);
+					value = Static5.originX + (PlayerList.self.xFine >> 7);
 				}
 				if (opcode == 19) {
-					value = (PlayerList.self.z >> 7) + Static7.originZ;
+					value = (PlayerList.self.zFine >> 7) + Static7.originZ;
 				}
 				if (opcode == 20) {
 					value = script[pc++];
@@ -190,11 +190,11 @@ public final class Cs1ScriptRunner {
 														return text;
 													}
 													@Pc(200) String local200 = "";
-													if (Static1.aClass197_2 != null) {
-														if (Static1.aClass197_2.result == null) {
-															local200 = Static27.method3226(Static1.aClass197_2.intArg1);
+													if (Static1.reverseDnsRequest != null) {
+														if (Static1.reverseDnsRequest.result == null) {
+															local200 = Static27.method3226(Static1.reverseDnsRequest.intArg1);
 														} else {
-															local200 = (String) Static1.aClass197_2.result;
+															local200 = (String) Static1.reverseDnsRequest.result;
 														}
 													}
 													text = text.substring(0, local194) + local200 + text.substring(local194 + 4);

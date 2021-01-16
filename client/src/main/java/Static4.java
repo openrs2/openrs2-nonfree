@@ -1,6 +1,4 @@
 import java.nio.ByteBuffer;
-import java.util.Calendar;
-import java.util.TimeZone;
 
 import org.openrs2.deob.annotation.OriginalMember;
 
@@ -198,9 +196,6 @@ public final class Static4 {
 	@OriginalMember(owner = "client!nb", name = "s", descriptor = "I")
 	public static int anInt3455;
 
-	@OriginalMember(owner = "client!jk", name = "o", descriptor = "Ljava/util/Calendar;")
-	public static final Calendar aCalendar1 = Calendar.getInstance(TimeZone.getTimeZone("GMT"));
-
 	@OriginalMember(owner = "client!jk", name = "t", descriptor = "I")
 	public static int anInt2643 = -1;
 
@@ -240,17 +235,11 @@ public final class Static4 {
 	@OriginalMember(owner = "client!kg", name = "w", descriptor = "I")
 	public static int anInt2868 = -1;
 
-	@OriginalMember(owner = "client!kl", name = "Z", descriptor = "Lclient!ic;")
-	public static HashTable aClass84_13 = new HashTable(8);
-
 	@OriginalMember(owner = "client!km", name = "db", descriptor = "I")
 	public static int anInt2959 = 0;
 
 	@OriginalMember(owner = "client!kn", name = "G", descriptor = "[I")
 	public static final int[] anIntArray267 = new int[256];
-
-	@OriginalMember(owner = "client!kn", name = "J", descriptor = "[Ljava/lang/String;")
-	public static final String[] aStringArray22 = new String[200];
 
 	@OriginalMember(owner = "client!l", name = "q", descriptor = "I")
 	public static int anInt2989 = 0;
@@ -278,9 +267,6 @@ public final class Static4 {
 
 	@OriginalMember(owner = "client!lf", name = "U", descriptor = "S")
 	public static short aShort18 = 1;
-
-	@OriginalMember(owner = "client!lf", name = "ab", descriptor = "[I")
-	public static final int[] anIntArray293 = new int[200];
 
 	@OriginalMember(owner = "client!lf", name = "db", descriptor = "[I")
 	public static final int[] anIntArray294 = new int[50];
@@ -546,6 +532,4 @@ public final class Static4 {
 	@OriginalMember(owner = "client!na", name = "Xb", descriptor = "[I")
 	public static final int[] anIntArray381 = new int[10];
 
-	@OriginalMember(owner = "client!nb", name = "r", descriptor = "[Ljava/lang/String;")
-	public static final String[] aStringArray23 = new String[200];
 }

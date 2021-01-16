@@ -1,4 +1,3 @@
-import java.util.Date;
 import java.util.Random;
 
 import org.openrs2.deob.annotation.OriginalArg;
@@ -9,8 +8,8 @@ public final class Static12 {
 
 	@OriginalMember(owner = "client!ck", name = "f", descriptor = "(B)V")
 	public static void method638() {
-		if (Static4.anInt3020 != Static7.y && Static13.method1009(Static7.y)) {
-			Static4.anInt3020 = Static7.y;
+		if (Static4.anInt3020 != Player.level && Static13.method1009(Player.level)) {
+			Static4.anInt3020 = Player.level;
 		}
 	}
 
@@ -55,8 +54,8 @@ public final class Static12 {
 			Static5.aFloat147 += (float) arg0 * Static1.aFloat20 / 40.0F;
 			Static5.aFloat97 += (float) arg0 * Static4.aFloat79 / 40.0F;
 		}
-		@Pc(37) int local37 = PlayerList.self.z + Static1.anInt837;
-		@Pc(42) int local42 = Static1.anInt548 + PlayerList.self.x;
+		@Pc(37) int local37 = PlayerList.self.zFine + Static1.anInt837;
+		@Pc(42) int local42 = Static1.anInt548 + PlayerList.self.xFine;
 		if (Static7.anInt5412 - local42 < -500 || Static7.anInt5412 - local42 > 500 || Static3.anInt2496 - local37 < -500 || Static3.anInt2496 - local37 > 500) {
 			Static3.anInt2496 = local37;
 			Static7.anInt5412 = local42;
@@ -102,15 +101,9 @@ public final class Static12 {
 		Protocol.outboundBuffer.writeLong(0L);
 	}
 
-	@OriginalMember(owner = "client!client", name = "a", descriptor = "(Lclient!wf;)Lclient!on;")
-	public static ServerActiveProperties method687(@OriginalArg(0) Component arg0) {
-		@Pc(13) ServerActiveProperties local13 = (ServerActiveProperties) Static2.aClass84_5.get(((long) arg0.id << 32) + (long) arg0.anInt5968);
-		return local13 == null ? arg0.serverActiveProperties : local13;
-	}
-
 	@OriginalMember(owner = "client!client", name = "b", descriptor = "(Lclient!wf;)Lclient!wf;")
 	public static Component method691(@OriginalArg(0) Component arg0) {
-		@Pc(4) int local4 = method687(arg0).getDragDepth();
+		@Pc(4) int local4 = InterfaceList.getServerActiveProperties(arg0).getDragDepth();
 		if (local4 == 0) {
 			return null;
 		}
@@ -126,7 +119,7 @@ public final class Static12 {
 	@OriginalMember(owner = "client!client", name = "c", descriptor = "(Lclient!wf;)Z")
 	public static boolean method692(@OriginalArg(0) Component arg0) {
 		if (Static1.aBoolean26) {
-			if (method687(arg0).events != 0) {
+			if (InterfaceList.getServerActiveProperties(arg0).events != 0) {
 				return false;
 			}
 			if (arg0.type == 0) {
@@ -140,7 +133,7 @@ public final class Static12 {
 	public static void method693(@OriginalArg(0) Component[] arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7) {
 		for (@Pc(1) int local1 = 0; local1 < arg0.length; local1++) {
 			@Pc(9) Component local9 = arg0[local1];
-			if (local9 != null && local9.anInt5937 == arg1 && (!local9.if3 || local9.type == 0 || local9.aBoolean403 || method687(local9).events != 0 || local9 == Static1.aClass185_2 || local9.anInt5904 == 1338) && (!local9.if3 || !method692(local9))) {
+			if (local9 != null && local9.anInt5937 == arg1 && (!local9.if3 || local9.type == 0 || local9.aBoolean403 || InterfaceList.getServerActiveProperties(local9).events != 0 || local9 == Static1.aClass185_2 || local9.anInt5904 == 1338) && (!local9.if3 || !method692(local9))) {
 				@Pc(50) int local50 = local9.anInt5960 + arg6;
 				@Pc(55) int local55 = local9.anInt5888 + arg7;
 				@Pc(61) int local61;
@@ -230,7 +223,7 @@ public final class Static12 {
 						if (local223) {
 							Static15.method1401(local9, Mouse.clickX - local50, Mouse.clickY - local55);
 						}
-						if (Static1.aClass185_1 != null && Static1.aClass185_1 != local9 && local209 && method687(local9).isDragTarget()) {
+						if (Static1.aClass185_1 != null && Static1.aClass185_1 != local9 && local209 && InterfaceList.getServerActiveProperties(local9).isDragTarget()) {
 							Static7.aClass185_16 = local9;
 						}
 						if (local9 == Static1.aClass185_2) {
@@ -483,16 +476,16 @@ public final class Static12 {
 								}
 								local9.anInt5936 = VarpDomain.updatedVarpsWriterIndex;
 							}
-							if (local9.anObjectArray3 != null && Static2.anInt959 > local9.anInt5941) {
-								if (local9.anIntArray670 == null || Static2.anInt959 - local9.anInt5941 > 32) {
+							if (local9.anObjectArray3 != null && Inv.updatedInventoriesWriterIndex > local9.anInt5941) {
+								if (local9.anIntArray670 == null || Inv.updatedInventoriesWriterIndex - local9.anInt5941 > 32) {
 									@Pc(1261) HookRequest local1261 = new HookRequest();
 									local1261.source = local9;
 									local1261.arguments = local9.anObjectArray3;
 									Static3.aClass112_14.addTail(local1261);
 								} else {
 									label526:
-									for (@Pc(1276) int local1276 = local9.anInt5941; local1276 < Static2.anInt959; local1276++) {
-										@Pc(1285) int local1285 = Static7.anIntArray656[local1276 & 0x1F];
+									for (@Pc(1276) int local1276 = local9.anInt5941; local1276 < Inv.updatedInventoriesWriterIndex; local1276++) {
+										@Pc(1285) int local1285 = Inv.updatedInventories[local1276 & 0x1F];
 										for (@Pc(1287) int local1287 = 0; local1287 < local9.anIntArray670.length; local1287++) {
 											if (local9.anIntArray670[local1287] == local1285) {
 												@Pc(1302) HookRequest local1302 = new HookRequest();
@@ -504,7 +497,7 @@ public final class Static12 {
 										}
 									}
 								}
-								local9.anInt5941 = Static2.anInt959;
+								local9.anInt5941 = Inv.updatedInventoriesWriterIndex;
 							}
 							if (local9.anObjectArray25 != null && Static5.anInt4210 > local9.anInt5942) {
 								if (local9.anIntArray667 == null || Static5.anInt4210 - local9.anInt5942 > 32) {
@@ -598,9 +591,9 @@ public final class Static12 {
 						if (local9.aClass185Array4 != null) {
 							method693(local9.aClass185Array4, local9.id, local61, local63, local65, local67, local50 - local9.anInt5932, local55 - local9.anInt5931);
 						}
-						@Pc(1691) Class4_Sub27 local1691 = (Class4_Sub27) Static4.aClass84_13.get((long) local9.id);
+						@Pc(1691) SubInterface local1691 = (SubInterface) InterfaceList.subInterfaces.get((long) local9.id);
 						if (local1691 != null) {
-							Static14.method1060(local1691.anInt4620, local65, local50, local63, local55, local61, local67);
+							Static14.method1060(local1691.id, local65, local50, local63, local55, local61, local67);
 						}
 					}
 				}
@@ -631,7 +624,7 @@ public final class Static12 {
 			local12 = Static7.anIntArray626[4] + 128;
 		}
 		@Pc(51) int local51 = (int) Static5.aFloat97 + Static1.anInt242 & 0x7FF;
-		Static32.method3954(local51, Static11.method522(PlayerList.self.z, PlayerList.self.x, Static7.y) - 50, local12, local12 * 3 + 600, Static3.anInt2496, arg0, Static7.anInt5412);
+		Static32.method3954(local51, SceneGraph.method522(Player.level, PlayerList.self.xFine, PlayerList.self.zFine) - 50, local12, local12 * 3 + 600, Static3.anInt2496, arg0, Static7.anInt5412);
 		if (Static3.anInt2519 == local5 && local9 == Static2.anInt1931 && local7 == Static7.anInt5678 && Static5.anInt4066 == local26 && Static5.anInt3656 == local14) {
 			Static1.anInt772 = 1;
 			return;
@@ -756,121 +749,31 @@ public final class Static12 {
 		return Static4.aFloatArray64;
 	}
 
-	@OriginalMember(owner = "client!da", name = "a", descriptor = "(ZIIILclient!gn;I)V")
-	public static void method731(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) Class4_Sub11 arg3, @OriginalArg(5) int arg4) {
-		if (arg3.anInt2115 == -1 && arg3.anIntArray172 == null) {
-			return;
-		}
-		@Pc(16) int local16 = 0;
-		@Pc(23) int local23 = arg3.anInt2127 * Preferences.areaSoundsVolume >> 8;
-		if (arg1 > arg3.anInt2117) {
-			local16 = arg1 - arg3.anInt2117;
-		} else if (arg3.anInt2124 > arg1) {
-			local16 = arg3.anInt2124 - arg1;
-		}
-		if (arg4 > arg3.anInt2112) {
-			local16 += arg4 - arg3.anInt2112;
-		} else if (arg3.anInt2113 > arg4) {
-			local16 += arg3.anInt2113 - arg4;
-		}
-		if (arg3.anInt2123 == 0 || arg3.anInt2123 < local16 - 64 || Preferences.areaSoundsVolume == 0 || arg3.anInt2126 != arg0) {
-			if (arg3.aClass4_Sub6_Sub4_3 != null) {
-				Static5.aClass4_Sub6_Sub3_2.method2670(arg3.aClass4_Sub6_Sub4_3);
-				arg3.aClass4_Sub6_Sub4_3 = null;
-			}
-			if (arg3.aClass4_Sub6_Sub4_2 != null) {
-				Static5.aClass4_Sub6_Sub3_2.method2670(arg3.aClass4_Sub6_Sub4_2);
-				arg3.aClass4_Sub6_Sub4_2 = null;
-			}
-			return;
-		}
-		@Pc(145) int local145 = local16 - 64;
-		if (local145 < 0) {
-			local145 = 0;
-		}
-		@Pc(164) int local164 = (arg3.anInt2123 - local145) * local23 / arg3.anInt2123;
-		if (arg3.aClass4_Sub6_Sub4_3 != null) {
-			arg3.aClass4_Sub6_Sub4_3.method3377(local164);
-		} else if (arg3.anInt2115 >= 0) {
-			@Pc(186) SynthSound local186 = SynthSound.create(client.js5Archive4, arg3.anInt2115, 0);
-			if (local186 != null) {
-				@Pc(195) PcmSound local195 = local186.toPcmSound().resample(client.resampler);
-				@Pc(200) Class4_Sub6_Sub4 local200 = Static28.method3385(local195, local164);
-				local200.method3359(-1);
-				Static5.aClass4_Sub6_Sub3_2.method2674(local200);
-				arg3.aClass4_Sub6_Sub4_3 = local200;
-			}
-		}
-		if (arg3.aClass4_Sub6_Sub4_2 != null) {
-			arg3.aClass4_Sub6_Sub4_2.method3377(local164);
-			if (!arg3.aClass4_Sub6_Sub4_2.isLinked()) {
-				arg3.aClass4_Sub6_Sub4_2 = null;
-			}
-		} else if (arg3.anIntArray172 != null && (arg3.anInt2125 -= arg2) <= 0) {
-			@Pc(234) int local234 = (int) ((double) arg3.anIntArray172.length * Math.random());
-			@Pc(242) SynthSound local242 = SynthSound.create(client.js5Archive4, arg3.anIntArray172[local234], 0);
-			if (local242 != null) {
-				@Pc(249) PcmSound local249 = local242.toPcmSound().resample(client.resampler);
-				@Pc(254) Class4_Sub6_Sub4 local254 = Static28.method3385(local249, local164);
-				local254.method3359(0);
-				Static5.aClass4_Sub6_Sub3_2.method2674(local254);
-				arg3.anInt2125 = (int) (Math.random() * (double) (arg3.anInt2116 - arg3.anInt2119)) + arg3.anInt2119;
-				arg3.aClass4_Sub6_Sub4_2 = local254;
-			}
-		}
-	}
-
 	@OriginalMember(owner = "client!db", name = "a", descriptor = "(IIIIIIII)V")
-	public static void method736(@OriginalArg(1) int y, @OriginalArg(2) int angle, @OriginalArg(3) int z, @OriginalArg(4) int layer, @OriginalArg(5) int id, @OriginalArg(6) int x, @OriginalArg(7) int shape) {
+	public static void method736(@OriginalArg(1) int level, @OriginalArg(2) int angle, @OriginalArg(3) int z, @OriginalArg(4) int layer, @OriginalArg(5) int id, @OriginalArg(6) int x, @OriginalArg(7) int shape) {
 		if (x < 1 || z < 1 || x > 102 || z > 102) {
 			return;
 		}
 		if (!SceneGraph.isAllLevelsVisible() && (Static4.tileFlags[0][x][z] & 0x2) == 0) {
-			@Pc(39) int local39 = y;
-			if ((Static4.tileFlags[y][x][z] & 0x8) != 0) {
+			@Pc(39) int local39 = level;
+			if ((Static4.tileFlags[level][x][z] & 0x8) != 0) {
 				local39 = 0;
 			}
 			if (local39 != Static2.anInt1216) {
 				return;
 			}
 		}
-		@Pc(64) int local64 = y;
-		if (y < 3 && (Static4.tileFlags[1][x][z] & 0x2) == 2) {
-			local64 = y + 1;
+		@Pc(64) int local64 = level;
+		if (level < 3 && (Static4.tileFlags[1][x][z] & 0x2) == 2) {
+			local64 = level + 1;
 		}
-		Static21.method2018(y, local64, z, PathFinder.collisionMaps[y], layer, x);
+		Static21.method2018(level, local64, z, PathFinder.collisionMaps[level], layer, x);
 		if (id >= 0) {
 			@Pc(97) boolean prevGroundDecoration = Preferences.groundDecoration;
 			Preferences.groundDecoration = true;
-			Static22.method2193(angle, y, id, local64, x, false, z, PathFinder.collisionMaps[y], false, shape);
+			Static22.method2193(angle, level, id, local64, x, false, z, PathFinder.collisionMaps[level], false, shape);
 			Preferences.groundDecoration = prevGroundDecoration;
 		}
-	}
-
-	@OriginalMember(owner = "client!db", name = "a", descriptor = "(ILclient!f;)V")
-	public static void method739(@OriginalArg(1) Player arg0) {
-		@Pc(19) Class4_Sub11 local19 = (Class4_Sub11) Static5.aClass84_18.get(Base37.encode(arg0.name));
-		if (local19 == null) {
-			return;
-		}
-		if (local19.aClass4_Sub6_Sub4_3 != null) {
-			Static5.aClass4_Sub6_Sub3_2.method2670(local19.aClass4_Sub6_Sub4_3);
-			local19.aClass4_Sub6_Sub4_3 = null;
-		}
-		local19.unlink();
-	}
-
-	@OriginalMember(owner = "client!dc", name = "a", descriptor = "(JI)Ljava/lang/String;")
-	public static String method742(@OriginalArg(0) long arg0) {
-		Static4.aCalendar1.setTime(new Date(arg0));
-		@Pc(9) int local9 = Static4.aCalendar1.get(7);
-		@Pc(17) int local17 = Static4.aCalendar1.get(5);
-		@Pc(21) int local21 = Static4.aCalendar1.get(2);
-		@Pc(25) int local25 = Static4.aCalendar1.get(1);
-		@Pc(29) int local29 = Static4.aCalendar1.get(11);
-		@Pc(33) int local33 = Static4.aCalendar1.get(12);
-		@Pc(37) int local37 = Static4.aCalendar1.get(13);
-		return Static3.aStringArray37[local9 - 1] + ", " + local17 / 10 + local17 % 10 + "-" + Static6.aStringArray28[local21] + "-" + local25 + " " + local29 / 10 + local29 % 10 + ":" + local33 / 10 + local33 % 10 + ":" + local37 / 10 + local37 % 10 + " GMT";
 	}
 
 	@OriginalMember(owner = "client!dc", name = "a", descriptor = "(IILclient!eg;IIILclient!vg;IIIZIII)Lclient!vg;")
@@ -978,20 +881,20 @@ public final class Static12 {
 		}
 		if (GlRenderer.enabled) {
 			@Pc(591) GlModel local591 = (GlModel) local500;
-			if (arg7 != Static11.method522(local438 + arg8, arg12 + local432, Static7.y) || Static11.method522(local457 + arg8, local435 + arg12, Static7.y) != arg7) {
+			if (arg7 != SceneGraph.method522(Player.level, arg12 + local432, local438 + arg8) || SceneGraph.method522(Player.level, local435 + arg12, local457 + arg8) != arg7) {
 				for (@Pc(615) int local615 = 0; local615 < local591.vertexCount; local615++) {
 					@Pc(621) int[] local621 = local591.vertexY;
-					local621[local615] += Static11.method522(arg8 + local591.vertexZ[local615], arg12 + local591.vertexX[local615], Static7.y) - arg7;
+					local621[local615] += SceneGraph.method522(Player.level, arg12 + local591.vertexX[local615], arg8 + local591.vertexZ[local615]) - arg7;
 				}
 				local591.vertexBuffer.valid = false;
 				local591.bounds.valid = false;
 			}
 		} else {
 			@Pc(660) SoftwareModel local660 = (SoftwareModel) local500;
-			if (arg7 != Static11.method522(local438 + arg8, local432 + arg12, Static7.y) || arg7 != Static11.method522(local457 + arg8, arg12 + local435, Static7.y)) {
+			if (arg7 != SceneGraph.method522(Player.level, local432 + arg12, local438 + arg8) || arg7 != SceneGraph.method522(Player.level, arg12 + local435, local457 + arg8)) {
 				for (@Pc(690) int local690 = 0; local690 < local660.vertexCount; local690++) {
 					@Pc(700) int[] local700 = local660.vertexY;
-					local700[local690] += Static11.method522(local660.vertexZ[local690] + arg8, local660.vertexX[local690] + arg12, Static7.y) - arg7;
+					local700[local690] += SceneGraph.method522(Player.level, local660.vertexX[local690] + arg12, local660.vertexZ[local690] + arg8) - arg7;
 				}
 				local660.boundsValid = false;
 			}
@@ -1001,12 +904,12 @@ public final class Static12 {
 
 	@OriginalMember(owner = "client!de", name = "a", descriptor = "(BZ)V")
 	public static void method777(@OriginalArg(1) boolean arg0) {
-		Static21.method2050(arg0, GameShell.canvasWidth, Static3.anInt5398, GameShell.canvasHeight);
+		Static21.method2050(arg0, GameShell.canvasWidth, InterfaceList.topLevelInterface, GameShell.canvasHeight);
 	}
 
 	@OriginalMember(owner = "client!df", name = "a", descriptor = "(BLclient!wf;)Ljava/lang/String;")
 	public static String method780(@OriginalArg(1) Component arg0) {
-		if (method687(arg0).getTargetMask() == 0) {
+		if (InterfaceList.getServerActiveProperties(arg0).getTargetMask() == 0) {
 			return null;
 		} else if (arg0.aString355 == null || arg0.aString355.trim().length() == 0) {
 			return Static1.aBoolean26 ? "Hidden-use" : null;

@@ -99,11 +99,11 @@ public final class Class105 {
 	private void method2289(@OriginalArg(0) Class105 arg0) {
 		Static22.method2297();
 		Static22.method2305();
-		@Pc(3) GL local3 = GlRenderer.gl;
+		@Pc(3) GL gl = GlRenderer.gl;
 		GlRaster.getClip(Static4.anIntArray256);
 		GlRaster.resetClip();
-		local3.glClearColor((float) (this.anInt2859 >> 16 & 0xFF) / 255.0F, (float) (this.anInt2859 >> 8 & 0xFF) / 255.0F, (float) (this.anInt2859 & 0xFF) / 255.0F, 0.0F);
-		local3.glClear(GL.GL_DEPTH_BUFFER_BIT | GL.GL_COLOR_BUFFER_BIT);
+		gl.glClearColor((float) (this.anInt2859 >> 16 & 0xFF) / 255.0F, (float) (this.anInt2859 >> 8 & 0xFF) / 255.0F, (float) (this.anInt2859 & 0xFF) / 255.0F, 0.0F);
+		gl.glClear(GL.GL_DEPTH_BUFFER_BIT | GL.GL_COLOR_BUFFER_BIT);
 		@Pc(39) int local39 = 0;
 		@Pc(41) int local41 = 0;
 		@Pc(43) int local43 = 256;
@@ -138,62 +138,62 @@ public final class Class105 {
 		Static25.method2782(16777215, 0.5F, 0.5F, 1.0F);
 		Static25.method2777();
 		if (this.anInt2859 != 0) {
-			local3.glScalef(0.8125F, 0.8125F, 1.0F);
+			gl.glScalef(0.8125F, 0.8125F, 1.0F);
 		}
 		Static4.anInterface4_1.method454(this.anInt2858, this.anInt2861);
 		GlRenderer.setLightingEnabled(true);
 		if (GlRenderer.arbVboSupported) {
-			local3.glBindBufferARB(GL.GL_ARRAY_BUFFER, 0);
-			local3.glBindBufferARB(GL.GL_ELEMENT_ARRAY_BUFFER, 0);
+			gl.glBindBufferARB(GL.GL_ARRAY_BUFFER, 0);
+			gl.glBindBufferARB(GL.GL_ELEMENT_ARRAY_BUFFER, 0);
 		}
-		local3.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-		local3.glDisableClientState(GL.GL_COLOR_ARRAY);
-		local3.glNormalPointer(GL.GL_FLOAT, 20, Static4.aByteBuffer9.position(0));
-		local3.glVertexPointer(2, GL.GL_FLOAT, 20, Static4.aByteBuffer9.position(0));
-		local3.glTexCoordPointer(2, GL.GL_FLOAT, 20, Static4.aByteBuffer9.position(12));
-		local3.glDrawElements(GL.GL_TRIANGLE_STRIP, Static4.aByteBuffer10.limit() / 2, GL.GL_UNSIGNED_SHORT, Static4.aByteBuffer10.position(0));
-		local3.glEnableClientState(GL.GL_COLOR_ARRAY);
+		gl.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
+		gl.glDisableClientState(GL.GL_COLOR_ARRAY);
+		gl.glNormalPointer(GL.GL_FLOAT, 20, Static4.aByteBuffer9.position(0));
+		gl.glVertexPointer(2, GL.GL_FLOAT, 20, Static4.aByteBuffer9.position(0));
+		gl.glTexCoordPointer(2, GL.GL_FLOAT, 20, Static4.aByteBuffer9.position(12));
+		gl.glDrawElements(GL.GL_TRIANGLE_STRIP, Static4.aByteBuffer10.limit() / 2, GL.GL_UNSIGNED_SHORT, Static4.aByteBuffer10.position(0));
+		gl.glEnableClientState(GL.GL_COLOR_ARRAY);
 		GlRenderer.setLightingEnabled(false);
 		if (this.anInt2859 != 0) {
 			MaterialManager.setMaterial(0, 0);
 			GlRenderer.setTextureCombineRgbMode(1);
 			GlRenderer.setTextureCombineAlphaMode(0);
 			GlRenderer.setTextureId(Static4.anInt2868);
-			local3.glColorMask(true, true, true, false);
-			local3.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_SRC0_RGB, GL.GL_PREVIOUS);
-			local3.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_OPERAND0_ALPHA, GL.GL_ONE_MINUS_SRC_ALPHA);
-			local3.glBegin(GL.GL_QUADS);
-			local3.glColor4ub((byte) (this.anInt2859 >> 16), (byte) (this.anInt2859 >> 8), (byte) this.anInt2859, (byte) 127);
-			local3.glTexCoord2f(0.0F, 0.0F);
-			local3.glVertex2i(-1, -1);
-			local3.glTexCoord2f(1.0F, 0.0F);
-			local3.glVertex2i(1, -1);
-			local3.glTexCoord2f(1.0F, 1.0F);
-			local3.glVertex2i(1, 1);
-			local3.glTexCoord2f(0.0F, 1.0F);
-			local3.glVertex2i(-1, 1);
-			local3.glEnd();
-			local3.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_OPERAND0_ALPHA, GL.GL_SRC_ALPHA);
-			local3.glLoadIdentity();
-			local3.glColorMask(true, true, true, true);
-			local3.glBlendFunc(GL.GL_ONE_MINUS_DST_ALPHA, GL.GL_DST_ALPHA);
-			local3.glBegin(GL.GL_QUADS);
-			local3.glColor4ub((byte) (this.anInt2859 >> 16), (byte) (this.anInt2859 >> 8), (byte) this.anInt2859, (byte) -1);
-			local3.glTexCoord2f(0.0F, 0.0F);
-			local3.glVertex2i(-1, -1);
-			local3.glTexCoord2f(1.0F, 0.0F);
-			local3.glVertex2i(1, -1);
-			local3.glTexCoord2f(1.0F, 1.0F);
-			local3.glVertex2i(1, 1);
-			local3.glTexCoord2f(0.0F, 1.0F);
-			local3.glVertex2i(-1, 1);
-			local3.glEnd();
-			local3.glBlendFunc(GL.GL_SRC_ALPHA, GL.GL_ONE_MINUS_SRC_ALPHA);
-			local3.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_SRC0_RGB, GL.GL_TEXTURE);
+			gl.glColorMask(true, true, true, false);
+			gl.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_SRC0_RGB, GL.GL_PREVIOUS);
+			gl.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_OPERAND0_ALPHA, GL.GL_ONE_MINUS_SRC_ALPHA);
+			gl.glBegin(GL.GL_QUADS);
+			gl.glColor4ub((byte) (this.anInt2859 >> 16), (byte) (this.anInt2859 >> 8), (byte) this.anInt2859, (byte) 127);
+			gl.glTexCoord2f(0.0F, 0.0F);
+			gl.glVertex2i(-1, -1);
+			gl.glTexCoord2f(1.0F, 0.0F);
+			gl.glVertex2i(1, -1);
+			gl.glTexCoord2f(1.0F, 1.0F);
+			gl.glVertex2i(1, 1);
+			gl.glTexCoord2f(0.0F, 1.0F);
+			gl.glVertex2i(-1, 1);
+			gl.glEnd();
+			gl.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_OPERAND0_ALPHA, GL.GL_SRC_ALPHA);
+			gl.glLoadIdentity();
+			gl.glColorMask(true, true, true, true);
+			gl.glBlendFunc(GL.GL_ONE_MINUS_DST_ALPHA, GL.GL_DST_ALPHA);
+			gl.glBegin(GL.GL_QUADS);
+			gl.glColor4ub((byte) (this.anInt2859 >> 16), (byte) (this.anInt2859 >> 8), (byte) this.anInt2859, (byte) -1);
+			gl.glTexCoord2f(0.0F, 0.0F);
+			gl.glVertex2i(-1, -1);
+			gl.glTexCoord2f(1.0F, 0.0F);
+			gl.glVertex2i(1, -1);
+			gl.glTexCoord2f(1.0F, 1.0F);
+			gl.glVertex2i(1, 1);
+			gl.glTexCoord2f(0.0F, 1.0F);
+			gl.glVertex2i(-1, 1);
+			gl.glEnd();
+			gl.glBlendFunc(GL.GL_SRC_ALPHA, GL.GL_ONE_MINUS_SRC_ALPHA);
+			gl.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_SRC0_RGB, GL.GL_TEXTURE);
 		}
 		GlFrameBufferAllocator.restoreCamera();
 		GlRenderer.setTextureId(this.anInt2864);
-		local3.glCopyTexImage2D(GL.GL_TEXTURE_2D, GL.GL_POINTS, GL.GL_RGBA, 0, 0, this.anInt2861, this.anInt2861, GL.GL_POINTS);
+		gl.glCopyTexImage2D(GL.GL_TEXTURE_2D, GL.GL_POINTS, GL.GL_RGBA, 0, 0, this.anInt2861, this.anInt2861, GL.GL_POINTS);
 		GlRaster.setClip(Static4.anIntArray256);
 	}
 
@@ -203,11 +203,11 @@ public final class Class105 {
 		if (local5 == null) {
 			return false;
 		}
-		@Pc(11) GL local11 = GlRenderer.gl;
+		@Pc(11) GL gl = GlRenderer.gl;
 		GlRaster.getClip(Static4.anIntArray256);
 		GlRaster.resetClip();
-		local11.glClearColor(0.0F, 0.0F, 0.0F, 0.0F);
-		local11.glClear(GL.GL_DEPTH_BUFFER_BIT | GL.GL_COLOR_BUFFER_BIT);
+		gl.glClearColor(0.0F, 0.0F, 0.0F, 0.0F);
+		gl.glClear(GL.GL_DEPTH_BUFFER_BIT | GL.GL_COLOR_BUFFER_BIT);
 		@Pc(25) int local25 = 0;
 		@Pc(27) int local27 = 0;
 		@Pc(29) int local29 = 256;
@@ -255,7 +255,7 @@ public final class Class105 {
 		GlRenderer.disableDepthMask();
 		GlFrameBufferAllocator.restoreCamera();
 		GlRenderer.setTextureId(this.anInt2864);
-		local11.glCopyTexImage2D(GL.GL_TEXTURE_2D, GL.GL_POINTS, GL.GL_RGBA, 0, 0, this.anInt2861, this.anInt2861, GL.GL_POINTS);
+		gl.glCopyTexImage2D(GL.GL_TEXTURE_2D, GL.GL_POINTS, GL.GL_RGBA, 0, 0, this.anInt2861, this.anInt2861, GL.GL_POINTS);
 		GlRaster.setClip(Static4.anIntArray256);
 		return true;
 	}
@@ -322,18 +322,18 @@ public final class Class105 {
 		@Pc(95) int local95 = local33 + arg0;
 		@Pc(100) int local100 = local95 + this.anInt2856;
 		@Pc(105) int local105 = local91 + this.anInt2856;
-		@Pc(107) GL local107 = GlRenderer.gl;
-		local107.glBegin(GL.GL_QUADS);
-		local107.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-		local107.glTexCoord2f(0.0F, 0.0F);
-		local107.glVertex2i(local95, local91);
-		local107.glTexCoord2f(0.0F, 1.0F);
-		local107.glVertex2i(local95, local105);
-		local107.glTexCoord2f(1.0F, 1.0F);
-		local107.glVertex2i(local100, local105);
-		local107.glTexCoord2f(1.0F, 0.0F);
-		local107.glVertex2i(local100, local91);
-		local107.glEnd();
+		@Pc(107) GL gl = GlRenderer.gl;
+		gl.glBegin(GL.GL_QUADS);
+		gl.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
+		gl.glTexCoord2f(0.0F, 0.0F);
+		gl.glVertex2i(local95, local91);
+		gl.glTexCoord2f(0.0F, 1.0F);
+		gl.glVertex2i(local95, local105);
+		gl.glTexCoord2f(1.0F, 1.0F);
+		gl.glVertex2i(local100, local105);
+		gl.glTexCoord2f(1.0F, 0.0F);
+		gl.glVertex2i(local100, local91);
+		gl.glEnd();
 	}
 
 	@OriginalMember(owner = "client!kg", name = "c", descriptor = "(Lclient!kg;)V")

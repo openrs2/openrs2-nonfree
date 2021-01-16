@@ -17,7 +17,7 @@ public final class Static1 {
 	public static float aFloat5;
 
 	@OriginalMember(owner = "client!af", name = "q", descriptor = "Lsignlink!vk;")
-	public static PrivilegedRequest aClass197_2;
+	public static PrivilegedRequest reverseDnsRequest;
 
 	@OriginalMember(owner = "client!aj", name = "c", descriptor = "[[[B")
 	public static byte[][][] aByteArrayArrayArray1;
@@ -32,7 +32,7 @@ public final class Static1 {
 	public static int[][] anIntArrayArray2;
 
 	@OriginalMember(owner = "client!am", name = "v", descriptor = "[[B")
-	public static byte[][] aByteArrayArray3;
+	public static byte[][] underwaterLocBytes;
 
 	@OriginalMember(owner = "client!am", name = "x", descriptor = "I")
 	public static int anInt212;
@@ -62,7 +62,7 @@ public final class Static1 {
 	public static int anInt331;
 
 	@OriginalMember(owner = "client!bk", name = "a", descriptor = "[[B")
-	public static byte[][] aByteArrayArray4;
+	public static byte[][] mapBytes;
 
 	@OriginalMember(owner = "client!bk", name = "f", descriptor = "Lclient!uj;")
 	public static Sprite aClass4_Sub3_Sub14_1;
@@ -127,9 +127,6 @@ public final class Static1 {
 	@OriginalMember(owner = "client!client", name = "V", descriptor = "I")
 	public static int anInt772;
 
-	@OriginalMember(owner = "client!co", name = "i", descriptor = "I")
-	public static int anInt818;
-
 	@OriginalMember(owner = "client!co", name = "r", descriptor = "[I")
 	public static int[] locGroupIds;
 
@@ -144,9 +141,6 @@ public final class Static1 {
 
 	@OriginalMember(owner = "client!db", name = "o", descriptor = "I")
 	public static int anInt890;
-
-	@OriginalMember(owner = "client!dc", name = "d", descriptor = "I")
-	public static int anInt894;
 
 	@OriginalMember(owner = "client!dc", name = "g", descriptor = "Lclient!wf;")
 	public static Component aClass185_3;
@@ -222,9 +216,6 @@ public final class Static1 {
 
 	@OriginalMember(owner = "client!al", name = "U", descriptor = "S")
 	public static short aShort1 = 32767;
-
-	@OriginalMember(owner = "client!am", name = "o", descriptor = "Lclient!ll;")
-	public static final LinkedList aClass112_2 = new LinkedList();
 
 	@OriginalMember(owner = "client!bb", name = "C", descriptor = "I")
 	public static int anInt242 = 0;

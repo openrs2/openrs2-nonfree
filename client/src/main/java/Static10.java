@@ -182,36 +182,12 @@ public final class Static10 {
 		}
 	}
 
-	@OriginalMember(owner = "client!bi", name = "a", descriptor = "(JI)V")
-	public static void method308(@OriginalArg(0) long arg0) {
-		if (arg0 == 0L) {
-			return;
-		}
-		for (@Pc(13) int local13 = 0; local13 < Static6.anInt5214; local13++) {
-			if (Static7.aLongArray54[local13] == arg0) {
-				Static6.anInt5214--;
-				for (@Pc(36) int local36 = local13; local36 < Static6.anInt5214; local36++) {
-					Static4.aStringArray23[local36] = Static4.aStringArray23[local36 + 1];
-					Static4.anIntArray293[local36] = Static4.anIntArray293[local36 + 1];
-					Static4.aStringArray22[local36] = Static4.aStringArray22[local36 + 1];
-					Static7.aLongArray54[local36] = Static7.aLongArray54[local36 + 1];
-					Static6.anIntArray517[local36] = Static6.anIntArray517[local36 + 1];
-					Static2.aBooleanArray7[local36] = Static2.aBooleanArray7[local36 + 1];
-				}
-				Static3.anInt2102 = Static6.anInt4979;
-				Protocol.outboundBuffer.writeOpcode(172);
-				Protocol.outboundBuffer.writeLong(arg0);
-				break;
-			}
-		}
-	}
-
 	@OriginalMember(owner = "client!bj", name = "d", descriptor = "()V")
 	public static void method314() {
-		@Pc(1) GL local1 = GlRenderer.gl;
-		local1.glClientActiveTexture(method315());
-		local1.glDisableClientState(GL.GL_TEXTURE_COORD_ARRAY);
-		local1.glClientActiveTexture(GL.GL_TEXTURE0);
+		@Pc(1) GL gl = GlRenderer.gl;
+		gl.glClientActiveTexture(method315());
+		gl.glDisableClientState(GL.GL_TEXTURE_COORD_ARRAY);
+		gl.glClientActiveTexture(GL.GL_TEXTURE0);
 	}
 
 	@OriginalMember(owner = "client!bj", name = "e", descriptor = "()I")
@@ -221,79 +197,10 @@ public final class Static10 {
 
 	@OriginalMember(owner = "client!bj", name = "f", descriptor = "()V")
 	public static void method316() {
-		@Pc(1) GL local1 = GlRenderer.gl;
-		local1.glClientActiveTexture(method315());
-		local1.glEnableClientState(GL.GL_TEXTURE_COORD_ARRAY);
-		local1.glClientActiveTexture(GL.GL_TEXTURE0);
-	}
-
-	@OriginalMember(owner = "client!bk", name = "a", descriptor = "(IIBI)Lclient!rl;")
-	public static Class4_Sub27 method318(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(3) int arg2) {
-		@Pc(9) Class4_Sub27 local9 = new Class4_Sub27();
-		local9.anInt4619 = arg1;
-		local9.anInt4620 = arg0;
-		Static4.aClass84_13.put((long) arg2, local9);
-		Static9.method230(arg0);
-		@Pc(28) Component local28 = InterfaceList.getComponent(arg2);
-		if (local28 != null) {
-			Static28.method3270(local28);
-		}
-		if (Static6.aClass185_14 != null) {
-			Static28.method3270(Static6.aClass185_14);
-			Static6.aClass185_14 = null;
-		}
-		@Pc(52) int local52 = Static7.anInt5634;
-		for (@Pc(54) int local54 = 0; local54 < local52; local54++) {
-			if (Static31.method3659(Static6.aShortArray100[local54])) {
-				Static25.method2929(local54);
-			}
-		}
-		if (Static7.anInt5634 == 1) {
-			Static1.aBoolean17 = false;
-			Static8.method66(Static6.anInt4440, Static3.anInt2394, Static5.anInt3890, Static4.anInt3455);
-		} else {
-			Static8.method66(Static6.anInt4440, Static3.anInt2394, Static5.anInt3890, Static4.anInt3455);
-			@Pc(93) int local93 = Fonts.b12Full.method2252(LocalisedText.CHOOSE_OPTION);
-			for (@Pc(95) int local95 = 0; local95 < Static7.anInt5634; local95++) {
-				@Pc(108) int local108 = Fonts.b12Full.method2252(Static26.method2992(local95));
-				if (local93 < local108) {
-					local93 = local108;
-				}
-			}
-			Static3.anInt2394 = (Static7.aBoolean389 ? 26 : 22) + Static7.anInt5634 * 15;
-			Static6.anInt4440 = local93 + 8;
-		}
-		if (local28 != null) {
-			Static34.method4251(false, local28);
-		}
-		Static14.method1102(arg0);
-		if (Static3.anInt5398 != -1) {
-			Static28.method3277(Static3.anInt5398, 1);
-		}
-		return local9;
-	}
-
-	@OriginalMember(owner = "client!bl", name = "a", descriptor = "(IIII)V")
-	public static void method344(@OriginalArg(0) int y, @OriginalArg(1) int x, @OriginalArg(2) int z, @OriginalArg(3) int arg3) {
-		@Pc(7) Tile tile = SceneGraph.tiles[y][x][z];
-		if (tile == null) {
-			return;
-		}
-		@Pc(13) WallDecor wallDecor = tile.wallDecor;
-		if (wallDecor != null) {
-			wallDecor.anInt5633 = wallDecor.anInt5633 * arg3 / 16;
-			wallDecor.anInt5625 = wallDecor.anInt5625 * arg3 / 16;
-		}
-	}
-
-	@OriginalMember(owner = "client!bn", name = "a", descriptor = "(ILclient!f;)V")
-	public static void method383(@OriginalArg(1) Player arg0) {
-		@Pc(20) Class4_Sub11 local20 = (Class4_Sub11) Static5.aClass84_18.get(Base37.encode(arg0.name));
-		if (local20 == null) {
-			Static8.method109(null, arg0.anIntArray422[0], null, arg0.anIntArray426[0], arg0, 0, Static7.y);
-		} else {
-			local20.method1652();
-		}
+		@Pc(1) GL gl = GlRenderer.gl;
+		gl.glClientActiveTexture(method315());
+		gl.glEnableClientState(GL.GL_TEXTURE_COORD_ARRAY);
+		gl.glClientActiveTexture(GL.GL_TEXTURE0);
 	}
 
 	@OriginalMember(owner = "client!bn", name = "a", descriptor = "(ZB)V")
@@ -439,41 +346,6 @@ public final class Static10 {
 		}
 	}
 
-	@OriginalMember(owner = "client!bo", name = "a", descriptor = "(BLclient!p;)I")
-	public static int method395(@OriginalArg(1) Npc arg0) {
-		@Pc(4) NpcType local4 = arg0.type;
-		if (local4.multiNpcs != null) {
-			local4 = local4.getMultiNpc();
-			if (local4 == null) {
-				return -1;
-			}
-		}
-		@Pc(33) int local33 = local4.anInt5252;
-		@Pc(37) BasType local37 = arg0.method3314();
-		if (arg0.anInt4005 == local37.anInt860) {
-			local33 = local4.anInt5251;
-		} else if (arg0.anInt4005 == local37.anInt831 || arg0.anInt4005 == local37.anInt829 || arg0.anInt4005 == local37.anInt857 || local37.anInt867 == arg0.anInt4005) {
-			local33 = local4.anInt5248;
-		} else if (arg0.anInt4005 == local37.anInt854 || local37.anInt833 == arg0.anInt4005 || local37.anInt861 == arg0.anInt4005 || arg0.anInt4005 == local37.anInt852) {
-			local33 = local4.anInt5234;
-		}
-		return local33;
-	}
-
-	@OriginalMember(owner = "client!bo", name = "a", descriptor = "(Lclient!f;B)I")
-	public static int method396(@OriginalArg(0) Player arg0) {
-		@Pc(8) int local8 = arg0.walkSound;
-		@Pc(12) BasType local12 = arg0.method3314();
-		if (arg0.anInt4005 == local12.anInt860) {
-			local8 = arg0.idleSound;
-		} else if (local12.anInt831 == arg0.anInt4005 || arg0.anInt4005 == local12.anInt829 || local12.anInt857 == arg0.anInt4005 || arg0.anInt4005 == local12.anInt867) {
-			local8 = arg0.runSound;
-		} else if (local12.anInt854 == arg0.anInt4005 || arg0.anInt4005 == local12.anInt833 || arg0.anInt4005 == local12.anInt861 || local12.anInt852 == arg0.anInt4005) {
-			local8 = arg0.crawlSound;
-		}
-		return local8;
-	}
-
 	@OriginalMember(owner = "client!bo", name = "a", descriptor = "(ILclient!fh;)Z")
 	public static boolean method398(@OriginalArg(1) Js5 arg0) {
 		return arg0.isFileReady(Static4.anInt3250);
@@ -530,7 +402,7 @@ public final class Static10 {
 				arg0.anInt5939 = 5;
 				arg0.anInt5895 = ((int) Base37.encode(PlayerList.self.name) << 11) + 2047;
 				arg0.anInt5892 = PlayerList.self.anInt4046;
-				arg0.anInt5891 = PlayerList.self.anInt4005;
+				arg0.anInt5891 = PlayerList.self.movementSeqId;
 				arg0.anInt5979 = PlayerList.self.anInt4019;
 				arg0.anInt5897 = 0;
 			}

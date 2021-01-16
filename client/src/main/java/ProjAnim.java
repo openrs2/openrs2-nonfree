@@ -7,7 +7,7 @@ import org.openrs2.deob.annotation.Pc;
 public final class ProjAnim extends Entity {
 
 	@OriginalMember(owner = "client!oc", name = "q", descriptor = "Lclient!ne;")
-	private ParticleSystem aClass20_Sub3_5;
+	private ParticleSystem particleSystem;
 
 	@OriginalMember(owner = "client!oc", name = "u", descriptor = "I")
 	private int anInt3711;
@@ -82,7 +82,7 @@ public final class ProjAnim extends Entity {
 	public final int anInt3713;
 
 	@OriginalMember(owner = "client!oc", name = "J", descriptor = "I")
-	private final int anInt3720;
+	private final int spotAnimId;
 
 	@OriginalMember(owner = "client!oc", name = "T", descriptor = "I")
 	private final int anInt3727;
@@ -104,10 +104,10 @@ public final class ProjAnim extends Entity {
 		this.anInt3717 = arg1;
 		this.anInt3707 = arg6;
 		this.anInt3713 = arg9;
-		this.anInt3720 = arg0;
+		this.spotAnimId = arg0;
 		this.anInt3727 = arg7;
 		this.anInt3722 = arg10;
-		@Pc(61) int local61 = SpotAnimTypeList.get(this.anInt3720).anInt3134;
+		@Pc(61) int local61 = SpotAnimTypeList.get(this.spotAnimId).anInt3134;
 		if (local61 == -1) {
 			this.aClass46_2 = null;
 		} else {
@@ -157,10 +157,10 @@ public final class ProjAnim extends Entity {
 	@OriginalMember(owner = "client!oc", name = "a", descriptor = "(IIIIIIIIJILclient!ne;)V")
 	@Override
 	public final void method3805(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) long arg8, @OriginalArg(9) int arg9, @OriginalArg(10) ParticleSystem arg10) {
-		@Pc(7) Model local7 = this.method3108();
+		@Pc(7) Model local7 = this.getModel();
 		if (local7 != null) {
 			this.method3106(local7);
-			local7.method3805(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, this.aClass20_Sub3_5);
+			local7.method3805(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, this.particleSystem);
 			this.anInt3730 = local7.getMinY();
 		}
 	}
@@ -193,19 +193,19 @@ public final class ProjAnim extends Entity {
 	private void method3106(@OriginalArg(1) Model arg0) {
 		if (GlRenderer.enabled) {
 			@Pc(4) GlModel local4 = (GlModel) arg0;
-			if ((this.aClass20_Sub3_5 == null || this.aClass20_Sub3_5.stopped) && (local4.particleEmitters != null || local4.particleEffectors != null)) {
-				this.aClass20_Sub3_5 = new ParticleSystem(client.loop, 1, 1);
+			if ((this.particleSystem == null || this.particleSystem.stopped) && (local4.particleEmitters != null || local4.particleEffectors != null)) {
+				this.particleSystem = new ParticleSystem(client.loop, 1, 1);
 			}
-			if (this.aClass20_Sub3_5 != null) {
-				this.aClass20_Sub3_5.method2967(local4.particleEmitters, local4.particleEffectors, false, local4.vertexX, local4.vertexY, local4.vertexZ);
+			if (this.particleSystem != null) {
+				this.particleSystem.method2967(local4.particleEmitters, local4.particleEffectors, false, local4.vertexX, local4.vertexY, local4.vertexZ);
 			}
 		} else {
 			@Pc(51) SoftwareModel local51 = (SoftwareModel) arg0;
-			if ((this.aClass20_Sub3_5 == null || this.aClass20_Sub3_5.stopped) && (local51.particleEmitters != null || local51.particleEffectors != null)) {
-				this.aClass20_Sub3_5 = new ParticleSystem(client.loop, 1, 1);
+			if ((this.particleSystem == null || this.particleSystem.stopped) && (local51.particleEmitters != null || local51.particleEffectors != null)) {
+				this.particleSystem = new ParticleSystem(client.loop, 1, 1);
 			}
-			if (this.aClass20_Sub3_5 != null) {
-				this.aClass20_Sub3_5.method2967(local51.particleEmitters, local51.particleEffectors, false, local51.vertexX, local51.vertexY, local51.vertexZ);
+			if (this.particleSystem != null) {
+				this.particleSystem.method2967(local51.particleEmitters, local51.particleEffectors, false, local51.vertexX, local51.vertexY, local51.vertexZ);
 			}
 		}
 		this.aBoolean267 = true;
@@ -218,14 +218,14 @@ public final class ProjAnim extends Entity {
 	}
 
 	@OriginalMember(owner = "client!oc", name = "a", descriptor = "(Z)Lclient!vg;")
-	private Model method3108() {
-		@Pc(14) SpotAnimType local14 = SpotAnimTypeList.get(this.anInt3720);
-		@Pc(24) Model local24 = local14.method2569(this.anInt3718, this.anInt3725, this.anInt3708);
-		if (local24 == null) {
+	private Model getModel() {
+		@Pc(14) SpotAnimType type = SpotAnimTypeList.get(this.spotAnimId);
+		@Pc(24) Model model = type.method2569(this.anInt3718, this.anInt3725, this.anInt3708);
+		if (model == null) {
 			return null;
 		} else {
-			local24.method3832(this.anInt3711);
-			return local24;
+			model.method3832(this.anInt3711);
+			return model;
 		}
 	}
 
@@ -233,14 +233,14 @@ public final class ProjAnim extends Entity {
 	@Override
 	public final void method3806(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4) {
 		if (!this.aBoolean267) {
-			@Pc(11) Model local11 = this.method3108();
+			@Pc(11) Model local11 = this.getModel();
 			if (local11 == null) {
 				return;
 			}
 			this.method3106(local11);
 		}
-		if (this.aClass20_Sub3_5 != null) {
-			this.aClass20_Sub3_5.method2949(arg0, arg1, arg3, arg2, arg4);
+		if (this.particleSystem != null) {
+			this.particleSystem.method2949(arg0, arg1, arg3, arg2, arg4);
 		}
 	}
 }

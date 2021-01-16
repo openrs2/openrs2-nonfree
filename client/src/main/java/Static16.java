@@ -115,15 +115,15 @@ public final class Static16 {
 			}
 		}
 		@Pc(103) long prevKey = -1L;
-		for (@Pc(105) int i = 0; i < Static7.pickKeysSize; i++) {
-			@Pc(112) long key = Static5.pickKeys[i];
+		for (@Pc(105) int i = 0; i < Static7.keysSize; i++) {
+			@Pc(112) long key = Static5.keys[i];
 			@Pc(117) int x = (int) key & 0x7F;
 			@Pc(124) int z = (int) key >> 7 & 0x7F;
 			@Pc(131) int id = Integer.MAX_VALUE & (int) (key >>> 32);
-			@Pc(138) int pickType = (int) key >> 29 & 0x3;
+			@Pc(138) int keyType = (int) key >> 29 & 0x3;
 			if (prevKey != key) {
 				prevKey = key;
-				if (pickType == 2 && SceneGraph.isPickKeyValid(Static7.y, x, z, key)) {
+				if (keyType == 2 && SceneGraph.isLocValid(Player.level, x, z, key)) {
 					@Pc(163) LocType type = LocTypeList.get(id);
 					if (type.multiLocs != null) {
 						type = type.getMultiLoc();
@@ -176,16 +176,16 @@ public final class Static16 {
 						method1497(type.id, x, z, "<col=00ffff>" + type.name, LocalisedText.EXAMINE, (short) 1007, Static3.anInt2232);
 					}
 				}
-				if (pickType == 1) {
+				if (keyType == 1) {
 					@Pc(394) Npc npc = NpcList.npcs[id];
-					if ((npc.type.size & 0x1) == 0 && (npc.x & 0x7F) == 0 && (npc.z & 0x7F) == 0 || (npc.type.size & 0x1) == 1 && (npc.x & 0x7F) == 64 && (npc.z & 0x7F) == 64) {
-						@Pc(450) int local450 = npc.x - (npc.type.size - 1) * 64;
-						@Pc(462) int local462 = npc.z + 64 - npc.type.size * 64;
+					if ((npc.type.size & 0x1) == 0 && (npc.xFine & 0x7F) == 0 && (npc.zFine & 0x7F) == 0 || (npc.type.size & 0x1) == 1 && (npc.xFine & 0x7F) == 64 && (npc.zFine & 0x7F) == 64) {
+						@Pc(450) int local450 = npc.xFine - (npc.type.size - 1) * 64;
+						@Pc(462) int local462 = npc.zFine + 64 - npc.type.size * 64;
 						for (@Pc(464) int j = 0; j < NpcList.size; j++) {
 							@Pc(477) Npc other = NpcList.npcs[NpcList.ids[j]];
 							if (other != null && !other.aBoolean281 && other != npc && other.aBoolean282) {
-								@Pc(501) int local501 = other.x - (other.type.size - 1) * 64;
-								@Pc(512) int local512 = other.z - (other.type.size - 1) * 64;
+								@Pc(501) int local501 = other.xFine - (other.type.size - 1) * 64;
+								@Pc(512) int local512 = other.zFine - (other.type.size - 1) * 64;
 								if (local501 >= local450 && other.type.size <= npc.type.size - (local501 - local450 >> 7) && local512 >= local462 && npc.type.size - (local512 - local462 >> 7) >= other.type.size) {
 									Static33.method4152(other.type, z, NpcList.ids[j], x);
 									other.aBoolean281 = true;
@@ -195,8 +195,8 @@ public final class Static16 {
 						for (@Pc(568) int j = 0; j < PlayerList.size; j++) {
 							@Pc(577) Player other = PlayerList.players[PlayerList.ids[j]];
 							if (other != null && !other.aBoolean281 && other.aBoolean282) {
-								@Pc(597) int local597 = other.x - (other.getSize() - 1) * 64;
-								@Pc(609) int local609 = other.z - (other.getSize() - 1) * 64;
+								@Pc(597) int local597 = other.xFine - (other.getSize() - 1) * 64;
+								@Pc(609) int local609 = other.zFine - (other.getSize() - 1) * 64;
 								if (local597 >= local450 && other.getSize() <= npc.type.size - (local597 - local450 >> 7) && local462 <= local609 && other.getSize() <= npc.type.size - (local609 - local462 >> 7)) {
 									Static29.method3488(z, PlayerList.ids[j], other, x);
 									other.aBoolean281 = true;
@@ -210,16 +210,16 @@ public final class Static16 {
 					Static33.method4152(npc.type, z, id, x);
 					npc.aBoolean281 = true;
 				}
-				if (pickType == 0) {
+				if (keyType == 0) {
 					@Pc(682) Player player = PlayerList.players[id];
-					if ((player.x & 0x7F) == 64 && (player.z & 0x7F) == 64) {
-						@Pc(709) int local709 = player.x - (player.getSize() - 1) * 64;
-						@Pc(721) int local721 = player.z - (player.getSize() - 1) * 64;
+					if ((player.xFine & 0x7F) == 64 && (player.zFine & 0x7F) == 64) {
+						@Pc(709) int local709 = player.xFine - (player.getSize() - 1) * 64;
+						@Pc(721) int local721 = player.zFine - (player.getSize() - 1) * 64;
 						for (@Pc(723) int j = 0; j < NpcList.size; j++) {
 							@Pc(736) Npc other = NpcList.npcs[NpcList.ids[j]];
 							if (other != null && !other.aBoolean281 && other.aBoolean282) {
-								@Pc(756) int local756 = other.x - (other.type.size - 1) * 64;
-								@Pc(768) int local768 = other.z - (other.type.size - 1) * 64;
+								@Pc(756) int local756 = other.xFine - (other.type.size - 1) * 64;
+								@Pc(768) int local768 = other.zFine - (other.type.size - 1) * 64;
 								if (local709 <= local756 && other.type.size <= player.getSize() - (local756 - local709 >> 7) && local721 <= local768 && other.type.size <= player.getSize() - (local768 - local721 >> 7)) {
 									Static33.method4152(other.type, z, NpcList.ids[j], x);
 									other.aBoolean281 = true;
@@ -229,8 +229,8 @@ public final class Static16 {
 						for (@Pc(827) int j = 0; j < PlayerList.size; j++) {
 							@Pc(840) Player other = PlayerList.players[PlayerList.ids[j]];
 							if (other != null && !other.aBoolean281 && other != player && other.aBoolean282) {
-								@Pc(865) int local865 = other.x - (other.getSize() - 1) * 64;
-								@Pc(877) int local877 = other.z + 64 - other.getSize() * 64;
+								@Pc(865) int local865 = other.xFine - (other.getSize() - 1) * 64;
+								@Pc(877) int local877 = other.zFine + 64 - other.getSize() * 64;
 								if (local865 >= local709 && other.getSize() <= player.getSize() - (local865 - local709 >> 7) && local721 <= local877 && other.getSize() <= player.getSize() - (local877 - local721 >> 7)) {
 									Static29.method3488(z, PlayerList.ids[j], other, x);
 									other.aBoolean281 = true;
@@ -244,8 +244,8 @@ public final class Static16 {
 					Static29.method3488(z, id, player, x);
 					player.aBoolean281 = true;
 				}
-				if (pickType == 3) {
-					@Pc(952) LinkedList objStacks = Static4.objStacks[Static7.y][x][z];
+				if (keyType == 3) {
+					@Pc(952) LinkedList objStacks = Static4.objStacks[Player.level][x][z];
 					if (objStacks != null) {
 						for (@Pc(960) ObjStackNode node = (ObjStackNode) objStacks.tail(); node != null; node = (ObjStackNode) objStacks.prev()) {
 							@Pc(967) int objId = node.value.type;
@@ -359,7 +359,7 @@ public final class Static16 {
 	@OriginalMember(owner = "client!gf", name = "a", descriptor = "(B)V")
 	public static void method1563() {
 		Static4.aClass185Array3 = null;
-		Static14.method1069(Static3.anInt5398, 0, 0, 0, GameShell.canvasHeight, 0, GameShell.canvasWidth, -1);
+		Static14.method1069(InterfaceList.topLevelInterface, 0, 0, 0, GameShell.canvasHeight, 0, GameShell.canvasWidth, -1);
 		if (Static4.aClass185Array3 != null) {
 			Static30.method3554(Static7.anInt5589, -1412584499, Static1.aClass185_2.anInt5967, Static4.aClass185Array3, GameShell.canvasHeight, GameShell.canvasWidth, 0, Static4.anInt3317, 0);
 			Static4.aClass185Array3 = null;
@@ -398,7 +398,7 @@ public final class Static16 {
 			Static36.method4462((byte) (Static2.anInt1997 - 4 & 0xFF));
 			Static24.method2680(2);
 		}
-		Static6.anInt4709 = Static7.y;
+		Static6.anInt4709 = Player.level;
 	}
 
 	@OriginalMember(owner = "client!gh", name = "a", descriptor = "(III)V")

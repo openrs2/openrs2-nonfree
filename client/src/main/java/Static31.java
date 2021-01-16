@@ -141,50 +141,6 @@ public final class Static31 {
 		Static1.aClass26_4.clear();
 	}
 
-	@OriginalMember(owner = "client!ri", name = "b", descriptor = "(ZI)V")
-	public static void method3733(@OriginalArg(0) boolean arg0) {
-		for (@Pc(8) Class4_Sub11 local8 = (Class4_Sub11) Static1.aClass112_2.head(); local8 != null; local8 = (Class4_Sub11) Static1.aClass112_2.next()) {
-			if (local8.aClass4_Sub6_Sub4_3 != null) {
-				Static5.aClass4_Sub6_Sub3_2.method2670(local8.aClass4_Sub6_Sub4_3);
-				local8.aClass4_Sub6_Sub4_3 = null;
-			}
-			if (local8.aClass4_Sub6_Sub4_2 != null) {
-				Static5.aClass4_Sub6_Sub3_2.method2670(local8.aClass4_Sub6_Sub4_2);
-				local8.aClass4_Sub6_Sub4_2 = null;
-			}
-			local8.unlink();
-		}
-		if (!arg0) {
-			return;
-		}
-		for (@Pc(54) Class4_Sub11 local54 = (Class4_Sub11) Static2.aClass112_9.head(); local54 != null; local54 = (Class4_Sub11) Static2.aClass112_9.next()) {
-			if (local54.aClass4_Sub6_Sub4_3 != null) {
-				Static5.aClass4_Sub6_Sub3_2.method2670(local54.aClass4_Sub6_Sub4_3);
-				local54.aClass4_Sub6_Sub4_3 = null;
-			}
-			local54.unlink();
-		}
-		for (@Pc(83) Class4_Sub11 local83 = (Class4_Sub11) Static5.aClass84_18.head(); local83 != null; local83 = (Class4_Sub11) Static5.aClass84_18.next()) {
-			if (local83.aClass4_Sub6_Sub4_3 != null) {
-				Static5.aClass4_Sub6_Sub3_2.method2670(local83.aClass4_Sub6_Sub4_3);
-				local83.aClass4_Sub6_Sub4_3 = null;
-			}
-			local83.unlink();
-		}
-	}
-
-	@OriginalMember(owner = "client!ri", name = "c", descriptor = "(III)Lclient!vf;")
-	public static Class180 method3734(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
-		@Pc(7) Tile local7 = SceneGraph.tiles[arg0][arg1][arg2];
-		if (local7 == null) {
-			return null;
-		} else {
-			@Pc(14) Class180 local14 = local7.aClass180_1;
-			local7.aClass180_1 = null;
-			return local14;
-		}
-	}
-
 	@OriginalMember(owner = "client!rk", name = "a", descriptor = "(IIIZII)V")
 	public static void method3746(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) boolean arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4) {
 		Static2.anInt1997++;
@@ -230,7 +186,7 @@ public final class Static31 {
 			if (Static3.aBooleanArray13[4] && Static7.anIntArray626[4] + 128 > local121) {
 				local121 = Static7.anIntArray626[4] + 128;
 			}
-			Static32.method3954(local137, Static11.method522(PlayerList.self.z, PlayerList.self.x, Static7.y) - 50, local121, local121 * 3 + 600, Static3.anInt2496, arg1, Static7.anInt5412);
+			Static32.method3954(local137, SceneGraph.method522(Player.level, PlayerList.self.xFine, PlayerList.self.zFine) - 50, local121, local121 * 3 + 600, Static3.anInt2496, arg1, Static7.anInt5412);
 		} else if (Static1.anInt772 == 5) {
 			Static12.method698(arg1);
 		}
@@ -278,7 +234,7 @@ public final class Static31 {
 			if (Static4.anInt3304 == 10) {
 				local398 = Static33.method4153(Preferences.brightness, Static7.anInt5678 >> 10, Static5.anInt4156, Static3.anInt2519 >> 10);
 			} else {
-				local398 = Static33.method4153(Preferences.brightness, PlayerList.self.anIntArray426[0] >> 3, Static5.anInt4156, PlayerList.self.anIntArray422[0] >> 3);
+				local398 = Static33.method4153(Preferences.brightness, PlayerList.self.movementQueueZ[0] >> 3, Static5.anInt4156, PlayerList.self.movementQueueX[0] >> 3);
 			}
 			if (Static6.anInt4863 >= 0) {
 				GlRenderer.clearDepthBuffer();
@@ -304,9 +260,9 @@ public final class Static31 {
 		}
 		if (Static1.aBoolean17 || Static4.anInt3341 < arg0 || Static4.anInt3341 >= arg3 + arg0 || arg4 > Static5.anInt5848 || Static5.anInt5848 >= arg1 + arg4) {
 			Static1.aBoolean8 = false;
-			Static7.pickKeysSize = 0;
+			Static7.keysSize = 0;
 		} else {
-			Static7.pickKeysSize = 0;
+			Static7.keysSize = 0;
 			Static1.aBoolean8 = true;
 			@Pc(515) int local515 = Static4.anInt3123;
 			@Pc(517) int local517 = Static1.anInt403;
@@ -321,7 +277,7 @@ public final class Static31 {
 			LightingManager.method3111(client.loop, !Preferences.flickeringEffects);
 			Static21.method2078(Static5.anInt3656, Static5.anInt4066, Static2.anInt1931, Static7.anInt5678, Static3.anInt2519);
 			GlRenderer.anInt2085 = client.loop;
-			Static25.method2728(Static3.anInt2519, Static2.anInt1931, Static7.anInt5678, Static5.anInt4066, Static5.anInt3656, Static1.aByteArrayArrayArray2, Static5.anIntArray440, Static3.anIntArray164, Static7.anIntArray620, Static6.anIntArray489, Static6.anIntArray492, Static7.y + 1, local562, PlayerList.self.x >> 7, PlayerList.self.z >> 7);
+			Static25.method2728(Static3.anInt2519, Static2.anInt1931, Static7.anInt5678, Static5.anInt4066, Static5.anInt3656, Static1.aByteArrayArrayArray2, Static5.anIntArray440, Static3.anIntArray164, Static7.anIntArray620, Static6.anIntArray489, Static6.anIntArray492, Player.level + 1, local562, PlayerList.self.xFine >> 7, PlayerList.self.zFine >> 7);
 			Static7.aBoolean123 = true;
 			LightingManager.method3112();
 			Static21.method2078(0, 0, 0, 0, 0);
@@ -330,7 +286,7 @@ public final class Static31 {
 			Static10.method462(arg4, Static7.anInt5440, arg1, Static7.anInt5440, arg3, arg0);
 			SceneGraph.removeAllScenery();
 		} else {
-			Static25.method2728(Static3.anInt2519, Static2.anInt1931, Static7.anInt5678, Static5.anInt4066, Static5.anInt3656, Static1.aByteArrayArrayArray2, Static5.anIntArray440, Static3.anIntArray164, Static7.anIntArray620, Static6.anIntArray489, Static6.anIntArray492, Static7.y + 1, local562, PlayerList.self.x >> 7, PlayerList.self.z >> 7);
+			Static25.method2728(Static3.anInt2519, Static2.anInt1931, Static7.anInt5678, Static5.anInt4066, Static5.anInt3656, Static1.aByteArrayArrayArray2, Static5.anIntArray440, Static3.anIntArray164, Static7.anIntArray620, Static6.anIntArray489, Static6.anIntArray492, Player.level + 1, local562, PlayerList.self.xFine >> 7, PlayerList.self.zFine >> 7);
 			Static9.method763();
 			SceneGraph.removeAllScenery();
 			Static18.method4370(arg0, 256, arg1, 256, arg3, arg4);
@@ -522,8 +478,8 @@ public final class Static31 {
 				label770:
 				for (@Pc(962) int local962 = 1; local962 < 103; local962++) {
 					if (arg2 || SceneGraph.isAllLevelsVisible() || (Static4.tileFlags[0][local955][local962] & 0x2) != 0 || (Static4.tileFlags[local154][local955][local962] & 0x10) == 0 && Static35.method4327(local962, local154, local955) == Static2.anInt1216) {
-						if (Static5.anInt3896 > local154) {
-							Static5.anInt3896 = local154;
+						if (Static5.firstVisibleLevel > local154) {
+							Static5.firstVisibleLevel = local154;
 						}
 						@Pc(1019) int local1019 = Static2.aByteArrayArrayArray3[local154][local955][local962] & 0xFF;
 						@Pc(1029) int local1029 = Static4.aByteArrayArrayArray15[local154][local955][local962] & 0xFF;
@@ -703,7 +659,7 @@ public final class Static31 {
 		for (@Pc(2203) int local2203 = 0; local2203 < 104; local2203++) {
 			for (@Pc(2210) int local2210 = 0; local2210 < 104; local2210++) {
 				if ((Static4.tileFlags[1][local2203][local2210] & 0x2) == 2) {
-					Static28.method3253(local2203, local2210);
+					SceneGraph.method3253(local2203, local2210);
 				}
 			}
 		}
@@ -1086,13 +1042,13 @@ public final class Static31 {
 		@Pc(13) int local13 = arg6 + 16;
 		@Pc(17) int local17 = arg7 - 16;
 		@Pc(21) int local21 = arg7 + 16;
-		for (@Pc(23) int y = SceneGraph.firstVisibleLevel; y < SceneGraph.levels; y++) {
-			@Pc(30) Tile[][] tiles = SceneGraph.tiles[y];
+		for (@Pc(23) int level = SceneGraph.firstVisibleLevel; level < SceneGraph.levels; level++) {
+			@Pc(30) Tile[][] tiles = SceneGraph.tiles[level];
 			for (@Pc(32) int x = Static6.anInt4978; x < Static2.anInt5778; x++) {
 				for (@Pc(37) int z = Static1.anInt890; z < Static2.anInt1344; z++) {
 					@Pc(46) Tile tile = tiles[x][z];
 					if (tile != null) {
-						if (SceneGraph.aBooleanArrayArray5[x + SceneGraph.anInt3253 - Static6.anInt4513][z + SceneGraph.anInt3253 - Static4.anInt3329] && (arg3 == null || y < arg4 || arg3[y][x][z] != arg5)) {
+						if (SceneGraph.aBooleanArrayArray5[x + SceneGraph.anInt3253 - Static6.anInt4513][z + SceneGraph.anInt3253 - Static4.anInt3329] && (arg3 == null || level < arg4 || arg3[level][x][z] != arg5)) {
 							tile.aBoolean257 = true;
 							tile.aBoolean255 = true;
 							if (tile.sceneryLen > 0) {
@@ -1108,26 +1064,26 @@ public final class Static31 {
 							if (x >= local9 && x <= local13 && z >= local17 && z <= local21) {
 								if (tile.wall != null) {
 									@Pc(103) Wall wall = tile.wall;
-									wall.aClass53_5.method3806(0, y, wall.anInt5494, wall.x, wall.z);
-									if (wall.aClass53_4 != null) {
-										wall.aClass53_4.method3806(0, y, wall.anInt5494, wall.x, wall.z);
+									wall.primary.method3806(0, level, wall.anInt5494, wall.xFine, wall.zFine);
+									if (wall.secondary != null) {
+										wall.secondary.method3806(0, level, wall.anInt5494, wall.xFine, wall.zFine);
 									}
 								}
 								if (tile.wallDecor != null) {
 									@Pc(134) WallDecor wallDecor = tile.wallDecor;
-									wallDecor.aClass53_10.method3806(wallDecor.anInt5631, y, wallDecor.anInt5627, wallDecor.x, wallDecor.z);
-									if (wallDecor.aClass53_9 != null) {
-										wallDecor.aClass53_9.method3806(wallDecor.anInt5631, y, wallDecor.anInt5627, wallDecor.x, wallDecor.z);
+									wallDecor.primary.method3806(wallDecor.anInt5631, level, wallDecor.anInt5627, wallDecor.xFine, wallDecor.zFine);
+									if (wallDecor.secondary != null) {
+										wallDecor.secondary.method3806(wallDecor.anInt5631, level, wallDecor.anInt5627, wallDecor.xFine, wallDecor.zFine);
 									}
 								}
 								if (tile.groundDecor != null) {
 									@Pc(167) GroundDecor groundDecor = tile.groundDecor;
-									groundDecor.aClass53_2.method3806(0, y, groundDecor.anInt1130, groundDecor.x, groundDecor.z);
+									groundDecor.entity.method3806(0, level, groundDecor.anInt1130, groundDecor.xFine, groundDecor.zFine);
 								}
 								if (tile.scenery != null) {
 									for (@Pc(183) int i = 0; i < tile.sceneryLen; i++) {
 										@Pc(192) Scenery scenery = tile.scenery[i];
-										scenery.aClass53_1.method3806(scenery.anInt814, y, scenery.anInt823, scenery.centerXFine, scenery.centerYFine);
+										scenery.entity.method3806(scenery.anInt814, level, scenery.anInt823, scenery.centerXFine, scenery.centerZFine);
 									}
 								}
 							}
@@ -1138,9 +1094,9 @@ public final class Static31 {
 		}
 		@Pc(240) boolean local240 = SceneGraph.tileHeights == SceneGraph.underwaterTileHeights;
 		if (GlRenderer.enabled) {
-			@Pc(244) GL local244 = GlRenderer.gl;
-			local244.glPushMatrix();
-			local244.glTranslatef((float) -arg0, (float) -arg1, (float) -arg2);
+			@Pc(244) GL gl = GlRenderer.gl;
+			gl.glPushMatrix();
+			gl.glTranslatef((float) -arg0, (float) -arg1, (float) -arg2);
 			if (local240) {
 				Static30.method3596();
 				MaterialManager.setMaterial(3, -1);
@@ -1181,10 +1137,10 @@ public final class Static31 {
 					local319++;
 				}
 			}
-			local244.glPopMatrix();
+			gl.glPopMatrix();
 		}
-		for (@Pc(400) int y = SceneGraph.firstVisibleLevel; y < SceneGraph.levels; y++) {
-			@Pc(407) Tile[][] tiles = SceneGraph.tiles[y];
+		for (@Pc(400) int level = SceneGraph.firstVisibleLevel; level < SceneGraph.levels; level++) {
+			@Pc(407) Tile[][] tiles = SceneGraph.tiles[level];
 			for (@Pc(410) int local410 = -SceneGraph.anInt3253; local410 <= 0; local410++) {
 				@Pc(416) int local416 = Static6.anInt4513 + local410;
 				@Pc(420) int local420 = Static6.anInt4513 - local410;
@@ -1230,8 +1186,8 @@ public final class Static31 {
 				}
 			}
 		}
-		for (@Pc(528) int y = SceneGraph.firstVisibleLevel; y < SceneGraph.levels; y++) {
-			@Pc(535) Tile[][] tiles = SceneGraph.tiles[y];
+		for (@Pc(528) int level = SceneGraph.firstVisibleLevel; level < SceneGraph.levels; level++) {
+			@Pc(535) Tile[][] tiles = SceneGraph.tiles[level];
 			for (@Pc(538) int local538 = -SceneGraph.anInt3253; local538 <= 0; local538++) {
 				@Pc(544) int local544 = Static6.anInt4513 + local538;
 				@Pc(548) int local548 = Static6.anInt4513 - local538;
@@ -1324,7 +1280,7 @@ public final class Static31 {
 	@OriginalMember(owner = "client!ro", name = "a", descriptor = "(ZB)V")
 	public static void method3803(@OriginalArg(0) boolean arg0) {
 		Static6.anIntArray549 = new int[104];
-		Static5.anInt3896 = 99;
+		Static5.firstVisibleLevel = 99;
 		@Pc(13) byte local13;
 		if (arg0) {
 			local13 = 1;

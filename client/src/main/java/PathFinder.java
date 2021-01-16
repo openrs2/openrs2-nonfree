@@ -36,7 +36,7 @@ public final class PathFinder {
 		queueZ[0] = srcZ;
 		@Pc(66) int queueReaderIndex = 0;
 		@Pc(68) boolean found = false;
-		@Pc(73) int[][] flags = collisionMaps[Static7.y].flags;
+		@Pc(73) int[][] flags = collisionMaps[Player.level].flags;
 		label322:
 		while (queueReaderIndex != queueWriterIndex) {
 			z = queueZ[queueReaderIndex];
@@ -47,16 +47,16 @@ public final class PathFinder {
 				break;
 			}
 			if (destType != 0) {
-				if ((destType < 5 || destType == 10) && collisionMaps[Static7.y].isAtWall(x, z, size, destX, destZ, destType - 1, destAngle)) {
+				if ((destType < 5 || destType == 10) && collisionMaps[Player.level].isAtWall(x, z, size, destX, destZ, destType - 1, destAngle)) {
 					found = true;
 					break;
 				}
-				if (destType < 10 && collisionMaps[Static7.y].isAtWallDecor(x, z, size, destX, destZ, destType - 1, destAngle)) {
+				if (destType < 10 && collisionMaps[Player.level].isAtWallDecor(x, z, size, destX, destZ, destType - 1, destAngle)) {
 					found = true;
 					break;
 				}
 			}
-			if (destWidth != 0 && destLength != 0 && collisionMaps[Static7.y].isInsideOrOutsideRect(x, z, size, destX, destZ, destWidth, destLength, destBlockedSides)) {
+			if (destWidth != 0 && destLength != 0 && collisionMaps[Player.level].isInsideOrOutsideRect(x, z, size, destX, destZ, destWidth, destLength, destBlockedSides)) {
 				found = true;
 				break;
 			}
@@ -251,7 +251,7 @@ public final class PathFinder {
 		@Pc(62) int queueWriterIndex = firstWriterIndex + 1;
 		queueZ[0] = srcZ;
 		@Pc(66) boolean found = false;
-		@Pc(71) int[][] flags = collisionMaps[Static7.y].flags;
+		@Pc(71) int[][] flags = collisionMaps[Player.level].flags;
 		while (queueWriterIndex != queueReaderIndex) {
 			z = queueZ[queueReaderIndex];
 			x = queueX[queueReaderIndex];
@@ -261,16 +261,16 @@ public final class PathFinder {
 				break;
 			}
 			if (destType != 0) {
-				if ((destType < 5 || destType == 10) && collisionMaps[Static7.y].isAtWall(x, z, 1, destX, destZ, destType - 1, destAngle)) {
+				if ((destType < 5 || destType == 10) && collisionMaps[Player.level].isAtWall(x, z, 1, destX, destZ, destType - 1, destAngle)) {
 					found = true;
 					break;
 				}
-				if (destType < 10 && collisionMaps[Static7.y].isAtWallDecor(x, z, 1, destX, destZ, destType - 1, destAngle)) {
+				if (destType < 10 && collisionMaps[Player.level].isAtWallDecor(x, z, 1, destX, destZ, destType - 1, destAngle)) {
 					found = true;
 					break;
 				}
 			}
-			if (destWidth != 0 && destLength != 0 && collisionMaps[Static7.y].isInsideOrOutsideRect(x, z, 1, destX, destZ, destWidth, destLength, destBlockedSides)) {
+			if (destWidth != 0 && destLength != 0 && collisionMaps[Player.level].isInsideOrOutsideRect(x, z, 1, destX, destZ, destWidth, destLength, destBlockedSides)) {
 				found = true;
 				break;
 			}
@@ -390,7 +390,7 @@ public final class PathFinder {
 		queueX[0] = srcX;
 		@Pc(64) int queueWriterIndex = firstWriterIndex + 1;
 		queueZ[0] = srcZ;
-		@Pc(77) int[][] flags = collisionMaps[Static7.y].flags;
+		@Pc(77) int[][] flags = collisionMaps[Player.level].flags;
 		while (queueWriterIndex != queueReaderIndex) {
 			x = queueX[queueReaderIndex];
 			z = queueZ[queueReaderIndex];
@@ -400,16 +400,16 @@ public final class PathFinder {
 				break;
 			}
 			if (destType != 0) {
-				if ((destType < 5 || destType == 10) && collisionMaps[Static7.y].isAtWall(x, z, 2, destX, destZ, destType - 1, destAngle)) {
+				if ((destType < 5 || destType == 10) && collisionMaps[Player.level].isAtWall(x, z, 2, destX, destZ, destType - 1, destAngle)) {
 					found = true;
 					break;
 				}
-				if (destType < 10 && collisionMaps[Static7.y].isAtWallDecor(x, z, 2, destX, destZ, destType - 1, destAngle)) {
+				if (destType < 10 && collisionMaps[Player.level].isAtWallDecor(x, z, 2, destX, destZ, destType - 1, destAngle)) {
 					found = true;
 					break;
 				}
 			}
-			if (destWidth != 0 && destLength != 0 && collisionMaps[Static7.y].isInsideOrOutsideRect(x, z, 2, destX, destZ, destWidth, destLength, destBlockedSides)) {
+			if (destWidth != 0 && destLength != 0 && collisionMaps[Player.level].isInsideOrOutsideRect(x, z, 2, destX, destZ, destWidth, destLength, destBlockedSides)) {
 				found = true;
 				break;
 			}

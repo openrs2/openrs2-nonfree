@@ -52,7 +52,7 @@ public final class Loc extends Entity {
 	private final int z;
 
 	@OriginalMember(owner = "client!ri", name = "G", descriptor = "I")
-	private final int y;
+	private final int level;
 
 	@OriginalMember(owner = "client!ri", name = "x", descriptor = "I")
 	private final int angle;
@@ -76,11 +76,11 @@ public final class Loc extends Entity {
 	private SeqType seqType;
 
 	@OriginalMember(owner = "client!ri", name = "<init>", descriptor = "(IIIIIIIZLclient!vc;)V")
-	public Loc(@OriginalArg(0) int locId, @OriginalArg(1) int shape, @OriginalArg(2) int angle, @OriginalArg(3) int y, @OriginalArg(4) int x, @OriginalArg(5) int z, @OriginalArg(6) int seqId, @OriginalArg(7) boolean arg7, @OriginalArg(8) Entity arg8) {
+	public Loc(@OriginalArg(0) int locId, @OriginalArg(1) int shape, @OriginalArg(2) int angle, @OriginalArg(3) int level, @OriginalArg(4) int x, @OriginalArg(5) int z, @OriginalArg(6) int seqId, @OriginalArg(7) boolean arg7, @OriginalArg(8) Entity arg8) {
 		this.shape = shape;
 		this.x = x;
 		this.z = z;
-		this.y = y;
+		this.level = level;
 		this.angle = angle;
 		this.locId = locId;
 		if (arg8 != null) {
@@ -101,7 +101,7 @@ public final class Loc extends Entity {
 					type = type.getMultiLoc();
 				}
 				if (type != null) {
-					Static15.method4592(this.x, 0, this.angle, this.y, type, 0, this.z, this.shape);
+					Static15.method4592(this.x, 0, this.angle, this.level, type, 0, this.z, this.shape);
 				}
 			}
 		}
@@ -188,11 +188,11 @@ public final class Loc extends Entity {
 		@Pc(199) int local199 = (width << 6) + (this.x << 7);
 		@Pc(202) int[][] local202 = null;
 		@Pc(212) int local212 = (this.z << 7) + (length << 6);
-		@Pc(217) int[][] local217 = SceneGraph.tileHeights[this.y];
+		@Pc(217) int[][] local217 = SceneGraph.tileHeights[this.level];
 		if (underwater) {
 			local202 = SceneGraph.surfaceTileHeights[0];
-		} else if (this.y < 3) {
-			local202 = SceneGraph.tileHeights[this.y + 1];
+		} else if (this.level < 3) {
+			local202 = SceneGraph.tileHeights[this.level + 1];
 		}
 		@Pc(267) int local267 = local217[local114][local98] + local217[local107][local98] + local217[local114][local124] + local217[local107][local124] >> 2;
 		if (GlRenderer.enabled && local176) {
@@ -215,7 +215,7 @@ public final class Loc extends Entity {
 			if (local287) {
 				Static1.aClass56_Sub1_1 = local321.aClass56_Sub1_3;
 			}
-			if (this.y != 0) {
+			if (this.level != 0) {
 				@Pc(379) int[][] local379 = SceneGraph.tileHeights[0];
 				local363 = local267 - (local379[local114][local98] + local379[local107][local98] + local379[local114][local124] + local379[local107][local124] >> 2);
 			}

@@ -59,7 +59,7 @@ public final class WorldMap {
 			Static3.anInt2960 = (currentMap.displayMaxZ >> 6 << 6) + 64 - Static3.anInt2961;
 			@Pc(84) int local84 = -1;
 			@Pc(86) int local86 = -1;
-			if (currentMap.convertSourceToDisplay(Static7.y, (PlayerList.self.x >> 7) + Static5.originX, Static7.originZ + (PlayerList.self.z >> 7), local70)) {
+			if (currentMap.convertSourceToDisplay(Player.level, (PlayerList.self.xFine >> 7) + Static5.originX, Static7.originZ + (PlayerList.self.zFine >> 7), local70)) {
 				local86 = local70[1] - Static3.anInt2962;
 				local84 = Static3.anInt2961 + Static3.anInt2960 - local70[2] - 1;
 			}

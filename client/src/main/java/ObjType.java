@@ -634,8 +634,8 @@ public final class ObjType {
 		} else if (code == 249) {
 			@Pc(461) int size = buffer.readUnsignedByte();
 			if (this.params == null) {
-				@Pc(469) int bucketCount = IntUtils.clp2(size);
-				this.params = new HashTable(bucketCount);
+				@Pc(469) int buckets = IntUtils.clp2(size);
+				this.params = new HashTable(buckets);
 			}
 			for (@Pc(477) int i = 0; i < size; i++) {
 				@Pc(495) boolean string = buffer.readUnsignedByte() == 1;

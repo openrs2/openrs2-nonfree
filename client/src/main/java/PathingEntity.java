@@ -19,7 +19,7 @@ public abstract class PathingEntity extends Entity {
 	public int anInt3973;
 
 	@OriginalMember(owner = "client!qc", name = "C", descriptor = "I")
-	public int x;
+	public int xFine;
 
 	@OriginalMember(owner = "client!qc", name = "D", descriptor = "I")
 	public int anInt3975;
@@ -28,10 +28,10 @@ public abstract class PathingEntity extends Entity {
 	public int anInt3984;
 
 	@OriginalMember(owner = "client!qc", name = "ab", descriptor = "Lclient!ne;")
-	protected ParticleSystem aClass20_Sub3_6;
+	protected ParticleSystem particleSystem;
 
 	@OriginalMember(owner = "client!qc", name = "ob", descriptor = "I")
-	public int z;
+	public int zFine;
 
 	@OriginalMember(owner = "client!qc", name = "tb", descriptor = "I")
 	public int anInt4006;
@@ -43,7 +43,7 @@ public abstract class PathingEntity extends Entity {
 	public int anInt4013;
 
 	@OriginalMember(owner = "client!qc", name = "Hb", descriptor = "I")
-	public int anInt4017;
+	public int targetAngle;
 
 	@OriginalMember(owner = "client!qc", name = "Ib", descriptor = "I")
 	public int anInt4018;
@@ -58,7 +58,7 @@ public abstract class PathingEntity extends Entity {
 	public int anInt4027;
 
 	@OriginalMember(owner = "client!qc", name = "Vb", descriptor = "I")
-	public int anInt4031;
+	public int angle;
 
 	@OriginalMember(owner = "client!qc", name = "Wb", descriptor = "I")
 	public int anInt4032;
@@ -82,7 +82,7 @@ public abstract class PathingEntity extends Entity {
 	public Object anObject5;
 
 	@OriginalMember(owner = "client!qc", name = "p", descriptor = "[I")
-	public final int[] anIntArray422 = new int[10];
+	public final int[] movementQueueX = new int[10];
 
 	@OriginalMember(owner = "client!qc", name = "u", descriptor = "I")
 	private int anInt3967 = 0;
@@ -130,13 +130,13 @@ public abstract class PathingEntity extends Entity {
 	public int anInt3999 = 0;
 
 	@OriginalMember(owner = "client!qc", name = "s", descriptor = "I")
-	public int anInt3965 = 0;
+	public int movementQueueSize = 0;
 
 	@OriginalMember(owner = "client!qc", name = "S", descriptor = "I")
 	public int basId = -1;
 
 	@OriginalMember(owner = "client!qc", name = "ub", descriptor = "I")
-	public int anInt4007 = -1;
+	public int seqId = -1;
 
 	@OriginalMember(owner = "client!qc", name = "Ab", descriptor = "I")
 	public int anInt4010 = 0;
@@ -163,7 +163,7 @@ public abstract class PathingEntity extends Entity {
 	public boolean aBoolean283 = false;
 
 	@OriginalMember(owner = "client!qc", name = "H", descriptor = "[B")
-	public final byte[] aByteArray51 = new byte[10];
+	public final byte[] movementQueueSpeed = new byte[10];
 
 	@OriginalMember(owner = "client!qc", name = "gb", descriptor = "I")
 	public int anInt3996 = 0;
@@ -175,7 +175,7 @@ public abstract class PathingEntity extends Entity {
 	public int anInt4001 = 0;
 
 	@OriginalMember(owner = "client!qc", name = "sb", descriptor = "I")
-	public int anInt4005 = -1;
+	public int movementSeqId = -1;
 
 	@OriginalMember(owner = "client!qc", name = "Z", descriptor = "I")
 	public int anInt3992 = 0;
@@ -193,7 +193,7 @@ public abstract class PathingEntity extends Entity {
 	public int anInt4030 = 0;
 
 	@OriginalMember(owner = "client!qc", name = "m", descriptor = "I")
-	public int anInt3961 = -1;
+	public int spotAnimId = -1;
 
 	@OriginalMember(owner = "client!qc", name = "x", descriptor = "I")
 	public int anInt3970 = 0;
@@ -235,10 +235,10 @@ public abstract class PathingEntity extends Entity {
 	public int anInt3993 = -1000;
 
 	@OriginalMember(owner = "client!qc", name = "bc", descriptor = "I")
-	public int anInt4037 = 0;
+	public int movementBlockedLoops = 0;
 
 	@OriginalMember(owner = "client!qc", name = "fc", descriptor = "[I")
-	public final int[] anIntArray426 = new int[10];
+	public final int[] movementQueueZ = new int[10];
 
 	@OriginalMember(owner = "client!qc", name = "Sb", descriptor = "I")
 	private int anInt4028 = 0;
@@ -250,7 +250,7 @@ public abstract class PathingEntity extends Entity {
 	public int anInt3994 = 0;
 
 	@OriginalMember(owner = "client!qc", name = "W", descriptor = "I")
-	public int anInt3990 = 0;
+	public int lastSeenLoop = 0;
 
 	@OriginalMember(owner = "client!qc", name = "qb", descriptor = "I")
 	public int anInt4003 = 0;
@@ -268,51 +268,51 @@ public abstract class PathingEntity extends Entity {
 	protected boolean aBoolean285 = false;
 
 	@OriginalMember(owner = "client!qc", name = "a", descriptor = "(BIIIZ)V")
-	public final void method3301(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) boolean arg3) {
-		if (this.anInt4007 != -1 && SeqTypeList.get(this.anInt4007).anInt1237 == 1) {
-			this.anInt4007 = -1;
+	public final void teleport(@OriginalArg(3) int x, @OriginalArg(1) int z, @OriginalArg(4) boolean clearMovementQueue, @OriginalArg(2) int size) {
+		if (this.seqId != -1 && SeqTypeList.get(this.seqId).anInt1237 == 1) {
+			this.seqId = -1;
 		}
-		if (this.anInt3961 != -1) {
-			@Pc(39) SpotAnimType local39 = SpotAnimTypeList.get(this.anInt3961);
-			if (local39.aBoolean222 && SeqTypeList.get(local39.anInt3134).anInt1237 == 1) {
-				this.anInt3961 = -1;
+		if (this.spotAnimId != -1) {
+			@Pc(39) SpotAnimType type = SpotAnimTypeList.get(this.spotAnimId);
+			if (type.aBoolean222 && SeqTypeList.get(type.anInt3134).anInt1237 == 1) {
+				this.spotAnimId = -1;
 			}
 		}
-		if (!arg3) {
-			@Pc(63) int local63 = arg2 - this.anIntArray422[0];
-			@Pc(71) int local71 = arg0 - this.anIntArray426[0];
-			if (local63 >= -8 && local63 <= 8 && local71 >= -8 && local71 <= 8) {
-				if (this.anInt3965 < 9) {
-					this.anInt3965++;
+		if (!clearMovementQueue) {
+			@Pc(63) int dx = x - this.movementQueueX[0];
+			@Pc(71) int dz = z - this.movementQueueZ[0];
+			if (dx >= -8 && dx <= 8 && dz >= -8 && dz <= 8) {
+				if (this.movementQueueSize < 9) {
+					this.movementQueueSize++;
 				}
-				for (@Pc(103) int local103 = this.anInt3965; local103 > 0; local103--) {
-					this.anIntArray422[local103] = this.anIntArray422[local103 - 1];
-					this.anIntArray426[local103] = this.anIntArray426[local103 - 1];
-					this.aByteArray51[local103] = this.aByteArray51[local103 - 1];
+				for (@Pc(103) int i = this.movementQueueSize; i > 0; i--) {
+					this.movementQueueX[i] = this.movementQueueX[i - 1];
+					this.movementQueueZ[i] = this.movementQueueZ[i - 1];
+					this.movementQueueSpeed[i] = this.movementQueueSpeed[i - 1];
 				}
-				this.anIntArray422[0] = arg2;
-				this.aByteArray51[0] = 1;
-				this.anIntArray426[0] = arg0;
+				this.movementQueueX[0] = x;
+				this.movementQueueSpeed[0] = 1;
+				this.movementQueueZ[0] = z;
 				return;
 			}
 		}
 		this.anInt4030 = 0;
-		this.anInt4037 = 0;
-		this.anIntArray422[0] = arg2;
-		this.anIntArray426[0] = arg0;
-		this.z = this.anIntArray426[0] * 128 + arg1 * 64;
-		this.anInt3965 = 0;
-		this.x = this.anIntArray422[0] * 128 + arg1 * 64;
+		this.movementBlockedLoops = 0;
+		this.movementQueueX[0] = x;
+		this.movementQueueZ[0] = z;
+		this.zFine = this.movementQueueZ[0] * 128 + size * 64;
+		this.movementQueueSize = 0;
+		this.xFine = this.movementQueueX[0] * 128 + size * 64;
 		if (GlRenderer.enabled && PlayerList.self == this) {
 			Static17.method1655();
 		}
-		if (this.aClass20_Sub3_6 != null) {
-			this.aClass20_Sub3_6.method2952();
+		if (this.particleSystem != null) {
+			this.particleSystem.method2952();
 		}
 	}
 
 	@OriginalMember(owner = "client!qc", name = "a", descriptor = "(Z)I")
-	protected abstract int method3303();
+	protected abstract int getBasId();
 
 	@OriginalMember(owner = "client!qc", name = "a", descriptor = "(IIII)V")
 	public final void method3304(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2) {
@@ -328,7 +328,7 @@ public abstract class PathingEntity extends Entity {
 
 	@OriginalMember(owner = "client!qc", name = "a", descriptor = "(ILclient!vg;)V")
 	protected final void method3305(@OriginalArg(1) Model arg0) {
-		@Pc(9) BasType local9 = this.method3314();
+		@Pc(9) BasType local9 = this.getBasType();
 		if (local9.anInt850 == 0 && local9.anInt851 == 0) {
 			return;
 		}
@@ -536,61 +536,61 @@ public abstract class PathingEntity extends Entity {
 	@OriginalMember(owner = "client!qc", name = "b", descriptor = "(I)V")
 	public final void method3307() {
 		this.anInt4030 = 0;
-		this.anInt3965 = 0;
+		this.movementQueueSize = 0;
 	}
 
 	@OriginalMember(owner = "client!qc", name = "b", descriptor = "(III)V")
-	public final void method3308(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1) {
-		@Pc(6) int local6 = this.anIntArray422[0];
-		@Pc(15) int local15 = this.anIntArray426[0];
-		if (arg0 == 0) {
-			local6--;
-			local15++;
+	public final void move(@OriginalArg(0) int direction, @OriginalArg(2) int speed) {
+		@Pc(6) int x = this.movementQueueX[0];
+		@Pc(15) int z = this.movementQueueZ[0];
+		if (direction == 0) {
+			x--;
+			z++;
 		}
-		if (this.anInt4007 != -1 && SeqTypeList.get(this.anInt4007).anInt1237 == 1) {
-			this.anInt4007 = -1;
+		if (this.seqId != -1 && SeqTypeList.get(this.seqId).anInt1237 == 1) {
+			this.seqId = -1;
 		}
-		if (arg0 == 1) {
-			local15++;
+		if (direction == 1) {
+			z++;
 		}
-		if (this.anInt3961 != -1) {
-			@Pc(58) SpotAnimType local58 = SpotAnimTypeList.get(this.anInt3961);
-			if (local58.aBoolean222 && SeqTypeList.get(local58.anInt3134).anInt1237 == 1) {
-				this.anInt3961 = -1;
+		if (this.spotAnimId != -1) {
+			@Pc(58) SpotAnimType type = SpotAnimTypeList.get(this.spotAnimId);
+			if (type.aBoolean222 && SeqTypeList.get(type.anInt3134).anInt1237 == 1) {
+				this.spotAnimId = -1;
 			}
 		}
-		if (arg0 == 2) {
-			local15++;
-			local6++;
+		if (direction == 2) {
+			z++;
+			x++;
 		}
-		if (this.anInt3965 < 9) {
-			this.anInt3965++;
+		if (this.movementQueueSize < 9) {
+			this.movementQueueSize++;
 		}
-		for (@Pc(95) int local95 = this.anInt3965; local95 > 0; local95--) {
-			this.anIntArray422[local95] = this.anIntArray422[local95 - 1];
-			this.anIntArray426[local95] = this.anIntArray426[local95 - 1];
-			this.aByteArray51[local95] = this.aByteArray51[local95 - 1];
+		for (@Pc(95) int i = this.movementQueueSize; i > 0; i--) {
+			this.movementQueueX[i] = this.movementQueueX[i - 1];
+			this.movementQueueZ[i] = this.movementQueueZ[i - 1];
+			this.movementQueueSpeed[i] = this.movementQueueSpeed[i - 1];
 		}
-		this.aByteArray51[0] = (byte) arg1;
-		if (arg0 == 3) {
-			local6--;
+		this.movementQueueSpeed[0] = (byte) speed;
+		if (direction == 3) {
+			x--;
 		}
-		if (arg0 == 4) {
-			local6++;
+		if (direction == 4) {
+			x++;
 		}
-		if (arg0 == 5) {
-			local6--;
-			local15--;
+		if (direction == 5) {
+			x--;
+			z--;
 		}
-		if (arg0 == 6) {
-			local15--;
+		if (direction == 6) {
+			z--;
 		}
-		if (arg0 == 7) {
-			local6++;
-			local15--;
+		if (direction == 7) {
+			x++;
+			z--;
 		}
-		this.anIntArray422[0] = local6;
-		this.anIntArray426[0] = local15;
+		this.movementQueueX[0] = x;
+		this.movementQueueZ[0] = z;
 	}
 
 	@OriginalMember(owner = "client!qc", name = "d", descriptor = "(I)Z")
@@ -608,9 +608,9 @@ public abstract class PathingEntity extends Entity {
 		Static6.anInt4907 = 0;
 		Static4.anInt2747 = 0;
 		Static5.anInt3525 = 0;
-		@Pc(9) BasType local9 = this.method3314();
-		@Pc(16) int local16 = local9.anInt844;
-		@Pc(19) int local19 = local9.anInt847;
+		@Pc(9) BasType type = this.getBasType();
+		@Pc(16) int local16 = type.anInt844;
+		@Pc(19) int local19 = type.anInt847;
 		if (local16 == 0 || local19 == 0) {
 			return;
 		}
@@ -621,7 +621,7 @@ public abstract class PathingEntity extends Entity {
 		@Pc(55) int local55 = local35 * local45 - local40 * local31 >> 16;
 		@Pc(65) int local65 = local35 * local40 + local45 * local31 >> 16;
 		@Pc(70) int local70 = -local19 / 2;
-		@Pc(82) int local82 = Static11.method522(local55 + this.z, local65 + this.x, Static7.y);
+		@Pc(82) int local82 = SceneGraph.method522(Player.level, local65 + this.xFine, local55 + this.zFine);
 		@Pc(86) int local86 = local16 / 2;
 		@Pc(91) int local91 = -local16 / 2;
 		@Pc(102) int local102 = local31 * local70 + local86 * local35 >> 16;
@@ -629,13 +629,13 @@ public abstract class PathingEntity extends Entity {
 		@Pc(116) int local116 = local35 * local106 - local31 * local91 >> 16;
 		@Pc(126) int local126 = local35 * local70 - local31 * local86 >> 16;
 		@Pc(136) int local136 = local91 * local35 + local31 * local106 >> 16;
-		@Pc(148) int local148 = Static11.method522(local126 + this.z, local102 + this.x, Static7.y);
-		@Pc(161) int local161 = Static11.method522(local116 + this.z, this.x + local136, Static7.y);
+		@Pc(148) int local148 = SceneGraph.method522(Player.level, local102 + this.xFine, local126 + this.zFine);
+		@Pc(161) int local161 = SceneGraph.method522(Player.level, this.xFine + local136, local116 + this.zFine);
 		@Pc(165) int local165 = local16 / 2;
 		@Pc(169) int local169 = local19 / 2;
 		@Pc(180) int local180 = local31 * local169 + local165 * local35 >> 16;
 		@Pc(191) int local191 = local35 * local169 - local31 * local165 >> 16;
-		@Pc(204) int local204 = Static11.method522(this.z + local191, local180 + this.x, Static7.y);
+		@Pc(204) int local204 = SceneGraph.method522(Player.level, local180 + this.xFine, this.zFine + local191);
 		@Pc(215) int local215 = local204 > local161 ? local161 : local204;
 		@Pc(226) int local226 = local161 > local82 ? local82 : local161;
 		@Pc(233) int local233 = local82 < local148 ? local82 : local148;
@@ -659,9 +659,9 @@ public abstract class PathingEntity extends Entity {
 	}
 
 	@OriginalMember(owner = "client!qc", name = "c", descriptor = "(B)Lclient!d;")
-	public final BasType method3314() {
-		@Pc(15) int local15 = this.method3303();
-		return local15 == -1 ? Static5.aClass34_1 : BasTypeList.get(local15);
+	public final BasType getBasType() {
+		@Pc(15) int basId = this.getBasId();
+		return basId == -1 ? BasType.DEFAULT : BasTypeList.get(basId);
 	}
 
 	@OriginalMember(owner = "client!qc", name = "a", descriptor = "(Lclient!vg;BLclient!vg;)V")
@@ -669,20 +669,20 @@ public abstract class PathingEntity extends Entity {
 		if (GlRenderer.enabled) {
 			@Pc(67) GlModel local67 = (GlModel) arg0;
 			@Pc(70) GlModel local70 = (GlModel) arg1;
-			if ((this.aClass20_Sub3_6 == null || this.aClass20_Sub3_6.stopped) && (local67.particleEmitters != null || local67.particleEffectors != null || local70 != null && (local70.particleEmitters != null || local70.particleEffectors != null))) {
-				this.aClass20_Sub3_6 = new ParticleSystem(client.loop, this.getSize(), this.getSize());
+			if ((this.particleSystem == null || this.particleSystem.stopped) && (local67.particleEmitters != null || local67.particleEffectors != null || local70 != null && (local70.particleEmitters != null || local70.particleEffectors != null))) {
+				this.particleSystem = new ParticleSystem(client.loop, this.getSize(), this.getSize());
 			}
-			if (this.aClass20_Sub3_6 != null) {
-				this.aClass20_Sub3_6.method2967(local67.particleEmitters, local67.particleEffectors, false, local67.vertexX, local67.vertexY, local67.vertexZ);
+			if (this.particleSystem != null) {
+				this.particleSystem.method2967(local67.particleEmitters, local67.particleEffectors, false, local67.vertexX, local67.vertexY, local67.vertexZ);
 			}
 		} else {
 			@Pc(4) SoftwareModel local4 = (SoftwareModel) arg1;
 			@Pc(7) SoftwareModel local7 = (SoftwareModel) arg0;
-			if ((this.aClass20_Sub3_6 == null || this.aClass20_Sub3_6.stopped) && (local7.particleEmitters != null || local7.particleEffectors != null || local4 != null && (local4.particleEmitters != null || local4.particleEffectors != null))) {
-				this.aClass20_Sub3_6 = new ParticleSystem(client.loop, this.getSize(), this.getSize());
+			if ((this.particleSystem == null || this.particleSystem.stopped) && (local7.particleEmitters != null || local7.particleEffectors != null || local4 != null && (local4.particleEmitters != null || local4.particleEffectors != null))) {
+				this.particleSystem = new ParticleSystem(client.loop, this.getSize(), this.getSize());
 			}
-			if (this.aClass20_Sub3_6 != null) {
-				this.aClass20_Sub3_6.method2967(local7.particleEmitters, local7.particleEffectors, false, local7.vertexX, local7.vertexY, local7.vertexZ);
+			if (this.particleSystem != null) {
+				this.particleSystem.method2967(local7.particleEmitters, local7.particleEffectors, false, local7.vertexX, local7.vertexY, local7.vertexZ);
 			}
 		}
 		this.aBoolean285 = true;
