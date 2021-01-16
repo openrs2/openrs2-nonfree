@@ -98,7 +98,7 @@ public final class Static24 {
 		if (!InterfaceList.getServerActiveProperties(arg1).isButtonEnabled(arg0) && arg1.anObjectArray18 == null) {
 			return null;
 		} else if (arg1.aStringArray43 == null || arg0 >= arg1.aStringArray43.length || arg1.aStringArray43[arg0] == null || arg1.aStringArray43[arg0].trim().length() == 0) {
-			return Static1.aBoolean26 ? "Hidden-" + arg0 : null;
+			return Static1.qaOpTest ? "Hidden-" + arg0 : null;
 		} else {
 			return arg1.aStringArray43[arg0];
 		}
@@ -128,42 +128,42 @@ public final class Static24 {
 	}
 
 	@OriginalMember(owner = "client!ma", name = "a", descriptor = "(BIIZIIZ)V")
-	public static void method2813(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) boolean arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4, @OriginalArg(6) boolean arg5) {
+	public static void setWindowMode(@OriginalArg(1) int width, @OriginalArg(2) int arg1, @OriginalArg(3) boolean replaceCanvas, @OriginalArg(4) int height, @OriginalArg(5) int mode, @OriginalArg(6) boolean arg5) {
 		if (arg5) {
 			GlRenderer.quit();
 		}
-		if (GameShell.fullScreenFrame != null && (arg4 != 3 || arg0 != Preferences.fullScreenWidth || arg3 != Preferences.fullScreenHeight)) {
+		if (GameShell.fullScreenFrame != null && (mode != 3 || width != Preferences.fullScreenWidth || height != Preferences.fullScreenHeight)) {
 			DisplayMode.exitFullScreen(GameShell.signLink, GameShell.fullScreenFrame);
 			GameShell.fullScreenFrame = null;
 		}
-		if (arg4 == 3 && GameShell.fullScreenFrame == null) {
-			GameShell.fullScreenFrame = DisplayMode.enterFullScreen(GameShell.signLink, arg0, arg3, 0);
+		if (mode == 3 && GameShell.fullScreenFrame == null) {
+			GameShell.fullScreenFrame = DisplayMode.enterFullScreen(GameShell.signLink, width, height, 0);
 			if (GameShell.fullScreenFrame != null) {
-				Preferences.fullScreenWidth = arg0;
-				Preferences.fullScreenHeight = arg3;
+				Preferences.fullScreenWidth = width;
+				Preferences.fullScreenHeight = height;
 				Preferences.write(GameShell.signLink);
 			}
 		}
-		if (arg4 == 3 && GameShell.fullScreenFrame == null) {
-			method2813(-1, arg1, true, -1, Preferences.displayMode, true);
+		if (mode == 3 && GameShell.fullScreenFrame == null) {
+			setWindowMode(-1, arg1, true, -1, Preferences.displayMode, true);
 			return;
 		}
-		@Pc(83) Container local83;
+		@Pc(83) Container container;
 		if (GameShell.fullScreenFrame != null) {
-			local83 = GameShell.fullScreenFrame;
+			container = GameShell.fullScreenFrame;
 		} else if (GameShell.frame == null) {
-			local83 = GameShell.signLink.applet;
+			container = GameShell.signLink.applet;
 		} else {
-			local83 = GameShell.frame;
+			container = GameShell.frame;
 		}
-		GameShell.frameWidth = local83.getSize().width;
-		GameShell.frameHeight = local83.getSize().height;
-		if (local83 == GameShell.frame) {
+		GameShell.frameWidth = container.getSize().width;
+		GameShell.frameHeight = container.getSize().height;
+		if (container == GameShell.frame) {
 			@Pc(110) Insets local110 = GameShell.frame.getInsets();
 			GameShell.frameWidth -= local110.right + local110.left;
 			GameShell.frameHeight -= local110.top + local110.bottom;
 		}
-		if (arg4 >= 2) {
+		if (mode >= 2) {
 			GameShell.topMargin = 0;
 			GameShell.canvasWidth = GameShell.frameWidth;
 			GameShell.leftMargin = 0;
@@ -174,7 +174,7 @@ public final class Static24 {
 			GameShell.canvasHeight = 503;
 			GameShell.topMargin = 0;
 		}
-		if (arg2) {
+		if (replaceCanvas) {
 			Keyboard.stop(GameShell.canvas);
 			Mouse.stop(GameShell.canvas);
 			if (client.mouseWheel != null) {
@@ -191,17 +191,17 @@ public final class Static24 {
 				GlRenderer.setCanvasSize(GameShell.canvasWidth, GameShell.canvasHeight);
 			}
 			GameShell.canvas.setSize(GameShell.canvasWidth, GameShell.canvasHeight);
-			if (local83 == GameShell.frame) {
+			if (container == GameShell.frame) {
 				@Pc(208) Insets local208 = GameShell.frame.getInsets();
 				GameShell.canvas.setLocation(GameShell.leftMargin + local208.left, GameShell.topMargin + local208.top);
 			} else {
 				GameShell.canvas.setLocation(GameShell.leftMargin, GameShell.topMargin);
 			}
 		}
-		if (arg4 == 0 && arg1 > 0) {
+		if (mode == 0 && arg1 > 0) {
 			GlRenderer.createAndDestroyContext(GameShell.canvas);
 		}
-		if (arg5 && arg4 > 0) {
+		if (arg5 && mode > 0) {
 			GameShell.canvas.setIgnoreRepaint(true);
 			if (!Static2.aBoolean76) {
 				SceneGraph.clear();
@@ -236,11 +236,11 @@ public final class Static24 {
 				GlRenderer.init(GameShell.canvas, Static2.anInt1125 * 2);
 			}
 		}
-		if (!GlRenderer.enabled && arg4 > 0) {
-			method2813(-1, arg1, true, -1, 0, true);
+		if (!GlRenderer.enabled && mode > 0) {
+			setWindowMode(-1, arg1, true, -1, 0, true);
 			return;
 		}
-		if (arg4 > 0 && arg1 == 0) {
+		if (mode > 0 && arg1 == 0) {
 			GameShell.thread.setPriority(5);
 			client.frameBuffer = null;
 			Static25.method2915();
@@ -254,7 +254,7 @@ public final class Static24 {
 			LightingManager.method3109();
 			Static14.method1205();
 			Static36.method4447();
-		} else if (arg4 == 0 && arg1 > 0) {
+		} else if (mode == 0 && arg1 > 0) {
 			GameShell.thread.setPriority(1);
 			client.frameBuffer = FrameBuffer.create(GameShell.canvas, 765, 503);
 			Static25.method2906();
@@ -282,7 +282,7 @@ public final class Static24 {
 		if (arg5) {
 			Static11.method516();
 		}
-		if (arg4 < 2) {
+		if (mode < 2) {
 			Static4.aBoolean184 = false;
 		} else {
 			Static4.aBoolean184 = true;
@@ -301,9 +301,9 @@ public final class Static24 {
 
 	@OriginalMember(owner = "client!mb", name = "a", descriptor = "(BIII)V")
 	public static void method2945(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2) {
-		@Pc(32) String local32 = "::tele " + arg2 + "," + (arg0 >> 6) + "," + (arg1 >> 6) + "," + (arg0 & 0x3F) + "," + (arg1 & 0x3F);
-		System.out.println(local32);
-		Static27.method3185(local32);
+		@Pc(32) String command = "::tele " + arg2 + "," + (arg0 >> 6) + "," + (arg1 >> 6) + "," + (arg0 & 0x3F) + "," + (arg1 & 0x3F);
+		System.out.println(command);
+		Cheat.execute(command);
 	}
 
 	@OriginalMember(owner = "client!mb", name = "a", descriptor = "(ZIIII)V")

@@ -45,7 +45,7 @@ public final class Static37 {
 
 	@OriginalMember(owner = "client!wb", name = "c", descriptor = "(I)I")
 	public static int method4663() {
-		return Static2.aBoolean68 && Keyboard.pressedKeys[81] && Static7.anInt5634 > 2 ? Static2.anIntArray160[Static7.anInt5634 - 2] : Static2.anIntArray160[Static7.anInt5634 - 1];
+		return Static2.shiftClick && Keyboard.pressedKeys[81] && Static7.anInt5634 > 2 ? Static2.anIntArray160[Static7.anInt5634 - 2] : Static2.anIntArray160[Static7.anInt5634 - 1];
 	}
 
 	@OriginalMember(owner = "client!wc", name = "a", descriptor = "(Lclient!fd;Z)Lclient!am;")
@@ -779,7 +779,7 @@ public final class Static37 {
 		if (Static2.anInt1940 == 2) {
 			if (Static4.anInt3341 == Static4.anInt2663 && Static1.anInt891 == Static5.anInt5848) {
 				Static2.anInt1940 = 0;
-				if (Static2.aBoolean68 && Keyboard.pressedKeys[81] && Static7.anInt5634 > 2) {
+				if (Static2.shiftClick && Keyboard.pressedKeys[81] && Static7.anInt5634 > 2) {
 					Static35.method664(Static7.anInt5634 - 2);
 				} else {
 					Static35.method664(Static7.anInt5634 - 1);
@@ -787,7 +787,7 @@ public final class Static37 {
 			}
 		} else if (Static4.anInt3341 == Mouse.clickX && Static5.anInt5848 == Mouse.clickY) {
 			Static2.anInt1940 = 0;
-			if (Static2.aBoolean68 && Keyboard.pressedKeys[81] && Static7.anInt5634 > 2) {
+			if (Static2.shiftClick && Keyboard.pressedKeys[81] && Static7.anInt5634 > 2) {
 				Static35.method664(Static7.anInt5634 - 2);
 			} else {
 				Static35.method664(Static7.anInt5634 - 1);

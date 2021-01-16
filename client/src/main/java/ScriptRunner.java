@@ -1321,7 +1321,7 @@ public final class ScriptRunner {
 						if (opcode == 3100) {
 							ssp--;
 							@Pc(13872) String local13872 = stringStack[ssp];
-							Static26.method4357("", 0, local13872);
+							ChatHistory.add(0, "", local13872);
 							continue;
 						}
 						if (opcode == 3101) {
@@ -2595,7 +2595,7 @@ public final class ScriptRunner {
 									@Pc(4050) int local4050 = intStack[isp];
 									@Pc(4052) String local4052 = null;
 									if (local4050 < 100) {
-										local4052 = Static6.aStringArray31[local4050];
+										local4052 = ChatHistory.messages[local4050];
 									}
 									if (local4052 == null) {
 										local4052 = "";
@@ -2607,8 +2607,8 @@ public final class ScriptRunner {
 									@Pc(4077) int local4077 = -1;
 									@Pc(4079) int local4079 = isp - 1;
 									@Pc(4082) int local4082 = intStack[local4079];
-									if (local4082 < 100 && Static6.aStringArray31[local4082] != null) {
-										local4077 = Static5.anIntArray447[local4082];
+									if (local4082 < 100 && ChatHistory.messages[local4082] != null) {
+										local4077 = ChatHistory.types[local4082];
 									}
 									isp = local4079 + 1;
 									intStack[local4079] = local4077;
@@ -2622,7 +2622,7 @@ public final class ScriptRunner {
 									ssp--;
 									@Pc(4125) String local4125 = stringStack[ssp];
 									if (local4125.startsWith("::")) {
-										Static27.method3185(local4125);
+										Cheat.execute(local4125);
 										continue;
 									}
 									if (LoginManager.staffModLevel == 0 && (LoginManager.playerUnderage && !LoginManager.parentalChatConsent || LoginManager.mapQuickChat)) {
@@ -2768,7 +2768,7 @@ public final class ScriptRunner {
 									isp--;
 									@Pc(4713) int local4713 = intStack[isp];
 									if (local4713 < 100) {
-										local4708 = Static3.aStringArray16[local4713];
+										local4708 = ChatHistory.names[local4713];
 									}
 									if (local4708 == null) {
 										local4708 = "";
@@ -2781,7 +2781,7 @@ public final class ScriptRunner {
 									@Pc(4745) int local4745 = intStack[isp];
 									@Pc(4747) String local4747 = null;
 									if (local4745 < 100) {
-										local4747 = Static1.aStringArray4[local4745];
+										local4747 = ChatHistory.clans[local4745];
 									}
 									if (local4747 == null) {
 										local4747 = "";
@@ -2794,7 +2794,7 @@ public final class ScriptRunner {
 									@Pc(4780) int local4780 = intStack[local4777];
 									@Pc(4782) int local4782 = -1;
 									if (local4780 < 100) {
-										local4782 = Static7.anIntArray598[local4780];
+										local4782 = ChatHistory.phraseIds[local4780];
 									}
 									isp = local4777 + 1;
 									intStack[local4777] = local4782;
@@ -2815,7 +2815,7 @@ public final class ScriptRunner {
 									continue;
 								}
 								if (opcode == 5017) {
-									intStack[isp++] = Static5.anInt3469;
+									intStack[isp++] = ChatHistory.size;
 									continue;
 								}
 								if (opcode == 5050) {
@@ -3419,14 +3419,14 @@ public final class ScriptRunner {
 									@Pc(5696) int local5696 = isp - 2;
 									@Pc(5700) int local5700 = intStack[local5696];
 									@Pc(5706) int local5706 = intStack[local5696 + 1];
-									Static35.method4512(false, 3, local5700, local5706);
+									Static35.setWindowMode(false, 3, local5700, local5706);
 									isp = local5696 + 1;
 									intStack[local5696] = GameShell.fullScreenFrame == null ? 0 : 1;
 									continue;
 								}
 								if (opcode == 5301) {
 									if (GameShell.fullScreenFrame != null) {
-										Static35.method4512(false, Preferences.displayMode, -1, -1);
+										Static35.setWindowMode(false, Preferences.displayMode, -1, -1);
 									}
 									continue;
 								}
@@ -3469,7 +3469,7 @@ public final class ScriptRunner {
 									if (local5862 < 0 || local5862 > 2) {
 										local5862 = 0;
 									}
-									Static35.method4512(false, local5862, -1, -1);
+									Static35.setWindowMode(false, local5862, -1, -1);
 									continue;
 								}
 								if (opcode == 5308) {
@@ -3543,7 +3543,7 @@ public final class ScriptRunner {
 								}
 								if (opcode == 5411) {
 									if (GameShell.fullScreenFrame != null) {
-										Static35.method4512(false, Preferences.displayMode, -1, -1);
+										Static35.setWindowMode(false, Preferences.displayMode, -1, -1);
 									}
 									if (GameShell.frame == null) {
 										Static37.openUrl(Static36.method4436(), false);
@@ -3570,7 +3570,7 @@ public final class ScriptRunner {
 								}
 								if (opcode == 5421) {
 									if (GameShell.fullScreenFrame != null) {
-										Static35.method4512(false, Preferences.displayMode, -1, -1);
+										Static35.setWindowMode(false, Preferences.displayMode, -1, -1);
 									}
 									ssp--;
 									@Pc(9090) String local9090 = stringStack[ssp];
@@ -4530,7 +4530,7 @@ public final class ScriptRunner {
 		} catch (@Pc(15060) Exception ex) {
 			if (script.name == null) {
 				if (client.modeWhere != 0) {
-					Static26.method4357("", 0, "Clientscript error - check log for details");
+					ChatHistory.add(0, "", "Clientscript error - check log for details");
 				}
 				TracingException.report(ex, "CS2 - scr:" + script.key + " op:" + opcode);
 			} else {
@@ -4544,7 +4544,7 @@ public final class ScriptRunner {
 					buffer.append("%0a - non-existant gosub script-num: ").append(Integer.toString(local15103));
 				}
 				if (client.modeWhere != 0) {
-					Static26.method4357("", 0, "Clientscript error in: " + script.name);
+					ChatHistory.add(0, "", "Clientscript error in: " + script.name);
 				}
 				TracingException.report(ex, "CS2 - scr:" + script.key + " op:" + opcode + buffer.toString());
 			}

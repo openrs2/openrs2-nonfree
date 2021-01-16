@@ -93,7 +93,7 @@ public final class Static35 {
 		if (Static2.anInt1767 == 1) {
 			Static2.anInt1767 = 2;
 		}
-		if (Static1.anInt268 == 3) {
+		if (Static1.rectDebug == 3) {
 			for (@Pc(211) int local211 = 0; local211 < Static1.anInt113; local211++) {
 				if (Static1.aBooleanArray2[local211]) {
 					if (GlRenderer.enabled) {
@@ -830,7 +830,7 @@ public final class Static35 {
 				Protocol.outboundBuffer.writeOpcode(72);
 				Protocol.outboundBuffer.writeShort(local24);
 			} else {
-				Static26.method4357("", 0, local3148.objCounts[local15] + " x " + ObjTypeList.get(local24).name);
+				ChatHistory.add(0, "", local3148.objCounts[local15] + " x " + ObjTypeList.get(local24).name);
 			}
 			Static2.anInt2246 = 0;
 			Static1.aClass185_3 = InterfaceList.getComponent(local19);
@@ -903,7 +903,7 @@ public final class Static35 {
 			local31 = LocalisedText.USE + LocalisedText.MINISEPARATOR + Static7.aString365 + " ->";
 		} else if (Static3.aBoolean177 && Static7.anInt5634 < 2) {
 			local31 = Static4.aString140 + LocalisedText.MINISEPARATOR + Static2.aString81 + " ->";
-		} else if (Static2.aBoolean68 && Keyboard.pressedKeys[81] && Static7.anInt5634 > 2) {
+		} else if (Static2.shiftClick && Keyboard.pressedKeys[81] && Static7.anInt5634 > 2) {
 			local31 = Static26.method2992(Static7.anInt5634 - 2);
 		} else {
 			local31 = Static26.method2992(Static7.anInt5634 - 1);
@@ -1007,20 +1007,20 @@ public final class Static35 {
 	}
 
 	@OriginalMember(owner = "client!uj", name = "a", descriptor = "(ZIIII)V")
-	public static void method4512(@OriginalArg(0) boolean arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3) {
+	public static void setWindowMode(@OriginalArg(0) boolean replaceCanvas, @OriginalArg(2) int mode, @OriginalArg(3) int width, @OriginalArg(4) int height) {
 		@Pc(5) boolean local5 = false;
 		Static1.aLong15 = 0L;
 		@Pc(15) int local15 = Static11.method557();
-		if (local15 > 0 == arg1 <= 0) {
+		if (local15 > 0 == mode <= 0) {
 			local5 = true;
 		}
-		if (arg1 == 3 || local15 == 3) {
-			arg0 = true;
+		if (mode == 3 || local15 == 3) {
+			replaceCanvas = true;
 		}
-		if (arg0 && arg1 > 0) {
+		if (replaceCanvas && mode > 0) {
 			local5 = true;
 		}
-		Static24.method2813(arg2, local15, arg0, arg3, arg1, local5);
+		Static24.setWindowMode(width, local15, replaceCanvas, height, mode, local5);
 	}
 
 	@OriginalMember(owner = "client!uk", name = "a", descriptor = "([[IB)V")

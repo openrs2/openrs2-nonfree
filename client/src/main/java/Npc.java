@@ -17,7 +17,7 @@ public final class Npc extends PathingEntity {
 		}
 		@Pc(33) int sound = npcType.walkSound;
 		@Pc(37) BasType baseType = npc.getBasType();
-		if (npc.movementSeqId == baseType.idleSeqId) {
+		if (npc.movementSeqId == baseType.readySeqId) {
 			sound = npcType.idleSound;
 		} else if (npc.movementSeqId == baseType.anInt831 || npc.movementSeqId == baseType.anInt829 || npc.movementSeqId == baseType.anInt857 || baseType.anInt867 == npc.movementSeqId) {
 			sound = npcType.runSound;
@@ -51,7 +51,7 @@ public final class Npc extends PathingEntity {
 			return;
 		}
 		@Pc(28) SeqType local28 = this.seqId != -1 && this.anInt3996 == 0 ? SeqTypeList.get(this.seqId) : null;
-		@Pc(54) SeqType local54 = this.movementSeqId == -1 || this.movementSeqId == this.getBasType().idleSeqId && local28 != null ? null : SeqTypeList.get(this.movementSeqId);
+		@Pc(54) SeqType local54 = this.movementSeqId == -1 || this.movementSeqId == this.getBasType().readySeqId && local28 != null ? null : SeqTypeList.get(this.movementSeqId);
 		@Pc(75) Model local75 = this.type.method4268(this.anInt3970, this.anInt4000, local54, local28, this.anInt4011, this.aClass150Array3, this.anInt4019, this.anInt4046, this.anInt4044);
 		if (local75 == null) {
 			return;
@@ -147,7 +147,7 @@ public final class Npc extends PathingEntity {
 		}
 		if (!this.aBoolean285) {
 			@Pc(28) SeqType local28 = this.seqId != -1 && this.anInt3996 == 0 ? SeqTypeList.get(this.seqId) : null;
-			@Pc(52) SeqType local52 = this.movementSeqId == -1 || this.movementSeqId == this.getBasType().idleSeqId && local28 != null ? null : SeqTypeList.get(this.movementSeqId);
+			@Pc(52) SeqType local52 = this.movementSeqId == -1 || this.movementSeqId == this.getBasType().readySeqId && local28 != null ? null : SeqTypeList.get(this.movementSeqId);
 			@Pc(73) Model local73 = this.type.method4268(this.anInt3970, this.anInt4000, local52, local28, this.anInt4011, this.aClass150Array3, this.anInt4019, this.anInt4046, this.anInt4044);
 			if (local73 == null) {
 				return;

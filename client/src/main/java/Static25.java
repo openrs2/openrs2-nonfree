@@ -460,24 +460,6 @@ public final class Static25 {
 		Static4.anIntArrayArray31 = null;
 	}
 
-	@OriginalMember(owner = "client!nb", name = "a", descriptor = "(Ljava/lang/String;ILjava/lang/String;ILjava/lang/String;I)V")
-	public static void method2927(@OriginalArg(0) String arg0, @OriginalArg(1) int arg1, @OriginalArg(2) String arg2, @OriginalArg(3) int arg3, @OriginalArg(4) String arg4) {
-		for (@Pc(7) int local7 = 99; local7 > 0; local7--) {
-			Static5.anIntArray447[local7] = Static5.anIntArray447[local7 - 1];
-			Static3.aStringArray16[local7] = Static3.aStringArray16[local7 - 1];
-			Static6.aStringArray31[local7] = Static6.aStringArray31[local7 - 1];
-			Static1.aStringArray4[local7] = Static1.aStringArray4[local7 - 1];
-			Static7.anIntArray598[local7] = Static7.anIntArray598[local7 - 1];
-		}
-		Static5.anIntArray447[0] = arg3;
-		Static3.aStringArray16[0] = arg0;
-		Static6.aStringArray31[0] = arg4;
-		Static6.anInt5189 = Static6.anInt4979;
-		Static7.anIntArray598[0] = arg1;
-		Static5.anInt3469++;
-		Static1.aStringArray4[0] = arg2;
-	}
-
 	@OriginalMember(owner = "client!nb", name = "a", descriptor = "(ZI)V")
 	public static void method2929(@OriginalArg(1) int arg0) {
 		Static7.anInt5634--;

@@ -246,6 +246,9 @@ public final class client extends GameShell {
 	@OriginalMember(owner = "client!fo", name = "p", descriptor = "I")
 	public static int seed;
 
+	@OriginalMember(owner = "client!jd", name = "d", descriptor = "Z")
+	public static boolean displayFps = false;
+
 	@OriginalMember(owner = "client!de", name = "x", descriptor = "I")
 	public static int loop = 0;
 
@@ -346,37 +349,37 @@ public final class client extends GameShell {
 		}
 		Static6.anInt4979++;
 		if (GlRenderer.enabled) {
-			label195:
-			for (@Pc(56) int local56 = 0; local56 < 32768; local56++) {
-				@Pc(65) Npc local65 = NpcList.npcs[local56];
-				if (local65 != null) {
-					@Pc(71) byte local71 = local65.type.aByte21;
-					if ((local71 & 0x2) > 0 && local65.movementQueueSize == 0 && Math.random() * 1000.0D < 10.0D) {
-						@Pc(98) int local98 = (int) Math.round(Math.random() * 2.0D - 1.0D);
-						@Pc(106) int local106 = (int) Math.round(Math.random() * 2.0D - 1.0D);
-						if (local98 != 0 || local106 != 0) {
-							local65.movementQueueSpeed[0] = 1;
-							local65.movementQueueX[0] = local98 + (local65.xFine >> 7);
-							local65.movementQueueZ[0] = (local65.zFine >> 7) + local106;
-							PathFinder.collisionMaps[Player.level].unflagScenery(local65.xFine >> 7, local65.zFine >> 7, local65.getSize(), local65.getSize(), 0, false, false);
-							if (local65.movementQueueX[0] >= 0 && local65.movementQueueX[0] <= 104 - local65.getSize() && local65.movementQueueZ[0] >= 0 && local65.movementQueueZ[0] <= 104 - local65.getSize() && PathFinder.collisionMaps[Player.level].method575(local65.movementQueueZ[0], local65.zFine >> 7, local65.movementQueueX[0], local65.xFine >> 7)) {
-								if (local65.getSize() > 1) {
-									for (@Pc(240) int local240 = local65.movementQueueX[0]; local240 < local65.movementQueueX[0] + local65.getSize(); local240++) {
-										for (@Pc(256) int local256 = local65.movementQueueZ[0]; local65.movementQueueZ[0] + local65.getSize() > local256; local256++) {
-											if ((PathFinder.collisionMaps[Player.level].flags[local240][local256] & 0x2401FF) != 0) {
-												continue label195;
+			nextNpc:
+			for (@Pc(56) int i = 0; i < 32768; i++) {
+				@Pc(65) Npc npc = NpcList.npcs[i];
+				if (npc != null) {
+					@Pc(71) byte local71 = npc.type.aByte21;
+					if ((local71 & 0x2) > 0 && npc.movementQueueSize == 0 && Math.random() * 1000.0D < 10.0D) {
+						@Pc(98) int dx = (int) Math.round(Math.random() * 2.0D - 1.0D);
+						@Pc(106) int dz = (int) Math.round(Math.random() * 2.0D - 1.0D);
+						if (dx != 0 || dz != 0) {
+							npc.movementQueueSpeed[0] = 1;
+							npc.movementQueueX[0] = dx + (npc.xFine >> 7);
+							npc.movementQueueZ[0] = (npc.zFine >> 7) + dz;
+							PathFinder.collisionMaps[Player.level].unflagScenery(npc.xFine >> 7, npc.zFine >> 7, npc.getSize(), npc.getSize(), 0, false, false);
+							if (npc.movementQueueX[0] >= 0 && npc.movementQueueX[0] <= 104 - npc.getSize() && npc.movementQueueZ[0] >= 0 && npc.movementQueueZ[0] <= 104 - npc.getSize() && PathFinder.collisionMaps[Player.level].method575(npc.movementQueueZ[0], npc.zFine >> 7, npc.movementQueueX[0], npc.xFine >> 7)) {
+								if (npc.getSize() > 1) {
+									for (@Pc(240) int x = npc.movementQueueX[0]; x < npc.movementQueueX[0] + npc.getSize(); x++) {
+										for (@Pc(256) int z = npc.movementQueueZ[0]; npc.movementQueueZ[0] + npc.getSize() > z; z++) {
+											if ((PathFinder.collisionMaps[Player.level].flags[x][z] & 0x2401FF) != 0) {
+												continue nextNpc;
 											}
 										}
 									}
 								}
-								local65.movementQueueSize = 1;
+								npc.movementQueueSize = 1;
 							}
 						}
 					}
-					Static32.method4024(local65);
-					Static34.method4247(local65);
-					Static13.method939(local65);
-					PathFinder.collisionMaps[Player.level].flagScenery(local65.xFine >> 7, local65.zFine >> 7, local65.getSize(), local65.getSize(), false, false);
+					Static32.method4024(npc);
+					Static34.method4247(npc);
+					Static13.method939(npc);
+					PathFinder.collisionMaps[Player.level].flagScenery(npc.xFine >> 7, npc.zFine >> 7, npc.getSize(), npc.getSize(), false, false);
 				}
 			}
 		}
@@ -788,7 +791,7 @@ public final class client extends GameShell {
 			}
 			Preferences.safeMode = true;
 			Preferences.write(GameShell.signLink);
-			Static35.method4512(false, Preferences.displayMode, -1, -1);
+			Static35.setWindowMode(false, Preferences.displayMode, -1, -1);
 			mainLoadPercentage = 100;
 			mainLoadSecondaryText = LocalisedText.MAINLOAD150B;
 			mainLoadState = 160;
@@ -866,7 +869,7 @@ public final class client extends GameShell {
 			Static4.aShortArray46 = Static3.aShortArray32;
 			Static4.anInt3364 = 0xFFFFFF;
 			Static4.anInt3365 = 0;
-			Static2.aBoolean68 = true;
+			Static2.shiftClick = true;
 			Static6.aShortArrayArray6 = Static5.aShortArrayArray2;
 		} else {
 			Static6.aShortArrayArray6 = Static6.aShortArrayArray7;
@@ -908,7 +911,7 @@ public final class client extends GameShell {
 			cacheData = null;
 		}
 		if (modeWhere != 0) {
-			Static3.aBoolean176 = true;
+			displayFps = true;
 		}
 		if (game == 0) {
 			mainLoadPrimaryText = LocalisedText.GAME0_LOADING;
@@ -1122,7 +1125,7 @@ public final class client extends GameShell {
 			musicChannel.method3009();
 		}
 		if ((Static4.anInt3304 == 30 || Static4.anInt3304 == 10) && (GameShell.replaceCanvas || Static1.aLong15 != 0L && Static1.aLong15 < MonotonicClock.currentTimeMillis())) {
-			Static35.method4512(GameShell.replaceCanvas, Static11.method557(), Preferences.fullScreenWidth, Preferences.fullScreenHeight);
+			Static35.setWindowMode(GameShell.replaceCanvas, Static11.method557(), Preferences.fullScreenWidth, Preferences.fullScreenHeight);
 		}
 		if (GameShell.fullScreenFrame == null) {
 			@Pc(79) Container local79;
@@ -1146,7 +1149,7 @@ public final class client extends GameShell {
 			}
 		}
 		if (GameShell.fullScreenFrame != null && !GameShell.focus && (Static4.anInt3304 == 30 || Static4.anInt3304 == 10)) {
-			Static35.method4512(false, Preferences.displayMode, -1, -1);
+			Static35.setWindowMode(false, Preferences.displayMode, -1, -1);
 		}
 		@Pc(173) boolean local173 = false;
 		if (GameShell.fullRedraw) {
@@ -1193,7 +1196,7 @@ public final class client extends GameShell {
 			for (@Pc(436) int i = 0; i < Static1.anInt113; i++) {
 				Static6.aBooleanArray24[i] = false;
 			}
-		} else if ((Static4.anInt3304 == 30 || Static4.anInt3304 == 10) && Static1.anInt268 == 0 && !local173) {
+		} else if ((Static4.anInt3304 == 30 || Static4.anInt3304 == 10) && Static1.rectDebug == 0 && !local173) {
 			try {
 				@Pc(391) Graphics graphics = GameShell.canvas.getGraphics();
 				for (@Pc(393) int i = 0; i < Static1.anInt113; i++) {

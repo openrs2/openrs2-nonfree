@@ -118,7 +118,7 @@ public final class Static12 {
 
 	@OriginalMember(owner = "client!client", name = "c", descriptor = "(Lclient!wf;)Z")
 	public static boolean method692(@OriginalArg(0) Component arg0) {
-		if (Static1.aBoolean26) {
+		if (Static1.qaOpTest) {
 			if (InterfaceList.getServerActiveProperties(arg0).events != 0) {
 				return false;
 			}
@@ -912,7 +912,7 @@ public final class Static12 {
 		if (InterfaceList.getServerActiveProperties(arg0).getTargetMask() == 0) {
 			return null;
 		} else if (arg0.aString355 == null || arg0.aString355.trim().length() == 0) {
-			return Static1.aBoolean26 ? "Hidden-use" : null;
+			return Static1.qaOpTest ? "Hidden-use" : null;
 		} else {
 			return arg0.aString355;
 		}

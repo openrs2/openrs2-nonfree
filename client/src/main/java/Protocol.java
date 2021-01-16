@@ -45,6 +45,9 @@ public final class Protocol {
 	@OriginalMember(owner = "client!sd", name = "g", descriptor = "I")
 	private static int extendedCount = 0;
 
+	@OriginalMember(owner = "client!no", name = "U", descriptor = "Lclient!fd;")
+	private static final Buffer chatBuffer = new Buffer(new byte[5000]);
+
 	@OriginalMember(owner = "client!dc", name = "d", descriptor = "I")
 	private static int zoneX;
 
@@ -210,7 +213,7 @@ public final class Protocol {
 					}
 				}
 				if (!local914 && Static3.anInt5405 == 0) {
-					Static26.method4357(username, 4, LocalisedText.TRADEREQ);
+					ChatHistory.add(4, username, LocalisedText.TRADEREQ);
 				}
 			} else if (message.endsWith(":chalreq:")) {
 				@Pc(851) String username = message.substring(0, message.indexOf(":"));
@@ -224,7 +227,7 @@ public final class Protocol {
 				}
 				if (!local853 && Static3.anInt5405 == 0) {
 					@Pc(898) String local898 = message.substring(message.indexOf(":") + 1, message.length() - 9);
-					Static26.method4357(username, 8, local898);
+					ChatHistory.add(8, username, local898);
 				}
 			} else if (message.endsWith(":assistreq:")) {
 				@Pc(481) String username = message.substring(0, message.indexOf(":"));
@@ -237,20 +240,20 @@ public final class Protocol {
 					}
 				}
 				if (!local487 && Static3.anInt5405 == 0) {
-					Static26.method4357(username, 10, "");
+					ChatHistory.add(10, username, "");
 				}
 			} else if (message.endsWith(":clan:")) {
 				@Pc(837) String username = message.substring(0, message.indexOf(":clan:"));
-				Static26.method4357("", 11, username);
+				ChatHistory.add(11, "", username);
 			} else if (message.endsWith(":trade:")) {
 				@Pc(818) String username = message.substring(0, message.indexOf(":trade:"));
 				if (Static3.anInt5405 == 0) {
-					Static26.method4357("", 12, username);
+					ChatHistory.add(12, "", username);
 				}
 			} else if (message.endsWith(":assist:")) {
 				@Pc(542) String username = message.substring(0, message.indexOf(":assist:"));
 				if (Static3.anInt5405 == 0) {
-					Static26.method4357("", 13, username);
+					ChatHistory.add(13, "", username);
 				}
 			} else if (message.endsWith(":duelstake:")) {
 				@Pc(767) String username = message.substring(0, message.indexOf(":"));
@@ -263,7 +266,7 @@ public final class Protocol {
 					}
 				}
 				if (!local775 && Static3.anInt5405 == 0) {
-					Static26.method4357(username, 14, "");
+					ChatHistory.add(14, username, "");
 				}
 			} else if (message.endsWith(":duelfriend:")) {
 				@Pc(715) String username = message.substring(0, message.indexOf(":"));
@@ -276,7 +279,7 @@ public final class Protocol {
 					}
 				}
 				if (!local717 && Static3.anInt5405 == 0) {
-					Static26.method4357(username, 15, "");
+					ChatHistory.add(15, username, "");
 				}
 			} else if (message.endsWith(":clanreq:")) {
 				@Pc(667) String username = message.substring(0, message.indexOf(":"));
@@ -289,7 +292,7 @@ public final class Protocol {
 					}
 				}
 				if (!local673 && Static3.anInt5405 == 0) {
-					Static26.method4357(username, 16, "");
+					ChatHistory.add(16, username, "");
 				}
 			} else if (message.endsWith(":allyreq:")) {
 				@Pc(578) String username = message.substring(0, message.indexOf(":"));
@@ -303,15 +306,15 @@ public final class Protocol {
 				}
 				if (!local586 && Static3.anInt5405 == 0) {
 					@Pc(621) String local621 = message.substring(message.indexOf(":") + 1, message.length() - 9);
-					Static26.method4357(username, 21, local621);
+					ChatHistory.add(21, username, local621);
 				}
 			} else if (message.endsWith(":spam:")) {
 				@Pc(647) String username = message.substring(0, message.length() - 6);
 				if (Static3.anInt5405 == 0) {
-					Static26.method4357("", 22, username);
+					ChatHistory.add(22, "", username);
 				}
 			} else {
-				Static26.method4357("", 0, message);
+				ChatHistory.add(0, "", message);
 			}
 			opcode = -1;
 			return true;
@@ -566,7 +569,7 @@ public final class Protocol {
 		} else if (opcode == 104) {
 			@Pc(1858) long username = inboundBuffer.readLong();
 			@Pc(1865) String message = StringUtils.escape(StringUtils.formatChatMessage(WordPack.readString(inboundBuffer)));
-			Static26.method4357(Base37.decodeTitleCase(username), 6, message);
+			ChatHistory.add(6, Base37.decodeTitleCase(username), message);
 			opcode = -1;
 			return true;
 		} else if (opcode == 253) {
@@ -608,7 +611,7 @@ public final class Protocol {
 			return true;
 		} else if (opcode == 30) {
 			if (GameShell.fullScreenFrame != null) {
-				Static35.method4512(false, Preferences.displayMode, -1, -1);
+				Static35.setWindowMode(false, Preferences.displayMode, -1, -1);
 			}
 			@Pc(2051) byte[] bytes = new byte[length];
 			inboundBuffer.readEncryptedBytes(bytes, length);
@@ -744,23 +747,23 @@ public final class Protocol {
 			opcode = -1;
 			return true;
 		} else if (opcode == 44) {
-			@Pc(2559) boolean local2559 = false;
+			@Pc(2559) boolean ignore = false;
 			@Pc(2563) long username = inboundBuffer.readLong();
 			@Pc(2568) long local2568 = inboundBuffer.readUnsignedShort();
 			@Pc(2573) long local2573 = inboundBuffer.readUnsignedMedium();
-			@Pc(2579) long local2579 = (local2568 << 32) + local2573;
+			@Pc(2579) long uid = (local2568 << 32) + local2573;
 			@Pc(2583) int staffModLevel = inboundBuffer.readUnsignedByte();
-			@Pc(2585) int local2585 = 0;
+			@Pc(2585) int i = 0;
 			label1451:
 			while (true) {
-				if (local2585 >= 100) {
+				if (i >= 100) {
 					if (staffModLevel <= 1) {
 						if (LoginManager.playerUnderage && !LoginManager.parentalChatConsent || LoginManager.mapQuickChat) {
-							local2559 = true;
+							ignore = true;
 						} else {
-							for (@Pc(2623) int local2623 = 0; local2623 < IgnoreList.size; local2623++) {
-								if (username == IgnoreList.encodedUsernames[local2623]) {
-									local2559 = true;
+							for (@Pc(2623) int j = 0; j < IgnoreList.size; j++) {
+								if (username == IgnoreList.encodedUsernames[j]) {
+									ignore = true;
 									break label1451;
 								}
 							}
@@ -768,22 +771,22 @@ public final class Protocol {
 					}
 					break;
 				}
-				if (Static4.aLongArray24[local2585] == local2579) {
-					local2559 = true;
+				if (ChatHistory.uids[i] == uid) {
+					ignore = true;
 					break;
 				}
-				local2585++;
+				i++;
 			}
-			if (!local2559 && Static3.anInt5405 == 0) {
-				Static4.aLongArray24[Static1.anInt595] = local2579;
-				Static1.anInt595 = (Static1.anInt595 + 1) % 100;
+			if (!ignore && Static3.anInt5405 == 0) {
+				ChatHistory.uids[ChatHistory.uidsWriterIndex] = uid;
+				ChatHistory.uidsWriterIndex = (ChatHistory.uidsWriterIndex + 1) % 100;
 				@Pc(2663) String message = StringUtils.escape(StringUtils.formatChatMessage(WordPack.readString(inboundBuffer)));
 				if (staffModLevel == 2 || staffModLevel == 3) {
-					Static26.method4357("<img=1>" + Base37.decodeTitleCase(username), 7, message);
+					ChatHistory.add(7, "<img=1>" + Base37.decodeTitleCase(username), message);
 				} else if (staffModLevel == 1) {
-					Static26.method4357("<img=0>" + Base37.decodeTitleCase(username), 7, message);
+					ChatHistory.add(7, "<img=0>" + Base37.decodeTitleCase(username), message);
 				} else {
-					Static26.method4357(Base37.decodeTitleCase(username), 3, message);
+					ChatHistory.add(3, Base37.decodeTitleCase(username), message);
 				}
 			}
 			opcode = -1;
@@ -818,32 +821,32 @@ public final class Protocol {
 			opcode = -1;
 			return true;
 		} else if (opcode == 246) {
-			@Pc(2830) long local2830 = inboundBuffer.readLong();
+			@Pc(2830) long encodedUsername = inboundBuffer.readLong();
 			inboundBuffer.readByte();
-			@Pc(2838) long local2838 = inboundBuffer.readLong();
+			@Pc(2838) long encodedClan = inboundBuffer.readLong();
 			@Pc(2843) long local2843 = inboundBuffer.readUnsignedShort();
 			@Pc(2848) long local2848 = inboundBuffer.readUnsignedMedium();
-			@Pc(2855) long local2855 = (local2843 << 32) + local2848;
+			@Pc(2855) long uid = (local2843 << 32) + local2848;
 			@Pc(2859) int staffModLevel = inboundBuffer.readUnsignedByte();
-			@Pc(2861) boolean local2861 = false;
-			@Pc(2863) int local2863 = 0;
+			@Pc(2861) boolean ignore = false;
+			@Pc(2863) int i = 0;
 			label1702:
 			while (true) {
-				if (local2863 < 100) {
-					if (Static4.aLongArray24[local2863] != local2855) {
-						local2863++;
+				if (i < 100) {
+					if (ChatHistory.uids[i] != uid) {
+						i++;
 						continue;
 					}
-					local2861 = true;
+					ignore = true;
 					break;
 				}
 				if (staffModLevel <= 1) {
 					if (LoginManager.playerUnderage && !LoginManager.parentalChatConsent || LoginManager.mapQuickChat) {
-						local2861 = true;
+						ignore = true;
 					} else {
-						for (@Pc(2899) int local2899 = 0; local2899 < IgnoreList.size; local2899++) {
-							if (local2830 == IgnoreList.encodedUsernames[local2899]) {
-								local2861 = true;
+						for (@Pc(2899) int j = 0; j < IgnoreList.size; j++) {
+							if (encodedUsername == IgnoreList.encodedUsernames[j]) {
+								ignore = true;
 								break label1702;
 							}
 						}
@@ -851,16 +854,16 @@ public final class Protocol {
 				}
 				break;
 			}
-			if (!local2861 && Static3.anInt5405 == 0) {
-				Static4.aLongArray24[Static1.anInt595] = local2855;
-				Static1.anInt595 = (Static1.anInt595 + 1) % 100;
+			if (!ignore && Static3.anInt5405 == 0) {
+				ChatHistory.uids[ChatHistory.uidsWriterIndex] = uid;
+				ChatHistory.uidsWriterIndex = (ChatHistory.uidsWriterIndex + 1) % 100;
 				@Pc(2939) String message = StringUtils.escape(StringUtils.formatChatMessage(WordPack.readString(inboundBuffer)));
 				if (staffModLevel == 2 || staffModLevel == 3) {
-					Static26.method2982("<img=1>" + Base37.decodeTitleCase(local2830), Base37.decodeTitleCase(local2838), message);
+					ChatHistory.addClanMessage("<img=1>" + Base37.decodeTitleCase(encodedUsername), message, Base37.decodeTitleCase(encodedClan));
 				} else if (staffModLevel == 1) {
-					Static26.method2982("<img=0>" + Base37.decodeTitleCase(local2830), Base37.decodeTitleCase(local2838), message);
+					ChatHistory.addClanMessage("<img=0>" + Base37.decodeTitleCase(encodedUsername), message, Base37.decodeTitleCase(encodedClan));
 				} else {
-					Static26.method2982(Base37.decodeTitleCase(local2830), Base37.decodeTitleCase(local2838), message);
+					ChatHistory.addClanMessage(Base37.decodeTitleCase(encodedUsername), message, Base37.decodeTitleCase(encodedClan));
 				}
 			}
 			opcode = -1;
@@ -996,10 +999,10 @@ public final class Protocol {
 					if (world != FriendsList.worlds[i]) {
 						FriendsList.worlds[i] = world;
 						if (world > 0) {
-							Static26.method4357("", 5, username + LocalisedText.FRIENDLOGIN);
+							ChatHistory.add(5, "", username + LocalisedText.FRIENDLOGIN);
 						}
 						if (world == 0) {
-							Static26.method4357("", 5, username + LocalisedText.FRIENDLOGOUT);
+							ChatHistory.add(5, "", username + LocalisedText.FRIENDLOGOUT);
 						}
 					}
 					FriendsList.worldNames[i] = worldName;
@@ -1187,46 +1190,46 @@ public final class Protocol {
 			opcode = -1;
 			return true;
 		} else if (opcode == 99) {
-			@Pc(4270) long local4270 = inboundBuffer.readLong();
+			@Pc(4270) long encodedUsername = inboundBuffer.readLong();
 			inboundBuffer.readByte();
-			@Pc(4278) long local4278 = inboundBuffer.readLong();
-			@Pc(4283) long local4283 = (long) inboundBuffer.readUnsignedShort();
-			@Pc(4288) long local4288 = (long) inboundBuffer.readUnsignedMedium();
-			@Pc(4295) long local4295 = (local4283 << 32) + local4288;
-			@Pc(4299) int local4299 = inboundBuffer.readUnsignedByte();
+			@Pc(4278) long encodedClan = inboundBuffer.readLong();
+			@Pc(4283) long local4283 = inboundBuffer.readUnsignedShort();
+			@Pc(4288) long local4288 = inboundBuffer.readUnsignedMedium();
+			@Pc(4295) long uid = (local4283 << 32) + local4288;
+			@Pc(4299) int staffModLevel = inboundBuffer.readUnsignedByte();
 			@Pc(4303) int phraseId = inboundBuffer.readUnsignedShort();
-			@Pc(4305) boolean local4305 = false;
-			@Pc(4307) int local4307 = 0;
+			@Pc(4305) boolean ignore = false;
+			@Pc(4307) int i = 0;
 			label1529:
 			while (true) {
-				if (local4307 < 100) {
-					if (Static4.aLongArray24[local4307] != local4295) {
-						local4307++;
+				if (i < 100) {
+					if (ChatHistory.uids[i] != uid) {
+						i++;
 						continue;
 					}
-					local4305 = true;
+					ignore = true;
 					break;
 				}
-				if (local4299 <= 1) {
-					for (@Pc(4333) int local4333 = 0; local4333 < IgnoreList.size; local4333++) {
-						if (local4270 == IgnoreList.encodedUsernames[local4333]) {
-							local4305 = true;
+				if (staffModLevel <= 1) {
+					for (@Pc(4333) int j = 0; j < IgnoreList.size; j++) {
+						if (encodedUsername == IgnoreList.encodedUsernames[j]) {
+							ignore = true;
 							break label1529;
 						}
 					}
 				}
 				break;
 			}
-			if (!local4305 && Static3.anInt5405 == 0) {
-				Static4.aLongArray24[Static1.anInt595] = local4295;
-				Static1.anInt595 = (Static1.anInt595 + 1) % 100;
+			if (!ignore && Static3.anInt5405 == 0) {
+				ChatHistory.uids[ChatHistory.uidsWriterIndex] = uid;
+				ChatHistory.uidsWriterIndex = (ChatHistory.uidsWriterIndex + 1) % 100;
 				@Pc(4375) String message = QuickChatPhraseTypeList.get(phraseId).decodeMessage(inboundBuffer);
-				if (local4299 == 2 || local4299 == 3) {
-					Static25.method2927("<img=1>" + Base37.decodeTitleCase(local4270), phraseId, Base37.decodeTitleCase(local4278), 20, message);
-				} else if (local4299 == 1) {
-					Static25.method2927("<img=0>" + Base37.decodeTitleCase(local4270), phraseId, Base37.decodeTitleCase(local4278), 20, message);
+				if (staffModLevel == 2 || staffModLevel == 3) {
+					ChatHistory.add(20, "<img=1>" + Base37.decodeTitleCase(encodedUsername), message, Base37.decodeTitleCase(encodedClan), phraseId);
+				} else if (staffModLevel == 1) {
+					ChatHistory.add(20, "<img=0>" + Base37.decodeTitleCase(encodedUsername), message, Base37.decodeTitleCase(encodedClan), phraseId);
 				} else {
-					Static25.method2927(Base37.decodeTitleCase(local4270), phraseId, Base37.decodeTitleCase(local4278), 20, message);
+					ChatHistory.add(20, Base37.decodeTitleCase(encodedUsername), message, Base37.decodeTitleCase(encodedClan), phraseId);
 				}
 			}
 			opcode = -1;
@@ -1399,44 +1402,44 @@ public final class Protocol {
 			opcode = -1;
 			return true;
 		} else if (opcode == 222) {
-			@Pc(5111) long local5111 = inboundBuffer.readLong();
+			@Pc(5111) long encodedUsername = inboundBuffer.readLong();
 			@Pc(5116) long local5116 = inboundBuffer.readUnsignedShort();
 			@Pc(5121) long local5121 = inboundBuffer.readUnsignedMedium();
-			@Pc(5125) int local5125 = inboundBuffer.readUnsignedByte();
+			@Pc(5125) int staffModLevel = inboundBuffer.readUnsignedByte();
 			@Pc(5129) int phraseId = inboundBuffer.readUnsignedShort();
-			@Pc(5131) boolean local5131 = false;
-			@Pc(5137) long local5137 = (local5116 << 32) + local5121;
-			@Pc(5139) int local5139 = 0;
+			@Pc(5131) boolean ignore = false;
+			@Pc(5137) long uid = (local5116 << 32) + local5121;
+			@Pc(5139) int i = 0;
 			label1545:
 			while (true) {
-				if (local5139 < 100) {
-					if (local5137 != Static4.aLongArray24[local5139]) {
-						local5139++;
+				if (i < 100) {
+					if (uid != ChatHistory.uids[i]) {
+						i++;
 						continue;
 					}
-					local5131 = true;
+					ignore = true;
 					break;
 				}
-				if (local5125 <= 1) {
-					for (@Pc(5167) int local5167 = 0; local5167 < IgnoreList.size; local5167++) {
-						if (IgnoreList.encodedUsernames[local5167] == local5111) {
-							local5131 = true;
+				if (staffModLevel <= 1) {
+					for (@Pc(5167) int j = 0; j < IgnoreList.size; j++) {
+						if (IgnoreList.encodedUsernames[j] == encodedUsername) {
+							ignore = true;
 							break label1545;
 						}
 					}
 				}
 				break;
 			}
-			if (!local5131 && Static3.anInt5405 == 0) {
-				Static4.aLongArray24[Static1.anInt595] = local5137;
-				Static1.anInt595 = (Static1.anInt595 + 1) % 100;
+			if (!ignore && Static3.anInt5405 == 0) {
+				ChatHistory.uids[ChatHistory.uidsWriterIndex] = uid;
+				ChatHistory.uidsWriterIndex = (ChatHistory.uidsWriterIndex + 1) % 100;
 				@Pc(5214) String message = QuickChatPhraseTypeList.get(phraseId).decodeMessage(inboundBuffer);
-				if (local5125 == 2) {
-					Static25.method2927("<img=1>" + Base37.decodeTitleCase(local5111), phraseId, null, 18, message);
-				} else if (local5125 == 1) {
-					Static25.method2927("<img=0>" + Base37.decodeTitleCase(local5111), phraseId, null, 18, message);
+				if (staffModLevel == 2) {
+					ChatHistory.add(18, "<img=1>" + Base37.decodeTitleCase(encodedUsername), message, null, phraseId);
+				} else if (staffModLevel == 1) {
+					ChatHistory.add(18, "<img=0>" + Base37.decodeTitleCase(encodedUsername), message, null, phraseId);
 				} else {
-					Static25.method2927(Base37.decodeTitleCase(local5111), phraseId, null, 18, message);
+					ChatHistory.add(18, Base37.decodeTitleCase(encodedUsername), message, null, phraseId);
 				}
 			}
 			opcode = -1;
@@ -1621,7 +1624,7 @@ public final class Protocol {
 			@Pc(5909) long username = inboundBuffer.readLong();
 			@Pc(5913) int phraseId = inboundBuffer.readUnsignedShort();
 			@Pc(5920) String message = QuickChatPhraseTypeList.get(phraseId).decodeMessage(inboundBuffer);
-			Static25.method2927(Base37.decodeTitleCase(username), phraseId, null, 19, message);
+			ChatHistory.add(19, Base37.decodeTitleCase(username), message, null, phraseId);
 			opcode = -1;
 			return true;
 		} else if (opcode == 199) {
@@ -2313,9 +2316,9 @@ public final class Protocol {
 			player.aString234 = inboundBuffer.readString();
 			if (player.aString234.charAt(0) == '~') {
 				player.aString234 = player.aString234.substring(1);
-				Static26.method4357(player.method1173(), 2, player.aString234);
+				ChatHistory.add(2, player.method1173(), player.aString234);
 			} else if (player == PlayerList.self) {
-				Static26.method4357(player.method1173(), 2, player.aString234);
+				ChatHistory.add(2, player.method1173(), player.aString234);
 			}
 			player.anInt3998 = 0;
 			player.anInt3981 = 0;
@@ -2323,53 +2326,53 @@ public final class Protocol {
 		}
 		if ((flags & 0x20) != 0) {
 			@Pc(232) int local232 = inboundBuffer.readUnsignedShortA();
-			@Pc(236) int local236 = inboundBuffer.readUnsignedByteA();
+			@Pc(236) int staffModelLevel = inboundBuffer.readUnsignedByteA();
 			@Pc(244) boolean local244 = (local232 & 0x8000) != 0;
-			@Pc(248) int local248 = inboundBuffer.readUnsignedByteS();
-			@Pc(251) int local251 = inboundBuffer.position;
+			@Pc(248) int len = inboundBuffer.readUnsignedByteS();
+			@Pc(251) int off = inboundBuffer.position;
 			if (player.name != null && player.appearance != null) {
-				@Pc(264) long local264 = Base37.encode(player.name);
-				@Pc(266) boolean local266 = false;
-				if (local236 <= 1) {
+				@Pc(264) long encodedUsername = Base37.encode(player.name);
+				@Pc(266) boolean ignore = false;
+				if (staffModelLevel <= 1) {
 					if (!local244 && (LoginManager.playerUnderage && !LoginManager.parentalChatConsent || LoginManager.mapQuickChat)) {
-						local266 = true;
+						ignore = true;
 					} else {
-						for (@Pc(284) int local284 = 0; local284 < IgnoreList.size; local284++) {
-							if (local264 == IgnoreList.encodedUsernames[local284]) {
-								local266 = true;
+						for (@Pc(284) int i = 0; i < IgnoreList.size; i++) {
+							if (encodedUsername == IgnoreList.encodedUsernames[i]) {
+								ignore = true;
 								break;
 							}
 						}
 					}
 				}
-				if (!local266 && Static3.anInt5405 == 0) {
-					Static5.aClass4_Sub10_8.position = 0;
+				if (!ignore && Static3.anInt5405 == 0) {
+					chatBuffer.position = 0;
 					@Pc(314) int phraseId = -1;
-					inboundBuffer.readBytesReverse(Static5.aClass4_Sub10_8.bytes, local248);
-					Static5.aClass4_Sub10_8.position = 0;
+					inboundBuffer.readBytesReverse(chatBuffer.bytes, len);
+					chatBuffer.position = 0;
 					@Pc(333) String message;
 					if (local244) {
 						local232 &= 32767;
-						@Pc(343) QuickChatPhrase phrase = QuickChatPhrase.decode(Static5.aClass4_Sub10_8);
+						@Pc(343) QuickChatPhrase phrase = QuickChatPhrase.decode(chatBuffer);
 						phraseId = phrase.id;
-						message = phrase.type.decodeMessage(Static5.aClass4_Sub10_8);
+						message = phrase.type.decodeMessage(chatBuffer);
 					} else {
-						message = StringUtils.escape(StringUtils.formatChatMessage(WordPack.readString(Static5.aClass4_Sub10_8)));
+						message = StringUtils.escape(StringUtils.formatChatMessage(WordPack.readString(chatBuffer)));
 					}
 					player.aString234 = message.trim();
 					player.anInt3998 = local232 & 0xFF;
 					player.anInt4023 = 150;
 					player.anInt3981 = local232 >> 8;
-					if (local236 == 2) {
-						Static25.method2927("<img=1>" + player.method1173(), phraseId, null, local244 ? 17 : 1, message);
-					} else if (local236 == 1) {
-						Static25.method2927("<img=0>" + player.method1173(), phraseId, null, local244 ? 17 : 1, message);
+					if (staffModelLevel == 2) {
+						ChatHistory.add(local244 ? 17 : 1, "<img=1>" + player.method1173(), message, null, phraseId);
+					} else if (staffModelLevel == 1) {
+						ChatHistory.add(local244 ? 17 : 1, "<img=0>" + player.method1173(), message, null, phraseId);
 					} else {
-						Static25.method2927(player.method1173(), phraseId, null, local244 ? 17 : 2, message);
+						ChatHistory.add(local244 ? 17 : 2, player.method1173(), message, null, phraseId);
 					}
 				}
 			}
-			inboundBuffer.position = local251 + local248;
+			inboundBuffer.position = off + len;
 		}
 		if ((flags & 0x100) != 0) {
 			@Pc(450) int local450 = inboundBuffer.readUnsignedShortLE();

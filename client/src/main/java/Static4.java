@@ -250,9 +250,6 @@ public final class Static4 {
 	@OriginalMember(owner = "client!la", name = "W", descriptor = "I")
 	public static int anInt3020 = -1;
 
-	@OriginalMember(owner = "client!la", name = "Z", descriptor = "[J")
-	public static final long[] aLongArray24 = new long[100];
-
 	@OriginalMember(owner = "client!la", name = "cb", descriptor = "Z")
 	public static boolean aBoolean210 = false;
 

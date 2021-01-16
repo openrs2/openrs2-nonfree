@@ -364,9 +364,6 @@ public final class Static3 {
 	@OriginalMember(owner = "client!ib", name = "H", descriptor = "[F")
 	public static final float[] aFloatArray23 = new float[4];
 
-	@OriginalMember(owner = "client!id", name = "c", descriptor = "[Ljava/lang/String;")
-	public static final String[] aStringArray16 = new String[100];
-
 	@OriginalMember(owner = "client!ig", name = "a", descriptor = "I")
 	public static int anInt2341 = -1;
 
@@ -417,9 +414,6 @@ public final class Static3 {
 
 	@OriginalMember(owner = "client!jc", name = "R", descriptor = "I")
 	public static int anInt2553 = 100;
-
-	@OriginalMember(owner = "client!jd", name = "d", descriptor = "Z")
-	public static boolean aBoolean176 = false;
 
 	@OriginalMember(owner = "client!je", name = "e", descriptor = "I")
 	public static int anInt2571 = -1;

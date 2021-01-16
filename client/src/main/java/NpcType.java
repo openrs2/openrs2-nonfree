@@ -615,7 +615,7 @@ public final class NpcType {
 						local720 |= Static1.aClass4_Sub3_Sub19Array1[local733].method4150(local779);
 						local724 |= local752.aBoolean72;
 					}
-					if ((local752.aBoolean70 || Static6.aBoolean258) && local774 != -1 && local774 < local752.anIntArray95.length) {
+					if ((local752.tween || SeqType.forceTween) && local774 != -1 && local774 < local752.anIntArray95.length) {
 						Static6.anIntArray528[local733] = local752.anIntArray94[local769];
 						Static1.anIntArray47[local733] = arg5[local733].anInt4460;
 						@Pc(861) int local861 = local752.anIntArray95[local774];
@@ -657,7 +657,7 @@ public final class NpcType {
 				local720 |= local960.method4150(local958);
 				local724 |= arg3.aBoolean72;
 			}
-			if ((arg3.aBoolean70 || Static6.aBoolean258) && arg4 != -1 && arg4 < arg3.anIntArray95.length) {
+			if ((arg3.tween || SeqType.forceTween) && arg4 != -1 && arg4 < arg3.anIntArray95.length) {
 				@Pc(1031) int local1031 = arg3.anIntArray95[arg4];
 				local964 = arg3.anIntArray94[arg0];
 				@Pc(1040) int local1040 = local1031 >>> 16;
@@ -688,7 +688,7 @@ public final class NpcType {
 				local720 |= local1086.method4150(local1082);
 				local724 |= arg2.aBoolean72;
 			}
-			if ((arg2.aBoolean70 || Static6.aBoolean258) && arg6 != -1 && arg6 < arg2.anIntArray95.length) {
+			if ((arg2.tween || SeqType.forceTween) && arg6 != -1 && arg6 < arg2.anIntArray95.length) {
 				local1084 = arg2.anIntArray94[arg7];
 				@Pc(1158) int local1158 = arg2.anIntArray95[arg6];
 				@Pc(1162) int local1162 = local1158 >>> 16;

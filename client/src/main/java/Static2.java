@@ -152,7 +152,7 @@ public final class Static2 {
 	public static int anInt1216 = 0;
 
 	@OriginalMember(owner = "client!ed", name = "H", descriptor = "Z")
-	public static boolean aBoolean68 = false;
+	public static boolean shiftClick = false;
 
 	@OriginalMember(owner = "client!ef", name = "b", descriptor = "I")
 	public static final int anInt1221 = 7759444;

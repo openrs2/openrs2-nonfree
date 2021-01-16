@@ -875,7 +875,7 @@ public final class Static20 {
 				Static4.anInt2853--;
 			}
 		}
-		if (!Static3.aBoolean176) {
+		if (!client.displayFps) {
 			return;
 		}
 		@Pc(310) int local310 = arg3 + arg2 - 5;

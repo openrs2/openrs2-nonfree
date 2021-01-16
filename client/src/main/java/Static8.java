@@ -173,7 +173,7 @@ public final class Static8 {
 			}
 		}
 		if (!local19) {
-			Static26.method4357("", 0, LocalisedText.UNABLETOFIND + local17);
+			ChatHistory.add(0, "", LocalisedText.UNABLETOFIND + local17);
 		}
 	}
 

@@ -82,7 +82,7 @@ public final class BasType {
 	public int anInt861 = -1;
 
 	@OriginalMember(owner = "client!d", name = "K", descriptor = "I")
-	public int idleSeqId = -1;
+	public int readySeqId = -1;
 
 	@OriginalMember(owner = "client!d", name = "P", descriptor = "I")
 	public int anInt865 = -1;
@@ -122,10 +122,10 @@ public final class BasType {
 	@OriginalMember(owner = "client!d", name = "a", descriptor = "(IILclient!fd;)V")
 	private void decode(@OriginalArg(2) Buffer buffer, @OriginalArg(1) int code) {
 		if (code == 1) {
-			this.idleSeqId = buffer.readUnsignedShort();
+			this.readySeqId = buffer.readUnsignedShort();
 			this.anInt846 = buffer.readUnsignedShort();
-			if (this.idleSeqId == 65535) {
-				this.idleSeqId = -1;
+			if (this.readySeqId == 65535) {
+				this.readySeqId = -1;
 			}
 			if (this.anInt846 == 65535) {
 				this.anInt846 = -1;

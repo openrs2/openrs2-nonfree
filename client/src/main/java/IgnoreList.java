@@ -21,24 +21,24 @@ public final class IgnoreList {
 			return;
 		}
 		if (size >= 100) {
-			Static26.method4357("", 0, LocalisedText.IGNORELISTFULL);
+			ChatHistory.add(0, "", LocalisedText.IGNORELISTFULL);
 			return;
 		}
 		@Pc(25) String username = Base37.decodeTitleCase(encodedUsername);
 		for (@Pc(27) int i = 0; i < size; i++) {
 			if (encodedUsernames[i] == encodedUsername) {
-				Static26.method4357("", 0, username + LocalisedText.IGNORELISTDUPE);
+				ChatHistory.add(0, "", username + LocalisedText.IGNORELISTDUPE);
 				return;
 			}
 		}
 		for (@Pc(59) int i = 0; i < FriendsList.size; i++) {
 			if (FriendsList.encodedUsernames[i] == encodedUsername) {
-				Static26.method4357("", 0, LocalisedText.REMOVEFRIEND1 + username + LocalisedText.REMOVEFRIEND2);
+				ChatHistory.add(0, "", LocalisedText.REMOVEFRIEND1 + username + LocalisedText.REMOVEFRIEND2);
 				return;
 			}
 		}
 		if (username.equals(PlayerList.self.name)) {
-			Static26.method4357("", 0, LocalisedText.IGNORECANTADDSELF);
+			ChatHistory.add(0, "", LocalisedText.IGNORECANTADDSELF);
 			return;
 		}
 		encodedUsernames[size] = encodedUsername;

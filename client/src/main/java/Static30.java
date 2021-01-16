@@ -69,7 +69,7 @@ public final class Static30 {
 					@Pc(117) int local117 = local38.anInt5903;
 					@Pc(122) int local122 = local38.anInt5888 + arg7;
 					@Pc(128) int local128 = local38.anInt5960 + arg0;
-					if (Static1.aBoolean26 && (InterfaceList.getServerActiveProperties(local38).events != 0 || local38.type == 0) && local117 > 127) {
+					if (Static1.qaOpTest && (InterfaceList.getServerActiveProperties(local38).events != 0 || local38.type == 0) && local117 > 127) {
 						local117 = 127;
 					}
 					if (local38 == Static1.aClass185_1) {
@@ -226,7 +226,7 @@ public final class Static30 {
 								continue;
 							}
 							if (local38.anInt5904 == 1405) {
-								if (!Static3.aBoolean176) {
+								if (!client.displayFps) {
 									continue;
 								}
 								@Pc(787) int local787 = local128 + local38.anInt5893;
@@ -279,7 +279,7 @@ public final class Static30 {
 							}
 						}
 						if (!Static1.aBoolean17) {
-							if (local38.type == 0 && local38.aBoolean407 && local266 <= Static4.anInt3341 && Static5.anInt5848 >= local259 && Static4.anInt3341 < local309 && local298 > Static5.anInt5848 && !Static1.aBoolean26) {
+							if (local38.type == 0 && local38.aBoolean407 && local266 <= Static4.anInt3341 && Static5.anInt5848 >= local259 && Static4.anInt3341 < local309 && local298 > Static5.anInt5848 && !Static1.qaOpTest) {
 								Static6.aShortArray100[0] = 1006;
 								Static6.aStringArray30[0] = LocalisedText.CANCEL;
 								Static6.aStringArray27[0] = "";
@@ -311,7 +311,7 @@ public final class Static30 {
 							}
 							@Pc(1207) SubInterface local1207 = (SubInterface) InterfaceList.subInterfaces.get((long) local38.id);
 							if (local1207 != null) {
-								if (local1207.type == 0 && !Static1.aBoolean17 && Static4.anInt3341 >= local266 && Static5.anInt5848 >= local259 && local309 > Static4.anInt3341 && Static5.anInt5848 < local298 && !Static1.aBoolean26) {
+								if (local1207.type == 0 && !Static1.aBoolean17 && Static4.anInt3341 >= local266 && Static5.anInt5848 >= local259 && local309 > Static4.anInt3341 && Static5.anInt5848 < local298 && !Static1.qaOpTest) {
 									Static6.aShortArray100[0] = 1006;
 									Static2.anIntArray160[0] = Static7.anInt6050;
 									Static6.aStringArray30[0] = LocalisedText.CANCEL;
@@ -331,7 +331,7 @@ public final class Static30 {
 								Static23.method2561();
 							}
 						}
-						if (Static1.aBooleanArray2[local89] || Static1.anInt268 > 1) {
+						if (Static1.aBooleanArray2[local89] || Static1.rectDebug > 1) {
 							if (local38.type == 0 && !local38.if3 && local38.anInt5949 < local38.anInt5887) {
 								method3607(local38.anInt5949, local38.anInt5893 + local128, local38.anInt5887, local122, local38.anInt5931);
 							}

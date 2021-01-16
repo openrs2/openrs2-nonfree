@@ -111,136 +111,6 @@ public final class Static27 {
 		return true;
 	}
 
-	@OriginalMember(owner = "client!of", name = "a", descriptor = "(BLjava/lang/String;)V")
-	public static void method3185(@OriginalArg(1) String arg0) {
-		if (LoginManager.staffModLevel >= 2) {
-			if (arg0.equalsIgnoreCase("::gc")) {
-				method4709();
-				for (@Pc(20) int local20 = 0; local20 < 10; local20++) {
-					System.gc();
-				}
-				@Pc(29) Runtime local29 = Runtime.getRuntime();
-				@Pc(38) int local38 = (int) ((local29.totalMemory() - local29.freeMemory()) / 1024L);
-				Static26.method4357(null, 0, "mem=" + local38 + "k");
-			}
-			if (arg0.equalsIgnoreCase("::mm")) {
-				method4709();
-				for (@Pc(60) int local60 = 0; local60 < 10; local60++) {
-					System.gc();
-				}
-				@Pc(69) Runtime local69 = Runtime.getRuntime();
-				@Pc(79) int local79 = (int) ((local69.totalMemory() - local69.freeMemory()) / 1024L);
-				Static26.method4357(null, 0, "Memory before cleanup=" + local79 + "k");
-				Static24.method2567();
-				method4709();
-				for (@Pc(99) int local99 = 0; local99 < 10; local99++) {
-					System.gc();
-				}
-				@Pc(115) int local115 = (int) ((local69.totalMemory() - local69.freeMemory()) / 1024L);
-				Static26.method4357(null, 0, "Memory after cleanup=" + local115 + "k");
-			}
-			if (arg0.equalsIgnoreCase("::pcachesize")) {
-				Static26.method4357(null, 0, "Number of player models in cache:" + Static15.method1228());
-			}
-			if (GlRenderer.enabled && arg0.equalsIgnoreCase("::cardmem")) {
-				System.out.println("oncard_geometry:" + GlCleaner.onCardGeometry);
-				System.out.println("oncard_2d:" + GlCleaner.onCard2d);
-				System.out.println("oncard_texture:" + GlCleaner.onCardTexture);
-			}
-			if (arg0.equalsIgnoreCase("::clientdrop")) {
-				Static23.method2455();
-			}
-			if (arg0.equalsIgnoreCase("::clientjs5drop")) {
-				client.js5NetQueue.quit();
-			}
-			if (arg0.equalsIgnoreCase("::serverjs5drop")) {
-				client.js5NetQueue.closeServer();
-			}
-			if (arg0.equalsIgnoreCase("::breakcon")) {
-				GameShell.signLink.breakConnection();
-				Protocol.socket.breakConnection();
-				client.js5NetQueue.breakConnection();
-			}
-			if (arg0.equalsIgnoreCase("::replacecanvas")) {
-				GameShell.replaceCanvas = true;
-			}
-			if (arg0.equalsIgnoreCase("::rebuild")) {
-				Static9.method233(25);
-			}
-			if (arg0.equalsIgnoreCase("::fpson")) {
-				Static3.aBoolean176 = true;
-			}
-			if (arg0.equalsIgnoreCase("::fpsoff")) {
-				Static3.aBoolean176 = false;
-			}
-			if (arg0.equalsIgnoreCase("::wm0")) {
-				Static35.method4512(false, 0, -1, -1);
-			}
-			if (arg0.equalsIgnoreCase("::wm1")) {
-				Static35.method4512(false, 1, -1, -1);
-			}
-			if (arg0.equalsIgnoreCase("::wm2")) {
-				Static35.method4512(false, 2, -1, -1);
-			}
-			if (arg0.equalsIgnoreCase("::wm3")) {
-				Static35.method4512(false, 3, 1024, 768);
-			}
-			if (arg0.startsWith("::setba")) {
-				Preferences.buildArea = StringUtils.parseInt(arg0.substring(8));
-				Preferences.write(GameShell.signLink);
-				Preferences.sentToServer = false;
-			}
-			if (arg0.startsWith("::setparticles")) {
-				Preferences.setParticles(StringUtils.parseInt(arg0.substring(15)));
-				Preferences.write(GameShell.signLink);
-				Preferences.sentToServer = false;
-			}
-			if (arg0.startsWith("::fps ") && client.modeWhere != 0) {
-				GameShell.setFramesPerSecond(StringUtils.parseInt(arg0.substring(6)));
-			}
-			if (arg0.equalsIgnoreCase("::errortest")) {
-				throw new RuntimeException();
-			}
-			if (arg0.startsWith("::rect_debug")) {
-				Static1.anInt268 = StringUtils.parseInt(arg0.substring(12).trim());
-				Static26.method4357(null, 0, "rect_debug=" + Static1.anInt268);
-			}
-			if (arg0.equalsIgnoreCase("::qa_op_test")) {
-				Static1.aBoolean26 = true;
-			}
-			if (arg0.startsWith("::hdr") && GlRenderer.enabled && !Static10.setHdrEnabled(!PostProcessorManager.isBloomEnabled())) {
-				Static26.method4357(null, 0, "Failed to enable hdr");
-			}
-			if (arg0.equalsIgnoreCase("::tween")) {
-				if (Static6.aBoolean258) {
-					Static6.aBoolean258 = false;
-					Static26.method4357(null, 0, "Forced tweening disabled.");
-				} else {
-					Static6.aBoolean258 = true;
-					Static26.method4357(null, 0, "Forced tweening ENABLED!");
-				}
-			}
-			if (arg0.equalsIgnoreCase("::shiftclick")) {
-				if (Static2.aBoolean68) {
-					System.out.println("Shift-click disabled.");
-					Static2.aBoolean68 = false;
-				} else {
-					System.out.println("Shift-click ENABLED!");
-					Static2.aBoolean68 = true;
-				}
-			}
-			if (arg0.equalsIgnoreCase("::getcgcoord")) {
-				Static26.method4357(null, 0, "x:" + (PlayerList.self.xFine >> 7) + " z:" + (PlayerList.self.zFine >> 7) + " groundh:" + SceneGraph.tileHeights[Player.level][PlayerList.self.xFine >> 7][PlayerList.self.zFine >> 7]);
-			}
-			if (arg0.equalsIgnoreCase("::getheight")) {
-				Static26.method4357(null, 0, "Height: " + SceneGraph.tileHeights[Player.level][PlayerList.self.xFine >> 7][PlayerList.self.zFine >> 7]);
-			}
-		}
-		Protocol.outboundBuffer.writeOpcode(216);
-		Protocol.outboundBuffer.writeByte(arg0.length() - 1);
-		Protocol.outboundBuffer.writeString(arg0.substring(2));
-	}
-
 	@OriginalMember(owner = "client!of", name = "c", descriptor = "(III)V")
 	public static void method3186(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
 		Static2.aBoolean101 = true;
@@ -336,7 +206,7 @@ public final class Static27 {
 	}
 
 	@OriginalMember(owner = "client!og", name = "h", descriptor = "(B)V")
-	private static void method4709() {
+	public static void method4709() {
 		FloTypeList.removeSoft();
 		FluTypeList.removeSoft();
 		IdkTypeList.removeSoft();

@@ -284,7 +284,7 @@ public final class Static11 {
 		if (arg2.aByte27 == 4) {
 			arg2.anInt5949 = arg2.anInt5970 * arg2.anInt5893 / arg2.anInt5908;
 		}
-		if (Static1.aBoolean26 && (InterfaceList.getServerActiveProperties(arg2).events != 0 || arg2.type == 0)) {
+		if (Static1.qaOpTest && (InterfaceList.getServerActiveProperties(arg2).events != 0 || arg2.type == 0)) {
 			if (arg2.anInt5949 < 5 && arg2.anInt5893 < 5) {
 				arg2.anInt5949 = 5;
 				arg2.anInt5893 = 5;
@@ -426,13 +426,13 @@ public final class Static11 {
 		Static1.aBoolean17 = false;
 		Static7.anInt5634 = 0;
 		Mouse.setIdleLoops(0);
-		for (@Pc(3667) int local3667 = 0; local3667 < 100; local3667++) {
-			Static6.aStringArray31[local3667] = null;
+		for (@Pc(3667) int i = 0; i < 100; i++) {
+			ChatHistory.messages[i] = null;
 		}
 		Static6.anInt4761 = (int) (Math.random() * 30.0D) - 20;
 		Static1.anInt548 = (int) (Math.random() * 100.0D) - 50;
 		Static6.anInt3585 = (int) (Math.random() * 120.0D) - 60;
-		Static5.anInt3469 = 0;
+		ChatHistory.size = 0;
 		Static5.aFloat97 = (int) (Math.random() * 20.0D) - 10 & 0x7FF;
 		Static1.anInt242 = (int) (Math.random() * 80.0D) - 40;
 		Static3.aBoolean177 = false;

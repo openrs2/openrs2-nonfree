@@ -20,7 +20,7 @@ public final class AreaSoundManager {
 		for (@Pc(31) AreaSound areaSound = (AreaSound) npcSounds.head(); areaSound != null; areaSound = (AreaSound) npcSounds.next()) {
 			@Pc(40) byte movementSpeed = 1;
 			@Pc(45) BasType basType = areaSound.npc.getBasType();
-			if (areaSound.npc.movementSeqId == basType.idleSeqId) {
+			if (areaSound.npc.movementSeqId == basType.readySeqId) {
 				movementSpeed = 0;
 			} else if (areaSound.npc.movementSeqId == basType.anInt831 || areaSound.npc.movementSeqId == basType.anInt829 || areaSound.npc.movementSeqId == basType.anInt857 || areaSound.npc.movementSeqId == basType.anInt867) {
 				movementSpeed = 2;
@@ -47,7 +47,7 @@ public final class AreaSoundManager {
 		for (@Pc(217) AreaSound areaSound = (AreaSound) playerSounds.head(); areaSound != null; areaSound = (AreaSound) playerSounds.next()) {
 			@Pc(222) byte movementSpeed = 1;
 			@Pc(227) BasType basType = areaSound.player.getBasType();
-			if (basType.idleSeqId == areaSound.player.movementSeqId) {
+			if (basType.readySeqId == areaSound.player.movementSeqId) {
 				movementSpeed = 0;
 			} else if (basType.anInt831 == areaSound.player.movementSeqId || basType.anInt829 == areaSound.player.movementSeqId || areaSound.player.movementSeqId == basType.anInt857 || areaSound.player.movementSeqId == basType.anInt867) {
 				movementSpeed = 2;

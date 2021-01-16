@@ -33,24 +33,24 @@ public final class FriendsList {
 			return;
 		}
 		if (size >= 100 && !LoginManager.playerMember || size >= 200) {
-			Static26.method4357("", 0, LocalisedText.FRIENDLISTFULL);
+			ChatHistory.add(0, "", LocalisedText.FRIENDLISTFULL);
 			return;
 		}
 		@Pc(35) String username = Base37.decodeTitleCase(encodedUsername);
 		for (@Pc(37) int i = 0; i < size; i++) {
 			if (encodedUsername == encodedUsernames[i]) {
-				Static26.method4357("", 0, username + LocalisedText.FRIENDLISTDUPE);
+				ChatHistory.add(0, "", username + LocalisedText.FRIENDLISTDUPE);
 				return;
 			}
 		}
 		for (@Pc(69) int i = 0; i < IgnoreList.size; i++) {
 			if (encodedUsername == IgnoreList.encodedUsernames[i]) {
-				Static26.method4357("", 0, LocalisedText.REMOVEIGNORE1 + username + LocalisedText.REMOVEIGNORE2);
+				ChatHistory.add(0, "", LocalisedText.REMOVEIGNORE1 + username + LocalisedText.REMOVEIGNORE2);
 				return;
 			}
 		}
 		if (username.equals(PlayerList.self.name)) {
-			Static26.method4357("", 0, LocalisedText.FRIENDCANTADDSELF);
+			ChatHistory.add(0, "", LocalisedText.FRIENDCANTADDSELF);
 			return;
 		}
 		usernames[size] = username;

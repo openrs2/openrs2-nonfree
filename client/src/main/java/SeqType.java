@@ -6,6 +6,9 @@ import org.openrs2.deob.annotation.Pc;
 @OriginalClass("client!eg")
 public final class SeqType {
 
+	@OriginalMember(owner = "client!tj", name = "h", descriptor = "Z")
+	public static boolean forceTween = false;
+
 	@OriginalMember(owner = "client!eg", name = "a", descriptor = "I")
 	public int id;
 
@@ -28,7 +31,7 @@ public final class SeqType {
 	public int anInt1224 = -1;
 
 	@OriginalMember(owner = "client!eg", name = "l", descriptor = "Z")
-	public boolean aBoolean70 = false;
+	public boolean tween = false;
 
 	@OriginalMember(owner = "client!eg", name = "u", descriptor = "I")
 	public int anInt1238 = 2;
@@ -71,7 +74,7 @@ public final class SeqType {
 		}
 		@Pc(35) AnimFrameset local35 = null;
 		arg3 &= 3;
-		if ((this.aBoolean70 || Static6.aBoolean258) && arg0 != -1 && this.anIntArray95.length > arg0) {
+		if ((this.tween || forceTween) && arg0 != -1 && this.anIntArray95.length > arg0) {
 			arg0 = this.anIntArray95[arg0];
 			local35 = SeqTypeList.getAnimFrameset(arg0 >> 16);
 			arg0 &= 65535;
@@ -137,7 +140,7 @@ public final class SeqType {
 			return arg2.method3831(true, true, true);
 		}
 		@Pc(39) AnimFrameset local39 = null;
-		if ((this.aBoolean70 || Static6.aBoolean258) && arg1 != -1 && arg1 < this.anIntArray95.length) {
+		if ((this.tween || forceTween) && arg1 != -1 && arg1 < this.anIntArray95.length) {
 			arg1 = this.anIntArray95[arg1];
 			local39 = SeqTypeList.getAnimFrameset(arg1 >> 16);
 			arg1 &= 65535;
@@ -154,7 +157,7 @@ public final class SeqType {
 					local77 &= 65535;
 				}
 			}
-			if ((this.aBoolean70 || Static6.aBoolean258) && arg1 != -1 && arg1 < this.anIntArray93.length) {
+			if ((this.tween || forceTween) && arg1 != -1 && arg1 < this.anIntArray93.length) {
 				local75 = this.anIntArray93[arg1];
 				if (local75 != 65535) {
 					local79 = SeqTypeList.getAnimFrameset(local75 >> 16);
@@ -194,7 +197,7 @@ public final class SeqType {
 			return arg2.method3836(true, true, true);
 		}
 		@Pc(43) AnimFrameset local43 = null;
-		if ((this.aBoolean70 || Static6.aBoolean258) && arg3 != -1 && arg3 < this.anIntArray95.length) {
+		if ((this.tween || forceTween) && arg3 != -1 && arg3 < this.anIntArray95.length) {
 			arg3 = this.anIntArray95[arg3];
 			local43 = SeqTypeList.getAnimFrameset(arg3 >> 16);
 			arg3 &= 65535;
@@ -273,7 +276,7 @@ public final class SeqType {
 		} else if (arg1 == 14) {
 			this.aBoolean72 = true;
 		} else if (arg1 == 15) {
-			this.aBoolean70 = true;
+			this.tween = true;
 		} else if (arg1 == 16) {
 			this.aBoolean71 = true;
 		}
@@ -290,7 +293,7 @@ public final class SeqType {
 		}
 		arg3 &= 3;
 		@Pc(40) AnimFrameset local40 = null;
-		if ((this.aBoolean70 || Static6.aBoolean258) && arg0 != -1 && arg0 < this.anIntArray95.length) {
+		if ((this.tween || forceTween) && arg0 != -1 && arg0 < this.anIntArray95.length) {
 			arg0 = this.anIntArray95[arg0];
 			local40 = SeqTypeList.getAnimFrameset(arg0 >> 16);
 			arg0 &= 65535;

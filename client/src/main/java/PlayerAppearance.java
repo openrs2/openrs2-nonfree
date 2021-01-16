@@ -243,7 +243,7 @@ public final class PlayerAppearance {
 						local848 |= Static5.aClass4_Sub3_Sub19Array4[local862].method4150(local906);
 						local852 |= local881.aBoolean72;
 					}
-					if ((local881.aBoolean70 || Static6.aBoolean258) && local901 != -1 && local881.anIntArray95.length > local901) {
+					if ((local881.tween || SeqType.forceTween) && local901 != -1 && local881.anIntArray95.length > local901) {
 						Static6.anIntArray483[local862] = local881.anIntArray94[local896];
 						Static3.anIntArray181[local862] = arg0[local862].anInt4460;
 						@Pc(1002) int local1002 = local881.anIntArray95[local901];
@@ -279,7 +279,7 @@ public final class PlayerAppearance {
 					local848 |= local1068.method4150(local1064);
 					local852 |= arg8.aBoolean72;
 				}
-				if ((arg8.aBoolean70 || Static6.aBoolean258) && arg2 != -1 && arg2 < arg8.anIntArray95.length) {
+				if ((arg8.tween || SeqType.forceTween) && arg2 != -1 && arg2 < arg8.anIntArray95.length) {
 					@Pc(1134) int local1134 = arg8.anIntArray95[arg2];
 					@Pc(1138) int local1138 = local1134 >>> 16;
 					local1066 = local1134 & 0xFFFF;
@@ -310,7 +310,7 @@ public final class PlayerAppearance {
 					local848 |= local1188.method4150(local1184);
 					local852 |= arg4.aBoolean72;
 				}
-				if ((arg4.aBoolean70 || Static6.aBoolean258) && arg3 != -1 && arg3 < arg4.anIntArray95.length) {
+				if ((arg4.tween || SeqType.forceTween) && arg3 != -1 && arg3 < arg4.anIntArray95.length) {
 					local1182 = arg4.anIntArray94[arg1];
 					@Pc(1260) int local1260 = arg4.anIntArray95[arg3];
 					@Pc(1264) int local1264 = local1260 >>> 16;

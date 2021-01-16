@@ -472,11 +472,6 @@ public final class Static26 {
 		}
 	}
 
-	@OriginalMember(owner = "client!ng", name = "a", descriptor = "(Ljava/lang/String;IZLjava/lang/String;)V")
-	public static void method4357(@OriginalArg(0) String arg0, @OriginalArg(1) int arg1, @OriginalArg(3) String arg2) {
-		Static25.method2927(arg0, -1, null, arg1, arg2);
-	}
-
 	@OriginalMember(owner = "client!ng", name = "a", descriptor = "(ZZ)V")
 	public static void method4359(@OriginalArg(0) boolean underwater) {
 		@Pc(10) int[] local10 = null;
@@ -557,11 +552,6 @@ public final class Static26 {
 				arg0.method3807(local117.groundDecor.entity, 128, 0, -128, true);
 			}
 		}
-	}
-
-	@OriginalMember(owner = "client!nh", name = "a", descriptor = "(ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;I)V")
-	public static void method2982(@OriginalArg(1) String arg0, @OriginalArg(2) String arg1, @OriginalArg(3) String arg2) {
-		Static25.method2927(arg0, -1, arg1, 9, arg2);
 	}
 
 	@OriginalMember(owner = "client!nh", name = "a", descriptor = "(II)I")

@@ -143,9 +143,6 @@ public final class Static5 {
 	@OriginalMember(owner = "client!nb", name = "D", descriptor = "[I")
 	public static final int[] anIntArray383 = new int[100];
 
-	@OriginalMember(owner = "client!nb", name = "H", descriptor = "I")
-	public static int anInt3469 = 0;
-
 	@OriginalMember(owner = "client!nc", name = "d", descriptor = "Z")
 	public static boolean aBoolean248 = true;
 
@@ -196,9 +193,6 @@ public final class Static5 {
 
 	@OriginalMember(owner = "client!nl", name = "c", descriptor = "[I")
 	public static final int[] anIntArray392 = new int[] { 0, 4, 4, 8, 0, 0, 8, 0, 0 };
-
-	@OriginalMember(owner = "client!no", name = "U", descriptor = "Lclient!fd;")
-	public static final Buffer aClass4_Sub10_8 = new Buffer(new byte[5000]);
 
 	@OriginalMember(owner = "client!no", name = "Y", descriptor = "I")
 	public static int anInt3635 = 0;
@@ -316,9 +310,6 @@ public final class Static5 {
 
 	@OriginalMember(owner = "client!pl", name = "y", descriptor = "I")
 	public static int anInt4210 = 0;
-
-	@OriginalMember(owner = "client!pn", name = "a", descriptor = "[I")
-	public static final int[] anIntArray447 = new int[100];
 
 	@OriginalMember(owner = "client!pn", name = "c", descriptor = "Z")
 	public static boolean aBoolean297 = false;

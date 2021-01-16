@@ -13,7 +13,7 @@ public final class Player extends PathingEntity {
 	public static int getSound(@OriginalArg(0) Player player) {
 		@Pc(8) int sound = player.walkSound;
 		@Pc(12) BasType basType = player.getBasType();
-		if (player.movementSeqId == basType.idleSeqId) {
+		if (player.movementSeqId == basType.readySeqId) {
 			sound = player.idleSound;
 		} else if (basType.anInt831 == player.movementSeqId || player.movementSeqId == basType.anInt829 || basType.anInt857 == player.movementSeqId || player.movementSeqId == basType.anInt867) {
 			sound = player.runSound;
@@ -185,7 +185,7 @@ public final class Player extends PathingEntity {
 				return;
 			}
 			@Pc(26) SeqType local26 = this.seqId != -1 && this.anInt3996 == 0 ? SeqTypeList.get(this.seqId) : null;
-			@Pc(55) SeqType local55 = this.movementSeqId == -1 || this.aBoolean98 || this.movementSeqId == this.getBasType().idleSeqId && local26 != null ? null : SeqTypeList.get(this.movementSeqId);
+			@Pc(55) SeqType local55 = this.movementSeqId == -1 || this.aBoolean98 || this.movementSeqId == this.getBasType().readySeqId && local26 != null ? null : SeqTypeList.get(this.movementSeqId);
 			@Pc(78) Model local78 = this.appearance.method3608(this.aClass150Array3, this.anInt4046, this.anInt4011, this.anInt4019, local55, this.anInt3970, false, this.anInt4000, local26, false, this.anInt4044);
 			if (local78 == null) {
 				return;
@@ -212,7 +212,7 @@ public final class Player extends PathingEntity {
 		@Pc(27) SeqType local27 = this.seqId != -1 && this.anInt3996 == 0 ? SeqTypeList.get(this.seqId) : null;
 		@Pc(31) BasType local31 = this.getBasType();
 		@Pc(53) boolean local53 = local31.anInt844 != 0 || local31.anInt847 != 0 || local31.anInt850 != 0 || local31.anInt851 != 0;
-		@Pc(82) SeqType local82 = this.movementSeqId == -1 || this.aBoolean98 || this.movementSeqId == this.getBasType().idleSeqId && local27 != null ? null : SeqTypeList.get(this.movementSeqId);
+		@Pc(82) SeqType local82 = this.movementSeqId == -1 || this.aBoolean98 || this.movementSeqId == this.getBasType().readySeqId && local27 != null ? null : SeqTypeList.get(this.movementSeqId);
 		@Pc(105) Model local105 = this.appearance.method3608(this.aClass150Array3, this.anInt4046, this.anInt4011, this.anInt4019, local82, this.anInt3970, local53, this.anInt4000, local27, true, this.anInt4044);
 		@Pc(108) int local108 = Static15.method1228();
 		if (GlRenderer.enabled && GameShell.maxMemory < 96 && local108 > 50) {

@@ -226,9 +226,6 @@ public final class Static1 {
 	@OriginalMember(owner = "client!bc", name = "z", descriptor = "I")
 	public static int anInt929 = -1;
 
-	@OriginalMember(owner = "client!bc", name = "D", descriptor = "[Ljava/lang/String;")
-	public static final String[] aStringArray4 = new String[100];
-
 	@OriginalMember(owner = "client!bd", name = "d", descriptor = "[F")
 	public static final float[] aFloatArray5 = new float[] { 0.1F, 0.1F, 0.15F, 0.1F };
 
@@ -236,7 +233,7 @@ public final class Static1 {
 	public static final SoftLruHashTable aClass26_3 = new SoftLruHashTable(4);
 
 	@OriginalMember(owner = "client!be", name = "b", descriptor = "I")
-	public static int anInt268 = 0;
+	public static int rectDebug = 0;
 
 	@OriginalMember(owner = "client!be", name = "f", descriptor = "Z")
 	public static boolean aBoolean17 = false;
@@ -263,7 +260,7 @@ public final class Static1 {
 	public static int anInt402 = 2;
 
 	@OriginalMember(owner = "client!bn", name = "H", descriptor = "Z")
-	public static boolean aBoolean26 = false;
+	public static boolean qaOpTest = false;
 
 	@OriginalMember(owner = "client!bo", name = "q", descriptor = "J")
 	public static long aLong24 = 0L;
@@ -297,9 +294,6 @@ public final class Static1 {
 
 	@OriginalMember(owner = "client!cg", name = "a", descriptor = "Z")
 	public static boolean aBoolean35 = false;
-
-	@OriginalMember(owner = "client!cg", name = "m", descriptor = "I")
-	public static int anInt595 = 0;
 
 	@OriginalMember(owner = "client!ci", name = "f", descriptor = "Lclient!qk;")
 	public static final PlayerAppearance aClass144_1 = new PlayerAppearance();

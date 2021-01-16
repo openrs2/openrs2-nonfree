@@ -945,7 +945,7 @@ public final class Static22 {
 				if (arg0 == 0 || arg0 == local280) {
 					local255.aBoolean98 = false;
 					local255.aBoolean282 = true;
-					if ((Preferences.manyIdleAnimations && PlayerList.size > 200 || PlayerList.size > 50) && arg0 != 0 && local255.movementSeqId == local255.getBasType().idleSeqId) {
+					if ((Preferences.manyIdleAnimations && PlayerList.size > 200 || PlayerList.size > 50) && arg0 != 0 && local255.movementSeqId == local255.getBasType().readySeqId) {
 						local255.aBoolean98 = true;
 					}
 					if (local280 == 1) {

@@ -405,7 +405,7 @@ public final class Static32 {
 	@OriginalMember(owner = "client!sl", name = "a", descriptor = "(Lclient!qc;B)V")
 	public static void method4024(@OriginalArg(0) PathingEntity entity) {
 		@Pc(5) BasType basType = entity.getBasType();
-		entity.movementSeqId = basType.idleSeqId;
+		entity.movementSeqId = basType.readySeqId;
 		if (entity.movementQueueSize == 0) {
 			entity.movementBlockedLoops = 0;
 			return;
