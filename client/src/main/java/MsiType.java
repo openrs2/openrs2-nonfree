@@ -40,24 +40,24 @@ public final class MsiType {
 	}
 
 	@OriginalMember(owner = "client!qg", name = "a", descriptor = "(IZI)Lclient!fe;")
-	public final SoftwareIndexedSprite getSprite(@OriginalArg(1) boolean arg0, @OriginalArg(2) int angle) {
-		@Pc(23) SoftwareIndexedSprite sprite = (SoftwareIndexedSprite) MsiTypeList.sprites.get(angle << 16 | this.spriteId | (arg0 ? 262144 : 0));
+	public final SoftwareIndexedSprite getSprite(@OriginalArg(1) boolean flipVertical, @OriginalArg(2) int angle) {
+		@Pc(23) SoftwareIndexedSprite sprite = (SoftwareIndexedSprite) MsiTypeList.sprites.get(angle << 16 | this.spriteId | (flipVertical ? 0x40000 : 0));
 		if (sprite != null) {
 			return sprite;
 		}
 		MsiTypeList.spritesArchive.isFileReady(this.spriteId);
 		@Pc(44) SoftwareIndexedSprite newSprite = SpriteLoader.loadSoftwareIndexedSprite(MsiTypeList.spritesArchive, this.spriteId);
 		if (newSprite != null) {
-			newSprite.method1311(MsiTypeList.anInt4867, MsiTypeList.anInt97, MsiTypeList.anInt3963);
+			newSprite.adjustPalette(MsiTypeList.redDelta, MsiTypeList.greenDelta, MsiTypeList.blueDelta);
 			newSprite.innerWidth = newSprite.width;
 			newSprite.innerHeight = newSprite.height;
-			if (arg0) {
-				newSprite.method1312();
+			if (flipVertical) {
+				newSprite.flipVertical();
 			}
 			for (@Pc(66) int i = 0; i < angle; i++) {
-				newSprite.method1313();
+				newSprite.rotateClockwise();
 			}
-			MsiTypeList.sprites.put(this.spriteId | angle << 16 | (arg0 ? 262144 : 0), newSprite);
+			MsiTypeList.sprites.put(this.spriteId | angle << 16 | (flipVertical ? 0x40000 : 0), newSprite);
 		}
 		return newSprite;
 	}

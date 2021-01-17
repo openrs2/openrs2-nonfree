@@ -101,7 +101,7 @@ public final class Static16 {
 			@Pc(32) int local32 = Static1.anInt403;
 			@Pc(46) int local46 = local18 + (local32 - local18) * (arg5 - arg2) / arg0;
 			if (Static3.aBoolean177 && (Static5.anInt3560 & 0x40) != 0) {
-				@Pc(85) Component local85 = Static23.method2425(Static1.anInt1053, Static2.anInt1367);
+				@Pc(85) Component local85 = InterfaceList.getCreatedComponent(Static1.anInt1053, Static2.anInt1367);
 				if (local85 == null) {
 					Static26.method4812();
 				} else {

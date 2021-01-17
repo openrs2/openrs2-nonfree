@@ -11,7 +11,7 @@ public final class Static1 {
 	public static Class4_Sub3_Sub10 aClass4_Sub3_Sub10_1;
 
 	@OriginalMember(owner = "client!ab", name = "j", descriptor = "Lsignlink!vk;")
-	public static PrivilegedRequest aClass197_1;
+	public static PrivilegedRequest openUrlRequest;
 
 	@OriginalMember(owner = "client!ac", name = "T", descriptor = "F")
 	public static float aFloat5;
@@ -36,9 +36,6 @@ public final class Static1 {
 
 	@OriginalMember(owner = "client!am", name = "x", descriptor = "I")
 	public static int anInt212;
-
-	@OriginalMember(owner = "client!am", name = "y", descriptor = "Lclient!cd;")
-	public static QuickChatPhrase aClass27_1;
 
 	@OriginalMember(owner = "client!an", name = "g", descriptor = "Lclient!fh;")
 	public static Js5 aClass58_7;

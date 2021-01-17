@@ -1278,9 +1278,4 @@ public final class Static22 {
 		return local1492;
 	}
 
-	@OriginalMember(owner = "client!kn", name = "a", descriptor = "(Z)V")
-	public static void method2413() {
-		ObjTypeList.models.clear();
-	}
-
 }

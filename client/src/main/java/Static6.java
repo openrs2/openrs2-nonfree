@@ -39,7 +39,7 @@ public final class Static6 {
 	public static int anInt4466;
 
 	@OriginalMember(owner = "client!rf", name = "e", descriptor = "Ljava/lang/String;")
-	public static String aString269;
+	public static String url;
 
 	@OriginalMember(owner = "client!rg", name = "gb", descriptor = "I")
 	public static int anInt4511;
@@ -110,9 +110,6 @@ public final class Static6 {
 	@OriginalMember(owner = "client!si", name = "o", descriptor = "Lclient!uj;")
 	public static Sprite aClass4_Sub3_Sub14_5;
 
-	@OriginalMember(owner = "client!sj", name = "s", descriptor = "[Lclient!l;")
-	public static ClanMember[] clanMembers;
-
 	@OriginalMember(owner = "client!sm", name = "g", descriptor = "[[S")
 	public static short[][] aShortArrayArray6;
 
@@ -167,9 +164,6 @@ public final class Static6 {
 	@OriginalMember(owner = "client!r", name = "s", descriptor = "[[I")
 	public static final int[][] anIntArrayArray25 = new int[][] { { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }, { 12, 8, 4, 0, 13, 9, 5, 1, 14, 10, 6, 2, 15, 11, 7, 3 }, { 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0 }, { 3, 7, 11, 15, 2, 6, 10, 14, 1, 5, 9, 13, 0, 4, 8, 12 } };
 
-	@OriginalMember(owner = "client!ra", name = "o", descriptor = "[Ljava/lang/String;")
-	public static final String[] aStringArray25 = new String[] { "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" };
-
 	@OriginalMember(owner = "client!ra", name = "q", descriptor = "I")
 	public static int anInt4434 = 0;
 
@@ -181,9 +175,6 @@ public final class Static6 {
 
 	@OriginalMember(owner = "client!re", name = "c", descriptor = "I")
 	public static int anInt4457 = 0;
-
-	@OriginalMember(owner = "client!re", name = "l", descriptor = "Ljava/lang/String;")
-	public static String aString268 = null;
 
 	@OriginalMember(owner = "client!rf", name = "b", descriptor = "Z")
 	public static boolean aBoolean310 = false;
@@ -281,9 +272,6 @@ public final class Static6 {
 	@OriginalMember(owner = "client!sh", name = "Z", descriptor = "I")
 	public static int anInt4835 = 0;
 
-	@OriginalMember(owner = "client!sh", name = "cb", descriptor = "I")
-	public static int anInt4837 = 0;
-
 	@OriginalMember(owner = "client!si", name = "c", descriptor = "[I")
 	public static final int[] anIntArray524 = new int[] { 0, 0, 2, 0, 0, 2, 1, 1, 0 };
 
@@ -331,9 +319,6 @@ public final class Static6 {
 
 	@OriginalMember(owner = "client!ta", name = "E", descriptor = "[S")
 	public static final short[] aShortArray100 = new short[500];
-
-	@OriginalMember(owner = "client!tb", name = "j", descriptor = "I")
-	public static int anInt5016 = 0;
 
 	@OriginalMember(owner = "client!td", name = "cb", descriptor = "I")
 	public static int anInt5088 = 0;

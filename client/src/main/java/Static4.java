@@ -28,9 +28,6 @@ public final class Static4 {
 	@OriginalMember(owner = "client!k", name = "d", descriptor = "I")
 	public static int anInt2741;
 
-	@OriginalMember(owner = "client!ka", name = "g", descriptor = "Lclient!wf;")
-	public static Component aClass185_9;
-
 	@OriginalMember(owner = "client!kf", name = "P", descriptor = "I")
 	public static int anInt2853;
 
@@ -53,7 +50,7 @@ public final class Static4 {
 	public static byte[][][] aByteArrayArrayArray15;
 
 	@OriginalMember(owner = "client!ko", name = "b", descriptor = "Z")
-	public static boolean aBoolean206;
+	public static boolean newTab;
 
 	@OriginalMember(owner = "client!ko", name = "c", descriptor = "I")
 	public static int anInt2977;
@@ -83,7 +80,7 @@ public final class Static4 {
 	public static int anInt3126;
 
 	@OriginalMember(owner = "client!lg", name = "g", descriptor = "Lclient!nk;")
-	public static GlTextureProvider anInterface4_1;
+	public static GlTextureProvider textureProvider;
 
 	@OriginalMember(owner = "client!lg", name = "l", descriptor = "I")
 	public static int anInt3128;
@@ -109,9 +106,6 @@ public final class Static4 {
 	@OriginalMember(owner = "client!ln", name = "W", descriptor = "I")
 	public static int anInt3258;
 
-	@OriginalMember(owner = "client!ln", name = "Y", descriptor = "I")
-	public static int anInt3260;
-
 	@OriginalMember(owner = "client!m", name = "i", descriptor = "[I")
 	public static int[] anIntArray309;
 
@@ -120,9 +114,6 @@ public final class Static4 {
 
 	@OriginalMember(owner = "client!mb", name = "f", descriptor = "F")
 	public static float aFloat85;
-
-	@OriginalMember(owner = "client!mb", name = "i", descriptor = "I")
-	public static int anInt3497;
 
 	@OriginalMember(owner = "client!md", name = "i", descriptor = "I")
 	public static int anInt3302;
@@ -135,9 +126,6 @@ public final class Static4 {
 
 	@OriginalMember(owner = "client!mf", name = "l", descriptor = "I")
 	public static int anInt3317;
-
-	@OriginalMember(owner = "client!mg", name = "t", descriptor = "B")
-	public static byte aByte6;
 
 	@OriginalMember(owner = "client!mg", name = "v", descriptor = "I")
 	public static int anInt3329;

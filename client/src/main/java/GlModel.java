@@ -156,7 +156,7 @@ public final class GlModel extends Model {
 		@Pc(26) int[] local26 = new int[model.triangleCount];
 		this.anIntArray506 = new int[model.vertexCount + 1];
 		for (@Pc(35) int i = 0; i < model.triangleCount; i++) {
-			if ((model.aByteArray40 == null || model.aByteArray40[i] != 2) && (model.triangleTextures == null || model.triangleTextures[i] == -1 || !Static4.anInterface4_1.method442(model.triangleTextures[i] & 0xFFFF))) {
+			if ((model.aByteArray40 == null || model.aByteArray40[i] != 2) && (model.triangleTextures == null || model.triangleTextures[i] == -1 || !Static4.textureProvider.method442(model.triangleTextures[i] & 0xFFFF))) {
 				local26[this.anInt4690++] = i;
 				this.anIntArray506[model.triangleVertexA[i]]++;
 				this.anIntArray506[model.triangleVertexB[i]]++;
@@ -174,11 +174,11 @@ public final class GlModel extends Model {
 			if (model.triangleTextures != null) {
 				local138 = model.triangleTextures[local128];
 				if (local138 != -1) {
-					local134 = Static4.anInterface4_1.method444(local138 & 0xFFFF);
-					local136 = Static4.anInterface4_1.method455(local138 & 0xFFFF);
+					local134 = Static4.textureProvider.method444(local138 & 0xFFFF);
+					local136 = Static4.textureProvider.method455(local138 & 0xFFFF);
 				}
 			}
-			@Pc(185) boolean local185 = model.triangleAlpha != null && model.triangleAlpha[local128] != 0 || local138 != -1 && !Static4.anInterface4_1.method443(local138 & 0xFFFF);
+			@Pc(185) boolean local185 = model.triangleAlpha != null && model.triangleAlpha[local128] != 0 || local138 != -1 && !Static4.textureProvider.method443(local138 & 0xFFFF);
 			if ((arg3 || local185) && model.aByteArray37 != null) {
 				local130 += model.aByteArray37[local128] << 17;
 			}
@@ -649,14 +649,14 @@ public final class GlModel extends Model {
 		@Pc(20) int local20 = 0;
 		@Pc(22) int local22 = 0;
 		if (source != -1) {
-			local20 = Static4.anInterface4_1.method450(source & 0xFFFF);
-			local22 = Static4.anInterface4_1.method447(source & 0xFFFF);
+			local20 = Static4.textureProvider.method450(source & 0xFFFF);
+			local22 = Static4.textureProvider.method447(source & 0xFFFF);
 		}
 		@Pc(41) int local41 = 0;
 		@Pc(43) int local43 = 0;
 		if (destination != -1) {
-			local41 = Static4.anInterface4_1.method450(destination & 0xFFFF);
-			local43 = Static4.anInterface4_1.method447(destination & 0xFFFF);
+			local41 = Static4.textureProvider.method450(destination & 0xFFFF);
+			local43 = Static4.textureProvider.method447(destination & 0xFFFF);
 		}
 		if (local20 != local41 || local22 != local43) {
 			this.colorBuffer.valid = false;
@@ -2040,7 +2040,7 @@ public final class GlModel extends Model {
 				GlRenderer.setTextureId(-1);
 				MaterialManager.setMaterial(0, 0);
 			} else {
-				Static4.anInterface4_1.method451(texture & 0xFFFF);
+				Static4.textureProvider.method451(texture & 0xFFFF);
 			}
 			if (this.indexBuffer.vbo == null) {
 				this.indexBuffer.buffer.position(local427 * 12);

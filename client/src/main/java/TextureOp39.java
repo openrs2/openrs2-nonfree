@@ -29,7 +29,7 @@ public class TextureOp39 extends TextureOp {
 			return true;
 		} else if (this.anInt5847 >= 0) {
 			@Pc(38) SoftwareSprite local38 = Static6.anInt4366 < 0 ? SpriteLoader.loadSoftwareSpriteAutoDetect(Static1.aClass58_7, this.anInt5847) : SpriteLoader.loadSoftwareSprite(Static1.aClass58_7, Static6.anInt4366, this.anInt5847);
-			local38.method2176();
+			local38.trim();
 			this.anIntArray655 = local38.pixels;
 			this.anInt5843 = local38.width;
 			this.anInt5834 = local38.height;

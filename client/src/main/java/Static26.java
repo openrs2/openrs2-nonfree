@@ -127,8 +127,8 @@ public final class Static26 {
 
 	@OriginalMember(owner = "client!nd", name = "a", descriptor = "(ILclient!wf;)Lclient!wf;")
 	public static Component method2942(@OriginalArg(1) Component arg0) {
-		if (arg0.anInt5937 != -1) {
-			return InterfaceList.getComponent(arg0.anInt5937);
+		if (arg0.layer != -1) {
+			return InterfaceList.getComponent(arg0.layer);
 		}
 		@Pc(20) int local20 = arg0.id >>> 16;
 		@Pc(33) HashTableIterator local33 = new HashTableIterator(InterfaceList.subInterfaces);
@@ -567,10 +567,10 @@ public final class Static26 {
 		if (!Static3.aBoolean177) {
 			return;
 		}
-		@Pc(15) Component local15 = Static23.method2425(Static1.anInt1053, Static2.anInt1367);
-		if (local15 != null && local15.anObjectArray17 != null) {
+		@Pc(15) Component local15 = InterfaceList.getCreatedComponent(Static1.anInt1053, Static2.anInt1367);
+		if (local15 != null && local15.onTargetLeave != null) {
 			@Pc(26) HookRequest local26 = new HookRequest();
-			local26.arguments = local15.anObjectArray17;
+			local26.arguments = local15.onTargetLeave;
 			local26.source = local15;
 			Static21.method2019(local26);
 		}
@@ -658,12 +658,12 @@ public final class Static26 {
 	}
 
 	@OriginalMember(owner = "client!nj", name = "a", descriptor = "(I)Z")
-	public static boolean method2988() {
+	public static boolean showVideoAd() {
 		if (client.javaScript) {
 			try {
 				BrowserControl.call(GameShell.signLink.applet, "showVideoAd");
 				return true;
-			} catch (@Pc(20) Throwable local20) {
+			} catch (@Pc(20) Throwable ex) {
 			}
 		}
 		return false;

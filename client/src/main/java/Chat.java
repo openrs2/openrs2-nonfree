@@ -2,7 +2,7 @@ import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
-public final class ChatHistory {
+public final class Chat {
 	@OriginalMember(owner = "client!pn", name = "a", descriptor = "[I")
 	public static final int[] types = new int[100];
 
@@ -26,6 +26,15 @@ public final class ChatHistory {
 
 	@OriginalMember(owner = "client!cg", name = "m", descriptor = "I")
 	public static int uidsWriterIndex = 0;
+
+	@OriginalMember(owner = "client!un", name = "y", descriptor = "I")
+	public static int publicFilter = 0;
+
+	@OriginalMember(owner = "client!sh", name = "cb", descriptor = "I")
+	public static int privateFilter = 0;
+
+	@OriginalMember(owner = "client!tb", name = "j", descriptor = "I")
+	public static int tradeFilter = 0;
 
 	@OriginalMember(owner = "client!nb", name = "a", descriptor = "(Ljava/lang/String;ILjava/lang/String;ILjava/lang/String;I)V")
 	public static void add(@OriginalArg(3) int type, @OriginalArg(0) String name, @OriginalArg(4) String message, @OriginalArg(2) String clan, @OriginalArg(1) int phraseId) {

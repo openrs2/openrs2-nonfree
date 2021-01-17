@@ -191,69 +191,6 @@ public final class Static28 {
 		}
 	}
 
-	@OriginalMember(owner = "client!on", name = "b", descriptor = "(II)I")
-	public static int method3276(@OriginalArg(1) int arg0) {
-		@Pc(14) double local14 = (double) (arg0 >> 16 & 0xFF) / 256.0D;
-		@Pc(23) double local23 = (double) (arg0 >> 8 & 0xFF) / 256.0D;
-		@Pc(25) double local25 = local14;
-		if (local23 < local14) {
-			local25 = local23;
-		}
-		@Pc(38) double local38 = (double) (arg0 & 0xFF) / 256.0D;
-		@Pc(40) double local40 = local14;
-		if (local25 > local38) {
-			local25 = local38;
-		}
-		if (local14 < local23) {
-			local40 = local23;
-		}
-		if (local38 > local40) {
-			local40 = local38;
-		}
-		@Pc(60) double local60 = 0.0D;
-		@Pc(66) double local66 = (local25 + local40) / 2.0D;
-		@Pc(68) double local68 = 0.0D;
-		@Pc(73) int local73 = (int) (local66 * 256.0D);
-		if (local73 < 0) {
-			local73 = 0;
-		} else if (local73 > 255) {
-			local73 = 255;
-		}
-		if (local40 != local25) {
-			if (local14 == local40) {
-				local60 = (local23 - local38) / (local40 - local25);
-			} else if (local23 == local40) {
-				local60 = (local38 - local14) / (local40 - local25) + 2.0D;
-			} else if (local38 == local40) {
-				local60 = (local14 - local23) / (local40 - local25) + 4.0D;
-			}
-			if (local66 < 0.5D) {
-				local68 = (local40 - local25) / (local25 + local40);
-			}
-			if (local66 >= 0.5D) {
-				local68 = (local40 - local25) / (2.0D - local40 - local25);
-			}
-		}
-		@Pc(173) int local173 = (int) (local68 * 256.0D);
-		if (local173 < 0) {
-			local173 = 0;
-		} else if (local173 > 255) {
-			local173 = 255;
-		}
-		@Pc(199) double local199 = local60 / 6.0D;
-		@Pc(204) int local204 = (int) (local199 * 256.0D);
-		if (local73 > 243) {
-			local173 >>= 4;
-		} else if (local73 > 217) {
-			local173 >>= 3;
-		} else if (local73 > 192) {
-			local173 >>= 2;
-		} else if (local73 > 179) {
-			local173 >>= 1;
-		}
-		return (local73 >> 1) + (local173 >> 5 << 7) + (local204 >> 2 << 10);
-	}
-
 	@OriginalMember(owner = "client!on", name = "a", descriptor = "(IIB)V")
 	public static void method3277(@OriginalArg(0) int id, @OriginalArg(1) int arg1) {
 		if (InterfaceList.load(id)) {

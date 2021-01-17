@@ -102,14 +102,14 @@ public final class InterfaceList {
 	@OriginalMember(owner = "client!i", name = "a", descriptor = "(II)Lclient!wf;")
 	public static Component getComponent(@OriginalArg(1) int id) {
 		@Pc(7) int interfaceId = id >> 16;
-		@Pc(19) int slot = id & 0xFFFF;
-		if (components[interfaceId] == null || components[interfaceId][slot] == null) {
+		@Pc(19) int componentId = id & 0xFFFF;
+		if (components[interfaceId] == null || components[interfaceId][componentId] == null) {
 			@Pc(34) boolean success = load(interfaceId);
 			if (!success) {
 				return null;
 			}
 		}
-		return components[interfaceId][slot];
+		return components[interfaceId][componentId];
 	}
 
 	@OriginalMember(owner = "client!el", name = "b", descriptor = "(I)V")
@@ -214,7 +214,19 @@ public final class InterfaceList {
 
 	@OriginalMember(owner = "client!client", name = "a", descriptor = "(Lclient!wf;)Lclient!on;")
 	public static ServerActiveProperties getServerActiveProperties(@OriginalArg(0) Component component) {
-		@Pc(13) ServerActiveProperties serverActiveProperties = (ServerActiveProperties) InterfaceList.serverActiveProperties.get(((long) component.id << 32) + (long) component.anInt5968);
+		@Pc(13) ServerActiveProperties serverActiveProperties = (ServerActiveProperties) InterfaceList.serverActiveProperties.get(((long) component.id << 32) + (long) component.createdComponentId);
 		return serverActiveProperties == null ? component.serverActiveProperties : serverActiveProperties;
+	}
+
+	@OriginalMember(owner = "client!l", name = "a", descriptor = "(IBI)Lclient!wf;")
+	public static Component getCreatedComponent(@OriginalArg(0) int componentId, @OriginalArg(2) int createdComponentId) {
+		@Pc(9) Component component = getComponent(componentId);
+		if (createdComponentId == -1) {
+			return component;
+		} else if (component == null || component.createdComponents == null || createdComponentId >= component.createdComponents.length) {
+			return null;
+		} else {
+			return component.createdComponents[createdComponentId];
+		}
 	}
 }

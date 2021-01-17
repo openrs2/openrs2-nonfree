@@ -113,4 +113,15 @@ public final class ObjTypeList {
 		models.clean(5);
 		sprites.clean(5);
 	}
+
+	@OriginalMember(owner = "client!kn", name = "a", descriptor = "(Z)V")
+	public static void clearModels() {
+		models.clear();
+	}
+
+	@OriginalMember(owner = "client!an", name = "a", descriptor = "(I)V")
+	public static void clearSprites() {
+		sprites.clear();
+	}
+
 }

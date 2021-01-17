@@ -143,7 +143,7 @@ public final class Static10 {
 		if (current == enabled) {
 			return false;
 		} else {
-			((Js5GlTextureProvider) Static4.anInterface4_1).clear();
+			((Js5GlTextureProvider) Static4.textureProvider).clear();
 			return true;
 		}
 	}
@@ -162,11 +162,6 @@ public final class Static10 {
 			local7 = 126;
 		}
 		return (arg0 & 0xFF80) + local7;
-	}
-
-	@OriginalMember(owner = "client!bi", name = "b", descriptor = "(I)Lclient!wg;")
-	public static MapArea method305() {
-		return WorldMap.currentMap;
 	}
 
 	@OriginalMember(owner = "client!bi", name = "a", descriptor = "(IIIBI)V")
@@ -371,38 +366,38 @@ public final class Static10 {
 		if (local4 == 324) {
 			if (Static4.anInt3017 == -1) {
 				Static7.anInt5228 = arg0.anInt5926;
-				Static4.anInt3017 = arg0.anInt5947;
+				Static4.anInt3017 = arg0.graphic;
 			}
 			if (Static1.aClass144_1.female) {
-				arg0.anInt5947 = Static4.anInt3017;
+				arg0.graphic = Static4.anInt3017;
 			} else {
-				arg0.anInt5947 = Static7.anInt5228;
+				arg0.graphic = Static7.anInt5228;
 			}
 		} else if (local4 == 325) {
 			if (Static4.anInt3017 == -1) {
-				Static4.anInt3017 = arg0.anInt5947;
+				Static4.anInt3017 = arg0.graphic;
 				Static7.anInt5228 = arg0.anInt5926;
 			}
 			if (Static1.aClass144_1.female) {
-				arg0.anInt5947 = Static7.anInt5228;
+				arg0.graphic = Static7.anInt5228;
 			} else {
-				arg0.anInt5947 = Static4.anInt3017;
+				arg0.graphic = Static4.anInt3017;
 			}
 		} else if (local4 == 327) {
-			arg0.anInt5944 = 150;
-			arg0.anInt5976 = (int) (Math.sin((double) client.loop / 40.0D) * 256.0D) & 0x7FF;
-			arg0.anInt5895 = -1;
-			arg0.anInt5939 = 5;
+			arg0.modelXAngle = 150;
+			arg0.modelYAngle = (int) (Math.sin((double) client.loop / 40.0D) * 256.0D) & 0x7FF;
+			arg0.modelId = -1;
+			arg0.modelType = 5;
 		} else if (local4 == 328) {
-			if (PlayerList.self.name == null) {
-				arg0.anInt5895 = 0;
+			if (PlayerList.self.username == null) {
+				arg0.modelId = 0;
 			} else {
-				arg0.anInt5944 = 150;
-				arg0.anInt5976 = (int) (Math.sin((double) client.loop / 40.0D) * 256.0D) & 0x7FF;
-				arg0.anInt5939 = 5;
-				arg0.anInt5895 = ((int) Base37.encode(PlayerList.self.name) << 11) + 2047;
+				arg0.modelXAngle = 150;
+				arg0.modelYAngle = (int) (Math.sin((double) client.loop / 40.0D) * 256.0D) & 0x7FF;
+				arg0.modelType = 5;
+				arg0.modelId = ((int) Base37.encode(PlayerList.self.username) << 11) + 2047;
 				arg0.anInt5892 = PlayerList.self.anInt4046;
-				arg0.anInt5891 = PlayerList.self.movementSeqId;
+				arg0.modelSeqId = PlayerList.self.movementSeqId;
 				arg0.anInt5979 = PlayerList.self.anInt4019;
 				arg0.anInt5897 = 0;
 			}

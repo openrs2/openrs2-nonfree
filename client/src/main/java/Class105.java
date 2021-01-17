@@ -140,7 +140,7 @@ public final class Class105 {
 		if (this.anInt2859 != 0) {
 			gl.glScalef(0.8125F, 0.8125F, 1.0F);
 		}
-		Static4.anInterface4_1.method454(this.anInt2858, this.anInt2861);
+		Static4.textureProvider.method454(this.anInt2858, this.anInt2861);
 		GlRenderer.setLightingEnabled(true);
 		if (GlRenderer.arbVboSupported) {
 			gl.glBindBufferARB(GL.GL_ARRAY_BUFFER, 0);
@@ -312,7 +312,7 @@ public final class Class105 {
 			return;
 		}
 		if (this.anInt2869 == 0) {
-			Static4.anInterface4_1.method454(this.anInt2858, this.anInt2861);
+			Static4.textureProvider.method454(this.anInt2858, this.anInt2861);
 		} else if (this.anInt2864 == -1) {
 			return;
 		} else {
@@ -421,7 +421,7 @@ public final class Class105 {
 	private boolean method2298(@OriginalArg(0) Class105 arg0) {
 		if (this.aClass4_Sub3_Sub14_Sub1_5 == null) {
 			if (this.anInt2869 == 0) {
-				this.aClass4_Sub3_Sub14_Sub1_5 = Static4.anInterface4_1.method452(this.anInt2858, true, ColorUtils.brightness, this.anInt2861);
+				this.aClass4_Sub3_Sub14_Sub1_5 = Static4.textureProvider.method452(this.anInt2858, true, ColorUtils.brightness, this.anInt2861);
 			} else if (this.anInt2869 == 2) {
 				this.method2304(arg0);
 			} else if (this.anInt2869 == 1) {
@@ -488,7 +488,7 @@ public final class Class105 {
 			local30 = local30 * local123 + 32767 - local26 * local119 >> 16;
 			local26 = local135;
 		}
-		ArrayUtils.fill(Static4.aClass53_Sub3_1.triangleColors, 0, Static4.aClass53_Sub3_1.triangleCount, (short) Static4.anInterface4_1.method446(this.anInt2858));
+		ArrayUtils.fill(Static4.aClass53_Sub3_1.triangleColors, 0, Static4.aClass53_Sub3_1.triangleCount, (short) Static4.textureProvider.method446(this.anInt2858));
 		@Pc(172) SoftwareModel local172 = Static4.aClass53_Sub3_1.createSoftwareModel(64, 512, -local26, -local28, -local30);
 		@Pc(178) int local178 = local172.getMaxX() - local172.getMinX();
 		@Pc(184) int local184 = local172.getMaxY() - local172.getMinY();

@@ -65,9 +65,9 @@ public final class Class47 {
 			SoftwareRaster.fillRect(arg1, arg2, arg3, arg4, 0);
 		} else {
 			if (this.aClass4_Sub3_Sub14_Sub1_1 == null) {
-				this.aClass4_Sub3_Sub14_Sub1_1 = Static4.anInterface4_1.method452(this.anInt1249, false, ColorUtils.brightness, this.anInt1250);
+				this.aClass4_Sub3_Sub14_Sub1_1 = Static4.textureProvider.method452(this.anInt1249, false, ColorUtils.brightness, this.anInt1250);
 			}
-			if (!Static4.anInterface4_1.method443(this.anInt1249)) {
+			if (!Static4.textureProvider.method443(this.anInt1249)) {
 				SoftwareRaster.fillRect(arg1, arg2, arg3, arg4, 0);
 			}
 			if (this.aClass4_Sub3_Sub14_Sub1_1 != null) {
@@ -115,10 +115,10 @@ public final class Class47 {
 		if (this.anInt1249 == -1) {
 			GlRenderer.clearColorBuffer(arg7);
 		} else {
-			if (!Static4.anInterface4_1.method443(this.anInt1249)) {
+			if (!Static4.textureProvider.method443(this.anInt1249)) {
 				GlRenderer.clearColorBuffer(arg7);
 			}
-			Static4.anInterface4_1.method454(this.anInt1249, this.anInt1250);
+			Static4.textureProvider.method454(this.anInt1249, this.anInt1250);
 			@Pc(71) float local71 = (float) arg5 / 512.0F;
 			@Pc(76) float local76 = (float) arg6 / -512.0F;
 			@Pc(86) float local86 = (float) (arg3 - arg4) / ((float) arg4 * 2.0F);

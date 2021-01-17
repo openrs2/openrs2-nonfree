@@ -504,16 +504,16 @@ public final class Static37 {
 
 	@OriginalMember(owner = "client!wg", name = "a", descriptor = "(IIIILjava/lang/String;)V")
 	public static void method4752(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(4) String arg3) {
-		@Pc(4) Component local4 = Static23.method2425(arg0, arg1);
+		@Pc(4) Component local4 = InterfaceList.getCreatedComponent(arg0, arg1);
 		if (local4 == null) {
 			return;
 		}
-		if (local4.anObjectArray18 != null) {
+		if (local4.onOp != null) {
 			@Pc(22) HookRequest local22 = new HookRequest();
 			local22.op = arg2;
 			local22.source = local4;
 			local22.opBase = arg3;
-			local22.arguments = local4.anObjectArray18;
+			local22.arguments = local4.onOp;
 			Static21.method2019(local22);
 		}
 		@Pc(40) boolean local40 = true;

@@ -1,5 +1,4 @@
 import java.nio.ByteBuffer;
-import java.util.Random;
 
 import org.openrs2.deob.annotation.OriginalMember;
 
@@ -31,9 +30,6 @@ public final class Static5 {
 
 	@OriginalMember(owner = "client!ne", name = "gb", descriptor = "Ljava/nio/ByteBuffer;")
 	public static ByteBuffer aByteBuffer12;
-
-	@OriginalMember(owner = "client!nf", name = "g", descriptor = "B")
-	public static byte aByte13;
 
 	@OriginalMember(owner = "client!nh", name = "u", descriptor = "I")
 	public static int anInt3546;
@@ -188,9 +184,6 @@ public final class Static5 {
 	@OriginalMember(owner = "client!nh", name = "U", descriptor = "[Lclient!eg;")
 	public static final SeqType[] aClass46Array2 = new SeqType[14];
 
-	@OriginalMember(owner = "client!ni", name = "n", descriptor = "[I")
-	public static final int[] anIntArray681 = new int[] { 1, 4 };
-
 	@OriginalMember(owner = "client!nl", name = "c", descriptor = "[I")
 	public static final int[] anIntArray392 = new int[] { 0, 4, 4, 8, 0, 0, 8, 0, 0 };
 
@@ -318,7 +311,7 @@ public final class Static5 {
 	public static final LinkedList aClass112_27 = new LinkedList();
 
 	@OriginalMember(owner = "client!qh", name = "w", descriptor = "I")
-	public static int anInt4329 = 0;
+	public static int rebootTimer = 0;
 
 	@OriginalMember(owner = "client!qi", name = "o", descriptor = "I")
 	public static int anInt441 = 2;

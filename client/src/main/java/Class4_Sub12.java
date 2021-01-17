@@ -224,7 +224,7 @@ public final class Class4_Sub12 extends Node {
 			GlRenderer.setTextureId(-1);
 			MaterialManager.setMaterial(0, 0);
 		} else {
-			Static4.anInterface4_1.method451(this.anInt2356);
+			Static4.textureProvider.method451(this.anInt2356);
 		}
 		@Pc(282) int local282 = this.aBoolean161 ? 40 : 36;
 		if (this.aClass111_2 == null) {

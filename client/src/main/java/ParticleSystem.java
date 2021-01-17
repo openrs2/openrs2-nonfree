@@ -230,7 +230,7 @@ public final class ParticleSystem extends ParticleNode {
 			}
 			@Pc(288) boolean local288 = false;
 			if (Static5.aBoolean249 && emitterNode.type.anInt2403 != -1) {
-				Static4.anInterface4_1.method451(emitterNode.type.anInt2403);
+				Static4.textureProvider.method451(emitterNode.type.anInt2403);
 				local288 = true;
 			} else {
 				GlRenderer.setTextureId(-1);

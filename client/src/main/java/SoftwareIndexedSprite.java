@@ -218,65 +218,65 @@ public final class SoftwareIndexedSprite extends IndexedSprite {
 	}
 
 	@OriginalMember(owner = "client!fe", name = "b", descriptor = "(III)V")
-	public final void method1311(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
-		for (@Pc(1) int local1 = 0; local1 < this.palette.length; local1++) {
-			@Pc(15) int local15 = this.palette[local1] >> 16 & 0xFF;
-			@Pc(19) int local19 = local15 + arg0;
-			if (local19 < 0) {
-				local19 = 0;
-			} else if (local19 > 255) {
-				local19 = 255;
+	public final void adjustPalette(@OriginalArg(0) int redDelta, @OriginalArg(1) int greenDelta, @OriginalArg(2) int blueDelta) {
+		for (@Pc(1) int i = 0; i < this.palette.length; i++) {
+			@Pc(15) int red = this.palette[i] >> 16 & 0xFF;
+			@Pc(19) int red2 = red + redDelta;
+			if (red2 < 0) {
+				red2 = 0;
+			} else if (red2 > 255) {
+				red2 = 255;
 			}
-			@Pc(38) int local38 = this.palette[local1] >> 8 & 0xFF;
-			@Pc(42) int local42 = local38 + arg1;
-			if (local42 < 0) {
-				local42 = 0;
-			} else if (local42 > 255) {
-				local42 = 255;
+			@Pc(38) int green = this.palette[i] >> 8 & 0xFF;
+			@Pc(42) int green2 = green + greenDelta;
+			if (green2 < 0) {
+				green2 = 0;
+			} else if (green2 > 255) {
+				green2 = 255;
 			}
-			@Pc(59) int local59 = this.palette[local1] & 0xFF;
-			@Pc(63) int local63 = local59 + arg2;
-			if (local63 < 0) {
-				local63 = 0;
-			} else if (local63 > 255) {
-				local63 = 255;
+			@Pc(59) int blue = this.palette[i] & 0xFF;
+			@Pc(63) int blue2 = blue + blueDelta;
+			if (blue2 < 0) {
+				blue2 = 0;
+			} else if (blue2 > 255) {
+				blue2 = 255;
 			}
-			this.palette[local1] = (local19 << 16) + (local42 << 8) + local63;
+			this.palette[i] = (red2 << 16) + (green2 << 8) + blue2;
 		}
 	}
 
 	@OriginalMember(owner = "client!fe", name = "b", descriptor = "()V")
-	public final void method1312() {
-		@Pc(6) byte[] local6 = new byte[this.width * this.height];
-		@Pc(8) int local8 = 0;
-		for (@Pc(13) int local13 = this.height - 1; local13 >= 0; local13--) {
-			for (@Pc(17) int local17 = 0; local17 < this.width; local17++) {
-				local6[local8++] = this.pixels[local17 + local13 * this.width];
+	public final void flipVertical() {
+		@Pc(6) byte[] pixels = new byte[this.width * this.height];
+		@Pc(8) int i = 0;
+		for (@Pc(13) int y = this.height - 1; y >= 0; y--) {
+			for (@Pc(17) int x = 0; x < this.width; x++) {
+				pixels[i++] = this.pixels[x + y * this.width];
 			}
 		}
-		this.pixels = local6;
+		this.pixels = pixels;
 		this.yOffset = this.innerHeight - this.height - this.yOffset;
 	}
 
 	@OriginalMember(owner = "client!fe", name = "c", descriptor = "()V")
-	public final void method1313() {
-		@Pc(6) byte[] local6 = new byte[this.width * this.height];
-		@Pc(8) int local8 = 0;
-		for (@Pc(10) int local10 = 0; local10 < this.width; local10++) {
-			for (@Pc(19) int local19 = this.height - 1; local19 >= 0; local19--) {
-				local6[local8++] = this.pixels[local10 + local19 * this.width];
+	public final void rotateClockwise() {
+		@Pc(6) byte[] pixels = new byte[this.width * this.height];
+		@Pc(8) int i = 0;
+		for (@Pc(10) int x = 0; x < this.width; x++) {
+			for (@Pc(19) int y = this.height - 1; y >= 0; y--) {
+				pixels[i++] = this.pixels[x + y * this.width];
 			}
 		}
-		this.pixels = local6;
-		@Pc(44) int local44 = this.yOffset;
+		this.pixels = pixels;
+		@Pc(44) int temp = this.yOffset;
 		this.yOffset = this.xOffset;
-		this.xOffset = this.innerHeight - this.height - local44;
-		local44 = this.height;
+		this.xOffset = this.innerHeight - this.height - temp;
+		temp = this.height;
 		this.height = this.width;
-		this.width = local44;
-		local44 = this.innerHeight;
+		this.width = temp;
+		temp = this.innerHeight;
 		this.innerHeight = this.innerWidth;
-		this.innerWidth = local44;
+		this.innerWidth = temp;
 	}
 
 	@OriginalMember(owner = "client!fe", name = "a", descriptor = "(IIIIII)V")

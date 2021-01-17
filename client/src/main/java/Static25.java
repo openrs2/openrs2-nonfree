@@ -110,16 +110,16 @@ public final class Static25 {
 
 	@OriginalMember(owner = "client!mm", name = "a", descriptor = "(B)V")
 	public static void method2770() {
-		if (Static3.aFloat68 < Static3.aFloat69) {
+		if (Static3.aFloat68 < WorldMap.zoom) {
 			Static3.aFloat68 = (float) ((double) Static3.aFloat68 + (double) Static3.aFloat68 / 30.0D);
-			if (Static3.aFloat69 < Static3.aFloat68) {
-				Static3.aFloat68 = Static3.aFloat69;
+			if (WorldMap.zoom < Static3.aFloat68) {
+				Static3.aFloat68 = WorldMap.zoom;
 			}
 			Static28.method3249();
-		} else if (Static3.aFloat68 > Static3.aFloat69) {
+		} else if (Static3.aFloat68 > WorldMap.zoom) {
 			Static3.aFloat68 = (float) ((double) Static3.aFloat68 - (double) Static3.aFloat68 / 30.0D);
-			if (Static3.aFloat68 < Static3.aFloat69) {
-				Static3.aFloat68 = Static3.aFloat69;
+			if (Static3.aFloat68 < WorldMap.zoom) {
+				Static3.aFloat68 = WorldMap.zoom;
 			}
 			Static28.method3249();
 		}
@@ -486,7 +486,7 @@ public final class Static25 {
 		Static2.anInt1231 = -1;
 		Static3.anInt2583 = 0;
 		Protocol.inboundBuffer.position = 0;
-		Static5.anInt4329 = 0;
+		Static5.rebootTimer = 0;
 		Protocol.length = 0;
 		Static8.method115();
 		for (@Pc(33) int i = 0; i < PlayerList.players.length; i++) {

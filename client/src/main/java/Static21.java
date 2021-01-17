@@ -4,25 +4,10 @@ import org.openrs2.deob.annotation.Pc;
 
 public final class Static21 {
 
-	@OriginalMember(owner = "client!jc", name = "e", descriptor = "(B)I")
-	public static int method1997() {
-		if ((double) Static3.aFloat69 == 3.0D) {
-			return 37;
-		} else if ((double) Static3.aFloat69 == 4.0D) {
-			return 50;
-		} else if ((double) Static3.aFloat69 == 6.0D) {
-			return 75;
-		} else if ((double) Static3.aFloat69 == 8.0D) {
-			return 100;
-		} else {
-			return 200;
-		}
-	}
-
 	@OriginalMember(owner = "client!jc", name = "a", descriptor = "(Z)V")
 	public static void method2001() {
 		Protocol.outboundBuffer.writeOpcode(86);
-		Protocol.outboundBuffer.writeByte(Static11.method557());
+		Protocol.outboundBuffer.writeByte(Static11.getWindowMode());
 		Protocol.outboundBuffer.writeShort(GameShell.canvasWidth);
 		Protocol.outboundBuffer.writeShort(GameShell.canvasHeight);
 		Protocol.outboundBuffer.writeByte(Static2.anInt1125);
@@ -126,7 +111,7 @@ public final class Static21 {
 		if (local62 == null) {
 			local62 = Fonts.b12Full;
 		}
-		local62.method2269(local26, arg0, arg2, arg1.anInt5893, arg1.anInt5949, arg1.anInt5933, arg1.anInt5934, arg1.anInt5924, arg1.anInt5922, client.random, client.seed, Static7.anIntArray600);
+		local62.method2269(local26, arg0, arg2, arg1.width, arg1.height, arg1.color, arg1.graphicShadow, arg1.textHorizontalAlignment, arg1.textVerticalAlignment, client.random, client.seed, Static7.anIntArray600);
 		Static8.method66(Static7.anIntArray600[2], Static7.anIntArray600[3], Static7.anIntArray600[0], Static7.anIntArray600[1]);
 	}
 
@@ -379,13 +364,6 @@ public final class Static21 {
 		}
 	}
 
-	@OriginalMember(owner = "client!jk", name = "a", descriptor = "(IILjava/lang/String;)V")
-	public static void method2060(@OriginalArg(1) int arg0, @OriginalArg(2) String arg1) {
-		Protocol.outboundBuffer.writeOpcode(215);
-		Protocol.outboundBuffer.writeLong(Base37.encode(arg1));
-		Protocol.outboundBuffer.writeByteC(arg0);
-	}
-
 	@OriginalMember(owner = "client!jk", name = "b", descriptor = "(B)V")
 	public static void method2062() {
 		for (@Pc(6) SubInterface subInterface = (SubInterface) InterfaceList.subInterfaces.head(); subInterface != null; subInterface = (SubInterface) InterfaceList.subInterfaces.next()) {
@@ -413,32 +391,15 @@ public final class Static21 {
 	@OriginalMember(owner = "client!jk", name = "a", descriptor = "(I)V")
 	public static void method2063() {
 		Protocol.outboundBuffer.writeOpcode(189);
-		for (@Pc(14) SubInterface local14 = (SubInterface) InterfaceList.subInterfaces.head(); local14 != null; local14 = (SubInterface) InterfaceList.subInterfaces.next()) {
-			if (local14.type == 0) {
-				InterfaceList.closeSubInterface(local14, true);
+		for (@Pc(14) SubInterface subInterface = (SubInterface) InterfaceList.subInterfaces.head(); subInterface != null; subInterface = (SubInterface) InterfaceList.subInterfaces.next()) {
+			if (subInterface.type == 0) {
+				InterfaceList.closeSubInterface(subInterface, true);
 			}
 		}
 		if (Static6.aClass185_14 != null) {
 			Static28.method3270(Static6.aClass185_14);
 			Static6.aClass185_14 = null;
 		}
-	}
-
-	@OriginalMember(owner = "client!jl", name = "a", descriptor = "(II)V")
-	public static void method2076(@OriginalArg(0) int arg0) {
-		Static1.anInt929 = -1;
-		if (arg0 == 37) {
-			Static3.aFloat69 = 3.0F;
-		} else if (arg0 == 50) {
-			Static3.aFloat69 = 4.0F;
-		} else if (arg0 == 75) {
-			Static3.aFloat69 = 6.0F;
-		} else if (arg0 == 100) {
-			Static3.aFloat69 = 8.0F;
-		} else if (arg0 == 200) {
-			Static3.aFloat69 = 16.0F;
-		}
-		Static1.anInt929 = -1;
 	}
 
 	@OriginalMember(owner = "client!jm", name = "a", descriptor = "(IIIIII)V")
@@ -452,10 +413,10 @@ public final class Static21 {
 
 	@OriginalMember(owner = "client!jm", name = "a", descriptor = "(IIIIIII)V")
 	public static void method2081(@OriginalArg(0) int targetMask, @OriginalArg(1) int targetParam, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5) {
-		@Pc(4) Component local4 = Static23.method2425(arg5, arg3);
-		if (local4 != null && local4.anObjectArray13 != null) {
+		@Pc(4) Component local4 = InterfaceList.getCreatedComponent(arg5, arg3);
+		if (local4 != null && local4.onTargetEnter != null) {
 			@Pc(15) HookRequest local15 = new HookRequest();
-			local15.arguments = local4.anObjectArray13;
+			local15.arguments = local4.onTargetEnter;
 			local15.source = local4;
 			method2019(local15);
 		}

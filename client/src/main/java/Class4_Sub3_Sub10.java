@@ -82,13 +82,13 @@ public final class Class4_Sub3_Sub10 extends SecondaryNode {
 			@Pc(20) int local20 = -1;
 			for (@Pc(22) int local22 = 0; local22 < 6; local22++) {
 				@Pc(30) int local30 = this.anIntArray193[local22];
-				this.anInt2324 = Static4.anInterface4_1.isLowDetail(local30) ? 64 : 128;
+				this.anInt2324 = Static4.textureProvider.isLowDetail(local30) ? 64 : 128;
 				if (local22 <= 0) {
 					local20 = this.anInt2324;
 				} else if (this.anInt2324 != local20) {
 					throw new RuntimeException("");
 				}
-				@Pc(60) IntBuffer local60 = IntBuffer.wrap(Static4.anInterface4_1.method449(local30));
+				@Pc(60) IntBuffer local60 = IntBuffer.wrap(Static4.textureProvider.method449(local30));
 				gl.glTexImage2D(local22 + GL.GL_TEXTURE_CUBE_MAP_POSITIVE_X, GL.GL_POINTS, GL.GL_RGB, local20, local20, GL.GL_POINTS, GL.GL_BGRA, GL.GL_UNSIGNED_BYTE, local60);
 			}
 			gl.glTexParameteri(GL.GL_TEXTURE_CUBE_MAP, GL.GL_TEXTURE_MIN_FILTER, GL.GL_LINEAR);
@@ -99,7 +99,7 @@ public final class Class4_Sub3_Sub10 extends SecondaryNode {
 			this.anInt2323 = 2;
 		} else if (this.anInt2323 != 1) {
 			for (@Pc(113) int local113 = 0; local113 < 6; local113++) {
-				@Pc(127) IntBuffer local127 = IntBuffer.wrap(ColorUtils.HSL_TO_RGB, Static4.anInterface4_1.method446(this.anIntArray193[local113]), 1);
+				@Pc(127) IntBuffer local127 = IntBuffer.wrap(ColorUtils.HSL_TO_RGB, Static4.textureProvider.method446(this.anIntArray193[local113]), 1);
 				gl.glTexImage2D(local113 + GL.GL_TEXTURE_CUBE_MAP_POSITIVE_X, GL.GL_POINTS, GL.GL_RGB, 1, 1, GL.GL_POINTS, GL.GL_BGRA, GL.GL_UNSIGNED_BYTE, local127);
 				GlCleaner.onCardTexture += 3 - this.size;
 				this.size = 3;
@@ -220,7 +220,7 @@ public final class Class4_Sub3_Sub10 extends SecondaryNode {
 	@OriginalMember(owner = "client!ib", name = "d", descriptor = "()Z")
 	private boolean method1836() {
 		for (@Pc(1) int local1 = 0; local1 < 6; local1++) {
-			if (!Static4.anInterface4_1.isGlTextureReady(this.anIntArray193[local1])) {
+			if (!Static4.textureProvider.isGlTextureReady(this.anIntArray193[local1])) {
 				return false;
 			}
 		}

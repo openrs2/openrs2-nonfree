@@ -238,8 +238,8 @@ public final class Static27 {
 	}
 
 	@OriginalMember(owner = "client!oi", name = "a", descriptor = "(BI)Ljava/lang/String;")
-	public static String method3226(@OriginalArg(1) int arg0) {
-		return (arg0 >> 24 & 0xFF) + "." + (arg0 >> 16 & 0xFF) + "." + (arg0 >> 8 & 0xFF) + "." + (arg0 & 0xFF);
+	public static String method3226(@OriginalArg(1) int ip) {
+		return (ip >> 24 & 0xFF) + "." + (ip >> 16 & 0xFF) + "." + (ip >> 8 & 0xFF) + "." + (ip & 0xFF);
 	}
 
 	@OriginalMember(owner = "client!oj", name = "a", descriptor = "(I[B)[B")

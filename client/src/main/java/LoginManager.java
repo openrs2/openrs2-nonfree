@@ -203,7 +203,7 @@ public final class LoginManager {
 				buffer.writeByte(anInt1407);
 				buffer.writeByte(client.advertSuppressed ? 1 : 0);
 				buffer.writeByte(1);
-				buffer.writeByte(Static11.method557());
+				buffer.writeByte(Static11.getWindowMode());
 				buffer.writeShort(GameShell.canvasWidth);
 				buffer.writeShort(GameShell.canvasHeight);
 				buffer.writeByte(Static2.anInt1125);
@@ -499,5 +499,12 @@ public final class LoginManager {
 		loops = 0;
 		disallowResult = -1;
 		reply = -3;
+	}
+
+	@OriginalMember(owner = "client!fd", name = "l", descriptor = "(I)V")
+	public static void method4619() {
+		if (step == 5) {
+			step = 6;
+		}
 	}
 }

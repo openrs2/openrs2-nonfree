@@ -21,10 +21,10 @@ public final class PlayerSkillXpTable {
 	public static final int[] experience = new int[25];
 
 	@OriginalMember(owner = "client!mo", name = "db", descriptor = "[I")
-	public static final int[] updatedSkills = new int[32];
+	public static final int[] updatedStats = new int[32];
 
 	@OriginalMember(owner = "client!pl", name = "y", descriptor = "I")
-	public static int updatedSkillsWriterIndex = 0;
+	public static int updatedStatsWriterIndex = 0;
 
 	static {
 		@Pc(4) int experience = 0;

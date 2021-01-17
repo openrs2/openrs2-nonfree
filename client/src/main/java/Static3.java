@@ -127,9 +127,6 @@ public final class Static3 {
 	@OriginalMember(owner = "client!ii", name = "i", descriptor = "F")
 	public static float aFloat68;
 
-	@OriginalMember(owner = "client!ii", name = "k", descriptor = "F")
-	public static float aFloat69;
-
 	@OriginalMember(owner = "client!ii", name = "m", descriptor = "I")
 	public static int anInt2965;
 
@@ -210,9 +207,6 @@ public final class Static3 {
 
 	@OriginalMember(owner = "client!jc", name = "A", descriptor = "I")
 	public static int anInt2542;
-
-	@OriginalMember(owner = "client!jc", name = "D", descriptor = "Lclient!wf;")
-	public static Component aClass185_8;
 
 	@OriginalMember(owner = "client!jd", name = "a", descriptor = "I")
 	public static int anInt2554;

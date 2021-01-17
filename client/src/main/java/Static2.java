@@ -8,7 +8,7 @@ public final class Static2 {
 	public static int anInt2247;
 
 	@OriginalMember(owner = "client!dn", name = "ab", descriptor = "Lclient!wg;")
-	public static MapArea aClass4_Sub3_Sub22_1;
+	public static Map aClass4_Sub3_Sub22_1;
 
 	@OriginalMember(owner = "client!e", name = "F", descriptor = "[[[B")
 	public static byte[][][] aByteArrayArrayArray3;
@@ -58,9 +58,6 @@ public final class Static2 {
 	@OriginalMember(owner = "client!fb", name = "e", descriptor = "I")
 	public static int anInt1637;
 
-	@OriginalMember(owner = "client!fd", name = "ib", descriptor = "I")
-	public static int anInt5734;
-
 	@OriginalMember(owner = "client!fd", name = "Cb", descriptor = "[I")
 	public static int[] anIntArray649;
 
@@ -96,9 +93,6 @@ public final class Static2 {
 
 	@OriginalMember(owner = "client!g", name = "B", descriptor = "[I")
 	public static int[] anIntArray159;
-
-	@OriginalMember(owner = "client!ga", name = "c", descriptor = "[Ljava/lang/String;")
-	public static String[] aStringArray42;
 
 	@OriginalMember(owner = "client!ga", name = "e", descriptor = "I")
 	public static int anInt5778;
@@ -253,9 +247,6 @@ public final class Static2 {
 	@OriginalMember(owner = "client!g", name = "G", descriptor = "[[I")
 	public static final int[][] anIntArrayArray16 = new int[][] { new int[0], { 128, 0, 128, 128, 0, 128 }, { 0, 0, 128, 0, 128, 128, 64, 128 }, { 0, 128, 0, 0, 128, 0, 64, 128 }, { 0, 0, 64, 128, 0, 128 }, { 128, 128, 64, 128, 128, 0 }, { 64, 0, 128, 0, 128, 128, 64, 128 }, { 128, 0, 128, 128, 0, 128, 0, 64, 64, 0 }, { 0, 0, 64, 0, 0, 64 }, { 0, 0, 128, 0, 128, 128, 64, 96, 32, 64 }, { 0, 128, 0, 0, 32, 64, 64, 96, 128, 128 }, { 0, 128, 0, 0, 32, 32, 96, 32, 128, 0, 128, 128 } };
 
-	@OriginalMember(owner = "client!g", name = "I", descriptor = "Ljava/lang/String;")
-	public static String aString108 = null;
-
 	@OriginalMember(owner = "client!g", name = "J", descriptor = "I")
 	public static int anInt1997 = 0;
 
@@ -265,6 +256,4 @@ public final class Static2 {
 	@OriginalMember(owner = "client!ga", name = "a", descriptor = "[I")
 	public static final int[] anIntArray651 = new int[] { 1, 2, 4, 8 };
 
-	@OriginalMember(owner = "client!gb", name = "q", descriptor = "[I")
-	public static final int[] anIntArray162 = new int[3];
 }

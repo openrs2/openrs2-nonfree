@@ -3,7 +3,7 @@ import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
 
 @OriginalClass("client!e")
-public final class MapAreaChunk extends Node {
+public final class MapChunk extends Node {
 
 	@OriginalMember(owner = "client!e", name = "z", descriptor = "I")
 	public final int displayMinX;
@@ -36,7 +36,7 @@ public final class MapAreaChunk extends Node {
 	public final int displayMaxX;
 
 	@OriginalMember(owner = "client!e", name = "<init>", descriptor = "(IIIIIIIIII)V")
-	public MapAreaChunk(@OriginalArg(0) int sourceLevel, @OriginalArg(1) int displayLevel, @OriginalArg(2) int sourceMinX, @OriginalArg(3) int sourceMinZ, @OriginalArg(4) int sourceMaxX, @OriginalArg(5) int sourceMaxZ, @OriginalArg(6) int displayMinX, @OriginalArg(7) int displayMinZ, @OriginalArg(8) int displayMaxX, @OriginalArg(9) int displayMaxZ) {
+	public MapChunk(@OriginalArg(0) int sourceLevel, @OriginalArg(1) int displayLevel, @OriginalArg(2) int sourceMinX, @OriginalArg(3) int sourceMinZ, @OriginalArg(4) int sourceMaxX, @OriginalArg(5) int sourceMaxZ, @OriginalArg(6) int displayMinX, @OriginalArg(7) int displayMinZ, @OriginalArg(8) int displayMaxX, @OriginalArg(9) int displayMaxZ) {
 		this.displayMinX = displayMinX;
 		this.sourceMinX = sourceMinX;
 		this.displayLevel = displayLevel;

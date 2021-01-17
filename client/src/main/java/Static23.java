@@ -12,18 +12,6 @@ public final class Static23 {
 		Static25.method2777();
 	}
 
-	@OriginalMember(owner = "client!l", name = "a", descriptor = "(IBI)Lclient!wf;")
-	public static Component method2425(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1) {
-		@Pc(9) Component local9 = InterfaceList.getComponent(arg0);
-		if (arg1 == -1) {
-			return local9;
-		} else if (local9 == null || local9.aClass185Array4 == null || arg1 >= local9.aClass185Array4.length) {
-			return null;
-		} else {
-			return local9.aClass185Array4[arg1];
-		}
-	}
-
 	@OriginalMember(owner = "client!lb", name = "b", descriptor = "(B)V")
 	public static void method2455() {
 		if (Static1.anInt885 <= 0) {
@@ -800,15 +788,15 @@ public final class Static23 {
 
 	@OriginalMember(owner = "client!lg", name = "a", descriptor = "(IIIIIIIIIIIIIIIIIII)V")
 	public static void method2549(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) int arg8, @OriginalArg(9) int arg9, @OriginalArg(10) int arg10, @OriginalArg(11) int arg11, @OriginalArg(12) int arg12, @OriginalArg(13) int arg13, @OriginalArg(14) int arg14, @OriginalArg(15) int arg15, @OriginalArg(16) int arg16, @OriginalArg(17) int arg17, @OriginalArg(18) int arg18) {
-		@Pc(5) int[] local5 = Static4.anInterface4_1.method445(arg18, ColorUtils.brightness);
+		@Pc(5) int[] local5 = Static4.textureProvider.method445(arg18, ColorUtils.brightness);
 		if (local5 == null || Static4.anInt3127 > 10) {
-			@Pc(15) int local15 = Static4.anInterface4_1.method446(arg18);
+			@Pc(15) int local15 = Static4.textureProvider.method446(arg18);
 			Static4.aBoolean218 = true;
 			method2543(arg0, arg1, arg2, arg3, arg4, arg5, method2540(local15, arg6), method2540(local15, arg7), method2540(local15, arg8));
 			return;
 		}
-		Static4.aBoolean220 = Static4.anInterface4_1.isLowDetail(arg18);
-		Static4.aBoolean219 = Static4.anInterface4_1.method443(arg18);
+		Static4.aBoolean220 = Static4.textureProvider.isLowDetail(arg18);
+		Static4.aBoolean219 = Static4.textureProvider.method443(arg18);
 		@Pc(48) int local48 = arg4 - arg3;
 		@Pc(52) int local52 = arg1 - arg0;
 		@Pc(56) int local56 = arg5 - arg3;
@@ -1775,7 +1763,7 @@ public final class Static23 {
 
 	@OriginalMember(owner = "client!lg", name = "a", descriptor = "(Lclient!nk;)V")
 	public static void method2551(@OriginalArg(0) GlTextureProvider arg0) {
-		Static4.anInterface4_1 = arg0;
+		Static4.textureProvider = arg0;
 	}
 
 	@OriginalMember(owner = "client!lg", name = "a", descriptor = "([BIIIIIII)V")
@@ -2657,14 +2645,14 @@ public final class Static23 {
 
 	@OriginalMember(owner = "client!lg", name = "b", descriptor = "(IIIIIIIIIIIIIIIIIII)V")
 	public static void method2558(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) int arg8, @OriginalArg(9) int arg9, @OriginalArg(10) int arg10, @OriginalArg(11) int arg11, @OriginalArg(12) int arg12, @OriginalArg(13) int arg13, @OriginalArg(14) int arg14, @OriginalArg(15) int arg15, @OriginalArg(16) int arg16, @OriginalArg(17) int arg17, @OriginalArg(18) int arg18) {
-		@Pc(5) int[] local5 = Static4.anInterface4_1.method445(arg18, ColorUtils.brightness);
+		@Pc(5) int[] local5 = Static4.textureProvider.method445(arg18, ColorUtils.brightness);
 		if (local5 == null) {
-			@Pc(12) int local12 = Static4.anInterface4_1.method446(arg18);
+			@Pc(12) int local12 = Static4.textureProvider.method446(arg18);
 			method2543(arg0, arg1, arg2, arg3, arg4, arg5, method2540(local12, arg6), method2540(local12, arg7), method2540(local12, arg8));
 			return;
 		}
-		Static4.aBoolean220 = Static4.anInterface4_1.isLowDetail(arg18);
-		Static4.aBoolean219 = Static4.anInterface4_1.method443(arg18);
+		Static4.aBoolean220 = Static4.textureProvider.isLowDetail(arg18);
+		Static4.aBoolean219 = Static4.textureProvider.method443(arg18);
 		@Pc(43) int local43 = arg4 - arg3;
 		@Pc(47) int local47 = arg1 - arg0;
 		@Pc(51) int local51 = arg5 - arg3;

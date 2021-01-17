@@ -125,7 +125,7 @@ public final class Static35 {
 	@OriginalMember(owner = "client!ud", name = "a", descriptor = "(Lclient!wf;BIII)V")
 	public static void method4309(@OriginalArg(0) Component arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3) {
 		if (GlRenderer.enabled) {
-			GlRaster.setClip(arg3, arg1, arg0.anInt5893 + arg3, arg1 + arg0.anInt5949);
+			GlRaster.setClip(arg3, arg1, arg0.width + arg3, arg1 + arg0.height);
 		}
 		if (Static5.anInt5206 >= 3) {
 			if (GlRenderer.enabled) {
@@ -137,9 +137,9 @@ public final class Static35 {
 				SoftwareRaster.method4210(arg3, arg1, arg0.anIntArray672, arg0.anIntArray657);
 			}
 		} else if (GlRenderer.enabled) {
-			((GlSprite) Sprites.compass).renderRotatedTransparent(arg3, arg1, arg0.anInt5893, arg0.anInt5949, Sprites.compass.width / 2, Sprites.compass.height / 2, (int) Static5.aFloat97, 256, (GlSprite) arg0.method4729(false));
+			((GlSprite) Sprites.compass).renderRotatedTransparent(arg3, arg1, arg0.width, arg0.height, Sprites.compass.width / 2, Sprites.compass.height / 2, (int) Static5.aFloat97, 256, (GlSprite) arg0.method4729(false));
 		} else {
-			((SoftwareSprite) Sprites.compass).method2165(arg3, arg1, arg0.anInt5893, arg0.anInt5949, Sprites.compass.width / 2, Sprites.compass.height / 2, (int) Static5.aFloat97, arg0.anIntArray672, arg0.anIntArray657);
+			((SoftwareSprite) Sprites.compass).method2165(arg3, arg1, arg0.width, arg0.height, Sprites.compass.width / 2, Sprites.compass.height / 2, (int) Static5.aFloat97, arg0.anIntArray672, arg0.anIntArray657);
 		}
 		Static6.aBooleanArray24[arg2] = true;
 	}
@@ -425,7 +425,7 @@ public final class Static35 {
 		}
 		if (local28 == 3 && Static6.aClass185_14 == null) {
 			Static37.method4736(local15, local19);
-			Static6.aClass185_14 = Static23.method2425(local19, local15);
+			Static6.aClass185_14 = InterfaceList.getCreatedComponent(local19, local15);
 			Static28.method3270(Static6.aClass185_14);
 		}
 		if (local28 == 1) {
@@ -612,7 +612,7 @@ public final class Static35 {
 			Static13.method1004(local19, local32, local15);
 		}
 		if (local28 == 34) {
-			@Pc(2187) Component local2187 = Static23.method2425(local19, local15);
+			@Pc(2187) Component local2187 = InterfaceList.getCreatedComponent(local19, local15);
 			if (local2187 != null) {
 				Static26.method4812();
 				@Pc(2195) ServerActiveProperties local2195 = InterfaceList.getServerActiveProperties(local2187);
@@ -623,7 +623,7 @@ public final class Static35 {
 					Static4.aString140 = "Null";
 				}
 				if (local2187.if3) {
-					Static2.aString81 = local2187.aString352 + "<col=ffffff>";
+					Static2.aString81 = local2187.opBase + "<col=ffffff>";
 				} else {
 					Static2.aString81 = "<col=00ff00>" + local2187.aString353 + "<col=ffffff>";
 				}
@@ -830,7 +830,7 @@ public final class Static35 {
 				Protocol.outboundBuffer.writeOpcode(72);
 				Protocol.outboundBuffer.writeShort(local24);
 			} else {
-				ChatHistory.add(0, "", local3148.objCounts[local15] + " x " + ObjTypeList.get(local24).name);
+				Chat.add(0, "", local3148.objCounts[local15] + " x " + ObjTypeList.get(local24).name);
 			}
 			Static2.anInt2246 = 0;
 			Static1.aClass185_3 = InterfaceList.getComponent(local19);
@@ -1010,7 +1010,7 @@ public final class Static35 {
 	public static void setWindowMode(@OriginalArg(0) boolean replaceCanvas, @OriginalArg(2) int mode, @OriginalArg(3) int width, @OriginalArg(4) int height) {
 		@Pc(5) boolean local5 = false;
 		Static1.aLong15 = 0L;
-		@Pc(15) int local15 = Static11.method557();
+		@Pc(15) int local15 = Static11.getWindowMode();
 		if (local15 > 0 == mode <= 0) {
 			local5 = true;
 		}
@@ -1056,8 +1056,8 @@ public final class Static35 {
 				local52 = local52 * 256 / (Static6.anInt4761 + 256);
 				@Pc(64) int local64 = MathUtils.SINE[local48];
 				local64 = local64 * 256 / (Static6.anInt4761 + 256);
-				local32[local34 * 2] = arg2 + arg1.anInt5893 / 2 + ((arg5 + local10.anIntArray188[local34 * 2 + 1] * 4) * local64 + local52 * (arg4 + local10.anIntArray188[local34 * 2] * 4) >> 16);
-				local32[local34 * 2 + 1] = arg0 + arg1.anInt5949 / 2 - (local52 * (arg5 + local10.anIntArray188[local34 * 2 + 1] * 4) - local64 * (arg4 + local10.anIntArray188[local34 * 2] * 4) >> 16);
+				local32[local34 * 2] = arg2 + arg1.width / 2 + ((arg5 + local10.anIntArray188[local34 * 2 + 1] * 4) * local64 + local52 * (arg4 + local10.anIntArray188[local34 * 2] * 4) >> 16);
+				local32[local34 * 2 + 1] = arg0 + arg1.height / 2 - (local52 * (arg5 + local10.anIntArray188[local34 * 2 + 1] * 4) - local64 * (arg4 + local10.anIntArray188[local34 * 2] * 4) >> 16);
 			}
 			if (GlRenderer.enabled) {
 				Static18.method1738(local32, local10.anInt2283, local10.anInt2283 >>> 24, arg1.anIntArray672, arg1.anIntArray657);

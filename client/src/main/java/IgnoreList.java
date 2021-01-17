@@ -10,40 +10,40 @@ public final class IgnoreList {
 	public static final String[] usernames = new String[100];
 
 	@OriginalMember(owner = "client!ed", name = "F", descriptor = "[Z")
-	public static final boolean[] aBooleanArray5 = new boolean[100];
+	public static final boolean[] temporary = new boolean[100];
 
 	@OriginalMember(owner = "client!rg", name = "mb", descriptor = "I")
 	public static int size = 0;
 
 	@OriginalMember(owner = "client!sd", name = "a", descriptor = "(ZJB)V")
-	public static void add(@OriginalArg(1) long encodedUsername, @OriginalArg(0) boolean arg0) {
+	public static void add(@OriginalArg(1) long encodedUsername, @OriginalArg(0) boolean temporary) {
 		if (encodedUsername == 0L) {
 			return;
 		}
 		if (size >= 100) {
-			ChatHistory.add(0, "", LocalisedText.IGNORELISTFULL);
+			Chat.add(0, "", LocalisedText.IGNORELISTFULL);
 			return;
 		}
 		@Pc(25) String username = Base37.decodeTitleCase(encodedUsername);
 		for (@Pc(27) int i = 0; i < size; i++) {
 			if (encodedUsernames[i] == encodedUsername) {
-				ChatHistory.add(0, "", username + LocalisedText.IGNORELISTDUPE);
+				Chat.add(0, "", username + LocalisedText.IGNORELISTDUPE);
 				return;
 			}
 		}
 		for (@Pc(59) int i = 0; i < FriendsList.size; i++) {
 			if (FriendsList.encodedUsernames[i] == encodedUsername) {
-				ChatHistory.add(0, "", LocalisedText.REMOVEFRIEND1 + username + LocalisedText.REMOVEFRIEND2);
+				Chat.add(0, "", LocalisedText.REMOVEFRIEND1 + username + LocalisedText.REMOVEFRIEND2);
 				return;
 			}
 		}
-		if (username.equals(PlayerList.self.name)) {
-			ChatHistory.add(0, "", LocalisedText.IGNORECANTADDSELF);
+		if (username.equals(PlayerList.self.username)) {
+			Chat.add(0, "", LocalisedText.IGNORECANTADDSELF);
 			return;
 		}
 		encodedUsernames[size] = encodedUsername;
-		usernames[size] = Static30.method423(encodedUsername);
-		aBooleanArray5[size++] = arg0;
+		usernames[size] = base37DecodeLowerCase(encodedUsername);
+		IgnoreList.temporary[size++] = temporary;
 		Static3.anInt2102 = Static6.anInt4979;
 		Protocol.outboundBuffer.writeOpcode(197);
 		Protocol.outboundBuffer.writeLong(encodedUsername);
@@ -60,7 +60,7 @@ public final class IgnoreList {
 				for (@Pc(38) int j = i; j < size; j++) {
 					encodedUsernames[j] = encodedUsernames[j + 1];
 					usernames[j] = usernames[j + 1];
-					aBooleanArray5[j] = aBooleanArray5[j + 1];
+					temporary[j] = temporary[j + 1];
 				}
 				Static3.anInt2102 = Static6.anInt4979;
 				Protocol.outboundBuffer.writeOpcode(142);
@@ -81,5 +81,10 @@ public final class IgnoreList {
 			}
 		}
 		return false;
+	}
+
+	@OriginalMember(owner = "client!qi", name = "a", descriptor = "(IJ)Ljava/lang/String;")
+	public static String base37DecodeLowerCase(@OriginalArg(1) long username) {
+		return Base37.decodeLowerCase(username);
 	}
 }

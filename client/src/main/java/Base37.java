@@ -79,4 +79,22 @@ public final class Base37 {
 			return out.reverse().toString();
 		}
 	}
+
+	@OriginalMember(owner = "client!pk", name = "a", descriptor = "(Ljava/lang/String;Z)Ljava/lang/String;")
+	public static String toTitleCase(@OriginalArg(0) String username) {
+		@Pc(15) String username2 = decodeTitleCase(encode(username));
+		if (username2 == null) {
+			username2 = "";
+		}
+		return username2;
+	}
+
+	@OriginalMember(owner = "client!ej", name = "a", descriptor = "(Ljava/lang/String;I)Ljava/lang/String;")
+	public static String toLowerCase(@OriginalArg(0) String username) {
+		@Pc(17) String local17 = decodeLowerCase(encode(username));
+		if (local17 == null) {
+			local17 = "";
+		}
+		return local17;
+	}
 }

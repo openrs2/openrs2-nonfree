@@ -140,7 +140,7 @@ public final class SoftwareRaster {
 	}
 
 	@OriginalMember(owner = "client!tk", name = "a", descriptor = "(III)V")
-	public static void setPixel(@OriginalArg(0) int x, @OriginalArg(1) int y, @OriginalArg(2) int color) {
+	private static void setPixel(@OriginalArg(0) int x, @OriginalArg(1) int y, @OriginalArg(2) int color) {
 		if (x >= clipX && y >= clipY && x < clipWidth && y < clipHeight) {
 			pixels[x + y * width] = color;
 		}

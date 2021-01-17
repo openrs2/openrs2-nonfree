@@ -156,11 +156,11 @@ public final class Static33 {
 			local15 = GameShell.canvasHeight;
 			local12 = GameShell.canvasWidth;
 		} else {
-			local12 = local3.anInt5893;
-			local15 = local3.anInt5949;
+			local12 = local3.width;
+			local15 = local3.height;
 		}
-		Static11.method526(false, local12, arg0, local15);
-		Static36.method3812(local12, local15, arg0);
+		Static11.method526(arg0, local12, local15, false);
+		Static36.method3812(arg0, local12, local15);
 	}
 
 	@OriginalMember(owner = "client!tc", name = "c", descriptor = "(III)Z")
@@ -419,7 +419,7 @@ public final class Static33 {
 		} else {
 			angle2 = 0;
 		}
-		@Pc(45) SoftwareIndexedSprite sprite = msiType.getSprite(locType.aBoolean382, angle2);
+		@Pc(45) SoftwareIndexedSprite sprite = msiType.getSprite(locType.mapSceneFlipVertical, angle2);
 		if (sprite == null) {
 			return false;
 		}
@@ -718,18 +718,18 @@ public final class Static33 {
 	public static void method3010(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) Component arg2, @OriginalArg(3) int arg3) {
 		Static9.method763();
 		if (GlRenderer.enabled) {
-			GlRaster.setClip(arg0, arg3, arg2.anInt5893 + arg0, arg2.anInt5949 + arg3);
+			GlRaster.setClip(arg0, arg3, arg2.width + arg0, arg2.height + arg3);
 		} else {
-			SoftwareRaster.setClip(arg0, arg3, arg0 + arg2.anInt5893, arg3 + arg2.anInt5949);
+			SoftwareRaster.setClip(arg0, arg3, arg0 + arg2.width, arg3 + arg2.height);
 		}
 		if (Static5.anInt5206 != 2 && Static5.anInt5206 != 5 && Static5.aClass4_Sub3_Sub14_4 != null) {
 			@Pc(92) int local92 = (int) Static5.aFloat97 + Static6.anInt3585 & 0x7FF;
 			@Pc(101) int local101 = 464 - PlayerList.self.zFine / 32;
 			@Pc(109) int local109 = PlayerList.self.xFine / 32 + 48;
 			if (GlRenderer.enabled) {
-				((GlSprite) Static5.aClass4_Sub3_Sub14_4).renderRotatedTransparent(arg0, arg3, arg2.anInt5893, arg2.anInt5949, local109, local101, local92, Static6.anInt4761 + 256, (GlSprite) arg2.method4729(false));
+				((GlSprite) Static5.aClass4_Sub3_Sub14_4).renderRotatedTransparent(arg0, arg3, arg2.width, arg2.height, local109, local101, local92, Static6.anInt4761 + 256, (GlSprite) arg2.method4729(false));
 			} else {
-				((SoftwareSprite) Static5.aClass4_Sub3_Sub14_4).renderRotatedTransparent(arg0, arg3, arg2.anInt5893, arg2.anInt5949, local109, local101, local92, Static6.anInt4761 + 256, arg2.anIntArray672, arg2.anIntArray657);
+				((SoftwareSprite) Static5.aClass4_Sub3_Sub14_4).renderRotatedTransparent(arg0, arg3, arg2.width, arg2.height, local109, local101, local92, Static6.anInt4761 + 256, arg2.anIntArray672, arg2.anIntArray657);
 			}
 			if (Static7.aClass138_14 != null) {
 				for (@Pc(158) int local158 = 0; local158 < Static7.aClass138_14.size; local158++) {
@@ -790,7 +790,7 @@ public final class Static33 {
 					@Pc(520) int local520 = local502.xFine / 32 - PlayerList.self.xFine / 32;
 					@Pc(522) boolean local522 = false;
 					@Pc(533) int local533 = local502.zFine / 32 - PlayerList.self.zFine / 32;
-					@Pc(540) long local540 = Base37.encode(local502.name);
+					@Pc(540) long local540 = Base37.encode(local502.username);
 					for (@Pc(542) int local542 = 0; local542 < FriendsList.size; local542++) {
 						if (local540 == FriendsList.encodedUsernames[local542] && FriendsList.worlds[local542] != 0) {
 							local522 = true;
@@ -798,8 +798,8 @@ public final class Static33 {
 						}
 					}
 					@Pc(567) boolean local567 = false;
-					for (@Pc(569) int local569 = 0; local569 < Static4.anInt3260; local569++) {
-						if (Static6.clanMembers[local569].key == local540) {
+					for (@Pc(569) int local569 = 0; local569 < ClanChat.size; local569++) {
+						if (ClanChat.members[local569].key == local540) {
 							local567 = true;
 							break;
 						}
@@ -856,9 +856,9 @@ public final class Static33 {
 				Static11.method525(arg0, arg2, arg3, local895, local917, Sprites.mapFlag[Static3.aBoolean147 ? 1 : 0]);
 			}
 			if (GlRenderer.enabled) {
-				GlRaster.fillRect(arg0 + arg2.anInt5893 / 2 - 1, arg2.anInt5949 / 2 + arg3 - 1, 3, 3, 16777215);
+				GlRaster.fillRect(arg0 + arg2.width / 2 - 1, arg2.height / 2 + arg3 - 1, 3, 3, 16777215);
 			} else {
-				SoftwareRaster.fillRect(arg0 + arg2.anInt5893 / 2 - 1, arg2.anInt5949 / 2 + arg3 - 1, 3, 3, 16777215);
+				SoftwareRaster.fillRect(arg0 + arg2.width / 2 - 1, arg2.height / 2 + arg3 - 1, 3, 3, 16777215);
 			}
 		} else if (GlRenderer.enabled) {
 			@Pc(64) Sprite local64 = arg2.method4729(false);

@@ -388,7 +388,7 @@ public final class Static18 {
 						}
 					}
 				}
-				if (local31.aString234 != null && (local17 >= PlayerList.size || Static7.anInt5413 == 0 || Static7.anInt5413 == 3 || Static7.anInt5413 == 1 && FriendsList.contains(((Player) local31).name))) {
+				if (local31.aString234 != null && (local17 >= PlayerList.size || Chat.publicFilter == 0 || Chat.publicFilter == 3 || Chat.publicFilter == 1 && FriendsList.contains(((Player) local31).username))) {
 					Static28.method3325(arg2 >> 1, arg3, arg1, arg4 >> 1, local31.method3306(), local31);
 					if (Static7.anInt5584 > -1 && Static5.anInt3635 < Static5.anInt5199) {
 						Static5.anIntArray566[Static5.anInt3635] = Fonts.b12Full.method2252(local31.aString234) / 2;
@@ -623,10 +623,10 @@ public final class Static18 {
 		Static5.aBoolean297 = false;
 		if (Mouse.pressedButton != 0) {
 			if (arg2 <= arg3 && arg2 + 16 > arg3 && arg1 >= arg5 && arg1 < arg5 + 16) {
-				arg0.anInt5931 -= 4;
+				arg0.scrollY -= 4;
 				Static28.method3270(arg0);
 			} else if (arg2 <= arg3 && arg2 + 16 > arg3 && arg6 + arg5 - 16 <= arg1 && arg5 + arg6 > arg1) {
-				arg0.anInt5931 += 4;
+				arg0.scrollY += 4;
 				Static28.method3270(arg0);
 			} else if (arg2 - Static7.anInt5283 <= arg3 && arg3 < arg2 + Static7.anInt5283 + 16 && arg1 >= arg5 + 16 && arg1 < arg6 + arg5 - 16) {
 				@Pc(129) int local129 = (arg6 - 32) * arg6 / arg4;
@@ -635,7 +635,7 @@ public final class Static18 {
 				}
 				@Pc(147) int local147 = arg1 - arg5 - local129 / 2 - 16;
 				@Pc(153) int local153 = arg6 - local129 - 32;
-				arg0.anInt5931 = local147 * (arg4 - arg6) / local153;
+				arg0.scrollY = local147 * (arg4 - arg6) / local153;
 				Static28.method3270(arg0);
 				Static5.aBoolean297 = true;
 			}
@@ -643,9 +643,9 @@ public final class Static18 {
 		if (Static3.anInt2885 == 0) {
 			return;
 		}
-		@Pc(196) int local196 = arg0.anInt5893;
+		@Pc(196) int local196 = arg0.width;
 		if (arg2 - local196 <= arg3 && arg5 <= arg1 && arg3 < arg2 + 16 && arg1 <= arg6 + arg5) {
-			arg0.anInt5931 += Static3.anInt2885 * 45;
+			arg0.scrollY += Static3.anInt2885 * 45;
 			Static28.method3270(arg0);
 		}
 	}

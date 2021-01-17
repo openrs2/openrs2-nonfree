@@ -25,7 +25,7 @@ public final class Static8 {
 		@Pc(59) int prevOriginZ = Static7.originZ;
 		Static5.originX = zoneX * 8 - 48;
 		Static7.originZ = zoneZ * 8 - 48;
-		Static2.aClass4_Sub3_Sub22_1 = MapAreaList.getContainingSource(Static4.centralZoneX * 8, Static1.centralZoneZ * 8);
+		Static2.aClass4_Sub3_Sub22_1 = MapList.getContainingSource(Static4.centralZoneX * 8, Static1.centralZoneZ * 8);
 		Static7.aClass138_14 = null;
 		@Pc(90) int dz = Static7.originZ - prevOriginZ;
 		@Pc(95) int dx = Static5.originX - prevOriginX;
@@ -141,30 +141,30 @@ public final class Static8 {
 	}
 
 	@OriginalMember(owner = "client!ab", name = "a", descriptor = "(IBLjava/lang/String;)V")
-	public static void method7(@OriginalArg(0) int arg0, @OriginalArg(2) String arg1) {
-		@Pc(17) String local17 = Static29.method3464(Static14.method1054(arg1));
+	public static void method7(@OriginalArg(0) int op, @OriginalArg(2) String username) {
+		@Pc(17) String local17 = Base37.toTitleCase(Base37.toLowerCase(username));
 		@Pc(19) boolean local19 = false;
 		for (@Pc(21) int i = 0; i < PlayerList.size; i++) {
 			@Pc(30) Player player = PlayerList.players[PlayerList.ids[i]];
-			if (player != null && player.name != null && player.name.equalsIgnoreCase(local17)) {
+			if (player != null && player.username != null && player.username.equalsIgnoreCase(local17)) {
 				local19 = true;
-				if (arg0 == 1) {
+				if (op == 1) {
 					Protocol.outboundBuffer.writeOpcode(212);
 					Protocol.outboundBuffer.writeShortA(PlayerList.ids[i]);
 					Protocol.outboundBuffer.writeByteA(0);
-				} else if (arg0 == 4) {
+				} else if (op == 4) {
 					Protocol.outboundBuffer.writeOpcode(105);
 					Protocol.outboundBuffer.writeShort(PlayerList.ids[i]);
 					Protocol.outboundBuffer.writeByte(0);
-				} else if (arg0 == 5) {
+				} else if (op == 5) {
 					Protocol.outboundBuffer.writeOpcode(96);
 					Protocol.outboundBuffer.writeByteA(0);
 					Protocol.outboundBuffer.writeShort(PlayerList.ids[i]);
-				} else if (arg0 == 6) {
+				} else if (op == 6) {
 					Protocol.outboundBuffer.writeOpcode(77);
 					Protocol.outboundBuffer.writeShortLE2(PlayerList.ids[i]);
 					Protocol.outboundBuffer.writeByteS(0);
-				} else if (arg0 == 7) {
+				} else if (op == 7) {
 					Protocol.outboundBuffer.writeOpcode(52);
 					Protocol.outboundBuffer.writeShort(PlayerList.ids[i]);
 					Protocol.outboundBuffer.writeByte(0);
@@ -173,7 +173,7 @@ public final class Static8 {
 			}
 		}
 		if (!local19) {
-			ChatHistory.add(0, "", LocalisedText.UNABLETOFIND + local17);
+			Chat.add(0, "", LocalisedText.UNABLETOFIND + local17);
 		}
 	}
 
@@ -228,11 +228,6 @@ public final class Static8 {
 				Static2.aBooleanArray8[local3] = true;
 			}
 		}
-	}
-
-	@OriginalMember(owner = "client!ac", name = "c", descriptor = "(II)I")
-	public static int method71(@OriginalArg(0) int arg0) {
-		return arg0 == 16711935 ? -1 : Static28.method3276(arg0);
 	}
 
 	@OriginalMember(owner = "client!ae", name = "a", descriptor = "(III)V")

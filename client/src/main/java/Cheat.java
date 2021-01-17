@@ -13,7 +13,7 @@ public final class Cheat {
 				}
 				@Pc(29) Runtime runtime = Runtime.getRuntime();
 				@Pc(38) int used = (int) ((runtime.totalMemory() - runtime.freeMemory()) / 1024L);
-				ChatHistory.add(0, null, "mem=" + used + "k");
+				Chat.add(0, null, "mem=" + used + "k");
 			}
 			if (command.equalsIgnoreCase("::mm")) {
 				Static27.method4709();
@@ -22,17 +22,17 @@ public final class Cheat {
 				}
 				@Pc(69) Runtime runtime = Runtime.getRuntime();
 				@Pc(79) int usedBefore = (int) ((runtime.totalMemory() - runtime.freeMemory()) / 1024L);
-				ChatHistory.add(0, null, "Memory before cleanup=" + usedBefore + "k");
+				Chat.add(0, null, "Memory before cleanup=" + usedBefore + "k");
 				Static24.method2567();
 				Static27.method4709();
 				for (@Pc(99) int i = 0; i < 10; i++) {
 					System.gc();
 				}
 				@Pc(115) int usedAfter = (int) ((runtime.totalMemory() - runtime.freeMemory()) / 1024L);
-				ChatHistory.add(0, null, "Memory after cleanup=" + usedAfter + "k");
+				Chat.add(0, null, "Memory after cleanup=" + usedAfter + "k");
 			}
 			if (command.equalsIgnoreCase("::pcachesize")) {
-				ChatHistory.add(0, null, "Number of player models in cache:" + Static15.method1228());
+				Chat.add(0, null, "Number of player models in cache:" + Static15.method1228());
 			}
 			if (GlRenderer.enabled && command.equalsIgnoreCase("::cardmem")) {
 				System.out.println("oncard_geometry:" + GlCleaner.onCardGeometry);
@@ -95,21 +95,21 @@ public final class Cheat {
 			}
 			if (command.startsWith("::rect_debug")) {
 				Static1.rectDebug = StringUtils.parseInt(command.substring(12).trim());
-				ChatHistory.add(0, null, "rect_debug=" + Static1.rectDebug);
+				Chat.add(0, null, "rect_debug=" + Static1.rectDebug);
 			}
 			if (command.equalsIgnoreCase("::qa_op_test")) {
 				Static1.qaOpTest = true;
 			}
 			if (command.startsWith("::hdr") && GlRenderer.enabled && !Static10.setHdrEnabled(!PostProcessorManager.isBloomEnabled())) {
-				ChatHistory.add(0, null, "Failed to enable hdr");
+				Chat.add(0, null, "Failed to enable hdr");
 			}
 			if (command.equalsIgnoreCase("::tween")) {
 				if (SeqType.forceTween) {
 					SeqType.forceTween = false;
-					ChatHistory.add(0, null, "Forced tweening disabled.");
+					Chat.add(0, null, "Forced tweening disabled.");
 				} else {
 					SeqType.forceTween = true;
-					ChatHistory.add(0, null, "Forced tweening ENABLED!");
+					Chat.add(0, null, "Forced tweening ENABLED!");
 				}
 			}
 			if (command.equalsIgnoreCase("::shiftclick")) {
@@ -122,10 +122,10 @@ public final class Cheat {
 				}
 			}
 			if (command.equalsIgnoreCase("::getcgcoord")) {
-				ChatHistory.add(0, null, "x:" + (PlayerList.self.xFine >> 7) + " z:" + (PlayerList.self.zFine >> 7) + " groundh:" + SceneGraph.tileHeights[Player.level][PlayerList.self.xFine >> 7][PlayerList.self.zFine >> 7]);
+				Chat.add(0, null, "x:" + (PlayerList.self.xFine >> 7) + " z:" + (PlayerList.self.zFine >> 7) + " groundh:" + SceneGraph.tileHeights[Player.level][PlayerList.self.xFine >> 7][PlayerList.self.zFine >> 7]);
 			}
 			if (command.equalsIgnoreCase("::getheight")) {
-				ChatHistory.add(0, null, "Height: " + SceneGraph.tileHeights[Player.level][PlayerList.self.xFine >> 7][PlayerList.self.zFine >> 7]);
+				Chat.add(0, null, "Height: " + SceneGraph.tileHeights[Player.level][PlayerList.self.xFine >> 7][PlayerList.self.zFine >> 7]);
 			}
 		}
 		Protocol.outboundBuffer.writeOpcode(216);

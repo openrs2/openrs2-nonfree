@@ -4,17 +4,17 @@ import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
 @OriginalClass("client!wg")
-public final class MapArea extends SecondaryNode {
+public final class Map extends SecondaryNode {
 
 	@OriginalMember(owner = "client!ge", name = "a", descriptor = "(IILclient!fd;)Lclient!wg;")
-	public static MapArea create(@OriginalArg(0) int id, @OriginalArg(2) Buffer buffer) {
-		@Pc(41) MapArea area = new MapArea(id, buffer.readString(), buffer.readString(), buffer.readInt(), buffer.readInt(), buffer.readUnsignedByte() == 1, buffer.readUnsignedByte());
+	public static Map create(@OriginalArg(0) int id, @OriginalArg(2) Buffer buffer) {
+		@Pc(41) Map map = new Map(id, buffer.readString(), buffer.readString(), buffer.readInt(), buffer.readInt(), buffer.readUnsignedByte() == 1, buffer.readUnsignedByte());
 		@Pc(49) int len = buffer.readUnsignedByte();
 		for (@Pc(51) int i = 0; i < len; i++) {
-			area.chunks.addTail(new MapAreaChunk(buffer.readUnsignedByte(), buffer.readUnsignedByte(), buffer.readUnsignedShort(), buffer.readUnsignedShort(), buffer.readUnsignedShort(), buffer.readUnsignedShort(), buffer.readUnsignedShort(), buffer.readUnsignedShort(), buffer.readUnsignedShort(), buffer.readUnsignedShort()));
+			map.chunks.addTail(new MapChunk(buffer.readUnsignedByte(), buffer.readUnsignedByte(), buffer.readUnsignedShort(), buffer.readUnsignedShort(), buffer.readUnsignedShort(), buffer.readUnsignedShort(), buffer.readUnsignedShort(), buffer.readUnsignedShort(), buffer.readUnsignedShort(), buffer.readUnsignedShort()));
 		}
-		area.computeBounds();
-		return area;
+		map.computeBounds();
+		return map;
 	}
 
 	@OriginalMember(owner = "client!wg", name = "y", descriptor = "I")
@@ -45,7 +45,7 @@ public final class MapArea extends SecondaryNode {
 	public final String group;
 
 	@OriginalMember(owner = "client!wg", name = "z", descriptor = "I")
-	public final int defaultPosition;
+	public final int origin;
 
 	@OriginalMember(owner = "client!wg", name = "A", descriptor = "I")
 	public final int id;
@@ -54,11 +54,11 @@ public final class MapArea extends SecondaryNode {
 	public final LinkedList chunks;
 
 	@OriginalMember(owner = "client!wg", name = "<init>", descriptor = "(ILjava/lang/String;Ljava/lang/String;IIZI)V")
-	private MapArea(@OriginalArg(0) int id, @OriginalArg(1) String group, @OriginalArg(2) String name, @OriginalArg(3) int defaultPosition, @OriginalArg(4) int backgroundColor, @OriginalArg(5) boolean valid, @OriginalArg(6) int defaultZoom) {
+	private Map(@OriginalArg(0) int id, @OriginalArg(1) String group, @OriginalArg(2) String name, @OriginalArg(3) int origin, @OriginalArg(4) int backgroundColor, @OriginalArg(5) boolean valid, @OriginalArg(6) int defaultZoom) {
 		this.name = name;
 		this.valid = valid;
 		this.group = group;
-		this.defaultPosition = defaultPosition;
+		this.origin = origin;
 		this.id = id;
 		this.backgroundColor = backgroundColor;
 		this.defaultZoom = defaultZoom;
@@ -70,7 +70,7 @@ public final class MapArea extends SecondaryNode {
 
 	@OriginalMember(owner = "client!wg", name = "a", descriptor = "(III[II)Z")
 	public final boolean convertSourceToDisplay(@OriginalArg(2) int level, @OriginalArg(4) int x, @OriginalArg(0) int z, @OriginalArg(3) int[] position) {
-		for (@Pc(16) MapAreaChunk chunk = (MapAreaChunk) this.chunks.head(); chunk != null; chunk = (MapAreaChunk) this.chunks.next()) {
+		for (@Pc(16) MapChunk chunk = (MapChunk) this.chunks.head(); chunk != null; chunk = (MapChunk) this.chunks.next()) {
 			if (chunk.containsSource(level, x, z)) {
 				chunk.convertSourceToDisplay(x, z, position);
 				return true;
@@ -81,7 +81,7 @@ public final class MapArea extends SecondaryNode {
 
 	@OriginalMember(owner = "client!wg", name = "a", descriptor = "(III)Z")
 	public final boolean containsSource(@OriginalArg(1) int x, @OriginalArg(2) int z) {
-		for (@Pc(11) MapAreaChunk chunk = (MapAreaChunk) this.chunks.head(); chunk != null; chunk = (MapAreaChunk) this.chunks.next()) {
+		for (@Pc(11) MapChunk chunk = (MapChunk) this.chunks.head(); chunk != null; chunk = (MapChunk) this.chunks.next()) {
 			if (chunk.containsSource(x, z)) {
 				return true;
 			}
@@ -91,7 +91,7 @@ public final class MapArea extends SecondaryNode {
 
 	@OriginalMember(owner = "client!wg", name = "a", descriptor = "([IIBI)Z")
 	public final boolean convertSourceToDisplay(@OriginalArg(3) int x, @OriginalArg(1) int z, @OriginalArg(0) int[] position) {
-		for (@Pc(19) MapAreaChunk chunk = (MapAreaChunk) this.chunks.head(); chunk != null; chunk = (MapAreaChunk) this.chunks.next()) {
+		for (@Pc(19) MapChunk chunk = (MapChunk) this.chunks.head(); chunk != null; chunk = (MapChunk) this.chunks.next()) {
 			if (chunk.containsSource(x, z)) {
 				chunk.convertSourceToDisplay(x, z, position);
 				return true;
@@ -102,7 +102,7 @@ public final class MapArea extends SecondaryNode {
 
 	@OriginalMember(owner = "client!wg", name = "a", descriptor = "(IIB[I)Z")
 	public final boolean convertDisplayToSource(@OriginalArg(0) int x, @OriginalArg(1) int z, @OriginalArg(3) int[] position) {
-		for (@Pc(11) MapAreaChunk chunk = (MapAreaChunk) this.chunks.head(); chunk != null; chunk = (MapAreaChunk) this.chunks.next()) {
+		for (@Pc(11) MapChunk chunk = (MapChunk) this.chunks.head(); chunk != null; chunk = (MapChunk) this.chunks.next()) {
 			if (chunk.containsDisplay(x, z)) {
 				chunk.convertDisplayToSource(x, z, position);
 				return true;
@@ -112,12 +112,12 @@ public final class MapArea extends SecondaryNode {
 	}
 
 	@OriginalMember(owner = "client!wg", name = "d", descriptor = "(I)V")
-	public final void computeBounds() {
+	private final void computeBounds() {
 		this.displayMinZ = 12800;
 		this.displayMaxZ = 0;
 		this.displayMaxX = 0;
 		this.displayMinX = 12800;
-		for (@Pc(23) MapAreaChunk chunk = (MapAreaChunk) this.chunks.head(); chunk != null; chunk = (MapAreaChunk) this.chunks.next()) {
+		for (@Pc(23) MapChunk chunk = (MapChunk) this.chunks.head(); chunk != null; chunk = (MapChunk) this.chunks.next()) {
 			if (chunk.displayMaxX > this.displayMaxX) {
 				this.displayMaxX = chunk.displayMaxX;
 			}

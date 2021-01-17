@@ -1,5 +1,3 @@
-import java.util.Calendar;
-
 import org.openrs2.deob.annotation.OriginalMember;
 
 public final class Static7 {
@@ -64,17 +62,11 @@ public final class Static7 {
 	@OriginalMember(owner = "client!vb", name = "X", descriptor = "[S")
 	public static short[] aShortArray113;
 
-	@OriginalMember(owner = "client!vb", name = "Z", descriptor = "[S")
-	public static short[] aShortArray114;
-
 	@OriginalMember(owner = "client!vc", name = "a", descriptor = "Lclient!po;")
 	public static MapElementList aClass138_14;
 
 	@OriginalMember(owner = "client!vd", name = "c", descriptor = "I")
 	public static int originZ;
-
-	@OriginalMember(owner = "client!ve", name = "d", descriptor = "[Ljava/lang/String;")
-	public static String[] aStringArray38;
 
 	@OriginalMember(owner = "client!vi", name = "Z", descriptor = "I")
 	public static int anInt5589;
@@ -175,9 +167,6 @@ public final class Static7 {
 	@OriginalMember(owner = "client!un", name = "v", descriptor = "[I")
 	public static final int[] anIntArray616 = new int[100];
 
-	@OriginalMember(owner = "client!un", name = "y", descriptor = "I")
-	public static int anInt5413 = 0;
-
 	@OriginalMember(owner = "client!un", name = "z", descriptor = "[S")
 	public static short[] aShortArray111 = new short[256];
 
@@ -264,9 +253,6 @@ public final class Static7 {
 
 	@OriginalMember(owner = "client!wj", name = "x", descriptor = "[I")
 	public static final int[] anIntArray679 = new int[] { 12543016, 15504954, 15914854, 16773818 };
-
-	@OriginalMember(owner = "client!wk", name = "c", descriptor = "Ljava/util/Calendar;")
-	public static final Calendar aCalendar2 = Calendar.getInstance();
 
 	@OriginalMember(owner = "client!wk", name = "f", descriptor = "I")
 	public static int anInt6050 = -1;

@@ -193,7 +193,7 @@ public final class Sprites {
 			}
 		}
 		@Pc(115) SoftwareSprite compass = SpriteLoader.loadSoftwareSprite(archive, compassId, 0);
-		compass.method2176();
+		compass.trim();
 		if (GlRenderer.enabled) {
 			Sprites.compass = new GlSprite(compass);
 		} else {
@@ -201,7 +201,7 @@ public final class Sprites {
 		}
 		@Pc(134) SoftwareSprite[] hintMapEdge = SpriteLoader.loadSoftwareSprites(archive, hintMapEdgeId);
 		for (@Pc(136) int i = 0; i < hintMapEdge.length; i++) {
-			hintMapEdge[i].method2176();
+			hintMapEdge[i].trim();
 		}
 		if (GlRenderer.enabled) {
 			Sprites.hintMapEdge = new Sprite[hintMapEdge.length];

@@ -198,7 +198,7 @@ public final class Static20 {
 			@Pc(8) FloType local8 = FloTypeList.get(local1);
 			if (local8 != null) {
 				@Pc(14) int local14 = local8.anInt3877;
-				if (local14 >= 0 && !Static4.anInterface4_1.method441(local14)) {
+				if (local14 >= 0 && !Static4.textureProvider.method441(local14)) {
 					local14 = -1;
 				}
 				@Pc(64) int local64;
@@ -213,7 +213,7 @@ public final class Static20 {
 					@Pc(57) int local57 = (local29 + arg0 & 0xFC00) + (local29 & 0x380) + local35;
 					local64 = ColorUtils.HSL_TO_RGB[Static22.method2286(local57, 96)];
 				} else if (local14 >= 0) {
-					local64 = ColorUtils.HSL_TO_RGB[Static22.method2286(Static4.anInterface4_1.method446(local14), 96)];
+					local64 = ColorUtils.HSL_TO_RGB[Static22.method2286(Static4.textureProvider.method446(local14), 96)];
 				} else if (local8.anInt3869 == -1) {
 					local64 = -1;
 				} else {
@@ -958,7 +958,7 @@ public final class Static20 {
 			GameShell.frameWidth -= local35.left + local35.right;
 			GameShell.frameHeight -= local35.bottom + local35.top;
 		}
-		if (Static11.method557() >= 2) {
+		if (Static11.getWindowMode() >= 2) {
 			GameShell.topMargin = 0;
 			GameShell.canvasWidth = GameShell.frameWidth;
 			GameShell.leftMargin = 0;

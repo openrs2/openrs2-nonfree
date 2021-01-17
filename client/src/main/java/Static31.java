@@ -6,37 +6,6 @@ import org.openrs2.deob.annotation.Pc;
 
 public final class Static31 {
 
-	@OriginalMember(owner = "client!rc", name = "a", descriptor = "([Ljava/lang/String;ZI[SI)V")
-	public static void method3652(@OriginalArg(0) String[] arg0, @OriginalArg(2) int arg1, @OriginalArg(3) short[] arg2, @OriginalArg(4) int arg3) {
-		if (arg1 <= arg3) {
-			return;
-		}
-		@Pc(26) int local26 = (arg3 + arg1) / 2;
-		@Pc(28) int local28 = arg3;
-		@Pc(32) String local32 = arg0[local26];
-		arg0[local26] = arg0[arg1];
-		arg0[arg1] = local32;
-		@Pc(46) short local46 = arg2[local26];
-		arg2[local26] = arg2[arg1];
-		arg2[arg1] = local46;
-		for (@Pc(58) int local58 = arg3; local58 < arg1; local58++) {
-			if (local32 == null || arg0[local58] != null && arg0[local58].compareTo(local32) < (local58 & 0x1)) {
-				@Pc(88) String local88 = arg0[local58];
-				arg0[local58] = arg0[local28];
-				arg0[local28] = local88;
-				@Pc(102) short local102 = arg2[local58];
-				arg2[local58] = arg2[local28];
-				arg2[local28++] = local102;
-			}
-		}
-		arg0[arg1] = arg0[local28];
-		arg0[local28] = local32;
-		arg2[arg1] = arg2[local28];
-		arg2[local28] = local46;
-		method3652(arg0, local28 - 1, arg2, arg3);
-		method3652(arg0, arg1, arg2, local28 + 1);
-	}
-
 	@OriginalMember(owner = "client!rc", name = "a", descriptor = "(II)Lclient!ke;")
 	public static SoftwareFont method3656(@OriginalArg(1) int arg0) {
 		@Pc(6) SoftwareFont local6 = (SoftwareFont) Static1.aClass26_3.get((long) arg0);
@@ -67,20 +36,20 @@ public final class Static31 {
 	public static void method3660(@OriginalArg(0) Component[] arg0, @OriginalArg(1) boolean arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4) {
 		for (@Pc(7) int local7 = 0; local7 < arg0.length; local7++) {
 			@Pc(19) Component local19 = arg0[local7];
-			if (local19 != null && local19.anInt5937 == arg3) {
-				Static11.method526(arg1, arg2, local19, arg4);
-				Static36.method3812(arg2, arg4, local19);
-				if (local19.anInt5931 > local19.anInt5887 - local19.anInt5949) {
-					local19.anInt5931 = local19.anInt5887 - local19.anInt5949;
+			if (local19 != null && local19.layer == arg3) {
+				Static11.method526(local19, arg2, arg4, arg1);
+				Static36.method3812(local19, arg2, arg4);
+				if (local19.scrollY > local19.scrollHeight - local19.height) {
+					local19.scrollY = local19.scrollHeight - local19.height;
 				}
-				if (local19.anInt5932 > local19.anInt5885 - local19.anInt5893) {
-					local19.anInt5932 = local19.anInt5885 - local19.anInt5893;
+				if (local19.scrollX > local19.scrollWidth - local19.width) {
+					local19.scrollX = local19.scrollWidth - local19.width;
 				}
-				if (local19.anInt5931 < 0) {
-					local19.anInt5931 = 0;
+				if (local19.scrollY < 0) {
+					local19.scrollY = 0;
 				}
-				if (local19.anInt5932 < 0) {
-					local19.anInt5932 = 0;
+				if (local19.scrollX < 0) {
+					local19.scrollX = 0;
 				}
 				if (local19.type == 0) {
 					Static34.method4251(arg1, local19);
@@ -292,7 +261,7 @@ public final class Static31 {
 			Static18.method4370(arg0, 256, arg1, 256, arg3, arg4);
 			Static10.method462(arg4, 256, arg1, 256, arg3, arg0);
 		}
-		((Js5GlTextureProvider) Static4.anInterface4_1).method458(Static5.anInt4156);
+		((Js5GlTextureProvider) Static4.textureProvider).method458(Static5.anInt4156);
 		Static28.method3327(arg4, arg0, arg1, arg3);
 		Static3.anInt2519 = local181;
 		Static2.anInt1931 = local187;
@@ -532,7 +501,7 @@ public final class Static31 {
 												@Pc(1417) int local1417 = Static4.aByteArrayArrayArray15[local154][local1360][local1369] & 0xFF;
 												if (local1417 != 0) {
 													@Pc(1428) FloType local1428 = FloTypeList.get(local1417 - 1);
-													if (local1428.anInt3877 != -1 && Static32.method3920(Static4.anInterface4_1.method444(local1428.anInt3877))) {
+													if (local1428.anInt3877 != -1 && Static32.method3920(Static4.textureProvider.method444(local1428.anInt3877))) {
 														SceneGraph.anIntArrayArray10[local955][local962] = (local1428.anInt3871 << 24) + local1428.anInt3874;
 														continue label770;
 													}
@@ -546,7 +515,7 @@ public final class Static31 {
 								@Pc(1482) byte local1482 = Static1.aByteArrayArrayArray1[local154][local955][local962];
 								@Pc(1488) FloType local1488 = FloTypeList.get(local1029 - 1);
 								if (GlRenderer.enabled && !arg2 && SceneGraph.anIntArrayArray10 != null && local154 == 0) {
-									if (local1488.anInt3877 != -1 && Static32.method3920(Static4.anInterface4_1.method444(local1488.anInt3877))) {
+									if (local1488.anInt3877 != -1 && Static32.method3920(Static4.textureProvider.method444(local1488.anInt3877))) {
 										SceneGraph.anIntArrayArray10[local955][local962] = (local1488.anInt3871 << 24) + local1488.anInt3874;
 									} else {
 										label751:
@@ -556,7 +525,7 @@ public final class Static31 {
 													@Pc(1580) int local1580 = Static4.aByteArrayArrayArray15[local154][local1516][local1529] & 0xFF;
 													if (local1580 != 0) {
 														@Pc(1590) FloType local1590 = FloTypeList.get(local1580 - 1);
-														if (local1590.anInt3877 != -1 && Static32.method3920(Static4.anInterface4_1.method444(local1590.anInt3877))) {
+														if (local1590.anInt3877 != -1 && Static32.method3920(Static4.textureProvider.method444(local1590.anInt3877))) {
 															SceneGraph.anIntArrayArray10[local955][local962] = local1590.anInt3874 + (local1590.anInt3871 << 24);
 															break label751;
 														}
@@ -567,14 +536,14 @@ public final class Static31 {
 									}
 								}
 								@Pc(1640) int local1640 = local1488.anInt3877;
-								if (local1640 >= 0 && !Static4.anInterface4_1.method441(local1640)) {
+								if (local1640 >= 0 && !Static4.textureProvider.method441(local1640)) {
 									local1640 = -1;
 								}
 								@Pc(1659) int local1659;
 								@Pc(1671) int local1671;
 								if (local1640 >= 0) {
 									local1659 = -1;
-									local1671 = ColorUtils.HSL_TO_RGB[Static22.method2286(Static4.anInterface4_1.method446(local1640), 96)];
+									local1671 = ColorUtils.HSL_TO_RGB[Static22.method2286(Static4.textureProvider.method446(local1640), 96)];
 								} else if (local1488.anInt3869 == -1) {
 									local1671 = 0;
 									local1659 = -2;
@@ -793,7 +762,7 @@ public final class Static31 {
 			return;
 		}
 		@Pc(13) int local13 = Static6.anInt3585 + (int) Static5.aFloat97 & 0x7FF;
-		@Pc(25) int local25 = Math.max(arg2.anInt5893 / 2, arg2.anInt5949 / 2) + 10;
+		@Pc(25) int local25 = Math.max(arg2.width / 2, arg2.height / 2) + 10;
 		@Pc(38) int local38 = arg4 * arg4 + arg3 * arg3;
 		if (local25 * local25 < local38) {
 			return;
@@ -805,9 +774,9 @@ public final class Static31 {
 		@Pc(78) int local78 = local60 * arg3 + arg4 * local48 >> 16;
 		@Pc(89) int local89 = arg4 * local60 - arg3 * local48 >> 16;
 		if (GlRenderer.enabled) {
-			((GlIndexedSprite) arg0).renderTransparentMasked(local78 + arg2.anInt5893 / 2 + arg1 - arg0.innerWidth / 2, arg2.anInt5949 / 2 + arg5 - local89 - arg0.innerHeight / 2, (GlSprite) arg2.method4729(false));
+			((GlIndexedSprite) arg0).renderTransparentMasked(local78 + arg2.width / 2 + arg1 - arg0.innerWidth / 2, arg2.height / 2 + arg5 - local89 - arg0.innerHeight / 2, (GlSprite) arg2.method4729(false));
 		} else {
-			((SoftwareIndexedSprite) arg0).renderTransparentMasked(local78 + arg1 + arg2.anInt5893 / 2 - arg0.innerWidth / 2, arg5 + arg2.anInt5949 / 2 - local89 - arg0.innerHeight / 2, arg2.anIntArray672, arg2.anIntArray657);
+			((SoftwareIndexedSprite) arg0).renderTransparentMasked(local78 + arg1 + arg2.width / 2 - arg0.innerWidth / 2, arg5 + arg2.height / 2 - local89 - arg0.innerHeight / 2, arg2.anIntArray672, arg2.anIntArray657);
 		}
 	}
 
@@ -999,7 +968,7 @@ public final class Static31 {
 						Static23.method2543(local315, local331, local299, local307, local323, local291, arg0.anInt4299, arg0.anInt4301, arg0.anInt4296);
 					}
 				} else if (!Preferences.groundTextures) {
-					@Pc(475) int local475 = Static4.anInterface4_1.method446(arg0.anInt4297);
+					@Pc(475) int local475 = Static4.textureProvider.method446(arg0.anInt4297);
 					Static23.method2543(local315, local331, local299, local307, local323, local291, Static10.method302(local475, arg0.anInt4299), Static10.method302(local475, arg0.anInt4301), Static10.method302(local475, arg0.anInt4296));
 				} else if (arg0.aBoolean302) {
 					Static23.method2558(local315, local331, local299, local307, local323, local291, arg0.anInt4299, arg0.anInt4301, arg0.anInt4296, local7, local145, local6, local37, local167, local229, local15, local14, local26, arg0.anInt4297);
@@ -1029,7 +998,7 @@ public final class Static31 {
 		} else if (Preferences.groundTextures) {
 			Static23.method2558(local283, local299, local331, local275, local291, local323, arg0.anInt4298, arg0.anInt4296, arg0.anInt4301, local7, local145, local6, local37, local167, local229, local15, local14, local26, arg0.anInt4297);
 		} else {
-			@Pc(608) int local608 = Static4.anInterface4_1.method446(arg0.anInt4297);
+			@Pc(608) int local608 = Static4.textureProvider.method446(arg0.anInt4297);
 			Static23.method2543(local283, local299, local331, local275, local291, local323, Static10.method302(local608, arg0.anInt4298), Static10.method302(local608, arg0.anInt4296), Static10.method302(local608, arg0.anInt4301));
 		}
 	}
@@ -1125,7 +1094,7 @@ public final class Static31 {
 					for (@Pc(324) int local324 = 0; local324 < SceneGraph.aClass4_Sub12ArrayArray2[local319].length; local324++) {
 						@Pc(336) Class4_Sub12 local336 = SceneGraph.aClass4_Sub12ArrayArray2[local319][local324];
 						@Pc(350) float local350 = 201.5F - (float) local319 * 50.0F - (local336.aBoolean162 ? 1.0F : 0.5F);
-						if (local336.anInt2356 != -1 && Static32.method3920(Static4.anInterface4_1.method444(local336.anInt2356)) && Preferences.highDetailWater) {
+						if (local336.anInt2356 != -1 && Static32.method3920(Static4.textureProvider.method444(local336.anInt2356)) && Preferences.highDetailWater) {
 							Static18.method4372(local336.anInt2351);
 						}
 						local336.method1867(SceneGraph.tiles, local350, false);
@@ -1349,7 +1318,7 @@ public final class Static31 {
 	public static int method3863(@OriginalArg(0) int arg0, @OriginalArg(1) short arg1, @OriginalArg(2) int arg2, @OriginalArg(3) byte arg3) {
 		@Pc(5) int local5 = ColorUtils.HSL_TO_RGB[Static25.method2912(arg0, arg2)];
 		if (arg1 != -1) {
-			@Pc(15) int local15 = Static4.anInterface4_1.method450(arg1 & 0xFFFF);
+			@Pc(15) int local15 = Static4.textureProvider.method450(arg1 & 0xFFFF);
 			if (local15 != 0) {
 				@Pc(21) int local21;
 				if (arg2 < 0) {
@@ -1366,7 +1335,7 @@ public final class Static31 {
 					local5 = ((local21 & 0xFF00FF) * local15 + (local5 & 0xFF00FF) * local44 & 0xFF00FF00) + ((local21 & 0xFF00) * local15 + (local5 & 0xFF00) * local44 & 0xFF0000) >> 8;
 				}
 			}
-			@Pc(81) int local81 = Static4.anInterface4_1.method447(arg1 & 0xFFFF);
+			@Pc(81) int local81 = Static4.textureProvider.method447(arg1 & 0xFFFF);
 			if (local81 != 0) {
 				@Pc(84) int local84 = local81 + 256;
 				@Pc(92) int local92 = (local5 >> 16 & 0xFF) * local84;

@@ -16,10 +16,10 @@ public final class FriendsList {
 	public static final String[] worldNames = new String[200];
 
 	@OriginalMember(owner = "client!se", name = "ab", descriptor = "[I")
-	public static final int[] anIntArray517 = new int[200];
+	public static final int[] ranks = new int[200];
 
 	@OriginalMember(owner = "client!fj", name = "X", descriptor = "[Z")
-	public static final boolean[] aBooleanArray7 = new boolean[200];
+	public static final boolean[] sameGame = new boolean[200];
 
 	@OriginalMember(owner = "client!tm", name = "J", descriptor = "I")
 	public static int size = 0;
@@ -33,32 +33,32 @@ public final class FriendsList {
 			return;
 		}
 		if (size >= 100 && !LoginManager.playerMember || size >= 200) {
-			ChatHistory.add(0, "", LocalisedText.FRIENDLISTFULL);
+			Chat.add(0, "", LocalisedText.FRIENDLISTFULL);
 			return;
 		}
 		@Pc(35) String username = Base37.decodeTitleCase(encodedUsername);
 		for (@Pc(37) int i = 0; i < size; i++) {
 			if (encodedUsername == encodedUsernames[i]) {
-				ChatHistory.add(0, "", username + LocalisedText.FRIENDLISTDUPE);
+				Chat.add(0, "", username + LocalisedText.FRIENDLISTDUPE);
 				return;
 			}
 		}
 		for (@Pc(69) int i = 0; i < IgnoreList.size; i++) {
 			if (encodedUsername == IgnoreList.encodedUsernames[i]) {
-				ChatHistory.add(0, "", LocalisedText.REMOVEIGNORE1 + username + LocalisedText.REMOVEIGNORE2);
+				Chat.add(0, "", LocalisedText.REMOVEIGNORE1 + username + LocalisedText.REMOVEIGNORE2);
 				return;
 			}
 		}
-		if (username.equals(PlayerList.self.name)) {
-			ChatHistory.add(0, "", LocalisedText.FRIENDCANTADDSELF);
+		if (username.equals(PlayerList.self.username)) {
+			Chat.add(0, "", LocalisedText.FRIENDCANTADDSELF);
 			return;
 		}
 		usernames[size] = username;
 		encodedUsernames[size] = encodedUsername;
 		worlds[size] = 0;
 		worldNames[size] = "";
-		anIntArray517[size] = 0;
-		aBooleanArray7[size] = false;
+		ranks[size] = 0;
+		sameGame[size] = false;
 		size++;
 		Static3.anInt2102 = Static6.anInt4979;
 		Protocol.outboundBuffer.writeOpcode(26);
@@ -78,8 +78,8 @@ public final class FriendsList {
 					worlds[j] = worlds[j + 1];
 					worldNames[j] = worldNames[j + 1];
 					encodedUsernames[j] = encodedUsernames[j + 1];
-					anIntArray517[j] = anIntArray517[j + 1];
-					aBooleanArray7[j] = aBooleanArray7[j + 1];
+					ranks[j] = ranks[j + 1];
+					sameGame[j] = sameGame[j + 1];
 				}
 				Static3.anInt2102 = Static6.anInt4979;
 				Protocol.outboundBuffer.writeOpcode(172);
@@ -99,7 +99,7 @@ public final class FriendsList {
 				return true;
 			}
 		}
-		if (username.equalsIgnoreCase(PlayerList.self.name)) {
+		if (username.equalsIgnoreCase(PlayerList.self.username)) {
 			return true;
 		} else {
 			return false;
@@ -117,5 +117,12 @@ public final class FriendsList {
 			}
 		}
 		return -1;
+	}
+
+	@OriginalMember(owner = "client!jk", name = "a", descriptor = "(IILjava/lang/String;)V")
+	public static void setRank(@OriginalArg(2) String username, @OriginalArg(1) int rank) {
+		Protocol.outboundBuffer.writeOpcode(215);
+		Protocol.outboundBuffer.writeLong(Base37.encode(username));
+		Protocol.outboundBuffer.writeByteC(rank);
 	}
 }

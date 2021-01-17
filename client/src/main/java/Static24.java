@@ -95,12 +95,12 @@ public final class Static24 {
 
 	@OriginalMember(owner = "client!lj", name = "a", descriptor = "(ILclient!wf;B)Ljava/lang/String;")
 	public static String method2597(@OriginalArg(0) int arg0, @OriginalArg(1) Component arg1) {
-		if (!InterfaceList.getServerActiveProperties(arg1).isButtonEnabled(arg0) && arg1.anObjectArray18 == null) {
+		if (!InterfaceList.getServerActiveProperties(arg1).isButtonEnabled(arg0) && arg1.onOp == null) {
 			return null;
-		} else if (arg1.aStringArray43 == null || arg0 >= arg1.aStringArray43.length || arg1.aStringArray43[arg0] == null || arg1.aStringArray43[arg0].trim().length() == 0) {
+		} else if (arg1.ops == null || arg0 >= arg1.ops.length || arg1.ops[arg0] == null || arg1.ops[arg0].trim().length() == 0) {
 			return Static1.qaOpTest ? "Hidden-" + arg0 : null;
 		} else {
-			return arg1.aStringArray43[arg0];
+			return arg1.ops[arg0];
 		}
 	}
 
@@ -145,7 +145,7 @@ public final class Static24 {
 			}
 		}
 		if (mode == 3 && GameShell.fullScreenFrame == null) {
-			setWindowMode(-1, arg1, true, -1, Preferences.displayMode, true);
+			setWindowMode(-1, arg1, true, -1, Preferences.windowMode, true);
 			return;
 		}
 		@Pc(83) Container container;
@@ -244,7 +244,7 @@ public final class Static24 {
 			GameShell.thread.setPriority(5);
 			client.frameBuffer = null;
 			Static25.method2915();
-			((Js5GlTextureProvider) Static4.anInterface4_1).resize(200);
+			((Js5GlTextureProvider) Static4.textureProvider).resize(200);
 			if (Preferences.highDetailLighting) {
 				ColorUtils.setBrightness(0.7F);
 			}
@@ -259,7 +259,7 @@ public final class Static24 {
 			client.frameBuffer = FrameBuffer.create(GameShell.canvas, 765, 503);
 			Static25.method2906();
 			Static26.method2951();
-			((Js5GlTextureProvider) Static4.anInterface4_1).resize(20);
+			((Js5GlTextureProvider) Static4.textureProvider).resize(20);
 			if (Preferences.highDetailLighting) {
 				if (Preferences.brightness == 1) {
 					ColorUtils.setBrightness(0.9F);
@@ -361,7 +361,7 @@ public final class Static24 {
 		ParticleEffectorTypeList.clear();
 		Static1.aClass26_3.clear();
 		if (!GlRenderer.enabled) {
-			((Js5GlTextureProvider) Static4.anInterface4_1).clear();
+			((Js5GlTextureProvider) Static4.textureProvider).clear();
 		}
 		ClientScriptList.scripts.clear();
 		client.js5Archive0.discardUnpacked();
@@ -376,41 +376,6 @@ public final class Static24 {
 		client.js5Archive11.discardUnpacked();
 		client.js5Archive12.discardUnpacked();
 		Static1.aClass26_5.clear();
-	}
-
-	@OriginalMember(owner = "client!me", name = "a", descriptor = "(ZLjava/lang/String;I)V")
-	public static void method2699(@OriginalArg(0) boolean arg0, @OriginalArg(1) String arg1) {
-		@Pc(8) short[] local8 = new short[16];
-		arg1 = arg1.toLowerCase();
-		@Pc(17) int local17 = arg0 ? 32768 : 0;
-		@Pc(19) int local19 = 0;
-		@Pc(27) int local27 = (arg0 ? QuickChatPhraseTypeList.globalCapacity : QuickChatPhraseTypeList.capacity) + local17;
-		for (@Pc(29) int local29 = local17; local29 < local27; local29++) {
-			@Pc(40) QuickChatPhraseType local40 = QuickChatPhraseTypeList.get(local29);
-			if (local40.searchable && local40.getText().toLowerCase().indexOf(arg1) != -1) {
-				if (local19 >= 50) {
-					Static2.anInt5734 = -1;
-					Static7.aShortArray114 = null;
-					return;
-				}
-				if (local8.length <= local19) {
-					@Pc(82) short[] local82 = new short[local8.length * 2];
-					for (@Pc(84) int local84 = 0; local84 < local19; local84++) {
-						local82[local84] = local8[local84];
-					}
-					local8 = local82;
-				}
-				local8[local19++] = (short) local29;
-			}
-		}
-		Static4.anInt3497 = 0;
-		Static2.anInt5734 = local19;
-		@Pc(118) String[] local118 = new String[Static2.anInt5734];
-		Static7.aShortArray114 = local8;
-		for (@Pc(122) int local122 = 0; local122 < Static2.anInt5734; local122++) {
-			local118[local122] = QuickChatPhraseTypeList.get(local8[local122]).getText();
-		}
-		Static12.method714(Static7.aShortArray114, local118);
 	}
 
 	@OriginalMember(owner = "client!mf", name = "a", descriptor = "(II)V")

@@ -213,7 +213,7 @@ public final class Protocol {
 					}
 				}
 				if (!local914 && Static3.anInt5405 == 0) {
-					ChatHistory.add(4, username, LocalisedText.TRADEREQ);
+					Chat.add(4, username, LocalisedText.TRADEREQ);
 				}
 			} else if (message.endsWith(":chalreq:")) {
 				@Pc(851) String username = message.substring(0, message.indexOf(":"));
@@ -227,7 +227,7 @@ public final class Protocol {
 				}
 				if (!local853 && Static3.anInt5405 == 0) {
 					@Pc(898) String local898 = message.substring(message.indexOf(":") + 1, message.length() - 9);
-					ChatHistory.add(8, username, local898);
+					Chat.add(8, username, local898);
 				}
 			} else if (message.endsWith(":assistreq:")) {
 				@Pc(481) String username = message.substring(0, message.indexOf(":"));
@@ -240,20 +240,20 @@ public final class Protocol {
 					}
 				}
 				if (!local487 && Static3.anInt5405 == 0) {
-					ChatHistory.add(10, username, "");
+					Chat.add(10, username, "");
 				}
 			} else if (message.endsWith(":clan:")) {
 				@Pc(837) String username = message.substring(0, message.indexOf(":clan:"));
-				ChatHistory.add(11, "", username);
+				Chat.add(11, "", username);
 			} else if (message.endsWith(":trade:")) {
 				@Pc(818) String username = message.substring(0, message.indexOf(":trade:"));
 				if (Static3.anInt5405 == 0) {
-					ChatHistory.add(12, "", username);
+					Chat.add(12, "", username);
 				}
 			} else if (message.endsWith(":assist:")) {
 				@Pc(542) String username = message.substring(0, message.indexOf(":assist:"));
 				if (Static3.anInt5405 == 0) {
-					ChatHistory.add(13, "", username);
+					Chat.add(13, "", username);
 				}
 			} else if (message.endsWith(":duelstake:")) {
 				@Pc(767) String username = message.substring(0, message.indexOf(":"));
@@ -266,7 +266,7 @@ public final class Protocol {
 					}
 				}
 				if (!local775 && Static3.anInt5405 == 0) {
-					ChatHistory.add(14, username, "");
+					Chat.add(14, username, "");
 				}
 			} else if (message.endsWith(":duelfriend:")) {
 				@Pc(715) String username = message.substring(0, message.indexOf(":"));
@@ -279,7 +279,7 @@ public final class Protocol {
 					}
 				}
 				if (!local717 && Static3.anInt5405 == 0) {
-					ChatHistory.add(15, username, "");
+					Chat.add(15, username, "");
 				}
 			} else if (message.endsWith(":clanreq:")) {
 				@Pc(667) String username = message.substring(0, message.indexOf(":"));
@@ -292,7 +292,7 @@ public final class Protocol {
 					}
 				}
 				if (!local673 && Static3.anInt5405 == 0) {
-					ChatHistory.add(16, username, "");
+					Chat.add(16, username, "");
 				}
 			} else if (message.endsWith(":allyreq:")) {
 				@Pc(578) String username = message.substring(0, message.indexOf(":"));
@@ -306,15 +306,15 @@ public final class Protocol {
 				}
 				if (!local586 && Static3.anInt5405 == 0) {
 					@Pc(621) String local621 = message.substring(message.indexOf(":") + 1, message.length() - 9);
-					ChatHistory.add(21, username, local621);
+					Chat.add(21, username, local621);
 				}
 			} else if (message.endsWith(":spam:")) {
 				@Pc(647) String username = message.substring(0, message.length() - 6);
 				if (Static3.anInt5405 == 0) {
-					ChatHistory.add(22, "", username);
+					Chat.add(22, "", username);
 				}
 			} else {
-				ChatHistory.add(0, "", message);
+				Chat.add(0, "", message);
 			}
 			opcode = -1;
 			return true;
@@ -394,7 +394,7 @@ public final class Protocol {
 					PlayerSkillXpTable.baseLevels[skill] = baseLevel + 2;
 				}
 			}
-			PlayerSkillXpTable.updatedSkills[PlayerSkillXpTable.updatedSkillsWriterIndex++ & 0x1F] = skill;
+			PlayerSkillXpTable.updatedStats[PlayerSkillXpTable.updatedStatsWriterIndex++ & 0x1F] = skill;
 			opcode = -1;
 			return true;
 		} else if (opcode == 8) {
@@ -505,21 +505,21 @@ public final class Protocol {
 			}
 			@Pc(1619) byte rank = inboundBuffer.readByte();
 			if (local1604) {
-				if (Static4.anInt3260 == 0) {
+				if (ClanChat.size == 0) {
 					opcode = -1;
 					return true;
 				}
 				@Pc(1779) long local1779 = key & Long.MAX_VALUE;
 				@Pc(1781) int local1781;
-				for (local1781 = 0; Static4.anInt3260 > local1781 && (Static6.clanMembers[local1781].key != local1779 || world != Static6.clanMembers[local1781].world); local1781++) {
+				for (local1781 = 0; ClanChat.size > local1781 && (ClanChat.members[local1781].key != local1779 || world != ClanChat.members[local1781].world); local1781++) {
 				}
-				if (local1781 < Static4.anInt3260) {
-					while (local1781 < Static4.anInt3260 - 1) {
-						Static6.clanMembers[local1781] = Static6.clanMembers[local1781 + 1];
+				if (local1781 < ClanChat.size) {
+					while (local1781 < ClanChat.size - 1) {
+						ClanChat.members[local1781] = ClanChat.members[local1781 + 1];
 						local1781++;
 					}
-					Static4.anInt3260--;
-					Static6.clanMembers[Static4.anInt3260] = null;
+					ClanChat.size--;
+					ClanChat.members[ClanChat.size] = null;
 				}
 			} else {
 				@Pc(1625) String worldName = inboundBuffer.readString();
@@ -530,15 +530,15 @@ public final class Protocol {
 				member.world = world;
 				member.worldName = worldName;
 				@Pc(1653) int i;
-				for (i = Static4.anInt3260 - 1; i >= 0; i--) {
-					@Pc(1663) int compare = Static6.clanMembers[i].username.compareTo(member.username);
+				for (i = ClanChat.size - 1; i >= 0; i--) {
+					@Pc(1663) int compare = ClanChat.members[i].username.compareTo(member.username);
 					if (compare == 0) {
-						Static6.clanMembers[i].world = world;
-						Static6.clanMembers[i].rank = rank;
-						Static6.clanMembers[i].worldName = worldName;
+						ClanChat.members[i].world = world;
+						ClanChat.members[i].rank = rank;
+						ClanChat.members[i].worldName = worldName;
 						Static3.anInt2616 = Static6.anInt4979;
 						if (LoginManager.encodedUsername == key) {
-							Static5.aByte13 = rank;
+							ClanChat.rank = rank;
 						}
 						opcode = -1;
 						return true;
@@ -547,21 +547,21 @@ public final class Protocol {
 						break;
 					}
 				}
-				if (Static4.anInt3260 >= Static6.clanMembers.length) {
+				if (ClanChat.size >= ClanChat.members.length) {
 					opcode = -1;
 					return true;
 				}
-				for (@Pc(1720) int j = Static4.anInt3260 - 1; j > i; j--) {
-					Static6.clanMembers[j + 1] = Static6.clanMembers[j];
+				for (@Pc(1720) int j = ClanChat.size - 1; j > i; j--) {
+					ClanChat.members[j + 1] = ClanChat.members[j];
 				}
-				if (Static4.anInt3260 == 0) {
-					Static6.clanMembers = new ClanMember[100];
+				if (ClanChat.size == 0) {
+					ClanChat.members = new ClanMember[100];
 				}
-				Static6.clanMembers[i + 1] = member;
+				ClanChat.members[i + 1] = member;
 				if (key == LoginManager.encodedUsername) {
-					Static5.aByte13 = rank;
+					ClanChat.rank = rank;
 				}
-				Static4.anInt3260++;
+				ClanChat.size++;
 			}
 			Static3.anInt2616 = Static6.anInt4979;
 			opcode = -1;
@@ -569,7 +569,7 @@ public final class Protocol {
 		} else if (opcode == 104) {
 			@Pc(1858) long username = inboundBuffer.readLong();
 			@Pc(1865) String message = StringUtils.escape(StringUtils.formatChatMessage(WordPack.readString(inboundBuffer)));
-			ChatHistory.add(6, Base37.decodeTitleCase(username), message);
+			Chat.add(6, Base37.decodeTitleCase(username), message);
 			opcode = -1;
 			return true;
 		} else if (opcode == 253) {
@@ -611,7 +611,7 @@ public final class Protocol {
 			return true;
 		} else if (opcode == 30) {
 			if (GameShell.fullScreenFrame != null) {
-				Static35.setWindowMode(false, Preferences.displayMode, -1, -1);
+				Static35.setWindowMode(false, Preferences.windowMode, -1, -1);
 			}
 			@Pc(2051) byte[] bytes = new byte[length];
 			inboundBuffer.readEncryptedBytes(bytes, length);
@@ -619,9 +619,9 @@ public final class Protocol {
 			if (GameShell.frame == null && (SignLink.anInt6106 == 3 || !SignLink.osName.startsWith("win") || client.haveIe6)) {
 				Static37.openUrl(url, true);
 			} else {
-				Static6.aString269 = url;
-				Static4.aBoolean206 = true;
-				Static1.aClass197_1 = GameShell.signLink.openUrl(url);
+				Static6.url = url;
+				Static4.newTab = true;
+				Static1.openUrlRequest = GameShell.signLink.openUrl(url);
 			}
 			opcode = -1;
 			return true;
@@ -711,16 +711,16 @@ public final class Protocol {
 					DelayedStateChange.method1019(componentId, objType.xAngle2d, objType.yAngle2d, objType.zoom2d);
 					DelayedStateChange.method4433(componentId, objType.xOffset2d, objType.yOffset2d, objType.anInt5062);
 				} else if (objId == -1) {
-					component.anInt5939 = 0;
+					component.modelType = 0;
 					opcode = -1;
 					return true;
 				} else {
 					@Pc(2443) ObjType objType = ObjTypeList.get(objId);
-					component.anInt5976 = objType.yAngle2d;
-					component.anInt5939 = 4;
-					component.anInt5895 = objId;
-					component.anInt5944 = objType.xAngle2d;
-					component.anInt5918 = objType.zoom2d * 100 / local2386;
+					component.modelYAngle = objType.yAngle2d;
+					component.modelType = 4;
+					component.modelId = objId;
+					component.modelXAngle = objType.xAngle2d;
+					component.modelZoom = objType.zoom2d * 100 / local2386;
 					Static28.method3270(component);
 				}
 			}
@@ -771,22 +771,22 @@ public final class Protocol {
 					}
 					break;
 				}
-				if (ChatHistory.uids[i] == uid) {
+				if (Chat.uids[i] == uid) {
 					ignore = true;
 					break;
 				}
 				i++;
 			}
 			if (!ignore && Static3.anInt5405 == 0) {
-				ChatHistory.uids[ChatHistory.uidsWriterIndex] = uid;
-				ChatHistory.uidsWriterIndex = (ChatHistory.uidsWriterIndex + 1) % 100;
+				Chat.uids[Chat.uidsWriterIndex] = uid;
+				Chat.uidsWriterIndex = (Chat.uidsWriterIndex + 1) % 100;
 				@Pc(2663) String message = StringUtils.escape(StringUtils.formatChatMessage(WordPack.readString(inboundBuffer)));
 				if (staffModLevel == 2 || staffModLevel == 3) {
-					ChatHistory.add(7, "<img=1>" + Base37.decodeTitleCase(username), message);
+					Chat.add(7, "<img=1>" + Base37.decodeTitleCase(username), message);
 				} else if (staffModLevel == 1) {
-					ChatHistory.add(7, "<img=0>" + Base37.decodeTitleCase(username), message);
+					Chat.add(7, "<img=0>" + Base37.decodeTitleCase(username), message);
 				} else {
-					ChatHistory.add(3, Base37.decodeTitleCase(username), message);
+					Chat.add(3, Base37.decodeTitleCase(username), message);
 				}
 			}
 			opcode = -1;
@@ -833,7 +833,7 @@ public final class Protocol {
 			label1702:
 			while (true) {
 				if (i < 100) {
-					if (ChatHistory.uids[i] != uid) {
+					if (Chat.uids[i] != uid) {
 						i++;
 						continue;
 					}
@@ -855,15 +855,15 @@ public final class Protocol {
 				break;
 			}
 			if (!ignore && Static3.anInt5405 == 0) {
-				ChatHistory.uids[ChatHistory.uidsWriterIndex] = uid;
-				ChatHistory.uidsWriterIndex = (ChatHistory.uidsWriterIndex + 1) % 100;
+				Chat.uids[Chat.uidsWriterIndex] = uid;
+				Chat.uidsWriterIndex = (Chat.uidsWriterIndex + 1) % 100;
 				@Pc(2939) String message = StringUtils.escape(StringUtils.formatChatMessage(WordPack.readString(inboundBuffer)));
 				if (staffModLevel == 2 || staffModLevel == 3) {
-					ChatHistory.addClanMessage("<img=1>" + Base37.decodeTitleCase(encodedUsername), message, Base37.decodeTitleCase(encodedClan));
+					Chat.addClanMessage("<img=1>" + Base37.decodeTitleCase(encodedUsername), message, Base37.decodeTitleCase(encodedClan));
 				} else if (staffModLevel == 1) {
-					ChatHistory.addClanMessage("<img=0>" + Base37.decodeTitleCase(encodedUsername), message, Base37.decodeTitleCase(encodedClan));
+					Chat.addClanMessage("<img=0>" + Base37.decodeTitleCase(encodedUsername), message, Base37.decodeTitleCase(encodedClan));
 				} else {
-					ChatHistory.addClanMessage(Base37.decodeTitleCase(encodedUsername), message, Base37.decodeTitleCase(encodedClan));
+					Chat.addClanMessage(Base37.decodeTitleCase(encodedUsername), message, Base37.decodeTitleCase(encodedClan));
 				}
 			}
 			opcode = -1;
@@ -913,25 +913,25 @@ public final class Protocol {
 			Static3.anInt2616 = Static6.anInt4979;
 			@Pc(3168) long local3168 = inboundBuffer.readLong();
 			if (local3168 == 0L) {
-				Static2.aString108 = null;
-				Static4.anInt3260 = 0;
-				Static6.aString268 = null;
+				ClanChat.name = null;
+				ClanChat.size = 0;
+				ClanChat.owner = null;
 				opcode = -1;
-				Static6.clanMembers = null;
+				ClanChat.members = null;
 				return true;
 			}
 			@Pc(3188) long local3188 = inboundBuffer.readLong();
-			Static2.aString108 = Base37.decodeLowerCase(local3188);
-			Static6.aString268 = Base37.decodeLowerCase(local3168);
-			Static4.aByte6 = inboundBuffer.readByte();
+			ClanChat.name = Base37.decodeLowerCase(local3188);
+			ClanChat.owner = Base37.decodeLowerCase(local3168);
+			ClanChat.minKick = inboundBuffer.readByte();
 			@Pc(3204) int local3204 = inboundBuffer.readUnsignedByte();
 			if (local3204 == 255) {
 				opcode = -1;
 				return true;
 			}
-			Static4.anInt3260 = local3204;
+			ClanChat.size = local3204;
 			@Pc(3217) ClanMember[] clanMembers = new ClanMember[100];
-			for (@Pc(3219) int i = 0; i < Static4.anInt3260; i++) {
+			for (@Pc(3219) int i = 0; i < ClanChat.size; i++) {
 				clanMembers[i] = new ClanMember();
 				clanMembers[i].key = inboundBuffer.readLong();
 				clanMembers[i].username = Base37.decodeLowerCase(clanMembers[i].key);
@@ -939,10 +939,10 @@ public final class Protocol {
 				clanMembers[i].rank = inboundBuffer.readByte();
 				clanMembers[i].worldName = inboundBuffer.readString();
 				if (LoginManager.encodedUsername == clanMembers[i].key) {
-					Static5.aByte13 = clanMembers[i].rank;
+					ClanChat.rank = clanMembers[i].rank;
 				}
 			}
-			@Pc(3291) int local3291 = Static4.anInt3260;
+			@Pc(3291) int local3291 = ClanChat.size;
 			while (local3291 > 0) {
 				local3291--;
 				@Pc(3297) boolean local3297 = true;
@@ -959,7 +959,7 @@ public final class Protocol {
 				}
 			}
 			opcode = -1;
-			Static6.clanMembers = clanMembers;
+			ClanChat.members = clanMembers;
 			return true;
 		} else if (opcode == 173) {
 			ReflectionCheck.push(inboundBuffer, length, GameShell.signLink);
@@ -983,10 +983,10 @@ public final class Protocol {
 		} else if (opcode == 182) {
 			@Pc(3481) long encodedUsername = inboundBuffer.readLong();
 			@Pc(3485) int world = inboundBuffer.readUnsignedShort();
-			@Pc(3489) int local3489 = inboundBuffer.readUnsignedByte();
-			@Pc(3491) boolean local3491 = true;
+			@Pc(3489) int rank = inboundBuffer.readUnsignedByte();
+			@Pc(3491) boolean sameGame = true;
 			if (encodedUsername < 0L) {
-				local3491 = false;
+				sameGame = false;
 				encodedUsername &= Long.MAX_VALUE;
 			}
 			@Pc(3504) String worldName = "";
@@ -999,15 +999,15 @@ public final class Protocol {
 					if (world != FriendsList.worlds[i]) {
 						FriendsList.worlds[i] = world;
 						if (world > 0) {
-							ChatHistory.add(5, "", username + LocalisedText.FRIENDLOGIN);
+							Chat.add(5, "", username + LocalisedText.FRIENDLOGIN);
 						}
 						if (world == 0) {
-							ChatHistory.add(5, "", username + LocalisedText.FRIENDLOGOUT);
+							Chat.add(5, "", username + LocalisedText.FRIENDLOGOUT);
 						}
 					}
 					FriendsList.worldNames[i] = worldName;
-					FriendsList.anIntArray517[i] = local3489;
-					FriendsList.aBooleanArray7[i] = local3491;
+					FriendsList.ranks[i] = rank;
+					FriendsList.sameGame[i] = sameGame;
 					username = null;
 					break;
 				}
@@ -1017,8 +1017,8 @@ public final class Protocol {
 				FriendsList.usernames[FriendsList.size] = username;
 				FriendsList.worlds[FriendsList.size] = world;
 				FriendsList.worldNames[FriendsList.size] = worldName;
-				FriendsList.anIntArray517[FriendsList.size] = local3489;
-				FriendsList.aBooleanArray7[FriendsList.size] = local3491;
+				FriendsList.ranks[FriendsList.size] = rank;
+				FriendsList.sameGame[FriendsList.size] = sameGame;
 				FriendsList.size++;
 			}
 			Static3.anInt2102 = Static6.anInt4979;
@@ -1041,12 +1041,12 @@ public final class Protocol {
 						@Pc(3745) long local3745 = FriendsList.encodedUsernames[local3654];
 						FriendsList.encodedUsernames[local3654] = FriendsList.encodedUsernames[local3654 + 1];
 						FriendsList.encodedUsernames[local3654 + 1] = local3745;
-						@Pc(3763) int local3763 = FriendsList.anIntArray517[local3654];
-						FriendsList.anIntArray517[local3654] = FriendsList.anIntArray517[local3654 + 1];
-						FriendsList.anIntArray517[local3654 + 1] = local3763;
-						@Pc(3781) boolean local3781 = FriendsList.aBooleanArray7[local3654];
-						FriendsList.aBooleanArray7[local3654] = FriendsList.aBooleanArray7[local3654 + 1];
-						FriendsList.aBooleanArray7[local3654 + 1] = local3781;
+						@Pc(3763) int local3763 = FriendsList.ranks[local3654];
+						FriendsList.ranks[local3654] = FriendsList.ranks[local3654 + 1];
+						FriendsList.ranks[local3654 + 1] = local3763;
+						@Pc(3781) boolean local3781 = FriendsList.sameGame[local3654];
+						FriendsList.sameGame[local3654] = FriendsList.sameGame[local3654 + 1];
+						FriendsList.sameGame[local3654 + 1] = local3781;
 					}
 				}
 				if (local3651) {
@@ -1175,7 +1175,7 @@ public final class Protocol {
 			opcode = -1;
 			return true;
 		} else if (opcode == 72) {
-			Static5.anInt4329 = inboundBuffer.readUnsignedShortLE() * 30;
+			Static5.rebootTimer = inboundBuffer.readUnsignedShortLE() * 30;
 			Static1.anInt925 = Static6.anInt4979;
 			opcode = -1;
 			return true;
@@ -1203,7 +1203,7 @@ public final class Protocol {
 			label1529:
 			while (true) {
 				if (i < 100) {
-					if (ChatHistory.uids[i] != uid) {
+					if (Chat.uids[i] != uid) {
 						i++;
 						continue;
 					}
@@ -1221,15 +1221,15 @@ public final class Protocol {
 				break;
 			}
 			if (!ignore && Static3.anInt5405 == 0) {
-				ChatHistory.uids[ChatHistory.uidsWriterIndex] = uid;
-				ChatHistory.uidsWriterIndex = (ChatHistory.uidsWriterIndex + 1) % 100;
+				Chat.uids[Chat.uidsWriterIndex] = uid;
+				Chat.uidsWriterIndex = (Chat.uidsWriterIndex + 1) % 100;
 				@Pc(4375) String message = QuickChatPhraseTypeList.get(phraseId).decodeMessage(inboundBuffer);
 				if (staffModLevel == 2 || staffModLevel == 3) {
-					ChatHistory.add(20, "<img=1>" + Base37.decodeTitleCase(encodedUsername), message, Base37.decodeTitleCase(encodedClan), phraseId);
+					Chat.add(20, "<img=1>" + Base37.decodeTitleCase(encodedUsername), message, Base37.decodeTitleCase(encodedClan), phraseId);
 				} else if (staffModLevel == 1) {
-					ChatHistory.add(20, "<img=0>" + Base37.decodeTitleCase(encodedUsername), message, Base37.decodeTitleCase(encodedClan), phraseId);
+					Chat.add(20, "<img=0>" + Base37.decodeTitleCase(encodedUsername), message, Base37.decodeTitleCase(encodedClan), phraseId);
 				} else {
-					ChatHistory.add(20, Base37.decodeTitleCase(encodedUsername), message, Base37.decodeTitleCase(encodedClan), phraseId);
+					Chat.add(20, Base37.decodeTitleCase(encodedUsername), message, Base37.decodeTitleCase(encodedClan), phraseId);
 				}
 			}
 			opcode = -1;
@@ -1413,7 +1413,7 @@ public final class Protocol {
 			label1545:
 			while (true) {
 				if (i < 100) {
-					if (uid != ChatHistory.uids[i]) {
+					if (uid != Chat.uids[i]) {
 						i++;
 						continue;
 					}
@@ -1431,15 +1431,15 @@ public final class Protocol {
 				break;
 			}
 			if (!ignore && Static3.anInt5405 == 0) {
-				ChatHistory.uids[ChatHistory.uidsWriterIndex] = uid;
-				ChatHistory.uidsWriterIndex = (ChatHistory.uidsWriterIndex + 1) % 100;
+				Chat.uids[Chat.uidsWriterIndex] = uid;
+				Chat.uidsWriterIndex = (Chat.uidsWriterIndex + 1) % 100;
 				@Pc(5214) String message = QuickChatPhraseTypeList.get(phraseId).decodeMessage(inboundBuffer);
 				if (staffModLevel == 2) {
-					ChatHistory.add(18, "<img=1>" + Base37.decodeTitleCase(encodedUsername), message, null, phraseId);
+					Chat.add(18, "<img=1>" + Base37.decodeTitleCase(encodedUsername), message, null, phraseId);
 				} else if (staffModLevel == 1) {
-					ChatHistory.add(18, "<img=0>" + Base37.decodeTitleCase(encodedUsername), message, null, phraseId);
+					Chat.add(18, "<img=0>" + Base37.decodeTitleCase(encodedUsername), message, null, phraseId);
 				} else {
-					ChatHistory.add(18, Base37.decodeTitleCase(encodedUsername), message, null, phraseId);
+					Chat.add(18, Base37.decodeTitleCase(encodedUsername), message, null, phraseId);
 				}
 			}
 			opcode = -1;
@@ -1496,9 +1496,9 @@ public final class Protocol {
 			opcode = -1;
 			return true;
 		} else if (opcode == 23) {
-			Static7.anInt5413 = inboundBuffer.readUnsignedByte();
-			Static6.anInt4837 = inboundBuffer.readUnsignedByte();
-			Static6.anInt5016 = inboundBuffer.readUnsignedByte();
+			Chat.publicFilter = inboundBuffer.readUnsignedByte();
+			Chat.privateFilter = inboundBuffer.readUnsignedByte();
+			Chat.tradeFilter = inboundBuffer.readUnsignedByte();
 			opcode = -1;
 			return true;
 		} else if (opcode == 168) {
@@ -1614,8 +1614,8 @@ public final class Protocol {
 			IgnoreList.size = length / 8;
 			for (@Pc(5867) int i = 0; i < IgnoreList.size; i++) {
 				IgnoreList.encodedUsernames[i] = inboundBuffer.readLong();
-				IgnoreList.usernames[i] = Static30.method423(IgnoreList.encodedUsernames[i]);
-				IgnoreList.aBooleanArray5[i] = false;
+				IgnoreList.usernames[i] = IgnoreList.base37DecodeLowerCase(IgnoreList.encodedUsernames[i]);
+				IgnoreList.temporary[i] = false;
 			}
 			opcode = -1;
 			Static3.anInt2102 = Static6.anInt4979;
@@ -1624,7 +1624,7 @@ public final class Protocol {
 			@Pc(5909) long username = inboundBuffer.readLong();
 			@Pc(5913) int phraseId = inboundBuffer.readUnsignedShort();
 			@Pc(5920) String message = QuickChatPhraseTypeList.get(phraseId).decodeMessage(inboundBuffer);
-			ChatHistory.add(19, Base37.decodeTitleCase(username), message, null, phraseId);
+			Chat.add(19, Base37.decodeTitleCase(username), message, null, phraseId);
 			opcode = -1;
 			return true;
 		} else if (opcode == 199) {
@@ -2316,9 +2316,9 @@ public final class Protocol {
 			player.aString234 = inboundBuffer.readString();
 			if (player.aString234.charAt(0) == '~') {
 				player.aString234 = player.aString234.substring(1);
-				ChatHistory.add(2, player.method1173(), player.aString234);
+				Chat.add(2, player.getName(), player.aString234);
 			} else if (player == PlayerList.self) {
-				ChatHistory.add(2, player.method1173(), player.aString234);
+				Chat.add(2, player.getName(), player.aString234);
 			}
 			player.anInt3998 = 0;
 			player.anInt3981 = 0;
@@ -2330,8 +2330,8 @@ public final class Protocol {
 			@Pc(244) boolean local244 = (local232 & 0x8000) != 0;
 			@Pc(248) int len = inboundBuffer.readUnsignedByteS();
 			@Pc(251) int off = inboundBuffer.position;
-			if (player.name != null && player.appearance != null) {
-				@Pc(264) long encodedUsername = Base37.encode(player.name);
+			if (player.username != null && player.appearance != null) {
+				@Pc(264) long encodedUsername = Base37.encode(player.username);
 				@Pc(266) boolean ignore = false;
 				if (staffModelLevel <= 1) {
 					if (!local244 && (LoginManager.playerUnderage && !LoginManager.parentalChatConsent || LoginManager.mapQuickChat)) {
@@ -2364,11 +2364,11 @@ public final class Protocol {
 					player.anInt4023 = 150;
 					player.anInt3981 = local232 >> 8;
 					if (staffModelLevel == 2) {
-						ChatHistory.add(local244 ? 17 : 1, "<img=1>" + player.method1173(), message, null, phraseId);
+						Chat.add(local244 ? 17 : 1, "<img=1>" + player.getName(), message, null, phraseId);
 					} else if (staffModelLevel == 1) {
-						ChatHistory.add(local244 ? 17 : 1, "<img=0>" + player.method1173(), message, null, phraseId);
+						Chat.add(local244 ? 17 : 1, "<img=0>" + player.getName(), message, null, phraseId);
 					} else {
-						ChatHistory.add(local244 ? 17 : 2, player.method1173(), message, null, phraseId);
+						Chat.add(local244 ? 17 : 2, player.getName(), message, null, phraseId);
 					}
 				}
 			}

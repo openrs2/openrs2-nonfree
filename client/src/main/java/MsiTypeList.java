@@ -16,26 +16,26 @@ public final class MsiTypeList {
 	public static Js5 spritesArchive;
 
 	@OriginalMember(owner = "client!sk", name = "h", descriptor = "I")
-	public static int anInt4867;
+	public static int redDelta;
 
 	@OriginalMember(owner = "client!qc", name = "o", descriptor = "I")
-	public static int anInt3963;
+	public static int blueDelta;
 
 	@OriginalMember(owner = "client!ae", name = "k", descriptor = "I")
-	public static int anInt97;
+	public static int greenDelta;
 
 	@OriginalMember(owner = "client!ab", name = "a", descriptor = "(ILclient!fh;Lclient!fh;)V")
 	public static void init(@OriginalArg(2) Js5 archive, @OriginalArg(1) Js5 spritesArchive) {
-		@Pc(10) int local10 = (int) (Math.random() * 21.0D) - 10;
+		@Pc(10) int blueDelta = (int) (Math.random() * 21.0D) - 10;
 		MsiTypeList.archive = archive;
-		@Pc(19) int local19 = (int) (Math.random() * 41.0D) - 20;
+		@Pc(19) int baseDelta = (int) (Math.random() * 41.0D) - 20;
 		MsiTypeList.spritesArchive = spritesArchive;
-		@Pc(28) int local28 = (int) (Math.random() * 21.0D) - 10;
+		@Pc(28) int redDelta = (int) (Math.random() * 21.0D) - 10;
 		MsiTypeList.archive.getGroupCapacity(34);
-		@Pc(40) int local40 = (int) (Math.random() * 21.0D) - 10;
-		anInt4867 = local19 + local28;
-		anInt3963 = local10 + local19;
-		anInt97 = local19 + local40;
+		@Pc(40) int greenDelta = (int) (Math.random() * 21.0D) - 10;
+		MsiTypeList.redDelta = baseDelta + redDelta;
+		MsiTypeList.blueDelta = blueDelta + baseDelta;
+		MsiTypeList.greenDelta = baseDelta + greenDelta;
 	}
 
 	@OriginalMember(owner = "client!fi", name = "b", descriptor = "(BI)Lclient!qg;")

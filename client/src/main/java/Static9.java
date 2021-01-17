@@ -149,7 +149,7 @@ public final class Static9 {
 	public static void method194(@OriginalArg(0) int arg0, @OriginalArg(1) String arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4, @OriginalArg(6) int arg5, @OriginalArg(7) int arg6, @OriginalArg(8) Font arg7, @OriginalArg(9) Component arg8) {
 		@Pc(14) int local14 = arg5 * arg5 + arg3 * arg3;
 		@Pc(21) int local21 = (int) Static5.aFloat97 + Static6.anInt3585 & 0x7FF;
-		@Pc(33) int local33 = Math.max(arg8.anInt5893 / 2, arg8.anInt5949 / 2) + 10;
+		@Pc(33) int local33 = Math.max(arg8.width / 2, arg8.height / 2) + 10;
 		if (local33 * local33 < local14) {
 			return;
 		}
@@ -162,7 +162,7 @@ public final class Static9 {
 		@Pc(85) int local85 = arg7.method2273(arg1);
 		@Pc(96) int local96 = arg3 * local43 - local55 * arg5 >> 16;
 		local74 -= local79 / 2;
-		if (-arg8.anInt5893 > local74 || local74 > arg8.anInt5893 || -arg8.anInt5949 > local96 || local96 > arg8.anInt5949) {
+		if (-arg8.width > local74 || local74 > arg8.width || -arg8.height > local96 || local96 > arg8.height) {
 			return;
 		}
 		if (GlRenderer.enabled) {
@@ -170,7 +170,7 @@ public final class Static9 {
 		} else {
 			SoftwareRaster.setMask(arg8.anIntArray672, arg8.anIntArray657);
 		}
-		arg7.method2260(arg1, local74 + arg4 + arg8.anInt5893 / 2, arg2 + arg8.anInt5949 / 2 - local96 - arg6 - local85, local79, 50, arg0, 0, 1, 0, 0);
+		arg7.method2260(arg1, local74 + arg4 + arg8.width / 2, arg2 + arg8.height / 2 - local96 - arg6 - local85, local79, 50, arg0, 0, 1, 0, 0);
 		if (GlRenderer.enabled) {
 			GlRaster.resetMask();
 		} else {
@@ -243,11 +243,6 @@ public final class Static9 {
 				Static4.tileFlags[arg3][arg10][arg6] = (byte) (local37 - 49);
 			}
 		}
-	}
-
-	@OriginalMember(owner = "client!an", name = "a", descriptor = "(I)V")
-	public static void method198() {
-		ObjTypeList.sprites.clear();
 	}
 
 	@OriginalMember(owner = "client!an", name = "b", descriptor = "(I)V")

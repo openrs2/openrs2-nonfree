@@ -43,7 +43,7 @@ public final class Static11 {
 		Static24.method2697();
 		Static3.aClass40_11.clear();
 		Static3.aClass96_1 = new Class96();
-		((Js5GlTextureProvider) Static4.anInterface4_1).clear();
+		((Js5GlTextureProvider) Static4.textureProvider).clear();
 		Static13.method1027();
 		LightingManager.lights = new Light[255];
 		LightingManager.lightCount = 0;
@@ -230,7 +230,7 @@ public final class Static11 {
 			return;
 		}
 		@Pc(14) int local14 = (int) Static5.aFloat97 + Static6.anInt3585 & 0x7FF;
-		@Pc(26) int local26 = Math.max(arg1.anInt5893 / 2, arg1.anInt5949 / 2) + 10;
+		@Pc(26) int local26 = Math.max(arg1.width / 2, arg1.height / 2) + 10;
 		@Pc(34) int local34 = arg4 * arg4 + arg3 * arg3;
 		if (local34 > local26 * local26) {
 			return;
@@ -242,69 +242,69 @@ public final class Static11 {
 		@Pc(75) int local75 = arg3 * local57 + arg4 * local45 >> 16;
 		@Pc(86) int local86 = local57 * arg4 - arg3 * local45 >> 16;
 		if (GlRenderer.enabled) {
-			((GlSprite) arg5).renderTransparentMasked(arg1.anInt5893 / 2 + arg0 + local75 - arg5.innerWidth / 2, arg1.anInt5949 / 2 + arg2 - arg5.innerHeight / 2 - local86, (GlSprite) arg1.method4729(false));
+			((GlSprite) arg5).renderTransparentMasked(arg1.width / 2 + arg0 + local75 - arg5.innerWidth / 2, arg1.height / 2 + arg2 - arg5.innerHeight / 2 - local86, (GlSprite) arg1.method4729(false));
 		} else {
-			((SoftwareSprite) arg5).renderTransparentMasked(arg0 + arg1.anInt5893 / 2 + local75 - arg5.innerWidth / 2, arg1.anInt5949 / 2 + arg2 - arg5.innerHeight / 2 - local86, arg1.anIntArray672, arg1.anIntArray657);
+			((SoftwareSprite) arg5).renderTransparentMasked(arg0 + arg1.width / 2 + local75 - arg5.innerWidth / 2, arg1.height / 2 + arg2 - arg5.innerHeight / 2 - local86, arg1.anIntArray672, arg1.anIntArray657);
 		}
 	}
 
 	@OriginalMember(owner = "client!ce", name = "a", descriptor = "(ZILclient!wf;II)V")
-	public static void method526(@OriginalArg(0) boolean arg0, @OriginalArg(1) int arg1, @OriginalArg(2) Component arg2, @OriginalArg(3) int arg3) {
-		@Pc(13) int local13 = arg2.anInt5949;
-		if (arg2.aByte27 == 0) {
-			arg2.anInt5949 = arg2.anInt5950;
-		} else if (arg2.aByte27 == 1) {
-			arg2.anInt5949 = arg3 - arg2.anInt5950;
-		} else if (arg2.aByte27 == 2) {
-			arg2.anInt5949 = arg3 * arg2.anInt5950 >> 14;
-		} else if (arg2.aByte27 == 3) {
-			if (arg2.type == 2) {
-				arg2.anInt5949 = arg2.anInt5964 * (arg2.anInt5950 - 1) + arg2.anInt5950 * 32;
-			} else if (arg2.type == 7) {
-				arg2.anInt5949 = arg2.anInt5950 * 12 + (arg2.anInt5950 - 1) * arg2.anInt5964;
+	public static void method526(@OriginalArg(2) Component component, @OriginalArg(1) int parentWidth, @OriginalArg(3) int parentHeight, @OriginalArg(0) boolean arg0) {
+		@Pc(13) int prevHeight = component.height;
+		if (component.heightMode == 0) {
+			component.height = component.baseHeight;
+		} else if (component.heightMode == 1) {
+			component.height = parentHeight - component.baseHeight;
+		} else if (component.heightMode == 2) {
+			component.height = parentHeight * component.baseHeight >> 14;
+		} else if (component.heightMode == 3) {
+			if (component.type == 2) {
+				component.height = component.anInt5964 * (component.baseHeight - 1) + component.baseHeight * 32;
+			} else if (component.type == 7) {
+				component.height = component.baseHeight * 12 + (component.baseHeight - 1) * component.anInt5964;
 			}
 		}
-		@Pc(108) int local108 = arg2.anInt5893;
-		if (arg2.aByte24 == 0) {
-			arg2.anInt5893 = arg2.anInt5927;
-		} else if (arg2.aByte24 == 1) {
-			arg2.anInt5893 = arg1 - arg2.anInt5927;
-		} else if (arg2.aByte24 == 2) {
-			arg2.anInt5893 = arg1 * arg2.anInt5927 >> 14;
-		} else if (arg2.aByte24 == 3) {
-			if (arg2.type == 2) {
-				arg2.anInt5893 = (arg2.anInt5927 - 1) * arg2.anInt5943 + arg2.anInt5927 * 32;
-			} else if (arg2.type == 7) {
-				arg2.anInt5893 = arg2.anInt5927 * 115 + arg2.anInt5943 * (arg2.anInt5927 - 1);
+		@Pc(108) int prevWidth = component.width;
+		if (component.widthMode == 0) {
+			component.width = component.baseWidth;
+		} else if (component.widthMode == 1) {
+			component.width = parentWidth - component.baseWidth;
+		} else if (component.widthMode == 2) {
+			component.width = parentWidth * component.baseWidth >> 14;
+		} else if (component.widthMode == 3) {
+			if (component.type == 2) {
+				component.width = (component.baseWidth - 1) * component.anInt5943 + component.baseWidth * 32;
+			} else if (component.type == 7) {
+				component.width = component.baseWidth * 115 + component.anInt5943 * (component.baseWidth - 1);
 			}
 		}
-		if (arg2.aByte24 == 4) {
-			arg2.anInt5893 = arg2.anInt5908 * arg2.anInt5949 / arg2.anInt5970;
+		if (component.widthMode == 4) {
+			component.width = component.aspectRatioHeight * component.height / component.aspectRatioWidth;
 		}
-		if (arg2.aByte27 == 4) {
-			arg2.anInt5949 = arg2.anInt5970 * arg2.anInt5893 / arg2.anInt5908;
+		if (component.heightMode == 4) {
+			component.height = component.aspectRatioWidth * component.width / component.aspectRatioHeight;
 		}
-		if (Static1.qaOpTest && (InterfaceList.getServerActiveProperties(arg2).events != 0 || arg2.type == 0)) {
-			if (arg2.anInt5949 < 5 && arg2.anInt5893 < 5) {
-				arg2.anInt5949 = 5;
-				arg2.anInt5893 = 5;
+		if (Static1.qaOpTest && (InterfaceList.getServerActiveProperties(component).events != 0 || component.type == 0)) {
+			if (component.height < 5 && component.width < 5) {
+				component.height = 5;
+				component.width = 5;
 			} else {
-				if (arg2.anInt5949 <= 0) {
-					arg2.anInt5949 = 5;
+				if (component.height <= 0) {
+					component.height = 5;
 				}
-				if (arg2.anInt5893 <= 0) {
-					arg2.anInt5893 = 5;
+				if (component.width <= 0) {
+					component.width = 5;
 				}
 			}
 		}
-		if (arg2.anInt5904 == 1337) {
-			Static3.aClass185_5 = arg2;
+		if (component.anInt5904 == 1337) {
+			Static3.aClass185_5 = component;
 		}
-		if (arg0 && arg2.anObjectArray32 != null && (local108 != arg2.anInt5893 || local13 != arg2.anInt5949)) {
-			@Pc(298) HookRequest local298 = new HookRequest();
-			local298.arguments = arg2.anObjectArray32;
-			local298.source = arg2;
-			Static3.aClass112_14.addTail(local298);
+		if (arg0 && component.onResize != null && (prevWidth != component.width || prevHeight != component.height)) {
+			@Pc(298) HookRequest request = new HookRequest();
+			request.arguments = component.onResize;
+			request.source = component;
+			Static3.aClass112_14.addTail(request);
 		}
 	}
 
@@ -390,7 +390,7 @@ public final class Static11 {
 	}
 
 	@OriginalMember(owner = "client!cf", name = "g", descriptor = "(I)I")
-	public static int method557() {
+	public static int getWindowMode() {
 		if (GameShell.fullScreenFrame != null) {
 			return 3;
 		} else if (GlRenderer.enabled && Static4.aBoolean184) {
@@ -413,7 +413,7 @@ public final class Static11 {
 		Static12.method719();
 		Static1.anInt885 = 0;
 		Static4.anInt3335 = -1;
-		Static5.anInt4329 = 0;
+		Static5.rebootTimer = 0;
 		Static3.anInt2273 = -1;
 		Protocol.outboundBuffer.position = 0;
 		Static2.anInt1231 = -1;
@@ -427,12 +427,12 @@ public final class Static11 {
 		Static7.anInt5634 = 0;
 		Mouse.setIdleLoops(0);
 		for (@Pc(3667) int i = 0; i < 100; i++) {
-			ChatHistory.messages[i] = null;
+			Chat.messages[i] = null;
 		}
 		Static6.anInt4761 = (int) (Math.random() * 30.0D) - 20;
 		Static1.anInt548 = (int) (Math.random() * 100.0D) - 50;
 		Static6.anInt3585 = (int) (Math.random() * 120.0D) - 60;
-		ChatHistory.size = 0;
+		Chat.size = 0;
 		Static5.aFloat97 = (int) (Math.random() * 20.0D) - 10 & 0x7FF;
 		Static1.anInt242 = (int) (Math.random() * 80.0D) - 40;
 		Static3.aBoolean177 = false;
@@ -502,9 +502,9 @@ public final class Static11 {
 		for (@Pc(3969) int local3969 = 0; local3969 < 100; local3969++) {
 			Static2.aBooleanArray8[local3969] = true;
 		}
-		Static6.clanMembers = null;
-		Static2.aString108 = null;
-		Static4.anInt3260 = 0;
+		ClanChat.members = null;
+		ClanChat.name = null;
+		ClanChat.size = 0;
 		for (@Pc(3987) int i = 0; i < 6; i++) {
 			StockMarketManager.offers[i] = new StockMarketOffer();
 		}

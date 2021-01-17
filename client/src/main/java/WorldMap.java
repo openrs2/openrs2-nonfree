@@ -4,7 +4,7 @@ import org.openrs2.deob.annotation.Pc;
 
 public final class WorldMap {
 	@OriginalMember(owner = "client!ii", name = "d", descriptor = "Lclient!wg;")
-	public static MapArea currentMap;
+	public static Map currentMap;
 
 	@OriginalMember(owner = "client!jk", name = "u", descriptor = "I")
 	public static int loadPercentage = 0;
@@ -33,9 +33,12 @@ public final class WorldMap {
 	@OriginalMember(owner = "client!rl", name = "q", descriptor = "Lclient!kk;")
 	public static WorldMapFont font30;
 
+	@OriginalMember(owner = "client!ii", name = "k", descriptor = "F")
+	public static float zoom;
+
 	@OriginalMember(owner = "client!ii", name = "a", descriptor = "(I)V")
 	public static void setCurrentMap(@OriginalArg(0) int id) {
-		currentMap = (MapArea) MapAreaList.areas.get(id);
+		currentMap = (Map) MapList.areas.get(id);
 	}
 
 	@OriginalMember(owner = "client!il", name = "a", descriptor = "(B)V")
@@ -44,7 +47,7 @@ public final class WorldMap {
 			return;
 		}
 		if (loadPercentage < 10) {
-			if (!MapAreaList.archive.isGroupReady(currentMap.group)) {
+			if (!MapList.archive.isGroupReady(currentMap.group)) {
 				loadPercentage = client.js5Archive23.getPercentageComplete(currentMap.group) / 10;
 				return;
 			}
@@ -69,7 +72,7 @@ public final class WorldMap {
 				@Pc(164) int local164 = local86 + (int) (Math.random() * 10.0D) - 5;
 				Static1.anInt331 = local164;
 			} else if (Static6.anInt4953 == -1 || Static3.anInt2571 == -1) {
-				currentMap.convertSourceToDisplay(currentMap.defaultPosition >> 14 & 0x3FFF, currentMap.defaultPosition & 0x3FFF, local70);
+				currentMap.convertSourceToDisplay(currentMap.origin >> 14 & 0x3FFF, currentMap.origin & 0x3FFF, local70);
 				Static7.anInt5231 = Static3.anInt2961 + Static3.anInt2960 - local70[2] - 1;
 				Static1.anInt331 = local70[1] - Static3.anInt2962;
 			} else {
@@ -84,22 +87,22 @@ public final class WorldMap {
 			}
 			if (currentMap.defaultZoom == 37) {
 				Static3.aFloat68 = 3.0F;
-				Static3.aFloat69 = 3.0F;
+				zoom = 3.0F;
 			} else if (currentMap.defaultZoom == 50) {
 				Static3.aFloat68 = 4.0F;
-				Static3.aFloat69 = 4.0F;
+				zoom = 4.0F;
 			} else if (currentMap.defaultZoom == 75) {
 				Static3.aFloat68 = 6.0F;
-				Static3.aFloat69 = 6.0F;
+				zoom = 6.0F;
 			} else if (currentMap.defaultZoom == 100) {
 				Static3.aFloat68 = 8.0F;
-				Static3.aFloat69 = 8.0F;
+				zoom = 8.0F;
 			} else if (currentMap.defaultZoom == 200) {
 				Static3.aFloat68 = 16.0F;
-				Static3.aFloat69 = 16.0F;
+				zoom = 16.0F;
 			} else {
 				Static3.aFloat68 = 8.0F;
-				Static3.aFloat69 = 8.0F;
+				zoom = 8.0F;
 			}
 			Static28.method3249();
 			@Pc(309) int local309 = Static3.anInt2965 >> 6;
@@ -121,29 +124,29 @@ public final class WorldMap {
 			VarbitTypeList.resize(256);
 			loadPercentage = 20;
 		} else if (loadPercentage == 20) {
-			Static26.method2934(new Buffer(MapAreaList.archive.fetchFile(currentMap.group, "underlay")));
+			Static26.method2934(new Buffer(MapList.archive.fetchFile(currentMap.group, "underlay")));
 			loadPercentage = 30;
 			Static32.method3917(true);
 			GameShell.resetTimer();
 		} else if (loadPercentage == 30) {
-			Static19.method2398(new Buffer(MapAreaList.archive.fetchFile(currentMap.group, "overlay")));
+			Static19.method2398(new Buffer(MapList.archive.fetchFile(currentMap.group, "overlay")));
 			loadPercentage = 40;
 			GameShell.resetTimer();
 		} else if (loadPercentage == 40) {
-			Static20.method2406(new Buffer(MapAreaList.archive.fetchFile(currentMap.group, "overlay2")));
+			Static20.method2406(new Buffer(MapList.archive.fetchFile(currentMap.group, "overlay2")));
 			loadPercentage = 50;
 			GameShell.resetTimer();
 		} else if (loadPercentage == 50) {
-			Static20.method2407(new Buffer(MapAreaList.archive.fetchFile(currentMap.group, "loc")), LoginManager.mapMembers);
+			Static20.method2407(new Buffer(MapList.archive.fetchFile(currentMap.group, "loc")), LoginManager.mapMembers);
 			loadPercentage = 60;
 			Static32.method3917(true);
 			GameShell.resetTimer();
 		} else if (loadPercentage == 60) {
-			if (MapAreaList.archive.isGroupNameValid(currentMap.group + "_labels")) {
-				if (!MapAreaList.archive.isGroupReady(currentMap.group + "_labels")) {
+			if (MapList.archive.isGroupNameValid(currentMap.group + "_labels")) {
+				if (!MapList.archive.isGroupReady(currentMap.group + "_labels")) {
 					return;
 				}
-				Static3.aClass138_6 = MapElementList.create(MapAreaList.archive, currentMap.group + "_labels", LoginManager.mapMembers);
+				Static3.aClass138_6 = MapElementList.create(MapList.archive, currentMap.group + "_labels", LoginManager.mapMembers);
 			} else {
 				Static3.aClass138_6 = new MapElementList(0);
 			}
@@ -192,5 +195,42 @@ public final class WorldMap {
 			GameShell.resetTimer();
 			System.gc();
 		}
+	}
+
+	@OriginalMember(owner = "client!jl", name = "a", descriptor = "(II)V")
+	public static void setZoom(@OriginalArg(0) int zoom) {
+		Static1.anInt929 = -1;
+		if (zoom == 37) {
+			WorldMap.zoom = 3.0F;
+		} else if (zoom == 50) {
+			WorldMap.zoom = 4.0F;
+		} else if (zoom == 75) {
+			WorldMap.zoom = 6.0F;
+		} else if (zoom == 100) {
+			WorldMap.zoom = 8.0F;
+		} else if (zoom == 200) {
+			WorldMap.zoom = 16.0F;
+		}
+		Static1.anInt929 = -1;
+	}
+
+	@OriginalMember(owner = "client!jc", name = "e", descriptor = "(B)I")
+	public static int getZoom() {
+		if ((double) zoom == 3.0D) {
+			return 37;
+		} else if ((double) zoom == 4.0D) {
+			return 50;
+		} else if ((double) zoom == 6.0D) {
+			return 75;
+		} else if ((double) zoom == 8.0D) {
+			return 100;
+		} else {
+			return 200;
+		}
+	}
+
+	@OriginalMember(owner = "client!bi", name = "b", descriptor = "(I)Lclient!wg;")
+	public static Map getCurrentMap() {
+		return currentMap;
 	}
 }

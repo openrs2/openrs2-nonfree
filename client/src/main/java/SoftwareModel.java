@@ -170,7 +170,7 @@ public final class SoftwareModel extends Model {
 			this.aShortArray61 = new short[this.triangleCount];
 			for (@Pc(148) int local148 = 0; local148 < this.triangleCount; local148++) {
 				@Pc(157) short local157 = model.triangleTextures[local148];
-				if (local157 != -1 && Static4.anInterface4_1.method441(local157)) {
+				if (local157 != -1 && Static4.textureProvider.method441(local157)) {
 					this.aShortArray61[local148] = local157;
 				} else {
 					this.aShortArray61[local148] = -1;

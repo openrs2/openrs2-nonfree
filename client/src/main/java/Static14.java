@@ -16,8 +16,8 @@ public final class Static14 {
 			if (local31 < Static2.anInt1633) {
 				local31 = Static2.anInt1633;
 			}
-			if (Static1.aClass185_1.anInt5893 + local31 > Static1.aClass185_2.anInt5893 + Static2.anInt1633) {
-				local31 = Static1.aClass185_2.anInt5893 + Static2.anInt1633 - Static1.aClass185_1.anInt5893;
+			if (Static1.aClass185_1.width + local31 > Static1.aClass185_2.width + Static2.anInt1633) {
+				local31 = Static1.aClass185_2.width + Static2.anInt1633 - Static1.aClass185_1.width;
 			}
 			@Pc(61) int local61 = Mouse.y;
 			@Pc(65) int local65 = local61 - Static1.anInt777;
@@ -25,41 +25,41 @@ public final class Static14 {
 				local65 = Static6.anInt5182;
 			}
 			@Pc(75) int local75 = local31 - Static4.anInt3183;
-			if (Static1.aClass185_1.anInt5949 + local65 > Static6.anInt5182 + Static1.aClass185_2.anInt5949) {
-				local65 = Static6.anInt5182 + Static1.aClass185_2.anInt5949 - Static1.aClass185_1.anInt5949;
+			if (Static1.aClass185_1.height + local65 > Static6.anInt5182 + Static1.aClass185_2.height) {
+				local65 = Static6.anInt5182 + Static1.aClass185_2.height - Static1.aClass185_1.height;
 			}
 			@Pc(103) int local103 = local65 - Static1.anInt134;
-			@Pc(106) int local106 = Static1.aClass185_1.anInt5896;
-			if (Static3.anInt2165 > Static1.aClass185_1.anInt5953 && (local75 > local106 || local75 < -local106 || local103 > local106 || local103 < -local106)) {
+			@Pc(106) int local106 = Static1.aClass185_1.dragDeadZone;
+			if (Static3.anInt2165 > Static1.aClass185_1.dragDeadTime && (local75 > local106 || local75 < -local106 || local103 > local106 || local103 < -local106)) {
 				Static3.aBoolean173 = true;
 			}
-			@Pc(150) int local150 = Static1.aClass185_2.anInt5932 + local31 - Static2.anInt1633;
-			@Pc(159) int local159 = local65 + Static1.aClass185_2.anInt5931 - Static6.anInt5182;
-			if (Static1.aClass185_1.anObjectArray11 != null && Static3.aBoolean173) {
+			@Pc(150) int local150 = Static1.aClass185_2.scrollX + local31 - Static2.anInt1633;
+			@Pc(159) int local159 = local65 + Static1.aClass185_2.scrollY - Static6.anInt5182;
+			if (Static1.aClass185_1.onDrag != null && Static3.aBoolean173) {
 				@Pc(169) HookRequest local169 = new HookRequest();
 				local169.mouseY = local159;
 				local169.source = Static1.aClass185_1;
 				local169.mouseX = local150;
-				local169.arguments = Static1.aClass185_1.anObjectArray11;
+				local169.arguments = Static1.aClass185_1.onDrag;
 				Static21.method2019(local169);
 			}
 			if (Mouse.pressedButton == 0) {
 				if (Static3.aBoolean173) {
-					if (Static1.aClass185_1.anObjectArray7 != null) {
+					if (Static1.aClass185_1.onDragComplete != null) {
 						@Pc(231) HookRequest local231 = new HookRequest();
 						local231.target = Static7.aClass185_16;
 						local231.source = Static1.aClass185_1;
 						local231.mouseX = local150;
 						local231.mouseY = local159;
-						local231.arguments = Static1.aClass185_1.anObjectArray7;
+						local231.arguments = Static1.aClass185_1.onDragComplete;
 						Static21.method2019(local231);
 					}
 					if (Static7.aClass185_16 != null && Static12.method691(Static1.aClass185_1) != null) {
 						Protocol.outboundBuffer.writeOpcode(0);
 						Protocol.outboundBuffer.writeIntLE2(Static1.aClass185_1.id);
 						Protocol.outboundBuffer.writeIntAlt3(Static7.aClass185_16.id);
-						Protocol.outboundBuffer.writeShortA(Static7.aClass185_16.anInt5968);
-						Protocol.outboundBuffer.writeShortLEA(Static1.aClass185_1.anInt5968);
+						Protocol.outboundBuffer.writeShortA(Static7.aClass185_16.createdComponentId);
+						Protocol.outboundBuffer.writeShortLEA(Static1.aClass185_1.createdComponentId);
 					}
 				} else if ((Static3.anInt5400 == 1 || Static13.method1005(Static7.anInt5634 - 1)) && Static7.anInt5634 > 2) {
 					Static31.method3783();
@@ -71,15 +71,6 @@ public final class Static14 {
 		} else if (Static3.anInt2165 > 1) {
 			Static1.aClass185_1 = null;
 		}
-	}
-
-	@OriginalMember(owner = "client!ej", name = "a", descriptor = "(Ljava/lang/String;I)Ljava/lang/String;")
-	public static String method1054(@OriginalArg(0) String arg0) {
-		@Pc(17) String local17 = Base37.decodeLowerCase(Base37.encode(arg0));
-		if (local17 == null) {
-			local17 = "";
-		}
-		return local17;
 	}
 
 	@OriginalMember(owner = "client!ej", name = "c", descriptor = "(I)V")
@@ -160,11 +151,11 @@ public final class Static14 {
 	}
 
 	@OriginalMember(owner = "client!em", name = "c", descriptor = "(I)Z")
-	public static boolean method1079() {
+	public static boolean isShowingVideoAd() {
 		if (client.javaScript) {
 			try {
 				return !((Boolean) BrowserControl.call(GameShell.signLink.applet, "showingVideoAd"));
-			} catch (@Pc(23) Throwable local23) {
+			} catch (@Pc(23) Throwable ex) {
 			}
 		}
 		return true;

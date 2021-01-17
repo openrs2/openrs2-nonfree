@@ -104,45 +104,45 @@ public final class Static36 {
 	}
 
 	@OriginalMember(owner = "client!vc", name = "a", descriptor = "(IILclient!wf;I)V")
-	public static void method3812(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) Component arg2) {
-		if (arg2.aByte26 == 0) {
-			arg2.anInt5960 = arg2.anInt5928;
-		} else if (arg2.aByte26 == 1) {
-			arg2.anInt5960 = arg2.anInt5928 + (arg0 - arg2.anInt5893) / 2;
-		} else if (arg2.aByte26 == 2) {
-			arg2.anInt5960 = arg0 - arg2.anInt5928 - arg2.anInt5893;
-		} else if (arg2.aByte26 == 3) {
-			arg2.anInt5960 = arg2.anInt5928 * arg0 >> 14;
-		} else if (arg2.aByte26 == 4) {
-			arg2.anInt5960 = (arg2.anInt5928 * arg0 >> 14) + (arg0 - arg2.anInt5893) / 2;
+	public static void method3812(@OriginalArg(2) Component component, @OriginalArg(0) int parentWidth, @OriginalArg(1) int parentHeight) {
+		if (component.xMode == 0) {
+			component.x = component.baseX;
+		} else if (component.xMode == 1) {
+			component.x = component.baseX + (parentWidth - component.width) / 2;
+		} else if (component.xMode == 2) {
+			component.x = parentWidth - component.baseX - component.width;
+		} else if (component.xMode == 3) {
+			component.x = component.baseX * parentWidth >> 14;
+		} else if (component.xMode == 4) {
+			component.x = (component.baseX * parentWidth >> 14) + (parentWidth - component.width) / 2;
 		} else {
-			arg2.anInt5960 = arg0 - (arg0 * arg2.anInt5928 >> 14) - arg2.anInt5893;
+			component.x = parentWidth - (parentWidth * component.baseX >> 14) - component.width;
 		}
-		if (arg2.aByte25 == 0) {
-			arg2.anInt5888 = arg2.anInt5951;
-		} else if (arg2.aByte25 == 1) {
-			arg2.anInt5888 = arg2.anInt5951 + (arg1 - arg2.anInt5949) / 2;
-		} else if (arg2.aByte25 == 2) {
-			arg2.anInt5888 = arg1 - arg2.anInt5949 - arg2.anInt5951;
-		} else if (arg2.aByte25 == 3) {
-			arg2.anInt5888 = arg1 * arg2.anInt5951 >> 14;
-		} else if (arg2.aByte25 == 4) {
-			arg2.anInt5888 = (arg2.anInt5951 * arg1 >> 14) + (arg1 - arg2.anInt5949) / 2;
+		if (component.yMode == 0) {
+			component.y = component.baseY;
+		} else if (component.yMode == 1) {
+			component.y = component.baseY + (parentHeight - component.height) / 2;
+		} else if (component.yMode == 2) {
+			component.y = parentHeight - component.height - component.baseY;
+		} else if (component.yMode == 3) {
+			component.y = parentHeight * component.baseY >> 14;
+		} else if (component.yMode == 4) {
+			component.y = (component.baseY * parentHeight >> 14) + (parentHeight - component.height) / 2;
 		} else {
-			arg2.anInt5888 = arg1 - (arg2.anInt5951 * arg1 >> 14) - arg2.anInt5949;
+			component.y = parentHeight - (component.baseY * parentHeight >> 14) - component.height;
 		}
-		if (!Static1.qaOpTest || InterfaceList.getServerActiveProperties(arg2).events == 0 && arg2.type != 0) {
+		if (!Static1.qaOpTest || InterfaceList.getServerActiveProperties(component).events == 0 && component.type != 0) {
 			return;
 		}
-		if (arg2.anInt5888 < 0) {
-			arg2.anInt5888 = 0;
-		} else if (arg2.anInt5949 + arg2.anInt5888 > arg1) {
-			arg2.anInt5888 = arg1 - arg2.anInt5949;
+		if (component.y < 0) {
+			component.y = 0;
+		} else if (component.height + component.y > parentHeight) {
+			component.y = parentHeight - component.height;
 		}
-		if (arg2.anInt5960 < 0) {
-			arg2.anInt5960 = 0;
-		} else if (arg0 < arg2.anInt5960 + arg2.anInt5893) {
-			arg2.anInt5960 = arg0 - arg2.anInt5893;
+		if (component.x < 0) {
+			component.x = 0;
+		} else if (parentWidth < component.x + component.width) {
+			component.x = parentWidth - component.width;
 		}
 	}
 

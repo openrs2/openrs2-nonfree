@@ -1009,17 +1009,17 @@ public class SoftwareSprite extends Sprite {
 	}
 
 	@OriginalMember(owner = "client!vn", name = "d", descriptor = "()V")
-	public final void method2176() {
+	public final void trim() {
 		if (this.width == this.innerWidth && this.height == this.innerHeight) {
 			return;
 		}
-		@Pc(17) int[] local17 = new int[this.innerWidth * this.innerHeight];
-		for (@Pc(19) int local19 = 0; local19 < this.height; local19++) {
-			for (@Pc(25) int local25 = 0; local25 < this.width; local25++) {
-				local17[(local19 + this.yOffset) * this.innerWidth + local25 + this.xOffset] = this.pixels[local19 * this.width + local25];
+		@Pc(17) int[] pixels = new int[this.innerWidth * this.innerHeight];
+		for (@Pc(19) int y = 0; y < this.height; y++) {
+			for (@Pc(25) int x = 0; x < this.width; x++) {
+				pixels[(y + this.yOffset) * this.innerWidth + x + this.xOffset] = this.pixels[y * this.width + x];
 			}
 		}
-		this.pixels = local17;
+		this.pixels = pixels;
 		this.width = this.innerWidth;
 		this.height = this.innerHeight;
 		this.xOffset = 0;

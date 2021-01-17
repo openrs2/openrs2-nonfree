@@ -75,7 +75,7 @@ public final class AreaSoundManager {
 
 	@OriginalMember(owner = "client!bn", name = "a", descriptor = "(ILclient!f;)V")
 	public static void update(@OriginalArg(1) Player player) {
-		@Pc(20) AreaSound areaSound = (AreaSound) playerSounds.get(Base37.encode(player.name));
+		@Pc(20) AreaSound areaSound = (AreaSound) playerSounds.get(Base37.encode(player.username));
 		if (areaSound == null) {
 			add(Player.level, player.movementQueueX[0], player.movementQueueZ[0], null, 0, null, player);
 		} else {
@@ -85,7 +85,7 @@ public final class AreaSoundManager {
 
 	@OriginalMember(owner = "client!db", name = "a", descriptor = "(ILclient!f;)V")
 	public static void remove(@OriginalArg(1) Player player) {
-		@Pc(19) AreaSound areaSound = (AreaSound) playerSounds.get(Base37.encode(player.name));
+		@Pc(19) AreaSound areaSound = (AreaSound) playerSounds.get(Base37.encode(player.username));
 		if (areaSound == null) {
 			return;
 		}
@@ -180,7 +180,7 @@ public final class AreaSoundManager {
 			sound.sound = Player.getSound(player);
 			sound.volume = player.soundVolume;
 			sound.radius = player.soundRadius * 128;
-			playerSounds.put(Base37.encode(player.name), sound);
+			playerSounds.put(Base37.encode(player.username), sound);
 		}
 	}
 

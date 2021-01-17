@@ -83,4 +83,14 @@ public final class NpcTypeList {
 		models.removeSoft();
 		headModels.removeSoft();
 	}
+
+	@OriginalMember(owner = "client!hn", name = "b", descriptor = "(I)V")
+	public static void clearModels() {
+		models.clear();
+	}
+
+	@OriginalMember(owner = "client!ee", name = "b", descriptor = "(I)V")
+	public static void clearHeadModels() {
+		headModels.clear();
+	}
 }

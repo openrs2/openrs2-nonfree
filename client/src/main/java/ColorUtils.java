@@ -90,4 +90,72 @@ public final class ColorUtils {
 		ColorUtils.brightness = brightness;
 		ColorUtils.brightness = (float) ((double) ColorUtils.brightness + Math.random() * 0.03D - 0.015D);
 	}
+
+	@OriginalMember(owner = "client!on", name = "b", descriptor = "(II)I")
+	public static int rgbToHsl(@OriginalArg(1) int rgb) {
+		@Pc(14) double r = (double) (rgb >> 16 & 0xFF) / 256.0D;
+		@Pc(23) double g = (double) (rgb >> 8 & 0xFF) / 256.0D;
+		@Pc(25) double xMin = r;
+		if (g < r) {
+			xMin = g;
+		}
+		@Pc(38) double b = (double) (rgb & 0xFF) / 256.0D;
+		@Pc(40) double xMax = r;
+		if (b < xMin) {
+			xMin = b;
+		}
+		if (r < g) {
+			xMax = g;
+		}
+		if (b > xMax) {
+			xMax = b;
+		}
+		@Pc(60) double h = 0.0D;
+		@Pc(66) double l = (xMin + xMax) / 2.0D;
+		@Pc(68) double s = 0.0D;
+		@Pc(73) int il = (int) (l * 256.0D);
+		if (il < 0) {
+			il = 0;
+		} else if (il > 255) {
+			il = 255;
+		}
+		if (xMax != xMin) {
+			if (r == xMax) {
+				h = (g - b) / (xMax - xMin);
+			} else if (g == xMax) {
+				h = (b - r) / (xMax - xMin) + 2.0D;
+			} else if (b == xMax) {
+				h = (r - g) / (xMax - xMin) + 4.0D;
+			}
+			if (l < 0.5D) {
+				s = (xMax - xMin) / (xMin + xMax);
+			}
+			if (l >= 0.5D) {
+				s = (xMax - xMin) / (2.0D - xMax - xMin);
+			}
+		}
+		@Pc(173) int is = (int) (s * 256.0D);
+		if (is < 0) {
+			is = 0;
+		} else if (is > 255) {
+			is = 255;
+		}
+		@Pc(199) double h2 = h / 6.0D;
+		@Pc(204) int ih = (int) (h2 * 256.0D);
+		if (il > 243) {
+			is >>= 4;
+		} else if (il > 217) {
+			is >>= 3;
+		} else if (il > 192) {
+			is >>= 2;
+		} else if (il > 179) {
+			is >>= 1;
+		}
+		return (il >> 1) + (is >> 5 << 7) + (ih >> 2 << 10);
+	}
+
+	@OriginalMember(owner = "client!ac", name = "c", descriptor = "(II)I")
+	public static int rgbToHslTransparent(@OriginalArg(0) int rgb) {
+		return rgb == 0xFF00FF ? -1 : rgbToHsl(rgb);
+	}
 }

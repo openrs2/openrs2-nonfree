@@ -26,25 +26,6 @@ public final class Static34 {
 		}
 	}
 
-	@OriginalMember(owner = "client!tl", name = "a", descriptor = "(ILjava/lang/String;)V")
-	public static void method4236(@OriginalArg(1) String arg0) {
-		if (Static6.clanMembers == null) {
-			return;
-		}
-		@Pc(16) int local16 = 0;
-		@Pc(20) long local20 = Base37.encode(arg0);
-		if (local20 == 0L) {
-			return;
-		}
-		while (Static6.clanMembers.length > local16 && local20 != Static6.clanMembers[local16].key) {
-			local16++;
-		}
-		if (Static6.clanMembers.length > local16 && Static6.clanMembers[local16] != null) {
-			Protocol.outboundBuffer.writeOpcode(75);
-			Protocol.outboundBuffer.writeLong(Static6.clanMembers[local16].key);
-		}
-	}
-
 	@OriginalMember(owner = "client!tm", name = "a", descriptor = "(ILclient!qc;)V")
 	public static void method4247(@OriginalArg(1) PathingEntity entity) {
 		if (entity.anInt4009 == 0) {
@@ -491,11 +472,11 @@ public final class Static34 {
 
 	@OriginalMember(owner = "client!tm", name = "a", descriptor = "(ZZLclient!wf;)V")
 	public static void method4251(@OriginalArg(0) boolean arg0, @OriginalArg(2) Component arg1) {
-		@Pc(8) int local8 = arg1.anInt5885 == 0 ? arg1.anInt5893 : arg1.anInt5885;
-		@Pc(20) int local20 = arg1.anInt5887 == 0 ? arg1.anInt5949 : arg1.anInt5887;
+		@Pc(8) int local8 = arg1.scrollWidth == 0 ? arg1.width : arg1.scrollWidth;
+		@Pc(20) int local20 = arg1.scrollHeight == 0 ? arg1.height : arg1.scrollHeight;
 		Static31.method3660(InterfaceList.components[arg1.id >> 16], arg0, local8, arg1.id, local20);
-		if (arg1.aClass185Array4 != null) {
-			Static31.method3660(arg1.aClass185Array4, arg0, local8, arg1.id, local20);
+		if (arg1.createdComponents != null) {
+			Static31.method3660(arg1.createdComponents, arg0, local8, arg1.id, local20);
 		}
 		@Pc(61) SubInterface local61 = (SubInterface) InterfaceList.subInterfaces.get((long) arg1.id);
 		if (local61 != null) {

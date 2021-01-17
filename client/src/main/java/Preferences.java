@@ -72,7 +72,7 @@ public final class Preferences {
 	public static int favouriteWorlds = 0;
 
 	@OriginalMember(owner = "client!no", name = "ab", descriptor = "I")
-	public static int displayMode = 0;
+	public static int windowMode = 0;
 
 	@OriginalMember(owner = "client!on", name = "q", descriptor = "Z")
 	public static boolean safeMode = false;
@@ -122,7 +122,7 @@ public final class Preferences {
 			setParticles(2);
 		}
 		safeMode = false;
-		displayMode = 0;
+		windowMode = 0;
 		hdr = false;
 		buildArea = 0;
 		customCursors = true;
@@ -253,7 +253,7 @@ public final class Preferences {
 			favouriteWorlds = buffer.readInt();
 		}
 		if (version >= 6) {
-			displayMode = buffer.readUnsignedByte();
+			windowMode = buffer.readUnsignedByte();
 		}
 		if (version >= 7) {
 			safeMode = buffer.readUnsignedByte() == 1;
@@ -321,7 +321,7 @@ public final class Preferences {
 		buffer.writeShort(fullScreenHeight);
 		buffer.writeByte(getParticles());
 		buffer.writeInt(favouriteWorlds);
-		buffer.writeByte(displayMode);
+		buffer.writeByte(windowMode);
 		buffer.writeByte(safeMode ? 1 : 0);
 		buffer.writeByte(aBoolean293 ? 1 : 0);
 		buffer.writeByte(buildArea);

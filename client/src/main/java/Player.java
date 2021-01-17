@@ -6,6 +6,15 @@ import org.openrs2.deob.annotation.Pc;
 @OriginalClass("client!f")
 public final class Player extends PathingEntity {
 
+	@OriginalMember(owner = "client!ni", name = "n", descriptor = "[I")
+	public static final int[] TITLES_PER_GAME = new int[] { 1, 4 };
+
+	@OriginalMember(owner = "client!ve", name = "d", descriptor = "[Ljava/lang/String;")
+	public static String[] TITLE_PREFIXES;
+
+	@OriginalMember(owner = "client!ga", name = "c", descriptor = "[Ljava/lang/String;")
+	public static String[] TITLE_SUFFIXES;
+
 	@OriginalMember(owner = "client!uf", name = "h", descriptor = "I")
 	public static int level;
 
@@ -24,7 +33,7 @@ public final class Player extends PathingEntity {
 	}
 
 	@OriginalMember(owner = "client!f", name = "Oc", descriptor = "Ljava/lang/String;")
-	public String name;
+	public String username;
 
 	@OriginalMember(owner = "client!f", name = "Tc", descriptor = "Lclient!qk;")
 	public PlayerAppearance appearance;
@@ -124,7 +133,7 @@ public final class Player extends PathingEntity {
 		}
 		this.basId = buffer.readUnsignedShort();
 		@Pc(242) long encodedName = buffer.readLong();
-		this.name = Base37.decodeTitleCase(encodedName);
+		this.username = Base37.decodeTitleCase(encodedName);
 		this.combatLevel = buffer.readUnsignedByte();
 		if (showSkillLevel) {
 			this.skillLevel = buffer.readUnsignedShort();
@@ -362,15 +371,15 @@ public final class Player extends PathingEntity {
 	}
 
 	@OriginalMember(owner = "client!f", name = "d", descriptor = "(B)Ljava/lang/String;")
-	public final String method1173() {
-		@Pc(11) String local11 = this.name;
-		if (Static7.aStringArray38 != null) {
-			local11 = Static7.aStringArray38[this.title] + local11;
+	public final String getName() {
+		@Pc(11) String name = this.username;
+		if (TITLE_PREFIXES != null) {
+			name = TITLE_PREFIXES[this.title] + name;
 		}
-		if (Static2.aStringArray42 != null) {
-			local11 = local11 + Static2.aStringArray42[this.title];
+		if (TITLE_SUFFIXES != null) {
+			name = name + TITLE_SUFFIXES[this.title];
 		}
-		return local11;
+		return name;
 	}
 
 	@OriginalMember(owner = "client!f", name = "e", descriptor = "(I)I")

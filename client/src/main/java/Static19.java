@@ -71,11 +71,6 @@ public final class Static19 {
 		arg5.method3431(local11);
 	}
 
-	@OriginalMember(owner = "client!hn", name = "b", descriptor = "(I)V")
-	public static void method4376() {
-		NpcTypeList.models.clear();
-	}
-
 	@OriginalMember(owner = "client!hn", name = "a", descriptor = "(IIIIII)V")
 	public static void method4379(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4) {
 		Static18.method1656(Static5.anIntArrayArray36[arg3], arg2, arg1 - arg4, arg4 + arg1);

@@ -308,13 +308,6 @@ public final class Static15 {
 		Static14.method1210(local212.aClass56_Sub1_3, local111 - arg1, local140, local98 - arg5);
 	}
 
-	@OriginalMember(owner = "client!fd", name = "l", descriptor = "(I)V")
-	public static void method4619() {
-		if (LoginManager.step == 5) {
-			LoginManager.step = 6;
-		}
-	}
-
 	@OriginalMember(owner = "client!ff", name = "a", descriptor = "(Lclient!tf;B)V")
 	public static void method1324(@OriginalArg(0) Class4_Sub6 arg0) {
 		arg0.aBoolean289 = false;
@@ -368,7 +361,7 @@ public final class Static15 {
 	private static Component method1403(@OriginalArg(0) Component arg0) {
 		@Pc(2) Component local2 = Static12.method691(arg0);
 		if (local2 == null) {
-			local2 = arg0.aClass185_17;
+			local2 = arg0.dragComponent;
 		}
 		return local2;
 	}
@@ -398,8 +391,8 @@ public final class Static15 {
 		}
 		if (arg0.type == 2) {
 			@Pc(160) int local160 = 0;
-			for (@Pc(162) int local162 = 0; local162 < arg0.anInt5950; local162++) {
-				for (@Pc(172) int local172 = 0; local172 < arg0.anInt5927; local172++) {
+			for (@Pc(162) int local162 = 0; local162 < arg0.baseHeight; local162++) {
+				for (@Pc(172) int local172 = 0; local172 < arg0.baseWidth; local172++) {
 					@Pc(187) int local187 = local172 * (arg0.anInt5943 + 32);
 					@Pc(195) int local195 = local162 * (arg0.anInt5964 + 32);
 					if (local160 < 20) {
@@ -501,28 +494,28 @@ public final class Static15 {
 			for (@Pc(704) int local704 = 9; local704 >= 5; local704--) {
 				@Pc(712) String local712 = Static24.method2597(local704, arg0);
 				if (local712 != null) {
-					Static16.method1497((long) (local704 + 1), arg0.anInt5968, arg0.id, arg0.aString352, local712, (short) 1009, Static32.method3985(arg0, local704));
+					Static16.method1497((long) (local704 + 1), arg0.createdComponentId, arg0.id, arg0.opBase, local712, (short) 1009, Static32.method3985(arg0, local704));
 				}
 			}
 			@Pc(745) String local745 = Static12.method780(arg0);
 			if (local745 != null) {
-				Static16.method1497(0L, arg0.anInt5968, arg0.id, arg0.aString352, local745, (short) 34, -1);
+				Static16.method1497(0L, arg0.createdComponentId, arg0.id, arg0.opBase, local745, (short) 34, -1);
 			}
 			for (@Pc(767) int local767 = 4; local767 >= 0; local767--) {
 				@Pc(774) String local774 = Static24.method2597(local767, arg0);
 				if (local774 != null) {
-					Static16.method1497((long) (local767 + 1), arg0.anInt5968, arg0.id, arg0.aString352, local774, (short) 23, Static32.method3985(arg0, local767));
+					Static16.method1497((long) (local767 + 1), arg0.createdComponentId, arg0.id, arg0.opBase, local774, (short) 23, Static32.method3985(arg0, local767));
 				}
 			}
 			if (InterfaceList.getServerActiveProperties(arg0).isResumePauseButtonEnabled()) {
-				if (arg0.aString354 == null) {
-					Static16.method1497(0L, arg0.anInt5968, arg0.id, "", LocalisedText.CONTINUE, (short) 3, -1);
+				if (arg0.pauseText == null) {
+					Static16.method1497(0L, arg0.createdComponentId, arg0.id, "", LocalisedText.CONTINUE, (short) 3, -1);
 				} else {
-					Static16.method1497(0L, arg0.anInt5968, arg0.id, "", arg0.aString354, (short) 3, -1);
+					Static16.method1497(0L, arg0.createdComponentId, arg0.id, "", arg0.pauseText, (short) 3, -1);
 				}
 			}
 		} else if (InterfaceList.getServerActiveProperties(arg0).isUseTarget() && (Static5.anInt3560 & 0x20) != 0) {
-			Static16.method1497(0L, arg0.anInt5968, arg0.id, Static2.aString81 + " -> " + arg0.aString352, Static4.aString140, (short) 1, Static6.anInt4466);
+			Static16.method1497(0L, arg0.createdComponentId, arg0.id, Static2.aString81 + " -> " + arg0.opBase, Static4.aString140, (short) 1, Static6.anInt4466);
 		}
 	}
 
@@ -606,7 +599,7 @@ public final class Static15 {
 	public static int method1474(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(3) int arg2) {
 		@Pc(16) int local16 = ColorUtils.HSL_TO_RGB[Static25.method2912(arg2, arg0)];
 		if (arg1 > 0) {
-			@Pc(26) int local26 = Static4.anInterface4_1.method450(arg1 & 0xFFFF);
+			@Pc(26) int local26 = Static4.textureProvider.method450(arg1 & 0xFFFF);
 			if (local26 != 0) {
 				@Pc(42) int local42;
 				if (arg0 < 0) {
@@ -623,7 +616,7 @@ public final class Static15 {
 					local16 = (local61 * (local16 & 0xFF00FF) + local26 * (local42 & 0xFF00FF) & 0xFF00FF00) + ((local42 & 0xFF00) * local26 + (local16 & 0xFF00) * local61 & 0xFF0000) >> 8;
 				}
 			}
-			@Pc(104) int local104 = Static4.anInterface4_1.method447(arg1 & 0xFFFF);
+			@Pc(104) int local104 = Static4.textureProvider.method447(arg1 & 0xFFFF);
 			if (local104 != 0) {
 				@Pc(110) int local110 = local104 + 256;
 				@Pc(118) int local118 = local110 * (local16 >> 16 & 0xFF);

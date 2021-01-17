@@ -142,7 +142,7 @@ public final class LocType {
 	public int soundVolume = 255;
 
 	@OriginalMember(owner = "client!vh", name = "ub", descriptor = "Z")
-	public boolean aBoolean382 = false;
+	public boolean mapSceneFlipVertical = false;
 
 	@OriginalMember(owner = "client!vh", name = "qb", descriptor = "I")
 	public int mapSceneAngleOffset = 0;
@@ -875,7 +875,7 @@ public final class LocType {
 		} else if (code == 104) {
 			this.soundVolume = buffer.readUnsignedByte();
 		} else if (code == 105) {
-			this.aBoolean382 = true;
+			this.mapSceneFlipVertical = true;
 		} else if (code == 106) {
 			@Pc(501) int local501 = buffer.readUnsignedByte();
 			this.anIntArray628 = new int[local501];

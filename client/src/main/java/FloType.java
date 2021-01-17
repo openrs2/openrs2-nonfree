@@ -53,7 +53,7 @@ public final class FloType {
 	@OriginalMember(owner = "client!oh", name = "a", descriptor = "(IIILclient!fd;)V")
 	private void decode(@OriginalArg(3) Buffer buffer, @OriginalArg(2) int id, @OriginalArg(0) int code) {
 		if (code == 1) {
-			this.anInt3869 = Static8.method71(buffer.readUnsignedMedium());
+			this.anInt3869 = ColorUtils.rgbToHslTransparent(buffer.readUnsignedMedium());
 		} else if (code == 2) {
 			this.anInt3877 = buffer.readUnsignedByte();
 		} else if (code == 3) {
@@ -64,7 +64,7 @@ public final class FloType {
 		} else if (code == 5) {
 			this.aBoolean274 = false;
 		} else if (code == 7) {
-			this.anInt3870 = Static8.method71(buffer.readUnsignedMedium());
+			this.anInt3870 = ColorUtils.rgbToHslTransparent(buffer.readUnsignedMedium());
 		} else if (code == 8) {
 			anInt549 = id;
 		} else if (code == 9) {
