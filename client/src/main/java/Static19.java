@@ -176,33 +176,6 @@ public final class Static19 {
 		}
 	}
 
-	@OriginalMember(owner = "client!ib", name = "a", descriptor = "(Lgl!javax/media/opengl/GL;IIII)Z")
-	public static boolean method1837(@OriginalArg(0) GL gl, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4) {
-		GlRenderer.setTextureId(arg4);
-		gl.glFramebufferTexture2DEXT(GL.GL_FRAMEBUFFER, GL.GL_COLOR_ATTACHMENT0, arg2, arg1, 0);
-		gl.glReadBuffer(GL.GL_COLOR_ATTACHMENT0);
-		@Pc(15) int local15 = gl.glCheckFramebufferStatusEXT(GL.GL_FRAMEBUFFER);
-		if (local15 == GL.GL_FRAMEBUFFER_COMPLETE) {
-			gl.glCopyTexImage2D(GL.GL_TEXTURE_2D, GL.GL_POINTS, GL.GL_RGB, 0, 0, arg3, arg3, GL.GL_POINTS);
-			return true;
-		} else {
-			return false;
-		}
-	}
-
-	@OriginalMember(owner = "client!ib", name = "b", descriptor = "(IIIIII)Lclient!ib;")
-	public static Class4_Sub3_Sub10 method1838(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5) {
-		@Pc(29) long local29 = (long) arg0 * 67481L ^ (long) arg1 * 97549L ^ (long) arg2 * 475427L ^ (long) arg3 * 986053L ^ (long) arg4 * 32147369L ^ (long) arg5 * 76724863L;
-		@Pc(35) Class4_Sub3_Sub10 local35 = (Class4_Sub3_Sub10) Static3.aClass40_11.get(local29);
-		if (local35 == null) {
-			@Pc(49) Class4_Sub3_Sub10 local49 = new Class4_Sub3_Sub10(arg0, arg1, arg2, arg3, arg4, arg5);
-			Static3.aClass40_11.put(local29, local49);
-			return local49;
-		} else {
-			return local35;
-		}
-	}
-
 	@OriginalMember(owner = "client!ig", name = "b", descriptor = "()V")
 	public static void method1855() {
 		Static3.aBoolean160 = GlRenderer.extTexture3dSupported;

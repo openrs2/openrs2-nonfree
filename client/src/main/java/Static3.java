@@ -200,7 +200,7 @@ public final class Static3 {
 	public static int anInt2519;
 
 	@OriginalMember(owner = "client!jb", name = "f", descriptor = "Lclient!ib;")
-	public static Class4_Sub3_Sub10 aClass4_Sub3_Sub10_4;
+	public static Skybox aClass4_Sub3_Sub10_4;
 
 	@OriginalMember(owner = "client!jb", name = "j", descriptor = "[I")
 	public static int[] anIntArray223;
@@ -342,21 +342,6 @@ public final class Static3 {
 
 	@OriginalMember(owner = "client!ia", name = "i", descriptor = "Lclient!wf;")
 	public static Component aClass185_5 = null;
-
-	@OriginalMember(owner = "client!ib", name = "y", descriptor = "Lclient!dj;")
-	public static final LruHashTable aClass40_11 = new LruHashTable(4);
-
-	@OriginalMember(owner = "client!ib", name = "A", descriptor = "[I")
-	public static int[] anIntArray194 = null;
-
-	@OriginalMember(owner = "client!ib", name = "D", descriptor = "[I")
-	public static final int[] anIntArray195 = new int[4];
-
-	@OriginalMember(owner = "client!ib", name = "E", descriptor = "I")
-	public static int anInt2322 = -1;
-
-	@OriginalMember(owner = "client!ib", name = "H", descriptor = "[F")
-	public static final float[] aFloatArray23 = new float[4];
 
 	@OriginalMember(owner = "client!ig", name = "a", descriptor = "I")
 	public static int anInt2341 = -1;

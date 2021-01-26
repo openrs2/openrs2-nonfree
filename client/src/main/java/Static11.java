@@ -41,7 +41,7 @@ public final class Static11 {
 		SceneGraph.clear();
 		Static31.method3150();
 		Static24.method2697();
-		Static3.aClass40_11.clear();
+		Skybox.cache.clear();
 		Static3.aClass96_1 = new Class96();
 		((Js5GlTextureProvider) Static4.textureProvider).clear();
 		Static13.method1027();

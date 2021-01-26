@@ -8,7 +8,7 @@ public final class Static1 {
 	public static int centralZoneZ;
 
 	@OriginalMember(owner = "client!ab", name = "d", descriptor = "Lclient!ib;")
-	public static Class4_Sub3_Sub10 aClass4_Sub3_Sub10_1;
+	public static Skybox aClass4_Sub3_Sub10_1;
 
 	@OriginalMember(owner = "client!ab", name = "j", descriptor = "Lsignlink!vk;")
 	public static PrivilegedRequest openUrlRequest;
@@ -65,7 +65,7 @@ public final class Static1 {
 	public static Sprite aClass4_Sub3_Sub14_1;
 
 	@OriginalMember(owner = "client!bk", name = "g", descriptor = "Lclient!ib;")
-	public static Class4_Sub3_Sub10 aClass4_Sub3_Sub10_2;
+	public static Skybox aClass4_Sub3_Sub10_2;
 
 	@OriginalMember(owner = "client!bl", name = "eb", descriptor = "I")
 	public static int anInt379;
