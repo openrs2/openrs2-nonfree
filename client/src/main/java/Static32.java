@@ -72,16 +72,6 @@ public final class Static32 {
 		return arg0 == 4 || arg0 == 8;
 	}
 
-	@OriginalMember(owner = "client!sc", name = "a", descriptor = "(Lclient!fd;I)Lclient!gg;")
-	public static Class11_Sub3 method3921(@OriginalArg(0) Buffer arg0) {
-		return new Class11_Sub3(arg0.readShort(), arg0.readShort(), arg0.readShort(), arg0.readShort(), arg0.readUnsignedMedium(), arg0.readUnsignedMedium(), arg0.readUnsignedByte());
-	}
-
-	@OriginalMember(owner = "client!sc", name = "b", descriptor = "(Lclient!fd;I)Lclient!de;")
-	public static Class11_Sub2 method3922(@OriginalArg(0) Buffer arg0) {
-		return new Class11_Sub2(arg0.readShort(), arg0.readShort(), arg0.readShort(), arg0.readShort(), arg0.readUnsignedMedium(), arg0.readUnsignedByte());
-	}
-
 	@OriginalMember(owner = "client!sd", name = "a", descriptor = "(IZZIII)V")
 	public static void method3924(@OriginalArg(0) int arg0, @OriginalArg(1) boolean arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4) {
 		if (arg4 < 1) {
@@ -169,11 +159,6 @@ public final class Static32 {
 	public static void method3951() {
 		Static2.aClass26_12.clean(5);
 		Static3.aClass26_27.clean(5);
-	}
-
-	@OriginalMember(owner = "client!se", name = "a", descriptor = "(ZLclient!fd;)Lclient!in;")
-	public static Class11_Sub4 method3953(@OriginalArg(1) Buffer arg0) {
-		return new Class11_Sub4(arg0.readShort(), arg0.readShort(), arg0.readShort(), arg0.readShort(), arg0.readShort(), arg0.readShort(), arg0.readShort(), arg0.readShort(), arg0.readUnsignedMedium(), arg0.readUnsignedByte());
 	}
 
 	@OriginalMember(owner = "client!se", name = "a", descriptor = "(IIIIIIII)V")

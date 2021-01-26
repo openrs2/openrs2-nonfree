@@ -4,7 +4,12 @@ import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
 @OriginalClass("client!gg")
-public final class Class11_Sub3 extends Class11 {
+public final class TextureOp29SubOp2 extends TextureOp29SubOp {
+
+	@OriginalMember(owner = "client!sc", name = "a", descriptor = "(Lclient!fd;I)Lclient!gg;")
+	public static TextureOp29SubOp2 create(@OriginalArg(0) Buffer buffer) {
+		return new TextureOp29SubOp2(buffer.readShort(), buffer.readShort(), buffer.readShort(), buffer.readShort(), buffer.readUnsignedMedium(), buffer.readUnsignedMedium(), buffer.readUnsignedByte());
+	}
 
 	@OriginalMember(owner = "client!gg", name = "o", descriptor = "I")
 	private final int anInt2060;
@@ -19,7 +24,7 @@ public final class Class11_Sub3 extends Class11 {
 	private final int anInt2061;
 
 	@OriginalMember(owner = "client!gg", name = "<init>", descriptor = "(IIIIIII)V")
-	public Class11_Sub3(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6) {
+	private TextureOp29SubOp2(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6) {
 		super(arg4, arg5, arg6);
 		this.anInt2060 = arg2;
 		this.anInt2066 = arg3;

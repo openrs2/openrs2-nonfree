@@ -7,7 +7,7 @@ import org.openrs2.deob.annotation.Pc;
 public final class TextureOp29 extends TextureOp {
 
 	@OriginalMember(owner = "client!km", name = "T", descriptor = "[Lclient!lc;")
-	private Class11[] aClass11Array1;
+	private TextureOp29SubOp[] ops;
 
 	@OriginalMember(owner = "client!km", name = "<init>", descriptor = "()V")
 	public TextureOp29() {
@@ -55,17 +55,17 @@ public final class TextureOp29 extends TextureOp {
 	@Override
 	public final void decode(@OriginalArg(1) Buffer buffer, @OriginalArg(2) int code) {
 		if (code == 0) {
-			this.aClass11Array1 = new Class11[buffer.readUnsignedByte()];
-			for (@Pc(11) int local11 = 0; local11 < this.aClass11Array1.length; local11++) {
-				@Pc(24) int local24 = buffer.readUnsignedByte();
-				if (local24 == 0) {
-					this.aClass11Array1[local11] = Static32.method3922(buffer);
-				} else if (local24 == 1) {
-					this.aClass11Array1[local11] = Static32.method3953(buffer);
-				} else if (local24 == 2) {
-					this.aClass11Array1[local11] = Static32.method3921(buffer);
-				} else if (local24 == 3) {
-					this.aClass11Array1[local11] = Static37.method4674(buffer);
+			this.ops = new TextureOp29SubOp[buffer.readUnsignedByte()];
+			for (@Pc(11) int i = 0; i < this.ops.length; i++) {
+				@Pc(24) int op = buffer.readUnsignedByte();
+				if (op == 0) {
+					this.ops[i] = TextureOp29SubOp0.create(buffer);
+				} else if (op == 1) {
+					this.ops[i] = TextureOp29SubOp1.create(buffer);
+				} else if (op == 2) {
+					this.ops[i] = TextureOp29SubOp2.create(buffer);
+				} else if (op == 3) {
+					this.ops[i] = TextureOp29SubOp3.create(buffer);
 				}
 			}
 		} else if (code == 1) {
@@ -79,21 +79,21 @@ public final class TextureOp29 extends TextureOp {
 		@Pc(17) int local17 = Static1.anInt379;
 		Static35.method4335(arg0);
 		Static18.method4374(Static6.anInt5001, Static1.anInt901);
-		if (this.aClass11Array1 == null) {
+		if (this.ops == null) {
 			return;
 		}
-		for (@Pc(32) int local32 = 0; local32 < this.aClass11Array1.length; local32++) {
-			@Pc(46) Class11 local46 = this.aClass11Array1[local32];
-			@Pc(49) int local49 = local46.anInt2466;
-			@Pc(52) int local52 = local46.anInt2463;
+		for (@Pc(32) int i = 0; i < this.ops.length; i++) {
+			@Pc(46) TextureOp29SubOp op = this.ops[i];
+			@Pc(49) int local49 = op.anInt2466;
+			@Pc(52) int local52 = op.anInt2463;
 			if (local52 < 0) {
 				if (local49 >= 0) {
-					local46.method1938(local15, local17);
+					op.method1938(local15, local17);
 				}
 			} else if (local49 < 0) {
-				local46.method1935(local15, local17);
+				op.method1935(local15, local17);
 			} else {
-				local46.method1934(local15, local17);
+				op.method1934(local15, local17);
 			}
 		}
 	}

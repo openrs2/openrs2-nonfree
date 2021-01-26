@@ -4,7 +4,12 @@ import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
 @OriginalClass("client!in")
-public final class Class11_Sub4 extends Class11 {
+public final class TextureOp29SubOp1 extends TextureOp29SubOp {
+
+	@OriginalMember(owner = "client!se", name = "a", descriptor = "(ZLclient!fd;)Lclient!in;")
+	public static TextureOp29SubOp1 create(@OriginalArg(1) Buffer buffer) {
+		return new TextureOp29SubOp1(buffer.readShort(), buffer.readShort(), buffer.readShort(), buffer.readShort(), buffer.readShort(), buffer.readShort(), buffer.readShort(), buffer.readShort(), buffer.readUnsignedMedium(), buffer.readUnsignedByte());
+	}
 
 	@OriginalMember(owner = "client!in", name = "w", descriptor = "I")
 	private final int anInt2476;
@@ -31,7 +36,7 @@ public final class Class11_Sub4 extends Class11 {
 	private final int anInt2469;
 
 	@OriginalMember(owner = "client!in", name = "<init>", descriptor = "(IIIIIIIIII)V")
-	public Class11_Sub4(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) int arg8, @OriginalArg(9) int arg9) {
+	private TextureOp29SubOp1(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) int arg8, @OriginalArg(9) int arg9) {
 		super(-1, arg8, arg9);
 		this.anInt2476 = arg3;
 		this.anInt2472 = arg0;
