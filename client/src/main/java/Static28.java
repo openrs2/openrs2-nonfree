@@ -7,7 +7,7 @@ import org.openrs2.deob.annotation.Pc;
 public final class Static28 {
 
 	@OriginalMember(owner = "client!ol", name = "a", descriptor = "(Lclient!fg;IIIZILclient!nb;Lclient!ho;)V")
-	public static void method3244(@OriginalArg(0) MapElement element, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) boolean arg4, @OriginalArg(6) Class4_Sub17 arg5, @OriginalArg(7) MelType type) {
+	public static void method3244(@OriginalArg(0) MapElement element, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) boolean arg4, @OriginalArg(6) MapElementBounds arg5, @OriginalArg(7) MelType type) {
 		@Pc(3) WorldMapFont font = null;
 		if (type.textSize == 0) {
 			if ((double) Static3.aFloat68 == 3.0D) {
@@ -57,7 +57,7 @@ public final class Static28 {
 			textColor = type.hoverTextColor;
 		}
 		@Pc(141) int local141 = Fonts.p11Full.method2279(type.text, null, Static5.aStringArray24);
-		@Pc(144) int local144 = element.anInt1764;
+		@Pc(144) int local144 = element.yOffset;
 		@Pc(164) int local164;
 		if (arg4) {
 			local164 = local144 - font.method2328() * local141 / 2;
@@ -77,12 +77,12 @@ public final class Static28 {
 				local190 = local221;
 			}
 		}
-		arg5.anInt3456 = element.anInt1766 + arg1 - local190 / 2;
-		arg5.anInt3466 = arg1 + element.anInt1766 + local190 / 2;
-		arg5.anInt3464 = local181 + arg3;
-		arg5.anInt3465 = arg3 + local181 + font.method2332() * local141;
+		arg5.textMinX = element.xOffset + arg1 - local190 / 2;
+		arg5.textMaxX = arg1 + element.xOffset + local190 / 2;
+		arg5.textMinY = local181 + arg3;
+		arg5.textMaxY = arg3 + local181 + font.method2332() * local141;
 		@Pc(274) int local274 = local181 + 2;
-		@Pc(284) int local284 = element.anInt1766 - local190 / 2 - 5;
+		@Pc(284) int local284 = element.xOffset - local190 / 2 - 5;
 		if (type.fillColor != 0) {
 			SoftwareRaster.fillRectAlpha(local284, local274, local190 + 10, local181 + local141 * font.method2332() + 1 - local274, type.fillColor, type.fillColor >>> 24);
 		}
@@ -98,7 +98,7 @@ public final class Static28 {
 			if (local190 < local376) {
 				local190 = local376;
 			}
-			font.renderStringCenter(local354, element.anInt1766, local188, textColor);
+			font.renderStringCenter(local354, element.xOffset, local188, textColor);
 			local188 += font.method2332();
 		}
 	}

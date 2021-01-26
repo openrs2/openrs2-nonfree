@@ -17,25 +17,25 @@ public final class Static20 {
 	}
 
 	@OriginalMember(owner = "client!ii", name = "a", descriptor = "(Lclient!fg;IIII)V")
-	private static void method2404(@OriginalArg(0) MapElement arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
-		arg0.anInt1766 = Static3.anInt2969 + (arg1 * (arg0.x - Static3.anInt2973) >> 16);
-		arg0.anInt1764 = Static3.anInt2968 + (arg2 * (arg0.z - Static3.anInt2967) >> 16);
-		@Pc(32) MelType local32 = MelTypeList.get(arg0.id);
-		if (local32.sprite != -1) {
-			@Pc(42) IndexedSprite local42 = local32.method1811(false, true);
-			if (local42 != null) {
-				if (arg0.anInt1766 - (local42.width + 1 >> 1) <= Static3.anInt2970 && arg0.anInt1766 + (local42.width + 1 >> 1) >= Static3.anInt2969 && arg0.anInt1764 - (local42.height + 1 >> 1) <= Static3.anInt2971 && arg0.anInt1764 + (local42.height + 1 >> 1) >= Static3.anInt2968) {
-					arg0.aBoolean106 = false;
+	private static void method2404(@OriginalArg(0) MapElement element, @OriginalArg(1) int x, @OriginalArg(2) int y) {
+		element.xOffset = Static3.anInt2969 + (x * (element.x - Static3.anInt2973) >> 16);
+		element.yOffset = Static3.anInt2968 + (y * (element.z - Static3.anInt2967) >> 16);
+		@Pc(32) MelType type = MelTypeList.get(element.id);
+		if (type.sprite != -1) {
+			@Pc(42) IndexedSprite sprite = type.method1811(false, true);
+			if (sprite != null) {
+				if (element.xOffset - (sprite.width + 1 >> 1) <= Static3.anInt2970 && element.xOffset + (sprite.width + 1 >> 1) >= Static3.anInt2969 && element.yOffset - (sprite.height + 1 >> 1) <= Static3.anInt2971 && element.yOffset + (sprite.height + 1 >> 1) >= Static3.anInt2968) {
+					element.hidden = false;
 				} else {
-					arg0.aBoolean106 = true;
+					element.hidden = true;
 				}
 				return;
 			}
 		}
-		if (arg0.x >= Static3.anInt2973 && arg0.x <= Static3.anInt2972 && arg0.z >= Static3.anInt2967 && arg0.z <= Static3.anInt2966) {
-			arg0.aBoolean106 = false;
+		if (element.x >= Static3.anInt2973 && element.x <= Static3.anInt2972 && element.z >= Static3.anInt2967 && element.z <= Static3.anInt2966) {
+			element.hidden = false;
 		} else {
-			arg0.aBoolean106 = true;
+			element.hidden = true;
 		}
 	}
 

@@ -23,13 +23,13 @@ public final class Static36 {
 	}
 
 	@OriginalMember(owner = "client!vc", name = "a", descriptor = "(IZLclient!fg;ILclient!ho;)V")
-	public static void method3811(@OriginalArg(0) int arg0, @OriginalArg(2) MapElement arg1, @OriginalArg(3) int arg2, @OriginalArg(4) MelType arg3) {
-		if (arg3.anIntArray188 != null) {
+	public static void method3811(@OriginalArg(0) int x, @OriginalArg(2) MapElement element, @OriginalArg(3) int y, @OriginalArg(4) MelType type) {
+		if (type.anIntArray188 != null) {
 			@Pc(10) boolean local10 = false;
-			@Pc(15) int[] local15 = new int[arg3.anIntArray188.length];
+			@Pc(15) int[] local15 = new int[type.anIntArray188.length];
 			for (@Pc(17) int local17 = 0; local17 < local15.length / 2; local17++) {
-				@Pc(37) int local37 = arg3.anIntArray188[local17 * 2] + arg1.x;
-				@Pc(50) int local50 = arg1.z - arg3.anIntArray188[local17 * 2 + 1];
+				@Pc(37) int local37 = type.anIntArray188[local17 * 2] + element.x;
+				@Pc(50) int local50 = element.z - type.anIntArray188[local17 * 2 + 1];
 				@Pc(71) int local71 = local15[local17 * 2] = Static3.anInt2969 + (local37 - Static3.anInt2973) * (Static3.anInt2970 - Static3.anInt2969) / (Static3.anInt2972 - Static3.anInt2973);
 				@Pc(95) int local95 = local15[local17 * 2 + 1] = Static3.anInt2968 + (local50 - Static3.anInt2967) * (Static3.anInt2971 - Static3.anInt2968) / (Static3.anInt2966 - Static3.anInt2967);
 				if (Static3.anInt2969 < local71 && local71 < Static3.anInt2970 && Static3.anInt2968 < local95 && local95 < Static3.anInt2971) {
@@ -39,68 +39,68 @@ public final class Static36 {
 			if (!local10) {
 				return;
 			}
-			Static17.method1628(local15, arg3.anInt2283, arg3.anInt2283 >>> 24);
+			Static17.method1628(local15, type.anInt2283, type.anInt2283 >>> 24);
 			for (@Pc(134) int local134 = 0; local134 < local15.length / 2 - 1; local134++) {
-				SoftwareRaster.method4230(local15[local134 * 2], local15[local134 * 2 + 1], local15[(local134 + 1) * 2], local15[(local134 + 1) * 2 + 1], arg3.anInt2266, arg3.anInt2266 >>> 24);
+				SoftwareRaster.method4230(local15[local134 * 2], local15[local134 * 2 + 1], local15[(local134 + 1) * 2], local15[(local134 + 1) * 2 + 1], type.anInt2266, type.anInt2266 >>> 24);
 			}
-			SoftwareRaster.method4230(local15[local15.length - 2], local15[local15.length - 1], local15[0], local15[1], arg3.anInt2266, arg3.anInt2266 >>> 24);
-		} else if (arg1.aBoolean106) {
+			SoftwareRaster.method4230(local15[local15.length - 2], local15[local15.length - 1], local15[0], local15[1], type.anInt2266, type.anInt2266 >>> 24);
+		} else if (element.hidden) {
 			return;
 		}
-		@Pc(222) Class4_Sub17 local222 = new Class4_Sub17(arg1);
-		@Pc(224) SoftwareIndexedSprite local224 = null;
-		if (arg3.sprite != -1) {
-			if (arg1.hover && arg3.hoverSprite != -1) {
-				local224 = (SoftwareIndexedSprite) arg3.method1811(true, true);
+		@Pc(222) MapElementBounds bounds = new MapElementBounds(element);
+		@Pc(224) SoftwareIndexedSprite sprite = null;
+		if (type.sprite != -1) {
+			if (element.hover && type.hoverSprite != -1) {
+				sprite = (SoftwareIndexedSprite) type.method1811(true, true);
 			} else {
-				local224 = (SoftwareIndexedSprite) arg3.method1811(false, true);
+				sprite = (SoftwareIndexedSprite) type.method1811(false, true);
 			}
-			if (local224 != null) {
-				if (Static4.anInt2853 > 0 && (Static5.anInt3920 != -1 && arg1.id == Static5.anInt3920 || Static2.anInt1874 != -1 && arg3.category == Static2.anInt1874)) {
+			if (sprite != null) {
+				if (Static4.anInt2853 > 0 && (Static5.anInt3920 != -1 && element.id == Static5.anInt3920 || Static2.anInt1874 != -1 && type.category == Static2.anInt1874)) {
 					@Pc(290) int local290;
 					if (Static5.anInt4215 <= 50) {
 						local290 = Static5.anInt4215 * 3;
 					} else {
 						local290 = 300 - Static5.anInt4215 * 3;
 					}
-					SoftwareRaster.method4206(arg1.anInt1766, arg1.anInt1764, local224.width / 2 + 7, 16776960, local290);
-					SoftwareRaster.method4206(arg1.anInt1766, arg1.anInt1764, local224.width / 2 + 5, 16776960, local290);
-					SoftwareRaster.method4206(arg1.anInt1766, arg1.anInt1764, local224.width / 2 + 3, 16776960, local290);
-					SoftwareRaster.method4206(arg1.anInt1766, arg1.anInt1764, local224.width / 2 + 1, 16776960, local290);
-					SoftwareRaster.method4206(arg1.anInt1766, arg1.anInt1764, local224.width / 2, 16776960, local290);
+					SoftwareRaster.method4206(element.xOffset, element.yOffset, sprite.width / 2 + 7, 16776960, local290);
+					SoftwareRaster.method4206(element.xOffset, element.yOffset, sprite.width / 2 + 5, 16776960, local290);
+					SoftwareRaster.method4206(element.xOffset, element.yOffset, sprite.width / 2 + 3, 16776960, local290);
+					SoftwareRaster.method4206(element.xOffset, element.yOffset, sprite.width / 2 + 1, 16776960, local290);
+					SoftwareRaster.method4206(element.xOffset, element.yOffset, sprite.width / 2, 16776960, local290);
 				}
-				local224.renderTransparent(arg1.anInt1766 - (local224.width >> 1), arg1.anInt1764 - (local224.height >> 1));
-				local222.anInt3461 = (local224.height >> 1) + arg2 + arg1.anInt1764;
-				local222.anInt3457 = arg0 + arg1.anInt1766 - (local224.width >> 1);
-				local222.anInt3462 = (local224.width >> 1) + arg0 + arg1.anInt1766;
-				local222.anInt3459 = arg2 + arg1.anInt1764 - (local224.height >> 1);
+				sprite.renderTransparent(element.xOffset - (sprite.width >> 1), element.yOffset - (sprite.height >> 1));
+				bounds.iconMaxY = (sprite.height >> 1) + y + element.yOffset;
+				bounds.iconMinX = x + element.xOffset - (sprite.width >> 1);
+				bounds.iconMaxX = (sprite.width >> 1) + x + element.xOffset;
+				bounds.iconMinY = y + element.yOffset - (sprite.height >> 1);
 			}
 		}
-		if (arg3.text != null) {
-			if (local224 == null) {
-				Static28.method3244(arg1, arg0, 0, arg2, true, local222, arg3);
+		if (type.text != null) {
+			if (sprite == null) {
+				Static28.method3244(element, x, 0, y, true, bounds, type);
 			} else {
-				Static28.method3244(arg1, arg0, (local224.height >> 1) + 5, arg2, false, local222, arg3);
+				Static28.method3244(element, x, (sprite.height >> 1) + 5, y, false, bounds, type);
 			}
 		}
-		if (local222.method2923(Mouse.x, Mouse.y) && arg3.ops != null) {
-			if (arg3.ops[4] != null) {
-				Static16.method1497((long) arg1.id, arg3.category, 0, arg3.opBase, arg3.ops[4], (short) 1011, -1);
+		if (bounds.isHovering(Mouse.x, Mouse.y) && type.ops != null) {
+			if (type.ops[4] != null) {
+				Static16.method1497(element.id, type.category, 0, type.opBase, type.ops[4], (short) 1011, -1);
 			}
-			if (arg3.ops[3] != null) {
-				Static16.method1497((long) arg1.id, arg3.category, 0, arg3.opBase, arg3.ops[3], (short) 1003, -1);
+			if (type.ops[3] != null) {
+				Static16.method1497(element.id, type.category, 0, type.opBase, type.ops[3], (short) 1003, -1);
 			}
-			if (arg3.ops[2] != null) {
-				Static16.method1497((long) arg1.id, arg3.category, 0, arg3.opBase, arg3.ops[2], (short) 1008, -1);
+			if (type.ops[2] != null) {
+				Static16.method1497(element.id, type.category, 0, type.opBase, type.ops[2], (short) 1008, -1);
 			}
-			if (arg3.ops[1] != null) {
-				Static16.method1497((long) arg1.id, arg3.category, 0, arg3.opBase, arg3.ops[1], (short) 1002, -1);
+			if (type.ops[1] != null) {
+				Static16.method1497(element.id, type.category, 0, type.opBase, type.ops[1], (short) 1002, -1);
 			}
-			if (arg3.ops[0] != null) {
-				Static16.method1497((long) arg1.id, arg3.category, 0, arg3.opBase, arg3.ops[0], (short) 1012, -1);
+			if (type.ops[0] != null) {
+				Static16.method1497(element.id, type.category, 0, type.opBase, type.ops[0], (short) 1012, -1);
 			}
 		}
-		Static3.aClass112_13.addTail(local222);
+		Static3.aClass112_13.addTail(bounds);
 	}
 
 	@OriginalMember(owner = "client!vc", name = "a", descriptor = "(IILclient!wf;I)V")

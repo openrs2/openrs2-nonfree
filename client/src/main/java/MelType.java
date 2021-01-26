@@ -103,20 +103,20 @@ public final class MelType {
 
 	@OriginalMember(owner = "client!ho", name = "a", descriptor = "(B)Lclient!fe;")
 	public final SoftwareIndexedSprite method1808() {
-		@Pc(22) SoftwareIndexedSprite local22 = (SoftwareIndexedSprite) MelTypeList.sprites.get((long) (this.worldMapSprite | 0x20000));
-		if (local22 != null) {
-			return local22;
+		@Pc(22) SoftwareIndexedSprite sprite = (SoftwareIndexedSprite) MelTypeList.sprites.get(this.worldMapSprite | 0x20000);
+		if (sprite != null) {
+			return sprite;
 		}
 		MelTypeList.spritesArchive.isFileReady(this.worldMapSprite);
-		@Pc(41) SoftwareIndexedSprite local41 = SpriteLoader.loadSoftwareIndexedSprite(MelTypeList.spritesArchive, this.worldMapSprite);
-		if (local41 != null) {
-			local41.innerWidth = local41.width;
-			local41.xOffset = 0;
-			local41.innerHeight = local41.height;
-			local41.yOffset = 0;
-			MelTypeList.sprites.put((long) (this.worldMapSprite | 0x20000), local41);
+		@Pc(41) SoftwareIndexedSprite newSprite = SpriteLoader.loadSoftwareIndexedSprite(MelTypeList.spritesArchive, this.worldMapSprite);
+		if (newSprite != null) {
+			newSprite.innerWidth = newSprite.width;
+			newSprite.xOffset = 0;
+			newSprite.innerHeight = newSprite.height;
+			newSprite.yOffset = 0;
+			MelTypeList.sprites.put(this.worldMapSprite | 0x20000, newSprite);
 		}
-		return local41;
+		return newSprite;
 	}
 
 	@OriginalMember(owner = "client!ho", name = "a", descriptor = "(IILclient!fd;)V")
@@ -217,27 +217,27 @@ public final class MelType {
 	}
 
 	@OriginalMember(owner = "client!ho", name = "a", descriptor = "(ZZZ)Lclient!ma;")
-	public final IndexedSprite method1811(@OriginalArg(0) boolean arg0, @OriginalArg(2) boolean arg1) {
-		@Pc(17) int local17 = arg0 ? this.hoverSprite : this.sprite;
-		@Pc(30) IndexedSprite local30 = (IndexedSprite) MelTypeList.sprites.get((long) (local17 | (arg0 ? 65536 : 0)));
-		if (local30 != null) {
-			return local30;
-		} else if (MelTypeList.spritesArchive.isFileReady(local17)) {
-			@Pc(49) SoftwareIndexedSprite local49 = SpriteLoader.loadSoftwareIndexedSprite(MelTypeList.spritesArchive, local17);
-			@Pc(55) IndexedSprite local55;
-			if (GlRenderer.enabled && !arg1) {
-				local55 = new GlIndexedSprite(local49);
+	public final IndexedSprite method1811(@OriginalArg(0) boolean hover, @OriginalArg(2) boolean forceSoftware) {
+		@Pc(17) int spriteId = hover ? this.hoverSprite : this.sprite;
+		@Pc(30) IndexedSprite sprite = (IndexedSprite) MelTypeList.sprites.get(spriteId | (hover ? 0x10000 : 0));
+		if (sprite != null) {
+			return sprite;
+		} else if (MelTypeList.spritesArchive.isFileReady(spriteId)) {
+			@Pc(49) SoftwareIndexedSprite softwareSprite = SpriteLoader.loadSoftwareIndexedSprite(MelTypeList.spritesArchive, spriteId);
+			@Pc(55) IndexedSprite newSprite;
+			if (GlRenderer.enabled && !forceSoftware) {
+				newSprite = new GlIndexedSprite(softwareSprite);
 			} else {
-				local55 = local49;
+				newSprite = softwareSprite;
 			}
-			if (local55 != null) {
-				local55.innerHeight = local55.height;
-				local55.yOffset = 0;
-				local55.innerWidth = local55.width;
-				local55.xOffset = 0;
-				MelTypeList.sprites.put((long) ((arg0 ? 65536 : 0) | local17), local55);
+			if (newSprite != null) {
+				newSprite.innerHeight = newSprite.height;
+				newSprite.yOffset = 0;
+				newSprite.innerWidth = newSprite.width;
+				newSprite.xOffset = 0;
+				MelTypeList.sprites.put((hover ? 0x10000 : 0) | spriteId, newSprite);
 			}
-			return local55;
+			return newSprite;
 		} else {
 			return null;
 		}

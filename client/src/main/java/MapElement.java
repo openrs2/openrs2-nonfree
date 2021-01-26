@@ -8,10 +8,10 @@ public final class MapElement extends SecondaryNode {
 	public int level;
 
 	@OriginalMember(owner = "client!fg", name = "F", descriptor = "I")
-	public int anInt1764;
+	public int yOffset;
 
 	@OriginalMember(owner = "client!fg", name = "K", descriptor = "I")
-	public int anInt1766;
+	public int xOffset;
 
 	@OriginalMember(owner = "client!fg", name = "M", descriptor = "I")
 	public int x;
@@ -26,5 +26,5 @@ public final class MapElement extends SecondaryNode {
 	public int id = -1;
 
 	@OriginalMember(owner = "client!fg", name = "H", descriptor = "Z")
-	public boolean aBoolean106 = false;
+	public boolean hidden = false;
 }

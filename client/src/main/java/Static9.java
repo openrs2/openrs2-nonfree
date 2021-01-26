@@ -134,12 +134,12 @@ public final class Static9 {
 		if (Static6.aBoolean317) {
 			return;
 		}
-		for (@Pc(23) MapElement local23 = (MapElement) arg0.head(); local23 != null; local23 = (MapElement) arg0.next()) {
-			@Pc(30) MelType local30 = MelTypeList.get(local23.id);
-			if (Static8.method120(local30)) {
-				Static36.method3811(arg1, local23, arg2, local30);
-				if (local23.aBoolean106) {
-					Static35.method4329(local23, local30);
+		for (@Pc(23) MapElement element = (MapElement) arg0.head(); element != null; element = (MapElement) arg0.next()) {
+			@Pc(30) MelType type = MelTypeList.get(element.id);
+			if (Static8.method120(type)) {
+				Static36.method3811(arg1, element, arg2, type);
+				if (element.hidden) {
+					Static35.method4329(element, type);
 				}
 			}
 		}

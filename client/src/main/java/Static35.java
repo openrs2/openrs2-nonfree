@@ -915,94 +915,94 @@ public final class Static35 {
 	}
 
 	@OriginalMember(owner = "client!ui", name = "a", descriptor = "(ILclient!fg;Lclient!ho;)V")
-	public static void method4329(@OriginalArg(1) MapElement arg0, @OriginalArg(2) MelType arg1) {
-		@Pc(5) SoftwareIndexedSprite local5 = arg1.method1808();
-		if (local5 == null) {
+	public static void method4329(@OriginalArg(1) MapElement element, @OriginalArg(2) MelType type) {
+		@Pc(5) SoftwareIndexedSprite sprite = type.method1808();
+		if (sprite == null) {
 			return;
 		}
-		@Pc(16) int local16 = local5.width;
-		if (local5.height > local5.width) {
-			local16 = local5.height;
+		@Pc(16) int size = sprite.width;
+		if (sprite.height > sprite.width) {
+			size = sprite.height;
 		}
-		@Pc(27) int local27 = arg0.anInt1766;
-		@Pc(30) int local30 = arg0.anInt1764;
-		@Pc(32) int local32 = 0;
-		@Pc(34) int local34 = 0;
-		@Pc(36) int local36 = 0;
-		if (arg1.text != null) {
-			local32 = Fonts.p11Full.method2279(arg1.text, null, Static5.aStringArray24);
-			for (@Pc(49) int local49 = 0; local49 < local32; local49++) {
-				@Pc(56) String local56 = Static5.aStringArray24[local49];
-				if (local32 - 1 > local49) {
-					local56 = local56.substring(0, local56.length() - 4);
+		@Pc(27) int local27 = element.xOffset;
+		@Pc(30) int local30 = element.yOffset;
+		@Pc(32) int textLines = 0;
+		@Pc(34) int textWidth = 0;
+		@Pc(36) int textHeight = 0;
+		if (type.text != null) {
+			textLines = Fonts.p11Full.method2279(type.text, null, Static5.aStringArray24);
+			for (@Pc(49) int i = 0; i < textLines; i++) {
+				@Pc(56) String line = Static5.aStringArray24[i];
+				if (textLines - 1 > i) {
+					line = line.substring(0, line.length() - 4);
 				}
-				@Pc(77) int local77 = WorldMap.font14.getStringWidth(local56);
-				if (local34 < local77) {
-					local34 = local77;
+				@Pc(77) int lineWidth = WorldMap.font14.getStringWidth(line);
+				if (lineWidth > textWidth) {
+					textWidth = lineWidth;
 				}
 			}
-			local36 = (local32 - 1) * WorldMap.font14.method2332() + WorldMap.font14.method2328() / 2;
+			textHeight = (textLines - 1) * WorldMap.font14.method2332() + WorldMap.font14.method2328() / 2;
 		}
-		@Pc(105) int local105 = arg0.anInt1766;
-		if (Static3.anInt2969 + local16 > local27) {
-			local27 = local16 + Static3.anInt2969;
-			local105 = local34 / 2 + local16 / 2 + Static3.anInt2969 + local16 + 5;
-		} else if (Static3.anInt2970 - local16 < local27) {
-			local105 = Static3.anInt2970 - local16 - local16 / 2 - local34 / 2 - 5;
-			local27 = Static3.anInt2970 - local16;
+		@Pc(105) int local105 = element.xOffset;
+		if (Static3.anInt2969 + size > local27) {
+			local27 = size + Static3.anInt2969;
+			local105 = textWidth / 2 + size / 2 + Static3.anInt2969 + size + 5;
+		} else if (Static3.anInt2970 - size < local27) {
+			local105 = Static3.anInt2970 - size - size / 2 - textWidth / 2 - 5;
+			local27 = Static3.anInt2970 - size;
 		}
-		@Pc(167) int local167 = arg0.anInt1764 - local36 / 2;
-		if (local30 < local16 + Static3.anInt2968) {
-			local30 = Static3.anInt2968 + local16;
-			local167 = local16 / 2 + local16 + Static3.anInt2968 + WorldMap.font14.method2332();
-		} else if (Static3.anInt2971 - local16 < local30) {
-			local167 = Static3.anInt2971 - local16 - local16 / 2 - local36;
-			local30 = Static3.anInt2971 - local16;
+		@Pc(167) int local167 = element.yOffset - textHeight / 2;
+		if (local30 < size + Static3.anInt2968) {
+			local30 = Static3.anInt2968 + size;
+			local167 = size / 2 + size + Static3.anInt2968 + WorldMap.font14.method2332();
+		} else if (Static3.anInt2971 - size < local30) {
+			local167 = Static3.anInt2971 - size - size / 2 - textHeight;
+			local30 = Static3.anInt2971 - size;
 		}
 		@Pc(218) int local218 = -2;
 		@Pc(220) int local220 = -2;
-		@Pc(224) int local224 = local16 >> 1;
+		@Pc(224) int local224 = size >> 1;
 		@Pc(226) int local226 = -2;
-		@Pc(250) int local250 = (int) (Math.atan2((double) (local27 - arg0.anInt1766), (double) (local30 - arg0.anInt1764)) / 3.141592653589793D * 32767.0D) & 0xFFFF;
+		@Pc(250) int local250 = (int) (Math.atan2(local27 - element.xOffset, local30 - element.yOffset) / 3.141592653589793D * 32767.0D) & 0xFFFF;
 		@Pc(252) int local252 = -2;
-		local5.method1314(local5.innerWidth << 3, local5.innerHeight << 3, local224 + (local27 << 4), local224 + (local30 << 4), local250);
-		if (arg1.text != null) {
+		sprite.method1314(sprite.innerWidth << 3, sprite.innerHeight << 3, local224 + (local27 << 4), local224 + (local30 << 4), local250);
+		if (type.text != null) {
 			local220 = local167 - WorldMap.font14.method2328() - 3;
-			local218 = local105 - local34 / 2 - 5;
-			local252 = local32 * WorldMap.font14.method2332() + local220;
-			local226 = local34 + local218 + 10;
-			if (arg1.fillColor != 0) {
-				SoftwareRaster.fillRectAlpha(local218, local220, local226 - local218, local252 - local220, arg1.fillColor, arg1.fillColor >>> 24);
+			local218 = local105 - textWidth / 2 - 5;
+			local252 = textLines * WorldMap.font14.method2332() + local220;
+			local226 = textWidth + local218 + 10;
+			if (type.fillColor != 0) {
+				SoftwareRaster.fillRectAlpha(local218, local220, local226 - local218, local252 - local220, type.fillColor, type.fillColor >>> 24);
 			}
-			if (arg1.outlineColor != 0) {
-				SoftwareRaster.drawRectAlpha(local218, local220, local226 - local218, local252 - local220, arg1.outlineColor, arg1.outlineColor >>> 24);
+			if (type.outlineColor != 0) {
+				SoftwareRaster.drawRectAlpha(local218, local220, local226 - local218, local252 - local220, type.outlineColor, type.outlineColor >>> 24);
 			}
-			for (@Pc(353) int local353 = 0; local353 < local32; local353++) {
-				@Pc(364) String local364 = Static5.aStringArray24[local353];
-				if (local353 < local32 - 1) {
-					local364 = local364.substring(0, local364.length() - 4);
+			for (@Pc(353) int i = 0; i < textLines; i++) {
+				@Pc(364) String line = Static5.aStringArray24[i];
+				if (i < textLines - 1) {
+					line = line.substring(0, line.length() - 4);
 				}
-				WorldMap.font14.renderStringCenter(local364, local105, local167, arg1.textColor);
+				WorldMap.font14.renderStringCenter(line, local105, local167, type.textColor);
 				local167 += WorldMap.font14.method2332();
 			}
 		}
 		if ((Mouse.x <= local27 - local224 || local27 + local224 <= Mouse.x || Mouse.y <= local30 - local224 || Mouse.y >= local30 + local224) && (Mouse.x <= local218 || local226 <= Mouse.x || local220 >= Mouse.y || Mouse.y >= local252)) {
 			return;
 		}
-		if (arg1.ops[4] != null) {
-			Static16.method1497((long) arg0.id, 0, 0, arg1.opBase, arg1.ops[4], (short) 1011, -1);
+		if (type.ops[4] != null) {
+			Static16.method1497(element.id, 0, 0, type.opBase, type.ops[4], (short) 1011, -1);
 		}
-		if (arg1.ops[3] != null) {
-			Static16.method1497((long) arg0.id, 0, 0, arg1.opBase, arg1.ops[3], (short) 1003, -1);
+		if (type.ops[3] != null) {
+			Static16.method1497(element.id, 0, 0, type.opBase, type.ops[3], (short) 1003, -1);
 		}
-		if (arg1.ops[2] != null) {
-			Static16.method1497((long) arg0.id, 0, 0, arg1.opBase, arg1.ops[2], (short) 1008, -1);
+		if (type.ops[2] != null) {
+			Static16.method1497(element.id, 0, 0, type.opBase, type.ops[2], (short) 1008, -1);
 		}
-		if (arg1.ops[1] != null) {
-			Static16.method1497((long) arg0.id, 0, 0, arg1.opBase, arg1.ops[1], (short) 1002, -1);
+		if (type.ops[1] != null) {
+			Static16.method1497(element.id, 0, 0, type.opBase, type.ops[1], (short) 1002, -1);
 		}
-		if (arg1.ops[0] != null) {
-			Static16.method1497((long) arg0.id, 0, 0, arg1.opBase, arg1.ops[0], (short) 1012, -1);
+		if (type.ops[0] != null) {
+			Static16.method1497(element.id, 0, 0, type.opBase, type.ops[0], (short) 1012, -1);
 		}
 	}
 
