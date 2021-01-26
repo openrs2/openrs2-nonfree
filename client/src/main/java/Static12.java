@@ -857,12 +857,12 @@ public final class Static12 {
 		@Pc(500) Model local500;
 		if (local475 == null) {
 			local500 = local33.method3836(true, true, true);
-			local500.method3824((local435 - local432) / 2, 128, (local457 - local438) / 2);
-			local500.method3823((local432 + local435) / 2, 0, (local438 + local457) / 2);
+			local500.resize((local435 - local432) / 2, 128, (local457 - local438) / 2);
+			local500.translate((local432 + local435) / 2, 0, (local438 + local457) / 2);
 		} else {
 			local500 = local33.method3836(!local475.method4150(arg6), !local475.method4151(arg6), true);
-			local500.method3824((local435 - local432) / 2, 128, (local457 - local438) / 2);
-			local500.method3823((local435 + local432) / 2, 0, (local438 + local457) / 2);
+			local500.resize((local435 - local432) / 2, 128, (local457 - local438) / 2);
+			local500.translate((local435 + local432) / 2, 0, (local438 + local457) / 2);
 			local500.method3844(local475, arg6);
 		}
 		if (arg2 != 0) {

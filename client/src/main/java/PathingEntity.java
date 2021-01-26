@@ -428,9 +428,9 @@ public abstract class PathingEntity extends Entity {
 			if (this.anInt3972 != 0) {
 				@Pc(445) int local445 = this.anInt3972 >> 5 & 0x7FF;
 				@Pc(450) int local450 = arg0.getMinY() / 2;
-				arg0.method3823(0, -local450, 0);
+				arg0.translate(0, -local450, 0);
 				arg0.method3817(local445);
-				arg0.method3823(0, local450, 0);
+				arg0.translate(0, local450, 0);
 			}
 		}
 		if (local9.anInt863 == 0) {
@@ -523,9 +523,9 @@ public abstract class PathingEntity extends Entity {
 		}
 		@Pc(840) int local840 = this.anInt3997 >> 5 & 0x7FF;
 		@Pc(845) int local845 = arg0.getMinY() / 2;
-		arg0.method3823(0, -local845, 0);
+		arg0.translate(0, -local845, 0);
 		arg0.method3832(local840);
-		arg0.method3823(0, local845, 0);
+		arg0.translate(0, local845, 0);
 	}
 
 	@OriginalMember(owner = "client!qc", name = "b", descriptor = "(B)I")
@@ -654,7 +654,7 @@ public abstract class PathingEntity extends Entity {
 		}
 		Static4.anInt2747 = (Static4.anInt2747 >> 1) - this.anInt4006;
 		if (Static4.anInt2747 != 0) {
-			arg0.method3823(0, Static4.anInt2747, 0);
+			arg0.translate(0, Static4.anInt2747, 0);
 		}
 	}
 

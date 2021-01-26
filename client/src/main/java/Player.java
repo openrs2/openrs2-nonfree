@@ -293,7 +293,7 @@ public final class Player extends PathingEntity {
 			@Pc(518) SpotAnimType local518 = SpotAnimTypeList.get(this.spotAnimId);
 			local494 = local518.method2569(this.anInt3976, this.anInt3968, this.anInt4026);
 			if (local494 != null) {
-				local494.method3823(0, -this.anInt3971, 0);
+				local494.translate(0, -this.anInt3971, 0);
 				if (local518.aBoolean221) {
 					if (Static5.anInt3525 != 0) {
 						local494.method3832(Static5.anInt3525);
@@ -302,7 +302,7 @@ public final class Player extends PathingEntity {
 						local494.method3817(Static6.anInt4907);
 					}
 					if (Static4.anInt2747 != 0) {
-						local494.method3823(0, Static4.anInt2747, 0);
+						local494.translate(0, Static4.anInt2747, 0);
 					}
 				}
 			}
@@ -318,7 +318,7 @@ public final class Player extends PathingEntity {
 				} else {
 					local572 = (Model) this.anObject5;
 				}
-				local572.method3823(this.anInt4032 - this.xFine, this.anInt3975 - this.anInt4006, this.anInt4027 - this.zFine);
+				local572.translate(this.anInt4032 - this.xFine, this.anInt3975 - this.anInt4006, this.anInt4027 - this.zFine);
 				if (this.targetAngle == 512) {
 					local572.method3827();
 				} else if (this.targetAngle == 1024) {
@@ -361,7 +361,7 @@ public final class Player extends PathingEntity {
 		} else if (this.targetAngle == 1536) {
 			local572.method3827();
 		}
-		local572.method3823(this.xFine - this.anInt4032, this.anInt4006 - this.anInt3975, this.zFine - this.anInt4027);
+		local572.translate(this.xFine - this.anInt4032, this.anInt4006 - this.anInt3975, this.zFine - this.anInt4027);
 	}
 
 	@OriginalMember(owner = "client!f", name = "d", descriptor = "(I)Z")

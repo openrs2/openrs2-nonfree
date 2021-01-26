@@ -62,36 +62,6 @@ public final class Static6 {
 	@OriginalMember(owner = "client!ro", name = "H", descriptor = "Lclient!wf;")
 	public static Component aClass185_13;
 
-	@OriginalMember(owner = "client!s", name = "cb", descriptor = "[J")
-	public static long[] aLongArray43;
-
-	@OriginalMember(owner = "client!s", name = "pb", descriptor = "I")
-	public static int anInt4692;
-
-	@OriginalMember(owner = "client!s", name = "rb", descriptor = "I")
-	public static int anInt4693;
-
-	@OriginalMember(owner = "client!s", name = "sb", descriptor = "F")
-	public static float aFloat115;
-
-	@OriginalMember(owner = "client!s", name = "tb", descriptor = "F")
-	public static float aFloat116;
-
-	@OriginalMember(owner = "client!s", name = "vb", descriptor = "F")
-	public static float aFloat117;
-
-	@OriginalMember(owner = "client!s", name = "wb", descriptor = "F")
-	public static float aFloat118;
-
-	@OriginalMember(owner = "client!s", name = "xb", descriptor = "I")
-	public static int anInt4694;
-
-	@OriginalMember(owner = "client!s", name = "zb", descriptor = "F")
-	public static float aFloat119;
-
-	@OriginalMember(owner = "client!s", name = "Ab", descriptor = "F")
-	public static float aFloat120;
-
 	@OriginalMember(owner = "client!se", name = "eb", descriptor = "I")
 	public static int anInt4793;
 

@@ -82,7 +82,7 @@ public final class Npc extends PathingEntity {
 			@Pc(214) SpotAnimType local214 = SpotAnimTypeList.get(this.spotAnimId);
 			local189 = local214.method2569(this.anInt3976, this.anInt3968, this.anInt4026);
 			if (local189 != null) {
-				local189.method3823(0, -this.anInt3971, 0);
+				local189.translate(0, -this.anInt3971, 0);
 				if (local214.aBoolean221) {
 					if (Static5.anInt3525 != 0) {
 						local189.method3832(Static5.anInt3525);
@@ -91,7 +91,7 @@ public final class Npc extends PathingEntity {
 						local189.method3817(Static6.anInt4907);
 					}
 					if (Static4.anInt2747 != 0) {
-						local189.method3823(0, Static4.anInt2747, 0);
+						local189.translate(0, Static4.anInt2747, 0);
 					}
 				}
 			}

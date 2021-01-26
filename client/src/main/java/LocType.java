@@ -6,6 +6,9 @@ import org.openrs2.deob.annotation.Pc;
 @OriginalClass("client!vh")
 public final class LocType {
 
+	@OriginalMember(owner = "client!ng", name = "z", descriptor = "[Lclient!ml;")
+	private static final RawModel[] tempModels = new RawModel[4];
+
 	@OriginalMember(owner = "client!vh", name = "a", descriptor = "[S")
 	private short[] recolorDestination;
 
@@ -346,11 +349,11 @@ public final class LocType {
 					LocTypeList.aClass26_43.put((long) local67, local3);
 				}
 				if (local53 > 1) {
-					Static5.aClass53_Sub3Array3[local55] = local3;
+					tempModels[local55] = local3;
 				}
 			}
 			if (local53 > 1) {
-				local3 = new RawModel(Static5.aClass53_Sub3Array3, local53);
+				local3 = new RawModel(tempModels, local53);
 			}
 		} else {
 			@Pc(128) int local128 = -1;
@@ -455,108 +458,108 @@ public final class LocType {
 	}
 
 	@OriginalMember(owner = "client!vh", name = "a", descriptor = "(IZIZ)Lclient!s;")
-	private GlModel method4456(@OriginalArg(0) int arg0, @OriginalArg(1) boolean arg1, @OriginalArg(2) int arg2) {
+	private GlModel method4456(@OriginalArg(0) int shape, @OriginalArg(1) boolean arg1, @OriginalArg(2) int angle) {
 		@Pc(12) int local12 = this.anInt5529 + 64;
 		@Pc(19) int local19 = this.anInt5512 * 5 + 768;
-		@Pc(75) GlModel local75;
+		@Pc(75) GlModel model;
 		if (this.shapes == null) {
-			if (arg0 != 10) {
+			if (shape != 10) {
 				return null;
 			}
 			if (this.models == null) {
 				return null;
 			}
-			@Pc(38) int local38 = this.models.length;
-			if (local38 == 0) {
+			@Pc(38) int modelsLen = this.models.length;
+			if (modelsLen == 0) {
 				return null;
 			}
-			@Pc(45) long local45 = 0L;
-			for (@Pc(47) int local47 = 0; local47 < local38; local47++) {
-				local45 = local45 * 67783L + (long) this.models[local47];
+			@Pc(45) long key = 0L;
+			for (@Pc(47) int i = 0; i < modelsLen; i++) {
+				key = key * 67783L + (long) this.models[i];
 			}
 			if (arg1) {
-				local45 = ~local45;
+				key = ~key;
 			}
-			local75 = (GlModel) LocTypeList.aClass26_43.get(local45);
-			if (local75 == null) {
-				@Pc(80) RawModel local80 = null;
-				for (@Pc(82) int local82 = 0; local82 < local38; local82++) {
-					local80 = RawModel.create(LocTypeList.modelsArchive, this.models[local82] & 0xFFFF);
-					if (local80 == null) {
+			model = (GlModel) LocTypeList.aClass26_43.get(key);
+			if (model == null) {
+				@Pc(80) RawModel rawModel = null;
+				for (@Pc(82) int i = 0; i < modelsLen; i++) {
+					rawModel = RawModel.create(LocTypeList.modelsArchive, this.models[i] & 0xFFFF);
+					if (rawModel == null) {
 						return null;
 					}
-					if (local38 > 1) {
-						Static5.aClass53_Sub3Array3[local82] = local80;
+					if (modelsLen > 1) {
+						tempModels[i] = rawModel;
 					}
 				}
-				if (local38 > 1) {
-					local80 = new RawModel(Static5.aClass53_Sub3Array3, local38);
+				if (modelsLen > 1) {
+					rawModel = new RawModel(tempModels, modelsLen);
 				}
-				local75 = new GlModel(local80, local12, local19, arg1);
-				LocTypeList.aClass26_43.put(local45, local75);
+				model = new GlModel(rawModel, local12, local19, arg1);
+				LocTypeList.aClass26_43.put(key, model);
 			}
 		} else {
-			@Pc(142) int local142 = -1;
-			for (@Pc(144) int local144 = 0; local144 < this.shapes.length; local144++) {
-				if (this.shapes[local144] == arg0) {
-					local142 = local144;
+			@Pc(142) int modelIndex = -1;
+			for (@Pc(144) int i = 0; i < this.shapes.length; i++) {
+				if (this.shapes[i] == shape) {
+					modelIndex = i;
 					break;
 				}
 			}
-			if (local142 == -1) {
+			if (modelIndex == -1) {
 				return null;
 			}
-			@Pc(173) int local173 = this.models[local142];
+			@Pc(173) int key = this.models[modelIndex];
 			if (arg1) {
-				local173 += 65536;
+				key += 65536;
 			}
-			local75 = (GlModel) LocTypeList.aClass26_43.get((long) local173);
-			if (local75 == null) {
-				@Pc(197) RawModel local197 = RawModel.create(LocTypeList.modelsArchive, local173 & 0xFFFF);
-				if (local197 == null) {
+			model = (GlModel) LocTypeList.aClass26_43.get(key);
+			if (model == null) {
+				@Pc(197) RawModel rawModel = RawModel.create(LocTypeList.modelsArchive, key & 0xFFFF);
+				if (rawModel == null) {
 					return null;
 				}
-				local75 = new GlModel(local197, local12, local19, arg1);
-				LocTypeList.aClass26_43.put((long) local173, local75);
+				model = new GlModel(rawModel, local12, local19, arg1);
+				LocTypeList.aClass26_43.put(key, model);
 			}
 		}
 		@Pc(218) boolean local218 = this.aBoolean381;
 		@Pc(234) boolean local234 = this.resizeY == 128 && this.translateY == 0;
-		if (arg0 == 2 && arg2 > 3) {
+		if (shape == 2 && angle > 3) {
 			local218 = !local218;
 		}
-		@Pc(276) boolean local276 = arg2 == 0 && this.resizeX == 128 && this.resizeZ == 128 && this.translateX == 0 && this.translateZ == 0 && !local218;
-		@Pc(326) GlModel local326 = local75.method3852(local276, local234, this.recolorSource == null, local75.method3847() == local12, arg2 == 0 && !local218, true, local75.method3869() == local19, !local218, this.retextureSource == null);
+		@Pc(276) boolean local276 = angle == 0 && this.resizeX == 128 && this.resizeZ == 128 && this.translateX == 0 && this.translateZ == 0 && !local218;
+		@Pc(326) GlModel local326 = model.method3852(local276, local234, this.recolorSource == null, model.method3847() == local12, angle == 0 && !local218, true, model.method3869() == local19, !local218, this.retextureSource == null);
 		if (local218) {
 			local326.method3850();
 		}
-		if (arg0 == 4 && arg2 > 3) {
+		if (shape == 4 && angle > 3) {
 			local326.method3857();
-			local326.method3823(45, 0, -45);
+			local326.translate(45, 0, -45);
 		}
-		arg2 &= 3;
-		if (arg2 == 1) {
+		angle &= 3;
+		if (angle == 1) {
 			local326.method3862();
-		} else if (arg2 == 2) {
+		} else if (angle == 2) {
 			local326.method3849();
-		} else if (arg2 == 3) {
+		} else if (angle == 3) {
 			local326.method3848();
 		}
 		if (this.recolorSource != null) {
-			for (@Pc(386) int local386 = 0; local386 < this.recolorSource.length; local386++) {
-				local326.method3867(this.recolorSource[local386], this.recolorDestination[local386]);
+			for (@Pc(386) int i = 0; i < this.recolorSource.length; i++) {
+				local326.recolor(this.recolorSource[i], this.recolorDestination[i]);
 			}
 		}
 		if (this.retextureSource != null) {
-			for (@Pc(410) int local410 = 0; local410 < this.retextureSource.length; local410++) {
-				local326.retexture(this.retextureSource[local410], this.retextureDestination[local410]);
+			for (@Pc(410) int i = 0; i < this.retextureSource.length; i++) {
+				local326.retexture(this.retextureSource[i], this.retextureDestination[i]);
 			}
 		}
 		if (this.resizeX != 128 || this.resizeY != 128 || this.resizeZ != 128) {
-			local326.method3824(this.resizeX, this.resizeY, this.resizeZ);
+			local326.resize(this.resizeX, this.resizeY, this.resizeZ);
 		}
 		if (this.translateX != 0 || this.translateY != 0 || this.translateZ != 0) {
-			local326.method3823(this.translateX, this.translateY, this.translateZ);
+			local326.translate(this.translateX, this.translateY, this.translateZ);
 		}
 		if (local12 != local326.method3847()) {
 			local326.method3855(local12);

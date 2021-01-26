@@ -754,7 +754,7 @@ public final class Static22 {
 		local10.triangleTextures = null;
 		local10.anIntArray325 = null;
 		local10.anIntArray323 = null;
-		local10.aByteArray37 = null;
+		local10.trianglePriorities = null;
 	}
 
 	@OriginalMember(owner = "client!kg", name = "d", descriptor = "()V")

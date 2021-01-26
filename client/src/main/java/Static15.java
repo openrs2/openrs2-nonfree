@@ -333,17 +333,6 @@ public final class Static15 {
 		return (arg2 >> 1) + (arg1 >> 5 << 7) + (arg0 >> 2 << 10);
 	}
 
-	@OriginalMember(owner = "client!fi", name = "a", descriptor = "([SB)[S")
-	public static short[] method1396(@OriginalArg(0) short[] arg0) {
-		if (arg0 == null) {
-			return null;
-		} else {
-			@Pc(12) short[] local12 = new short[arg0.length];
-			ArrayUtils.copy(arg0, 0, local12, 0, arg0.length);
-			return local12;
-		}
-	}
-
 	@OriginalMember(owner = "client!fi", name = "a", descriptor = "(Lclient!wf;IIB)V")
 	public static void method1401(@OriginalArg(0) Component arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
 		if (Static1.aClass185_1 != null || Static1.aBoolean17 || (arg0 == null || method1403(arg0) == null)) {
@@ -597,7 +586,7 @@ public final class Static15 {
 
 	@OriginalMember(owner = "client!fm", name = "a", descriptor = "(IIII)I")
 	public static int method1474(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(3) int arg2) {
-		@Pc(16) int local16 = ColorUtils.HSL_TO_RGB[Static25.method2912(arg2, arg0)];
+		@Pc(16) int local16 = ColorUtils.HSL_TO_RGB[SoftwareModel.method2912(arg2, arg0)];
 		if (arg1 > 0) {
 			@Pc(26) int local26 = Static4.textureProvider.method450(arg1 & 0xFFFF);
 			if (local26 != 0) {

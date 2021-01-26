@@ -6,6 +6,24 @@ import org.openrs2.deob.annotation.Pc;
 @OriginalClass("client!a")
 public final class AnimFrame {
 
+	@OriginalMember(owner = "client!a", name = "b", descriptor = "[S")
+	private static final short[] aShortArray2 = new short[500];
+
+	@OriginalMember(owner = "client!a", name = "g", descriptor = "[B")
+	private static final byte[] aByteArray2 = new byte[500];
+
+	@OriginalMember(owner = "client!a", name = "i", descriptor = "[S")
+	private static final short[] aShortArray6 = new short[500];
+
+	@OriginalMember(owner = "client!a", name = "l", descriptor = "[S")
+	private static final short[] aShortArray7 = new short[500];
+
+	@OriginalMember(owner = "client!a", name = "m", descriptor = "[S")
+	private static final short[] aShortArray8 = new short[500];
+
+	@OriginalMember(owner = "client!a", name = "n", descriptor = "[S")
+	private static final short[] aShortArray9 = new short[500];
+
 	@OriginalMember(owner = "client!a", name = "e", descriptor = "Z")
 	public boolean aBoolean1 = false;
 
@@ -57,36 +75,36 @@ public final class AnimFrame {
 				if (local56 == 0) {
 					local39 = local47;
 				}
-				Static1.aShortArray9[local35] = (short) local47;
+				aShortArray9[local35] = (short) local47;
 				@Pc(77) short local77 = 0;
 				if (local56 == 3) {
 					local77 = 128;
 				}
 				if ((local64 & 0x1) == 0) {
-					Static1.aShortArray8[local35] = local77;
+					aShortArray8[local35] = local77;
 				} else {
-					Static1.aShortArray8[local35] = (short) local26.readShortSmart();
+					aShortArray8[local35] = (short) local26.readShortSmart();
 				}
 				if ((local64 & 0x2) == 0) {
-					Static1.aShortArray2[local35] = local77;
+					aShortArray2[local35] = local77;
 				} else {
-					Static1.aShortArray2[local35] = (short) local26.readShortSmart();
+					aShortArray2[local35] = (short) local26.readShortSmart();
 				}
 				if ((local64 & 0x4) == 0) {
-					Static1.aShortArray6[local35] = local77;
+					aShortArray6[local35] = local77;
 				} else {
-					Static1.aShortArray6[local35] = (short) local26.readShortSmart();
+					aShortArray6[local35] = (short) local26.readShortSmart();
 				}
-				Static1.aByteArray2[local35] = (byte) (local64 >>> 3 & 0x3);
+				aByteArray2[local35] = (byte) (local64 >>> 3 & 0x3);
 				if (local56 == 2) {
-					Static1.aShortArray8[local35] = (short) (((Static1.aShortArray8[local35] & 0xFF) << 3) + (Static1.aShortArray8[local35] >> 8 & 0x7));
-					Static1.aShortArray2[local35] = (short) (((Static1.aShortArray2[local35] & 0xFF) << 3) + (Static1.aShortArray2[local35] >> 8 & 0x7));
-					Static1.aShortArray6[local35] = (short) (((Static1.aShortArray6[local35] & 0xFF) << 3) + (Static1.aShortArray6[local35] >> 8 & 0x7));
+					aShortArray8[local35] = (short) (((aShortArray8[local35] & 0xFF) << 3) + (aShortArray8[local35] >> 8 & 0x7));
+					aShortArray2[local35] = (short) (((aShortArray2[local35] & 0xFF) << 3) + (aShortArray2[local35] >> 8 & 0x7));
+					aShortArray6[local35] = (short) (((aShortArray6[local35] & 0xFF) << 3) + (aShortArray6[local35] >> 8 & 0x7));
 				}
-				Static1.aShortArray7[local35] = -1;
+				aShortArray7[local35] = -1;
 				if (local56 == 1 || local56 == 2 || local56 == 3) {
 					if (local37 > local39) {
-						Static1.aShortArray7[local35] = (short) local37;
+						aShortArray7[local35] = (short) local37;
 						local39 = local37;
 					}
 				} else if (local56 == 5) {
@@ -107,13 +125,13 @@ public final class AnimFrame {
 		this.aShortArray4 = new short[local35];
 		this.aShortArray5 = new short[local35];
 		this.aByteArray1 = new byte[local35];
-		for (@Pc(277) int local277 = 0; local277 < local35; local277++) {
-			this.aShortArray3[local277] = Static1.aShortArray9[local277];
-			this.aShortArray10[local277] = Static1.aShortArray8[local277];
-			this.aShortArray1[local277] = Static1.aShortArray2[local277];
-			this.aShortArray4[local277] = Static1.aShortArray6[local277];
-			this.aShortArray5[local277] = Static1.aShortArray7[local277];
-			this.aByteArray1[local277] = Static1.aByteArray2[local277];
+		for (@Pc(277) int i = 0; i < local35; i++) {
+			this.aShortArray3[i] = aShortArray9[i];
+			this.aShortArray10[i] = aShortArray8[i];
+			this.aShortArray1[i] = aShortArray2[i];
+			this.aShortArray4[i] = aShortArray6[i];
+			this.aShortArray5[i] = aShortArray7[i];
+			this.aByteArray1[i] = aByteArray2[i];
 		}
 	}
 }

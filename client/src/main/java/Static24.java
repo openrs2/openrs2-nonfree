@@ -243,7 +243,7 @@ public final class Static24 {
 		if (mode > 0 && arg1 == 0) {
 			GameShell.thread.setPriority(5);
 			client.frameBuffer = null;
-			Static25.method2915();
+			SoftwareModel.method2915();
 			((Js5GlTextureProvider) Static4.textureProvider).resize(200);
 			if (Preferences.highDetailLighting) {
 				ColorUtils.setBrightness(0.7F);
@@ -257,7 +257,7 @@ public final class Static24 {
 		} else if (mode == 0 && arg1 > 0) {
 			GameShell.thread.setPriority(1);
 			client.frameBuffer = FrameBuffer.create(GameShell.canvas, 765, 503);
-			Static25.method2906();
+			SoftwareModel.method2906();
 			Static26.method2951();
 			((Js5GlTextureProvider) Static4.textureProvider).resize(20);
 			if (Preferences.highDetailLighting) {

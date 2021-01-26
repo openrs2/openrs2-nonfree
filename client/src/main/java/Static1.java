@@ -145,24 +145,6 @@ public final class Static1 {
 	@OriginalMember(owner = "client!dc", name = "l", descriptor = "I")
 	public static int anInt901;
 
-	@OriginalMember(owner = "client!a", name = "b", descriptor = "[S")
-	public static final short[] aShortArray2 = new short[500];
-
-	@OriginalMember(owner = "client!a", name = "g", descriptor = "[B")
-	public static final byte[] aByteArray2 = new byte[500];
-
-	@OriginalMember(owner = "client!a", name = "i", descriptor = "[S")
-	public static final short[] aShortArray6 = new short[500];
-
-	@OriginalMember(owner = "client!a", name = "l", descriptor = "[S")
-	public static final short[] aShortArray7 = new short[500];
-
-	@OriginalMember(owner = "client!a", name = "m", descriptor = "[S")
-	public static final short[] aShortArray8 = new short[500];
-
-	@OriginalMember(owner = "client!a", name = "n", descriptor = "[S")
-	public static final short[] aShortArray9 = new short[500];
-
 	@OriginalMember(owner = "client!aa", name = "b", descriptor = "I")
 	public static int anInt3 = 0;
 

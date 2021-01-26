@@ -33,21 +33,21 @@ public final class AnimBase extends Node {
 		this.anIntArray12 = new int[this.anInt107];
 		this.aBooleanArray1 = new boolean[this.anInt107];
 		this.anIntArrayArray1 = new int[this.anInt107][];
-		for (@Pc(38) int local38 = 0; local38 < this.anInt107; local38++) {
-			this.anIntArray11[local38] = buffer.readUnsignedByte();
+		for (@Pc(38) int i = 0; i < this.anInt107; i++) {
+			this.anIntArray11[i] = buffer.readUnsignedByte();
 		}
-		for (@Pc(54) int local54 = 0; local54 < this.anInt107; local54++) {
-			this.aBooleanArray1[local54] = buffer.readUnsignedByte() == 1;
+		for (@Pc(54) int i = 0; i < this.anInt107; i++) {
+			this.aBooleanArray1[i] = buffer.readUnsignedByte() == 1;
 		}
-		for (@Pc(79) int local79 = 0; local79 < this.anInt107; local79++) {
-			this.anIntArray12[local79] = buffer.readUnsignedShort();
+		for (@Pc(79) int i = 0; i < this.anInt107; i++) {
+			this.anIntArray12[i] = buffer.readUnsignedShort();
 		}
-		for (@Pc(99) int local99 = 0; local99 < this.anInt107; local99++) {
-			this.anIntArrayArray1[local99] = new int[buffer.readUnsignedByte()];
+		for (@Pc(99) int i = 0; i < this.anInt107; i++) {
+			this.anIntArrayArray1[i] = new int[buffer.readUnsignedByte()];
 		}
-		for (@Pc(120) int local120 = 0; local120 < this.anInt107; local120++) {
-			for (@Pc(126) int local126 = 0; local126 < this.anIntArrayArray1[local120].length; local126++) {
-				this.anIntArrayArray1[local120][local126] = buffer.readUnsignedByte();
+		for (@Pc(120) int i = 0; i < this.anInt107; i++) {
+			for (@Pc(126) int j = 0; j < this.anIntArrayArray1[i].length; j++) {
+				this.anIntArrayArray1[i][j] = buffer.readUnsignedByte();
 			}
 		}
 	}

@@ -431,6 +431,17 @@ public final class ArrayUtils {
 		sort(keys, values, i + 1, hi);
 	}
 
+	@OriginalMember(owner = "client!fi", name = "a", descriptor = "([SB)[S")
+	public static short[] copyOfNullable(@OriginalArg(0) short[] array) {
+		if (array == null) {
+			return null;
+		} else {
+			@Pc(12) short[] copy = new short[array.length];
+			ArrayUtils.copy(array, 0, copy, 0, array.length);
+			return copy;
+		}
+	}
+
 	@OriginalMember(owner = "client!s", name = "a", descriptor = "([SI)[S")
 	public static short[] copyOf(@OriginalArg(0) short[] array, @OriginalArg(1) int len) {
 		@Pc(2) short[] copy = new short[len];
@@ -439,7 +450,7 @@ public final class ArrayUtils {
 	}
 
 	@OriginalMember(owner = "client!li", name = "a", descriptor = "([II)[I")
-	public static int[] copyOf(@OriginalArg(0) int[] array) {
+	public static int[] copyOfNullable(@OriginalArg(0) int[] array) {
 		if (array == null) {
 			return null;
 		} else {

@@ -288,7 +288,7 @@ public final class ObjType {
 			}
 			local62 = local72.createModel(this.ambient + 64, this.contrast + 768, -50, -10, -50);
 			if (this.resizeX != 128 || this.resizeY != 128 || this.resizeZ != 128) {
-				local62.method3824(this.resizeX, this.resizeY, this.resizeZ);
+				local62.resize(this.resizeX, this.resizeY, this.resizeZ);
 			}
 			local62.aBoolean324 = true;
 			if (GlRenderer.enabled) {
@@ -496,7 +496,7 @@ public final class ObjType {
 		}
 		@Pc(168) SoftwareModel local168 = local11.createSoftwareModel(this.ambient + 64, this.contrast + 768, -50, -10, -50);
 		if (this.resizeX != 128 || this.resizeY != 128 || this.resizeZ != 128) {
-			local168.method3824(this.resizeX, this.resizeY, this.resizeZ);
+			local168.resize(this.resizeX, this.resizeY, this.resizeZ);
 		}
 		return local168;
 	}

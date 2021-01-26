@@ -417,49 +417,6 @@ public final class Static25 {
 		return 0;
 	}
 
-	@OriginalMember(owner = "client!na", name = "o", descriptor = "()V")
-	public static void method2906() {
-		Static4.aBoolean246 = false;
-		Static4.anIntArray369 = null;
-		Static4.anIntArray360 = null;
-		Static4.anIntArray374 = new int[1600];
-		Static4.anIntArrayArray32 = new int[1600][64];
-		Static4.anIntArray363 = new int[32];
-		Static4.anIntArrayArray31 = new int[32][512];
-	}
-
-	@OriginalMember(owner = "client!na", name = "a", descriptor = "(II)I")
-	public static int method2912(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
-		@Pc(7) int local7 = arg1 * (arg0 & 0x7F) >> 7;
-		if (local7 < 2) {
-			local7 = 2;
-		} else if (local7 > 126) {
-			local7 = 126;
-		}
-		return (arg0 & 0xFF80) + local7;
-	}
-
-	@OriginalMember(owner = "client!na", name = "f", descriptor = "(I)I")
-	public static int method2914(@OriginalArg(0) int arg0) {
-		if (arg0 < 2) {
-			arg0 = 2;
-		} else if (arg0 > 126) {
-			arg0 = 126;
-		}
-		return arg0;
-	}
-
-	@OriginalMember(owner = "client!na", name = "r", descriptor = "()V")
-	public static void method2915() {
-		Static4.aBoolean246 = true;
-		Static4.anIntArray369 = new int[4096];
-		Static4.anIntArray360 = new int[4096];
-		Static4.anIntArray374 = null;
-		Static4.anIntArrayArray32 = null;
-		Static4.anIntArray363 = null;
-		Static4.anIntArrayArray31 = null;
-	}
-
 	@OriginalMember(owner = "client!nb", name = "a", descriptor = "(ZI)V")
 	public static void method2929(@OriginalArg(1) int arg0) {
 		Static7.anInt5634--;

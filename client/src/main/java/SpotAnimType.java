@@ -126,7 +126,7 @@ public final class SpotAnimType {
 			local113 = SeqTypeList.get(this.anInt3134).method1018(arg2, arg1, model, arg0);
 		}
 		if (this.anInt3133 != 128 || this.anInt3144 != 128) {
-			local113.method3824(this.anInt3133, this.anInt3144, this.anInt3133);
+			local113.resize(this.anInt3133, this.anInt3144, this.anInt3133);
 		}
 		if (this.anInt3137 != 0) {
 			if (this.anInt3137 == 90) {
