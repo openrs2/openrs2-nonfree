@@ -54,13 +54,13 @@ public final class SynthInstrument {
 	private Envelope phaseEnvelope;
 
 	@OriginalMember(owner = "client!uh", name = "p", descriptor = "Lclient!qo;")
-	private Class146 aClass146_1;
+	private Filter filter;
 
 	@OriginalMember(owner = "client!uh", name = "r", descriptor = "Lclient!h;")
 	private Envelope phaseModulationAmplitudeEnvelope;
 
 	@OriginalMember(owner = "client!uh", name = "x", descriptor = "Lclient!h;")
-	private Envelope aClass73_9;
+	private Envelope filterEnvelope;
 
 	@OriginalMember(owner = "client!uh", name = "d", descriptor = "I")
 	public int duration = 500;
@@ -125,11 +125,11 @@ public final class SynthInstrument {
 			this.gateOpenPhaseEnvelope.decode(buffer);
 		}
 		for (@Pc(109) int i = 0; i < 10; i++) {
-			@Pc(116) int local116 = buffer.readUnsignedShortSmart();
-			if (local116 == 0) {
+			@Pc(116) int amplitude = buffer.readUnsignedShortSmart();
+			if (amplitude == 0) {
 				break;
 			}
-			this.oscillatorAmplitudes[i] = local116;
+			this.oscillatorAmplitudes[i] = amplitude;
 			this.anIntArray604[i] = buffer.readShortSmart();
 			this.oscillatorStartMillis[i] = buffer.readUnsignedShortSmart();
 		}
@@ -137,9 +137,9 @@ public final class SynthInstrument {
 		this.delayMix = buffer.readUnsignedShortSmart();
 		this.duration = buffer.readUnsignedShort();
 		this.start = buffer.readUnsignedShort();
-		this.aClass146_1 = new Class146();
-		this.aClass73_9 = new Envelope();
-		this.aClass146_1.decode(buffer, this.aClass73_9);
+		this.filter = new Filter();
+		this.filterEnvelope = new Envelope();
+		this.filter.decode(buffer, this.filterEnvelope);
 	}
 
 	@OriginalMember(owner = "client!uh", name = "a", descriptor = "(II)[I")
@@ -236,64 +236,64 @@ public final class SynthInstrument {
 				samples[i] += SynthInstrument.samples[i - delay] * this.delayMix / 100;
 			}
 		}
-		if (this.aClass146_1.anIntArray471[0] > 0 || this.aClass146_1.anIntArray471[1] > 0) {
-			this.aClass73_9.reset();
-			@Pc(469) int local469 = this.aClass73_9.nextLevel(count + 1);
-			@Pc(478) int local478 = this.aClass146_1.method3640(0, (float) local469 / 65536.0F);
-			@Pc(487) int local487 = this.aClass146_1.method3640(1, (float) local469 / 65536.0F);
-			if (count >= local478 + local487) {
-				@Pc(494) int local494 = 0;
-				@Pc(496) int local496 = local487;
-				if (local487 > count - local478) {
-					local496 = count - local478;
+		if (this.filter.pairs[0] > 0 || this.filter.pairs[1] > 0) {
+			this.filterEnvelope.reset();
+			@Pc(469) int t = this.filterEnvelope.nextLevel(count + 1);
+			@Pc(478) int forwardOrder = this.filter.compute(0, (float) t / 65536.0F);
+			@Pc(487) int backOrder = this.filter.compute(1, (float) t / 65536.0F);
+			if (count >= forwardOrder + backOrder) {
+				@Pc(494) int i = 0;
+				@Pc(496) int n = backOrder;
+				if (backOrder > count - forwardOrder) {
+					n = count - forwardOrder;
 				}
-				while (local494 < local496) {
-					@Pc(521) int local521 = (int) ((long) samples[local494 + local478] * (long) Static6.anInt4425 >> 16);
-					for (@Pc(523) int local523 = 0; local523 < local478; local523++) {
-						local521 += (int) ((long) samples[local494 + local478 - local523 - 1] * (long) Static6.anIntArrayArray38[0][local523] >> 16);
+				while (i < n) {
+					@Pc(521) int sample = (int) ((long) samples[i + forwardOrder] * (long) Filter.inverseA0 >> 16);
+					for (@Pc(523) int j = 0; j < forwardOrder; j++) {
+						sample += (int) ((long) samples[i + forwardOrder - j - 1] * (long) Filter.coefficients[0][j] >> 16);
 					}
-					for (@Pc(553) int local553 = 0; local553 < local494; local553++) {
-						local521 -= (int) ((long) samples[local494 - local553 - 1] * (long) Static6.anIntArrayArray38[1][local553] >> 16);
+					for (@Pc(553) int j = 0; j < i; j++) {
+						sample -= (int) ((long) samples[i - j - 1] * (long) Filter.coefficients[1][j] >> 16);
 					}
-					samples[local494] = local521;
-					local469 = this.aClass73_9.nextLevel(count + 1);
-					local494++;
+					samples[i] = sample;
+					t = this.filterEnvelope.nextLevel(count + 1);
+					i++;
 				}
-				@Pc(594) int local594 = 128;
+				@Pc(594) int n2 = 128;
 				while (true) {
-					if (local594 > count - local478) {
-						local594 = count - local478;
+					if (n2 > count - forwardOrder) {
+						n2 = count - forwardOrder;
 					}
-					while (local494 < local594) {
-						@Pc(619) int local619 = (int) ((long) samples[local494 + local478] * (long) Static6.anInt4425 >> 16);
-						for (@Pc(621) int local621 = 0; local621 < local478; local621++) {
-							local619 += (int) ((long) samples[local494 + local478 - local621 - 1] * (long) Static6.anIntArrayArray38[0][local621] >> 16);
+					while (i < n2) {
+						@Pc(619) int sample = (int) ((long) samples[i + forwardOrder] * (long) Filter.inverseA0 >> 16);
+						for (@Pc(621) int j = 0; j < forwardOrder; j++) {
+							sample += (int) ((long) samples[i + forwardOrder - j - 1] * (long) Filter.coefficients[0][j] >> 16);
 						}
-						for (@Pc(651) int local651 = 0; local651 < local487; local651++) {
-							local619 -= (int) ((long) samples[local494 - local651 - 1] * (long) Static6.anIntArrayArray38[1][local651] >> 16);
+						for (@Pc(651) int j = 0; j < backOrder; j++) {
+							sample -= (int) ((long) samples[i - j - 1] * (long) Filter.coefficients[1][j] >> 16);
 						}
-						samples[local494] = local619;
-						local469 = this.aClass73_9.nextLevel(count + 1);
-						local494++;
+						samples[i] = sample;
+						t = this.filterEnvelope.nextLevel(count + 1);
+						i++;
 					}
-					if (local494 >= count - local478) {
-						while (local494 < count) {
-							@Pc(721) int local721 = 0;
-							for (@Pc(727) int local727 = local494 + local478 - count; local727 < local478; local727++) {
-								local721 += (int) ((long) samples[local494 + local478 - local727 - 1] * (long) Static6.anIntArrayArray38[0][local727] >> 16);
+					if (i >= count - forwardOrder) {
+						while (i < count) {
+							@Pc(721) int sample = 0;
+							for (@Pc(727) int j = i + forwardOrder - count; j < forwardOrder; j++) {
+								sample += (int) ((long) samples[i + forwardOrder - j - 1] * (long) Filter.coefficients[0][j] >> 16);
 							}
-							for (@Pc(757) int local757 = 0; local757 < local487; local757++) {
-								local721 -= (int) ((long) samples[local494 - local757 - 1] * (long) Static6.anIntArrayArray38[1][local757] >> 16);
+							for (@Pc(757) int j = 0; j < backOrder; j++) {
+								sample -= (int) ((long) samples[i - j - 1] * (long) Filter.coefficients[1][j] >> 16);
 							}
-							samples[local494] = local721;
-							this.aClass73_9.nextLevel(count + 1);
-							local494++;
+							samples[i] = sample;
+							this.filterEnvelope.nextLevel(count + 1);
+							i++;
 						}
 						break;
 					}
-					local478 = this.aClass146_1.method3640(0, (float) local469 / 65536.0F);
-					local487 = this.aClass146_1.method3640(1, (float) local469 / 65536.0F);
-					local594 += 128;
+					forwardOrder = this.filter.compute(0, (float) t / 65536.0F);
+					backOrder = this.filter.compute(1, (float) t / 65536.0F);
+					n2 += 128;
 				}
 			}
 		}

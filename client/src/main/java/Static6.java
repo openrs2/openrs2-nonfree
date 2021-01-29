@@ -20,12 +20,6 @@ public final class Static6 {
 	@OriginalMember(owner = "client!qm", name = "h", descriptor = "I")
 	public static int anInt4403;
 
-	@OriginalMember(owner = "client!qo", name = "c", descriptor = "I")
-	public static int anInt4425;
-
-	@OriginalMember(owner = "client!qo", name = "g", descriptor = "F")
-	public static float aFloat107;
-
 	@OriginalMember(owner = "client!ra", name = "w", descriptor = "I")
 	public static int anInt4440;
 
@@ -124,12 +118,6 @@ public final class Static6 {
 
 	@OriginalMember(owner = "client!qm", name = "c", descriptor = "I")
 	public static int anInt4398 = 1;
-
-	@OriginalMember(owner = "client!qo", name = "a", descriptor = "[[F")
-	public static final float[][] aFloatArrayArray2 = new float[2][8];
-
-	@OriginalMember(owner = "client!qo", name = "b", descriptor = "[[I")
-	public static final int[][] anIntArrayArray38 = new int[2][8];
 
 	@OriginalMember(owner = "client!r", name = "s", descriptor = "[[I")
 	public static final int[][] anIntArrayArray25 = new int[][] { { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }, { 12, 8, 4, 0, 13, 9, 5, 1, 14, 10, 6, 2, 15, 11, 7, 3 }, { 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0 }, { 3, 7, 11, 15, 2, 6, 10, 14, 1, 5, 9, 13, 0, 4, 8, 12 } };
