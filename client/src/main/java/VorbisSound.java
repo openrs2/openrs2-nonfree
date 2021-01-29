@@ -435,14 +435,14 @@ public final class VorbisSound extends Node {
 				vector[n2 + k] = vector[n - k - 1];
 			}
 			for (@Pc(1150) int k = leftWindowStart; k < leftWindowEnd; k++) {
-				@Pc(1169) float local1169 = (float) Math.sin(((double) (k - leftWindowStart) + 0.5D) / (double) leftN * 0.5D * 3.141592653589793D);
+				@Pc(1169) float sine = (float) Math.sin(((double) (k - leftWindowStart) + 0.5D) / (double) leftN * 0.5D * 3.141592653589793D);
 				@Pc(1170) float[] vector2 = VorbisSound.vector;
-				vector2[k] *= (float) Math.sin((double) local1169 * 1.5707963267948966D * (double) local1169);
+				vector2[k] *= (float) Math.sin((double) sine * 1.5707963267948966D * (double) sine);
 			}
 			for (@Pc(1188) int k = rightWindowStart; k < rightWindowEnd; k++) {
-				@Pc(1209) float local1209 = (float) Math.sin(((double) (k - rightWindowStart) + 0.5D) / (double) rightN * 0.5D * 3.141592653589793D + 1.5707963267948966D);
+				@Pc(1209) float sine = (float) Math.sin(((double) (k - rightWindowStart) + 0.5D) / (double) rightN * 0.5D * 3.141592653589793D + 1.5707963267948966D);
 				@Pc(1210) float[] vector2 = VorbisSound.vector;
-				vector2[k] *= (float) Math.sin((double) local1209 * 1.5707963267948966D * (double) local1209);
+				vector2[k] *= (float) Math.sin((double) sine * 1.5707963267948966D * (double) sine);
 			}
 		}
 		@Pc(1228) float[] samples = null;
