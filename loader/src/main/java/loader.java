@@ -380,21 +380,23 @@ public final class loader extends Applet implements Runnable {
 			byte platform;
 			if (osName.startsWith("win")) {
 				if (osArch.startsWith("amd64") || osArch.startsWith("x86_64")) {
-					platform = 1;
-				} else {
 					platform = 0;
+				} else {
+					platform = 1;
 				}
 			} else if (osName.startsWith("mac")) {
-				if (osArch.startsWith("amd64") || osArch.startsWith("x86_64")) {
+				if (osArch.startsWith("aarch64")) {
+					platform = 2;
+				} else if (osArch.startsWith("amd64") || osArch.startsWith("x86_64")) {
 					platform = 3;
 				} else {
-					platform = 2;
+					platform = 4;
 				}
 			} else if (osName.startsWith("linux")) {
 				if (osArch.startsWith("amd64") || osArch.startsWith("x86_64")) {
 					platform = 5;
 				} else {
-					platform = 4;
+					platform = 6;
 				}
 			} else {
 				this.error("os");
@@ -410,11 +412,11 @@ public final class loader extends Applet implements Runnable {
 				@Pc(376) String miscOsName = System.getProperty("os.name").toLowerCase();
 				if (miscOsName.startsWith("win")) {
 					@Pc(385) String miscOsArch = System.getProperty("os.arch").toLowerCase();
-					@Pc(395) byte miscPlatform;
+					byte miscPlatform;
 					if (miscOsArch.startsWith("amd64") || miscOsArch.startsWith("x86_64")) {
-						miscPlatform = 1;
-					} else {
 						miscPlatform = 0;
+					} else {
+						miscPlatform = 1;
 					}
 					@Pc(413) byte[] bytes = this.getResource(this.getParameter("suppress_sha") != null, signLink, Resources.MISC_NATIVES[miscPlatform]);
 					if (bytes == null) {
