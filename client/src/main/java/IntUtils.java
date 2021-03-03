@@ -116,4 +116,21 @@ public final class IntUtils {
 		}
 		return out;
 	}
+
+	@OriginalMember(owner = "client!ua", name = "a", descriptor = "(III)I")
+	public static int pow(@OriginalArg(2) int a, @OriginalArg(1) int b) {
+		@Pc(12) int result = 1;
+		while (b > 1) {
+			if ((b & 0x1) != 0) {
+				result *= a;
+			}
+			b >>= 1;
+			a *= a;
+		}
+		if (b == 1) {
+			return a * result;
+		} else {
+			return result;
+		}
+	}
 }

@@ -9,7 +9,7 @@ public final class VorbisCodebook {
 	@OriginalMember(owner = "client!pd", name = "a", descriptor = "(II)I")
 	private static int lookup1Values(@OriginalArg(0) int entries, @OriginalArg(1) int dimensions) {
 		@Pc(10) int returnValue;
-		for (returnValue = (int) Math.pow(entries, 1.0D / (double) dimensions) + 1; Static34.method4257(dimensions, returnValue) > entries; returnValue--) {
+		for (returnValue = (int) Math.pow(entries, 1.0D / (double) dimensions) + 1; IntUtils.pow(returnValue, dimensions) > entries; returnValue--) {
 		}
 		return returnValue;
 	}

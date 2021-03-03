@@ -483,22 +483,4 @@ public final class Static34 {
 			Static21.method2050(arg0, local8, local61.id, local20);
 		}
 	}
-
-	@OriginalMember(owner = "client!ua", name = "a", descriptor = "(III)I")
-	public static int method4257(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1) {
-		@Pc(12) int local12 = 1;
-		while (arg0 > 1) {
-			if ((arg0 & 0x1) != 0) {
-				local12 *= arg1;
-			}
-			arg0 >>= 1;
-			arg1 *= arg1;
-		}
-		if (arg0 == 1) {
-			return arg1 * local12;
-		} else {
-			return local12;
-		}
-	}
-
 }
