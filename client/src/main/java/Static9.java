@@ -11,7 +11,7 @@ public final class Static9 {
 	public static void method174(@OriginalArg(0) int arg0, @OriginalArg(2) boolean arg1, @OriginalArg(3) boolean arg2) {
 		for (@Pc(7) int local7 = 0; local7 < NpcList.size; local7++) {
 			@Pc(20) Npc local20 = NpcList.npcs[NpcList.ids[local7]];
-			if (local20 != null && local20.method3310() && local20.type.isMultiNpcValid()) {
+			if (local20 != null && local20.isVisible() && local20.type.isMultiNpcValid()) {
 				@Pc(35) int local35 = local20.getSize();
 				if (arg2) {
 					if (!local20.type.aBoolean359) {
@@ -57,7 +57,7 @@ public final class Static9 {
 		for (@Pc(249) int local249 = 0; local249 < NpcList.size; local249++) {
 			@Pc(258) Npc local258 = NpcList.npcs[NpcList.ids[local249]];
 			@Pc(267) long local267 = (long) NpcList.ids[local249] << 32 | 0x20000000L;
-			if (local258 != null && local258.method3310() && local258.type.isMultiNpcValid()) {
+			if (local258 != null && local258.isVisible() && local258.type.isMultiNpcValid()) {
 				@Pc(282) int local282 = local258.getSize();
 				if (arg2) {
 					if (!local258.type.aBoolean359) {
@@ -158,8 +158,8 @@ public final class Static9 {
 		@Pc(55) int local55 = MathUtils.SINE[local21];
 		local55 = local55 * 256 / (Static6.anInt4761 + 256);
 		@Pc(74) int local74 = local55 * arg3 + local43 * arg5 >> 16;
-		@Pc(79) int local79 = arg7.method2261(arg1, 100);
-		@Pc(85) int local85 = arg7.method2273(arg1);
+		@Pc(79) int local79 = arg7.getParagraphWidth(arg1, 100);
+		@Pc(85) int local85 = arg7.getParagraphHeight(arg1);
 		@Pc(96) int local96 = arg3 * local43 - local55 * arg5 >> 16;
 		local74 -= local79 / 2;
 		if (-arg8.width > local74 || local74 > arg8.width || -arg8.height > local96 || local96 > arg8.height) {
@@ -170,7 +170,7 @@ public final class Static9 {
 		} else {
 			SoftwareRaster.setMask(arg8.anIntArray672, arg8.anIntArray657);
 		}
-		arg7.method2260(arg1, local74 + arg4 + arg8.width / 2, arg2 + arg8.height / 2 - local96 - arg6 - local85, local79, 50, arg0, 0, 1, 0, 0);
+		arg7.renderParagraphAlpha(arg1, local74 + arg4 + arg8.width / 2, arg2 + arg8.height / 2 - local96 - arg6 - local85, local79, 50, arg0, 0, 1, 0, 0);
 		if (GlRenderer.enabled) {
 			GlRaster.resetMask();
 		} else {

@@ -931,7 +931,7 @@ public final class Static29 {
 		}
 		Static16.method1576();
 		Static8.method8();
-		Static38.method4825();
+		OverheadChat.loop();
 		for (@Pc(658) int varp = VarpDomain.poll(true); varp != -1; varp = VarpDomain.poll(false)) {
 			method3534(varp);
 			VarpDomain.updatedVarps[VarpDomain.updatedVarpsWriterIndex++ & 0x1F] = varp;
@@ -2473,7 +2473,7 @@ public final class Static29 {
 			Static3.anInt5400 = value;
 		}
 		if (clientCode == 6) {
-			Static2.anInt1599 = value;
+			Static2.chatEffectsDisabled = value;
 		}
 	}
 

@@ -225,7 +225,7 @@ public final class Static27 {
 		LightTypeList.removeSoft();
 		CursorTypeList.removeSoft();
 		Static14.method1172();
-		Static20.method1974();
+		Component.removeSoft();
 		Static14.method1066();
 		Static18.method1713();
 		Static1.aClass26_5.removeSoft();

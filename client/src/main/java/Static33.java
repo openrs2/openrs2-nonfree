@@ -768,7 +768,7 @@ public final class Static33 {
 			}
 			for (@Pc(394) int local394 = 0; local394 < NpcList.size; local394++) {
 				@Pc(407) Npc local407 = NpcList.npcs[NpcList.ids[local394]];
-				if (local407 != null && local407.method3310()) {
+				if (local407 != null && local407.isVisible()) {
 					@Pc(418) NpcType local418 = local407.type;
 					if (local418 != null && local418.multiNpcs != null) {
 						local418 = local418.getMultiNpc();
@@ -786,7 +786,7 @@ public final class Static33 {
 			}
 			for (@Pc(493) int local493 = 0; local493 < PlayerList.size; local493++) {
 				@Pc(502) Player local502 = PlayerList.players[PlayerList.ids[local493]];
-				if (local502 != null && local502.method3310()) {
+				if (local502 != null && local502.isVisible()) {
 					@Pc(520) int local520 = local502.xFine / 32 - PlayerList.self.xFine / 32;
 					@Pc(522) boolean local522 = false;
 					@Pc(533) int local533 = local502.zFine / 32 - PlayerList.self.zFine / 32;

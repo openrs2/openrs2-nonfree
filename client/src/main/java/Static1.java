@@ -160,9 +160,6 @@ public final class Static1 {
 	@OriginalMember(owner = "client!ae", name = "l", descriptor = "Z")
 	public static boolean aBoolean8 = false;
 
-	@OriginalMember(owner = "client!af", name = "v", descriptor = "Lclient!cc;")
-	public static final SoftLruHashTable aClass26_1 = new SoftLruHashTable(50);
-
 	@OriginalMember(owner = "client!af", name = "A", descriptor = "[I")
 	public static final int[] anIntArray13 = new int[5];
 
@@ -228,9 +225,6 @@ public final class Static1 {
 
 	@OriginalMember(owner = "client!bk", name = "e", descriptor = "S")
 	public static short aShort9 = 1;
-
-	@OriginalMember(owner = "client!bl", name = "cb", descriptor = "Lclient!cc;")
-	public static final SoftLruHashTable aClass26_4 = new SoftLruHashTable(20);
 
 	@OriginalMember(owner = "client!bl", name = "db", descriptor = "Lclient!cc;")
 	public static final SoftLruHashTable aClass26_5 = new SoftLruHashTable(4);

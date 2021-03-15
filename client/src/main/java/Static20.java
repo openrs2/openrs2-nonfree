@@ -838,7 +838,7 @@ public final class Static20 {
 				SoftwareRaster.drawRect(local47 - 152, local59, 304, 34, 9179409);
 				SoftwareRaster.fillRect(local47 - 150, local59 + 2, WorldMap.loadPercentage * 3, 30, 9179409);
 			}
-			Fonts.b12Full.method2271(LocalisedText.LOADINGDOTDOTDOT, local47, local59 + 20, 16777215, -1);
+			Fonts.b12Full.renderCenter(LocalisedText.LOADINGDOTDOTDOT, local47, local59 + 20, 16777215, -1);
 			return;
 		}
 		Static7.anInt5680 = (int) ((float) (arg0 * 2) / Static3.aFloat68);
@@ -859,7 +859,7 @@ public final class Static20 {
 			method2403();
 			@Pc(268) LinkedList local268 = Static19.method2397();
 			Static9.method193(local268, arg2, arg1);
-			Static3.aClass4_Sub3_Sub14_Sub1_2.method2169();
+			Static3.aClass4_Sub3_Sub14_Sub1_2.flipHorizontal();
 			GlRaster.drawPixels(Static3.aClass4_Sub3_Sub14_Sub1_2.pixels, arg2, arg1, arg3, arg0);
 			SoftwareRaster.pixels = null;
 		} else {
@@ -881,14 +881,14 @@ public final class Static20 {
 		@Pc(310) int local310 = arg3 + arg2 - 5;
 		@Pc(312) int local312 = 16776960;
 		@Pc(318) int local318 = arg1 + arg0 - 8;
-		Fonts.p12Full.method2275("Fps:" + GameShell.framesPerSecond, local310, local318, 16776960, -1);
+		Fonts.p12Full.renderRight("Fps:" + GameShell.framesPerSecond, local310, local318, 16776960, -1);
 		@Pc(334) Runtime local334 = Runtime.getRuntime();
 		local318 -= 15;
 		@Pc(344) int local344 = (int) ((local334.totalMemory() - local334.freeMemory()) / 1024L);
 		if (local344 > 65536) {
 			local312 = 16711680;
 		}
-		Fonts.p12Full.method2275("Mem:" + local344 + "k", local310, local318, local312, -1);
+		Fonts.p12Full.renderRight("Mem:" + local344 + "k", local310, local318, local312, -1);
 		@Pc(368) int local368 = local318 - 15;
 	}
 
@@ -932,13 +932,6 @@ public final class Static20 {
 				local112.aBoolean281 = false;
 			}
 		}
-	}
-
-	@OriginalMember(owner = "client!in", name = "a", descriptor = "(ZI)V")
-	public static void method1942() {
-		Static6.aClass26_48.clean(50);
-		Static1.aClass26_1.clean(50);
-		Static1.aClass26_4.clean(50);
 	}
 
 	@OriginalMember(owner = "client!io", name = "a", descriptor = "(Z)V")
@@ -1045,13 +1038,6 @@ public final class Static20 {
 	public static void method1970(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1) {
 		Static1.anInt929 = Static3.anInt2961 + Static3.anInt2960 - arg1 - 1;
 		Static6.anInt4393 = arg0 - Static3.anInt2962;
-	}
-
-	@OriginalMember(owner = "client!jb", name = "a", descriptor = "(I)V")
-	public static void method1974() {
-		Static6.aClass26_48.removeSoft();
-		Static1.aClass26_1.removeSoft();
-		Static1.aClass26_4.removeSoft();
 	}
 
 	@OriginalMember(owner = "client!jb", name = "a", descriptor = "(IZIII)V")

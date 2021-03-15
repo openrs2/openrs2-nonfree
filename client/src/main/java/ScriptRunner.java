@@ -2300,7 +2300,7 @@ public final class ScriptRunner {
 							ssp--;
 							@Pc(11244) String text = stringStack[ssp];
 							isp = isp2 + 1;
-							intStack[isp2] = Static31.method3656(fontId).method2274(text, local11239);
+							intStack[isp2] = Static31.method3656(fontId).getParagraphLineCount(text, local11239);
 							continue;
 						}
 						if (opcode == 4109) {
@@ -2310,7 +2310,7 @@ public final class ScriptRunner {
 							@Pc(11269) int local11269 = intStack[isp2];
 							@Pc(11275) int fontId = intStack[isp2 + 1];
 							isp = isp2 + 1;
-							intStack[isp2] = Static31.method3656(fontId).method2261(text, local11269);
+							intStack[isp2] = Static31.method3656(fontId).getParagraphWidth(text, local11269);
 							continue;
 						}
 						if (opcode == 4110) {

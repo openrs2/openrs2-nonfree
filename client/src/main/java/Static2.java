@@ -22,9 +22,6 @@ public final class Static2 {
 	@OriginalMember(owner = "client!eh", name = "k", descriptor = "Lclient!fh;")
 	public static Js5 aClass58_37;
 
-	@OriginalMember(owner = "client!ei", name = "F", descriptor = "[I")
-	public static int[] anIntArray97;
-
 	@OriginalMember(owner = "client!el", name = "m", descriptor = "I")
 	public static int anInt1317;
 
@@ -185,7 +182,7 @@ public final class Static2 {
 	public static boolean aBoolean82 = false;
 
 	@OriginalMember(owner = "client!f", name = "Sc", descriptor = "I")
-	public static int anInt1599 = 0;
+	public static int chatEffectsDisabled = 0;
 
 	@OriginalMember(owner = "client!fa", name = "S", descriptor = "Lclient!ll;")
 	public static final LinkedList aClass112_8 = new LinkedList();

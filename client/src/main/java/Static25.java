@@ -319,7 +319,7 @@ public final class Static25 {
 			Static2.aClass4_Sub3_Sub14_2.renderTransparent(local3, local5);
 			Static2.aClass4_Sub3_Sub14_2.renderHorizontalFlipTransparent(local21 + local3 - Static2.aClass4_Sub3_Sub14_2.width, local5);
 		}
-		Fonts.b12Full.method2259(LocalisedText.CHOOSE_OPTION, local3 + 3, local5 + 14, Static1.anInt504, -1);
+		Fonts.b12Full.renderLeft(LocalisedText.CHOOSE_OPTION, local3 + 3, local5 + 14, Static1.anInt504, -1);
 		if (GlRenderer.enabled) {
 			GlRaster.fillRectAlpha(local3, local5 + 20, local21, local13 - 20, Static5.anInt4293, 256 - Static3.anInt2587);
 		} else {
@@ -378,7 +378,7 @@ public final class Static25 {
 			if (local211 > local3 && local21 + local3 > local211 && local535 - 13 < local213 && local535 + 3 > local213) {
 				local537 = Static4.anInt2920;
 			}
-			Fonts.b12Full.method2259(Static26.method2992(local518), local3 + 3, local535, local537, 0);
+			Fonts.b12Full.renderLeft(Static26.method2992(local518), local3 + 3, local535, local537, 0);
 		}
 		Static16.method1559(Static5.anInt3890, Static4.anInt3455, Static3.anInt2394, Static6.anInt4440);
 	}

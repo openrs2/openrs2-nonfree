@@ -245,14 +245,14 @@ public final class Static13 {
 		@Pc(191) int local191 = MathUtils.SINE[local9.xAngle2d] * local145 >> 16;
 		local61.method3822(local9.yAngle2d, local9.anInt5062, local9.xAngle2d, local9.xOffset2d, local191 + local9.yOffset2d - local61.getMinY() / 2, local9.yOffset2d + local174, -1L);
 		if (arg0 >= 1) {
-			local131.method2174(1);
+			local131.addOutline(1);
 			if (arg0 >= 2) {
-				local131.method2174(16777215);
+				local131.addOutline(16777215);
 			}
 			SoftwareRaster.setPixels(local131.pixels, 36, 32);
 		}
 		if (arg5 != 0) {
-			local131.method2168(arg5);
+			local131.addShadow(arg5);
 		}
 		if (local9.certificateTemplate != -1) {
 			local68.renderTransparent(0, 0);
@@ -262,7 +262,7 @@ public final class Static13 {
 			local131 = local68;
 		}
 		if (arg1 && (local9.stackable == 1 || arg2 != 1) && arg2 != -1) {
-			ObjTypeList.font.method2259(method892(arg2), 0, 9, 16776960, 1);
+			ObjTypeList.font.renderLeft(method892(arg2), 0, 9, 16776960, 1);
 		}
 		SoftwareRaster.setPixels(local116, local123, local118);
 		SoftwareRaster.setClip(local121);

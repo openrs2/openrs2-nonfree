@@ -204,42 +204,42 @@ public final class Protocol {
 			@Pc(462) String message = inboundBuffer.readString();
 			if (message.endsWith(":tradereq:")) {
 				@Pc(912) String username = message.substring(0, message.indexOf(":"));
-				@Pc(914) boolean local914 = false;
+				@Pc(914) boolean ignore = false;
 				@Pc(918) long encodedUsername = Base37.encode(username);
 				for (@Pc(920) int i = 0; i < IgnoreList.size; i++) {
 					if (IgnoreList.encodedUsernames[i] == encodedUsername) {
-						local914 = true;
+						ignore = true;
 						break;
 					}
 				}
-				if (!local914 && Static3.anInt5405 == 0) {
+				if (!ignore && Player.inTutorialIsland == 0) {
 					Chat.add(4, username, LocalisedText.TRADEREQ);
 				}
 			} else if (message.endsWith(":chalreq:")) {
 				@Pc(851) String username = message.substring(0, message.indexOf(":"));
-				@Pc(853) boolean local853 = false;
+				@Pc(853) boolean ignore = false;
 				@Pc(859) long encodedUsername = Base37.encode(username);
 				for (@Pc(861) int i = 0; i < IgnoreList.size; i++) {
 					if (IgnoreList.encodedUsernames[i] == encodedUsername) {
-						local853 = true;
+						ignore = true;
 						break;
 					}
 				}
-				if (!local853 && Static3.anInt5405 == 0) {
+				if (!ignore && Player.inTutorialIsland == 0) {
 					@Pc(898) String local898 = message.substring(message.indexOf(":") + 1, message.length() - 9);
 					Chat.add(8, username, local898);
 				}
 			} else if (message.endsWith(":assistreq:")) {
 				@Pc(481) String username = message.substring(0, message.indexOf(":"));
 				@Pc(485) long encodedUsername = Base37.encode(username);
-				@Pc(487) boolean local487 = false;
+				@Pc(487) boolean ignore = false;
 				for (@Pc(489) int i = 0; i < IgnoreList.size; i++) {
 					if (encodedUsername == IgnoreList.encodedUsernames[i]) {
-						local487 = true;
+						ignore = true;
 						break;
 					}
 				}
-				if (!local487 && Static3.anInt5405 == 0) {
+				if (!ignore && Player.inTutorialIsland == 0) {
 					Chat.add(10, username, "");
 				}
 			} else if (message.endsWith(":clan:")) {
@@ -247,70 +247,70 @@ public final class Protocol {
 				Chat.add(11, "", username);
 			} else if (message.endsWith(":trade:")) {
 				@Pc(818) String username = message.substring(0, message.indexOf(":trade:"));
-				if (Static3.anInt5405 == 0) {
+				if (Player.inTutorialIsland == 0) {
 					Chat.add(12, "", username);
 				}
 			} else if (message.endsWith(":assist:")) {
 				@Pc(542) String username = message.substring(0, message.indexOf(":assist:"));
-				if (Static3.anInt5405 == 0) {
+				if (Player.inTutorialIsland == 0) {
 					Chat.add(13, "", username);
 				}
 			} else if (message.endsWith(":duelstake:")) {
 				@Pc(767) String username = message.substring(0, message.indexOf(":"));
 				@Pc(773) long encodedUsername = Base37.encode(username);
-				@Pc(775) boolean local775 = false;
+				@Pc(775) boolean ignore = false;
 				for (@Pc(777) int i = 0; i < IgnoreList.size; i++) {
 					if (IgnoreList.encodedUsernames[i] == encodedUsername) {
-						local775 = true;
+						ignore = true;
 						break;
 					}
 				}
-				if (!local775 && Static3.anInt5405 == 0) {
+				if (!ignore && Player.inTutorialIsland == 0) {
 					Chat.add(14, username, "");
 				}
 			} else if (message.endsWith(":duelfriend:")) {
 				@Pc(715) String username = message.substring(0, message.indexOf(":"));
-				@Pc(717) boolean local717 = false;
+				@Pc(717) boolean ignore = false;
 				@Pc(721) long encodedUsername = Base37.encode(username);
 				for (@Pc(723) int i = 0; i < IgnoreList.size; i++) {
 					if (encodedUsername == IgnoreList.encodedUsernames[i]) {
-						local717 = true;
+						ignore = true;
 						break;
 					}
 				}
-				if (!local717 && Static3.anInt5405 == 0) {
+				if (!ignore && Player.inTutorialIsland == 0) {
 					Chat.add(15, username, "");
 				}
 			} else if (message.endsWith(":clanreq:")) {
 				@Pc(667) String username = message.substring(0, message.indexOf(":"));
 				@Pc(671) long encodedUsername = Base37.encode(username);
-				@Pc(673) boolean local673 = false;
+				@Pc(673) boolean ignore = false;
 				for (@Pc(675) int i = 0; i < IgnoreList.size; i++) {
 					if (encodedUsername == IgnoreList.encodedUsernames[i]) {
-						local673 = true;
+						ignore = true;
 						break;
 					}
 				}
-				if (!local673 && Static3.anInt5405 == 0) {
+				if (!ignore && Player.inTutorialIsland == 0) {
 					Chat.add(16, username, "");
 				}
 			} else if (message.endsWith(":allyreq:")) {
 				@Pc(578) String username = message.substring(0, message.indexOf(":"));
 				@Pc(584) long encodedUsername = Base37.encode(username);
-				@Pc(586) boolean local586 = false;
+				@Pc(586) boolean ignore = false;
 				for (@Pc(588) int i = 0; i < IgnoreList.size; i++) {
 					if (encodedUsername == IgnoreList.encodedUsernames[i]) {
-						local586 = true;
+						ignore = true;
 						break;
 					}
 				}
-				if (!local586 && Static3.anInt5405 == 0) {
+				if (!ignore && Player.inTutorialIsland == 0) {
 					@Pc(621) String local621 = message.substring(message.indexOf(":") + 1, message.length() - 9);
 					Chat.add(21, username, local621);
 				}
 			} else if (message.endsWith(":spam:")) {
 				@Pc(647) String username = message.substring(0, message.length() - 6);
-				if (Static3.anInt5405 == 0) {
+				if (Player.inTutorialIsland == 0) {
 					Chat.add(22, "", username);
 				}
 			} else {
@@ -777,7 +777,7 @@ public final class Protocol {
 				}
 				i++;
 			}
-			if (!ignore && Static3.anInt5405 == 0) {
+			if (!ignore && Player.inTutorialIsland == 0) {
 				Chat.uids[Chat.uidsWriterIndex] = uid;
 				Chat.uidsWriterIndex = (Chat.uidsWriterIndex + 1) % 100;
 				@Pc(2663) String message = StringUtils.escape(StringUtils.formatChatMessage(WordPack.readString(inboundBuffer)));
@@ -854,7 +854,7 @@ public final class Protocol {
 				}
 				break;
 			}
-			if (!ignore && Static3.anInt5405 == 0) {
+			if (!ignore && Player.inTutorialIsland == 0) {
 				Chat.uids[Chat.uidsWriterIndex] = uid;
 				Chat.uidsWriterIndex = (Chat.uidsWriterIndex + 1) % 100;
 				@Pc(2939) String message = StringUtils.escape(StringUtils.formatChatMessage(WordPack.readString(inboundBuffer)));
@@ -1220,7 +1220,7 @@ public final class Protocol {
 				}
 				break;
 			}
-			if (!ignore && Static3.anInt5405 == 0) {
+			if (!ignore && Player.inTutorialIsland == 0) {
 				Chat.uids[Chat.uidsWriterIndex] = uid;
 				Chat.uidsWriterIndex = (Chat.uidsWriterIndex + 1) % 100;
 				@Pc(4375) String message = QuickChatPhraseTypeList.get(phraseId).decodeMessage(inboundBuffer);
@@ -1430,7 +1430,7 @@ public final class Protocol {
 				}
 				break;
 			}
-			if (!ignore && Static3.anInt5405 == 0) {
+			if (!ignore && Player.inTutorialIsland == 0) {
 				Chat.uids[Chat.uidsWriterIndex] = uid;
 				Chat.uidsWriterIndex = (Chat.uidsWriterIndex + 1) % 100;
 				@Pc(5214) String message = QuickChatPhraseTypeList.get(phraseId).decodeMessage(inboundBuffer);
@@ -2228,9 +2228,9 @@ public final class Protocol {
 					PlayerList.ids[PlayerList.size++] = id;
 					@Pc(65) Player player = PlayerList.players[id];
 					player.lastSeenLoop = client.loop;
-					@Pc(75) int local75 = PathingEntity.ANGLES[inboundBuffer.readBits(3)];
+					@Pc(75) int angle = PathingEntity.ANGLES[inboundBuffer.readBits(3)];
 					if (created) {
-						player.targetAngle = player.angle = local75;
+						player.targetAngle = player.angle = angle;
 					}
 					@Pc(88) int x = inboundBuffer.readBits(5);
 					if (x > 15) {
@@ -2313,28 +2313,28 @@ public final class Protocol {
 			Static32.method4023(local126, player, local123, local120);
 		}
 		if ((flags & 0x10) != 0) {
-			player.aString234 = inboundBuffer.readString();
-			if (player.aString234.charAt(0) == '~') {
-				player.aString234 = player.aString234.substring(1);
-				Chat.add(2, player.getName(), player.aString234);
+			player.chatMessage = inboundBuffer.readString();
+			if (player.chatMessage.charAt(0) == '~') {
+				player.chatMessage = player.chatMessage.substring(1);
+				Chat.add(2, player.getName(), player.chatMessage);
 			} else if (player == PlayerList.self) {
-				Chat.add(2, player.getName(), player.aString234);
+				Chat.add(2, player.getName(), player.chatMessage);
 			}
-			player.anInt3998 = 0;
-			player.anInt3981 = 0;
-			player.anInt4023 = 150;
+			player.chatEffect = 0;
+			player.chatColor = 0;
+			player.chatLoops = 150;
 		}
 		if ((flags & 0x20) != 0) {
-			@Pc(232) int local232 = inboundBuffer.readUnsignedShortA();
+			@Pc(232) int chatFlags = inboundBuffer.readUnsignedShortA();
 			@Pc(236) int staffModelLevel = inboundBuffer.readUnsignedByteA();
-			@Pc(244) boolean local244 = (local232 & 0x8000) != 0;
+			@Pc(244) boolean quickChat = (chatFlags & 0x8000) != 0;
 			@Pc(248) int len = inboundBuffer.readUnsignedByteS();
 			@Pc(251) int off = inboundBuffer.position;
 			if (player.username != null && player.appearance != null) {
 				@Pc(264) long encodedUsername = Base37.encode(player.username);
 				@Pc(266) boolean ignore = false;
 				if (staffModelLevel <= 1) {
-					if (!local244 && (LoginManager.playerUnderage && !LoginManager.parentalChatConsent || LoginManager.mapQuickChat)) {
+					if (!quickChat && (LoginManager.playerUnderage && !LoginManager.parentalChatConsent || LoginManager.mapQuickChat)) {
 						ignore = true;
 					} else {
 						for (@Pc(284) int i = 0; i < IgnoreList.size; i++) {
@@ -2345,30 +2345,30 @@ public final class Protocol {
 						}
 					}
 				}
-				if (!ignore && Static3.anInt5405 == 0) {
+				if (!ignore && Player.inTutorialIsland == 0) {
 					chatBuffer.position = 0;
 					@Pc(314) int phraseId = -1;
 					inboundBuffer.readBytesReverse(chatBuffer.bytes, len);
 					chatBuffer.position = 0;
 					@Pc(333) String message;
-					if (local244) {
-						local232 &= 32767;
+					if (quickChat) {
+						chatFlags &= 32767;
 						@Pc(343) QuickChatPhrase phrase = QuickChatPhrase.decode(chatBuffer);
 						phraseId = phrase.id;
 						message = phrase.type.decodeMessage(chatBuffer);
 					} else {
 						message = StringUtils.escape(StringUtils.formatChatMessage(WordPack.readString(chatBuffer)));
 					}
-					player.aString234 = message.trim();
-					player.anInt3998 = local232 & 0xFF;
-					player.anInt4023 = 150;
-					player.anInt3981 = local232 >> 8;
+					player.chatMessage = message.trim();
+					player.chatEffect = chatFlags & 0xFF;
+					player.chatLoops = 150;
+					player.chatColor = chatFlags >> 8;
 					if (staffModelLevel == 2) {
-						Chat.add(local244 ? 17 : 1, "<img=1>" + player.getName(), message, null, phraseId);
+						Chat.add(quickChat ? 17 : 1, "<img=1>" + player.getName(), message, null, phraseId);
 					} else if (staffModelLevel == 1) {
-						Chat.add(local244 ? 17 : 1, "<img=0>" + player.getName(), message, null, phraseId);
+						Chat.add(quickChat ? 17 : 1, "<img=0>" + player.getName(), message, null, phraseId);
 					} else {
-						Chat.add(local244 ? 17 : 2, player.getName(), message, null, phraseId);
+						Chat.add(quickChat ? 17 : 2, player.getName(), message, null, phraseId);
 					}
 				}
 			}
@@ -2497,11 +2497,11 @@ public final class Protocol {
 					if (inboundBuffer.readBits(1) == 1) {
 						@Pc(215) int firstDirection = inboundBuffer.readBits(3);
 						npc.move(firstDirection, 2);
-						@Pc(227) int local227 = inboundBuffer.readBits(3);
-						npc.move(local227, 2);
+						@Pc(227) int secondDirection = inboundBuffer.readBits(3);
+						npc.move(secondDirection, 2);
 					} else {
-						@Pc(201) int secondDirection = inboundBuffer.readBits(3);
-						npc.move(secondDirection, 0);
+						@Pc(201) int direction = inboundBuffer.readBits(3);
+						npc.move(direction, 0);
 					}
 					@Pc(237) int extended = inboundBuffer.readBits(1);
 					if (extended == 1) {
@@ -2535,9 +2535,9 @@ public final class Protocol {
 					if (z > 15) {
 						z -= 32;
 					}
-					@Pc(89) int local89 = PathingEntity.ANGLES[inboundBuffer.readBits(3)];
+					@Pc(89) int angle = PathingEntity.ANGLES[inboundBuffer.readBits(3)];
 					if (created) {
-						npc.targetAngle = npc.angle = local89;
+						npc.targetAngle = npc.angle = angle;
 					}
 					@Pc(102) int x = inboundBuffer.readBits(5);
 					npc.setType(NpcTypeList.get(inboundBuffer.readBits(14)));
@@ -2666,8 +2666,8 @@ public final class Protocol {
 				}
 			}
 			if ((flags & 0x80) != 0) {
-				npc.aString234 = inboundBuffer.readString();
-				npc.anInt4023 = 100;
+				npc.chatMessage = inboundBuffer.readString();
+				npc.chatLoops = 100;
 			}
 		}
 	}

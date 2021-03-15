@@ -648,7 +648,7 @@ public final class Static15 {
 			SoftwareRaster.fillRect(local3 + 1, local9 + 1, local11 - 2, 16, 0);
 			SoftwareRaster.drawRect(local3 + 1, local9 + 18, local11 - 2, local19 - 19, 0);
 		}
-		Fonts.b12Full.method2259(LocalisedText.CHOOSE_OPTION, local3 + 3, local9 + 14, 6116423, -1);
+		Fonts.b12Full.renderLeft(LocalisedText.CHOOSE_OPTION, local3 + 3, local9 + 14, 6116423, -1);
 		@Pc(100) int local100 = Mouse.x;
 		@Pc(102) int local102 = Mouse.y;
 		for (@Pc(104) int local104 = 0; local104 < Static7.anInt5634; local104++) {
@@ -657,25 +657,9 @@ public final class Static15 {
 			if (local100 > local3 && local3 + local11 > local100 && local102 > local125 - 13 && local102 < local125 + 3) {
 				local127 = 16776960;
 			}
-			Fonts.b12Full.method2259(Static26.method2992(local104), local3 + 3, local125, local127, 0);
+			Fonts.b12Full.renderLeft(Static26.method2992(local104), local3 + 3, local125, local127, 0);
 		}
 		Static16.method1559(Static5.anInt3890, Static4.anInt3455, Static3.anInt2394, Static6.anInt4440);
-	}
-
-	@OriginalMember(owner = "client!fm", name = "a", descriptor = "(B)V")
-	public static void method1480() {
-		Static3.anInt5405 = 0;
-		@Pc(13) int local13 = (PlayerList.self.xFine >> 7) + Static5.originX;
-		@Pc(20) int local20 = Static7.originZ + (PlayerList.self.zFine >> 7);
-		if (local13 >= 3053 && local13 <= 3156 && local20 >= 3056 && local20 <= 3136) {
-			Static3.anInt5405 = 1;
-		}
-		if (local13 >= 3072 && local13 <= 3118 && local20 >= 9492 && local20 <= 9535) {
-			Static3.anInt5405 = 1;
-		}
-		if (Static3.anInt5405 == 1 && local13 >= 3139 && local13 <= 3199 && local20 >= 3008 && local20 <= 3062) {
-			Static3.anInt5405 = 0;
-		}
 	}
 
 }

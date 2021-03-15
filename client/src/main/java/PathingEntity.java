@@ -157,7 +157,7 @@ public abstract class PathingEntity extends Entity {
 	private int anInt4012 = 0;
 
 	@OriginalMember(owner = "client!qc", name = "L", descriptor = "Ljava/lang/String;")
-	public String aString234 = null;
+	public String chatMessage = null;
 
 	@OriginalMember(owner = "client!qc", name = "kb", descriptor = "Z")
 	public boolean aBoolean283 = false;
@@ -181,13 +181,13 @@ public abstract class PathingEntity extends Entity {
 	public int anInt3992 = 0;
 
 	@OriginalMember(owner = "client!qc", name = "Nb", descriptor = "I")
-	public int anInt4023 = 100;
+	public int chatLoops = 100;
 
 	@OriginalMember(owner = "client!qc", name = "Tb", descriptor = "I")
 	public int anInt4029 = 0;
 
 	@OriginalMember(owner = "client!qc", name = "ib", descriptor = "I")
-	public int anInt3998 = 0;
+	public int chatEffect = 0;
 
 	@OriginalMember(owner = "client!qc", name = "Ub", descriptor = "I")
 	public int anInt4030 = 0;
@@ -217,7 +217,7 @@ public abstract class PathingEntity extends Entity {
 	protected int anInt4016 = -32768;
 
 	@OriginalMember(owner = "client!qc", name = "M", descriptor = "I")
-	public int anInt3981 = 0;
+	public int chatColor = 0;
 
 	@OriginalMember(owner = "client!qc", name = "dc", descriptor = "I")
 	private int anInt4039 = 0;
@@ -594,7 +594,7 @@ public abstract class PathingEntity extends Entity {
 	}
 
 	@OriginalMember(owner = "client!qc", name = "d", descriptor = "(I)Z")
-	public boolean method3310() {
+	public boolean isVisible() {
 		return false;
 	}
 

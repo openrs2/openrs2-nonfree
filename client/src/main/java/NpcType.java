@@ -55,7 +55,7 @@ public final class NpcType {
 	public int idleSound = -1;
 
 	@OriginalMember(owner = "client!ua", name = "m", descriptor = "I")
-	public int anInt5238 = -1;
+	public int prayerIcon = -1;
 
 	@OriginalMember(owner = "client!ua", name = "H", descriptor = "I")
 	public int walkSound = -1;
@@ -251,7 +251,7 @@ public final class NpcType {
 		} else if (code == 101) {
 			this.anInt5239 = buffer.readByte() * 5;
 		} else if (code == 102) {
-			this.anInt5238 = buffer.readUnsignedShort();
+			this.prayerIcon = buffer.readUnsignedShort();
 		} else if (code == 103) {
 			this.anInt5243 = buffer.readUnsignedShort();
 		} else if (code == 106 || code == 118) {

@@ -222,7 +222,7 @@ public class SoftwareSprite extends Sprite {
 	}
 
 	@OriginalMember(owner = "client!vn", name = "a", descriptor = "()V")
-	public final void method2164() {
+	public final void flipVertical() {
 		@Pc(2) int[] local2 = this.pixels;
 		for (@Pc(7) int local7 = this.height - 1; local7 >= 0; local7--) {
 			@Pc(14) int local14 = local7 * this.width;
@@ -401,19 +401,19 @@ public class SoftwareSprite extends Sprite {
 	}
 
 	@OriginalMember(owner = "client!vn", name = "e", descriptor = "(I)V")
-	public final void method2168(@OriginalArg(0) int arg0) {
-		for (@Pc(4) int local4 = this.height - 1; local4 > 0; local4--) {
-			@Pc(11) int local11 = local4 * this.width;
-			for (@Pc(16) int local16 = this.width - 1; local16 > 0; local16--) {
-				if (this.pixels[local16 + local11] == 0 && this.pixels[local16 + local11 - this.width - 1] != 0) {
-					this.pixels[local16 + local11] = arg0;
+	public final void addShadow(@OriginalArg(0) int shadowColor) {
+		for (@Pc(4) int y = this.height - 1; y > 0; y--) {
+			@Pc(11) int off = y * this.width;
+			for (@Pc(16) int x = this.width - 1; x > 0; x--) {
+				if (this.pixels[x + off] == 0 && this.pixels[x + off - this.width - 1] != 0) {
+					this.pixels[x + off] = shadowColor;
 				}
 			}
 		}
 	}
 
 	@OriginalMember(owner = "client!vn", name = "b", descriptor = "()V")
-	public final void method2169() {
+	public final void flipHorizontal() {
 		@Pc(2) int[] local2 = this.pixels;
 		for (@Pc(9) int local9 = (this.height >> 1) - 1; local9 >= 0; local9--) {
 			@Pc(16) int local16 = local9 * this.width;
@@ -985,27 +985,27 @@ public class SoftwareSprite extends Sprite {
 	}
 
 	@OriginalMember(owner = "client!vn", name = "f", descriptor = "(I)V")
-	public final void method2174(@OriginalArg(0) int arg0) {
-		@Pc(6) int[] local6 = new int[this.width * this.height];
-		@Pc(8) int local8 = 0;
-		for (@Pc(10) int local10 = 0; local10 < this.height; local10++) {
-			for (@Pc(16) int local16 = 0; local16 < this.width; local16++) {
-				@Pc(25) int local25 = this.pixels[local8];
-				if (local25 == 0) {
-					if (local16 > 0 && this.pixels[local8 - 1] != 0) {
-						local25 = arg0;
-					} else if (local10 > 0 && this.pixels[local8 - this.width] != 0) {
-						local25 = arg0;
-					} else if (local16 < this.width - 1 && this.pixels[local8 + 1] != 0) {
-						local25 = arg0;
-					} else if (local10 < this.height - 1 && this.pixels[local8 + this.width] != 0) {
-						local25 = arg0;
+	public final void addOutline(@OriginalArg(0) int outlineColor) {
+		@Pc(6) int[] pixels = new int[this.width * this.height];
+		@Pc(8) int off = 0;
+		for (@Pc(10) int y = 0; y < this.height; y++) {
+			for (@Pc(16) int x = 0; x < this.width; x++) {
+				@Pc(25) int color = this.pixels[off];
+				if (color == 0) {
+					if (x > 0 && this.pixels[off - 1] != 0) {
+						color = outlineColor;
+					} else if (y > 0 && this.pixels[off - this.width] != 0) {
+						color = outlineColor;
+					} else if (x < this.width - 1 && this.pixels[off + 1] != 0) {
+						color = outlineColor;
+					} else if (y < this.height - 1 && this.pixels[off + this.width] != 0) {
+						color = outlineColor;
 					}
 				}
-				local6[local8++] = local25;
+				pixels[off++] = color;
 			}
 		}
-		this.pixels = local6;
+		this.pixels = pixels;
 	}
 
 	@OriginalMember(owner = "client!vn", name = "d", descriptor = "()V")
@@ -1031,35 +1031,35 @@ public class SoftwareSprite extends Sprite {
 		if (this.width == this.innerWidth && this.height == this.innerHeight) {
 			return;
 		}
-		@Pc(12) int local12 = arg0;
+		@Pc(12) int xOffsetDelta = arg0;
 		if (arg0 > this.xOffset) {
-			local12 = this.xOffset;
+			xOffsetDelta = this.xOffset;
 		}
-		@Pc(21) int local21 = arg0;
+		@Pc(21) int widthDelta = arg0;
 		if (arg0 + this.xOffset + this.width > this.innerWidth) {
-			local21 = this.innerWidth - this.xOffset - this.width;
+			widthDelta = this.innerWidth - this.xOffset - this.width;
 		}
-		@Pc(42) int local42 = arg0;
+		@Pc(42) int yOffsetDelta = arg0;
 		if (arg0 > this.yOffset) {
-			local42 = this.yOffset;
+			yOffsetDelta = this.yOffset;
 		}
-		@Pc(51) int local51 = arg0;
+		@Pc(51) int heightDelta = arg0;
 		if (arg0 + this.yOffset + this.height > this.innerHeight) {
-			local51 = this.innerHeight - this.yOffset - this.height;
+			heightDelta = this.innerHeight - this.yOffset - this.height;
 		}
-		@Pc(77) int local77 = this.width + local12 + local21;
-		@Pc(84) int local84 = this.height + local42 + local51;
-		@Pc(89) int[] local89 = new int[local77 * local84];
-		for (@Pc(91) int local91 = 0; local91 < this.height; local91++) {
-			for (@Pc(97) int local97 = 0; local97 < this.width; local97++) {
-				local89[(local91 + local42) * local77 + local97 + local12] = this.pixels[local91 * this.width + local97];
+		@Pc(77) int newWidth = this.width + xOffsetDelta + widthDelta;
+		@Pc(84) int newHeight = this.height + yOffsetDelta + heightDelta;
+		@Pc(89) int[] pixels = new int[newWidth * newHeight];
+		for (@Pc(91) int y = 0; y < this.height; y++) {
+			for (@Pc(97) int x = 0; x < this.width; x++) {
+				pixels[(y + yOffsetDelta) * newWidth + x + xOffsetDelta] = this.pixels[y * this.width + x];
 			}
 		}
-		this.pixels = local89;
-		this.width = local77;
-		this.height = local84;
-		this.xOffset -= local12;
-		this.yOffset -= local42;
+		this.pixels = pixels;
+		this.width = newWidth;
+		this.height = newHeight;
+		this.xOffset -= xOffsetDelta;
+		this.yOffset -= yOffsetDelta;
 	}
 
 	@OriginalMember(owner = "client!vn", name = "b", descriptor = "(II)V")

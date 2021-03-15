@@ -190,20 +190,20 @@ public final class Static37 {
 	}
 
 	@OriginalMember(owner = "client!wd", name = "a", descriptor = "(BLjava/lang/String;Z)V")
-	public static void method4716(@OriginalArg(1) String arg0, @OriginalArg(2) boolean arg1) {
-		@Pc(17) int local17 = Fonts.p12Full.method2261(arg0, 250);
-		@Pc(32) int local32 = Fonts.p12Full.method2274(arg0, 250) * 13;
+	public static void method4716(@OriginalArg(1) String s, @OriginalArg(2) boolean arg1) {
+		@Pc(17) int width = Fonts.p12Full.getParagraphWidth(s, 250);
+		@Pc(32) int lineCount = Fonts.p12Full.getParagraphLineCount(s, 250) * 13;
 		if (GlRenderer.enabled) {
-			GlRaster.fillRect(6, 6, local17 + 4 + 4, local32 + 8, 0);
-			GlRaster.drawRect(6, 6, local17 + 4 + 4, local32 + 4 + 4, 16777215);
+			GlRaster.fillRect(6, 6, width + 4 + 4, lineCount + 8, 0);
+			GlRaster.drawRect(6, 6, width + 4 + 4, lineCount + 4 + 4, 16777215);
 		} else {
-			SoftwareRaster.fillRect(6, 6, local17 + 8, local32 + 4 + 4, 0);
-			SoftwareRaster.drawRect(6, 6, local17 + 4 + 4, local32 + 8, 16777215);
+			SoftwareRaster.fillRect(6, 6, width + 8, lineCount + 4 + 4, 0);
+			SoftwareRaster.drawRect(6, 6, width + 4 + 4, lineCount + 8, 16777215);
 		}
-		Fonts.p12Full.method2255(arg0, 10, 10, local17, local32, 16777215, -1, 1, 1, 0);
-		Static8.method66(local17 + 4 + 4, local32 + 4 + 4, 6, 6);
+		Fonts.p12Full.renderParagraph(s, 10, 10, width, lineCount, 16777215, -1, 1, 1, 0);
+		Static8.method66(width + 4 + 4, lineCount + 4 + 4, 6, 6);
 		if (!arg1) {
-			Static16.method1559(10, 10, local32, local17);
+			Static16.method1559(10, 10, lineCount, width);
 		} else if (GlRenderer.enabled) {
 			GlRenderer.swapBuffers();
 		} else {

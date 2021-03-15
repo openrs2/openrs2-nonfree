@@ -40,7 +40,7 @@ public final class Npc extends PathingEntity {
 
 	@OriginalMember(owner = "client!p", name = "d", descriptor = "(I)Z")
 	@Override
-	public final boolean method3310() {
+	public final boolean isVisible() {
 		return this.type != null;
 	}
 

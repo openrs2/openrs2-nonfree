@@ -9,6 +9,36 @@ public final class Component {
 	@OriginalMember(owner = "client!me", name = "g", descriptor = "Lclient!on;")
 	private static final ServerActiveProperties DEFAULT_SERVER_ACTIVE_PROPERTIES = new ServerActiveProperties(0, -1);
 
+	@OriginalMember(owner = "client!bl", name = "cb", descriptor = "Lclient!cc;")
+	private static final SoftLruHashTable fonts = new SoftLruHashTable(20);
+
+	@OriginalMember(owner = "client!af", name = "v", descriptor = "Lclient!cc;")
+	private static final SoftLruHashTable models = new SoftLruHashTable(50);
+
+	@OriginalMember(owner = "client!ri", name = "V", descriptor = "Lclient!cc;")
+	private static final SoftLruHashTable sprites = new SoftLruHashTable(200);
+
+	@OriginalMember(owner = "client!rg", name = "f", descriptor = "(B)V")
+	public static void clear() {
+		sprites.clear();
+		models.clear();
+		fonts.clear();
+	}
+
+	@OriginalMember(owner = "client!in", name = "a", descriptor = "(ZI)V")
+	public static void clean() {
+		sprites.clean(50);
+		models.clean(50);
+		fonts.clean(50);
+	}
+
+	@OriginalMember(owner = "client!jb", name = "a", descriptor = "(I)V")
+	public static void removeSoft() {
+		sprites.removeSoft();
+		models.removeSoft();
+		fonts.removeSoft();
+	}
+
 	@OriginalMember(owner = "client!wf", name = "d", descriptor = "[Ljava/lang/Object;")
 	public Object[] onInvTransmit;
 
@@ -519,7 +549,7 @@ public final class Component {
 	}
 
 	@OriginalMember(owner = "client!wf", name = "a", descriptor = "(Lclient!eg;Lclient!qk;IBIIZ)Lclient!vg;")
-	public final Model method4723(@OriginalArg(0) SeqType arg0, @OriginalArg(1) PlayerAppearance arg1, @OriginalArg(2) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4, @OriginalArg(6) boolean arg5) {
+	public final Model getModel(@OriginalArg(0) SeqType arg0, @OriginalArg(1) PlayerAppearance arg1, @OriginalArg(2) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4, @OriginalArg(6) boolean arg5) {
 		@Pc(14) int local14;
 		@Pc(17) int local17;
 		if (arg5) {
@@ -535,55 +565,55 @@ public final class Component {
 		} else if (local14 == 1 && local17 == -1) {
 			return null;
 		} else if (local14 == 1) {
-			@Pc(61) Model local61 = (Model) Static1.aClass26_1.get((long) (local17 + (local14 << 16)));
-			if (local61 == null) {
+			@Pc(61) Model model = (Model) models.get((long) (local17 + (local14 << 16)));
+			if (model == null) {
 				@Pc(68) RawModel local68 = RawModel.create(InterfaceList.modelsArchive, local17);
 				if (local68 == null) {
 					Static3.aBoolean178 = true;
 					return null;
 				}
-				local61 = local68.createModel(64, 768, -50, -10, -50);
-				Static1.aClass26_1.put((long) (local17 + (local14 << 16)), local61);
+				model = local68.createModel(64, 768, -50, -10, -50);
+				models.put((long) (local17 + (local14 << 16)), model);
 			}
 			if (arg0 != null) {
-				local61 = arg0.method1017(arg4, arg2, local61, arg3);
+				model = arg0.method1017(arg4, arg2, model, arg3);
 			}
-			return local61;
+			return model;
 		} else if (local14 == 2) {
-			@Pc(120) Model local120 = NpcTypeList.get(local17).method4266(arg2, arg0, arg4, arg3);
-			if (local120 == null) {
+			@Pc(120) Model model = NpcTypeList.get(local17).method4266(arg2, arg0, arg4, arg3);
+			if (model == null) {
 				Static3.aBoolean178 = true;
 				return null;
 			} else {
-				return local120;
+				return model;
 			}
 		} else if (local14 == 3) {
 			if (arg1 == null) {
 				return null;
 			}
-			@Pc(149) Model local149 = arg1.method3612(arg4, arg0, arg2, arg3);
-			if (local149 == null) {
+			@Pc(149) Model model = arg1.method3612(arg4, arg0, arg2, arg3);
+			if (model == null) {
 				Static3.aBoolean178 = true;
 				return null;
 			} else {
-				return local149;
+				return model;
 			}
 		} else if (local14 == 4) {
 			@Pc(166) ObjType local166 = ObjTypeList.get(local17);
-			@Pc(176) Model local176 = local166.method4123(arg3, 10, arg2, arg1, arg0, arg4);
-			if (local176 == null) {
+			@Pc(176) Model model = local166.method4123(arg3, 10, arg2, arg1, arg0, arg4);
+			if (model == null) {
 				Static3.aBoolean178 = true;
 				return null;
 			} else {
-				return local176;
+				return model;
 			}
 		} else if (local14 == 6) {
-			@Pc(204) Model local204 = NpcTypeList.get(local17).method4268(arg3, 0, null, arg0, arg2, null, 0, 0, arg4);
-			if (local204 == null) {
+			@Pc(204) Model model = NpcTypeList.get(local17).method4268(arg3, 0, null, arg0, arg2, null, 0, 0, arg4);
+			if (model == null) {
 				Static3.aBoolean178 = true;
 				return null;
 			} else {
-				return local204;
+				return model;
 			}
 		} else if (local14 != 7) {
 			return null;
@@ -593,12 +623,12 @@ public final class Component {
 			@Pc(227) int local227 = this.modelId & 0xFFFF;
 			@Pc(230) int local230 = this.anInt5913;
 			@Pc(235) int local235 = this.modelId >>> 16;
-			@Pc(246) Model local246 = arg1.method3609(arg0, local227, local230, arg3, arg4, local235, arg2);
-			if (local246 == null) {
+			@Pc(246) Model model = arg1.method3609(arg0, local227, local230, arg3, arg4, local235, arg2);
+			if (model == null) {
 				Static3.aBoolean178 = true;
 				return null;
 			} else {
-				return local246;
+				return model;
 			}
 		}
 	}
@@ -609,21 +639,21 @@ public final class Component {
 		if (arg0 < 0 || arg0 >= this.anIntArray658.length) {
 			return null;
 		}
-		@Pc(27) int local27 = this.anIntArray658[arg0];
-		if (local27 == -1) {
+		@Pc(27) int id = this.anIntArray658[arg0];
+		if (id == -1) {
 			return null;
 		}
-		@Pc(39) Sprite local39 = (Sprite) Static6.aClass26_48.get((long) local27);
-		if (local39 != null) {
-			return local39;
+		@Pc(39) Sprite sprite = (Sprite) sprites.get(id);
+		if (sprite != null) {
+			return sprite;
 		}
-		@Pc(50) Sprite local50 = SpriteLoader.loadSprite(InterfaceList.spritesArchive, local27);
-		if (local50 == null) {
+		@Pc(50) Sprite newSprite = SpriteLoader.loadSprite(InterfaceList.spritesArchive, id);
+		if (newSprite == null) {
 			Static3.aBoolean178 = true;
 		} else {
-			Static6.aClass26_48.put((long) local27, local50);
+			sprites.put(id, newSprite);
 		}
-		return local50;
+		return newSprite;
 	}
 
 	@OriginalMember(owner = "client!wf", name = "a", descriptor = "(III)V")
@@ -876,49 +906,49 @@ public final class Component {
 		if (local12 == -1) {
 			return null;
 		}
-		@Pc(66) long local66 = ((this.verticalFlip ? 1L : 0L) << 39) + ((long) this.outline << 36) + (long) local12 + ((this.alpha ? 1L : 0L) << 35) + ((this.horizontalFlip ? 1L : 0L) << 38) + ((long) this.graphicShadow << 40);
-		@Pc(72) Sprite local72 = (Sprite) Static6.aClass26_48.get(local66);
-		if (local72 != null) {
-			return local72;
+		@Pc(66) long key = ((this.verticalFlip ? 1L : 0L) << 39) + ((long) this.outline << 36) + (long) local12 + ((this.alpha ? 1L : 0L) << 35) + ((this.horizontalFlip ? 1L : 0L) << 38) + ((long) this.graphicShadow << 40);
+		@Pc(72) Sprite sprite = (Sprite) sprites.get(key);
+		if (sprite != null) {
+			return sprite;
 		}
-		@Pc(86) SoftwareSprite local86;
+		@Pc(86) SoftwareSprite newSprite;
 		if (this.alpha) {
-			local86 = SpriteLoader.loadSoftwareAlphaSprite(InterfaceList.spritesArchive, local12);
+			newSprite = SpriteLoader.loadSoftwareAlphaSprite(InterfaceList.spritesArchive, local12);
 		} else {
-			local86 = SpriteLoader.loadSoftwareSprite(InterfaceList.spritesArchive, local12, 0);
+			newSprite = SpriteLoader.loadSoftwareSprite(InterfaceList.spritesArchive, local12, 0);
 		}
-		if (local86 == null) {
+		if (newSprite == null) {
 			Static3.aBoolean178 = true;
 			return null;
 		}
 		if (this.horizontalFlip) {
-			local86.method2169();
+			newSprite.flipHorizontal();
 		}
 		if (this.verticalFlip) {
-			local86.method2164();
+			newSprite.flipVertical();
 		}
 		if (this.outline > 0) {
-			local86.method2177(this.outline);
+			newSprite.method2177(this.outline);
 		}
 		if (this.outline >= 1) {
-			local86.method2174(1);
+			newSprite.addOutline(1);
 		}
 		if (this.outline >= 2) {
-			local86.method2174(16777215);
+			newSprite.addOutline(0xFFFFFF);
 		}
 		if (this.graphicShadow != 0) {
-			local86.method2168(this.graphicShadow);
+			newSprite.addShadow(this.graphicShadow);
 		}
-		@Pc(156) Sprite local156;
+		@Pc(156) Sprite newSprite2;
 		if (!GlRenderer.enabled) {
-			local156 = local86;
-		} else if (local86 instanceof SoftwareAlphaSprite) {
-			local156 = new GlAlphaSprite(local86);
+			newSprite2 = newSprite;
+		} else if (newSprite instanceof SoftwareAlphaSprite) {
+			newSprite2 = new GlAlphaSprite(newSprite);
 		} else {
-			local156 = new GlSprite(local86);
+			newSprite2 = new GlSprite(newSprite);
 		}
-		Static6.aClass26_48.put(local66, local156);
-		return local156;
+		sprites.put(key, newSprite2);
+		return newSprite2;
 	}
 
 	@OriginalMember(owner = "client!wf", name = "a", descriptor = "(ILclient!fd;)[I")
@@ -1130,23 +1160,23 @@ public final class Component {
 	}
 
 	@OriginalMember(owner = "client!wf", name = "a", descriptor = "(B[Lclient!ma;)Lclient!gl;")
-	public final Font method4734(@OriginalArg(1) IndexedSprite[] nameIcons) {
+	public final Font getFont(@OriginalArg(1) IndexedSprite[] nameIcons) {
 		Static3.aBoolean178 = false;
 		if (this.textFont == -1) {
 			return null;
 		}
-		@Pc(28) Font local28 = (Font) Static1.aClass26_4.get((long) this.textFont);
-		if (local28 != null) {
-			return local28;
+		@Pc(28) Font font = (Font) fonts.get(this.textFont);
+		if (font != null) {
+			return font;
 		}
-		@Pc(42) Font local42 = SpriteLoader.loadFont(InterfaceList.spritesArchive, InterfaceList.fontMetricsArchive, this.textFont);
-		if (local42 == null) {
+		@Pc(42) Font newFont = SpriteLoader.loadFont(InterfaceList.spritesArchive, InterfaceList.fontMetricsArchive, this.textFont);
+		if (newFont == null) {
 			Static3.aBoolean178 = true;
 		} else {
-			local42.setNameIcons(nameIcons, null);
-			Static1.aClass26_4.put((long) this.textFont, local42);
+			newFont.setNameIcons(nameIcons, null);
+			fonts.put(this.textFont, newFont);
 		}
-		return local42;
+		return newFont;
 	}
 
 	@OriginalMember(owner = "client!wf", name = "c", descriptor = "(I)Z")

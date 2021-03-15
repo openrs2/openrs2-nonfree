@@ -56,7 +56,7 @@ public final class Static28 {
 		if (element.hover && type.hoverTextColor != -1) {
 			textColor = type.hoverTextColor;
 		}
-		@Pc(141) int local141 = Fonts.p11Full.method2279(type.text, null, Static5.aStringArray24);
+		@Pc(141) int local141 = Fonts.p11Full.splitParagraph(type.text, Static5.aStringArray24, null);
 		@Pc(144) int local144 = element.yOffset;
 		@Pc(164) int local164;
 		if (arg4) {
@@ -355,7 +355,7 @@ public final class Static28 {
 		if (Static7.anInt6008 == 2) {
 			Sprites.cross[Static2.anInt1629 / 100 + 4].renderTransparent(Static6.anInt5177 - 8, Static4.anInt3275 - 8);
 		}
-		Static15.method1480();
+		Player.setInTutorialIsland();
 	}
 
 	@OriginalMember(owner = "client!pa", name = "a", descriptor = "(ZLclient!gl;Z)V")
@@ -366,7 +366,7 @@ public final class Static28 {
 			TitleScreen.titleBg.renderResizedTransparent((GameShell.canvasWidth - width) / 2, 0, width, height);
 			TitleScreen.logo.renderTransparent(GameShell.canvasWidth / 2 - TitleScreen.logo.width / 2, 18);
 		}
-		arg1.method2271(client.game == 1 ? LocalisedText.GAME1_LOADING : LocalisedText.GAME0_LOADING, GameShell.canvasWidth / 2, GameShell.canvasHeight / 2 - 26, 16777215, -1);
+		arg1.renderCenter(client.game == 1 ? LocalisedText.GAME1_LOADING : LocalisedText.GAME0_LOADING, GameShell.canvasWidth / 2, GameShell.canvasHeight / 2 - 26, 16777215, -1);
 		@Pc(70) int local70 = GameShell.canvasHeight / 2 - 18;
 		if (GlRenderer.enabled) {
 			GlRaster.drawRect(GameShell.canvasWidth / 2 - 152, local70, 304, 34, 9179409);
@@ -379,7 +379,7 @@ public final class Static28 {
 			SoftwareRaster.fillRect(GameShell.canvasWidth / 2 - 150, local70 + 2, client.mainLoadPercentage * 3, 30, 9179409);
 			SoftwareRaster.fillRect(client.mainLoadPercentage * 3 + GameShell.canvasWidth / 2 - 150, local70 + 2, 300 - client.mainLoadPercentage * 3, 30, 0);
 		}
-		arg1.method2271(client.mainLoadSecondaryText, GameShell.canvasWidth / 2, GameShell.canvasHeight / 2 + 4, 16777215, -1);
+		arg1.renderCenter(client.mainLoadSecondaryText, GameShell.canvasWidth / 2, GameShell.canvasHeight / 2 + 4, 16777215, -1);
 	}
 
 }

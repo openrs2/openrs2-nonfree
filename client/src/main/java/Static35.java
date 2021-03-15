@@ -930,7 +930,7 @@ public final class Static35 {
 		@Pc(34) int textWidth = 0;
 		@Pc(36) int textHeight = 0;
 		if (type.text != null) {
-			textLines = Fonts.p11Full.method2279(type.text, null, Static5.aStringArray24);
+			textLines = Fonts.p11Full.splitParagraph(type.text, Static5.aStringArray24, null);
 			for (@Pc(49) int i = 0; i < textLines; i++) {
 				@Pc(56) String line = Static5.aStringArray24[i];
 				if (textLines - 1 > i) {
@@ -1099,11 +1099,6 @@ public final class Static35 {
 			local384 = local356.height;
 		}
 		Static9.method194(local10.textColor, local10.text, arg0, arg5, arg2, arg4, local384, local386, arg1);
-	}
-
-	@OriginalMember(owner = "client!ul", name = "g", descriptor = "(I)V")
-	public static void method4363() {
-		Static2.anIntArray97 = Static8.method12(0.4F);
 	}
 
 	@OriginalMember(owner = "client!um", name = "a", descriptor = "(ZII)I")

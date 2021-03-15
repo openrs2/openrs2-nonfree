@@ -229,37 +229,6 @@ public final class Static17 {
 		Static3.anInt2094 = 0;
 	}
 
-	@OriginalMember(owner = "client!gl", name = "a", descriptor = "([[B[[B[I[I[III)I")
-	public static int method2270(@OriginalArg(0) byte[][] arg0, @OriginalArg(1) byte[][] arg1, @OriginalArg(2) int[] arg2, @OriginalArg(3) int[] arg3, @OriginalArg(4) int[] arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6) {
-		@Pc(3) int local3 = arg2[arg5];
-		@Pc(9) int local9 = local3 + arg4[arg5];
-		@Pc(13) int local13 = arg2[arg6];
-		@Pc(19) int local19 = local13 + arg4[arg6];
-		@Pc(21) int local21 = local3;
-		if (local13 > local3) {
-			local21 = local13;
-		}
-		@Pc(28) int local28 = local9;
-		if (local19 < local9) {
-			local28 = local19;
-		}
-		@Pc(37) int local37 = arg3[arg5];
-		if (arg3[arg6] < local37) {
-			local37 = arg3[arg6];
-		}
-		@Pc(50) byte[] local50 = arg1[arg5];
-		@Pc(54) byte[] local54 = arg0[arg6];
-		@Pc(58) int local58 = local21 - local3;
-		@Pc(62) int local62 = local21 - local13;
-		for (@Pc(64) int local64 = local21; local64 < local28; local64++) {
-			@Pc(77) int local77 = local50[local58++] + local54[local62++];
-			if (local77 < local37) {
-				local37 = local77;
-			}
-		}
-		return -local37;
-	}
-
 	@OriginalMember(owner = "client!gn", name = "a", descriptor = "(IBI)V")
 	public static void method1654(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1) {
 		if (Static1.anInt772 == 2) {

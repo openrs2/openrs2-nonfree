@@ -74,9 +74,9 @@ public final class LightingManager {
 	}
 
 	@OriginalMember(owner = "client!od", name = "a", descriptor = "(IZ)V")
-	public static void method3111(@OriginalArg(0) int arg0, @OriginalArg(1) boolean arg1) {
+	public static void method3111(@OriginalArg(0) int loop, @OriginalArg(1) boolean disableFlicker) {
 		for (@Pc(1) int i = 0; i < lightCount; i++) {
-			lights[i].method1076(arg1, arg0);
+			lights[i].method1076(loop, disableFlicker);
 		}
 		anInt3734 = -1;
 		anInt3737 = -1;
@@ -275,7 +275,7 @@ public final class LightingManager {
 						}
 						if (local66 < 0 || local160 != null && local160.aBoolean257) {
 							GlRenderer.method1613(201.5F - (float) light.anInt1326 * 50.0F - 1.5F);
-							gl.glTexEnvfv(GL.GL_TEXTURE_ENV, GL.GL_TEXTURE_ENV_COLOR, new float[] { 0.0F, 0.0F, 0.0F, light.aFloat33 }, 0);
+							gl.glTexEnvfv(GL.GL_TEXTURE_ENV, GL.GL_TEXTURE_ENV_COLOR, new float[] { 0.0F, 0.0F, 0.0F, light.alpha }, 0);
 							light.aClass135_1.method3433();
 							continue label71;
 						}

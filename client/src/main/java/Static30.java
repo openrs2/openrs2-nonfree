@@ -231,7 +231,7 @@ public final class Static30 {
 								}
 								@Pc(787) int local787 = local128 + local38.width;
 								@Pc(791) int local791 = local122 + 15;
-								Fonts.p12Full.method2275("Fps:" + GameShell.framesPerSecond, local787, local791, 16776960, -1);
+								Fonts.p12Full.renderRight("Fps:" + GameShell.framesPerSecond, local787, local791, 16776960, -1);
 								@Pc(807) Runtime local807 = Runtime.getRuntime();
 								local791 += 15;
 								@Pc(817) int local817 = (int) ((local807.totalMemory() - local807.freeMemory()) / 1024L);
@@ -239,7 +239,7 @@ public final class Static30 {
 								if (local817 > 65536) {
 									local819 = 16711680;
 								}
-								Fonts.p12Full.method2275("Mem:" + local817 + "k", local787, local791, local819, -1);
+								Fonts.p12Full.renderRight("Mem:" + local817 + "k", local787, local791, local819, -1);
 								@Pc(841) int local841 = local791 + 15;
 								if (GlRenderer.enabled) {
 									@Pc(846) int local846 = 16776960;
@@ -247,7 +247,7 @@ public final class Static30 {
 									if (local854 > 65536) {
 										local846 = 16711680;
 									}
-									Fonts.p12Full.method2275("Card:" + local854 + "k", local787, local841, local846, -1);
+									Fonts.p12Full.renderRight("Card:" + local854 + "k", local787, local841, local846, -1);
 									local841 += 15;
 								}
 								@Pc(881) int local881 = 0;
@@ -261,10 +261,10 @@ public final class Static30 {
 								@Pc(923) int local923 = local883 * 100 / local885;
 								@Pc(929) int local929 = local881 * 10000 / local885;
 								@Pc(950) String local950 = "Cache:" + LongUtils.fixedPointToString((long) local929, true, 2, 0) + "% (" + local923 + "%)";
-								Fonts.p11Full.method2275(local950, local787, local841, 16776960, -1);
+								Fonts.p11Full.renderRight(local950, local787, local841, 16776960, -1);
 								@Pc(958) int local958 = local841 + 12;
 								if (ParticleManager.particles > 0) {
-									Fonts.p11Full.method2275("Particles: " + ParticleManager.running + " / " + ParticleManager.particles, local787, local958, 16776960, -1);
+									Fonts.p11Full.renderRight("Particles: " + ParticleManager.running + " / " + ParticleManager.particles, local787, local958, 16776960, -1);
 								}
 								@Pc(983) int local983 = local958 + 12;
 								Static2.aBooleanArray8[local89] = true;
@@ -464,8 +464,8 @@ public final class Static30 {
 										SoftwareRaster.drawRectAlpha(local128, local122, local38.width, local38.height, local1782, 256 - (local117 & 0xFF));
 									}
 								} else if (local38.type == 4) {
-									@Pc(1944) Font local1944 = local38.method4734(Sprites.nameIcons);
-									if (local1944 != null) {
+									@Pc(1944) Font font = local38.getFont(Sprites.nameIcons);
+									if (font != null) {
 										@Pc(1957) String local1957 = local38.text;
 										@Pc(1964) int local1964;
 										if (Cs1ScriptRunner.isTrue(local38)) {
@@ -499,7 +499,7 @@ public final class Static30 {
 										if (!local38.if3) {
 											local1957 = Cs1ScriptRunner.interpolate(local38, local1957);
 										}
-										local1944.method2255(local1957, local128, local122, local38.width, local38.height, local1964, local38.textShadow ? 0 : -1, local38.textHorizontalAlignment, local38.textVerticalAlignment, local38.textLineHeight);
+										font.renderParagraph(local1957, local128, local122, local38.width, local38.height, local1964, local38.textShadow ? 0 : -1, local38.textHorizontalAlignment, local38.textVerticalAlignment, local38.textLineHeight);
 									} else if (Static3.aBoolean178) {
 										Static28.method3270(local38);
 									}
@@ -644,13 +644,13 @@ public final class Static30 {
 											}
 										}
 									} else if (local2670 == -1) {
-										local2665 = local38.method4723(null, PlayerList.self.appearance, -1, -1, 0, local2663);
+										local2665 = local38.getModel(null, PlayerList.self.appearance, -1, -1, 0, local2663);
 										if (local2665 == null && Static3.aBoolean178) {
 											Static28.method3270(local38);
 										}
 									} else {
 										@Pc(2765) SeqType local2765 = SeqTypeList.get(local2670);
-										local2665 = local38.method4723(local2765, PlayerList.self.appearance, local38.anInt5979, local38.anInt5892, local38.anInt5897, local2663);
+										local2665 = local38.getModel(local2765, PlayerList.self.appearance, local38.anInt5979, local38.anInt5892, local38.anInt5897, local2663);
 										if (local2665 == null && Static3.aBoolean178) {
 											Static28.method3270(local38);
 										}
@@ -716,8 +716,8 @@ public final class Static30 {
 									}
 								} else {
 									if (local38.type == 7) {
-										@Pc(3183) Font local3183 = local38.method4734(Sprites.nameIcons);
-										if (local3183 == null) {
+										@Pc(3183) Font font = local38.getFont(Sprites.nameIcons);
+										if (font == null) {
 											if (Static3.aBoolean178) {
 												Static28.method3270(local38);
 											}
@@ -737,11 +737,11 @@ public final class Static30 {
 													@Pc(3276) int local3276 = local128 + local3203 * (local38.anInt5943 + 115);
 													@Pc(3285) int local3285 = (local38.anInt5964 + 12) * local3197 + local122;
 													if (local38.textHorizontalAlignment == 0) {
-														local3183.method2259(local3246, local3276, local3285, local38.color, local38.textShadow ? 0 : -1);
+														font.renderLeft(local3246, local3276, local3285, local38.color, local38.textShadow ? 0 : -1);
 													} else if (local38.textHorizontalAlignment == 1) {
-														local3183.method2271(local3246, local3276 + 57, local3285, local38.color, local38.textShadow ? 0 : -1);
+														font.renderCenter(local3246, local3276 + 57, local3285, local38.color, local38.textShadow ? 0 : -1);
 													} else {
-														local3183.method2275(local3246, local3276 + 114, local3285, local38.color, local38.textShadow ? 0 : -1);
+														font.renderRight(local3246, local3276 + 114, local3285, local38.color, local38.textShadow ? 0 : -1);
 													}
 												}
 												local3195++;
@@ -764,11 +764,11 @@ public final class Static30 {
 												local3394 = local3375.substring(0, local3385);
 												local3375 = local3375.substring(local3385 + 4);
 											}
-											@Pc(3410) int local3410 = local3365.method2252(local3394);
+											@Pc(3410) int local3410 = local3365.getStringWidth(local3394);
 											if (local3410 > local3363) {
 												local3363 = local3410;
 											}
-											local3367 += local3365.anInt2820 + 1;
+											local3367 += local3365.lineHeight + 1;
 										}
 										@Pc(3429) int local3429 = local3367 + 7;
 										@Pc(3430) int local3430 = local3363 + 6;
@@ -790,7 +790,7 @@ public final class Static30 {
 											SoftwareRaster.fillRect(local3461, local3437, local3430, local3429, 16777120);
 											SoftwareRaster.drawRect(local3461, local3437, local3430, local3429, 0);
 										}
-										@Pc(3524) int local3524 = local3365.anInt2820 + local3437 + 2;
+										@Pc(3524) int local3524 = local3365.lineHeight + local3437 + 2;
 										@Pc(3527) String local3527 = local38.text;
 										@Pc(3532) String local3532 = Cs1ScriptRunner.interpolate(local38, local3527);
 										while (local3532.length() > 0) {
@@ -803,8 +803,8 @@ public final class Static30 {
 												local3548 = local3532.substring(0, local3539);
 												local3532 = local3532.substring(local3539 + 4);
 											}
-											local3365.method2259(local3548, local3461 + 3, local3524, 0, -1);
-											local3524 += local3365.anInt2820 + 1;
+											local3365.renderLeft(local3548, local3461 + 3, local3524, 0, -1);
+											local3524 += local3365.lineHeight + 1;
 										}
 									}
 									if (local38.type == 9) {

@@ -241,42 +241,6 @@ public final class Static3 {
 	@OriginalMember(owner = "client!gk", name = "d", descriptor = "[F")
 	public static final float[] aFloatArray21 = new float[4];
 
-	@OriginalMember(owner = "client!gl", name = "E", descriptor = "Ljava/lang/StringBuffer;")
-	public static final StringBuffer aStringBuffer3 = new StringBuffer(100);
-
-	@OriginalMember(owner = "client!gl", name = "J", descriptor = "I")
-	public static int anInt2821 = 256;
-
-	@OriginalMember(owner = "client!gl", name = "L", descriptor = "I")
-	public static int anInt2822 = 256;
-
-	@OriginalMember(owner = "client!gl", name = "M", descriptor = "I")
-	public static int anInt2823 = 0;
-
-	@OriginalMember(owner = "client!gl", name = "N", descriptor = "I")
-	public static int anInt2824 = -1;
-
-	@OriginalMember(owner = "client!gl", name = "O", descriptor = "I")
-	public static int anInt2825 = 0;
-
-	@OriginalMember(owner = "client!gl", name = "P", descriptor = "I")
-	public static int anInt2826 = -1;
-
-	@OriginalMember(owner = "client!gl", name = "Q", descriptor = "I")
-	public static int anInt2827 = 0;
-
-	@OriginalMember(owner = "client!gl", name = "S", descriptor = "I")
-	public static int anInt2829 = -1;
-
-	@OriginalMember(owner = "client!gl", name = "T", descriptor = "I")
-	public static int anInt2830 = -1;
-
-	@OriginalMember(owner = "client!gl", name = "U", descriptor = "I")
-	public static int anInt2831 = 0;
-
-	@OriginalMember(owner = "client!gl", name = "V", descriptor = "[Ljava/lang/String;")
-	public static final String[] aStringArray20 = new String[100];
-
 	@OriginalMember(owner = "client!gm", name = "b", descriptor = "I")
 	public static int anInt2102 = 0;
 
@@ -324,9 +288,6 @@ public final class Static3 {
 
 	@OriginalMember(owner = "client!hk", name = "lb", descriptor = "S")
 	public static short aShort13 = 256;
-
-	@OriginalMember(owner = "client!hn", name = "l", descriptor = "I")
-	public static int anInt5405 = 0;
 
 	@OriginalMember(owner = "client!ho", name = "n", descriptor = "I")
 	public static int anInt2273 = 0;

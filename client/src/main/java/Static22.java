@@ -474,119 +474,6 @@ public final class Static22 {
 		}
 	}
 
-	@OriginalMember(owner = "client!ke", name = "a", descriptor = "([I[BIIIIIIII)V")
-	public static void method2280(@OriginalArg(0) int[] arg0, @OriginalArg(1) byte[] arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) int arg8, @OriginalArg(9) int arg9) {
-		arg2 = ((arg2 & 0xFF00FF) * arg9 & 0xFF00FF00) + ((arg2 & 0xFF00) * arg9 & 0xFF0000) >> 8;
-		arg9 = 256 - arg9;
-		for (@Pc(24) int local24 = -arg6; local24 < 0; local24++) {
-			for (@Pc(29) int local29 = -arg5; local29 < 0; local29++) {
-				if (arg1[arg3++] == 0) {
-					arg4++;
-				} else {
-					@Pc(40) int local40 = arg0[arg4];
-					arg0[arg4++] = (((local40 & 0xFF00FF) * arg9 & 0xFF00FF00) + ((local40 & 0xFF00) * arg9 & 0xFF0000) >> 8) + arg2;
-				}
-			}
-			arg4 += arg7;
-			arg3 += arg8;
-		}
-	}
-
-	@OriginalMember(owner = "client!ke", name = "a", descriptor = "([I[BIIIIIIIII[I[I)V")
-	public static void method2281(@OriginalArg(0) int[] arg0, @OriginalArg(1) byte[] arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) int arg8, @OriginalArg(9) int arg9, @OriginalArg(10) int arg10, @OriginalArg(11) int[] arg11, @OriginalArg(12) int[] arg12) {
-		@Pc(3) int local3 = arg2 - SoftwareRaster.clipX;
-		@Pc(7) int local7 = arg3 - SoftwareRaster.clipY;
-		for (@Pc(9) int local9 = local7; local9 < local7 + arg5; local9++) {
-			@Pc(18) int local18 = arg11[local9];
-			@Pc(22) int local22 = arg12[local9];
-			@Pc(24) int local24 = arg4;
-			if (local3 > local18) {
-				@Pc(31) int local31 = local3 - local18;
-				if (local31 >= local22) {
-					arg7 += arg4 + arg10;
-					arg8 += arg4 + arg9;
-					continue;
-				}
-				local22 -= local31;
-			} else {
-				@Pc(56) int local56 = local18 - local3;
-				if (local56 >= arg4) {
-					arg7 += arg4 + arg10;
-					arg8 += arg4 + arg9;
-					continue;
-				}
-				arg7 += local56;
-				local24 = arg4 - local56;
-				arg8 += local56;
-			}
-			@Pc(86) int local86 = 0;
-			if (local24 < local22) {
-				local22 = local24;
-			} else {
-				local86 = local24 - local22;
-			}
-			for (@Pc(99) int local99 = -local22; local99 < 0; local99++) {
-				if (arg1[arg7++] == 0) {
-					arg8++;
-				} else {
-					SoftwareRaster.pixels[arg8++] = arg6;
-				}
-			}
-			arg7 += local86 + arg10;
-			arg8 += local86 + arg9;
-		}
-	}
-
-	@OriginalMember(owner = "client!ke", name = "a", descriptor = "([I[BIIIIIII)V")
-	public static void method2282(@OriginalArg(0) int[] arg0, @OriginalArg(1) byte[] arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) int arg8) {
-		@Pc(4) int local4 = -(arg5 >> 2);
-		arg5 = -(arg5 & 0x3);
-		for (@Pc(12) int local12 = -arg6; local12 < 0; local12++) {
-			for (@Pc(16) int local16 = local4; local16 < 0; local16++) {
-				@Pc(21) int local21 = arg3 + 1;
-				@Pc(26) int local26;
-				if (arg1[arg3] == 0) {
-					local26 = arg4 + 1;
-				} else {
-					local26 = arg4 + 1;
-					arg0[arg4] = arg2;
-				}
-				@Pc(33) int local33 = local21 + 1;
-				@Pc(38) int local38;
-				if (arg1[local21] == 0) {
-					local38 = local26 + 1;
-				} else {
-					local38 = local26 + 1;
-					arg0[local26] = arg2;
-				}
-				@Pc(45) int local45 = local33 + 1;
-				@Pc(50) int local50;
-				if (arg1[local33] == 0) {
-					local50 = local38 + 1;
-				} else {
-					local50 = local38 + 1;
-					arg0[local38] = arg2;
-				}
-				arg3 = local45 + 1;
-				if (arg1[local45] == 0) {
-					arg4 = local50 + 1;
-				} else {
-					arg4 = local50 + 1;
-					arg0[local50] = arg2;
-				}
-			}
-			for (@Pc(70) int local70 = arg5; local70 < 0; local70++) {
-				if (arg1[arg3++] == 0) {
-					arg4++;
-				} else {
-					arg0[arg4++] = arg2;
-				}
-			}
-			arg4 += arg7;
-			arg3 += arg8;
-		}
-	}
-
 	@OriginalMember(owner = "client!kf", name = "a", descriptor = "(ZIZ[[F[[FLclient!ih;B[[IIIBIZI[[FII[Z[[II[IZ)V")
 	private static void method2283(@OriginalArg(0) boolean arg0, @OriginalArg(1) int arg1, @OriginalArg(2) boolean arg2, @OriginalArg(3) float[][] arg3, @OriginalArg(4) float[][] arg4, @OriginalArg(5) Class4_Sub12 arg5, @OriginalArg(7) int[][] arg6, @OriginalArg(8) int arg7, @OriginalArg(9) int arg8, @OriginalArg(10) byte arg9, @OriginalArg(11) int arg10, @OriginalArg(12) boolean arg11, @OriginalArg(13) int arg12, @OriginalArg(14) float[][] arg13, @OriginalArg(15) int arg14, @OriginalArg(16) int arg15, @OriginalArg(17) boolean[] arg16, @OriginalArg(18) int[][] arg17, @OriginalArg(19) int arg18, @OriginalArg(20) int[] arg19, @OriginalArg(21) boolean arg20) {
 		@Pc(12) int local12 = (arg18 << 8) + (arg20 ? 255 : 0);
@@ -892,7 +779,7 @@ public final class Static22 {
 			} else {
 				local32 = PlayerList.players[PlayerList.ids[local14]];
 			}
-			if (local32 != null && local32.method3310()) {
+			if (local32 != null && local32.isVisible()) {
 				@Pc(46) int local46 = local32.getSize();
 				if (arg0 == 0 || arg0 == local46) {
 					if (local46 == 1) {
@@ -940,7 +827,7 @@ public final class Static22 {
 				local255 = PlayerList.players[PlayerList.ids[local246]];
 				local253 = (long) PlayerList.ids[local246] << 32;
 			}
-			if (local255 != null && local255.method3310()) {
+			if (local255 != null && local255.isVisible()) {
 				@Pc(280) int local280 = local255.getSize();
 				if (arg0 == 0 || arg0 == local280) {
 					local255.aBoolean98 = false;

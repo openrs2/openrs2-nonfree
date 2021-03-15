@@ -50,33 +50,4 @@ public final class Static38 {
 		}
 	}
 
-	@OriginalMember(owner = "client!wn", name = "e", descriptor = "(B)V")
-	public static void method4825() {
-		for (@Pc(7) int local7 = -1; local7 < PlayerList.size; local7++) {
-			@Pc(19) int local19;
-			if (local7 == -1) {
-				local19 = 2047;
-			} else {
-				local19 = PlayerList.ids[local7];
-			}
-			@Pc(29) Player local29 = PlayerList.players[local19];
-			if (local29 != null && local29.anInt4023 > 0) {
-				local29.anInt4023--;
-				if (local29.anInt4023 == 0) {
-					local29.aString234 = null;
-				}
-			}
-		}
-		for (@Pc(57) int local57 = 0; local57 < NpcList.size; local57++) {
-			@Pc(64) int local64 = NpcList.ids[local57];
-			@Pc(68) Npc local68 = NpcList.npcs[local64];
-			if (local68 != null && local68.anInt4023 > 0) {
-				local68.anInt4023--;
-				if (local68.anInt4023 == 0) {
-					local68.aString234 = null;
-				}
-			}
-		}
-	}
-
 }

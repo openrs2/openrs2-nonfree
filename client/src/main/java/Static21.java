@@ -104,14 +104,14 @@ public final class Static21 {
 		@Pc(26) String local26 = Static35.method4328();
 		if (arg1 == null) {
 			@Pc(43) int local43 = Fonts.b12Full.method2263(local26, arg0 + 4, arg2 + 15, client.random, client.seed);
-			Static8.method66(local43 + Fonts.b12Full.method2252(local26), 15, arg0 + 4, arg2);
+			Static8.method66(local43 + Fonts.b12Full.getStringWidth(local26), 15, arg0 + 4, arg2);
 			return;
 		}
-		@Pc(62) Font local62 = arg1.method4734(Sprites.nameIcons);
-		if (local62 == null) {
-			local62 = Fonts.b12Full;
+		@Pc(62) Font font = arg1.getFont(Sprites.nameIcons);
+		if (font == null) {
+			font = Fonts.b12Full;
 		}
-		local62.method2269(local26, arg0, arg2, arg1.width, arg1.height, arg1.color, arg1.graphicShadow, arg1.textHorizontalAlignment, arg1.textVerticalAlignment, client.random, client.seed, Static7.anIntArray600);
+		font.method2269(local26, arg0, arg2, arg1.width, arg1.height, arg1.color, arg1.graphicShadow, arg1.textHorizontalAlignment, arg1.textVerticalAlignment, client.random, client.seed, Static7.anIntArray600);
 		Static8.method66(Static7.anIntArray600[2], Static7.anIntArray600[3], Static7.anIntArray600[0], Static7.anIntArray600[1]);
 	}
 
@@ -311,16 +311,6 @@ public final class Static21 {
 		@Pc(20) float[] local20 = new float[arg1.length];
 		ArrayUtils.copy(arg1, 0, local20, 0, arg1.length);
 		return local20;
-	}
-
-	@OriginalMember(owner = "client!ji", name = "a", descriptor = "(CLjava/lang/StringBuffer;IZ)Ljava/lang/StringBuffer;")
-	public static StringBuffer method2024(@OriginalArg(1) StringBuffer arg0) {
-		@Pc(14) int local14 = arg0.length();
-		arg0.setLength(0);
-		for (@Pc(19) int local19 = local14; local19 < 0; local19++) {
-			arg0.setCharAt(local19, ' ');
-		}
-		return arg0;
 	}
 
 	@OriginalMember(owner = "client!jj", name = "a", descriptor = "(ZIIII)V")

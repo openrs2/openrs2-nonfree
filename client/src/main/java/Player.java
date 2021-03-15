@@ -18,6 +18,25 @@ public final class Player extends PathingEntity {
 	@OriginalMember(owner = "client!uf", name = "h", descriptor = "I")
 	public static int level;
 
+	@OriginalMember(owner = "client!hn", name = "l", descriptor = "I")
+	public static int inTutorialIsland = 0;
+
+	@OriginalMember(owner = "client!fm", name = "a", descriptor = "(B)V")
+	public static void setInTutorialIsland() {
+		inTutorialIsland = 0;
+		@Pc(13) int x = (PlayerList.self.xFine >> 7) + Static5.originX;
+		@Pc(20) int z = Static7.originZ + (PlayerList.self.zFine >> 7);
+		if (x >= 3053 && x <= 3156 && z >= 3056 && z <= 3136) {
+			inTutorialIsland = 1;
+		}
+		if (x >= 3072 && x <= 3118 && z >= 9492 && z <= 9535) {
+			inTutorialIsland = 1;
+		}
+		if (inTutorialIsland == 1 && x >= 3139 && x <= 3199 && z >= 3008 && z <= 3062) {
+			inTutorialIsland = 0;
+		}
+	}
+
 	@OriginalMember(owner = "client!bo", name = "a", descriptor = "(Lclient!f;B)I")
 	public static int getSound(@OriginalArg(0) Player player) {
 		@Pc(8) int sound = player.walkSound;
@@ -366,7 +385,7 @@ public final class Player extends PathingEntity {
 
 	@OriginalMember(owner = "client!f", name = "d", descriptor = "(I)Z")
 	@Override
-	public final boolean method3310() {
+	public final boolean isVisible() {
 		return this.appearance != null;
 	}
 

@@ -103,13 +103,6 @@ public final class Static31 {
 		}
 	}
 
-	@OriginalMember(owner = "client!rg", name = "f", descriptor = "(B)V")
-	public static void method3688() {
-		Static6.aClass26_48.clear();
-		Static1.aClass26_1.clear();
-		Static1.aClass26_4.clear();
-	}
-
 	@OriginalMember(owner = "client!rk", name = "a", descriptor = "(IIIZII)V")
 	public static void method3746(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) boolean arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4) {
 		Static2.anInt1997++;
@@ -805,9 +798,9 @@ public final class Static31 {
 
 	@OriginalMember(owner = "client!rm", name = "f", descriptor = "(B)V")
 	public static void method3783() {
-		@Pc(9) int local9 = Fonts.b12Full.method2252(LocalisedText.CHOOSE_OPTION);
+		@Pc(9) int local9 = Fonts.b12Full.getStringWidth(LocalisedText.CHOOSE_OPTION);
 		for (@Pc(11) int local11 = 0; local11 < Static7.anInt5634; local11++) {
-			@Pc(20) int local20 = Fonts.b12Full.method2252(Static26.method2992(local11));
+			@Pc(20) int local20 = Fonts.b12Full.getStringWidth(Static26.method2992(local11));
 			if (local20 > local9) {
 				local9 = local20;
 			}
@@ -1225,7 +1218,7 @@ public final class Static31 {
 		LightTypeList.clean();
 		CursorTypeList.clean();
 		Static32.method3951();
-		Static20.method1942();
+		Component.clean();
 		Static32.method4030();
 		Static27.method3219();
 		Static1.aClass26_5.clean(5);

@@ -142,9 +142,9 @@ public final class InterfaceList {
 			Static8.method66(Static6.anInt4440, Static3.anInt2394, Static5.anInt3890, Static4.anInt3455);
 		} else {
 			Static8.method66(Static6.anInt4440, Static3.anInt2394, Static5.anInt3890, Static4.anInt3455);
-			@Pc(75) int local75 = Fonts.b12Full.method2252(LocalisedText.CHOOSE_OPTION);
+			@Pc(75) int local75 = Fonts.b12Full.getStringWidth(LocalisedText.CHOOSE_OPTION);
 			for (@Pc(77) int local77 = 0; local77 < Static7.anInt5634; local77++) {
-				@Pc(86) int local86 = Fonts.b12Full.method2252(Static26.method2992(local77));
+				@Pc(86) int local86 = Fonts.b12Full.getStringWidth(Static26.method2992(local77));
 				if (local86 > local75) {
 					local75 = local86;
 				}
@@ -183,9 +183,9 @@ public final class InterfaceList {
 			Static8.method66(Static6.anInt4440, Static3.anInt2394, Static5.anInt3890, Static4.anInt3455);
 		} else {
 			Static8.method66(Static6.anInt4440, Static3.anInt2394, Static5.anInt3890, Static4.anInt3455);
-			@Pc(93) int local93 = Fonts.b12Full.method2252(LocalisedText.CHOOSE_OPTION);
+			@Pc(93) int local93 = Fonts.b12Full.getStringWidth(LocalisedText.CHOOSE_OPTION);
 			for (@Pc(95) int local95 = 0; local95 < Static7.anInt5634; local95++) {
-				@Pc(108) int local108 = Fonts.b12Full.method2252(Static26.method2992(local95));
+				@Pc(108) int local108 = Fonts.b12Full.getStringWidth(Static26.method2992(local95));
 				if (local93 < local108) {
 					local93 = local108;
 				}

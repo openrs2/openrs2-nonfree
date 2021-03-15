@@ -348,7 +348,7 @@ public final class Static24 {
 		LightTypeList.clear();
 		CursorTypeList.clear();
 		Static10.method898();
-		Static31.method3688();
+		Component.clear();
 		if (client.modeWhat != 0) {
 			for (@Pc(54) int local54 = 0; local54 < Static6.aByteArrayArray35.length; local54++) {
 				Static6.aByteArrayArray35[local54] = null;
@@ -461,11 +461,6 @@ public final class Static24 {
 				}
 			}
 		}
-	}
-
-	@OriginalMember(owner = "client!mf", name = "a", descriptor = "(IILjava/lang/String;)I")
-	public static int method2703(@OriginalArg(2) String arg0) {
-		return StringUtils.parseInt(arg0, 16);
 	}
 
 	@OriginalMember(owner = "client!mf", name = "a", descriptor = "(Lclient!qc;I)V")

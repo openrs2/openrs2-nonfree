@@ -184,44 +184,14 @@ public final class Static5 {
 	@OriginalMember(owner = "client!nl", name = "c", descriptor = "[I")
 	public static final int[] anIntArray392 = new int[] { 0, 4, 4, 8, 0, 0, 8, 0, 0 };
 
-	@OriginalMember(owner = "client!no", name = "Y", descriptor = "I")
-	public static int anInt3635 = 0;
-
 	@OriginalMember(owner = "client!no", name = "Z", descriptor = "I")
 	public static int anInt3636 = -1;
 
 	@OriginalMember(owner = "client!o", name = "J", descriptor = "[I")
 	public static final int[] anIntArray398 = new int[14];
 
-	@OriginalMember(owner = "client!ob", name = "n", descriptor = "I")
-	public static final int anInt5199 = 50;
-
-	@OriginalMember(owner = "client!ob", name = "a", descriptor = "[I")
-	public static final int[] anIntArray562 = new int[anInt5199];
-
 	@OriginalMember(owner = "client!ob", name = "c", descriptor = "I")
 	public static int anInt5195 = -1;
-
-	@OriginalMember(owner = "client!ob", name = "d", descriptor = "[I")
-	public static final int[] anIntArray563 = new int[anInt5199];
-
-	@OriginalMember(owner = "client!ob", name = "e", descriptor = "[I")
-	public static final int[] anIntArray564 = new int[anInt5199];
-
-	@OriginalMember(owner = "client!ob", name = "g", descriptor = "[I")
-	public static final int[] anIntArray565 = new int[anInt5199];
-
-	@OriginalMember(owner = "client!ob", name = "h", descriptor = "[I")
-	public static final int[] anIntArray566 = new int[anInt5199];
-
-	@OriginalMember(owner = "client!ob", name = "i", descriptor = "[I")
-	public static final int[] anIntArray567 = new int[anInt5199];
-
-	@OriginalMember(owner = "client!ob", name = "o", descriptor = "[Ljava/lang/String;")
-	public static final String[] aStringArray34 = new String[anInt5199];
-
-	@OriginalMember(owner = "client!ob", name = "u", descriptor = "[I")
-	public static final int[] anIntArray569 = new int[anInt5199];
 
 	@OriginalMember(owner = "client!ob", name = "v", descriptor = "D")
 	public static double aDouble11 = -1.0D;

@@ -401,4 +401,19 @@ public final class StringUtils {
 		}
 		return new String(out);
 	}
+
+	@OriginalMember(owner = "client!mf", name = "a", descriptor = "(IILjava/lang/String;)I")
+	public static int parseHexString(@OriginalArg(2) String s) {
+		return parseInt(s, 16);
+	}
+
+	@OriginalMember(owner = "client!ji", name = "a", descriptor = "(CLjava/lang/StringBuffer;IZ)Ljava/lang/StringBuffer;")
+	public static StringBuffer clearBuffer(@OriginalArg(1) StringBuffer buffer) {
+		@Pc(14) int len = buffer.length();
+		buffer.setLength(0);
+		for (@Pc(19) int i = len; i < 0; i++) {
+			buffer.setCharAt(i, ' ');
+		}
+		return buffer;
+	}
 }

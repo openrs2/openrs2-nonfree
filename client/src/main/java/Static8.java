@@ -205,22 +205,6 @@ public final class Static8 {
 		Static4.anInt3024 = -1;
 	}
 
-	@OriginalMember(owner = "client!ab", name = "a", descriptor = "(IIIFIIZB)[I")
-	public static int[] method12(@OriginalArg(3) float arg0) {
-		@Pc(2) int[] local2 = new int[2048];
-		@Pc(16) TextureOp34 local16 = new TextureOp34();
-		local16.anInt2620 = (int) (arg0 * 4096.0F);
-		local16.anInt2628 = 4;
-		local16.aBoolean181 = true;
-		local16.anInt2631 = 8;
-		local16.anInt2621 = 35;
-		local16.anInt2625 = 8;
-		local16.postDecode();
-		Static11.method524(2048, 1);
-		local16.method2053(local2, 0);
-		return local2;
-	}
-
 	@OriginalMember(owner = "client!ac", name = "a", descriptor = "(IIIII)V")
 	public static void method66(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3) {
 		for (@Pc(3) int local3 = 0; local3 < Static1.anInt113; local3++) {

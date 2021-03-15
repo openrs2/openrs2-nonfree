@@ -158,9 +158,6 @@ public final class Static6 {
 	@OriginalMember(owner = "client!rh", name = "kb", descriptor = "I")
 	public static int anInt4555 = (int) (Math.random() * 17.0D) - 8;
 
-	@OriginalMember(owner = "client!ri", name = "V", descriptor = "Lclient!cc;")
-	public static final SoftLruHashTable aClass26_48 = new SoftLruHashTable(200);
-
 	@OriginalMember(owner = "client!ri", name = "Z", descriptor = "[I")
 	public static int[] anIntArray489 = new int[2];
 
