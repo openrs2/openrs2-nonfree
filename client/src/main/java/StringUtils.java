@@ -408,7 +408,7 @@ public final class StringUtils {
 	}
 
 	@OriginalMember(owner = "client!ji", name = "a", descriptor = "(CLjava/lang/StringBuffer;IZ)Ljava/lang/StringBuffer;")
-	public static StringBuffer clearBuffer(@OriginalArg(1) StringBuffer buffer) {
+	public static StringBuffer fillBuffer(@OriginalArg(1) StringBuffer buffer) {
 		@Pc(14) int len = buffer.length();
 		buffer.setLength(0);
 		for (@Pc(19) int i = len; i < 0; i++) {

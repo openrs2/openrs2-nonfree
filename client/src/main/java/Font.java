@@ -796,7 +796,7 @@ public abstract class Font extends SecondaryNode {
 		if (s == null) {
 			return 0;
 		}
-		StringUtils.clearBuffer(buffer);
+		StringUtils.fillBuffer(buffer);
 		@Pc(11) int width = 0;
 		@Pc(13) int lineIndex = 0;
 		@Pc(15) int breakIndex = -1;
