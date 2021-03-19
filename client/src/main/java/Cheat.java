@@ -32,7 +32,7 @@ public final class Cheat {
 				Chat.add(0, null, "Memory after cleanup=" + usedAfter + "k");
 			}
 			if (command.equalsIgnoreCase("::pcachesize")) {
-				Chat.add(0, null, "Number of player models in cache:" + Static15.method1228());
+				Chat.add(0, null, "Number of player models in cache:" + PlayerAppearance.getModelCacheSize());
 			}
 			if (GlRenderer.enabled && command.equalsIgnoreCase("::cardmem")) {
 				System.out.println("oncard_geometry:" + GlCleaner.onCardGeometry);

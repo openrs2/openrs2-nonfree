@@ -709,7 +709,7 @@ public final class Protocol {
 					DelayedStateChange.method3716(componentId, objId, local2386);
 					@Pc(2409) ObjType objType = ObjTypeList.get(objId);
 					DelayedStateChange.method1019(componentId, objType.xAngle2d, objType.yAngle2d, objType.zoom2d);
-					DelayedStateChange.method4433(componentId, objType.xOffset2d, objType.yOffset2d, objType.anInt5062);
+					DelayedStateChange.method4433(componentId, objType.xOffset2d, objType.yOffset2d, objType.zAngle2d);
 				} else if (objId == -1) {
 					component.modelType = 0;
 					opcode = -1;

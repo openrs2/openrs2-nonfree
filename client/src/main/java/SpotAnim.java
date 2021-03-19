@@ -13,7 +13,7 @@ public final class SpotAnim extends Entity {
 	private final int anInt3659 = -1;
 
 	@OriginalMember(owner = "client!o", name = "D", descriptor = "I")
-	private int anInt3662 = -32768;
+	private int minY = -32768;
 
 	@OriginalMember(owner = "client!o", name = "C", descriptor = "Z")
 	private boolean aBoolean264 = false;
@@ -143,13 +143,13 @@ public final class SpotAnim extends Entity {
 		if (local7 != null) {
 			this.method3057(local7);
 			local7.method3805(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, this.aClass20_Sub3_4);
-			this.anInt3662 = local7.getMinY();
+			this.minY = local7.getMinY();
 		}
 	}
 
 	@OriginalMember(owner = "client!o", name = "b", descriptor = "()I")
 	@Override
 	public final int getMinY() {
-		return this.anInt3662;
+		return this.minY;
 	}
 }

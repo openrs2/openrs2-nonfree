@@ -55,7 +55,7 @@ public final class ProjAnim extends Entity {
 	private boolean aBoolean267 = false;
 
 	@OriginalMember(owner = "client!oc", name = "Y", descriptor = "I")
-	private int anInt3730 = -32768;
+	private int minY = -32768;
 
 	@OriginalMember(owner = "client!oc", name = "W", descriptor = "I")
 	private final int anInt3728;
@@ -161,7 +161,7 @@ public final class ProjAnim extends Entity {
 		if (local7 != null) {
 			this.method3106(local7);
 			local7.method3805(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, this.particleSystem);
-			this.anInt3730 = local7.getMinY();
+			this.minY = local7.getMinY();
 		}
 	}
 
@@ -214,7 +214,7 @@ public final class ProjAnim extends Entity {
 	@OriginalMember(owner = "client!oc", name = "b", descriptor = "()I")
 	@Override
 	public final int getMinY() {
-		return this.anInt3730;
+		return this.minY;
 	}
 
 	@OriginalMember(owner = "client!oc", name = "a", descriptor = "(Z)Lclient!vg;")

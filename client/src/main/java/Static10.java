@@ -121,12 +121,6 @@ public final class Static10 {
 		}
 	}
 
-	@OriginalMember(owner = "client!bh", name = "b", descriptor = "(I)V")
-	public static void method898() {
-		Static2.aClass26_12.clear();
-		Static3.aClass26_27.clear();
-	}
-
 	@OriginalMember(owner = "client!bi", name = "a", descriptor = "(ZI)Z")
 	public static boolean setHdrEnabled(@OriginalArg(0) boolean enabled) {
 		@Pc(13) boolean current = PostProcessorManager.isBloomEnabled();

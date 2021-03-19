@@ -347,7 +347,7 @@ public final class Static24 {
 		SkyBoxSphereTypeList.clear();
 		LightTypeList.clear();
 		CursorTypeList.clear();
-		Static10.method898();
+		PlayerAppearance.clear();
 		Component.clear();
 		if (client.modeWhat != 0) {
 			for (@Pc(54) int local54 = 0; local54 < Static6.aByteArrayArray35.length; local54++) {

@@ -224,7 +224,7 @@ public final class Static27 {
 		SkyBoxSphereTypeList.removeSoft();
 		LightTypeList.removeSoft();
 		CursorTypeList.removeSoft();
-		Static14.method1172();
+		PlayerAppearance.removeSoft();
 		Component.removeSoft();
 		Static14.method1066();
 		Static18.method1713();

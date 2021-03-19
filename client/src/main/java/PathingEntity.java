@@ -214,7 +214,7 @@ public abstract class PathingEntity extends Entity {
 	public final int[] anIntArray425 = new int[4];
 
 	@OriginalMember(owner = "client!qc", name = "Gb", descriptor = "I")
-	protected int anInt4016 = -32768;
+	protected int minY = -32768;
 
 	@OriginalMember(owner = "client!qc", name = "M", descriptor = "I")
 	public int chatColor = 0;
@@ -530,7 +530,7 @@ public abstract class PathingEntity extends Entity {
 
 	@OriginalMember(owner = "client!qc", name = "b", descriptor = "(B)I")
 	public final int method3306() {
-		return this.anInt4016 == -32768 ? 200 : -this.anInt4016;
+		return this.minY == -32768 ? 200 : -this.minY;
 	}
 
 	@OriginalMember(owner = "client!qc", name = "b", descriptor = "(I)V")

@@ -91,9 +91,6 @@ public final class Static4 {
 	@OriginalMember(owner = "client!li", name = "b", descriptor = "I")
 	public static int anInt3131;
 
-	@OriginalMember(owner = "client!li", name = "k", descriptor = "[S")
-	public static short[] aShortArray46;
-
 	@OriginalMember(owner = "client!lj", name = "S", descriptor = "I")
 	public static int anInt3171;
 

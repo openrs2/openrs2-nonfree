@@ -52,11 +52,11 @@ public final class Npc extends PathingEntity {
 		}
 		@Pc(28) SeqType local28 = this.seqId != -1 && this.anInt3996 == 0 ? SeqTypeList.get(this.seqId) : null;
 		@Pc(54) SeqType local54 = this.movementSeqId == -1 || this.movementSeqId == this.getBasType().readySeqId && local28 != null ? null : SeqTypeList.get(this.movementSeqId);
-		@Pc(75) Model local75 = this.type.method4268(this.anInt3970, this.anInt4000, local54, local28, this.anInt4011, this.aClass150Array3, this.anInt4019, this.anInt4046, this.anInt4044);
+		@Pc(75) Model local75 = this.type.getBodyModel(this.anInt3970, this.anInt4000, local54, local28, this.anInt4011, this.aClass150Array3, this.anInt4019, this.anInt4046, this.anInt4044);
 		if (local75 == null) {
 			return;
 		}
-		this.anInt4016 = local75.getMinY();
+		this.minY = local75.getMinY();
 		@Pc(86) NpcType type = this.type;
 		if (type.multiNpcs != null) {
 			type = type.getMultiNpc();
@@ -128,7 +128,7 @@ public final class Npc extends PathingEntity {
 	@OriginalMember(owner = "client!p", name = "b", descriptor = "()I")
 	@Override
 	public final int getMinY() {
-		return this.anInt4016;
+		return this.minY;
 	}
 
 	@OriginalMember(owner = "client!p", name = "finalize", descriptor = "()V")
@@ -148,7 +148,7 @@ public final class Npc extends PathingEntity {
 		if (!this.aBoolean285) {
 			@Pc(28) SeqType local28 = this.seqId != -1 && this.anInt3996 == 0 ? SeqTypeList.get(this.seqId) : null;
 			@Pc(52) SeqType local52 = this.movementSeqId == -1 || this.movementSeqId == this.getBasType().readySeqId && local28 != null ? null : SeqTypeList.get(this.movementSeqId);
-			@Pc(73) Model local73 = this.type.method4268(this.anInt3970, this.anInt4000, local52, local28, this.anInt4011, this.aClass150Array3, this.anInt4019, this.anInt4046, this.anInt4044);
+			@Pc(73) Model local73 = this.type.getBodyModel(this.anInt3970, this.anInt4000, local52, local28, this.anInt4011, this.aClass150Array3, this.anInt4019, this.anInt4046, this.anInt4044);
 			if (local73 == null) {
 				return;
 			}

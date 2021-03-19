@@ -7,7 +7,7 @@ public final class NpcTypeList {
 	private static final SoftLruHashTable types = new SoftLruHashTable(64);
 
 	@OriginalMember(owner = "client!ao", name = "f", descriptor = "Lclient!cc;")
-	public static final SoftLruHashTable models = new SoftLruHashTable(50);
+	public static final SoftLruHashTable bodyModels = new SoftLruHashTable(50);
 
 	@OriginalMember(owner = "client!oc", name = "z", descriptor = "Lclient!cc;")
 	public static final SoftLruHashTable headModels = new SoftLruHashTable(5);
@@ -66,27 +66,27 @@ public final class NpcTypeList {
 	@OriginalMember(owner = "client!dj", name = "a", descriptor = "(I)V")
 	public static void clear() {
 		types.clear();
-		models.clear();
+		bodyModels.clear();
 		headModels.clear();
 	}
 
 	@OriginalMember(owner = "client!o", name = "a", descriptor = "(II)V")
 	public static void clean() {
 		types.clean(5);
-		models.clean(5);
+		bodyModels.clean(5);
 		headModels.clean(5);
 	}
 
 	@OriginalMember(owner = "client!og", name = "g", descriptor = "(B)V")
 	public static void removeSoft() {
 		types.removeSoft();
-		models.removeSoft();
+		bodyModels.removeSoft();
 		headModels.removeSoft();
 	}
 
 	@OriginalMember(owner = "client!hn", name = "b", descriptor = "(I)V")
 	public static void clearModels() {
-		models.clear();
+		bodyModels.clear();
 	}
 
 	@OriginalMember(owner = "client!ee", name = "b", descriptor = "(I)V")

@@ -271,9 +271,6 @@ public final class Static3 {
 	@OriginalMember(owner = "client!hh", name = "e", descriptor = "I")
 	public static int anInt5400 = 0;
 
-	@OriginalMember(owner = "client!hi", name = "b", descriptor = "[S")
-	public static final short[] aShortArray32 = new short[] { -4160, -4163, -8256, -8259, 22461 };
-
 	@OriginalMember(owner = "client!hi", name = "i", descriptor = "I")
 	public static final int anInt2193 = 2301979;
 
@@ -346,9 +343,6 @@ public final class Static3 {
 	@OriginalMember(owner = "client!j", name = "s", descriptor = "Z")
 	public static boolean aBoolean173 = false;
 
-	@OriginalMember(owner = "client!j", name = "x", descriptor = "[S")
-	public static final short[] aShortArray35 = new short[] { 960, 957, -21568, -21571, 22464 };
-
 	@OriginalMember(owner = "client!jb", name = "a", descriptor = "I")
 	public static int anInt2522 = -2;
 
@@ -382,6 +376,4 @@ public final class Static3 {
 	@OriginalMember(owner = "client!jj", name = "bb", descriptor = "[Z")
 	public static final boolean[] aBooleanArray13 = new boolean[5];
 
-	@OriginalMember(owner = "client!jk", name = "d", descriptor = "Lclient!cc;")
-	public static final SoftLruHashTable aClass26_27 = new SoftLruHashTable(5);
 }

@@ -552,12 +552,6 @@ public final class Static14 {
 		}
 	}
 
-	@OriginalMember(owner = "client!f", name = "f", descriptor = "(I)V")
-	public static void method1172() {
-		Static2.aClass26_12.removeSoft();
-		Static3.aClass26_27.removeSoft();
-	}
-
 	@OriginalMember(owner = "client!f", name = "a", descriptor = "(IIB)Z")
 	public static boolean method1176(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
 		if (!Static1.aBoolean17) {

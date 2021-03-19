@@ -631,7 +631,7 @@ public final class Static30 {
 										}
 									} else if (local38.modelType == 5) {
 										if (local38.modelId == -1) {
-											local2665 = Static1.aClass144_1.method3608(null, -1, -1, -1, null, -1, false, 0, null, true, 0);
+											local2665 = Static1.aClass144_1.getBodyModel(null, -1, -1, -1, null, -1, false, 0, null, true, 0);
 										} else {
 											@Pc(2817) int local2817 = local38.modelId & 0x7FF;
 											if (PlayerList.selfId == local2817) {
@@ -640,7 +640,7 @@ public final class Static30 {
 											@Pc(2827) Player local2827 = PlayerList.players[local2817];
 											@Pc(2838) SeqType local2838 = local2670 == -1 ? null : SeqTypeList.get(local2670);
 											if (local2827 != null && (int) Base37.encode(local2827.username) << 11 == (local38.modelId & 0xFFFFF800)) {
-												local2665 = local2827.appearance.method3608(null, 0, -1, -1, null, local38.anInt5892, false, 0, local2838, true, 0);
+												local2665 = local2827.appearance.getBodyModel(null, 0, -1, -1, null, local38.anInt5892, false, 0, local2838, true, 0);
 											}
 										}
 									} else if (local2670 == -1) {

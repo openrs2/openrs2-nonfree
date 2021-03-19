@@ -155,12 +155,6 @@ public final class Static32 {
 		arg0.writeBytes(local8, 24);
 	}
 
-	@OriginalMember(owner = "client!se", name = "c", descriptor = "(II)V")
-	public static void method3951() {
-		Static2.aClass26_12.clean(5);
-		Static3.aClass26_27.clean(5);
-	}
-
 	@OriginalMember(owner = "client!se", name = "a", descriptor = "(IIIIIIII)V")
 	public static void method3954(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4, @OriginalArg(6) int arg5, @OriginalArg(7) int arg6) {
 		@Pc(7) int local7 = arg5 - 334;

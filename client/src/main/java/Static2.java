@@ -160,9 +160,6 @@ public final class Static2 {
 	@OriginalMember(owner = "client!ek", name = "c", descriptor = "Z")
 	public static boolean aBoolean76 = false;
 
-	@OriginalMember(owner = "client!el", name = "f", descriptor = "Lclient!cc;")
-	public static final SoftLruHashTable aClass26_12 = new SoftLruHashTable(260);
-
 	@OriginalMember(owner = "client!em", name = "a", descriptor = "Ljava/lang/String;")
 	public static String aString81 = null;
 

@@ -864,18 +864,18 @@ public final class client extends GameShell {
 			worldId = worldListWorldId;
 		}
 		if (game == 1) {
-			Static1.aShortArrayArray1 = Static5.aShortArrayArray5;
-			Static7.aShortArray113 = Static3.aShortArray35;
-			Static4.aShortArray46 = Static3.aShortArray32;
+			PlayerAppearance.destinationSkinColors = PlayerAppearance.GAME1_DESTINATION_SKIN_COLORS;
+			PlayerAppearance.sourceBodyColors = PlayerAppearance.GAME1_SOURCE_BODY_COLORS;
+			PlayerAppearance.sourceSkinColors = PlayerAppearance.GAME1_SOURCE_SKIN_COLORS;
 			Static4.anInt3364 = 0xFFFFFF;
 			Static4.anInt3365 = 0;
 			Static2.shiftClick = true;
-			Static6.aShortArrayArray6 = Static5.aShortArrayArray2;
+			PlayerAppearance.destinationBodyColors = PlayerAppearance.GAME1_DESTINATION_BODY_COLORS;
 		} else {
-			Static6.aShortArrayArray6 = Static6.aShortArrayArray7;
-			Static7.aShortArray113 = Static7.aShortArray115;
-			Static1.aShortArrayArray1 = Static7.aShortArrayArray8;
-			Static4.aShortArray46 = Static1.aShortArray11;
+			PlayerAppearance.destinationBodyColors = PlayerAppearance.GAME0_DESTINATION_BODY_COLORS;
+			PlayerAppearance.sourceBodyColors = PlayerAppearance.GAME0_SOURCE_BODY_COLORS;
+			PlayerAppearance.destinationSkinColors = PlayerAppearance.GAME0_DESTINATION_SKIN_COLORS;
+			PlayerAppearance.sourceSkinColors = PlayerAppearance.GAME0_SOURCE_SKIN_COLORS;
 		}
 		defaultPort = worldListDefaultPort;
 		alternatePort = worldListAlternatePort;

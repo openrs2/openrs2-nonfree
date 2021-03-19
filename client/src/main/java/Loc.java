@@ -16,7 +16,7 @@ public final class Loc extends Entity {
 	private boolean aBoolean318 = false;
 
 	@OriginalMember(owner = "client!ri", name = "u", descriptor = "I")
-	private final int anInt4575 = -32768;
+	private final int minY = -32768;
 
 	@OriginalMember(owner = "client!ri", name = "D", descriptor = "I")
 	private int anInt4581 = 0;
@@ -380,7 +380,7 @@ public final class Loc extends Entity {
 	@OriginalMember(owner = "client!ri", name = "b", descriptor = "()I")
 	@Override
 	public final int getMinY() {
-		return this.anInt4575;
+		return this.minY;
 	}
 
 	@OriginalMember(owner = "client!ri", name = "a", descriptor = "(ZLclient!vc;)V")

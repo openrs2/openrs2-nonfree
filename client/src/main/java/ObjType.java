@@ -49,13 +49,13 @@ public final class ObjType {
 	public int cursor1 = -1;
 
 	@OriginalMember(owner = "client!td", name = "d", descriptor = "I")
-	private int anInt5049 = -1;
+	private int manWear2 = -1;
 
 	@OriginalMember(owner = "client!td", name = "s", descriptor = "I")
 	private int ambient = 0;
 
 	@OriginalMember(owner = "client!td", name = "G", descriptor = "I")
-	private int anInt5070 = -1;
+	private int womanWear1 = -1;
 
 	@OriginalMember(owner = "client!td", name = "o", descriptor = "I")
 	public int zoom2d = 2000;
@@ -97,13 +97,13 @@ public final class ObjType {
 	public int xAngle2d = 0;
 
 	@OriginalMember(owner = "client!td", name = "eb", descriptor = "I")
-	public int anInt5090 = -1;
+	public int womanWear2 = -1;
 
 	@OriginalMember(owner = "client!td", name = "A", descriptor = "I")
 	public int lentLink = -1;
 
 	@OriginalMember(owner = "client!td", name = "H", descriptor = "I")
-	private int anInt5071 = -1;
+	private int manWear3 = -1;
 
 	@OriginalMember(owner = "client!td", name = "Q", descriptor = "I")
 	public int lentTemplate = -1;
@@ -127,7 +127,7 @@ public final class ObjType {
 	public int certificateLink = -1;
 
 	@OriginalMember(owner = "client!td", name = "v", descriptor = "I")
-	public int anInt5062 = 0;
+	public int zAngle2d = 0;
 
 	@OriginalMember(owner = "client!td", name = "lb", descriptor = "I")
 	public int yAngle2d = 0;
@@ -139,7 +139,7 @@ public final class ObjType {
 	public boolean members = false;
 
 	@OriginalMember(owner = "client!td", name = "V", descriptor = "I")
-	public int anInt5081 = -1;
+	public int manWear1 = -1;
 
 	@OriginalMember(owner = "client!td", name = "qb", descriptor = "I")
 	public int team = 0;
@@ -166,7 +166,7 @@ public final class ObjType {
 	public String[] ops = new String[] { null, null, LocalisedText.TAKE, null, null };
 
 	@OriginalMember(owner = "client!td", name = "nb", descriptor = "I")
-	private int anInt5097 = -1;
+	private int womanWear3 = -1;
 
 	@OriginalMember(owner = "client!td", name = "a", descriptor = "(Lclient!fd;B)V")
 	public final void decode(@OriginalArg(0) Buffer buffer) {
@@ -180,47 +180,47 @@ public final class ObjType {
 	}
 
 	@OriginalMember(owner = "client!td", name = "a", descriptor = "(ZZ)Lclient!ml;")
-	public final RawModel method4121(@OriginalArg(0) boolean arg0) {
-		@Pc(4) int local4 = this.anInt5081;
-		@Pc(11) int local11 = this.anInt5049;
-		@Pc(28) int local28 = this.anInt5071;
-		if (arg0) {
-			local11 = this.anInt5070;
-			local4 = this.anInt5090;
-			local28 = this.anInt5097;
+	public final RawModel getBodyModel(@OriginalArg(0) boolean female) {
+		@Pc(4) int wear1 = this.manWear1;
+		@Pc(11) int wear2 = this.manWear2;
+		@Pc(28) int wear3 = this.manWear3;
+		if (female) {
+			wear2 = this.womanWear1;
+			wear1 = this.womanWear2;
+			wear3 = this.womanWear3;
 		}
-		if (local4 == -1) {
+		if (wear1 == -1) {
 			return null;
 		}
-		@Pc(51) RawModel local51 = RawModel.create(ObjTypeList.modelsArchive, local4);
-		if (local11 != -1) {
-			@Pc(59) RawModel local59 = RawModel.create(ObjTypeList.modelsArchive, local11);
-			if (local28 == -1) {
-				@Pc(73) RawModel[] local73 = new RawModel[] { local51, local59 };
-				local51 = new RawModel(local73, 2);
+		@Pc(51) RawModel model = RawModel.create(ObjTypeList.modelsArchive, wear1);
+		if (wear2 != -1) {
+			@Pc(59) RawModel model2 = RawModel.create(ObjTypeList.modelsArchive, wear2);
+			if (wear3 == -1) {
+				@Pc(73) RawModel[] models = new RawModel[] { model, model2 };
+				model = new RawModel(models, 2);
 			} else {
-				@Pc(86) RawModel local86 = RawModel.create(ObjTypeList.modelsArchive, local28);
-				@Pc(101) RawModel[] local101 = new RawModel[] { local51, local59, local86 };
-				local51 = new RawModel(local101, 3);
+				@Pc(86) RawModel model3 = RawModel.create(ObjTypeList.modelsArchive, wear3);
+				@Pc(101) RawModel[] models = new RawModel[] { model, model2, model3 };
+				model = new RawModel(models, 3);
 			}
 		}
-		if (!arg0 && (this.manWearXOff != 0 || this.manWearYOff != 0 || this.manWearZOff != 0)) {
-			local51.translate(this.manWearXOff, this.manWearYOff, this.manWearZOff);
+		if (!female && (this.manWearXOff != 0 || this.manWearYOff != 0 || this.manWearZOff != 0)) {
+			model.translate(this.manWearXOff, this.manWearYOff, this.manWearZOff);
 		}
-		if (arg0 && (this.womanWearXOff != 0 || this.womanWearYOff != 0 || this.womanWearZOff != 0)) {
-			local51.translate(this.womanWearXOff, this.womanWearYOff, this.womanWearZOff);
+		if (female && (this.womanWearXOff != 0 || this.womanWearYOff != 0 || this.womanWearZOff != 0)) {
+			model.translate(this.womanWearXOff, this.womanWearYOff, this.womanWearZOff);
 		}
 		if (this.recolorSource != null) {
 			for (@Pc(167) int i = 0; i < this.recolorSource.length; i++) {
-				local51.recolor(this.recolorSource[i], this.recolorDestination[i]);
+				model.recolor(this.recolorSource[i], this.recolorDestination[i]);
 			}
 		}
 		if (this.retextureSource != null) {
 			for (@Pc(191) int i = 0; i < this.retextureSource.length; i++) {
-				local51.retexture(this.retextureSource[i], this.retextureDestination[i]);
+				model.retexture(this.retextureSource[i], this.retextureDestination[i]);
 			}
 		}
-		return local51;
+		return model;
 	}
 
 	@OriginalMember(owner = "client!td", name = "a", descriptor = "(Lclient!td;Lclient!td;I)V")
@@ -236,7 +236,7 @@ public final class ObjType {
 		this.model = template.model;
 		this.name = link.name;
 		this.stackable = 1;
-		this.anInt5062 = template.anInt5062;
+		this.zAngle2d = template.zAngle2d;
 		this.members = link.members;
 		this.yOffset2d = template.yOffset2d;
 		this.zoom2d = template.zoom2d;
@@ -278,11 +278,11 @@ public final class ObjType {
 			}
 			if (arg3 != null) {
 				for (@Pc(154) int i = 0; i < 5; i++) {
-					if (arg3.colors[i] < Static6.aShortArrayArray6[i].length) {
-						local72.recolor(Static7.aShortArray113[i], Static6.aShortArrayArray6[i][arg3.colors[i]]);
+					if (arg3.colors[i] < PlayerAppearance.destinationBodyColors[i].length) {
+						local72.recolor(PlayerAppearance.sourceBodyColors[i], PlayerAppearance.destinationBodyColors[i][arg3.colors[i]]);
 					}
-					if (arg3.colors[i] < Static1.aShortArrayArray1[i].length) {
-						local72.recolor(Static4.aShortArray46[i], Static1.aShortArrayArray1[i][arg3.colors[i]]);
+					if (arg3.colors[i] < PlayerAppearance.destinationSkinColors[i].length) {
+						local72.recolor(PlayerAppearance.sourceSkinColors[i], PlayerAppearance.destinationSkinColors[i][arg3.colors[i]]);
 					}
 				}
 			}
@@ -319,33 +319,33 @@ public final class ObjType {
 	}
 
 	@OriginalMember(owner = "client!td", name = "a", descriptor = "(IZ)Lclient!ml;")
-	public final RawModel method4125(@OriginalArg(1) boolean arg0) {
-		@Pc(14) int local14 = this.manHead2;
-		@Pc(17) int local17 = this.manHead;
-		if (arg0) {
-			local17 = this.womanHead;
-			local14 = this.womanHead2;
+	public final RawModel getHeadModel(@OriginalArg(1) boolean female) {
+		@Pc(14) int head2 = this.manHead2;
+		@Pc(17) int head = this.manHead;
+		if (female) {
+			head = this.womanHead;
+			head2 = this.womanHead2;
 		}
-		if (local17 == -1) {
+		if (head == -1) {
 			return null;
 		}
-		@Pc(36) RawModel local36 = RawModel.create(ObjTypeList.modelsArchive, local17);
-		if (local14 != -1) {
-			@Pc(47) RawModel local47 = RawModel.create(ObjTypeList.modelsArchive, local14);
-			@Pc(58) RawModel[] local58 = new RawModel[] { local36, local47 };
-			local36 = new RawModel(local58, 2);
+		@Pc(36) RawModel model = RawModel.create(ObjTypeList.modelsArchive, head);
+		if (head2 != -1) {
+			@Pc(47) RawModel model2 = RawModel.create(ObjTypeList.modelsArchive, head2);
+			@Pc(58) RawModel[] models = new RawModel[] { model, model2 };
+			model = new RawModel(models, 2);
 		}
 		if (this.recolorSource != null) {
 			for (@Pc(69) int i = 0; i < this.recolorSource.length; i++) {
-				local36.recolor(this.recolorSource[i], this.recolorDestination[i]);
+				model.recolor(this.recolorSource[i], this.recolorDestination[i]);
 			}
 		}
 		if (this.retextureSource != null) {
 			for (@Pc(96) int i = 0; i < this.retextureSource.length; i++) {
-				local36.retexture(this.retextureSource[i], this.retextureDestination[i]);
+				model.retexture(this.retextureSource[i], this.retextureDestination[i]);
 			}
 		}
-		return local36;
+		return model;
 	}
 
 	@OriginalMember(owner = "client!td", name = "a", descriptor = "(I)V")
@@ -353,14 +353,14 @@ public final class ObjType {
 	}
 
 	@OriginalMember(owner = "client!td", name = "a", descriptor = "(BZ)Z")
-	public final boolean method4128(@OriginalArg(1) boolean arg0) {
-		@Pc(7) int local7 = this.anInt5049;
-		@Pc(10) int local10 = this.anInt5071;
-		@Pc(17) int local17 = this.anInt5081;
-		if (arg0) {
-			local10 = this.anInt5097;
-			local7 = this.anInt5070;
-			local17 = this.anInt5090;
+	public final boolean method4128(@OriginalArg(1) boolean female) {
+		@Pc(7) int local7 = this.manWear2;
+		@Pc(10) int local10 = this.manWear3;
+		@Pc(17) int local17 = this.manWear1;
+		if (female) {
+			local10 = this.womanWear3;
+			local7 = this.womanWear1;
+			local17 = this.womanWear2;
 		}
 		if (local17 == -1) {
 			return true;
@@ -390,17 +390,17 @@ public final class ObjType {
 
 	@OriginalMember(owner = "client!td", name = "a", descriptor = "(ILclient!td;Lclient!td;)V")
 	public final void generateLent(@OriginalArg(1) ObjType link, @OriginalArg(2) ObjType template) {
-		this.anInt5090 = link.anInt5090;
+		this.womanWear2 = link.womanWear2;
 		this.manHead2 = link.manHead2;
 		this.manHead = link.manHead;
-		this.anInt5070 = link.anInt5070;
-		this.anInt5071 = link.anInt5071;
+		this.womanWear1 = link.womanWear1;
+		this.manWear3 = link.manWear3;
 		this.xOffset2d = template.xOffset2d;
 		this.womanWearYOff = link.womanWearYOff;
-		this.anInt5049 = link.anInt5049;
+		this.manWear2 = link.manWear2;
 		this.params = link.params;
 		this.recolorSource = link.recolorSource;
-		this.anInt5062 = template.anInt5062;
+		this.zAngle2d = template.zAngle2d;
 		this.womanHead2 = link.womanHead2;
 		this.manWearYOff = link.manWearYOff;
 		this.manWearZOff = link.manWearZOff;
@@ -415,12 +415,12 @@ public final class ObjType {
 		this.yOffset2d = template.yOffset2d;
 		this.retextureDestination = link.retextureDestination;
 		this.xAngle2d = template.xAngle2d;
-		this.anInt5081 = link.anInt5081;
+		this.manWear1 = link.manWear1;
 		this.retextureSource = link.retextureSource;
 		this.womanWearXOff = link.womanWearXOff;
 		this.womanHead = link.womanHead;
 		this.zoom2d = template.zoom2d;
-		this.anInt5097 = link.anInt5097;
+		this.womanWear3 = link.womanWear3;
 		this.ops = link.ops;
 		this.name = link.name;
 		this.cost = 0;
@@ -444,24 +444,24 @@ public final class ObjType {
 	}
 
 	@OriginalMember(owner = "client!td", name = "c", descriptor = "(ZI)Z")
-	public final boolean method4134(@OriginalArg(0) boolean arg0) {
-		@Pc(2) int local2 = this.manHead;
-		@Pc(9) int local9 = this.manHead2;
-		if (arg0) {
-			local2 = this.womanHead;
-			local9 = this.womanHead2;
+	public final boolean isHeadModelReady(@OriginalArg(0) boolean female) {
+		@Pc(2) int head = this.manHead;
+		@Pc(9) int head2 = this.manHead2;
+		if (female) {
+			head = this.womanHead;
+			head2 = this.womanHead2;
 		}
-		if (local2 == -1) {
+		if (head == -1) {
 			return true;
 		}
-		@Pc(25) boolean local25 = true;
-		if (!ObjTypeList.modelsArchive.isFileReady(local2, 0)) {
-			local25 = false;
+		@Pc(25) boolean ready = true;
+		if (!ObjTypeList.modelsArchive.isFileReady(head, 0)) {
+			ready = false;
 		}
-		if (local9 != -1 && !ObjTypeList.modelsArchive.isFileReady(local9, 0)) {
-			local25 = false;
+		if (head2 != -1 && !ObjTypeList.modelsArchive.isFileReady(head2, 0)) {
+			ready = false;
 		}
-		return local25;
+		return ready;
 	}
 
 	@OriginalMember(owner = "client!td", name = "a", descriptor = "(Lclient!qk;I)Lclient!na;")
@@ -486,11 +486,11 @@ public final class ObjType {
 		}
 		if (arg0 != null) {
 			for (@Pc(100) int i = 0; i < 5; i++) {
-				if (Static6.aShortArrayArray6[i].length > arg0.colors[i]) {
-					local11.recolor(Static7.aShortArray113[i], Static6.aShortArrayArray6[i][arg0.colors[i]]);
+				if (PlayerAppearance.destinationBodyColors[i].length > arg0.colors[i]) {
+					local11.recolor(PlayerAppearance.sourceBodyColors[i], PlayerAppearance.destinationBodyColors[i][arg0.colors[i]]);
 				}
-				if (Static1.aShortArrayArray1[i].length > arg0.colors[i]) {
-					local11.recolor(Static4.aShortArray46[i], Static1.aShortArrayArray1[i][arg0.colors[i]]);
+				if (PlayerAppearance.destinationSkinColors[i].length > arg0.colors[i]) {
+					local11.recolor(PlayerAppearance.sourceSkinColors[i], PlayerAppearance.destinationSkinColors[i][arg0.colors[i]]);
 				}
 			}
 		}
@@ -530,13 +530,13 @@ public final class ObjType {
 		} else if (code == 16) {
 			this.members = true;
 		} else if (code == 23) {
-			this.anInt5081 = buffer.readUnsignedShort();
+			this.manWear1 = buffer.readUnsignedShort();
 		} else if (code == 24) {
-			this.anInt5049 = buffer.readUnsignedShort();
+			this.manWear2 = buffer.readUnsignedShort();
 		} else if (code == 25) {
-			this.anInt5090 = buffer.readUnsignedShort();
+			this.womanWear2 = buffer.readUnsignedShort();
 		} else if (code == 26) {
-			this.anInt5070 = buffer.readUnsignedShort();
+			this.womanWear1 = buffer.readUnsignedShort();
 		} else if (code >= 30 && code < 35) {
 			this.ops[code - 30] = buffer.readString();
 			if (this.ops[code - 30].equalsIgnoreCase(LocalisedText.HIDDEN)) {
@@ -569,9 +569,9 @@ public final class ObjType {
 		} else if (code == 65) {
 			this.stockMarket = true;
 		} else if (code == 78) {
-			this.anInt5071 = buffer.readUnsignedShort();
+			this.manWear3 = buffer.readUnsignedShort();
 		} else if (code == 79) {
-			this.anInt5097 = buffer.readUnsignedShort();
+			this.womanWear3 = buffer.readUnsignedShort();
 		} else if (code == 90) {
 			this.manHead = buffer.readUnsignedShort();
 		} else if (code == 91) {
@@ -581,7 +581,7 @@ public final class ObjType {
 		} else if (code == 93) {
 			this.womanHead2 = buffer.readUnsignedShort();
 		} else if (code == 95) {
-			this.anInt5062 = buffer.readUnsignedShort();
+			this.zAngle2d = buffer.readUnsignedShort();
 		} else if (code == 96) {
 			this.dummyItem = buffer.readUnsignedByte();
 		} else if (code == 97) {

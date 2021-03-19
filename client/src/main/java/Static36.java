@@ -148,15 +148,15 @@ public final class Static36 {
 
 	@OriginalMember(owner = "client!vd", name = "a", descriptor = "(B)Ljava/lang/String;")
 	public static String method4436() {
-		@Pc(5) String local5 = "www";
+		@Pc(5) String hostname = "www";
 		if (client.modeWhere != 0) {
-			local5 = "www-wtqa";
+			hostname = "www-wtqa";
 		}
-		@Pc(12) String local12 = "";
+		@Pc(12) String settings = "";
 		if (client.settings != null) {
-			local12 = "/p=" + client.settings;
+			settings = "/p=" + client.settings;
 		}
-		return "http://" + local5 + ".openrs2.org/l=" + client.language + "/a=" + client.affiliate + local12 + "/";
+		return "http://" + hostname + ".openrs2.org/l=" + client.language + "/a=" + client.affiliate + settings + "/";
 	}
 
 	@OriginalMember(owner = "client!ve", name = "a", descriptor = "(BIIII)I")

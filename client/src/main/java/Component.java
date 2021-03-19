@@ -580,7 +580,7 @@ public final class Component {
 			}
 			return model;
 		} else if (local14 == 2) {
-			@Pc(120) Model model = NpcTypeList.get(local17).method4266(arg2, arg0, arg4, arg3);
+			@Pc(120) Model model = NpcTypeList.get(local17).getHeadModel(arg2, arg0, arg4, arg3);
 			if (model == null) {
 				Static3.aBoolean178 = true;
 				return null;
@@ -608,7 +608,7 @@ public final class Component {
 				return model;
 			}
 		} else if (local14 == 6) {
-			@Pc(204) Model model = NpcTypeList.get(local17).method4268(arg3, 0, null, arg0, arg2, null, 0, 0, arg4);
+			@Pc(204) Model model = NpcTypeList.get(local17).getBodyModel(arg3, 0, null, arg0, arg2, null, 0, 0, arg4);
 			if (model == null) {
 				Static3.aBoolean178 = true;
 				return null;

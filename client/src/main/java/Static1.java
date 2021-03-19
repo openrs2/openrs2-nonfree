@@ -70,9 +70,6 @@ public final class Static1 {
 	@OriginalMember(owner = "client!bl", name = "eb", descriptor = "I")
 	public static int anInt379;
 
-	@OriginalMember(owner = "client!bn", name = "v", descriptor = "[[S")
-	public static short[][] aShortArrayArray1;
-
 	@OriginalMember(owner = "client!bn", name = "C", descriptor = "I")
 	public static int anInt403;
 
@@ -150,9 +147,6 @@ public final class Static1 {
 
 	@OriginalMember(owner = "client!aa", name = "e", descriptor = "[I")
 	public static final int[] anIntArray1 = new int[] { 1, 1, 0, 0, 0, 8, 0, 0, 8 };
-
-	@OriginalMember(owner = "client!ae", name = "c", descriptor = "[S")
-	public static final short[] aShortArray11 = new short[] { -10304, 9104, -1, -1, -1 };
 
 	@OriginalMember(owner = "client!ae", name = "e", descriptor = "I")
 	public static int anInt91 = 0;

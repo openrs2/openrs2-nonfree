@@ -145,7 +145,7 @@ public final class Player extends PathingEntity {
 		@Pc(199) int[] colors = new int[5];
 		for (@Pc(201) int i = 0; i < 5; i++) {
 			@Pc(208) int color = buffer.readUnsignedByte();
-			if (color < 0 || color >= Static6.aShortArrayArray6[i].length) {
+			if (color < 0 || color >= PlayerAppearance.destinationBodyColors[i].length) {
 				color = 0;
 			}
 			colors[i] = color;
@@ -202,7 +202,7 @@ public final class Player extends PathingEntity {
 	@OriginalMember(owner = "client!f", name = "b", descriptor = "()I")
 	@Override
 	public final int getMinY() {
-		return this.anInt4016;
+		return this.minY;
 	}
 
 	@OriginalMember(owner = "client!f", name = "a", descriptor = "(IIIII)V")
@@ -214,7 +214,7 @@ public final class Player extends PathingEntity {
 			}
 			@Pc(26) SeqType local26 = this.seqId != -1 && this.anInt3996 == 0 ? SeqTypeList.get(this.seqId) : null;
 			@Pc(55) SeqType local55 = this.movementSeqId == -1 || this.aBoolean98 || this.movementSeqId == this.getBasType().readySeqId && local26 != null ? null : SeqTypeList.get(this.movementSeqId);
-			@Pc(78) Model local78 = this.appearance.method3608(this.aClass150Array3, this.anInt4046, this.anInt4011, this.anInt4019, local55, this.anInt3970, false, this.anInt4000, local26, false, this.anInt4044);
+			@Pc(78) Model local78 = this.appearance.getBodyModel(this.aClass150Array3, this.anInt4046, this.anInt4011, this.anInt4019, local55, this.anInt3970, false, this.anInt4000, local26, false, this.anInt4044);
 			if (local78 == null) {
 				return;
 			}
@@ -241,8 +241,8 @@ public final class Player extends PathingEntity {
 		@Pc(31) BasType local31 = this.getBasType();
 		@Pc(53) boolean local53 = local31.anInt844 != 0 || local31.anInt847 != 0 || local31.anInt850 != 0 || local31.anInt851 != 0;
 		@Pc(82) SeqType local82 = this.movementSeqId == -1 || this.aBoolean98 || this.movementSeqId == this.getBasType().readySeqId && local27 != null ? null : SeqTypeList.get(this.movementSeqId);
-		@Pc(105) Model local105 = this.appearance.method3608(this.aClass150Array3, this.anInt4046, this.anInt4011, this.anInt4019, local82, this.anInt3970, local53, this.anInt4000, local27, true, this.anInt4044);
-		@Pc(108) int local108 = Static15.method1228();
+		@Pc(105) Model local105 = this.appearance.getBodyModel(this.aClass150Array3, this.anInt4046, this.anInt4011, this.anInt4019, local82, this.anInt3970, local53, this.anInt4000, local27, true, this.anInt4044);
+		@Pc(108) int local108 = PlayerAppearance.getModelCacheSize();
 		if (GlRenderer.enabled && GameShell.maxMemory < 96 && local108 > 50) {
 			Static24.method2567();
 		}
@@ -260,7 +260,7 @@ public final class Player extends PathingEntity {
 		if (local105 == null) {
 			return;
 		}
-		this.anInt4016 = local105.getMinY();
+		this.minY = local105.getMinY();
 		if (Preferences.characterShadows && (this.appearance.npcId == -1 || NpcTypeList.get(this.appearance.npcId).aBoolean354)) {
 			@Pc(222) Model local222 = Static12.method745(0, local82 == null ? local27 : local82, arg0, 1, 240, local105, local82 == null ? this.anInt3970 : this.anInt4046, this.anInt4006, this.zFine, this.aBoolean284, 0, 160, this.xFine);
 			if (GlRenderer.enabled) {

@@ -406,21 +406,21 @@ public final class ScriptRunner {
 				} else if (opcode < 500) {
 					if (opcode == 403) {
 						isp -= 2;
-						@Pc(14650) int local14650 = intStack[isp];
-						@Pc(14656) int local14656 = intStack[isp + 1];
-						for (@Pc(14658) int i = 0; i < PlayerAppearance.anIntArray550.length; i++) {
-							if (local14650 == PlayerAppearance.anIntArray550[i]) {
-								PlayerList.self.appearance.method3604(i, local14656);
+						@Pc(14650) int feature = intStack[isp];
+						@Pc(14656) int identikit = intStack[isp + 1];
+						for (@Pc(14658) int i = 0; i < PlayerAppearance.MALE_FEATURES.length; i++) {
+							if (feature == PlayerAppearance.MALE_FEATURES[i]) {
+								PlayerList.self.appearance.setIdentikit(i, identikit);
 								continue nextOp;
 							}
 						}
 						@Pc(14684) int i = 0;
 						while (true) {
-							if (PlayerAppearance.anIntArray487.length <= i) {
+							if (PlayerAppearance.FEMALE_FEATURES.length <= i) {
 								continue nextOp;
 							}
-							if (PlayerAppearance.anIntArray487[i] == local14650) {
-								PlayerList.self.appearance.method3604(i, local14656);
+							if (PlayerAppearance.FEMALE_FEATURES[i] == feature) {
+								PlayerList.self.appearance.setIdentikit(i, identikit);
 								continue nextOp;
 							}
 							i++;
@@ -783,7 +783,7 @@ public final class ScriptRunner {
 						component.modelXAngle = objType.xAngle2d;
 						component.modelYAngle = objType.yAngle2d;
 						component.modelZoom = objType.zoom2d;
-						component.modelZAngle = objType.anInt5062;
+						component.modelZAngle = objType.zAngle2d;
 						if (opcode == 1205) {
 							component.showObjCount = false;
 						} else {
