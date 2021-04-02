@@ -130,8 +130,8 @@ public final class Js5GlTextureProvider extends Js5TextureProvider implements Gl
 
 	@OriginalMember(owner = "client!c", name = "e", descriptor = "(II)I")
 	@Override
-	public final int method446(@OriginalArg(0) int id) {
-		return this.getMetadata(id).aShort26 & 0xFFFF;
+	public final int getAverageColor(@OriginalArg(0) int id) {
+		return this.getMetadata(id).averageColor & 0xFFFF;
 	}
 
 	@OriginalMember(owner = "client!c", name = "a", descriptor = "(IZ)Z")
@@ -190,7 +190,7 @@ public final class Js5GlTextureProvider extends Js5TextureProvider implements Gl
 	private GlSolidColorTexture getSolidColorTexture(@OriginalArg(1) int id) {
 		@Pc(11) GlSolidColorTexture texture = (GlSolidColorTexture) this.solidColorSprites.get(id);
 		if (texture == null) {
-			@Pc(27) GlSolidColorTexture newTexture = new GlSolidColorTexture(this.getMetadata(id).aShort26 & 0xFFFF);
+			@Pc(27) GlSolidColorTexture newTexture = new GlSolidColorTexture(this.getMetadata(id).averageColor & 0xFFFF);
 			this.solidColorSprites.put(id, newTexture);
 			return newTexture;
 		} else {

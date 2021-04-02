@@ -488,7 +488,7 @@ public final class Class105 {
 			local30 = local30 * local123 + 32767 - local26 * local119 >> 16;
 			local26 = local135;
 		}
-		ArrayUtils.fill(Static4.aClass53_Sub3_1.triangleColors, 0, Static4.aClass53_Sub3_1.triangleCount, (short) Static4.textureProvider.method446(this.anInt2858));
+		ArrayUtils.fill(Static4.aClass53_Sub3_1.triangleColors, 0, Static4.aClass53_Sub3_1.triangleCount, (short) Static4.textureProvider.getAverageColor(this.anInt2858));
 		@Pc(172) SoftwareModel local172 = Static4.aClass53_Sub3_1.createSoftwareModel(64, 512, -local26, -local28, -local30);
 		@Pc(178) int local178 = local172.getMaxX() - local172.getMinX();
 		@Pc(184) int local184 = local172.getMaxY() - local172.getMinY();

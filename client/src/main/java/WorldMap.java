@@ -106,7 +106,7 @@ public final class WorldMap {
 			}
 			Static28.method3249();
 			@Pc(309) int local309 = Static3.anInt2965 >> 6;
-			Static3.anIntArray266 = new int[FloTypeList.capacity + 1];
+			Static3.overlayColors = new int[FloTypeList.capacity + 1];
 			@Pc(318) int local318 = Static3.anInt2960 >> 6;
 			Static3.aByteArrayArrayArray11 = new byte[local309][local318][];
 			Static3.anIntArrayArrayArray6 = new int[local309][local318][];
@@ -119,7 +119,7 @@ public final class WorldMap {
 			Static1.aClass130_1 = new SecondaryLinkedListIterator();
 			@Pc(358) int local358 = Static2.anInt1273 >> 1;
 			@Pc(364) int local364 = Static6.anInt4555 >> 2 << 10;
-			Static20.method2408(local364, local358);
+			Static20.loadOverlayColors(local364, local358);
 			MelTypeList.resize(1024, 256);
 			VarbitTypeList.resize(256);
 			loadPercentage = 20;

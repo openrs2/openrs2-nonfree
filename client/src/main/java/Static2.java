@@ -11,7 +11,7 @@ public final class Static2 {
 	public static Map aClass4_Sub3_Sub22_1;
 
 	@OriginalMember(owner = "client!e", name = "F", descriptor = "[[[B")
-	public static byte[][][] aByteArrayArrayArray3;
+	public static byte[][][] tileUnderlays;
 
 	@OriginalMember(owner = "client!ea", name = "E", descriptor = "Ljava/awt/Image;")
 	public static Image anImage2;
@@ -56,13 +56,13 @@ public final class Static2 {
 	public static int anInt1637;
 
 	@OriginalMember(owner = "client!fd", name = "Cb", descriptor = "[I")
-	public static int[] anIntArray649;
+	public static int[] rowChroma;
 
 	@OriginalMember(owner = "client!ff", name = "d", descriptor = "Lclient!wf;")
 	public static Component aClass185_4;
 
 	@OriginalMember(owner = "client!fg", name = "J", descriptor = "[[[B")
-	public static byte[][][] aByteArrayArrayArray4;
+	public static byte[][][] tileShapes;
 
 	@OriginalMember(owner = "client!fj", name = "V", descriptor = "I")
 	public static int anInt1871;

@@ -45,7 +45,7 @@ public final class Static6 {
 	public static int anInt4558;
 
 	@OriginalMember(owner = "client!rk", name = "r", descriptor = "[I")
-	public static int[] anIntArray491;
+	public static int[] rowWeightedHue;
 
 	@OriginalMember(owner = "client!rk", name = "s", descriptor = "Z")
 	public static boolean aBoolean321;
@@ -66,7 +66,7 @@ public final class Static6 {
 	public static int anInt4801;
 
 	@OriginalMember(owner = "client!sh", name = "db", descriptor = "[I")
-	public static int[] anIntArray523;
+	public static int[] rowLightness;
 
 	@OriginalMember(owner = "client!sh", name = "eb", descriptor = "I")
 	public static int anInt4838;
@@ -93,7 +93,7 @@ public final class Static6 {
 	public static int[] anIntArray544;
 
 	@OriginalMember(owner = "client!tc", name = "V", descriptor = "[I")
-	public static int[] anIntArray549;
+	public static int[] rowCount;
 
 	@OriginalMember(owner = "client!te", name = "D", descriptor = "Lclient!uj;")
 	public static Sprite aClass4_Sub3_Sub14_8;

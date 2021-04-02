@@ -338,7 +338,7 @@ public final class Static19 {
 								if (WorldMap.currentMap.backgroundColor != -1) {
 									local250 = WorldMap.currentMap.backgroundColor;
 								} else if ((local17 + Static3.anInt2973 & 0x4) == (local172 + Static3.anInt2967 & 0x4)) {
-									local250 = Static3.anIntArray266[FloType.anInt549 + 1];
+									local250 = Static3.overlayColors[FloType.anInt549 + 1];
 								} else {
 									local250 = 4936552;
 								}
@@ -355,8 +355,8 @@ public final class Static19 {
 							if (local250 == 0) {
 								local250 = 1;
 							}
-							@Pc(316) int local316 = local146[local213] == null ? 0 : Static3.anIntArray266[local146[local213][local231] & 0xFF];
-							@Pc(332) int local332 = local154[local213] == null ? 0 : Static3.anIntArray266[local154[local213][local231] & 0xFF];
+							@Pc(316) int local316 = local146[local213] == null ? 0 : Static3.overlayColors[local146[local213][local231] & 0xFF];
+							@Pc(332) int local332 = local154[local213] == null ? 0 : Static3.overlayColors[local154[local213][local231] & 0xFF];
 							if (local316 == 0 && local332 == 0) {
 								SoftwareRaster.fillRect(local166, local203, local42, local197, local250);
 							} else {
@@ -455,7 +455,7 @@ public final class Static19 {
 						if (WorldMap.currentMap.backgroundColor != -1) {
 							local104 = WorldMap.currentMap.backgroundColor;
 						} else if ((local17 + Static3.anInt2973 & 0x4) == (local68 + Static3.anInt2967 & 0x4)) {
-							local104 = Static3.anIntArray266[FloType.anInt549 + 1];
+							local104 = Static3.overlayColors[FloType.anInt549 + 1];
 						} else {
 							local104 = 4936552;
 						}

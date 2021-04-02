@@ -42,16 +42,16 @@ public final class Static22 {
 	}
 
 	@OriginalMember(owner = "client!k", name = "a", descriptor = "(IIII)I")
-	public static int method2188(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2) {
-		arg2 &= 3;
-		if (arg2 == 0) {
-			return arg0;
-		} else if (arg2 == 1) {
-			return 1023 - arg1;
-		} else if (arg2 == 2) {
-			return 1023 - arg0;
+	public static int rotateZFine(@OriginalArg(0) int z, @OriginalArg(2) int x, @OriginalArg(3) int angle) {
+		angle &= 3;
+		if (angle == 0) {
+			return z;
+		} else if (angle == 1) {
+			return 1023 - x;
+		} else if (angle == 2) {
+			return 1023 - z;
 		} else {
-			return arg1;
+			return x;
 		}
 	}
 
@@ -85,7 +85,7 @@ public final class Static22 {
 			if ((Static4.tileFlags[level][x][z] & 0x10) != 0) {
 				return;
 			}
-			if (Static35.method4327(z, level, x) != Static2.anInt1216) {
+			if (Static35.method4327(level, x, z) != Static2.anInt1216) {
 				return;
 			}
 		}
@@ -523,28 +523,6 @@ public final class Static22 {
 					Static2.anIntArray159[local174] = 0;
 				}
 			}
-		}
-	}
-
-	@OriginalMember(owner = "client!kf", name = "a", descriptor = "(BII)I")
-	public static int method2286(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1) {
-		if (arg0 == -2) {
-			return 12345678;
-		} else if (arg0 == -1) {
-			if (arg1 < 2) {
-				arg1 = 2;
-			} else if (arg1 > 126) {
-				arg1 = 126;
-			}
-			return arg1;
-		} else {
-			@Pc(45) int local45 = arg1 * (arg0 & 0x7F) >> 7;
-			if (local45 < 2) {
-				local45 = 2;
-			} else if (local45 > 126) {
-				local45 = 126;
-			}
-			return (arg0 & 0xFF80) + local45;
 		}
 	}
 

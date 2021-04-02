@@ -7,19 +7,19 @@ import org.openrs2.deob.annotation.Pc;
 public final class FluType {
 
 	@OriginalMember(owner = "client!pa", name = "b", descriptor = "I")
-	public int anInt4058;
+	public int weightedHue;
 
 	@OriginalMember(owner = "client!pa", name = "k", descriptor = "I")
-	public int anInt4064;
+	public int saturation;
 
 	@OriginalMember(owner = "client!pa", name = "r", descriptor = "I")
-	public int anInt4071;
+	public int chroma;
 
 	@OriginalMember(owner = "client!pa", name = "w", descriptor = "I")
-	public int anInt4075;
+	public int lightness;
 
 	@OriginalMember(owner = "client!pa", name = "n", descriptor = "I")
-	private int anInt4067 = 0;
+	private int color = 0;
 
 	@OriginalMember(owner = "client!pa", name = "h", descriptor = "Z")
 	public boolean aBoolean286 = true;
@@ -44,8 +44,8 @@ public final class FluType {
 	@OriginalMember(owner = "client!pa", name = "a", descriptor = "(ILclient!fd;IB)V")
 	private void decode(@OriginalArg(1) Buffer buffer, @OriginalArg(2) int code, @OriginalArg(0) int id) {
 		if (code == 1) {
-			this.anInt4067 = buffer.readUnsignedMedium();
-			this.method3330(this.anInt4067);
+			this.color = buffer.readUnsignedMedium();
+			this.rgbToHsl(this.color);
 		} else if (code == 2) {
 			this.anInt4074 = buffer.readUnsignedShort();
 			if (this.anInt4074 == 65535) {
@@ -59,63 +59,63 @@ public final class FluType {
 	}
 
 	@OriginalMember(owner = "client!pa", name = "a", descriptor = "(BI)V")
-	private void method3330(@OriginalArg(1) int arg0) {
-		@Pc(14) double local14 = (double) (arg0 >> 16 & 0xFF) / 256.0D;
-		@Pc(23) double local23 = (double) (arg0 >> 8 & 0xFF) / 256.0D;
-		@Pc(30) double local30 = (double) (arg0 & 0xFF) / 256.0D;
-		@Pc(32) double local32 = local14;
-		if (local14 > local23) {
-			local32 = local23;
+	private void rgbToHsl(@OriginalArg(1) int rgb) {
+		@Pc(14) double r = (double) (rgb >> 16 & 0xFF) / 256.0D;
+		@Pc(23) double g = (double) (rgb >> 8 & 0xFF) / 256.0D;
+		@Pc(30) double b = (double) (rgb & 0xFF) / 256.0D;
+		@Pc(32) double xMin = r;
+		if (r > g) {
+			xMin = g;
 		}
-		if (local32 > local30) {
-			local32 = local30;
+		if (xMin > b) {
+			xMin = b;
 		}
-		@Pc(48) double local48 = local14;
-		if (local14 < local23) {
-			local48 = local23;
+		@Pc(48) double xMax = r;
+		if (r < g) {
+			xMax = g;
 		}
-		@Pc(56) double local56 = 0.0D;
-		if (local48 < local30) {
-			local48 = local30;
+		@Pc(56) double h = 0.0D;
+		if (xMax < b) {
+			xMax = b;
 		}
-		@Pc(65) double local65 = 0.0D;
-		@Pc(71) double local71 = (local32 + local48) / 2.0D;
-		this.anInt4075 = (int) (local71 * 256.0D);
-		if (this.anInt4075 < 0) {
-			this.anInt4075 = 0;
-		} else if (this.anInt4075 > 255) {
-			this.anInt4075 = 255;
+		@Pc(65) double s = 0.0D;
+		@Pc(71) double l = (xMin + xMax) / 2.0D;
+		this.lightness = (int) (l * 256.0D);
+		if (this.lightness < 0) {
+			this.lightness = 0;
+		} else if (this.lightness > 255) {
+			this.lightness = 255;
 		}
-		if (local48 != local32) {
-			if (local71 < 0.5D) {
-				local65 = (local48 - local32) / (local48 + local32);
+		if (xMax != xMin) {
+			if (l < 0.5D) {
+				s = (xMax - xMin) / (xMax + xMin);
 			}
-			if (local48 == local14) {
-				local56 = (local23 - local30) / (local48 - local32);
-			} else if (local23 == local48) {
-				local56 = (local30 - local14) / (local48 - local32) + 2.0D;
-			} else if (local48 == local30) {
-				local56 = (local14 - local23) / (local48 - local32) + 4.0D;
+			if (xMax == r) {
+				h = (g - b) / (xMax - xMin);
+			} else if (g == xMax) {
+				h = (b - r) / (xMax - xMin) + 2.0D;
+			} else if (xMax == b) {
+				h = (r - g) / (xMax - xMin) + 4.0D;
 			}
-			if (local71 >= 0.5D) {
-				local65 = (local48 - local32) / (2.0D - local32 - local48);
+			if (l >= 0.5D) {
+				s = (xMax - xMin) / (2.0D - xMin - xMax);
 			}
 		}
-		this.anInt4064 = (int) (local65 * 256.0D);
-		if (local71 > 0.5D) {
-			this.anInt4071 = (int) ((1.0D - local71) * 512.0D * local65);
+		this.saturation = (int) (s * 256.0D);
+		if (l > 0.5D) {
+			this.chroma = (int) ((1.0D - l) * 512.0D * s);
 		} else {
-			this.anInt4071 = (int) (local65 * 512.0D * local71);
+			this.chroma = (int) (s * 512.0D * l);
 		}
-		if (this.anInt4071 < 1) {
-			this.anInt4071 = 1;
+		if (this.chroma < 1) {
+			this.chroma = 1;
 		}
-		@Pc(224) double local224 = local56 / 6.0D;
-		this.anInt4058 = (int) ((double) this.anInt4071 * local224);
-		if (this.anInt4064 < 0) {
-			this.anInt4064 = 0;
-		} else if (this.anInt4064 > 255) {
-			this.anInt4064 = 255;
+		@Pc(224) double hPrime = h / 6.0D;
+		this.weightedHue = (int) ((double) this.chroma * hPrime);
+		if (this.saturation < 0) {
+			this.saturation = 0;
+		} else if (this.saturation > 255) {
+			this.saturation = 255;
 		}
 	}
 }

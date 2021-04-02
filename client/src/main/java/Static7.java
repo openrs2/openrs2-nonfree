@@ -78,7 +78,7 @@ public final class Static7 {
 	public static int anInt5680;
 
 	@OriginalMember(owner = "client!wa", name = "Ub", descriptor = "[I")
-	public static int[] anIntArray650;
+	public static int[] rowSaturation;
 
 	@OriginalMember(owner = "client!wb", name = "J", descriptor = "I")
 	public static int anInt5798;

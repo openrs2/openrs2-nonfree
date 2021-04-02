@@ -250,7 +250,7 @@ public final class Static32 {
 							Static23.method2543(local156, local160, local164, local144, local148, local152, arg0.anIntArray576[local122], arg0.anIntArray575[local122], arg0.anIntArray574[local122]);
 						}
 					} else if (!Preferences.groundTextures) {
-						@Pc(373) int local373 = Static4.textureProvider.method446(arg0.anIntArray572[local122]);
+						@Pc(373) int local373 = Static4.textureProvider.getAverageColor(arg0.anIntArray572[local122]);
 						Static23.method2543(local156, local160, local164, local144, local148, local152, Static10.method302(local373, arg0.anIntArray576[local122]), Static10.method302(local373, arg0.anIntArray575[local122]), Static10.method302(local373, arg0.anIntArray574[local122]));
 					} else if (arg0.aBoolean353) {
 						Static23.method2558(local156, local160, local164, local144, local148, local152, arg0.anIntArray576[local122], arg0.anIntArray575[local122], arg0.anIntArray574[local122], Static7.anIntArray585[0], Static7.anIntArray585[1], Static7.anIntArray585[3], Static7.anIntArray578[0], Static7.anIntArray578[1], Static7.anIntArray578[3], Static7.anIntArray573[0], Static7.anIntArray573[1], Static7.anIntArray573[3], arg0.anIntArray572[local122]);

@@ -275,52 +275,52 @@ public final class Static34 {
 	}
 
 	@OriginalMember(owner = "client!tm", name = "a", descriptor = "(Z[Lclient!ch;IIIII[B)[I")
-	public static int[] method4248(@OriginalArg(0) boolean arg0, @OriginalArg(1) CollisionMap[] arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4, @OriginalArg(6) int arg5, @OriginalArg(7) byte[] arg6) {
+	public static int[] readMap(@OriginalArg(0) boolean underwater, @OriginalArg(1) CollisionMap[] collisionMaps, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4, @OriginalArg(6) int arg5, @OriginalArg(7) byte[] bytes) {
 		@Pc(9) byte local9;
-		if (arg0) {
+		if (underwater) {
 			local9 = 1;
 		} else {
 			local9 = 4;
 		}
-		if (!arg0) {
+		if (!underwater) {
 			for (@Pc(18) int local18 = 0; local18 < 4; local18++) {
 				for (@Pc(25) int local25 = 0; local25 < 64; local25++) {
 					for (@Pc(32) int local32 = 0; local32 < 64; local32++) {
 						if (arg4 + local25 > 0 && local25 + arg4 < 103 && arg3 + local32 > 0 && local32 + arg3 < 103) {
-							arg1[local18].flags[local25 + arg4][arg3 + local32] &= -2097153;
+							collisionMaps[local18].flags[local25 + arg4][arg3 + local32] &= -2097153;
 						}
 					}
 				}
 			}
 		}
 		@Pc(103) int local103 = arg5 + arg4;
-		@Pc(108) Buffer local108 = new Buffer(arg6);
+		@Pc(108) Buffer buffer = new Buffer(bytes);
 		@Pc(112) int local112 = arg2 + arg3;
 		for (@Pc(114) int local114 = 0; local114 < local9; local114++) {
 			for (@Pc(129) int local129 = 0; local129 < 64; local129++) {
 				for (@Pc(134) int local134 = 0; local134 < 64; local134++) {
-					Static9.method195(local108, false, arg0, local114, local103 + local129, local134 + local112, local134 + arg3, 0, 0, 0, arg4 + local129);
+					Static9.readTile(buffer, false, underwater, local114, local103 + local129, local134 + local112, local134 + arg3, 0, 0, 0, arg4 + local129);
 				}
 			}
 		}
 		@Pc(171) boolean local171 = false;
 		@Pc(173) boolean local173 = false;
-		while (local108.bytes.length > local108.position) {
-			@Pc(183) int local183 = local108.readUnsignedByte();
+		while (buffer.bytes.length > buffer.position) {
+			@Pc(183) int local183 = buffer.readUnsignedByte();
 			if (local183 == 128) {
 				local171 = true;
-				Static6.anIntArray465[0] = local108.readUnsignedShort();
-				Static6.anIntArray465[1] = local108.readShort();
-				Static6.anIntArray465[2] = local108.readShort();
-				Static6.anIntArray465[3] = local108.readShort();
-				Static6.anIntArray465[4] = local108.readUnsignedShort();
+				Static6.anIntArray465[0] = buffer.readUnsignedShort();
+				Static6.anIntArray465[1] = buffer.readShort();
+				Static6.anIntArray465[2] = buffer.readShort();
+				Static6.anIntArray465[3] = buffer.readShort();
+				Static6.anIntArray465[4] = buffer.readUnsignedShort();
 			} else {
 				if (local183 != 129) {
-					local108.position--;
+					buffer.position--;
 					break;
 				}
 				for (@Pc(201) int local201 = 0; local201 < 4; local201++) {
-					@Pc(210) byte local210 = local108.readByte();
+					@Pc(210) byte local210 = buffer.readByte();
 					if (local210 == 0) {
 						@Pc(216) int local216 = arg4 + 64;
 						if (local216 < 0) {
@@ -356,7 +356,7 @@ public final class Static34 {
 					} else if (local210 == 1) {
 						for (@Pc(307) int local307 = 0; local307 < 64; local307 += 4) {
 							for (@Pc(312) int local312 = 0; local312 < 64; local312 += 4) {
-								@Pc(321) byte local321 = local108.readByte();
+								@Pc(321) byte local321 = buffer.readByte();
 								for (@Pc(325) int local325 = local307 + arg4; local325 < local307 + arg4 + 4; local325++) {
 									for (@Pc(337) int local337 = arg3 + local312; local337 < local312 + arg3 + 4; local337++) {
 										if (local325 >= 0 && local325 < 104 && local337 >= 0 && local337 < 104) {
@@ -403,51 +403,51 @@ public final class Static34 {
 				local173 = true;
 			}
 		}
-		if (GlRenderer.enabled && !arg0) {
-			@Pc(539) Environment local539 = null;
+		if (GlRenderer.enabled && !underwater) {
+			@Pc(539) Environment environment = null;
 			while (true) {
-				while (local108.position < local108.bytes.length) {
-					@Pc(549) int local549 = local108.readUnsignedByte();
+				while (buffer.position < buffer.bytes.length) {
+					@Pc(549) int local549 = buffer.readUnsignedByte();
 					if (local549 == 0) {
-						local539 = new Environment(local108);
+						environment = new Environment(buffer);
 					} else if (local549 == 1) {
-						@Pc(585) int local585 = local108.readUnsignedByte();
-						if (local585 > 0) {
-							for (@Pc(590) int local590 = 0; local590 < local585; local590++) {
-								@Pc(598) Light local598 = new Light(local108);
-								if (local598.anInt1323 == 31) {
-									@Pc(608) LightType local608 = LightTypeList.get(local108.readUnsignedShort());
-									local598.method1073(local608.anInt5484, local608.anInt5480, local608.anInt5482, local608.anInt5481);
+						@Pc(585) int lights = buffer.readUnsignedByte();
+						if (lights > 0) {
+							for (@Pc(590) int i = 0; i < lights; i++) {
+								@Pc(598) Light light = new Light(buffer);
+								if (light.anInt1323 == 31) {
+									@Pc(608) LightType type = LightTypeList.get(buffer.readUnsignedShort());
+									light.method1073(type.anInt5484, type.anInt5480, type.anInt5482, type.anInt5481);
 								}
-								local598.x += arg4 << 7;
-								local598.z += arg3 << 7;
-								@Pc(640) int local640 = local598.x >> 7;
-								@Pc(645) int local645 = local598.z >> 7;
+								light.x += arg4 << 7;
+								light.z += arg3 << 7;
+								@Pc(640) int local640 = light.x >> 7;
+								@Pc(645) int local645 = light.z >> 7;
 								if (local640 >= 0 && local645 >= 0 && local640 < 104 && local645 < 104) {
-									local598.aBoolean80 = (Static4.tileFlags[1][local640][local645] & 0x2) != 0;
-									local598.y = SceneGraph.tileHeights[local598.anInt1326][local640][local645] - local598.y;
-									LightingManager.addLight(local598);
+									light.aBoolean80 = (Static4.tileFlags[1][local640][local645] & 0x2) != 0;
+									light.y = SceneGraph.tileHeights[light.anInt1326][local640][local645] - light.y;
+									LightingManager.addLight(light);
 								}
 							}
 						}
 					} else if (local549 == 2) {
-						if (local539 == null) {
-							local539 = new Environment();
+						if (environment == null) {
+							environment = new Environment();
 						}
-						local539.method4786(local108);
+						environment.method4786(buffer);
 					} else {
 						throw new IllegalStateException();
 					}
 				}
-				if (local539 == null) {
-					local539 = new Environment();
+				if (environment == null) {
+					environment = new Environment();
 				}
 				for (@Pc(704) int local704 = 0; local704 < 8; local704++) {
 					for (@Pc(709) int local709 = 0; local709 < 8; local709++) {
 						@Pc(719) int local719 = (arg4 >> 3) + local704;
 						@Pc(725) int local725 = (arg3 >> 3) + local709;
 						if (local719 >= 0 && local719 < 13 && local725 >= 0 && local725 < 13) {
-							Static5.aClass187ArrayArray1[local719][local725] = local539;
+							Static5.environments[local719][local725] = environment;
 						}
 					}
 				}

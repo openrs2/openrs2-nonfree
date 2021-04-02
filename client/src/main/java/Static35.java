@@ -888,9 +888,9 @@ public final class Static35 {
 	}
 
 	@OriginalMember(owner = "client!ui", name = "a", descriptor = "(IIBI)I")
-	public static int method4327(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(3) int arg2) {
-		if ((Static4.tileFlags[arg1][arg2][arg0] & 0x8) == 0) {
-			return arg1 <= 0 || (Static4.tileFlags[1][arg2][arg0] & 0x2) == 0 ? arg1 : arg1 - 1;
+	public static int method4327(@OriginalArg(1) int level, @OriginalArg(3) int x, @OriginalArg(0) int z) {
+		if ((Static4.tileFlags[level][x][z] & 0x8) == 0) {
+			return level <= 0 || (Static4.tileFlags[1][x][z] & 0x2) == 0 ? level : level - 1;
 		} else {
 			return 0;
 		}
@@ -1029,16 +1029,16 @@ public final class Static35 {
 	}
 
 	@OriginalMember(owner = "client!uk", name = "a", descriptor = "(IIII)I")
-	public static int method4338(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
-		arg1 &= 3;
-		if (arg1 == 0) {
-			return arg2;
-		} else if (arg1 == 1) {
-			return arg0;
-		} else if (arg1 == 2) {
-			return 7 - arg2;
+	public static int rotateX(@OriginalArg(0) int z, @OriginalArg(1) int angle, @OriginalArg(2) int x) {
+		angle &= 3;
+		if (angle == 0) {
+			return x;
+		} else if (angle == 1) {
+			return z;
+		} else if (angle == 2) {
+			return 7 - x;
 		} else {
-			return 7 - arg0;
+			return 7 - z;
 		}
 	}
 
@@ -1099,20 +1099,6 @@ public final class Static35 {
 			local384 = local356.height;
 		}
 		Static9.method194(local10.textColor, local10.text, arg0, arg5, arg2, arg4, local384, local386, arg1);
-	}
-
-	@OriginalMember(owner = "client!um", name = "a", descriptor = "(ZII)I")
-	public static int method4367(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1) {
-		if (arg0 == -1) {
-			return 12345678;
-		}
-		@Pc(18) int local18 = (arg0 & 0x7F) * arg1 >> 7;
-		if (local18 < 2) {
-			local18 = 2;
-		} else if (local18 > 126) {
-			local18 = 126;
-		}
-		return local18 + (arg0 & 0xFF80);
 	}
 
 	@OriginalMember(owner = "client!un", name = "a", descriptor = "(BI)Z")

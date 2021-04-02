@@ -325,10 +325,10 @@ public final class Static29 {
 					@Pc(1227) Class4_Sub12 local1227 = Static27.method4237(local10, local1215);
 					@Pc(1233) byte local1233 = arg5[local1137][local1144];
 					@Pc(1239) byte local1239 = arg6[local1137][local1144];
-					@Pc(1251) int local1251 = Static15.method1474(arg2[local1137][local1144], local1215.anInt3877, local1215.anInt3869);
-					@Pc(1265) int local1265 = Static15.method1474(arg2[local1137 + 1][local1144], local1215.anInt3877, local1215.anInt3869);
-					@Pc(1281) int local1281 = Static15.method1474(arg2[local1137 + 1][local1144 + 1], local1215.anInt3877, local1215.anInt3869);
-					@Pc(1295) int local1295 = Static15.method1474(arg2[local1137][local1144 + 1], local1215.anInt3877, local1215.anInt3869);
+					@Pc(1251) int local1251 = Static15.method1474(arg2[local1137][local1144], local1215.texture, local1215.anInt3869);
+					@Pc(1265) int local1265 = Static15.method1474(arg2[local1137 + 1][local1144], local1215.texture, local1215.anInt3869);
+					@Pc(1281) int local1281 = Static15.method1474(arg2[local1137 + 1][local1144 + 1], local1215.texture, local1215.anInt3869);
+					@Pc(1295) int local1295 = Static15.method1474(arg2[local1137][local1144 + 1], local1215.texture, local1215.anInt3869);
 					Static11.method521(arg10, local1265, local1159, local1295, local1281, arg3, local1251, local1233, local1239, local1227, local1203 != 0 && local1215.aBoolean275, arg9, arg7, local1137, local1144);
 				}
 				if ((arg8[local1137][local1144] & 0xFF) != 0 || local1195 != 0 && arg5[local1137][local1144] == 0) {
@@ -519,10 +519,10 @@ public final class Static29 {
 						@Pc(2266) boolean[] local2266 = Static2.aBooleanArrayArray2[local2226 == local1372 ? local1352 : 0];
 						@Pc(2272) FloType local2272 = FloTypeList.get(local2226 - 1);
 						@Pc(2277) Class4_Sub12 local2277 = Static27.method4237(local10, local2272);
-						@Pc(2293) int local2293 = Static15.method1474(arg2[local1137][local1144], local2272.anInt3877, local2272.anInt3869) << 8 | 0xFF;
-						@Pc(2311) int local2311 = Static15.method1474(arg2[local1137 + 1][local1144], local2272.anInt3877, local2272.anInt3869) << 8 | 0xFF;
-						@Pc(2331) int local2331 = Static15.method1474(arg2[local1137 + 1][local1144 + 1], local2272.anInt3877, local2272.anInt3869) << 8 | 0xFF;
-						@Pc(2351) int local2351 = Static15.method1474(arg2[local1137][local1144 + 1], local2272.anInt3877, local2272.anInt3869) << 8 | 0xFF;
+						@Pc(2293) int local2293 = Static15.method1474(arg2[local1137][local1144], local2272.texture, local2272.anInt3869) << 8 | 0xFF;
+						@Pc(2311) int local2311 = Static15.method1474(arg2[local1137 + 1][local1144], local2272.texture, local2272.anInt3869) << 8 | 0xFF;
+						@Pc(2331) int local2331 = Static15.method1474(arg2[local1137 + 1][local1144 + 1], local2272.texture, local2272.anInt3869) << 8 | 0xFF;
+						@Pc(2351) int local2351 = Static15.method1474(arg2[local1137][local1144 + 1], local2272.texture, local2272.anInt3869) << 8 | 0xFF;
 						@Pc(2358) int local2358 = local2235.length + 6 - 2;
 						local2358 += local2244.length - 2;
 						@Pc(2384) boolean local2384 = local2226 != local1416 && local2244[0] && local2235[1];

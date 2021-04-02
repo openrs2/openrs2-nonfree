@@ -193,17 +193,17 @@ public final class Static20 {
 	}
 
 	@OriginalMember(owner = "client!ii", name = "c", descriptor = "(II)V")
-	public static void method2408(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
-		for (@Pc(1) int local1 = 0; local1 < FloTypeList.capacity; local1++) {
-			@Pc(8) FloType local8 = FloTypeList.get(local1);
-			if (local8 != null) {
-				@Pc(14) int local14 = local8.anInt3877;
-				if (local14 >= 0 && !Static4.textureProvider.method441(local14)) {
-					local14 = -1;
+	public static void loadOverlayColors(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
+		for (@Pc(1) int id = 0; id < FloTypeList.capacity; id++) {
+			@Pc(8) FloType type = FloTypeList.get(id);
+			if (type != null) {
+				@Pc(14) int texture = type.texture;
+				if (texture >= 0 && !Static4.textureProvider.method441(texture)) {
+					texture = -1;
 				}
-				@Pc(64) int local64;
-				if (local8.anInt3870 >= 0) {
-					@Pc(29) int local29 = local8.anInt3870;
+				@Pc(64) int color;
+				if (type.anInt3870 >= 0) {
+					@Pc(29) int local29 = type.anInt3870;
 					@Pc(35) int local35 = (local29 & 0x7F) + arg1;
 					if (local35 < 0) {
 						local35 = 0;
@@ -211,13 +211,13 @@ public final class Static20 {
 						local35 = 127;
 					}
 					@Pc(57) int local57 = (local29 + arg0 & 0xFC00) + (local29 & 0x380) + local35;
-					local64 = ColorUtils.HSL_TO_RGB[Static22.method2286(local57, 96)];
-				} else if (local14 >= 0) {
-					local64 = ColorUtils.HSL_TO_RGB[Static22.method2286(Static4.textureProvider.method446(local14), 96)];
-				} else if (local8.anInt3869 == -1) {
-					local64 = -1;
+					color = ColorUtils.HSL_TO_RGB[ColorUtils.multiplyLightnessGrayscale(local57, 96)];
+				} else if (texture >= 0) {
+					color = ColorUtils.HSL_TO_RGB[ColorUtils.multiplyLightnessGrayscale(Static4.textureProvider.getAverageColor(texture), 96)];
+				} else if (type.anInt3869 == -1) {
+					color = -1;
 				} else {
-					@Pc(88) int local88 = local8.anInt3869;
+					@Pc(88) int local88 = type.anInt3869;
 					@Pc(94) int local94 = (local88 & 0x7F) + arg1;
 					if (local94 < 0) {
 						local94 = 0;
@@ -225,9 +225,9 @@ public final class Static20 {
 						local94 = 127;
 					}
 					@Pc(116) int local116 = (local88 + arg0 & 0xFC00) + (local88 & 0x380) + local94;
-					local64 = ColorUtils.HSL_TO_RGB[Static22.method2286(local116, 96)];
+					color = ColorUtils.HSL_TO_RGB[ColorUtils.multiplyLightnessGrayscale(local116, 96)];
 				}
-				Static3.anIntArray266[local1 + 1] = local64;
+				Static3.overlayColors[id + 1] = color;
 			}
 		}
 	}

@@ -20,7 +20,7 @@ public final class Static1 {
 	public static PrivilegedRequest reverseDnsRequest;
 
 	@OriginalMember(owner = "client!aj", name = "c", descriptor = "[[[B")
-	public static byte[][][] aByteArrayArrayArray1;
+	public static byte[][][] tileAngles;
 
 	@OriginalMember(owner = "client!ak", name = "i", descriptor = "[[[B")
 	public static byte[][][] aByteArrayArrayArray2;

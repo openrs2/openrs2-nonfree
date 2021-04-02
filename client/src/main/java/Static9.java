@@ -179,68 +179,68 @@ public final class Static9 {
 	}
 
 	@OriginalMember(owner = "client!an", name = "a", descriptor = "(Lclient!fd;ZZZIIIIIIII)V")
-	public static void method195(@OriginalArg(0) Buffer arg0, @OriginalArg(2) boolean arg1, @OriginalArg(3) boolean arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4, @OriginalArg(6) int arg5, @OriginalArg(7) int arg6, @OriginalArg(8) int arg7, @OriginalArg(9) int arg8, @OriginalArg(10) int arg9, @OriginalArg(11) int arg10) {
-		if (arg10 < 0 || arg10 >= 104 || arg6 < 0 || arg6 >= 104) {
+	public static void readTile(@OriginalArg(0) Buffer buffer, @OriginalArg(2) boolean arg1, @OriginalArg(3) boolean arg2, @OriginalArg(4) int level, @OriginalArg(5) int arg4, @OriginalArg(6) int arg5, @OriginalArg(7) int z, @OriginalArg(8) int angle, @OriginalArg(9) int arg8, @OriginalArg(10) int arg9, @OriginalArg(11) int x) {
+		if (x < 0 || x >= 104 || z < 0 || z >= 104) {
 			while (true) {
-				@Pc(315) int local315 = arg0.readUnsignedByte();
-				if (local315 == 0) {
+				@Pc(315) int code = buffer.readUnsignedByte();
+				if (code == 0) {
 					break;
 				}
-				if (local315 == 1) {
-					arg0.readUnsignedByte();
+				if (code == 1) {
+					buffer.readUnsignedByte();
 					break;
 				}
-				if (local315 <= 49) {
-					arg0.readUnsignedByte();
+				if (code <= 49) {
+					buffer.readUnsignedByte();
 				}
 			}
 			return;
 		}
 		if (!arg2 && !arg1) {
-			Static4.tileFlags[arg3][arg10][arg6] = 0;
+			Static4.tileFlags[level][x][z] = 0;
 		}
 		while (true) {
-			@Pc(37) int local37 = arg0.readUnsignedByte();
-			if (local37 == 0) {
+			@Pc(37) int code = buffer.readUnsignedByte();
+			if (code == 0) {
 				if (arg2) {
-					SceneGraph.tileHeights[0][arg9 + arg10][arg8 + arg6] = SceneGraph.surfaceTileHeights[0][arg9 + arg10][arg8 + arg6];
-				} else if (arg3 == 0) {
-					SceneGraph.tileHeights[0][arg9 + arg10][arg6 + arg8] = -PerlinNoise.getTileHeight(arg4 + 932731, arg5 + 556238) * 8;
+					SceneGraph.tileHeights[0][arg9 + x][arg8 + z] = SceneGraph.surfaceTileHeights[0][arg9 + x][arg8 + z];
+				} else if (level == 0) {
+					SceneGraph.tileHeights[0][arg9 + x][z + arg8] = -PerlinNoise.getTileHeight(arg4 + 932731, arg5 + 556238) * 8;
 				} else {
-					SceneGraph.tileHeights[arg3][arg10 + arg9][arg8 + arg6] = SceneGraph.tileHeights[arg3 - 1][arg10 + arg9][arg6 + arg8] - 240;
+					SceneGraph.tileHeights[level][x + arg9][arg8 + z] = SceneGraph.tileHeights[level - 1][x + arg9][z + arg8] - 240;
 				}
 				break;
 			}
-			if (local37 == 1) {
-				@Pc(132) int local132 = arg0.readUnsignedByte();
+			if (code == 1) {
+				@Pc(132) int height = buffer.readUnsignedByte();
 				if (arg2) {
-					SceneGraph.tileHeights[0][arg9 + arg10][arg8 + arg6] = local132 * 8 + SceneGraph.surfaceTileHeights[0][arg9 + arg10][arg8 + arg6];
+					SceneGraph.tileHeights[0][arg9 + x][arg8 + z] = height * 8 + SceneGraph.surfaceTileHeights[0][arg9 + x][arg8 + z];
 				} else {
-					if (local132 == 1) {
-						local132 = 0;
+					if (height == 1) {
+						height = 0;
 					}
-					if (arg3 == 0) {
-						SceneGraph.tileHeights[0][arg9 + arg10][arg6 + arg8] = -local132 * 8;
+					if (level == 0) {
+						SceneGraph.tileHeights[0][arg9 + x][z + arg8] = -height * 8;
 					} else {
-						SceneGraph.tileHeights[arg3][arg10 + arg9][arg8 + arg6] = SceneGraph.tileHeights[arg3 - 1][arg9 + arg10][arg8 + arg6] - local132 * 8;
+						SceneGraph.tileHeights[level][x + arg9][arg8 + z] = SceneGraph.tileHeights[level - 1][arg9 + x][arg8 + z] - height * 8;
 					}
 				}
 				break;
 			}
-			if (local37 <= 49) {
+			if (code <= 49) {
 				if (arg1) {
-					arg0.readUnsignedByte();
+					buffer.readUnsignedByte();
 				} else {
-					Static4.aByteArrayArrayArray15[arg3][arg10][arg6] = arg0.readByte();
-					Static2.aByteArrayArrayArray4[arg3][arg10][arg6] = (byte) ((local37 - 2) / 4);
-					Static1.aByteArrayArrayArray1[arg3][arg10][arg6] = (byte) (arg7 + local37 - 2 & 0x3);
+					Static4.tileOverlays[level][x][z] = buffer.readByte();
+					Static2.tileShapes[level][x][z] = (byte) ((code - 2) / 4);
+					Static1.tileAngles[level][x][z] = (byte) (angle + code - 2 & 0x3);
 				}
-			} else if (local37 > 81) {
+			} else if (code > 81) {
 				if (!arg1) {
-					Static2.aByteArrayArrayArray3[arg3][arg10][arg6] = (byte) (local37 - 81);
+					Static2.tileUnderlays[level][x][z] = (byte) (code - 81);
 				}
 			} else if (!arg2 && !arg1) {
-				Static4.tileFlags[arg3][arg10][arg6] = (byte) (local37 - 49);
+				Static4.tileFlags[level][x][z] = (byte) (code - 49);
 			}
 		}
 	}

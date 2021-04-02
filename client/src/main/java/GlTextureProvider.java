@@ -21,7 +21,7 @@ public interface GlTextureProvider {
 	int[] method445(@OriginalArg(2) int id, @OriginalArg(0) float arg0);
 
 	@OriginalMember(owner = "client!nk", name = "e", descriptor = "(II)I")
-	int method446(@OriginalArg(0) int arg0);
+	int getAverageColor(@OriginalArg(0) int id);
 
 	@OriginalMember(owner = "client!nk", name = "a", descriptor = "(BI)I")
 	int method447(@OriginalArg(1) int arg0);

@@ -173,7 +173,7 @@ public final class Static3 {
 	public static int anInt2972;
 
 	@OriginalMember(owner = "client!ii", name = "B", descriptor = "[I")
-	public static int[] anIntArray266;
+	public static int[] overlayColors;
 
 	@OriginalMember(owner = "client!ii", name = "C", descriptor = "I")
 	public static int anInt2973;

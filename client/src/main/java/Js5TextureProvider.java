@@ -72,7 +72,7 @@ public class Js5TextureProvider implements TextureProvider {
 		}
 		for (@Pc(277) int i = 0; i < len; i++) {
 			if (this.metadata[i] != null) {
-				this.metadata[i].aShort26 = (short) buffer.readUnsignedShort();
+				this.metadata[i].averageColor = (short) buffer.readUnsignedShort();
 			}
 		}
 		if (buffer.position < buffer.bytes.length) {

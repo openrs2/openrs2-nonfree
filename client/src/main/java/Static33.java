@@ -325,7 +325,7 @@ public final class Static33 {
 			arg2 = 1000000;
 			Static6.aBoolean335 = false;
 		}
-		@Pc(17) Environment local17 = Static5.aClass187ArrayArray1[arg3][arg1];
+		@Pc(17) Environment local17 = Static5.environments[arg3][arg1];
 		@Pc(27) float local27 = local17.aFloat148 * ((float) arg0 * 0.1F + 0.7F);
 		@Pc(30) int local30 = local17.anInt6034;
 		@Pc(33) float local33 = local17.aFloat150;

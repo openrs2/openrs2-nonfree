@@ -34,7 +34,7 @@ public final class FloType {
 	public boolean aBoolean275 = false;
 
 	@OriginalMember(owner = "client!oh", name = "p", descriptor = "I")
-	public int anInt3877 = -1;
+	public int texture = -1;
 
 	@OriginalMember(owner = "client!oh", name = "o", descriptor = "I")
 	public int anInt3876 = 128;
@@ -55,11 +55,11 @@ public final class FloType {
 		if (code == 1) {
 			this.anInt3869 = ColorUtils.rgbToHslTransparent(buffer.readUnsignedMedium());
 		} else if (code == 2) {
-			this.anInt3877 = buffer.readUnsignedByte();
+			this.texture = buffer.readUnsignedByte();
 		} else if (code == 3) {
-			this.anInt3877 = buffer.readUnsignedShort();
-			if (this.anInt3877 == 65535) {
-				this.anInt3877 = -1;
+			this.texture = buffer.readUnsignedShort();
+			if (this.texture == 65535) {
+				this.texture = -1;
 			}
 		} else if (code == 5) {
 			this.aBoolean274 = false;

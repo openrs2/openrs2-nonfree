@@ -141,7 +141,7 @@ public final class Skybox extends SecondaryNode {
 			this.state = 2;
 		} else if (this.state != 1) {
 			for (@Pc(113) int i = 0; i < 6; i++) {
-				@Pc(127) IntBuffer buffer = IntBuffer.wrap(ColorUtils.HSL_TO_RGB, Static4.textureProvider.method446(this.textures[i]), 1);
+				@Pc(127) IntBuffer buffer = IntBuffer.wrap(ColorUtils.HSL_TO_RGB, Static4.textureProvider.getAverageColor(this.textures[i]), 1);
 				gl.glTexImage2D(i + GL.GL_TEXTURE_CUBE_MAP_POSITIVE_X, GL.GL_POINTS, GL.GL_RGB, 1, 1, GL.GL_POINTS, GL.GL_BGRA, GL.GL_UNSIGNED_BYTE, buffer);
 				GlCleaner.onCardTexture += 3 - this.bytes;
 				this.bytes = 3;

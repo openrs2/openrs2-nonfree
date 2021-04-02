@@ -403,9 +403,9 @@ public final class Static16 {
 
 	@OriginalMember(owner = "client!gh", name = "a", descriptor = "(III)V")
 	public static void method2016(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
-		Static4.anInt3068 = Static5.aClass187ArrayArray1[arg0][arg1].anInt6035;
-		Static7.anInt5363 = Static5.aClass187ArrayArray1[arg0][arg1].anInt6037;
-		Static6.anInt5211 = Static5.aClass187ArrayArray1[arg0][arg1].anInt6033;
+		Static4.anInt3068 = Static5.environments[arg0][arg1].anInt6035;
+		Static7.anInt5363 = Static5.environments[arg0][arg1].anInt6037;
+		Static6.anInt5211 = Static5.environments[arg0][arg1].anInt6033;
 		Static25.method2775((float) Static4.anInt3068, (float) Static7.anInt5363, (float) Static6.anInt5211);
 	}
 

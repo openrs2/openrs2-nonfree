@@ -105,16 +105,16 @@ public final class Static24 {
 	}
 
 	@OriginalMember(owner = "client!ll", name = "a", descriptor = "(IIII)I")
-	public static int method2614(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2) {
-		arg0 &= 3;
-		if (arg0 == 0) {
-			return arg2;
-		} else if (arg0 == 1) {
-			return 7 - arg1;
-		} else if (arg0 == 2) {
-			return 7 - arg2;
+	public static int rotateZ(@OriginalArg(0) int angle, @OriginalArg(2) int x, @OriginalArg(3) int z) {
+		angle &= 3;
+		if (angle == 0) {
+			return z;
+		} else if (angle == 1) {
+			return 7 - x;
+		} else if (angle == 2) {
+			return 7 - z;
 		} else {
-			return arg1;
+			return x;
 		}
 	}
 
@@ -248,8 +248,8 @@ public final class Static24 {
 			if (Preferences.highDetailLighting) {
 				ColorUtils.setBrightness(0.7F);
 			}
-			if (Static5.aClass187ArrayArray1 == null) {
-				Static5.aClass187ArrayArray1 = new Environment[13][13];
+			if (Static5.environments == null) {
+				Static5.environments = new Environment[13][13];
 			}
 			LightingManager.method3109();
 			Static14.method1205();

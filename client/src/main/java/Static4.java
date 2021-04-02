@@ -47,7 +47,7 @@ public final class Static4 {
 	public static int anInt2920;
 
 	@OriginalMember(owner = "client!ko", name = "a", descriptor = "[[[B")
-	public static byte[][][] aByteArrayArrayArray15;
+	public static byte[][][] tileOverlays;
 
 	@OriginalMember(owner = "client!ko", name = "b", descriptor = "Z")
 	public static boolean newTab;

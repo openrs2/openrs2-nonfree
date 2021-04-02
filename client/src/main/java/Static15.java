@@ -314,20 +314,6 @@ public final class Static15 {
 		}
 	}
 
-	@OriginalMember(owner = "client!fg", name = "a", descriptor = "(BIII)I")
-	public static int method1339(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2) {
-		if (arg2 > 243) {
-			arg1 >>= 4;
-		} else if (arg2 > 217) {
-			arg1 >>= 3;
-		} else if (arg2 > 192) {
-			arg1 >>= 2;
-		} else if (arg2 > 179) {
-			arg1 >>= 1;
-		}
-		return (arg2 >> 1) + (arg1 >> 5 << 7) + (arg0 >> 2 << 10);
-	}
-
 	@OriginalMember(owner = "client!fi", name = "a", descriptor = "(Lclient!wf;IIB)V")
 	public static void method1401(@OriginalArg(0) Component arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
 		if (Static1.aClass185_1 != null || Static1.aBoolean17 || (arg0 == null || method1403(arg0) == null)) {

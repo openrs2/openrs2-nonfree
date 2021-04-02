@@ -278,24 +278,24 @@ public final class Static31 {
 	}
 
 	@OriginalMember(owner = "client!rm", name = "a", descriptor = "([Lclient!ch;B[[[IZ)V")
-	public static void method3778(@OriginalArg(0) CollisionMap[] arg0, @OriginalArg(2) int[][][] arg1, @OriginalArg(3) boolean arg2) {
-		@Pc(9) byte local9;
-		if (arg2) {
-			local9 = 1;
+	public static void method3778(@OriginalArg(0) CollisionMap[] collisionMaps, @OriginalArg(2) int[][][] arg1, @OriginalArg(3) boolean underwater) {
+		@Pc(9) byte levels;
+		if (underwater) {
+			levels = 1;
 		} else {
-			local9 = 4;
+			levels = 4;
 		}
-		if (!arg2) {
-			for (@Pc(18) int local18 = 0; local18 < 4; local18++) {
-				for (@Pc(25) int local25 = 0; local25 < 104; local25++) {
-					for (@Pc(32) int local32 = 0; local32 < 104; local32++) {
-						if ((Static4.tileFlags[local18][local25][local32] & 0x1) == 1) {
-							@Pc(48) int local48 = local18;
-							if ((Static4.tileFlags[1][local25][local32] & 0x2) == 2) {
-								local48 = local18 - 1;
+		if (!underwater) {
+			for (@Pc(18) int level = 0; level < 4; level++) {
+				for (@Pc(25) int x = 0; x < 104; x++) {
+					for (@Pc(32) int z = 0; z < 104; z++) {
+						if ((Static4.tileFlags[level][x][z] & 0x1) == 1) {
+							@Pc(48) int local48 = level;
+							if ((Static4.tileFlags[1][x][z] & 0x2) == 2) {
+								local48 = level - 1;
 							}
 							if (local48 >= 0) {
-								arg0[local48].flagTile(local25, local32);
+								collisionMaps[local48].flagTile(x, z);
 							}
 						}
 					}
@@ -317,18 +317,18 @@ public final class Static31 {
 			}
 		}
 		@Pc(140) int local140 = Static6.anInt4555 >> 2 << 10;
-		@Pc(144) int[][] local144 = new int[104][104];
+		@Pc(144) int[][] underlayColors = new int[104][104];
 		@Pc(148) int local148 = Static2.anInt1273 >> 1;
 		@Pc(152) int[][] local152 = new int[104][104];
-		for (@Pc(154) int local154 = 0; local154 < local9; local154++) {
-			@Pc(161) byte[][] local161 = Static5.aByteArrayArrayArray18[local154];
+		for (@Pc(154) int level = 0; level < levels; level++) {
+			@Pc(161) byte[][] local161 = Static5.aByteArrayArrayArray18[level];
 			if (!GlRenderer.enabled) {
 				@Pc(458) int local458 = (int) Math.sqrt(5100.0D);
 				@Pc(464) int local464 = local458 * 768 >> 8;
 				for (@Pc(466) int local466 = 1; local466 < 103; local466++) {
 					for (@Pc(473) int local473 = 1; local473 < 103; local473++) {
-						@Pc(501) int local501 = SceneGraph.tileHeights[local154][local473][local466 + 1] - SceneGraph.tileHeights[local154][local473][local466 - 1];
-						@Pc(521) int local521 = SceneGraph.tileHeights[local154][local473 + 1][local466] - SceneGraph.tileHeights[local154][local473 - 1][local466];
+						@Pc(501) int local501 = SceneGraph.tileHeights[level][local473][local466 + 1] - SceneGraph.tileHeights[level][local473][local466 - 1];
+						@Pc(521) int local521 = SceneGraph.tileHeights[level][local473 + 1][local466] - SceneGraph.tileHeights[level][local473 - 1][local466];
 						@Pc(535) int local535 = (int) Math.sqrt((double) (local521 * local521 + local501 * local501 + 65536));
 						@Pc(541) int local541 = (local521 << 8) / local535;
 						@Pc(545) int local545 = -65536 / local535;
@@ -353,8 +353,8 @@ public final class Static31 {
 				@Pc(282) int local282 = local276 * 1024 >> 8;
 				for (@Pc(284) int local284 = 1; local284 < 103; local284++) {
 					for (@Pc(289) int local289 = 1; local289 < 103; local289++) {
-						@Pc(317) int local317 = SceneGraph.tileHeights[local154][local289][local284 + 1] - SceneGraph.tileHeights[local154][local289][local284 - 1];
-						@Pc(338) int local338 = SceneGraph.tileHeights[local154][local289 + 1][local284] - SceneGraph.tileHeights[local154][local289 - 1][local284];
+						@Pc(317) int local317 = SceneGraph.tileHeights[level][local289][local284 + 1] - SceneGraph.tileHeights[level][local289][local284 - 1];
+						@Pc(338) int local338 = SceneGraph.tileHeights[level][local289 + 1][local284] - SceneGraph.tileHeights[level][local289 - 1][local284];
 						@Pc(352) int local352 = (int) Math.sqrt((double) (local338 * local338 + local317 * local317 + 65536));
 						@Pc(356) int local356 = -65536 / local352;
 						@Pc(362) int local362 = (local317 << 8) / local352;
@@ -365,110 +365,110 @@ public final class Static31 {
 					}
 				}
 			}
-			for (@Pc(633) int local633 = 0; local633 < 104; local633++) {
-				Static6.anIntArray491[local633] = 0;
-				Static7.anIntArray650[local633] = 0;
-				Static6.anIntArray523[local633] = 0;
-				Static2.anIntArray649[local633] = 0;
-				Static6.anIntArray549[local633] = 0;
+			for (@Pc(633) int z = 0; z < 104; z++) {
+				Static6.rowWeightedHue[z] = 0;
+				Static7.rowSaturation[z] = 0;
+				Static6.rowLightness[z] = 0;
+				Static2.rowChroma[z] = 0;
+				Static6.rowCount[z] = 0;
 			}
-			for (@Pc(663) int local663 = -5; local663 < 104; local663++) {
-				for (@Pc(670) int local670 = 0; local670 < 104; local670++) {
-					@Pc(679) int local679 = local663 + 5;
-					if (local679 < 104) {
-						@Pc(694) int local694 = Static2.aByteArrayArrayArray3[local154][local679][local670] & 0xFF;
-						if (local694 > 0) {
-							@Pc(706) FluType local706 = FluTypeList.get(local694 - 1);
-							@Pc(707) int[] local707 = Static6.anIntArray491;
-							local707[local670] += local706.anInt4058;
-							local707 = Static7.anIntArray650;
-							local707[local670] += local706.anInt4064;
-							local707 = Static6.anIntArray523;
-							local707[local670] += local706.anInt4075;
-							local707 = Static2.anIntArray649;
-							local707[local670] += local706.anInt4071;
-							@Pc(742) int local742 = Static6.anIntArray549[local670]++;
+			for (@Pc(663) int x = -5; x < 104; x++) {
+				for (@Pc(670) int z = 0; z < 104; z++) {
+					@Pc(679) int x1 = x + 5;
+					if (x1 < 104) {
+						@Pc(694) int underlay = Static2.tileUnderlays[level][x1][z] & 0xFF;
+						if (underlay > 0) {
+							@Pc(706) FluType type = FluTypeList.get(underlay - 1);
+							@Pc(707) int[] temp = Static6.rowWeightedHue;
+							temp[z] += type.weightedHue;
+							temp = Static7.rowSaturation;
+							temp[z] += type.saturation;
+							temp = Static6.rowLightness;
+							temp[z] += type.lightness;
+							temp = Static2.rowChroma;
+							temp[z] += type.chroma;
+							@Pc(742) int local742 = Static6.rowCount[z]++;
 						}
 					}
-					@Pc(749) int local749 = local663 - 5;
-					if (local749 >= 0) {
-						@Pc(765) int local765 = Static2.aByteArrayArrayArray3[local154][local749][local670] & 0xFF;
-						if (local765 > 0) {
-							@Pc(774) FluType local774 = FluTypeList.get(local765 - 1);
-							@Pc(775) int[] local775 = Static6.anIntArray491;
-							local775[local670] -= local774.anInt4058;
-							local775 = Static7.anIntArray650;
-							local775[local670] -= local774.anInt4064;
-							local775 = Static6.anIntArray523;
-							local775[local670] -= local774.anInt4075;
-							local775 = Static2.anIntArray649;
-							local775[local670] -= local774.anInt4071;
-							@Pc(810) int local810 = Static6.anIntArray549[local670]--;
+					@Pc(749) int x0 = x - 5;
+					if (x0 >= 0) {
+						@Pc(765) int underlay = Static2.tileUnderlays[level][x0][z] & 0xFF;
+						if (underlay > 0) {
+							@Pc(774) FluType type = FluTypeList.get(underlay - 1);
+							@Pc(775) int[] temp = Static6.rowWeightedHue;
+							temp[z] -= type.weightedHue;
+							temp = Static7.rowSaturation;
+							temp[z] -= type.saturation;
+							temp = Static6.rowLightness;
+							temp[z] -= type.lightness;
+							temp = Static2.rowChroma;
+							temp[z] -= type.chroma;
+							@Pc(810) int local810 = Static6.rowCount[z]--;
 						}
 					}
 				}
-				if (local663 >= 0) {
-					@Pc(824) int local824 = 0;
-					@Pc(826) int local826 = 0;
-					@Pc(828) int local828 = 0;
-					@Pc(830) int local830 = 0;
-					@Pc(832) int local832 = 0;
-					for (@Pc(834) int local834 = -5; local834 < 104; local834++) {
-						@Pc(843) int local843 = local834 + 5;
-						if (local843 < 104) {
-							local828 += Static2.anIntArray649[local843];
-							local830 += Static6.anIntArray549[local843];
-							local832 += Static7.anIntArray650[local843];
-							local824 += Static6.anIntArray491[local843];
-							local826 += Static6.anIntArray523[local843];
+				if (x >= 0) {
+					@Pc(824) int weightedHue = 0;
+					@Pc(826) int lightness = 0;
+					@Pc(828) int chroma = 0;
+					@Pc(830) int count = 0;
+					@Pc(832) int saturation = 0;
+					for (@Pc(834) int z = -5; z < 104; z++) {
+						@Pc(843) int z1 = z + 5;
+						if (z1 < 104) {
+							chroma += Static2.rowChroma[z1];
+							count += Static6.rowCount[z1];
+							saturation += Static7.rowSaturation[z1];
+							weightedHue += Static6.rowWeightedHue[z1];
+							lightness += Static6.rowLightness[z1];
 						}
-						@Pc(883) int local883 = local834 - 5;
-						if (local883 >= 0) {
-							local828 -= Static2.anIntArray649[local883];
-							local826 -= Static6.anIntArray523[local883];
-							local824 -= Static6.anIntArray491[local883];
-							local830 -= Static6.anIntArray549[local883];
-							local832 -= Static7.anIntArray650[local883];
+						@Pc(883) int z0 = z - 5;
+						if (z0 >= 0) {
+							chroma -= Static2.rowChroma[z0];
+							lightness -= Static6.rowLightness[z0];
+							weightedHue -= Static6.rowWeightedHue[z0];
+							count -= Static6.rowCount[z0];
+							saturation -= Static7.rowSaturation[z0];
 						}
-						if (local834 >= 0 && local830 > 0) {
-							local144[local663][local834] = Static15.method1339(local824 * 256 / local828, local832 / local830, local826 / local830);
+						if (z >= 0 && count > 0) {
+							underlayColors[x][z] = ColorUtils.compressHsl(weightedHue * 256 / chroma, saturation / count, lightness / count);
 						}
 					}
 				}
 			}
-			for (@Pc(955) int local955 = 1; local955 < 103; local955++) {
+			for (@Pc(955) int x = 1; x < 103; x++) {
 				label770:
-				for (@Pc(962) int local962 = 1; local962 < 103; local962++) {
-					if (arg2 || SceneGraph.isAllLevelsVisible() || (Static4.tileFlags[0][local955][local962] & 0x2) != 0 || (Static4.tileFlags[local154][local955][local962] & 0x10) == 0 && Static35.method4327(local962, local154, local955) == Static2.anInt1216) {
-						if (Static5.firstVisibleLevel > local154) {
-							Static5.firstVisibleLevel = local154;
+				for (@Pc(962) int z = 1; z < 103; z++) {
+					if (underwater || SceneGraph.isAllLevelsVisible() || (Static4.tileFlags[0][x][z] & 0x2) != 0 || (Static4.tileFlags[level][x][z] & 0x10) == 0 && Static35.method4327(level, x, z) == Static2.anInt1216) {
+						if (Static5.firstVisibleLevel > level) {
+							Static5.firstVisibleLevel = level;
 						}
-						@Pc(1019) int local1019 = Static2.aByteArrayArrayArray3[local154][local955][local962] & 0xFF;
-						@Pc(1029) int local1029 = Static4.aByteArrayArrayArray15[local154][local955][local962] & 0xFF;
-						if (local1019 > 0 || local1029 > 0) {
-							@Pc(1047) int local1047 = SceneGraph.tileHeights[local154][local955][local962];
-							@Pc(1057) int local1057 = SceneGraph.tileHeights[local154][local955 + 1][local962];
-							@Pc(1069) int local1069 = SceneGraph.tileHeights[local154][local955 + 1][local962 + 1];
-							@Pc(1079) int local1079 = SceneGraph.tileHeights[local154][local955][local962 + 1];
-							if (local154 > 0) {
+						@Pc(1019) int underlay = Static2.tileUnderlays[level][x][z] & 0xFF;
+						@Pc(1029) int overlay = Static4.tileOverlays[level][x][z] & 0xFF;
+						if (underlay > 0 || overlay > 0) {
+							@Pc(1047) int local1047 = SceneGraph.tileHeights[level][x][z];
+							@Pc(1057) int local1057 = SceneGraph.tileHeights[level][x + 1][z];
+							@Pc(1069) int local1069 = SceneGraph.tileHeights[level][x + 1][z + 1];
+							@Pc(1079) int local1079 = SceneGraph.tileHeights[level][x][z + 1];
+							if (level > 0) {
 								@Pc(1084) boolean local1084 = true;
-								if (local1019 == 0 && Static2.aByteArrayArrayArray4[local154][local955][local962] != 0) {
+								if (underlay == 0 && Static2.tileShapes[level][x][z] != 0) {
 									local1084 = false;
 								}
-								if (local1029 > 0 && !FloTypeList.get(local1029 - 1).aBoolean274) {
+								if (overlay > 0 && !FloTypeList.get(overlay - 1).aBoolean274) {
 									local1084 = false;
 								}
 								if (local1084 && local1047 == local1057 && local1069 == local1047 && local1047 == local1079) {
-									Static4.anIntArrayArrayArray9[local154][local955][local962] |= 4;
+									Static4.anIntArrayArrayArray9[level][x][z] |= 4;
 								}
 							}
 							@Pc(1153) int local1153;
 							@Pc(1151) int local1151;
-							if (local1019 <= 0) {
+							if (underlay <= 0) {
 								local1151 = -1;
 								local1153 = 0;
 							} else {
-								local1151 = local144[local955][local962];
+								local1151 = underlayColors[x][z];
 								@Pc(1168) int local1168 = (local1151 & 0x7F) + local148;
 								if (local1168 < 0) {
 									local1168 = 0;
@@ -476,26 +476,26 @@ public final class Static31 {
 									local1168 = 127;
 								}
 								@Pc(1194) int local1194 = (local1151 + local140 & 0xFC00) + (local1151 & 0x380) + local1168;
-								local1153 = ColorUtils.HSL_TO_RGB[Static35.method4367(local1194, 96)];
+								local1153 = ColorUtils.HSL_TO_RGB[ColorUtils.multiplyLightness(local1194, 96)];
 							}
-							@Pc(1209) int local1209 = local152[local955 + 1][local962];
-							@Pc(1219) int local1219 = local152[local955 + 1][local962 + 1];
-							@Pc(1227) int local1227 = local152[local955][local962 + 1];
-							@Pc(1233) int local1233 = local152[local955][local962];
-							if (local1029 == 0) {
-								SceneGraph.setTile(local154, local955, local962, 0, 0, -1, local1047, local1057, local1069, local1079, Static35.method4367(local1151, local1233), Static35.method4367(local1151, local1209), Static35.method4367(local1151, local1219), Static35.method4367(local1151, local1227), 0, 0, 0, 0, local1153, 0);
-								if (GlRenderer.enabled && local154 > 0 && local1151 != -1 && FluTypeList.get(local1019 - 1).aBoolean286) {
-									Static14.method1207(0, 0, true, false, local955, local962, local1047 - SceneGraph.tileHeights[0][local955][local962], local1057 - SceneGraph.tileHeights[0][local955 + 1][local962], local1069 - SceneGraph.tileHeights[0][local955 + 1][local962 + 1], local1079 - SceneGraph.tileHeights[0][local955][local962 + 1]);
+							@Pc(1209) int local1209 = local152[x + 1][z];
+							@Pc(1219) int local1219 = local152[x + 1][z + 1];
+							@Pc(1227) int local1227 = local152[x][z + 1];
+							@Pc(1233) int local1233 = local152[x][z];
+							if (overlay == 0) {
+								SceneGraph.setTile(level, x, z, 0, 0, -1, local1047, local1057, local1069, local1079, ColorUtils.multiplyLightness(local1151, local1233), ColorUtils.multiplyLightness(local1151, local1209), ColorUtils.multiplyLightness(local1151, local1219), ColorUtils.multiplyLightness(local1151, local1227), 0, 0, 0, 0, local1153, 0);
+								if (GlRenderer.enabled && level > 0 && local1151 != -1 && FluTypeList.get(underlay - 1).aBoolean286) {
+									Static14.method1207(0, 0, true, false, x, z, local1047 - SceneGraph.tileHeights[0][x][z], local1057 - SceneGraph.tileHeights[0][x + 1][z], local1069 - SceneGraph.tileHeights[0][x + 1][z + 1], local1079 - SceneGraph.tileHeights[0][x][z + 1]);
 								}
-								if (GlRenderer.enabled && !arg2 && SceneGraph.anIntArrayArray10 != null && local154 == 0) {
-									for (@Pc(1360) int local1360 = local955 - 1; local1360 <= local955 + 1; local1360++) {
-										for (@Pc(1369) int local1369 = local962 - 1; local1369 <= local962 + 1; local1369++) {
-											if ((local1360 != local955 || local962 != local1369) && local1360 >= 0 && local1360 < 104 && local1369 >= 0 && local1369 < 104) {
-												@Pc(1417) int local1417 = Static4.aByteArrayArrayArray15[local154][local1360][local1369] & 0xFF;
+								if (GlRenderer.enabled && !underwater && SceneGraph.anIntArrayArray10 != null && level == 0) {
+									for (@Pc(1360) int local1360 = x - 1; local1360 <= x + 1; local1360++) {
+										for (@Pc(1369) int local1369 = z - 1; local1369 <= z + 1; local1369++) {
+											if ((local1360 != x || z != local1369) && local1360 >= 0 && local1360 < 104 && local1369 >= 0 && local1369 < 104) {
+												@Pc(1417) int local1417 = Static4.tileOverlays[level][local1360][local1369] & 0xFF;
 												if (local1417 != 0) {
 													@Pc(1428) FloType local1428 = FloTypeList.get(local1417 - 1);
-													if (local1428.anInt3877 != -1 && Static32.method3920(Static4.textureProvider.method444(local1428.anInt3877))) {
-														SceneGraph.anIntArrayArray10[local955][local962] = (local1428.anInt3871 << 24) + local1428.anInt3874;
+													if (local1428.texture != -1 && Static32.method3920(Static4.textureProvider.method444(local1428.texture))) {
+														SceneGraph.anIntArrayArray10[x][z] = (local1428.anInt3871 << 24) + local1428.anInt3874;
 														continue label770;
 													}
 												}
@@ -504,22 +504,22 @@ public final class Static31 {
 									}
 								}
 							} else {
-								@Pc(1474) int local1474 = Static2.aByteArrayArrayArray4[local154][local955][local962] + 1;
-								@Pc(1482) byte local1482 = Static1.aByteArrayArrayArray1[local154][local955][local962];
-								@Pc(1488) FloType local1488 = FloTypeList.get(local1029 - 1);
-								if (GlRenderer.enabled && !arg2 && SceneGraph.anIntArrayArray10 != null && local154 == 0) {
-									if (local1488.anInt3877 != -1 && Static32.method3920(Static4.textureProvider.method444(local1488.anInt3877))) {
-										SceneGraph.anIntArrayArray10[local955][local962] = (local1488.anInt3871 << 24) + local1488.anInt3874;
+								@Pc(1474) int shape = Static2.tileShapes[level][x][z] + 1;
+								@Pc(1482) byte local1482 = Static1.tileAngles[level][x][z];
+								@Pc(1488) FloType type = FloTypeList.get(overlay - 1);
+								if (GlRenderer.enabled && !underwater && SceneGraph.anIntArrayArray10 != null && level == 0) {
+									if (type.texture != -1 && Static32.method3920(Static4.textureProvider.method444(type.texture))) {
+										SceneGraph.anIntArrayArray10[x][z] = (type.anInt3871 << 24) + type.anInt3874;
 									} else {
 										label751:
-										for (@Pc(1516) int local1516 = local955 - 1; local1516 <= local955 + 1; local1516++) {
-											for (@Pc(1529) int local1529 = local962 - 1; local1529 <= local962 + 1; local1529++) {
-												if ((local1516 != local955 || local1529 != local962) && local1516 >= 0 && local1516 < 104 && local1529 >= 0 && local1529 < 104) {
-													@Pc(1580) int local1580 = Static4.aByteArrayArrayArray15[local154][local1516][local1529] & 0xFF;
+										for (@Pc(1516) int local1516 = x - 1; local1516 <= x + 1; local1516++) {
+											for (@Pc(1529) int local1529 = z - 1; local1529 <= z + 1; local1529++) {
+												if ((local1516 != x || local1529 != z) && local1516 >= 0 && local1516 < 104 && local1529 >= 0 && local1529 < 104) {
+													@Pc(1580) int local1580 = Static4.tileOverlays[level][local1516][local1529] & 0xFF;
 													if (local1580 != 0) {
 														@Pc(1590) FloType local1590 = FloTypeList.get(local1580 - 1);
-														if (local1590.anInt3877 != -1 && Static32.method3920(Static4.textureProvider.method444(local1590.anInt3877))) {
-															SceneGraph.anIntArrayArray10[local955][local962] = local1590.anInt3874 + (local1590.anInt3871 << 24);
+														if (local1590.texture != -1 && Static32.method3920(Static4.textureProvider.method444(local1590.texture))) {
+															SceneGraph.anIntArrayArray10[x][z] = local1590.anInt3874 + (local1590.anInt3871 << 24);
 															break label751;
 														}
 													}
@@ -528,7 +528,7 @@ public final class Static31 {
 										}
 									}
 								}
-								@Pc(1640) int local1640 = local1488.anInt3877;
+								@Pc(1640) int local1640 = type.texture;
 								if (local1640 >= 0 && !Static4.textureProvider.method441(local1640)) {
 									local1640 = -1;
 								}
@@ -536,12 +536,12 @@ public final class Static31 {
 								@Pc(1671) int local1671;
 								if (local1640 >= 0) {
 									local1659 = -1;
-									local1671 = ColorUtils.HSL_TO_RGB[Static22.method2286(Static4.textureProvider.method446(local1640), 96)];
-								} else if (local1488.anInt3869 == -1) {
+									local1671 = ColorUtils.HSL_TO_RGB[ColorUtils.multiplyLightnessGrayscale(Static4.textureProvider.getAverageColor(local1640), 96)];
+								} else if (type.anInt3869 == -1) {
 									local1671 = 0;
 									local1659 = -2;
 								} else {
-									local1659 = local1488.anInt3869;
+									local1659 = type.anInt3869;
 									@Pc(1692) int local1692 = (local1659 & 0x7F) + local148;
 									if (local1692 < 0) {
 										local1692 = 0;
@@ -549,10 +549,10 @@ public final class Static31 {
 										local1692 = 127;
 									}
 									@Pc(1716) int local1716 = local1692 + (local1659 + local140 & 0xFC00) + (local1659 & 0x380);
-									local1671 = ColorUtils.HSL_TO_RGB[Static22.method2286(local1716, 96)];
+									local1671 = ColorUtils.HSL_TO_RGB[ColorUtils.multiplyLightnessGrayscale(local1716, 96)];
 								}
-								if (local1488.anInt3870 >= 0) {
-									@Pc(1730) int local1730 = local1488.anInt3870;
+								if (type.anInt3870 >= 0) {
+									@Pc(1730) int local1730 = type.anInt3870;
 									@Pc(1736) int local1736 = local148 + (local1730 & 0x7F);
 									if (local1736 < 0) {
 										local1736 = 0;
@@ -560,11 +560,11 @@ public final class Static31 {
 										local1736 = 127;
 									}
 									@Pc(1763) int local1763 = (local1730 + local140 & 0xFC00) + (local1730 & 0x380) + local1736;
-									local1671 = ColorUtils.HSL_TO_RGB[Static22.method2286(local1763, 96)];
+									local1671 = ColorUtils.HSL_TO_RGB[ColorUtils.multiplyLightnessGrayscale(local1763, 96)];
 								}
-								SceneGraph.setTile(local154, local955, local962, local1474, local1482, local1640, local1047, local1057, local1069, local1079, Static35.method4367(local1151, local1233), Static35.method4367(local1151, local1209), Static35.method4367(local1151, local1219), Static35.method4367(local1151, local1227), Static22.method2286(local1659, local1233), Static22.method2286(local1659, local1209), Static22.method2286(local1659, local1219), Static22.method2286(local1659, local1227), local1153, local1671);
-								if (GlRenderer.enabled && local154 > 0) {
-									Static14.method1207(local1474, local1482, local1659 == -2 || !local1488.aBoolean273, local1151 == -1 || !FluTypeList.get(local1019 - 1).aBoolean286, local955, local962, local1047 - SceneGraph.tileHeights[0][local955][local962], local1057 - SceneGraph.tileHeights[0][local955 + 1][local962], local1069 - SceneGraph.tileHeights[0][local955 + 1][local962 + 1], local1079 - SceneGraph.tileHeights[0][local955][local962 + 1]);
+								SceneGraph.setTile(level, x, z, shape, local1482, local1640, local1047, local1057, local1069, local1079, ColorUtils.multiplyLightness(local1151, local1233), ColorUtils.multiplyLightness(local1151, local1209), ColorUtils.multiplyLightness(local1151, local1219), ColorUtils.multiplyLightness(local1151, local1227), ColorUtils.multiplyLightnessGrayscale(local1659, local1233), ColorUtils.multiplyLightnessGrayscale(local1659, local1209), ColorUtils.multiplyLightnessGrayscale(local1659, local1219), ColorUtils.multiplyLightnessGrayscale(local1659, local1227), local1153, local1671);
+								if (GlRenderer.enabled && level > 0) {
+									Static14.method1207(shape, local1482, local1659 == -2 || !type.aBoolean273, local1151 == -1 || !FluTypeList.get(underlay - 1).aBoolean286, x, z, local1047 - SceneGraph.tileHeights[0][x][z], local1057 - SceneGraph.tileHeights[0][x + 1][z], local1069 - SceneGraph.tileHeights[0][x + 1][z + 1], local1079 - SceneGraph.tileHeights[0][x][z + 1]);
 								}
 							}
 						}
@@ -575,17 +575,17 @@ public final class Static31 {
 				@Pc(1908) float[][] local1908 = new float[105][105];
 				@Pc(1912) float[][] local1912 = new float[105][105];
 				@Pc(1916) float[][] local1916 = new float[105][105];
-				@Pc(1920) int[][] local1920 = SceneGraph.tileHeights[local154];
+				@Pc(1920) int[][] local1920 = SceneGraph.tileHeights[level];
 				@Pc(1922) int local1922 = 1;
 				while (true) {
 					if (local1922 > 103) {
-						if (arg2) {
-							@Pc(2042) Class4_Sub12[] local2042 = Static22.method2389(arg1, Static4.aByteArrayArrayArray15[local154], local1908, SceneGraph.anIntArrayArray10, local144, local1912, Static2.aByteArrayArrayArray4[local154], local152, Static1.aByteArrayArrayArray1[local154], local154, local1916, SceneGraph.surfaceTileHeights[0], Static4.tileFlags, Static2.aByteArrayArrayArray3[local154], SceneGraph.tileHeights[local154]);
-							Static18.method1679(local154, local2042);
+						if (underwater) {
+							@Pc(2042) Class4_Sub12[] local2042 = Static22.method2389(arg1, Static4.tileOverlays[level], local1908, SceneGraph.anIntArrayArray10, underlayColors, local1912, Static2.tileShapes[level], local152, Static1.tileAngles[level], level, local1916, SceneGraph.surfaceTileHeights[0], Static4.tileFlags, Static2.tileUnderlays[level], SceneGraph.tileHeights[level]);
+							Static18.method1679(level, local2042);
 							break;
 						}
-						@Pc(2076) Class4_Sub12[] local2076 = Static22.method2389(arg1, Static4.aByteArrayArrayArray15[local154], local1908, null, local144, local1912, Static2.aByteArrayArrayArray4[local154], local152, Static1.aByteArrayArrayArray1[local154], local154, local1916, null, Static4.tileFlags, Static2.aByteArrayArrayArray3[local154], SceneGraph.tileHeights[local154]);
-						@Pc(2100) Class4_Sub12[] local2100 = Static29.method3149(Static4.tileFlags, Static4.aByteArrayArrayArray15[local154], local152, local1908, local154, Static2.aByteArrayArrayArray4[local154], Static1.aByteArrayArrayArray1[local154], SceneGraph.tileHeights[local154], Static2.aByteArrayArrayArray3[local154], local1912, local1916);
+						@Pc(2076) Class4_Sub12[] local2076 = Static22.method2389(arg1, Static4.tileOverlays[level], local1908, null, underlayColors, local1912, Static2.tileShapes[level], local152, Static1.tileAngles[level], level, local1916, null, Static4.tileFlags, Static2.tileUnderlays[level], SceneGraph.tileHeights[level]);
+						@Pc(2100) Class4_Sub12[] local2100 = Static29.method3149(Static4.tileFlags, Static4.tileOverlays[level], local152, local1908, level, Static2.tileShapes[level], Static1.tileAngles[level], SceneGraph.tileHeights[level], Static2.tileUnderlays[level], local1912, local1916);
 						@Pc(2107) Class4_Sub12[] local2107 = new Class4_Sub12[local2076.length + local2100.length];
 						for (@Pc(2109) int local2109 = 0; local2109 < local2076.length; local2109++) {
 							local2107[local2109] = local2076[local2109];
@@ -593,8 +593,8 @@ public final class Static31 {
 						for (@Pc(2124) int local2124 = 0; local2124 < local2100.length; local2124++) {
 							local2107[local2124 + local2076.length] = local2100[local2124];
 						}
-						Static18.method1679(local154, local2107);
-						Static14.method1094(Static1.aByteArrayArrayArray1[local154], LightingManager.lightCount, LightingManager.lights, SceneGraph.tileHeights[local154], Static2.aByteArrayArrayArray3[local154], local1908, Static4.aByteArrayArrayArray15[local154], local1916, local1912, local154, Static2.aByteArrayArrayArray4[local154]);
+						Static18.method1679(level, local2107);
+						Static14.method1094(Static1.tileAngles[level], LightingManager.lightCount, LightingManager.lights, SceneGraph.tileHeights[level], Static2.tileUnderlays[level], local1908, Static4.tileOverlays[level], local1916, local1912, level, Static2.tileShapes[level]);
 						break;
 					}
 					for (@Pc(1927) int local1927 = 1; local1927 <= 103; local1927++) {
@@ -608,14 +608,14 @@ public final class Static31 {
 					local1922++;
 				}
 			}
-			Static2.aByteArrayArrayArray3[local154] = null;
-			Static4.aByteArrayArrayArray15[local154] = null;
-			Static2.aByteArrayArrayArray4[local154] = null;
-			Static1.aByteArrayArrayArray1[local154] = null;
-			Static5.aByteArrayArrayArray18[local154] = null;
+			Static2.tileUnderlays[level] = null;
+			Static4.tileOverlays[level] = null;
+			Static2.tileShapes[level] = null;
+			Static1.tileAngles[level] = null;
+			Static5.aByteArrayArrayArray18[level] = null;
 		}
 		Static13.method1008();
-		if (arg2) {
+		if (underwater) {
 			return;
 		}
 		for (@Pc(2203) int local2203 = 0; local2203 < 104; local2203++) {
@@ -961,7 +961,7 @@ public final class Static31 {
 						Static23.method2543(local315, local331, local299, local307, local323, local291, arg0.anInt4299, arg0.anInt4301, arg0.anInt4296);
 					}
 				} else if (!Preferences.groundTextures) {
-					@Pc(475) int local475 = Static4.textureProvider.method446(arg0.anInt4297);
+					@Pc(475) int local475 = Static4.textureProvider.getAverageColor(arg0.anInt4297);
 					Static23.method2543(local315, local331, local299, local307, local323, local291, Static10.method302(local475, arg0.anInt4299), Static10.method302(local475, arg0.anInt4301), Static10.method302(local475, arg0.anInt4296));
 				} else if (arg0.aBoolean302) {
 					Static23.method2558(local315, local331, local299, local307, local323, local291, arg0.anInt4299, arg0.anInt4301, arg0.anInt4296, local7, local145, local6, local37, local167, local229, local15, local14, local26, arg0.anInt4297);
@@ -991,7 +991,7 @@ public final class Static31 {
 		} else if (Preferences.groundTextures) {
 			Static23.method2558(local283, local299, local331, local275, local291, local323, arg0.anInt4298, arg0.anInt4296, arg0.anInt4301, local7, local145, local6, local37, local167, local229, local15, local14, local26, arg0.anInt4297);
 		} else {
-			@Pc(608) int local608 = Static4.textureProvider.method446(arg0.anInt4297);
+			@Pc(608) int local608 = Static4.textureProvider.getAverageColor(arg0.anInt4297);
 			Static23.method2543(local283, local299, local331, local275, local291, local323, Static10.method302(local608, arg0.anInt4298), Static10.method302(local608, arg0.anInt4296), Static10.method302(local608, arg0.anInt4301));
 		}
 	}
@@ -1226,39 +1226,39 @@ public final class Static31 {
 	}
 
 	@OriginalMember(owner = "client!ro", name = "a", descriptor = "(IIIB)I")
-	public static int method3802(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
-		arg1 &= 3;
-		if (arg1 == 0) {
-			return arg0;
-		} else if (arg1 == 1) {
-			return arg2;
-		} else if (arg1 == 2) {
-			return 1023 - arg0;
+	public static int rotateXFine(@OriginalArg(0) int x, @OriginalArg(1) int angle, @OriginalArg(2) int z) {
+		angle &= 3;
+		if (angle == 0) {
+			return x;
+		} else if (angle == 1) {
+			return z;
+		} else if (angle == 2) {
+			return 1023 - x;
 		} else {
-			return 1023 - arg2;
+			return 1023 - z;
 		}
 	}
 
 	@OriginalMember(owner = "client!ro", name = "a", descriptor = "(ZB)V")
 	public static void method3803(@OriginalArg(0) boolean arg0) {
-		Static6.anIntArray549 = new int[104];
+		Static6.rowCount = new int[104];
 		Static5.firstVisibleLevel = 99;
-		@Pc(13) byte local13;
+		@Pc(13) byte levels;
 		if (arg0) {
-			local13 = 1;
+			levels = 1;
 		} else {
-			local13 = 4;
+			levels = 4;
 		}
-		Static2.anIntArray649 = new int[104];
-		Static4.aByteArrayArrayArray15 = new byte[local13][104][104];
-		Static1.aByteArrayArrayArray1 = new byte[local13][104][104];
-		Static6.anIntArray491 = new int[104];
-		Static5.aByteArrayArrayArray18 = new byte[local13][105][105];
-		Static6.anIntArray523 = new int[104];
-		Static2.aByteArrayArrayArray3 = new byte[local13][104][104];
-		Static4.anIntArrayArrayArray9 = new int[local13][105][105];
-		Static2.aByteArrayArrayArray4 = new byte[local13][104][104];
-		Static7.anIntArray650 = new int[104];
+		Static2.rowChroma = new int[104];
+		Static4.tileOverlays = new byte[levels][104][104];
+		Static1.tileAngles = new byte[levels][104][104];
+		Static6.rowWeightedHue = new int[104];
+		Static5.aByteArrayArrayArray18 = new byte[levels][105][105];
+		Static6.rowLightness = new int[104];
+		Static2.tileUnderlays = new byte[levels][104][104];
+		Static4.anIntArrayArrayArray9 = new int[levels][105][105];
+		Static2.tileShapes = new byte[levels][104][104];
+		Static7.rowSaturation = new int[104];
 		Static6.anIntArray465 = new int[5];
 	}
 

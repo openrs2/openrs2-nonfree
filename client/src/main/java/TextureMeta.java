@@ -26,7 +26,7 @@ public final class TextureMeta {
 	public byte aByte10;
 
 	@OriginalMember(owner = "client!mi", name = "q", descriptor = "S")
-	public short aShort26;
+	public short averageColor;
 
 	@OriginalMember(owner = "client!mi", name = "r", descriptor = "Z")
 	public boolean aBoolean236;

@@ -136,7 +136,7 @@ public final class Static21 {
 			@Pc(63) int z = mapZ * 64 - Static7.originZ;
 			if (mapBytes != null) {
 				Static9.method763();
-				local33 = Static34.method4248(underwater, PathFinder.collisionMaps, Static7.originZ, z, x, Static5.originX, mapBytes);
+				local33 = Static34.readMap(underwater, PathFinder.collisionMaps, Static7.originZ, z, x, Static5.originX, mapBytes);
 			}
 			if (!underwater && Static4.centralZoneX / 8 == mapX && mapZ == Static1.centralZoneZ / 8) {
 				if (local33 == null) {

@@ -66,13 +66,13 @@ public final class Static37 {
 
 	@OriginalMember(owner = "client!wc", name = "a", descriptor = "(Z)V")
 	public static void method4677() {
-		if (Static5.aClass187ArrayArray1 == null) {
+		if (Static5.environments == null) {
 			return;
 		}
 		@Pc(8) Environment local8 = new Environment();
 		for (@Pc(10) int local10 = 0; local10 < 13; local10++) {
 			for (@Pc(15) int local15 = 0; local15 < 13; local15++) {
-				Static5.aClass187ArrayArray1[local10][local15] = local8;
+				Static5.environments[local10][local15] = local8;
 			}
 		}
 	}

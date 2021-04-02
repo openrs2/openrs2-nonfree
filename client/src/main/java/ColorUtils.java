@@ -140,8 +140,8 @@ public final class ColorUtils {
 		} else if (is > 255) {
 			is = 255;
 		}
-		@Pc(199) double h2 = h / 6.0D;
-		@Pc(204) int ih = (int) (h2 * 256.0D);
+		@Pc(199) double hPrime = h / 6.0D;
+		@Pc(204) int ih = (int) (hPrime * 256.0D);
 		if (il > 243) {
 			is >>= 4;
 		} else if (il > 217) {
@@ -157,5 +157,55 @@ public final class ColorUtils {
 	@OriginalMember(owner = "client!ac", name = "c", descriptor = "(II)I")
 	public static int rgbToHslTransparent(@OriginalArg(0) int rgb) {
 		return rgb == 0xFF00FF ? -1 : rgbToHsl(rgb);
+	}
+
+	@OriginalMember(owner = "client!fg", name = "a", descriptor = "(BIII)I")
+	public static int compressHsl(@OriginalArg(1) int hue, @OriginalArg(2) int saturation, @OriginalArg(3) int lightness) {
+		if (lightness > 243) {
+			saturation >>= 4;
+		} else if (lightness > 217) {
+			saturation >>= 3;
+		} else if (lightness > 192) {
+			saturation >>= 2;
+		} else if (lightness > 179) {
+			saturation >>= 1;
+		}
+		return (lightness >> 1) + (saturation >> 5 << 7) + (hue >> 2 << 10);
+	}
+
+	@OriginalMember(owner = "client!um", name = "a", descriptor = "(ZII)I")
+	public static int multiplyLightness(@OriginalArg(1) int hsl, @OriginalArg(2) int factor) {
+		if (hsl == -1) {
+			return 12345678;
+		}
+		@Pc(18) int l = (hsl & 0x7F) * factor >> 7;
+		if (l < 2) {
+			l = 2;
+		} else if (l > 126) {
+			l = 126;
+		}
+		return l + (hsl & 0xFF80);
+	}
+
+	@OriginalMember(owner = "client!kf", name = "a", descriptor = "(BII)I")
+	public static int multiplyLightnessGrayscale(@OriginalArg(1) int hsl, @OriginalArg(2) int factor) {
+		if (hsl == -2) {
+			return 12345678;
+		} else if (hsl == -1) {
+			if (factor < 2) {
+				factor = 2;
+			} else if (factor > 126) {
+				factor = 126;
+			}
+			return factor;
+		} else {
+			@Pc(45) int l = factor * (hsl & 0x7F) >> 7;
+			if (l < 2) {
+				l = 2;
+			} else if (l > 126) {
+				l = 126;
+			}
+			return (hsl & 0xFF80) + l;
+		}
 	}
 }

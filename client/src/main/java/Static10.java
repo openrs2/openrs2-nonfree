@@ -203,7 +203,7 @@ public final class Static10 {
 			Static3.anInt2554 = -1;
 		}
 		Static5.aClass185_12 = null;
-		Static3.anIntArray266 = null;
+		Static3.overlayColors = null;
 		Static3.anIntArrayArrayArray6 = null;
 		Static3.aByteArrayArrayArray10 = null;
 		Static3.aByteArrayArrayArray14 = null;
