@@ -284,7 +284,8 @@ public abstract class Js5 {
 			try {
 				uncompressed = uncompress(compressed);
 			} catch (@Pc(126) RuntimeException ex) {
-				throw TracingException.wrap(ex, "T3 - " + (key != null) + "," + group + "," + compressed.length + "," + Buffer.crc32(compressed, compressed.length) + "," + Buffer.crc32(compressed, compressed.length - 2) + "," + this.groupChecksums[group] + "," + this.checksum);
+				System.out.println("T3 - " + (key != null) + "," + group + "," + compressed.length + "," + Buffer.crc32(compressed, compressed.length) + "," + Buffer.crc32(compressed, compressed.length - 2) + "," + this.groupChecksums[group] + "," + this.checksum);
+				uncompressed = new byte[] { 0 };
 			}
 			if (this.discardPacked) {
 				this.packed[group] = null;
