@@ -521,44 +521,44 @@ public final class Static15 {
 	}
 
 	@OriginalMember(owner = "client!fl", name = "a", descriptor = "(II[Lclient!ch;[BIIIIZII)V")
-	public static void method1471(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) CollisionMap[] arg2, @OriginalArg(3) byte[] arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) boolean arg8, @OriginalArg(10) int arg9) {
-		@Pc(10) Buffer local10 = new Buffer(arg3);
-		@Pc(12) int local12 = -1;
+	public static void readZoneLocs(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) CollisionMap[] arg2, @OriginalArg(3) byte[] bytes, @OriginalArg(4) int zoneAngle, @OriginalArg(5) int zoneZ, @OriginalArg(6) int zoneX, @OriginalArg(7) int zoneLevel, @OriginalArg(8) boolean arg8, @OriginalArg(10) int arg9) {
+		@Pc(10) Buffer buffer = new Buffer(bytes);
+		@Pc(12) int id = -1;
 		while (true) {
-			@Pc(21) int local21 = local10.readUnsignedMultiSmart();
-			if (local21 == 0) {
+			@Pc(21) int idDelta = buffer.readUnsignedMultiSmart();
+			if (idDelta == 0) {
 				return;
 			}
-			local12 += local21;
-			@Pc(34) int local34 = 0;
+			id += idDelta;
+			@Pc(34) int position = 0;
 			while (true) {
-				@Pc(38) int local38 = local10.readUnsignedShortSmart();
-				if (local38 == 0) {
+				@Pc(38) int positionDelta = buffer.readUnsignedShortSmart();
+				if (positionDelta == 0) {
 					break;
 				}
-				local34 += local38 - 1;
-				@Pc(57) int local57 = local34 >> 6 & 0x3F;
-				@Pc(61) int local61 = local34 & 0x3F;
-				@Pc(65) int local65 = local34 >> 12;
-				@Pc(69) int local69 = local10.readUnsignedByte();
-				@Pc(73) int local73 = local69 >> 2;
-				@Pc(77) int local77 = local69 & 0x3;
-				if (local65 == arg7 && arg6 <= local57 && arg6 + 8 > local57 && arg5 <= local61 && arg5 + 8 > local61) {
-					@Pc(108) LocType local108 = LocTypeList.get(local12);
-					@Pc(125) int local125 = Static29.method3147(local108.width, local61 & 0x7, local77, local57 & 0x7, arg4, local108.length) + arg1;
-					@Pc(145) int local145 = arg9 + Static26.method4356(local57 & 0x7, local108.length, local108.width, arg4, local61 & 0x7, local77);
-					if (local125 > 0 && local145 > 0 && local125 < 103 && local145 < 103) {
+				position += positionDelta - 1;
+				@Pc(57) int x = position >> 6 & 0x3F;
+				@Pc(61) int z = position & 0x3F;
+				@Pc(65) int level = position >> 12;
+				@Pc(69) int shapeAndAngle = buffer.readUnsignedByte();
+				@Pc(73) int shape = shapeAndAngle >> 2;
+				@Pc(77) int angle = shapeAndAngle & 0x3;
+				if (level == zoneLevel && zoneX <= x && zoneX + 8 > x && zoneZ <= z && zoneZ + 8 > z) {
+					@Pc(108) LocType type = LocTypeList.get(id);
+					@Pc(125) int rotatedX = Static29.method3147(type.width, z & 0x7, angle, x & 0x7, zoneAngle, type.length) + arg1;
+					@Pc(145) int rotatedZ = arg9 + Static26.method4356(x & 0x7, type.length, type.width, zoneAngle, z & 0x7, angle);
+					if (rotatedX > 0 && rotatedZ > 0 && rotatedX < 103 && rotatedZ < 103) {
 						@Pc(162) CollisionMap local162 = null;
 						if (!arg8) {
 							@Pc(166) int local166 = arg0;
-							if ((Static4.tileFlags[1][local125][local145] & 0x2) == 2) {
+							if ((Static4.tileFlags[1][rotatedX][rotatedZ] & 0x2) == 2) {
 								local166 = arg0 - 1;
 							}
 							if (local166 >= 0) {
 								local162 = arg2[local166];
 							}
 						}
-						Static22.method2193(local77 + arg4 & 0x3, arg0, local12, arg0, local125, arg8, local145, local162, !arg8, local73);
+						Static22.method2193(angle + zoneAngle & 0x3, arg0, id, arg0, rotatedX, arg8, rotatedZ, local162, !arg8, shape);
 					}
 				}
 			}

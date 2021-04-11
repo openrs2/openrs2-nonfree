@@ -516,7 +516,7 @@ public final class Static24 {
 							@Pc(99) int local99 = (local89 / 8 << 8) + local83 / 8;
 							for (@Pc(101) int local101 = 0; local101 < Static7.mapSquares.length; local101++) {
 								if (local99 == Static7.mapSquares[local101] && local13[local101] != null) {
-									Static15.method1471(local27, local38 * 8, PathFinder.collisionMaps, local13[local101], local77, (local83 & 0x7) * 8, (local89 & 0x7) * 8, local63, arg0, local43 * 8);
+									Static15.readZoneLocs(local27, local38 * 8, PathFinder.collisionMaps, local13[local101], local77, (local83 & 0x7) * 8, (local89 & 0x7) * 8, local63, arg0, local43 * 8);
 									break;
 								}
 							}
