@@ -25,7 +25,7 @@ public final class MaterialManager {
 		materials[4] = new WaterMaterial();
 		materials[5] = new WaterfallMaterial();
 		materials[6] = new UnlitMaterial();
-		materials[7] = new Class6();
+		materials[7] = new Material7();
 	}
 
 	@OriginalMember(owner = "client!ln", name = "a", descriptor = "(III)V")

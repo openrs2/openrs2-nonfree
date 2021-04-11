@@ -6,7 +6,7 @@ import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
 @OriginalClass("client!ae")
-public final class Class6 implements Material {
+public final class Material7 implements Material {
 
 	@OriginalMember(owner = "client!ae", name = "b", descriptor = "Z")
 	private boolean aBoolean7 = false;
@@ -15,7 +15,7 @@ public final class Class6 implements Material {
 	private int anInt96 = -1;
 
 	@OriginalMember(owner = "client!ae", name = "<init>", descriptor = "()V")
-	public Class6() {
+	public Material7() {
 		if (GlRenderer.arbTextureCubeMapSupported) {
 			@Pc(11) GL gl = GlRenderer.gl;
 			this.anInt96 = gl.glGenLists(2);
