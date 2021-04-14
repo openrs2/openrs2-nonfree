@@ -4,16 +4,16 @@ import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
 @OriginalClass("client!pc")
-public final class Class4_Sub6_Sub4 extends Class4_Sub6 {
+public final class SoundPcmStream extends PcmStream {
 
 	@OriginalMember(owner = "client!pc", name = "a", descriptor = "(Lclient!pb;II)Lclient!pc;")
-	public static Class4_Sub6_Sub4 create(@OriginalArg(0) PcmSound sound, @OriginalArg(2) int volume) {
-		return sound.samples == null || sound.samples.length == 0 ? null : new Class4_Sub6_Sub4(sound, (int) ((long) sound.rate * 256L * (long) 100 / (long) (Static7.sampleRate * 100)), volume << 6);
+	public static SoundPcmStream create(@OriginalArg(0) PcmSound sound, @OriginalArg(2) int volume) {
+		return sound.samples == null || sound.samples.length == 0 ? null : new SoundPcmStream(sound, (int) ((long) sound.rate * 256L * (long) 100 / (long) (Static7.sampleRate * 100)), volume << 6);
 	}
 
 	@OriginalMember(owner = "client!pc", name = "a", descriptor = "(Lclient!pb;III)Lclient!pc;")
-	public static Class4_Sub6_Sub4 create(@OriginalArg(0) PcmSound sound, @OriginalArg(1) int arg1, @OriginalArg(2) int volume, @OriginalArg(3) int arg3) {
-		return sound.samples == null || sound.samples.length == 0 ? null : new Class4_Sub6_Sub4(sound, arg1, volume, arg3);
+	public static SoundPcmStream create(@OriginalArg(0) PcmSound sound, @OriginalArg(1) int arg1, @OriginalArg(2) int volume, @OriginalArg(3) int pan) {
+		return sound.samples == null || sound.samples.length == 0 ? null : new SoundPcmStream(sound, arg1, volume, pan);
 	}
 
 	@OriginalMember(owner = "client!pc", name = "a", descriptor = "(II)I")
@@ -22,7 +22,7 @@ public final class Class4_Sub6_Sub4 extends Class4_Sub6 {
 	}
 
 	@OriginalMember(owner = "client!pc", name = "a", descriptor = "(II[B[IIIIIIIILclient!pc;II)I")
-	private static int method3356(@OriginalArg(2) byte[] arg0, @OriginalArg(3) int[] arg1, @OriginalArg(4) int arg2, @OriginalArg(5) int arg3, @OriginalArg(6) int arg4, @OriginalArg(7) int arg5, @OriginalArg(9) int arg6, @OriginalArg(10) int arg7, @OriginalArg(11) Class4_Sub6_Sub4 arg8, @OriginalArg(12) int arg9, @OriginalArg(13) int arg10) {
+	private static int method3356(@OriginalArg(2) byte[] arg0, @OriginalArg(3) int[] arg1, @OriginalArg(4) int arg2, @OriginalArg(5) int arg3, @OriginalArg(6) int arg4, @OriginalArg(7) int arg5, @OriginalArg(9) int arg6, @OriginalArg(10) int arg7, @OriginalArg(11) SoundPcmStream arg8, @OriginalArg(12) int arg9, @OriginalArg(13) int arg10) {
 		@Pc(14) int local14;
 		if (arg9 == 0 || (local14 = arg3 + (arg7 + arg9 + 256 - arg2) / arg9) > arg6) {
 			local14 = arg6;
@@ -60,7 +60,7 @@ public final class Class4_Sub6_Sub4 extends Class4_Sub6 {
 	}
 
 	@OriginalMember(owner = "client!pc", name = "b", descriptor = "(II[B[IIIIIIIILclient!pc;II)I")
-	private static int method3357(@OriginalArg(2) byte[] arg0, @OriginalArg(3) int[] arg1, @OriginalArg(4) int arg2, @OriginalArg(5) int arg3, @OriginalArg(6) int arg4, @OriginalArg(7) int arg5, @OriginalArg(9) int arg6, @OriginalArg(10) int arg7, @OriginalArg(11) Class4_Sub6_Sub4 arg8, @OriginalArg(12) int arg9, @OriginalArg(13) int arg10) {
+	private static int method3357(@OriginalArg(2) byte[] arg0, @OriginalArg(3) int[] arg1, @OriginalArg(4) int arg2, @OriginalArg(5) int arg3, @OriginalArg(6) int arg4, @OriginalArg(7) int arg5, @OriginalArg(9) int arg6, @OriginalArg(10) int arg7, @OriginalArg(11) SoundPcmStream arg8, @OriginalArg(12) int arg9, @OriginalArg(13) int arg10) {
 		@Pc(14) int local14;
 		if (arg9 == 0 || (local14 = arg3 + (arg7 + arg9 - arg2 - 257) / arg9) > arg6) {
 			local14 = arg6;
@@ -99,7 +99,7 @@ public final class Class4_Sub6_Sub4 extends Class4_Sub6 {
 	}
 
 	@OriginalMember(owner = "client!pc", name = "a", descriptor = "([B[IIIIIIILclient!pc;)I")
-	private static int method3361(@OriginalArg(0) byte[] arg0, @OriginalArg(1) int[] arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(6) int arg5, @OriginalArg(7) int arg6, @OriginalArg(8) Class4_Sub6_Sub4 arg7) {
+	private static int method3361(@OriginalArg(0) byte[] arg0, @OriginalArg(1) int[] arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(6) int arg5, @OriginalArg(7) int arg6, @OriginalArg(8) SoundPcmStream arg7) {
 		@Pc(3) int local3 = arg2 >> 8;
 		arg6 >>= 8;
 		arg4 <<= 2;
@@ -132,7 +132,7 @@ public final class Class4_Sub6_Sub4 extends Class4_Sub6 {
 	}
 
 	@OriginalMember(owner = "client!pc", name = "a", descriptor = "(I[B[IIIIIIIIIILclient!pc;)I")
-	private static int method3362(@OriginalArg(1) byte[] arg0, @OriginalArg(2) int[] arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4, @OriginalArg(6) int arg5, @OriginalArg(7) int arg6, @OriginalArg(8) int arg7, @OriginalArg(10) int arg8, @OriginalArg(11) int arg9, @OriginalArg(12) Class4_Sub6_Sub4 arg10) {
+	private static int method3362(@OriginalArg(1) byte[] arg0, @OriginalArg(2) int[] arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4, @OriginalArg(6) int arg5, @OriginalArg(7) int arg6, @OriginalArg(8) int arg7, @OriginalArg(10) int arg8, @OriginalArg(11) int arg9, @OriginalArg(12) SoundPcmStream arg10) {
 		@Pc(3) int local3 = arg2 >> 8;
 		arg9 >>= 8;
 		@Pc(11) int local11 = arg4 << 2;
@@ -196,7 +196,7 @@ public final class Class4_Sub6_Sub4 extends Class4_Sub6 {
 	}
 
 	@OriginalMember(owner = "client!pc", name = "c", descriptor = "(II[B[IIIIIIIILclient!pc;II)I")
-	private static int method3363(@OriginalArg(2) byte[] arg0, @OriginalArg(3) int[] arg1, @OriginalArg(4) int arg2, @OriginalArg(5) int arg3, @OriginalArg(6) int arg4, @OriginalArg(7) int arg5, @OriginalArg(9) int arg6, @OriginalArg(10) int arg7, @OriginalArg(11) Class4_Sub6_Sub4 arg8, @OriginalArg(12) int arg9, @OriginalArg(13) int arg10) {
+	private static int method3363(@OriginalArg(2) byte[] arg0, @OriginalArg(3) int[] arg1, @OriginalArg(4) int arg2, @OriginalArg(5) int arg3, @OriginalArg(6) int arg4, @OriginalArg(7) int arg5, @OriginalArg(9) int arg6, @OriginalArg(10) int arg7, @OriginalArg(11) SoundPcmStream arg8, @OriginalArg(12) int arg9, @OriginalArg(13) int arg10) {
 		arg8.anInt4104 -= arg8.anInt4102 * arg3;
 		arg8.anInt4098 -= arg8.anInt4099 * arg3;
 		@Pc(32) int local32;
@@ -229,7 +229,7 @@ public final class Class4_Sub6_Sub4 extends Class4_Sub6 {
 	}
 
 	@OriginalMember(owner = "client!pc", name = "a", descriptor = "(II[B[IIIIIIIIIILclient!pc;II)I")
-	private static int method3366(@OriginalArg(2) byte[] arg0, @OriginalArg(3) int[] arg1, @OriginalArg(4) int arg2, @OriginalArg(5) int arg3, @OriginalArg(6) int arg4, @OriginalArg(7) int arg5, @OriginalArg(8) int arg6, @OriginalArg(9) int arg7, @OriginalArg(11) int arg8, @OriginalArg(12) int arg9, @OriginalArg(13) Class4_Sub6_Sub4 arg10, @OriginalArg(14) int arg11, @OriginalArg(15) int arg12) {
+	private static int method3366(@OriginalArg(2) byte[] arg0, @OriginalArg(3) int[] arg1, @OriginalArg(4) int arg2, @OriginalArg(5) int arg3, @OriginalArg(6) int arg4, @OriginalArg(7) int arg5, @OriginalArg(8) int arg6, @OriginalArg(9) int arg7, @OriginalArg(11) int arg8, @OriginalArg(12) int arg9, @OriginalArg(13) SoundPcmStream arg10, @OriginalArg(14) int arg11, @OriginalArg(15) int arg12) {
 		arg10.anInt4096 -= arg10.anInt4097 * arg3;
 		@Pc(23) int local23;
 		if (arg11 == 0 || (local23 = arg3 + (arg9 + arg11 - arg2 - 257) / arg11) > arg8) {
@@ -277,7 +277,7 @@ public final class Class4_Sub6_Sub4 extends Class4_Sub6 {
 	}
 
 	@OriginalMember(owner = "client!pc", name = "b", descriptor = "(II[B[IIIIIIIIIILclient!pc;II)I")
-	private static int method3370(@OriginalArg(2) byte[] arg0, @OriginalArg(3) int[] arg1, @OriginalArg(4) int arg2, @OriginalArg(5) int arg3, @OriginalArg(6) int arg4, @OriginalArg(7) int arg5, @OriginalArg(8) int arg6, @OriginalArg(9) int arg7, @OriginalArg(11) int arg8, @OriginalArg(12) int arg9, @OriginalArg(13) Class4_Sub6_Sub4 arg10, @OriginalArg(14) int arg11, @OriginalArg(15) int arg12) {
+	private static int method3370(@OriginalArg(2) byte[] arg0, @OriginalArg(3) int[] arg1, @OriginalArg(4) int arg2, @OriginalArg(5) int arg3, @OriginalArg(6) int arg4, @OriginalArg(7) int arg5, @OriginalArg(8) int arg6, @OriginalArg(9) int arg7, @OriginalArg(11) int arg8, @OriginalArg(12) int arg9, @OriginalArg(13) SoundPcmStream arg10, @OriginalArg(14) int arg11, @OriginalArg(15) int arg12) {
 		arg10.anInt4096 -= arg10.anInt4097 * arg3;
 		@Pc(23) int local23;
 		if (arg11 == 0 || (local23 = arg3 + (arg9 + arg11 + 256 - arg2) / arg11) > arg8) {
@@ -324,7 +324,7 @@ public final class Class4_Sub6_Sub4 extends Class4_Sub6 {
 	}
 
 	@OriginalMember(owner = "client!pc", name = "a", descriptor = "(II[B[IIIIIIILclient!pc;II)I")
-	private static int method3373(@OriginalArg(2) byte[] arg0, @OriginalArg(3) int[] arg1, @OriginalArg(4) int arg2, @OriginalArg(5) int arg3, @OriginalArg(6) int arg4, @OriginalArg(8) int arg5, @OriginalArg(9) int arg6, @OriginalArg(10) Class4_Sub6_Sub4 arg7, @OriginalArg(11) int arg8, @OriginalArg(12) int arg9) {
+	private static int method3373(@OriginalArg(2) byte[] arg0, @OriginalArg(3) int[] arg1, @OriginalArg(4) int arg2, @OriginalArg(5) int arg3, @OriginalArg(6) int arg4, @OriginalArg(8) int arg5, @OriginalArg(9) int arg6, @OriginalArg(10) SoundPcmStream arg7, @OriginalArg(11) int arg8, @OriginalArg(12) int arg9) {
 		@Pc(14) int local14;
 		if (arg8 == 0 || (local14 = arg3 + (arg6 + arg8 - arg2 - 257) / arg8) > arg5) {
 			local14 = arg5;
@@ -355,7 +355,7 @@ public final class Class4_Sub6_Sub4 extends Class4_Sub6 {
 	}
 
 	@OriginalMember(owner = "client!pc", name = "a", descriptor = "(I[B[IIIIIIIILclient!pc;)I")
-	private static int method3375(@OriginalArg(1) byte[] arg0, @OriginalArg(2) int[] arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4, @OriginalArg(6) int arg5, @OriginalArg(8) int arg6, @OriginalArg(9) int arg7, @OriginalArg(10) Class4_Sub6_Sub4 arg8) {
+	private static int method3375(@OriginalArg(1) byte[] arg0, @OriginalArg(2) int[] arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4, @OriginalArg(6) int arg5, @OriginalArg(8) int arg6, @OriginalArg(9) int arg7, @OriginalArg(10) SoundPcmStream arg8) {
 		@Pc(3) int local3 = arg2 >> 8;
 		arg7 >>= 8;
 		arg4 <<= 2;
@@ -404,7 +404,7 @@ public final class Class4_Sub6_Sub4 extends Class4_Sub6 {
 	}
 
 	@OriginalMember(owner = "client!pc", name = "b", descriptor = "(I[B[IIIIIIIIIILclient!pc;)I")
-	private static int method3376(@OriginalArg(1) byte[] arg0, @OriginalArg(2) int[] arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4, @OriginalArg(6) int arg5, @OriginalArg(7) int arg6, @OriginalArg(8) int arg7, @OriginalArg(10) int arg8, @OriginalArg(11) int arg9, @OriginalArg(12) Class4_Sub6_Sub4 arg10) {
+	private static int method3376(@OriginalArg(1) byte[] arg0, @OriginalArg(2) int[] arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4, @OriginalArg(6) int arg5, @OriginalArg(7) int arg6, @OriginalArg(8) int arg7, @OriginalArg(10) int arg8, @OriginalArg(11) int arg9, @OriginalArg(12) SoundPcmStream arg10) {
 		@Pc(3) int local3 = arg2 >> 8;
 		arg9 >>= 8;
 		@Pc(11) int local11 = arg4 << 2;
@@ -468,7 +468,7 @@ public final class Class4_Sub6_Sub4 extends Class4_Sub6 {
 	}
 
 	@OriginalMember(owner = "client!pc", name = "a", descriptor = "([B[IIIIIIIILclient!pc;)I")
-	private static int method3378(@OriginalArg(0) byte[] arg0, @OriginalArg(1) int[] arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(7) int arg6, @OriginalArg(8) int arg7, @OriginalArg(9) Class4_Sub6_Sub4 arg8) {
+	private static int method3378(@OriginalArg(0) byte[] arg0, @OriginalArg(1) int[] arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(7) int arg6, @OriginalArg(8) int arg7, @OriginalArg(9) SoundPcmStream arg8) {
 		@Pc(3) int local3 = arg2 >> 8;
 		arg7 >>= 8;
 		@Pc(11) int local11 = arg4 << 2;
@@ -510,7 +510,7 @@ public final class Class4_Sub6_Sub4 extends Class4_Sub6 {
 	}
 
 	@OriginalMember(owner = "client!pc", name = "b", descriptor = "([B[IIIIIIILclient!pc;)I")
-	private static int method3380(@OriginalArg(0) byte[] arg0, @OriginalArg(1) int[] arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(6) int arg5, @OriginalArg(7) int arg6, @OriginalArg(8) Class4_Sub6_Sub4 arg7) {
+	private static int method3380(@OriginalArg(0) byte[] arg0, @OriginalArg(1) int[] arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(6) int arg5, @OriginalArg(7) int arg6, @OriginalArg(8) SoundPcmStream arg7) {
 		@Pc(3) int local3 = arg2 >> 8;
 		arg6 >>= 8;
 		arg4 <<= 2;
@@ -543,7 +543,7 @@ public final class Class4_Sub6_Sub4 extends Class4_Sub6 {
 	}
 
 	@OriginalMember(owner = "client!pc", name = "b", descriptor = "(I[B[IIIIIIIILclient!pc;)I")
-	private static int method3387(@OriginalArg(1) byte[] arg0, @OriginalArg(2) int[] arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4, @OriginalArg(6) int arg5, @OriginalArg(8) int arg6, @OriginalArg(9) int arg7, @OriginalArg(10) Class4_Sub6_Sub4 arg8) {
+	private static int method3387(@OriginalArg(1) byte[] arg0, @OriginalArg(2) int[] arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4, @OriginalArg(6) int arg5, @OriginalArg(8) int arg6, @OriginalArg(9) int arg7, @OriginalArg(10) SoundPcmStream arg8) {
 		@Pc(3) int local3 = arg2 >> 8;
 		arg7 >>= 8;
 		arg4 <<= 2;
@@ -592,7 +592,7 @@ public final class Class4_Sub6_Sub4 extends Class4_Sub6 {
 	}
 
 	@OriginalMember(owner = "client!pc", name = "b", descriptor = "([B[IIIIIIIILclient!pc;)I")
-	private static int method3389(@OriginalArg(0) byte[] arg0, @OriginalArg(1) int[] arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(7) int arg6, @OriginalArg(8) int arg7, @OriginalArg(9) Class4_Sub6_Sub4 arg8) {
+	private static int method3389(@OriginalArg(0) byte[] arg0, @OriginalArg(1) int[] arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(7) int arg6, @OriginalArg(8) int arg7, @OriginalArg(9) SoundPcmStream arg8) {
 		@Pc(3) int local3 = arg2 >> 8;
 		arg7 >>= 8;
 		@Pc(11) int local11 = arg4 << 2;
@@ -634,7 +634,7 @@ public final class Class4_Sub6_Sub4 extends Class4_Sub6 {
 	}
 
 	@OriginalMember(owner = "client!pc", name = "d", descriptor = "(II[B[IIIIIIIILclient!pc;II)I")
-	private static int method3390(@OriginalArg(2) byte[] arg0, @OriginalArg(3) int[] arg1, @OriginalArg(4) int arg2, @OriginalArg(5) int arg3, @OriginalArg(6) int arg4, @OriginalArg(7) int arg5, @OriginalArg(9) int arg6, @OriginalArg(10) int arg7, @OriginalArg(11) Class4_Sub6_Sub4 arg8, @OriginalArg(12) int arg9, @OriginalArg(13) int arg10) {
+	private static int method3390(@OriginalArg(2) byte[] arg0, @OriginalArg(3) int[] arg1, @OriginalArg(4) int arg2, @OriginalArg(5) int arg3, @OriginalArg(6) int arg4, @OriginalArg(7) int arg5, @OriginalArg(9) int arg6, @OriginalArg(10) int arg7, @OriginalArg(11) SoundPcmStream arg8, @OriginalArg(12) int arg9, @OriginalArg(13) int arg10) {
 		arg8.anInt4104 -= arg8.anInt4102 * arg3;
 		arg8.anInt4098 -= arg8.anInt4099 * arg3;
 		@Pc(32) int local32;
@@ -666,7 +666,7 @@ public final class Class4_Sub6_Sub4 extends Class4_Sub6 {
 	}
 
 	@OriginalMember(owner = "client!pc", name = "b", descriptor = "(II[B[IIIIIIILclient!pc;II)I")
-	private static int method3391(@OriginalArg(2) byte[] arg0, @OriginalArg(3) int[] arg1, @OriginalArg(4) int arg2, @OriginalArg(5) int arg3, @OriginalArg(6) int arg4, @OriginalArg(8) int arg5, @OriginalArg(9) int arg6, @OriginalArg(10) Class4_Sub6_Sub4 arg7, @OriginalArg(11) int arg8, @OriginalArg(12) int arg9) {
+	private static int method3391(@OriginalArg(2) byte[] arg0, @OriginalArg(3) int[] arg1, @OriginalArg(4) int arg2, @OriginalArg(5) int arg3, @OriginalArg(6) int arg4, @OriginalArg(8) int arg5, @OriginalArg(9) int arg6, @OriginalArg(10) SoundPcmStream arg7, @OriginalArg(11) int arg8, @OriginalArg(12) int arg9) {
 		@Pc(14) int local14;
 		if (arg8 == 0 || (local14 = arg3 + (arg6 + arg8 + 256 - arg2) / arg8) > arg5) {
 			local14 = arg5;
@@ -730,52 +730,52 @@ public final class Class4_Sub6_Sub4 extends Class4_Sub6 {
 	private int volume;
 
 	@OriginalMember(owner = "client!pc", name = "B", descriptor = "I")
-	private int anInt4103;
+	private int pan;
 
 	@OriginalMember(owner = "client!pc", name = "x", descriptor = "I")
 	private int anInt4100;
 
 	@OriginalMember(owner = "client!pc", name = "<init>", descriptor = "(Lclient!pb;II)V")
-	private Class4_Sub6_Sub4(@OriginalArg(0) PcmSound sound, @OriginalArg(1) int arg1, @OriginalArg(2) int volume) {
+	private SoundPcmStream(@OriginalArg(0) PcmSound sound, @OriginalArg(1) int arg1, @OriginalArg(2) int volume) {
 		this.sound = sound;
 		this.start = sound.start;
 		this.end = sound.end;
 		this.aBoolean290 = sound.aBoolean288;
 		this.anInt4095 = arg1;
 		this.volume = volume;
-		this.anInt4103 = 8192;
+		this.pan = 8192;
 		this.anInt4100 = 0;
 		this.method3371();
 	}
 
 	@OriginalMember(owner = "client!pc", name = "<init>", descriptor = "(Lclient!pb;III)V")
-	private Class4_Sub6_Sub4(@OriginalArg(0) PcmSound sound, @OriginalArg(1) int arg1, @OriginalArg(2) int volume, @OriginalArg(3) int arg3) {
+	private SoundPcmStream(@OriginalArg(0) PcmSound sound, @OriginalArg(1) int arg1, @OriginalArg(2) int volume, @OriginalArg(3) int pan) {
 		this.sound = sound;
 		this.start = sound.start;
 		this.end = sound.end;
 		this.aBoolean290 = sound.aBoolean288;
 		this.anInt4095 = arg1;
 		this.volume = volume;
-		this.anInt4103 = arg3;
+		this.pan = pan;
 		this.anInt4100 = 0;
 		this.method3371();
 	}
 
 	@OriginalMember(owner = "client!pc", name = "a", descriptor = "(III)V")
-	public final synchronized void method3352(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
+	public final synchronized void method3352(@OriginalArg(0) int arg0, @OriginalArg(1) int volume, @OriginalArg(2) int pan) {
 		if (arg0 == 0) {
-			this.method3386(arg1, arg2);
+			this.method3386(volume, pan);
 			return;
 		}
-		@Pc(10) int local10 = method3374(arg1, arg2);
-		@Pc(14) int local14 = method3355(arg1, arg2);
+		@Pc(10) int local10 = method3374(volume, pan);
+		@Pc(14) int local14 = method3355(volume, pan);
 		if (this.anInt4104 == local10 && this.anInt4098 == local14) {
 			this.anInt4105 = 0;
 			return;
 		}
-		@Pc(31) int local31 = arg1 - this.anInt4096;
-		if (this.anInt4096 - arg1 > local31) {
-			local31 = this.anInt4096 - arg1;
+		@Pc(31) int local31 = volume - this.anInt4096;
+		if (this.anInt4096 - volume > local31) {
+			local31 = this.anInt4096 - volume;
 		}
 		if (local10 - this.anInt4104 > local31) {
 			local31 = local10 - this.anInt4104;
@@ -793,9 +793,9 @@ public final class Class4_Sub6_Sub4 extends Class4_Sub6 {
 			arg0 = local31;
 		}
 		this.anInt4105 = arg0;
-		this.volume = arg1;
-		this.anInt4103 = arg2;
-		this.anInt4097 = (arg1 - this.anInt4096) / arg0;
+		this.volume = volume;
+		this.pan = pan;
+		this.anInt4097 = (volume - this.anInt4096) / arg0;
 		this.anInt4102 = (local10 - this.anInt4104) / arg0;
 		this.anInt4099 = (local14 - this.anInt4098) / arg0;
 	}
@@ -921,22 +921,22 @@ public final class Class4_Sub6_Sub4 extends Class4_Sub6 {
 
 	@OriginalMember(owner = "client!pc", name = "b", descriptor = "(I)V")
 	@Override
-	public final synchronized void method3345(@OriginalArg(0) int arg0) {
+	public final synchronized void skip(@OriginalArg(0) int len) {
 		if (this.anInt4105 > 0) {
-			if (arg0 >= this.anInt4105) {
+			if (len >= this.anInt4105) {
 				if (this.volume == Integer.MIN_VALUE) {
 					this.volume = 0;
 					this.anInt4096 = this.anInt4104 = this.anInt4098 = 0;
 					this.unlink();
-					arg0 = this.anInt4105;
+					len = this.anInt4105;
 				}
 				this.anInt4105 = 0;
 				this.method3371();
 			} else {
-				this.anInt4096 += this.anInt4097 * arg0;
-				this.anInt4104 += this.anInt4102 * arg0;
-				this.anInt4098 += this.anInt4099 * arg0;
-				this.anInt4105 -= arg0;
+				this.anInt4096 += this.anInt4097 * len;
+				this.anInt4104 += this.anInt4102 * len;
+				this.anInt4098 += this.anInt4099 * len;
+				this.anInt4105 -= len;
 			}
 		}
 		@Pc(71) PcmSound local71 = (PcmSound) this.sound;
@@ -963,7 +963,7 @@ public final class Class4_Sub6_Sub4 extends Class4_Sub6 {
 			}
 			this.anInt4100 = local87 - 1;
 		}
-		this.anInt4100 += this.anInt4095 * arg0;
+		this.anInt4100 += this.anInt4095 * len;
 		if (this.anInt4108 >= 0) {
 			if (this.anInt4108 > 0) {
 				if (this.aBoolean290) {
@@ -1079,7 +1079,7 @@ public final class Class4_Sub6_Sub4 extends Class4_Sub6 {
 
 	@OriginalMember(owner = "client!pc", name = "c", descriptor = "()Lclient!tf;")
 	@Override
-	public final Class4_Sub6 method3349() {
+	public final PcmStream nextSubStream() {
 		return null;
 	}
 
@@ -1093,8 +1093,8 @@ public final class Class4_Sub6_Sub4 extends Class4_Sub6 {
 			local10 = 0;
 			local2 = 0;
 		} else {
-			local10 = method3374(local2, this.anInt4103);
-			local8 = method3355(local2, this.anInt4103);
+			local10 = method3374(local2, this.pan);
+			local8 = method3355(local2, this.pan);
 		}
 		if (this.anInt4096 != local2 || this.anInt4104 != local10 || this.anInt4098 != local8) {
 			if (this.anInt4096 < local2) {
@@ -1164,8 +1164,8 @@ public final class Class4_Sub6_Sub4 extends Class4_Sub6 {
 	@OriginalMember(owner = "client!pc", name = "i", descriptor = "()V")
 	private void method3371() {
 		this.anInt4096 = this.volume;
-		this.anInt4104 = method3374(this.volume, this.anInt4103);
-		this.anInt4098 = method3355(this.volume, this.anInt4103);
+		this.anInt4104 = method3374(this.volume, this.pan);
+		this.anInt4098 = method3355(this.volume, this.pan);
 	}
 
 	@OriginalMember(owner = "client!pc", name = "j", descriptor = "()Z")
@@ -1175,22 +1175,22 @@ public final class Class4_Sub6_Sub4 extends Class4_Sub6 {
 
 	@OriginalMember(owner = "client!pc", name = "g", descriptor = "(I)V")
 	public final synchronized void setVolume(@OriginalArg(0) int volume) {
-		this.method3386(volume << 6, this.method3388());
+		this.method3386(volume << 6, this.getPan());
 	}
 
 	@OriginalMember(owner = "client!pc", name = "c", descriptor = "(II)V")
 	public final synchronized void method3379(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
-		this.method3352(arg0, arg1, this.method3388());
+		this.method3352(arg0, arg1, this.getPan());
 	}
 
 	@OriginalMember(owner = "client!pc", name = "k", descriptor = "()I")
-	public final synchronized int method3381() {
+	public final synchronized int getVolume() {
 		return this.volume == Integer.MIN_VALUE ? 0 : this.volume;
 	}
 
 	@OriginalMember(owner = "client!pc", name = "h", descriptor = "(I)V")
 	private synchronized void method3382() {
-		this.method3386(0, this.method3388());
+		this.method3386(0, this.getPan());
 	}
 
 	@OriginalMember(owner = "client!pc", name = "b", descriptor = "([IIIII)I")
@@ -1236,29 +1236,29 @@ public final class Class4_Sub6_Sub4 extends Class4_Sub6 {
 	}
 
 	@OriginalMember(owner = "client!pc", name = "d", descriptor = "(II)V")
-	private synchronized void method3386(@OriginalArg(0) int volume, @OriginalArg(1) int arg1) {
+	private synchronized void method3386(@OriginalArg(0) int volume, @OriginalArg(1) int pan) {
 		this.volume = volume;
-		this.anInt4103 = arg1;
+		this.pan = pan;
 		this.anInt4105 = 0;
 		this.method3371();
 	}
 
 	@OriginalMember(owner = "client!pc", name = "d", descriptor = "()Lclient!tf;")
 	@Override
-	public final Class4_Sub6 method3350() {
+	public final PcmStream firstSubStream() {
 		return null;
 	}
 
 	@OriginalMember(owner = "client!pc", name = "l", descriptor = "()I")
-	public final synchronized int method3388() {
-		return this.anInt4103 < 0 ? -1 : this.anInt4103;
+	public final synchronized int getPan() {
+		return this.pan < 0 ? -1 : this.pan;
 	}
 
 	@OriginalMember(owner = "client!pc", name = "a", descriptor = "([III)V")
 	@Override
-	public final synchronized void method3348(@OriginalArg(0) int[] arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
+	public final synchronized void read(@OriginalArg(0) int[] samples, @OriginalArg(1) int off, @OriginalArg(2) int len) {
 		if (this.volume == 0 && this.anInt4105 == 0) {
-			this.method3345(arg2);
+			this.skip(len);
 			return;
 		}
 		@Pc(13) PcmSound local13 = (PcmSound) this.sound;
@@ -1269,8 +1269,8 @@ public final class Class4_Sub6_Sub4 extends Class4_Sub6 {
 		if (local33 <= 0) {
 			this.anInt4108 = 0;
 		}
-		@Pc(40) int local40 = arg1;
-		arg2 += arg1;
+		@Pc(40) int local40 = off;
+		len += off;
 		if (this.anInt4100 < 0) {
 			if (this.anInt4095 <= 0) {
 				this.method3354();
@@ -1293,7 +1293,7 @@ public final class Class4_Sub6_Sub4 extends Class4_Sub6 {
 					label131:
 					{
 						if (this.anInt4095 < 0) {
-							local40 = this.method3358(arg0, arg1, local18, arg2, local13.samples[this.start]);
+							local40 = this.method3358(samples, off, local18, len, local13.samples[this.start]);
 							if (this.anInt4100 >= local18) {
 								return;
 							}
@@ -1304,7 +1304,7 @@ public final class Class4_Sub6_Sub4 extends Class4_Sub6 {
 							}
 						}
 						do {
-							local40 = this.method3383(arg0, local40, local23, arg2, local13.samples[this.end - 1]);
+							local40 = this.method3383(samples, local40, local23, len, local13.samples[this.end - 1]);
 							if (this.anInt4100 < local23) {
 								return;
 							}
@@ -1313,7 +1313,7 @@ public final class Class4_Sub6_Sub4 extends Class4_Sub6 {
 							if (--this.anInt4108 == 0) {
 								break;
 							}
-							local40 = this.method3358(arg0, local40, local18, arg2, local13.samples[this.start]);
+							local40 = this.method3358(samples, local40, local18, len, local13.samples[this.start]);
 							if (this.anInt4100 >= local18) {
 								return;
 							}
@@ -1323,7 +1323,7 @@ public final class Class4_Sub6_Sub4 extends Class4_Sub6 {
 					}
 				} else if (this.anInt4095 < 0) {
 					while (true) {
-						local40 = this.method3358(arg0, local40, local18, arg2, local13.samples[this.end - 1]);
+						local40 = this.method3358(samples, local40, local18, len, local13.samples[this.end - 1]);
 						if (this.anInt4100 >= local18) {
 							return;
 						}
@@ -1338,7 +1338,7 @@ public final class Class4_Sub6_Sub4 extends Class4_Sub6 {
 					}
 				} else {
 					while (true) {
-						local40 = this.method3383(arg0, local40, local23, arg2, local13.samples[this.start]);
+						local40 = this.method3383(samples, local40, local23, len, local13.samples[this.start]);
 						if (this.anInt4100 < local23) {
 							return;
 						}
@@ -1354,14 +1354,14 @@ public final class Class4_Sub6_Sub4 extends Class4_Sub6 {
 				}
 			}
 			if (this.anInt4095 < 0) {
-				this.method3358(arg0, local40, 0, arg2, 0);
+				this.method3358(samples, local40, 0, len, 0);
 				if (this.anInt4100 < 0) {
 					this.anInt4100 = -1;
 					this.method3354();
 					this.unlink();
 				}
 			} else {
-				this.method3383(arg0, local40, local29, arg2, 0);
+				this.method3383(samples, local40, local29, len, 0);
 				if (this.anInt4100 >= local29) {
 					this.anInt4100 = local29;
 					this.method3354();
@@ -1370,7 +1370,7 @@ public final class Class4_Sub6_Sub4 extends Class4_Sub6 {
 			}
 		} else if (this.aBoolean290) {
 			if (this.anInt4095 < 0) {
-				local40 = this.method3358(arg0, arg1, local18, arg2, local13.samples[this.start]);
+				local40 = this.method3358(samples, off, local18, len, local13.samples[this.start]);
 				if (this.anInt4100 >= local18) {
 					return;
 				}
@@ -1378,13 +1378,13 @@ public final class Class4_Sub6_Sub4 extends Class4_Sub6 {
 				this.anInt4095 = -this.anInt4095;
 			}
 			while (true) {
-				@Pc(134) int local134 = this.method3383(arg0, local40, local23, arg2, local13.samples[this.end - 1]);
+				@Pc(134) int local134 = this.method3383(samples, local40, local23, len, local13.samples[this.end - 1]);
 				if (this.anInt4100 < local23) {
 					return;
 				}
 				this.anInt4100 = local23 + local23 - this.anInt4100 - 1;
 				this.anInt4095 = -this.anInt4095;
-				local40 = this.method3358(arg0, local134, local18, arg2, local13.samples[this.start]);
+				local40 = this.method3358(samples, local134, local18, len, local13.samples[this.start]);
 				if (this.anInt4100 >= local18) {
 					return;
 				}
@@ -1393,7 +1393,7 @@ public final class Class4_Sub6_Sub4 extends Class4_Sub6 {
 			}
 		} else if (this.anInt4095 < 0) {
 			while (true) {
-				local40 = this.method3358(arg0, local40, local18, arg2, local13.samples[this.end - 1]);
+				local40 = this.method3358(samples, local40, local18, len, local13.samples[this.end - 1]);
 				if (this.anInt4100 >= local18) {
 					return;
 				}
@@ -1401,7 +1401,7 @@ public final class Class4_Sub6_Sub4 extends Class4_Sub6 {
 			}
 		} else {
 			while (true) {
-				local40 = this.method3383(arg0, local40, local23, arg2, local13.samples[this.start]);
+				local40 = this.method3383(samples, local40, local23, len, local13.samples[this.start]);
 				if (this.anInt4100 < local23) {
 					return;
 				}

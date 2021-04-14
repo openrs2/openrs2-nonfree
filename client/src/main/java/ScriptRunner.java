@@ -1419,12 +1419,12 @@ public final class ScriptRunner {
 						}
 						if (opcode == 3201) {
 							isp--;
-							Static36.method4444(255, intStack[isp]);
+							MusicPlayer.playSong(intStack[isp], 255);
 							continue;
 						}
 						if (opcode == 3202) {
 							isp -= 2;
-							Static23.method1933(255, intStack[isp + 1], intStack[isp]);
+							MusicPlayer.playJingle(intStack[isp], 255, intStack[isp + 1]);
 							continue;
 						}
 					} else if (opcode < 3400) {
@@ -4033,14 +4033,14 @@ public final class ScriptRunner {
 										volume = 255;
 									}
 									if (Preferences.musicVolume != volume) {
-										if (Preferences.musicVolume == 0 && Static6.anInt4844 != -1) {
-											Static28.method3251(volume, Static6.anInt4844, client.js5Archive6);
-											Static4.aBoolean210 = false;
+										if (Preferences.musicVolume == 0 && MusicPlayer.groupId != -1) {
+											MidiPlayer.playImmediate(client.js5Archive6, MusicPlayer.groupId, volume);
+											MusicPlayer.jingle = false;
 										} else if (volume == 0) {
-											Static37.method4718();
-											Static4.aBoolean210 = false;
+											MidiPlayer.method4718();
+											MusicPlayer.jingle = false;
 										} else {
-											Static29.method3541(volume);
+											MidiPlayer.setVolume(volume);
 										}
 										Preferences.musicVolume = volume;
 									}

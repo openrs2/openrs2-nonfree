@@ -299,11 +299,6 @@ public final class Static16 {
 		}
 	}
 
-	@OriginalMember(owner = "client!gb", name = "e", descriptor = "(I)Z")
-	public static boolean method1550() {
-		return Static5.anInt4357 == 0 ? Static1.aClass4_Sub6_Sub2_3.method2497() : true;
-	}
-
 	@OriginalMember(owner = "client!gb", name = "a", descriptor = "(II)[F")
 	public static float[] method1553(@OriginalArg(1) int arg0) {
 		@Pc(7) float local7 = Static25.method2773() + Static25.method2776();

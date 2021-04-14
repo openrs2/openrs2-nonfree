@@ -167,17 +167,6 @@ public final class Static36 {
 		return ((local9 & 0x2) == 0 ? local32 : -local32) + ((local9 & 0x1) == 0 ? local39 : -local39);
 	}
 
-	@OriginalMember(owner = "client!vf", name = "a", descriptor = "(BII)V")
-	public static void method4444(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1) {
-		arg0 = arg0 * Preferences.musicVolume >> 8;
-		if (arg1 == -1 && !Static4.aBoolean210) {
-			Static37.method4718();
-		} else if (arg1 != -1 && (Static6.anInt4844 != arg1 || !Static16.method1550()) && arg0 != 0 && !Static4.aBoolean210) {
-			Static24.method2692(client.js5Archive6, arg0, arg1);
-		}
-		Static6.anInt4844 = arg1;
-	}
-
 	@OriginalMember(owner = "client!vh", name = "a", descriptor = "(I)V")
 	public static void method4447() {
 		Static7.aClass4_Sub3_Sub14_9 = null;
@@ -299,15 +288,6 @@ public final class Static36 {
 				}
 			}
 		}
-	}
-
-	@OriginalMember(owner = "client!vm", name = "a", descriptor = "(Lclient!ld;Lclient!fh;Lclient!fh;ZLclient!fh;)Z")
-	public static boolean method4551(@OriginalArg(0) Class4_Sub6_Sub2 arg0, @OriginalArg(1) Js5 arg1, @OriginalArg(2) Js5 arg2, @OriginalArg(4) Js5 arg3) {
-		Static1.aClass4_Sub6_Sub2_3 = arg0;
-		Static3.aClass58_59 = arg1;
-		Static6.aClass58_93 = arg3;
-		Static2.aClass58_41 = arg2;
-		return true;
 	}
 
 	@OriginalMember(owner = "client!w", name = "a", descriptor = "(IIIIIIII)V")

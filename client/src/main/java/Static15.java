@@ -303,17 +303,6 @@ public final class Static15 {
 		Static14.method1210(local212.aClass56_Sub1_3, local111 - arg1, local140, local98 - arg5);
 	}
 
-	@OriginalMember(owner = "client!ff", name = "a", descriptor = "(Lclient!tf;B)V")
-	public static void method1324(@OriginalArg(0) Class4_Sub6 arg0) {
-		arg0.aBoolean289 = false;
-		if (arg0.sound != null) {
-			arg0.sound.position = 0;
-		}
-		for (@Pc(25) Class4_Sub6 local25 = arg0.method3350(); local25 != null; local25 = arg0.method3349()) {
-			method1324(local25);
-		}
-	}
-
 	@OriginalMember(owner = "client!fi", name = "a", descriptor = "(Lclient!wf;IIB)V")
 	public static void method1401(@OriginalArg(0) Component arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
 		if (Static1.aClass185_1 != null || Static1.aBoolean17 || (arg0 == null || method1403(arg0) == null)) {

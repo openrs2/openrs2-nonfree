@@ -1,9 +1,21 @@
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
+import org.openrs2.deob.annotation.Pc;
 
 @OriginalClass("client!tf")
-public abstract class Class4_Sub6 extends Node {
+public abstract class PcmStream extends Node {
+
+	@OriginalMember(owner = "client!ff", name = "a", descriptor = "(Lclient!tf;B)V")
+	public static void setInactive(@OriginalArg(0) PcmStream stream) {
+		stream.active = false;
+		if (stream.sound != null) {
+			stream.sound.position = 0;
+		}
+		for (@Pc(25) PcmStream subStream = stream.firstSubStream(); subStream != null; subStream = stream.nextSubStream()) {
+			setInactive(subStream);
+		}
+	}
 
 	@OriginalMember(owner = "client!tf", name = "o", descriptor = "I")
 	public int anInt4094;
@@ -12,13 +24,13 @@ public abstract class Class4_Sub6 extends Node {
 	public Sound sound;
 
 	@OriginalMember(owner = "client!tf", name = "q", descriptor = "Lclient!tf;")
-	public Class4_Sub6 aClass4_Sub6_8;
+	public PcmStream aClass4_Sub6_8;
 
 	@OriginalMember(owner = "client!tf", name = "r", descriptor = "Z")
-	public volatile boolean aBoolean289 = true;
+	public volatile boolean active = true;
 
 	@OriginalMember(owner = "client!tf", name = "b", descriptor = "(I)V")
-	public abstract void method3345(@OriginalArg(0) int arg0);
+	public abstract void skip(@OriginalArg(0) int len);
 
 	@OriginalMember(owner = "client!tf", name = "a", descriptor = "()I")
 	public abstract int method3346();
@@ -29,20 +41,20 @@ public abstract class Class4_Sub6 extends Node {
 	}
 
 	@OriginalMember(owner = "client!tf", name = "a", descriptor = "([III)V")
-	public abstract void method3348(@OriginalArg(0) int[] arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2);
+	public abstract void read(@OriginalArg(0) int[] samples, @OriginalArg(1) int off, @OriginalArg(2) int len);
 
 	@OriginalMember(owner = "client!tf", name = "c", descriptor = "()Lclient!tf;")
-	public abstract Class4_Sub6 method3349();
+	public abstract PcmStream nextSubStream();
 
 	@OriginalMember(owner = "client!tf", name = "d", descriptor = "()Lclient!tf;")
-	public abstract Class4_Sub6 method3350();
+	public abstract PcmStream firstSubStream();
 
 	@OriginalMember(owner = "client!tf", name = "b", descriptor = "([III)V")
-	protected final void method3351(@OriginalArg(0) int[] arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
-		if (this.aBoolean289) {
-			this.method3348(arg0, arg1, arg2);
+	protected final void readIfActive(@OriginalArg(0) int[] samples, @OriginalArg(1) int off, @OriginalArg(2) int len) {
+		if (this.active) {
+			this.read(samples, off, len);
 		} else {
-			this.method3345(arg2);
+			this.skip(len);
 		}
 	}
 }

@@ -2533,13 +2533,4 @@ public final class Static29 {
 		return local7 + (arg0 + (arg0 >>> 31)) % arg1;
 	}
 
-	@OriginalMember(owner = "client!qe", name = "a", descriptor = "(II)V")
-	public static void method3541(@OriginalArg(0) int arg0) {
-		if (Static5.anInt4357 == 0) {
-			Static1.aClass4_Sub6_Sub2_3.method2479(arg0);
-		} else {
-			Static7.anInt5391 = arg0;
-		}
-	}
-
 }

@@ -127,17 +127,6 @@ public final class Static28 {
 		}
 	}
 
-	@OriginalMember(owner = "client!om", name = "a", descriptor = "(IIIIZLclient!fh;)V")
-	public static void method3251(@OriginalArg(0) int arg0, @OriginalArg(3) int arg1, @OriginalArg(5) Js5 arg2) {
-		Static2.anInt1244 = 0;
-		Static7.anInt5391 = arg0;
-		Static3.anInt5397 = 10000;
-		Static7.anInt6022 = arg1;
-		Static2.aClass58_42 = arg2;
-		Static6.aBoolean321 = false;
-		Static5.anInt4357 = 1;
-	}
-
 	@OriginalMember(owner = "client!om", name = "b", descriptor = "(B)V")
 	public static void method3252() {
 		if (Static5.aFloat147 < 128.0F) {

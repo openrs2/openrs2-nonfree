@@ -47,9 +47,6 @@ public final class Static6 {
 	@OriginalMember(owner = "client!rk", name = "r", descriptor = "[I")
 	public static int[] rowWeightedHue;
 
-	@OriginalMember(owner = "client!rk", name = "s", descriptor = "Z")
-	public static boolean aBoolean321;
-
 	@OriginalMember(owner = "client!rn", name = "w", descriptor = "F")
 	public static float aFloat90;
 
@@ -82,9 +79,6 @@ public final class Static6 {
 
 	@OriginalMember(owner = "client!t", name = "n", descriptor = "[I")
 	public static int[] anIntArray541;
-
-	@OriginalMember(owner = "client!ta", name = "u", descriptor = "Lclient!fh;")
-	public static Js5 aClass58_93;
 
 	@OriginalMember(owner = "client!ta", name = "z", descriptor = "I")
 	public static int anInt5001;
@@ -226,9 +220,6 @@ public final class Static6 {
 
 	@OriginalMember(owner = "client!si", name = "c", descriptor = "[I")
 	public static final int[] anIntArray524 = new int[] { 0, 0, 2, 0, 0, 2, 1, 1, 0 };
-
-	@OriginalMember(owner = "client!si", name = "i", descriptor = "I")
-	public static int anInt4844 = -1;
 
 	@OriginalMember(owner = "client!sj", name = "p", descriptor = "I")
 	public static int anInt4856 = 0;

@@ -234,8 +234,14 @@ public final class client extends GameShell {
 	@OriginalMember(owner = "client!ca", name = "Z", descriptor = "Lclient!tj;")
 	public static AudioChannel musicChannel;
 
+	@OriginalMember(owner = "client!cb", name = "m", descriptor = "Lclient!ld;")
+	public static MidiPcmStream musicStream;
+
 	@OriginalMember(owner = "client!sc", name = "fb", descriptor = "Lclient!tj;")
 	public static AudioChannel soundChannel;
+
+	@OriginalMember(owner = "client!ph", name = "X", descriptor = "Lclient!lo;")
+	public static MixerPcmStream soundStream;
 
 	@OriginalMember(owner = "client!vf", name = "g", descriptor = "Lclient!ud;")
 	public static Resampler resampler;
@@ -579,16 +585,16 @@ public final class client extends GameShell {
 			}
 		} else if (mainLoadState == 45) {
 			AudioChannel.init(Preferences.stereo);
-			Static1.aClass4_Sub6_Sub2_2 = new Class4_Sub6_Sub2();
-			Static1.aClass4_Sub6_Sub2_2.method2505();
+			musicStream = new MidiPcmStream();
+			musicStream.init();
 			musicChannel = AudioChannel.create(GameShell.canvas, GameShell.signLink, 0, 22050);
-			musicChannel.method3008(Static1.aClass4_Sub6_Sub2_2);
-			Static36.method4551(Static1.aClass4_Sub6_Sub2_2, js5Archive15, js5Archive14, js5Archive4);
+			musicChannel.setStream(musicStream);
+			MidiPlayer.init(musicStream, js5Archive15, js5Archive14, js5Archive4);
 			soundChannel = AudioChannel.create(GameShell.canvas, GameShell.signLink, 1, 2048);
-			Static5.aClass4_Sub6_Sub3_2 = new Class4_Sub6_Sub3();
-			soundChannel.method3008(Static5.aClass4_Sub6_Sub3_2);
+			soundStream = new MixerPcmStream();
+			soundChannel.setStream(soundStream);
 			resampler = new Resampler(22050, Static7.sampleRate);
-			Static7.titleSong = js5Archive6.getGroupId("scape main");
+			MusicPlayer.titleSong = js5Archive6.getGroupId("scape main");
 			mainLoadSecondaryText = LocalisedText.MAINLOAD45B;
 			mainLoadState = 50;
 			mainLoadPercentage = 30;
@@ -1120,8 +1126,8 @@ public final class client extends GameShell {
 		}
 		@Pc(26) long local26 = GameShell.time() / 1000000L - Static1.aLong24;
 		Static1.aLong24 = GameShell.time() / 1000000L;
-		@Pc(34) boolean local34 = Static12.method639();
-		if (local34 && Static4.aBoolean210 && musicChannel != null) {
+		@Pc(34) boolean local34 = MidiPlayer.method639();
+		if (local34 && MusicPlayer.jingle && musicChannel != null) {
 			musicChannel.method3009();
 		}
 		if ((Static4.anInt3304 == 30 || Static4.anInt3304 == 10) && (GameShell.replaceCanvas || Static1.aLong15 != 0L && Static1.aLong15 < MonotonicClock.currentTimeMillis())) {
@@ -1244,7 +1250,7 @@ public final class client extends GameShell {
 		if (js5MasterIndex != null) {
 			js5MasterIndex.loop();
 		}
-		Static30.method3551();
+		MidiPlayer.loop();
 		Static9.method763();
 		Keyboard.loop();
 		Mouse.loop();

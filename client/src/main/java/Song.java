@@ -325,7 +325,7 @@ public final class Song extends Node {
 				@Pc(56) int time = song.times[track];
 				while (song.times[track] == time) {
 					song.loadTrackPosition(track);
-					@Pc(69) int event = song.getNextEvent(track);
+					@Pc(69) int event = song.getNextMessage(track);
 					if (event == 1) {
 						song.loadEndOfTrackPosition();
 						song.saveTrackPosition(track);

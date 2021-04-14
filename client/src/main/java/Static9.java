@@ -255,9 +255,9 @@ public final class Static9 {
 		}
 		AudioChannel.init(Preferences.stereo);
 		client.musicChannel = AudioChannel.create(GameShell.canvas, GameShell.signLink, 0, 22050);
-		client.musicChannel.method3008(Static1.aClass4_Sub6_Sub2_2);
+		client.musicChannel.setStream(client.musicStream);
 		client.soundChannel = AudioChannel.create(GameShell.canvas, GameShell.signLink, 1, 2048);
-		client.soundChannel.method3008(Static5.aClass4_Sub6_Sub3_2);
+		client.soundChannel.setStream(client.soundStream);
 	}
 
 	@OriginalMember(owner = "client!ao", name = "a", descriptor = "(DB)V")
@@ -383,15 +383,15 @@ public final class Static9 {
 		@Pc(114) boolean local114 = Static4.anInt3304 == 5 || Static4.anInt3304 == 10 || Static4.anInt3304 == 28;
 		if (local114 != local28) {
 			if (local28) {
-				Static6.anInt4844 = Static7.titleSong;
+				MusicPlayer.groupId = MusicPlayer.titleSong;
 				if (Preferences.musicVolume == 0) {
-					Static13.method971();
+					MidiPlayer.method971();
 				} else {
-					Static24.method2692(client.js5Archive6, 255, Static7.titleSong);
+					MidiPlayer.playFadeOut(client.js5Archive6, MusicPlayer.titleSong, 255);
 				}
 				client.js5NetQueue.writeLoggedIn(false);
 			} else {
-				Static13.method971();
+				MidiPlayer.method971();
 				client.js5NetQueue.writeLoggedIn(true);
 			}
 		}
@@ -457,10 +457,10 @@ public final class Static9 {
 	@OriginalMember(owner = "client!bc", name = "a", descriptor = "(Z)V")
 	public static void method763() {
 		if (client.soundChannel != null) {
-			client.soundChannel.method2998();
+			client.soundChannel.loop();
 		}
 		if (client.musicChannel != null) {
-			client.musicChannel.method2998();
+			client.musicChannel.loop();
 		}
 	}
 

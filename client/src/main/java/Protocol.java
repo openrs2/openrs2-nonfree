@@ -650,12 +650,12 @@ public final class Protocol {
 			opcode = -1;
 			return true;
 		} else if (opcode == 100) {
-			@Pc(2227) int local2227 = inboundBuffer.readUnsignedShort();
-			if (local2227 == 65535) {
-				local2227 = -1;
+			@Pc(2227) int groupId = inboundBuffer.readUnsignedShort();
+			if (groupId == 65535) {
+				groupId = -1;
 			}
-			@Pc(2239) int local2239 = inboundBuffer.readUnsignedByteA();
-			Static36.method4444(local2239, local2227);
+			@Pc(2239) int volume = inboundBuffer.readUnsignedByteA();
+			MusicPlayer.playSong(groupId, volume);
 			opcode = -1;
 			return true;
 		} else if (opcode == 206) {
@@ -665,7 +665,7 @@ public final class Protocol {
 				local2262 = -1;
 			}
 			@Pc(2271) int local2271 = inboundBuffer.method4590();
-			Static23.method1933(local2256, local2271, local2262);
+			MusicPlayer.playJingle(local2262, local2256, local2271);
 			opcode = -1;
 			return true;
 		} else if (opcode == 54) {

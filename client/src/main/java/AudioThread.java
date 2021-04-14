@@ -26,7 +26,7 @@ public final class AudioThread implements Runnable {
 				for (@Pc(13) int i = 0; i < 2; i++) {
 					@Pc(23) AudioChannel channel = this.channels[i];
 					if (channel != null) {
-						channel.method2998();
+						channel.loop();
 					}
 				}
 				ThreadUtils.sleep(10L);

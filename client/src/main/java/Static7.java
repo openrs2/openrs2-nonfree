@@ -35,17 +35,8 @@ public final class Static7 {
 	@OriginalMember(owner = "client!uf", name = "e", descriptor = "I")
 	public static int anInt5331;
 
-	@OriginalMember(owner = "client!uj", name = "I", descriptor = "I")
-	public static int titleSong;
-
 	@OriginalMember(owner = "client!uk", name = "h", descriptor = "I")
 	public static int anInt5363;
-
-	@OriginalMember(owner = "client!ul", name = "U", descriptor = "I")
-	public static int anInt5391;
-
-	@OriginalMember(owner = "client!ul", name = "V", descriptor = "Lclient!tg;")
-	public static Song aClass4_Sub31_2;
 
 	@OriginalMember(owner = "client!um", name = "a", descriptor = "I")
 	public static int sampleRate;
@@ -85,9 +76,6 @@ public final class Static7 {
 
 	@OriginalMember(owner = "client!wg", name = "J", descriptor = "[S")
 	public static short[] aShortArray124;
-
-	@OriginalMember(owner = "client!wh", name = "B", descriptor = "I")
-	public static int anInt6022;
 
 	@OriginalMember(owner = "client!wh", name = "L", descriptor = "[I")
 	public static int[] anIntArray678;

@@ -378,17 +378,6 @@ public final class Static13 {
 		}
 	}
 
-	@OriginalMember(owner = "client!dn", name = "d", descriptor = "(II)V")
-	public static void method971() {
-		Static7.anInt6022 = -1;
-		Static3.anInt5397 = 2;
-		Static2.aClass58_42 = null;
-		Static5.anInt4357 = 1;
-		Static2.anInt1244 = -1;
-		Static6.aBoolean321 = false;
-		Static7.anInt5391 = 0;
-	}
-
 	@OriginalMember(owner = "client!ea", name = "d", descriptor = "(I)V")
 	public static void method933() {
 		for (@Pc(15) int local15 = 0; local15 < 100; local15++) {

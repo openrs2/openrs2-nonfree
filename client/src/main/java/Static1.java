@@ -91,9 +91,6 @@ public final class Static1 {
 	@OriginalMember(owner = "client!cb", name = "l", descriptor = "I")
 	public static int anInt525;
 
-	@OriginalMember(owner = "client!cb", name = "m", descriptor = "Lclient!ld;")
-	public static Class4_Sub6_Sub2 aClass4_Sub6_Sub2_2;
-
 	@OriginalMember(owner = "client!cd", name = "f", descriptor = "Lclient!om;")
 	public static SecondaryLinkedListIterator aClass130_1;
 
@@ -109,9 +106,6 @@ public final class Static1 {
 	@OriginalMember(owner = "client!ch", name = "p", descriptor = "I")
 	public static int anInt611;
 
-	@OriginalMember(owner = "client!ci", name = "n", descriptor = "Lclient!jk;")
-	public static SoundBank aClass98_1;
-
 	@OriginalMember(owner = "client!cj", name = "I", descriptor = "I")
 	public static int anInt647;
 
@@ -123,9 +117,6 @@ public final class Static1 {
 
 	@OriginalMember(owner = "client!co", name = "r", descriptor = "[I")
 	public static int[] locGroupIds;
-
-	@OriginalMember(owner = "client!da", name = "m", descriptor = "Lclient!ld;")
-	public static Class4_Sub6_Sub2 aClass4_Sub6_Sub2_3;
 
 	@OriginalMember(owner = "client!db", name = "b", descriptor = "I")
 	public static int anInt881;

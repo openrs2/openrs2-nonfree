@@ -216,13 +216,6 @@ public final class Static37 {
 		}
 	}
 
-	@OriginalMember(owner = "client!we", name = "a", descriptor = "(I)V")
-	public static void method4718() {
-		Static1.aClass4_Sub6_Sub2_3.method2501();
-		Static5.anInt4357 = 1;
-		Static2.aClass58_42 = null;
-	}
-
 	@OriginalMember(owner = "client!we", name = "a", descriptor = "(ILjava/lang/String;Z)V")
 	public static void openUrl(@OriginalArg(1) String url, @OriginalArg(2) boolean newTab) {
 		if (!newTab) {

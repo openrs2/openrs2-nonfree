@@ -25,7 +25,7 @@ public final class MidiInstrument extends Node {
 	public final Class157[] aClass157Array1;
 
 	@OriginalMember(owner = "client!qh", name = "A", descriptor = "[B")
-	public final byte[] aByteArray57;
+	public final byte[] keyPan;
 
 	@OriginalMember(owner = "client!qh", name = "B", descriptor = "[I")
 	private int[] soundIds = new int[128];
@@ -41,7 +41,7 @@ public final class MidiInstrument extends Node {
 		@Pc(9) int local9 = 0;
 		this.aByteArray56 = new byte[128];
 		this.aByteArray58 = new byte[128];
-		this.aByteArray57 = new byte[128];
+		this.keyPan = new byte[128];
 		this.aClass157Array1 = new Class157[128];
 		this.aShortArray80 = new short[128];
 		this.sounds = new PcmSound[128];
@@ -184,7 +184,7 @@ public final class MidiInstrument extends Node {
 					}
 					local521 = buffer.bytes[local128++] + 16 << 2;
 				}
-				this.aByteArray57[local527] = (byte) local521;
+				this.keyPan[local527] = (byte) local521;
 				local525--;
 			}
 		}
@@ -304,14 +304,14 @@ public final class MidiInstrument extends Node {
 			@Pc(1103) int local1103 = local314[1] << 1;
 			@Pc(1107) byte local1107 = local314[0];
 			for (@Pc(1109) int local1109 = 0; local1109 < local1107; local1109++) {
-				@Pc(1126) int local1126 = (this.aByteArray57[local1109] & 0xFF) + local1103;
+				@Pc(1126) int local1126 = (this.keyPan[local1109] & 0xFF) + local1103;
 				if (local1126 < 0) {
 					local1126 = 0;
 				}
 				if (local1126 > 128) {
 					local1126 = 128;
 				}
-				this.aByteArray57[local1109] = (byte) local1126;
+				this.keyPan[local1109] = (byte) local1126;
 			}
 			@Pc(1150) int local1150 = 2;
 			while (local314.length > local1150) {
@@ -322,27 +322,27 @@ public final class MidiInstrument extends Node {
 				for (@Pc(1186) int local1186 = local1107; local1186 < local1162; local1186++) {
 					@Pc(1201) int local1201 = Static26.method2987(local1162 - local1107, local1184);
 					local1184 += local1170 - local1103;
-					@Pc(1218) int local1218 = (this.aByteArray57[local1186] & 0xFF) + local1201;
+					@Pc(1218) int local1218 = (this.keyPan[local1186] & 0xFF) + local1201;
 					if (local1218 < 0) {
 						local1218 = 0;
 					}
 					if (local1218 > 128) {
 						local1218 = 128;
 					}
-					this.aByteArray57[local1186] = (byte) local1218;
+					this.keyPan[local1186] = (byte) local1218;
 				}
 				local1107 = local1162;
 				local1103 = local1170;
 			}
 			for (@Pc(1253) int local1253 = local1107; local1253 < 128; local1253++) {
-				@Pc(1265) int local1265 = local1103 + (this.aByteArray57[local1253] & 0xFF);
+				@Pc(1265) int local1265 = local1103 + (this.keyPan[local1253] & 0xFF);
 				if (local1265 < 0) {
 					local1265 = 0;
 				}
 				if (local1265 > 128) {
 					local1265 = 128;
 				}
-				this.aByteArray57[local1253] = (byte) local1265;
+				this.keyPan[local1253] = (byte) local1265;
 			}
 		}
 		for (@Pc(1287) int local1287 = 0; local1287 < local182; local1287++) {
@@ -378,8 +378,8 @@ public final class MidiInstrument extends Node {
 	}
 
 	@OriginalMember(owner = "client!qh", name = "a", descriptor = "([ILclient!jk;I[B)Z")
-	public final boolean method3566(@OriginalArg(0) int[] samplingRates, @OriginalArg(1) SoundBank bank, @OriginalArg(3) byte[] keys) {
-		@Pc(15) boolean valid = true;
+	public final boolean isReady(@OriginalArg(1) SoundBank bank, @OriginalArg(0) int[] samplingRates, @OriginalArg(3) byte[] keys) {
+		@Pc(15) boolean ready = true;
 		@Pc(17) int prevSoundId = 0;
 		@Pc(19) PcmSound sound = null;
 		for (@Pc(21) int i = 0; i < 128; i++) {
@@ -395,7 +395,7 @@ public final class MidiInstrument extends Node {
 							sound = bank.getVorbisSound(soundId2 >> 2, samplingRates);
 						}
 						if (sound == null) {
-							valid = false;
+							ready = false;
 						}
 					}
 					if (sound != null) {
@@ -405,7 +405,7 @@ public final class MidiInstrument extends Node {
 				}
 			}
 		}
-		return valid;
+		return ready;
 	}
 
 	@OriginalMember(owner = "client!qh", name = "a", descriptor = "(Z)V")

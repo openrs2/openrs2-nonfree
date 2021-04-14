@@ -164,9 +164,9 @@ public final class Static27 {
 					}
 					if (local223 > 0) {
 						@Pc(240) PcmSound local240 = local89.toPcmSound().resample(client.resampler);
-						@Pc(245) Class4_Sub6_Sub4 local245 = Class4_Sub6_Sub4.create(local240, local223);
+						@Pc(245) SoundPcmStream local245 = SoundPcmStream.create(local240, local223);
 						local245.method3359(Static7.anIntArray629[local3] - 1);
-						Static5.aClass4_Sub6_Sub3_2.method2674(local245);
+						client.soundStream.addSubStream(local245);
 					}
 					Static3.anIntArray217[local3] = -100;
 				}
@@ -183,15 +183,15 @@ public final class Static27 {
 				local3--;
 			}
 		}
-		if (Static4.aBoolean210 && !Static16.method1550()) {
-			if (Preferences.musicVolume != 0 && Static6.anInt4844 != -1) {
-				Static28.method3251(Preferences.musicVolume, Static6.anInt4844, client.js5Archive6);
+		if (MusicPlayer.jingle && !MidiPlayer.isPlaying()) {
+			if (Preferences.musicVolume != 0 && MusicPlayer.groupId != -1) {
+				MidiPlayer.playImmediate(client.js5Archive6, MusicPlayer.groupId, Preferences.musicVolume);
 			}
-			Static4.aBoolean210 = false;
-		} else if (Preferences.musicVolume != 0 && Static6.anInt4844 != -1 && !Static16.method1550()) {
+			MusicPlayer.jingle = false;
+		} else if (Preferences.musicVolume != 0 && MusicPlayer.groupId != -1 && !MidiPlayer.isPlaying()) {
 			Protocol.outboundBuffer.writeOpcode(250);
-			Protocol.outboundBuffer.writeInt(Static6.anInt4844);
-			Static6.anInt4844 = -1;
+			Protocol.outboundBuffer.writeInt(MusicPlayer.groupId);
+			MusicPlayer.groupId = -1;
 		}
 	}
 

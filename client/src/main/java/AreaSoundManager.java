@@ -30,9 +30,9 @@ public final class AreaSoundManager {
 			if (movementSpeed != areaSound.movementSpeed) {
 				@Pc(135) int sound = Npc.getSound(areaSound.npc);
 				if (areaSound.sound != sound) {
-					if (areaSound.aClass4_Sub6_Sub4_3 != null) {
-						Static5.aClass4_Sub6_Sub3_2.method2670(areaSound.aClass4_Sub6_Sub4_3);
-						areaSound.aClass4_Sub6_Sub4_3 = null;
+					if (areaSound.primaryStream != null) {
+						client.soundStream.removeSubStream(areaSound.primaryStream);
+						areaSound.primaryStream = null;
 					}
 					areaSound.sound = sound;
 				}
@@ -57,9 +57,9 @@ public final class AreaSoundManager {
 			if (areaSound.movementSpeed != movementSpeed) {
 				@Pc(318) int sound = Player.getSound(areaSound.player);
 				if (areaSound.sound != sound) {
-					if (areaSound.aClass4_Sub6_Sub4_3 != null) {
-						Static5.aClass4_Sub6_Sub3_2.method2670(areaSound.aClass4_Sub6_Sub4_3);
-						areaSound.aClass4_Sub6_Sub4_3 = null;
+					if (areaSound.primaryStream != null) {
+						client.soundStream.removeSubStream(areaSound.primaryStream);
+						areaSound.primaryStream = null;
 					}
 					areaSound.sound = sound;
 				}
@@ -89,9 +89,9 @@ public final class AreaSoundManager {
 		if (areaSound == null) {
 			return;
 		}
-		if (areaSound.aClass4_Sub6_Sub4_3 != null) {
-			Static5.aClass4_Sub6_Sub3_2.method2670(areaSound.aClass4_Sub6_Sub4_3);
-			areaSound.aClass4_Sub6_Sub4_3 = null;
+		if (areaSound.primaryStream != null) {
+			client.soundStream.removeSubStream(areaSound.primaryStream);
+			areaSound.primaryStream = null;
 		}
 		areaSound.unlink();
 	}
@@ -99,13 +99,13 @@ public final class AreaSoundManager {
 	@OriginalMember(owner = "client!ri", name = "b", descriptor = "(ZI)V")
 	public static void clear(@OriginalArg(0) boolean pathingEntities) {
 		for (@Pc(8) AreaSound areaSound = (AreaSound) locSounds.head(); areaSound != null; areaSound = (AreaSound) locSounds.next()) {
-			if (areaSound.aClass4_Sub6_Sub4_3 != null) {
-				Static5.aClass4_Sub6_Sub3_2.method2670(areaSound.aClass4_Sub6_Sub4_3);
-				areaSound.aClass4_Sub6_Sub4_3 = null;
+			if (areaSound.primaryStream != null) {
+				client.soundStream.removeSubStream(areaSound.primaryStream);
+				areaSound.primaryStream = null;
 			}
-			if (areaSound.aClass4_Sub6_Sub4_2 != null) {
-				Static5.aClass4_Sub6_Sub3_2.method2670(areaSound.aClass4_Sub6_Sub4_2);
-				areaSound.aClass4_Sub6_Sub4_2 = null;
+			if (areaSound.secondaryStream != null) {
+				client.soundStream.removeSubStream(areaSound.secondaryStream);
+				areaSound.secondaryStream = null;
 			}
 			areaSound.unlink();
 		}
@@ -113,16 +113,16 @@ public final class AreaSoundManager {
 			return;
 		}
 		for (@Pc(54) AreaSound areaSound = (AreaSound) npcSounds.head(); areaSound != null; areaSound = (AreaSound) npcSounds.next()) {
-			if (areaSound.aClass4_Sub6_Sub4_3 != null) {
-				Static5.aClass4_Sub6_Sub3_2.method2670(areaSound.aClass4_Sub6_Sub4_3);
-				areaSound.aClass4_Sub6_Sub4_3 = null;
+			if (areaSound.primaryStream != null) {
+				client.soundStream.removeSubStream(areaSound.primaryStream);
+				areaSound.primaryStream = null;
 			}
 			areaSound.unlink();
 		}
 		for (@Pc(83) AreaSound areaSound = (AreaSound) playerSounds.head(); areaSound != null; areaSound = (AreaSound) playerSounds.next()) {
-			if (areaSound.aClass4_Sub6_Sub4_3 != null) {
-				Static5.aClass4_Sub6_Sub3_2.method2670(areaSound.aClass4_Sub6_Sub4_3);
-				areaSound.aClass4_Sub6_Sub4_3 = null;
+			if (areaSound.primaryStream != null) {
+				client.soundStream.removeSubStream(areaSound.primaryStream);
+				areaSound.primaryStream = null;
 			}
 			areaSound.unlink();
 		}
@@ -188,9 +188,9 @@ public final class AreaSoundManager {
 	public static void remove(@OriginalArg(1) Npc npc) {
 		for (@Pc(14) AreaSound areaSound = (AreaSound) npcSounds.head(); areaSound != null; areaSound = (AreaSound) npcSounds.next()) {
 			if (npc == areaSound.npc) {
-				if (areaSound.aClass4_Sub6_Sub4_3 != null) {
-					Static5.aClass4_Sub6_Sub3_2.method2670(areaSound.aClass4_Sub6_Sub4_3);
-					areaSound.aClass4_Sub6_Sub4_3 = null;
+				if (areaSound.primaryStream != null) {
+					client.soundStream.removeSubStream(areaSound.primaryStream);
+					areaSound.primaryStream = null;
 				}
 				areaSound.unlink();
 				return;
@@ -216,13 +216,13 @@ public final class AreaSoundManager {
 	public static void remove(@OriginalArg(2) int level, @OriginalArg(4) int x, @OriginalArg(0) int z, @OriginalArg(1) LocType locType) {
 		for (@Pc(15) AreaSound areaSound = (AreaSound) locSounds.head(); areaSound != null; areaSound = (AreaSound) locSounds.next()) {
 			if (areaSound.level == level && areaSound.minXFine == x * 128 && areaSound.minZFine == z * 128 && locType.id == areaSound.locType.id) {
-				if (areaSound.aClass4_Sub6_Sub4_3 != null) {
-					Static5.aClass4_Sub6_Sub3_2.method2670(areaSound.aClass4_Sub6_Sub4_3);
-					areaSound.aClass4_Sub6_Sub4_3 = null;
+				if (areaSound.primaryStream != null) {
+					client.soundStream.removeSubStream(areaSound.primaryStream);
+					areaSound.primaryStream = null;
 				}
-				if (areaSound.aClass4_Sub6_Sub4_2 != null) {
-					Static5.aClass4_Sub6_Sub3_2.method2670(areaSound.aClass4_Sub6_Sub4_2);
-					areaSound.aClass4_Sub6_Sub4_2 = null;
+				if (areaSound.secondaryStream != null) {
+					client.soundStream.removeSubStream(areaSound.secondaryStream);
+					areaSound.secondaryStream = null;
 				}
 				areaSound.unlink();
 				return;
@@ -248,13 +248,13 @@ public final class AreaSoundManager {
 			distance += areaSound.minZFine - z;
 		}
 		if (areaSound.radius == 0 || areaSound.radius < distance - 64 || Preferences.areaSoundsVolume == 0 || areaSound.level != level) {
-			if (areaSound.aClass4_Sub6_Sub4_3 != null) {
-				Static5.aClass4_Sub6_Sub3_2.method2670(areaSound.aClass4_Sub6_Sub4_3);
-				areaSound.aClass4_Sub6_Sub4_3 = null;
+			if (areaSound.primaryStream != null) {
+				client.soundStream.removeSubStream(areaSound.primaryStream);
+				areaSound.primaryStream = null;
 			}
-			if (areaSound.aClass4_Sub6_Sub4_2 != null) {
-				Static5.aClass4_Sub6_Sub3_2.method2670(areaSound.aClass4_Sub6_Sub4_2);
-				areaSound.aClass4_Sub6_Sub4_2 = null;
+			if (areaSound.secondaryStream != null) {
+				client.soundStream.removeSubStream(areaSound.secondaryStream);
+				areaSound.secondaryStream = null;
 			}
 			return;
 		}
@@ -263,33 +263,33 @@ public final class AreaSoundManager {
 			distance2 = 0;
 		}
 		@Pc(164) int volume2 = (areaSound.radius - distance2) * volume / areaSound.radius;
-		if (areaSound.aClass4_Sub6_Sub4_3 != null) {
-			areaSound.aClass4_Sub6_Sub4_3.setVolume(volume2);
+		if (areaSound.primaryStream != null) {
+			areaSound.primaryStream.setVolume(volume2);
 		} else if (areaSound.sound >= 0) {
 			@Pc(186) SynthSound synthSound = SynthSound.create(client.js5Archive4, areaSound.sound, 0);
 			if (synthSound != null) {
 				@Pc(195) PcmSound pcmSound = synthSound.toPcmSound().resample(client.resampler);
-				@Pc(200) Class4_Sub6_Sub4 local200 = Class4_Sub6_Sub4.create(pcmSound, volume2);
-				local200.method3359(-1);
-				Static5.aClass4_Sub6_Sub3_2.method2674(local200);
-				areaSound.aClass4_Sub6_Sub4_3 = local200;
+				@Pc(200) SoundPcmStream stream = SoundPcmStream.create(pcmSound, volume2);
+				stream.method3359(-1);
+				client.soundStream.addSubStream(stream);
+				areaSound.primaryStream = stream;
 			}
 		}
-		if (areaSound.aClass4_Sub6_Sub4_2 != null) {
-			areaSound.aClass4_Sub6_Sub4_2.setVolume(volume2);
-			if (!areaSound.aClass4_Sub6_Sub4_2.isLinked()) {
-				areaSound.aClass4_Sub6_Sub4_2 = null;
+		if (areaSound.secondaryStream != null) {
+			areaSound.secondaryStream.setVolume(volume2);
+			if (!areaSound.secondaryStream.isLinked()) {
+				areaSound.secondaryStream = null;
 			}
 		} else if (areaSound.sounds != null && (areaSound.remainingLoops -= loops) <= 0) {
 			@Pc(234) int index = (int) ((double) areaSound.sounds.length * Math.random());
 			@Pc(242) SynthSound synthSound = SynthSound.create(client.js5Archive4, areaSound.sounds[index], 0);
 			if (synthSound != null) {
 				@Pc(249) PcmSound pcmSound = synthSound.toPcmSound().resample(client.resampler);
-				@Pc(254) Class4_Sub6_Sub4 local254 = Class4_Sub6_Sub4.create(pcmSound, volume2);
-				local254.method3359(0);
-				Static5.aClass4_Sub6_Sub3_2.method2674(local254);
+				@Pc(254) SoundPcmStream stream = SoundPcmStream.create(pcmSound, volume2);
+				stream.method3359(0);
+				client.soundStream.addSubStream(stream);
 				areaSound.remainingLoops = (int) (Math.random() * (double) (areaSound.maxInterval - areaSound.minInterval)) + areaSound.minInterval;
-				areaSound.aClass4_Sub6_Sub4_2 = local254;
+				areaSound.secondaryStream = stream;
 			}
 		}
 	}

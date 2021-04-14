@@ -78,7 +78,7 @@ public class AudioChannel {
 	}
 
 	@OriginalMember(owner = "client!tj", name = "b", descriptor = "Lclient!tf;")
-	private Class4_Sub6 aClass4_Sub6_7;
+	private PcmStream stream;
 
 	@OriginalMember(owner = "client!tj", name = "o", descriptor = "[I")
 	public int[] samples;
@@ -96,7 +96,7 @@ public class AudioChannel {
 	private final int anInt3577 = 32;
 
 	@OriginalMember(owner = "client!tj", name = "r", descriptor = "Z")
-	private boolean aBoolean259 = false;
+	private boolean stop = false;
 
 	@OriginalMember(owner = "client!tj", name = "e", descriptor = "J")
 	private long aLong126 = MonotonicClock.currentTimeMillis();
@@ -111,13 +111,13 @@ public class AudioChannel {
 	private int anInt3593 = 0;
 
 	@OriginalMember(owner = "client!tj", name = "F", descriptor = "[Lclient!tf;")
-	private final Class4_Sub6[] aClass4_Sub6Array6 = new Class4_Sub6[8];
+	private final PcmStream[] aClass4_Sub6Array6 = new PcmStream[8];
 
 	@OriginalMember(owner = "client!tj", name = "H", descriptor = "I")
 	private int anInt3598 = 0;
 
 	@OriginalMember(owner = "client!tj", name = "D", descriptor = "[Lclient!tf;")
-	private final Class4_Sub6[] aClass4_Sub6Array5 = new Class4_Sub6[8];
+	private final PcmStream[] aClass4_Sub6Array5 = new PcmStream[8];
 
 	@OriginalMember(owner = "client!tj", name = "K", descriptor = "J")
 	private long closeUntil = 0L;
@@ -129,9 +129,9 @@ public class AudioChannel {
 	private long aLong128 = 0L;
 
 	@OriginalMember(owner = "client!tj", name = "a", descriptor = "(ILclient!tf;B)V")
-	private void method2994(@OriginalArg(0) int arg0, @OriginalArg(1) Class4_Sub6 arg1) {
+	private void method2994(@OriginalArg(0) int arg0, @OriginalArg(1) PcmStream arg1) {
 		@Pc(3) int local3 = arg0 >> 5;
-		@Pc(8) Class4_Sub6 local8 = this.aClass4_Sub6Array5[local3];
+		@Pc(8) PcmStream local8 = this.aClass4_Sub6Array5[local3];
 		if (local8 == null) {
 			this.aClass4_Sub6Array6[local3] = arg1;
 		} else {
@@ -147,8 +147,8 @@ public class AudioChannel {
 		if (this.anInt3593 < 0) {
 			this.anInt3593 = 0;
 		}
-		if (this.aClass4_Sub6_7 != null) {
-			this.aClass4_Sub6_7.method3345(256);
+		if (this.stream != null) {
+			this.stream.skip(256);
 		}
 	}
 
@@ -158,8 +158,8 @@ public class AudioChannel {
 	}
 
 	@OriginalMember(owner = "client!tj", name = "a", descriptor = "(B)V")
-	public final synchronized void method2998() {
-		if (this.aBoolean259) {
+	public final synchronized void loop() {
+		if (this.stop) {
 			return;
 		}
 		@Pc(18) long now = MonotonicClock.currentTimeMillis();
@@ -210,7 +210,7 @@ public class AudioChannel {
 			}
 			while (local117 > bufferedSamples) {
 				bufferedSamples += 256;
-				this.method3012(this.samples);
+				this.read(this.samples);
 				this.write();
 			}
 			if (now > this.aLong128) {
@@ -259,7 +259,7 @@ public class AudioChannel {
 			}
 		}
 		this.close();
-		this.aBoolean259 = true;
+		this.stop = true;
 		this.samples = null;
 	}
 
@@ -281,8 +281,8 @@ public class AudioChannel {
 	}
 
 	@OriginalMember(owner = "client!tj", name = "a", descriptor = "(Lclient!tf;I)V")
-	public final synchronized void method3008(@OriginalArg(0) Class4_Sub6 arg0) {
-		this.aClass4_Sub6_7 = arg0;
+	public final synchronized void setStream(@OriginalArg(0) PcmStream stream) {
+		this.stream = stream;
 	}
 
 	@OriginalMember(owner = "client!tj", name = "b", descriptor = "(B)V")
@@ -301,17 +301,17 @@ public class AudioChannel {
 	}
 
 	@OriginalMember(owner = "client!tj", name = "a", descriptor = "([II)V")
-	private void method3012(@OriginalArg(0) int[] arg0) {
-		@Pc(1) short local1 = 256;
+	private void read(@OriginalArg(0) int[] samples) {
+		@Pc(1) short len = 256;
 		if (stereo) {
-			local1 = 512;
+			len = 512;
 		}
-		ArrayUtils.clear(arg0, 0, local1);
+		ArrayUtils.clear(samples, 0, len);
 		this.anInt3593 -= 256;
-		if (this.aClass4_Sub6_7 != null && this.anInt3593 <= 0) {
+		if (this.stream != null && this.anInt3593 <= 0) {
 			this.anInt3593 += Static7.sampleRate >> 4;
-			Static15.method1324(this.aClass4_Sub6_7);
-			this.method2994(this.aClass4_Sub6_7.method3347(), this.aClass4_Sub6_7);
+			PcmStream.setInactive(this.stream);
+			this.method2994(this.stream.method3347(), this.stream);
 			@Pc(45) int local45 = 0;
 			@Pc(47) int local47 = 255;
 			@Pc(49) int local49 = 7;
@@ -329,8 +329,8 @@ public class AudioChannel {
 				for (@Pc(73) int local73 = local47 >>> local57 & 0x11111111; local73 != 0; local73 >>>= 4) {
 					if ((local73 & 0x1) != 0) {
 						local47 &= ~(0x1 << local57);
-						@Pc(91) Class4_Sub6 local91 = null;
-						@Pc(96) Class4_Sub6 local96 = this.aClass4_Sub6Array6[local57];
+						@Pc(91) PcmStream local91 = null;
+						@Pc(96) PcmStream local96 = this.aClass4_Sub6Array6[local57];
 						label100:
 						while (true) {
 							while (true) {
@@ -339,7 +339,7 @@ public class AudioChannel {
 								}
 								@Pc(101) Sound local101 = local96.sound;
 								if (local101 == null || local101.position <= local62) {
-									local96.aBoolean289 = true;
+									local96.active = true;
 									@Pc(125) int local125 = local96.method3346();
 									local45 += local125;
 									if (local101 != null) {
@@ -348,15 +348,15 @@ public class AudioChannel {
 									if (local45 >= this.anInt3577) {
 										break label106;
 									}
-									@Pc(145) Class4_Sub6 local145 = local96.method3350();
+									@Pc(145) PcmStream local145 = local96.firstSubStream();
 									if (local145 != null) {
 										@Pc(150) int local150 = local96.anInt4094;
 										while (local145 != null) {
 											this.method2994(local150 * local145.method3347() >> 8, local145);
-											local145 = local96.method3349();
+											local145 = local96.nextSubStream();
 										}
 									}
-									@Pc(169) Class4_Sub6 local169 = local96.aClass4_Sub6_8;
+									@Pc(169) PcmStream local169 = local96.aClass4_Sub6_8;
 									local96.aClass4_Sub6_8 = null;
 									if (local91 == null) {
 										this.aClass4_Sub6Array6[local57] = local169;
@@ -381,10 +381,10 @@ public class AudioChannel {
 				local49--;
 			}
 			for (@Pc(204) int local204 = 0; local204 < 8; local204++) {
-				@Pc(212) Class4_Sub6 local212 = this.aClass4_Sub6Array6[local204];
+				@Pc(212) PcmStream local212 = this.aClass4_Sub6Array6[local204];
 				this.aClass4_Sub6Array6[local204] = this.aClass4_Sub6Array5[local204] = null;
 				while (local212 != null) {
-					@Pc(227) Class4_Sub6 local227 = local212.aClass4_Sub6_8;
+					@Pc(227) PcmStream local227 = local212.aClass4_Sub6_8;
 					local212.aClass4_Sub6_8 = null;
 					local212 = local227;
 				}
@@ -393,8 +393,8 @@ public class AudioChannel {
 		if (this.anInt3593 < 0) {
 			this.anInt3593 = 0;
 		}
-		if (this.aClass4_Sub6_7 != null) {
-			this.aClass4_Sub6_7.method3348(arg0, 0, 256);
+		if (this.stream != null) {
+			this.stream.read(samples, 0, 256);
 		}
 		this.aLong126 = MonotonicClock.currentTimeMillis();
 	}

@@ -6,7 +6,7 @@ import org.openrs2.deob.annotation.Pc;
 public final class AreaSound extends Node {
 
 	@OriginalMember(owner = "client!gn", name = "o", descriptor = "Lclient!pc;")
-	public Class4_Sub6_Sub4 aClass4_Sub6_Sub4_2;
+	public SoundPcmStream secondaryStream;
 
 	@OriginalMember(owner = "client!gn", name = "s", descriptor = "I")
 	public int maxZFine;
@@ -27,7 +27,7 @@ public final class AreaSound extends Node {
 	public int maxXFine;
 
 	@OriginalMember(owner = "client!gn", name = "B", descriptor = "Lclient!pc;")
-	public Class4_Sub6_Sub4 aClass4_Sub6_Sub4_3;
+	public SoundPcmStream primaryStream;
 
 	@OriginalMember(owner = "client!gn", name = "C", descriptor = "I")
 	public int minInterval;
@@ -102,9 +102,9 @@ public final class AreaSound extends Node {
 			this.radius = this.player.soundRadius * 128;
 			this.volume = this.player.soundVolume;
 		}
-		if (this.sound != prevSound && this.aClass4_Sub6_Sub4_3 != null) {
-			Static5.aClass4_Sub6_Sub3_2.method2670(this.aClass4_Sub6_Sub4_3);
-			this.aClass4_Sub6_Sub4_3 = null;
+		if (this.sound != prevSound && this.primaryStream != null) {
+			client.soundStream.removeSubStream(this.primaryStream);
+			this.primaryStream = null;
 		}
 	}
 }

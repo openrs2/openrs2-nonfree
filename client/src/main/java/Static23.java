@@ -54,15 +54,6 @@ public final class Static23 {
 		method2459(arg0, arg1, arg2, local25 + 1);
 	}
 
-	@OriginalMember(owner = "client!lc", name = "a", descriptor = "(IIII)V")
-	public static void method1933(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2) {
-		arg0 = Preferences.musicVolume * arg0 >> 8;
-		if (arg0 != 0 && arg2 != -1) {
-			Static28.method3251(arg0, arg2, client.js5Archive11);
-			Static4.aBoolean210 = true;
-		}
-	}
-
 	@OriginalMember(owner = "client!lc", name = "a", descriptor = "(IZ)V")
 	public static void method1936(@OriginalArg(1) boolean arg0) {
 		Static25.method2782(Static1.anInt131, Static5.aFloat102, Static3.aFloat63, Static6.aFloat108);

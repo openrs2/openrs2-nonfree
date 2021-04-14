@@ -16,9 +16,6 @@ public final class Static2 {
 	@OriginalMember(owner = "client!ea", name = "E", descriptor = "Ljava/awt/Image;")
 	public static Image anImage2;
 
-	@OriginalMember(owner = "client!eg", name = "H", descriptor = "I")
-	public static int anInt1244;
-
 	@OriginalMember(owner = "client!eh", name = "k", descriptor = "Lclient!fh;")
 	public static Js5 aClass58_37;
 
@@ -81,12 +78,6 @@ public final class Static2 {
 
 	@OriginalMember(owner = "client!fm", name = "l", descriptor = "F")
 	public static float aFloat42;
-
-	@OriginalMember(owner = "client!fo", name = "e", descriptor = "Lclient!fh;")
-	public static Js5 aClass58_41;
-
-	@OriginalMember(owner = "client!fo", name = "n", descriptor = "Lclient!fh;")
-	public static Js5 aClass58_42;
 
 	@OriginalMember(owner = "client!g", name = "B", descriptor = "[I")
 	public static int[] anIntArray159;

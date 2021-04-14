@@ -13,41 +13,6 @@ public final class Static12 {
 		}
 	}
 
-	@OriginalMember(owner = "client!ck", name = "g", descriptor = "(B)Z")
-	public static boolean method639() {
-		try {
-			if (Static5.anInt4357 == 2) {
-				if (Static7.aClass4_Sub31_2 == null) {
-					Static7.aClass4_Sub31_2 = Song.create(Static2.aClass58_42, Static7.anInt6022, Static2.anInt1244);
-					if (Static7.aClass4_Sub31_2 == null) {
-						return false;
-					}
-				}
-				if (Static1.aClass98_1 == null) {
-					Static1.aClass98_1 = new SoundBank(Static6.aClass58_93, Static2.aClass58_41);
-				}
-				if (Static1.aClass4_Sub6_Sub2_3.method2511(Static7.aClass4_Sub31_2, Static3.aClass58_59, Static1.aClass98_1)) {
-					Static1.aClass4_Sub6_Sub2_3.method2509();
-					Static1.aClass4_Sub6_Sub2_3.method2479(Static7.anInt5391);
-					Static1.aClass4_Sub6_Sub2_3.method2504(Static6.aBoolean321, Static7.aClass4_Sub31_2);
-					Static1.aClass98_1 = null;
-					Static7.aClass4_Sub31_2 = null;
-					Static2.aClass58_42 = null;
-					Static5.anInt4357 = 0;
-					return true;
-				}
-			}
-		} catch (@Pc(61) Exception local61) {
-			local61.printStackTrace();
-			Static1.aClass4_Sub6_Sub2_3.method2501();
-			Static1.aClass98_1 = null;
-			Static5.anInt4357 = 0;
-			Static2.aClass58_42 = null;
-			Static7.aClass4_Sub31_2 = null;
-		}
-		return false;
-	}
-
 	@OriginalMember(owner = "client!ck", name = "a", descriptor = "(IJ)V")
 	public static void method641(@OriginalArg(1) long arg0) {
 		if (!Preferences.aBoolean293) {

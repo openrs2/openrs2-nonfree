@@ -91,9 +91,6 @@ public final class Static5 {
 	@OriginalMember(owner = "client!pg", name = "o", descriptor = "I")
 	public static int anInt3774;
 
-	@OriginalMember(owner = "client!ph", name = "X", descriptor = "Lclient!lo;")
-	public static Class4_Sub6_Sub3 aClass4_Sub6_Sub3_2;
-
 	@OriginalMember(owner = "client!pj", name = "a", descriptor = "Lclient!uj;")
 	public static Sprite aClass4_Sub3_Sub14_4;
 
@@ -277,6 +274,4 @@ public final class Static5 {
 	@OriginalMember(owner = "client!qi", name = "o", descriptor = "I")
 	public static int anInt441 = 2;
 
-	@OriginalMember(owner = "client!qj", name = "S", descriptor = "I")
-	public static int anInt4357 = 0;
 }

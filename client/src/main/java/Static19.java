@@ -138,9 +138,9 @@ public final class Static19 {
 		}
 		Static10.method384(false);
 		System.gc();
-		Static13.method971();
-		Static6.anInt4844 = -1;
-		Static4.aBoolean210 = false;
+		MidiPlayer.method971();
+		MusicPlayer.groupId = -1;
+		MusicPlayer.jingle = false;
 		AreaSoundManager.clear(true);
 		Static7.originZ = 0;
 		Static4.centralZoneX = 0;

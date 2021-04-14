@@ -208,9 +208,6 @@ public final class Static4 {
 	@OriginalMember(owner = "client!la", name = "W", descriptor = "I")
 	public static int anInt3020 = -1;
 
-	@OriginalMember(owner = "client!la", name = "cb", descriptor = "Z")
-	public static boolean aBoolean210 = false;
-
 	@OriginalMember(owner = "client!la", name = "db", descriptor = "I")
 	public static int anInt3024 = -1;
 

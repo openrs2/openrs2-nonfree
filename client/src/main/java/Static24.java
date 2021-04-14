@@ -317,17 +317,6 @@ public final class Static24 {
 		Static3.aClass84_9 = new HashTable(8);
 	}
 
-	@OriginalMember(owner = "client!mc", name = "a", descriptor = "(ILclient!fh;IBIIZ)V")
-	public static void method2692(@OriginalArg(1) Js5 arg0, @OriginalArg(4) int arg1, @OriginalArg(5) int arg2) {
-		Static3.anInt5397 = 2;
-		Static7.anInt6022 = arg2;
-		Static2.aClass58_42 = arg0;
-		Static6.aBoolean321 = false;
-		Static2.anInt1244 = 0;
-		Static7.anInt5391 = arg1;
-		Static5.anInt4357 = 1;
-	}
-
 	@OriginalMember(owner = "client!me", name = "a", descriptor = "(I)V")
 	public static void method2697() {
 		FloTypeList.clear();

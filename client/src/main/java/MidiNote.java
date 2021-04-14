@@ -2,16 +2,16 @@ import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
 
 @OriginalClass("client!ej")
-public final class Class4_Sub9 extends Node {
+public final class MidiNote extends Node {
 
 	@OriginalMember(owner = "client!ej", name = "s", descriptor = "I")
 	public int anInt1283;
 
 	@OriginalMember(owner = "client!ej", name = "t", descriptor = "Lclient!pc;")
-	public Class4_Sub6_Sub4 aClass4_Sub6_Sub4_1;
+	public SoundPcmStream stream;
 
 	@OriginalMember(owner = "client!ej", name = "u", descriptor = "Lclient!pb;")
-	public PcmSound aClass4_Sub8_Sub1_1;
+	public PcmSound sound;
 
 	@OriginalMember(owner = "client!ej", name = "w", descriptor = "I")
 	public int anInt1284;
@@ -32,7 +32,7 @@ public final class Class4_Sub9 extends Node {
 	public int anInt1290;
 
 	@OriginalMember(owner = "client!ej", name = "E", descriptor = "I")
-	public int anInt1291;
+	public int pan;
 
 	@OriginalMember(owner = "client!ej", name = "G", descriptor = "I")
 	public int anInt1293;
@@ -41,10 +41,10 @@ public final class Class4_Sub9 extends Node {
 	public int anInt1294;
 
 	@OriginalMember(owner = "client!ej", name = "J", descriptor = "Lclient!qh;")
-	public MidiInstrument aClass4_Sub23_1;
+	public MidiInstrument instrument;
 
 	@OriginalMember(owner = "client!ej", name = "K", descriptor = "I")
-	public int anInt1296;
+	public int midiKey;
 
 	@OriginalMember(owner = "client!ej", name = "L", descriptor = "I")
 	public int anInt1297;
@@ -59,7 +59,7 @@ public final class Class4_Sub9 extends Node {
 	public int anInt1300;
 
 	@OriginalMember(owner = "client!ej", name = "Q", descriptor = "I")
-	public int anInt1301;
+	public int channel;
 
 	@OriginalMember(owner = "client!ej", name = "S", descriptor = "I")
 	public int anInt1303;
@@ -69,9 +69,9 @@ public final class Class4_Sub9 extends Node {
 
 	@OriginalMember(owner = "client!ej", name = "b", descriptor = "(I)V")
 	public final void release() {
-		this.aClass4_Sub6_Sub4_1 = null;
+		this.stream = null;
 		this.aClass157_1 = null;
-		this.aClass4_Sub23_1 = null;
-		this.aClass4_Sub8_Sub1_1 = null;
+		this.instrument = null;
+		this.sound = null;
 	}
 }

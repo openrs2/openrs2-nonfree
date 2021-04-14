@@ -16,7 +16,7 @@ public final class MidiDecoder {
 	public int[] times;
 
 	@OriginalMember(owner = "client!go", name = "e", descriptor = "J")
-	private long aLong69;
+	private long startMillis;
 
 	@OriginalMember(owner = "client!go", name = "f", descriptor = "[I")
 	private int[] positions;
@@ -43,8 +43,8 @@ public final class MidiDecoder {
 	}
 
 	@OriginalMember(owner = "client!go", name = "a", descriptor = "(I)J")
-	public final long method1657(@OriginalArg(0) int arg0) {
-		return this.aLong69 + (long) arg0 * (long) this.tempo;
+	public final long getTimeMillis(@OriginalArg(0) int time) {
+		return this.startMillis + (long) time * (long) this.tempo;
 	}
 
 	@OriginalMember(owner = "client!go", name = "a", descriptor = "()V")
@@ -87,7 +87,7 @@ public final class MidiDecoder {
 			@Pc(53) Buffer buffer = this.buffer;
 			buffer.position += len;
 		}
-		this.aLong69 = 0L;
+		this.startMillis = 0L;
 		this.positions = new int[tracks];
 		for (@Pc(68) int j = 0; j < tracks; j++) {
 			this.positions[j] = this.startPositions[j];
@@ -97,8 +97,8 @@ public final class MidiDecoder {
 	}
 
 	@OriginalMember(owner = "client!go", name = "a", descriptor = "(J)V")
-	public final void method1662(@OriginalArg(0) long arg0) {
-		this.aLong69 = arg0;
+	public final void setStartMillis(@OriginalArg(0) long millis) {
+		this.startMillis = millis;
 		@Pc(6) int tracks = this.positions.length;
 		for (@Pc(8) int i = 0; i < tracks; i++) {
 			this.times[i] = 0;
@@ -150,7 +150,7 @@ public final class MidiDecoder {
 	}
 
 	@OriginalMember(owner = "client!go", name = "d", descriptor = "(I)I")
-	private int getNextEventInternal(@OriginalArg(0) int track) {
+	private int getNextMessageInternal(@OriginalArg(0) int track) {
 		@Pc(7) byte statusByte = this.buffer.bytes[this.buffer.position];
 		@Pc(13) int status;
 		if (statusByte < 0) {
@@ -161,7 +161,7 @@ public final class MidiDecoder {
 			status = this.statuses[track];
 		}
 		if (status != 240 && status != 247) {
-			return this.getNextEvent(track, status);
+			return this.getNextMessage(track, status);
 		}
 		@Pc(42) int len = this.buffer.readVarInt();
 		if (status == 247 && len > 0) {
@@ -169,7 +169,7 @@ public final class MidiDecoder {
 			if (status2 >= 241 && status2 <= 243 || status2 == 246 || status2 == 248 || status2 >= 250 && status2 <= 252 || status2 == 254) {
 				this.buffer.position++;
 				this.statuses[track] = status2;
-				return this.getNextEvent(track, status2);
+				return this.getNextMessage(track, status2);
 			}
 		}
 		@Pc(97) Buffer buffer = this.buffer;
@@ -183,22 +183,22 @@ public final class MidiDecoder {
 	}
 
 	@OriginalMember(owner = "client!go", name = "f", descriptor = "(I)I")
-	public final int getNextEvent(@OriginalArg(0) int track) {
-		return this.getNextEventInternal(track);
+	public final int getNextMessage(@OriginalArg(0) int track) {
+		return this.getNextMessageInternal(track);
 	}
 
 	@OriginalMember(owner = "client!go", name = "a", descriptor = "(II)I")
-	private int getNextEvent(@OriginalArg(0) int track, @OriginalArg(1) int status) {
+	private int getNextMessage(@OriginalArg(0) int track, @OriginalArg(1) int status) {
 		if (status != 255) {
 			@Pc(78) byte len = STATUS_LENGTHS[status - 128];
-			@Pc(80) int event = status;
+			@Pc(80) int message = status;
 			if (len >= 1) {
-				event = status | this.buffer.readUnsignedByte() << 8;
+				message = status | this.buffer.readUnsignedByte() << 8;
 			}
 			if (len >= 2) {
-				event |= this.buffer.readUnsignedByte() << 16;
+				message |= this.buffer.readUnsignedByte() << 16;
 			}
-			return event;
+			return message;
 		}
 		@Pc(7) int type = this.buffer.readUnsignedByte();
 		@Pc(12) int len = this.buffer.readVarInt();
@@ -210,7 +210,7 @@ public final class MidiDecoder {
 			@Pc(32) int tempo = this.buffer.readUnsignedMedium();
 			@Pc(33) int skipBytes = len - 3;
 			@Pc(38) int time = this.times[track];
-			this.aLong69 += (long) time * (long) (this.tempo - tempo);
+			this.startMillis += (long) time * (long) (this.tempo - tempo);
 			this.tempo = tempo;
 			@Pc(56) Buffer buffer = this.buffer;
 			buffer.position += skipBytes;

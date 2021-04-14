@@ -10,9 +10,6 @@ public final class Static3 {
 	@OriginalMember(owner = "client!gg", name = "q", descriptor = "Lclient!vn;")
 	public static SoftwareSprite aClass4_Sub3_Sub14_Sub1_2;
 
-	@OriginalMember(owner = "client!gh", name = "a", descriptor = "Lclient!fh;")
-	public static Js5 aClass58_59;
-
 	@OriginalMember(owner = "client!gj", name = "a", descriptor = "I")
 	public static int anInt2092;
 
@@ -69,9 +66,6 @@ public final class Static3 {
 
 	@OriginalMember(owner = "client!hg", name = "h", descriptor = "I")
 	public static int anInt2186;
-
-	@OriginalMember(owner = "client!hh", name = "a", descriptor = "I")
-	public static int anInt5397;
 
 	@OriginalMember(owner = "client!hi", name = "g", descriptor = "F")
 	public static float aFloat51;
