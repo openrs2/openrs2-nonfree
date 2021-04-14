@@ -150,7 +150,7 @@ public final class MidiDecoder {
 	}
 
 	@OriginalMember(owner = "client!go", name = "d", descriptor = "(I)I")
-	private int getNextMessageInternal(@OriginalArg(0) int track) {
+	private int getNextEventInternal(@OriginalArg(0) int track) {
 		@Pc(7) byte statusByte = this.buffer.bytes[this.buffer.position];
 		@Pc(13) int status;
 		if (statusByte < 0) {
@@ -161,7 +161,7 @@ public final class MidiDecoder {
 			status = this.statuses[track];
 		}
 		if (status != 240 && status != 247) {
-			return this.getNextMessage(track, status);
+			return this.getNextEvent(track, status);
 		}
 		@Pc(42) int len = this.buffer.readVarInt();
 		if (status == 247 && len > 0) {
@@ -169,7 +169,7 @@ public final class MidiDecoder {
 			if (status2 >= 241 && status2 <= 243 || status2 == 246 || status2 == 248 || status2 >= 250 && status2 <= 252 || status2 == 254) {
 				this.buffer.position++;
 				this.statuses[track] = status2;
-				return this.getNextMessage(track, status2);
+				return this.getNextEvent(track, status2);
 			}
 		}
 		@Pc(97) Buffer buffer = this.buffer;
@@ -183,22 +183,22 @@ public final class MidiDecoder {
 	}
 
 	@OriginalMember(owner = "client!go", name = "f", descriptor = "(I)I")
-	public final int getNextMessage(@OriginalArg(0) int track) {
-		return this.getNextMessageInternal(track);
+	public final int getNextEvent(@OriginalArg(0) int track) {
+		return this.getNextEventInternal(track);
 	}
 
 	@OriginalMember(owner = "client!go", name = "a", descriptor = "(II)I")
-	private int getNextMessage(@OriginalArg(0) int track, @OriginalArg(1) int status) {
+	private int getNextEvent(@OriginalArg(0) int track, @OriginalArg(1) int status) {
 		if (status != 255) {
 			@Pc(78) byte len = STATUS_LENGTHS[status - 128];
-			@Pc(80) int message = status;
+			@Pc(80) int event = status;
 			if (len >= 1) {
-				message = status | this.buffer.readUnsignedByte() << 8;
+				event = status | this.buffer.readUnsignedByte() << 8;
 			}
 			if (len >= 2) {
-				message |= this.buffer.readUnsignedByte() << 16;
+				event |= this.buffer.readUnsignedByte() << 16;
 			}
-			return message;
+			return event;
 		}
 		@Pc(7) int type = this.buffer.readUnsignedByte();
 		@Pc(12) int len = this.buffer.readVarInt();

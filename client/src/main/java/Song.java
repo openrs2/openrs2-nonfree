@@ -325,14 +325,14 @@ public final class Song extends Node {
 				@Pc(56) int time = song.times[track];
 				while (song.times[track] == time) {
 					song.loadTrackPosition(track);
-					@Pc(69) int event = song.getNextMessage(track);
+					@Pc(69) int event = song.getNextEvent(track);
 					if (event == 1) {
 						song.loadEndOfTrackPosition();
 						song.saveTrackPosition(track);
 						continue track;
 					}
-					@Pc(85) int status = event & 0xF0;
-					if (status == 176) {
+					@Pc(85) int type = event & 0xF0;
+					if (type == 176) {
 						@Pc(92) int channel = event & 0xF;
 						@Pc(98) int controller = event >> 8 & 0x7F;
 						@Pc(104) int value = event >> 16 & 0x7F;
@@ -343,12 +343,12 @@ public final class Song extends Node {
 							banks[channel] = (banks[channel] & 0xFFFFC07F) + (value << 7);
 						}
 					}
-					if (status == 192) {
+					if (type == 192) {
 						@Pc(140) int channel = event & 0xF;
 						@Pc(146) int program = event >> 8 & 0x7F;
 						programs[channel] = banks[channel] + program;
 					}
-					if (status == 144) {
+					if (type == 144) {
 						@Pc(161) int channel = event & 0xF;
 						@Pc(167) int key = event >> 8 & 0x7F;
 						@Pc(173) int velocity = event >> 16 & 0x7F;

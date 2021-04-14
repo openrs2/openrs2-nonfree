@@ -589,8 +589,8 @@ public final class MidiPcmStream extends PcmStream {
 		while (time == this.time) {
 			while (time == this.decoder.times[track]) {
 				this.decoder.loadTrackPosition(track);
-				@Pc(71) int message = this.decoder.getNextMessage(track);
-				if (message == 1) {
+				@Pc(71) int event = this.decoder.getNextEvent(track);
+				if (event == 1) {
 					this.decoder.loadEndOfTrackPosition();
 					this.decoder.saveTrackPosition(track);
 					if (this.decoder.hasNextTrack()) {
@@ -608,8 +608,8 @@ public final class MidiPcmStream extends PcmStream {
 					}
 					break;
 				}
-				if ((message & 0x80) != 0) {
-					this.processMessage(message);
+				if ((event & 0x80) != 0) {
+					this.processMessage(event);
 				}
 				this.decoder.addDeltaTime(track);
 				this.decoder.saveTrackPosition(track);
