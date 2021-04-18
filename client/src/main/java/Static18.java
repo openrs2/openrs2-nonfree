@@ -38,11 +38,6 @@ public final class Static18 {
 		SceneGraph.aClass4_Sub12ArrayArray2[arg0] = arg1;
 	}
 
-	@OriginalMember(owner = "client!he", name = "b", descriptor = "(B)V")
-	public static void method1713() {
-		Static6.aClass26_50.removeSoft();
-	}
-
 	@OriginalMember(owner = "client!he", name = "a", descriptor = "(I)V")
 	public static void method1714() {
 		ParticleManager.redraw((long) client.loop);
@@ -403,44 +398,44 @@ public final class Static18 {
 					}
 				}
 				if (client.loop < entity.anInt3993) {
-					@Pc(525) Sprite local525 = Sprites.hitBarDefault[0];
-					@Pc(529) Sprite local529 = Sprites.hitBarDefault[1];
+					@Pc(525) Sprite hitBar0 = Sprites.hitBarDefault[0];
+					@Pc(529) Sprite hitBar1 = Sprites.hitBarDefault[1];
 					@Pc(536) int local536;
 					if (entity instanceof Npc) {
-						@Pc(541) Npc local541 = (Npc) entity;
-						@Pc(551) Sprite[] local551 = (Sprite[]) Static1.aClass26_5.get((long) local541.type.anInt5240);
-						if (local551 == null) {
-							local551 = SpriteLoader.loadAlphaSprites(client.js5Archive8, local541.type.anInt5240);
-							if (local551 != null) {
-								Static1.aClass26_5.put((long) local541.type.anInt5240, local551);
+						@Pc(541) Npc npc = (Npc) entity;
+						@Pc(551) Sprite[] hitBar = (Sprite[]) HitBarList.hitBars.get(npc.type.hitBarId);
+						if (hitBar == null) {
+							hitBar = SpriteLoader.loadAlphaSprites(client.js5Archive8, npc.type.hitBarId);
+							if (hitBar != null) {
+								HitBarList.hitBars.put(npc.type.hitBarId, hitBar);
 							}
 						}
-						if (local551 != null && local551.length == 2) {
-							local529 = local551[1];
-							local525 = local551[0];
+						if (hitBar != null && hitBar.length == 2) {
+							hitBar1 = hitBar[1];
+							hitBar0 = hitBar[0];
 						}
-						@Pc(593) NpcType local593 = local541.type;
-						if (local593.anInt5259 == -1) {
+						@Pc(593) NpcType type = npc.type;
+						if (type.anInt5259 == -1) {
 							local536 = entity.method3306();
 						} else {
-							local536 = local593.anInt5259;
+							local536 = type.anInt5259;
 						}
 					} else {
 						local536 = entity.method3306();
 					}
-					Static28.method3325(arg2 >> 1, arg3, arg1, arg4 >> 1, local525.height + local536 + 10, entity);
+					Static28.method3325(arg2 >> 1, arg3, arg1, arg4 >> 1, hitBar0.height + local536 + 10, entity);
 					if (Static7.anInt5584 > -1) {
-						@Pc(635) int local635 = Static7.anInt5584 + arg0 - (local525.width >> 1);
+						@Pc(635) int local635 = Static7.anInt5584 + arg0 - (hitBar0.width >> 1);
 						@Pc(641) int local641 = Static4.anInt3290 + arg5 - 3;
-						local525.renderTransparent(local635, local641);
-						@Pc(653) int local653 = entity.anInt4022 * local525.width / 255;
-						@Pc(656) int local656 = local525.height;
+						hitBar0.renderTransparent(local635, local641);
+						@Pc(653) int local653 = entity.anInt4022 * hitBar0.width / 255;
+						@Pc(656) int local656 = hitBar0.height;
 						if (GlRenderer.enabled) {
 							GlRaster.shrinkClip(local635, local641, local635 + local653, local656 + local641);
 						} else {
 							SoftwareRaster.shrinkClip(local635, local641, local653 + local635, local641 + local656);
 						}
-						local529.renderTransparent(local635, local641);
+						hitBar1.renderTransparent(local635, local641);
 						if (GlRenderer.enabled) {
 							GlRaster.setClip(arg0, arg5, arg4 + arg0, arg2 + arg5);
 						} else {

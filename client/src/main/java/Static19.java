@@ -167,7 +167,7 @@ public final class Static19 {
 			}
 		}
 		Static24.method2563();
-		Static7.anInt5426 = 0;
+		Protocol.verifyId = 0;
 		VarpDomain.clear();
 		Static11.method605(true);
 		try {

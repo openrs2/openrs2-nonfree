@@ -18,7 +18,7 @@ public abstract class Class41 {
 	protected int anInt3772 = 4;
 
 	@OriginalMember(owner = "client!pg", name = "k", descriptor = "I")
-	private int anInt3771 = 0;
+	private int seed = 0;
 
 	@OriginalMember(owner = "client!pg", name = "i", descriptor = "I")
 	private int anInt3770 = 4;
@@ -34,7 +34,7 @@ public abstract class Class41 {
 		this.anInt3772 = arg1;
 		this.anInt3775 = arg2;
 		this.anInt3770 = arg3;
-		this.anInt3771 = arg0;
+		this.seed = arg0;
 		this.anInt3767 = arg4;
 		this.method3145();
 		this.method3143();
@@ -138,13 +138,13 @@ public abstract class Class41 {
 
 	@OriginalMember(owner = "client!pg", name = "a", descriptor = "(Z)V")
 	private void method3143() {
-		@Pc(15) Random local15 = new Random((long) this.anInt3771);
+		@Pc(15) Random random = new Random(this.seed);
 		for (@Pc(21) int local21 = 0; local21 < 255; local21++) {
 			this.aShortArray71[local21] = (short) local21;
 		}
 		for (@Pc(35) int local35 = 0; local35 < 255; local35++) {
 			@Pc(45) int local45 = 255 - local35;
-			@Pc(50) int local50 = Static12.method716(local15, local45);
+			@Pc(50) int local50 = RandomUtils.nextInt(random, local45);
 			@Pc(55) short local55 = this.aShortArray71[local50];
 			this.aShortArray71[local50] = this.aShortArray71[local45];
 			this.aShortArray71[local45] = this.aShortArray71[local45 + 256] = local55;

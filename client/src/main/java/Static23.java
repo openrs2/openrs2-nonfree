@@ -1753,8 +1753,8 @@ public final class Static23 {
 	}
 
 	@OriginalMember(owner = "client!lg", name = "a", descriptor = "(Lclient!nk;)V")
-	public static void method2551(@OriginalArg(0) GlTextureProvider arg0) {
-		Static4.textureProvider = arg0;
+	public static void setTextureProvider(@OriginalArg(0) GlTextureProvider textureProvider) {
+		Static4.textureProvider = textureProvider;
 	}
 
 	@OriginalMember(owner = "client!lg", name = "a", descriptor = "([BIIIIIII)V")

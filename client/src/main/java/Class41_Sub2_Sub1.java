@@ -7,7 +7,7 @@ import org.openrs2.deob.annotation.Pc;
 public final class Class41_Sub2_Sub1 extends Class41_Sub2 {
 
 	@OriginalMember(owner = "client!oe", name = "B", descriptor = "[B")
-	private byte[] aByteArray49;
+	private byte[] bytes;
 
 	@OriginalMember(owner = "client!oe", name = "<init>", descriptor = "()V")
 	public Class41_Sub2_Sub1() {
@@ -16,17 +16,17 @@ public final class Class41_Sub2_Sub1 extends Class41_Sub2 {
 
 	@OriginalMember(owner = "client!oe", name = "a", descriptor = "(III)[B")
 	public final byte[] method3156() {
-		this.aByteArray49 = new byte[524288];
+		this.bytes = new byte[524288];
 		this.method3142();
-		return this.aByteArray49;
+		return this.bytes;
 	}
 
 	@OriginalMember(owner = "client!oe", name = "a", descriptor = "(IB)V")
 	@Override
-	protected final void method3151(@OriginalArg(0) int arg0, @OriginalArg(1) byte arg1) {
-		@Pc(3) int local3 = arg0 * 2;
+	protected final void setPixel(@OriginalArg(0) int index, @OriginalArg(1) byte arg1) {
+		@Pc(3) int index2 = index * 2;
 		arg1 = (byte) ((arg1 >> 1 & 0x7F) + 127);
-		this.aByteArray49[local3++] = arg1;
-		this.aByteArray49[local3] = arg1;
+		this.bytes[index2++] = arg1;
+		this.bytes[index2] = arg1;
 	}
 }

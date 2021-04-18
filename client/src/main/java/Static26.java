@@ -412,7 +412,7 @@ public final class Static26 {
 								}
 								@Pc(932) int local932 = light.x >> 7;
 								@Pc(937) int local937 = light.z >> 7;
-								if (light.anInt1326 == arg0 && local932 >= local13 && local13 + 8 > local932 && local7 <= local937 && local7 + 8 > local937) {
+								if (light.level == arg0 && local932 >= local13 && local13 + 8 > local932 && local7 <= local937 && local7 + 8 > local937) {
 									@Pc(987) int local987 = (arg3 << 7) + Static31.rotateXFine(light.x & 0x3FF, angle, light.z & 0x3FF);
 									@Pc(1003) int local1003 = (arg5 << 7) + Static22.rotateZFine(light.z & 0x3FF, light.x & 0x3FF, angle);
 									light.x = local987;
@@ -420,8 +420,8 @@ public final class Static26 {
 									@Pc(1014) int local1014 = light.z >> 7;
 									@Pc(1019) int local1019 = light.x >> 7;
 									if (local1019 >= 0 && local1014 >= 0 && local1019 < 104 && local1014 < 104) {
-										light.aBoolean80 = (Static4.tileFlags[1][local1019][local1014] & 0x2) != 0;
-										light.y = SceneGraph.tileHeights[light.anInt1326][local1019][local1014] - light.y;
+										light.linkBelow = (Static4.tileFlags[1][local1019][local1014] & 0x2) != 0;
+										light.y = SceneGraph.tileHeights[light.level][local1019][local1014] - light.y;
 										LightingManager.addLight(light);
 									}
 								}
@@ -572,7 +572,7 @@ public final class Static26 {
 			@Pc(26) HookRequest local26 = new HookRequest();
 			local26.arguments = local15.onTargetLeave;
 			local26.source = local15;
-			Static21.method2019(local26);
+			ScriptRunner.method2019(local26);
 		}
 		Static3.aBoolean177 = false;
 		Static7.anInt6050 = -1;
@@ -678,7 +678,7 @@ public final class Static26 {
 
 	@OriginalMember(owner = "client!nl", name = "a", descriptor = "(BI)Ljava/lang/String;")
 	public static String method2992(@OriginalArg(1) int arg0) {
-		return Static6.aStringArray27[arg0].length() <= 0 ? Static6.aStringArray30[arg0] : Static6.aStringArray30[arg0] + LocalisedText.MINISEPARATOR + Static6.aStringArray27[arg0];
+		return MiniMenu.opBases[arg0].length() <= 0 ? MiniMenu.ops[arg0] : MiniMenu.ops[arg0] + LocalisedText.MINISEPARATOR + MiniMenu.opBases[arg0];
 	}
 
 }

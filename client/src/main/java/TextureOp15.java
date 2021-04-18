@@ -128,7 +128,7 @@ public final class TextureOp15 extends TextureOp {
 		this.aShortArray81 = new short[512];
 		if (this.anInt4552 > 0) {
 			for (@Pc(27) int local27 = 0; local27 < 512; local27++) {
-				this.aShortArray81[local27] = (short) Static12.method716(local16, this.anInt4552);
+				this.aShortArray81[local27] = (short) RandomUtils.nextInt(local16, this.anInt4552);
 			}
 		}
 	}

@@ -79,9 +79,6 @@ public final class Static3 {
 	@OriginalMember(owner = "client!ho", name = "D", descriptor = "Lclient!ll;")
 	public static LinkedList aClass112_13;
 
-	@OriginalMember(owner = "client!id", name = "e", descriptor = "[I")
-	public static int[] anIntArray196;
-
 	@OriginalMember(owner = "client!id", name = "f", descriptor = "[I")
 	public static int[] underwaterLocGroupIds;
 
@@ -242,10 +239,7 @@ public final class Static3 {
 	public static short aShort12 = 320;
 
 	@OriginalMember(owner = "client!gm", name = "f", descriptor = "J")
-	public static long aLong67 = 0L;
-
-	@OriginalMember(owner = "client!hb", name = "b", descriptor = "I")
-	public static int anInt2140 = 0;
+	public static long prevGc = 0L;
 
 	@OriginalMember(owner = "client!hb", name = "d", descriptor = "I")
 	public static int anInt2142 = 0;
@@ -255,9 +249,6 @@ public final class Static3 {
 
 	@OriginalMember(owner = "client!hc", name = "c", descriptor = "I")
 	public static int anInt2886 = 0;
-
-	@OriginalMember(owner = "client!he", name = "B", descriptor = "Z")
-	public static boolean aBoolean147 = true;
 
 	@OriginalMember(owner = "client!hh", name = "b", descriptor = "Z")
 	public static boolean aBoolean366 = true;
@@ -280,17 +271,11 @@ public final class Static3 {
 	@OriginalMember(owner = "client!hk", name = "lb", descriptor = "S")
 	public static short aShort13 = 256;
 
-	@OriginalMember(owner = "client!ho", name = "n", descriptor = "I")
-	public static int anInt2273 = 0;
-
 	@OriginalMember(owner = "client!ho", name = "Q", descriptor = "[I")
 	public static final int[] anIntArray189 = new int[1000];
 
 	@OriginalMember(owner = "client!ho", name = "T", descriptor = "[I")
 	public static final int[] anIntArray190 = new int[14];
-
-	@OriginalMember(owner = "client!i", name = "b", descriptor = "I")
-	public static int anInt2297 = 0;
 
 	@OriginalMember(owner = "client!ia", name = "i", descriptor = "Lclient!wf;")
 	public static Component aClass185_5 = null;
@@ -322,14 +307,8 @@ public final class Static3 {
 	@OriginalMember(owner = "client!ik", name = "B", descriptor = "Z")
 	public static boolean aBoolean166 = false;
 
-	@OriginalMember(owner = "client!il", name = "f", descriptor = "[I")
-	public static final int[] anIntArray217 = new int[50];
-
 	@OriginalMember(owner = "client!im", name = "h", descriptor = "Lclient!jh;")
 	public static Class96 aClass96_1 = new Class96();
-
-	@OriginalMember(owner = "client!io", name = "G", descriptor = "[Z")
-	public static final boolean[] aBooleanArray11 = new boolean[8];
 
 	@OriginalMember(owner = "client!j", name = "o", descriptor = "I")
 	public static int anInt2505 = 0;
@@ -356,7 +335,7 @@ public final class Static3 {
 	public static boolean aBoolean177 = false;
 
 	@OriginalMember(owner = "client!jh", name = "e", descriptor = "Lclient!ll;")
-	public static final LinkedList aClass112_14 = new LinkedList();
+	public static final LinkedList lowPriorityRequests = new LinkedList();
 
 	@OriginalMember(owner = "client!jh", name = "l", descriptor = "Z")
 	public static boolean aBoolean178 = false;

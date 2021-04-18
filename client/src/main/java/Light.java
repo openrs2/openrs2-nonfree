@@ -61,7 +61,7 @@ public final class Light {
 	public final boolean aBoolean79;
 
 	@OriginalMember(owner = "client!em", name = "q", descriptor = "I")
-	public int anInt1326;
+	public int level;
 
 	@OriginalMember(owner = "client!em", name = "t", descriptor = "I")
 	private int anInt1328;
@@ -88,17 +88,17 @@ public final class Light {
 	public final float[] diffuse = new float[4];
 
 	@OriginalMember(owner = "client!em", name = "s", descriptor = "Z")
-	public boolean aBoolean80 = false;
+	public boolean linkBelow = false;
 
 	@OriginalMember(owner = "client!em", name = "<init>", descriptor = "(Lclient!fd;)V")
 	public Light(@OriginalArg(0) Buffer buffer) {
 		if (NOISE == null) {
 			init();
 		}
-		this.anInt1326 = buffer.readUnsignedByte();
-		this.aBoolean78 = (this.anInt1326 & 0x10) != 0;
-		this.aBoolean79 = (this.anInt1326 & 0x8) != 0;
-		this.anInt1326 &= 7;
+		this.level = buffer.readUnsignedByte();
+		this.aBoolean78 = (this.level & 0x10) != 0;
+		this.aBoolean79 = (this.level & 0x8) != 0;
+		this.level &= 7;
 		this.x = buffer.readUnsignedShort();
 		this.z = buffer.readUnsignedShort();
 		this.y = buffer.readUnsignedShort();

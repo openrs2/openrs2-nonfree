@@ -735,68 +735,23 @@ public final class Static20 {
 		return local3;
 	}
 
-	@OriginalMember(owner = "client!ik", name = "a", descriptor = "(III)V")
-	public static void method1916(@OriginalArg(1) int y, @OriginalArg(2) int x) {
-		if (Static2.anInt1943 > 0) {
-			Static24.method2702(Static2.anInt1943);
-			Static2.anInt1943 = 0;
-		}
-		@Pc(15) int local15 = 0;
-		@Pc(23) int local23 = SoftwareRaster.width * y;
-		@Pc(27) int local27 = 0;
-		for (@Pc(29) int local29 = 1; local29 < 255; local29++) {
-			@Pc(49) int local49 = (256 - local29) * Static4.anIntArray314[local29] / 256;
-			if (local49 < 0) {
-				local49 = 0;
-			}
-			local15 += local49;
-			for (@Pc(61) int local61 = local49; local61 < 128; local61++) {
-				@Pc(74) int local74 = SoftwareRaster.pixels[x + local23++];
-				@Pc(79) int local79 = Static2.anIntArray100[local15++];
-				if (local79 == 0) {
-					Static4.aClass4_Sub3_Sub14_Sub1_4.pixels[local27++] = local74;
-				} else {
-					@Pc(96) int local96 = local79 + 18;
-					if (local96 > 255) {
-						local96 = 255;
-					}
-					@Pc(108) int local108 = 256 - local79 - 18;
-					if (local108 > 255) {
-						local108 = 255;
-					}
-					@Pc(120) int local120 = Static3.anIntArray196[local79];
-					Static4.aClass4_Sub3_Sub14_Sub1_4.pixels[local27++] = (local108 * (local74 & 0xFF00FF) + (local120 & 0xFF00FF) * local96 & 0xFF00FF00) + (local108 * (local74 & 0xFF00) + (local120 & 0xFF00) * local96 & 0xFF0000) >> 8;
-				}
-			}
-			for (@Pc(160) int local160 = 0; local160 < local49; local160++) {
-				Static4.aClass4_Sub3_Sub14_Sub1_4.pixels[local27++] = SoftwareRaster.pixels[x + local23++];
-			}
-			local23 += SoftwareRaster.width - 128;
-		}
-		if (GlRenderer.enabled) {
-			GlRaster.drawPixels(Static4.aClass4_Sub3_Sub14_Sub1_4.pixels, x, y, Static4.aClass4_Sub3_Sub14_Sub1_4.width, Static4.aClass4_Sub3_Sub14_Sub1_4.height);
-		} else {
-			Static4.aClass4_Sub3_Sub14_Sub1_4.render(x, y);
-		}
-	}
-
 	@OriginalMember(owner = "client!il", name = "a", descriptor = "(IBI)Ljava/lang/String;")
-	public static String method1921(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1) {
-		@Pc(8) int local8 = arg0 - arg1;
-		if (local8 < -9) {
+	public static String getCombatLevelColor(@OriginalArg(0) int selfLevel, @OriginalArg(2) int otherLevel) {
+		@Pc(8) int delta = selfLevel - otherLevel;
+		if (delta < -9) {
 			return "<col=ff0000>";
-		} else if (local8 < -6) {
+		} else if (delta < -6) {
 			return "<col=ff3000>";
-		} else if (local8 < -3) {
+		} else if (delta < -3) {
 			return "<col=ff7000>";
-		} else if (local8 < 0) {
+		} else if (delta < 0) {
 			return "<col=ffb000>";
-		} else if (local8 > 9) {
+		} else if (delta > 9) {
 			return "<col=00ff00>";
-		} else if (local8 > 6) {
+		} else if (delta > 6) {
 			return "<col=40ff00>";
-		} else if (local8 <= 3) {
-			return local8 > 0 ? "<col=c0ff00>" : "<col=ffff00>";
+		} else if (delta <= 3) {
+			return delta > 0 ? "<col=c0ff00>" : "<col=ffff00>";
 		} else {
 			return "<col=80ff00>";
 		}
@@ -911,9 +866,9 @@ public final class Static20 {
 
 	@OriginalMember(owner = "client!im", name = "b", descriptor = "(I)V")
 	public static void method1932() {
-		if (PlayerList.self != null && PlayerList.self.xFine + 64 - PlayerList.self.getSize() * 64 >> 7 == Static6.anInt4506 && PlayerList.self.zFine + 64 - PlayerList.self.getSize() * 64 >> 7 == Static3.anInt2140) {
-			Static3.aBoolean147 = false;
-			Static6.anInt4506 = 0;
+		if (PlayerList.self != null && PlayerList.self.xFine + 64 - PlayerList.self.getSize() * 64 >> 7 == MiniMap.flagX && PlayerList.self.zFine + 64 - PlayerList.self.getSize() * 64 >> 7 == MiniMap.flagY) {
+			MiniMap.aBoolean147 = false;
+			MiniMap.flagX = 0;
 		}
 		for (@Pc(46) int local46 = 0; local46 < 104; local46++) {
 			for (@Pc(53) int local53 = 0; local53 < 104; local53++) {
@@ -1051,7 +1006,7 @@ public final class Static20 {
 
 	@OriginalMember(owner = "client!jb", name = "a", descriptor = "(B)V")
 	public static void method1976() {
-		for (@Pc(16) ProjAnimNode local16 = (ProjAnimNode) Static1.aClass112_1.head(); local16 != null; local16 = (ProjAnimNode) Static1.aClass112_1.next()) {
+		for (@Pc(16) ProjAnimNode local16 = (ProjAnimNode) Static1.projAnims.head(); local16 != null; local16 = (ProjAnimNode) Static1.projAnims.next()) {
 			@Pc(22) ProjAnim local22 = local16.value;
 			if (local22.anInt3717 != Player.level || client.loop > local22.anInt3707) {
 				local16.unlink();

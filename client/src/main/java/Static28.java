@@ -263,7 +263,7 @@ public final class Static28 {
 			}
 			for (@Pc(45) int local45 = 0; local45 < 255; local45++) {
 				@Pc(55) int local55 = 255 - local45;
-				@Pc(60) int local60 = Static12.method716(local30, local55);
+				@Pc(60) int local60 = RandomUtils.nextInt(local30, local55);
 				@Pc(64) byte local64 = local24[local60];
 				local24[local60] = local24[local55];
 				local24[local55] = local24[511 - local45] = local64;

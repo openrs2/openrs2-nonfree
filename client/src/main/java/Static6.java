@@ -77,14 +77,8 @@ public final class Static6 {
 	@OriginalMember(owner = "client!t", name = "e", descriptor = "I")
 	public static int anInt4978;
 
-	@OriginalMember(owner = "client!t", name = "n", descriptor = "[I")
-	public static int[] anIntArray541;
-
 	@OriginalMember(owner = "client!ta", name = "z", descriptor = "I")
 	public static int anInt5001;
-
-	@OriginalMember(owner = "client!tb", name = "c", descriptor = "[I")
-	public static int[] anIntArray544;
 
 	@OriginalMember(owner = "client!tc", name = "V", descriptor = "[I")
 	public static int[] rowCount;
@@ -122,9 +116,6 @@ public final class Static6 {
 	@OriginalMember(owner = "client!rb", name = "d", descriptor = "[I")
 	public static final int[] anIntArray475 = new int[] { 0, -1, 0, 1 };
 
-	@OriginalMember(owner = "client!re", name = "c", descriptor = "I")
-	public static int anInt4457 = 0;
-
 	@OriginalMember(owner = "client!rf", name = "b", descriptor = "Z")
 	public static boolean aBoolean310 = false;
 
@@ -136,9 +127,6 @@ public final class Static6 {
 
 	@OriginalMember(owner = "client!rg", name = "Z", descriptor = "Z")
 	public static boolean aBoolean313 = false;
-
-	@OriginalMember(owner = "client!rg", name = "ab", descriptor = "I")
-	public static int anInt4506 = 0;
 
 	@OriginalMember(owner = "client!rh", name = "W", descriptor = "I")
 	public static int anInt4546 = 0;
@@ -191,17 +179,8 @@ public final class Static6 {
 	@OriginalMember(owner = "client!s", name = "yb", descriptor = "[I")
 	public static int[] anIntArray509 = new int[1];
 
-	@OriginalMember(owner = "client!sa", name = "q", descriptor = "I")
-	public static int anInt4709 = -1;
-
 	@OriginalMember(owner = "client!sc", name = "T", descriptor = "I")
 	public static int anInt4744 = 0;
-
-	@OriginalMember(owner = "client!sc", name = "jb", descriptor = "[Ljava/lang/String;")
-	public static final String[] aStringArray27 = new String[500];
-
-	@OriginalMember(owner = "client!sd", name = "b", descriptor = "Lclient!cc;")
-	public static final SoftLruHashTable aClass26_50 = new SoftLruHashTable(32);
 
 	@OriginalMember(owner = "client!sd", name = "c", descriptor = "Z")
 	public static boolean aBoolean330 = false;
@@ -239,9 +218,6 @@ public final class Static6 {
 	@OriginalMember(owner = "client!sn", name = "W", descriptor = "[Z")
 	public static final boolean[] aBooleanArray24 = new boolean[100];
 
-	@OriginalMember(owner = "client!sn", name = "ab", descriptor = "[Ljava/lang/String;")
-	public static final String[] aStringArray30 = new String[500];
-
 	@OriginalMember(owner = "client!sn", name = "ib", descriptor = "I")
 	public static int anInt4946 = 0;
 
@@ -256,12 +232,6 @@ public final class Static6 {
 
 	@OriginalMember(owner = "client!ta", name = "s", descriptor = "I")
 	public static int anInt4996 = 0;
-
-	@OriginalMember(owner = "client!ta", name = "t", descriptor = "[I")
-	public static final int[] anIntArray543 = new int[500];
-
-	@OriginalMember(owner = "client!ta", name = "E", descriptor = "[S")
-	public static final short[] aShortArray100 = new short[500];
 
 	@OriginalMember(owner = "client!td", name = "cb", descriptor = "I")
 	public static int anInt5088 = 0;

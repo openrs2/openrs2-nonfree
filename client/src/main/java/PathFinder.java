@@ -228,9 +228,9 @@ public final class PathFinder {
 				return;
 			}
 		}
-		Static3.aBoolean147 = false;
-		Static3.anInt2140 = z;
-		Static6.anInt4506 = x;
+		MiniMap.aBoolean147 = false;
+		MiniMap.flagY = z;
+		MiniMap.flagX = x;
 	}
 
 	@OriginalMember(owner = "client!ka", name = "a", descriptor = "(ZIIIIIIIIII)V")
@@ -367,9 +367,9 @@ public final class PathFinder {
 				return;
 			}
 		}
-		Static6.anInt4506 = x;
-		Static3.aBoolean147 = false;
-		Static3.anInt2140 = z;
+		MiniMap.flagX = x;
+		MiniMap.aBoolean147 = false;
+		MiniMap.flagY = z;
 	}
 
 	@OriginalMember(owner = "client!qi", name = "a", descriptor = "(IIIIIZIIIII)V")
@@ -506,9 +506,9 @@ public final class PathFinder {
 				return;
 			}
 		}
-		Static3.aBoolean147 = false;
-		Static6.anInt4506 = x;
-		Static3.anInt2140 = z;
+		MiniMap.aBoolean147 = false;
+		MiniMap.flagX = x;
+		MiniMap.flagY = z;
 	}
 
 	@OriginalMember(owner = "client!fg", name = "a", descriptor = "(IIIZIIIIBII)V")

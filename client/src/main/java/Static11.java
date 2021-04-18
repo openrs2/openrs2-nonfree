@@ -304,22 +304,22 @@ public final class Static11 {
 			@Pc(298) HookRequest request = new HookRequest();
 			request.arguments = component.onResize;
 			request.source = component;
-			Static3.aClass112_14.addTail(request);
+			Static3.lowPriorityRequests.addTail(request);
 		}
 	}
 
 	@OriginalMember(owner = "client!ce", name = "a", descriptor = "(ILclient!p;BI)V")
-	public static void method529(@OriginalArg(0) int seqId, @OriginalArg(1) Npc npc, @OriginalArg(3) int arg2) {
+	public static void method529(@OriginalArg(0) int seqId, @OriginalArg(1) Npc npc, @OriginalArg(3) int delay) {
 		if (seqId == npc.seqId && seqId != -1) {
 			@Pc(19) SeqType local19 = SeqTypeList.get(seqId);
 			@Pc(22) int local22 = local19.anInt1238;
 			if (local22 == 1) {
 				npc.anInt3970 = 0;
-				npc.anInt3996 = arg2;
+				npc.anInt3996 = delay;
 				npc.anInt4011 = 1;
 				npc.anInt4001 = 0;
 				npc.anInt4044 = 0;
-				Static29.method3461(local19, npc.zFine, npc.xFine, npc.anInt3970, false);
+				SoundPlayer.playSeqSound(local19, npc.zFine, npc.xFine, npc.anInt3970, false);
 			}
 			if (local22 == 2) {
 				npc.anInt4001 = 0;
@@ -329,11 +329,11 @@ public final class Static11 {
 			npc.anInt4030 = npc.movementQueueSize;
 			npc.anInt4001 = 0;
 			npc.anInt3970 = 0;
-			npc.anInt3996 = arg2;
+			npc.anInt3996 = delay;
 			npc.seqId = seqId;
 			npc.anInt4044 = 0;
 			if (npc.seqId != -1) {
-				Static29.method3461(SeqTypeList.get(npc.seqId), npc.zFine, npc.xFine, npc.anInt3970, false);
+				SoundPlayer.playSeqSound(SeqTypeList.get(npc.seqId), npc.zFine, npc.xFine, npc.anInt3970, false);
 			}
 		}
 	}
@@ -363,7 +363,7 @@ public final class Static11 {
 									local61.anInt4460 = 0;
 									local61.anInt4461 = local27;
 									local61.anInt4462 = 0;
-									Static29.method3461(local53, arg1.zFine, arg1.xFine, 0, false);
+									SoundPlayer.playSeqSound(local53, arg1.zFine, arg1.xFine, 0, false);
 								} else if (local56 == 2) {
 									local61.anInt4465 = 0;
 								}
@@ -379,7 +379,7 @@ public final class Static11 {
 							local155.anInt4464 = 1;
 							local155.anInt4465 = 0;
 							local155.anInt4461 = local27;
-							Static29.method3461(local53, arg1.zFine, arg1.xFine, 0, false);
+							SoundPlayer.playSeqSound(local53, arg1.zFine, arg1.xFine, 0, false);
 						}
 					}
 				}
@@ -410,21 +410,21 @@ public final class Static11 {
 		Static7.aBoolean367 = true;
 		MouseRecorder.instance.samples = 0;
 		Static1.aLong32 = 0L;
-		Static12.method719();
+		ReflectionCheck.clear();
 		Static1.anInt885 = 0;
-		Static4.anInt3335 = -1;
+		Protocol.opcode1 = -1;
 		Static5.rebootTimer = 0;
-		Static3.anInt2273 = -1;
+		Protocol.opcode2 = -1;
 		Protocol.outboundBuffer.position = 0;
-		Static2.anInt1231 = -1;
+		Protocol.opcode3 = -1;
 		Static3.anInt2583 = 0;
 		Protocol.opcode = -1;
 		Protocol.inboundBuffer.position = 0;
-		for (@Pc(45) int local45 = 0; local45 < HintArrowManager.HINT_ARROWS.length; local45++) {
-			HintArrowManager.HINT_ARROWS[local45] = null;
+		for (@Pc(45) int i = 0; i < HintArrowManager.HINT_ARROWS.length; i++) {
+			HintArrowManager.HINT_ARROWS[i] = null;
 		}
 		Static1.aBoolean17 = false;
-		Static7.anInt5634 = 0;
+		MiniMenu.size = 0;
 		Mouse.setIdleLoops(0);
 		for (@Pc(3667) int i = 0; i < 100; i++) {
 			Chat.messages[i] = null;
@@ -438,7 +438,7 @@ public final class Static11 {
 		Static3.aBoolean177 = false;
 		Static2.anInt1334 = 0;
 		Static1.anInt837 = (int) (Math.random() * 110.0D) - 55;
-		Static6.anInt4457 = 0;
+		SoundPlayer.size = 0;
 		Static27.method4239();
 		PlayerList.size = 0;
 		NpcList.size = 0;
@@ -450,8 +450,8 @@ public final class Static11 {
 			NpcList.npcs[i] = null;
 		}
 		PlayerList.self = PlayerList.players[2047] = new Player();
-		Static1.aClass112_1.clear();
-		Static2.aClass112_8.clear();
+		Static1.projAnims.clear();
+		Static2.spotAnims.clear();
 		if (Static4.objStacks != null) {
 			for (@Pc(3787) int level = 0; level < 4; level++) {
 				for (@Pc(3794) int x = 0; x < 104; x++) {
@@ -482,25 +482,25 @@ public final class Static11 {
 		if (InterfaceList.topLevelInterface != -1) {
 			InterfaceList.discard(InterfaceList.topLevelInterface);
 		}
-		for (@Pc(3886) SubInterface local3886 = (SubInterface) InterfaceList.subInterfaces.head(); local3886 != null; local3886 = (SubInterface) InterfaceList.subInterfaces.next()) {
-			InterfaceList.closeSubInterface(local3886, true);
+		for (@Pc(3886) SubInterface subInterface = (SubInterface) InterfaceList.subInterfaces.head(); subInterface != null; subInterface = (SubInterface) InterfaceList.subInterfaces.next()) {
+			InterfaceList.closeSubInterface(subInterface, true);
 		}
 		InterfaceList.topLevelInterface = -1;
 		InterfaceList.subInterfaces = new HashTable(8);
 		InterfaceList.clear();
 		Static6.aClass185_14 = null;
-		Static7.anInt5634 = 0;
+		MiniMenu.size = 0;
 		Static1.aBoolean17 = false;
 		Static1.aClass144_1.set(-1, null, -1, new int[] { 0, 0, 0, 0, 0 }, false);
 		for (@Pc(3945) int local3945 = 0; local3945 < 8; local3945++) {
-			Static2.aStringArray40[local3945] = null;
-			Static3.aBooleanArray11[local3945] = false;
-			Static5.anIntArray615[local3945] = -1;
+			Player.ops[local3945] = null;
+			Player.opLowPriority[local3945] = false;
+			Player.opCursors[local3945] = -1;
 		}
 		Inv.deleteAll();
 		Static3.aBoolean366 = true;
-		for (@Pc(3969) int local3969 = 0; local3969 < 100; local3969++) {
-			Static2.aBooleanArray8[local3969] = true;
+		for (@Pc(3969) int i = 0; i < 100; i++) {
+			Static2.aBooleanArray8[i] = true;
 		}
 		ClanChat.members = null;
 		ClanChat.name = null;
@@ -508,10 +508,10 @@ public final class Static11 {
 		for (@Pc(3987) int i = 0; i < 6; i++) {
 			StockMarketManager.offers[i] = new StockMarketOffer();
 		}
-		for (@Pc(4001) int local4001 = 0; local4001 < 25; local4001++) {
-			PlayerSkillXpTable.boostedLevels[local4001] = 0;
-			PlayerSkillXpTable.baseLevels[local4001] = 0;
-			PlayerSkillXpTable.experience[local4001] = 0;
+		for (@Pc(4001) int i = 0; i < 25; i++) {
+			PlayerSkillXpTable.boostedLevels[i] = 0;
+			PlayerSkillXpTable.baseLevels[i] = 0;
+			PlayerSkillXpTable.experience[i] = 0;
 		}
 		if (GlRenderer.enabled) {
 			Static17.method1655();
@@ -519,8 +519,8 @@ public final class Static11 {
 		Static7.aShortArray124 = Static5.aShortArray74 = Static7.aShortArray111 = Static4.aShortArray126 = new short[256];
 		Static2.aBoolean119 = false;
 		Static5.aBoolean248 = true;
-		Static7.anInt5426 = 0;
-		Static5.aString236 = LocalisedText.WALKHERE;
+		Protocol.verifyId = 0;
+		MiniMenu.walkHereOp = LocalisedText.WALKHERE;
 		Static36.method4447();
 		Static7.aBoolean389 = false;
 		Static21.method2001();
@@ -651,13 +651,13 @@ public final class Static11 {
 			if (InterfaceList.topLevelInterface != -1) {
 				InterfaceList.discard(InterfaceList.topLevelInterface);
 			}
-			for (@Pc(15) SubInterface local15 = (SubInterface) InterfaceList.subInterfaces.head(); local15 != null; local15 = (SubInterface) InterfaceList.subInterfaces.next()) {
-				InterfaceList.closeSubInterface(local15, true);
+			for (@Pc(15) SubInterface subInterface = (SubInterface) InterfaceList.subInterfaces.head(); subInterface != null; subInterface = (SubInterface) InterfaceList.subInterfaces.next()) {
+				InterfaceList.closeSubInterface(subInterface, true);
 			}
 			InterfaceList.topLevelInterface = -1;
 			InterfaceList.subInterfaces = new HashTable(8);
 			InterfaceList.clear();
-			InterfaceList.topLevelInterface = Static7.anInt742;
+			InterfaceList.topLevelInterface = InterfaceList.loginScreenId;
 			Static12.method777(false);
 			Static13.method933();
 			Static14.method1102(InterfaceList.topLevelInterface);
@@ -668,7 +668,7 @@ public final class Static11 {
 		PlayerList.self.zFine = 3000;
 		PlayerList.self.xFine = 3000;
 		if (!GlRenderer.enabled && client.game == 0) {
-			Static21.method2005(client.js5Archive8);
+			Flames.method2005(client.js5Archive8);
 			Static9.method233(10);
 			return;
 		}

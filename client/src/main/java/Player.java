@@ -18,8 +18,20 @@ public final class Player extends PathingEntity {
 	@OriginalMember(owner = "client!uf", name = "h", descriptor = "I")
 	public static int level;
 
+	@OriginalMember(owner = "client!sa", name = "q", descriptor = "I")
+	public static int previousLevel = -1;
+
 	@OriginalMember(owner = "client!hn", name = "l", descriptor = "I")
 	public static int inTutorialIsland = 0;
+
+	@OriginalMember(owner = "client!fd", name = "t", descriptor = "[Ljava/lang/String;")
+	public static final String[] ops = new String[8];
+
+	@OriginalMember(owner = "client!ng", name = "J", descriptor = "[I")
+	public static final int[] opCursors = new int[8];
+
+	@OriginalMember(owner = "client!io", name = "G", descriptor = "[Z")
+	public static final boolean[] opLowPriority = new boolean[8];
 
 	@OriginalMember(owner = "client!fm", name = "a", descriptor = "(B)V")
 	public static void setInTutorialIsland() {
@@ -261,8 +273,8 @@ public final class Player extends PathingEntity {
 			return;
 		}
 		this.minY = local105.getMinY();
-		if (Preferences.characterShadows && (this.appearance.npcId == -1 || NpcTypeList.get(this.appearance.npcId).aBoolean354)) {
-			@Pc(222) Model local222 = Static12.method745(0, local82 == null ? local27 : local82, arg0, 1, 240, local105, local82 == null ? this.anInt3970 : this.anInt4046, this.anInt4006, this.zFine, this.aBoolean284, 0, 160, this.xFine);
+		if (Preferences.characterShadows && (this.appearance.npcId == -1 || NpcTypeList.get(this.appearance.npcId).shadow)) {
+			@Pc(222) Model local222 = ShadowModelList.get(0, local82 == null ? local27 : local82, arg0, 1, 240, local105, local82 == null ? this.anInt3970 : this.anInt4046, this.anInt4006, this.zFine, this.aBoolean284, 0, 160, this.xFine);
 			if (GlRenderer.enabled) {
 				@Pc(241) float local241 = GlRenderer.method1620();
 				@Pc(243) float local243 = GlRenderer.method1612();
@@ -277,29 +289,29 @@ public final class Player extends PathingEntity {
 		}
 		if (PlayerList.self == this) {
 			for (@Pc(275) int local275 = HintArrowManager.HINT_ARROWS.length - 1; local275 >= 0; local275--) {
-				@Pc(282) HintArrow local282 = HintArrowManager.HINT_ARROWS[local275];
-				if (local282 != null && local282.model != -1) {
-					if (local282.type == 1 && local282.target >= 0 && local282.target < NpcList.npcs.length) {
-						@Pc(315) Npc local315 = NpcList.npcs[local282.target];
-						if (local315 != null) {
-							@Pc(329) int local329 = local315.xFine / 32 - PlayerList.self.xFine / 32;
-							@Pc(339) int local339 = local315.zFine / 32 - PlayerList.self.zFine / 32;
-							this.method1175(arg3, local339, null, arg2, arg9, arg1, arg0, arg5, local329, arg6, local282.model, arg4, 360000, local105, arg7);
+				@Pc(282) HintArrow hintArrow = HintArrowManager.HINT_ARROWS[local275];
+				if (hintArrow != null && hintArrow.model != -1) {
+					if (hintArrow.type == 1 && hintArrow.target >= 0 && hintArrow.target < NpcList.npcs.length) {
+						@Pc(315) Npc npc = NpcList.npcs[hintArrow.target];
+						if (npc != null) {
+							@Pc(329) int local329 = npc.xFine / 32 - PlayerList.self.xFine / 32;
+							@Pc(339) int local339 = npc.zFine / 32 - PlayerList.self.zFine / 32;
+							this.method1175(arg3, local339, null, arg2, arg9, arg1, arg0, arg5, local329, arg6, hintArrow.model, arg4, 360000, local105, arg7);
 						}
 					}
-					if (local282.type == 2) {
-						@Pc(378) int local378 = (local282.x - Static5.originX) * 4 + 2 - PlayerList.self.xFine / 32;
-						@Pc(393) int local393 = (local282.z - Static7.originZ) * 4 + 2 - PlayerList.self.zFine / 32;
-						@Pc(398) int local398 = local282.radius * 4;
+					if (hintArrow.type == 2) {
+						@Pc(378) int local378 = (hintArrow.x - Static5.originX) * 4 + 2 - PlayerList.self.xFine / 32;
+						@Pc(393) int local393 = (hintArrow.z - Static7.originZ) * 4 + 2 - PlayerList.self.zFine / 32;
+						@Pc(398) int local398 = hintArrow.radius * 4;
 						local398 *= local398;
-						this.method1175(arg3, local393, null, arg2, arg9, arg1, arg0, arg5, local378, arg6, local282.model, arg4, local398, local105, arg7);
+						this.method1175(arg3, local393, null, arg2, arg9, arg1, arg0, arg5, local378, arg6, hintArrow.model, arg4, local398, local105, arg7);
 					}
-					if (local282.type == 10 && local282.target >= 0 && PlayerList.players.length > local282.target) {
-						@Pc(442) Player local442 = PlayerList.players[local282.target];
-						if (local442 != null) {
-							@Pc(455) int local455 = local442.xFine / 32 - PlayerList.self.xFine / 32;
-							@Pc(466) int local466 = local442.zFine / 32 - PlayerList.self.zFine / 32;
-							this.method1175(arg3, local466, null, arg2, arg9, arg1, arg0, arg5, local455, arg6, local282.model, arg4, 360000, local105, arg7);
+					if (hintArrow.type == 10 && hintArrow.target >= 0 && PlayerList.players.length > hintArrow.target) {
+						@Pc(442) Player player = PlayerList.players[hintArrow.target];
+						if (player != null) {
+							@Pc(455) int local455 = player.xFine / 32 - PlayerList.self.xFine / 32;
+							@Pc(466) int local466 = player.zFine / 32 - PlayerList.self.zFine / 32;
+							this.method1175(arg3, local466, null, arg2, arg9, arg1, arg0, arg5, local455, arg6, hintArrow.model, arg4, 360000, local105, arg7);
 						}
 					}
 				}
@@ -427,7 +439,7 @@ public final class Player extends PathingEntity {
 			return;
 		}
 		@Pc(39) int local39 = (int) (Math.atan2((double) arg8, (double) arg1) * 325.949D) & 0x7FF;
-		@Pc(51) Model local51 = Static29.method3427(local39, arg13, this.zFine, arg10, this.anInt4006, this.xFine);
+		@Pc(51) Model local51 = HintArrowManager.getModel(local39, arg13, this.zFine, arg10, this.anInt4006, this.xFine);
 		if (local51 == null) {
 			return;
 		}

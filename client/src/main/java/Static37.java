@@ -37,15 +37,10 @@ public final class Static37 {
 		if (arg1 == 1) {
 			Protocol.outboundBuffer.writeOpcode(207);
 		}
-		Protocol.outboundBuffer.writeByteS(++Static1.aByte1);
+		Protocol.outboundBuffer.writeByteS(++MiniMap.sequenceNumber);
 		Protocol.outboundBuffer.writeByte(Keyboard.pressedKeys[82] ? 1 : 0);
 		Protocol.outboundBuffer.writeShort(Static7.originZ + arg2);
 		Protocol.outboundBuffer.writeShortLEA(arg0 + Static5.originX);
-	}
-
-	@OriginalMember(owner = "client!wb", name = "c", descriptor = "(I)I")
-	public static int method4663() {
-		return Static2.shiftClick && Keyboard.pressedKeys[81] && Static7.anInt5634 > 2 ? Static2.anIntArray160[Static7.anInt5634 - 2] : Static2.anIntArray160[Static7.anInt5634 - 1];
 	}
 
 	@OriginalMember(owner = "client!wc", name = "a", descriptor = "(IIZBLclient!qk;II)Lclient!uj;")
@@ -502,7 +497,7 @@ public final class Static37 {
 			local22.source = local4;
 			local22.opBase = arg3;
 			local22.arguments = local4.onOp;
-			Static21.method2019(local22);
+			ScriptRunner.method2019(local22);
 		}
 		@Pc(40) boolean local40 = true;
 		if (local4.anInt5904 > 0) {
@@ -767,18 +762,18 @@ public final class Static37 {
 		if (Static2.anInt1940 == 2) {
 			if (Static4.anInt3341 == Static4.anInt2663 && Static1.anInt891 == Static5.anInt5848) {
 				Static2.anInt1940 = 0;
-				if (Static2.shiftClick && Keyboard.pressedKeys[81] && Static7.anInt5634 > 2) {
-					Static35.method664(Static7.anInt5634 - 2);
+				if (Static2.shiftClick && Keyboard.pressedKeys[81] && MiniMenu.size > 2) {
+					MiniMenu.doAction(MiniMenu.size - 2);
 				} else {
-					Static35.method664(Static7.anInt5634 - 1);
+					MiniMenu.doAction(MiniMenu.size - 1);
 				}
 			}
 		} else if (Static4.anInt3341 == Mouse.clickX && Static5.anInt5848 == Mouse.clickY) {
 			Static2.anInt1940 = 0;
-			if (Static2.shiftClick && Keyboard.pressedKeys[81] && Static7.anInt5634 > 2) {
-				Static35.method664(Static7.anInt5634 - 2);
+			if (Static2.shiftClick && Keyboard.pressedKeys[81] && MiniMenu.size > 2) {
+				MiniMenu.doAction(MiniMenu.size - 2);
 			} else {
-				Static35.method664(Static7.anInt5634 - 1);
+				MiniMenu.doAction(MiniMenu.size - 1);
 			}
 		} else {
 			Static2.anInt1940 = 2;

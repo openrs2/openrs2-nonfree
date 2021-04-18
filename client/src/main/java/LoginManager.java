@@ -25,10 +25,10 @@ public final class LoginManager {
 	public static int autoStep = 0;
 
 	@OriginalMember(owner = "client!kn", name = "E", descriptor = "I")
-	public static int autoLoops = 0;
+	private static int autoLoops = 0;
 
 	@OriginalMember(owner = "client!po", name = "b", descriptor = "I")
-	public static int autoErrors = 0;
+	private static int autoErrors = 0;
 
 	@OriginalMember(owner = "client!fc", name = "e", descriptor = "I")
 	public static int reply = -2;
@@ -43,7 +43,7 @@ public final class LoginManager {
 	public static String username = "";
 
 	@OriginalMember(owner = "client!eg", name = "D", descriptor = "Ljava/lang/String;")
-	public static String password = "";
+	private static String password = "";
 
 	@OriginalMember(owner = "client!bo", name = "b", descriptor = "J")
 	public static long encodedUsername;
@@ -207,12 +207,12 @@ public final class LoginManager {
 				buffer.writeShort(GameShell.canvasWidth);
 				buffer.writeShort(GameShell.canvasHeight);
 				buffer.writeByte(Static2.anInt1125);
-				Static32.method3949(buffer);
+				client.writeUid(buffer);
 				buffer.writeString(client.settings);
 				buffer.writeInt(client.affiliate);
 				buffer.writeInt(Preferences.toInt());
 				Preferences.sentToServer = true;
-				buffer.writeShort(Static7.anInt5426);
+				buffer.writeShort(Protocol.verifyId);
 				buffer.writeInt(client.js5Archive0.getChecksum());
 				buffer.writeInt(client.js5Archive1.getChecksum());
 				buffer.writeInt(client.js5Archive2.getChecksum());

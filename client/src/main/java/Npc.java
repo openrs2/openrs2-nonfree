@@ -61,8 +61,8 @@ public final class Npc extends PathingEntity {
 		if (type.multiNpcs != null) {
 			type = type.getMultiNpc();
 		}
-		if (Preferences.characterShadows && type.aBoolean354) {
-			@Pc(141) Model local141 = Static12.method745(this.type.aShort46, local54 == null ? local28 : local54, arg0, this.type.size, this.type.aByte20, local75, local54 == null ? this.anInt3970 : this.anInt4046, this.anInt4006, this.zFine, this.aBoolean284, this.type.aShort47, this.type.aByte19, this.xFine);
+		if (Preferences.characterShadows && type.shadow) {
+			@Pc(141) Model local141 = ShadowModelList.get(this.type.aShort46, local54 == null ? local28 : local54, arg0, this.type.size, this.type.aByte20, local75, local54 == null ? this.anInt3970 : this.anInt4046, this.anInt4006, this.zFine, this.aBoolean284, this.type.aShort47, this.type.aByte19, this.xFine);
 			if (GlRenderer.enabled) {
 				@Pc(145) float local145 = GlRenderer.method1620();
 				@Pc(147) float local147 = GlRenderer.method1612();

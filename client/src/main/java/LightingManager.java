@@ -30,7 +30,7 @@ public final class LightingManager {
 	private static int anInt3737;
 
 	@OriginalMember(owner = "client!od", name = "j", descriptor = "[I")
-	public static int[] anIntArray403;
+	private static int[] anIntArray403;
 
 	@OriginalMember(owner = "client!od", name = "k", descriptor = "I")
 	public static int height;
@@ -225,7 +225,7 @@ public final class LightingManager {
 	}
 
 	@OriginalMember(owner = "client!od", name = "a", descriptor = "(II[[[Lclient!nh;)V")
-	public static void method3116(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) Tile[][][] arg2) {
+	public static void method3116(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) Tile[][][] tiles) {
 		if (!Preferences.highDetailLighting) {
 			return;
 		}
@@ -240,44 +240,44 @@ public final class LightingManager {
 		gl.glFogfv(GL.GL_FOG_COLOR, new float[] { 0.0F, 0.0F, 0.0F, 0.0F }, 0);
 		gl.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_SRC0_RGB, GL.GL_CONSTANT);
 		gl.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_OPERAND0_RGB, GL.GL_SRC_ALPHA);
-		label71:
+		nextLight:
 		for (@Pc(56) int i = 0; i < lightCount; i++) {
 			@Pc(63) Light light = lights[i];
-			@Pc(66) int local66 = light.anInt1326;
-			if (light.aBoolean80) {
-				local66--;
+			@Pc(66) int level = light.level;
+			if (light.linkBelow) {
+				level--;
 			}
 			if (light.aClass135_1 != null) {
 				@Pc(76) int local76 = 0;
-				@Pc(84) int local84 = (light.z >> 7) - light.radius;
-				@Pc(92) int local92 = (light.z >> 7) + light.radius;
-				if (local92 >= Static2.anInt1344) {
-					local92 = Static2.anInt1344 - 1;
+				@Pc(84) int z0 = (light.z >> 7) - light.radius;
+				@Pc(92) int z1 = (light.z >> 7) + light.radius;
+				if (z1 >= Static2.anInt1344) {
+					z1 = Static2.anInt1344 - 1;
 				}
-				if (local84 < Static1.anInt890) {
-					local76 = Static1.anInt890 - local84;
-					local84 = Static1.anInt890;
+				if (z0 < Static1.anInt890) {
+					local76 = Static1.anInt890 - z0;
+					z0 = Static1.anInt890;
 				}
-				for (@Pc(112) int local112 = local84; local112 <= local92; local112++) {
+				for (@Pc(112) int z = z0; z <= z1; z++) {
 					@Pc(121) short local121 = light.aShortArray28[local76++];
-					@Pc(133) int local133 = (light.x >> 7) + (local121 >> 8) - light.radius;
-					@Pc(141) int local141 = local133 + (local121 & 0xFF) - 1;
-					if (local133 < Static6.anInt4978) {
-						local133 = Static6.anInt4978;
+					@Pc(133) int x0 = (light.x >> 7) + (local121 >> 8) - light.radius;
+					@Pc(141) int x1 = x0 + (local121 & 0xFF) - 1;
+					if (x0 < Static6.anInt4978) {
+						x0 = Static6.anInt4978;
 					}
-					if (local141 >= Static2.anInt5778) {
-						local141 = Static2.anInt5778 - 1;
+					if (x1 >= Static2.anInt5778) {
+						x1 = Static2.anInt5778 - 1;
 					}
-					for (@Pc(155) int local155 = local133; local155 <= local141; local155++) {
-						@Pc(160) Tile local160 = null;
-						if (local66 >= 0) {
-							local160 = arg2[local66][local155][local112];
+					for (@Pc(155) int x = x0; x <= x1; x++) {
+						@Pc(160) Tile tile = null;
+						if (level >= 0) {
+							tile = tiles[level][x][z];
 						}
-						if (local66 < 0 || local160 != null && local160.aBoolean257) {
-							GlRenderer.method1613(201.5F - (float) light.anInt1326 * 50.0F - 1.5F);
+						if (level < 0 || tile != null && tile.aBoolean257) {
+							GlRenderer.method1613(201.5F - (float) light.level * 50.0F - 1.5F);
 							gl.glTexEnvfv(GL.GL_TEXTURE_ENV, GL.GL_TEXTURE_ENV_COLOR, new float[] { 0.0F, 0.0F, 0.0F, light.alpha }, 0);
 							light.aClass135_1.method3433();
-							continue label71;
+							continue nextLight;
 						}
 					}
 				}
@@ -375,11 +375,11 @@ public final class LightingManager {
 	public static void method3122() {
 		for (@Pc(1) int i = 0; i < lightCount; i++) {
 			@Pc(8) Light light = lights[i];
-			@Pc(11) int minY = light.anInt1326;
+			@Pc(11) int minY = light.level;
 			if (light.aBoolean78) {
 				minY = 0;
 			}
-			@Pc(19) int maxY = light.anInt1326;
+			@Pc(19) int maxY = light.level;
 			if (light.aBoolean79) {
 				maxY = 3;
 			}

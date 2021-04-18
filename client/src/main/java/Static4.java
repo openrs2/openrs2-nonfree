@@ -22,9 +22,6 @@ public final class Static4 {
 	@OriginalMember(owner = "client!jo", name = "Q", descriptor = "F")
 	public static float aFloat146;
 
-	@OriginalMember(owner = "client!k", name = "b", descriptor = "Lclient!vn;")
-	public static SoftwareSprite aClass4_Sub3_Sub14_Sub1_4;
-
 	@OriginalMember(owner = "client!k", name = "d", descriptor = "I")
 	public static int anInt2741;
 
@@ -97,9 +94,6 @@ public final class Static4 {
 	@OriginalMember(owner = "client!ll", name = "d", descriptor = "I")
 	public static int anInt3196;
 
-	@OriginalMember(owner = "client!ln", name = "F", descriptor = "I")
-	public static int anInt3250;
-
 	@OriginalMember(owner = "client!ln", name = "W", descriptor = "I")
 	public static int anInt3258;
 
@@ -160,14 +154,8 @@ public final class Static4 {
 	@OriginalMember(owner = "client!jl", name = "M", descriptor = "I")
 	public static int anInt2663 = 0;
 
-	@OriginalMember(owner = "client!jm", name = "b", descriptor = "I")
-	public static int anInt2665 = 0;
-
 	@OriginalMember(owner = "client!jm", name = "g", descriptor = "Z")
 	public static boolean aBoolean184 = false;
-
-	@OriginalMember(owner = "client!jo", name = "E", descriptor = "[J")
-	public static final long[] aLongArray56 = new long[500];
 
 	@OriginalMember(owner = "client!jo", name = "O", descriptor = "[I")
 	public static final int[] anIntArray654 = new int[14];
@@ -220,9 +208,6 @@ public final class Static4 {
 	@OriginalMember(owner = "client!lf", name = "U", descriptor = "S")
 	public static short aShort18 = 1;
 
-	@OriginalMember(owner = "client!lf", name = "db", descriptor = "[I")
-	public static final int[] anIntArray294 = new int[50];
-
 	@OriginalMember(owner = "client!lg", name = "e", descriptor = "Z")
 	public static boolean aBoolean216 = true;
 
@@ -259,9 +244,6 @@ public final class Static4 {
 	@OriginalMember(owner = "client!lm", name = "t", descriptor = "I")
 	public static final int anInt3227 = 12;
 
-	@OriginalMember(owner = "client!ln", name = "L", descriptor = "Lclient!cc;")
-	public static final SoftLruHashTable aClass26_30 = new SoftLruHashTable(4);
-
 	@OriginalMember(owner = "client!ln", name = "V", descriptor = "S")
 	public static short aShort25 = 205;
 
@@ -286,9 +268,6 @@ public final class Static4 {
 	@OriginalMember(owner = "client!mc", name = "y", descriptor = "[F")
 	public static final float[] aFloatArray38 = new float[] { 0.073F, 0.169F, 0.24F, 1.0F };
 
-	@OriginalMember(owner = "client!mc", name = "A", descriptor = "[I")
-	public static final int[] anIntArray314 = new int[256];
-
 	@OriginalMember(owner = "client!mc", name = "D", descriptor = "F")
 	public static float aFloat79 = 0.0F;
 
@@ -298,17 +277,11 @@ public final class Static4 {
 	@OriginalMember(owner = "client!md", name = "l", descriptor = "I")
 	public static int anInt3304 = 0;
 
-	@OriginalMember(owner = "client!md", name = "o", descriptor = "[Lclient!ag;")
-	public static final SynthSound[] aClass7Array1 = new SynthSound[50];
-
 	@OriginalMember(owner = "client!mf", name = "d", descriptor = "Z")
 	public static boolean aBoolean232 = false;
 
 	@OriginalMember(owner = "client!mg", name = "f", descriptor = "[I")
 	public static final int[] anIntArray318 = new int[] { 0, 2, 2, 2, 1, 1, 2, 2, 1, 3, 1, 1 };
-
-	@OriginalMember(owner = "client!mi", name = "b", descriptor = "I")
-	public static int anInt3335 = 0;
 
 	@OriginalMember(owner = "client!ml", name = "y", descriptor = "I")
 	public static int anInt3354 = 0;

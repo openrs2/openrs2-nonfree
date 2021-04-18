@@ -6,14 +6,14 @@ public final class Static8 {
 
 	@OriginalMember(owner = "client!aa", name = "a", descriptor = "(ZIIZIIII)V")
 	public static void method2(@OriginalArg(0) boolean loginScreen, @OriginalArg(2) int zoneX, @OriginalArg(3) boolean buildAreaChanged, @OriginalArg(4) int localZ, @OriginalArg(5) int localX, @OriginalArg(6) int zoneZ, @OriginalArg(7) int level) {
-		if (!buildAreaChanged && Static4.centralZoneX == zoneX && Static1.centralZoneZ == zoneZ && (Static2.anInt1216 == level || SceneGraph.isAllLevelsVisible())) {
+		if (!buildAreaChanged && Static4.centralZoneX == zoneX && Static1.centralZoneZ == zoneZ && (Static2.visibleLevel == level || SceneGraph.isAllLevelsVisible())) {
 			return;
 		}
 		Static1.centralZoneZ = zoneZ;
-		Static2.anInt1216 = level;
+		Static2.visibleLevel = level;
 		Static4.centralZoneX = zoneX;
 		if (SceneGraph.isAllLevelsVisible()) {
-			Static2.anInt1216 = 0;
+			Static2.visibleLevel = 0;
 		}
 		if (loginScreen) {
 			Static9.method233(28);
@@ -25,8 +25,8 @@ public final class Static8 {
 		@Pc(59) int prevOriginZ = Static7.originZ;
 		Static5.originX = zoneX * 8 - 48;
 		Static7.originZ = zoneZ * 8 - 48;
-		Static2.aClass4_Sub3_Sub22_1 = MapList.getContainingSource(Static4.centralZoneX * 8, Static1.centralZoneZ * 8);
-		Static7.aClass138_14 = null;
+		Static2.map = MapList.getContainingSource(Static4.centralZoneX * 8, Static1.centralZoneZ * 8);
+		Static7.mapElements = null;
 		@Pc(90) int dz = Static7.originZ - prevOriginZ;
 		@Pc(95) int dx = Static5.originX - prevOriginX;
 		if (loginScreen) {
@@ -116,9 +116,9 @@ public final class Static8 {
 				loc.unlink();
 			}
 		}
-		if (Static6.anInt4506 != 0) {
-			Static3.anInt2140 -= dz;
-			Static6.anInt4506 -= dx;
+		if (MiniMap.flagX != 0) {
+			MiniMap.flagY -= dz;
+			MiniMap.flagX -= dx;
 		}
 		if (loginScreen) {
 			Static7.anInt5678 -= dz * 128;
@@ -130,13 +130,13 @@ public final class Static8 {
 		} else {
 			Static1.anInt772 = 1;
 		}
-		Static6.anInt4457 = 0;
+		SoundPlayer.size = 0;
 		if (GlRenderer.enabled && loginScreen && (Math.abs(dx) > 104 || Math.abs(dz) > 104)) {
 			Static17.method1655();
 		}
 		Static31.method3150();
-		Static2.aClass112_8.clear();
-		Static1.aClass112_1.clear();
+		Static2.spotAnims.clear();
+		Static1.projAnims.clear();
 		ParticleManager.clear();
 	}
 
@@ -271,11 +271,11 @@ public final class Static8 {
 
 	@OriginalMember(owner = "client!aj", name = "a", descriptor = "(B)V")
 	public static void method115() {
-		Static5.anInt5206 = 0;
-		Static1.aByte1 = 0;
-		Static3.anInt2140 = 0;
-		Static6.anInt4506 = 0;
-		Static3.aBoolean147 = false;
+		MiniMap.state = 0;
+		MiniMap.sequenceNumber = 0;
+		MiniMap.flagY = 0;
+		MiniMap.flagX = 0;
+		MiniMap.aBoolean147 = false;
 	}
 
 	@OriginalMember(owner = "client!ak", name = "a", descriptor = "(Lclient!ho;I)Z")

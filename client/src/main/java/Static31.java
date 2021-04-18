@@ -6,19 +6,6 @@ import org.openrs2.deob.annotation.Pc;
 
 public final class Static31 {
 
-	@OriginalMember(owner = "client!rc", name = "a", descriptor = "(II)Lclient!ke;")
-	public static SoftwareFont method3656(@OriginalArg(1) int arg0) {
-		@Pc(6) SoftwareFont local6 = (SoftwareFont) Static1.aClass26_3.get((long) arg0);
-		if (local6 != null) {
-			return local6;
-		}
-		@Pc(22) byte[] local22 = client.js5Archive13.fetchFile(arg0, 0);
-		@Pc(35) SoftwareFont local35 = new SoftwareFont(local22);
-		local35.setNameIcons(Sprites.nameIcons, null);
-		Static1.aClass26_3.put((long) arg0, local35);
-		return local35;
-	}
-
 	@OriginalMember(owner = "client!re", name = "a", descriptor = "(IS)Z")
 	public static boolean method3659(@OriginalArg(1) short arg0) {
 		if (arg0 == 58 || arg0 == 35 || arg0 == 17 || arg0 == 10 || arg0 == 51 || arg0 == 9 || arg0 == 15 || arg0 == 50) {
@@ -112,7 +99,7 @@ public final class Static31 {
 		} else {
 			Static22.method2388(0);
 			Static9.method174(0, false, true);
-			if (Static5.anInt4166 == 0) {
+			if (Static5.renderPriority == 0) {
 				for (@Pc(49) int local49 = 1; local49 <= 5; local49++) {
 					Static9.method174(local49, false, false);
 					Static9.method174(local49, true, false);
@@ -273,7 +260,7 @@ public final class Static31 {
 			Static37.method4716(LocalisedText.LOADING, false);
 		}
 		if (!arg2 && !Static3.aBoolean366 && !Static1.aBoolean17 && arg0 <= Static4.anInt3341 && arg3 + arg0 > Static4.anInt3341 && arg4 <= Static5.anInt5848 && arg4 + arg1 > Static5.anInt5848) {
-			Static16.method1518(arg1, Static4.anInt3341, arg4, arg0, arg3, Static5.anInt5848);
+			MiniMenu.addEntries(arg1, Static4.anInt3341, arg4, arg0, arg3, Static5.anInt5848);
 		}
 	}
 
@@ -439,7 +426,7 @@ public final class Static31 {
 			for (@Pc(955) int x = 1; x < 103; x++) {
 				label770:
 				for (@Pc(962) int z = 1; z < 103; z++) {
-					if (underwater || SceneGraph.isAllLevelsVisible() || (Static4.tileFlags[0][x][z] & 0x2) != 0 || (Static4.tileFlags[level][x][z] & 0x10) == 0 && Static35.method4327(level, x, z) == Static2.anInt1216) {
+					if (underwater || SceneGraph.isAllLevelsVisible() || (Static4.tileFlags[0][x][z] & 0x2) != 0 || (Static4.tileFlags[level][x][z] & 0x10) == 0 && Static35.getVisibleLevel(level, x, z) == Static2.visibleLevel) {
 						if (Static5.firstVisibleLevel > level) {
 							Static5.firstVisibleLevel = level;
 						}
@@ -618,10 +605,10 @@ public final class Static31 {
 		if (underwater) {
 			return;
 		}
-		for (@Pc(2203) int local2203 = 0; local2203 < 104; local2203++) {
-			for (@Pc(2210) int local2210 = 0; local2210 < 104; local2210++) {
-				if ((Static4.tileFlags[1][local2203][local2210] & 0x2) == 2) {
-					SceneGraph.method3253(local2203, local2210);
+		for (@Pc(2203) int x = 0; x < 104; x++) {
+			for (@Pc(2210) int z = 0; z < 104; z++) {
+				if ((Static4.tileFlags[1][x][z] & 0x2) == 2) {
+					SceneGraph.link(x, z);
 				}
 			}
 		}
@@ -799,13 +786,13 @@ public final class Static31 {
 	@OriginalMember(owner = "client!rm", name = "f", descriptor = "(B)V")
 	public static void method3783() {
 		@Pc(9) int local9 = Fonts.b12Full.getStringWidth(LocalisedText.CHOOSE_OPTION);
-		for (@Pc(11) int local11 = 0; local11 < Static7.anInt5634; local11++) {
+		for (@Pc(11) int local11 = 0; local11 < MiniMenu.size; local11++) {
 			@Pc(20) int local20 = Fonts.b12Full.getStringWidth(Static26.method2992(local11));
 			if (local20 > local9) {
 				local9 = local20;
 			}
 		}
-		@Pc(42) int local42 = Static7.anInt5634 * 15 + 21;
+		@Pc(42) int local42 = MiniMenu.size * 15 + 21;
 		@Pc(44) int local44 = Static5.anInt5848;
 		@Pc(45) int local45 = local9 + 8;
 		if (local42 + local44 > GameShell.canvasHeight) {
@@ -825,13 +812,13 @@ public final class Static31 {
 			if (Static4.anInt3341 == Static4.anInt2663 && Static5.anInt5848 == Static1.anInt891) {
 				Static2.anInt1940 = 0;
 				Static4.anInt3455 = local44;
-				Static3.anInt2394 = (Static7.aBoolean389 ? 26 : 22) + Static7.anInt5634 * 15;
+				Static3.anInt2394 = (Static7.aBoolean389 ? 26 : 22) + MiniMenu.size * 15;
 				Static1.aBoolean17 = true;
 				Static6.anInt4440 = local45;
 				Static5.anInt3890 = local68;
 			}
 		} else if (Mouse.clickX == Static4.anInt3341 && Mouse.clickY == Static5.anInt5848) {
-			Static3.anInt2394 = (Static7.aBoolean389 ? 26 : 22) + Static7.anInt5634 * 15;
+			Static3.anInt2394 = (Static7.aBoolean389 ? 26 : 22) + MiniMenu.size * 15;
 			Static5.anInt3890 = local68;
 			Static6.anInt4440 = local45;
 			Static2.anInt1940 = 0;
@@ -1199,7 +1186,7 @@ public final class Static31 {
 	}
 
 	@OriginalMember(owner = "client!ro", name = "e", descriptor = "(B)V")
-	public static void method3798() {
+	public static void clean() {
 		FloTypeList.clean();
 		FluTypeList.clean();
 		IdkTypeList.clean();
@@ -1219,10 +1206,10 @@ public final class Static31 {
 		CursorTypeList.clean();
 		PlayerAppearance.clean();
 		Component.clean();
-		Static32.method4030();
-		Static27.method3219();
-		Static1.aClass26_5.clean(5);
-		Static1.aClass26_3.clean(5);
+		HintArrowManager.clean();
+		ShadowModelList.clean();
+		HitBarList.hitBars.clean(5);
+		FontMetricsList.fontMetrics.clean(5);
 	}
 
 	@OriginalMember(owner = "client!ro", name = "a", descriptor = "(IIIB)I")
@@ -1240,11 +1227,11 @@ public final class Static31 {
 	}
 
 	@OriginalMember(owner = "client!ro", name = "a", descriptor = "(ZB)V")
-	public static void method3803(@OriginalArg(0) boolean arg0) {
+	public static void method3803(@OriginalArg(0) boolean underwater) {
 		Static6.rowCount = new int[104];
 		Static5.firstVisibleLevel = 99;
 		@Pc(13) byte levels;
-		if (arg0) {
+		if (underwater) {
 			levels = 1;
 		} else {
 			levels = 4;

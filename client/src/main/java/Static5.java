@@ -73,9 +73,6 @@ public final class Static5 {
 	@OriginalMember(owner = "client!oj", name = "k", descriptor = "I")
 	public static int anInt3890;
 
-	@OriginalMember(owner = "client!p", name = "pc", descriptor = "Ljava/lang/String;")
-	public static String aString236;
-
 	@OriginalMember(owner = "client!p", name = "zc", descriptor = "[[[B")
 	public static byte[][][] aByteArrayArrayArray18;
 
@@ -169,9 +166,6 @@ public final class Static5 {
 	@OriginalMember(owner = "client!nf", name = "l", descriptor = "Z")
 	public static final boolean aBoolean254 = false;
 
-	@OriginalMember(owner = "client!ng", name = "J", descriptor = "[I")
-	public static final int[] anIntArray615 = new int[8];
-
 	@OriginalMember(owner = "client!nh", name = "U", descriptor = "[Lclient!eg;")
 	public static final SeqType[] aClass46Array2 = new SeqType[14];
 
@@ -192,9 +186,6 @@ public final class Static5 {
 
 	@OriginalMember(owner = "client!ob", name = "w", descriptor = "I")
 	public static int anInt5204 = 0;
-
-	@OriginalMember(owner = "client!ob", name = "y", descriptor = "I")
-	public static int anInt5206 = 0;
 
 	@OriginalMember(owner = "client!oc", name = "B", descriptor = "I")
 	public static int anInt3715 = 0;
@@ -226,9 +217,6 @@ public final class Static5 {
 	@OriginalMember(owner = "client!ok", name = "i", descriptor = "[Lclient!te;")
 	public static final AnimFrameset[] aClass4_Sub3_Sub19Array3 = new AnimFrameset[14];
 
-	@OriginalMember(owner = "client!ok", name = "j", descriptor = "I")
-	public static int anInt3897 = 0;
-
 	@OriginalMember(owner = "client!ol", name = "r", descriptor = "I")
 	public static final int anInt3907 = 3353893;
 
@@ -245,7 +233,7 @@ public final class Static5 {
 	public static int anInt4156 = 0;
 
 	@OriginalMember(owner = "client!pj", name = "g", descriptor = "I")
-	public static int anInt4166 = 0;
+	public static int renderPriority = 0;
 
 	@OriginalMember(owner = "client!pj", name = "h", descriptor = "Z")
 	public static boolean dynamicArea = false;

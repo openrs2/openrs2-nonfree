@@ -70,7 +70,7 @@ public final class TextureOp4 extends TextureOp {
 		for (@Pc(74) int local74 = 0; local74 < this.anInt4936; local74++) {
 			if (local74 > 0) {
 				@Pc(87) int local87 = this.anInt4937;
-				@Pc(99) int local99 = (Static12.method716(local12, 4096) - 2048) * this.anInt4954 >> 12;
+				@Pc(99) int local99 = (RandomUtils.nextInt(local12, 4096) - 2048) * this.anInt4954 >> 12;
 				local87 += local99 * local68 >> 12;
 				this.anIntArray536[local74] = local87 + this.anIntArray536[local74 - 1];
 			}
@@ -78,11 +78,11 @@ public final class TextureOp4 extends TextureOp {
 			for (@Pc(128) int local128 = 0; local128 < this.anInt4943; local128++) {
 				if (local128 > 0) {
 					@Pc(139) int local139 = this.anInt4949;
-					@Pc(153) int local153 = (Static12.method716(local12, 4096) - 2048) * this.anInt4945 >> 12;
+					@Pc(153) int local153 = (RandomUtils.nextInt(local12, 4096) - 2048) * this.anInt4945 >> 12;
 					local139 += local57 * local153 >> 12;
 					this.anIntArrayArray41[local74][local128] = this.anIntArrayArray41[local74][local128 - 1] + local139;
 				}
-				this.anIntArrayArray42[local74][local128] = this.anInt4941 <= 0 ? 4096 : 4096 - Static12.method716(local12, this.anInt4941);
+				this.anIntArrayArray42[local74][local128] = this.anInt4941 <= 0 ? 4096 : 4096 - RandomUtils.nextInt(local12, this.anInt4941);
 			}
 			this.anIntArrayArray41[local74][this.anInt4943] = 4096;
 		}

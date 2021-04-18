@@ -352,7 +352,7 @@ public final class Component {
 	public int modelXAngle = 0;
 
 	@OriginalMember(owner = "client!wf", name = "T", descriptor = "I")
-	public int anInt5901 = 0;
+	public int modelRotationSpeed = 0;
 
 	@OriginalMember(owner = "client!wf", name = "Tb", descriptor = "B")
 	public byte yMode = 0;

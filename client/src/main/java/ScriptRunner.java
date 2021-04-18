@@ -469,7 +469,7 @@ public final class ScriptRunner {
 						Static28.method3270(component);
 						Static33.method4118(component);
 						if (component.createdComponentId == -1) {
-							DelayedStateChange.method4405(component.id);
+							DelayedStateChange.setComponentPositionClient(component.id);
 						}
 						continue;
 					}
@@ -508,7 +508,7 @@ public final class ScriptRunner {
 							Static28.method3270(component);
 						}
 						if (component.createdComponentId == -1) {
-							DelayedStateChange.method4026(component.id);
+							DelayedStateChange.setComponentHiddenClient(component.id);
 						}
 						continue;
 					}
@@ -555,7 +555,7 @@ public final class ScriptRunner {
 						}
 						Static28.method3270(component);
 						if (component.createdComponentId == -1) {
-							DelayedStateChange.method111(component.id);
+							DelayedStateChange.setComponentScrollPositionClient(component.id);
 						}
 						continue;
 					}
@@ -564,7 +564,7 @@ public final class ScriptRunner {
 						component.color = intStack[isp];
 						Static28.method3270(component);
 						if (component.createdComponentId == -1) {
-							DelayedStateChange.method4092(component.id);
+							DelayedStateChange.setComponentColorClient(component.id);
 						}
 						continue;
 					}
@@ -610,7 +610,7 @@ public final class ScriptRunner {
 						component.modelId = intStack[isp];
 						Static28.method3270(component);
 						if (component.createdComponentId == -1) {
-							DelayedStateChange.method779(component.id);
+							DelayedStateChange.setComponentModelClient(component.id);
 						}
 						continue;
 					}
@@ -624,8 +624,8 @@ public final class ScriptRunner {
 						component.modelZoom = intStack[isp + 5];
 						Static28.method3270(component);
 						if (component.createdComponentId == -1) {
-							DelayedStateChange.method1994(component.id);
-							DelayedStateChange.method1224(component.id);
+							DelayedStateChange.setComponentModelAngleClient(component.id);
+							DelayedStateChange.setComponentModelOffsetClient(component.id);
 						}
 						continue;
 					}
@@ -640,7 +640,7 @@ public final class ScriptRunner {
 							Static28.method3270(component);
 						}
 						if (component.createdComponentId == -1) {
-							DelayedStateChange.method680(component.id);
+							DelayedStateChange.setComponentModelAnimClient(component.id);
 						}
 						continue;
 					}
@@ -658,7 +658,7 @@ public final class ScriptRunner {
 							Static28.method3270(component);
 						}
 						if (component.createdComponentId == -1) {
-							DelayedStateChange.method4678(component.id);
+							DelayedStateChange.setComponentTextClient(component.id);
 						}
 						continue;
 					}
@@ -734,7 +734,7 @@ public final class ScriptRunner {
 						component.modelZoom = intStack[isp];
 						Static28.method3270(component);
 						if (component.createdComponentId == -1) {
-							DelayedStateChange.method1994(component.id);
+							DelayedStateChange.setComponentModelAngleClient(component.id);
 						}
 						continue;
 					}
@@ -760,9 +760,9 @@ public final class ScriptRunner {
 						@Pc(1955) int objCount = intStack[isp + 1];
 						@Pc(1959) int objId = intStack[isp];
 						if (component.createdComponentId == -1) {
-							DelayedStateChange.method676(component.id);
-							DelayedStateChange.method1994(component.id);
-							DelayedStateChange.method1224(component.id);
+							DelayedStateChange.setComponentObjClient(component.id);
+							DelayedStateChange.setComponentModelAngleClient(component.id);
+							DelayedStateChange.setComponentModelOffsetClient(component.id);
 						}
 						if (objId == -1) {
 							component.modelType = 1;
@@ -801,7 +801,7 @@ public final class ScriptRunner {
 						isp--;
 						component.modelId = intStack[isp];
 						if (component.createdComponentId == -1) {
-							DelayedStateChange.method779(component.id);
+							DelayedStateChange.setComponentModelClient(component.id);
 						}
 						continue;
 					}
@@ -809,7 +809,7 @@ public final class ScriptRunner {
 						component.modelType = 3;
 						component.modelId = PlayerList.self.appearance.method3611();
 						if (component.createdComponentId == -1) {
-							DelayedStateChange.method779(component.id);
+							DelayedStateChange.setComponentModelClient(component.id);
 						}
 						continue;
 					}
@@ -818,7 +818,7 @@ public final class ScriptRunner {
 						isp--;
 						component.modelId = intStack[isp];
 						if (component.createdComponentId == -1) {
-							DelayedStateChange.method779(component.id);
+							DelayedStateChange.setComponentModelClient(component.id);
 						}
 						continue;
 					}
@@ -827,7 +827,7 @@ public final class ScriptRunner {
 						isp--;
 						component.modelId = intStack[isp];
 						if (component.createdComponentId == -1) {
-							DelayedStateChange.method779(component.id);
+							DelayedStateChange.setComponentModelClient(component.id);
 						}
 						continue;
 					}
@@ -1414,7 +1414,7 @@ public final class ScriptRunner {
 					} else if (opcode < 3300) {
 						if (opcode == 3200) {
 							isp -= 3;
-							Static15.method1227(intStack[isp + 2], intStack[isp], intStack[isp + 1], 255);
+							SoundPlayer.play(intStack[isp + 2], intStack[isp], intStack[isp + 1], 255);
 							continue;
 						}
 						if (opcode == 3201) {
@@ -2300,7 +2300,7 @@ public final class ScriptRunner {
 							ssp--;
 							@Pc(11244) String text = stringStack[ssp];
 							isp = isp2 + 1;
-							intStack[isp2] = Static31.method3656(fontId).getParagraphLineCount(text, local11239);
+							intStack[isp2] = FontMetricsList.get(fontId).getParagraphLineCount(text, local11239);
 							continue;
 						}
 						if (opcode == 4109) {
@@ -2310,7 +2310,7 @@ public final class ScriptRunner {
 							@Pc(11269) int local11269 = intStack[isp2];
 							@Pc(11275) int fontId = intStack[isp2 + 1];
 							isp = isp2 + 1;
-							intStack[isp2] = Static31.method3656(fontId).getParagraphWidth(text, local11269);
+							intStack[isp2] = FontMetricsList.get(fontId).getParagraphWidth(text, local11269);
 							continue;
 						}
 						if (opcode == 4110) {
@@ -4644,5 +4644,10 @@ public final class ScriptRunner {
 			}
 		}
 		run(script, maxCycles);
+	}
+
+	@OriginalMember(owner = "client!jh", name = "a", descriptor = "(ZLclient!io;)V")
+	public static void method2019(@OriginalArg(1) HookRequest request) {
+		method519(request, 200000);
 	}
 }

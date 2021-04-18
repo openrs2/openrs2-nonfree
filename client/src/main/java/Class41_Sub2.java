@@ -39,12 +39,12 @@ public class Class41_Sub2 extends Class41 {
 		if (this.anInt3776 >= 4096) {
 			this.anInt3776 = 4095;
 		}
-		this.method3151(this.anInt3777++, (byte) (this.anInt3776 >> 4));
+		this.setPixel(this.anInt3777++, (byte) (this.anInt3776 >> 4));
 		this.anInt3776 = 0;
 	}
 
 	@OriginalMember(owner = "client!rn", name = "a", descriptor = "(IB)V")
-	protected void method3151(@OriginalArg(0) int arg0, @OriginalArg(1) byte arg1) {
+	protected void setPixel(@OriginalArg(0) int arg0, @OriginalArg(1) byte arg1) {
 		this.aByteArray48[this.anInt3777++] = (byte) ((arg1 >> 1 & 0x7F) + 127);
 	}
 

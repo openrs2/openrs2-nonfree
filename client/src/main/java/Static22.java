@@ -85,7 +85,7 @@ public final class Static22 {
 			if ((Static4.tileFlags[level][x][z] & 0x10) != 0) {
 				return;
 			}
-			if (Static35.method4327(level, x, z) != Static2.anInt1216) {
+			if (Static35.getVisibleLevel(level, x, z) != Static2.visibleLevel) {
 				return;
 			}
 		}
@@ -490,42 +490,6 @@ public final class Static22 {
 		arg5.method1870(arg10, arg15, arg1, local52, null, false);
 	}
 
-	@OriginalMember(owner = "client!kf", name = "a", descriptor = "(ILclient!fe;)V")
-	public static void method2284(@OriginalArg(1) SoftwareIndexedSprite arg0) {
-		for (@Pc(7) int local7 = 0; local7 < Static2.anIntArray159.length; local7++) {
-			Static2.anIntArray159[local7] = 0;
-		}
-		for (@Pc(22) int local22 = 0; local22 < 5000; local22++) {
-			@Pc(41) int local41 = (int) (Math.random() * 128.0D * (double) 256);
-			Static2.anIntArray159[local41] = (int) (Math.random() * 284.0D);
-		}
-		for (@Pc(53) int local53 = 0; local53 < 20; local53++) {
-			for (@Pc(58) int local58 = 1; local58 < 255; local58++) {
-				for (@Pc(69) int local69 = 1; local69 < 127; local69++) {
-					@Pc(78) int local78 = (local58 << 7) + local69;
-					Static6.anIntArray544[local78] = (Static2.anIntArray159[local78 + 128] + Static2.anIntArray159[local78 + 1] + Static2.anIntArray159[local78 - 1] + Static2.anIntArray159[local78 - 128]) / 4;
-				}
-			}
-			@Pc(115) int[] local115 = Static2.anIntArray159;
-			Static2.anIntArray159 = Static6.anIntArray544;
-			Static6.anIntArray544 = local115;
-		}
-		if (arg0 == null) {
-			return;
-		}
-		@Pc(127) int local127 = 0;
-		for (@Pc(129) int local129 = 0; local129 < arg0.height; local129++) {
-			for (@Pc(139) int local139 = 0; local139 < arg0.width; local139++) {
-				if (arg0.pixels[local127++] != 0) {
-					@Pc(161) int local161 = local139 + arg0.xOffset + 16;
-					@Pc(168) int local168 = local129 + arg0.yOffset + 16;
-					@Pc(174) int local174 = (local168 << 7) + local161;
-					Static2.anIntArray159[local174] = 0;
-				}
-			}
-		}
-	}
-
 	@OriginalMember(owner = "client!kg", name = "b", descriptor = "()V")
 	public static void method2295() {
 		if (Static4.aByteArray29 != null) {
@@ -735,11 +699,11 @@ public final class Static22 {
 	}
 
 	@OriginalMember(owner = "client!km", name = "f", descriptor = "(I)V")
-	public static void method2387() {
+	public static void topBannerRefresh() {
 		if (!client.advertSuppressed && client.modeWhere != 2) {
 			try {
 				BrowserControl.call(client.instance, "tbrefresh");
-			} catch (@Pc(24) Throwable local24) {
+			} catch (@Pc(24) Throwable ex) {
 			}
 		}
 	}

@@ -50,38 +50,6 @@ public final class Static21 {
 		}
 	}
 
-	@OriginalMember(owner = "client!jd", name = "a", descriptor = "(BLclient!fh;)V")
-	public static void method2005(@OriginalArg(1) Js5 arg0) {
-		Static2.aClass56_Sub1Array1 = SpriteLoader.loadSoftwareIndexedSpritesAutoDetect(arg0, Static4.anInt3250);
-		Static3.anIntArray196 = new int[256];
-		for (@Pc(15) int local15 = 0; local15 < 3; local15++) {
-			@Pc(27) float local27 = (float) (Static7.anIntArray679[local15] >> 16 & 0xFF);
-			@Pc(37) int local37 = Static7.anIntArray679[local15 + 1] >> 16 & 0xFF;
-			@Pc(44) float local44 = ((float) local37 - local27) / 64.0F;
-			@Pc(53) float local53 = (float) (Static7.anIntArray679[local15] >> 8 & 0xFF);
-			@Pc(60) float local60 = (float) (Static7.anIntArray679[local15] & 0xFF);
-			@Pc(70) int local70 = Static7.anIntArray679[local15 + 1] >> 8 & 0xFF;
-			@Pc(77) float local77 = ((float) local70 - local53) / 64.0F;
-			@Pc(85) int local85 = Static7.anIntArray679[local15 + 1] & 0xFF;
-			@Pc(92) float local92 = ((float) local85 - local60) / 64.0F;
-			for (@Pc(94) int local94 = 0; local94 < 64; local94++) {
-				Static3.anIntArray196[local94 + local15 * 64] = (int) local27 << 16 | (int) local53 << 8 | (int) local60;
-				local53 += local77;
-				local27 += local44;
-				local60 += local92;
-			}
-		}
-		for (@Pc(138) int local138 = 192; local138 < 255; local138++) {
-			Static3.anIntArray196[local138] = Static7.anIntArray679[3];
-		}
-		Static2.anIntArray159 = new int[32768];
-		Static6.anIntArray544 = new int[32768];
-		Static22.method2284(null);
-		Static6.anIntArray541 = new int[32768];
-		Static2.anIntArray100 = new int[32768];
-		Static4.aClass4_Sub3_Sub14_Sub1_4 = new SoftwareSprite(128, 254);
-	}
-
 	@OriginalMember(owner = "client!je", name = "a", descriptor = "(I)V")
 	public static void method2007() {
 		if (Static6.aBoolean330) {
@@ -98,7 +66,7 @@ public final class Static21 {
 
 	@OriginalMember(owner = "client!je", name = "a", descriptor = "(IZLclient!wf;I)V")
 	public static void method2008(@OriginalArg(0) int arg0, @OriginalArg(2) Component arg1, @OriginalArg(3) int arg2) {
-		if (Static7.anInt5634 < 2 && Static2.anInt1334 == 0 && !Static3.aBoolean177) {
+		if (MiniMenu.size < 2 && Static2.anInt1334 == 0 && !Static3.aBoolean177) {
 			return;
 		}
 		@Pc(26) String local26 = Static35.method4328();
@@ -295,18 +263,13 @@ public final class Static21 {
 		}
 	}
 
-	@OriginalMember(owner = "client!jh", name = "a", descriptor = "(ZLclient!io;)V")
-	public static void method2019(@OriginalArg(1) HookRequest arg0) {
-		ScriptRunner.method519(arg0, 200000);
-	}
-
 	@OriginalMember(owner = "client!ji", name = "a", descriptor = "(I[F)[F")
 	public static float[] method2023(@OriginalArg(0) int arg0, @OriginalArg(1) float[] arg1) {
 		if (arg1 == null) {
 			return null;
 		}
 		if (arg0 != -5899) {
-			DelayedStateChange.method2021(92, 49);
+			DelayedStateChange.setComponentModelRotationSpeedServer(92, 49);
 		}
 		@Pc(20) float[] local20 = new float[arg1.length];
 		ArrayUtils.copy(arg1, 0, local20, 0, arg1.length);
@@ -317,40 +280,6 @@ public final class Static21 {
 	public static void method2050(@OriginalArg(0) boolean arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3) {
 		if (InterfaceList.load(arg2)) {
 			Static31.method3660(InterfaceList.components[arg2], arg0, arg1, -1, arg3);
-		}
-	}
-
-	@OriginalMember(owner = "client!jj", name = "f", descriptor = "(I)V")
-	public static void method2054() {
-		@Pc(11) boolean local11 = false;
-		while (!local11) {
-			local11 = true;
-			for (@Pc(17) int local17 = 0; local17 < Static7.anInt5634 - 1; local17++) {
-				if (Static6.aShortArray100[local17] < 1000 && Static6.aShortArray100[local17 + 1] > 1000) {
-					local11 = false;
-					@Pc(43) String local43 = Static6.aStringArray27[local17];
-					Static6.aStringArray27[local17] = Static6.aStringArray27[local17 + 1];
-					Static6.aStringArray27[local17 + 1] = local43;
-					@Pc(61) String local61 = Static6.aStringArray30[local17];
-					Static6.aStringArray30[local17] = Static6.aStringArray30[local17 + 1];
-					Static6.aStringArray30[local17 + 1] = local61;
-					@Pc(79) int local79 = Static2.anIntArray117[local17];
-					Static2.anIntArray117[local17] = Static2.anIntArray117[local17 + 1];
-					Static2.anIntArray117[local17 + 1] = local79;
-					local79 = Static6.anIntArray543[local17];
-					Static6.anIntArray543[local17] = Static6.anIntArray543[local17 + 1];
-					Static6.anIntArray543[local17 + 1] = local79;
-					local79 = Static2.anIntArray160[local17];
-					Static2.anIntArray160[local17] = Static2.anIntArray160[local17 + 1];
-					Static2.anIntArray160[local17 + 1] = local79;
-					@Pc(133) short local133 = Static6.aShortArray100[local17];
-					Static6.aShortArray100[local17] = Static6.aShortArray100[local17 + 1];
-					Static6.aShortArray100[local17 + 1] = local133;
-					@Pc(151) long local151 = Static4.aLongArray56[local17];
-					Static4.aLongArray56[local17] = Static4.aLongArray56[local17 + 1];
-					Static4.aLongArray56[local17 + 1] = local151;
-				}
-			}
 		}
 	}
 
@@ -408,7 +337,7 @@ public final class Static21 {
 			@Pc(15) HookRequest local15 = new HookRequest();
 			local15.arguments = local4.onTargetEnter;
 			local15.source = local4;
-			method2019(local15);
+			ScriptRunner.method2019(local15);
 		}
 		Static3.aBoolean177 = true;
 		Static7.anInt6050 = arg2;

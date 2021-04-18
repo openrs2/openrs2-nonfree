@@ -43,10 +43,10 @@ public final class NpcType {
 	private byte[] aByteArray68;
 
 	@OriginalMember(owner = "client!ua", name = "d", descriptor = "I")
-	public int anInt5233 = -1;
+	public int cursor2Op = -1;
 
 	@OriginalMember(owner = "client!ua", name = "b", descriptor = "Z")
-	public boolean aBoolean354 = true;
+	public boolean shadow = true;
 
 	@OriginalMember(owner = "client!ua", name = "f", descriptor = "I")
 	public int crawlSound = -1;
@@ -67,10 +67,10 @@ public final class NpcType {
 	public int anInt5241 = -1;
 
 	@OriginalMember(owner = "client!ua", name = "y", descriptor = "I")
-	public int anInt5246 = -1;
+	public int combatLevel = -1;
 
 	@OriginalMember(owner = "client!ua", name = "x", descriptor = "I")
-	public int anInt5245 = -1;
+	public int cursor1Op = -1;
 
 	@OriginalMember(owner = "client!ua", name = "B", descriptor = "I")
 	public int soundRadius = 0;
@@ -88,7 +88,7 @@ public final class NpcType {
 	private int anInt5254 = 0;
 
 	@OriginalMember(owner = "client!ua", name = "o", descriptor = "I")
-	public int anInt5240 = -1;
+	public int hitBarId = -1;
 
 	@OriginalMember(owner = "client!ua", name = "z", descriptor = "I")
 	private int anInt5247 = 128;
@@ -133,7 +133,7 @@ public final class NpcType {
 	public int runSound = -1;
 
 	@OriginalMember(owner = "client!ua", name = "S", descriptor = "I")
-	public int anInt5258 = -1;
+	public int cursor2 = -1;
 
 	@OriginalMember(owner = "client!ua", name = "n", descriptor = "I")
 	private int anInt5239 = 0;
@@ -145,7 +145,7 @@ public final class NpcType {
 	public byte aByte19 = -96;
 
 	@OriginalMember(owner = "client!ua", name = "Z", descriptor = "I")
-	public int anInt5264 = -1;
+	public int cursor1 = -1;
 
 	@OriginalMember(owner = "client!ua", name = "e", descriptor = "Z")
 	public boolean aBoolean355 = false;
@@ -239,7 +239,7 @@ public final class NpcType {
 		} else if (code == 93) {
 			this.aBoolean356 = false;
 		} else if (code == 95) {
-			this.anInt5246 = buffer.readUnsignedShort();
+			this.combatLevel = buffer.readUnsignedShort();
 		} else if (code == 97) {
 			this.anInt5247 = buffer.readUnsignedShort();
 		} else if (code == 98) {
@@ -284,7 +284,7 @@ public final class NpcType {
 		} else if (code == 109) {
 			this.aBoolean358 = false;
 		} else if (code == 111) {
-			this.aBoolean354 = false;
+			this.shadow = false;
 		} else if (code == 113) {
 			this.aShort47 = (short) buffer.readUnsignedShort();
 			this.aShort46 = (short) buffer.readUnsignedShort();
@@ -307,7 +307,7 @@ public final class NpcType {
 				local731[2] = buffer.readByte();
 			}
 		} else if (code == 122) {
-			this.anInt5240 = buffer.readUnsignedShort();
+			this.hitBarId = buffer.readUnsignedShort();
 		} else if (code == 123) {
 			this.anInt5259 = buffer.readUnsignedShort();
 		} else if (code == 125) {
@@ -335,11 +335,11 @@ public final class NpcType {
 			}
 			this.soundRadius = buffer.readUnsignedByte();
 		} else if (code == 135) {
-			this.anInt5245 = buffer.readUnsignedByte();
-			this.anInt5264 = buffer.readUnsignedShort();
+			this.cursor1Op = buffer.readUnsignedByte();
+			this.cursor1 = buffer.readUnsignedShort();
 		} else if (code == 136) {
-			this.anInt5233 = buffer.readUnsignedByte();
-			this.anInt5258 = buffer.readUnsignedShort();
+			this.cursor2Op = buffer.readUnsignedByte();
+			this.cursor2 = buffer.readUnsignedShort();
 		} else if (code == 137) {
 			this.anInt5241 = buffer.readUnsignedShort();
 		} else if (code == 140) {

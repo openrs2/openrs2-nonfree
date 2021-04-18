@@ -116,7 +116,7 @@ public final class Static30 {
 								} else {
 									SoftwareRaster.setClip(arg8, arg6, arg5, arg4);
 								}
-								if (Static5.anInt5206 != 0 && Static5.anInt5206 != 3 || Static1.aBoolean17 || Static4.anInt3341 < local266 || local259 > Static5.anInt5848 || local309 <= Static4.anInt3341 || Static5.anInt5848 >= local298) {
+								if (MiniMap.state != 0 && MiniMap.state != 3 || Static1.aBoolean17 || Static4.anInt3341 < local266 || local259 > Static5.anInt5848 || local309 <= Static4.anInt3341 || Static5.anInt5848 >= local298) {
 									continue;
 								}
 								@Pc(455) int local455 = Static4.anInt3341 - local128;
@@ -141,14 +141,14 @@ public final class Static30 {
 									if (local597 == null) {
 										Static26.method4812();
 									} else {
-										Static16.method1497(1L, local567, local583, " ->", Static4.aString140, (short) 19, Static6.anInt4466);
+										MiniMenu.add(1L, local567, local583, " ->", Static4.aString140, (short) 19, Static6.anInt4466);
 									}
 									continue;
 								}
 								if (client.game == 1) {
-									Static16.method1497(1L, local567, local583, "", LocalisedText.FACEHERE, (short) 47, -1);
+									MiniMenu.add(1L, local567, local583, "", LocalisedText.FACEHERE, (short) 47, -1);
 								}
-								Static16.method1497(1L, local567, local583, "", Static5.aString236, (short) 26, -1);
+								MiniMenu.add(1L, local567, local583, "", MiniMenu.walkHereOp, (short) 26, -1);
 								continue;
 							}
 							if (local38.anInt5904 == 1339) {
@@ -186,7 +186,7 @@ public final class Static30 {
 							}
 							if (local38.anInt5904 == 1402) {
 								if (!GlRenderer.enabled) {
-									Static20.method1916(local122, local128);
+									Flames.render(local128, local122);
 									Static2.aBooleanArray8[local89] = true;
 									Static6.aBooleanArray24[local89] = true;
 								}
@@ -247,14 +247,14 @@ public final class Static30 {
 						}
 						if (!Static1.aBoolean17) {
 							if (local38.type == 0 && local38.noClickThrough && local266 <= Static4.anInt3341 && Static5.anInt5848 >= local259 && Static4.anInt3341 < local309 && local298 > Static5.anInt5848 && !Static1.qaOpTest) {
-								Static6.aShortArray100[0] = 1006;
-								Static6.aStringArray30[0] = LocalisedText.CANCEL;
-								Static6.aStringArray27[0] = "";
-								Static2.anIntArray160[0] = Static7.anInt6050;
-								Static7.anInt5634 = 1;
+								MiniMenu.actions[0] = 1006;
+								MiniMenu.ops[0] = LocalisedText.CANCEL;
+								MiniMenu.opBases[0] = "";
+								MiniMenu.cursors[0] = Static7.anInt6050;
+								MiniMenu.size = 1;
 							}
 							if (Static4.anInt3341 >= local266 && local259 <= Static5.anInt5848 && Static4.anInt3341 < local309 && local298 > Static5.anInt5848) {
-								Static15.method1427(local38, Static5.anInt5848 - local122, Static4.anInt3341 - local128);
+								MiniMenu.addComponentEntries(local38, Static5.anInt5848 - local122, Static4.anInt3341 - local128);
 							}
 						}
 						if (local38.type == 0) {
@@ -279,11 +279,11 @@ public final class Static30 {
 							@Pc(1207) SubInterface local1207 = (SubInterface) InterfaceList.subInterfaces.get((long) local38.id);
 							if (local1207 != null) {
 								if (local1207.type == 0 && !Static1.aBoolean17 && Static4.anInt3341 >= local266 && Static5.anInt5848 >= local259 && local309 > Static4.anInt3341 && Static5.anInt5848 < local298 && !Static1.qaOpTest) {
-									Static6.aShortArray100[0] = 1006;
-									Static2.anIntArray160[0] = Static7.anInt6050;
-									Static6.aStringArray30[0] = LocalisedText.CANCEL;
-									Static6.aStringArray27[0] = "";
-									Static7.anInt5634 = 1;
+									MiniMenu.actions[0] = 1006;
+									MiniMenu.cursors[0] = Static7.anInt6050;
+									MiniMenu.ops[0] = LocalisedText.CANCEL;
+									MiniMenu.opBases[0] = "";
+									MiniMenu.size = 1;
 								}
 								Static14.method1069(local1207.id, local259, local122, local128, local298, local266, local309, local89);
 							}
@@ -827,11 +827,6 @@ public final class Static30 {
 			BrowserControl.eval(GameShell.signLink.applet, "document.cookie=\"" + cookie2 + "\"");
 		} catch (@Pc(92) Throwable ex) {
 		}
-	}
-
-	@OriginalMember(owner = "client!qi", name = "a", descriptor = "(I)V")
-	public static void method420() {
-		Static6.aClass26_50.clear();
 	}
 
 	@OriginalMember(owner = "client!qj", name = "a", descriptor = "()V")

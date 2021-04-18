@@ -31,7 +31,7 @@ public final class Static38 {
 				arg0.anInt4044 = 0;
 				arg0.anInt4011 = 1;
 				arg0.anInt4001 = 0;
-				Static29.method3461(local89, arg0.zFine, arg0.xFine, arg0.anInt3970, arg0 == PlayerList.self);
+				SoundPlayer.playSeqSound(local89, arg0.zFine, arg0.xFine, arg0.anInt3970, arg0 == PlayerList.self);
 			}
 			if (local92 == 2) {
 				arg0.anInt4001 = 0;
@@ -45,7 +45,7 @@ public final class Static38 {
 			arg0.anInt4001 = 0;
 			arg0.anInt4030 = arg0.movementQueueSize;
 			if (arg0.seqId != -1) {
-				Static29.method3461(SeqTypeList.get(arg0.seqId), arg0.zFine, arg0.xFine, arg0.anInt3970, arg0 == PlayerList.self);
+				SoundPlayer.playSeqSound(SeqTypeList.get(arg0.seqId), arg0.zFine, arg0.xFine, arg0.anInt3970, arg0 == PlayerList.self);
 			}
 		}
 	}

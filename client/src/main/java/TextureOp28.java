@@ -74,8 +74,8 @@ public final class TextureOp28 extends TextureOp {
 		@Pc(114) int[][] local114 = new int[local99][3];
 		while (true) {
 			while (true) {
-				@Pc(125) int local125 = local49 + Static12.method716(local106, local65 - local49);
-				@Pc(135) int local135 = Static12.method716(local106, local72 - local58) + local58;
+				@Pc(125) int local125 = local49 + RandomUtils.nextInt(local106, local65 - local49);
+				@Pc(135) int local135 = RandomUtils.nextInt(local106, local72 - local58) + local58;
 				@Pc(139) int local139 = local32 + local125;
 				if (local139 > Static2.anInt1626) {
 					local125 = Static2.anInt1626 - local32;
@@ -162,7 +162,7 @@ public final class TextureOp28 extends TextureOp {
 					local40 = local440;
 					local442[0] = local32;
 					local442[2] = local135 + local153;
-					local30 = Static12.method716(local106, Static2.anInt1626);
+					local30 = RandomUtils.nextInt(local106, Static2.anInt1626);
 					@Pc(469) int[][] local469 = local114;
 					local36 = 0;
 					local23 = local30 - local34;
@@ -206,9 +206,9 @@ public final class TextureOp28 extends TextureOp {
 
 	@OriginalMember(owner = "client!ac", name = "a", descriptor = "(IIIIILjava/util/Random;[[I)V")
 	private void method69(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(5) Random arg4, @OriginalArg(6) int[][] arg5) {
-		@Pc(20) int local20 = this.anInt77 > 0 ? 4096 - Static12.method716(arg4, this.anInt77) : 4096;
+		@Pc(20) int local20 = this.anInt77 > 0 ? 4096 - RandomUtils.nextInt(arg4, this.anInt77) : 4096;
 		@Pc(28) int local28 = this.anInt79 * this.anInt75 >> 12;
-		@Pc(44) int local44 = this.anInt79 - (local28 > 0 ? Static12.method716(arg4, local28) : 0);
+		@Pc(44) int local44 = this.anInt79 - (local28 > 0 ? RandomUtils.nextInt(arg4, local28) : 0);
 		if (Static2.anInt1626 <= arg2) {
 			arg2 -= Static2.anInt1626;
 		}

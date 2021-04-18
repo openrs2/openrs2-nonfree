@@ -17,7 +17,12 @@ import org.openrs2.deob.annotation.Pc;
 public final class ReflectionCheck extends Node {
 
 	@OriginalMember(owner = "client!rl", name = "x", descriptor = "Lclient!ll;")
-	public static LinkedList queue = new LinkedList();
+	private static LinkedList queue = new LinkedList();
+
+	@OriginalMember(owner = "client!co", name = "b", descriptor = "(I)V")
+	public static void clear() {
+		queue = new LinkedList();
+	}
 
 	@OriginalMember(owner = "client!jo", name = "a", descriptor = "(Lsignlink!pm;IBLclient!fd;)V")
 	public static void push(@OriginalArg(3) Buffer buffer, @OriginalArg(1) int length, @OriginalArg(0) SignLink signLink) {

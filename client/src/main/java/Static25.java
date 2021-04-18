@@ -327,8 +327,8 @@ public final class Static25 {
 		}
 		@Pc(211) int local211 = Mouse.x;
 		@Pc(213) int local213 = Mouse.y;
-		for (@Pc(215) int local215 = 0; local215 < Static7.anInt5634; local215++) {
-			@Pc(233) int local233 = (Static7.anInt5634 - local215 - 1) * 15 + local5 + 20 + 13;
+		for (@Pc(215) int local215 = 0; local215 < MiniMenu.size; local215++) {
+			@Pc(233) int local233 = (MiniMenu.size - local215 - 1) * 15 + local5 + 20 + 13;
 			if (local3 < local211 && local21 + local3 > local211 && local233 - 13 < local213 && local233 + 3 > local213) {
 				if (GlRenderer.enabled) {
 					GlRaster.fillRectAlpha(local3, local233 - 12, local21, 15, Static1.anInt497, 256 - Static3.anInt2586);
@@ -372,8 +372,8 @@ public final class Static25 {
 			Static1.aClass4_Sub3_Sub14_1.renderTransparent(local3, local13 + local5 - Static1.aClass4_Sub3_Sub14_1.height);
 			Static1.aClass4_Sub3_Sub14_1.renderHorizontalFlipTransparent(local21 + local3 - Static1.aClass4_Sub3_Sub14_1.width, local13 + local5 - Static1.aClass4_Sub3_Sub14_1.height);
 		}
-		for (@Pc(518) int local518 = 0; local518 < Static7.anInt5634; local518++) {
-			@Pc(535) int local535 = local5 + (Static7.anInt5634 - local518 - 1) * 15 + 13 + 20;
+		for (@Pc(518) int local518 = 0; local518 < MiniMenu.size; local518++) {
+			@Pc(535) int local535 = local5 + (MiniMenu.size - local518 - 1) * 15 + 13 + 20;
 			@Pc(537) int local537 = Static1.anInt504;
 			if (local211 > local3 && local21 + local3 > local211 && local535 - 13 < local213 && local535 + 3 > local213) {
 				local537 = Static4.anInt2920;
@@ -417,30 +417,15 @@ public final class Static25 {
 		return 0;
 	}
 
-	@OriginalMember(owner = "client!nb", name = "a", descriptor = "(ZI)V")
-	public static void method2929(@OriginalArg(1) int arg0) {
-		Static7.anInt5634--;
-		if (Static7.anInt5634 == arg0) {
-			return;
-		}
-		ArrayUtils.copy(Static6.aStringArray30, arg0 + 1, Static6.aStringArray30, arg0, Static7.anInt5634 - arg0);
-		ArrayUtils.copy(Static6.aStringArray27, arg0 + 1, Static6.aStringArray27, arg0, Static7.anInt5634 - arg0);
-		ArrayUtils.copy(Static2.anIntArray160, arg0 + 1, Static2.anIntArray160, arg0, Static7.anInt5634 - arg0);
-		ArrayUtils.copy(Static6.aShortArray100, arg0 + 1, Static6.aShortArray100, arg0, Static7.anInt5634 - arg0);
-		ArrayUtils.copy(Static4.aLongArray56, arg0 + 1, Static4.aLongArray56, arg0, Static7.anInt5634 - arg0);
-		ArrayUtils.copy(Static2.anIntArray117, arg0 + 1, Static2.anIntArray117, arg0, Static7.anInt5634 - arg0);
-		ArrayUtils.copy(Static6.anIntArray543, arg0 + 1, Static6.anIntArray543, arg0, Static7.anInt5634 - arg0);
-	}
-
 	@OriginalMember(owner = "client!nb", name = "c", descriptor = "(I)V")
 	public static void method2930() {
 		Static1.aBoolean17 = false;
-		Static7.anInt5634 = 0;
+		MiniMenu.size = 0;
 		Protocol.opcode = -1;
 		Protocol.outboundBuffer.position = 0;
-		Static4.anInt3335 = -1;
-		Static3.anInt2273 = -1;
-		Static2.anInt1231 = -1;
+		Protocol.opcode1 = -1;
+		Protocol.opcode2 = -1;
+		Protocol.opcode3 = -1;
 		Static3.anInt2583 = 0;
 		Protocol.inboundBuffer.position = 0;
 		Static5.rebootTimer = 0;

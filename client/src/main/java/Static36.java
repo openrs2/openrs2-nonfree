@@ -85,19 +85,19 @@ public final class Static36 {
 		}
 		if (bounds.isHovering(Mouse.x, Mouse.y) && type.ops != null) {
 			if (type.ops[4] != null) {
-				Static16.method1497(element.id, type.category, 0, type.opBase, type.ops[4], (short) 1011, -1);
+				MiniMenu.add(element.id, type.category, 0, type.opBase, type.ops[4], (short) 1011, -1);
 			}
 			if (type.ops[3] != null) {
-				Static16.method1497(element.id, type.category, 0, type.opBase, type.ops[3], (short) 1003, -1);
+				MiniMenu.add(element.id, type.category, 0, type.opBase, type.ops[3], (short) 1003, -1);
 			}
 			if (type.ops[2] != null) {
-				Static16.method1497(element.id, type.category, 0, type.opBase, type.ops[2], (short) 1008, -1);
+				MiniMenu.add(element.id, type.category, 0, type.opBase, type.ops[2], (short) 1008, -1);
 			}
 			if (type.ops[1] != null) {
-				Static16.method1497(element.id, type.category, 0, type.opBase, type.ops[1], (short) 1002, -1);
+				MiniMenu.add(element.id, type.category, 0, type.opBase, type.ops[1], (short) 1002, -1);
 			}
 			if (type.ops[0] != null) {
-				Static16.method1497(element.id, type.category, 0, type.opBase, type.ops[0], (short) 1012, -1);
+				MiniMenu.add(element.id, type.category, 0, type.opBase, type.ops[0], (short) 1012, -1);
 			}
 		}
 		Static3.aClass112_13.addTail(bounds);
@@ -299,9 +299,4 @@ public final class Static36 {
 		}
 	}
 
-	@OriginalMember(owner = "client!w", name = "e", descriptor = "(I)V")
-	public static void method4567() {
-		Protocol.outboundBuffer.writeOpcode(156);
-		Protocol.outboundBuffer.writeShort(Static7.anInt5426);
-	}
 }

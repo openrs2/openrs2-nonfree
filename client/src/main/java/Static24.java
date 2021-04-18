@@ -344,11 +344,11 @@ public final class Static24 {
 			}
 			Static7.anInt5425 = 0;
 		}
-		Static10.method301();
-		Static30.method420();
+		HintArrowManager.clear();
+		ShadowModelList.clear();
 		ParticleEmitterTypeList.clear();
 		ParticleEffectorTypeList.clear();
-		Static1.aClass26_3.clear();
+		FontMetricsList.fontMetrics.clear();
 		if (!GlRenderer.enabled) {
 			((Js5GlTextureProvider) Static4.textureProvider).clear();
 		}
@@ -364,92 +364,7 @@ public final class Static24 {
 		client.js5Archive10.discardUnpacked();
 		client.js5Archive11.discardUnpacked();
 		client.js5Archive12.discardUnpacked();
-		Static1.aClass26_5.clear();
-	}
-
-	@OriginalMember(owner = "client!mf", name = "a", descriptor = "(II)V")
-	public static void method2702(@OriginalArg(0) int arg0) {
-		if (arg0 > 256) {
-			arg0 = 256;
-		}
-		if (arg0 > 10) {
-			arg0 = 10;
-		}
-		Static5.anInt3897 += arg0 * 128;
-		if (Static2.anIntArray159.length < Static5.anInt3897) {
-			Static5.anInt3897 -= Static2.anIntArray159.length;
-			@Pc(41) int local41 = (int) (Math.random() * 12.0D);
-			Static22.method2284(Static2.aClass56_Sub1Array1[local41]);
-		}
-		@Pc(48) int local48 = 0;
-		@Pc(52) int local52 = arg0 * 128;
-		@Pc(59) int local59 = (256 - arg0) * 128;
-		for (@Pc(61) int local61 = 0; local61 < local59; local61++) {
-			@Pc(94) int local94 = Static2.anIntArray100[local52 + local48] - arg0 * Static2.anIntArray159[Static5.anInt3897 + local48 & Static2.anIntArray159.length - 1] / 6;
-			if (local94 < 0) {
-				local94 = 0;
-			}
-			Static2.anIntArray100[local48++] = local94;
-		}
-		for (@Pc(114) int local114 = 256 - arg0; local114 < 256; local114++) {
-			@Pc(125) int local125 = local114 * 128;
-			for (@Pc(127) int local127 = 0; local127 < 128; local127++) {
-				@Pc(135) int local135 = (int) (Math.random() * 100.0D);
-				if (local135 < 50 && local127 > 10 && local127 < 118) {
-					Static2.anIntArray100[local125 + local127] = 255;
-				} else {
-					Static2.anIntArray100[local125 + local127] = 0;
-				}
-			}
-		}
-		for (@Pc(170) int local170 = 0; local170 < 256 - arg0; local170++) {
-			Static4.anIntArray314[local170] = Static4.anIntArray314[local170 + arg0];
-		}
-		for (@Pc(197) int local197 = 256 - arg0; local197 < 256; local197++) {
-			Static4.anIntArray314[local197] = (int) (Math.sin((double) Static4.anInt2665 / 14.0D) * 16.0D + Math.sin((double) Static4.anInt2665 / 15.0D) * 14.0D + Math.sin((double) Static4.anInt2665 / 16.0D) * 12.0D);
-			Static4.anInt2665++;
-		}
-		Static3.anInt2297 += arg0;
-		@Pc(247) int local247 = (arg0 + (client.loop & 0x1)) / 2;
-		if (local247 <= 0) {
-			return;
-		}
-		for (@Pc(251) int local251 = 0; local251 < Static3.anInt2297; local251++) {
-			@Pc(261) int local261 = (int) (Math.random() * 124.0D) + 2;
-			@Pc(268) int local268 = (int) (Math.random() * 128.0D) + 128;
-			Static2.anIntArray100[(local268 << 7) + local261] = 192;
-		}
-		Static3.anInt2297 = 0;
-		for (@Pc(283) int local283 = 0; local283 < 256; local283++) {
-			@Pc(288) int local288 = 0;
-			@Pc(292) int local292 = local283 * 128;
-			for (@Pc(295) int local295 = -local247; local295 < 128; local295++) {
-				if (local295 + local247 < 128) {
-					local288 += Static2.anIntArray100[local247 + local295 + local292];
-				}
-				if (local295 - local247 - 1 >= 0) {
-					local288 -= Static2.anIntArray100[local292 + local295 - local247 - 1];
-				}
-				if (local295 >= 0) {
-					Static6.anIntArray541[local295 + local292] = local288 / (local247 * 2 + 1);
-				}
-			}
-		}
-		for (@Pc(361) int local361 = 0; local361 < 128; local361++) {
-			@Pc(368) int local368 = 0;
-			for (@Pc(371) int local371 = -local247; local371 < 256; local371++) {
-				@Pc(382) int local382 = local371 * 128;
-				if (local371 + local247 < 256) {
-					local368 += Static6.anIntArray541[local382 + local361 + local247 * 128];
-				}
-				if (local371 - local247 - 1 >= 0) {
-					local368 -= Static6.anIntArray541[local382 + local361 - local247 * 128 - 128];
-				}
-				if (local371 >= 0) {
-					Static2.anIntArray100[local382 + local361] = local368 / (local247 * 2 + 1);
-				}
-			}
-		}
+		HitBarList.hitBars.clear();
 	}
 
 	@OriginalMember(owner = "client!mf", name = "a", descriptor = "(Lclient!qc;I)V")
@@ -514,11 +429,6 @@ public final class Static24 {
 				}
 			}
 		}
-	}
-
-	@OriginalMember(owner = "client!mg", name = "a", descriptor = "(Lclient!fh;I)V")
-	public static void method2711(@OriginalArg(0) Js5 arg0) {
-		Static4.anInt3250 = arg0.getGroupId("runes");
 	}
 
 	@OriginalMember(owner = "client!mg", name = "a", descriptor = "(I)Lclient!fg;")

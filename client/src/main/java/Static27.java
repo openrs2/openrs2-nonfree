@@ -17,12 +17,12 @@ public final class Static27 {
 
 	@OriginalMember(owner = "client!ob", name = "a", descriptor = "(I)V")
 	public static void method4239() {
-		Static5.anInt5206 = 0;
-		Static3.aBoolean147 = false;
-		Static3.anInt2140 = 0;
+		MiniMap.state = 0;
+		MiniMap.aBoolean147 = false;
+		MiniMap.flagY = 0;
 		Static4.anInt3020 = -1;
-		Static6.anInt4506 = 0;
-		Static1.aByte1 = 0;
+		MiniMap.flagX = 0;
+		MiniMap.sequenceNumber = 0;
 	}
 
 	@OriginalMember(owner = "client!ob", name = "a", descriptor = "(IBIIII)V")
@@ -121,80 +121,6 @@ public final class Static27 {
 		Static1.anInt420 = -1;
 	}
 
-	@OriginalMember(owner = "client!og", name = "f", descriptor = "(B)V")
-	public static void method4704() {
-		for (@Pc(3) int local3 = 0; local3 < Static6.anInt4457; local3++) {
-			@Pc(10) int local10 = Static3.anIntArray217[local3]--;
-			if (Static3.anIntArray217[local3] >= -10) {
-				@Pc(89) SynthSound local89 = Static4.aClass7Array1[local3];
-				if (local89 == null) {
-					local89 = SynthSound.create(client.js5Archive4, Static4.anIntArray294[local3], 0);
-					if (local89 == null) {
-						continue;
-					}
-					@Pc(104) int[] local104 = Static3.anIntArray217;
-					local104[local3] += local89.getStart();
-					Static4.aClass7Array1[local3] = local89;
-				}
-				if (Static3.anIntArray217[local3] < 0) {
-					@Pc(223) int local223;
-					if (Static7.anIntArray601[local3] == 0) {
-						local223 = Static1.anIntArray21[local3] * Preferences.soundEffectsVolume >> 8;
-					} else {
-						@Pc(137) int local137 = (Static7.anIntArray601[local3] & 0xFF) * 128;
-						@Pc(145) int local145 = Static7.anIntArray601[local3] >> 16 & 0xFF;
-						@Pc(155) int local155 = local145 * 128 + 64 - PlayerList.self.xFine;
-						if (local155 < 0) {
-							local155 = -local155;
-						}
-						@Pc(171) int local171 = Static7.anIntArray601[local3] >> 8 & 0xFF;
-						@Pc(181) int local181 = local171 * 128 + 64 - PlayerList.self.zFine;
-						if (local181 < 0) {
-							local181 = -local181;
-						}
-						@Pc(192) int local192 = local181 + local155 - 128;
-						if (local137 < local192) {
-							Static3.anIntArray217[local3] = -100;
-							continue;
-						}
-						if (local192 < 0) {
-							local192 = 0;
-						}
-						local223 = (local137 - local192) * Preferences.areaSoundsVolume * Static1.anIntArray21[local3] / local137 >> 8;
-					}
-					if (local223 > 0) {
-						@Pc(240) PcmSound local240 = local89.toPcmSound().resample(client.resampler);
-						@Pc(245) SoundPcmStream local245 = SoundPcmStream.create(local240, local223);
-						local245.method3359(Static7.anIntArray629[local3] - 1);
-						client.soundStream.addSubStream(local245);
-					}
-					Static3.anIntArray217[local3] = -100;
-				}
-			} else {
-				Static6.anInt4457--;
-				for (@Pc(24) int local24 = local3; local24 < Static6.anInt4457; local24++) {
-					Static4.anIntArray294[local24] = Static4.anIntArray294[local24 + 1];
-					Static4.aClass7Array1[local24] = Static4.aClass7Array1[local24 + 1];
-					Static7.anIntArray629[local24] = Static7.anIntArray629[local24 + 1];
-					Static3.anIntArray217[local24] = Static3.anIntArray217[local24 + 1];
-					Static7.anIntArray601[local24] = Static7.anIntArray601[local24 + 1];
-					Static1.anIntArray21[local24] = Static1.anIntArray21[local24 + 1];
-				}
-				local3--;
-			}
-		}
-		if (MusicPlayer.jingle && !MidiPlayer.isPlaying()) {
-			if (Preferences.musicVolume != 0 && MusicPlayer.groupId != -1) {
-				MidiPlayer.playImmediate(client.js5Archive6, MusicPlayer.groupId, Preferences.musicVolume);
-			}
-			MusicPlayer.jingle = false;
-		} else if (Preferences.musicVolume != 0 && MusicPlayer.groupId != -1 && !MidiPlayer.isPlaying()) {
-			Protocol.outboundBuffer.writeOpcode(250);
-			Protocol.outboundBuffer.writeInt(MusicPlayer.groupId);
-			MusicPlayer.groupId = -1;
-		}
-	}
-
 	@OriginalMember(owner = "client!og", name = "c", descriptor = "(IIIIII)V")
 	public static void method4706(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4) {
 		Static18.method1656(Static5.anIntArrayArray36[arg3++], arg0, arg1, arg2);
@@ -226,15 +152,10 @@ public final class Static27 {
 		CursorTypeList.removeSoft();
 		PlayerAppearance.removeSoft();
 		Component.removeSoft();
-		Static14.method1066();
-		Static18.method1713();
-		Static1.aClass26_5.removeSoft();
-		Static1.aClass26_3.removeSoft();
-	}
-
-	@OriginalMember(owner = "client!oh", name = "a", descriptor = "(II)V")
-	public static void method3219() {
-		Static6.aClass26_50.clean(5);
+		HintArrowManager.removeSoft();
+		ShadowModelList.removeSoft();
+		HitBarList.hitBars.removeSoft();
+		FontMetricsList.fontMetrics.removeSoft();
 	}
 
 	@OriginalMember(owner = "client!oi", name = "a", descriptor = "(BI)Ljava/lang/String;")

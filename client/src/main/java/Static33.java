@@ -227,98 +227,6 @@ public final class Static33 {
 		return false;
 	}
 
-	@OriginalMember(owner = "client!te", name = "a", descriptor = "(Lclient!ua;IIII)V")
-	public static void method4152(@OriginalArg(0) NpcType arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3) {
-		if (Static7.anInt5634 >= 400) {
-			return;
-		}
-		if (arg0.multiNpcs != null) {
-			arg0 = arg0.getMultiNpc();
-		}
-		if (arg0 == null || !arg0.aBoolean357) {
-			return;
-		}
-		@Pc(38) String local38 = arg0.name;
-		if (arg0.anInt5246 != 0) {
-			@Pc(51) String local51 = client.game == 1 ? LocalisedText.RATING : LocalisedText.LEVEL;
-			local38 = local38 + Static20.method1921(PlayerList.self.combatLevel, arg0.anInt5246) + " (" + local51 + arg0.anInt5246 + ")";
-		}
-		if (Static2.anInt1334 == 1) {
-			Static16.method1497((long) arg2, arg3, arg1, Static7.aString365 + " -> <col=ffff00>" + local38, LocalisedText.USE, (short) 33, Static2.anInt1937);
-		} else if (Static3.aBoolean177) {
-			@Pc(88) ParamType local88 = Static5.anInt4224 == -1 ? null : ParamTypeList.get(Static5.anInt4224);
-			if ((Static5.anInt3560 & 0x2) != 0 && (local88 == null || arg0.getParam(Static5.anInt4224, local88.defaultInt) != local88.defaultInt)) {
-				Static16.method1497((long) arg2, arg3, arg1, Static2.aString81 + " -> <col=ffff00>" + local38, Static4.aString140, (short) 42, Static6.anInt4466);
-			}
-		} else {
-			@Pc(134) String[] local134 = arg0.ops;
-			if (Static5.aBoolean254) {
-				local134 = Static35.method4300(local134);
-			}
-			if (local134 != null) {
-				for (@Pc(145) int local145 = 4; local145 >= 0; local145--) {
-					if (local134[local145] != null && (client.game != 0 || !local134[local145].equalsIgnoreCase(LocalisedText.ATTACK))) {
-						@Pc(167) byte local167 = 0;
-						@Pc(169) int local169 = -1;
-						if (local145 == arg0.anInt5245) {
-							local169 = arg0.anInt5264;
-						}
-						if (arg0.anInt5233 == local145) {
-							local169 = arg0.anInt5258;
-						}
-						if (local145 == 0) {
-							local167 = 39;
-						}
-						if (local145 == 1) {
-							local167 = 8;
-						}
-						if (local145 == 2) {
-							local167 = 36;
-						}
-						if (local145 == 3) {
-							local167 = 25;
-						}
-						if (local145 == 4) {
-							local167 = 59;
-						}
-						Static16.method1497((long) arg2, arg3, arg1, "<col=ffff00>" + local38, local134[local145], local167, local169);
-					}
-				}
-			}
-			if (client.game == 0 && local134 != null) {
-				for (@Pc(249) int local249 = 4; local249 >= 0; local249--) {
-					if (local134[local249] != null && local134[local249].equalsIgnoreCase(LocalisedText.ATTACK)) {
-						@Pc(271) short local271 = 0;
-						if (PlayerList.self.combatLevel < arg0.anInt5246) {
-							local271 = 2000;
-						}
-						@Pc(281) short local281 = 0;
-						if (local249 == 0) {
-							local281 = 39;
-						}
-						if (local249 == 1) {
-							local281 = 8;
-						}
-						if (local249 == 2) {
-							local281 = 36;
-						}
-						if (local249 == 3) {
-							local281 = 25;
-						}
-						if (local249 == 4) {
-							local281 = 59;
-						}
-						if (local281 != 0) {
-							local281 += local271;
-						}
-						Static16.method1497((long) arg2, arg3, arg1, "<col=ffff00>" + local38, local134[local249], local281, arg0.anInt5241);
-					}
-				}
-			}
-			Static16.method1497((long) arg2, arg3, arg1, "<col=ffff00>" + local38, LocalisedText.EXAMINE, (short) 1010, Static3.anInt2232);
-		}
-	}
-
 	@OriginalMember(owner = "client!te", name = "a", descriptor = "(IIIIZ)I")
 	public static int method4153(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) {
 		if (Static6.aBoolean335) {
@@ -445,9 +353,9 @@ public final class Static33 {
 
 	@OriginalMember(owner = "client!ti", name = "f", descriptor = "(B)V")
 	public static void method4202() {
-		if (SceneGraph.isAllLevelsVisible() || Static2.anInt1216 == Player.level) {
+		if (SceneGraph.isAllLevelsVisible() || Static2.visibleLevel == Player.level) {
 			Static12.method638();
-			if (Player.level != Static6.anInt4709) {
+			if (Player.level != Player.previousLevel) {
 				Static16.method2014();
 			}
 		} else {
@@ -499,11 +407,11 @@ public final class Static33 {
 				}
 			}
 		}
-		if (Static7.aClass138_14 == null) {
-			if (Static2.aClass4_Sub3_Sub22_1 == null || !client.js5Archive23.isGroupNameValid(Static2.aClass4_Sub3_Sub22_1.group + "_labels")) {
-				Static7.aClass138_14 = new MapElementList(0);
-			} else if (client.js5Archive23.isGroupReady(Static2.aClass4_Sub3_Sub22_1.group + "_labels")) {
-				Static7.aClass138_14 = MapElementList.create(client.js5Archive23, Static2.aClass4_Sub3_Sub22_1.group + "_labels", LoginManager.mapMembers);
+		if (Static7.mapElements == null) {
+			if (Static2.map == null || !client.js5Archive23.isGroupNameValid(Static2.map.group + "_labels")) {
+				Static7.mapElements = new MapElementList(0);
+			} else if (client.js5Archive23.isGroupReady(Static2.map.group + "_labels")) {
+				Static7.mapElements = MapElementList.create(client.js5Archive23, Static2.map.group + "_labels", LoginManager.mapMembers);
 			} else {
 				Static3.anInt2886++;
 				ready = false;
@@ -722,7 +630,7 @@ public final class Static33 {
 		} else {
 			SoftwareRaster.setClip(arg0, arg3, arg0 + arg2.width, arg3 + arg2.height);
 		}
-		if (Static5.anInt5206 != 2 && Static5.anInt5206 != 5 && Static5.aClass4_Sub3_Sub14_4 != null) {
+		if (MiniMap.state != 2 && MiniMap.state != 5 && Static5.aClass4_Sub3_Sub14_4 != null) {
 			@Pc(92) int local92 = (int) Static5.aFloat97 + Static6.anInt3585 & 0x7FF;
 			@Pc(101) int local101 = 464 - PlayerList.self.zFine / 32;
 			@Pc(109) int local109 = PlayerList.self.xFine / 32 + 48;
@@ -731,15 +639,15 @@ public final class Static33 {
 			} else {
 				((SoftwareSprite) Static5.aClass4_Sub3_Sub14_4).renderRotatedTransparent(arg0, arg3, arg2.width, arg2.height, local109, local101, local92, Static6.anInt4761 + 256, arg2.anIntArray672, arg2.anIntArray657);
 			}
-			if (Static7.aClass138_14 != null) {
-				for (@Pc(158) int local158 = 0; local158 < Static7.aClass138_14.size; local158++) {
-					if (Static7.aClass138_14.elements[local158] != null && Static7.aClass138_14.positions[local158] >> 28 == Player.level) {
-						@Pc(188) int local188 = (Static7.aClass138_14.positions[local158] >> 14 & 0x3FFF) - Static5.originX;
-						@Pc(197) int local197 = (Static7.aClass138_14.positions[local158] & 0x3FFF) - Static7.originZ;
+			if (Static7.mapElements != null) {
+				for (@Pc(158) int local158 = 0; local158 < Static7.mapElements.size; local158++) {
+					if (Static7.mapElements.elements[local158] != null && Static7.mapElements.positions[local158] >> 28 == Player.level) {
+						@Pc(188) int local188 = (Static7.mapElements.positions[local158] >> 14 & 0x3FFF) - Static5.originX;
+						@Pc(197) int local197 = (Static7.mapElements.positions[local158] & 0x3FFF) - Static7.originZ;
 						if (local188 >= 0 && local188 < 104 && local197 >= 0 && local197 < 104) {
 							@Pc(227) int local227 = local188 * 4 + 2 - PlayerList.self.xFine / 32;
 							@Pc(239) int local239 = local197 * 4 + 2 - PlayerList.self.zFine / 32;
-							Static35.method4360(arg3, arg2, arg0, Static7.aClass138_14.elements[local158].id, local227, local239);
+							Static35.method4360(arg3, arg2, arg0, Static7.mapElements.elements[local158].id, local227, local239);
 						}
 					}
 				}
@@ -850,10 +758,10 @@ public final class Static33 {
 				}
 				local670++;
 			}
-			if (Static6.anInt4506 != 0) {
-				@Pc(895) int local895 = Static6.anInt4506 * 4 + PlayerList.self.getSize() * 2 + 2 - PlayerList.self.xFine / 32 - 2;
-				@Pc(917) int local917 = Static3.anInt2140 * 4 + PlayerList.self.getSize() * 2 + 2 - PlayerList.self.zFine / 32 - 2;
-				Static11.method525(arg0, arg2, arg3, local895, local917, Sprites.mapFlag[Static3.aBoolean147 ? 1 : 0]);
+			if (MiniMap.flagX != 0) {
+				@Pc(895) int local895 = MiniMap.flagX * 4 + PlayerList.self.getSize() * 2 + 2 - PlayerList.self.xFine / 32 - 2;
+				@Pc(917) int local917 = MiniMap.flagY * 4 + PlayerList.self.getSize() * 2 + 2 - PlayerList.self.zFine / 32 - 2;
+				Static11.method525(arg0, arg2, arg3, local895, local917, Sprites.mapFlag[MiniMap.aBoolean147 ? 1 : 0]);
 			}
 			if (GlRenderer.enabled) {
 				GlRaster.fillRect(arg0 + arg2.width / 2 - 1, arg2.height / 2 + arg3 - 1, 3, 3, 16777215);

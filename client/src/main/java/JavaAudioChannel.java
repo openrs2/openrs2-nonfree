@@ -105,7 +105,7 @@ public final class JavaAudioChannel extends AudioChannel {
 		}
 		for (@Pc(9) int i = 0; i < len; i++) {
 			@Pc(17) int sample = this.samples[i];
-			if ((sample + 8388608 & 0xFF000000) != 0) {
+			if ((sample + 0x800000 & 0xFF000000) != 0) {
 				sample = sample >> 31 ^ 0x7FFFFF;
 			}
 			this.binarySamples[i * 2] = (byte) (sample >> 8);

@@ -28,12 +28,12 @@ public final class Static13 {
 					arg0.anInt4019++;
 					arg0.anInt4000 = 1;
 					arg0.anInt4046++;
-					Static29.method3461(local19, arg0.zFine, arg0.xFine, arg0.anInt4046, arg0 == PlayerList.self);
+					SoundPlayer.playSeqSound(local19, arg0.zFine, arg0.xFine, arg0.anInt4046, arg0 == PlayerList.self);
 				}
 				if (arg0.anInt4046 >= local19.anIntArray95.length) {
 					arg0.anInt4000 = 0;
 					arg0.anInt4046 = 0;
-					Static29.method3461(local19, arg0.zFine, arg0.xFine, arg0.anInt4046, PlayerList.self == arg0);
+					SoundPlayer.playSeqSound(local19, arg0.zFine, arg0.xFine, arg0.anInt4046, PlayerList.self == arg0);
 				}
 				arg0.anInt4019 = arg0.anInt4046 + 1;
 				if (arg0.anInt4019 >= local19.anIntArray95.length) {
@@ -66,13 +66,13 @@ public final class Static13 {
 					} else {
 						if (arg0.anInt4026 < 0) {
 							arg0.anInt4026 = 0;
-							Static29.method3461(local166, arg0.zFine, arg0.xFine, 0, arg0 == PlayerList.self);
+							SoundPlayer.playSeqSound(local166, arg0.zFine, arg0.xFine, 0, arg0 == PlayerList.self);
 						}
 						arg0.anInt3968++;
 						if (local166.anIntArray95.length > arg0.anInt4026 && local166.anIntArray94[arg0.anInt4026] < arg0.anInt3968) {
 							arg0.anInt3968 = 1;
 							arg0.anInt4026++;
-							Static29.method3461(local166, arg0.zFine, arg0.xFine, arg0.anInt4026, PlayerList.self == arg0);
+							SoundPlayer.playSeqSound(local166, arg0.zFine, arg0.xFine, arg0.anInt4026, PlayerList.self == arg0);
 						}
 						if (arg0.anInt4026 >= local166.anIntArray95.length) {
 							if (local149.aBoolean222) {
@@ -81,7 +81,7 @@ public final class Static13 {
 								if (local166.anInt1239 <= arg0.anInt3989) {
 									arg0.spotAnimId = -1;
 								} else if (arg0.anInt4026 >= 0 && local166.anIntArray95.length > arg0.anInt4026) {
-									Static29.method3461(local166, arg0.zFine, arg0.xFine, arg0.anInt4026, PlayerList.self == arg0);
+									SoundPlayer.playSeqSound(local166, arg0.zFine, arg0.xFine, arg0.anInt4026, PlayerList.self == arg0);
 								} else {
 									arg0.spotAnimId = -1;
 								}
@@ -125,7 +125,7 @@ public final class Static13 {
 				if (local538.anIntArray95.length > arg0.anInt3970 && arg0.anInt4044 > local538.anIntArray94[arg0.anInt3970]) {
 					arg0.anInt3970++;
 					arg0.anInt4044 = 1;
-					Static29.method3461(local538, arg0.zFine, arg0.xFine, arg0.anInt3970, arg0 == PlayerList.self);
+					SoundPlayer.playSeqSound(local538, arg0.zFine, arg0.xFine, arg0.anInt3970, arg0 == PlayerList.self);
 				}
 				if (arg0.anInt3970 >= local538.anIntArray95.length) {
 					arg0.anInt4001++;
@@ -133,7 +133,7 @@ public final class Static13 {
 					if (local538.anInt1239 <= arg0.anInt4001) {
 						arg0.seqId = -1;
 					} else if (arg0.anInt3970 >= 0 && arg0.anInt3970 < local538.anIntArray95.length) {
-						Static29.method3461(local538, arg0.zFine, arg0.xFine, arg0.anInt3970, arg0 == PlayerList.self);
+						SoundPlayer.playSeqSound(local538, arg0.zFine, arg0.xFine, arg0.anInt3970, arg0 == PlayerList.self);
 					} else {
 						arg0.seqId = -1;
 					}
@@ -167,7 +167,7 @@ public final class Static13 {
 						if (local782.anIntArray95.length > local760.anInt4462 && local782.anIntArray94[local760.anInt4462] < local760.anInt4460) {
 							local760.anInt4460 = 1;
 							local760.anInt4462++;
-							Static29.method3461(local782, arg0.zFine, arg0.xFine, local760.anInt4462, arg0 == PlayerList.self);
+							SoundPlayer.playSeqSound(local782, arg0.zFine, arg0.xFine, local760.anInt4462, arg0 == PlayerList.self);
 						}
 						if (local760.anInt4462 >= local782.anIntArray95.length) {
 							local760.anInt4462 -= local782.anInt1242;
@@ -175,7 +175,7 @@ public final class Static13 {
 							if (local782.anInt1239 <= local760.anInt4465) {
 								arg0.aClass150Array3[local746] = null;
 							} else if (local760.anInt4462 >= 0 && local782.anIntArray95.length > local760.anInt4462) {
-								Static29.method3461(local782, arg0.zFine, arg0.xFine, local760.anInt4462, arg0 == PlayerList.self);
+								SoundPlayer.playSeqSound(local782, arg0.zFine, arg0.xFine, local760.anInt4462, arg0 == PlayerList.self);
 							} else {
 								arg0.aClass150Array3[local746] = null;
 							}
@@ -417,7 +417,7 @@ public final class Static13 {
 		if (arg0 < 0) {
 			return false;
 		}
-		@Pc(12) int local12 = Static6.aShortArray100[arg0];
+		@Pc(12) int local12 = MiniMenu.actions[arg0];
 		if (local12 >= 2000) {
 			local12 -= 2000;
 		}
@@ -621,7 +621,7 @@ public final class Static13 {
 	}
 
 	@OriginalMember(owner = "client!eh", name = "a", descriptor = "(Lclient!fh;)V")
-	public static void method1028(@OriginalArg(0) Js5 arg0) {
-		Static2.aClass58_37 = arg0;
+	public static void method1028(@OriginalArg(0) Js5 archive) {
+		Static2.aClass58_37 = archive;
 	}
 }

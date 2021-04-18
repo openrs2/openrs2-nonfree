@@ -25,7 +25,7 @@ public final class SeqType {
 	public int[] anIntArray95;
 
 	@OriginalMember(owner = "client!eg", name = "F", descriptor = "[[I")
-	public int[][] anIntArrayArray11;
+	public int[][] sounds;
 
 	@OriginalMember(owner = "client!eg", name = "c", descriptor = "I")
 	public int anInt1224 = -1;
@@ -262,14 +262,14 @@ public final class SeqType {
 			}
 		} else if (arg1 == 13) {
 			@Pc(181) int local181 = arg0.readUnsignedShort();
-			this.anIntArrayArray11 = new int[local181][];
+			this.sounds = new int[local181][];
 			for (@Pc(187) int local187 = 0; local187 < local181; local187++) {
 				@Pc(198) int local198 = arg0.readUnsignedByte();
 				if (local198 > 0) {
-					this.anIntArrayArray11[local187] = new int[local198];
-					this.anIntArrayArray11[local187][0] = arg0.readUnsignedMedium();
+					this.sounds[local187] = new int[local198];
+					this.sounds[local187][0] = arg0.readUnsignedMedium();
 					for (@Pc(221) int local221 = 1; local221 < local198; local221++) {
-						this.anIntArrayArray11[local187][local221] = arg0.readUnsignedShort();
+						this.sounds[local187][local221] = arg0.readUnsignedShort();
 					}
 				}
 			}

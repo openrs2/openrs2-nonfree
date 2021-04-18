@@ -246,6 +246,9 @@ public final class client extends GameShell {
 	@OriginalMember(owner = "client!vf", name = "g", descriptor = "Lclient!ud;")
 	public static Resampler resampler;
 
+	@OriginalMember(owner = "client!wl", name = "x", descriptor = "Z")
+	private static boolean clean = false;
+
 	@OriginalMember(owner = "client!pn", name = "f", descriptor = "Ljava/util/Random;")
 	public static final Random random = new Random();
 
@@ -332,7 +335,7 @@ public final class client extends GameShell {
 	}
 
 	@OriginalMember(owner = "client!bg", name = "a", descriptor = "(IILclient!fd;)V")
-	public static void setUid(@OriginalArg(2) Buffer buffer, @OriginalArg(1) int off) {
+	public static void readUid(@OriginalArg(2) Buffer buffer, @OriginalArg(1) int off) {
 		if (uid == null) {
 			return;
 		}
@@ -341,6 +344,28 @@ public final class client extends GameShell {
 			uid.write(buffer.bytes, off, 24);
 		} catch (@Pc(14) Exception ex) {
 		}
+	}
+
+	@OriginalMember(owner = "client!se", name = "a", descriptor = "(Lclient!fd;I)V")
+	public static void writeUid(@OriginalArg(0) Buffer buffer) {
+		@Pc(8) byte[] bytes = new byte[24];
+		if (uid != null) {
+			try {
+				uid.seek(0L);
+				uid.read(bytes);
+				@Pc(32) int i;
+				for (i = 0; i < 24 && bytes[i] == 0; i++) {
+				}
+				if (i >= 24) {
+					throw new IOException();
+				}
+			} catch (@Pc(56) Exception ex) {
+				for (@Pc(58) int i = 0; i < 24; i++) {
+					bytes[i] = -1;
+				}
+			}
+		}
+		buffer.writeBytes(bytes, 24);
 	}
 
 	@OriginalMember(owner = "client!client", name = "f", descriptor = "(I)V")
@@ -390,7 +415,7 @@ public final class client extends GameShell {
 			}
 		}
 		if (!GlRenderer.enabled && game == 0) {
-			Static14.method1059();
+			Flames.method1059();
 		} else if (LoginManager.step == 0 && CreateManager.step == 0) {
 			if (Static1.anInt772 == 2) {
 				Static23.method2537();
@@ -406,21 +431,21 @@ public final class client extends GameShell {
 			@Pc(395) Component local395;
 			@Pc(406) Component local406;
 			do {
-				local389 = (HookRequest) Static2.aClass112_6.removeHead();
+				local389 = (HookRequest) Static2.highPriorityRequests.removeHead();
 				if (local389 == null) {
 					while (true) {
 						@Pc(440) HookRequest local440;
 						@Pc(448) Component local448;
 						@Pc(460) Component local460;
 						do {
-							local440 = (HookRequest) Static2.aClass112_10.removeHead();
+							local440 = (HookRequest) Static2.mediumPriorityRequests.removeHead();
 							if (local440 == null) {
 								while (true) {
 									@Pc(489) HookRequest local489;
 									@Pc(496) Component local496;
 									@Pc(505) Component local505;
 									do {
-										local489 = (HookRequest) Static3.aClass112_14.removeHead();
+										local489 = (HookRequest) Static3.lowPriorityRequests.removeHead();
 										if (local489 == null) {
 											if (Static1.aClass185_1 != null) {
 												Static14.method1047();
@@ -434,7 +459,7 @@ public final class client extends GameShell {
 												Static6.url = null;
 											}
 											if (loop % 1500 == 0) {
-												Static22.method2387();
+												Static22.topBannerRefresh();
 											}
 											return;
 										}
@@ -444,7 +469,7 @@ public final class client extends GameShell {
 										}
 										local505 = InterfaceList.getComponent(local496.layer);
 									} while (local505 == null || local505.createdComponents == null || local505.createdComponents.length <= local496.createdComponentId || local505.createdComponents[local496.createdComponentId] != local496);
-									Static21.method2019(local489);
+									ScriptRunner.method2019(local489);
 								}
 							}
 							local448 = local440.source;
@@ -453,7 +478,7 @@ public final class client extends GameShell {
 							}
 							local460 = InterfaceList.getComponent(local448.layer);
 						} while (local460 == null || local460.createdComponents == null || local448.createdComponentId >= local460.createdComponents.length || local460.createdComponents[local448.createdComponentId] != local448);
-						Static21.method2019(local440);
+						ScriptRunner.method2019(local440);
 					}
 				}
 				local395 = local389.source;
@@ -462,7 +487,7 @@ public final class client extends GameShell {
 				}
 				local406 = InterfaceList.getComponent(local395.layer);
 			} while (local406 == null || local406.createdComponents == null || local395.createdComponentId >= local406.createdComponents.length || local406.createdComponents[local395.createdComponentId] != local395);
-			Static21.method2019(local389);
+			ScriptRunner.method2019(local389);
 		}
 	}
 
@@ -478,27 +503,27 @@ public final class client extends GameShell {
 	@OriginalMember(owner = "client!client", name = "h", descriptor = "(I)V")
 	private void mainLoad() {
 		if (!Preferences.safeMode) {
-			label264:
+			noSafeMode:
 			while (true) {
 				do {
 					if (!Keyboard.nextKey()) {
-						break label264;
+						break noSafeMode;
 					}
 				} while (Keyboard.keyChar != 's' && Keyboard.keyChar != 'S');
 				Preferences.safeMode = true;
 			}
 		}
 		if (mainLoadState == 0) {
-			@Pc(32) Runtime local32 = Runtime.getRuntime();
-			@Pc(41) int local41 = (int) (0L / 1024L);
-			@Pc(44) long local44 = MonotonicClock.currentTimeMillis();
-			if (Static2.aLong66 == 0L) {
-				Static2.aLong66 = local44;
+			@Pc(32) Runtime runtime = Runtime.getRuntime();
+			@Pc(41) int usedMemory = (int) (0L / 1024L);
+			@Pc(44) long now = MonotonicClock.currentTimeMillis();
+			if (Static2.firstGc == 0L) {
+				Static2.firstGc = now;
 			}
-			if (local41 > 16384 && local44 - Static2.aLong66 < 5000L) {
-				if (local44 - Static3.aLong67 > 1000L) {
+			if (usedMemory > 16384 && now - Static2.firstGc < 5000L) {
+				if (now - Static3.prevGc > 1000L) {
 					System.gc();
-					Static3.aLong67 = local44;
+					Static3.prevGc = now;
 				}
 				mainLoadPercentage = 5;
 				mainLoadSecondaryText = LocalisedText.MAINLOAD0;
@@ -565,7 +590,7 @@ public final class client extends GameShell {
 				mainLoadPercentage = 20;
 				Sprites.init(js5Archive8);
 				TitleScreen.init(js5Archive8);
-				Static24.method2711(js5Archive8);
+				Flames.init(js5Archive8);
 				mainLoadState = 41;
 			} else {
 				mainLoadPercentage = 20;
@@ -628,30 +653,30 @@ public final class client extends GameShell {
 			mainLoadState = 70;
 		} else if (mainLoadState == 70) {
 			js5Archive2.fetchAll();
-			@Pc(647) int local647 = js5Archive2.getPercentageComplete();
+			@Pc(647) int complete = js5Archive2.getPercentageComplete();
 			js5Archive16.fetchAll();
-			local647 += js5Archive16.getPercentageComplete();
+			complete += js5Archive16.getPercentageComplete();
 			js5Archive17.fetchAll();
-			local647 += js5Archive17.getPercentageComplete();
+			complete += js5Archive17.getPercentageComplete();
 			js5Archive18.fetchAll();
-			local647 += js5Archive18.getPercentageComplete();
+			complete += js5Archive18.getPercentageComplete();
 			js5Archive19.fetchAll();
-			local647 += js5Archive19.getPercentageComplete();
+			complete += js5Archive19.getPercentageComplete();
 			js5Archive20.fetchAll();
-			local647 += js5Archive20.getPercentageComplete();
+			complete += js5Archive20.getPercentageComplete();
 			js5Archive21.fetchAll();
-			local647 += js5Archive21.getPercentageComplete();
+			complete += js5Archive21.getPercentageComplete();
 			js5Archive22.fetchAll();
-			local647 += js5Archive22.getPercentageComplete();
+			complete += js5Archive22.getPercentageComplete();
 			js5Archive24.fetchAll();
-			local647 += js5Archive24.getPercentageComplete();
+			complete += js5Archive24.getPercentageComplete();
 			js5Archive25.fetchAll();
-			local647 += js5Archive25.getPercentageComplete();
+			complete += js5Archive25.getPercentageComplete();
 			js5Archive27.fetchAll();
-			local647 += js5Archive27.getPercentageComplete();
-			if (local647 < 1100) {
+			complete += js5Archive27.getPercentageComplete();
+			if (complete < 1100) {
 				mainLoadPercentage = 50;
-				mainLoadSecondaryText = LocalisedText.MAINLOAD70 + local647 / 11 + "%";
+				mainLoadSecondaryText = LocalisedText.MAINLOAD70 + complete / 11 + "%";
 			} else {
 				ParamTypeList.init(js5Archive2);
 				FloTypeList.init(js5Archive2);
@@ -696,8 +721,8 @@ public final class client extends GameShell {
 			}
 		} else if (mainLoadState == 90) {
 			if (js5Archive26.fetchAll()) {
-				@Pc(960) Js5GlTextureProvider local960 = new Js5GlTextureProvider(js5Archive9, js5Archive8, js5Archive26, 20, !Preferences.highDetailTextures);
-				Static23.method2551(local960);
+				@Pc(960) Js5GlTextureProvider textureProvider = new Js5GlTextureProvider(js5Archive9, js5Archive8, js5Archive26, 20, !Preferences.highDetailTextures);
+				Static23.setTextureProvider(textureProvider);
 				if (Preferences.brightness == 1) {
 					ColorUtils.setBrightness(0.9F);
 				}
@@ -718,7 +743,7 @@ public final class client extends GameShell {
 				mainLoadPercentage = 70;
 			}
 		} else if (mainLoadState == 100) {
-			if (Static10.method398(js5Archive8)) {
+			if (Flames.isReady(js5Archive8)) {
 				mainLoadState = 110;
 			}
 		} else if (mainLoadState == 110) {
@@ -776,14 +801,14 @@ public final class client extends GameShell {
 				Static9.method233(1000);
 			}
 		} else if (mainLoadState == 140) {
-			Static7.anInt742 = js5Archive3.getGroupId("loginscreen");
+			InterfaceList.loginScreenId = js5Archive3.getGroupId("loginscreen");
 			js5Archive5.discardNames(false);
 			js5Archive6.discardNames(true);
 			js5Archive8.discardNames(true);
 			js5Archive13.discardNames(true);
 			js5Archive10.discardNames(true);
 			js5Archive3.discardNames(true);
-			Static7.aBoolean422 = true;
+			clean = true;
 			mainLoadState = 150;
 			mainLoadSecondaryText = LocalisedText.MAINLOAD140;
 			mainLoadPercentage = 97;
@@ -1225,8 +1250,8 @@ public final class client extends GameShell {
 				GameShell.canvas.repaint();
 			}
 		}
-		if (Static7.aBoolean422) {
-			Static31.method3798();
+		if (clean) {
+			Static31.clean();
 		}
 		if (Preferences.safeMode && Static4.anInt3304 == 10 && InterfaceList.topLevelInterface != -1) {
 			Preferences.safeMode = false;

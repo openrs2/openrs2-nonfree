@@ -169,11 +169,8 @@ public final class Static1 {
 	@OriginalMember(owner = "client!ak", name = "q", descriptor = "I")
 	public static int anInt134 = -1;
 
-	@OriginalMember(owner = "client!al", name = "K", descriptor = "[I")
-	public static final int[] anIntArray21 = new int[50];
-
 	@OriginalMember(owner = "client!al", name = "P", descriptor = "Lclient!ll;")
-	public static final LinkedList aClass112_1 = new LinkedList();
+	public static final LinkedList projAnims = new LinkedList();
 
 	@OriginalMember(owner = "client!al", name = "U", descriptor = "S")
 	public static short aShort1 = 32767;
@@ -189,9 +186,6 @@ public final class Static1 {
 
 	@OriginalMember(owner = "client!bd", name = "d", descriptor = "[F")
 	public static final float[] aFloatArray5 = new float[] { 0.1F, 0.1F, 0.15F, 0.1F };
-
-	@OriginalMember(owner = "client!be", name = "a", descriptor = "Lclient!cc;")
-	public static final SoftLruHashTable aClass26_3 = new SoftLruHashTable(4);
 
 	@OriginalMember(owner = "client!be", name = "b", descriptor = "I")
 	public static int rectDebug = 0;
@@ -210,9 +204,6 @@ public final class Static1 {
 
 	@OriginalMember(owner = "client!bk", name = "e", descriptor = "S")
 	public static short aShort9 = 1;
-
-	@OriginalMember(owner = "client!bl", name = "db", descriptor = "Lclient!cc;")
-	public static final SoftLruHashTable aClass26_5 = new SoftLruHashTable(4);
 
 	@OriginalMember(owner = "client!bn", name = "B", descriptor = "I")
 	public static int anInt402 = 2;
@@ -274,9 +265,6 @@ public final class Static1 {
 	@OriginalMember(owner = "client!ck", name = "ab", descriptor = "Z")
 	public static boolean aBoolean38 = false;
 
-	@OriginalMember(owner = "client!client", name = "W", descriptor = "B")
-	public static byte aByte1 = 0;
-
 	@OriginalMember(owner = "client!client", name = "cb", descriptor = "I")
 	public static int anInt777 = 0;
 
@@ -288,9 +276,6 @@ public final class Static1 {
 
 	@OriginalMember(owner = "client!da", name = "d", descriptor = "Z")
 	public static boolean aBoolean49 = false;
-
-	@OriginalMember(owner = "client!da", name = "h", descriptor = "Z")
-	public static boolean aBoolean50 = false;
 
 	@OriginalMember(owner = "client!da", name = "j", descriptor = "I")
 	public static int anInt873 = 1;

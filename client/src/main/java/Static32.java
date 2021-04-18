@@ -133,28 +133,6 @@ public final class Static32 {
 		Static2.anInt1333 = (short) arg2;
 	}
 
-	@OriginalMember(owner = "client!se", name = "a", descriptor = "(Lclient!fd;I)V")
-	public static void method3949(@OriginalArg(0) Buffer arg0) {
-		@Pc(8) byte[] local8 = new byte[24];
-		if (client.uid != null) {
-			try {
-				client.uid.seek(0L);
-				client.uid.read(local8);
-				@Pc(32) int local32;
-				for (local32 = 0; local32 < 24 && local8[local32] == 0; local32++) {
-				}
-				if (local32 >= 24) {
-					throw new IOException();
-				}
-			} catch (@Pc(56) Exception local56) {
-				for (@Pc(58) int local58 = 0; local58 < 24; local58++) {
-					local8[local58] = -1;
-				}
-			}
-		}
-		arg0.writeBytes(local8, 24);
-	}
-
 	@OriginalMember(owner = "client!se", name = "a", descriptor = "(IIIIIIII)V")
 	public static void method3954(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4, @OriginalArg(6) int arg5, @OriginalArg(7) int arg6) {
 		@Pc(7) int local7 = arg5 - 334;
@@ -356,7 +334,7 @@ public final class Static32 {
 									local66.anInt4460 = 0;
 									local66.anInt4465 = 0;
 									local66.anInt4461 = local27;
-									Static29.method3461(local61, arg1.zFine, arg1.xFine, 0, PlayerList.self == arg1);
+									SoundPlayer.playSeqSound(local61, arg1.zFine, arg1.xFine, 0, PlayerList.self == arg1);
 								} else if (local69 == 2) {
 									local66.anInt4465 = 0;
 								}
@@ -372,7 +350,7 @@ public final class Static32 {
 							local166.anInt4461 = local27;
 							local166.anInt4464 = 1;
 							local166.anInt4462 = 0;
-							Static29.method3461(local61, arg1.zFine, arg1.xFine, 0, arg1 == PlayerList.self);
+							SoundPlayer.playSeqSound(local61, arg1.zFine, arg1.xFine, 0, arg1 == PlayerList.self);
 						}
 					}
 				}
@@ -585,11 +563,6 @@ public final class Static32 {
 				entity.anInt4030--;
 			}
 		}
-	}
-
-	@OriginalMember(owner = "client!sm", name = "b", descriptor = "(II)V")
-	public static void method4030() {
-		Static4.aClass26_30.clean(5);
 	}
 
 	@OriginalMember(owner = "client!sm", name = "a", descriptor = "(IIIIIIII)V")

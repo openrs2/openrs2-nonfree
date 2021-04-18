@@ -166,8 +166,8 @@ public final class SceneGraph {
 	}
 
 	@OriginalMember(owner = "client!bk", name = "a", descriptor = "(IIIILclient!vc;Lclient!vc;IIJ)V")
-	public static void setWall(@OriginalArg(0) int level, @OriginalArg(1) int x, @OriginalArg(2) int z, @OriginalArg(3) int arg3, @OriginalArg(4) Entity arg4, @OriginalArg(5) Entity arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) long key) {
-		if (arg4 == null && arg5 == null) {
+	public static void setWall(@OriginalArg(0) int level, @OriginalArg(1) int x, @OriginalArg(2) int z, @OriginalArg(3) int arg3, @OriginalArg(4) Entity primary, @OriginalArg(5) Entity secondary, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) long key) {
+		if (primary == null && secondary == null) {
 			return;
 		}
 		@Pc(8) Wall wall = new Wall();
@@ -175,8 +175,8 @@ public final class SceneGraph {
 		wall.xFine = x * 128 + 64;
 		wall.zFine = z * 128 + 64;
 		wall.anInt5494 = arg3;
-		wall.primary = arg4;
-		wall.secondary = arg5;
+		wall.primary = primary;
+		wall.secondary = secondary;
 		wall.anInt5493 = arg6;
 		wall.anInt5488 = arg7;
 		for (@Pc(42) int level0 = level; level0 >= 0; level0--) {
@@ -188,17 +188,17 @@ public final class SceneGraph {
 	}
 
 	@OriginalMember(owner = "client!ao", name = "a", descriptor = "(IIIILclient!vc;Lclient!vc;IIIIJ)V")
-	public static void setWallDecor(@OriginalArg(0) int level, @OriginalArg(1) int x, @OriginalArg(2) int z, @OriginalArg(3) int arg3, @OriginalArg(4) Entity arg4, @OriginalArg(5) Entity arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) int arg8, @OriginalArg(9) int arg9, @OriginalArg(10) long arg10) {
-		if (arg4 == null) {
+	public static void setWallDecor(@OriginalArg(0) int level, @OriginalArg(1) int x, @OriginalArg(2) int z, @OriginalArg(3) int arg3, @OriginalArg(4) Entity primary, @OriginalArg(5) Entity secondary, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) int arg8, @OriginalArg(9) int arg9, @OriginalArg(10) long key) {
+		if (primary == null) {
 			return;
 		}
 		@Pc(6) WallDecor wallDecor = new WallDecor();
-		wallDecor.key = arg10;
+		wallDecor.key = key;
 		wallDecor.xFine = x * 128 + 64;
 		wallDecor.zFine = z * 128 + 64;
 		wallDecor.anInt5627 = arg3;
-		wallDecor.primary = arg4;
-		wallDecor.secondary = arg5;
+		wallDecor.primary = primary;
+		wallDecor.secondary = secondary;
 		wallDecor.anInt5629 = arg6;
 		wallDecor.anInt5631 = arg7;
 		wallDecor.anInt5633 = arg8;
@@ -212,12 +212,12 @@ public final class SceneGraph {
 	}
 
 	@OriginalMember(owner = "client!wn", name = "a", descriptor = "(IIIILclient!vc;JZ)V")
-	public static void setGroundDecor(@OriginalArg(0) int y, @OriginalArg(1) int x, @OriginalArg(2) int z, @OriginalArg(3) int arg3, @OriginalArg(4) Entity arg4, @OriginalArg(5) long key, @OriginalArg(6) boolean arg6) {
-		if (arg4 == null) {
+	public static void setGroundDecor(@OriginalArg(0) int y, @OriginalArg(1) int x, @OriginalArg(2) int z, @OriginalArg(3) int arg3, @OriginalArg(4) Entity entity, @OriginalArg(5) long key, @OriginalArg(6) boolean arg6) {
+		if (entity == null) {
 			return;
 		}
 		@Pc(6) GroundDecor groundDecor = new GroundDecor();
-		groundDecor.entity = arg4;
+		groundDecor.entity = entity;
 		groundDecor.xFine = x * 128 + 64;
 		groundDecor.zFine = z * 128 + 64;
 		groundDecor.anInt1130 = arg3;
@@ -612,8 +612,8 @@ public final class SceneGraph {
 	}
 
 	@OriginalMember(owner = "client!om", name = "a", descriptor = "(II)V")
-	public static void method3253(@OriginalArg(0) int x, @OriginalArg(1) int z) {
-		@Pc(7) Tile local7 = tiles[0][x][z];
+	public static void link(@OriginalArg(0) int x, @OriginalArg(1) int z) {
+		@Pc(7) Tile linkedTile = tiles[0][x][z];
 		for (@Pc(9) int level = 0; level < 3; level++) {
 			@Pc(30) Tile tile = tiles[level][x][z] = tiles[level + 1][x][z];
 			if (tile != null) {
@@ -629,7 +629,7 @@ public final class SceneGraph {
 		if (tiles[0][x][z] == null) {
 			tiles[0][x][z] = new Tile(0, x, z);
 		}
-		tiles[0][x][z].aClass4_Sub19_1 = local7;
+		tiles[0][x][z].linkedTile = linkedTile;
 		tiles[3][x][z] = null;
 	}
 

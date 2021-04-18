@@ -41,7 +41,7 @@ public class Class41_Sub1 extends Class41 {
 	}
 
 	@OriginalMember(owner = "client!ea", name = "a", descriptor = "(IB)V")
-	protected void method934(@OriginalArg(0) int arg0, @OriginalArg(1) byte arg1) {
+	protected void setPixel(@OriginalArg(0) int arg0, @OriginalArg(1) byte arg1) {
 		this.aByteArray8[arg0] = arg1;
 	}
 
@@ -55,7 +55,7 @@ public class Class41_Sub1 extends Class41 {
 		} else if (this.anInt1117 > 255) {
 			this.anInt1117 = 255;
 		}
-		this.method934(this.anInt1112++, (byte) this.anInt1117);
+		this.setPixel(this.anInt1112++, (byte) this.anInt1117);
 		this.anInt1117 = 0;
 	}
 

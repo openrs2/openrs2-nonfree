@@ -242,20 +242,6 @@ public final class Static15 {
 		}
 	}
 
-	@OriginalMember(owner = "client!fc", name = "a", descriptor = "(BIIII)V")
-	public static void method1227(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3) {
-		if (Preferences.soundEffectsVolume == 0 || arg2 == 0 || Static6.anInt4457 >= 50 || arg1 == -1) {
-			return;
-		}
-		Static4.anIntArray294[Static6.anInt4457] = arg1;
-		Static7.anIntArray629[Static6.anInt4457] = arg2;
-		Static3.anIntArray217[Static6.anInt4457] = arg0;
-		Static4.aClass7Array1[Static6.anInt4457] = null;
-		Static7.anIntArray601[Static6.anInt4457] = 0;
-		Static1.anIntArray21[Static6.anInt4457] = arg3;
-		Static6.anInt4457++;
-	}
-
 	@OriginalMember(owner = "client!fd", name = "a", descriptor = "(IIIILclient!vh;BIII)V")
 	public static void method4592(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) LocType arg4, @OriginalArg(6) int arg5, @OriginalArg(7) int arg6, @OriginalArg(8) int arg7) {
 		@Pc(9) int local9 = arg2 & 0x3;
@@ -323,159 +309,6 @@ public final class Static15 {
 			local2 = arg0.dragComponent;
 		}
 		return local2;
-	}
-
-	@OriginalMember(owner = "client!fj", name = "a", descriptor = "(Lclient!wf;III)V")
-	public static void method1427(@OriginalArg(0) Component arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2) {
-		if (arg0.anInt5912 == 1) {
-			Static16.method1497(0L, 0, arg0.id, "", arg0.aString349, (short) 57, -1);
-		}
-		if (arg0.anInt5912 == 2 && !Static3.aBoolean177) {
-			@Pc(35) String local35 = Static12.method780(arg0);
-			if (local35 != null) {
-				Static16.method1497(0L, -1, arg0.id, "<col=00ff00>" + arg0.aString353, local35, (short) 34, -1);
-			}
-		}
-		if (arg0.anInt5912 == 3) {
-			Static16.method1497(0L, 0, arg0.id, "", LocalisedText.CLOSE, (short) 7, -1);
-		}
-		if (arg0.anInt5912 == 4) {
-			Static16.method1497(0L, 0, arg0.id, "", arg0.aString349, (short) 18, -1);
-		}
-		if (arg0.anInt5912 == 5) {
-			Static16.method1497(0L, 0, arg0.id, "", arg0.aString349, (short) 11, -1);
-		}
-		if (arg0.anInt5912 == 6 && Static6.aClass185_14 == null) {
-			Static16.method1497(0L, -1, arg0.id, "", arg0.aString349, (short) 3, -1);
-		}
-		if (arg0.type == 2) {
-			@Pc(160) int local160 = 0;
-			for (@Pc(162) int local162 = 0; local162 < arg0.baseHeight; local162++) {
-				for (@Pc(172) int local172 = 0; local172 < arg0.baseWidth; local172++) {
-					@Pc(187) int local187 = local172 * (arg0.anInt5943 + 32);
-					@Pc(195) int local195 = local162 * (arg0.anInt5964 + 32);
-					if (local160 < 20) {
-						local195 += arg0.anIntArray663[local160];
-						local187 += arg0.anIntArray664[local160];
-					}
-					if (arg2 >= local187 && arg1 >= local195 && local187 + 32 > arg2 && arg1 < local195 + 32) {
-						Static4.anInt2989 = local160;
-						Static6.aClass185_13 = arg0;
-						if (arg0.objTypes[local160] > 0) {
-							@Pc(257) ServerActiveProperties local257 = InterfaceList.getServerActiveProperties(arg0);
-							@Pc(266) ObjType local266 = ObjTypeList.get(arg0.objTypes[local160] - 1);
-							if (Static2.anInt1334 == 1 && local257.isObjOpsEnabled()) {
-								if (Static5.anInt4302 != arg0.id || Static1.anInt314 != local160) {
-									Static16.method1497((long) local266.id, local160, arg0.id, Static7.aString365 + " -> <col=ff9040>" + local266.name, LocalisedText.USE, (short) 15, -1);
-								}
-							} else if (Static3.aBoolean177 && local257.isObjOpsEnabled()) {
-								@Pc(290) ParamType local290 = Static5.anInt4224 == -1 ? null : ParamTypeList.get(Static5.anInt4224);
-								if ((Static5.anInt3560 & 0x10) != 0 && (local290 == null || local266.getParam(Static5.anInt4224, local290.defaultInt) != local290.defaultInt)) {
-									Static16.method1497((long) local266.id, local160, arg0.id, Static2.aString81 + " -> <col=ff9040>" + local266.name, Static4.aString140, (short) 50, Static6.anInt4466);
-								}
-							} else {
-								@Pc(340) String[] local340 = local266.inventoryOps;
-								if (Static5.aBoolean254) {
-									local340 = Static35.method4300(local340);
-								}
-								if (local257.isObjOpsEnabled()) {
-									for (@Pc(353) int local353 = 4; local353 >= 3; local353--) {
-										if (local340 != null && local340[local353] != null) {
-											@Pc(373) byte local373;
-											if (local353 == 3) {
-												local373 = 10;
-											} else {
-												local373 = 51;
-											}
-											Static16.method1497((long) local266.id, local160, arg0.id, "<col=ff9040>" + local266.name, local340[local353], local373, -1);
-										}
-									}
-								}
-								if (local257.isObjUseEnabled()) {
-									Static16.method1497((long) local266.id, local160, arg0.id, "<col=ff9040>" + local266.name, LocalisedText.USE, (short) 9, Static2.anInt1937);
-								}
-								if (local257.isObjOpsEnabled() && local340 != null) {
-									for (@Pc(444) int local444 = 2; local444 >= 0; local444--) {
-										if (local340[local444] != null) {
-											@Pc(455) byte local455 = 0;
-											if (local444 == 0) {
-												local455 = 58;
-											}
-											if (local444 == 1) {
-												local455 = 35;
-											}
-											if (local444 == 2) {
-												local455 = 17;
-											}
-											Static16.method1497((long) local266.id, local160, arg0.id, "<col=ff9040>" + local266.name, local340[local444], local455, -1);
-										}
-									}
-								}
-								@Pc(505) String[] local505 = arg0.aStringArray44;
-								if (Static5.aBoolean254) {
-									local505 = Static35.method4300(local505);
-								}
-								if (local505 != null) {
-									for (@Pc(517) int local517 = 4; local517 >= 0; local517--) {
-										if (local505[local517] != null) {
-											@Pc(533) byte local533 = 0;
-											if (local517 == 0) {
-												local533 = 30;
-											}
-											if (local517 == 1) {
-												local533 = 20;
-											}
-											if (local517 == 2) {
-												local533 = 13;
-											}
-											if (local517 == 3) {
-												local533 = 2;
-											}
-											if (local517 == 4) {
-												local533 = 49;
-											}
-											Static16.method1497((long) local266.id, local160, arg0.id, "<col=ff9040>" + local266.name, local505[local517], local533, -1);
-										}
-									}
-								}
-								Static16.method1497((long) local266.id, local160, arg0.id, "<col=ff9040>" + local266.name, LocalisedText.EXAMINE, (short) 1001, Static3.anInt2232);
-							}
-						}
-					}
-					local160++;
-				}
-			}
-		}
-		if (!arg0.if3) {
-			return;
-		}
-		if (!Static3.aBoolean177) {
-			for (@Pc(704) int local704 = 9; local704 >= 5; local704--) {
-				@Pc(712) String local712 = Static24.method2597(local704, arg0);
-				if (local712 != null) {
-					Static16.method1497((long) (local704 + 1), arg0.createdComponentId, arg0.id, arg0.opBase, local712, (short) 1009, Static32.method3985(arg0, local704));
-				}
-			}
-			@Pc(745) String local745 = Static12.method780(arg0);
-			if (local745 != null) {
-				Static16.method1497(0L, arg0.createdComponentId, arg0.id, arg0.opBase, local745, (short) 34, -1);
-			}
-			for (@Pc(767) int local767 = 4; local767 >= 0; local767--) {
-				@Pc(774) String local774 = Static24.method2597(local767, arg0);
-				if (local774 != null) {
-					Static16.method1497((long) (local767 + 1), arg0.createdComponentId, arg0.id, arg0.opBase, local774, (short) 23, Static32.method3985(arg0, local767));
-				}
-			}
-			if (InterfaceList.getServerActiveProperties(arg0).isResumePauseButtonEnabled()) {
-				if (arg0.pauseText == null) {
-					Static16.method1497(0L, arg0.createdComponentId, arg0.id, "", LocalisedText.CONTINUE, (short) 3, -1);
-				} else {
-					Static16.method1497(0L, arg0.createdComponentId, arg0.id, "", arg0.pauseText, (short) 3, -1);
-				}
-			}
-		} else if (InterfaceList.getServerActiveProperties(arg0).isUseTarget() && (Static5.anInt3560 & 0x20) != 0) {
-			Static16.method1497(0L, arg0.createdComponentId, arg0.id, Static2.aString81 + " -> " + arg0.opBase, Static4.aString140, (short) 1, Static6.anInt4466);
-		}
 	}
 
 	@OriginalMember(owner = "client!fj", name = "a", descriptor = "(IILclient!qc;)V")
@@ -621,8 +454,8 @@ public final class Static15 {
 		Fonts.b12Full.renderLeft(LocalisedText.CHOOSE_OPTION, local3 + 3, local9 + 14, 6116423, -1);
 		@Pc(100) int local100 = Mouse.x;
 		@Pc(102) int local102 = Mouse.y;
-		for (@Pc(104) int local104 = 0; local104 < Static7.anInt5634; local104++) {
-			@Pc(125) int local125 = local9 + (Static7.anInt5634 - local104 - 1) * 15 + 31;
+		for (@Pc(104) int local104 = 0; local104 < MiniMenu.size; local104++) {
+			@Pc(125) int local125 = local9 + (MiniMenu.size - local104 - 1) * 15 + 31;
 			@Pc(127) int local127 = 16777215;
 			if (local100 > local3 && local3 + local11 > local100 && local102 > local125 - 13 && local102 < local125 + 3) {
 				local127 = 16776960;

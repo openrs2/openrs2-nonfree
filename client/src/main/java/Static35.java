@@ -36,11 +36,11 @@ public final class Static35 {
 				Static5.anInt5848 = Mouse.clickY;
 				Static4.anInt3341 = Mouse.clickX;
 			}
-			Static6.aShortArray100[0] = 1006;
-			Static6.aStringArray30[0] = LocalisedText.CANCEL;
-			Static6.aStringArray27[0] = "";
-			Static7.anInt5634 = 1;
-			Static2.anIntArray160[0] = Static7.anInt6050;
+			MiniMenu.actions[0] = 1006;
+			MiniMenu.ops[0] = LocalisedText.CANCEL;
+			MiniMenu.opBases[0] = "";
+			MiniMenu.size = 1;
+			MiniMenu.cursors[0] = Static7.anInt6050;
 		}
 		ParticleManager.redraw((long) client.loop);
 		if (InterfaceList.topLevelInterface != -1) {
@@ -70,7 +70,7 @@ public final class Static35 {
 		} else {
 			SoftwareRaster.resetClip();
 		}
-		Static21.method2054();
+		MiniMenu.sort();
 		if (Static1.aBoolean17) {
 			if (Static7.aBoolean389) {
 				Static25.method2811();
@@ -82,7 +82,7 @@ public final class Static35 {
 		} else if (Static3.anInt2047 != -1) {
 			Static21.method2008(Static3.anInt2047, null, Static6.anInt4679);
 		}
-		@Pc(174) int local174 = Static1.aBoolean17 ? -1 : Static37.method4663();
+		@Pc(174) int local174 = Static1.aBoolean17 ? -1 : MiniMenu.getCursor();
 		if (local174 == -1) {
 			local174 = Static4.anInt3407;
 		}
@@ -127,7 +127,7 @@ public final class Static35 {
 		if (GlRenderer.enabled) {
 			GlRaster.setClip(arg3, arg1, arg0.width + arg3, arg1 + arg0.height);
 		}
-		if (Static5.anInt5206 >= 3) {
+		if (MiniMap.state >= 3) {
 			if (GlRenderer.enabled) {
 				@Pc(41) Sprite local41 = arg0.method4729(false);
 				if (local41 != null) {
@@ -144,735 +144,9 @@ public final class Static35 {
 		Static6.aBooleanArray24[arg2] = true;
 	}
 
-	@OriginalMember(owner = "client!ue", name = "a", descriptor = "(BI)V")
-	public static void method664(@OriginalArg(1) int arg0) {
-		if (arg0 < 0) {
-			return;
-		}
-		@Pc(15) int local15 = Static2.anIntArray117[arg0];
-		@Pc(19) int local19 = Static6.anIntArray543[arg0];
-		@Pc(24) int local24 = (int) Static4.aLongArray56[arg0];
-		@Pc(28) int local28 = Static6.aShortArray100[arg0];
-		@Pc(32) long local32 = Static4.aLongArray56[arg0];
-		if (local28 >= 2000) {
-			local28 -= 2000;
-		}
-		if (local28 == 24) {
-			@Pc(46) Player local46 = PlayerList.players[local24];
-			if (local46 != null) {
-				Static6.anInt5177 = Mouse.clickX;
-				Static7.anInt6008 = 2;
-				Static2.anInt1629 = 0;
-				Static4.anInt3275 = Mouse.clickY;
-				Protocol.outboundBuffer.writeOpcode(52);
-				Protocol.outboundBuffer.writeShort(local24);
-				Protocol.outboundBuffer.writeByte(Keyboard.pressedKeys[82] ? 1 : 0);
-				PathFinder.findPath(PlayerList.self.movementQueueX[0], PlayerList.self.movementQueueZ[0], local15, local19, 0, local46.getSize(), local46.getSize(), 0, 0);
-			}
-		}
-		if (local28 == 17) {
-			Protocol.outboundBuffer.writeOpcode(95);
-			Protocol.outboundBuffer.writeShort(local24);
-			Protocol.outboundBuffer.writeIntAlt3(local19);
-			Protocol.outboundBuffer.writeShortLEA(local15);
-			Static2.anInt2246 = 0;
-			Static1.aClass185_3 = InterfaceList.getComponent(local19);
-			Static5.anInt3884 = local15;
-		}
-		if (local28 == 33) {
-			@Pc(146) Npc local146 = NpcList.npcs[local24];
-			if (local146 != null) {
-				Static6.anInt5177 = Mouse.clickX;
-				Static7.anInt6008 = 2;
-				Static4.anInt3275 = Mouse.clickY;
-				Static2.anInt1629 = 0;
-				Protocol.outboundBuffer.writeOpcode(160);
-				Protocol.outboundBuffer.writeByteC(Keyboard.pressedKeys[82] ? 1 : 0);
-				Protocol.outboundBuffer.writeIntLE2(Static5.anInt4302);
-				Protocol.outboundBuffer.writeShortLE2(local24);
-				Protocol.outboundBuffer.writeShort(Static1.anInt314);
-				Protocol.outboundBuffer.writeShortLEA(Static1.anInt243);
-				PathFinder.findPath(PlayerList.self.movementQueueX[0], PlayerList.self.movementQueueZ[0], local15, local19, 0, local146.getSize(), local146.getSize(), 0, 0);
-			}
-		}
-		if (local28 == 40) {
-			Static4.anInt3275 = Mouse.clickY;
-			Static7.anInt6008 = 2;
-			Static6.anInt5177 = Mouse.clickX;
-			Static2.anInt1629 = 0;
-			Protocol.outboundBuffer.writeOpcode(134);
-			Protocol.outboundBuffer.writeByteS(Keyboard.pressedKeys[82] ? 1 : 0);
-			Protocol.outboundBuffer.writeShortA(Integer.MAX_VALUE & (int) (local32 >>> 32));
-			Protocol.outboundBuffer.writeShortA(Static7.originZ + local19);
-			Protocol.outboundBuffer.writeShortLEA(Static5.originX + local15);
-			Static13.method1004(local19, local32, local15);
-		}
-		if (local28 == 46) {
-			Static2.anInt1629 = 0;
-			Static6.anInt5177 = Mouse.clickX;
-			Static7.anInt6008 = 2;
-			Static4.anInt3275 = Mouse.clickY;
-			Protocol.outboundBuffer.writeOpcode(227);
-			Protocol.outboundBuffer.writeShort(local15 + Static5.originX);
-			Protocol.outboundBuffer.writeByte(Keyboard.pressedKeys[82] ? 1 : 0);
-			Protocol.outboundBuffer.writeShort(Static7.originZ + local19);
-			Protocol.outboundBuffer.writeShortLEA(local24);
-			PathFinder.findPath(PlayerList.self.movementQueueX[0], PlayerList.self.movementQueueZ[0], local15, local19, 0, 0, 0, 0, 0);
-		}
-		if (local28 == 21) {
-			@Pc(346) Player local346 = PlayerList.players[local24];
-			if (local346 != null) {
-				Static4.anInt3275 = Mouse.clickY;
-				Static6.anInt5177 = Mouse.clickX;
-				Static7.anInt6008 = 2;
-				Static2.anInt1629 = 0;
-				Protocol.outboundBuffer.writeOpcode(123);
-				Protocol.outboundBuffer.writeShortLEA(local24);
-				Protocol.outboundBuffer.writeInt(Static5.anInt4302);
-				Protocol.outboundBuffer.writeShortA(Static1.anInt314);
-				Protocol.outboundBuffer.writeByteS(Keyboard.pressedKeys[82] ? 1 : 0);
-				Protocol.outboundBuffer.writeShortLEA(Static1.anInt243);
-				PathFinder.findPath(PlayerList.self.movementQueueX[0], PlayerList.self.movementQueueZ[0], local15, local19, 0, local346.getSize(), local346.getSize(), 0, 0);
-			}
-		}
-		if (local28 == 1004) {
-			Static4.anInt3275 = Mouse.clickY;
-			Static6.anInt5177 = Mouse.clickX;
-			Static2.anInt1629 = 0;
-			Static7.anInt6008 = 2;
-			Protocol.outboundBuffer.writeOpcode(72);
-			Protocol.outboundBuffer.writeShort(local24);
-		}
-		if (local28 == 19) {
-			if (local24 == 0) {
-				Static2.anInt1767 = 1;
-				Static27.method3186(Player.level, local15, local19);
-			} else if (local24 == 1) {
-				Protocol.outboundBuffer.writeOpcode(204);
-				Protocol.outboundBuffer.writeShortA(local19 + Static7.originZ);
-				Protocol.outboundBuffer.writeShortA(Static2.anInt1367);
-				Protocol.outboundBuffer.writeIntAlt3(Static1.anInt1053);
-				Protocol.outboundBuffer.writeShortLE2(local15 + Static5.originX);
-			}
-		}
-		if (local28 == 28) {
-			Static4.anInt3275 = Mouse.clickY;
-			Static7.anInt6008 = 2;
-			Static6.anInt5177 = Mouse.clickX;
-			Static2.anInt1629 = 0;
-			Protocol.outboundBuffer.writeOpcode(119);
-			Protocol.outboundBuffer.writeIntAlt3(Static5.anInt4302);
-			Protocol.outboundBuffer.writeShort(Static7.originZ + local19);
-			Protocol.outboundBuffer.writeShortA(Static1.anInt243);
-			Protocol.outboundBuffer.writeShortLE2(Static1.anInt314);
-			Protocol.outboundBuffer.writeShortLEA(local24);
-			Protocol.outboundBuffer.writeShortLE2(Static5.originX + local15);
-			Protocol.outboundBuffer.writeByteS(Keyboard.pressedKeys[82] ? 1 : 0);
-			PathFinder.findPath(PlayerList.self.movementQueueX[0], PlayerList.self.movementQueueZ[0], local15, local19, 0, 0, 0, 0, 0);
-		}
-		if (local28 == 36) {
-			@Pc(582) Npc local582 = NpcList.npcs[local24];
-			if (local582 != null) {
-				Static7.anInt6008 = 2;
-				Static2.anInt1629 = 0;
-				Static6.anInt5177 = Mouse.clickX;
-				Static4.anInt3275 = Mouse.clickY;
-				Protocol.outboundBuffer.writeOpcode(37);
-				Protocol.outboundBuffer.writeByte(Keyboard.pressedKeys[82] ? 1 : 0);
-				Protocol.outboundBuffer.writeShortLEA(local24);
-				PathFinder.findPath(PlayerList.self.movementQueueX[0], PlayerList.self.movementQueueZ[0], local15, local19, 0, local582.getSize(), local582.getSize(), 0, 0);
-			}
-		}
-		if (local28 == 12) {
-			@Pc(649) Player local649 = PlayerList.players[local24];
-			if (local649 != null) {
-				Static7.anInt6008 = 2;
-				Static6.anInt5177 = Mouse.clickX;
-				Static2.anInt1629 = 0;
-				Static4.anInt3275 = Mouse.clickY;
-				Protocol.outboundBuffer.writeOpcode(4);
-				Protocol.outboundBuffer.writeByte(Keyboard.pressedKeys[82] ? 1 : 0);
-				Protocol.outboundBuffer.writeShortA(local24);
-				PathFinder.findPath(PlayerList.self.movementQueueX[0], PlayerList.self.movementQueueZ[0], local15, local19, 0, local649.getSize(), local649.getSize(), 0, 0);
-			}
-		}
-		if (local28 == 10) {
-			Protocol.outboundBuffer.writeOpcode(102);
-			Protocol.outboundBuffer.writeInt(local19);
-			Protocol.outboundBuffer.writeShortA(local15);
-			Protocol.outboundBuffer.writeShort(local24);
-			Static2.anInt2246 = 0;
-			Static1.aClass185_3 = InterfaceList.getComponent(local19);
-			Static5.anInt3884 = local15;
-		}
-		if (local28 == 25) {
-			@Pc(744) Npc local744 = NpcList.npcs[local24];
-			if (local744 != null) {
-				Static2.anInt1629 = 0;
-				Static4.anInt3275 = Mouse.clickY;
-				Static7.anInt6008 = 2;
-				Static6.anInt5177 = Mouse.clickX;
-				Protocol.outboundBuffer.writeOpcode(33);
-				Protocol.outboundBuffer.writeShortLEA(local24);
-				Protocol.outboundBuffer.writeByteA(Keyboard.pressedKeys[82] ? 1 : 0);
-				PathFinder.findPath(PlayerList.self.movementQueueX[0], PlayerList.self.movementQueueZ[0], local15, local19, 0, local744.getSize(), local744.getSize(), 0, 0);
-			}
-		}
-		if (local28 == 1007) {
-			Static6.anInt5177 = Mouse.clickX;
-			Static2.anInt1629 = 0;
-			Static4.anInt3275 = Mouse.clickY;
-			Static7.anInt6008 = 2;
-			Protocol.outboundBuffer.writeOpcode(176);
-			Protocol.outboundBuffer.writeShort(local24);
-		}
-		if (local28 == 4) {
-			Static7.anInt6008 = 2;
-			Static4.anInt3275 = Mouse.clickY;
-			Static2.anInt1629 = 0;
-			Static6.anInt5177 = Mouse.clickX;
-			Protocol.outboundBuffer.writeOpcode(89);
-			Protocol.outboundBuffer.writeShort((int) (local32 >>> 32) & Integer.MAX_VALUE);
-			Protocol.outboundBuffer.writeByteC(Keyboard.pressedKeys[82] ? 1 : 0);
-			Protocol.outboundBuffer.writeShortLEA(Static5.originX + local15);
-			Protocol.outboundBuffer.writeShortLE2(Static2.anInt1367);
-			Protocol.outboundBuffer.writeShort(Static7.originZ + local19);
-			Protocol.outboundBuffer.writeIntAlt3(Static1.anInt1053);
-			Static13.method1004(local19, local32, local15);
-		}
-		if (local28 == 6) {
-			Static6.anInt5177 = Mouse.clickX;
-			Static2.anInt1629 = 0;
-			Static7.anInt6008 = 2;
-			Static4.anInt3275 = Mouse.clickY;
-			Protocol.outboundBuffer.writeOpcode(232);
-			Protocol.outboundBuffer.writeShortLE2(local19 + Static7.originZ);
-			Protocol.outboundBuffer.writeShortLEA(local24);
-			Protocol.outboundBuffer.writeByteA(Keyboard.pressedKeys[82] ? 1 : 0);
-			Protocol.outboundBuffer.writeShortLE2(local15 + Static5.originX);
-			PathFinder.findPath(PlayerList.self.movementQueueX[0], PlayerList.self.movementQueueZ[0], local15, local19, 0, 0, 0, 0, 0);
-		}
-		if (local28 == 42) {
-			@Pc(969) Npc local969 = NpcList.npcs[local24];
-			if (local969 != null) {
-				Static2.anInt1629 = 0;
-				Static6.anInt5177 = Mouse.clickX;
-				Static4.anInt3275 = Mouse.clickY;
-				Static7.anInt6008 = 2;
-				Protocol.outboundBuffer.writeOpcode(155);
-				Protocol.outboundBuffer.writeShortA(local24);
-				Protocol.outboundBuffer.writeByteC(Keyboard.pressedKeys[82] ? 1 : 0);
-				Protocol.outboundBuffer.writeShort(Static2.anInt1367);
-				Protocol.outboundBuffer.writeIntAlt3(Static1.anInt1053);
-				PathFinder.findPath(PlayerList.self.movementQueueX[0], PlayerList.self.movementQueueZ[0], local15, local19, 0, local969.getSize(), local969.getSize(), 0, 0);
-			}
-		}
-		if (local28 == 31) {
-			@Pc(1044) Player local1044 = PlayerList.players[local24];
-			if (local1044 != null) {
-				Static4.anInt3275 = Mouse.clickY;
-				Static2.anInt1629 = 0;
-				Static6.anInt5177 = Mouse.clickX;
-				Static7.anInt6008 = 2;
-				Protocol.outboundBuffer.writeOpcode(105);
-				Protocol.outboundBuffer.writeShort(local24);
-				Protocol.outboundBuffer.writeByte(Keyboard.pressedKeys[82] ? 1 : 0);
-				PathFinder.findPath(PlayerList.self.movementQueueX[0], PlayerList.self.movementQueueZ[0], local15, local19, 0, local1044.getSize(), local1044.getSize(), 0, 0);
-			}
-		}
-		if (local28 == 47) {
-			if (local24 == 0) {
-				Static6.anInt4946 = 1;
-				Static27.method3186(Player.level, local15, local19);
-			} else if (LoginManager.staffModLevel > 0 && Keyboard.pressedKeys[82] && Keyboard.pressedKeys[81]) {
-				Static24.method2945(Static5.originX + local15, Static7.originZ + local19, Player.level);
-			} else {
-				Protocol.outboundBuffer.writeOpcode(85);
-				Protocol.outboundBuffer.writeShortLEA(Static5.originX + local15);
-				Protocol.outboundBuffer.writeShortLE2(Static7.originZ + local19);
-			}
-		}
-		if (local28 == 59) {
-			@Pc(1170) Npc local1170 = NpcList.npcs[local24];
-			if (local1170 != null) {
-				Static4.anInt3275 = Mouse.clickY;
-				Static6.anInt5177 = Mouse.clickX;
-				Static2.anInt1629 = 0;
-				Static7.anInt6008 = 2;
-				Protocol.outboundBuffer.writeOpcode(53);
-				Protocol.outboundBuffer.writeShortLEA(local24);
-				Protocol.outboundBuffer.writeByteS(Keyboard.pressedKeys[82] ? 1 : 0);
-				PathFinder.findPath(PlayerList.self.movementQueueX[0], PlayerList.self.movementQueueZ[0], local15, local19, 0, local1170.getSize(), local1170.getSize(), 0, 0);
-			}
-		}
-		if (local28 == 51) {
-			Protocol.outboundBuffer.writeOpcode(88);
-			Protocol.outboundBuffer.writeShortLEA(local24);
-			Protocol.outboundBuffer.writeIntAlt3Reverse(local19);
-			Protocol.outboundBuffer.writeShortLEA(local15);
-			Static2.anInt2246 = 0;
-			Static1.aClass185_3 = InterfaceList.getComponent(local19);
-			Static5.anInt3884 = local15;
-		}
-		if (local28 == 13) {
-			Protocol.outboundBuffer.writeOpcode(242);
-			Protocol.outboundBuffer.writeShortLEA(local15);
-			Protocol.outboundBuffer.writeShortLEA(local24);
-			Protocol.outboundBuffer.writeIntAlt3Reverse(local19);
-			Static2.anInt2246 = 0;
-			Static1.aClass185_3 = InterfaceList.getComponent(local19);
-			Static5.anInt3884 = local15;
-		}
-		if (local28 == 3 && Static6.aClass185_14 == null) {
-			Static37.method4736(local15, local19);
-			Static6.aClass185_14 = InterfaceList.getCreatedComponent(local19, local15);
-			Static28.method3270(Static6.aClass185_14);
-		}
-		if (local28 == 1) {
-			Protocol.outboundBuffer.writeOpcode(40);
-			Protocol.outboundBuffer.writeIntAlt3Reverse(local19);
-			Protocol.outboundBuffer.writeShort(Static2.anInt1367);
-			Protocol.outboundBuffer.writeShortLE2(local15);
-			Protocol.outboundBuffer.writeInt(Static1.anInt1053);
-		}
-		if (local28 == 29) {
-			@Pc(1354) Player local1354 = PlayerList.players[local24];
-			if (local1354 != null) {
-				Static2.anInt1629 = 0;
-				Static4.anInt3275 = Mouse.clickY;
-				Static6.anInt5177 = Mouse.clickX;
-				Static7.anInt6008 = 2;
-				Protocol.outboundBuffer.writeOpcode(148);
-				Protocol.outboundBuffer.writeShortA(local24);
-				Protocol.outboundBuffer.writeByteA(Keyboard.pressedKeys[82] ? 1 : 0);
-				PathFinder.findPath(PlayerList.self.movementQueueX[0], PlayerList.self.movementQueueZ[0], local15, local19, 0, local1354.getSize(), local1354.getSize(), 0, 0);
-			}
-		}
-		if (local28 == 11) {
-			Protocol.outboundBuffer.writeOpcode(158);
-			Protocol.outboundBuffer.writeInt(local19);
-			@Pc(1434) Component local1434 = InterfaceList.getComponent(local19);
-			if (local1434.cs1Scripts != null && local1434.cs1Scripts[0][0] == 5) {
-				@Pc(1452) int local1452 = local1434.cs1Scripts[0][1];
-				if (local1434.cs1ComparisonOperands[0] != VarpDomain.varps[local1452]) {
-					VarpDomain.varps[local1452] = local1434.cs1ComparisonOperands[0];
-					Static29.method3534(local1452);
-				}
-			}
-		}
-		if (local28 == 32) {
-			Static6.anInt5177 = Mouse.clickX;
-			Static7.anInt6008 = 2;
-			Static2.anInt1629 = 0;
-			Static4.anInt3275 = Mouse.clickY;
-			Protocol.outboundBuffer.writeOpcode(159);
-			Protocol.outboundBuffer.writeShortLEA(local15 + Static5.originX);
-			Protocol.outboundBuffer.writeShort(Static7.originZ + local19);
-			Protocol.outboundBuffer.writeByte(Keyboard.pressedKeys[82] ? 1 : 0);
-			Protocol.outboundBuffer.writeShortLEA((int) (local32 >>> 32) & Integer.MAX_VALUE);
-			Static13.method1004(local19, local32, local15);
-		}
-		if (local28 == 39) {
-			@Pc(1545) Npc local1545 = NpcList.npcs[local24];
-			if (local1545 != null) {
-				Static6.anInt5177 = Mouse.clickX;
-				Static4.anInt3275 = Mouse.clickY;
-				Static2.anInt1629 = 0;
-				Static7.anInt6008 = 2;
-				Protocol.outboundBuffer.writeOpcode(245);
-				Protocol.outboundBuffer.writeShort(local24);
-				Protocol.outboundBuffer.writeByteS(Keyboard.pressedKeys[82] ? 1 : 0);
-				PathFinder.findPath(PlayerList.self.movementQueueX[0], PlayerList.self.movementQueueZ[0], local15, local19, 0, local1545.getSize(), local1545.getSize(), 0, 0);
-			}
-		}
-		if (local28 == 15) {
-			Protocol.outboundBuffer.writeOpcode(58);
-			Protocol.outboundBuffer.writeShort(local24);
-			Protocol.outboundBuffer.writeIntAlt3(local19);
-			Protocol.outboundBuffer.writeShort(Static1.anInt314);
-			Protocol.outboundBuffer.writeShort(local15);
-			Protocol.outboundBuffer.writeShortA(Static1.anInt243);
-			Protocol.outboundBuffer.writeIntAlt3(Static5.anInt4302);
-			Static2.anInt2246 = 0;
-			Static1.aClass185_3 = InterfaceList.getComponent(local19);
-			Static5.anInt3884 = local15;
-		}
-		if (local28 == 57) {
-			@Pc(1660) Component local1660 = InterfaceList.getComponent(local19);
-			@Pc(1662) boolean local1662 = true;
-			if (local1660.anInt5904 > 0) {
-				local1662 = Static36.method4402(local1660);
-			}
-			if (local1662) {
-				Protocol.outboundBuffer.writeOpcode(158);
-				Protocol.outboundBuffer.writeInt(local19);
-			}
-		}
-		if (local28 == 30) {
-			Protocol.outboundBuffer.writeOpcode(81);
-			Protocol.outboundBuffer.writeShortLE2(local15);
-			Protocol.outboundBuffer.writeShortLEA(local24);
-			Protocol.outboundBuffer.writeIntLE2(local19);
-			Static2.anInt2246 = 0;
-			Static1.aClass185_3 = InterfaceList.getComponent(local19);
-			Static5.anInt3884 = local15;
-		}
-		if (local28 == 14) {
-			@Pc(1728) Player local1728 = PlayerList.players[local24];
-			if (local1728 != null) {
-				Static7.anInt6008 = 2;
-				Static4.anInt3275 = Mouse.clickY;
-				Static2.anInt1629 = 0;
-				Static6.anInt5177 = Mouse.clickX;
-				Protocol.outboundBuffer.writeOpcode(77);
-				Protocol.outboundBuffer.writeShortLE2(local24);
-				Protocol.outboundBuffer.writeByteS(Keyboard.pressedKeys[82] ? 1 : 0);
-				PathFinder.findPath(PlayerList.self.movementQueueX[0], PlayerList.self.movementQueueZ[0], local15, local19, 0, local1728.getSize(), local1728.getSize(), 0, 0);
-			}
-		}
-		if (local28 == 26) {
-			if (local24 == 0) {
-				Static27.method3186(Player.level, local15, local19);
-			} else if (local24 == 1) {
-				if (LoginManager.staffModLevel > 0 && Keyboard.pressedKeys[82] && Keyboard.pressedKeys[81]) {
-					Static24.method2945(local15 + Static5.originX, local19 + Static7.originZ, Player.level);
-				} else {
-					Static37.method4661(local15, 1, local19);
-					Protocol.outboundBuffer.writeByte(Static2.anInt1941);
-					Protocol.outboundBuffer.writeByte(Static7.anInt5798);
-					Protocol.outboundBuffer.writeShort((int) Static5.aFloat97);
-					Protocol.outboundBuffer.writeByte(57);
-					Protocol.outboundBuffer.writeByte(Static6.anInt3585);
-					Protocol.outboundBuffer.writeByte(Static6.anInt4761);
-					Protocol.outboundBuffer.writeByte(89);
-					Protocol.outboundBuffer.writeShort(PlayerList.self.xFine);
-					Protocol.outboundBuffer.writeShort(PlayerList.self.zFine);
-					Protocol.outboundBuffer.writeByte(Static2.anInt946);
-					Protocol.outboundBuffer.writeByte(63);
-					PathFinder.findPath(PlayerList.self.movementQueueX[0], PlayerList.self.movementQueueZ[0], local15, local19, 0, 0, 0, 0, 0);
-				}
-			}
-		}
-		if (local28 == 9) {
-			Static26.method4812();
-			@Pc(1913) Component local1913 = InterfaceList.getComponent(local19);
-			Static1.anInt314 = local15;
-			Static2.anInt1334 = 1;
-			Static5.anInt4302 = local19;
-			Static1.anInt243 = local24;
-			Static28.method3270(local1913);
-			Static7.aString365 = "<col=ff9040>" + ObjTypeList.get(local24).name + "<col=ffffff>";
-			if (Static7.aString365 == null) {
-				Static7.aString365 = "null";
-			}
-			return;
-		}
-		if (local28 == 1012 || local28 == 1002 || local28 == 1008 || local28 == 1003 || local28 == 1011) {
-			Static13.method1007(local24, local28, local15);
-		}
-		if (local28 == 48) {
-			Static6.anInt5177 = Mouse.clickX;
-			Static7.anInt6008 = 2;
-			Static2.anInt1629 = 0;
-			Static4.anInt3275 = Mouse.clickY;
-			Protocol.outboundBuffer.writeOpcode(28);
-			Protocol.outboundBuffer.writeShortLEA(local19 + Static7.originZ);
-			Protocol.outboundBuffer.writeInt(Static1.anInt1053);
-			Protocol.outboundBuffer.writeShortLE2(Static2.anInt1367);
-			Protocol.outboundBuffer.writeShort(local24);
-			Protocol.outboundBuffer.writeShortLE2(local15 + Static5.originX);
-			Protocol.outboundBuffer.writeByteS(Keyboard.pressedKeys[82] ? 1 : 0);
-			PathFinder.findPath(PlayerList.self.movementQueueX[0], PlayerList.self.movementQueueZ[0], local15, local19, 0, 0, 0, 0, 0);
-		}
-		if (local28 == 5) {
-			@Pc(2053) Player local2053 = PlayerList.players[local24];
-			if (local2053 != null) {
-				Static7.anInt6008 = 2;
-				Static6.anInt5177 = Mouse.clickX;
-				Static4.anInt3275 = Mouse.clickY;
-				Static2.anInt1629 = 0;
-				Protocol.outboundBuffer.writeOpcode(224);
-				Protocol.outboundBuffer.writeShortA(local24);
-				Protocol.outboundBuffer.writeShort(Static2.anInt1367);
-				Protocol.outboundBuffer.writeIntLE2(Static1.anInt1053);
-				Protocol.outboundBuffer.writeByteS(Keyboard.pressedKeys[82] ? 1 : 0);
-				PathFinder.findPath(PlayerList.self.movementQueueX[0], PlayerList.self.movementQueueZ[0], local15, local19, 0, local2053.getSize(), local2053.getSize(), 0, 0);
-			}
-		}
-		if (local28 == 37) {
-			Static2.anInt1629 = 0;
-			Static7.anInt6008 = 2;
-			Static4.anInt3275 = Mouse.clickY;
-			Static6.anInt5177 = Mouse.clickX;
-			Protocol.outboundBuffer.writeOpcode(48);
-			Protocol.outboundBuffer.writeShort(Static5.originX + local15);
-			Protocol.outboundBuffer.writeShortA((int) (local32 >>> 32) & Integer.MAX_VALUE);
-			Protocol.outboundBuffer.writeByteS(Keyboard.pressedKeys[82] ? 1 : 0);
-			Protocol.outboundBuffer.writeShort(Static7.originZ + local19);
-			Static13.method1004(local19, local32, local15);
-		}
-		if (local28 == 34) {
-			@Pc(2187) Component local2187 = InterfaceList.getCreatedComponent(local19, local15);
-			if (local2187 != null) {
-				Static26.method4812();
-				@Pc(2195) ServerActiveProperties local2195 = InterfaceList.getServerActiveProperties(local2187);
-				Static21.method2081(local2195.getTargetMask(), local2195.targetParam, local2187.anInt5890, local15, local2187.anInt5930, local19);
-				Static2.anInt1334 = 0;
-				Static4.aString140 = Static12.method780(local2187);
-				if (Static4.aString140 == null) {
-					Static4.aString140 = "Null";
-				}
-				if (local2187.if3) {
-					Static2.aString81 = local2187.opBase + "<col=ffffff>";
-				} else {
-					Static2.aString81 = "<col=00ff00>" + local2187.aString353 + "<col=ffffff>";
-				}
-			}
-			return;
-		}
-		if (local28 == 49) {
-			Protocol.outboundBuffer.writeOpcode(145);
-			Protocol.outboundBuffer.writeShortA(local15);
-			Protocol.outboundBuffer.writeIntAlt3(local19);
-			Protocol.outboundBuffer.writeShortA(local24);
-			Static2.anInt2246 = 0;
-			Static1.aClass185_3 = InterfaceList.getComponent(local19);
-			Static5.anInt3884 = local15;
-		}
-		if (local28 == 58) {
-			Protocol.outboundBuffer.writeOpcode(214);
-			Protocol.outboundBuffer.writeShortLEA(local15);
-			Protocol.outboundBuffer.writeShortA(local24);
-			Protocol.outboundBuffer.writeInt(local19);
-			Static2.anInt2246 = 0;
-			Static1.aClass185_3 = InterfaceList.getComponent(local19);
-			Static5.anInt3884 = local15;
-		}
-		if (local28 == 8) {
-			@Pc(2321) Npc local2321 = NpcList.npcs[local24];
-			if (local2321 != null) {
-				Static6.anInt5177 = Mouse.clickX;
-				Static7.anInt6008 = 2;
-				Static2.anInt1629 = 0;
-				Static4.anInt3275 = Mouse.clickY;
-				Protocol.outboundBuffer.writeOpcode(12);
-				Protocol.outboundBuffer.writeShortLE2(local24);
-				Protocol.outboundBuffer.writeByte(Keyboard.pressedKeys[82] ? 1 : 0);
-				PathFinder.findPath(PlayerList.self.movementQueueX[0], PlayerList.self.movementQueueZ[0], local15, local19, 0, local2321.getSize(), local2321.getSize(), 0, 0);
-			}
-		}
-		if (local28 == 35) {
-			Protocol.outboundBuffer.writeOpcode(103);
-			Protocol.outboundBuffer.writeIntAlt3Reverse(local19);
-			Protocol.outboundBuffer.writeShortLE2(local15);
-			Protocol.outboundBuffer.writeShort(local24);
-			Static2.anInt2246 = 0;
-			Static1.aClass185_3 = InterfaceList.getComponent(local19);
-			Static5.anInt3884 = local15;
-		}
-		if (local28 == 43) {
-			@Pc(2423) Player local2423 = PlayerList.players[local24];
-			if (local2423 != null) {
-				Static4.anInt3275 = Mouse.clickY;
-				Static6.anInt5177 = Mouse.clickX;
-				Static2.anInt1629 = 0;
-				Static7.anInt6008 = 2;
-				Protocol.outboundBuffer.writeOpcode(212);
-				Protocol.outboundBuffer.writeShortA(local24);
-				Protocol.outboundBuffer.writeByteA(Keyboard.pressedKeys[82] ? 1 : 0);
-				PathFinder.findPath(PlayerList.self.movementQueueX[0], PlayerList.self.movementQueueZ[0], local15, local19, 0, local2423.getSize(), local2423.getSize(), 0, 0);
-			}
-		}
-		if (local28 == 16) {
-			Static4.anInt3275 = Mouse.clickY;
-			Static7.anInt6008 = 2;
-			Static6.anInt5177 = Mouse.clickX;
-			Static2.anInt1629 = 0;
-			Protocol.outboundBuffer.writeOpcode(116);
-			Protocol.outboundBuffer.writeShort(Static1.anInt314);
-			Protocol.outboundBuffer.writeShortLEA(local15 + Static5.originX);
-			Protocol.outboundBuffer.writeShortLEA((int) (local32 >>> 32) & Integer.MAX_VALUE);
-			Protocol.outboundBuffer.writeIntLE2(Static5.anInt4302);
-			Protocol.outboundBuffer.writeByteC(Keyboard.pressedKeys[82] ? 1 : 0);
-			Protocol.outboundBuffer.writeShortLE2(Static7.originZ + local19);
-			Protocol.outboundBuffer.writeShortLE2(Static1.anInt243);
-			Static13.method1004(local19, local32, local15);
-		}
-		if (local28 == 44) {
-			Static4.anInt3275 = Mouse.clickY;
-			Static6.anInt5177 = Mouse.clickX;
-			Static2.anInt1629 = 0;
-			Static7.anInt6008 = 2;
-			Protocol.outboundBuffer.writeOpcode(3);
-			Protocol.outboundBuffer.writeByteC(Keyboard.pressedKeys[82] ? 1 : 0);
-			Protocol.outboundBuffer.writeShortLE2(Static7.originZ + local19);
-			Protocol.outboundBuffer.writeShortLE2(local24);
-			Protocol.outboundBuffer.writeShortA(local15 + Static5.originX);
-			PathFinder.findPath(PlayerList.self.movementQueueX[0], PlayerList.self.movementQueueZ[0], local15, local19, 0, 0, 0, 0, 0);
-		}
-		if (local28 == 23 || local28 == 1009) {
-			Static37.method4752(local19, local15, local24, Static6.aStringArray27[arg0]);
-		}
-		if (local28 == 1010) {
-			Static2.anInt1629 = 0;
-			Static7.anInt6008 = 2;
-			Static4.anInt3275 = Mouse.clickY;
-			Static6.anInt5177 = Mouse.clickX;
-			@Pc(2659) Npc local2659 = NpcList.npcs[local24];
-			if (local2659 != null) {
-				@Pc(2665) NpcType local2665 = local2659.type;
-				if (local2665.multiNpcs != null) {
-					local2665 = local2665.getMultiNpc();
-				}
-				if (local2665 != null) {
-					Protocol.outboundBuffer.writeOpcode(65);
-					Protocol.outboundBuffer.writeShortLE2(local2665.id);
-				}
-			}
-		}
-		if (local28 == 7) {
-			Static21.method2063();
-		}
-		if (local28 == 1005) {
-			Static4.anInt3275 = Mouse.clickY;
-			Static7.anInt6008 = 2;
-			Static6.anInt5177 = Mouse.clickX;
-			Static2.anInt1629 = 0;
-			Protocol.outboundBuffer.writeOpcode(60);
-			Protocol.outboundBuffer.writeShortA(local19 + Static7.originZ);
-			Protocol.outboundBuffer.writeShortLE2((int) (local32 >>> 32) & Integer.MAX_VALUE);
-			Protocol.outboundBuffer.writeByte(Keyboard.pressedKeys[82] ? 1 : 0);
-			Protocol.outboundBuffer.writeShortLE2(Static5.originX + local15);
-			Static13.method1004(local19, local32, local15);
-		}
-		if (local28 == 41) {
-			Static7.anInt6008 = 2;
-			Static2.anInt1629 = 0;
-			Static6.anInt5177 = Mouse.clickX;
-			Static4.anInt3275 = Mouse.clickY;
-			Protocol.outboundBuffer.writeOpcode(92);
-			Protocol.outboundBuffer.writeByteS(Keyboard.pressedKeys[82] ? 1 : 0);
-			Protocol.outboundBuffer.writeShortLE2((int) (local32 >>> 32) & Integer.MAX_VALUE);
-			Protocol.outboundBuffer.writeShortA(local15 + Static5.originX);
-			Protocol.outboundBuffer.writeShortA(local19 + Static7.originZ);
-			Static13.method1004(local19, local32, local15);
-		}
-		if (local28 == 50) {
-			Protocol.outboundBuffer.writeOpcode(177);
-			Protocol.outboundBuffer.writeIntAlt3Reverse(local19);
-			Protocol.outboundBuffer.writeShort(local24);
-			Protocol.outboundBuffer.writeIntLE2(Static1.anInt1053);
-			Protocol.outboundBuffer.writeShortLE2(local15);
-			Protocol.outboundBuffer.writeShortLE2(Static2.anInt1367);
-			Static2.anInt2246 = 0;
-			Static1.aClass185_3 = InterfaceList.getComponent(local19);
-			Static5.anInt3884 = local15;
-		}
-		if (local28 == 20) {
-			Protocol.outboundBuffer.writeOpcode(124);
-			Protocol.outboundBuffer.writeShortLEA(local15);
-			Protocol.outboundBuffer.writeShortLEA(local24);
-			Protocol.outboundBuffer.writeIntLE2(local19);
-			Static2.anInt2246 = 0;
-			Static1.aClass185_3 = InterfaceList.getComponent(local19);
-			Static5.anInt3884 = local15;
-		}
-		if (local28 == 2) {
-			Protocol.outboundBuffer.writeOpcode(205);
-			Protocol.outboundBuffer.writeIntAlt3Reverse(local19);
-			Protocol.outboundBuffer.writeShortLE2(local15);
-			Protocol.outboundBuffer.writeShortA(local24);
-			Static2.anInt2246 = 0;
-			Static1.aClass185_3 = InterfaceList.getComponent(local19);
-			Static5.anInt3884 = local15;
-		}
-		if (local28 == 45) {
-			Static7.anInt6008 = 2;
-			Static6.anInt5177 = Mouse.clickX;
-			Static4.anInt3275 = Mouse.clickY;
-			Static2.anInt1629 = 0;
-			Protocol.outboundBuffer.writeOpcode(54);
-			Protocol.outboundBuffer.writeByte(Keyboard.pressedKeys[82] ? 1 : 0);
-			Protocol.outboundBuffer.writeShortLE2(Static7.originZ + local19);
-			Protocol.outboundBuffer.writeShort(local24);
-			Protocol.outboundBuffer.writeShort(local15 + Static5.originX);
-			PathFinder.findPath(PlayerList.self.movementQueueX[0], PlayerList.self.movementQueueZ[0], local15, local19, 0, 0, 0, 0, 0);
-		}
-		if (local28 == 22) {
-			@Pc(3012) Player local3012 = PlayerList.players[local24];
-			if (local3012 != null) {
-				Static4.anInt3275 = Mouse.clickY;
-				Static7.anInt6008 = 2;
-				Static6.anInt5177 = Mouse.clickX;
-				Static2.anInt1629 = 0;
-				Protocol.outboundBuffer.writeOpcode(96);
-				Protocol.outboundBuffer.writeByteA(Keyboard.pressedKeys[82] ? 1 : 0);
-				Protocol.outboundBuffer.writeShort(local24);
-				PathFinder.findPath(PlayerList.self.movementQueueX[0], PlayerList.self.movementQueueZ[0], local15, local19, 0, local3012.getSize(), local3012.getSize(), 0, 0);
-			}
-		}
-		if (local28 == 60) {
-			@Pc(3080) Player local3080 = PlayerList.players[local24];
-			if (local3080 != null) {
-				Static7.anInt6008 = 2;
-				Static2.anInt1629 = 0;
-				Static6.anInt5177 = Mouse.clickX;
-				Static4.anInt3275 = Mouse.clickY;
-				Protocol.outboundBuffer.writeOpcode(223);
-				Protocol.outboundBuffer.writeByte(Keyboard.pressedKeys[82] ? 1 : 0);
-				Protocol.outboundBuffer.writeShortLEA(local24);
-				PathFinder.findPath(PlayerList.self.movementQueueX[0], PlayerList.self.movementQueueZ[0], local15, local19, 0, local3080.getSize(), local3080.getSize(), 0, 0);
-			}
-		}
-		if (local28 == 1001) {
-			@Pc(3148) Component local3148 = InterfaceList.getComponent(local19);
-			if (local3148 == null || local3148.objCounts[local15] < 100000) {
-				Protocol.outboundBuffer.writeOpcode(72);
-				Protocol.outboundBuffer.writeShort(local24);
-			} else {
-				Chat.add(0, "", local3148.objCounts[local15] + " x " + ObjTypeList.get(local24).name);
-			}
-			Static2.anInt2246 = 0;
-			Static1.aClass185_3 = InterfaceList.getComponent(local19);
-			Static5.anInt3884 = local15;
-		}
-		if (local28 == 18) {
-			Protocol.outboundBuffer.writeOpcode(158);
-			Protocol.outboundBuffer.writeInt(local19);
-			@Pc(3216) Component local3216 = InterfaceList.getComponent(local19);
-			if (local3216.cs1Scripts != null && local3216.cs1Scripts[0][0] == 5) {
-				@Pc(3240) int local3240 = local3216.cs1Scripts[0][1];
-				VarpDomain.varps[local3240] = 1 - VarpDomain.varps[local3240];
-				Static29.method3534(local3240);
-			}
-		}
-		if (local28 == 38) {
-			Static2.anInt1629 = 0;
-			Static7.anInt6008 = 2;
-			Static4.anInt3275 = Mouse.clickY;
-			Static6.anInt5177 = Mouse.clickX;
-			Protocol.outboundBuffer.writeOpcode(8);
-			Protocol.outboundBuffer.writeShortLEA(local24);
-			Protocol.outboundBuffer.writeShort(local19 + Static7.originZ);
-			Protocol.outboundBuffer.writeShort(Static5.originX + local15);
-			Protocol.outboundBuffer.writeByteA(Keyboard.pressedKeys[82] ? 1 : 0);
-			PathFinder.findPath(PlayerList.self.movementQueueX[0], PlayerList.self.movementQueueZ[0], local15, local19, 0, 0, 0, 0, 0);
-		}
-		if (Static2.anInt1334 != 0) {
-			Static2.anInt1334 = 0;
-			Static28.method3270(InterfaceList.getComponent(Static5.anInt4302));
-		}
-		if (Static3.aBoolean177) {
-			Static26.method4812();
-		}
-		if (Static1.aClass185_3 != null && Static2.anInt2246 == 0) {
-			Static28.method3270(Static1.aClass185_3);
-		}
-	}
-
 	@OriginalMember(owner = "client!ug", name = "d", descriptor = "(I)V")
 	public static void method4321() {
-		for (@Pc(14) SpotAnimNode local14 = (SpotAnimNode) Static2.aClass112_8.head(); local14 != null; local14 = (SpotAnimNode) Static2.aClass112_8.next()) {
+		for (@Pc(14) SpotAnimNode local14 = (SpotAnimNode) Static2.spotAnims.head(); local14 != null; local14 = (SpotAnimNode) Static2.spotAnims.next()) {
 			@Pc(20) SpotAnim local20 = local14.value;
 			if (local20.anInt3655 != Player.level || local20.aBoolean265) {
 				local14.unlink();
@@ -888,7 +162,7 @@ public final class Static35 {
 	}
 
 	@OriginalMember(owner = "client!ui", name = "a", descriptor = "(IIBI)I")
-	public static int method4327(@OriginalArg(1) int level, @OriginalArg(3) int x, @OriginalArg(0) int z) {
+	public static int getVisibleLevel(@OriginalArg(1) int level, @OriginalArg(3) int x, @OriginalArg(0) int z) {
 		if ((Static4.tileFlags[level][x][z] & 0x8) == 0) {
 			return level <= 0 || (Static4.tileFlags[1][x][z] & 0x2) == 0 ? level : level - 1;
 		} else {
@@ -899,17 +173,17 @@ public final class Static35 {
 	@OriginalMember(owner = "client!ui", name = "a", descriptor = "(Z)Ljava/lang/String;")
 	public static String method4328() {
 		@Pc(31) String local31;
-		if (Static2.anInt1334 == 1 && Static7.anInt5634 < 2) {
+		if (Static2.anInt1334 == 1 && MiniMenu.size < 2) {
 			local31 = LocalisedText.USE + LocalisedText.MINISEPARATOR + Static7.aString365 + " ->";
-		} else if (Static3.aBoolean177 && Static7.anInt5634 < 2) {
+		} else if (Static3.aBoolean177 && MiniMenu.size < 2) {
 			local31 = Static4.aString140 + LocalisedText.MINISEPARATOR + Static2.aString81 + " ->";
-		} else if (Static2.shiftClick && Keyboard.pressedKeys[81] && Static7.anInt5634 > 2) {
-			local31 = Static26.method2992(Static7.anInt5634 - 2);
+		} else if (Static2.shiftClick && Keyboard.pressedKeys[81] && MiniMenu.size > 2) {
+			local31 = Static26.method2992(MiniMenu.size - 2);
 		} else {
-			local31 = Static26.method2992(Static7.anInt5634 - 1);
+			local31 = Static26.method2992(MiniMenu.size - 1);
 		}
-		if (Static7.anInt5634 > 2) {
-			local31 = local31 + "<col=ffffff> / " + (Static7.anInt5634 - 2) + LocalisedText.MOREOPTIONS;
+		if (MiniMenu.size > 2) {
+			local31 = local31 + "<col=ffffff> / " + (MiniMenu.size - 2) + LocalisedText.MOREOPTIONS;
 		}
 		return local31;
 	}
@@ -990,19 +264,19 @@ public final class Static35 {
 			return;
 		}
 		if (type.ops[4] != null) {
-			Static16.method1497(element.id, 0, 0, type.opBase, type.ops[4], (short) 1011, -1);
+			MiniMenu.add(element.id, 0, 0, type.opBase, type.ops[4], (short) 1011, -1);
 		}
 		if (type.ops[3] != null) {
-			Static16.method1497(element.id, 0, 0, type.opBase, type.ops[3], (short) 1003, -1);
+			MiniMenu.add(element.id, 0, 0, type.opBase, type.ops[3], (short) 1003, -1);
 		}
 		if (type.ops[2] != null) {
-			Static16.method1497(element.id, 0, 0, type.opBase, type.ops[2], (short) 1008, -1);
+			MiniMenu.add(element.id, 0, 0, type.opBase, type.ops[2], (short) 1008, -1);
 		}
 		if (type.ops[1] != null) {
-			Static16.method1497(element.id, 0, 0, type.opBase, type.ops[1], (short) 1002, -1);
+			MiniMenu.add(element.id, 0, 0, type.opBase, type.ops[1], (short) 1002, -1);
 		}
 		if (type.ops[0] != null) {
-			Static16.method1497(element.id, 0, 0, type.opBase, type.ops[0], (short) 1012, -1);
+			MiniMenu.add(element.id, 0, 0, type.opBase, type.ops[0], (short) 1012, -1);
 		}
 	}
 
@@ -1099,13 +373,6 @@ public final class Static35 {
 			local384 = local356.height;
 		}
 		Static9.method194(local10.textColor, local10.text, arg0, arg5, arg2, arg4, local384, local386, arg1);
-	}
-
-	@OriginalMember(owner = "client!un", name = "a", descriptor = "(BI)Z")
-	public static boolean method4381(@OriginalArg(1) int arg0) {
-		Static7.anInt5426 = arg0 + 1 & 0xFFFF;
-		Static1.aBoolean50 = true;
-		return true;
 	}
 
 }

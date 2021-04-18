@@ -373,7 +373,7 @@ public final class Static9 {
 			Static10.method384(true);
 		}
 		if (arg0 == 25 || arg0 == 10) {
-			Static22.method2387();
+			Static22.topBannerRefresh();
 		}
 		if (arg0 == 5) {
 			TitleScreen.load(client.js5Archive8);

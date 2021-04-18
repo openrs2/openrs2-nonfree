@@ -39,7 +39,7 @@ public final class Tile extends Node {
 	public ShapedTile shapedTile;
 
 	@OriginalMember(owner = "client!nh", name = "P", descriptor = "Lclient!nh;")
-	public Tile aClass4_Sub19_1;
+	public Tile linkedTile;
 
 	@OriginalMember(owner = "client!nh", name = "Q", descriptor = "Lclient!lb;")
 	public SecondaryParticleLinkedList particles;

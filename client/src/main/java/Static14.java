@@ -41,7 +41,7 @@ public final class Static14 {
 				local169.source = Static1.aClass185_1;
 				local169.mouseX = local150;
 				local169.arguments = Static1.aClass185_1.onDrag;
-				Static21.method2019(local169);
+				ScriptRunner.method2019(local169);
 			}
 			if (Mouse.pressedButton == 0) {
 				if (Static3.aBoolean173) {
@@ -52,7 +52,7 @@ public final class Static14 {
 						local231.mouseX = local150;
 						local231.mouseY = local159;
 						local231.arguments = Static1.aClass185_1.onDragComplete;
-						Static21.method2019(local231);
+						ScriptRunner.method2019(local231);
 					}
 					if (Static7.aClass185_16 != null && Static12.method691(Static1.aClass185_1) != null) {
 						Protocol.outboundBuffer.writeOpcode(0);
@@ -61,9 +61,9 @@ public final class Static14 {
 						Protocol.outboundBuffer.writeShortA(Static7.aClass185_16.createdComponentId);
 						Protocol.outboundBuffer.writeShortLEA(Static1.aClass185_1.createdComponentId);
 					}
-				} else if ((Static3.anInt5400 == 1 || Static13.method1005(Static7.anInt5634 - 1)) && Static7.anInt5634 > 2) {
+				} else if ((Static3.anInt5400 == 1 || Static13.method1005(MiniMenu.size - 1)) && MiniMenu.size > 2) {
 					Static31.method3783();
-				} else if (Static7.anInt5634 > 0) {
+				} else if (MiniMenu.size > 0) {
 					Static37.method4784();
 				}
 				Static1.aClass185_1 = null;
@@ -71,11 +71,6 @@ public final class Static14 {
 		} else if (Static3.anInt2165 > 1) {
 			Static1.aClass185_1 = null;
 		}
-	}
-
-	@OriginalMember(owner = "client!ej", name = "c", descriptor = "(I)V")
-	public static void method1059() {
-		Static2.anInt1943++;
 	}
 
 	@OriginalMember(owner = "client!ej", name = "a", descriptor = "(IIIIIIII)V")
@@ -112,7 +107,7 @@ public final class Static14 {
 					@Pc(143) int localZ = position & 0x3F;
 					@Pc(155) int z = localZ + (Static7.mapSquares[i] & 0xFF) * 64 - Static7.originZ;
 					@Pc(161) NpcType type = NpcTypeList.get(buffer.readUnsignedShort());
-					if (NpcList.npcs[id] == null && (type.aByte21 & 0x1) > 0 && Static2.anInt1216 == level && x >= 0 && type.size + x < 104 && z >= 0 && z + type.size < 104) {
+					if (NpcList.npcs[id] == null && (type.aByte21 & 0x1) > 0 && Static2.visibleLevel == level && x >= 0 && type.size + x < 104 && z >= 0 && z + type.size < 104) {
 						NpcList.npcs[id] = new Npc();
 						@Pc(217) Npc npc = NpcList.npcs[id];
 						NpcList.ids[NpcList.size++] = id;
@@ -130,11 +125,6 @@ public final class Static14 {
 				}
 			}
 		}
-	}
-
-	@OriginalMember(owner = "client!el", name = "a", descriptor = "(I)V")
-	public static void method1066() {
-		Static4.aClass26_30.removeSoft();
 	}
 
 	@OriginalMember(owner = "client!el", name = "a", descriptor = "(IIIBIIIII)V")
@@ -284,7 +274,7 @@ public final class Static14 {
 	public static void method1094(@OriginalArg(1) byte[][] arg0, @OriginalArg(2) int arg1, @OriginalArg(3) Light[] arg2, @OriginalArg(4) int[][] arg3, @OriginalArg(5) byte[][] arg4, @OriginalArg(6) float[][] arg5, @OriginalArg(7) byte[][] arg6, @OriginalArg(8) float[][] arg7, @OriginalArg(9) float[][] arg8, @OriginalArg(10) int arg9, @OriginalArg(11) byte[][] arg10) {
 		for (@Pc(11) int local11 = 0; local11 < arg1; local11++) {
 			@Pc(22) Light local22 = arg2[local11];
-			if (local22.anInt1326 == arg9) {
+			if (local22.level == arg9) {
 				@Pc(34) Class135 local34 = new Class135();
 				@Pc(43) int local43 = (local22.z >> 7) - local22.radius;
 				@Pc(45) int local45 = 0;
@@ -564,9 +554,9 @@ public final class Static14 {
 		}
 		@Pc(37) Component local37 = InterfaceList.components[local13][local17];
 		if (arg1 == -1 && local37.type == 0) {
-			for (@Pc(110) int local110 = 0; local110 < Static7.anInt5634; local110++) {
-				if (Static6.aShortArray100[local110] == 1 || Static6.aShortArray100[local110] == 1009 || Static6.aShortArray100[local110] == 34 || Static6.aShortArray100[local110] == 23 || Static6.aShortArray100[local110] == 3) {
-					for (@Pc(148) Component local148 = InterfaceList.getComponent(Static6.anIntArray543[local110]); local148 != null; local148 = Static26.method2942(local148)) {
+			for (@Pc(110) int local110 = 0; local110 < MiniMenu.size; local110++) {
+				if (MiniMenu.actions[local110] == 1 || MiniMenu.actions[local110] == 1009 || MiniMenu.actions[local110] == 34 || MiniMenu.actions[local110] == 23 || MiniMenu.actions[local110] == 3) {
+					for (@Pc(148) Component local148 = InterfaceList.getComponent(MiniMenu.anIntArray543[local110]); local148 != null; local148 = Static26.method2942(local148)) {
 						if (local148.id == local37.id) {
 							return true;
 						}
@@ -574,8 +564,8 @@ public final class Static14 {
 				}
 			}
 		} else {
-			for (@Pc(48) int local48 = 0; local48 < Static7.anInt5634; local48++) {
-				if (Static2.anIntArray117[local48] == arg1 && local37.id == Static6.anIntArray543[local48] && (Static6.aShortArray100[local48] == 1 || Static6.aShortArray100[local48] == 1009 || Static6.aShortArray100[local48] == 34 || Static6.aShortArray100[local48] == 23 || Static6.aShortArray100[local48] == 3)) {
+			for (@Pc(48) int local48 = 0; local48 < MiniMenu.size; local48++) {
+				if (MiniMenu.anIntArray117[local48] == arg1 && local37.id == MiniMenu.anIntArray543[local48] && (MiniMenu.actions[local48] == 1 || MiniMenu.actions[local48] == 1009 || MiniMenu.actions[local48] == 34 || MiniMenu.actions[local48] == 23 || MiniMenu.actions[local48] == 3)) {
 					return true;
 				}
 			}

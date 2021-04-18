@@ -142,11 +142,6 @@ public final class Static10 {
 		}
 	}
 
-	@OriginalMember(owner = "client!bi", name = "a", descriptor = "(B)V")
-	public static void method301() {
-		Static4.aClass26_30.clear();
-	}
-
 	@OriginalMember(owner = "client!bi", name = "a", descriptor = "(II)I")
 	public static int method302(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
 		@Pc(7) int local7 = arg1 * (arg0 & 0x7F) >> 7;
@@ -333,11 +328,6 @@ public final class Static10 {
 				Static18.method1656(Static5.anIntArrayArray36[local277], arg2, local251, local263);
 			}
 		}
-	}
-
-	@OriginalMember(owner = "client!bo", name = "a", descriptor = "(ILclient!fh;)Z")
-	public static boolean method398(@OriginalArg(1) Js5 arg0) {
-		return arg0.isFileReady(Static4.anInt3250);
 	}
 
 	@OriginalMember(owner = "client!c", name = "a", descriptor = "(IIIIIII)V")

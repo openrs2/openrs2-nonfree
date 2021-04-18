@@ -424,8 +424,8 @@ public final class Static34 {
 								@Pc(640) int local640 = light.x >> 7;
 								@Pc(645) int local645 = light.z >> 7;
 								if (local640 >= 0 && local645 >= 0 && local640 < 104 && local645 < 104) {
-									light.aBoolean80 = (Static4.tileFlags[1][local640][local645] & 0x2) != 0;
-									light.y = SceneGraph.tileHeights[light.anInt1326][local640][local645] - light.y;
+									light.linkBelow = (Static4.tileFlags[1][local640][local645] & 0x2) != 0;
+									light.y = SceneGraph.tileHeights[light.level][local640][local645] - light.y;
 									LightingManager.addLight(light);
 								}
 							}
