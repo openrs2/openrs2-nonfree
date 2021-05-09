@@ -8,15 +8,15 @@ import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
 @OriginalClass("unpackclass!p")
-public final class Js5File extends Js5 {
+public final class Js5Pack extends Js5 {
 
 	@OriginalMember(owner = "unpackclass!p", name = "<init>", descriptor = "([BZZ)V")
-	public Js5File(@OriginalArg(0) byte[] in, @OriginalArg(1) boolean discardPacked, @OriginalArg(2) boolean discardUnpacked) throws IOException {
+	public Js5Pack(@OriginalArg(0) byte[] in, @OriginalArg(1) boolean discardPacked, @OriginalArg(2) boolean discardUnpacked) throws IOException {
 		this(in, discardPacked, discardUnpacked, false);
 	}
 
 	@OriginalMember(owner = "unpackclass!p", name = "<init>", descriptor = "([BZZZ)V")
-	private Js5File(@OriginalArg(0) byte[] in, @OriginalArg(1) boolean discardPacked, @OriginalArg(2) boolean discardUnpacked, @OriginalArg(3) boolean arg3) throws IOException {
+	private Js5Pack(@OriginalArg(0) byte[] in, @OriginalArg(1) boolean discardPacked, @OriginalArg(2) boolean discardUnpacked, @OriginalArg(3) boolean arg3) throws IOException {
 		super(discardPacked, discardUnpacked);
 		this.read(new DataInputStream(new ByteArrayInputStream(in)), arg3);
 	}
