@@ -58,8 +58,8 @@ public final class WorldList {
 	@OriginalMember(owner = "client!gd", name = "a", descriptor = "(B[B)Z")
 	private static boolean decode(@OriginalArg(1) byte[] bytes) {
 		@Pc(8) Buffer buffer = new Buffer(bytes);
-		@Pc(12) int updated = buffer.readUnsignedByte();
-		if (updated != 1) {
+		@Pc(12) int version = buffer.readUnsignedByte();
+		if (version != 1) {
 			return false;
 		}
 		@Pc(38) boolean worldsUpdated = buffer.readUnsignedByte() == 1;
