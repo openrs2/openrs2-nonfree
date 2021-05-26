@@ -973,8 +973,8 @@ public final class client extends GameShell {
 
 	@OriginalMember(owner = "client!client", name = "d", descriptor = "(B)V")
 	private void js5NetworkLoop() {
-		@Pc(3) boolean reconnect = js5NetQueue.loop();
-		if (!reconnect) {
+		@Pc(3) boolean idle = js5NetQueue.loop();
+		if (!idle) {
 			this.js5Connect();
 		}
 	}
