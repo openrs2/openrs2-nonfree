@@ -91,10 +91,10 @@ public final class Base37 {
 
 	@OriginalMember(owner = "client!ej", name = "a", descriptor = "(Ljava/lang/String;I)Ljava/lang/String;")
 	public static String toLowerCase(@OriginalArg(0) String username) {
-		@Pc(17) String local17 = decodeLowerCase(encode(username));
-		if (local17 == null) {
-			local17 = "";
+		@Pc(17) String username2 = decodeLowerCase(encode(username));
+		if (username2 == null) {
+			username2 = "";
 		}
-		return local17;
+		return username2;
 	}
 }
