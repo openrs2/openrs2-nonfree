@@ -421,7 +421,7 @@ public final class Class105 {
 	private boolean method2298(@OriginalArg(0) Class105 arg0) {
 		if (this.aClass4_Sub3_Sub14_Sub1_5 == null) {
 			if (this.anInt2869 == 0) {
-				this.aClass4_Sub3_Sub14_Sub1_5 = Static4.textureProvider.method452(this.anInt2858, true, ColorUtils.brightness, this.anInt2861);
+				this.aClass4_Sub3_Sub14_Sub1_5 = Static4.textureProvider.getSprite(this.anInt2858, true, ColorUtils.brightness, this.anInt2861);
 			} else if (this.anInt2869 == 2) {
 				this.method2304(arg0);
 			} else if (this.anInt2869 == 1) {

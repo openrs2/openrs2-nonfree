@@ -39,7 +39,7 @@ public interface GlTextureProvider {
 	void method451(@OriginalArg(1) int arg0);
 
 	@OriginalMember(owner = "client!nk", name = "a", descriptor = "(ZFZII)Lclient!vn;")
-	SoftwareSprite method452(@OriginalArg(4) int id, @OriginalArg(0) boolean arg0, @OriginalArg(1) float arg1, @OriginalArg(3) int arg2);
+	SoftwareSprite getSprite(@OriginalArg(4) int id, @OriginalArg(0) boolean alpha, @OriginalArg(1) float brightness, @OriginalArg(3) int size);
 
 	@OriginalMember(owner = "client!nk", name = "g", descriptor = "(II)Z")
 	boolean isLowDetail(@OriginalArg(1) int id);

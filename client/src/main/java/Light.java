@@ -25,7 +25,7 @@ public final class Light {
 		op.anInt2621 = 35;
 		op.anInt2625 = 8;
 		op.postDecode();
-		Static11.method524(2048, 1);
+		Texture.setSize(2048, 1);
 		op.method2053(noise, 0);
 		return noise;
 	}

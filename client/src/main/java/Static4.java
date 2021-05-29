@@ -4,9 +4,6 @@ import org.openrs2.deob.annotation.OriginalMember;
 
 public final class Static4 {
 
-	@OriginalMember(owner = "client!jk", name = "v", descriptor = "[I")
-	public static int[] anIntArray231;
-
 	@OriginalMember(owner = "client!jl", name = "B", descriptor = "[[[Lclient!ll;")
 	public static LinkedList[][][] objStacks;
 
@@ -183,9 +180,6 @@ public final class Static4 {
 
 	@OriginalMember(owner = "client!km", name = "db", descriptor = "I")
 	public static int anInt2959 = 0;
-
-	@OriginalMember(owner = "client!kn", name = "G", descriptor = "[I")
-	public static final int[] anIntArray267 = new int[256];
 
 	@OriginalMember(owner = "client!l", name = "q", descriptor = "I")
 	public static int anInt2989 = 0;

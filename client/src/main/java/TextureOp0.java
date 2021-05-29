@@ -31,10 +31,10 @@ public final class TextureOp0 extends TextureOp {
 
 	@OriginalMember(owner = "client!qb", name = "a", descriptor = "(II)[I")
 	@Override
-	public final int[] method4694(@OriginalArg(1) int arg0) {
-		@Pc(15) int[] local15 = this.monochromeImageCache.get(arg0);
+	public final int[] getMonochromeOutput(@OriginalArg(1) int y) {
+		@Pc(15) int[] local15 = this.monochromeImageCache.get(y);
 		if (this.monochromeImageCache.invalid) {
-			ArrayUtils.fill(local15, 0, Static2.anInt1626, this.anInt4259);
+			ArrayUtils.fill(local15, 0, Texture.width, this.anInt4259);
 		}
 		return local15;
 	}

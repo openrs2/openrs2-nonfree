@@ -37,11 +37,11 @@ public final class TextureOp8 extends TextureOp {
 
 	@OriginalMember(owner = "client!of", name = "a", descriptor = "(II)[I")
 	@Override
-	public final int[] method4694(@OriginalArg(1) int arg0) {
-		@Pc(11) int[] local11 = this.monochromeImageCache.get(arg0);
+	public final int[] getMonochromeOutput(@OriginalArg(1) int y) {
+		@Pc(11) int[] local11 = this.monochromeImageCache.get(y);
 		if (this.monochromeImageCache.invalid) {
-			@Pc(28) int[] local28 = this.method4699(arg0, 0);
-			for (@Pc(30) int local30 = 0; local30 < Static2.anInt1626; local30++) {
+			@Pc(28) int[] local28 = this.method4699(y, 0);
+			for (@Pc(30) int local30 = 0; local30 < Texture.width; local30++) {
 				@Pc(43) int local43 = local28[local30] >> 4;
 				if (local43 < 0) {
 					local43 = 0;

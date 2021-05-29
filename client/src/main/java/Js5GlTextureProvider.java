@@ -96,18 +96,18 @@ public final class Js5GlTextureProvider extends Js5TextureProvider implements Gl
 		if (bytes == null) {
 			return null;
 		} else {
-			@Pc(40) GlTexture local40 = new GlTexture(new Buffer(bytes));
-			this.glTextures.put(id, local40);
-			return local40;
+			@Pc(40) GlTexture newTexture = new GlTexture(new Buffer(bytes));
+			this.glTextures.put(id, newTexture);
+			return newTexture;
 		}
 	}
 
 	@OriginalMember(owner = "client!c", name = "a", descriptor = "(ZFZII)Lclient!vn;")
 	@Override
-	public final SoftwareSprite method452(@OriginalArg(4) int id, @OriginalArg(0) boolean arg0, @OriginalArg(1) float arg1, @OriginalArg(3) int arg2) {
+	public final SoftwareSprite getSprite(@OriginalArg(4) int id, @OriginalArg(0) boolean alpha, @OriginalArg(1) float brightness, @OriginalArg(3) int size) {
 		@Pc(8) GlTexture texture = this.getGlTexture(id);
 		if (texture != null && texture.isReady(this, this.spritesArchive)) {
-			return arg0 ? texture.texture.method2650(arg2, this, this.spritesArchive, arg1, arg2) : texture.texture.method2645(arg1, arg2, this, this.spritesArchive, arg2);
+			return alpha ? texture.texture.getAlphaSprite(size, this, this.spritesArchive, brightness, size) : texture.texture.getSprite(brightness, size, this, this.spritesArchive, size);
 		} else {
 			return null;
 		}

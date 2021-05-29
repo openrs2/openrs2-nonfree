@@ -31,9 +31,6 @@ public final class Static2 {
 	@OriginalMember(owner = "client!en", name = "e", descriptor = "I")
 	public static int anInt1344;
 
-	@OriginalMember(owner = "client!fa", name = "U", descriptor = "I")
-	public static int anInt1626;
-
 	@OriginalMember(owner = "client!fb", name = "b", descriptor = "I")
 	public static int anInt1636;
 

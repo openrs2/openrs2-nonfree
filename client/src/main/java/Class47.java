@@ -65,7 +65,7 @@ public final class Class47 {
 			SoftwareRaster.fillRect(arg1, arg2, arg3, arg4, 0);
 		} else {
 			if (this.aClass4_Sub3_Sub14_Sub1_1 == null) {
-				this.aClass4_Sub3_Sub14_Sub1_1 = Static4.textureProvider.method452(this.anInt1249, false, ColorUtils.brightness, this.anInt1250);
+				this.aClass4_Sub3_Sub14_Sub1_1 = Static4.textureProvider.getSprite(this.anInt1249, false, ColorUtils.brightness, this.anInt1250);
 			}
 			if (!Static4.textureProvider.method443(this.anInt1249)) {
 				SoftwareRaster.fillRect(arg1, arg2, arg3, arg4, 0);

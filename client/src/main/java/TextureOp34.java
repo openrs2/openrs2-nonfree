@@ -129,17 +129,17 @@ public final class TextureOp34 extends TextureOp {
 
 	@OriginalMember(owner = "client!jj", name = "a", descriptor = "(II)[I")
 	@Override
-	public final int[] method4694(@OriginalArg(1) int arg0) {
-		@Pc(15) int[] local15 = this.monochromeImageCache.get(arg0);
+	public final int[] getMonochromeOutput(@OriginalArg(1) int y) {
+		@Pc(15) int[] local15 = this.monochromeImageCache.get(y);
 		if (this.monochromeImageCache.invalid) {
-			this.method2053(local15, arg0);
+			this.method2053(local15, y);
 		}
 		return local15;
 	}
 
 	@OriginalMember(owner = "client!jj", name = "a", descriptor = "([III)V")
 	public final void method2053(@OriginalArg(0) int[] arg0, @OriginalArg(1) int arg1) {
-		@Pc(20) int local20 = this.anInt2625 * Static6.anIntArray478[arg1];
+		@Pc(20) int local20 = this.anInt2625 * Texture.heightFractions[arg1];
 		if (this.anInt2628 == 1) {
 			@Pc(31) short local31 = this.aShortArray37[0];
 			@Pc(38) int local38 = this.aShortArray38[0] << 12;
@@ -156,15 +156,15 @@ public final class TextureOp34 extends TextureOp {
 			}
 			@Pc(101) int local101 = this.aByteArray19[local83 & 0xFF] & 0xFF;
 			if (this.aBoolean181) {
-				for (@Pc(147) int local147 = 0; local147 < Static2.anInt1626; local147++) {
-					@Pc(157) int local157 = Static4.anIntArray231[local147] * this.anInt2631;
+				for (@Pc(147) int local147 = 0; local147 < Texture.width; local147++) {
+					@Pc(157) int local157 = Texture.widthFractions[local147] * this.anInt2631;
 					@Pc(171) int local171 = this.method2051(local38 * local157 >> 12, local101, local79, local75, local45, local58);
 					local171 = local171 * local31 >> 12;
 					arg0[local147] = (local171 >> 1) + 2048;
 				}
 			} else {
-				for (@Pc(106) int local106 = 0; local106 < Static2.anInt1626; local106++) {
-					@Pc(120) int local120 = Static4.anIntArray231[local106] * this.anInt2631;
+				for (@Pc(106) int local106 = 0; local106 < Texture.width; local106++) {
+					@Pc(120) int local120 = Texture.widthFractions[local106] * this.anInt2631;
 					@Pc(134) int local134 = this.method2051(local38 * local120 >> 12, local101, local79, local75, local45, local58);
 					arg0[local106] = local31 * local134 >> 12;
 				}
@@ -186,8 +186,8 @@ public final class TextureOp34 extends TextureOp {
 				local256 = 0;
 			}
 			@Pc(275) int local275 = this.aByteArray19[local256 & 0xFF] & 0xFF;
-			for (@Pc(277) int local277 = 0; local277 < Static2.anInt1626; local277++) {
-				@Pc(287) int local287 = this.anInt2631 * Static4.anIntArray231[local277];
+			for (@Pc(277) int local277 = 0; local277 < Texture.width; local277++) {
+				@Pc(287) int local287 = this.anInt2631 * Texture.widthFractions[local277];
 				@Pc(301) int local301 = this.method2051(local211 * local287 >> 12, local275, local252, local248, local228, local217);
 				arg0[local277] = local194 * local301 >> 12;
 			}
@@ -209,15 +209,15 @@ public final class TextureOp34 extends TextureOp {
 				@Pc(392) int local392 = this.aByteArray19[local364 & 0xFF] & 0xFF;
 				@Pc(396) int local396 = MonochromeImageCache.anIntArray61[local349];
 				if (this.aBoolean181 && local314 == this.anInt2628 - 1) {
-					for (@Pc(447) int local447 = 0; local447 < Static2.anInt1626; local447++) {
-						@Pc(461) int local461 = Static4.anIntArray231[local447] * this.anInt2631;
+					for (@Pc(447) int local447 = 0; local447 < Texture.width; local447++) {
+						@Pc(461) int local461 = Texture.widthFractions[local447] * this.anInt2631;
 						@Pc(475) int local475 = this.method2051(local461 * local336 >> 12, local392, local396, local377, local343, local349);
 						local475 = arg0[local447] + (local323 * local475 >> 12);
 						arg0[local447] = (local475 >> 1) + 2048;
 					}
 				} else {
-					for (@Pc(407) int local407 = 0; local407 < Static2.anInt1626; local407++) {
-						@Pc(417) int local417 = Static4.anIntArray231[local407] * this.anInt2631;
+					for (@Pc(407) int local407 = 0; local407 < Texture.width; local407++) {
+						@Pc(417) int local417 = Texture.widthFractions[local407] * this.anInt2631;
 						@Pc(431) int local431 = this.method2051(local336 * local417 >> 12, local392, local396, local377, local343, local349);
 						arg0[local407] += local323 * local431 >> 12;
 					}

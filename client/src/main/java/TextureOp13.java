@@ -20,12 +20,12 @@ public final class TextureOp13 extends TextureOp {
 
 	@OriginalMember(owner = "client!se", name = "a", descriptor = "(II)[I")
 	@Override
-	public final int[] method4694(@OriginalArg(1) int arg0) {
-		@Pc(9) int[] local9 = this.monochromeImageCache.get(arg0);
+	public final int[] getMonochromeOutput(@OriginalArg(1) int y) {
+		@Pc(9) int[] local9 = this.monochromeImageCache.get(y);
 		if (this.monochromeImageCache.invalid) {
-			@Pc(21) int local21 = Static6.anIntArray478[arg0];
-			for (@Pc(23) int local23 = 0; local23 < Static2.anInt1626; local23++) {
-				local9[local23] = this.method3950(local21, Static4.anIntArray231[local23]) % 4096;
+			@Pc(21) int local21 = Texture.heightFractions[y];
+			for (@Pc(23) int local23 = 0; local23 < Texture.width; local23++) {
+				local9[local23] = this.method3950(local21, Texture.widthFractions[local23]) % 4096;
 			}
 		}
 		return local9;

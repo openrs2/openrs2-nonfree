@@ -39,12 +39,12 @@ public final class TextureOp31 extends TextureOp {
 
 	@OriginalMember(owner = "client!dn", name = "a", descriptor = "(II)[I")
 	@Override
-	public final int[] method4694(@OriginalArg(1) int arg0) {
-		@Pc(7) int[] local7 = this.monochromeImageCache.get(arg0);
+	public final int[] getMonochromeOutput(@OriginalArg(1) int y) {
+		@Pc(7) int[] local7 = this.monochromeImageCache.get(y);
 		if (this.monochromeImageCache.invalid) {
-			for (@Pc(23) int local23 = 0; local23 < Static2.anInt1626; local23++) {
-				@Pc(42) int local42 = this.anInt1164 + (Static4.anIntArray231[local23] << 12) / this.anInt1160;
-				@Pc(54) int local54 = this.anInt1157 + (Static6.anIntArray478[arg0] << 12) / this.anInt1160;
+			for (@Pc(23) int local23 = 0; local23 < Texture.width; local23++) {
+				@Pc(42) int local42 = this.anInt1164 + (Texture.widthFractions[local23] << 12) / this.anInt1160;
+				@Pc(54) int local54 = this.anInt1157 + (Texture.heightFractions[y] << 12) / this.anInt1160;
 				@Pc(58) int local58 = local54;
 				@Pc(60) int local60 = local42;
 				@Pc(64) int local64 = 0;

@@ -8,9 +8,6 @@ public final class Static6 {
 	@OriginalMember(owner = "client!qk", name = "f", descriptor = "I")
 	public static int anInt4375;
 
-	@OriginalMember(owner = "client!ql", name = "c", descriptor = "Lclient!kj;")
-	public static TextureProvider anInterface3_1;
-
 	@OriginalMember(owner = "client!ql", name = "f", descriptor = "[I")
 	public static int[] anIntArray465;
 
@@ -26,17 +23,11 @@ public final class Static6 {
 	@OriginalMember(owner = "client!rb", name = "c", descriptor = "F")
 	public static float aFloat108;
 
-	@OriginalMember(owner = "client!re", name = "a", descriptor = "[I")
-	public static int[] anIntArray478;
-
 	@OriginalMember(owner = "client!re", name = "n", descriptor = "I")
 	public static int anInt4466;
 
 	@OriginalMember(owner = "client!rf", name = "e", descriptor = "Ljava/lang/String;")
 	public static String url;
-
-	@OriginalMember(owner = "client!rg", name = "gb", descriptor = "I")
-	public static int anInt4511;
 
 	@OriginalMember(owner = "client!rg", name = "ib", descriptor = "I")
 	public static int anInt4513;
@@ -77,9 +68,6 @@ public final class Static6 {
 	@OriginalMember(owner = "client!t", name = "e", descriptor = "I")
 	public static int anInt4978;
 
-	@OriginalMember(owner = "client!ta", name = "z", descriptor = "I")
-	public static int anInt5001;
-
 	@OriginalMember(owner = "client!tc", name = "V", descriptor = "[I")
 	public static int[] rowCount;
 
@@ -91,9 +79,6 @@ public final class Static6 {
 
 	@OriginalMember(owner = "client!tm", name = "G", descriptor = "I")
 	public static int anInt5211;
-
-	@OriginalMember(owner = "client!qj", name = "bb", descriptor = "I")
-	public static final int anInt4366 = -1;
 
 	@OriginalMember(owner = "client!qk", name = "r", descriptor = "I")
 	public static int anInt4384 = 0;

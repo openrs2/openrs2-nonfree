@@ -186,7 +186,7 @@ public final class Static27 {
 		local21.anInt2620 = (int) (arg0 * 4096.0F);
 		local21.aBoolean181 = false;
 		local21.postDecode();
-		Static11.method524(64, 256);
+		Texture.setSize(64, 256);
 		for (@Pc(48) int local48 = 0; local48 < 256; local48++) {
 			local21.method2053(local17[local48], local48);
 		}

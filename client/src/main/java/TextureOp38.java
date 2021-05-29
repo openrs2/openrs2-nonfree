@@ -52,8 +52,8 @@ public final class TextureOp38 extends TextureOp {
 
 	@OriginalMember(owner = "client!kl", name = "a", descriptor = "(II)[I")
 	@Override
-	public final int[] method4694(@OriginalArg(1) int arg0) {
-		@Pc(7) int[] local7 = this.monochromeImageCache.get(arg0);
+	public final int[] getMonochromeOutput(@OriginalArg(1) int y) {
+		@Pc(7) int[] local7 = this.monochromeImageCache.get(y);
 		if (this.monochromeImageCache.invalid) {
 			@Pc(16) int local16 = this.anInt2923 >> 1;
 			@Pc(21) int[][] local21 = this.monochromeImageCache.get();
@@ -61,8 +61,8 @@ public final class TextureOp38 extends TextureOp {
 			for (@Pc(30) int local30 = 0; local30 < this.anInt2919; local30++) {
 				@Pc(60) int local60 = this.anInt2923 > 0 ? this.anInt2914 + RandomUtils.nextInt(local28, this.anInt2923) - local16 : this.anInt2914;
 				local60 = local60 >> 4 & 0xFF;
-				@Pc(73) int local73 = RandomUtils.nextInt(local28, Static2.anInt1626);
-				@Pc(78) int local78 = RandomUtils.nextInt(local28, Static1.anInt379);
+				@Pc(73) int local73 = RandomUtils.nextInt(local28, Texture.width);
+				@Pc(78) int local78 = RandomUtils.nextInt(local28, Texture.height);
 				@Pc(89) int local89 = local73 + (Static3.anIntArray222[local60] * this.anInt2924 >> 12);
 				@Pc(100) int local100 = local78 + (Static3.anIntArray223[local60] * this.anInt2924 >> 12);
 				@Pc(105) int local105 = local100 - local78;
@@ -104,8 +104,8 @@ public final class TextureOp38 extends TextureOp {
 					for (@Pc(226) int local226 = local73; local226 < local89; local226++) {
 						local186 += local191;
 						@Pc(247) int local247 = local201 + (local226 - local73) * local213 + 1024;
-						@Pc(251) int local251 = local177 & Static6.anInt5001;
-						@Pc(255) int local255 = Static1.anInt901 & local226;
+						@Pc(251) int local251 = local177 & Texture.heightMask;
+						@Pc(255) int local255 = Texture.widthMask & local226;
 						if (local186 > 0) {
 							local186 += -local181;
 							local177 += local224;

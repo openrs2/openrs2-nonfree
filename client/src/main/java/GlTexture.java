@@ -53,7 +53,7 @@ public final class GlTexture extends SecondaryNode {
 	private final int anInt4970;
 
 	@OriginalMember(owner = "client!so", name = "K", descriptor = "Z")
-	private final boolean aBoolean343;
+	private final boolean bloom;
 
 	@OriginalMember(owner = "client!so", name = "E", descriptor = "I")
 	private final int anInt4969;
@@ -73,7 +73,7 @@ public final class GlTexture extends SecondaryNode {
 		this.anInt4970 = buffer.readByte();
 		@Pc(76) int local76 = buffer.readUnsignedByte();
 		buffer.readUnsignedByte();
-		this.aBoolean343 = buffer.readUnsignedByte() == 1;
+		this.bloom = buffer.readUnsignedByte() == 1;
 		this.anInt4969 = local76 >> 4 & 0xF;
 		if (combineRgbMode == 1) {
 			this.combineRgbMode = 2;
@@ -90,7 +90,7 @@ public final class GlTexture extends SecondaryNode {
 	public final int[] method4071(@OriginalArg(0) TextureProvider arg0, @OriginalArg(1) Js5 spritesArchive, @OriginalArg(2) boolean lowDetail) {
 		if (this.texture.isReady(arg0, spritesArchive)) {
 			@Pc(14) int local14 = lowDetail ? 64 : 128;
-			return this.texture.method2653(1.0D, this.aBoolean341, spritesArchive, arg0, local14, false, local14);
+			return this.texture.getPixels(1.0D, this.aBoolean341, spritesArchive, arg0, local14, false, local14);
 		} else {
 			return null;
 		}
@@ -103,7 +103,7 @@ public final class GlTexture extends SecondaryNode {
 				return null;
 			}
 			this.anInt4971 = lowDetail ? 64 : 128;
-			this.anIntArray538 = this.texture.method2653((double) arg2, this.aBoolean341, spritesArchive, arg0, this.anInt4971, true, this.anInt4971);
+			this.anIntArray538 = this.texture.getPixels((double) arg2, this.aBoolean341, spritesArchive, arg0, this.anInt4971, true, this.anInt4971);
 			this.aFloat131 = arg2;
 			if (this.aBoolean345) {
 				@Pc(50) int[] local50 = new int[this.anInt4971];
@@ -223,13 +223,13 @@ public final class GlTexture extends SecondaryNode {
 	}
 
 	@OriginalMember(owner = "client!so", name = "a", descriptor = "(Lclient!kj;Lclient!fh;)Z")
-	public final boolean isReady(@OriginalArg(0) TextureProvider arg0, @OriginalArg(1) Js5 spritesArchive) {
-		return this.texture.isReady(arg0, spritesArchive);
+	public final boolean isReady(@OriginalArg(0) TextureProvider provider, @OriginalArg(1) Js5 spritesArchive) {
+		return this.texture.isReady(provider, spritesArchive);
 	}
 
 	@OriginalMember(owner = "client!so", name = "a", descriptor = "(Lclient!kj;Lclient!fh;I)Z")
-	public final boolean method4077(@OriginalArg(0) TextureProvider arg0, @OriginalArg(1) Js5 spritesArchive, @OriginalArg(2) int arg2) {
-		if (!this.texture.isReady(arg0, spritesArchive)) {
+	public final boolean method4077(@OriginalArg(0) TextureProvider provider, @OriginalArg(1) Js5 spritesArchive, @OriginalArg(2) int arg2) {
+		if (!this.texture.isReady(provider, spritesArchive)) {
 			return false;
 		}
 		@Pc(10) GL gl = GlRenderer.gl;
@@ -245,50 +245,50 @@ public final class GlTexture extends SecondaryNode {
 					this.contextId = GlCleaner.contextId;
 				}
 				GlRenderer.setTextureId(this.textureId);
-				if (this.aBoolean343 && PostProcessorManager.isBloomEnabled()) {
-					@Pc(64) float[] local64 = this.texture.method2648(arg2, this.aBoolean341, arg0, spritesArchive, arg2);
+				if (this.bloom && PostProcessorManager.isBloomEnabled()) {
+					@Pc(64) float[] pixels = this.texture.getBloomPixels(arg2, this.aBoolean341, provider, spritesArchive, arg2);
 					if (this.anInt4969 == 2) {
-						Static33.method4070(GlTextureAllocator.GL_TEXTURE_2D, GlTextureAllocator.GL_RGBA16F, arg2, arg2, GlTextureAllocator.GL_RGBA, GlTextureAllocator.GL_FLOAT, local64);
+						Static33.method4070(GlTextureAllocator.GL_TEXTURE_2D, GlTextureAllocator.GL_RGBA16F, arg2, arg2, GlTextureAllocator.GL_RGBA, GlTextureAllocator.GL_FLOAT, pixels);
 						gl.glTexParameteri(GL.GL_TEXTURE_2D, GL.GL_TEXTURE_MIN_FILTER, GL.GL_LINEAR_MIPMAP_LINEAR);
 						gl.glTexParameteri(GL.GL_TEXTURE_2D, GL.GL_TEXTURE_MAG_FILTER, GL.GL_LINEAR);
-						GlCleaner.onCardTexture += local64.length * 4 / 3 - this.textureSize;
-						this.textureSize = local64.length * 4 / 3;
+						GlCleaner.onCardTexture += pixels.length * 4 / 3 - this.textureSize;
+						this.textureSize = pixels.length * 4 / 3;
 					} else {
-						gl.glTexImage2D(GL.GL_TEXTURE_2D, GL.GL_POINTS, GL.GL_RGBA16F, arg2, arg2, GL.GL_POINTS, GL.GL_RGBA, GL.GL_FLOAT, FloatBuffer.wrap(local64));
+						gl.glTexImage2D(GL.GL_TEXTURE_2D, GL.GL_POINTS, GL.GL_RGBA16F, arg2, arg2, GL.GL_POINTS, GL.GL_RGBA, GL.GL_FLOAT, FloatBuffer.wrap(pixels));
 						gl.glTexParameteri(GL.GL_TEXTURE_2D, GL.GL_TEXTURE_MIN_FILTER, GL.GL_LINEAR);
 						gl.glTexParameteri(GL.GL_TEXTURE_2D, GL.GL_TEXTURE_MAG_FILTER, GL.GL_LINEAR);
-						GlCleaner.onCardTexture += local64.length - this.textureSize;
-						this.textureSize = local64.length;
+						GlCleaner.onCardTexture += pixels.length - this.textureSize;
+						this.textureSize = pixels.length;
 					}
 				} else {
 					@Pc(148) int local148 = GlRenderer.bigEndian ? 33639 : 5121;
-					@Pc(160) int[] local160 = this.texture.method2646(arg2, arg2, spritesArchive, 0.7D, arg0, this.aBoolean341);
+					@Pc(160) int[] pixels = this.texture.getPixelsAlpha(arg2, arg2, spritesArchive, 0.7D, provider, this.aBoolean341);
 					if (this.anInt4969 == 2) {
-						Static33.method4072(GlTextureAllocator.GL_TEXTURE_2D, GlTextureAllocator.GL_RGBA, arg2, arg2, GlTextureAllocator.GL_BGRA, local148, local160);
+						Static33.method4072(GlTextureAllocator.GL_TEXTURE_2D, GlTextureAllocator.GL_RGBA, arg2, arg2, GlTextureAllocator.GL_BGRA, local148, pixels);
 						gl.glTexParameteri(GL.GL_TEXTURE_2D, GL.GL_TEXTURE_MIN_FILTER, GL.GL_LINEAR_MIPMAP_LINEAR);
 						gl.glTexParameteri(GL.GL_TEXTURE_2D, GL.GL_TEXTURE_MAG_FILTER, GL.GL_LINEAR);
-						GlCleaner.onCardTexture += local160.length * 4 / 3 - this.textureSize;
-						this.textureSize = local160.length * 4 / 3;
+						GlCleaner.onCardTexture += pixels.length * 4 / 3 - this.textureSize;
+						this.textureSize = pixels.length * 4 / 3;
 					} else if (this.anInt4969 == 1) {
 						@Pc(209) int local209 = 0;
 						while (true) {
-							gl.glTexImage2D(GL.GL_TEXTURE_2D, local209++, GL.GL_RGBA, arg2, arg2, GL.GL_POINTS, GL.GL_BGRA, local148, IntBuffer.wrap(local160));
+							gl.glTexImage2D(GL.GL_TEXTURE_2D, local209++, GL.GL_RGBA, arg2, arg2, GL.GL_POINTS, GL.GL_BGRA, local148, IntBuffer.wrap(pixels));
 							arg2 >>= 1;
 							if (arg2 == 0) {
 								gl.glTexParameteri(GL.GL_TEXTURE_2D, GL.GL_TEXTURE_MIN_FILTER, GL.GL_LINEAR_MIPMAP_LINEAR);
 								gl.glTexParameteri(GL.GL_TEXTURE_2D, GL.GL_TEXTURE_MAG_FILTER, GL.GL_LINEAR);
-								GlCleaner.onCardTexture += local160.length * 4 / 3 - this.textureSize;
-								this.textureSize = local160.length * 4 / 3;
+								GlCleaner.onCardTexture += pixels.length * 4 / 3 - this.textureSize;
+								this.textureSize = pixels.length * 4 / 3;
 								break;
 							}
-							local160 = this.texture.method2646(arg2, arg2, spritesArchive, 0.7D, arg0, this.aBoolean341);
+							pixels = this.texture.getPixelsAlpha(arg2, arg2, spritesArchive, 0.7D, provider, this.aBoolean341);
 						}
 					} else {
-						gl.glTexImage2D(GL.GL_TEXTURE_2D, GL.GL_POINTS, GL.GL_RGBA, arg2, arg2, GL.GL_POINTS, GL.GL_BGRA, local148, IntBuffer.wrap(local160));
+						gl.glTexImage2D(GL.GL_TEXTURE_2D, GL.GL_POINTS, GL.GL_RGBA, arg2, arg2, GL.GL_POINTS, GL.GL_BGRA, local148, IntBuffer.wrap(pixels));
 						gl.glTexParameteri(GL.GL_TEXTURE_2D, GL.GL_TEXTURE_MIN_FILTER, GL.GL_LINEAR);
 						gl.glTexParameteri(GL.GL_TEXTURE_2D, GL.GL_TEXTURE_MAG_FILTER, GL.GL_LINEAR);
-						GlCleaner.onCardTexture += local160.length - this.textureSize;
-						this.textureSize = local160.length;
+						GlCleaner.onCardTexture += pixels.length - this.textureSize;
+						this.textureSize = pixels.length;
 					}
 				}
 				gl.glTexParameteri(GL.GL_TEXTURE_2D, GL.GL_TEXTURE_WRAP_S, this.wrapS ? GL.GL_REPEAT : GL.GL_CLAMP_TO_EDGE);

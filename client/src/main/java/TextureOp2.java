@@ -12,7 +12,7 @@ public final class TextureOp2 extends TextureOp {
 
 	@OriginalMember(owner = "client!pk", name = "a", descriptor = "(II)[I")
 	@Override
-	public final int[] method4694(@OriginalArg(1) int arg0) {
-		return Static4.anIntArray231;
+	public final int[] getMonochromeOutput(@OriginalArg(1) int y) {
+		return Texture.widthFractions;
 	}
 }

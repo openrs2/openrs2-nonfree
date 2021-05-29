@@ -260,18 +260,6 @@ public final class Static9 {
 		client.soundChannel.setStream(client.soundStream);
 	}
 
-	@OriginalMember(owner = "client!ao", name = "a", descriptor = "(DB)V")
-	public static void method200(@OriginalArg(0) double arg0) {
-		if (Static5.aDouble11 == arg0) {
-			return;
-		}
-		for (@Pc(13) int local13 = 0; local13 < 256; local13++) {
-			@Pc(28) int local28 = (int) (Math.pow((double) local13 / 255.0D, arg0) * 255.0D);
-			Static4.anIntArray267[local13] = local28 > 255 ? 255 : local28;
-		}
-		Static5.aDouble11 = arg0;
-	}
-
 	@OriginalMember(owner = "client!ao", name = "a", descriptor = "(Ljava/awt/Color;ZZILjava/lang/String;)V")
 	public static void method202(@OriginalArg(0) Color arg0, @OriginalArg(1) boolean arg1, @OriginalArg(3) int arg2, @OriginalArg(4) String arg3) {
 		try {

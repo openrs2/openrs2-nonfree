@@ -28,7 +28,7 @@ public class TextureOp39 extends TextureOp {
 		if (this.anIntArray655 != null) {
 			return true;
 		} else if (this.anInt5847 >= 0) {
-			@Pc(38) SoftwareSprite local38 = Static6.anInt4366 < 0 ? SpriteLoader.loadSoftwareSpriteAutoDetect(Static1.aClass58_7, this.anInt5847) : SpriteLoader.loadSoftwareSprite(Static1.aClass58_7, Static6.anInt4366, this.anInt5847);
+			@Pc(38) SoftwareSprite local38 = Texture.spriteGroupId < 0 ? SpriteLoader.loadSoftwareSpriteAutoDetect(Texture.spritesArchive, this.anInt5847) : SpriteLoader.loadSoftwareSprite(Texture.spritesArchive, Texture.spriteGroupId, this.anInt5847);
 			local38.trim();
 			this.anIntArray655 = local38.pixels;
 			this.anInt5843 = local38.width;
@@ -56,29 +56,29 @@ public class TextureOp39 extends TextureOp {
 
 	@OriginalMember(owner = "client!og", name = "c", descriptor = "(I)I")
 	@Override
-	public final int method4688() {
+	public final int getSpriteId() {
 		return this.anInt5847;
 	}
 
 	@OriginalMember(owner = "client!og", name = "b", descriptor = "(II)[[I")
 	@Override
-	public int[][] method4695(@OriginalArg(0) int arg0) {
-		@Pc(16) int[][] local16 = this.colorImageCache.get(arg0);
+	public int[][] getColorOutput(@OriginalArg(0) int y) {
+		@Pc(16) int[][] local16 = this.colorImageCache.get(y);
 		if (this.colorImageCache.invalid && this.method4702()) {
 			@Pc(32) int[] local32 = local16[0];
 			@Pc(36) int[] local36 = local16[1];
 			@Pc(40) int[] local40 = local16[2];
-			@Pc(60) int local60 = (Static1.anInt379 == this.anInt5834 ? arg0 : arg0 * this.anInt5834 / Static1.anInt379) * this.anInt5843;
-			if (this.anInt5843 == Static2.anInt1626) {
-				for (@Pc(70) int local70 = 0; local70 < Static2.anInt1626; local70++) {
+			@Pc(60) int local60 = (Texture.height == this.anInt5834 ? y : y * this.anInt5834 / Texture.height) * this.anInt5843;
+			if (this.anInt5843 == Texture.width) {
+				for (@Pc(70) int local70 = 0; local70 < Texture.width; local70++) {
 					@Pc(79) int local79 = this.anIntArray655[local60++];
 					local40[local70] = (local79 & 0xFF) << 4;
 					local36[local70] = local79 >> 4 & 0xFF0;
 					local32[local70] = local79 >> 12 & 0xFF0;
 				}
 			} else {
-				for (@Pc(110) int local110 = 0; local110 < Static2.anInt1626; local110++) {
-					@Pc(120) int local120 = this.anInt5843 * local110 / Static2.anInt1626;
+				for (@Pc(110) int local110 = 0; local110 < Texture.width; local110++) {
+					@Pc(120) int local120 = this.anInt5843 * local110 / Texture.width;
 					@Pc(127) int local127 = this.anIntArray655[local120 + local60];
 					local40[local110] = (local127 & 0xFF) << 4;
 					local36[local110] = local127 >> 4 & 0xFF0;

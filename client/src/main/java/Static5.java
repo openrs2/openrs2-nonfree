@@ -181,9 +181,6 @@ public final class Static5 {
 	@OriginalMember(owner = "client!ob", name = "c", descriptor = "I")
 	public static int anInt5195 = -1;
 
-	@OriginalMember(owner = "client!ob", name = "v", descriptor = "D")
-	public static double aDouble11 = -1.0D;
-
 	@OriginalMember(owner = "client!ob", name = "w", descriptor = "I")
 	public static int anInt5204 = 0;
 

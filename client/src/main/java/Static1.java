@@ -37,9 +37,6 @@ public final class Static1 {
 	@OriginalMember(owner = "client!am", name = "x", descriptor = "I")
 	public static int anInt212;
 
-	@OriginalMember(owner = "client!an", name = "g", descriptor = "Lclient!fh;")
-	public static Js5 aClass58_7;
-
 	@OriginalMember(owner = "client!bb", name = "E", descriptor = "I")
 	public static int anInt243;
 
@@ -66,9 +63,6 @@ public final class Static1 {
 
 	@OriginalMember(owner = "client!bk", name = "g", descriptor = "Lclient!ib;")
 	public static Skybox aClass4_Sub3_Sub10_2;
-
-	@OriginalMember(owner = "client!bl", name = "eb", descriptor = "I")
-	public static int anInt379;
 
 	@OriginalMember(owner = "client!bn", name = "C", descriptor = "I")
 	public static int anInt403;
@@ -129,9 +123,6 @@ public final class Static1 {
 
 	@OriginalMember(owner = "client!dc", name = "g", descriptor = "Lclient!wf;")
 	public static Component aClass185_3;
-
-	@OriginalMember(owner = "client!dc", name = "l", descriptor = "I")
-	public static int anInt901;
 
 	@OriginalMember(owner = "client!aa", name = "b", descriptor = "I")
 	public static int anInt3 = 0;

@@ -29,18 +29,18 @@ public final class TextureOp33 extends TextureOp {
 
 	@OriginalMember(owner = "client!no", name = "b", descriptor = "(II)[[I")
 	@Override
-	public final int[][] method4695(@OriginalArg(0) int arg0) {
-		@Pc(16) int[][] local16 = this.colorImageCache.get(arg0);
+	public final int[][] getColorOutput(@OriginalArg(0) int y) {
+		@Pc(16) int[][] local16 = this.colorImageCache.get(y);
 		if (this.colorImageCache.invalid) {
-			@Pc(33) int[] local33 = this.method4699(Static6.anInt5001 & arg0 - 1, 0);
-			@Pc(39) int[] local39 = this.method4699(arg0, 0);
-			@Pc(51) int[] local51 = this.method4699(arg0 + 1 & Static6.anInt5001, 0);
+			@Pc(33) int[] local33 = this.method4699(Texture.heightMask & y - 1, 0);
+			@Pc(39) int[] local39 = this.method4699(y, 0);
+			@Pc(51) int[] local51 = this.method4699(y + 1 & Texture.heightMask, 0);
 			@Pc(55) int[] local55 = local16[0];
 			@Pc(59) int[] local59 = local16[1];
 			@Pc(63) int[] local63 = local16[2];
-			for (@Pc(65) int local65 = 0; local65 < Static2.anInt1626; local65++) {
+			for (@Pc(65) int local65 = 0; local65 < Texture.width; local65++) {
 				@Pc(84) int local84 = (local51[local65] - local33[local65]) * this.anInt3634;
-				@Pc(103) int local103 = this.anInt3634 * (local39[local65 + 1 & Static1.anInt901] - local39[local65 - 1 & Static1.anInt901]);
+				@Pc(103) int local103 = this.anInt3634 * (local39[local65 + 1 & Texture.widthMask] - local39[local65 - 1 & Texture.widthMask]);
 				@Pc(107) int local107 = local84 >> 12;
 				@Pc(111) int local111 = local103 >> 12;
 				@Pc(117) int local117 = local107 * local107 >> 12;

@@ -7,8 +7,8 @@ import org.openrs2.deob.annotation.Pc;
 public final class SoftwareAlphaSprite extends SoftwareSprite {
 
 	@OriginalMember(owner = "client!jn", name = "<init>", descriptor = "(II)V")
-	public SoftwareAlphaSprite(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
-		super(arg0, arg1);
+	public SoftwareAlphaSprite(@OriginalArg(0) int width, @OriginalArg(1) int height) {
+		super(width, height);
 	}
 
 	@OriginalMember(owner = "client!jn", name = "<init>", descriptor = "(IIIIII[I)V")

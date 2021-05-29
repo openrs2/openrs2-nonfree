@@ -122,7 +122,7 @@ public class Js5TextureProvider implements TextureProvider {
 	@OriginalMember(owner = "client!qi", name = "a", descriptor = "(IFIIIZ)[I")
 	@Override
 	public final int[] method415(@OriginalArg(2) int id, @OriginalArg(0) int arg0, @OriginalArg(1) float arg1, @OriginalArg(3) int arg3) {
-		return this.getTexture(id).method2653(arg1, this.metadata[id].aBoolean236, this.spritesArchive, this, arg0, false, arg3);
+		return this.getTexture(id).getPixels(arg1, this.metadata[id].aBoolean236, this.spritesArchive, this, arg0, false, arg3);
 	}
 
 	@OriginalMember(owner = "client!qi", name = "c", descriptor = "(IZ)Lclient!ln;")

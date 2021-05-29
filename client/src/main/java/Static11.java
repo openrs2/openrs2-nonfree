@@ -198,32 +198,6 @@ public final class Static11 {
 		arg9.method1870(arg2, arg13, arg14, local49, local39, false);
 	}
 
-	@OriginalMember(owner = "client!cd", name = "a", descriptor = "(IIZ)V")
-	public static void method524(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
-		if (arg0 != Static2.anInt1626) {
-			Static4.anIntArray231 = new int[arg0];
-			for (@Pc(14) int local14 = 0; local14 < arg0; local14++) {
-				Static4.anIntArray231[local14] = (local14 << 12) / arg0;
-			}
-			Static1.anInt901 = arg0 - 1;
-			Static2.anInt1626 = arg0;
-			Static6.anInt4511 = arg0 * 32;
-		}
-		if (arg1 == Static1.anInt379) {
-			return;
-		}
-		if (arg1 == Static2.anInt1626) {
-			Static6.anIntArray478 = Static4.anIntArray231;
-		} else {
-			Static6.anIntArray478 = new int[arg1];
-			for (@Pc(58) int local58 = 0; local58 < arg1; local58++) {
-				Static6.anIntArray478[local58] = (local58 << 12) / arg1;
-			}
-		}
-		Static6.anInt5001 = arg1 - 1;
-		Static1.anInt379 = arg1;
-	}
-
 	@OriginalMember(owner = "client!ce", name = "a", descriptor = "(ILclient!wf;IIIILclient!uj;)V")
 	public static void method525(@OriginalArg(0) int arg0, @OriginalArg(1) Component arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(5) int arg4, @OriginalArg(6) Sprite arg5) {
 		if (arg5 == null) {

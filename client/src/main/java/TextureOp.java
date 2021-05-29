@@ -121,21 +121,21 @@ public abstract class TextureOp extends Node {
 	public boolean monochrome;
 
 	@OriginalMember(owner = "client!jo", name = "D", descriptor = "[Lclient!jo;")
-	public final TextureOp[] aClass4_Sub1Array42;
+	public final TextureOp[] childOps;
 
 	@OriginalMember(owner = "client!jo", name = "<init>", descriptor = "(IZ)V")
-	protected TextureOp(@OriginalArg(0) int arg0, @OriginalArg(1) boolean arg1) {
-		this.monochrome = arg1;
-		this.aClass4_Sub1Array42 = new TextureOp[arg0];
+	protected TextureOp(@OriginalArg(0) int childOpsCount, @OriginalArg(1) boolean monochrome) {
+		this.monochrome = monochrome;
+		this.childOps = new TextureOp[childOpsCount];
 	}
 
 	@OriginalMember(owner = "client!jo", name = "a", descriptor = "(IIB)[[I")
 	protected final int[][] method4686(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
-		if (!this.aClass4_Sub1Array42[arg0].monochrome) {
-			return this.aClass4_Sub1Array42[arg0].method4695(arg1);
+		if (!this.childOps[arg0].monochrome) {
+			return this.childOps[arg0].getColorOutput(arg1);
 		}
 		@Pc(27) int[][] local27 = new int[3][];
-		@Pc(35) int[] local35 = this.aClass4_Sub1Array42[arg0].method4694(arg1);
+		@Pc(35) int[] local35 = this.childOps[arg0].getMonochromeOutput(arg1);
 		local27[0] = local35;
 		local27[2] = local35;
 		local27[1] = local35;
@@ -147,22 +147,22 @@ public abstract class TextureOp extends Node {
 	}
 
 	@OriginalMember(owner = "client!jo", name = "c", descriptor = "(I)I")
-	public int method4688() {
+	public int getSpriteId() {
 		return -1;
 	}
 
 	@OriginalMember(owner = "client!jo", name = "d", descriptor = "(B)I")
-	public int method4691() {
+	public int getTextureId() {
 		return -1;
 	}
 
 	@OriginalMember(owner = "client!jo", name = "a", descriptor = "(II)[I")
-	public int[] method4694(@OriginalArg(1) int arg0) {
+	public int[] getMonochromeOutput(@OriginalArg(1) int y) {
 		throw new IllegalStateException("This operation does not have a monochrome output");
 	}
 
 	@OriginalMember(owner = "client!jo", name = "b", descriptor = "(II)[[I")
-	public int[][] method4695(@OriginalArg(0) int arg0) {
+	public int[][] getColorOutput(@OriginalArg(0) int y) {
 		throw new IllegalStateException("This operation does not have a colour output");
 	}
 
@@ -189,7 +189,7 @@ public abstract class TextureOp extends Node {
 
 	@OriginalMember(owner = "client!jo", name = "b", descriptor = "(III)[I")
 	protected final int[] method4699(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1) {
-		return this.aClass4_Sub1Array42[arg1].monochrome ? this.aClass4_Sub1Array42[arg1].method4694(arg0) : this.aClass4_Sub1Array42[arg1].method4695(arg0)[0];
+		return this.childOps[arg1].monochrome ? this.childOps[arg1].getMonochromeOutput(arg0) : this.childOps[arg1].getColorOutput(arg0)[0];
 	}
 
 	@OriginalMember(owner = "client!jo", name = "e", descriptor = "(B)V")
