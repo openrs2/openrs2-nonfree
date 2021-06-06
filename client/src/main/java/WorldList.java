@@ -99,13 +99,13 @@ public final class WorldList {
 	@OriginalMember(owner = "client!qe", name = "a", descriptor = "(ILclient!fd;)V")
 	private static void decodePlayers(@OriginalArg(1) Buffer buffer) {
 		for (@Pc(3) int i = 0; i < size; i++) {
-			@Pc(14) int id = buffer.readUnsignedShortSmart();
+			@Pc(14) int offset = buffer.readUnsignedShortSmart();
 			@Pc(18) int players = buffer.readUnsignedShort();
 			if (players == 65535) {
 				players = -1;
 			}
-			if (worlds[id] != null) {
-				worlds[id].players = players;
+			if (worlds[offset] != null) {
+				worlds[offset].players = players;
 			}
 		}
 	}
