@@ -7,7 +7,7 @@ import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
 @OriginalClass("client!bj")
-public final class UnderwaterMaterial implements Material {
+public final class UnderwaterMaterialRenderer implements MaterialRenderer {
 
 	@OriginalMember(owner = "client!bj", name = "a", descriptor = "I")
 	private int listId = -1;
@@ -19,7 +19,7 @@ public final class UnderwaterMaterial implements Material {
 	private final float[] tempVertex = new float[4];
 
 	@OriginalMember(owner = "client!bj", name = "<init>", descriptor = "()V")
-	public UnderwaterMaterial() {
+	public UnderwaterMaterialRenderer() {
 		if (GlRenderer.maxTextureUnits >= 2) {
 			@Pc(17) int[] temp = new int[1];
 			@Pc(20) byte[] texture = new byte[8];

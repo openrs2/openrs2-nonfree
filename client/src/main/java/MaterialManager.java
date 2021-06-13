@@ -4,7 +4,7 @@ import org.openrs2.deob.annotation.Pc;
 
 public final class MaterialManager {
 	@OriginalMember(owner = "client!si", name = "h", descriptor = "[Lclient!cl;")
-	private static Material[] materials;
+	private static MaterialRenderer[] renderers;
 
 	@OriginalMember(owner = "client!uf", name = "c", descriptor = "I")
 	private static int currentMaterialId = 0;
@@ -18,14 +18,14 @@ public final class MaterialManager {
 	@OriginalMember(owner = "client!dn", name = "f", descriptor = "(I)V")
 	public static void init() {
 		Static19.method1855();
-		materials = new Material[8];
-		materials[1] = new SpecularMaterial();
-		materials[2] = new LiquidMaterial();
-		materials[3] = new UnderwaterMaterial();
-		materials[4] = new WaterMaterial();
-		materials[5] = new WaterfallMaterial();
-		materials[6] = new UnlitMaterial();
-		materials[7] = new Material7();
+		renderers = new MaterialRenderer[8];
+		renderers[1] = new SpecularMaterialRenderer();
+		renderers[2] = new LiquidMaterialRenderer();
+		renderers[3] = new UnderwaterMaterialRenderer();
+		renderers[4] = new WaterMaterialRenderer();
+		renderers[5] = new WaterfallMaterialRenderer();
+		renderers[6] = new UnlitMaterialRenderer();
+		renderers[7] = new MaterialRenderer7();
 	}
 
 	@OriginalMember(owner = "client!ln", name = "a", descriptor = "(III)V")
@@ -42,37 +42,37 @@ public final class MaterialManager {
 				return;
 			}
 			if (currentMaterialId != 0) {
-				materials[currentMaterialId].unbind();
+				renderers[currentMaterialId].unbind();
 			}
 			if (materialId != 0) {
-				@Pc(42) Material material = materials[materialId];
-				material.bind();
-				material.setArgument(arg);
+				@Pc(42) MaterialRenderer renderer = renderers[materialId];
+				renderer.bind();
+				renderer.setArgument(arg);
 			}
 			currentArg = arg;
 			currentMaterialId = materialId;
 		} else if (materialId != 0 && currentArg != arg) {
-			materials[materialId].setArgument(arg);
+			renderers[materialId].setArgument(arg);
 			currentArg = arg;
 		}
 	}
 
 	@OriginalMember(owner = "client!ff", name = "a", descriptor = "(B)I")
 	public static int getFlags() {
-		return currentMaterialId == 0 ? 0 : materials[currentMaterialId].getFlags();
+		return currentMaterialId == 0 ? 0 : renderers[currentMaterialId].getFlags();
 	}
 
 	@OriginalMember(owner = "client!sh", name = "a", descriptor = "(ZI)V")
 	public static void resetArgument(@OriginalArg(1) int materialId) {
 		if (currentMaterialId == materialId) {
-			@Pc(16) Material id = materials[materialId];
+			@Pc(16) MaterialRenderer id = renderers[materialId];
 			id.setArgument(currentArg);
 		}
 	}
 
 	@OriginalMember(owner = "client!aa", name = "a", descriptor = "(I)V")
 	public static void quit() {
-		materials = null;
+		renderers = null;
 		Static19.method1858();
 	}
 }

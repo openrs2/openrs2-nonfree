@@ -6,7 +6,7 @@ import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
 @OriginalClass("client!bo")
-public final class WaterfallMaterial implements Material {
+public final class WaterfallMaterialRenderer implements MaterialRenderer {
 
 	@OriginalMember(owner = "client!bo", name = "p", descriptor = "I")
 	private int anInt419;
@@ -15,7 +15,7 @@ public final class WaterfallMaterial implements Material {
 	private final float[] aFloatArray9 = new float[4];
 
 	@OriginalMember(owner = "client!bo", name = "<init>", descriptor = "()V")
-	public WaterfallMaterial() {
+	public WaterfallMaterialRenderer() {
 		this.method399();
 	}
 

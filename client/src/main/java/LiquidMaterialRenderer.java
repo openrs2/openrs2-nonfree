@@ -9,7 +9,7 @@ import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
 @OriginalClass("client!gk")
-public final class LiquidMaterial implements Material {
+public final class LiquidMaterialRenderer implements MaterialRenderer {
 
 	@OriginalMember(owner = "client!gk", name = "a", descriptor = "I")
 	private int anInt2099 = -1;
@@ -24,7 +24,7 @@ public final class LiquidMaterial implements Material {
 	private FloatBuffer aFloatBuffer1;
 
 	@OriginalMember(owner = "client!gk", name = "<init>", descriptor = "()V")
-	public LiquidMaterial() {
+	public LiquidMaterialRenderer() {
 		if (this.anInt2099 < 0 && (GlRenderer.arbVertexProgramSupported && GlRenderer.maxTextureUnits >= 2)) {
 			@Pc(19) int[] local19 = new int[1];
 			@Pc(21) GL gl = GlRenderer.gl;
