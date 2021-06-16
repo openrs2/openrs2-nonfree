@@ -48,13 +48,13 @@ public final class Js5GlTextureProvider extends Js5TextureProvider implements Gl
 	@OriginalMember(owner = "client!c", name = "b", descriptor = "(IZ)I")
 	@Override
 	public final int method450(@OriginalArg(0) int id) {
-		return this.getMetadata(id).aByte7 & 0xFF;
+		return this.getMaterial(id).aByte7 & 0xFF;
 	}
 
 	@OriginalMember(owner = "client!c", name = "b", descriptor = "(IB)Z")
 	@Override
 	public final boolean method442(@OriginalArg(0) int id) {
-		return this.getMetadata(id).aBoolean233;
+		return this.getMaterial(id).aBoolean233;
 	}
 
 	@OriginalMember(owner = "client!c", name = "i", descriptor = "(II)V")
@@ -70,20 +70,20 @@ public final class Js5GlTextureProvider extends Js5TextureProvider implements Gl
 	@OriginalMember(owner = "client!c", name = "b", descriptor = "(II)Z")
 	@Override
 	public final boolean method441(@OriginalArg(0) int id) {
-		return !this.getMetadata(id).aBoolean237;
+		return !this.getMaterial(id).aBoolean237;
 	}
 
 	@OriginalMember(owner = "client!c", name = "h", descriptor = "(II)I")
 	@Override
 	public final int method455(@OriginalArg(0) int id) {
-		return this.getMetadata(id).materialArg & 0xFF;
+		return this.getMaterial(id).materialArg & 0xFF;
 	}
 
 	@OriginalMember(owner = "client!c", name = "c", descriptor = "(IB)[I")
 	@Override
 	public final int[] method449(@OriginalArg(0) int id) {
 		@Pc(8) GlTexture texture = this.getGlTexture(id);
-		return texture == null ? null : texture.method4071(this, this.spritesArchive, this.lowDetail || this.getMetadata(id).lowDetail);
+		return texture == null ? null : texture.method4071(this, this.spritesArchive, this.lowDetail || this.getMaterial(id).lowDetail);
 	}
 
 	@OriginalMember(owner = "client!c", name = "j", descriptor = "(II)Lclient!so;")
@@ -116,7 +116,7 @@ public final class Js5GlTextureProvider extends Js5TextureProvider implements Gl
 	@OriginalMember(owner = "client!c", name = "g", descriptor = "(II)Z")
 	@Override
 	public final boolean isLowDetail(@OriginalArg(1) int id) {
-		return this.lowDetail || this.getMetadata(id).lowDetail;
+		return this.lowDetail || this.getMaterial(id).lowDetail;
 	}
 
 	@OriginalMember(owner = "client!c", name = "c", descriptor = "(I)V")
@@ -131,7 +131,7 @@ public final class Js5GlTextureProvider extends Js5TextureProvider implements Gl
 	@OriginalMember(owner = "client!c", name = "e", descriptor = "(II)I")
 	@Override
 	public final int getAverageColor(@OriginalArg(0) int id) {
-		return this.getMetadata(id).averageColor & 0xFFFF;
+		return this.getMaterial(id).averageColor & 0xFFFF;
 	}
 
 	@OriginalMember(owner = "client!c", name = "a", descriptor = "(IZ)Z")
@@ -155,13 +155,13 @@ public final class Js5GlTextureProvider extends Js5TextureProvider implements Gl
 	@OriginalMember(owner = "client!c", name = "c", descriptor = "(II)Z")
 	@Override
 	public final boolean method443(@OriginalArg(1) int id) {
-		return this.getMetadata(id).aBoolean235;
+		return this.getMaterial(id).aBoolean235;
 	}
 
 	@OriginalMember(owner = "client!c", name = "a", descriptor = "(BII)V")
 	@Override
 	public final void method454(@OriginalArg(2) int id, @OriginalArg(1) int arg0) {
-		MaterialManager.setMaterial(this.getMetadata(id).materialId & 0xFF, this.getMetadata(id).materialArg & 0xFF);
+		MaterialManager.setMaterial(this.getMaterial(id).materialId & 0xFF, this.getMaterial(id).materialArg & 0xFF);
 		@Pc(29) boolean local29 = false;
 		@Pc(34) GlTexture texture = this.getGlTexture(id);
 		if (texture != null) {
@@ -176,7 +176,7 @@ public final class Js5GlTextureProvider extends Js5TextureProvider implements Gl
 	@OriginalMember(owner = "client!c", name = "a", descriptor = "(BI)I")
 	@Override
 	public final int method447(@OriginalArg(1) int arg0) {
-		return this.getMetadata(arg0).aByte10 & 0xFF;
+		return this.getMaterial(arg0).aByte10 & 0xFF;
 	}
 
 	@OriginalMember(owner = "client!c", name = "c", descriptor = "(IZ)Lclient!ln;")
@@ -190,7 +190,7 @@ public final class Js5GlTextureProvider extends Js5TextureProvider implements Gl
 	private GlSolidColorTexture getSolidColorTexture(@OriginalArg(1) int id) {
 		@Pc(11) GlSolidColorTexture texture = (GlSolidColorTexture) this.solidColorSprites.get(id);
 		if (texture == null) {
-			@Pc(27) GlSolidColorTexture newTexture = new GlSolidColorTexture(this.getMetadata(id).averageColor & 0xFFFF);
+			@Pc(27) GlSolidColorTexture newTexture = new GlSolidColorTexture(this.getMaterial(id).averageColor & 0xFFFF);
 			this.solidColorSprites.put(id, newTexture);
 			return newTexture;
 		} else {
@@ -201,7 +201,7 @@ public final class Js5GlTextureProvider extends Js5TextureProvider implements Gl
 	@OriginalMember(owner = "client!c", name = "f", descriptor = "(II)V")
 	@Override
 	public final void method451(@OriginalArg(1) int id) {
-		this.method454(id, this.lowDetail || this.getMetadata(id).lowDetail ? 64 : 128);
+		this.method454(id, this.lowDetail || this.getMaterial(id).lowDetail ? 64 : 128);
 	}
 
 	@OriginalMember(owner = "client!c", name = "a", descriptor = "(FII)[I")
@@ -212,13 +212,13 @@ public final class Js5GlTextureProvider extends Js5TextureProvider implements Gl
 			return null;
 		} else {
 			texture.aBoolean344 = true;
-			return texture.method4073(this, this.spritesArchive, arg0, this.lowDetail || this.getMetadata(id).lowDetail);
+			return texture.method4073(this, this.spritesArchive, arg0, this.lowDetail || this.getMaterial(id).lowDetail);
 		}
 	}
 
 	@OriginalMember(owner = "client!c", name = "d", descriptor = "(II)I")
 	@Override
 	public final int method444(@OriginalArg(0) int id) {
-		return this.getMetadata(id).materialId & 0xFF;
+		return this.getMaterial(id).materialId & 0xFF;
 	}
 }

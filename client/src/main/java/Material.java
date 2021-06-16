@@ -2,7 +2,7 @@ import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
 
 @OriginalClass("client!mi")
-public final class TextureMeta {
+public final class Material {
 
 	@OriginalMember(owner = "client!mi", name = "e", descriptor = "Z")
 	public boolean aBoolean233;
