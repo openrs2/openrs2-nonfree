@@ -230,7 +230,7 @@ public final class SceneGraph {
 	}
 
 	@OriginalMember(owner = "client!l", name = "a", descriptor = "(IIIIIIIILclient!vc;IZJ)Z")
-	private static boolean addScenery(@OriginalArg(0) int level, @OriginalArg(1) int x, @OriginalArg(2) int z, @OriginalArg(3) int width, @OriginalArg(4) int length, @OriginalArg(5) int centerXFine, @OriginalArg(6) int centerZFine, @OriginalArg(7) int arg7, @OriginalArg(8) Entity entity, @OriginalArg(9) int arg9, @OriginalArg(10) boolean arg10, @OriginalArg(11) long key) {
+	private static boolean addScenery(@OriginalArg(0) int level, @OriginalArg(1) int x, @OriginalArg(2) int z, @OriginalArg(3) int width, @OriginalArg(4) int length, @OriginalArg(5) int centerXFine, @OriginalArg(6) int centerZFine, @OriginalArg(7) int y, @OriginalArg(8) Entity entity, @OriginalArg(9) int angle, @OriginalArg(10) boolean arg10, @OriginalArg(11) long key) {
 		@Pc(6) boolean underwater = tileHeights == underwaterTileHeights;
 		@Pc(8) int local8 = 0;
 		for (@Pc(10) int x0 = x; x0 < x + width; x0++) {
@@ -249,9 +249,9 @@ public final class SceneGraph {
 		scenery.level = level;
 		scenery.centerXFine = centerXFine;
 		scenery.centerZFine = centerZFine;
-		scenery.anInt823 = arg7;
+		scenery.y = y;
 		scenery.entity = entity;
-		scenery.anInt814 = arg9;
+		scenery.angle = angle;
 		scenery.xMin = x;
 		scenery.zMin = z;
 		scenery.xMax = x + width - 1;
@@ -502,8 +502,8 @@ public final class SceneGraph {
 	}
 
 	@OriginalMember(owner = "client!ci", name = "a", descriptor = "(IIIILclient!vc;IJIIII)Z")
-	public static boolean method584(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) Entity arg4, @OriginalArg(5) int arg5, @OriginalArg(6) long arg6, @OriginalArg(7) int arg7, @OriginalArg(8) int arg8, @OriginalArg(9) int arg9, @OriginalArg(10) int arg10) {
-		return arg4 == null ? true : addScenery(arg0, arg7, arg8, arg9 + 1 - arg7, arg10 + 1 - arg8, arg1, arg2, arg3, arg4, arg5, true, arg6);
+	public static boolean method584(@OriginalArg(0) int level, @OriginalArg(1) int centerXFine, @OriginalArg(2) int centerZFine, @OriginalArg(3) int y, @OriginalArg(4) Entity entity, @OriginalArg(5) int angle, @OriginalArg(6) long key, @OriginalArg(7) int x0, @OriginalArg(8) int z0, @OriginalArg(9) int x1, @OriginalArg(10) int z1) {
+		return entity == null ? true : addScenery(level, x0, z0, x1 + 1 - x0, z1 + 1 - z0, centerXFine, centerZFine, y, entity, angle, true, key);
 	}
 
 	@OriginalMember(owner = "client!jo", name = "a", descriptor = "(IIIIIIIIIIIIIIIIIIII)V")
@@ -591,7 +591,7 @@ public final class SceneGraph {
 	}
 
 	@OriginalMember(owner = "client!cd", name = "a", descriptor = "(IZII)I")
-	public static int method522(@OriginalArg(3) int level, @OriginalArg(2) int xFine, @OriginalArg(0) int zFine) {
+	public static int getTileHeight(@OriginalArg(3) int level, @OriginalArg(2) int xFine, @OriginalArg(0) int zFine) {
 		if (tileHeights == null) {
 			return 0;
 		}
@@ -604,11 +604,11 @@ public final class SceneGraph {
 		if (level < 3 && (Static4.tileFlags[1][x][z] & 0x2) == 2) {
 			virtualLevel = level + 1;
 		}
-		@Pc(61) int local61 = zFine & 0x7F;
-		@Pc(70) int local70 = xFine & 0x7F;
-		@Pc(98) int local98 = tileHeights[virtualLevel][x][z] * (128 - local70) + local70 * tileHeights[virtualLevel][x + 1][z] >> 7;
-		@Pc(128) int local128 = tileHeights[virtualLevel][x + 1][z + 1] * local70 + (128 - local70) * tileHeights[virtualLevel][x][z + 1] >> 7;
-		return local128 * local61 + local98 * (128 - local61) >> 7;
+		@Pc(61) int zFine2 = zFine & 0x7F;
+		@Pc(70) int xFine2 = xFine & 0x7F;
+		@Pc(98) int heightZ0 = tileHeights[virtualLevel][x][z] * (128 - xFine2) + xFine2 * tileHeights[virtualLevel][x + 1][z] >> 7;
+		@Pc(128) int heightZ1 = tileHeights[virtualLevel][x + 1][z + 1] * xFine2 + (128 - xFine2) * tileHeights[virtualLevel][x][z + 1] >> 7;
+		return heightZ1 * zFine2 + heightZ0 * (128 - zFine2) >> 7;
 	}
 
 	@OriginalMember(owner = "client!om", name = "a", descriptor = "(II)V")

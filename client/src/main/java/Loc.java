@@ -340,7 +340,7 @@ public final class Loc extends Entity {
 				}
 			}
 			while (this.seqType.anIntArray94[this.anInt4574] < local35) {
-				SoundPlayer.playSeqSound(this.seqType, arg0, arg1, this.anInt4574, false);
+				SoundPlayer.playSeqSound(this.seqType, arg1, arg0, this.anInt4574, false);
 				local35 -= this.seqType.anIntArray94[this.anInt4574];
 				this.anInt4574++;
 				if (this.seqType.anIntArray95.length <= this.anInt4574) {

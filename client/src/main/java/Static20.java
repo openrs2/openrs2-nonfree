@@ -1014,7 +1014,7 @@ public final class Static20 {
 				if (local22.anInt3713 > 0) {
 					@Pc(61) Npc local61 = NpcList.npcs[local22.anInt3713 - 1];
 					if (local61 != null && local61.xFine >= 0 && local61.xFine < 13312 && local61.zFine >= 0 && local61.zFine < 13312) {
-						local22.method3105(SceneGraph.method522(local22.anInt3717, local61.xFine, local61.zFine) - local22.anInt3722, local61.xFine, client.loop, local61.zFine);
+						local22.method3105(SceneGraph.getTileHeight(local22.anInt3717, local61.xFine, local61.zFine) - local22.anInt3722, local61.xFine, client.loop, local61.zFine);
 					}
 				}
 				if (local22.anInt3713 < 0) {
@@ -1026,7 +1026,7 @@ public final class Static20 {
 						local118 = PlayerList.players[local113];
 					}
 					if (local118 != null && local118.xFine >= 0 && local118.xFine < 13312 && local118.zFine >= 0 && local118.zFine < 13312) {
-						local22.method3105(SceneGraph.method522(local22.anInt3717, local118.xFine, local118.zFine) - local22.anInt3722, local118.xFine, client.loop, local118.zFine);
+						local22.method3105(SceneGraph.getTileHeight(local22.anInt3717, local118.xFine, local118.zFine) - local22.anInt3722, local118.xFine, client.loop, local118.zFine);
 					}
 				}
 				local22.method3103(Static5.anInt4156);

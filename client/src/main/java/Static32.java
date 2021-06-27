@@ -310,55 +310,6 @@ public final class Static32 {
 		}
 	}
 
-	@OriginalMember(owner = "client!sl", name = "a", descriptor = "([ILclient!f;I[I[I)V")
-	public static void method4023(@OriginalArg(0) int[] arg0, @OriginalArg(1) Player arg1, @OriginalArg(3) int[] arg2, @OriginalArg(4) int[] arg3) {
-		for (@Pc(11) int local11 = 0; local11 < arg3.length; local11++) {
-			@Pc(23) int local23 = arg3[local11];
-			@Pc(27) int local27 = arg2[local11];
-			@Pc(31) int local31 = arg0[local11];
-			for (@Pc(33) int local33 = 0; local31 != 0 && local33 < arg1.aClass150Array3.length; local33++) {
-				if ((local31 & 0x1) != 0) {
-					if (local23 == -1) {
-						arg1.aClass150Array3[local33] = null;
-					} else {
-						@Pc(61) SeqType local61 = SeqTypeList.get(local23);
-						@Pc(66) Class150 local66 = arg1.aClass150Array3[local33];
-						@Pc(69) int local69 = local61.anInt1238;
-						if (local66 != null) {
-							if (local66.anInt4456 == local23) {
-								if (local69 == 0) {
-									local66 = arg1.aClass150Array3[local33] = null;
-								} else if (local69 == 1) {
-									local66.anInt4462 = 0;
-									local66.anInt4464 = 1;
-									local66.anInt4460 = 0;
-									local66.anInt4465 = 0;
-									local66.anInt4461 = local27;
-									SoundPlayer.playSeqSound(local61, arg1.zFine, arg1.xFine, 0, PlayerList.self == arg1);
-								} else if (local69 == 2) {
-									local66.anInt4465 = 0;
-								}
-							} else if (local61.anInt1243 >= SeqTypeList.get(local66.anInt4456).anInt1243) {
-								local66 = arg1.aClass150Array3[local33] = null;
-							}
-						}
-						if (local66 == null) {
-							@Pc(166) Class150 local166 = arg1.aClass150Array3[local33] = new Class150();
-							local166.anInt4456 = local23;
-							local166.anInt4460 = 0;
-							local166.anInt4465 = 0;
-							local166.anInt4461 = local27;
-							local166.anInt4464 = 1;
-							local166.anInt4462 = 0;
-							SoundPlayer.playSeqSound(local61, arg1.zFine, arg1.xFine, 0, arg1 == PlayerList.self);
-						}
-					}
-				}
-				local31 >>>= 1;
-			}
-		}
-	}
-
 	@OriginalMember(owner = "client!sl", name = "a", descriptor = "(Lclient!qc;B)V")
 	public static void method4024(@OriginalArg(0) PathingEntity entity) {
 		@Pc(5) BasType basType = entity.getBasType();
@@ -367,7 +318,7 @@ public final class Static32 {
 			entity.movementBlockedLoops = 0;
 			return;
 		}
-		if (entity.seqId != -1 && entity.anInt3996 == 0) {
+		if (entity.seqId != -1 && entity.seqDelay == 0) {
 			@Pc(41) SeqType seqType = SeqTypeList.get(entity.seqId);
 			if (entity.anInt4030 > 0 && seqType.anInt1240 == 0) {
 				entity.movementBlockedLoops++;
@@ -378,10 +329,10 @@ public final class Static32 {
 				return;
 			}
 		}
-		if (entity.spotAnimId != -1 && client.loop >= entity.anInt3984) {
+		if (entity.spotAnimId != -1 && client.loop >= entity.spotAnimStart) {
 			@Pc(95) SpotAnimType spotAnimType = SpotAnimTypeList.get(entity.spotAnimId);
-			if (spotAnimType.aBoolean222 && spotAnimType.anInt3134 != -1) {
-				@Pc(110) SeqType seqType = SeqTypeList.get(spotAnimType.anInt3134);
+			if (spotAnimType.aBoolean222 && spotAnimType.seqId != -1) {
+				@Pc(110) SeqType seqType = SeqTypeList.get(spotAnimType.seqId);
 				if (entity.anInt4030 > 0 && seqType.anInt1240 == 0) {
 					entity.movementBlockedLoops++;
 					return;
@@ -443,9 +394,9 @@ public final class Static32 {
 		if (entity instanceof Npc) {
 			local363 = ((Npc) entity).type.aBoolean358;
 		}
-		@Pc(373) byte local373 = 1;
+		@Pc(373) byte movementSpeed = 1;
 		if (local363) {
-			if (entity.angle != entity.targetAngle && entity.anInt3985 == -1 && entity.anInt4009 != 0) {
+			if (entity.angle != entity.targetAngle && entity.faceEntity == -1 && entity.anInt4009 != 0) {
 				local361 = 2;
 			}
 			if (entity.movementQueueSize > 2) {
@@ -471,14 +422,14 @@ public final class Static32 {
 			}
 		}
 		if (entity.movementQueueSpeed[entity.movementQueueSize - 1] == 2) {
-			local373 = 2;
+			movementSpeed = 2;
 			local361 <<= 1;
 		} else if (entity.movementQueueSpeed[entity.movementQueueSize - 1] == 0) {
 			local361 >>= 1;
-			local373 = 0;
+			movementSpeed = 0;
 		}
 		if (local361 < 8 || basType.anInt831 == -1) {
-			if (basType.anInt854 != -1 && local373 == 0) {
+			if (basType.anInt854 != -1 && movementSpeed == 0) {
 				if (basType.anInt828 == entity.movementSeqId && basType.anInt833 != -1) {
 					entity.movementSeqId = basType.anInt833;
 				} else if (entity.movementSeqId == basType.anInt855 && basType.anInt852 != -1) {

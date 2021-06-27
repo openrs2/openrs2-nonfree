@@ -76,7 +76,7 @@ public final class Static23 {
 		if (Static1.anInt212 >= 100) {
 			@Pc(31) int local31 = Static4.anInt3302 * 128 + 64;
 			@Pc(37) int local37 = Static3.anInt2497 * 128 + 64;
-			@Pc(46) int local46 = SceneGraph.method522(Player.level, local31, local37) - Static5.anInt3572;
+			@Pc(46) int local46 = SceneGraph.getTileHeight(Player.level, local31, local37) - Static5.anInt3572;
 			@Pc(50) int local50 = local31 - Static3.anInt2519;
 			@Pc(55) int local55 = local46 - Static2.anInt1931;
 			@Pc(60) int local60 = local37 - Static7.anInt5678;
@@ -97,11 +97,11 @@ public final class Static23 {
 	public static void method2537() {
 		@Pc(9) int local9 = Static4.anInt2977 * 128 + 64;
 		@Pc(15) int local15 = Static5.anInt4165 * 128 + 64;
-		@Pc(24) int local24 = SceneGraph.method522(Player.level, local9, local15) - Static4.anInt3131;
+		@Pc(24) int local24 = SceneGraph.getTileHeight(Player.level, local9, local15) - Static4.anInt3131;
 		if (Static5.anInt3490 >= 100) {
 			Static7.anInt5678 = Static5.anInt4165 * 128 + 64;
 			Static3.anInt2519 = Static4.anInt2977 * 128 + 64;
-			Static2.anInt1931 = SceneGraph.method522(Player.level, Static3.anInt2519, Static7.anInt5678) - Static4.anInt3131;
+			Static2.anInt1931 = SceneGraph.getTileHeight(Player.level, Static3.anInt2519, Static7.anInt5678) - Static4.anInt3131;
 		} else {
 			if (Static7.anInt5678 < local15) {
 				Static7.anInt5678 += Static7.anInt5236 + (local15 - Static7.anInt5678) * Static5.anInt3490 / 1000;
@@ -142,7 +142,7 @@ public final class Static23 {
 		}
 		@Pc(226) int local226 = Static3.anInt2497 * 128 + 64;
 		@Pc(232) int local232 = Static4.anInt3302 * 128 + 64;
-		@Pc(240) int local240 = SceneGraph.method522(Player.level, local232, local226) - Static5.anInt3572;
+		@Pc(240) int local240 = SceneGraph.getTileHeight(Player.level, local232, local226) - Static5.anInt3572;
 		@Pc(245) int local245 = local226 - Static7.anInt5678;
 		@Pc(250) int local250 = local240 - Static2.anInt1931;
 		@Pc(255) int local255 = local232 - Static3.anInt2519;

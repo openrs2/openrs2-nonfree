@@ -847,7 +847,7 @@ public final class Static29 {
 			return;
 		}
 		ChangeLocRequest.loop();
-		Static37.method4713();
+		AttachLocRequest.loop();
 		SoundPlayer.loop();
 		Static3.anInt2583++;
 		if (Static3.anInt2583 > 750) {
@@ -1328,7 +1328,7 @@ public final class Static29 {
 			Static4.anInt3290 = -1;
 			return;
 		}
-		@Pc(35) int local35 = SceneGraph.method522(Player.level, arg3, arg4) - arg1;
+		@Pc(35) int local35 = SceneGraph.getTileHeight(Player.level, arg3, arg4) - arg1;
 		arg3 -= Static3.anInt2519;
 		local35 -= Static2.anInt1931;
 		arg4 -= Static7.anInt5678;
@@ -1486,7 +1486,7 @@ public final class Static29 {
 														if (GlRenderer.enabled) {
 															LightingManager.method3114(Static7.anInt5281, Static6.anInt4375, Static6.anInt4400, local24, local18, local21);
 														}
-														local425.entity.method3805(local425.anInt814, Static2.anInt2247, Static5.anInt3487, Static6.anInt4794, Static3.anInt2272, local425.centerXFine - Static7.anInt5281, local425.anInt823 - Static6.anInt4375, local425.centerZFine - Static6.anInt4400, local425.key, local24, null);
+														local425.entity.method3805(local425.angle, Static2.anInt2247, Static5.anInt3487, Static6.anInt4794, Static3.anInt2272, local425.centerXFine - Static7.anInt5281, local425.y - Static6.anInt4375, local425.centerZFine - Static6.anInt4400, local425.key, local24, null);
 													}
 												}
 												if (GlRenderer.enabled) {
@@ -1835,7 +1835,7 @@ public final class Static29 {
 															LightingManager.method3115(Static7.anInt5281, Static6.anInt4375, Static6.anInt4400, local24, local1697.xMin, local1697.zMin, local1697.xMax, local1697.zMax);
 														}
 													}
-													local1697.entity.method3805(local1697.anInt814, Static2.anInt2247, Static5.anInt3487, Static6.anInt4794, Static3.anInt2272, local1697.centerXFine - Static7.anInt5281, local1697.anInt823 - Static6.anInt4375, local1697.centerZFine - Static6.anInt4400, local1697.key, local24, null);
+													local1697.entity.method3805(local1697.angle, Static2.anInt2247, Static5.anInt3487, Static6.anInt4794, Static3.anInt2272, local1697.centerXFine - Static7.anInt5281, local1697.y - Static6.anInt4375, local1697.centerZFine - Static6.anInt4400, local1697.key, local24, null);
 												}
 												for (@Pc(1846) int local1846 = local1697.xMin; local1846 <= local1697.xMax; local1846++) {
 													for (@Pc(1853) int local1853 = local1697.zMin; local1853 <= local1697.zMax; local1853++) {

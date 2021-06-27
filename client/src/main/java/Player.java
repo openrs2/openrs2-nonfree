@@ -63,6 +63,85 @@ public final class Player extends PathingEntity {
 		return sound;
 	}
 
+	@OriginalMember(owner = "client!sl", name = "a", descriptor = "([ILclient!f;I[I[I)V")
+	public static void method4023(@OriginalArg(1) Player player, @OriginalArg(4) int[] seqIds, @OriginalArg(3) int[] delays, @OriginalArg(0) int[] slotMasks) {
+		for (@Pc(11) int i = 0; i < seqIds.length; i++) {
+			@Pc(23) int seqId = seqIds[i];
+			@Pc(27) int delay = delays[i];
+			@Pc(31) int slotMask = slotMasks[i];
+			for (@Pc(33) int j = 0; slotMask != 0 && j < player.aClass150Array3.length; j++) {
+				if ((slotMask & 0x1) != 0) {
+					if (seqId == -1) {
+						player.aClass150Array3[j] = null;
+					} else {
+						@Pc(61) SeqType seqType = SeqTypeList.get(seqId);
+						@Pc(66) Class150 local66 = player.aClass150Array3[j];
+						@Pc(69) int local69 = seqType.anInt1238;
+						if (local66 != null) {
+							if (local66.seqId == seqId) {
+								if (local69 == 0) {
+									local66 = player.aClass150Array3[j] = null;
+								} else if (local69 == 1) {
+									local66.anInt4462 = 0;
+									local66.anInt4464 = 1;
+									local66.anInt4460 = 0;
+									local66.anInt4465 = 0;
+									local66.delay = delay;
+									SoundPlayer.playSeqSound(seqType, player.xFine, player.zFine, 0, PlayerList.self == player);
+								} else if (local69 == 2) {
+									local66.anInt4465 = 0;
+								}
+							} else if (seqType.anInt1243 >= SeqTypeList.get(local66.seqId).anInt1243) {
+								local66 = player.aClass150Array3[j] = null;
+							}
+						}
+						if (local66 == null) {
+							@Pc(166) Class150 local166 = player.aClass150Array3[j] = new Class150();
+							local166.seqId = seqId;
+							local166.anInt4460 = 0;
+							local166.anInt4465 = 0;
+							local166.delay = delay;
+							local166.anInt4464 = 1;
+							local166.anInt4462 = 0;
+							SoundPlayer.playSeqSound(seqType, player.xFine, player.zFine, 0, player == PlayerList.self);
+						}
+					}
+				}
+				slotMask >>>= 1;
+			}
+		}
+	}
+
+	@OriginalMember(owner = "client!wk", name = "a", descriptor = "(Lclient!f;III)V")
+	public static void animate(@OriginalArg(0) Player player, @OriginalArg(1) int seqId, @OriginalArg(2) int delay) {
+		if (player.seqId == seqId && seqId != -1) {
+			@Pc(89) SeqType seqType = SeqTypeList.get(seqId);
+			@Pc(92) int local92 = seqType.anInt1238;
+			if (local92 == 1) {
+				player.seqDelay = delay;
+				player.anInt3970 = 0;
+				player.anInt4044 = 0;
+				player.anInt4011 = 1;
+				player.anInt4001 = 0;
+				SoundPlayer.playSeqSound(seqType, player.xFine, player.zFine, player.anInt3970, player == PlayerList.self);
+			}
+			if (local92 == 2) {
+				player.anInt4001 = 0;
+			}
+		} else if (seqId == -1 || player.seqId == -1 || SeqTypeList.get(seqId).anInt1243 >= SeqTypeList.get(player.seqId).anInt1243) {
+			player.seqId = seqId;
+			player.anInt4044 = 0;
+			player.seqDelay = delay;
+			player.anInt3970 = 0;
+			player.anInt4011 = 1;
+			player.anInt4001 = 0;
+			player.anInt4030 = player.movementQueueSize;
+			if (player.seqId != -1) {
+				SoundPlayer.playSeqSound(SeqTypeList.get(player.seqId), player.xFine, player.zFine, player.anInt3970, player == PlayerList.self);
+			}
+		}
+	}
+
 	@OriginalMember(owner = "client!f", name = "Oc", descriptor = "Ljava/lang/String;")
 	public String username;
 
@@ -224,7 +303,7 @@ public final class Player extends PathingEntity {
 			if (this.appearance == null) {
 				return;
 			}
-			@Pc(26) SeqType local26 = this.seqId != -1 && this.anInt3996 == 0 ? SeqTypeList.get(this.seqId) : null;
+			@Pc(26) SeqType local26 = this.seqId != -1 && this.seqDelay == 0 ? SeqTypeList.get(this.seqId) : null;
 			@Pc(55) SeqType local55 = this.movementSeqId == -1 || this.aBoolean98 || this.movementSeqId == this.getBasType().readySeqId && local26 != null ? null : SeqTypeList.get(this.movementSeqId);
 			@Pc(78) Model local78 = this.appearance.getBodyModel(this.aClass150Array3, this.anInt4046, this.anInt4011, this.anInt4019, local55, this.anInt3970, false, this.anInt4000, local26, false, this.anInt4044);
 			if (local78 == null) {
@@ -249,7 +328,7 @@ public final class Player extends PathingEntity {
 		if (this.appearance == null) {
 			return;
 		}
-		@Pc(27) SeqType local27 = this.seqId != -1 && this.anInt3996 == 0 ? SeqTypeList.get(this.seqId) : null;
+		@Pc(27) SeqType local27 = this.seqId != -1 && this.seqDelay == 0 ? SeqTypeList.get(this.seqId) : null;
 		@Pc(31) BasType local31 = this.getBasType();
 		@Pc(53) boolean local53 = local31.anInt844 != 0 || local31.anInt847 != 0 || local31.anInt850 != 0 || local31.anInt851 != 0;
 		@Pc(82) SeqType local82 = this.movementSeqId == -1 || this.aBoolean98 || this.movementSeqId == this.getBasType().readySeqId && local27 != null ? null : SeqTypeList.get(this.movementSeqId);
@@ -274,7 +353,7 @@ public final class Player extends PathingEntity {
 		}
 		this.minY = local105.getMinY();
 		if (Preferences.characterShadows && (this.appearance.npcId == -1 || NpcTypeList.get(this.appearance.npcId).shadow)) {
-			@Pc(222) Model local222 = ShadowModelList.get(0, local82 == null ? local27 : local82, arg0, 1, 240, local105, local82 == null ? this.anInt3970 : this.anInt4046, this.anInt4006, this.zFine, this.aBoolean284, 0, 160, this.xFine);
+			@Pc(222) Model local222 = ShadowModelList.get(0, local82 == null ? local27 : local82, arg0, 1, 240, local105, local82 == null ? this.anInt3970 : this.anInt4046, this.y, this.zFine, this.aBoolean284, 0, 160, this.xFine);
 			if (GlRenderer.enabled) {
 				@Pc(241) float local241 = GlRenderer.method1620();
 				@Pc(243) float local243 = GlRenderer.method1612();
@@ -324,7 +403,7 @@ public final class Player extends PathingEntity {
 			@Pc(518) SpotAnimType local518 = SpotAnimTypeList.get(this.spotAnimId);
 			local494 = local518.method2569(this.anInt3976, this.anInt3968, this.anInt4026);
 			if (local494 != null) {
-				local494.translate(0, -this.anInt3971, 0);
+				local494.translate(0, -this.spotAnimY, 0);
 				if (local518.aBoolean221) {
 					if (Static5.anInt3525 != 0) {
 						local494.method3832(Static5.anInt3525);
@@ -339,17 +418,17 @@ public final class Player extends PathingEntity {
 			}
 		}
 		@Pc(572) Model local572 = null;
-		if (!this.aBoolean98 && this.anObject5 != null) {
-			if (this.anInt4010 <= client.loop) {
-				this.anObject5 = null;
+		if (!this.aBoolean98 && this.attachment != null) {
+			if (this.attachmentResetAt <= client.loop) {
+				this.attachment = null;
 			}
-			if (this.anInt4042 <= client.loop && client.loop < this.anInt4010) {
-				if (this.anObject5 instanceof Loc) {
-					local572 = (Model) ((Loc) this.anObject5).method3735();
+			if (this.attachmentSetAt <= client.loop && client.loop < this.attachmentResetAt) {
+				if (this.attachment instanceof Loc) {
+					local572 = (Model) ((Loc) this.attachment).method3735();
 				} else {
-					local572 = (Model) this.anObject5;
+					local572 = (Model) this.attachment;
 				}
-				local572.translate(this.anInt4032 - this.xFine, this.anInt3975 - this.anInt4006, this.anInt4027 - this.zFine);
+				local572.translate(this.attachmentXFine - this.xFine, this.attachmentY - this.y, this.attachmentZFine - this.zFine);
 				if (this.targetAngle == 512) {
 					local572.method3827();
 				} else if (this.targetAngle == 1024) {
@@ -392,7 +471,7 @@ public final class Player extends PathingEntity {
 		} else if (this.targetAngle == 1536) {
 			local572.method3827();
 		}
-		local572.translate(this.xFine - this.anInt4032, this.anInt4006 - this.anInt3975, this.zFine - this.anInt4027);
+		local572.translate(this.xFine - this.attachmentXFine, this.y - this.attachmentY, this.zFine - this.attachmentZFine);
 	}
 
 	@OriginalMember(owner = "client!f", name = "d", descriptor = "(I)Z")
@@ -439,7 +518,7 @@ public final class Player extends PathingEntity {
 			return;
 		}
 		@Pc(39) int local39 = (int) (Math.atan2((double) arg8, (double) arg1) * 325.949D) & 0x7FF;
-		@Pc(51) Model local51 = HintArrowManager.getModel(local39, arg13, this.zFine, arg10, this.anInt4006, this.xFine);
+		@Pc(51) Model local51 = HintArrowManager.getModel(local39, arg13, this.zFine, arg10, this.y, this.xFine);
 		if (local51 == null) {
 			return;
 		}

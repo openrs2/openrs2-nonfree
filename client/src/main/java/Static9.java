@@ -122,8 +122,8 @@ public final class Static9 {
 					local267 |= Long.MIN_VALUE;
 				}
 				local258.aBoolean282 = false;
-				local258.anInt4006 = SceneGraph.method522(Player.level, local258.xFine, local258.zFine);
-				SceneGraph.method637(Player.level, local258.xFine, local258.zFine, local258.anInt4006, local282 * 64 + 60 - 64, local258, local258.angle, local267, local258.aBoolean284);
+				local258.y = SceneGraph.getTileHeight(Player.level, local258.xFine, local258.zFine);
+				SceneGraph.method637(Player.level, local258.xFine, local258.zFine, local258.y, local282 * 64 + 60 - 64, local258, local258.angle, local267, local258.aBoolean284);
 			}
 		}
 	}

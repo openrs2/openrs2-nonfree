@@ -113,7 +113,7 @@ public final class SoundPlayer {
 	}
 
 	@OriginalMember(owner = "client!pk", name = "a", descriptor = "(Lclient!eg;IIIZZ)V")
-	public static void playSeqSound(@OriginalArg(0) SeqType seqType, @OriginalArg(1) int zFine, @OriginalArg(2) int xFine, @OriginalArg(3) int index, @OriginalArg(4) boolean arg4) {
+	public static void playSeqSound(@OriginalArg(0) SeqType seqType, @OriginalArg(2) int xFine, @OriginalArg(1) int zFine, @OriginalArg(3) int index, @OriginalArg(4) boolean self) {
 		if (size >= 50 || (seqType == null || seqType.sounds == null || seqType.sounds.length <= index || seqType.sounds[index] == null)) {
 			return;
 		}
@@ -128,7 +128,7 @@ public final class SoundPlayer {
 			}
 		}
 		if (minDistance == 0) {
-			if (arg4) {
+			if (self) {
 				play(0, id, loops, 255);
 			}
 		} else if (Preferences.areaSoundsVolume != 0) {

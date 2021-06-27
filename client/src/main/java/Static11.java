@@ -56,7 +56,7 @@ public final class Static11 {
 		for (@Pc(42) int local42 = 0; local42 < 2048; local42++) {
 			@Pc(51) Player local51 = PlayerList.players[local42];
 			if (local51 != null) {
-				local51.anObject5 = null;
+				local51.attachment = null;
 			}
 		}
 		if (GlRenderer.enabled) {
@@ -279,87 +279,6 @@ public final class Static11 {
 			request.arguments = component.onResize;
 			request.source = component;
 			Static3.lowPriorityRequests.addTail(request);
-		}
-	}
-
-	@OriginalMember(owner = "client!ce", name = "a", descriptor = "(ILclient!p;BI)V")
-	public static void method529(@OriginalArg(0) int seqId, @OriginalArg(1) Npc npc, @OriginalArg(3) int delay) {
-		if (seqId == npc.seqId && seqId != -1) {
-			@Pc(19) SeqType local19 = SeqTypeList.get(seqId);
-			@Pc(22) int local22 = local19.anInt1238;
-			if (local22 == 1) {
-				npc.anInt3970 = 0;
-				npc.anInt3996 = delay;
-				npc.anInt4011 = 1;
-				npc.anInt4001 = 0;
-				npc.anInt4044 = 0;
-				SoundPlayer.playSeqSound(local19, npc.zFine, npc.xFine, npc.anInt3970, false);
-			}
-			if (local22 == 2) {
-				npc.anInt4001 = 0;
-			}
-		} else if (seqId == -1 || npc.seqId == -1 || SeqTypeList.get(seqId).anInt1243 >= SeqTypeList.get(npc.seqId).anInt1243) {
-			npc.anInt4011 = 1;
-			npc.anInt4030 = npc.movementQueueSize;
-			npc.anInt4001 = 0;
-			npc.anInt3970 = 0;
-			npc.anInt3996 = delay;
-			npc.seqId = seqId;
-			npc.anInt4044 = 0;
-			if (npc.seqId != -1) {
-				SoundPlayer.playSeqSound(SeqTypeList.get(npc.seqId), npc.zFine, npc.xFine, npc.anInt3970, false);
-			}
-		}
-	}
-
-	@OriginalMember(owner = "client!cf", name = "a", descriptor = "([ILclient!p;[II[I)V")
-	public static void method555(@OriginalArg(0) int[] arg0, @OriginalArg(1) Npc arg1, @OriginalArg(2) int[] arg2, @OriginalArg(4) int[] arg3) {
-		for (@Pc(7) int local7 = 0; local7 < arg0.length; local7++) {
-			@Pc(19) int local19 = arg0[local7];
-			@Pc(23) int local23 = arg2[local7];
-			@Pc(27) int local27 = arg3[local7];
-			@Pc(29) int local29 = 0;
-			while (local23 != 0 && local29 < arg1.aClass150Array3.length) {
-				if ((local23 & 0x1) != 0) {
-					if (local19 == -1) {
-						arg1.aClass150Array3[local29] = null;
-					} else {
-						@Pc(53) SeqType local53 = SeqTypeList.get(local19);
-						@Pc(56) int local56 = local53.anInt1238;
-						@Pc(61) Class150 local61 = arg1.aClass150Array3[local29];
-						if (local61 != null) {
-							if (local61.anInt4456 == local19) {
-								if (local56 == 0) {
-									local61 = arg1.aClass150Array3[local29] = null;
-								} else if (local56 == 1) {
-									local61.anInt4465 = 0;
-									local61.anInt4464 = 1;
-									local61.anInt4460 = 0;
-									local61.anInt4461 = local27;
-									local61.anInt4462 = 0;
-									SoundPlayer.playSeqSound(local53, arg1.zFine, arg1.xFine, 0, false);
-								} else if (local56 == 2) {
-									local61.anInt4465 = 0;
-								}
-							} else if (local53.anInt1243 >= SeqTypeList.get(local61.anInt4456).anInt1243) {
-								local61 = arg1.aClass150Array3[local29] = null;
-							}
-						}
-						if (local61 == null) {
-							@Pc(155) Class150 local155 = arg1.aClass150Array3[local29] = new Class150();
-							local155.anInt4456 = local19;
-							local155.anInt4462 = 0;
-							local155.anInt4460 = 0;
-							local155.anInt4464 = 1;
-							local155.anInt4465 = 0;
-							local155.anInt4461 = local27;
-							SoundPlayer.playSeqSound(local53, arg1.zFine, arg1.xFine, 0, false);
-						}
-					}
-				}
-				local29++;
-				local23 >>>= 1;
-			}
 		}
 	}
 

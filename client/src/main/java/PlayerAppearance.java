@@ -290,40 +290,40 @@ public final class PlayerAppearance {
 		@Pc(848) boolean local848 = false;
 		@Pc(850) boolean local850 = false;
 		@Pc(852) boolean local852 = false;
-		@Pc(860) int local860 = arg0 == null ? 0 : arg0.length;
-		for (@Pc(862) int local862 = 0; local862 < local860; local862++) {
-			if (arg0[local862] != null) {
-				@Pc(881) SeqType local881 = SeqTypeList.get(arg0[local862].anInt4456);
-				if (local881.anIntArray95 != null) {
+		@Pc(860) int len = arg0 == null ? 0 : arg0.length;
+		for (@Pc(862) int i = 0; i < len; i++) {
+			if (arg0[i] != null) {
+				@Pc(881) SeqType seqType = SeqTypeList.get(arg0[i].seqId);
+				if (seqType.anIntArray95 != null) {
 					local846 = true;
-					Static5.aClass46Array2[local862] = local881;
-					@Pc(896) int local896 = arg0[local862].anInt4462;
-					@Pc(901) int local901 = arg0[local862].anInt4464;
-					@Pc(906) int local906 = local881.anIntArray95[local896];
-					Static5.aClass4_Sub3_Sub19Array4[local862] = SeqTypeList.getAnimFrameset(local906 >>> 16);
+					Static5.aClass46Array2[i] = seqType;
+					@Pc(896) int local896 = arg0[i].anInt4462;
+					@Pc(901) int local901 = arg0[i].anInt4464;
+					@Pc(906) int local906 = seqType.anIntArray95[local896];
+					Static5.aClass4_Sub3_Sub19Array4[i] = SeqTypeList.getAnimFrameset(local906 >>> 16);
 					local906 &= 65535;
-					Static3.anIntArray190[local862] = local906;
-					if (Static5.aClass4_Sub3_Sub19Array4[local862] != null) {
-						local850 |= Static5.aClass4_Sub3_Sub19Array4[local862].method4151(local906);
-						local848 |= Static5.aClass4_Sub3_Sub19Array4[local862].method4150(local906);
-						local852 |= local881.aBoolean72;
+					Static3.anIntArray190[i] = local906;
+					if (Static5.aClass4_Sub3_Sub19Array4[i] != null) {
+						local850 |= Static5.aClass4_Sub3_Sub19Array4[i].method4151(local906);
+						local848 |= Static5.aClass4_Sub3_Sub19Array4[i].method4150(local906);
+						local852 |= seqType.aBoolean72;
 					}
-					if ((local881.tween || SeqType.forceTween) && local901 != -1 && local881.anIntArray95.length > local901) {
-						Static6.anIntArray483[local862] = local881.anIntArray94[local896];
-						Static3.anIntArray181[local862] = arg0[local862].anInt4460;
-						@Pc(1002) int local1002 = local881.anIntArray95[local901];
-						Static4.aClass4_Sub3_Sub19Array2[local862] = SeqTypeList.getAnimFrameset(local1002 >>> 16);
+					if ((seqType.tween || SeqType.forceTween) && local901 != -1 && seqType.anIntArray95.length > local901) {
+						Static6.anIntArray483[i] = seqType.anIntArray94[local896];
+						Static3.anIntArray181[i] = arg0[i].anInt4460;
+						@Pc(1002) int local1002 = seqType.anIntArray95[local901];
+						Static4.aClass4_Sub3_Sub19Array2[i] = SeqTypeList.getAnimFrameset(local1002 >>> 16);
 						local1002 &= 65535;
-						Static3.anIntArray211[local862] = local1002;
-						if (Static4.aClass4_Sub3_Sub19Array2[local862] != null) {
-							local850 |= Static4.aClass4_Sub3_Sub19Array2[local862].method4151(local1002);
-							local848 |= Static4.aClass4_Sub3_Sub19Array2[local862].method4150(local1002);
+						Static3.anIntArray211[i] = local1002;
+						if (Static4.aClass4_Sub3_Sub19Array2[i] != null) {
+							local850 |= Static4.aClass4_Sub3_Sub19Array2[i].method4151(local1002);
+							local848 |= Static4.aClass4_Sub3_Sub19Array2[i].method4150(local1002);
 						}
 					} else {
-						Static6.anIntArray483[local862] = 0;
-						Static3.anIntArray181[local862] = 0;
-						Static4.aClass4_Sub3_Sub19Array2[local862] = null;
-						Static3.anIntArray211[local862] = -1;
+						Static6.anIntArray483[i] = 0;
+						Static3.anIntArray181[i] = 0;
+						Static4.aClass4_Sub3_Sub19Array2[i] = null;
+						Static3.anIntArray211[i] = -1;
 					}
 				}
 			}
@@ -391,29 +391,29 @@ public final class PlayerAppearance {
 					}
 				}
 			}
-			@Pc(1318) Model local1318 = model.method3831(!local848, !local850, !local852);
+			@Pc(1318) Model model2 = model.method3831(!local848, !local850, !local852);
 			@Pc(1320) int local1320 = 0;
 			@Pc(1322) int local1322 = 1;
-			while (local860 > local1320) {
+			while (len > local1320) {
 				if (Static5.aClass4_Sub3_Sub19Array4[local1320] != null) {
-					local1318.method3839(Static5.aClass4_Sub3_Sub19Array4[local1320], Static3.anIntArray190[local1320], Static4.aClass4_Sub3_Sub19Array2[local1320], Static3.anIntArray211[local1320], Static3.anIntArray181[local1320] - 1, Static6.anIntArray483[local1320], local1322, Static5.aClass46Array2[local1320].aBoolean72, this.anIntArrayArray37[local1320]);
+					model2.method3839(Static5.aClass4_Sub3_Sub19Array4[local1320], Static3.anIntArray190[local1320], Static4.aClass4_Sub3_Sub19Array2[local1320], Static3.anIntArray211[local1320], Static3.anIntArray181[local1320] - 1, Static6.anIntArray483[local1320], local1322, Static5.aClass46Array2[local1320].aBoolean72, this.anIntArrayArray37[local1320]);
 				}
 				local1320++;
 				local1322 <<= 1;
 			}
 			if (local1068 != null && local1188 != null) {
-				local1318.method3816(local1068, local1064, local1072, local1066, arg10 - 1, local1070, local1188, local1184, local1186, local1180, arg7 - 1, local1182, arg8.aBooleanArray6, arg4.aBoolean72 | arg8.aBoolean72);
+				model2.method3816(local1068, local1064, local1072, local1066, arg10 - 1, local1070, local1188, local1184, local1186, local1180, arg7 - 1, local1182, arg8.aBooleanArray6, arg4.aBoolean72 | arg8.aBoolean72);
 			} else if (local1068 != null) {
-				local1318.method3835(local1068, local1064, local1072, local1066, arg10 - 1, local1070, arg8.aBoolean72);
+				model2.method3835(local1068, local1064, local1072, local1066, arg10 - 1, local1070, arg8.aBoolean72);
 			} else if (local1188 != null) {
-				local1318.method3835(local1188, local1184, local1186, local1180, arg7 - 1, local1182, arg4.aBoolean72);
+				model2.method3835(local1188, local1184, local1186, local1180, arg7 - 1, local1182, arg4.aBoolean72);
 			}
-			for (@Pc(1434) int local1434 = 0; local1434 < local860; local1434++) {
-				Static5.aClass4_Sub3_Sub19Array4[local1434] = null;
-				Static4.aClass4_Sub3_Sub19Array2[local1434] = null;
-				Static5.aClass46Array2[local1434] = null;
+			for (@Pc(1434) int i = 0; i < len; i++) {
+				Static5.aClass4_Sub3_Sub19Array4[i] = null;
+				Static4.aClass4_Sub3_Sub19Array2[i] = null;
+				Static5.aClass46Array2[i] = null;
 			}
-			return local1318;
+			return model2;
 		} else if (arg6) {
 			return model.method3831(false, false, false);
 		} else {

@@ -369,7 +369,7 @@ public final class Static24 {
 
 	@OriginalMember(owner = "client!mf", name = "a", descriptor = "(Lclient!qc;I)V")
 	public static void method2705(@OriginalArg(0) PathingEntity arg0) {
-		if (client.loop == arg0.anInt3966 || arg0.seqId == -1 || arg0.anInt3996 != 0 || arg0.anInt4044 + 1 > SeqTypeList.get(arg0.seqId).anIntArray94[arg0.anInt3970]) {
+		if (client.loop == arg0.anInt3966 || arg0.seqId == -1 || arg0.seqDelay != 0 || arg0.anInt4044 + 1 > SeqTypeList.get(arg0.seqId).anIntArray94[arg0.anInt3970]) {
 			@Pc(41) int local41 = arg0.anInt3966 - arg0.anInt4034;
 			@Pc(46) int local46 = client.loop - arg0.anInt4034;
 			@Pc(57) int local57 = arg0.anInt3973 * 128 + arg0.getSize() * 64;

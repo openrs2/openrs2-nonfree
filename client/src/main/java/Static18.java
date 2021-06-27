@@ -397,7 +397,7 @@ public final class Static18 {
 						OverheadChat.size++;
 					}
 				}
-				if (client.loop < entity.anInt3993) {
+				if (client.loop < entity.hitpointsBarVisibleUntil) {
 					@Pc(525) Sprite hitBar0 = Sprites.hitBarDefault[0];
 					@Pc(529) Sprite hitBar1 = Sprites.hitBarDefault[1];
 					@Pc(536) int local536;
@@ -428,7 +428,7 @@ public final class Static18 {
 						@Pc(635) int local635 = Static7.anInt5584 + arg0 - (hitBar0.width >> 1);
 						@Pc(641) int local641 = Static4.anInt3290 + arg5 - 3;
 						hitBar0.renderTransparent(local635, local641);
-						@Pc(653) int local653 = entity.anInt4022 * hitBar0.width / 255;
+						@Pc(653) int local653 = entity.hitpointsBar * hitBar0.width / 255;
 						@Pc(656) int local656 = hitBar0.height;
 						if (GlRenderer.enabled) {
 							GlRaster.shrinkClip(local635, local641, local635 + local653, local656 + local641);
@@ -444,7 +444,7 @@ public final class Static18 {
 					}
 				}
 				for (@Pc(707) int local707 = 0; local707 < 4; local707++) {
-					if (entity.anIntArray425[local707] > client.loop) {
+					if (entity.hitVisibleUntil[local707] > client.loop) {
 						@Pc(742) int local742;
 						if (entity instanceof Npc) {
 							@Pc(729) Npc local729 = (Npc) entity;
@@ -470,8 +470,8 @@ public final class Static18 {
 								Static7.anInt5584 += 15;
 								Static4.anInt3290 -= 10;
 							}
-							Sprites.hitMarks[entity.anIntArray424[local707]].renderTransparent(Static7.anInt5584 + arg0 - 12, arg5 + Static4.anInt3290 - 12);
-							Fonts.p11Full.renderCenter(Integer.toString(entity.anIntArray423[local707]), arg0 + Static7.anInt5584 - 1, arg5 + Static4.anInt3290 + 3, 16777215, 0);
+							Sprites.hitMarks[entity.hitTypes[local707]].renderTransparent(Static7.anInt5584 + arg0 - 12, arg5 + Static4.anInt3290 - 12);
+							Fonts.p11Full.renderCenter(Integer.toString(entity.hitDamages[local707]), arg0 + Static7.anInt5584 - 1, arg5 + Static4.anInt3290 + 3, 16777215, 0);
 						}
 					}
 				}

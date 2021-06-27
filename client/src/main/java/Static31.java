@@ -135,7 +135,7 @@ public final class Static31 {
 			if (Static3.aBooleanArray13[4] && Static7.anIntArray626[4] + 128 > local121) {
 				local121 = Static7.anIntArray626[4] + 128;
 			}
-			Static32.method3954(local137, SceneGraph.method522(Player.level, PlayerList.self.xFine, PlayerList.self.zFine) - 50, local121, local121 * 3 + 600, Static3.anInt2496, arg1, Static7.anInt5412);
+			Static32.method3954(local137, SceneGraph.getTileHeight(Player.level, PlayerList.self.xFine, PlayerList.self.zFine) - 50, local121, local121 * 3 + 600, Static3.anInt2496, arg1, Static7.anInt5412);
 		} else if (Static1.anInt772 == 5) {
 			Static12.method698(arg1);
 		}
@@ -1032,7 +1032,7 @@ public final class Static31 {
 								if (tile.scenery != null) {
 									for (@Pc(183) int i = 0; i < tile.sceneryLen; i++) {
 										@Pc(192) Scenery scenery = tile.scenery[i];
-										scenery.entity.method3806(scenery.anInt814, level, scenery.anInt823, scenery.centerXFine, scenery.centerZFine);
+										scenery.entity.method3806(scenery.angle, level, scenery.y, scenery.centerXFine, scenery.centerZFine);
 									}
 								}
 							}

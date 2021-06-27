@@ -56,7 +56,7 @@ public final class SpotAnim extends Entity {
 		this.anInt3653 = arg3;
 		this.anInt3648 = arg4;
 		this.anInt3665 = arg5 + arg6;
-		@Pc(45) int local45 = SpotAnimTypeList.get(this.anInt3657).anInt3134;
+		@Pc(45) int local45 = SpotAnimTypeList.get(this.anInt3657).seqId;
 		if (local45 == -1) {
 			this.aBoolean265 = true;
 		} else {
@@ -64,7 +64,7 @@ public final class SpotAnim extends Entity {
 			this.aClass46_1 = SeqTypeList.get(local45);
 		}
 		if (this.anInt3665 == arg6) {
-			SoundPlayer.playSeqSound(this.aClass46_1, this.anInt3653, this.anInt3647, this.anInt3666, false);
+			SoundPlayer.playSeqSound(this.aClass46_1, this.anInt3647, this.anInt3653, this.anInt3666, false);
 		}
 	}
 
@@ -105,7 +105,7 @@ public final class SpotAnim extends Entity {
 			}
 		}
 		if (!this.aBoolean265) {
-			SoundPlayer.playSeqSound(this.aClass46_1, this.anInt3653, this.anInt3647, this.anInt3666, false);
+			SoundPlayer.playSeqSound(this.aClass46_1, this.anInt3647, this.anInt3653, this.anInt3666, false);
 		}
 	}
 

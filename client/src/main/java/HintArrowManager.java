@@ -31,20 +31,20 @@ public final class HintArrowManager {
 		}
 		if (GlRenderer.enabled) {
 			@Pc(148) GlModel local148 = (GlModel) local68;
-			if (SceneGraph.method522(Player.level, arg5 + local53, arg2 + local59) != arg4 || arg4 != SceneGraph.method522(Player.level, local56 + arg5, arg2 + local62)) {
+			if (SceneGraph.getTileHeight(Player.level, arg5 + local53, arg2 + local59) != arg4 || arg4 != SceneGraph.getTileHeight(Player.level, local56 + arg5, arg2 + local62)) {
 				for (@Pc(183) int local183 = 0; local183 < local148.vertexCount; local183++) {
 					@Pc(189) int[] local189 = local148.vertexY;
-					local189[local183] += SceneGraph.method522(Player.level, arg5 + local148.vertexX[local183], arg2 + local148.vertexZ[local183]) - arg4;
+					local189[local183] += SceneGraph.getTileHeight(Player.level, arg5 + local148.vertexX[local183], arg2 + local148.vertexZ[local183]) - arg4;
 				}
 				local148.bounds.valid = false;
 				local148.vertexBuffer.valid = false;
 			}
 		} else {
 			@Pc(78) SoftwareModel local78 = (SoftwareModel) local68;
-			if (arg4 != SceneGraph.method522(Player.level, local53 + arg5, arg2 + local59) || SceneGraph.method522(Player.level, local56 + arg5, local62 + arg2) != arg4) {
+			if (arg4 != SceneGraph.getTileHeight(Player.level, local53 + arg5, arg2 + local59) || SceneGraph.getTileHeight(Player.level, local56 + arg5, local62 + arg2) != arg4) {
 				for (@Pc(108) int local108 = 0; local108 < local78.vertexCount; local108++) {
 					@Pc(114) int[] local114 = local78.vertexY;
-					local114[local108] += SceneGraph.method522(Player.level, arg5 + local78.vertexX[local108], local78.vertexZ[local108] + arg2) - arg4;
+					local114[local108] += SceneGraph.getTileHeight(Player.level, arg5 + local78.vertexX[local108], local78.vertexZ[local108] + arg2) - arg4;
 				}
 				local78.boundsValid = false;
 			}

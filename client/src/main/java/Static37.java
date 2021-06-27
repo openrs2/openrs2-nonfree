@@ -92,98 +92,6 @@ public final class Static37 {
 		}
 	}
 
-	@OriginalMember(owner = "client!wd", name = "i", descriptor = "(I)V")
-	public static void method4713() {
-		while (true) {
-			@Pc(16) Class4_Sub30 local16 = (Class4_Sub30) Static5.aClass112_27.removeHead();
-			if (local16 == null) {
-				return;
-			}
-			@Pc(42) PathingEntity entity;
-			if (local16.entityId < 0) {
-				@Pc(33) int playerId = -local16.entityId - 1;
-				if (playerId == PlayerList.selfId) {
-					entity = PlayerList.self;
-				} else {
-					entity = PlayerList.players[playerId];
-				}
-			} else {
-				@Pc(55) int npcId = local16.entityId - 1;
-				entity = NpcList.npcs[npcId];
-			}
-			if (entity != null) {
-				@Pc(69) LocType type = LocTypeList.get(local16.locId);
-				if (Player.level < 3) {
-				}
-				@Pc(88) int width;
-				@Pc(85) int length;
-				if (local16.angle == 1 || local16.angle == 3) {
-					width = type.length;
-					length = type.width;
-				} else {
-					length = type.length;
-					width = type.width;
-				}
-				@Pc(105) int local105 = local16.x + (width + 1 >> 1);
-				@Pc(112) int local112 = local16.x + (width >> 1);
-				@Pc(120) int local120 = local16.z + (length >> 1);
-				@Pc(130) int local130 = local16.z + (length + 1 >> 1);
-				@Pc(134) int[][] local134 = SceneGraph.tileHeights[Player.level];
-				@Pc(161) int local161 = local134[local105][local120] + local134[local112][local120] + local134[local112][local130] + local134[local105][local130] >> 2;
-				@Pc(163) Entity local163 = null;
-				@Pc(168) int layer = Loc.LAYERS[local16.shape];
-				if (layer == 0) {
-					@Pc(234) Wall wall = SceneGraph.getWall(Player.level, local16.x, local16.z);
-					if (wall != null) {
-						local163 = wall.primary;
-					}
-				} else if (layer == 1) {
-					@Pc(219) WallDecor wallDecor = SceneGraph.getWallDecor(Player.level, local16.x, local16.z);
-					if (wallDecor != null) {
-						local163 = wallDecor.primary;
-					}
-				} else if (layer == 2) {
-					@Pc(205) Scenery scenery = SceneGraph.getScenery(Player.level, local16.x, local16.z);
-					if (scenery != null) {
-						local163 = scenery.entity;
-					}
-				} else if (layer == 3) {
-					@Pc(192) GroundDecor groundDecor = SceneGraph.getGroundDecor(Player.level, local16.x, local16.z);
-					if (groundDecor != null) {
-						local163 = groundDecor.entity;
-					}
-				}
-				if (local163 != null) {
-					ChangeLocRequest.push(-1, local16.x, Player.level, local16.z, 0, 0, layer, local16.anInt4997 + 1, local16.anInt4999 + 1);
-					entity.anInt4027 = local16.z * 128 + length * 64;
-					@Pc(274) int local274 = local16.anInt4994;
-					@Pc(277) int local277 = local16.anInt4995;
-					entity.anInt4032 = local16.x * 128 + width * 64;
-					entity.anInt3975 = local161;
-					entity.anInt4042 = local16.anInt4997 + client.loop;
-					@Pc(300) int local300 = local16.anInt5007;
-					entity.anObject5 = local163;
-					entity.anInt4010 = local16.anInt4999 + client.loop;
-					if (local300 < local277) {
-						@Pc(315) int local315 = local277;
-						local277 = local300;
-						local300 = local315;
-					}
-					entity.anInt4041 = local16.x + local300;
-					entity.anInt4043 = local16.x + local277;
-					@Pc(335) int local335 = local16.anInt5008;
-					if (local335 < local274) {
-						@Pc(341) int local341 = local274;
-						local274 = local335;
-						local335 = local341;
-					}
-					entity.anInt4038 = local335 + local16.z;
-					entity.anInt4018 = local274 + local16.z;
-				}
-			}
-		}
-	}
-
 	@OriginalMember(owner = "client!wd", name = "a", descriptor = "(BLjava/lang/String;Z)V")
 	public static void method4716(@OriginalArg(1) String s, @OriginalArg(2) boolean arg1) {
 		@Pc(17) int width = Fonts.p12Full.getParagraphWidth(s, 250);
@@ -260,7 +168,7 @@ public final class Static37 {
 			Static6.anIntArray489[local59] = 0;
 		}
 		if (Static1.anInt772 != 1) {
-			@Pc(94) int local94 = SceneGraph.method522(Player.level, Static3.anInt2519, Static7.anInt5678);
+			@Pc(94) int local94 = SceneGraph.getTileHeight(Player.level, Static3.anInt2519, Static7.anInt5678);
 			if (local94 - Static2.anInt1931 < 800 && (Static4.tileFlags[Player.level][Static3.anInt2519 >> 7][Static7.anInt5678 >> 7] & 0x4) != 0) {
 				Static9.method279(1, Static3.anInt2519 >> 7, false, Static7.anInt5678 >> 7, SceneGraph.tiles);
 			}
@@ -634,7 +542,7 @@ public final class Static37 {
 		if (arg4 && Static5.anInt3490 >= 100) {
 			Static3.anInt2519 = Static4.anInt2977 * 128 + 64;
 			Static7.anInt5678 = Static5.anInt4165 * 128 + 64;
-			Static2.anInt1931 = SceneGraph.method522(Player.level, Static3.anInt2519, Static7.anInt5678) - Static4.anInt3131;
+			Static2.anInt1931 = SceneGraph.getTileHeight(Player.level, Static3.anInt2519, Static7.anInt5678) - Static4.anInt3131;
 		}
 		Static1.anInt772 = 2;
 	}

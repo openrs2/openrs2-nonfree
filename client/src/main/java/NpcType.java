@@ -600,7 +600,7 @@ public final class NpcType {
 		@Pc(731) int local731 = arg5 == null ? 0 : arg5.length;
 		for (@Pc(733) int local733 = 0; local733 < local731; local733++) {
 			if (arg5[local733] != null) {
-				@Pc(752) SeqType local752 = SeqTypeList.get(arg5[local733].anInt4456);
+				@Pc(752) SeqType local752 = SeqTypeList.get(arg5[local733].seqId);
 				if (local752.anIntArray95 != null) {
 					Static2.aClass46Array1[local733] = local752;
 					local718 = true;

@@ -144,7 +144,7 @@ public final class Static28 {
 		while (Static5.aFloat97 < 0.0F) {
 			Static5.aFloat97 += 2048.0F;
 		}
-		@Pc(63) int local63 = SceneGraph.method522(Player.level, Static7.anInt5412, Static3.anInt2496);
+		@Pc(63) int local63 = SceneGraph.getTileHeight(Player.level, Static7.anInt5412, Static3.anInt2496);
 		if (local12 > 3 && local33 > 3 && local12 < 100 && local33 < 100) {
 			for (@Pc(85) int local85 = local12 - 4; local85 <= local12 + 4; local85++) {
 				for (@Pc(98) int local98 = local33 - 4; local98 <= local33 + 4; local98++) {

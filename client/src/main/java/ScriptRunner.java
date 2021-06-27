@@ -1346,7 +1346,7 @@ public final class ScriptRunner {
 						}
 						if (opcode == 3101) {
 							isp -= 2;
-							Static38.method4793(PlayerList.self, intStack[isp], intStack[isp + 1]);
+							Player.animate(PlayerList.self, intStack[isp], intStack[isp + 1]);
 							continue;
 						}
 						if (opcode == 3103) {

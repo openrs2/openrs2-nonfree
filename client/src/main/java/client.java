@@ -409,7 +409,7 @@ public final class client extends GameShell {
 					}
 					Static32.method4024(npc);
 					Static34.method4247(npc);
-					Static13.method939(npc);
+					PathingEntity.method939(npc);
 					PathFinder.collisionMaps[Player.level].flagScenery(npc.xFine >> 7, npc.zFine >> 7, npc.getSize(), npc.getSize(), false, false);
 				}
 			}

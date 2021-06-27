@@ -32,8 +32,8 @@ public final class Static34 {
 			return;
 		}
 		@Pc(16) BasType basType = entity.getBasType();
-		if (entity.anInt3985 != -1 && entity.anInt3985 < 32768) {
-			@Pc(31) Npc npc = NpcList.npcs[entity.anInt3985];
+		if (entity.faceEntity != -1 && entity.faceEntity < 32768) {
+			@Pc(31) Npc npc = NpcList.npcs[entity.faceEntity];
 			if (npc != null) {
 				@Pc(42) int dx = entity.xFine - npc.xFine;
 				@Pc(49) int dz = entity.zFine - npc.zFine;
@@ -42,8 +42,8 @@ public final class Static34 {
 				}
 			}
 		}
-		if (entity.anInt3985 >= 32768) {
-			@Pc(87) int id = entity.anInt3985 - 32768;
+		if (entity.faceEntity >= 32768) {
+			@Pc(87) int id = entity.faceEntity - 32768;
 			if (id == PlayerList.selfId) {
 				id = 2047;
 			}
@@ -56,14 +56,14 @@ public final class Static34 {
 				}
 			}
 		}
-		if ((entity.anInt4014 != 0 || entity.anInt4003 != 0) && (entity.movementQueueSize == 0 || entity.movementBlockedLoops > 0)) {
-			@Pc(172) int dz = entity.zFine - (entity.anInt4003 - Static7.originZ - Static7.originZ) * 64;
-			@Pc(185) int dx = entity.xFine - (entity.anInt4014 - Static5.originX - Static5.originX) * 64;
+		if ((entity.faceX != 0 || entity.faceY != 0) && (entity.movementQueueSize == 0 || entity.movementBlockedLoops > 0)) {
+			@Pc(172) int dz = entity.zFine - (entity.faceY - Static7.originZ - Static7.originZ) * 64;
+			@Pc(185) int dx = entity.xFine - (entity.faceX - Static5.originX - Static5.originX) * 64;
 			if (dx != 0 || dz != 0) {
 				entity.targetAngle = (int) (Math.atan2(dx, dz) * 325.949D) & 0x7FF;
 			}
-			entity.anInt4014 = 0;
-			entity.anInt4003 = 0;
+			entity.faceX = 0;
+			entity.faceY = 0;
 		}
 		@Pc(222) int angleDelta = entity.targetAngle - entity.angle & 0x7FF;
 		if (angleDelta == 0) {

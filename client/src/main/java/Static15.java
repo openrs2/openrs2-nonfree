@@ -339,7 +339,7 @@ public final class Static15 {
 			arg1.method3307();
 		}
 		Static34.method4247(arg1);
-		Static13.method939(arg1);
+		PathingEntity.method939(arg1);
 	}
 
 	@OriginalMember(owner = "client!fl", name = "a", descriptor = "(II[Lclient!ch;[BIIIIZII)V")

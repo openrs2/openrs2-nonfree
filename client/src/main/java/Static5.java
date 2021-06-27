@@ -250,9 +250,6 @@ public final class Static5 {
 	@OriginalMember(owner = "client!qa", name = "q", descriptor = "I")
 	public static int anInt4230 = 100;
 
-	@OriginalMember(owner = "client!qd", name = "J", descriptor = "Lclient!ll;")
-	public static final LinkedList aClass112_27 = new LinkedList();
-
 	@OriginalMember(owner = "client!qh", name = "w", descriptor = "I")
 	public static int rebootTimer = 0;
 

@@ -709,40 +709,40 @@ public final class Static22 {
 	}
 
 	@OriginalMember(owner = "client!km", name = "c", descriptor = "(II)V")
-	public static void method2388(@OriginalArg(0) int arg0) {
-		@Pc(7) int local7 = PlayerList.size;
-		if (arg0 == 0) {
-			local7 = 1;
+	public static void method2388(@OriginalArg(0) int sizeFilter) {
+		@Pc(7) int playerListSize = PlayerList.size;
+		if (sizeFilter == 0) {
+			playerListSize = 1;
 		}
-		for (@Pc(14) int local14 = 0; local14 < local7; local14++) {
-			@Pc(32) Player local32;
-			if (arg0 == 0) {
-				local32 = PlayerList.self;
+		for (@Pc(14) int i = 0; i < playerListSize; i++) {
+			@Pc(32) Player player;
+			if (sizeFilter == 0) {
+				player = PlayerList.self;
 			} else {
-				local32 = PlayerList.players[PlayerList.ids[local14]];
+				player = PlayerList.players[PlayerList.ids[i]];
 			}
-			if (local32 != null && local32.isVisible()) {
-				@Pc(46) int local46 = local32.getSize();
-				if (arg0 == 0 || arg0 == local46) {
-					if (local46 == 1) {
-						if ((local32.xFine & 0x7F) == 64 && (local32.zFine & 0x7F) == 64) {
-							@Pc(211) int local211 = local32.xFine >> 7;
-							@Pc(216) int local216 = local32.zFine >> 7;
+			if (player != null && player.isVisible()) {
+				@Pc(46) int size = player.getSize();
+				if (sizeFilter == 0 || sizeFilter == size) {
+					if (size == 1) {
+						if ((player.xFine & 0x7F) == 64 && (player.zFine & 0x7F) == 64) {
+							@Pc(211) int local211 = player.xFine >> 7;
+							@Pc(216) int local216 = player.zFine >> 7;
 							if (local211 >= 0 && local211 < 104 && local216 >= 0 && local216 < 104) {
 								@Pc(238) int local238 = Static1.anIntArrayArray2[local211][local216]++;
 							}
 						}
-					} else if (((local46 & 0x1) != 0 || (local32.xFine & 0x7F) == 0 && (local32.zFine & 0x7F) == 0) && ((local46 & 0x1) != 1 || (local32.xFine & 0x7F) == 64 && (local32.zFine & 0x7F) == 64)) {
-						@Pc(111) int local111 = local32.xFine - local46 * 64 >> 7;
-						@Pc(120) int local120 = local32.zFine - local46 * 64 >> 7;
-						@Pc(126) int local126 = local32.getSize() + local111;
+					} else if (((size & 0x1) != 0 || (player.xFine & 0x7F) == 0 && (player.zFine & 0x7F) == 0) && ((size & 0x1) != 1 || (player.xFine & 0x7F) == 64 && (player.zFine & 0x7F) == 64)) {
+						@Pc(111) int local111 = player.xFine - size * 64 >> 7;
+						@Pc(120) int local120 = player.zFine - size * 64 >> 7;
+						@Pc(126) int local126 = player.getSize() + local111;
 						if (local126 > 104) {
 							local126 = 104;
 						}
 						if (local111 < 0) {
 							local111 = 0;
 						}
-						@Pc(146) int local146 = local120 + local32.getSize();
+						@Pc(146) int local146 = local120 + player.getSize();
 						if (local120 < 0) {
 							local120 = 0;
 						}
@@ -759,28 +759,28 @@ public final class Static22 {
 			}
 		}
 		label220:
-		for (@Pc(246) int local246 = 0; local246 < local7; local246++) {
-			@Pc(255) Player local255;
-			@Pc(253) long local253;
-			if (arg0 == 0) {
-				local253 = 8791798054912L;
-				local255 = PlayerList.self;
+		for (@Pc(246) int i = 0; i < playerListSize; i++) {
+			@Pc(255) Player player;
+			@Pc(253) long key;
+			if (sizeFilter == 0) {
+				key = 0x7FF00000000L;
+				player = PlayerList.self;
 			} else {
-				local255 = PlayerList.players[PlayerList.ids[local246]];
-				local253 = (long) PlayerList.ids[local246] << 32;
+				player = PlayerList.players[PlayerList.ids[i]];
+				key = (long) PlayerList.ids[i] << 32;
 			}
-			if (local255 != null && local255.isVisible()) {
-				@Pc(280) int local280 = local255.getSize();
-				if (arg0 == 0 || arg0 == local280) {
-					local255.aBoolean98 = false;
-					local255.aBoolean282 = true;
-					if ((Preferences.manyIdleAnimations && PlayerList.size > 200 || PlayerList.size > 50) && arg0 != 0 && local255.movementSeqId == local255.getBasType().readySeqId) {
-						local255.aBoolean98 = true;
+			if (player != null && player.isVisible()) {
+				@Pc(280) int size = player.getSize();
+				if (sizeFilter == 0 || sizeFilter == size) {
+					player.aBoolean98 = false;
+					player.aBoolean282 = true;
+					if ((Preferences.manyIdleAnimations && PlayerList.size > 200 || PlayerList.size > 50) && sizeFilter != 0 && player.movementSeqId == player.getBasType().readySeqId) {
+						player.aBoolean98 = true;
 					}
-					if (local280 == 1) {
-						if ((local255.xFine & 0x7F) == 64 && (local255.zFine & 0x7F) == 64) {
-							@Pc(340) int local340 = local255.xFine >> 7;
-							@Pc(345) int local345 = local255.zFine >> 7;
+					if (size == 1) {
+						if ((player.xFine & 0x7F) == 64 && (player.zFine & 0x7F) == 64) {
+							@Pc(340) int local340 = player.xFine >> 7;
+							@Pc(345) int local345 = player.zFine >> 7;
 							if (local340 < 0 || local340 >= 104 || local345 < 0 || local345 >= 104) {
 								continue;
 							}
@@ -789,10 +789,10 @@ public final class Static22 {
 								continue;
 							}
 						}
-					} else if ((local280 & 0x1) == 0 && (local255.xFine & 0x7F) == 0 && (local255.zFine & 0x7F) == 0 || (local280 & 0x1) == 1 && (local255.xFine & 0x7F) == 64 && (local255.zFine & 0x7F) == 0) {
-						@Pc(430) int local430 = local255.zFine - local280 * 64 >> 7;
-						@Pc(440) int local440 = local255.xFine - local280 * 64 >> 7;
-						@Pc(444) int local444 = local280 + local440;
+					} else if ((size & 0x1) == 0 && (player.xFine & 0x7F) == 0 && (player.zFine & 0x7F) == 0 || (size & 0x1) == 1 && (player.xFine & 0x7F) == 64 && (player.zFine & 0x7F) == 0) {
+						@Pc(430) int local430 = player.zFine - size * 64 >> 7;
+						@Pc(440) int local440 = player.xFine - size * 64 >> 7;
+						@Pc(444) int local444 = size + local440;
 						if (local440 < 0) {
 							local440 = 0;
 						}
@@ -800,7 +800,7 @@ public final class Static22 {
 							local444 = 104;
 						}
 						@Pc(458) boolean local458 = true;
-						@Pc(462) int local462 = local280 + local430;
+						@Pc(462) int local462 = size + local430;
 						if (local430 < 0) {
 							local430 = 0;
 						}
@@ -828,15 +828,15 @@ public final class Static22 {
 							}
 						}
 					}
-					if (local255.anObject5 == null || client.loop < local255.anInt4042 || local255.anInt4010 <= client.loop) {
-						local255.aBoolean282 = false;
-						local255.anInt4006 = SceneGraph.method522(Player.level, local255.xFine, local255.zFine);
-						SceneGraph.method637(Player.level, local255.xFine, local255.zFine, local255.anInt4006, (local280 - 1) * 64 + 60, local255, local255.angle, local253, local255.aBoolean284);
+					if (player.attachment == null || client.loop < player.attachmentSetAt || player.attachmentResetAt <= client.loop) {
+						player.aBoolean282 = false;
+						player.y = SceneGraph.getTileHeight(Player.level, player.xFine, player.zFine);
+						SceneGraph.method637(Player.level, player.xFine, player.zFine, player.y, (size - 1) * 64 + 60, player, player.angle, key, player.aBoolean284);
 					} else {
-						local255.aBoolean98 = false;
-						local255.aBoolean282 = false;
-						local255.anInt4006 = SceneGraph.method522(Player.level, local255.xFine, local255.zFine);
-						SceneGraph.method584(Player.level, local255.xFine, local255.zFine, local255.anInt4006, local255, local255.angle, local253, local255.anInt4043, local255.anInt4018, local255.anInt4041, local255.anInt4038);
+						player.aBoolean98 = false;
+						player.aBoolean282 = false;
+						player.y = SceneGraph.getTileHeight(Player.level, player.xFine, player.zFine);
+						SceneGraph.method584(Player.level, player.xFine, player.zFine, player.y, player, player.angle, key, player.attachmentX0, player.attachmentZ0, player.attachmentX1, player.attachmentZ1);
 					}
 				}
 			}

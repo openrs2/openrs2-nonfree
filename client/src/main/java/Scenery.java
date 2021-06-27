@@ -8,7 +8,7 @@ public final class Scenery {
 	public int anInt811;
 
 	@OriginalMember(owner = "client!co", name = "d", descriptor = "I")
-	public int anInt814;
+	public int angle;
 
 	@OriginalMember(owner = "client!co", name = "e", descriptor = "I")
 	public int anInt815;
@@ -26,7 +26,7 @@ public final class Scenery {
 	public int centerXFine;
 
 	@OriginalMember(owner = "client!co", name = "n", descriptor = "I")
-	public int anInt823;
+	public int y;
 
 	@OriginalMember(owner = "client!co", name = "o", descriptor = "I")
 	public int xMin;

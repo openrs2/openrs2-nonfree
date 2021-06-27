@@ -257,7 +257,7 @@ public final class Static8 {
 			node2 = (ObjStackNode) objStacks.next();
 		}
 		@Pc(155) long key = x + (z << 7) + 0x60000000;
-		SceneGraph.setObjStack(Player.level, x, z, SceneGraph.method522(Player.level, x * 128 + 64, z * 128 + 64), maxNode.value, key, secondary, tertiary);
+		SceneGraph.setObjStack(Player.level, x, z, SceneGraph.getTileHeight(Player.level, x * 128 + 64, z * 128 + 64), maxNode.value, key, secondary, tertiary);
 	}
 
 	@OriginalMember(owner = "client!af", name = "a", descriptor = "(IIIIBII)V")

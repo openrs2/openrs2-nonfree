@@ -107,7 +107,7 @@ public final class ProjAnim extends Entity {
 		this.spotAnimId = arg0;
 		this.anInt3727 = arg7;
 		this.anInt3722 = arg10;
-		@Pc(61) int local61 = SpotAnimTypeList.get(this.spotAnimId).anInt3134;
+		@Pc(61) int local61 = SpotAnimTypeList.get(this.spotAnimId).seqId;
 		if (local61 == -1) {
 			this.aClass46_2 = null;
 		} else {

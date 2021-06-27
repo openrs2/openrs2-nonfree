@@ -5,13 +5,13 @@ import org.openrs2.deob.annotation.OriginalMember;
 public final class Class150 {
 
 	@OriginalMember(owner = "client!re", name = "b", descriptor = "I")
-	public int anInt4456;
+	public int seqId;
 
 	@OriginalMember(owner = "client!re", name = "f", descriptor = "I")
 	public int anInt4460;
 
 	@OriginalMember(owner = "client!re", name = "g", descriptor = "I")
-	public int anInt4461;
+	public int delay;
 
 	@OriginalMember(owner = "client!re", name = "i", descriptor = "I")
 	public int anInt4462;

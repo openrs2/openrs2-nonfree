@@ -433,12 +433,12 @@ public final class Static25 {
 		Static8.method115();
 		for (@Pc(33) int i = 0; i < PlayerList.players.length; i++) {
 			if (PlayerList.players[i] != null) {
-				PlayerList.players[i].anInt3985 = -1;
+				PlayerList.players[i].faceEntity = -1;
 			}
 		}
 		for (@Pc(52) int i = 0; i < NpcList.npcs.length; i++) {
 			if (NpcList.npcs[i] != null) {
-				NpcList.npcs[i].anInt3985 = -1;
+				NpcList.npcs[i].faceEntity = -1;
 			}
 		}
 		Inv.deleteAll();
