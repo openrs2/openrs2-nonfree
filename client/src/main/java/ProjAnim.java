@@ -140,16 +140,16 @@ public final class ProjAnim extends Entity {
 					}
 					this.anInt3725 -= this.aClass46_2.anIntArray94[this.anInt3708];
 					this.anInt3708++;
-					if (this.aClass46_2.anIntArray95.length <= this.anInt3708) {
+					if (this.aClass46_2.frames.length <= this.anInt3708) {
 						this.anInt3708 -= this.aClass46_2.anInt1242;
-						if (this.anInt3708 < 0 || this.anInt3708 >= this.aClass46_2.anIntArray95.length) {
+						if (this.anInt3708 < 0 || this.anInt3708 >= this.aClass46_2.frames.length) {
 							this.anInt3708 = 0;
 						}
 					}
 					this.anInt3718 = this.anInt3708 + 1;
-				} while (this.anInt3718 < this.aClass46_2.anIntArray95.length);
+				} while (this.anInt3718 < this.aClass46_2.frames.length);
 				this.anInt3718 -= this.aClass46_2.anInt1242;
-			} while (this.anInt3718 >= 0 && this.aClass46_2.anIntArray95.length > this.anInt3718);
+			} while (this.anInt3718 >= 0 && this.aClass46_2.frames.length > this.anInt3718);
 			this.anInt3718 = -1;
 		}
 	}

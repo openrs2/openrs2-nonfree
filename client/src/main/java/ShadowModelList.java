@@ -7,7 +7,7 @@ public final class ShadowModelList {
 	public static final SoftLruHashTable models = new SoftLruHashTable(32);
 
 	@OriginalMember(owner = "client!dc", name = "a", descriptor = "(IILclient!eg;IIILclient!vg;IIIZIII)Lclient!vg;")
-	public static Model get(@OriginalArg(0) int arg0, @OriginalArg(2) SeqType arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4, @OriginalArg(6) Model arg5, @OriginalArg(7) int arg6, @OriginalArg(8) int arg7, @OriginalArg(9) int arg8, @OriginalArg(10) boolean arg9, @OriginalArg(11) int arg10, @OriginalArg(12) int arg11, @OriginalArg(13) int arg12) {
+	public static Model get(@OriginalArg(0) int arg0, @OriginalArg(2) SeqType seq, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4, @OriginalArg(6) Model arg5, @OriginalArg(7) int frame, @OriginalArg(8) int arg7, @OriginalArg(9) int arg8, @OriginalArg(10) boolean arg9, @OriginalArg(11) int arg10, @OriginalArg(12) int arg11, @OriginalArg(13) int arg12) {
 		@Pc(23) long key = ((long) arg10 << 32) + (long) ((arg4 << 24) + (arg11 << 16) + arg3) + ((long) arg0 << 48);
 		@Pc(33) Model model = (Model) models.get(key);
 		if (model == null) {
@@ -89,22 +89,22 @@ public final class ShadowModelList {
 		if (local457 > local392) {
 			local457 = local392;
 		}
-		@Pc(475) AnimFrameset local475 = null;
-		if (arg1 != null) {
-			arg6 = arg1.anIntArray95[arg6];
-			local475 = SeqTypeList.getAnimFrameset(arg6 >> 16);
-			arg6 &= 65535;
+		@Pc(475) AnimFrameset frameset = null;
+		if (seq != null) {
+			frame = seq.frames[frame];
+			frameset = SeqTypeList.getAnimFrameset(frame >> 16);
+			frame &= 65535;
 		}
 		@Pc(500) Model local500;
-		if (local475 == null) {
+		if (frameset == null) {
 			local500 = model.method3836(true, true, true);
 			local500.resize((local435 - local432) / 2, 128, (local457 - local438) / 2);
 			local500.translate((local432 + local435) / 2, 0, (local438 + local457) / 2);
 		} else {
-			local500 = model.method3836(!local475.method4150(arg6), !local475.method4151(arg6), true);
+			local500 = model.method3836(!frameset.isAlphaTransformed(frame), !frameset.isColorTransformed(frame), true);
 			local500.resize((local435 - local432) / 2, 128, (local457 - local438) / 2);
 			local500.translate((local435 + local432) / 2, 0, (local438 + local457) / 2);
-			local500.method3844(local475, arg6);
+			local500.animateShadow(frameset, frame);
 		}
 		if (arg2 != 0) {
 			local500.method3815(arg2);

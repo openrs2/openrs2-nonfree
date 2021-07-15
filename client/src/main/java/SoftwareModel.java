@@ -145,10 +145,10 @@ public final class SoftwareModel extends Model {
 	public static int[] anIntArray363;
 
 	@OriginalMember(owner = "client!na", name = "wb", descriptor = "I")
-	private static int anInt3442;
+	private static int originZ;
 
 	@OriginalMember(owner = "client!na", name = "Cb", descriptor = "I")
-	private static int anInt3443;
+	private static int originX;
 
 	@OriginalMember(owner = "client!na", name = "Gb", descriptor = "[I")
 	private static int[] anIntArray369;
@@ -157,7 +157,7 @@ public final class SoftwareModel extends Model {
 	private static int[] anIntArray374;
 
 	@OriginalMember(owner = "client!na", name = "Vb", descriptor = "I")
-	private static int anInt3444;
+	private static int originY;
 
 	@OriginalMember(owner = "client!na", name = "o", descriptor = "()V")
 	public static void method2906() {
@@ -275,7 +275,7 @@ public final class SoftwareModel extends Model {
 	private short boundingSphereRadius;
 
 	@OriginalMember(owner = "client!na", name = "S", descriptor = "[[I")
-	private int[][] anIntArrayArray29;
+	private int[][] boneVertices;
 
 	@OriginalMember(owner = "client!na", name = "T", descriptor = "[I")
 	private int[] triangleVertexB;
@@ -290,7 +290,7 @@ public final class SoftwareModel extends Model {
 	private short minY;
 
 	@OriginalMember(owner = "client!na", name = "bb", descriptor = "[[I")
-	private int[][] anIntArrayArray30;
+	private int[][] boneTriangles;
 
 	@OriginalMember(owner = "client!na", name = "db", descriptor = "[I")
 	private int[] anIntArray353;
@@ -335,7 +335,7 @@ public final class SoftwareModel extends Model {
 	@OriginalMember(owner = "client!na", name = "<init>", descriptor = "(Lclient!ml;IIIII)V")
 	public SoftwareModel(@OriginalArg(0) RawModel model, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5) {
 		model.calculateNormals();
-		model.method2744();
+		model.createBones();
 		this.vertexCount = model.vertexCount;
 		this.anInt3438 = model.anInt3355;
 		this.vertexX = model.vertexX;
@@ -349,8 +349,8 @@ public final class SoftwareModel extends Model {
 		this.triangleAlpha = model.triangleAlpha;
 		this.priority = model.priority;
 		this.triangleColors = model.triangleColors;
-		this.anIntArrayArray29 = model.anIntArrayArray27;
-		this.anIntArrayArray30 = model.anIntArrayArray26;
+		this.boneVertices = model.boneVertices;
+		this.boneTriangles = model.boneTriangles;
 		this.triangleSources = model.triangleSources;
 		this.particleEmitters = model.particleEmitters;
 		this.particleEffectors = model.particleEffectors;
@@ -701,17 +701,17 @@ public final class SoftwareModel extends Model {
 
 	@OriginalMember(owner = "client!na", name = "a", descriptor = "(ZZZ)Lclient!vg;")
 	@Override
-	public final Model method3831(@OriginalArg(0) boolean arg0, @OriginalArg(1) boolean arg1, @OriginalArg(2) boolean arg2) {
-		if (!arg0 && aByteArray44.length < this.triangleCount) {
+	public final Model method3831(@OriginalArg(0) boolean shareAlpha, @OriginalArg(1) boolean shareColors, @OriginalArg(2) boolean shareNormals) {
+		if (!shareAlpha && aByteArray44.length < this.triangleCount) {
 			aByteArray44 = new byte[this.triangleCount + 100];
 		}
-		if (!arg1 && aShortArray65.length < this.triangleCount) {
+		if (!shareColors && aShortArray65.length < this.triangleCount) {
 			anIntArray350 = new int[this.triangleCount + 100];
 			anIntArray349 = new int[this.triangleCount + 100];
 			anIntArray352 = new int[this.triangleCount + 100];
 			aShortArray65 = new short[this.triangleCount + 100];
 		}
-		return this.method2908(arg0, arg1, aClass53_Sub4_Sub1_1, aByteArray44, aShortArray65, anIntArray350, anIntArray349, anIntArray352);
+		return this.method2908(shareAlpha, shareColors, aClass53_Sub4_Sub1_1, aByteArray44, aShortArray65, anIntArray350, anIntArray349, anIntArray352);
 	}
 
 	@OriginalMember(owner = "client!na", name = "a", descriptor = "(IIIIIIII)Z")
@@ -1362,12 +1362,12 @@ public final class SoftwareModel extends Model {
 	@OriginalMember(owner = "client!na", name = "j", descriptor = "()Z")
 	@Override
 	protected final boolean method3830() {
-		if (this.anIntArrayArray29 == null) {
+		if (this.boneVertices == null) {
 			return false;
 		} else {
-			anInt3443 = 0;
-			anInt3444 = 0;
-			anInt3442 = 0;
+			originX = 0;
+			originY = 0;
+			originZ = 0;
 			return true;
 		}
 	}
@@ -1509,17 +1509,17 @@ public final class SoftwareModel extends Model {
 
 	@OriginalMember(owner = "client!na", name = "b", descriptor = "(ZZZ)Lclient!vg;")
 	@Override
-	public final Model method3833(@OriginalArg(0) boolean arg0, @OriginalArg(1) boolean arg1, @OriginalArg(2) boolean arg2) {
-		if (!arg0 && aByteArray46.length < this.triangleCount) {
+	public final Model method3833(@OriginalArg(0) boolean shareAlpha, @OriginalArg(1) boolean shareColors, @OriginalArg(2) boolean shareNormals) {
+		if (!shareAlpha && aByteArray46.length < this.triangleCount) {
 			aByteArray46 = new byte[this.triangleCount + 100];
 		}
-		if (!arg1 && aShortArray67.length < this.triangleCount) {
+		if (!shareColors && aShortArray67.length < this.triangleCount) {
 			anIntArray373 = new int[this.triangleCount + 100];
 			anIntArray364 = new int[this.triangleCount + 100];
 			anIntArray359 = new int[this.triangleCount + 100];
 			aShortArray67 = new short[this.triangleCount + 100];
 		}
-		return this.method2908(arg0, arg1, aClass53_Sub4_Sub1_3, aByteArray46, aShortArray67, anIntArray373, anIntArray364, anIntArray359);
+		return this.method2908(shareAlpha, shareColors, aClass53_Sub4_Sub1_3, aByteArray46, aShortArray67, anIntArray373, anIntArray364, anIntArray359);
 	}
 
 	@OriginalMember(owner = "client!na", name = "d", descriptor = "()V")
@@ -1534,17 +1534,17 @@ public final class SoftwareModel extends Model {
 
 	@OriginalMember(owner = "client!na", name = "c", descriptor = "(ZZZ)Lclient!vg;")
 	@Override
-	public final Model method3836(@OriginalArg(0) boolean arg0, @OriginalArg(1) boolean arg1, @OriginalArg(2) boolean arg2) {
-		if (!arg0 && aByteArray45.length < this.triangleCount) {
+	public final Model method3836(@OriginalArg(0) boolean shareAlpha, @OriginalArg(1) boolean shareColors, @OriginalArg(2) boolean shareNormals) {
+		if (!shareAlpha && aByteArray45.length < this.triangleCount) {
 			aByteArray45 = new byte[this.triangleCount + 100];
 		}
-		if (!arg1 && aShortArray66.length < this.triangleCount) {
+		if (!shareColors && aShortArray66.length < this.triangleCount) {
 			anIntArray355 = new int[this.triangleCount + 100];
 			anIntArray356 = new int[this.triangleCount + 100];
 			anIntArray354 = new int[this.triangleCount + 100];
 			aShortArray66 = new short[this.triangleCount + 100];
 		}
-		return this.method2908(arg0, arg1, aClass53_Sub4_Sub1_2, aByteArray45, aShortArray66, anIntArray355, anIntArray356, anIntArray354);
+		return this.method2908(shareAlpha, shareColors, aClass53_Sub4_Sub1_2, aByteArray45, aShortArray66, anIntArray355, anIntArray356, anIntArray354);
 	}
 
 	@OriginalMember(owner = "client!na", name = "e", descriptor = "(I)V")
@@ -1703,7 +1703,7 @@ public final class SoftwareModel extends Model {
 	}
 
 	@OriginalMember(owner = "client!na", name = "a", descriptor = "(ZZLclient!na;[B[S[I[I[I)Lclient!vg;")
-	private Model method2908(@OriginalArg(0) boolean arg0, @OriginalArg(1) boolean arg1, @OriginalArg(2) SoftwareModel arg2, @OriginalArg(3) byte[] arg3, @OriginalArg(4) short[] arg4, @OriginalArg(5) int[] arg5, @OriginalArg(6) int[] arg6, @OriginalArg(7) int[] arg7) {
+	private Model method2908(@OriginalArg(0) boolean shareAlpha, @OriginalArg(1) boolean shareColors, @OriginalArg(2) SoftwareModel arg2, @OriginalArg(3) byte[] arg3, @OriginalArg(4) short[] arg4, @OriginalArg(5) int[] arg5, @OriginalArg(6) int[] arg6, @OriginalArg(7) int[] arg7) {
 		arg2.vertexCount = this.vertexCount;
 		arg2.anInt3438 = this.anInt3438;
 		arg2.triangleCount = this.triangleCount;
@@ -1718,7 +1718,7 @@ public final class SoftwareModel extends Model {
 			arg2.vertexY[i] = this.vertexY[i];
 			arg2.vertexZ[i] = this.vertexZ[i];
 		}
-		if (arg0) {
+		if (shareAlpha) {
 			arg2.triangleAlpha = this.triangleAlpha;
 		} else {
 			arg2.triangleAlpha = arg3;
@@ -1732,7 +1732,7 @@ public final class SoftwareModel extends Model {
 				}
 			}
 		}
-		if (arg1) {
+		if (shareColors) {
 			arg2.triangleColors = this.triangleColors;
 			arg2.anIntArray345 = this.anIntArray345;
 			arg2.anIntArray346 = this.anIntArray346;
@@ -1759,8 +1759,8 @@ public final class SoftwareModel extends Model {
 		arg2.anIntArray351 = this.anIntArray351;
 		arg2.anIntArray353 = this.anIntArray353;
 		arg2.anIntArray341 = this.anIntArray341;
-		arg2.anIntArrayArray29 = this.anIntArrayArray29;
-		arg2.anIntArrayArray30 = this.anIntArrayArray30;
+		arg2.boneVertices = this.boneVertices;
+		arg2.boneTriangles = this.boneTriangles;
 		arg2.vertexSources = this.vertexSources;
 		arg2.triangleSources = this.triangleSources;
 		arg2.aBoolean324 = this.aBoolean324;
@@ -1872,8 +1872,8 @@ public final class SoftwareModel extends Model {
 			local150.anIntArray351 = this.anIntArray351;
 			local150.anIntArray353 = this.anIntArray353;
 			local150.anIntArray341 = this.anIntArray341;
-			local150.anIntArrayArray29 = this.anIntArrayArray29;
-			local150.anIntArrayArray30 = this.anIntArrayArray30;
+			local150.boneVertices = this.boneVertices;
+			local150.boneTriangles = this.boneTriangles;
 			local150.vertexSources = this.vertexSources;
 			local150.triangleSources = this.triangleSources;
 			local150.aBoolean324 = this.aBoolean324;
@@ -2028,128 +2028,128 @@ public final class SoftwareModel extends Model {
 
 	@OriginalMember(owner = "client!na", name = "a", descriptor = "(I[IIIIZ)V")
 	@Override
-	protected final void method3843(@OriginalArg(0) int arg0, @OriginalArg(1) int[] arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) boolean arg5) {
-		@Pc(2) int local2 = arg1.length;
-		if (arg0 == 0) {
-			@Pc(6) int local6 = 0;
-			anInt3443 = 0;
-			anInt3444 = 0;
-			anInt3442 = 0;
+	protected final void transform(@OriginalArg(0) int type, @OriginalArg(1) int[] bone, @OriginalArg(2) int x, @OriginalArg(3) int y, @OriginalArg(4) int z, @OriginalArg(5) boolean arg5) {
+		@Pc(2) int local2 = bone.length;
+		if (type == 0) {
+			@Pc(6) int count = 0;
+			originX = 0;
+			originY = 0;
+			originZ = 0;
 			for (@Pc(14) int local14 = 0; local14 < local2; local14++) {
-				@Pc(21) int local21 = arg1[local14];
-				if (local21 < this.anIntArrayArray29.length) {
-					@Pc(31) int[] local31 = this.anIntArrayArray29[local21];
+				@Pc(21) int local21 = bone[local14];
+				if (local21 < this.boneVertices.length) {
+					@Pc(31) int[] local31 = this.boneVertices[local21];
 					for (@Pc(33) int local33 = 0; local33 < local31.length; local33++) {
 						@Pc(41) int local41 = local31[local33];
-						anInt3443 += this.vertexX[local41];
-						anInt3444 += this.vertexY[local41];
-						anInt3442 += this.vertexZ[local41];
-						local6++;
+						originX += this.vertexX[local41];
+						originY += this.vertexY[local41];
+						originZ += this.vertexZ[local41];
+						count++;
 					}
 				}
 			}
-			if (local6 > 0) {
-				anInt3443 = anInt3443 / local6 + arg2;
-				anInt3444 = anInt3444 / local6 + arg3;
-				anInt3442 = anInt3442 / local6 + arg4;
+			if (count > 0) {
+				originX = originX / count + x;
+				originY = originY / count + y;
+				originZ = originZ / count + z;
 			} else {
-				anInt3443 = arg2;
-				anInt3444 = arg3;
-				anInt3442 = arg4;
+				originX = x;
+				originY = y;
+				originZ = z;
 			}
-		} else if (arg0 == 1) {
+		} else if (type == 1) {
 			for (@Pc(100) int local100 = 0; local100 < local2; local100++) {
-				@Pc(107) int local107 = arg1[local100];
-				if (local107 < this.anIntArrayArray29.length) {
-					@Pc(117) int[] local117 = this.anIntArrayArray29[local107];
+				@Pc(107) int local107 = bone[local100];
+				if (local107 < this.boneVertices.length) {
+					@Pc(117) int[] local117 = this.boneVertices[local107];
 					for (@Pc(119) int local119 = 0; local119 < local117.length; local119++) {
 						@Pc(127) int local127 = local117[local119];
 						@Pc(129) int[] local129 = this.vertexX;
-						local129[local127] += arg2;
+						local129[local127] += x;
 						local129 = this.vertexY;
-						local129[local127] += arg3;
+						local129[local127] += y;
 						local129 = this.vertexZ;
-						local129[local127] += arg4;
+						local129[local127] += z;
 					}
 				}
 			}
-		} else if (arg0 == 2) {
+		} else if (type == 2) {
 			for (@Pc(161) int local161 = 0; local161 < local2; local161++) {
-				@Pc(168) int local168 = arg1[local161];
-				if (local168 < this.anIntArrayArray29.length) {
-					@Pc(178) int[] local178 = this.anIntArrayArray29[local168];
+				@Pc(168) int local168 = bone[local161];
+				if (local168 < this.boneVertices.length) {
+					@Pc(178) int[] local178 = this.boneVertices[local168];
 					for (@Pc(180) int local180 = 0; local180 < local178.length; local180++) {
 						@Pc(188) int local188 = local178[local180];
 						@Pc(190) int[] local190 = this.vertexX;
-						local190[local188] -= anInt3443;
+						local190[local188] -= originX;
 						local190 = this.vertexY;
-						local190[local188] -= anInt3444;
+						local190[local188] -= originY;
 						local190 = this.vertexZ;
-						local190[local188] -= anInt3442;
-						if (arg4 != 0) {
-							@Pc(218) int local218 = MathUtils.SINE[arg4];
-							@Pc(222) int local222 = MathUtils.COSINE[arg4];
+						local190[local188] -= originZ;
+						if (z != 0) {
+							@Pc(218) int local218 = MathUtils.SINE[z];
+							@Pc(222) int local222 = MathUtils.COSINE[z];
 							@Pc(240) int local240 = this.vertexY[local188] * local218 + this.vertexX[local188] * local222 + 32767 >> 16;
 							this.vertexY[local188] = this.vertexY[local188] * local222 + 32767 - this.vertexX[local188] * local218 >> 16;
 							this.vertexX[local188] = local240;
 						}
-						if (arg2 != 0) {
-							@Pc(272) int local272 = MathUtils.SINE[arg2];
-							@Pc(276) int local276 = MathUtils.COSINE[arg2];
+						if (x != 0) {
+							@Pc(272) int local272 = MathUtils.SINE[x];
+							@Pc(276) int local276 = MathUtils.COSINE[x];
 							@Pc(294) int local294 = this.vertexY[local188] * local276 + 32767 - this.vertexZ[local188] * local272 >> 16;
 							this.vertexZ[local188] = this.vertexY[local188] * local272 + this.vertexZ[local188] * local276 + 32767 >> 16;
 							this.vertexY[local188] = local294;
 						}
-						if (arg3 != 0) {
-							@Pc(326) int local326 = MathUtils.SINE[arg3];
-							@Pc(330) int local330 = MathUtils.COSINE[arg3];
+						if (y != 0) {
+							@Pc(326) int local326 = MathUtils.SINE[y];
+							@Pc(330) int local330 = MathUtils.COSINE[y];
 							@Pc(348) int local348 = this.vertexZ[local188] * local326 + this.vertexX[local188] * local330 + 32767 >> 16;
 							this.vertexZ[local188] = this.vertexZ[local188] * local330 + 32767 - this.vertexX[local188] * local326 >> 16;
 							this.vertexX[local188] = local348;
 						}
 						@Pc(376) int[] local376 = this.vertexX;
-						local376[local188] += anInt3443;
+						local376[local188] += originX;
 						local376 = this.vertexY;
-						local376[local188] += anInt3444;
+						local376[local188] += originY;
 						local376 = this.vertexZ;
-						local376[local188] += anInt3442;
+						local376[local188] += originZ;
 					}
 				}
 			}
-		} else if (arg0 == 3) {
+		} else if (type == 3) {
 			for (@Pc(408) int local408 = 0; local408 < local2; local408++) {
-				@Pc(415) int local415 = arg1[local408];
-				if (local415 < this.anIntArrayArray29.length) {
-					@Pc(425) int[] local425 = this.anIntArrayArray29[local415];
+				@Pc(415) int local415 = bone[local408];
+				if (local415 < this.boneVertices.length) {
+					@Pc(425) int[] local425 = this.boneVertices[local415];
 					for (@Pc(427) int local427 = 0; local427 < local425.length; local427++) {
 						@Pc(435) int local435 = local425[local427];
 						@Pc(437) int[] local437 = this.vertexX;
-						local437[local435] -= anInt3443;
+						local437[local435] -= originX;
 						local437 = this.vertexY;
-						local437[local435] -= anInt3444;
+						local437[local435] -= originY;
 						local437 = this.vertexZ;
-						local437[local435] -= anInt3442;
-						this.vertexX[local435] = this.vertexX[local435] * arg2 / 128;
-						this.vertexY[local435] = this.vertexY[local435] * arg3 / 128;
-						this.vertexZ[local435] = this.vertexZ[local435] * arg4 / 128;
+						local437[local435] -= originZ;
+						this.vertexX[local435] = this.vertexX[local435] * x / 128;
+						this.vertexY[local435] = this.vertexY[local435] * y / 128;
+						this.vertexZ[local435] = this.vertexZ[local435] * z / 128;
 						local437 = this.vertexX;
-						local437[local435] += anInt3443;
+						local437[local435] += originX;
 						local437 = this.vertexY;
-						local437[local435] += anInt3444;
+						local437[local435] += originY;
 						local437 = this.vertexZ;
-						local437[local435] += anInt3442;
+						local437[local435] += originZ;
 					}
 				}
 			}
-		} else if (arg0 == 5) {
-			if (this.anIntArrayArray30 != null && this.triangleAlpha != null) {
+		} else if (type == 5) {
+			if (this.boneTriangles != null && this.triangleAlpha != null) {
 				for (@Pc(535) int local535 = 0; local535 < local2; local535++) {
-					@Pc(542) int local542 = arg1[local535];
-					if (local542 < this.anIntArrayArray30.length) {
-						@Pc(552) int[] local552 = this.anIntArrayArray30[local542];
+					@Pc(542) int local542 = bone[local535];
+					if (local542 < this.boneTriangles.length) {
+						@Pc(552) int[] local552 = this.boneTriangles[local542];
 						for (@Pc(554) int local554 = 0; local554 < local552.length; local554++) {
 							@Pc(562) int local562 = local552[local554];
-							@Pc(573) int local573 = (this.triangleAlpha[local562] & 0xFF) + arg2 * 8;
+							@Pc(573) int local573 = (this.triangleAlpha[local562] & 0xFF) + x * 8;
 							if (local573 < 0) {
 								local573 = 0;
 							} else if (local573 > 255) {
@@ -2160,25 +2160,25 @@ public final class SoftwareModel extends Model {
 					}
 				}
 			}
-		} else if (arg0 == 7 && this.anIntArrayArray30 != null) {
+		} else if (type == 7 && this.boneTriangles != null) {
 			for (@Pc(602) int local602 = 0; local602 < local2; local602++) {
-				@Pc(609) int local609 = arg1[local602];
-				if (local609 < this.anIntArrayArray30.length) {
-					@Pc(619) int[] local619 = this.anIntArrayArray30[local609];
+				@Pc(609) int local609 = bone[local602];
+				if (local609 < this.boneTriangles.length) {
+					@Pc(619) int[] local619 = this.boneTriangles[local609];
 					for (@Pc(621) int local621 = 0; local621 < local619.length; local621++) {
 						@Pc(629) int local629 = local619[local621];
 						@Pc(636) int local636 = this.triangleColors[local629] & 0xFFFF;
 						@Pc(642) int local642 = local636 >> 10 & 0x3F;
 						@Pc(648) int local648 = local636 >> 7 & 0x7;
 						@Pc(652) int local652 = local636 & 0x7F;
-						local642 = local642 + arg2 & 0x3F;
-						@Pc(662) int local662 = local648 + arg3;
+						local642 = local642 + x & 0x3F;
+						@Pc(662) int local662 = local648 + y;
 						if (local662 < 0) {
 							local662 = 0;
 						} else if (local662 > 7) {
 							local662 = 7;
 						}
-						@Pc(676) int local676 = local652 + arg4;
+						@Pc(676) int local676 = local652 + z;
 						if (local676 < 0) {
 							local676 = 0;
 						} else if (local676 > 127) {
@@ -2264,106 +2264,106 @@ public final class SoftwareModel extends Model {
 
 	@OriginalMember(owner = "client!na", name = "a", descriptor = "(I[IIIIZI[I)V")
 	@Override
-	protected final void method3837(@OriginalArg(0) int arg0, @OriginalArg(1) int[] arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) boolean arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int[] arg7) {
-		@Pc(2) int local2 = arg1.length;
-		if (arg0 == 0) {
-			@Pc(6) int local6 = 0;
-			anInt3443 = 0;
-			anInt3444 = 0;
-			anInt3442 = 0;
-			for (@Pc(14) int local14 = 0; local14 < local2; local14++) {
-				@Pc(21) int local21 = arg1[local14];
-				if (local21 < this.anIntArrayArray29.length) {
-					@Pc(31) int[] local31 = this.anIntArrayArray29[local21];
-					for (@Pc(33) int local33 = 0; local33 < local31.length; local33++) {
-						@Pc(41) int local41 = local31[local33];
-						if (this.vertexSources == null || (arg6 & this.vertexSources[local41]) != 0) {
-							anInt3443 += this.vertexX[local41];
-							anInt3444 += this.vertexY[local41];
-							anInt3442 += this.vertexZ[local41];
-							local6++;
+	protected final void transform(@OriginalArg(0) int type, @OriginalArg(1) int[] bones, @OriginalArg(2) int x, @OriginalArg(3) int y, @OriginalArg(4) int z, @OriginalArg(5) boolean arg5, @OriginalArg(6) int parts, @OriginalArg(7) int[] arg7) {
+		@Pc(2) int bonesLen = bones.length;
+		if (type == 0) {
+			@Pc(6) int count = 0;
+			originX = 0;
+			originY = 0;
+			originZ = 0;
+			for (@Pc(14) int i = 0; i < bonesLen; i++) {
+				@Pc(21) int bone = bones[i];
+				if (bone < this.boneVertices.length) {
+					@Pc(31) int[] vertices = this.boneVertices[bone];
+					for (@Pc(33) int j = 0; j < vertices.length; j++) {
+						@Pc(41) int vertex = vertices[j];
+						if (this.vertexSources == null || (parts & this.vertexSources[vertex]) != 0) {
+							originX += this.vertexX[vertex];
+							originY += this.vertexY[vertex];
+							originZ += this.vertexZ[vertex];
+							count++;
 						}
 					}
 				}
 			}
-			if (local6 > 0) {
-				anInt3443 = anInt3443 / local6 + arg2;
-				anInt3444 = anInt3444 / local6 + arg3;
-				anInt3442 = anInt3442 / local6 + arg4;
+			if (count > 0) {
+				originX = originX / count + x;
+				originY = originY / count + y;
+				originZ = originZ / count + z;
 				aBoolean247 = true;
 			} else {
-				anInt3443 = arg2;
-				anInt3444 = arg3;
-				anInt3442 = arg4;
+				originX = x;
+				originY = y;
+				originZ = z;
 			}
-		} else if (arg0 == 1) {
+		} else if (type == 1) {
 			if (arg7 != null) {
-				@Pc(135) int local135 = arg7[0] * arg2 + arg7[1] * arg3 + arg7[2] * arg4 + 16384 >> 15;
-				@Pc(157) int local157 = arg7[3] * arg2 + arg7[4] * arg3 + arg7[5] * arg4 + 16384 >> 15;
-				@Pc(179) int local179 = arg7[6] * arg2 + arg7[7] * arg3 + arg7[8] * arg4 + 16384 >> 15;
-				arg2 = local135;
-				arg3 = local157;
-				arg4 = local179;
+				@Pc(135) int local135 = arg7[0] * x + arg7[1] * y + arg7[2] * z + 16384 >> 15;
+				@Pc(157) int local157 = arg7[3] * x + arg7[4] * y + arg7[5] * z + 16384 >> 15;
+				@Pc(179) int local179 = arg7[6] * x + arg7[7] * y + arg7[8] * z + 16384 >> 15;
+				x = local135;
+				y = local157;
+				z = local179;
 			}
-			for (@Pc(187) int local187 = 0; local187 < local2; local187++) {
-				@Pc(194) int local194 = arg1[local187];
-				if (local194 < this.anIntArrayArray29.length) {
-					@Pc(204) int[] local204 = this.anIntArrayArray29[local194];
-					for (@Pc(206) int local206 = 0; local206 < local204.length; local206++) {
-						@Pc(214) int local214 = local204[local206];
-						if (this.vertexSources == null || (arg6 & this.vertexSources[local214]) != 0) {
+			for (@Pc(187) int i = 0; i < bonesLen; i++) {
+				@Pc(194) int bone = bones[i];
+				if (bone < this.boneVertices.length) {
+					@Pc(204) int[] vertices = this.boneVertices[bone];
+					for (@Pc(206) int j = 0; j < vertices.length; j++) {
+						@Pc(214) int vertex = vertices[j];
+						if (this.vertexSources == null || (parts & this.vertexSources[vertex]) != 0) {
 							@Pc(227) int[] local227 = this.vertexX;
-							local227[local214] += arg2;
+							local227[vertex] += x;
 							local227 = this.vertexY;
-							local227[local214] += arg3;
+							local227[vertex] += y;
 							local227 = this.vertexZ;
-							local227[local214] += arg4;
+							local227[vertex] += z;
 						}
 					}
 				}
 			}
-		} else if (arg0 == 2) {
+		} else if (type == 2) {
 			if (arg7 == null) {
-				for (@Pc(1051) int local1051 = 0; local1051 < local2; local1051++) {
-					@Pc(1058) int local1058 = arg1[local1051];
-					if (local1058 < this.anIntArrayArray29.length) {
-						@Pc(1068) int[] local1068 = this.anIntArrayArray29[local1058];
+				for (@Pc(1051) int local1051 = 0; local1051 < bonesLen; local1051++) {
+					@Pc(1058) int local1058 = bones[local1051];
+					if (local1058 < this.boneVertices.length) {
+						@Pc(1068) int[] local1068 = this.boneVertices[local1058];
 						for (@Pc(1070) int local1070 = 0; local1070 < local1068.length; local1070++) {
 							@Pc(1078) int local1078 = local1068[local1070];
-							if (this.vertexSources == null || (arg6 & this.vertexSources[local1078]) != 0) {
+							if (this.vertexSources == null || (parts & this.vertexSources[local1078]) != 0) {
 								@Pc(1091) int[] local1091 = this.vertexX;
-								local1091[local1078] -= anInt3443;
+								local1091[local1078] -= originX;
 								local1091 = this.vertexY;
-								local1091[local1078] -= anInt3444;
+								local1091[local1078] -= originY;
 								local1091 = this.vertexZ;
-								local1091[local1078] -= anInt3442;
-								if (arg4 != 0) {
-									@Pc(1119) int local1119 = MathUtils.SINE[arg4];
-									@Pc(1123) int local1123 = MathUtils.COSINE[arg4];
+								local1091[local1078] -= originZ;
+								if (z != 0) {
+									@Pc(1119) int local1119 = MathUtils.SINE[z];
+									@Pc(1123) int local1123 = MathUtils.COSINE[z];
 									@Pc(1141) int local1141 = this.vertexY[local1078] * local1119 + this.vertexX[local1078] * local1123 + 32767 >> 16;
 									this.vertexY[local1078] = this.vertexY[local1078] * local1123 + 32767 - this.vertexX[local1078] * local1119 >> 16;
 									this.vertexX[local1078] = local1141;
 								}
-								if (arg2 != 0) {
-									@Pc(1173) int local1173 = MathUtils.SINE[arg2];
-									@Pc(1177) int local1177 = MathUtils.COSINE[arg2];
+								if (x != 0) {
+									@Pc(1173) int local1173 = MathUtils.SINE[x];
+									@Pc(1177) int local1177 = MathUtils.COSINE[x];
 									@Pc(1195) int local1195 = this.vertexY[local1078] * local1177 + 32767 - this.vertexZ[local1078] * local1173 >> 16;
 									this.vertexZ[local1078] = this.vertexY[local1078] * local1173 + this.vertexZ[local1078] * local1177 + 32767 >> 16;
 									this.vertexY[local1078] = local1195;
 								}
-								if (arg3 != 0) {
-									@Pc(1227) int local1227 = MathUtils.SINE[arg3];
-									@Pc(1231) int local1231 = MathUtils.COSINE[arg3];
+								if (y != 0) {
+									@Pc(1227) int local1227 = MathUtils.SINE[y];
+									@Pc(1231) int local1231 = MathUtils.COSINE[y];
 									@Pc(1249) int local1249 = this.vertexZ[local1078] * local1227 + this.vertexX[local1078] * local1231 + 32767 >> 16;
 									this.vertexZ[local1078] = this.vertexZ[local1078] * local1231 + 32767 - this.vertexX[local1078] * local1227 >> 16;
 									this.vertexX[local1078] = local1249;
 								}
 								@Pc(1277) int[] local1277 = this.vertexX;
-								local1277[local1078] += anInt3443;
+								local1277[local1078] += originX;
 								local1277 = this.vertexY;
-								local1277[local1078] += anInt3444;
+								local1277[local1078] += originY;
 								local1277 = this.vertexZ;
-								local1277[local1078] += anInt3442;
+								local1277[local1078] += originZ;
 							}
 						}
 					}
@@ -2376,24 +2376,24 @@ public final class SoftwareModel extends Model {
 				@Pc(279) int local279 = arg7[13];
 				@Pc(283) int local283 = arg7[14];
 				if (aBoolean247) {
-					@Pc(307) int local307 = arg7[0] * anInt3443 + arg7[3] * anInt3444 + arg7[6] * anInt3442 + 16384 >> 15;
-					@Pc(329) int local329 = arg7[1] * anInt3443 + arg7[4] * anInt3444 + arg7[7] * anInt3442 + 16384 >> 15;
-					@Pc(351) int local351 = arg7[2] * anInt3443 + arg7[5] * anInt3444 + arg7[8] * anInt3442 + 16384 >> 15;
+					@Pc(307) int local307 = arg7[0] * originX + arg7[3] * originY + arg7[6] * originZ + 16384 >> 15;
+					@Pc(329) int local329 = arg7[1] * originX + arg7[4] * originY + arg7[7] * originZ + 16384 >> 15;
+					@Pc(351) int local351 = arg7[2] * originX + arg7[5] * originY + arg7[8] * originZ + 16384 >> 15;
 					local307 += local275;
 					local329 += local279;
 					local351 += local283;
-					anInt3443 = local307;
-					anInt3444 = local329;
-					anInt3442 = local351;
+					originX = local307;
+					originY = local329;
+					originZ = local351;
 					aBoolean247 = false;
 				}
 				@Pc(374) int[] local374 = new int[9];
-				@Pc(380) int local380 = MathUtils.COSINE[arg2] >> 1;
-				@Pc(386) int local386 = MathUtils.SINE[arg2] >> 1;
-				@Pc(392) int local392 = MathUtils.COSINE[arg3] >> 1;
-				@Pc(398) int local398 = MathUtils.SINE[arg3] >> 1;
-				@Pc(404) int local404 = MathUtils.COSINE[arg4] >> 1;
-				@Pc(410) int local410 = MathUtils.SINE[arg4] >> 1;
+				@Pc(380) int local380 = MathUtils.COSINE[x] >> 1;
+				@Pc(386) int local386 = MathUtils.SINE[x] >> 1;
+				@Pc(392) int local392 = MathUtils.COSINE[y] >> 1;
+				@Pc(398) int local398 = MathUtils.SINE[y] >> 1;
+				@Pc(404) int local404 = MathUtils.COSINE[z] >> 1;
+				@Pc(410) int local410 = MathUtils.SINE[z] >> 1;
 				@Pc(418) int local418 = local386 * local404 + 16384 >> 15;
 				@Pc(426) int local426 = local386 * local410 + 16384 >> 15;
 				local374[0] = local392 * local404 + local398 * local426 + 16384 >> 15;
@@ -2405,12 +2405,12 @@ public final class SoftwareModel extends Model {
 				local374[6] = -local398 * local404 + local392 * local426 + 16384 >> 15;
 				local374[7] = local398 * local410 + local392 * local418 + 16384 >> 15;
 				local374[8] = local392 * local380 + 16384 >> 15;
-				@Pc(554) int local554 = local374[0] * -anInt3443 + local374[1] * -anInt3444 + local374[2] * -anInt3442 + 16384 >> 15;
-				@Pc(579) int local579 = local374[3] * -anInt3443 + local374[4] * -anInt3444 + local374[5] * -anInt3442 + 16384 >> 15;
-				@Pc(604) int local604 = local374[6] * -anInt3443 + local374[7] * -anInt3444 + local374[8] * -anInt3442 + 16384 >> 15;
-				@Pc(608) int local608 = local554 + anInt3443;
-				@Pc(612) int local612 = local579 + anInt3444;
-				@Pc(616) int local616 = local604 + anInt3442;
+				@Pc(554) int local554 = local374[0] * -originX + local374[1] * -originY + local374[2] * -originZ + 16384 >> 15;
+				@Pc(579) int local579 = local374[3] * -originX + local374[4] * -originY + local374[5] * -originZ + 16384 >> 15;
+				@Pc(604) int local604 = local374[6] * -originX + local374[7] * -originY + local374[8] * -originZ + 16384 >> 15;
+				@Pc(608) int local608 = local554 + originX;
+				@Pc(612) int local612 = local579 + originY;
+				@Pc(616) int local616 = local604 + originZ;
 				@Pc(619) int[] local619 = new int[9];
 				for (@Pc(621) int local621 = 0; local621 < 3; local621++) {
 					for (@Pc(626) int local626 = 0; local626 < 3; local626++) {
@@ -2443,13 +2443,13 @@ public final class SoftwareModel extends Model {
 				local828 += local263;
 				local850 += local267;
 				local872 += local271;
-				for (@Pc(886) int local886 = 0; local886 < local2; local886++) {
-					@Pc(893) int local893 = arg1[local886];
-					if (local893 < this.anIntArrayArray29.length) {
-						@Pc(903) int[] local903 = this.anIntArrayArray29[local893];
+				for (@Pc(886) int local886 = 0; local886 < bonesLen; local886++) {
+					@Pc(893) int local893 = bones[local886];
+					if (local893 < this.boneVertices.length) {
+						@Pc(903) int[] local903 = this.boneVertices[local893];
 						for (@Pc(905) int local905 = 0; local905 < local903.length; local905++) {
 							@Pc(913) int local913 = local903[local905];
-							if (this.vertexSources == null || (arg6 & this.vertexSources[local913]) != 0) {
+							if (this.vertexSources == null || (parts & this.vertexSources[local913]) != 0) {
 								@Pc(955) int local955 = local753[0] * this.vertexX[local913] + local753[1] * this.vertexY[local913] + local753[2] * this.vertexZ[local913] + 16384 >> 15;
 								@Pc(986) int local986 = local753[3] * this.vertexX[local913] + local753[4] * this.vertexY[local913] + local753[5] * this.vertexZ[local913] + 16384 >> 15;
 								@Pc(1017) int local1017 = local753[6] * this.vertexX[local913] + local753[7] * this.vertexY[local913] + local753[8] * this.vertexZ[local913] + 16384 >> 15;
@@ -2464,30 +2464,30 @@ public final class SoftwareModel extends Model {
 					}
 				}
 			}
-		} else if (arg0 == 3) {
+		} else if (type == 3) {
 			if (arg7 == null) {
-				for (@Pc(1926) int local1926 = 0; local1926 < local2; local1926++) {
-					@Pc(1933) int local1933 = arg1[local1926];
-					if (local1933 < this.anIntArrayArray29.length) {
-						@Pc(1943) int[] local1943 = this.anIntArrayArray29[local1933];
+				for (@Pc(1926) int local1926 = 0; local1926 < bonesLen; local1926++) {
+					@Pc(1933) int local1933 = bones[local1926];
+					if (local1933 < this.boneVertices.length) {
+						@Pc(1943) int[] local1943 = this.boneVertices[local1933];
 						for (@Pc(1945) int local1945 = 0; local1945 < local1943.length; local1945++) {
 							@Pc(1953) int local1953 = local1943[local1945];
-							if (this.vertexSources == null || (arg6 & this.vertexSources[local1953]) != 0) {
+							if (this.vertexSources == null || (parts & this.vertexSources[local1953]) != 0) {
 								@Pc(1966) int[] local1966 = this.vertexX;
-								local1966[local1953] -= anInt3443;
+								local1966[local1953] -= originX;
 								local1966 = this.vertexY;
-								local1966[local1953] -= anInt3444;
+								local1966[local1953] -= originY;
 								local1966 = this.vertexZ;
-								local1966[local1953] -= anInt3442;
-								this.vertexX[local1953] = this.vertexX[local1953] * arg2 / 128;
-								this.vertexY[local1953] = this.vertexY[local1953] * arg3 / 128;
-								this.vertexZ[local1953] = this.vertexZ[local1953] * arg4 / 128;
+								local1966[local1953] -= originZ;
+								this.vertexX[local1953] = this.vertexX[local1953] * x / 128;
+								this.vertexY[local1953] = this.vertexY[local1953] * y / 128;
+								this.vertexZ[local1953] = this.vertexZ[local1953] * z / 128;
 								local1966 = this.vertexX;
-								local1966[local1953] += anInt3443;
+								local1966[local1953] += originX;
 								local1966 = this.vertexY;
-								local1966[local1953] += anInt3444;
+								local1966[local1953] += originY;
 								local1966 = this.vertexZ;
-								local1966[local1953] += anInt3442;
+								local1966[local1953] += originZ;
 							}
 						}
 					}
@@ -2500,26 +2500,26 @@ public final class SoftwareModel extends Model {
 				@Pc(1329) int local1329 = arg7[13];
 				@Pc(1333) int local1333 = arg7[14];
 				if (aBoolean247) {
-					@Pc(1357) int local1357 = arg7[0] * anInt3443 + arg7[3] * anInt3444 + arg7[6] * anInt3442 + 16384 >> 15;
-					@Pc(1379) int local1379 = arg7[1] * anInt3443 + arg7[4] * anInt3444 + arg7[7] * anInt3442 + 16384 >> 15;
-					@Pc(1401) int local1401 = arg7[2] * anInt3443 + arg7[5] * anInt3444 + arg7[8] * anInt3442 + 16384 >> 15;
+					@Pc(1357) int local1357 = arg7[0] * originX + arg7[3] * originY + arg7[6] * originZ + 16384 >> 15;
+					@Pc(1379) int local1379 = arg7[1] * originX + arg7[4] * originY + arg7[7] * originZ + 16384 >> 15;
+					@Pc(1401) int local1401 = arg7[2] * originX + arg7[5] * originY + arg7[8] * originZ + 16384 >> 15;
 					local1357 += local1325;
 					local1379 += local1329;
 					local1401 += local1333;
-					anInt3443 = local1357;
-					anInt3444 = local1379;
-					anInt3442 = local1401;
+					originX = local1357;
+					originY = local1379;
+					originZ = local1401;
 					aBoolean247 = false;
 				}
-				@Pc(1427) int local1427 = arg2 << 15 >> 7;
-				@Pc(1433) int local1433 = arg3 << 15 >> 7;
-				@Pc(1439) int local1439 = arg4 << 15 >> 7;
-				@Pc(1448) int local1448 = local1427 * -anInt3443 + 16384 >> 15;
-				@Pc(1457) int local1457 = local1433 * -anInt3444 + 16384 >> 15;
-				@Pc(1466) int local1466 = local1439 * -anInt3442 + 16384 >> 15;
-				@Pc(1470) int local1470 = local1448 + anInt3443;
-				@Pc(1474) int local1474 = local1457 + anInt3444;
-				@Pc(1478) int local1478 = local1466 + anInt3442;
+				@Pc(1427) int local1427 = x << 15 >> 7;
+				@Pc(1433) int local1433 = y << 15 >> 7;
+				@Pc(1439) int local1439 = z << 15 >> 7;
+				@Pc(1448) int local1448 = local1427 * -originX + 16384 >> 15;
+				@Pc(1457) int local1457 = local1433 * -originY + 16384 >> 15;
+				@Pc(1466) int local1466 = local1439 * -originZ + 16384 >> 15;
+				@Pc(1470) int local1470 = local1448 + originX;
+				@Pc(1474) int local1474 = local1457 + originY;
+				@Pc(1478) int local1478 = local1466 + originZ;
 				@Pc(1481) int[] local1481 = new int[] { local1427 * arg7[0] + 16384 >> 15, local1427 * arg7[3] + 16384 >> 15, local1427 * arg7[6] + 16384 >> 15, local1433 * arg7[1] + 16384 >> 15, local1433 * arg7[4] + 16384 >> 15, local1433 * arg7[7] + 16384 >> 15, local1439 * arg7[2] + 16384 >> 15, local1439 * arg7[5] + 16384 >> 15, local1439 * arg7[8] + 16384 >> 15 };
 				@Pc(1597) int local1597 = local1427 * local1325 + 16384 >> 15;
 				@Pc(1605) int local1605 = local1433 * local1329 + 16384 >> 15;
@@ -2543,13 +2543,13 @@ public final class SoftwareModel extends Model {
 				local1703 += local1313;
 				local1725 += local1317;
 				local1747 += local1321;
-				for (@Pc(1761) int local1761 = 0; local1761 < local2; local1761++) {
-					@Pc(1768) int local1768 = arg1[local1761];
-					if (local1768 < this.anIntArrayArray29.length) {
-						@Pc(1778) int[] local1778 = this.anIntArrayArray29[local1768];
+				for (@Pc(1761) int local1761 = 0; local1761 < bonesLen; local1761++) {
+					@Pc(1768) int local1768 = bones[local1761];
+					if (local1768 < this.boneVertices.length) {
+						@Pc(1778) int[] local1778 = this.boneVertices[local1768];
 						for (@Pc(1780) int local1780 = 0; local1780 < local1778.length; local1780++) {
 							@Pc(1788) int local1788 = local1778[local1780];
-							if (this.vertexSources == null || (arg6 & this.vertexSources[local1788]) != 0) {
+							if (this.vertexSources == null || (parts & this.vertexSources[local1788]) != 0) {
 								@Pc(1830) int local1830 = local1628[0] * this.vertexX[local1788] + local1628[1] * this.vertexY[local1788] + local1628[2] * this.vertexZ[local1788] + 16384 >> 15;
 								@Pc(1861) int local1861 = local1628[3] * this.vertexX[local1788] + local1628[4] * this.vertexY[local1788] + local1628[5] * this.vertexZ[local1788] + 16384 >> 15;
 								@Pc(1892) int local1892 = local1628[6] * this.vertexX[local1788] + local1628[7] * this.vertexY[local1788] + local1628[8] * this.vertexZ[local1788] + 16384 >> 15;
@@ -2564,16 +2564,16 @@ public final class SoftwareModel extends Model {
 					}
 				}
 			}
-		} else if (arg0 == 5) {
-			if (this.anIntArrayArray30 != null && this.triangleAlpha != null) {
-				for (@Pc(2064) int local2064 = 0; local2064 < local2; local2064++) {
-					@Pc(2071) int local2071 = arg1[local2064];
-					if (local2071 < this.anIntArrayArray30.length) {
-						@Pc(2081) int[] local2081 = this.anIntArrayArray30[local2071];
+		} else if (type == 5) {
+			if (this.boneTriangles != null && this.triangleAlpha != null) {
+				for (@Pc(2064) int local2064 = 0; local2064 < bonesLen; local2064++) {
+					@Pc(2071) int local2071 = bones[local2064];
+					if (local2071 < this.boneTriangles.length) {
+						@Pc(2081) int[] local2081 = this.boneTriangles[local2071];
 						for (@Pc(2083) int local2083 = 0; local2083 < local2081.length; local2083++) {
 							@Pc(2091) int local2091 = local2081[local2083];
-							if (this.triangleSources == null || (arg6 & this.triangleSources[local2091]) != 0) {
-								@Pc(2113) int local2113 = (this.triangleAlpha[local2091] & 0xFF) + arg2 * 8;
+							if (this.triangleSources == null || (parts & this.triangleSources[local2091]) != 0) {
+								@Pc(2113) int local2113 = (this.triangleAlpha[local2091] & 0xFF) + x * 8;
 								if (local2113 < 0) {
 									local2113 = 0;
 								} else if (local2113 > 255) {
@@ -2585,26 +2585,26 @@ public final class SoftwareModel extends Model {
 					}
 				}
 			}
-		} else if (arg0 == 7 && this.anIntArrayArray30 != null) {
-			for (@Pc(2142) int local2142 = 0; local2142 < local2; local2142++) {
-				@Pc(2149) int local2149 = arg1[local2142];
-				if (local2149 < this.anIntArrayArray30.length) {
-					@Pc(2159) int[] local2159 = this.anIntArrayArray30[local2149];
+		} else if (type == 7 && this.boneTriangles != null) {
+			for (@Pc(2142) int local2142 = 0; local2142 < bonesLen; local2142++) {
+				@Pc(2149) int local2149 = bones[local2142];
+				if (local2149 < this.boneTriangles.length) {
+					@Pc(2159) int[] local2159 = this.boneTriangles[local2149];
 					for (@Pc(2161) int local2161 = 0; local2161 < local2159.length; local2161++) {
 						@Pc(2169) int local2169 = local2159[local2161];
-						if (this.triangleSources == null || (arg6 & this.triangleSources[local2169]) != 0) {
+						if (this.triangleSources == null || (parts & this.triangleSources[local2169]) != 0) {
 							@Pc(2187) int local2187 = this.triangleColors[local2169] & 0xFFFF;
 							@Pc(2193) int local2193 = local2187 >> 10 & 0x3F;
 							@Pc(2199) int local2199 = local2187 >> 7 & 0x7;
 							@Pc(2203) int local2203 = local2187 & 0x7F;
-							local2193 = local2193 + arg2 & 0x3F;
-							@Pc(2213) int local2213 = local2199 + arg3;
+							local2193 = local2193 + x & 0x3F;
+							@Pc(2213) int local2213 = local2199 + y;
 							if (local2213 < 0) {
 								local2213 = 0;
 							} else if (local2213 > 7) {
 								local2213 = 7;
 							}
-							@Pc(2227) int local2227 = local2203 + arg4;
+							@Pc(2227) int local2227 = local2203 + z;
 							if (local2227 < 0) {
 								local2227 = 0;
 							} else if (local2227 > 127) {
@@ -2651,93 +2651,93 @@ public final class SoftwareModel extends Model {
 
 	@OriginalMember(owner = "client!na", name = "a", descriptor = "(IIII)V")
 	@Override
-	protected final void method3834(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) {
-		if (arg0 == 0) {
-			@Pc(3) int local3 = 0;
-			anInt3443 = 0;
-			anInt3444 = 0;
-			anInt3442 = 0;
-			for (@Pc(11) int local11 = 0; local11 < this.vertexCount; local11++) {
-				anInt3443 += this.vertexX[local11];
-				anInt3444 += this.vertexY[local11];
-				anInt3442 += this.vertexZ[local11];
-				local3++;
+	protected final void transform(@OriginalArg(0) int type, @OriginalArg(1) int x, @OriginalArg(2) int y, @OriginalArg(3) int z) {
+		if (type == 0) {
+			@Pc(3) int count = 0;
+			originX = 0;
+			originY = 0;
+			originZ = 0;
+			for (@Pc(11) int i = 0; i < this.vertexCount; i++) {
+				originX += this.vertexX[i];
+				originY += this.vertexY[i];
+				originZ += this.vertexZ[i];
+				count++;
 			}
-			if (local3 > 0) {
-				anInt3443 = anInt3443 / local3 + arg1;
-				anInt3444 = anInt3444 / local3 + arg2;
-				anInt3442 = anInt3442 / local3 + arg3;
+			if (count > 0) {
+				originX = originX / count + x;
+				originY = originY / count + y;
+				originZ = originZ / count + z;
 			} else {
-				anInt3443 = arg1;
-				anInt3444 = arg2;
-				anInt3442 = arg3;
+				originX = x;
+				originY = y;
+				originZ = z;
 			}
-		} else if (arg0 == 1) {
+		} else if (type == 1) {
 			for (@Pc(72) int i = 0; i < this.vertexCount; i++) {
 				@Pc(78) int[] vertex = this.vertexX;
-				vertex[i] += arg1;
+				vertex[i] += x;
 				vertex = this.vertexY;
-				vertex[i] += arg2;
+				vertex[i] += y;
 				vertex = this.vertexZ;
-				vertex[i] += arg3;
+				vertex[i] += z;
 			}
-		} else if (arg0 == 2) {
+		} else if (type == 2) {
 			for (@Pc(108) int i = 0; i < this.vertexCount; i++) {
 				@Pc(114) int[] vertex = this.vertexX;
-				vertex[i] -= anInt3443;
+				vertex[i] -= originX;
 				vertex = this.vertexY;
-				vertex[i] -= anInt3444;
+				vertex[i] -= originY;
 				vertex = this.vertexZ;
-				vertex[i] -= anInt3442;
-				if (arg3 != 0) {
-					@Pc(142) int sine = MathUtils.SINE[arg3];
-					@Pc(146) int cosine = MathUtils.COSINE[arg3];
-					@Pc(164) int x = this.vertexY[i] * sine + this.vertexX[i] * cosine + 32767 >> 16;
+				vertex[i] -= originZ;
+				if (z != 0) {
+					@Pc(142) int sine = MathUtils.SINE[z];
+					@Pc(146) int cosine = MathUtils.COSINE[z];
+					@Pc(164) int rotatedX = this.vertexY[i] * sine + this.vertexX[i] * cosine + 32767 >> 16;
 					this.vertexY[i] = this.vertexY[i] * cosine + 32767 - this.vertexX[i] * sine >> 16;
-					this.vertexX[i] = x;
+					this.vertexX[i] = rotatedX;
 				}
-				if (arg1 != 0) {
-					@Pc(196) int sine = MathUtils.SINE[arg1];
-					@Pc(200) int cosine = MathUtils.COSINE[arg1];
-					@Pc(218) int y = this.vertexY[i] * cosine + 32767 - this.vertexZ[i] * sine >> 16;
+				if (x != 0) {
+					@Pc(196) int sine = MathUtils.SINE[x];
+					@Pc(200) int cosine = MathUtils.COSINE[x];
+					@Pc(218) int rotatedY = this.vertexY[i] * cosine + 32767 - this.vertexZ[i] * sine >> 16;
 					this.vertexZ[i] = this.vertexY[i] * sine + this.vertexZ[i] * cosine + 32767 >> 16;
-					this.vertexY[i] = y;
+					this.vertexY[i] = rotatedY;
 				}
-				if (arg2 != 0) {
-					@Pc(250) int sine = MathUtils.SINE[arg2];
-					@Pc(254) int cosine = MathUtils.COSINE[arg2];
-					@Pc(272) int x = this.vertexZ[i] * sine + this.vertexX[i] * cosine + 32767 >> 16;
+				if (y != 0) {
+					@Pc(250) int sine = MathUtils.SINE[y];
+					@Pc(254) int cosine = MathUtils.COSINE[y];
+					@Pc(272) int rotatedX = this.vertexZ[i] * sine + this.vertexX[i] * cosine + 32767 >> 16;
 					this.vertexZ[i] = this.vertexZ[i] * cosine + 32767 - this.vertexX[i] * sine >> 16;
-					this.vertexX[i] = x;
+					this.vertexX[i] = rotatedX;
 				}
 				@Pc(300) int[] vertex2 = this.vertexX;
-				vertex2[i] += anInt3443;
+				vertex2[i] += originX;
 				vertex2 = this.vertexY;
-				vertex2[i] += anInt3444;
+				vertex2[i] += originY;
 				vertex2 = this.vertexZ;
-				vertex2[i] += anInt3442;
+				vertex2[i] += originZ;
 			}
-		} else if (arg0 == 3) {
+		} else if (type == 3) {
 			for (@Pc(330) int i = 0; i < this.vertexCount; i++) {
 				@Pc(336) int[] vertex = this.vertexX;
-				vertex[i] -= anInt3443;
+				vertex[i] -= originX;
 				vertex = this.vertexY;
-				vertex[i] -= anInt3444;
+				vertex[i] -= originY;
 				vertex = this.vertexZ;
-				vertex[i] -= anInt3442;
-				this.vertexX[i] = this.vertexX[i] * arg1 / 128;
-				this.vertexY[i] = this.vertexY[i] * arg2 / 128;
-				this.vertexZ[i] = this.vertexZ[i] * arg3 / 128;
+				vertex[i] -= originZ;
+				this.vertexX[i] = this.vertexX[i] * x / 128;
+				this.vertexY[i] = this.vertexY[i] * y / 128;
+				this.vertexZ[i] = this.vertexZ[i] * z / 128;
 				vertex = this.vertexX;
-				vertex[i] += anInt3443;
+				vertex[i] += originX;
 				vertex = this.vertexY;
-				vertex[i] += anInt3444;
+				vertex[i] += originY;
 				vertex = this.vertexZ;
-				vertex[i] += anInt3442;
+				vertex[i] += originZ;
 			}
-		} else if (arg0 == 5) {
+		} else if (type == 5) {
 			for (@Pc(426) int i = 0; i < this.triangleCount; i++) {
-				@Pc(441) int alpha = (this.triangleAlpha[i] & 0xFF) + arg1 * 8;
+				@Pc(441) int alpha = (this.triangleAlpha[i] & 0xFF) + x * 8;
 				if (alpha < 0) {
 					alpha = 0;
 				} else if (alpha > 255) {
@@ -2745,20 +2745,20 @@ public final class SoftwareModel extends Model {
 				}
 				this.triangleAlpha[i] = (byte) alpha;
 			}
-		} else if (arg0 == 7) {
+		} else if (type == 7) {
 			for (@Pc(465) int i = 0; i < this.triangleCount; i++) {
 				@Pc(476) int color = this.triangleColors[i] & 0xFFFF;
 				@Pc(482) int h = color >> 10 & 0x3F;
 				@Pc(488) int s = color >> 7 & 0x7;
 				@Pc(492) int l = color & 0x7F;
-				h = h + arg1 & 0x3F;
-				@Pc(502) int s2 = s + arg2;
+				h = h + x & 0x3F;
+				@Pc(502) int s2 = s + y;
 				if (s2 < 0) {
 					s2 = 0;
 				} else if (s2 > 7) {
 					s2 = 7;
 				}
-				@Pc(516) int l2 = l + arg3;
+				@Pc(516) int l2 = l + z;
 				if (l2 < 0) {
 					l2 = 0;
 				} else if (l2 > 127) {

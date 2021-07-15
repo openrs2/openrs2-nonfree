@@ -99,7 +99,7 @@ public final class SpotAnim extends Entity {
 		while (this.aClass46_1.anIntArray94[this.anInt3666] < this.anInt3661) {
 			this.anInt3661 -= this.aClass46_1.anIntArray94[this.anInt3666];
 			this.anInt3666++;
-			if (this.anInt3666 >= this.aClass46_1.anIntArray95.length) {
+			if (this.anInt3666 >= this.aClass46_1.frames.length) {
 				this.aBoolean265 = true;
 				break;
 			}

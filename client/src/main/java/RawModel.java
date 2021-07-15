@@ -40,13 +40,13 @@ public final class RawModel extends Entity {
 	public byte[] aByteArray32;
 
 	@OriginalMember(owner = "client!ml", name = "w", descriptor = "[I")
-	public int[] anIntArray323;
+	public int[] vertexBones;
 
 	@OriginalMember(owner = "client!ml", name = "x", descriptor = "[I")
 	public int[] vertexY;
 
 	@OriginalMember(owner = "client!ml", name = "z", descriptor = "[[I")
-	public int[][] anIntArrayArray26;
+	public int[][] boneTriangles;
 
 	@OriginalMember(owner = "client!ml", name = "A", descriptor = "[B")
 	public byte[] triangleAlpha;
@@ -70,7 +70,7 @@ public final class RawModel extends Entity {
 	public ModelParticleEmitter[] particleEmitters;
 
 	@OriginalMember(owner = "client!ml", name = "I", descriptor = "[I")
-	public int[] anIntArray325;
+	public int[] triangleBones;
 
 	@OriginalMember(owner = "client!ml", name = "J", descriptor = "[S")
 	public short[] aShortArray55;
@@ -100,7 +100,7 @@ public final class RawModel extends Entity {
 	public int[] vertexZ;
 
 	@OriginalMember(owner = "client!ml", name = "U", descriptor = "[[I")
-	public int[][] anIntArrayArray27;
+	public int[][] boneVertices;
 
 	@OriginalMember(owner = "client!ml", name = "V", descriptor = "[B")
 	public byte[] aByteArray38;
@@ -183,7 +183,7 @@ public final class RawModel extends Entity {
 		this.vertexX = new int[vertexCount];
 		this.vertexY = new int[vertexCount];
 		this.vertexZ = new int[vertexCount];
-		this.anIntArray323 = new int[vertexCount];
+		this.vertexBones = new int[vertexCount];
 		this.triangleVertexA = new int[triangleCount];
 		this.triangleVertexB = new int[triangleCount];
 		this.triangleVertexC = new int[triangleCount];
@@ -193,7 +193,7 @@ public final class RawModel extends Entity {
 		this.triangleColors = new short[triangleCount];
 		this.triangleTextures = new short[triangleCount];
 		this.aByteArray35 = new byte[triangleCount];
-		this.anIntArray325 = new int[triangleCount];
+		this.triangleBones = new int[triangleCount];
 	}
 
 	@OriginalMember(owner = "client!ml", name = "<init>", descriptor = "([Lclient!ml;I)V")
@@ -201,7 +201,7 @@ public final class RawModel extends Entity {
 		@Pc(18) boolean local18 = false;
 		@Pc(20) boolean hasPriorities = false;
 		@Pc(22) boolean hasAlpha = false;
-		@Pc(24) boolean local24 = false;
+		@Pc(24) boolean hasTriangleBones = false;
 		@Pc(26) boolean hasTextures = false;
 		@Pc(28) boolean local28 = false;
 		this.vertexCount = 0;
@@ -228,7 +228,7 @@ public final class RawModel extends Entity {
 				}
 				local18 |= model.aByteArray40 != null;
 				hasAlpha |= model.triangleAlpha != null;
-				local24 |= model.anIntArray325 != null;
+				hasTriangleBones |= model.triangleBones != null;
 				hasTextures |= model.triangleTextures != null;
 				local28 |= model.aByteArray35 != null;
 				if (model.particleEmitters != null) {
@@ -242,7 +242,7 @@ public final class RawModel extends Entity {
 		this.vertexX = new int[this.vertexCount];
 		this.vertexY = new int[this.vertexCount];
 		this.vertexZ = new int[this.vertexCount];
-		this.anIntArray323 = new int[this.vertexCount];
+		this.vertexBones = new int[this.vertexCount];
 		this.vertexSources = new short[this.vertexCount];
 		this.triangleVertexA = new int[this.triangleCount];
 		this.triangleVertexB = new int[this.triangleCount];
@@ -256,8 +256,8 @@ public final class RawModel extends Entity {
 		if (hasAlpha) {
 			this.triangleAlpha = new byte[this.triangleCount];
 		}
-		if (local24) {
-			this.anIntArray325 = new int[this.triangleCount];
+		if (hasTriangleBones) {
+			this.triangleBones = new int[this.triangleCount];
 		}
 		if (hasTextures) {
 			this.triangleTextures = new short[this.triangleCount];
@@ -310,8 +310,8 @@ public final class RawModel extends Entity {
 					if (hasAlpha && model.triangleAlpha != null) {
 						this.triangleAlpha[this.triangleCount] = model.triangleAlpha[j];
 					}
-					if (local24 && model.anIntArray325 != null) {
-						this.anIntArray325[this.triangleCount] = model.anIntArray325[j];
+					if (hasTriangleBones && model.triangleBones != null) {
+						this.triangleBones[this.triangleCount] = model.triangleBones[j];
 					}
 					if (hasTextures) {
 						if (model.triangleTextures == null) {
@@ -440,10 +440,10 @@ public final class RawModel extends Entity {
 		this.aByteArray34 = model.aByteArray34;
 		this.aByteArray32 = model.aByteArray32;
 		this.aByteArray31 = model.aByteArray31;
-		this.anIntArray323 = model.anIntArray323;
-		this.anIntArray325 = model.anIntArray325;
-		this.anIntArrayArray27 = model.anIntArrayArray27;
-		this.anIntArrayArray26 = model.anIntArrayArray26;
+		this.vertexBones = model.vertexBones;
+		this.triangleBones = model.triangleBones;
+		this.boneVertices = model.boneVertices;
+		this.boneTriangles = model.boneTriangles;
 		this.vertexNormals = model.vertexNormals;
 		this.triangleNormals = model.triangleNormals;
 		this.aClass31Array2 = model.aClass31Array2;
@@ -481,8 +481,8 @@ public final class RawModel extends Entity {
 		this.vertexY[this.vertexCount] = y;
 		this.vertexZ[this.vertexCount] = z;
 		this.vertexSources[this.vertexCount] = source;
-		if (model.anIntArray323 != null) {
-			this.anIntArray323[this.vertexCount] = model.anIntArray323[vertex];
+		if (model.vertexBones != null) {
+			this.vertexBones[this.vertexCount] = model.vertexBones[vertex];
 		}
 		return this.vertexCount++;
 	}
@@ -520,52 +520,52 @@ public final class RawModel extends Entity {
 	}
 
 	@OriginalMember(owner = "client!ml", name = "d", descriptor = "()V")
-	public final void method2744() {
-		if (this.anIntArray323 != null) {
-			@Pc(5) int[] local5 = new int[256];
-			@Pc(7) int local7 = 0;
-			for (@Pc(9) int local9 = 0; local9 < this.vertexCount; local9++) {
-				@Pc(18) int local18 = this.anIntArray323[local9];
-				@Pc(22) int local22 = local5[local18]++;
-				if (local18 > local7) {
-					local7 = local18;
+	public final void createBones() {
+		if (this.vertexBones != null) {
+			@Pc(5) int[] boneLens = new int[256];
+			@Pc(7) int maxBone = 0;
+			for (@Pc(9) int i = 0; i < this.vertexCount; i++) {
+				@Pc(18) int bone = this.vertexBones[i];
+				@Pc(22) int local22 = boneLens[bone]++;
+				if (bone > maxBone) {
+					maxBone = bone;
 				}
 			}
-			this.anIntArrayArray27 = new int[local7 + 1][];
-			for (@Pc(40) int local40 = 0; local40 <= local7; local40++) {
-				this.anIntArrayArray27[local40] = new int[local5[local40]];
-				local5[local40] = 0;
+			this.boneVertices = new int[maxBone + 1][];
+			for (@Pc(40) int i = 0; i <= maxBone; i++) {
+				this.boneVertices[i] = new int[boneLens[i]];
+				boneLens[i] = 0;
 			}
-			@Pc(59) int local59 = 0;
-			while (local59 < this.vertexCount) {
-				@Pc(68) int local68 = this.anIntArray323[local59];
-				this.anIntArrayArray27[local68][local5[local68]++] = local59++;
+			@Pc(59) int i = 0;
+			while (i < this.vertexCount) {
+				@Pc(68) int bone = this.vertexBones[i];
+				this.boneVertices[bone][boneLens[bone]++] = i++;
 			}
-			this.anIntArray323 = null;
+			this.vertexBones = null;
 		}
-		if (this.anIntArray325 == null) {
+		if (this.triangleBones == null) {
 			return;
 		}
-		@Pc(93) int[] local93 = new int[256];
-		@Pc(95) int local95 = 0;
-		for (@Pc(97) int local97 = 0; local97 < this.triangleCount; local97++) {
-			@Pc(106) int local106 = this.anIntArray325[local97];
-			@Pc(110) int local110 = local93[local106]++;
-			if (local106 > local95) {
-				local95 = local106;
+		@Pc(93) int[] boneLens = new int[256];
+		@Pc(95) int maxBone = 0;
+		for (@Pc(97) int i = 0; i < this.triangleCount; i++) {
+			@Pc(106) int bone = this.triangleBones[i];
+			@Pc(110) int local110 = boneLens[bone]++;
+			if (bone > maxBone) {
+				maxBone = bone;
 			}
 		}
-		this.anIntArrayArray26 = new int[local95 + 1][];
-		for (@Pc(128) int local128 = 0; local128 <= local95; local128++) {
-			this.anIntArrayArray26[local128] = new int[local93[local128]];
-			local93[local128] = 0;
+		this.boneTriangles = new int[maxBone + 1][];
+		for (@Pc(128) int i = 0; i <= maxBone; i++) {
+			this.boneTriangles[i] = new int[boneLens[i]];
+			boneLens[i] = 0;
 		}
-		@Pc(147) int local147 = 0;
-		while (local147 < this.triangleCount) {
-			@Pc(156) int local156 = this.anIntArray325[local147];
-			this.anIntArrayArray26[local156][local93[local156]++] = local147++;
+		@Pc(147) int i = 0;
+		while (i < this.triangleCount) {
+			@Pc(156) int bone = this.triangleBones[i];
+			this.boneTriangles[bone][boneLens[bone]++] = i++;
 		}
-		this.anIntArray325 = null;
+		this.triangleBones = null;
 	}
 
 	@OriginalMember(owner = "client!ml", name = "e", descriptor = "()V")
@@ -699,10 +699,10 @@ public final class RawModel extends Entity {
 		model.aByteArray34 = this.aByteArray34;
 		model.aByteArray32 = this.aByteArray32;
 		model.aByteArray31 = this.aByteArray31;
-		model.anIntArray323 = this.anIntArray323;
-		model.anIntArray325 = this.anIntArray325;
-		model.anIntArrayArray27 = this.anIntArrayArray27;
-		model.anIntArrayArray26 = this.anIntArrayArray26;
+		model.vertexBones = this.vertexBones;
+		model.triangleBones = this.triangleBones;
+		model.boneVertices = this.boneVertices;
+		model.boneTriangles = this.boneTriangles;
 		model.vertexNormals = this.vertexNormals;
 		model.triangleNormals = this.triangleNormals;
 		model.aShort33 = this.aShort33;
@@ -728,8 +728,8 @@ public final class RawModel extends Entity {
 		@Pc(50) int local50 = buffer.readUnsignedByte();
 		@Pc(54) int priority = buffer.readUnsignedByte();
 		@Pc(58) int hasAlpha = buffer.readUnsignedByte();
-		@Pc(62) int local62 = buffer.readUnsignedByte();
-		@Pc(66) int local66 = buffer.readUnsignedByte();
+		@Pc(62) int hasTriangleBones = buffer.readUnsignedByte();
+		@Pc(66) int hasVertexBones = buffer.readUnsignedByte();
 		@Pc(70) int local70 = buffer.readUnsignedShort();
 		@Pc(74) int local74 = buffer.readUnsignedShort();
 		@Pc(78) int local78 = buffer.readUnsignedShort();
@@ -740,31 +740,31 @@ public final class RawModel extends Entity {
 		if (priority == 255) {
 			triangleVerticesPosition += triangleCount;
 		}
-		@Pc(107) int local107 = triangleVerticesPosition;
-		if (local62 == 1) {
+		@Pc(107) int triangleBonesPosition = triangleVerticesPosition;
+		if (hasTriangleBones == 1) {
 			triangleVerticesPosition += triangleCount;
 		}
 		@Pc(116) int local116 = triangleVerticesPosition;
 		if (local50 == 1) {
 			triangleVerticesPosition += triangleCount;
 		}
-		@Pc(125) int local125 = triangleVerticesPosition;
-		if (local66 == 1) {
+		@Pc(125) int vertexBonesPosition = triangleVerticesPosition;
+		if (hasVertexBones == 1) {
 			triangleVerticesPosition += vertexCount;
 		}
 		@Pc(134) int triangleAlphaPosition = triangleVerticesPosition;
 		if (hasAlpha == 1) {
 			triangleVerticesPosition += triangleCount;
 		}
-		@Pc(147) int local147 = triangleVerticesPosition + local82;
-		@Pc(149) int triangleColorsPosition = local147;
-		local147 += triangleCount * 2;
-		@Pc(157) int local157 = local147;
-		local147 += local46 * 6;
-		@Pc(165) int local165 = local147;
-		local147 += local70;
-		@Pc(171) int local171 = local147;
-		local147 += local74;
+		@Pc(147) int vertexDzPosition = triangleVerticesPosition + local82;
+		@Pc(149) int triangleColorsPosition = vertexDzPosition;
+		vertexDzPosition += triangleCount * 2;
+		@Pc(157) int local157 = vertexDzPosition;
+		vertexDzPosition += local46 * 6;
+		@Pc(165) int vertexDxPosition = vertexDzPosition;
+		vertexDzPosition += local70;
+		@Pc(171) int vertexDyPosition = vertexDzPosition;
+		vertexDzPosition += local74;
 		this.vertexCount = vertexCount;
 		this.triangleCount = triangleCount;
 		this.anInt3352 = local46;
@@ -780,8 +780,8 @@ public final class RawModel extends Entity {
 			this.aShortArray56 = new short[local46];
 			this.aShortArray57 = new short[local46];
 		}
-		if (local66 == 1) {
-			this.anIntArray323 = new int[vertexCount];
+		if (hasVertexBones == 1) {
+			this.vertexBones = new int[vertexCount];
 		}
 		if (local50 == 1) {
 			this.aByteArray40 = new byte[triangleCount];
@@ -796,15 +796,15 @@ public final class RawModel extends Entity {
 		if (hasAlpha == 1) {
 			this.triangleAlpha = new byte[triangleCount];
 		}
-		if (local62 == 1) {
-			this.anIntArray325 = new int[triangleCount];
+		if (hasTriangleBones == 1) {
+			this.triangleBones = new int[triangleCount];
 		}
 		this.triangleColors = new short[triangleCount];
 		buffer.position = 0;
-		buffer1.position = local165;
-		buffer2.position = local171;
-		buffer3.position = local147;
-		buffer4.position = local125;
+		buffer1.position = vertexDxPosition;
+		buffer2.position = vertexDyPosition;
+		buffer3.position = vertexDzPosition;
+		buffer4.position = vertexBonesPosition;
 		@Pc(301) int prevVertexX = 0;
 		@Pc(303) int prevVertexY = 0;
 		@Pc(305) int prevVertexZ = 0;
@@ -828,15 +828,15 @@ public final class RawModel extends Entity {
 			prevVertexX = this.vertexX[i];
 			prevVertexY = this.vertexY[i];
 			prevVertexZ = this.vertexZ[i];
-			if (local66 == 1) {
-				this.anIntArray323[i] = buffer4.readUnsignedByte();
+			if (hasVertexBones == 1) {
+				this.vertexBones[i] = buffer4.readUnsignedByte();
 			}
 		}
 		buffer.position = triangleColorsPosition;
 		buffer1.position = local116;
 		buffer2.position = trianglePrioritiesPosition;
 		buffer3.position = triangleAlphaPosition;
-		buffer4.position = local107;
+		buffer4.position = triangleBonesPosition;
 		for (@Pc(409) int i = 0; i < triangleCount; i++) {
 			this.triangleColors[i] = (short) buffer.readUnsignedShort();
 			if (local50 == 1) {
@@ -865,8 +865,8 @@ public final class RawModel extends Entity {
 			if (hasAlpha == 1) {
 				this.triangleAlpha[i] = buffer3.readByte();
 			}
-			if (local62 == 1) {
-				this.anIntArray325[i] = buffer4.readUnsignedByte();
+			if (hasTriangleBones == 1) {
+				this.triangleBones[i] = buffer4.readUnsignedByte();
 			}
 		}
 		this.anInt3355 = -1;
@@ -1026,9 +1026,9 @@ public final class RawModel extends Entity {
 		@Pc(74) boolean local74 = (local56 & 0x2) == 2;
 		@Pc(78) int priority = buffer1.readUnsignedByte();
 		@Pc(82) int hasAlpha = buffer1.readUnsignedByte();
-		@Pc(86) int local86 = buffer1.readUnsignedByte();
+		@Pc(86) int hasTriangleBones = buffer1.readUnsignedByte();
 		@Pc(90) int hasTextures = buffer1.readUnsignedByte();
-		@Pc(94) int local94 = buffer1.readUnsignedByte();
+		@Pc(94) int hasVertexBones = buffer1.readUnsignedByte();
 		@Pc(98) int local98 = buffer1.readUnsignedShort();
 		@Pc(102) int local102 = buffer1.readUnsignedShort();
 		@Pc(106) int local106 = buffer1.readUnsignedShort();
@@ -1063,12 +1063,12 @@ public final class RawModel extends Entity {
 		if (priority == 255) {
 			triangleVerticesPosition += triangleCount;
 		}
-		@Pc(192) int local192 = triangleVerticesPosition;
-		if (local86 == 1) {
+		@Pc(192) int triangleBonesPosition = triangleVerticesPosition;
+		if (hasTriangleBones == 1) {
 			triangleVerticesPosition += triangleCount;
 		}
 		@Pc(201) int local201 = triangleVerticesPosition;
-		if (local94 == 1) {
+		if (hasVertexBones == 1) {
 			triangleVerticesPosition += vertexCount;
 		}
 		@Pc(210) int triangleAlphaPosition = triangleVerticesPosition;
@@ -1110,8 +1110,8 @@ public final class RawModel extends Entity {
 		this.triangleVertexA = new int[triangleCount];
 		this.triangleVertexB = new int[triangleCount];
 		this.triangleVertexC = new int[triangleCount];
-		if (local94 == 1) {
-			this.anIntArray323 = new int[vertexCount];
+		if (hasVertexBones == 1) {
+			this.vertexBones = new int[vertexCount];
 		}
 		if (local65) {
 			this.aByteArray40 = new byte[triangleCount];
@@ -1124,8 +1124,8 @@ public final class RawModel extends Entity {
 		if (hasAlpha == 1) {
 			this.triangleAlpha = new byte[triangleCount];
 		}
-		if (local86 == 1) {
-			this.anIntArray325 = new int[triangleCount];
+		if (hasTriangleBones == 1) {
+			this.triangleBones = new int[triangleCount];
 		}
 		if (hasTextures == 1) {
 			this.triangleTextures = new short[triangleCount];
@@ -1179,15 +1179,15 @@ public final class RawModel extends Entity {
 			prevVertexX = this.vertexX[i];
 			prevVertexY = this.vertexY[i];
 			prevVertexZ = this.vertexZ[i];
-			if (local94 == 1) {
-				this.anIntArray323[i] = buffer5.readUnsignedByte();
+			if (hasVertexBones == 1) {
+				this.vertexBones[i] = buffer5.readUnsignedByte();
 			}
 		}
 		buffer1.position = triangleColorsPosition;
 		buffer2.position = local169;
 		buffer3.position = trianglePrioritiesPosition;
 		buffer4.position = triangleAlphaPosition;
-		buffer5.position = local192;
+		buffer5.position = triangleBonesPosition;
 		buffer6.position = triangleTexturesPosition;
 		buffer7.position = local223;
 		for (@Pc(587) int i = 0; i < triangleCount; i++) {
@@ -1201,8 +1201,8 @@ public final class RawModel extends Entity {
 			if (hasAlpha == 1) {
 				this.triangleAlpha[i] = buffer4.readByte();
 			}
-			if (local86 == 1) {
-				this.anIntArray325[i] = buffer5.readUnsignedByte();
+			if (hasTriangleBones == 1) {
+				this.triangleBones[i] = buffer5.readUnsignedByte();
 			}
 			if (hasTextures == 1) {
 				this.triangleTextures[i] = (short) (buffer6.readUnsignedShort() - 1);
@@ -1390,10 +1390,10 @@ public final class RawModel extends Entity {
 
 	@OriginalMember(owner = "client!ml", name = "k", descriptor = "()V")
 	public final void method2760() {
-		this.anIntArray323 = null;
-		this.anIntArray325 = null;
-		this.anIntArrayArray27 = null;
-		this.anIntArrayArray26 = null;
+		this.vertexBones = null;
+		this.triangleBones = null;
+		this.boneVertices = null;
+		this.boneTriangles = null;
 	}
 
 	@OriginalMember(owner = "client!ml", name = "a", descriptor = "(Lclient!vc;IIIZ)V")
@@ -1475,7 +1475,7 @@ public final class RawModel extends Entity {
 	public final Model createModel(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4) {
 		if (GlRenderer.enabled) {
 			@Pc(9) GlModel model = new GlModel(this, arg0, arg1, true);
-			model.method3866();
+			model.createBones();
 			return model;
 		} else {
 			return new SoftwareModel(this, arg0, arg1, arg2, arg3, arg4);
@@ -1660,10 +1660,10 @@ public final class RawModel extends Entity {
 		model.aByteArray34 = this.aByteArray34;
 		model.aByteArray32 = this.aByteArray32;
 		model.aByteArray31 = this.aByteArray31;
-		model.anIntArray323 = this.anIntArray323;
-		model.anIntArray325 = this.anIntArray325;
-		model.anIntArrayArray27 = this.anIntArrayArray27;
-		model.anIntArrayArray26 = this.anIntArrayArray26;
+		model.vertexBones = this.vertexBones;
+		model.triangleBones = this.triangleBones;
+		model.boneVertices = this.boneVertices;
+		model.boneTriangles = this.boneTriangles;
 		model.aShort33 = this.aShort33;
 		model.aShort29 = this.aShort29;
 		model.vertexNormals = this.vertexNormals;

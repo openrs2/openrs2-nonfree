@@ -643,7 +643,7 @@ public final class LocType {
 			if (local47 == null) {
 				return null;
 			}
-			local47.method3866();
+			local47.createBones();
 			local47.method3872(false, false, false, false, false, true);
 			LocTypeList.aClass26_32.put(local27, local47);
 		}

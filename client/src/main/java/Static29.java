@@ -2157,16 +2157,16 @@ public final class Static29 {
 								while (type.anIntArray94[component.anInt5892] < component.anInt5897) {
 									component.anInt5897 -= type.anIntArray94[component.anInt5892];
 									component.anInt5892++;
-									if (component.anInt5892 >= type.anIntArray95.length) {
+									if (component.anInt5892 >= type.frames.length) {
 										component.anInt5892 -= type.anInt1242;
-										if (component.anInt5892 < 0 || type.anIntArray95.length <= component.anInt5892) {
+										if (component.anInt5892 < 0 || type.frames.length <= component.anInt5892) {
 											component.anInt5892 = 0;
 										}
 									}
 									component.anInt5979 = component.anInt5892 + 1;
-									if (type.anIntArray95.length <= component.anInt5979) {
+									if (type.frames.length <= component.anInt5979) {
 										component.anInt5979 -= type.anInt1242;
-										if (component.anInt5979 < 0 || type.anIntArray95.length <= component.anInt5979) {
+										if (component.anInt5979 < 0 || type.frames.length <= component.anInt5979) {
 											component.anInt5979 = -1;
 										}
 									}

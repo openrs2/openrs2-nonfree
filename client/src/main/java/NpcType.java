@@ -594,37 +594,37 @@ public final class NpcType {
 			NpcTypeList.bodyModels.put((long) this.id, local39);
 		}
 		@Pc(718) boolean local718 = false;
-		@Pc(720) boolean local720 = false;
-		@Pc(722) boolean local722 = false;
-		@Pc(724) boolean local724 = false;
+		@Pc(720) boolean alphaTransformed = false;
+		@Pc(722) boolean colorTransformed = false;
+		@Pc(724) boolean normalsTransformed = false;
 		@Pc(731) int local731 = arg5 == null ? 0 : arg5.length;
 		for (@Pc(733) int local733 = 0; local733 < local731; local733++) {
 			if (arg5[local733] != null) {
 				@Pc(752) SeqType local752 = SeqTypeList.get(arg5[local733].seqId);
-				if (local752.anIntArray95 != null) {
+				if (local752.frames != null) {
 					Static2.aClass46Array1[local733] = local752;
 					local718 = true;
 					@Pc(769) int local769 = arg5[local733].anInt4462;
 					@Pc(774) int local774 = arg5[local733].anInt4464;
-					@Pc(779) int local779 = local752.anIntArray95[local769];
+					@Pc(779) int local779 = local752.frames[local769];
 					Static1.aClass4_Sub3_Sub19Array1[local733] = SeqTypeList.getAnimFrameset(local779 >>> 16);
 					local779 &= 65535;
 					Static5.anIntArray398[local733] = local779;
 					if (Static1.aClass4_Sub3_Sub19Array1[local733] != null) {
-						local722 |= Static1.aClass4_Sub3_Sub19Array1[local733].method4151(local779);
-						local720 |= Static1.aClass4_Sub3_Sub19Array1[local733].method4150(local779);
-						local724 |= local752.aBoolean72;
+						colorTransformed |= Static1.aClass4_Sub3_Sub19Array1[local733].isColorTransformed(local779);
+						alphaTransformed |= Static1.aClass4_Sub3_Sub19Array1[local733].isAlphaTransformed(local779);
+						normalsTransformed |= local752.aBoolean72;
 					}
-					if ((local752.tween || SeqType.forceTween) && local774 != -1 && local774 < local752.anIntArray95.length) {
+					if ((local752.tween || SeqType.forceTween) && local774 != -1 && local774 < local752.frames.length) {
 						Static6.anIntArray528[local733] = local752.anIntArray94[local769];
 						Static1.anIntArray47[local733] = arg5[local733].anInt4460;
-						@Pc(861) int local861 = local752.anIntArray95[local774];
+						@Pc(861) int local861 = local752.frames[local774];
 						Static5.aClass4_Sub3_Sub19Array3[local733] = SeqTypeList.getAnimFrameset(local861 >>> 16);
 						local861 &= 65535;
 						Static4.anIntArray654[local733] = local861;
 						if (Static5.aClass4_Sub3_Sub19Array3[local733] != null) {
-							local722 |= Static5.aClass4_Sub3_Sub19Array3[local733].method4151(local861);
-							local720 |= Static5.aClass4_Sub3_Sub19Array3[local733].method4150(local861);
+							colorTransformed |= Static5.aClass4_Sub3_Sub19Array3[local733].isColorTransformed(local861);
+							alphaTransformed |= Static5.aClass4_Sub3_Sub19Array3[local733].isAlphaTransformed(local861);
 						}
 					} else {
 						Static6.anIntArray528[local733] = 0;
@@ -648,17 +648,17 @@ public final class NpcType {
 		@Pc(962) AnimFrameset local962 = null;
 		@Pc(964) int local964 = 0;
 		if (arg3 != null) {
-			@Pc(973) int local973 = arg3.anIntArray95[arg0];
+			@Pc(973) int local973 = arg3.frames[arg0];
 			@Pc(977) int local977 = local973 >>> 16;
 			local960 = SeqTypeList.getAnimFrameset(local977);
 			local958 = local973 & 0xFFFF;
 			if (local960 != null) {
-				local722 |= local960.method4151(local958);
-				local720 |= local960.method4150(local958);
-				local724 |= arg3.aBoolean72;
+				colorTransformed |= local960.isColorTransformed(local958);
+				alphaTransformed |= local960.isAlphaTransformed(local958);
+				normalsTransformed |= arg3.aBoolean72;
 			}
-			if ((arg3.tween || SeqType.forceTween) && arg4 != -1 && arg4 < arg3.anIntArray95.length) {
-				@Pc(1031) int local1031 = arg3.anIntArray95[arg4];
+			if ((arg3.tween || SeqType.forceTween) && arg4 != -1 && arg4 < arg3.frames.length) {
+				@Pc(1031) int local1031 = arg3.frames[arg4];
 				local964 = arg3.anIntArray94[arg0];
 				@Pc(1040) int local1040 = local1031 >>> 16;
 				local956 = local1031 & 0xFFFF;
@@ -668,8 +668,8 @@ public final class NpcType {
 					local962 = SeqTypeList.getAnimFrameset(local956 >>> 16);
 				}
 				if (local962 != null) {
-					local722 |= local962.method4151(local956);
-					local720 |= local962.method4150(local956);
+					colorTransformed |= local962.isColorTransformed(local956);
+					alphaTransformed |= local962.isAlphaTransformed(local956);
 				}
 			}
 		}
@@ -679,18 +679,18 @@ public final class NpcType {
 		@Pc(1086) AnimFrameset local1086 = null;
 		@Pc(1088) AnimFrameset local1088 = null;
 		if (arg2 != null) {
-			@Pc(1096) int local1096 = arg2.anIntArray95[arg7];
+			@Pc(1096) int local1096 = arg2.frames[arg7];
 			@Pc(1100) int local1100 = local1096 >>> 16;
 			local1082 = local1096 & 0xFFFF;
 			local1086 = SeqTypeList.getAnimFrameset(local1100);
 			if (local1086 != null) {
-				local722 |= local1086.method4151(local1082);
-				local720 |= local1086.method4150(local1082);
-				local724 |= arg2.aBoolean72;
+				colorTransformed |= local1086.isColorTransformed(local1082);
+				alphaTransformed |= local1086.isAlphaTransformed(local1082);
+				normalsTransformed |= arg2.aBoolean72;
 			}
-			if ((arg2.tween || SeqType.forceTween) && arg6 != -1 && arg6 < arg2.anIntArray95.length) {
+			if ((arg2.tween || SeqType.forceTween) && arg6 != -1 && arg6 < arg2.frames.length) {
 				local1084 = arg2.anIntArray94[arg7];
-				@Pc(1158) int local1158 = arg2.anIntArray95[arg6];
+				@Pc(1158) int local1158 = arg2.frames[arg6];
 				@Pc(1162) int local1162 = local1158 >>> 16;
 				local1080 = local1158 & 0xFFFF;
 				if (local1162 == local1100) {
@@ -699,18 +699,18 @@ public final class NpcType {
 					local1088 = SeqTypeList.getAnimFrameset(local1080 >>> 16);
 				}
 				if (local1088 != null) {
-					local722 |= local1088.method4151(local1080);
-					local720 |= local1088.method4150(local1080);
+					colorTransformed |= local1088.isColorTransformed(local1080);
+					alphaTransformed |= local1088.isAlphaTransformed(local1080);
 				}
 			}
 		}
-		@Pc(1218) Model local1218 = local39.method3831(!local720, !local722, !local724);
-		@Pc(1220) int local1220 = 1;
+		@Pc(1218) Model local1218 = local39.method3831(!alphaTransformed, !colorTransformed, !normalsTransformed);
+		@Pc(1220) int part = 1;
 		for (@Pc(1228) int local1228 = 0; local1228 < local731; local1228++) {
 			if (Static1.aClass4_Sub3_Sub19Array1[local1228] != null) {
-				local1218.method3839(Static1.aClass4_Sub3_Sub19Array1[local1228], Static5.anIntArray398[local1228], Static5.aClass4_Sub3_Sub19Array3[local1228], Static4.anIntArray654[local1228], Static1.anIntArray47[local1228] - 1, Static6.anIntArray528[local1228], local1220, Static2.aClass46Array1[local1228].aBoolean72, this.anIntArrayArray45[local1228]);
+				local1218.method3839(Static1.aClass4_Sub3_Sub19Array1[local1228], Static5.anIntArray398[local1228], Static5.aClass4_Sub3_Sub19Array3[local1228], Static4.anIntArray654[local1228], Static1.anIntArray47[local1228] - 1, Static6.anIntArray528[local1228], part, Static2.aClass46Array1[local1228].aBoolean72, this.anIntArrayArray45[local1228]);
 			}
-			local1220 <<= 1;
+			part <<= 1;
 		}
 		if (local960 != null && local1086 != null) {
 			local1218.method3816(local960, local958, local962, local956, arg8 - 1, local964, local1086, local1082, local1088, local1080, arg1 - 1, local1084, arg3.aBooleanArray6, arg3.aBoolean72 | arg2.aBoolean72);

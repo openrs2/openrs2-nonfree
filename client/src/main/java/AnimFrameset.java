@@ -61,12 +61,12 @@ public final class AnimFrameset extends SecondaryNode {
 	}
 
 	@OriginalMember(owner = "client!te", name = "b", descriptor = "(BI)Z")
-	public final boolean method4150(@OriginalArg(1) int frame) {
-		return this.frames[frame].aBoolean1;
+	public final boolean isAlphaTransformed(@OriginalArg(1) int frame) {
+		return this.frames[frame].transformsAlpha;
 	}
 
 	@OriginalMember(owner = "client!te", name = "a", descriptor = "(II)Z")
-	public final boolean method4151(@OriginalArg(1) int frame) {
-		return this.frames[frame].aBoolean2;
+	public final boolean isColorTransformed(@OriginalArg(1) int frame) {
+		return this.frames[frame].transformsColor;
 	}
 }

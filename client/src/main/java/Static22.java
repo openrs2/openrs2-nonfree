@@ -581,8 +581,8 @@ public final class Static22 {
 		local10.anInt3355 = local10.vertexCount;
 		local10.aByteArray35 = null;
 		local10.triangleTextures = null;
-		local10.anIntArray325 = null;
-		local10.anIntArray323 = null;
+		local10.triangleBones = null;
+		local10.vertexBones = null;
 		local10.trianglePriorities = null;
 	}
 

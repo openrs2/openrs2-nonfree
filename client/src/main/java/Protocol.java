@@ -1317,7 +1317,7 @@ public final class Protocol {
 							@Pc(5003) int local5003 = SpotAnimTypeList.get(npc.spotAnimId).seqId;
 							if (local5003 != -1) {
 								@Pc(5010) SeqType local5010 = SeqTypeList.get(local5003);
-								if (local5010 != null && local5010.anIntArray95 != null) {
+								if (local5010 != null && local5010.frames != null) {
 									SoundPlayer.playSeqSound(local5010, npc.xFine, npc.zFine, 0, false);
 								}
 							}
@@ -1385,7 +1385,7 @@ public final class Protocol {
 							@Pc(4768) int local4768 = SpotAnimTypeList.get(player.spotAnimId).seqId;
 							if (local4768 != -1) {
 								@Pc(4778) SeqType local4778 = SeqTypeList.get(local4768);
-								if (local4778 != null && local4778.anIntArray95 != null) {
+								if (local4778 != null && local4778.frames != null) {
 									SoundPlayer.playSeqSound(local4778, player.xFine, player.zFine, 0, player == PlayerList.self);
 								}
 							}
@@ -2413,7 +2413,7 @@ public final class Protocol {
 					@Pc(553) int local553 = SpotAnimTypeList.get(player.spotAnimId).seqId;
 					if (local553 != -1) {
 						@Pc(562) SeqType local562 = SeqTypeList.get(local553);
-						if (local562 != null && local562.anIntArray95 != null) {
+						if (local562 != null && local562.frames != null) {
 							SoundPlayer.playSeqSound(local562, player.xFine, player.zFine, 0, player == PlayerList.self);
 						}
 					}
@@ -2667,7 +2667,7 @@ public final class Protocol {
 						@Pc(358) int local358 = SpotAnimTypeList.get(npc.spotAnimId).seqId;
 						if (local358 != -1) {
 							@Pc(365) SeqType type = SeqTypeList.get(local358);
-							if (type != null && type.anIntArray95 != null) {
+							if (type != null && type.frames != null) {
 								SoundPlayer.playSeqSound(type, npc.xFine, npc.zFine, 0, false);
 							}
 						}

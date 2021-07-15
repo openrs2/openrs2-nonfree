@@ -52,7 +52,7 @@ public abstract class Model extends Entity {
 				}
 			}
 			this.method3825(local30, local27, local32, arg4, arg5, arg12, false, arg13, 65535, null);
-			this.method3843(0, new int[0], 0, 0, 0, arg13);
+			this.transform(0, new int[0], 0, 0, 0, arg13);
 			this.method3825(local30, local50, local52, arg10, arg11, arg12, true, arg13, 65535, null);
 			this.method3819();
 		}
@@ -85,25 +85,25 @@ public abstract class Model extends Entity {
 	public abstract void resize(@OriginalArg(0) int x, @OriginalArg(1) int y, @OriginalArg(2) int z);
 
 	@OriginalMember(owner = "client!vg", name = "a", descriptor = "(Lclient!af;Lclient!a;Lclient!a;II[ZZZI[I)V")
-	private void method3825(@OriginalArg(0) AnimBase arg0, @OriginalArg(1) AnimFrame arg1, @OriginalArg(2) AnimFrame arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) boolean[] arg5, @OriginalArg(6) boolean arg6, @OriginalArg(7) boolean arg7, @OriginalArg(8) int arg8, @OriginalArg(9) int[] arg9) {
+	private void method3825(@OriginalArg(0) AnimBase base, @OriginalArg(1) AnimFrame arg1, @OriginalArg(2) AnimFrame arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) boolean[] arg5, @OriginalArg(6) boolean arg6, @OriginalArg(7) boolean arg7, @OriginalArg(8) int parts, @OriginalArg(9) int[] arg9) {
 		if (arg2 == null || arg3 == 0) {
-			for (@Pc(5) int local5 = 0; local5 < arg1.anInt1; local5++) {
-				@Pc(14) short local14 = arg1.aShortArray3[local5];
-				if (arg5 == null || arg5[local14] == arg6 || arg0.anIntArray11[local14] == 0) {
-					@Pc(32) short local32 = arg1.aShortArray5[local5];
-					if (local32 != -1) {
-						@Pc(42) int local42 = arg8 & arg0.anIntArray12[local32];
-						if (local42 == 65535) {
-							this.method3843(0, arg0.anIntArrayArray1[local32], 0, 0, 0, arg7);
+			for (@Pc(5) int i = 0; i < arg1.transforms; i++) {
+				@Pc(14) short index = arg1.indices[i];
+				if (arg5 == null || arg5[index] == arg6 || base.types[index] == 0) {
+					@Pc(32) short prevOriginIndex = arg1.prevOriginIndices[i];
+					if (prevOriginIndex != -1) {
+						@Pc(42) int parts2 = parts & base.parts[prevOriginIndex];
+						if (parts2 == 65535) {
+							this.transform(0, base.bones[prevOriginIndex], 0, 0, 0, arg7);
 						} else {
-							this.method3837(0, arg0.anIntArrayArray1[local32], 0, 0, 0, arg7, local42, arg9);
+							this.transform(0, base.bones[prevOriginIndex], 0, 0, 0, arg7, parts2, arg9);
 						}
 					}
-					@Pc(77) int local77 = arg8 & arg0.anIntArray12[local14];
-					if (local77 == 65535) {
-						this.method3843(arg0.anIntArray11[local14], arg0.anIntArrayArray1[local14], arg1.aShortArray10[local5], arg1.aShortArray1[local5], arg1.aShortArray4[local5], arg7);
+					@Pc(77) int parts2 = parts & base.parts[index];
+					if (parts2 == 65535) {
+						this.transform(base.types[index], base.bones[index], arg1.x[i], arg1.y[i], arg1.z[i], arg7);
 					} else {
-						this.method3837(arg0.anIntArray11[local14], arg0.anIntArrayArray1[local14], arg1.aShortArray10[local5], arg1.aShortArray1[local5], arg1.aShortArray4[local5], arg7, local77, arg9);
+						this.transform(base.types[index], base.bones[index], arg1.x[i], arg1.y[i], arg1.z[i], arg7, parts2, arg9);
 					}
 				}
 			}
@@ -111,19 +111,19 @@ public abstract class Model extends Entity {
 		}
 		@Pc(134) int local134 = 0;
 		@Pc(136) int local136 = 0;
-		for (@Pc(138) int local138 = 0; local138 < arg0.anInt107; local138++) {
+		for (@Pc(138) int local138 = 0; local138 < base.transforms; local138++) {
 			@Pc(144) boolean local144 = false;
-			if (local134 < arg1.anInt1 && arg1.aShortArray3[local134] == local138) {
+			if (local134 < arg1.transforms && arg1.indices[local134] == local138) {
 				local144 = true;
 			}
 			@Pc(158) boolean local158 = false;
-			if (local136 < arg2.anInt1 && arg2.aShortArray3[local136] == local138) {
+			if (local136 < arg2.transforms && arg2.indices[local136] == local138) {
 				local158 = true;
 			}
 			if (local144 || local158) {
-				if (arg5 == null || arg5[local138] == arg6 || arg0.anIntArray11[local138] == 0) {
+				if (arg5 == null || arg5[local138] == arg6 || base.types[local138] == 0) {
 					@Pc(196) short local196 = 0;
-					@Pc(201) int local201 = arg0.anIntArray11[local138];
+					@Pc(201) int local201 = base.types[local138];
 					if (local201 == 3) {
 						local196 = 128;
 					}
@@ -133,11 +133,11 @@ public abstract class Model extends Entity {
 					@Pc(228) short local228;
 					@Pc(233) byte local233;
 					if (local144) {
-						local213 = arg1.aShortArray10[local134];
-						local218 = arg1.aShortArray1[local134];
-						local223 = arg1.aShortArray4[local134];
-						local228 = arg1.aShortArray5[local134];
-						local233 = arg1.aByteArray1[local134];
+						local213 = arg1.x[local134];
+						local218 = arg1.y[local134];
+						local223 = arg1.z[local134];
+						local228 = arg1.prevOriginIndices[local134];
+						local233 = arg1.flags[local134];
 						local134++;
 					} else {
 						local213 = local196;
@@ -152,11 +152,11 @@ public abstract class Model extends Entity {
 					@Pc(267) short local267;
 					@Pc(272) byte local272;
 					if (local158) {
-						local252 = arg2.aShortArray10[local136];
-						local257 = arg2.aShortArray1[local136];
-						local262 = arg2.aShortArray4[local136];
-						local267 = arg2.aShortArray5[local136];
-						local272 = arg2.aByteArray1[local136];
+						local252 = arg2.x[local136];
+						local257 = arg2.y[local136];
+						local262 = arg2.z[local136];
+						local267 = arg2.prevOriginIndices[local136];
+						local272 = arg2.flags[local136];
 						local136++;
 					} else {
 						local252 = local196;
@@ -202,25 +202,25 @@ public abstract class Model extends Entity {
 						local298 = local223 + (local262 - local223) * arg3 / arg4;
 					}
 					if (local228 != -1) {
-						@Pc(447) int local447 = arg8 & arg0.anIntArray12[local228];
+						@Pc(447) int local447 = parts & base.parts[local228];
 						if (local447 == 65535) {
-							this.method3843(0, arg0.anIntArrayArray1[local228], 0, 0, 0, arg7);
+							this.transform(0, base.bones[local228], 0, 0, 0, arg7);
 						} else {
-							this.method3837(0, arg0.anIntArrayArray1[local228], 0, 0, 0, arg7, local447, arg9);
+							this.transform(0, base.bones[local228], 0, 0, 0, arg7, local447, arg9);
 						}
 					} else if (local267 != -1) {
-						@Pc(486) int local486 = arg8 & arg0.anIntArray12[local267];
+						@Pc(486) int local486 = parts & base.parts[local267];
 						if (local486 == 65535) {
-							this.method3843(0, arg0.anIntArrayArray1[local267], 0, 0, 0, arg7);
+							this.transform(0, base.bones[local267], 0, 0, 0, arg7);
 						} else {
-							this.method3837(0, arg0.anIntArrayArray1[local267], 0, 0, 0, arg7, local486, arg9);
+							this.transform(0, base.bones[local267], 0, 0, 0, arg7, local486, arg9);
 						}
 					}
-					@Pc(521) int local521 = arg8 & arg0.anIntArray12[local138];
+					@Pc(521) int local521 = parts & base.parts[local138];
 					if (local521 == 65535) {
-						this.method3843(local201, arg0.anIntArrayArray1[local138], local294, local296, local298, arg7);
+						this.transform(local201, base.bones[local138], local294, local296, local298, arg7);
 					} else {
-						this.method3837(local201, arg0.anIntArrayArray1[local138], local294, local296, local298, arg7, local521, arg9);
+						this.transform(local201, base.bones[local138], local294, local296, local298, arg7, local521, arg9);
 					}
 				} else {
 					if (local144) {
@@ -256,16 +256,16 @@ public abstract class Model extends Entity {
 	protected abstract boolean method3830();
 
 	@OriginalMember(owner = "client!vg", name = "a", descriptor = "(ZZZ)Lclient!vg;")
-	public abstract Model method3831(@OriginalArg(0) boolean arg0, @OriginalArg(1) boolean arg1, @OriginalArg(2) boolean arg2);
+	public abstract Model method3831(@OriginalArg(0) boolean shareAlpha, @OriginalArg(1) boolean shareColors, @OriginalArg(2) boolean shareNormals);
 
 	@OriginalMember(owner = "client!vg", name = "c", descriptor = "(I)V")
 	public abstract void method3832(@OriginalArg(0) int arg0);
 
 	@OriginalMember(owner = "client!vg", name = "b", descriptor = "(ZZZ)Lclient!vg;")
-	public abstract Model method3833(@OriginalArg(0) boolean arg0, @OriginalArg(1) boolean arg1, @OriginalArg(2) boolean arg2);
+	public abstract Model method3833(@OriginalArg(0) boolean shareAlpha, @OriginalArg(1) boolean shareColors, @OriginalArg(2) boolean shareNormals);
 
 	@OriginalMember(owner = "client!vg", name = "a", descriptor = "(IIII)V")
-	protected abstract void method3834(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3);
+	protected abstract void transform(@OriginalArg(0) int type, @OriginalArg(1) int x, @OriginalArg(2) int y, @OriginalArg(3) int z);
 
 	@OriginalMember(owner = "client!vg", name = "a", descriptor = "(Lclient!te;ILclient!te;IIIZ)V")
 	public final void method3835(@OriginalArg(0) AnimFrameset arg0, @OriginalArg(1) int arg1, @OriginalArg(2) AnimFrameset arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) boolean arg6) {
@@ -273,29 +273,29 @@ public abstract class Model extends Entity {
 			return;
 		}
 		@Pc(12) AnimFrame local12 = arg0.frames[arg1];
-		@Pc(15) AnimBase local15 = local12.base;
+		@Pc(15) AnimBase base = local12.base;
 		@Pc(17) AnimFrame local17 = null;
 		if (arg2 != null) {
 			local17 = arg2.frames[arg3];
-			if (local17.base != local15) {
+			if (local17.base != base) {
 				local17 = null;
 			}
 		}
-		this.method3825(local15, local12, local17, arg4, arg5, null, false, arg6, 65535, null);
+		this.method3825(base, local12, local17, arg4, arg5, null, false, arg6, 65535, null);
 		this.method3819();
 	}
 
 	@OriginalMember(owner = "client!vg", name = "c", descriptor = "(ZZZ)Lclient!vg;")
-	public abstract Model method3836(@OriginalArg(0) boolean arg0, @OriginalArg(1) boolean arg1, @OriginalArg(2) boolean arg2);
+	public abstract Model method3836(@OriginalArg(0) boolean shareAlpha, @OriginalArg(1) boolean shareColors, @OriginalArg(2) boolean shareNormals);
 
 	@OriginalMember(owner = "client!vg", name = "a", descriptor = "(I[IIIIZI[I)V")
-	protected abstract void method3837(@OriginalArg(0) int arg0, @OriginalArg(1) int[] arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) boolean arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int[] arg7);
+	protected abstract void transform(@OriginalArg(0) int type, @OriginalArg(1) int[] bone, @OriginalArg(2) int x, @OriginalArg(3) int y, @OriginalArg(4) int z, @OriginalArg(5) boolean arg5, @OriginalArg(6) int parts, @OriginalArg(7) int[] arg7);
 
 	@OriginalMember(owner = "client!vg", name = "k", descriptor = "()I")
 	public abstract int getMaxX();
 
 	@OriginalMember(owner = "client!vg", name = "a", descriptor = "(Lclient!te;ILclient!te;IIIIZ[I)V")
-	public final void method3839(@OriginalArg(0) AnimFrameset arg0, @OriginalArg(1) int arg1, @OriginalArg(2) AnimFrameset arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) boolean arg7, @OriginalArg(8) int[] arg8) {
+	public final void method3839(@OriginalArg(0) AnimFrameset arg0, @OriginalArg(1) int arg1, @OriginalArg(2) AnimFrameset arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int parts, @OriginalArg(7) boolean arg7, @OriginalArg(8) int[] arg8) {
 		if (arg1 == -1 || !this.method3830()) {
 			return;
 		}
@@ -308,7 +308,7 @@ public abstract class Model extends Entity {
 				local17 = null;
 			}
 		}
-		this.method3825(local15, local12, local17, arg4, arg5, null, false, arg7, arg6, arg8);
+		this.method3825(local15, local12, local17, arg4, arg5, null, false, arg7, parts, arg8);
 		this.method3819();
 	}
 
@@ -359,22 +359,22 @@ public abstract class Model extends Entity {
 	public abstract int getMaxY();
 
 	@OriginalMember(owner = "client!vg", name = "a", descriptor = "(I[IIIIZ)V")
-	protected abstract void method3843(@OriginalArg(0) int arg0, @OriginalArg(1) int[] arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) boolean arg5);
+	protected abstract void transform(@OriginalArg(0) int type, @OriginalArg(1) int[] bone, @OriginalArg(2) int x, @OriginalArg(3) int y, @OriginalArg(4) int z, @OriginalArg(5) boolean arg5);
 
 	@OriginalMember(owner = "client!vg", name = "a", descriptor = "(Lclient!te;I)V")
-	public final void method3844(@OriginalArg(0) AnimFrameset frameset, @OriginalArg(1) int frameId) {
+	public final void animateShadow(@OriginalArg(0) AnimFrameset frameset, @OriginalArg(1) int frameId) {
 		if (frameId == -1 || !this.method3830()) {
 			return;
 		}
 		@Pc(12) AnimFrame frame = frameset.frames[frameId];
 		@Pc(15) AnimBase base = frame.base;
-		for (@Pc(17) int i = 0; i < frame.anInt1; i++) {
-			@Pc(26) short local26 = frame.aShortArray3[i];
-			if (base.aBooleanArray1[local26]) {
-				if (frame.aShortArray5[i] != -1) {
-					this.method3834(0, 0, 0, 0);
+		for (@Pc(17) int i = 0; i < frame.transforms; i++) {
+			@Pc(26) short index = frame.indices[i];
+			if (base.shadow[index]) {
+				if (frame.prevOriginIndices[i] != -1) {
+					this.transform(0, 0, 0, 0);
 				}
-				this.method3834(base.anIntArray11[local26], frame.aShortArray10[i], frame.aShortArray1[i], frame.aShortArray4[i]);
+				this.transform(base.types[index], frame.x[i], frame.y[i], frame.z[i]);
 			}
 		}
 		this.method3819();

@@ -291,14 +291,14 @@ public final class Loc extends Entity {
 			return;
 		}
 		if (local9) {
-			this.anInt4574 = (int) (Math.random() * (double) this.seqType.anIntArray95.length);
+			this.anInt4574 = (int) (Math.random() * (double) this.seqType.frames.length);
 			this.anInt4568 = (int) ((double) this.seqType.anIntArray94[this.anInt4574] * Math.random()) + 1;
 		} else {
 			this.anInt4568 = 1;
 			this.anInt4574 = 0;
 		}
 		this.anInt4580 = this.anInt4574 + 1;
-		if (this.anInt4580 < 0 || this.seqType.anIntArray95.length <= this.anInt4580) {
+		if (this.anInt4580 < 0 || this.seqType.frames.length <= this.anInt4580) {
 			this.anInt4580 = -1;
 		}
 		this.anInt4590 = client.loop - this.anInt4568;
@@ -319,22 +319,22 @@ public final class Loc extends Entity {
 			}
 			@Pc(35) int local35 = client.loop - this.anInt4590;
 			if (local35 > 100 && this.seqType.anInt1242 > 0) {
-				@Pc(53) int local53 = this.seqType.anIntArray95.length - this.seqType.anInt1242;
+				@Pc(53) int local53 = this.seqType.frames.length - this.seqType.anInt1242;
 				while (this.anInt4574 < local53 && this.seqType.anIntArray94[this.anInt4574] < local35) {
 					local35 -= this.seqType.anIntArray94[this.anInt4574];
 					this.anInt4574++;
 				}
 				if (this.anInt4574 >= local53) {
 					@Pc(92) int local92 = 0;
-					for (@Pc(94) int local94 = local53; local94 < this.seqType.anIntArray95.length; local94++) {
+					for (@Pc(94) int local94 = local53; local94 < this.seqType.frames.length; local94++) {
 						local92 += this.seqType.anIntArray94[local94];
 					}
 					local35 %= local92;
 				}
 				this.anInt4580 = this.anInt4574 + 1;
-				if (this.seqType.anIntArray95.length <= this.anInt4580) {
+				if (this.seqType.frames.length <= this.anInt4580) {
 					this.anInt4580 -= this.seqType.anInt1242;
-					if (this.anInt4580 < 0 || this.anInt4580 >= this.seqType.anIntArray95.length) {
+					if (this.anInt4580 < 0 || this.anInt4580 >= this.seqType.frames.length) {
 						this.anInt4580 = -1;
 					}
 				}
@@ -343,17 +343,17 @@ public final class Loc extends Entity {
 				SoundPlayer.playSeqSound(this.seqType, arg1, arg0, this.anInt4574, false);
 				local35 -= this.seqType.anIntArray94[this.anInt4574];
 				this.anInt4574++;
-				if (this.seqType.anIntArray95.length <= this.anInt4574) {
+				if (this.seqType.frames.length <= this.anInt4574) {
 					this.anInt4574 -= this.seqType.anInt1242;
-					if (this.anInt4574 < 0 || this.seqType.anIntArray95.length <= this.anInt4574) {
+					if (this.anInt4574 < 0 || this.seqType.frames.length <= this.anInt4574) {
 						this.seqType = null;
 						continue label85;
 					}
 				}
 				this.anInt4580 = this.anInt4574 + 1;
-				if (this.anInt4580 >= this.seqType.anIntArray95.length) {
+				if (this.anInt4580 >= this.seqType.frames.length) {
 					this.anInt4580 -= this.seqType.anInt1242;
-					if (this.anInt4580 < 0 || this.seqType.anIntArray95.length <= this.anInt4580) {
+					if (this.anInt4580 < 0 || this.seqType.frames.length <= this.anInt4580) {
 						this.anInt4580 = -1;
 					}
 				}
