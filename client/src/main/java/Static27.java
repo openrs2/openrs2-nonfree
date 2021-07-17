@@ -158,11 +158,6 @@ public final class Static27 {
 		FontMetricsList.fontMetrics.removeSoft();
 	}
 
-	@OriginalMember(owner = "client!oi", name = "a", descriptor = "(BI)Ljava/lang/String;")
-	public static String method3226(@OriginalArg(1) int ip) {
-		return (ip >> 24 & 0xFF) + "." + (ip >> 16 & 0xFF) + "." + (ip >> 8 & 0xFF) + "." + (ip & 0xFF);
-	}
-
 	@OriginalMember(owner = "client!oj", name = "a", descriptor = "(I[B)[B")
 	public static byte[] method3230(@OriginalArg(0) int arg0, @OriginalArg(1) byte[] arg1) {
 		if (arg1 == null) {

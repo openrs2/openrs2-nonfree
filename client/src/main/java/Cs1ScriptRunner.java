@@ -109,7 +109,7 @@ public final class Cs1ScriptRunner {
 					value = Static5.originX + (PlayerList.self.xFine >> 7);
 				}
 				if (opcode == 19) {
-					value = (PlayerList.self.zFine >> 7) + Static7.originZ;
+					value = Static7.originZ + (PlayerList.self.zFine >> 7);
 				}
 				if (opcode == 20) {
 					value = script[pc++];
@@ -170,49 +170,49 @@ public final class Cs1ScriptRunner {
 			return text;
 		}
 		while (true) {
-			@Pc(21) int local21 = text.indexOf("%1");
-			if (local21 == -1) {
+			@Pc(21) int index1 = text.indexOf("%1");
+			if (index1 == -1) {
 				while (true) {
-					@Pc(54) int local54 = text.indexOf("%2");
-					if (local54 == -1) {
+					@Pc(54) int index2 = text.indexOf("%2");
+					if (index2 == -1) {
 						while (true) {
-							@Pc(90) int local90 = text.indexOf("%3");
-							if (local90 == -1) {
+							@Pc(90) int index3 = text.indexOf("%3");
+							if (index3 == -1) {
 								while (true) {
-									@Pc(126) int local126 = text.indexOf("%4");
-									if (local126 == -1) {
+									@Pc(126) int index4 = text.indexOf("%4");
+									if (index4 == -1) {
 										while (true) {
-											@Pc(162) int local162 = text.indexOf("%5");
-											if (local162 == -1) {
+											@Pc(162) int index5 = text.indexOf("%5");
+											if (index5 == -1) {
 												while (true) {
-													@Pc(194) int local194 = text.indexOf("%dns");
-													if (local194 == -1) {
+													@Pc(194) int dnsIndex = text.indexOf("%dns");
+													if (dnsIndex == -1) {
 														return text;
 													}
-													@Pc(200) String local200 = "";
+													@Pc(200) String reverseDns = "";
 													if (Static1.reverseDnsRequest != null) {
 														if (Static1.reverseDnsRequest.result == null) {
-															local200 = Static27.method3226(Static1.reverseDnsRequest.intArg1);
+															reverseDns = StringUtils.ipToString(Static1.reverseDnsRequest.intArg1);
 														} else {
-															local200 = (String) Static1.reverseDnsRequest.result;
+															reverseDns = (String) Static1.reverseDnsRequest.result;
 														}
 													}
-													text = text.substring(0, local194) + local200 + text.substring(local194 + 4);
+													text = text.substring(0, dnsIndex) + reverseDns + text.substring(dnsIndex + 4);
 												}
 											}
-											text = text.substring(0, local162) + toString(run(component, 4)) + text.substring(local162 + 2);
+											text = text.substring(0, index5) + toString(run(component, 4)) + text.substring(index5 + 2);
 										}
 									}
-									text = text.substring(0, local126) + toString(run(component, 3)) + text.substring(local126 + 2);
+									text = text.substring(0, index4) + toString(run(component, 3)) + text.substring(index4 + 2);
 								}
 							}
-							text = text.substring(0, local90) + toString(run(component, 2)) + text.substring(local90 + 2);
+							text = text.substring(0, index3) + toString(run(component, 2)) + text.substring(index3 + 2);
 						}
 					}
-					text = text.substring(0, local54) + toString(run(component, 1)) + text.substring(local54 + 2);
+					text = text.substring(0, index2) + toString(run(component, 1)) + text.substring(index2 + 2);
 				}
 			}
-			text = text.substring(0, local21) + toString(run(component, 0)) + text.substring(local21 + 2);
+			text = text.substring(0, index1) + toString(run(component, 0)) + text.substring(index1 + 2);
 		}
 	}
 

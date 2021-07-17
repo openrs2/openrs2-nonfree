@@ -416,4 +416,9 @@ public final class StringUtils {
 		}
 		return buffer;
 	}
+
+	@OriginalMember(owner = "client!oi", name = "a", descriptor = "(BI)Ljava/lang/String;")
+	public static String ipToString(@OriginalArg(1) int ip) {
+		return (ip >> 24 & 0xFF) + "." + (ip >> 16 & 0xFF) + "." + (ip >> 8 & 0xFF) + "." + (ip & 0xFF);
+	}
 }

@@ -3576,7 +3576,7 @@ public final class ScriptRunner {
 									@Pc(9027) String hostname = "";
 									if (Static1.reverseDnsRequest != null) {
 										if (Static1.reverseDnsRequest.result == null) {
-											hostname = Static27.method3226(Static1.reverseDnsRequest.intArg1);
+											hostname = StringUtils.ipToString(Static1.reverseDnsRequest.intArg1);
 										} else {
 											hostname = (String) Static1.reverseDnsRequest.result;
 										}
