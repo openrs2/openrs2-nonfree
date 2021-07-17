@@ -61,7 +61,7 @@ public final class Static14 {
 						Protocol.outboundBuffer.writeShortA(Static7.aClass185_16.createdComponentId);
 						Protocol.outboundBuffer.writeShortLEA(Static1.aClass185_1.createdComponentId);
 					}
-				} else if ((Static3.anInt5400 == 1 || Static13.method1005(MiniMenu.size - 1)) && MiniMenu.size > 2) {
+				} else if ((Static3.anInt5400 == 1 || MiniMenu.method1005(MiniMenu.size - 1)) && MiniMenu.size > 2) {
 					Static31.method3783();
 				} else if (MiniMenu.size > 0) {
 					Static37.method4784();
@@ -556,7 +556,7 @@ public final class Static14 {
 		if (arg1 == -1 && local37.type == 0) {
 			for (@Pc(110) int local110 = 0; local110 < MiniMenu.size; local110++) {
 				if (MiniMenu.actions[local110] == 1 || MiniMenu.actions[local110] == 1009 || MiniMenu.actions[local110] == 34 || MiniMenu.actions[local110] == 23 || MiniMenu.actions[local110] == 3) {
-					for (@Pc(148) Component local148 = InterfaceList.getComponent(MiniMenu.anIntArray543[local110]); local148 != null; local148 = Static26.method2942(local148)) {
+					for (@Pc(148) Component local148 = InterfaceList.getComponent(MiniMenu.intArgs2[local110]); local148 != null; local148 = Static26.method2942(local148)) {
 						if (local148.id == local37.id) {
 							return true;
 						}
@@ -565,7 +565,7 @@ public final class Static14 {
 			}
 		} else {
 			for (@Pc(48) int local48 = 0; local48 < MiniMenu.size; local48++) {
-				if (MiniMenu.anIntArray117[local48] == arg1 && local37.id == MiniMenu.anIntArray543[local48] && (MiniMenu.actions[local48] == 1 || MiniMenu.actions[local48] == 1009 || MiniMenu.actions[local48] == 34 || MiniMenu.actions[local48] == 23 || MiniMenu.actions[local48] == 3)) {
+				if (MiniMenu.intArgs1[local48] == arg1 && local37.id == MiniMenu.intArgs2[local48] && (MiniMenu.actions[local48] == 1 || MiniMenu.actions[local48] == 1009 || MiniMenu.actions[local48] == 34 || MiniMenu.actions[local48] == 23 || MiniMenu.actions[local48] == 3)) {
 					return true;
 				}
 			}

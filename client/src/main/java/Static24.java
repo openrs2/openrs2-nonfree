@@ -93,17 +93,6 @@ public final class Static24 {
 		Static4.aBoolean189 = true;
 	}
 
-	@OriginalMember(owner = "client!lj", name = "a", descriptor = "(ILclient!wf;B)Ljava/lang/String;")
-	public static String method2597(@OriginalArg(0) int arg0, @OriginalArg(1) Component arg1) {
-		if (!InterfaceList.getServerActiveProperties(arg1).isButtonEnabled(arg0) && arg1.onOp == null) {
-			return null;
-		} else if (arg1.ops == null || arg0 >= arg1.ops.length || arg1.ops[arg0] == null || arg1.ops[arg0].trim().length() == 0) {
-			return Static1.qaOpTest ? "Hidden-" + arg0 : null;
-		} else {
-			return arg1.ops[arg0];
-		}
-	}
-
 	@OriginalMember(owner = "client!ll", name = "a", descriptor = "(IIII)I")
 	public static int rotateZ(@OriginalArg(0) int angle, @OriginalArg(2) int x, @OriginalArg(3) int z) {
 		angle &= 3;
@@ -297,13 +286,6 @@ public final class Static24 {
 			Static2.aBooleanArray8[local490] = true;
 		}
 		GameShell.fullRedraw = true;
-	}
-
-	@OriginalMember(owner = "client!mb", name = "a", descriptor = "(BIII)V")
-	public static void method2945(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2) {
-		@Pc(32) String command = "::tele " + arg2 + "," + (arg0 >> 6) + "," + (arg1 >> 6) + "," + (arg0 & 0x3F) + "," + (arg1 & 0x3F);
-		System.out.println(command);
-		Cheat.execute(command);
 	}
 
 	@OriginalMember(owner = "client!mb", name = "a", descriptor = "(ZIIII)V")

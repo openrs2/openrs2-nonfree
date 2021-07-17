@@ -5,8 +5,8 @@ import org.openrs2.deob.annotation.Pc;
 public final class Static36 {
 
 	@OriginalMember(owner = "client!v", name = "a", descriptor = "(BLclient!wf;)Z")
-	public static boolean method4402(@OriginalArg(1) Component arg0) {
-		if (arg0.anInt5904 == 205) {
+	public static boolean method4402(@OriginalArg(1) Component component) {
+		if (component.anInt5904 == 205) {
 			Static1.anInt885 = 250;
 			return true;
 		} else {

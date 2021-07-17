@@ -70,7 +70,7 @@ public final class LocType {
 	public boolean members = false;
 
 	@OriginalMember(owner = "client!vh", name = "ab", descriptor = "I")
-	public int anInt5538 = 0;
+	public int blockedSides = 0;
 
 	@OriginalMember(owner = "client!vh", name = "P", descriptor = "I")
 	public int cursor2Op = -1;
@@ -787,7 +787,7 @@ public final class LocType {
 		} else if (code == 67) {
 			this.resizeZ = buffer.readUnsignedShort();
 		} else if (code == 69) {
-			this.anInt5538 = buffer.readUnsignedByte();
+			this.blockedSides = buffer.readUnsignedByte();
 		} else if (code == 70) {
 			this.translateX = buffer.readShort();
 		} else if (code == 71) {

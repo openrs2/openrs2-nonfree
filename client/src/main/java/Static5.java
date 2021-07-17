@@ -163,9 +163,6 @@ public final class Static5 {
 	@OriginalMember(owner = "client!nf", name = "a", descriptor = "I")
 	public static int anInt3525 = 0;
 
-	@OriginalMember(owner = "client!nf", name = "l", descriptor = "Z")
-	public static final boolean aBoolean254 = false;
-
 	@OriginalMember(owner = "client!nh", name = "U", descriptor = "[Lclient!eg;")
 	public static final SeqType[] aClass46Array2 = new SeqType[14];
 

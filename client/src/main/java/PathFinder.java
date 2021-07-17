@@ -521,4 +521,31 @@ public final class PathFinder {
 			findPath1(srcX, srcZ, destX, destZ, destType, destWidth, destLength, destAngle, destBlockedSides);
 		}
 	}
+
+	@OriginalMember(owner = "client!ed", name = "a", descriptor = "(IJII)Z")
+	public static boolean findPathToLoc(@OriginalArg(1) long key, @OriginalArg(3) int x, @OriginalArg(0) int z) {
+		@Pc(12) int angle = (int) key >> 20 & 0x3;
+		@Pc(23) int shape = (int) key >> 14 & 0x1F;
+		@Pc(30) int id = Integer.MAX_VALUE & (int) (key >>> 32);
+		if (shape == 10 || shape == 11 || shape == 22) {
+			@Pc(49) LocType type = LocTypeList.get(id);
+			@Pc(52) int blockedSides = type.blockedSides;
+			@Pc(63) int width;
+			@Pc(66) int length;
+			if (angle == 0 || angle == 2) {
+				length = type.length;
+				width = type.width;
+			} else {
+				width = type.length;
+				length = type.width;
+			}
+			if (angle != 0) {
+				blockedSides = (blockedSides << angle & 0xF) + (blockedSides >> 4 - angle);
+			}
+			findPath(PlayerList.self.movementQueueX[0], PlayerList.self.movementQueueZ[0], x, z, 0, width, length, 0, blockedSides);
+		} else {
+			findPath(PlayerList.self.movementQueueX[0], PlayerList.self.movementQueueZ[0], x, z, shape + 1, 0, 0, angle, 0);
+		}
+		return true;
+	}
 }

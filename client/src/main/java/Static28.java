@@ -338,11 +338,11 @@ public final class Static28 {
 
 	@OriginalMember(owner = "client!pa", name = "a", descriptor = "(IIIIZ)V")
 	public static void method3327(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) {
-		if (Static7.anInt6008 == 1) {
-			Sprites.cross[Static2.anInt1629 / 100].renderTransparent(Static6.anInt5177 - 8, Static4.anInt3275 - 8);
+		if (Cross.type == 1) {
+			Sprites.cross[Cross.milliseconds / 100].renderTransparent(Cross.x - 8, Cross.y - 8);
 		}
-		if (Static7.anInt6008 == 2) {
-			Sprites.cross[Static2.anInt1629 / 100 + 4].renderTransparent(Static6.anInt5177 - 8, Static4.anInt3275 - 8);
+		if (Cross.type == 2) {
+			Sprites.cross[Cross.milliseconds / 100 + 4].renderTransparent(Cross.x - 8, Cross.y - 8);
 		}
 		Player.setInTutorialIsland();
 	}

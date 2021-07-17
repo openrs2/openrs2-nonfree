@@ -36,7 +36,7 @@ public final class Player extends PathingEntity {
 	@OriginalMember(owner = "client!fm", name = "a", descriptor = "(B)V")
 	public static void setInTutorialIsland() {
 		inTutorialIsland = 0;
-		@Pc(13) int x = (PlayerList.self.xFine >> 7) + Static5.originX;
+		@Pc(13) int x = Static5.originX + (PlayerList.self.xFine >> 7);
 		@Pc(20) int z = Static7.originZ + (PlayerList.self.zFine >> 7);
 		if (x >= 3053 && x <= 3156 && z >= 3056 && z <= 3136) {
 			inTutorialIsland = 1;

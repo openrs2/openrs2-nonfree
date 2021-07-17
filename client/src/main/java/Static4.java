@@ -238,9 +238,6 @@ public final class Static4 {
 	@OriginalMember(owner = "client!ln", name = "V", descriptor = "S")
 	public static short aShort25 = 205;
 
-	@OriginalMember(owner = "client!m", name = "f", descriptor = "I")
-	public static int anInt3275 = 0;
-
 	@OriginalMember(owner = "client!ma", name = "e", descriptor = "I")
 	public static int anInt3407 = -1;
 

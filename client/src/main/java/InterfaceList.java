@@ -232,4 +232,15 @@ public final class InterfaceList {
 			return component.createdComponents[createdComponentId];
 		}
 	}
+
+	@OriginalMember(owner = "client!lj", name = "a", descriptor = "(ILclient!wf;B)Ljava/lang/String;")
+	public static String getOp(@OriginalArg(1) Component component, @OriginalArg(0) int index) {
+		if (!getServerActiveProperties(component).isButtonEnabled(index) && component.onOp == null) {
+			return null;
+		} else if (component.ops == null || index >= component.ops.length || component.ops[index] == null || component.ops[index].trim().length() == 0) {
+			return Static1.qaOpTest ? "Hidden-" + index : null;
+		} else {
+			return component.ops[index];
+		}
+	}
 }

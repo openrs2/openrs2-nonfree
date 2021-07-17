@@ -187,57 +187,18 @@ public final class Static13 {
 		}
 	}
 
-	@OriginalMember(owner = "client!ed", name = "a", descriptor = "(IJII)Z")
-	public static boolean method1004(@OriginalArg(0) int arg0, @OriginalArg(1) long arg1, @OriginalArg(3) int arg2) {
-		@Pc(12) int local12 = (int) arg1 >> 20 & 0x3;
-		@Pc(23) int local23 = (int) arg1 >> 14 & 0x1F;
-		@Pc(30) int local30 = Integer.MAX_VALUE & (int) (arg1 >>> 32);
-		if (local23 == 10 || local23 == 11 || local23 == 22) {
-			@Pc(49) LocType local49 = LocTypeList.get(local30);
-			@Pc(52) int local52 = local49.anInt5538;
-			@Pc(63) int local63;
-			@Pc(66) int local66;
-			if (local12 == 0 || local12 == 2) {
-				local66 = local49.length;
-				local63 = local49.width;
-			} else {
-				local63 = local49.length;
-				local66 = local49.width;
-			}
-			if (local12 != 0) {
-				local52 = (local52 << local12 & 0xF) + (local52 >> 4 - local12);
-			}
-			PathFinder.findPath(PlayerList.self.movementQueueX[0], PlayerList.self.movementQueueZ[0], arg2, arg0, 0, local63, local66, 0, local52);
-		} else {
-			PathFinder.findPath(PlayerList.self.movementQueueX[0], PlayerList.self.movementQueueZ[0], arg2, arg0, local23 + 1, 0, 0, local12, 0);
-		}
-		return true;
-	}
-
-	@OriginalMember(owner = "client!ed", name = "a", descriptor = "(II)Z")
-	public static boolean method1005(@OriginalArg(1) int arg0) {
-		if (arg0 < 0) {
-			return false;
-		}
-		@Pc(12) int local12 = MiniMenu.actions[arg0];
-		if (local12 >= 2000) {
-			local12 -= 2000;
-		}
-		return local12 == 1009;
-	}
-
 	@OriginalMember(owner = "client!ee", name = "a", descriptor = "(IIII)V")
-	public static void method1007(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2) {
-		if (arg1 == 1012) {
-			ScriptRunner.method2710(10, arg0, arg2);
-		} else if (arg1 == 1002) {
-			ScriptRunner.method2710(11, arg0, arg2);
-		} else if (arg1 == 1008) {
-			ScriptRunner.method2710(12, arg0, arg2);
-		} else if (arg1 == 1003) {
-			ScriptRunner.method2710(13, arg0, arg2);
-		} else if (arg1 == 1011) {
-			ScriptRunner.method2710(14, arg0, arg2);
+	public static void method1007(@OriginalArg(2) int action, @OriginalArg(1) int arg1, @OriginalArg(3) int arg2) {
+		if (action == 1012) {
+			ScriptRunner.method2710(10, arg1, arg2);
+		} else if (action == 1002) {
+			ScriptRunner.method2710(11, arg1, arg2);
+		} else if (action == 1008) {
+			ScriptRunner.method2710(12, arg1, arg2);
+		} else if (action == 1003) {
+			ScriptRunner.method2710(13, arg1, arg2);
+		} else if (action == 1011) {
+			ScriptRunner.method2710(14, arg1, arg2);
 		}
 	}
 

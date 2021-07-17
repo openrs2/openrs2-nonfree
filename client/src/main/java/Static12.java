@@ -234,7 +234,7 @@ public final class Static12 {
 										local545.convertDisplayToSource(local534, local542, local550);
 										if (local550 != null) {
 											if (Keyboard.pressedKeys[82] && LoginManager.staffModLevel > 0) {
-												Static24.method2945(local550[1], local550[2], local550[0]);
+												Cheat.teleport(local550[0], local550[1], local550[2]);
 												Static21.method2063();
 												continue;
 											}
@@ -261,7 +261,7 @@ public final class Static12 {
 										continue;
 									}
 									if (Static1.anInt640 > 0 && !Static1.aBoolean49) {
-										if ((Static3.anInt5400 == 1 || Static13.method1005(MiniMenu.size - 1)) && MiniMenu.size > 2) {
+										if ((Static3.anInt5400 == 1 || MiniMenu.method1005(MiniMenu.size - 1)) && MiniMenu.size > 2) {
 											Static31.method3783();
 										} else if (MiniMenu.size > 0) {
 											Static37.method4784();
@@ -713,13 +713,13 @@ public final class Static12 {
 	}
 
 	@OriginalMember(owner = "client!df", name = "a", descriptor = "(BLclient!wf;)Ljava/lang/String;")
-	public static String method780(@OriginalArg(1) Component arg0) {
-		if (InterfaceList.getServerActiveProperties(arg0).getTargetMask() == 0) {
+	public static String method780(@OriginalArg(1) Component component) {
+		if (InterfaceList.getServerActiveProperties(component).getTargetMask() == 0) {
 			return null;
-		} else if (arg0.targetVerb == null || arg0.targetVerb.trim().length() == 0) {
+		} else if (component.targetVerb == null || component.targetVerb.trim().length() == 0) {
 			return Static1.qaOpTest ? "Hidden-use" : null;
 		} else {
-			return arg0.targetVerb;
+			return component.targetVerb;
 		}
 	}
 

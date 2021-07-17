@@ -203,17 +203,11 @@ public final class Static7 {
 	@OriginalMember(owner = "client!wf", name = "dc", descriptor = "I")
 	public static int anInt5935 = 0;
 
-	@OriginalMember(owner = "client!wf", name = "sc", descriptor = "[S")
-	public static final short[] aShortArray122 = new short[] { 43, 29, 60, 31, 22, 14, 24, 12 };
-
 	@OriginalMember(owner = "client!wf", name = "Dc", descriptor = "I")
 	public static int anInt5946 = 0;
 
 	@OriginalMember(owner = "client!wg", name = "E", descriptor = "I")
 	public static int anInt5997 = 2;
-
-	@OriginalMember(owner = "client!wg", name = "V", descriptor = "I")
-	public static int anInt6008 = 0;
 
 	@OriginalMember(owner = "client!wk", name = "f", descriptor = "I")
 	public static int anInt6050 = -1;

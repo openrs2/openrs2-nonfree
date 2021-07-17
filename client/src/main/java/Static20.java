@@ -735,28 +735,6 @@ public final class Static20 {
 		return local3;
 	}
 
-	@OriginalMember(owner = "client!il", name = "a", descriptor = "(IBI)Ljava/lang/String;")
-	public static String getCombatLevelColor(@OriginalArg(0) int selfLevel, @OriginalArg(2) int otherLevel) {
-		@Pc(8) int delta = selfLevel - otherLevel;
-		if (delta < -9) {
-			return "<col=ff0000>";
-		} else if (delta < -6) {
-			return "<col=ff3000>";
-		} else if (delta < -3) {
-			return "<col=ff7000>";
-		} else if (delta < 0) {
-			return "<col=ffb000>";
-		} else if (delta > 9) {
-			return "<col=00ff00>";
-		} else if (delta > 6) {
-			return "<col=40ff00>";
-		} else if (delta <= 3) {
-			return delta > 0 ? "<col=c0ff00>" : "<col=ffff00>";
-		} else {
-			return "<col=80ff00>";
-		}
-	}
-
 	@OriginalMember(owner = "client!il", name = "b", descriptor = "(B)V")
 	public static void method1924() {
 		if (Static7.aBoolean401) {

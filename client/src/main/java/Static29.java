@@ -21,8 +21,8 @@ public final class Static29 {
 			if (local22 == 1 && MiniMenu.size > 0) {
 				@Pc(47) short action = MiniMenu.actions[MiniMenu.size - 1];
 				if (action == 30 || action == 20 || action == 13 || action == 2 || action == 49 || action == 58 || action == 35 || action == 17 || action == 10 || action == 51 || action == 9 || action == 1001) {
-					@Pc(99) int local99 = MiniMenu.anIntArray543[MiniMenu.size - 1];
-					@Pc(105) int local105 = MiniMenu.anIntArray117[MiniMenu.size - 1];
+					@Pc(99) int local99 = MiniMenu.intArgs2[MiniMenu.size - 1];
+					@Pc(105) int local105 = MiniMenu.intArgs1[MiniMenu.size - 1];
 					@Pc(109) Component local109 = InterfaceList.getComponent(local99);
 					@Pc(112) ServerActiveProperties local112 = InterfaceList.getServerActiveProperties(local109);
 					if (local112.isObjSwapEnabled() || local112.isObjReplaceEnabled()) {
@@ -40,7 +40,7 @@ public final class Static29 {
 					}
 				}
 			}
-			if (local22 == 1 && (Static3.anInt5400 == 1 && MiniMenu.size > 2 || Static13.method1005(MiniMenu.size - 1))) {
+			if (local22 == 1 && (Static3.anInt5400 == 1 && MiniMenu.size > 2 || MiniMenu.method1005(MiniMenu.size - 1))) {
 				local22 = 2;
 			}
 			if (local22 == 2 && MiniMenu.size > 0 || Static2.anInt1940 == 1) {
@@ -971,10 +971,10 @@ public final class Static29 {
 				component.modelRotationSpeed = change.intArg1;
 			}
 		}
-		if (Static7.anInt6008 != 0) {
-			Static2.anInt1629 += 20;
-			if (Static2.anInt1629 >= 400) {
-				Static7.anInt6008 = 0;
+		if (Cross.type != 0) {
+			Cross.milliseconds += 20;
+			if (Cross.milliseconds >= 400) {
+				Cross.type = 0;
 			}
 		}
 		Static5.anInt4156++;
@@ -1030,7 +1030,7 @@ public final class Static29 {
 						Protocol.outboundBuffer.writeIntAlt3(Static5.aClass185_10.id);
 						Protocol.outboundBuffer.writeShortLE2(Static1.anInt91);
 					}
-				} else if ((Static3.anInt5400 == 1 || Static13.method1005(MiniMenu.size - 1)) && MiniMenu.size > 2) {
+				} else if ((Static3.anInt5400 == 1 || MiniMenu.method1005(MiniMenu.size - 1)) && MiniMenu.size > 2) {
 					Static31.method3783();
 				} else if (MiniMenu.size > 0) {
 					Static37.method4784();
@@ -1095,11 +1095,11 @@ public final class Static29 {
 												} else if (local1717 > 3) {
 													local1717 = 3;
 												}
-												Static24.method2945(PlayerList.self.movementQueueX[0] + Static5.originX, Static7.originZ + PlayerList.self.movementQueueZ[0], local1717);
+												Cheat.teleport(local1717, PlayerList.self.movementQueueX[0] + Static5.originX, Static7.originZ + PlayerList.self.movementQueueZ[0]);
 											}
 											if (LoginManager.staffModLevel > 0 && Keyboard.pressedKeys[82] && Keyboard.pressedKeys[81]) {
 												if (Static1.anInt528 != -1) {
-													Static24.method2945(Static1.anInt528 + Static5.originX, Static1.anInt420 + Static7.originZ, Player.level);
+													Cheat.teleport(Player.level, Static1.anInt528 + Static5.originX, Static1.anInt420 + Static7.originZ);
 												}
 												Static6.anInt4946 = 0;
 												Static2.anInt1767 = 0;
@@ -1110,10 +1110,10 @@ public final class Static29 {
 													Protocol.outboundBuffer.writeShortA(Static2.anInt1367);
 													Protocol.outboundBuffer.writeIntAlt3(Static1.anInt1053);
 													Protocol.outboundBuffer.writeShortLE2(Static1.anInt528 + Static5.originX);
-													Static6.anInt5177 = Mouse.clickX;
-													Static7.anInt6008 = 1;
-													Static2.anInt1629 = 0;
-													Static4.anInt3275 = Mouse.clickY;
+													Cross.x = Mouse.clickX;
+													Cross.type = 1;
+													Cross.milliseconds = 0;
+													Cross.y = Mouse.clickY;
 												}
 												Static2.anInt1767 = 0;
 											} else if (Static6.anInt4946 == 2) {
@@ -1121,20 +1121,20 @@ public final class Static29 {
 													Protocol.outboundBuffer.writeOpcode(85);
 													Protocol.outboundBuffer.writeShortLEA(Static5.originX + Static1.anInt528);
 													Protocol.outboundBuffer.writeShortLE2(Static7.originZ + Static1.anInt420);
-													Static7.anInt6008 = 1;
-													Static2.anInt1629 = 0;
-													Static4.anInt3275 = Mouse.clickY;
-													Static6.anInt5177 = Mouse.clickX;
+													Cross.type = 1;
+													Cross.milliseconds = 0;
+													Cross.y = Mouse.clickY;
+													Cross.x = Mouse.clickX;
 												}
 												Static6.anInt4946 = 0;
 											} else if (Static1.anInt528 != -1 && Static2.anInt1767 == 0 && Static6.anInt4946 == 0) {
 												@Pc(1797) int local1797 = (Static1.anInt528 << 1) + 1 - PlayerList.self.getSize() >> 1;
 												@Pc(1809) int local1809 = (Static1.anInt420 << 1) + 1 - PlayerList.self.getSize() >> 1;
 												Static37.method4661(local1797, 0, local1809);
-												Static6.anInt5177 = Mouse.clickX;
-												Static4.anInt3275 = Mouse.clickY;
-												Static7.anInt6008 = 1;
-												Static2.anInt1629 = 0;
+												Cross.x = Mouse.clickX;
+												Cross.y = Mouse.clickY;
+												Cross.type = 1;
+												Cross.milliseconds = 0;
 												PathFinder.findPath(PlayerList.self.movementQueueX[0], PlayerList.self.movementQueueZ[0], local1797, local1809, 0, 0, 0, 0, 0);
 											}
 											Static1.anInt528 = -1;

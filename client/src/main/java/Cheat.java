@@ -132,4 +132,11 @@ public final class Cheat {
 		Protocol.outboundBuffer.writeByte(command.length() - 1);
 		Protocol.outboundBuffer.writeString(command.substring(2));
 	}
+
+	@OriginalMember(owner = "client!mb", name = "a", descriptor = "(BIII)V")
+	public static void teleport(@OriginalArg(3) int level, @OriginalArg(1) int x, @OriginalArg(2) int z) {
+		@Pc(32) String command = "::tele " + level + "," + (x >> 6) + "," + (z >> 6) + "," + (x & 0x3F) + "," + (z & 0x3F);
+		System.out.println(command);
+		execute(command);
+	}
 }

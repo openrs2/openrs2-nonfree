@@ -160,9 +160,6 @@ public final class Static2 {
 	@OriginalMember(owner = "client!fa", name = "S", descriptor = "Lclient!ll;")
 	public static final LinkedList spotAnims = new LinkedList();
 
-	@OriginalMember(owner = "client!fa", name = "X", descriptor = "I")
-	public static int anInt1629 = 0;
-
 	@OriginalMember(owner = "client!fa", name = "bb", descriptor = "Z")
 	public static boolean aBoolean101 = false;
 
