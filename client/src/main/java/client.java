@@ -106,7 +106,7 @@ public final class client extends GameShell {
 	private static Cache masterCache;
 
 	@OriginalMember(owner = "client!an", name = "f", descriptor = "Lclient!wl;")
-	public static BufferedFile uid;
+	private static BufferedFile uid;
 
 	@OriginalMember(owner = "client!cj", name = "P", descriptor = "Lclient!mg;")
 	private static Js5MasterIndex js5MasterIndex;
