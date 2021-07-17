@@ -4,10 +4,10 @@ import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
 @OriginalClass("client!tc")
-public final class TextureOp22 extends TextureOp {
+public final class TextureOpInvert extends TextureOp {
 
 	@OriginalMember(owner = "client!tc", name = "<init>", descriptor = "()V")
-	public TextureOp22() {
+	public TextureOpInvert() {
 		super(1, false);
 	}
 
@@ -22,34 +22,34 @@ public final class TextureOp22 extends TextureOp {
 	@OriginalMember(owner = "client!tc", name = "a", descriptor = "(II)[I")
 	@Override
 	public final int[] getMonochromeOutput(@OriginalArg(1) int y) {
-		@Pc(11) int[] local11 = this.monochromeImageCache.get(y);
+		@Pc(11) int[] dest = this.monochromeImageCache.get(y);
 		if (this.monochromeImageCache.invalid) {
-			@Pc(24) int[] local24 = this.method4699(y, 0);
-			for (@Pc(26) int local26 = 0; local26 < Texture.width; local26++) {
-				local11[local26] = 4096 - local24[local26];
+			@Pc(24) int[] src = this.getChildMonochromeOutput(0, y);
+			for (@Pc(26) int x = 0; x < Texture.width; x++) {
+				dest[x] = 4096 - src[x];
 			}
 		}
-		return local11;
+		return dest;
 	}
 
 	@OriginalMember(owner = "client!tc", name = "b", descriptor = "(II)[[I")
 	@Override
 	public final int[][] getColorOutput(@OriginalArg(0) int y) {
-		@Pc(13) int[][] local13 = this.colorImageCache.get(y);
+		@Pc(13) int[][] dest = this.colorImageCache.get(y);
 		if (this.colorImageCache.invalid) {
-			@Pc(23) int[][] local23 = this.method4686(0, y);
-			@Pc(27) int[] local27 = local23[0];
-			@Pc(31) int[] local31 = local23[2];
-			@Pc(35) int[] local35 = local13[0];
-			@Pc(39) int[] local39 = local23[1];
-			@Pc(43) int[] local43 = local13[1];
-			@Pc(47) int[] local47 = local13[2];
-			for (@Pc(49) int local49 = 0; local49 < Texture.width; local49++) {
-				local35[local49] = 4096 - local27[local49];
-				local43[local49] = 4096 - local39[local49];
-				local47[local49] = 4096 - local31[local49];
+			@Pc(23) int[][] src = this.getChildColorOutput(0, y);
+			@Pc(27) int[] srcRed = src[0];
+			@Pc(31) int[] srcBlue = src[2];
+			@Pc(35) int[] destRed = dest[0];
+			@Pc(39) int[] srcGreen = src[1];
+			@Pc(43) int[] destGreen = dest[1];
+			@Pc(47) int[] destBlue = dest[2];
+			for (@Pc(49) int x = 0; x < Texture.width; x++) {
+				destRed[x] = 4096 - srcRed[x];
+				destGreen[x] = 4096 - srcGreen[x];
+				destBlue[x] = 4096 - srcBlue[x];
 			}
 		}
-		return local13;
+		return dest;
 	}
 }

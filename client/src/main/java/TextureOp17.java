@@ -94,25 +94,25 @@ public final class TextureOp17 extends TextureOp {
 	}
 
 	@OriginalMember(owner = "client!lj", name = "a", descriptor = "(IIII)V")
-	private void method2596(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(3) int arg2) {
-		@Pc(8) int local8 = arg1 >= arg2 ? arg1 : arg2;
-		local8 = local8 < arg0 ? arg0 : local8;
-		@Pc(34) int local34 = arg2 < arg1 ? arg2 : arg1;
-		local34 = local34 > arg0 ? arg0 : local34;
+	private void method2596(@OriginalArg(3) int r, @OriginalArg(1) int g, @OriginalArg(0) int b) {
+		@Pc(8) int local8 = g >= r ? g : r;
+		local8 = local8 < b ? b : local8;
+		@Pc(34) int local34 = r < g ? r : g;
+		local34 = local34 > b ? b : local34;
 		this.anInt3179 = (local8 + local34) / 2;
 		@Pc(62) int local62 = local8 - local34;
 		if (local62 <= 0) {
 			this.anInt3175 = 0;
 		} else {
-			@Pc(81) int local81 = (local8 - arg0 << 12) / local62;
-			@Pc(90) int local90 = (local8 - arg2 << 12) / local62;
-			@Pc(98) int local98 = (local8 - arg1 << 12) / local62;
-			if (local8 == arg2) {
-				this.anInt3175 = arg1 == local34 ? local81 + 20480 : 4096 - local98;
-			} else if (local8 == arg1) {
-				this.anInt3175 = arg0 == local34 ? local90 + 4096 : 12288 - local81;
+			@Pc(81) int local81 = (local8 - b << 12) / local62;
+			@Pc(90) int local90 = (local8 - r << 12) / local62;
+			@Pc(98) int local98 = (local8 - g << 12) / local62;
+			if (local8 == r) {
+				this.anInt3175 = g == local34 ? local81 + 20480 : 4096 - local98;
+			} else if (local8 == g) {
+				this.anInt3175 = b == local34 ? local90 + 4096 : 12288 - local81;
 			} else {
-				this.anInt3175 = local34 == arg2 ? local98 + 12288 : 20480 - local90;
+				this.anInt3175 = local34 == r ? local98 + 12288 : 20480 - local90;
 			}
 			this.anInt3175 /= 6;
 		}
@@ -126,17 +126,17 @@ public final class TextureOp17 extends TextureOp {
 	@OriginalMember(owner = "client!lj", name = "b", descriptor = "(II)[[I")
 	@Override
 	public final int[][] getColorOutput(@OriginalArg(0) int y) {
-		@Pc(18) int[][] local18 = this.colorImageCache.get(y);
+		@Pc(18) int[][] dest = this.colorImageCache.get(y);
 		if (this.colorImageCache.invalid) {
-			@Pc(28) int[][] local28 = this.method4686(0, y);
-			@Pc(32) int[] local32 = local28[0];
-			@Pc(36) int[] local36 = local28[1];
-			@Pc(40) int[] local40 = local18[0];
-			@Pc(44) int[] local44 = local28[2];
-			@Pc(48) int[] local48 = local18[1];
-			@Pc(52) int[] local52 = local18[2];
-			for (@Pc(54) int local54 = 0; local54 < Texture.width; local54++) {
-				this.method2596(local44[local54], local36[local54], local32[local54]);
+			@Pc(28) int[][] src = this.getChildColorOutput(0, y);
+			@Pc(32) int[] srcRed = src[0];
+			@Pc(36) int[] srcGreen = src[1];
+			@Pc(40) int[] destRed = dest[0];
+			@Pc(44) int[] srcBlue = src[2];
+			@Pc(48) int[] destGreen = dest[1];
+			@Pc(52) int[] destBlue = dest[2];
+			for (@Pc(54) int x = 0; x < Texture.width; x++) {
+				this.method2596(srcRed[x], srcGreen[x], srcBlue[x]);
 				this.anInt3179 += this.anInt3176;
 				this.anInt3186 += this.anInt3189;
 				if (this.anInt3186 < 0) {
@@ -159,11 +159,11 @@ public final class TextureOp17 extends TextureOp {
 					this.anInt3175 -= 4096;
 				}
 				this.method2594(this.anInt3175, this.anInt3179, this.anInt3186);
-				local40[local54] = this.anInt3172;
-				local48[local54] = this.anInt3174;
-				local52[local54] = this.anInt3187;
+				destRed[x] = this.anInt3172;
+				destGreen[x] = this.anInt3174;
+				destBlue[x] = this.anInt3187;
 			}
 		}
-		return local18;
+		return dest;
 	}
 }

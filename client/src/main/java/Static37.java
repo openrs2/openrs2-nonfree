@@ -15,20 +15,6 @@ public final class Static37 {
 		Static5.anInt3920 = -1;
 	}
 
-	@OriginalMember(owner = "client!wa", name = "p", descriptor = "(B)V")
-	public static void method4645() {
-		if (Static3.anIntArray223 != null && Static3.anIntArray222 != null) {
-			return;
-		}
-		Static3.anIntArray222 = new int[256];
-		Static3.anIntArray223 = new int[256];
-		for (@Pc(14) int local14 = 0; local14 < 256; local14++) {
-			@Pc(24) double local24 = (double) local14 / 255.0D * 6.283185307179586D;
-			Static3.anIntArray223[local14] = (int) (Math.sin(local24) * 4096.0D);
-			Static3.anIntArray222[local14] = (int) (Math.cos(local24) * 4096.0D);
-		}
-	}
-
 	@OriginalMember(owner = "client!wb", name = "a", descriptor = "(IIII)V")
 	public static void method4661(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(3) int arg2) {
 		if (arg1 == 0) {

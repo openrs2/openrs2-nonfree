@@ -46,12 +46,12 @@ public final class TextureOp28 extends TextureOp {
 	@OriginalMember(owner = "client!ac", name = "a", descriptor = "(II)[I")
 	@Override
 	public final int[] getMonochromeOutput(@OriginalArg(1) int y) {
-		@Pc(7) int[] local7 = this.monochromeImageCache.get(y);
+		@Pc(7) int[] dest = this.monochromeImageCache.get(y);
 		if (!this.monochromeImageCache.invalid) {
-			return local7;
+			return dest;
 		}
 		@Pc(23) int local23 = 0;
-		@Pc(28) int[][] local28 = this.monochromeImageCache.get();
+		@Pc(28) int[][] pixels = this.monochromeImageCache.get();
 		@Pc(30) int local30 = 0;
 		@Pc(32) int local32 = 0;
 		@Pc(34) int local34 = 0;
@@ -65,17 +65,17 @@ public final class TextureOp28 extends TextureOp {
 		@Pc(65) int local65 = Texture.width * this.anInt87 >> 12;
 		@Pc(72) int local72 = this.anInt82 * Texture.height >> 12;
 		if (local72 <= 1) {
-			return local28[y];
+			return pixels[y];
 		}
 		this.anInt79 = Texture.width / 8 * this.anInt81 >> 12;
 		@Pc(99) int local99 = Texture.width / local49 + 1;
-		@Pc(106) Random local106 = new Random((long) this.anInt74);
+		@Pc(106) Random random = new Random((long) this.anInt74);
 		@Pc(110) int[][] local110 = new int[local99][3];
 		@Pc(114) int[][] local114 = new int[local99][3];
 		while (true) {
 			while (true) {
-				@Pc(125) int local125 = local49 + RandomUtils.nextInt(local106, local65 - local49);
-				@Pc(135) int local135 = RandomUtils.nextInt(local106, local72 - local58) + local58;
+				@Pc(125) int local125 = local49 + RandomUtils.nextInt(random, local65 - local49);
+				@Pc(135) int local135 = RandomUtils.nextInt(random, local72 - local58) + local58;
 				@Pc(139) int local139 = local32 + local125;
 				if (local139 > Texture.width) {
 					local125 = Texture.width - local32;
@@ -129,7 +129,7 @@ public final class TextureOp28 extends TextureOp {
 											local320 = Math.max(local238, local310);
 											local322 = Texture.width;
 										}
-										this.method69(local153 - local299, local322 - local320, local34 + local320, local299, local106, local28);
+										this.method69(local153 - local299, local322 - local320, local34 + local320, local299, random, pixels);
 									}
 								}
 							}
@@ -149,9 +149,9 @@ public final class TextureOp28 extends TextureOp {
 					local42 = false;
 				}
 				if (local139 == Texture.width) {
-					this.method69(local135, local125, local32 + local30, local153, local106, local28);
+					this.method69(local135, local125, local32 + local30, local153, random, pixels);
 					if (local42) {
-						return local7;
+						return dest;
 					}
 					local38 = false;
 					@Pc(440) int local440 = local51 + 1;
@@ -162,7 +162,7 @@ public final class TextureOp28 extends TextureOp {
 					local40 = local440;
 					local442[0] = local32;
 					local442[2] = local135 + local153;
-					local30 = RandomUtils.nextInt(local106, Texture.width);
+					local30 = RandomUtils.nextInt(random, Texture.width);
 					@Pc(469) int[][] local469 = local114;
 					local36 = 0;
 					local23 = local30 - local34;
@@ -192,7 +192,7 @@ public final class TextureOp28 extends TextureOp {
 					local388[1] = local139;
 					local388[2] = local135 + local153;
 					local388[0] = local32;
-					this.method69(local135, local125, local30 + local32, local153, local106, local28);
+					this.method69(local135, local125, local30 + local32, local153, random, pixels);
 					local32 = local139;
 				}
 			}

@@ -481,7 +481,7 @@ public final class Static31 {
 												@Pc(1417) int local1417 = Static4.tileOverlays[level][local1360][local1369] & 0xFF;
 												if (local1417 != 0) {
 													@Pc(1428) FloType local1428 = FloTypeList.get(local1417 - 1);
-													if (local1428.texture != -1 && Static32.method3920(Static4.textureProvider.method444(local1428.texture))) {
+													if (local1428.texture != -1 && Static32.method3920(Static4.textureProvider.getMaterialType(local1428.texture))) {
 														SceneGraph.anIntArrayArray10[x][z] = (local1428.anInt3871 << 24) + local1428.anInt3874;
 														continue label770;
 													}
@@ -495,7 +495,7 @@ public final class Static31 {
 								@Pc(1482) byte local1482 = Static1.tileAngles[level][x][z];
 								@Pc(1488) FloType type = FloTypeList.get(overlay - 1);
 								if (GlRenderer.enabled && !underwater && SceneGraph.anIntArrayArray10 != null && level == 0) {
-									if (type.texture != -1 && Static32.method3920(Static4.textureProvider.method444(type.texture))) {
+									if (type.texture != -1 && Static32.method3920(Static4.textureProvider.getMaterialType(type.texture))) {
 										SceneGraph.anIntArrayArray10[x][z] = (type.anInt3871 << 24) + type.anInt3874;
 									} else {
 										label751:
@@ -505,7 +505,7 @@ public final class Static31 {
 													@Pc(1580) int local1580 = Static4.tileOverlays[level][local1516][local1529] & 0xFF;
 													if (local1580 != 0) {
 														@Pc(1590) FloType local1590 = FloTypeList.get(local1580 - 1);
-														if (local1590.texture != -1 && Static32.method3920(Static4.textureProvider.method444(local1590.texture))) {
+														if (local1590.texture != -1 && Static32.method3920(Static4.textureProvider.getMaterialType(local1590.texture))) {
 															SceneGraph.anIntArrayArray10[x][z] = local1590.anInt3874 + (local1590.anInt3871 << 24);
 															break label751;
 														}
@@ -1074,7 +1074,7 @@ public final class Static31 {
 					for (@Pc(324) int local324 = 0; local324 < SceneGraph.aClass4_Sub12ArrayArray2[local319].length; local324++) {
 						@Pc(336) Class4_Sub12 local336 = SceneGraph.aClass4_Sub12ArrayArray2[local319][local324];
 						@Pc(350) float local350 = 201.5F - (float) local319 * 50.0F - (local336.aBoolean162 ? 1.0F : 0.5F);
-						if (local336.anInt2356 != -1 && Static32.method3920(Static4.textureProvider.method444(local336.anInt2356)) && Preferences.highDetailWater) {
+						if (local336.anInt2356 != -1 && Static32.method3920(Static4.textureProvider.getMaterialType(local336.anInt2356)) && Preferences.highDetailWater) {
 							Static18.method4372(local336.anInt2351);
 						}
 						local336.method1867(SceneGraph.tiles, local350, false);

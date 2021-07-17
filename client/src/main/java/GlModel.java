@@ -394,8 +394,8 @@ public final class GlModel extends Model {
 			if (model.triangleTextures != null) {
 				local138 = model.triangleTextures[local128];
 				if (local138 != -1) {
-					local134 = Static4.textureProvider.method444(local138 & 0xFFFF);
-					local136 = Static4.textureProvider.method455(local138 & 0xFFFF);
+					local134 = Static4.textureProvider.getMaterialType(local138 & 0xFFFF);
+					local136 = Static4.textureProvider.getMaterialArg(local138 & 0xFFFF);
 				}
 			}
 			@Pc(185) boolean local185 = model.triangleAlpha != null && model.triangleAlpha[local128] != 0 || local138 != -1 && !Static4.textureProvider.method443(local138 & 0xFFFF);

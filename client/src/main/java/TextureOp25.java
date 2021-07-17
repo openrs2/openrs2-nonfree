@@ -29,55 +29,55 @@ public final class TextureOp25 extends TextureOp {
 	@OriginalMember(owner = "client!bl", name = "b", descriptor = "(II)[[I")
 	@Override
 	public final int[][] getColorOutput(@OriginalArg(0) int y) {
-		@Pc(12) int[][] local12 = this.colorImageCache.get(y);
+		@Pc(12) int[][] dest = this.colorImageCache.get(y);
 		if (this.colorImageCache.invalid) {
-			@Pc(23) int[][] local23 = this.method4686(0, y);
-			@Pc(27) int[] local27 = local23[0];
-			@Pc(31) int[] local31 = local23[1];
-			@Pc(35) int[] local35 = local23[2];
-			@Pc(39) int[] local39 = local12[1];
-			@Pc(43) int[] local43 = local12[0];
-			@Pc(47) int[] local47 = local12[2];
-			for (@Pc(49) int local49 = 0; local49 < Texture.width; local49++) {
-				@Pc(56) int local56 = local27[local49];
+			@Pc(23) int[][] src = this.getChildColorOutput(0, y);
+			@Pc(27) int[] srcRed = src[0];
+			@Pc(31) int[] srcGreen = src[1];
+			@Pc(35) int[] srcBlue = src[2];
+			@Pc(39) int[] destGreen = dest[1];
+			@Pc(43) int[] destRed = dest[0];
+			@Pc(47) int[] destBlue = dest[2];
+			for (@Pc(49) int x = 0; x < Texture.width; x++) {
+				@Pc(56) int local56 = srcRed[x];
 				@Pc(64) int local64 = local56 - this.anIntArray40[0];
 				if (local64 < 0) {
 					local64 = -local64;
 				}
 				if (local64 > this.anInt371) {
-					local43[local49] = local56;
-					local39[local49] = local31[local49];
-					local47[local49] = local35[local49];
+					destRed[x] = local56;
+					destGreen[x] = srcGreen[x];
+					destBlue[x] = srcBlue[x];
 				} else {
-					@Pc(98) int local98 = local31[local49];
+					@Pc(98) int local98 = srcGreen[x];
 					@Pc(106) int local106 = local98 - this.anIntArray40[1];
 					if (local106 < 0) {
 						local106 = -local106;
 					}
 					if (local106 <= this.anInt371) {
-						@Pc(141) int local141 = local35[local49];
+						@Pc(141) int local141 = srcBlue[x];
 						@Pc(149) int local149 = local141 - this.anIntArray40[2];
 						if (local149 < 0) {
 							local149 = -local149;
 						}
 						if (this.anInt371 < local149) {
-							local43[local49] = local56;
-							local39[local49] = local98;
-							local47[local49] = local141;
+							destRed[x] = local56;
+							destGreen[x] = local98;
+							destBlue[x] = local141;
 						} else {
-							local43[local49] = local56 * this.anInt374 >> 12;
-							local39[local49] = this.anInt373 * local98 >> 12;
-							local47[local49] = local141 * this.anInt378 >> 12;
+							destRed[x] = local56 * this.anInt374 >> 12;
+							destGreen[x] = this.anInt373 * local98 >> 12;
+							destBlue[x] = local141 * this.anInt378 >> 12;
 						}
 					} else {
-						local43[local49] = local56;
-						local39[local49] = local98;
-						local47[local49] = local35[local49];
+						destRed[x] = local56;
+						destGreen[x] = local98;
+						destBlue[x] = srcBlue[x];
 					}
 				}
 			}
 		}
-		return local12;
+		return dest;
 	}
 
 	@OriginalMember(owner = "client!bl", name = "a", descriptor = "(BLclient!fd;I)V")

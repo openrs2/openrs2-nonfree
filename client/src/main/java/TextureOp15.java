@@ -47,17 +47,17 @@ public final class TextureOp15 extends TextureOp {
 	@OriginalMember(owner = "client!rh", name = "a", descriptor = "(II)[I")
 	@Override
 	public final int[] getMonochromeOutput(@OriginalArg(1) int y) {
-		@Pc(17) int[] local17 = this.monochromeImageCache.get(y);
+		@Pc(17) int[] dest = this.monochromeImageCache.get(y);
 		if (this.monochromeImageCache.invalid) {
 			@Pc(30) int local30 = Texture.heightFractions[y] * this.anInt4557 + 2048;
 			@Pc(34) int local34 = local30 >> 12;
 			@Pc(38) int local38 = local34 + 1;
-			for (@Pc(40) int local40 = 0; local40 < Texture.width; local40++) {
+			for (@Pc(40) int x = 0; x < Texture.width; x++) {
 				Static5.anInt5205 = Integer.MAX_VALUE;
 				Static4.anInt2979 = Integer.MAX_VALUE;
 				Static4.anInt2464 = Integer.MAX_VALUE;
 				Static5.anInt4260 = Integer.MAX_VALUE;
-				@Pc(65) int local65 = Texture.widthFractions[local40] * this.anInt4551 + 2048;
+				@Pc(65) int local65 = Texture.widthFractions[x] * this.anInt4551 + 2048;
 				@Pc(69) int local69 = local65 >> 12;
 				@Pc(73) int local73 = local69 + 1;
 				for (@Pc(77) int local77 = local34 - 1; local77 <= local38; local77++) {
@@ -107,28 +107,28 @@ public final class TextureOp15 extends TextureOp {
 				}
 				@Pc(390) int local390 = this.anInt4553;
 				if (local390 == 0) {
-					local17[local40] = Static5.anInt4260;
+					dest[x] = Static5.anInt4260;
 				} else if (local390 == 1) {
-					local17[local40] = Static4.anInt2464;
+					dest[x] = Static4.anInt2464;
 				} else if (local390 == 3) {
-					local17[local40] = Static4.anInt2979;
+					dest[x] = Static4.anInt2979;
 				} else if (local390 == 4) {
-					local17[local40] = Static5.anInt5205;
+					dest[x] = Static5.anInt5205;
 				} else if (local390 == 2) {
-					local17[local40] = Static4.anInt2464 - Static5.anInt4260;
+					dest[x] = Static4.anInt2464 - Static5.anInt4260;
 				}
 			}
 		}
-		return local17;
+		return dest;
 	}
 
 	@OriginalMember(owner = "client!rh", name = "f", descriptor = "(I)V")
 	private void method3715() {
-		@Pc(16) Random local16 = new Random((long) this.anInt4549);
+		@Pc(16) Random random = new Random((long) this.anInt4549);
 		this.aShortArray81 = new short[512];
 		if (this.anInt4552 > 0) {
 			for (@Pc(27) int local27 = 0; local27 < 512; local27++) {
-				this.aShortArray81[local27] = (short) RandomUtils.nextInt(local16, this.anInt4552);
+				this.aShortArray81[local27] = (short) RandomUtils.nextInt(random, this.anInt4552);
 			}
 		}
 	}

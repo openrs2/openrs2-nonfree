@@ -6,7 +6,7 @@ import org.openrs2.deob.annotation.OriginalMember;
 public interface TextureProvider {
 
 	@OriginalMember(owner = "client!kj", name = "a", descriptor = "(IFIIIZ)[I")
-	int[] method415(@OriginalArg(2) int id, @OriginalArg(0) int arg0, @OriginalArg(1) float arg1, @OriginalArg(3) int arg3);
+	int[] getPixels(@OriginalArg(2) int id, @OriginalArg(3) int width, @OriginalArg(0) int height, @OriginalArg(1) float brightness);
 
 	@OriginalMember(owner = "client!kj", name = "a", descriptor = "(II)Z")
 	boolean isTextureReady(@OriginalArg(0) int id);

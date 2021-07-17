@@ -17,10 +17,10 @@ public final class Material {
 	public byte aByte7;
 
 	@OriginalMember(owner = "client!mi", name = "m", descriptor = "B")
-	public byte materialId;
+	public byte type;
 
 	@OriginalMember(owner = "client!mi", name = "n", descriptor = "B")
-	public byte materialArg;
+	public byte arg;
 
 	@OriginalMember(owner = "client!mi", name = "p", descriptor = "B")
 	public byte aByte10;
@@ -29,7 +29,7 @@ public final class Material {
 	public short averageColor;
 
 	@OriginalMember(owner = "client!mi", name = "r", descriptor = "Z")
-	public boolean aBoolean236;
+	public boolean columnMajor;
 
 	@OriginalMember(owner = "client!mi", name = "s", descriptor = "Z")
 	public boolean aBoolean237;

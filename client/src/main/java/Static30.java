@@ -840,7 +840,7 @@ public final class Static30 {
 		GlRenderer.disableDepthMask();
 		for (@Pc(19) int local19 = 0; local19 < SceneGraph.aClass4_Sub12ArrayArray1[0].length; local19++) {
 			@Pc(31) Class4_Sub12 local31 = SceneGraph.aClass4_Sub12ArrayArray1[0][local19];
-			if (local31.anInt2356 >= 0 && Static32.method3920(Static4.textureProvider.method444(local31.anInt2356))) {
+			if (local31.anInt2356 >= 0 && Static32.method3920(Static4.textureProvider.getMaterialType(local31.anInt2356))) {
 				gl.glColor4fv(Static16.method1553(local31.anInt2351), 0);
 				@Pc(58) float local58 = 201.5F - (local31.aBoolean162 ? 1.0F : 0.5F);
 				local31.method1867(SceneGraph.tiles, local58, true);

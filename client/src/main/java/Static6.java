@@ -104,9 +104,6 @@ public final class Static6 {
 	@OriginalMember(owner = "client!rf", name = "b", descriptor = "Z")
 	public static boolean aBoolean310 = false;
 
-	@OriginalMember(owner = "client!rf", name = "d", descriptor = "I")
-	public static int anInt4471 = 0;
-
 	@OriginalMember(owner = "client!rg", name = "Y", descriptor = "[I")
 	public static final int[] anIntArray483 = new int[14];
 

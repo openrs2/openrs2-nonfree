@@ -6,6 +6,26 @@ import org.openrs2.deob.annotation.Pc;
 @OriginalClass("client!jo")
 public abstract class TextureOp extends Node {
 
+	@OriginalMember(owner = "client!ja", name = "g", descriptor = "[I")
+	public static int[] COSINE;
+
+	@OriginalMember(owner = "client!jb", name = "j", descriptor = "[I")
+	public static int[] SINE;
+
+	@OriginalMember(owner = "client!wa", name = "p", descriptor = "(B)V")
+	public static void createTrigonometryTables() {
+		if (SINE != null && COSINE != null) {
+			return;
+		}
+		COSINE = new int[256];
+		SINE = new int[256];
+		for (@Pc(14) int i = 0; i < 256; i++) {
+			@Pc(24) double radians = (double) i / 255.0D * 6.283185307179586D;
+			SINE[i] = (int) (Math.sin(radians) * 4096.0D);
+			COSINE[i] = (int) (Math.cos(radians) * 4096.0D);
+		}
+	}
+
 	@OriginalMember(owner = "client!qf", name = "a", descriptor = "(Lclient!fd;I)Lclient!jo;")
 	public static TextureOp decode(@OriginalArg(0) Buffer buffer) {
 		buffer.readUnsignedByte();
@@ -24,33 +44,33 @@ public abstract class TextureOp extends Node {
 	@OriginalMember(owner = "client!bh", name = "a", descriptor = "(II)Lclient!jo;")
 	private static TextureOp create(@OriginalArg(1) int type) {
 		if (type == 0) {
-			return new TextureOp0();
+			return new TextureOpMonochromeFill();
 		} else if (type == 1) {
-			return new TextureOp1();
+			return new TextureOpColorFill();
 		} else if (type == 2) {
-			return new TextureOp2();
+			return new TextureOpHorizontalGradient();
 		} else if (type == 3) {
-			return new TextureOp3();
+			return new TextureOpVerticalGradient();
 		} else if (type == 4) {
 			return new TextureOp4();
 		} else if (type == 5) {
 			return new TextureOp5();
 		} else if (type == 6) {
-			return new TextureOp6();
+			return new TextureOpClamp();
 		} else if (type == 7) {
-			return new TextureOp7();
+			return new TextureOpCombine();
 		} else if (type == 8) {
-			return new TextureOp8();
+			return new TextureOpCurve();
 		} else if (type == 9) {
-			return new TextureOp9();
+			return new TextureOpFlip();
 		} else if (type == 10) {
-			return new TextureOp10();
+			return new TextureOpColorGradient();
 		} else if (type == 11) {
 			return new TextureOp11();
 		} else if (type == 12) {
 			return new TextureOp12();
 		} else if (type == 13) {
-			return new TextureOp13();
+			return new TextureOpNoise();
 		} else if (type == 14) {
 			return new TextureOp14();
 		} else if (type == 15) {
@@ -60,23 +80,23 @@ public abstract class TextureOp extends Node {
 		} else if (type == 17) {
 			return new TextureOp17();
 		} else if (type == 18) {
-			return new TextureOp18();
+			return new TextureOpTiledSprite();
 		} else if (type == 19) {
 			return new TextureOp19();
 		} else if (type == 20) {
-			return new TextureOp20();
+			return new TextureOpTile();
 		} else if (type == 21) {
-			return new TextureOp21();
+			return new TextureOpInterpolate();
 		} else if (type == 22) {
-			return new TextureOp22();
+			return new TextureOpInvert();
 		} else if (type == 23) {
 			return new TextureOp23();
 		} else if (type == 24) {
-			return new TextureOp24();
+			return new TextureOpMonochrome();
 		} else if (type == 25) {
 			return new TextureOp25();
 		} else if (type == 26) {
-			return new TextureOp26();
+			return new TextureOpBinary();
 		} else if (type == 27) {
 			return new TextureOp27();
 		} else if (type == 28) {
@@ -84,7 +104,7 @@ public abstract class TextureOp extends Node {
 		} else if (type == 29) {
 			return new TextureOp29();
 		} else if (type == 30) {
-			return new TextureOp30();
+			return new TextureOpRange();
 		} else if (type == 31) {
 			return new TextureOp31();
 		} else if (type == 32) {
@@ -96,13 +116,13 @@ public abstract class TextureOp extends Node {
 		} else if (type == 35) {
 			return new TextureOp35();
 		} else if (type == 36) {
-			return new TextureOp36();
+			return new TextureOpTexture();
 		} else if (type == 37) {
 			return new TextureOp37();
 		} else if (type == 38) {
 			return new TextureOp38();
 		} else if (type == 39) {
-			return new TextureOp39();
+			return new TextureOpSprite();
 		} else {
 			return null;
 		}
@@ -115,7 +135,7 @@ public abstract class TextureOp extends Node {
 	protected MonochromeImageCache monochromeImageCache;
 
 	@OriginalMember(owner = "client!jo", name = "R", descriptor = "I")
-	public int imageCacheCapacity;
+	private int imageCacheCapacity;
 
 	@OriginalMember(owner = "client!jo", name = "y", descriptor = "Z")
 	public boolean monochrome;
@@ -130,16 +150,16 @@ public abstract class TextureOp extends Node {
 	}
 
 	@OriginalMember(owner = "client!jo", name = "a", descriptor = "(IIB)[[I")
-	protected final int[][] method4686(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
-		if (!this.childOps[arg0].monochrome) {
-			return this.childOps[arg0].getColorOutput(arg1);
+	protected final int[][] getChildColorOutput(@OriginalArg(0) int index, @OriginalArg(1) int y) {
+		if (!this.childOps[index].monochrome) {
+			return this.childOps[index].getColorOutput(y);
 		}
-		@Pc(27) int[][] local27 = new int[3][];
-		@Pc(35) int[] local35 = this.childOps[arg0].getMonochromeOutput(arg1);
-		local27[0] = local35;
-		local27[2] = local35;
-		local27[1] = local35;
-		return local27;
+		@Pc(27) int[][] colorRow = new int[3][];
+		@Pc(35) int[] monochromeRow = this.childOps[index].getMonochromeOutput(y);
+		colorRow[0] = monochromeRow;
+		colorRow[2] = monochromeRow;
+		colorRow[1] = monochromeRow;
+		return colorRow;
 	}
 
 	@OriginalMember(owner = "client!jo", name = "a", descriptor = "(BLclient!fd;I)V")
@@ -188,8 +208,8 @@ public abstract class TextureOp extends Node {
 	}
 
 	@OriginalMember(owner = "client!jo", name = "b", descriptor = "(III)[I")
-	protected final int[] method4699(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1) {
-		return this.childOps[arg1].monochrome ? this.childOps[arg1].getMonochromeOutput(arg0) : this.childOps[arg1].getColorOutput(arg0)[0];
+	protected final int[] getChildMonochromeOutput(@OriginalArg(2) int index, @OriginalArg(1) int y) {
+		return this.childOps[index].monochrome ? this.childOps[index].getMonochromeOutput(y) : this.childOps[index].getColorOutput(y)[0];
 	}
 
 	@OriginalMember(owner = "client!jo", name = "e", descriptor = "(B)V")

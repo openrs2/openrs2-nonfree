@@ -17,38 +17,38 @@ public final class TextureOp29 extends TextureOp {
 	@OriginalMember(owner = "client!km", name = "a", descriptor = "(II)[I")
 	@Override
 	public final int[] getMonochromeOutput(@OriginalArg(1) int y) {
-		@Pc(9) int[] local9 = this.monochromeImageCache.get(y);
+		@Pc(9) int[] dest = this.monochromeImageCache.get(y);
 		if (this.monochromeImageCache.invalid) {
 			this.method2391(this.monochromeImageCache.get());
 		}
-		return local9;
+		return dest;
 	}
 
 	@OriginalMember(owner = "client!km", name = "b", descriptor = "(II)[[I")
 	@Override
 	public final int[][] getColorOutput(@OriginalArg(0) int y) {
-		@Pc(15) int[][] local15 = this.colorImageCache.get(y);
+		@Pc(15) int[][] dest = this.colorImageCache.get(y);
 		if (this.colorImageCache.invalid) {
-			@Pc(26) int local26 = Texture.width;
-			@Pc(28) int local28 = Texture.height;
-			@Pc(32) int[][] local32 = new int[local28][local26];
+			@Pc(26) int width = Texture.width;
+			@Pc(28) int height = Texture.height;
+			@Pc(32) int[][] local32 = new int[height][width];
 			@Pc(37) int[][][] local37 = this.colorImageCache.get();
 			this.method2391(local32);
-			for (@Pc(43) int local43 = 0; local43 < Texture.height; local43++) {
-				@Pc(50) int[][] local50 = local37[local43];
+			for (@Pc(43) int y0 = 0; y0 < Texture.height; y0++) {
+				@Pc(50) int[][] local50 = local37[y0];
 				@Pc(54) int[] local54 = local50[1];
 				@Pc(58) int[] local58 = local50[2];
-				@Pc(62) int[] local62 = local32[local43];
+				@Pc(62) int[] local62 = local32[y0];
 				@Pc(66) int[] local66 = local50[0];
-				for (@Pc(68) int local68 = 0; local68 < Texture.width; local68++) {
-					@Pc(79) int local79 = local62[local68];
-					local58[local68] = (local79 & 0xFF) << 4;
-					local54[local68] = local79 >> 4 & 0xFF0;
-					local66[local68] = local79 >> 12 & 0xFF0;
+				for (@Pc(68) int x = 0; x < Texture.width; x++) {
+					@Pc(79) int local79 = local62[x];
+					local58[x] = (local79 & 0xFF) << 4;
+					local54[x] = local79 >> 4 & 0xFF0;
+					local66[x] = local79 >> 12 & 0xFF0;
 				}
 			}
 		}
-		return local15;
+		return dest;
 	}
 
 	@OriginalMember(owner = "client!km", name = "a", descriptor = "(BLclient!fd;I)V")
@@ -74,10 +74,10 @@ public final class TextureOp29 extends TextureOp {
 	}
 
 	@OriginalMember(owner = "client!km", name = "a", descriptor = "(B[[I)V")
-	private void method2391(@OriginalArg(1) int[][] arg0) {
-		@Pc(15) int local15 = Texture.width;
-		@Pc(17) int local17 = Texture.height;
-		Static35.method4335(arg0);
+	private void method2391(@OriginalArg(1) int[][] pixels) {
+		@Pc(15) int width = Texture.width;
+		@Pc(17) int height = Texture.height;
+		Static35.method4335(pixels);
 		Static18.method4374(Texture.heightMask, Texture.widthMask);
 		if (this.ops == null) {
 			return;
@@ -88,12 +88,12 @@ public final class TextureOp29 extends TextureOp {
 			@Pc(52) int local52 = op.anInt2463;
 			if (local52 < 0) {
 				if (local49 >= 0) {
-					op.method1938(local15, local17);
+					op.method1938(width, height);
 				}
 			} else if (local49 < 0) {
-				op.method1935(local15, local17);
+				op.method1935(width, height);
 			} else {
-				op.method1934(local15, local17);
+				op.method1934(width, height);
 			}
 		}
 	}

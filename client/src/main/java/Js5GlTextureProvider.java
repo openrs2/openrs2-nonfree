@@ -75,15 +75,15 @@ public final class Js5GlTextureProvider extends Js5TextureProvider implements Gl
 
 	@OriginalMember(owner = "client!c", name = "h", descriptor = "(II)I")
 	@Override
-	public final int method455(@OriginalArg(0) int id) {
-		return this.getMaterial(id).materialArg & 0xFF;
+	public final int getMaterialArg(@OriginalArg(0) int id) {
+		return this.getMaterial(id).arg & 0xFF;
 	}
 
 	@OriginalMember(owner = "client!c", name = "c", descriptor = "(IB)[I")
 	@Override
-	public final int[] method449(@OriginalArg(0) int id) {
+	public final int[] getPixels(@OriginalArg(0) int id) {
 		@Pc(8) GlTexture texture = this.getGlTexture(id);
-		return texture == null ? null : texture.method4071(this, this.spritesArchive, this.lowDetail || this.getMaterial(id).lowDetail);
+		return texture == null ? null : texture.getPixels(this, this.spritesArchive, this.lowDetail || this.getMaterial(id).lowDetail);
 	}
 
 	@OriginalMember(owner = "client!c", name = "j", descriptor = "(II)Lclient!so;")
@@ -107,7 +107,7 @@ public final class Js5GlTextureProvider extends Js5TextureProvider implements Gl
 	public final SoftwareSprite getSprite(@OriginalArg(4) int id, @OriginalArg(0) boolean alpha, @OriginalArg(1) float brightness, @OriginalArg(3) int size) {
 		@Pc(8) GlTexture texture = this.getGlTexture(id);
 		if (texture != null && texture.isReady(this, this.spritesArchive)) {
-			return alpha ? texture.texture.getAlphaSprite(size, this, this.spritesArchive, brightness, size) : texture.texture.getSprite(brightness, size, this, this.spritesArchive, size);
+			return alpha ? texture.texture.getAlphaSprite(size, size, brightness, this, this.spritesArchive) : texture.texture.getSprite(size, size, brightness, this, this.spritesArchive);
 		} else {
 			return null;
 		}
@@ -160,12 +160,12 @@ public final class Js5GlTextureProvider extends Js5TextureProvider implements Gl
 
 	@OriginalMember(owner = "client!c", name = "a", descriptor = "(BII)V")
 	@Override
-	public final void method454(@OriginalArg(2) int id, @OriginalArg(1) int arg0) {
-		MaterialManager.setMaterial(this.getMaterial(id).materialId & 0xFF, this.getMaterial(id).materialArg & 0xFF);
+	public final void method454(@OriginalArg(2) int id, @OriginalArg(1) int size) {
+		MaterialManager.setMaterial(this.getMaterial(id).type & 0xFF, this.getMaterial(id).arg & 0xFF);
 		@Pc(29) boolean local29 = false;
 		@Pc(34) GlTexture texture = this.getGlTexture(id);
 		if (texture != null) {
-			local29 = texture.method4077(this, this.spritesArchive, arg0);
+			local29 = texture.method4077(this, this.spritesArchive, size);
 		}
 		if (!local29) {
 			@Pc(50) GlSolidColorTexture solidColorTexture = this.getSolidColorTexture(id);
@@ -175,15 +175,15 @@ public final class Js5GlTextureProvider extends Js5TextureProvider implements Gl
 
 	@OriginalMember(owner = "client!c", name = "a", descriptor = "(BI)I")
 	@Override
-	public final int method447(@OriginalArg(1) int arg0) {
-		return this.getMaterial(arg0).aByte10 & 0xFF;
+	public final int method447(@OriginalArg(1) int id) {
+		return this.getMaterial(id).aByte10 & 0xFF;
 	}
 
 	@OriginalMember(owner = "client!c", name = "c", descriptor = "(IZ)Lclient!ln;")
 	@Override
 	protected final Texture getTexture(@OriginalArg(0) int id) {
-		@Pc(14) GlTexture local14 = this.getGlTexture(id);
-		return local14 == null ? null : local14.texture;
+		@Pc(14) GlTexture texture = this.getGlTexture(id);
+		return texture == null ? null : texture.texture;
 	}
 
 	@OriginalMember(owner = "client!c", name = "k", descriptor = "(II)Lclient!qd;")
@@ -206,19 +206,19 @@ public final class Js5GlTextureProvider extends Js5TextureProvider implements Gl
 
 	@OriginalMember(owner = "client!c", name = "a", descriptor = "(FII)[I")
 	@Override
-	public final int[] method445(@OriginalArg(2) int id, @OriginalArg(0) float arg0) {
+	public final int[] method445(@OriginalArg(2) int id, @OriginalArg(0) float brightness) {
 		@Pc(4) GlTexture texture = this.getGlTexture(id);
 		if (texture == null) {
 			return null;
 		} else {
 			texture.aBoolean344 = true;
-			return texture.method4073(this, this.spritesArchive, arg0, this.lowDetail || this.getMaterial(id).lowDetail);
+			return texture.method4073(this, this.spritesArchive, brightness, this.lowDetail || this.getMaterial(id).lowDetail);
 		}
 	}
 
 	@OriginalMember(owner = "client!c", name = "d", descriptor = "(II)I")
 	@Override
-	public final int method444(@OriginalArg(0) int id) {
-		return this.getMaterial(id).materialId & 0xFF;
+	public final int getMaterialType(@OriginalArg(0) int id) {
+		return this.getMaterial(id).type & 0xFF;
 	}
 }

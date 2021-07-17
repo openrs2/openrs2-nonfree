@@ -4,25 +4,25 @@ import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
 @OriginalClass("client!hk")
-public final class TextureOp1 extends TextureOp {
+public final class TextureOpColorFill extends TextureOp {
 
 	@OriginalMember(owner = "client!hk", name = "W", descriptor = "I")
-	private int anInt2225;
+	private int blue;
 
 	@OriginalMember(owner = "client!hk", name = "Y", descriptor = "I")
-	private int anInt2227;
+	private int green;
 
 	@OriginalMember(owner = "client!hk", name = "bb", descriptor = "I")
-	private int anInt2229;
+	private int red;
 
 	@OriginalMember(owner = "client!hk", name = "<init>", descriptor = "(I)V")
-	private TextureOp1(@OriginalArg(0) int arg0) {
+	private TextureOpColorFill(@OriginalArg(0) int color) {
 		super(0, false);
-		this.method1774(arg0);
+		this.setColor(color);
 	}
 
 	@OriginalMember(owner = "client!hk", name = "<init>", descriptor = "()V")
-	public TextureOp1() {
+	public TextureOpColorFill() {
 		this(0);
 	}
 
@@ -30,31 +30,31 @@ public final class TextureOp1 extends TextureOp {
 	@Override
 	public final void decode(@OriginalArg(1) Buffer buffer, @OriginalArg(2) int code) {
 		if (code == 0) {
-			this.method1774(buffer.readUnsignedMedium());
+			this.setColor(buffer.readUnsignedMedium());
 		}
 	}
 
 	@OriginalMember(owner = "client!hk", name = "b", descriptor = "(II)[[I")
 	@Override
 	public final int[][] getColorOutput(@OriginalArg(0) int y) {
-		@Pc(16) int[][] local16 = this.colorImageCache.get(y);
+		@Pc(16) int[][] dest = this.colorImageCache.get(y);
 		if (this.colorImageCache.invalid) {
-			@Pc(24) int[] local24 = local16[1];
-			@Pc(28) int[] local28 = local16[0];
-			@Pc(32) int[] local32 = local16[2];
-			for (@Pc(34) int local34 = 0; local34 < Texture.width; local34++) {
-				local28[local34] = this.anInt2229;
-				local24[local34] = this.anInt2227;
-				local32[local34] = this.anInt2225;
+			@Pc(24) int[] green = dest[1];
+			@Pc(28) int[] red = dest[0];
+			@Pc(32) int[] blue = dest[2];
+			for (@Pc(34) int x = 0; x < Texture.width; x++) {
+				red[x] = this.red;
+				green[x] = this.green;
+				blue[x] = this.blue;
 			}
 		}
-		return local16;
+		return dest;
 	}
 
 	@OriginalMember(owner = "client!hk", name = "c", descriptor = "(II)V")
-	private void method1774(@OriginalArg(1) int arg0) {
-		this.anInt2227 = arg0 >> 4 & 0xFF0;
-		this.anInt2229 = arg0 >> 12 & 0xFF0;
-		this.anInt2225 = (arg0 & 0xFF) << 4;
+	private void setColor(@OriginalArg(1) int color) {
+		this.green = color >> 4 & 0xFF0;
+		this.red = color >> 12 & 0xFF0;
+		this.blue = (color & 0xFF) << 4;
 	}
 }

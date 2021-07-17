@@ -23,12 +23,12 @@ public final class TextureOp12 extends TextureOp {
 	@OriginalMember(owner = "client!vb", name = "a", descriptor = "(II)[I")
 	@Override
 	public final int[] getMonochromeOutput(@OriginalArg(1) int y) {
-		@Pc(17) int[] local17 = this.monochromeImageCache.get(y);
+		@Pc(17) int[] dest = this.monochromeImageCache.get(y);
 		if (this.monochromeImageCache.invalid) {
 			@Pc(26) int local26 = Texture.heightFractions[y];
 			@Pc(32) int local32 = local26 - 2048 >> 1;
-			for (@Pc(34) int local34 = 0; local34 < Texture.width; local34++) {
-				@Pc(41) int local41 = Texture.widthFractions[local34];
+			for (@Pc(34) int x = 0; x < Texture.width; x++) {
+				@Pc(41) int local41 = Texture.widthFractions[x];
 				@Pc(47) int local47 = local41 - 2048 >> 1;
 				@Pc(79) int local79;
 				if (this.anInt5471 == 0) {
@@ -40,7 +40,7 @@ public final class TextureOp12 extends TextureOp {
 				}
 				@Pc(95) int local95 = local79 - (local79 & 0xFFFFF000);
 				if (this.anInt5476 == 0) {
-					local95 = Static3.anIntArray223[local95 >> 4 & 0xFF] + 4096 >> 1;
+					local95 = TextureOp.SINE[local95 >> 4 & 0xFF] + 4096 >> 1;
 				} else if (this.anInt5476 == 2) {
 					@Pc(118) int local118 = local95 - 2048;
 					if (local118 < 0) {
@@ -48,16 +48,16 @@ public final class TextureOp12 extends TextureOp {
 					}
 					local95 = 2048 - local118 << 1;
 				}
-				local17[local34] = local95;
+				dest[x] = local95;
 			}
 		}
-		return local17;
+		return dest;
 	}
 
 	@OriginalMember(owner = "client!vb", name = "e", descriptor = "(B)V")
 	@Override
 	public final void postDecode() {
-		Static37.method4645();
+		TextureOp.createTrigonometryTables();
 	}
 
 	@OriginalMember(owner = "client!vb", name = "a", descriptor = "(BLclient!fd;I)V")

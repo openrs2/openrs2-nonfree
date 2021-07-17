@@ -253,23 +253,23 @@ public final class Static28 {
 	}
 
 	@OriginalMember(owner = "client!pa", name = "a", descriptor = "(II)[B")
-	public static byte[] method3321(@OriginalArg(0) int arg0) {
-		@Pc(18) ByteArraySecondaryNode local18 = (ByteArraySecondaryNode) Static7.aClass40_15.get((long) arg0);
+	public static byte[] method3321(@OriginalArg(0) int seed) {
+		@Pc(18) ByteArraySecondaryNode local18 = (ByteArraySecondaryNode) Static7.aClass40_15.get(seed);
 		if (local18 == null) {
 			@Pc(24) byte[] local24 = new byte[512];
-			@Pc(30) Random local30 = new Random((long) arg0);
-			for (@Pc(32) int local32 = 0; local32 < 255; local32++) {
-				local24[local32] = (byte) local32;
+			@Pc(30) Random random = new Random(seed);
+			for (@Pc(32) int i = 0; i < 255; i++) {
+				local24[i] = (byte) i;
 			}
 			for (@Pc(45) int local45 = 0; local45 < 255; local45++) {
 				@Pc(55) int local55 = 255 - local45;
-				@Pc(60) int local60 = RandomUtils.nextInt(local30, local55);
+				@Pc(60) int local60 = RandomUtils.nextInt(random, local55);
 				@Pc(64) byte local64 = local24[local60];
 				local24[local60] = local24[local55];
 				local24[local55] = local24[511 - local45] = local64;
 			}
 			local18 = new ByteArraySecondaryNode(local24);
-			Static7.aClass40_15.put((long) arg0, local18);
+			Static7.aClass40_15.put(seed, local18);
 		}
 		return local18.value;
 	}

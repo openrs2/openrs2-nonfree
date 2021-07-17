@@ -4,69 +4,69 @@ import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
 @OriginalClass("client!sc")
-public final class TextureOp30 extends TextureOp {
+public final class TextureOpRange extends TextureOp {
 
 	@OriginalMember(owner = "client!sc", name = "Y", descriptor = "I")
-	private int anInt4748 = 2048;
+	private int range = 2048;
 
 	@OriginalMember(owner = "client!sc", name = "W", descriptor = "I")
-	private int anInt4746 = 1024;
+	private int minValue = 1024;
 
 	@OriginalMember(owner = "client!sc", name = "ib", descriptor = "I")
-	private int anInt4756 = 3072;
+	private int maxValue = 3072;
 
 	@OriginalMember(owner = "client!sc", name = "<init>", descriptor = "()V")
-	public TextureOp30() {
+	public TextureOpRange() {
 		super(1, false);
 	}
 
 	@OriginalMember(owner = "client!sc", name = "a", descriptor = "(II)[I")
 	@Override
 	public final int[] getMonochromeOutput(@OriginalArg(1) int y) {
-		@Pc(7) int[] local7 = this.monochromeImageCache.get(y);
+		@Pc(7) int[] dest = this.monochromeImageCache.get(y);
 		if (this.monochromeImageCache.invalid) {
-			@Pc(20) int[] local20 = this.method4699(y, 0);
-			for (@Pc(22) int local22 = 0; local22 < Texture.width; local22++) {
-				local7[local22] = this.anInt4746 + (local20[local22] * this.anInt4748 >> 12);
+			@Pc(20) int[] src = this.getChildMonochromeOutput(0, y);
+			for (@Pc(22) int x = 0; x < Texture.width; x++) {
+				dest[x] = this.minValue + (src[x] * this.range >> 12);
 			}
 		}
-		return local7;
+		return dest;
 	}
 
 	@OriginalMember(owner = "client!sc", name = "b", descriptor = "(II)[[I")
 	@Override
 	public final int[][] getColorOutput(@OriginalArg(0) int y) {
-		@Pc(13) int[][] local13 = this.colorImageCache.get(y);
+		@Pc(13) int[][] dest = this.colorImageCache.get(y);
 		if (this.colorImageCache.invalid) {
-			@Pc(23) int[][] local23 = this.method4686(0, y);
-			@Pc(27) int[] local27 = local23[0];
-			@Pc(31) int[] local31 = local23[1];
-			@Pc(35) int[] local35 = local13[0];
-			@Pc(39) int[] local39 = local13[2];
-			@Pc(43) int[] local43 = local13[1];
-			@Pc(47) int[] local47 = local23[2];
-			for (@Pc(49) int local49 = 0; local49 < Texture.width; local49++) {
-				local35[local49] = (this.anInt4748 * local27[local49] >> 12) + this.anInt4746;
-				local43[local49] = this.anInt4746 + (local31[local49] * this.anInt4748 >> 12);
-				local39[local49] = this.anInt4746 + (this.anInt4748 * local47[local49] >> 12);
+			@Pc(23) int[][] src = this.getChildColorOutput(0, y);
+			@Pc(27) int[] srcRed = src[0];
+			@Pc(31) int[] srcGreen = src[1];
+			@Pc(35) int[] destRed = dest[0];
+			@Pc(39) int[] destBlue = dest[2];
+			@Pc(43) int[] destGreen = dest[1];
+			@Pc(47) int[] srcBlue = src[2];
+			for (@Pc(49) int x = 0; x < Texture.width; x++) {
+				destRed[x] = this.minValue + (this.range * srcRed[x] >> 12);
+				destGreen[x] = this.minValue + (this.range * srcGreen[x] >> 12);
+				destBlue[x] = this.minValue + (this.range * srcBlue[x] >> 12);
 			}
 		}
-		return local13;
+		return dest;
 	}
 
 	@OriginalMember(owner = "client!sc", name = "e", descriptor = "(B)V")
 	@Override
 	public final void postDecode() {
-		this.anInt4748 = this.anInt4756 - this.anInt4746;
+		this.range = this.maxValue - this.minValue;
 	}
 
 	@OriginalMember(owner = "client!sc", name = "a", descriptor = "(BLclient!fd;I)V")
 	@Override
 	public final void decode(@OriginalArg(1) Buffer buffer, @OriginalArg(2) int code) {
 		if (code == 0) {
-			this.anInt4746 = buffer.readUnsignedShort();
+			this.minValue = buffer.readUnsignedShort();
 		} else if (code == 1) {
-			this.anInt4756 = buffer.readUnsignedShort();
+			this.maxValue = buffer.readUnsignedShort();
 		} else if (code == 2) {
 			this.monochrome = buffer.readUnsignedByte() == 1;
 		}

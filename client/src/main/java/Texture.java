@@ -146,7 +146,7 @@ public final class Texture extends SecondaryNode {
 	}
 
 	@OriginalMember(owner = "client!ln", name = "a", descriptor = "(DIILclient!kj;Lclient!fh;IZ)Lclient!vn;")
-	public final SoftwareSprite getSprite(@OriginalArg(0) double brightness, @OriginalArg(2) int width, @OriginalArg(3) TextureProvider provider, @OriginalArg(4) Js5 spritesArchive, @OriginalArg(5) int height) {
+	public final SoftwareSprite getSprite(@OriginalArg(2) int width, @OriginalArg(5) int height, @OriginalArg(0) double brightness, @OriginalArg(3) TextureProvider provider, @OriginalArg(4) Js5 spritesArchive) {
 		setBrightness(brightness);
 		Texture.provider = provider;
 		Texture.spritesArchive = spritesArchive;
@@ -206,7 +206,7 @@ public final class Texture extends SecondaryNode {
 	}
 
 	@OriginalMember(owner = "client!ln", name = "a", descriptor = "(IBILclient!fh;DLclient!kj;Z)[I")
-	public final int[] getPixelsAlpha(@OriginalArg(0) int width, @OriginalArg(2) int height, @OriginalArg(3) Js5 spritesArchive, @OriginalArg(4) double brightness, @OriginalArg(5) TextureProvider provider, @OriginalArg(6) boolean arg5) {
+	public final int[] getPixelsAlpha(@OriginalArg(0) int width, @OriginalArg(2) int height, @OriginalArg(4) double brightness, @OriginalArg(5) TextureProvider provider, @OriginalArg(3) Js5 spritesArchive, @OriginalArg(6) boolean columnMajor) {
 		@Pc(12) int[] pixels = new int[height * width * 4];
 		setBrightness(brightness);
 		Texture.provider = provider;
@@ -217,7 +217,7 @@ public final class Texture extends SecondaryNode {
 		}
 		@Pc(47) int index = 0;
 		for (@Pc(57) int y = 0; y < height; y++) {
-			if (arg5) {
+			if (columnMajor) {
 				index = y;
 			}
 			@Pc(83) int[] reds;
@@ -278,7 +278,7 @@ public final class Texture extends SecondaryNode {
 					}
 				}
 				pixels[index++] = (green2 << 8) + (red2 << 16) + (alpha << 24) + blue2;
-				if (arg5) {
+				if (columnMajor) {
 					index += width - 1;
 				}
 			}
@@ -290,7 +290,7 @@ public final class Texture extends SecondaryNode {
 	}
 
 	@OriginalMember(owner = "client!ln", name = "a", descriptor = "(IBZLclient!kj;Lclient!fh;I)[F")
-	public final float[] getBloomPixels(@OriginalArg(0) int height, @OriginalArg(2) boolean arg1, @OriginalArg(3) TextureProvider provider, @OriginalArg(4) Js5 spritesArchive, @OriginalArg(5) int width) {
+	public final float[] getBloomPixels(@OriginalArg(5) int width, @OriginalArg(0) int height, @OriginalArg(3) TextureProvider provider, @OriginalArg(4) Js5 spritesArchive, @OriginalArg(2) boolean columnMajor) {
 		Texture.provider = provider;
 		@Pc(29) float[] pixels = new float[width * 4 * height];
 		Texture.spritesArchive = spritesArchive;
@@ -300,7 +300,7 @@ public final class Texture extends SecondaryNode {
 		}
 		@Pc(59) int index = 0;
 		for (@Pc(61) int y = 0; y < height; y++) {
-			if (arg1) {
+			if (columnMajor) {
 				index = y << 2;
 			}
 			@Pc(89) int[] reds;
@@ -339,11 +339,11 @@ public final class Texture extends SecondaryNode {
 				}
 				@Pc(193) int index2 = index + 1;
 				pixels[index] = (float) reds[x] * brightness;
-				pixels[index2++] = brightness * (float) greens[x];
+				pixels[index2++] = (float) greens[x] * brightness;
 				pixels[index2++] = (float) blues[x] * brightness;
 				index = index2 + 1;
 				pixels[index2] = alpha;
-				if (arg1) {
+				if (columnMajor) {
 					index += (width << 2) - 4;
 				}
 			}
@@ -378,7 +378,7 @@ public final class Texture extends SecondaryNode {
 	}
 
 	@OriginalMember(owner = "client!ln", name = "a", descriptor = "(ILclient!kj;Lclient!fh;IDIZ)Lclient!jn;")
-	public final SoftwareAlphaSprite getAlphaSprite(@OriginalArg(0) int height, @OriginalArg(1) TextureProvider provider, @OriginalArg(2) Js5 spritesArchive, @OriginalArg(4) double brightness, @OriginalArg(5) int width) {
+	public final SoftwareAlphaSprite getAlphaSprite(@OriginalArg(5) int width, @OriginalArg(0) int height, @OriginalArg(4) double brightness, @OriginalArg(1) TextureProvider provider, @OriginalArg(2) Js5 spritesArchive) {
 		setBrightness(brightness);
 		Texture.provider = provider;
 		Texture.spritesArchive = spritesArchive;
@@ -456,7 +456,7 @@ public final class Texture extends SecondaryNode {
 	}
 
 	@OriginalMember(owner = "client!ln", name = "a", descriptor = "(DZILclient!fh;Lclient!kj;IZI)[I")
-	public final int[] getPixels(@OriginalArg(0) double brightness, @OriginalArg(1) boolean arg1, @OriginalArg(3) Js5 spritesArchive, @OriginalArg(4) TextureProvider provider, @OriginalArg(5) int height, @OriginalArg(6) boolean arg5, @OriginalArg(7) int width) {
+	public final int[] getPixels(@OriginalArg(7) int width, @OriginalArg(5) int height, @OriginalArg(0) double brightness, @OriginalArg(4) TextureProvider provider, @OriginalArg(3) Js5 spritesArchive, @OriginalArg(1) boolean columnMajor, @OriginalArg(6) boolean flipHorizontal) {
 		setBrightness(brightness);
 		Texture.provider = provider;
 		Texture.spritesArchive = spritesArchive;
@@ -468,7 +468,7 @@ public final class Texture extends SecondaryNode {
 		@Pc(45) int x1;
 		@Pc(43) byte dx;
 		@Pc(47) int x0;
-		if (arg5) {
+		if (flipHorizontal) {
 			x0 = width - 1;
 			x1 = -1;
 			dx = -1;
@@ -479,7 +479,7 @@ public final class Texture extends SecondaryNode {
 		}
 		@Pc(59) int index = 0;
 		for (@Pc(61) int y = 0; y < height; y++) {
-			if (arg1) {
+			if (columnMajor) {
 				index = y;
 			}
 			@Pc(88) int[] reds;
@@ -522,7 +522,7 @@ public final class Texture extends SecondaryNode {
 				}
 				@Pc(188) int blue2 = brightnessMap[blue];
 				pixels[index++] = blue2 + (red2 << 16) + (green2 << 8);
-				if (arg1) {
+				if (columnMajor) {
 					index += width - 1;
 				}
 			}

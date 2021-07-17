@@ -130,7 +130,7 @@ public final class Skybox extends SecondaryNode {
 				} else if (this.size != size) {
 					throw new RuntimeException("");
 				}
-				@Pc(60) IntBuffer buffer = IntBuffer.wrap(Static4.textureProvider.method449(texture));
+				@Pc(60) IntBuffer buffer = IntBuffer.wrap(Static4.textureProvider.getPixels(texture));
 				gl.glTexImage2D(i + GL.GL_TEXTURE_CUBE_MAP_POSITIVE_X, GL.GL_POINTS, GL.GL_RGB, size, size, GL.GL_POINTS, GL.GL_BGRA, GL.GL_UNSIGNED_BYTE, buffer);
 			}
 			gl.glTexParameteri(GL.GL_TEXTURE_CUBE_MAP, GL.GL_TEXTURE_MIN_FILTER, GL.GL_LINEAR);

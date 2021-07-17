@@ -4,20 +4,20 @@ import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
 @OriginalClass("client!qb")
-public final class TextureOp0 extends TextureOp {
+public final class TextureOpMonochromeFill extends TextureOp {
 
 	@OriginalMember(owner = "client!qb", name = "V", descriptor = "I")
-	private int anInt4259;
+	private int value;
 
 	@OriginalMember(owner = "client!qb", name = "<init>", descriptor = "(I)V")
-	private TextureOp0(@OriginalArg(0) int arg0) {
+	private TextureOpMonochromeFill(@OriginalArg(0) int value) {
 		super(0, true);
-		this.anInt4259 = 4096;
-		this.anInt4259 = arg0;
+		this.value = 4096;
+		this.value = value;
 	}
 
 	@OriginalMember(owner = "client!qb", name = "<init>", descriptor = "()V")
-	public TextureOp0() {
+	public TextureOpMonochromeFill() {
 		this(4096);
 	}
 
@@ -25,17 +25,17 @@ public final class TextureOp0 extends TextureOp {
 	@Override
 	public final void decode(@OriginalArg(1) Buffer buffer, @OriginalArg(2) int code) {
 		if (code == 0) {
-			this.anInt4259 = (buffer.readUnsignedByte() << 12) / 255;
+			this.value = (buffer.readUnsignedByte() << 12) / 255;
 		}
 	}
 
 	@OriginalMember(owner = "client!qb", name = "a", descriptor = "(II)[I")
 	@Override
 	public final int[] getMonochromeOutput(@OriginalArg(1) int y) {
-		@Pc(15) int[] local15 = this.monochromeImageCache.get(y);
+		@Pc(15) int[] dest = this.monochromeImageCache.get(y);
 		if (this.monochromeImageCache.invalid) {
-			ArrayUtils.fill(local15, 0, Texture.width, this.anInt4259);
+			ArrayUtils.fill(dest, 0, Texture.width, this.value);
 		}
-		return local15;
+		return dest;
 	}
 }

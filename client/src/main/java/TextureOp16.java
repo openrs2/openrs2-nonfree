@@ -23,10 +23,10 @@ public final class TextureOp16 extends TextureOp {
 	@OriginalMember(owner = "client!qj", name = "a", descriptor = "(II)[I")
 	@Override
 	public final int[] getMonochromeOutput(@OriginalArg(1) int y) {
-		@Pc(16) int[] local16 = this.monochromeImageCache.get(y);
+		@Pc(16) int[] dest = this.monochromeImageCache.get(y);
 		if (this.monochromeImageCache.invalid) {
-			for (@Pc(22) int local22 = 0; local22 < Texture.width; local22++) {
-				@Pc(33) int local33 = Texture.widthFractions[local22];
+			for (@Pc(22) int x = 0; x < Texture.width; x++) {
+				@Pc(33) int local33 = Texture.widthFractions[x];
 				@Pc(40) int local40 = local33 * this.anInt4359 >> 12;
 				@Pc(44) int local44 = Texture.heightFractions[y];
 				@Pc(51) int local51 = local44 * this.anInt4360 >> 12;
@@ -39,11 +39,11 @@ public final class TextureOp16 extends TextureOp {
 						local40 -= 4;
 					}
 					if (local40 != 1) {
-						local16[local22] = 0;
+						dest[x] = 0;
 						continue;
 					}
 					if (local61 < this.anInt4368) {
-						local16[local22] = 0;
+						dest[x] = 0;
 						continue;
 					}
 				}
@@ -55,14 +55,14 @@ public final class TextureOp16 extends TextureOp {
 						local131 -= 4;
 					}
 					if (local131 > 0) {
-						local16[local22] = 0;
+						dest[x] = 0;
 						continue;
 					}
 				}
-				local16[local22] = 4096;
+				dest[x] = 4096;
 			}
 		}
-		return local16;
+		return dest;
 	}
 
 	@OriginalMember(owner = "client!qj", name = "a", descriptor = "(BLclient!fd;I)V")

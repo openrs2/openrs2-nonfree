@@ -30,17 +30,17 @@ public final class TextureOp33 extends TextureOp {
 	@OriginalMember(owner = "client!no", name = "b", descriptor = "(II)[[I")
 	@Override
 	public final int[][] getColorOutput(@OriginalArg(0) int y) {
-		@Pc(16) int[][] local16 = this.colorImageCache.get(y);
+		@Pc(16) int[][] dest = this.colorImageCache.get(y);
 		if (this.colorImageCache.invalid) {
-			@Pc(33) int[] local33 = this.method4699(Texture.heightMask & y - 1, 0);
-			@Pc(39) int[] local39 = this.method4699(y, 0);
-			@Pc(51) int[] local51 = this.method4699(y + 1 & Texture.heightMask, 0);
-			@Pc(55) int[] local55 = local16[0];
-			@Pc(59) int[] local59 = local16[1];
-			@Pc(63) int[] local63 = local16[2];
-			for (@Pc(65) int local65 = 0; local65 < Texture.width; local65++) {
-				@Pc(84) int local84 = (local51[local65] - local33[local65]) * this.anInt3634;
-				@Pc(103) int local103 = this.anInt3634 * (local39[local65 + 1 & Texture.widthMask] - local39[local65 - 1 & Texture.widthMask]);
+			@Pc(33) int[] local33 = this.getChildMonochromeOutput(0, Texture.heightMask & y - 1);
+			@Pc(39) int[] local39 = this.getChildMonochromeOutput(0, y);
+			@Pc(51) int[] local51 = this.getChildMonochromeOutput(0, y + 1 & Texture.heightMask);
+			@Pc(55) int[] destRed = dest[0];
+			@Pc(59) int[] destGreen = dest[1];
+			@Pc(63) int[] destBlue = dest[2];
+			for (@Pc(65) int x = 0; x < Texture.width; x++) {
+				@Pc(84) int local84 = (local51[x] - local33[x]) * this.anInt3634;
+				@Pc(103) int local103 = this.anInt3634 * (local39[x + 1 & Texture.widthMask] - local39[x - 1 & Texture.widthMask]);
 				@Pc(107) int local107 = local84 >> 12;
 				@Pc(111) int local111 = local103 >> 12;
 				@Pc(117) int local117 = local107 * local107 >> 12;
@@ -63,11 +63,11 @@ public final class TextureOp33 extends TextureOp {
 					local144 = (local144 >> 1) + 2048;
 					local146 = (local146 >> 1) + 2048;
 				}
-				local55[local65] = local148;
-				local59[local65] = local144;
-				local63[local65] = local146;
+				destRed[x] = local148;
+				destGreen[x] = local144;
+				destBlue[x] = local146;
 			}
 		}
-		return local16;
+		return dest;
 	}
 }

@@ -62,12 +62,12 @@ public class Js5TextureProvider implements TextureProvider {
 		}
 		for (@Pc(232) int i = 0; i < len; i++) {
 			if (this.materials[i] != null) {
-				this.materials[i].materialId = buffer.readByte();
+				this.materials[i].type = buffer.readByte();
 			}
 		}
 		for (@Pc(254) int i = 0; i < len; i++) {
 			if (this.materials[i] != null) {
-				this.materials[i].materialArg = buffer.readByte();
+				this.materials[i].arg = buffer.readByte();
 			}
 		}
 		for (@Pc(277) int i = 0; i < len; i++) {
@@ -93,7 +93,7 @@ public class Js5TextureProvider implements TextureProvider {
 			}
 			for (@Pc(377) int i = 0; i < len; i++) {
 				if (this.materials[i] != null) {
-					this.materials[i].aBoolean236 = buffer.readUnsignedByte() == 1;
+					this.materials[i].columnMajor = buffer.readUnsignedByte() == 1;
 				}
 			}
 			for (@Pc(406) int i = 0; i < len; i++) {
@@ -121,8 +121,8 @@ public class Js5TextureProvider implements TextureProvider {
 
 	@OriginalMember(owner = "client!qi", name = "a", descriptor = "(IFIIIZ)[I")
 	@Override
-	public final int[] method415(@OriginalArg(2) int id, @OriginalArg(0) int arg0, @OriginalArg(1) float arg1, @OriginalArg(3) int arg3) {
-		return this.getTexture(id).getPixels(arg1, this.materials[id].aBoolean236, this.spritesArchive, this, arg0, false, arg3);
+	public final int[] getPixels(@OriginalArg(2) int id, @OriginalArg(3) int width, @OriginalArg(0) int height, @OriginalArg(1) float brightness) {
+		return this.getTexture(id).getPixels(width, height, brightness, this, this.spritesArchive, this.materials[id].columnMajor, false);
 	}
 
 	@OriginalMember(owner = "client!qi", name = "c", descriptor = "(IZ)Lclient!ln;")

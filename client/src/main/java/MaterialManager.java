@@ -7,7 +7,7 @@ public final class MaterialManager {
 	private static MaterialRenderer[] renderers;
 
 	@OriginalMember(owner = "client!uf", name = "c", descriptor = "I")
-	private static int currentMaterialId = 0;
+	private static int currentType = 0;
 
 	@OriginalMember(owner = "client!am", name = "B", descriptor = "I")
 	private static int currentArg = 0;
@@ -29,43 +29,43 @@ public final class MaterialManager {
 	}
 
 	@OriginalMember(owner = "client!ln", name = "a", descriptor = "(III)V")
-	public static void setMaterial(@OriginalArg(0) int materialId, @OriginalArg(1) int arg) {
-		if (materialId == 8) {
-			materialId = 4;
+	public static void setMaterial(@OriginalArg(0) int type, @OriginalArg(1) int arg) {
+		if (type == 8) {
+			type = 4;
 		}
-		if (materialId == 4 && !Preferences.highDetailWater) {
-			materialId = 2;
+		if (type == 4 && !Preferences.highDetailWater) {
+			type = 2;
 			arg = 2;
 		}
-		if (currentMaterialId != materialId) {
+		if (currentType != type) {
 			if (renderingUnderwater) {
 				return;
 			}
-			if (currentMaterialId != 0) {
-				renderers[currentMaterialId].unbind();
+			if (currentType != 0) {
+				renderers[currentType].unbind();
 			}
-			if (materialId != 0) {
-				@Pc(42) MaterialRenderer renderer = renderers[materialId];
+			if (type != 0) {
+				@Pc(42) MaterialRenderer renderer = renderers[type];
 				renderer.bind();
 				renderer.setArgument(arg);
 			}
 			currentArg = arg;
-			currentMaterialId = materialId;
-		} else if (materialId != 0 && currentArg != arg) {
-			renderers[materialId].setArgument(arg);
+			currentType = type;
+		} else if (type != 0 && currentArg != arg) {
+			renderers[type].setArgument(arg);
 			currentArg = arg;
 		}
 	}
 
 	@OriginalMember(owner = "client!ff", name = "a", descriptor = "(B)I")
 	public static int getFlags() {
-		return currentMaterialId == 0 ? 0 : renderers[currentMaterialId].getFlags();
+		return currentType == 0 ? 0 : renderers[currentType].getFlags();
 	}
 
 	@OriginalMember(owner = "client!sh", name = "a", descriptor = "(ZI)V")
-	public static void resetArgument(@OriginalArg(1) int materialId) {
-		if (currentMaterialId == materialId) {
-			@Pc(16) MaterialRenderer id = renderers[materialId];
+	public static void resetArgument(@OriginalArg(1) int type) {
+		if (currentType == type) {
+			@Pc(16) MaterialRenderer id = renderers[type];
 			id.setArgument(currentArg);
 		}
 	}

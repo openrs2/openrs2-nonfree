@@ -3,10 +3,10 @@ import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
 
 @OriginalClass("client!pk")
-public final class TextureOp2 extends TextureOp {
+public final class TextureOpHorizontalGradient extends TextureOp {
 
 	@OriginalMember(owner = "client!pk", name = "<init>", descriptor = "()V")
-	public TextureOp2() {
+	public TextureOpHorizontalGradient() {
 		super(0, true);
 	}
 

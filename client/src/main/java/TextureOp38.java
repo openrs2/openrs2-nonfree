@@ -31,7 +31,7 @@ public final class TextureOp38 extends TextureOp {
 	@OriginalMember(owner = "client!kl", name = "e", descriptor = "(B)V")
 	@Override
 	public final void postDecode() {
-		Static37.method4645();
+		TextureOp.createTrigonometryTables();
 	}
 
 	@OriginalMember(owner = "client!kl", name = "a", descriptor = "(BLclient!fd;I)V")
@@ -53,18 +53,18 @@ public final class TextureOp38 extends TextureOp {
 	@OriginalMember(owner = "client!kl", name = "a", descriptor = "(II)[I")
 	@Override
 	public final int[] getMonochromeOutput(@OriginalArg(1) int y) {
-		@Pc(7) int[] local7 = this.monochromeImageCache.get(y);
+		@Pc(7) int[] dest = this.monochromeImageCache.get(y);
 		if (this.monochromeImageCache.invalid) {
 			@Pc(16) int local16 = this.anInt2923 >> 1;
-			@Pc(21) int[][] local21 = this.monochromeImageCache.get();
-			@Pc(28) Random local28 = new Random((long) this.anInt2915);
+			@Pc(21) int[][] pixels = this.monochromeImageCache.get();
+			@Pc(28) Random random = new Random(this.anInt2915);
 			for (@Pc(30) int local30 = 0; local30 < this.anInt2919; local30++) {
-				@Pc(60) int local60 = this.anInt2923 > 0 ? this.anInt2914 + RandomUtils.nextInt(local28, this.anInt2923) - local16 : this.anInt2914;
+				@Pc(60) int local60 = this.anInt2923 > 0 ? this.anInt2914 + RandomUtils.nextInt(random, this.anInt2923) - local16 : this.anInt2914;
 				local60 = local60 >> 4 & 0xFF;
-				@Pc(73) int local73 = RandomUtils.nextInt(local28, Texture.width);
-				@Pc(78) int local78 = RandomUtils.nextInt(local28, Texture.height);
-				@Pc(89) int local89 = local73 + (Static3.anIntArray222[local60] * this.anInt2924 >> 12);
-				@Pc(100) int local100 = local78 + (Static3.anIntArray223[local60] * this.anInt2924 >> 12);
+				@Pc(73) int local73 = RandomUtils.nextInt(random, Texture.width);
+				@Pc(78) int local78 = RandomUtils.nextInt(random, Texture.height);
+				@Pc(89) int local89 = local73 + (TextureOp.COSINE[local60] * this.anInt2924 >> 12);
+				@Pc(100) int local100 = local78 + (TextureOp.SINE[local60] * this.anInt2924 >> 12);
 				@Pc(105) int local105 = local100 - local78;
 				@Pc(110) int local110 = local89 - local73;
 				if (local110 != 0 || local105 != 0) {
@@ -95,7 +95,7 @@ public final class TextureOp38 extends TextureOp {
 					@Pc(181) int local181 = local89 - local73;
 					@Pc(186) int local186 = -local181 / 2;
 					@Pc(191) int local191 = local100 - local78;
-					@Pc(201) int local201 = 1024 - (RandomUtils.nextInt(local28, 4096) >> 2);
+					@Pc(201) int local201 = 1024 - (RandomUtils.nextInt(random, 4096) >> 2);
 					if (local191 < 0) {
 						local191 = -local191;
 					}
@@ -111,14 +111,14 @@ public final class TextureOp38 extends TextureOp {
 							local177 += local224;
 						}
 						if (local145) {
-							local21[local251][local255] = local247;
+							pixels[local251][local255] = local247;
 						} else {
-							local21[local255][local251] = local247;
+							pixels[local255][local251] = local247;
 						}
 					}
 				}
 			}
 		}
-		return local7;
+		return dest;
 	}
 }
