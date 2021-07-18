@@ -125,21 +125,6 @@ public final class Static26 {
 		}
 	}
 
-	@OriginalMember(owner = "client!nd", name = "a", descriptor = "(ILclient!wf;)Lclient!wf;")
-	public static Component method2942(@OriginalArg(1) Component arg0) {
-		if (arg0.layer != -1) {
-			return InterfaceList.getComponent(arg0.layer);
-		}
-		@Pc(20) int local20 = arg0.id >>> 16;
-		@Pc(33) HashTableIterator local33 = new HashTableIterator(InterfaceList.subInterfaces);
-		for (@Pc(38) SubInterface local38 = (SubInterface) local33.head(); local38 != null; local38 = (SubInterface) local33.next()) {
-			if (local20 == local38.id) {
-				return InterfaceList.getComponent((int) local38.key);
-			}
-		}
-		return null;
-	}
-
 	@OriginalMember(owner = "client!ne", name = "a", descriptor = "()V")
 	public static void method2951() {
 		Static5.aShortArrayArray3 = null;

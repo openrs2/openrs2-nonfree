@@ -198,7 +198,7 @@ public final class Protocol {
 			return true;
 		} else if (opcode == 4) {
 			FriendsList.state = inboundBuffer.readUnsignedByte();
-			Static3.anInt2102 = Static6.anInt4979;
+			FriendsList.transmitAt = InterfaceList.transmitTimer;
 			opcode = -1;
 			return true;
 		} else if (opcode == 35) {
@@ -393,7 +393,7 @@ public final class Protocol {
 		} else if (opcode == 95) {
 			Static21.method2062();
 			Static3.weight = inboundBuffer.readShort();
-			Static1.anInt925 = Static6.anInt4979;
+			InterfaceList.miscTransmitAt = InterfaceList.transmitTimer;
 			opcode = -1;
 			return true;
 		} else if (opcode == 164) {
@@ -415,7 +415,7 @@ public final class Protocol {
 		} else if (opcode == 8) {
 			Static21.method2062();
 			Static2.runEnergy = inboundBuffer.readUnsignedByte();
-			Static1.anInt925 = Static6.anInt4979;
+			InterfaceList.miscTransmitAt = InterfaceList.transmitTimer;
 			opcode = -1;
 			return true;
 		} else if (opcode == 86) {
@@ -551,7 +551,7 @@ public final class Protocol {
 						ClanChat.members[i].world = world;
 						ClanChat.members[i].rank = rank;
 						ClanChat.members[i].worldName = worldName;
-						Static3.anInt2616 = Static6.anInt4979;
+						ClanChat.transmitAt = InterfaceList.transmitTimer;
 						if (LoginManager.encodedUsername == key) {
 							ClanChat.rank = rank;
 						}
@@ -578,7 +578,7 @@ public final class Protocol {
 				}
 				ClanChat.size++;
 			}
-			Static3.anInt2616 = Static6.anInt4979;
+			ClanChat.transmitAt = InterfaceList.transmitTimer;
 			opcode = -1;
 			return true;
 		} else if (opcode == 104) {
@@ -925,7 +925,7 @@ public final class Protocol {
 			opcode = -1;
 			return true;
 		} else if (opcode == 2) {
-			Static3.anInt2616 = Static6.anInt4979;
+			ClanChat.transmitAt = InterfaceList.transmitTimer;
 			@Pc(3168) long owner = inboundBuffer.readLong();
 			if (owner == 0L) {
 				ClanChat.name = null;
@@ -1036,7 +1036,7 @@ public final class Protocol {
 				FriendsList.sameGame[FriendsList.size] = sameGame;
 				FriendsList.size++;
 			}
-			Static3.anInt2102 = Static6.anInt4979;
+			FriendsList.transmitAt = InterfaceList.transmitTimer;
 			@Pc(3644) int i = FriendsList.size;
 			while (i > 0) {
 				@Pc(3651) boolean sorted = true;
@@ -1191,7 +1191,7 @@ public final class Protocol {
 			return true;
 		} else if (opcode == 72) {
 			Static5.rebootTimer = inboundBuffer.readUnsignedShortLE() * 30;
-			Static1.anInt925 = Static6.anInt4979;
+			InterfaceList.miscTransmitAt = InterfaceList.transmitTimer;
 			opcode = -1;
 			return true;
 		} else if (opcode == 26) {
@@ -1633,7 +1633,7 @@ public final class Protocol {
 				IgnoreList.temporary[i] = false;
 			}
 			opcode = -1;
-			Static3.anInt2102 = Static6.anInt4979;
+			FriendsList.transmitAt = InterfaceList.transmitTimer;
 			return true;
 		} else if (opcode == 221) {
 			@Pc(5909) long username = inboundBuffer.readLong();
@@ -1672,7 +1672,7 @@ public final class Protocol {
 				StockMarketManager.offers[slot] = new StockMarketOffer(inboundBuffer);
 			}
 			opcode = -1;
-			Static6.anInt4996 = Static6.anInt4979;
+			StockMarketManager.transmitAt = InterfaceList.transmitTimer;
 			return true;
 		} else {
 			TracingException.report(null, "T1 - " + opcode + "," + opcode2 + "," + opcode3 + " - " + length);

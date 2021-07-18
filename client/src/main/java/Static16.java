@@ -121,9 +121,9 @@ public final class Static16 {
 
 	@OriginalMember(owner = "client!gd", name = "a", descriptor = "(IIIII)V")
 	public static void method1559(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(4) int arg3) {
-		for (@Pc(11) int local11 = 0; local11 < Static1.anInt113; local11++) {
-			if (Static5.anIntArray383[local11] + Static6.anIntArray540[local11] > arg0 && Static6.anIntArray540[local11] < arg0 + arg3 && arg1 < Static7.anIntArray638[local11] + Static7.anIntArray616[local11] && arg2 + arg1 > Static7.anIntArray638[local11]) {
-				Static6.aBooleanArray24[local11] = true;
+		for (@Pc(11) int i = 0; i < InterfaceList.rectangles; i++) {
+			if (InterfaceList.rectangleWidth[i] + InterfaceList.rectangleX[i] > arg0 && InterfaceList.rectangleX[i] < arg0 + arg3 && arg1 < InterfaceList.rectangleY[i] + InterfaceList.rectangleHeight[i] && arg2 + arg1 > InterfaceList.rectangleY[i]) {
+				InterfaceList.rectangleRedraw[i] = true;
 			}
 		}
 	}
@@ -133,7 +133,7 @@ public final class Static16 {
 		Static4.aClass185Array3 = null;
 		Static14.method1069(InterfaceList.topLevelInterface, 0, 0, 0, GameShell.canvasHeight, 0, GameShell.canvasWidth, -1);
 		if (Static4.aClass185Array3 != null) {
-			Static30.method3554(Static7.anInt5589, -1412584499, Static1.aClass185_2.anInt5967, Static4.aClass185Array3, GameShell.canvasHeight, GameShell.canvasWidth, 0, Static4.anInt3317, 0);
+			Static30.method3554(Static7.anInt5589, 0xABCDABCD, Static1.aClass185_2.rectangle, Static4.aClass185Array3, GameShell.canvasHeight, GameShell.canvasWidth, 0, Static4.anInt3317, 0);
 			Static4.aClass185Array3 = null;
 		}
 	}

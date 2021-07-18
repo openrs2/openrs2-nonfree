@@ -142,12 +142,6 @@ public final class Static1 {
 	@OriginalMember(owner = "client!af", name = "D", descriptor = "[I")
 	public static final int[] anIntArray14 = new int[5];
 
-	@OriginalMember(owner = "client!af", name = "F", descriptor = "I")
-	public static int anInt113 = 0;
-
-	@OriginalMember(owner = "client!ah", name = "f", descriptor = "[I")
-	public static final int[] anIntArray15 = new int[1000];
-
 	@OriginalMember(owner = "client!ak", name = "d", descriptor = "I")
 	public static int anInt126 = 0;
 
@@ -168,9 +162,6 @@ public final class Static1 {
 
 	@OriginalMember(owner = "client!bb", name = "C", descriptor = "I")
 	public static int anInt242 = 0;
-
-	@OriginalMember(owner = "client!bc", name = "u", descriptor = "I")
-	public static int anInt925 = 0;
 
 	@OriginalMember(owner = "client!bc", name = "z", descriptor = "I")
 	public static int anInt929 = -1;

@@ -291,24 +291,15 @@ public final class Static15 {
 
 	@OriginalMember(owner = "client!fi", name = "a", descriptor = "(Lclient!wf;IIB)V")
 	public static void method1401(@OriginalArg(0) Component arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
-		if (Static1.aClass185_1 != null || Static1.aBoolean17 || (arg0 == null || method1403(arg0) == null)) {
+		if (Static1.aClass185_1 != null || Static1.aBoolean17 || (arg0 == null || InterfaceList.method1403(arg0) == null)) {
 			return;
 		}
 		Static1.aClass185_1 = arg0;
-		Static1.aClass185_2 = method1403(arg0);
+		Static1.aClass185_2 = InterfaceList.method1403(arg0);
 		Static3.aBoolean173 = false;
 		Static3.anInt2165 = 0;
 		Static5.anInt5204 = arg1;
 		Static1.anInt777 = arg2;
-	}
-
-	@OriginalMember(owner = "client!fi", name = "a", descriptor = "(Lclient!wf;I)Lclient!wf;")
-	private static Component method1403(@OriginalArg(0) Component arg0) {
-		@Pc(2) Component local2 = Static12.method691(arg0);
-		if (local2 == null) {
-			local2 = arg0.dragComponent;
-		}
-		return local2;
 	}
 
 	@OriginalMember(owner = "client!fj", name = "a", descriptor = "(IILclient!qc;)V")

@@ -174,9 +174,9 @@ public final class Static28 {
 	}
 
 	@OriginalMember(owner = "client!on", name = "a", descriptor = "(ILclient!wf;)V")
-	public static void method3270(@OriginalArg(1) Component arg0) {
-		if (arg0.anInt5900 == Static3.anInt2522) {
-			Static2.aBooleanArray8[arg0.anInt5967] = true;
+	public static void method3270(@OriginalArg(1) Component component) {
+		if (component.rectangleLoop == Static3.anInt2522) {
+			Static2.aBooleanArray8[component.rectangle] = true;
 		}
 	}
 

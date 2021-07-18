@@ -4,13 +4,6 @@ import org.openrs2.deob.annotation.Pc;
 
 public final class Static12 {
 
-	@OriginalMember(owner = "client!ck", name = "f", descriptor = "(B)V")
-	public static void method638() {
-		if (Static4.anInt3020 != Player.level && Static13.method1009(Player.level)) {
-			Static4.anInt3020 = Player.level;
-		}
-	}
-
 	@OriginalMember(owner = "client!ck", name = "a", descriptor = "(IJ)V")
 	public static void method641(@OriginalArg(1) long arg0) {
 		if (!Preferences.aBoolean293) {
@@ -58,39 +51,11 @@ public final class Static12 {
 		Static28.method3252();
 	}
 
-	@OriginalMember(owner = "client!client", name = "b", descriptor = "(Lclient!wf;)Lclient!wf;")
-	public static Component method691(@OriginalArg(0) Component arg0) {
-		@Pc(4) int local4 = InterfaceList.getServerActiveProperties(arg0).getDragDepth();
-		if (local4 == 0) {
-			return null;
-		}
-		for (@Pc(10) int local10 = 0; local10 < local4; local10++) {
-			arg0 = InterfaceList.getComponent(arg0.layer);
-			if (arg0 == null) {
-				return null;
-			}
-		}
-		return arg0;
-	}
-
-	@OriginalMember(owner = "client!client", name = "c", descriptor = "(Lclient!wf;)Z")
-	public static boolean method692(@OriginalArg(0) Component component) {
-		if (Static1.qaOpTest) {
-			if (InterfaceList.getServerActiveProperties(component).events != 0) {
-				return false;
-			}
-			if (component.type == 0) {
-				return false;
-			}
-		}
-		return component.hidden;
-	}
-
 	@OriginalMember(owner = "client!client", name = "a", descriptor = "([Lclient!wf;IIIIIII)V")
-	public static void method693(@OriginalArg(0) Component[] arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7) {
-		for (@Pc(1) int local1 = 0; local1 < arg0.length; local1++) {
-			@Pc(9) Component component = arg0[local1];
-			if (component != null && component.layer == arg1 && (!component.if3 || component.type == 0 || component.aBoolean403 || InterfaceList.getServerActiveProperties(component).events != 0 || component == Static1.aClass185_2 || component.anInt5904 == 1338) && (!component.if3 || !method692(component))) {
+	public static void method693(@OriginalArg(0) Component[] components, @OriginalArg(1) int layer, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7) {
+		for (@Pc(1) int i = 0; i < components.length; i++) {
+			@Pc(9) Component component = components[i];
+			if (component != null && component.layer == layer && (!component.if3 || component.type == 0 || component.hasHook || InterfaceList.getServerActiveProperties(component).events != 0 || component == Static1.aClass185_2 || component.anInt5904 == 1338) && (!component.if3 || !InterfaceList.isHidden(component))) {
 				@Pc(50) int local50 = component.x + arg6;
 				@Pc(55) int local55 = component.y + arg7;
 				@Pc(61) int local61;
@@ -121,14 +86,14 @@ public final class Static12 {
 				}
 				if (!component.if3 || local61 < local65 && local63 < local67) {
 					if (component.type == 0) {
-						if (!component.if3 && method692(component) && Static5.aClass185_11 != component) {
+						if (!component.if3 && InterfaceList.isHidden(component) && Static5.aClass185_11 != component) {
 							continue;
 						}
 						if (component.noClickThrough && Mouse.x >= local61 && Mouse.y >= local63 && Mouse.x < local65 && Mouse.y < local67) {
-							for (@Pc(164) HookRequest local164 = (HookRequest) Static3.lowPriorityRequests.head(); local164 != null; local164 = (HookRequest) Static3.lowPriorityRequests.next()) {
-								if (local164.aBoolean172) {
-									local164.unlink();
-									local164.source.aBoolean414 = false;
+							for (@Pc(164) HookRequest request = (HookRequest) InterfaceList.lowPriorityRequests.head(); request != null; request = (HookRequest) InterfaceList.lowPriorityRequests.next()) {
+								if (request.aBoolean172) {
+									request.unlink();
+									request.source.aBoolean414 = false;
 								}
 							}
 							if (Static3.anInt2165 == 0) {
@@ -188,14 +153,14 @@ public final class Static12 {
 							Static2.anInt1633 = local50;
 							Static6.anInt5182 = local55;
 						}
-						if (component.aBoolean403 || component.anInt5904 != 0) {
-							if (local209 && Static3.anInt2885 != 0 && component.onScrollWheel != null) {
-								@Pc(418) HookRequest local418 = new HookRequest();
-								local418.aBoolean172 = true;
-								local418.source = component;
-								local418.mouseY = Static3.anInt2885;
-								local418.arguments = component.onScrollWheel;
-								Static3.lowPriorityRequests.addTail(local418);
+						if (component.hasHook || component.anInt5904 != 0) {
+							if (local209 && Static3.wheelRotation != 0 && component.onScrollWheel != null) {
+								@Pc(418) HookRequest request = new HookRequest();
+								request.aBoolean172 = true;
+								request.source = component;
+								request.mouseY = Static3.wheelRotation;
+								request.arguments = component.onScrollWheel;
+								InterfaceList.lowPriorityRequests.addTail(request);
 							}
 							if (Static1.aClass185_1 != null || Static5.aClass185_10 != null || Static1.aBoolean17 || component.anInt5904 != 1400 && Static1.anInt640 > 0) {
 								local223 = false;
@@ -292,7 +257,7 @@ public final class Static12 {
 									request.mouseX = Mouse.clickX - local50;
 									request.mouseY = Mouse.clickY - local55;
 									request.arguments = component.onClick;
-									Static3.lowPriorityRequests.addTail(request);
+									InterfaceList.lowPriorityRequests.addTail(request);
 								}
 							}
 							if (component.aBoolean408 && local214 && component.onClickRepeat != null) {
@@ -302,7 +267,7 @@ public final class Static12 {
 								request.mouseX = Mouse.x - local50;
 								request.mouseY = Mouse.y - local55;
 								request.arguments = component.onClickRepeat;
-								Static3.lowPriorityRequests.addTail(request);
+								InterfaceList.lowPriorityRequests.addTail(request);
 							}
 							if (component.aBoolean408 && !local214) {
 								component.aBoolean408 = false;
@@ -313,7 +278,7 @@ public final class Static12 {
 									request.mouseX = Mouse.x - local50;
 									request.mouseY = Mouse.y - local55;
 									request.arguments = component.onRelease;
-									Static2.mediumPriorityRequests.addTail(request);
+									InterfaceList.mediumPriorityRequests.addTail(request);
 								}
 							}
 							if (local214 && component.onHold != null) {
@@ -323,7 +288,7 @@ public final class Static12 {
 								request.mouseX = Mouse.x - local50;
 								request.mouseY = Mouse.y - local55;
 								request.arguments = component.onHold;
-								Static3.lowPriorityRequests.addTail(request);
+								InterfaceList.lowPriorityRequests.addTail(request);
 							}
 							if (!component.aBoolean414 && local209) {
 								component.aBoolean414 = true;
@@ -334,7 +299,7 @@ public final class Static12 {
 									request.mouseX = Mouse.x - local50;
 									request.mouseY = Mouse.y - local55;
 									request.arguments = component.onMouseOver;
-									Static3.lowPriorityRequests.addTail(request);
+									InterfaceList.lowPriorityRequests.addTail(request);
 								}
 							}
 							if (component.aBoolean414 && local209 && component.onMouseRepeat != null) {
@@ -344,7 +309,7 @@ public final class Static12 {
 								request.mouseX = Mouse.x - local50;
 								request.mouseY = Mouse.y - local55;
 								request.arguments = component.onMouseRepeat;
-								Static3.lowPriorityRequests.addTail(request);
+								InterfaceList.lowPriorityRequests.addTail(request);
 							}
 							if (component.aBoolean414 && !local209) {
 								component.aBoolean414 = false;
@@ -355,32 +320,32 @@ public final class Static12 {
 									request.mouseX = Mouse.x - local50;
 									request.mouseY = Mouse.y - local55;
 									request.arguments = component.onMouseLeave;
-									Static2.mediumPriorityRequests.addTail(request);
+									InterfaceList.mediumPriorityRequests.addTail(request);
 								}
 							}
 							if (component.onTimer != null) {
 								@Pc(990) HookRequest request = new HookRequest();
 								request.source = component;
 								request.arguments = component.onTimer;
-								Static2.highPriorityRequests.addTail(request);
+								InterfaceList.highPriorityRequests.addTail(request);
 							}
 							if (component.onVarcTransmit != null && VarcDomain.updatedVarcsWriterIndex > component.updatedVarcsReaderIndex) {
 								if (component.varcTriggers == null || VarcDomain.updatedVarcsWriterIndex - component.updatedVarcsReaderIndex > 32) {
 									@Pc(1021) HookRequest request = new HookRequest();
 									request.source = component;
 									request.arguments = component.onVarcTransmit;
-									Static3.lowPriorityRequests.addTail(request);
+									InterfaceList.lowPriorityRequests.addTail(request);
 								} else {
-									label598:
-									for (@Pc(1036) int i = component.updatedVarcsReaderIndex; i < VarcDomain.updatedVarcsWriterIndex; i++) {
-										@Pc(1045) int varc = VarcDomain.updatedVarcs[i & 0x1F];
-										for (@Pc(1047) int j = 0; j < component.varcTriggers.length; j++) {
-											if (component.varcTriggers[j] == varc) {
+									outer:
+									for (@Pc(1036) int j = component.updatedVarcsReaderIndex; j < VarcDomain.updatedVarcsWriterIndex; j++) {
+										@Pc(1045) int varc = VarcDomain.updatedVarcs[j & 0x1F];
+										for (@Pc(1047) int k = 0; k < component.varcTriggers.length; k++) {
+											if (component.varcTriggers[k] == varc) {
 												@Pc(1062) HookRequest request = new HookRequest();
 												request.source = component;
 												request.arguments = component.onVarcTransmit;
-												Static3.lowPriorityRequests.addTail(request);
-												break label598;
+												InterfaceList.lowPriorityRequests.addTail(request);
+												break outer;
 											}
 										}
 									}
@@ -392,17 +357,17 @@ public final class Static12 {
 									@Pc(1101) HookRequest request = new HookRequest();
 									request.source = component;
 									request.arguments = component.onVarcstrTransmit;
-									Static3.lowPriorityRequests.addTail(request);
+									InterfaceList.lowPriorityRequests.addTail(request);
 								} else {
 									label574:
-									for (@Pc(1116) int i = component.updatedVarcstrsReaderIndex; i < VarcDomain.updatedVarcstrsWriterIndex; i++) {
-										@Pc(1125) int varcstr = VarcDomain.updatedVarcstrs[i & 0x1F];
-										for (@Pc(1127) int j = 0; j < component.varcstrTriggers.length; j++) {
-											if (component.varcstrTriggers[j] == varcstr) {
+									for (@Pc(1116) int j = component.updatedVarcstrsReaderIndex; j < VarcDomain.updatedVarcstrsWriterIndex; j++) {
+										@Pc(1125) int varcstr = VarcDomain.updatedVarcstrs[j & 0x1F];
+										for (@Pc(1127) int k = 0; k < component.varcstrTriggers.length; k++) {
+											if (component.varcstrTriggers[k] == varcstr) {
 												@Pc(1142) HookRequest request = new HookRequest();
 												request.source = component;
 												request.arguments = component.onVarcstrTransmit;
-												Static3.lowPriorityRequests.addTail(request);
+												InterfaceList.lowPriorityRequests.addTail(request);
 												break label574;
 											}
 										}
@@ -415,18 +380,18 @@ public final class Static12 {
 									@Pc(1181) HookRequest request = new HookRequest();
 									request.source = component;
 									request.arguments = component.onVarpTransmit;
-									Static3.lowPriorityRequests.addTail(request);
+									InterfaceList.lowPriorityRequests.addTail(request);
 								} else {
-									label550:
-									for (@Pc(1196) int i = component.updatedVarpsReaderIndex; i < VarpDomain.updatedVarpsWriterIndex; i++) {
-										@Pc(1205) int varp = VarpDomain.updatedVarps[i & 0x1F];
-										for (@Pc(1207) int j = 0; j < component.varpTriggers.length; j++) {
-											if (component.varpTriggers[j] == varp) {
+									outer:
+									for (@Pc(1196) int j = component.updatedVarpsReaderIndex; j < VarpDomain.updatedVarpsWriterIndex; j++) {
+										@Pc(1205) int varp = VarpDomain.updatedVarps[j & 0x1F];
+										for (@Pc(1207) int k = 0; k < component.varpTriggers.length; k++) {
+											if (component.varpTriggers[k] == varp) {
 												@Pc(1222) HookRequest request = new HookRequest();
 												request.source = component;
 												request.arguments = component.onVarpTransmit;
-												Static3.lowPriorityRequests.addTail(request);
-												break label550;
+												InterfaceList.lowPriorityRequests.addTail(request);
+												break outer;
 											}
 										}
 									}
@@ -438,18 +403,18 @@ public final class Static12 {
 									@Pc(1261) HookRequest request = new HookRequest();
 									request.source = component;
 									request.arguments = component.onInvTransmit;
-									Static3.lowPriorityRequests.addTail(request);
+									InterfaceList.lowPriorityRequests.addTail(request);
 								} else {
-									label526:
-									for (@Pc(1276) int i = component.updatedInventoriesReaderIndex; i < Inv.updatedInventoriesWriterIndex; i++) {
-										@Pc(1285) int inventory = Inv.updatedInventories[i & 0x1F];
-										for (@Pc(1287) int j = 0; j < component.inventoryTriggers.length; j++) {
-											if (component.inventoryTriggers[j] == inventory) {
+									outer:
+									for (@Pc(1276) int j = component.updatedInventoriesReaderIndex; j < Inv.updatedInventoriesWriterIndex; j++) {
+										@Pc(1285) int inventory = Inv.updatedInventories[j & 0x1F];
+										for (@Pc(1287) int k = 0; k < component.inventoryTriggers.length; k++) {
+											if (component.inventoryTriggers[k] == inventory) {
 												@Pc(1302) HookRequest request = new HookRequest();
 												request.source = component;
 												request.arguments = component.onInvTransmit;
-												Static3.lowPriorityRequests.addTail(request);
-												break label526;
+												InterfaceList.lowPriorityRequests.addTail(request);
+												break outer;
 											}
 										}
 									}
@@ -461,77 +426,77 @@ public final class Static12 {
 									@Pc(1341) HookRequest request = new HookRequest();
 									request.source = component;
 									request.arguments = component.onStatTransmit;
-									Static3.lowPriorityRequests.addTail(request);
+									InterfaceList.lowPriorityRequests.addTail(request);
 								} else {
-									label502:
-									for (@Pc(1356) int i = component.updatedStatsReaderIndex; i < PlayerSkillXpTable.updatedStatsWriterIndex; i++) {
-										@Pc(1365) int skill = PlayerSkillXpTable.updatedStats[i & 0x1F];
-										for (@Pc(1367) int j = 0; j < component.statTriggers.length; j++) {
-											if (component.statTriggers[j] == skill) {
+									outer:
+									for (@Pc(1356) int j = component.updatedStatsReaderIndex; j < PlayerSkillXpTable.updatedStatsWriterIndex; j++) {
+										@Pc(1365) int skill = PlayerSkillXpTable.updatedStats[j & 0x1F];
+										for (@Pc(1367) int k = 0; k < component.statTriggers.length; k++) {
+											if (component.statTriggers[k] == skill) {
 												@Pc(1382) HookRequest request = new HookRequest();
 												request.source = component;
 												request.arguments = component.onStatTransmit;
-												Static3.lowPriorityRequests.addTail(request);
-												break label502;
+												InterfaceList.lowPriorityRequests.addTail(request);
+												break outer;
 											}
 										}
 									}
 								}
 								component.updatedStatsReaderIndex = PlayerSkillXpTable.updatedStatsWriterIndex;
 							}
-							if (Static6.anInt5189 > component.anInt5945 && component.onChatTransmit != null) {
+							if (Chat.transmitAt > component.lastTransmitTimer && component.onChatTransmit != null) {
 								@Pc(1412) HookRequest request = new HookRequest();
 								request.source = component;
 								request.arguments = component.onChatTransmit;
-								Static3.lowPriorityRequests.addTail(request);
+								InterfaceList.lowPriorityRequests.addTail(request);
 							}
-							if (Static3.anInt2102 > component.anInt5945 && component.onFriendTransmit != null) {
+							if (FriendsList.transmitAt > component.lastTransmitTimer && component.onFriendTransmit != null) {
 								@Pc(1434) HookRequest request = new HookRequest();
 								request.source = component;
 								request.arguments = component.onFriendTransmit;
-								Static3.lowPriorityRequests.addTail(request);
+								InterfaceList.lowPriorityRequests.addTail(request);
 							}
-							if (Static3.anInt2616 > component.anInt5945 && component.onClanTransmit != null) {
+							if (ClanChat.transmitAt > component.lastTransmitTimer && component.onClanTransmit != null) {
 								@Pc(1456) HookRequest request = new HookRequest();
 								request.source = component;
 								request.arguments = component.onClanTransmit;
-								Static3.lowPriorityRequests.addTail(request);
+								InterfaceList.lowPriorityRequests.addTail(request);
 							}
-							if (Static6.anInt4996 > component.anInt5945 && component.onStockTransmit != null) {
+							if (StockMarketManager.transmitAt > component.lastTransmitTimer && component.onStockTransmit != null) {
 								@Pc(1478) HookRequest request = new HookRequest();
 								request.source = component;
 								request.arguments = component.onStockTransmit;
-								Static3.lowPriorityRequests.addTail(request);
+								InterfaceList.lowPriorityRequests.addTail(request);
 							}
-							if (Static1.anInt925 > component.anInt5945 && component.onMiscTransmit != null) {
+							if (InterfaceList.miscTransmitAt > component.lastTransmitTimer && component.onMiscTransmit != null) {
 								@Pc(1500) HookRequest request = new HookRequest();
 								request.source = component;
 								request.arguments = component.onMiscTransmit;
-								Static3.lowPriorityRequests.addTail(request);
+								InterfaceList.lowPriorityRequests.addTail(request);
 							}
-							component.anInt5945 = Static6.anInt4979;
+							component.lastTransmitTimer = InterfaceList.transmitTimer;
 							if (component.onKey != null) {
-								for (@Pc(1519) int i = 0; i < Static6.anInt5088; i++) {
+								for (@Pc(1519) int j = 0; j < InterfaceList.keyQueueSize; j++) {
 									@Pc(1526) HookRequest request = new HookRequest();
 									request.source = component;
-									request.keyCode = Static5.anIntArray441[i];
-									request.keyChar = Static5.anIntArray419[i];
+									request.keyCode = InterfaceList.keyCodes[j];
+									request.keyChar = InterfaceList.keyChars[j];
 									request.arguments = component.onKey;
-									Static3.lowPriorityRequests.addTail(request);
+									InterfaceList.lowPriorityRequests.addTail(request);
 								}
 							}
 							if (Static1.aBoolean35 && component.onCamFinished != null) {
 								@Pc(1558) HookRequest request = new HookRequest();
 								request.source = component;
 								request.arguments = component.onCamFinished;
-								Static3.lowPriorityRequests.addTail(request);
+								InterfaceList.lowPriorityRequests.addTail(request);
 							}
 						}
 					}
 					if (!component.if3 && Static1.aClass185_1 == null && Static5.aClass185_10 == null && !Static1.aBoolean17) {
 						if ((component.anInt5923 >= 0 || component.anInt5966 != 0) && Mouse.x >= local61 && Mouse.y >= local63 && Mouse.x < local65 && Mouse.y < local67) {
 							if (component.anInt5923 >= 0) {
-								Static5.aClass185_11 = arg0[component.anInt5923];
+								Static5.aClass185_11 = components[component.anInt5923];
 							} else {
 								Static5.aClass185_11 = component;
 							}
@@ -544,13 +509,13 @@ public final class Static12 {
 						}
 					}
 					if (component.type == 0) {
-						method693(arg0, component.id, local61, local63, local65, local67, local50 - component.scrollX, local55 - component.scrollY);
+						method693(components, component.id, local61, local63, local65, local67, local50 - component.scrollX, local55 - component.scrollY);
 						if (component.createdComponents != null) {
 							method693(component.createdComponents, component.id, local61, local63, local65, local67, local50 - component.scrollX, local55 - component.scrollY);
 						}
-						@Pc(1691) SubInterface local1691 = (SubInterface) InterfaceList.subInterfaces.get((long) component.id);
-						if (local1691 != null) {
-							Static14.method1060(local1691.id, local65, local50, local63, local55, local61, local67);
+						@Pc(1691) SubInterface subInterface = (SubInterface) InterfaceList.subInterfaces.get(component.id);
+						if (subInterface != null) {
+							Static14.method1060(subInterface.id, local65, local50, local63, local55, local61, local67);
 						}
 					}
 				}

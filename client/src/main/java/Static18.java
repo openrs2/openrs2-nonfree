@@ -44,12 +44,12 @@ public final class Static18 {
 		if (InterfaceList.topLevelInterface != -1) {
 			Static27.method4243(InterfaceList.topLevelInterface);
 		}
-		for (@Pc(17) int local17 = 0; local17 < Static1.anInt113; local17++) {
-			if (Static2.aBooleanArray8[local17]) {
-				Static6.aBooleanArray24[local17] = true;
+		for (@Pc(17) int i = 0; i < InterfaceList.rectangles; i++) {
+			if (Static2.aBooleanArray8[i]) {
+				InterfaceList.rectangleRedraw[i] = true;
 			}
-			Static1.aBooleanArray2[local17] = Static2.aBooleanArray8[local17];
-			Static2.aBooleanArray8[local17] = false;
+			Static1.aBooleanArray2[i] = Static2.aBooleanArray8[i];
+			Static2.aBooleanArray8[i] = false;
 		}
 		Static3.anInt2522 = client.loop;
 		Static6.aClass185_13 = null;
@@ -59,7 +59,7 @@ public final class Static18 {
 		}
 		Static6.anInt4679 = -1;
 		if (InterfaceList.topLevelInterface != -1) {
-			Static1.anInt113 = 0;
+			InterfaceList.rectangles = 0;
 			Static16.method1563();
 		}
 		if (GlRenderer.enabled) {
@@ -635,12 +635,12 @@ public final class Static18 {
 				Static5.aBoolean297 = true;
 			}
 		}
-		if (Static3.anInt2885 == 0) {
+		if (Static3.wheelRotation == 0) {
 			return;
 		}
 		@Pc(196) int local196 = arg0.width;
 		if (arg2 - local196 <= arg3 && arg5 <= arg1 && arg3 < arg2 + 16 && arg1 <= arg6 + arg5) {
-			arg0.scrollY += Static3.anInt2885 * 45;
+			arg0.scrollY += Static3.wheelRotation * 45;
 			Static28.method3270(arg0);
 		}
 	}

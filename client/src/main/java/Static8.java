@@ -134,7 +134,7 @@ public final class Static8 {
 		if (GlRenderer.enabled && loginScreen && (Math.abs(dx) > 104 || Math.abs(dz) > 104)) {
 			Static17.method1655();
 		}
-		Static31.method3150();
+		MiniMap.clear();
 		Static2.spotAnims.clear();
 		Static1.projAnims.clear();
 		ParticleManager.clear();
@@ -207,9 +207,9 @@ public final class Static8 {
 
 	@OriginalMember(owner = "client!ac", name = "a", descriptor = "(IIIII)V")
 	public static void method66(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3) {
-		for (@Pc(3) int local3 = 0; local3 < Static1.anInt113; local3++) {
-			if (arg2 < Static6.anIntArray540[local3] + Static5.anIntArray383[local3] && arg2 + arg0 > Static6.anIntArray540[local3] && Static7.anIntArray638[local3] + Static7.anIntArray616[local3] > arg3 && arg3 + arg1 > Static7.anIntArray638[local3]) {
-				Static2.aBooleanArray8[local3] = true;
+		for (@Pc(3) int i = 0; i < InterfaceList.rectangles; i++) {
+			if (arg2 < InterfaceList.rectangleX[i] + InterfaceList.rectangleWidth[i] && arg2 + arg0 > InterfaceList.rectangleX[i] && InterfaceList.rectangleY[i] + InterfaceList.rectangleHeight[i] > arg3 && arg3 + arg1 > InterfaceList.rectangleY[i]) {
+				Static2.aBooleanArray8[i] = true;
 			}
 		}
 	}
@@ -269,22 +269,13 @@ public final class Static8 {
 		}
 	}
 
-	@OriginalMember(owner = "client!aj", name = "a", descriptor = "(B)V")
-	public static void method115() {
-		MiniMap.state = 0;
-		MiniMap.sequenceNumber = 0;
-		MiniMap.flagY = 0;
-		MiniMap.flagX = 0;
-		MiniMap.aBoolean147 = false;
-	}
-
 	@OriginalMember(owner = "client!ak", name = "a", descriptor = "(Lclient!ho;I)Z")
 	public static boolean method120(@OriginalArg(0) MelType type) {
 		if (type == null) {
 			return false;
 		} else if (!type.worldMapVisible) {
 			return false;
-		} else if (!type.method1810()) {
+		} else if (!type.isVisible()) {
 			return false;
 		} else if (Static3.aClass84_10.get(type.id) == null) {
 			return Static3.aClass84_9.get(type.category) == null;

@@ -145,39 +145,6 @@ public final class Static9 {
 		}
 	}
 
-	@OriginalMember(owner = "client!am", name = "a", descriptor = "(ILjava/lang/String;IIIIIILclient!gl;Lclient!wf;)V")
-	public static void method194(@OriginalArg(0) int arg0, @OriginalArg(1) String arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4, @OriginalArg(6) int arg5, @OriginalArg(7) int arg6, @OriginalArg(8) Font arg7, @OriginalArg(9) Component arg8) {
-		@Pc(14) int local14 = arg5 * arg5 + arg3 * arg3;
-		@Pc(21) int local21 = (int) Static5.aFloat97 + Static6.anInt3585 & 0x7FF;
-		@Pc(33) int local33 = Math.max(arg8.width / 2, arg8.height / 2) + 10;
-		if (local33 * local33 < local14) {
-			return;
-		}
-		@Pc(43) int local43 = MathUtils.COSINE[local21];
-		local43 = local43 * 256 / (Static6.anInt4761 + 256);
-		@Pc(55) int local55 = MathUtils.SINE[local21];
-		local55 = local55 * 256 / (Static6.anInt4761 + 256);
-		@Pc(74) int local74 = local55 * arg3 + local43 * arg5 >> 16;
-		@Pc(79) int local79 = arg7.getParagraphWidth(arg1, 100);
-		@Pc(85) int local85 = arg7.getParagraphHeight(arg1);
-		@Pc(96) int local96 = arg3 * local43 - local55 * arg5 >> 16;
-		local74 -= local79 / 2;
-		if (-arg8.width > local74 || local74 > arg8.width || -arg8.height > local96 || local96 > arg8.height) {
-			return;
-		}
-		if (GlRenderer.enabled) {
-			GlRaster.setMask((GlSprite) arg8.method4729(false));
-		} else {
-			SoftwareRaster.setMask(arg8.anIntArray672, arg8.anIntArray657);
-		}
-		arg7.renderParagraphAlpha(arg1, local74 + arg4 + arg8.width / 2, arg2 + arg8.height / 2 - local96 - arg6 - local85, local79, 50, arg0, 0, 1, 0, 0);
-		if (GlRenderer.enabled) {
-			GlRaster.resetMask();
-		} else {
-			SoftwareRaster.resetMask();
-		}
-	}
-
 	@OriginalMember(owner = "client!an", name = "a", descriptor = "(Lclient!fd;ZZZIIIIIIII)V")
 	public static void readTile(@OriginalArg(0) Buffer buffer, @OriginalArg(2) boolean arg1, @OriginalArg(3) boolean arg2, @OriginalArg(4) int level, @OriginalArg(5) int arg4, @OriginalArg(6) int arg5, @OriginalArg(7) int z, @OriginalArg(8) int angle, @OriginalArg(9) int arg8, @OriginalArg(10) int arg9, @OriginalArg(11) int x) {
 		if (x < 0 || x >= 104 || z < 0 || z >= 104) {

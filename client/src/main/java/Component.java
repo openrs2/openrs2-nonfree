@@ -250,7 +250,7 @@ public final class Component {
 	public boolean dragRender = false;
 
 	@OriginalMember(owner = "client!wf", name = "p", descriptor = "Z")
-	public boolean aBoolean403 = false;
+	public boolean hasHook = false;
 
 	@OriginalMember(owner = "client!wf", name = "Y", descriptor = "I")
 	public int transparency = 0;
@@ -379,7 +379,7 @@ public final class Component {
 	public short aShort49 = 3000;
 
 	@OriginalMember(owner = "client!wf", name = "zc", descriptor = "I")
-	public int anInt5945 = -1;
+	public int lastTransmitTimer = -1;
 
 	@OriginalMember(owner = "client!wf", name = "Xb", descriptor = "I")
 	public int scrollY = 0;
@@ -466,7 +466,7 @@ public final class Component {
 	public int anInt5971 = 0;
 
 	@OriginalMember(owner = "client!wf", name = "jd", descriptor = "I")
-	public int anInt5967 = -1;
+	public int rectangle = -1;
 
 	@OriginalMember(owner = "client!wf", name = "dd", descriptor = "I")
 	public int modelXOffset = 0;
@@ -484,7 +484,7 @@ public final class Component {
 	public int angle = 0;
 
 	@OriginalMember(owner = "client!wf", name = "S", descriptor = "I")
-	public int anInt5900 = -1;
+	public int rectangleLoop = -1;
 
 	@OriginalMember(owner = "client!wf", name = "cb", descriptor = "I")
 	public int modelYOffset = 0;
@@ -952,16 +952,16 @@ public final class Component {
 	}
 
 	@OriginalMember(owner = "client!wf", name = "a", descriptor = "(ILclient!fd;)[I")
-	private int[] method4730(@OriginalArg(1) Buffer arg0) {
-		@Pc(9) int local9 = arg0.readUnsignedByte();
-		if (local9 == 0) {
+	private int[] readTriggers(@OriginalArg(1) Buffer buffer) {
+		@Pc(9) int len = buffer.readUnsignedByte();
+		if (len == 0) {
 			return null;
 		}
-		@Pc(27) int[] local27 = new int[local9];
-		for (@Pc(29) int local29 = 0; local29 < local9; local29++) {
-			local27[local29] = arg0.readInt();
+		@Pc(27) int[] triggers = new int[len];
+		for (@Pc(29) int i = 0; i < len; i++) {
+			triggers[i] = buffer.readInt();
 		}
-		return local27;
+		return triggers;
 	}
 
 	@OriginalMember(owner = "client!wf", name = "b", descriptor = "(ILclient!fd;)V")
@@ -1122,31 +1122,31 @@ public final class Component {
 			}
 		}
 		this.serverActiveProperties = new ServerActiveProperties(local460, local661);
-		this.anObjectArray22 = this.method4740(buffer);
-		this.onMouseOver = this.method4740(buffer);
-		this.onMouseLeave = this.method4740(buffer);
-		this.onTargetLeave = this.method4740(buffer);
-		this.onTargetEnter = this.method4740(buffer);
-		this.onVarpTransmit = this.method4740(buffer);
-		this.onInvTransmit = this.method4740(buffer);
-		this.onStatTransmit = this.method4740(buffer);
-		this.onTimer = this.method4740(buffer);
-		this.onOp = this.method4740(buffer);
-		this.onMouseRepeat = this.method4740(buffer);
-		this.onClick = this.method4740(buffer);
-		this.onClickRepeat = this.method4740(buffer);
-		this.onRelease = this.method4740(buffer);
-		this.onHold = this.method4740(buffer);
-		this.onDrag = this.method4740(buffer);
-		this.onDragComplete = this.method4740(buffer);
-		this.onScrollWheel = this.method4740(buffer);
-		this.onVarcTransmit = this.method4740(buffer);
-		this.onVarcstrTransmit = this.method4740(buffer);
-		this.varpTriggers = this.method4730(buffer);
-		this.inventoryTriggers = this.method4730(buffer);
-		this.statTriggers = this.method4730(buffer);
-		this.varcTriggers = this.method4730(buffer);
-		this.varcstrTriggers = this.method4730(buffer);
+		this.anObjectArray22 = this.readArguments(buffer);
+		this.onMouseOver = this.readArguments(buffer);
+		this.onMouseLeave = this.readArguments(buffer);
+		this.onTargetLeave = this.readArguments(buffer);
+		this.onTargetEnter = this.readArguments(buffer);
+		this.onVarpTransmit = this.readArguments(buffer);
+		this.onInvTransmit = this.readArguments(buffer);
+		this.onStatTransmit = this.readArguments(buffer);
+		this.onTimer = this.readArguments(buffer);
+		this.onOp = this.readArguments(buffer);
+		this.onMouseRepeat = this.readArguments(buffer);
+		this.onClick = this.readArguments(buffer);
+		this.onClickRepeat = this.readArguments(buffer);
+		this.onRelease = this.readArguments(buffer);
+		this.onHold = this.readArguments(buffer);
+		this.onDrag = this.readArguments(buffer);
+		this.onDragComplete = this.readArguments(buffer);
+		this.onScrollWheel = this.readArguments(buffer);
+		this.onVarcTransmit = this.readArguments(buffer);
+		this.onVarcstrTransmit = this.readArguments(buffer);
+		this.varpTriggers = this.readTriggers(buffer);
+		this.inventoryTriggers = this.readTriggers(buffer);
+		this.statTriggers = this.readTriggers(buffer);
+		this.varcTriggers = this.readTriggers(buffer);
+		this.varcstrTriggers = this.readTriggers(buffer);
 	}
 
 	@OriginalMember(owner = "client!wf", name = "a", descriptor = "(IBI)V")
@@ -1213,21 +1213,21 @@ public final class Component {
 	}
 
 	@OriginalMember(owner = "client!wf", name = "c", descriptor = "(ILclient!fd;)[Ljava/lang/Object;")
-	private Object[] method4740(@OriginalArg(1) Buffer arg0) {
-		@Pc(5) int local5 = arg0.readUnsignedByte();
-		if (local5 == 0) {
+	private Object[] readArguments(@OriginalArg(1) Buffer buffer) {
+		@Pc(5) int len = buffer.readUnsignedByte();
+		if (len == 0) {
 			return null;
 		}
-		@Pc(19) Object[] local19 = new Object[local5];
-		for (@Pc(21) int local21 = 0; local21 < local5; local21++) {
-			@Pc(32) int local32 = arg0.readUnsignedByte();
-			if (local32 == 0) {
-				local19[local21] = Integer.valueOf(arg0.readInt());
-			} else if (local32 == 1) {
-				local19[local21] = arg0.readString();
+		@Pc(19) Object[] arguments = new Object[len];
+		for (@Pc(21) int i = 0; i < len; i++) {
+			@Pc(32) int type = buffer.readUnsignedByte();
+			if (type == 0) {
+				arguments[i] = Integer.valueOf(buffer.readInt());
+			} else if (type == 1) {
+				arguments[i] = buffer.readString();
 			}
 		}
-		this.aBoolean403 = true;
-		return local19;
+		this.hasHook = true;
+		return arguments;
 	}
 }

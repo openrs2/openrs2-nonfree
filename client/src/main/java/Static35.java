@@ -34,12 +34,12 @@ public final class Static35 {
 		if (InterfaceList.topLevelInterface != -1) {
 			Static27.method4243(InterfaceList.topLevelInterface);
 		}
-		for (@Pc(80) int local80 = 0; local80 < Static1.anInt113; local80++) {
-			if (Static2.aBooleanArray8[local80]) {
-				Static6.aBooleanArray24[local80] = true;
+		for (@Pc(80) int i = 0; i < InterfaceList.rectangles; i++) {
+			if (Static2.aBooleanArray8[i]) {
+				InterfaceList.rectangleRedraw[i] = true;
 			}
-			Static1.aBooleanArray2[local80] = Static2.aBooleanArray8[local80];
-			Static2.aBooleanArray8[local80] = false;
+			Static1.aBooleanArray2[i] = Static2.aBooleanArray8[i];
+			Static2.aBooleanArray8[i] = false;
 		}
 		Static7.aClass185_15 = null;
 		Static3.anInt2522 = client.loop;
@@ -50,7 +50,7 @@ public final class Static35 {
 			Static7.aBoolean123 = true;
 		}
 		if (InterfaceList.topLevelInterface != -1) {
-			Static1.anInt113 = 0;
+			InterfaceList.rectangles = 0;
 			Static16.method1563();
 		}
 		if (GlRenderer.enabled) {
@@ -82,18 +82,18 @@ public final class Static35 {
 			Static2.anInt1767 = 2;
 		}
 		if (Static1.rectDebug == 3) {
-			for (@Pc(211) int local211 = 0; local211 < Static1.anInt113; local211++) {
-				if (Static1.aBooleanArray2[local211]) {
+			for (@Pc(211) int i = 0; i < InterfaceList.rectangles; i++) {
+				if (Static1.aBooleanArray2[i]) {
 					if (GlRenderer.enabled) {
-						GlRaster.fillRectAlpha(Static6.anIntArray540[local211], Static7.anIntArray638[local211], Static5.anIntArray383[local211], Static7.anIntArray616[local211], 16711935, 128);
+						GlRaster.fillRectAlpha(InterfaceList.rectangleX[i], InterfaceList.rectangleY[i], InterfaceList.rectangleWidth[i], InterfaceList.rectangleHeight[i], 0xFF00FF, 128);
 					} else {
-						SoftwareRaster.fillRectAlpha(Static6.anIntArray540[local211], Static7.anIntArray638[local211], Static5.anIntArray383[local211], Static7.anIntArray616[local211], 16711935, 128);
+						SoftwareRaster.fillRectAlpha(InterfaceList.rectangleX[i], InterfaceList.rectangleY[i], InterfaceList.rectangleWidth[i], InterfaceList.rectangleHeight[i], 0xFF00FF, 128);
 					}
-				} else if (Static6.aBooleanArray24[local211]) {
+				} else if (InterfaceList.rectangleRedraw[i]) {
 					if (GlRenderer.enabled) {
-						GlRaster.fillRectAlpha(Static6.anIntArray540[local211], Static7.anIntArray638[local211], Static5.anIntArray383[local211], Static7.anIntArray616[local211], 16711680, 128);
+						GlRaster.fillRectAlpha(InterfaceList.rectangleX[i], InterfaceList.rectangleY[i], InterfaceList.rectangleWidth[i], InterfaceList.rectangleHeight[i], 0xFF0000, 128);
 					} else {
-						SoftwareRaster.fillRectAlpha(Static6.anIntArray540[local211], Static7.anIntArray638[local211], Static5.anIntArray383[local211], Static7.anIntArray616[local211], 16711680, 128);
+						SoftwareRaster.fillRectAlpha(InterfaceList.rectangleX[i], InterfaceList.rectangleY[i], InterfaceList.rectangleWidth[i], InterfaceList.rectangleHeight[i], 0xFF0000, 128);
 					}
 				}
 			}
@@ -111,25 +111,25 @@ public final class Static35 {
 	}
 
 	@OriginalMember(owner = "client!ud", name = "a", descriptor = "(Lclient!wf;BIII)V")
-	public static void method4309(@OriginalArg(0) Component arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3) {
+	public static void method4309(@OriginalArg(0) Component component, @OriginalArg(4) int x, @OriginalArg(2) int y, @OriginalArg(3) int rectangle) {
 		if (GlRenderer.enabled) {
-			GlRaster.setClip(arg3, arg1, arg0.width + arg3, arg1 + arg0.height);
+			GlRaster.setClip(x, y, component.width + x, y + component.height);
 		}
 		if (MiniMap.state >= 3) {
 			if (GlRenderer.enabled) {
-				@Pc(41) Sprite local41 = arg0.method4729(false);
-				if (local41 != null) {
-					local41.renderTransparent(arg3, arg1);
+				@Pc(41) Sprite sprite = component.method4729(false);
+				if (sprite != null) {
+					sprite.renderTransparent(x, y);
 				}
 			} else {
-				SoftwareRaster.method4210(arg3, arg1, arg0.anIntArray672, arg0.anIntArray657);
+				SoftwareRaster.method4210(x, y, component.anIntArray672, component.anIntArray657);
 			}
 		} else if (GlRenderer.enabled) {
-			((GlSprite) Sprites.compass).renderRotatedTransparent(arg3, arg1, arg0.width, arg0.height, Sprites.compass.width / 2, Sprites.compass.height / 2, (int) Static5.aFloat97, 256, (GlSprite) arg0.method4729(false));
+			((GlSprite) Sprites.compass).renderRotatedTransparent(x, y, component.width, component.height, Sprites.compass.width / 2, Sprites.compass.height / 2, (int) Static5.aFloat97, 256, (GlSprite) component.method4729(false));
 		} else {
-			((SoftwareSprite) Sprites.compass).method2165(arg3, arg1, arg0.width, arg0.height, Sprites.compass.width / 2, Sprites.compass.height / 2, (int) Static5.aFloat97, arg0.anIntArray672, arg0.anIntArray657);
+			((SoftwareSprite) Sprites.compass).method2165(x, y, component.width, component.height, Sprites.compass.width / 2, Sprites.compass.height / 2, (int) Static5.aFloat97, component.anIntArray672, component.anIntArray657);
 		}
-		Static6.aBooleanArray24[arg2] = true;
+		InterfaceList.rectangleRedraw[rectangle] = true;
 	}
 
 	@OriginalMember(owner = "client!ug", name = "d", descriptor = "(I)V")
@@ -302,65 +302,6 @@ public final class Static35 {
 		} else {
 			return 7 - z;
 		}
-	}
-
-	@OriginalMember(owner = "client!ul", name = "a", descriptor = "(ILclient!wf;IIIII)V")
-	public static void method4360(@OriginalArg(0) int arg0, @OriginalArg(1) Component arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5) {
-		@Pc(10) MelType local10 = MelTypeList.get(arg3);
-		if (local10 == null || !local10.miniMapVisible || !local10.method1810()) {
-			return;
-		}
-		if (local10.anIntArray188 != null) {
-			@Pc(32) int[] local32 = new int[local10.anIntArray188.length];
-			for (@Pc(34) int local34 = 0; local34 < local32.length / 2; local34++) {
-				@Pc(48) int local48 = (int) Static5.aFloat97 + Static6.anInt3585 & 0x7FF;
-				@Pc(52) int local52 = MathUtils.COSINE[local48];
-				local52 = local52 * 256 / (Static6.anInt4761 + 256);
-				@Pc(64) int local64 = MathUtils.SINE[local48];
-				local64 = local64 * 256 / (Static6.anInt4761 + 256);
-				local32[local34 * 2] = arg2 + arg1.width / 2 + ((arg5 + local10.anIntArray188[local34 * 2 + 1] * 4) * local64 + local52 * (arg4 + local10.anIntArray188[local34 * 2] * 4) >> 16);
-				local32[local34 * 2 + 1] = arg0 + arg1.height / 2 - (local52 * (arg5 + local10.anIntArray188[local34 * 2 + 1] * 4) - local64 * (arg4 + local10.anIntArray188[local34 * 2] * 4) >> 16);
-			}
-			if (GlRenderer.enabled) {
-				Static18.method1738(local32, local10.anInt2283, local10.anInt2283 >>> 24, arg1.anIntArray672, arg1.anIntArray657);
-			} else {
-				Static17.method1630(local32, local10.anInt2283, local10.anInt2283 >>> 24, arg1.anIntArray672, arg1.anIntArray657);
-			}
-			for (@Pc(195) int local195 = 0; local195 < local32.length / 2 - 1; local195++) {
-				if (GlRenderer.enabled) {
-					GlRaster.drawRectMaskedAlpha(local32[local195 * 2], local32[local195 * 2 + 1], local32[(local195 + 1) * 2], local32[local195 * 2 + 1 + 2], local10.anInt2266, local10.anInt2266 >>> 24, (GlSprite) arg1.method4729(false));
-				} else {
-					SoftwareRaster.drawRectMaskedAlpha(local32[local195 * 2], local32[local195 * 2 + 1], local32[local195 * 2 + 2], local32[local195 * 2 + 3], local10.anInt2266, local10.anInt2266 >>> 24, arg1.anIntArray672, arg1.anIntArray657);
-				}
-			}
-			if (GlRenderer.enabled) {
-				GlRaster.drawRectMaskedAlpha(local32[local32.length - 2], local32[local32.length - 1], local32[0], local32[1], local10.anInt2266, local10.anInt2266 >>> 24, (GlSprite) arg1.method4729(false));
-			} else {
-				SoftwareRaster.drawRectMaskedAlpha(local32[local32.length - 2], local32[local32.length - 1], local32[0], local32[1], local10.anInt2266, local10.anInt2266 >>> 24, arg1.anIntArray672, arg1.anIntArray657);
-			}
-		}
-		@Pc(356) IndexedSprite local356 = null;
-		if (local10.sprite != -1) {
-			local356 = local10.method1811(false, false);
-			if (local356 != null) {
-				Static31.method3780(local356, arg2, arg1, arg4, arg5, arg0);
-			}
-		}
-		if (local10.text == null) {
-			return;
-		}
-		@Pc(384) int local384 = 0;
-		@Pc(386) Font local386 = Fonts.p11Full;
-		if (local10.textSize == 1) {
-			local386 = Fonts.p12Full;
-		}
-		if (local10.textSize == 2) {
-			local386 = Fonts.b12Full;
-		}
-		if (local356 != null) {
-			local384 = local356.height;
-		}
-		Static9.method194(local10.textColor, local10.text, arg0, arg5, arg2, arg4, local384, local386, arg1);
 	}
 
 }

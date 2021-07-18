@@ -736,30 +736,6 @@ public final class Static31 {
 		}
 	}
 
-	@OriginalMember(owner = "client!rm", name = "a", descriptor = "(Lclient!ma;ILclient!wf;BIII)V")
-	public static void method3780(@OriginalArg(0) IndexedSprite arg0, @OriginalArg(1) int arg1, @OriginalArg(2) Component arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4, @OriginalArg(6) int arg5) {
-		if (arg0 == null) {
-			return;
-		}
-		@Pc(13) int local13 = Static6.anInt3585 + (int) Static5.aFloat97 & 0x7FF;
-		@Pc(25) int local25 = Math.max(arg2.width / 2, arg2.height / 2) + 10;
-		@Pc(38) int local38 = arg4 * arg4 + arg3 * arg3;
-		if (local25 * local25 < local38) {
-			return;
-		}
-		@Pc(48) int local48 = MathUtils.SINE[local13];
-		local48 = local48 * 256 / (Static6.anInt4761 + 256);
-		@Pc(60) int local60 = MathUtils.COSINE[local13];
-		local60 = local60 * 256 / (Static6.anInt4761 + 256);
-		@Pc(78) int local78 = local60 * arg3 + arg4 * local48 >> 16;
-		@Pc(89) int local89 = arg4 * local60 - arg3 * local48 >> 16;
-		if (GlRenderer.enabled) {
-			((GlIndexedSprite) arg0).renderTransparentMasked(local78 + arg2.width / 2 + arg1 - arg0.innerWidth / 2, arg2.height / 2 + arg5 - local89 - arg0.innerHeight / 2, (GlSprite) arg2.method4729(false));
-		} else {
-			((SoftwareIndexedSprite) arg0).renderTransparentMasked(local78 + arg1 + arg2.width / 2 - arg0.innerWidth / 2, arg5 + arg2.height / 2 - local89 - arg0.innerHeight / 2, arg2.anIntArray672, arg2.anIntArray657);
-		}
-	}
-
 	@OriginalMember(owner = "client!rm", name = "a", descriptor = "(IIIIBII)V")
 	public static void method3781(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(5) int arg4, @OriginalArg(6) int arg5) {
 		@Pc(17) int local17 = Static8.method9(Static4.anInt3086, arg4, Static5.anInt4230);
@@ -829,12 +805,6 @@ public final class Static31 {
 			Static1.anInt891 = Mouse.clickY;
 			Static2.anInt1940 = 1;
 		}
-	}
-
-	@OriginalMember(owner = "client!rn", name = "b", descriptor = "(B)V")
-	public static void method3150() {
-		Static5.aClass4_Sub3_Sub14_4 = null;
-		Static4.anInt3020 = -1;
 	}
 
 	@OriginalMember(owner = "client!rn", name = "a", descriptor = "([JBII[Ljava/lang/Object;)V")

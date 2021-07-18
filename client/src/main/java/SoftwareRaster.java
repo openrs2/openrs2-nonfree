@@ -525,14 +525,14 @@ public final class SoftwareRaster {
 	}
 
 	@OriginalMember(owner = "client!tk", name = "a", descriptor = "(III[I[I)V")
-	public static void method4210(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(3) int[] arg2, @OriginalArg(4) int[] arg3) {
-		@Pc(5) int local5 = arg0 + arg1 * width;
-		for (@Pc(7) int local7 = 0; local7 < arg2.length; local7++) {
-			@Pc(17) int local17 = local5 + arg2[local7];
-			for (@Pc(22) int local22 = -arg3[local7]; local22 < 0; local22++) {
+	public static void method4210(@OriginalArg(0) int x, @OriginalArg(1) int y, @OriginalArg(3) int[] arg2, @OriginalArg(4) int[] arg3) {
+		@Pc(5) int index = x + y * width;
+		for (@Pc(7) int y0 = 0; y0 < arg2.length; y0++) {
+			@Pc(17) int local17 = index + arg2[y0];
+			for (@Pc(22) int x0 = -arg3[y0]; x0 < 0; x0++) {
 				pixels[local17++] = 0;
 			}
-			local5 += width;
+			index += width;
 		}
 	}
 

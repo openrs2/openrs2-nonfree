@@ -685,7 +685,7 @@ public final class Static29 {
 	@OriginalMember(owner = "client!pl", name = "c", descriptor = "(I)V")
 	public static void method3476() {
 		if (Static5.rebootTimer > 1) {
-			Static1.anInt925 = Static6.anInt4979;
+			InterfaceList.miscTransmitAt = InterfaceList.transmitTimer;
 			Static5.rebootTimer--;
 		}
 		if (Static1.anInt885 > 0) {
@@ -1042,60 +1042,60 @@ public final class Static29 {
 		}
 		Static4.aBoolean232 = false;
 		Static7.aClass185_16 = null;
-		Static6.anInt5088 = 0;
+		InterfaceList.keyQueueSize = 0;
 		@Pc(1483) Component local1483 = Static5.aClass185_11;
 		Static5.aClass185_11 = null;
 		@Pc(1487) Component local1487 = Static2.aClass185_4;
 		Static2.aClass185_4 = null;
 		Static6.aBoolean310 = false;
-		while (Keyboard.nextKey() && Static6.anInt5088 < 128) {
-			Static5.anIntArray441[Static6.anInt5088] = Keyboard.keyCode;
-			Static5.anIntArray419[Static6.anInt5088] = Keyboard.keyChar;
-			Static6.anInt5088++;
+		while (Keyboard.nextKey() && InterfaceList.keyQueueSize < 128) {
+			InterfaceList.keyCodes[InterfaceList.keyQueueSize] = Keyboard.keyCode;
+			InterfaceList.keyChars[InterfaceList.keyQueueSize] = Keyboard.keyChar;
+			InterfaceList.keyQueueSize++;
 		}
 		Static5.aClass185_12 = null;
 		if (InterfaceList.topLevelInterface != -1) {
 			Static14.method1060(InterfaceList.topLevelInterface, GameShell.canvasWidth, 0, 0, 0, 0, GameShell.canvasHeight);
 		}
-		Static6.anInt4979++;
+		InterfaceList.transmitTimer++;
 		if (Static5.aClass185_12 != null) {
 			Static25.method2770();
 		}
 		while (true) {
-			@Pc(1562) Component local1562;
-			@Pc(1550) Component local1550;
-			@Pc(1542) HookRequest local1542;
+			@Pc(1562) Component highPriorityComponent;
+			@Pc(1550) Component highPrioritySource;
+			@Pc(1542) HookRequest highPriorityRequest;
 			do {
-				local1542 = (HookRequest) Static2.highPriorityRequests.removeHead();
-				if (local1542 == null) {
+				highPriorityRequest = (HookRequest) InterfaceList.highPriorityRequests.removeHead();
+				if (highPriorityRequest == null) {
 					while (true) {
-						@Pc(1611) Component local1611;
-						@Pc(1600) Component local1600;
-						@Pc(1593) HookRequest local1593;
+						@Pc(1611) Component mediumPriorityComponent;
+						@Pc(1600) Component mediumPrioritySource;
+						@Pc(1593) HookRequest mediumPriorityRequest;
 						do {
-							local1593 = (HookRequest) Static2.mediumPriorityRequests.removeHead();
-							if (local1593 == null) {
+							mediumPriorityRequest = (HookRequest) InterfaceList.mediumPriorityRequests.removeHead();
+							if (mediumPriorityRequest == null) {
 								while (true) {
-									@Pc(1660) Component local1660;
-									@Pc(1650) Component local1650;
-									@Pc(1643) HookRequest local1643;
+									@Pc(1660) Component lowPriorityComponent;
+									@Pc(1650) Component lowPrioritySource;
+									@Pc(1643) HookRequest lowPriorityRequest;
 									do {
-										local1643 = (HookRequest) Static3.lowPriorityRequests.removeHead();
-										if (local1643 == null) {
+										lowPriorityRequest = (HookRequest) InterfaceList.lowPriorityRequests.removeHead();
+										if (lowPriorityRequest == null) {
 											if (Static5.aClass185_12 == null) {
 												Static1.anInt640 = 0;
 											}
 											if (Static1.aClass185_1 != null) {
 												Static14.method1047();
 											}
-											if (LoginManager.staffModLevel > 0 && Keyboard.pressedKeys[82] && Keyboard.pressedKeys[81] && Static3.anInt2885 != 0) {
-												@Pc(1717) int local1717 = Player.level - Static3.anInt2885;
-												if (local1717 < 0) {
-													local1717 = 0;
-												} else if (local1717 > 3) {
-													local1717 = 3;
+											if (LoginManager.staffModLevel > 0 && Keyboard.pressedKeys[82] && Keyboard.pressedKeys[81] && Static3.wheelRotation != 0) {
+												@Pc(1717) int level = Player.level - Static3.wheelRotation;
+												if (level < 0) {
+													level = 0;
+												} else if (level > 3) {
+													level = 3;
 												}
-												Cheat.teleport(local1717, PlayerList.self.movementQueueX[0] + Static5.originX, Static7.originZ + PlayerList.self.movementQueueZ[0]);
+												Cheat.teleport(level, PlayerList.self.movementQueueX[0] + Static5.originX, Static7.originZ + PlayerList.self.movementQueueZ[0]);
 											}
 											if (LoginManager.staffModLevel > 0 && Keyboard.pressedKeys[82] && Keyboard.pressedKeys[81]) {
 												if (Static1.anInt528 != -1) {
@@ -1257,31 +1257,31 @@ public final class Static29 {
 											}
 											return;
 										}
-										local1650 = local1643.source;
-										if (local1650.createdComponentId < 0) {
+										lowPrioritySource = lowPriorityRequest.source;
+										if (lowPrioritySource.createdComponentId < 0) {
 											break;
 										}
-										local1660 = InterfaceList.getComponent(local1650.layer);
-									} while (local1660 == null || local1660.createdComponents == null || local1650.createdComponentId >= local1660.createdComponents.length || local1660.createdComponents[local1650.createdComponentId] != local1650);
-									ScriptRunner.method2019(local1643);
+										lowPriorityComponent = InterfaceList.getComponent(lowPrioritySource.layer);
+									} while (lowPriorityComponent == null || lowPriorityComponent.createdComponents == null || lowPrioritySource.createdComponentId >= lowPriorityComponent.createdComponents.length || lowPriorityComponent.createdComponents[lowPrioritySource.createdComponentId] != lowPrioritySource);
+									ScriptRunner.method2019(lowPriorityRequest);
 								}
 							}
-							local1600 = local1593.source;
-							if (local1600.createdComponentId < 0) {
+							mediumPrioritySource = mediumPriorityRequest.source;
+							if (mediumPrioritySource.createdComponentId < 0) {
 								break;
 							}
-							local1611 = InterfaceList.getComponent(local1600.layer);
-						} while (local1611 == null || local1611.createdComponents == null || local1611.createdComponents.length <= local1600.createdComponentId || local1600 != local1611.createdComponents[local1600.createdComponentId]);
-						ScriptRunner.method2019(local1593);
+							mediumPriorityComponent = InterfaceList.getComponent(mediumPrioritySource.layer);
+						} while (mediumPriorityComponent == null || mediumPriorityComponent.createdComponents == null || mediumPriorityComponent.createdComponents.length <= mediumPrioritySource.createdComponentId || mediumPrioritySource != mediumPriorityComponent.createdComponents[mediumPrioritySource.createdComponentId]);
+						ScriptRunner.method2019(mediumPriorityRequest);
 					}
 				}
-				local1550 = local1542.source;
-				if (local1550.createdComponentId < 0) {
+				highPrioritySource = highPriorityRequest.source;
+				if (highPrioritySource.createdComponentId < 0) {
 					break;
 				}
-				local1562 = InterfaceList.getComponent(local1550.layer);
-			} while (local1562 == null || local1562.createdComponents == null || local1562.createdComponents.length <= local1550.createdComponentId || local1562.createdComponents[local1550.createdComponentId] != local1550);
-			ScriptRunner.method2019(local1542);
+				highPriorityComponent = InterfaceList.getComponent(highPrioritySource.layer);
+			} while (highPriorityComponent == null || highPriorityComponent.createdComponents == null || highPriorityComponent.createdComponents.length <= highPrioritySource.createdComponentId || highPriorityComponent.createdComponents[highPrioritySource.createdComponentId] != highPrioritySource);
+			ScriptRunner.method2019(highPriorityRequest);
 		}
 	}
 
@@ -2127,9 +2127,9 @@ public final class Static29 {
 	public static void method3495(@OriginalArg(0) Component[] components, @OriginalArg(2) int layer) {
 		for (@Pc(7) int i = 0; i < components.length; i++) {
 			@Pc(19) Component component = components[i];
-			if (component != null && component.layer == layer && (!component.if3 || !Static12.method692(component))) {
+			if (component != null && component.layer == layer && (!component.if3 || !InterfaceList.isHidden(component))) {
 				if (component.type == 0) {
-					if (!component.if3 && Static12.method692(component) && Static5.aClass185_11 != component) {
+					if (!component.if3 && InterfaceList.isHidden(component) && Static5.aClass185_11 != component) {
 						continue;
 					}
 					method3495(components, component.id);

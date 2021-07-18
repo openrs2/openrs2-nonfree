@@ -20,7 +20,7 @@ public final class Static27 {
 		MiniMap.state = 0;
 		MiniMap.aBoolean147 = false;
 		MiniMap.flagY = 0;
-		Static4.anInt3020 = -1;
+		MiniMap.level = -1;
 		MiniMap.flagX = 0;
 		MiniMap.sequenceNumber = 0;
 	}

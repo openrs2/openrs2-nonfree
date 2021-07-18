@@ -967,7 +967,7 @@ public final class ScriptRunner {
 						} else {
 							arguments[0] = Integer.valueOf(scriptId);
 						}
-						component.aBoolean403 = true;
+						component.hasHook = true;
 						if (opcode == 1400) {
 							component.onClick = arguments;
 						} else if (opcode == 1401) {

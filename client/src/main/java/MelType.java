@@ -7,7 +7,7 @@ import org.openrs2.deob.annotation.Pc;
 public final class MelType {
 
 	@OriginalMember(owner = "client!ho", name = "a", descriptor = "I")
-	private int anInt2265;
+	private int secondaryMaxValue;
 
 	@OriginalMember(owner = "client!ho", name = "c", descriptor = "I")
 	public int anInt2266;
@@ -19,10 +19,10 @@ public final class MelType {
 	public int fillColor;
 
 	@OriginalMember(owner = "client!ho", name = "p", descriptor = "I")
-	private int anInt2275;
+	private int primaryMaxValue;
 
 	@OriginalMember(owner = "client!ho", name = "r", descriptor = "I")
-	private int anInt2276;
+	private int primaryMinValue;
 
 	@OriginalMember(owner = "client!ho", name = "t", descriptor = "Ljava/lang/String;")
 	public String opBase;
@@ -37,7 +37,7 @@ public final class MelType {
 	public int anInt2283;
 
 	@OriginalMember(owner = "client!ho", name = "E", descriptor = "I")
-	private int anInt2285;
+	private int secondaryMinValue;
 
 	@OriginalMember(owner = "client!ho", name = "F", descriptor = "I")
 	public int textColor;
@@ -49,7 +49,7 @@ public final class MelType {
 	public boolean worldMapVisible = true;
 
 	@OriginalMember(owner = "client!ho", name = "k", descriptor = "I")
-	private int anInt2271 = -1;
+	private int secondaryVisibleVarp = -1;
 
 	@OriginalMember(owner = "client!ho", name = "i", descriptor = "I")
 	public int textSize = 0;
@@ -70,16 +70,16 @@ public final class MelType {
 	public int category = -1;
 
 	@OriginalMember(owner = "client!ho", name = "A", descriptor = "I")
-	private int anInt2282 = -1;
+	private int primaryVisibleVarbit = -1;
 
 	@OriginalMember(owner = "client!ho", name = "M", descriptor = "Z")
 	public boolean aBoolean157 = true;
 
 	@OriginalMember(owner = "client!ho", name = "d", descriptor = "I")
-	private int anInt2267 = -1;
+	private int secondaryVisibleVarbit = -1;
 
 	@OriginalMember(owner = "client!ho", name = "P", descriptor = "I")
-	private int anInt2294 = -1;
+	private int primaryVisibleVarp = -1;
 
 	@OriginalMember(owner = "client!ho", name = "w", descriptor = "I")
 	private int worldMapSprite = -1;
@@ -144,16 +144,16 @@ public final class MelType {
 		} else if (code == 8) {
 			this.randomizePosition = buffer.readUnsignedByte() == 1;
 		} else if (code == 9) {
-			this.anInt2282 = buffer.readUnsignedShort();
-			if (this.anInt2282 == 65535) {
-				this.anInt2282 = -1;
+			this.primaryVisibleVarbit = buffer.readUnsignedShort();
+			if (this.primaryVisibleVarbit == 65535) {
+				this.primaryVisibleVarbit = -1;
 			}
-			this.anInt2294 = buffer.readUnsignedShort();
-			if (this.anInt2294 == 65535) {
-				this.anInt2294 = -1;
+			this.primaryVisibleVarp = buffer.readUnsignedShort();
+			if (this.primaryVisibleVarp == 65535) {
+				this.primaryVisibleVarp = -1;
 			}
-			this.anInt2276 = buffer.readInt();
-			this.anInt2275 = buffer.readInt();
+			this.primaryMinValue = buffer.readInt();
+			this.primaryMaxValue = buffer.readInt();
 		} else if (code >= 10 && code <= 14) {
 			this.ops[code - 10] = buffer.readString();
 		} else if (code == 15) {
@@ -173,16 +173,16 @@ public final class MelType {
 		} else if (code == 19) {
 			this.category = buffer.readUnsignedShort();
 		} else if (code == 20) {
-			this.anInt2267 = buffer.readUnsignedShort();
-			if (this.anInt2267 == 65535) {
-				this.anInt2267 = -1;
+			this.secondaryVisibleVarbit = buffer.readUnsignedShort();
+			if (this.secondaryVisibleVarbit == 65535) {
+				this.secondaryVisibleVarbit = -1;
 			}
-			this.anInt2271 = buffer.readUnsignedShort();
-			if (this.anInt2271 == 65535) {
-				this.anInt2271 = -1;
+			this.secondaryVisibleVarp = buffer.readUnsignedShort();
+			if (this.secondaryVisibleVarp == 65535) {
+				this.secondaryVisibleVarp = -1;
 			}
-			this.anInt2285 = buffer.readInt();
-			this.anInt2265 = buffer.readInt();
+			this.secondaryMinValue = buffer.readInt();
+			this.secondaryMaxValue = buffer.readInt();
 		} else if (code == 21) {
 			this.outlineColor = buffer.readInt();
 		} else if (code == 22) {
@@ -191,28 +191,28 @@ public final class MelType {
 	}
 
 	@OriginalMember(owner = "client!ho", name = "a", descriptor = "(I)Z")
-	public final boolean method1810() {
-		if (this.anInt2294 == -1 && this.anInt2282 == -1) {
+	public final boolean isVisible() {
+		if (this.primaryVisibleVarp == -1 && this.primaryVisibleVarbit == -1) {
 			return true;
 		}
-		@Pc(35) int local35;
-		if (this.anInt2294 == -1) {
-			local35 = VarpDomain.getVarbit(this.anInt2282);
+		@Pc(35) int value;
+		if (this.primaryVisibleVarp == -1) {
+			value = VarpDomain.getVarbit(this.primaryVisibleVarbit);
 		} else {
-			local35 = VarpDomain.varps[this.anInt2294];
+			value = VarpDomain.varps[this.primaryVisibleVarp];
 		}
-		if (this.anInt2276 > local35 || this.anInt2275 < local35) {
+		if (value < this.primaryMinValue || value > this.primaryMaxValue) {
 			return false;
-		} else if (this.anInt2271 == -1 && this.anInt2267 == -1) {
+		} else if (this.secondaryVisibleVarp == -1 && this.secondaryVisibleVarbit == -1) {
 			return true;
 		} else {
-			@Pc(80) int local80;
-			if (this.anInt2271 == -1) {
-				local80 = VarpDomain.getVarbit(this.anInt2267);
+			@Pc(80) int value2;
+			if (this.secondaryVisibleVarp == -1) {
+				value2 = VarpDomain.getVarbit(this.secondaryVisibleVarbit);
 			} else {
-				local80 = VarpDomain.varps[this.anInt2271];
+				value2 = VarpDomain.varps[this.secondaryVisibleVarp];
 			}
-			return local80 >= this.anInt2285 && this.anInt2265 >= local80;
+			return value2 >= this.secondaryMinValue && this.secondaryMaxValue >= value2;
 		}
 	}
 

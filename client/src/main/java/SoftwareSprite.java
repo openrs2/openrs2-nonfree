@@ -371,18 +371,18 @@ public class SoftwareSprite extends Sprite {
 	}
 
 	@OriginalMember(owner = "client!vn", name = "b", descriptor = "(IIIIIIII[I[I)V")
-	public void renderRotatedTransparent(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) int[] arg8, @OriginalArg(9) int[] arg9) {
+	public void renderRotatedTransparent(@OriginalArg(0) int x, @OriginalArg(1) int y, @OriginalArg(2) int width, @OriginalArg(3) int height, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) int[] arg8, @OriginalArg(9) int[] arg9) {
 		try {
-			@Pc(4) int local4 = -arg2 / 2;
-			@Pc(9) int local9 = -arg3 / 2;
+			@Pc(4) int local4 = -width / 2;
+			@Pc(9) int local9 = -height / 2;
 			@Pc(18) int local18 = (int) (Math.sin((double) arg6 / 326.11D) * 65536.0D);
 			@Pc(27) int local27 = (int) (Math.cos((double) arg6 / 326.11D) * 65536.0D);
 			local18 = local18 * arg7 >> 8;
 			local27 = local27 * arg7 >> 8;
 			@Pc(51) int local51 = (arg4 << 16) + local9 * local18 + local4 * local27;
 			@Pc(63) int local63 = (arg5 << 16) + local9 * local27 - local4 * local18;
-			@Pc(69) int local69 = arg0 + arg1 * SoftwareRaster.width;
-			for (@Pc(71) int local71 = 0; local71 < arg3; local71++) {
+			@Pc(69) int local69 = x + y * SoftwareRaster.width;
+			for (@Pc(71) int local71 = 0; local71 < height; local71++) {
 				@Pc(78) int local78 = arg8[local71];
 				@Pc(82) int local82 = local69 + local78;
 				@Pc(88) int local88 = local51 + local27 * local78;

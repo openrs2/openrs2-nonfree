@@ -169,9 +169,6 @@ public final class Static3 {
 	@OriginalMember(owner = "client!ii", name = "C", descriptor = "I")
 	public static int anInt2973;
 
-	@OriginalMember(owner = "client!ij", name = "L", descriptor = "Lclient!vn;")
-	public static SoftwareSprite aClass4_Sub3_Sub14_Sub1_3;
-
 	@OriginalMember(owner = "client!ij", name = "T", descriptor = "I")
 	public static int anInt2394;
 
@@ -226,9 +223,6 @@ public final class Static3 {
 	@OriginalMember(owner = "client!gk", name = "d", descriptor = "[F")
 	public static final float[] aFloatArray21 = new float[4];
 
-	@OriginalMember(owner = "client!gm", name = "b", descriptor = "I")
-	public static int anInt2102 = 0;
-
 	@OriginalMember(owner = "client!gm", name = "d", descriptor = "S")
 	public static short aShort12 = 320;
 
@@ -239,7 +233,7 @@ public final class Static3 {
 	public static int anInt2142 = 0;
 
 	@OriginalMember(owner = "client!hc", name = "b", descriptor = "I")
-	public static int anInt2885 = 0;
+	public static int wheelRotation = 0;
 
 	@OriginalMember(owner = "client!hc", name = "c", descriptor = "I")
 	public static int anInt2886 = 0;
@@ -264,9 +258,6 @@ public final class Static3 {
 
 	@OriginalMember(owner = "client!hk", name = "lb", descriptor = "S")
 	public static short aShort13 = 256;
-
-	@OriginalMember(owner = "client!ho", name = "Q", descriptor = "[I")
-	public static final int[] anIntArray189 = new int[1000];
 
 	@OriginalMember(owner = "client!ho", name = "T", descriptor = "[I")
 	public static final int[] anIntArray190 = new int[14];
@@ -328,14 +319,8 @@ public final class Static3 {
 	@OriginalMember(owner = "client!jh", name = "c", descriptor = "Z")
 	public static boolean aBoolean177 = false;
 
-	@OriginalMember(owner = "client!jh", name = "e", descriptor = "Lclient!ll;")
-	public static final LinkedList lowPriorityRequests = new LinkedList();
-
 	@OriginalMember(owner = "client!jh", name = "l", descriptor = "Z")
 	public static boolean aBoolean178 = false;
-
-	@OriginalMember(owner = "client!jj", name = "S", descriptor = "I")
-	public static int anInt2616 = 0;
 
 	@OriginalMember(owner = "client!jj", name = "X", descriptor = "[I")
 	public static final int[] anIntArray230 = new int[] { 2, 0, 0, 2, 0, 0, 0, 4, 4 };

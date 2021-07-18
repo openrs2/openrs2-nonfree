@@ -33,6 +33,48 @@ public final class InterfaceList {
 	@OriginalMember(owner = "client!ei", name = "D", descriptor = "Lclient!ic;")
 	public static final HashTable serverActiveProperties = new HashTable(512);
 
+	@OriginalMember(owner = "client!jh", name = "e", descriptor = "Lclient!ll;")
+	public static final LinkedList lowPriorityRequests = new LinkedList();
+
+	@OriginalMember(owner = "client!fm", name = "f", descriptor = "Lclient!ll;")
+	public static final LinkedList mediumPriorityRequests = new LinkedList();
+
+	@OriginalMember(owner = "client!e", name = "v", descriptor = "Lclient!ll;")
+	public static final LinkedList highPriorityRequests = new LinkedList();
+
+	@OriginalMember(owner = "client!t", name = "f", descriptor = "I")
+	public static int transmitTimer = 1;
+
+	@OriginalMember(owner = "client!bc", name = "u", descriptor = "I")
+	public static int miscTransmitAt = 0;
+
+	@OriginalMember(owner = "client!pj", name = "k", descriptor = "[I")
+	public static final int[] keyCodes = new int[128];
+
+	@OriginalMember(owner = "client!ol", name = "w", descriptor = "[I")
+	public static final int[] keyChars = new int[128];
+
+	@OriginalMember(owner = "client!td", name = "cb", descriptor = "I")
+	public static int keyQueueSize = 0;
+
+	@OriginalMember(owner = "client!sn", name = "W", descriptor = "[Z")
+	public static final boolean[] rectangleRedraw = new boolean[100];
+
+	@OriginalMember(owner = "client!t", name = "g", descriptor = "[I")
+	public static final int[] rectangleX = new int[100];
+
+	@OriginalMember(owner = "client!vi", name = "cb", descriptor = "[I")
+	public static final int[] rectangleY = new int[100];
+
+	@OriginalMember(owner = "client!nb", name = "D", descriptor = "[I")
+	public static final int[] rectangleWidth = new int[100];
+
+	@OriginalMember(owner = "client!un", name = "v", descriptor = "[I")
+	public static final int[] rectangleHeight = new int[100];
+
+	@OriginalMember(owner = "client!af", name = "F", descriptor = "I")
+	public static int rectangles = 0;
+
 	@OriginalMember(owner = "client!wj", name = "a", descriptor = "(Lclient!fh;ILclient!fh;Lclient!fh;Lclient!fh;)V")
 	public static void init(@OriginalArg(3) Js5 archive, @OriginalArg(4) Js5 modelsArchive, @OriginalArg(0) Js5 spritesArchive, @OriginalArg(2) Js5 fontMetricsArchive) {
 		InterfaceList.spritesArchive = spritesArchive;
@@ -242,5 +284,57 @@ public final class InterfaceList {
 		} else {
 			return component.ops[index];
 		}
+	}
+
+	@OriginalMember(owner = "client!client", name = "c", descriptor = "(Lclient!wf;)Z")
+	public static boolean isHidden(@OriginalArg(0) Component component) {
+		if (Static1.qaOpTest) {
+			if (getServerActiveProperties(component).events != 0) {
+				return false;
+			}
+			if (component.type == 0) {
+				return false;
+			}
+		}
+		return component.hidden;
+	}
+
+	@OriginalMember(owner = "client!client", name = "b", descriptor = "(Lclient!wf;)Lclient!wf;")
+	public static Component method691(@OriginalArg(0) Component component) {
+		@Pc(4) int dragDepth = getServerActiveProperties(component).getDragDepth();
+		if (dragDepth == 0) {
+			return null;
+		}
+		for (@Pc(10) int i = 0; i < dragDepth; i++) {
+			component = getComponent(component.layer);
+			if (component == null) {
+				return null;
+			}
+		}
+		return component;
+	}
+
+	@OriginalMember(owner = "client!nd", name = "a", descriptor = "(ILclient!wf;)Lclient!wf;")
+	public static Component method2942(@OriginalArg(1) Component component) {
+		if (component.layer != -1) {
+			return getComponent(component.layer);
+		}
+		@Pc(20) int id = component.id >>> 16;
+		@Pc(33) HashTableIterator iterator = new HashTableIterator(subInterfaces);
+		for (@Pc(38) SubInterface subInterface = (SubInterface) iterator.head(); subInterface != null; subInterface = (SubInterface) iterator.next()) {
+			if (id == subInterface.id) {
+				return getComponent((int) subInterface.key);
+			}
+		}
+		return null;
+	}
+
+	@OriginalMember(owner = "client!fi", name = "a", descriptor = "(Lclient!wf;I)Lclient!wf;")
+	static Component method1403(@OriginalArg(0) Component component) {
+		@Pc(2) Component local2 = method691(component);
+		if (local2 == null) {
+			local2 = component.dragComponent;
+		}
+		return local2;
 	}
 }

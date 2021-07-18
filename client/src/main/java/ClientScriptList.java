@@ -25,9 +25,9 @@ public final class ClientScriptList {
 	@OriginalMember(owner = "client!lf", name = "a", descriptor = "(IIII)Lclient!jl;")
 	public static ClientScript get(@OriginalArg(0) int trigger, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
 		@Pc(9) int local9 = arg1 << 8 | trigger;
-		@Pc(18) ClientScript local18 = (ClientScript) scripts.get((long) local9 << 16);
-		if (local18 != null) {
-			return local18;
+		@Pc(18) ClientScript script = (ClientScript) scripts.get((long) local9 << 16);
+		if (script != null) {
+			return script;
 		}
 		@Pc(30) byte[] local30 = client.js5Archive12.fetchFile(client.js5Archive12.getGroupId(local9));
 		if (local30 == null) {

@@ -430,7 +430,7 @@ public final class Static25 {
 		Protocol.inboundBuffer.position = 0;
 		Static5.rebootTimer = 0;
 		Protocol.length = 0;
-		Static8.method115();
+		MiniMap.method115();
 		for (@Pc(33) int i = 0; i < PlayerList.players.length; i++) {
 			if (PlayerList.players[i] != null) {
 				PlayerList.players[i].faceEntity = -1;

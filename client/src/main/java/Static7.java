@@ -140,9 +140,6 @@ public final class Static7 {
 	@OriginalMember(owner = "client!un", name = "u", descriptor = "Lclient!wf;")
 	public static Component aClass185_15 = null;
 
-	@OriginalMember(owner = "client!un", name = "v", descriptor = "[I")
-	public static final int[] anIntArray616 = new int[100];
-
 	@OriginalMember(owner = "client!un", name = "z", descriptor = "[S")
 	public static short[] aShortArray111 = new short[256];
 
@@ -181,9 +178,6 @@ public final class Static7 {
 
 	@OriginalMember(owner = "client!vi", name = "T", descriptor = "I")
 	public static int anInt5584 = -1;
-
-	@OriginalMember(owner = "client!vi", name = "cb", descriptor = "[I")
-	public static final int[] anIntArray638 = new int[100];
 
 	@OriginalMember(owner = "client!vl", name = "c", descriptor = "I")
 	public static int keysSize = 0;

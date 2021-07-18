@@ -88,9 +88,6 @@ public final class Static5 {
 	@OriginalMember(owner = "client!pg", name = "o", descriptor = "I")
 	public static int anInt3774;
 
-	@OriginalMember(owner = "client!pj", name = "a", descriptor = "Lclient!uj;")
-	public static Sprite aClass4_Sub3_Sub14_4;
-
 	@OriginalMember(owner = "client!pj", name = "f", descriptor = "I")
 	public static int anInt4165;
 
@@ -129,9 +126,6 @@ public final class Static5 {
 
 	@OriginalMember(owner = "client!qg", name = "i", descriptor = "Lclient!wf;")
 	public static Component aClass185_12;
-
-	@OriginalMember(owner = "client!nb", name = "D", descriptor = "[I")
-	public static final int[] anIntArray383 = new int[100];
 
 	@OriginalMember(owner = "client!nc", name = "d", descriptor = "Z")
 	public static boolean aBoolean248 = true;
@@ -214,9 +208,6 @@ public final class Static5 {
 	@OriginalMember(owner = "client!ol", name = "r", descriptor = "I")
 	public static final int anInt3907 = 3353893;
 
-	@OriginalMember(owner = "client!ol", name = "w", descriptor = "[I")
-	public static final int[] anIntArray419 = new int[128];
-
 	@OriginalMember(owner = "client!om", name = "j", descriptor = "[S")
 	public static short[] aShortArray74 = new short[256];
 
@@ -234,9 +225,6 @@ public final class Static5 {
 
 	@OriginalMember(owner = "client!pj", name = "j", descriptor = "[I")
 	public static int[] anIntArray440 = new int[2];
-
-	@OriginalMember(owner = "client!pj", name = "k", descriptor = "[I")
-	public static final int[] anIntArray441 = new int[128];
 
 	@OriginalMember(owner = "client!pl", name = "u", descriptor = "[Lclient!te;")
 	public static final AnimFrameset[] aClass4_Sub3_Sub19Array4 = new AnimFrameset[14];

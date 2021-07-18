@@ -94,9 +94,6 @@ public final class Static2 {
 	@OriginalMember(owner = "client!dg", name = "l", descriptor = "I")
 	public static int anInt2245 = 128;
 
-	@OriginalMember(owner = "client!dg", name = "n", descriptor = "[I")
-	public static final int[] anIntArray187 = new int[1000];
-
 	@OriginalMember(owner = "client!dg", name = "o", descriptor = "I")
 	public static int anInt2246 = 0;
 
@@ -108,9 +105,6 @@ public final class Static2 {
 
 	@OriginalMember(owner = "client!dn", name = "eb", descriptor = "I")
 	public static int anInt1165 = 0;
-
-	@OriginalMember(owner = "client!e", name = "v", descriptor = "Lclient!ll;")
-	public static final LinkedList highPriorityRequests = new LinkedList();
 
 	@OriginalMember(owner = "client!ea", name = "G", descriptor = "[[Z")
 	public static final boolean[][] aBooleanArrayArray2 = new boolean[][] { { true, true, true }, { false, false }, { false, true }, { true, false }, { false, true, true }, { true, false, true }, { false, true, false }, { true, false, false } };
@@ -186,9 +180,6 @@ public final class Static2 {
 
 	@OriginalMember(owner = "client!fm", name = "e", descriptor = "I")
 	public static int anInt1940 = 0;
-
-	@OriginalMember(owner = "client!fm", name = "f", descriptor = "Lclient!ll;")
-	public static final LinkedList mediumPriorityRequests = new LinkedList();
 
 	@OriginalMember(owner = "client!fm", name = "h", descriptor = "[Lclient!eg;")
 	public static final SeqType[] aClass46Array1 = new SeqType[14];

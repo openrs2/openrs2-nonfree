@@ -112,7 +112,7 @@ public final class LocType {
 	public boolean mapSceneRotated = false;
 
 	@OriginalMember(owner = "client!vh", name = "H", descriptor = "I")
-	public int anInt5526 = -1;
+	public int mapElement = -1;
 
 	@OriginalMember(owner = "client!vh", name = "Y", descriptor = "I")
 	private int translateY = 0;
@@ -890,7 +890,7 @@ public final class LocType {
 				this.anInt5505 += local525;
 			}
 		} else if (code == 107) {
-			this.anInt5526 = buffer.readUnsignedShort();
+			this.mapElement = buffer.readUnsignedShort();
 		} else if (code >= 150 && code < 155) {
 			this.ops[code - 150] = buffer.readString();
 			if (!LocTypeList.allowMembers || this.ops[code - 150].equalsIgnoreCase(LocalisedText.HIDDEN)) {

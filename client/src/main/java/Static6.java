@@ -89,12 +89,6 @@ public final class Static6 {
 	@OriginalMember(owner = "client!qm", name = "c", descriptor = "I")
 	public static int anInt4398 = 1;
 
-	@OriginalMember(owner = "client!r", name = "s", descriptor = "[[I")
-	public static final int[][] anIntArrayArray25 = new int[][] { { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }, { 12, 8, 4, 0, 13, 9, 5, 1, 14, 10, 6, 2, 15, 11, 7, 3 }, { 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0 }, { 3, 7, 11, 15, 2, 6, 10, 14, 1, 5, 9, 13, 0, 4, 8, 12 } };
-
-	@OriginalMember(owner = "client!ra", name = "q", descriptor = "I")
-	public static int anInt4434 = 0;
-
 	@OriginalMember(owner = "client!ra", name = "C", descriptor = "[I")
 	public static final int[] anIntArray474 = new int[] { 1, 1, 1, 1, 4, 1, 1, 5, 6, 1, 5, 0, 7, 0, 4, 1, 7, 2, 1, 1, 6, 1, 1, 3, 6, 1, 7, 0, 0, 6, 7, 0, 1, 7, 6, 1, 1, 1, 5, 4, 3, 2, 1, 1, 0, 4, 1, 5 };
 
@@ -197,26 +191,11 @@ public final class Static6 {
 	@OriginalMember(owner = "client!sm", name = "f", descriptor = "I")
 	public static int anInt4907 = 0;
 
-	@OriginalMember(owner = "client!sn", name = "W", descriptor = "[Z")
-	public static final boolean[] aBooleanArray24 = new boolean[100];
-
 	@OriginalMember(owner = "client!sn", name = "ib", descriptor = "I")
 	public static int anInt4946 = 0;
 
 	@OriginalMember(owner = "client!sn", name = "rb", descriptor = "I")
 	public static int anInt4953 = -1;
-
-	@OriginalMember(owner = "client!t", name = "f", descriptor = "I")
-	public static int anInt4979 = 1;
-
-	@OriginalMember(owner = "client!t", name = "g", descriptor = "[I")
-	public static final int[] anIntArray540 = new int[100];
-
-	@OriginalMember(owner = "client!ta", name = "s", descriptor = "I")
-	public static int anInt4996 = 0;
-
-	@OriginalMember(owner = "client!td", name = "cb", descriptor = "I")
-	public static int anInt5088 = 0;
 
 	@OriginalMember(owner = "client!te", name = "F", descriptor = "I")
 	public static int anInt5120 = -1;
@@ -226,8 +205,5 @@ public final class Static6 {
 
 	@OriginalMember(owner = "client!tj", name = "s", descriptor = "I")
 	public static int anInt3585 = 0;
-
-	@OriginalMember(owner = "client!tl", name = "a", descriptor = "I")
-	public static int anInt5189 = 0;
 
 }

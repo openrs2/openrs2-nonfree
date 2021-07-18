@@ -54,7 +54,7 @@ public final class Static14 {
 						local231.arguments = Static1.aClass185_1.onDragComplete;
 						ScriptRunner.method2019(local231);
 					}
-					if (Static7.aClass185_16 != null && Static12.method691(Static1.aClass185_1) != null) {
+					if (Static7.aClass185_16 != null && InterfaceList.method691(Static1.aClass185_1) != null) {
 						Protocol.outboundBuffer.writeOpcode(0);
 						Protocol.outboundBuffer.writeIntLE2(Static1.aClass185_1.id);
 						Protocol.outboundBuffer.writeIntAlt3(Static7.aClass185_16.id);
@@ -556,7 +556,7 @@ public final class Static14 {
 		if (arg1 == -1 && local37.type == 0) {
 			for (@Pc(110) int local110 = 0; local110 < MiniMenu.size; local110++) {
 				if (MiniMenu.actions[local110] == 1 || MiniMenu.actions[local110] == 1009 || MiniMenu.actions[local110] == 34 || MiniMenu.actions[local110] == 23 || MiniMenu.actions[local110] == 3) {
-					for (@Pc(148) Component local148 = InterfaceList.getComponent(MiniMenu.intArgs2[local110]); local148 != null; local148 = Static26.method2942(local148)) {
+					for (@Pc(148) Component local148 = InterfaceList.getComponent(MiniMenu.intArgs2[local110]); local148 != null; local148 = InterfaceList.method2942(local148)) {
 						if (local148.id == local37.id) {
 							return true;
 						}

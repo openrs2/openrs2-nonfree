@@ -21,6 +21,9 @@ public final class ClanChat {
 	@OriginalMember(owner = "client!ln", name = "Y", descriptor = "I")
 	public static int size;
 
+	@OriginalMember(owner = "client!jj", name = "S", descriptor = "I")
+	public static int transmitAt = 0;
+
 	@OriginalMember(owner = "client!pl", name = "a", descriptor = "(IJ)V")
 	public static void join(@OriginalArg(1) long name) {
 		if (name != 0L) {

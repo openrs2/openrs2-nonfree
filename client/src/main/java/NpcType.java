@@ -115,7 +115,7 @@ public final class NpcType {
 	private int anInt5265 = 128;
 
 	@OriginalMember(owner = "client!ua", name = "cb", descriptor = "I")
-	public int anInt5267 = -1;
+	public int mapElement = -1;
 
 	@OriginalMember(owner = "client!ua", name = "gb", descriptor = "Z")
 	public boolean aBoolean358 = true;
@@ -347,7 +347,7 @@ public final class NpcType {
 		} else if (code == 141) {
 			this.aBoolean355 = true;
 		} else if (code == 142) {
-			this.anInt5267 = buffer.readUnsignedShort();
+			this.mapElement = buffer.readUnsignedShort();
 		} else if (code >= 150 && code < 155) {
 			this.ops[code - 150] = buffer.readString();
 			if (!NpcTypeList.allowMembers || this.ops[code - 150].equalsIgnoreCase(LocalisedText.HIDDEN)) {

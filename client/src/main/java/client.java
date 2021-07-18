@@ -370,15 +370,15 @@ public final class client extends GameShell {
 
 	@OriginalMember(owner = "client!client", name = "f", descriptor = "(I)V")
 	private void method683() {
-		for (Static6.anInt5088 = 0; Keyboard.nextKey() && Static6.anInt5088 < 128; Static6.anInt5088++) {
-			Static5.anIntArray441[Static6.anInt5088] = Keyboard.keyCode;
-			Static5.anIntArray419[Static6.anInt5088] = Keyboard.keyChar;
+		for (InterfaceList.keyQueueSize = 0; Keyboard.nextKey() && InterfaceList.keyQueueSize < 128; InterfaceList.keyQueueSize++) {
+			InterfaceList.keyCodes[InterfaceList.keyQueueSize] = Keyboard.keyCode;
+			InterfaceList.keyChars[InterfaceList.keyQueueSize] = Keyboard.keyChar;
 		}
 		Static5.anInt4156++;
 		if (InterfaceList.topLevelInterface != -1) {
 			Static14.method1060(InterfaceList.topLevelInterface, GameShell.canvasWidth, 0, 0, 0, 0, GameShell.canvasHeight);
 		}
-		Static6.anInt4979++;
+		InterfaceList.transmitTimer++;
 		if (GlRenderer.enabled) {
 			nextNpc:
 			for (@Pc(56) int i = 0; i < 32768; i++) {
@@ -427,26 +427,26 @@ public final class client extends GameShell {
 			}
 		}
 		while (true) {
-			@Pc(389) HookRequest local389;
-			@Pc(395) Component local395;
-			@Pc(406) Component local406;
+			@Pc(389) HookRequest highPriorityRequest;
+			@Pc(395) Component highPrioritySource;
+			@Pc(406) Component highPriorityComponent;
 			do {
-				local389 = (HookRequest) Static2.highPriorityRequests.removeHead();
-				if (local389 == null) {
+				highPriorityRequest = (HookRequest) InterfaceList.highPriorityRequests.removeHead();
+				if (highPriorityRequest == null) {
 					while (true) {
-						@Pc(440) HookRequest local440;
-						@Pc(448) Component local448;
-						@Pc(460) Component local460;
+						@Pc(440) HookRequest mediumPriorityRequest;
+						@Pc(448) Component mediumPrioritySource;
+						@Pc(460) Component mediumPriorityComponent;
 						do {
-							local440 = (HookRequest) Static2.mediumPriorityRequests.removeHead();
-							if (local440 == null) {
+							mediumPriorityRequest = (HookRequest) InterfaceList.mediumPriorityRequests.removeHead();
+							if (mediumPriorityRequest == null) {
 								while (true) {
-									@Pc(489) HookRequest local489;
-									@Pc(496) Component local496;
-									@Pc(505) Component local505;
+									@Pc(489) HookRequest lowPriorityRequest;
+									@Pc(496) Component lowPrioritySource;
+									@Pc(505) Component lowPriorityComponent;
 									do {
-										local489 = (HookRequest) Static3.lowPriorityRequests.removeHead();
-										if (local489 == null) {
+										lowPriorityRequest = (HookRequest) InterfaceList.lowPriorityRequests.removeHead();
+										if (lowPriorityRequest == null) {
 											if (Static1.aClass185_1 != null) {
 												Static14.method1047();
 											}
@@ -463,31 +463,31 @@ public final class client extends GameShell {
 											}
 											return;
 										}
-										local496 = local489.source;
-										if (local496.createdComponentId < 0) {
+										lowPrioritySource = lowPriorityRequest.source;
+										if (lowPrioritySource.createdComponentId < 0) {
 											break;
 										}
-										local505 = InterfaceList.getComponent(local496.layer);
-									} while (local505 == null || local505.createdComponents == null || local505.createdComponents.length <= local496.createdComponentId || local505.createdComponents[local496.createdComponentId] != local496);
-									ScriptRunner.method2019(local489);
+										lowPriorityComponent = InterfaceList.getComponent(lowPrioritySource.layer);
+									} while (lowPriorityComponent == null || lowPriorityComponent.createdComponents == null || lowPriorityComponent.createdComponents.length <= lowPrioritySource.createdComponentId || lowPriorityComponent.createdComponents[lowPrioritySource.createdComponentId] != lowPrioritySource);
+									ScriptRunner.method2019(lowPriorityRequest);
 								}
 							}
-							local448 = local440.source;
-							if (local448.createdComponentId < 0) {
+							mediumPrioritySource = mediumPriorityRequest.source;
+							if (mediumPrioritySource.createdComponentId < 0) {
 								break;
 							}
-							local460 = InterfaceList.getComponent(local448.layer);
-						} while (local460 == null || local460.createdComponents == null || local448.createdComponentId >= local460.createdComponents.length || local460.createdComponents[local448.createdComponentId] != local448);
-						ScriptRunner.method2019(local440);
+							mediumPriorityComponent = InterfaceList.getComponent(mediumPrioritySource.layer);
+						} while (mediumPriorityComponent == null || mediumPriorityComponent.createdComponents == null || mediumPrioritySource.createdComponentId >= mediumPriorityComponent.createdComponents.length || mediumPriorityComponent.createdComponents[mediumPrioritySource.createdComponentId] != mediumPrioritySource);
+						ScriptRunner.method2019(mediumPriorityRequest);
 					}
 				}
-				local395 = local389.source;
-				if (local395.createdComponentId < 0) {
+				highPrioritySource = highPriorityRequest.source;
+				if (highPrioritySource.createdComponentId < 0) {
 					break;
 				}
-				local406 = InterfaceList.getComponent(local395.layer);
-			} while (local406 == null || local406.createdComponents == null || local395.createdComponentId >= local406.createdComponents.length || local406.createdComponents[local395.createdComponentId] != local395);
-			ScriptRunner.method2019(local389);
+				highPriorityComponent = InterfaceList.getComponent(highPrioritySource.layer);
+			} while (highPriorityComponent == null || highPriorityComponent.createdComponents == null || highPrioritySource.createdComponentId >= highPriorityComponent.createdComponents.length || highPriorityComponent.createdComponents[highPrioritySource.createdComponentId] != highPrioritySource);
+			ScriptRunner.method2019(highPriorityRequest);
 		}
 	}
 
@@ -1224,16 +1224,16 @@ public final class client extends GameShell {
 		}
 		if (GlRenderer.enabled && Static4.anInt3304 != 0) {
 			GlRenderer.swapBuffers();
-			for (@Pc(436) int i = 0; i < Static1.anInt113; i++) {
-				Static6.aBooleanArray24[i] = false;
+			for (@Pc(436) int i = 0; i < InterfaceList.rectangles; i++) {
+				InterfaceList.rectangleRedraw[i] = false;
 			}
 		} else if ((Static4.anInt3304 == 30 || Static4.anInt3304 == 10) && Static1.rectDebug == 0 && !local173) {
 			try {
 				@Pc(391) Graphics graphics = GameShell.canvas.getGraphics();
-				for (@Pc(393) int i = 0; i < Static1.anInt113; i++) {
-					if (Static6.aBooleanArray24[i]) {
-						frameBuffer.draw(graphics, Static6.anIntArray540[i], Static7.anIntArray638[i], Static5.anIntArray383[i], Static7.anIntArray616[i]);
-						Static6.aBooleanArray24[i] = false;
+				for (@Pc(393) int i = 0; i < InterfaceList.rectangles; i++) {
+					if (InterfaceList.rectangleRedraw[i]) {
+						frameBuffer.draw(graphics, InterfaceList.rectangleX[i], InterfaceList.rectangleY[i], InterfaceList.rectangleWidth[i], InterfaceList.rectangleHeight[i]);
+						InterfaceList.rectangleRedraw[i] = false;
 					}
 				}
 			} catch (@Pc(429) Exception ex) {
@@ -1243,8 +1243,8 @@ public final class client extends GameShell {
 			try {
 				@Pc(364) Graphics graphics = GameShell.canvas.getGraphics();
 				frameBuffer.draw(graphics);
-				for (@Pc(372) int i = 0; i < Static1.anInt113; i++) {
-					Static6.aBooleanArray24[i] = false;
+				for (@Pc(372) int i = 0; i < InterfaceList.rectangles; i++) {
+					InterfaceList.rectangleRedraw[i] = false;
 				}
 			} catch (@Pc(384) Exception ex) {
 				GameShell.canvas.repaint();
@@ -1284,7 +1284,7 @@ public final class client extends GameShell {
 		}
 		if (mouseWheel != null) {
 			@Pc(73) int wheelRotation = mouseWheel.getWheelRotation();
-			Static3.anInt2885 = wheelRotation;
+			Static3.wheelRotation = wheelRotation;
 		}
 		if (Static4.anInt3304 == 0) {
 			this.mainLoad();

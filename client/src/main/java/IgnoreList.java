@@ -44,7 +44,7 @@ public final class IgnoreList {
 		encodedUsernames[size] = encodedUsername;
 		usernames[size] = base37DecodeLowerCase(encodedUsername);
 		IgnoreList.temporary[size++] = temporary;
-		Static3.anInt2102 = Static6.anInt4979;
+		FriendsList.transmitAt = InterfaceList.transmitTimer;
 		Protocol.outboundBuffer.writeOpcode(197);
 		Protocol.outboundBuffer.writeLong(encodedUsername);
 	}
@@ -62,7 +62,7 @@ public final class IgnoreList {
 					usernames[j] = usernames[j + 1];
 					temporary[j] = temporary[j + 1];
 				}
-				Static3.anInt2102 = Static6.anInt4979;
+				FriendsList.transmitAt = InterfaceList.transmitTimer;
 				Protocol.outboundBuffer.writeOpcode(142);
 				Protocol.outboundBuffer.writeLong(encodedUsername);
 				break;

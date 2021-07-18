@@ -184,9 +184,6 @@ public final class Static4 {
 	@OriginalMember(owner = "client!la", name = "S", descriptor = "I")
 	public static int anInt3017 = -1;
 
-	@OriginalMember(owner = "client!la", name = "W", descriptor = "I")
-	public static int anInt3020 = -1;
-
 	@OriginalMember(owner = "client!la", name = "db", descriptor = "I")
 	public static int anInt3024 = -1;
 
@@ -279,9 +276,6 @@ public final class Static4 {
 
 	@OriginalMember(owner = "client!ml", name = "T", descriptor = "[I")
 	public static final int[] anIntArray328 = new int[10000];
-
-	@OriginalMember(owner = "client!mm", name = "h", descriptor = "[[I")
-	public static final int[][] anIntArrayArray28 = new int[][] { { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }, { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 }, { 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1 }, { 1, 1, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 }, { 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1 }, { 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 }, { 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1 }, { 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0 }, { 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0 }, { 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1 }, { 1, 1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 }, { 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1 }, { 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 1, 1 } };
 
 	@OriginalMember(owner = "client!mn", name = "a", descriptor = "F")
 	public static float aFloat80 = -1.0F;

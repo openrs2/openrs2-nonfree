@@ -149,13 +149,13 @@ public final class Static20 {
 										@Pc(207) LocType local207 = LocTypeList.get(local198);
 										if (local207.multiLocs != null) {
 											local207 = local207.getMultiLoc();
-											if (local207 == null || local207.anInt5526 == -1) {
+											if (local207 == null || local207.mapElement == -1) {
 												continue;
 											}
 										}
-										if ((!local207.members || arg1) && local207.anInt5526 != -1) {
+										if ((!local207.members || arg1) && local207.mapElement != -1) {
 											@Pc(236) MapElement local236 = new MapElement();
-											local236.id = local207.anInt5526;
+											local236.id = local207.mapElement;
 											local236.level = local202;
 											local236.x = local68 * 64 + local74;
 											local236.z = local72 * 64 + 64 - local79;

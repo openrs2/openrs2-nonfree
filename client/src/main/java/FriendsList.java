@@ -27,6 +27,9 @@ public final class FriendsList {
 	@OriginalMember(owner = "client!vf", name = "c", descriptor = "I")
 	public static int state = 0;
 
+	@OriginalMember(owner = "client!gm", name = "b", descriptor = "I")
+	public static int transmitAt = 0;
+
 	@OriginalMember(owner = "client!fc", name = "a", descriptor = "(IJ)V")
 	public static void add(@OriginalArg(1) long encodedUsername) {
 		if (encodedUsername == 0L) {
@@ -60,7 +63,7 @@ public final class FriendsList {
 		ranks[size] = 0;
 		sameGame[size] = false;
 		size++;
-		Static3.anInt2102 = Static6.anInt4979;
+		transmitAt = InterfaceList.transmitTimer;
 		Protocol.outboundBuffer.writeOpcode(26);
 		Protocol.outboundBuffer.writeLong(encodedUsername);
 	}
@@ -81,7 +84,7 @@ public final class FriendsList {
 					ranks[j] = ranks[j + 1];
 					sameGame[j] = sameGame[j + 1];
 				}
-				Static3.anInt2102 = Static6.anInt4979;
+				transmitAt = InterfaceList.transmitTimer;
 				Protocol.outboundBuffer.writeOpcode(172);
 				Protocol.outboundBuffer.writeLong(encodedUsername);
 				break;

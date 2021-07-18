@@ -282,8 +282,8 @@ public final class Static24 {
 		if (Protocol.socket != null && (Static4.anInt3304 == 30 || Static4.anInt3304 == 25)) {
 			Static21.method2001();
 		}
-		for (@Pc(490) int local490 = 0; local490 < 100; local490++) {
-			Static2.aBooleanArray8[local490] = true;
+		for (@Pc(490) int i = 0; i < 100; i++) {
+			Static2.aBooleanArray8[i] = true;
 		}
 		GameShell.fullRedraw = true;
 	}
@@ -420,7 +420,7 @@ public final class Static24 {
 		}
 		for (@Pc(22) MapElement local22 = (MapElement) Static1.aClass130_1.next(); local22 != null; local22 = (MapElement) Static1.aClass130_1.next()) {
 			@Pc(29) MelType local29 = MelTypeList.get(local22.id);
-			if (local29 != null && local29.aBoolean157 && local29.method1810()) {
+			if (local29 != null && local29.aBoolean157 && local29.isVisible()) {
 				return local22;
 			}
 		}

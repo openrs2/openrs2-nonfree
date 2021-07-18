@@ -36,6 +36,9 @@ public final class Chat {
 	@OriginalMember(owner = "client!tb", name = "j", descriptor = "I")
 	public static int tradeFilter = 0;
 
+	@OriginalMember(owner = "client!tl", name = "a", descriptor = "I")
+	public static int transmitAt = 0;
+
 	@OriginalMember(owner = "client!nb", name = "a", descriptor = "(Ljava/lang/String;ILjava/lang/String;ILjava/lang/String;I)V")
 	public static void add(@OriginalArg(3) int type, @OriginalArg(0) String name, @OriginalArg(4) String message, @OriginalArg(2) String clan, @OriginalArg(1) int phraseId) {
 		for (@Pc(7) int i = 99; i > 0; i--) {
@@ -48,7 +51,7 @@ public final class Chat {
 		types[0] = type;
 		names[0] = name;
 		messages[0] = message;
-		Static6.anInt5189 = Static6.anInt4979;
+		transmitAt = InterfaceList.transmitTimer;
 		phraseIds[0] = phraseId;
 		size++;
 		clans[0] = clan;

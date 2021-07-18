@@ -12,7 +12,7 @@ public final class Static11 {
 			Static1.aClass130_1.init(Static3.aClass175_12);
 			@Pc(24) MapElement local24 = (MapElement) Static1.aClass130_1.head();
 			@Pc(29) MelType local29 = MelTypeList.get(local24.id);
-			return local29 != null && local29.aBoolean157 && local29.method1810() ? local24 : Static24.method2713();
+			return local29 != null && local29.aBoolean157 && local29.isVisible() ? local24 : Static24.method2713();
 		}
 	}
 
@@ -39,7 +39,7 @@ public final class Static11 {
 	@OriginalMember(owner = "client!cc", name = "b", descriptor = "(I)V")
 	public static void method516() {
 		SceneGraph.clear();
-		Static31.method3150();
+		MiniMap.clear();
 		Static24.method2697();
 		Skybox.cache.clear();
 		Static3.aClass96_1 = new Class96();
@@ -198,30 +198,6 @@ public final class Static11 {
 		arg9.method1870(arg2, arg13, arg14, local49, local39, false);
 	}
 
-	@OriginalMember(owner = "client!ce", name = "a", descriptor = "(ILclient!wf;IIIILclient!uj;)V")
-	public static void method525(@OriginalArg(0) int arg0, @OriginalArg(1) Component arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(5) int arg4, @OriginalArg(6) Sprite arg5) {
-		if (arg5 == null) {
-			return;
-		}
-		@Pc(14) int local14 = (int) Static5.aFloat97 + Static6.anInt3585 & 0x7FF;
-		@Pc(26) int local26 = Math.max(arg1.width / 2, arg1.height / 2) + 10;
-		@Pc(34) int local34 = arg4 * arg4 + arg3 * arg3;
-		if (local34 > local26 * local26) {
-			return;
-		}
-		@Pc(45) int local45 = MathUtils.SINE[local14];
-		local45 = local45 * 256 / (Static6.anInt4761 + 256);
-		@Pc(57) int local57 = MathUtils.COSINE[local14];
-		local57 = local57 * 256 / (Static6.anInt4761 + 256);
-		@Pc(75) int local75 = arg3 * local57 + arg4 * local45 >> 16;
-		@Pc(86) int local86 = local57 * arg4 - arg3 * local45 >> 16;
-		if (GlRenderer.enabled) {
-			((GlSprite) arg5).renderTransparentMasked(arg1.width / 2 + arg0 + local75 - arg5.innerWidth / 2, arg1.height / 2 + arg2 - arg5.innerHeight / 2 - local86, (GlSprite) arg1.method4729(false));
-		} else {
-			((SoftwareSprite) arg5).renderTransparentMasked(arg0 + arg1.width / 2 + local75 - arg5.innerWidth / 2, arg1.height / 2 + arg2 - arg5.innerHeight / 2 - local86, arg1.anIntArray672, arg1.anIntArray657);
-		}
-	}
-
 	@OriginalMember(owner = "client!ce", name = "a", descriptor = "(ZILclient!wf;II)V")
 	public static void method526(@OriginalArg(2) Component component, @OriginalArg(1) int parentWidth, @OriginalArg(3) int parentHeight, @OriginalArg(0) boolean arg0) {
 		@Pc(13) int prevHeight = component.height;
@@ -278,7 +254,7 @@ public final class Static11 {
 			@Pc(298) HookRequest request = new HookRequest();
 			request.arguments = component.onResize;
 			request.source = component;
-			Static3.lowPriorityRequests.addTail(request);
+			InterfaceList.lowPriorityRequests.addTail(request);
 		}
 	}
 

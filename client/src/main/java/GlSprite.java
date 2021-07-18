@@ -277,7 +277,7 @@ public class GlSprite extends Sprite {
 	}
 
 	@OriginalMember(owner = "client!oa", name = "a", descriptor = "(IIIIIIIILclient!oa;)V")
-	public final void renderRotatedTransparent(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) GlSprite arg8) {
+	public final void renderRotatedTransparent(@OriginalArg(0) int x, @OriginalArg(1) int y, @OriginalArg(2) int width, @OriginalArg(3) int height, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) GlSprite arg8) {
 		if (arg8 == null) {
 			return;
 		}
@@ -292,8 +292,8 @@ public class GlSprite extends Sprite {
 		gl.glBindTexture(GL.GL_TEXTURE_2D, arg8.textureId);
 		gl.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_COMBINE_RGB, GL.GL_REPLACE);
 		gl.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_SRC0_RGB, GL.GL_PREVIOUS);
-		@Pc(43) int local43 = -arg2 / 2;
-		@Pc(48) int local48 = -arg3 / 2;
+		@Pc(43) int local43 = -width / 2;
+		@Pc(48) int local48 = -height / 2;
 		@Pc(51) int local51 = -local43;
 		@Pc(54) int local54 = -local48;
 		@Pc(63) int local63 = (int) (Math.sin((double) arg6 / 326.11D) * 65536.0D);
@@ -316,16 +316,16 @@ public class GlSprite extends Sprite {
 		@Pc(217) float local217 = (float) (this.powerOfTwoHeight * 65536);
 		gl.glMultiTexCoord2f(GL.GL_TEXTURE1, local188, 0.0F);
 		gl.glTexCoord2f((float) local120 / local211, (float) local132 / local217);
-		gl.glVertex2f((float) (arg0 + arg2), (float) (GlRenderer.canvasHeight - arg1));
+		gl.glVertex2f((float) (x + width), (float) (GlRenderer.canvasHeight - y));
 		gl.glMultiTexCoord2f(GL.GL_TEXTURE1, 0.0F, 0.0F);
 		gl.glTexCoord2f((float) local96 / local211, (float) local108 / local217);
-		gl.glVertex2f((float) arg0, (float) (GlRenderer.canvasHeight - arg1));
+		gl.glVertex2f((float) x, (float) (GlRenderer.canvasHeight - y));
 		gl.glMultiTexCoord2f(GL.GL_TEXTURE1, 0.0F, local196);
 		gl.glTexCoord2f((float) local144 / local211, (float) local156 / local217);
-		gl.glVertex2f((float) arg0, (float) (GlRenderer.canvasHeight - arg1 - arg3));
+		gl.glVertex2f((float) x, (float) (GlRenderer.canvasHeight - y - height));
 		gl.glMultiTexCoord2f(GL.GL_TEXTURE1, local188, local196);
 		gl.glTexCoord2f((float) local168 / local211, (float) local180 / local217);
-		gl.glVertex2f((float) (arg0 + arg2), (float) (GlRenderer.canvasHeight - arg1 - arg3));
+		gl.glVertex2f((float) (x + width), (float) (GlRenderer.canvasHeight - y - height));
 		gl.glEnd();
 		gl.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_COMBINE_RGB, GL.GL_MODULATE);
 		gl.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_SRC0_RGB, GL.GL_TEXTURE);
