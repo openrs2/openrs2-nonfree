@@ -8,37 +8,37 @@ import org.openrs2.deob.annotation.Pc;
 public final class Static9 {
 
 	@OriginalMember(owner = "client!al", name = "a", descriptor = "(IZZZ)V")
-	public static void method174(@OriginalArg(0) int arg0, @OriginalArg(2) boolean arg1, @OriginalArg(3) boolean arg2) {
-		for (@Pc(7) int local7 = 0; local7 < NpcList.size; local7++) {
-			@Pc(20) Npc local20 = NpcList.npcs[NpcList.ids[local7]];
-			if (local20 != null && local20.isVisible() && local20.type.isMultiNpcValid()) {
-				@Pc(35) int local35 = local20.getSize();
+	public static void method174(@OriginalArg(0) int sizeFilter, @OriginalArg(2) boolean arg1, @OriginalArg(3) boolean arg2) {
+		for (@Pc(7) int i = 0; i < NpcList.size; i++) {
+			@Pc(20) Npc npc = NpcList.npcs[NpcList.ids[i]];
+			if (npc != null && npc.isVisible() && npc.type.isMultiNpcValid()) {
+				@Pc(35) int size = npc.getSize();
 				if (arg2) {
-					if (!local20.type.aBoolean359) {
+					if (!npc.type.aBoolean359) {
 						continue;
 					}
-				} else if (local20.type.aBoolean355 != arg1 || arg0 != 0 && arg0 != local35) {
+				} else if (npc.type.aBoolean355 != arg1 || sizeFilter != 0 && sizeFilter != size) {
 					continue;
 				}
-				if (local35 == 1) {
-					if ((local20.xFine & 0x7F) == 64 && (local20.zFine & 0x7F) == 64) {
-						@Pc(208) int local208 = local20.zFine >> 7;
-						@Pc(213) int local213 = local20.xFine >> 7;
+				if (size == 1) {
+					if ((npc.xFine & 0x7F) == 64 && (npc.zFine & 0x7F) == 64) {
+						@Pc(208) int local208 = npc.zFine >> 7;
+						@Pc(213) int local213 = npc.xFine >> 7;
 						if (local213 >= 0 && local213 < 104 && local208 >= 0 && local208 < 104) {
 							@Pc(233) int local233 = Static1.anIntArrayArray2[local213][local208]++;
 						}
 					}
-				} else if (((local35 & 0x1) != 0 || (local20.xFine & 0x7F) == 0 && (local20.zFine & 0x7F) == 0) && ((local35 & 0x1) != 1 || (local20.xFine & 0x7F) == 64 && (local20.zFine & 0x7F) == 64)) {
-					@Pc(113) int local113 = local20.xFine - local35 * 64 >> 7;
-					@Pc(122) int local122 = local20.zFine - local35 * 64 >> 7;
-					@Pc(128) int local128 = local20.getSize() + local113;
+				} else if (((size & 0x1) != 0 || (npc.xFine & 0x7F) == 0 && (npc.zFine & 0x7F) == 0) && ((size & 0x1) != 1 || (npc.xFine & 0x7F) == 64 && (npc.zFine & 0x7F) == 64)) {
+					@Pc(113) int local113 = npc.xFine - size * 64 >> 7;
+					@Pc(122) int local122 = npc.zFine - size * 64 >> 7;
+					@Pc(128) int local128 = npc.getSize() + local113;
 					if (local128 > 104) {
 						local128 = 104;
 					}
 					if (local113 < 0) {
 						local113 = 0;
 					}
-					@Pc(146) int local146 = local122 + local20.getSize();
+					@Pc(146) int local146 = local122 + npc.getSize();
 					if (local146 > 104) {
 						local146 = 104;
 					}
@@ -54,23 +54,23 @@ public final class Static9 {
 			}
 		}
 		label206:
-		for (@Pc(249) int local249 = 0; local249 < NpcList.size; local249++) {
-			@Pc(258) Npc local258 = NpcList.npcs[NpcList.ids[local249]];
-			@Pc(267) long local267 = (long) NpcList.ids[local249] << 32 | 0x20000000L;
-			if (local258 != null && local258.isVisible() && local258.type.isMultiNpcValid()) {
-				@Pc(282) int local282 = local258.getSize();
+		for (@Pc(249) int i = 0; i < NpcList.size; i++) {
+			@Pc(258) Npc npc = NpcList.npcs[NpcList.ids[i]];
+			@Pc(267) long key = (long) NpcList.ids[i] << 32 | 0x20000000L;
+			if (npc != null && npc.isVisible() && npc.type.isMultiNpcValid()) {
+				@Pc(282) int local282 = npc.getSize();
 				if (arg2) {
-					if (!local258.type.aBoolean359) {
+					if (!npc.type.aBoolean359) {
 						continue;
 					}
-				} else if (arg1 != local258.type.aBoolean355 || arg0 != 0 && arg0 != local282) {
+				} else if (arg1 != npc.type.aBoolean355 || sizeFilter != 0 && sizeFilter != local282) {
 					continue;
 				}
-				local258.aBoolean282 = true;
+				npc.aBoolean282 = true;
 				if (local282 == 1) {
-					if ((local258.xFine & 0x7F) == 64 && (local258.zFine & 0x7F) == 64) {
-						@Pc(335) int local335 = local258.xFine >> 7;
-						@Pc(340) int local340 = local258.zFine >> 7;
+					if ((npc.xFine & 0x7F) == 64 && (npc.zFine & 0x7F) == 64) {
+						@Pc(335) int local335 = npc.xFine >> 7;
+						@Pc(340) int local340 = npc.zFine >> 7;
 						if (local335 < 0 || local335 >= 104 || local340 < 0 || local340 >= 104) {
 							continue;
 						}
@@ -79,9 +79,9 @@ public final class Static9 {
 							continue;
 						}
 					}
-				} else if ((local282 & 0x1) == 0 && (local258.xFine & 0x7F) == 0 && (local258.zFine & 0x7F) == 0 || (local282 & 0x1) == 1 && (local258.xFine & 0x7F) == 64 && (local258.zFine & 0x7F) == 64) {
-					@Pc(424) int local424 = local258.xFine - local282 * 64 >> 7;
-					@Pc(434) int local434 = local258.zFine - local282 * 64 >> 7;
+				} else if ((local282 & 0x1) == 0 && (npc.xFine & 0x7F) == 0 && (npc.zFine & 0x7F) == 0 || (local282 & 0x1) == 1 && (npc.xFine & 0x7F) == 64 && (npc.zFine & 0x7F) == 64) {
+					@Pc(424) int local424 = npc.xFine - local282 * 64 >> 7;
+					@Pc(434) int local434 = npc.zFine - local282 * 64 >> 7;
 					@Pc(438) int local438 = local282 + local424;
 					@Pc(442) int local442 = local282 + local434;
 					if (local442 > 104) {
@@ -118,12 +118,12 @@ public final class Static9 {
 						}
 					}
 				}
-				if (!local258.type.aBoolean357) {
-					local267 |= Long.MIN_VALUE;
+				if (!npc.type.aBoolean357) {
+					key |= Long.MIN_VALUE;
 				}
-				local258.aBoolean282 = false;
-				local258.y = SceneGraph.getTileHeight(Player.level, local258.xFine, local258.zFine);
-				SceneGraph.method637(Player.level, local258.xFine, local258.zFine, local258.y, local282 * 64 + 60 - 64, local258, local258.angle, local267, local258.aBoolean284);
+				npc.aBoolean282 = false;
+				npc.y = SceneGraph.getTileHeight(Player.level, npc.xFine, npc.zFine);
+				SceneGraph.method637(Player.level, npc.xFine, npc.zFine, npc.y, local282 * 64 + 60 - 64, npc, npc.angle, key, npc.aBoolean284);
 			}
 		}
 	}

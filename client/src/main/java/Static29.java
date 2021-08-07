@@ -1512,16 +1512,16 @@ public final class Static29 {
 												}
 											}
 											if (local469) {
-												@Pc(549) GroundDecor local549 = local8.groundDecor;
-												if (local549 != null && (local549.key & 0x80000000L) != 0L) {
-													if (GlRenderer.enabled && local549.aBoolean63) {
+												@Pc(549) GroundDecor groundDecor = local8.groundDecor;
+												if (groundDecor != null && (groundDecor.key & 0x80000000L) != 0L) {
+													if (GlRenderer.enabled && groundDecor.aBoolean63) {
 														GlRenderer.method1613(var8 + 50.0F - 1.5F);
 													}
 													if (GlRenderer.enabled) {
 														LightingManager.method3114(Static7.anInt5281, Static6.anInt4375, Static6.anInt4400, local24, local18, local21);
 													}
-													local549.entity.method3805(0, Static2.anInt2247, Static5.anInt3487, Static6.anInt4794, Static3.anInt2272, local549.xFine - Static7.anInt5281, local549.anInt1130 - Static6.anInt4375, local549.zFine - Static6.anInt4400, local549.key, local24, null);
-													if (GlRenderer.enabled && local549.aBoolean63) {
+													groundDecor.entity.method3805(0, Static2.anInt2247, Static5.anInt3487, Static6.anInt4794, Static3.anInt2272, groundDecor.xFine - Static7.anInt5281, groundDecor.anInt1130 - Static6.anInt4375, groundDecor.zFine - Static6.anInt4400, groundDecor.key, local24, null);
+													if (GlRenderer.enabled && groundDecor.aBoolean63) {
 														GlRenderer.method1613(var8);
 													}
 												}
@@ -1620,32 +1620,32 @@ public final class Static29 {
 												}
 											}
 											if (local469) {
-												@Pc(1001) GroundDecor local1001 = local8.groundDecor;
-												if (local1001 != null && (local1001.key & 0x80000000L) == 0L) {
-													if (GlRenderer.enabled && local1001.aBoolean63) {
+												@Pc(1001) GroundDecor groundDecor = local8.groundDecor;
+												if (groundDecor != null && (groundDecor.key & 0x80000000L) == 0L) {
+													if (GlRenderer.enabled && groundDecor.aBoolean63) {
 														GlRenderer.method1613(var8 + 50.0F - 1.5F);
 													}
 													if (GlRenderer.enabled) {
 														LightingManager.method3114(Static7.anInt5281, Static6.anInt4375, Static6.anInt4400, local24, local18, local21);
 													}
-													local1001.entity.method3805(0, Static2.anInt2247, Static5.anInt3487, Static6.anInt4794, Static3.anInt2272, local1001.xFine - Static7.anInt5281, local1001.anInt1130 - Static6.anInt4375, local1001.zFine - Static6.anInt4400, local1001.key, local24, null);
-													if (GlRenderer.enabled && local1001.aBoolean63) {
+													groundDecor.entity.method3805(0, Static2.anInt2247, Static5.anInt3487, Static6.anInt4794, Static3.anInt2272, groundDecor.xFine - Static7.anInt5281, groundDecor.anInt1130 - Static6.anInt4375, groundDecor.zFine - Static6.anInt4400, groundDecor.key, local24, null);
+													if (GlRenderer.enabled && groundDecor.aBoolean63) {
 														GlRenderer.method1613(var8);
 													}
 												}
-												@Pc(1064) ObjStackEntity local1064 = local8.objStack;
-												if (local1064 != null && local1064.anInt5499 == 0) {
+												@Pc(1064) ObjStackEntity objStack = local8.objStack;
+												if (objStack != null && objStack.anInt5499 == 0) {
 													if (GlRenderer.enabled) {
 														LightingManager.method3114(Static7.anInt5281, Static6.anInt4375, Static6.anInt4400, local24, local18, local21);
 													}
-													if (local1064.secondary != null) {
-														local1064.secondary.method3805(0, Static2.anInt2247, Static5.anInt3487, Static6.anInt4794, Static3.anInt2272, local1064.xFine - Static7.anInt5281, local1064.anInt5501 - Static6.anInt4375, local1064.zFine - Static6.anInt4400, local1064.key, local24, null);
+													if (objStack.secondary != null) {
+														objStack.secondary.method3805(0, Static2.anInt2247, Static5.anInt3487, Static6.anInt4794, Static3.anInt2272, objStack.xFine - Static7.anInt5281, objStack.anInt5501 - Static6.anInt4375, objStack.zFine - Static6.anInt4400, objStack.key, local24, null);
 													}
-													if (local1064.tertiary != null) {
-														local1064.tertiary.method3805(0, Static2.anInt2247, Static5.anInt3487, Static6.anInt4794, Static3.anInt2272, local1064.xFine - Static7.anInt5281, local1064.anInt5501 - Static6.anInt4375, local1064.zFine - Static6.anInt4400, local1064.key, local24, null);
+													if (objStack.tertiary != null) {
+														objStack.tertiary.method3805(0, Static2.anInt2247, Static5.anInt3487, Static6.anInt4794, Static3.anInt2272, objStack.xFine - Static7.anInt5281, objStack.anInt5501 - Static6.anInt4375, objStack.zFine - Static6.anInt4400, objStack.key, local24, null);
 													}
-													if (local1064.primary != null) {
-														local1064.primary.method3805(0, Static2.anInt2247, Static5.anInt3487, Static6.anInt4794, Static3.anInt2272, local1064.xFine - Static7.anInt5281, local1064.anInt5501 - Static6.anInt4375, local1064.zFine - Static6.anInt4400, local1064.key, local24, null);
+													if (objStack.primary != null) {
+														objStack.primary.method3805(0, Static2.anInt2247, Static5.anInt3487, Static6.anInt4794, Static3.anInt2272, objStack.xFine - Static7.anInt5281, objStack.anInt5501 - Static6.anInt4375, objStack.zFine - Static6.anInt4400, objStack.key, local24, null);
 													}
 												}
 											}
