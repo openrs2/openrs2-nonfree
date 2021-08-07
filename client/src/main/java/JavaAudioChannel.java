@@ -39,26 +39,26 @@ public final class JavaAudioChannel extends AudioChannel {
 
 	@OriginalMember(owner = "client!kb", name = "b", descriptor = "(I)V")
 	@Override
-	public final void open(@OriginalArg(0) int bufferSize) throws LineUnavailableException {
+	public final void open(@OriginalArg(0) int bufferCapacity) throws LineUnavailableException {
 		try {
-			@Pc(20) Info info = new Info(SourceDataLine.class, this.format, bufferSize << (AudioChannel.stereo ? 2 : 1));
+			@Pc(20) Info info = new Info(SourceDataLine.class, this.format, bufferCapacity << (AudioChannel.stereo ? 2 : 1));
 			this.line = (SourceDataLine) AudioSystem.getLine(info);
 			this.line.open();
 			this.line.start();
-			this.lineBufferSize = bufferSize;
+			this.lineBufferSize = bufferCapacity;
 		} catch (@Pc(36) LineUnavailableException ex) {
-			if (IntUtils.bitCountFast(bufferSize) == 1) {
+			if (IntUtils.bitCountFast(bufferCapacity) == 1) {
 				this.line = null;
 				throw ex;
 			} else {
-				this.open(IntUtils.clp2(bufferSize));
+				this.open(IntUtils.clp2(bufferCapacity));
 			}
 		}
 	}
 
 	@OriginalMember(owner = "client!kb", name = "a", descriptor = "()I")
 	@Override
-	protected final int getBufferedSampleCount() {
+	protected final int getBufferSize() {
 		return this.lineBufferSize - (this.line.available() >> (AudioChannel.stereo ? 2 : 1));
 	}
 

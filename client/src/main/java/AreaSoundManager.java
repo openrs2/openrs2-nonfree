@@ -270,7 +270,7 @@ public final class AreaSoundManager {
 			if (synthSound != null) {
 				@Pc(195) PcmSound pcmSound = synthSound.toPcmSound().resample(client.resampler);
 				@Pc(200) SoundPcmStream stream = SoundPcmStream.create(pcmSound, volume2);
-				stream.method3359(-1);
+				stream.setLoops(-1);
 				client.soundStream.addSubStream(stream);
 				areaSound.primaryStream = stream;
 			}
@@ -286,7 +286,7 @@ public final class AreaSoundManager {
 			if (synthSound != null) {
 				@Pc(249) PcmSound pcmSound = synthSound.toPcmSound().resample(client.resampler);
 				@Pc(254) SoundPcmStream stream = SoundPcmStream.create(pcmSound, volume2);
-				stream.method3359(0);
+				stream.setLoops(0);
 				client.soundStream.addSubStream(stream);
 				areaSound.remainingLoops = (int) (Math.random() * (double) (areaSound.maxInterval - areaSound.minInterval)) + areaSound.minInterval;
 				areaSound.secondaryStream = stream;

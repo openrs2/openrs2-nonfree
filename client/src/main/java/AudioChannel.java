@@ -34,11 +34,11 @@ public class AudioChannel {
 			channel.sampleRate = sampleRate;
 			channel.samples = new int[(stereo ? 2 : 1) * 256];
 			channel.init(component);
-			channel.bufferSize = (sampleRate & 0xFFFFFC00) + 1024;
-			if (channel.bufferSize > 16384) {
-				channel.bufferSize = 16384;
+			channel.bufferCapacity = (sampleRate & 0xFFFFFC00) + 1024;
+			if (channel.bufferCapacity > 16384) {
+				channel.bufferCapacity = 16384;
 			}
-			channel.open(channel.bufferSize);
+			channel.open(channel.bufferCapacity);
 			if (threadPriority > 0 && thread == null) {
 				thread = new AudioThread();
 				thread.signLink = signLink;
@@ -57,8 +57,8 @@ public class AudioChannel {
 				channel.sampleRate = sampleRate;
 				channel.samples = new int[(stereo ? 2 : 1) * 256];
 				channel.init(component);
-				channel.bufferSize = 16384;
-				channel.open(channel.bufferSize);
+				channel.bufferCapacity = 16384;
+				channel.open(channel.bufferCapacity);
 				if (threadPriority > 0 && thread == null) {
 					thread = new AudioThread();
 					thread.signLink = signLink;
@@ -87,7 +87,7 @@ public class AudioChannel {
 	public int sampleRate;
 
 	@OriginalMember(owner = "client!tj", name = "E", descriptor = "I")
-	public int bufferSize;
+	public int bufferCapacity;
 
 	@OriginalMember(owner = "client!tj", name = "G", descriptor = "I")
 	private int anInt3597;
@@ -99,13 +99,13 @@ public class AudioChannel {
 	private boolean stop = false;
 
 	@OriginalMember(owner = "client!tj", name = "e", descriptor = "J")
-	private long aLong126 = MonotonicClock.currentTimeMillis();
+	private long time = MonotonicClock.currentTimeMillis();
 
 	@OriginalMember(owner = "client!tj", name = "B", descriptor = "I")
-	private int anInt3594 = 0;
+	private int prevBufferSize = 0;
 
 	@OriginalMember(owner = "client!tj", name = "z", descriptor = "I")
-	private int anInt3592 = 0;
+	private int prevConsumedSamples = 0;
 
 	@OriginalMember(owner = "client!tj", name = "A", descriptor = "I")
 	private int anInt3593 = 0;
@@ -114,7 +114,7 @@ public class AudioChannel {
 	private final PcmStream[] aClass4_Sub6Array6 = new PcmStream[8];
 
 	@OriginalMember(owner = "client!tj", name = "H", descriptor = "I")
-	private int anInt3598 = 0;
+	private int consumedSamples = 0;
 
 	@OriginalMember(owner = "client!tj", name = "D", descriptor = "[Lclient!tf;")
 	private final PcmStream[] aClass4_Sub6Array5 = new PcmStream[8];
@@ -123,10 +123,10 @@ public class AudioChannel {
 	private long closeUntil = 0L;
 
 	@OriginalMember(owner = "client!tj", name = "L", descriptor = "Z")
-	private boolean aBoolean260 = true;
+	private boolean skipConsumptionCheck = true;
 
 	@OriginalMember(owner = "client!tj", name = "I", descriptor = "J")
-	private long aLong128 = 0L;
+	private long calculateConsumptionAt = 0L;
 
 	@OriginalMember(owner = "client!tj", name = "a", descriptor = "(ILclient!tf;B)V")
 	private void method2994(@OriginalArg(0) int arg0, @OriginalArg(1) PcmStream arg1) {
@@ -142,7 +142,7 @@ public class AudioChannel {
 	}
 
 	@OriginalMember(owner = "client!tj", name = "a", descriptor = "(BI)V")
-	private void method2995() {
+	private void skip() {
 		this.anInt3593 -= 256;
 		if (this.anInt3593 < 0) {
 			this.anInt3593 = 0;
@@ -154,7 +154,7 @@ public class AudioChannel {
 
 	@OriginalMember(owner = "client!tj", name = "a", descriptor = "(I)V")
 	public final void method2996() {
-		this.aBoolean260 = true;
+		this.skipConsumptionCheck = true;
 	}
 
 	@OriginalMember(owner = "client!tj", name = "a", descriptor = "(B)V")
@@ -164,15 +164,15 @@ public class AudioChannel {
 		}
 		@Pc(18) long now = MonotonicClock.currentTimeMillis();
 		try {
-			if (this.aLong126 + 500000L < now) {
-				this.aLong126 = now - 500000L;
+			if (this.time + 500000L < now) {
+				this.time = now - 500000L;
 			}
-			while (this.aLong126 + 5000L < now) {
-				this.method2995();
-				this.aLong126 += 256000 / Static7.sampleRate;
+			while (this.time + 5000L < now) {
+				this.skip();
+				this.time += 256000 / Static7.sampleRate;
 			}
 		} catch (@Pc(58) Exception ex) {
-			this.aLong126 = now;
+			this.time = now;
 		}
 		if (this.samples == null) {
 			return;
@@ -182,52 +182,52 @@ public class AudioChannel {
 				if (this.closeUntil > now) {
 					return;
 				}
-				this.open(this.bufferSize);
-				this.aBoolean260 = true;
+				this.open(this.bufferCapacity);
+				this.skipConsumptionCheck = true;
 				this.closeUntil = 0L;
 			}
-			@Pc(96) int bufferedSamples = this.getBufferedSampleCount();
-			if (this.anInt3598 < this.anInt3594 - bufferedSamples) {
-				this.anInt3598 = this.anInt3594 - bufferedSamples;
+			@Pc(96) int bufferSize = this.getBufferSize();
+			if (this.prevBufferSize - bufferSize > this.consumedSamples) {
+				this.consumedSamples = this.prevBufferSize - bufferSize;
 			}
-			@Pc(117) int local117 = this.anInt3597 + this.sampleRate;
-			if (local117 + 256 > 16384) {
-				local117 = 16128;
+			@Pc(117) int targetBufferSize = this.anInt3597 + this.sampleRate;
+			if (targetBufferSize + 256 > 16384) {
+				targetBufferSize = 16128;
 			}
-			if (local117 + 256 > this.bufferSize) {
-				this.bufferSize += 1024;
-				bufferedSamples = 0;
-				if (this.bufferSize > 16384) {
-					this.bufferSize = 16384;
+			if (this.bufferCapacity < targetBufferSize + 256) {
+				this.bufferCapacity += 1024;
+				bufferSize = 0;
+				if (this.bufferCapacity > 16384) {
+					this.bufferCapacity = 16384;
 				}
 				this.close();
-				this.open(this.bufferSize);
-				if (this.bufferSize < local117 + 256) {
-					local117 = this.bufferSize - 256;
-					this.anInt3597 = local117 - this.sampleRate;
+				this.open(this.bufferCapacity);
+				if (this.bufferCapacity < targetBufferSize + 256) {
+					targetBufferSize = this.bufferCapacity - 256;
+					this.anInt3597 = targetBufferSize - this.sampleRate;
 				}
-				this.aBoolean260 = true;
+				this.skipConsumptionCheck = true;
 			}
-			while (local117 > bufferedSamples) {
-				bufferedSamples += 256;
+			while (bufferSize < targetBufferSize) {
+				bufferSize += 256;
 				this.read(this.samples);
 				this.write();
 			}
-			if (now > this.aLong128) {
-				if (this.aBoolean260) {
-					this.aBoolean260 = false;
-				} else if (this.anInt3598 == 0 && this.anInt3592 == 0) {
+			if (now > this.calculateConsumptionAt) {
+				if (this.skipConsumptionCheck) {
+					this.skipConsumptionCheck = false;
+				} else if (this.consumedSamples == 0 && this.prevConsumedSamples == 0) {
 					this.close();
 					this.closeUntil = now + 2000L;
 					return;
 				} else {
-					this.anInt3597 = Math.min(this.anInt3592, this.anInt3598);
-					this.anInt3592 = this.anInt3598;
+					this.anInt3597 = Math.min(this.prevConsumedSamples, this.consumedSamples);
+					this.prevConsumedSamples = this.consumedSamples;
 				}
-				this.anInt3598 = 0;
-				this.aLong128 = now + 2000L;
+				this.consumedSamples = 0;
+				this.calculateConsumptionAt = now + 2000L;
 			}
-			this.anInt3594 = bufferedSamples;
+			this.prevBufferSize = bufferSize;
 		} catch (@Pc(262) Exception ex) {
 			this.close();
 			this.closeUntil = now + 2000L;
@@ -235,7 +235,7 @@ public class AudioChannel {
 	}
 
 	@OriginalMember(owner = "client!tj", name = "b", descriptor = "(I)V")
-	public void open(@OriginalArg(0) int bufferSize) throws Exception {
+	public void open(@OriginalArg(0) int bufferCapacity) throws Exception {
 	}
 
 	@OriginalMember(owner = "client!tj", name = "d", descriptor = "(I)V")
@@ -264,8 +264,8 @@ public class AudioChannel {
 	}
 
 	@OriginalMember(owner = "client!tj", name = "a", descriptor = "()I")
-	protected int getBufferedSampleCount() throws Exception {
-		return this.bufferSize;
+	protected int getBufferSize() throws Exception {
+		return this.bufferCapacity;
 	}
 
 	@OriginalMember(owner = "client!tj", name = "b", descriptor = "()V")
@@ -287,7 +287,7 @@ public class AudioChannel {
 
 	@OriginalMember(owner = "client!tj", name = "b", descriptor = "(B)V")
 	public final synchronized void method3009() {
-		this.aBoolean260 = true;
+		this.skipConsumptionCheck = true;
 		try {
 			this.flush();
 		} catch (@Pc(18) Exception ex) {
@@ -396,6 +396,6 @@ public class AudioChannel {
 		if (this.stream != null) {
 			this.stream.read(samples, 0, 256);
 		}
-		this.aLong126 = MonotonicClock.currentTimeMillis();
+		this.time = MonotonicClock.currentTimeMillis();
 	}
 }

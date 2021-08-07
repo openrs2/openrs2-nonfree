@@ -82,7 +82,7 @@ public final class SoundPlayer {
 					if (volume > 0) {
 						@Pc(240) PcmSound pcmSound = sound.toPcmSound().resample(client.resampler);
 						@Pc(245) SoundPcmStream stream = SoundPcmStream.create(pcmSound, volume);
-						stream.method3359(loops[i] - 1);
+						stream.setLoops(loops[i] - 1);
 						client.soundStream.addSubStream(stream);
 					}
 					delays[i] = -100;

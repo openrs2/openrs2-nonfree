@@ -14,7 +14,7 @@ public interface AudioSource {
 	void init(@OriginalArg(1) Component component, @OriginalArg(0) boolean stereo, @OriginalArg(3) int sampleRate) throws Exception;
 
 	@OriginalMember(owner = "signlink!le", name = "c", descriptor = "(II)I")
-	int getBufferedSampleCount(@OriginalArg(0) int channel);
+	int getBufferSize(@OriginalArg(0) int channel);
 
 	@OriginalMember(owner = "signlink!le", name = "a", descriptor = "(II)V")
 	void close(@OriginalArg(0) int channel);
@@ -23,5 +23,5 @@ public interface AudioSource {
 	void flush(@OriginalArg(1) int channel);
 
 	@OriginalMember(owner = "signlink!le", name = "a", descriptor = "(IBI)V")
-	void open(@OriginalArg(2) int channel, @OriginalArg(0) int bufferSize) throws Exception;
+	void open(@OriginalArg(2) int channel, @OriginalArg(0) int bufferCapacity) throws Exception;
 }

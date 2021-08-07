@@ -68,7 +68,7 @@ public final class MidiNoteStream extends PcmStream {
 					note.stream.method3379(local63, local59.getVolume());
 				}
 				if (note.instrument.aShortArray80[note.midiKey] < 0) {
-					note.stream.method3359(-1);
+					note.stream.setLoops(-1);
 				}
 				local59.method3360(local63);
 				local59.read(samples, off, arg4 - off);
@@ -142,7 +142,7 @@ public final class MidiNoteStream extends PcmStream {
 					this.parent.method2502(instrument, instrument.instrument.aShortArray80[instrument.midiKey] < 0);
 				}
 				if (instrument.instrument.aShortArray80[instrument.midiKey] < 0) {
-					instrument.stream.method3359(-1);
+					instrument.stream.setLoops(-1);
 				}
 				len = instrument.anInt1294 / local28;
 			}

@@ -712,7 +712,7 @@ public final class SoundPcmStream extends PcmStream {
 	private int anInt4105;
 
 	@OriginalMember(owner = "client!pc", name = "G", descriptor = "I")
-	private int anInt4108;
+	private int loops;
 
 	@OriginalMember(owner = "client!pc", name = "E", descriptor = "I")
 	private final int start;
@@ -814,9 +814,9 @@ public final class SoundPcmStream extends PcmStream {
 	public final int method3347() {
 		@Pc(6) int local6 = this.anInt4096 * 3 >> 6;
 		@Pc(16) int local16 = (local6 ^ local6 >> 31) + (local6 >>> 31);
-		if (this.anInt4108 == 0) {
+		if (this.loops == 0) {
 			local16 -= local16 * this.anInt4100 / (((PcmSound) this.sound).samples.length << 8);
-		} else if (this.anInt4108 >= 0) {
+		} else if (this.loops >= 0) {
 			local16 -= local16 * this.start / ((PcmSound) this.sound).samples.length;
 		}
 		return local16 > 255 ? 255 : local16;
@@ -877,8 +877,8 @@ public final class SoundPcmStream extends PcmStream {
 	}
 
 	@OriginalMember(owner = "client!pc", name = "d", descriptor = "(I)V")
-	public final synchronized void method3359(@OriginalArg(0) int arg0) {
-		this.anInt4108 = arg0;
+	public final synchronized void setLoops(@OriginalArg(0) int loops) {
+		this.loops = loops;
 	}
 
 	@OriginalMember(owner = "client!pc", name = "e", descriptor = "(I)V")
@@ -945,7 +945,7 @@ public final class SoundPcmStream extends PcmStream {
 		@Pc(87) int local87 = local71.samples.length << 8;
 		@Pc(91) int local91 = local81 - local76;
 		if (local91 <= 0) {
-			this.anInt4108 = 0;
+			this.loops = 0;
 		}
 		if (this.anInt4100 < 0) {
 			if (this.anInt4095 <= 0) {
@@ -964,8 +964,8 @@ public final class SoundPcmStream extends PcmStream {
 			this.anInt4100 = local87 - 1;
 		}
 		this.anInt4100 += this.anInt4095 * len;
-		if (this.anInt4108 >= 0) {
-			if (this.anInt4108 > 0) {
+		if (this.loops >= 0) {
+			if (this.loops > 0) {
 				if (this.aBoolean290) {
 					label121:
 					{
@@ -975,7 +975,7 @@ public final class SoundPcmStream extends PcmStream {
 							}
 							this.anInt4100 = local76 + local76 - this.anInt4100 - 1;
 							this.anInt4095 = -this.anInt4095;
-							if (--this.anInt4108 == 0) {
+							if (--this.loops == 0) {
 								break label121;
 							}
 						}
@@ -985,7 +985,7 @@ public final class SoundPcmStream extends PcmStream {
 							}
 							this.anInt4100 = local81 + local81 - this.anInt4100 - 1;
 							this.anInt4095 = -this.anInt4095;
-							if (--this.anInt4108 == 0) {
+							if (--this.loops == 0) {
 								break;
 							}
 							if (this.anInt4100 >= local76) {
@@ -993,7 +993,7 @@ public final class SoundPcmStream extends PcmStream {
 							}
 							this.anInt4100 = local76 + local76 - this.anInt4100 - 1;
 							this.anInt4095 = -this.anInt4095;
-						} while (--this.anInt4108 != 0);
+						} while (--this.loops != 0);
 					}
 				} else {
 					label153:
@@ -1003,22 +1003,22 @@ public final class SoundPcmStream extends PcmStream {
 								return;
 							}
 							@Pc(362) int local362 = (local81 - this.anInt4100 - 1) / local91;
-							if (local362 >= this.anInt4108) {
-								this.anInt4100 += local91 * this.anInt4108;
-								this.anInt4108 = 0;
+							if (local362 >= this.loops) {
+								this.anInt4100 += local91 * this.loops;
+								this.loops = 0;
 								break label153;
 							}
 							this.anInt4100 += local91 * local362;
-							this.anInt4108 -= local362;
+							this.loops -= local362;
 						} else if (this.anInt4100 >= local81) {
 							@Pc(406) int local406 = (this.anInt4100 - local76) / local91;
-							if (local406 >= this.anInt4108) {
-								this.anInt4100 -= local91 * this.anInt4108;
-								this.anInt4108 = 0;
+							if (local406 >= this.loops) {
+								this.anInt4100 -= local91 * this.loops;
+								this.loops = 0;
 								break label153;
 							}
 							this.anInt4100 -= local91 * local406;
-							this.anInt4108 -= local406;
+							this.loops -= local406;
 						} else {
 							return;
 						}
@@ -1267,7 +1267,7 @@ public final class SoundPcmStream extends PcmStream {
 		@Pc(29) int local29 = local13.samples.length << 8;
 		@Pc(33) int local33 = local23 - local18;
 		if (local33 <= 0) {
-			this.anInt4108 = 0;
+			this.loops = 0;
 		}
 		@Pc(40) int local40 = off;
 		len += off;
@@ -1287,8 +1287,8 @@ public final class SoundPcmStream extends PcmStream {
 			}
 			this.anInt4100 = local29 - 1;
 		}
-		if (this.anInt4108 >= 0) {
-			if (this.anInt4108 > 0) {
+		if (this.loops >= 0) {
+			if (this.loops > 0) {
 				if (this.aBoolean290) {
 					label131:
 					{
@@ -1299,7 +1299,7 @@ public final class SoundPcmStream extends PcmStream {
 							}
 							this.anInt4100 = local18 + local18 - this.anInt4100 - 1;
 							this.anInt4095 = -this.anInt4095;
-							if (--this.anInt4108 == 0) {
+							if (--this.loops == 0) {
 								break label131;
 							}
 						}
@@ -1310,7 +1310,7 @@ public final class SoundPcmStream extends PcmStream {
 							}
 							this.anInt4100 = local23 + local23 - this.anInt4100 - 1;
 							this.anInt4095 = -this.anInt4095;
-							if (--this.anInt4108 == 0) {
+							if (--this.loops == 0) {
 								break;
 							}
 							local40 = this.method3358(samples, local40, local18, len, local13.samples[this.start]);
@@ -1319,7 +1319,7 @@ public final class SoundPcmStream extends PcmStream {
 							}
 							this.anInt4100 = local18 + local18 - this.anInt4100 - 1;
 							this.anInt4095 = -this.anInt4095;
-						} while (--this.anInt4108 != 0);
+						} while (--this.loops != 0);
 					}
 				} else if (this.anInt4095 < 0) {
 					while (true) {
@@ -1328,13 +1328,13 @@ public final class SoundPcmStream extends PcmStream {
 							return;
 						}
 						@Pc(417) int local417 = (local23 - this.anInt4100 - 1) / local33;
-						if (local417 >= this.anInt4108) {
-							this.anInt4100 += local33 * this.anInt4108;
-							this.anInt4108 = 0;
+						if (local417 >= this.loops) {
+							this.anInt4100 += local33 * this.loops;
+							this.loops = 0;
 							break;
 						}
 						this.anInt4100 += local33 * local417;
-						this.anInt4108 -= local417;
+						this.loops -= local417;
 					}
 				} else {
 					while (true) {
@@ -1343,13 +1343,13 @@ public final class SoundPcmStream extends PcmStream {
 							return;
 						}
 						@Pc(473) int local473 = (this.anInt4100 - local18) / local33;
-						if (local473 >= this.anInt4108) {
-							this.anInt4100 -= local33 * this.anInt4108;
-							this.anInt4108 = 0;
+						if (local473 >= this.loops) {
+							this.anInt4100 -= local33 * this.loops;
+							this.loops = 0;
 							break;
 						}
 						this.anInt4100 -= local33 * local473;
-						this.anInt4108 -= local473;
+						this.loops -= local473;
 					}
 				}
 			}

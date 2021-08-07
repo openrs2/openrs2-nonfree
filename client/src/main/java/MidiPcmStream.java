@@ -79,7 +79,7 @@ public final class MidiPcmStream extends PcmStream {
 	private final int[] anIntArray289 = new int[16];
 
 	@OriginalMember(owner = "client!ld", name = "Bb", descriptor = "I")
-	private final int anInt3085 = 1000000;
+	private final int microsecondsPerSecond = 1000000;
 
 	@OriginalMember(owner = "client!ld", name = "ab", descriptor = "[I")
 	private final int[] channelModulation = new int[16];
@@ -223,7 +223,7 @@ public final class MidiPcmStream extends PcmStream {
 	@Override
 	public final synchronized void skip(@OriginalArg(0) int len) {
 		if (this.decoder.isValid()) {
-			@Pc(18) int local18 = this.decoder.division * this.anInt3085 / Static7.sampleRate;
+			@Pc(18) int local18 = this.decoder.division * this.microsecondsPerSecond / Static7.sampleRate;
 			do {
 				@Pc(27) long local27 = this.aLong110 + (long) len * (long) local18;
 				if (this.timeMillis - local27 >= 0L) {
@@ -287,7 +287,7 @@ public final class MidiPcmStream extends PcmStream {
 			this.method2502(note, instrument.aShortArray80[key] < 0);
 		}
 		if (instrument.aShortArray80[key] < 0) {
-			note.stream.method3359(-1);
+			note.stream.setLoops(-1);
 		}
 		if (note.anInt1283 >= 0) {
 			@Pc(286) MidiNote local286 = this.aClass4_Sub9ArrayArray1[channel][note.anInt1283];
@@ -552,7 +552,7 @@ public final class MidiPcmStream extends PcmStream {
 	@Override
 	public final synchronized void read(@OriginalArg(0) int[] samples, @OriginalArg(1) int off, @OriginalArg(2) int len) {
 		if (this.decoder.isValid()) {
-			@Pc(18) int local18 = this.anInt3085 * this.decoder.division / Static7.sampleRate;
+			@Pc(18) int local18 = this.microsecondsPerSecond * this.decoder.division / Static7.sampleRate;
 			do {
 				@Pc(27) long local27 = (long) local18 * (long) len + this.aLong110;
 				if (this.timeMillis - local27 >= 0L) {

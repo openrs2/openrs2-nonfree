@@ -21,11 +21,11 @@ public final class SignLinkAudioChannel extends AudioChannel {
 
 	@OriginalMember(owner = "client!nm", name = "b", descriptor = "(I)V")
 	@Override
-	public final void open(@OriginalArg(0) int bufferSize) throws Exception {
-		if (bufferSize > 32768) {
+	public final void open(@OriginalArg(0) int bufferCapacity) throws Exception {
+		if (bufferCapacity > 32768) {
 			throw new IllegalArgumentException();
 		}
-		audioSource.open(this.channel, bufferSize);
+		audioSource.open(this.channel, bufferCapacity);
 	}
 
 	@OriginalMember(owner = "client!nm", name = "d", descriptor = "()V")
@@ -42,8 +42,8 @@ public final class SignLinkAudioChannel extends AudioChannel {
 
 	@OriginalMember(owner = "client!nm", name = "a", descriptor = "()I")
 	@Override
-	protected final int getBufferedSampleCount() {
-		return audioSource.getBufferedSampleCount(this.channel);
+	protected final int getBufferSize() {
+		return audioSource.getBufferSize(this.channel);
 	}
 
 	@OriginalMember(owner = "client!nm", name = "b", descriptor = "()V")
