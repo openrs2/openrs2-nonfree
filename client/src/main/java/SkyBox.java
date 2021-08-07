@@ -7,7 +7,7 @@ import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
 @OriginalClass("client!ib")
-public final class Skybox extends SecondaryNode {
+public final class SkyBox extends SecondaryNode {
 
 	@OriginalMember(owner = "client!ib", name = "y", descriptor = "Lclient!dj;")
 	public static final LruHashTable cache = new LruHashTable(4);
@@ -25,15 +25,15 @@ public final class Skybox extends SecondaryNode {
 	private static int anInt2322 = -1;
 
 	@OriginalMember(owner = "client!ib", name = "b", descriptor = "(IIIIII)Lclient!ib;")
-	public static Skybox create(@OriginalArg(0) int texture0, @OriginalArg(1) int texture1, @OriginalArg(2) int texture2, @OriginalArg(3) int texture3, @OriginalArg(4) int texture4, @OriginalArg(5) int texture5) {
+	public static SkyBox create(@OriginalArg(0) int texture0, @OriginalArg(1) int texture1, @OriginalArg(2) int texture2, @OriginalArg(3) int texture3, @OriginalArg(4) int texture4, @OriginalArg(5) int texture5) {
 		@Pc(29) long key = (long) texture0 * 67481L ^ (long) texture1 * 97549L ^ (long) texture2 * 475427L ^ (long) texture3 * 986053L ^ (long) texture4 * 32147369L ^ (long) texture5 * 76724863L;
-		@Pc(35) Skybox skybox = (Skybox) cache.get(key);
-		if (skybox == null) {
-			@Pc(49) Skybox newSkybox = new Skybox(texture0, texture1, texture2, texture3, texture4, texture5);
-			cache.put(key, newSkybox);
-			return newSkybox;
+		@Pc(35) SkyBox skyBox = (SkyBox) cache.get(key);
+		if (skyBox == null) {
+			@Pc(49) SkyBox newSkyBox = new SkyBox(texture0, texture1, texture2, texture3, texture4, texture5);
+			cache.put(key, newSkyBox);
+			return newSkyBox;
 		} else {
-			return skybox;
+			return skyBox;
 		}
 	}
 
@@ -70,11 +70,11 @@ public final class Skybox extends SecondaryNode {
 	private int size = -1;
 
 	@OriginalMember(owner = "client!ib", name = "<init>", descriptor = "()V")
-	public Skybox() {
+	public SkyBox() {
 	}
 
 	@OriginalMember(owner = "client!ib", name = "<init>", descriptor = "(IIIIII)V")
-	private Skybox(@OriginalArg(0) int texture0, @OriginalArg(1) int texture1, @OriginalArg(2) int texture2, @OriginalArg(3) int texture3, @OriginalArg(4) int texture4, @OriginalArg(5) int texture5) {
+	private SkyBox(@OriginalArg(0) int texture0, @OriginalArg(1) int texture1, @OriginalArg(2) int texture2, @OriginalArg(3) int texture3, @OriginalArg(4) int texture4, @OriginalArg(5) int texture5) {
 		this.textures = new int[6];
 		this.textures[0] = texture0;
 		this.textures[1] = texture1;
@@ -151,9 +151,9 @@ public final class Skybox extends SecondaryNode {
 	}
 
 	@OriginalMember(owner = "client!ib", name = "a", descriptor = "(Lclient!ib;Lclient!ib;F)Lclient!ib;")
-	public final Skybox method1835(@OriginalArg(0) Skybox arg0, @OriginalArg(1) Skybox arg1, @OriginalArg(2) float arg2) {
+	public final SkyBox method1835(@OriginalArg(0) SkyBox arg0, @OriginalArg(1) SkyBox arg1, @OriginalArg(2) float arg2) {
 		@Pc(1) GL gl = GlRenderer.gl;
-		@Pc(10) Skybox local10 = (double) arg2 < 0.5D ? arg0 : arg1;
+		@Pc(10) SkyBox local10 = (double) arg2 < 0.5D ? arg0 : arg1;
 		if (!GlRenderer.arbFboSupported) {
 			return local10;
 		}

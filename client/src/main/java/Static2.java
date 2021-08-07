@@ -62,7 +62,7 @@ public final class Static2 {
 	public static Sprite aClass4_Sub3_Sub14_2;
 
 	@OriginalMember(owner = "client!fl", name = "bb", descriptor = "Lclient!ib;")
-	public static Skybox aClass4_Sub3_Sub10_3;
+	public static SkyBox aClass4_Sub3_Sub10_3;
 
 	@OriginalMember(owner = "client!fm", name = "g", descriptor = "I")
 	public static int anInt1941;

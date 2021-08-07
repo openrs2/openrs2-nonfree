@@ -59,7 +59,7 @@ public final class Static5 {
 	public static int anInt3815;
 
 	@OriginalMember(owner = "client!og", name = "kb", descriptor = "Lclient!ib;")
-	public static Skybox aClass4_Sub3_Sub10_6;
+	public static SkyBox aClass4_Sub3_Sub10_6;
 
 	@OriginalMember(owner = "client!og", name = "lb", descriptor = "I")
 	public static int anInt5848;

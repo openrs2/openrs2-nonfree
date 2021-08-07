@@ -243,7 +243,7 @@ public final class Static33 {
 		if (!Preferences.fog) {
 			local48 = 0;
 		}
-		@Pc(56) Skybox local56 = local17.skybox;
+		@Pc(56) SkyBox local56 = local17.skybox;
 		@Pc(59) float local59 = local17.aFloat152;
 		@Pc(62) float local62 = local17.aFloat151;
 		@Pc(65) float local65 = local17.aFloat153;
@@ -259,7 +259,7 @@ public final class Static33 {
 			Static3.aFloat54 = Static4.aFloat58;
 			Static1.aFloat21 = Static4.aFloat145;
 			if (Static1.aClass4_Sub3_Sub10_2 == null || Static3.aClass4_Sub3_Sub10_4 == Static1.aClass4_Sub3_Sub10_2) {
-				Static1.aClass4_Sub3_Sub10_2 = new Skybox();
+				Static1.aClass4_Sub3_Sub10_2 = new SkyBox();
 			}
 			Static2.anInt1317 = local48;
 			Static6.aFloat90 = local36;

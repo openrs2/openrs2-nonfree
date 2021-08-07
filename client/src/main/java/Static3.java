@@ -185,7 +185,7 @@ public final class Static3 {
 	public static int anInt2519;
 
 	@OriginalMember(owner = "client!jb", name = "f", descriptor = "Lclient!ib;")
-	public static Skybox aClass4_Sub3_Sub10_4;
+	public static SkyBox aClass4_Sub3_Sub10_4;
 
 	@OriginalMember(owner = "client!jc", name = "A", descriptor = "I")
 	public static int anInt2542;
