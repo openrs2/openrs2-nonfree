@@ -314,13 +314,13 @@ public final class Static30 {
 												local1369 += component.anIntArray664[local1338];
 											}
 											if (component.objTypes[local1338] > 0) {
-												@Pc(1402) int local1402 = component.objTypes[local1338] - 1;
+												@Pc(1402) int objId = component.objTypes[local1338] - 1;
 												if (local1369 + 32 > arg8 && local1369 < arg5 && arg6 < local1359 + 32 && local1359 < arg4 || component == Static5.aClass185_10 && Static1.anInt91 == local1338) {
 													@Pc(1463) Sprite local1463;
 													if (Static2.anInt1334 == 1 && local1338 == Static1.anInt314 && component.id == Static5.anInt4302) {
-														local1463 = Static37.method4676(component.objCounts[local1338], 2, component.showObjCount, null, local1402, 0);
+														local1463 = ObjTypeList.getSprite(objId, component.objCounts[local1338], 2, component.showObjCount, null, 0);
 													} else {
-														local1463 = Static37.method4676(component.objCounts[local1338], 1, component.showObjCount, null, local1402, 3153952);
+														local1463 = ObjTypeList.getSprite(objId, component.objCounts[local1338], 1, component.showObjCount, null, 3153952);
 													}
 													if (Static4.aBoolean218) {
 														Static2.aBooleanArray8[rectangle] = true;
@@ -490,9 +490,9 @@ public final class Static30 {
 										if (component.objId == -1) {
 											local2137 = component.method4729(false);
 										} else if (component.objWearColor && PlayerList.self.appearance != null) {
-											local2137 = Static37.method4676(component.objCount, component.outline, component.showObjCount, PlayerList.self.appearance, component.objId, component.graphicShadow);
+											local2137 = ObjTypeList.getSprite(component.objId, component.objCount, component.outline, component.showObjCount, PlayerList.self.appearance, component.graphicShadow);
 										} else {
-											local2137 = Static37.method4676(component.objCount, component.outline, component.showObjCount, null, component.objId, component.graphicShadow);
+											local2137 = ObjTypeList.getSprite(component.objId, component.objCount, component.outline, component.showObjCount, null, component.graphicShadow);
 										}
 										if (local2137 != null) {
 											@Pc(2182) int local2182 = local2137.innerWidth;
@@ -586,9 +586,9 @@ public final class Static30 {
 											@Pc(2695) ObjType local2695 = local2687.method4124(component.objCount);
 											@Pc(2704) SeqType local2704 = local2670 == -1 ? null : SeqTypeList.get(local2670);
 											if (component.objWearColor && PlayerList.self.appearance != null) {
-												local2665 = local2695.method4123(component.anInt5892, 1, component.anInt5979, PlayerList.self.appearance, local2704, component.anInt5897);
+												local2665 = local2695.getModel(component.anInt5892, 1, component.anInt5979, PlayerList.self.appearance, local2704, component.anInt5897);
 											} else {
-												local2665 = local2695.method4123(component.anInt5892, 1, component.anInt5979, null, local2704, component.anInt5897);
+												local2665 = local2695.getModel(component.anInt5892, 1, component.anInt5979, null, local2704, component.anInt5897);
 											}
 											if (local2665 == null) {
 												Static28.method3270(component);

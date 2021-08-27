@@ -244,62 +244,62 @@ public final class ObjType {
 	}
 
 	@OriginalMember(owner = "client!td", name = "a", descriptor = "(IIIILclient!qk;Lclient!eg;I)Lclient!vg;")
-	public final Model method4123(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) PlayerAppearance arg3, @OriginalArg(5) SeqType arg4, @OriginalArg(6) int arg5) {
-		if (this.countObj != null && arg1 > 1) {
-			@Pc(13) int local13 = -1;
-			for (@Pc(15) int local15 = 0; local15 < 10; local15++) {
-				if (arg1 >= this.countCount[local15] && this.countCount[local15] != 0) {
-					local13 = this.countObj[local15];
+	public final Model getModel(@OriginalArg(0) int arg0, @OriginalArg(1) int count, @OriginalArg(3) int arg2, @OriginalArg(4) PlayerAppearance appearance, @OriginalArg(5) SeqType seqType, @OriginalArg(6) int arg5) {
+		if (this.countObj != null && count > 1) {
+			@Pc(13) int countId = -1;
+			for (@Pc(15) int i = 0; i < 10; i++) {
+				if (count >= this.countCount[i] && this.countCount[i] != 0) {
+					countId = this.countObj[i];
 				}
 			}
-			if (local13 != -1) {
-				return ObjTypeList.get(local13).method4123(arg0, 1, arg2, arg3, arg4, arg5);
+			if (countId != -1) {
+				return ObjTypeList.get(countId).getModel(arg0, 1, arg2, appearance, seqType, arg5);
 			}
 		}
-		@Pc(62) Model local62 = (Model) ObjTypeList.models.get((long) this.id);
-		if (local62 == null) {
-			@Pc(72) RawModel local72 = RawModel.create(ObjTypeList.modelsArchive, this.model);
-			if (local72 == null) {
+		@Pc(62) Model model = (Model) ObjTypeList.models.get((long) this.id);
+		if (model == null) {
+			@Pc(72) RawModel model2 = RawModel.create(ObjTypeList.modelsArchive, this.model);
+			if (model2 == null) {
 				return null;
 			}
 			if (this.recolorSource != null) {
 				for (@Pc(83) int i = 0; i < this.recolorSource.length; i++) {
 					if (this.recolorDestinationPalette == null || i >= this.recolorDestinationPalette.length) {
-						local72.recolor(this.recolorSource[i], this.recolorDestination[i]);
+						model2.recolor(this.recolorSource[i], this.recolorDestination[i]);
 					} else {
-						local72.recolor(this.recolorSource[i], Static4.aShortArray126[this.recolorDestinationPalette[i] & 0xFF]);
+						model2.recolor(this.recolorSource[i], Static4.aShortArray126[this.recolorDestinationPalette[i] & 0xFF]);
 					}
 				}
 			}
 			if (this.retextureSource != null) {
 				for (@Pc(131) int i = 0; i < this.retextureSource.length; i++) {
-					local72.retexture(this.retextureSource[i], this.retextureDestination[i]);
+					model2.retexture(this.retextureSource[i], this.retextureDestination[i]);
 				}
 			}
-			if (arg3 != null) {
+			if (appearance != null) {
 				for (@Pc(154) int i = 0; i < 5; i++) {
-					if (arg3.colors[i] < PlayerAppearance.destinationBodyColors[i].length) {
-						local72.recolor(PlayerAppearance.sourceBodyColors[i], PlayerAppearance.destinationBodyColors[i][arg3.colors[i]]);
+					if (appearance.colors[i] < PlayerAppearance.destinationBodyColors[i].length) {
+						model2.recolor(PlayerAppearance.sourceBodyColors[i], PlayerAppearance.destinationBodyColors[i][appearance.colors[i]]);
 					}
-					if (arg3.colors[i] < PlayerAppearance.destinationSkinColors[i].length) {
-						local72.recolor(PlayerAppearance.sourceSkinColors[i], PlayerAppearance.destinationSkinColors[i][arg3.colors[i]]);
+					if (appearance.colors[i] < PlayerAppearance.destinationSkinColors[i].length) {
+						model2.recolor(PlayerAppearance.sourceSkinColors[i], PlayerAppearance.destinationSkinColors[i][appearance.colors[i]]);
 					}
 				}
 			}
-			local62 = local72.createModel(this.ambient + 64, this.contrast + 768, -50, -10, -50);
+			model = model2.createModel(this.ambient + 64, this.contrast + 768, -50, -10, -50);
 			if (this.resizeX != 128 || this.resizeY != 128 || this.resizeZ != 128) {
-				local62.resize(this.resizeX, this.resizeY, this.resizeZ);
+				model.resize(this.resizeX, this.resizeY, this.resizeZ);
 			}
-			local62.aBoolean324 = true;
+			model.aBoolean324 = true;
 			if (GlRenderer.enabled) {
-				((GlModel) local62).method3872(false, false, false, false, false, true);
+				((GlModel) model).method3872(false, false, false, false, false, true);
 			}
-			ObjTypeList.models.put((long) this.id, local62);
+			ObjTypeList.models.put((long) this.id, model);
 		}
-		if (arg4 != null) {
-			local62 = arg4.method1017(arg5, arg2, local62, arg0);
+		if (seqType != null) {
+			model = seqType.method1017(arg5, arg2, model, arg0);
 		}
-		return local62;
+		return model;
 	}
 
 	@OriginalMember(owner = "client!td", name = "a", descriptor = "(ZI)Lclient!td;")
@@ -465,40 +465,40 @@ public final class ObjType {
 	}
 
 	@OriginalMember(owner = "client!td", name = "a", descriptor = "(Lclient!qk;I)Lclient!na;")
-	public final SoftwareModel method4135(@OriginalArg(0) PlayerAppearance arg0) {
-		@Pc(11) RawModel local11 = RawModel.create(ObjTypeList.modelsArchive, this.model);
-		if (local11 == null) {
+	public final SoftwareModel getInvModel(@OriginalArg(0) PlayerAppearance appearance) {
+		@Pc(11) RawModel model = RawModel.create(ObjTypeList.modelsArchive, this.model);
+		if (model == null) {
 			return null;
 		}
 		if (this.recolorSource != null) {
 			for (@Pc(23) int i = 0; i < this.recolorSource.length; i++) {
 				if (this.recolorDestinationPalette == null || this.recolorDestinationPalette.length <= i) {
-					local11.recolor(this.recolorSource[i], this.recolorDestination[i]);
+					model.recolor(this.recolorSource[i], this.recolorDestination[i]);
 				} else {
-					local11.recolor(this.recolorSource[i], Static4.aShortArray126[this.recolorDestinationPalette[i] & 0xFF]);
+					model.recolor(this.recolorSource[i], Static4.aShortArray126[this.recolorDestinationPalette[i] & 0xFF]);
 				}
 			}
 		}
 		if (this.retextureSource != null) {
 			for (@Pc(73) int i = 0; i < this.retextureSource.length; i++) {
-				local11.retexture(this.retextureSource[i], this.retextureDestination[i]);
+				model.retexture(this.retextureSource[i], this.retextureDestination[i]);
 			}
 		}
-		if (arg0 != null) {
+		if (appearance != null) {
 			for (@Pc(100) int i = 0; i < 5; i++) {
-				if (PlayerAppearance.destinationBodyColors[i].length > arg0.colors[i]) {
-					local11.recolor(PlayerAppearance.sourceBodyColors[i], PlayerAppearance.destinationBodyColors[i][arg0.colors[i]]);
+				if (PlayerAppearance.destinationBodyColors[i].length > appearance.colors[i]) {
+					model.recolor(PlayerAppearance.sourceBodyColors[i], PlayerAppearance.destinationBodyColors[i][appearance.colors[i]]);
 				}
-				if (PlayerAppearance.destinationSkinColors[i].length > arg0.colors[i]) {
-					local11.recolor(PlayerAppearance.sourceSkinColors[i], PlayerAppearance.destinationSkinColors[i][arg0.colors[i]]);
+				if (PlayerAppearance.destinationSkinColors[i].length > appearance.colors[i]) {
+					model.recolor(PlayerAppearance.sourceSkinColors[i], PlayerAppearance.destinationSkinColors[i][appearance.colors[i]]);
 				}
 			}
 		}
-		@Pc(168) SoftwareModel local168 = local11.createSoftwareModel(this.ambient + 64, this.contrast + 768, -50, -10, -50);
+		@Pc(168) SoftwareModel softwareModel = model.createSoftwareModel(this.ambient + 64, this.contrast + 768, -50, -10, -50);
 		if (this.resizeX != 128 || this.resizeY != 128 || this.resizeZ != 128) {
-			local168.resize(this.resizeX, this.resizeY, this.resizeZ);
+			softwareModel.resize(this.resizeX, this.resizeY, this.resizeZ);
 		}
-		return local168;
+		return softwareModel;
 	}
 
 	@OriginalMember(owner = "client!td", name = "a", descriptor = "(IILclient!fd;)V")

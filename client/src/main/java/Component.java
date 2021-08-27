@@ -600,7 +600,7 @@ public final class Component {
 			}
 		} else if (local14 == 4) {
 			@Pc(166) ObjType local166 = ObjTypeList.get(local17);
-			@Pc(176) Model model = local166.method4123(arg3, 10, arg2, arg1, arg0, arg4);
+			@Pc(176) Model model = local166.getModel(arg3, 10, arg2, arg1, arg0, arg4);
 			if (model == null) {
 				Static3.aBoolean178 = true;
 				return null;

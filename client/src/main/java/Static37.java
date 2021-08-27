@@ -29,22 +29,6 @@ public final class Static37 {
 		Protocol.outboundBuffer.writeShortLEA(arg0 + Static5.originX);
 	}
 
-	@OriginalMember(owner = "client!wc", name = "a", descriptor = "(IIZBLclient!qk;II)Lclient!uj;")
-	public static Sprite method4676(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) boolean arg2, @OriginalArg(4) PlayerAppearance arg3, @OriginalArg(5) int arg4, @OriginalArg(6) int arg5) {
-		@Pc(23) int local23 = (arg2 ? 65536 : 0) + arg4 + (arg1 << 17) + (arg5 << 19);
-		@Pc(34) long local34 = (long) arg0 * 3147483667L + (long) local23 * 3849834839L;
-		@Pc(40) Sprite local40 = (Sprite) ObjTypeList.sprites.get(local34);
-		if (local40 != null) {
-			return local40;
-		}
-		Static4.aBoolean218 = false;
-		@Pc(58) Sprite local58 = Static13.method965(arg1, arg2, arg0, false, arg3, arg5, arg4, false);
-		if (local58 != null && !Static4.aBoolean218) {
-			ObjTypeList.sprites.put(local34, local58);
-		}
-		return local58;
-	}
-
 	@OriginalMember(owner = "client!wc", name = "a", descriptor = "(Z)V")
 	public static void method4677() {
 		if (Static5.environments == null) {
