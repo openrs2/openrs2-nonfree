@@ -188,11 +188,6 @@ public final class Static8 {
 		}
 	}
 
-	@OriginalMember(owner = "client!ab", name = "a", descriptor = "(IIII)I")
-	public static int method9(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(3) int arg2) {
-		return arg1 >= arg0 ? (arg1 > arg2 ? arg2 : arg1) : arg0;
-	}
-
 	@OriginalMember(owner = "client!ab", name = "a", descriptor = "(Z)V")
 	public static void method11() {
 		for (@Pc(3) int local3 = 0; local3 < 5; local3++) {

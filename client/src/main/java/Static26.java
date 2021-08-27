@@ -581,8 +581,8 @@ public final class Static26 {
 		@Pc(78) int local78 = local64;
 		@Pc(86) int local86 = ((arg1 << 1) - 3) * local29;
 		if (arg0 >= Static4.anInt3086 && Static5.anInt4230 >= arg0) {
-			@Pc(109) int local109 = Static8.method9(Static2.anInt902, arg4 + arg3, Static3.anInt2553);
-			@Pc(117) int local117 = Static8.method9(Static2.anInt902, arg4 - arg3, Static3.anInt2553);
+			@Pc(109) int local109 = IntUtils.clamp(arg4 + arg3, Static2.anInt902, Static3.anInt2553);
+			@Pc(117) int local117 = IntUtils.clamp(arg4 - arg3, Static2.anInt902, Static3.anInt2553);
 			Static18.method1656(Static5.anIntArrayArray36[arg0], arg2, local117, local109);
 		}
 		@Pc(131) int local131 = local60 * (arg1 - 1);
@@ -611,8 +611,8 @@ public final class Static26 {
 			@Pc(211) int local211 = local7 + arg0;
 			local86 -= local60;
 			if (local211 >= Static4.anInt3086 && Static5.anInt4230 >= local198) {
-				@Pc(229) int local229 = Static8.method9(Static2.anInt902, local9 + arg4, Static3.anInt2553);
-				@Pc(237) int local237 = Static8.method9(Static2.anInt902, arg4 - local9, Static3.anInt2553);
+				@Pc(229) int local229 = IntUtils.clamp(local9 + arg4, Static2.anInt902, Static3.anInt2553);
+				@Pc(237) int local237 = IntUtils.clamp(arg4 - local9, Static2.anInt902, Static3.anInt2553);
 				if (Static4.anInt3086 <= local198) {
 					Static18.method1656(Static5.anIntArrayArray36[local198], arg2, local237, local229);
 				}

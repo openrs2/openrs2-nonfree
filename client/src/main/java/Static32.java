@@ -551,10 +551,10 @@ public final class Static32 {
 		@Pc(152) int local152 = (local7 - 1) * local112;
 		if (arg4 >= Static4.anInt3086 && Static5.anInt4230 >= arg4) {
 			@Pc(166) int[] local166 = Static5.anIntArrayArray36[arg4];
-			@Pc(177) int local177 = Static8.method9(Static2.anInt902, arg2 - arg5, Static3.anInt2553);
-			@Pc(185) int local185 = Static8.method9(Static2.anInt902, arg2 + arg5, Static3.anInt2553);
-			@Pc(193) int local193 = Static8.method9(Static2.anInt902, arg2 - local16, Static3.anInt2553);
-			@Pc(203) int local203 = Static8.method9(Static2.anInt902, arg2 + local16, Static3.anInt2553);
+			@Pc(177) int local177 = IntUtils.clamp(arg2 - arg5, Static2.anInt902, Static3.anInt2553);
+			@Pc(185) int local185 = IntUtils.clamp(arg2 + arg5, Static2.anInt902, Static3.anInt2553);
+			@Pc(193) int local193 = IntUtils.clamp(arg2 - local16, Static2.anInt902, Static3.anInt2553);
+			@Pc(203) int local203 = IntUtils.clamp(arg2 + local16, Static2.anInt902, Static3.anInt2553);
 			Static18.method1656(local166, arg1, local177, local193);
 			Static18.method1656(local166, arg0, local193, local203);
 			Static18.method1656(local166, arg1, local203, local185);
@@ -607,11 +607,11 @@ public final class Static32 {
 			local144 -= local91;
 			local130 -= local91;
 			if (local363 >= Static4.anInt3086 && Static5.anInt4230 >= local367) {
-				@Pc(389) int local389 = Static8.method9(Static2.anInt902, local3 + arg2, Static3.anInt2553);
-				@Pc(398) int local398 = Static8.method9(Static2.anInt902, arg2 - local3, Static3.anInt2553);
+				@Pc(389) int local389 = IntUtils.clamp(local3 + arg2, Static2.anInt902, Static3.anInt2553);
+				@Pc(398) int local398 = IntUtils.clamp(arg2 - local3, Static2.anInt902, Static3.anInt2553);
 				if (local281) {
-					@Pc(409) int local409 = Static8.method9(Static2.anInt902, arg2 + local11, Static3.anInt2553);
-					@Pc(418) int local418 = Static8.method9(Static2.anInt902, arg2 - local11, Static3.anInt2553);
+					@Pc(409) int local409 = IntUtils.clamp(arg2 + local11, Static2.anInt902, Static3.anInt2553);
+					@Pc(418) int local418 = IntUtils.clamp(arg2 - local11, Static2.anInt902, Static3.anInt2553);
 					if (Static4.anInt3086 <= local367) {
 						@Pc(426) int[] local426 = Static5.anIntArrayArray36[local367];
 						Static18.method1656(local426, arg1, local398, local418);

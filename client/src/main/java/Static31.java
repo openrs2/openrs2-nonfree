@@ -738,20 +738,20 @@ public final class Static31 {
 
 	@OriginalMember(owner = "client!rm", name = "a", descriptor = "(IIIIBII)V")
 	public static void method3781(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(5) int arg4, @OriginalArg(6) int arg5) {
-		@Pc(17) int local17 = Static8.method9(Static4.anInt3086, arg4, Static5.anInt4230);
-		@Pc(23) int local23 = Static8.method9(Static4.anInt3086, arg5, Static5.anInt4230);
-		@Pc(29) int local29 = Static8.method9(Static2.anInt902, arg3, Static3.anInt2553);
-		@Pc(35) int local35 = Static8.method9(Static2.anInt902, arg0, Static3.anInt2553);
-		@Pc(43) int local43 = Static8.method9(Static4.anInt3086, arg2 + arg4, Static5.anInt4230);
-		@Pc(52) int local52 = Static8.method9(Static4.anInt3086, arg5 - arg2, Static5.anInt4230);
+		@Pc(17) int local17 = IntUtils.clamp(arg4, Static4.anInt3086, Static5.anInt4230);
+		@Pc(23) int local23 = IntUtils.clamp(arg5, Static4.anInt3086, Static5.anInt4230);
+		@Pc(29) int local29 = IntUtils.clamp(arg3, Static2.anInt902, Static3.anInt2553);
+		@Pc(35) int local35 = IntUtils.clamp(arg0, Static2.anInt902, Static3.anInt2553);
+		@Pc(43) int local43 = IntUtils.clamp(arg2 + arg4, Static4.anInt3086, Static5.anInt4230);
+		@Pc(52) int local52 = IntUtils.clamp(arg5 - arg2, Static4.anInt3086, Static5.anInt4230);
 		for (@Pc(54) int local54 = local17; local54 < local43; local54++) {
 			Static18.method1656(Static5.anIntArrayArray36[local54], arg1, local29, local35);
 		}
 		for (@Pc(70) int local70 = local23; local70 > local52; local70--) {
 			Static18.method1656(Static5.anIntArrayArray36[local70], arg1, local29, local35);
 		}
-		@Pc(97) int local97 = Static8.method9(Static2.anInt902, arg3 + arg2, Static3.anInt2553);
-		@Pc(106) int local106 = Static8.method9(Static2.anInt902, arg0 - arg2, Static3.anInt2553);
+		@Pc(97) int local97 = IntUtils.clamp(arg3 + arg2, Static2.anInt902, Static3.anInt2553);
+		@Pc(106) int local106 = IntUtils.clamp(arg0 - arg2, Static2.anInt902, Static3.anInt2553);
 		for (@Pc(108) int local108 = local43; local108 <= local52; local108++) {
 			@Pc(119) int[] local119 = Static5.anIntArrayArray36[local108];
 			Static18.method1656(local119, arg1, local29, local97);

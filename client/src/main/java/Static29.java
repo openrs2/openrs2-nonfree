@@ -644,8 +644,8 @@ public final class Static29 {
 		@Pc(14) int local14 = arg2;
 		@Pc(16) int local16 = -1;
 		@Pc(19) int local19 = -arg2;
-		@Pc(27) int local27 = Static8.method9(Static2.anInt902, arg2 + arg1, Static3.anInt2553);
-		@Pc(35) int local35 = Static8.method9(Static2.anInt902, arg1 - arg2, Static3.anInt2553);
+		@Pc(27) int local27 = IntUtils.clamp(arg2 + arg1, Static2.anInt902, Static3.anInt2553);
+		@Pc(35) int local35 = IntUtils.clamp(arg1 - arg2, Static2.anInt902, Static3.anInt2553);
 		Static18.method1656(Static5.anIntArrayArray36[arg0], arg3, local35, local27);
 		while (local14 > local3) {
 			local16 += 2;
@@ -656,8 +656,8 @@ public final class Static29 {
 				@Pc(72) int local72 = arg0 - local14;
 				@Pc(76) int local76 = local14 + arg0;
 				if (local76 >= Static4.anInt3086 && local72 <= Static5.anInt4230) {
-					@Pc(98) int local98 = Static8.method9(Static2.anInt902, arg1 + local3, Static3.anInt2553);
-					@Pc(106) int local106 = Static8.method9(Static2.anInt902, arg1 - local3, Static3.anInt2553);
+					@Pc(98) int local98 = IntUtils.clamp(arg1 + local3, Static2.anInt902, Static3.anInt2553);
+					@Pc(106) int local106 = IntUtils.clamp(arg1 - local3, Static2.anInt902, Static3.anInt2553);
 					if (Static5.anInt4230 >= local76) {
 						Static18.method1656(Static5.anIntArrayArray36[local76], arg3, local106, local98);
 					}
@@ -670,8 +670,8 @@ public final class Static29 {
 			@Pc(138) int local138 = arg0 - local3;
 			@Pc(142) int local142 = arg0 + local3;
 			if (Static4.anInt3086 <= local142 && local138 <= Static5.anInt4230) {
-				@Pc(166) int local166 = Static8.method9(Static2.anInt902, arg1 + local14, Static3.anInt2553);
-				@Pc(174) int local174 = Static8.method9(Static2.anInt902, arg1 - local14, Static3.anInt2553);
+				@Pc(166) int local166 = IntUtils.clamp(arg1 + local14, Static2.anInt902, Static3.anInt2553);
+				@Pc(174) int local174 = IntUtils.clamp(arg1 - local14, Static2.anInt902, Static3.anInt2553);
 				if (local142 <= Static5.anInt4230) {
 					Static18.method1656(Static5.anIntArrayArray36[local142], arg3, local174, local166);
 				}

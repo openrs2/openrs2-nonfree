@@ -133,4 +133,15 @@ public final class IntUtils {
 			return result;
 		}
 	}
+
+	@OriginalMember(owner = "client!ab", name = "a", descriptor = "(IIII)I")
+	public static int clamp(@OriginalArg(1) int value, @OriginalArg(0) int min, @OriginalArg(3) int max) {
+		if (value < min) {
+			return min;
+		}
+		if (value > max) {
+			return max;
+		}
+		return value;
+	}
 }

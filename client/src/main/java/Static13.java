@@ -90,8 +90,8 @@ public final class Static13 {
 	@OriginalMember(owner = "client!eg", name = "a", descriptor = "(ZIIII)V")
 	public static void method1015(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3) {
 		if (Static4.anInt3086 <= arg3 && arg3 <= Static5.anInt4230) {
-			arg0 = Static8.method9(Static2.anInt902, arg0, Static3.anInt2553);
-			arg1 = Static8.method9(Static2.anInt902, arg1, Static3.anInt2553);
+			arg0 = IntUtils.clamp(arg0, Static2.anInt902, Static3.anInt2553);
+			arg1 = IntUtils.clamp(arg1, Static2.anInt902, Static3.anInt2553);
 			Static20.method1975(arg0, arg1, arg2, arg3);
 		}
 	}

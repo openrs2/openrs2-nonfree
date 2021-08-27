@@ -836,8 +836,8 @@ public final class Static20 {
 	@OriginalMember(owner = "client!im", name = "a", descriptor = "(IIIIZ)V")
 	public static void method1930(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) {
 		if (Static2.anInt902 <= arg0 && Static3.anInt2553 >= arg0) {
-			arg1 = Static8.method9(Static4.anInt3086, arg1, Static5.anInt4230);
-			arg2 = Static8.method9(Static4.anInt3086, arg2, Static5.anInt4230);
+			arg1 = IntUtils.clamp(arg1, Static4.anInt3086, Static5.anInt4230);
+			arg2 = IntUtils.clamp(arg2, Static4.anInt3086, Static5.anInt4230);
 			Static10.method306(arg0, arg3, arg2, arg1);
 		}
 	}
