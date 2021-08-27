@@ -352,7 +352,7 @@ public final class Static10 {
 				Static7.anInt5228 = arg0.anInt5926;
 				Static4.anInt3017 = arg0.graphic;
 			}
-			if (Static1.aClass144_1.female) {
+			if (PlayerAppearance.DEFAULT.female) {
 				arg0.graphic = Static4.anInt3017;
 			} else {
 				arg0.graphic = Static7.anInt5228;
@@ -362,7 +362,7 @@ public final class Static10 {
 				Static4.anInt3017 = arg0.graphic;
 				Static7.anInt5228 = arg0.anInt5926;
 			}
-			if (Static1.aClass144_1.female) {
+			if (PlayerAppearance.DEFAULT.female) {
 				arg0.graphic = Static7.anInt5228;
 			} else {
 				arg0.graphic = Static4.anInt3017;

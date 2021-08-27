@@ -598,7 +598,7 @@ public final class Static30 {
 										}
 									} else if (component.modelType == 5) {
 										if (component.modelId == -1) {
-											local2665 = Static1.aClass144_1.getBodyModel(null, -1, -1, -1, null, -1, false, 0, null, true, 0);
+											local2665 = PlayerAppearance.DEFAULT.getBodyModel(null, -1, -1, -1, null, -1, false, 0, null, true, 0);
 										} else {
 											@Pc(2817) int local2817 = component.modelId & 0x7FF;
 											if (PlayerList.selfId == local2817) {

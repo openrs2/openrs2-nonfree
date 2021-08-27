@@ -360,7 +360,7 @@ public final class Static11 {
 		Static6.aClass185_14 = null;
 		MiniMenu.size = 0;
 		Static1.aBoolean17 = false;
-		Static1.aClass144_1.set(-1, null, -1, new int[] { 0, 0, 0, 0, 0 }, false);
+		PlayerAppearance.DEFAULT.set(-1, null, -1, new int[] { 0, 0, 0, 0, 0 }, false);
 		for (@Pc(3945) int local3945 = 0; local3945 < 8; local3945++) {
 			Player.ops[local3945] = null;
 			Player.opLowPriority[local3945] = false;

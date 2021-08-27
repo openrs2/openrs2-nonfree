@@ -226,9 +226,6 @@ public final class Static1 {
 	@OriginalMember(owner = "client!cg", name = "a", descriptor = "Z")
 	public static boolean aBoolean35 = false;
 
-	@OriginalMember(owner = "client!ci", name = "f", descriptor = "Lclient!qk;")
-	public static final PlayerAppearance aClass144_1 = new PlayerAppearance();
-
 	@OriginalMember(owner = "client!ci", name = "j", descriptor = "Lclient!wf;")
 	public static Component aClass185_2 = null;
 
