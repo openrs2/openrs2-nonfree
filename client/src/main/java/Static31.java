@@ -807,37 +807,6 @@ public final class Static31 {
 		}
 	}
 
-	@OriginalMember(owner = "client!rn", name = "a", descriptor = "([JBII[Ljava/lang/Object;)V")
-	public static void method3152(@OriginalArg(0) long[] arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) Object[] arg3) {
-		if (arg2 >= arg1) {
-			return;
-		}
-		@Pc(22) int local22 = (arg1 + arg2) / 2;
-		@Pc(24) int local24 = arg2;
-		@Pc(28) long local28 = arg0[local22];
-		arg0[local22] = arg0[arg1];
-		arg0[arg1] = local28;
-		@Pc(42) Object local42 = arg3[local22];
-		arg3[local22] = arg3[arg1];
-		arg3[arg1] = local42;
-		for (@Pc(54) int local54 = arg2; local54 < arg1; local54++) {
-			if (arg0[local54] < (long) (local54 & 0x1) + local28) {
-				@Pc(77) long local77 = arg0[local54];
-				arg0[local54] = arg0[local24];
-				arg0[local24] = local77;
-				@Pc(91) Object local91 = arg3[local54];
-				arg3[local54] = arg3[local24];
-				arg3[local24++] = local91;
-			}
-		}
-		arg0[arg1] = arg0[local24];
-		arg0[local24] = local28;
-		arg3[arg1] = arg3[local24];
-		arg3[local24] = local42;
-		method3152(arg0, local24 - 1, arg2, arg3);
-		method3152(arg0, arg1, local24 + 1, arg3);
-	}
-
 	@OriginalMember(owner = "client!rn", name = "c", descriptor = "(B)V")
 	public static void method3153() {
 		Static2.anImage2 = null;

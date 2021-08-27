@@ -1103,7 +1103,7 @@ public final class Static22 {
 		for (@Pc(1502) int local1502 = 0; local1502 < local1489; local1502++) {
 			local1500[local1502] = local1492[local1502].key;
 		}
-		Static11.method563(local1500, local1492);
+		ArrayUtils.sort(local1500, local1492);
 		return local1492;
 	}
 

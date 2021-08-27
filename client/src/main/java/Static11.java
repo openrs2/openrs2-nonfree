@@ -361,10 +361,10 @@ public final class Static11 {
 		MiniMenu.size = 0;
 		Static1.aBoolean17 = false;
 		PlayerAppearance.DEFAULT.set(-1, null, -1, new int[] { 0, 0, 0, 0, 0 }, false);
-		for (@Pc(3945) int local3945 = 0; local3945 < 8; local3945++) {
-			Player.ops[local3945] = null;
-			Player.opLowPriority[local3945] = false;
-			Player.opCursors[local3945] = -1;
+		for (@Pc(3945) int i = 0; i < 8; i++) {
+			Player.ops[i] = null;
+			Player.opLowPriority[i] = false;
+			Player.opCursors[i] = -1;
 		}
 		Inv.deleteAll();
 		Static3.aBoolean366 = true;
@@ -404,11 +404,6 @@ public final class Static11 {
 		} else {
 			return 1;
 		}
-	}
-
-	@OriginalMember(owner = "client!cg", name = "a", descriptor = "(I[J[Ljava/lang/Object;)V")
-	public static void method563(@OriginalArg(1) long[] arg0, @OriginalArg(2) Object[] arg1) {
-		Static31.method3152(arg0, arg0.length - 1, 0, arg1);
 	}
 
 	@OriginalMember(owner = "client!ch", name = "a", descriptor = "(IZIII)V")

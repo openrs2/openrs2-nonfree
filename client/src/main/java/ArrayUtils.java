@@ -466,4 +466,40 @@ public final class ArrayUtils {
 		ArrayUtils.copy(array, 0, copy, 0, len);
 		return copy;
 	}
+
+	@OriginalMember(owner = "client!rn", name = "a", descriptor = "([JBII[Ljava/lang/Object;)V")
+	private static void sort(@OriginalArg(0) long[] keys, @OriginalArg(4) Object[] values, @OriginalArg(3) int lo, @OriginalArg(2) int hi) {
+		if (lo >= hi) {
+			return;
+		}
+		@Pc(22) int mid = (hi + lo) / 2;
+		@Pc(24) int i = lo;
+		@Pc(28) long pivotKey = keys[mid];
+		keys[mid] = keys[hi];
+		keys[hi] = pivotKey;
+		@Pc(42) Object pivotValue = values[mid];
+		values[mid] = values[hi];
+		values[hi] = pivotValue;
+		for (@Pc(54) int j = lo; j < hi; j++) {
+			if (keys[j] < (long) (j & 0x1) + pivotKey) {
+				@Pc(77) long key = keys[j];
+				keys[j] = keys[i];
+				keys[i] = key;
+				@Pc(91) Object value = values[j];
+				values[j] = values[i];
+				values[i++] = value;
+			}
+		}
+		keys[hi] = keys[i];
+		keys[i] = pivotKey;
+		values[hi] = values[i];
+		values[i] = pivotValue;
+		sort(keys, values, lo, i - 1);
+		sort(keys, values, i + 1, hi);
+	}
+
+	@OriginalMember(owner = "client!cg", name = "a", descriptor = "(I[J[Ljava/lang/Object;)V")
+	public static void sort(@OriginalArg(1) long[] keys, @OriginalArg(2) Object[] values) {
+		sort(keys, values, 0, keys.length - 1);
+	}
 }
