@@ -1,34 +1,8 @@
-import java.awt.Point;
-
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
 public final class Static13 {
-
-	@OriginalMember(owner = "client!dn", name = "c", descriptor = "(II)V")
-	public static void method966(@OriginalArg(0) int arg0) {
-		if (!Preferences.customCursors) {
-			arg0 = -1;
-		}
-		if (Static7.anInt5345 == arg0) {
-			return;
-		}
-		if (arg0 != -1) {
-			@Pc(23) CursorType local23 = CursorTypeList.get(arg0);
-			@Pc(27) SoftwareSprite local27 = local23.getSprite();
-			if (local27 == null) {
-				arg0 = -1;
-			} else {
-				GameShell.signLink.setCursor(GameShell.canvas, local27.innerWidth, local27.innerHeight, local27.getPixels(), new Point(local23.hotSpotX, local23.hotSpotY));
-				Static7.anInt5345 = arg0;
-			}
-		}
-		if (arg0 == -1 && Static7.anInt5345 != -1) {
-			GameShell.signLink.setCursor(GameShell.canvas, -1, -1, null, new Point());
-			Static7.anInt5345 = -1;
-		}
-	}
 
 	@OriginalMember(owner = "client!ea", name = "d", descriptor = "(I)V")
 	public static void method933() {

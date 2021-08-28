@@ -66,10 +66,10 @@ public final class Static21 {
 
 	@OriginalMember(owner = "client!je", name = "a", descriptor = "(IZLclient!wf;I)V")
 	public static void method2008(@OriginalArg(0) int arg0, @OriginalArg(2) Component arg1, @OriginalArg(3) int arg2) {
-		if (MiniMenu.size < 2 && Static2.anInt1334 == 0 && !Static3.aBoolean177) {
+		if (MiniMenu.size < 2 && MiniMenu.anInt1334 == 0 && !Static3.aBoolean177) {
 			return;
 		}
-		@Pc(26) String local26 = Static35.method4328();
+		@Pc(26) String local26 = MiniMenu.method4328();
 		if (arg1 == null) {
 			@Pc(43) int local43 = Fonts.b12Full.method2263(local26, arg0 + 4, arg2 + 15, client.random, client.seed);
 			Static8.method66(local43 + Fonts.b12Full.getStringWidth(local26), 15, arg0 + 4, arg2);
@@ -103,7 +103,7 @@ public final class Static21 {
 			@Pc(56) int x = mapX * 64 - Static5.originX;
 			@Pc(63) int z = mapZ * 64 - Static7.originZ;
 			if (mapBytes != null) {
-				Static9.method763();
+				Static9.audioLoop();
 				local33 = Static34.readMap(underwater, PathFinder.collisionMaps, Static7.originZ, z, x, Static5.originX, mapBytes);
 			}
 			if (!underwater && Static4.centralZoneX / 8 == mapX && mapZ == Static1.centralZoneZ / 8) {
@@ -123,7 +123,7 @@ public final class Static21 {
 			@Pc(154) int x = (Static7.mapSquares[i] >> 8) * 64 - Static5.originX;
 			@Pc(158) byte[] mapBytes = bytes[i];
 			if (mapBytes == null && Static1.centralZoneZ < 800) {
-				Static9.method763();
+				Static9.audioLoop();
 				for (@Pc(169) int level = 0; level < levels; level++) {
 					Static29.method3536(x, level, 64, z, 64);
 				}
@@ -332,12 +332,12 @@ public final class Static21 {
 
 	@OriginalMember(owner = "client!jm", name = "a", descriptor = "(IIIIIII)V")
 	public static void method2081(@OriginalArg(0) int targetMask, @OriginalArg(1) int targetParam, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5) {
-		@Pc(4) Component local4 = InterfaceList.getCreatedComponent(arg5, arg3);
-		if (local4 != null && local4.onTargetEnter != null) {
-			@Pc(15) HookRequest local15 = new HookRequest();
-			local15.arguments = local4.onTargetEnter;
-			local15.source = local4;
-			ScriptRunner.method2019(local15);
+		@Pc(4) Component component = InterfaceList.getCreatedComponent(arg5, arg3);
+		if (component != null && component.onTargetEnter != null) {
+			@Pc(15) HookRequest hookRequest = new HookRequest();
+			hookRequest.arguments = component.onTargetEnter;
+			hookRequest.source = component;
+			ScriptRunner.method2019(hookRequest);
 		}
 		Static3.aBoolean177 = true;
 		Static7.anInt6050 = arg2;
@@ -346,7 +346,7 @@ public final class Static21 {
 		Static6.anInt4466 = arg4;
 		Static1.anInt1053 = arg5;
 		Static5.anInt3560 = targetMask;
-		Static28.method3270(local4);
+		Static28.method3270(component);
 	}
 
 	@OriginalMember(owner = "client!jn", name = "c", descriptor = "([I[IIIIIIII)V")

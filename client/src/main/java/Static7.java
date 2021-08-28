@@ -2,9 +2,6 @@ import org.openrs2.deob.annotation.OriginalMember;
 
 public final class Static7 {
 
-	@OriginalMember(owner = "client!u", name = "e", descriptor = "I")
-	public static int anInt5231;
-
 	@OriginalMember(owner = "client!ua", name = "i", descriptor = "I")
 	public static int anInt5236;
 
@@ -28,9 +25,6 @@ public final class Static7 {
 
 	@OriginalMember(owner = "client!uf", name = "d", descriptor = "Lclient!uj;")
 	public static Sprite aClass4_Sub3_Sub14_9;
-
-	@OriginalMember(owner = "client!uf", name = "e", descriptor = "I")
-	public static int anInt5331;
 
 	@OriginalMember(owner = "client!uk", name = "h", descriptor = "I")
 	public static int anInt5363;
@@ -61,9 +55,6 @@ public final class Static7 {
 
 	@OriginalMember(owner = "client!w", name = "y", descriptor = "I")
 	public static int anInt5678;
-
-	@OriginalMember(owner = "client!w", name = "A", descriptor = "I")
-	public static int anInt5680;
 
 	@OriginalMember(owner = "client!wa", name = "Ub", descriptor = "[I")
 	public static int[] rowSaturation;
@@ -127,9 +118,6 @@ public final class Static7 {
 
 	@OriginalMember(owner = "client!uf", name = "i", descriptor = "[I")
 	public static final int[] anIntArray600 = new int[4];
-
-	@OriginalMember(owner = "client!ug", name = "m", descriptor = "I")
-	public static int anInt5345 = -1;
 
 	@OriginalMember(owner = "client!uj", name = "H", descriptor = "I")
 	public static int buildArea = -1;
@@ -205,9 +193,6 @@ public final class Static7 {
 
 	@OriginalMember(owner = "client!wk", name = "f", descriptor = "I")
 	public static int anInt6050 = -1;
-
-	@OriginalMember(owner = "client!wk", name = "g", descriptor = "Ljava/lang/String;")
-	public static String aString365 = null;
 
 	@OriginalMember(owner = "client!wn", name = "N", descriptor = "I")
 	public static int anInt6094 = 0;

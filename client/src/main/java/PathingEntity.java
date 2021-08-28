@@ -189,6 +189,304 @@ public abstract class PathingEntity extends Entity {
 		}
 	}
 
+	@OriginalMember(owner = "client!mf", name = "a", descriptor = "(Lclient!qc;I)V")
+	public static void method2705(@OriginalArg(0) PathingEntity entity) {
+		if (client.loop == entity.anInt3966 || entity.seqId == -1 || entity.seqDelay != 0 || entity.anInt4044 + 1 > SeqTypeList.get(entity.seqId).anIntArray94[entity.anInt3970]) {
+			@Pc(41) int local41 = entity.anInt3966 - entity.anInt4034;
+			@Pc(46) int local46 = client.loop - entity.anInt4034;
+			@Pc(57) int local57 = entity.anInt3973 * 128 + entity.getSize() * 64;
+			@Pc(71) int local71 = entity.anInt4033 * 128 + entity.getSize() * 64;
+			@Pc(82) int local82 = entity.anInt4013 * 128 + entity.getSize() * 64;
+			@Pc(95) int local95 = entity.anInt4025 * 128 + entity.getSize() * 64;
+			entity.zFine = ((local41 - local46) * local71 + local46 * local95) / local41;
+			entity.xFine = (local57 * (local41 - local46) + local82 * local46) / local41;
+		}
+		if (entity.anInt4008 == 0) {
+			entity.targetAngle = 1024;
+		}
+		if (entity.anInt4008 == 1) {
+			entity.targetAngle = 1536;
+		}
+		if (entity.anInt4008 == 2) {
+			entity.targetAngle = 0;
+		}
+		entity.movementBlockedLoops = 0;
+		if (entity.anInt4008 == 3) {
+			entity.targetAngle = 512;
+		}
+		entity.angle = entity.targetAngle;
+	}
+
+	@OriginalMember(owner = "client!tl", name = "a", descriptor = "(Lclient!qc;Z)V")
+	public static void method4234(@OriginalArg(0) PathingEntity arg0) {
+		@Pc(13) int local13 = arg0.anInt4034 - client.loop;
+		@Pc(25) int local25 = arg0.anInt3973 * 128 + arg0.getSize() * 64;
+		@Pc(37) int local37 = arg0.anInt4033 * 128 + arg0.getSize() * 64;
+		if (arg0.anInt4008 == 0) {
+			arg0.targetAngle = 1024;
+		}
+		arg0.zFine += (local37 - arg0.zFine) / local13;
+		arg0.xFine += (local25 - arg0.xFine) / local13;
+		if (arg0.anInt4008 == 1) {
+			arg0.targetAngle = 1536;
+		}
+		arg0.movementBlockedLoops = 0;
+		if (arg0.anInt4008 == 2) {
+			arg0.targetAngle = 0;
+		}
+		if (arg0.anInt4008 == 3) {
+			arg0.targetAngle = 512;
+		}
+	}
+
+	@OriginalMember(owner = "client!tm", name = "a", descriptor = "(ILclient!qc;)V")
+	public static void method4247(@OriginalArg(1) PathingEntity entity) {
+		if (entity.anInt4009 == 0) {
+			return;
+		}
+		@Pc(16) BasType basType = entity.getBasType();
+		if (entity.faceEntity != -1 && entity.faceEntity < 32768) {
+			@Pc(31) Npc npc = NpcList.npcs[entity.faceEntity];
+			if (npc != null) {
+				@Pc(42) int dx = entity.xFine - npc.xFine;
+				@Pc(49) int dz = entity.zFine - npc.zFine;
+				if (dx != 0 || dz != 0) {
+					entity.targetAngle = (int) (Math.atan2(dx, dz) * 325.949D) & 0x7FF;
+				}
+			}
+		}
+		if (entity.faceEntity >= 32768) {
+			@Pc(87) int id = entity.faceEntity - 32768;
+			if (id == PlayerList.selfId) {
+				id = 2047;
+			}
+			@Pc(101) Player player = PlayerList.players[id];
+			if (player != null) {
+				@Pc(112) int dx = entity.xFine - player.xFine;
+				@Pc(119) int dz = entity.zFine - player.zFine;
+				if (dx != 0 || dz != 0) {
+					entity.targetAngle = (int) (Math.atan2(dx, dz) * 325.949D) & 0x7FF;
+				}
+			}
+		}
+		if ((entity.faceX != 0 || entity.faceY != 0) && (entity.movementQueueSize == 0 || entity.movementBlockedLoops > 0)) {
+			@Pc(172) int dz = entity.zFine - (entity.faceY - Static7.originZ - Static7.originZ) * 64;
+			@Pc(185) int dx = entity.xFine - (entity.faceX - Static5.originX - Static5.originX) * 64;
+			if (dx != 0 || dz != 0) {
+				entity.targetAngle = (int) (Math.atan2(dx, dz) * 325.949D) & 0x7FF;
+			}
+			entity.faceX = 0;
+			entity.faceY = 0;
+		}
+		@Pc(222) int angleDelta = entity.targetAngle - entity.angle & 0x7FF;
+		if (angleDelta == 0) {
+			entity.anInt4020 = 0;
+			entity.anInt4015 = 0;
+		} else if (basType.anInt830 == 0) {
+			entity.anInt4015++;
+			if (angleDelta <= 1024) {
+				entity.angle += entity.anInt4009;
+				@Pc(874) boolean local874 = true;
+				if (entity.anInt4009 > angleDelta || angleDelta > 2048 - entity.anInt4009) {
+					local874 = false;
+					entity.angle = entity.targetAngle;
+				}
+				if (entity.anInt4015 > 25 || local874) {
+					entity.movementSeqId = basType.anInt846;
+					if (entity.movementQueueSize > 0) {
+						if (entity.movementQueueSpeed[entity.movementQueueSize - 1] == 2) {
+							if (basType.anInt853 != -1) {
+								entity.movementSeqId = basType.anInt853;
+							} else if (basType.anInt831 != -1) {
+								entity.movementSeqId = basType.anInt831;
+							}
+						} else if (entity.movementQueueSpeed[entity.movementQueueSize - 1] == 0) {
+							if (basType.anInt839 != -1) {
+								entity.movementSeqId = basType.anInt839;
+							} else if (basType.anInt854 != -1) {
+								entity.movementSeqId = basType.anInt854;
+							}
+						} else if (basType.anInt865 != -1) {
+							entity.movementSeqId = basType.anInt865;
+						}
+					} else if (basType.anInt832 != -1) {
+						entity.movementSeqId = basType.anInt832;
+					}
+				}
+			} else {
+				entity.angle -= entity.anInt4009;
+				@Pc(1005) boolean local1005 = true;
+				if (angleDelta < entity.anInt4009 || 2048 - entity.anInt4009 < angleDelta) {
+					local1005 = false;
+					entity.angle = entity.targetAngle;
+				}
+				if (entity.anInt4015 > 25 || local1005) {
+					entity.movementSeqId = basType.anInt846;
+					if (entity.movementQueueSize <= 0) {
+						if (basType.anInt834 != -1) {
+							entity.movementSeqId = basType.anInt834;
+						}
+					} else if (entity.movementQueueSpeed[entity.movementQueueSize - 1] == 2) {
+						if (basType.anInt835 != -1) {
+							entity.movementSeqId = basType.anInt835;
+						} else if (basType.anInt831 != -1) {
+							entity.movementSeqId = basType.anInt831;
+						}
+					} else if (entity.movementQueueSpeed[entity.movementQueueSize - 1] == 0) {
+						if (basType.anInt843 != -1) {
+							entity.movementSeqId = basType.anInt843;
+						} else if (basType.anInt854 != -1) {
+							entity.movementSeqId = basType.anInt854;
+						}
+					} else if (basType.anInt842 != -1) {
+						entity.movementSeqId = basType.anInt842;
+					}
+				}
+			}
+			entity.angle &= 2047;
+		} else {
+			entity.movementSeqId = -1;
+			@Pc(241) int local241 = entity.targetAngle << 5;
+			if (entity.anInt3987 != local241) {
+				entity.anInt4029 = 0;
+				entity.anInt3987 = local241;
+				@Pc(263) int local263 = local241 - entity.anInt3992 & 0xFFFF;
+				@Pc(274) int local274 = entity.anInt4020 * entity.anInt4020 / (basType.anInt830 * 2);
+				if (entity.anInt4020 > 0 && local274 <= local263 && local263 - local274 < 32768) {
+					entity.aBoolean283 = true;
+					entity.anInt3994 = local263 / 2;
+					@Pc(379) int local379 = basType.anInt862 * basType.anInt862 / (basType.anInt830 * 2);
+					if (local379 > 32767) {
+						local379 = 32767;
+					}
+					if (entity.anInt3994 > local379) {
+						entity.anInt3994 = local263 - local379;
+					}
+				} else if (entity.anInt4020 < 0 && local274 <= 65536 - local263 && 65536 - local263 - local274 < 32768) {
+					entity.anInt3994 = (65536 - local263) / 2;
+					entity.aBoolean283 = true;
+					@Pc(334) int local334 = basType.anInt862 * basType.anInt862 / (basType.anInt830 * 2);
+					if (local334 > 32767) {
+						local334 = 32767;
+					}
+					if (entity.anInt3994 > local334) {
+						entity.anInt3994 = 65536 - local334 - local263;
+					}
+				} else {
+					entity.aBoolean283 = false;
+				}
+			}
+			if (entity.anInt4020 == 0) {
+				@Pc(410) int local410 = entity.anInt3987 - entity.anInt3992 & 0xFFFF;
+				if (local410 < basType.anInt830) {
+					entity.anInt3992 = entity.anInt3987;
+				} else {
+					entity.anInt4029 = 0;
+					entity.aBoolean283 = true;
+					@Pc(441) int local441 = basType.anInt862 * basType.anInt862 / (basType.anInt830 * 2);
+					if (local441 > 32767) {
+						local441 = 32767;
+					}
+					if (local410 >= 32768) {
+						entity.anInt3994 = (65536 - local410) / 2;
+						if (local441 < entity.anInt3994) {
+							entity.anInt3994 = 65536 - local410 - local441;
+						}
+						entity.anInt4020 = -basType.anInt830;
+					} else {
+						entity.anInt3994 = local410 / 2;
+						entity.anInt4020 = basType.anInt830;
+						if (entity.anInt3994 > local441) {
+							entity.anInt3994 = local410 - local441;
+						}
+					}
+				}
+			} else if (entity.anInt4020 > 0) {
+				if (entity.anInt4029 >= entity.anInt3994) {
+					entity.aBoolean283 = false;
+				}
+				if (!entity.aBoolean283) {
+					entity.anInt4020 -= basType.anInt830;
+					if (entity.anInt4020 < 0) {
+						entity.anInt4020 = 0;
+					}
+				} else if (entity.anInt4020 < basType.anInt862) {
+					entity.anInt4020 += basType.anInt830;
+				}
+			} else {
+				if (entity.anInt4029 >= entity.anInt3994) {
+					entity.aBoolean283 = false;
+				}
+				if (!entity.aBoolean283) {
+					entity.anInt4020 += basType.anInt830;
+					if (entity.anInt4020 > 0) {
+						entity.anInt4020 = 0;
+					}
+				} else if (-basType.anInt862 < entity.anInt4020) {
+					entity.anInt4020 -= basType.anInt830;
+				}
+			}
+			entity.anInt3992 += entity.anInt4020;
+			entity.anInt3992 &= 65535;
+			entity.angle = entity.anInt3992 >> 5;
+			if (entity.anInt4020 <= 0) {
+				entity.anInt4029 -= entity.anInt4020;
+			} else {
+				entity.anInt4029 += entity.anInt4020;
+			}
+			if (entity.anInt4020 < 0) {
+				if (entity.movementQueueSize > 0) {
+					if (entity.movementQueueSpeed[entity.movementQueueSize - 1] == 2) {
+						if (basType.anInt835 != -1) {
+							entity.movementSeqId = basType.anInt835;
+						} else if (basType.anInt831 != -1) {
+							entity.movementSeqId = basType.anInt831;
+						}
+					} else if (entity.movementQueueSpeed[entity.movementQueueSize - 1] == 0) {
+						if (basType.anInt843 != -1) {
+							entity.movementSeqId = basType.anInt843;
+						} else if (basType.anInt854 != -1) {
+							entity.movementSeqId = basType.anInt854;
+						}
+					}
+				}
+				if (entity.movementSeqId == -1) {
+					if (basType.anInt842 != -1) {
+						entity.movementSeqId = basType.anInt842;
+					} else if (basType.anInt834 != -1) {
+						entity.movementSeqId = basType.anInt834;
+					}
+				}
+			} else {
+				if (entity.movementQueueSize > 0) {
+					if (entity.movementQueueSpeed[entity.movementQueueSize - 1] == 2) {
+						if (basType.anInt853 != -1) {
+							entity.movementSeqId = basType.anInt853;
+						} else if (basType.anInt831 != -1) {
+							entity.movementSeqId = basType.anInt831;
+						}
+					} else if (entity.movementQueueSpeed[entity.movementQueueSize - 1] == 0) {
+						if (basType.anInt839 != -1) {
+							entity.movementSeqId = basType.anInt839;
+						} else if (basType.anInt854 != -1) {
+							entity.movementSeqId = basType.anInt854;
+						}
+					}
+				}
+				if (entity.movementSeqId == -1) {
+					if (basType.anInt865 != -1) {
+						entity.movementSeqId = basType.anInt865;
+					} else if (basType.anInt832 != -1) {
+						entity.movementSeqId = basType.anInt832;
+					}
+				}
+			}
+			if (entity.movementSeqId == -1) {
+				entity.movementSeqId = basType.anInt846;
+			}
+		}
+	}
+
 	@OriginalMember(owner = "client!qc", name = "t", descriptor = "I")
 	public int anInt3966;
 

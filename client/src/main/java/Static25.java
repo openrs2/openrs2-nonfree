@@ -108,68 +108,6 @@ public final class Static25 {
 		return local53 * (128 - local31) + local79 * local31 >> 7;
 	}
 
-	@OriginalMember(owner = "client!mm", name = "a", descriptor = "(B)V")
-	public static void method2770() {
-		if (Static3.aFloat68 < WorldMap.zoom) {
-			Static3.aFloat68 = (float) ((double) Static3.aFloat68 + (double) Static3.aFloat68 / 30.0D);
-			if (WorldMap.zoom < Static3.aFloat68) {
-				Static3.aFloat68 = WorldMap.zoom;
-			}
-			Static28.method3249();
-		} else if (Static3.aFloat68 > WorldMap.zoom) {
-			Static3.aFloat68 = (float) ((double) Static3.aFloat68 - (double) Static3.aFloat68 / 30.0D);
-			if (Static3.aFloat68 < WorldMap.zoom) {
-				Static3.aFloat68 = WorldMap.zoom;
-			}
-			Static28.method3249();
-		}
-		if (Static6.anInt4393 != -1 && Static1.anInt929 != -1) {
-			@Pc(64) int local64 = Static1.anInt929 - Static7.anInt5231;
-			@Pc(69) int local69 = Static6.anInt4393 - Static1.anInt331;
-			if (local64 < 2 || local64 > 2) {
-				local64 >>= 4;
-			}
-			Static7.anInt5231 -= -local64;
-			if (local69 < 2 || local69 > 2) {
-				local69 >>= 4;
-			}
-			if (local69 == 0 && local64 == 0) {
-				Static1.anInt929 = -1;
-				Static6.anInt4393 = -1;
-			}
-			Static1.anInt331 += local69;
-			Static28.method3249();
-		}
-		if (Static4.anInt2853 > 0) {
-			Static5.anInt4215--;
-			if (Static5.anInt4215 == 0) {
-				Static4.anInt2853--;
-				Static5.anInt4215 = 100;
-			}
-		} else {
-			Static5.anInt3920 = -1;
-			Static2.anInt1874 = -1;
-		}
-		if (!Static3.aBoolean166 || Static3.aClass112_13 == null) {
-			return;
-		}
-		for (@Pc(153) MapElementBounds bounds = (MapElementBounds) Static3.aClass112_13.head(); bounds != null; bounds = (MapElementBounds) Static3.aClass112_13.next()) {
-			@Pc(161) MelType type = MelTypeList.get(bounds.element.id);
-			if (Static1.anInt640 == 0 && bounds.isHovering(Mouse.x, Mouse.y)) {
-				if (!bounds.element.hover) {
-					bounds.element.hover = true;
-					ScriptRunner.method2710(15, bounds.element.id, type.category);
-				}
-				if (bounds.element.hover) {
-					ScriptRunner.method2710(17, bounds.element.id, type.category);
-				}
-			} else if (bounds.element.hover) {
-				bounds.element.hover = false;
-				ScriptRunner.method2710(16, bounds.element.id, type.category);
-			}
-		}
-	}
-
 	@OriginalMember(owner = "client!mn", name = "a", descriptor = "([F)V")
 	public static void method2772(@OriginalArg(0) float[] arg0) {
 		if (arg0 == null) {
@@ -378,7 +316,7 @@ public final class Static25 {
 			if (local211 > local3 && local21 + local3 > local211 && local535 - 13 < local213 && local535 + 3 > local213) {
 				local537 = Static4.anInt2920;
 			}
-			Fonts.b12Full.renderLeft(Static26.method2992(local518), local3 + 3, local535, local537, 0);
+			Fonts.b12Full.renderLeft(MiniMenu.getOp(local518), local3 + 3, local535, local537, 0);
 		}
 		Static16.method1559(Static5.anInt3890, Static4.anInt3455, Static3.anInt2394, Static6.anInt4440);
 	}

@@ -305,11 +305,11 @@ public final class Static15 {
 	@OriginalMember(owner = "client!fj", name = "a", descriptor = "(IILclient!qc;)V")
 	public static void method1428(@OriginalArg(1) int arg0, @OriginalArg(2) PathingEntity arg1) {
 		if (client.loop < arg1.anInt4034) {
-			Static34.method4234(arg1);
+			PathingEntity.method4234(arg1);
 		} else if (arg1.anInt3966 < client.loop) {
 			Static32.method4024(arg1);
 		} else {
-			Static24.method2705(arg1);
+			PathingEntity.method2705(arg1);
 		}
 		if (arg1.xFine < 128 || arg1.zFine < 128 || arg1.xFine >= 13184 || arg1.zFine >= 13184) {
 			arg1.anInt3966 = 0;
@@ -329,7 +329,7 @@ public final class Static15 {
 			arg1.zFine = arg1.movementQueueZ[0] * 128 + arg1.getSize() * 64;
 			arg1.method3307();
 		}
-		Static34.method4247(arg1);
+		PathingEntity.method4247(arg1);
 		PathingEntity.method939(arg1);
 	}
 
@@ -361,17 +361,17 @@ public final class Static15 {
 					@Pc(125) int rotatedX = Static29.method3147(type.width, z & 0x7, angle, x & 0x7, zoneAngle, type.length) + arg1;
 					@Pc(145) int rotatedZ = arg9 + Static26.method4356(x & 0x7, type.length, type.width, zoneAngle, z & 0x7, angle);
 					if (rotatedX > 0 && rotatedZ > 0 && rotatedX < 103 && rotatedZ < 103) {
-						@Pc(162) CollisionMap local162 = null;
+						@Pc(162) CollisionMap collisionMap = null;
 						if (!arg8) {
 							@Pc(166) int local166 = arg0;
 							if ((Static4.tileFlags[1][rotatedX][rotatedZ] & 0x2) == 2) {
 								local166 = arg0 - 1;
 							}
 							if (local166 >= 0) {
-								local162 = arg2[local166];
+								collisionMap = arg2[local166];
 							}
 						}
-						Static22.method2193(angle + zoneAngle & 0x3, arg0, id, arg0, rotatedX, arg8, rotatedZ, local162, !arg8, shape);
+						Static22.method2193(angle + zoneAngle & 0x3, arg0, id, arg0, rotatedX, arg8, rotatedZ, collisionMap, !arg8, shape);
 					}
 				}
 			}
@@ -423,7 +423,7 @@ public final class Static15 {
 	@OriginalMember(owner = "client!fm", name = "a", descriptor = "(IIIIII)V")
 	public static void method1477(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4) {
 		for (@Pc(6) int local6 = arg0; local6 <= arg2; local6++) {
-			Static18.method1656(Static5.anIntArrayArray36[local6], arg3, arg1, arg4);
+			ArrayUtils.fillRange(Static5.anIntArrayArray36[local6], arg1, arg4, arg3);
 		}
 	}
 
@@ -451,7 +451,7 @@ public final class Static15 {
 			if (local100 > local3 && local3 + local11 > local100 && local102 > local125 - 13 && local102 < local125 + 3) {
 				local127 = 16776960;
 			}
-			Fonts.b12Full.renderLeft(Static26.method2992(local104), local3 + 3, local125, local127, 0);
+			Fonts.b12Full.renderLeft(MiniMenu.getOp(local104), local3 + 3, local125, local127, 0);
 		}
 		Static16.method1559(Static5.anInt3890, Static4.anInt3455, Static3.anInt2394, Static6.anInt4440);
 	}

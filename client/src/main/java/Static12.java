@@ -101,7 +101,7 @@ public final class Static12 {
 								Static1.aClass185_2 = null;
 							}
 							Static1.anInt640 = 0;
-							Static3.aBoolean166 = false;
+							WorldMap.aBoolean166 = false;
 						}
 					}
 					if (component.if3) {
@@ -180,17 +180,17 @@ public final class Static12 {
 									continue;
 								}
 								if (component.anInt5904 == 1400) {
-									Static5.aClass185_12 = component;
+									WorldMap.component = component;
 									if (local209) {
-										Static3.aBoolean166 = true;
+										WorldMap.aBoolean166 = true;
 									}
 									if (local223) {
-										@Pc(506) int local506 = (int) ((double) (Mouse.clickX - local50 - component.width / 2) * 2.0D / (double) Static3.aFloat68);
-										@Pc(522) int local522 = (int) ((double) (Mouse.clickY - local55 - component.height / 2) * 2.0D / (double) Static3.aFloat68);
-										@Pc(526) int local526 = Static1.anInt331 + local506;
-										@Pc(530) int local530 = Static7.anInt5231 + local522;
-										@Pc(534) int local534 = local526 + Static3.anInt2962;
-										@Pc(542) int local542 = Static3.anInt2960 + Static3.anInt2961 - local530 - 1;
+										@Pc(506) int local506 = (int) ((double) (Mouse.clickX - local50 - component.width / 2) * 2.0D / (double) WorldMap.zoom);
+										@Pc(522) int local522 = (int) ((double) (Mouse.clickY - local55 - component.height / 2) * 2.0D / (double) WorldMap.zoom);
+										@Pc(526) int local526 = WorldMap.anInt331 + local506;
+										@Pc(530) int local530 = WorldMap.anInt5231 + local522;
+										@Pc(534) int local534 = local526 + WorldMap.originX;
+										@Pc(542) int local542 = WorldMap.length + WorldMap.originZ - local530 - 1;
 										@Pc(545) Map local545 = WorldMap.getCurrentMap();
 										if (local545 == null) {
 											continue;
@@ -214,14 +214,14 @@ public final class Static12 {
 									}
 									if (local214 && Static1.anInt640 > 0) {
 										if (Static1.anInt640 == 1 && (Static5.anInt5204 != Mouse.x || Static1.anInt777 != Mouse.y)) {
-											Static1.anInt927 = Static1.anInt331;
-											Static1.anInt647 = Static7.anInt5231;
+											Static1.anInt927 = WorldMap.anInt331;
+											Static1.anInt647 = WorldMap.anInt5231;
 											Static1.anInt640 = 2;
 										}
 										if (Static1.anInt640 == 2) {
 											Static1.aBoolean49 = true;
-											method694(Static1.anInt927 + (int) ((double) (Static5.anInt5204 - Mouse.x) * 2.0D / (double) WorldMap.zoom));
-											Static36.method4404(Static1.anInt647 + (int) ((double) (Static1.anInt777 - Mouse.y) * 2.0D / (double) WorldMap.zoom));
+											WorldMap.method694(Static1.anInt927 + (int) ((double) (Static5.anInt5204 - Mouse.x) * 2.0D / (double) WorldMap.targetZoom));
+											WorldMap.method4404(Static1.anInt647 + (int) ((double) (Static1.anInt777 - Mouse.y) * 2.0D / (double) WorldMap.targetZoom));
 										}
 										continue;
 									}
@@ -237,7 +237,7 @@ public final class Static12 {
 								}
 								if (component.anInt5904 == 1401) {
 									if (local214) {
-										Static28.method3319(Mouse.y - local55, component.width, component.height, Mouse.x - local50);
+										WorldMap.method3319(Mouse.y - local55, component.width, component.height, Mouse.x - local50);
 									}
 									continue;
 								}
@@ -523,14 +523,6 @@ public final class Static12 {
 		}
 	}
 
-	@OriginalMember(owner = "client!cm", name = "a", descriptor = "(ZI)V")
-	private static void method694(@OriginalArg(1) int arg0) {
-		Static1.anInt331 = arg0;
-		Static6.anInt4393 = -1;
-		Static1.anInt929 = -1;
-		Static28.method3249();
-	}
-
 	@OriginalMember(owner = "client!cm", name = "b", descriptor = "(ZI)V")
 	public static void method698(@OriginalArg(1) int arg0) {
 		@Pc(5) int local5 = Static3.anInt2519;
@@ -678,7 +670,7 @@ public final class Static12 {
 	}
 
 	@OriginalMember(owner = "client!df", name = "a", descriptor = "(BLclient!wf;)Ljava/lang/String;")
-	public static String method780(@OriginalArg(1) Component component) {
+	public static String getTargetVerb(@OriginalArg(1) Component component) {
 		if (InterfaceList.getServerActiveProperties(component).getTargetMask() == 0) {
 			return null;
 		} else if (component.targetVerb == null || component.targetVerb.trim().length() == 0) {

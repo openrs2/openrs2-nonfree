@@ -3090,16 +3090,16 @@ public final class ScriptRunner {
 							} else if (opcode < 5300) {
 								if (opcode == 5200) {
 									isp--;
-									WorldMap.setZoom(intStack[isp]);
+									WorldMap.setTargetZoom(intStack[isp]);
 									continue;
 								}
 								if (opcode == 5201) {
-									intStack[isp++] = WorldMap.getZoom();
+									intStack[isp++] = WorldMap.getTargetZoom();
 									continue;
 								}
 								if (opcode == 5205) {
 									isp--;
-									Static24.method2947(false, -1, -1, intStack[isp]);
+									WorldMap.method2947(false, -1, -1, intStack[isp]);
 									continue;
 								}
 								if (opcode == 5206) {
@@ -3127,16 +3127,16 @@ public final class ScriptRunner {
 								}
 								if (opcode == 5208) {
 									@Pc(9497) int isp2 = isp + 1;
-									intStack[isp] = Static7.anInt5331;
+									intStack[isp] = WorldMap.anInt5331;
 									isp = isp2 + 1;
-									intStack[isp2] = Static7.anInt5680;
+									intStack[isp2] = WorldMap.anInt5680;
 									continue;
 								}
 								if (opcode == 5209) {
 									@Pc(9512) int isp2 = isp + 1;
-									intStack[isp] = Static1.anInt331 + Static3.anInt2962;
+									intStack[isp] = WorldMap.anInt331 + WorldMap.originX;
 									isp = isp2 + 1;
-									intStack[isp2] = Static3.anInt2961 + Static3.anInt2960 - Static7.anInt5231 - 1;
+									intStack[isp2] = WorldMap.originZ + WorldMap.length - WorldMap.anInt5231 - 1;
 									continue;
 								}
 								if (opcode == 5210) {
@@ -3174,7 +3174,7 @@ public final class ScriptRunner {
 									continue;
 								}
 								if (opcode == 5212) {
-									@Pc(9635) MapElement element = Static11.method492();
+									@Pc(9635) MapElement element = WorldMap.headMapElement();
 									if (element == null) {
 										@Pc(9641) int isp2 = isp + 1;
 										intStack[isp] = -1;
@@ -3183,14 +3183,14 @@ public final class ScriptRunner {
 									} else {
 										@Pc(9653) int isp2 = isp + 1;
 										intStack[isp] = element.id;
-										@Pc(9678) int packedElement = Static3.anInt2962 + element.x << 14 | element.level << 28 | Static3.anInt2961 + Static3.anInt2960 - element.z - 1;
+										@Pc(9678) int packedElement = WorldMap.originX + element.x << 14 | element.level << 28 | WorldMap.originZ + WorldMap.length - element.z - 1;
 										isp = isp2 + 1;
 										intStack[isp2] = packedElement;
 									}
 									continue;
 								}
 								if (opcode == 5213) {
-									@Pc(9692) MapElement element = Static24.method2713();
+									@Pc(9692) MapElement element = WorldMap.nextMapElement();
 									if (element == null) {
 										@Pc(9733) int isp2 = isp + 1;
 										intStack[isp] = -1;
@@ -3199,7 +3199,7 @@ public final class ScriptRunner {
 									} else {
 										@Pc(9697) int isp2 = isp + 1;
 										intStack[isp] = element.id;
-										@Pc(9723) int packedElement = Static3.anInt2960 + Static3.anInt2961 - element.z - 1 | element.level << 28 | element.x + Static3.anInt2962 << 14;
+										@Pc(9723) int packedElement = WorldMap.length + WorldMap.originZ - element.z - 1 | element.level << 28 | element.x + WorldMap.originX << 14;
 										isp = isp2 + 1;
 										intStack[isp2] = packedElement;
 									}
@@ -3212,7 +3212,7 @@ public final class ScriptRunner {
 									if (map != null) {
 										@Pc(9775) boolean success = map.convertSourceToDisplay(isp2 >> 28 & 0x3, isp2 >> 14 & 0x3FFF, isp2 & 0x3FFF, coord);
 										if (success) {
-											Static20.method1970(coord[1], coord[2]);
+											WorldMap.method1970(coord[1], coord[2]);
 										}
 									}
 									continue;
@@ -3258,7 +3258,7 @@ public final class ScriptRunner {
 								if (opcode == 5221) {
 									isp--;
 									@Pc(9912) int coord = intStack[isp];
-									Static20.method1970(coord >> 14 & 0x3FFF, coord & 0x3FFF);
+									WorldMap.method1970(coord >> 14 & 0x3FFF, coord & 0x3FFF);
 									continue;
 								}
 								if (opcode == 5222) {
@@ -3269,7 +3269,7 @@ public final class ScriptRunner {
 										isp = isp2 + 1;
 										intStack[isp2] = -1;
 									} else {
-										@Pc(9963) boolean success = map.convertDisplayToSource(Static3.anInt2962 + Static1.anInt331, Static3.anInt2960 + Static3.anInt2961 - Static7.anInt5231 - 1, coord);
+										@Pc(9963) boolean success = map.convertDisplayToSource(WorldMap.originX + WorldMap.anInt331, WorldMap.length + WorldMap.originZ - WorldMap.anInt5231 - 1, coord);
 										if (success) {
 											@Pc(9980) int isp2 = isp + 1;
 											intStack[isp] = coord[1];
@@ -3287,8 +3287,8 @@ public final class ScriptRunner {
 								if (opcode == 5223) {
 									isp -= 2;
 									@Pc(10003) int local10003 = intStack[isp + 1];
-									@Pc(10007) int local10007 = intStack[isp];
-									Static24.method2947(false, local10003 & 0x3FFF, local10003 >> 14 & 0x3FFF, local10007);
+									@Pc(10007) int mapId = intStack[isp];
+									WorldMap.method2947(false, local10003 & 0x3FFF, local10003 >> 14 & 0x3FFF, mapId);
 									continue;
 								}
 								if (opcode == 5224) {
@@ -3343,90 +3343,90 @@ public final class ScriptRunner {
 								}
 								if (opcode == 5226) {
 									isp--;
-									Static31.method3661(intStack[isp]);
+									WorldMap.method3661(intStack[isp]);
 									continue;
 								}
 								if (opcode == 5227) {
 									isp -= 2;
-									@Pc(10196) int local10196 = intStack[isp];
+									@Pc(10196) int mapId = intStack[isp];
 									@Pc(10202) int local10202 = intStack[isp + 1];
-									Static24.method2947(true, local10202 & 0x3FFF, local10202 >> 14 & 0x3FFF, local10196);
+									WorldMap.method2947(true, local10202 & 0x3FFF, local10202 >> 14 & 0x3FFF, mapId);
 									continue;
 								}
 								if (opcode == 5228) {
 									isp--;
-									Static6.aBoolean317 = intStack[isp] == 1;
+									WorldMap.aBoolean317 = intStack[isp] == 1;
 									continue;
 								}
 								if (opcode == 5229) {
-									intStack[isp++] = Static6.aBoolean317 ? 1 : 0;
+									intStack[isp++] = WorldMap.aBoolean317 ? 1 : 0;
 									continue;
 								}
 								if (opcode == 5230) {
 									isp--;
 									@Pc(10262) int local10262 = intStack[isp];
-									Static37.method4641(local10262);
+									WorldMap.method4641(local10262);
 									continue;
 								}
 								if (opcode == 5231) {
 									isp -= 2;
-									@Pc(10276) int local10276 = intStack[isp];
-									@Pc(10289) boolean local10289 = intStack[isp + 1] == 1;
-									if (Static3.aClass84_9 == null) {
+									@Pc(10276) int category = intStack[isp];
+									@Pc(10289) boolean visible = intStack[isp + 1] == 1;
+									if (WorldMap.visibleMapElementCategories == null) {
 										continue;
 									}
-									@Pc(10299) Node local10299 = Static3.aClass84_9.get((long) local10276);
-									if (local10299 != null && !local10289) {
-										local10299.unlink();
+									@Pc(10299) Node node = WorldMap.visibleMapElementCategories.get(category);
+									if (node != null && !visible) {
+										node.unlink();
 										continue;
 									}
-									if (local10299 == null && local10289) {
-										@Pc(10313) Node local10313 = new Node();
-										Static3.aClass84_9.put((long) local10276, local10313);
+									if (node == null && visible) {
+										@Pc(10313) Node newNode = new Node();
+										WorldMap.visibleMapElementCategories.put(category, newNode);
 									}
 									continue;
 								}
 								if (opcode == 5232) {
-									@Pc(10331) int local10331 = isp - 1;
-									@Pc(10334) int local10334 = intStack[local10331];
-									if (Static3.aClass84_9 == null) {
-										isp = local10331 + 1;
-										intStack[local10331] = 0;
+									@Pc(10331) int isp2 = isp - 1;
+									@Pc(10334) int category = intStack[isp2];
+									if (WorldMap.visibleMapElementCategories == null) {
+										isp = isp2 + 1;
+										intStack[isp2] = 0;
 									} else {
-										@Pc(10350) Node local10350 = Static3.aClass84_9.get((long) local10334);
-										isp = local10331 + 1;
-										intStack[local10331] = local10350 == null ? 0 : 1;
+										@Pc(10350) Node node = WorldMap.visibleMapElementCategories.get(category);
+										isp = isp2 + 1;
+										intStack[isp2] = node == null ? 0 : 1;
 									}
 									continue;
 								}
 								if (opcode == 5233) {
 									isp -= 2;
-									@Pc(10369) int local10369 = intStack[isp];
-									@Pc(10380) boolean local10380 = intStack[isp + 1] == 1;
-									if (Static3.aClass84_10 == null) {
+									@Pc(10369) int id = intStack[isp];
+									@Pc(10380) boolean visible = intStack[isp + 1] == 1;
+									if (WorldMap.visibleMapElementIds == null) {
 										continue;
 									}
-									@Pc(10389) Node local10389 = Static3.aClass84_10.get((long) local10369);
-									if (local10389 != null && !local10380) {
-										local10389.unlink();
+									@Pc(10389) Node node = WorldMap.visibleMapElementIds.get(id);
+									if (node != null && !visible) {
+										node.unlink();
 										continue;
 									}
-									if (local10389 == null && local10380) {
-										@Pc(10403) Node local10403 = new Node();
-										Static3.aClass84_10.put((long) local10369, local10403);
+									if (node == null && visible) {
+										@Pc(10403) Node newNode = new Node();
+										WorldMap.visibleMapElementIds.put(id, newNode);
 									}
 									continue;
 								}
 								if (opcode == 5234) {
-									@Pc(10425) int local10425 = isp - 1;
-									@Pc(10428) int local10428 = intStack[local10425];
-									if (Static3.aClass84_10 == null) {
-										isp = local10425 + 1;
-										intStack[local10425] = 0;
+									@Pc(10425) int isp2 = isp - 1;
+									@Pc(10428) int id = intStack[isp2];
+									if (WorldMap.visibleMapElementIds == null) {
+										isp = isp2 + 1;
+										intStack[isp2] = 0;
 									} else {
-										@Pc(10444) Node local10444 = Static3.aClass84_10.get((long) local10428);
-										isp = local10425 + 1;
-										intStack[local10425] = local10444 == null ? 0 : 1;
+										@Pc(10444) Node node = WorldMap.visibleMapElementIds.get(id);
+										isp = isp2 + 1;
+										intStack[isp2] = node == null ? 0 : 1;
 									}
 									continue;
 								}
@@ -3566,7 +3566,7 @@ public final class ScriptRunner {
 										Static35.setWindowMode(false, Preferences.windowMode, -1, -1);
 									}
 									if (GameShell.frame == null) {
-										Static37.openUrl(Static36.method4436(), false);
+										Static37.openUrl(Static36.getWebsiteUrl(), false);
 									} else {
 										System.exit(0);
 									}
@@ -3596,7 +3596,7 @@ public final class ScriptRunner {
 									@Pc(9090) String path = stringStack[ssp];
 									isp--;
 									@Pc(9100) boolean newTab = intStack[isp] == 1;
-									@Pc(9110) String url = Static36.method4436() + path;
+									@Pc(9110) String url = Static36.getWebsiteUrl() + path;
 									if (GameShell.frame != null || newTab && SignLink.anInt6106 != 3 && SignLink.osName.startsWith("win") && !client.haveIe6) {
 										Static6.url = url;
 										Static4.newTab = newTab;
@@ -4582,9 +4582,9 @@ public final class ScriptRunner {
 		if (script.trigger == 15 || script.trigger == 17 || script.trigger == 16) {
 			@Pc(49) int x = 0;
 			@Pc(51) int y = 0;
-			if (Static5.aClass185_12 != null) {
-				x = Static5.aClass185_12.x;
-				y = Static5.aClass185_12.y;
+			if (WorldMap.component != null) {
+				x = WorldMap.component.x;
+				y = WorldMap.component.y;
 			}
 			intLocals[1] = Mouse.y - y;
 			intLocals[0] = Mouse.x - x;

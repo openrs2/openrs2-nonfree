@@ -189,7 +189,7 @@ public final class InterfaceList {
 			Static8.method66(Static6.anInt4440, Static3.anInt2394, Static5.anInt3890, Static4.anInt3455);
 			@Pc(75) int local75 = Fonts.b12Full.getStringWidth(LocalisedText.CHOOSE_OPTION);
 			for (@Pc(77) int local77 = 0; local77 < MiniMenu.size; local77++) {
-				@Pc(86) int local86 = Fonts.b12Full.getStringWidth(Static26.method2992(local77));
+				@Pc(86) int local86 = Fonts.b12Full.getStringWidth(MiniMenu.getOp(local77));
 				if (local86 > local75) {
 					local75 = local86;
 				}
@@ -208,7 +208,7 @@ public final class InterfaceList {
 		subInterface.type = type;
 		subInterface.id = id;
 		subInterfaces.put(componentId, subInterface);
-		Static9.method230(id);
+		method230(id);
 		@Pc(28) Component component = getComponent(componentId);
 		if (component != null) {
 			Static28.method3270(component);
@@ -230,7 +230,7 @@ public final class InterfaceList {
 			Static8.method66(Static6.anInt4440, Static3.anInt2394, Static5.anInt3890, Static4.anInt3455);
 			@Pc(93) int local93 = Fonts.b12Full.getStringWidth(LocalisedText.CHOOSE_OPTION);
 			for (@Pc(95) int local95 = 0; local95 < MiniMenu.size; local95++) {
-				@Pc(108) int local108 = Fonts.b12Full.getStringWidth(Static26.method2992(local95));
+				@Pc(108) int local108 = Fonts.b12Full.getStringWidth(MiniMenu.getOp(local95));
 				if (local93 < local108) {
 					local93 = local108;
 				}
@@ -336,5 +336,21 @@ public final class InterfaceList {
 			local2 = component.dragComponent;
 		}
 		return local2;
+	}
+
+	@OriginalMember(owner = "client!bb", name = "a", descriptor = "(II)V")
+	public static void method230(@OriginalArg(1) int componentId) {
+		if (!load(componentId)) {
+			return;
+		}
+		@Pc(22) Component[] components = InterfaceList.components[componentId];
+		for (@Pc(24) int i = 0; i < components.length; i++) {
+			@Pc(36) Component component = components[i];
+			if (component != null) {
+				component.anInt5979 = 1;
+				component.anInt5892 = 0;
+				component.anInt5897 = 0;
+			}
+		}
 	}
 }

@@ -7,14 +7,6 @@ import org.openrs2.deob.annotation.Pc;
 
 public final class Static37 {
 
-	@OriginalMember(owner = "client!wa", name = "c", descriptor = "(IB)V")
-	public static void method4641(@OriginalArg(0) int arg0) {
-		Static4.anInt2853 = 3;
-		Static2.anInt1874 = arg0;
-		Static5.anInt4215 = 100;
-		Static5.anInt3920 = -1;
-	}
-
 	@OriginalMember(owner = "client!wb", name = "a", descriptor = "(IIII)V")
 	public static void method4661(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(3) int arg2) {
 		if (arg1 == 0) {
@@ -56,8 +48,8 @@ public final class Static37 {
 			if (local42 != null) {
 				@Pc(55) int local55 = (Static7.mapSquares[local31] >> 8) * 64 - Static5.originX;
 				@Pc(66) int local66 = (Static7.mapSquares[local31] & 0xFF) * 64 - Static7.originZ;
-				Static9.method763();
-				Static11.method576(arg0, local42, local66, local55, PathFinder.collisionMaps);
+				Static9.audioLoop();
+				Static11.readMapLocs(arg0, local42, local66, local55, PathFinder.collisionMaps);
 			}
 		}
 	}
@@ -68,12 +60,12 @@ public final class Static37 {
 		@Pc(32) int lineCount = Fonts.p12Full.getParagraphLineCount(s, 250) * 13;
 		if (GlRenderer.enabled) {
 			GlRaster.fillRect(6, 6, width + 4 + 4, lineCount + 8, 0);
-			GlRaster.drawRect(6, 6, width + 4 + 4, lineCount + 4 + 4, 16777215);
+			GlRaster.drawRect(6, 6, width + 4 + 4, lineCount + 4 + 4, 0xFFFFFF);
 		} else {
 			SoftwareRaster.fillRect(6, 6, width + 8, lineCount + 4 + 4, 0);
-			SoftwareRaster.drawRect(6, 6, width + 4 + 4, lineCount + 8, 16777215);
+			SoftwareRaster.drawRect(6, 6, width + 4 + 4, lineCount + 8, 0xFFFFFF);
 		}
-		Fonts.p12Full.renderParagraph(s, 10, 10, width, lineCount, 16777215, -1, 1, 1, 0);
+		Fonts.p12Full.renderParagraph(s, 10, 10, width, lineCount, 0xFFFFFF, -1, 1, 1, 0);
 		Static8.method66(width + 4 + 4, lineCount + 4 + 4, 6, 6);
 		if (!arg1) {
 			Static16.method1559(10, 10, lineCount, width);

@@ -31,9 +31,6 @@ public final class Static5 {
 	@OriginalMember(owner = "client!ne", name = "gb", descriptor = "Ljava/nio/ByteBuffer;")
 	public static ByteBuffer aByteBuffer12;
 
-	@OriginalMember(owner = "client!nh", name = "u", descriptor = "I")
-	public static int anInt3546;
-
 	@OriginalMember(owner = "client!nh", name = "X", descriptor = "I")
 	public static int anInt3560;
 
@@ -97,9 +94,6 @@ public final class Static5 {
 	@OriginalMember(owner = "client!pk", name = "X", descriptor = "F")
 	public static float aFloat102;
 
-	@OriginalMember(owner = "client!pn", name = "h", descriptor = "I")
-	public static int anInt4215;
-
 	@OriginalMember(owner = "client!qa", name = "h", descriptor = "I")
 	public static int anInt4224;
 
@@ -123,9 +117,6 @@ public final class Static5 {
 
 	@OriginalMember(owner = "client!qf", name = "m", descriptor = "I")
 	public static int anInt4303;
-
-	@OriginalMember(owner = "client!qg", name = "i", descriptor = "Lclient!wf;")
-	public static Component aClass185_12;
 
 	@OriginalMember(owner = "client!nc", name = "d", descriptor = "Z")
 	public static boolean aBoolean248 = true;
@@ -187,9 +178,6 @@ public final class Static5 {
 	@OriginalMember(owner = "client!og", name = "gb", descriptor = "[J")
 	public static final long[] keys = new long[1000];
 
-	@OriginalMember(owner = "client!oi", name = "g", descriptor = "[Ljava/lang/String;")
-	public static final String[] aStringArray24 = new String[5];
-
 	@OriginalMember(owner = "client!oj", name = "b", descriptor = "I")
 	public static int anInt3884 = 0;
 
@@ -210,9 +198,6 @@ public final class Static5 {
 
 	@OriginalMember(owner = "client!om", name = "j", descriptor = "[S")
 	public static short[] aShortArray74 = new short[256];
-
-	@OriginalMember(owner = "client!om", name = "m", descriptor = "I")
-	public static int anInt3920 = -1;
 
 	@OriginalMember(owner = "client!ph", name = "ab", descriptor = "I")
 	public static int anInt4156 = 0;

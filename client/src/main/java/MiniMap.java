@@ -56,7 +56,7 @@ public final class MiniMap {
 
 	@OriginalMember(owner = "client!tj", name = "a", descriptor = "(IILclient!wf;II)V")
 	public static void render(@OriginalArg(2) Component component, @OriginalArg(0) int x, @OriginalArg(3) int y, @OriginalArg(1) int rectangle) {
-		Static9.method763();
+		Static9.audioLoop();
 		if (GlRenderer.enabled) {
 			GlRaster.setClip(x, y, x + component.width, y + component.height);
 		} else {
@@ -743,5 +743,15 @@ public final class MiniMap {
 	public static void clear() {
 		sprite = null;
 		level = -1;
+	}
+
+	@OriginalMember(owner = "client!ob", name = "a", descriptor = "(I)V")
+	public static void reset() {
+		state = 0;
+		aBoolean147 = false;
+		flagY = 0;
+		level = -1;
+		flagX = 0;
+		sequenceNumber = 0;
 	}
 }

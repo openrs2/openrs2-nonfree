@@ -242,7 +242,7 @@ public final class Class4_Sub12 extends Node {
 			this.aByteBuffer6.position(28);
 			gl.glTexCoordPointer(2, GL.GL_FLOAT, local282, this.aByteBuffer6);
 			if (this.aBoolean161) {
-				gl.glClientActiveTexture(Static10.method315());
+				gl.glClientActiveTexture(UnderwaterMaterialRenderer.method315());
 				this.aByteBuffer6.position(36);
 				gl.glTexCoordPointer(1, GL.GL_FLOAT, local282, this.aByteBuffer6);
 				gl.glClientActiveTexture(GL.GL_TEXTURE0);
@@ -256,7 +256,7 @@ public final class Class4_Sub12 extends Node {
 			}
 			gl.glTexCoordPointer(2, GL.GL_FLOAT, local282, 28L);
 			if (this.aBoolean161) {
-				gl.glClientActiveTexture(Static10.method315());
+				gl.glClientActiveTexture(UnderwaterMaterialRenderer.method315());
 				gl.glTexCoordPointer(1, GL.GL_FLOAT, local282, 36L);
 				gl.glClientActiveTexture(GL.GL_TEXTURE0);
 			}

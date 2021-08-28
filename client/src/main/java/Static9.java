@@ -1,6 +1,3 @@
-import java.awt.Color;
-import java.awt.Graphics;
-
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -128,23 +125,6 @@ public final class Static9 {
 		}
 	}
 
-	@OriginalMember(owner = "client!am", name = "a", descriptor = "(Lclient!ll;III)V")
-	public static void method193(@OriginalArg(0) LinkedList arg0, @OriginalArg(1) int arg1, @OriginalArg(3) int arg2) {
-		Static3.aClass112_13.clear();
-		if (Static6.aBoolean317) {
-			return;
-		}
-		for (@Pc(23) MapElement element = (MapElement) arg0.head(); element != null; element = (MapElement) arg0.next()) {
-			@Pc(30) MelType type = MelTypeList.get(element.id);
-			if (Static8.method120(type)) {
-				Static36.method3811(arg1, element, arg2, type);
-				if (element.hidden) {
-					Static35.method4329(element, type);
-				}
-			}
-		}
-	}
-
 	@OriginalMember(owner = "client!an", name = "a", descriptor = "(Lclient!fd;ZZZIIIIIIII)V")
 	public static void readTile(@OriginalArg(0) Buffer buffer, @OriginalArg(2) boolean arg1, @OriginalArg(3) boolean arg2, @OriginalArg(4) int level, @OriginalArg(5) int arg4, @OriginalArg(6) int arg5, @OriginalArg(7) int z, @OriginalArg(8) int angle, @OriginalArg(9) int arg8, @OriginalArg(10) int arg9, @OriginalArg(11) int x) {
 		if (x < 0 || x >= 104 || z < 0 || z >= 104) {
@@ -227,80 +207,11 @@ public final class Static9 {
 		client.soundChannel.setStream(client.soundStream);
 	}
 
-	@OriginalMember(owner = "client!ao", name = "a", descriptor = "(Ljava/awt/Color;ZZILjava/lang/String;)V")
-	public static void method202(@OriginalArg(0) Color arg0, @OriginalArg(1) boolean arg1, @OriginalArg(3) int arg2, @OriginalArg(4) String arg3) {
-		try {
-			@Pc(2) Graphics local2 = GameShell.canvas.getGraphics();
-			if (Static1.aFont1 == null) {
-				Static1.aFont1 = new java.awt.Font("Helvetica", 1, 13);
-				Static1.aFontMetrics1 = GameShell.canvas.getFontMetrics(Static1.aFont1);
-			}
-			if (arg1) {
-				local2.setColor(Color.black);
-				local2.fillRect(0, 0, GameShell.canvasWidth, GameShell.canvasHeight);
-			}
-			if (arg0 == null) {
-				arg0 = new Color(140, 17, 17);
-			}
-			try {
-				if (Static2.anImage2 == null) {
-					Static2.anImage2 = GameShell.canvas.createImage(304, 34);
-				}
-				@Pc(48) Graphics local48 = Static2.anImage2.getGraphics();
-				local48.setColor(arg0);
-				local48.drawRect(0, 0, 303, 33);
-				local48.fillRect(2, 2, arg2 * 3, 30);
-				local48.setColor(Color.black);
-				local48.drawRect(1, 1, 301, 31);
-				local48.fillRect(arg2 * 3 + 2, 2, 300 - arg2 * 3, 30);
-				local48.setFont(Static1.aFont1);
-				local48.setColor(Color.white);
-				local48.drawString(arg3, (304 - Static1.aFontMetrics1.stringWidth(arg3)) / 2, 22);
-				local2.drawImage(Static2.anImage2, GameShell.canvasWidth / 2 - 152, GameShell.canvasHeight / 2 - 18, null);
-			} catch (@Pc(128) Exception local128) {
-				@Pc(134) int local134 = GameShell.canvasWidth / 2 - 152;
-				@Pc(140) int local140 = GameShell.canvasHeight / 2 - 18;
-				local2.setColor(arg0);
-				local2.drawRect(local134, local140, 303, 33);
-				local2.fillRect(local134 + 2, local140 + 2, arg2 * 3, 30);
-				local2.setColor(Color.black);
-				local2.drawRect(local134 + 1, local140 + 1, 301, 31);
-				local2.fillRect(arg2 * 3 + local134 + 2, local140 + 2, 300 - arg2 * 3, 30);
-				local2.setFont(Static1.aFont1);
-				local2.setColor(Color.white);
-				local2.drawString(arg3, local134 + (304 - Static1.aFontMetrics1.stringWidth(arg3)) / 2, local140 + 22);
-			}
-			if (client.mainLoadPrimaryText != null) {
-				local2.setFont(Static1.aFont1);
-				local2.setColor(Color.white);
-				local2.drawString(client.mainLoadPrimaryText, GameShell.canvasWidth / 2 - Static1.aFontMetrics1.stringWidth(client.mainLoadPrimaryText) / 2, GameShell.canvasHeight / 2 - 26);
-			}
-		} catch (@Pc(243) Exception local243) {
-			GameShell.canvas.repaint();
-		}
-	}
-
 	@OriginalMember(owner = "client!ao", name = "a", descriptor = "(III[[III)I")
 	public static int method206(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int[][] arg3, @OriginalArg(4) int arg4) {
 		@Pc(31) int local31 = arg0 * arg3[arg1 + 1][arg4] + arg3[arg1][arg4] * (128 - arg0) >> 7;
 		@Pc(58) int local58 = arg3[arg1][arg4 + 1] * (128 - arg0) + arg0 * arg3[arg1 + 1][arg4 + 1] >> 7;
 		return local31 * (128 - arg2) + local58 * arg2 >> 7;
-	}
-
-	@OriginalMember(owner = "client!bb", name = "a", descriptor = "(II)V")
-	public static void method230(@OriginalArg(1) int arg0) {
-		if (!InterfaceList.load(arg0)) {
-			return;
-		}
-		@Pc(22) Component[] local22 = InterfaceList.components[arg0];
-		for (@Pc(24) int local24 = 0; local24 < local22.length; local24++) {
-			@Pc(36) Component local36 = local22[local24];
-			if (local36 != null) {
-				local36.anInt5979 = 1;
-				local36.anInt5892 = 0;
-				local36.anInt5897 = 0;
-			}
-		}
 	}
 
 	@OriginalMember(owner = "client!bb", name = "a", descriptor = "(IB)V")
@@ -309,7 +220,7 @@ public final class Static9 {
 			return;
 		}
 		if (Static4.anInt3304 == 0) {
-			Static31.method3153();
+			LoadingBarAwt.clear();
 		}
 		@Pc(28) boolean local28 = arg0 == 5 || arg0 == 10 || arg0 == 28;
 		if (arg0 == 40) {
@@ -325,7 +236,7 @@ public final class Static9 {
 			Static3.anInt2886 = 0;
 			Static6.anInt4398 = 1;
 			Static7.anInt5486 = 0;
-			Static10.method384(true);
+			WorldMap.clear(true);
 		}
 		if (arg0 == 25 || arg0 == 10) {
 			Static22.topBannerRefresh();
@@ -363,16 +274,16 @@ public final class Static9 {
 		@Pc(18) int local18 = arg3 + arg6;
 		@Pc(23) int local23 = arg1 - arg6;
 		for (@Pc(25) int local25 = arg2; local25 < local6; local25++) {
-			Static18.method1656(Static5.anIntArrayArray36[local25], arg0, arg3, arg1);
+			ArrayUtils.fillRange(Static5.anIntArrayArray36[local25], arg3, arg1, arg0);
 		}
 		for (@Pc(55) int local55 = arg4; local55 > local14; local55--) {
-			Static18.method1656(Static5.anIntArrayArray36[local55], arg0, arg3, arg1);
+			ArrayUtils.fillRange(Static5.anIntArrayArray36[local55], arg3, arg1, arg0);
 		}
 		for (@Pc(75) int local75 = local6; local75 <= local14; local75++) {
 			@Pc(86) int[] local86 = Static5.anIntArrayArray36[local75];
-			Static18.method1656(local86, arg0, arg3, local18);
-			Static18.method1656(local86, arg5, local18, local23);
-			Static18.method1656(local86, arg0, local23, arg1);
+			ArrayUtils.fillRange(local86, arg3, local18, arg0);
+			ArrayUtils.fillRange(local86, local18, local23, arg5);
+			ArrayUtils.fillRange(local86, local23, arg1, arg0);
 		}
 	}
 
@@ -410,7 +321,7 @@ public final class Static9 {
 	}
 
 	@OriginalMember(owner = "client!bc", name = "a", descriptor = "(Z)V")
-	public static void method763() {
+	public static void audioLoop() {
 		if (client.soundChannel != null) {
 			client.soundChannel.loop();
 		}
@@ -420,19 +331,19 @@ public final class Static9 {
 	}
 
 	@OriginalMember(owner = "client!bg", name = "a", descriptor = "(IIZZI[[[Lclient!nh;)Z")
-	public static boolean method279(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(3) boolean arg2, @OriginalArg(4) int arg3, @OriginalArg(5) Tile[][][] arg4) {
+	public static boolean method279(@OriginalArg(0) int arg0, @OriginalArg(1) int x, @OriginalArg(3) boolean arg2, @OriginalArg(4) int z, @OriginalArg(5) Tile[][][] arg4) {
 		@Pc(14) byte local14 = arg2 ? 1 : (byte) (Static2.anInt1997 & 0xFF);
-		if (Static1.aByteArrayArrayArray2[Player.level][arg1][arg3] == local14) {
+		if (Static1.aByteArrayArrayArray2[Player.level][x][z] == local14) {
 			return false;
-		} else if ((Static4.tileFlags[Player.level][arg1][arg3] & 0x4) == 0) {
+		} else if ((Static4.tileFlags[Player.level][x][z] & 0x4) == 0) {
 			return false;
 		} else {
 			@Pc(40) byte local40 = 0;
-			PathFinder.queueX[0] = arg1;
+			PathFinder.queueX[0] = x;
 			@Pc(55) int local55 = 0;
 			@Pc(58) int local58 = local40 + 1;
-			PathFinder.queueZ[0] = arg3;
-			Static1.aByteArrayArrayArray2[Player.level][arg1][arg3] = local14;
+			PathFinder.queueZ[0] = z;
+			Static1.aByteArrayArrayArray2[Player.level][x][z] = local14;
 			while (local58 != local55) {
 				@Pc(77) int local77 = PathFinder.queueX[local55] & 0xFFFF;
 				@Pc(85) int local85 = PathFinder.queueX[local55] >> 16 & 0xFF;

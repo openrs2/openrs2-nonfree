@@ -7,231 +7,6 @@ import org.openrs2.deob.annotation.Pc;
 
 public final class Static20 {
 
-	@OriginalMember(owner = "client!ii", name = "d", descriptor = "()V")
-	public static void method2403() {
-		@Pc(3) int local3 = Static3.anInt2972 - Static3.anInt2973;
-		@Pc(7) int local7 = Static3.anInt2966 - Static3.anInt2967;
-		@Pc(15) int local15 = (Static3.anInt2970 - Static3.anInt2969 << 16) / local3;
-		@Pc(23) int local23 = (Static3.anInt2971 - Static3.anInt2968 << 16) / local7;
-		Static19.method2396(local15, local23);
-	}
-
-	@OriginalMember(owner = "client!ii", name = "a", descriptor = "(Lclient!fg;IIII)V")
-	private static void method2404(@OriginalArg(0) MapElement element, @OriginalArg(1) int x, @OriginalArg(2) int y) {
-		element.xOffset = Static3.anInt2969 + (x * (element.x - Static3.anInt2973) >> 16);
-		element.yOffset = Static3.anInt2968 + (y * (element.z - Static3.anInt2967) >> 16);
-		@Pc(32) MelType type = MelTypeList.get(element.id);
-		if (type.sprite != -1) {
-			@Pc(42) IndexedSprite sprite = type.method1811(false, true);
-			if (sprite != null) {
-				if (element.xOffset - (sprite.width + 1 >> 1) <= Static3.anInt2970 && element.xOffset + (sprite.width + 1 >> 1) >= Static3.anInt2969 && element.yOffset - (sprite.height + 1 >> 1) <= Static3.anInt2971 && element.yOffset + (sprite.height + 1 >> 1) >= Static3.anInt2968) {
-					element.hidden = false;
-				} else {
-					element.hidden = true;
-				}
-				return;
-			}
-		}
-		if (element.x >= Static3.anInt2973 && element.x <= Static3.anInt2972 && element.z >= Static3.anInt2967 && element.z <= Static3.anInt2966) {
-			element.hidden = false;
-		} else {
-			element.hidden = true;
-		}
-	}
-
-	@OriginalMember(owner = "client!ii", name = "b", descriptor = "(Lclient!fd;)V")
-	public static void method2406(@OriginalArg(0) Buffer arg0) {
-		label83:
-		while (true) {
-			if (arg0.position < arg0.bytes.length) {
-				@Pc(7) boolean local7 = false;
-				@Pc(9) int local9 = 0;
-				@Pc(11) int local11 = 0;
-				if (arg0.readUnsignedByte() == 1) {
-					local7 = true;
-					local9 = arg0.readUnsignedByte();
-					local11 = arg0.readUnsignedByte();
-				}
-				@Pc(30) int local30 = arg0.readUnsignedByte();
-				@Pc(34) int local34 = arg0.readUnsignedByte();
-				@Pc(40) int local40 = local30 * 64 - Static3.anInt2962;
-				@Pc(50) int local50 = Static3.anInt2960 + Static3.anInt2961 - local34 * 64 - 1;
-				if (local40 >= 0 && local50 - 63 >= 0 && local40 + 63 < Static3.anInt2965 && local50 < Static3.anInt2960) {
-					@Pc(68) int local68 = local40 >> 6;
-					@Pc(72) int local72 = local50 >> 6;
-					@Pc(74) int local74 = 0;
-					while (true) {
-						if (local74 >= 64) {
-							continue label83;
-						}
-						for (@Pc(79) int local79 = 0; local79 < 64; local79++) {
-							if (!local7 || local74 >= local9 * 8 && local74 < local9 * 8 + 8 && local79 >= local11 * 8 && local79 < local11 * 8 + 8) {
-								@Pc(113) byte local113 = arg0.readByte();
-								if (local113 != 0) {
-									if (Static3.aByteArrayArrayArray10[local68][local72] == null) {
-										Static3.aByteArrayArrayArray10[local68][local72] = new byte[4096];
-									}
-									Static3.aByteArrayArrayArray10[local68][local72][(63 - local79 << 6) + local74] = local113;
-									@Pc(146) byte local146 = arg0.readByte();
-									if (Static3.aByteArrayArrayArray11[local68][local72] == null) {
-										Static3.aByteArrayArrayArray11[local68][local72] = new byte[4096];
-									}
-									Static3.aByteArrayArrayArray11[local68][local72][(63 - local79 << 6) + local74] = local146;
-								}
-							}
-						}
-						local74++;
-					}
-				}
-				@Pc(180) int local180 = 0;
-				while (true) {
-					if (local180 >= (local7 ? 64 : 4096)) {
-						continue label83;
-					}
-					@Pc(191) byte local191 = arg0.readByte();
-					if (local191 != 0) {
-						arg0.position++;
-					}
-					local180++;
-				}
-			}
-			return;
-		}
-	}
-
-	@OriginalMember(owner = "client!ii", name = "a", descriptor = "(Lclient!fd;Z)V")
-	public static void method2407(@OriginalArg(0) Buffer arg0, @OriginalArg(1) boolean arg1) {
-		label125:
-		while (true) {
-			if (arg0.position < arg0.bytes.length) {
-				@Pc(7) boolean local7 = false;
-				@Pc(9) int local9 = 0;
-				@Pc(11) int local11 = 0;
-				if (arg0.readUnsignedByte() == 1) {
-					local7 = true;
-					local9 = arg0.readUnsignedByte();
-					local11 = arg0.readUnsignedByte();
-				}
-				@Pc(30) int local30 = arg0.readUnsignedByte();
-				@Pc(34) int local34 = arg0.readUnsignedByte();
-				@Pc(40) int local40 = local30 * 64 - Static3.anInt2962;
-				@Pc(50) int local50 = Static3.anInt2960 + Static3.anInt2961 - local34 * 64 - 1;
-				if (local40 >= 0 && local50 - 63 >= 0 && local40 + 63 < Static3.anInt2965 && local50 < Static3.anInt2960) {
-					@Pc(68) int local68 = local40 >> 6;
-					@Pc(72) int local72 = local50 >> 6;
-					@Pc(74) int local74 = 0;
-					while (true) {
-						if (local74 >= 64) {
-							continue label125;
-						}
-						for (@Pc(79) int local79 = 0; local79 < 64; local79++) {
-							if (!local7 || local74 >= local9 * 8 && local74 < local9 * 8 + 8 && local79 >= local11 * 8 && local79 < local11 * 8 + 8) {
-								@Pc(113) int local113 = arg0.readUnsignedByte();
-								if (local113 != 0) {
-									if ((local113 & 0x1) == 1) {
-										@Pc(125) int local125 = arg0.readUnsignedByte();
-										if (Static3.aByteArrayArrayArray12[local68][local72] == null) {
-											Static3.aByteArrayArrayArray12[local68][local72] = new byte[4096];
-										}
-										Static3.aByteArrayArrayArray12[local68][local72][(63 - local79 << 6) + local74] = (byte) local125;
-									}
-									if ((local113 & 0x2) == 2) {
-										@Pc(162) int local162 = arg0.readUnsignedMedium();
-										if (Static3.anIntArrayArrayArray6[local68][local72] == null) {
-											Static3.anIntArrayArrayArray6[local68][local72] = new int[4096];
-										}
-										Static3.anIntArrayArrayArray6[local68][local72][(63 - local79 << 6) + local74] = local162;
-									}
-									if ((local113 & 0x4) == 4) {
-										@Pc(198) int local198 = arg0.readUnsignedShort();
-										@Pc(202) int local202 = arg0.readUnsignedByte();
-										local198--;
-										@Pc(207) LocType local207 = LocTypeList.get(local198);
-										if (local207.multiLocs != null) {
-											local207 = local207.getMultiLoc();
-											if (local207 == null || local207.mapElement == -1) {
-												continue;
-											}
-										}
-										if ((!local207.members || arg1) && local207.mapElement != -1) {
-											@Pc(236) MapElement local236 = new MapElement();
-											local236.id = local207.mapElement;
-											local236.level = local202;
-											local236.x = local68 * 64 + local74;
-											local236.z = local72 * 64 + 64 - local79;
-											Static3.aClass175_12.addTail(local236);
-										}
-									}
-								}
-							}
-						}
-						local74++;
-					}
-				}
-				@Pc(270) int local270 = 0;
-				while (true) {
-					if (local270 >= (local7 ? 64 : 4096)) {
-						continue label125;
-					}
-					@Pc(281) int local281 = arg0.readUnsignedByte();
-					if (local281 != 0) {
-						if ((local281 & 0x1) == 1) {
-							arg0.position++;
-						}
-						if ((local281 & 0x2) == 2) {
-							arg0.position += 2;
-						}
-						if ((local281 & 0x4) == 4) {
-							arg0.position += 3;
-						}
-					}
-					local270++;
-				}
-			}
-			return;
-		}
-	}
-
-	@OriginalMember(owner = "client!ii", name = "c", descriptor = "(II)V")
-	public static void loadOverlayColors(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
-		for (@Pc(1) int id = 0; id < FloTypeList.capacity; id++) {
-			@Pc(8) FloType type = FloTypeList.get(id);
-			if (type != null) {
-				@Pc(14) int texture = type.texture;
-				if (texture >= 0 && !Static4.textureProvider.method441(texture)) {
-					texture = -1;
-				}
-				@Pc(64) int color;
-				if (type.anInt3870 >= 0) {
-					@Pc(29) int local29 = type.anInt3870;
-					@Pc(35) int local35 = (local29 & 0x7F) + arg1;
-					if (local35 < 0) {
-						local35 = 0;
-					} else if (local35 > 127) {
-						local35 = 127;
-					}
-					@Pc(57) int local57 = (local29 + arg0 & 0xFC00) + (local29 & 0x380) + local35;
-					color = ColorUtils.HSL_TO_RGB[ColorUtils.multiplyLightnessGrayscale(local57, 96)];
-				} else if (texture >= 0) {
-					color = ColorUtils.HSL_TO_RGB[ColorUtils.multiplyLightnessGrayscale(Static4.textureProvider.getAverageColor(texture), 96)];
-				} else if (type.anInt3869 == -1) {
-					color = -1;
-				} else {
-					@Pc(88) int local88 = type.anInt3869;
-					@Pc(94) int local94 = (local88 & 0x7F) + arg1;
-					if (local94 < 0) {
-						local94 = 0;
-					} else if (local94 > 127) {
-						local94 = 127;
-					}
-					@Pc(116) int local116 = (local88 + arg0 & 0xFC00) + (local88 & 0x380) + local94;
-					color = ColorUtils.HSL_TO_RGB[ColorUtils.multiplyLightnessGrayscale(local116, 96)];
-				}
-				Static3.overlayColors[id + 1] = color;
-			}
-		}
-	}
-
 	@OriginalMember(owner = "client!ii", name = "a", descriptor = "([IIIIIIIIIZ)V")
 	public static void method2409(@OriginalArg(0) int[] arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) int arg8, @OriginalArg(9) boolean arg9) {
 		@Pc(1) int local1 = arg1;
@@ -714,27 +489,6 @@ public final class Static20 {
 		}
 	}
 
-	@OriginalMember(owner = "client!ii", name = "b", descriptor = "(IIII)Lclient!ll;")
-	public static LinkedList method2410(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
-		@Pc(3) LinkedList local3 = new LinkedList();
-		for (@Pc(8) MapElement local8 = (MapElement) Static3.aClass175_12.head(); local8 != null; local8 = (MapElement) Static3.aClass175_12.next()) {
-			method2404(local8, arg0, arg1);
-			local3.addTail(local8);
-		}
-		@Pc(29) int[] local29 = new int[3];
-		for (@Pc(31) int local31 = 0; local31 < Static3.aClass138_6.size; local31++) {
-			@Pc(40) MapElement local40 = Static3.aClass138_6.elements[local31];
-			@Pc(67) boolean local67 = WorldMap.currentMap.convertSourceToDisplay(Static3.aClass138_6.positions[local31] >> 28 & 0x3, Static3.aClass138_6.positions[local31] >> 14 & 0x3FFF, Static3.aClass138_6.positions[local31] & 0x3FFF, local29);
-			if (local67) {
-				local40.x = local29[1] - Static3.anInt2962;
-				local40.z = Static3.anInt2960 + Static3.anInt2961 - local29[2] - 1;
-				method2404(local40, arg0, arg1);
-				local3.addTail(local40);
-			}
-		}
-		return local3;
-	}
-
 	@OriginalMember(owner = "client!il", name = "b", descriptor = "(B)V")
 	public static void method1924() {
 		if (Static7.aBoolean401) {
@@ -747,82 +501,6 @@ public final class Static20 {
 		}
 		Static7.aBoolean401 = true;
 		Static5.aBoolean248 = true;
-	}
-
-	@OriginalMember(owner = "client!im", name = "a", descriptor = "(IBIII)V")
-	public static void method1928(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3) {
-		if (WorldMap.loadPercentage < 100) {
-			WorldMap.load();
-		}
-		if (GlRenderer.enabled) {
-			GlRaster.setClip(arg2, arg1, arg2 + arg3, arg0 + arg1);
-		} else {
-			SoftwareRaster.setClip(arg2, arg1, arg3 + arg2, arg1 + arg0);
-		}
-		if (WorldMap.loadPercentage < 100) {
-			@Pc(47) int local47 = arg3 / 2 + arg2;
-			@Pc(59) int local59 = arg1 + arg0 / 2 - 20 - 18;
-			if (GlRenderer.enabled) {
-				GlRaster.fillRect(arg2, arg1, arg3, arg0, 0);
-				GlRaster.drawRect(local47 - 152, local59, 304, 34, 9179409);
-				GlRaster.fillRect(local47 - 150, local59 + 2, WorldMap.loadPercentage * 3, 30, 9179409);
-			} else {
-				SoftwareRaster.fillRect(arg2, arg1, arg3, arg0, 0);
-				SoftwareRaster.drawRect(local47 - 152, local59, 304, 34, 9179409);
-				SoftwareRaster.fillRect(local47 - 150, local59 + 2, WorldMap.loadPercentage * 3, 30, 9179409);
-			}
-			Fonts.b12Full.renderCenter(LocalisedText.LOADINGDOTDOTDOT, local47, local59 + 20, 16777215, -1);
-			return;
-		}
-		Static7.anInt5680 = (int) ((float) (arg0 * 2) / Static3.aFloat68);
-		Static5.anInt3546 = Static7.anInt5231 - (int) ((float) arg0 / Static3.aFloat68);
-		Static3.anInt2542 = Static1.anInt331 - (int) ((float) arg3 / Static3.aFloat68);
-		Static7.anInt5331 = (int) ((float) (arg3 * 2) / Static3.aFloat68);
-		@Pc(169) int local169 = Static1.anInt331 - (int) ((float) arg3 / Static3.aFloat68);
-		@Pc(177) int local177 = Static7.anInt5231 - (int) ((float) arg0 / Static3.aFloat68);
-		@Pc(190) int local190 = (int) ((float) arg3 / Static3.aFloat68) + Static1.anInt331;
-		@Pc(198) int local198 = (int) ((float) arg0 / Static3.aFloat68) + Static7.anInt5231;
-		if (GlRenderer.enabled) {
-			if (Static3.aClass4_Sub3_Sub14_Sub1_2 == null || arg3 != Static3.aClass4_Sub3_Sub14_Sub1_2.width || Static3.aClass4_Sub3_Sub14_Sub1_2.height != arg0) {
-				Static3.aClass4_Sub3_Sub14_Sub1_2 = null;
-				Static3.aClass4_Sub3_Sub14_Sub1_2 = new SoftwareSprite(arg3, arg0);
-			}
-			SoftwareRaster.setPixels(Static3.aClass4_Sub3_Sub14_Sub1_2.pixels, arg3, arg0);
-			Static19.method2401(local169, local177, local190, local198, 0, 0, arg3, arg0 + 1);
-			method2403();
-			@Pc(268) LinkedList local268 = Static19.method2397();
-			Static9.method193(local268, arg2, arg1);
-			Static3.aClass4_Sub3_Sub14_Sub1_2.flipHorizontal();
-			GlRaster.drawPixels(Static3.aClass4_Sub3_Sub14_Sub1_2.pixels, arg2, arg1, arg3, arg0);
-			SoftwareRaster.pixels = null;
-		} else {
-			Static19.method2401(local169, local177, local190, local198, arg2, arg1, arg3 + arg2, arg0 + arg1 + 1);
-			method2403();
-			@Pc(218) LinkedList local218 = Static19.method2397();
-			Static9.method193(local218, 0, 0);
-		}
-		if (Static4.anInt2853 > 0) {
-			Static5.anInt4215--;
-			if (Static5.anInt4215 == 0) {
-				Static5.anInt4215 = 20;
-				Static4.anInt2853--;
-			}
-		}
-		if (!client.displayFps) {
-			return;
-		}
-		@Pc(310) int local310 = arg3 + arg2 - 5;
-		@Pc(312) int local312 = 16776960;
-		@Pc(318) int local318 = arg1 + arg0 - 8;
-		Fonts.p12Full.renderRight("Fps:" + GameShell.framesPerSecond, local310, local318, 16776960, -1);
-		@Pc(334) Runtime local334 = Runtime.getRuntime();
-		local318 -= 15;
-		@Pc(344) int local344 = (int) ((local334.totalMemory() - local334.freeMemory()) / 1024L);
-		if (local344 > 65536) {
-			local312 = 16711680;
-		}
-		Fonts.p12Full.renderRight("Mem:" + local344 + "k", local310, local318, local312, -1);
-		@Pc(368) int local368 = local318 - 15;
 	}
 
 	@OriginalMember(owner = "client!im", name = "a", descriptor = "(I)V")
@@ -848,41 +526,41 @@ public final class Static20 {
 			MiniMap.aBoolean147 = false;
 			MiniMap.flagX = 0;
 		}
-		for (@Pc(46) int local46 = 0; local46 < 104; local46++) {
-			for (@Pc(53) int local53 = 0; local53 < 104; local53++) {
-				Static1.anIntArrayArray2[local46][local53] = 0;
+		for (@Pc(46) int x = 0; x < 104; x++) {
+			for (@Pc(53) int z = 0; z < 104; z++) {
+				Static1.anIntArrayArray2[x][z] = 0;
 			}
 		}
-		for (@Pc(79) int local79 = 0; local79 < PlayerList.size; local79++) {
-			@Pc(92) Player local92 = PlayerList.players[PlayerList.ids[local79]];
-			if (local92 != null) {
-				local92.aBoolean281 = false;
+		for (@Pc(79) int i = 0; i < PlayerList.size; i++) {
+			@Pc(92) Player player = PlayerList.players[PlayerList.ids[i]];
+			if (player != null) {
+				player.aBoolean281 = false;
 			}
 		}
-		for (@Pc(103) int local103 = 0; local103 < NpcList.size; local103++) {
-			@Pc(112) Npc local112 = NpcList.npcs[NpcList.ids[local103]];
-			if (local112 != null) {
-				local112.aBoolean281 = false;
+		for (@Pc(103) int i = 0; i < NpcList.size; i++) {
+			@Pc(112) Npc npc = NpcList.npcs[NpcList.ids[i]];
+			if (npc != null) {
+				npc.aBoolean281 = false;
 			}
 		}
 	}
 
 	@OriginalMember(owner = "client!io", name = "a", descriptor = "(Z)V")
 	public static void method1949() {
-		@Pc(9) Container local9;
+		@Pc(9) Container container;
 		if (GameShell.fullScreenFrame != null) {
-			local9 = GameShell.fullScreenFrame;
+			container = GameShell.fullScreenFrame;
 		} else if (GameShell.frame == null) {
-			local9 = GameShell.signLink.applet;
+			container = GameShell.signLink.applet;
 		} else {
-			local9 = GameShell.frame;
+			container = GameShell.frame;
 		}
-		GameShell.frameWidth = local9.getSize().width;
-		GameShell.frameHeight = local9.getSize().height;
-		if (local9 == GameShell.frame) {
-			@Pc(35) Insets local35 = GameShell.frame.getInsets();
-			GameShell.frameWidth -= local35.left + local35.right;
-			GameShell.frameHeight -= local35.bottom + local35.top;
+		GameShell.frameWidth = container.getSize().width;
+		GameShell.frameHeight = container.getSize().height;
+		if (container == GameShell.frame) {
+			@Pc(35) Insets insets = GameShell.frame.getInsets();
+			GameShell.frameWidth -= insets.left + insets.right;
+			GameShell.frameHeight -= insets.bottom + insets.top;
 		}
 		if (Static11.getWindowMode() >= 2) {
 			GameShell.topMargin = 0;
@@ -899,7 +577,7 @@ public final class Static20 {
 			GlRenderer.setCanvasSize(GameShell.canvasWidth, GameShell.canvasHeight);
 		}
 		GameShell.canvas.setSize(GameShell.canvasWidth, GameShell.canvasHeight);
-		if (local9 == GameShell.frame) {
+		if (container == GameShell.frame) {
 			@Pc(104) Insets local104 = GameShell.frame.getInsets();
 			GameShell.canvas.setLocation(local104.left + GameShell.leftMargin, GameShell.topMargin + local104.top);
 		} else {
@@ -967,48 +645,42 @@ public final class Static20 {
 		}
 	}
 
-	@OriginalMember(owner = "client!ja", name = "a", descriptor = "(IBI)V")
-	public static void method1970(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1) {
-		Static1.anInt929 = Static3.anInt2961 + Static3.anInt2960 - arg1 - 1;
-		Static6.anInt4393 = arg0 - Static3.anInt2962;
-	}
-
 	@OriginalMember(owner = "client!jb", name = "a", descriptor = "(IZIII)V")
 	public static void method1975(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3) {
 		if (arg1 >= arg0) {
-			Static18.method1656(Static5.anIntArrayArray36[arg3], arg2, arg0, arg1);
+			ArrayUtils.fillRange(Static5.anIntArrayArray36[arg3], arg0, arg1, arg2);
 		} else {
-			Static18.method1656(Static5.anIntArrayArray36[arg3], arg2, arg1, arg0);
+			ArrayUtils.fillRange(Static5.anIntArrayArray36[arg3], arg1, arg0, arg2);
 		}
 	}
 
 	@OriginalMember(owner = "client!jb", name = "a", descriptor = "(B)V")
 	public static void method1976() {
-		for (@Pc(16) ProjAnimNode local16 = (ProjAnimNode) Static1.projAnims.head(); local16 != null; local16 = (ProjAnimNode) Static1.projAnims.next()) {
-			@Pc(22) ProjAnim local22 = local16.value;
-			if (local22.anInt3717 != Player.level || client.loop > local22.anInt3707) {
-				local16.unlink();
-			} else if (local22.anInt3719 <= client.loop) {
-				if (local22.anInt3713 > 0) {
-					@Pc(61) Npc local61 = NpcList.npcs[local22.anInt3713 - 1];
-					if (local61 != null && local61.xFine >= 0 && local61.xFine < 13312 && local61.zFine >= 0 && local61.zFine < 13312) {
-						local22.method3105(SceneGraph.getTileHeight(local22.anInt3717, local61.xFine, local61.zFine) - local22.anInt3722, local61.xFine, client.loop, local61.zFine);
+		for (@Pc(16) ProjAnimNode node = (ProjAnimNode) Static1.projAnims.head(); node != null; node = (ProjAnimNode) Static1.projAnims.next()) {
+			@Pc(22) ProjAnim projAnim = node.value;
+			if (projAnim.anInt3717 != Player.level || client.loop > projAnim.anInt3707) {
+				node.unlink();
+			} else if (projAnim.anInt3719 <= client.loop) {
+				if (projAnim.anInt3713 > 0) {
+					@Pc(61) Npc npc = NpcList.npcs[projAnim.anInt3713 - 1];
+					if (npc != null && npc.xFine >= 0 && npc.xFine < 13312 && npc.zFine >= 0 && npc.zFine < 13312) {
+						projAnim.method3105(SceneGraph.getTileHeight(projAnim.anInt3717, npc.xFine, npc.zFine) - projAnim.anInt3722, npc.xFine, client.loop, npc.zFine);
 					}
 				}
-				if (local22.anInt3713 < 0) {
-					@Pc(113) int local113 = -local22.anInt3713 - 1;
-					@Pc(118) Player local118;
+				if (projAnim.anInt3713 < 0) {
+					@Pc(113) int local113 = -projAnim.anInt3713 - 1;
+					@Pc(118) Player player;
 					if (PlayerList.selfId == local113) {
-						local118 = PlayerList.self;
+						player = PlayerList.self;
 					} else {
-						local118 = PlayerList.players[local113];
+						player = PlayerList.players[local113];
 					}
-					if (local118 != null && local118.xFine >= 0 && local118.xFine < 13312 && local118.zFine >= 0 && local118.zFine < 13312) {
-						local22.method3105(SceneGraph.getTileHeight(local22.anInt3717, local118.xFine, local118.zFine) - local22.anInt3722, local118.xFine, client.loop, local118.zFine);
+					if (player != null && player.xFine >= 0 && player.xFine < 13312 && player.zFine >= 0 && player.zFine < 13312) {
+						projAnim.method3105(SceneGraph.getTileHeight(projAnim.anInt3717, player.xFine, player.zFine) - projAnim.anInt3722, player.xFine, client.loop, player.zFine);
 					}
 				}
-				local22.method3103(Static5.anInt4156);
-				SceneGraph.method637(Player.level, (int) local22.aDouble8, (int) local22.aDouble10, (int) local22.aDouble5, 60, local22, local22.anInt3723, -1L, false);
+				projAnim.method3103(Static5.anInt4156);
+				SceneGraph.method637(Player.level, (int) projAnim.aDouble8, (int) projAnim.aDouble10, (int) projAnim.aDouble5, 60, projAnim, projAnim.anInt3723, -1L, false);
 			}
 		}
 	}

@@ -23,37 +23,6 @@ public final class Static23 {
 		}
 	}
 
-	@OriginalMember(owner = "client!lb", name = "a", descriptor = "(I[I[III)V")
-	public static void method2459(@OriginalArg(0) int arg0, @OriginalArg(1) int[] arg1, @OriginalArg(2) int[] arg2, @OriginalArg(4) int arg3) {
-		if (arg3 >= arg0) {
-			return;
-		}
-		@Pc(25) int local25 = arg3;
-		@Pc(31) int local31 = (arg0 + arg3) / 2;
-		@Pc(35) int local35 = arg2[local31];
-		arg2[local31] = arg2[arg0];
-		arg2[arg0] = local35;
-		@Pc(49) int local49 = arg1[local31];
-		arg1[local31] = arg1[arg0];
-		arg1[arg0] = local49;
-		for (@Pc(61) int local61 = arg3; local61 < arg0; local61++) {
-			if (arg2[local61] > (local61 & 0x1) + local35) {
-				@Pc(81) int local81 = arg2[local61];
-				arg2[local61] = arg2[local25];
-				arg2[local25] = local81;
-				@Pc(95) int local95 = arg1[local61];
-				arg1[local61] = arg1[local25];
-				arg1[local25++] = local95;
-			}
-		}
-		arg2[arg0] = arg2[local25];
-		arg2[local25] = local35;
-		arg1[arg0] = arg1[local25];
-		arg1[local25] = local49;
-		method2459(local25 - 1, arg1, arg2, arg3);
-		method2459(arg0, arg1, arg2, local25 + 1);
-	}
-
 	@OriginalMember(owner = "client!lc", name = "a", descriptor = "(IZ)V")
 	public static void method1936(@OriginalArg(1) boolean arg0) {
 		Static25.method2782(Static1.anInt131, Static5.aFloat102, Static3.aFloat63, Static6.aFloat108);
@@ -192,17 +161,6 @@ public final class Static23 {
 		if (local414 < 0 && local357 > 0 || local414 > 0 && local357 < 0) {
 			Static5.anInt3656 = local300;
 		}
-	}
-
-	@OriginalMember(owner = "client!lg", name = "a", descriptor = "(II)I")
-	private static int method2540(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
-		@Pc(7) int local7 = arg1 * (arg0 & 0x7F) >> 7;
-		if (local7 < 2) {
-			local7 = 2;
-		} else if (local7 > 126) {
-			local7 = 126;
-		}
-		return (arg0 & 0xFF80) + local7;
 	}
 
 	@OriginalMember(owner = "client!lg", name = "a", descriptor = "(III)V")
@@ -783,7 +741,7 @@ public final class Static23 {
 		if (local5 == null || Static4.anInt3127 > 10) {
 			@Pc(15) int local15 = Static4.textureProvider.getAverageColor(arg18);
 			Static4.aBoolean218 = true;
-			method2543(arg0, arg1, arg2, arg3, arg4, arg5, method2540(local15, arg6), method2540(local15, arg7), method2540(local15, arg8));
+			method2543(arg0, arg1, arg2, arg3, arg4, arg5, ColorUtils.multiplyLightness2(local15, arg6), ColorUtils.multiplyLightness2(local15, arg7), ColorUtils.multiplyLightness2(local15, arg8));
 			return;
 		}
 		Static4.aBoolean220 = Static4.textureProvider.isLowDetail(arg18);
@@ -2639,7 +2597,7 @@ public final class Static23 {
 		@Pc(5) int[] local5 = Static4.textureProvider.method445(arg18, ColorUtils.brightness);
 		if (local5 == null) {
 			@Pc(12) int local12 = Static4.textureProvider.getAverageColor(arg18);
-			method2543(arg0, arg1, arg2, arg3, arg4, arg5, method2540(local12, arg6), method2540(local12, arg7), method2540(local12, arg8));
+			method2543(arg0, arg1, arg2, arg3, arg4, arg5, ColorUtils.multiplyLightness2(local12, arg6), ColorUtils.multiplyLightness2(local12, arg7), ColorUtils.multiplyLightness2(local12, arg8));
 			return;
 		}
 		Static4.aBoolean220 = Static4.textureProvider.isLowDetail(arg18);

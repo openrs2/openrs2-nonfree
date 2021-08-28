@@ -52,9 +52,6 @@ public final class Static1 {
 	@OriginalMember(owner = "client!bi", name = "r", descriptor = "I")
 	public static int anInt314;
 
-	@OriginalMember(owner = "client!bi", name = "M", descriptor = "I")
-	public static int anInt331;
-
 	@OriginalMember(owner = "client!bk", name = "a", descriptor = "[[B")
 	public static byte[][] mapBytes;
 
@@ -70,9 +67,6 @@ public final class Static1 {
 	@OriginalMember(owner = "client!bn", name = "I", descriptor = "F")
 	public static float aFloat15;
 
-	@OriginalMember(owner = "client!bo", name = "o", descriptor = "Ljava/awt/FontMetrics;")
-	public static FontMetrics aFontMetrics1;
-
 	@OriginalMember(owner = "client!c", name = "W", descriptor = "I")
 	public static int anInt466;
 
@@ -84,12 +78,6 @@ public final class Static1 {
 
 	@OriginalMember(owner = "client!cb", name = "l", descriptor = "I")
 	public static int anInt525;
-
-	@OriginalMember(owner = "client!cd", name = "f", descriptor = "Lclient!om;")
-	public static SecondaryLinkedListIterator aClass130_1;
-
-	@OriginalMember(owner = "client!ce", name = "b", descriptor = "Ljava/awt/Font;")
-	public static java.awt.Font aFont1;
 
 	@OriginalMember(owner = "client!cg", name = "h", descriptor = "F")
 	public static float aFloat21;
@@ -162,9 +150,6 @@ public final class Static1 {
 
 	@OriginalMember(owner = "client!bb", name = "C", descriptor = "I")
 	public static int anInt242 = 0;
-
-	@OriginalMember(owner = "client!bc", name = "z", descriptor = "I")
-	public static int anInt929 = -1;
 
 	@OriginalMember(owner = "client!bd", name = "d", descriptor = "[F")
 	public static final float[] aFloatArray5 = new float[] { 0.1F, 0.1F, 0.15F, 0.1F };

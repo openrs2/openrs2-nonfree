@@ -81,9 +81,9 @@ public final class Static14 {
 	}
 
 	@OriginalMember(owner = "client!ek", name = "a", descriptor = "(B)V")
-	public static void method1062() {
-		@Pc(14) int local14 = Static7.npcBytes.length;
-		for (@Pc(16) int i = 0; i < local14; i++) {
+	public static void readNpcSpawns() {
+		@Pc(14) int len = Static7.npcBytes.length;
+		for (@Pc(16) int i = 0; i < len; i++) {
 			if (Static7.npcBytes[i] != null) {
 				@Pc(32) int local32 = -1;
 				for (@Pc(34) int j = 0; j < Static6.anInt4744; j++) {
@@ -168,9 +168,9 @@ public final class Static14 {
 			@Pc(56) int local56 = IntUtils.clamp(arg0 + arg2, Static2.anInt902, Static3.anInt2553);
 			@Pc(67) int local67 = IntUtils.clamp(arg2 - local9, Static2.anInt902, Static3.anInt2553);
 			@Pc(77) int local77 = IntUtils.clamp(arg2 + local9, Static2.anInt902, Static3.anInt2553);
-			Static18.method1656(local40, arg3, local48, local67);
-			Static18.method1656(local40, arg4, local67, local77);
-			Static18.method1656(local40, arg3, local77, local56);
+			ArrayUtils.fillRange(local40, local48, local67, arg3);
+			ArrayUtils.fillRange(local40, local67, local77, arg4);
+			ArrayUtils.fillRange(local40, local77, local56, arg3);
 		}
 		@Pc(98) int local98 = -local9;
 		@Pc(100) int local100 = -1;
@@ -196,10 +196,10 @@ public final class Static14 {
 						@Pc(186) int local186 = IntUtils.clamp(arg2 + local17, Static2.anInt902, Static3.anInt2553);
 						@Pc(194) int local194 = IntUtils.clamp(arg2 - local17, Static2.anInt902, Static3.anInt2553);
 						if (Static5.anInt4230 >= local159) {
-							Static18.method1656(Static5.anIntArrayArray36[local159], arg3, local194, local186);
+							ArrayUtils.fillRange(Static5.anIntArrayArray36[local159], local194, local186, arg3);
 						}
 						if (local154 >= Static4.anInt3086) {
-							Static18.method1656(Static5.anIntArrayArray36[local154], arg3, local194, local186);
+							ArrayUtils.fillRange(Static5.anIntArrayArray36[local154], local194, local186, arg3);
 						}
 					} else {
 						@Pc(226) int local226 = Static7.anIntArray678[local15];
@@ -209,15 +209,15 @@ public final class Static14 {
 						@Pc(262) int local262 = IntUtils.clamp(arg2 - local226, Static2.anInt902, Static3.anInt2553);
 						if (Static5.anInt4230 >= local159) {
 							@Pc(274) int[] local274 = Static5.anIntArrayArray36[local159];
-							Static18.method1656(local274, arg3, local245, local262);
-							Static18.method1656(local274, arg4, local262, local254);
-							Static18.method1656(local274, arg3, local254, local237);
+							ArrayUtils.fillRange(local274, local245, local262, arg3);
+							ArrayUtils.fillRange(local274, local262, local254, arg4);
+							ArrayUtils.fillRange(local274, local254, local237, arg3);
 						}
 						if (Static4.anInt3086 <= local154) {
 							@Pc(300) int[] local300 = Static5.anIntArrayArray36[local154];
-							Static18.method1656(local300, arg3, local245, local262);
-							Static18.method1656(local300, arg4, local262, local254);
-							Static18.method1656(local300, arg3, local254, local237);
+							ArrayUtils.fillRange(local300, local245, local262, arg3);
+							ArrayUtils.fillRange(local300, local262, local254, arg4);
+							ArrayUtils.fillRange(local300, local254, local237, arg3);
 						}
 					}
 				}
@@ -232,10 +232,10 @@ public final class Static14 {
 					@Pc(365) int local365 = IntUtils.clamp(local342, Static2.anInt902, Static3.anInt2553);
 					if (local17 >= local9) {
 						if (Static5.anInt4230 >= local322) {
-							Static18.method1656(Static5.anIntArrayArray36[local322], arg3, local365, local359);
+							ArrayUtils.fillRange(Static5.anIntArrayArray36[local322], local365, local359, arg3);
 						}
 						if (Static4.anInt3086 <= local327) {
-							Static18.method1656(Static5.anIntArrayArray36[local327], arg3, local365, local359);
+							ArrayUtils.fillRange(Static5.anIntArrayArray36[local327], local365, local359, arg3);
 						}
 					} else {
 						@Pc(415) int local415 = local29 >= local17 ? local29 : Static7.anIntArray678[local17];
@@ -243,15 +243,15 @@ public final class Static14 {
 						@Pc(432) int local432 = IntUtils.clamp(arg2 - local415, Static2.anInt902, Static3.anInt2553);
 						if (Static5.anInt4230 >= local322) {
 							@Pc(440) int[] local440 = Static5.anIntArrayArray36[local322];
-							Static18.method1656(local440, arg3, local365, local432);
-							Static18.method1656(local440, arg4, local432, local424);
-							Static18.method1656(local440, arg3, local424, local359);
+							ArrayUtils.fillRange(local440, local365, local432, arg3);
+							ArrayUtils.fillRange(local440, local432, local424, arg4);
+							ArrayUtils.fillRange(local440, local424, local359, arg3);
 						}
 						if (Static4.anInt3086 <= local327) {
 							@Pc(469) int[] local469 = Static5.anIntArrayArray36[local327];
-							Static18.method1656(local469, arg3, local365, local432);
-							Static18.method1656(local469, arg4, local432, local424);
-							Static18.method1656(local469, arg3, local424, local359);
+							ArrayUtils.fillRange(local469, local365, local432, arg3);
+							ArrayUtils.fillRange(local469, local432, local424, arg4);
+							ArrayUtils.fillRange(local469, local424, local359, arg3);
 						}
 					}
 				}
@@ -579,16 +579,16 @@ public final class Static14 {
 		@Pc(18) int local18 = arg2 - arg4;
 		@Pc(22) int local22 = arg4 + arg1;
 		for (@Pc(24) int local24 = arg5; local24 < local10; local24++) {
-			Static18.method1656(Static5.anIntArrayArray36[local24], arg0, arg1, arg3);
+			ArrayUtils.fillRange(Static5.anIntArrayArray36[local24], arg1, arg3, arg0);
 		}
 		for (@Pc(44) int local44 = arg2; local44 > local18; local44--) {
-			Static18.method1656(Static5.anIntArrayArray36[local44], arg0, arg1, arg3);
+			ArrayUtils.fillRange(Static5.anIntArrayArray36[local44], arg1, arg3, arg0);
 		}
 		@Pc(66) int local66 = arg3 - arg4;
 		for (@Pc(68) int local68 = local10; local68 <= local18; local68++) {
 			@Pc(79) int[] local79 = Static5.anIntArrayArray36[local68];
-			Static18.method1656(local79, arg0, arg1, local22);
-			Static18.method1656(local79, arg0, local66, arg3);
+			ArrayUtils.fillRange(local79, arg1, local22, arg0);
+			ArrayUtils.fillRange(local79, local66, arg3, arg0);
 		}
 	}
 

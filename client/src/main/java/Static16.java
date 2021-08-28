@@ -91,30 +91,9 @@ public final class Static16 {
 		return Static4.aFloatArray64;
 	}
 
-	@OriginalMember(owner = "client!gd", name = "a", descriptor = "(I)V")
-	public static void method1556() {
-		Sprites.scrollbar = null;
-		Fonts.p11FullSoftware = null;
-		Sprites.nameIcons = null;
-		Sprites.mapDots = null;
-		Sprites.cross = null;
-		Fonts.p12Full = null;
-		Sprites.hintHeadIcons = null;
-		Sprites.headIconsPrayer = null;
-		Fonts.b12Full = null;
-		Sprites.headIconsPk = null;
-		Fonts.p11Full = null;
-		Sprites.compass = null;
-		Sprites.hitBarDefault = null;
-		Sprites.hintMapEdge = null;
-		Sprites.mapFlag = null;
-		Sprites.hintMapMarkers = null;
-		Sprites.hitMarks = null;
-	}
-
 	@OriginalMember(owner = "client!gd", name = "b", descriptor = "(I)V")
 	public static void method1557() {
-		Static10.method384(false);
+		WorldMap.clear(false);
 		System.gc();
 		Static9.method233(25);
 	}
@@ -140,16 +119,16 @@ public final class Static16 {
 
 	@OriginalMember(owner = "client!gg", name = "c", descriptor = "(I)V")
 	public static void method1576() {
-		for (@Pc(7) int local7 = -1; local7 < PlayerList.size; local7++) {
-			@Pc(20) int local20;
-			if (local7 == -1) {
-				local20 = 2047;
+		for (@Pc(7) int i = -1; i < PlayerList.size; i++) {
+			@Pc(20) int id;
+			if (i == -1) {
+				id = 2047;
 			} else {
-				local20 = PlayerList.ids[local7];
+				id = PlayerList.ids[i];
 			}
-			@Pc(30) Player local30 = PlayerList.players[local20];
-			if (local30 != null) {
-				Static15.method1428(local30.getSize(), local30);
+			@Pc(30) Player player = PlayerList.players[id];
+			if (player != null) {
+				Static15.method1428(player.getSize(), player);
 			}
 		}
 	}

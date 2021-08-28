@@ -411,7 +411,7 @@ public final class GlModel extends Model {
 			local229 += local120 & 0xFFFF;
 			local118[local120] = ((long) local215 << 32) + (long) local229;
 		}
-		Static19.method1805(local26, local118);
+		ArrayUtils.sort(local118, local26);
 		this.vertexCount = model.vertexCount;
 		this.anInt4688 = model.anInt3355;
 		this.vertexX = model.vertexX;

@@ -36,6 +36,15 @@ public final class MiniMenu {
 	@OriginalMember(owner = "client!nf", name = "l", descriptor = "Z")
 	private static final boolean debug = false;
 
+	@OriginalMember(owner = "client!wk", name = "g", descriptor = "Ljava/lang/String;")
+	private static String aString365 = null;
+
+	@OriginalMember(owner = "client!em", name = "a", descriptor = "Ljava/lang/String;")
+	private static String aString81 = null;
+
+	@OriginalMember(owner = "client!em", name = "B", descriptor = "I")
+	public static int anInt1334 = 0;
+
 	@OriginalMember(owner = "client!fn", name = "a", descriptor = "(JIILjava/lang/String;Ljava/lang/String;SIB)V")
 	public static void add(@OriginalArg(0) long key, @OriginalArg(1) int intArg1, @OriginalArg(2) int intArg2, @OriginalArg(3) String opBase, @OriginalArg(4) String op, @OriginalArg(5) short action, @OriginalArg(6) int cursor) {
 		if (Static1.aBoolean17 || size >= 500) {
@@ -513,13 +522,13 @@ public final class MiniMenu {
 			Static26.method4812();
 			@Pc(1913) Component component = InterfaceList.getComponent(intArg2);
 			Static1.anInt314 = intArg1;
-			Static2.anInt1334 = 1;
+			anInt1334 = 1;
 			Static5.anInt4302 = intArg2;
 			Static1.anInt243 = id;
 			Static28.method3270(component);
-			Static7.aString365 = "<col=ff9040>" + ObjTypeList.get(id).name + "<col=ffffff>";
-			if (Static7.aString365 == null) {
-				Static7.aString365 = "null";
+			aString365 = "<col=ff9040>" + ObjTypeList.get(id).name + "<col=ffffff>";
+			if (aString365 == null) {
+				aString365 = "null";
 			}
 			return;
 		}
@@ -573,15 +582,15 @@ public final class MiniMenu {
 				Static26.method4812();
 				@Pc(2195) ServerActiveProperties local2195 = InterfaceList.getServerActiveProperties(component);
 				Static21.method2081(local2195.getTargetMask(), local2195.targetParam, component.anInt5890, intArg1, component.anInt5930, intArg2);
-				Static2.anInt1334 = 0;
-				Static4.aString140 = Static12.method780(component);
+				anInt1334 = 0;
+				Static4.aString140 = Static12.getTargetVerb(component);
 				if (Static4.aString140 == null) {
 					Static4.aString140 = "Null";
 				}
 				if (component.if3) {
-					Static2.aString81 = component.opBase + "<col=ffffff>";
+					aString81 = component.opBase + "<col=ffffff>";
 				} else {
-					Static2.aString81 = "<col=00ff00>" + component.aString353 + "<col=ffffff>";
+					aString81 = "<col=00ff00>" + component.aString353 + "<col=ffffff>";
 				}
 			}
 			return;
@@ -814,8 +823,8 @@ public final class MiniMenu {
 			Protocol.outboundBuffer.writeByteA(Keyboard.pressedKeys[82] ? 1 : 0);
 			PathFinder.findPath(PlayerList.self.movementQueueX[0], PlayerList.self.movementQueueZ[0], intArg1, intArg2, 0, 0, 0, 0, 0);
 		}
-		if (Static2.anInt1334 != 0) {
-			Static2.anInt1334 = 0;
+		if (anInt1334 != 0) {
+			anInt1334 = 0;
 			Static28.method3270(InterfaceList.getComponent(Static5.anInt4302));
 		}
 		if (Static3.aBoolean177) {
@@ -842,12 +851,12 @@ public final class MiniMenu {
 			@Pc(51) String levelPrefix = client.game == 1 ? LocalisedText.RATING : LocalisedText.LEVEL;
 			nameWithLevel = nameWithLevel + getCombatLevelColor(PlayerList.self.combatLevel, type.combatLevel) + " (" + levelPrefix + type.combatLevel + ")";
 		}
-		if (Static2.anInt1334 == 1) {
-			add(id, x, z, Static7.aString365 + " -> <col=ffff00>" + nameWithLevel, LocalisedText.USE, (short) 33, Static2.anInt1937);
+		if (anInt1334 == 1) {
+			add(id, x, z, aString365 + " -> <col=ffff00>" + nameWithLevel, LocalisedText.USE, (short) 33, Static2.anInt1937);
 		} else if (Static3.aBoolean177) {
 			@Pc(88) ParamType param = Static5.anInt4224 == -1 ? null : ParamTypeList.get(Static5.anInt4224);
 			if ((Static5.anInt3560 & 0x2) != 0 && (param == null || type.getParam(Static5.anInt4224, param.defaultInt) != param.defaultInt)) {
-				add(id, x, z, Static2.aString81 + " -> <col=ffff00>" + nameWithLevel, Static4.aString140, (short) 42, Static6.anInt4466);
+				add(id, x, z, aString81 + " -> <col=ffff00>" + nameWithLevel, Static4.aString140, (short) 42, Static6.anInt4466);
 			}
 		} else {
 			@Pc(134) String[] ops = type.ops;
@@ -929,7 +938,7 @@ public final class MiniMenu {
 			add(0L, 0, component.id, "", component.aString349, (short) 57, -1);
 		}
 		if (component.anInt5912 == 2 && !Static3.aBoolean177) {
-			@Pc(35) String local35 = Static12.method780(component);
+			@Pc(35) String local35 = Static12.getTargetVerb(component);
 			if (local35 != null) {
 				add(0L, -1, component.id, "<col=00ff00>" + component.aString353, local35, (short) 34, -1);
 			}
@@ -962,14 +971,14 @@ public final class MiniMenu {
 						if (component.objTypes[local160] > 0) {
 							@Pc(257) ServerActiveProperties properties = InterfaceList.getServerActiveProperties(component);
 							@Pc(266) ObjType objType = ObjTypeList.get(component.objTypes[local160] - 1);
-							if (Static2.anInt1334 == 1 && properties.isObjOpsEnabled()) {
+							if (anInt1334 == 1 && properties.isObjOpsEnabled()) {
 								if (Static5.anInt4302 != component.id || Static1.anInt314 != local160) {
-									add((long) objType.id, local160, component.id, Static7.aString365 + " -> <col=ff9040>" + objType.name, LocalisedText.USE, (short) 15, -1);
+									add((long) objType.id, local160, component.id, aString365 + " -> <col=ff9040>" + objType.name, LocalisedText.USE, (short) 15, -1);
 								}
 							} else if (Static3.aBoolean177 && properties.isObjOpsEnabled()) {
 								@Pc(290) ParamType param = Static5.anInt4224 == -1 ? null : ParamTypeList.get(Static5.anInt4224);
 								if ((Static5.anInt3560 & 0x10) != 0 && (param == null || objType.getParam(Static5.anInt4224, param.defaultInt) != param.defaultInt)) {
-									add((long) objType.id, local160, component.id, Static2.aString81 + " -> <col=ff9040>" + objType.name, Static4.aString140, (short) 50, Static6.anInt4466);
+									add((long) objType.id, local160, component.id, aString81 + " -> <col=ff9040>" + objType.name, Static4.aString140, (short) 50, Static6.anInt4466);
 								}
 							} else {
 								@Pc(340) String[] inventoryOps = objType.inventoryOps;
@@ -1054,7 +1063,7 @@ public final class MiniMenu {
 					add((long) (i + 1), component.createdComponentId, component.id, component.opBase, op, (short) 1009, Static32.method3985(component, i));
 				}
 			}
-			@Pc(745) String local745 = Static12.method780(component);
+			@Pc(745) String local745 = Static12.getTargetVerb(component);
 			if (local745 != null) {
 				add(0L, component.createdComponentId, component.id, component.opBase, local745, (short) 34, -1);
 			}
@@ -1072,7 +1081,7 @@ public final class MiniMenu {
 				}
 			}
 		} else if (InterfaceList.getServerActiveProperties(component).isUseTarget() && (Static5.anInt3560 & 0x20) != 0) {
-			add(0L, component.createdComponentId, component.id, Static2.aString81 + " -> " + component.opBase, Static4.aString140, (short) 1, Static6.anInt4466);
+			add(0L, component.createdComponentId, component.id, aString81 + " -> " + component.opBase, Static4.aString140, (short) 1, Static6.anInt4466);
 		}
 	}
 
@@ -1105,8 +1114,8 @@ public final class MiniMenu {
 		} else {
 			local144 = player.getName() + " (" + LocalisedText.SKILL + player.skillLevel + ")";
 		}
-		if (Static2.anInt1334 == 1) {
-			add((long) arg1, arg3, arg0, Static7.aString365 + " -> <col=ffffff>" + local144, LocalisedText.USE, (short) 21, Static2.anInt1937);
+		if (anInt1334 == 1) {
+			add((long) arg1, arg3, arg0, aString365 + " -> <col=ffffff>" + local144, LocalisedText.USE, (short) 21, Static2.anInt1937);
 		} else if (!Static3.aBoolean177) {
 			for (@Pc(269) int i = 7; i >= 0; i--) {
 				if (Player.ops[i] != null) {
@@ -1131,7 +1140,7 @@ public final class MiniMenu {
 				}
 			}
 		} else if ((Static5.anInt3560 & 0x8) != 0) {
-			add((long) arg1, arg3, arg0, Static2.aString81 + " -> <col=ffffff>" + local144, Static4.aString140, (short) 5, Static6.anInt4466);
+			add((long) arg1, arg3, arg0, aString81 + " -> <col=ffffff>" + local144, Static4.aString140, (short) 5, Static6.anInt4466);
 		}
 		for (@Pc(367) int local367 = 0; local367 < size; local367++) {
 			if (actions[local367] == 26) {
@@ -1143,7 +1152,7 @@ public final class MiniMenu {
 
 	@OriginalMember(owner = "client!g", name = "a", descriptor = "(IIIIIII)V")
 	public static void addEntries(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(6) int arg5) {
-		if (Static2.anInt1334 == 0) {
+		if (anInt1334 == 0) {
 			@Pc(14) int local14 = Static7.anInt5437;
 			@Pc(16) int local16 = Static4.anInt3123;
 			@Pc(18) int local18 = Static7.anInt6030;
@@ -1181,12 +1190,12 @@ public final class MiniMenu {
 					if (type == null) {
 						continue;
 					}
-					if (Static2.anInt1334 == 1) {
-						add(key, x, z, Static7.aString365 + " -> <col=00ffff>" + type.name, LocalisedText.USE, (short) 16, Static2.anInt1937);
+					if (anInt1334 == 1) {
+						add(key, x, z, aString365 + " -> <col=00ffff>" + type.name, LocalisedText.USE, (short) 16, Static2.anInt1937);
 					} else if (Static3.aBoolean177) {
 						@Pc(215) ParamType param = Static5.anInt4224 == -1 ? null : ParamTypeList.get(Static5.anInt4224);
 						if ((Static5.anInt3560 & 0x4) != 0 && (param == null || type.getParam(Static5.anInt4224, param.defaultInt) != param.defaultInt)) {
-							add(key, x, z, Static2.aString81 + " -> <col=00ffff>" + type.name, Static4.aString140, (short) 4, Static6.anInt4466);
+							add(key, x, z, aString81 + " -> <col=00ffff>" + type.name, Static4.aString140, (short) 4, Static6.anInt4466);
 						}
 					} else {
 						@Pc(267) String[] ops = type.ops;
@@ -1300,12 +1309,12 @@ public final class MiniMenu {
 						for (@Pc(960) ObjStackNode node = (ObjStackNode) objStacks.tail(); node != null; node = (ObjStackNode) objStacks.prev()) {
 							@Pc(967) int objId = node.value.type;
 							@Pc(971) ObjType type = ObjTypeList.get(objId);
-							if (Static2.anInt1334 == 1) {
-								add(objId, x, z, Static7.aString365 + " -> <col=ff9040>" + type.name, LocalisedText.USE, (short) 28, Static2.anInt1937);
+							if (anInt1334 == 1) {
+								add(objId, x, z, aString365 + " -> <col=ff9040>" + type.name, LocalisedText.USE, (short) 28, Static2.anInt1937);
 							} else if (Static3.aBoolean177) {
 								@Pc(986) ParamType param = Static5.anInt4224 == -1 ? null : ParamTypeList.get(Static5.anInt4224);
 								if ((Static5.anInt3560 & 0x1) != 0 && (param == null || type.getParam(Static5.anInt4224, param.defaultInt) != param.defaultInt)) {
-									add(objId, x, z, Static2.aString81 + " -> <col=ff9040>" + type.name, Static4.aString140, (short) 48, Static6.anInt4466);
+									add(objId, x, z, aString81 + " -> <col=ff9040>" + type.name, Static4.aString140, (short) 48, Static6.anInt4466);
 								}
 							} else {
 								@Pc(1043) String[] ops = type.ops;
@@ -1395,5 +1404,28 @@ public final class MiniMenu {
 		} else {
 			return "<col=ffff00>";
 		}
+	}
+
+	@OriginalMember(owner = "client!nl", name = "a", descriptor = "(BI)Ljava/lang/String;")
+	public static String getOp(@OriginalArg(1) int i) {
+		return opBases[i].length() <= 0 ? ops[i] : ops[i] + LocalisedText.MINISEPARATOR + opBases[i];
+	}
+
+	@OriginalMember(owner = "client!ui", name = "a", descriptor = "(Z)Ljava/lang/String;")
+	public static String method4328() {
+		@Pc(31) String local31;
+		if (anInt1334 == 1 && size < 2) {
+			local31 = LocalisedText.USE + LocalisedText.MINISEPARATOR + aString365 + " ->";
+		} else if (Static3.aBoolean177 && size < 2) {
+			local31 = Static4.aString140 + LocalisedText.MINISEPARATOR + aString81 + " ->";
+		} else if (Static2.shiftClick && Keyboard.pressedKeys[81] && size > 2) {
+			local31 = getOp(size - 2);
+		} else {
+			local31 = getOp(size - 1);
+		}
+		if (size > 2) {
+			local31 = local31 + "<col=ffffff> / " + (size - 2) + LocalisedText.MOREOPTIONS;
+		}
+		return local31;
 	}
 }

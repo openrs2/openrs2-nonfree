@@ -83,9 +83,6 @@ public final class Static6 {
 	@OriginalMember(owner = "client!qk", name = "r", descriptor = "I")
 	public static int anInt4384 = 0;
 
-	@OriginalMember(owner = "client!ql", name = "e", descriptor = "I")
-	public static int anInt4393 = -1;
-
 	@OriginalMember(owner = "client!qm", name = "c", descriptor = "I")
 	public static int anInt4398 = 1;
 
@@ -106,9 +103,6 @@ public final class Static6 {
 
 	@OriginalMember(owner = "client!rh", name = "W", descriptor = "I")
 	public static int anInt4546 = 0;
-
-	@OriginalMember(owner = "client!rh", name = "ib", descriptor = "Z")
-	public static boolean aBoolean317 = false;
 
 	@OriginalMember(owner = "client!rh", name = "kb", descriptor = "I")
 	public static int anInt4555 = (int) (Math.random() * 17.0D) - 8;
@@ -193,9 +187,6 @@ public final class Static6 {
 
 	@OriginalMember(owner = "client!sn", name = "ib", descriptor = "I")
 	public static int anInt4946 = 0;
-
-	@OriginalMember(owner = "client!sn", name = "rb", descriptor = "I")
-	public static int anInt4953 = -1;
 
 	@OriginalMember(owner = "client!te", name = "F", descriptor = "I")
 	public static int anInt5120 = -1;

@@ -857,7 +857,7 @@ public final class SoftwareModel extends Model {
 			}
 		}
 		if (aBoolean246) {
-			Static23.method2459(local5 - 1, anIntArray360, anIntArray369, 0);
+			ArrayUtils.sort(anIntArray369, anIntArray360, 0, local5 - 1);
 			if (this.trianglePriorities == null) {
 				for (@Pc(566) int local566 = 0; local566 < local5; local566++) {
 					this.method2904(anIntArray360[local566]);

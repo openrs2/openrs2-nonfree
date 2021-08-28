@@ -163,7 +163,7 @@ public final class Static30 {
 								continue;
 							}
 							if (component.anInt5904 == 1400) {
-								Static20.method1928(component.height, local122, local128, component.width);
+								WorldMap.render(local128, local122, component.width, component.height);
 								Static2.aBooleanArray8[rectangle] = true;
 								InterfaceList.rectangleRedraw[rectangle] = true;
 								if (GlRenderer.enabled) {
@@ -174,7 +174,7 @@ public final class Static30 {
 								continue;
 							}
 							if (component.anInt5904 == 1401) {
-								Static36.method4524(component.height, component.width, local128, local122);
+								WorldMap.method4524(component.height, component.width, local128, local122);
 								Static2.aBooleanArray8[rectangle] = true;
 								InterfaceList.rectangleRedraw[rectangle] = true;
 								if (GlRenderer.enabled) {
@@ -317,7 +317,7 @@ public final class Static30 {
 												@Pc(1402) int objId = component.objTypes[local1338] - 1;
 												if (local1369 + 32 > arg8 && local1369 < arg5 && arg6 < local1359 + 32 && local1359 < arg4 || component == Static5.aClass185_10 && Static1.anInt91 == local1338) {
 													@Pc(1463) Sprite local1463;
-													if (Static2.anInt1334 == 1 && local1338 == Static1.anInt314 && component.id == Static5.anInt4302) {
+													if (MiniMenu.anInt1334 == 1 && local1338 == Static1.anInt314 && component.id == Static5.anInt4302) {
 														local1463 = ObjTypeList.getSprite(objId, component.objCounts[local1338], 2, component.showObjCount, null, 0);
 													} else {
 														local1463 = ObjTypeList.getSprite(objId, component.objCounts[local1338], 1, component.showObjCount, null, 3153952);
@@ -856,8 +856,8 @@ public final class Static30 {
 	@OriginalMember(owner = "client!qj", name = "f", descriptor = "(B)V")
 	public static void method3597() {
 		SceneGraph.clear();
-		for (@Pc(12) int local12 = 0; local12 < 4; local12++) {
-			PathFinder.collisionMaps[local12].clear();
+		for (@Pc(12) int i = 0; i < 4; i++) {
+			PathFinder.collisionMaps[i].clear();
 		}
 		System.gc();
 	}

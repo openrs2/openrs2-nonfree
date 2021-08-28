@@ -6,127 +6,6 @@ import org.openrs2.deob.annotation.Pc;
 
 public final class Static28 {
 
-	@OriginalMember(owner = "client!ol", name = "a", descriptor = "(Lclient!fg;IIIZILclient!nb;Lclient!ho;)V")
-	public static void method3244(@OriginalArg(0) MapElement element, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) boolean arg4, @OriginalArg(6) MapElementBounds arg5, @OriginalArg(7) MelType type) {
-		@Pc(3) WorldMapFont font = null;
-		if (type.textSize == 0) {
-			if ((double) Static3.aFloat68 == 3.0D) {
-				font = WorldMap.font11;
-			}
-			if ((double) Static3.aFloat68 == 4.0D) {
-				font = WorldMap.font12;
-			}
-			if ((double) Static3.aFloat68 == 6.0D) {
-				font = WorldMap.font14;
-			}
-			if ((double) Static3.aFloat68 >= 8.0D) {
-				font = WorldMap.font17;
-			}
-		} else if (type.textSize == 1) {
-			if ((double) Static3.aFloat68 == 3.0D) {
-				font = WorldMap.font14;
-			}
-			if ((double) Static3.aFloat68 == 4.0D) {
-				font = WorldMap.font17;
-			}
-			if ((double) Static3.aFloat68 == 6.0D) {
-				font = WorldMap.font19;
-			}
-			if ((double) Static3.aFloat68 >= 8.0D) {
-				font = WorldMap.font22;
-			}
-		} else if (type.textSize == 2) {
-			if ((double) Static3.aFloat68 == 3.0D) {
-				font = WorldMap.font19;
-			}
-			if ((double) Static3.aFloat68 == 4.0D) {
-				font = WorldMap.font22;
-			}
-			if ((double) Static3.aFloat68 == 6.0D) {
-				font = WorldMap.font26;
-			}
-			if ((double) Static3.aFloat68 >= 8.0D) {
-				font = WorldMap.font30;
-			}
-		}
-		if (font == null) {
-			return;
-		}
-		@Pc(123) int textColor = type.textColor;
-		if (element.hover && type.hoverTextColor != -1) {
-			textColor = type.hoverTextColor;
-		}
-		@Pc(141) int local141 = Fonts.p11Full.splitParagraph(type.text, Static5.aStringArray24, null);
-		@Pc(144) int local144 = element.yOffset;
-		@Pc(164) int local164;
-		if (arg4) {
-			local164 = local144 - font.method2328() * local141 / 2;
-		} else {
-			local164 = local144 - arg2 - (local141 - 1) * font.method2332() - font.method2328() / 2;
-		}
-		@Pc(181) int local181 = local164 - font.method2328();
-		@Pc(188) int local188 = local164 + font.method2328() / 2;
-		@Pc(190) int local190 = 0;
-		for (@Pc(192) int local192 = 0; local192 < local141; local192++) {
-			@Pc(199) String local199 = Static5.aStringArray24[local192];
-			if (local141 - 1 > local192) {
-				local199 = local199.substring(0, local199.length() - 4);
-			}
-			@Pc(221) int local221 = font.getStringWidth(local199);
-			if (local190 < local221) {
-				local190 = local221;
-			}
-		}
-		arg5.textMinX = element.xOffset + arg1 - local190 / 2;
-		arg5.textMaxX = arg1 + element.xOffset + local190 / 2;
-		arg5.textMinY = local181 + arg3;
-		arg5.textMaxY = arg3 + local181 + font.method2332() * local141;
-		@Pc(274) int local274 = local181 + 2;
-		@Pc(284) int local284 = element.xOffset - local190 / 2 - 5;
-		if (type.fillColor != 0) {
-			SoftwareRaster.fillRectAlpha(local284, local274, local190 + 10, local181 + local141 * font.method2332() + 1 - local274, type.fillColor, type.fillColor >>> 24);
-		}
-		if (type.outlineColor != 0) {
-			SoftwareRaster.drawRectAlpha(local284, local274, local190 + 10, font.method2332() * local141 + local181 + 1 - local274, type.outlineColor, type.outlineColor >>> 24);
-		}
-		for (@Pc(343) int local343 = 0; local343 < local141; local343++) {
-			@Pc(354) String local354 = Static5.aStringArray24[local343];
-			if (local141 - 1 > local343) {
-				local354 = local354.substring(0, local354.length() - 4);
-			}
-			@Pc(376) int local376 = font.getStringWidth(local354);
-			if (local190 < local376) {
-				local190 = local376;
-			}
-			font.renderStringCenter(local354, element.xOffset, local188, textColor);
-			local188 += font.method2332();
-		}
-	}
-
-	@OriginalMember(owner = "client!om", name = "a", descriptor = "(B)V")
-	public static void method3249() {
-		if (Static1.anInt331 < 0) {
-			Static1.anInt331 = 0;
-			Static6.anInt4393 = -1;
-			Static1.anInt929 = -1;
-		}
-		if (Static1.anInt331 > Static3.anInt2965) {
-			Static1.anInt331 = Static3.anInt2965;
-			Static1.anInt929 = -1;
-			Static6.anInt4393 = -1;
-		}
-		if (Static7.anInt5231 < 0) {
-			Static6.anInt4393 = -1;
-			Static7.anInt5231 = 0;
-			Static1.anInt929 = -1;
-		}
-		if (Static3.anInt2960 < Static7.anInt5231) {
-			Static1.anInt929 = -1;
-			Static6.anInt4393 = -1;
-			Static7.anInt5231 = Static3.anInt2960;
-		}
-	}
-
 	@OriginalMember(owner = "client!om", name = "b", descriptor = "(B)V")
 	public static void method3252() {
 		if (Static5.aFloat147 < 128.0F) {
@@ -185,25 +64,6 @@ public final class Static28 {
 		if (InterfaceList.load(id)) {
 			Static29.method3480(InterfaceList.components[id], arg1);
 		}
-	}
-
-	@OriginalMember(owner = "client!p", name = "a", descriptor = "(IIIIB)V")
-	public static void method3319(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) {
-		Static6.anInt4393 = -1;
-		@Pc(7) float local7 = (float) Static3.anInt2960 / (float) Static3.anInt2965;
-		Static1.anInt929 = -1;
-		@Pc(15) int local15 = arg1;
-		@Pc(17) int local17 = arg2;
-		if (local7 >= 1.0F) {
-			local15 = (int) ((float) arg2 / local7);
-		} else {
-			local17 = (int) ((float) arg1 * local7);
-		}
-		arg0 -= (arg2 - local17) / 2;
-		arg3 -= (arg1 - local15) / 2;
-		Static1.anInt331 = Static3.anInt2965 * arg3 / local15;
-		Static7.anInt5231 = Static3.anInt2960 * arg0 / local17;
-		method3249();
 	}
 
 	@OriginalMember(owner = "client!p", name = "a", descriptor = "(III[B)Z")
@@ -345,30 +205,6 @@ public final class Static28 {
 			Sprites.cross[Cross.milliseconds / 100 + 4].renderTransparent(Cross.x - 8, Cross.y - 8);
 		}
 		Player.setInTutorialIsland();
-	}
-
-	@OriginalMember(owner = "client!pa", name = "a", descriptor = "(ZLclient!gl;Z)V")
-	public static void method3331(@OriginalArg(0) boolean arg0, @OriginalArg(1) Font arg1) {
-		if (GlRenderer.enabled || arg0) {
-			@Pc(10) int height = GameShell.canvasHeight;
-			@Pc(16) int width = height * 956 / 503;
-			TitleScreen.titleBg.renderResizedTransparent((GameShell.canvasWidth - width) / 2, 0, width, height);
-			TitleScreen.logo.renderTransparent(GameShell.canvasWidth / 2 - TitleScreen.logo.width / 2, 18);
-		}
-		arg1.renderCenter(client.game == 1 ? LocalisedText.GAME1_LOADING : LocalisedText.GAME0_LOADING, GameShell.canvasWidth / 2, GameShell.canvasHeight / 2 - 26, 16777215, -1);
-		@Pc(70) int local70 = GameShell.canvasHeight / 2 - 18;
-		if (GlRenderer.enabled) {
-			GlRaster.drawRect(GameShell.canvasWidth / 2 - 152, local70, 304, 34, 9179409);
-			GlRaster.drawRect(GameShell.canvasWidth / 2 - 151, local70 + 1, 302, 32, 0);
-			GlRaster.fillRect(GameShell.canvasWidth / 2 - 150, local70 + 2, client.mainLoadPercentage * 3, 30, 9179409);
-			GlRaster.fillRect(GameShell.canvasWidth / 2 + client.mainLoadPercentage * 3 - 150, local70 + 2, 300 - client.mainLoadPercentage * 3, 30, 0);
-		} else {
-			SoftwareRaster.drawRect(GameShell.canvasWidth / 2 - 152, local70, 304, 34, 9179409);
-			SoftwareRaster.drawRect(GameShell.canvasWidth / 2 - 151, local70 + 1, 302, 32, 0);
-			SoftwareRaster.fillRect(GameShell.canvasWidth / 2 - 150, local70 + 2, client.mainLoadPercentage * 3, 30, 9179409);
-			SoftwareRaster.fillRect(client.mainLoadPercentage * 3 + GameShell.canvasWidth / 2 - 150, local70 + 2, 300 - client.mainLoadPercentage * 3, 30, 0);
-		}
-		arg1.renderCenter(client.mainLoadSecondaryText, GameShell.canvasWidth / 2, GameShell.canvasHeight / 2 + 4, 16777215, -1);
 	}
 
 }

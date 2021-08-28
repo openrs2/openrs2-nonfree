@@ -502,4 +502,100 @@ public final class ArrayUtils {
 	public static void sort(@OriginalArg(1) long[] keys, @OriginalArg(2) Object[] values) {
 		sort(keys, values, 0, keys.length - 1);
 	}
+
+	@OriginalMember(owner = "client!ch", name = "a", descriptor = "(II[JI[I)V")
+	public static void sort(@OriginalArg(2) long[] keys, @OriginalArg(4) int[] values, @OriginalArg(3) int lo, @OriginalArg(1) int hi) {
+		if (hi <= lo) {
+			return;
+		}
+		@Pc(15) int mid = (hi + lo) / 2;
+		@Pc(17) int i = lo;
+		@Pc(21) long pivotKey = keys[mid];
+		keys[mid] = keys[hi];
+		keys[hi] = pivotKey;
+		@Pc(35) int pivotValue = values[mid];
+		values[mid] = values[hi];
+		values[hi] = pivotValue;
+		for (@Pc(47) int j = lo; j < hi; j++) {
+			if (keys[j] < (long) (j & 0x1) + pivotKey) {
+				@Pc(70) long key = keys[j];
+				keys[j] = keys[i];
+				keys[i] = key;
+				@Pc(84) int value = values[j];
+				values[j] = values[i];
+				values[i++] = value;
+			}
+		}
+		keys[hi] = keys[i];
+		keys[i] = pivotKey;
+		values[hi] = values[i];
+		values[i] = pivotValue;
+		sort(keys, values, lo, i - 1);
+		sort(keys, values, i + 1, hi);
+	}
+
+	@OriginalMember(owner = "client!ho", name = "a", descriptor = "(B[I[J)V")
+	public static void sort(@OriginalArg(2) long[] keys, @OriginalArg(1) int[] values) {
+		sort(keys, values, 0, keys.length - 1);
+	}
+
+	@OriginalMember(owner = "client!gn", name = "a", descriptor = "(B[IIII)V")
+	public static void fillRange(@OriginalArg(1) int[] dest, @OriginalArg(3) int start, @OriginalArg(4) int end, @OriginalArg(2) int value) {
+		end--;
+		@Pc(10) int end2 = end - 7;
+		@Pc(16) int start2 = start - 1;
+		while (start2 < end2) {
+			start = start2 + 1;
+			dest[start] = value;
+			start++;
+			dest[start] = value;
+			start++;
+			dest[start] = value;
+			start++;
+			dest[start] = value;
+			start++;
+			dest[start] = value;
+			start++;
+			dest[start] = value;
+			start++;
+			dest[start] = value;
+			start2 = start + 1;
+			dest[start2] = value;
+		}
+		while (start2 < end) {
+			start2++;
+			dest[start2] = value;
+		}
+	}
+
+	@OriginalMember(owner = "client!lb", name = "a", descriptor = "(I[I[III)V")
+	public static void sort(@OriginalArg(2) int[] keys, @OriginalArg(1) int[] values, @OriginalArg(4) int lo, @OriginalArg(0) int hi) {
+		if (lo >= hi) {
+			return;
+		}
+		@Pc(25) int i = lo;
+		@Pc(31) int mid = (hi + lo) / 2;
+		@Pc(35) int pivotKey = keys[mid];
+		keys[mid] = keys[hi];
+		keys[hi] = pivotKey;
+		@Pc(49) int pivotValue = values[mid];
+		values[mid] = values[hi];
+		values[hi] = pivotValue;
+		for (@Pc(61) int j = lo; j < hi; j++) {
+			if (keys[j] > (j & 0x1) + pivotKey) {
+				@Pc(81) int key = keys[j];
+				keys[j] = keys[i];
+				keys[i] = key;
+				@Pc(95) int value = values[j];
+				values[j] = values[i];
+				values[i++] = value;
+			}
+		}
+		keys[hi] = keys[i];
+		keys[i] = pivotKey;
+		values[hi] = values[i];
+		values[i] = pivotValue;
+		sort(keys, values, lo, i - 1);
+		sort(keys, values, i + 1, hi);
+	}
 }

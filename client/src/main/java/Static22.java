@@ -37,7 +37,7 @@ public final class Static22 {
 		@Pc(23) int local23 = IntUtils.clamp(arg0, Static2.anInt902, Static3.anInt2553);
 		@Pc(29) int local29 = IntUtils.clamp(arg1, Static2.anInt902, Static3.anInt2553);
 		for (@Pc(31) int local31 = local11; local31 <= local17; local31++) {
-			Static18.method1656(Static5.anIntArrayArray36[local31], arg3, local23, local29);
+			ArrayUtils.fillRange(Static5.anIntArrayArray36[local31], local23, local29, arg3);
 		}
 	}
 
@@ -64,18 +64,18 @@ public final class Static22 {
 		@Pc(43) int local43 = IntUtils.clamp(arg6 + arg1, Static4.anInt3086, Static5.anInt4230);
 		@Pc(52) int local52 = IntUtils.clamp(arg0 - arg1, Static4.anInt3086, Static5.anInt4230);
 		for (@Pc(54) int local54 = local11; local54 < local43; local54++) {
-			Static18.method1656(Static5.anIntArrayArray36[local54], arg3, local28, local34);
+			ArrayUtils.fillRange(Static5.anIntArrayArray36[local54], local28, local34, arg3);
 		}
 		for (@Pc(74) int local74 = local22; local74 > local52; local74--) {
-			Static18.method1656(Static5.anIntArrayArray36[local74], arg3, local28, local34);
+			ArrayUtils.fillRange(Static5.anIntArrayArray36[local74], local28, local34, arg3);
 		}
 		@Pc(97) int local97 = IntUtils.clamp(arg4 + arg1, Static2.anInt902, Static3.anInt2553);
 		@Pc(106) int local106 = IntUtils.clamp(arg5 - arg1, Static2.anInt902, Static3.anInt2553);
 		for (@Pc(108) int local108 = local43; local108 <= local52; local108++) {
 			@Pc(119) int[] local119 = Static5.anIntArrayArray36[local108];
-			Static18.method1656(local119, arg3, local28, local97);
-			Static18.method1656(local119, arg2, local97, local106);
-			Static18.method1656(local119, arg3, local106, local34);
+			ArrayUtils.fillRange(local119, local28, local97, arg3);
+			ArrayUtils.fillRange(local119, local97, local106, arg2);
+			ArrayUtils.fillRange(local119, local106, local34, arg3);
 		}
 	}
 

@@ -22,9 +22,6 @@ public final class Static4 {
 	@OriginalMember(owner = "client!k", name = "d", descriptor = "I")
 	public static int anInt2741;
 
-	@OriginalMember(owner = "client!kf", name = "P", descriptor = "I")
-	public static int anInt2853;
-
 	@OriginalMember(owner = "client!kg", name = "b", descriptor = "Ljava/nio/ByteBuffer;")
 	public static ByteBuffer aByteBuffer9;
 
@@ -126,9 +123,6 @@ public final class Static4 {
 
 	@OriginalMember(owner = "client!mj", name = "c", descriptor = "I")
 	public static int anInt3341;
-
-	@OriginalMember(owner = "client!mm", name = "b", descriptor = "Lclient!uj;")
-	public static Sprite aClass4_Sub3_Sub14_3;
 
 	@OriginalMember(owner = "client!mm", name = "g", descriptor = "I")
 	public static int centralZoneX;

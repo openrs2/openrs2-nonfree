@@ -46,7 +46,7 @@ public final class Static32 {
 
 	@OriginalMember(owner = "client!sc", name = "a", descriptor = "(IZ)V")
 	public static void method3917(@OriginalArg(1) boolean arg0) {
-		Static9.method763();
+		Static9.audioLoop();
 		if (Static4.anInt3304 != 30 && Static4.anInt3304 != 25) {
 			return;
 		}
@@ -64,7 +64,7 @@ public final class Static32 {
 				Static1.aBoolean38 = true;
 			}
 		}
-		Static9.method763();
+		Static9.audioLoop();
 	}
 
 	@OriginalMember(owner = "client!sc", name = "a", descriptor = "(IB)Z")
@@ -229,7 +229,7 @@ public final class Static32 {
 						}
 					} else if (!Preferences.groundTextures) {
 						@Pc(373) int local373 = Static4.textureProvider.getAverageColor(arg0.anIntArray572[local122]);
-						Static23.method2543(local156, local160, local164, local144, local148, local152, Static10.method302(local373, arg0.anIntArray576[local122]), Static10.method302(local373, arg0.anIntArray575[local122]), Static10.method302(local373, arg0.anIntArray574[local122]));
+						Static23.method2543(local156, local160, local164, local144, local148, local152, ColorUtils.multiplyLightness(local373, arg0.anIntArray576[local122]), ColorUtils.multiplyLightness(local373, arg0.anIntArray575[local122]), ColorUtils.multiplyLightness(local373, arg0.anIntArray574[local122]));
 					} else if (arg0.aBoolean353) {
 						Static23.method2558(local156, local160, local164, local144, local148, local152, arg0.anIntArray576[local122], arg0.anIntArray575[local122], arg0.anIntArray574[local122], Static7.anIntArray585[0], Static7.anIntArray585[1], Static7.anIntArray585[3], Static7.anIntArray578[0], Static7.anIntArray578[1], Static7.anIntArray578[3], Static7.anIntArray573[0], Static7.anIntArray573[1], Static7.anIntArray573[3], arg0.anIntArray572[local122]);
 					} else {
@@ -555,9 +555,9 @@ public final class Static32 {
 			@Pc(185) int local185 = IntUtils.clamp(arg2 + arg5, Static2.anInt902, Static3.anInt2553);
 			@Pc(193) int local193 = IntUtils.clamp(arg2 - local16, Static2.anInt902, Static3.anInt2553);
 			@Pc(203) int local203 = IntUtils.clamp(arg2 + local16, Static2.anInt902, Static3.anInt2553);
-			Static18.method1656(local166, arg1, local177, local193);
-			Static18.method1656(local166, arg0, local193, local203);
-			Static18.method1656(local166, arg1, local203, local185);
+			ArrayUtils.fillRange(local166, local177, local193, arg1);
+			ArrayUtils.fillRange(local166, local193, local203, arg0);
+			ArrayUtils.fillRange(local166, local203, local185, arg1);
 		}
 		while (local9 > 0) {
 			if (local69 < 0) {
@@ -614,22 +614,22 @@ public final class Static32 {
 					@Pc(418) int local418 = IntUtils.clamp(arg2 - local11, Static2.anInt902, Static3.anInt2553);
 					if (Static4.anInt3086 <= local367) {
 						@Pc(426) int[] local426 = Static5.anIntArrayArray36[local367];
-						Static18.method1656(local426, arg1, local398, local418);
-						Static18.method1656(local426, arg0, local418, local409);
-						Static18.method1656(local426, arg1, local409, local389);
+						ArrayUtils.fillRange(local426, local398, local418, arg1);
+						ArrayUtils.fillRange(local426, local418, local409, arg0);
+						ArrayUtils.fillRange(local426, local409, local389, arg1);
 					}
 					if (Static5.anInt4230 >= local363) {
 						@Pc(456) int[] local456 = Static5.anIntArrayArray36[local363];
-						Static18.method1656(local456, arg1, local398, local418);
-						Static18.method1656(local456, arg0, local418, local409);
-						Static18.method1656(local456, arg1, local409, local389);
+						ArrayUtils.fillRange(local456, local398, local418, arg1);
+						ArrayUtils.fillRange(local456, local418, local409, arg0);
+						ArrayUtils.fillRange(local456, local409, local389, arg1);
 					}
 				} else {
 					if (local367 >= Static4.anInt3086) {
-						Static18.method1656(Static5.anIntArrayArray36[local367], arg1, local398, local389);
+						ArrayUtils.fillRange(Static5.anIntArrayArray36[local367], local398, local389, arg1);
 					}
 					if (Static5.anInt4230 >= local363) {
-						Static18.method1656(Static5.anIntArrayArray36[local363], arg1, local398, local389);
+						ArrayUtils.fillRange(Static5.anIntArrayArray36[local363], local398, local389, arg1);
 					}
 				}
 			}

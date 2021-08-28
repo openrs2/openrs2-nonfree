@@ -198,7 +198,7 @@ public final class Static24 {
 				client.frameBuffer = FrameBuffer.create(GameShell.canvas, GameShell.canvasWidth, GameShell.canvasHeight);
 				SoftwareRaster.clear();
 				if (Static4.anInt3304 == 5) {
-					Static28.method3331(true, Fonts.b12Full);
+					LoadingBar.render(true, Fonts.b12Full);
 				} else {
 					Static37.method4716(LocalisedText.LOADING, false);
 				}
@@ -288,17 +288,6 @@ public final class Static24 {
 		GameShell.fullRedraw = true;
 	}
 
-	@OriginalMember(owner = "client!mb", name = "a", descriptor = "(ZIIII)V")
-	public static void method2947(@OriginalArg(0) boolean arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) {
-		Static10.method384(false);
-		Static2.aBoolean82 = arg0;
-		Static6.anInt4953 = arg2;
-		Static3.anInt2571 = arg1;
-		WorldMap.setCurrentMap(arg3);
-		Static3.aClass84_10 = new HashTable(8);
-		Static3.aClass84_9 = new HashTable(8);
-	}
-
 	@OriginalMember(owner = "client!me", name = "a", descriptor = "(I)V")
 	public static void method2697() {
 		FloTypeList.clear();
@@ -321,8 +310,8 @@ public final class Static24 {
 		PlayerAppearance.clear();
 		Component.clear();
 		if (client.modeWhat != 0) {
-			for (@Pc(54) int local54 = 0; local54 < Static6.aByteArrayArray35.length; local54++) {
-				Static6.aByteArrayArray35[local54] = null;
+			for (@Pc(54) int i = 0; i < Static6.aByteArrayArray35.length; i++) {
+				Static6.aByteArrayArray35[i] = null;
 			}
 			Static7.anInt5425 = 0;
 		}
@@ -349,34 +338,6 @@ public final class Static24 {
 		HitBarList.hitBars.clear();
 	}
 
-	@OriginalMember(owner = "client!mf", name = "a", descriptor = "(Lclient!qc;I)V")
-	public static void method2705(@OriginalArg(0) PathingEntity arg0) {
-		if (client.loop == arg0.anInt3966 || arg0.seqId == -1 || arg0.seqDelay != 0 || arg0.anInt4044 + 1 > SeqTypeList.get(arg0.seqId).anIntArray94[arg0.anInt3970]) {
-			@Pc(41) int local41 = arg0.anInt3966 - arg0.anInt4034;
-			@Pc(46) int local46 = client.loop - arg0.anInt4034;
-			@Pc(57) int local57 = arg0.anInt3973 * 128 + arg0.getSize() * 64;
-			@Pc(71) int local71 = arg0.anInt4033 * 128 + arg0.getSize() * 64;
-			@Pc(82) int local82 = arg0.anInt4013 * 128 + arg0.getSize() * 64;
-			@Pc(95) int local95 = arg0.anInt4025 * 128 + arg0.getSize() * 64;
-			arg0.zFine = ((local41 - local46) * local71 + local46 * local95) / local41;
-			arg0.xFine = (local57 * (local41 - local46) + local82 * local46) / local41;
-		}
-		if (arg0.anInt4008 == 0) {
-			arg0.targetAngle = 1024;
-		}
-		if (arg0.anInt4008 == 1) {
-			arg0.targetAngle = 1536;
-		}
-		if (arg0.anInt4008 == 2) {
-			arg0.targetAngle = 0;
-		}
-		arg0.movementBlockedLoops = 0;
-		if (arg0.anInt4008 == 3) {
-			arg0.targetAngle = 512;
-		}
-		arg0.angle = arg0.targetAngle;
-	}
-
 	@OriginalMember(owner = "client!mg", name = "a", descriptor = "(ZI)V")
 	public static void method2708(@OriginalArg(0) boolean arg0) {
 		@Pc(11) byte local11;
@@ -389,7 +350,7 @@ public final class Static24 {
 			local11 = 4;
 		}
 		for (@Pc(27) int local27 = 0; local27 < local11; local27++) {
-			Static9.method763();
+			Static9.audioLoop();
 			for (@Pc(38) int local38 = 0; local38 < 13; local38++) {
 				for (@Pc(43) int local43 = 0; local43 < 13; local43++) {
 					@Pc(54) int local54 = Static7.zones[local27][local38][local43];
@@ -411,20 +372,6 @@ public final class Static24 {
 				}
 			}
 		}
-	}
-
-	@OriginalMember(owner = "client!mg", name = "a", descriptor = "(I)Lclient!fg;")
-	public static MapElement method2713() {
-		if (Static3.aClass175_12 == null) {
-			return null;
-		}
-		for (@Pc(22) MapElement local22 = (MapElement) Static1.aClass130_1.next(); local22 != null; local22 = (MapElement) Static1.aClass130_1.next()) {
-			@Pc(29) MelType local29 = MelTypeList.get(local22.id);
-			if (local29 != null && local29.aBoolean157 && local29.isVisible()) {
-				return local22;
-			}
-		}
-		return null;
 	}
 
 }

@@ -212,4 +212,25 @@ public final class Sprites {
 			Sprites.hintMapEdge = hintMapEdge;
 		}
 	}
+
+	@OriginalMember(owner = "client!gd", name = "a", descriptor = "(I)V")
+	public static void clear() {
+		scrollbar = null;
+		Fonts.p11FullSoftware = null;
+		nameIcons = null;
+		mapDots = null;
+		cross = null;
+		Fonts.p12Full = null;
+		hintHeadIcons = null;
+		headIconsPrayer = null;
+		Fonts.b12Full = null;
+		headIconsPk = null;
+		Fonts.p11Full = null;
+		compass = null;
+		hitBarDefault = null;
+		hintMapEdge = null;
+		mapFlag = null;
+		hintMapMarkers = null;
+		hitMarks = null;
+	}
 }

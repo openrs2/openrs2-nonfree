@@ -9,6 +9,27 @@ import org.openrs2.deob.annotation.Pc;
 @OriginalClass("client!bj")
 public final class UnderwaterMaterialRenderer implements MaterialRenderer {
 
+	@OriginalMember(owner = "client!bj", name = "d", descriptor = "()V")
+	public static void method314() {
+		@Pc(1) GL gl = GlRenderer.gl;
+		gl.glClientActiveTexture(method315());
+		gl.glDisableClientState(GL.GL_TEXTURE_COORD_ARRAY);
+		gl.glClientActiveTexture(GL.GL_TEXTURE0);
+	}
+
+	@OriginalMember(owner = "client!bj", name = "e", descriptor = "()I")
+	public static int method315() {
+		return Static1.aBoolean21 ? 33986 : 33985;
+	}
+
+	@OriginalMember(owner = "client!bj", name = "f", descriptor = "()V")
+	public static void method316() {
+		@Pc(1) GL gl = GlRenderer.gl;
+		gl.glClientActiveTexture(method315());
+		gl.glEnableClientState(GL.GL_TEXTURE_COORD_ARRAY);
+		gl.glClientActiveTexture(GL.GL_TEXTURE0);
+	}
+
 	@OriginalMember(owner = "client!bj", name = "a", descriptor = "I")
 	private int listId = -1;
 

@@ -646,7 +646,7 @@ public final class Static29 {
 		@Pc(19) int local19 = -arg2;
 		@Pc(27) int local27 = IntUtils.clamp(arg2 + arg1, Static2.anInt902, Static3.anInt2553);
 		@Pc(35) int local35 = IntUtils.clamp(arg1 - arg2, Static2.anInt902, Static3.anInt2553);
-		Static18.method1656(Static5.anIntArrayArray36[arg0], arg3, local35, local27);
+		ArrayUtils.fillRange(Static5.anIntArrayArray36[arg0], local35, local27, arg3);
 		while (local14 > local3) {
 			local16 += 2;
 			local19 += local16;
@@ -659,10 +659,10 @@ public final class Static29 {
 					@Pc(98) int local98 = IntUtils.clamp(arg1 + local3, Static2.anInt902, Static3.anInt2553);
 					@Pc(106) int local106 = IntUtils.clamp(arg1 - local3, Static2.anInt902, Static3.anInt2553);
 					if (Static5.anInt4230 >= local76) {
-						Static18.method1656(Static5.anIntArrayArray36[local76], arg3, local106, local98);
+						ArrayUtils.fillRange(Static5.anIntArrayArray36[local76], local106, local98, arg3);
 					}
 					if (Static4.anInt3086 <= local72) {
-						Static18.method1656(Static5.anIntArrayArray36[local72], arg3, local106, local98);
+						ArrayUtils.fillRange(Static5.anIntArrayArray36[local72], local106, local98, arg3);
 					}
 				}
 			}
@@ -673,10 +673,10 @@ public final class Static29 {
 				@Pc(166) int local166 = IntUtils.clamp(arg1 + local14, Static2.anInt902, Static3.anInt2553);
 				@Pc(174) int local174 = IntUtils.clamp(arg1 - local14, Static2.anInt902, Static3.anInt2553);
 				if (local142 <= Static5.anInt4230) {
-					Static18.method1656(Static5.anIntArrayArray36[local142], arg3, local174, local166);
+					ArrayUtils.fillRange(Static5.anIntArrayArray36[local142], local174, local166, arg3);
 				}
 				if (Static4.anInt3086 <= local138) {
-					Static18.method1656(Static5.anIntArrayArray36[local138], arg3, local174, local166);
+					ArrayUtils.fillRange(Static5.anIntArrayArray36[local138], local174, local166, arg3);
 				}
 			}
 		}
@@ -1053,13 +1053,13 @@ public final class Static29 {
 			InterfaceList.keyChars[InterfaceList.keyQueueSize] = Keyboard.keyChar;
 			InterfaceList.keyQueueSize++;
 		}
-		Static5.aClass185_12 = null;
+		WorldMap.component = null;
 		if (InterfaceList.topLevelInterface != -1) {
 			Static14.method1060(InterfaceList.topLevelInterface, GameShell.canvasWidth, 0, 0, 0, 0, GameShell.canvasHeight);
 		}
 		InterfaceList.transmitTimer++;
-		if (Static5.aClass185_12 != null) {
-			Static25.method2770();
+		if (WorldMap.component != null) {
+			WorldMap.loop();
 		}
 		while (true) {
 			@Pc(1562) Component highPriorityComponent;
@@ -1082,7 +1082,7 @@ public final class Static29 {
 									do {
 										lowPriorityRequest = (HookRequest) InterfaceList.lowPriorityRequests.removeHead();
 										if (lowPriorityRequest == null) {
-											if (Static5.aClass185_12 == null) {
+											if (WorldMap.component == null) {
 												Static1.anInt640 = 0;
 											}
 											if (Static1.aClass185_1 != null) {

@@ -408,7 +408,7 @@ public final class client extends GameShell {
 						}
 					}
 					Static32.method4024(npc);
-					Static34.method4247(npc);
+					PathingEntity.method4247(npc);
 					PathingEntity.method939(npc);
 					PathFinder.collisionMaps[Player.level].flagScenery(npc.xFine >> 7, npc.zFine >> 7, npc.getSize(), npc.getSize(), false, false);
 				}
@@ -1182,12 +1182,12 @@ public final class client extends GameShell {
 		if (GameShell.fullScreenFrame != null && !GameShell.focus && (Static4.anInt3304 == 30 || Static4.anInt3304 == 10)) {
 			Static35.setWindowMode(false, Preferences.windowMode, -1, -1);
 		}
-		@Pc(173) boolean local173 = false;
+		@Pc(173) boolean redraw = false;
 		if (GameShell.fullRedraw) {
-			local173 = true;
+			redraw = true;
 			GameShell.fullRedraw = false;
 		}
-		if (local173) {
+		if (redraw) {
 			Static29.method3430();
 		}
 		if (GlRenderer.enabled) {
@@ -1196,9 +1196,9 @@ public final class client extends GameShell {
 			}
 		}
 		if (Static4.anInt3304 == 0) {
-			Static9.method202(null, local173, mainLoadPercentage, mainLoadSecondaryText);
+			LoadingBarAwt.render(null, redraw, mainLoadPercentage, mainLoadSecondaryText);
 		} else if (Static4.anInt3304 == 5) {
-			Static28.method3331(false, Fonts.b12Full);
+			LoadingBar.render(false, Fonts.b12Full);
 		} else if (Static4.anInt3304 == 10) {
 			Static18.method1714();
 		} else if (Static4.anInt3304 == 25 || Static4.anInt3304 == 28) {
@@ -1227,7 +1227,7 @@ public final class client extends GameShell {
 			for (@Pc(436) int i = 0; i < InterfaceList.rectangles; i++) {
 				InterfaceList.rectangleRedraw[i] = false;
 			}
-		} else if ((Static4.anInt3304 == 30 || Static4.anInt3304 == 10) && Static1.rectDebug == 0 && !local173) {
+		} else if ((Static4.anInt3304 == 30 || Static4.anInt3304 == 10) && Static1.rectDebug == 0 && !redraw) {
 			try {
 				@Pc(391) Graphics graphics = GameShell.canvas.getGraphics();
 				for (@Pc(393) int i = 0; i < InterfaceList.rectangles; i++) {
@@ -1276,7 +1276,7 @@ public final class client extends GameShell {
 			js5MasterIndex.loop();
 		}
 		MidiPlayer.loop();
-		Static9.method763();
+		Static9.audioLoop();
 		Keyboard.loop();
 		Mouse.loop();
 		if (GlRenderer.enabled) {

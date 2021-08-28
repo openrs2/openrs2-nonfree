@@ -7,9 +7,6 @@ public final class Static3 {
 	@OriginalMember(owner = "client!gf", name = "c", descriptor = "[I")
 	public static int[] mapGroupIds;
 
-	@OriginalMember(owner = "client!gg", name = "q", descriptor = "Lclient!vn;")
-	public static SoftwareSprite aClass4_Sub3_Sub14_Sub1_2;
-
 	@OriginalMember(owner = "client!gj", name = "a", descriptor = "I")
 	public static int anInt2092;
 
@@ -76,9 +73,6 @@ public final class Static3 {
 	@OriginalMember(owner = "client!ho", name = "l", descriptor = "I")
 	public static int anInt2272;
 
-	@OriginalMember(owner = "client!ho", name = "D", descriptor = "Lclient!ll;")
-	public static LinkedList aClass112_13;
-
 	@OriginalMember(owner = "client!id", name = "f", descriptor = "[I")
 	public static int[] underwaterLocGroupIds;
 
@@ -103,32 +97,8 @@ public final class Static3 {
 	@OriginalMember(owner = "client!ih", name = "G", descriptor = "Ljava/nio/ByteBuffer;")
 	public static ByteBuffer aByteBuffer5;
 
-	@OriginalMember(owner = "client!ii", name = "e", descriptor = "I")
-	public static int anInt2960;
-
-	@OriginalMember(owner = "client!ii", name = "f", descriptor = "Lclient!po;")
-	public static MapElementList aClass138_6;
-
-	@OriginalMember(owner = "client!ii", name = "g", descriptor = "I")
-	public static int anInt2961;
-
-	@OriginalMember(owner = "client!ii", name = "h", descriptor = "I")
-	public static int anInt2962;
-
-	@OriginalMember(owner = "client!ii", name = "i", descriptor = "F")
-	public static float aFloat68;
-
-	@OriginalMember(owner = "client!ii", name = "m", descriptor = "I")
-	public static int anInt2965;
-
 	@OriginalMember(owner = "client!ii", name = "n", descriptor = "I")
 	public static int anInt2966;
-
-	@OriginalMember(owner = "client!ii", name = "o", descriptor = "[[[I")
-	public static int[][][] anIntArrayArrayArray6;
-
-	@OriginalMember(owner = "client!ii", name = "p", descriptor = "[[[B")
-	public static byte[][][] aByteArrayArrayArray10;
 
 	@OriginalMember(owner = "client!ii", name = "q", descriptor = "I")
 	public static int anInt2967;
@@ -136,44 +106,23 @@ public final class Static3 {
 	@OriginalMember(owner = "client!ii", name = "r", descriptor = "I")
 	public static int anInt2968;
 
-	@OriginalMember(owner = "client!ii", name = "s", descriptor = "[[[B")
-	public static byte[][][] aByteArrayArrayArray11;
-
-	@OriginalMember(owner = "client!ii", name = "t", descriptor = "[[[B")
-	public static byte[][][] aByteArrayArrayArray12;
-
 	@OriginalMember(owner = "client!ii", name = "u", descriptor = "I")
 	public static int anInt2969;
 
 	@OriginalMember(owner = "client!ii", name = "v", descriptor = "I")
 	public static int anInt2970;
 
-	@OriginalMember(owner = "client!ii", name = "w", descriptor = "[[[B")
-	public static byte[][][] aByteArrayArrayArray13;
-
-	@OriginalMember(owner = "client!ii", name = "x", descriptor = "[[[B")
-	public static byte[][][] aByteArrayArrayArray14;
-
 	@OriginalMember(owner = "client!ii", name = "y", descriptor = "I")
 	public static int anInt2971;
 
-	@OriginalMember(owner = "client!ii", name = "z", descriptor = "[[[I")
-	public static int[][][] anIntArrayArrayArray7;
-
 	@OriginalMember(owner = "client!ii", name = "A", descriptor = "I")
 	public static int anInt2972;
-
-	@OriginalMember(owner = "client!ii", name = "B", descriptor = "[I")
-	public static int[] overlayColors;
 
 	@OriginalMember(owner = "client!ii", name = "C", descriptor = "I")
 	public static int anInt2973;
 
 	@OriginalMember(owner = "client!ij", name = "T", descriptor = "I")
 	public static int anInt2394;
-
-	@OriginalMember(owner = "client!il", name = "b", descriptor = "Lclient!ic;")
-	public static HashTable aClass84_9;
 
 	@OriginalMember(owner = "client!io", name = "E", descriptor = "I")
 	public static int anInt2496;
@@ -186,15 +135,6 @@ public final class Static3 {
 
 	@OriginalMember(owner = "client!jb", name = "f", descriptor = "Lclient!ib;")
 	public static SkyBox aClass4_Sub3_Sub10_4;
-
-	@OriginalMember(owner = "client!jc", name = "A", descriptor = "I")
-	public static int anInt2542;
-
-	@OriginalMember(owner = "client!jd", name = "a", descriptor = "I")
-	public static int anInt2554;
-
-	@OriginalMember(owner = "client!je", name = "m", descriptor = "Lclient!ic;")
-	public static HashTable aClass84_10;
 
 	@OriginalMember(owner = "client!jh", name = "i", descriptor = "I")
 	public static int anInt2586;
@@ -277,9 +217,6 @@ public final class Static3 {
 	@OriginalMember(owner = "client!ig", name = "g", descriptor = "[I")
 	public static int[] anIntArray199 = null;
 
-	@OriginalMember(owner = "client!ii", name = "c", descriptor = "Lclient!uk;")
-	public static final SecondaryLinkedList aClass175_12 = new SecondaryLinkedList();
-
 	@OriginalMember(owner = "client!ii", name = "j", descriptor = "I")
 	public static final int anInt2963 = (int) (Math.random() * 17.0D) - 8;
 
@@ -288,9 +225,6 @@ public final class Static3 {
 
 	@OriginalMember(owner = "client!ij", name = "M", descriptor = "[I")
 	public static final int[] anIntArray211 = new int[14];
-
-	@OriginalMember(owner = "client!ik", name = "B", descriptor = "Z")
-	public static boolean aBoolean166 = false;
 
 	@OriginalMember(owner = "client!im", name = "h", descriptor = "Lclient!jh;")
 	public static Class96 aClass96_1 = new Class96();
@@ -306,9 +240,6 @@ public final class Static3 {
 
 	@OriginalMember(owner = "client!jc", name = "R", descriptor = "I")
 	public static int anInt2553 = 100;
-
-	@OriginalMember(owner = "client!je", name = "e", descriptor = "I")
-	public static int anInt2571 = -1;
 
 	@OriginalMember(owner = "client!jf", name = "a", descriptor = "Lclient!ll;")
 	public static final LinkedList aClass112_26 = new LinkedList();

@@ -15,16 +15,6 @@ public final class Static27 {
 		return local39;
 	}
 
-	@OriginalMember(owner = "client!ob", name = "a", descriptor = "(I)V")
-	public static void method4239() {
-		MiniMap.state = 0;
-		MiniMap.aBoolean147 = false;
-		MiniMap.flagY = 0;
-		MiniMap.level = -1;
-		MiniMap.flagX = 0;
-		MiniMap.sequenceNumber = 0;
-	}
-
 	@OriginalMember(owner = "client!ob", name = "a", descriptor = "(IBIIII)V")
 	public static void method4241(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4) {
 		if (Static5.anInt4230 < arg2 || Static4.anInt3086 > arg1) {
@@ -53,7 +43,7 @@ public final class Static27 {
 		@Pc(71) int local71;
 		if (Static4.anInt3086 <= arg2) {
 			local71 = arg2 + 1;
-			Static18.method1656(Static5.anIntArrayArray36[arg2], arg3, arg4, arg0);
+			ArrayUtils.fillRange(Static5.anIntArrayArray36[arg2], arg4, arg0, arg3);
 		} else {
 			local71 = Static4.anInt3086;
 		}
@@ -62,7 +52,7 @@ public final class Static27 {
 			local89 = Static5.anInt4230;
 		} else {
 			local89 = arg1 - 1;
-			Static18.method1656(Static5.anIntArrayArray36[arg1], arg3, arg4, arg0);
+			ArrayUtils.fillRange(Static5.anIntArrayArray36[arg1], arg4, arg0, arg3);
 		}
 		if (local23 && local51) {
 			for (@Pc(106) int local106 = local71; local106 <= local89; local106++) {
@@ -123,8 +113,8 @@ public final class Static27 {
 
 	@OriginalMember(owner = "client!og", name = "c", descriptor = "(IIIIII)V")
 	public static void method4706(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4) {
-		Static18.method1656(Static5.anIntArrayArray36[arg3++], arg0, arg1, arg2);
-		Static18.method1656(Static5.anIntArrayArray36[arg4--], arg0, arg1, arg2);
+		ArrayUtils.fillRange(Static5.anIntArrayArray36[arg3++], arg1, arg2, arg0);
+		ArrayUtils.fillRange(Static5.anIntArrayArray36[arg4--], arg1, arg2, arg0);
 		for (@Pc(31) int local31 = arg3; local31 <= arg4; local31++) {
 			@Pc(42) int[] local42 = Static5.anIntArrayArray36[local31];
 			local42[arg1] = local42[arg2] = arg0;

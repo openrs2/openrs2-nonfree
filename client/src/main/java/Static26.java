@@ -7,124 +7,6 @@ import org.openrs2.deob.annotation.Pc;
 
 public final class Static26 {
 
-	@OriginalMember(owner = "client!nc", name = "a", descriptor = "(ILclient!fd;)V")
-	public static void method2934(@OriginalArg(1) Buffer buffer) {
-		@Pc(7) int local7 = Static3.anInt2963 >> 2 << 10;
-		@Pc(11) int local11 = Static3.anInt2964 >> 1;
-		@Pc(15) byte[][] local15 = new byte[Static3.anInt2965][Static3.anInt2960];
-		while (buffer.bytes.length > buffer.position) {
-			@Pc(23) boolean local23 = false;
-			@Pc(25) int local25 = 0;
-			@Pc(27) int local27 = 0;
-			if (buffer.readUnsignedByte() == 1) {
-				local23 = true;
-				local27 = buffer.readUnsignedByte();
-				local25 = buffer.readUnsignedByte();
-			}
-			@Pc(47) int local47 = buffer.readUnsignedByte();
-			@Pc(51) int local51 = buffer.readUnsignedByte();
-			@Pc(58) int local58 = local47 * 64 - Static3.anInt2962;
-			@Pc(69) int local69 = Static3.anInt2960 + Static3.anInt2961 - local51 * 64 - 1;
-			if (local58 >= 0 && local69 - 63 >= 0 && local58 + 63 < Static3.anInt2965 && local69 < Static3.anInt2960) {
-				for (@Pc(114) int local114 = 0; local114 < 64; local114++) {
-					@Pc(124) byte[] local124 = local15[local58 + local114];
-					for (@Pc(126) int local126 = 0; local126 < 64; local126++) {
-						if (!local23 || local114 >= local27 * 8 && local114 < local27 * 8 + 8 && local126 >= local25 * 8 && local126 < local25 * 8 + 8) {
-							local124[local69 - local126] = buffer.readByte();
-						}
-					}
-				}
-			} else if (local23) {
-				buffer.position += 64;
-			} else {
-				buffer.position += 4096;
-			}
-		}
-		@Pc(194) int local194 = Static3.anInt2965;
-		@Pc(196) int local196 = Static3.anInt2960;
-		@Pc(199) int[] local199 = new int[local196];
-		@Pc(202) int[] local202 = new int[local196];
-		@Pc(205) int[] local205 = new int[local196];
-		@Pc(208) int[] local208 = new int[local196];
-		@Pc(211) int[] local211 = new int[local196];
-		for (@Pc(213) int local213 = -5; local213 < local194; local213++) {
-			if ((local213 & 0x1FF) == 0) {
-				Static32.method3917(true);
-			}
-			for (@Pc(231) int local231 = 0; local231 < local196; local231++) {
-				@Pc(242) int local242 = local213 + 5;
-				if (local194 > local242) {
-					@Pc(253) int local253 = local15[local242][local231] & 0xFF;
-					if (local253 > 0) {
-						@Pc(265) FluType type = FluTypeList.get(local253 - 1);
-						local199[local231] += type.weightedHue;
-						local202[local231] += type.saturation;
-						local205[local231] += type.lightness;
-						local208[local231] += type.chroma;
-						@Pc(301) int local301 = local211[local231]++;
-					}
-				}
-				@Pc(308) int local308 = local213 - 5;
-				if (local308 >= 0) {
-					@Pc(322) int local322 = local15[local308][local231] & 0xFF;
-					if (local322 > 0) {
-						@Pc(334) FluType type = FluTypeList.get(local322 - 1);
-						local199[local231] -= type.weightedHue;
-						local202[local231] -= type.saturation;
-						local205[local231] -= type.lightness;
-						local208[local231] -= type.chroma;
-						@Pc(370) int local370 = local211[local231]--;
-					}
-				}
-			}
-			if (local213 >= 0) {
-				@Pc(383) int local383 = 0;
-				@Pc(389) int[][] local389 = Static3.anIntArrayArrayArray7[local213 >> 6];
-				@Pc(391) int local391 = 0;
-				@Pc(393) int local393 = 0;
-				@Pc(395) int local395 = 0;
-				@Pc(397) int local397 = 0;
-				for (@Pc(399) int local399 = -5; local399 < local196; local399++) {
-					@Pc(410) int local410 = local399 + 5;
-					if (local410 < local196) {
-						local383 += local199[local410];
-						local395 += local208[local410];
-						local391 += local202[local410];
-						local393 += local211[local410];
-						local397 += local205[local410];
-					}
-					@Pc(448) int local448 = local399 - 5;
-					if (local448 >= 0) {
-						local383 -= local199[local448];
-						local395 -= local208[local448];
-						local393 -= local211[local448];
-						local391 -= local202[local448];
-						local397 -= local205[local448];
-					}
-					if (local399 >= 0 && local393 > 0) {
-						@Pc(500) int[] local500 = local389[local399 >> 6];
-						@Pc(521) int local521 = local395 == 0 ? 0 : ColorUtils.compressHsl(local383 * 256 / local395, local391 / local393, local397 / local393);
-						if (local15[local213][local399] != 0) {
-							if (local500 == null) {
-								local500 = local389[local399 >> 6] = new int[4096];
-							}
-							@Pc(562) int local562 = local11 + (local521 & 0x7F);
-							if (local562 < 0) {
-								local562 = 0;
-							} else if (local562 > 127) {
-								local562 = 127;
-							}
-							@Pc(591) int local591 = (local7 + local521 & 0xFC00) + (local521 & 0x380) + local562;
-							local500[((local399 & 0x3F) << 6) + (local213 & 0x3F)] = ColorUtils.HSL_TO_RGB[ColorUtils.multiplyLightness(local591, 96)];
-						} else if (local500 != null) {
-							local500[(local213 & 0x3F) + ((local399 & 0x3F) << 6)] = 0;
-						}
-					}
-				}
-			}
-		}
-	}
-
 	@OriginalMember(owner = "client!ne", name = "a", descriptor = "()V")
 	public static void method2951() {
 		Static5.aShortArrayArray3 = null;
@@ -470,7 +352,7 @@ public final class Static26 {
 			bytes = Static1.mapBytes;
 		}
 		for (@Pc(26) int destLevel = 0; destLevel < levels; destLevel++) {
-			Static9.method763();
+			Static9.audioLoop();
 			for (@Pc(37) int destX = 0; destX < 13; destX++) {
 				for (@Pc(42) int destZ = 0; destZ < 13; destZ++) {
 					@Pc(49) boolean valid = false;
@@ -583,7 +465,7 @@ public final class Static26 {
 		if (arg0 >= Static4.anInt3086 && Static5.anInt4230 >= arg0) {
 			@Pc(109) int local109 = IntUtils.clamp(arg4 + arg3, Static2.anInt902, Static3.anInt2553);
 			@Pc(117) int local117 = IntUtils.clamp(arg4 - arg3, Static2.anInt902, Static3.anInt2553);
-			Static18.method1656(Static5.anIntArrayArray36[arg0], arg2, local117, local109);
+			ArrayUtils.fillRange(Static5.anIntArrayArray36[arg0], local117, local109, arg2);
 		}
 		@Pc(131) int local131 = local60 * (arg1 - 1);
 		while (local7 > 0) {
@@ -614,10 +496,10 @@ public final class Static26 {
 				@Pc(229) int local229 = IntUtils.clamp(local9 + arg4, Static2.anInt902, Static3.anInt2553);
 				@Pc(237) int local237 = IntUtils.clamp(arg4 - local9, Static2.anInt902, Static3.anInt2553);
 				if (Static4.anInt3086 <= local198) {
-					Static18.method1656(Static5.anIntArrayArray36[local198], arg2, local237, local229);
+					ArrayUtils.fillRange(Static5.anIntArrayArray36[local198], local237, local229, arg2);
 				}
 				if (local211 <= Static5.anInt4230) {
-					Static18.method1656(Static5.anIntArrayArray36[local211], arg2, local237, local229);
+					ArrayUtils.fillRange(Static5.anIntArrayArray36[local211], local237, local229, arg2);
 				}
 			}
 		}
@@ -659,11 +541,6 @@ public final class Static26 {
 		Static2.anInt2245 = arg0;
 		MaterialManager.resetArgument(3);
 		MaterialManager.resetArgument(4);
-	}
-
-	@OriginalMember(owner = "client!nl", name = "a", descriptor = "(BI)Ljava/lang/String;")
-	public static String method2992(@OriginalArg(1) int arg0) {
-		return MiniMenu.opBases[arg0].length() <= 0 ? MiniMenu.ops[arg0] : MiniMenu.ops[arg0] + LocalisedText.MINISEPARATOR + MiniMenu.opBases[arg0];
 	}
 
 }

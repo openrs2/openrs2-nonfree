@@ -1079,7 +1079,7 @@ public final class Protocol {
 					Static16.method1557();
 				}
 				InterfaceList.topLevelInterface = id;
-				Static9.method230(id);
+				InterfaceList.method230(id);
 				Static12.method777(false);
 				Static14.method1102(InterfaceList.topLevelInterface);
 				for (@Pc(3846) int i = 0; i < 100; i++) {

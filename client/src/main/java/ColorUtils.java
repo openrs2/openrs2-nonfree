@@ -174,7 +174,7 @@ public final class ColorUtils {
 	}
 
 	@OriginalMember(owner = "client!um", name = "a", descriptor = "(ZII)I")
-	public static int multiplyLightness(@OriginalArg(1) int hsl, @OriginalArg(2) int factor) {
+	public static int multiplyLightnessSafe(@OriginalArg(1) int hsl, @OriginalArg(2) int factor) {
 		if (hsl == -1) {
 			return 12345678;
 		}
@@ -207,5 +207,27 @@ public final class ColorUtils {
 			}
 			return (hsl & 0xFF80) + l;
 		}
+	}
+
+	@OriginalMember(owner = "client!bi", name = "a", descriptor = "(II)I")
+	public static int multiplyLightness(@OriginalArg(0) int hsl, @OriginalArg(1) int factor) {
+		@Pc(7) int l = factor * (hsl & 0x7F) >> 7;
+		if (l < 2) {
+			l = 2;
+		} else if (l > 126) {
+			l = 126;
+		}
+		return (hsl & 0xFF80) + l;
+	}
+
+	@OriginalMember(owner = "client!lg", name = "a", descriptor = "(II)I")
+	public static int multiplyLightness2(@OriginalArg(0) int hsl, @OriginalArg(1) int factor) {
+		@Pc(7) int l = factor * (hsl & 0x7F) >> 7;
+		if (l < 2) {
+			l = 2;
+		} else if (l > 126) {
+			l = 126;
+		}
+		return (hsl & 0xFF80) + l;
 	}
 }

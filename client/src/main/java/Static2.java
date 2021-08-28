@@ -1,5 +1,3 @@
-import java.awt.Image;
-
 import org.openrs2.deob.annotation.OriginalMember;
 
 public final class Static2 {
@@ -12,9 +10,6 @@ public final class Static2 {
 
 	@OriginalMember(owner = "client!e", name = "F", descriptor = "[[[B")
 	public static byte[][][] tileUnderlays;
-
-	@OriginalMember(owner = "client!ea", name = "E", descriptor = "Ljava/awt/Image;")
-	public static Image anImage2;
 
 	@OriginalMember(owner = "client!eh", name = "k", descriptor = "Lclient!fh;")
 	public static Js5 aClass58_37;
@@ -130,23 +125,14 @@ public final class Static2 {
 	@OriginalMember(owner = "client!ek", name = "c", descriptor = "Z")
 	public static boolean aBoolean76 = false;
 
-	@OriginalMember(owner = "client!em", name = "a", descriptor = "Ljava/lang/String;")
-	public static String aString81 = null;
-
 	@OriginalMember(owner = "client!em", name = "z", descriptor = "I")
 	public static int anInt1333 = 0;
-
-	@OriginalMember(owner = "client!em", name = "B", descriptor = "I")
-	public static int anInt1334 = 0;
 
 	@OriginalMember(owner = "client!eo", name = "a", descriptor = "I")
 	public static final int anInt1360 = 5063219;
 
 	@OriginalMember(owner = "client!eo", name = "l", descriptor = "I")
 	public static int anInt1367 = -1;
-
-	@OriginalMember(owner = "client!eo", name = "q", descriptor = "Z")
-	public static boolean aBoolean82 = false;
 
 	@OriginalMember(owner = "client!f", name = "Sc", descriptor = "I")
 	public static int chatEffectsDisabled = 0;
@@ -168,9 +154,6 @@ public final class Static2 {
 
 	@OriginalMember(owner = "client!fi", name = "hb", descriptor = "[I")
 	public static final int[] anIntArray127 = new int[64];
-
-	@OriginalMember(owner = "client!fj", name = "Z", descriptor = "I")
-	public static int anInt1874 = -1;
 
 	@OriginalMember(owner = "client!fl", name = "cb", descriptor = "I")
 	public static int anInt1937 = -1;

@@ -4,35 +4,6 @@ import org.openrs2.deob.annotation.Pc;
 
 public final class Static18 {
 
-	@OriginalMember(owner = "client!gn", name = "a", descriptor = "(B[IIII)V")
-	public static void method1656(@OriginalArg(1) int[] arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3) {
-		arg3--;
-		@Pc(10) int local10 = arg3 - 7;
-		@Pc(16) int local16 = arg2 - 1;
-		while (local16 < local10) {
-			arg2 = local16 + 1;
-			arg0[arg2] = arg1;
-			arg2++;
-			arg0[arg2] = arg1;
-			arg2++;
-			arg0[arg2] = arg1;
-			arg2++;
-			arg0[arg2] = arg1;
-			arg2++;
-			arg0[arg2] = arg1;
-			arg2++;
-			arg0[arg2] = arg1;
-			arg2++;
-			arg0[arg2] = arg1;
-			local16 = arg2 + 1;
-			arg0[local16] = arg1;
-		}
-		while (arg3 > local16) {
-			local16++;
-			arg0[local16] = arg1;
-		}
-	}
-
 	@OriginalMember(owner = "client!hb", name = "a", descriptor = "(I[Lclient!ih;)V")
 	public static void method1679(@OriginalArg(0) int arg0, @OriginalArg(1) Class4_Sub12[] arg1) {
 		SceneGraph.aClass4_Sub12ArrayArray2[arg0] = arg1;

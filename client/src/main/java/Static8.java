@@ -264,19 +264,4 @@ public final class Static8 {
 		}
 	}
 
-	@OriginalMember(owner = "client!ak", name = "a", descriptor = "(Lclient!ho;I)Z")
-	public static boolean method120(@OriginalArg(0) MelType type) {
-		if (type == null) {
-			return false;
-		} else if (!type.worldMapVisible) {
-			return false;
-		} else if (!type.isVisible()) {
-			return false;
-		} else if (Static3.aClass84_10.get(type.id) == null) {
-			return Static3.aClass84_9.get(type.category) == null;
-		} else {
-			return false;
-		}
-	}
-
 }

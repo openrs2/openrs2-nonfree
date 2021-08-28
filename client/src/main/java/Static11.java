@@ -4,18 +4,6 @@ import org.openrs2.deob.annotation.Pc;
 
 public final class Static11 {
 
-	@OriginalMember(owner = "client!ca", name = "f", descriptor = "(B)Lclient!fg;")
-	public static MapElement method492() {
-		if (Static3.aClass175_12 == null) {
-			return null;
-		} else {
-			Static1.aClass130_1.init(Static3.aClass175_12);
-			@Pc(24) MapElement local24 = (MapElement) Static1.aClass130_1.head();
-			@Pc(29) MelType local29 = MelTypeList.get(local24.id);
-			return local29 != null && local29.aBoolean157 && local29.isVisible() ? local24 : Static24.method2713();
-		}
-	}
-
 	@OriginalMember(owner = "client!cb", name = "a", descriptor = "(III)Z")
 	public static boolean method508(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
 		@Pc(7) int local7 = SceneGraph.anIntArrayArrayArray3[arg0][arg1][arg2];
@@ -49,8 +37,8 @@ public final class Static11 {
 		LightingManager.lightCount = 0;
 		Static32.method3876();
 		Static14.method1211();
-		Static16.method1556();
-		Static10.method384(false);
+		Sprites.clear();
+		WorldMap.clear(false);
 		TitleScreen.clear();
 		Static20.method1929();
 		for (@Pc(42) int local42 = 0; local42 < 2048; local42++) {
@@ -305,10 +293,10 @@ public final class Static11 {
 		Static5.aFloat97 = (int) (Math.random() * 20.0D) - 10 & 0x7FF;
 		Static1.anInt242 = (int) (Math.random() * 80.0D) - 40;
 		Static3.aBoolean177 = false;
-		Static2.anInt1334 = 0;
+		MiniMenu.anInt1334 = 0;
 		Static1.anInt837 = (int) (Math.random() * 110.0D) - 55;
 		SoundPlayer.size = 0;
-		Static27.method4239();
+		MiniMap.reset();
 		PlayerList.size = 0;
 		NpcList.size = 0;
 		for (@Pc(3740) int i = 0; i < 2048; i++) {
@@ -408,7 +396,7 @@ public final class Static11 {
 
 	@OriginalMember(owner = "client!ch", name = "a", descriptor = "(IZIII)V")
 	public static void method565(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3) {
-		Static18.method1656(Static5.anIntArrayArray36[arg0], arg3, arg1 - arg2, arg2 + arg1);
+		ArrayUtils.fillRange(Static5.anIntArrayArray36[arg0], arg1 - arg2, arg2 + arg1, arg3);
 		@Pc(20) int local20 = 0;
 		@Pc(33) int local33 = arg2;
 		@Pc(36) int local36 = -arg2;
@@ -424,86 +412,55 @@ public final class Static11 {
 				@Pc(76) int[] local76 = Static5.anIntArrayArray36[arg0 + local33];
 				@Pc(80) int local80 = arg1 - local20;
 				@Pc(84) int local84 = arg1 + local20;
-				Static18.method1656(local76, arg3, local80, local84);
-				Static18.method1656(local69, arg3, local80, local84);
+				ArrayUtils.fillRange(local76, local80, local84, arg3);
+				ArrayUtils.fillRange(local69, local80, local84, arg3);
 			}
 			@Pc(101) int local101 = arg1 + local33;
 			@Pc(106) int local106 = arg1 - local33;
 			@Pc(112) int[] local112 = Static5.anIntArrayArray36[arg0 + local20];
 			@Pc(118) int[] local118 = Static5.anIntArrayArray36[arg0 - local20];
-			Static18.method1656(local112, arg3, local106, local101);
-			Static18.method1656(local118, arg3, local106, local101);
+			ArrayUtils.fillRange(local112, local106, local101, arg3);
+			ArrayUtils.fillRange(local118, local106, local101, arg3);
 		}
-	}
-
-	@OriginalMember(owner = "client!ch", name = "a", descriptor = "(II[JI[I)V")
-	public static void method572(@OriginalArg(1) int arg0, @OriginalArg(2) long[] arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int[] arg3) {
-		if (arg0 <= arg2) {
-			return;
-		}
-		@Pc(15) int local15 = (arg0 + arg2) / 2;
-		@Pc(17) int local17 = arg2;
-		@Pc(21) long local21 = arg1[local15];
-		arg1[local15] = arg1[arg0];
-		arg1[arg0] = local21;
-		@Pc(35) int local35 = arg3[local15];
-		arg3[local15] = arg3[arg0];
-		arg3[arg0] = local35;
-		for (@Pc(47) int local47 = arg2; local47 < arg0; local47++) {
-			if (arg1[local47] < (long) (local47 & 0x1) + local21) {
-				@Pc(70) long local70 = arg1[local47];
-				arg1[local47] = arg1[local17];
-				arg1[local17] = local70;
-				@Pc(84) int local84 = arg3[local47];
-				arg3[local47] = arg3[local17];
-				arg3[local17++] = local84;
-			}
-		}
-		arg1[arg0] = arg1[local17];
-		arg1[local17] = local21;
-		arg3[arg0] = arg3[local17];
-		arg3[local17] = local35;
-		method572(local17 - 1, arg1, arg2, arg3);
-		method572(arg0, arg1, local17 + 1, arg3);
 	}
 
 	@OriginalMember(owner = "client!ch", name = "a", descriptor = "(Z[BIII[Lclient!ch;)V")
-	public static void method576(@OriginalArg(0) boolean arg0, @OriginalArg(1) byte[] arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) CollisionMap[] arg4) {
-		@Pc(10) Buffer local10 = new Buffer(arg1);
-		@Pc(20) int local20 = -1;
+	public static void readMapLocs(@OriginalArg(0) boolean arg0, @OriginalArg(1) byte[] bytes, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) CollisionMap[] arg4) {
+		@Pc(10) Buffer buffer = new Buffer(bytes);
+		@Pc(20) int id = -1;
 		while (true) {
-			@Pc(24) int local24 = local10.readUnsignedMultiSmart();
-			if (local24 == 0) {
+			@Pc(24) int idDelta = buffer.readUnsignedMultiSmart();
+			if (idDelta == 0) {
 				return;
 			}
-			local20 += local24;
-			@Pc(37) int local37 = 0;
+			id += idDelta;
+			@Pc(37) int position = 0;
 			while (true) {
-				@Pc(41) int local41 = local10.readUnsignedShortSmart();
-				if (local41 == 0) {
+				@Pc(41) int positionDelta = buffer.readUnsignedShortSmart();
+				if (positionDelta == 0) {
 					break;
 				}
-				local37 += local41 - 1;
-				@Pc(56) int local56 = local37 & 0x3F;
-				@Pc(62) int local62 = local37 >> 6 & 0x3F;
-				@Pc(66) int local66 = local10.readUnsignedByte();
-				@Pc(70) int local70 = local66 & 0x3;
-				@Pc(74) int local74 = local66 >> 2;
-				@Pc(79) int local79 = local62 + arg3;
-				@Pc(84) int local84 = local56 + arg2;
-				@Pc(88) int local88 = local37 >> 12;
+				position += positionDelta - 1;
+				@Pc(56) int z = position & 0x3F;
+				@Pc(62) int x = position >> 6 & 0x3F;
+				@Pc(66) int shapeAndAngle = buffer.readUnsignedByte();
+				@Pc(70) int angle = shapeAndAngle & 0x3;
+				@Pc(74) int shape = shapeAndAngle >> 2;
+				@Pc(79) int local79 = x + arg3;
+				@Pc(84) int local84 = z + arg2;
+				@Pc(88) int level = position >> 12;
 				if (local79 > 0 && local84 > 0 && local79 < 103 && local84 < 103) {
-					@Pc(104) CollisionMap local104 = null;
+					@Pc(104) CollisionMap collisionMap = null;
 					if (!arg0) {
-						@Pc(108) int local108 = local88;
+						@Pc(108) int local108 = level;
 						if ((Static4.tileFlags[1][local79][local84] & 0x2) == 2) {
-							local108 = local88 - 1;
+							local108 = level - 1;
 						}
 						if (local108 >= 0) {
-							local104 = arg4[local108];
+							collisionMap = arg4[local108];
 						}
 					}
-					Static22.method2193(local70, local88, local20, local88, local79, arg0, local84, local104, !arg0, local74);
+					Static22.method2193(angle, level, id, level, local79, arg0, local84, collisionMap, !arg0, shape);
 				}
 			}
 		}
@@ -527,7 +484,7 @@ public final class Static11 {
 			Static14.method1102(InterfaceList.topLevelInterface);
 		}
 		Static7.anInt6050 = -1;
-		Static13.method966(Static4.anInt3407);
+		Cursor.setCursor(Static4.anInt3407);
 		PlayerList.self = new Player();
 		PlayerList.self.zFine = 3000;
 		PlayerList.self.xFine = 3000;
