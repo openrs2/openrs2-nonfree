@@ -148,19 +148,6 @@ public final class Static27 {
 		FontMetricsList.fontMetrics.removeSoft();
 	}
 
-	@OriginalMember(owner = "client!oj", name = "a", descriptor = "(I[B)[B")
-	public static byte[] method3230(@OriginalArg(0) int arg0, @OriginalArg(1) byte[] arg1) {
-		if (arg1 == null) {
-			return null;
-		}
-		@Pc(13) byte[] local13 = new byte[arg1.length];
-		if (arg0 != 64) {
-			Static5.aBoolean276 = true;
-		}
-		ArrayUtils.copy(arg1, 0, local13, 0, arg1.length);
-		return local13;
-	}
-
 	@OriginalMember(owner = "client!oj", name = "a", descriptor = "(IIIIIIFIZ)[[I")
 	public static int[][] method3234(@OriginalArg(6) float arg0) {
 		@Pc(17) int[][] local17 = new int[256][64];

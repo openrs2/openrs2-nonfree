@@ -263,19 +263,6 @@ public final class Static21 {
 		}
 	}
 
-	@OriginalMember(owner = "client!ji", name = "a", descriptor = "(I[F)[F")
-	public static float[] method2023(@OriginalArg(0) int arg0, @OriginalArg(1) float[] arg1) {
-		if (arg1 == null) {
-			return null;
-		}
-		if (arg0 != -5899) {
-			DelayedStateChange.setComponentModelRotationSpeedServer(92, 49);
-		}
-		@Pc(20) float[] local20 = new float[arg1.length];
-		ArrayUtils.copy(arg1, 0, local20, 0, arg1.length);
-		return local20;
-	}
-
 	@OriginalMember(owner = "client!jj", name = "a", descriptor = "(ZIIII)V")
 	public static void method2050(@OriginalArg(0) boolean arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3) {
 		if (InterfaceList.load(arg2)) {
