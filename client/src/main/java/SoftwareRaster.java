@@ -312,8 +312,8 @@ public final class SoftwareRaster {
 		@Pc(67) int local67 = strokeWidth * local43 + 1 >> 17;
 		@Pc(73) int local73 = strokeWidth * local37 >> 17;
 		@Pc(81) int local81 = strokeWidth * local37 + 1 >> 17;
-		x0 -= Static23.method2548();
-		y0 -= Static23.method2546();
+		x0 -= Rasteriser.method2548();
+		y0 -= Rasteriser.method2546();
 		@Pc(93) int local93 = x0 + local59;
 		@Pc(97) int local97 = x0 - local67;
 		@Pc(103) int local103 = x0 + dx - local67;
@@ -322,10 +322,10 @@ public final class SoftwareRaster {
 		@Pc(117) int local117 = y0 - local81;
 		@Pc(123) int local123 = y0 + dy - local81;
 		@Pc(129) int local129 = y0 + dy + local73;
-		Static23.method2542(local93, local97, local103);
-		Static23.method2550(local113, local117, local123, local93, local97, local103, color);
-		Static23.method2542(local93, local103, local109);
-		Static23.method2550(local113, local123, local129, local93, local103, local109, color);
+		Rasteriser.method2542(local93, local97, local103);
+		Rasteriser.method2550(local113, local117, local123, local93, local97, local103, color);
+		Rasteriser.method2542(local93, local103, local109);
+		Rasteriser.method2550(local113, local123, local129, local93, local103, local109, color);
 	}
 
 	@OriginalMember(owner = "client!tk", name = "c", descriptor = "(IIIII)V")

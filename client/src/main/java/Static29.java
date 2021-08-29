@@ -1940,8 +1940,8 @@ public final class Static29 {
 															}
 														}
 														@Pc(2270) boolean local2270 = false;
-														if (Static5.aBoolean249 && local2032.type.anInt2403 != -1) {
-															Static4.textureProvider.method451(local2032.type.anInt2403);
+														if (Static5.aBoolean249 && local2032.type.texture != -1) {
+															Rasteriser.textureProvider.method451(local2032.type.texture);
 															local2270 = true;
 														} else {
 															GlRenderer.setTextureId(-1);
@@ -1966,8 +1966,8 @@ public final class Static29 {
 											}
 											Static26.method2962();
 										} else {
-											@Pc(2339) int local2339 = Static5.anInt3506 + Static4.anInt3125;
-											@Pc(2343) int local2343 = Static5.anInt3503 + Static4.anInt3126;
+											@Pc(2339) int local2339 = Static5.anInt3506 + Rasteriser.anInt3125;
+											@Pc(2343) int local2343 = Static5.anInt3503 + Rasteriser.anInt3126;
 											@Pc(2347) SecondaryParticleNode local2347 = local8.particles.sentinel;
 											for (@Pc(2350) SecondaryParticleNode local2350 = local2347.secondaryNext; local2350 != local2347; local2350 = local2350.secondaryNext) {
 												@Pc(2356) Particle local2356 = (Particle) local2350;

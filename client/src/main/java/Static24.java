@@ -233,7 +233,7 @@ public final class Static24 {
 			GameShell.thread.setPriority(5);
 			client.frameBuffer = null;
 			SoftwareModel.method2915();
-			((Js5GlTextureProvider) Static4.textureProvider).resize(200);
+			((Js5GlTextureProvider) Rasteriser.textureProvider).resize(200);
 			if (Preferences.highDetailLighting) {
 				ColorUtils.setBrightness(0.7F);
 			}
@@ -248,7 +248,7 @@ public final class Static24 {
 			client.frameBuffer = FrameBuffer.create(GameShell.canvas, 765, 503);
 			SoftwareModel.method2906();
 			Static26.method2951();
-			((Js5GlTextureProvider) Static4.textureProvider).resize(20);
+			((Js5GlTextureProvider) Rasteriser.textureProvider).resize(20);
 			if (Preferences.highDetailLighting) {
 				if (Preferences.brightness == 1) {
 					ColorUtils.setBrightness(0.9F);
@@ -321,7 +321,7 @@ public final class Static24 {
 		ParticleEffectorTypeList.clear();
 		FontMetricsList.fontMetrics.clear();
 		if (!GlRenderer.enabled) {
-			((Js5GlTextureProvider) Static4.textureProvider).clear();
+			((Js5GlTextureProvider) Rasteriser.textureProvider).clear();
 		}
 		ClientScriptList.scripts.clear();
 		client.js5Archive0.discardUnpacked();

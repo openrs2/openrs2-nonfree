@@ -132,9 +132,9 @@ public final class ObjTypeList {
 		if (sprite != null) {
 			return sprite;
 		}
-		Static4.aBoolean218 = false;
+		Rasteriser.aBoolean218 = false;
 		@Pc(58) Sprite sprite2 = createSprite(id, count, outlineMode, renderCount, false, appearance, shadowColor, false);
-		if (sprite2 != null && !Static4.aBoolean218) {
+		if (sprite2 != null && !Rasteriser.aBoolean218) {
 			sprites.put(key2, sprite2);
 		}
 		return sprite2;
@@ -177,9 +177,9 @@ public final class ObjTypeList {
 		SoftwareRaster.getClip(prevClip);
 		@Pc(131) SoftwareSprite sprite = new SoftwareSprite(36, 32);
 		SoftwareRaster.setPixels(sprite.pixels, 36, 32);
-		Static23.method2561();
-		Static23.method2556(16, 16);
-		Static4.aBoolean216 = false;
+		Rasteriser.method2561();
+		Rasteriser.method2556(16, 16);
+		Rasteriser.aBoolean216 = false;
 		@Pc(145) int zoom2d = type.zoom2d;
 		if (certificate) {
 			zoom2d = (int) ((double) zoom2d * 1.5D);
@@ -211,8 +211,8 @@ public final class ObjTypeList {
 		}
 		SoftwareRaster.setPixels(prevPixels, prevWidth, prevHeight);
 		SoftwareRaster.setClip(prevClip);
-		Static23.method2561();
-		Static4.aBoolean216 = true;
+		Rasteriser.method2561();
+		Rasteriser.aBoolean216 = true;
 		return GlRenderer.enabled && !forceSoftware ? new GlSprite(sprite) : sprite;
 	}
 

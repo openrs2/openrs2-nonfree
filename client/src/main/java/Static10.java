@@ -135,7 +135,7 @@ public final class Static10 {
 		if (current == enabled) {
 			return false;
 		} else {
-			((Js5GlTextureProvider) Static4.textureProvider).clear();
+			((Js5GlTextureProvider) Rasteriser.textureProvider).clear();
 			return true;
 		}
 	}

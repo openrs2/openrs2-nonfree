@@ -379,10 +379,10 @@ public final class Static15 {
 	}
 
 	@OriginalMember(owner = "client!fm", name = "a", descriptor = "(IIII)I")
-	public static int method1474(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(3) int arg2) {
+	public static int method1474(@OriginalArg(0) int arg0, @OriginalArg(1) int texture, @OriginalArg(3) int arg2) {
 		@Pc(16) int local16 = ColorUtils.HSL_TO_RGB[SoftwareModel.method2912(arg2, arg0)];
-		if (arg1 > 0) {
-			@Pc(26) int local26 = Static4.textureProvider.method450(arg1 & 0xFFFF);
+		if (texture > 0) {
+			@Pc(26) int local26 = Rasteriser.textureProvider.method450(texture & 0xFFFF);
 			if (local26 != 0) {
 				@Pc(42) int local42;
 				if (arg0 < 0) {
@@ -399,7 +399,7 @@ public final class Static15 {
 					local16 = (local61 * (local16 & 0xFF00FF) + local26 * (local42 & 0xFF00FF) & 0xFF00FF00) + ((local42 & 0xFF00) * local26 + (local16 & 0xFF00) * local61 & 0xFF0000) >> 8;
 				}
 			}
-			@Pc(104) int local104 = Static4.textureProvider.method447(arg1 & 0xFFFF);
+			@Pc(104) int local104 = Rasteriser.textureProvider.method447(texture & 0xFFFF);
 			if (local104 != 0) {
 				@Pc(110) int local110 = local104 + 256;
 				@Pc(118) int local118 = local110 * (local16 >> 16 & 0xFF);

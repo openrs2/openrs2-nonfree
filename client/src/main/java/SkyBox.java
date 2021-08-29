@@ -124,13 +124,13 @@ public final class SkyBox extends SecondaryNode {
 			@Pc(20) int size = -1;
 			for (@Pc(22) int i = 0; i < 6; i++) {
 				@Pc(30) int texture = this.textures[i];
-				this.size = Static4.textureProvider.isLowDetail(texture) ? 64 : 128;
+				this.size = Rasteriser.textureProvider.isLowDetail(texture) ? 64 : 128;
 				if (i <= 0) {
 					size = this.size;
 				} else if (this.size != size) {
 					throw new RuntimeException("");
 				}
-				@Pc(60) IntBuffer buffer = IntBuffer.wrap(Static4.textureProvider.getPixels(texture));
+				@Pc(60) IntBuffer buffer = IntBuffer.wrap(Rasteriser.textureProvider.getPixels(texture));
 				gl.glTexImage2D(i + GL.GL_TEXTURE_CUBE_MAP_POSITIVE_X, GL.GL_POINTS, GL.GL_RGB, size, size, GL.GL_POINTS, GL.GL_BGRA, GL.GL_UNSIGNED_BYTE, buffer);
 			}
 			gl.glTexParameteri(GL.GL_TEXTURE_CUBE_MAP, GL.GL_TEXTURE_MIN_FILTER, GL.GL_LINEAR);
@@ -141,7 +141,7 @@ public final class SkyBox extends SecondaryNode {
 			this.state = 2;
 		} else if (this.state != 1) {
 			for (@Pc(113) int i = 0; i < 6; i++) {
-				@Pc(127) IntBuffer buffer = IntBuffer.wrap(ColorUtils.HSL_TO_RGB, Static4.textureProvider.getAverageColor(this.textures[i]), 1);
+				@Pc(127) IntBuffer buffer = IntBuffer.wrap(ColorUtils.HSL_TO_RGB, Rasteriser.textureProvider.getAverageColor(this.textures[i]), 1);
 				gl.glTexImage2D(i + GL.GL_TEXTURE_CUBE_MAP_POSITIVE_X, GL.GL_POINTS, GL.GL_RGB, 1, 1, GL.GL_POINTS, GL.GL_BGRA, GL.GL_UNSIGNED_BYTE, buffer);
 				GlCleaner.onCardTexture += 3 - this.bytes;
 				this.bytes = 3;
@@ -262,7 +262,7 @@ public final class SkyBox extends SecondaryNode {
 	@OriginalMember(owner = "client!ib", name = "d", descriptor = "()Z")
 	private boolean isReady() {
 		for (@Pc(1) int i = 0; i < 6; i++) {
-			if (!Static4.textureProvider.isGlTextureReady(this.textures[i])) {
+			if (!Rasteriser.textureProvider.isGlTextureReady(this.textures[i])) {
 				return false;
 			}
 		}

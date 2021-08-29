@@ -64,21 +64,6 @@ public final class Static4 {
 	@OriginalMember(owner = "client!lf", name = "bb", descriptor = "I")
 	public static int anInt3123;
 
-	@OriginalMember(owner = "client!lg", name = "a", descriptor = "I")
-	public static int anInt3125;
-
-	@OriginalMember(owner = "client!lg", name = "d", descriptor = "I")
-	public static int anInt3126;
-
-	@OriginalMember(owner = "client!lg", name = "g", descriptor = "Lclient!nk;")
-	public static GlTextureProvider textureProvider;
-
-	@OriginalMember(owner = "client!lg", name = "l", descriptor = "I")
-	public static int anInt3128;
-
-	@OriginalMember(owner = "client!lg", name = "q", descriptor = "I")
-	public static int anInt3129;
-
 	@OriginalMember(owner = "client!li", name = "b", descriptor = "I")
 	public static int anInt3131;
 
@@ -189,27 +174,6 @@ public final class Static4 {
 
 	@OriginalMember(owner = "client!lf", name = "U", descriptor = "S")
 	public static short aShort18 = 1;
-
-	@OriginalMember(owner = "client!lg", name = "e", descriptor = "Z")
-	public static boolean aBoolean216 = true;
-
-	@OriginalMember(owner = "client!lg", name = "f", descriptor = "Z")
-	public static boolean aBoolean217 = false;
-
-	@OriginalMember(owner = "client!lg", name = "h", descriptor = "Z")
-	public static boolean aBoolean218 = false;
-
-	@OriginalMember(owner = "client!lg", name = "i", descriptor = "I")
-	public static int anInt3127 = 0;
-
-	@OriginalMember(owner = "client!lg", name = "j", descriptor = "Z")
-	public static boolean aBoolean219 = false;
-
-	@OriginalMember(owner = "client!lg", name = "m", descriptor = "[I")
-	public static int[] anIntArray297 = new int[1024];
-
-	@OriginalMember(owner = "client!lg", name = "o", descriptor = "Z")
-	public static boolean aBoolean220 = false;
 
 	@OriginalMember(owner = "client!lh", name = "r", descriptor = "[F")
 	public static final float[] aFloatArray64 = new float[4];

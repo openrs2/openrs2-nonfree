@@ -193,15 +193,15 @@ public final class Static32 {
 			if (local29 < 50) {
 				return;
 			}
-			if (arg0.anIntArray572 != null) {
+			if (arg0.textures != null) {
 				Static7.anIntArray585[local5] = local15;
 				Static7.anIntArray578[local5] = local39;
 				Static7.anIntArray573[local5] = local29;
 			}
-			Static7.anIntArray577[local5] = Static4.anInt3125 + (local15 << 9) / local29;
-			Static7.anIntArray582[local5] = Static4.anInt3126 + (local39 << 9) / local29;
+			Static7.anIntArray577[local5] = Rasteriser.anInt3125 + (local15 << 9) / local29;
+			Static7.anIntArray582[local5] = Rasteriser.anInt3126 + (local39 << 9) / local29;
 		}
-		Static4.anInt3127 = 0;
+		Rasteriser.alpha = 0;
 		@Pc(120) int local120 = arg0.anIntArray580.length;
 		for (@Pc(122) int local122 = 0; local122 < local120; local122++) {
 			@Pc(130) int local130 = arg0.anIntArray580[local122];
@@ -214,26 +214,26 @@ public final class Static32 {
 			@Pc(160) int local160 = Static7.anIntArray582[local135];
 			@Pc(164) int local164 = Static7.anIntArray582[local140];
 			if ((local144 - local148) * (local164 - local160) - (local156 - local160) * (local152 - local148) > 0) {
-				if (Static2.aBoolean101 && Static15.method1223(Static1.anInt315 + Static4.anInt3125, Static7.anInt5803 + Static4.anInt3126, local156, local160, local164, local144, local148, local152)) {
+				if (Static2.aBoolean101 && Static15.method1223(Static1.anInt315 + Rasteriser.anInt3125, Static7.anInt5803 + Rasteriser.anInt3126, local156, local160, local164, local144, local148, local152)) {
 					Static1.anInt528 = arg5;
 					Static1.anInt420 = arg6;
 				}
 				if (!GlRenderer.enabled && !arg7) {
-					Static4.aBoolean217 = false;
-					if (local144 < 0 || local148 < 0 || local152 < 0 || local144 > Static4.anInt3129 || local148 > Static4.anInt3129 || local152 > Static4.anInt3129) {
-						Static4.aBoolean217 = true;
+					Rasteriser.aBoolean217 = false;
+					if (local144 < 0 || local148 < 0 || local152 < 0 || local144 > Rasteriser.anInt3129 || local148 > Rasteriser.anInt3129 || local152 > Rasteriser.anInt3129) {
+						Rasteriser.aBoolean217 = true;
 					}
-					if (arg0.anIntArray572 == null || arg0.anIntArray572[local122] == -1) {
+					if (arg0.textures == null || arg0.textures[local122] == -1) {
 						if (arg0.anIntArray576[local122] != 12345678) {
-							Static23.method2543(local156, local160, local164, local144, local148, local152, arg0.anIntArray576[local122], arg0.anIntArray575[local122], arg0.anIntArray574[local122]);
+							Rasteriser.method2543(local156, local160, local164, local144, local148, local152, arg0.anIntArray576[local122], arg0.anIntArray575[local122], arg0.anIntArray574[local122]);
 						}
 					} else if (!Preferences.groundTextures) {
-						@Pc(373) int local373 = Static4.textureProvider.getAverageColor(arg0.anIntArray572[local122]);
-						Static23.method2543(local156, local160, local164, local144, local148, local152, ColorUtils.multiplyLightness(local373, arg0.anIntArray576[local122]), ColorUtils.multiplyLightness(local373, arg0.anIntArray575[local122]), ColorUtils.multiplyLightness(local373, arg0.anIntArray574[local122]));
+						@Pc(373) int local373 = Rasteriser.textureProvider.getAverageColor(arg0.textures[local122]);
+						Rasteriser.method2543(local156, local160, local164, local144, local148, local152, ColorUtils.multiplyLightness(local373, arg0.anIntArray576[local122]), ColorUtils.multiplyLightness(local373, arg0.anIntArray575[local122]), ColorUtils.multiplyLightness(local373, arg0.anIntArray574[local122]));
 					} else if (arg0.aBoolean353) {
-						Static23.method2558(local156, local160, local164, local144, local148, local152, arg0.anIntArray576[local122], arg0.anIntArray575[local122], arg0.anIntArray574[local122], Static7.anIntArray585[0], Static7.anIntArray585[1], Static7.anIntArray585[3], Static7.anIntArray578[0], Static7.anIntArray578[1], Static7.anIntArray578[3], Static7.anIntArray573[0], Static7.anIntArray573[1], Static7.anIntArray573[3], arg0.anIntArray572[local122]);
+						Rasteriser.method2558(local156, local160, local164, local144, local148, local152, arg0.anIntArray576[local122], arg0.anIntArray575[local122], arg0.anIntArray574[local122], Static7.anIntArray585[0], Static7.anIntArray585[1], Static7.anIntArray585[3], Static7.anIntArray578[0], Static7.anIntArray578[1], Static7.anIntArray578[3], Static7.anIntArray573[0], Static7.anIntArray573[1], Static7.anIntArray573[3], arg0.textures[local122]);
 					} else {
-						Static23.method2558(local156, local160, local164, local144, local148, local152, arg0.anIntArray576[local122], arg0.anIntArray575[local122], arg0.anIntArray574[local122], Static7.anIntArray585[local130], Static7.anIntArray585[local135], Static7.anIntArray585[local140], Static7.anIntArray578[local130], Static7.anIntArray578[local135], Static7.anIntArray578[local140], Static7.anIntArray573[local130], Static7.anIntArray573[local135], Static7.anIntArray573[local140], arg0.anIntArray572[local122]);
+						Rasteriser.method2558(local156, local160, local164, local144, local148, local152, arg0.anIntArray576[local122], arg0.anIntArray575[local122], arg0.anIntArray574[local122], Static7.anIntArray585[local130], Static7.anIntArray585[local135], Static7.anIntArray585[local140], Static7.anIntArray578[local130], Static7.anIntArray578[local135], Static7.anIntArray578[local140], Static7.anIntArray573[local130], Static7.anIntArray573[local135], Static7.anIntArray573[local140], arg0.textures[local122]);
 					}
 				}
 			}

@@ -12,7 +12,7 @@ public final class Static30 {
 			GlRaster.setClip(arg8, arg6, arg5, arg4);
 		} else {
 			SoftwareRaster.setClip(arg8, arg6, arg5, arg4);
-			Static23.method2561();
+			Rasteriser.method2561();
 		}
 		for (@Pc(22) int i = 0; i < components.length; i++) {
 			@Pc(38) Component component = components[i];
@@ -295,7 +295,7 @@ public final class Static30 {
 								GlRaster.setClip(arg8, arg6, arg5, arg4);
 							} else {
 								SoftwareRaster.setClip(arg8, arg6, arg5, arg4);
-								Static23.method2561();
+								Rasteriser.method2561();
 							}
 						}
 						if (Static1.aBooleanArray2[rectangle] || Static1.rectDebug > 1) {
@@ -322,7 +322,7 @@ public final class Static30 {
 													} else {
 														local1463 = ObjTypeList.getSprite(objId, component.objCounts[local1338], 1, component.showObjCount, null, 3153952);
 													}
-													if (Static4.aBoolean218) {
+													if (Rasteriser.aBoolean218) {
 														Static2.aBooleanArray8[rectangle] = true;
 													}
 													if (local1463 == null) {
@@ -668,7 +668,7 @@ public final class Static30 {
 												GlRenderer.enableDepthMask();
 											}
 										} else {
-											Static23.method2556(local2952, local2938);
+											Rasteriser.method2556(local2952, local2938);
 											@Pc(2967) int local2967 = component.modelZoom * MathUtils.COSINE[component.modelXAngle] >> 16;
 											@Pc(2977) int local2977 = MathUtils.SINE[component.modelXAngle] * component.modelZoom >> 16;
 											if (!component.if3) {
@@ -678,7 +678,7 @@ public final class Static30 {
 											} else {
 												local2665.method3822(component.modelYAngle, component.modelZAngle, component.modelXAngle, component.modelXOffset, local2677 + local2977 + component.modelYOffset, local2967 + component.modelYOffset, -1L);
 											}
-											Static23.method2555();
+											Rasteriser.method2555();
 										}
 									}
 								} else {
@@ -840,7 +840,7 @@ public final class Static30 {
 		GlRenderer.disableDepthMask();
 		for (@Pc(19) int local19 = 0; local19 < SceneGraph.aClass4_Sub12ArrayArray1[0].length; local19++) {
 			@Pc(31) Class4_Sub12 local31 = SceneGraph.aClass4_Sub12ArrayArray1[0][local19];
-			if (local31.anInt2356 >= 0 && Static32.method3920(Static4.textureProvider.getMaterialType(local31.anInt2356))) {
+			if (local31.texture >= 0 && Static32.method3920(Rasteriser.textureProvider.getMaterialType(local31.texture))) {
 				gl.glColor4fv(Static16.method1553(local31.anInt2351), 0);
 				@Pc(58) float local58 = 201.5F - (local31.aBoolean162 ? 1.0F : 0.5F);
 				local31.method1867(SceneGraph.tiles, local58, true);

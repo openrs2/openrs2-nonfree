@@ -430,7 +430,7 @@ public final class WorldMap {
 			@Pc(8) FloType type = FloTypeList.get(id);
 			if (type != null) {
 				@Pc(14) int texture = type.texture;
-				if (texture >= 0 && !Static4.textureProvider.method441(texture)) {
+				if (texture >= 0 && !Rasteriser.textureProvider.method441(texture)) {
 					texture = -1;
 				}
 				@Pc(64) int color;
@@ -445,7 +445,7 @@ public final class WorldMap {
 					@Pc(57) int local57 = (local29 + arg0 & 0xFC00) + (local29 & 0x380) + local35;
 					color = ColorUtils.HSL_TO_RGB[ColorUtils.multiplyLightnessGrayscale(local57, 96)];
 				} else if (texture >= 0) {
-					color = ColorUtils.HSL_TO_RGB[ColorUtils.multiplyLightnessGrayscale(Static4.textureProvider.getAverageColor(texture), 96)];
+					color = ColorUtils.HSL_TO_RGB[ColorUtils.multiplyLightnessGrayscale(Rasteriser.textureProvider.getAverageColor(texture), 96)];
 				} else if (type.anInt3869 == -1) {
 					color = -1;
 				} else {

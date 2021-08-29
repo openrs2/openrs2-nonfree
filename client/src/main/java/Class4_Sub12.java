@@ -80,7 +80,7 @@ public final class Class4_Sub12 extends Node {
 	public int anInt2357 = 0;
 
 	@OriginalMember(owner = "client!ih", name = "I", descriptor = "I")
-	public final int anInt2356;
+	public final int texture;
 
 	@OriginalMember(owner = "client!ih", name = "F", descriptor = "F")
 	private final float aFloat55;
@@ -96,7 +96,7 @@ public final class Class4_Sub12 extends Node {
 
 	@OriginalMember(owner = "client!ih", name = "<init>", descriptor = "(IFZZI)V")
 	public Class4_Sub12(@OriginalArg(0) int arg0, @OriginalArg(1) float arg1, @OriginalArg(2) boolean arg2, @OriginalArg(3) boolean arg3, @OriginalArg(4) int arg4) {
-		this.anInt2356 = arg0;
+		this.texture = arg0;
 		this.aFloat55 = arg1;
 		this.aBoolean162 = arg2;
 		this.aBoolean161 = arg3;
@@ -220,11 +220,11 @@ public final class Class4_Sub12 extends Node {
 			return;
 		}
 		@Pc(257) GL gl = GlRenderer.gl;
-		if (this.anInt2356 == -1 || arg2) {
+		if (this.texture == -1 || arg2) {
 			GlRenderer.setTextureId(-1);
 			MaterialManager.setMaterial(0, 0);
 		} else {
-			Static4.textureProvider.method451(this.anInt2356);
+			Rasteriser.textureProvider.method451(this.texture);
 		}
 		@Pc(282) int local282 = this.aBoolean161 ? 40 : 36;
 		if (this.aClass111_2 == null) {

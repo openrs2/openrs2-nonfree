@@ -31,7 +31,7 @@ public final class Static11 {
 		Static24.method2697();
 		SkyBox.cache.clear();
 		Static3.aClass96_1 = new Class96();
-		((Js5GlTextureProvider) Static4.textureProvider).clear();
+		((Js5GlTextureProvider) Rasteriser.textureProvider).clear();
 		Static13.method1027();
 		LightingManager.lights = new Light[255];
 		LightingManager.lightCount = 0;

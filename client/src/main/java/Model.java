@@ -76,7 +76,7 @@ public abstract class Model extends Entity {
 	public abstract void method3820();
 
 	@OriginalMember(owner = "client!vg", name = "a", descriptor = "(IIIIIIIJ)V")
-	public abstract void method3822(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4, @OriginalArg(6) int arg5, @OriginalArg(7) long arg6);
+	public abstract void method3822(@OriginalArg(1) int yAngle, @OriginalArg(2) int zAngle, @OriginalArg(3) int xAngle, @OriginalArg(4) int xOffset, @OriginalArg(5) int yOffset, @OriginalArg(6) int zOffset, @OriginalArg(7) long arg6);
 
 	@OriginalMember(owner = "client!vg", name = "b", descriptor = "(III)V")
 	public abstract void translate(@OriginalArg(0) int x, @OriginalArg(1) int y, @OriginalArg(2) int z);

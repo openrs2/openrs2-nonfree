@@ -722,7 +722,7 @@ public final class client extends GameShell {
 		} else if (mainLoadState == 90) {
 			if (js5Archive26.fetchAll()) {
 				@Pc(960) Js5GlTextureProvider textureProvider = new Js5GlTextureProvider(js5Archive9, js5Archive8, js5Archive26, 20, !Preferences.highDetailTextures);
-				Static23.setTextureProvider(textureProvider);
+				Rasteriser.setTextureProvider(textureProvider);
 				if (Preferences.brightness == 1) {
 					ColorUtils.setBrightness(0.9F);
 				}

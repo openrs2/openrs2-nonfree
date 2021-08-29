@@ -12,7 +12,7 @@ public final class Class47 {
 	private int anInt1247;
 
 	@OriginalMember(owner = "client!eh", name = "i", descriptor = "I")
-	private int anInt1250;
+	private int textureSize;
 
 	@OriginalMember(owner = "client!eh", name = "l", descriptor = "Lclient!vn;")
 	private SoftwareSprite aClass4_Sub3_Sub14_Sub1_1;
@@ -30,7 +30,7 @@ public final class Class47 {
 	private final int anInt1251;
 
 	@OriginalMember(owner = "client!eh", name = "g", descriptor = "I")
-	private final int anInt1249;
+	private final int textureId;
 
 	@OriginalMember(owner = "client!eh", name = "e", descriptor = "[Lclient!kg;")
 	private final Class105[] aClass105Array1;
@@ -46,7 +46,7 @@ public final class Class47 {
 		this.anInt1246 = arg3;
 		this.anInt1248 = arg4;
 		this.anInt1251 = arg5;
-		this.anInt1249 = arg0;
+		this.textureId = arg0;
 		this.aClass105Array1 = arg1;
 		if (arg1 == null) {
 			this.aClass105Array2 = null;
@@ -61,13 +61,13 @@ public final class Class47 {
 	public final void method1024(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6) {
 		this.method1029(arg4);
 		arg6 = arg6 + arg0 & 0x7FF;
-		if (this.anInt1249 == -1) {
+		if (this.textureId == -1) {
 			SoftwareRaster.fillRect(arg1, arg2, arg3, arg4, 0);
 		} else {
 			if (this.aClass4_Sub3_Sub14_Sub1_1 == null) {
-				this.aClass4_Sub3_Sub14_Sub1_1 = Static4.textureProvider.getSprite(this.anInt1249, false, ColorUtils.brightness, this.anInt1250);
+				this.aClass4_Sub3_Sub14_Sub1_1 = Rasteriser.textureProvider.getSprite(this.textureId, false, ColorUtils.brightness, this.textureSize);
 			}
-			if (!Static4.textureProvider.method443(this.anInt1249)) {
+			if (!Rasteriser.textureProvider.method443(this.textureId)) {
 				SoftwareRaster.fillRect(arg1, arg2, arg3, arg4, 0);
 			}
 			if (this.aClass4_Sub3_Sub14_Sub1_1 != null) {
@@ -112,13 +112,13 @@ public final class Class47 {
 		for (@Pc(36) int local36 = this.anInt1247 - 1; local36 >= 0; local36--) {
 			this.aClass105Array2[local36].method2293(this.aClass105_1);
 		}
-		if (this.anInt1249 == -1) {
+		if (this.textureId == -1) {
 			GlRenderer.clearColorBuffer(arg7);
 		} else {
-			if (!Static4.textureProvider.method443(this.anInt1249)) {
+			if (!Rasteriser.textureProvider.method443(this.textureId)) {
 				GlRenderer.clearColorBuffer(arg7);
 			}
-			Static4.textureProvider.method454(this.anInt1249, this.anInt1250);
+			Rasteriser.textureProvider.method454(this.textureId, this.textureSize);
 			@Pc(71) float local71 = (float) arg5 / 512.0F;
 			@Pc(76) float local76 = (float) arg6 / -512.0F;
 			@Pc(86) float local86 = (float) (arg3 - arg4) / ((float) arg4 * 2.0F);
@@ -153,8 +153,8 @@ public final class Class47 {
 		if (local10 > 512) {
 			local10 = 512;
 		}
-		if (local10 != this.anInt1250) {
-			this.anInt1250 = local10;
+		if (local10 != this.textureSize) {
+			this.textureSize = local10;
 			this.aClass4_Sub3_Sub14_Sub1_1 = null;
 		}
 		if (this.aClass105Array1 == null) {

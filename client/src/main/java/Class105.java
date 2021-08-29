@@ -21,7 +21,7 @@ public final class Class105 {
 	public int anInt2860;
 
 	@OriginalMember(owner = "client!kg", name = "l", descriptor = "I")
-	private int anInt2861;
+	private int textureSize;
 
 	@OriginalMember(owner = "client!kg", name = "r", descriptor = "I")
 	private int anInt2865;
@@ -48,7 +48,7 @@ public final class Class105 {
 	private final boolean aBoolean199;
 
 	@OriginalMember(owner = "client!kg", name = "i", descriptor = "I")
-	private final int anInt2858;
+	private final int textureId;
 
 	@OriginalMember(owner = "client!kg", name = "j", descriptor = "I")
 	private final int anInt2859;
@@ -65,7 +65,7 @@ public final class Class105 {
 		this.anInt2867 = arg3;
 		this.anInt2862 = arg4;
 		this.aBoolean199 = arg7;
-		this.anInt2858 = arg1;
+		this.textureId = arg1;
 		this.anInt2859 = arg6;
 		this.anInt2854 = arg5;
 		this.anInt2869 = arg0;
@@ -118,7 +118,7 @@ public final class Class105 {
 				local43 = this.anInt2862 - arg0.anInt2862;
 			}
 		}
-		GlFrameBufferAllocator.switchToOrthoCamera(-1.0F, 1.0F, -1.0F, 1.0F, this.anInt2861, this.anInt2861);
+		GlFrameBufferAllocator.switchToOrthoCamera(-1.0F, 1.0F, -1.0F, 1.0F, this.textureSize, this.textureSize);
 		if (this.anInt2865 != 0) {
 			@Pc(96) int local96 = MathUtils.SINE[this.anInt2865];
 			@Pc(101) int local101 = MathUtils.COSINE[this.anInt2865];
@@ -140,7 +140,7 @@ public final class Class105 {
 		if (this.anInt2859 != 0) {
 			gl.glScalef(0.8125F, 0.8125F, 1.0F);
 		}
-		Static4.textureProvider.method454(this.anInt2858, this.anInt2861);
+		Rasteriser.textureProvider.method454(this.textureId, this.textureSize);
 		GlRenderer.setLightingEnabled(true);
 		if (GlRenderer.arbVboSupported) {
 			gl.glBindBufferARB(GL.GL_ARRAY_BUFFER, 0);
@@ -193,13 +193,13 @@ public final class Class105 {
 		}
 		GlFrameBufferAllocator.restoreCamera();
 		GlRenderer.setTextureId(this.anInt2864);
-		gl.glCopyTexImage2D(GL.GL_TEXTURE_2D, GL.GL_POINTS, GL.GL_RGBA, 0, 0, this.anInt2861, this.anInt2861, GL.GL_POINTS);
+		gl.glCopyTexImage2D(GL.GL_TEXTURE_2D, GL.GL_POINTS, GL.GL_RGBA, 0, 0, this.textureSize, this.textureSize, GL.GL_POINTS);
 		GlRaster.setClip(Static4.anIntArray256);
 	}
 
 	@OriginalMember(owner = "client!kg", name = "b", descriptor = "(Lclient!kg;)Z")
 	private boolean method2290(@OriginalArg(0) Class105 arg0) {
-		@Pc(5) RawModel local5 = RawModel.create(Static2.aClass58_37, this.anInt2858);
+		@Pc(5) RawModel local5 = RawModel.create(Static2.aClass58_37, this.textureId);
 		if (local5 == null) {
 			return false;
 		}
@@ -227,7 +227,7 @@ public final class Class105 {
 		@Pc(86) int local86 = (local78.getMaxX() - local78.getMinX()) / 2;
 		@Pc(94) int local94 = (local78.getMaxY() - local78.getMinY()) / 2;
 		@Pc(101) int local101 = local86 > local94 ? local86 : local94;
-		GlFrameBufferAllocator.switchToOrthoCamera((float) -local101, (float) local101, (float) -local101, (float) local101, 2048.0F, -2048.0F, this.anInt2861, this.anInt2861);
+		GlFrameBufferAllocator.switchToOrthoCamera((float) -local101, (float) local101, (float) -local101, (float) local101, 2048.0F, -2048.0F, this.textureSize, this.textureSize);
 		if (this.anInt2865 != 0) {
 			@Pc(126) int local126 = MathUtils.SINE[this.anInt2865];
 			@Pc(131) int local131 = MathUtils.COSINE[this.anInt2865];
@@ -255,15 +255,15 @@ public final class Class105 {
 		GlRenderer.disableDepthMask();
 		GlFrameBufferAllocator.restoreCamera();
 		GlRenderer.setTextureId(this.anInt2864);
-		gl.glCopyTexImage2D(GL.GL_TEXTURE_2D, GL.GL_POINTS, GL.GL_RGBA, 0, 0, this.anInt2861, this.anInt2861, GL.GL_POINTS);
+		gl.glCopyTexImage2D(GL.GL_TEXTURE_2D, GL.GL_POINTS, GL.GL_RGBA, 0, 0, this.textureSize, this.textureSize, GL.GL_POINTS);
 		GlRaster.setClip(Static4.anIntArray256);
 		return true;
 	}
 
 	@OriginalMember(owner = "client!kg", name = "a", descriptor = "()V")
 	private void method2291() {
-		@Pc(2) int local2 = this.anInt2861;
-		@Pc(5) int local5 = this.anInt2861;
+		@Pc(2) int local2 = this.textureSize;
+		@Pc(5) int local5 = this.textureSize;
 		@Pc(9) int local9 = 8388608 / local2;
 		@Pc(13) int local13 = 8388608 / local5;
 		@Pc(15) int local15 = 0;
@@ -312,7 +312,7 @@ public final class Class105 {
 			return;
 		}
 		if (this.anInt2869 == 0) {
-			Static4.textureProvider.method454(this.anInt2858, this.anInt2861);
+			Rasteriser.textureProvider.method454(this.textureId, this.textureSize);
 		} else if (this.anInt2864 == -1) {
 			return;
 		} else {
@@ -347,10 +347,10 @@ public final class Class105 {
 		}
 		if (local14) {
 			this.contextId = GlCleaner.contextId;
-			this.anInt2864 = GlTextureAllocator.allocateTextureAndStorage2d(GlTextureAllocator.GL_RGBA, this.anInt2861, this.anInt2861);
+			this.anInt2864 = GlTextureAllocator.allocateTextureAndStorage2d(GlTextureAllocator.GL_RGBA, this.textureSize, this.textureSize);
 		} else {
 			GlRenderer.setTextureId(this.anInt2864);
-			GlTextureAllocator.allocateTextureStorage2d(GlTextureAllocator.GL_RGBA, this.anInt2861, this.anInt2861);
+			GlTextureAllocator.allocateTextureStorage2d(GlTextureAllocator.GL_RGBA, this.textureSize, this.textureSize);
 		}
 		if (this.anInt2869 == 1) {
 			this.method2289(arg0);
@@ -407,8 +407,8 @@ public final class Class105 {
 		if (local145 > 512) {
 			local145 = 512;
 		}
-		if (local145 != this.anInt2861) {
-			this.anInt2861 = local145;
+		if (local145 != this.textureSize) {
+			this.textureSize = local145;
 		}
 		this.anInt2865 = (int) (Math.asin((double) ((float) local53 / 256.0F)) * 325.9493103027344D) & 0x7FF;
 		this.anInt2855 = (int) (Math.atan2((double) local46, (double) -local60) * 325.9493103027344D) & 0x7FF;
@@ -421,7 +421,7 @@ public final class Class105 {
 	private boolean method2298(@OriginalArg(0) Class105 arg0) {
 		if (this.aClass4_Sub3_Sub14_Sub1_5 == null) {
 			if (this.anInt2869 == 0) {
-				this.aClass4_Sub3_Sub14_Sub1_5 = Static4.textureProvider.getSprite(this.anInt2858, true, ColorUtils.brightness, this.anInt2861);
+				this.aClass4_Sub3_Sub14_Sub1_5 = Rasteriser.textureProvider.getSprite(this.textureId, true, ColorUtils.brightness, this.textureSize);
 			} else if (this.anInt2869 == 2) {
 				this.method2304(arg0);
 			} else if (this.anInt2869 == 1) {
@@ -454,11 +454,11 @@ public final class Class105 {
 	private void method2300(@OriginalArg(0) Class105 arg0) {
 		Static22.method2296();
 		Static22.method2295();
-		this.aClass4_Sub3_Sub14_Sub1_5 = new SoftwareAlphaSprite(this.anInt2861, this.anInt2861);
+		this.aClass4_Sub3_Sub14_Sub1_5 = new SoftwareAlphaSprite(this.textureSize, this.textureSize);
 		SoftwareRaster.getClip(Static4.anIntArray256);
 		this.aClass4_Sub3_Sub14_Sub1_5.makeTarget();
-		Static23.method2561();
-		SoftwareRaster.fillRect(0, 0, this.anInt2861, this.anInt2861, 0);
+		Rasteriser.method2561();
+		SoftwareRaster.fillRect(0, 0, this.textureSize, this.textureSize, 0);
 		@Pc(26) int local26 = 0;
 		@Pc(28) int local28 = 0;
 		@Pc(30) int local30 = 256;
@@ -488,15 +488,15 @@ public final class Class105 {
 			local30 = local30 * local123 + 32767 - local26 * local119 >> 16;
 			local26 = local135;
 		}
-		ArrayUtils.fill(Static4.aClass53_Sub3_1.triangleColors, 0, Static4.aClass53_Sub3_1.triangleCount, (short) Static4.textureProvider.getAverageColor(this.anInt2858));
+		ArrayUtils.fill(Static4.aClass53_Sub3_1.triangleColors, 0, Static4.aClass53_Sub3_1.triangleCount, (short) Rasteriser.textureProvider.getAverageColor(this.textureId));
 		@Pc(172) SoftwareModel local172 = Static4.aClass53_Sub3_1.createSoftwareModel(64, 512, -local26, -local28, -local30);
 		@Pc(178) int local178 = local172.getMaxX() - local172.getMinX();
 		@Pc(184) int local184 = local172.getMaxY() - local172.getMinY();
 		if (local178 > local184) {
-			@Pc(208) int local208 = this.anInt2859 == 0 ? (local178 << 9) / this.anInt2861 : (local178 * 16 << 9) / (this.anInt2861 * 13);
+			@Pc(208) int local208 = this.anInt2859 == 0 ? (local178 << 9) / this.textureSize : (local178 * 16 << 9) / (this.textureSize * 13);
 			local172.method2911(0, 0, 0, 0, 0, 0, local208);
 		} else {
-			@Pc(240) int local240 = this.anInt2859 == 0 ? (local184 << 9) / this.anInt2861 : (local184 * 16 << 9) / (this.anInt2861 * 13);
+			@Pc(240) int local240 = this.anInt2859 == 0 ? (local184 << 9) / this.textureSize : (local184 * 16 << 9) / (this.textureSize * 13);
 			local172.method2911(0, 0, 0, 0, 0, 0, local240);
 		}
 		if (this.anInt2859 == 0) {
@@ -512,13 +512,13 @@ public final class Class105 {
 		}
 		client.frameBuffer.makeTarget();
 		SoftwareRaster.setClip(Static4.anIntArray256);
-		Static23.method2561();
+		Rasteriser.method2561();
 	}
 
 	@OriginalMember(owner = "client!kg", name = "e", descriptor = "()V")
 	private void method2301() {
-		@Pc(6) int local6 = this.anInt2861 * 3 / 32;
-		@Pc(15) int local15 = this.anInt2861 * 13 / 16;
+		@Pc(6) int local6 = this.textureSize * 3 / 32;
+		@Pc(15) int local15 = this.textureSize * 13 / 16;
 		@Pc(17) int local17 = local15;
 		@Pc(21) int local21 = 8388608 / local15;
 		@Pc(25) int local25 = 8388608 / local15;
@@ -552,15 +552,15 @@ public final class Class105 {
 
 	@OriginalMember(owner = "client!kg", name = "f", descriptor = "(Lclient!kg;)V")
 	private void method2304(@OriginalArg(0) Class105 arg0) {
-		@Pc(5) RawModel local5 = RawModel.create(Static2.aClass58_37, this.anInt2858);
+		@Pc(5) RawModel local5 = RawModel.create(Static2.aClass58_37, this.textureId);
 		if (local5 == null) {
 			return;
 		}
-		this.aClass4_Sub3_Sub14_Sub1_5 = new SoftwareSprite(this.anInt2861, this.anInt2861);
+		this.aClass4_Sub3_Sub14_Sub1_5 = new SoftwareSprite(this.textureSize, this.textureSize);
 		SoftwareRaster.getClip(Static4.anIntArray256);
 		this.aClass4_Sub3_Sub14_Sub1_5.makeTarget();
-		Static23.method2561();
-		SoftwareRaster.fillRect(0, 0, this.anInt2861, this.anInt2861, 0);
+		Rasteriser.method2561();
+		SoftwareRaster.fillRect(0, 0, this.textureSize, this.textureSize, 0);
 		@Pc(33) int local33 = 0;
 		@Pc(35) int local35 = 0;
 		@Pc(37) int local37 = 256;
@@ -596,13 +596,13 @@ public final class Class105 {
 		@Pc(186) int local186 = local167.getMinX() + local173 / 2;
 		@Pc(193) int local193 = local167.getMinY() + local179 / 2;
 		if (local173 > local179) {
-			local167.method2911(0, 0, 0, -local186, -local193, 0, (local173 << 9) / this.anInt2861);
+			local167.method2911(0, 0, 0, -local186, -local193, 0, (local173 << 9) / this.textureSize);
 		} else {
-			local167.method2911(0, 0, 0, -local186, -local193, 0, (local179 << 9) / this.anInt2861);
+			local167.method2911(0, 0, 0, -local186, -local193, 0, (local179 << 9) / this.textureSize);
 		}
 		client.frameBuffer.makeTarget();
 		SoftwareRaster.setClip(Static4.anIntArray256);
-		Static23.method2561();
+		Rasteriser.method2561();
 	}
 
 	@OriginalMember(owner = "client!kg", name = "i", descriptor = "()V")

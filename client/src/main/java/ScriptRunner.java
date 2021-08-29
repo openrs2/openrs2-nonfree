@@ -3898,7 +3898,7 @@ public final class ScriptRunner {
 								if (opcode == 6006) {
 									isp--;
 									Preferences.highDetailTextures = intStack[isp] == 1;
-									((Js5GlTextureProvider) Static4.textureProvider).setLowDetail(!Preferences.highDetailTextures);
+									((Js5GlTextureProvider) Rasteriser.textureProvider).setLowDetail(!Preferences.highDetailTextures);
 									Preferences.write(GameShell.signLink);
 									Preferences.sentToServer = false;
 									continue;

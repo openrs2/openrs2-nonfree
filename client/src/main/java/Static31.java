@@ -191,7 +191,7 @@ public final class Static31 {
 			GlRenderer.setFogEnabled(true);
 		} else {
 			SoftwareRaster.setClip(arg0, arg4, arg3 + arg0, arg4 + arg1);
-			Static23.method2561();
+			Rasteriser.method2561();
 			if (Static6.anInt4863 >= 0) {
 				@Pc(328) Class47 local328 = SkyBoxTypeList.method936(Static6.anInt4863, Static4.anInt5826, Static1.anInt466, Static5.anInt4303);
 				local328.method1024(Static5.anInt3774, arg0, arg4, arg3, arg1, Static5.anInt4066, Static5.anInt3656);
@@ -233,7 +233,7 @@ public final class Static31 {
 			Static18.method4370(arg0, 256, arg1, 256, arg3, arg4);
 			Static10.method462(arg4, 256, arg1, 256, arg3, arg0);
 		}
-		((Js5GlTextureProvider) Static4.textureProvider).method458(Static5.anInt4156);
+		((Js5GlTextureProvider) Rasteriser.textureProvider).method458(Static5.anInt4156);
 		Static28.method3327(arg4, arg0, arg1, arg3);
 		Static3.anInt2519 = local181;
 		Static2.anInt1931 = local187;
@@ -473,7 +473,7 @@ public final class Static31 {
 												@Pc(1417) int local1417 = Static4.tileOverlays[level][local1360][local1369] & 0xFF;
 												if (local1417 != 0) {
 													@Pc(1428) FloType local1428 = FloTypeList.get(local1417 - 1);
-													if (local1428.texture != -1 && Static32.method3920(Static4.textureProvider.getMaterialType(local1428.texture))) {
+													if (local1428.texture != -1 && Static32.method3920(Rasteriser.textureProvider.getMaterialType(local1428.texture))) {
 														SceneGraph.anIntArrayArray10[x][z] = (local1428.anInt3871 << 24) + local1428.anInt3874;
 														continue label770;
 													}
@@ -487,7 +487,7 @@ public final class Static31 {
 								@Pc(1482) byte local1482 = Static1.tileAngles[level][x][z];
 								@Pc(1488) FloType type = FloTypeList.get(overlay - 1);
 								if (GlRenderer.enabled && !underwater && SceneGraph.anIntArrayArray10 != null && level == 0) {
-									if (type.texture != -1 && Static32.method3920(Static4.textureProvider.getMaterialType(type.texture))) {
+									if (type.texture != -1 && Static32.method3920(Rasteriser.textureProvider.getMaterialType(type.texture))) {
 										SceneGraph.anIntArrayArray10[x][z] = (type.anInt3871 << 24) + type.anInt3874;
 									} else {
 										label751:
@@ -497,7 +497,7 @@ public final class Static31 {
 													@Pc(1580) int local1580 = Static4.tileOverlays[level][local1516][local1529] & 0xFF;
 													if (local1580 != 0) {
 														@Pc(1590) FloType local1590 = FloTypeList.get(local1580 - 1);
-														if (local1590.texture != -1 && Static32.method3920(Static4.textureProvider.getMaterialType(local1590.texture))) {
+														if (local1590.texture != -1 && Static32.method3920(Rasteriser.textureProvider.getMaterialType(local1590.texture))) {
 															SceneGraph.anIntArrayArray10[x][z] = local1590.anInt3874 + (local1590.anInt3871 << 24);
 															break label751;
 														}
@@ -507,15 +507,15 @@ public final class Static31 {
 										}
 									}
 								}
-								@Pc(1640) int local1640 = type.texture;
-								if (local1640 >= 0 && !Static4.textureProvider.method441(local1640)) {
-									local1640 = -1;
+								@Pc(1640) int texture = type.texture;
+								if (texture >= 0 && !Rasteriser.textureProvider.method441(texture)) {
+									texture = -1;
 								}
 								@Pc(1659) int local1659;
 								@Pc(1671) int local1671;
-								if (local1640 >= 0) {
+								if (texture >= 0) {
 									local1659 = -1;
-									local1671 = ColorUtils.HSL_TO_RGB[ColorUtils.multiplyLightnessGrayscale(Static4.textureProvider.getAverageColor(local1640), 96)];
+									local1671 = ColorUtils.HSL_TO_RGB[ColorUtils.multiplyLightnessGrayscale(Rasteriser.textureProvider.getAverageColor(texture), 96)];
 								} else if (type.anInt3869 == -1) {
 									local1671 = 0;
 									local1659 = -2;
@@ -541,7 +541,7 @@ public final class Static31 {
 									@Pc(1763) int local1763 = (local1730 + local140 & 0xFC00) + (local1730 & 0x380) + local1736;
 									local1671 = ColorUtils.HSL_TO_RGB[ColorUtils.multiplyLightnessGrayscale(local1763, 96)];
 								}
-								SceneGraph.setTile(level, x, z, shape, local1482, local1640, local1047, local1057, local1069, local1079, ColorUtils.multiplyLightnessSafe(local1151, local1233), ColorUtils.multiplyLightnessSafe(local1151, local1209), ColorUtils.multiplyLightnessSafe(local1151, local1219), ColorUtils.multiplyLightnessSafe(local1151, local1227), ColorUtils.multiplyLightnessGrayscale(local1659, local1233), ColorUtils.multiplyLightnessGrayscale(local1659, local1209), ColorUtils.multiplyLightnessGrayscale(local1659, local1219), ColorUtils.multiplyLightnessGrayscale(local1659, local1227), local1153, local1671);
+								SceneGraph.setTile(level, x, z, shape, local1482, texture, local1047, local1057, local1069, local1079, ColorUtils.multiplyLightnessSafe(local1151, local1233), ColorUtils.multiplyLightnessSafe(local1151, local1209), ColorUtils.multiplyLightnessSafe(local1151, local1219), ColorUtils.multiplyLightnessSafe(local1151, local1227), ColorUtils.multiplyLightnessGrayscale(local1659, local1233), ColorUtils.multiplyLightnessGrayscale(local1659, local1209), ColorUtils.multiplyLightnessGrayscale(local1659, local1219), ColorUtils.multiplyLightnessGrayscale(local1659, local1227), local1153, local1671);
 								if (GlRenderer.enabled && level > 0) {
 									Static14.method1207(shape, local1482, local1659 == -2 || !type.aBoolean273, local1151 == -1 || !FluTypeList.get(underlay - 1).aBoolean286, x, z, local1047 - SceneGraph.tileHeights[0][x][z], local1057 - SceneGraph.tileHeights[0][x + 1][z], local1069 - SceneGraph.tileHeights[0][x + 1][z + 1], local1079 - SceneGraph.tileHeights[0][x][z + 1]);
 								}
@@ -848,62 +848,62 @@ public final class Static31 {
 		if (local26 < 50) {
 			return;
 		}
-		@Pc(275) int local275 = Static4.anInt3125 + (local7 << 9) / local15;
-		@Pc(283) int local283 = Static4.anInt3126 + (local37 << 9) / local15;
-		@Pc(291) int local291 = Static4.anInt3125 + (local145 << 9) / local14;
-		@Pc(299) int local299 = Static4.anInt3126 + (local167 << 9) / local14;
-		@Pc(307) int local307 = Static4.anInt3125 + (local20 << 9) / local191;
-		@Pc(315) int local315 = Static4.anInt3126 + (local215 << 9) / local191;
-		@Pc(323) int local323 = Static4.anInt3125 + (local6 << 9) / local26;
-		@Pc(331) int local331 = Static4.anInt3126 + (local229 << 9) / local26;
-		Static4.anInt3127 = 0;
+		@Pc(275) int local275 = Rasteriser.anInt3125 + (local7 << 9) / local15;
+		@Pc(283) int local283 = Rasteriser.anInt3126 + (local37 << 9) / local15;
+		@Pc(291) int local291 = Rasteriser.anInt3125 + (local145 << 9) / local14;
+		@Pc(299) int local299 = Rasteriser.anInt3126 + (local167 << 9) / local14;
+		@Pc(307) int local307 = Rasteriser.anInt3125 + (local20 << 9) / local191;
+		@Pc(315) int local315 = Rasteriser.anInt3126 + (local215 << 9) / local191;
+		@Pc(323) int local323 = Rasteriser.anInt3125 + (local6 << 9) / local26;
+		@Pc(331) int local331 = Rasteriser.anInt3126 + (local229 << 9) / local26;
+		Rasteriser.alpha = 0;
 		if ((local307 - local323) * (local299 - local331) - (local315 - local331) * (local291 - local323) > 0) {
-			if (Static2.aBoolean101 && Static15.method1223(Static1.anInt315 + Static4.anInt3125, Static7.anInt5803 + Static4.anInt3126, local315, local331, local299, local307, local323, local291)) {
+			if (Static2.aBoolean101 && Static15.method1223(Static1.anInt315 + Rasteriser.anInt3125, Static7.anInt5803 + Rasteriser.anInt3126, local315, local331, local299, local307, local323, local291)) {
 				Static1.anInt528 = arg6;
 				Static1.anInt420 = arg7;
 			}
 			if (!GlRenderer.enabled && !arg8) {
-				Static4.aBoolean217 = false;
-				if (local307 < 0 || local323 < 0 || local291 < 0 || local307 > Static4.anInt3129 || local323 > Static4.anInt3129 || local291 > Static4.anInt3129) {
-					Static4.aBoolean217 = true;
+				Rasteriser.aBoolean217 = false;
+				if (local307 < 0 || local323 < 0 || local291 < 0 || local307 > Rasteriser.anInt3129 || local323 > Rasteriser.anInt3129 || local291 > Rasteriser.anInt3129) {
+					Rasteriser.aBoolean217 = true;
 				}
-				if (arg0.anInt4297 == -1) {
+				if (arg0.texture == -1) {
 					if (arg0.anInt4299 != 12345678) {
-						Static23.method2543(local315, local331, local299, local307, local323, local291, arg0.anInt4299, arg0.anInt4301, arg0.anInt4296);
+						Rasteriser.method2543(local315, local331, local299, local307, local323, local291, arg0.anInt4299, arg0.anInt4301, arg0.anInt4296);
 					}
 				} else if (!Preferences.groundTextures) {
-					@Pc(475) int local475 = Static4.textureProvider.getAverageColor(arg0.anInt4297);
-					Static23.method2543(local315, local331, local299, local307, local323, local291, ColorUtils.multiplyLightness(local475, arg0.anInt4299), ColorUtils.multiplyLightness(local475, arg0.anInt4301), ColorUtils.multiplyLightness(local475, arg0.anInt4296));
+					@Pc(475) int local475 = Rasteriser.textureProvider.getAverageColor(arg0.texture);
+					Rasteriser.method2543(local315, local331, local299, local307, local323, local291, ColorUtils.multiplyLightness(local475, arg0.anInt4299), ColorUtils.multiplyLightness(local475, arg0.anInt4301), ColorUtils.multiplyLightness(local475, arg0.anInt4296));
 				} else if (arg0.aBoolean302) {
-					Static23.method2558(local315, local331, local299, local307, local323, local291, arg0.anInt4299, arg0.anInt4301, arg0.anInt4296, local7, local145, local6, local37, local167, local229, local15, local14, local26, arg0.anInt4297);
+					Rasteriser.method2558(local315, local331, local299, local307, local323, local291, arg0.anInt4299, arg0.anInt4301, arg0.anInt4296, local7, local145, local6, local37, local167, local229, local15, local14, local26, arg0.texture);
 				} else {
-					Static23.method2558(local315, local331, local299, local307, local323, local291, arg0.anInt4299, arg0.anInt4301, arg0.anInt4296, local20, local6, local145, local215, local229, local167, local191, local26, local14, arg0.anInt4297);
+					Rasteriser.method2558(local315, local331, local299, local307, local323, local291, arg0.anInt4299, arg0.anInt4301, arg0.anInt4296, local20, local6, local145, local215, local229, local167, local191, local26, local14, arg0.texture);
 				}
 			}
 		}
 		if ((local275 - local291) * (local331 - local299) - (local283 - local299) * (local323 - local291) <= 0) {
 			return;
 		}
-		if (Static2.aBoolean101 && Static15.method1223(Static1.anInt315 + Static4.anInt3125, Static7.anInt5803 + Static4.anInt3126, local283, local299, local331, local275, local291, local323)) {
+		if (Static2.aBoolean101 && Static15.method1223(Static1.anInt315 + Rasteriser.anInt3125, Static7.anInt5803 + Rasteriser.anInt3126, local283, local299, local331, local275, local291, local323)) {
 			Static1.anInt528 = arg6;
 			Static1.anInt420 = arg7;
 		}
 		if (GlRenderer.enabled || arg8) {
 			return;
 		}
-		Static4.aBoolean217 = false;
-		if (local275 < 0 || local291 < 0 || local323 < 0 || local275 > Static4.anInt3129 || local291 > Static4.anInt3129 || local323 > Static4.anInt3129) {
-			Static4.aBoolean217 = true;
+		Rasteriser.aBoolean217 = false;
+		if (local275 < 0 || local291 < 0 || local323 < 0 || local275 > Rasteriser.anInt3129 || local291 > Rasteriser.anInt3129 || local323 > Rasteriser.anInt3129) {
+			Rasteriser.aBoolean217 = true;
 		}
-		if (arg0.anInt4297 == -1) {
+		if (arg0.texture == -1) {
 			if (arg0.anInt4298 != 12345678) {
-				Static23.method2543(local283, local299, local331, local275, local291, local323, arg0.anInt4298, arg0.anInt4296, arg0.anInt4301);
+				Rasteriser.method2543(local283, local299, local331, local275, local291, local323, arg0.anInt4298, arg0.anInt4296, arg0.anInt4301);
 			}
 		} else if (Preferences.groundTextures) {
-			Static23.method2558(local283, local299, local331, local275, local291, local323, arg0.anInt4298, arg0.anInt4296, arg0.anInt4301, local7, local145, local6, local37, local167, local229, local15, local14, local26, arg0.anInt4297);
+			Rasteriser.method2558(local283, local299, local331, local275, local291, local323, arg0.anInt4298, arg0.anInt4296, arg0.anInt4301, local7, local145, local6, local37, local167, local229, local15, local14, local26, arg0.texture);
 		} else {
-			@Pc(608) int local608 = Static4.textureProvider.getAverageColor(arg0.anInt4297);
-			Static23.method2543(local283, local299, local331, local275, local291, local323, ColorUtils.multiplyLightness(local608, arg0.anInt4298), ColorUtils.multiplyLightness(local608, arg0.anInt4296), ColorUtils.multiplyLightness(local608, arg0.anInt4301));
+			@Pc(608) int local608 = Rasteriser.textureProvider.getAverageColor(arg0.texture);
+			Rasteriser.method2543(local283, local299, local331, local275, local291, local323, ColorUtils.multiplyLightness(local608, arg0.anInt4298), ColorUtils.multiplyLightness(local608, arg0.anInt4296), ColorUtils.multiplyLightness(local608, arg0.anInt4301));
 		}
 	}
 
@@ -998,7 +998,7 @@ public final class Static31 {
 					for (@Pc(324) int local324 = 0; local324 < SceneGraph.aClass4_Sub12ArrayArray2[local319].length; local324++) {
 						@Pc(336) Class4_Sub12 local336 = SceneGraph.aClass4_Sub12ArrayArray2[local319][local324];
 						@Pc(350) float local350 = 201.5F - (float) local319 * 50.0F - (local336.aBoolean162 ? 1.0F : 0.5F);
-						if (local336.anInt2356 != -1 && Static32.method3920(Static4.textureProvider.getMaterialType(local336.anInt2356)) && Preferences.highDetailWater) {
+						if (local336.texture != -1 && Static32.method3920(Rasteriser.textureProvider.getMaterialType(local336.texture)) && Preferences.highDetailWater) {
 							Static18.method4372(local336.anInt2351);
 						}
 						local336.method1867(SceneGraph.tiles, local350, false);

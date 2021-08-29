@@ -130,7 +130,7 @@ public final class ParticleEmitterType {
 	private int anInt2406 = 100;
 
 	@OriginalMember(owner = "client!ik", name = "j", descriptor = "I")
-	public int anInt2403 = -1;
+	public int texture = -1;
 
 	@OriginalMember(owner = "client!ik", name = "s", descriptor = "I")
 	public int anInt2412 = -1;
@@ -233,7 +233,7 @@ public final class ParticleEmitterType {
 		} else if (code == 14) {
 			this.anInt2418 = buffer.readUnsignedShort();
 		} else if (code == 15) {
-			this.anInt2403 = buffer.readUnsignedShort();
+			this.texture = buffer.readUnsignedShort();
 		} else if (code == 16) {
 			this.aBoolean164 = buffer.readUnsignedByte() == 1;
 			this.anInt2428 = buffer.readUnsignedShort();
