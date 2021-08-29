@@ -8,7 +8,7 @@ public final class WallDecor {
 	public int zFine;
 
 	@OriginalMember(owner = "client!vl", name = "e", descriptor = "I")
-	public int anInt5625;
+	public int zOffset;
 
 	@OriginalMember(owner = "client!vl", name = "f", descriptor = "I")
 	public int xFine;
@@ -29,7 +29,7 @@ public final class WallDecor {
 	public Entity primary;
 
 	@OriginalMember(owner = "client!vl", name = "t", descriptor = "I")
-	public int anInt5633;
+	public int xOffset;
 
 	@OriginalMember(owner = "client!vl", name = "s", descriptor = "J")
 	public long key = 0L;

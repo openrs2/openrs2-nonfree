@@ -271,8 +271,8 @@ public final class Static22 {
 			if (type.anInt5509 != 0 && arg7 != null) {
 				arg7.flagWall(x, z, shape, angle, type.aBoolean374, !type.aBoolean385);
 			}
-			if (type.anInt5507 != 16) {
-				SceneGraph.method344(level, x, z, type.anInt5507);
+			if (type.wallDecorOffsetScale != 16) {
+				SceneGraph.scaleWallDecorOffsets(level, x, z, type.wallDecorOffsetScale);
 			}
 		} else if (shape == 1) {
 			@Pc(1119) Entity local1119;
@@ -338,8 +338,8 @@ public final class Static22 {
 			if (type.anInt5509 != 0 && arg7 != null) {
 				arg7.flagWall(x, z, shape, angle, type.aBoolean374, !type.aBoolean385);
 			}
-			if (type.anInt5507 != 16) {
-				SceneGraph.method344(level, x, z, type.anInt5507);
+			if (type.wallDecorOffsetScale != 16) {
+				SceneGraph.scaleWallDecorOffsets(level, x, z, type.wallDecorOffsetScale);
 			}
 		} else if (shape == 3) {
 			@Pc(1631) Entity local1631;
@@ -382,8 +382,8 @@ public final class Static22 {
 			if (type.anInt5509 != 0 && arg7 != null) {
 				arg7.flagScenery(x, z, width, length, type.aBoolean374, !type.aBoolean385);
 			}
-			if (type.anInt5507 != 16) {
-				SceneGraph.method344(level, x, z, type.anInt5507);
+			if (type.wallDecorOffsetScale != 16) {
+				SceneGraph.scaleWallDecorOffsets(level, x, z, type.wallDecorOffsetScale);
 			}
 		} else if (shape == 4) {
 			@Pc(1914) Entity local1914;
@@ -398,10 +398,10 @@ public final class Static22 {
 			}
 			SceneGraph.setWallDecor(level, x, z, local193, local1914, null, Static2.anIntArray651[angle], 0, 0, 0, key2);
 		} else if (shape == 5) {
-			@Pc(1967) long local1967 = SceneGraph.getWallKey(level, x, z);
-			@Pc(1969) int local1969 = 16;
-			if (local1967 != 0L) {
-				local1969 = LocTypeList.get((int) (local1967 >>> 32) & Integer.MAX_VALUE).anInt5507;
+			@Pc(1967) long wallKey = SceneGraph.getWallKey(level, x, z);
+			@Pc(1969) int offsetScale = 16;
+			if (wallKey != 0L) {
+				offsetScale = LocTypeList.get((int) (wallKey >>> 32) & Integer.MAX_VALUE).wallDecorOffsetScale;
 			}
 			@Pc(2040) Entity local2040;
 			if (type.anInt5523 == -1 && type.anIntArray633 == null && type.multiLocs == null && !type.aBoolean379) {
@@ -413,12 +413,12 @@ public final class Static22 {
 			} else {
 				local2040 = new Loc(id, 4, angle, arg3, x, z, -1, type.aBoolean380, null);
 			}
-			SceneGraph.setWallDecor(level, x, z, local193, local2040, null, Static2.anIntArray651[angle], 0, Static4.anIntArray315[angle] * local1969, Static6.anIntArray475[angle] * local1969, key2);
+			SceneGraph.setWallDecor(level, x, z, local193, local2040, null, Static2.anIntArray651[angle], 0, Static4.anIntArray315[angle] * offsetScale, Static6.anIntArray475[angle] * offsetScale, key2);
 		} else if (shape == 6) {
-			@Pc(2089) long local2089 = SceneGraph.getWallKey(level, x, z);
-			@Pc(2091) int local2091 = 8;
-			if (local2089 != 0L) {
-				local2091 = LocTypeList.get(Integer.MAX_VALUE & (int) (local2089 >>> 32)).anInt5507 / 2;
+			@Pc(2089) long wallKey = SceneGraph.getWallKey(level, x, z);
+			@Pc(2091) int offsetScale = 8;
+			if (wallKey != 0L) {
+				offsetScale = LocTypeList.get(Integer.MAX_VALUE & (int) (wallKey >>> 32)).wallDecorOffsetScale / 2;
 			}
 			@Pc(2170) Entity local2170;
 			if (type.anInt5523 == -1 && type.anIntArray633 == null && type.multiLocs == null && !type.aBoolean379) {
@@ -430,7 +430,7 @@ public final class Static22 {
 			} else {
 				local2170 = new Loc(id, 4, angle + 4, arg3, x, z, -1, type.aBoolean380, null);
 			}
-			SceneGraph.setWallDecor(level, x, z, local193, local2170, null, 256, angle, Static3.anIntArray166[angle] * local2091, Static7.anIntArray646[angle] * local2091, key2);
+			SceneGraph.setWallDecor(level, x, z, local193, local2170, null, 256, angle, Static3.anIntArray166[angle] * offsetScale, Static7.anIntArray646[angle] * offsetScale, key2);
 		} else if (shape == 7) {
 			@Pc(2219) int local2219 = angle + 2 & 0x3;
 			@Pc(2248) Entity local2248;
@@ -445,10 +445,10 @@ public final class Static22 {
 			}
 			SceneGraph.setWallDecor(level, x, z, local193, local2248, null, 256, local2219, 0, 0, key2);
 		} else if (shape == 8) {
-			@Pc(2300) int local2300 = 8;
-			@Pc(2305) long local2305 = SceneGraph.getWallKey(level, x, z);
-			if (local2305 != 0L) {
-				local2300 = LocTypeList.get((int) (local2305 >>> 32) & Integer.MAX_VALUE).anInt5507 / 2;
+			@Pc(2300) int offsetScale = 8;
+			@Pc(2305) long wallKey = SceneGraph.getWallKey(level, x, z);
+			if (wallKey != 0L) {
+				offsetScale = LocTypeList.get((int) (wallKey >>> 32) & Integer.MAX_VALUE).wallDecorOffsetScale / 2;
 			}
 			@Pc(2328) int local2328 = angle + 2 & 0x3;
 			@Pc(2392) Entity local2392;
@@ -470,7 +470,7 @@ public final class Static22 {
 				local2392 = new Loc(id, 4, angle + 4, arg3, x, z, -1, type.aBoolean380, null);
 				local2429 = new Loc(id, 4, local2328 + 4, arg3, x, z, -1, type.aBoolean380, null);
 			}
-			SceneGraph.setWallDecor(level, x, z, local193, local2392, local2429, 256, angle, local2300 * Static3.anIntArray166[angle], local2300 * Static7.anIntArray646[angle], key2);
+			SceneGraph.setWallDecor(level, x, z, local193, local2392, local2429, 256, angle, offsetScale * Static3.anIntArray166[angle], offsetScale * Static7.anIntArray646[angle], key2);
 		}
 	}
 

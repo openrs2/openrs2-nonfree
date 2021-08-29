@@ -1585,7 +1585,7 @@ public final class Static29 {
 													if (GlRenderer.enabled) {
 														LightingManager.method3114(Static7.anInt5281, Static6.anInt4375, Static6.anInt4400, local24, local18, local21);
 													}
-													local619.primary.method3805(0, Static2.anInt2247, Static5.anInt3487, Static6.anInt4794, Static3.anInt2272, local619.xFine + local619.anInt5633 - Static7.anInt5281, local619.anInt5627 - Static6.anInt4375, local619.zFine + local619.anInt5625 - Static6.anInt4400, local619.key, local24, null);
+													local619.primary.method3805(0, Static2.anInt2247, Static5.anInt3487, Static6.anInt4794, Static3.anInt2272, local619.xFine + local619.xOffset - Static7.anInt5281, local619.anInt5627 - Static6.anInt4375, local619.zFine + local619.zOffset - Static6.anInt4400, local619.key, local24, null);
 												} else if (local619.anInt5629 == 256) {
 													@Pc(894) int local894 = local619.xFine - Static7.anInt5281;
 													@Pc(899) int local899 = local619.anInt5627 - Static6.anInt4375;
@@ -1607,7 +1607,7 @@ public final class Static29 {
 														if (GlRenderer.enabled) {
 															LightingManager.method3114(Static7.anInt5281, Static6.anInt4375, Static6.anInt4400, local24, local18, local21);
 														}
-														local619.primary.method3805(0, Static2.anInt2247, Static5.anInt3487, Static6.anInt4794, Static3.anInt2272, local894 + local619.anInt5633, local899, local904 + local619.anInt5625, local619.key, local24, null);
+														local619.primary.method3805(0, Static2.anInt2247, Static5.anInt3487, Static6.anInt4794, Static3.anInt2272, local894 + local619.xOffset, local899, local904 + local619.zOffset, local619.key, local24, null);
 													} else if (local619.secondary != null) {
 														if (GlRenderer.enabled) {
 															LightingManager.method3114(Static7.anInt5281, Static6.anInt4375, Static6.anInt4400, local24, local18, local21);
@@ -2043,7 +2043,7 @@ public final class Static29 {
 						if (GlRenderer.enabled) {
 							LightingManager.method3114(Static7.anInt5281, Static6.anInt4375, Static6.anInt4400, local24, local18, local21);
 						}
-						local2706.primary.method3805(0, Static2.anInt2247, Static5.anInt3487, Static6.anInt4794, Static3.anInt2272, local2706.xFine + local2706.anInt5633 - Static7.anInt5281, local2706.anInt5627 - Static6.anInt4375, local2706.zFine + local2706.anInt5625 - Static6.anInt4400, local2706.key, local24, null);
+						local2706.primary.method3805(0, Static2.anInt2247, Static5.anInt3487, Static6.anInt4794, Static3.anInt2272, local2706.xFine + local2706.xOffset - Static7.anInt5281, local2706.anInt5627 - Static6.anInt4375, local2706.zFine + local2706.zOffset - Static6.anInt4400, local2706.key, local24, null);
 					} else if (local2706.anInt5629 == 256) {
 						@Pc(2771) int local2771 = local2706.xFine - Static7.anInt5281;
 						@Pc(2776) int local2776 = local2706.anInt5627 - Static6.anInt4375;
@@ -2065,7 +2065,7 @@ public final class Static29 {
 							if (GlRenderer.enabled) {
 								LightingManager.method3114(Static7.anInt5281, Static6.anInt4375, Static6.anInt4400, local24, local18, local21);
 							}
-							local2706.primary.method3805(0, Static2.anInt2247, Static5.anInt3487, Static6.anInt4794, Static3.anInt2272, local2771 + local2706.anInt5633, local2776, local2781 + local2706.anInt5625, local2706.key, local24, null);
+							local2706.primary.method3805(0, Static2.anInt2247, Static5.anInt3487, Static6.anInt4794, Static3.anInt2272, local2771 + local2706.xOffset, local2776, local2781 + local2706.zOffset, local2706.key, local24, null);
 						} else if (local2706.secondary != null) {
 							if (GlRenderer.enabled) {
 								LightingManager.method3114(Static7.anInt5281, Static6.anInt4375, Static6.anInt4400, local24, local18, local21);

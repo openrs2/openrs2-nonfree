@@ -188,7 +188,7 @@ public final class SceneGraph {
 	}
 
 	@OriginalMember(owner = "client!ao", name = "a", descriptor = "(IIIILclient!vc;Lclient!vc;IIIIJ)V")
-	public static void setWallDecor(@OriginalArg(0) int level, @OriginalArg(1) int x, @OriginalArg(2) int z, @OriginalArg(3) int arg3, @OriginalArg(4) Entity primary, @OriginalArg(5) Entity secondary, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) int arg8, @OriginalArg(9) int arg9, @OriginalArg(10) long key) {
+	public static void setWallDecor(@OriginalArg(0) int level, @OriginalArg(1) int x, @OriginalArg(2) int z, @OriginalArg(3) int arg3, @OriginalArg(4) Entity primary, @OriginalArg(5) Entity secondary, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) int xOffset, @OriginalArg(9) int zOffset, @OriginalArg(10) long key) {
 		if (primary == null) {
 			return;
 		}
@@ -201,8 +201,8 @@ public final class SceneGraph {
 		wallDecor.secondary = secondary;
 		wallDecor.anInt5629 = arg6;
 		wallDecor.anInt5631 = arg7;
-		wallDecor.anInt5633 = arg8;
-		wallDecor.anInt5625 = arg9;
+		wallDecor.xOffset = xOffset;
+		wallDecor.zOffset = zOffset;
 		for (@Pc(46) int level0 = level; level0 >= 0; level0--) {
 			if (tiles[level0][x][z] == null) {
 				tiles[level0][x][z] = new Tile(level0, x, z);
@@ -578,15 +578,15 @@ public final class SceneGraph {
 	}
 
 	@OriginalMember(owner = "client!bl", name = "a", descriptor = "(IIII)V")
-	public static void method344(@OriginalArg(0) int level, @OriginalArg(1) int x, @OriginalArg(2) int z, @OriginalArg(3) int arg3) {
+	public static void scaleWallDecorOffsets(@OriginalArg(0) int level, @OriginalArg(1) int x, @OriginalArg(2) int z, @OriginalArg(3) int scale) {
 		@Pc(7) Tile tile = tiles[level][x][z];
 		if (tile == null) {
 			return;
 		}
 		@Pc(13) WallDecor wallDecor = tile.wallDecor;
 		if (wallDecor != null) {
-			wallDecor.anInt5633 = wallDecor.anInt5633 * arg3 / 16;
-			wallDecor.anInt5625 = wallDecor.anInt5625 * arg3 / 16;
+			wallDecor.xOffset = wallDecor.xOffset * scale / 16;
+			wallDecor.zOffset = wallDecor.zOffset * scale / 16;
 		}
 	}
 

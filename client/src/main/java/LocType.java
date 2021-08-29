@@ -55,7 +55,7 @@ public final class LocType {
 	public boolean aBoolean372 = true;
 
 	@OriginalMember(owner = "client!vh", name = "g", descriptor = "I")
-	public int anInt5507 = 16;
+	public int wallDecorOffsetScale = 16;
 
 	@OriginalMember(owner = "client!vh", name = "y", descriptor = "I")
 	public int soundRadius = 0;
@@ -744,7 +744,7 @@ public final class LocType {
 		} else if (code == 27) {
 			this.anInt5509 = 1;
 		} else if (code == 28) {
-			this.anInt5507 = buffer.readUnsignedByte();
+			this.wallDecorOffsetScale = buffer.readUnsignedByte();
 		} else if (code == 29) {
 			this.anInt5529 = buffer.readByte();
 		} else if (code == 39) {
