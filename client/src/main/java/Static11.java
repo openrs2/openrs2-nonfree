@@ -5,20 +5,20 @@ import org.openrs2.deob.annotation.Pc;
 public final class Static11 {
 
 	@OriginalMember(owner = "client!cb", name = "a", descriptor = "(III)Z")
-	public static boolean method508(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
-		@Pc(7) int local7 = SceneGraph.anIntArrayArrayArray3[arg0][arg1][arg2];
+	public static boolean method508(@OriginalArg(0) int level, @OriginalArg(1) int x, @OriginalArg(2) int z) {
+		@Pc(7) int local7 = SceneGraph.anIntArrayArrayArray3[level][x][z];
 		if (local7 == -Static2.anInt1871) {
 			return false;
 		} else if (local7 == Static2.anInt1871) {
 			return true;
 		} else {
-			@Pc(22) int local22 = arg1 << 7;
-			@Pc(26) int local26 = arg2 << 7;
-			if (Static33.method4119(local22 + 1, SceneGraph.tileHeights[arg0][arg1][arg2], local26 + 1) && Static33.method4119(local22 + 128 - 1, SceneGraph.tileHeights[arg0][arg1 + 1][arg2], local26 + 1) && Static33.method4119(local22 + 128 - 1, SceneGraph.tileHeights[arg0][arg1 + 1][arg2 + 1], local26 + 128 - 1) && Static33.method4119(local22 + 1, SceneGraph.tileHeights[arg0][arg1][arg2 + 1], local26 + 128 - 1)) {
-				SceneGraph.anIntArrayArrayArray3[arg0][arg1][arg2] = Static2.anInt1871;
+			@Pc(22) int xFine = x << 7;
+			@Pc(26) int zFine = z << 7;
+			if (Static33.method4119(xFine + 1, SceneGraph.tileHeights[level][x][z], zFine + 1) && Static33.method4119(xFine + 128 - 1, SceneGraph.tileHeights[level][x + 1][z], zFine + 1) && Static33.method4119(xFine + 128 - 1, SceneGraph.tileHeights[level][x + 1][z + 1], zFine + 128 - 1) && Static33.method4119(xFine + 1, SceneGraph.tileHeights[level][x][z + 1], zFine + 128 - 1)) {
+				SceneGraph.anIntArrayArrayArray3[level][x][z] = Static2.anInt1871;
 				return true;
 			} else {
-				SceneGraph.anIntArrayArrayArray3[arg0][arg1][arg2] = -Static2.anInt1871;
+				SceneGraph.anIntArrayArrayArray3[level][x][z] = -Static2.anInt1871;
 				return false;
 			}
 		}
@@ -41,16 +41,16 @@ public final class Static11 {
 		WorldMap.clear(false);
 		TitleScreen.clear();
 		Static20.method1929();
-		for (@Pc(42) int local42 = 0; local42 < 2048; local42++) {
-			@Pc(51) Player local51 = PlayerList.players[local42];
-			if (local51 != null) {
-				local51.attachment = null;
+		for (@Pc(42) int i = 0; i < 2048; i++) {
+			@Pc(51) Player player = PlayerList.players[i];
+			if (player != null) {
+				player.attachment = null;
 			}
 		}
 		if (GlRenderer.enabled) {
 			Static14.method1205();
 			Static10.setHdrEnabled(Preferences.hdr);
-			Static26.method2969();
+			ParticleSystem.load();
 		}
 		Fonts.load(client.js5Archive8, client.js5Archive13);
 		Sprites.load(client.js5Archive8);
@@ -264,9 +264,9 @@ public final class Static11 {
 		client.instance.loadMiscNatives();
 		GameShell.focus = true;
 		Static3.anInt2235 = 0;
-		Static7.aBoolean367 = true;
+		Static7.prevFocus = true;
 		MouseRecorder.instance.samples = 0;
-		Static1.aLong32 = 0L;
+		Static1.prevClickTime = 0L;
 		ReflectionCheck.clear();
 		Static1.anInt885 = 0;
 		Protocol.opcode1 = -1;

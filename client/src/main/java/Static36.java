@@ -102,10 +102,10 @@ public final class Static36 {
 		if (Static1.aByteArrayArrayArray2 == null) {
 			Static1.aByteArrayArrayArray2 = new byte[4][104][104];
 		}
-		for (@Pc(12) int local12 = 0; local12 < 4; local12++) {
-			for (@Pc(17) int local17 = 0; local17 < 104; local17++) {
-				for (@Pc(24) int local24 = 0; local24 < 104; local24++) {
-					Static1.aByteArrayArrayArray2[local12][local17][local24] = arg0;
+		for (@Pc(12) int level = 0; level < 4; level++) {
+			for (@Pc(17) int x = 0; x < 104; x++) {
+				for (@Pc(24) int z = 0; z < 104; z++) {
+					Static1.aByteArrayArrayArray2[level][x][z] = arg0;
 				}
 			}
 		}

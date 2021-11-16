@@ -421,4 +421,19 @@ public final class StringUtils {
 	public static String ipToString(@OriginalArg(1) int ip) {
 		return (ip >> 24 & 0xFF) + "." + (ip >> 16 & 0xFF) + "." + (ip >> 8 & 0xFF) + "." + (ip & 0xFF);
 	}
+
+	@OriginalMember(owner = "client!ni", name = "a", descriptor = "(BI)Ljava/lang/String;")
+	public static String countToString(@OriginalArg(1) int count) {
+		@Pc(10) String s = Integer.toString(count);
+		for (@Pc(19) int i = s.length() - 3; i > 0; i -= 3) {
+			s = s.substring(0, i) + "," + s.substring(i);
+		}
+		if (s.length() > 9) {
+			return " <col=00ff80>" + s.substring(0, s.length() - 8) + LocalisedText.MILLION + " (" + s + ")</col>";
+		} else if (s.length() > 6) {
+			return " <col=ffffff>" + s.substring(0, s.length() - 4) + LocalisedText.THOUSAND + " (" + s + ")</col>";
+		} else {
+			return " <col=ffff00>" + s + "</col>";
+		}
+	}
 }

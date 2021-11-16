@@ -20,26 +20,26 @@ public final class Static31 {
 	}
 
 	@OriginalMember(owner = "client!rf", name = "a", descriptor = "([Lclient!wf;ZIIII)V")
-	public static void method3660(@OriginalArg(0) Component[] arg0, @OriginalArg(1) boolean arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4) {
-		for (@Pc(7) int local7 = 0; local7 < arg0.length; local7++) {
-			@Pc(19) Component local19 = arg0[local7];
-			if (local19 != null && local19.layer == arg3) {
-				Static11.method526(local19, arg2, arg4, arg1);
-				Static36.method3812(local19, arg2, arg4);
-				if (local19.scrollY > local19.scrollHeight - local19.height) {
-					local19.scrollY = local19.scrollHeight - local19.height;
+	public static void method3660(@OriginalArg(0) Component[] components, @OriginalArg(1) boolean arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4) {
+		for (@Pc(7) int i = 0; i < components.length; i++) {
+			@Pc(19) Component component = components[i];
+			if (component != null && component.layer == arg3) {
+				Static11.method526(component, arg2, arg4, arg1);
+				Static36.method3812(component, arg2, arg4);
+				if (component.scrollY > component.scrollHeight - component.height) {
+					component.scrollY = component.scrollHeight - component.height;
 				}
-				if (local19.scrollX > local19.scrollWidth - local19.width) {
-					local19.scrollX = local19.scrollWidth - local19.width;
+				if (component.scrollX > component.scrollWidth - component.width) {
+					component.scrollX = component.scrollWidth - component.width;
 				}
-				if (local19.scrollY < 0) {
-					local19.scrollY = 0;
+				if (component.scrollY < 0) {
+					component.scrollY = 0;
 				}
-				if (local19.scrollX < 0) {
-					local19.scrollX = 0;
+				if (component.scrollX < 0) {
+					component.scrollX = 0;
 				}
-				if (local19.type == 0) {
-					Static34.method4251(arg1, local19);
+				if (component.type == 0) {
+					Static34.method4251(arg1, component);
 				}
 			}
 		}
@@ -116,8 +116,8 @@ public final class Static31 {
 			arg4 = Static6.anInt4856;
 			arg0 = Static5.anInt3483;
 		}
-		Static5.anInt3506 = arg0;
-		Static5.anInt3503 = arg4;
+		ParticleSystem.anInt3506 = arg0;
+		ParticleSystem.anInt3503 = arg4;
 		if (Static1.anInt772 == 1) {
 			@Pc(121) int local121 = (int) Static5.aFloat147;
 			if (Static1.anInt626 / 256 > local121) {
@@ -249,7 +249,7 @@ public final class Static31 {
 			} else {
 				SoftwareRaster.fillRect(arg0, arg4, arg3, arg1, 0);
 			}
-			Static37.method4716(LocalisedText.LOADING, false);
+			Static37.renderLoadingText(LocalisedText.LOADING, false);
 		}
 		if (!arg2 && !Static3.aBoolean366 && !Static1.aBoolean17 && arg0 <= Static4.anInt3341 && arg3 + arg0 > Static4.anInt3341 && arg4 <= Static5.anInt5848 && arg4 + arg1 > Static5.anInt5848) {
 			MiniMenu.addEntries(arg1, Static4.anInt3341, arg4, arg0, arg3, Static5.anInt5848);

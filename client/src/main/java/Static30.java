@@ -456,7 +456,7 @@ public final class Static30 {
 												local1957 = "null";
 											}
 											if ((local2008.stackable == 1 || component.objCount != 1) && component.objCount != -1) {
-												local1957 = "<col=ff9040>" + local1957 + "</col> x" + Static26.method4816(component.objCount);
+												local1957 = "<col=ff9040>" + local1957 + "</col> x" + StringUtils.countToString(component.objCount);
 											}
 										}
 										if (Static6.aClass185_14 == component) {
@@ -699,7 +699,7 @@ public final class Static30 {
 													if (local3224.stackable != 1 && component.objCounts[local3195] == 1) {
 														local3246 = "<col=ff9040>" + local3224.name + "</col>";
 													} else {
-														local3246 = "<col=ff9040>" + local3224.name + "</col> x" + Static26.method4816(component.objCounts[local3195]);
+														local3246 = "<col=ff9040>" + local3224.name + "</col> x" + StringUtils.countToString(component.objCounts[local3195]);
 													}
 													@Pc(3276) int local3276 = local128 + local3203 * (component.anInt5943 + 115);
 													@Pc(3285) int local3285 = (component.anInt5964 + 12) * local3197 + local122;

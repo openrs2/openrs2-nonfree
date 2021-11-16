@@ -593,8 +593,8 @@ public abstract class GameShell extends Applet implements Runnable, FocusListene
 				ThreadUtils.sleep(10L);
 			}
 			thread = (Thread) request.result;
-		} catch (@Pc(94) Exception local94) {
-			TracingException.report(local94, null);
+		} catch (@Pc(94) Exception ex) {
+			TracingException.report(ex, null);
 		}
 	}
 

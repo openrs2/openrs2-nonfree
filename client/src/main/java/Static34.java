@@ -201,16 +201,16 @@ public final class Static34 {
 	}
 
 	@OriginalMember(owner = "client!tm", name = "a", descriptor = "(ZZLclient!wf;)V")
-	public static void method4251(@OriginalArg(0) boolean arg0, @OriginalArg(2) Component arg1) {
-		@Pc(8) int local8 = arg1.scrollWidth == 0 ? arg1.width : arg1.scrollWidth;
-		@Pc(20) int local20 = arg1.scrollHeight == 0 ? arg1.height : arg1.scrollHeight;
-		Static31.method3660(InterfaceList.components[arg1.id >> 16], arg0, local8, arg1.id, local20);
-		if (arg1.createdComponents != null) {
-			Static31.method3660(arg1.createdComponents, arg0, local8, arg1.id, local20);
+	public static void method4251(@OriginalArg(0) boolean arg0, @OriginalArg(2) Component component) {
+		@Pc(8) int width = component.scrollWidth == 0 ? component.width : component.scrollWidth;
+		@Pc(20) int height = component.scrollHeight == 0 ? component.height : component.scrollHeight;
+		Static31.method3660(InterfaceList.components[component.id >> 16], arg0, width, component.id, height);
+		if (component.createdComponents != null) {
+			Static31.method3660(component.createdComponents, arg0, width, component.id, height);
 		}
-		@Pc(61) SubInterface local61 = (SubInterface) InterfaceList.subInterfaces.get((long) arg1.id);
-		if (local61 != null) {
-			Static21.method2050(arg0, local8, local61.id, local20);
+		@Pc(61) SubInterface subInterface = (SubInterface) InterfaceList.subInterfaces.get((long) component.id);
+		if (subInterface != null) {
+			Static21.method2050(arg0, width, subInterface.id, height);
 		}
 	}
 }

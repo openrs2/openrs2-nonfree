@@ -128,8 +128,8 @@ public final class Static19 {
 		}
 		Static24.method2697();
 		SceneGraph.clear();
-		for (@Pc(18) int local18 = 0; local18 < 4; local18++) {
-			PathFinder.collisionMaps[local18].clear();
+		for (@Pc(18) int level = 0; level < 4; level++) {
+			PathFinder.collisionMaps[level].clear();
 		}
 		WorldMap.clear(false);
 		System.gc();
@@ -142,8 +142,8 @@ public final class Static19 {
 		Static1.centralZoneZ = 0;
 		Static5.dynamicArea = false;
 		Static5.originX = 0;
-		for (@Pc(57) int local57 = 0; local57 < HintArrowManager.HINT_ARROWS.length; local57++) {
-			HintArrowManager.HINT_ARROWS[local57] = null;
+		for (@Pc(57) int i = 0; i < HintArrowManager.HINT_ARROWS.length; i++) {
+			HintArrowManager.HINT_ARROWS[i] = null;
 		}
 		NpcList.size = 0;
 		PlayerList.size = 0;

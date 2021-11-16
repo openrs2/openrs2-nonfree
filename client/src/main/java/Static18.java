@@ -181,7 +181,7 @@ public final class Static18 {
 			Static3.anInt2184 = 0;
 			Static3.anInt2185 = 0;
 			Static3.anInt2180 = 0;
-			Static3.anInt2183 = 2147483646;
+			Static3.anInt2183 = 0x7FFFFFFE;
 			return;
 		}
 		method1737(0, Static3.anInt2186);

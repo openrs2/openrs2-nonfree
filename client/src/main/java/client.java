@@ -1207,20 +1207,20 @@ public final class client extends GameShell {
 					Static6.anInt4398 = Static3.anInt2886;
 				}
 				@Pc(267) int local267 = (Static6.anInt4398 - Static3.anInt2886) * 50 / Static6.anInt4398;
-				Static37.method4716(LocalisedText.LOADING + "<br>(" + local267 + "%)", false);
+				Static37.renderLoadingText(LocalisedText.LOADING + "<br>(" + local267 + "%)", false);
 			} else if (Static6.anInt4659 == 2) {
 				if (Static7.anInt5486 > Static7.anInt5473) {
 					Static7.anInt5473 = Static7.anInt5486;
 				}
 				@Pc(305) int local305 = (Static7.anInt5473 - Static7.anInt5486) * 50 / Static7.anInt5473 + 50;
-				Static37.method4716(LocalisedText.LOADING + "<br>(" + local305 + "%)", false);
+				Static37.renderLoadingText(LocalisedText.LOADING + "<br>(" + local305 + "%)", false);
 			} else {
-				Static37.method4716(LocalisedText.LOADING, false);
+				Static37.renderLoadingText(LocalisedText.LOADING, false);
 			}
 		} else if (Static4.anInt3304 == 30) {
 			Static35.method4304(local26);
 		} else if (Static4.anInt3304 == 40) {
-			Static37.method4716(LocalisedText.CONLOST + "<br>" + LocalisedText.ATTEMPT_TO_REESTABLISH, false);
+			Static37.renderLoadingText(LocalisedText.CONLOST + "<br>" + LocalisedText.ATTEMPT_TO_REESTABLISH, false);
 		}
 		if (GlRenderer.enabled && Static4.anInt3304 != 0) {
 			GlRenderer.swapBuffers();

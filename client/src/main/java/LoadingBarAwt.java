@@ -48,7 +48,7 @@ public final class LoadingBarAwt {
 				loadingBarGraphics.setColor(Color.white);
 				loadingBarGraphics.drawString(text, (304 - fontMetrics.stringWidth(text)) / 2, 22);
 				graphics.drawImage(loadingBar, GameShell.canvasWidth / 2 - 152, GameShell.canvasHeight / 2 - 18, null);
-    		} catch (@Pc(128) Exception ex) {
+			} catch (@Pc(128) Exception ex) {
 				@Pc(134) int x = GameShell.canvasWidth / 2 - 152;
 				@Pc(140) int y = GameShell.canvasHeight / 2 - 18;
 				graphics.setColor(color);

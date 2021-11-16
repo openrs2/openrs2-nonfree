@@ -187,9 +187,6 @@ public final class Static4 {
 	@OriginalMember(owner = "client!lj", name = "mb", descriptor = "[F")
 	public static final float[] aFloatArray36 = new float[] { 0.0F, 0.0F, 0.0F, 0.0F };
 
-	@OriginalMember(owner = "client!lm", name = "t", descriptor = "I")
-	public static final int anInt3227 = 12;
-
 	@OriginalMember(owner = "client!ln", name = "V", descriptor = "S")
 	public static short aShort25 = 205;
 

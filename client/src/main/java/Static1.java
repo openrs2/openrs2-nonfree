@@ -1,5 +1,3 @@
-import java.awt.FontMetrics;
-
 import org.openrs2.deob.annotation.OriginalMember;
 
 public final class Static1 {
@@ -224,7 +222,7 @@ public final class Static1 {
 	public static final AnimFrameset[] aClass4_Sub3_Sub19Array1 = new AnimFrameset[14];
 
 	@OriginalMember(owner = "client!cj", name = "X", descriptor = "J")
-	public static long aLong32 = 0L;
+	public static long prevClickTime = 0L;
 
 	@OriginalMember(owner = "client!ck", name = "ab", descriptor = "Z")
 	public static boolean aBoolean38 = false;

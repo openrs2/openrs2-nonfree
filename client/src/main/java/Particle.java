@@ -6,6 +6,9 @@ import org.openrs2.deob.annotation.Pc;
 @OriginalClass("client!lm")
 public final class Particle extends SecondaryParticleNode {
 
+	@OriginalMember(owner = "client!lm", name = "t", descriptor = "I")
+	private static final int logScale = 12;
+
 	@OriginalMember(owner = "client!lm", name = "z", descriptor = "I")
 	private int anInt3232;
 
@@ -19,16 +22,16 @@ public final class Particle extends SecondaryParticleNode {
 	public ParticleEmitter emitter;
 
 	@OriginalMember(owner = "client!lm", name = "u", descriptor = "I")
-	public int anInt3228;
+	public int x;
 
 	@OriginalMember(owner = "client!lm", name = "v", descriptor = "I")
-	public int anInt3229;
+	public int y;
 
 	@OriginalMember(owner = "client!lm", name = "x", descriptor = "I")
-	public int anInt3230;
+	public int z;
 
 	@OriginalMember(owner = "client!lm", name = "y", descriptor = "I")
-	public int anInt3231;
+	public int color;
 
 	@OriginalMember(owner = "client!lm", name = "A", descriptor = "S")
 	private short aShort20;
@@ -49,12 +52,12 @@ public final class Particle extends SecondaryParticleNode {
 	private int anInt3233;
 
 	@OriginalMember(owner = "client!lm", name = "<init>", descriptor = "(Lclient!bi;IIIIIIIII)V")
-	public Particle(@OriginalArg(0) ParticleEmitter emitter, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) int arg8, @OriginalArg(9) int arg9) {
+	public Particle(@OriginalArg(0) ParticleEmitter emitter, @OriginalArg(1) int x, @OriginalArg(2) int y, @OriginalArg(3) int z, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) int arg8, @OriginalArg(9) int color) {
 		this.emitter = emitter;
-		this.anInt3228 = arg1 << Static4.anInt3227;
-		this.anInt3229 = arg2 << Static4.anInt3227;
-		this.anInt3230 = arg3 << Static4.anInt3227;
-		this.anInt3231 = arg9;
+		this.x = x << logScale;
+		this.y = y << logScale;
+		this.z = z << logScale;
+		this.color = color;
 		this.aShort22 = this.aShort20 = (short) arg8;
 		this.aShort19 = (short) arg4;
 		this.aShort23 = (short) arg5;
@@ -73,16 +76,16 @@ public final class Particle extends SecondaryParticleNode {
 			this.method2630();
 			return;
 		}
-		@Pc(21) int local21 = this.anInt3228 >> Static4.anInt3227;
-		@Pc(26) int local26 = this.anInt3229 >> Static4.anInt3227;
-		@Pc(31) int local31 = this.anInt3230 >> Static4.anInt3227;
+		@Pc(21) int local21 = this.x >> logScale;
+		@Pc(26) int local26 = this.y >> logScale;
+		@Pc(31) int local31 = this.z >> logScale;
 		@Pc(35) ParticleSystem system = this.emitter.system;
 		@Pc(39) ParticleEmitterType type = this.emitter.type;
 		if (type.anInt2408 != 0) {
 			if (this.aShort22 - this.aShort20 <= type.anInt2414) {
-				@Pc(69) int local69 = (this.anInt3231 >> 8 & 0xFF00) + (this.anInt3232 >> 16 & 0xFF) + type.anInt2407 * arg1;
-				@Pc(86) int local86 = (this.anInt3231 & 0xFF00) + (this.anInt3232 >> 8 & 0xFF) + type.anInt2409 * arg1;
-				@Pc(103) int local103 = ((this.anInt3231 & 0xFF) << 8) + (this.anInt3232 & 0xFF) + type.anInt2421 * arg1;
+				@Pc(69) int local69 = (this.color >> 8 & 0xFF00) + (this.anInt3232 >> 16 & 0xFF) + type.anInt2407 * arg1;
+				@Pc(86) int local86 = (this.color & 0xFF00) + (this.anInt3232 >> 8 & 0xFF) + type.anInt2409 * arg1;
+				@Pc(103) int local103 = ((this.color & 0xFF) << 8) + (this.anInt3232 & 0xFF) + type.anInt2421 * arg1;
 				if (local69 < 0) {
 					local69 = 0;
 				} else if (local69 > 65535) {
@@ -98,20 +101,20 @@ public final class Particle extends SecondaryParticleNode {
 				} else if (local103 > 65535) {
 					local103 = 65535;
 				}
-				this.anInt3231 &= -16777216;
-				this.anInt3231 |= ((local69 & 0xFF00) << 8) + (local86 & 0xFF00) + (local103 >> 8 & 0xFF);
+				this.color &= -16777216;
+				this.color |= ((local69 & 0xFF00) << 8) + (local86 & 0xFF00) + (local103 >> 8 & 0xFF);
 				this.anInt3232 &= -16777216;
 				this.anInt3232 |= ((local69 & 0xFF) << 16) + ((local86 & 0xFF) << 8) + (local103 & 0xFF);
 			}
 			if (this.aShort22 - this.aShort20 <= type.anInt2410) {
-				@Pc(212) int local212 = (this.anInt3231 >> 16 & 0xFF00) + (this.anInt3232 >> 24 & 0xFF) + type.anInt2398 * arg1;
+				@Pc(212) int local212 = (this.color >> 16 & 0xFF00) + (this.anInt3232 >> 24 & 0xFF) + type.anInt2398 * arg1;
 				if (local212 < 0) {
 					local212 = 0;
 				} else if (local212 > 65535) {
 					local212 = 65535;
 				}
-				this.anInt3231 &= 16777215;
-				this.anInt3231 |= (local212 & 0xFF00) << 16;
+				this.color &= 16777215;
+				this.color |= (local212 & 0xFF00) << 16;
 				this.anInt3232 &= 16777215;
 				this.anInt3232 |= (local212 & 0xFF) << 24;
 			}
@@ -170,9 +173,9 @@ public final class Particle extends SecondaryParticleNode {
 								local284 += local624 * arg1 >> 15;
 								local286 = true;
 							} else {
-								this.anInt3228 += local606 * arg1 >> 15;
-								this.anInt3229 += local615 * arg1 >> 15;
-								this.anInt3230 += local624 * arg1 >> 15;
+								this.x += local606 * arg1 >> 15;
+								this.y += local615 * arg1 >> 15;
+								this.z += local624 * arg1 >> 15;
 							}
 						} else if (effectorType.anInt908 == 0) {
 							local278 += (effectorNode.anInt6091 - local500) * arg1;
@@ -180,9 +183,9 @@ public final class Particle extends SecondaryParticleNode {
 							local284 += (effectorNode.anInt6088 - local500) * arg1;
 							local286 = true;
 						} else {
-							this.anInt3228 += (effectorNode.anInt6091 - local500) * arg1;
-							this.anInt3229 += (effectorType.anInt903 - local500) * arg1;
-							this.anInt3230 += (effectorNode.anInt6088 - local500) * arg1;
+							this.x += (effectorNode.anInt6091 - local500) * arg1;
+							this.y += (effectorType.anInt903 - local500) * arg1;
+							this.z += (effectorNode.anInt6088 - local500) * arg1;
 						}
 					}
 				}
@@ -224,9 +227,9 @@ public final class Particle extends SecondaryParticleNode {
 									local284 += local924 * arg1 >> 15;
 									local286 = true;
 								} else {
-									this.anInt3228 += local906 * arg1 >> 15;
-									this.anInt3229 += local915 * arg1 >> 15;
-									this.anInt3230 += local924 * arg1 >> 15;
+									this.x += local906 * arg1 >> 15;
+									this.y += local915 * arg1 >> 15;
+									this.z += local924 * arg1 >> 15;
 								}
 							} else if (local714.anInt908 == 0) {
 								local278 += (effectorNode.anInt6091 - local800) * arg1;
@@ -234,9 +237,9 @@ public final class Particle extends SecondaryParticleNode {
 								local284 += (effectorNode.anInt6088 - local800) * arg1;
 								local286 = true;
 							} else {
-								this.anInt3228 += (effectorNode.anInt6091 - local800) * arg1;
-								this.anInt3229 += (local714.anInt903 - local800) * arg1;
-								this.anInt3230 += (effectorNode.anInt6088 - local800) * arg1;
+								this.x += (effectorNode.anInt6091 - local800) * arg1;
+								this.y += (local714.anInt903 - local800) * arg1;
+								this.z += (effectorNode.anInt6088 - local800) * arg1;
 							}
 							effectorNode = (ParticleEffector) ParticleManager.aClass10_1.nextWithKey();
 						}
@@ -260,9 +263,9 @@ public final class Particle extends SecondaryParticleNode {
 					local284 += effectorType.anInt892 * arg1;
 					local286 = true;
 				} else {
-					this.anInt3228 += effectorType.anInt898 * arg1;
-					this.anInt3229 += effectorType.anInt903 * arg1;
-					this.anInt3230 += effectorType.anInt892 * arg1;
+					this.x += effectorType.anInt898 * arg1;
+					this.y += effectorType.anInt903 * arg1;
+					this.z += effectorType.anInt892 * arg1;
 				}
 			}
 		}
@@ -280,12 +283,12 @@ public final class Particle extends SecondaryParticleNode {
 				this.anInt3233 <<= 1;
 			}
 		}
-		this.anInt3228 = (int) ((long) this.anInt3228 + ((long) this.aShort19 * (long) this.anInt3233 >> 23) * (long) arg1);
-		this.anInt3229 = (int) ((long) this.anInt3229 + ((long) this.aShort23 * (long) this.anInt3233 >> 23) * (long) arg1);
-		this.anInt3230 = (int) ((long) this.anInt3230 + ((long) this.aShort24 * (long) this.anInt3233 >> 23) * (long) arg1);
-		@Pc(1217) int x = this.anInt3228 >> 19;
-		@Pc(1222) int z = this.anInt3230 >> 19;
-		@Pc(1227) int local1227 = this.anInt3229 >> Static4.anInt3227;
+		this.x = (int) ((long) this.x + ((long) this.aShort19 * (long) this.anInt3233 >> 23) * (long) arg1);
+		this.y = (int) ((long) this.y + ((long) this.aShort23 * (long) this.anInt3233 >> 23) * (long) arg1);
+		this.z = (int) ((long) this.z + ((long) this.aShort24 * (long) this.anInt3233 >> 23) * (long) arg1);
+		@Pc(1217) int x = this.x >> 19;
+		@Pc(1222) int z = this.z >> 19;
+		@Pc(1227) int local1227 = this.y >> logScale;
 		if (local1227 > 0 || local1227 < -65535 || x < 0 || x >= SceneGraph.width || z < 0 || z >= SceneGraph.length) {
 			this.method2630();
 			return;
@@ -369,12 +372,12 @@ public final class Particle extends SecondaryParticleNode {
 	}
 
 	@OriginalMember(owner = "client!lm", name = "a", descriptor = "(Lclient!bi;IIIIIIIII)V")
-	public final void method2632(@OriginalArg(0) ParticleEmitter emitter, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) int arg8, @OriginalArg(9) int arg9) {
+	public final void method2632(@OriginalArg(0) ParticleEmitter emitter, @OriginalArg(1) int x, @OriginalArg(2) int y, @OriginalArg(3) int z, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) int arg8, @OriginalArg(9) int color) {
 		this.emitter = emitter;
-		this.anInt3228 = arg1 << Static4.anInt3227;
-		this.anInt3229 = arg2 << Static4.anInt3227;
-		this.anInt3230 = arg3 << Static4.anInt3227;
-		this.anInt3231 = arg9;
+		this.x = x << logScale;
+		this.y = y << logScale;
+		this.z = z << logScale;
+		this.color = color;
 		this.aShort22 = this.aShort20 = (short) arg8;
 		this.aShort19 = (short) arg4;
 		this.aShort23 = (short) arg5;

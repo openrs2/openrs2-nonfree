@@ -165,7 +165,7 @@ public final class Static6 {
 	public static final int[] anIntArray519 = new int[] { 16, 32, 64, 128 };
 
 	@OriginalMember(owner = "client!sh", name = "Z", descriptor = "I")
-	public static int anInt4835 = 0;
+	public static int mouseRecorderPrevY = 0;
 
 	@OriginalMember(owner = "client!si", name = "c", descriptor = "[I")
 	public static final int[] anIntArray524 = new int[] { 0, 0, 2, 0, 0, 2, 1, 1, 0 };

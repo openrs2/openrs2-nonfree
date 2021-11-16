@@ -28,32 +28,32 @@ public final class Static13 {
 
 	@OriginalMember(owner = "client!ee", name = "a", descriptor = "(III)V")
 	public static void method1008() {
-		for (@Pc(1) int local1 = 0; local1 < SceneGraph.levels; local1++) {
-			for (@Pc(6) int local6 = 0; local6 < SceneGraph.width; local6++) {
-				for (@Pc(11) int local11 = 0; local11 < SceneGraph.length; local11++) {
-					@Pc(22) Tile local22 = SceneGraph.tiles[local1][local6][local11];
-					if (local22 != null) {
-						@Pc(27) Wall local27 = local22.wall;
-						if (local27 != null && local27.primary.method3808()) {
-							Static20.method1951(local27.primary, local1, local6, local11, 1, 1);
-							if (local27.secondary != null && local27.secondary.method3808()) {
-								Static20.method1951(local27.secondary, local1, local6, local11, 1, 1);
-								local27.primary.method3807(local27.secondary, 0, 0, 0, false);
-								local27.secondary = local27.secondary.method3809();
+		for (@Pc(1) int level = 0; level < SceneGraph.levels; level++) {
+			for (@Pc(6) int x = 0; x < SceneGraph.width; x++) {
+				for (@Pc(11) int z = 0; z < SceneGraph.length; z++) {
+					@Pc(22) Tile tile = SceneGraph.tiles[level][x][z];
+					if (tile != null) {
+						@Pc(27) Wall wall = tile.wall;
+						if (wall != null && wall.primary.method3808()) {
+							Static20.method1951(wall.primary, level, x, z, 1, 1);
+							if (wall.secondary != null && wall.secondary.method3808()) {
+								Static20.method1951(wall.secondary, level, x, z, 1, 1);
+								wall.primary.method3807(wall.secondary, 0, 0, 0, false);
+								wall.secondary = wall.secondary.method3809();
 							}
-							local27.primary = local27.primary.method3809();
+							wall.primary = wall.primary.method3809();
 						}
-						for (@Pc(83) int local83 = 0; local83 < local22.sceneryLen; local83++) {
-							@Pc(92) Scenery local92 = local22.scenery[local83];
-							if (local92 != null && local92.entity.method3808()) {
-								Static20.method1951(local92.entity, local1, local6, local11, local92.xMax + 1 - local92.xMin, local92.zMax + 1 - local92.zMin);
-								local92.entity = local92.entity.method3809();
+						for (@Pc(83) int i = 0; i < tile.sceneryLen; i++) {
+							@Pc(92) Scenery scenery = tile.scenery[i];
+							if (scenery != null && scenery.entity.method3808()) {
+								Static20.method1951(scenery.entity, level, x, z, scenery.xMax + 1 - scenery.xMin, scenery.zMax + 1 - scenery.zMin);
+								scenery.entity = scenery.entity.method3809();
 							}
 						}
-						@Pc(131) GroundDecor local131 = local22.groundDecor;
-						if (local131 != null && local131.entity.method3808()) {
-							Static26.method2981(local131.entity, local1, local6, local11);
-							local131.entity = local131.entity.method3809();
+						@Pc(131) GroundDecor groundDecor = tile.groundDecor;
+						if (groundDecor != null && groundDecor.entity.method3808()) {
+							Static26.method2981(groundDecor.entity, level, x, z);
+							groundDecor.entity = groundDecor.entity.method3809();
 						}
 					}
 				}

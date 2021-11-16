@@ -151,16 +151,16 @@ public final class Static27 {
 	@OriginalMember(owner = "client!oj", name = "a", descriptor = "(IIIIIIFIZ)[[I")
 	public static int[][] method3234(@OriginalArg(6) float arg0) {
 		@Pc(17) int[][] local17 = new int[256][64];
-		@Pc(21) TextureOp34 local21 = new TextureOp34();
-		local21.anInt2625 = 4;
-		local21.anInt2631 = 8;
-		local21.anInt2628 = 3;
-		local21.anInt2620 = (int) (arg0 * 4096.0F);
-		local21.aBoolean181 = false;
-		local21.postDecode();
+		@Pc(21) TextureOp34 op = new TextureOp34();
+		op.anInt2625 = 4;
+		op.anInt2631 = 8;
+		op.anInt2628 = 3;
+		op.anInt2620 = (int) (arg0 * 4096.0F);
+		op.aBoolean181 = false;
+		op.postDecode();
 		Texture.setSize(64, 256);
-		for (@Pc(48) int local48 = 0; local48 < 256; local48++) {
-			local21.method2053(local17[local48], local48);
+		for (@Pc(48) int y = 0; y < 256; y++) {
+			op.method2053(local17[y], y);
 		}
 		return local17;
 	}

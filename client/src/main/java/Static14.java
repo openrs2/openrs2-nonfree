@@ -141,7 +141,7 @@ public final class Static14 {
 	}
 
 	@OriginalMember(owner = "client!em", name = "c", descriptor = "(I)Z")
-	public static boolean isShowingVideoAd() {
+	public static boolean isHidingVideoAd() {
 		if (client.javaScript) {
 			try {
 				return !((Boolean) BrowserControl.call(GameShell.signLink.applet, "showingVideoAd"));
@@ -271,24 +271,24 @@ public final class Static14 {
 	}
 
 	@OriginalMember(owner = "client!en", name = "a", descriptor = "(B[[BI[Lclient!em;[[I[[B[[F[[B[[F[[FI[[B)V")
-	public static void method1094(@OriginalArg(1) byte[][] arg0, @OriginalArg(2) int arg1, @OriginalArg(3) Light[] arg2, @OriginalArg(4) int[][] arg3, @OriginalArg(5) byte[][] arg4, @OriginalArg(6) float[][] arg5, @OriginalArg(7) byte[][] arg6, @OriginalArg(8) float[][] arg7, @OriginalArg(9) float[][] arg8, @OriginalArg(10) int arg9, @OriginalArg(11) byte[][] arg10) {
-		for (@Pc(11) int local11 = 0; local11 < arg1; local11++) {
-			@Pc(22) Light local22 = arg2[local11];
-			if (local22.level == arg9) {
+	public static void method1094(@OriginalArg(1) byte[][] arg0, @OriginalArg(2) int arg1, @OriginalArg(3) Light[] lights, @OriginalArg(4) int[][] arg3, @OriginalArg(5) byte[][] arg4, @OriginalArg(6) float[][] arg5, @OriginalArg(7) byte[][] arg6, @OriginalArg(8) float[][] arg7, @OriginalArg(9) float[][] arg8, @OriginalArg(10) int level, @OriginalArg(11) byte[][] arg10) {
+		for (@Pc(11) int i = 0; i < arg1; i++) {
+			@Pc(22) Light light = lights[i];
+			if (light.level == level) {
 				@Pc(34) Class135 local34 = new Class135();
-				@Pc(43) int local43 = (local22.z >> 7) - local22.radius;
+				@Pc(43) int local43 = (light.z >> 7) - light.radius;
 				@Pc(45) int local45 = 0;
 				if (local43 < 0) {
 					local45 = -local43;
 					local43 = 0;
 				}
-				@Pc(61) int local61 = local22.radius + (local22.z >> 7);
+				@Pc(61) int local61 = light.radius + (light.z >> 7);
 				if (local61 > 103) {
 					local61 = 103;
 				}
-				@Pc(78) int local78 = (local22.x >> 7) - local22.radius;
+				@Pc(78) int local78 = (light.x >> 7) - light.radius;
 				for (@Pc(80) int local80 = local43; local80 <= local61; local80++) {
-					@Pc(88) short local88 = local22.aShortArray28[local45];
+					@Pc(88) short local88 = light.aShortArray28[local45];
 					@Pc(94) int local94 = (local88 >> 8) + local78;
 					@Pc(102) int local102 = (local88 & 0xFF) + local94 - 1;
 					if (local94 < 0) {
@@ -331,7 +331,7 @@ public final class Static14 {
 								local140 = true;
 							}
 						}
-						@Pc(272) Scenery local272 = SceneGraph.getScenery(arg9, local119, local80);
+						@Pc(272) Scenery local272 = SceneGraph.getScenery(level, local119, local80);
 						if (local272 != null) {
 							@Pc(283) int local283 = (int) (local272.key >> 14) & 0x3F;
 							if (local283 == 9) {
@@ -340,14 +340,14 @@ public final class Static14 {
 								if ((local297 & 0x1) == 0) {
 									@Pc(315) boolean local315 = local119 - 1 >= local94;
 									if (!local315 && local61 >= local80 + 1) {
-										@Pc(329) short local329 = local22.aShortArray28[local45 + 1];
+										@Pc(329) short local329 = light.aShortArray28[local45 + 1];
 										@Pc(335) int local335 = local78 + (local329 >> 8);
 										@Pc(341) int local341 = (local329 & 0xFF) + local335;
 										local315 = local119 > local335 && local341 > local119;
 									}
 									@Pc(368) boolean local368 = local102 >= local119 + 1;
 									if (!local368 && local80 - 1 >= local43) {
-										@Pc(387) short local387 = local22.aShortArray28[local45 - 1];
+										@Pc(387) short local387 = light.aShortArray28[local45 - 1];
 										@Pc(394) int local394 = local78 + (local387 >> 8);
 										@Pc(400) int local400 = local394 + (local387 & 0xFF);
 										local368 = local394 < local119 && local119 < local400;
@@ -362,14 +362,14 @@ public final class Static14 {
 								} else {
 									@Pc(450) boolean local450 = local94 <= local119 - 1;
 									if (!local450 && local43 <= local80 - 1) {
-										@Pc(465) short local465 = local22.aShortArray28[local45 - 1];
+										@Pc(465) short local465 = light.aShortArray28[local45 - 1];
 										@Pc(471) int local471 = (local465 >> 8) + local78;
 										@Pc(477) int local477 = local471 + (local465 & 0xFF);
 										local450 = local119 > local471 && local477 > local119;
 									}
 									@Pc(508) boolean local508 = local119 + 1 <= local102;
 									if (!local508 && local61 >= local80 + 1) {
-										@Pc(526) short local526 = local22.aShortArray28[local45 + 1];
+										@Pc(526) short local526 = light.aShortArray28[local45 + 1];
 										@Pc(532) int local532 = (local526 >> 8) + local78;
 										@Pc(538) int local538 = (local526 & 0xFF) + local532;
 										local508 = local532 < local119 && local119 < local538;
@@ -406,11 +406,11 @@ public final class Static14 {
 				}
 				local34.method3432();
 				@Pc(698) int local698 = 0;
-				if ((local22.z >> 7) - local22.radius < 0) {
-					local698 = local22.radius - (local22.z >> 7);
+				if ((light.z >> 7) - light.radius < 0) {
+					local698 = light.radius - (light.z >> 7);
 				}
 				for (@Pc(722) int local722 = local43; local722 <= local61; local722++) {
-					@Pc(734) short local734 = local22.aShortArray28[local698];
+					@Pc(734) short local734 = light.aShortArray28[local698];
 					@Pc(741) int local741 = local78 + (local734 >> 8);
 					@Pc(749) int local749 = (local734 & 0xFF) + local741 - 1;
 					if (local741 < 0) {
@@ -433,13 +433,13 @@ public final class Static14 {
 								continue;
 							}
 							if (arg10[local766][local722] != 0) {
-								Static19.method1778(local22, Static1.anIntArrayArray5[arg10[local766][local722]], arg7, local722, local766, local34, arg5, arg8, arg0[local766][local722], arg3);
+								Static19.method1778(light, Static1.anIntArrayArray5[arg10[local766][local722]], arg7, local722, local766, local34, arg5, arg8, arg0[local766][local722], arg3);
 								continue;
 							}
 						} else if (local795 != 0) {
 							@Pc(859) FloType local859 = FloTypeList.get(local795 - 1);
 							if (local859.anInt3869 == -1) {
-								Static19.method1778(local22, Static2.anIntArrayArray16[arg10[local766][local722]], arg7, local722, local766, local34, arg5, arg8, arg0[local766][local722], arg3);
+								Static19.method1778(light, Static2.anIntArrayArray16[arg10[local766][local722]], arg7, local722, local766, local34, arg5, arg8, arg0[local766][local722], arg3);
 								continue;
 							}
 							@Pc(895) byte local895 = arg10[local766][local722];
@@ -447,7 +447,7 @@ public final class Static14 {
 								local797 = true;
 							}
 						}
-						@Pc(907) Scenery local907 = SceneGraph.getScenery(arg9, local766, local722);
+						@Pc(907) Scenery local907 = SceneGraph.getScenery(level, local766, local722);
 						if (local907 != null) {
 							@Pc(918) int local918 = (int) (local907.key >> 14) & 0x3F;
 							if (local918 == 9) {
@@ -457,13 +457,13 @@ public final class Static14 {
 									@Pc(946) boolean local946 = local741 <= local766 - 1;
 									@Pc(959) boolean local959 = local766 + 1 <= local749;
 									if (!local946 && local61 >= local722 + 1) {
-										@Pc(973) short local973 = local22.aShortArray28[local698 + 1];
+										@Pc(973) short local973 = light.aShortArray28[local698 + 1];
 										@Pc(979) int local979 = (local973 >> 8) + local78;
 										@Pc(985) int local985 = (local973 & 0xFF) + local979;
 										local946 = local979 < local766 && local766 < local985;
 									}
 									if (!local959 && local722 - 1 >= local43) {
-										@Pc(1014) short local1014 = local22.aShortArray28[local698 - 1];
+										@Pc(1014) short local1014 = light.aShortArray28[local698 - 1];
 										@Pc(1021) int local1021 = local78 + (local1014 >> 8);
 										@Pc(1027) int local1027 = (local1014 & 0xFF) + local1021;
 										local959 = local1021 < local766 && local766 < local1027;
@@ -481,13 +481,13 @@ public final class Static14 {
 									@Pc(1077) boolean local1077 = local766 - 1 >= local741;
 									@Pc(1090) boolean local1090 = local749 >= local766 + 1;
 									if (!local1077 && local722 - 1 >= local43) {
-										@Pc(1104) short local1104 = local22.aShortArray28[local698 - 1];
+										@Pc(1104) short local1104 = light.aShortArray28[local698 - 1];
 										@Pc(1110) int local1110 = local78 + (local1104 >> 8);
 										@Pc(1116) int local1116 = local1110 + (local1104 & 0xFF);
 										local1077 = local1110 < local766 && local766 < local1116;
 									}
 									if (!local1090 && local61 >= local722 + 1) {
-										@Pc(1141) short local1141 = local22.aShortArray28[local698 + 1];
+										@Pc(1141) short local1141 = light.aShortArray28[local698 + 1];
 										@Pc(1148) int local1148 = local78 + (local1141 >> 8);
 										@Pc(1154) int local1154 = (local1141 & 0xFF) + local1148;
 										local1090 = local766 > local1148 && local766 < local1154;
@@ -503,23 +503,23 @@ public final class Static14 {
 									}
 								}
 								if (local925 != null) {
-									Static19.method1778(local22, local925, arg7, local722, local766, local34, arg5, arg8, local779, arg3);
+									Static19.method1778(light, local925, arg7, local722, local766, local34, arg5, arg8, local779, arg3);
 								}
 								continue;
 							}
 						}
 						if (local797) {
-							Static19.method1778(local22, Static2.anIntArrayArray16[arg10[local766][local722]], arg7, local722, local766, local34, arg5, arg8, arg0[local766][local722], arg3);
-							Static19.method1778(local22, Static1.anIntArrayArray5[arg10[local766][local722]], arg7, local722, local766, local34, arg5, arg8, arg0[local766][local722], arg3);
+							Static19.method1778(light, Static2.anIntArrayArray16[arg10[local766][local722]], arg7, local722, local766, local34, arg5, arg8, arg0[local766][local722], arg3);
+							Static19.method1778(light, Static1.anIntArrayArray5[arg10[local766][local722]], arg7, local722, local766, local34, arg5, arg8, arg0[local766][local722], arg3);
 						} else {
-							Static19.method1778(local22, Static1.anIntArrayArray5[0], arg7, local722, local766, local34, arg5, arg8, local779, arg3);
+							Static19.method1778(light, Static1.anIntArrayArray5[0], arg7, local722, local766, local34, arg5, arg8, local779, arg3);
 						}
 					}
 					local698++;
 				}
 				if (local34.anInt4161 > 0 && local34.anInt4162 > 0) {
 					local34.method3434();
-					local22.aClass135_1 = local34;
+					light.aClass135_1 = local34;
 				}
 			}
 		}
@@ -552,20 +552,20 @@ public final class Static14 {
 		if (InterfaceList.components[local13] == null || InterfaceList.components[local13][local17] == null) {
 			return false;
 		}
-		@Pc(37) Component local37 = InterfaceList.components[local13][local17];
-		if (arg1 == -1 && local37.type == 0) {
-			for (@Pc(110) int local110 = 0; local110 < MiniMenu.size; local110++) {
-				if (MiniMenu.actions[local110] == 1 || MiniMenu.actions[local110] == 1009 || MiniMenu.actions[local110] == 34 || MiniMenu.actions[local110] == 23 || MiniMenu.actions[local110] == 3) {
-					for (@Pc(148) Component local148 = InterfaceList.getComponent(MiniMenu.intArgs2[local110]); local148 != null; local148 = InterfaceList.method2942(local148)) {
-						if (local148.id == local37.id) {
+		@Pc(37) Component component = InterfaceList.components[local13][local17];
+		if (arg1 == -1 && component.type == 0) {
+			for (@Pc(110) int i = 0; i < MiniMenu.size; i++) {
+				if (MiniMenu.actions[i] == 1 || MiniMenu.actions[i] == 1009 || MiniMenu.actions[i] == 34 || MiniMenu.actions[i] == 23 || MiniMenu.actions[i] == 3) {
+					for (@Pc(148) Component local148 = InterfaceList.getComponent(MiniMenu.intArgs2[i]); local148 != null; local148 = InterfaceList.method2942(local148)) {
+						if (local148.id == component.id) {
 							return true;
 						}
 					}
 				}
 			}
 		} else {
-			for (@Pc(48) int local48 = 0; local48 < MiniMenu.size; local48++) {
-				if (MiniMenu.intArgs1[local48] == arg1 && local37.id == MiniMenu.intArgs2[local48] && (MiniMenu.actions[local48] == 1 || MiniMenu.actions[local48] == 1009 || MiniMenu.actions[local48] == 34 || MiniMenu.actions[local48] == 23 || MiniMenu.actions[local48] == 3)) {
+			for (@Pc(48) int i = 0; i < MiniMenu.size; i++) {
+				if (MiniMenu.intArgs1[i] == arg1 && component.id == MiniMenu.intArgs2[i] && (MiniMenu.actions[i] == 1 || MiniMenu.actions[i] == 1009 || MiniMenu.actions[i] == 34 || MiniMenu.actions[i] == 23 || MiniMenu.actions[i] == 3)) {
 					return true;
 				}
 			}

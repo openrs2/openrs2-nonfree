@@ -1,90 +1,8 @@
-import java.nio.FloatBuffer;
-import javax.media.opengl.GL;
-
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
 public final class Static26 {
-
-	@OriginalMember(owner = "client!ne", name = "a", descriptor = "()V")
-	public static void method2951() {
-		Static5.aShortArrayArray3 = null;
-		Static5.aShortArrayArray4 = null;
-		Static5.anIntArray387 = null;
-		Static5.anIntArray388 = null;
-	}
-
-	@OriginalMember(owner = "client!ne", name = "a", descriptor = "(III)V")
-	public static void method2961(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
-		@Pc(1) GL gl = GlRenderer.gl;
-		if (Static5.aBoolean249) {
-			gl.glEnable(GL.GL_POINT_SPRITE);
-			gl.glTexEnvi(GL.GL_POINT_SPRITE, GL.GL_COORD_REPLACE, GL.GL_LINES);
-		}
-		gl.glDepthMask(false);
-		MaterialManager.setMaterial(0, 0);
-		gl.glColorMaterial(GL.GL_FRONT, GL.GL_DIFFUSE);
-		gl.glMaterialfv(GL.GL_FRONT, GL.GL_AMBIENT, Static4.aFloatArray36, 0);
-		if (Preferences.highDetailLighting) {
-			gl.glDisableClientState(GL.GL_NORMAL_ARRAY);
-		}
-		gl.glDisableClientState(GL.GL_TEXTURE_COORD_ARRAY);
-		gl.glPushMatrix();
-		gl.glTranslatef((float) -arg0, (float) -arg1, (float) -arg2);
-		gl.glNormal3f(0.0F, -1.0F, 0.0F);
-		if (!GlRenderer.aBoolean139) {
-			gl.glDisable(GL.GL_FOG);
-		}
-	}
-
-	@OriginalMember(owner = "client!ne", name = "g", descriptor = "()V")
-	public static void method2962() {
-		@Pc(1) GL gl = GlRenderer.gl;
-		if (Preferences.highDetailLighting) {
-			gl.glEnableClientState(GL.GL_NORMAL_ARRAY);
-		}
-		gl.glEnableClientState(GL.GL_TEXTURE_COORD_ARRAY);
-		gl.glDepthMask(true);
-		gl.glColorMaterial(GL.GL_FRONT, GL.GL_AMBIENT_AND_DIFFUSE);
-		gl.glPopMatrix();
-		if (!GlRenderer.aBoolean139) {
-			gl.glEnable(GL.GL_FOG);
-		}
-		if (Static5.aBoolean249) {
-			gl.glTexEnvi(GL.GL_POINT_SPRITE, GL.GL_COORD_REPLACE, GL.GL_POINTS);
-			gl.glDisable(GL.GL_POINT_SPRITE);
-		}
-	}
-
-	@OriginalMember(owner = "client!ne", name = "b", descriptor = "(II)V")
-	public static void method2966(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
-		Static5.aFloat86 = (float) arg1 / 334.0F;
-	}
-
-	@OriginalMember(owner = "client!ne", name = "i", descriptor = "()V")
-	public static void method2969() {
-		@Pc(1) GL gl = GlRenderer.gl;
-		if (gl.isExtensionAvailable("GL_ARB_point_parameters")) {
-			@Pc(20) float[] local20 = new float[] { 1.0F, 0.0F, 5.0E-7F };
-			gl.glPointParameterfvARB(GL.GL_POINT_DISTANCE_ATTENUATION, local20, 0);
-			@Pc(28) FloatBuffer local28 = FloatBuffer.allocate(1);
-			gl.glGetFloatv(GL.GL_POINT_SIZE_MAX, local28);
-			@Pc(36) float local36 = local28.get(0);
-			if (local36 > 64.0F) {
-				local36 = 64.0F;
-			}
-			gl.glPointParameterfARB(GL.GL_POINT_SIZE_MIN, 1.0F);
-			gl.glPointParameterfARB(GL.GL_POINT_SIZE_MAX, local36);
-		}
-		if (gl.isExtensionAvailable("GL_ARB_point_sprite")) {
-			Static5.aBoolean249 = true;
-		}
-		Static5.aShortArrayArray3 = new short[1600][32];
-		Static5.aShortArrayArray4 = new short[32][768];
-		Static5.anIntArray387 = new int[1600];
-		Static5.anIntArray388 = new int[32];
-	}
 
 	@OriginalMember(owner = "client!nf", name = "a", descriptor = "(I)V")
 	public static void method2973() {
@@ -434,16 +352,16 @@ public final class Static26 {
 		if (!Static3.aBoolean177) {
 			return;
 		}
-		@Pc(15) Component local15 = InterfaceList.getCreatedComponent(Static1.anInt1053, Static2.anInt1367);
-		if (local15 != null && local15.onTargetLeave != null) {
-			@Pc(26) HookRequest local26 = new HookRequest();
-			local26.arguments = local15.onTargetLeave;
-			local26.source = local15;
-			ScriptRunner.method2019(local26);
+		@Pc(15) Component component = InterfaceList.getCreatedComponent(Static1.anInt1053, Static2.anInt1367);
+		if (component != null && component.onTargetLeave != null) {
+			@Pc(26) HookRequest hookRequest = new HookRequest();
+			hookRequest.arguments = component.onTargetLeave;
+			hookRequest.source = component;
+			ScriptRunner.method2019(hookRequest);
 		}
 		Static3.aBoolean177 = false;
 		Static7.anInt6050 = -1;
-		Static28.method3270(local15);
+		Static28.method3270(component);
 	}
 
 	@OriginalMember(owner = "client!ni", name = "a", descriptor = "(IIIIII)V")
@@ -502,19 +420,6 @@ public final class Static26 {
 					ArrayUtils.fillRange(Static5.anIntArrayArray36[local211], local237, local229, arg2);
 				}
 			}
-		}
-	}
-
-	@OriginalMember(owner = "client!ni", name = "a", descriptor = "(BI)Ljava/lang/String;")
-	public static String method4816(@OriginalArg(1) int arg0) {
-		@Pc(10) String local10 = Integer.toString(arg0);
-		for (@Pc(19) int local19 = local10.length() - 3; local19 > 0; local19 -= 3) {
-			local10 = local10.substring(0, local19) + "," + local10.substring(local19);
-		}
-		if (local10.length() <= 9) {
-			return local10.length() <= 6 ? " <col=ffff00>" + local10 + "</col>" : " <col=ffffff>" + local10.substring(0, local10.length() - 4) + LocalisedText.THOUSAND + " (" + local10 + ")</col>";
-		} else {
-			return " <col=00ff80>" + local10.substring(0, local10.length() - 8) + LocalisedText.MILLION + " (" + local10 + ")</col>";
 		}
 	}
 

@@ -900,7 +900,7 @@ public final class SoftwareModel extends Model {
 							if (local712 == 0) {
 								local712 = 1;
 							}
-							SoftwareRaster.method4206(anIntArray362[local701], anIntArray357[local701], (particle.emitter.type.anInt2399 << 16) / local712, particle.anInt3231, particle.anInt3231 >> 24 & 0xFF);
+							SoftwareRaster.method4206(anIntArray362[local701], anIntArray357[local701], (particle.emitter.type.anInt2399 << 16) / local712, particle.color, particle.color >> 24 & 0xFF);
 						}
 					}
 				}
@@ -918,7 +918,7 @@ public final class SoftwareModel extends Model {
 							if (local793 == 0) {
 								local793 = 1;
 							}
-							SoftwareRaster.method4206(anIntArray362[local782], anIntArray357[local782], (particle.emitter.type.anInt2399 << 16) / local793, particle.anInt3231, particle.anInt3231 >> 24 & 0xFF);
+							SoftwareRaster.method4206(anIntArray362[local782], anIntArray357[local782], (particle.emitter.type.anInt2399 << 16) / local793, particle.color, particle.color >> 24 & 0xFF);
 						}
 					}
 				}
@@ -1067,7 +1067,7 @@ public final class SoftwareModel extends Model {
 					if (local1309 == 0) {
 						local1309 = 1;
 					}
-					SoftwareRaster.method4206(anIntArray362[local1291], anIntArray357[local1291], (local1303.emitter.type.anInt2399 << 16) / local1309, local1303.anInt3231, local1303.anInt3231 >> 24 & 0xFF);
+					SoftwareRaster.method4206(anIntArray362[local1291], anIntArray357[local1291], (local1303.emitter.type.anInt2399 << 16) / local1309, local1303.color, local1303.color >> 24 & 0xFF);
 					if (local1109 >= local7) {
 						break;
 					}
@@ -1101,7 +1101,7 @@ public final class SoftwareModel extends Model {
 			if (local1419 == 0) {
 				local1419 = 1;
 			}
-			SoftwareRaster.method4206(anIntArray362[local1405], anIntArray357[local1405], (particle.emitter.type.anInt2399 << 16) / local1419, particle.anInt3231, particle.anInt3231 >> 24 & 0xFF);
+			SoftwareRaster.method4206(anIntArray362[local1405], anIntArray357[local1405], (particle.emitter.type.anInt2399 << 16) / local1419, particle.color, particle.color >> 24 & 0xFF);
 			local1405 = anIntArray365[local1109++];
 		}
 	}
@@ -1314,16 +1314,16 @@ public final class SoftwareModel extends Model {
 			}
 		}
 		if (arg10 != null) {
-			@Pc(754) int local754 = Static5.anInt3506 + local223;
-			@Pc(758) int local758 = Static5.anInt3503 + local225;
+			@Pc(754) int local754 = ParticleSystem.anInt3506 + local223;
+			@Pc(758) int local758 = ParticleSystem.anInt3503 + local225;
 			for (@Pc(760) int local760 = 0; local760 < arg10.particles.length; local760++) {
 				@Pc(770) Particle local770 = arg10.particles[local760];
 				if (local770 == null || local770.aBoolean228) {
 					anIntArray368[local760] = Integer.MIN_VALUE;
 				} else {
-					@Pc(782) int local782 = (local770.anInt3228 >> 12) - Static7.anInt5281;
-					@Pc(789) int local789 = (local770.anInt3229 >> 12) - Static6.anInt4375;
-					@Pc(796) int local796 = (local770.anInt3230 >> 12) - Static6.anInt4400;
+					@Pc(782) int local782 = (local770.x >> 12) - Static7.anInt5281;
+					@Pc(789) int local789 = (local770.y >> 12) - Static6.anInt4375;
+					@Pc(796) int local796 = (local770.z >> 12) - Static6.anInt4400;
 					@Pc(806) int local806 = local796 * arg3 + local782 * arg4 >> 16;
 					local796 = local796 * arg4 - local782 * arg3 >> 16;
 					local782 = local806;

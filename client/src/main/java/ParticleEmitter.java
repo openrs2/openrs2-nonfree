@@ -194,29 +194,29 @@ public final class ParticleEmitter extends ParticleNode {
 					@Pc(603) int local603 = (int) (Math.random() * 255.0D);
 					@Pc(612) int local612 = local598 * (255 - local603) >> 8;
 					@Pc(619) int local619 = 255 - local603 - local612;
-					@Pc(636) int local636 = local619 * this.anInt339 + local612 * this.anInt311 + this.anInt332 * local603 >> 8;
-					@Pc(653) int local653 = local619 * this.anInt310 + this.anInt324 * local612 + this.anInt319 * local603 >> 8;
-					@Pc(671) int local671 = local603 * this.anInt334 + local612 * this.anInt336 + local619 * this.anInt318 >> 8;
+					@Pc(636) int z = local619 * this.anInt339 + local612 * this.anInt311 + this.anInt332 * local603 >> 8;
+					@Pc(653) int y = local619 * this.anInt310 + this.anInt324 * local612 + this.anInt319 * local603 >> 8;
+					@Pc(671) int x = local603 * this.anInt334 + local612 * this.anInt336 + local619 * this.anInt318 >> 8;
 					if (this.system.anInt3517 != 0) {
-						@Pc(686) int local686 = arg1 * local636 + local671 * arg3 >> 16;
-						local636 = arg3 * local636 - local671 * arg1 >> 16;
-						local671 = local686;
+						@Pc(686) int local686 = arg1 * z + x * arg3 >> 16;
+						z = arg3 * z - x * arg1 >> 16;
+						x = local686;
 					}
 					@Pc(716) int local716 = (int) (Math.random() * (double) (this.type.anInt2445 - this.type.anInt2417)) + this.type.anInt2417;
 					@Pc(733) int local733 = (int) ((double) (this.type.anInt2416 - this.type.anInt2429) * Math.random()) + this.type.anInt2429;
-					@Pc(795) int local795;
+					@Pc(795) int color;
 					if (this.type.aBoolean165) {
 						@Pc(799) double local799 = Math.random();
-						local795 = (int) ((double) this.type.anInt2443 * local799 + (double) this.type.anInt2402) << 24 | (int) ((double) this.type.anInt2415 + local799 * (double) this.type.anInt2397) << 16 | (int) (local799 * (double) this.type.anInt2436 + (double) this.type.anInt2404) << 8 | (int) ((double) this.type.anInt2401 * local799 + (double) this.type.anInt2430);
+						color = (int) ((double) this.type.anInt2443 * local799 + (double) this.type.anInt2402) << 24 | (int) ((double) this.type.anInt2415 + local799 * (double) this.type.anInt2397) << 16 | (int) (local799 * (double) this.type.anInt2436 + (double) this.type.anInt2404) << 8 | (int) ((double) this.type.anInt2401 * local799 + (double) this.type.anInt2430);
 					} else {
-						local795 = (int) (Math.random() * (double) this.type.anInt2443 + (double) this.type.anInt2402) << 24 | (int) (Math.random() * (double) this.type.anInt2401 + (double) this.type.anInt2430) | (int) ((double) this.type.anInt2436 * Math.random() + (double) this.type.anInt2404) << 8 | (int) ((double) this.type.anInt2415 + Math.random() * (double) this.type.anInt2397) << 16;
+						color = (int) (Math.random() * (double) this.type.anInt2443 + (double) this.type.anInt2402) << 24 | (int) (Math.random() * (double) this.type.anInt2401 + (double) this.type.anInt2430) | (int) ((double) this.type.anInt2436 * Math.random() + (double) this.type.anInt2404) << 8 | (int) ((double) this.type.anInt2415 + Math.random() * (double) this.type.anInt2397) << 16;
 					}
 					if (ParticleManager.poolWriterIndex == ParticleManager.poolReaderIndex) {
-						new Particle(this, this.system.anInt3518 + local671, this.system.anInt3512 + local653, this.system.anInt3509 + local636, local520, local517, local523, local716, local733, local795);
+						new Particle(this, this.system.x + x, this.system.y + y, this.system.z + z, local520, local517, local523, local716, local733, color);
 					} else {
 						@Pc(898) Particle particle = ParticleManager.pool[ParticleManager.poolReaderIndex];
 						ParticleManager.poolReaderIndex = ParticleManager.poolReaderIndex + 1 & 0x3FF;
-						particle.method2632(this, this.system.anInt3518 + local671, this.system.anInt3512 + local653, local636 + this.system.anInt3509, local520, local517, local523, local716, local733, local795);
+						particle.method2632(this, this.system.x + x, this.system.y + y, z + this.system.z, local520, local517, local523, local716, local733, color);
 					}
 				}
 			}
@@ -240,9 +240,9 @@ public final class ParticleEmitter extends ParticleNode {
 		this.anInt336 = arg5;
 		this.anInt310 = arg3;
 		this.anInt319 = arg1;
-		@Pc(54) int local54 = this.system.anInt3512 + (this.anInt319 + this.anInt324 + this.anInt310) / 3;
-		@Pc(70) int local70 = this.system.anInt3518 + (this.anInt336 + this.anInt334 + this.anInt318) / 3;
-		@Pc(86) int local86 = (this.anInt339 + this.anInt311 + this.anInt332) / 3 + this.system.anInt3509;
+		@Pc(54) int local54 = this.system.y + (this.anInt319 + this.anInt324 + this.anInt310) / 3;
+		@Pc(70) int local70 = this.system.x + (this.anInt336 + this.anInt334 + this.anInt318) / 3;
+		@Pc(86) int local86 = (this.anInt339 + this.anInt311 + this.anInt332) / 3 + this.system.z;
 		if (this.anInt309 != local70 || local54 != this.anInt312 || local86 != this.anInt316) {
 			this.anInt316 = local86;
 			this.aBoolean19 = true;

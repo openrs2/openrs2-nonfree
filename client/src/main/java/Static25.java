@@ -109,12 +109,12 @@ public final class Static25 {
 	}
 
 	@OriginalMember(owner = "client!mn", name = "a", descriptor = "([F)V")
-	public static void method2772(@OriginalArg(0) float[] arg0) {
-		if (arg0 == null) {
-			arg0 = Static4.aFloatArray39;
+	public static void method2772(@OriginalArg(0) float[] color) {
+		if (color == null) {
+			color = Static4.aFloatArray39;
 		}
 		@Pc(5) GL gl = GlRenderer.gl;
-		gl.glFogfv(GL.GL_FOG_COLOR, arg0, 0);
+		gl.glFogfv(GL.GL_FOG_COLOR, color, 0);
 	}
 
 	@OriginalMember(owner = "client!mn", name = "a", descriptor = "()F")

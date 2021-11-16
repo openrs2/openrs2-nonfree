@@ -1060,7 +1060,7 @@ public final class MiniMenu {
 			for (@Pc(704) int i = 9; i >= 5; i--) {
 				@Pc(712) String op = InterfaceList.getOp(component, i);
 				if (op != null) {
-					add((long) (i + 1), component.createdComponentId, component.id, component.opBase, op, (short) 1009, Static32.method3985(component, i));
+					add((long) (i + 1), component.createdComponentId, component.id, component.opBase, op, (short) 1009, Static32.getOpCursor(component, i));
 				}
 			}
 			@Pc(745) String local745 = Static12.getTargetVerb(component);
@@ -1070,7 +1070,7 @@ public final class MiniMenu {
 			for (@Pc(767) int i = 4; i >= 0; i--) {
 				@Pc(774) String op = InterfaceList.getOp(component, i);
 				if (op != null) {
-					add((long) (i + 1), component.createdComponentId, component.id, component.opBase, op, (short) 23, Static32.method3985(component, i));
+					add((long) (i + 1), component.createdComponentId, component.id, component.opBase, op, (short) 23, Static32.getOpCursor(component, i));
 				}
 			}
 			if (InterfaceList.getServerActiveProperties(component).isResumePauseButtonEnabled()) {

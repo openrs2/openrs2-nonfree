@@ -331,40 +331,40 @@ public final class Static33 {
 		Static32.method3917(false);
 		Static3.anInt2886 = 0;
 		@Pc(12) boolean ready = true;
-		for (@Pc(14) int local14 = 0; local14 < Static1.mapBytes.length; local14++) {
-			if (Static3.mapGroupIds[local14] != -1 && Static1.mapBytes[local14] == null) {
-				Static1.mapBytes[local14] = client.js5Archive5.fetchFile(Static3.mapGroupIds[local14], 0);
-				if (Static1.mapBytes[local14] == null) {
+		for (@Pc(14) int i = 0; i < Static1.mapBytes.length; i++) {
+			if (Static3.mapGroupIds[i] != -1 && Static1.mapBytes[i] == null) {
+				Static1.mapBytes[i] = client.js5Archive5.fetchFile(Static3.mapGroupIds[i], 0);
+				if (Static1.mapBytes[i] == null) {
 					ready = false;
 					Static3.anInt2886++;
 				}
 			}
-			if (Static1.locGroupIds[local14] != -1 && Static5.locBytes[local14] == null) {
-				Static5.locBytes[local14] = client.js5Archive5.fetchFile(Static1.locGroupIds[local14], 0, Static5.xteaKeys[local14]);
-				if (Static5.locBytes[local14] == null) {
+			if (Static1.locGroupIds[i] != -1 && Static5.locBytes[i] == null) {
+				Static5.locBytes[i] = client.js5Archive5.fetchFile(Static1.locGroupIds[i], 0, Static5.xteaKeys[i]);
+				if (Static5.locBytes[i] == null) {
 					ready = false;
 					Static3.anInt2886++;
 				}
 			}
 			if (GlRenderer.enabled) {
-				if (Static4.underwaterMapGroupIds[local14] != -1 && Static7.underwaterMapBytes[local14] == null) {
-					Static7.underwaterMapBytes[local14] = client.js5Archive5.fetchFile(Static4.underwaterMapGroupIds[local14], 0);
-					if (Static7.underwaterMapBytes[local14] == null) {
+				if (Static4.underwaterMapGroupIds[i] != -1 && Static7.underwaterMapBytes[i] == null) {
+					Static7.underwaterMapBytes[i] = client.js5Archive5.fetchFile(Static4.underwaterMapGroupIds[i], 0);
+					if (Static7.underwaterMapBytes[i] == null) {
 						ready = false;
 						Static3.anInt2886++;
 					}
 				}
-				if (Static3.underwaterLocGroupIds[local14] != -1 && Static1.underwaterLocBytes[local14] == null) {
-					Static1.underwaterLocBytes[local14] = client.js5Archive5.fetchFile(Static3.underwaterLocGroupIds[local14], 0);
-					if (Static1.underwaterLocBytes[local14] == null) {
+				if (Static3.underwaterLocGroupIds[i] != -1 && Static1.underwaterLocBytes[i] == null) {
+					Static1.underwaterLocBytes[i] = client.js5Archive5.fetchFile(Static3.underwaterLocGroupIds[i], 0);
+					if (Static1.underwaterLocBytes[i] == null) {
 						Static3.anInt2886++;
 						ready = false;
 					}
 				}
 			}
-			if (Static6.npcGroupIds != null && Static7.npcBytes[local14] == null && Static6.npcGroupIds[local14] != -1) {
-				Static7.npcBytes[local14] = client.js5Archive5.fetchFile(Static6.npcGroupIds[local14], 0, Static5.xteaKeys[local14]);
-				if (Static7.npcBytes[local14] == null) {
+			if (Static6.npcGroupIds != null && Static7.npcBytes[i] == null && Static6.npcGroupIds[i] != -1) {
+				Static7.npcBytes[i] = client.js5Archive5.fetchFile(Static6.npcGroupIds[i], 0, Static5.xteaKeys[i]);
+				if (Static7.npcBytes[i] == null) {
 					ready = false;
 					Static3.anInt2886++;
 				}
@@ -416,7 +416,7 @@ public final class Static33 {
 		}
 		@Pc(374) boolean hasUnderwaterLevel = false;
 		if (Static6.anInt4659 != 0) {
-			Static37.method4716(LocalisedText.LOADING + "<br>(100%)", true);
+			Static37.renderLoadingText(LocalisedText.LOADING + "<br>(100%)", true);
 		}
 		Static9.audioLoop();
 		Static24.method2697();

@@ -1,5 +1,3 @@
-import java.nio.ByteBuffer;
-
 import org.openrs2.deob.annotation.OriginalMember;
 
 public final class Static5 {
@@ -9,27 +7,6 @@ public final class Static5 {
 
 	@OriginalMember(owner = "client!nd", name = "z", descriptor = "I")
 	public static int anInt3490;
-
-	@OriginalMember(owner = "client!ne", name = "w", descriptor = "I")
-	public static int anInt3503;
-
-	@OriginalMember(owner = "client!ne", name = "C", descriptor = "I")
-	public static int anInt3506;
-
-	@OriginalMember(owner = "client!ne", name = "Q", descriptor = "[[S")
-	public static short[][] aShortArrayArray3;
-
-	@OriginalMember(owner = "client!ne", name = "Z", descriptor = "[[S")
-	public static short[][] aShortArrayArray4;
-
-	@OriginalMember(owner = "client!ne", name = "bb", descriptor = "[I")
-	public static int[] anIntArray387;
-
-	@OriginalMember(owner = "client!ne", name = "cb", descriptor = "[I")
-	public static int[] anIntArray388;
-
-	@OriginalMember(owner = "client!ne", name = "gb", descriptor = "Ljava/nio/ByteBuffer;")
-	public static ByteBuffer aByteBuffer12;
 
 	@OriginalMember(owner = "client!nh", name = "X", descriptor = "I")
 	public static int anInt3560;
@@ -126,24 +103,6 @@ public final class Static5 {
 
 	@OriginalMember(owner = "client!nd", name = "s", descriptor = "I")
 	public static int anInt3486 = 0;
-
-	@OriginalMember(owner = "client!ne", name = "l", descriptor = "Z")
-	public static boolean aBoolean249 = false;
-
-	@OriginalMember(owner = "client!ne", name = "S", descriptor = "I")
-	public static int anInt3519 = 0;
-
-	@OriginalMember(owner = "client!ne", name = "T", descriptor = "Lclient!fd;")
-	public static final Buffer aClass4_Sub10_7 = new Buffer(131056);
-
-	@OriginalMember(owner = "client!ne", name = "V", descriptor = "[Z")
-	public static final boolean[] aBooleanArray18 = new boolean[8];
-
-	@OriginalMember(owner = "client!ne", name = "Y", descriptor = "[Z")
-	public static final boolean[] aBooleanArray19 = new boolean[8];
-
-	@OriginalMember(owner = "client!ne", name = "fb", descriptor = "F")
-	public static float aFloat86 = 1.0F;
 
 	@OriginalMember(owner = "client!nf", name = "a", descriptor = "I")
 	public static int anInt3525 = 0;

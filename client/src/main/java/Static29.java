@@ -605,36 +605,36 @@ public final class Static29 {
 			return;
 		}
 		try {
-			@Pc(47) Container local47;
+			@Pc(47) Container container;
 			if (GameShell.fullScreenFrame != null) {
-				local47 = GameShell.fullScreenFrame;
+				container = GameShell.fullScreenFrame;
 			} else if (GameShell.frame == null) {
-				local47 = GameShell.signLink.applet;
+				container = GameShell.signLink.applet;
 			} else {
-				local47 = GameShell.frame;
+				container = GameShell.frame;
 			}
 			@Pc(58) int local58 = 0;
 			@Pc(60) int local60 = 0;
-			if (local47 == GameShell.frame) {
-				@Pc(66) Insets local66 = GameShell.frame.getInsets();
-				local58 = local66.left;
-				local60 = local66.top;
+			if (container == GameShell.frame) {
+				@Pc(66) Insets insets = GameShell.frame.getInsets();
+				local58 = insets.left;
+				local60 = insets.top;
 			}
-			@Pc(75) Graphics local75 = local47.getGraphics();
-			local75.setColor(Color.black);
+			@Pc(75) Graphics graphics = container.getGraphics();
+			graphics.setColor(Color.black);
 			if (local7 > 0) {
-				local75.fillRect(local58, local60, local7, GameShell.frameHeight);
+				graphics.fillRect(local58, local60, local7, GameShell.frameHeight);
 			}
 			if (local9 > 0) {
-				local75.fillRect(local58, local60, GameShell.frameWidth, local9);
+				graphics.fillRect(local58, local60, GameShell.frameWidth, local9);
 			}
 			if (local24 > 0) {
-				local75.fillRect(local58 + GameShell.frameWidth - local24, local60, local24, GameShell.frameHeight);
+				graphics.fillRect(local58 + GameShell.frameWidth - local24, local60, local24, GameShell.frameHeight);
 			}
 			if (local16 > 0) {
-				local75.fillRect(local58, local60 + GameShell.frameHeight - local16, GameShell.frameWidth, local16);
+				graphics.fillRect(local58, local60 + GameShell.frameHeight - local16, GameShell.frameWidth, local16);
 			}
-		} catch (@Pc(127) Exception local127) {
+		} catch (@Pc(127) Exception ex) {
 		}
 	}
 
@@ -708,58 +708,58 @@ public final class Static29 {
 			} else if (Mouse.clickButton != 0 || MouseRecorder.instance.samples >= 40) {
 				Protocol.outboundBuffer.writeOpcode(199);
 				Protocol.outboundBuffer.writeByte(0);
-				@Pc(86) int local86 = 0;
-				@Pc(89) int local89 = Protocol.outboundBuffer.position;
-				for (@Pc(91) int local91 = 0; local91 < MouseRecorder.instance.samples && Protocol.outboundBuffer.position - local89 < 240; local91++) {
-					local86++;
-					@Pc(113) int local113 = MouseRecorder.instance.x[local91];
-					@Pc(118) int local118 = MouseRecorder.instance.y[local91];
-					if (local118 < 0) {
-						local118 = 0;
-					} else if (local118 > 65534) {
-						local118 = 65534;
+				@Pc(86) int samples = 0;
+				@Pc(89) int position = Protocol.outboundBuffer.position;
+				for (@Pc(91) int i = 0; i < MouseRecorder.instance.samples && Protocol.outboundBuffer.position - position < 240; i++) {
+					samples++;
+					@Pc(113) int x = MouseRecorder.instance.x[i];
+					@Pc(118) int y = MouseRecorder.instance.y[i];
+					if (y < 0) {
+						y = 0;
+					} else if (y > 65534) {
+						y = 65534;
 					}
-					@Pc(136) boolean local136 = false;
-					if (local113 < 0) {
-						local113 = 0;
-					} else if (local113 > 65534) {
-						local113 = 65534;
+					@Pc(136) boolean outsideWindow = false;
+					if (x < 0) {
+						x = 0;
+					} else if (x > 65534) {
+						x = 65534;
 					}
-					if (MouseRecorder.instance.y[local91] == -1 && MouseRecorder.instance.x[local91] == -1) {
-						local136 = true;
-						local113 = -1;
-						local118 = -1;
+					if (MouseRecorder.instance.y[i] == -1 && MouseRecorder.instance.x[i] == -1) {
+						outsideWindow = true;
+						x = -1;
+						y = -1;
 					}
-					if (Static3.anInt2505 != local113 || local118 != Static6.anInt4835) {
-						@Pc(195) int local195 = local118 - Static6.anInt4835;
-						Static6.anInt4835 = local118;
-						@Pc(201) int local201 = local113 - Static3.anInt2505;
-						Static3.anInt2505 = local113;
-						if (Static3.anInt2235 < 8 && local201 >= -32 && local201 <= 31 && local195 >= -32 && local195 <= 31) {
-							@Pc(223) int local223 = local201 + 32;
-							@Pc(224) int local224 = local195 + 32;
-							Protocol.outboundBuffer.writeShort((Static3.anInt2235 << 12) + (local223 << 6) + local224);
+					if (Static3.mouseRecorderPrevX != x || y != Static6.mouseRecorderPrevY) {
+						@Pc(195) int dy = y - Static6.mouseRecorderPrevY;
+						Static6.mouseRecorderPrevY = y;
+						@Pc(201) int dx = x - Static3.mouseRecorderPrevX;
+						Static3.mouseRecorderPrevX = x;
+						if (Static3.anInt2235 < 8 && dx >= -32 && dx <= 31 && dy >= -32 && dy <= 31) {
+							@Pc(223) int dx2 = dx + 32;
+							@Pc(224) int dy2 = dy + 32;
+							Protocol.outboundBuffer.writeShort((Static3.anInt2235 << 12) + (dx2 << 6) + dy2);
 							Static3.anInt2235 = 0;
-						} else if (Static3.anInt2235 < 32 && local201 >= -128 && local201 <= 127 && local195 >= -128 && local195 <= 127) {
+						} else if (Static3.anInt2235 < 32 && dx >= -128 && dx <= 127 && dy >= -128 && dy <= 127) {
 							Protocol.outboundBuffer.writeByte(Static3.anInt2235 + 128);
-							@Pc(265) int local265 = local195 + 128;
-							@Pc(266) int local266 = local201 + 128;
-							Protocol.outboundBuffer.writeShort((local266 << 8) + local265);
+							@Pc(265) int dy2 = dy + 128;
+							@Pc(266) int dx2 = dx + 128;
+							Protocol.outboundBuffer.writeShort((dx2 << 8) + dy2);
 							Static3.anInt2235 = 0;
 						} else if (Static3.anInt2235 < 32) {
 							Protocol.outboundBuffer.writeByte(Static3.anInt2235 + 192);
-							if (local136) {
+							if (outsideWindow) {
 								Protocol.outboundBuffer.writeInt(Integer.MIN_VALUE);
 							} else {
-								Protocol.outboundBuffer.writeInt(local113 | local118 << 16);
+								Protocol.outboundBuffer.writeInt(x | y << 16);
 							}
 							Static3.anInt2235 = 0;
 						} else {
 							Protocol.outboundBuffer.writeShort(Static3.anInt2235 + 57344);
-							if (local136) {
+							if (outsideWindow) {
 								Protocol.outboundBuffer.writeInt(Integer.MIN_VALUE);
 							} else {
-								Protocol.outboundBuffer.writeInt(local113 | local118 << 16);
+								Protocol.outboundBuffer.writeInt(x | y << 16);
 							}
 							Static3.anInt2235 = 0;
 						}
@@ -767,13 +767,13 @@ public final class Static29 {
 						Static3.anInt2235++;
 					}
 				}
-				Protocol.outboundBuffer.writeByteLength(Protocol.outboundBuffer.position - local89);
-				if (local86 < MouseRecorder.instance.samples) {
-					@Pc(350) MouseRecorder local350 = MouseRecorder.instance;
-					local350.samples -= local86;
-					for (@Pc(357) int local357 = 0; local357 < MouseRecorder.instance.samples; local357++) {
-						MouseRecorder.instance.x[local357] = MouseRecorder.instance.x[local86 + local357];
-						MouseRecorder.instance.y[local357] = MouseRecorder.instance.y[local86 + local357];
+				Protocol.outboundBuffer.writeByteLength(Protocol.outboundBuffer.position - position);
+				if (samples < MouseRecorder.instance.samples) {
+					@Pc(350) MouseRecorder mouseRecorder = MouseRecorder.instance;
+					mouseRecorder.samples -= samples;
+					for (@Pc(357) int i = 0; i < MouseRecorder.instance.samples; i++) {
+						MouseRecorder.instance.x[i] = MouseRecorder.instance.x[samples + i];
+						MouseRecorder.instance.y[i] = MouseRecorder.instance.y[samples + i];
 					}
 				} else {
 					MouseRecorder.instance.samples = 0;
@@ -781,31 +781,31 @@ public final class Static29 {
 			}
 		}
 		if (Mouse.clickButton != 0) {
-			@Pc(414) int local414 = Mouse.clickY;
-			if (local414 < 0) {
-				local414 = 0;
-			} else if (local414 > 65535) {
-				local414 = 65535;
+			@Pc(414) int y = Mouse.clickY;
+			if (y < 0) {
+				y = 0;
+			} else if (y > 65535) {
+				y = 65535;
 			}
-			@Pc(436) long local436 = (Mouse.clickTime - Static1.aLong32) / 50L;
-			if (local436 > 32767L) {
-				local436 = 32767L;
+			@Pc(436) long loops = (Mouse.clickTime - Static1.prevClickTime) / 50L;
+			if (loops > 32767L) {
+				loops = 32767L;
 			}
-			Static1.aLong32 = Mouse.clickTime;
-			@Pc(449) int local449 = Mouse.clickX;
-			if (local449 < 0) {
-				local449 = 0;
-			} else if (local449 > 65535) {
-				local449 = 65535;
+			Static1.prevClickTime = Mouse.clickTime;
+			@Pc(449) int x = Mouse.clickX;
+			if (x < 0) {
+				x = 0;
+			} else if (x > 65535) {
+				x = 65535;
 			}
-			@Pc(466) byte local466 = 0;
+			@Pc(466) byte button = 0;
 			if (Mouse.clickButton == 2) {
-				local466 = 1;
+				button = 1;
 			}
 			Protocol.outboundBuffer.writeOpcode(200);
-			Protocol.outboundBuffer.writeIntAlt3Reverse(local414 << 16 | local449);
-			@Pc(489) int local489 = (int) local436;
-			Protocol.outboundBuffer.writeShortA(local466 << 15 | local489);
+			Protocol.outboundBuffer.writeIntAlt3Reverse(y << 16 | x);
+			@Pc(489) int loops2 = (int) loops;
+			Protocol.outboundBuffer.writeShortA(button << 15 | loops2);
 		}
 		if (Static7.anInt5269 > 0) {
 			Static7.anInt5269--;
@@ -817,13 +817,13 @@ public final class Static29 {
 			Protocol.outboundBuffer.writeShortLE2((int) Static5.aFloat147);
 			Protocol.outboundBuffer.writeShortLEA((int) Static5.aFloat97);
 		}
-		if (GameShell.focus && !Static7.aBoolean367) {
-			Static7.aBoolean367 = true;
+		if (GameShell.focus && !Static7.prevFocus) {
+			Static7.prevFocus = true;
 			Protocol.outboundBuffer.writeOpcode(248);
 			Protocol.outboundBuffer.writeByte(1);
 		}
-		if (!GameShell.focus && Static7.aBoolean367) {
-			Static7.aBoolean367 = false;
+		if (!GameShell.focus && Static7.prevFocus) {
+			Static7.prevFocus = false;
 			Protocol.outboundBuffer.writeOpcode(248);
 			Protocol.outboundBuffer.writeByte(0);
 		}
@@ -1252,7 +1252,7 @@ public final class Static29 {
 													Protocol.outboundBuffer.position = 0;
 													Static3.anInt2142 = 0;
 												}
-											} catch (@Pc(2285) IOException local2285) {
+											} catch (@Pc(2285) IOException ex) {
 												Static23.method2455();
 											}
 											return;
@@ -1860,7 +1860,7 @@ public final class Static29 {
 										if (GlRenderer.enabled) {
 											@Pc(1905) GL gl = GlRenderer.gl;
 											GlRenderer.method1613(var8);
-											Static26.method2961(Static7.anInt5281, Static6.anInt4375, Static6.anInt4400);
+											ParticleSystem.method2961(Static7.anInt5281, Static6.anInt4375, Static6.anInt4400);
 											@Pc(1920) int local1920 = local8.x * 128 + 64 - Static7.anInt5281;
 											@Pc(1932) int local1932 = SceneGraph.tileHeights[local24][local8.x][local8.z] - Static6.anInt4375;
 											@Pc(1941) int local1941 = local8.z * 128 + 64 - Static6.anInt4400;
@@ -1903,35 +1903,35 @@ public final class Static29 {
 													}
 													if (local2030 != null && (local2040 == null || local2040.emitter != local2032 || local2040.emitter.type.anInt2399 != local2034)) {
 														for (@Pc(2097) int local2097 = 0; local2097 < local2028; local2097++) {
-															Static5.anIntArray387[local2097] = 0;
+															ParticleSystem.anIntArray387[local2097] = 0;
 														}
 														for (@Pc(2108) int local2108 = 0; local2108 < 32; local2108++) {
-															Static5.anIntArray388[local2108] = 0;
+															ParticleSystem.anIntArray388[local2108] = 0;
 														}
-														Static5.anInt3519 = 0;
+														ParticleSystem.anInt3519 = 0;
 														for (@Pc(2121) Particle local2121 = local2030; local2121 != local2040; local2121 = (Particle) local2121.secondaryNext) {
 															if (local2121.emitter != null) {
-																@Pc(2134) int local2134 = (local2121.anInt3228 >> 12) - Static7.anInt5281;
-																@Pc(2141) int local2141 = (local2121.anInt3229 >> 12) - Static6.anInt4375;
-																@Pc(2148) int local2148 = (local2121.anInt3230 >> 12) - Static6.anInt4400;
+																@Pc(2134) int local2134 = (local2121.x >> 12) - Static7.anInt5281;
+																@Pc(2141) int local2141 = (local2121.y >> 12) - Static6.anInt4375;
+																@Pc(2148) int local2148 = (local2121.z >> 12) - Static6.anInt4400;
 																local2148 = local2148 * Static3.anInt2272 - local2134 * Static6.anInt4794 >> 16;
 																local2148 = (local2141 * Static2.anInt2247 + local2148 * Static5.anInt3487 >> 16) - local2013;
-																if (Static5.anIntArray387[local2148] < 32) {
-																	Static5.aShortArrayArray3[local2148][Static5.anIntArray387[local2148]++] = local2121.aShort21;
+																if (ParticleSystem.anIntArray387[local2148] < 32) {
+																	ParticleSystem.aShortArrayArray3[local2148][ParticleSystem.anIntArray387[local2148]++] = local2121.aShort21;
 																} else {
-																	if (Static5.anIntArray387[local2148] == 32) {
-																		if (Static5.anInt3519 == 32) {
+																	if (ParticleSystem.anIntArray387[local2148] == 32) {
+																		if (ParticleSystem.anInt3519 == 32) {
 																			if (ParticleManager.DEBUG) {
 																				System.out.println("Overflowed world-based radix sort");
 																			}
 																			break;
 																		}
-																		@Pc(2205) int[] local2205 = Static5.anIntArray387;
-																		local2205[local2148] += Static5.anInt3519++ + 1;
+																		@Pc(2205) int[] local2205 = ParticleSystem.anIntArray387;
+																		local2205[local2148] += ParticleSystem.anInt3519++ + 1;
 																	}
-																	@Pc(2227) int local2227 = Static5.anIntArray388[Static5.anIntArray387[local2148] - 32 - 1];
+																	@Pc(2227) int local2227 = ParticleSystem.anIntArray388[ParticleSystem.anIntArray387[local2148] - 32 - 1];
 																	if (local2227 < 768) {
-																		Static5.aShortArrayArray4[Static5.anIntArray387[local2148] - 32 - 1][Static5.anIntArray388[Static5.anIntArray387[local2148] - 32 - 1]++] = local2121.aShort21;
+																		ParticleSystem.aShortArrayArray4[ParticleSystem.anIntArray387[local2148] - 32 - 1][ParticleSystem.anIntArray388[ParticleSystem.anIntArray387[local2148] - 32 - 1]++] = local2121.aShort21;
 																	}
 																}
 															}
@@ -1940,13 +1940,13 @@ public final class Static29 {
 															}
 														}
 														@Pc(2270) boolean local2270 = false;
-														if (Static5.aBoolean249 && local2032.type.texture != -1) {
+														if (ParticleSystem.arbPointSpriteSupported && local2032.type.texture != -1) {
 															Rasteriser.textureProvider.method451(local2032.type.texture);
 															local2270 = true;
 														} else {
 															GlRenderer.setTextureId(-1);
 														}
-														@Pc(2293) float local2293 = (float) local2034 * Static5.aFloat86;
+														@Pc(2293) float local2293 = (float) local2034 * ParticleSystem.aFloat86;
 														if (local2293 > 64.0F) {
 															local2293 = 64.0F;
 														}
@@ -1964,10 +1964,10 @@ public final class Static29 {
 												}
 												local2040 = (Particle) local8.particles.next();
 											}
-											Static26.method2962();
+											ParticleSystem.method2962();
 										} else {
-											@Pc(2339) int local2339 = Static5.anInt3506 + Rasteriser.anInt3125;
-											@Pc(2343) int local2343 = Static5.anInt3503 + Rasteriser.anInt3126;
+											@Pc(2339) int local2339 = ParticleSystem.anInt3506 + Rasteriser.anInt3125;
+											@Pc(2343) int local2343 = ParticleSystem.anInt3503 + Rasteriser.anInt3126;
 											@Pc(2347) SecondaryParticleNode local2347 = local8.particles.sentinel;
 											for (@Pc(2350) SecondaryParticleNode local2350 = local2347.secondaryNext; local2350 != local2347; local2350 = local2350.secondaryNext) {
 												@Pc(2356) Particle local2356 = (Particle) local2350;
@@ -1976,9 +1976,9 @@ public final class Static29 {
 														local8.particles = null;
 														break;
 													}
-													@Pc(2387) int local2387 = (local2356.anInt3228 >> 12) - Static7.anInt5281;
-													@Pc(2394) int local2394 = (local2356.anInt3229 >> 12) - Static6.anInt4375;
-													@Pc(2401) int local2401 = (local2356.anInt3230 >> 12) - Static6.anInt4400;
+													@Pc(2387) int local2387 = (local2356.x >> 12) - Static7.anInt5281;
+													@Pc(2394) int local2394 = (local2356.y >> 12) - Static6.anInt4375;
+													@Pc(2401) int local2401 = (local2356.z >> 12) - Static6.anInt4400;
 													@Pc(2411) int local2411 = local2401 * Static6.anInt4794 + local2387 * Static3.anInt2272 >> 16;
 													local2401 = local2401 * Static3.anInt2272 - local2387 * Static6.anInt4794 >> 16;
 													local2387 = local2411;
@@ -1991,7 +1991,7 @@ public final class Static29 {
 														if (local2468 == 0) {
 															local2468 = 1;
 														}
-														SoftwareRaster.method4206(local2456, local2464, (local2356.emitter.type.anInt2399 << 16) / local2468, local2356.anInt3231, local2356.anInt3231 >> 24 & 0xFF);
+														SoftwareRaster.method4206(local2456, local2464, (local2356.emitter.type.anInt2399 << 16) / local2468, local2356.color, local2356.color >> 24 & 0xFF);
 													}
 												}
 											}

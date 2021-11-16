@@ -230,7 +230,7 @@ public final class Static3 {
 	public static Class96 aClass96_1 = new Class96();
 
 	@OriginalMember(owner = "client!j", name = "o", descriptor = "I")
-	public static int anInt2505 = 0;
+	public static int mouseRecorderPrevX = 0;
 
 	@OriginalMember(owner = "client!j", name = "s", descriptor = "Z")
 	public static boolean aBoolean173 = false;

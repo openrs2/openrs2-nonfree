@@ -200,7 +200,7 @@ public final class Static24 {
 				if (Static4.anInt3304 == 5) {
 					LoadingBar.render(true, Fonts.b12Full);
 				} else {
-					Static37.method4716(LocalisedText.LOADING, false);
+					Static37.renderLoadingText(LocalisedText.LOADING, false);
 				}
 				try {
 					@Pc(268) Graphics graphics = GameShell.canvas.getGraphics();
@@ -247,7 +247,7 @@ public final class Static24 {
 			GameShell.thread.setPriority(1);
 			client.frameBuffer = FrameBuffer.create(GameShell.canvas, 765, 503);
 			SoftwareModel.method2906();
-			Static26.method2951();
+			ParticleSystem.quit();
 			((Js5GlTextureProvider) Rasteriser.textureProvider).resize(20);
 			if (Preferences.highDetailLighting) {
 				if (Preferences.brightness == 1) {
@@ -267,7 +267,7 @@ public final class Static24 {
 			Static36.method4447();
 		}
 		Static6.aBoolean313 = !SceneGraph.isAllLevelsVisible();
-		Static26.method2966(GameShell.canvasWidth, GameShell.canvasHeight);
+		ParticleSystem.method2966(GameShell.canvasWidth, GameShell.canvasHeight);
 		if (arg5) {
 			Static11.method516();
 		}

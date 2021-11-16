@@ -20,7 +20,7 @@ public final class Static8 {
 		} else {
 			Static9.method233(25);
 		}
-		Static37.method4716(LocalisedText.LOADING, true);
+		Static37.renderLoadingText(LocalisedText.LOADING, true);
 		@Pc(57) int prevOriginX = Static5.originX;
 		@Pc(59) int prevOriginZ = Static7.originZ;
 		Static5.originX = zoneX * 8 - 48;
@@ -142,12 +142,12 @@ public final class Static8 {
 
 	@OriginalMember(owner = "client!ab", name = "a", descriptor = "(IBLjava/lang/String;)V")
 	public static void method7(@OriginalArg(0) int op, @OriginalArg(2) String username) {
-		@Pc(17) String local17 = Base37.toTitleCase(Base37.toLowerCase(username));
-		@Pc(19) boolean local19 = false;
+		@Pc(17) String username2 = Base37.toTitleCase(Base37.toLowerCase(username));
+		@Pc(19) boolean found = false;
 		for (@Pc(21) int i = 0; i < PlayerList.size; i++) {
 			@Pc(30) Player player = PlayerList.players[PlayerList.ids[i]];
-			if (player != null && player.username != null && player.username.equalsIgnoreCase(local17)) {
-				local19 = true;
+			if (player != null && player.username != null && player.username.equalsIgnoreCase(username2)) {
+				found = true;
 				if (op == 1) {
 					Protocol.outboundBuffer.writeOpcode(212);
 					Protocol.outboundBuffer.writeShortA(PlayerList.ids[i]);
@@ -172,8 +172,8 @@ public final class Static8 {
 				break;
 			}
 		}
-		if (!local19) {
-			Chat.add(0, "", LocalisedText.UNABLETOFIND + local17);
+		if (!found) {
+			Chat.add(0, "", LocalisedText.UNABLETOFIND + username2);
 		}
 	}
 

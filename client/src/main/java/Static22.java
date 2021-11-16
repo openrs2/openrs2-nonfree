@@ -80,7 +80,7 @@ public final class Static22 {
 	}
 
 	@OriginalMember(owner = "client!ka", name = "a", descriptor = "(IIIIIIZILclient!ch;ZI)V")
-	public static void method2193(@OriginalArg(0) int angle, @OriginalArg(1) int level, @OriginalArg(2) int id, @OriginalArg(3) int arg3, @OriginalArg(4) int x, @OriginalArg(6) boolean arg5, @OriginalArg(7) int z, @OriginalArg(8) CollisionMap arg7, @OriginalArg(9) boolean arg8, @OriginalArg(10) int shape) {
+	public static void method2193(@OriginalArg(0) int angle, @OriginalArg(1) int level, @OriginalArg(2) int id, @OriginalArg(3) int arg3, @OriginalArg(4) int x, @OriginalArg(6) boolean arg5, @OriginalArg(7) int z, @OriginalArg(8) CollisionMap collisionMap, @OriginalArg(9) boolean arg8, @OriginalArg(10) int shape) {
 		if (arg8 && !SceneGraph.isAllLevelsVisible() && (Static4.tileFlags[0][x][z] & 0x2) == 0) {
 			if ((Static4.tileFlags[level][x][z] & 0x10) != 0) {
 				return;
@@ -166,8 +166,8 @@ public final class Static22 {
 					local377 = new Loc(id, 22, angle, arg3, x, z, -1, type.aBoolean380, null);
 				}
 				SceneGraph.setGroundDecor(level, x, z, local193, local377, key2, type.aBoolean371);
-				if (type.anInt5509 == 1 && arg7 != null) {
-					arg7.flagGroundDecor(x, z);
+				if (type.anInt5509 == 1 && collisionMap != null) {
+					collisionMap.flagGroundDecor(x, z);
 				}
 			}
 		} else if (shape == 10 || shape == 11) {
@@ -200,8 +200,8 @@ public final class Static22 {
 					}
 				}
 			}
-			if (type.anInt5509 != 0 && arg7 != null) {
-				arg7.flagScenery(x, z, width, length, type.aBoolean374, !type.aBoolean385);
+			if (type.anInt5509 != 0 && collisionMap != null) {
+				collisionMap.flagScenery(x, z, width, length, type.aBoolean374, !type.aBoolean385);
 			}
 		} else if (shape >= 12) {
 			@Pc(666) Entity local666;
@@ -218,8 +218,8 @@ public final class Static22 {
 			if (arg8 && shape >= 12 && shape <= 17 && shape != 13 && level > 0 && type.anInt5544 != 0) {
 				Static4.anIntArrayArrayArray9[level][x][z] |= 4;
 			}
-			if (type.anInt5509 != 0 && arg7 != null) {
-				arg7.flagScenery(x, z, width, length, type.aBoolean374, !type.aBoolean385);
+			if (type.anInt5509 != 0 && collisionMap != null) {
+				collisionMap.flagScenery(x, z, width, length, type.aBoolean374, !type.aBoolean385);
 			}
 		} else if (shape == 0) {
 			@Pc(796) Entity local796;
@@ -268,8 +268,8 @@ public final class Static22 {
 					}
 				}
 			}
-			if (type.anInt5509 != 0 && arg7 != null) {
-				arg7.flagWall(x, z, shape, angle, type.aBoolean374, !type.aBoolean385);
+			if (type.anInt5509 != 0 && collisionMap != null) {
+				collisionMap.flagWall(x, z, shape, angle, type.aBoolean374, !type.aBoolean385);
 			}
 			if (type.wallDecorOffsetScale != 16) {
 				SceneGraph.scaleWallDecorOffsets(level, x, z, type.wallDecorOffsetScale);
@@ -297,8 +297,8 @@ public final class Static22 {
 					Static5.aByteArrayArrayArray18[level][x][z] = 50;
 				}
 			}
-			if (type.anInt5509 != 0 && arg7 != null) {
-				arg7.flagWall(x, z, shape, angle, type.aBoolean374, !type.aBoolean385);
+			if (type.anInt5509 != 0 && collisionMap != null) {
+				collisionMap.flagWall(x, z, shape, angle, type.aBoolean374, !type.aBoolean385);
 			}
 		} else if (shape == 2) {
 			@Pc(1265) int local1265 = angle + 1 & 0x3;
@@ -335,8 +335,8 @@ public final class Static22 {
 					Static4.anIntArrayArrayArray9[level][x][z] |= 1;
 				}
 			}
-			if (type.anInt5509 != 0 && arg7 != null) {
-				arg7.flagWall(x, z, shape, angle, type.aBoolean374, !type.aBoolean385);
+			if (type.anInt5509 != 0 && collisionMap != null) {
+				collisionMap.flagWall(x, z, shape, angle, type.aBoolean374, !type.aBoolean385);
 			}
 			if (type.wallDecorOffsetScale != 16) {
 				SceneGraph.scaleWallDecorOffsets(level, x, z, type.wallDecorOffsetScale);
@@ -364,8 +364,8 @@ public final class Static22 {
 					Static5.aByteArrayArrayArray18[level][x][z] = 50;
 				}
 			}
-			if (type.anInt5509 != 0 && arg7 != null) {
-				arg7.flagWall(x, z, shape, angle, type.aBoolean374, !type.aBoolean385);
+			if (type.anInt5509 != 0 && collisionMap != null) {
+				collisionMap.flagWall(x, z, shape, angle, type.aBoolean374, !type.aBoolean385);
 			}
 		} else if (shape == 9) {
 			@Pc(1796) Entity local1796;
@@ -379,8 +379,8 @@ public final class Static22 {
 				local1796 = new Loc(id, shape, angle, arg3, x, z, -1, type.aBoolean380, null);
 			}
 			SceneGraph.method2196(level, x, z, local193, 1, 1, local1796, key2);
-			if (type.anInt5509 != 0 && arg7 != null) {
-				arg7.flagScenery(x, z, width, length, type.aBoolean374, !type.aBoolean385);
+			if (type.anInt5509 != 0 && collisionMap != null) {
+				collisionMap.flagScenery(x, z, width, length, type.aBoolean374, !type.aBoolean385);
 			}
 			if (type.wallDecorOffsetScale != 16) {
 				SceneGraph.scaleWallDecorOffsets(level, x, z, type.wallDecorOffsetScale);

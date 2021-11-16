@@ -1,5 +1,6 @@
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
+import java.nio.FloatBuffer;
 import javax.media.opengl.GL;
 
 import org.openrs2.deob.annotation.OriginalArg;
@@ -9,6 +10,124 @@ import org.openrs2.deob.annotation.Pc;
 
 @OriginalClass("client!ne")
 public final class ParticleSystem extends ParticleNode {
+
+	@OriginalMember(owner = "client!ne", name = "T", descriptor = "Lclient!fd;")
+	private static final Buffer aClass4_Sub10_7 = new Buffer(131056);
+
+	@OriginalMember(owner = "client!ne", name = "V", descriptor = "[Z")
+	private static final boolean[] aBooleanArray18 = new boolean[8];
+
+	@OriginalMember(owner = "client!ne", name = "Y", descriptor = "[Z")
+	private static final boolean[] aBooleanArray19 = new boolean[8];
+
+	@OriginalMember(owner = "client!ne", name = "l", descriptor = "Z")
+	public static boolean arbPointSpriteSupported = false;
+
+	@OriginalMember(owner = "client!ne", name = "w", descriptor = "I")
+	public static int anInt3503;
+
+	@OriginalMember(owner = "client!ne", name = "C", descriptor = "I")
+	public static int anInt3506;
+
+	@OriginalMember(owner = "client!ne", name = "Q", descriptor = "[[S")
+	public static short[][] aShortArrayArray3;
+
+	@OriginalMember(owner = "client!ne", name = "Z", descriptor = "[[S")
+	public static short[][] aShortArrayArray4;
+
+	@OriginalMember(owner = "client!ne", name = "bb", descriptor = "[I")
+	public static int[] anIntArray387;
+
+	@OriginalMember(owner = "client!ne", name = "cb", descriptor = "[I")
+	public static int[] anIntArray388;
+
+	@OriginalMember(owner = "client!ne", name = "gb", descriptor = "Ljava/nio/ByteBuffer;")
+	public static ByteBuffer aByteBuffer12;
+
+	@OriginalMember(owner = "client!ne", name = "S", descriptor = "I")
+	public static int anInt3519 = 0;
+
+	@OriginalMember(owner = "client!ne", name = "fb", descriptor = "F")
+	public static float aFloat86 = 1.0F;
+
+	@OriginalMember(owner = "client!ne", name = "a", descriptor = "()V")
+	public static void quit() {
+		aShortArrayArray3 = null;
+		aShortArrayArray4 = null;
+		anIntArray387 = null;
+		anIntArray388 = null;
+	}
+
+	@OriginalMember(owner = "client!ne", name = "a", descriptor = "(III)V")
+	public static void method2961(@OriginalArg(0) int x, @OriginalArg(1) int y, @OriginalArg(2) int z) {
+		@Pc(1) GL gl = GlRenderer.gl;
+		if (arbPointSpriteSupported) {
+			gl.glEnable(GL.GL_POINT_SPRITE);
+			gl.glTexEnvi(GL.GL_POINT_SPRITE, GL.GL_COORD_REPLACE, GL.GL_LINES);
+		}
+		gl.glDepthMask(false);
+		MaterialManager.setMaterial(0, 0);
+		gl.glColorMaterial(GL.GL_FRONT, GL.GL_DIFFUSE);
+		gl.glMaterialfv(GL.GL_FRONT, GL.GL_AMBIENT, Static4.aFloatArray36, 0);
+		if (Preferences.highDetailLighting) {
+			gl.glDisableClientState(GL.GL_NORMAL_ARRAY);
+		}
+		gl.glDisableClientState(GL.GL_TEXTURE_COORD_ARRAY);
+		gl.glPushMatrix();
+		gl.glTranslatef((float) -x, (float) -y, (float) -z);
+		gl.glNormal3f(0.0F, -1.0F, 0.0F);
+		if (!GlRenderer.aBoolean139) {
+			gl.glDisable(GL.GL_FOG);
+		}
+	}
+
+	@OriginalMember(owner = "client!ne", name = "g", descriptor = "()V")
+	public static void method2962() {
+		@Pc(1) GL gl = GlRenderer.gl;
+		if (Preferences.highDetailLighting) {
+			gl.glEnableClientState(GL.GL_NORMAL_ARRAY);
+		}
+		gl.glEnableClientState(GL.GL_TEXTURE_COORD_ARRAY);
+		gl.glDepthMask(true);
+		gl.glColorMaterial(GL.GL_FRONT, GL.GL_AMBIENT_AND_DIFFUSE);
+		gl.glPopMatrix();
+		if (!GlRenderer.aBoolean139) {
+			gl.glEnable(GL.GL_FOG);
+		}
+		if (arbPointSpriteSupported) {
+			gl.glTexEnvi(GL.GL_POINT_SPRITE, GL.GL_COORD_REPLACE, GL.GL_POINTS);
+			gl.glDisable(GL.GL_POINT_SPRITE);
+		}
+	}
+
+	@OriginalMember(owner = "client!ne", name = "b", descriptor = "(II)V")
+	public static void method2966(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
+		aFloat86 = (float) arg1 / 334.0F;
+	}
+
+	@OriginalMember(owner = "client!ne", name = "i", descriptor = "()V")
+	public static void load() {
+		@Pc(1) GL gl = GlRenderer.gl;
+		if (gl.isExtensionAvailable("GL_ARB_point_parameters")) {
+			@Pc(20) float[] coefficients = new float[] { 1.0F, 0.0F, 5.0E-7F };
+			gl.glPointParameterfvARB(GL.GL_POINT_DISTANCE_ATTENUATION, coefficients, 0);
+			@Pc(28) FloatBuffer buffer = FloatBuffer.allocate(1);
+			gl.glGetFloatv(GL.GL_POINT_SIZE_MAX, buffer);
+			@Pc(36) float pointSizeMax = buffer.get(0);
+			if (pointSizeMax > 64.0F) {
+				pointSizeMax = 64.0F;
+			}
+			gl.glPointParameterfARB(GL.GL_POINT_SIZE_MIN, 1.0F);
+			gl.glPointParameterfARB(GL.GL_POINT_SIZE_MAX, pointSizeMax);
+		}
+		if (gl.isExtensionAvailable("GL_ARB_point_sprite")) {
+			arbPointSpriteSupported = true;
+		}
+		aShortArrayArray3 = new short[1600][32];
+		aShortArrayArray4 = new short[32][768];
+		anIntArray387 = new int[1600];
+		anIntArray388 = new int[32];
+	}
 
 	@OriginalMember(owner = "client!ne", name = "q", descriptor = "J")
 	private long aLong123;
@@ -20,13 +139,13 @@ public final class ParticleSystem extends ParticleNode {
 	public int anInt3508;
 
 	@OriginalMember(owner = "client!ne", name = "G", descriptor = "I")
-	public int anInt3509;
+	public int z;
 
 	@OriginalMember(owner = "client!ne", name = "H", descriptor = "I")
 	public int anInt3510;
 
 	@OriginalMember(owner = "client!ne", name = "K", descriptor = "I")
-	public int anInt3512;
+	public int y;
 
 	@OriginalMember(owner = "client!ne", name = "L", descriptor = "I")
 	public int anInt3513;
@@ -41,7 +160,7 @@ public final class ParticleSystem extends ParticleNode {
 	public int anInt3517;
 
 	@OriginalMember(owner = "client!ne", name = "R", descriptor = "I")
-	public int anInt3518;
+	public int x;
 
 	@OriginalMember(owner = "client!ne", name = "U", descriptor = "I")
 	public int anInt3520;
@@ -98,14 +217,14 @@ public final class ParticleSystem extends ParticleNode {
 	@OriginalMember(owner = "client!ne", name = "a", descriptor = "([Lclient!sk;Z[I[I[I)V")
 	private void method2948(@OriginalArg(0) ModelParticleEmitter[] emitters, @OriginalArg(1) boolean arg1, @OriginalArg(2) int[] arg2, @OriginalArg(3) int[] arg3, @OriginalArg(4) int[] arg4) {
 		for (@Pc(1) int local1 = 0; local1 < 8; local1++) {
-			Static5.aBooleanArray19[local1] = false;
+			aBooleanArray19[local1] = false;
 		}
 		label79:
 		for (@Pc(16) ParticleEmitter node = (ParticleEmitter) this.emitters.head(); node != null; node = (ParticleEmitter) this.emitters.next()) {
 			if (emitters != null) {
 				for (@Pc(22) int local22 = 0; local22 < emitters.length; local22++) {
 					if (node.emitter == emitters[local22]) {
-						Static5.aBooleanArray19[local22] = true;
+						aBooleanArray19[local22] = true;
 						node.aBoolean20 = false;
 						continue label79;
 					}
@@ -124,16 +243,16 @@ public final class ParticleSystem extends ParticleNode {
 			return;
 		}
 		for (@Pc(71) int i = 0; i < emitters.length && this.anInt3507 != 8; i++) {
-			if (!Static5.aBooleanArray19[i]) {
+			if (!aBooleanArray19[i]) {
 				@Pc(94) ParticleEmitter node = new ParticleEmitter(emitters[i], this, this.aLong124);
 				this.emitters.addTail(node);
 				this.anInt3507++;
-				Static5.aBooleanArray19[i] = true;
+				aBooleanArray19[i] = true;
 			}
 		}
 		for (@Pc(117) ParticleEmitter node = (ParticleEmitter) this.emitters.head(); node != null; node = (ParticleEmitter) this.emitters.next()) {
 			for (@Pc(121) int i = 0; i < emitters.length; i++) {
-				if (Static5.aBooleanArray19[i] && emitters[i] == node.emitter) {
+				if (aBooleanArray19[i] && emitters[i] == node.emitter) {
 					node.method309(arg2[node.emitter.triangleVertexC], arg3[node.emitter.triangleVertexA], arg2[node.emitter.triangleVertexA], arg3[node.emitter.triangleVertexC], arg3[node.emitter.triangleVertexB], arg2[node.emitter.triangleVertexB], arg4[node.emitter.triangleVertexB], arg4[node.emitter.triangleVertexA], arg4[node.emitter.triangleVertexC]);
 					break;
 				}
@@ -142,7 +261,7 @@ public final class ParticleSystem extends ParticleNode {
 	}
 
 	@OriginalMember(owner = "client!ne", name = "a", descriptor = "(IIIII)V")
-	public final void method2949(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4) {
+	public final void method2949(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int x, @OriginalArg(3) int y, @OriginalArg(4) int z) {
 		if (this.stopped) {
 			return;
 		}
@@ -154,9 +273,9 @@ public final class ParticleSystem extends ParticleNode {
 		this.aLong123 = this.aLong124;
 		this.anInt3517 = arg0;
 		this.anInt3514 = arg1;
-		this.anInt3518 = arg2;
-		this.anInt3512 = arg3;
-		this.anInt3509 = arg4;
+		this.x = x;
+		this.y = y;
+		this.z = z;
 	}
 
 	@OriginalMember(owner = "client!ne", name = "b", descriptor = "()V")
@@ -173,7 +292,7 @@ public final class ParticleSystem extends ParticleNode {
 		@Pc(13) int local13 = Static7.anInt5281;
 		@Pc(15) int local15 = Static6.anInt4375;
 		@Pc(17) int local17 = Static6.anInt4400;
-		Static26.method2961(local13, local15, local17);
+		method2961(local13, local15, local17);
 		@Pc(31) int local31 = arg8 * arg4 - arg6 * arg3 >> 16;
 		@Pc(41) int local41 = arg7 * arg1 + local31 * arg2 >> 16;
 		@Pc(44) int local44 = this.method2959();
@@ -184,26 +303,26 @@ public final class ParticleSystem extends ParticleNode {
 			if (ParticleManager.DEBUG) {
 				System.out.println("Model too big for particles - radixsize:" + local79 + " maxmodelsize:" + 1600);
 			}
-			Static26.method2962();
+			method2962();
 			return;
 		}
 		@Pc(104) ParticleNode sentinel = this.emitters.sentinel;
 		for (@Pc(107) ParticleNode node = sentinel.next; node != sentinel; node = node.next) {
 			@Pc(113) ParticleEmitter emitterNode = (ParticleEmitter) node;
 			for (@Pc(115) int local115 = 0; local115 < local79; local115++) {
-				Static5.anIntArray387[local115] = 0;
+				anIntArray387[local115] = 0;
 			}
 			for (@Pc(126) int local126 = 0; local126 < 32; local126++) {
-				Static5.anIntArray388[local126] = 0;
+				anIntArray388[local126] = 0;
 			}
-			Static5.anInt3519 = 0;
+			anInt3519 = 0;
 			@Pc(141) ParticleNode particlesSentinel = emitterNode.particles.sentinel;
 			for (@Pc(144) ParticleNode particleNode = particlesSentinel.next; particleNode != particlesSentinel; particleNode = particleNode.next) {
 				@Pc(150) Particle particle = (Particle) particleNode;
 				if (!particle.aBoolean228) {
-					@Pc(161) int local161 = (particle.anInt3228 >> 12) - local13;
-					@Pc(168) int local168 = (particle.anInt3229 >> 12) - local15;
-					@Pc(175) int local175 = (particle.anInt3230 >> 12) - local17;
+					@Pc(161) int local161 = (particle.x >> 12) - local13;
+					@Pc(168) int local168 = (particle.y >> 12) - local15;
+					@Pc(175) int local175 = (particle.z >> 12) - local17;
 					local175 = local175 * arg4 - local161 * arg3 >> 16;
 					@Pc(197) int local197 = (local168 * arg1 + local175 * arg2 >> 16) - local73;
 					if (local197 < 0) {
@@ -211,38 +330,38 @@ public final class ParticleSystem extends ParticleNode {
 					} else if (local197 >= local79) {
 						local197 = local79 - 1;
 					}
-					if (Static5.anIntArray387[local197] < 32) {
-						Static5.aShortArrayArray3[local197][Static5.anIntArray387[local197]++] = particle.aShort21;
+					if (anIntArray387[local197] < 32) {
+						aShortArrayArray3[local197][anIntArray387[local197]++] = particle.aShort21;
 					} else {
-						if (Static5.anIntArray387[local197] == 32) {
-							if (Static5.anInt3519 == 32) {
+						if (anIntArray387[local197] == 32) {
+							if (anInt3519 == 32) {
 								if (ParticleManager.DEBUG) {
 									System.out.println("Overflowed model-based radix sort");
 								}
 								continue;
 							}
-							@Pc(244) int[] local244 = Static5.anIntArray387;
-							local244[local197] += Static5.anInt3519++ + 1;
+							@Pc(244) int[] local244 = anIntArray387;
+							local244[local197] += anInt3519++ + 1;
 						}
-						Static5.aShortArrayArray4[Static5.anIntArray387[local197] - 32 - 1][Static5.anIntArray388[Static5.anIntArray387[local197] - 32 - 1]++] = particle.aShort21;
+						aShortArrayArray4[anIntArray387[local197] - 32 - 1][anIntArray388[anIntArray387[local197] - 32 - 1]++] = particle.aShort21;
 					}
 				}
 			}
 			@Pc(288) boolean local288 = false;
-			if (Static5.aBoolean249 && emitterNode.type.texture != -1) {
+			if (arbPointSpriteSupported && emitterNode.type.texture != -1) {
 				Rasteriser.textureProvider.method451(emitterNode.type.texture);
 				local288 = true;
 			} else {
 				GlRenderer.setTextureId(-1);
 			}
-			@Pc(313) float local313 = (float) emitterNode.type.anInt2399 * Static5.aFloat86;
+			@Pc(313) float local313 = (float) emitterNode.type.anInt2399 * aFloat86;
 			if (local313 > 64.0F) {
 				local313 = 64.0F;
 			}
 			gl.glPointSize((float) (local313 * GameShell.canvasScale));
 			this.method2955(gl, local79, local288, emitterNode.type.aBoolean167);
 		}
-		Static26.method2962();
+		method2962();
 	}
 
 	@OriginalMember(owner = "client!ne", name = "a", descriptor = "(Lgl!javax/media/opengl/GL;IZZ)V")
@@ -250,86 +369,86 @@ public final class ParticleSystem extends ParticleNode {
 		if (!arg3 && Preferences.highDetailLighting) {
 			gl.glDisable(GL.GL_LIGHTING);
 		}
-		Static5.aClass4_Sub10_7.position = 0;
+		aClass4_Sub10_7.position = 0;
 		if (GlRenderer.bigEndian) {
 			for (@Pc(15) int i = arg1 - 1; i >= 0; i--) {
-				@Pc(28) int local28 = Static5.anIntArray387[i] > 32 ? 32 : Static5.anIntArray387[i];
+				@Pc(28) int local28 = anIntArray387[i] > 32 ? 32 : anIntArray387[i];
 				if (local28 > 0) {
 					for (@Pc(34) int j = local28 - 1; j >= 0; j--) {
-						@Pc(45) Particle particle = this.particles[Static5.aShortArrayArray3[i][j]];
-						Static5.aClass4_Sub10_7.writeFloat((float) (particle.anInt3228 >> 12));
-						Static5.aClass4_Sub10_7.writeFloat((float) (particle.anInt3229 >> 12));
-						Static5.aClass4_Sub10_7.writeFloat((float) (particle.anInt3230 >> 12));
-						@Pc(72) int local72 = particle.anInt3231;
-						Static5.aClass4_Sub10_7.writeByte((byte) (local72 >> 16));
-						Static5.aClass4_Sub10_7.writeByte((byte) (local72 >> 8));
-						Static5.aClass4_Sub10_7.writeByte((byte) local72);
-						Static5.aClass4_Sub10_7.writeByte((byte) (local72 >> 24));
+						@Pc(45) Particle particle = this.particles[aShortArrayArray3[i][j]];
+						aClass4_Sub10_7.writeFloat((float) (particle.x >> 12));
+						aClass4_Sub10_7.writeFloat((float) (particle.y >> 12));
+						aClass4_Sub10_7.writeFloat((float) (particle.z >> 12));
+						@Pc(72) int color = particle.color;
+						aClass4_Sub10_7.writeByte((byte) (color >> 16));
+						aClass4_Sub10_7.writeByte((byte) (color >> 8));
+						aClass4_Sub10_7.writeByte((byte) color);
+						aClass4_Sub10_7.writeByte((byte) (color >> 24));
 					}
-					if (Static5.anIntArray387[i] > 32) {
-						@Pc(113) int local113 = Static5.anIntArray387[i] - 32 - 1;
-						for (@Pc(119) int j = Static5.anIntArray388[local113] - 1; j >= 0; j--) {
-							@Pc(130) Particle particle = this.particles[Static5.aShortArrayArray4[local113][j]];
-							Static5.aClass4_Sub10_7.writeFloat((float) (particle.anInt3228 >> 12));
-							Static5.aClass4_Sub10_7.writeFloat((float) (particle.anInt3229 >> 12));
-							Static5.aClass4_Sub10_7.writeFloat((float) (particle.anInt3230 >> 12));
-							@Pc(157) int local157 = particle.anInt3231;
-							Static5.aClass4_Sub10_7.writeByte((byte) (local157 >> 16));
-							Static5.aClass4_Sub10_7.writeByte((byte) (local157 >> 8));
-							Static5.aClass4_Sub10_7.writeByte((byte) local157);
-							Static5.aClass4_Sub10_7.writeByte((byte) (local157 >> 24));
+					if (anIntArray387[i] > 32) {
+						@Pc(113) int local113 = anIntArray387[i] - 32 - 1;
+						for (@Pc(119) int j = anIntArray388[local113] - 1; j >= 0; j--) {
+							@Pc(130) Particle particle = this.particles[aShortArrayArray4[local113][j]];
+							aClass4_Sub10_7.writeFloat((float) (particle.x >> 12));
+							aClass4_Sub10_7.writeFloat((float) (particle.y >> 12));
+							aClass4_Sub10_7.writeFloat((float) (particle.z >> 12));
+							@Pc(157) int color = particle.color;
+							aClass4_Sub10_7.writeByte((byte) (color >> 16));
+							aClass4_Sub10_7.writeByte((byte) (color >> 8));
+							aClass4_Sub10_7.writeByte((byte) color);
+							aClass4_Sub10_7.writeByte((byte) (color >> 24));
 						}
 					}
 				}
 			}
 		} else {
 			for (@Pc(192) int i = arg1 - 1; i >= 0; i--) {
-				@Pc(205) int local205 = Static5.anIntArray387[i] > 32 ? 32 : Static5.anIntArray387[i];
+				@Pc(205) int local205 = anIntArray387[i] > 32 ? 32 : anIntArray387[i];
 				if (local205 > 0) {
 					for (@Pc(211) int j = local205 - 1; j >= 0; j--) {
-						@Pc(222) Particle local222 = this.particles[Static5.aShortArrayArray3[i][j]];
-						Static5.aClass4_Sub10_7.writeFloatLE((float) (local222.anInt3228 >> 12));
-						Static5.aClass4_Sub10_7.writeFloatLE((float) (local222.anInt3229 >> 12));
-						Static5.aClass4_Sub10_7.writeFloatLE((float) (local222.anInt3230 >> 12));
-						@Pc(249) int local249 = local222.anInt3231;
-						Static5.aClass4_Sub10_7.writeByte((byte) (local249 >> 16));
-						Static5.aClass4_Sub10_7.writeByte((byte) (local249 >> 8));
-						Static5.aClass4_Sub10_7.writeByte((byte) local249);
-						Static5.aClass4_Sub10_7.writeByte((byte) (local249 >> 24));
+						@Pc(222) Particle particle = this.particles[aShortArrayArray3[i][j]];
+						aClass4_Sub10_7.writeFloatLE((float) (particle.x >> 12));
+						aClass4_Sub10_7.writeFloatLE((float) (particle.y >> 12));
+						aClass4_Sub10_7.writeFloatLE((float) (particle.z >> 12));
+						@Pc(249) int color = particle.color;
+						aClass4_Sub10_7.writeByte((byte) (color >> 16));
+						aClass4_Sub10_7.writeByte((byte) (color >> 8));
+						aClass4_Sub10_7.writeByte((byte) color);
+						aClass4_Sub10_7.writeByte((byte) (color >> 24));
 					}
-					if (Static5.anIntArray387[i] > 32) {
-						@Pc(290) int local290 = Static5.anIntArray387[i] - 32 - 1;
-						for (@Pc(296) int j = Static5.anIntArray388[local290] - 1; j >= 0; j--) {
-							@Pc(307) Particle particle = this.particles[Static5.aShortArrayArray4[local290][j]];
-							Static5.aClass4_Sub10_7.writeFloatLE((float) (particle.anInt3228 >> 12));
-							Static5.aClass4_Sub10_7.writeFloatLE((float) (particle.anInt3229 >> 12));
-							Static5.aClass4_Sub10_7.writeFloatLE((float) (particle.anInt3230 >> 12));
-							@Pc(334) int local334 = particle.anInt3231;
-							Static5.aClass4_Sub10_7.writeByte((byte) (local334 >> 16));
-							Static5.aClass4_Sub10_7.writeByte((byte) (local334 >> 8));
-							Static5.aClass4_Sub10_7.writeByte((byte) local334);
-							Static5.aClass4_Sub10_7.writeByte((byte) (local334 >> 24));
+					if (anIntArray387[i] > 32) {
+						@Pc(290) int local290 = anIntArray387[i] - 32 - 1;
+						for (@Pc(296) int j = anIntArray388[local290] - 1; j >= 0; j--) {
+							@Pc(307) Particle particle = this.particles[aShortArrayArray4[local290][j]];
+							aClass4_Sub10_7.writeFloatLE((float) (particle.x >> 12));
+							aClass4_Sub10_7.writeFloatLE((float) (particle.y >> 12));
+							aClass4_Sub10_7.writeFloatLE((float) (particle.z >> 12));
+							@Pc(334) int color = particle.color;
+							aClass4_Sub10_7.writeByte((byte) (color >> 16));
+							aClass4_Sub10_7.writeByte((byte) (color >> 8));
+							aClass4_Sub10_7.writeByte((byte) color);
+							aClass4_Sub10_7.writeByte((byte) (color >> 24));
 						}
 					}
 				}
 			}
 		}
-		if (Static5.aClass4_Sub10_7.position != 0) {
+		if (aClass4_Sub10_7.position != 0) {
 			if (GlRenderer.arbVboSupported) {
 				gl.glBindBufferARB(GL.GL_ARRAY_BUFFER, 0);
 			}
-			if (Static5.aByteBuffer12 == null || Static5.aByteBuffer12.capacity() < Static5.aClass4_Sub10_7.position) {
-				Static5.aByteBuffer12 = ByteBuffer.allocateDirect(Static5.aClass4_Sub10_7.position).order(ByteOrder.nativeOrder());
+			if (aByteBuffer12 == null || aByteBuffer12.capacity() < aClass4_Sub10_7.position) {
+				aByteBuffer12 = ByteBuffer.allocateDirect(aClass4_Sub10_7.position).order(ByteOrder.nativeOrder());
 			} else {
-				Static5.aByteBuffer12.clear();
+				aByteBuffer12.clear();
 			}
-			Static5.aByteBuffer12.put(Static5.aClass4_Sub10_7.bytes, 0, Static5.aClass4_Sub10_7.position);
-			Static5.aByteBuffer12.flip();
-			Static5.aByteBuffer12.position(0);
-			gl.glVertexPointer(3, GL.GL_FLOAT, 16, Static5.aByteBuffer12);
-			Static5.aByteBuffer12.position(12);
-			gl.glColorPointer(4, GL.GL_UNSIGNED_BYTE, 16, Static5.aByteBuffer12);
-			gl.glDrawArrays(GL.GL_POINTS, 0, Static5.aClass4_Sub10_7.position >> 4);
+			aByteBuffer12.put(aClass4_Sub10_7.bytes, 0, aClass4_Sub10_7.position);
+			aByteBuffer12.flip();
+			aByteBuffer12.position(0);
+			gl.glVertexPointer(3, GL.GL_FLOAT, 16, aByteBuffer12);
+			aByteBuffer12.position(12);
+			gl.glColorPointer(4, GL.GL_UNSIGNED_BYTE, 16, aByteBuffer12);
+			gl.glDrawArrays(GL.GL_POINTS, 0, aClass4_Sub10_7.position >> 4);
 		}
 		if (!arg3 && Preferences.highDetailLighting) {
 			gl.glEnable(GL.GL_LIGHTING);
@@ -362,15 +481,15 @@ public final class ParticleSystem extends ParticleNode {
 		@Pc(23) int local23 = (this.anInt3521 << 7) + 128;
 		@Pc(28) int local28 = this.anInt3508 << 7;
 		@Pc(35) int local35 = (this.anInt3515 << 7) + 128;
-		@Pc(40) int local40 = this.anInt3518 - local16;
-		@Pc(45) int local45 = local23 - this.anInt3518;
+		@Pc(40) int local40 = this.x - local16;
+		@Pc(45) int local45 = local23 - this.x;
 		if (local40 > local45) {
-			@Pc(53) int local53 = this.anInt3509 - local28;
-			@Pc(58) int local58 = local35 - this.anInt3509;
+			@Pc(53) int local53 = this.z - local28;
+			@Pc(58) int local58 = local35 - this.z;
 			return local53 > local58 ? (int) (Math.sqrt((double) (local40 * local40 + local53 * local53)) + 0.99D) : (int) (Math.sqrt((double) (local40 * local40 + local58 * local58)) + 0.99D);
 		} else {
-			@Pc(92) int local92 = this.anInt3509 - local28;
-			@Pc(97) int local97 = local35 - this.anInt3509;
+			@Pc(92) int local92 = this.z - local28;
+			@Pc(97) int local97 = local35 - this.z;
 			return local92 > local97 ? (int) (Math.sqrt((double) (local45 * local45 + local92 * local92)) + 0.99D) : (int) (Math.sqrt((double) (local45 * local45 + local97 * local97)) + 0.99D);
 		}
 	}
@@ -378,9 +497,9 @@ public final class ParticleSystem extends ParticleNode {
 	@OriginalMember(owner = "client!ne", name = "a", descriptor = "(II)V")
 	private void method2960(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
 		for (@Pc(5) ParticleEffector node = (ParticleEffector) this.effectors.head(); node != null; node = (ParticleEffector) this.effectors.next()) {
-			node.anInt6095 = node.anInt6084 + this.anInt3518;
-			node.anInt6089 = node.anInt6085 + this.anInt3512;
-			node.anInt6087 = node.anInt6090 + this.anInt3509;
+			node.anInt6095 = node.anInt6084 + this.x;
+			node.anInt6089 = node.anInt6085 + this.y;
+			node.anInt6087 = node.anInt6090 + this.z;
 			if (this.anInt3517 == 0) {
 				node.anInt6091 = node.effector.type.anInt898;
 				node.anInt6088 = node.effector.type.anInt892;
@@ -396,14 +515,14 @@ public final class ParticleSystem extends ParticleNode {
 	@OriginalMember(owner = "client!ne", name = "a", descriptor = "([Lclient!u;Z[I[I[I)V")
 	private void method2965(@OriginalArg(0) ModelParticleEffector[] effectors, @OriginalArg(1) boolean arg1, @OriginalArg(2) int[] arg2, @OriginalArg(3) int[] arg3, @OriginalArg(4) int[] arg4) {
 		for (@Pc(1) int local1 = 0; local1 < 8; local1++) {
-			Static5.aBooleanArray18[local1] = false;
+			aBooleanArray18[local1] = false;
 		}
 		label88:
 		for (@Pc(16) ParticleEffector node = (ParticleEffector) this.effectors.head(); node != null; node = (ParticleEffector) this.effectors.next()) {
 			if (effectors != null) {
 				for (@Pc(22) int i = 0; i < effectors.length; i++) {
 					if (node.effector == effectors[i]) {
-						Static5.aBooleanArray18[i] = true;
+						aBooleanArray18[i] = true;
 						continue label88;
 					}
 				}
@@ -421,7 +540,7 @@ public final class ParticleSystem extends ParticleNode {
 			return;
 		}
 		for (@Pc(72) int i = 0; i < effectors.length && this.anInt3522 != 8; i++) {
-			if (!Static5.aBooleanArray18[i]) {
+			if (!aBooleanArray18[i]) {
 				@Pc(87) ParticleEffector node = null;
 				if (effectors[i].type.anInt907 == 1 && ParticleManager.anInt3524 < 32) {
 					node = new ParticleEffector(effectors[i], this);
@@ -433,12 +552,12 @@ public final class ParticleSystem extends ParticleNode {
 				}
 				this.effectors.addTail(node);
 				this.anInt3522++;
-				Static5.aBooleanArray18[i] = true;
+				aBooleanArray18[i] = true;
 			}
 		}
 		for (@Pc(152) ParticleEffector node = (ParticleEffector) this.effectors.head(); node != null; node = (ParticleEffector) this.effectors.next()) {
 			for (@Pc(156) int i = 0; i < effectors.length; i++) {
-				if (Static5.aBooleanArray18[i] && effectors[i] == node.effector) {
+				if (aBooleanArray18[i] && effectors[i] == node.effector) {
 					node.method4827(arg4[node.effector.vertex], arg3[node.effector.vertex], arg2[node.effector.vertex]);
 					break;
 				}
@@ -468,11 +587,11 @@ public final class ParticleSystem extends ParticleNode {
 			return false;
 		}
 		if (this.aLong123 > 0L) {
-			this.anInt3513 = this.anInt3518 - (this.width << 6) >> 7;
-			this.anInt3521 = (this.anInt3518 + (this.width << 6) >> 7) - 1;
-			this.anInt3508 = this.anInt3509 - (this.length << 6) >> 7;
-			this.anInt3515 = (this.anInt3509 + (this.length << 6) >> 7) - 1;
-			this.anInt3510 = this.anInt3512;
+			this.anInt3513 = this.x - (this.width << 6) >> 7;
+			this.anInt3521 = (this.x + (this.width << 6) >> 7) - 1;
+			this.anInt3508 = this.z - (this.length << 6) >> 7;
+			this.anInt3515 = (this.z + (this.length << 6) >> 7) - 1;
+			this.anInt3510 = this.y;
 			if (this.anInt3514 < 3) {
 				this.anInt3520 = SceneGraph.tileHeights[this.anInt3514 + 1][this.anInt3513][this.anInt3508] + SceneGraph.tileHeights[this.anInt3514 + 1][this.anInt3521][this.anInt3508] + SceneGraph.tileHeights[this.anInt3514 + 1][this.anInt3513][this.anInt3515] + SceneGraph.tileHeights[this.anInt3514 + 1][this.anInt3521][this.anInt3515] >> 2;
 			} else {

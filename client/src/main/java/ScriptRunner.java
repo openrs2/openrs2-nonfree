@@ -4345,7 +4345,7 @@ public final class ScriptRunner {
 									continue;
 								}
 								if (opcode == 6406) {
-									intStack[isp++] = Static14.isShowingVideoAd() ? 1 : 0;
+									intStack[isp++] = Static14.isHidingVideoAd() ? 1 : 0;
 									continue;
 								}
 							} else if (opcode < 6600) {

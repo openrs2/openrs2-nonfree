@@ -126,16 +126,16 @@ public final class Static35 {
 
 	@OriginalMember(owner = "client!ug", name = "d", descriptor = "(I)V")
 	public static void method4321() {
-		for (@Pc(14) SpotAnimNode local14 = (SpotAnimNode) Static2.spotAnims.head(); local14 != null; local14 = (SpotAnimNode) Static2.spotAnims.next()) {
-			@Pc(20) SpotAnim local20 = local14.value;
-			if (local20.anInt3655 != Player.level || local20.aBoolean265) {
-				local14.unlink();
-			} else if (client.loop >= local20.anInt3665) {
-				local20.method3058(Static5.anInt4156);
-				if (local20.aBoolean265) {
-					local14.unlink();
+		for (@Pc(14) SpotAnimNode node = (SpotAnimNode) Static2.spotAnims.head(); node != null; node = (SpotAnimNode) Static2.spotAnims.next()) {
+			@Pc(20) SpotAnim spotAnim = node.value;
+			if (spotAnim.level != Player.level || spotAnim.stopped) {
+				node.unlink();
+			} else if (client.loop >= spotAnim.startLoop) {
+				spotAnim.method3058(Static5.anInt4156);
+				if (spotAnim.stopped) {
+					node.unlink();
 				} else {
-					SceneGraph.method637(local20.anInt3655, local20.anInt3647, local20.anInt3653, local20.anInt3648, 60, local20, 0, -1L, false);
+					SceneGraph.method637(spotAnim.level, spotAnim.xFine, spotAnim.zFine, spotAnim.y, 60, spotAnim, 0, -1L, false);
 				}
 			}
 		}

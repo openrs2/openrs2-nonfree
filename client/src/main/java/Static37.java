@@ -26,10 +26,10 @@ public final class Static37 {
 		if (Static5.environments == null) {
 			return;
 		}
-		@Pc(8) Environment local8 = new Environment();
-		for (@Pc(10) int local10 = 0; local10 < 13; local10++) {
-			for (@Pc(15) int local15 = 0; local15 < 13; local15++) {
-				Static5.environments[local10][local15] = local8;
+		@Pc(8) Environment environment = new Environment();
+		for (@Pc(10) int x = 0; x < 13; x++) {
+			for (@Pc(15) int z = 0; z < 13; z++) {
+				Static5.environments[x][z] = environment;
 			}
 		}
 	}
@@ -55,7 +55,7 @@ public final class Static37 {
 	}
 
 	@OriginalMember(owner = "client!wd", name = "a", descriptor = "(BLjava/lang/String;Z)V")
-	public static void method4716(@OriginalArg(1) String s, @OriginalArg(2) boolean arg1) {
+	public static void renderLoadingText(@OriginalArg(1) String s, @OriginalArg(2) boolean redraw) {
 		@Pc(17) int width = Fonts.p12Full.getParagraphWidth(s, 250);
 		@Pc(32) int lineCount = Fonts.p12Full.getParagraphLineCount(s, 250) * 13;
 		if (GlRenderer.enabled) {
@@ -67,7 +67,7 @@ public final class Static37 {
 		}
 		Fonts.p12Full.renderParagraph(s, 10, 10, width, lineCount, 0xFFFFFF, -1, 1, 1, 0);
 		Static8.method66(width + 4 + 4, lineCount + 4 + 4, 6, 6);
-		if (!arg1) {
+		if (!redraw) {
 			Static16.method1559(10, 10, lineCount, width);
 		} else if (GlRenderer.enabled) {
 			GlRenderer.swapBuffers();
@@ -113,10 +113,10 @@ public final class Static37 {
 			return;
 		}
 		@Pc(19) byte local19 = (byte) (Static2.anInt1997 - 4 & 0xFF);
-		@Pc(27) int local27 = Static2.anInt1997 % 104;
-		for (@Pc(29) int local29 = 0; local29 < 4; local29++) {
-			for (@Pc(34) int local34 = 0; local34 < 104; local34++) {
-				Static1.aByteArrayArrayArray2[local29][local27][local34] = local19;
+		@Pc(27) int x = Static2.anInt1997 % 104;
+		for (@Pc(29) int level = 0; level < 4; level++) {
+			for (@Pc(34) int z = 0; z < 104; z++) {
+				Static1.aByteArrayArrayArray2[level][x][z] = local19;
 			}
 		}
 		if (Player.level == 3) {
@@ -356,75 +356,75 @@ public final class Static37 {
 	}
 
 	@OriginalMember(owner = "client!wg", name = "a", descriptor = "(IIIILjava/lang/String;)V")
-	public static void method4752(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(4) String arg3) {
-		@Pc(4) Component local4 = InterfaceList.getCreatedComponent(arg0, arg1);
-		if (local4 == null) {
+	public static void method4752(@OriginalArg(0) int componentId, @OriginalArg(1) int createdComponentId, @OriginalArg(2) int op, @OriginalArg(4) String opBase) {
+		@Pc(4) Component source = InterfaceList.getCreatedComponent(componentId, createdComponentId);
+		if (source == null) {
 			return;
 		}
-		if (local4.onOp != null) {
-			@Pc(22) HookRequest local22 = new HookRequest();
-			local22.op = arg2;
-			local22.source = local4;
-			local22.opBase = arg3;
-			local22.arguments = local4.onOp;
-			ScriptRunner.method2019(local22);
+		if (source.onOp != null) {
+			@Pc(22) HookRequest hookRequest = new HookRequest();
+			hookRequest.op = op;
+			hookRequest.source = source;
+			hookRequest.opBase = opBase;
+			hookRequest.arguments = source.onOp;
+			ScriptRunner.method2019(hookRequest);
 		}
 		@Pc(40) boolean local40 = true;
-		if (local4.anInt5904 > 0) {
-			local40 = Static36.method4402(local4);
+		if (source.anInt5904 > 0) {
+			local40 = Static36.method4402(source);
 		}
-		if (!local40 || !InterfaceList.getServerActiveProperties(local4).isButtonEnabled(arg2 - 1)) {
+		if (!local40 || !InterfaceList.getServerActiveProperties(source).isButtonEnabled(op - 1)) {
 			return;
 		}
-		if (arg2 == 1) {
+		if (op == 1) {
 			Protocol.outboundBuffer.writeOpcode(94);
-			Protocol.outboundBuffer.writeInt(arg0);
-			Protocol.outboundBuffer.writeShort(arg1);
+			Protocol.outboundBuffer.writeInt(componentId);
+			Protocol.outboundBuffer.writeShort(createdComponentId);
 		}
-		if (arg2 == 2) {
+		if (op == 2) {
 			Protocol.outboundBuffer.writeOpcode(201);
-			Protocol.outboundBuffer.writeInt(arg0);
-			Protocol.outboundBuffer.writeShort(arg1);
+			Protocol.outboundBuffer.writeInt(componentId);
+			Protocol.outboundBuffer.writeShort(createdComponentId);
 		}
-		if (arg2 == 3) {
+		if (op == 3) {
 			Protocol.outboundBuffer.writeOpcode(30);
-			Protocol.outboundBuffer.writeInt(arg0);
-			Protocol.outboundBuffer.writeShort(arg1);
+			Protocol.outboundBuffer.writeInt(componentId);
+			Protocol.outboundBuffer.writeShort(createdComponentId);
 		}
-		if (arg2 == 4) {
+		if (op == 4) {
 			Protocol.outboundBuffer.writeOpcode(61);
-			Protocol.outboundBuffer.writeInt(arg0);
-			Protocol.outboundBuffer.writeShort(arg1);
+			Protocol.outboundBuffer.writeInt(componentId);
+			Protocol.outboundBuffer.writeShort(createdComponentId);
 		}
-		if (arg2 == 5) {
+		if (op == 5) {
 			Protocol.outboundBuffer.writeOpcode(66);
-			Protocol.outboundBuffer.writeInt(arg0);
-			Protocol.outboundBuffer.writeShort(arg1);
+			Protocol.outboundBuffer.writeInt(componentId);
+			Protocol.outboundBuffer.writeShort(createdComponentId);
 		}
-		if (arg2 == 6) {
+		if (op == 6) {
 			Protocol.outboundBuffer.writeOpcode(7);
-			Protocol.outboundBuffer.writeInt(arg0);
-			Protocol.outboundBuffer.writeShort(arg1);
+			Protocol.outboundBuffer.writeInt(componentId);
+			Protocol.outboundBuffer.writeShort(createdComponentId);
 		}
-		if (arg2 == 7) {
+		if (op == 7) {
 			Protocol.outboundBuffer.writeOpcode(108);
-			Protocol.outboundBuffer.writeInt(arg0);
-			Protocol.outboundBuffer.writeShort(arg1);
+			Protocol.outboundBuffer.writeInt(componentId);
+			Protocol.outboundBuffer.writeShort(createdComponentId);
 		}
-		if (arg2 == 8) {
+		if (op == 8) {
 			Protocol.outboundBuffer.writeOpcode(255);
-			Protocol.outboundBuffer.writeInt(arg0);
-			Protocol.outboundBuffer.writeShort(arg1);
+			Protocol.outboundBuffer.writeInt(componentId);
+			Protocol.outboundBuffer.writeShort(createdComponentId);
 		}
-		if (arg2 == 9) {
+		if (op == 9) {
 			Protocol.outboundBuffer.writeOpcode(97);
-			Protocol.outboundBuffer.writeInt(arg0);
-			Protocol.outboundBuffer.writeShort(arg1);
+			Protocol.outboundBuffer.writeInt(componentId);
+			Protocol.outboundBuffer.writeShort(createdComponentId);
 		}
-		if (arg2 == 10) {
+		if (op == 10) {
 			Protocol.outboundBuffer.writeOpcode(10);
-			Protocol.outboundBuffer.writeInt(arg0);
-			Protocol.outboundBuffer.writeShort(arg1);
+			Protocol.outboundBuffer.writeInt(componentId);
+			Protocol.outboundBuffer.writeShort(createdComponentId);
 		}
 	}
 

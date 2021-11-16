@@ -1255,14 +1255,14 @@ public final class Protocol {
 			@Pc(4460) int y = inboundBuffer.readUnsignedShortLE();
 			@Pc(4466) int index = inboundBuffer.readIntAlt3Reverse();
 			if (index >> 30 != 0) {
-				@Pc(4479) int local4479 = index >> 28 & 0x3;
-				@Pc(4488) int local4488 = (index >> 14 & 0x3FFF) - Static5.originX;
-				@Pc(4495) int local4495 = (index & 0x3FFF) - Static7.originZ;
-				if (local4488 >= 0 && local4495 >= 0 && local4488 < 104 && local4495 < 104) {
-					@Pc(4515) int local4515 = local4495 * 128 + 64;
-					@Pc(4521) int local4521 = local4488 * 128 + 64;
-					@Pc(4539) SpotAnim local4539 = new SpotAnim(spotAnimId, local4479, local4521, local4515, SceneGraph.getTileHeight(local4479, local4521, local4515) - y, delay, client.loop);
-					Static2.spotAnims.addTail(new SpotAnimNode(local4539));
+				@Pc(4479) int level = index >> 28 & 0x3;
+				@Pc(4488) int x = (index >> 14 & 0x3FFF) - Static5.originX;
+				@Pc(4495) int z = (index & 0x3FFF) - Static7.originZ;
+				if (x >= 0 && z >= 0 && x < 104 && z < 104) {
+					@Pc(4515) int zFine = z * 128 + 64;
+					@Pc(4521) int xFine = x * 128 + 64;
+					@Pc(4539) SpotAnim spotAnim = new SpotAnim(spotAnimId, level, xFine, zFine, SceneGraph.getTileHeight(level, xFine, zFine) - y, delay, client.loop);
+					Static2.spotAnims.addTail(new SpotAnimNode(spotAnim));
 				}
 			} else if (index >> 29 != 0) {
 				@Pc(4805) int npcIndex = index & 0xFFFF;
@@ -1813,13 +1813,13 @@ public final class Protocol {
 				@Pc(715) int position = inboundBuffer.readUnsignedByte();
 				@Pc(723) int x = (position >> 4 & 0x7) + zoneX;
 				@Pc(729) int z = zoneZ + (position & 0x7);
-				@Pc(733) int local733 = inboundBuffer.readUnsignedShort();
-				@Pc(737) int local737 = inboundBuffer.readUnsignedByte();
-				@Pc(741) int local741 = inboundBuffer.readUnsignedShort();
+				@Pc(733) int spotAnimId = inboundBuffer.readUnsignedShort();
+				@Pc(737) int y = inboundBuffer.readUnsignedByte();
+				@Pc(741) int delay = inboundBuffer.readUnsignedShort();
 				if (x >= 0 && z >= 0 && x < 104 && z < 104) {
 					@Pc(765) int zFine = z * 128 + 64;
 					@Pc(771) int xFine = x * 128 + 64;
-					@Pc(789) SpotAnim spotAnim = new SpotAnim(local733, Player.level, xFine, zFine, SceneGraph.getTileHeight(Player.level, xFine, zFine) - local737, local741, client.loop);
+					@Pc(789) SpotAnim spotAnim = new SpotAnim(spotAnimId, Player.level, xFine, zFine, SceneGraph.getTileHeight(Player.level, xFine, zFine) - y, delay, client.loop);
 					Static2.spotAnims.addTail(new SpotAnimNode(spotAnim));
 				}
 			} else if (opcode == 179) {

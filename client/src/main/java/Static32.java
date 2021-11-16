@@ -168,13 +168,13 @@ public final class Static32 {
 	}
 
 	@OriginalMember(owner = "client!sh", name = "a", descriptor = "(Lclient!wf;IB)I")
-	public static int method3985(@OriginalArg(0) Component arg0, @OriginalArg(1) int arg1) {
-		if (!InterfaceList.getServerActiveProperties(arg0).isButtonEnabled(arg1) && arg0.onOp == null) {
+	public static int getOpCursor(@OriginalArg(0) Component component, @OriginalArg(1) int button) {
+		if (!InterfaceList.getServerActiveProperties(component).isButtonEnabled(button) && component.onOp == null) {
 			return -1;
-		} else if (arg0.opCursors == null || arg0.opCursors.length <= arg1) {
+		} else if (component.opCursors == null || component.opCursors.length <= button) {
 			return -1;
 		} else {
-			return arg0.opCursors[arg1];
+			return component.opCursors[button];
 		}
 	}
 
