@@ -353,4 +353,18 @@ public final class InterfaceList {
 			}
 		}
 	}
+
+	@OriginalMember(owner = "client!jk", name = "a", descriptor = "(I)V")
+	public static void closeModal() {
+		Protocol.outboundBuffer.writeOpcode(189);
+		for (@Pc(14) SubInterface subInterface = (SubInterface) subInterfaces.head(); subInterface != null; subInterface = (SubInterface) subInterfaces.next()) {
+			if (subInterface.type == 0) {
+				closeSubInterface(subInterface, true);
+			}
+		}
+		if (Static6.aClass185_14 != null) {
+			Static28.method3270(Static6.aClass185_14);
+			Static6.aClass185_14 = null;
+		}
+	}
 }

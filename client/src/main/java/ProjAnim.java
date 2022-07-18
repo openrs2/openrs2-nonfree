@@ -58,28 +58,28 @@ public final class ProjAnim extends Entity {
 	private int minY = -32768;
 
 	@OriginalMember(owner = "client!oc", name = "W", descriptor = "I")
-	private final int anInt3728;
+	private final int zFine;
 
 	@OriginalMember(owner = "client!oc", name = "S", descriptor = "I")
-	private final int anInt3726;
+	private final int y;
 
 	@OriginalMember(owner = "client!oc", name = "s", descriptor = "I")
-	private final int anInt3709;
+	private final int xFine;
 
 	@OriginalMember(owner = "client!oc", name = "I", descriptor = "I")
-	public final int anInt3719;
+	public final int startLoop;
 
 	@OriginalMember(owner = "client!oc", name = "A", descriptor = "I")
 	private final int anInt3714;
 
 	@OriginalMember(owner = "client!oc", name = "D", descriptor = "I")
-	public final int anInt3717;
+	public final int level;
 
 	@OriginalMember(owner = "client!oc", name = "o", descriptor = "I")
-	public final int anInt3707;
+	public final int endLoop;
 
 	@OriginalMember(owner = "client!oc", name = "x", descriptor = "I")
-	public final int anInt3713;
+	public final int targetEntity;
 
 	@OriginalMember(owner = "client!oc", name = "J", descriptor = "I")
 	private final int spotAnimId;
@@ -91,27 +91,27 @@ public final class ProjAnim extends Entity {
 	public final int anInt3722;
 
 	@OriginalMember(owner = "client!oc", name = "L", descriptor = "Lclient!eg;")
-	private final SeqType aClass46_2;
+	private final SeqType seqType;
 
 	@OriginalMember(owner = "client!oc", name = "<init>", descriptor = "(IIIIIIIIIII)V")
-	public ProjAnim(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) int arg8, @OriginalArg(9) int arg9, @OriginalArg(10) int arg10) {
-		this.anInt3728 = arg3;
-		this.anInt3726 = arg4;
+	public ProjAnim(@OriginalArg(0) int spotAnimId, @OriginalArg(1) int level, @OriginalArg(2) int xFine, @OriginalArg(3) int zFine, @OriginalArg(4) int y, @OriginalArg(5) int startLoop, @OriginalArg(6) int endLoop, @OriginalArg(7) int arg7, @OriginalArg(8) int arg8, @OriginalArg(9) int targetEntity, @OriginalArg(10) int arg10) {
+		this.zFine = zFine;
+		this.y = y;
 		this.aBoolean268 = false;
-		this.anInt3709 = arg2;
-		this.anInt3719 = arg5;
+		this.xFine = xFine;
+		this.startLoop = startLoop;
 		this.anInt3714 = arg8;
-		this.anInt3717 = arg1;
-		this.anInt3707 = arg6;
-		this.anInt3713 = arg9;
-		this.spotAnimId = arg0;
+		this.level = level;
+		this.endLoop = endLoop;
+		this.targetEntity = targetEntity;
+		this.spotAnimId = spotAnimId;
 		this.anInt3727 = arg7;
 		this.anInt3722 = arg10;
-		@Pc(61) int local61 = SpotAnimTypeList.get(this.spotAnimId).seqId;
-		if (local61 == -1) {
-			this.aClass46_2 = null;
+		@Pc(61) int seqId = SpotAnimTypeList.get(this.spotAnimId).seqId;
+		if (seqId == -1) {
+			this.seqType = null;
 		} else {
-			this.aClass46_2 = SeqTypeList.get(local61);
+			this.seqType = SeqTypeList.get(seqId);
 		}
 	}
 
@@ -128,28 +128,28 @@ public final class ProjAnim extends Entity {
 		this.aDouble8 += (double) arg0 * this.aDouble4;
 		this.anInt3723 = (int) (Math.atan2(this.aDouble4, this.aDouble6) * 325.949D) + 1024 & 0x7FF;
 		this.anInt3711 = (int) (Math.atan2(this.aDouble7, this.aDouble9) * 325.949D) & 0x7FF;
-		if (this.aClass46_2 == null) {
+		if (this.seqType == null) {
 			return;
 		}
 		this.anInt3725 += arg0;
 		while (true) {
 			do {
 				do {
-					if (this.aClass46_2.anIntArray94[this.anInt3708] >= this.anInt3725) {
+					if (this.seqType.anIntArray94[this.anInt3708] >= this.anInt3725) {
 						return;
 					}
-					this.anInt3725 -= this.aClass46_2.anIntArray94[this.anInt3708];
+					this.anInt3725 -= this.seqType.anIntArray94[this.anInt3708];
 					this.anInt3708++;
-					if (this.aClass46_2.frames.length <= this.anInt3708) {
-						this.anInt3708 -= this.aClass46_2.anInt1242;
-						if (this.anInt3708 < 0 || this.anInt3708 >= this.aClass46_2.frames.length) {
+					if (this.seqType.frames.length <= this.anInt3708) {
+						this.anInt3708 -= this.seqType.anInt1242;
+						if (this.anInt3708 < 0 || this.anInt3708 >= this.seqType.frames.length) {
 							this.anInt3708 = 0;
 						}
 					}
 					this.anInt3718 = this.anInt3708 + 1;
-				} while (this.anInt3718 < this.aClass46_2.frames.length);
-				this.anInt3718 -= this.aClass46_2.anInt1242;
-			} while (this.anInt3718 >= 0 && this.aClass46_2.frames.length > this.anInt3718);
+				} while (this.anInt3718 < this.seqType.frames.length);
+				this.anInt3718 -= this.seqType.anInt1242;
+			} while (this.anInt3718 >= 0 && this.seqType.frames.length > this.anInt3718);
 			this.anInt3718 = -1;
 		}
 	}
@@ -157,55 +157,55 @@ public final class ProjAnim extends Entity {
 	@OriginalMember(owner = "client!oc", name = "a", descriptor = "(IIIIIIIIJILclient!ne;)V")
 	@Override
 	public final void method3805(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) long arg8, @OriginalArg(9) int arg9, @OriginalArg(10) ParticleSystem arg10) {
-		@Pc(7) Model local7 = this.getModel();
-		if (local7 != null) {
-			this.method3106(local7);
-			local7.method3805(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, this.particleSystem);
-			this.minY = local7.getMinY();
+		@Pc(7) Model model = this.getModel();
+		if (model != null) {
+			this.method3106(model);
+			model.method3805(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, this.particleSystem);
+			this.minY = model.getMinY();
 		}
 	}
 
 	@OriginalMember(owner = "client!oc", name = "b", descriptor = "(IIIII)V")
-	public final void method3105(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3) {
+	public final void setTarget(@OriginalArg(1) int targetY, @OriginalArg(2) int targetXFine, @OriginalArg(3) int loop, @OriginalArg(4) int targetZFine) {
 		if (!this.aBoolean268) {
-			@Pc(14) double local14 = (double) (arg1 - this.anInt3709);
-			@Pc(21) double local21 = (double) (arg3 - this.anInt3728);
-			@Pc(30) double local30 = Math.sqrt(local14 * local14 + local21 * local21);
-			this.aDouble5 = this.anInt3726;
-			this.aDouble8 = (double) this.anInt3709 + (double) this.anInt3714 * local14 / local30;
-			this.aDouble10 = (double) this.anInt3728 + (double) this.anInt3714 * local21 / local30;
+			@Pc(14) double dx = (double) (targetXFine - this.xFine);
+			@Pc(21) double dz = (double) (targetZFine - this.zFine);
+			@Pc(30) double distance = Math.sqrt(dx * dx + dz * dz);
+			this.aDouble5 = this.y;
+			this.aDouble8 = (double) this.xFine + (double) this.anInt3714 * dx / distance;
+			this.aDouble10 = (double) this.zFine + (double) this.anInt3714 * dz / distance;
 		}
-		@Pc(69) double local69 = (double) (this.anInt3707 + 1 - arg2);
-		this.aDouble4 = ((double) arg1 - this.aDouble8) / local69;
-		this.aDouble6 = ((double) arg3 - this.aDouble10) / local69;
+		@Pc(69) double remainingLoops = (double) (this.endLoop + 1 - loop);
+		this.aDouble4 = ((double) targetXFine - this.aDouble8) / remainingLoops;
+		this.aDouble6 = ((double) targetZFine - this.aDouble10) / remainingLoops;
 		this.aDouble9 = Math.sqrt(this.aDouble4 * this.aDouble4 + this.aDouble6 * this.aDouble6);
 		if (this.anInt3727 == -1) {
-			this.aDouble7 = ((double) arg0 - this.aDouble5) / local69;
+			this.aDouble7 = ((double) targetY - this.aDouble5) / remainingLoops;
 		} else {
 			if (!this.aBoolean268) {
 				this.aDouble7 = -this.aDouble9 * Math.tan((double) this.anInt3727 * 0.02454369D);
 			}
-			this.aDouble3 = ((double) arg0 - this.aDouble7 * local69 - this.aDouble5) * 2.0D / (local69 * local69);
+			this.aDouble3 = ((double) targetY - this.aDouble7 * remainingLoops - this.aDouble5) * 2.0D / (remainingLoops * remainingLoops);
 		}
 	}
 
 	@OriginalMember(owner = "client!oc", name = "a", descriptor = "(ILclient!vg;)V")
-	private void method3106(@OriginalArg(1) Model arg0) {
+	private void method3106(@OriginalArg(1) Model model) {
 		if (GlRenderer.enabled) {
-			@Pc(4) GlModel local4 = (GlModel) arg0;
-			if ((this.particleSystem == null || this.particleSystem.stopped) && (local4.particleEmitters != null || local4.particleEffectors != null)) {
+			@Pc(4) GlModel glModel = (GlModel) model;
+			if ((this.particleSystem == null || this.particleSystem.stopped) && (glModel.particleEmitters != null || glModel.particleEffectors != null)) {
 				this.particleSystem = new ParticleSystem(client.loop, 1, 1);
 			}
 			if (this.particleSystem != null) {
-				this.particleSystem.method2967(local4.particleEmitters, local4.particleEffectors, false, local4.vertexX, local4.vertexY, local4.vertexZ);
+				this.particleSystem.method2967(glModel.particleEmitters, glModel.particleEffectors, false, glModel.vertexX, glModel.vertexY, glModel.vertexZ);
 			}
 		} else {
-			@Pc(51) SoftwareModel local51 = (SoftwareModel) arg0;
-			if ((this.particleSystem == null || this.particleSystem.stopped) && (local51.particleEmitters != null || local51.particleEffectors != null)) {
+			@Pc(51) SoftwareModel softwareModel = (SoftwareModel) model;
+			if ((this.particleSystem == null || this.particleSystem.stopped) && (softwareModel.particleEmitters != null || softwareModel.particleEffectors != null)) {
 				this.particleSystem = new ParticleSystem(client.loop, 1, 1);
 			}
 			if (this.particleSystem != null) {
-				this.particleSystem.method2967(local51.particleEmitters, local51.particleEffectors, false, local51.vertexX, local51.vertexY, local51.vertexZ);
+				this.particleSystem.method2967(softwareModel.particleEmitters, softwareModel.particleEffectors, false, softwareModel.vertexX, softwareModel.vertexY, softwareModel.vertexZ);
 			}
 		}
 		this.aBoolean267 = true;
@@ -233,11 +233,11 @@ public final class ProjAnim extends Entity {
 	@Override
 	public final void method3806(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4) {
 		if (!this.aBoolean267) {
-			@Pc(11) Model local11 = this.getModel();
-			if (local11 == null) {
+			@Pc(11) Model model = this.getModel();
+			if (model == null) {
 				return;
 			}
-			this.method3106(local11);
+			this.method3106(model);
 		}
 		if (this.particleSystem != null) {
 			this.particleSystem.method2949(arg0, arg1, arg3, arg2, arg4);

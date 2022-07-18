@@ -1350,7 +1350,7 @@ public final class ScriptRunner {
 							continue;
 						}
 						if (opcode == 3103) {
-							Static21.method2063();
+							InterfaceList.closeModal();
 							continue;
 						}
 						if (opcode == 3104) {
@@ -3683,7 +3683,7 @@ public final class ScriptRunner {
 									@Pc(8430) int local8430 = intStack[isp + 1];
 									@Pc(8436) int local8436 = intStack[isp + 2];
 									@Pc(8442) int local8442 = intStack[isp + 3];
-									Static37.method4773(local8436, (local8424 >> 14 & 0x3FFF) - Static5.originX, local8442, local8430, false, (local8424 & 0x3FFF) - Static7.originZ);
+									Camera.moveTo(local8436, (local8424 >> 14 & 0x3FFF) - Static5.originX, local8442, local8430, false, (local8424 & 0x3FFF) - Static7.originZ);
 									continue;
 								}
 								if (opcode == 5501) {
@@ -3692,7 +3692,7 @@ public final class ScriptRunner {
 									@Pc(8478) int local8478 = intStack[isp + 1];
 									@Pc(8484) int local8484 = intStack[isp + 2];
 									@Pc(8490) int local8490 = intStack[isp + 3];
-									Static23.method2536(local8478, local8484, (local8472 >> 14 & 0x3FFF) - Static5.originX, (local8472 & 0x3FFF) - Static7.originZ, local8490);
+									Camera.lookAt(local8478, local8484, (local8472 >> 14 & 0x3FFF) - Static5.originX, (local8472 & 0x3FFF) - Static7.originZ, local8490);
 									continue;
 								}
 								if (opcode == 5502) {
@@ -3724,12 +3724,12 @@ public final class ScriptRunner {
 									continue;
 								}
 								if (opcode == 5503) {
-									Static24.method2563();
+									Camera.reset();
 									continue;
 								}
 								if (opcode == 5504) {
 									isp -= 2;
-									Static17.method1654(intStack[isp], intStack[isp + 1]);
+									Camera.forceAngle(intStack[isp], intStack[isp + 1]);
 									continue;
 								}
 								if (opcode == 5505) {
@@ -3741,23 +3741,23 @@ public final class ScriptRunner {
 									continue;
 								}
 								if (opcode == 5507) {
-									Static21.method2007();
+									Camera.incY();
 									continue;
 								}
 								if (opcode == 5508) {
-									Static26.method2973();
+									Camera.decY();
 									continue;
 								}
 								if (opcode == 5509) {
-									Static20.method1924();
+									Camera.incX();
 									continue;
 								}
 								if (opcode == 5510) {
-									Static33.method3007();
+									Camera.decX();
 									continue;
 								}
 								if (opcode == 5512) {
-									Static8.method11();
+									Camera.smoothReset();
 									continue;
 								}
 							} else if (opcode < 5700) {

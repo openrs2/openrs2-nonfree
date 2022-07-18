@@ -571,18 +571,4 @@ public final class Static33 {
 		GameShell.resetTimer();
 	}
 
-	@OriginalMember(owner = "client!tj", name = "e", descriptor = "(I)V")
-	public static void method3007() {
-		if (Static7.aBoolean401) {
-			return;
-		}
-		Static5.aBoolean248 = true;
-		if (Preferences.aBoolean293) {
-			Static5.aFloat97 = (int) Static5.aFloat97 - 65 & 0xFFFFFF80;
-		} else {
-			Static4.aFloat79 += (-Static4.aFloat79 - 24.0F) / 2.0F;
-		}
-		Static7.aBoolean401 = true;
-	}
-
 }

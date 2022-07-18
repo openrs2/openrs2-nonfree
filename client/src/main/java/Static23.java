@@ -35,33 +35,6 @@ public final class Static23 {
 		Static2.aFloat26 = Static4.aFloat85;
 	}
 
-	@OriginalMember(owner = "client!lf", name = "c", descriptor = "(IIIIII)V")
-	public static void method2536(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4) {
-		Static3.anInt2497 = arg3;
-		Static5.anInt3572 = arg0;
-		Static1.anInt212 = arg4;
-		Static6.anInt4838 = arg1;
-		Static4.anInt3302 = arg2;
-		if (Static1.anInt212 >= 100) {
-			@Pc(31) int local31 = Static4.anInt3302 * 128 + 64;
-			@Pc(37) int local37 = Static3.anInt2497 * 128 + 64;
-			@Pc(46) int local46 = SceneGraph.getTileHeight(Player.level, local31, local37) - Static5.anInt3572;
-			@Pc(50) int local50 = local31 - Static3.anInt2519;
-			@Pc(55) int local55 = local46 - Static2.anInt1931;
-			@Pc(60) int local60 = local37 - Static7.anInt5678;
-			@Pc(71) int local71 = (int) Math.sqrt((double) (local60 * local60 + local50 * local50));
-			Static5.anInt4066 = (int) (Math.atan2((double) local55, (double) local71) * 325.949D) & 0x7FF;
-			Static5.anInt3656 = (int) (Math.atan2((double) local50, (double) local60) * -325.949D) & 0x7FF;
-			if (Static5.anInt4066 < 128) {
-				Static5.anInt4066 = 128;
-			}
-			if (Static5.anInt4066 > 383) {
-				Static5.anInt4066 = 383;
-			}
-		}
-		Static1.anInt772 = 2;
-	}
-
 	@OriginalMember(owner = "client!lf", name = "f", descriptor = "(I)V")
 	public static void method2537() {
 		@Pc(9) int local9 = Static4.anInt2977 * 128 + 64;

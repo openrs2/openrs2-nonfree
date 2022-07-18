@@ -201,7 +201,7 @@ public final class Static22 {
 				}
 			}
 			if (type.anInt5509 != 0 && collisionMap != null) {
-				collisionMap.flagScenery(x, z, width, length, type.aBoolean374, !type.aBoolean385);
+				collisionMap.flagScenery(x, z, width, length, type.aBoolean374, !type.breakRouteFinding);
 			}
 		} else if (shape >= 12) {
 			@Pc(666) Entity local666;
@@ -219,7 +219,7 @@ public final class Static22 {
 				Static4.anIntArrayArrayArray9[level][x][z] |= 4;
 			}
 			if (type.anInt5509 != 0 && collisionMap != null) {
-				collisionMap.flagScenery(x, z, width, length, type.aBoolean374, !type.aBoolean385);
+				collisionMap.flagScenery(x, z, width, length, type.aBoolean374, !type.breakRouteFinding);
 			}
 		} else if (shape == 0) {
 			@Pc(796) Entity local796;
@@ -269,7 +269,7 @@ public final class Static22 {
 				}
 			}
 			if (type.anInt5509 != 0 && collisionMap != null) {
-				collisionMap.flagWall(x, z, shape, angle, type.aBoolean374, !type.aBoolean385);
+				collisionMap.flagWall(x, z, shape, angle, type.aBoolean374, !type.breakRouteFinding);
 			}
 			if (type.wallDecorOffsetScale != 16) {
 				SceneGraph.scaleWallDecorOffsets(level, x, z, type.wallDecorOffsetScale);
@@ -298,7 +298,7 @@ public final class Static22 {
 				}
 			}
 			if (type.anInt5509 != 0 && collisionMap != null) {
-				collisionMap.flagWall(x, z, shape, angle, type.aBoolean374, !type.aBoolean385);
+				collisionMap.flagWall(x, z, shape, angle, type.aBoolean374, !type.breakRouteFinding);
 			}
 		} else if (shape == 2) {
 			@Pc(1265) int local1265 = angle + 1 & 0x3;
@@ -336,7 +336,7 @@ public final class Static22 {
 				}
 			}
 			if (type.anInt5509 != 0 && collisionMap != null) {
-				collisionMap.flagWall(x, z, shape, angle, type.aBoolean374, !type.aBoolean385);
+				collisionMap.flagWall(x, z, shape, angle, type.aBoolean374, !type.breakRouteFinding);
 			}
 			if (type.wallDecorOffsetScale != 16) {
 				SceneGraph.scaleWallDecorOffsets(level, x, z, type.wallDecorOffsetScale);
@@ -365,7 +365,7 @@ public final class Static22 {
 				}
 			}
 			if (type.anInt5509 != 0 && collisionMap != null) {
-				collisionMap.flagWall(x, z, shape, angle, type.aBoolean374, !type.aBoolean385);
+				collisionMap.flagWall(x, z, shape, angle, type.aBoolean374, !type.breakRouteFinding);
 			}
 		} else if (shape == 9) {
 			@Pc(1796) Entity local1796;
@@ -380,7 +380,7 @@ public final class Static22 {
 			}
 			SceneGraph.method2196(level, x, z, local193, 1, 1, local1796, key2);
 			if (type.anInt5509 != 0 && collisionMap != null) {
-				collisionMap.flagScenery(x, z, width, length, type.aBoolean374, !type.aBoolean385);
+				collisionMap.flagScenery(x, z, width, length, type.aBoolean374, !type.breakRouteFinding);
 			}
 			if (type.wallDecorOffsetScale != 16) {
 				SceneGraph.scaleWallDecorOffsets(level, x, z, type.wallDecorOffsetScale);

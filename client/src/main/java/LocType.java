@@ -196,7 +196,7 @@ public final class LocType {
 	public boolean aBoolean376 = false;
 
 	@OriginalMember(owner = "client!vh", name = "Fb", descriptor = "Z")
-	public boolean aBoolean385 = false;
+	public boolean breakRouteFinding = false;
 
 	@OriginalMember(owner = "client!vh", name = "Hb", descriptor = "[I")
 	public int[] anIntArray633 = null;
@@ -797,7 +797,7 @@ public final class LocType {
 		} else if (code == 73) {
 			this.aBoolean376 = true;
 		} else if (code == 74) {
-			this.aBoolean385 = true;
+			this.breakRouteFinding = true;
 		} else if (code == 75) {
 			this.anInt5517 = buffer.readUnsignedByte();
 		} else if (code == 77 || code == 92) {

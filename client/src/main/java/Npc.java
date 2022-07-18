@@ -56,7 +56,7 @@ public final class Npc extends PathingEntity {
 								} else if (local56 == 2) {
 									local61.anInt4465 = 0;
 								}
-							} else if (seqType.anInt1243 >= SeqTypeList.get(local61.seqId).anInt1243) {
+							} else if (seqType.priority >= SeqTypeList.get(local61.seqId).priority) {
 								local61 = npc.aClass150Array3[j] = null;
 							}
 						}
@@ -94,7 +94,7 @@ public final class Npc extends PathingEntity {
 			if (local22 == 2) {
 				npc.anInt4001 = 0;
 			}
-		} else if (seqId == -1 || npc.seqId == -1 || SeqTypeList.get(seqId).anInt1243 >= SeqTypeList.get(npc.seqId).anInt1243) {
+		} else if (seqId == -1 || npc.seqId == -1 || SeqTypeList.get(seqId).priority >= SeqTypeList.get(npc.seqId).priority) {
 			npc.anInt4011 = 1;
 			npc.anInt4030 = npc.movementQueueSize;
 			npc.anInt4001 = 0;

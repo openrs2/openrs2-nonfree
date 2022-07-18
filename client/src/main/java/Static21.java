@@ -50,20 +50,6 @@ public final class Static21 {
 		}
 	}
 
-	@OriginalMember(owner = "client!je", name = "a", descriptor = "(I)V")
-	public static void method2007() {
-		if (Static6.aBoolean330) {
-			return;
-		}
-		Static5.aBoolean248 = true;
-		if (Preferences.aBoolean293) {
-			Static5.aFloat147 = (int) Static5.aFloat147 + 47 & 0xFFFFFFF0;
-		} else {
-			Static1.aFloat20 += (12.0F - Static1.aFloat20) / 2.0F;
-		}
-		Static6.aBoolean330 = true;
-	}
-
 	@OriginalMember(owner = "client!je", name = "a", descriptor = "(IZLclient!wf;I)V")
 	public static void method2008(@OriginalArg(0) int arg0, @OriginalArg(2) Component arg1, @OriginalArg(3) int arg2) {
 		if (MiniMenu.size < 2 && MiniMenu.anInt1334 == 0 && !Static3.aBoolean177) {
@@ -179,7 +165,7 @@ public final class Static21 {
 				local105 = wall.primary;
 			}
 			if (type.anInt5509 != 0) {
-				arg3.unflagWall(x, z, shape, angle, type.aBoolean374, !type.aBoolean385);
+				arg3.unflagWall(x, z, shape, angle, type.aBoolean374, !type.breakRouteFinding);
 			}
 		} else if (arg4 == 1) {
 			@Pc(155) WallDecor wallDecor = SceneGraph.removeWallDecor(level, x, z);
@@ -193,7 +179,7 @@ public final class Static21 {
 				local105 = scenery.entity;
 			}
 			if (type.anInt5509 != 0 && x + type.width < 104 && type.width + z < 104 && x + type.length < 104 && type.length + z < 104) {
-				arg3.unflagScenery(x, z, type.width, type.length, angle, type.aBoolean374, !type.aBoolean385);
+				arg3.unflagScenery(x, z, type.width, type.length, angle, type.aBoolean374, !type.breakRouteFinding);
 			}
 		} else if (arg4 == 3) {
 			@Pc(238) GroundDecor groundDecor = SceneGraph.removeGroundDecor(level, x, z);
@@ -291,20 +277,6 @@ public final class Static21 {
 					}
 				}
 			}
-		}
-	}
-
-	@OriginalMember(owner = "client!jk", name = "a", descriptor = "(I)V")
-	public static void method2063() {
-		Protocol.outboundBuffer.writeOpcode(189);
-		for (@Pc(14) SubInterface subInterface = (SubInterface) InterfaceList.subInterfaces.head(); subInterface != null; subInterface = (SubInterface) InterfaceList.subInterfaces.next()) {
-			if (subInterface.type == 0) {
-				InterfaceList.closeSubInterface(subInterface, true);
-			}
-		}
-		if (Static6.aClass185_14 != null) {
-			Static28.method3270(Static6.aClass185_14);
-			Static6.aClass185_14 = null;
 		}
 	}
 

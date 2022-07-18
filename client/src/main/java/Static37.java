@@ -8,17 +8,17 @@ import org.openrs2.deob.annotation.Pc;
 public final class Static37 {
 
 	@OriginalMember(owner = "client!wb", name = "a", descriptor = "(IIII)V")
-	public static void method4661(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(3) int arg2) {
-		if (arg1 == 0) {
+	public static void method4661(@OriginalArg(0) int x, @OriginalArg(3) int z, @OriginalArg(1) int miniMap) {
+		if (miniMap == 0) {
 			Protocol.outboundBuffer.writeOpcode(230);
 		}
-		if (arg1 == 1) {
+		if (miniMap == 1) {
 			Protocol.outboundBuffer.writeOpcode(207);
 		}
 		Protocol.outboundBuffer.writeByteS(++MiniMap.sequenceNumber);
 		Protocol.outboundBuffer.writeByte(Keyboard.pressedKeys[82] ? 1 : 0);
-		Protocol.outboundBuffer.writeShort(Static7.originZ + arg2);
-		Protocol.outboundBuffer.writeShortLEA(arg0 + Static5.originX);
+		Protocol.outboundBuffer.writeShort(Static7.originZ + z);
+		Protocol.outboundBuffer.writeShortLEA(Static5.originX + x);
 	}
 
 	@OriginalMember(owner = "client!wc", name = "a", descriptor = "(Z)V")
@@ -220,10 +220,10 @@ public final class Static37 {
 	}
 
 	@OriginalMember(owner = "client!wf", name = "a", descriptor = "(BII)V")
-	public static void method4736(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1) {
+	public static void method4736(@OriginalArg(1) int createdComponentId, @OriginalArg(2) int componentId) {
 		Protocol.outboundBuffer.writeOpcode(178);
-		Protocol.outboundBuffer.writeShortLE2(arg0);
-		Protocol.outboundBuffer.writeIntAlt3(arg1);
+		Protocol.outboundBuffer.writeShortLE2(createdComponentId);
+		Protocol.outboundBuffer.writeIntAlt3(componentId);
 	}
 
 	@OriginalMember(owner = "client!wf", name = "a", descriptor = "()V")
@@ -492,21 +492,6 @@ public final class Static37 {
 		@Pc(396) int local396 = arg13 + (arg8 << 7);
 		@Pc(404) int local404 = Static9.method206(arg13, arg8, arg1, arg3, arg2);
 		return arg6.method1871(local396, local404, local390, local109, local99, local89, arg9 ? local111 & 0xFFFFFF00 : local111, arg5 == null ? 0.0F : (float) (local404 - Static9.method206(arg13, arg8, arg1, arg5, arg2)) / arg10);
-	}
-
-	@OriginalMember(owner = "client!wh", name = "a", descriptor = "(IIIIZII)V")
-	public static void method4773(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) boolean arg4, @OriginalArg(6) int arg5) {
-		Static5.anInt4165 = arg5;
-		Static4.anInt2977 = arg1;
-		Static5.anInt3490 = arg2;
-		Static4.anInt3131 = arg3;
-		Static7.anInt5236 = arg0;
-		if (arg4 && Static5.anInt3490 >= 100) {
-			Static3.anInt2519 = Static4.anInt2977 * 128 + 64;
-			Static7.anInt5678 = Static5.anInt4165 * 128 + 64;
-			Static2.anInt1931 = SceneGraph.getTileHeight(Player.level, Static3.anInt2519, Static7.anInt5678) - Static4.anInt3131;
-		}
-		Static1.anInt772 = 2;
 	}
 
 	@OriginalMember(owner = "client!wj", name = "b", descriptor = "(B)V")

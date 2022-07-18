@@ -1128,14 +1128,14 @@ public final class Static29 {
 												}
 												Static6.anInt4946 = 0;
 											} else if (Static1.anInt528 != -1 && Static2.anInt1767 == 0 && Static6.anInt4946 == 0) {
-												@Pc(1797) int local1797 = (Static1.anInt528 << 1) + 1 - PlayerList.self.getSize() >> 1;
-												@Pc(1809) int local1809 = (Static1.anInt420 << 1) + 1 - PlayerList.self.getSize() >> 1;
-												Static37.method4661(local1797, 0, local1809);
+												@Pc(1797) int x = (Static1.anInt528 << 1) + 1 - PlayerList.self.getSize() >> 1;
+												@Pc(1809) int z = (Static1.anInt420 << 1) + 1 - PlayerList.self.getSize() >> 1;
+												Static37.method4661(x, z, 0);
 												Cross.x = Mouse.clickX;
 												Cross.y = Mouse.clickY;
 												Cross.type = 1;
 												Cross.milliseconds = 0;
-												PathFinder.findPath(PlayerList.self.movementQueueX[0], PlayerList.self.movementQueueZ[0], local1797, local1809, 0, 0, 0, 0, 0);
+												PathFinder.findPath(PlayerList.self.movementQueueX[0], PlayerList.self.movementQueueZ[0], x, z, 0, 0, 0, 0, 0);
 											}
 											Static1.anInt528 = -1;
 											method3400();
@@ -1166,7 +1166,7 @@ public final class Static29 {
 												}
 											}
 											for (@Pc(2012) int local2012 = 0; local2012 < 5; local2012++) {
-												@Pc(2019) int local2019 = Static1.anIntArray14[local2012]++;
+												@Pc(2019) int local2019 = Camera.anIntArray14[local2012]++;
 											}
 											@Pc(2037) int local2037 = Mouse.getIdleLoops();
 											@Pc(2040) int local2040 = Keyboard.getIdleLoops();

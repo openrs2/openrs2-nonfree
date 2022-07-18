@@ -61,7 +61,7 @@ public final class SeqType {
 	public boolean aBoolean73 = false;
 
 	@OriginalMember(owner = "client!eg", name = "G", descriptor = "I")
-	public int anInt1243 = 5;
+	public int priority = 5;
 
 	@OriginalMember(owner = "client!eg", name = "a", descriptor = "(ZIILclient!vg;II)Lclient!vg;")
 	public final Model method1014(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) Model arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4) {
@@ -238,7 +238,7 @@ public final class SeqType {
 		} else if (code == 4) {
 			this.aBoolean73 = true;
 		} else if (code == 5) {
-			this.anInt1243 = buffer.readUnsignedByte();
+			this.priority = buffer.readUnsignedByte();
 		} else if (code == 6) {
 			this.anInt1224 = buffer.readUnsignedShort();
 		} else if (code == 7) {

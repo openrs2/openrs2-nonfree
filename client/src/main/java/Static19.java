@@ -161,7 +161,7 @@ public final class Static19 {
 				}
 			}
 		}
-		Static24.method2563();
+		Camera.reset();
 		Protocol.verifyId = 0;
 		VarpDomain.clear();
 		Static11.method605(true);

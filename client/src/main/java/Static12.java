@@ -200,7 +200,7 @@ public final class Static12 {
 										if (local550 != null) {
 											if (Keyboard.pressedKeys[82] && LoginManager.staffModLevel > 0) {
 												Cheat.teleport(local550[0], local550[1], local550[2]);
-												Static21.method2063();
+												InterfaceList.closeModal();
 												continue;
 											}
 											Protocol.outboundBuffer.writeOpcode(251);
@@ -534,8 +534,8 @@ public final class Static12 {
 			local12 = Static1.anInt626 / 256;
 		}
 		@Pc(26) int local26 = Static5.anInt4066;
-		if (Static3.aBooleanArray13[4] && local12 < Static7.anIntArray626[4] + 128) {
-			local12 = Static7.anIntArray626[4] + 128;
+		if (Camera.shakeEnabled[4] && local12 < Camera.anIntArray626[4] + 128) {
+			local12 = Camera.anIntArray626[4] + 128;
 		}
 		@Pc(51) int local51 = (int) Static5.aFloat97 + Static1.anInt242 & 0x7FF;
 		Static32.method3954(local51, SceneGraph.getTileHeight(Player.level, PlayerList.self.xFine, PlayerList.self.zFine) - 50, local12, local12 * 3 + 600, Static3.anInt2496, arg0, Static7.anInt5412);

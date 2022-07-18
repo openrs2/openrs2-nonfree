@@ -146,17 +146,11 @@ public final class Static7 {
 	@OriginalMember(owner = "client!va", name = "k", descriptor = "Z")
 	public static boolean prevFocus = true;
 
-	@OriginalMember(owner = "client!vb", name = "S", descriptor = "[I")
-	public static final int[] anIntArray625 = new int[5];
-
 	@OriginalMember(owner = "client!vb", name = "ab", descriptor = "I")
 	public static int anInt5473 = 1;
 
 	@OriginalMember(owner = "client!vd", name = "a", descriptor = "Lclient!dj;")
 	public static final LruHashTable aClass40_15 = new LruHashTable(16);
-
-	@OriginalMember(owner = "client!vd", name = "i", descriptor = "[I")
-	public static final int[] anIntArray626 = new int[5];
 
 	@OriginalMember(owner = "client!vd", name = "k", descriptor = "I")
 	public static int anInt5486 = 0;

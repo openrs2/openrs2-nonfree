@@ -124,8 +124,8 @@ public final class Static31 {
 				local121 = Static1.anInt626 / 256;
 			}
 			@Pc(137) int local137 = (int) Static5.aFloat97 + Static1.anInt242 & 0x7FF;
-			if (Static3.aBooleanArray13[4] && Static7.anIntArray626[4] + 128 > local121) {
-				local121 = Static7.anIntArray626[4] + 128;
+			if (Camera.shakeEnabled[4] && Camera.anIntArray626[4] + 128 > local121) {
+				local121 = Camera.anIntArray626[4] + 128;
 			}
 			Static32.method3954(local137, SceneGraph.getTileHeight(Player.level, PlayerList.self.xFine, PlayerList.self.zFine) - 50, local121, local121 * 3 + 600, Static3.anInt2496, arg1, Static7.anInt5412);
 		} else if (Static1.anInt772 == 5) {
@@ -136,13 +136,13 @@ public final class Static31 {
 		@Pc(185) int local185 = Static5.anInt4066;
 		@Pc(187) int local187 = Static2.anInt1931;
 		@Pc(189) int local189 = Static5.anInt3656;
-		for (@Pc(191) int local191 = 0; local191 < 5; local191++) {
-			if (Static3.aBooleanArray13[local191]) {
-				@Pc(237) int local237 = (int) ((double) -Static7.anIntArray625[local191] + Math.random() * (double) (Static7.anIntArray625[local191] * 2 + 1) + Math.sin((double) Static1.anIntArray13[local191] / 100.0D * (double) Static1.anIntArray14[local191]) * (double) Static7.anIntArray626[local191]);
-				if (local191 == 1) {
+		for (@Pc(191) int index = 0; index < 5; index++) {
+			if (Camera.shakeEnabled[index]) {
+				@Pc(237) int local237 = (int) ((double) -Camera.anIntArray625[index] + Math.random() * (double) (Camera.anIntArray625[index] * 2 + 1) + Math.sin((double) Camera.anIntArray13[index] / 100.0D * (double) Camera.anIntArray14[index]) * (double) Camera.anIntArray626[index]);
+				if (index == 1) {
 					Static2.anInt1931 += local237;
 				}
-				if (local191 == 4) {
+				if (index == 4) {
 					Static5.anInt4066 += local237;
 					if (Static5.anInt4066 < 128) {
 						Static5.anInt4066 = 128;
@@ -151,13 +151,13 @@ public final class Static31 {
 						Static5.anInt4066 = 383;
 					}
 				}
-				if (local191 == 3) {
+				if (index == 3) {
 					Static5.anInt3656 = Static5.anInt3656 + local237 & 0x7FF;
 				}
-				if (local191 == 2) {
+				if (index == 2) {
 					Static7.anInt5678 += local237;
 				}
-				if (local191 == 0) {
+				if (index == 0) {
 					Static3.anInt2519 += local237;
 				}
 			}

@@ -489,20 +489,6 @@ public final class Static20 {
 		}
 	}
 
-	@OriginalMember(owner = "client!il", name = "b", descriptor = "(B)V")
-	public static void method1924() {
-		if (Static7.aBoolean401) {
-			return;
-		}
-		if (Preferences.aBoolean293) {
-			Static5.aFloat97 = (int) Static5.aFloat97 + 191 & 0xFFFFFF80;
-		} else {
-			Static4.aFloat79 += (24.0F - Static4.aFloat79) / 2.0F;
-		}
-		Static7.aBoolean401 = true;
-		Static5.aBoolean248 = true;
-	}
-
 	@OriginalMember(owner = "client!im", name = "a", descriptor = "(I)V")
 	public static void method1929() {
 		Static1.aClass4_Sub3_Sub10_2 = null;
@@ -658,25 +644,25 @@ public final class Static20 {
 	public static void method1976() {
 		for (@Pc(16) ProjAnimNode node = (ProjAnimNode) Static1.projAnims.head(); node != null; node = (ProjAnimNode) Static1.projAnims.next()) {
 			@Pc(22) ProjAnim projAnim = node.value;
-			if (projAnim.anInt3717 != Player.level || client.loop > projAnim.anInt3707) {
+			if (projAnim.level != Player.level || client.loop > projAnim.endLoop) {
 				node.unlink();
-			} else if (projAnim.anInt3719 <= client.loop) {
-				if (projAnim.anInt3713 > 0) {
-					@Pc(61) Npc npc = NpcList.npcs[projAnim.anInt3713 - 1];
+			} else if (client.loop >= projAnim.startLoop) {
+				if (projAnim.targetEntity > 0) {
+					@Pc(61) Npc npc = NpcList.npcs[projAnim.targetEntity - 1];
 					if (npc != null && npc.xFine >= 0 && npc.xFine < 13312 && npc.zFine >= 0 && npc.zFine < 13312) {
-						projAnim.method3105(SceneGraph.getTileHeight(projAnim.anInt3717, npc.xFine, npc.zFine) - projAnim.anInt3722, npc.xFine, client.loop, npc.zFine);
+						projAnim.setTarget(SceneGraph.getTileHeight(projAnim.level, npc.xFine, npc.zFine) - projAnim.anInt3722, npc.xFine, client.loop, npc.zFine);
 					}
 				}
-				if (projAnim.anInt3713 < 0) {
-					@Pc(113) int local113 = -projAnim.anInt3713 - 1;
+				if (projAnim.targetEntity < 0) {
+					@Pc(113) int id = -projAnim.targetEntity - 1;
 					@Pc(118) Player player;
-					if (PlayerList.selfId == local113) {
+					if (PlayerList.selfId == id) {
 						player = PlayerList.self;
 					} else {
-						player = PlayerList.players[local113];
+						player = PlayerList.players[id];
 					}
 					if (player != null && player.xFine >= 0 && player.xFine < 13312 && player.zFine >= 0 && player.zFine < 13312) {
-						projAnim.method3105(SceneGraph.getTileHeight(projAnim.anInt3717, player.xFine, player.zFine) - projAnim.anInt3722, player.xFine, client.loop, player.zFine);
+						projAnim.setTarget(SceneGraph.getTileHeight(projAnim.level, player.xFine, player.zFine) - projAnim.anInt3722, player.xFine, client.loop, player.zFine);
 					}
 				}
 				projAnim.method3103(Static5.anInt4156);

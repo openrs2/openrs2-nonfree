@@ -4,20 +4,6 @@ import org.openrs2.deob.annotation.Pc;
 
 public final class Static26 {
 
-	@OriginalMember(owner = "client!nf", name = "a", descriptor = "(I)V")
-	public static void method2973() {
-		if (Static6.aBoolean330) {
-			return;
-		}
-		Static6.aBoolean330 = true;
-		Static5.aBoolean248 = true;
-		if (Preferences.aBoolean293) {
-			Static5.aFloat147 = (int) Static5.aFloat147 - 17 & 0xFFFFFFF0;
-		} else {
-			Static1.aFloat20 += (-Static1.aFloat20 - 12.0F) / 2.0F;
-		}
-	}
-
 	@OriginalMember(owner = "client!ng", name = "a", descriptor = "(I[Lclient!ch;[BIIIIIIZI)[I")
 	private static int[] readZone(@OriginalArg(0) int arg0, @OriginalArg(1) CollisionMap[] collisionMaps, @OriginalArg(2) byte[] bytes, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int angle, @OriginalArg(8) int arg7, @OriginalArg(9) boolean underwater, @OriginalArg(10) int arg9) {
 		@Pc(7) int local7 = (arg9 & 0x7) * 8;

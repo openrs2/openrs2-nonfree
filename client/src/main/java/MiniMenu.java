@@ -502,7 +502,7 @@ public final class MiniMenu {
 				if (LoginManager.staffModLevel > 0 && Keyboard.pressedKeys[82] && Keyboard.pressedKeys[81]) {
 					Cheat.teleport(Player.level, intArg1 + Static5.originX, intArg2 + Static7.originZ);
 				} else {
-					Static37.method4661(intArg1, 1, intArg2);
+					Static37.method4661(intArg1, intArg2, 1);
 					Protocol.outboundBuffer.writeByte(Static2.anInt1941);
 					Protocol.outboundBuffer.writeByte(Static7.anInt5798);
 					Protocol.outboundBuffer.writeShort((int) Static5.aFloat97);
@@ -696,7 +696,7 @@ public final class MiniMenu {
 			}
 		}
 		if (action == 7) {
-			Static21.method2063();
+			InterfaceList.closeModal();
 		}
 		if (action == 1005) {
 			Cross.y = Mouse.clickY;
@@ -938,9 +938,9 @@ public final class MiniMenu {
 			add(0L, 0, component.id, "", component.aString349, (short) 57, -1);
 		}
 		if (component.anInt5912 == 2 && !Static3.aBoolean177) {
-			@Pc(35) String local35 = Static12.getTargetVerb(component);
-			if (local35 != null) {
-				add(0L, -1, component.id, "<col=00ff00>" + component.aString353, local35, (short) 34, -1);
+			@Pc(35) String targetVerb = Static12.getTargetVerb(component);
+			if (targetVerb != null) {
+				add(0L, -1, component.id, "<col=00ff00>" + component.aString353, targetVerb, (short) 34, -1);
 			}
 		}
 		if (component.anInt5912 == 3) {
@@ -1018,13 +1018,13 @@ public final class MiniMenu {
 										}
 									}
 								}
-								@Pc(505) String[] local505 = component.aStringArray44;
+								@Pc(505) String[] objOps = component.objOps;
 								if (debug) {
-									local505 = annotateOps(local505);
+									objOps = annotateOps(objOps);
 								}
-								if (local505 != null) {
+								if (objOps != null) {
 									for (@Pc(517) int i = 4; i >= 0; i--) {
-										if (local505[i] != null) {
+										if (objOps[i] != null) {
 											@Pc(533) byte action = 0;
 											if (i == 0) {
 												action = 30;
@@ -1041,7 +1041,7 @@ public final class MiniMenu {
 											if (i == 4) {
 												action = 49;
 											}
-											add((long) objType.id, local160, component.id, "<col=ff9040>" + objType.name, local505[i], action, -1);
+											add((long) objType.id, local160, component.id, "<col=ff9040>" + objType.name, objOps[i], action, -1);
 										}
 									}
 								}

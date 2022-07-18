@@ -188,18 +188,6 @@ public final class Static8 {
 		}
 	}
 
-	@OriginalMember(owner = "client!ab", name = "a", descriptor = "(Z)V")
-	public static void method11() {
-		for (@Pc(3) int local3 = 0; local3 < 5; local3++) {
-			Static3.aBooleanArray13[local3] = false;
-		}
-		Static5.anInt5195 = -1;
-		Static1.anInt772 = 5;
-		Static6.anInt4838 = 0;
-		Static1.anInt212 = 0;
-		Static4.anInt3024 = -1;
-	}
-
 	@OriginalMember(owner = "client!ac", name = "a", descriptor = "(IIIII)V")
 	public static void method66(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3) {
 		for (@Pc(3) int i = 0; i < InterfaceList.rectangles; i++) {

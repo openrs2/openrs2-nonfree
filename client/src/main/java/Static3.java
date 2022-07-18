@@ -256,7 +256,4 @@ public final class Static3 {
 	@OriginalMember(owner = "client!jj", name = "X", descriptor = "[I")
 	public static final int[] anIntArray230 = new int[] { 2, 0, 0, 2, 0, 0, 0, 4, 4 };
 
-	@OriginalMember(owner = "client!jj", name = "bb", descriptor = "[Z")
-	public static final boolean[] aBooleanArray13 = new boolean[5];
-
 }

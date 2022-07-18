@@ -40,7 +40,7 @@ public final class LocTypeList {
 		if (!allowMembers && newType.members) {
 			newType.ops = null;
 		}
-		if (newType.aBoolean385) {
+		if (newType.breakRouteFinding) {
 			newType.anInt5509 = 0;
 			newType.aBoolean374 = false;
 		}

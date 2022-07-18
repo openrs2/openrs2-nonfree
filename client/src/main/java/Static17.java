@@ -229,18 +229,6 @@ public final class Static17 {
 		Static3.anInt2094 = 0;
 	}
 
-	@OriginalMember(owner = "client!gn", name = "a", descriptor = "(IBI)V")
-	public static void method1654(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1) {
-		if (Static1.anInt772 == 2) {
-			Static5.anInt4066 = arg0;
-			Static5.anInt3656 = arg1;
-		}
-		Static5.aFloat97 = arg1;
-		Static5.aFloat147 = arg0;
-		Static28.method3252();
-		Static5.aBoolean248 = true;
-	}
-
 	@OriginalMember(owner = "client!gn", name = "d", descriptor = "(B)V")
 	public static void method1655() {
 		Static6.aBoolean335 = true;

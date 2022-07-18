@@ -8,18 +8,6 @@ import org.openrs2.deob.annotation.Pc;
 
 public final class Static24 {
 
-	@OriginalMember(owner = "client!li", name = "a", descriptor = "(B)V")
-	public static void method2563() {
-		for (@Pc(7) int local7 = 0; local7 < 5; local7++) {
-			Static3.aBooleanArray13[local7] = false;
-		}
-		Static5.anInt5195 = -1;
-		Static6.anInt4838 = 0;
-		Static1.anInt212 = 0;
-		Static4.anInt3024 = -1;
-		Static1.anInt772 = 1;
-	}
-
 	@OriginalMember(owner = "client!li", name = "b", descriptor = "(I)V")
 	public static void method2567() {
 		if (!GlRenderer.enabled || Static4.aBoolean189) {

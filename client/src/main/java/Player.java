@@ -91,7 +91,7 @@ public final class Player extends PathingEntity {
 								} else if (local69 == 2) {
 									local66.anInt4465 = 0;
 								}
-							} else if (seqType.anInt1243 >= SeqTypeList.get(local66.seqId).anInt1243) {
+							} else if (seqType.priority >= SeqTypeList.get(local66.seqId).priority) {
 								local66 = player.aClass150Array3[j] = null;
 							}
 						}
@@ -128,7 +128,7 @@ public final class Player extends PathingEntity {
 			if (local92 == 2) {
 				player.anInt4001 = 0;
 			}
-		} else if (seqId == -1 || player.seqId == -1 || SeqTypeList.get(seqId).anInt1243 >= SeqTypeList.get(player.seqId).anInt1243) {
+		} else if (seqId == -1 || player.seqId == -1 || SeqTypeList.get(seqId).priority >= SeqTypeList.get(player.seqId).priority) {
 			player.seqId = seqId;
 			player.anInt4044 = 0;
 			player.seqDelay = delay;

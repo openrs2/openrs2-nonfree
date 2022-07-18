@@ -184,7 +184,7 @@ public final class Component {
 	public Object[] onStatTransmit;
 
 	@OriginalMember(owner = "client!wf", name = "Gc", descriptor = "[Ljava/lang/String;")
-	public String[] aStringArray44;
+	public String[] objOps;
 
 	@OriginalMember(owner = "client!wf", name = "Ic", descriptor = "[Ljava/lang/Object;")
 	public Object[] onMouseOver;
@@ -726,7 +726,7 @@ public final class Component {
 				}
 			}
 		}
-		@Pc(217) int local217 = 0;
+		@Pc(217) int events = 0;
 		if (this.type == 0) {
 			this.scrollHeight = buffer.readUnsignedShort();
 			this.hidden = buffer.readUnsignedByte() == 1;
@@ -743,18 +743,18 @@ public final class Component {
 			@Pc(282) int local282 = buffer.readUnsignedByte();
 			@Pc(286) int local286 = buffer.readUnsignedByte();
 			if (local282 == 1) {
-				local217 = 268435456;
+				events = 0x10000000;
 			}
 			@Pc(297) int local297 = buffer.readUnsignedByte();
 			if (local286 == 1) {
-				local217 |= 1073741824;
+				events |= 0x40000000;
 			}
 			@Pc(309) int local309 = buffer.readUnsignedByte();
 			if (local297 == 1) {
-				local217 |= Integer.MIN_VALUE;
+				events |= Integer.MIN_VALUE;
 			}
 			if (local309 == 1) {
-				local217 |= 536870912;
+				events |= 0x20000000;
 			}
 			this.anInt5943 = buffer.readUnsignedByte();
 			this.anInt5964 = buffer.readUnsignedByte();
@@ -771,12 +771,12 @@ public final class Component {
 					this.anIntArray658[local350] = -1;
 				}
 			}
-			this.aStringArray44 = new String[5];
-			for (@Pc(399) int local399 = 0; local399 < 5; local399++) {
-				@Pc(408) String local408 = buffer.readString();
-				if (local408.length() > 0) {
-					this.aStringArray44[local399] = local408;
-					local217 |= 0x1 << local399 + 23;
+			this.objOps = new String[5];
+			for (@Pc(399) int i = 0; i < 5; i++) {
+				@Pc(408) String op = buffer.readString();
+				if (op.length() > 0) {
+					this.objOps[i] = op;
+					events |= 0x1 << i + 23;
 				}
 			}
 		}
@@ -848,14 +848,14 @@ public final class Component {
 			this.anInt5964 = buffer.readShort();
 			@Pc(729) int local729 = buffer.readUnsignedByte();
 			if (local729 == 1) {
-				local217 |= 1073741824;
+				events |= 0x40000000;
 			}
-			this.aStringArray44 = new String[5];
-			for (@Pc(743) int local743 = 0; local743 < 5; local743++) {
-				@Pc(750) String local750 = buffer.readString();
-				if (local750.length() > 0) {
-					this.aStringArray44[local743] = local750;
-					local217 |= 0x1 << local743 + 23;
+			this.objOps = new String[5];
+			for (@Pc(743) int i = 0; i < 5; i++) {
+				@Pc(750) String op = buffer.readString();
+				if (op.length() > 0) {
+					this.objOps[i] = op;
+					events |= 0x1 << i + 23;
 				}
 			}
 		}
@@ -866,7 +866,7 @@ public final class Component {
 			this.targetVerb = buffer.readString();
 			this.aString353 = buffer.readString();
 			@Pc(808) int local808 = buffer.readUnsignedShort() & 0x3F;
-			local217 |= local808 << 11;
+			events |= local808 << 11;
 		}
 		if (this.anInt5912 == 1 || this.anInt5912 == 4 || this.anInt5912 == 5 || this.anInt5912 == 6) {
 			this.aString349 = buffer.readString();
@@ -886,12 +886,12 @@ public final class Component {
 			}
 		}
 		if (this.anInt5912 == 1 || this.anInt5912 == 4 || this.anInt5912 == 5) {
-			local217 |= 4194304;
+			events |= 0x400000;
 		}
 		if (this.anInt5912 == 6) {
-			local217 |= 1;
+			events |= 0x1;
 		}
-		this.serverActiveProperties = new ServerActiveProperties(local217, -1);
+		this.serverActiveProperties = new ServerActiveProperties(events, -1);
 	}
 
 	@OriginalMember(owner = "client!wf", name = "a", descriptor = "(ZB)Lclient!uj;")
