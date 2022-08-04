@@ -7,7 +7,7 @@ import org.openrs2.deob.annotation.Pc;
 public final class MonochromeImageCache {
 
 	@OriginalMember(owner = "client!da", name = "a", descriptor = "[I")
-	public static final int[] anIntArray61 = new int[4096];
+	public static final int[] PERLIN_FADE = new int[4096];
 
 	@OriginalMember(owner = "client!da", name = "g", descriptor = "I")
 	private int size = 0;
@@ -34,8 +34,8 @@ public final class MonochromeImageCache {
 	private int[][] pixels;
 
 	static {
-		for (@Pc(6) int local6 = 0; local6 < 4096; local6++) {
-			anIntArray61[local6] = Static26.method2983(local6);
+		for (@Pc(6) int t = 0; t < 4096; t++) {
+			PERLIN_FADE[t] = TextureOp.perlinFade(t);
 		}
 	}
 

@@ -126,7 +126,7 @@ public final class Static9 {
 	}
 
 	@OriginalMember(owner = "client!an", name = "a", descriptor = "(Lclient!fd;ZZZIIIIIIII)V")
-	public static void readTile(@OriginalArg(0) Buffer buffer, @OriginalArg(2) boolean arg1, @OriginalArg(3) boolean arg2, @OriginalArg(4) int level, @OriginalArg(5) int arg4, @OriginalArg(6) int arg5, @OriginalArg(7) int z, @OriginalArg(8) int angle, @OriginalArg(9) int arg8, @OriginalArg(10) int arg9, @OriginalArg(11) int x) {
+	public static void readTile(@OriginalArg(0) Buffer buffer, @OriginalArg(2) boolean arg1, @OriginalArg(3) boolean underwater, @OriginalArg(4) int level, @OriginalArg(5) int arg4, @OriginalArg(6) int arg5, @OriginalArg(7) int z, @OriginalArg(8) int angle, @OriginalArg(9) int arg8, @OriginalArg(10) int arg9, @OriginalArg(11) int x) {
 		if (x < 0 || x >= 104 || z < 0 || z >= 104) {
 			while (true) {
 				@Pc(315) int code = buffer.readUnsignedByte();
@@ -143,13 +143,13 @@ public final class Static9 {
 			}
 			return;
 		}
-		if (!arg2 && !arg1) {
+		if (!underwater && !arg1) {
 			Static4.tileFlags[level][x][z] = 0;
 		}
 		while (true) {
 			@Pc(37) int code = buffer.readUnsignedByte();
 			if (code == 0) {
-				if (arg2) {
+				if (underwater) {
 					SceneGraph.tileHeights[0][arg9 + x][arg8 + z] = SceneGraph.surfaceTileHeights[0][arg9 + x][arg8 + z];
 				} else if (level == 0) {
 					SceneGraph.tileHeights[0][arg9 + x][z + arg8] = -PerlinNoise.getTileHeight(arg4 + 932731, arg5 + 556238) * 8;
@@ -160,7 +160,7 @@ public final class Static9 {
 			}
 			if (code == 1) {
 				@Pc(132) int height = buffer.readUnsignedByte();
-				if (arg2) {
+				if (underwater) {
 					SceneGraph.tileHeights[0][arg9 + x][arg8 + z] = height * 8 + SceneGraph.surfaceTileHeights[0][arg9 + x][arg8 + z];
 				} else {
 					if (height == 1) {
@@ -186,7 +186,7 @@ public final class Static9 {
 				if (!arg1) {
 					Static2.tileUnderlays[level][x][z] = (byte) (code - 81);
 				}
-			} else if (!arg2 && !arg1) {
+			} else if (!underwater && !arg1) {
 				Static4.tileFlags[level][x][z] = (byte) (code - 49);
 			}
 		}

@@ -34,10 +34,10 @@ public final class Texture extends SecondaryNode {
 	public static int heightMask;
 
 	@OriginalMember(owner = "client!jk", name = "v", descriptor = "[I")
-	public static int[] widthFractions;
+	public static int[] normalisedX;
 
 	@OriginalMember(owner = "client!re", name = "a", descriptor = "[I")
-	public static int[] heightFractions;
+	public static int[] normalisedY;
 
 	@OriginalMember(owner = "client!rg", name = "gb", descriptor = "I")
 	public static int widthTimes32;
@@ -57,9 +57,9 @@ public final class Texture extends SecondaryNode {
 	@OriginalMember(owner = "client!cd", name = "a", descriptor = "(IIZ)V")
 	public static void setSize(@OriginalArg(0) int width, @OriginalArg(1) int height) {
 		if (width != Texture.width) {
-			widthFractions = new int[width];
+			normalisedX = new int[width];
 			for (@Pc(14) int x = 0; x < width; x++) {
-				widthFractions[x] = (x << 12) / width;
+				normalisedX[x] = (x << 12) / width;
 			}
 			widthMask = width - 1;
 			Texture.width = width;
@@ -69,11 +69,11 @@ public final class Texture extends SecondaryNode {
 			return;
 		}
 		if (height == Texture.width) {
-			heightFractions = widthFractions;
+			normalisedY = normalisedX;
 		} else {
-			heightFractions = new int[height];
+			normalisedY = new int[height];
 			for (@Pc(58) int y = 0; y < height; y++) {
-				heightFractions[y] = (y << 12) / height;
+				normalisedY[y] = (y << 12) / height;
 			}
 		}
 		heightMask = height - 1;

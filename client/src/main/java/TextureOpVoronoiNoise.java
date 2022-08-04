@@ -6,7 +6,19 @@ import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
 @OriginalClass("client!rh")
-public final class TextureOp15 extends TextureOp {
+public final class TextureOpVoronoiNoise extends TextureOp {
+
+	@OriginalMember(owner = "client!ob", name = "x", descriptor = "I")
+	private static int anInt5205;
+
+	@OriginalMember(owner = "client!ko", name = "g", descriptor = "I")
+	private static int anInt2979;
+
+	@OriginalMember(owner = "client!lc", name = "d", descriptor = "I")
+	private static int anInt2464;
+
+	@OriginalMember(owner = "client!qb", name = "W", descriptor = "I")
+	private static int anInt4260;
 
 	@OriginalMember(owner = "client!rh", name = "cb", descriptor = "[S")
 	private short[] aShortArray81 = new short[512];
@@ -18,7 +30,7 @@ public final class TextureOp15 extends TextureOp {
 	private int anInt4552 = 2048;
 
 	@OriginalMember(owner = "client!rh", name = "Z", descriptor = "I")
-	private int anInt4549 = 0;
+	private int seed = 0;
 
 	@OriginalMember(owner = "client!rh", name = "Y", descriptor = "I")
 	private int anInt4548 = 1;
@@ -27,20 +39,20 @@ public final class TextureOp15 extends TextureOp {
 	private int anInt4551 = 5;
 
 	@OriginalMember(owner = "client!rh", name = "gb", descriptor = "[B")
-	private byte[] aByteArray61 = new byte[512];
+	private byte[] permutation = new byte[512];
 
 	@OriginalMember(owner = "client!rh", name = "mb", descriptor = "I")
 	private int anInt4557 = 5;
 
 	@OriginalMember(owner = "client!rh", name = "<init>", descriptor = "()V")
-	public TextureOp15() {
+	public TextureOpVoronoiNoise() {
 		super(0, true);
 	}
 
 	@OriginalMember(owner = "client!rh", name = "e", descriptor = "(B)V")
 	@Override
 	public final void postDecode() {
-		this.aByteArray61 = Static28.method3321(this.anInt4549);
+		this.permutation = TextureOp.getPermutation(this.seed);
 		this.method3715();
 	}
 
@@ -49,21 +61,21 @@ public final class TextureOp15 extends TextureOp {
 	public final int[] getMonochromeOutput(@OriginalArg(1) int y) {
 		@Pc(17) int[] dest = this.monochromeImageCache.get(y);
 		if (this.monochromeImageCache.invalid) {
-			@Pc(30) int local30 = Texture.heightFractions[y] * this.anInt4557 + 2048;
+			@Pc(30) int local30 = Texture.normalisedY[y] * this.anInt4557 + 2048;
 			@Pc(34) int local34 = local30 >> 12;
 			@Pc(38) int local38 = local34 + 1;
 			for (@Pc(40) int x = 0; x < Texture.width; x++) {
-				Static5.anInt5205 = Integer.MAX_VALUE;
-				Static4.anInt2979 = Integer.MAX_VALUE;
-				Static4.anInt2464 = Integer.MAX_VALUE;
-				Static5.anInt4260 = Integer.MAX_VALUE;
-				@Pc(65) int local65 = Texture.widthFractions[x] * this.anInt4551 + 2048;
+				anInt5205 = Integer.MAX_VALUE;
+				anInt2979 = Integer.MAX_VALUE;
+				anInt2464 = Integer.MAX_VALUE;
+				anInt4260 = Integer.MAX_VALUE;
+				@Pc(65) int local65 = Texture.normalisedX[x] * this.anInt4551 + 2048;
 				@Pc(69) int local69 = local65 >> 12;
 				@Pc(73) int local73 = local69 + 1;
 				for (@Pc(77) int local77 = local34 - 1; local77 <= local38; local77++) {
-					@Pc(106) int local106 = this.aByteArray61[(local77 >= this.anInt4557 ? local77 - this.anInt4557 : local77) & 0xFF] & 0xFF;
+					@Pc(106) int local106 = this.permutation[(local77 >= this.anInt4557 ? local77 - this.anInt4557 : local77) & 0xFF] & 0xFF;
 					for (@Pc(110) int local110 = local69 - 1; local110 <= local73; local110++) {
-						@Pc(137) int local137 = (this.aByteArray61[local106 + (this.anInt4551 <= local110 ? local110 - this.anInt4551 : local110) & 0xFF] & 0xFF) * 2;
+						@Pc(137) int local137 = (this.permutation[local106 + (this.anInt4551 <= local110 ? local110 - this.anInt4551 : local110) & 0xFF] & 0xFF) * 2;
 						@Pc(151) int local151 = local65 - (local110 << 12) - this.aShortArray81[local137++];
 						@Pc(164) int local164 = local30 - (local77 << 12) - this.aShortArray81[local137];
 						@Pc(167) int local167 = this.anInt4548;
@@ -88,34 +100,34 @@ public final class TextureOp15 extends TextureOp {
 						} else {
 							local203 = (int) (Math.sqrt((double) ((float) (local151 * local151 + local164 * local164) / 1.6777216E7F)) * 4096.0D);
 						}
-						if (local203 < Static5.anInt4260) {
-							Static5.anInt5205 = Static4.anInt2979;
-							Static4.anInt2979 = Static4.anInt2464;
-							Static4.anInt2464 = Static5.anInt4260;
-							Static5.anInt4260 = local203;
-						} else if (local203 < Static4.anInt2464) {
-							Static5.anInt5205 = Static4.anInt2979;
-							Static4.anInt2979 = Static4.anInt2464;
-							Static4.anInt2464 = local203;
-						} else if (local203 < Static4.anInt2979) {
-							Static5.anInt5205 = Static4.anInt2979;
-							Static4.anInt2979 = local203;
-						} else if (Static5.anInt5205 > local203) {
-							Static5.anInt5205 = local203;
+						if (local203 < anInt4260) {
+							anInt5205 = anInt2979;
+							anInt2979 = anInt2464;
+							anInt2464 = anInt4260;
+							anInt4260 = local203;
+						} else if (local203 < anInt2464) {
+							anInt5205 = anInt2979;
+							anInt2979 = anInt2464;
+							anInt2464 = local203;
+						} else if (local203 < anInt2979) {
+							anInt5205 = anInt2979;
+							anInt2979 = local203;
+						} else if (anInt5205 > local203) {
+							anInt5205 = local203;
 						}
 					}
 				}
 				@Pc(390) int local390 = this.anInt4553;
 				if (local390 == 0) {
-					dest[x] = Static5.anInt4260;
+					dest[x] = anInt4260;
 				} else if (local390 == 1) {
-					dest[x] = Static4.anInt2464;
+					dest[x] = anInt2464;
 				} else if (local390 == 3) {
-					dest[x] = Static4.anInt2979;
+					dest[x] = anInt2979;
 				} else if (local390 == 4) {
-					dest[x] = Static5.anInt5205;
+					dest[x] = anInt5205;
 				} else if (local390 == 2) {
-					dest[x] = Static4.anInt2464 - Static5.anInt4260;
+					dest[x] = anInt2464 - anInt4260;
 				}
 			}
 		}
@@ -124,7 +136,7 @@ public final class TextureOp15 extends TextureOp {
 
 	@OriginalMember(owner = "client!rh", name = "f", descriptor = "(I)V")
 	private void method3715() {
-		@Pc(16) Random random = new Random((long) this.anInt4549);
+		@Pc(16) Random random = new Random(this.seed);
 		this.aShortArray81 = new short[512];
 		if (this.anInt4552 > 0) {
 			for (@Pc(27) int local27 = 0; local27 < 512; local27++) {
@@ -139,7 +151,7 @@ public final class TextureOp15 extends TextureOp {
 		if (code == 0) {
 			this.anInt4551 = this.anInt4557 = buffer.readUnsignedByte();
 		} else if (code == 1) {
-			this.anInt4549 = buffer.readUnsignedByte();
+			this.seed = buffer.readUnsignedByte();
 		} else if (code == 2) {
 			this.anInt4552 = buffer.readUnsignedShort();
 		} else if (code == 3) {

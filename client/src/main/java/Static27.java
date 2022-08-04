@@ -151,7 +151,7 @@ public final class Static27 {
 	@OriginalMember(owner = "client!oj", name = "a", descriptor = "(IIIIIIFIZ)[[I")
 	public static int[][] method3234(@OriginalArg(6) float arg0) {
 		@Pc(17) int[][] local17 = new int[256][64];
-		@Pc(21) TextureOp34 op = new TextureOp34();
+		@Pc(21) TextureOpPerlinNoise op = new TextureOpPerlinNoise();
 		op.anInt2625 = 4;
 		op.anInt2631 = 8;
 		op.anInt2628 = 3;

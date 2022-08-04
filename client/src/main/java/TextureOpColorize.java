@@ -4,19 +4,19 @@ import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
 @OriginalClass("client!ca")
-public final class TextureOp11 extends TextureOp {
+public final class TextureOpColorize extends TextureOp {
 
 	@OriginalMember(owner = "client!ca", name = "X", descriptor = "I")
-	private int anInt501 = 4096;
+	private int green = 4096;
 
 	@OriginalMember(owner = "client!ca", name = "cb", descriptor = "I")
-	private int anInt505 = 4096;
+	private int red = 4096;
 
 	@OriginalMember(owner = "client!ca", name = "fb", descriptor = "I")
-	private int anInt508 = 4096;
+	private int blue = 4096;
 
 	@OriginalMember(owner = "client!ca", name = "<init>", descriptor = "()V")
-	public TextureOp11() {
+	public TextureOpColorize() {
 		super(1, false);
 	}
 
@@ -24,11 +24,11 @@ public final class TextureOp11 extends TextureOp {
 	@Override
 	public final void decode(@OriginalArg(1) Buffer buffer, @OriginalArg(2) int code) {
 		if (code == 0) {
-			this.anInt505 = buffer.readUnsignedShort();
+			this.red = buffer.readUnsignedShort();
 		} else if (code == 1) {
-			this.anInt501 = buffer.readUnsignedShort();
+			this.green = buffer.readUnsignedShort();
 		} else if (code == 2) {
-			this.anInt508 = buffer.readUnsignedShort();
+			this.blue = buffer.readUnsignedShort();
 		}
 	}
 
@@ -49,13 +49,13 @@ public final class TextureOp11 extends TextureOp {
 				@Pc(65) int blue = srcBlue[x];
 				@Pc(69) int green = srcGreen[x];
 				if (red == blue && blue == green) {
-					destRed[x] = this.anInt505 * red >> 12;
-					destGreen[x] = this.anInt501 * blue >> 12;
-					destBlue[x] = this.anInt508 * green >> 12;
+					destRed[x] = this.red * red >> 12;
+					destGreen[x] = this.green * blue >> 12;
+					destBlue[x] = this.blue * green >> 12;
 				} else {
-					destRed[x] = this.anInt505;
-					destGreen[x] = this.anInt501;
-					destBlue[x] = this.anInt508;
+					destRed[x] = this.red;
+					destGreen[x] = this.green;
+					destBlue[x] = this.blue;
 				}
 			}
 		}

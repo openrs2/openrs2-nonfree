@@ -46,12 +46,6 @@ public final class Static4 {
 	@OriginalMember(owner = "client!ko", name = "c", descriptor = "I")
 	public static int anInt2977;
 
-	@OriginalMember(owner = "client!ko", name = "g", descriptor = "I")
-	public static int anInt2979;
-
-	@OriginalMember(owner = "client!lc", name = "d", descriptor = "I")
-	public static int anInt2464;
-
 	@OriginalMember(owner = "client!lc", name = "f", descriptor = "F")
 	public static float aFloat58;
 

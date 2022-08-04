@@ -4,7 +4,7 @@ import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
 @OriginalClass("client!dn")
-public final class TextureOp31 extends TextureOp {
+public final class TextureOpMandelbrot extends TextureOp {
 
 	@OriginalMember(owner = "client!dn", name = "X", descriptor = "I")
 	private int anInt1159 = 20;
@@ -19,7 +19,7 @@ public final class TextureOp31 extends TextureOp {
 	private int anInt1164 = 0;
 
 	@OriginalMember(owner = "client!dn", name = "<init>", descriptor = "()V")
-	public TextureOp31() {
+	public TextureOpMandelbrot() {
 		super(0, true);
 	}
 
@@ -43,8 +43,8 @@ public final class TextureOp31 extends TextureOp {
 		@Pc(7) int[] dest = this.monochromeImageCache.get(y);
 		if (this.monochromeImageCache.invalid) {
 			for (@Pc(23) int x = 0; x < Texture.width; x++) {
-				@Pc(42) int local42 = this.anInt1164 + (Texture.widthFractions[x] << 12) / this.anInt1160;
-				@Pc(54) int local54 = this.anInt1157 + (Texture.heightFractions[y] << 12) / this.anInt1160;
+				@Pc(42) int local42 = this.anInt1164 + (Texture.normalisedX[x] << 12) / this.anInt1160;
+				@Pc(54) int local54 = this.anInt1157 + (Texture.normalisedY[y] << 12) / this.anInt1160;
 				@Pc(58) int local58 = local54;
 				@Pc(60) int local60 = local42;
 				@Pc(64) int local64 = 0;

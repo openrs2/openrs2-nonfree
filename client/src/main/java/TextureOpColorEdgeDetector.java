@@ -4,7 +4,7 @@ import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
 @OriginalClass("client!no")
-public final class TextureOp33 extends TextureOp {
+public final class TextureOpColorEdgeDetector extends TextureOp {
 
 	@OriginalMember(owner = "client!no", name = "X", descriptor = "I")
 	private int anInt3634 = 4096;
@@ -13,7 +13,7 @@ public final class TextureOp33 extends TextureOp {
 	private boolean aBoolean263 = true;
 
 	@OriginalMember(owner = "client!no", name = "<init>", descriptor = "()V")
-	public TextureOp33() {
+	public TextureOpColorEdgeDetector() {
 		super(1, false);
 	}
 
@@ -32,40 +32,40 @@ public final class TextureOp33 extends TextureOp {
 	public final int[][] getColorOutput(@OriginalArg(0) int y) {
 		@Pc(16) int[][] dest = this.colorImageCache.get(y);
 		if (this.colorImageCache.invalid) {
-			@Pc(33) int[] local33 = this.getChildMonochromeOutput(0, Texture.heightMask & y - 1);
-			@Pc(39) int[] local39 = this.getChildMonochromeOutput(0, y);
-			@Pc(51) int[] local51 = this.getChildMonochromeOutput(0, y + 1 & Texture.heightMask);
+			@Pc(33) int[] src0 = this.getChildMonochromeOutput(0, Texture.heightMask & y - 1);
+			@Pc(39) int[] src1 = this.getChildMonochromeOutput(0, y);
+			@Pc(51) int[] src2 = this.getChildMonochromeOutput(0, y + 1 & Texture.heightMask);
 			@Pc(55) int[] destRed = dest[0];
 			@Pc(59) int[] destGreen = dest[1];
 			@Pc(63) int[] destBlue = dest[2];
 			for (@Pc(65) int x = 0; x < Texture.width; x++) {
-				@Pc(84) int local84 = (local51[x] - local33[x]) * this.anInt3634;
-				@Pc(103) int local103 = this.anInt3634 * (local39[x + 1 & Texture.widthMask] - local39[x - 1 & Texture.widthMask]);
-				@Pc(107) int local107 = local84 >> 12;
-				@Pc(111) int local111 = local103 >> 12;
-				@Pc(117) int local117 = local107 * local107 >> 12;
-				@Pc(123) int local123 = local111 * local111 >> 12;
-				@Pc(137) int local137 = (int) (Math.sqrt((double) ((float) (local117 + local123 + 4096) / 4096.0F)) * 4096.0D);
-				@Pc(148) int local148;
-				@Pc(144) int local144;
-				@Pc(146) int local146;
+				@Pc(84) int dy = (src2[x] - src0[x]) * this.anInt3634;
+				@Pc(103) int dx = this.anInt3634 * (src1[x + 1 & Texture.widthMask] - src1[x - 1 & Texture.widthMask]);
+				@Pc(107) int dy0 = dy >> 12;
+				@Pc(111) int dx0 = dx >> 12;
+				@Pc(117) int dySquared = dy0 * dy0 >> 12;
+				@Pc(123) int dxSquared = dx0 * dx0 >> 12;
+				@Pc(137) int local137 = (int) (Math.sqrt((float) (dySquared + dxSquared + 4096) / 4096.0F) * 4096.0D);
+				@Pc(148) int red;
+				@Pc(144) int green;
+				@Pc(146) int blue;
 				if (local137 == 0) {
-					local144 = 0;
-					local146 = 0;
-					local148 = 0;
+					green = 0;
+					blue = 0;
+					red = 0;
 				} else {
-					local144 = local84 / local137;
-					local146 = 16777216 / local137;
-					local148 = local103 / local137;
+					green = dy / local137;
+					blue = 16777216 / local137;
+					red = dx / local137;
 				}
 				if (this.aBoolean263) {
-					local148 = (local148 >> 1) + 2048;
-					local144 = (local144 >> 1) + 2048;
-					local146 = (local146 >> 1) + 2048;
+					red = (red >> 1) + 2048;
+					green = (green >> 1) + 2048;
+					blue = (blue >> 1) + 2048;
 				}
-				destRed[x] = local148;
-				destGreen[x] = local144;
-				destBlue[x] = local146;
+				destRed[x] = red;
+				destGreen[x] = green;
+				destBlue[x] = blue;
 			}
 		}
 		return dest;

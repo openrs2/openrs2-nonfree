@@ -6,7 +6,7 @@ import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
 @OriginalClass("client!ac")
-public final class TextureOp28 extends TextureOp {
+public final class TextureOpIrregularBricks extends TextureOp {
 
 	@OriginalMember(owner = "client!ac", name = "bb", descriptor = "I")
 	private int anInt79;
@@ -33,13 +33,13 @@ public final class TextureOp28 extends TextureOp {
 	private int anInt84 = 1024;
 
 	@OriginalMember(owner = "client!ac", name = "W", descriptor = "I")
-	private int anInt74 = 0;
+	private int seed = 0;
 
 	@OriginalMember(owner = "client!ac", name = "kb", descriptor = "I")
 	private int anInt87 = 2048;
 
 	@OriginalMember(owner = "client!ac", name = "<init>", descriptor = "()V")
-	public TextureOp28() {
+	public TextureOpIrregularBricks() {
 		super(0, true);
 	}
 
@@ -69,7 +69,7 @@ public final class TextureOp28 extends TextureOp {
 		}
 		this.anInt79 = Texture.width / 8 * this.anInt81 >> 12;
 		@Pc(99) int local99 = Texture.width / local49 + 1;
-		@Pc(106) Random random = new Random((long) this.anInt74);
+		@Pc(106) Random random = new Random(this.seed);
 		@Pc(110) int[][] local110 = new int[local99][3];
 		@Pc(114) int[][] local114 = new int[local99][3];
 		while (true) {
@@ -298,7 +298,7 @@ public final class TextureOp28 extends TextureOp {
 	@Override
 	public final void decode(@OriginalArg(1) Buffer buffer, @OriginalArg(2) int code) {
 		if (code == 0) {
-			this.anInt74 = buffer.readUnsignedByte();
+			this.seed = buffer.readUnsignedByte();
 		} else if (code == 1) {
 			this.anInt84 = buffer.readUnsignedShort();
 		} else if (code == 2) {

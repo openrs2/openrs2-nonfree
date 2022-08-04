@@ -4,13 +4,13 @@ import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
 @OriginalClass("client!sh")
-public final class TextureOp35 extends TextureOp {
+public final class TextureOpMonochromeEdgeDetector extends TextureOp {
 
 	@OriginalMember(owner = "client!sh", name = "W", descriptor = "I")
 	private int anInt4832 = 4096;
 
 	@OriginalMember(owner = "client!sh", name = "<init>", descriptor = "()V")
-	public TextureOp35() {
+	public TextureOpMonochromeEdgeDetector() {
 		super(1, true);
 	}
 
@@ -19,17 +19,17 @@ public final class TextureOp35 extends TextureOp {
 	public final int[] getMonochromeOutput(@OriginalArg(1) int y) {
 		@Pc(16) int[] dest = this.monochromeImageCache.get(y);
 		if (this.monochromeImageCache.invalid) {
-			@Pc(30) int[] local30 = this.getChildMonochromeOutput(0, y - 1 & Texture.heightMask);
-			@Pc(36) int[] local36 = this.getChildMonochromeOutput(0, y);
-			@Pc(46) int[] local46 = this.getChildMonochromeOutput(0, y + 1 & Texture.heightMask);
+			@Pc(30) int[] src0 = this.getChildMonochromeOutput(0, y - 1 & Texture.heightMask);
+			@Pc(36) int[] src1 = this.getChildMonochromeOutput(0, y);
+			@Pc(46) int[] src2 = this.getChildMonochromeOutput(0, y + 1 & Texture.heightMask);
 			for (@Pc(48) int x = 0; x < Texture.width; x++) {
-				@Pc(63) int local63 = this.anInt4832 * (local46[x] - local30[x]);
-				@Pc(83) int local83 = this.anInt4832 * (local36[Texture.widthMask & x + 1] - local36[Texture.widthMask & x - 1]);
-				@Pc(87) int local87 = local83 >> 12;
-				@Pc(91) int local91 = local63 >> 12;
-				@Pc(97) int local97 = local91 * local91 >> 12;
-				@Pc(103) int local103 = local87 * local87 >> 12;
-				@Pc(117) int local117 = (int) (Math.sqrt((double) ((float) (local97 + local103 + 4096) / 4096.0F)) * 4096.0D);
+				@Pc(63) int dy = this.anInt4832 * (src2[x] - src0[x]);
+				@Pc(83) int dx = this.anInt4832 * (src1[Texture.widthMask & x + 1] - src1[Texture.widthMask & x - 1]);
+				@Pc(87) int dx0 = dx >> 12;
+				@Pc(91) int dy0 = dy >> 12;
+				@Pc(97) int dySquared = dy0 * dy0 >> 12;
+				@Pc(103) int dxSquared = dx0 * dx0 >> 12;
+				@Pc(117) int local117 = (int) (Math.sqrt((float) (dySquared + dxSquared + 4096) / 4096.0F) * 4096.0D);
 				@Pc(128) int local128 = local117 == 0 ? 0 : 16777216 / local117;
 				dest[x] = 4096 - local128;
 			}

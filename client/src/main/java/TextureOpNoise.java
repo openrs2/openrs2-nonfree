@@ -23,9 +23,9 @@ public final class TextureOpNoise extends TextureOp {
 	public final int[] getMonochromeOutput(@OriginalArg(1) int y) {
 		@Pc(9) int[] dest = this.monochromeImageCache.get(y);
 		if (this.monochromeImageCache.invalid) {
-			@Pc(21) int heightFraction = Texture.heightFractions[y];
+			@Pc(21) int heightFraction = Texture.normalisedY[y];
 			for (@Pc(23) int x = 0; x < Texture.width; x++) {
-				dest[x] = this.noise(Texture.widthFractions[x], heightFraction) % 4096;
+				dest[x] = this.noise(Texture.normalisedX[x], heightFraction) % 4096;
 			}
 		}
 		return dest;

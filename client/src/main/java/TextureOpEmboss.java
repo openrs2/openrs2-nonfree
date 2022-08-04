@@ -4,22 +4,22 @@ import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
 @OriginalClass("client!ck")
-public final class TextureOp32 extends TextureOp {
+public final class TextureOpEmboss extends TextureOp {
 
 	@OriginalMember(owner = "client!ck", name = "W", descriptor = "I")
-	private int anInt685 = 3216;
+	private int azimuth = 3216;
 
 	@OriginalMember(owner = "client!ck", name = "T", descriptor = "I")
-	private int anInt682 = 3216;
+	private int elevation = 3216;
 
 	@OriginalMember(owner = "client!ck", name = "X", descriptor = "I")
-	private int anInt686 = 4096;
+	private int depth = 4096;
 
 	@OriginalMember(owner = "client!ck", name = "eb", descriptor = "[I")
 	private final int[] anIntArray57 = new int[3];
 
 	@OriginalMember(owner = "client!ck", name = "<init>", descriptor = "()V")
-	public TextureOp32() {
+	public TextureOpEmboss() {
 		super(1, true);
 	}
 
@@ -27,11 +27,11 @@ public final class TextureOp32 extends TextureOp {
 	@Override
 	public final void decode(@OriginalArg(1) Buffer buffer, @OriginalArg(2) int code) {
 		if (code == 0) {
-			this.anInt686 = buffer.readUnsignedShort();
+			this.depth = buffer.readUnsignedShort();
 		} else if (code == 1) {
-			this.anInt685 = buffer.readUnsignedShort();
+			this.azimuth = buffer.readUnsignedShort();
 		} else if (code == 2) {
-			this.anInt682 = buffer.readUnsignedShort();
+			this.elevation = buffer.readUnsignedShort();
 		}
 	}
 
@@ -46,7 +46,7 @@ public final class TextureOp32 extends TextureOp {
 	public final int[] getMonochromeOutput(@OriginalArg(1) int y) {
 		@Pc(7) int[] dest = this.monochromeImageCache.get(y);
 		if (this.monochromeImageCache.invalid) {
-			@Pc(24) int local24 = Texture.widthTimes32 * this.anInt686 >> 12;
+			@Pc(24) int local24 = Texture.widthTimes32 * this.depth >> 12;
 			@Pc(36) int[] local36 = this.getChildMonochromeOutput(0, y - 1 & Texture.heightMask);
 			@Pc(44) int[] local44 = this.getChildMonochromeOutput(0, y);
 			@Pc(56) int[] local56 = this.getChildMonochromeOutput(0, Texture.heightMask & y + 1);
@@ -67,7 +67,7 @@ public final class TextureOp32 extends TextureOp {
 				if (local86 > 255) {
 					local86 = 255;
 				}
-				@Pc(149) int local149 = Class17.aByteArray4[local86 + ((local112 + 1) * local112 >> 1)] & 0xFF;
+				@Pc(149) int local149 = Class17.INVERSE_SQUARE_ROOT[local86 + ((local112 + 1) * local112 >> 1)] & 0xFF;
 				@Pc(155) int local155 = local82 * local149 >> 8;
 				@Pc(161) int local161 = local149 * local99 >> 8;
 				local155 = this.anIntArray57[0] * local155 >> 12;
@@ -82,10 +82,10 @@ public final class TextureOp32 extends TextureOp {
 
 	@OriginalMember(owner = "client!ck", name = "h", descriptor = "(B)V")
 	private void method642() {
-		@Pc(11) double local11 = Math.cos((double) ((float) this.anInt682 / 4096.0F));
-		this.anIntArray57[0] = (int) (Math.sin((double) ((float) this.anInt685 / 4096.0F)) * 4096.0D * local11);
-		this.anIntArray57[1] = (int) (Math.cos((double) ((float) this.anInt685 / 4096.0F)) * local11 * 4096.0D);
-		this.anIntArray57[2] = (int) (Math.sin((double) ((float) this.anInt682 / 4096.0F)) * 4096.0D);
+		@Pc(11) double local11 = Math.cos((double) ((float) this.elevation / 4096.0F));
+		this.anIntArray57[0] = (int) (Math.sin((double) ((float) this.azimuth / 4096.0F)) * 4096.0D * local11);
+		this.anIntArray57[1] = (int) (Math.cos((double) ((float) this.azimuth / 4096.0F)) * local11 * 4096.0D);
+		this.anIntArray57[2] = (int) (Math.sin((double) ((float) this.elevation / 4096.0F)) * 4096.0D);
 		@Pc(69) int local69 = this.anIntArray57[0] * this.anIntArray57[0] >> 12;
 		@Pc(81) int local81 = this.anIntArray57[2] * this.anIntArray57[2] >> 12;
 		@Pc(93) int local93 = this.anIntArray57[1] * this.anIntArray57[1] >> 12;

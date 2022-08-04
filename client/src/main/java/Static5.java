@@ -20,9 +20,6 @@ public final class Static5 {
 	@OriginalMember(owner = "client!o", name = "N", descriptor = "[I")
 	public static int[] anIntArray399;
 
-	@OriginalMember(owner = "client!ob", name = "x", descriptor = "I")
-	public static int anInt5205;
-
 	@OriginalMember(owner = "client!oc", name = "ab", descriptor = "Lclient!wf;")
 	public static Component aClass185_10;
 
@@ -76,9 +73,6 @@ public final class Static5 {
 
 	@OriginalMember(owner = "client!qa", name = "t", descriptor = "[[Lclient!wj;")
 	public static Environment[][] environments;
-
-	@OriginalMember(owner = "client!qb", name = "W", descriptor = "I")
-	public static int anInt4260;
 
 	@OriginalMember(owner = "client!qc", name = "O", descriptor = "I")
 	public static int originX;

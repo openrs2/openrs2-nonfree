@@ -4,7 +4,7 @@ import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
 @OriginalClass("client!rm")
-public final class TextureOp27 extends TextureOp {
+public final class TextureOpSquareWaveform extends TextureOp {
 
 	@OriginalMember(owner = "client!rm", name = "bb", descriptor = "[I")
 	private int[] anIntArray498;
@@ -13,16 +13,16 @@ public final class TextureOp27 extends TextureOp {
 	private int[] anIntArray499;
 
 	@OriginalMember(owner = "client!rm", name = "V", descriptor = "I")
-	private int anInt4650 = 10;
+	private int frequency = 10;
 
 	@OriginalMember(owner = "client!rm", name = "Y", descriptor = "I")
-	private int anInt4653 = 2048;
+	private int ratio = 2048;
 
 	@OriginalMember(owner = "client!rm", name = "Z", descriptor = "I")
-	private int anInt4654 = 0;
+	private int mode = 0;
 
 	@OriginalMember(owner = "client!rm", name = "<init>", descriptor = "()V")
-	public TextureOp27() {
+	public TextureOpSquareWaveform() {
 		super(0, true);
 	}
 
@@ -30,11 +30,11 @@ public final class TextureOp27 extends TextureOp {
 	@Override
 	public final void decode(@OriginalArg(1) Buffer buffer, @OriginalArg(2) int code) {
 		if (code == 0) {
-			this.anInt4650 = buffer.readUnsignedByte();
+			this.frequency = buffer.readUnsignedByte();
 		} else if (code == 1) {
-			this.anInt4653 = buffer.readUnsignedShort();
+			this.ratio = buffer.readUnsignedShort();
 		} else if (code == 2) {
-			this.anInt4654 = buffer.readUnsignedByte();
+			this.mode = buffer.readUnsignedByte();
 		}
 	}
 
@@ -46,18 +46,18 @@ public final class TextureOp27 extends TextureOp {
 
 	@OriginalMember(owner = "client!rm", name = "g", descriptor = "(B)V")
 	private void method3784() {
-		this.anIntArray498 = new int[this.anInt4650 + 1];
-		@Pc(17) int local17 = 4096 / this.anInt4650;
-		this.anIntArray499 = new int[this.anInt4650 + 1];
-		@Pc(31) int local31 = local17 * this.anInt4653 >> 12;
+		this.anIntArray498 = new int[this.frequency + 1];
+		@Pc(17) int local17 = 4096 / this.frequency;
+		this.anIntArray499 = new int[this.frequency + 1];
+		@Pc(31) int local31 = local17 * this.ratio >> 12;
 		@Pc(33) int local33 = 0;
-		for (@Pc(35) int local35 = 0; local35 < this.anInt4650; local35++) {
+		for (@Pc(35) int local35 = 0; local35 < this.frequency; local35++) {
 			this.anIntArray498[local35] = local33;
 			this.anIntArray499[local35] = local31 + local33;
 			local33 += local17;
 		}
-		this.anIntArray498[this.anInt4650] = 4096;
-		this.anIntArray499[this.anInt4650] = this.anIntArray499[0] + 4096;
+		this.anIntArray498[this.frequency] = 4096;
+		this.anIntArray499[this.frequency] = this.anIntArray499[0] + 4096;
 	}
 
 	@OriginalMember(owner = "client!rm", name = "a", descriptor = "(II)[I")
@@ -65,10 +65,10 @@ public final class TextureOp27 extends TextureOp {
 	public final int[] getMonochromeOutput(@OriginalArg(1) int y) {
 		@Pc(11) int[] dest = this.monochromeImageCache.get(y);
 		if (this.monochromeImageCache.invalid) {
-			@Pc(26) int local26 = Texture.heightFractions[y];
-			if (this.anInt4654 == 0) {
+			@Pc(26) int local26 = Texture.normalisedY[y];
+			if (this.mode == 0) {
 				@Pc(140) short local140 = 0;
-				for (@Pc(142) int local142 = 0; local142 < this.anInt4650; local142++) {
+				for (@Pc(142) int local142 = 0; local142 < this.frequency; local142++) {
 					if (local26 >= this.anIntArray498[local142] && local26 < this.anIntArray498[local142 + 1]) {
 						if (local26 < this.anIntArray499[local142]) {
 							local140 = 4096;
@@ -81,16 +81,16 @@ public final class TextureOp27 extends TextureOp {
 				for (@Pc(31) int x = 0; x < Texture.width; x++) {
 					@Pc(40) int local40 = 0;
 					@Pc(42) short local42 = 0;
-					@Pc(46) int local46 = Texture.widthFractions[x];
-					@Pc(49) int local49 = this.anInt4654;
+					@Pc(46) int normalisedX = Texture.normalisedX[x];
+					@Pc(49) int local49 = this.mode;
 					if (local49 == 1) {
-						local40 = local46;
+						local40 = normalisedX;
 					} else if (local49 == 2) {
-						local40 = (local26 + local46 - 4096 >> 1) + 2048;
+						local40 = (local26 + normalisedX - 4096 >> 1) + 2048;
 					} else if (local49 == 3) {
-						local40 = (local46 - local26 >> 1) + 2048;
+						local40 = (normalisedX - local26 >> 1) + 2048;
 					}
-					for (@Pc(86) int local86 = 0; local86 < this.anInt4650; local86++) {
+					for (@Pc(86) int local86 = 0; local86 < this.frequency; local86++) {
 						if (this.anIntArray498[local86] <= local40 && local40 < this.anIntArray498[local86 + 1]) {
 							if (local40 < this.anIntArray499[local86]) {
 								local42 = 4096;

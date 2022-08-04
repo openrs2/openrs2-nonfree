@@ -6,7 +6,7 @@ import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
 @OriginalClass("client!sn")
-public final class TextureOp4 extends TextureOp {
+public final class TextureOpBricks extends TextureOp {
 
 	@OriginalMember(owner = "client!sn", name = "X", descriptor = "I")
 	private int anInt4937;
@@ -51,13 +51,13 @@ public final class TextureOp4 extends TextureOp {
 	private int anInt4936 = 8;
 
 	@OriginalMember(owner = "client!sn", name = "<init>", descriptor = "()V")
-	public TextureOp4() {
+	public TextureOpBricks() {
 		super(0, true);
 	}
 
 	@OriginalMember(owner = "client!sn", name = "f", descriptor = "(I)V")
 	private void method4057() {
-		@Pc(12) Random random = new Random((long) this.anInt4936);
+		@Pc(12) Random random = new Random(this.anInt4936);
 		this.anInt4937 = 4096 / this.anInt4936;
 		this.anIntArray536 = new int[this.anInt4936 + 1];
 		this.anIntArrayArray41 = new int[this.anInt4936][this.anInt4943 + 1];
@@ -124,7 +124,7 @@ public final class TextureOp4 extends TextureOp {
 		if (this.monochromeImageCache.invalid) {
 			@Pc(19) int local19 = 0;
 			@Pc(26) int local26;
-			for (local26 = this.anInt4944 + Texture.heightFractions[y]; local26 < 0; local26 += 4096) {
+			for (local26 = this.anInt4944 + Texture.normalisedY[y]; local26 < 0; local26 += 4096) {
 			}
 			while (local26 > 4096) {
 				local26 -= 4096;
@@ -139,7 +139,7 @@ public final class TextureOp4 extends TextureOp {
 			if (local87 + this.anInt4948 < local26 && local26 < local69 - this.anInt4948) {
 				for (@Pc(107) int x = 0; x < Texture.width; x++) {
 					@Pc(123) int local123 = local80 ? this.anInt4942 : -this.anInt4942;
-					@Pc(135) int local135 = Texture.widthFractions[x] + (local123 * this.anInt4949 >> 12);
+					@Pc(135) int local135 = Texture.normalisedX[x] + (local123 * this.anInt4949 >> 12);
 					@Pc(137) int local137 = 0;
 					while (local135 < 0) {
 						local135 += 4096;

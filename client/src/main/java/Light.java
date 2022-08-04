@@ -17,12 +17,12 @@ public final class Light {
 	@OriginalMember(owner = "client!ab", name = "a", descriptor = "(IIIFIIZB)[I")
 	private static int[] createNoise(@OriginalArg(3) float arg0) {
 		@Pc(2) int[] noise = new int[2048];
-		@Pc(16) TextureOp34 op = new TextureOp34();
+		@Pc(16) TextureOpPerlinNoise op = new TextureOpPerlinNoise();
 		op.anInt2620 = (int) (arg0 * 4096.0F);
 		op.anInt2628 = 4;
 		op.aBoolean181 = true;
 		op.anInt2631 = 8;
-		op.anInt2621 = 35;
+		op.seed = 35;
 		op.anInt2625 = 8;
 		op.postDecode();
 		Texture.setSize(2048, 1);

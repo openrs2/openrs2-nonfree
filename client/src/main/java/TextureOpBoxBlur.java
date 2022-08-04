@@ -4,16 +4,16 @@ import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
 @OriginalClass("client!vi")
-public final class TextureOp5 extends TextureOp {
+public final class TextureOpBoxBlur extends TextureOp {
 
 	@OriginalMember(owner = "client!vi", name = "W", descriptor = "I")
-	private int anInt5587 = 1;
+	private int radiusY = 1;
 
 	@OriginalMember(owner = "client!vi", name = "V", descriptor = "I")
-	private int anInt5586 = 1;
+	private int radiusX = 1;
 
 	@OriginalMember(owner = "client!vi", name = "<init>", descriptor = "()V")
-	public TextureOp5() {
+	public TextureOpBoxBlur() {
 		super(1, false);
 	}
 
@@ -22,12 +22,12 @@ public final class TextureOp5 extends TextureOp {
 	public final int[][] getColorOutput(@OriginalArg(0) int y) {
 		@Pc(11) int[][] dest = this.colorImageCache.get(y);
 		if (this.colorImageCache.invalid) {
-			@Pc(32) int local32 = this.anInt5587 + this.anInt5587 + 1;
+			@Pc(32) int local32 = this.radiusY + this.radiusY + 1;
 			@Pc(36) int local36 = 65536 / local32;
-			@Pc(44) int local44 = this.anInt5586 + this.anInt5586 + 1;
+			@Pc(44) int local44 = this.radiusX + this.radiusX + 1;
 			@Pc(48) int local48 = 65536 / local44;
 			@Pc(51) int[][][] local51 = new int[local32][][];
-			for (@Pc(57) int local57 = y - this.anInt5587; local57 <= y + this.anInt5587; local57++) {
+			for (@Pc(57) int local57 = y - this.radiusY; local57 <= y + this.radiusY; local57++) {
 				@Pc(76) int[][] src = this.getChildColorOutput(0, local57 & Texture.heightMask);
 				@Pc(80) int[][] local80 = new int[3][Texture.width];
 				@Pc(82) int local82 = 0;
@@ -36,7 +36,7 @@ public final class TextureOp5 extends TextureOp {
 				@Pc(90) int local90 = 0;
 				@Pc(94) int[] srcBlue = src[2];
 				@Pc(98) int[] srcGreen = src[1];
-				for (@Pc(102) int local102 = -this.anInt5586; local102 <= this.anInt5586; local102++) {
+				for (@Pc(102) int local102 = -this.radiusX; local102 <= this.radiusX; local102++) {
 					@Pc(114) int local114 = Texture.widthMask & local102;
 					local90 += srcGreen[local114];
 					local82 += srcRed[local114];
@@ -50,17 +50,17 @@ public final class TextureOp5 extends TextureOp {
 					local139[local149] = local48 * local82 >> 16;
 					local143[local149] = local90 * local48 >> 16;
 					local147[local149] = local48 * local84 >> 16;
-					@Pc(184) int local184 = local149 - this.anInt5586 & Texture.widthMask;
+					@Pc(184) int local184 = local149 - this.radiusX & Texture.widthMask;
 					@Pc(190) int local190 = local90 - srcGreen[local184];
 					@Pc(196) int local196 = local82 - srcRed[local184];
 					local149++;
 					@Pc(203) int local203 = local84 - srcBlue[local184];
-					local184 = local149 + this.anInt5586 & Texture.widthMask;
+					local184 = local149 + this.radiusX & Texture.widthMask;
 					local82 = local196 + srcRed[local184];
 					local90 = local190 + srcGreen[local184];
 					local84 = local203 + srcBlue[local184];
 				}
-				local51[local57 + this.anInt5587 - y] = local80;
+				local51[local57 + this.radiusY - y] = local80;
 			}
 			@Pc(249) int[] destGreen = dest[1];
 			@Pc(253) int[] destBlue = dest[2];
@@ -87,9 +87,9 @@ public final class TextureOp5 extends TextureOp {
 	@Override
 	public final void decode(@OriginalArg(1) Buffer buffer, @OriginalArg(2) int code) {
 		if (code == 0) {
-			this.anInt5586 = buffer.readUnsignedByte();
+			this.radiusX = buffer.readUnsignedByte();
 		} else if (code == 1) {
-			this.anInt5587 = buffer.readUnsignedByte();
+			this.radiusY = buffer.readUnsignedByte();
 		} else if (code == 2) {
 			this.monochrome = buffer.readUnsignedByte() == 1;
 		}
@@ -100,33 +100,33 @@ public final class TextureOp5 extends TextureOp {
 	public final int[] getMonochromeOutput(@OriginalArg(1) int y) {
 		@Pc(19) int[] dest = this.monochromeImageCache.get(y);
 		if (this.monochromeImageCache.invalid) {
-			@Pc(33) int local33 = this.anInt5587 + this.anInt5587 + 1;
-			@Pc(37) int local37 = 65536 / local33;
-			@Pc(45) int local45 = this.anInt5586 + this.anInt5586 + 1;
-			@Pc(49) int local49 = 65536 / local45;
-			@Pc(52) int[][] local52 = new int[local33][];
-			for (@Pc(58) int local58 = y - this.anInt5587; local58 <= y + this.anInt5587; local58++) {
-				@Pc(75) int[] src = this.getChildMonochromeOutput(0, Texture.heightMask & local58);
-				@Pc(78) int[] local78 = new int[Texture.width];
-				@Pc(80) int local80 = 0;
-				for (@Pc(84) int local84 = -this.anInt5586; local84 <= this.anInt5586; local84++) {
-					local80 += src[Texture.widthMask & local84];
+			@Pc(33) int windowY = this.radiusY + this.radiusY + 1;
+			@Pc(37) int windowYReciprocal = 65536 / windowY;
+			@Pc(45) int windowX = this.radiusX + this.radiusX + 1;
+			@Pc(49) int windowXReciprocal = 65536 / windowX;
+			@Pc(52) int[][] horizontalAverages = new int[windowY][];
+			for (@Pc(58) int y0 = y - this.radiusY; y0 <= y + this.radiusY; y0++) {
+				@Pc(75) int[] src = this.getChildMonochromeOutput(0, Texture.heightMask & y0);
+				@Pc(78) int[] horizontalAverage = new int[Texture.width];
+				@Pc(80) int horizontalSum = 0;
+				for (@Pc(84) int x0 = -this.radiusX; x0 <= this.radiusX; x0++) {
+					horizontalSum += src[x0 & Texture.widthMask];
 				}
-				@Pc(105) int local105 = 0;
-				while (local105 < Texture.width) {
-					local78[local105] = local80 * local49 >> 16;
-					@Pc(128) int local128 = local80 - src[Texture.widthMask & local105 - this.anInt5586];
-					local105++;
-					local80 = local128 + src[local105 + this.anInt5586 & Texture.widthMask];
+				@Pc(105) int x0 = 0;
+				while (x0 < Texture.width) {
+					horizontalAverage[x0] = horizontalSum * windowXReciprocal >> 16;
+					@Pc(128) int local128 = horizontalSum - src[(x0 - this.radiusX) & Texture.widthMask];
+					x0++;
+					horizontalSum = local128 + src[Texture.widthMask & (x0 + this.radiusX)];
 				}
-				local52[local58 + this.anInt5587 - y] = local78;
+				horizontalAverages[y0 + this.radiusY - y] = horizontalAverage;
 			}
-			for (@Pc(158) int local158 = 0; local158 < Texture.width; local158++) {
-				@Pc(167) int local167 = 0;
-				for (@Pc(169) int local169 = 0; local169 < local33; local169++) {
-					local167 += local52[local169][local158];
+			for (@Pc(158) int x0 = 0; x0 < Texture.width; x0++) {
+				@Pc(167) int verticalSum = 0;
+				for (@Pc(169) int y0 = 0; y0 < windowY; y0++) {
+					verticalSum += horizontalAverages[y0][x0];
 				}
-				dest[local158] = local37 * local167 >> 16;
+				dest[x0] = verticalSum * windowYReciprocal >> 16;
 			}
 		}
 		return dest;

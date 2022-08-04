@@ -325,14 +325,6 @@ public final class Static26 {
 		}
 	}
 
-	@OriginalMember(owner = "client!nh", name = "a", descriptor = "(II)I")
-	public static int method2983(@OriginalArg(0) int arg0) {
-		@Pc(13) int local13 = (arg0 * arg0 >> 12) * arg0 >> 12;
-		@Pc(26) int local26 = arg0 * 6 - 61440;
-		@Pc(34) int local34 = (arg0 * local26 >> 12) + 40960;
-		return local13 * local34 >> 12;
-	}
-
 	@OriginalMember(owner = "client!ni", name = "a", descriptor = "(B)V")
 	public static void method4812() {
 		if (!Static3.aBoolean177) {

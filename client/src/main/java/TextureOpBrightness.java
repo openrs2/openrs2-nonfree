@@ -4,25 +4,25 @@ import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
 @OriginalClass("client!bl")
-public final class TextureOp25 extends TextureOp {
+public final class TextureOpBrightness extends TextureOp {
 
 	@OriginalMember(owner = "client!bl", name = "T", descriptor = "I")
-	private int anInt371 = 409;
+	private int maxValue = 409;
 
 	@OriginalMember(owner = "client!bl", name = "W", descriptor = "I")
-	private int anInt374 = 4096;
+	private int redFactor = 4096;
 
 	@OriginalMember(owner = "client!bl", name = "bb", descriptor = "I")
-	private int anInt378 = 4096;
+	private int blueFactor = 4096;
 
 	@OriginalMember(owner = "client!bl", name = "Z", descriptor = "[I")
-	private final int[] anIntArray40 = new int[3];
+	private final int[] colorDelta = new int[3];
 
 	@OriginalMember(owner = "client!bl", name = "V", descriptor = "I")
-	private int anInt373 = 4096;
+	private int greenFactor = 4096;
 
 	@OriginalMember(owner = "client!bl", name = "<init>", descriptor = "()V")
-	public TextureOp25() {
+	public TextureOpBrightness() {
 		super(1, false);
 	}
 
@@ -39,41 +39,41 @@ public final class TextureOp25 extends TextureOp {
 			@Pc(43) int[] destRed = dest[0];
 			@Pc(47) int[] destBlue = dest[2];
 			for (@Pc(49) int x = 0; x < Texture.width; x++) {
-				@Pc(56) int local56 = srcRed[x];
-				@Pc(64) int local64 = local56 - this.anIntArray40[0];
-				if (local64 < 0) {
-					local64 = -local64;
+				@Pc(56) int r = srcRed[x];
+				@Pc(64) int absR = r - this.colorDelta[0];
+				if (absR < 0) {
+					absR = -absR;
 				}
-				if (local64 > this.anInt371) {
-					destRed[x] = local56;
-					destGreen[x] = srcGreen[x];
-					destBlue[x] = srcBlue[x];
-				} else {
-					@Pc(98) int local98 = srcGreen[x];
-					@Pc(106) int local106 = local98 - this.anIntArray40[1];
-					if (local106 < 0) {
-						local106 = -local106;
+				if (absR <= this.maxValue) {
+					@Pc(98) int g = srcGreen[x];
+					@Pc(106) int absG = g - this.colorDelta[1];
+					if (absG < 0) {
+						absG = -absG;
 					}
-					if (local106 <= this.anInt371) {
-						@Pc(141) int local141 = srcBlue[x];
-						@Pc(149) int local149 = local141 - this.anIntArray40[2];
-						if (local149 < 0) {
-							local149 = -local149;
+					if (absG <= this.maxValue) {
+						@Pc(141) int b = srcBlue[x];
+						@Pc(149) int absB = b - this.colorDelta[2];
+						if (absB < 0) {
+							absB = -absB;
 						}
-						if (this.anInt371 < local149) {
-							destRed[x] = local56;
-							destGreen[x] = local98;
-							destBlue[x] = local141;
+						if (absB <= this.maxValue) {
+							destRed[x] = r * this.redFactor >> 12;
+							destGreen[x] = g * this.greenFactor >> 12;
+							destBlue[x] = b * this.blueFactor >> 12;
 						} else {
-							destRed[x] = local56 * this.anInt374 >> 12;
-							destGreen[x] = this.anInt373 * local98 >> 12;
-							destBlue[x] = local141 * this.anInt378 >> 12;
+							destRed[x] = r;
+							destGreen[x] = g;
+							destBlue[x] = b;
 						}
 					} else {
-						destRed[x] = local56;
-						destGreen[x] = local98;
+						destRed[x] = r;
+						destGreen[x] = g;
 						destBlue[x] = srcBlue[x];
 					}
+				} else {
+					destRed[x] = r;
+					destGreen[x] = srcGreen[x];
+					destBlue[x] = srcBlue[x];
 				}
 			}
 		}
@@ -84,18 +84,18 @@ public final class TextureOp25 extends TextureOp {
 	@Override
 	public final void decode(@OriginalArg(1) Buffer buffer, @OriginalArg(2) int code) {
 		if (code == 0) {
-			this.anInt371 = buffer.readUnsignedShort();
+			this.maxValue = buffer.readUnsignedShort();
 		} else if (code == 1) {
-			this.anInt378 = buffer.readUnsignedShort();
+			this.blueFactor = buffer.readUnsignedShort();
 		} else if (code == 2) {
-			this.anInt373 = buffer.readUnsignedShort();
+			this.greenFactor = buffer.readUnsignedShort();
 		} else if (code == 3) {
-			this.anInt374 = buffer.readUnsignedShort();
+			this.redFactor = buffer.readUnsignedShort();
 		} else if (code == 4) {
-			@Pc(55) int local55 = buffer.readUnsignedMedium();
-			this.anIntArray40[0] = (local55 & 0xFF0000) << 4;
-			this.anIntArray40[2] = local55 >> 12 & 0x0;
-			this.anIntArray40[1] = local55 >> 4 & 0xFF0;
+			@Pc(55) int rgb = buffer.readUnsignedMedium();
+			this.colorDelta[0] = (rgb & 0xFF0000) << 4;
+			this.colorDelta[2] = rgb >> 12 & 0x0;
+			this.colorDelta[1] = rgb >> 4 & 0xFF0;
 		}
 	}
 }

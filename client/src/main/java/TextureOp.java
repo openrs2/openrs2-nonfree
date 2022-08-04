@@ -1,3 +1,5 @@
+import java.util.Random;
+
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -12,6 +14,9 @@ public abstract class TextureOp extends Node {
 	@OriginalMember(owner = "client!jb", name = "j", descriptor = "[I")
 	public static int[] SINE;
 
+	@OriginalMember(owner = "client!vd", name = "a", descriptor = "Lclient!dj;")
+	private static final LruHashTable permutations = new LruHashTable(16);
+
 	@OriginalMember(owner = "client!wa", name = "p", descriptor = "(B)V")
 	public static void createTrigonometryTables() {
 		if (SINE != null && COSINE != null) {
@@ -24,6 +29,36 @@ public abstract class TextureOp extends Node {
 			SINE[i] = (int) (Math.sin(radians) * 4096.0D);
 			COSINE[i] = (int) (Math.cos(radians) * 4096.0D);
 		}
+	}
+
+	@OriginalMember(owner = "client!pa", name = "a", descriptor = "(II)[B")
+	public static byte[] getPermutation(@OriginalArg(0) int seed) {
+		@Pc(18) ByteArraySecondaryNode node = (ByteArraySecondaryNode) permutations.get(seed);
+		if (node == null) {
+			@Pc(24) byte[] permutation = new byte[512];
+			@Pc(30) Random random = new Random(seed);
+			for (@Pc(32) int i = 0; i < 255; i++) {
+				permutation[i] = (byte) i;
+			}
+			for (@Pc(45) int i = 0; i < 255; i++) {
+				@Pc(55) int j = 255 - i;
+				@Pc(60) int k = RandomUtils.nextInt(random, j);
+				@Pc(64) byte temp = permutation[k];
+				permutation[k] = permutation[j];
+				permutation[j] = permutation[511 - i] = temp;
+			}
+			node = new ByteArraySecondaryNode(permutation);
+			permutations.put(seed, node);
+		}
+		return node.value;
+	}
+
+	@OriginalMember(owner = "client!nh", name = "a", descriptor = "(II)I")
+	public static int perlinFade(@OriginalArg(0) int t) {
+		@Pc(13) int cube = (t * t >> 12) * t >> 12;
+		@Pc(26) int mul6Sub15 = t * 6 - 61440;
+		@Pc(34) int mulTAdd10 = (t * mul6Sub15 >> 12) + 40960;
+		return cube * mulTAdd10 >> 12;
 	}
 
 	@OriginalMember(owner = "client!qf", name = "a", descriptor = "(Lclient!fd;I)Lclient!jo;")
@@ -52,9 +87,9 @@ public abstract class TextureOp extends Node {
 		} else if (type == 3) {
 			return new TextureOpVerticalGradient();
 		} else if (type == 4) {
-			return new TextureOp4();
+			return new TextureOpBricks();
 		} else if (type == 5) {
-			return new TextureOp5();
+			return new TextureOpBoxBlur();
 		} else if (type == 6) {
 			return new TextureOpClamp();
 		} else if (type == 7) {
@@ -66,23 +101,23 @@ public abstract class TextureOp extends Node {
 		} else if (type == 10) {
 			return new TextureOpColorGradient();
 		} else if (type == 11) {
-			return new TextureOp11();
+			return new TextureOpColorize();
 		} else if (type == 12) {
-			return new TextureOp12();
+			return new TextureOpWaveform();
 		} else if (type == 13) {
 			return new TextureOpNoise();
 		} else if (type == 14) {
-			return new TextureOp14();
+			return new TextureOpWeave();
 		} else if (type == 15) {
-			return new TextureOp15();
+			return new TextureOpVoronoiNoise();
 		} else if (type == 16) {
-			return new TextureOp16();
+			return new TextureOpHerringbone();
 		} else if (type == 17) {
-			return new TextureOp17();
+			return new TextureOpHslAdjust();
 		} else if (type == 18) {
 			return new TextureOpTiledSprite();
 		} else if (type == 19) {
-			return new TextureOp19();
+			return new TextureOpPolarDistortion();
 		} else if (type == 20) {
 			return new TextureOpTile();
 		} else if (type == 21) {
@@ -90,37 +125,37 @@ public abstract class TextureOp extends Node {
 		} else if (type == 22) {
 			return new TextureOpInvert();
 		} else if (type == 23) {
-			return new TextureOp23();
+			return new TextureOpKaleidoscope();
 		} else if (type == 24) {
 			return new TextureOpMonochrome();
 		} else if (type == 25) {
-			return new TextureOp25();
+			return new TextureOpBrightness();
 		} else if (type == 26) {
 			return new TextureOpBinary();
 		} else if (type == 27) {
-			return new TextureOp27();
+			return new TextureOpSquareWaveform();
 		} else if (type == 28) {
-			return new TextureOp28();
+			return new TextureOpIrregularBricks();
 		} else if (type == 29) {
-			return new TextureOp29();
+			return new TextureOpRasterizer();
 		} else if (type == 30) {
 			return new TextureOpRange();
 		} else if (type == 31) {
-			return new TextureOp31();
+			return new TextureOpMandelbrot();
 		} else if (type == 32) {
-			return new TextureOp32();
+			return new TextureOpEmboss();
 		} else if (type == 33) {
-			return new TextureOp33();
+			return new TextureOpColorEdgeDetector();
 		} else if (type == 34) {
-			return new TextureOp34();
+			return new TextureOpPerlinNoise();
 		} else if (type == 35) {
-			return new TextureOp35();
+			return new TextureOpMonochromeEdgeDetector();
 		} else if (type == 36) {
 			return new TextureOpTexture();
 		} else if (type == 37) {
 			return new TextureOp37();
 		} else if (type == 38) {
-			return new TextureOp38();
+			return new TextureOpLineNoise();
 		} else if (type == 39) {
 			return new TextureOpSprite();
 		} else {
