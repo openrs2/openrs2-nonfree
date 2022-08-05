@@ -5,11 +5,11 @@ import org.openrs2.deob.annotation.Pc;
 public final class Static27 {
 
 	@OriginalMember(owner = "client!ob", name = "a", descriptor = "(Lclient!ic;Lclient!oh;B)Lclient!ih;")
-	public static Class4_Sub12 method4237(@OriginalArg(0) HashTable arg0, @OriginalArg(1) FloType arg1) {
+	public static GroundModel method4237(@OriginalArg(0) HashTable arg0, @OriginalArg(1) FloType arg1) {
 		@Pc(27) long local27 = ((long) arg1.anInt3868 << 56) + ((long) arg1.anInt3874 << 32) + (long) (arg1.anInt3876 + (arg1.texture + 1 << 16));
-		@Pc(39) Class4_Sub12 local39 = (Class4_Sub12) arg0.get(local27);
+		@Pc(39) GroundModel local39 = (GroundModel) arg0.get(local27);
 		if (local39 == null) {
-			local39 = new Class4_Sub12(arg1.texture, (float) arg1.anInt3876, true, false, arg1.anInt3874);
+			local39 = new GroundModel(arg1.texture, (float) arg1.anInt3876, true, false, arg1.anInt3874);
 			arg0.put(local27, local39);
 		}
 		return local39;

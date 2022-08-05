@@ -55,7 +55,7 @@ public final class Light {
 	private int anInt1324;
 
 	@OriginalMember(owner = "client!em", name = "m", descriptor = "Lclient!pi;")
-	public Class135 aClass135_1;
+	public GroundLightModel groundModel;
 
 	@OriginalMember(owner = "client!em", name = "o", descriptor = "Z")
 	public final boolean aBoolean79;

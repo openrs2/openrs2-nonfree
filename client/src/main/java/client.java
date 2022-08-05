@@ -776,7 +776,7 @@ public final class client extends GameShell {
 			} else if (js5Archive23.isGroupReady("details")) {
 				MapList.init(js5Archive23);
 				ParticleManager.init(js5Archive27);
-				Static13.method1028(js5Archive7);
+				SkyBoxSphere.init(js5Archive7);
 				mainLoadState = 135;
 				mainLoadPercentage = 95;
 				mainLoadSecondaryText = LocalisedText.MAINLOAD130B;

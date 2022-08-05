@@ -275,7 +275,7 @@ public final class Static14 {
 		for (@Pc(11) int i = 0; i < arg1; i++) {
 			@Pc(22) Light light = lights[i];
 			if (light.level == level) {
-				@Pc(34) Class135 local34 = new Class135();
+				@Pc(34) GroundLightModel local34 = new GroundLightModel();
 				@Pc(43) int local43 = (light.z >> 7) - light.radius;
 				@Pc(45) int local45 = 0;
 				if (local43 < 0) {
@@ -311,8 +311,8 @@ public final class Static14 {
 							}
 							if (arg10[local119][local80] != 0) {
 								@Pc(177) int[] local177 = Static1.anIntArrayArray5[arg10[local119][local80]];
-								local34.anInt4160 += (local177.length >> 1) * 3 - 6;
-								local34.anInt4159 += local177.length >> 1;
+								local34.indexCapacity += (local177.length >> 1) * 3 - 6;
+								local34.vertexCapacity += local177.length >> 1;
 								continue;
 							}
 						} else if (local138 != 0) {
@@ -321,8 +321,8 @@ public final class Static14 {
 								@Pc(237) byte local237 = arg10[local119][local80];
 								if (local237 != 0) {
 									@Pc(243) int[] local243 = Static2.anIntArrayArray16[local237];
-									local34.anInt4160 += (local243.length >> 1) * 3 - 6;
-									local34.anInt4159 += local243.length >> 1;
+									local34.indexCapacity += (local243.length >> 1) * 3 - 6;
+									local34.vertexCapacity += local243.length >> 1;
 								}
 								continue;
 							}
@@ -383,8 +383,8 @@ public final class Static14 {
 									}
 								}
 								if (local289 != null) {
-									local34.anInt4160 += ((local289.length >> 1) - 2) * 3;
-									local34.anInt4159 += local289.length >> 1;
+									local34.indexCapacity += ((local289.length >> 1) - 2) * 3;
+									local34.vertexCapacity += local289.length >> 1;
 								}
 								continue;
 							}
@@ -392,19 +392,19 @@ public final class Static14 {
 						if (local140) {
 							@Pc(635) int[] local635 = Static1.anIntArrayArray5[arg10[local119][local80]];
 							@Pc(643) int[] local643 = Static2.anIntArrayArray16[arg10[local119][local80]];
-							local34.anInt4160 += ((local635.length >> 1) - 2) * 3;
-							local34.anInt4160 += ((local643.length >> 1) - 2) * 3;
-							local34.anInt4159 += local635.length >> 1;
-							local34.anInt4159 += local643.length >> 1;
+							local34.indexCapacity += ((local635.length >> 1) - 2) * 3;
+							local34.indexCapacity += ((local643.length >> 1) - 2) * 3;
+							local34.vertexCapacity += local635.length >> 1;
+							local34.vertexCapacity += local643.length >> 1;
 						} else {
 							@Pc(603) int[] local603 = Static1.anIntArrayArray5[0];
-							local34.anInt4160 += ((local603.length >> 1) - 2) * 3;
-							local34.anInt4159 += local603.length >> 1;
+							local34.indexCapacity += ((local603.length >> 1) - 2) * 3;
+							local34.vertexCapacity += local603.length >> 1;
 						}
 					}
 					local45++;
 				}
-				local34.method3432();
+				local34.clear();
 				@Pc(698) int local698 = 0;
 				if ((light.z >> 7) - light.radius < 0) {
 					local698 = light.radius - (light.z >> 7);
@@ -517,9 +517,9 @@ public final class Static14 {
 					}
 					local698++;
 				}
-				if (local34.anInt4161 > 0 && local34.anInt4162 > 0) {
-					local34.method3434();
-					light.aClass135_1 = local34;
+				if (local34.vertexCount > 0 && local34.indexCount > 0) {
+					local34.buffer();
+					light.groundModel = local34;
 				}
 			}
 		}
@@ -597,10 +597,10 @@ public final class Static14 {
 		Static2.anInt1636 = 13;
 		Static2.anInt1637 = 13;
 		Static2.aClass56_Sub1_2 = new SoftwareIndexedSprite(Static2.anInt1636 * 128 + 2, Static2.anInt1637 * 128 + 2, 0);
-		Static2.aClass103ArrayArray1 = new Class103[Static2.anInt1636][Static2.anInt1637];
+		Static2.aClass103ArrayArray1 = new GroundShadowModel[Static2.anInt1636][Static2.anInt1637];
 		for (@Pc(32) int local32 = 0; local32 < Static2.anInt1636; local32++) {
 			for (@Pc(37) int local37 = 0; local37 < Static2.anInt1637; local37++) {
-				Static2.aClass103ArrayArray1[local32][local37] = new Class103();
+				Static2.aClass103ArrayArray1[local32][local37] = new GroundShadowModel();
 			}
 		}
 	}
@@ -752,14 +752,14 @@ public final class Static14 {
 					if (local29 - arg0 >= -arg2 && local29 - arg0 <= arg2) {
 						for (@Pc(51) int local51 = local22 * 8; local51 < local22 * 8 + 8; local51++) {
 							if (local51 - arg1 >= -arg2 && local51 - arg1 <= arg2 && arg4[local29 + arg2 - arg0][local51 + arg2 - arg1]) {
-								@Pc(89) Class103 local89 = Static2.aClass103ArrayArray1[local17][local22];
+								@Pc(89) GroundShadowModel local89 = Static2.aClass103ArrayArray1[local17][local22];
 								if (local89.aBoolean197) {
 									local89.method2236(Static2.aClass56_Sub1_2, local17, local22);
 									local89.aBoolean197 = false;
 								}
 								gl.glPushMatrix();
 								gl.glTranslatef((float) (local17 * 1024), 0.0F, (float) (local22 * 1024));
-								local89.method2237();
+								local89.render();
 								gl.glPopMatrix();
 								continue label52;
 							}

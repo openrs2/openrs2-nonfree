@@ -8,7 +8,7 @@ import org.openrs2.deob.annotation.Pc;
 public final class Static19 {
 
 	@OriginalMember(owner = "client!hk", name = "a", descriptor = "(Lclient!em;[I[[FIILclient!pi;[[FI[[FI[[I)V")
-	public static void method1778(@OriginalArg(0) Light arg0, @OriginalArg(1) int[] arg1, @OriginalArg(2) float[][] arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) Class135 arg5, @OriginalArg(6) float[][] arg6, @OriginalArg(8) float[][] arg7, @OriginalArg(9) int arg8, @OriginalArg(10) int[][] arg9) {
+	public static void method1778(@OriginalArg(0) Light light, @OriginalArg(1) int[] arg1, @OriginalArg(2) float[][] arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) GroundLightModel arg5, @OriginalArg(6) float[][] arg6, @OriginalArg(8) float[][] arg7, @OriginalArg(9) int arg8, @OriginalArg(10) int[][] arg9) {
 		@Pc(11) int[] local11 = new int[arg1.length / 2];
 		for (@Pc(20) int local20 = 0; local20 < local11.length; local20++) {
 			@Pc(34) int local34 = arg1[local20 + local20];
@@ -66,9 +66,9 @@ public final class Static19 {
 			@Pc(401) int local401 = local34 + (arg4 << 7);
 			@Pc(407) int local407 = (arg3 << 7) + local42;
 			@Pc(415) int local415 = Static9.method206(local34, arg4, local42, arg9, arg3);
-			local11[local20] = arg5.method3435(arg0, local401, local415, local407, local109, local125, local117);
+			local11[local20] = arg5.addVertex(light, local401, local415, local407, local109, local125, local117);
 		}
-		arg5.method3431(local11);
+		arg5.addTriangleFan(local11);
 	}
 
 	@OriginalMember(owner = "client!hn", name = "a", descriptor = "(IIIIII)V")
@@ -282,14 +282,6 @@ public final class Static19 {
 		Static3.aByteBuffer2.position(0);
 		Static3.aByteBuffer2.put(local38);
 		Static3.aByteBuffer2.flip();
-	}
-
-	@OriginalMember(owner = "client!ih", name = "b", descriptor = "()V")
-	public static void method1868() {
-		Static3.aClass4_Sub10_4 = null;
-		Static3.aClass4_Sub10_5 = null;
-		Static3.aByteBuffer5 = null;
-		Static3.aByteBuffer4 = null;
 	}
 
 	@OriginalMember(owner = "client!ii", name = "a", descriptor = "(IIIIIIII)V")

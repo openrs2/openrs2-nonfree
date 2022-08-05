@@ -213,13 +213,13 @@ public final class Loc extends Entity {
 		if (GlRenderer.enabled && local176) {
 			@Pc(363) int local363 = 0;
 			if (local287) {
-				Static1.aClass56_Sub1_1 = local321.aClass56_Sub1_3;
+				Static1.aClass56_Sub1_1 = local321.sprite;
 			}
 			if (this.level != 0) {
 				@Pc(379) int[][] local379 = SceneGraph.tileHeights[0];
 				local363 = local267 - (local379[local114][local98] + local379[local107][local98] + local379[local114][local124] + local379[local107][local124] >> 2);
 			}
-			@Pc(414) SoftwareIndexedSprite local414 = local321.aClass56_Sub1_3;
+			@Pc(414) SoftwareIndexedSprite local414 = local321.sprite;
 			if (this.aBoolean320 && Static14.method1214(local414, local199, local363, local212)) {
 				this.aBoolean320 = false;
 			}
@@ -236,7 +236,7 @@ public final class Loc extends Entity {
 		}
 		this.anInt4571 = type.id;
 		this.anInt4594 = this.anInt4574;
-		return local321.aClass53_3;
+		return local321.entity;
 	}
 
 	@OriginalMember(owner = "client!ri", name = "a", descriptor = "(II)V")

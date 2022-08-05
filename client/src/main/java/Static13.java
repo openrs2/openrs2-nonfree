@@ -72,11 +72,7 @@ public final class Static13 {
 
 	@OriginalMember(owner = "client!eh", name = "b", descriptor = "()V")
 	public static void method1027() {
-		Static22.method2303();
+		SkyBoxSphere.clear();
 	}
 
-	@OriginalMember(owner = "client!eh", name = "a", descriptor = "(Lclient!fh;)V")
-	public static void method1028(@OriginalArg(0) Js5 archive) {
-		Static2.aClass58_37 = archive;
-	}
 }

@@ -228,8 +228,8 @@ public final class LocType {
 			if (local226 == null) {
 				local233 = this.method4456(arg2, false, arg7);
 				if (local233 == null) {
-					Static3.aClass96_1.aClass53_3 = null;
-					Static3.aClass96_1.aClass56_Sub1_3 = null;
+					Static3.aClass96_1.entity = null;
+					Static3.aClass96_1.sprite = null;
 					return Static3.aClass96_1;
 				}
 				if (arg2 == 10 && arg7 > 3) {
@@ -241,12 +241,12 @@ public final class LocType {
 					local236 = null;
 				}
 				@Pc(281) Class96 local281 = new Class96();
-				local281.aClass53_3 = local233;
-				local281.aClass56_Sub1_3 = local236;
+				local281.entity = local233;
+				local281.sprite = local236;
 				LocTypeList.aClass26_18.put(local210, local281);
 			} else {
-				local233 = (GlModel) local226.aClass53_3;
-				local236 = local226.aClass56_Sub1_3;
+				local233 = (GlModel) local226.entity;
+				local236 = local226.sprite;
 			}
 			@Pc(297) boolean local297 = arg1 & this.aBoolean373;
 			@Pc(329) GlModel local329 = local233.method3852(this.aByte23 != 3, this.aByte23 == 0, true, true, true, !local297, true, true, true);
@@ -255,8 +255,8 @@ public final class LocType {
 			}
 			local329.method3872(this.anInt5522 == 0 && !this.aBoolean379, true, true, this.anInt5522 == 0, true, false);
 			local329.aBoolean325 = local297;
-			Static3.aClass96_1.aClass53_3 = local329;
-			Static3.aClass96_1.aClass56_Sub1_3 = local236;
+			Static3.aClass96_1.entity = local329;
+			Static3.aClass96_1.sprite = local236;
 			return Static3.aClass96_1;
 		}
 		@Pc(24) long local24;
@@ -276,7 +276,7 @@ public final class LocType {
 		if (local60 == null) {
 			@Pc(69) RawModel local69 = this.method4452(arg7, arg2);
 			if (local69 == null) {
-				Static3.aClass96_1.aClass53_3 = null;
+				Static3.aClass96_1.entity = null;
 				return Static3.aClass96_1;
 			}
 			local69.method2760();
@@ -303,7 +303,7 @@ public final class LocType {
 				local60 = ((RawModel) local60).method2766(this.aByte23, this.aShort48, arg4, arg5, arg0, arg3, arg8);
 			}
 		}
-		Static3.aClass96_1.aClass53_3 = local60;
+		Static3.aClass96_1.entity = local60;
 		return Static3.aClass96_1;
 	}
 
@@ -628,7 +628,7 @@ public final class LocType {
 				}
 				local198 = local198.method2910(this.aByte23, this.aShort48, arg1, arg9, arg0, arg4, arg3, false);
 			}
-			Static3.aClass96_1.aClass53_3 = local198;
+			Static3.aClass96_1.entity = local198;
 			return Static3.aClass96_1;
 		}
 		@Pc(27) long local27;
@@ -661,9 +661,9 @@ public final class LocType {
 			local78.method3815(256);
 		}
 		if (arg5) {
-			Static3.aClass96_1.aClass56_Sub1_3 = local78.method3854(arg11);
+			Static3.aClass96_1.sprite = local78.method3854(arg11);
 		} else {
-			Static3.aClass96_1.aClass56_Sub1_3 = null;
+			Static3.aClass96_1.sprite = null;
 		}
 		if (this.aByte23 != 0) {
 			if (!local80) {
@@ -671,7 +671,7 @@ public final class LocType {
 			}
 			local78.method3859(this.aByte23, this.aShort48, local78, arg1, arg9, arg0, arg4, arg3);
 		}
-		Static3.aClass96_1.aClass53_3 = local78;
+		Static3.aClass96_1.entity = local78;
 		return Static3.aClass96_1;
 	}
 

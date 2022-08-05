@@ -108,7 +108,7 @@ public final class Static29 {
 	}
 
 	@OriginalMember(owner = "client!pg", name = "a", descriptor = "([[[BB[[B[[I[[FI[[B[[B[[I[[B[[F[[F)[Lclient!ih;")
-	public static Class4_Sub12[] method3149(@OriginalArg(0) byte[][][] arg0, @OriginalArg(2) byte[][] arg1, @OriginalArg(3) int[][] arg2, @OriginalArg(4) float[][] arg3, @OriginalArg(5) int arg4, @OriginalArg(6) byte[][] arg5, @OriginalArg(7) byte[][] arg6, @OriginalArg(8) int[][] arg7, @OriginalArg(9) byte[][] arg8, @OriginalArg(10) float[][] arg9, @OriginalArg(11) float[][] arg10) {
+	public static GroundModel[] method3149(@OriginalArg(0) byte[][][] arg0, @OriginalArg(2) byte[][] arg1, @OriginalArg(3) int[][] arg2, @OriginalArg(4) float[][] arg3, @OriginalArg(5) int arg4, @OriginalArg(6) byte[][] arg5, @OriginalArg(7) byte[][] arg6, @OriginalArg(8) int[][] arg7, @OriginalArg(9) byte[][] arg8, @OriginalArg(10) float[][] arg9, @OriginalArg(11) float[][] arg10) {
 		@Pc(10) HashTable local10 = new HashTable(128);
 		for (@Pc(12) int local12 = 1; local12 <= 102; local12++) {
 			for (@Pc(17) int local17 = 1; local17 <= 102; local17++) {
@@ -119,13 +119,13 @@ public final class Static29 {
 					if (local48.anInt3869 == -1) {
 						continue;
 					}
-					@Pc(60) Class4_Sub12 local60 = Static27.method4237(local10, local48);
+					@Pc(60) GroundModel local60 = Static27.method4237(local10, local48);
 					@Pc(66) byte local66 = arg5[local12][local17];
 					@Pc(70) int[] local70 = Static1.anIntArrayArray5[local66];
-					local60.anInt2352 += local70.length / 2;
-					local60.anInt2355++;
+					local60.vertexCapacity += local70.length / 2;
+					local60.tileCapacity++;
 					if (local48.aBoolean275 && local30 != 0) {
-						local60.anInt2352 += Static4.anIntArray318[local66];
+						local60.vertexCapacity += Static4.anIntArray318[local66];
 					}
 				}
 				if ((arg8[local12][local17] & 0xFF) != 0 || local38 != 0 && arg5[local12][local17] == 0) {
@@ -291,19 +291,19 @@ public final class Static29 {
 						@Pc(1037) boolean[] local1037 = Static2.aBooleanArrayArray2[local1006 == local176 ? local136 : 0];
 						@Pc(1050) boolean[] local1050 = Static2.aBooleanArrayArray2[local146 == local1006 ? local127 : 0];
 						@Pc(1056) FloType local1056 = FloTypeList.get(local1006 - 1);
-						@Pc(1061) Class4_Sub12 local1061 = Static27.method4237(local10, local1056);
-						local1061.anInt2352 += 5;
-						local1061.anInt2352 += local1050.length - 2;
-						local1061.anInt2352 += local1019.length - 2;
-						local1061.anInt2352 += local1028.length - 2;
-						local1061.anInt2352 += local1037.length - 2;
-						local1061.anInt2355++;
+						@Pc(1061) GroundModel local1061 = Static27.method4237(local10, local1056);
+						local1061.vertexCapacity += 5;
+						local1061.vertexCapacity += local1050.length - 2;
+						local1061.vertexCapacity += local1019.length - 2;
+						local1061.vertexCapacity += local1028.length - 2;
+						local1061.vertexCapacity += local1037.length - 2;
+						local1061.tileCapacity++;
 					}
 				}
 			}
 		}
-		for (@Pc(1123) Class4_Sub12 local1123 = (Class4_Sub12) local10.head(); local1123 != null; local1123 = (Class4_Sub12) local10.next()) {
-			local1123.method1872();
+		for (@Pc(1123) GroundModel local1123 = (GroundModel) local10.head(); local1123 != null; local1123 = (GroundModel) local10.next()) {
+			local1123.clear();
 		}
 		for (@Pc(1137) int local1137 = 1; local1137 <= 102; local1137++) {
 			for (@Pc(1144) int local1144 = 1; local1144 <= 102; local1144++) {
@@ -322,7 +322,7 @@ public final class Static29 {
 					if (local1215.anInt3869 == -1) {
 						continue;
 					}
-					@Pc(1227) Class4_Sub12 local1227 = Static27.method4237(local10, local1215);
+					@Pc(1227) GroundModel local1227 = Static27.method4237(local10, local1215);
 					@Pc(1233) byte local1233 = arg5[local1137][local1144];
 					@Pc(1239) byte local1239 = arg6[local1137][local1144];
 					@Pc(1251) int local1251 = Static15.method1474(arg2[local1137][local1144], local1215.texture, local1215.anInt3869);
@@ -518,7 +518,7 @@ public final class Static29 {
 						@Pc(2257) boolean[] local2257 = Static2.aBooleanArrayArray2[local2226 == local1382 ? local1350 : 0];
 						@Pc(2266) boolean[] local2266 = Static2.aBooleanArrayArray2[local2226 == local1372 ? local1352 : 0];
 						@Pc(2272) FloType local2272 = FloTypeList.get(local2226 - 1);
-						@Pc(2277) Class4_Sub12 local2277 = Static27.method4237(local10, local2272);
+						@Pc(2277) GroundModel local2277 = Static27.method4237(local10, local2272);
 						@Pc(2293) int local2293 = Static15.method1474(arg2[local1137][local1144], local2272.texture, local2272.anInt3869) << 8 | 0xFF;
 						@Pc(2311) int local2311 = Static15.method1474(arg2[local1137 + 1][local1144], local2272.texture, local2272.anInt3869) << 8 | 0xFF;
 						@Pc(2331) int local2331 = Static15.method1474(arg2[local1137 + 1][local1144 + 1], local2272.texture, local2272.anInt3869) << 8 | 0xFF;
@@ -563,20 +563,20 @@ public final class Static29 {
 						}
 						@Pc(2714) int local2714 = local2678 + 1;
 						local2435[local2678] = local2519;
-						local2277.method1870(local1159, local1137, local1144, local2435, null, true);
+						local2277.addTile(local1159, local1137, local1144, local2435, null, true);
 					}
 				}
 			}
 		}
-		for (@Pc(2739) Class4_Sub12 local2739 = (Class4_Sub12) local10.head(); local2739 != null; local2739 = (Class4_Sub12) local10.next()) {
-			if (local2739.anInt2357 == 0) {
+		for (@Pc(2739) GroundModel local2739 = (GroundModel) local10.head(); local2739 != null; local2739 = (GroundModel) local10.next()) {
+			if (local2739.vertexCount == 0) {
 				local2739.unlink();
 			} else {
-				local2739.method1866();
+				local2739.build();
 			}
 		}
 		@Pc(2766) int local2766 = local10.size();
-		@Pc(2774) Class4_Sub12[] local2774 = new Class4_Sub12[local2766];
+		@Pc(2774) GroundModel[] local2774 = new GroundModel[local2766];
 		@Pc(2777) long[] local2777 = new long[local2766];
 		local10.toArray(local2774);
 		for (@Pc(2784) int local2784 = 0; local2784 < local2766; local2784++) {

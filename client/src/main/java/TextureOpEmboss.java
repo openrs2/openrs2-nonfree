@@ -67,7 +67,7 @@ public final class TextureOpEmboss extends TextureOp {
 				if (local86 > 255) {
 					local86 = 255;
 				}
-				@Pc(149) int local149 = Class17.INVERSE_SQUARE_ROOT[local86 + ((local112 + 1) * local112 >> 1)] & 0xFF;
+				@Pc(149) int local149 = TextureMathUtils.INVERSE_SQUARE_ROOT[local86 + ((local112 + 1) * local112 >> 1)] & 0xFF;
 				@Pc(155) int local155 = local82 * local149 >> 8;
 				@Pc(161) int local161 = local149 * local99 >> 8;
 				local155 = this.anIntArray57[0] * local155 >> 12;

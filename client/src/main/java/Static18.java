@@ -5,7 +5,7 @@ import org.openrs2.deob.annotation.Pc;
 public final class Static18 {
 
 	@OriginalMember(owner = "client!hb", name = "a", descriptor = "(I[Lclient!ih;)V")
-	public static void method1679(@OriginalArg(0) int arg0, @OriginalArg(1) Class4_Sub12[] arg1) {
+	public static void method1679(@OriginalArg(0) int arg0, @OriginalArg(1) GroundModel[] arg1) {
 		SceneGraph.aClass4_Sub12ArrayArray2[arg0] = arg1;
 	}
 

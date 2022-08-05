@@ -43,7 +43,7 @@ public final class Environment {
 	public final int anInt6036;
 
 	@OriginalMember(owner = "client!wj", name = "t", descriptor = "Lclient!ib;")
-	public SkyBox skybox;
+	public SkyBoxCube skybox;
 
 	@OriginalMember(owner = "client!wj", name = "<init>", descriptor = "()V")
 	public Environment() {
@@ -57,7 +57,7 @@ public final class Environment {
 		this.aFloat150 = 0.69921875F;
 		this.anInt6036 = Static4.anInt3365;
 		if (Defaults.skyboxTextures != null) {
-			this.skybox = SkyBox.create(Defaults.skyboxTextures[0], Defaults.skyboxTextures[1], Defaults.skyboxTextures[2], Defaults.skyboxTextures[3], Defaults.skyboxTextures[4], Defaults.skyboxTextures[5]);
+			this.skybox = SkyBoxCube.create(Defaults.skyboxTextures[0], Defaults.skyboxTextures[1], Defaults.skyboxTextures[2], Defaults.skyboxTextures[3], Defaults.skyboxTextures[4], Defaults.skyboxTextures[5]);
 		}
 	}
 
@@ -104,9 +104,9 @@ public final class Environment {
 			this.anInt6043 = buffer.readUnsignedShort();
 		}
 		if ((flags & 0x80) != 0) {
-			this.skybox = SkyBox.create(buffer.readUnsignedShort(), buffer.readUnsignedShort(), buffer.readUnsignedShort(), buffer.readUnsignedShort(), buffer.readUnsignedShort(), buffer.readUnsignedShort());
+			this.skybox = SkyBoxCube.create(buffer.readUnsignedShort(), buffer.readUnsignedShort(), buffer.readUnsignedShort(), buffer.readUnsignedShort(), buffer.readUnsignedShort(), buffer.readUnsignedShort());
 		} else if (Defaults.skyboxTextures != null) {
-			this.skybox = SkyBox.create(Defaults.skyboxTextures[0], Defaults.skyboxTextures[1], Defaults.skyboxTextures[2], Defaults.skyboxTextures[3], Defaults.skyboxTextures[4], Defaults.skyboxTextures[5]);
+			this.skybox = SkyBoxCube.create(Defaults.skyboxTextures[0], Defaults.skyboxTextures[1], Defaults.skyboxTextures[2], Defaults.skyboxTextures[3], Defaults.skyboxTextures[4], Defaults.skyboxTextures[5]);
 		}
 	}
 

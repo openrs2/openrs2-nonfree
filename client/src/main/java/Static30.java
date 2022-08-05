@@ -479,7 +479,7 @@ public final class Static30 {
 											Static28.method3270(component);
 										}
 									} else if (component.anInt5972 >= 0) {
-										@Pc(2619) Class47 local2619 = component.method4726();
+										@Pc(2619) SkyBox local2619 = component.method4726();
 										if (GlRenderer.enabled) {
 											local2619.method1025(0, local128, local122, component.width, component.height, component.anInt5965, component.anInt5917, 0);
 										} else {
@@ -839,11 +839,11 @@ public final class Static30 {
 		gl.glFogf(GL.GL_FOG_START, 3072.0F);
 		GlRenderer.disableDepthMask();
 		for (@Pc(19) int local19 = 0; local19 < SceneGraph.aClass4_Sub12ArrayArray1[0].length; local19++) {
-			@Pc(31) Class4_Sub12 local31 = SceneGraph.aClass4_Sub12ArrayArray1[0][local19];
+			@Pc(31) GroundModel local31 = SceneGraph.aClass4_Sub12ArrayArray1[0][local19];
 			if (local31.texture >= 0 && Static32.method3920(Rasteriser.textureProvider.getMaterialType(local31.texture))) {
 				gl.glColor4fv(Static16.method1553(local31.anInt2351), 0);
 				@Pc(58) float local58 = 201.5F - (local31.aBoolean162 ? 1.0F : 0.5F);
-				local31.method1867(SceneGraph.tiles, local58, true);
+				local31.render(SceneGraph.tiles, local58, true);
 			}
 		}
 		gl.glEnableClientState(GL.GL_COLOR_ARRAY);

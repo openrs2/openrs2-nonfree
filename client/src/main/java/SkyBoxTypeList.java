@@ -7,7 +7,7 @@ public final class SkyBoxTypeList {
 	private static final SoftLruHashTable types = new SoftLruHashTable(16);
 
 	@OriginalMember(owner = "client!ej", name = "p", descriptor = "Lclient!cc;")
-	private static final SoftLruHashTable aClass26_11 = new SoftLruHashTable(4);
+	private static final SoftLruHashTable skyBoxes = new SoftLruHashTable(4);
 
 	@OriginalMember(owner = "client!id", name = "d", descriptor = "Lclient!fh;")
 	private static Js5 archive;
@@ -33,41 +33,41 @@ public final class SkyBoxTypeList {
 	}
 
 	@OriginalMember(owner = "client!ea", name = "a", descriptor = "(IBIII)Lclient!eh;")
-	public static Class47 method936(@OriginalArg(3) int id, @OriginalArg(0) int arg0, @OriginalArg(2) int arg1, @OriginalArg(4) int arg3) {
-		@Pc(39) long local39 = (long) id & 0xFFFFL | ((long) arg0 & 0xFFFFL) << 48 | ((long) arg1 & 0xFFFFL) << 32 | ((long) arg3 & 0xFFFFL) << 16;
-		@Pc(45) Class47 local45 = (Class47) aClass26_11.get(local39);
-		if (local45 != null) {
-			return local45;
+	public static SkyBox getSkyBox(@OriginalArg(3) int id, @OriginalArg(0) int arg0, @OriginalArg(2) int arg1, @OriginalArg(4) int arg3) {
+		@Pc(39) long key = (long) id & 0xFFFFL | ((long) arg0 & 0xFFFFL) << 48 | ((long) arg1 & 0xFFFFL) << 32 | ((long) arg3 & 0xFFFFL) << 16;
+		@Pc(45) SkyBox skyBox = (SkyBox) skyBoxes.get(key);
+		if (skyBox != null) {
+			return skyBox;
 		}
-		@Pc(52) Class105[] local52 = null;
+		@Pc(52) SkyBoxSphere[] spheres = null;
 		@Pc(56) SkyBoxType type = get(id);
-		if (type.anIntArray466 != null) {
-			local52 = new Class105[type.anIntArray466.length];
-			for (@Pc(68) int local68 = 0; local68 < local52.length; local68++) {
-				@Pc(83) SkyBoxSphereType local83 = SkyBoxSphereTypeList.get(type.anIntArray466[local68]);
-				local52[local68] = new Class105(local83.anInt4706, local83.anInt4698, local83.anInt4696, local83.anInt4697, local83.anInt4700, local83.anInt4707, local83.anInt4703, local83.aBoolean327);
+		if (type.spheres != null) {
+			spheres = new SkyBoxSphere[type.spheres.length];
+			for (@Pc(68) int i = 0; i < spheres.length; i++) {
+				@Pc(83) SkyBoxSphereType sphereType = SkyBoxSphereTypeList.get(type.spheres[i]);
+				spheres[i] = new SkyBoxSphere(sphereType.anInt4706, sphereType.anInt4698, sphereType.anInt4696, sphereType.anInt4697, sphereType.anInt4700, sphereType.anInt4707, sphereType.anInt4703, sphereType.aBoolean327);
 			}
 		}
-		@Pc(120) Class47 local120 = new Class47(type.anInt4405, local52, type.anInt4399, arg0, arg1, arg3);
-		aClass26_11.put(local39, local120);
-		return local120;
+		@Pc(120) SkyBox newSkyBox = new SkyBox(type.textureId, spheres, type.defaultSphereIndex, arg0, arg1, arg3);
+		skyBoxes.put(key, newSkyBox);
+		return newSkyBox;
 	}
 
 	@OriginalMember(owner = "client!dm", name = "b", descriptor = "(I)V")
 	public static void clear() {
 		types.clear();
-		aClass26_11.clear();
+		skyBoxes.clear();
 	}
 
 	@OriginalMember(owner = "client!qc", name = "a", descriptor = "(I)V")
 	public static void removeSoft() {
 		types.removeSoft();
-		aClass26_11.removeSoft();
+		skyBoxes.removeSoft();
 	}
 
 	@OriginalMember(owner = "client!qj", name = "c", descriptor = "(II)V")
 	public static void clean() {
 		types.clean(5);
-		aClass26_11.clean(5);
+		skyBoxes.clean(5);
 	}
 }

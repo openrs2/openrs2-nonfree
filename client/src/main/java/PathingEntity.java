@@ -148,7 +148,7 @@ public abstract class PathingEntity extends Entity {
 			entity.seqDelay--;
 		}
 		for (@Pc(746) int i = 0; i < entity.aClass150Array3.length; i++) {
-			@Pc(760) Class150 local760 = entity.aClass150Array3[i];
+			@Pc(760) Seq local760 = entity.aClass150Array3[i];
 			if (local760 != null) {
 				if (local760.delay > 0) {
 					local760.delay--;
@@ -572,7 +572,7 @@ public abstract class PathingEntity extends Entity {
 	public int anInt3968 = 0;
 
 	@OriginalMember(owner = "client!qc", name = "G", descriptor = "[Lclient!re;")
-	public final Class150[] aClass150Array3 = new Class150[12];
+	public final Seq[] aClass150Array3 = new Seq[12];
 
 	@OriginalMember(owner = "client!qc", name = "I", descriptor = "I")
 	private int anInt3978 = 0;

@@ -247,7 +247,7 @@ public final class LightingManager {
 			if (light.linkBelow) {
 				level--;
 			}
-			if (light.aClass135_1 != null) {
+			if (light.groundModel != null) {
 				@Pc(76) int local76 = 0;
 				@Pc(84) int z0 = (light.z >> 7) - light.radius;
 				@Pc(92) int z1 = (light.z >> 7) + light.radius;
@@ -276,7 +276,7 @@ public final class LightingManager {
 						if (level < 0 || tile != null && tile.aBoolean257) {
 							GlRenderer.method1613(201.5F - (float) light.level * 50.0F - 1.5F);
 							gl.glTexEnvfv(GL.GL_TEXTURE_ENV, GL.GL_TEXTURE_ENV_COLOR, new float[] { 0.0F, 0.0F, 0.0F, light.alpha }, 0);
-							light.aClass135_1.method3433();
+							light.groundModel.render();
 							continue nextLight;
 						}
 					}

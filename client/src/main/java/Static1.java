@@ -6,7 +6,7 @@ public final class Static1 {
 	public static int centralZoneZ;
 
 	@OriginalMember(owner = "client!ab", name = "d", descriptor = "Lclient!ib;")
-	public static SkyBox aClass4_Sub3_Sub10_1;
+	public static SkyBoxCube aClass4_Sub3_Sub10_1;
 
 	@OriginalMember(owner = "client!ab", name = "j", descriptor = "Lsignlink!vk;")
 	public static PrivilegedRequest openUrlRequest;
@@ -57,7 +57,7 @@ public final class Static1 {
 	public static Sprite aClass4_Sub3_Sub14_1;
 
 	@OriginalMember(owner = "client!bk", name = "g", descriptor = "Lclient!ib;")
-	public static SkyBox aClass4_Sub3_Sub10_2;
+	public static SkyBoxCube aClass4_Sub3_Sub10_2;
 
 	@OriginalMember(owner = "client!bn", name = "C", descriptor = "I")
 	public static int anInt403;
@@ -157,9 +157,6 @@ public final class Static1 {
 
 	@OriginalMember(owner = "client!bi", name = "s", descriptor = "I")
 	public static int anInt315 = 0;
-
-	@OriginalMember(owner = "client!bj", name = "b", descriptor = "Z")
-	public static boolean aBoolean21 = false;
 
 	@OriginalMember(owner = "client!bk", name = "e", descriptor = "S")
 	public static short aShort9 = 1;

@@ -1,3 +1,4 @@
+import java.nio.ByteBuffer;
 import javax.media.opengl.GL;
 
 import org.openrs2.deob.annotation.OriginalArg;
@@ -6,7 +7,244 @@ import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
 @OriginalClass("client!kg")
-public final class Class105 {
+public final class SkyBoxSphere {
+
+	@OriginalMember(owner = "client!eh", name = "k", descriptor = "Lclient!fh;")
+	private static Js5 modelsArchive;
+
+	@OriginalMember(owner = "client!kg", name = "d", descriptor = "[I")
+	private static final int[] previousClip = new int[4];
+
+	@OriginalMember(owner = "client!kg", name = "g", descriptor = "I")
+	private static int staticContextId = -1;
+
+	@OriginalMember(owner = "client!kg", name = "w", descriptor = "I")
+	private static int anInt2868 = -1;
+
+	@OriginalMember(owner = "client!kg", name = "b", descriptor = "Ljava/nio/ByteBuffer;")
+	private static ByteBuffer vertexBuffer;
+
+	@OriginalMember(owner = "client!kg", name = "h", descriptor = "Ljava/nio/ByteBuffer;")
+	private static ByteBuffer indexBuffer;
+
+	@OriginalMember(owner = "client!kg", name = "o", descriptor = "Lclient!ml;")
+	private static RawModel model;
+
+	@OriginalMember(owner = "client!kg", name = "v", descriptor = "[B")
+	private static byte[] aByteArray29;
+
+	@OriginalMember(owner = "client!eh", name = "a", descriptor = "(Lclient!fh;)V")
+	public static void init(@OriginalArg(0) Js5 modelsArchive) {
+		SkyBoxSphere.modelsArchive = modelsArchive;
+	}
+
+	@OriginalMember(owner = "client!kg", name = "b", descriptor = "()V")
+	private static void method2295() {
+		if (aByteArray29 != null) {
+			return;
+		}
+		aByteArray29 = new byte[16384];
+		for (@Pc(6) int local6 = 0; local6 < 64; local6++) {
+			@Pc(13) int local13 = 64 - local6;
+			local13 *= local13;
+			@Pc(23) int local23 = 128 - local6 - 1;
+			@Pc(27) int local27 = local6 * 128;
+			@Pc(31) int local31 = local23 * 128;
+			for (@Pc(33) int local33 = 0; local33 < 64; local33++) {
+				@Pc(40) int local40 = 64 - local33;
+				local40 *= local40;
+				@Pc(50) int local50 = 128 - local33 - 1;
+				@Pc(60) int local60 = 256 - (local40 + local13 << 8) / 4096;
+				@Pc(68) int local68 = local60 * 16 * 192 / 1536;
+				if (local68 < 0) {
+					local68 = 0;
+				} else if (local68 > 255) {
+					local68 = 255;
+				}
+				aByteArray29[local27 + local33] = aByteArray29[local27 + local50] = aByteArray29[local31 + local33] = aByteArray29[local31 + local50] = (byte) local68;
+			}
+		}
+	}
+
+	@OriginalMember(owner = "client!kg", name = "c", descriptor = "()V")
+	private static void method2296() {
+		if (model != null) {
+			return;
+		}
+		@Pc(10) RawModel model = SkyBoxSphere.model = new RawModel(260, 480, 0);
+		@Pc(13) int[] vertexX = model.vertexX;
+		@Pc(16) int[] vertexY = model.vertexY;
+		@Pc(19) int[] vertexZ = model.vertexZ;
+		@Pc(22) int[] triangleVertexA = model.triangleVertexA;
+		@Pc(25) int[] triangleVertexB = model.triangleVertexB;
+		@Pc(28) int[] triangleVertexC = model.triangleVertexC;
+		model.vertexCount = 2;
+		vertexX[0] = 0;
+		vertexY[0] = 128;
+		vertexZ[0] = 0;
+		vertexX[1] = 0;
+		vertexY[1] = -128;
+		vertexZ[1] = 0;
+		for (@Pc(57) int i = 0; i <= 16; i++) {
+			@Pc(66) int local66 = i * 1024 / 16;
+			@Pc(72) int local72 = MathUtils.SINE[local66] >> 1;
+			@Pc(78) int local78 = MathUtils.COSINE[local66] >> 1;
+			for (@Pc(80) int j = 1; j < 16; j++) {
+				@Pc(89) int local89 = j * 1024 / 16;
+				@Pc(95) int y = MathUtils.COSINE[local89] >> 9;
+				@Pc(105) int z = (MathUtils.SINE[local89] >> 1) * local72 >> 23;
+				@Pc(115) int x = (MathUtils.SINE[local89] >> 1) * local78 >> 23;
+				vertexX[model.vertexCount] = x;
+				vertexY[model.vertexCount] = y;
+				vertexZ[model.vertexCount] = -z;
+				model.vertexCount++;
+			}
+			if (i > 0) {
+				@Pc(147) int local147 = i * 15 + 2;
+				@Pc(151) int local151 = local147 - 15;
+				triangleVertexA[model.triangleCount] = 0;
+				triangleVertexB[model.triangleCount] = local151;
+				triangleVertexC[model.triangleCount] = local147;
+				model.triangleCount++;
+				for (@Pc(174) int j = 1; j < 15; j++) {
+					@Pc(181) int local181 = local151 + 1;
+					@Pc(185) int local185 = local147 + 1;
+					triangleVertexA[model.triangleCount] = local151;
+					triangleVertexB[model.triangleCount] = local181;
+					triangleVertexC[model.triangleCount] = local147;
+					model.triangleCount++;
+					triangleVertexA[model.triangleCount] = local181;
+					triangleVertexB[model.triangleCount] = local185;
+					triangleVertexC[model.triangleCount] = local147;
+					model.triangleCount++;
+					local151 = local181;
+					local147 = local185;
+				}
+				triangleVertexA[model.triangleCount] = local147;
+				triangleVertexB[model.triangleCount] = local151;
+				triangleVertexC[model.triangleCount] = 1;
+				model.triangleCount++;
+			}
+		}
+		model.anInt3355 = model.vertexCount;
+		model.aByteArray35 = null;
+		model.triangleTextures = null;
+		model.triangleBones = null;
+		model.vertexBones = null;
+		model.trianglePriorities = null;
+	}
+
+	@OriginalMember(owner = "client!kg", name = "d", descriptor = "()V")
+	private static void buffer() {
+		if (vertexBuffer != null) {
+			return;
+		}
+		@Pc(6) Buffer indexBuffer = new Buffer(1088);
+		@Pc(11) Buffer vertexBuffer = new Buffer(5140);
+		if (GlRenderer.bigEndian) {
+			vertexBuffer.writeFloat(0.0F);
+			vertexBuffer.writeFloat(1.0F);
+			vertexBuffer.writeFloat(0.0F);
+			vertexBuffer.writeFloat(0.5F);
+			vertexBuffer.writeFloat(1.0F);
+			vertexBuffer.writeFloat(0.0F);
+			vertexBuffer.writeFloat(-1.0F);
+			vertexBuffer.writeFloat(0.0F);
+			vertexBuffer.writeFloat(0.5F);
+			vertexBuffer.writeFloat(0.0F);
+		} else {
+			vertexBuffer.writeFloatLE(0.0F);
+			vertexBuffer.writeFloatLE(1.0F);
+			vertexBuffer.writeFloatLE(0.0F);
+			vertexBuffer.writeFloatLE(0.5F);
+			vertexBuffer.writeFloatLE(1.0F);
+			vertexBuffer.writeFloatLE(0.0F);
+			vertexBuffer.writeFloatLE(-1.0F);
+			vertexBuffer.writeFloatLE(0.0F);
+			vertexBuffer.writeFloatLE(0.5F);
+			vertexBuffer.writeFloatLE(0.0F);
+		}
+		@Pc(96) float s = 0.0F;
+		@Pc(98) float t = 0.05882353F;
+		for (@Pc(100) int i = 0; i <= 16; i++) {
+			@Pc(109) int local109 = i * 1024 / 16;
+			@Pc(116) float local116 = (float) MathUtils.SINE[local109] / 65535.0F;
+			@Pc(123) float local123 = (float) MathUtils.COSINE[local109] / 65535.0F;
+			for (@Pc(125) int j = 1; j < 16; j++) {
+				@Pc(134) int local134 = j * 1024 / 16;
+				@Pc(141) float y = (float) MathUtils.COSINE[local134] / 65535.0F;
+				@Pc(150) float z = (float) MathUtils.SINE[local134] * local116 / 65535.0F;
+				@Pc(159) float x = (float) MathUtils.SINE[local134] * local123 / 65535.0F;
+				if (GlRenderer.bigEndian) {
+					vertexBuffer.writeFloat(x);
+					vertexBuffer.writeFloat(y);
+					vertexBuffer.writeFloat(z);
+					vertexBuffer.writeFloat(s);
+					vertexBuffer.writeFloat(t);
+				} else {
+					vertexBuffer.writeFloatLE(x);
+					vertexBuffer.writeFloatLE(y);
+					vertexBuffer.writeFloatLE(z);
+					vertexBuffer.writeFloatLE(s);
+					vertexBuffer.writeFloatLE(t);
+				}
+				t += 0.05882353F;
+			}
+			if (i > 0) {
+				@Pc(216) int local216 = i * 15 + 2;
+				@Pc(220) int local220 = local216 - 15;
+				if (GlRenderer.bigEndian) {
+					indexBuffer.writeShort(0);
+					indexBuffer.writeShort(0);
+					for (@Pc(232) int j = 1; j < 16; j++) {
+						indexBuffer.writeShort(local220++);
+						indexBuffer.writeShort(local216++);
+					}
+					indexBuffer.writeShort(1);
+					indexBuffer.writeShort(1);
+				} else {
+					indexBuffer.writeShortLE(0);
+					indexBuffer.writeShortLE(0);
+					for (@Pc(266) int j = 1; j < 16; j++) {
+						indexBuffer.writeShortLE(local220++);
+						indexBuffer.writeShortLE(local216++);
+					}
+					indexBuffer.writeShortLE(1);
+					indexBuffer.writeShortLE(1);
+				}
+			}
+			s += 0.05882353F;
+			t = 0.05882353F;
+		}
+		SkyBoxSphere.vertexBuffer = ByteBuffer.allocateDirect(vertexBuffer.position);
+		SkyBoxSphere.vertexBuffer.put(vertexBuffer.bytes, 0, vertexBuffer.position);
+		SkyBoxSphere.vertexBuffer.flip();
+		SkyBoxSphere.indexBuffer = ByteBuffer.allocateDirect(indexBuffer.position);
+		SkyBoxSphere.indexBuffer.put(indexBuffer.bytes, 0, indexBuffer.position);
+		SkyBoxSphere.indexBuffer.flip();
+	}
+
+	@OriginalMember(owner = "client!kg", name = "g", descriptor = "()V")
+	public static void clear() {
+		if (anInt2868 != -1) {
+			GlCleaner.deleteTexture(anInt2868, 0, staticContextId);
+		}
+		anInt2868 = -1;
+		staticContextId = -1;
+		vertexBuffer = null;
+		indexBuffer = null;
+		model = null;
+		aByteArray29 = null;
+	}
+
+	@OriginalMember(owner = "client!kg", name = "h", descriptor = "()V")
+	private static void method2305() {
+		method2295();
+		if (anInt2868 == -1 || staticContextId != GlCleaner.contextId) {
+			anInt2868 = GlTextureAllocator.allocateTextureAndStorage2d(GlTextureAllocator.GL_ALPHA, aByteArray29);
+			staticContextId = GlCleaner.contextId;
+		}
+	}
 
 	@OriginalMember(owner = "client!kg", name = "a", descriptor = "Lclient!vn;")
 	private SoftwareSprite aClass4_Sub3_Sub14_Sub1_5;
@@ -51,7 +289,7 @@ public final class Class105 {
 	private final int textureId;
 
 	@OriginalMember(owner = "client!kg", name = "j", descriptor = "I")
-	private final int anInt2859;
+	private final int clearColor;
 
 	@OriginalMember(owner = "client!kg", name = "c", descriptor = "I")
 	private final int anInt2854;
@@ -60,13 +298,13 @@ public final class Class105 {
 	private final int anInt2869;
 
 	@OriginalMember(owner = "client!kg", name = "<init>", descriptor = "(IIIIIIIZ)V")
-	public Class105(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) boolean arg7) {
+	public SkyBoxSphere(@OriginalArg(0) int arg0, @OriginalArg(1) int textureId, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) boolean arg7) {
 		this.anInt2863 = arg2;
 		this.anInt2867 = arg3;
 		this.anInt2862 = arg4;
 		this.aBoolean199 = arg7;
-		this.textureId = arg1;
-		this.anInt2859 = arg6;
+		this.textureId = textureId;
+		this.clearColor = arg6;
 		this.anInt2854 = arg5;
 		this.anInt2869 = arg0;
 	}
@@ -79,7 +317,7 @@ public final class Class105 {
 			for (@Pc(15) int local15 = -arg6; local15 < 0; local15++) {
 				if (arg0[arg4] != 0) {
 					@Pc(25) int local25 = arg0[arg4];
-					@Pc(37) int local37 = (Static4.aByteArray29[(arg2 >> 16) + local12] & 0xFF) + 64;
+					@Pc(37) int local37 = (aByteArray29[(arg2 >> 16) + local12] & 0xFF) + 64;
 					if (local37 > 255) {
 						local37 = 255;
 					}
@@ -96,13 +334,13 @@ public final class Class105 {
 	}
 
 	@OriginalMember(owner = "client!kg", name = "a", descriptor = "(Lclient!kg;)V")
-	private void method2289(@OriginalArg(0) Class105 arg0) {
-		Static22.method2297();
-		Static22.method2305();
+	private void method2289(@OriginalArg(0) SkyBoxSphere arg0) {
+		buffer();
+		method2305();
 		@Pc(3) GL gl = GlRenderer.gl;
-		GlRaster.getClip(Static4.anIntArray256);
+		GlRaster.getClip(previousClip);
 		GlRaster.resetClip();
-		gl.glClearColor((float) (this.anInt2859 >> 16 & 0xFF) / 255.0F, (float) (this.anInt2859 >> 8 & 0xFF) / 255.0F, (float) (this.anInt2859 & 0xFF) / 255.0F, 0.0F);
+		gl.glClearColor((float) (this.clearColor >> 16 & 0xFF) / 255.0F, (float) (this.clearColor >> 8 & 0xFF) / 255.0F, (float) (this.clearColor & 0xFF) / 255.0F, 0.0F);
 		gl.glClear(GL.GL_DEPTH_BUFFER_BIT | GL.GL_COLOR_BUFFER_BIT);
 		@Pc(39) int local39 = 0;
 		@Pc(41) int local41 = 0;
@@ -137,7 +375,7 @@ public final class Class105 {
 		Static25.method2775((float) -local39, (float) -local41, (float) local43);
 		Static25.method2782(16777215, 0.5F, 0.5F, 1.0F);
 		Static25.method2777();
-		if (this.anInt2859 != 0) {
+		if (this.clearColor != 0) {
 			gl.glScalef(0.8125F, 0.8125F, 1.0F);
 		}
 		Rasteriser.textureProvider.method454(this.textureId, this.textureSize);
@@ -148,22 +386,22 @@ public final class Class105 {
 		}
 		gl.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
 		gl.glDisableClientState(GL.GL_COLOR_ARRAY);
-		gl.glNormalPointer(GL.GL_FLOAT, 20, Static4.aByteBuffer9.position(0));
-		gl.glVertexPointer(2, GL.GL_FLOAT, 20, Static4.aByteBuffer9.position(0));
-		gl.glTexCoordPointer(2, GL.GL_FLOAT, 20, Static4.aByteBuffer9.position(12));
-		gl.glDrawElements(GL.GL_TRIANGLE_STRIP, Static4.aByteBuffer10.limit() / 2, GL.GL_UNSIGNED_SHORT, Static4.aByteBuffer10.position(0));
+		gl.glNormalPointer(GL.GL_FLOAT, 20, vertexBuffer.position(0));
+		gl.glVertexPointer(2, GL.GL_FLOAT, 20, vertexBuffer.position(0));
+		gl.glTexCoordPointer(2, GL.GL_FLOAT, 20, vertexBuffer.position(12));
+		gl.glDrawElements(GL.GL_TRIANGLE_STRIP, indexBuffer.limit() / 2, GL.GL_UNSIGNED_SHORT, indexBuffer.position(0));
 		gl.glEnableClientState(GL.GL_COLOR_ARRAY);
 		GlRenderer.setLightingEnabled(false);
-		if (this.anInt2859 != 0) {
+		if (this.clearColor != 0) {
 			MaterialManager.setMaterial(0, 0);
 			GlRenderer.setTextureCombineRgbMode(1);
 			GlRenderer.setTextureCombineAlphaMode(0);
-			GlRenderer.setTextureId(Static4.anInt2868);
+			GlRenderer.setTextureId(anInt2868);
 			gl.glColorMask(true, true, true, false);
 			gl.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_SRC0_RGB, GL.GL_PREVIOUS);
 			gl.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_OPERAND0_ALPHA, GL.GL_ONE_MINUS_SRC_ALPHA);
 			gl.glBegin(GL.GL_QUADS);
-			gl.glColor4ub((byte) (this.anInt2859 >> 16), (byte) (this.anInt2859 >> 8), (byte) this.anInt2859, (byte) 127);
+			gl.glColor4ub((byte) (this.clearColor >> 16), (byte) (this.clearColor >> 8), (byte) this.clearColor, (byte) 127);
 			gl.glTexCoord2f(0.0F, 0.0F);
 			gl.glVertex2i(-1, -1);
 			gl.glTexCoord2f(1.0F, 0.0F);
@@ -178,7 +416,7 @@ public final class Class105 {
 			gl.glColorMask(true, true, true, true);
 			gl.glBlendFunc(GL.GL_ONE_MINUS_DST_ALPHA, GL.GL_DST_ALPHA);
 			gl.glBegin(GL.GL_QUADS);
-			gl.glColor4ub((byte) (this.anInt2859 >> 16), (byte) (this.anInt2859 >> 8), (byte) this.anInt2859, (byte) -1);
+			gl.glColor4ub((byte) (this.clearColor >> 16), (byte) (this.clearColor >> 8), (byte) this.clearColor, (byte) -1);
 			gl.glTexCoord2f(0.0F, 0.0F);
 			gl.glVertex2i(-1, -1);
 			gl.glTexCoord2f(1.0F, 0.0F);
@@ -194,17 +432,17 @@ public final class Class105 {
 		GlFrameBufferAllocator.restoreCamera();
 		GlRenderer.setTextureId(this.anInt2864);
 		gl.glCopyTexImage2D(GL.GL_TEXTURE_2D, GL.GL_POINTS, GL.GL_RGBA, 0, 0, this.textureSize, this.textureSize, GL.GL_POINTS);
-		GlRaster.setClip(Static4.anIntArray256);
+		GlRaster.setClip(previousClip);
 	}
 
 	@OriginalMember(owner = "client!kg", name = "b", descriptor = "(Lclient!kg;)Z")
-	private boolean method2290(@OriginalArg(0) Class105 arg0) {
-		@Pc(5) RawModel local5 = RawModel.create(Static2.aClass58_37, this.textureId);
+	private boolean method2290(@OriginalArg(0) SkyBoxSphere arg0) {
+		@Pc(5) RawModel local5 = RawModel.create(modelsArchive, this.textureId);
 		if (local5 == null) {
 			return false;
 		}
 		@Pc(11) GL gl = GlRenderer.gl;
-		GlRaster.getClip(Static4.anIntArray256);
+		GlRaster.getClip(previousClip);
 		GlRaster.resetClip();
 		gl.glClearColor(0.0F, 0.0F, 0.0F, 0.0F);
 		gl.glClear(GL.GL_DEPTH_BUFFER_BIT | GL.GL_COLOR_BUFFER_BIT);
@@ -256,7 +494,7 @@ public final class Class105 {
 		GlFrameBufferAllocator.restoreCamera();
 		GlRenderer.setTextureId(this.anInt2864);
 		gl.glCopyTexImage2D(GL.GL_TEXTURE_2D, GL.GL_POINTS, GL.GL_RGBA, 0, 0, this.textureSize, this.textureSize, GL.GL_POINTS);
-		GlRaster.setClip(Static4.anIntArray256);
+		GlRaster.setClip(previousClip);
 		return true;
 	}
 
@@ -291,7 +529,7 @@ public final class Class105 {
 			local15 = local9 * local73;
 			local23 += local73;
 		}
-		this.method2307(SoftwareRaster.pixels, this.anInt2859, local15, local17, local19, local23, local2, local5, local9, local13);
+		this.method2307(SoftwareRaster.pixels, this.clearColor, local15, local17, local19, local23, local2, local5, local9, local13);
 	}
 
 	@OriginalMember(owner = "client!kg", name = "a", descriptor = "(IIIIII)V")
@@ -337,7 +575,7 @@ public final class Class105 {
 	}
 
 	@OriginalMember(owner = "client!kg", name = "c", descriptor = "(Lclient!kg;)V")
-	public final void method2293(@OriginalArg(0) Class105 arg0) {
+	public final void method2293(@OriginalArg(0) SkyBoxSphere arg0) {
 		if (this.anInt2869 == 0) {
 			return;
 		}
@@ -418,7 +656,7 @@ public final class Class105 {
 	}
 
 	@OriginalMember(owner = "client!kg", name = "d", descriptor = "(Lclient!kg;)Z")
-	private boolean method2298(@OriginalArg(0) Class105 arg0) {
+	private boolean method2298(@OriginalArg(0) SkyBoxSphere arg0) {
 		if (this.aClass4_Sub3_Sub14_Sub1_5 == null) {
 			if (this.anInt2869 == 0) {
 				this.aClass4_Sub3_Sub14_Sub1_5 = Rasteriser.textureProvider.getSprite(this.textureId, true, ColorUtils.brightness, this.textureSize);
@@ -432,7 +670,7 @@ public final class Class105 {
 	}
 
 	@OriginalMember(owner = "client!kg", name = "a", descriptor = "(IIIIIILclient!kg;)V")
-	public final void method2299(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) Class105 arg6) {
+	public final void method2299(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) SkyBoxSphere arg6) {
 		@Pc(6) int local6 = this.anInt2865 - arg4 & 0x7FF;
 		@Pc(13) int local13 = this.anInt2855 - arg5 & 0x7FF;
 		if (local13 > 1024) {
@@ -451,11 +689,11 @@ public final class Class105 {
 	}
 
 	@OriginalMember(owner = "client!kg", name = "e", descriptor = "(Lclient!kg;)V")
-	private void method2300(@OriginalArg(0) Class105 arg0) {
-		Static22.method2296();
-		Static22.method2295();
+	private void method2300(@OriginalArg(0) SkyBoxSphere arg0) {
+		method2296();
+		method2295();
 		this.aClass4_Sub3_Sub14_Sub1_5 = new SoftwareAlphaSprite(this.textureSize, this.textureSize);
-		SoftwareRaster.getClip(Static4.anIntArray256);
+		SoftwareRaster.getClip(previousClip);
 		this.aClass4_Sub3_Sub14_Sub1_5.makeTarget();
 		Rasteriser.method2561();
 		SoftwareRaster.fillRect(0, 0, this.textureSize, this.textureSize, 0);
@@ -488,22 +726,22 @@ public final class Class105 {
 			local30 = local30 * local123 + 32767 - local26 * local119 >> 16;
 			local26 = local135;
 		}
-		ArrayUtils.fill(Static4.aClass53_Sub3_1.triangleColors, 0, Static4.aClass53_Sub3_1.triangleCount, (short) Rasteriser.textureProvider.getAverageColor(this.textureId));
-		@Pc(172) SoftwareModel local172 = Static4.aClass53_Sub3_1.createSoftwareModel(64, 512, -local26, -local28, -local30);
+		ArrayUtils.fill(model.triangleColors, 0, model.triangleCount, (short) Rasteriser.textureProvider.getAverageColor(this.textureId));
+		@Pc(172) SoftwareModel local172 = model.createSoftwareModel(64, 512, -local26, -local28, -local30);
 		@Pc(178) int local178 = local172.getMaxX() - local172.getMinX();
 		@Pc(184) int local184 = local172.getMaxY() - local172.getMinY();
 		if (local178 > local184) {
-			@Pc(208) int local208 = this.anInt2859 == 0 ? (local178 << 9) / this.textureSize : (local178 * 16 << 9) / (this.textureSize * 13);
+			@Pc(208) int local208 = this.clearColor == 0 ? (local178 << 9) / this.textureSize : (local178 * 16 << 9) / (this.textureSize * 13);
 			local172.method2911(0, 0, 0, 0, 0, 0, local208);
 		} else {
-			@Pc(240) int local240 = this.anInt2859 == 0 ? (local184 << 9) / this.textureSize : (local184 * 16 << 9) / (this.textureSize * 13);
+			@Pc(240) int local240 = this.clearColor == 0 ? (local184 << 9) / this.textureSize : (local184 * 16 << 9) / (this.textureSize * 13);
 			local172.method2911(0, 0, 0, 0, 0, 0, local240);
 		}
-		if (this.anInt2859 == 0) {
-			for (@Pc(260) int local260 = 0; local260 < SoftwareRaster.pixels.length; local260++) {
-				if (SoftwareRaster.pixels[local260] != 0) {
-					@Pc(269) int[] local269 = SoftwareRaster.pixels;
-					local269[local260] |= -16777216;
+		if (this.clearColor == 0) {
+			for (@Pc(260) int i = 0; i < SoftwareRaster.pixels.length; i++) {
+				if (SoftwareRaster.pixels[i] != 0) {
+					@Pc(269) int[] pixels = SoftwareRaster.pixels;
+					pixels[i] |= 0xFF000000;
 				}
 			}
 		} else {
@@ -511,7 +749,7 @@ public final class Class105 {
 			this.method2291();
 		}
 		client.frameBuffer.makeTarget();
-		SoftwareRaster.setClip(Static4.anIntArray256);
+		SoftwareRaster.setClip(previousClip);
 		Rasteriser.method2561();
 	}
 
@@ -547,17 +785,17 @@ public final class Class105 {
 			local37 = local21 * local101;
 			local35 += local101;
 		}
-		this.method2288(SoftwareRaster.pixels, this.anInt2859, local37, local39, local31, local35, local15, local17, local21, local25);
+		this.method2288(SoftwareRaster.pixels, this.clearColor, local37, local39, local31, local35, local15, local17, local21, local25);
 	}
 
 	@OriginalMember(owner = "client!kg", name = "f", descriptor = "(Lclient!kg;)V")
-	private void method2304(@OriginalArg(0) Class105 arg0) {
-		@Pc(5) RawModel local5 = RawModel.create(Static2.aClass58_37, this.textureId);
+	private void method2304(@OriginalArg(0) SkyBoxSphere arg0) {
+		@Pc(5) RawModel local5 = RawModel.create(modelsArchive, this.textureId);
 		if (local5 == null) {
 			return;
 		}
 		this.aClass4_Sub3_Sub14_Sub1_5 = new SoftwareSprite(this.textureSize, this.textureSize);
-		SoftwareRaster.getClip(Static4.anIntArray256);
+		SoftwareRaster.getClip(previousClip);
 		this.aClass4_Sub3_Sub14_Sub1_5.makeTarget();
 		Rasteriser.method2561();
 		SoftwareRaster.fillRect(0, 0, this.textureSize, this.textureSize, 0);
@@ -601,7 +839,7 @@ public final class Class105 {
 			local167.method2911(0, 0, 0, -local186, -local193, 0, (local179 << 9) / this.textureSize);
 		}
 		client.frameBuffer.makeTarget();
-		SoftwareRaster.setClip(Static4.anIntArray256);
+		SoftwareRaster.setClip(previousClip);
 		Rasteriser.method2561();
 	}
 
@@ -615,22 +853,22 @@ public final class Class105 {
 	}
 
 	@OriginalMember(owner = "client!kg", name = "a", descriptor = "([IIIIIIIIIII)V")
-	private void method2307(@OriginalArg(0) int[] arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) int arg8, @OriginalArg(9) int arg9) {
+	private void method2307(@OriginalArg(0) int[] pixels, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int i, @OriginalArg(5) int stride, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) int arg8, @OriginalArg(9) int arg9) {
 		@Pc(1) int local1 = arg2;
 		for (@Pc(4) int local4 = -arg7; local4 < 0; local4++) {
 			@Pc(12) int local12 = (arg3 >> 16) * 128;
 			for (@Pc(15) int local15 = -arg6; local15 < 0; local15++) {
-				if (arg0[arg4] == 0) {
-					arg0[arg4] = (Static4.aByteArray29[(arg2 >> 16) + local12] & 0xFF) << 24 | arg1;
+				if (pixels[i] == 0) {
+					pixels[i] = (aByteArray29[(arg2 >> 16) + local12] & 0xFF) << 24 | arg1;
 				} else {
-					arg0[arg4] |= -16777216;
+					pixels[i] |= 0xFF000000;
 				}
-				arg4++;
+				i++;
 				arg2 += arg8;
 			}
 			arg3 += arg9;
 			arg2 = local1;
-			arg4 += arg5;
+			i += stride;
 		}
 	}
 }

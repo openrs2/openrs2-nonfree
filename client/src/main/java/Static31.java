@@ -179,7 +179,7 @@ public final class Static31 {
 			}
 			if (Static6.anInt4863 >= 0) {
 				GlRenderer.clearDepthBuffer();
-				@Pc(427) Class47 local427 = SkyBoxTypeList.method936(Static6.anInt4863, Static4.anInt5826, Static1.anInt466, Static5.anInt4303);
+				@Pc(427) SkyBox local427 = SkyBoxTypeList.getSkyBox(Static6.anInt4863, Static4.anInt5826, Static1.anInt466, Static5.anInt4303);
 				local427.method1025(Static5.anInt3774, arg0, arg4, arg3, arg1, Static5.anInt4066, Static5.anInt3656, local398);
 			} else {
 				GlRenderer.clearColorAndDepthBuffers(local398);
@@ -193,7 +193,7 @@ public final class Static31 {
 			SoftwareRaster.setClip(arg0, arg4, arg3 + arg0, arg4 + arg1);
 			Rasteriser.method2561();
 			if (Static6.anInt4863 >= 0) {
-				@Pc(328) Class47 local328 = SkyBoxTypeList.method936(Static6.anInt4863, Static4.anInt5826, Static1.anInt466, Static5.anInt4303);
+				@Pc(328) SkyBox local328 = SkyBoxTypeList.getSkyBox(Static6.anInt4863, Static4.anInt5826, Static1.anInt466, Static5.anInt4303);
 				local328.method1024(Static5.anInt3774, arg0, arg4, arg3, arg1, Static5.anInt4066, Static5.anInt3656);
 			} else {
 				SoftwareRaster.fillRect(arg0, arg4, arg3, arg1, 0);
@@ -559,13 +559,13 @@ public final class Static31 {
 				while (true) {
 					if (local1922 > 103) {
 						if (underwater) {
-							@Pc(2042) Class4_Sub12[] local2042 = Static22.method2389(arg1, Static4.tileOverlays[level], local1908, SceneGraph.anIntArrayArray10, underlayColors, local1912, Static2.tileShapes[level], local152, Static1.tileAngles[level], level, local1916, SceneGraph.surfaceTileHeights[0], Static4.tileFlags, Static2.tileUnderlays[level], SceneGraph.tileHeights[level]);
+							@Pc(2042) GroundModel[] local2042 = Static22.method2389(arg1, Static4.tileOverlays[level], local1908, SceneGraph.anIntArrayArray10, underlayColors, local1912, Static2.tileShapes[level], local152, Static1.tileAngles[level], level, local1916, SceneGraph.surfaceTileHeights[0], Static4.tileFlags, Static2.tileUnderlays[level], SceneGraph.tileHeights[level]);
 							Static18.method1679(level, local2042);
 							break;
 						}
-						@Pc(2076) Class4_Sub12[] local2076 = Static22.method2389(arg1, Static4.tileOverlays[level], local1908, null, underlayColors, local1912, Static2.tileShapes[level], local152, Static1.tileAngles[level], level, local1916, null, Static4.tileFlags, Static2.tileUnderlays[level], SceneGraph.tileHeights[level]);
-						@Pc(2100) Class4_Sub12[] local2100 = Static29.method3149(Static4.tileFlags, Static4.tileOverlays[level], local152, local1908, level, Static2.tileShapes[level], Static1.tileAngles[level], SceneGraph.tileHeights[level], Static2.tileUnderlays[level], local1912, local1916);
-						@Pc(2107) Class4_Sub12[] local2107 = new Class4_Sub12[local2076.length + local2100.length];
+						@Pc(2076) GroundModel[] local2076 = Static22.method2389(arg1, Static4.tileOverlays[level], local1908, null, underlayColors, local1912, Static2.tileShapes[level], local152, Static1.tileAngles[level], level, local1916, null, Static4.tileFlags, Static2.tileUnderlays[level], SceneGraph.tileHeights[level]);
+						@Pc(2100) GroundModel[] local2100 = Static29.method3149(Static4.tileFlags, Static4.tileOverlays[level], local152, local1908, level, Static2.tileShapes[level], Static1.tileAngles[level], SceneGraph.tileHeights[level], Static2.tileUnderlays[level], local1912, local1916);
+						@Pc(2107) GroundModel[] local2107 = new GroundModel[local2076.length + local2100.length];
 						for (@Pc(2109) int local2109 = 0; local2109 < local2076.length; local2109++) {
 							local2107[local2109] = local2076[local2109];
 						}
@@ -978,14 +978,14 @@ public final class Static31 {
 				Static5.anInt3636 = -1;
 				Static6.anInt5120 = -1;
 				for (@Pc(273) int local273 = 0; local273 < SceneGraph.aClass4_Sub12ArrayArray2[0].length; local273++) {
-					@Pc(285) Class4_Sub12 local285 = SceneGraph.aClass4_Sub12ArrayArray2[0][local273];
+					@Pc(285) GroundModel local285 = SceneGraph.aClass4_Sub12ArrayArray2[0][local273];
 					@Pc(294) float local294 = 251.5F - (local285.aBoolean162 ? 1.0F : 0.5F);
 					if (local285.anInt2351 != Static5.anInt3636) {
 						Static5.anInt3636 = local285.anInt2351;
 						Static18.method4372(local285.anInt2351);
 						Static25.method2772(Static12.method723());
 					}
-					local285.method1867(SceneGraph.tiles, local294, false);
+					local285.render(SceneGraph.tiles, local294, false);
 				}
 				UnderwaterMaterialRenderer.method314();
 			} else {
@@ -996,12 +996,12 @@ public final class Static31 {
 						break;
 					}
 					for (@Pc(324) int local324 = 0; local324 < SceneGraph.aClass4_Sub12ArrayArray2[local319].length; local324++) {
-						@Pc(336) Class4_Sub12 local336 = SceneGraph.aClass4_Sub12ArrayArray2[local319][local324];
+						@Pc(336) GroundModel local336 = SceneGraph.aClass4_Sub12ArrayArray2[local319][local324];
 						@Pc(350) float local350 = 201.5F - (float) local319 * 50.0F - (local336.aBoolean162 ? 1.0F : 0.5F);
 						if (local336.texture != -1 && Static32.method3920(Rasteriser.textureProvider.getMaterialType(local336.texture)) && Preferences.highDetailWater) {
 							Static18.method4372(local336.anInt2351);
 						}
-						local336.method1867(SceneGraph.tiles, local350, false);
+						local336.render(SceneGraph.tiles, local350, false);
 					}
 					if (local319 == 0 && Preferences.sceneryShadows > 0) {
 						GlRenderer.method1613(101.5F);

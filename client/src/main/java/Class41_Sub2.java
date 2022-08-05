@@ -19,8 +19,8 @@ public class Class41_Sub2 extends Class41 {
 	private final int[] anIntArray406 = new int[this.anInt3772];
 
 	@OriginalMember(owner = "client!rn", name = "<init>", descriptor = "(IIIIIF)V")
-	protected Class41_Sub2(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) float arg5) {
-		super(arg0, arg1, arg2, arg3, arg4);
+	protected Class41_Sub2(@OriginalArg(0) int seed, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) float arg5) {
+		super(seed, arg1, arg2, arg3, arg4);
 		for (@Pc(15) int local15 = 0; local15 < this.anInt3772; local15++) {
 			this.anIntArray406[local15] = (short) (Math.pow((double) arg5, (double) local15) * 4096.0D);
 		}

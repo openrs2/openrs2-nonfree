@@ -10,7 +10,7 @@ public final class SceneGraph {
 	public static int[][][] tileHeights;
 
 	@OriginalMember(owner = "client!nj", name = "k", descriptor = "[[Lclient!ih;")
-	public static Class4_Sub12[][] aClass4_Sub12ArrayArray2;
+	public static GroundModel[][] aClass4_Sub12ArrayArray2;
 
 	@OriginalMember(owner = "client!qg", name = "g", descriptor = "I")
 	public static int levels;
@@ -22,7 +22,7 @@ public final class SceneGraph {
 	public static int[][][] underwaterTileHeights;
 
 	@OriginalMember(owner = "client!v", name = "q", descriptor = "[[Lclient!ih;")
-	private static Class4_Sub12[][] aClass4_Sub12ArrayArray3;
+	private static GroundModel[][] aClass4_Sub12ArrayArray3;
 
 	@OriginalMember(owner = "client!je", name = "j", descriptor = "[[[Lclient!nh;")
 	private static Tile[][][] surfaceTiles;
@@ -31,7 +31,7 @@ public final class SceneGraph {
 	public static int[][][] surfaceTileHeights;
 
 	@OriginalMember(owner = "client!he", name = "t", descriptor = "[[Lclient!ih;")
-	public static Class4_Sub12[][] aClass4_Sub12ArrayArray1;
+	public static GroundModel[][] aClass4_Sub12ArrayArray1;
 
 	@OriginalMember(owner = "client!dj", name = "j", descriptor = "[[I")
 	public static int[][] anIntArrayArray10;
@@ -89,14 +89,14 @@ public final class SceneGraph {
 		surfaceTiles = new Tile[4][width][length];
 		surfaceTileHeights = new int[4][width + 1][length + 1];
 		if (GlRenderer.enabled) {
-			aClass4_Sub12ArrayArray1 = new Class4_Sub12[4][];
+			aClass4_Sub12ArrayArray1 = new GroundModel[4][];
 		}
 		if (hasUnderwaterLevel) {
 			underwaterTiles = new Tile[1][width][length];
 			anIntArrayArray10 = new int[width][length];
 			underwaterTileHeights = new int[1][width + 1][length + 1];
 			if (GlRenderer.enabled) {
-				aClass4_Sub12ArrayArray3 = new Class4_Sub12[1][];
+				aClass4_Sub12ArrayArray3 = new GroundModel[1][];
 			}
 		} else {
 			underwaterTiles = null;

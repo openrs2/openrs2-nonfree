@@ -5,8 +5,8 @@ import org.openrs2.deob.annotation.OriginalMember;
 public final class Class96 {
 
 	@OriginalMember(owner = "client!jh", name = "a", descriptor = "Lclient!vc;")
-	public Entity aClass53_3;
+	public Entity entity;
 
 	@OriginalMember(owner = "client!jh", name = "g", descriptor = "Lclient!fe;")
-	public SoftwareIndexedSprite aClass56_Sub1_3;
+	public SoftwareIndexedSprite sprite;
 }

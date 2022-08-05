@@ -1,5 +1,3 @@
-import java.nio.ByteBuffer;
-
 import org.openrs2.deob.annotation.OriginalMember;
 
 public final class Static4 {
@@ -21,18 +19,6 @@ public final class Static4 {
 
 	@OriginalMember(owner = "client!k", name = "d", descriptor = "I")
 	public static int anInt2741;
-
-	@OriginalMember(owner = "client!kg", name = "b", descriptor = "Ljava/nio/ByteBuffer;")
-	public static ByteBuffer aByteBuffer9;
-
-	@OriginalMember(owner = "client!kg", name = "h", descriptor = "Ljava/nio/ByteBuffer;")
-	public static ByteBuffer aByteBuffer10;
-
-	@OriginalMember(owner = "client!kg", name = "o", descriptor = "Lclient!ml;")
-	public static RawModel aClass53_Sub3_1;
-
-	@OriginalMember(owner = "client!kg", name = "v", descriptor = "[B")
-	public static byte[] aByteArray29;
 
 	@OriginalMember(owner = "client!kl", name = "Y", descriptor = "I")
 	public static int anInt2920;
@@ -138,18 +124,6 @@ public final class Static4 {
 
 	@OriginalMember(owner = "client!ka", name = "h", descriptor = "Z")
 	public static boolean aBoolean189 = false;
-
-	@OriginalMember(owner = "client!kc", name = "c", descriptor = "[B")
-	public static final byte[] aByteArray21 = new byte[16384];
-
-	@OriginalMember(owner = "client!kg", name = "d", descriptor = "[I")
-	public static final int[] anIntArray256 = new int[4];
-
-	@OriginalMember(owner = "client!kg", name = "g", descriptor = "I")
-	public static int anInt2857 = -1;
-
-	@OriginalMember(owner = "client!kg", name = "w", descriptor = "I")
-	public static int anInt2868 = -1;
 
 	@OriginalMember(owner = "client!l", name = "q", descriptor = "I")
 	public static int anInt2989 = 0;

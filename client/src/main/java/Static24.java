@@ -251,7 +251,7 @@ public final class Static24 {
 					ColorUtils.setBrightness(0.6F);
 				}
 			}
-			Static19.method1868();
+			GroundModel.method1868();
 			Static36.method4447();
 		}
 		Static6.aBoolean313 = !SceneGraph.isAllLevelsVisible();

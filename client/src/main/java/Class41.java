@@ -9,7 +9,7 @@ import org.openrs2.deob.annotation.Pc;
 public abstract class Class41 {
 
 	@OriginalMember(owner = "client!pg", name = "q", descriptor = "[S")
-	private short[] aShortArray72;
+	private short[] powersOfTwo;
 
 	@OriginalMember(owner = "client!pg", name = "d", descriptor = "I")
 	private int anInt3767 = 4;
@@ -24,20 +24,20 @@ public abstract class Class41 {
 	private int anInt3770 = 4;
 
 	@OriginalMember(owner = "client!pg", name = "j", descriptor = "[S")
-	private final short[] aShortArray71 = new short[512];
+	private final short[] permutation = new short[512];
 
 	@OriginalMember(owner = "client!pg", name = "p", descriptor = "I")
 	private int anInt3775 = 4;
 
 	@OriginalMember(owner = "client!pg", name = "<init>", descriptor = "(IIIII)V")
-	protected Class41(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4) {
+	protected Class41(@OriginalArg(0) int seed, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4) {
 		this.anInt3772 = arg1;
 		this.anInt3775 = arg2;
 		this.anInt3770 = arg3;
-		this.seed = arg0;
+		this.seed = seed;
 		this.anInt3767 = arg4;
-		this.method3145();
-		this.method3143();
+		this.createPowersOfTwo();
+		this.createPermutation();
 	}
 
 	@OriginalMember(owner = "client!pg", name = "a", descriptor = "(B)V")
@@ -62,7 +62,7 @@ public abstract class Class41 {
 			for (@Pc(90) int local90 = 0; local90 < 64; local90++) {
 				for (@Pc(99) int local99 = 0; local99 < 64; local99++) {
 					for (@Pc(104) int local104 = 0; local104 < this.anInt3772; local104++) {
-						@Pc(115) int local115 = this.aShortArray72[local104] << 12;
+						@Pc(115) int local115 = this.powersOfTwo[local104] << 12;
 						@Pc(123) int local123 = local115 * local11[local81] >> 12;
 						@Pc(130) int local130 = this.anInt3767 * local115 >> 12;
 						@Pc(138) int local138 = local8[local99] * local115 >> 12;
@@ -108,24 +108,24 @@ public abstract class Class41 {
 							local276 = 0;
 						}
 						@Pc(284) int local284 = local253 & 0xFF;
-						@Pc(289) short local289 = this.aShortArray71[local276];
-						@Pc(296) short local296 = this.aShortArray71[local289 + local245];
-						@Pc(304) short local304 = this.aShortArray71[local237 + local289];
-						@Pc(309) short local309 = this.aShortArray71[local284];
-						@Pc(317) short local317 = this.aShortArray71[local245 + local309];
-						@Pc(325) short local325 = this.aShortArray71[local237 + local309];
-						@Pc(337) int local337 = Static36.method4443(local167, local138, this.aShortArray71[local222 + local317], local257);
-						@Pc(350) int local350 = Static36.method4443(local167, local203, this.aShortArray71[local214 + local317], local257);
+						@Pc(289) short local289 = this.permutation[local276];
+						@Pc(296) short local296 = this.permutation[local289 + local245];
+						@Pc(304) short local304 = this.permutation[local237 + local289];
+						@Pc(309) short local309 = this.permutation[local284];
+						@Pc(317) short local317 = this.permutation[local245 + local309];
+						@Pc(325) short local325 = this.permutation[local237 + local309];
+						@Pc(337) int local337 = Static36.method4443(local167, local138, this.permutation[local222 + local317], local257);
+						@Pc(350) int local350 = Static36.method4443(local167, local203, this.permutation[local214 + local317], local257);
 						@Pc(360) int local360 = (local187 * (local350 - local337) >> 12) + local337;
-						local337 = Static36.method4443(local249, local138, this.aShortArray71[local325 + local222], local257);
-						local350 = Static36.method4443(local249, local203, this.aShortArray71[local214 + local325], local257);
+						local337 = Static36.method4443(local249, local138, this.permutation[local325 + local222], local257);
+						local350 = Static36.method4443(local249, local203, this.permutation[local214 + local325], local257);
 						@Pc(397) int local397 = local337 + (local187 * (local350 - local337) >> 12);
 						@Pc(407) int local407 = (local226 * (local397 - local360) >> 12) + local360;
-						local337 = Static36.method4443(local167, local138, this.aShortArray71[local222 + local296], local261);
-						local350 = Static36.method4443(local167, local203, this.aShortArray71[local214 + local296], local261);
+						local337 = Static36.method4443(local167, local138, this.permutation[local222 + local296], local261);
+						local350 = Static36.method4443(local167, local203, this.permutation[local214 + local296], local261);
 						local360 = local337 + ((local350 - local337) * local187 >> 12);
-						local337 = Static36.method4443(local249, local138, this.aShortArray71[local304 + local222], local261);
-						local350 = Static36.method4443(local249, local203, this.aShortArray71[local304 + local214], local261);
+						local337 = Static36.method4443(local249, local138, this.permutation[local304 + local222], local261);
+						local350 = Static36.method4443(local249, local203, this.permutation[local304 + local214], local261);
 						local397 = (local187 * (local350 - local337) >> 12) + local337;
 						@Pc(490) int local490 = local360 + ((local397 - local360) * local226 >> 12);
 						this.method3146(local104, local407 + ((local490 - local407) * local265 >> 12));
@@ -137,17 +137,17 @@ public abstract class Class41 {
 	}
 
 	@OriginalMember(owner = "client!pg", name = "a", descriptor = "(Z)V")
-	private void method3143() {
+	private void createPermutation() {
 		@Pc(15) Random random = new Random(this.seed);
-		for (@Pc(21) int local21 = 0; local21 < 255; local21++) {
-			this.aShortArray71[local21] = (short) local21;
+		for (@Pc(21) int i = 0; i < 255; i++) {
+			this.permutation[i] = (short) i;
 		}
-		for (@Pc(35) int local35 = 0; local35 < 255; local35++) {
-			@Pc(45) int local45 = 255 - local35;
-			@Pc(50) int local50 = RandomUtils.nextInt(random, local45);
-			@Pc(55) short local55 = this.aShortArray71[local50];
-			this.aShortArray71[local50] = this.aShortArray71[local45];
-			this.aShortArray71[local45] = this.aShortArray71[local45 + 256] = local55;
+		for (@Pc(35) int i = 0; i < 255; i++) {
+			@Pc(45) int j = 255 - i;
+			@Pc(50) int k = RandomUtils.nextInt(random, j);
+			@Pc(55) short temp = this.permutation[k];
+			this.permutation[k] = this.permutation[j];
+			this.permutation[j] = this.permutation[j + 256] = temp;
 		}
 	}
 
@@ -155,10 +155,10 @@ public abstract class Class41 {
 	protected abstract void method3144();
 
 	@OriginalMember(owner = "client!pg", name = "b", descriptor = "(I)V")
-	private void method3145() {
-		this.aShortArray72 = new short[this.anInt3772];
-		for (@Pc(18) int local18 = 0; local18 < this.anInt3772; local18++) {
-			this.aShortArray72[local18] = (short) Math.pow(2.0D, (double) local18);
+	private void createPowersOfTwo() {
+		this.powersOfTwo = new short[this.anInt3772];
+		for (@Pc(18) int i = 0; i < this.anInt3772; i++) {
+			this.powersOfTwo[i] = (short) Math.pow(2.0D, i);
 		}
 	}
 

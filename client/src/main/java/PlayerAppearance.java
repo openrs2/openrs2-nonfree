@@ -145,7 +145,7 @@ public final class PlayerAppearance {
 	}
 
 	@OriginalMember(owner = "client!qk", name = "a", descriptor = "([Lclient!re;IIILclient!eg;IIZILclient!eg;ZI)Lclient!vg;")
-	public final Model getBodyModel(@OriginalArg(0) Class150[] arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) SeqType arg4, @OriginalArg(5) int arg5, @OriginalArg(7) boolean arg6, @OriginalArg(8) int arg7, @OriginalArg(9) SeqType arg8, @OriginalArg(10) boolean cache, @OriginalArg(11) int arg10) {
+	public final Model getBodyModel(@OriginalArg(0) Seq[] arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) SeqType arg4, @OriginalArg(5) int arg5, @OriginalArg(7) boolean arg6, @OriginalArg(8) int arg7, @OriginalArg(9) SeqType arg8, @OriginalArg(10) boolean cache, @OriginalArg(11) int arg10) {
 		if (this.npcId != -1) {
 			return NpcTypeList.get(this.npcId).getBodyModel(arg5, arg7, arg4, arg8, arg2, arg0, arg3, arg1, arg10);
 		}

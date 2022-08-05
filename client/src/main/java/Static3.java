@@ -85,18 +85,6 @@ public final class Static3 {
 	@OriginalMember(owner = "client!ig", name = "f", descriptor = "Ljava/nio/ByteBuffer;")
 	public static ByteBuffer aByteBuffer3;
 
-	@OriginalMember(owner = "client!ih", name = "x", descriptor = "Lclient!fd;")
-	public static Buffer aClass4_Sub10_4;
-
-	@OriginalMember(owner = "client!ih", name = "y", descriptor = "Ljava/nio/ByteBuffer;")
-	public static ByteBuffer aByteBuffer4;
-
-	@OriginalMember(owner = "client!ih", name = "B", descriptor = "Lclient!fd;")
-	public static Buffer aClass4_Sub10_5;
-
-	@OriginalMember(owner = "client!ih", name = "G", descriptor = "Ljava/nio/ByteBuffer;")
-	public static ByteBuffer aByteBuffer5;
-
 	@OriginalMember(owner = "client!ii", name = "n", descriptor = "I")
 	public static int anInt2966;
 
@@ -134,7 +122,7 @@ public final class Static3 {
 	public static int anInt2519;
 
 	@OriginalMember(owner = "client!jb", name = "f", descriptor = "Lclient!ib;")
-	public static SkyBox aClass4_Sub3_Sub10_4;
+	public static SkyBoxCube aClass4_Sub3_Sub10_4;
 
 	@OriginalMember(owner = "client!jh", name = "i", descriptor = "I")
 	public static int anInt2586;

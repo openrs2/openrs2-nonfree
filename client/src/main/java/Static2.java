@@ -11,9 +11,6 @@ public final class Static2 {
 	@OriginalMember(owner = "client!e", name = "F", descriptor = "[[[B")
 	public static byte[][][] tileUnderlays;
 
-	@OriginalMember(owner = "client!eh", name = "k", descriptor = "Lclient!fh;")
-	public static Js5 aClass58_37;
-
 	@OriginalMember(owner = "client!el", name = "m", descriptor = "I")
 	public static int anInt1317;
 
@@ -33,7 +30,7 @@ public final class Static2 {
 	public static SoftwareIndexedSprite aClass56_Sub1_2;
 
 	@OriginalMember(owner = "client!fb", name = "d", descriptor = "[[Lclient!kc;")
-	public static Class103[][] aClass103ArrayArray1;
+	public static GroundShadowModel[][] aClass103ArrayArray1;
 
 	@OriginalMember(owner = "client!fb", name = "e", descriptor = "I")
 	public static int anInt1637;
@@ -57,7 +54,7 @@ public final class Static2 {
 	public static Sprite aClass4_Sub3_Sub14_2;
 
 	@OriginalMember(owner = "client!fl", name = "bb", descriptor = "Lclient!ib;")
-	public static SkyBox aClass4_Sub3_Sub10_3;
+	public static SkyBoxCube aClass4_Sub3_Sub10_3;
 
 	@OriginalMember(owner = "client!fm", name = "g", descriptor = "I")
 	public static int anInt1941;

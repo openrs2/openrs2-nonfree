@@ -168,7 +168,7 @@ public final class Static15 {
 		@Pc(21) int local21 = arg1 - 1 >> 7;
 		@Pc(31) int local31 = arg1 + arg3 - 1 - 1 >> 7;
 		for (@Pc(33) int local33 = local5; local33 <= local15; local33++) {
-			@Pc(40) Class103[] local40 = Static2.aClass103ArrayArray1[local33];
+			@Pc(40) GroundShadowModel[] local40 = Static2.aClass103ArrayArray1[local33];
 			for (@Pc(42) int local42 = local21; local42 <= local31; local42++) {
 				local40[local42].aBoolean197 = true;
 			}
@@ -286,7 +286,7 @@ public final class Static15 {
 			local186 = SceneGraph.tileHeights[arg3 + 1];
 		}
 		@Pc(212) Class96 local212 = arg4.method4450(local111, false, arg7, local138, local102, local186, true, arg2, local98, null);
-		Static14.method1210(local212.aClass56_Sub1_3, local111 - arg1, local140, local98 - arg5);
+		Static14.method1210(local212.sprite, local111 - arg1, local140, local98 - arg5);
 	}
 
 	@OriginalMember(owner = "client!fi", name = "a", descriptor = "(Lclient!wf;IIB)V")

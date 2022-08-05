@@ -9,6 +9,9 @@ import org.openrs2.deob.annotation.Pc;
 @OriginalClass("client!bj")
 public final class UnderwaterMaterialRenderer implements MaterialRenderer {
 
+	@OriginalMember(owner = "client!bj", name = "b", descriptor = "Z")
+	private static boolean aBoolean21 = false;
+
 	@OriginalMember(owner = "client!bj", name = "d", descriptor = "()V")
 	public static void method314() {
 		@Pc(1) GL gl = GlRenderer.gl;
@@ -19,7 +22,7 @@ public final class UnderwaterMaterialRenderer implements MaterialRenderer {
 
 	@OriginalMember(owner = "client!bj", name = "e", descriptor = "()I")
 	public static int method315() {
-		return Static1.aBoolean21 ? 33986 : 33985;
+		return aBoolean21 ? 33986 : 33985;
 	}
 
 	@OriginalMember(owner = "client!bj", name = "f", descriptor = "()V")
@@ -56,7 +59,7 @@ public final class UnderwaterMaterialRenderer implements MaterialRenderer {
 			gl.glTexParameteri(GL.GL_TEXTURE_1D, GL.GL_TEXTURE_MAG_FILTER, GL.GL_LINEAR);
 			gl.glTexParameteri(GL.GL_TEXTURE_1D, GL.GL_TEXTURE_WRAP_S, GL.GL_CLAMP_TO_EDGE);
 			this.textureId = temp[0];
-			Static1.aBoolean21 = GlRenderer.maxTextureUnits > 2 && GlRenderer.extTexture3dSupported;
+			aBoolean21 = GlRenderer.maxTextureUnits > 2 && GlRenderer.extTexture3dSupported;
 			this.createLists();
 		}
 	}
@@ -87,7 +90,7 @@ public final class UnderwaterMaterialRenderer implements MaterialRenderer {
 		this.listId = gl.glGenLists(2);
 		gl.glNewList(this.listId, GL.GL_COMPILE);
 		gl.glActiveTexture(GL.GL_TEXTURE1);
-		if (Static1.aBoolean21) {
+		if (aBoolean21) {
 			gl.glBindTexture(GL.GL_TEXTURE_3D, Static3.anInt2342);
 			gl.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_COMBINE_RGB, GL.GL_ADD);
 			gl.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_OPERAND0_RGB, GL.GL_SRC_COLOR);
@@ -119,7 +122,7 @@ public final class UnderwaterMaterialRenderer implements MaterialRenderer {
 		gl.glEndList();
 		gl.glNewList(this.listId + 1, GL.GL_COMPILE);
 		gl.glActiveTexture(GL.GL_TEXTURE1);
-		if (Static1.aBoolean21) {
+		if (aBoolean21) {
 			gl.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_COMBINE_RGB, GL.GL_MODULATE);
 			gl.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_OPERAND0_RGB, GL.GL_SRC_COLOR);
 			gl.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_COMBINE_ALPHA, GL.GL_MODULATE);
@@ -149,14 +152,14 @@ public final class UnderwaterMaterialRenderer implements MaterialRenderer {
 	public final void setArgument(@OriginalArg(0) int arg) {
 		@Pc(1) GL gl = GlRenderer.gl;
 		gl.glActiveTexture(GL.GL_TEXTURE1);
-		if (Static1.aBoolean21 || arg >= 0) {
+		if (aBoolean21 || arg >= 0) {
 			gl.glPushMatrix();
 			gl.glLoadIdentity();
 			gl.glRotatef(180.0F, 1.0F, 0.0F, 0.0F);
 			gl.glRotatef((float) Static4.anInt3258 * 360.0F / 2048.0F, 1.0F, 0.0F, 0.0F);
 			gl.glRotatef((float) Static6.anInt4403 * 360.0F / 2048.0F, 0.0F, 1.0F, 0.0F);
 			gl.glTranslatef((float) -Static5.anInt3731, (float) -Static6.anInt4558, (float) -Static1.anInt525);
-			if (Static1.aBoolean21) {
+			if (aBoolean21) {
 				this.tempVertex[0] = 0.001F;
 				this.tempVertex[1] = 9.0E-4F;
 				this.tempVertex[2] = 0.0F;

@@ -29,7 +29,7 @@ public final class Static11 {
 		SceneGraph.clear();
 		MiniMap.clear();
 		Static24.method2697();
-		SkyBox.cache.clear();
+		SkyBoxCube.cache.clear();
 		Static3.aClass96_1 = new Class96();
 		((Js5GlTextureProvider) Rasteriser.textureProvider).clear();
 		Static13.method1027();
@@ -71,7 +71,7 @@ public final class Static11 {
 	}
 
 	@OriginalMember(owner = "client!cd", name = "a", descriptor = "([[FIBIII[[FIBBLclient!ih;Z[[F[[III)V")
-	public static void method521(@OriginalArg(0) float[][] arg0, @OriginalArg(1) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4, @OriginalArg(6) float[][] arg5, @OriginalArg(7) int arg6, @OriginalArg(8) byte arg7, @OriginalArg(9) byte arg8, @OriginalArg(10) Class4_Sub12 arg9, @OriginalArg(11) boolean arg10, @OriginalArg(12) float[][] arg11, @OriginalArg(13) int[][] arg12, @OriginalArg(14) int arg13, @OriginalArg(15) int arg14) {
+	public static void method521(@OriginalArg(0) float[][] arg0, @OriginalArg(1) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4, @OriginalArg(6) float[][] arg5, @OriginalArg(7) int arg6, @OriginalArg(8) byte arg7, @OriginalArg(9) byte arg8, @OriginalArg(10) GroundModel arg9, @OriginalArg(11) boolean arg10, @OriginalArg(12) float[][] arg11, @OriginalArg(13) int[][] arg12, @OriginalArg(14) int arg13, @OriginalArg(15) int arg14) {
 		@Pc(7) int local7 = (arg1 << 8) + 255;
 		@Pc(13) int local13 = (arg6 << 8) + 255;
 		@Pc(23) int local23 = (arg4 << 8) + 255;
@@ -183,7 +183,7 @@ public final class Static11 {
 				local39[6] = local49[2];
 			}
 		}
-		arg9.method1870(arg2, arg13, arg14, local49, local39, false);
+		arg9.addTile(arg2, arg13, arg14, local49, local39, false);
 	}
 
 	@OriginalMember(owner = "client!ce", name = "a", descriptor = "(ZILclient!wf;II)V")

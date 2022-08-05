@@ -1,4 +1,3 @@
-import java.nio.IntBuffer;
 import javax.media.opengl.GL;
 
 import org.openrs2.deob.annotation.OriginalArg;
@@ -6,266 +5,170 @@ import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
-@OriginalClass("client!ib")
-public final class SkyBox extends SecondaryNode {
+@OriginalClass("client!eh")
+public final class SkyBox {
 
-	@OriginalMember(owner = "client!ib", name = "y", descriptor = "Lclient!dj;")
-	public static final LruHashTable cache = new LruHashTable(4);
+	@OriginalMember(owner = "client!eh", name = "d", descriptor = "I")
+	private int anInt1247;
 
-	@OriginalMember(owner = "client!ib", name = "D", descriptor = "[I")
-	private static final int[] clip = new int[4];
+	@OriginalMember(owner = "client!eh", name = "i", descriptor = "I")
+	private int textureSize;
 
-	@OriginalMember(owner = "client!ib", name = "H", descriptor = "[F")
-	private static final float[] aFloatArray23 = new float[4];
+	@OriginalMember(owner = "client!eh", name = "l", descriptor = "Lclient!vn;")
+	private SoftwareSprite aClass4_Sub3_Sub14_Sub1_1;
 
-	@OriginalMember(owner = "client!ib", name = "A", descriptor = "[I")
-	private static int[] anIntArray194 = null;
+	@OriginalMember(owner = "client!eh", name = "a", descriptor = "I")
+	private int anInt1245 = -1;
 
-	@OriginalMember(owner = "client!ib", name = "E", descriptor = "I")
-	private static int anInt2322 = -1;
+	@OriginalMember(owner = "client!eh", name = "b", descriptor = "I")
+	private final int anInt1246;
 
-	@OriginalMember(owner = "client!ib", name = "b", descriptor = "(IIIIII)Lclient!ib;")
-	public static SkyBox create(@OriginalArg(0) int texture0, @OriginalArg(1) int texture1, @OriginalArg(2) int texture2, @OriginalArg(3) int texture3, @OriginalArg(4) int texture4, @OriginalArg(5) int texture5) {
-		@Pc(29) long key = (long) texture0 * 67481L ^ (long) texture1 * 97549L ^ (long) texture2 * 475427L ^ (long) texture3 * 986053L ^ (long) texture4 * 32147369L ^ (long) texture5 * 76724863L;
-		@Pc(35) SkyBox skyBox = (SkyBox) cache.get(key);
-		if (skyBox == null) {
-			@Pc(49) SkyBox newSkyBox = new SkyBox(texture0, texture1, texture2, texture3, texture4, texture5);
-			cache.put(key, newSkyBox);
-			return newSkyBox;
+	@OriginalMember(owner = "client!eh", name = "f", descriptor = "I")
+	private final int anInt1248;
+
+	@OriginalMember(owner = "client!eh", name = "j", descriptor = "I")
+	private final int anInt1251;
+
+	@OriginalMember(owner = "client!eh", name = "g", descriptor = "I")
+	private final int textureId;
+
+	@OriginalMember(owner = "client!eh", name = "e", descriptor = "[Lclient!kg;")
+	private final SkyBoxSphere[] aClass105Array1;
+
+	@OriginalMember(owner = "client!eh", name = "h", descriptor = "[Lclient!kg;")
+	private final SkyBoxSphere[] aClass105Array2;
+
+	@OriginalMember(owner = "client!eh", name = "c", descriptor = "Lclient!kg;")
+	private final SkyBoxSphere aClass105_1;
+
+	@OriginalMember(owner = "client!eh", name = "<init>", descriptor = "(I[Lclient!kg;IIII)V")
+	public SkyBox(@OriginalArg(0) int textureId, @OriginalArg(1) SkyBoxSphere[] spheres, @OriginalArg(2) int defaultSphereIndex, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5) {
+		this.anInt1246 = arg3;
+		this.anInt1248 = arg4;
+		this.anInt1251 = arg5;
+		this.textureId = textureId;
+		this.aClass105Array1 = spheres;
+		if (spheres == null) {
+			this.aClass105Array2 = null;
+			this.aClass105_1 = null;
 		} else {
-			return skyBox;
+			this.aClass105Array2 = new SkyBoxSphere[spheres.length];
+			this.aClass105_1 = defaultSphereIndex >= 0 ? spheres[defaultSphereIndex] : null;
 		}
 	}
 
-	@OriginalMember(owner = "client!ib", name = "a", descriptor = "(Lgl!javax/media/opengl/GL;IIII)Z")
-	private static boolean method1837(@OriginalArg(0) GL gl, @OriginalArg(1) int srcTexture, @OriginalArg(2) int srcTextureTarget, @OriginalArg(3) int size, @OriginalArg(4) int destTexture) {
-		GlRenderer.setTextureId(destTexture);
-		gl.glFramebufferTexture2DEXT(GL.GL_FRAMEBUFFER, GL.GL_COLOR_ATTACHMENT0, srcTextureTarget, srcTexture, 0);
-		gl.glReadBuffer(GL.GL_COLOR_ATTACHMENT0);
-		@Pc(15) int status = gl.glCheckFramebufferStatusEXT(GL.GL_FRAMEBUFFER);
-		if (status == GL.GL_FRAMEBUFFER_COMPLETE) {
-			gl.glCopyTexImage2D(GL.GL_TEXTURE_2D, GL.GL_POINTS, GL.GL_RGB, 0, 0, size, size, GL.GL_POINTS);
-			return true;
+	@OriginalMember(owner = "client!eh", name = "a", descriptor = "(IIIIIIII)V")
+	public final void method1024(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6) {
+		this.method1029(arg4);
+		arg6 = arg6 + arg0 & 0x7FF;
+		if (this.textureId == -1) {
+			SoftwareRaster.fillRect(arg1, arg2, arg3, arg4, 0);
 		} else {
-			return false;
-		}
-	}
-
-	@OriginalMember(owner = "client!ib", name = "z", descriptor = "[I")
-	private int[] textures;
-
-	@OriginalMember(owner = "client!ib", name = "I", descriptor = "I")
-	private int contextId;
-
-	@OriginalMember(owner = "client!ib", name = "B", descriptor = "I")
-	private int id = -1;
-
-	@OriginalMember(owner = "client!ib", name = "F", descriptor = "I")
-	private int state = 0;
-
-	@OriginalMember(owner = "client!ib", name = "C", descriptor = "I")
-	private int bytes = 0;
-
-	@OriginalMember(owner = "client!ib", name = "G", descriptor = "I")
-	private int size = -1;
-
-	@OriginalMember(owner = "client!ib", name = "<init>", descriptor = "()V")
-	public SkyBox() {
-	}
-
-	@OriginalMember(owner = "client!ib", name = "<init>", descriptor = "(IIIIII)V")
-	private SkyBox(@OriginalArg(0) int texture0, @OriginalArg(1) int texture1, @OriginalArg(2) int texture2, @OriginalArg(3) int texture3, @OriginalArg(4) int texture4, @OriginalArg(5) int texture5) {
-		this.textures = new int[6];
-		this.textures[0] = texture0;
-		this.textures[1] = texture1;
-		this.textures[2] = texture2;
-		this.textures[3] = texture3;
-		this.textures[4] = texture4;
-		this.textures[5] = texture5;
-	}
-
-	@OriginalMember(owner = "client!ib", name = "a", descriptor = "()V")
-	private void method1832() {
-		if (this.id >= 0 && this.contextId == GlCleaner.contextId) {
-			return;
-		}
-		@Pc(8) GL gl = GlRenderer.gl;
-		@Pc(11) int[] temp = new int[1];
-		gl.glGenTextures(1, temp, 0);
-		this.id = temp[0];
-		gl.glBindTexture(GL.GL_TEXTURE_CUBE_MAP, this.id);
-		gl.glTexParameteri(GL.GL_TEXTURE_CUBE_MAP, GL.GL_TEXTURE_WRAP_R, GL.GL_CLAMP_TO_EDGE);
-		gl.glTexParameteri(GL.GL_TEXTURE_CUBE_MAP, GL.GL_TEXTURE_WRAP_S, GL.GL_CLAMP_TO_EDGE);
-		gl.glTexParameteri(GL.GL_TEXTURE_CUBE_MAP, GL.GL_TEXTURE_WRAP_T, GL.GL_CLAMP_TO_EDGE);
-		this.contextId = GlCleaner.contextId;
-		this.state = 0;
-	}
-
-	@OriginalMember(owner = "client!ib", name = "finalize", descriptor = "()V")
-	@Override
-	public final void finalize() throws Throwable {
-		if (this.id != -1) {
-			GlCleaner.deleteTexture(this.id, this.bytes, this.contextId);
-			this.id = -1;
-			this.bytes = 0;
-		}
-		super.finalize();
-	}
-
-	@OriginalMember(owner = "client!ib", name = "c", descriptor = "()V")
-	public final void method1834() {
-		@Pc(1) GL gl = GlRenderer.gl;
-		this.method1832();
-		gl.glBindTexture(GL.GL_TEXTURE_CUBE_MAP, this.id);
-		if (this.textures == null || this.state == 2) {
-			return;
-		}
-		if (this.isReady()) {
-			@Pc(20) int size = -1;
-			for (@Pc(22) int i = 0; i < 6; i++) {
-				@Pc(30) int texture = this.textures[i];
-				this.size = Rasteriser.textureProvider.isLowDetail(texture) ? 64 : 128;
-				if (i <= 0) {
-					size = this.size;
-				} else if (this.size != size) {
-					throw new RuntimeException("");
+			if (this.aClass4_Sub3_Sub14_Sub1_1 == null) {
+				this.aClass4_Sub3_Sub14_Sub1_1 = Rasteriser.textureProvider.getSprite(this.textureId, false, ColorUtils.brightness, this.textureSize);
+			}
+			if (!Rasteriser.textureProvider.method443(this.textureId)) {
+				SoftwareRaster.fillRect(arg1, arg2, arg3, arg4, 0);
+			}
+			if (this.aClass4_Sub3_Sub14_Sub1_1 != null) {
+				@Pc(47) int local47 = arg5 * arg4 / -512;
+				@Pc(59) int local59;
+				for (local59 = (arg3 - arg4) / 2 + arg6 * arg4 / 512; local59 > arg4; local59 -= arg4) {
 				}
-				@Pc(60) IntBuffer buffer = IntBuffer.wrap(Rasteriser.textureProvider.getPixels(texture));
-				gl.glTexImage2D(i + GL.GL_TEXTURE_CUBE_MAP_POSITIVE_X, GL.GL_POINTS, GL.GL_RGB, size, size, GL.GL_POINTS, GL.GL_BGRA, GL.GL_UNSIGNED_BYTE, buffer);
+				while (local59 < 0) {
+					local59 += arg4;
+				}
+				while (local47 > arg4) {
+					local47 -= arg4;
+				}
+				while (local47 < 0) {
+					local47 += arg4;
+				}
+				for (@Pc(93) int local93 = local59 - arg4; local93 < arg3; local93 += arg4) {
+					for (@Pc(100) int local100 = local47 - arg4; local100 < arg4; local100 += arg4) {
+						this.aClass4_Sub3_Sub14_Sub1_1.renderResizedTransparent(local93 + arg1, local100 + arg2, arg4, arg4);
+					}
+				}
 			}
-			gl.glTexParameteri(GL.GL_TEXTURE_CUBE_MAP, GL.GL_TEXTURE_MIN_FILTER, GL.GL_LINEAR);
-			gl.glTexParameteri(GL.GL_TEXTURE_CUBE_MAP, GL.GL_TEXTURE_MAG_FILTER, GL.GL_LINEAR);
-			@Pc(93) int bytes = size * size * 6 * 3;
-			GlCleaner.onCardTexture += bytes - this.bytes;
-			this.bytes = bytes;
-			this.state = 2;
-		} else if (this.state != 1) {
-			for (@Pc(113) int i = 0; i < 6; i++) {
-				@Pc(127) IntBuffer buffer = IntBuffer.wrap(ColorUtils.HSL_TO_RGB, Rasteriser.textureProvider.getAverageColor(this.textures[i]), 1);
-				gl.glTexImage2D(i + GL.GL_TEXTURE_CUBE_MAP_POSITIVE_X, GL.GL_POINTS, GL.GL_RGB, 1, 1, GL.GL_POINTS, GL.GL_BGRA, GL.GL_UNSIGNED_BYTE, buffer);
-				GlCleaner.onCardTexture += 3 - this.bytes;
-				this.bytes = 3;
-			}
-			this.state = 1;
+		}
+		for (@Pc(136) int local136 = this.anInt1247 - 1; local136 >= 0; local136--) {
+			this.aClass105Array2[local136].method2299(arg1, arg2, arg3, arg4, arg5, arg6, this.aClass105_1);
 		}
 	}
 
-	@OriginalMember(owner = "client!ib", name = "a", descriptor = "(Lclient!ib;Lclient!ib;F)Lclient!ib;")
-	public final SkyBox method1835(@OriginalArg(0) SkyBox arg0, @OriginalArg(1) SkyBox arg1, @OriginalArg(2) float arg2) {
+	@OriginalMember(owner = "client!eh", name = "b", descriptor = "(IIIIIIII)V")
+	public final void method1025(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int clearColor) {
 		@Pc(1) GL gl = GlRenderer.gl;
-		@Pc(10) SkyBox local10 = (double) arg2 < 0.5D ? arg0 : arg1;
-		if (!GlRenderer.arbFboSupported) {
-			return local10;
-		}
-		this.method1832();
-		if (anIntArray194 == null || anInt2322 != GlCleaner.contextId) {
-			anIntArray194 = new int[2];
-			gl.glGenTextures(2, anIntArray194, 0);
-			for (@Pc(31) int i = 0; i < 2; i++) {
-				GlRenderer.setTextureId(anIntArray194[i]);
-				gl.glTexParameteri(GL.GL_TEXTURE_2D, GL.GL_TEXTURE_MIN_FILTER, GL.GL_NEAREST);
-				gl.glTexParameteri(GL.GL_TEXTURE_2D, GL.GL_TEXTURE_MAG_FILTER, GL.GL_NEAREST);
-			}
-			anInt2322 = GlCleaner.contextId;
-		}
-		@Pc(63) int maxSize = arg0.size > arg1.size ? arg0.size : arg1.size;
-		if (this.size != maxSize) {
-			this.size = maxSize;
-			gl.glBindTexture(GL.GL_TEXTURE_CUBE_MAP, this.id);
-			for (@Pc(77) int i = 0; i < 6; i++) {
-				gl.glTexImage2D(i + GL.GL_TEXTURE_CUBE_MAP_POSITIVE_X, GL.GL_POINTS, GL.GL_RGB, this.size, this.size, GL.GL_POINTS, GL.GL_RGB, GL.GL_UNSIGNED_BYTE, null);
-			}
-			gl.glTexParameteri(GL.GL_TEXTURE_CUBE_MAP, GL.GL_TEXTURE_MIN_FILTER, GL.GL_LINEAR);
-			gl.glTexParameteri(GL.GL_TEXTURE_CUBE_MAP, GL.GL_TEXTURE_MAG_FILTER, GL.GL_LINEAR);
-		}
-		arg0.method1834();
-		arg1.method1834();
-		GlRaster.getClip(clip);
-		GlRaster.resetClip();
-		GlFrameBufferAllocator.pushFrameBuffer(GlRenderer.method1614());
-		gl.glPushAttrib(GL.GL_VIEWPORT_BIT);
+		this.method1029(arg4);
+		arg6 = arg6 + arg0 & 0x7FF;
+		@Pc(14) int local14 = arg1 + arg3;
+		@Pc(18) int local18 = arg2 + arg4;
 		GlRenderer.setFogEnabled(false);
 		GlRenderer.setLightingEnabled(false);
 		GlRenderer.setDepthTestEnabled(false);
-		GlRenderer.setTextureCombineRgbMode(1);
-		GlRenderer.setTextureCombineAlphaMode(1);
-		gl.glDisable(GL.GL_BLEND);
-		gl.glDisable(GL.GL_ALPHA_TEST);
-		gl.glPushMatrix();
-		gl.glLoadIdentity();
-		gl.glMatrixMode(GL.GL_PROJECTION);
-		gl.glPushMatrix();
-		gl.glLoadIdentity();
-		gl.glOrtho(0.0D, this.size, 0.0D, this.size, -1.0D, 1.0D);
-		gl.glViewport(0, 0, this.size, this.size);
-		gl.glActiveTexture(GL.GL_TEXTURE1);
-		gl.glBindTexture(GL.GL_TEXTURE_2D, anIntArray194[1]);
-		gl.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_COMBINE_RGB, GL.GL_INTERPOLATE);
-		gl.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_COMBINE_ALPHA, GL.GL_INTERPOLATE);
-		aFloatArray23[3] = arg2;
-		gl.glTexEnvfv(GL.GL_TEXTURE_ENV, GL.GL_TEXTURE_ENV_COLOR, aFloatArray23, 0);
-		gl.glEnable(GL.GL_TEXTURE_2D);
-		gl.glActiveTexture(GL.GL_TEXTURE0);
-		@Pc(203) boolean frameBufferValid = true;
-		for (@Pc(205) int i = 0; i < 6; i++) {
-			@Pc(212) int textureTarget = i + 34069;
-			if (!method1837(gl, arg0.id, textureTarget, arg0.size, anIntArray194[0])) {
-				frameBufferValid = false;
-				break;
+		GlRenderer.resetTextureMatrix();
+		GlRenderer.method1606(arg1, local14, arg2, local18);
+		GlRenderer.disableDepthMask();
+		for (@Pc(36) int local36 = this.anInt1247 - 1; local36 >= 0; local36--) {
+			this.aClass105Array2[local36].method2293(this.aClass105_1);
+		}
+		if (this.textureId == -1) {
+			GlRenderer.clearColorBuffer(clearColor);
+		} else {
+			if (!Rasteriser.textureProvider.method443(this.textureId)) {
+				GlRenderer.clearColorBuffer(clearColor);
 			}
-			if (!method1837(gl, arg1.id, textureTarget, arg1.size, anIntArray194[1])) {
-				frameBufferValid = false;
-				break;
-			}
-			gl.glFramebufferTexture2DEXT(GL.GL_FRAMEBUFFER, GL.GL_COLOR_ATTACHMENT0, textureTarget, this.id, 0);
-			gl.glDrawBuffer(GL.GL_COLOR_ATTACHMENT0);
-			@Pc(255) int status = gl.glCheckFramebufferStatusEXT(GL.GL_FRAMEBUFFER);
-			if (status != GL.GL_FRAMEBUFFER_COMPLETE) {
-				frameBufferValid = false;
-				break;
-			}
-			GlRenderer.setTextureId(anIntArray194[0]);
+			Rasteriser.textureProvider.method454(this.textureId, this.textureSize);
+			@Pc(71) float local71 = (float) arg5 / 512.0F;
+			@Pc(76) float local76 = (float) arg6 / -512.0F;
+			@Pc(86) float local86 = (float) (arg3 - arg4) / ((float) arg4 * 2.0F);
 			gl.glBegin(GL.GL_QUADS);
-			gl.glTexCoord2i(0, 0);
-			gl.glMultiTexCoord2i(GL.GL_TEXTURE1, 0, 0);
-			gl.glVertex2i(0, 0);
-			gl.glTexCoord2i(1, 0);
-			gl.glMultiTexCoord2i(GL.GL_TEXTURE1, 1, 0);
-			gl.glVertex2i(this.size, 0);
-			gl.glTexCoord2i(1, 1);
-			gl.glMultiTexCoord2i(GL.GL_TEXTURE1, 1, 1);
-			gl.glVertex2i(this.size, this.size);
-			gl.glTexCoord2i(0, 1);
-			gl.glMultiTexCoord2i(GL.GL_TEXTURE1, 0, 1);
-			gl.glVertex2i(0, this.size);
+			gl.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
+			gl.glTexCoord2f(local76 - local86, local71);
+			gl.glVertex2i(arg1, arg2);
+			gl.glTexCoord2f(local76 - local86, local71 + 1.0F);
+			gl.glVertex2i(arg1, local18);
+			gl.glTexCoord2f(local86 + local76 + 1.0F, local71 + 1.0F);
+			gl.glVertex2i(local14, local18);
+			gl.glTexCoord2f(local86 + local76 + 1.0F, local71);
+			gl.glVertex2i(local14, arg2);
 			gl.glEnd();
 		}
-		gl.glPopMatrix();
-		gl.glMatrixMode(GL.GL_MODELVIEW);
-		gl.glPopMatrix();
+		for (@Pc(155) int local155 = this.anInt1247 - 1; local155 >= 0; local155--) {
+			this.aClass105Array2[local155].method2292(arg1, arg2, arg3, arg4, arg5, arg6);
+		}
+		GlRenderer.enableDepthMask();
 		GlRenderer.setDepthTestEnabled(true);
 		GlRenderer.setLightingEnabled(true);
 		GlRenderer.setFogEnabled(true);
-		gl.glEnable(GL.GL_ALPHA_TEST);
-		gl.glEnable(GL.GL_BLEND);
-		gl.glPopAttrib();
-		GlFrameBufferAllocator.popFrameBuffer();
-		gl.glActiveTexture(GL.GL_TEXTURE1);
-		gl.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_COMBINE_RGB, GL.GL_MODULATE);
-		gl.glTexEnvi(GL.GL_TEXTURE_ENV, GL.GL_COMBINE_ALPHA, GL.GL_MODULATE);
-		gl.glDisable(GL.GL_TEXTURE_2D);
-		gl.glActiveTexture(GL.GL_TEXTURE0);
-		GlRaster.setClip(clip);
-		return frameBufferValid ? this : local10;
 	}
 
-	@OriginalMember(owner = "client!ib", name = "d", descriptor = "()Z")
-	private boolean isReady() {
-		for (@Pc(1) int i = 0; i < 6; i++) {
-			if (!Rasteriser.textureProvider.isGlTextureReady(this.textures[i])) {
-				return false;
+	@OriginalMember(owner = "client!eh", name = "a", descriptor = "(I)V")
+	private void method1029(@OriginalArg(0) int arg0) {
+		if (this.anInt1245 == arg0) {
+			return;
+		}
+		this.anInt1245 = arg0;
+		@Pc(10) int local10 = IntUtils.flp2(arg0);
+		if (local10 > 512) {
+			local10 = 512;
+		}
+		if (this.textureSize != local10) {
+			this.textureSize = local10;
+			this.aClass4_Sub3_Sub14_Sub1_1 = null;
+		}
+		if (this.aClass105Array1 == null) {
+			return;
+		}
+		this.anInt1247 = 0;
+		@Pc(36) int[] local36 = new int[this.aClass105Array1.length];
+		for (@Pc(38) int i = 0; i < this.aClass105Array1.length; i++) {
+			@Pc(48) SkyBoxSphere sphere = this.aClass105Array1[i];
+			if (sphere.method2294(this.anInt1246, this.anInt1248, this.anInt1251, this.anInt1245)) {
+				local36[this.anInt1247] = sphere.anInt2860;
+				this.aClass105Array2[this.anInt1247++] = sphere;
 			}
 		}
-		return true;
+		ArrayUtils.sort(local36, this.aClass105Array2, 0, this.anInt1247 - 1);
 	}
 }
