@@ -55,7 +55,7 @@ public final class ObjType {
 	private int ambient = 0;
 
 	@OriginalMember(owner = "client!td", name = "G", descriptor = "I")
-	private int womanWear1 = -1;
+	private int womanWear2 = -1;
 
 	@OriginalMember(owner = "client!td", name = "o", descriptor = "I")
 	public int zoom2d = 2000;
@@ -97,7 +97,7 @@ public final class ObjType {
 	public int xAngle2d = 0;
 
 	@OriginalMember(owner = "client!td", name = "eb", descriptor = "I")
-	public int womanWear2 = -1;
+	public int womanWear1 = -1;
 
 	@OriginalMember(owner = "client!td", name = "A", descriptor = "I")
 	public int lentLink = -1;
@@ -185,8 +185,8 @@ public final class ObjType {
 		@Pc(11) int wear2 = this.manWear2;
 		@Pc(28) int wear3 = this.manWear3;
 		if (female) {
-			wear2 = this.womanWear1;
-			wear1 = this.womanWear2;
+			wear2 = this.womanWear2;
+			wear1 = this.womanWear1;
 			wear3 = this.womanWear3;
 		}
 		if (wear1 == -1) {
@@ -359,8 +359,8 @@ public final class ObjType {
 		@Pc(17) int local17 = this.manWear1;
 		if (female) {
 			local10 = this.womanWear3;
-			local7 = this.womanWear1;
-			local17 = this.womanWear2;
+			local7 = this.womanWear2;
+			local17 = this.womanWear1;
 		}
 		if (local17 == -1) {
 			return true;
@@ -390,10 +390,10 @@ public final class ObjType {
 
 	@OriginalMember(owner = "client!td", name = "a", descriptor = "(ILclient!td;Lclient!td;)V")
 	public final void generateLent(@OriginalArg(1) ObjType link, @OriginalArg(2) ObjType template) {
-		this.womanWear2 = link.womanWear2;
+		this.womanWear1 = link.womanWear1;
 		this.manHead2 = link.manHead2;
 		this.manHead = link.manHead;
-		this.womanWear1 = link.womanWear1;
+		this.womanWear2 = link.womanWear2;
 		this.manWear3 = link.manWear3;
 		this.xOffset2d = template.xOffset2d;
 		this.womanWearYOff = link.womanWearYOff;
@@ -534,9 +534,9 @@ public final class ObjType {
 		} else if (code == 24) {
 			this.manWear2 = buffer.readUnsignedShort();
 		} else if (code == 25) {
-			this.womanWear2 = buffer.readUnsignedShort();
-		} else if (code == 26) {
 			this.womanWear1 = buffer.readUnsignedShort();
+		} else if (code == 26) {
+			this.womanWear2 = buffer.readUnsignedShort();
 		} else if (code >= 30 && code < 35) {
 			this.ops[code - 30] = buffer.readString();
 			if (this.ops[code - 30].equalsIgnoreCase(LocalisedText.HIDDEN)) {
