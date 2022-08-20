@@ -33,6 +33,12 @@ public final class Player extends PathingEntity {
 	@OriginalMember(owner = "client!io", name = "G", descriptor = "[Z")
 	public static final boolean[] opLowPriority = new boolean[8];
 
+	@OriginalMember(owner = "client!uo", name = "z", descriptor = "I")
+	public static int fakeModelCacheSize = 0;
+
+	@OriginalMember(owner = "client!qj", name = "eb", descriptor = "[[B")
+	public static byte[][] fakeModelCacheEntries;
+
 	@OriginalMember(owner = "client!fm", name = "a", descriptor = "(B)V")
 	public static void setInTutorialIsland() {
 		inTutorialIsland = 0;
@@ -55,32 +61,32 @@ public final class Player extends PathingEntity {
 		@Pc(12) BasType basType = player.getBasType();
 		if (player.movementSeqId == basType.readySeqId) {
 			sound = player.idleSound;
-		} else if (basType.anInt831 == player.movementSeqId || player.movementSeqId == basType.anInt829 || basType.anInt857 == player.movementSeqId || player.movementSeqId == basType.anInt867) {
+		} else if (basType.runSeqId == player.movementSeqId || player.movementSeqId == basType.runFollow180SeqId || basType.runFollowCwSeqId == player.movementSeqId || player.movementSeqId == basType.runFollowCcwSeqId) {
 			sound = player.runSound;
-		} else if (basType.anInt854 == player.movementSeqId || player.movementSeqId == basType.anInt833 || player.movementSeqId == basType.anInt861 || basType.anInt852 == player.movementSeqId) {
+		} else if (basType.crawlSeqId == player.movementSeqId || player.movementSeqId == basType.crawlFollow180SeqId || player.movementSeqId == basType.crawlFollowCwSeqId || basType.crawlFollowCcwSeqId == player.movementSeqId) {
 			sound = player.crawlSound;
 		}
 		return sound;
 	}
 
 	@OriginalMember(owner = "client!sl", name = "a", descriptor = "([ILclient!f;I[I[I)V")
-	public static void method4023(@OriginalArg(1) Player player, @OriginalArg(4) int[] seqIds, @OriginalArg(3) int[] delays, @OriginalArg(0) int[] slotMasks) {
+	public static void animate(@OriginalArg(1) Player player, @OriginalArg(4) int[] seqIds, @OriginalArg(3) int[] delays, @OriginalArg(0) int[] slotMasks) {
 		for (@Pc(11) int i = 0; i < seqIds.length; i++) {
 			@Pc(23) int seqId = seqIds[i];
 			@Pc(27) int delay = delays[i];
 			@Pc(31) int slotMask = slotMasks[i];
-			for (@Pc(33) int j = 0; slotMask != 0 && j < player.aClass150Array3.length; j++) {
+			for (@Pc(33) int j = 0; slotMask != 0 && j < player.seqs.length; j++) {
 				if ((slotMask & 0x1) != 0) {
 					if (seqId == -1) {
-						player.aClass150Array3[j] = null;
+						player.seqs[j] = null;
 					} else {
 						@Pc(61) SeqType seqType = SeqTypeList.get(seqId);
-						@Pc(66) Seq local66 = player.aClass150Array3[j];
+						@Pc(66) Seq local66 = player.seqs[j];
 						@Pc(69) int local69 = seqType.anInt1238;
 						if (local66 != null) {
 							if (local66.seqId == seqId) {
 								if (local69 == 0) {
-									local66 = player.aClass150Array3[j] = null;
+									local66 = player.seqs[j] = null;
 								} else if (local69 == 1) {
 									local66.anInt4462 = 0;
 									local66.anInt4464 = 1;
@@ -92,11 +98,11 @@ public final class Player extends PathingEntity {
 									local66.anInt4465 = 0;
 								}
 							} else if (seqType.priority >= SeqTypeList.get(local66.seqId).priority) {
-								local66 = player.aClass150Array3[j] = null;
+								local66 = player.seqs[j] = null;
 							}
 						}
 						if (local66 == null) {
-							@Pc(166) Seq local166 = player.aClass150Array3[j] = new Seq();
+							@Pc(166) Seq local166 = player.seqs[j] = new Seq();
 							local166.seqId = seqId;
 							local166.anInt4460 = 0;
 							local166.anInt4465 = 0;
@@ -305,7 +311,7 @@ public final class Player extends PathingEntity {
 			}
 			@Pc(26) SeqType local26 = this.seqId != -1 && this.seqDelay == 0 ? SeqTypeList.get(this.seqId) : null;
 			@Pc(55) SeqType local55 = this.movementSeqId == -1 || this.aBoolean98 || this.movementSeqId == this.getBasType().readySeqId && local26 != null ? null : SeqTypeList.get(this.movementSeqId);
-			@Pc(78) Model local78 = this.appearance.getBodyModel(this.aClass150Array3, this.anInt4046, this.anInt4011, this.anInt4019, local55, this.anInt3970, false, this.anInt4000, local26, false, this.anInt4044);
+			@Pc(78) Model local78 = this.appearance.getBodyModel(this.seqs, this.anInt4046, this.anInt4011, this.anInt4019, local55, this.anInt3970, false, this.anInt4000, local26, false, this.anInt4044);
 			if (local78 == null) {
 				return;
 			}
@@ -332,20 +338,20 @@ public final class Player extends PathingEntity {
 		@Pc(31) BasType local31 = this.getBasType();
 		@Pc(53) boolean local53 = local31.anInt844 != 0 || local31.anInt847 != 0 || local31.anInt850 != 0 || local31.anInt851 != 0;
 		@Pc(82) SeqType local82 = this.movementSeqId == -1 || this.aBoolean98 || this.movementSeqId == this.getBasType().readySeqId && local27 != null ? null : SeqTypeList.get(this.movementSeqId);
-		@Pc(105) Model local105 = this.appearance.getBodyModel(this.aClass150Array3, this.anInt4046, this.anInt4011, this.anInt4019, local82, this.anInt3970, local53, this.anInt4000, local27, true, this.anInt4044);
-		@Pc(108) int local108 = PlayerAppearance.getModelCacheSize();
-		if (GlRenderer.enabled && GameShell.maxMemory < 96 && local108 > 50) {
+		@Pc(105) Model local105 = this.appearance.getBodyModel(this.seqs, this.anInt4046, this.anInt4011, this.anInt4019, local82, this.anInt3970, local53, this.anInt4000, local27, true, this.anInt4044);
+		@Pc(108) int modelCacheSize = PlayerAppearance.getModelCacheSize();
+		if (GlRenderer.enabled && GameShell.maxMemory < 96 && modelCacheSize > 50) {
 			Static24.method2567();
 		}
-		if (client.modeWhat != 0 && local108 < 50) {
-			@Pc(134) int local134 = 50 - local108;
-			while (Static7.anInt5425 < local134) {
-				Static6.aByteArrayArray35[Static7.anInt5425] = new byte[102400];
-				Static7.anInt5425++;
+		if (client.modeWhat != 0 && modelCacheSize < 50) {
+			@Pc(134) int desiredFakeModelCacheSize = 50 - modelCacheSize;
+			while (fakeModelCacheSize < desiredFakeModelCacheSize) {
+				fakeModelCacheEntries[fakeModelCacheSize] = new byte[102400];
+				fakeModelCacheSize++;
 			}
-			while (local134 < Static7.anInt5425) {
-				Static7.anInt5425--;
-				Static6.aByteArrayArray35[Static7.anInt5425] = null;
+			while (fakeModelCacheSize > desiredFakeModelCacheSize) {
+				fakeModelCacheSize--;
+				fakeModelCacheEntries[fakeModelCacheSize] = null;
 			}
 		}
 		if (local105 == null) {

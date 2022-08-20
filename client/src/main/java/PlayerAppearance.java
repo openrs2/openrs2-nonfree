@@ -151,26 +151,26 @@ public final class PlayerAppearance {
 		}
 		@Pc(51) int[] identikit = this.identikit;
 		@Pc(54) long checksum = this.checksum;
-		if (arg8 != null && (arg8.anInt1224 >= 0 || arg8.anInt1232 >= 0)) {
+		if (arg8 != null && (arg8.leftHand >= 0 || arg8.rightHand >= 0)) {
 			identikit = new int[12];
 			for (@Pc(75) int i = 0; i < 12; i++) {
 				identikit[i] = this.identikit[i];
 			}
-			if (arg8.anInt1224 >= 0) {
-				if (arg8.anInt1224 == 65535) {
+			if (arg8.leftHand >= 0) {
+				if (arg8.leftHand == 65535) {
 					identikit[5] = 0;
 					checksum ^= 0xFFFFFFFF00000000L;
 				} else {
-					identikit[5] = arg8.anInt1224 | 0x40000000;
+					identikit[5] = arg8.leftHand | 0x40000000;
 					checksum ^= (long) identikit[5] << 32;
 				}
 			}
-			if (arg8.anInt1232 >= 0) {
-				if (arg8.anInt1232 == 65535) {
+			if (arg8.rightHand >= 0) {
+				if (arg8.rightHand == 65535) {
 					checksum ^= 0xFFFFFFFFL;
 					identikit[3] = 0;
 				} else {
-					identikit[3] = arg8.anInt1232 | 0x40000000;
+					identikit[3] = arg8.rightHand | 0x40000000;
 					checksum ^= identikit[3];
 				}
 			}
@@ -184,7 +184,7 @@ public final class PlayerAppearance {
 					if ((Integer.MIN_VALUE & id) != 0 && !IdkTypeList.get(id & 0x3FFFFFFF).isBodyModelReady()) {
 						incomplete = true;
 					}
-				} else if (!ObjTypeList.get(id & 0x3FFFFFFF).method4128(this.female)) {
+				} else if (!ObjTypeList.get(id & 0x3FFFFFFF).isBodyModelReady(this.female)) {
 					incomplete = true;
 				}
 			}
@@ -216,17 +216,17 @@ public final class PlayerAppearance {
 				if (this.basId != -1) {
 					basType = BasTypeList.get(this.basId);
 				}
-				if (basType != null && basType.anIntArrayArray7 != null) {
-					for (@Pc(326) int local326 = 0; local326 < basType.anIntArrayArray7.length; local326++) {
-						if (basType.anIntArrayArray7[local326] != null && models[local326] != null) {
-							@Pc(351) int local351 = basType.anIntArrayArray7[local326][0];
-							@Pc(358) int local358 = basType.anIntArrayArray7[local326][1];
-							@Pc(365) int local365 = basType.anIntArrayArray7[local326][2];
-							@Pc(372) int local372 = basType.anIntArrayArray7[local326][3];
-							@Pc(379) int local379 = basType.anIntArrayArray7[local326][5];
-							@Pc(386) int local386 = basType.anIntArrayArray7[local326][4];
+				if (basType != null && basType.equipmentTransforms != null) {
+					for (@Pc(326) int local326 = 0; local326 < basType.equipmentTransforms.length; local326++) {
+						if (basType.equipmentTransforms[local326] != null && models[local326] != null) {
+							@Pc(351) int local351 = basType.equipmentTransforms[local326][0];
+							@Pc(358) int local358 = basType.equipmentTransforms[local326][1];
+							@Pc(365) int local365 = basType.equipmentTransforms[local326][2];
+							@Pc(372) int local372 = basType.equipmentTransforms[local326][3];
+							@Pc(379) int local379 = basType.equipmentTransforms[local326][5];
+							@Pc(386) int local386 = basType.equipmentTransforms[local326][4];
 							if (this.anIntArrayArray37 == null) {
-								this.anIntArrayArray37 = new int[basType.anIntArrayArray7.length][];
+								this.anIntArrayArray37 = new int[basType.equipmentTransforms.length][];
 							}
 							if (this.anIntArrayArray37[local326] == null) {
 								@Pc(410) int[] local410 = this.anIntArrayArray37[local326] = new int[15];
@@ -262,7 +262,7 @@ public final class PlayerAppearance {
 								local410[11] = local365;
 							}
 							if (local372 != 0 || local386 != 0 || local379 != 0) {
-								models[local326].method2754(local372, local386, local379);
+								models[local326].rotate(local372, local386, local379);
 							}
 							if (local351 != 0 || local358 != 0 || local365 != 0) {
 								models[local326].translate(local351, local358, local365);

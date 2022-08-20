@@ -419,7 +419,7 @@ public final class Static33 {
 			Static37.renderLoadingText(LocalisedText.LOADING + "<br>(100%)", true);
 		}
 		Static9.audioLoop();
-		Static24.method2697();
+		client.clear();
 		if (GlRenderer.enabled && Preferences.highDetailWater) {
 			for (@Pc(398) int i = 0; i < Static1.mapBytes.length; i++) {
 				if (Static1.underwaterLocBytes[i] != null || Static7.underwaterMapBytes[i] != null) {
@@ -481,7 +481,7 @@ public final class Static33 {
 			}
 			Static24.method2708(false);
 		}
-		Static24.method2697();
+		client.clear();
 		Static32.method3917(true);
 		Static31.method3778(PathFinder.collisionMaps, Static5.dynamicArea ? Static7.zones : (int[][][]) null, false);
 		if (GlRenderer.enabled) {
@@ -513,7 +513,7 @@ public final class Static33 {
 				Static32.method3917(true);
 				Static24.method2708(true);
 			}
-			Static24.method2697();
+			client.clear();
 			Static32.method3917(true);
 			Static31.method3778(PathFinder.collisionMaps, Static5.dynamicArea ? Static7.zones : (int[][][]) null, true);
 			Static32.method3917(true);
@@ -535,7 +535,7 @@ public final class Static33 {
 		Static16.method2014();
 		Static9.audioLoop();
 		ChangeLocRequest.flush();
-		Static24.method2697();
+		client.clear();
 		Static4.aBoolean189 = false;
 		if (GlRenderer.enabled) {
 			Static23.method1936(true);

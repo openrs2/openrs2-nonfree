@@ -214,9 +214,6 @@ public final class Static3 {
 	@OriginalMember(owner = "client!ij", name = "M", descriptor = "[I")
 	public static final int[] anIntArray211 = new int[14];
 
-	@OriginalMember(owner = "client!im", name = "h", descriptor = "Lclient!jh;")
-	public static Class96 aClass96_1 = new Class96();
-
 	@OriginalMember(owner = "client!j", name = "o", descriptor = "I")
 	public static int mouseRecorderPrevX = 0;
 

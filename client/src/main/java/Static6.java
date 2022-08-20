@@ -2,9 +2,6 @@ import org.openrs2.deob.annotation.OriginalMember;
 
 public final class Static6 {
 
-	@OriginalMember(owner = "client!qj", name = "eb", descriptor = "[[B")
-	public static byte[][] aByteArrayArray35;
-
 	@OriginalMember(owner = "client!qk", name = "f", descriptor = "I")
 	public static int anInt4375;
 
@@ -98,9 +95,6 @@ public final class Static6 {
 	@OriginalMember(owner = "client!rg", name = "Y", descriptor = "[I")
 	public static final int[] anIntArray483 = new int[14];
 
-	@OriginalMember(owner = "client!rg", name = "Z", descriptor = "Z")
-	public static boolean aBoolean313 = false;
-
 	@OriginalMember(owner = "client!rh", name = "W", descriptor = "I")
 	public static int anInt4546 = 0;
 
@@ -173,9 +167,6 @@ public final class Static6 {
 	@OriginalMember(owner = "client!sj", name = "p", descriptor = "I")
 	public static int anInt4856 = 0;
 
-	@OriginalMember(owner = "client!sj", name = "A", descriptor = "[I")
-	public static final int[] anIntArray528 = new int[14];
-
 	@OriginalMember(owner = "client!sk", name = "b", descriptor = "I")
 	public static int anInt4863 = -1;
 
@@ -193,8 +184,5 @@ public final class Static6 {
 
 	@OriginalMember(owner = "client!ti", name = "cb", descriptor = "I")
 	public static int anInt5182 = -1;
-
-	@OriginalMember(owner = "client!tj", name = "s", descriptor = "I")
-	public static int anInt3585 = 0;
 
 }

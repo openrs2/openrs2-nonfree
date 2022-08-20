@@ -28,7 +28,7 @@ public final class SeqType {
 	public int[][] sounds;
 
 	@OriginalMember(owner = "client!eg", name = "c", descriptor = "I")
-	public int anInt1224 = -1;
+	public int leftHand = -1;
 
 	@OriginalMember(owner = "client!eg", name = "l", descriptor = "Z")
 	public boolean tween = false;
@@ -46,7 +46,7 @@ public final class SeqType {
 	public int anInt1240 = -1;
 
 	@OriginalMember(owner = "client!eg", name = "n", descriptor = "I")
-	public int anInt1232 = -1;
+	public int rightHand = -1;
 
 	@OriginalMember(owner = "client!eg", name = "w", descriptor = "I")
 	public int anInt1239 = 99;
@@ -240,9 +240,9 @@ public final class SeqType {
 		} else if (code == 5) {
 			this.priority = buffer.readUnsignedByte();
 		} else if (code == 6) {
-			this.anInt1224 = buffer.readUnsignedShort();
+			this.leftHand = buffer.readUnsignedShort();
 		} else if (code == 7) {
-			this.anInt1232 = buffer.readUnsignedShort();
+			this.rightHand = buffer.readUnsignedShort();
 		} else if (code == 8) {
 			this.anInt1239 = buffer.readUnsignedByte();
 		} else if (code == 9) {
@@ -261,14 +261,14 @@ public final class SeqType {
 				this.anIntArray93[i] += buffer.readUnsignedShort() << 16;
 			}
 		} else if (code == 13) {
-			@Pc(181) int local181 = buffer.readUnsignedShort();
-			this.sounds = new int[local181][];
-			for (@Pc(187) int i = 0; i < local181; i++) {
-				@Pc(198) int local198 = buffer.readUnsignedByte();
-				if (local198 > 0) {
-					this.sounds[i] = new int[local198];
+			@Pc(181) int soundsLen = buffer.readUnsignedShort();
+			this.sounds = new int[soundsLen][];
+			for (@Pc(187) int i = 0; i < soundsLen; i++) {
+				@Pc(198) int len = buffer.readUnsignedByte();
+				if (len > 0) {
+					this.sounds[i] = new int[len];
 					this.sounds[i][0] = buffer.readUnsignedMedium();
-					for (@Pc(221) int j = 1; j < local198; j++) {
+					for (@Pc(221) int j = 1; j < len; j++) {
 						this.sounds[i][j] = buffer.readUnsignedShort();
 					}
 				}

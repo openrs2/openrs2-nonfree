@@ -76,11 +76,11 @@ public final class AreaSound extends Node {
 				this.maxInterval = 0;
 			} else {
 				this.sound = locType.sound;
-				this.minInterval = locType.anInt5555;
-				this.maxInterval = locType.anInt5530;
+				this.minInterval = locType.soundMinInterval;
+				this.maxInterval = locType.soundMaxInterval;
 				this.radius = locType.soundRadius * 128;
 				this.volume = locType.soundVolume;
-				this.sounds = locType.anIntArray632;
+				this.sounds = locType.sounds;
 			}
 		} else if (this.npc != null) {
 			@Pc(21) int sound = Npc.getSound(this.npc);

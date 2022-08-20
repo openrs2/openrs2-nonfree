@@ -254,7 +254,7 @@ public final class Static24 {
 			GroundModel.method1868();
 			Static36.method4447();
 		}
-		Static6.aBoolean313 = !SceneGraph.isAllLevelsVisible();
+		LocType.singleLevelVisible = !SceneGraph.isAllLevelsVisible();
 		ParticleSystem.method2966(GameShell.canvasWidth, GameShell.canvasHeight);
 		if (arg5) {
 			Static11.method516();
@@ -274,56 +274,6 @@ public final class Static24 {
 			Static2.aBooleanArray8[i] = true;
 		}
 		GameShell.fullRedraw = true;
-	}
-
-	@OriginalMember(owner = "client!me", name = "a", descriptor = "(I)V")
-	public static void method2697() {
-		FloTypeList.clear();
-		FluTypeList.clear();
-		IdkTypeList.clear();
-		LocTypeList.clear();
-		NpcTypeList.clear();
-		ObjTypeList.clear();
-		SeqTypeList.clear();
-		SpotAnimTypeList.clear();
-		VarbitTypeList.clear();
-		VarpTypeList.clear();
-		BasTypeList.clear();
-		MsiTypeList.clear();
-		MelTypeList.clear();
-		SkyBoxTypeList.clear();
-		SkyBoxSphereTypeList.clear();
-		LightTypeList.clear();
-		CursorTypeList.clear();
-		PlayerAppearance.clear();
-		Component.clear();
-		if (client.modeWhat != 0) {
-			for (@Pc(54) int i = 0; i < Static6.aByteArrayArray35.length; i++) {
-				Static6.aByteArrayArray35[i] = null;
-			}
-			Static7.anInt5425 = 0;
-		}
-		HintArrowManager.clear();
-		ShadowModelList.clear();
-		ParticleEmitterTypeList.clear();
-		ParticleEffectorTypeList.clear();
-		FontMetricsList.fontMetrics.clear();
-		if (!GlRenderer.enabled) {
-			((Js5GlTextureProvider) Rasteriser.textureProvider).clear();
-		}
-		ClientScriptList.scripts.clear();
-		client.js5Archive0.discardUnpacked();
-		client.js5Archive1.discardUnpacked();
-		client.js5Archive3.discardUnpacked();
-		client.js5Archive4.discardUnpacked();
-		client.js5Archive5.discardUnpacked();
-		client.js5Archive6.discardUnpacked();
-		client.js5Archive7.discardUnpacked();
-		client.js5Archive8.discardUnpacked();
-		client.js5Archive10.discardUnpacked();
-		client.js5Archive11.discardUnpacked();
-		client.js5Archive12.discardUnpacked();
-		HitBarList.hitBars.clear();
 	}
 
 	@OriginalMember(owner = "client!mg", name = "a", descriptor = "(ZI)V")

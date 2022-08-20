@@ -6,6 +6,30 @@ import org.openrs2.deob.annotation.Pc;
 @OriginalClass("client!ua")
 public final class NpcType {
 
+	@OriginalMember(owner = "client!fm", name = "h", descriptor = "[Lclient!eg;")
+	private static final SeqType[] aClass46Array1 = new SeqType[14];
+
+	@OriginalMember(owner = "client!cj", name = "C", descriptor = "[Lclient!te;")
+	private static final AnimFrameset[] aClass4_Sub3_Sub19Array1 = new AnimFrameset[14];
+
+	@OriginalMember(owner = "client!o", name = "J", descriptor = "[I")
+	private static final int[] anIntArray398 = new int[14];
+
+	@OriginalMember(owner = "client!sj", name = "A", descriptor = "[I")
+	private static final int[] anIntArray528 = new int[14];
+
+	@OriginalMember(owner = "client!cc", name = "h", descriptor = "[I")
+	private static final int[] anIntArray47 = new int[14];
+
+	@OriginalMember(owner = "client!ok", name = "i", descriptor = "[Lclient!te;")
+	private static final AnimFrameset[] aClass4_Sub3_Sub19Array3 = new AnimFrameset[14];
+
+	@OriginalMember(owner = "client!jo", name = "O", descriptor = "[I")
+	private static final int[] anIntArray654 = new int[14];
+
+	@OriginalMember(owner = "client!un", name = "z", descriptor = "[S")
+	public static short[] recolorPalette = new short[256];
+
 	@OriginalMember(owner = "client!ua", name = "c", descriptor = "[S")
 	private short[] recolorSource;
 
@@ -19,13 +43,13 @@ public final class NpcType {
 	private short[] retextureDestination;
 
 	@OriginalMember(owner = "client!ua", name = "r", descriptor = "[I")
-	private int[] anIntArray588;
+	private int[] headModelIds;
 
 	@OriginalMember(owner = "client!ua", name = "t", descriptor = "[[I")
-	private int[][] anIntArrayArray46;
+	private int[][] bodyTranslate;
 
 	@OriginalMember(owner = "client!ua", name = "D", descriptor = "[I")
-	private int[] anIntArray589;
+	private int[] bodyModelIds;
 
 	@OriginalMember(owner = "client!ua", name = "E", descriptor = "[I")
 	public int[] multiNpcs;
@@ -40,7 +64,7 @@ public final class NpcType {
 	private short[] recolorDestination;
 
 	@OriginalMember(owner = "client!ua", name = "jb", descriptor = "[B")
-	private byte[] aByteArray68;
+	private byte[] recolorDestinationIndex;
 
 	@OriginalMember(owner = "client!ua", name = "d", descriptor = "I")
 	public int cursor2Op = -1;
@@ -64,7 +88,7 @@ public final class NpcType {
 	public short aShort47 = 0;
 
 	@OriginalMember(owner = "client!ua", name = "q", descriptor = "I")
-	public int anInt5241 = -1;
+	public int cursor = -1;
 
 	@OriginalMember(owner = "client!ua", name = "y", descriptor = "I")
 	public int combatLevel = -1;
@@ -76,22 +100,22 @@ public final class NpcType {
 	public int soundRadius = 0;
 
 	@OriginalMember(owner = "client!ua", name = "v", descriptor = "I")
-	public int anInt5243 = 32;
+	public int turnSpeed = 32;
 
 	@OriginalMember(owner = "client!ua", name = "P", descriptor = "Z")
-	public boolean aBoolean357 = true;
+	public boolean interactive = true;
 
 	@OriginalMember(owner = "client!ua", name = "a", descriptor = "B")
-	public byte aByte18 = 7;
+	public byte spawnDirection = 7;
 
 	@OriginalMember(owner = "client!ua", name = "K", descriptor = "I")
-	private int anInt5254 = 0;
+	private int ambient = 0;
 
 	@OriginalMember(owner = "client!ua", name = "o", descriptor = "I")
 	public int hitBarId = -1;
 
 	@OriginalMember(owner = "client!ua", name = "z", descriptor = "I")
-	private int anInt5247 = 128;
+	private int resizeXZ = 128;
 
 	@OriginalMember(owner = "client!ua", name = "k", descriptor = "S")
 	public short aShort46 = 0;
@@ -112,7 +136,7 @@ public final class NpcType {
 	public int soundVolume = 255;
 
 	@OriginalMember(owner = "client!ua", name = "ab", descriptor = "I")
-	private int anInt5265 = 128;
+	private int resizeY = 128;
 
 	@OriginalMember(owner = "client!ua", name = "cb", descriptor = "I")
 	public int mapElement = -1;
@@ -124,10 +148,10 @@ public final class NpcType {
 	public int basId = -1;
 
 	@OriginalMember(owner = "client!ua", name = "fb", descriptor = "B")
-	public byte aByte21 = 0;
+	public byte movementFlags = 0;
 
 	@OriginalMember(owner = "client!ua", name = "u", descriptor = "Z")
-	public boolean aBoolean356 = true;
+	public boolean miniMapVisible = true;
 
 	@OriginalMember(owner = "client!ua", name = "A", descriptor = "I")
 	public int runSound = -1;
@@ -136,7 +160,7 @@ public final class NpcType {
 	public int cursor2 = -1;
 
 	@OriginalMember(owner = "client!ua", name = "n", descriptor = "I")
-	private int anInt5239 = 0;
+	private int contrast = 0;
 
 	@OriginalMember(owner = "client!ua", name = "ib", descriptor = "[Ljava/lang/String;")
 	public final String[] ops = new String[5];
@@ -191,12 +215,12 @@ public final class NpcType {
 	@OriginalMember(owner = "client!ua", name = "a", descriptor = "(Lclient!fd;BI)V")
 	private void decode(@OriginalArg(0) Buffer buffer, @OriginalArg(2) int code) {
 		if (code == 1) {
-			@Pc(15) int local15 = buffer.readUnsignedByte();
-			this.anIntArray589 = new int[local15];
-			for (@Pc(21) int local21 = 0; local21 < local15; local21++) {
-				this.anIntArray589[local21] = buffer.readUnsignedShort();
-				if (this.anIntArray589[local21] == 65535) {
-					this.anIntArray589[local21] = -1;
+			@Pc(15) int len = buffer.readUnsignedByte();
+			this.bodyModelIds = new int[len];
+			for (@Pc(21) int i = 0; i < len; i++) {
+				this.bodyModelIds[i] = buffer.readUnsignedShort();
+				if (this.bodyModelIds[i] == 65535) {
+					this.bodyModelIds[i] = -1;
 				}
 			}
 		} else if (code == 2) {
@@ -209,51 +233,51 @@ public final class NpcType {
 				this.ops[code - 30] = null;
 			}
 		} else if (code == 40) {
-			@Pc(117) int local117 = buffer.readUnsignedByte();
-			this.recolorSource = new short[local117];
-			this.recolorDestination = new short[local117];
-			for (@Pc(127) int local127 = 0; local127 < local117; local127++) {
-				this.recolorSource[local127] = (short) buffer.readUnsignedShort();
-				this.recolorDestination[local127] = (short) buffer.readUnsignedShort();
+			@Pc(117) int len = buffer.readUnsignedByte();
+			this.recolorSource = new short[len];
+			this.recolorDestination = new short[len];
+			for (@Pc(127) int i = 0; i < len; i++) {
+				this.recolorSource[i] = (short) buffer.readUnsignedShort();
+				this.recolorDestination[i] = (short) buffer.readUnsignedShort();
 			}
 		} else if (code == 41) {
-			@Pc(869) int local869 = buffer.readUnsignedByte();
-			this.rextureSource = new short[local869];
-			this.retextureDestination = new short[local869];
-			for (@Pc(879) int local879 = 0; local879 < local869; local879++) {
-				this.rextureSource[local879] = (short) buffer.readUnsignedShort();
-				this.retextureDestination[local879] = (short) buffer.readUnsignedShort();
+			@Pc(869) int len = buffer.readUnsignedByte();
+			this.rextureSource = new short[len];
+			this.retextureDestination = new short[len];
+			for (@Pc(879) int i = 0; i < len; i++) {
+				this.rextureSource[i] = (short) buffer.readUnsignedShort();
+				this.retextureDestination[i] = (short) buffer.readUnsignedShort();
 			}
 		} else if (code == 42) {
-			@Pc(840) int local840 = buffer.readUnsignedByte();
-			this.aByteArray68 = new byte[local840];
-			for (@Pc(846) int local846 = 0; local846 < local840; local846++) {
-				this.aByteArray68[local846] = buffer.readByte();
+			@Pc(840) int len = buffer.readUnsignedByte();
+			this.recolorDestinationIndex = new byte[len];
+			for (@Pc(846) int i = 0; i < len; i++) {
+				this.recolorDestinationIndex[i] = buffer.readByte();
 			}
 		} else if (code == 60) {
-			@Pc(811) int local811 = buffer.readUnsignedByte();
-			this.anIntArray588 = new int[local811];
-			for (@Pc(817) int local817 = 0; local817 < local811; local817++) {
-				this.anIntArray588[local817] = buffer.readUnsignedShort();
+			@Pc(811) int len = buffer.readUnsignedByte();
+			this.headModelIds = new int[len];
+			for (@Pc(817) int i = 0; i < len; i++) {
+				this.headModelIds[i] = buffer.readUnsignedShort();
 			}
 		} else if (code == 93) {
-			this.aBoolean356 = false;
+			this.miniMapVisible = false;
 		} else if (code == 95) {
 			this.combatLevel = buffer.readUnsignedShort();
 		} else if (code == 97) {
-			this.anInt5247 = buffer.readUnsignedShort();
+			this.resizeXZ = buffer.readUnsignedShort();
 		} else if (code == 98) {
-			this.anInt5265 = buffer.readUnsignedShort();
+			this.resizeY = buffer.readUnsignedShort();
 		} else if (code == 99) {
 			this.aBoolean359 = true;
 		} else if (code == 100) {
-			this.anInt5254 = buffer.readByte();
+			this.ambient = buffer.readByte();
 		} else if (code == 101) {
-			this.anInt5239 = buffer.readByte() * 5;
+			this.contrast = buffer.readByte() * 5;
 		} else if (code == 102) {
 			this.prayerIcon = buffer.readUnsignedShort();
 		} else if (code == 103) {
-			this.anInt5243 = buffer.readUnsignedShort();
+			this.turnSpeed = buffer.readUnsignedShort();
 		} else if (code == 106 || code == 118) {
 			this.multiNpcVarbit = buffer.readUnsignedShort();
 			@Pc(248) int defaultMultiNpc = -1;
@@ -280,7 +304,7 @@ public final class NpcType {
 			}
 			this.multiNpcs[len + 1] = defaultMultiNpc;
 		} else if (code == 107) {
-			this.aBoolean357 = false;
+			this.interactive = false;
 		} else if (code == 109) {
 			this.aBoolean358 = false;
 		} else if (code == 111) {
@@ -295,23 +319,23 @@ public final class NpcType {
 			buffer.readUnsignedByte();
 			buffer.readUnsignedByte();
 		} else if (code == 119) {
-			this.aByte21 = buffer.readByte();
+			this.movementFlags = buffer.readByte();
 		} else if (code == 121) {
-			this.anIntArrayArray46 = new int[this.anIntArray589.length][];
-			@Pc(714) int local714 = buffer.readUnsignedByte();
-			for (@Pc(716) int local716 = 0; local716 < local714; local716++) {
-				@Pc(723) int local723 = buffer.readUnsignedByte();
-				@Pc(731) int[] local731 = this.anIntArrayArray46[local723] = new int[3];
-				local731[0] = buffer.readByte();
-				local731[1] = buffer.readByte();
-				local731[2] = buffer.readByte();
+			this.bodyTranslate = new int[this.bodyModelIds.length][];
+			@Pc(714) int count = buffer.readUnsignedByte();
+			for (@Pc(716) int i = 0; i < count; i++) {
+				@Pc(723) int index = buffer.readUnsignedByte();
+				@Pc(731) int[] translation = this.bodyTranslate[index] = new int[3];
+				translation[0] = buffer.readByte();
+				translation[1] = buffer.readByte();
+				translation[2] = buffer.readByte();
 			}
 		} else if (code == 122) {
 			this.hitBarId = buffer.readUnsignedShort();
 		} else if (code == 123) {
 			this.anInt5259 = buffer.readUnsignedShort();
 		} else if (code == 125) {
-			this.aByte18 = buffer.readByte();
+			this.spawnDirection = buffer.readByte();
 		} else if (code == 127) {
 			this.basId = buffer.readUnsignedShort();
 		} else if (code == 128) {
@@ -341,7 +365,7 @@ public final class NpcType {
 			this.cursor2Op = buffer.readUnsignedByte();
 			this.cursor2 = buffer.readUnsignedShort();
 		} else if (code == 137) {
-			this.anInt5241 = buffer.readUnsignedShort();
+			this.cursor = buffer.readUnsignedShort();
 		} else if (code == 140) {
 			this.soundVolume = buffer.readUnsignedByte();
 		} else if (code == 141) {
@@ -435,23 +459,23 @@ public final class NpcType {
 		if (this.multiNpcs != null) {
 			@Pc(13) NpcType type = this.getMultiNpc();
 			return type == null ? null : type.getHeadModel(arg0, arg1, arg2, arg3);
-		} else if (this.anIntArray588 == null) {
+		} else if (this.headModelIds == null) {
 			return null;
 		} else {
-			@Pc(40) Model local40 = (Model) NpcTypeList.headModels.get((long) this.id);
-			if (local40 == null) {
+			@Pc(40) Model model = (Model) NpcTypeList.headModels.get(this.id);
+			if (model == null) {
 				@Pc(52) boolean incomplete = false;
-				for (@Pc(54) int local54 = 0; local54 < this.anIntArray588.length; local54++) {
-					if (!NpcTypeList.modelsArchive.isFileReady(this.anIntArray588[local54], 0)) {
+				for (@Pc(54) int local54 = 0; local54 < this.headModelIds.length; local54++) {
+					if (!NpcTypeList.modelsArchive.isFileReady(this.headModelIds[local54], 0)) {
 						incomplete = true;
 					}
 				}
 				if (incomplete) {
 					return null;
 				}
-				@Pc(87) RawModel[] local87 = new RawModel[this.anIntArray588.length];
-				for (@Pc(89) int local89 = 0; local89 < this.anIntArray588.length; local89++) {
-					local87[local89] = RawModel.create(NpcTypeList.modelsArchive, this.anIntArray588[local89]);
+				@Pc(87) RawModel[] local87 = new RawModel[this.headModelIds.length];
+				for (@Pc(89) int local89 = 0; local89 < this.headModelIds.length; local89++) {
+					local87[local89] = RawModel.create(NpcTypeList.modelsArchive, this.headModelIds[local89]);
 				}
 				@Pc(122) RawModel local122;
 				if (local87.length == 1) {
@@ -461,10 +485,10 @@ public final class NpcType {
 				}
 				if (this.recolorSource != null) {
 					for (@Pc(132) int i = 0; i < this.recolorSource.length; i++) {
-						if (this.aByteArray68 == null || this.aByteArray68.length <= i) {
+						if (this.recolorDestinationIndex == null || this.recolorDestinationIndex.length <= i) {
 							local122.recolor(this.recolorSource[i], this.recolorDestination[i]);
 						} else {
-							local122.recolor(this.recolorSource[i], Static7.aShortArray111[this.aByteArray68[i] & 0xFF]);
+							local122.recolor(this.recolorSource[i], recolorPalette[this.recolorDestinationIndex[i] & 0xFF]);
 						}
 					}
 				}
@@ -473,65 +497,65 @@ public final class NpcType {
 						local122.retexture(this.rextureSource[i], this.retextureDestination[i]);
 					}
 				}
-				local40 = local122.createModel(64, 768, -50, -10, -50);
-				NpcTypeList.headModels.put((long) this.id, local40);
+				model = local122.createModel(64, 768, -50, -10, -50);
+				NpcTypeList.headModels.put((long) this.id, model);
 			}
 			if (arg1 != null) {
-				local40 = arg1.method1017(arg2, arg0, local40, arg3);
+				model = arg1.method1017(arg2, arg0, model, arg3);
 			}
-			return local40;
+			return model;
 		}
 	}
 
 	@OriginalMember(owner = "client!ua", name = "a", descriptor = "(IIILclient!eg;Lclient!eg;I[Lclient!re;III)Lclient!vg;")
 	public final Model getBodyModel(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(3) SeqType arg2, @OriginalArg(4) SeqType arg3, @OriginalArg(5) int arg4, @OriginalArg(6) Seq[] arg5, @OriginalArg(7) int arg6, @OriginalArg(8) int arg7, @OriginalArg(9) int arg8) {
 		if (this.multiNpcs != null) {
-			@Pc(13) NpcType local13 = this.getMultiNpc();
-			return local13 == null ? null : local13.getBodyModel(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
+			@Pc(13) NpcType type = this.getMultiNpc();
+			return type == null ? null : type.getBodyModel(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		}
-		@Pc(39) Model local39 = (Model) NpcTypeList.bodyModels.get((long) this.id);
-		if (local39 == null) {
-			@Pc(44) boolean local44 = false;
-			for (@Pc(46) int local46 = 0; local46 < this.anIntArray589.length; local46++) {
-				if (this.anIntArray589[local46] != -1 && !NpcTypeList.modelsArchive.isFileReady(this.anIntArray589[local46], 0)) {
-					local44 = true;
+		@Pc(39) Model model = (Model) NpcTypeList.bodyModels.get(this.id);
+		if (model == null) {
+			@Pc(44) boolean incomplete = false;
+			for (@Pc(46) int i = 0; i < this.bodyModelIds.length; i++) {
+				if (this.bodyModelIds[i] != -1 && !NpcTypeList.modelsArchive.isFileReady(this.bodyModelIds[i], 0)) {
+					incomplete = true;
 				}
 			}
-			if (local44) {
+			if (incomplete) {
 				return null;
 			}
-			@Pc(81) RawModel[] local81 = new RawModel[this.anIntArray589.length];
-			for (@Pc(83) int local83 = 0; local83 < this.anIntArray589.length; local83++) {
-				if (this.anIntArray589[local83] != -1) {
-					local81[local83] = RawModel.create(NpcTypeList.modelsArchive, this.anIntArray589[local83]);
-					if (this.anIntArrayArray46 != null && this.anIntArrayArray46[local83] != null && local81[local83] != null) {
-						local81[local83].translate(this.anIntArrayArray46[local83][0], this.anIntArrayArray46[local83][1], this.anIntArrayArray46[local83][2]);
+			@Pc(81) RawModel[] models = new RawModel[this.bodyModelIds.length];
+			for (@Pc(83) int i = 0; i < this.bodyModelIds.length; i++) {
+				if (this.bodyModelIds[i] != -1) {
+					models[i] = RawModel.create(NpcTypeList.modelsArchive, this.bodyModelIds[i]);
+					if (this.bodyTranslate != null && this.bodyTranslate[i] != null && models[i] != null) {
+						models[i].translate(this.bodyTranslate[i][0], this.bodyTranslate[i][1], this.bodyTranslate[i][2]);
 					}
 				}
 			}
-			@Pc(146) BasType local146 = null;
+			@Pc(146) BasType basType = null;
 			if (this.basId != -1) {
-				local146 = BasTypeList.get(this.basId);
+				basType = BasTypeList.get(this.basId);
 			}
-			if (local146 != null && local146.anIntArrayArray7 != null) {
-				for (@Pc(165) int local165 = 0; local165 < local146.anIntArrayArray7.length; local165++) {
-					if (local146.anIntArrayArray7[local165] != null && local165 < local81.length && local81[local165] != null) {
-						@Pc(193) int local193 = local146.anIntArrayArray7[local165][0];
-						@Pc(200) int local200 = local146.anIntArrayArray7[local165][3];
-						@Pc(207) int local207 = local146.anIntArrayArray7[local165][2];
-						@Pc(214) int local214 = local146.anIntArrayArray7[local165][1];
-						@Pc(221) int local221 = local146.anIntArrayArray7[local165][4];
-						@Pc(228) int local228 = local146.anIntArrayArray7[local165][5];
+			if (basType != null && basType.equipmentTransforms != null) {
+				for (@Pc(165) int slot = 0; slot < basType.equipmentTransforms.length; slot++) {
+					if (basType.equipmentTransforms[slot] != null && slot < models.length && models[slot] != null) {
+						@Pc(193) int dx = basType.equipmentTransforms[slot][0];
+						@Pc(200) int local200 = basType.equipmentTransforms[slot][3];
+						@Pc(207) int dz = basType.equipmentTransforms[slot][2];
+						@Pc(214) int dy = basType.equipmentTransforms[slot][1];
+						@Pc(221) int local221 = basType.equipmentTransforms[slot][4];
+						@Pc(228) int local228 = basType.equipmentTransforms[slot][5];
 						if (this.anIntArrayArray45 == null) {
-							this.anIntArrayArray45 = new int[local146.anIntArrayArray7.length][];
+							this.anIntArrayArray45 = new int[basType.equipmentTransforms.length][];
 						}
-						if (this.anIntArrayArray45[local165] == null) {
-							@Pc(252) int[] local252 = this.anIntArrayArray45[local165] = new int[15];
+						if (this.anIntArrayArray45[slot] == null) {
+							@Pc(252) int[] local252 = this.anIntArrayArray45[slot] = new int[15];
 							if (local200 == 0 && local221 == 0 && local228 == 0) {
-								local252[13] = -local214;
+								local252[13] = -dy;
 								local252[0] = local252[4] = local252[8] = 32768;
-								local252[12] = -local193;
-								local252[14] = -local207;
+								local252[12] = -dx;
+								local252[14] = -dz;
 							} else {
 								@Pc(271) int local271 = MathUtils.COSINE[local200] >> 1;
 								@Pc(277) int local277 = MathUtils.SINE[local200] >> 1;
@@ -550,48 +574,48 @@ public final class NpcType {
 								local252[2] = local271 * local289 + 16384 >> 15;
 								local252[0] = local357 * local289 + local295 * local283 + 16384 >> 15;
 								local252[7] = -local301 * -local289 + local309 * local283 + 16384 >> 15;
-								local252[12] = local252[6] * -local207 + local252[0] * -local193 + -local214 * local252[3] + 16384 >> 15;
-								local252[13] = -local214 * local252[4] + local252[1] * -local193 + local252[7] * -local207 + 16384 >> 15;
-								local252[14] = local252[8] * -local207 + -local193 * local252[2] + -local214 * local252[5] + 16384 >> 15;
+								local252[12] = local252[6] * -dz + local252[0] * -dx + -dy * local252[3] + 16384 >> 15;
+								local252[13] = -dy * local252[4] + local252[1] * -dx + local252[7] * -dz + 16384 >> 15;
+								local252[14] = local252[8] * -dz + -dx * local252[2] + -dy * local252[5] + 16384 >> 15;
 							}
-							local252[10] = local214;
-							local252[11] = local207;
-							local252[9] = local193;
+							local252[10] = dy;
+							local252[11] = dz;
+							local252[9] = dx;
 						}
 						if (local200 != 0 || local221 != 0 || local228 != 0) {
-							local81[local165].method2754(local200, local221, local228);
+							models[slot].rotate(local200, local221, local228);
 						}
-						if (local193 != 0 || local214 != 0 || local207 != 0) {
-							local81[local165].translate(local193, local214, local207);
+						if (dx != 0 || dy != 0 || dz != 0) {
+							models[slot].translate(dx, dy, dz);
 						}
 					}
 				}
 			}
-			@Pc(597) RawModel local597;
-			if (local81.length == 1) {
-				local597 = local81[0];
+			@Pc(597) RawModel model2;
+			if (models.length == 1) {
+				model2 = models[0];
 			} else {
-				local597 = new RawModel(local81, local81.length);
+				model2 = new RawModel(models, models.length);
 			}
 			if (this.recolorSource != null) {
 				for (@Pc(610) int i = 0; i < this.recolorSource.length; i++) {
-					if (this.aByteArray68 == null || i >= this.aByteArray68.length) {
-						local597.recolor(this.recolorSource[i], this.recolorDestination[i]);
+					if (this.recolorDestinationIndex == null || i >= this.recolorDestinationIndex.length) {
+						model2.recolor(this.recolorSource[i], this.recolorDestination[i]);
 					} else {
-						local597.recolor(this.recolorSource[i], Static7.aShortArray111[this.aByteArray68[i] & 0xFF]);
+						model2.recolor(this.recolorSource[i], recolorPalette[this.recolorDestinationIndex[i] & 0xFF]);
 					}
 				}
 			}
 			if (this.rextureSource != null) {
 				for (@Pc(665) int i = 0; i < this.rextureSource.length; i++) {
-					local597.retexture(this.rextureSource[i], this.retextureDestination[i]);
+					model2.retexture(this.rextureSource[i], this.retextureDestination[i]);
 				}
 			}
-			local39 = local597.createModel(this.anInt5254 + 64, this.anInt5239 + 850, -30, -50, -30);
+			model = model2.createModel(this.ambient + 64, this.contrast + 850, -30, -50, -30);
 			if (GlRenderer.enabled) {
-				((GlModel) local39).method3872(false, false, false, false, false, true);
+				((GlModel) model).method3872(false, false, false, false, false, true);
 			}
-			NpcTypeList.bodyModels.put((long) this.id, local39);
+			NpcTypeList.bodyModels.put(this.id, model);
 		}
 		@Pc(718) boolean local718 = false;
 		@Pc(720) boolean alphaTransformed = false;
@@ -602,45 +626,45 @@ public final class NpcType {
 			if (arg5[local733] != null) {
 				@Pc(752) SeqType local752 = SeqTypeList.get(arg5[local733].seqId);
 				if (local752.frames != null) {
-					Static2.aClass46Array1[local733] = local752;
+					aClass46Array1[local733] = local752;
 					local718 = true;
 					@Pc(769) int local769 = arg5[local733].anInt4462;
 					@Pc(774) int local774 = arg5[local733].anInt4464;
 					@Pc(779) int local779 = local752.frames[local769];
-					Static1.aClass4_Sub3_Sub19Array1[local733] = SeqTypeList.getAnimFrameset(local779 >>> 16);
+					aClass4_Sub3_Sub19Array1[local733] = SeqTypeList.getAnimFrameset(local779 >>> 16);
 					local779 &= 65535;
-					Static5.anIntArray398[local733] = local779;
-					if (Static1.aClass4_Sub3_Sub19Array1[local733] != null) {
-						colorTransformed |= Static1.aClass4_Sub3_Sub19Array1[local733].isColorTransformed(local779);
-						alphaTransformed |= Static1.aClass4_Sub3_Sub19Array1[local733].isAlphaTransformed(local779);
+					anIntArray398[local733] = local779;
+					if (aClass4_Sub3_Sub19Array1[local733] != null) {
+						colorTransformed |= aClass4_Sub3_Sub19Array1[local733].isColorTransformed(local779);
+						alphaTransformed |= aClass4_Sub3_Sub19Array1[local733].isAlphaTransformed(local779);
 						normalsTransformed |= local752.aBoolean72;
 					}
 					if ((local752.tween || SeqType.forceTween) && local774 != -1 && local774 < local752.frames.length) {
-						Static6.anIntArray528[local733] = local752.anIntArray94[local769];
-						Static1.anIntArray47[local733] = arg5[local733].anInt4460;
+						anIntArray528[local733] = local752.anIntArray94[local769];
+						anIntArray47[local733] = arg5[local733].anInt4460;
 						@Pc(861) int local861 = local752.frames[local774];
-						Static5.aClass4_Sub3_Sub19Array3[local733] = SeqTypeList.getAnimFrameset(local861 >>> 16);
+						aClass4_Sub3_Sub19Array3[local733] = SeqTypeList.getAnimFrameset(local861 >>> 16);
 						local861 &= 65535;
-						Static4.anIntArray654[local733] = local861;
-						if (Static5.aClass4_Sub3_Sub19Array3[local733] != null) {
-							colorTransformed |= Static5.aClass4_Sub3_Sub19Array3[local733].isColorTransformed(local861);
-							alphaTransformed |= Static5.aClass4_Sub3_Sub19Array3[local733].isAlphaTransformed(local861);
+						anIntArray654[local733] = local861;
+						if (aClass4_Sub3_Sub19Array3[local733] != null) {
+							colorTransformed |= aClass4_Sub3_Sub19Array3[local733].isColorTransformed(local861);
+							alphaTransformed |= aClass4_Sub3_Sub19Array3[local733].isAlphaTransformed(local861);
 						}
 					} else {
-						Static6.anIntArray528[local733] = 0;
-						Static1.anIntArray47[local733] = 0;
-						Static5.aClass4_Sub3_Sub19Array3[local733] = null;
-						Static4.anIntArray654[local733] = -1;
+						anIntArray528[local733] = 0;
+						anIntArray47[local733] = 0;
+						aClass4_Sub3_Sub19Array3[local733] = null;
+						anIntArray654[local733] = -1;
 					}
 				}
 			}
 		}
 		if (!local718 && arg3 == null && arg2 == null) {
-			@Pc(934) Model local934 = local39.method3831(true, true, true);
-			if (this.anInt5247 != 128 || this.anInt5265 != 128) {
-				local934.resize(this.anInt5247, this.anInt5265, this.anInt5247);
+			@Pc(934) Model model2 = model.method3831(true, true, true);
+			if (this.resizeXZ != 128 || this.resizeY != 128) {
+				model2.resize(this.resizeXZ, this.resizeY, this.resizeXZ);
 			}
-			return local934;
+			return model2;
 		}
 		@Pc(956) int local956 = -1;
 		@Pc(958) int local958 = -1;
@@ -704,29 +728,29 @@ public final class NpcType {
 				}
 			}
 		}
-		@Pc(1218) Model local1218 = local39.method3831(!alphaTransformed, !colorTransformed, !normalsTransformed);
+		@Pc(1218) Model model2 = model.method3831(!alphaTransformed, !colorTransformed, !normalsTransformed);
 		@Pc(1220) int part = 1;
 		for (@Pc(1228) int local1228 = 0; local1228 < local731; local1228++) {
-			if (Static1.aClass4_Sub3_Sub19Array1[local1228] != null) {
-				local1218.method3839(Static1.aClass4_Sub3_Sub19Array1[local1228], Static5.anIntArray398[local1228], Static5.aClass4_Sub3_Sub19Array3[local1228], Static4.anIntArray654[local1228], Static1.anIntArray47[local1228] - 1, Static6.anIntArray528[local1228], part, Static2.aClass46Array1[local1228].aBoolean72, this.anIntArrayArray45[local1228]);
+			if (aClass4_Sub3_Sub19Array1[local1228] != null) {
+				model2.method3839(aClass4_Sub3_Sub19Array1[local1228], anIntArray398[local1228], aClass4_Sub3_Sub19Array3[local1228], anIntArray654[local1228], anIntArray47[local1228] - 1, anIntArray528[local1228], part, aClass46Array1[local1228].aBoolean72, this.anIntArrayArray45[local1228]);
 			}
 			part <<= 1;
 		}
 		if (local960 != null && local1086 != null) {
-			local1218.method3816(local960, local958, local962, local956, arg8 - 1, local964, local1086, local1082, local1088, local1080, arg1 - 1, local1084, arg3.aBooleanArray6, arg3.aBoolean72 | arg2.aBoolean72);
+			model2.method3816(local960, local958, local962, local956, arg8 - 1, local964, local1086, local1082, local1088, local1080, arg1 - 1, local1084, arg3.aBooleanArray6, arg3.aBoolean72 | arg2.aBoolean72);
 		} else if (local960 != null) {
-			local1218.method3835(local960, local958, local962, local956, arg8 - 1, local964, arg3.aBoolean72);
+			model2.method3835(local960, local958, local962, local956, arg8 - 1, local964, arg3.aBoolean72);
 		} else if (local1086 != null) {
-			local1218.method3835(local1086, local1082, local1088, local1080, arg1 - 1, local1084, arg2.aBoolean72);
+			model2.method3835(local1086, local1082, local1088, local1080, arg1 - 1, local1084, arg2.aBoolean72);
 		}
 		for (@Pc(1342) int local1342 = 0; local1342 < local731; local1342++) {
-			Static1.aClass4_Sub3_Sub19Array1[local1342] = null;
-			Static5.aClass4_Sub3_Sub19Array3[local1342] = null;
-			Static2.aClass46Array1[local1342] = null;
+			aClass4_Sub3_Sub19Array1[local1342] = null;
+			aClass4_Sub3_Sub19Array3[local1342] = null;
+			aClass46Array1[local1342] = null;
 		}
-		if (this.anInt5247 != 128 || this.anInt5265 != 128) {
-			local1218.resize(this.anInt5247, this.anInt5265, this.anInt5247);
+		if (this.resizeXZ != 128 || this.resizeY != 128) {
+			model2.resize(this.resizeXZ, this.resizeY, this.resizeXZ);
 		}
-		return local1218;
+		return model2;
 	}
 }

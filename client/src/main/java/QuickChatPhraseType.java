@@ -13,7 +13,7 @@ public final class QuickChatPhraseType extends SecondaryNode {
 	private static final int[] DYNAMIC_COMMAND_DECODE_BYTES = new int[] { 2, 2, 4, 2, 1, 8, 4, 1, 4, 4, 2, 1, 1, 1, 4, 1 };
 
 	@OriginalMember(owner = "client!dc", name = "p", descriptor = "[I")
-	public static final int[] DYNAMIC_COMMAND_ENCODE_BYTES = new int[] { 2, 2, 4, 0, 1, 8, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0 };
+	private static final int[] DYNAMIC_COMMAND_ENCODE_BYTES = new int[] { 2, 2, 4, 0, 1, 8, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0 };
 
 	@OriginalMember(owner = "client!ij", name = "z", descriptor = "[I")
 	private int[] dynamicCommands;

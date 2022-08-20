@@ -446,10 +446,10 @@ public final class WorldMap {
 					color = ColorUtils.HSL_TO_RGB[ColorUtils.multiplyLightnessGrayscale(local57, 96)];
 				} else if (texture >= 0) {
 					color = ColorUtils.HSL_TO_RGB[ColorUtils.multiplyLightnessGrayscale(Rasteriser.textureProvider.getAverageColor(texture), 96)];
-				} else if (type.anInt3869 == -1) {
+				} else if (type.color == -1) {
 					color = -1;
 				} else {
-					@Pc(88) int local88 = type.anInt3869;
+					@Pc(88) int local88 = type.color;
 					@Pc(94) int local94 = (local88 & 0x7F) + arg1;
 					if (local94 < 0) {
 						local94 = 0;
@@ -1537,9 +1537,9 @@ public final class WorldMap {
 								if (currentMap.backgroundColor != -1) {
 									color = currentMap.backgroundColor;
 								} else if ((local17 + Static3.anInt2973 & 0x4) == (local172 + Static3.anInt2967 & 0x4)) {
-									color = overlayColors[FloType.anInt549 + 1];
+									color = overlayColors[FloType.worldMapCheckerboardFloId + 1];
 								} else {
-									color = 0X4B5368;
+									color = 0x4B5368;
 								}
 								if (local213 < 0 || local213 > local142.length - 1) {
 									if (color == 0) {
@@ -1654,7 +1654,7 @@ public final class WorldMap {
 						if (currentMap.backgroundColor != -1) {
 							color = currentMap.backgroundColor;
 						} else if ((local17 + Static3.anInt2973 & 0x4) == (local68 + Static3.anInt2967 & 0x4)) {
-							color = overlayColors[FloType.anInt549 + 1];
+							color = overlayColors[FloType.worldMapCheckerboardFloId + 1];
 						} else {
 							color = 0x4B5368;
 						}

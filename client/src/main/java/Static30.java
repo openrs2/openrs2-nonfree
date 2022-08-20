@@ -126,7 +126,7 @@ public final class Static30 {
 									continue;
 								}
 								@Pc(491) int local491 = local460 - component.height / 2;
-								@Pc(498) int local498 = Static6.anInt3585 + (int) Static5.aFloat97 & 0x7FF;
+								@Pc(498) int local498 = Camera.yawOffset + (int) Camera.yaw & 0x7FF;
 								@Pc(502) int local502 = MathUtils.SINE[local498];
 								@Pc(509) int local509 = local455 - component.width / 2;
 								local502 = local502 * (Static6.anInt4761 + 256) >> 8;
@@ -583,7 +583,7 @@ public final class Static30 {
 									if (component.objId != -1) {
 										@Pc(2687) ObjType local2687 = ObjTypeList.get(component.objId);
 										if (local2687 != null) {
-											@Pc(2695) ObjType local2695 = local2687.method4124(component.objCount);
+											@Pc(2695) ObjType local2695 = local2687.getCountObjType(component.objCount);
 											@Pc(2704) SeqType local2704 = local2670 == -1 ? null : SeqTypeList.get(local2670);
 											if (component.objWearColor && PlayerList.self.appearance != null) {
 												local2665 = local2695.getModel(component.anInt5892, 1, component.anInt5979, PlayerList.self.appearance, local2704, component.anInt5897);

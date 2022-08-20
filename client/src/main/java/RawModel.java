@@ -55,7 +55,7 @@ public final class RawModel extends Entity {
 	private short maxZ;
 
 	@OriginalMember(owner = "client!ml", name = "C", descriptor = "S")
-	public short aShort29;
+	public short contrast;
 
 	@OriginalMember(owner = "client!ml", name = "D", descriptor = "[S")
 	public short[] triangleSources;
@@ -127,7 +127,7 @@ public final class RawModel extends Entity {
 	public VertexNormal[] aClass31Array2;
 
 	@OriginalMember(owner = "client!ml", name = "eb", descriptor = "S")
-	public short aShort33;
+	public short ambient;
 
 	@OriginalMember(owner = "client!ml", name = "fb", descriptor = "[B")
 	public byte[] aByteArray40;
@@ -447,8 +447,8 @@ public final class RawModel extends Entity {
 		this.vertexNormals = model.vertexNormals;
 		this.triangleNormals = model.triangleNormals;
 		this.aClass31Array2 = model.aClass31Array2;
-		this.aShort33 = model.aShort33;
-		this.aShort29 = model.aShort29;
+		this.ambient = model.ambient;
+		this.contrast = model.contrast;
 		this.particleEmitters = model.particleEmitters;
 		this.particleEffectors = model.particleEffectors;
 	}
@@ -646,7 +646,7 @@ public final class RawModel extends Entity {
 	@OriginalMember(owner = "client!ml", name = "a", descriptor = "(III)Lclient!vc;")
 	@Override
 	public final Entity method3809() {
-		return this.createModel(this.aShort33, this.aShort29, -50, -10, -50);
+		return this.createModel(this.ambient, this.contrast, -50, -10, -50);
 	}
 
 	@OriginalMember(owner = "client!ml", name = "g", descriptor = "()V")
@@ -705,8 +705,8 @@ public final class RawModel extends Entity {
 		model.boneTriangles = this.boneTriangles;
 		model.vertexNormals = this.vertexNormals;
 		model.triangleNormals = this.triangleNormals;
-		model.aShort33 = this.aShort33;
-		model.aShort29 = this.aShort29;
+		model.ambient = this.ambient;
+		model.contrast = this.contrast;
 		model.particleEmitters = this.particleEmitters;
 		model.particleEffectors = this.particleEffectors;
 		return model;
@@ -977,7 +977,7 @@ public final class RawModel extends Entity {
 	}
 
 	@OriginalMember(owner = "client!ml", name = "c", descriptor = "(III)V")
-	public final void method2754(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
+	public final void rotate(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
 		if (arg2 != 0) {
 			@Pc(5) int sine = SINE[arg2];
 			@Pc(9) int cosine = COSINE[arg2];
@@ -1664,8 +1664,8 @@ public final class RawModel extends Entity {
 		model.triangleBones = this.triangleBones;
 		model.boneVertices = this.boneVertices;
 		model.boneTriangles = this.boneTriangles;
-		model.aShort33 = this.aShort33;
-		model.aShort29 = this.aShort29;
+		model.ambient = this.ambient;
+		model.contrast = this.contrast;
 		model.vertexNormals = this.vertexNormals;
 		model.triangleNormals = this.triangleNormals;
 		model.aClass31Array2 = this.aClass31Array2;

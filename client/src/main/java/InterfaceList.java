@@ -367,4 +367,17 @@ public final class InterfaceList {
 			Static6.aClass185_14 = null;
 		}
 	}
+
+	@OriginalMember(owner = "client!fi", name = "a", descriptor = "(Lclient!wf;IIB)V")
+	public static void dragPickUp(@OriginalArg(0) Component component, @OriginalArg(1) int x, @OriginalArg(2) int y) {
+		if (Static1.aClass185_1 != null || Static1.aBoolean17 || (component == null || method1403(component) == null)) {
+			return;
+		}
+		Static1.aClass185_1 = component;
+		Static1.aClass185_2 = method1403(component);
+		Static3.aBoolean173 = false;
+		Static3.anInt2165 = 0;
+		Static5.anInt5204 = x;
+		Static1.anInt777 = y;
+	}
 }

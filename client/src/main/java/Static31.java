@@ -119,11 +119,11 @@ public final class Static31 {
 		ParticleSystem.anInt3506 = arg0;
 		ParticleSystem.anInt3503 = arg4;
 		if (Static1.anInt772 == 1) {
-			@Pc(121) int local121 = (int) Static5.aFloat147;
+			@Pc(121) int local121 = (int) Camera.pitch;
 			if (Static1.anInt626 / 256 > local121) {
 				local121 = Static1.anInt626 / 256;
 			}
-			@Pc(137) int local137 = (int) Static5.aFloat97 + Static1.anInt242 & 0x7FF;
+			@Pc(137) int local137 = (int) Camera.yaw + Static1.anInt242 & 0x7FF;
 			if (Camera.shakeEnabled[4] && Camera.anIntArray626[4] + 128 > local121) {
 				local121 = Camera.anIntArray626[4] + 128;
 			}
@@ -516,11 +516,11 @@ public final class Static31 {
 								if (texture >= 0) {
 									local1659 = -1;
 									local1671 = ColorUtils.HSL_TO_RGB[ColorUtils.multiplyLightnessGrayscale(Rasteriser.textureProvider.getAverageColor(texture), 96)];
-								} else if (type.anInt3869 == -1) {
+								} else if (type.color == -1) {
 									local1671 = 0;
 									local1659 = -2;
 								} else {
-									local1659 = type.anInt3869;
+									local1659 = type.color;
 									@Pc(1692) int local1692 = (local1659 & 0x7F) + local148;
 									if (local1692 < 0) {
 										local1692 = 0;
@@ -1107,33 +1107,6 @@ public final class Static31 {
 			}
 		}
 		Static2.aBoolean101 = false;
-	}
-
-	@OriginalMember(owner = "client!ro", name = "e", descriptor = "(B)V")
-	public static void clean() {
-		FloTypeList.clean();
-		FluTypeList.clean();
-		IdkTypeList.clean();
-		LocTypeList.clean();
-		NpcTypeList.clean();
-		ObjTypeList.clean();
-		SeqTypeList.clean();
-		SpotAnimTypeList.clean();
-		VarbitTypeList.clean();
-		VarpTypeList.clean();
-		BasTypeList.clean();
-		MsiTypeList.clean();
-		MelTypeList.clean();
-		SkyBoxTypeList.clean();
-		SkyBoxSphereTypeList.clean();
-		LightTypeList.clean();
-		CursorTypeList.clean();
-		PlayerAppearance.clean();
-		Component.clean();
-		HintArrowManager.clean();
-		ShadowModelList.clean();
-		HitBarList.hitBars.clean(5);
-		FontMetricsList.fontMetrics.clean(5);
 	}
 
 	@OriginalMember(owner = "client!ro", name = "a", descriptor = "(IIIB)I")

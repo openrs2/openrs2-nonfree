@@ -25,7 +25,7 @@ public final class SpotAnimType {
 	private short[] recolorSource;
 
 	@OriginalMember(owner = "client!li", name = "a", descriptor = "I")
-	private int anInt3130 = 0;
+	private int ambient = 0;
 
 	@OriginalMember(owner = "client!li", name = "g", descriptor = "I")
 	public int seqId = -1;
@@ -43,10 +43,10 @@ public final class SpotAnimType {
 	private int angle = 0;
 
 	@OriginalMember(owner = "client!li", name = "s", descriptor = "Z")
-	public boolean aBoolean222 = false;
+	public boolean loop = false;
 
 	@OriginalMember(owner = "client!li", name = "d", descriptor = "I")
-	private int anInt3132 = 0;
+	private int contrast = 0;
 
 	@OriginalMember(owner = "client!li", name = "a", descriptor = "(IILclient!fd;)V")
 	private void decode(@OriginalArg(2) Buffer buffer, @OriginalArg(0) int code) {
@@ -61,13 +61,13 @@ public final class SpotAnimType {
 		} else if (code == 6) {
 			this.angle = buffer.readUnsignedShort();
 		} else if (code == 7) {
-			this.anInt3130 = buffer.readUnsignedByte();
+			this.ambient = buffer.readUnsignedByte();
 		} else if (code == 8) {
-			this.anInt3132 = buffer.readUnsignedByte();
+			this.contrast = buffer.readUnsignedByte();
 		} else if (code == 9) {
 			this.aBoolean221 = true;
 		} else if (code == 10) {
-			this.aBoolean222 = true;
+			this.loop = true;
 		} else if (code == 40) {
 			@Pc(93) int len = buffer.readUnsignedByte();
 			this.recolorDestination = new short[len];
@@ -116,7 +116,7 @@ public final class SpotAnimType {
 					rawModel.retexture(this.retextureSource[i], this.retextureDestination[i]);
 				}
 			}
-			model = rawModel.createModel(this.anInt3130 + 64, this.anInt3132 + 850, -30, -50, -30);
+			model = rawModel.createModel(this.ambient + 64, this.contrast + 850, -30, -50, -30);
 			SpotAnimTypeList.models.put(this.id, model);
 		}
 		@Pc(113) Model model2;

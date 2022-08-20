@@ -505,9 +505,9 @@ public final class MiniMenu {
 					Static37.method4661(intArg1, intArg2, 1);
 					Protocol.outboundBuffer.writeByte(Static2.anInt1941);
 					Protocol.outboundBuffer.writeByte(Static7.anInt5798);
-					Protocol.outboundBuffer.writeShort((int) Static5.aFloat97);
+					Protocol.outboundBuffer.writeShort((int) Camera.yaw);
 					Protocol.outboundBuffer.writeByte(57);
-					Protocol.outboundBuffer.writeByte(Static6.anInt3585);
+					Protocol.outboundBuffer.writeByte(Camera.yawOffset);
 					Protocol.outboundBuffer.writeByte(Static6.anInt4761);
 					Protocol.outboundBuffer.writeByte(89);
 					Protocol.outboundBuffer.writeShort(PlayerList.self.xFine);
@@ -843,7 +843,7 @@ public final class MiniMenu {
 		if (type.multiNpcs != null) {
 			type = type.getMultiNpc();
 		}
-		if (type == null || !type.aBoolean357) {
+		if (type == null || !type.interactive) {
 			return;
 		}
 		@Pc(38) String nameWithLevel = type.name;
@@ -919,7 +919,7 @@ public final class MiniMenu {
 						if (action != 0) {
 							action += priority;
 						}
-						add(id, x, z, "<col=ffff00>" + nameWithLevel, ops[i], action, type.anInt5241);
+						add(id, x, z, "<col=ffff00>" + nameWithLevel, ops[i], action, type.cursor);
 					}
 				}
 			}

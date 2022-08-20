@@ -121,33 +121,6 @@ public final class Static27 {
 		}
 	}
 
-	@OriginalMember(owner = "client!og", name = "h", descriptor = "(B)V")
-	public static void method4709() {
-		FloTypeList.removeSoft();
-		FluTypeList.removeSoft();
-		IdkTypeList.removeSoft();
-		LocTypeList.removeSoft();
-		NpcTypeList.removeSoft();
-		ObjTypeList.removeSoft();
-		SeqTypeList.removeSoft();
-		SpotAnimTypeList.removeSoft();
-		VarbitTypeList.removeSoft();
-		VarpTypeList.removeSoft();
-		BasTypeList.removeSoft();
-		MsiTypeList.removeSoft();
-		MelTypeList.removeSoft();
-		SkyBoxTypeList.removeSoft();
-		SkyBoxSphereTypeList.removeSoft();
-		LightTypeList.removeSoft();
-		CursorTypeList.removeSoft();
-		PlayerAppearance.removeSoft();
-		Component.removeSoft();
-		HintArrowManager.removeSoft();
-		ShadowModelList.removeSoft();
-		HitBarList.hitBars.removeSoft();
-		FontMetricsList.fontMetrics.removeSoft();
-	}
-
 	@OriginalMember(owner = "client!oj", name = "a", descriptor = "(IIIIIIFIZ)[[I")
 	public static int[][] method3234(@OriginalArg(6) float arg0) {
 		@Pc(17) int[][] local17 = new int[256][64];

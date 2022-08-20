@@ -28,9 +28,9 @@ public final class Static11 {
 	public static void method516() {
 		SceneGraph.clear();
 		MiniMap.clear();
-		Static24.method2697();
+		client.clear();
 		SkyBoxCube.cache.clear();
-		Static3.aClass96_1 = new Class96();
+		LocType.aClass96_1 = new Class96();
 		((Js5GlTextureProvider) Rasteriser.textureProvider).clear();
 		Static13.method1027();
 		LightingManager.lights = new Light[255];
@@ -288,9 +288,9 @@ public final class Static11 {
 		}
 		Static6.anInt4761 = (int) (Math.random() * 30.0D) - 20;
 		Static1.anInt548 = (int) (Math.random() * 100.0D) - 50;
-		Static6.anInt3585 = (int) (Math.random() * 120.0D) - 60;
+		Camera.yawOffset = (int) (Math.random() * 120.0D) - 60;
 		Chat.size = 0;
-		Static5.aFloat97 = (int) (Math.random() * 20.0D) - 10 & 0x7FF;
+		Camera.yaw = (int) (Math.random() * 20.0D) - 10 & 0x7FF;
 		Static1.anInt242 = (int) (Math.random() * 80.0D) - 40;
 		Static3.aBoolean177 = false;
 		MiniMenu.anInt1334 = 0;
@@ -373,7 +373,7 @@ public final class Static11 {
 		if (GlRenderer.enabled) {
 			Static17.method1655();
 		}
-		Static7.aShortArray124 = Static5.aShortArray74 = Static7.aShortArray111 = Static4.aShortArray126 = new short[256];
+		ScriptRunner.recolorPalette = LocType.recolorPalette = NpcType.recolorPalette = ObjType.recolorPalette = new short[256];
 		Static2.aBoolean119 = false;
 		Static5.aBoolean248 = true;
 		Protocol.verifyId = 0;
@@ -497,7 +497,7 @@ public final class Static11 {
 			Static3.anInt2519 = Static4.anInt2977 << 7;
 			Static7.anInt5678 = Static5.anInt4165 << 7;
 		} else {
-			Static16.method1496();
+			Camera.method1496();
 		}
 		if (GlRenderer.enabled) {
 			Static17.method1655();

@@ -22,9 +22,9 @@ public final class AreaSoundManager {
 			@Pc(45) BasType basType = areaSound.npc.getBasType();
 			if (areaSound.npc.movementSeqId == basType.readySeqId) {
 				movementSpeed = 0;
-			} else if (areaSound.npc.movementSeqId == basType.anInt831 || areaSound.npc.movementSeqId == basType.anInt829 || areaSound.npc.movementSeqId == basType.anInt857 || areaSound.npc.movementSeqId == basType.anInt867) {
+			} else if (areaSound.npc.movementSeqId == basType.runSeqId || areaSound.npc.movementSeqId == basType.runFollow180SeqId || areaSound.npc.movementSeqId == basType.runFollowCwSeqId || areaSound.npc.movementSeqId == basType.runFollowCcwSeqId) {
 				movementSpeed = 2;
-			} else if (areaSound.npc.movementSeqId == basType.anInt854 || areaSound.npc.movementSeqId == basType.anInt833 || areaSound.npc.movementSeqId == basType.anInt861 || basType.anInt852 == areaSound.npc.movementSeqId) {
+			} else if (areaSound.npc.movementSeqId == basType.crawlSeqId || areaSound.npc.movementSeqId == basType.crawlFollow180SeqId || areaSound.npc.movementSeqId == basType.crawlFollowCwSeqId || basType.crawlFollowCcwSeqId == areaSound.npc.movementSeqId) {
 				movementSpeed = 3;
 			}
 			if (movementSpeed != areaSound.movementSpeed) {
@@ -49,9 +49,9 @@ public final class AreaSoundManager {
 			@Pc(227) BasType basType = areaSound.player.getBasType();
 			if (basType.readySeqId == areaSound.player.movementSeqId) {
 				movementSpeed = 0;
-			} else if (basType.anInt831 == areaSound.player.movementSeqId || basType.anInt829 == areaSound.player.movementSeqId || areaSound.player.movementSeqId == basType.anInt857 || areaSound.player.movementSeqId == basType.anInt867) {
+			} else if (basType.runSeqId == areaSound.player.movementSeqId || basType.runFollow180SeqId == areaSound.player.movementSeqId || areaSound.player.movementSeqId == basType.runFollowCwSeqId || areaSound.player.movementSeqId == basType.runFollowCcwSeqId) {
 				movementSpeed = 2;
-			} else if (areaSound.player.movementSeqId == basType.anInt854 || areaSound.player.movementSeqId == basType.anInt833 || areaSound.player.movementSeqId == basType.anInt861 || areaSound.player.movementSeqId == basType.anInt852) {
+			} else if (areaSound.player.movementSeqId == basType.crawlSeqId || areaSound.player.movementSeqId == basType.crawlFollow180SeqId || areaSound.player.movementSeqId == basType.crawlFollowCwSeqId || areaSound.player.movementSeqId == basType.crawlFollowCcwSeqId) {
 				movementSpeed = 3;
 			}
 			if (areaSound.movementSpeed != movementSpeed) {
@@ -135,9 +135,9 @@ public final class AreaSoundManager {
 		sound.minZFine = z * 128;
 		sound.minXFine = x * 128;
 		if (locType != null) {
-			sound.maxInterval = locType.anInt5530;
-			sound.minInterval = locType.anInt5555;
-			sound.sounds = locType.anIntArray632;
+			sound.maxInterval = locType.soundMaxInterval;
+			sound.minInterval = locType.soundMinInterval;
+			sound.sounds = locType.sounds;
 			sound.volume = locType.soundVolume;
 			@Pc(156) int width = locType.width;
 			sound.radius = locType.soundRadius * 128;

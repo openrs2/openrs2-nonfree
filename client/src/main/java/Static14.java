@@ -107,16 +107,16 @@ public final class Static14 {
 					@Pc(143) int localZ = position & 0x3F;
 					@Pc(155) int z = localZ + (Static7.mapSquares[i] & 0xFF) * 64 - Static7.originZ;
 					@Pc(161) NpcType type = NpcTypeList.get(buffer.readUnsignedShort());
-					if (NpcList.npcs[id] == null && (type.aByte21 & 0x1) > 0 && Static2.visibleLevel == level && x >= 0 && type.size + x < 104 && z >= 0 && z + type.size < 104) {
+					if (NpcList.npcs[id] == null && (type.movementFlags & 0x1) > 0 && Static2.visibleLevel == level && x >= 0 && type.size + x < 104 && z >= 0 && z + type.size < 104) {
 						NpcList.npcs[id] = new Npc();
 						@Pc(217) Npc npc = NpcList.npcs[id];
 						NpcList.ids[NpcList.size++] = id;
 						npc.lastSeenLoop = client.loop;
 						npc.setType(type);
 						npc.setSize(npc.type.size);
-						npc.targetAngle = npc.angle = PathingEntity.ANGLES[npc.type.aByte18];
-						npc.anInt4009 = npc.type.anInt5243;
-						if (npc.anInt4009 == 0) {
+						npc.targetAngle = npc.angle = PathingEntity.ANGLES[npc.type.spawnDirection];
+						npc.turnSpeed = npc.type.turnSpeed;
+						if (npc.turnSpeed == 0) {
 							npc.angle = 0;
 						}
 						npc.basId = npc.type.basId;
@@ -306,7 +306,7 @@ public final class Static14 {
 								continue;
 							}
 							@Pc(156) FloType local156 = FloTypeList.get(local138 - 1);
-							if (local156.anInt3869 == -1) {
+							if (local156.color == -1) {
 								continue;
 							}
 							if (arg10[local119][local80] != 0) {
@@ -317,7 +317,7 @@ public final class Static14 {
 							}
 						} else if (local138 != 0) {
 							@Pc(212) FloType local212 = FloTypeList.get(local138 - 1);
-							if (local212.anInt3869 == -1) {
+							if (local212.color == -1) {
 								@Pc(237) byte local237 = arg10[local119][local80];
 								if (local237 != 0) {
 									@Pc(243) int[] local243 = Static2.anIntArrayArray16[local237];
@@ -429,7 +429,7 @@ public final class Static14 {
 								continue;
 							}
 							@Pc(810) FloType local810 = FloTypeList.get(local795 - 1);
-							if (local810.anInt3869 == -1) {
+							if (local810.color == -1) {
 								continue;
 							}
 							if (arg10[local766][local722] != 0) {
@@ -438,7 +438,7 @@ public final class Static14 {
 							}
 						} else if (local795 != 0) {
 							@Pc(859) FloType local859 = FloTypeList.get(local795 - 1);
-							if (local859.anInt3869 == -1) {
+							if (local859.color == -1) {
 								Static19.method1778(light, Static2.anIntArrayArray16[arg10[local766][local722]], arg7, local722, local766, local34, arg5, arg8, arg0[local766][local722], arg3);
 								continue;
 							}

@@ -177,17 +177,6 @@ public final class Static8 {
 		}
 	}
 
-	@OriginalMember(owner = "client!ab", name = "a", descriptor = "(B)V")
-	public static void method8() {
-		for (@Pc(11) int i = 0; i < NpcList.size; i++) {
-			@Pc(18) int id = NpcList.ids[i];
-			@Pc(22) Npc npc = NpcList.npcs[id];
-			if (npc != null) {
-				Static15.method1428(npc.type.size, npc);
-			}
-		}
-	}
-
 	@OriginalMember(owner = "client!ac", name = "a", descriptor = "(IIIII)V")
 	public static void method66(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3) {
 		for (@Pc(3) int i = 0; i < InterfaceList.rectangles; i++) {

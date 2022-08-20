@@ -11,7 +11,7 @@ public final class Static35 {
 		} else if (Static1.anInt772 == 2) {
 			Static23.method2537();
 		} else {
-			Static16.method1496();
+			Camera.method1496();
 		}
 		if (!Static1.aBoolean17) {
 			if (Static2.anInt1940 != 0) {
@@ -117,9 +117,9 @@ public final class Static35 {
 				SoftwareRaster.method4210(x, y, component.anIntArray672, component.anIntArray657);
 			}
 		} else if (GlRenderer.enabled) {
-			((GlSprite) Sprites.compass).renderRotatedTransparent(x, y, component.width, component.height, Sprites.compass.width / 2, Sprites.compass.height / 2, (int) Static5.aFloat97, 256, (GlSprite) component.method4729(false));
+			((GlSprite) Sprites.compass).renderRotatedTransparent(x, y, component.width, component.height, Sprites.compass.width / 2, Sprites.compass.height / 2, (int) Camera.yaw, 256, (GlSprite) component.method4729(false));
 		} else {
-			((SoftwareSprite) Sprites.compass).method2165(x, y, component.width, component.height, Sprites.compass.width / 2, Sprites.compass.height / 2, (int) Static5.aFloat97, component.anIntArray672, component.anIntArray657);
+			((SoftwareSprite) Sprites.compass).method2165(x, y, component.width, component.height, Sprites.compass.width / 2, Sprites.compass.height / 2, (int) Camera.yaw, component.anIntArray672, component.anIntArray657);
 		}
 		InterfaceList.rectangleRedraw[rectangle] = true;
 	}

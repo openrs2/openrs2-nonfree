@@ -44,13 +44,13 @@ public abstract class PathingEntity extends Entity {
 				label303:
 				{
 					@Pc(166) SeqType seqType = SeqTypeList.get(seqId);
-					if (spotAnimType.aBoolean222) {
+					if (spotAnimType.loop) {
 						if (seqType.anInt1240 == 3) {
-							if (entity.anInt4030 > 0 && entity.anInt4034 <= client.loop && client.loop > entity.anInt3966) {
+							if (entity.anInt4030 > 0 && entity.exactMoveStart <= client.loop && client.loop > entity.exactMoveEnd) {
 								entity.spotAnimId = -1;
 								break label303;
 							}
-						} else if (seqType.anInt1240 == 1 && entity.anInt4030 > 0 && entity.anInt4034 <= client.loop && entity.anInt3966 < client.loop) {
+						} else if (seqType.anInt1240 == 1 && entity.anInt4030 > 0 && entity.exactMoveStart <= client.loop && entity.exactMoveEnd < client.loop) {
 							entity.spotAnimStart = client.loop + 1;
 							break label303;
 						}
@@ -69,7 +69,7 @@ public abstract class PathingEntity extends Entity {
 							SoundPlayer.playSeqSound(seqType, entity.xFine, entity.zFine, entity.anInt4026, PlayerList.self == entity);
 						}
 						if (entity.anInt4026 >= seqType.frames.length) {
-							if (spotAnimType.aBoolean222) {
+							if (spotAnimType.loop) {
 								entity.anInt3989++;
 								entity.anInt4026 -= seqType.anInt1242;
 								if (seqType.anInt1239 <= entity.anInt3989) {
@@ -85,7 +85,7 @@ public abstract class PathingEntity extends Entity {
 						}
 						entity.anInt3976 = entity.anInt4026 + 1;
 						if (entity.anInt3976 >= seqType.frames.length) {
-							if (spotAnimType.aBoolean222) {
+							if (spotAnimType.loop) {
 								entity.anInt3976 -= seqType.anInt1242;
 								if (seqType.anInt1239 <= entity.anInt3989 + 1) {
 									entity.anInt3976 = -1;
@@ -103,10 +103,10 @@ public abstract class PathingEntity extends Entity {
 		if (entity.seqId != -1 && entity.seqDelay <= 1) {
 			@Pc(458) SeqType seqType = SeqTypeList.get(entity.seqId);
 			if (seqType.anInt1240 == 3) {
-				if (entity.anInt4030 > 0 && client.loop >= entity.anInt4034 && entity.anInt3966 < client.loop) {
+				if (entity.anInt4030 > 0 && client.loop >= entity.exactMoveStart && entity.exactMoveEnd < client.loop) {
 					entity.seqId = -1;
 				}
-			} else if (seqType.anInt1240 == 1 && entity.anInt4030 > 0 && client.loop >= entity.anInt4034 && client.loop > entity.anInt3966) {
+			} else if (seqType.anInt1240 == 1 && entity.anInt4030 > 0 && client.loop >= entity.exactMoveStart && client.loop > entity.exactMoveEnd) {
 				entity.seqDelay = 2;
 			}
 		}
@@ -147,40 +147,40 @@ public abstract class PathingEntity extends Entity {
 		if (entity.seqDelay > 0) {
 			entity.seqDelay--;
 		}
-		for (@Pc(746) int i = 0; i < entity.aClass150Array3.length; i++) {
-			@Pc(760) Seq local760 = entity.aClass150Array3[i];
-			if (local760 != null) {
-				if (local760.delay > 0) {
-					local760.delay--;
+		for (@Pc(746) int i = 0; i < entity.seqs.length; i++) {
+			@Pc(760) Seq seq = entity.seqs[i];
+			if (seq != null) {
+				if (seq.delay > 0) {
+					seq.delay--;
 				} else {
-					@Pc(782) SeqType seqType = SeqTypeList.get(local760.seqId);
+					@Pc(782) SeqType seqType = SeqTypeList.get(seq.seqId);
 					if (seqType == null || seqType.frames == null) {
-						entity.aClass150Array3[i] = null;
+						entity.seqs[i] = null;
 					} else {
-						local760.anInt4460++;
-						if (seqType.frames.length > local760.anInt4462 && seqType.anIntArray94[local760.anInt4462] < local760.anInt4460) {
-							local760.anInt4460 = 1;
-							local760.anInt4462++;
-							SoundPlayer.playSeqSound(seqType, entity.xFine, entity.zFine, local760.anInt4462, entity == PlayerList.self);
+						seq.anInt4460++;
+						if (seqType.frames.length > seq.anInt4462 && seqType.anIntArray94[seq.anInt4462] < seq.anInt4460) {
+							seq.anInt4460 = 1;
+							seq.anInt4462++;
+							SoundPlayer.playSeqSound(seqType, entity.xFine, entity.zFine, seq.anInt4462, entity == PlayerList.self);
 						}
-						if (local760.anInt4462 >= seqType.frames.length) {
-							local760.anInt4462 -= seqType.anInt1242;
-							local760.anInt4465++;
-							if (seqType.anInt1239 <= local760.anInt4465) {
-								entity.aClass150Array3[i] = null;
-							} else if (local760.anInt4462 >= 0 && seqType.frames.length > local760.anInt4462) {
-								SoundPlayer.playSeqSound(seqType, entity.xFine, entity.zFine, local760.anInt4462, entity == PlayerList.self);
+						if (seq.anInt4462 >= seqType.frames.length) {
+							seq.anInt4462 -= seqType.anInt1242;
+							seq.anInt4465++;
+							if (seqType.anInt1239 <= seq.anInt4465) {
+								entity.seqs[i] = null;
+							} else if (seq.anInt4462 >= 0 && seqType.frames.length > seq.anInt4462) {
+								SoundPlayer.playSeqSound(seqType, entity.xFine, entity.zFine, seq.anInt4462, entity == PlayerList.self);
 							} else {
-								entity.aClass150Array3[i] = null;
+								entity.seqs[i] = null;
 							}
 						}
-						local760.anInt4464 = local760.anInt4462 + 1;
-						if (seqType.frames.length <= local760.anInt4464) {
-							local760.anInt4464 -= seqType.anInt1242;
-							if (local760.anInt4465 + 1 >= seqType.anInt1239) {
-								local760.anInt4464 = -1;
-							} else if (local760.anInt4464 < 0 || local760.anInt4464 >= seqType.frames.length) {
-								local760.anInt4464 = -1;
+						seq.anInt4464 = seq.anInt4462 + 1;
+						if (seqType.frames.length <= seq.anInt4464) {
+							seq.anInt4464 -= seqType.anInt1242;
+							if (seq.anInt4465 + 1 >= seqType.anInt1239) {
+								seq.anInt4464 = -1;
+							} else if (seq.anInt4464 < 0 || seq.anInt4464 >= seqType.frames.length) {
+								seq.anInt4464 = -1;
 							}
 						}
 					}
@@ -190,58 +190,58 @@ public abstract class PathingEntity extends Entity {
 	}
 
 	@OriginalMember(owner = "client!mf", name = "a", descriptor = "(Lclient!qc;I)V")
-	public static void method2705(@OriginalArg(0) PathingEntity entity) {
-		if (client.loop == entity.anInt3966 || entity.seqId == -1 || entity.seqDelay != 0 || entity.anInt4044 + 1 > SeqTypeList.get(entity.seqId).anIntArray94[entity.anInt3970]) {
-			@Pc(41) int local41 = entity.anInt3966 - entity.anInt4034;
-			@Pc(46) int local46 = client.loop - entity.anInt4034;
-			@Pc(57) int local57 = entity.anInt3973 * 128 + entity.getSize() * 64;
-			@Pc(71) int local71 = entity.anInt4033 * 128 + entity.getSize() * 64;
-			@Pc(82) int local82 = entity.anInt4013 * 128 + entity.getSize() * 64;
-			@Pc(95) int local95 = entity.anInt4025 * 128 + entity.getSize() * 64;
-			entity.zFine = ((local41 - local46) * local71 + local46 * local95) / local41;
-			entity.xFine = (local57 * (local41 - local46) + local82 * local46) / local41;
+	private static void exactMove(@OriginalArg(0) PathingEntity entity) {
+		if (client.loop == entity.exactMoveEnd || entity.seqId == -1 || entity.seqDelay != 0 || entity.anInt4044 + 1 > SeqTypeList.get(entity.seqId).anIntArray94[entity.anInt3970]) {
+			@Pc(41) int duration = entity.exactMoveEnd - entity.exactMoveStart;
+			@Pc(46) int time = client.loop - entity.exactMoveStart;
+			@Pc(57) int srcX = entity.exactMoveSrcX * 128 + entity.getSize() * 64;
+			@Pc(71) int srcZ = entity.exactMoveSrcZ * 128 + entity.getSize() * 64;
+			@Pc(82) int destX = entity.exactMoveDestX * 128 + entity.getSize() * 64;
+			@Pc(95) int destZ = entity.exactMoveDestZ * 128 + entity.getSize() * 64;
+			entity.zFine = (srcZ * (duration - time) + destZ * time) / duration;
+			entity.xFine = (srcX * (duration - time) + destX * time) / duration;
 		}
-		if (entity.anInt4008 == 0) {
+		if (entity.exactMoveDirection == 0) {
 			entity.targetAngle = 1024;
 		}
-		if (entity.anInt4008 == 1) {
+		if (entity.exactMoveDirection == 1) {
 			entity.targetAngle = 1536;
 		}
-		if (entity.anInt4008 == 2) {
+		if (entity.exactMoveDirection == 2) {
 			entity.targetAngle = 0;
 		}
 		entity.movementBlockedLoops = 0;
-		if (entity.anInt4008 == 3) {
+		if (entity.exactMoveDirection == 3) {
 			entity.targetAngle = 512;
 		}
 		entity.angle = entity.targetAngle;
 	}
 
 	@OriginalMember(owner = "client!tl", name = "a", descriptor = "(Lclient!qc;Z)V")
-	public static void method4234(@OriginalArg(0) PathingEntity arg0) {
-		@Pc(13) int local13 = arg0.anInt4034 - client.loop;
-		@Pc(25) int local25 = arg0.anInt3973 * 128 + arg0.getSize() * 64;
-		@Pc(37) int local37 = arg0.anInt4033 * 128 + arg0.getSize() * 64;
-		if (arg0.anInt4008 == 0) {
-			arg0.targetAngle = 1024;
+	private static void preExactMove(@OriginalArg(0) PathingEntity entity) {
+		@Pc(13) int duration = entity.exactMoveStart - client.loop;
+		@Pc(25) int srcX = entity.exactMoveSrcX * 128 + entity.getSize() * 64;
+		@Pc(37) int srcZ = entity.exactMoveSrcZ * 128 + entity.getSize() * 64;
+		if (entity.exactMoveDirection == 0) {
+			entity.targetAngle = 1024;
 		}
-		arg0.zFine += (local37 - arg0.zFine) / local13;
-		arg0.xFine += (local25 - arg0.xFine) / local13;
-		if (arg0.anInt4008 == 1) {
-			arg0.targetAngle = 1536;
+		entity.zFine += (srcZ - entity.zFine) / duration;
+		entity.xFine += (srcX - entity.xFine) / duration;
+		if (entity.exactMoveDirection == 1) {
+			entity.targetAngle = 1536;
 		}
-		arg0.movementBlockedLoops = 0;
-		if (arg0.anInt4008 == 2) {
-			arg0.targetAngle = 0;
+		entity.movementBlockedLoops = 0;
+		if (entity.exactMoveDirection == 2) {
+			entity.targetAngle = 0;
 		}
-		if (arg0.anInt4008 == 3) {
-			arg0.targetAngle = 512;
+		if (entity.exactMoveDirection == 3) {
+			entity.targetAngle = 512;
 		}
 	}
 
 	@OriginalMember(owner = "client!tm", name = "a", descriptor = "(ILclient!qc;)V")
-	public static void method4247(@OriginalArg(1) PathingEntity entity) {
-		if (entity.anInt4009 == 0) {
+	public static void turn(@OriginalArg(1) PathingEntity entity) {
+		if (entity.turnSpeed == 0) {
 			return;
 		}
 		@Pc(16) BasType basType = entity.getBasType();
@@ -285,61 +285,61 @@ public abstract class PathingEntity extends Entity {
 		} else if (basType.anInt830 == 0) {
 			entity.anInt4015++;
 			if (angleDelta <= 1024) {
-				entity.angle += entity.anInt4009;
-				@Pc(874) boolean local874 = true;
-				if (entity.anInt4009 > angleDelta || angleDelta > 2048 - entity.anInt4009) {
-					local874 = false;
+				entity.angle += entity.turnSpeed;
+				@Pc(874) boolean turning = true;
+				if (entity.turnSpeed > angleDelta || angleDelta > 2048 - entity.turnSpeed) {
+					turning = false;
 					entity.angle = entity.targetAngle;
 				}
-				if (entity.anInt4015 > 25 || local874) {
-					entity.movementSeqId = basType.anInt846;
-					if (entity.movementQueueSize > 0) {
-						if (entity.movementQueueSpeed[entity.movementQueueSize - 1] == 2) {
-							if (basType.anInt853 != -1) {
-								entity.movementSeqId = basType.anInt853;
-							} else if (basType.anInt831 != -1) {
-								entity.movementSeqId = basType.anInt831;
-							}
-						} else if (entity.movementQueueSpeed[entity.movementQueueSize - 1] == 0) {
-							if (basType.anInt839 != -1) {
-								entity.movementSeqId = basType.anInt839;
-							} else if (basType.anInt854 != -1) {
-								entity.movementSeqId = basType.anInt854;
-							}
-						} else if (basType.anInt865 != -1) {
-							entity.movementSeqId = basType.anInt865;
+				if (entity.anInt4015 > 25 || turning) {
+					entity.movementSeqId = basType.walkSeqId;
+					if (entity.movementQueueSize <= 0) {
+						if (basType.readyCwSeqId != -1) {
+							entity.movementSeqId = basType.readyCwSeqId;
 						}
-					} else if (basType.anInt832 != -1) {
-						entity.movementSeqId = basType.anInt832;
+					} else if (entity.movementQueueSpeed[entity.movementQueueSize - 1] == 2) {
+						if (basType.runCwSeqId != -1) {
+							entity.movementSeqId = basType.runCwSeqId;
+						} else if (basType.runSeqId != -1) {
+							entity.movementSeqId = basType.runSeqId;
+						}
+					} else if (entity.movementQueueSpeed[entity.movementQueueSize - 1] == 0) {
+						if (basType.crawlCwSeqId != -1) {
+							entity.movementSeqId = basType.crawlCwSeqId;
+						} else if (basType.crawlSeqId != -1) {
+							entity.movementSeqId = basType.crawlSeqId;
+						}
+					} else if (basType.walkCwSeqId != -1) {
+						entity.movementSeqId = basType.walkCwSeqId;
 					}
 				}
 			} else {
-				entity.angle -= entity.anInt4009;
-				@Pc(1005) boolean local1005 = true;
-				if (angleDelta < entity.anInt4009 || 2048 - entity.anInt4009 < angleDelta) {
-					local1005 = false;
+				entity.angle -= entity.turnSpeed;
+				@Pc(1005) boolean turning = true;
+				if (angleDelta < entity.turnSpeed || 2048 - entity.turnSpeed < angleDelta) {
+					turning = false;
 					entity.angle = entity.targetAngle;
 				}
-				if (entity.anInt4015 > 25 || local1005) {
-					entity.movementSeqId = basType.anInt846;
+				if (entity.anInt4015 > 25 || turning) {
+					entity.movementSeqId = basType.walkSeqId;
 					if (entity.movementQueueSize <= 0) {
-						if (basType.anInt834 != -1) {
-							entity.movementSeqId = basType.anInt834;
+						if (basType.readyCcwSeqId != -1) {
+							entity.movementSeqId = basType.readyCcwSeqId;
 						}
 					} else if (entity.movementQueueSpeed[entity.movementQueueSize - 1] == 2) {
-						if (basType.anInt835 != -1) {
-							entity.movementSeqId = basType.anInt835;
-						} else if (basType.anInt831 != -1) {
-							entity.movementSeqId = basType.anInt831;
+						if (basType.runCcwSeqId != -1) {
+							entity.movementSeqId = basType.runCcwSeqId;
+						} else if (basType.runSeqId != -1) {
+							entity.movementSeqId = basType.runSeqId;
 						}
 					} else if (entity.movementQueueSpeed[entity.movementQueueSize - 1] == 0) {
-						if (basType.anInt843 != -1) {
-							entity.movementSeqId = basType.anInt843;
-						} else if (basType.anInt854 != -1) {
-							entity.movementSeqId = basType.anInt854;
+						if (basType.crawlCcwSeqId != -1) {
+							entity.movementSeqId = basType.crawlCcwSeqId;
+						} else if (basType.crawlSeqId != -1) {
+							entity.movementSeqId = basType.crawlSeqId;
 						}
-					} else if (basType.anInt842 != -1) {
-						entity.movementSeqId = basType.anInt842;
+					} else if (basType.walkCcwSeqId != -1) {
+						entity.movementSeqId = basType.walkCcwSeqId;
 					}
 				}
 			}
@@ -437,64 +437,301 @@ public abstract class PathingEntity extends Entity {
 			if (entity.anInt4020 < 0) {
 				if (entity.movementQueueSize > 0) {
 					if (entity.movementQueueSpeed[entity.movementQueueSize - 1] == 2) {
-						if (basType.anInt835 != -1) {
-							entity.movementSeqId = basType.anInt835;
-						} else if (basType.anInt831 != -1) {
-							entity.movementSeqId = basType.anInt831;
+						if (basType.runCcwSeqId != -1) {
+							entity.movementSeqId = basType.runCcwSeqId;
+						} else if (basType.runSeqId != -1) {
+							entity.movementSeqId = basType.runSeqId;
 						}
 					} else if (entity.movementQueueSpeed[entity.movementQueueSize - 1] == 0) {
-						if (basType.anInt843 != -1) {
-							entity.movementSeqId = basType.anInt843;
-						} else if (basType.anInt854 != -1) {
-							entity.movementSeqId = basType.anInt854;
+						if (basType.crawlCcwSeqId != -1) {
+							entity.movementSeqId = basType.crawlCcwSeqId;
+						} else if (basType.crawlSeqId != -1) {
+							entity.movementSeqId = basType.crawlSeqId;
 						}
 					}
 				}
 				if (entity.movementSeqId == -1) {
-					if (basType.anInt842 != -1) {
-						entity.movementSeqId = basType.anInt842;
-					} else if (basType.anInt834 != -1) {
-						entity.movementSeqId = basType.anInt834;
+					if (basType.walkCcwSeqId != -1) {
+						entity.movementSeqId = basType.walkCcwSeqId;
+					} else if (basType.readyCcwSeqId != -1) {
+						entity.movementSeqId = basType.readyCcwSeqId;
 					}
 				}
 			} else {
 				if (entity.movementQueueSize > 0) {
 					if (entity.movementQueueSpeed[entity.movementQueueSize - 1] == 2) {
-						if (basType.anInt853 != -1) {
-							entity.movementSeqId = basType.anInt853;
-						} else if (basType.anInt831 != -1) {
-							entity.movementSeqId = basType.anInt831;
+						if (basType.runCwSeqId != -1) {
+							entity.movementSeqId = basType.runCwSeqId;
+						} else if (basType.runSeqId != -1) {
+							entity.movementSeqId = basType.runSeqId;
 						}
 					} else if (entity.movementQueueSpeed[entity.movementQueueSize - 1] == 0) {
-						if (basType.anInt839 != -1) {
-							entity.movementSeqId = basType.anInt839;
-						} else if (basType.anInt854 != -1) {
-							entity.movementSeqId = basType.anInt854;
+						if (basType.crawlCwSeqId != -1) {
+							entity.movementSeqId = basType.crawlCwSeqId;
+						} else if (basType.crawlSeqId != -1) {
+							entity.movementSeqId = basType.crawlSeqId;
 						}
 					}
 				}
 				if (entity.movementSeqId == -1) {
-					if (basType.anInt865 != -1) {
-						entity.movementSeqId = basType.anInt865;
-					} else if (basType.anInt832 != -1) {
-						entity.movementSeqId = basType.anInt832;
+					if (basType.walkCwSeqId != -1) {
+						entity.movementSeqId = basType.walkCwSeqId;
+					} else if (basType.readyCwSeqId != -1) {
+						entity.movementSeqId = basType.readyCwSeqId;
 					}
 				}
 			}
 			if (entity.movementSeqId == -1) {
-				entity.movementSeqId = basType.anInt846;
+				entity.movementSeqId = basType.walkSeqId;
 			}
 		}
 	}
 
+	@OriginalMember(owner = "client!sl", name = "a", descriptor = "(Lclient!qc;B)V")
+	public static void move(@OriginalArg(0) PathingEntity entity) {
+		@Pc(5) BasType basType = entity.getBasType();
+		entity.movementSeqId = basType.readySeqId;
+		if (entity.movementQueueSize == 0) {
+			entity.movementBlockedLoops = 0;
+			return;
+		}
+		if (entity.seqId != -1 && entity.seqDelay == 0) {
+			@Pc(41) SeqType seqType = SeqTypeList.get(entity.seqId);
+			if (entity.anInt4030 > 0 && seqType.anInt1240 == 0) {
+				entity.movementBlockedLoops++;
+				return;
+			}
+			if (entity.anInt4030 <= 0 && seqType.anInt1237 == 0) {
+				entity.movementBlockedLoops++;
+				return;
+			}
+		}
+		if (entity.spotAnimId != -1 && client.loop >= entity.spotAnimStart) {
+			@Pc(95) SpotAnimType spotAnimType = SpotAnimTypeList.get(entity.spotAnimId);
+			if (spotAnimType.loop && spotAnimType.seqId != -1) {
+				@Pc(110) SeqType seqType = SeqTypeList.get(spotAnimType.seqId);
+				if (entity.anInt4030 > 0 && seqType.anInt1240 == 0) {
+					entity.movementBlockedLoops++;
+					return;
+				}
+				if (entity.anInt4030 <= 0 && seqType.anInt1237 == 0) {
+					entity.movementBlockedLoops++;
+					return;
+				}
+			}
+		}
+		@Pc(145) int x = entity.xFine;
+		@Pc(148) int z = entity.zFine;
+		@Pc(167) int targetX = entity.movementQueueX[entity.movementQueueSize - 1] * 128 + entity.getSize() * 64;
+		@Pc(184) int targetZ = entity.movementQueueZ[entity.movementQueueSize - 1] * 128 + entity.getSize() * 64;
+		if (targetX - x > 256 || targetX - x < -256 || targetZ - z > 256 || targetZ - z < -256) {
+			entity.zFine = targetZ;
+			entity.xFine = targetX;
+			return;
+		}
+		if (x >= targetX) {
+			if (x <= targetX) {
+				if (z < targetZ) {
+					entity.targetAngle = 1024;
+				} else if (z > targetZ) {
+					entity.targetAngle = 0;
+				}
+			} else if (z < targetZ) {
+				entity.targetAngle = 768;
+			} else if (z <= targetZ) {
+				entity.targetAngle = 512;
+			} else {
+				entity.targetAngle = 256;
+			}
+		} else if (z < targetZ) {
+			entity.targetAngle = 1280;
+		} else if (z > targetZ) {
+			entity.targetAngle = 1792;
+		} else {
+			entity.targetAngle = 1536;
+		}
+		@Pc(295) int seqId = basType.walkFollow180SeqId;
+		@Pc(304) int angleDelta = entity.targetAngle - entity.angle & 0x7FF;
+		if (angleDelta > 1024) {
+			angleDelta -= 2048;
+		}
+		if (angleDelta >= -256 && angleDelta <= 256) {
+			seqId = basType.walkSeqId;
+		} else if (angleDelta >= 256 && angleDelta < 768) {
+			seqId = basType.walkFollowCwSeqId;
+		} else if (angleDelta >= -768 && angleDelta <= -256) {
+			seqId = basType.walkFollowCcwSeqId;
+		}
+		if (seqId == -1) {
+			seqId = basType.walkSeqId;
+		}
+		entity.movementSeqId = seqId;
+		@Pc(361) int local361 = 4;
+		@Pc(363) boolean local363 = true;
+		if (entity instanceof Npc) {
+			local363 = ((Npc) entity).type.aBoolean358;
+		}
+		@Pc(373) byte movementSpeed = 1;
+		if (local363) {
+			if (entity.angle != entity.targetAngle && entity.faceEntity == -1 && entity.turnSpeed != 0) {
+				local361 = 2;
+			}
+			if (entity.movementQueueSize > 2) {
+				local361 = 6;
+			}
+			if (entity.movementQueueSize > 3) {
+				local361 = 8;
+			}
+			if (entity.movementBlockedLoops > 0 && entity.movementQueueSize > 1) {
+				local361 = 8;
+				entity.movementBlockedLoops--;
+			}
+		} else {
+			if (entity.movementQueueSize > 1) {
+				local361 = 6;
+			}
+			if (entity.movementQueueSize > 2) {
+				local361 = 8;
+			}
+			if (entity.movementBlockedLoops > 0 && entity.movementQueueSize > 1) {
+				entity.movementBlockedLoops--;
+				local361 = 8;
+			}
+		}
+		if (entity.movementQueueSpeed[entity.movementQueueSize - 1] == 2) {
+			movementSpeed = 2;
+			local361 <<= 1;
+		} else if (entity.movementQueueSpeed[entity.movementQueueSize - 1] == 0) {
+			local361 >>= 1;
+			movementSpeed = 0;
+		}
+		if (local361 < 8 || basType.runSeqId == -1) {
+			if (basType.crawlSeqId != -1 && movementSpeed == 0) {
+				if (entity.movementSeqId == basType.walkFollow180SeqId && basType.crawlFollow180SeqId != -1) {
+					entity.movementSeqId = basType.crawlFollow180SeqId;
+				} else if (entity.movementSeqId == basType.walkFollowCcwSeqId && basType.crawlFollowCcwSeqId != -1) {
+					entity.movementSeqId = basType.crawlFollowCcwSeqId;
+				} else if (entity.movementSeqId == basType.walkFollowCwSeqId && basType.crawlFollowCwSeqId != -1) {
+					entity.movementSeqId = basType.crawlFollowCwSeqId;
+				} else {
+					entity.movementSeqId = basType.crawlSeqId;
+				}
+			}
+		} else if (entity.movementSeqId == basType.walkFollow180SeqId && basType.runFollow180SeqId != -1) {
+			entity.movementSeqId = basType.runFollow180SeqId;
+		} else if (entity.movementSeqId == basType.walkFollowCcwSeqId && basType.runFollowCcwSeqId != -1) {
+			entity.movementSeqId = basType.runFollowCcwSeqId;
+		} else if (entity.movementSeqId == basType.walkFollowCwSeqId && basType.runFollowCwSeqId != -1) {
+			entity.movementSeqId = basType.runFollowCwSeqId;
+		} else {
+			entity.movementSeqId = basType.runSeqId;
+		}
+		if (basType.anInt841 != -1) {
+			@Pc(654) int local654 = local361 << 7;
+			if (entity.movementQueueSize == 1) {
+				@Pc(666) int local666 = entity.anInt3999 * entity.anInt3999;
+				@Pc(683) int dz = (targetZ >= entity.zFine ? targetZ - entity.zFine : entity.zFine - targetZ) << 7;
+				@Pc(701) int dx = (targetX < entity.xFine ? entity.xFine - targetX : targetX - entity.xFine) << 7;
+				@Pc(712) int local712 = dz >= dx ? dz : dx;
+				@Pc(719) int local719 = basType.anInt841 * 2 * local712;
+				if (local719 < local666) {
+					entity.anInt3999 /= 2;
+				} else if (local666 / 2 > local712) {
+					entity.anInt3999 -= basType.anInt841;
+					if (entity.anInt3999 < 0) {
+						entity.anInt3999 = 0;
+					}
+				} else if (entity.anInt3999 < local654) {
+					entity.anInt3999 += basType.anInt841;
+					if (local654 < entity.anInt3999) {
+						entity.anInt3999 = local654;
+					}
+				}
+			} else if (entity.anInt3999 < local654) {
+				entity.anInt3999 += basType.anInt841;
+				if (local654 < entity.anInt3999) {
+					entity.anInt3999 = local654;
+				}
+			} else if (entity.anInt3999 > 0) {
+				entity.anInt3999 -= basType.anInt841;
+				if (entity.anInt3999 < 0) {
+					entity.anInt3999 = 0;
+				}
+			}
+			local361 = entity.anInt3999 >> 7;
+			if (local361 < 1) {
+				local361 = 1;
+			}
+		}
+		if (targetZ > z) {
+			entity.zFine += local361;
+			if (targetZ < entity.zFine) {
+				entity.zFine = targetZ;
+			}
+		} else if (z > targetZ) {
+			entity.zFine -= local361;
+			if (targetZ > entity.zFine) {
+				entity.zFine = targetZ;
+			}
+		}
+		if (x < targetX) {
+			entity.xFine += local361;
+			if (entity.xFine > targetX) {
+				entity.xFine = targetX;
+			}
+		} else if (x > targetX) {
+			entity.xFine -= local361;
+			if (entity.xFine < targetX) {
+				entity.xFine = targetX;
+			}
+		}
+		if (entity.xFine == targetX && entity.zFine == targetZ) {
+			entity.movementQueueSize--;
+			if (entity.anInt4030 > 0) {
+				entity.anInt4030--;
+			}
+		}
+	}
+
+	@OriginalMember(owner = "client!fj", name = "a", descriptor = "(IILclient!qc;)V")
+	public static void loop(@OriginalArg(2) PathingEntity entity, @OriginalArg(1) int size) {
+		if (client.loop < entity.exactMoveStart) {
+			preExactMove(entity);
+		} else if (client.loop <= entity.exactMoveEnd) {
+			exactMove(entity);
+		} else {
+			move(entity);
+		}
+		if (entity.xFine < 128 || entity.zFine < 128 || entity.xFine >= 13184 || entity.zFine >= 13184) {
+			entity.exactMoveEnd = 0;
+			entity.exactMoveStart = 0;
+			entity.spotAnimId = -1;
+			entity.seqId = -1;
+			entity.xFine = entity.movementQueueX[0] * 128 + entity.getSize() * 64;
+			entity.zFine = entity.movementQueueZ[0] * 128 + entity.getSize() * 64;
+			entity.clearMovementQueue();
+		}
+		if (entity == PlayerList.self && (entity.xFine < 1536 || entity.zFine < 1536 || entity.xFine >= 11776 || entity.zFine >= 11776)) {
+			entity.spotAnimId = -1;
+			entity.exactMoveEnd = 0;
+			entity.exactMoveStart = 0;
+			entity.seqId = -1;
+			entity.xFine = entity.movementQueueX[0] * 128 + entity.getSize() * 64;
+			entity.zFine = entity.movementQueueZ[0] * 128 + entity.getSize() * 64;
+			entity.clearMovementQueue();
+		}
+		turn(entity);
+		method939(entity);
+	}
+
 	@OriginalMember(owner = "client!qc", name = "t", descriptor = "I")
-	public int anInt3966;
+	public int exactMoveEnd;
 
 	@OriginalMember(owner = "client!qc", name = "y", descriptor = "I")
 	public int spotAnimY;
 
 	@OriginalMember(owner = "client!qc", name = "A", descriptor = "I")
-	public int anInt3973;
+	public int exactMoveSrcX;
 
 	@OriginalMember(owner = "client!qc", name = "C", descriptor = "I")
 	public int xFine;
@@ -515,10 +752,10 @@ public abstract class PathingEntity extends Entity {
 	public int y;
 
 	@OriginalMember(owner = "client!qc", name = "wb", descriptor = "I")
-	public int anInt4008;
+	public int exactMoveDirection;
 
 	@OriginalMember(owner = "client!qc", name = "Db", descriptor = "I")
-	public int anInt4013;
+	public int exactMoveDestX;
 
 	@OriginalMember(owner = "client!qc", name = "Hb", descriptor = "I")
 	public int targetAngle;
@@ -530,7 +767,7 @@ public abstract class PathingEntity extends Entity {
 	public int hitpointsBar;
 
 	@OriginalMember(owner = "client!qc", name = "Pb", descriptor = "I")
-	public int anInt4025;
+	public int exactMoveDestZ;
 
 	@OriginalMember(owner = "client!qc", name = "Rb", descriptor = "I")
 	public int attachmentZFine;
@@ -542,10 +779,10 @@ public abstract class PathingEntity extends Entity {
 	public int attachmentXFine;
 
 	@OriginalMember(owner = "client!qc", name = "Xb", descriptor = "I")
-	public int anInt4033;
+	public int exactMoveSrcZ;
 
 	@OriginalMember(owner = "client!qc", name = "Yb", descriptor = "I")
-	public int anInt4034;
+	public int exactMoveStart;
 
 	@OriginalMember(owner = "client!qc", name = "cc", descriptor = "I")
 	public int attachmentZ1;
@@ -572,7 +809,7 @@ public abstract class PathingEntity extends Entity {
 	public int anInt3968 = 0;
 
 	@OriginalMember(owner = "client!qc", name = "G", descriptor = "[Lclient!re;")
-	public final Seq[] aClass150Array3 = new Seq[12];
+	public final Seq[] seqs = new Seq[12];
 
 	@OriginalMember(owner = "client!qc", name = "I", descriptor = "I")
 	private int anInt3978 = 0;
@@ -590,7 +827,7 @@ public abstract class PathingEntity extends Entity {
 	public final int[] hitTypes = new int[4];
 
 	@OriginalMember(owner = "client!qc", name = "T", descriptor = "I")
-	public int anInt3987 = 0;
+	private int anInt3987 = 0;
 
 	@OriginalMember(owner = "client!qc", name = "Q", descriptor = "Z")
 	private boolean aBoolean280 = false;
@@ -626,7 +863,7 @@ public abstract class PathingEntity extends Entity {
 	public int anInt4000 = 0;
 
 	@OriginalMember(owner = "client!qc", name = "yb", descriptor = "I")
-	public int anInt4009 = 32;
+	public int turnSpeed = 32;
 
 	@OriginalMember(owner = "client!qc", name = "X", descriptor = "Z")
 	public boolean aBoolean281 = false;
@@ -656,13 +893,13 @@ public abstract class PathingEntity extends Entity {
 	public int movementSeqId = -1;
 
 	@OriginalMember(owner = "client!qc", name = "Z", descriptor = "I")
-	public int anInt3992 = 0;
+	private int anInt3992 = 0;
 
 	@OriginalMember(owner = "client!qc", name = "Nb", descriptor = "I")
 	public int chatLoops = 100;
 
 	@OriginalMember(owner = "client!qc", name = "Tb", descriptor = "I")
-	public int anInt4029 = 0;
+	private int anInt4029 = 0;
 
 	@OriginalMember(owner = "client!qc", name = "ib", descriptor = "I")
 	public int chatEffect = 0;
@@ -752,7 +989,7 @@ public abstract class PathingEntity extends Entity {
 		}
 		if (this.spotAnimId != -1) {
 			@Pc(39) SpotAnimType type = SpotAnimTypeList.get(this.spotAnimId);
-			if (type.aBoolean222 && SeqTypeList.get(type.seqId).anInt1237 == 1) {
+			if (type.loop && SeqTypeList.get(type.seqId).anInt1237 == 1) {
 				this.spotAnimId = -1;
 			}
 		}
@@ -1012,7 +1249,7 @@ public abstract class PathingEntity extends Entity {
 	}
 
 	@OriginalMember(owner = "client!qc", name = "b", descriptor = "(I)V")
-	public final void method3307() {
+	private final void clearMovementQueue() {
 		this.anInt4030 = 0;
 		this.movementQueueSize = 0;
 	}
@@ -1033,7 +1270,7 @@ public abstract class PathingEntity extends Entity {
 		}
 		if (this.spotAnimId != -1) {
 			@Pc(58) SpotAnimType type = SpotAnimTypeList.get(this.spotAnimId);
-			if (type.aBoolean222 && SeqTypeList.get(type.seqId).anInt1237 == 1) {
+			if (type.loop && SeqTypeList.get(type.seqId).anInt1237 == 1) {
 				this.spotAnimId = -1;
 			}
 		}

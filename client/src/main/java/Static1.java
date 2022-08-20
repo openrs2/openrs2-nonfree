@@ -173,14 +173,8 @@ public final class Static1 {
 	@OriginalMember(owner = "client!bo", name = "r", descriptor = "I")
 	public static int anInt420 = -1;
 
-	@OriginalMember(owner = "client!c", name = "L", descriptor = "[[[I")
-	public static final int[][][] anIntArrayArrayArray1 = new int[2][][];
-
 	@OriginalMember(owner = "client!cc", name = "c", descriptor = "I")
 	public static int anInt528 = -1;
-
-	@OriginalMember(owner = "client!cc", name = "h", descriptor = "[I")
-	public static final int[] anIntArray47 = new int[14];
 
 	@OriginalMember(owner = "client!ce", name = "a", descriptor = "I")
 	public static int anInt547 = 0;
@@ -208,9 +202,6 @@ public final class Static1 {
 
 	@OriginalMember(owner = "client!cj", name = "y", descriptor = "I")
 	public static int anInt640 = 0;
-
-	@OriginalMember(owner = "client!cj", name = "C", descriptor = "[Lclient!te;")
-	public static final AnimFrameset[] aClass4_Sub3_Sub19Array1 = new AnimFrameset[14];
 
 	@OriginalMember(owner = "client!cj", name = "X", descriptor = "J")
 	public static long prevClickTime = 0L;

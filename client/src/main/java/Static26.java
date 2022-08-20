@@ -177,9 +177,9 @@ public final class Static26 {
 						if (lights > 0) {
 							for (@Pc(897) int i = 0; i < lights; i++) {
 								@Pc(905) Light light = new Light(buffer);
-								if (light.anInt1323 == 31) {
+								if (light.functionPreset == 31) {
 									@Pc(916) LightType type = LightTypeList.get(buffer.readUnsignedShort());
-									light.method1073(type.anInt5484, type.anInt5480, type.anInt5482, type.anInt5481);
+									light.setFunction(type.function, type.frequency, type.alphaMin, type.alphaMax);
 								}
 								@Pc(932) int local932 = light.x >> 7;
 								@Pc(937) int local937 = light.z >> 7;

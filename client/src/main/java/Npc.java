@@ -19,33 +19,33 @@ public final class Npc extends PathingEntity {
 		@Pc(37) BasType baseType = npc.getBasType();
 		if (npc.movementSeqId == baseType.readySeqId) {
 			sound = npcType.idleSound;
-		} else if (npc.movementSeqId == baseType.anInt831 || npc.movementSeqId == baseType.anInt829 || npc.movementSeqId == baseType.anInt857 || baseType.anInt867 == npc.movementSeqId) {
+		} else if (npc.movementSeqId == baseType.runSeqId || npc.movementSeqId == baseType.runFollow180SeqId || npc.movementSeqId == baseType.runFollowCwSeqId || baseType.runFollowCcwSeqId == npc.movementSeqId) {
 			sound = npcType.runSound;
-		} else if (npc.movementSeqId == baseType.anInt854 || baseType.anInt833 == npc.movementSeqId || baseType.anInt861 == npc.movementSeqId || npc.movementSeqId == baseType.anInt852) {
+		} else if (npc.movementSeqId == baseType.crawlSeqId || baseType.crawlFollow180SeqId == npc.movementSeqId || baseType.crawlFollowCwSeqId == npc.movementSeqId || npc.movementSeqId == baseType.crawlFollowCcwSeqId) {
 			sound = npcType.crawlSound;
 		}
 		return sound;
 	}
 
 	@OriginalMember(owner = "client!cf", name = "a", descriptor = "([ILclient!p;[II[I)V")
-	public static void method555(@OriginalArg(1) Npc npc, @OriginalArg(0) int[] seqIds, @OriginalArg(4) int[] delays, @OriginalArg(2) int[] slotMasks) {
+	public static void animate(@OriginalArg(1) Npc npc, @OriginalArg(0) int[] seqIds, @OriginalArg(4) int[] delays, @OriginalArg(2) int[] slotMasks) {
 		for (@Pc(7) int i = 0; i < seqIds.length; i++) {
 			@Pc(19) int seqId = seqIds[i];
 			@Pc(23) int slotMask = slotMasks[i];
 			@Pc(27) int delay = delays[i];
 			@Pc(29) int j = 0;
-			while (slotMask != 0 && j < npc.aClass150Array3.length) {
+			while (slotMask != 0 && j < npc.seqs.length) {
 				if ((slotMask & 0x1) != 0) {
 					if (seqId == -1) {
-						npc.aClass150Array3[j] = null;
+						npc.seqs[j] = null;
 					} else {
 						@Pc(53) SeqType seqType = SeqTypeList.get(seqId);
 						@Pc(56) int local56 = seqType.anInt1238;
-						@Pc(61) Seq local61 = npc.aClass150Array3[j];
+						@Pc(61) Seq local61 = npc.seqs[j];
 						if (local61 != null) {
 							if (local61.seqId == seqId) {
 								if (local56 == 0) {
-									local61 = npc.aClass150Array3[j] = null;
+									local61 = npc.seqs[j] = null;
 								} else if (local56 == 1) {
 									local61.anInt4465 = 0;
 									local61.anInt4464 = 1;
@@ -57,11 +57,11 @@ public final class Npc extends PathingEntity {
 									local61.anInt4465 = 0;
 								}
 							} else if (seqType.priority >= SeqTypeList.get(local61.seqId).priority) {
-								local61 = npc.aClass150Array3[j] = null;
+								local61 = npc.seqs[j] = null;
 							}
 						}
 						if (local61 == null) {
-							@Pc(155) Seq local155 = npc.aClass150Array3[j] = new Seq();
+							@Pc(155) Seq local155 = npc.seqs[j] = new Seq();
 							local155.seqId = seqId;
 							local155.anInt4462 = 0;
 							local155.anInt4460 = 0;
@@ -133,7 +133,7 @@ public final class Npc extends PathingEntity {
 		}
 		@Pc(28) SeqType local28 = this.seqId != -1 && this.seqDelay == 0 ? SeqTypeList.get(this.seqId) : null;
 		@Pc(54) SeqType local54 = this.movementSeqId == -1 || this.movementSeqId == this.getBasType().readySeqId && local28 != null ? null : SeqTypeList.get(this.movementSeqId);
-		@Pc(75) Model local75 = this.type.getBodyModel(this.anInt3970, this.anInt4000, local54, local28, this.anInt4011, this.aClass150Array3, this.anInt4019, this.anInt4046, this.anInt4044);
+		@Pc(75) Model local75 = this.type.getBodyModel(this.anInt3970, this.anInt4000, local54, local28, this.anInt4011, this.seqs, this.anInt4019, this.anInt4046, this.anInt4044);
 		if (local75 == null) {
 			return;
 		}
@@ -229,7 +229,7 @@ public final class Npc extends PathingEntity {
 		if (!this.aBoolean285) {
 			@Pc(28) SeqType local28 = this.seqId != -1 && this.seqDelay == 0 ? SeqTypeList.get(this.seqId) : null;
 			@Pc(52) SeqType local52 = this.movementSeqId == -1 || this.movementSeqId == this.getBasType().readySeqId && local28 != null ? null : SeqTypeList.get(this.movementSeqId);
-			@Pc(73) Model local73 = this.type.getBodyModel(this.anInt3970, this.anInt4000, local52, local28, this.anInt4011, this.aClass150Array3, this.anInt4019, this.anInt4046, this.anInt4044);
+			@Pc(73) Model local73 = this.type.getBodyModel(this.anInt3970, this.anInt4000, local52, local28, this.anInt4011, this.seqs, this.anInt4019, this.anInt4046, this.anInt4044);
 			if (local73 == null) {
 				return;
 			}

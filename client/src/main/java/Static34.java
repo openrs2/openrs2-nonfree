@@ -145,9 +145,9 @@ public final class Static34 {
 						if (lights > 0) {
 							for (@Pc(590) int i = 0; i < lights; i++) {
 								@Pc(598) Light light = new Light(buffer);
-								if (light.anInt1323 == 31) {
+								if (light.functionPreset == 31) {
 									@Pc(608) LightType type = LightTypeList.get(buffer.readUnsignedShort());
-									light.method1073(type.anInt5484, type.anInt5480, type.anInt5482, type.anInt5481);
+									light.setFunction(type.function, type.frequency, type.alphaMin, type.alphaMax);
 								}
 								light.x += arg4 << 7;
 								light.z += arg3 << 7;

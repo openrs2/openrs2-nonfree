@@ -39,7 +39,7 @@ public final class FloTypeList {
 	}
 
 	@OriginalMember(owner = "client!og", name = "g", descriptor = "(I)V")
-	static void removeSoft() {
+	public static void removeSoft() {
 		types.removeSoft();
 	}
 

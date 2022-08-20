@@ -7,27 +7,27 @@ import org.openrs2.deob.annotation.Pc;
 public final class LightType {
 
 	@OriginalMember(owner = "client!vd", name = "e", descriptor = "I")
-	public int anInt5481 = 2048;
+	public int frequency = 2048;
 
 	@OriginalMember(owner = "client!vd", name = "h", descriptor = "I")
-	public int anInt5484 = 2048;
+	public int alphaMax = 2048;
 
 	@OriginalMember(owner = "client!vd", name = "d", descriptor = "I")
-	public int anInt5480 = 0;
+	public int alphaMin = 0;
 
 	@OriginalMember(owner = "client!vd", name = "f", descriptor = "I")
-	public int anInt5482 = 0;
+	public int function = 0;
 
 	@OriginalMember(owner = "client!vd", name = "a", descriptor = "(IILclient!fd;B)V")
 	private void decode(@OriginalArg(2) Buffer buffer, @OriginalArg(0) int id, @OriginalArg(1) int code) {
 		if (code == 1) {
-			this.anInt5482 = buffer.readUnsignedByte();
+			this.function = buffer.readUnsignedByte();
 		} else if (code == 2) {
-			this.anInt5481 = buffer.readUnsignedShort();
+			this.frequency = buffer.readUnsignedShort();
 		} else if (code == 3) {
-			this.anInt5484 = buffer.readUnsignedShort();
+			this.alphaMax = buffer.readUnsignedShort();
 		} else if (code == 4) {
-			this.anInt5480 = buffer.readShort();
+			this.alphaMin = buffer.readShort();
 		}
 	}
 

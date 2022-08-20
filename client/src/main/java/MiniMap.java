@@ -63,7 +63,7 @@ public final class MiniMap {
 			SoftwareRaster.setClip(x, y, x + component.width, y + component.height);
 		}
 		if (state != 2 && state != 5 && sprite != null) {
-			@Pc(92) int local92 = (int) Static5.aFloat97 + Static6.anInt3585 & 0x7FF;
+			@Pc(92) int local92 = (int) Camera.yaw + Camera.yawOffset & 0x7FF;
 			@Pc(101) int local101 = 464 - PlayerList.self.zFine / 32;
 			@Pc(109) int local109 = PlayerList.self.xFine / 32 + 48;
 			if (GlRenderer.enabled) {
@@ -113,7 +113,7 @@ public final class MiniMap {
 					if (type != null && type.multiNpcs != null) {
 						type = type.getMultiNpc();
 					}
-					if (type != null && type.aBoolean356 && type.aBoolean357) {
+					if (type != null && type.miniMapVisible && type.interactive) {
 						@Pc(448) int local448 = npc.xFine / 32 - PlayerList.self.xFine / 32;
 						@Pc(459) int local459 = npc.zFine / 32 - PlayerList.self.zFine / 32;
 						if (type.mapElement == -1) {
@@ -359,7 +359,7 @@ public final class MiniMap {
 		if (type.anIntArray188 != null) {
 			@Pc(32) int[] local32 = new int[type.anIntArray188.length];
 			for (@Pc(34) int local34 = 0; local34 < local32.length / 2; local34++) {
-				@Pc(48) int local48 = (int) Static5.aFloat97 + Static6.anInt3585 & 0x7FF;
+				@Pc(48) int local48 = (int) Camera.yaw + Camera.yawOffset & 0x7FF;
 				@Pc(52) int local52 = MathUtils.COSINE[local48];
 				local52 = local52 * 256 / (Static6.anInt4761 + 256);
 				@Pc(64) int local64 = MathUtils.SINE[local48];
@@ -412,7 +412,7 @@ public final class MiniMap {
 	@OriginalMember(owner = "client!am", name = "a", descriptor = "(ILjava/lang/String;IIIIIILclient!gl;Lclient!wf;)V")
 	private static void renderMapElementLabel(@OriginalArg(0) int arg0, @OriginalArg(1) String arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4, @OriginalArg(6) int arg5, @OriginalArg(7) int arg6, @OriginalArg(8) Font arg7, @OriginalArg(9) Component arg8) {
 		@Pc(14) int local14 = arg5 * arg5 + arg3 * arg3;
-		@Pc(21) int local21 = (int) Static5.aFloat97 + Static6.anInt3585 & 0x7FF;
+		@Pc(21) int local21 = (int) Camera.yaw + Camera.yawOffset & 0x7FF;
 		@Pc(33) int local33 = Math.max(arg8.width / 2, arg8.height / 2) + 10;
 		if (local33 * local33 < local14) {
 			return;
@@ -447,7 +447,7 @@ public final class MiniMap {
 		if (arg0 == null) {
 			return;
 		}
-		@Pc(13) int local13 = Static6.anInt3585 + (int) Static5.aFloat97 & 0x7FF;
+		@Pc(13) int local13 = Camera.yawOffset + (int) Camera.yaw & 0x7FF;
 		@Pc(25) int local25 = Math.max(arg2.width / 2, arg2.height / 2) + 10;
 		@Pc(38) int local38 = arg4 * arg4 + arg3 * arg3;
 		if (local25 * local25 < local38) {
@@ -471,7 +471,7 @@ public final class MiniMap {
 		if (arg5 == null) {
 			return;
 		}
-		@Pc(14) int local14 = (int) Static5.aFloat97 + Static6.anInt3585 & 0x7FF;
+		@Pc(14) int local14 = (int) Camera.yaw + Camera.yawOffset & 0x7FF;
 		@Pc(26) int local26 = Math.max(arg1.width / 2, arg1.height / 2) + 10;
 		@Pc(34) int local34 = arg4 * arg4 + arg3 * arg3;
 		if (local34 > local26 * local26) {
@@ -502,7 +502,7 @@ public final class MiniMap {
 			return;
 		}
 		@Pc(43) int local43 = local37 - 10;
-		@Pc(50) int local50 = Static6.anInt3585 + (int) Static5.aFloat97 & 0x7FF;
+		@Pc(50) int local50 = Camera.yawOffset + (int) Camera.yaw & 0x7FF;
 		@Pc(54) int local54 = MathUtils.COSINE[local50];
 		local54 = local54 * 256 / (Static6.anInt4761 + 256);
 		@Pc(66) int local66 = MathUtils.SINE[local50];

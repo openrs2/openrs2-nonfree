@@ -321,6 +321,110 @@ public final class client extends GameShell {
 		System.exit(1);
 	}
 
+	@OriginalMember(owner = "client!ro", name = "e", descriptor = "(B)V")
+	private static void clean() {
+		FloTypeList.clean();
+		FluTypeList.clean();
+		IdkTypeList.clean();
+		LocTypeList.clean();
+		NpcTypeList.clean();
+		ObjTypeList.clean();
+		SeqTypeList.clean();
+		SpotAnimTypeList.clean();
+		VarbitTypeList.clean();
+		VarpTypeList.clean();
+		BasTypeList.clean();
+		MsiTypeList.clean();
+		MelTypeList.clean();
+		SkyBoxTypeList.clean();
+		SkyBoxSphereTypeList.clean();
+		LightTypeList.clean();
+		CursorTypeList.clean();
+		PlayerAppearance.clean();
+		Component.clean();
+		HintArrowManager.clean();
+		ShadowModelList.clean();
+		HitBarList.hitBars.clean(5);
+		FontMetricsList.fontMetrics.clean(5);
+	}
+
+	@OriginalMember(owner = "client!me", name = "a", descriptor = "(I)V")
+	public static void clear() {
+		FloTypeList.clear();
+		FluTypeList.clear();
+		IdkTypeList.clear();
+		LocTypeList.clear();
+		NpcTypeList.clear();
+		ObjTypeList.clear();
+		SeqTypeList.clear();
+		SpotAnimTypeList.clear();
+		VarbitTypeList.clear();
+		VarpTypeList.clear();
+		BasTypeList.clear();
+		MsiTypeList.clear();
+		MelTypeList.clear();
+		SkyBoxTypeList.clear();
+		SkyBoxSphereTypeList.clear();
+		LightTypeList.clear();
+		CursorTypeList.clear();
+		PlayerAppearance.clear();
+		Component.clear();
+		if (modeWhat != 0) {
+			for (@Pc(54) int i = 0; i < Player.fakeModelCacheEntries.length; i++) {
+				Player.fakeModelCacheEntries[i] = null;
+			}
+			Player.fakeModelCacheSize = 0;
+		}
+		HintArrowManager.clear();
+		ShadowModelList.clear();
+		ParticleEmitterTypeList.clear();
+		ParticleEffectorTypeList.clear();
+		FontMetricsList.fontMetrics.clear();
+		if (!GlRenderer.enabled) {
+			((Js5GlTextureProvider) Rasteriser.textureProvider).clear();
+		}
+		ClientScriptList.scripts.clear();
+		js5Archive0.discardUnpacked();
+		js5Archive1.discardUnpacked();
+		js5Archive3.discardUnpacked();
+		js5Archive4.discardUnpacked();
+		js5Archive5.discardUnpacked();
+		js5Archive6.discardUnpacked();
+		js5Archive7.discardUnpacked();
+		js5Archive8.discardUnpacked();
+		js5Archive10.discardUnpacked();
+		js5Archive11.discardUnpacked();
+		js5Archive12.discardUnpacked();
+		HitBarList.hitBars.clear();
+	}
+
+	@OriginalMember(owner = "client!og", name = "h", descriptor = "(B)V")
+	public static void removeSoft() {
+		FloTypeList.removeSoft();
+		FluTypeList.removeSoft();
+		IdkTypeList.removeSoft();
+		LocTypeList.removeSoft();
+		NpcTypeList.removeSoft();
+		ObjTypeList.removeSoft();
+		SeqTypeList.removeSoft();
+		SpotAnimTypeList.removeSoft();
+		VarbitTypeList.removeSoft();
+		VarpTypeList.removeSoft();
+		BasTypeList.removeSoft();
+		MsiTypeList.removeSoft();
+		MelTypeList.removeSoft();
+		SkyBoxTypeList.removeSoft();
+		SkyBoxSphereTypeList.removeSoft();
+		LightTypeList.removeSoft();
+		CursorTypeList.removeSoft();
+		PlayerAppearance.removeSoft();
+		Component.removeSoft();
+		HintArrowManager.removeSoft();
+		ShadowModelList.removeSoft();
+		HitBarList.hitBars.removeSoft();
+		FontMetricsList.fontMetrics.removeSoft();
+	}
+
 	@OriginalMember(owner = "client!oj", name = "a", descriptor = "(ZBZIZ)Lclient!fh;")
 	private static Js5 createJs5(@OriginalArg(3) int archive, @OriginalArg(2) boolean discardPacked, @OriginalArg(0) boolean discardUnpacked, @OriginalArg(4) boolean prefetchAll) {
 		@Pc(5) Cache cache = null;
@@ -384,8 +488,8 @@ public final class client extends GameShell {
 			for (@Pc(56) int i = 0; i < 32768; i++) {
 				@Pc(65) Npc npc = NpcList.npcs[i];
 				if (npc != null) {
-					@Pc(71) byte local71 = npc.type.aByte21;
-					if ((local71 & 0x2) > 0 && npc.movementQueueSize == 0 && Math.random() * 1000.0D < 10.0D) {
+					@Pc(71) byte flags = npc.type.movementFlags;
+					if ((flags & 0x2) > 0 && npc.movementQueueSize == 0 && Math.random() * 1000.0D < 10.0D) {
 						@Pc(98) int dx = (int) Math.round(Math.random() * 2.0D - 1.0D);
 						@Pc(106) int dz = (int) Math.round(Math.random() * 2.0D - 1.0D);
 						if (dx != 0 || dz != 0) {
@@ -407,8 +511,8 @@ public final class client extends GameShell {
 							}
 						}
 					}
-					Static32.method4024(npc);
-					PathingEntity.method4247(npc);
+					PathingEntity.move(npc);
+					PathingEntity.turn(npc);
 					PathingEntity.method939(npc);
 					PathFinder.collisionMaps[Player.level].flagScenery(npc.xFine >> 7, npc.zFine >> 7, npc.getSize(), npc.getSize(), false, false);
 				}
@@ -420,7 +524,7 @@ public final class client extends GameShell {
 			if (Static1.anInt772 == 2) {
 				Static23.method2537();
 			} else {
-				Static16.method1496();
+				Camera.method1496();
 			}
 			if (Static3.anInt2519 >> 7 < 14 || Static3.anInt2519 >> 7 >= 90 || Static7.anInt5678 >> 7 < 14 || Static7.anInt5678 >> 7 >= 90) {
 				Static28.method3322();
@@ -874,7 +978,7 @@ public final class client extends GameShell {
 		js5CacheQueue = new Js5CacheQueue();
 		js5NetQueue = new Js5NetQueue();
 		if (modeWhat != 0) {
-			Static6.aByteArrayArray35 = new byte[50][];
+			Player.fakeModelCacheEntries = new byte[50][];
 		}
 		Preferences.read(GameShell.signLink);
 		if (modeWhere == 0) {
@@ -890,7 +994,7 @@ public final class client extends GameShell {
 			worldListDefaultPort = worldListWorldId + 40000;
 			worldListAlternatePort = worldListWorldId + 50000;
 		}
-		Static7.aShortArray124 = Static5.aShortArray74 = Static7.aShortArray111 = Static4.aShortArray126 = new short[256];
+		ScriptRunner.recolorPalette = LocType.recolorPalette = NpcType.recolorPalette = ObjType.recolorPalette = new short[256];
 		if (SignLink.anInt6106 == 3 && modeWhere != 2) {
 			worldId = worldListWorldId;
 		}
@@ -1251,7 +1355,7 @@ public final class client extends GameShell {
 			}
 		}
 		if (clean) {
-			Static31.clean();
+			clean();
 		}
 		if (Preferences.safeMode && Static4.anInt3304 == 10 && InterfaceList.topLevelInterface != -1) {
 			Preferences.safeMode = false;

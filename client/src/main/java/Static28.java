@@ -6,20 +6,20 @@ public final class Static28 {
 
 	@OriginalMember(owner = "client!om", name = "b", descriptor = "(B)V")
 	public static void method3252() {
-		if (Static5.aFloat147 < 128.0F) {
-			Static5.aFloat147 = 128.0F;
+		if (Camera.pitch < 128.0F) {
+			Camera.pitch = 128.0F;
 		}
 		@Pc(12) int local12 = Static7.anInt5412 >> 7;
-		if (Static5.aFloat147 > 383.0F) {
-			Static5.aFloat147 = 383.0F;
+		if (Camera.pitch > 383.0F) {
+			Camera.pitch = 383.0F;
 		}
-		while (Static5.aFloat97 >= 2048.0F) {
-			Static5.aFloat97 -= 2048.0F;
+		while (Camera.yaw >= 2048.0F) {
+			Camera.yaw -= 2048.0F;
 		}
 		@Pc(33) int local33 = Static3.anInt2496 >> 7;
 		@Pc(35) int local35 = 0;
-		while (Static5.aFloat97 < 0.0F) {
-			Static5.aFloat97 += 2048.0F;
+		while (Camera.yaw < 0.0F) {
+			Camera.yaw += 2048.0F;
 		}
 		@Pc(63) int local63 = SceneGraph.getTileHeight(Player.level, Static7.anInt5412, Static3.anInt2496);
 		if (local12 > 3 && local33 > 3 && local12 < 100 && local33 < 100) {
@@ -92,7 +92,7 @@ public final class Static28 {
 					@Pc(80) int z = mapZ + dz;
 					if (x > 0 && z > 0 && x < 103 && z < 103) {
 						@Pc(102) LocType locType = LocTypeList.get(locId);
-						if (shape != 22 || Preferences.groundDecoration || locType.anInt5522 != 0 || locType.anInt5509 == 1 || locType.aBoolean376) {
+						if (shape != 22 || Preferences.groundDecoration || locType.interactivity != 0 || locType.blockWalk == 1 || locType.forceDecor) {
 							end = true;
 							if (!locType.isReady()) {
 								ready = false;

@@ -113,9 +113,6 @@ public final class Static4 {
 	@OriginalMember(owner = "client!jm", name = "g", descriptor = "Z")
 	public static boolean aBoolean184 = false;
 
-	@OriginalMember(owner = "client!jo", name = "O", descriptor = "[I")
-	public static final int[] anIntArray654 = new int[14];
-
 	@OriginalMember(owner = "client!k", name = "e", descriptor = "[[Z")
 	public static final boolean[][] aBooleanArrayArray3 = new boolean[][] { new boolean[0], { true, false, true }, { true, false, false, true }, { false, false, true, true }, { true, true, false }, { false, true, true }, { true, false, false, true }, { false, false, false, true, true }, { false, true, true }, { true, false, true, true, true }, { false, true, true, true, true }, { false, true, true, true, true, false } };
 
@@ -145,9 +142,6 @@ public final class Static4 {
 
 	@OriginalMember(owner = "client!lh", name = "r", descriptor = "[F")
 	public static final float[] aFloatArray64 = new float[4];
-
-	@OriginalMember(owner = "client!lh", name = "s", descriptor = "[S")
-	public static short[] aShortArray126 = new short[256];
 
 	@OriginalMember(owner = "client!lj", name = "fb", descriptor = "I")
 	public static int anInt3183 = -1;

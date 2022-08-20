@@ -9,6 +9,15 @@ public final class LocType {
 	@OriginalMember(owner = "client!ng", name = "z", descriptor = "[Lclient!ml;")
 	private static final RawModel[] tempModels = new RawModel[4];
 
+	@OriginalMember(owner = "client!om", name = "j", descriptor = "[S")
+	public static short[] recolorPalette = new short[256];
+
+	@OriginalMember(owner = "client!im", name = "h", descriptor = "Lclient!jh;")
+	public static Class96 aClass96_1 = new Class96();
+
+	@OriginalMember(owner = "client!rg", name = "Z", descriptor = "Z")
+	public static boolean singleLevelVisible = false;
+
 	@OriginalMember(owner = "client!vh", name = "a", descriptor = "[S")
 	private short[] recolorDestination;
 
@@ -34,10 +43,10 @@ public final class LocType {
 	private HashTable params;
 
 	@OriginalMember(owner = "client!vh", name = "rb", descriptor = "[I")
-	public int[] anIntArray632;
+	public int[] sounds;
 
 	@OriginalMember(owner = "client!vh", name = "sb", descriptor = "[B")
-	private byte[] aByteArray70;
+	private byte[] recolorDestinationIndex;
 
 	@OriginalMember(owner = "client!vh", name = "Bb", descriptor = "I")
 	public int id;
@@ -46,10 +55,10 @@ public final class LocType {
 	public int cursor1Op = -1;
 
 	@OriginalMember(owner = "client!vh", name = "o", descriptor = "I")
-	private int anInt5512 = 0;
+	private int contrast = 0;
 
 	@OriginalMember(owner = "client!vh", name = "h", descriptor = "B")
-	private byte aByte23 = 0;
+	private byte hillType = 0;
 
 	@OriginalMember(owner = "client!vh", name = "m", descriptor = "Z")
 	public boolean aBoolean372 = true;
@@ -64,7 +73,7 @@ public final class LocType {
 	public int length = 1;
 
 	@OriginalMember(owner = "client!vh", name = "M", descriptor = "I")
-	public int anInt5530 = 0;
+	public int soundMaxInterval = 0;
 
 	@OriginalMember(owner = "client!vh", name = "U", descriptor = "Z")
 	public boolean members = false;
@@ -91,10 +100,10 @@ public final class LocType {
 	private boolean aBoolean373 = false;
 
 	@OriginalMember(owner = "client!vh", name = "c", descriptor = "I")
-	private int anInt5505 = 0;
+	private int totalSeqWeight = 0;
 
 	@OriginalMember(owner = "client!vh", name = "j", descriptor = "I")
-	public int anInt5509 = 2;
+	public int blockWalk = 2;
 
 	@OriginalMember(owner = "client!vh", name = "X", descriptor = "I")
 	private int multiLocVarbit = -1;
@@ -106,7 +115,7 @@ public final class LocType {
 	public int cursor2 = -1;
 
 	@OriginalMember(owner = "client!vh", name = "L", descriptor = "Z")
-	public boolean aBoolean374 = true;
+	public boolean blockRange = true;
 
 	@OriginalMember(owner = "client!vh", name = "ib", descriptor = "Z")
 	public boolean mapSceneRotated = false;
@@ -127,16 +136,16 @@ public final class LocType {
 	public String name = "null";
 
 	@OriginalMember(owner = "client!vh", name = "u", descriptor = "[I")
-	private int[] anIntArray628 = null;
+	private int[] seqWeights = null;
 
 	@OriginalMember(owner = "client!vh", name = "k", descriptor = "Z")
 	public boolean aBoolean371 = false;
 
 	@OriginalMember(owner = "client!vh", name = "D", descriptor = "I")
-	public int anInt5523 = -1;
+	public int seqId = -1;
 
 	@OriginalMember(owner = "client!vh", name = "mb", descriptor = "I")
-	public int anInt5544 = -1;
+	public int occlusionMode = -1;
 
 	@OriginalMember(owner = "client!vh", name = "A", descriptor = "I")
 	public int sound = -1;
@@ -154,7 +163,7 @@ public final class LocType {
 	public int cursor1 = -1;
 
 	@OriginalMember(owner = "client!vh", name = "C", descriptor = "I")
-	public int anInt5522 = -1;
+	public int interactivity = -1;
 
 	@OriginalMember(owner = "client!vh", name = "ob", descriptor = "Z")
 	private boolean aBoolean381 = false;
@@ -169,7 +178,7 @@ public final class LocType {
 	private int resizeZ = 128;
 
 	@OriginalMember(owner = "client!vh", name = "K", descriptor = "I")
-	private int anInt5529 = 0;
+	private int ambient = 0;
 
 	@OriginalMember(owner = "client!vh", name = "eb", descriptor = "I")
 	private int translateZ = 0;
@@ -187,19 +196,19 @@ public final class LocType {
 	public boolean aBoolean379 = false;
 
 	@OriginalMember(owner = "client!vh", name = "Eb", descriptor = "I")
-	public int anInt5555 = 0;
+	public int soundMinInterval = 0;
 
 	@OriginalMember(owner = "client!vh", name = "Ab", descriptor = "Z")
 	public boolean aBoolean383 = false;
 
 	@OriginalMember(owner = "client!vh", name = "W", descriptor = "Z")
-	public boolean aBoolean376 = false;
+	public boolean forceDecor = false;
 
 	@OriginalMember(owner = "client!vh", name = "Fb", descriptor = "Z")
 	public boolean breakRouteFinding = false;
 
 	@OriginalMember(owner = "client!vh", name = "Hb", descriptor = "[I")
-	public int[] anIntArray633 = null;
+	public int[] seqIds = null;
 
 	@OriginalMember(owner = "client!vh", name = "a", descriptor = "(Z)Z")
 	public final boolean isReady() {
@@ -228,9 +237,9 @@ public final class LocType {
 			if (local226 == null) {
 				local233 = this.method4456(arg2, false, arg7);
 				if (local233 == null) {
-					Static3.aClass96_1.entity = null;
-					Static3.aClass96_1.sprite = null;
-					return Static3.aClass96_1;
+					aClass96_1.entity = null;
+					aClass96_1.sprite = null;
+					return aClass96_1;
 				}
 				if (arg2 == 10 && arg7 > 3) {
 					local233.method3815(256);
@@ -249,15 +258,15 @@ public final class LocType {
 				local236 = local226.sprite;
 			}
 			@Pc(297) boolean local297 = arg1 & this.aBoolean373;
-			@Pc(329) GlModel local329 = local233.method3852(this.aByte23 != 3, this.aByte23 == 0, true, true, true, !local297, true, true, true);
-			if (this.aByte23 != 0) {
-				local329.method3859(this.aByte23, this.aShort48, local233, arg4, arg5, arg0, arg3, arg8);
+			@Pc(329) GlModel local329 = local233.method3852(this.hillType != 3, this.hillType == 0, true, true, true, !local297, true, true, true);
+			if (this.hillType != 0) {
+				local329.method3859(this.hillType, this.aShort48, local233, arg4, arg5, arg0, arg3, arg8);
 			}
-			local329.method3872(this.anInt5522 == 0 && !this.aBoolean379, true, true, this.anInt5522 == 0, true, false);
+			local329.method3872(this.interactivity == 0 && !this.aBoolean379, true, true, this.interactivity == 0, true, false);
 			local329.aBoolean325 = local297;
-			Static3.aClass96_1.entity = local329;
-			Static3.aClass96_1.sprite = local236;
-			return Static3.aClass96_1;
+			aClass96_1.entity = local329;
+			aClass96_1.sprite = local236;
+			return aClass96_1;
 		}
 		@Pc(24) long local24;
 		if (this.shapes == null) {
@@ -276,35 +285,35 @@ public final class LocType {
 		if (local60 == null) {
 			@Pc(69) RawModel local69 = this.method4452(arg7, arg2);
 			if (local69 == null) {
-				Static3.aClass96_1.entity = null;
-				return Static3.aClass96_1;
+				aClass96_1.entity = null;
+				return aClass96_1;
 			}
 			local69.method2760();
 			if (arg2 == 10 && arg7 > 3) {
 				local69.method2740();
 			}
 			if (local46) {
-				local69.aShort33 = (short) (this.anInt5529 + 64);
-				local69.aShort29 = (short) (this.anInt5512 * 5 + 768);
+				local69.ambient = (short) (this.ambient + 64);
+				local69.contrast = (short) (this.contrast * 5 + 768);
 				local60 = local69;
 				local69.calculateNormals();
 			} else {
-				local60 = new SoftwareModel(local69, this.anInt5529 + 64, this.anInt5512 * 5 + 768, -50, -10, -50);
+				local60 = new SoftwareModel(local69, this.ambient + 64, this.contrast * 5 + 768, -50, -10, -50);
 			}
 			LocTypeList.aClass26_18.put(local24, local60);
 		}
 		if (local46) {
 			local60 = ((RawModel) local60).method2749();
 		}
-		if (this.aByte23 != 0) {
+		if (this.hillType != 0) {
 			if (local60 instanceof SoftwareModel) {
-				local60 = ((SoftwareModel) local60).method2910(this.aByte23, this.aShort48, arg4, arg5, arg0, arg3, arg8, true);
+				local60 = ((SoftwareModel) local60).method2910(this.hillType, this.aShort48, arg4, arg5, arg0, arg3, arg8, true);
 			} else if (local60 instanceof RawModel) {
-				local60 = ((RawModel) local60).method2766(this.aByte23, this.aShort48, arg4, arg5, arg0, arg3, arg8);
+				local60 = ((RawModel) local60).method2766(this.hillType, this.aShort48, arg4, arg5, arg0, arg3, arg8);
 			}
 		}
-		Static3.aClass96_1.entity = local60;
-		return Static3.aClass96_1;
+		aClass96_1.entity = local60;
+		return aClass96_1;
 	}
 
 	@OriginalMember(owner = "client!vh", name = "a", descriptor = "(BII)I")
@@ -382,11 +391,11 @@ public final class LocType {
 				LocTypeList.aClass26_43.put((long) local159, local3);
 			}
 		}
-		@Pc(213) boolean rescale;
+		@Pc(213) boolean resize;
 		if (this.resizeX == 128 && this.resizeY == 128 && this.resizeZ == 128) {
-			rescale = false;
+			resize = false;
 		} else {
-			rescale = true;
+			resize = true;
 		}
 		@Pc(229) boolean translate;
 		if (this.translateX == 0 && this.translateY == 0 && this.translateZ == 0) {
@@ -394,7 +403,7 @@ public final class LocType {
 		} else {
 			translate = true;
 		}
-		@Pc(262) RawModel model = new RawModel(local3, arg0 == 0 && !rescale && !translate, this.recolorSource == null, this.retextureSource == null, true);
+		@Pc(262) RawModel model = new RawModel(local3, arg0 == 0 && !resize && !translate, this.recolorSource == null, this.retextureSource == null, true);
 		if (arg1 == 4 && arg0 > 3) {
 			model.method2740();
 			model.translate(45, 0, -45);
@@ -409,10 +418,10 @@ public final class LocType {
 		}
 		if (this.recolorSource != null) {
 			for (@Pc(313) int i = 0; i < this.recolorSource.length; i++) {
-				if (this.aByteArray70 == null || this.aByteArray70.length <= i) {
+				if (this.recolorDestinationIndex == null || i >= this.recolorDestinationIndex.length) {
 					model.recolor(this.recolorSource[i], this.recolorDestination[i]);
 				} else {
-					model.recolor(this.recolorSource[i], Static5.aShortArray74[this.aByteArray70[i] & 0xFF]);
+					model.recolor(this.recolorSource[i], recolorPalette[this.recolorDestinationIndex[i] & 0xFF]);
 				}
 			}
 		}
@@ -421,7 +430,7 @@ public final class LocType {
 				model.retexture(this.retextureSource[i], this.retextureDestination[i]);
 			}
 		}
-		if (rescale) {
+		if (resize) {
 			model.resize(this.resizeX, this.resizeY, this.resizeZ);
 		}
 		if (translate) {
@@ -459,8 +468,8 @@ public final class LocType {
 
 	@OriginalMember(owner = "client!vh", name = "a", descriptor = "(IZIZ)Lclient!s;")
 	private GlModel method4456(@OriginalArg(0) int shape, @OriginalArg(1) boolean arg1, @OriginalArg(2) int angle) {
-		@Pc(12) int local12 = this.anInt5529 + 64;
-		@Pc(19) int local19 = this.anInt5512 * 5 + 768;
+		@Pc(12) int local12 = this.ambient + 64;
+		@Pc(19) int local19 = this.contrast * 5 + 768;
 		@Pc(75) GlModel model;
 		if (this.shapes == null) {
 			if (shape != 10) {
@@ -607,7 +616,7 @@ public final class LocType {
 				if (local207 == null) {
 					return null;
 				}
-				local198 = new SoftwareModel(local207, this.anInt5529 + 64, this.anInt5512 * 5 + 768, -50, -10, -50);
+				local198 = new SoftwareModel(local207, this.ambient + 64, this.contrast * 5 + 768, -50, -10, -50);
 				LocTypeList.aClass26_32.put(local182, local198);
 			}
 			@Pc(236) boolean local236 = false;
@@ -622,14 +631,14 @@ public final class LocType {
 				}
 				local198.method3815(256);
 			}
-			if (this.aByte23 != 0) {
+			if (this.hillType != 0) {
 				if (!local236) {
 					local198 = (SoftwareModel) local198.method3833(true, true, true);
 				}
-				local198 = local198.method2910(this.aByte23, this.aShort48, arg1, arg9, arg0, arg4, arg3, false);
+				local198 = local198.method2910(this.hillType, this.aShort48, arg1, arg9, arg0, arg4, arg3, false);
 			}
-			Static3.aClass96_1.entity = local198;
-			return Static3.aClass96_1;
+			aClass96_1.entity = local198;
+			return aClass96_1;
 		}
 		@Pc(27) long local27;
 		if (this.shapes == null) {
@@ -661,62 +670,62 @@ public final class LocType {
 			local78.method3815(256);
 		}
 		if (arg5) {
-			Static3.aClass96_1.sprite = local78.method3854(arg11);
+			aClass96_1.sprite = local78.method3854(arg11);
 		} else {
-			Static3.aClass96_1.sprite = null;
+			aClass96_1.sprite = null;
 		}
-		if (this.aByte23 != 0) {
+		if (this.hillType != 0) {
 			if (!local80) {
 				local78 = (GlModel) local78.method3833(true, true, true);
 			}
-			local78.method3859(this.aByte23, this.aShort48, local78, arg1, arg9, arg0, arg4, arg3);
+			local78.method3859(this.hillType, this.aShort48, local78, arg1, arg9, arg0, arg4, arg3);
 		}
-		Static3.aClass96_1.entity = local78;
-		return Static3.aClass96_1;
+		aClass96_1.entity = local78;
+		return aClass96_1;
 	}
 
 	@OriginalMember(owner = "client!vh", name = "e", descriptor = "(I)I")
 	public final int method4460() {
-		if (this.anIntArray633 == null) {
+		if (this.seqIds == null) {
 			return -1;
 		}
-		@Pc(23) int local23 = (int) ((double) this.anInt5505 * Math.random());
+		@Pc(23) int local23 = (int) ((double) this.totalSeqWeight * Math.random());
 		@Pc(25) int local25;
-		for (local25 = 0; this.anIntArray628[local25] <= local23; local25++) {
-			local23 -= this.anIntArray628[local25];
+		for (local25 = 0; this.seqWeights[local25] <= local23; local25++) {
+			local23 -= this.seqWeights[local25];
 		}
-		return this.anIntArray633[local25];
+		return this.seqIds[local25];
 	}
 
 	@OriginalMember(owner = "client!vh", name = "a", descriptor = "(IILclient!fd;)V")
 	private void decode(@OriginalArg(2) Buffer buffer, @OriginalArg(0) int code) {
 		if (code == 1) {
-			@Pc(1037) int local1037 = buffer.readUnsignedByte();
-			if (local1037 > 0) {
-				if (this.models == null || Static6.aBoolean313) {
-					this.models = new int[local1037];
-					this.shapes = new int[local1037];
-					for (@Pc(1067) int local1067 = 0; local1067 < local1037; local1067++) {
-						this.models[local1067] = buffer.readUnsignedShort();
-						this.shapes[local1067] = buffer.readUnsignedByte();
+			@Pc(1037) int len = buffer.readUnsignedByte();
+			if (len > 0) {
+				if (this.models == null || singleLevelVisible) {
+					this.models = new int[len];
+					this.shapes = new int[len];
+					for (@Pc(1067) int i = 0; i < len; i++) {
+						this.models[i] = buffer.readUnsignedShort();
+						this.shapes[i] = buffer.readUnsignedByte();
 					}
 				} else {
-					buffer.position += local1037 * 3;
+					buffer.position += len * 3;
 				}
 			}
 		} else if (code == 2) {
 			this.name = buffer.readString();
 		} else if (code == 5) {
-			@Pc(989) int local989 = buffer.readUnsignedByte();
-			if (local989 > 0) {
-				if (this.models == null || Static6.aBoolean313) {
+			@Pc(989) int len = buffer.readUnsignedByte();
+			if (len > 0) {
+				if (this.models == null || singleLevelVisible) {
 					this.shapes = null;
-					this.models = new int[local989];
-					for (@Pc(1008) int local1008 = 0; local1008 < local989; local1008++) {
-						this.models[local1008] = buffer.readUnsignedShort();
+					this.models = new int[len];
+					for (@Pc(1008) int i = 0; i < len; i++) {
+						this.models[i] = buffer.readUnsignedShort();
 					}
 				} else {
-					buffer.position += local989 * 2;
+					buffer.position += len * 2;
 				}
 			}
 		} else if (code == 14) {
@@ -724,57 +733,57 @@ public final class LocType {
 		} else if (code == 15) {
 			this.length = buffer.readUnsignedByte();
 		} else if (code == 17) {
-			this.anInt5509 = 0;
-			this.aBoolean374 = false;
+			this.blockWalk = 0;
+			this.blockRange = false;
 		} else if (code == 18) {
-			this.aBoolean374 = false;
+			this.blockRange = false;
 		} else if (code == 19) {
-			this.anInt5522 = buffer.readUnsignedByte();
+			this.interactivity = buffer.readUnsignedByte();
 		} else if (code == 21) {
-			this.aByte23 = 1;
+			this.hillType = 1;
 		} else if (code == 22) {
 			this.aBoolean373 = true;
 		} else if (code == 23) {
-			this.anInt5544 = 1;
+			this.occlusionMode = 1;
 		} else if (code == 24) {
-			this.anInt5523 = buffer.readUnsignedShort();
-			if (this.anInt5523 == 65535) {
-				this.anInt5523 = -1;
+			this.seqId = buffer.readUnsignedShort();
+			if (this.seqId == 65535) {
+				this.seqId = -1;
 			}
 		} else if (code == 27) {
-			this.anInt5509 = 1;
+			this.blockWalk = 1;
 		} else if (code == 28) {
 			this.wallDecorOffsetScale = buffer.readUnsignedByte();
 		} else if (code == 29) {
-			this.anInt5529 = buffer.readByte();
+			this.ambient = buffer.readByte();
 		} else if (code == 39) {
-			this.anInt5512 = buffer.readByte() * 5;
+			this.contrast = buffer.readByte() * 5;
 		} else if (code >= 30 && code < 35) {
 			this.ops[code - 30] = buffer.readString();
 			if (this.ops[code - 30].equalsIgnoreCase(LocalisedText.HIDDEN)) {
 				this.ops[code - 30] = null;
 			}
 		} else if (code == 40) {
-			@Pc(913) int local913 = buffer.readUnsignedByte();
-			this.recolorSource = new short[local913];
-			this.recolorDestination = new short[local913];
-			for (@Pc(923) int local923 = 0; local923 < local913; local923++) {
-				this.recolorSource[local923] = (short) buffer.readUnsignedShort();
-				this.recolorDestination[local923] = (short) buffer.readUnsignedShort();
+			@Pc(913) int len = buffer.readUnsignedByte();
+			this.recolorSource = new short[len];
+			this.recolorDestination = new short[len];
+			for (@Pc(923) int i = 0; i < len; i++) {
+				this.recolorSource[i] = (short) buffer.readUnsignedShort();
+				this.recolorDestination[i] = (short) buffer.readUnsignedShort();
 			}
 		} else if (code == 41) {
-			@Pc(875) int local875 = buffer.readUnsignedByte();
-			this.retextureDestination = new short[local875];
-			this.retextureSource = new short[local875];
-			for (@Pc(885) int local885 = 0; local885 < local875; local885++) {
-				this.retextureSource[local885] = (short) buffer.readUnsignedShort();
-				this.retextureDestination[local885] = (short) buffer.readUnsignedShort();
+			@Pc(875) int len = buffer.readUnsignedByte();
+			this.retextureDestination = new short[len];
+			this.retextureSource = new short[len];
+			for (@Pc(885) int i = 0; i < len; i++) {
+				this.retextureSource[i] = (short) buffer.readUnsignedShort();
+				this.retextureDestination[i] = (short) buffer.readUnsignedShort();
 			}
 		} else if (code == 42) {
-			@Pc(188) int local188 = buffer.readUnsignedByte();
-			this.aByteArray70 = new byte[local188];
-			for (@Pc(194) int local194 = 0; local194 < local188; local194++) {
-				this.aByteArray70[local194] = buffer.readByte();
+			@Pc(188) int len = buffer.readUnsignedByte();
+			this.recolorDestinationIndex = new byte[len];
+			for (@Pc(194) int i = 0; i < len; i++) {
+				this.recolorDestinationIndex[i] = buffer.readByte();
 			}
 		} else if (code == 62) {
 			this.aBoolean381 = true;
@@ -795,7 +804,7 @@ public final class LocType {
 		} else if (code == 72) {
 			this.translateZ = buffer.readShort();
 		} else if (code == 73) {
-			this.aBoolean376 = true;
+			this.forceDecor = true;
 		} else if (code == 74) {
 			this.breakRouteFinding = true;
 		} else if (code == 75) {
@@ -829,16 +838,16 @@ public final class LocType {
 			this.sound = buffer.readUnsignedShort();
 			this.soundRadius = buffer.readUnsignedByte();
 		} else if (code == 79) {
-			this.anInt5555 = buffer.readUnsignedShort();
-			this.anInt5530 = buffer.readUnsignedShort();
+			this.soundMinInterval = buffer.readUnsignedShort();
+			this.soundMaxInterval = buffer.readUnsignedShort();
 			this.soundRadius = buffer.readUnsignedByte();
-			@Pc(323) int local323 = buffer.readUnsignedByte();
-			this.anIntArray632 = new int[local323];
-			for (@Pc(329) int local329 = 0; local329 < local323; local329++) {
-				this.anIntArray632[local329] = buffer.readUnsignedShort();
+			@Pc(323) int len = buffer.readUnsignedByte();
+			this.sounds = new int[len];
+			for (@Pc(329) int i = 0; i < len; i++) {
+				this.sounds[i] = buffer.readUnsignedShort();
 			}
 		} else if (code == 81) {
-			this.aByte23 = 2;
+			this.hillType = 2;
 			this.aShort48 = (short) (buffer.readUnsignedByte() * 256);
 		} else if (code == 82) {
 			this.aBoolean383 = true;
@@ -851,12 +860,12 @@ public final class LocType {
 		} else if (code == 91) {
 			this.members = true;
 		} else if (code == 93) {
-			this.aByte23 = 3;
+			this.hillType = 3;
 			this.aShort48 = (short) buffer.readUnsignedShort();
 		} else if (code == 94) {
-			this.aByte23 = 4;
+			this.hillType = 4;
 		} else if (code == 95) {
-			this.aByte23 = 5;
+			this.hillType = 5;
 		} else if (code == 96) {
 			this.aBoolean384 = true;
 		} else if (code == 97) {
@@ -874,20 +883,20 @@ public final class LocType {
 		} else if (code == 102) {
 			this.mapSceneId = buffer.readUnsignedShort();
 		} else if (code == 103) {
-			this.anInt5544 = 0;
+			this.occlusionMode = 0;
 		} else if (code == 104) {
 			this.soundVolume = buffer.readUnsignedByte();
 		} else if (code == 105) {
 			this.mapSceneFlipVertical = true;
 		} else if (code == 106) {
-			@Pc(501) int local501 = buffer.readUnsignedByte();
-			this.anIntArray628 = new int[local501];
-			this.anIntArray633 = new int[local501];
-			for (@Pc(511) int local511 = 0; local511 < local501; local511++) {
-				this.anIntArray633[local511] = buffer.readUnsignedShort();
-				@Pc(525) int local525 = buffer.readUnsignedByte();
-				this.anIntArray628[local511] = local525;
-				this.anInt5505 += local525;
+			@Pc(501) int len = buffer.readUnsignedByte();
+			this.seqWeights = new int[len];
+			this.seqIds = new int[len];
+			for (@Pc(511) int i = 0; i < len; i++) {
+				this.seqIds[i] = buffer.readUnsignedShort();
+				@Pc(525) int weight = buffer.readUnsignedByte();
+				this.seqWeights[i] = weight;
+				this.totalSeqWeight += weight;
 			}
 		} else if (code == 107) {
 			this.mapElement = buffer.readUnsignedShort();
@@ -919,12 +928,12 @@ public final class LocType {
 	@OriginalMember(owner = "client!vh", name = "f", descriptor = "(I)Z")
 	public final boolean hasAreaSound() {
 		if (this.multiLocs == null) {
-			return this.sound != -1 || this.anIntArray632 != null;
+			return this.sound != -1 || this.sounds != null;
 		}
 		for (@Pc(31) int i = 0; i < this.multiLocs.length; i++) {
 			if (this.multiLocs[i] != -1) {
 				@Pc(54) LocType type = LocTypeList.get(this.multiLocs[i]);
-				if (type.sound != -1 || type.anIntArray632 != null) {
+				if (type.sound != -1 || type.sounds != null) {
 					return true;
 				}
 			}
@@ -936,12 +945,12 @@ public final class LocType {
 	public final boolean method4465(@OriginalArg(1) int arg0) {
 		if (arg0 == -1) {
 			return false;
-		} else if (arg0 == this.anInt5523) {
+		} else if (arg0 == this.seqId) {
 			return true;
 		} else {
-			if (this.anIntArray633 != null) {
-				for (@Pc(26) int local26 = 0; local26 < this.anIntArray633.length; local26++) {
-					if (arg0 == this.anIntArray633[local26]) {
+			if (this.seqIds != null) {
+				for (@Pc(26) int i = 0; i < this.seqIds.length; i++) {
+					if (arg0 == this.seqIds[i]) {
 						return true;
 					}
 				}
@@ -952,20 +961,20 @@ public final class LocType {
 
 	@OriginalMember(owner = "client!vh", name = "g", descriptor = "(I)V")
 	public final void postDecode() {
-		if (this.anInt5522 == -1) {
-			this.anInt5522 = 0;
+		if (this.interactivity == -1) {
+			this.interactivity = 0;
 			if (this.models != null && (this.shapes == null || this.shapes[0] == 10)) {
-				this.anInt5522 = 1;
+				this.interactivity = 1;
 			}
-			for (@Pc(35) int local35 = 0; local35 < 5; local35++) {
-				if (this.ops[local35] != null) {
-					this.anInt5522 = 1;
+			for (@Pc(35) int i = 0; i < 5; i++) {
+				if (this.ops[i] != null) {
+					this.interactivity = 1;
 					break;
 				}
 			}
 		}
 		if (this.anInt5517 == -1) {
-			this.anInt5517 = this.anInt5509 == 0 ? 0 : 1;
+			this.anInt5517 = this.blockWalk == 0 ? 0 : 1;
 		}
 	}
 

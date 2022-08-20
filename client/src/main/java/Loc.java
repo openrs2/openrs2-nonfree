@@ -255,7 +255,7 @@ public final class Loc extends Entity {
 			if (local20 == local22) {
 				local22 = null;
 			}
-			if (local20.anIntArray633 != null) {
+			if (local20.seqIds != null) {
 				if (this.seqType != null && local20.method4465(this.seqType.id)) {
 					return;
 				}
@@ -263,8 +263,8 @@ public final class Loc extends Entity {
 				if (this.anInt4571 != local20.id) {
 					local9 = local20.aBoolean380;
 				}
-			} else if (local20.anInt5523 == -1) {
-				if (local22 != null && local22.anIntArray633 != null) {
+			} else if (local20.seqId == -1) {
+				if (local22 != null && local22.seqIds != null) {
 					if (this.seqType != null && local22.method4465(this.seqType.id)) {
 						return;
 					}
@@ -272,13 +272,13 @@ public final class Loc extends Entity {
 					if (local22.id != this.anInt4571) {
 						local9 = local22.aBoolean380;
 					}
-				} else if (local22 != null && local22.anInt5523 != -1 && this.anInt4571 != local22.id) {
+				} else if (local22 != null && local22.seqId != -1 && this.anInt4571 != local22.id) {
 					local9 = local22.aBoolean380;
-					seqId2 = local22.anInt5523;
+					seqId2 = local22.seqId;
 				}
 			} else if (this.anInt4571 != local20.id) {
 				local9 = local20.aBoolean380;
-				seqId2 = local20.anInt5523;
+				seqId2 = local20.seqId;
 			}
 		}
 		if (seqId2 == -1) {

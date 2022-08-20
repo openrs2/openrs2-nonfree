@@ -6,6 +6,9 @@ import org.openrs2.deob.annotation.Pc;
 @OriginalClass("client!td")
 public final class ObjType {
 
+	@OriginalMember(owner = "client!lh", name = "s", descriptor = "[S")
+	public static short[] recolorPalette = new short[256];
+
 	@OriginalMember(owner = "client!td", name = "i", descriptor = "[B")
 	private byte[] recolorDestinationPalette;
 
@@ -267,7 +270,7 @@ public final class ObjType {
 					if (this.recolorDestinationPalette == null || i >= this.recolorDestinationPalette.length) {
 						model2.recolor(this.recolorSource[i], this.recolorDestination[i]);
 					} else {
-						model2.recolor(this.recolorSource[i], Static4.aShortArray126[this.recolorDestinationPalette[i] & 0xFF]);
+						model2.recolor(this.recolorSource[i], recolorPalette[this.recolorDestinationPalette[i] & 0xFF]);
 					}
 				}
 			}
@@ -303,16 +306,16 @@ public final class ObjType {
 	}
 
 	@OriginalMember(owner = "client!td", name = "a", descriptor = "(ZI)Lclient!td;")
-	public final ObjType method4124(@OriginalArg(1) int arg0) {
-		if (this.countObj != null && arg0 > 1) {
-			@Pc(21) int local21 = -1;
-			for (@Pc(23) int local23 = 0; local23 < 10; local23++) {
-				if (this.countCount[local23] <= arg0 && this.countCount[local23] != 0) {
-					local21 = this.countObj[local23];
+	public final ObjType getCountObjType(@OriginalArg(1) int count) {
+		if (this.countObj != null && count > 1) {
+			@Pc(21) int id = -1;
+			for (@Pc(23) int i = 0; i < 10; i++) {
+				if (this.countCount[i] != 0 && count >= this.countCount[i]) {
+					id = this.countObj[i];
 				}
 			}
-			if (local21 != -1) {
-				return ObjTypeList.get(local21);
+			if (id != -1) {
+				return ObjTypeList.get(id);
 			}
 		}
 		return this;
@@ -353,29 +356,29 @@ public final class ObjType {
 	}
 
 	@OriginalMember(owner = "client!td", name = "a", descriptor = "(BZ)Z")
-	public final boolean method4128(@OriginalArg(1) boolean female) {
-		@Pc(7) int local7 = this.manWear2;
-		@Pc(10) int local10 = this.manWear3;
-		@Pc(17) int local17 = this.manWear1;
+	public final boolean isBodyModelReady(@OriginalArg(1) boolean female) {
+		@Pc(7) int wear2 = this.manWear2;
+		@Pc(10) int wear3 = this.manWear3;
+		@Pc(17) int wear1 = this.manWear1;
 		if (female) {
-			local10 = this.womanWear3;
-			local7 = this.womanWear2;
-			local17 = this.womanWear1;
+			wear3 = this.womanWear3;
+			wear2 = this.womanWear2;
+			wear1 = this.womanWear1;
 		}
-		if (local17 == -1) {
+		if (wear1 == -1) {
 			return true;
 		}
-		@Pc(37) boolean local37 = true;
-		if (!ObjTypeList.modelsArchive.isFileReady(local17, 0)) {
-			local37 = false;
+		@Pc(37) boolean ready = true;
+		if (!ObjTypeList.modelsArchive.isFileReady(wear1, 0)) {
+			ready = false;
 		}
-		if (local7 != -1 && !ObjTypeList.modelsArchive.isFileReady(local7, 0)) {
-			local37 = false;
+		if (wear2 != -1 && !ObjTypeList.modelsArchive.isFileReady(wear2, 0)) {
+			ready = false;
 		}
-		if (local10 != -1 && !ObjTypeList.modelsArchive.isFileReady(local10, 0)) {
-			local37 = false;
+		if (wear3 != -1 && !ObjTypeList.modelsArchive.isFileReady(wear3, 0)) {
+			ready = false;
 		}
-		return local37;
+		return ready;
 	}
 
 	@OriginalMember(owner = "client!td", name = "a", descriptor = "(ILjava/lang/String;I)Ljava/lang/String;")
@@ -475,7 +478,7 @@ public final class ObjType {
 				if (this.recolorDestinationPalette == null || this.recolorDestinationPalette.length <= i) {
 					model.recolor(this.recolorSource[i], this.recolorDestination[i]);
 				} else {
-					model.recolor(this.recolorSource[i], Static4.aShortArray126[this.recolorDestinationPalette[i] & 0xFF]);
+					model.recolor(this.recolorSource[i], recolorPalette[this.recolorDestinationPalette[i] & 0xFF]);
 				}
 			}
 		}

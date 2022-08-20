@@ -10,31 +10,31 @@ public final class BasType {
 	public static final BasType DEFAULT = new BasType();
 
 	@OriginalMember(owner = "client!d", name = "F", descriptor = "[[I")
-	public int[][] anIntArrayArray7;
+	public int[][] equipmentTransforms;
 
 	@OriginalMember(owner = "client!d", name = "b", descriptor = "I")
-	public int anInt829 = -1;
+	public int runFollow180SeqId = -1;
 
 	@OriginalMember(owner = "client!d", name = "h", descriptor = "I")
-	public int anInt835 = -1;
+	public int runCcwSeqId = -1;
 
 	@OriginalMember(owner = "client!d", name = "l", descriptor = "I")
 	public int anInt838 = 0;
 
 	@OriginalMember(owner = "client!d", name = "m", descriptor = "I")
-	public int anInt839 = -1;
+	public int crawlCwSeqId = -1;
 
 	@OriginalMember(owner = "client!d", name = "z", descriptor = "I")
 	public int anInt851 = 0;
 
 	@OriginalMember(owner = "client!d", name = "r", descriptor = "I")
-	public int anInt843 = -1;
+	public int crawlCcwSeqId = -1;
 
 	@OriginalMember(owner = "client!d", name = "B", descriptor = "I")
-	public int anInt853 = -1;
+	public int runCwSeqId = -1;
 
 	@OriginalMember(owner = "client!d", name = "C", descriptor = "I")
-	public int anInt854 = -1;
+	public int crawlSeqId = -1;
 
 	@OriginalMember(owner = "client!d", name = "p", descriptor = "I")
 	public int anInt841 = -1;
@@ -43,7 +43,7 @@ public final class BasType {
 	public int anInt844 = 0;
 
 	@OriginalMember(owner = "client!d", name = "D", descriptor = "I")
-	public int anInt855 = -1;
+	public int walkFollowCcwSeqId = -1;
 
 	@OriginalMember(owner = "client!d", name = "c", descriptor = "I")
 	public int anInt830 = 0;
@@ -52,49 +52,49 @@ public final class BasType {
 	public int anInt848 = 0;
 
 	@OriginalMember(owner = "client!d", name = "q", descriptor = "I")
-	public int anInt842 = -1;
+	public int walkCcwSeqId = -1;
 
 	@OriginalMember(owner = "client!d", name = "u", descriptor = "I")
-	public int anInt846 = -1;
+	public int walkSeqId = -1;
 
 	@OriginalMember(owner = "client!d", name = "v", descriptor = "I")
 	public int anInt847 = 0;
 
 	@OriginalMember(owner = "client!d", name = "A", descriptor = "I")
-	public int anInt852 = -1;
+	public int crawlFollowCcwSeqId = -1;
 
 	@OriginalMember(owner = "client!d", name = "a", descriptor = "I")
-	public int anInt828 = -1;
+	public int walkFollow180SeqId = -1;
 
 	@OriginalMember(owner = "client!d", name = "y", descriptor = "I")
 	public int anInt850 = 0;
 
 	@OriginalMember(owner = "client!d", name = "f", descriptor = "I")
-	public int anInt833 = -1;
+	public int crawlFollow180SeqId = -1;
 
 	@OriginalMember(owner = "client!d", name = "o", descriptor = "I")
-	public int anInt840 = -1;
+	public int walkFollowCwSeqId = -1;
 
 	@OriginalMember(owner = "client!d", name = "G", descriptor = "I")
-	public int anInt857 = -1;
+	public int runFollowCwSeqId = -1;
 
 	@OriginalMember(owner = "client!d", name = "L", descriptor = "I")
-	public int anInt861 = -1;
+	public int crawlFollowCwSeqId = -1;
 
 	@OriginalMember(owner = "client!d", name = "K", descriptor = "I")
 	public int readySeqId = -1;
 
 	@OriginalMember(owner = "client!d", name = "P", descriptor = "I")
-	public int anInt865 = -1;
+	public int walkCwSeqId = -1;
 
 	@OriginalMember(owner = "client!d", name = "e", descriptor = "I")
-	public int anInt832 = -1;
+	public int readyCwSeqId = -1;
 
 	@OriginalMember(owner = "client!d", name = "g", descriptor = "I")
-	public int anInt834 = -1;
+	public int readyCcwSeqId = -1;
 
 	@OriginalMember(owner = "client!d", name = "d", descriptor = "I")
-	public int anInt831 = -1;
+	public int runSeqId = -1;
 
 	@OriginalMember(owner = "client!d", name = "E", descriptor = "I")
 	public int anInt856 = 0;
@@ -103,7 +103,7 @@ public final class BasType {
 	public int anInt862 = 0;
 
 	@OriginalMember(owner = "client!d", name = "R", descriptor = "I")
-	public int anInt867 = -1;
+	public int runFollowCcwSeqId = -1;
 
 	@OriginalMember(owner = "client!d", name = "N", descriptor = "I")
 	public int anInt863 = 0;
@@ -123,40 +123,40 @@ public final class BasType {
 	private void decode(@OriginalArg(2) Buffer buffer, @OriginalArg(1) int code) {
 		if (code == 1) {
 			this.readySeqId = buffer.readUnsignedShort();
-			this.anInt846 = buffer.readUnsignedShort();
+			this.walkSeqId = buffer.readUnsignedShort();
 			if (this.readySeqId == 65535) {
 				this.readySeqId = -1;
 			}
-			if (this.anInt846 == 65535) {
-				this.anInt846 = -1;
+			if (this.walkSeqId == 65535) {
+				this.walkSeqId = -1;
 			}
 		} else if (code == 2) {
-			this.anInt854 = buffer.readUnsignedShort();
+			this.crawlSeqId = buffer.readUnsignedShort();
 		} else if (code == 3) {
-			this.anInt833 = buffer.readUnsignedShort();
+			this.crawlFollow180SeqId = buffer.readUnsignedShort();
 		} else if (code == 4) {
-			this.anInt852 = buffer.readUnsignedShort();
+			this.crawlFollowCcwSeqId = buffer.readUnsignedShort();
 		} else if (code == 5) {
-			this.anInt861 = buffer.readUnsignedShort();
+			this.crawlFollowCwSeqId = buffer.readUnsignedShort();
 		} else if (code == 6) {
-			this.anInt831 = buffer.readUnsignedShort();
+			this.runSeqId = buffer.readUnsignedShort();
 		} else if (code == 7) {
-			this.anInt829 = buffer.readUnsignedShort();
+			this.runFollow180SeqId = buffer.readUnsignedShort();
 		} else if (code == 8) {
-			this.anInt867 = buffer.readUnsignedShort();
+			this.runFollowCcwSeqId = buffer.readUnsignedShort();
 		} else if (code == 9) {
-			this.anInt857 = buffer.readUnsignedShort();
+			this.runFollowCwSeqId = buffer.readUnsignedShort();
 		} else if (code == 26) {
 			this.anInt844 = (short) (buffer.readUnsignedByte() * 4);
 			this.anInt847 = (short) (buffer.readUnsignedByte() * 4);
 		} else if (code == 27) {
-			if (this.anIntArrayArray7 == null) {
-				this.anIntArrayArray7 = new int[12][];
+			if (this.equipmentTransforms == null) {
+				this.equipmentTransforms = new int[12][];
 			}
-			@Pc(138) int local138 = buffer.readUnsignedByte();
-			this.anIntArrayArray7[local138] = new int[6];
-			for (@Pc(146) int local146 = 0; local146 < 6; local146++) {
-				this.anIntArrayArray7[local138][local146] = buffer.readShort();
+			@Pc(138) int slot = buffer.readUnsignedByte();
+			this.equipmentTransforms[slot] = new int[6];
+			for (@Pc(146) int i = 0; i < 6; i++) {
+				this.equipmentTransforms[slot][i] = buffer.readShort();
 			}
 		} else if (code == 29) {
 			this.anInt830 = buffer.readUnsignedByte();
@@ -177,15 +177,15 @@ public final class BasType {
 		} else if (code == 37) {
 			this.anInt841 = buffer.readUnsignedByte();
 		} else if (code == 38) {
-			this.anInt834 = buffer.readUnsignedShort();
+			this.readyCcwSeqId = buffer.readUnsignedShort();
 		} else if (code == 39) {
-			this.anInt832 = buffer.readUnsignedShort();
+			this.readyCwSeqId = buffer.readUnsignedShort();
 		} else if (code == 40) {
-			this.anInt828 = buffer.readUnsignedShort();
+			this.walkFollow180SeqId = buffer.readUnsignedShort();
 		} else if (code == 41) {
-			this.anInt855 = buffer.readUnsignedShort();
+			this.walkFollowCcwSeqId = buffer.readUnsignedShort();
 		} else if (code == 42) {
-			this.anInt840 = buffer.readUnsignedShort();
+			this.walkFollowCwSeqId = buffer.readUnsignedShort();
 		} else if (code == 43) {
 			buffer.readUnsignedShort();
 		} else if (code == 44) {
@@ -193,17 +193,17 @@ public final class BasType {
 		} else if (code == 45) {
 			buffer.readUnsignedShort();
 		} else if (code == 46) {
-			this.anInt843 = buffer.readUnsignedShort();
+			this.crawlCcwSeqId = buffer.readUnsignedShort();
 		} else if (code == 47) {
-			this.anInt839 = buffer.readUnsignedShort();
+			this.crawlCwSeqId = buffer.readUnsignedShort();
 		} else if (code == 48) {
-			this.anInt835 = buffer.readUnsignedShort();
+			this.runCcwSeqId = buffer.readUnsignedShort();
 		} else if (code == 49) {
-			this.anInt853 = buffer.readUnsignedShort();
+			this.runCwSeqId = buffer.readUnsignedShort();
 		} else if (code == 50) {
-			this.anInt842 = buffer.readUnsignedShort();
+			this.walkCcwSeqId = buffer.readUnsignedShort();
 		} else if (code == 51) {
-			this.anInt865 = buffer.readUnsignedShort();
+			this.walkCwSeqId = buffer.readUnsignedShort();
 		}
 	}
 

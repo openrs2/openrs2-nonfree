@@ -7,7 +7,7 @@ import org.openrs2.deob.annotation.Pc;
 public final class FloType {
 
 	@OriginalMember(owner = "client!ce", name = "d", descriptor = "I")
-	public static int anInt549 = 0;
+	public static int worldMapCheckerboardFloId = 0;
 
 	@OriginalMember(owner = "client!oh", name = "c", descriptor = "Z")
 	public boolean aBoolean273 = true;
@@ -22,10 +22,10 @@ public final class FloType {
 	public int anInt3870 = -1;
 
 	@OriginalMember(owner = "client!oh", name = "g", descriptor = "I")
-	public int anInt3869 = 0;
+	public int color = 0;
 
 	@OriginalMember(owner = "client!oh", name = "l", descriptor = "I")
-	public int anInt3874 = 1190717;
+	public int anInt3874 = 0x122B3D;
 
 	@OriginalMember(owner = "client!oh", name = "i", descriptor = "I")
 	public int anInt3871 = 16;
@@ -53,7 +53,7 @@ public final class FloType {
 	@OriginalMember(owner = "client!oh", name = "a", descriptor = "(IIILclient!fd;)V")
 	private void decode(@OriginalArg(3) Buffer buffer, @OriginalArg(2) int id, @OriginalArg(0) int code) {
 		if (code == 1) {
-			this.anInt3869 = ColorUtils.rgbToHslTransparent(buffer.readUnsignedMedium());
+			this.color = ColorUtils.rgbToHslTransparent(buffer.readUnsignedMedium());
 		} else if (code == 2) {
 			this.texture = buffer.readUnsignedByte();
 		} else if (code == 3) {
@@ -66,7 +66,7 @@ public final class FloType {
 		} else if (code == 7) {
 			this.anInt3870 = ColorUtils.rgbToHslTransparent(buffer.readUnsignedMedium());
 		} else if (code == 8) {
-			anInt549 = id;
+			worldMapCheckerboardFloId = id;
 		} else if (code == 9) {
 			this.anInt3876 = buffer.readUnsignedShort();
 		} else if (code == 10) {

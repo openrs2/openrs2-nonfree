@@ -289,50 +289,6 @@ public final class Static15 {
 		Static14.method1210(local212.sprite, local111 - arg1, local140, local98 - arg5);
 	}
 
-	@OriginalMember(owner = "client!fi", name = "a", descriptor = "(Lclient!wf;IIB)V")
-	public static void method1401(@OriginalArg(0) Component arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
-		if (Static1.aClass185_1 != null || Static1.aBoolean17 || (arg0 == null || InterfaceList.method1403(arg0) == null)) {
-			return;
-		}
-		Static1.aClass185_1 = arg0;
-		Static1.aClass185_2 = InterfaceList.method1403(arg0);
-		Static3.aBoolean173 = false;
-		Static3.anInt2165 = 0;
-		Static5.anInt5204 = arg1;
-		Static1.anInt777 = arg2;
-	}
-
-	@OriginalMember(owner = "client!fj", name = "a", descriptor = "(IILclient!qc;)V")
-	public static void method1428(@OriginalArg(1) int arg0, @OriginalArg(2) PathingEntity arg1) {
-		if (client.loop < arg1.anInt4034) {
-			PathingEntity.method4234(arg1);
-		} else if (arg1.anInt3966 < client.loop) {
-			Static32.method4024(arg1);
-		} else {
-			PathingEntity.method2705(arg1);
-		}
-		if (arg1.xFine < 128 || arg1.zFine < 128 || arg1.xFine >= 13184 || arg1.zFine >= 13184) {
-			arg1.anInt3966 = 0;
-			arg1.anInt4034 = 0;
-			arg1.spotAnimId = -1;
-			arg1.seqId = -1;
-			arg1.xFine = arg1.movementQueueX[0] * 128 + arg1.getSize() * 64;
-			arg1.zFine = arg1.movementQueueZ[0] * 128 + arg1.getSize() * 64;
-			arg1.method3307();
-		}
-		if (PlayerList.self == arg1 && (arg1.xFine < 1536 || arg1.zFine < 1536 || arg1.xFine >= 11776 || arg1.zFine >= 11776)) {
-			arg1.spotAnimId = -1;
-			arg1.anInt3966 = 0;
-			arg1.anInt4034 = 0;
-			arg1.seqId = -1;
-			arg1.xFine = arg1.movementQueueX[0] * 128 + arg1.getSize() * 64;
-			arg1.zFine = arg1.movementQueueZ[0] * 128 + arg1.getSize() * 64;
-			arg1.method3307();
-		}
-		PathingEntity.method4247(arg1);
-		PathingEntity.method939(arg1);
-	}
-
 	@OriginalMember(owner = "client!fl", name = "a", descriptor = "(II[Lclient!ch;[BIIIIZII)V")
 	public static void readZoneLocs(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) CollisionMap[] arg2, @OriginalArg(3) byte[] bytes, @OriginalArg(4) int zoneAngle, @OriginalArg(5) int zoneZ, @OriginalArg(6) int zoneX, @OriginalArg(7) int zoneLevel, @OriginalArg(8) boolean arg8, @OriginalArg(10) int arg9) {
 		@Pc(10) Buffer buffer = new Buffer(bytes);

@@ -164,8 +164,8 @@ public final class Static21 {
 				local107 = wall.secondary;
 				local105 = wall.primary;
 			}
-			if (type.anInt5509 != 0) {
-				arg3.unflagWall(x, z, shape, angle, type.aBoolean374, !type.breakRouteFinding);
+			if (type.blockWalk != 0) {
+				arg3.unflagWall(x, z, shape, angle, type.blockRange, !type.breakRouteFinding);
 			}
 		} else if (arg4 == 1) {
 			@Pc(155) WallDecor wallDecor = SceneGraph.removeWallDecor(level, x, z);
@@ -178,15 +178,15 @@ public final class Static21 {
 			if (scenery != null) {
 				local105 = scenery.entity;
 			}
-			if (type.anInt5509 != 0 && x + type.width < 104 && type.width + z < 104 && x + type.length < 104 && type.length + z < 104) {
-				arg3.unflagScenery(x, z, type.width, type.length, angle, type.aBoolean374, !type.breakRouteFinding);
+			if (type.blockWalk != 0 && x + type.width < 104 && type.width + z < 104 && x + type.length < 104 && type.length + z < 104) {
+				arg3.unflagScenery(x, z, type.width, type.length, angle, type.blockRange, !type.breakRouteFinding);
 			}
 		} else if (arg4 == 3) {
 			@Pc(238) GroundDecor groundDecor = SceneGraph.removeGroundDecor(level, x, z);
 			if (groundDecor != null) {
 				local105 = groundDecor.entity;
 			}
-			if (type.anInt5509 == 1) {
+			if (type.blockWalk == 1) {
 				arg3.unflagGroundDecor(x, z);
 			}
 		}

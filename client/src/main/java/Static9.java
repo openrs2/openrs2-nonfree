@@ -115,7 +115,7 @@ public final class Static9 {
 						}
 					}
 				}
-				if (!npc.type.aBoolean357) {
+				if (!npc.type.interactive) {
 					key |= Long.MIN_VALUE;
 				}
 				npc.aBoolean282 = false;

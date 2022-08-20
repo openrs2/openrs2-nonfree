@@ -41,8 +41,8 @@ public final class LocTypeList {
 			newType.ops = null;
 		}
 		if (newType.breakRouteFinding) {
-			newType.anInt5509 = 0;
-			newType.aBoolean374 = false;
+			newType.blockWalk = 0;
+			newType.blockRange = false;
 		}
 		types.put(id, newType);
 		return newType;

@@ -126,7 +126,7 @@ public final class Static19 {
 			Protocol.socket.close();
 			Protocol.socket = null;
 		}
-		Static24.method2697();
+		client.clear();
 		SceneGraph.clear();
 		for (@Pc(18) int level = 0; level < 4; level++) {
 			PathFinder.collisionMaps[level].clear();

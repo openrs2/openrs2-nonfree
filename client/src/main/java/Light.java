@@ -49,10 +49,10 @@ public final class Light {
 	public int y;
 
 	@OriginalMember(owner = "client!em", name = "i", descriptor = "I")
-	public final int anInt1323;
+	public final int functionPreset;
 
 	@OriginalMember(owner = "client!em", name = "k", descriptor = "I")
-	private int anInt1324;
+	private int function;
 
 	@OriginalMember(owner = "client!em", name = "m", descriptor = "Lclient!pi;")
 	public GroundLightModel groundModel;
@@ -64,7 +64,7 @@ public final class Light {
 	public int level;
 
 	@OriginalMember(owner = "client!em", name = "t", descriptor = "I")
-	private int anInt1328;
+	private int frequency;
 
 	@OriginalMember(owner = "client!em", name = "u", descriptor = "F")
 	public float quadraticAttenuation;
@@ -76,7 +76,7 @@ public final class Light {
 	private int alphaMax;
 
 	@OriginalMember(owner = "client!em", name = "y", descriptor = "I")
-	private final int anInt1332;
+	private final int phase;
 
 	@OriginalMember(owner = "client!em", name = "D", descriptor = "F")
 	public float alpha;
@@ -109,105 +109,105 @@ public final class Light {
 			this.aShortArray28[i] = (short) buffer.readUnsignedShort();
 		}
 		this.color = ColorUtils.HSL_TO_RGB[buffer.readUnsignedShort()];
-		@Pc(108) int local108 = buffer.readUnsignedByte();
-		this.anInt1323 = local108 & 0x1F;
-		this.anInt1332 = (local108 & 0xE0) << 3;
-		if (this.anInt1323 != 31) {
-			this.method1074();
+		@Pc(108) int functionPresetAndPhase = buffer.readUnsignedByte();
+		this.functionPreset = functionPresetAndPhase & 0x1F;
+		this.phase = (functionPresetAndPhase & 0xE0) << 3;
+		if (this.functionPreset != 31) {
+			this.setFunctionPreset();
 		}
 	}
 
 	@OriginalMember(owner = "client!em", name = "a", descriptor = "(IIIII)V")
-	public final void method1073(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3) {
-		this.anInt1324 = arg2;
-		this.anInt1328 = arg3;
-		this.alphaMin = arg1;
-		this.alphaMax = arg0;
+	public final void setFunction(@OriginalArg(3) int function, @OriginalArg(4) int frequency, @OriginalArg(2) int alphaMin, @OriginalArg(0) int alphaMax) {
+		this.function = function;
+		this.frequency = frequency;
+		this.alphaMin = alphaMin;
+		this.alphaMax = alphaMax;
 	}
 
 	@OriginalMember(owner = "client!em", name = "a", descriptor = "(I)V")
-	private void method1074() {
-		@Pc(11) int local11 = this.anInt1323;
-		if (local11 == 2) {
-			this.anInt1324 = 1;
+	private void setFunctionPreset() {
+		@Pc(11) int preset = this.functionPreset;
+		if (preset == 2) {
+			this.function = 1;
 			this.alphaMin = 0;
 			this.alphaMax = 2048;
-			this.anInt1328 = 2048;
-		} else if (local11 == 3) {
-			this.anInt1324 = 1;
+			this.frequency = 2048;
+		} else if (preset == 3) {
+			this.function = 1;
 			this.alphaMax = 2048;
 			this.alphaMin = 0;
-			this.anInt1328 = 4096;
-		} else if (local11 == 4) {
+			this.frequency = 4096;
+		} else if (preset == 4) {
 			this.alphaMax = 2048;
 			this.alphaMin = 0;
-			this.anInt1324 = 4;
-			this.anInt1328 = 2048;
-		} else if (local11 == 5) {
-			this.anInt1324 = 4;
-			this.anInt1328 = 8192;
+			this.function = 4;
+			this.frequency = 2048;
+		} else if (preset == 5) {
+			this.function = 4;
+			this.frequency = 8192;
 			this.alphaMin = 0;
 			this.alphaMax = 2048;
-		} else if (local11 == 12) {
+		} else if (preset == 12) {
 			this.alphaMax = 2048;
 			this.alphaMin = 0;
-			this.anInt1328 = 2048;
-			this.anInt1324 = 2;
-		} else if (local11 == 13) {
-			this.anInt1324 = 2;
+			this.frequency = 2048;
+			this.function = 2;
+		} else if (preset == 13) {
+			this.function = 2;
 			this.alphaMax = 2048;
 			this.alphaMin = 0;
-			this.anInt1328 = 8192;
-		} else if (local11 == 10) {
+			this.frequency = 8192;
+		} else if (preset == 10) {
 			this.alphaMin = 1536;
-			this.anInt1328 = 2048;
+			this.frequency = 2048;
 			this.alphaMax = 512;
-			this.anInt1324 = 3;
-		} else if (local11 == 11) {
+			this.function = 3;
+		} else if (preset == 11) {
 			this.alphaMin = 1536;
-			this.anInt1328 = 4096;
-			this.anInt1324 = 3;
+			this.frequency = 4096;
+			this.function = 3;
 			this.alphaMax = 512;
-		} else if (local11 == 6) {
+		} else if (preset == 6) {
 			this.alphaMin = 1280;
 			this.alphaMax = 768;
-			this.anInt1328 = 2048;
-			this.anInt1324 = 3;
-		} else if (local11 == 7) {
-			this.anInt1328 = 4096;
+			this.frequency = 2048;
+			this.function = 3;
+		} else if (preset == 7) {
+			this.frequency = 4096;
 			this.alphaMin = 1280;
-			this.anInt1324 = 3;
+			this.function = 3;
 			this.alphaMax = 768;
-		} else if (local11 == 8) {
+		} else if (preset == 8) {
 			this.alphaMin = 1024;
-			this.anInt1324 = 3;
+			this.function = 3;
 			this.alphaMax = 1024;
-			this.anInt1328 = 2048;
-		} else if (local11 == 9) {
-			this.anInt1324 = 3;
+			this.frequency = 2048;
+		} else if (preset == 9) {
+			this.function = 3;
 			this.alphaMax = 1024;
 			this.alphaMin = 1024;
-			this.anInt1328 = 4096;
-		} else if (local11 == 14) {
+			this.frequency = 4096;
+		} else if (preset == 14) {
 			this.alphaMin = 1280;
-			this.anInt1324 = 1;
+			this.function = 1;
 			this.alphaMax = 768;
-			this.anInt1328 = 2048;
-		} else if (local11 == 15) {
+			this.frequency = 2048;
+		} else if (preset == 15) {
 			this.alphaMin = 1536;
 			this.alphaMax = 512;
-			this.anInt1324 = 1;
-			this.anInt1328 = 4096;
-		} else if (local11 == 16) {
+			this.function = 1;
+			this.frequency = 4096;
+		} else if (preset == 16) {
 			this.alphaMin = 1792;
-			this.anInt1328 = 8192;
+			this.frequency = 8192;
 			this.alphaMax = 256;
-			this.anInt1324 = 1;
+			this.function = 1;
 		} else {
 			this.alphaMax = 2048;
 			this.alphaMin = 0;
-			this.anInt1328 = 2048;
-			this.anInt1324 = 0;
+			this.frequency = 2048;
+			this.function = 0;
 		}
 	}
 
@@ -219,18 +219,18 @@ public final class Light {
 
 	@OriginalMember(owner = "client!em", name = "a", descriptor = "(ZZI)V")
 	public final void method1076(@OriginalArg(2) int loop, @OriginalArg(0) boolean disableFlicker) {
-		@Pc(22) int t = this.anInt1332 + this.anInt1328 * loop / 50 & 0x7FF;
-		@Pc(25) int local25 = this.anInt1324;
+		@Pc(22) int t = this.phase + this.frequency * loop / 50 & 0x7FF;
+		@Pc(25) int function = this.function;
 		@Pc(56) int alpha;
-		if (local25 == 1) {
+		if (function == 1) {
 			alpha = (MathUtils.SINE[t] >> 6) + 1024;
-		} else if (local25 == 3) {
+		} else if (function == 3) {
 			alpha = NOISE[t] >> 1;
-		} else if (local25 == 4) {
+		} else if (function == 4) {
 			alpha = t >> 10 << 11;
-		} else if (local25 == 2) {
+		} else if (function == 2) {
 			alpha = t;
-		} else if (local25 == 5) {
+		} else if (function == 5) {
 			alpha = (t < 1024 ? t : 2048 - t) << 1;
 		} else {
 			alpha = 2048;

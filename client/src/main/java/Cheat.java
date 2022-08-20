@@ -7,7 +7,7 @@ public final class Cheat {
 	public static void execute(@OriginalArg(1) String command) {
 		if (LoginManager.staffModLevel >= 2) {
 			if (command.equalsIgnoreCase("::gc")) {
-				Static27.method4709();
+				client.removeSoft();
 				for (@Pc(20) int i = 0; i < 10; i++) {
 					System.gc();
 				}
@@ -16,7 +16,7 @@ public final class Cheat {
 				Chat.add(0, null, "mem=" + used + "k");
 			}
 			if (command.equalsIgnoreCase("::mm")) {
-				Static27.method4709();
+				client.removeSoft();
 				for (@Pc(60) int i = 0; i < 10; i++) {
 					System.gc();
 				}
@@ -24,7 +24,7 @@ public final class Cheat {
 				@Pc(79) int usedBefore = (int) ((runtime.totalMemory() - runtime.freeMemory()) / 1024L);
 				Chat.add(0, null, "Memory before cleanup=" + usedBefore + "k");
 				Static24.method2567();
-				Static27.method4709();
+				client.removeSoft();
 				for (@Pc(99) int i = 0; i < 10; i++) {
 					System.gc();
 				}

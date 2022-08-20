@@ -110,9 +110,6 @@ public final class Static5 {
 	@OriginalMember(owner = "client!no", name = "Z", descriptor = "I")
 	public static int anInt3636 = -1;
 
-	@OriginalMember(owner = "client!o", name = "J", descriptor = "[I")
-	public static final int[] anIntArray398 = new int[14];
-
 	@OriginalMember(owner = "client!ob", name = "c", descriptor = "I")
 	public static int anInt5195 = -1;
 
@@ -125,9 +122,6 @@ public final class Static5 {
 	@OriginalMember(owner = "client!og", name = "Z", descriptor = "I")
 	public static final int anInt5840 = 50;
 
-	@OriginalMember(owner = "client!og", name = "db", descriptor = "F")
-	public static float aFloat147 = 128.0F;
-
 	@OriginalMember(owner = "client!og", name = "gb", descriptor = "[J")
 	public static final long[] keys = new long[1000];
 
@@ -137,20 +131,11 @@ public final class Static5 {
 	@OriginalMember(owner = "client!oj", name = "g", descriptor = "Z")
 	public static boolean aBoolean276 = false;
 
-	@OriginalMember(owner = "client!ok", name = "f", descriptor = "F")
-	public static float aFloat97 = 0.0F;
-
 	@OriginalMember(owner = "client!ok", name = "g", descriptor = "I")
 	public static int firstVisibleLevel = 99;
 
-	@OriginalMember(owner = "client!ok", name = "i", descriptor = "[Lclient!te;")
-	public static final AnimFrameset[] aClass4_Sub3_Sub19Array3 = new AnimFrameset[14];
-
 	@OriginalMember(owner = "client!ol", name = "r", descriptor = "I")
 	public static final int anInt3907 = 3353893;
-
-	@OriginalMember(owner = "client!om", name = "j", descriptor = "[S")
-	public static short[] aShortArray74 = new short[256];
 
 	@OriginalMember(owner = "client!ph", name = "ab", descriptor = "I")
 	public static int anInt4156 = 0;

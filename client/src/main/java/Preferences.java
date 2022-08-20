@@ -343,7 +343,7 @@ public final class Preferences {
 	@OriginalMember(owner = "client!ue", name = "a", descriptor = "(BZ)V")
 	public static void setAllLevelsVisible(@OriginalArg(1) boolean visible) {
 		allLevelsVisible = visible;
-		Static6.aBoolean313 = !SceneGraph.isAllLevelsVisible();
+		LocType.singleLevelVisible = !SceneGraph.isAllLevelsVisible();
 	}
 
 	@OriginalMember(owner = "client!mo", name = "f", descriptor = "(B)I")

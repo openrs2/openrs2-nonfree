@@ -116,7 +116,7 @@ public final class Static29 {
 				@Pc(38) int local38 = arg1[local12][local17] & 0xFF;
 				if (local38 != 0) {
 					@Pc(48) FloType local48 = FloTypeList.get(local38 - 1);
-					if (local48.anInt3869 == -1) {
+					if (local48.color == -1) {
 						continue;
 					}
 					@Pc(60) GroundModel local60 = Static27.method4237(local10, local48);
@@ -145,7 +145,7 @@ public final class Static29 {
 					@Pc(224) int local224 = arg1[local12 + 1][local17 + 1] & 0xFF;
 					if (local188 != 0 && local38 != local188) {
 						@Pc(239) FloType local239 = FloTypeList.get(local188 - 1);
-						if (local239.aBoolean275 && local239.anInt3869 != -1) {
+						if (local239.aBoolean275 && local239.color != -1) {
 							@Pc(256) byte local256 = arg5[local12 - 1][local17 + 1];
 							@Pc(266) byte local266 = arg6[local12 - 1][local17 + 1];
 							@Pc(278) int local278 = Static6.anIntArray474[local256 * 4 + (local266 + 2 & 0x3)];
@@ -166,7 +166,7 @@ public final class Static29 {
 					}
 					if (local200 != 0 && local38 != local200) {
 						@Pc(363) FloType local363 = FloTypeList.get(local200 - 1);
-						if (local363.aBoolean275 && local363.anInt3869 != -1) {
+						if (local363.aBoolean275 && local363.color != -1) {
 							@Pc(380) byte local380 = arg6[local12 - 1][local17 - 1];
 							@Pc(390) byte local390 = arg5[local12 - 1][local17 - 1];
 							@Pc(403) int local403 = Static6.anIntArray474[local390 * 4 + (local380 + 3 & 0x3)];
@@ -186,7 +186,7 @@ public final class Static29 {
 					}
 					if (local212 != 0 && local38 != local212) {
 						@Pc(471) FloType local471 = FloTypeList.get(local212 - 1);
-						if (local471.aBoolean275 && local471.anInt3869 != -1) {
+						if (local471.aBoolean275 && local471.color != -1) {
 							@Pc(492) byte local492 = arg6[local12 + 1][local17 - 1];
 							@Pc(502) byte local502 = arg5[local12 + 1][local17 - 1];
 							@Pc(515) int local515 = Static6.anIntArray474[local502 * 4 + (local492 + 1 & 0x3)];
@@ -206,7 +206,7 @@ public final class Static29 {
 					}
 					if (local224 != 0 && local38 != local224) {
 						@Pc(596) FloType local596 = FloTypeList.get(local224 - 1);
-						if (local596.aBoolean275 && local596.anInt3869 != -1) {
+						if (local596.aBoolean275 && local596.color != -1) {
 							@Pc(617) byte local617 = arg6[local12 + 1][local17 + 1];
 							@Pc(627) byte local627 = arg5[local12 + 1][local17 + 1];
 							@Pc(640) int local640 = Static6.anIntArray474[local627 * 4 + (local617 + 2 & 0x3)];
@@ -226,7 +226,7 @@ public final class Static29 {
 					}
 					if (local146 != 0 && local146 != local38) {
 						@Pc(715) FloType local715 = FloTypeList.get(local146 - 1);
-						if (local715.aBoolean275 && local715.anInt3869 != -1) {
+						if (local715.aBoolean275 && local715.color != -1) {
 							local127 = Static6.anIntArray474[(arg6[local12][local17 + 1] + 2 & 0x3) + arg5[local12][local17 + 1] * 4];
 							for (@Pc(749) int local749 = 0; local749 < 8; local749++) {
 								if (local749 == local125) {
@@ -241,7 +241,7 @@ public final class Static29 {
 					}
 					if (local156 != 0 && local156 != local38) {
 						@Pc(785) FloType local785 = FloTypeList.get(local156 - 1);
-						if (local785.aBoolean275 && local785.anInt3869 != -1) {
+						if (local785.aBoolean275 && local785.color != -1) {
 							local132 = Static6.anIntArray474[(arg6[local12 - 1][local17] + 3 & 0x3) + arg5[local12 - 1][local17] * 4];
 							for (@Pc(818) int local818 = 0; local818 < 8; local818++) {
 								if (local818 == local125) {
@@ -256,7 +256,7 @@ public final class Static29 {
 					}
 					if (local166 != 0 && local166 != local38) {
 						@Pc(860) FloType local860 = FloTypeList.get(local166 - 1);
-						if (local860.aBoolean275 && local860.anInt3869 != -1) {
+						if (local860.aBoolean275 && local860.color != -1) {
 							local134 = Static6.anIntArray474[arg5[local12][local17 - 1] * 4 + (arg6[local12][local17 - 1] & 0x3)];
 							for (@Pc(893) int local893 = 0; local893 < 8; local893++) {
 								if (local125 == local893) {
@@ -271,7 +271,7 @@ public final class Static29 {
 					}
 					if (local176 != 0 && local176 != local38) {
 						@Pc(941) FloType local941 = FloTypeList.get(local176 - 1);
-						if (local941.aBoolean275 && local941.anInt3869 != -1) {
+						if (local941.aBoolean275 && local941.color != -1) {
 							local136 = Static6.anIntArray474[arg5[local12 + 1][local17] * 4 + (arg6[local12 + 1][local17] + 1 & 0x3)];
 							for (@Pc(975) int local975 = 0; local975 < 8; local975++) {
 								if (local975 == local125) {
@@ -319,16 +319,16 @@ public final class Static29 {
 				@Pc(1203) int local1203 = arg8[local1137][local1144] & 0xFF;
 				if (local1195 != 0) {
 					@Pc(1215) FloType local1215 = FloTypeList.get(local1195 - 1);
-					if (local1215.anInt3869 == -1) {
+					if (local1215.color == -1) {
 						continue;
 					}
 					@Pc(1227) GroundModel local1227 = Static27.method4237(local10, local1215);
 					@Pc(1233) byte local1233 = arg5[local1137][local1144];
 					@Pc(1239) byte local1239 = arg6[local1137][local1144];
-					@Pc(1251) int local1251 = Static15.method1474(arg2[local1137][local1144], local1215.texture, local1215.anInt3869);
-					@Pc(1265) int local1265 = Static15.method1474(arg2[local1137 + 1][local1144], local1215.texture, local1215.anInt3869);
-					@Pc(1281) int local1281 = Static15.method1474(arg2[local1137 + 1][local1144 + 1], local1215.texture, local1215.anInt3869);
-					@Pc(1295) int local1295 = Static15.method1474(arg2[local1137][local1144 + 1], local1215.texture, local1215.anInt3869);
+					@Pc(1251) int local1251 = Static15.method1474(arg2[local1137][local1144], local1215.texture, local1215.color);
+					@Pc(1265) int local1265 = Static15.method1474(arg2[local1137 + 1][local1144], local1215.texture, local1215.color);
+					@Pc(1281) int local1281 = Static15.method1474(arg2[local1137 + 1][local1144 + 1], local1215.texture, local1215.color);
+					@Pc(1295) int local1295 = Static15.method1474(arg2[local1137][local1144 + 1], local1215.texture, local1215.color);
 					Static11.method521(arg10, local1265, local1159, local1295, local1281, arg3, local1251, local1233, local1239, local1227, local1203 != 0 && local1215.aBoolean275, arg9, arg7, local1137, local1144);
 				}
 				if ((arg8[local1137][local1144] & 0xFF) != 0 || local1195 != 0 && arg5[local1137][local1144] == 0) {
@@ -350,7 +350,7 @@ public final class Static29 {
 						local1416 = 0;
 					} else {
 						@Pc(1454) FloType local1454 = FloTypeList.get(local1416 - 1);
-						if (local1454.aBoolean275 && local1454.anInt3869 != -1) {
+						if (local1454.aBoolean275 && local1454.color != -1) {
 							@Pc(1476) byte local1476 = arg6[local1137 - 1][local1144 + 1];
 							@Pc(1486) byte local1486 = arg5[local1137 - 1][local1144 + 1];
 							@Pc(1498) int local1498 = Static6.anIntArray474[local1486 * 4 + (local1476 + 3 & 0x3)];
@@ -377,7 +377,7 @@ public final class Static29 {
 						local1404 = 0;
 					} else {
 						@Pc(1572) FloType local1572 = FloTypeList.get(local1404 - 1);
-						if (local1572.aBoolean275 && local1572.anInt3869 != -1) {
+						if (local1572.aBoolean275 && local1572.color != -1) {
 							@Pc(1591) byte local1591 = arg6[local1137 - 1][local1144 - 1];
 							@Pc(1601) byte local1601 = arg5[local1137 - 1][local1144 - 1];
 							@Pc(1612) int local1612 = Static6.anIntArray474[local1601 * 4 + (local1591 & 0x3)];
@@ -403,7 +403,7 @@ public final class Static29 {
 						local1428 = 0;
 					} else {
 						@Pc(1694) FloType local1694 = FloTypeList.get(local1428 - 1);
-						if (local1694.aBoolean275 && local1694.anInt3869 != -1) {
+						if (local1694.aBoolean275 && local1694.color != -1) {
 							@Pc(1711) byte local1711 = arg6[local1137 + 1][local1144 - 1];
 							@Pc(1721) byte local1721 = arg5[local1137 + 1][local1144 - 1];
 							@Pc(1732) int local1732 = Static6.anIntArray474[local1721 * 4 + (local1711 & 0x3)];
@@ -429,7 +429,7 @@ public final class Static29 {
 						local1440 = 0;
 					} else {
 						@Pc(1810) FloType local1810 = FloTypeList.get(local1440 - 1);
-						if (local1810.aBoolean275 && local1810.anInt3869 != -1) {
+						if (local1810.aBoolean275 && local1810.color != -1) {
 							@Pc(1827) byte local1827 = arg6[local1137 + 1][local1144 + 1];
 							@Pc(1837) byte local1837 = arg5[local1137 + 1][local1144 + 1];
 							@Pc(1849) int local1849 = Static6.anIntArray474[(local1827 + 1 & 0x3) + local1837 * 4];
@@ -453,7 +453,7 @@ public final class Static29 {
 					}
 					if (local1392 != 0 && local1392 != local1195) {
 						@Pc(1926) FloType local1926 = FloTypeList.get(local1392 - 1);
-						if (local1926.aBoolean275 && local1926.anInt3869 != -1) {
+						if (local1926.aBoolean275 && local1926.color != -1) {
 							local1346 = Static6.anIntArray474[arg5[local1137][local1144 + 1] * 4 + (arg6[local1137][local1144 + 1] + 2 & 0x3)];
 							for (@Pc(1960) int local1960 = 0; local1960 < 8; local1960++) {
 								if (local1960 == local1341) {
@@ -468,7 +468,7 @@ public final class Static29 {
 					}
 					if (local1362 != 0 && local1195 != local1362) {
 						@Pc(2003) FloType local2003 = FloTypeList.get(local1362 - 1);
-						if (local2003.aBoolean275 && local2003.anInt3869 != -1) {
+						if (local2003.aBoolean275 && local2003.color != -1) {
 							local1348 = Static6.anIntArray474[arg5[local1137 - 1][local1144] * 4 + (arg6[local1137 - 1][local1144] + 3 & 0x3)];
 							for (@Pc(2036) int local2036 = 0; local2036 < 8; local2036++) {
 								if (local2036 == local1341) {
@@ -483,7 +483,7 @@ public final class Static29 {
 					}
 					if (local1382 != 0 && local1195 != local1382) {
 						@Pc(2080) FloType local2080 = FloTypeList.get(local1382 - 1);
-						if (local2080.aBoolean275 && local2080.anInt3869 != -1) {
+						if (local2080.aBoolean275 && local2080.color != -1) {
 							local1350 = Static6.anIntArray474[arg5[local1137][local1144 - 1] * 4 + (arg6[local1137][local1144 - 1] & 0x3)];
 							for (@Pc(2113) int local2113 = 0; local2113 < 8; local2113++) {
 								if (local2113 == local1341) {
@@ -498,7 +498,7 @@ public final class Static29 {
 					}
 					if (local1372 != 0 && local1195 != local1372) {
 						@Pc(2147) FloType local2147 = FloTypeList.get(local1372 - 1);
-						if (local2147.aBoolean275 && local2147.anInt3869 != -1) {
+						if (local2147.aBoolean275 && local2147.color != -1) {
 							local1352 = Static6.anIntArray474[arg5[local1137 + 1][local1144] * 4 + (arg6[local1137 + 1][local1144] + 1 & 0x3)];
 							for (@Pc(2184) int local2184 = 0; local2184 < 8; local2184++) {
 								if (local1341 == local2184) {
@@ -519,10 +519,10 @@ public final class Static29 {
 						@Pc(2266) boolean[] local2266 = Static2.aBooleanArrayArray2[local2226 == local1372 ? local1352 : 0];
 						@Pc(2272) FloType local2272 = FloTypeList.get(local2226 - 1);
 						@Pc(2277) GroundModel local2277 = Static27.method4237(local10, local2272);
-						@Pc(2293) int local2293 = Static15.method1474(arg2[local1137][local1144], local2272.texture, local2272.anInt3869) << 8 | 0xFF;
-						@Pc(2311) int local2311 = Static15.method1474(arg2[local1137 + 1][local1144], local2272.texture, local2272.anInt3869) << 8 | 0xFF;
-						@Pc(2331) int local2331 = Static15.method1474(arg2[local1137 + 1][local1144 + 1], local2272.texture, local2272.anInt3869) << 8 | 0xFF;
-						@Pc(2351) int local2351 = Static15.method1474(arg2[local1137][local1144 + 1], local2272.texture, local2272.anInt3869) << 8 | 0xFF;
+						@Pc(2293) int local2293 = Static15.method1474(arg2[local1137][local1144], local2272.texture, local2272.color) << 8 | 0xFF;
+						@Pc(2311) int local2311 = Static15.method1474(arg2[local1137 + 1][local1144], local2272.texture, local2272.color) << 8 | 0xFF;
+						@Pc(2331) int local2331 = Static15.method1474(arg2[local1137 + 1][local1144 + 1], local2272.texture, local2272.color) << 8 | 0xFF;
+						@Pc(2351) int local2351 = Static15.method1474(arg2[local1137][local1144 + 1], local2272.texture, local2272.color) << 8 | 0xFF;
 						@Pc(2358) int local2358 = local2235.length + 6 - 2;
 						local2358 += local2244.length - 2;
 						@Pc(2384) boolean local2384 = local2226 != local1416 && local2244[0] && local2235[1];
@@ -814,8 +814,8 @@ public final class Static29 {
 			Static5.aBoolean248 = false;
 			Static7.anInt5269 = 20;
 			Protocol.outboundBuffer.writeOpcode(140);
-			Protocol.outboundBuffer.writeShortLE2((int) Static5.aFloat147);
-			Protocol.outboundBuffer.writeShortLEA((int) Static5.aFloat97);
+			Protocol.outboundBuffer.writeShortLE2((int) Camera.pitch);
+			Protocol.outboundBuffer.writeShortLEA((int) Camera.yaw);
 		}
 		if (GameShell.focus && !Static7.prevFocus) {
 			Static7.prevFocus = true;
@@ -854,8 +854,8 @@ public final class Static29 {
 			Static23.method2455();
 			return;
 		}
-		Static16.method1576();
-		Static8.method8();
+		PlayerList.loop();
+		NpcList.loop();
 		OverheadChat.loop();
 		for (@Pc(658) int varp = VarpDomain.poll(true); varp != -1; varp = VarpDomain.poll(false)) {
 			method3534(varp);
@@ -1212,7 +1212,7 @@ public final class Static29 {
 												Static7.anInt6094 = 0;
 												@Pc(2172) int local2172 = (int) (Math.random() * 8.0D);
 												if ((local2172 & 0x1) == 1) {
-													Static6.anInt3585 += Static5.anInt441;
+													Camera.yawOffset += Static5.anInt441;
 												}
 												if ((local2172 & 0x2) == 2) {
 													Static6.anInt4761 += Static2.anInt1121;
@@ -1224,10 +1224,10 @@ public final class Static29 {
 											if (Static1.anInt548 > 50) {
 												Static7.anInt5997 = -2;
 											}
-											if (Static6.anInt3585 < -60) {
+											if (Camera.yawOffset < -60) {
 												Static5.anInt441 = 2;
 											}
-											if (Static6.anInt3585 > 60) {
+											if (Camera.yawOffset > 60) {
 												Static5.anInt441 = -2;
 											}
 											if (Static1.anInt242 < -40) {

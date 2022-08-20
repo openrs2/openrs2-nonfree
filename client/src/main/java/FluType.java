@@ -25,7 +25,7 @@ public final class FluType {
 	public boolean aBoolean286 = true;
 
 	@OriginalMember(owner = "client!pa", name = "u", descriptor = "I")
-	public int anInt4074 = -1;
+	public int texture = -1;
 
 	@OriginalMember(owner = "client!pa", name = "o", descriptor = "I")
 	public int anInt4068 = 128;
@@ -47,9 +47,9 @@ public final class FluType {
 			this.color = buffer.readUnsignedMedium();
 			this.rgbToHsl(this.color);
 		} else if (code == 2) {
-			this.anInt4074 = buffer.readUnsignedShort();
-			if (this.anInt4074 == 65535) {
-				this.anInt4074 = -1;
+			this.texture = buffer.readUnsignedShort();
+			if (this.texture == 65535) {
+				this.texture = -1;
 			}
 		} else if (code == 3) {
 			this.anInt4068 = buffer.readUnsignedShort();

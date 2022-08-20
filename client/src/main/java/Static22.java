@@ -137,7 +137,7 @@ public final class Static22 {
 		} else if (arg3 < 3) {
 			local253 = SceneGraph.tileHeights[arg3 + 1];
 		}
-		if (type.anInt5522 == 0 || arg5) {
+		if (type.interactivity == 0 || arg5) {
 			key |= Long.MIN_VALUE;
 		}
 		if (type.anInt5517 == 1) {
@@ -152,9 +152,9 @@ public final class Static22 {
 		@Pc(321) long key2 = key | (long) id << 32;
 		@Pc(330) boolean local330 = type.aBoolean372 & !arg5;
 		if (shape == 22) {
-			if (Preferences.groundDecoration || type.anInt5522 != 0 || type.anInt5509 == 1 || type.aBoolean376) {
+			if (Preferences.groundDecoration || type.interactivity != 0 || type.blockWalk == 1 || type.forceDecor) {
 				@Pc(377) Entity local377;
-				if (type.anInt5523 == -1 && type.anIntArray633 == null && type.multiLocs == null && !type.aBoolean379) {
+				if (type.seqId == -1 && type.seqIds == null && type.multiLocs == null && !type.aBoolean379) {
 					@Pc(393) Class96 local393 = type.method4450(local159, arg8, 22, local193, local151, local253, local330, angle, local167, null);
 					if (GlRenderer.enabled && local330) {
 						Static14.method1212(local393.sprite, local159, local195, local167);
@@ -164,13 +164,13 @@ public final class Static22 {
 					local377 = new Loc(id, 22, angle, arg3, x, z, -1, type.aBoolean380, null);
 				}
 				SceneGraph.setGroundDecor(level, x, z, local193, local377, key2, type.aBoolean371);
-				if (type.anInt5509 == 1 && collisionMap != null) {
+				if (type.blockWalk == 1 && collisionMap != null) {
 					collisionMap.flagGroundDecor(x, z);
 				}
 			}
 		} else if (shape == 10 || shape == 11) {
 			@Pc(493) Entity local493;
-			if (type.anInt5523 == -1 && type.anIntArray633 == null && type.multiLocs == null && !type.aBoolean379) {
+			if (type.seqId == -1 && type.seqIds == null && type.multiLocs == null && !type.aBoolean379) {
 				@Pc(479) Class96 local479 = type.method4450(local159, arg8, 10, local193, local151, local253, local330, shape == 11 ? angle + 4 : angle, local167, null);
 				if (GlRenderer.enabled && local330) {
 					Static14.method1212(local479.sprite, local159, local195, local167);
@@ -198,12 +198,12 @@ public final class Static22 {
 					}
 				}
 			}
-			if (type.anInt5509 != 0 && collisionMap != null) {
-				collisionMap.flagScenery(x, z, width, length, type.aBoolean374, !type.breakRouteFinding);
+			if (type.blockWalk != 0 && collisionMap != null) {
+				collisionMap.flagScenery(x, z, width, length, type.blockRange, !type.breakRouteFinding);
 			}
 		} else if (shape >= 12) {
 			@Pc(666) Entity local666;
-			if (type.anInt5523 == -1 && type.anIntArray633 == null && type.multiLocs == null && !type.aBoolean379) {
+			if (type.seqId == -1 && type.seqIds == null && type.multiLocs == null && !type.aBoolean379) {
 				@Pc(682) Class96 local682 = type.method4450(local159, arg8, shape, local193, local151, local253, local330, angle, local167, null);
 				if (GlRenderer.enabled && local330) {
 					Static14.method1212(local682.sprite, local159, local195, local167);
@@ -213,15 +213,15 @@ public final class Static22 {
 				local666 = new Loc(id, shape, angle, arg3, x, z, -1, type.aBoolean380, null);
 			}
 			SceneGraph.method2196(level, x, z, local193, 1, 1, local666, key2);
-			if (arg8 && shape >= 12 && shape <= 17 && shape != 13 && level > 0 && type.anInt5544 != 0) {
+			if (arg8 && shape >= 12 && shape <= 17 && shape != 13 && level > 0 && type.occlusionMode != 0) {
 				Static4.anIntArrayArrayArray9[level][x][z] |= 4;
 			}
-			if (type.anInt5509 != 0 && collisionMap != null) {
-				collisionMap.flagScenery(x, z, width, length, type.aBoolean374, !type.breakRouteFinding);
+			if (type.blockWalk != 0 && collisionMap != null) {
+				collisionMap.flagScenery(x, z, width, length, type.blockRange, !type.breakRouteFinding);
 			}
 		} else if (shape == 0) {
 			@Pc(796) Entity local796;
-			if (type.anInt5523 == -1 && type.anIntArray633 == null && type.multiLocs == null && !type.aBoolean379) {
+			if (type.seqId == -1 && type.seqIds == null && type.multiLocs == null && !type.aBoolean379) {
 				@Pc(812) Class96 local812 = type.method4450(local159, arg8, 0, local193, local151, local253, local330, angle, local167, null);
 				if (GlRenderer.enabled && local330) {
 					Static14.method1212(local812.sprite, local159, local195, local167);
@@ -237,7 +237,7 @@ public final class Static22 {
 						Static5.aByteArrayArrayArray18[level][x][z] = 50;
 						Static5.aByteArrayArrayArray18[level][x][z + 1] = 50;
 					}
-					if (type.anInt5544 == 1) {
+					if (type.occlusionMode == 1) {
 						Static4.anIntArrayArrayArray9[level][x][z] |= 1;
 					}
 				} else if (angle == 1) {
@@ -245,7 +245,7 @@ public final class Static22 {
 						Static5.aByteArrayArrayArray18[level][x][z + 1] = 50;
 						Static5.aByteArrayArrayArray18[level][x + 1][z + 1] = 50;
 					}
-					if (type.anInt5544 == 1) {
+					if (type.occlusionMode == 1) {
 						Static4.anIntArrayArrayArray9[level][x][z + 1] |= 2;
 					}
 				} else if (angle == 2) {
@@ -253,7 +253,7 @@ public final class Static22 {
 						Static5.aByteArrayArrayArray18[level][x + 1][z] = 50;
 						Static5.aByteArrayArrayArray18[level][x + 1][z + 1] = 50;
 					}
-					if (type.anInt5544 == 1) {
+					if (type.occlusionMode == 1) {
 						Static4.anIntArrayArrayArray9[level][x + 1][z] |= 1;
 					}
 				} else if (angle == 3) {
@@ -261,20 +261,20 @@ public final class Static22 {
 						Static5.aByteArrayArrayArray18[level][x][z] = 50;
 						Static5.aByteArrayArrayArray18[level][x + 1][z] = 50;
 					}
-					if (type.anInt5544 == 1) {
+					if (type.occlusionMode == 1) {
 						Static4.anIntArrayArrayArray9[level][x][z] |= 2;
 					}
 				}
 			}
-			if (type.anInt5509 != 0 && collisionMap != null) {
-				collisionMap.flagWall(x, z, shape, angle, type.aBoolean374, !type.breakRouteFinding);
+			if (type.blockWalk != 0 && collisionMap != null) {
+				collisionMap.flagWall(x, z, shape, angle, type.blockRange, !type.breakRouteFinding);
 			}
 			if (type.wallDecorOffsetScale != 16) {
 				SceneGraph.scaleWallDecorOffsets(level, x, z, type.wallDecorOffsetScale);
 			}
 		} else if (shape == 1) {
 			@Pc(1119) Entity local1119;
-			if (type.anInt5523 == -1 && type.anIntArray633 == null && type.multiLocs == null && !type.aBoolean379) {
+			if (type.seqId == -1 && type.seqIds == null && type.multiLocs == null && !type.aBoolean379) {
 				@Pc(1135) Class96 local1135 = type.method4450(local159, arg8, 1, local193, local151, local253, local330, angle, local167, null);
 				if (GlRenderer.enabled && local330) {
 					Static14.method1212(local1135.sprite, local159, local195, local167);
@@ -295,14 +295,14 @@ public final class Static22 {
 					Static5.aByteArrayArrayArray18[level][x][z] = 50;
 				}
 			}
-			if (type.anInt5509 != 0 && collisionMap != null) {
-				collisionMap.flagWall(x, z, shape, angle, type.aBoolean374, !type.breakRouteFinding);
+			if (type.blockWalk != 0 && collisionMap != null) {
+				collisionMap.flagWall(x, z, shape, angle, type.blockRange, !type.breakRouteFinding);
 			}
 		} else if (shape == 2) {
 			@Pc(1265) int local1265 = angle + 1 & 0x3;
 			@Pc(1309) Entity local1309;
 			@Pc(1295) Entity local1295;
-			if (type.anInt5523 == -1 && type.anIntArray633 == null && type.multiLocs == null && !type.aBoolean379) {
+			if (type.seqId == -1 && type.seqIds == null && type.multiLocs == null && !type.aBoolean379) {
 				@Pc(1329) Class96 local1329 = type.method4450(local159, arg8, 2, local193, local151, local253, local330, angle + 4, local167, null);
 				if (GlRenderer.enabled && local330) {
 					Static14.method1212(local1329.sprite, local159, local195, local167);
@@ -318,7 +318,7 @@ public final class Static22 {
 				local1309 = new Loc(id, 2, local1265, arg3, x, z, -1, type.aBoolean380, null);
 			}
 			SceneGraph.setWall(level, x, z, local193, local1295, local1309, Static2.anIntArray651[angle], Static2.anIntArray651[local1265], key2);
-			if (type.anInt5544 == 1 && arg8) {
+			if (type.occlusionMode == 1 && arg8) {
 				if (angle == 0) {
 					Static4.anIntArrayArrayArray9[level][x][z] |= 1;
 					Static4.anIntArrayArrayArray9[level][x][z + 1] |= 2;
@@ -333,15 +333,15 @@ public final class Static22 {
 					Static4.anIntArrayArrayArray9[level][x][z] |= 1;
 				}
 			}
-			if (type.anInt5509 != 0 && collisionMap != null) {
-				collisionMap.flagWall(x, z, shape, angle, type.aBoolean374, !type.breakRouteFinding);
+			if (type.blockWalk != 0 && collisionMap != null) {
+				collisionMap.flagWall(x, z, shape, angle, type.blockRange, !type.breakRouteFinding);
 			}
 			if (type.wallDecorOffsetScale != 16) {
 				SceneGraph.scaleWallDecorOffsets(level, x, z, type.wallDecorOffsetScale);
 			}
 		} else if (shape == 3) {
 			@Pc(1631) Entity local1631;
-			if (type.anInt5523 == -1 && type.anIntArray633 == null && type.multiLocs == null && !type.aBoolean379) {
+			if (type.seqId == -1 && type.seqIds == null && type.multiLocs == null && !type.aBoolean379) {
 				@Pc(1647) Class96 local1647 = type.method4450(local159, arg8, 3, local193, local151, local253, local330, angle, local167, null);
 				if (GlRenderer.enabled && local330) {
 					Static14.method1212(local1647.sprite, local159, local195, local167);
@@ -362,12 +362,12 @@ public final class Static22 {
 					Static5.aByteArrayArrayArray18[level][x][z] = 50;
 				}
 			}
-			if (type.anInt5509 != 0 && collisionMap != null) {
-				collisionMap.flagWall(x, z, shape, angle, type.aBoolean374, !type.breakRouteFinding);
+			if (type.blockWalk != 0 && collisionMap != null) {
+				collisionMap.flagWall(x, z, shape, angle, type.blockRange, !type.breakRouteFinding);
 			}
 		} else if (shape == 9) {
 			@Pc(1796) Entity local1796;
-			if (type.anInt5523 == -1 && type.anIntArray633 == null && type.multiLocs == null && !type.aBoolean379) {
+			if (type.seqId == -1 && type.seqIds == null && type.multiLocs == null && !type.aBoolean379) {
 				@Pc(1812) Class96 local1812 = type.method4450(local159, arg8, shape, local193, local151, local253, local330, angle, local167, null);
 				if (GlRenderer.enabled && local330) {
 					Static14.method1212(local1812.sprite, local159, local195, local167);
@@ -377,15 +377,15 @@ public final class Static22 {
 				local1796 = new Loc(id, shape, angle, arg3, x, z, -1, type.aBoolean380, null);
 			}
 			SceneGraph.method2196(level, x, z, local193, 1, 1, local1796, key2);
-			if (type.anInt5509 != 0 && collisionMap != null) {
-				collisionMap.flagScenery(x, z, width, length, type.aBoolean374, !type.breakRouteFinding);
+			if (type.blockWalk != 0 && collisionMap != null) {
+				collisionMap.flagScenery(x, z, width, length, type.blockRange, !type.breakRouteFinding);
 			}
 			if (type.wallDecorOffsetScale != 16) {
 				SceneGraph.scaleWallDecorOffsets(level, x, z, type.wallDecorOffsetScale);
 			}
 		} else if (shape == 4) {
 			@Pc(1914) Entity local1914;
-			if (type.anInt5523 == -1 && type.anIntArray633 == null && type.multiLocs == null && !type.aBoolean379) {
+			if (type.seqId == -1 && type.seqIds == null && type.multiLocs == null && !type.aBoolean379) {
 				@Pc(1930) Class96 local1930 = type.method4450(local159, arg8, 4, local193, local151, local253, local330, angle, local167, null);
 				if (GlRenderer.enabled && local330) {
 					Static14.method1212(local1930.sprite, local159, local195, local167);
@@ -402,7 +402,7 @@ public final class Static22 {
 				offsetScale = LocTypeList.get((int) (wallKey >>> 32) & Integer.MAX_VALUE).wallDecorOffsetScale;
 			}
 			@Pc(2040) Entity local2040;
-			if (type.anInt5523 == -1 && type.anIntArray633 == null && type.multiLocs == null && !type.aBoolean379) {
+			if (type.seqId == -1 && type.seqIds == null && type.multiLocs == null && !type.aBoolean379) {
 				@Pc(2013) Class96 local2013 = type.method4450(local159, arg8, 4, local193, local151, local253, local330, angle, local167, null);
 				if (GlRenderer.enabled && local330) {
 					Static14.method1212(local2013.sprite, local159 - Static4.anIntArray315[angle] * 8, local195, local167 - Static6.anIntArray475[angle] * 8);
@@ -419,7 +419,7 @@ public final class Static22 {
 				offsetScale = LocTypeList.get(Integer.MAX_VALUE & (int) (wallKey >>> 32)).wallDecorOffsetScale / 2;
 			}
 			@Pc(2170) Entity local2170;
-			if (type.anInt5523 == -1 && type.anIntArray633 == null && type.multiLocs == null && !type.aBoolean379) {
+			if (type.seqId == -1 && type.seqIds == null && type.multiLocs == null && !type.aBoolean379) {
 				@Pc(2143) Class96 local2143 = type.method4450(local159, arg8, 4, local193, local151, local253, local330, angle + 4, local167, null);
 				if (GlRenderer.enabled && local330) {
 					Static14.method1212(local2143.sprite, local159 - Static3.anIntArray166[angle] * 8, local195, local167 - Static7.anIntArray646[angle] * 8);
@@ -432,7 +432,7 @@ public final class Static22 {
 		} else if (shape == 7) {
 			@Pc(2219) int local2219 = angle + 2 & 0x3;
 			@Pc(2248) Entity local2248;
-			if (type.anInt5523 == -1 && type.anIntArray633 == null && type.multiLocs == null && !type.aBoolean379) {
+			if (type.seqId == -1 && type.seqIds == null && type.multiLocs == null && !type.aBoolean379) {
 				@Pc(2266) Class96 local2266 = type.method4450(local159, arg8, 4, local193, local151, local253, local330, local2219 + 4, local167, null);
 				if (GlRenderer.enabled && local330) {
 					Static14.method1212(local2266.sprite, local159, local195, local167);
@@ -451,7 +451,7 @@ public final class Static22 {
 			@Pc(2328) int local2328 = angle + 2 & 0x3;
 			@Pc(2392) Entity local2392;
 			@Pc(2429) Entity local2429;
-			if (type.anInt5523 == -1 && type.anIntArray633 == null && type.multiLocs == null && !type.aBoolean379) {
+			if (type.seqId == -1 && type.seqIds == null && type.multiLocs == null && !type.aBoolean379) {
 				@Pc(2350) int local2350 = Static3.anIntArray166[angle] * 8;
 				@Pc(2356) int local2356 = Static7.anIntArray646[angle] * 8;
 				@Pc(2372) Class96 local2372 = type.method4450(local159, arg8, 4, local193, local151, local253, local330, angle + 4, local167, null);
@@ -691,7 +691,7 @@ public final class Static22 {
 				}
 				if (local74 != 0) {
 					@Pc(252) FluType local252 = FluTypeList.get((local74 & 0xFF) - 1);
-					local9[local11][local23] = (local252.anInt4074 + 1 << 16) + local252.anInt4068;
+					local9[local11][local23] = (local252.texture + 1 << 16) + local252.anInt4068;
 				}
 			}
 		}

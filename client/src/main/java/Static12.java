@@ -7,8 +7,8 @@ public final class Static12 {
 	@OriginalMember(owner = "client!ck", name = "a", descriptor = "(IJ)V")
 	public static void method641(@OriginalArg(1) long arg0) {
 		if (!Preferences.aBoolean293) {
-			Static5.aFloat147 += (float) arg0 * Static1.aFloat20 / 40.0F;
-			Static5.aFloat97 += (float) arg0 * Static4.aFloat79 / 40.0F;
+			Camera.pitch += (float) arg0 * Static1.aFloat20 / 40.0F;
+			Camera.yaw += (float) arg0 * Static4.aFloat79 / 40.0F;
 		}
 		@Pc(37) int local37 = PlayerList.self.zFine + Static1.anInt837;
 		@Pc(42) int local42 = Static1.anInt548 + PlayerList.self.xFine;
@@ -143,7 +143,7 @@ public final class Static12 {
 							}
 						}
 						if (local223) {
-							Static15.method1401(component, Mouse.clickX - local50, Mouse.clickY - local55);
+							InterfaceList.dragPickUp(component, Mouse.clickX - local50, Mouse.clickY - local55);
 						}
 						if (Static1.aClass185_1 != null && Static1.aClass185_1 != component && local209 && InterfaceList.getServerActiveProperties(component).isDragTarget()) {
 							Static7.aClass185_16 = component;
@@ -528,7 +528,7 @@ public final class Static12 {
 		@Pc(5) int local5 = Static3.anInt2519;
 		@Pc(7) int local7 = Static7.anInt5678;
 		@Pc(9) int local9 = Static2.anInt1931;
-		@Pc(12) int local12 = (int) Static5.aFloat147;
+		@Pc(12) int local12 = (int) Camera.pitch;
 		@Pc(14) int local14 = Static5.anInt3656;
 		if (Static1.anInt626 / 256 > local12) {
 			local12 = Static1.anInt626 / 256;
@@ -537,7 +537,7 @@ public final class Static12 {
 		if (Camera.shakeEnabled[4] && local12 < Camera.anIntArray626[4] + 128) {
 			local12 = Camera.anIntArray626[4] + 128;
 		}
-		@Pc(51) int local51 = (int) Static5.aFloat97 + Static1.anInt242 & 0x7FF;
+		@Pc(51) int local51 = (int) Camera.yaw + Static1.anInt242 & 0x7FF;
 		Static32.method3954(local51, SceneGraph.getTileHeight(Player.level, PlayerList.self.xFine, PlayerList.self.zFine) - 50, local12, local12 * 3 + 600, Static3.anInt2496, arg0, Static7.anInt5412);
 		if (Static3.anInt2519 == local5 && local9 == Static2.anInt1931 && local7 == Static7.anInt5678 && Static5.anInt4066 == local26 && Static5.anInt3656 == local14) {
 			Static1.anInt772 = 1;

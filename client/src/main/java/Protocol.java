@@ -1275,7 +1275,7 @@ public final class Protocol {
 					if (spotAnimId != -1 && npc.spotAnimId != -1) {
 						if (spotAnimId == npc.spotAnimId) {
 							@Pc(4840) SpotAnimType local4840 = SpotAnimTypeList.get(spotAnimId);
-							if (local4840.aBoolean222 && local4840.seqId != -1) {
+							if (local4840.loop && local4840.seqId != -1) {
 								@Pc(4855) SeqType local4855 = SeqTypeList.get(local4840.seqId);
 								@Pc(4858) int local4858 = local4855.anInt1238;
 								if (local4858 == 1) {
@@ -1340,7 +1340,7 @@ public final class Protocol {
 					if (spotAnimId != -1 && player.spotAnimId != -1) {
 						if (spotAnimId == player.spotAnimId) {
 							@Pc(4649) SpotAnimType local4649 = SpotAnimTypeList.get(spotAnimId);
-							if (local4649.aBoolean222 && local4649.seqId != -1) {
+							if (local4649.loop && local4649.seqId != -1) {
 								@Pc(4663) SeqType local4663 = SeqTypeList.get(local4649.seqId);
 								@Pc(4666) int local4666 = local4663.anInt1238;
 								if (local4666 == 1) {
@@ -1606,10 +1606,10 @@ public final class Protocol {
 			return true;
 		} else if (opcode == 42) {
 			@Pc(5797) int verifyId = inboundBuffer.readUnsignedShortLEA();
-			@Pc(5801) int local5801 = inboundBuffer.readUnsignedShortA();
-			@Pc(5805) int local5805 = inboundBuffer.readUnsignedShortLEA();
+			@Pc(5801) int yaw = inboundBuffer.readUnsignedShortA();
+			@Pc(5805) int pitch = inboundBuffer.readUnsignedShortLEA();
 			if (setVerifyId(verifyId)) {
-				Camera.forceAngle(local5805, local5801);
+				Camera.forceAngle(yaw, pitch);
 			}
 			opcode = -1;
 			return true;
@@ -1792,11 +1792,11 @@ public final class Protocol {
 						}
 						if (entity != null) {
 							@Pc(581) BasType basType = entity.getBasType();
-							if (basType.anIntArrayArray7 != null && basType.anIntArrayArray7[local534] != null) {
-								y -= basType.anIntArrayArray7[local534][1];
-								@Pc(607) int local607 = basType.anIntArrayArray7[local534][0];
+							if (basType.equipmentTransforms != null && basType.equipmentTransforms[local534] != null) {
+								y -= basType.equipmentTransforms[local534][1];
+								@Pc(607) int local607 = basType.equipmentTransforms[local534][0];
 								@Pc(612) int sine = MathUtils.SINE[entity.angle];
-								@Pc(619) int local619 = basType.anIntArrayArray7[local534][2];
+								@Pc(619) int local619 = basType.equipmentTransforms[local534][2];
 								@Pc(624) int cosine = MathUtils.COSINE[entity.angle];
 								@Pc(634) int local634 = local607 * cosine + sine * local619 >> 16;
 								local619 = cosine * local619 - local607 * sine >> 16;
@@ -2325,7 +2325,7 @@ public final class Protocol {
 				delays[i] = inboundBuffer.readUnsignedByteS();
 				slotMasks[i] = inboundBuffer.readUnsignedShortLEA();
 			}
-			Player.method4023(player, seqIds, delays, slotMasks);
+			Player.animate(player, seqIds, delays, slotMasks);
 		}
 		if ((flags & 0x10) != 0) {
 			player.chatMessage = inboundBuffer.readString();
@@ -2427,13 +2427,13 @@ public final class Protocol {
 			}
 		}
 		if ((flags & 0x200) != 0) {
-			player.anInt3973 = inboundBuffer.readUnsignedByteA();
-			player.anInt4033 = inboundBuffer.readUnsignedByte();
-			player.anInt4013 = inboundBuffer.readUnsignedByteS();
-			player.anInt4025 = inboundBuffer.readUnsignedByteA();
-			player.anInt4034 = inboundBuffer.readUnsignedShortLEA() + client.loop;
-			player.anInt3966 = inboundBuffer.readUnsignedShortLEA() + client.loop;
-			player.anInt4008 = inboundBuffer.readUnsignedByteC();
+			player.exactMoveSrcX = inboundBuffer.readUnsignedByteA();
+			player.exactMoveSrcZ = inboundBuffer.readUnsignedByte();
+			player.exactMoveDestX = inboundBuffer.readUnsignedByteS();
+			player.exactMoveDestZ = inboundBuffer.readUnsignedByteA();
+			player.exactMoveStart = inboundBuffer.readUnsignedShortLEA() + client.loop;
+			player.exactMoveEnd = inboundBuffer.readUnsignedShortLEA() + client.loop;
+			player.exactMoveDirection = inboundBuffer.readUnsignedByteC();
 			player.movementQueueSize = 1;
 			player.anInt4030 = 0;
 		}
@@ -2566,8 +2566,8 @@ public final class Protocol {
 					@Pc(139) int clearMovementQueue = inboundBuffer.readBits(1);
 					npc.setSize(npc.type.size);
 					npc.basId = npc.type.basId;
-					npc.anInt4009 = npc.type.anInt5243;
-					if (npc.anInt4009 == 0) {
+					npc.turnSpeed = npc.type.turnSpeed;
+					if (npc.turnSpeed == 0) {
 						npc.angle = 0;
 					}
 					npc.teleport(x + PlayerList.self.movementQueueX[0], PlayerList.self.movementQueueZ[0] + z, clearMovementQueue == 1, npc.getSize());
@@ -2612,7 +2612,7 @@ public final class Protocol {
 					delays[j] = inboundBuffer.readUnsignedByteC();
 					slotMasks[j] = inboundBuffer.readUnsignedShortLEA();
 				}
-				Npc.method555(npc, seqIds, delays, slotMasks);
+				Npc.animate(npc, seqIds, delays, slotMasks);
 			}
 			if ((flags & 0x10) != 0) {
 				@Pc(141) int damage = inboundBuffer.readUnsignedByteA();
@@ -2625,7 +2625,7 @@ public final class Protocol {
 				}
 				npc.setType(NpcTypeList.get(inboundBuffer.readUnsignedShortA()));
 				npc.setSize(npc.type.size);
-				npc.anInt4009 = npc.type.anInt5243;
+				npc.turnSpeed = npc.type.turnSpeed;
 				npc.basId = npc.type.basId;
 				if (npc.type.hasAreaSound()) {
 					AreaSoundManager.add(Player.level, npc.movementQueueX[0], npc.movementQueueZ[0], null, 0, npc, null);
