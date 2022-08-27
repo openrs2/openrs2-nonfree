@@ -25,7 +25,7 @@ public final class TextureOpMandelbrot extends TextureOp {
 
 	@OriginalMember(owner = "client!dn", name = "a", descriptor = "(BLclient!fd;I)V")
 	@Override
-	public final void decode(@OriginalArg(1) Buffer buffer, @OriginalArg(2) int code) {
+	public void decode(@OriginalArg(1) Buffer buffer, @OriginalArg(2) int code) {
 		if (code == 0) {
 			this.anInt1160 = buffer.readUnsignedShort();
 		} else if (code == 1) {
@@ -39,7 +39,7 @@ public final class TextureOpMandelbrot extends TextureOp {
 
 	@OriginalMember(owner = "client!dn", name = "a", descriptor = "(II)[I")
 	@Override
-	public final int[] getMonochromeOutput(@OriginalArg(1) int y) {
+	public int[] getMonochromeOutput(@OriginalArg(1) int y) {
 		@Pc(7) int[] dest = this.monochromeImageCache.get(y);
 		if (this.monochromeImageCache.invalid) {
 			for (@Pc(23) int x = 0; x < Texture.width; x++) {

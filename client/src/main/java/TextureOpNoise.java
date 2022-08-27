@@ -20,7 +20,7 @@ public final class TextureOpNoise extends TextureOp {
 
 	@OriginalMember(owner = "client!se", name = "a", descriptor = "(II)[I")
 	@Override
-	public final int[] getMonochromeOutput(@OriginalArg(1) int y) {
+	public int[] getMonochromeOutput(@OriginalArg(1) int y) {
 		@Pc(9) int[] dest = this.monochromeImageCache.get(y);
 		if (this.monochromeImageCache.invalid) {
 			@Pc(21) int heightFraction = Texture.normalisedY[y];

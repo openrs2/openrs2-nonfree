@@ -33,7 +33,7 @@ public final class GlFont extends Font {
 
 	@OriginalMember(owner = "client!dh", name = "finalize", descriptor = "()V")
 	@Override
-	public final void finalize() throws Throwable {
+	public void finalize() throws Throwable {
 		if (this.textureId != -1) {
 			GlCleaner.deleteTexture2d(this.textureId, this.size, this.contextId);
 			this.textureId = -1;
@@ -50,7 +50,7 @@ public final class GlFont extends Font {
 
 	@OriginalMember(owner = "client!dh", name = "a", descriptor = "(IIIIIIIZ)V")
 	@Override
-	protected final void renderGlyphTransparent(@OriginalArg(0) int glyph, @OriginalArg(1) int x, @OriginalArg(2) int y, @OriginalArg(3) int width, @OriginalArg(4) int height, @OriginalArg(5) int color, @OriginalArg(6) int alpha) {
+	protected void renderGlyphTransparent(@OriginalArg(0) int glyph, @OriginalArg(1) int x, @OriginalArg(2) int y, @OriginalArg(3) int width, @OriginalArg(4) int height, @OriginalArg(5) int color, @OriginalArg(6) int alpha) {
 		GlRenderer.method1590();
 		@Pc(2) GL gl = GlRenderer.gl;
 		GlRenderer.setTextureId(this.textureId);
@@ -62,7 +62,7 @@ public final class GlFont extends Font {
 
 	@OriginalMember(owner = "client!dh", name = "a", descriptor = "(IIIIIIZ)V")
 	@Override
-	protected final void renderGlyph(@OriginalArg(0) int glyph, @OriginalArg(1) int x, @OriginalArg(2) int y, @OriginalArg(3) int width, @OriginalArg(4) int height, @OriginalArg(5) int color) {
+	protected void renderGlyph(@OriginalArg(0) int glyph, @OriginalArg(1) int x, @OriginalArg(2) int y, @OriginalArg(3) int width, @OriginalArg(4) int height, @OriginalArg(5) int color) {
 		if (GlRaster.mask == null) {
 			GlRenderer.method1590();
 			@Pc(226) GL gl = GlRenderer.gl;

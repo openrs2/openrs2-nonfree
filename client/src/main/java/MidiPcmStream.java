@@ -161,7 +161,7 @@ public final class MidiPcmStream extends PcmStream {
 	}
 
 	@OriginalMember(owner = "client!ld", name = "a", descriptor = "(II)V")
-	public final synchronized void setVolume(@OriginalArg(1) int volume) {
+	public synchronized void setVolume(@OriginalArg(1) int volume) {
 		this.volume = volume;
 	}
 
@@ -213,7 +213,7 @@ public final class MidiPcmStream extends PcmStream {
 	}
 
 	@OriginalMember(owner = "client!ld", name = "d", descriptor = "(B)V")
-	public final synchronized void clearInstruments() {
+	public synchronized void clearInstruments() {
 		for (@Pc(7) MidiInstrument instrument = (MidiInstrument) this.instruments.head(); instrument != null; instrument = (MidiInstrument) this.instruments.next()) {
 			instrument.unlink();
 		}
@@ -221,7 +221,7 @@ public final class MidiPcmStream extends PcmStream {
 
 	@OriginalMember(owner = "client!ld", name = "b", descriptor = "(I)V")
 	@Override
-	public final synchronized void skip(@OriginalArg(0) int len) {
+	public synchronized void skip(@OriginalArg(0) int len) {
 		if (this.decoder.isValid()) {
 			@Pc(18) int local18 = this.decoder.division * this.microsecondsPerSecond / Static7.sampleRate;
 			do {
@@ -327,7 +327,7 @@ public final class MidiPcmStream extends PcmStream {
 	}
 
 	@OriginalMember(owner = "client!ld", name = "a", descriptor = "(Z)I")
-	public final int getVolume() {
+	public int getVolume() {
 		return this.volume;
 	}
 
@@ -355,7 +355,7 @@ public final class MidiPcmStream extends PcmStream {
 	}
 
 	@OriginalMember(owner = "client!ld", name = "a", descriptor = "(ILclient!ej;)Z")
-	public final boolean method2491(@OriginalArg(1) MidiNote note) {
+	public boolean method2491(@OriginalArg(1) MidiNote note) {
 		if (note.stream != null) {
 			return false;
 		}
@@ -544,13 +544,13 @@ public final class MidiPcmStream extends PcmStream {
 	}
 
 	@OriginalMember(owner = "client!ld", name = "e", descriptor = "(B)Z")
-	public final synchronized boolean isValid() {
+	public synchronized boolean isValid() {
 		return this.decoder.isValid();
 	}
 
 	@OriginalMember(owner = "client!ld", name = "a", descriptor = "([III)V")
 	@Override
-	public final synchronized void read(@OriginalArg(0) int[] samples, @OriginalArg(1) int off, @OriginalArg(2) int len) {
+	public synchronized void read(@OriginalArg(0) int[] samples, @OriginalArg(1) int off, @OriginalArg(2) int len) {
 		if (this.decoder.isValid()) {
 			@Pc(18) int local18 = this.microsecondsPerSecond * this.decoder.division / Static7.sampleRate;
 			do {
@@ -572,7 +572,7 @@ public final class MidiPcmStream extends PcmStream {
 
 	@OriginalMember(owner = "client!ld", name = "a", descriptor = "()I")
 	@Override
-	public final synchronized int method3346() {
+	public synchronized int method3346() {
 		return 0;
 	}
 
@@ -646,7 +646,7 @@ public final class MidiPcmStream extends PcmStream {
 
 	@OriginalMember(owner = "client!ld", name = "c", descriptor = "()Lclient!tf;")
 	@Override
-	public final synchronized PcmStream nextSubStream() {
+	public synchronized PcmStream nextSubStream() {
 		return null;
 	}
 
@@ -674,12 +674,12 @@ public final class MidiPcmStream extends PcmStream {
 	}
 
 	@OriginalMember(owner = "client!ld", name = "c", descriptor = "(I)V")
-	public final synchronized void method2501() {
+	public synchronized void method2501() {
 		this.method2510(true);
 	}
 
 	@OriginalMember(owner = "client!ld", name = "a", descriptor = "(Lclient!ej;BZ)V")
-	public final void method2502(@OriginalArg(0) MidiNote note, @OriginalArg(2) boolean arg1) {
+	public void method2502(@OriginalArg(0) MidiNote note, @OriginalArg(2) boolean arg1) {
 		@Pc(8) int local8 = note.sound.samples.length;
 		@Pc(35) int local35;
 		if (arg1 && note.sound.aBoolean288) {
@@ -698,7 +698,7 @@ public final class MidiPcmStream extends PcmStream {
 
 	@OriginalMember(owner = "client!ld", name = "d", descriptor = "()Lclient!tf;")
 	@Override
-	public final synchronized PcmStream firstSubStream() {
+	public synchronized PcmStream firstSubStream() {
 		return this.noteStream;
 	}
 
@@ -722,17 +722,17 @@ public final class MidiPcmStream extends PcmStream {
 	}
 
 	@OriginalMember(owner = "client!ld", name = "a", descriptor = "(ZLclient!tg;B)V")
-	public final synchronized void method2504(@OriginalArg(1) Song song, @OriginalArg(0) boolean arg0) {
+	public synchronized void method2504(@OriginalArg(1) Song song, @OriginalArg(0) boolean arg0) {
 		this.method2483(song, arg0, true);
 	}
 
 	@OriginalMember(owner = "client!ld", name = "b", descriptor = "(IBI)V")
-	public final synchronized void init() {
+	public synchronized void init() {
 		this.setDefaultProgram();
 	}
 
 	@OriginalMember(owner = "client!ld", name = "a", descriptor = "(Lclient!ej;III[I)Z")
-	public final boolean method2506(@OriginalArg(0) MidiNote note, @OriginalArg(4) int[] samples, @OriginalArg(1) int off, @OriginalArg(2) int len) {
+	public boolean method2506(@OriginalArg(0) MidiNote note, @OriginalArg(4) int[] samples, @OriginalArg(1) int off, @OriginalArg(2) int len) {
 		note.anInt1303 = Static7.sampleRate / 100;
 		if (note.anInt1288 >= 0 && (note.stream == null || note.stream.method3365())) {
 			note.release();
@@ -816,7 +816,7 @@ public final class MidiPcmStream extends PcmStream {
 	}
 
 	@OriginalMember(owner = "client!ld", name = "g", descriptor = "(B)V")
-	public final synchronized void releaseInstruments() {
+	public synchronized void releaseInstruments() {
 		for (@Pc(19) MidiInstrument instrument = (MidiInstrument) this.instruments.head(); instrument != null; instrument = (MidiInstrument) this.instruments.next()) {
 			instrument.release();
 		}
@@ -830,7 +830,7 @@ public final class MidiPcmStream extends PcmStream {
 	}
 
 	@OriginalMember(owner = "client!ld", name = "a", descriptor = "(IILclient!tg;Lclient!fh;Lclient!jk;)Z")
-	public final synchronized boolean isSongReady(@OriginalArg(3) Js5 archive, @OriginalArg(4) SoundBank bank, @OriginalArg(2) Song song) {
+	public synchronized boolean isSongReady(@OriginalArg(3) Js5 archive, @OriginalArg(4) SoundBank bank, @OriginalArg(2) Song song) {
 		song.createPrograms();
 		@Pc(9) boolean ready = true;
 		@Pc(24) int[] samplingRates = new int[] { 22050 };

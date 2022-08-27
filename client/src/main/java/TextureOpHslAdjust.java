@@ -83,7 +83,7 @@ public final class TextureOpHslAdjust extends TextureOp {
 
 	@OriginalMember(owner = "client!lj", name = "a", descriptor = "(BLclient!fd;I)V")
 	@Override
-	public final void decode(@OriginalArg(1) Buffer buffer, @OriginalArg(2) int code) {
+	public void decode(@OriginalArg(1) Buffer buffer, @OriginalArg(2) int code) {
 		if (code == 0) {
 			this.hueDelta = buffer.readShort();
 		} else if (code == 1) {
@@ -125,7 +125,7 @@ public final class TextureOpHslAdjust extends TextureOp {
 
 	@OriginalMember(owner = "client!lj", name = "b", descriptor = "(II)[[I")
 	@Override
-	public final int[][] getColorOutput(@OriginalArg(0) int y) {
+	public int[][] getColorOutput(@OriginalArg(0) int y) {
 		@Pc(18) int[][] dest = this.colorImageCache.get(y);
 		if (this.colorImageCache.invalid) {
 			@Pc(28) int[][] src = this.getChildColorOutput(0, y);

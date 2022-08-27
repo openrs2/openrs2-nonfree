@@ -32,7 +32,7 @@ public final class Js5CacheQueue implements Runnable {
 
 	@OriginalMember(owner = "client!ja", name = "run", descriptor = "()V")
 	@Override
-	public final void run() {
+	public void run() {
 		while (!this.stop) {
 			@Pc(15) Js5CacheRequest request;
 			synchronized (this.queue) {
@@ -60,7 +60,7 @@ public final class Js5CacheQueue implements Runnable {
 	}
 
 	@OriginalMember(owner = "client!ja", name = "a", descriptor = "(ILclient!fm;I)Lclient!al;")
-	public final Js5CacheRequest read(@OriginalArg(1) Cache cache, @OriginalArg(2) int group) {
+	public Js5CacheRequest read(@OriginalArg(1) Cache cache, @OriginalArg(2) int group) {
 		@Pc(7) Js5CacheRequest request = new Js5CacheRequest();
 		request.type = 3;
 		request.cache = cache;
@@ -71,7 +71,7 @@ public final class Js5CacheQueue implements Runnable {
 	}
 
 	@OriginalMember(owner = "client!ja", name = "a", descriptor = "(BLclient!fm;[BI)Lclient!al;")
-	public final Js5CacheRequest write(@OriginalArg(1) Cache cache, @OriginalArg(3) int group, @OriginalArg(2) byte[] data) {
+	public Js5CacheRequest write(@OriginalArg(1) Cache cache, @OriginalArg(3) int group, @OriginalArg(2) byte[] data) {
 		@Pc(15) Js5CacheRequest request = new Js5CacheRequest();
 		request.secondaryKey = group;
 		request.cache = cache;
@@ -83,7 +83,7 @@ public final class Js5CacheQueue implements Runnable {
 	}
 
 	@OriginalMember(owner = "client!ja", name = "a", descriptor = "(Z)V")
-	public final void quit() {
+	public void quit() {
 		this.stop = true;
 		synchronized (this.queue) {
 			this.queue.notifyAll();
@@ -105,7 +105,7 @@ public final class Js5CacheQueue implements Runnable {
 	}
 
 	@OriginalMember(owner = "client!ja", name = "a", descriptor = "(BLclient!fm;I)Lclient!al;")
-	public final Js5CacheRequest readSynchronous(@OriginalArg(1) Cache cache, @OriginalArg(2) int group) {
+	public Js5CacheRequest readSynchronous(@OriginalArg(1) Cache cache, @OriginalArg(2) int group) {
 		@Pc(5) Js5CacheRequest request = new Js5CacheRequest();
 		request.type = 1;
 		synchronized (this.queue) {

@@ -65,7 +65,7 @@ public final class Resampler {
 	}
 
 	@OriginalMember(owner = "client!ud", name = "a", descriptor = "(IB)I")
-	public final int scaleRate(@OriginalArg(0) int rate) {
+	public int scaleRate(@OriginalArg(0) int rate) {
 		if (this.anIntArrayArray47 != null) {
 			rate = (int) ((long) this.outputRate * (long) rate / (long) this.inputRate);
 		}
@@ -73,7 +73,7 @@ public final class Resampler {
 	}
 
 	@OriginalMember(owner = "client!ud", name = "a", descriptor = "(II)I")
-	public final int scalePosition(@OriginalArg(1) int position) {
+	public int scalePosition(@OriginalArg(1) int position) {
 		if (this.anIntArrayArray47 != null) {
 			position = (int) ((long) this.outputRate * (long) position / (long) this.inputRate) + 6;
 		}
@@ -81,7 +81,7 @@ public final class Resampler {
 	}
 
 	@OriginalMember(owner = "client!ud", name = "a", descriptor = "(B[B)[B")
-	public final byte[] resample(@OriginalArg(1) byte[] samples) {
+	public byte[] resample(@OriginalArg(1) byte[] samples) {
 		if (this.anIntArrayArray47 != null) {
 			@Pc(29) int outputCount = (int) ((long) this.outputRate * (long) samples.length / (long) this.inputRate) + 14;
 			@Pc(31) int outputPos = 0;

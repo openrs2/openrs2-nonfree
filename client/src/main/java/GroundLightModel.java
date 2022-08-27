@@ -58,7 +58,7 @@ public final class GroundLightModel {
 	private int[] vertexX;
 
 	@OriginalMember(owner = "client!pi", name = "a", descriptor = "([I)V")
-	public final void addTriangleFan(@OriginalArg(0) int[] vertices) {
+	public void addTriangleFan(@OriginalArg(0) int[] vertices) {
 		for (@Pc(1) int i = 1; i < vertices.length - 1; i++) {
 			this.indexes[this.indexCount++] = vertices[0];
 			this.indexes[this.indexCount++] = vertices[i];
@@ -67,7 +67,7 @@ public final class GroundLightModel {
 	}
 
 	@OriginalMember(owner = "client!pi", name = "a", descriptor = "()V")
-	public final void clear() {
+	public void clear() {
 		this.indexes = new int[this.indexCapacity];
 		this.vertexX = new int[this.vertexCapacity];
 		this.vertexY = new int[this.vertexCapacity];
@@ -79,7 +79,7 @@ public final class GroundLightModel {
 	}
 
 	@OriginalMember(owner = "client!pi", name = "b", descriptor = "()V")
-	public final void render() {
+	public void render() {
 		@Pc(1) GL gl = GlRenderer.gl;
 		if (GlRenderer.arbVboSupported) {
 			this.vertexVbo.bindArray();
@@ -99,7 +99,7 @@ public final class GroundLightModel {
 	}
 
 	@OriginalMember(owner = "client!pi", name = "c", descriptor = "()V")
-	public final void buffer() {
+	public void buffer() {
 		@Pc(7) Buffer indexBuffer = new Buffer(this.indexCount * 4);
 		@Pc(15) Buffer vertexBuffer = new Buffer(this.vertexCount * 16);
 		if (GlRenderer.bigEndian) {
@@ -155,7 +155,7 @@ public final class GroundLightModel {
 	}
 
 	@OriginalMember(owner = "client!pi", name = "a", descriptor = "(Lclient!em;IIIFFF)I")
-	public final int addVertex(@OriginalArg(0) Light light, @OriginalArg(1) int x, @OriginalArg(2) int y, @OriginalArg(3) int z, @OriginalArg(4) float arg4, @OriginalArg(5) float arg5, @OriginalArg(6) float arg6) {
+	public int addVertex(@OriginalArg(0) Light light, @OriginalArg(1) int x, @OriginalArg(2) int y, @OriginalArg(3) int z, @OriginalArg(4) float arg4, @OriginalArg(5) float arg5, @OriginalArg(6) float arg6) {
 		@Pc(1) long key = 0L;
 		if ((x & 0x7F) == 0 || (z & 0x7F) == 0) {
 			key = x + (z << 16);

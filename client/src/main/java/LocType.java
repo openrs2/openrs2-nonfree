@@ -211,7 +211,7 @@ public final class LocType {
 	public int[] seqIds = null;
 
 	@OriginalMember(owner = "client!vh", name = "a", descriptor = "(Z)Z")
-	public final boolean isReady() {
+	public boolean isReady() {
 		if (this.models == null) {
 			return true;
 		}
@@ -223,7 +223,7 @@ public final class LocType {
 	}
 
 	@OriginalMember(owner = "client!vh", name = "a", descriptor = "(IZII[[I[[IZIIILclient!fe;)Lclient!jh;")
-	public final Class96 method4450(@OriginalArg(0) int arg0, @OriginalArg(1) boolean arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int[][] arg4, @OriginalArg(5) int[][] arg5, @OriginalArg(6) boolean arg6, @OriginalArg(7) int arg7, @OriginalArg(8) int arg8, @OriginalArg(10) SoftwareIndexedSprite arg9) {
+	public Class96 method4450(@OriginalArg(0) int arg0, @OriginalArg(1) boolean arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int[][] arg4, @OriginalArg(5) int[][] arg5, @OriginalArg(6) boolean arg6, @OriginalArg(7) int arg7, @OriginalArg(8) int arg8, @OriginalArg(10) SoftwareIndexedSprite arg9) {
 		if (GlRenderer.enabled) {
 			@Pc(210) long local210;
 			if (this.shapes == null) {
@@ -317,7 +317,7 @@ public final class LocType {
 	}
 
 	@OriginalMember(owner = "client!vh", name = "a", descriptor = "(BII)I")
-	public final int getParam(@OriginalArg(2) int id, @OriginalArg(1) int defaultValue) {
+	public int getParam(@OriginalArg(2) int id, @OriginalArg(1) int defaultValue) {
 		if (this.params == null) {
 			return defaultValue;
 		} else {
@@ -440,7 +440,7 @@ public final class LocType {
 	}
 
 	@OriginalMember(owner = "client!vh", name = "b", descriptor = "(I)Lclient!vh;")
-	public final LocType getMultiLoc() {
+	public LocType getMultiLoc() {
 		@Pc(1) int value = -1;
 		if (this.multiLocVarbit != -1) {
 			value = VarpDomain.getVarbit(this.multiLocVarbit);
@@ -456,7 +456,7 @@ public final class LocType {
 	}
 
 	@OriginalMember(owner = "client!vh", name = "a", descriptor = "(ILclient!fd;)V")
-	public final void decode(@OriginalArg(1) Buffer buffer) {
+	public void decode(@OriginalArg(1) Buffer buffer) {
 		while (true) {
 			@Pc(9) int code = buffer.readUnsignedByte();
 			if (code == 0) {
@@ -580,7 +580,7 @@ public final class LocType {
 	}
 
 	@OriginalMember(owner = "client!vh", name = "a", descriptor = "(II)Z")
-	public final boolean isReady(@OriginalArg(0) int shape) {
+	public boolean isReady(@OriginalArg(0) int shape) {
 		if (this.shapes != null) {
 			for (@Pc(16) int i = 0; i < this.shapes.length; i++) {
 				if (this.shapes[i] == shape) {
@@ -602,7 +602,7 @@ public final class LocType {
 	}
 
 	@OriginalMember(owner = "client!vh", name = "a", descriptor = "(I[[IIIIIZIII[[ILclient!eg;Lclient!fe;I)Lclient!jh;")
-	public final Class96 method4458(@OriginalArg(0) int arg0, @OriginalArg(1) int[][] arg1, @OriginalArg(2) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4, @OriginalArg(6) boolean arg5, @OriginalArg(7) int arg6, @OriginalArg(8) int arg7, @OriginalArg(9) int arg8, @OriginalArg(10) int[][] arg9, @OriginalArg(11) SeqType arg10, @OriginalArg(12) SoftwareIndexedSprite arg11, @OriginalArg(13) int arg12) {
+	public Class96 method4458(@OriginalArg(0) int arg0, @OriginalArg(1) int[][] arg1, @OriginalArg(2) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4, @OriginalArg(6) boolean arg5, @OriginalArg(7) int arg6, @OriginalArg(8) int arg7, @OriginalArg(9) int arg8, @OriginalArg(10) int[][] arg9, @OriginalArg(11) SeqType arg10, @OriginalArg(12) SoftwareIndexedSprite arg11, @OriginalArg(13) int arg12) {
 		if (!GlRenderer.enabled) {
 			@Pc(182) long local182;
 			if (this.shapes == null) {
@@ -685,7 +685,7 @@ public final class LocType {
 	}
 
 	@OriginalMember(owner = "client!vh", name = "e", descriptor = "(I)I")
-	public final int method4460() {
+	public int method4460() {
 		if (this.seqIds == null) {
 			return -1;
 		}
@@ -926,7 +926,7 @@ public final class LocType {
 	}
 
 	@OriginalMember(owner = "client!vh", name = "f", descriptor = "(I)Z")
-	public final boolean hasAreaSound() {
+	public boolean hasAreaSound() {
 		if (this.multiLocs == null) {
 			return this.sound != -1 || this.sounds != null;
 		}
@@ -942,7 +942,7 @@ public final class LocType {
 	}
 
 	@OriginalMember(owner = "client!vh", name = "a", descriptor = "(BI)Z")
-	public final boolean method4465(@OriginalArg(1) int arg0) {
+	public boolean method4465(@OriginalArg(1) int arg0) {
 		if (arg0 == -1) {
 			return false;
 		} else if (arg0 == this.seqId) {
@@ -960,7 +960,7 @@ public final class LocType {
 	}
 
 	@OriginalMember(owner = "client!vh", name = "g", descriptor = "(I)V")
-	public final void postDecode() {
+	public void postDecode() {
 		if (this.interactivity == -1) {
 			this.interactivity = 0;
 			if (this.models != null && (this.shapes == null || this.shapes[0] == 10)) {
@@ -979,7 +979,7 @@ public final class LocType {
 	}
 
 	@OriginalMember(owner = "client!vh", name = "a", descriptor = "(Ljava/lang/String;II)Ljava/lang/String;")
-	public final String getParam(@OriginalArg(1) int id, @OriginalArg(0) String defaultValue) {
+	public String getParam(@OriginalArg(1) int id, @OriginalArg(0) String defaultValue) {
 		if (this.params == null) {
 			return defaultValue;
 		} else {

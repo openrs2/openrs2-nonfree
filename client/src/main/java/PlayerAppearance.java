@@ -108,7 +108,7 @@ public final class PlayerAppearance {
 	private int[][] anIntArrayArray37;
 
 	@OriginalMember(owner = "client!qk", name = "a", descriptor = "(BII)V")
-	public final void setIdentikit(@OriginalArg(1) int i, @OriginalArg(2) int identikit) {
+	public void setIdentikit(@OriginalArg(1) int i, @OriginalArg(2) int identikit) {
 		@Pc(7) int part = BASE_PART_MAP[i];
 		if (this.identikit[part] != 0 && IdkTypeList.get(identikit) != null) {
 			this.identikit[part] = Integer.MIN_VALUE | identikit;
@@ -117,7 +117,7 @@ public final class PlayerAppearance {
 	}
 
 	@OriginalMember(owner = "client!qk", name = "a", descriptor = "(ZI)V")
-	public final void setGender(@OriginalArg(0) boolean female) {
+	public void setGender(@OriginalArg(0) boolean female) {
 		this.female = female;
 		this.updateChecksum();
 	}
@@ -145,7 +145,7 @@ public final class PlayerAppearance {
 	}
 
 	@OriginalMember(owner = "client!qk", name = "a", descriptor = "([Lclient!re;IIILclient!eg;IIZILclient!eg;ZI)Lclient!vg;")
-	public final Model getBodyModel(@OriginalArg(0) Seq[] arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) SeqType arg4, @OriginalArg(5) int arg5, @OriginalArg(7) boolean arg6, @OriginalArg(8) int arg7, @OriginalArg(9) SeqType arg8, @OriginalArg(10) boolean cache, @OriginalArg(11) int arg10) {
+	public Model getBodyModel(@OriginalArg(0) Seq[] arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) SeqType arg4, @OriginalArg(5) int arg5, @OriginalArg(7) boolean arg6, @OriginalArg(8) int arg7, @OriginalArg(9) SeqType arg8, @OriginalArg(10) boolean cache, @OriginalArg(11) int arg10) {
 		if (this.npcId != -1) {
 			return NpcTypeList.get(this.npcId).getBodyModel(arg5, arg7, arg4, arg8, arg2, arg0, arg3, arg1, arg10);
 		}
@@ -425,7 +425,7 @@ public final class PlayerAppearance {
 	}
 
 	@OriginalMember(owner = "client!qk", name = "a", descriptor = "(ILclient!eg;IIIIII)Lclient!vg;")
-	public final Model method3609(@OriginalArg(1) SeqType arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4, @OriginalArg(6) int arg5, @OriginalArg(7) int arg6) {
+	public Model method3609(@OriginalArg(1) SeqType arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4, @OriginalArg(6) int arg5, @OriginalArg(7) int arg6) {
 		@Pc(14) long key = (long) arg2 << 32 | (long) (arg1 << 16) | (long) arg5;
 		@Pc(24) Model model = (Model) headModels.get(key);
 		if (model == null) {
@@ -466,7 +466,7 @@ public final class PlayerAppearance {
 	}
 
 	@OriginalMember(owner = "client!qk", name = "a", descriptor = "(II[II[IZ)V")
-	public final void set(@OriginalArg(1) int npcId, @OriginalArg(2) int[] identikit, @OriginalArg(3) int basId, @OriginalArg(4) int[] colors, @OriginalArg(5) boolean female) {
+	public void set(@OriginalArg(1) int npcId, @OriginalArg(2) int[] identikit, @OriginalArg(3) int basId, @OriginalArg(4) int[] colors, @OriginalArg(5) boolean female) {
 		if (this.basId != basId) {
 			this.basId = basId;
 			this.anIntArrayArray37 = null;
@@ -491,12 +491,12 @@ public final class PlayerAppearance {
 	}
 
 	@OriginalMember(owner = "client!qk", name = "a", descriptor = "(B)I")
-	public final int method3611() {
+	public int method3611() {
 		return this.npcId == -1 ? (this.identikit[8] << 10) + (this.colors[0] << 25) + (this.colors[4] << 20) + (this.identikit[0] << 15) + (this.identikit[11] << 5) + this.identikit[1] : NpcTypeList.get(this.npcId).id + 0x12345678;
 	}
 
 	@OriginalMember(owner = "client!qk", name = "a", descriptor = "(ILclient!eg;IBI)Lclient!vg;")
-	public final Model method3612(@OriginalArg(0) int arg0, @OriginalArg(1) SeqType seqType, @OriginalArg(2) int arg2, @OriginalArg(4) int arg3) {
+	public Model method3612(@OriginalArg(0) int arg0, @OriginalArg(1) SeqType seqType, @OriginalArg(2) int arg2, @OriginalArg(4) int arg3) {
 		if (this.npcId != -1) {
 			return NpcTypeList.get(this.npcId).getHeadModel(arg2, seqType, arg0, arg3);
 		}
@@ -551,7 +551,7 @@ public final class PlayerAppearance {
 	}
 
 	@OriginalMember(owner = "client!qk", name = "b", descriptor = "(IBI)V")
-	public final void setColor(@OriginalArg(0) int i, @OriginalArg(2) int color) {
+	public void setColor(@OriginalArg(0) int i, @OriginalArg(2) int color) {
 		this.colors[i] = color;
 		this.updateChecksum();
 	}

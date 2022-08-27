@@ -40,7 +40,7 @@ public final class BloomPostProcessor extends PostProcessor {
 
 	@OriginalMember(owner = "client!dd", name = "b", descriptor = "(IIIII)V")
 	@Override
-	public final void preProcess(@OriginalArg(0) int colorAttachment, @OriginalArg(1) int width, @OriginalArg(2) int height, @OriginalArg(3) int colorBuffer, @OriginalArg(4) int depthBuffer) {
+	public void preProcess(@OriginalArg(0) int colorAttachment, @OriginalArg(1) int width, @OriginalArg(2) int height, @OriginalArg(3) int colorBuffer, @OriginalArg(4) int depthBuffer) {
 		@Pc(1) GL gl = GlRenderer.gl;
 		gl.glPushAttrib(GL.GL_VIEWPORT_BIT);
 		gl.glMatrixMode(GL.GL_PROJECTION);
@@ -174,7 +174,7 @@ public final class BloomPostProcessor extends PostProcessor {
 
 	@OriginalMember(owner = "client!dd", name = "a", descriptor = "(II)V")
 	@Override
-	public final void setSize(@OriginalArg(0) int width, @OriginalArg(1) int height) {
+	public void setSize(@OriginalArg(0) int width, @OriginalArg(1) int height) {
 		@Pc(1) GL gl = GlRenderer.gl;
 		@Pc(5) int local5 = IntUtils.flp2(width);
 		@Pc(9) int local9 = IntUtils.flp2(height);
@@ -219,7 +219,7 @@ public final class BloomPostProcessor extends PostProcessor {
 
 	@OriginalMember(owner = "client!dd", name = "b", descriptor = "()V")
 	@Override
-	public final void quit() {
+	public void quit() {
 		if (this.anIntArray66 != null) {
 			GlRenderer.gl.glDeleteTextures(this.anIntArray66.length, this.anIntArray66, 0);
 			this.anIntArray66 = null;
@@ -248,25 +248,25 @@ public final class BloomPostProcessor extends PostProcessor {
 
 	@OriginalMember(owner = "client!dd", name = "d", descriptor = "()Z")
 	@Override
-	public final boolean isInitialised() {
+	public boolean isInitialised() {
 		return this.anInt933 != -1;
 	}
 
 	@OriginalMember(owner = "client!dd", name = "a", descriptor = "()I")
 	@Override
-	public final int getColorDepth() {
+	public int getColorDepth() {
 		return 1;
 	}
 
 	@OriginalMember(owner = "client!dd", name = "c", descriptor = "(I)V")
 	@Override
-	public final void postProcess(@OriginalArg(0) int colorAttachment) {
+	public void postProcess(@OriginalArg(0) int colorAttachment) {
 		GlRenderer.gl.glUseProgramObjectARB(0);
 	}
 
 	@OriginalMember(owner = "client!dd", name = "c", descriptor = "()Z")
 	@Override
-	public final boolean init() {
+	public boolean init() {
 		if (!GlRenderer.arbFboSupported || !GlRenderer.arbFragmentShaderSupported || !GlRenderer.arbTextureFloatSupported) {
 			return false;
 		}

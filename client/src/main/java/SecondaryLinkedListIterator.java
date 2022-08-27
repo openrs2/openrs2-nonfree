@@ -13,7 +13,7 @@ public final class SecondaryLinkedListIterator {
 	private SecondaryNode cursor;
 
 	@OriginalMember(owner = "client!om", name = "a", descriptor = "(I)Lclient!lh;")
-	public final SecondaryNode next() {
+	public SecondaryNode next() {
 		@Pc(6) SecondaryNode node = this.cursor;
 		if (node == this.list.sentinel) {
 			this.cursor = null;
@@ -25,7 +25,7 @@ public final class SecondaryLinkedListIterator {
 	}
 
 	@OriginalMember(owner = "client!om", name = "d", descriptor = "(B)Lclient!lh;")
-	public final SecondaryNode head() {
+	public SecondaryNode head() {
 		@Pc(8) SecondaryNode node = this.list.sentinel.secondaryNext;
 		if (this.list.sentinel == node) {
 			this.cursor = null;
@@ -37,7 +37,7 @@ public final class SecondaryLinkedListIterator {
 	}
 
 	@OriginalMember(owner = "client!om", name = "a", descriptor = "(ILclient!uk;)V")
-	public final void init(@OriginalArg(1) SecondaryLinkedList list) {
+	public void init(@OriginalArg(1) SecondaryLinkedList list) {
 		this.list = list;
 	}
 }

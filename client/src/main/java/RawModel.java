@@ -454,7 +454,7 @@ public final class RawModel extends Entity {
 	}
 
 	@OriginalMember(owner = "client!ml", name = "a", descriptor = "(I)V")
-	public final void method2740() {
+	public void method2740() {
 		@Pc(3) int local3 = SINE[256];
 		@Pc(7) int local7 = COSINE[256];
 		for (@Pc(9) int local9 = 0; local9 < this.vertexCount; local9++) {
@@ -489,7 +489,7 @@ public final class RawModel extends Entity {
 
 	@OriginalMember(owner = "client!ml", name = "b", descriptor = "()I")
 	@Override
-	public final int getMinY() {
+	public int getMinY() {
 		if (!this.boundsValid) {
 			this.calculateBounds();
 		}
@@ -497,7 +497,7 @@ public final class RawModel extends Entity {
 	}
 
 	@OriginalMember(owner = "client!ml", name = "c", descriptor = "()V")
-	public final void method2742() {
+	public void method2742() {
 		for (@Pc(1) int i = 0; i < this.vertexCount; i++) {
 			@Pc(10) int x = this.vertexX[i];
 			this.vertexX[i] = this.vertexZ[i];
@@ -507,7 +507,7 @@ public final class RawModel extends Entity {
 	}
 
 	@OriginalMember(owner = "client!ml", name = "b", descriptor = "(III)V")
-	public final void translate(@OriginalArg(0) int dx, @OriginalArg(1) int dy, @OriginalArg(2) int dz) {
+	public void translate(@OriginalArg(0) int dx, @OriginalArg(1) int dy, @OriginalArg(2) int dz) {
 		for (@Pc(1) int i = 0; i < this.vertexCount; i++) {
 			@Pc(7) int[] array = this.vertexX;
 			array[i] += dx;
@@ -520,7 +520,7 @@ public final class RawModel extends Entity {
 	}
 
 	@OriginalMember(owner = "client!ml", name = "d", descriptor = "()V")
-	public final void createBones() {
+	public void createBones() {
 		if (this.vertexBones != null) {
 			@Pc(5) int[] boneLens = new int[256];
 			@Pc(7) int maxBone = 0;
@@ -569,7 +569,7 @@ public final class RawModel extends Entity {
 	}
 
 	@OriginalMember(owner = "client!ml", name = "e", descriptor = "()V")
-	public final void method2745() {
+	public void method2745() {
 		for (@Pc(1) int i = 0; i < this.vertexCount; i++) {
 			this.vertexX[i] = -this.vertexX[i];
 			this.vertexZ[i] = -this.vertexZ[i];
@@ -579,7 +579,7 @@ public final class RawModel extends Entity {
 
 	@OriginalMember(owner = "client!ml", name = "a", descriptor = "(IIIIIIIIJILclient!ne;)V")
 	@Override
-	public final void method3805(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) long arg8, @OriginalArg(9) int arg9, @OriginalArg(10) ParticleSystem arg10) {
+	public void method3805(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) long arg8, @OriginalArg(9) int arg9, @OriginalArg(10) ParticleSystem arg10) {
 	}
 
 	@OriginalMember(owner = "client!ml", name = "a", descriptor = "([[IIIIII)V")
@@ -624,17 +624,17 @@ public final class RawModel extends Entity {
 
 	@OriginalMember(owner = "client!ml", name = "a", descriptor = "()Z")
 	@Override
-	public final boolean method3808() {
+	public boolean method3808() {
 		return true;
 	}
 
 	@OriginalMember(owner = "client!ml", name = "a", descriptor = "(IIIII)V")
 	@Override
-	public final void method3806(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4) {
+	public void method3806(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4) {
 	}
 
 	@OriginalMember(owner = "client!ml", name = "f", descriptor = "()V")
-	public final void method2747() {
+	public void method2747() {
 		for (@Pc(1) int i = 0; i < this.vertexCount; i++) {
 			@Pc(10) int z = this.vertexZ[i];
 			this.vertexZ[i] = this.vertexX[i];
@@ -645,12 +645,12 @@ public final class RawModel extends Entity {
 
 	@OriginalMember(owner = "client!ml", name = "a", descriptor = "(III)Lclient!vc;")
 	@Override
-	public final Entity method3809() {
+	public Entity method3809() {
 		return this.createModel(this.ambient, this.contrast, -50, -10, -50);
 	}
 
 	@OriginalMember(owner = "client!ml", name = "g", descriptor = "()V")
-	public final void method2748() {
+	public void method2748() {
 		for (@Pc(1) int i = 0; i < this.vertexCount; i++) {
 			this.vertexZ[i] = -this.vertexZ[i];
 		}
@@ -663,7 +663,7 @@ public final class RawModel extends Entity {
 	}
 
 	@OriginalMember(owner = "client!ml", name = "h", descriptor = "()Lclient!ml;")
-	public final RawModel method2749() {
+	public RawModel method2749() {
 		@Pc(3) RawModel model = new RawModel();
 		if (this.aByteArray40 != null) {
 			model.aByteArray40 = new byte[this.triangleCount];
@@ -965,7 +965,7 @@ public final class RawModel extends Entity {
 	}
 
 	@OriginalMember(owner = "client!ml", name = "a", descriptor = "(SS)V")
-	public final void retexture(@OriginalArg(0) short source, @OriginalArg(1) short destination) {
+	public void retexture(@OriginalArg(0) short source, @OriginalArg(1) short destination) {
 		if (this.triangleTextures == null) {
 			return;
 		}
@@ -977,7 +977,7 @@ public final class RawModel extends Entity {
 	}
 
 	@OriginalMember(owner = "client!ml", name = "c", descriptor = "(III)V")
-	public final void rotate(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
+	public void rotate(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
 		if (arg2 != 0) {
 			@Pc(5) int sine = SINE[arg2];
 			@Pc(9) int cosine = COSINE[arg2];
@@ -1351,7 +1351,7 @@ public final class RawModel extends Entity {
 	}
 
 	@OriginalMember(owner = "client!ml", name = "a", descriptor = "(IIIBSB)I")
-	public final int addTriangle(@OriginalArg(0) int vertexA, @OriginalArg(1) int vertexB, @OriginalArg(2) int vertexC, @OriginalArg(4) short color, @OriginalArg(5) byte alpha) {
+	public int addTriangle(@OriginalArg(0) int vertexA, @OriginalArg(1) int vertexB, @OriginalArg(2) int vertexC, @OriginalArg(4) short color, @OriginalArg(5) byte alpha) {
 		this.triangleVertexA[this.triangleCount] = vertexA;
 		this.triangleVertexB[this.triangleCount] = vertexB;
 		this.triangleVertexC[this.triangleCount] = vertexC;
@@ -1384,12 +1384,12 @@ public final class RawModel extends Entity {
 	}
 
 	@OriginalMember(owner = "client!ml", name = "b", descriptor = "(IIIII)Lclient!na;")
-	public final SoftwareModel createSoftwareModel(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4) {
+	public SoftwareModel createSoftwareModel(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4) {
 		return new SoftwareModel(this, arg0, arg1, arg2, arg3, arg4);
 	}
 
 	@OriginalMember(owner = "client!ml", name = "k", descriptor = "()V")
-	public final void method2760() {
+	public void method2760() {
 		this.vertexBones = null;
 		this.triangleBones = null;
 		this.boneVertices = null;
@@ -1398,7 +1398,7 @@ public final class RawModel extends Entity {
 
 	@OriginalMember(owner = "client!ml", name = "a", descriptor = "(Lclient!vc;IIIZ)V")
 	@Override
-	public final void method3807(@OriginalArg(0) Entity arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) boolean arg4) {
+	public void method3807(@OriginalArg(0) Entity arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) boolean arg4) {
 		@Pc(2) RawModel local2 = (RawModel) arg0;
 		local2.calculateBounds();
 		local2.calculateNormals();
@@ -1472,7 +1472,7 @@ public final class RawModel extends Entity {
 	}
 
 	@OriginalMember(owner = "client!ml", name = "c", descriptor = "(IIIII)Lclient!vg;")
-	public final Model createModel(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4) {
+	public Model createModel(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4) {
 		if (GlRenderer.enabled) {
 			@Pc(9) GlModel model = new GlModel(this, arg0, arg1, true);
 			model.createBones();
@@ -1483,7 +1483,7 @@ public final class RawModel extends Entity {
 	}
 
 	@OriginalMember(owner = "client!ml", name = "d", descriptor = "(III)I")
-	public final int addVertex(@OriginalArg(0) int x, @OriginalArg(2) int z) {
+	public int addVertex(@OriginalArg(0) int x, @OriginalArg(2) int z) {
 		for (@Pc(1) int i = 0; i < this.vertexCount; i++) {
 			if (this.vertexX[i] == x && this.vertexY[i] == 0 && this.vertexZ[i] == z) {
 				return i;
@@ -1497,7 +1497,7 @@ public final class RawModel extends Entity {
 	}
 
 	@OriginalMember(owner = "client!ml", name = "l", descriptor = "()V")
-	public final void calculateNormals() {
+	public void calculateNormals() {
 		if (this.vertexNormals != null) {
 			return;
 		}
@@ -1608,7 +1608,7 @@ public final class RawModel extends Entity {
 	}
 
 	@OriginalMember(owner = "client!ml", name = "a", descriptor = "(II[[I[[IIIIZZ)Lclient!ml;")
-	public final RawModel method2766(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int[][] arg2, @OriginalArg(3) int[][] arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6) {
+	public RawModel method2766(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int[][] arg2, @OriginalArg(3) int[][] arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6) {
 		this.calculateBounds();
 		@Pc(6) int local6 = arg4 + this.minX;
 		@Pc(11) int local11 = arg4 + this.maxX;
@@ -1818,7 +1818,7 @@ public final class RawModel extends Entity {
 	}
 
 	@OriginalMember(owner = "client!ml", name = "e", descriptor = "(III)V")
-	public final void resize(@OriginalArg(0) int x, @OriginalArg(1) int y, @OriginalArg(2) int z) {
+	public void resize(@OriginalArg(0) int x, @OriginalArg(1) int y, @OriginalArg(2) int z) {
 		for (@Pc(1) int i = 0; i < this.vertexCount; i++) {
 			this.vertexX[i] = this.vertexX[i] * x / 128;
 			this.vertexY[i] = this.vertexY[i] * y / 128;
@@ -1828,7 +1828,7 @@ public final class RawModel extends Entity {
 	}
 
 	@OriginalMember(owner = "client!ml", name = "b", descriptor = "(SS)V")
-	public final void recolor(@OriginalArg(0) short source, @OriginalArg(1) short destination) {
+	public void recolor(@OriginalArg(0) short source, @OriginalArg(1) short destination) {
 		for (@Pc(1) int i = 0; i < this.triangleCount; i++) {
 			if (this.triangleColors[i] == source) {
 				this.triangleColors[i] = destination;

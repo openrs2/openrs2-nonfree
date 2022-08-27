@@ -39,7 +39,7 @@ public final class TextureOpCurve extends TextureOp {
 
 	@OriginalMember(owner = "client!of", name = "a", descriptor = "(II)[I")
 	@Override
-	public final int[] getMonochromeOutput(@OriginalArg(1) int y) {
+	public int[] getMonochromeOutput(@OriginalArg(1) int y) {
 		@Pc(11) int[] dest = this.monochromeImageCache.get(y);
 		if (this.monochromeImageCache.invalid) {
 			@Pc(28) int[] src = this.getChildMonochromeOutput(0, y);
@@ -143,7 +143,7 @@ public final class TextureOpCurve extends TextureOp {
 
 	@OriginalMember(owner = "client!of", name = "e", descriptor = "(B)V")
 	@Override
-	public final void postDecode() {
+	public void postDecode() {
 		if (this.markers == null) {
 			this.markers = new int[][] { { 0, 0 }, { 4096, 4096 } };
 		}
@@ -159,7 +159,7 @@ public final class TextureOpCurve extends TextureOp {
 
 	@OriginalMember(owner = "client!of", name = "a", descriptor = "(BLclient!fd;I)V")
 	@Override
-	public final void decode(@OriginalArg(1) Buffer buffer, @OriginalArg(2) int code) {
+	public void decode(@OriginalArg(1) Buffer buffer, @OriginalArg(2) int code) {
 		if (code != 0) {
 			return;
 		}

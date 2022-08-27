@@ -27,7 +27,7 @@ public final class MouseRecorder implements Runnable {
 
 	@OriginalMember(owner = "client!jm", name = "run", descriptor = "()V")
 	@Override
-	public final void run() {
+	public void run() {
 		while (this.running) {
 			synchronized (this.lock) {
 				if (this.samples < 500) {

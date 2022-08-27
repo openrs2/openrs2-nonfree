@@ -682,7 +682,7 @@ public final class SoftwareModel extends Model {
 
 	@OriginalMember(owner = "client!na", name = "h", descriptor = "()V")
 	@Override
-	public final void method3828() {
+	public void method3828() {
 		for (@Pc(1) int local1 = 0; local1 < this.vertexCount; local1++) {
 			this.vertexX[local1] = -this.vertexX[local1];
 			this.vertexZ[local1] = -this.vertexZ[local1];
@@ -692,7 +692,7 @@ public final class SoftwareModel extends Model {
 
 	@OriginalMember(owner = "client!na", name = "m", descriptor = "()I")
 	@Override
-	public final int getMaxY() {
+	public int getMaxY() {
 		if (!this.boundsValid) {
 			this.calculateBounds();
 		}
@@ -701,7 +701,7 @@ public final class SoftwareModel extends Model {
 
 	@OriginalMember(owner = "client!na", name = "a", descriptor = "(ZZZ)Lclient!vg;")
 	@Override
-	public final Model method3831(@OriginalArg(0) boolean shareAlpha, @OriginalArg(1) boolean shareColors, @OriginalArg(2) boolean shareNormals) {
+	public Model method3831(@OriginalArg(0) boolean shareAlpha, @OriginalArg(1) boolean shareColors, @OriginalArg(2) boolean shareNormals) {
 		if (!shareAlpha && aByteArray44.length < this.triangleCount) {
 			aByteArray44 = new byte[this.triangleCount + 100];
 		}
@@ -729,7 +729,7 @@ public final class SoftwareModel extends Model {
 
 	@OriginalMember(owner = "client!na", name = "k", descriptor = "()I")
 	@Override
-	public final int getMaxX() {
+	public int getMaxX() {
 		if (!this.boundsValid) {
 			this.calculateBounds();
 		}
@@ -1108,7 +1108,7 @@ public final class SoftwareModel extends Model {
 
 	@OriginalMember(owner = "client!na", name = "a", descriptor = "(I)V")
 	@Override
-	public final void method3815(@OriginalArg(0) int arg0) {
+	public void method3815(@OriginalArg(0) int arg0) {
 		@Pc(3) int local3 = MathUtils.SINE[arg0];
 		@Pc(7) int local7 = MathUtils.COSINE[arg0];
 		for (@Pc(9) int local9 = 0; local9 < this.vertexCount; local9++) {
@@ -1121,7 +1121,7 @@ public final class SoftwareModel extends Model {
 
 	@OriginalMember(owner = "client!na", name = "e", descriptor = "()V")
 	@Override
-	public final void method3820() {
+	public void method3820() {
 		for (@Pc(1) int local1 = 0; local1 < this.vertexCount; local1++) {
 			@Pc(10) int local10 = this.vertexX[local1];
 			this.vertexX[local1] = this.vertexZ[local1];
@@ -1132,7 +1132,7 @@ public final class SoftwareModel extends Model {
 
 	@OriginalMember(owner = "client!na", name = "c", descriptor = "(I)V")
 	@Override
-	public final void method3832(@OriginalArg(0) int arg0) {
+	public void method3832(@OriginalArg(0) int arg0) {
 		@Pc(3) int local3 = MathUtils.SINE[arg0];
 		@Pc(7) int local7 = MathUtils.COSINE[arg0];
 		for (@Pc(9) int local9 = 0; local9 < this.vertexCount; local9++) {
@@ -1145,7 +1145,7 @@ public final class SoftwareModel extends Model {
 
 	@OriginalMember(owner = "client!na", name = "i", descriptor = "()I")
 	@Override
-	public final int getMinX() {
+	public int getMinX() {
 		if (!this.boundsValid) {
 			this.calculateBounds();
 		}
@@ -1153,13 +1153,13 @@ public final class SoftwareModel extends Model {
 	}
 
 	@OriginalMember(owner = "client!na", name = "a", descriptor = "(Lclient!vg;)Lclient!vg;")
-	public final Model method2903(@OriginalArg(0) Model arg0) {
+	public Model method2903(@OriginalArg(0) Model arg0) {
 		return new SoftwareModel(new SoftwareModel[] { this, (SoftwareModel) arg0 }, 2);
 	}
 
 	@OriginalMember(owner = "client!na", name = "a", descriptor = "(IIIIIIIIJILclient!ne;)V")
 	@Override
-	public final void method3805(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) long key, @OriginalArg(9) int arg9, @OriginalArg(10) ParticleSystem arg10) {
+	public void method3805(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) long key, @OriginalArg(9) int arg9, @OriginalArg(10) ParticleSystem arg10) {
 		if (!this.boundsValid) {
 			this.calculateBounds();
 		}
@@ -1348,7 +1348,7 @@ public final class SoftwareModel extends Model {
 
 	@OriginalMember(owner = "client!na", name = "b", descriptor = "(I)V")
 	@Override
-	public final void method3817(@OriginalArg(0) int arg0) {
+	public void method3817(@OriginalArg(0) int arg0) {
 		@Pc(3) int local3 = MathUtils.SINE[arg0];
 		@Pc(7) int local7 = MathUtils.COSINE[arg0];
 		for (@Pc(9) int local9 = 0; local9 < this.vertexCount; local9++) {
@@ -1361,7 +1361,7 @@ public final class SoftwareModel extends Model {
 
 	@OriginalMember(owner = "client!na", name = "j", descriptor = "()Z")
 	@Override
-	protected final boolean method3830() {
+	protected boolean method3830() {
 		if (this.boneVertices == null) {
 			return false;
 		} else {
@@ -1374,7 +1374,7 @@ public final class SoftwareModel extends Model {
 
 	@OriginalMember(owner = "client!na", name = "g", descriptor = "()V")
 	@Override
-	public final void method3827() {
+	public void method3827() {
 		for (@Pc(1) int local1 = 0; local1 < this.vertexCount; local1++) {
 			@Pc(10) int local10 = this.vertexZ[local1];
 			this.vertexZ[local1] = this.vertexX[local1];
@@ -1385,7 +1385,7 @@ public final class SoftwareModel extends Model {
 
 	@OriginalMember(owner = "client!na", name = "b", descriptor = "(III)V")
 	@Override
-	public final void translate(@OriginalArg(0) int x, @OriginalArg(1) int y, @OriginalArg(2) int z) {
+	public void translate(@OriginalArg(0) int x, @OriginalArg(1) int y, @OriginalArg(2) int z) {
 		for (@Pc(1) int local1 = 0; local1 < this.vertexCount; local1++) {
 			@Pc(7) int[] local7 = this.vertexX;
 			local7[local1] += x;
@@ -1440,7 +1440,7 @@ public final class SoftwareModel extends Model {
 
 	@OriginalMember(owner = "client!na", name = "f", descriptor = "()I")
 	@Override
-	public final int getBoundingCylinderRadius() {
+	public int getBoundingCylinderRadius() {
 		if (!this.boundsValid) {
 			this.calculateBounds();
 		}
@@ -1449,7 +1449,7 @@ public final class SoftwareModel extends Model {
 
 	@OriginalMember(owner = "client!na", name = "c", descriptor = "()I")
 	@Override
-	public final int getMinZ() {
+	public int getMinZ() {
 		if (!this.boundsValid) {
 			this.calculateBounds();
 		}
@@ -1458,7 +1458,7 @@ public final class SoftwareModel extends Model {
 
 	@OriginalMember(owner = "client!na", name = "a", descriptor = "(IIIIIIIJ)V")
 	@Override
-	public final void method3822(@OriginalArg(1) int yAngle, @OriginalArg(2) int zAngle, @OriginalArg(3) int xAngle, @OriginalArg(4) int xOffset, @OriginalArg(5) int yOffset, @OriginalArg(6) int zOffset, @OriginalArg(7) long key) {
+	public void method3822(@OriginalArg(1) int yAngle, @OriginalArg(2) int zAngle, @OriginalArg(3) int xAngle, @OriginalArg(4) int xOffset, @OriginalArg(5) int yOffset, @OriginalArg(6) int zOffset, @OriginalArg(7) long key) {
 		try {
 			if (!this.boundsValid) {
 				this.calculateBounds();
@@ -1509,7 +1509,7 @@ public final class SoftwareModel extends Model {
 
 	@OriginalMember(owner = "client!na", name = "b", descriptor = "(ZZZ)Lclient!vg;")
 	@Override
-	public final Model method3833(@OriginalArg(0) boolean shareAlpha, @OriginalArg(1) boolean shareColors, @OriginalArg(2) boolean shareNormals) {
+	public Model method3833(@OriginalArg(0) boolean shareAlpha, @OriginalArg(1) boolean shareColors, @OriginalArg(2) boolean shareNormals) {
 		if (!shareAlpha && aByteArray46.length < this.triangleCount) {
 			aByteArray46 = new byte[this.triangleCount + 100];
 		}
@@ -1524,7 +1524,7 @@ public final class SoftwareModel extends Model {
 
 	@OriginalMember(owner = "client!na", name = "d", descriptor = "()V")
 	@Override
-	protected final void method3819() {
+	protected void method3819() {
 		if (this.aBoolean245) {
 			this.method2913();
 			this.aBoolean245 = false;
@@ -1534,7 +1534,7 @@ public final class SoftwareModel extends Model {
 
 	@OriginalMember(owner = "client!na", name = "c", descriptor = "(ZZZ)Lclient!vg;")
 	@Override
-	public final Model method3836(@OriginalArg(0) boolean shareAlpha, @OriginalArg(1) boolean shareColors, @OriginalArg(2) boolean shareNormals) {
+	public Model method3836(@OriginalArg(0) boolean shareAlpha, @OriginalArg(1) boolean shareColors, @OriginalArg(2) boolean shareNormals) {
 		if (!shareAlpha && aByteArray45.length < this.triangleCount) {
 			aByteArray45 = new byte[this.triangleCount + 100];
 		}
@@ -1823,7 +1823,7 @@ public final class SoftwareModel extends Model {
 	}
 
 	@OriginalMember(owner = "client!na", name = "a", descriptor = "(II[[I[[IIIIZ)Lclient!na;")
-	public final SoftwareModel method2910(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int[][] arg2, @OriginalArg(3) int[][] arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) boolean arg7) {
+	public SoftwareModel method2910(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int[][] arg2, @OriginalArg(3) int[][] arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) boolean arg7) {
 		if (!this.boundsValid) {
 			this.calculateBounds();
 		}
@@ -2028,7 +2028,7 @@ public final class SoftwareModel extends Model {
 
 	@OriginalMember(owner = "client!na", name = "a", descriptor = "(I[IIIIZ)V")
 	@Override
-	protected final void transform(@OriginalArg(0) int type, @OriginalArg(1) int[] bone, @OriginalArg(2) int x, @OriginalArg(3) int y, @OriginalArg(4) int z, @OriginalArg(5) boolean arg5) {
+	protected void transform(@OriginalArg(0) int type, @OriginalArg(1) int[] bone, @OriginalArg(2) int x, @OriginalArg(3) int y, @OriginalArg(4) int z, @OriginalArg(5) boolean arg5) {
 		@Pc(2) int local2 = bone.length;
 		if (type == 0) {
 			@Pc(6) int count = 0;
@@ -2194,7 +2194,7 @@ public final class SoftwareModel extends Model {
 
 	@OriginalMember(owner = "client!na", name = "b", descriptor = "()I")
 	@Override
-	public final int getMinY() {
+	public int getMinY() {
 		if (!this.boundsValid) {
 			this.calculateBounds();
 		}
@@ -2203,7 +2203,7 @@ public final class SoftwareModel extends Model {
 
 	@OriginalMember(owner = "client!na", name = "c", descriptor = "(III)V")
 	@Override
-	public final void resize(@OriginalArg(0) int x, @OriginalArg(1) int y, @OriginalArg(2) int z) {
+	public void resize(@OriginalArg(0) int x, @OriginalArg(1) int y, @OriginalArg(2) int z) {
 		for (@Pc(1) int local1 = 0; local1 < this.vertexCount; local1++) {
 			this.vertexX[local1] = this.vertexX[local1] * x / 128;
 			this.vertexY[local1] = this.vertexY[local1] * y / 128;
@@ -2213,7 +2213,7 @@ public final class SoftwareModel extends Model {
 	}
 
 	@OriginalMember(owner = "client!na", name = "b", descriptor = "(IIIIIIII)V")
-	public final void method2911(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4, @OriginalArg(6) int arg5, @OriginalArg(7) int arg6) {
+	public void method2911(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4, @OriginalArg(6) int arg5, @OriginalArg(7) int arg6) {
 		try {
 			if (!this.boundsValid) {
 				this.calculateBounds();
@@ -2264,7 +2264,7 @@ public final class SoftwareModel extends Model {
 
 	@OriginalMember(owner = "client!na", name = "a", descriptor = "(I[IIIIZI[I)V")
 	@Override
-	protected final void transform(@OriginalArg(0) int type, @OriginalArg(1) int[] bones, @OriginalArg(2) int x, @OriginalArg(3) int y, @OriginalArg(4) int z, @OriginalArg(5) boolean arg5, @OriginalArg(6) int parts, @OriginalArg(7) int[] arg7) {
+	protected void transform(@OriginalArg(0) int type, @OriginalArg(1) int[] bones, @OriginalArg(2) int x, @OriginalArg(3) int y, @OriginalArg(4) int z, @OriginalArg(5) boolean arg5, @OriginalArg(6) int parts, @OriginalArg(7) int[] arg7) {
 		@Pc(2) int bonesLen = bones.length;
 		if (type == 0) {
 			@Pc(6) int count = 0;
@@ -2621,7 +2621,7 @@ public final class SoftwareModel extends Model {
 
 	@OriginalMember(owner = "client!na", name = "l", descriptor = "()I")
 	@Override
-	public final int getMaxZ() {
+	public int getMaxZ() {
 		if (!this.boundsValid) {
 			this.calculateBounds();
 		}
@@ -2651,7 +2651,7 @@ public final class SoftwareModel extends Model {
 
 	@OriginalMember(owner = "client!na", name = "a", descriptor = "(IIII)V")
 	@Override
-	protected final void transform(@OriginalArg(0) int type, @OriginalArg(1) int x, @OriginalArg(2) int y, @OriginalArg(3) int z) {
+	protected void transform(@OriginalArg(0) int type, @OriginalArg(1) int x, @OriginalArg(2) int y, @OriginalArg(3) int z) {
 		if (type == 0) {
 			@Pc(3) int count = 0;
 			originX = 0;

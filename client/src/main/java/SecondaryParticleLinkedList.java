@@ -19,7 +19,7 @@ public final class SecondaryParticleLinkedList {
 	}
 
 	@OriginalMember(owner = "client!lb", name = "b", descriptor = "(I)V")
-	public final void clear() {
+	public void clear() {
 		while (true) {
 			@Pc(5) SecondaryParticleNode node = this.sentinel.secondaryNext;
 			if (node == this.sentinel) {
@@ -31,7 +31,7 @@ public final class SecondaryParticleLinkedList {
 	}
 
 	@OriginalMember(owner = "client!lb", name = "c", descriptor = "(B)Lclient!r;")
-	public final SecondaryParticleNode head() {
+	public SecondaryParticleNode head() {
 		@Pc(18) SecondaryParticleNode node = this.sentinel.secondaryNext;
 		if (node == this.sentinel) {
 			this.cursor = null;
@@ -43,7 +43,7 @@ public final class SecondaryParticleLinkedList {
 	}
 
 	@OriginalMember(owner = "client!lb", name = "a", descriptor = "(ILclient!r;)V")
-	public final void addTail(@OriginalArg(1) SecondaryParticleNode node) {
+	public void addTail(@OriginalArg(1) SecondaryParticleNode node) {
 		if (node.secondaryPrev != null) {
 			node.unlinkSecondary();
 		}
@@ -54,7 +54,7 @@ public final class SecondaryParticleLinkedList {
 	}
 
 	@OriginalMember(owner = "client!lb", name = "d", descriptor = "(B)Lclient!r;")
-	public final SecondaryParticleNode next() {
+	public SecondaryParticleNode next() {
 		@Pc(2) SecondaryParticleNode node = this.cursor;
 		if (this.sentinel == node) {
 			this.cursor = null;

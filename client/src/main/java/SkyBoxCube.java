@@ -103,7 +103,7 @@ public final class SkyBoxCube extends SecondaryNode {
 
 	@OriginalMember(owner = "client!ib", name = "finalize", descriptor = "()V")
 	@Override
-	public final void finalize() throws Throwable {
+	public void finalize() throws Throwable {
 		if (this.id != -1) {
 			GlCleaner.deleteTexture(this.id, this.bytes, this.contextId);
 			this.id = -1;
@@ -113,7 +113,7 @@ public final class SkyBoxCube extends SecondaryNode {
 	}
 
 	@OriginalMember(owner = "client!ib", name = "c", descriptor = "()V")
-	public final void method1834() {
+	public void method1834() {
 		@Pc(1) GL gl = GlRenderer.gl;
 		this.method1832();
 		gl.glBindTexture(GL.GL_TEXTURE_CUBE_MAP, this.id);
@@ -151,7 +151,7 @@ public final class SkyBoxCube extends SecondaryNode {
 	}
 
 	@OriginalMember(owner = "client!ib", name = "a", descriptor = "(Lclient!ib;Lclient!ib;F)Lclient!ib;")
-	public final SkyBoxCube method1835(@OriginalArg(0) SkyBoxCube arg0, @OriginalArg(1) SkyBoxCube arg1, @OriginalArg(2) float arg2) {
+	public SkyBoxCube method1835(@OriginalArg(0) SkyBoxCube arg0, @OriginalArg(1) SkyBoxCube arg1, @OriginalArg(2) float arg2) {
 		@Pc(1) GL gl = GlRenderer.gl;
 		@Pc(10) SkyBoxCube local10 = (double) arg2 < 0.5D ? arg0 : arg1;
 		if (!GlRenderer.arbFboSupported) {

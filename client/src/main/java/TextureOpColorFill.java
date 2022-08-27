@@ -28,7 +28,7 @@ public final class TextureOpColorFill extends TextureOp {
 
 	@OriginalMember(owner = "client!hk", name = "a", descriptor = "(BLclient!fd;I)V")
 	@Override
-	public final void decode(@OriginalArg(1) Buffer buffer, @OriginalArg(2) int code) {
+	public void decode(@OriginalArg(1) Buffer buffer, @OriginalArg(2) int code) {
 		if (code == 0) {
 			this.setColor(buffer.readUnsignedMedium());
 		}
@@ -36,7 +36,7 @@ public final class TextureOpColorFill extends TextureOp {
 
 	@OriginalMember(owner = "client!hk", name = "b", descriptor = "(II)[[I")
 	@Override
-	public final int[][] getColorOutput(@OriginalArg(0) int y) {
+	public int[][] getColorOutput(@OriginalArg(0) int y) {
 		@Pc(16) int[][] dest = this.colorImageCache.get(y);
 		if (this.colorImageCache.invalid) {
 			@Pc(24) int[] green = dest[1];

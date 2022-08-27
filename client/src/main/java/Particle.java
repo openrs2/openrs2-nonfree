@@ -67,7 +67,7 @@ public final class Particle extends SecondaryParticleNode {
 	}
 
 	@OriginalMember(owner = "client!lm", name = "a", descriptor = "(JI)V")
-	public final void method2629(@OriginalArg(0) long arg0, @OriginalArg(1) int arg1) {
+	public void method2629(@OriginalArg(0) long arg0, @OriginalArg(1) int arg1) {
 		if (this.emitter == null) {
 			return;
 		}
@@ -372,7 +372,7 @@ public final class Particle extends SecondaryParticleNode {
 	}
 
 	@OriginalMember(owner = "client!lm", name = "a", descriptor = "(Lclient!bi;IIIIIIIII)V")
-	public final void method2632(@OriginalArg(0) ParticleEmitter emitter, @OriginalArg(1) int x, @OriginalArg(2) int y, @OriginalArg(3) int z, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) int arg8, @OriginalArg(9) int color) {
+	public void method2632(@OriginalArg(0) ParticleEmitter emitter, @OriginalArg(1) int x, @OriginalArg(2) int y, @OriginalArg(3) int z, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) int arg8, @OriginalArg(9) int color) {
 		this.emitter = emitter;
 		this.x = x << logScale;
 		this.y = y << logScale;

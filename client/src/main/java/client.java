@@ -937,7 +937,7 @@ public final class client extends GameShell {
 
 	@OriginalMember(owner = "client!client", name = "a", descriptor = "(B)V")
 	@Override
-	protected final void mainQuit() {
+	protected void mainQuit() {
 		if (GlRenderer.enabled) {
 			GlRenderer.quit();
 		}
@@ -973,7 +973,7 @@ public final class client extends GameShell {
 
 	@OriginalMember(owner = "client!client", name = "c", descriptor = "(B)V")
 	@Override
-	protected final void mainInit() {
+	protected void mainInit() {
 		Static20.method1949();
 		js5CacheQueue = new Js5CacheQueue();
 		js5NetQueue = new Js5NetQueue();
@@ -1172,12 +1172,12 @@ public final class client extends GameShell {
 
 	@OriginalMember(owner = "client!client", name = "b", descriptor = "(B)V")
 	@Override
-	protected final void reset() {
+	protected void reset() {
 	}
 
 	@OriginalMember(owner = "client!client", name = "init", descriptor = "()V")
 	@Override
-	public final void init() {
+	public void init() {
 		if (!this.isHostnameValid()) {
 			return;
 		}
@@ -1249,7 +1249,7 @@ public final class client extends GameShell {
 
 	@OriginalMember(owner = "client!client", name = "e", descriptor = "(I)V")
 	@Override
-	protected final void mainRedraw() {
+	protected void mainRedraw() {
 		if (Static4.anInt3304 == 1000) {
 			return;
 		}
@@ -1365,7 +1365,7 @@ public final class client extends GameShell {
 
 	@OriginalMember(owner = "client!client", name = "a", descriptor = "(Z)V")
 	@Override
-	protected final void mainLoop() {
+	protected void mainLoop() {
 		if (Static4.anInt3304 == 1000) {
 			return;
 		}

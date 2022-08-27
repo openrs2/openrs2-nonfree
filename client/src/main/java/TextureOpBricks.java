@@ -91,13 +91,13 @@ public final class TextureOpBricks extends TextureOp {
 
 	@OriginalMember(owner = "client!sn", name = "e", descriptor = "(B)V")
 	@Override
-	public final void postDecode() {
+	public void postDecode() {
 		this.method4057();
 	}
 
 	@OriginalMember(owner = "client!sn", name = "a", descriptor = "(BLclient!fd;I)V")
 	@Override
-	public final void decode(@OriginalArg(1) Buffer buffer, @OriginalArg(2) int code) {
+	public void decode(@OriginalArg(1) Buffer buffer, @OriginalArg(2) int code) {
 		if (code == 0) {
 			this.anInt4943 = buffer.readUnsignedByte();
 		} else if (code == 1) {
@@ -119,7 +119,7 @@ public final class TextureOpBricks extends TextureOp {
 
 	@OriginalMember(owner = "client!sn", name = "a", descriptor = "(II)[I")
 	@Override
-	public final int[] getMonochromeOutput(@OriginalArg(1) int y) {
+	public int[] getMonochromeOutput(@OriginalArg(1) int y) {
 		@Pc(13) int[] dest = this.monochromeImageCache.get(y);
 		if (this.monochromeImageCache.invalid) {
 			@Pc(19) int local19 = 0;

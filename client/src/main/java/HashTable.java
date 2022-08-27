@@ -36,12 +36,12 @@ public final class HashTable {
 	}
 
 	@OriginalMember(owner = "client!ic", name = "a", descriptor = "(I)I")
-	public final int getBucketCount() {
+	public int getBucketCount() {
 		return this.bucketCount;
 	}
 
 	@OriginalMember(owner = "client!ic", name = "a", descriptor = "(Lclient!ni;IJ)V")
-	public final void put(@OriginalArg(2) long key, @OriginalArg(0) Node value) {
+	public void put(@OriginalArg(2) long key, @OriginalArg(0) Node value) {
 		if (value.prev != null) {
 			value.unlink();
 		}
@@ -54,7 +54,7 @@ public final class HashTable {
 	}
 
 	@OriginalMember(owner = "client!ic", name = "b", descriptor = "(I)I")
-	public final int size() {
+	public int size() {
 		@Pc(7) int size = 0;
 		for (@Pc(9) int i = 0; i < this.bucketCount; i++) {
 			@Pc(22) Node sentinel = this.buckets[i];
@@ -66,13 +66,13 @@ public final class HashTable {
 	}
 
 	@OriginalMember(owner = "client!ic", name = "c", descriptor = "(I)Lclient!ni;")
-	public final Node head() {
+	public Node head() {
 		this.iteratorBucket = 0;
 		return this.next();
 	}
 
 	@OriginalMember(owner = "client!ic", name = "a", descriptor = "(B)Lclient!ni;")
-	public final Node next() {
+	public Node next() {
 		if (this.iteratorBucket > 0 && this.buckets[this.iteratorBucket - 1] != this.iteratorCursor) {
 			@Pc(25) Node node = this.iteratorCursor;
 			this.iteratorCursor = node.next;
@@ -90,7 +90,7 @@ public final class HashTable {
 	}
 
 	@OriginalMember(owner = "client!ic", name = "a", descriptor = "(JI)Lclient!ni;")
-	public final Node get(@OriginalArg(0) long key) {
+	public Node get(@OriginalArg(0) long key) {
 		this.searchKey = key;
 		@Pc(28) Node sentinel = this.buckets[(int) (key & (long) (this.bucketCount - 1))];
 		for (this.searchCursor = sentinel.next; this.searchCursor != sentinel; this.searchCursor = this.searchCursor.next) {
@@ -105,7 +105,7 @@ public final class HashTable {
 	}
 
 	@OriginalMember(owner = "client!ic", name = "a", descriptor = "(I[Lclient!ni;)I")
-	public final int toArray(@OriginalArg(1) Node[] array) {
+	public int toArray(@OriginalArg(1) Node[] array) {
 		@Pc(7) int size = 0;
 		for (@Pc(9) int i = 0; i < this.bucketCount; i++) {
 			@Pc(22) Node sentinel = this.buckets[i];
@@ -117,7 +117,7 @@ public final class HashTable {
 	}
 
 	@OriginalMember(owner = "client!ic", name = "b", descriptor = "(B)Lclient!ni;")
-	public final Node nextWithKey() {
+	public Node nextWithKey() {
 		if (this.searchCursor == null) {
 			return null;
 		}
@@ -135,7 +135,7 @@ public final class HashTable {
 	}
 
 	@OriginalMember(owner = "client!ic", name = "c", descriptor = "(B)V")
-	public final void clear() {
+	public void clear() {
 		for (@Pc(7) int i = 0; i < this.bucketCount; i++) {
 			@Pc(24) Node sentinel = this.buckets[i];
 			while (true) {

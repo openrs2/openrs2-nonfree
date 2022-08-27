@@ -38,12 +38,12 @@ public final class StockMarketOffer {
 	}
 
 	@OriginalMember(owner = "client!t", name = "a", descriptor = "(I)I")
-	public final int getType() {
+	public int getType() {
 		return (this.statusAndType & 0x8) == 8 ? 1 : 0;
 	}
 
 	@OriginalMember(owner = "client!t", name = "c", descriptor = "(I)I")
-	public final int getStatus() {
+	public int getStatus() {
 		return this.statusAndType & 0x7;
 	}
 }

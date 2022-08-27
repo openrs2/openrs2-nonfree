@@ -20,7 +20,7 @@ public final class MixerPcmStream extends PcmStream {
 
 	@OriginalMember(owner = "client!lo", name = "a", descriptor = "([III)V")
 	@Override
-	public final synchronized void read(@OriginalArg(0) int[] samples, @OriginalArg(1) int off, @OriginalArg(2) int len) {
+	public synchronized void read(@OriginalArg(0) int[] samples, @OriginalArg(1) int off, @OriginalArg(2) int len) {
 		do {
 			if (this.remaining < 0) {
 				this.readSubStreams(samples, off, len);
@@ -76,13 +76,13 @@ public final class MixerPcmStream extends PcmStream {
 	}
 
 	@OriginalMember(owner = "client!lo", name = "a", descriptor = "(Lclient!tf;)V")
-	public final synchronized void removeSubStream(@OriginalArg(0) PcmStream stream) {
+	public synchronized void removeSubStream(@OriginalArg(0) PcmStream stream) {
 		stream.unlink();
 	}
 
 	@OriginalMember(owner = "client!lo", name = "b", descriptor = "(I)V")
 	@Override
-	public final synchronized void skip(@OriginalArg(0) int len) {
+	public synchronized void skip(@OriginalArg(0) int len) {
 		do {
 			if (this.remaining < 0) {
 				this.skipSubStreams(len);
@@ -121,7 +121,7 @@ public final class MixerPcmStream extends PcmStream {
 
 	@OriginalMember(owner = "client!lo", name = "c", descriptor = "()Lclient!tf;")
 	@Override
-	public final PcmStream nextSubStream() {
+	public PcmStream nextSubStream() {
 		return (PcmStream) this.subStreams.next();
 	}
 
@@ -136,7 +136,7 @@ public final class MixerPcmStream extends PcmStream {
 
 	@OriginalMember(owner = "client!lo", name = "a", descriptor = "()I")
 	@Override
-	public final int method3346() {
+	public int method3346() {
 		return 0;
 	}
 
@@ -149,12 +149,12 @@ public final class MixerPcmStream extends PcmStream {
 
 	@OriginalMember(owner = "client!lo", name = "d", descriptor = "()Lclient!tf;")
 	@Override
-	public final PcmStream firstSubStream() {
+	public PcmStream firstSubStream() {
 		return (PcmStream) this.subStreams.head();
 	}
 
 	@OriginalMember(owner = "client!lo", name = "b", descriptor = "(Lclient!tf;)V")
-	public final synchronized void addSubStream(@OriginalArg(0) PcmStream stream) {
+	public synchronized void addSubStream(@OriginalArg(0) PcmStream stream) {
 		this.subStreams.addHead(stream);
 	}
 }

@@ -16,7 +16,7 @@ public final class CursorType {
 	public int hotSpotX;
 
 	@OriginalMember(owner = "client!pe", name = "a", descriptor = "(IILclient!fd;)V")
-	public final void decode(@OriginalArg(2) Buffer buffer, @OriginalArg(1) int id) {
+	public void decode(@OriginalArg(2) Buffer buffer, @OriginalArg(1) int id) {
 		while (true) {
 			@Pc(5) int code = buffer.readUnsignedByte();
 			if (code == 0) {
@@ -37,7 +37,7 @@ public final class CursorType {
 	}
 
 	@OriginalMember(owner = "client!pe", name = "a", descriptor = "(B)Lclient!vn;")
-	public final SoftwareSprite getSprite() {
+	public SoftwareSprite getSprite() {
 		@Pc(17) SoftwareSprite sprite = (SoftwareSprite) CursorTypeList.sprites.get(this.spriteId);
 		if (sprite != null) {
 			return sprite;

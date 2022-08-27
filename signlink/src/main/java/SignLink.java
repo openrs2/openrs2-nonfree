@@ -260,22 +260,22 @@ public final class SignLink implements Runnable {
 	}
 
 	@OriginalMember(owner = "signlink!pm", name = "a", descriptor = "(BLjava/awt/Point;I[IILjava/awt/Component;)Lsignlink!vk;")
-	public final PrivilegedRequest setCursor(@OriginalArg(5) Component component, @OriginalArg(4) int width, @OriginalArg(2) int height, @OriginalArg(3) int[] pixels, @OriginalArg(1) Point hotSpot) {
+	public PrivilegedRequest setCursor(@OriginalArg(5) Component component, @OriginalArg(4) int width, @OriginalArg(2) int height, @OriginalArg(3) int[] pixels, @OriginalArg(1) Point hotSpot) {
 		return this.enqueue(17, width, height, new Object[] { component, pixels, hotSpot });
 	}
 
 	@OriginalMember(owner = "signlink!pm", name = "a", descriptor = "(BI)Lsignlink!vk;")
-	public final PrivilegedRequest getReverseDns(@OriginalArg(1) int ip) {
+	public PrivilegedRequest getReverseDns(@OriginalArg(1) int ip) {
 		return this.enqueue(3, ip, 0, null);
 	}
 
 	@OriginalMember(owner = "signlink!pm", name = "a", descriptor = "(Ljava/lang/String;B)Lsignlink!vk;")
-	public final PrivilegedRequest openUrl(@OriginalArg(0) String url) {
+	public PrivilegedRequest openUrl(@OriginalArg(0) String url) {
 		return this.enqueue(16, 0, 0, url);
 	}
 
 	@OriginalMember(owner = "signlink!pm", name = "b", descriptor = "(Ljava/lang/Class;I)Lsignlink!vk;")
-	public final PrivilegedRequest loadMiscNatives(@OriginalArg(0) Class<?> clazz) {
+	public PrivilegedRequest loadMiscNatives(@OriginalArg(0) Class<?> clazz) {
 		return this.enqueue(20, 0, 0, clazz);
 	}
 
@@ -299,13 +299,13 @@ public final class SignLink implements Runnable {
 	}
 
 	@OriginalMember(owner = "signlink!pm", name = "a", descriptor = "(Ljava/lang/Class;I)Lsignlink!vk;")
-	public final PrivilegedRequest unloadNatives(@OriginalArg(0) Class<?> clazz) {
+	public PrivilegedRequest unloadNatives(@OriginalArg(0) Class<?> clazz) {
 		return this.enqueue(11, 0, 0, clazz);
 	}
 
 	@OriginalMember(owner = "signlink!pm", name = "run", descriptor = "()V")
 	@Override
-	public final void run() {
+	public void run() {
 		while (true) {
 			@Pc(16) PrivilegedRequest request;
 			synchronized (this) {
@@ -481,52 +481,52 @@ public final class SignLink implements Runnable {
 	}
 
 	@OriginalMember(owner = "signlink!pm", name = "a", descriptor = "(Ljava/awt/Frame;Z)Lsignlink!vk;")
-	public final PrivilegedRequest exitFullScreen(@OriginalArg(0) Frame frame) {
+	public PrivilegedRequest exitFullScreen(@OriginalArg(0) Frame frame) {
 		return this.enqueue(7, 0, 0, frame);
 	}
 
 	@OriginalMember(owner = "signlink!pm", name = "a", descriptor = "(I)Lsignlink!vk;")
-	public final PrivilegedRequest getDisplayModes() {
+	public PrivilegedRequest getDisplayModes() {
 		return this.enqueue(5, 0, 0, null);
 	}
 
 	@OriginalMember(owner = "signlink!pm", name = "b", descriptor = "(I)V")
-	public final void breakConnection() {
+	public void breakConnection() {
 		breakConnectionsUntil = MonotonicClock.currentTimeMillis() + (long) 5000;
 	}
 
 	@OriginalMember(owner = "signlink!pm", name = "a", descriptor = "(Ljava/lang/String;BLjava/lang/Class;[Ljava/lang/Class;)Lsignlink!vk;")
-	public final PrivilegedRequest getDeclaredMethod(@OriginalArg(2) Class<?> clazz, @OriginalArg(0) String name, @OriginalArg(3) Class[] parameterTypes) {
+	public PrivilegedRequest getDeclaredMethod(@OriginalArg(2) Class<?> clazz, @OriginalArg(0) String name, @OriginalArg(3) Class[] parameterTypes) {
 		return this.enqueue(8, 0, 0, new Object[] { clazz, name, parameterTypes });
 	}
 
 	@OriginalMember(owner = "signlink!pm", name = "d", descriptor = "(B)Lsignlink!le;")
-	public final AudioSource getAudioSource() {
+	public AudioSource getAudioSource() {
 		return this.audioSource;
 	}
 
 	@OriginalMember(owner = "signlink!pm", name = "a", descriptor = "(ILjava/lang/Class;)Lsignlink!vk;")
-	public final PrivilegedRequest loadGlNatives(@OriginalArg(1) Class<?> clazz) {
+	public PrivilegedRequest loadGlNatives(@OriginalArg(1) Class<?> clazz) {
 		return this.enqueue(10, 0, 0, clazz);
 	}
 
 	@OriginalMember(owner = "signlink!pm", name = "c", descriptor = "(B)Z")
-	public final boolean isFullScreenSupported() {
+	public boolean isFullScreenSupported() {
 		return this.fullScreenManager != null;
 	}
 
 	@OriginalMember(owner = "signlink!pm", name = "a", descriptor = "(Ljava/net/URL;I)Lsignlink!vk;")
-	public final PrivilegedRequest openUrlStream(@OriginalArg(0) URL url) {
+	public PrivilegedRequest openUrlStream(@OriginalArg(0) URL url) {
 		return this.enqueue(4, 0, 0, url);
 	}
 
 	@OriginalMember(owner = "signlink!pm", name = "b", descriptor = "(Ljava/lang/String;B)Lsignlink!vk;")
-	public final PrivilegedRequest openPreferences(@OriginalArg(0) String cacheSubDir) {
+	public PrivilegedRequest openPreferences(@OriginalArg(0) String cacheSubDir) {
 		return this.enqueue(12, 0, 0, cacheSubDir);
 	}
 
 	@OriginalMember(owner = "signlink!pm", name = "a", descriptor = "(B)V")
-	public final void stop() {
+	public void stop() {
 		synchronized (this) {
 			this.stop = true;
 			this.notifyAll();
@@ -566,22 +566,22 @@ public final class SignLink implements Runnable {
 	}
 
 	@OriginalMember(owner = "signlink!pm", name = "a", descriptor = "(IZLjava/lang/Runnable;)Lsignlink!vk;")
-	public final PrivilegedRequest startThread(@OriginalArg(2) Runnable runnable, @OriginalArg(0) int priority) {
+	public PrivilegedRequest startThread(@OriginalArg(2) Runnable runnable, @OriginalArg(0) int priority) {
 		return this.enqueue(2, priority, 0, runnable);
 	}
 
 	@OriginalMember(owner = "signlink!pm", name = "a", descriptor = "(IIIBI)Lsignlink!vk;")
-	public final PrivilegedRequest enterFullScreen(@OriginalArg(1) int width, @OriginalArg(2) int height, @OriginalArg(4) int bitDepth) {
+	public PrivilegedRequest enterFullScreen(@OriginalArg(1) int width, @OriginalArg(2) int height, @OriginalArg(4) int bitDepth) {
 		return this.enqueue(6, height + (width << 16), bitDepth << 16, null);
 	}
 
 	@OriginalMember(owner = "signlink!pm", name = "a", descriptor = "(ZLjava/lang/String;Ljava/lang/Class;)Lsignlink!vk;")
-	public final PrivilegedRequest getDeclaredField(@OriginalArg(2) Class<?> clazz, @OriginalArg(1) String name) {
+	public PrivilegedRequest getDeclaredField(@OriginalArg(2) Class<?> clazz, @OriginalArg(1) String name) {
 		return this.enqueue(9, 0, 0, new Object[] { clazz, name });
 	}
 
 	@OriginalMember(owner = "signlink!pm", name = "a", descriptor = "(ILjava/lang/String;I)Lsignlink!vk;")
-	public final PrivilegedRequest openSocket(@OriginalArg(1) String hostname, @OriginalArg(2) int port) {
+	public PrivilegedRequest openSocket(@OriginalArg(1) String hostname, @OriginalArg(2) int port) {
 		return this.enqueue(1, port, 0, hostname);
 	}
 }

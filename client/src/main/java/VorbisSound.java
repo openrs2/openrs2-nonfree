@@ -498,7 +498,7 @@ public final class VorbisSound extends Node {
 	}
 
 	@OriginalMember(owner = "client!qn", name = "a", descriptor = "([I)Lclient!pb;")
-	public final PcmSound toPcmSound(@OriginalArg(0) int[] samplingRates) {
+	public PcmSound toPcmSound(@OriginalArg(0) int[] samplingRates) {
 		if (samplingRates != null && samplingRates[0] <= 0) {
 			return null;
 		}

@@ -50,29 +50,29 @@ public final class MapChunk extends Node {
 	}
 
 	@OriginalMember(owner = "client!e", name = "a", descriptor = "(BIII)Z")
-	public final boolean containsSource(@OriginalArg(3) int level, @OriginalArg(1) int x, @OriginalArg(2) int z) {
+	public boolean containsSource(@OriginalArg(3) int level, @OriginalArg(1) int x, @OriginalArg(2) int z) {
 		return this.sourceLevel == level && x >= this.sourceMinX && x <= this.sourceMaxX && z >= this.sourceMinZ && this.sourceMaxZ >= z;
 	}
 
 	@OriginalMember(owner = "client!e", name = "a", descriptor = "(III)Z")
-	public final boolean containsDisplay(@OriginalArg(0) int x, @OriginalArg(1) int z) {
+	public boolean containsDisplay(@OriginalArg(0) int x, @OriginalArg(1) int z) {
 		return x >= this.displayMinX && x <= this.displayMaxX && z >= this.displayMinZ && z <= this.displayMaxZ;
 	}
 
 	@OriginalMember(owner = "client!e", name = "a", descriptor = "(IBI)Z")
-	public final boolean containsSource(@OriginalArg(2) int x, @OriginalArg(0) int z) {
+	public boolean containsSource(@OriginalArg(2) int x, @OriginalArg(0) int z) {
 		return x >= this.sourceMinX && x <= this.sourceMaxX && z >= this.sourceMinZ && z <= this.sourceMaxZ;
 	}
 
 	@OriginalMember(owner = "client!e", name = "a", descriptor = "(IIB[I)V")
-	public final void convertSourceToDisplay(@OriginalArg(1) int x, @OriginalArg(0) int z, @OriginalArg(3) int[] position) {
+	public void convertSourceToDisplay(@OriginalArg(1) int x, @OriginalArg(0) int z, @OriginalArg(3) int[] position) {
 		position[0] = this.displayLevel;
 		position[2] = this.displayMinZ + z - this.sourceMinZ;
 		position[1] = this.displayMinX + x - this.sourceMinX;
 	}
 
 	@OriginalMember(owner = "client!e", name = "a", descriptor = "(II[II)V")
-	public final void convertDisplayToSource(@OriginalArg(1) int x, @OriginalArg(0) int z, @OriginalArg(2) int[] position) {
+	public void convertDisplayToSource(@OriginalArg(1) int x, @OriginalArg(0) int z, @OriginalArg(2) int[] position) {
 		position[1] = x + this.sourceMinX - this.displayMinX;
 		position[0] = this.sourceLevel;
 		position[2] = this.sourceMinZ + z - this.displayMinZ;

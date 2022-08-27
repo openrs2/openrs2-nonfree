@@ -58,7 +58,7 @@ public final class SkyBox {
 	}
 
 	@OriginalMember(owner = "client!eh", name = "a", descriptor = "(IIIIIIII)V")
-	public final void method1024(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6) {
+	public void method1024(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6) {
 		this.method1029(arg4);
 		arg6 = arg6 + arg0 & 0x7FF;
 		if (this.textureId == -1) {
@@ -97,7 +97,7 @@ public final class SkyBox {
 	}
 
 	@OriginalMember(owner = "client!eh", name = "b", descriptor = "(IIIIIIII)V")
-	public final void method1025(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int clearColor) {
+	public void method1025(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int clearColor) {
 		@Pc(1) GL gl = GlRenderer.gl;
 		this.method1029(arg4);
 		arg6 = arg6 + arg0 & 0x7FF;

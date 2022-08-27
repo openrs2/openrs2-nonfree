@@ -23,7 +23,7 @@ public final class TextureOpMonochromeFill extends TextureOp {
 
 	@OriginalMember(owner = "client!qb", name = "a", descriptor = "(BLclient!fd;I)V")
 	@Override
-	public final void decode(@OriginalArg(1) Buffer buffer, @OriginalArg(2) int code) {
+	public void decode(@OriginalArg(1) Buffer buffer, @OriginalArg(2) int code) {
 		if (code == 0) {
 			this.value = (buffer.readUnsignedByte() << 12) / 255;
 		}
@@ -31,7 +31,7 @@ public final class TextureOpMonochromeFill extends TextureOp {
 
 	@OriginalMember(owner = "client!qb", name = "a", descriptor = "(II)[I")
 	@Override
-	public final int[] getMonochromeOutput(@OriginalArg(1) int y) {
+	public int[] getMonochromeOutput(@OriginalArg(1) int y) {
 		@Pc(15) int[] dest = this.monochromeImageCache.get(y);
 		if (this.monochromeImageCache.invalid) {
 			ArrayUtils.fill(dest, 0, Texture.width, this.value);

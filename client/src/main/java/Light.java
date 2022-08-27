@@ -118,7 +118,7 @@ public final class Light {
 	}
 
 	@OriginalMember(owner = "client!em", name = "a", descriptor = "(IIIII)V")
-	public final void setFunction(@OriginalArg(3) int function, @OriginalArg(4) int frequency, @OriginalArg(2) int alphaMin, @OriginalArg(0) int alphaMax) {
+	public void setFunction(@OriginalArg(3) int function, @OriginalArg(4) int frequency, @OriginalArg(2) int alphaMin, @OriginalArg(0) int alphaMax) {
 		this.function = function;
 		this.frequency = frequency;
 		this.alphaMin = alphaMin;
@@ -218,7 +218,7 @@ public final class Light {
 	}
 
 	@OriginalMember(owner = "client!em", name = "a", descriptor = "(ZZI)V")
-	public final void method1076(@OriginalArg(2) int loop, @OriginalArg(0) boolean disableFlicker) {
+	public void method1076(@OriginalArg(2) int loop, @OriginalArg(0) boolean disableFlicker) {
 		@Pc(22) int t = this.phase + this.frequency * loop / 50 & 0x7FF;
 		@Pc(25) int function = this.function;
 		@Pc(56) int alpha;

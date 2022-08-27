@@ -35,7 +35,7 @@ public final class Js5 {
 	}
 
 	@OriginalMember(owner = "client!fh", name = "a", descriptor = "(Ljava/lang/String;BLjava/lang/String;)Z")
-	public final boolean isFileReady(@OriginalArg(0) String group, @OriginalArg(2) String file) {
+	public boolean isFileReady(@OriginalArg(0) String group, @OriginalArg(2) String file) {
 		if (!this.isIndexReady()) {
 			return false;
 		}
@@ -56,7 +56,7 @@ public final class Js5 {
 	}
 
 	@OriginalMember(owner = "client!fh", name = "a", descriptor = "(Ljava/lang/String;B)I")
-	public final int getPercentageComplete(@OriginalArg(0) String group) {
+	public int getPercentageComplete(@OriginalArg(0) String group) {
 		if (this.isIndexReady()) {
 			group = group.toLowerCase();
 			@Pc(30) int groupId = this.index.groupNameHashTable.get(StringUtils.hashCode(group));
@@ -67,7 +67,7 @@ public final class Js5 {
 	}
 
 	@OriginalMember(owner = "client!fh", name = "a", descriptor = "(IZ)[B")
-	public final byte[] fetchFile(@OriginalArg(0) int id) {
+	public byte[] fetchFile(@OriginalArg(0) int id) {
 		if (!this.isIndexReady()) {
 			return null;
 		} else if (this.index.groupCapacities.length == 1) {
@@ -82,7 +82,7 @@ public final class Js5 {
 	}
 
 	@OriginalMember(owner = "client!fh", name = "a", descriptor = "(Ljava/lang/String;I)Z")
-	public final boolean isGroupNameValid(@OriginalArg(0) String group) {
+	public boolean isGroupNameValid(@OriginalArg(0) String group) {
 		if (this.isIndexReady()) {
 			group = group.toLowerCase();
 			@Pc(27) int groupId = this.index.groupNameHashTable.get(StringUtils.hashCode(group));
@@ -93,7 +93,7 @@ public final class Js5 {
 	}
 
 	@OriginalMember(owner = "client!fh", name = "a", descriptor = "(I)I")
-	public final int getPercentageComplete() {
+	public int getPercentageComplete() {
 		if (!this.isIndexReady()) {
 			return 0;
 		}
@@ -135,7 +135,7 @@ public final class Js5 {
 	}
 
 	@OriginalMember(owner = "client!fh", name = "c", descriptor = "(I)V")
-	public final void discardUnpacked() {
+	public void discardUnpacked() {
 		if (this.unpacked != null) {
 			for (@Pc(11) int i = 0; i < this.unpacked.length; i++) {
 				this.unpacked[i] = null;
@@ -144,7 +144,7 @@ public final class Js5 {
 	}
 
 	@OriginalMember(owner = "client!fh", name = "a", descriptor = "(ZII)[B")
-	public final byte[] fetchFileNoDiscard(@OriginalArg(2) int group, @OriginalArg(1) int file) {
+	public byte[] fetchFileNoDiscard(@OriginalArg(2) int group, @OriginalArg(1) int file) {
 		if (!this.isFileValid(group, file)) {
 			return null;
 		}
@@ -162,7 +162,7 @@ public final class Js5 {
 	}
 
 	@OriginalMember(owner = "client!fh", name = "d", descriptor = "(I)I")
-	public final int capacity() {
+	public int capacity() {
 		return this.isIndexReady() ? this.index.groupCapacities.length : -1;
 	}
 
@@ -299,7 +299,7 @@ public final class Js5 {
 	}
 
 	@OriginalMember(owner = "client!fh", name = "a", descriptor = "(IB)Z")
-	public final boolean isGroupReady(@OriginalArg(0) int group) {
+	public boolean isGroupReady(@OriginalArg(0) int group) {
 		if (!this.isGroupValid(group)) {
 			return false;
 		} else if (this.packed[group] == null) {
@@ -311,7 +311,7 @@ public final class Js5 {
 	}
 
 	@OriginalMember(owner = "client!fh", name = "a", descriptor = "(ZZB)V")
-	public final void discardNames(@OriginalArg(0) boolean groups) {
+	public void discardNames(@OriginalArg(0) boolean groups) {
 		if (!this.isIndexReady()) {
 			return;
 		}
@@ -324,7 +324,7 @@ public final class Js5 {
 	}
 
 	@OriginalMember(owner = "client!fh", name = "a", descriptor = "(ILjava/lang/String;)V")
-	public final void prefetchGroup(@OriginalArg(1) String group) {
+	public void prefetchGroup(@OriginalArg(1) String group) {
 		if (this.isIndexReady()) {
 			group = group.toLowerCase();
 			@Pc(32) int groupId = this.index.groupNameHashTable.get(StringUtils.hashCode(group));
@@ -333,7 +333,7 @@ public final class Js5 {
 	}
 
 	@OriginalMember(owner = "client!fh", name = "a", descriptor = "(ILjava/lang/String;Ljava/lang/String;)[B")
-	public final byte[] fetchFile(@OriginalArg(2) String group, @OriginalArg(1) String file) {
+	public byte[] fetchFile(@OriginalArg(2) String group, @OriginalArg(1) String file) {
 		if (!this.isIndexReady()) {
 			return null;
 		}
@@ -349,7 +349,7 @@ public final class Js5 {
 	}
 
 	@OriginalMember(owner = "client!fh", name = "d", descriptor = "(II)Z")
-	public final boolean isFileReady(@OriginalArg(0) int id) {
+	public boolean isFileReady(@OriginalArg(0) int id) {
 		if (!this.isIndexReady()) {
 			return false;
 		} else if (this.index.groupCapacities.length == 1) {
@@ -364,7 +364,7 @@ public final class Js5 {
 	}
 
 	@OriginalMember(owner = "client!fh", name = "a", descriptor = "(Z)Z")
-	public final boolean fetchAll() {
+	public boolean fetchAll() {
 		if (!this.isIndexReady()) {
 			return false;
 		}
@@ -382,7 +382,7 @@ public final class Js5 {
 	}
 
 	@OriginalMember(owner = "client!fh", name = "a", descriptor = "(II[II)[B")
-	public final byte[] fetchFile(@OriginalArg(1) int group, @OriginalArg(0) int file, @OriginalArg(2) int[] key) {
+	public byte[] fetchFile(@OriginalArg(1) int group, @OriginalArg(0) int file, @OriginalArg(2) int[] key) {
 		if (!this.isFileValid(group, file)) {
 			return null;
 		}
@@ -407,7 +407,7 @@ public final class Js5 {
 	}
 
 	@OriginalMember(owner = "client!fh", name = "a", descriptor = "(ZLjava/lang/String;)I")
-	public final int getGroupId(@OriginalArg(1) String group) {
+	public int getGroupId(@OriginalArg(1) String group) {
 		if (this.isIndexReady()) {
 			group = group.toLowerCase();
 			@Pc(22) int groupId = this.index.groupNameHashTable.get(StringUtils.hashCode(group));
@@ -418,7 +418,7 @@ public final class Js5 {
 	}
 
 	@OriginalMember(owner = "client!fh", name = "a", descriptor = "(ZI)[I")
-	public final int[] getFileIds(@OriginalArg(1) int group) {
+	public int[] getFileIds(@OriginalArg(1) int group) {
 		if (!this.isGroupValid(group)) {
 			return null;
 		}
@@ -434,7 +434,7 @@ public final class Js5 {
 	}
 
 	@OriginalMember(owner = "client!fh", name = "b", descriptor = "(Ljava/lang/String;I)Z")
-	public final boolean isGroupReady(@OriginalArg(0) String group) {
+	public boolean isGroupReady(@OriginalArg(0) String group) {
 		if (this.isIndexReady()) {
 			group = group.toLowerCase();
 			@Pc(28) int groupId = this.index.groupNameHashTable.get(StringUtils.hashCode(group));
@@ -458,7 +458,7 @@ public final class Js5 {
 	}
 
 	@OriginalMember(owner = "client!fh", name = "b", descriptor = "(IB)I")
-	public final int getGroupId(@OriginalArg(0) int groupNameHash) {
+	public int getGroupId(@OriginalArg(0) int groupNameHash) {
 		if (this.isIndexReady()) {
 			@Pc(17) int groupId = this.index.groupNameHashTable.get(groupNameHash);
 			return this.isGroupValid(groupId) ? groupId : -1;
@@ -468,14 +468,14 @@ public final class Js5 {
 	}
 
 	@OriginalMember(owner = "client!fh", name = "b", descriptor = "(ZI)V")
-	public final void discardUnpacked(@OriginalArg(1) int group) {
+	public void discardUnpacked(@OriginalArg(1) int group) {
 		if (this.isGroupValid(group) && this.unpacked != null) {
 			this.unpacked[group] = null;
 		}
 	}
 
 	@OriginalMember(owner = "client!fh", name = "e", descriptor = "(I)I")
-	public final int getChecksum() {
+	public int getChecksum() {
 		if (!this.isIndexReady()) {
 			throw new IllegalStateException("");
 		}
@@ -483,7 +483,7 @@ public final class Js5 {
 	}
 
 	@OriginalMember(owner = "client!fh", name = "a", descriptor = "(IZI)Z")
-	public final boolean isFileReady(@OriginalArg(0) int group, @OriginalArg(2) int file) {
+	public boolean isFileReady(@OriginalArg(0) int group, @OriginalArg(2) int file) {
 		if (!this.isFileValid(group, file)) {
 			return false;
 		} else if (this.unpacked[group] != null && this.unpacked[group][file] != null) {
@@ -497,12 +497,12 @@ public final class Js5 {
 	}
 
 	@OriginalMember(owner = "client!fh", name = "g", descriptor = "(II)I")
-	public final int getGroupCapacity(@OriginalArg(0) int group) {
+	public int getGroupCapacity(@OriginalArg(0) int group) {
 		return this.isGroupValid(group) ? this.index.groupCapacities[group] : 0;
 	}
 
 	@OriginalMember(owner = "client!fh", name = "a", descriptor = "(IBI)[B")
-	public final byte[] fetchFile(@OriginalArg(0) int group, @OriginalArg(2) int file) {
+	public byte[] fetchFile(@OriginalArg(0) int group, @OriginalArg(2) int file) {
 		return this.fetchFile(group, file, null);
 	}
 }

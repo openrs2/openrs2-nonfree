@@ -21,44 +21,44 @@ public final class Packet extends Buffer {
 	}
 
 	@OriginalMember(owner = "client!wa", name = "a", descriptor = "([II)V")
-	public final void setKey(@OriginalArg(0) int[] key) {
+	public void setKey(@OriginalArg(0) int[] key) {
 		this.cipher = new IsaacRandom(key);
 	}
 
 	@OriginalMember(owner = "client!wa", name = "q", descriptor = "(I)V")
-	public final void startBitAccess() {
+	public void startBitAccess() {
 		this.bitPosition = this.position * 8;
 	}
 
 	@OriginalMember(owner = "client!wa", name = "r", descriptor = "(I)V")
-	public final void finishBitAccess() {
+	public void finishBitAccess() {
 		this.position = (this.bitPosition + 7) / 8;
 	}
 
 	@OriginalMember(owner = "client!wa", name = "e", descriptor = "(Z)I")
-	public final int readOpcode() {
+	public int readOpcode() {
 		return this.bytes[this.position++] - this.cipher.nextInt() & 0xFF;
 	}
 
 	@OriginalMember(owner = "client!wa", name = "a", descriptor = "(I[BII)V")
-	public final void readEncryptedBytes(@OriginalArg(1) byte[] bytes, @OriginalArg(2) int len) {
+	public void readEncryptedBytes(@OriginalArg(1) byte[] bytes, @OriginalArg(2) int len) {
 		for (@Pc(7) int i = 0; i < len; i++) {
 			bytes[i] = (byte) (this.bytes[this.position++] - this.cipher.nextInt());
 		}
 	}
 
 	@OriginalMember(owner = "client!wa", name = "m", descriptor = "(II)V")
-	public final void writeOpcode(@OriginalArg(1) int opcode) {
+	public void writeOpcode(@OriginalArg(1) int opcode) {
 		this.bytes[this.position++] = (byte) (this.cipher.nextInt() + opcode);
 	}
 
 	@OriginalMember(owner = "client!wa", name = "n", descriptor = "(II)I")
-	public final int readableBits(@OriginalArg(0) int position) {
+	public int readableBits(@OriginalArg(0) int position) {
 		return position * 8 - this.bitPosition;
 	}
 
 	@OriginalMember(owner = "client!wa", name = "o", descriptor = "(II)I")
-	public final int readBits(@OriginalArg(0) int bits) {
+	public int readBits(@OriginalArg(0) int bits) {
 		@Pc(13) int bitPos = 8 - (this.bitPosition & 0x7);
 		@Pc(18) int bytePos = this.bitPosition >> 3;
 		this.bitPosition += bits;

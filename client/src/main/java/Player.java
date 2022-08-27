@@ -200,7 +200,7 @@ public final class Player extends PathingEntity {
 	public int prayerIcon = -1;
 
 	@OriginalMember(owner = "client!f", name = "a", descriptor = "(Lclient!fd;B)V")
-	public final void decodeAppearance(@OriginalArg(0) Buffer buffer) {
+	public void decodeAppearance(@OriginalArg(0) Buffer buffer) {
 		buffer.position = 0;
 		@Pc(16) int npcId = -1;
 		@Pc(20) int flags = buffer.readUnsignedByte();
@@ -298,13 +298,13 @@ public final class Player extends PathingEntity {
 
 	@OriginalMember(owner = "client!f", name = "b", descriptor = "()I")
 	@Override
-	public final int getMinY() {
+	public int getMinY() {
 		return this.minY;
 	}
 
 	@OriginalMember(owner = "client!f", name = "a", descriptor = "(IIIII)V")
 	@Override
-	public final void method3806(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4) {
+	public void method3806(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4) {
 		if (!this.aBoolean285) {
 			if (this.appearance == null) {
 				return;
@@ -324,13 +324,13 @@ public final class Player extends PathingEntity {
 
 	@OriginalMember(owner = "client!f", name = "a", descriptor = "(Z)I")
 	@Override
-	protected final int getBasId() {
+	protected int getBasId() {
 		return this.basId;
 	}
 
 	@OriginalMember(owner = "client!f", name = "a", descriptor = "(IIIIIIIIJILclient!ne;)V")
 	@Override
-	public final void method3805(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) long arg8, @OriginalArg(9) int arg9, @OriginalArg(10) ParticleSystem arg10) {
+	public void method3805(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) long arg8, @OriginalArg(9) int arg9, @OriginalArg(10) ParticleSystem arg10) {
 		if (this.appearance == null) {
 			return;
 		}
@@ -482,12 +482,12 @@ public final class Player extends PathingEntity {
 
 	@OriginalMember(owner = "client!f", name = "d", descriptor = "(I)Z")
 	@Override
-	public final boolean isVisible() {
+	public boolean isVisible() {
 		return this.appearance != null;
 	}
 
 	@OriginalMember(owner = "client!f", name = "d", descriptor = "(B)Ljava/lang/String;")
-	public final String getName() {
+	public String getName() {
 		@Pc(11) String name = this.username;
 		if (TITLE_PREFIXES != null) {
 			name = TITLE_PREFIXES[this.title] + name;
@@ -500,20 +500,20 @@ public final class Player extends PathingEntity {
 
 	@OriginalMember(owner = "client!f", name = "e", descriptor = "(I)I")
 	@Override
-	public final int getSize() {
+	public int getSize() {
 		return this.appearance == null || this.appearance.npcId == -1 ? super.getSize() : NpcTypeList.get(this.appearance.npcId).size;
 	}
 
 	@OriginalMember(owner = "client!f", name = "finalize", descriptor = "()V")
 	@Override
-	public final void finalize() {
+	public void finalize() {
 		if (this.particleSystem != null) {
 			this.particleSystem.remove();
 		}
 	}
 
 	@OriginalMember(owner = "client!f", name = "a", descriptor = "(IZBI)V")
-	public final void teleport(@OriginalArg(3) int x, @OriginalArg(0) int z, @OriginalArg(1) boolean clearMovementQueue) {
+	public void teleport(@OriginalArg(3) int x, @OriginalArg(0) int z, @OriginalArg(1) boolean clearMovementQueue) {
 		super.teleport(x, z, clearMovementQueue, this.getSize());
 	}
 

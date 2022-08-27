@@ -35,7 +35,7 @@ public final class UnpackerClassLoader extends ClassLoader {
 
 	@OriginalMember(owner = "loader!d", name = "loadClass", descriptor = "(Ljava/lang/String;Z)Ljava/lang/Class;")
 	@Override
-	protected final synchronized Class<?> loadClass(@OriginalArg(0) String name, @OriginalArg(1) boolean resolve) throws ClassNotFoundException {
+	protected synchronized Class<?> loadClass(@OriginalArg(0) String name, @OriginalArg(1) boolean resolve) throws ClassNotFoundException {
 		@Pc(5) Class<?> cachedClass = this.cache.get(name);
 		if (cachedClass != null) {
 			return cachedClass;

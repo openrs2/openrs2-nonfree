@@ -184,7 +184,7 @@ public final class NpcType {
 	public boolean aBoolean359 = false;
 
 	@OriginalMember(owner = "client!ua", name = "a", descriptor = "(I)Z")
-	public final boolean isMultiNpcValid() {
+	public boolean isMultiNpcValid() {
 		if (this.multiNpcs == null) {
 			return true;
 		}
@@ -203,7 +203,7 @@ public final class NpcType {
 	}
 
 	@OriginalMember(owner = "client!ua", name = "a", descriptor = "(IILjava/lang/String;)Ljava/lang/String;")
-	public final String getParam(@OriginalArg(1) int id, @OriginalArg(2) String defaultValue) {
+	public String getParam(@OriginalArg(1) int id, @OriginalArg(2) String defaultValue) {
 		if (this.params == null) {
 			return defaultValue;
 		} else {
@@ -398,7 +398,7 @@ public final class NpcType {
 	}
 
 	@OriginalMember(owner = "client!ua", name = "b", descriptor = "(I)Z")
-	public final boolean hasAreaSound() {
+	public boolean hasAreaSound() {
 		if (this.multiNpcs == null) {
 			return this.idleSound != -1 || this.walkSound != -1 || this.runSound != -1;
 		}
@@ -414,11 +414,11 @@ public final class NpcType {
 	}
 
 	@OriginalMember(owner = "client!ua", name = "c", descriptor = "(I)V")
-	public final void postDecode() {
+	public void postDecode() {
 	}
 
 	@OriginalMember(owner = "client!ua", name = "b", descriptor = "(III)I")
-	public final int getParam(@OriginalArg(2) int id, @OriginalArg(1) int defaultValue) {
+	public int getParam(@OriginalArg(2) int id, @OriginalArg(1) int defaultValue) {
 		if (this.params == null) {
 			return defaultValue;
 		} else {
@@ -428,7 +428,7 @@ public final class NpcType {
 	}
 
 	@OriginalMember(owner = "client!ua", name = "a", descriptor = "(Lclient!fd;B)V")
-	public final void decode(@OriginalArg(0) Buffer buffer) {
+	public void decode(@OriginalArg(0) Buffer buffer) {
 		while (true) {
 			@Pc(17) int code = buffer.readUnsignedByte();
 			if (code == 0) {
@@ -439,7 +439,7 @@ public final class NpcType {
 	}
 
 	@OriginalMember(owner = "client!ua", name = "d", descriptor = "(I)Lclient!ua;")
-	public final NpcType getMultiNpc() {
+	public NpcType getMultiNpc() {
 		@Pc(13) int value = -1;
 		if (this.multiNpcVarbit != -1) {
 			value = VarpDomain.getVarbit(this.multiNpcVarbit);
@@ -455,7 +455,7 @@ public final class NpcType {
 	}
 
 	@OriginalMember(owner = "client!ua", name = "a", descriptor = "(ILclient!eg;BII)Lclient!vg;")
-	public final Model getHeadModel(@OriginalArg(0) int arg0, @OriginalArg(1) SeqType arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3) {
+	public Model getHeadModel(@OriginalArg(0) int arg0, @OriginalArg(1) SeqType arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3) {
 		if (this.multiNpcs != null) {
 			@Pc(13) NpcType type = this.getMultiNpc();
 			return type == null ? null : type.getHeadModel(arg0, arg1, arg2, arg3);
@@ -508,7 +508,7 @@ public final class NpcType {
 	}
 
 	@OriginalMember(owner = "client!ua", name = "a", descriptor = "(IIILclient!eg;Lclient!eg;I[Lclient!re;III)Lclient!vg;")
-	public final Model getBodyModel(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(3) SeqType arg2, @OriginalArg(4) SeqType arg3, @OriginalArg(5) int arg4, @OriginalArg(6) Seq[] arg5, @OriginalArg(7) int arg6, @OriginalArg(8) int arg7, @OriginalArg(9) int arg8) {
+	public Model getBodyModel(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(3) SeqType arg2, @OriginalArg(4) SeqType arg3, @OriginalArg(5) int arg4, @OriginalArg(6) Seq[] arg5, @OriginalArg(7) int arg6, @OriginalArg(8) int arg7, @OriginalArg(9) int arg8) {
 		if (this.multiNpcs != null) {
 			@Pc(13) NpcType type = this.getMultiNpc();
 			return type == null ? null : type.getBodyModel(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);

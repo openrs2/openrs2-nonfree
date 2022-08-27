@@ -21,7 +21,7 @@ public final class BufferedImageFrameBuffer extends FrameBuffer {
 
 	@OriginalMember(owner = "client!fk", name = "a", descriptor = "(Ljava/awt/Component;IIB)V")
 	@Override
-	public final void init(@OriginalArg(0) Component component, @OriginalArg(1) int width, @OriginalArg(2) int height) {
+	public void init(@OriginalArg(0) Component component, @OriginalArg(1) int width, @OriginalArg(2) int height) {
 		this.width = width;
 		this.height = height;
 		this.pixels = new int[width * height + 1];
@@ -35,7 +35,7 @@ public final class BufferedImageFrameBuffer extends FrameBuffer {
 
 	@OriginalMember(owner = "client!fk", name = "a", descriptor = "(ZIIILjava/awt/Graphics;I)V")
 	@Override
-	public final void draw(@OriginalArg(4) Graphics graphics, @OriginalArg(5) int x, @OriginalArg(2) int y, @OriginalArg(1) int width, @OriginalArg(3) int height) {
+	public void draw(@OriginalArg(4) Graphics graphics, @OriginalArg(5) int x, @OriginalArg(2) int y, @OriginalArg(1) int width, @OriginalArg(3) int height) {
 		@Pc(6) Shape clip = graphics.getClip();
 		graphics.clipRect(x, y, width, height);
 		graphics.drawImage(this.image, 0, 0, this.component);
@@ -44,7 +44,7 @@ public final class BufferedImageFrameBuffer extends FrameBuffer {
 
 	@OriginalMember(owner = "client!fk", name = "a", descriptor = "(ILjava/awt/Graphics;BI)V")
 	@Override
-	public final void draw(@OriginalArg(1) Graphics graphics) {
+	public void draw(@OriginalArg(1) Graphics graphics) {
 		graphics.drawImage(this.image, 0, 0, this.component);
 	}
 }

@@ -46,7 +46,7 @@ public final class VorbisResidue {
 	}
 
 	@OriginalMember(owner = "client!sf", name = "a", descriptor = "([FIZ)V")
-	public final void synthesize(@OriginalArg(0) float[] vector, @OriginalArg(1) int n, @OriginalArg(2) boolean doNotDecode) {
+	public void synthesize(@OriginalArg(0) float[] vector, @OriginalArg(1) int n, @OriginalArg(2) boolean doNotDecode) {
 		for (@Pc(1) int i = 0; i < n; i++) {
 			vector[i] = 0.0F;
 		}

@@ -378,7 +378,7 @@ public final class MidiInstrument extends Node {
 	}
 
 	@OriginalMember(owner = "client!qh", name = "a", descriptor = "([ILclient!jk;I[B)Z")
-	public final boolean isReady(@OriginalArg(1) SoundBank bank, @OriginalArg(0) int[] samplingRates, @OriginalArg(3) byte[] keys) {
+	public boolean isReady(@OriginalArg(1) SoundBank bank, @OriginalArg(0) int[] samplingRates, @OriginalArg(3) byte[] keys) {
 		@Pc(15) boolean ready = true;
 		@Pc(17) int prevSoundId = 0;
 		@Pc(19) PcmSound sound = null;
@@ -409,7 +409,7 @@ public final class MidiInstrument extends Node {
 	}
 
 	@OriginalMember(owner = "client!qh", name = "a", descriptor = "(Z)V")
-	public final void release() {
+	public void release() {
 		this.soundIds = null;
 	}
 }

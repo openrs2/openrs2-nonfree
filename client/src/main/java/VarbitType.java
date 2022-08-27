@@ -16,7 +16,7 @@ public final class VarbitType {
 	public int endBit;
 
 	@OriginalMember(owner = "client!cm", name = "a", descriptor = "(Lclient!fd;B)V")
-	public final void decode(@OriginalArg(0) Buffer buffer) {
+	public void decode(@OriginalArg(0) Buffer buffer) {
 		while (true) {
 			@Pc(15) int code = buffer.readUnsignedByte();
 			if (code == 0) {

@@ -8,7 +8,7 @@ public final class BrokenInputStream extends InputStream {
 
 	@OriginalMember(owner = "client!ia", name = "read", descriptor = "()I")
 	@Override
-	public final int read() {
+	public int read() {
 		ThreadUtils.sleep(30000L);
 		return -1;
 	}

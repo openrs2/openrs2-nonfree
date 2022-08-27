@@ -25,7 +25,7 @@ public final class TextureOpTexture extends TextureOp {
 
 	@OriginalMember(owner = "client!fi", name = "b", descriptor = "(II)[[I")
 	@Override
-	public final int[][] getColorOutput(@OriginalArg(0) int y) {
+	public int[][] getColorOutput(@OriginalArg(0) int y) {
 		@Pc(11) int[][] dest = this.colorImageCache.get(y);
 		if (this.colorImageCache.invalid && this.loadTexture()) {
 			@Pc(39) int index = this.width * (Texture.height == this.height ? y : y * this.height / Texture.height);
@@ -72,7 +72,7 @@ public final class TextureOpTexture extends TextureOp {
 
 	@OriginalMember(owner = "client!fi", name = "a", descriptor = "(BLclient!fd;I)V")
 	@Override
-	public final void decode(@OriginalArg(1) Buffer buffer, @OriginalArg(2) int code) {
+	public void decode(@OriginalArg(1) Buffer buffer, @OriginalArg(2) int code) {
 		if (code == 0) {
 			this.textureId = buffer.readUnsignedShort();
 		}
@@ -80,14 +80,14 @@ public final class TextureOpTexture extends TextureOp {
 
 	@OriginalMember(owner = "client!fi", name = "e", descriptor = "(I)V")
 	@Override
-	public final void clearImageCache() {
+	public void clearImageCache() {
 		super.clearImageCache();
 		this.pixels = null;
 	}
 
 	@OriginalMember(owner = "client!fi", name = "d", descriptor = "(B)I")
 	@Override
-	public final int getTextureId() {
+	public int getTextureId() {
 		return this.textureId;
 	}
 }

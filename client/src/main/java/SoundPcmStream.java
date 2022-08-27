@@ -762,7 +762,7 @@ public final class SoundPcmStream extends PcmStream {
 	}
 
 	@OriginalMember(owner = "client!pc", name = "a", descriptor = "(III)V")
-	public final synchronized void method3352(@OriginalArg(0) int arg0, @OriginalArg(1) int volume, @OriginalArg(2) int pan) {
+	public synchronized void method3352(@OriginalArg(0) int arg0, @OriginalArg(1) int volume, @OriginalArg(2) int pan) {
 		if (arg0 == 0) {
 			this.method3386(volume, pan);
 			return;
@@ -801,7 +801,7 @@ public final class SoundPcmStream extends PcmStream {
 	}
 
 	@OriginalMember(owner = "client!pc", name = "c", descriptor = "(I)V")
-	public final synchronized void method3353(@OriginalArg(0) int arg0) {
+	public synchronized void method3353(@OriginalArg(0) int arg0) {
 		if (this.anInt4095 < 0) {
 			this.anInt4095 = -arg0;
 		} else {
@@ -811,7 +811,7 @@ public final class SoundPcmStream extends PcmStream {
 
 	@OriginalMember(owner = "client!pc", name = "b", descriptor = "()I")
 	@Override
-	public final int method3347() {
+	public int method3347() {
 		@Pc(6) int local6 = this.anInt4096 * 3 >> 6;
 		@Pc(16) int local16 = (local6 ^ local6 >> 31) + (local6 >>> 31);
 		if (this.loops == 0) {
@@ -877,12 +877,12 @@ public final class SoundPcmStream extends PcmStream {
 	}
 
 	@OriginalMember(owner = "client!pc", name = "d", descriptor = "(I)V")
-	public final synchronized void setLoops(@OriginalArg(0) int loops) {
+	public synchronized void setLoops(@OriginalArg(0) int loops) {
 		this.loops = loops;
 	}
 
 	@OriginalMember(owner = "client!pc", name = "e", descriptor = "(I)V")
-	public final synchronized void method3360(@OriginalArg(0) int arg0) {
+	public synchronized void method3360(@OriginalArg(0) int arg0) {
 		if (arg0 == 0) {
 			this.method3382();
 			this.unlink();
@@ -921,7 +921,7 @@ public final class SoundPcmStream extends PcmStream {
 
 	@OriginalMember(owner = "client!pc", name = "b", descriptor = "(I)V")
 	@Override
-	public final synchronized void skip(@OriginalArg(0) int len) {
+	public synchronized void skip(@OriginalArg(0) int len) {
 		if (this.anInt4105 > 0) {
 			if (len >= this.anInt4105) {
 				if (this.volume == Integer.MIN_VALUE) {
@@ -1067,19 +1067,19 @@ public final class SoundPcmStream extends PcmStream {
 	}
 
 	@OriginalMember(owner = "client!pc", name = "a", descriptor = "(Z)V")
-	public final synchronized void method3364() {
+	public synchronized void method3364() {
 		this.anInt4095 = (this.anInt4095 ^ this.anInt4095 >> 31) + (this.anInt4095 >>> 31);
 		this.anInt4095 = -this.anInt4095;
 	}
 
 	@OriginalMember(owner = "client!pc", name = "f", descriptor = "()Z")
-	public final boolean method3365() {
+	public boolean method3365() {
 		return this.anInt4100 < 0 || this.anInt4100 >= ((PcmSound) this.sound).samples.length << 8;
 	}
 
 	@OriginalMember(owner = "client!pc", name = "c", descriptor = "()Lclient!tf;")
 	@Override
-	public final PcmStream nextSubStream() {
+	public PcmStream nextSubStream() {
 		return null;
 	}
 
@@ -1145,12 +1145,12 @@ public final class SoundPcmStream extends PcmStream {
 	}
 
 	@OriginalMember(owner = "client!pc", name = "h", descriptor = "()I")
-	public final synchronized int method3368() {
+	public synchronized int method3368() {
 		return this.anInt4095 < 0 ? -this.anInt4095 : this.anInt4095;
 	}
 
 	@OriginalMember(owner = "client!pc", name = "f", descriptor = "(I)V")
-	public final synchronized void method3369(@OriginalArg(0) int arg0) {
+	public synchronized void method3369(@OriginalArg(0) int arg0) {
 		@Pc(7) int local7 = ((PcmSound) this.sound).samples.length << 8;
 		if (arg0 < -1) {
 			arg0 = -1;
@@ -1169,22 +1169,22 @@ public final class SoundPcmStream extends PcmStream {
 	}
 
 	@OriginalMember(owner = "client!pc", name = "j", descriptor = "()Z")
-	public final boolean method3372() {
+	public boolean method3372() {
 		return this.anInt4105 != 0;
 	}
 
 	@OriginalMember(owner = "client!pc", name = "g", descriptor = "(I)V")
-	public final synchronized void setVolume(@OriginalArg(0) int volume) {
+	public synchronized void setVolume(@OriginalArg(0) int volume) {
 		this.method3386(volume << 6, this.getPan());
 	}
 
 	@OriginalMember(owner = "client!pc", name = "c", descriptor = "(II)V")
-	public final synchronized void method3379(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
+	public synchronized void method3379(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
 		this.method3352(arg0, arg1, this.getPan());
 	}
 
 	@OriginalMember(owner = "client!pc", name = "k", descriptor = "()I")
-	public final synchronized int getVolume() {
+	public synchronized int getVolume() {
 		return this.volume == Integer.MIN_VALUE ? 0 : this.volume;
 	}
 
@@ -1245,18 +1245,18 @@ public final class SoundPcmStream extends PcmStream {
 
 	@OriginalMember(owner = "client!pc", name = "d", descriptor = "()Lclient!tf;")
 	@Override
-	public final PcmStream firstSubStream() {
+	public PcmStream firstSubStream() {
 		return null;
 	}
 
 	@OriginalMember(owner = "client!pc", name = "l", descriptor = "()I")
-	public final synchronized int getPan() {
+	public synchronized int getPan() {
 		return this.pan < 0 ? -1 : this.pan;
 	}
 
 	@OriginalMember(owner = "client!pc", name = "a", descriptor = "([III)V")
 	@Override
-	public final synchronized void read(@OriginalArg(0) int[] samples, @OriginalArg(1) int off, @OriginalArg(2) int len) {
+	public synchronized void read(@OriginalArg(0) int[] samples, @OriginalArg(1) int off, @OriginalArg(2) int len) {
 		if (this.volume == 0 && this.anInt4105 == 0) {
 			this.skip(len);
 			return;
@@ -1412,7 +1412,7 @@ public final class SoundPcmStream extends PcmStream {
 
 	@OriginalMember(owner = "client!pc", name = "a", descriptor = "()I")
 	@Override
-	public final int method3346() {
+	public int method3346() {
 		return this.volume == 0 && this.anInt4105 == 0 ? 0 : 1;
 	}
 }

@@ -31,7 +31,7 @@ public final class FluType {
 	public int anInt4068 = 128;
 
 	@OriginalMember(owner = "client!pa", name = "a", descriptor = "(Lclient!fd;II)V")
-	public final void decode(@OriginalArg(0) Buffer buffer, @OriginalArg(2) int id) {
+	public void decode(@OriginalArg(0) Buffer buffer, @OriginalArg(2) int id) {
 		while (true) {
 			@Pc(13) int code = buffer.readUnsignedByte();
 			if (code == 0) {

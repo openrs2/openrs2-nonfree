@@ -13,7 +13,7 @@ public final class DirectByteArray extends ByteArray {
 
 	@OriginalMember(owner = "client!ki", name = "a", descriptor = "(I)[B")
 	@Override
-	protected final byte[] get() {
+	protected byte[] get() {
 		@Pc(4) byte[] bytes = new byte[this.buffer.capacity()];
 		this.buffer.position(0);
 		this.buffer.get(bytes);
@@ -22,7 +22,7 @@ public final class DirectByteArray extends ByteArray {
 
 	@OriginalMember(owner = "client!ki", name = "a", descriptor = "(I[B)V")
 	@Override
-	protected final void set(@OriginalArg(1) byte[] bytes) {
+	protected void set(@OriginalArg(1) byte[] bytes) {
 		this.buffer = ByteBuffer.allocateDirect(bytes.length);
 		this.buffer.position(0);
 		this.buffer.put(bytes);

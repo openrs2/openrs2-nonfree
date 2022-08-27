@@ -32,7 +32,7 @@ public final class NanoTimer extends Timer {
 
 	@OriginalMember(owner = "client!hf", name = "c", descriptor = "(I)V")
 	@Override
-	public final void reset() {
+	public void reset() {
 		this.previousFrame = 0L;
 		if (this.nextFrame > this.time) {
 			this.time += this.nextFrame - this.time;
@@ -41,7 +41,7 @@ public final class NanoTimer extends Timer {
 
 	@OriginalMember(owner = "client!hf", name = "d", descriptor = "(I)J")
 	@Override
-	public final long time() {
+	public long time() {
 		return this.time;
 	}
 
@@ -66,7 +66,7 @@ public final class NanoTimer extends Timer {
 
 	@OriginalMember(owner = "client!hf", name = "a", descriptor = "(III)I")
 	@Override
-	public final int sleep(@OriginalArg(0) int minimumDelay, @OriginalArg(2) int timePerFrame) {
+	public int sleep(@OriginalArg(0) int minimumDelay, @OriginalArg(2) int timePerFrame) {
 		ThreadUtils.sleep(minimumDelay);
 		@Pc(15) long timePerFrameNanos = (long) timePerFrame * 1000000L;
 		this.time += this.getDuration();

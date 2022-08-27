@@ -116,7 +116,7 @@ public final class ProjAnim extends Entity {
 	}
 
 	@OriginalMember(owner = "client!oc", name = "a", descriptor = "(II)V")
-	public final void method3103(@OriginalArg(0) int arg0) {
+	public void method3103(@OriginalArg(0) int arg0) {
 		this.aDouble10 += this.aDouble6 * (double) arg0;
 		this.aBoolean268 = true;
 		if (this.anInt3727 == -1) {
@@ -156,7 +156,7 @@ public final class ProjAnim extends Entity {
 
 	@OriginalMember(owner = "client!oc", name = "a", descriptor = "(IIIIIIIIJILclient!ne;)V")
 	@Override
-	public final void method3805(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) long arg8, @OriginalArg(9) int arg9, @OriginalArg(10) ParticleSystem arg10) {
+	public void method3805(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) long arg8, @OriginalArg(9) int arg9, @OriginalArg(10) ParticleSystem arg10) {
 		@Pc(7) Model model = this.getModel();
 		if (model != null) {
 			this.method3106(model);
@@ -166,7 +166,7 @@ public final class ProjAnim extends Entity {
 	}
 
 	@OriginalMember(owner = "client!oc", name = "b", descriptor = "(IIIII)V")
-	public final void setTarget(@OriginalArg(1) int targetY, @OriginalArg(2) int targetXFine, @OriginalArg(3) int loop, @OriginalArg(4) int targetZFine) {
+	public void setTarget(@OriginalArg(1) int targetY, @OriginalArg(2) int targetXFine, @OriginalArg(3) int loop, @OriginalArg(4) int targetZFine) {
 		if (!this.aBoolean268) {
 			@Pc(14) double dx = (double) (targetXFine - this.xFine);
 			@Pc(21) double dz = (double) (targetZFine - this.zFine);
@@ -213,7 +213,7 @@ public final class ProjAnim extends Entity {
 
 	@OriginalMember(owner = "client!oc", name = "b", descriptor = "()I")
 	@Override
-	public final int getMinY() {
+	public int getMinY() {
 		return this.minY;
 	}
 
@@ -231,7 +231,7 @@ public final class ProjAnim extends Entity {
 
 	@OriginalMember(owner = "client!oc", name = "a", descriptor = "(IIIII)V")
 	@Override
-	public final void method3806(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4) {
+	public void method3806(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4) {
 		if (!this.aBoolean267) {
 			@Pc(11) Model model = this.getModel();
 			if (model == null) {

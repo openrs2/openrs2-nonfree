@@ -72,7 +72,7 @@ public final class WorldMapFont {
 	}
 
 	@OriginalMember(owner = "client!kk", name = "a", descriptor = "(Ljava/lang/String;)I")
-	public final int getStringWidth(@OriginalArg(0) String s) {
+	public int getStringWidth(@OriginalArg(0) String s) {
 		@Pc(1) int width = 0;
 		for (@Pc(3) int i = 0; i < s.length(); i++) {
 			if (s.charAt(i) == '@' && i + 4 < s.length() && s.charAt(i + 4) == '@') {
@@ -132,12 +132,12 @@ public final class WorldMapFont {
 	}
 
 	@OriginalMember(owner = "client!kk", name = "a", descriptor = "()I")
-	public final int method2328() {
+	public int method2328() {
 		return this.data[6];
 	}
 
 	@OriginalMember(owner = "client!kk", name = "a", descriptor = "(Ljava/lang/String;IIIZ)V")
-	public final void renderStringCenter(@OriginalArg(0) String s, @OriginalArg(1) int x, @OriginalArg(2) int y, @OriginalArg(3) int color) {
+	public void renderStringCenter(@OriginalArg(0) String s, @OriginalArg(1) int x, @OriginalArg(2) int y, @OriginalArg(3) int color) {
 		@Pc(5) int halfWidth = this.getStringWidth(s) / 2;
 		@Pc(8) int local8 = this.method2328();
 		if (x - halfWidth <= SoftwareRaster.clipWidth && (x + halfWidth >= SoftwareRaster.clipX && (y - local8 <= SoftwareRaster.clipHeight && y >= 0))) {
@@ -196,7 +196,7 @@ public final class WorldMapFont {
 	}
 
 	@OriginalMember(owner = "client!kk", name = "c", descriptor = "()I")
-	public final int method2332() {
+	public int method2332() {
 		return this.data[8] - 1;
 	}
 

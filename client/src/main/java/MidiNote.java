@@ -68,7 +68,7 @@ public final class MidiNote extends Node {
 	public int anInt1304;
 
 	@OriginalMember(owner = "client!ej", name = "b", descriptor = "(I)V")
-	public final void release() {
+	public void release() {
 		this.stream = null;
 		this.aClass157_1 = null;
 		this.instrument = null;

@@ -535,7 +535,7 @@ public final class Component {
 	public int aspectRatioWidth = 1;
 
 	@OriginalMember(owner = "client!wf", name = "a", descriptor = "(Ljava/lang/String;II)V")
-	public final void setOp(@OriginalArg(2) int i, @OriginalArg(0) String op) {
+	public void setOp(@OriginalArg(2) int i, @OriginalArg(0) String op) {
 		if (this.ops == null || i >= this.ops.length) {
 			@Pc(15) String[] ops = new String[i + 1];
 			if (this.ops != null) {
@@ -549,7 +549,7 @@ public final class Component {
 	}
 
 	@OriginalMember(owner = "client!wf", name = "a", descriptor = "(Lclient!eg;Lclient!qk;IBIIZ)Lclient!vg;")
-	public final Model getModel(@OriginalArg(0) SeqType arg0, @OriginalArg(1) PlayerAppearance arg1, @OriginalArg(2) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4, @OriginalArg(6) boolean arg5) {
+	public Model getModel(@OriginalArg(0) SeqType arg0, @OriginalArg(1) PlayerAppearance arg1, @OriginalArg(2) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4, @OriginalArg(6) boolean arg5) {
 		@Pc(14) int local14;
 		@Pc(17) int local17;
 		if (arg5) {
@@ -634,7 +634,7 @@ public final class Component {
 	}
 
 	@OriginalMember(owner = "client!wf", name = "a", descriptor = "(BI)Lclient!uj;")
-	public final Sprite method4724(@OriginalArg(1) int arg0) {
+	public Sprite method4724(@OriginalArg(1) int arg0) {
 		Static3.aBoolean178 = false;
 		if (arg0 < 0 || arg0 >= this.anIntArray658.length) {
 			return null;
@@ -657,7 +657,7 @@ public final class Component {
 	}
 
 	@OriginalMember(owner = "client!wf", name = "a", descriptor = "(III)V")
-	public final void setOpCursor(@OriginalArg(0) int i, @OriginalArg(1) int cursor) {
+	public void setOpCursor(@OriginalArg(0) int i, @OriginalArg(1) int cursor) {
 		if (this.opCursors == null || i >= this.opCursors.length) {
 			@Pc(23) int[] opCursors = new int[i + 1];
 			if (this.opCursors != null) {
@@ -674,12 +674,12 @@ public final class Component {
 	}
 
 	@OriginalMember(owner = "client!wf", name = "a", descriptor = "(I)Lclient!eh;")
-	public final SkyBox method4726() {
+	public SkyBox method4726() {
 		return this.anInt5972 == -1 ? null : SkyBoxTypeList.getSkyBox(this.anInt5972, this.anInt5916, this.anInt5977, this.anInt5898);
 	}
 
 	@OriginalMember(owner = "client!wf", name = "a", descriptor = "(Lclient!fd;I)V")
-	public final void decodeIf1(@OriginalArg(0) Buffer buffer) {
+	public void decodeIf1(@OriginalArg(0) Buffer buffer) {
 		this.if3 = false;
 		this.type = buffer.readUnsignedByte();
 		this.anInt5912 = buffer.readUnsignedByte();
@@ -895,7 +895,7 @@ public final class Component {
 	}
 
 	@OriginalMember(owner = "client!wf", name = "a", descriptor = "(ZB)Lclient!uj;")
-	public final Sprite method4729(@OriginalArg(0) boolean arg0) {
+	public Sprite method4729(@OriginalArg(0) boolean arg0) {
 		Static3.aBoolean178 = false;
 		@Pc(12) int local12;
 		if (arg0) {
@@ -965,7 +965,7 @@ public final class Component {
 	}
 
 	@OriginalMember(owner = "client!wf", name = "b", descriptor = "(ILclient!fd;)V")
-	public final void decodeIf3(@OriginalArg(1) Buffer buffer) {
+	public void decodeIf3(@OriginalArg(1) Buffer buffer) {
 		this.if3 = true;
 		buffer.position++;
 		this.type = buffer.readUnsignedByte();
@@ -1150,7 +1150,7 @@ public final class Component {
 	}
 
 	@OriginalMember(owner = "client!wf", name = "a", descriptor = "(IBI)V")
-	public final void swapObjs(@OriginalArg(0) int i, @OriginalArg(2) int j) {
+	public void swapObjs(@OriginalArg(0) int i, @OriginalArg(2) int j) {
 		@Pc(8) int temp = this.objTypes[i];
 		this.objTypes[i] = this.objTypes[j];
 		this.objTypes[j] = temp;
@@ -1160,7 +1160,7 @@ public final class Component {
 	}
 
 	@OriginalMember(owner = "client!wf", name = "a", descriptor = "(B[Lclient!ma;)Lclient!gl;")
-	public final Font getFont(@OriginalArg(1) IndexedSprite[] nameIcons) {
+	public Font getFont(@OriginalArg(1) IndexedSprite[] nameIcons) {
 		Static3.aBoolean178 = false;
 		if (this.textFont == -1) {
 			return null;
@@ -1180,7 +1180,7 @@ public final class Component {
 	}
 
 	@OriginalMember(owner = "client!wf", name = "c", descriptor = "(I)Z")
-	public final boolean method4738() {
+	public boolean method4738() {
 		if (this.anIntArray672 != null) {
 			return true;
 		}

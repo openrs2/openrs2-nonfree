@@ -172,7 +172,7 @@ public final class ObjType {
 	private int womanWear3 = -1;
 
 	@OriginalMember(owner = "client!td", name = "a", descriptor = "(Lclient!fd;B)V")
-	public final void decode(@OriginalArg(0) Buffer buffer) {
+	public void decode(@OriginalArg(0) Buffer buffer) {
 		while (true) {
 			@Pc(5) int code = buffer.readUnsignedByte();
 			if (code == 0) {
@@ -183,7 +183,7 @@ public final class ObjType {
 	}
 
 	@OriginalMember(owner = "client!td", name = "a", descriptor = "(ZZ)Lclient!ml;")
-	public final RawModel getBodyModel(@OriginalArg(0) boolean female) {
+	public RawModel getBodyModel(@OriginalArg(0) boolean female) {
 		@Pc(4) int wear1 = this.manWear1;
 		@Pc(11) int wear2 = this.manWear2;
 		@Pc(28) int wear3 = this.manWear3;
@@ -227,7 +227,7 @@ public final class ObjType {
 	}
 
 	@OriginalMember(owner = "client!td", name = "a", descriptor = "(Lclient!td;Lclient!td;I)V")
-	public final void generateCertificate(@OriginalArg(0) ObjType link, @OriginalArg(1) ObjType template) {
+	public void generateCertificate(@OriginalArg(0) ObjType link, @OriginalArg(1) ObjType template) {
 		this.cost = link.cost;
 		this.recolorDestinationPalette = template.recolorDestinationPalette;
 		this.recolorDestination = template.recolorDestination;
@@ -247,7 +247,7 @@ public final class ObjType {
 	}
 
 	@OriginalMember(owner = "client!td", name = "a", descriptor = "(IIIILclient!qk;Lclient!eg;I)Lclient!vg;")
-	public final Model getModel(@OriginalArg(0) int arg0, @OriginalArg(1) int count, @OriginalArg(3) int arg2, @OriginalArg(4) PlayerAppearance appearance, @OriginalArg(5) SeqType seqType, @OriginalArg(6) int arg5) {
+	public Model getModel(@OriginalArg(0) int arg0, @OriginalArg(1) int count, @OriginalArg(3) int arg2, @OriginalArg(4) PlayerAppearance appearance, @OriginalArg(5) SeqType seqType, @OriginalArg(6) int arg5) {
 		if (this.countObj != null && count > 1) {
 			@Pc(13) int countId = -1;
 			for (@Pc(15) int i = 0; i < 10; i++) {
@@ -306,7 +306,7 @@ public final class ObjType {
 	}
 
 	@OriginalMember(owner = "client!td", name = "a", descriptor = "(ZI)Lclient!td;")
-	public final ObjType getCountObjType(@OriginalArg(1) int count) {
+	public ObjType getCountObjType(@OriginalArg(1) int count) {
 		if (this.countObj != null && count > 1) {
 			@Pc(21) int id = -1;
 			for (@Pc(23) int i = 0; i < 10; i++) {
@@ -322,7 +322,7 @@ public final class ObjType {
 	}
 
 	@OriginalMember(owner = "client!td", name = "a", descriptor = "(IZ)Lclient!ml;")
-	public final RawModel getHeadModel(@OriginalArg(1) boolean female) {
+	public RawModel getHeadModel(@OriginalArg(1) boolean female) {
 		@Pc(14) int head2 = this.manHead2;
 		@Pc(17) int head = this.manHead;
 		if (female) {
@@ -352,11 +352,11 @@ public final class ObjType {
 	}
 
 	@OriginalMember(owner = "client!td", name = "a", descriptor = "(I)V")
-	public final void postDecode() {
+	public void postDecode() {
 	}
 
 	@OriginalMember(owner = "client!td", name = "a", descriptor = "(BZ)Z")
-	public final boolean isBodyModelReady(@OriginalArg(1) boolean female) {
+	public boolean isBodyModelReady(@OriginalArg(1) boolean female) {
 		@Pc(7) int wear2 = this.manWear2;
 		@Pc(10) int wear3 = this.manWear3;
 		@Pc(17) int wear1 = this.manWear1;
@@ -382,7 +382,7 @@ public final class ObjType {
 	}
 
 	@OriginalMember(owner = "client!td", name = "a", descriptor = "(ILjava/lang/String;I)Ljava/lang/String;")
-	public final String getParam(@OriginalArg(2) int id, @OriginalArg(1) String defaultValue) {
+	public String getParam(@OriginalArg(2) int id, @OriginalArg(1) String defaultValue) {
 		if (this.params == null) {
 			return defaultValue;
 		} else {
@@ -392,7 +392,7 @@ public final class ObjType {
 	}
 
 	@OriginalMember(owner = "client!td", name = "a", descriptor = "(ILclient!td;Lclient!td;)V")
-	public final void generateLent(@OriginalArg(1) ObjType link, @OriginalArg(2) ObjType template) {
+	public void generateLent(@OriginalArg(1) ObjType link, @OriginalArg(2) ObjType template) {
 		this.womanWear1 = link.womanWear1;
 		this.manHead2 = link.manHead2;
 		this.manHead = link.manHead;
@@ -437,7 +437,7 @@ public final class ObjType {
 	}
 
 	@OriginalMember(owner = "client!td", name = "b", descriptor = "(III)I")
-	public final int getParam(@OriginalArg(0) int id, @OriginalArg(2) int defaultValue) {
+	public int getParam(@OriginalArg(0) int id, @OriginalArg(2) int defaultValue) {
 		if (this.params == null) {
 			return defaultValue;
 		} else {
@@ -447,7 +447,7 @@ public final class ObjType {
 	}
 
 	@OriginalMember(owner = "client!td", name = "c", descriptor = "(ZI)Z")
-	public final boolean isHeadModelReady(@OriginalArg(0) boolean female) {
+	public boolean isHeadModelReady(@OriginalArg(0) boolean female) {
 		@Pc(2) int head = this.manHead;
 		@Pc(9) int head2 = this.manHead2;
 		if (female) {
@@ -468,7 +468,7 @@ public final class ObjType {
 	}
 
 	@OriginalMember(owner = "client!td", name = "a", descriptor = "(Lclient!qk;I)Lclient!na;")
-	public final SoftwareModel getInvModel(@OriginalArg(0) PlayerAppearance appearance) {
+	public SoftwareModel getInvModel(@OriginalArg(0) PlayerAppearance appearance) {
 		@Pc(11) RawModel model = RawModel.create(ObjTypeList.modelsArchive, this.model);
 		if (model == null) {
 			return null;

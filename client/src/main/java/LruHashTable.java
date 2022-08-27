@@ -32,12 +32,12 @@ public final class LruHashTable {
 	}
 
 	@OriginalMember(owner = "client!dj", name = "c", descriptor = "(I)Lclient!ni;")
-	public final Node head() {
+	public Node head() {
 		return this.table.head();
 	}
 
 	@OriginalMember(owner = "client!dj", name = "a", descriptor = "(JILclient!lh;)V")
-	public final void put(@OriginalArg(0) long key, @OriginalArg(2) SecondaryNode value) {
+	public void put(@OriginalArg(0) long key, @OriginalArg(2) SecondaryNode value) {
 		if (this.available == 0) {
 			@Pc(15) SecondaryNode first = this.queue.removeHead();
 			first.unlink();
@@ -55,7 +55,7 @@ public final class LruHashTable {
 	}
 
 	@OriginalMember(owner = "client!dj", name = "a", descriptor = "(IJ)Lclient!lh;")
-	public final SecondaryNode get(@OriginalArg(1) long key) {
+	public SecondaryNode get(@OriginalArg(1) long key) {
 		@Pc(18) SecondaryNode value = (SecondaryNode) this.table.get(key);
 		if (value != null) {
 			this.queue.addTail(value);
@@ -64,12 +64,12 @@ public final class LruHashTable {
 	}
 
 	@OriginalMember(owner = "client!dj", name = "d", descriptor = "(I)Lclient!ni;")
-	public final Node next() {
+	public Node next() {
 		return this.table.next();
 	}
 
 	@OriginalMember(owner = "client!dj", name = "a", descriptor = "(B)V")
-	public final void clear() {
+	public void clear() {
 		this.queue.clear();
 		this.table.clear();
 		this.aClass4_Sub3_18 = new SecondaryNode();

@@ -15,7 +15,7 @@ public final class GLDrawableFactoryImpl extends GLDrawableFactory {
 
 	@OriginalMember(owner = "gl!jaggl/jogl_wrapper/GLDrawableFactoryImpl", name = "getGLDrawable", descriptor = "(Ljava/lang/Object;Lgl!javax/media/opengl/GLCapabilities;Lgl!javax/media/opengl/GLCapabilitiesChooser;)Lgl!javax/media/opengl/GLDrawable;")
 	@Override
-	public final GLDrawable getGLDrawable(@OriginalArg(0) Object target, @OriginalArg(1) GLCapabilities capabilities, @OriginalArg(2) GLCapabilitiesChooser chooser) {
+	public GLDrawable getGLDrawable(@OriginalArg(0) Object target, @OriginalArg(1) GLCapabilities capabilities, @OriginalArg(2) GLCapabilitiesChooser chooser) {
 		if (target == null) {
 			throw new IllegalArgumentException("Null target");
 		} else if (target instanceof Component) {

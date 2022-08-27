@@ -69,7 +69,7 @@ public final class Map extends SecondaryNode {
 	}
 
 	@OriginalMember(owner = "client!wg", name = "a", descriptor = "(III[II)Z")
-	public final boolean convertSourceToDisplay(@OriginalArg(2) int level, @OriginalArg(4) int x, @OriginalArg(0) int z, @OriginalArg(3) int[] position) {
+	public boolean convertSourceToDisplay(@OriginalArg(2) int level, @OriginalArg(4) int x, @OriginalArg(0) int z, @OriginalArg(3) int[] position) {
 		for (@Pc(16) MapChunk chunk = (MapChunk) this.chunks.head(); chunk != null; chunk = (MapChunk) this.chunks.next()) {
 			if (chunk.containsSource(level, x, z)) {
 				chunk.convertSourceToDisplay(x, z, position);
@@ -80,7 +80,7 @@ public final class Map extends SecondaryNode {
 	}
 
 	@OriginalMember(owner = "client!wg", name = "a", descriptor = "(III)Z")
-	public final boolean containsSource(@OriginalArg(1) int x, @OriginalArg(2) int z) {
+	public boolean containsSource(@OriginalArg(1) int x, @OriginalArg(2) int z) {
 		for (@Pc(11) MapChunk chunk = (MapChunk) this.chunks.head(); chunk != null; chunk = (MapChunk) this.chunks.next()) {
 			if (chunk.containsSource(x, z)) {
 				return true;
@@ -90,7 +90,7 @@ public final class Map extends SecondaryNode {
 	}
 
 	@OriginalMember(owner = "client!wg", name = "a", descriptor = "([IIBI)Z")
-	public final boolean convertSourceToDisplay(@OriginalArg(3) int x, @OriginalArg(1) int z, @OriginalArg(0) int[] position) {
+	public boolean convertSourceToDisplay(@OriginalArg(3) int x, @OriginalArg(1) int z, @OriginalArg(0) int[] position) {
 		for (@Pc(19) MapChunk chunk = (MapChunk) this.chunks.head(); chunk != null; chunk = (MapChunk) this.chunks.next()) {
 			if (chunk.containsSource(x, z)) {
 				chunk.convertSourceToDisplay(x, z, position);
@@ -101,7 +101,7 @@ public final class Map extends SecondaryNode {
 	}
 
 	@OriginalMember(owner = "client!wg", name = "a", descriptor = "(IIB[I)Z")
-	public final boolean convertDisplayToSource(@OriginalArg(0) int x, @OriginalArg(1) int z, @OriginalArg(3) int[] position) {
+	public boolean convertDisplayToSource(@OriginalArg(0) int x, @OriginalArg(1) int z, @OriginalArg(3) int[] position) {
 		for (@Pc(11) MapChunk chunk = (MapChunk) this.chunks.head(); chunk != null; chunk = (MapChunk) this.chunks.next()) {
 			if (chunk.containsDisplay(x, z)) {
 				chunk.convertDisplayToSource(x, z, position);
@@ -112,7 +112,7 @@ public final class Map extends SecondaryNode {
 	}
 
 	@OriginalMember(owner = "client!wg", name = "d", descriptor = "(I)V")
-	private final void computeBounds() {
+	private void computeBounds() {
 		this.displayMinZ = 12800;
 		this.displayMaxZ = 0;
 		this.displayMaxX = 0;

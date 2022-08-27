@@ -109,7 +109,7 @@ public final class BasType {
 	public int anInt863 = 0;
 
 	@OriginalMember(owner = "client!d", name = "a", descriptor = "(Lclient!fd;B)V")
-	public final void decode(@OriginalArg(0) Buffer buffer) {
+	public void decode(@OriginalArg(0) Buffer buffer) {
 		while (true) {
 			@Pc(17) int code = buffer.readUnsignedByte();
 			if (code == 0) {
@@ -208,6 +208,6 @@ public final class BasType {
 	}
 
 	@OriginalMember(owner = "client!d", name = "b", descriptor = "(I)V")
-	public final void postDecode() {
+	public void postDecode() {
 	}
 }

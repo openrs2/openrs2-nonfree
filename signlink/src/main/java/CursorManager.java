@@ -22,7 +22,7 @@ public final class CursorManager {
 	}
 
 	@OriginalMember(owner = "signlink!e", name = "a", descriptor = "(IZLjava/awt/Component;)V")
-	public final void setComponent(@OriginalArg(2) Component component, @OriginalArg(1) boolean reset) {
+	public void setComponent(@OriginalArg(2) Component component, @OriginalArg(1) boolean reset) {
 		if (reset) {
 			component = null;
 		} else if (component == null) {
@@ -42,7 +42,7 @@ public final class CursorManager {
 	}
 
 	@OriginalMember(owner = "signlink!e", name = "a", descriptor = "(IILjava/awt/Point;[ILjava/awt/Component;B)V")
-	public final void setCursor(@OriginalArg(4) Component component, @OriginalArg(0) int width, @OriginalArg(1) int height, @OriginalArg(3) int[] pixels, @OriginalArg(2) Point hotSpot) {
+	public void setCursor(@OriginalArg(4) Component component, @OriginalArg(0) int width, @OriginalArg(1) int height, @OriginalArg(3) int[] pixels, @OriginalArg(2) Point hotSpot) {
 		if (pixels == null) {
 			component.setCursor(null);
 		} else {
@@ -53,7 +53,7 @@ public final class CursorManager {
 	}
 
 	@OriginalMember(owner = "signlink!e", name = "a", descriptor = "(III)V")
-	public final void setPosition(@OriginalArg(2) int x, @OriginalArg(0) int y) {
+	public void setPosition(@OriginalArg(2) int x, @OriginalArg(0) int y) {
 		this.robot.mouseMove(x, y);
 	}
 }

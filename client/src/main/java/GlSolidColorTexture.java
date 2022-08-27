@@ -49,7 +49,7 @@ public final class GlSolidColorTexture extends SecondaryNode {
 
 	@OriginalMember(owner = "client!qd", name = "finalize", descriptor = "()V")
 	@Override
-	public final void finalize() throws Throwable {
+	public void finalize() throws Throwable {
 		if (this.textureId != -1) {
 			GlCleaner.deleteTexture(this.textureId, this.textureSize, this.contextId);
 			this.textureSize = 0;
@@ -59,7 +59,7 @@ public final class GlSolidColorTexture extends SecondaryNode {
 	}
 
 	@OriginalMember(owner = "client!qd", name = "e", descriptor = "(I)V")
-	public final void method3539() {
+	public void method3539() {
 		@Pc(6) int flags = MaterialManager.getFlags();
 		if ((flags & 0x1) == 0) {
 			GlRenderer.setTextureId(this.textureId);

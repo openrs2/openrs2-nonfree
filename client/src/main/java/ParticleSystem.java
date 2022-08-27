@@ -261,7 +261,7 @@ public final class ParticleSystem extends ParticleNode {
 	}
 
 	@OriginalMember(owner = "client!ne", name = "a", descriptor = "(IIIII)V")
-	public final void method2949(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int x, @OriginalArg(3) int y, @OriginalArg(4) int z) {
+	public void method2949(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int x, @OriginalArg(3) int y, @OriginalArg(4) int z) {
 		if (this.stopped) {
 			return;
 		}
@@ -279,12 +279,12 @@ public final class ParticleSystem extends ParticleNode {
 	}
 
 	@OriginalMember(owner = "client!ne", name = "b", descriptor = "()V")
-	public final void method2952() {
+	public void method2952() {
 		this.aBoolean253 = true;
 	}
 
 	@OriginalMember(owner = "client!ne", name = "a", descriptor = "(IIIIIIIII)V")
-	public final void method2953(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) int arg8) {
+	public void method2953(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) int arg8) {
 		if (this.stopped || (!this.aBoolean252 || !GlRenderer.enabled)) {
 			return;
 		}
@@ -365,7 +365,7 @@ public final class ParticleSystem extends ParticleNode {
 	}
 
 	@OriginalMember(owner = "client!ne", name = "a", descriptor = "(Lgl!javax/media/opengl/GL;IZZ)V")
-	public final void method2955(@OriginalArg(0) GL gl, @OriginalArg(1) int arg1, @OriginalArg(2) boolean arg2, @OriginalArg(3) boolean arg3) {
+	public void method2955(@OriginalArg(0) GL gl, @OriginalArg(1) int arg1, @OriginalArg(2) boolean arg2, @OriginalArg(3) boolean arg3) {
 		if (!arg3 && Preferences.highDetailLighting) {
 			gl.glDisable(GL.GL_LIGHTING);
 		}
@@ -456,7 +456,7 @@ public final class ParticleSystem extends ParticleNode {
 	}
 
 	@OriginalMember(owner = "client!ne", name = "e", descriptor = "()V")
-	public final void remove() {
+	public void remove() {
 		this.stopped = true;
 		for (@Pc(8) ParticleEffector node = (ParticleEffector) this.effectors.head(); node != null; node = (ParticleEffector) this.effectors.next()) {
 			if (node.effector.type.anInt907 == 1) {
@@ -473,7 +473,7 @@ public final class ParticleSystem extends ParticleNode {
 	}
 
 	@OriginalMember(owner = "client!ne", name = "f", descriptor = "()I")
-	public final int method2959() {
+	public int method2959() {
 		if (this.anInt3513 == this.anInt3521 && this.anInt3508 == this.anInt3515) {
 			return 92;
 		}
@@ -566,7 +566,7 @@ public final class ParticleSystem extends ParticleNode {
 	}
 
 	@OriginalMember(owner = "client!ne", name = "a", descriptor = "([Lclient!sk;[Lclient!u;Z[I[I[I)V")
-	public final void method2967(@OriginalArg(0) ModelParticleEmitter[] emitters, @OriginalArg(1) ModelParticleEffector[] effectors, @OriginalArg(2) boolean arg2, @OriginalArg(3) int[] arg3, @OriginalArg(4) int[] arg4, @OriginalArg(5) int[] arg5) {
+	public void method2967(@OriginalArg(0) ModelParticleEmitter[] emitters, @OriginalArg(1) ModelParticleEffector[] effectors, @OriginalArg(2) boolean arg2, @OriginalArg(3) int[] arg3, @OriginalArg(4) int[] arg4, @OriginalArg(5) int[] arg5) {
 		if (!this.stopped) {
 			this.method2948(emitters, arg2, arg3, arg4, arg5);
 			this.method2965(effectors, arg2, arg3, arg4, arg5);
@@ -574,7 +574,7 @@ public final class ParticleSystem extends ParticleNode {
 	}
 
 	@OriginalMember(owner = "client!ne", name = "b", descriptor = "(J)Z")
-	public final boolean redraw(@OriginalArg(0) long loop) {
+	public boolean redraw(@OriginalArg(0) long loop) {
 		@Pc(8) long local8;
 		if (this.aLong122 > this.aLong123) {
 			local8 = this.aLong122;
@@ -624,7 +624,7 @@ public final class ParticleSystem extends ParticleNode {
 	}
 
 	@OriginalMember(owner = "client!ne", name = "b", descriptor = "(IIIII)V")
-	public final void method2970(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4) {
+	public void method2970(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4) {
 		this.method2949(arg0, arg1, arg2 + Static7.anInt5281, arg3 + Static6.anInt4375, arg4 + Static6.anInt4400);
 	}
 }

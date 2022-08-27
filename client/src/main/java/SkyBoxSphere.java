@@ -533,7 +533,7 @@ public final class SkyBoxSphere {
 	}
 
 	@OriginalMember(owner = "client!kg", name = "a", descriptor = "(IIIIII)V")
-	public final void method2292(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5) {
+	public void method2292(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5) {
 		@Pc(6) int local6 = this.anInt2865 - arg4 & 0x7FF;
 		@Pc(13) int local13 = this.anInt2855 - arg5 & 0x7FF;
 		if (local13 > 1024) {
@@ -575,7 +575,7 @@ public final class SkyBoxSphere {
 	}
 
 	@OriginalMember(owner = "client!kg", name = "c", descriptor = "(Lclient!kg;)V")
-	public final void method2293(@OriginalArg(0) SkyBoxSphere arg0) {
+	public void method2293(@OriginalArg(0) SkyBoxSphere arg0) {
 		if (this.anInt2869 == 0) {
 			return;
 		}
@@ -600,13 +600,13 @@ public final class SkyBoxSphere {
 
 	@OriginalMember(owner = "client!kg", name = "finalize", descriptor = "()V")
 	@Override
-	public final void finalize() throws Throwable {
+	public void finalize() throws Throwable {
 		this.method2306();
 		super.finalize();
 	}
 
 	@OriginalMember(owner = "client!kg", name = "a", descriptor = "(IIII)Z")
-	public final boolean method2294(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) {
+	public boolean method2294(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) {
 		@Pc(46) int local46;
 		@Pc(53) int local53;
 		@Pc(60) int local60;
@@ -670,7 +670,7 @@ public final class SkyBoxSphere {
 	}
 
 	@OriginalMember(owner = "client!kg", name = "a", descriptor = "(IIIIIILclient!kg;)V")
-	public final void method2299(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) SkyBoxSphere arg6) {
+	public void method2299(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) SkyBoxSphere arg6) {
 		@Pc(6) int local6 = this.anInt2865 - arg4 & 0x7FF;
 		@Pc(13) int local13 = this.anInt2855 - arg5 & 0x7FF;
 		if (local13 > 1024) {

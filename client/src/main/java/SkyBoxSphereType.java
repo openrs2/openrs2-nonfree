@@ -50,7 +50,7 @@ public final class SkyBoxSphereType {
 	}
 
 	@OriginalMember(owner = "client!sa", name = "a", descriptor = "(BILclient!fd;)V")
-	public final void decode(@OriginalArg(2) Buffer buffer, @OriginalArg(1) int id) {
+	public void decode(@OriginalArg(2) Buffer buffer, @OriginalArg(1) int id) {
 		while (true) {
 			@Pc(9) int code = buffer.readUnsignedByte();
 			if (code == 0) {

@@ -15,13 +15,13 @@ public final class Js5CacheRequest extends Js5Request {
 
 	@OriginalMember(owner = "client!al", name = "d", descriptor = "(I)I")
 	@Override
-	public final int getPercentageComplete() {
+	public int getPercentageComplete() {
 		return this.incomplete ? 0 : 100;
 	}
 
 	@OriginalMember(owner = "client!al", name = "e", descriptor = "(B)[B")
 	@Override
-	public final byte[] getData() {
+	public byte[] getData() {
 		if (this.incomplete) {
 			throw new RuntimeException();
 		}

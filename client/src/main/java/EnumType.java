@@ -25,7 +25,7 @@ public final class EnumType extends SecondaryNode {
 	private String defaultString = "null";
 
 	@OriginalMember(owner = "client!cj", name = "a", descriptor = "(II)I")
-	public final int getInt(@OriginalArg(1) int key) {
+	public int getInt(@OriginalArg(1) int key) {
 		if (this.table == null) {
 			return this.defaultInt;
 		} else {
@@ -70,7 +70,7 @@ public final class EnumType extends SecondaryNode {
 	}
 
 	@OriginalMember(owner = "client!cj", name = "b", descriptor = "(II)Z")
-	public final boolean containsValue(@OriginalArg(1) int value) {
+	public boolean containsValue(@OriginalArg(1) int value) {
 		if (this.table == null) {
 			return false;
 		}
@@ -82,7 +82,7 @@ public final class EnumType extends SecondaryNode {
 	}
 
 	@OriginalMember(owner = "client!cj", name = "c", descriptor = "(II)Ljava/lang/String;")
-	public final String getString(@OriginalArg(0) int key) {
+	public String getString(@OriginalArg(0) int key) {
 		if (this.table == null) {
 			return this.defaultString;
 		} else {
@@ -101,7 +101,7 @@ public final class EnumType extends SecondaryNode {
 	}
 
 	@OriginalMember(owner = "client!cj", name = "a", descriptor = "(ZLclient!fd;)V")
-	public final void decode(@OriginalArg(1) Buffer buffer) {
+	public void decode(@OriginalArg(1) Buffer buffer) {
 		while (true) {
 			@Pc(9) int code = buffer.readUnsignedByte();
 			if (code == 0) {
@@ -112,7 +112,7 @@ public final class EnumType extends SecondaryNode {
 	}
 
 	@OriginalMember(owner = "client!cj", name = "a", descriptor = "(ILjava/lang/String;)Z")
-	public final boolean containsValue(@OriginalArg(1) String value) {
+	public boolean containsValue(@OriginalArg(1) String value) {
 		if (this.table == null) {
 			return false;
 		}

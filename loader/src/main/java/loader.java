@@ -87,7 +87,7 @@ public final class loader extends Applet implements Runnable {
 
 	@OriginalMember(owner = "loader!loader", name = "destroy", descriptor = "()V")
 	@Override
-	public final synchronized void destroy() {
+	public synchronized void destroy() {
 		this.destroyed = true;
 		this.started = this.stopped = false;
 		if (this.applet != null) {
@@ -211,7 +211,7 @@ public final class loader extends Applet implements Runnable {
 
 	@OriginalMember(owner = "loader!loader", name = "paint", descriptor = "(Ljava/awt/Graphics;)V")
 	@Override
-	public final void paint(@OriginalArg(0) Graphics graphics) {
+	public void paint(@OriginalArg(0) Graphics graphics) {
 		if (this.applet != null) {
 			this.applet.paint(graphics);
 		}
@@ -219,7 +219,7 @@ public final class loader extends Applet implements Runnable {
 
 	@OriginalMember(owner = "loader!loader", name = "start", descriptor = "()V")
 	@Override
-	public final synchronized void start() {
+	public synchronized void start() {
 		this.stopped = false;
 		this.started = true;
 		if (this.applet != null) {
@@ -229,7 +229,7 @@ public final class loader extends Applet implements Runnable {
 
 	@OriginalMember(owner = "loader!loader", name = "update", descriptor = "(Ljava/awt/Graphics;)V")
 	@Override
-	public final void update(@OriginalArg(0) Graphics graphics) {
+	public void update(@OriginalArg(0) Graphics graphics) {
 		if (this.applet != null) {
 			this.applet.update(graphics);
 		}
@@ -237,7 +237,7 @@ public final class loader extends Applet implements Runnable {
 
 	@OriginalMember(owner = "loader!loader", name = "init", descriptor = "()V")
 	@Override
-	public final synchronized void init() {
+	public synchronized void init() {
 		this.destroyed = false;
 		@Pc(7) Thread thread = new Thread(this);
 		thread.start();
@@ -245,7 +245,7 @@ public final class loader extends Applet implements Runnable {
 
 	@OriginalMember(owner = "loader!loader", name = "stop", descriptor = "()V")
 	@Override
-	public final synchronized void stop() {
+	public synchronized void stop() {
 		this.started = false;
 		this.stopped = true;
 		if (this.applet != null) {
@@ -285,7 +285,7 @@ public final class loader extends Applet implements Runnable {
 
 	@OriginalMember(owner = "loader!loader", name = "run", descriptor = "()V")
 	@Override
-	public final void run() {
+	public void run() {
 		try {
 			unsignedUrl = this.getParameter("unsignedurl");
 			if (unsignedUrl != null) {

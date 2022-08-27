@@ -31,7 +31,7 @@ public final class Js5MasterIndex {
 	}
 
 	@OriginalMember(owner = "client!mg", name = "a", descriptor = "(Z)V")
-	public final void loop() {
+	public void loop() {
 		if (this.resourceProviders == null) {
 			return;
 		}
@@ -48,7 +48,7 @@ public final class Js5MasterIndex {
 	}
 
 	@OriginalMember(owner = "client!mg", name = "a", descriptor = "(B)Z")
-	public final boolean isReady() {
+	public boolean isReady() {
 		if (this.buffer != null) {
 			return true;
 		}
@@ -87,7 +87,7 @@ public final class Js5MasterIndex {
 	}
 
 	@OriginalMember(owner = "client!mg", name = "a", descriptor = "(Lclient!fm;Lclient!fm;IB)Lclient!wb;")
-	public final Js5CachedResourceProvider getResourceProvider(@OriginalArg(0) Cache masterCache, @OriginalArg(1) Cache cache, @OriginalArg(2) int archive) {
+	public Js5CachedResourceProvider getResourceProvider(@OriginalArg(0) Cache masterCache, @OriginalArg(1) Cache cache, @OriginalArg(2) int archive) {
 		return this.getResourceProviderInternal(masterCache, cache, archive);
 	}
 }

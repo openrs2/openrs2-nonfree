@@ -178,7 +178,7 @@ public final class ParticleEmitterType {
 	public int anInt2405 = -2;
 
 	@OriginalMember(owner = "client!ik", name = "a", descriptor = "(Lclient!fd;B)V")
-	public final void decode(@OriginalArg(0) Buffer buffer) {
+	public void decode(@OriginalArg(0) Buffer buffer) {
 		while (true) {
 			@Pc(5) int code = buffer.readUnsignedByte();
 			if (code == 0) {
@@ -267,7 +267,7 @@ public final class ParticleEmitterType {
 	}
 
 	@OriginalMember(owner = "client!ik", name = "a", descriptor = "(B)V")
-	public final void postDecode() {
+	public void postDecode() {
 		if (this.anInt2405 > -2 || this.anInt2438 > -2) {
 			this.aBoolean168 = true;
 		}

@@ -44,12 +44,12 @@ public final class FileOnDisk {
 	}
 
 	@OriginalMember(owner = "signlink!kd", name = "b", descriptor = "(B)Ljava/io/File;")
-	public final File getFile() {
+	public File getFile() {
 		return this.file;
 	}
 
 	@OriginalMember(owner = "signlink!kd", name = "a", descriptor = "(IIZ[B)V")
-	public final void write(@OriginalArg(3) byte[] bytes, @OriginalArg(1) int off, @OriginalArg(0) int len) throws IOException {
+	public void write(@OriginalArg(3) byte[] bytes, @OriginalArg(1) int off, @OriginalArg(0) int len) throws IOException {
 		if (this.position + (long) len > this.maxLength) {
 			this.randomAccessFile.seek(this.maxLength);
 			this.randomAccessFile.write(1);
@@ -61,13 +61,13 @@ public final class FileOnDisk {
 	}
 
 	@OriginalMember(owner = "signlink!kd", name = "a", descriptor = "(JB)V")
-	public final void seek(@OriginalArg(0) long position) throws IOException {
+	public void seek(@OriginalArg(0) long position) throws IOException {
 		this.randomAccessFile.seek(position);
 		this.position = position;
 	}
 
 	@OriginalMember(owner = "signlink!kd", name = "a", descriptor = "(I)V")
-	public final void close() throws IOException {
+	public void close() throws IOException {
 		if (this.randomAccessFile != null) {
 			this.randomAccessFile.close();
 			this.randomAccessFile = null;
@@ -75,7 +75,7 @@ public final class FileOnDisk {
 	}
 
 	@OriginalMember(owner = "signlink!kd", name = "a", descriptor = "([BIII)I")
-	public final int read(@OriginalArg(0) byte[] bytes, @OriginalArg(3) int off, @OriginalArg(2) int len) throws IOException {
+	public int read(@OriginalArg(0) byte[] bytes, @OriginalArg(3) int off, @OriginalArg(2) int len) throws IOException {
 		@Pc(6) int n = this.randomAccessFile.read(bytes, off, len);
 		if (n > 0) {
 			this.position += n;
@@ -85,7 +85,7 @@ public final class FileOnDisk {
 
 	@OriginalMember(owner = "signlink!kd", name = "finalize", descriptor = "()V")
 	@Override
-	public final void finalize() throws Throwable {
+	public void finalize() throws Throwable {
 		if (this.randomAccessFile != null) {
 			System.out.println("Warning! fileondisk " + this.file + " not closed correctly using close(). Auto-closing instead. ");
 			this.close();
@@ -93,7 +93,7 @@ public final class FileOnDisk {
 	}
 
 	@OriginalMember(owner = "signlink!kd", name = "a", descriptor = "(B)J")
-	public final long length() throws IOException {
+	public long length() throws IOException {
 		return this.randomAccessFile.length();
 	}
 }

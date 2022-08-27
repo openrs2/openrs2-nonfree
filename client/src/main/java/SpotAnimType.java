@@ -88,7 +88,7 @@ public final class SpotAnimType {
 	}
 
 	@OriginalMember(owner = "client!li", name = "a", descriptor = "(Lclient!fd;Z)V")
-	public final void decode(@OriginalArg(0) Buffer buffer) {
+	public void decode(@OriginalArg(0) Buffer buffer) {
 		while (true) {
 			@Pc(9) int code = buffer.readUnsignedByte();
 			if (code == 0) {
@@ -99,7 +99,7 @@ public final class SpotAnimType {
 	}
 
 	@OriginalMember(owner = "client!li", name = "a", descriptor = "(IIIB)Lclient!vg;")
-	public final Model method2569(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
+	public Model method2569(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
 		@Pc(9) Model model = (Model) SpotAnimTypeList.models.get(this.id);
 		if (model == null) {
 			@Pc(22) RawModel rawModel = RawModel.create(SpotAnimTypeList.modelsArchive, this.modelId);

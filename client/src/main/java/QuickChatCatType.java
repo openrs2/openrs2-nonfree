@@ -22,7 +22,7 @@ public final class QuickChatCatType extends SecondaryNode {
 	public char[] phraseShortcuts;
 
 	@OriginalMember(owner = "client!wh", name = "a", descriptor = "(BLclient!fd;)V")
-	public final void decode(@OriginalArg(1) Buffer buffer) {
+	public void decode(@OriginalArg(1) Buffer buffer) {
 		while (true) {
 			@Pc(5) int code = buffer.readUnsignedByte();
 			if (code == 0) {
@@ -33,7 +33,7 @@ public final class QuickChatCatType extends SecondaryNode {
 	}
 
 	@OriginalMember(owner = "client!wh", name = "a", descriptor = "(CI)I")
-	public final int getPhraseByShortcut(@OriginalArg(0) char shortcut) {
+	public int getPhraseByShortcut(@OriginalArg(0) char shortcut) {
 		if (this.phrases == null) {
 			return -1;
 		}
@@ -46,7 +46,7 @@ public final class QuickChatCatType extends SecondaryNode {
 	}
 
 	@OriginalMember(owner = "client!wh", name = "b", descriptor = "(CI)I")
-	public final int getSubcategoryByShortcut(@OriginalArg(0) char shortcut) {
+	public int getSubcategoryByShortcut(@OriginalArg(0) char shortcut) {
 		if (this.subcategories == null) {
 			return -1;
 		}
@@ -59,7 +59,7 @@ public final class QuickChatCatType extends SecondaryNode {
 	}
 
 	@OriginalMember(owner = "client!wh", name = "e", descriptor = "(I)V")
-	public final void method4778() {
+	public void method4778() {
 		if (this.phrases != null) {
 			for (@Pc(8) int i = 0; i < this.phrases.length; i++) {
 				this.phrases[i] |= 32768;

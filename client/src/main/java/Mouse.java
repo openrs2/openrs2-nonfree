@@ -114,7 +114,7 @@ public final class Mouse implements MouseListener, MouseMotionListener, FocusLis
 
 	@OriginalMember(owner = "client!nf", name = "mouseEntered", descriptor = "(Ljava/awt/event/MouseEvent;)V")
 	@Override
-	public final synchronized void mouseEntered(@OriginalArg(0) MouseEvent event) {
+	public synchronized void mouseEntered(@OriginalArg(0) MouseEvent event) {
 		if (instance != null) {
 			idleLoops = 0;
 			awtX = event.getX();
@@ -124,12 +124,12 @@ public final class Mouse implements MouseListener, MouseMotionListener, FocusLis
 
 	@OriginalMember(owner = "client!nf", name = "focusGained", descriptor = "(Ljava/awt/event/FocusEvent;)V")
 	@Override
-	public final void focusGained(@OriginalArg(0) FocusEvent event) {
+	public void focusGained(@OriginalArg(0) FocusEvent event) {
 	}
 
 	@OriginalMember(owner = "client!nf", name = "mouseClicked", descriptor = "(Ljava/awt/event/MouseEvent;)V")
 	@Override
-	public final void mouseClicked(@OriginalArg(0) MouseEvent event) {
+	public void mouseClicked(@OriginalArg(0) MouseEvent event) {
 		if (event.isPopupTrigger()) {
 			event.consume();
 		}
@@ -137,7 +137,7 @@ public final class Mouse implements MouseListener, MouseMotionListener, FocusLis
 
 	@OriginalMember(owner = "client!nf", name = "mouseExited", descriptor = "(Ljava/awt/event/MouseEvent;)V")
 	@Override
-	public final synchronized void mouseExited(@OriginalArg(0) MouseEvent event) {
+	public synchronized void mouseExited(@OriginalArg(0) MouseEvent event) {
 		if (instance != null) {
 			idleLoops = 0;
 			awtX = -1;
@@ -147,7 +147,7 @@ public final class Mouse implements MouseListener, MouseMotionListener, FocusLis
 
 	@OriginalMember(owner = "client!nf", name = "mouseReleased", descriptor = "(Ljava/awt/event/MouseEvent;)V")
 	@Override
-	public final synchronized void mouseReleased(@OriginalArg(0) MouseEvent event) {
+	public synchronized void mouseReleased(@OriginalArg(0) MouseEvent event) {
 		if (instance != null) {
 			idleLoops = 0;
 			awtPressedButton = 0;
@@ -166,7 +166,7 @@ public final class Mouse implements MouseListener, MouseMotionListener, FocusLis
 
 	@OriginalMember(owner = "client!nf", name = "mouseDragged", descriptor = "(Ljava/awt/event/MouseEvent;)V")
 	@Override
-	public final synchronized void mouseDragged(@OriginalArg(0) MouseEvent event) {
+	public synchronized void mouseDragged(@OriginalArg(0) MouseEvent event) {
 		if (instance != null) {
 			idleLoops = 0;
 			awtX = event.getX();
@@ -176,7 +176,7 @@ public final class Mouse implements MouseListener, MouseMotionListener, FocusLis
 
 	@OriginalMember(owner = "client!nf", name = "focusLost", descriptor = "(Ljava/awt/event/FocusEvent;)V")
 	@Override
-	public final synchronized void focusLost(@OriginalArg(0) FocusEvent event) {
+	public synchronized void focusLost(@OriginalArg(0) FocusEvent event) {
 		if (instance != null) {
 			awtPressedButton = 0;
 		}
@@ -184,7 +184,7 @@ public final class Mouse implements MouseListener, MouseMotionListener, FocusLis
 
 	@OriginalMember(owner = "client!nf", name = "mousePressed", descriptor = "(Ljava/awt/event/MouseEvent;)V")
 	@Override
-	public final synchronized void mousePressed(@OriginalArg(0) MouseEvent event) {
+	public synchronized void mousePressed(@OriginalArg(0) MouseEvent event) {
 		if (instance != null) {
 			idleLoops = 0;
 			awtClickX = event.getX();
@@ -212,7 +212,7 @@ public final class Mouse implements MouseListener, MouseMotionListener, FocusLis
 
 	@OriginalMember(owner = "client!nf", name = "mouseMoved", descriptor = "(Ljava/awt/event/MouseEvent;)V")
 	@Override
-	public final synchronized void mouseMoved(@OriginalArg(0) MouseEvent event) {
+	public synchronized void mouseMoved(@OriginalArg(0) MouseEvent event) {
 		if (instance != null) {
 			idleLoops = 0;
 			awtX = event.getX();

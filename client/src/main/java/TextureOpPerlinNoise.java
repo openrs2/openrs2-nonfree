@@ -57,7 +57,7 @@ public final class TextureOpPerlinNoise extends TextureOp {
 
 	@OriginalMember(owner = "client!jj", name = "a", descriptor = "(BLclient!fd;I)V")
 	@Override
-	public final void decode(@OriginalArg(1) Buffer buffer, @OriginalArg(2) int code) {
+	public void decode(@OriginalArg(1) Buffer buffer, @OriginalArg(2) int code) {
 		if (code == 0) {
 			this.aBoolean181 = buffer.readUnsignedByte() == 1;
 		} else if (code == 1) {
@@ -129,7 +129,7 @@ public final class TextureOpPerlinNoise extends TextureOp {
 
 	@OriginalMember(owner = "client!jj", name = "a", descriptor = "(II)[I")
 	@Override
-	public final int[] getMonochromeOutput(@OriginalArg(1) int y) {
+	public int[] getMonochromeOutput(@OriginalArg(1) int y) {
 		@Pc(15) int[] dest = this.monochromeImageCache.get(y);
 		if (this.monochromeImageCache.invalid) {
 			this.method2053(dest, y);
@@ -138,7 +138,7 @@ public final class TextureOpPerlinNoise extends TextureOp {
 	}
 
 	@OriginalMember(owner = "client!jj", name = "a", descriptor = "([III)V")
-	public final void method2053(@OriginalArg(0) int[] dest, @OriginalArg(1) int y) {
+	public void method2053(@OriginalArg(0) int[] dest, @OriginalArg(1) int y) {
 		@Pc(20) int local20 = this.anInt2625 * Texture.normalisedY[y];
 		if (this.anInt2628 == 1) {
 			@Pc(31) short local31 = this.aShortArray37[0];
@@ -228,7 +228,7 @@ public final class TextureOpPerlinNoise extends TextureOp {
 
 	@OriginalMember(owner = "client!jj", name = "e", descriptor = "(B)V")
 	@Override
-	public final void postDecode() {
+	public void postDecode() {
 		this.permutation = TextureOp.getPermutation(this.seed);
 		this.method2049();
 		for (@Pc(19) int local19 = this.anInt2628 - 1; local19 >= 1; local19--) {

@@ -17,13 +17,13 @@ public final class SoftReferenceNode extends ReferenceNode {
 
 	@OriginalMember(owner = "client!kh", name = "d", descriptor = "(I)Z")
 	@Override
-	public final boolean isSoft() {
+	public boolean isSoft() {
 		return true;
 	}
 
 	@OriginalMember(owner = "client!kh", name = "a", descriptor = "(Z)Ljava/lang/Object;")
 	@Override
-	public final Object get() {
+	public Object get() {
 		return this.reference.get();
 	}
 }

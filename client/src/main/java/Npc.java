@@ -112,7 +112,7 @@ public final class Npc extends PathingEntity {
 	public NpcType type;
 
 	@OriginalMember(owner = "client!p", name = "a", descriptor = "(BLclient!ua;)V")
-	public final void setType(@OriginalArg(1) NpcType type) {
+	public void setType(@OriginalArg(1) NpcType type) {
 		this.type = type;
 		if (this.particleSystem != null) {
 			this.particleSystem.method2952();
@@ -121,13 +121,13 @@ public final class Npc extends PathingEntity {
 
 	@OriginalMember(owner = "client!p", name = "d", descriptor = "(I)Z")
 	@Override
-	public final boolean isVisible() {
+	public boolean isVisible() {
 		return this.type != null;
 	}
 
 	@OriginalMember(owner = "client!p", name = "a", descriptor = "(IIIIIIIIJILclient!ne;)V")
 	@Override
-	public final void method3805(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) long arg8, @OriginalArg(9) int arg9, @OriginalArg(10) ParticleSystem arg10) {
+	public void method3805(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) long arg8, @OriginalArg(9) int arg9, @OriginalArg(10) ParticleSystem arg10) {
 		if (this.type == null) {
 			return;
 		}
@@ -208,13 +208,13 @@ public final class Npc extends PathingEntity {
 
 	@OriginalMember(owner = "client!p", name = "b", descriptor = "()I")
 	@Override
-	public final int getMinY() {
+	public int getMinY() {
 		return this.minY;
 	}
 
 	@OriginalMember(owner = "client!p", name = "finalize", descriptor = "()V")
 	@Override
-	public final void finalize() {
+	public void finalize() {
 		if (this.particleSystem != null) {
 			this.particleSystem.remove();
 		}
@@ -222,7 +222,7 @@ public final class Npc extends PathingEntity {
 
 	@OriginalMember(owner = "client!p", name = "a", descriptor = "(IIIII)V")
 	@Override
-	public final void method3806(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4) {
+	public void method3806(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4) {
 		if (this.type == null) {
 			return;
 		}
@@ -242,7 +242,7 @@ public final class Npc extends PathingEntity {
 
 	@OriginalMember(owner = "client!p", name = "a", descriptor = "(Z)I")
 	@Override
-	protected final int getBasId() {
+	protected int getBasId() {
 		if (this.type.multiNpcs != null) {
 			@Pc(17) NpcType type = this.type.getMultiNpc();
 			if (type != null && type.basId != -1) {

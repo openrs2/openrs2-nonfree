@@ -51,14 +51,14 @@ public final class CollisionMap {
 	}
 
 	@OriginalMember(owner = "client!ch", name = "a", descriptor = "(III)V")
-	public final void flagGroundDecor(@OriginalArg(2) int x, @OriginalArg(0) int z) {
+	public void flagGroundDecor(@OriginalArg(2) int x, @OriginalArg(0) int z) {
 		z -= this.zOffset;
 		x -= this.xOffset;
 		this.flags[x][z] |= 0x40000;
 	}
 
 	@OriginalMember(owner = "client!ch", name = "a", descriptor = "(ZZIIIII)V")
-	public final void flagScenery(@OriginalArg(6) int x, @OriginalArg(4) int z, @OriginalArg(3) int width, @OriginalArg(2) int length, @OriginalArg(0) boolean blockProjectiles, @OriginalArg(1) boolean blockRoutes) {
+	public void flagScenery(@OriginalArg(6) int x, @OriginalArg(4) int z, @OriginalArg(3) int width, @OriginalArg(2) int length, @OriginalArg(0) boolean blockProjectiles, @OriginalArg(1) boolean blockRoutes) {
 		z -= this.zOffset;
 		@Pc(12) int flags = 0x100;
 		x -= this.xOffset;
@@ -80,7 +80,7 @@ public final class CollisionMap {
 	}
 
 	@OriginalMember(owner = "client!ch", name = "a", descriptor = "(IIIIZIIZ)V")
-	public final void unflagScenery(@OriginalArg(5) int x, @OriginalArg(1) int z, @OriginalArg(6) int width, @OriginalArg(2) int length, @OriginalArg(0) int angle, @OriginalArg(4) boolean blockProjectiles, @OriginalArg(7) boolean blockRoutes) {
+	public void unflagScenery(@OriginalArg(5) int x, @OriginalArg(1) int z, @OriginalArg(6) int width, @OriginalArg(2) int length, @OriginalArg(0) int angle, @OriginalArg(4) boolean blockProjectiles, @OriginalArg(7) boolean blockRoutes) {
 		z -= this.zOffset;
 		if (angle == 1 || angle == 3) {
 			@Pc(23) int temp = width;
@@ -107,7 +107,7 @@ public final class CollisionMap {
 	}
 
 	@OriginalMember(owner = "client!ch", name = "a", descriptor = "(IZIIZII)V")
-	public final void unflagWall(@OriginalArg(2) int x, @OriginalArg(6) int z, @OriginalArg(3) int shape, @OriginalArg(0) int angle, @OriginalArg(4) boolean blockProjectiles, @OriginalArg(1) boolean blockRoutes) {
+	public void unflagWall(@OriginalArg(2) int x, @OriginalArg(6) int z, @OriginalArg(3) int shape, @OriginalArg(0) int angle, @OriginalArg(4) boolean blockProjectiles, @OriginalArg(1) boolean blockRoutes) {
 		x -= this.xOffset;
 		z -= this.zOffset;
 		if (shape == 0) {
@@ -293,7 +293,7 @@ public final class CollisionMap {
 	}
 
 	@OriginalMember(owner = "client!ch", name = "a", descriptor = "(IIIIIIIII)Z")
-	public final boolean isInsideOrOutsideRect(@OriginalArg(8) int x, @OriginalArg(0) int z, @OriginalArg(3) int size, @OriginalArg(5) int destX, @OriginalArg(4) int destZ, @OriginalArg(7) int destWidth, @OriginalArg(6) int destLength, @OriginalArg(2) int destBlockedSides) {
+	public boolean isInsideOrOutsideRect(@OriginalArg(8) int x, @OriginalArg(0) int z, @OriginalArg(3) int size, @OriginalArg(5) int destX, @OriginalArg(4) int destZ, @OriginalArg(7) int destWidth, @OriginalArg(6) int destLength, @OriginalArg(2) int destBlockedSides) {
 		if (size <= 1) {
 			@Pc(39) int destZ1 = destZ + destLength - 1;
 			@Pc(45) int destX1 = destX + destWidth - 1;
@@ -316,7 +316,7 @@ public final class CollisionMap {
 	}
 
 	@OriginalMember(owner = "client!ch", name = "a", descriptor = "(IIZZIII)V")
-	public final void flagWall(@OriginalArg(4) int x, @OriginalArg(0) int z, @OriginalArg(5) int shape, @OriginalArg(6) int angle, @OriginalArg(2) boolean blockProjectiles, @OriginalArg(3) boolean blockRoutes) {
+	public void flagWall(@OriginalArg(4) int x, @OriginalArg(0) int z, @OriginalArg(5) int shape, @OriginalArg(6) int angle, @OriginalArg(2) boolean blockProjectiles, @OriginalArg(3) boolean blockRoutes) {
 		z -= this.zOffset;
 		x -= this.xOffset;
 		if (shape == 0) {
@@ -502,7 +502,7 @@ public final class CollisionMap {
 	}
 
 	@OriginalMember(owner = "client!ch", name = "a", descriptor = "(IIIIBIII)Z")
-	public final boolean isAtWall(@OriginalArg(3) int x, @OriginalArg(2) int z, @OriginalArg(6) int size, @OriginalArg(5) int destX, @OriginalArg(0) int destZ, @OriginalArg(7) int destType, @OriginalArg(1) int destAngle) {
+	public boolean isAtWall(@OriginalArg(3) int x, @OriginalArg(2) int z, @OriginalArg(6) int size, @OriginalArg(5) int destX, @OriginalArg(0) int destZ, @OriginalArg(7) int destType, @OriginalArg(1) int destAngle) {
 		if (size == 1) {
 			if (destX == x && destZ == z) {
 				return true;
@@ -747,7 +747,7 @@ public final class CollisionMap {
 	}
 
 	@OriginalMember(owner = "client!ch", name = "a", descriptor = "(IIIII)Z")
-	public final boolean method575(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3) {
+	public boolean method575(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3) {
 		if (arg2 == arg3 && arg1 == arg0) {
 			return true;
 		}
@@ -840,7 +840,7 @@ public final class CollisionMap {
 	}
 
 	@OriginalMember(owner = "client!ch", name = "a", descriptor = "(IIIIIIII)Z")
-	public final boolean isAtWallDecor(@OriginalArg(1) int x, @OriginalArg(4) int z, @OriginalArg(7) int size, @OriginalArg(0) int destX, @OriginalArg(2) int destZ, @OriginalArg(5) int destType, @OriginalArg(6) int destAngle) {
+	public boolean isAtWallDecor(@OriginalArg(1) int x, @OriginalArg(4) int z, @OriginalArg(7) int size, @OriginalArg(0) int destX, @OriginalArg(2) int destZ, @OriginalArg(5) int destType, @OriginalArg(6) int destAngle) {
 		if (size == 1) {
 			if (x == destX && destZ == z) {
 				return true;
@@ -1001,7 +1001,7 @@ public final class CollisionMap {
 	}
 
 	@OriginalMember(owner = "client!ch", name = "b", descriptor = "(I)V")
-	public final void clear() {
+	public void clear() {
 		for (@Pc(11) int x = 0; x < this.width; x++) {
 			for (@Pc(21) int z = 0; z < this.length; z++) {
 				if (x == 0 || z == 0 || this.width - 5 <= x || z >= this.length - 5) {
@@ -1014,14 +1014,14 @@ public final class CollisionMap {
 	}
 
 	@OriginalMember(owner = "client!ch", name = "a", descriptor = "(IIB)V")
-	public final void flagTile(@OriginalArg(0) int x, @OriginalArg(1) int z) {
+	public void flagTile(@OriginalArg(0) int x, @OriginalArg(1) int z) {
 		x -= this.xOffset;
 		z -= this.zOffset;
 		this.flags[x][z] |= 0x200000;
 	}
 
 	@OriginalMember(owner = "client!ch", name = "b", descriptor = "(III)V")
-	public final void unflagGroundDecor(@OriginalArg(1) int x, @OriginalArg(2) int z) {
+	public void unflagGroundDecor(@OriginalArg(1) int x, @OriginalArg(2) int z) {
 		z -= this.zOffset;
 		x -= this.xOffset;
 		this.flags[x][z] &= -262145;

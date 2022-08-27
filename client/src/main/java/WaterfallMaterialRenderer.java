@@ -21,27 +21,27 @@ public final class WaterfallMaterialRenderer implements MaterialRenderer {
 
 	@OriginalMember(owner = "client!bo", name = "b", descriptor = "()V")
 	@Override
-	public final void bind() {
+	public void bind() {
 		@Pc(5) GL gl = GlRenderer.gl;
 		gl.glCallList(this.anInt419);
 	}
 
 	@OriginalMember(owner = "client!bo", name = "c", descriptor = "()I")
 	@Override
-	public final int getFlags() {
+	public int getFlags() {
 		return 0;
 	}
 
 	@OriginalMember(owner = "client!bo", name = "a", descriptor = "()V")
 	@Override
-	public final void unbind() {
+	public void unbind() {
 		@Pc(5) GL gl = GlRenderer.gl;
 		gl.glCallList(this.anInt419 + 1);
 	}
 
 	@OriginalMember(owner = "client!bo", name = "a", descriptor = "(I)V")
 	@Override
-	public final void setArgument(@OriginalArg(0) int arg) {
+	public void setArgument(@OriginalArg(0) int arg) {
 		@Pc(7) GL gl = GlRenderer.gl;
 		@Pc(16) float local16 = -0.01F * (float) ((arg & 0x3) + 1);
 		@Pc(27) float local27 = (float) ((arg >> 3 & 0x3) + 1) * 0.01F;

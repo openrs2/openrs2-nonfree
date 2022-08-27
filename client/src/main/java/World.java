@@ -14,7 +14,7 @@ public final class World extends AbstractWorld {
 	public int id;
 
 	@OriginalMember(owner = "client!gb", name = "a", descriptor = "(Z)Lclient!rf;")
-	public final Country getCountry() {
+	public Country getCountry() {
 		return WorldList.countries[this.country];
 	}
 }

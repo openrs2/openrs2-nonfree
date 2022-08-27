@@ -124,7 +124,7 @@ public final class GroundModel extends Node {
 	}
 
 	@OriginalMember(owner = "client!ih", name = "a", descriptor = "()V")
-	public final void build() {
+	public void build() {
 		@Pc(12) Buffer buffer = new Buffer((this.underwater ? 40 : 36) * this.vertexCount);
 		for (@Pc(14) int i = 0; i < this.vertexCount; i++) {
 			if (GlRenderer.bigEndian) {
@@ -176,7 +176,7 @@ public final class GroundModel extends Node {
 	}
 
 	@OriginalMember(owner = "client!ih", name = "a", descriptor = "([[[Lclient!nh;FZ)V")
-	public final void render(@OriginalArg(0) Tile[][][] tiles, @OriginalArg(1) float arg1, @OriginalArg(2) boolean arg2) {
+	public void render(@OriginalArg(0) Tile[][][] tiles, @OriginalArg(1) float arg1, @OriginalArg(2) boolean arg2) {
 		if (aClass4_Sub10_4 == null || aClass4_Sub10_4.bytes.length < this.anInt2353 * 4) {
 			aClass4_Sub10_4 = new Buffer(this.anInt2353 * 4);
 		} else {
@@ -312,7 +312,7 @@ public final class GroundModel extends Node {
 	}
 
 	@OriginalMember(owner = "client!ih", name = "a", descriptor = "(III[I[IZ)I")
-	public final int addTile(@OriginalArg(0) int level, @OriginalArg(1) int x, @OriginalArg(2) int z, @OriginalArg(3) int[] arg3, @OriginalArg(4) int[] arg4, @OriginalArg(5) boolean arg5) {
+	public int addTile(@OriginalArg(0) int level, @OriginalArg(1) int x, @OriginalArg(2) int z, @OriginalArg(3) int[] arg3, @OriginalArg(4) int[] arg4, @OriginalArg(5) boolean arg5) {
 		if (this.aBoolean162) {
 			this.anIntArrayArray19[this.tileCount] = arg4;
 			this.aBooleanArray10[this.tileCount] = arg5;
@@ -335,7 +335,7 @@ public final class GroundModel extends Node {
 	}
 
 	@OriginalMember(owner = "client!ih", name = "a", descriptor = "(IIIFFFIF)I")
-	public final int addVertex(@OriginalArg(0) int x, @OriginalArg(1) int y, @OriginalArg(2) int z, @OriginalArg(3) float normalX, @OriginalArg(4) float normalY, @OriginalArg(5) float normalZ, @OriginalArg(6) int color, @OriginalArg(7) float arg7) {
+	public int addVertex(@OriginalArg(0) int x, @OriginalArg(1) int y, @OriginalArg(2) int z, @OriginalArg(3) float normalX, @OriginalArg(4) float normalY, @OriginalArg(5) float normalZ, @OriginalArg(6) int color, @OriginalArg(7) float arg7) {
 		@Pc(1) long key = 0L;
 		if ((x & 0x7F) == 0 || (z & 0x7F) == 0) {
 			key = (long) (x + (z << 16)) + ((long) color << 32);
@@ -364,7 +364,7 @@ public final class GroundModel extends Node {
 	}
 
 	@OriginalMember(owner = "client!ih", name = "d", descriptor = "()V")
-	public final void clear() {
+	public void clear() {
 		this.vertexX = new int[this.vertexCapacity];
 		this.vertexY = new int[this.vertexCapacity];
 		this.vertexZ = new int[this.vertexCapacity];

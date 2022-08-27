@@ -13,7 +13,7 @@ public final class TextureOpMonochrome extends TextureOp {
 
 	@OriginalMember(owner = "client!ti", name = "a", descriptor = "(II)[I")
 	@Override
-	public final int[] getMonochromeOutput(@OriginalArg(1) int y) {
+	public int[] getMonochromeOutput(@OriginalArg(1) int y) {
 		@Pc(7) int[] dest = this.monochromeImageCache.get(y);
 		if (this.monochromeImageCache.invalid) {
 			@Pc(18) int[][] src = this.getChildColorOutput(0, y);

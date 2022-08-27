@@ -303,7 +303,7 @@ public final class Song extends Node {
 	}
 
 	@OriginalMember(owner = "client!tg", name = "a", descriptor = "()V")
-	public final void createPrograms() {
+	public void createPrograms() {
 		if (this.programs != null) {
 			return;
 		}
@@ -370,7 +370,7 @@ public final class Song extends Node {
 	}
 
 	@OriginalMember(owner = "client!tg", name = "b", descriptor = "()V")
-	public final void releasePrograms() {
+	public void releasePrograms() {
 		this.programs = null;
 	}
 }

@@ -50,7 +50,7 @@ public final class TextureOpRasterizerBezierCurve extends TextureOpRasterizerSha
 
 	@OriginalMember(owner = "client!in", name = "a", descriptor = "(IIZ)V")
 	@Override
-	public final void renderOutline(@OriginalArg(0) int width, @OriginalArg(1) int height) {
+	public void renderOutline(@OriginalArg(0) int width, @OriginalArg(1) int height) {
 		@Pc(10) int x0 = width * this.x0 >> 12;
 		@Pc(17) int x1 = width * this.x1 >> 12;
 		@Pc(24) int y1 = height * this.y1 >> 12;
@@ -64,11 +64,11 @@ public final class TextureOpRasterizerBezierCurve extends TextureOpRasterizerSha
 
 	@OriginalMember(owner = "client!in", name = "a", descriptor = "(III)V")
 	@Override
-	public final void renderFill(@OriginalArg(1) int width, @OriginalArg(2) int height) {
+	public void renderFill(@OriginalArg(1) int width, @OriginalArg(2) int height) {
 	}
 
 	@OriginalMember(owner = "client!in", name = "a", descriptor = "(IIB)V")
 	@Override
-	public final void render(@OriginalArg(0) int width, @OriginalArg(1) int height) {
+	public void render(@OriginalArg(0) int width, @OriginalArg(1) int height) {
 	}
 }

@@ -34,7 +34,7 @@ public final class TextureOpRasterizerEllipse extends TextureOpRasterizerShape {
 
 	@OriginalMember(owner = "client!am", name = "a", descriptor = "(IIB)V")
 	@Override
-	public final void render(@OriginalArg(0) int width, @OriginalArg(1) int height) {
+	public void render(@OriginalArg(0) int width, @OriginalArg(1) int height) {
 		@Pc(10) int x = this.x * width >> 12;
 		@Pc(21) int horizontalRadius = this.horizontalRadius * width >> 12;
 		@Pc(28) int verticalRadius = this.verticalRadius * height >> 12;
@@ -44,7 +44,7 @@ public final class TextureOpRasterizerEllipse extends TextureOpRasterizerShape {
 
 	@OriginalMember(owner = "client!am", name = "a", descriptor = "(III)V")
 	@Override
-	public final void renderFill(@OriginalArg(1) int width, @OriginalArg(2) int height) {
+	public void renderFill(@OriginalArg(1) int width, @OriginalArg(2) int height) {
 		@Pc(10) int x = this.x * width >> 12;
 		@Pc(17) int horizontalRadius = this.horizontalRadius * width >> 12;
 		@Pc(24) int verticalRadius = this.verticalRadius * height >> 12;
@@ -54,6 +54,6 @@ public final class TextureOpRasterizerEllipse extends TextureOpRasterizerShape {
 
 	@OriginalMember(owner = "client!am", name = "a", descriptor = "(IIZ)V")
 	@Override
-	public final void renderOutline(@OriginalArg(0) int width, @OriginalArg(1) int height) {
+	public void renderOutline(@OriginalArg(0) int width, @OriginalArg(1) int height) {
 	}
 }

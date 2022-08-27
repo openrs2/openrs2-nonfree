@@ -109,7 +109,7 @@ public final class VorbisCodebook {
 	}
 
 	@OriginalMember(owner = "client!pd", name = "a", descriptor = "()[F")
-	public final float[] decodeVq() {
+	public float[] decodeVq() {
 		return this.valueVector[this.decodeScalar()];
 	}
 
@@ -184,7 +184,7 @@ public final class VorbisCodebook {
 	}
 
 	@OriginalMember(owner = "client!pd", name = "c", descriptor = "()I")
-	public final int decodeScalar() {
+	public int decodeScalar() {
 		@Pc(1) int node;
 		for (node = 0; this.entryTree[node] >= 0; node = VorbisSound.readBit() == 0 ? node + 1 : this.entryTree[node]) {
 		}

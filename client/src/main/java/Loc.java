@@ -115,7 +115,7 @@ public final class Loc extends Entity {
 
 	@OriginalMember(owner = "client!ri", name = "a", descriptor = "(IIIII)V")
 	@Override
-	public final void method3806(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4) {
+	public void method3806(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4) {
 		@Pc(5) Entity local5 = null;
 		if (GlRenderer.enabled) {
 			local5 = this.method3728(true);
@@ -138,7 +138,7 @@ public final class Loc extends Entity {
 
 	@OriginalMember(owner = "client!ri", name = "a", descriptor = "(IIIIIIIIJILclient!ne;)V")
 	@Override
-	public final void method3805(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) long arg8, @OriginalArg(9) int arg9, @OriginalArg(10) ParticleSystem arg10) {
+	public void method3805(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) long arg8, @OriginalArg(9) int arg9, @OriginalArg(10) ParticleSystem arg10) {
 		@Pc(7) Entity local7 = this.method3735();
 		if (local7 != null) {
 			this.method3737(local7);
@@ -365,7 +365,7 @@ public final class Loc extends Entity {
 	}
 
 	@OriginalMember(owner = "client!ri", name = "b", descriptor = "(I)V")
-	public final void method3732() {
+	public void method3732() {
 		if (this.aClass56_Sub1_4 != null) {
 			Static14.method1210(this.aClass56_Sub1_4, this.anInt4581, this.anInt4586, this.anInt4591);
 			this.aClass56_Sub1_4 = null;
@@ -373,13 +373,13 @@ public final class Loc extends Entity {
 	}
 
 	@OriginalMember(owner = "client!ri", name = "c", descriptor = "(I)Lclient!vc;")
-	public final Entity method3735() {
+	public Entity method3735() {
 		return this.method3728(false);
 	}
 
 	@OriginalMember(owner = "client!ri", name = "b", descriptor = "()I")
 	@Override
-	public final int getMinY() {
+	public int getMinY() {
 		return this.minY;
 	}
 
@@ -419,7 +419,7 @@ public final class Loc extends Entity {
 
 	@OriginalMember(owner = "client!ri", name = "finalize", descriptor = "()V")
 	@Override
-	public final void finalize() {
+	public void finalize() {
 		if (this.particleSystem != null) {
 			this.particleSystem.remove();
 		}

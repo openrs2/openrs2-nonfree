@@ -43,12 +43,12 @@ public final class MidiDecoder {
 	}
 
 	@OriginalMember(owner = "client!go", name = "a", descriptor = "(I)J")
-	public final long getTimeMillis(@OriginalArg(0) int time) {
+	public long getTimeMillis(@OriginalArg(0) int time) {
 		return this.startMillis + (long) time * (long) this.tempo;
 	}
 
 	@OriginalMember(owner = "client!go", name = "a", descriptor = "()V")
-	public final void release() {
+	public void release() {
 		this.buffer.bytes = null;
 		this.startPositions = null;
 		this.positions = null;
@@ -57,19 +57,19 @@ public final class MidiDecoder {
 	}
 
 	@OriginalMember(owner = "client!go", name = "b", descriptor = "(I)V")
-	public final void addDeltaTime(@OriginalArg(0) int track) {
+	public void addDeltaTime(@OriginalArg(0) int track) {
 		@Pc(4) int deltaTime = this.buffer.readVarInt();
 		@Pc(6) int[] times = this.times;
 		times[track] += deltaTime;
 	}
 
 	@OriginalMember(owner = "client!go", name = "b", descriptor = "()V")
-	public final void loadEndOfTrackPosition() {
+	public void loadEndOfTrackPosition() {
 		this.buffer.position = -1;
 	}
 
 	@OriginalMember(owner = "client!go", name = "a", descriptor = "([B)V")
-	public final void init(@OriginalArg(0) byte[] bytes) {
+	public void init(@OriginalArg(0) byte[] bytes) {
 		this.buffer.bytes = bytes;
 		this.buffer.position = 10;
 		@Pc(12) int tracks = this.buffer.readUnsignedShort();
@@ -97,7 +97,7 @@ public final class MidiDecoder {
 	}
 
 	@OriginalMember(owner = "client!go", name = "a", descriptor = "(J)V")
-	public final void setStartMillis(@OriginalArg(0) long millis) {
+	public void setStartMillis(@OriginalArg(0) long millis) {
 		this.startMillis = millis;
 		@Pc(6) int tracks = this.positions.length;
 		for (@Pc(8) int i = 0; i < tracks; i++) {
@@ -110,17 +110,17 @@ public final class MidiDecoder {
 	}
 
 	@OriginalMember(owner = "client!go", name = "c", descriptor = "(I)V")
-	public final void loadTrackPosition(@OriginalArg(0) int track) {
+	public void loadTrackPosition(@OriginalArg(0) int track) {
 		this.buffer.position = this.positions[track];
 	}
 
 	@OriginalMember(owner = "client!go", name = "c", descriptor = "()Z")
-	public final boolean isValid() {
+	public boolean isValid() {
 		return this.buffer.bytes != null;
 	}
 
 	@OriginalMember(owner = "client!go", name = "d", descriptor = "()Z")
-	public final boolean hasNextTrack() {
+	public boolean hasNextTrack() {
 		@Pc(3) int tracks = this.positions.length;
 		for (@Pc(5) int i = 0; i < tracks; i++) {
 			if (this.positions[i] >= 0) {
@@ -131,7 +131,7 @@ public final class MidiDecoder {
 	}
 
 	@OriginalMember(owner = "client!go", name = "e", descriptor = "()I")
-	public final int getNextTrack() {
+	public int getNextTrack() {
 		@Pc(3) int tracks = this.positions.length;
 		@Pc(5) int track = -1;
 		@Pc(7) int minTime = Integer.MAX_VALUE;
@@ -145,7 +145,7 @@ public final class MidiDecoder {
 	}
 
 	@OriginalMember(owner = "client!go", name = "g", descriptor = "()I")
-	public final int getTrackCount() {
+	public int getTrackCount() {
 		return this.positions.length;
 	}
 
@@ -178,12 +178,12 @@ public final class MidiDecoder {
 	}
 
 	@OriginalMember(owner = "client!go", name = "e", descriptor = "(I)V")
-	public final void saveTrackPosition(@OriginalArg(0) int track) {
+	public void saveTrackPosition(@OriginalArg(0) int track) {
 		this.positions[track] = this.buffer.position;
 	}
 
 	@OriginalMember(owner = "client!go", name = "f", descriptor = "(I)I")
-	public final int getNextEvent(@OriginalArg(0) int track) {
+	public int getNextEvent(@OriginalArg(0) int track) {
 		return this.getNextEventInternal(track);
 	}
 

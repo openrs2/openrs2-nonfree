@@ -48,7 +48,7 @@ public final class Envelope {
 	}
 
 	@OriginalMember(owner = "client!h", name = "a", descriptor = "()V")
-	public final void reset() {
+	public void reset() {
 		this.nextTime = 0;
 		this.phase = 0;
 		this.slope = 0;
@@ -57,7 +57,7 @@ public final class Envelope {
 	}
 
 	@OriginalMember(owner = "client!h", name = "a", descriptor = "(Lclient!fd;)V")
-	public final void decode(@OriginalArg(0) Buffer buffer) {
+	public void decode(@OriginalArg(0) Buffer buffer) {
 		this.wavetable = buffer.readUnsignedByte();
 		this.minInterval = buffer.readInt();
 		this.maxInterval = buffer.readInt();
@@ -65,7 +65,7 @@ public final class Envelope {
 	}
 
 	@OriginalMember(owner = "client!h", name = "a", descriptor = "(I)I")
-	public final int nextLevel(@OriginalArg(0) int duration) {
+	public int nextLevel(@OriginalArg(0) int duration) {
 		if (this.time >= this.nextTime) {
 			this.level = this.levels[this.phase++] << 15;
 			if (this.phase >= this.stages) {
@@ -82,7 +82,7 @@ public final class Envelope {
 	}
 
 	@OriginalMember(owner = "client!h", name = "b", descriptor = "(Lclient!fd;)V")
-	public final void decodeStages(@OriginalArg(0) Buffer buffer) {
+	public void decodeStages(@OriginalArg(0) Buffer buffer) {
 		this.stages = buffer.readUnsignedByte();
 		this.times = new int[this.stages];
 		this.levels = new int[this.stages];

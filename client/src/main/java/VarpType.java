@@ -17,7 +17,7 @@ public final class VarpType {
 	}
 
 	@OriginalMember(owner = "client!hi", name = "a", descriptor = "(Lclient!fd;I)V")
-	public final void decode(@OriginalArg(0) Buffer buffer) {
+	public void decode(@OriginalArg(0) Buffer buffer) {
 		while (true) {
 			@Pc(5) int code = buffer.readUnsignedByte();
 			if (code == 0) {

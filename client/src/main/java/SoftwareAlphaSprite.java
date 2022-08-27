@@ -18,7 +18,7 @@ public final class SoftwareAlphaSprite extends SoftwareSprite {
 
 	@OriginalMember(owner = "client!jn", name = "b", descriptor = "(II)V")
 	@Override
-	public final void render(@OriginalArg(0) int x, @OriginalArg(1) int y) {
+	public void render(@OriginalArg(0) int x, @OriginalArg(1) int y) {
 		@Pc(4) int local4 = x + this.xOffset;
 		@Pc(9) int local9 = y + this.yOffset;
 		@Pc(15) int local15 = local4 + local9 * SoftwareRaster.width;
@@ -59,7 +59,7 @@ public final class SoftwareAlphaSprite extends SoftwareSprite {
 
 	@OriginalMember(owner = "client!jn", name = "b", descriptor = "(IIIIIIII[I[I)V")
 	@Override
-	public final void renderRotatedTransparent(@OriginalArg(0) int x, @OriginalArg(1) int y, @OriginalArg(2) int width, @OriginalArg(3) int height, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) int[] arg8, @OriginalArg(9) int[] arg9) {
+	public void renderRotatedTransparent(@OriginalArg(0) int x, @OriginalArg(1) int y, @OriginalArg(2) int width, @OriginalArg(3) int height, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) int[] arg8, @OriginalArg(9) int[] arg9) {
 		try {
 			@Pc(4) int local4 = -width / 2;
 			@Pc(9) int local9 = -height / 2;
@@ -94,7 +94,7 @@ public final class SoftwareAlphaSprite extends SoftwareSprite {
 
 	@OriginalMember(owner = "client!jn", name = "a", descriptor = "(III)V")
 	@Override
-	public final void renderAlpha(@OriginalArg(0) int x, @OriginalArg(1) int y, @OriginalArg(2) int alpha) {
+	public void renderAlpha(@OriginalArg(0) int x, @OriginalArg(1) int y, @OriginalArg(2) int alpha) {
 		@Pc(4) int local4 = x + this.xOffset;
 		@Pc(9) int local9 = y + this.yOffset;
 		@Pc(15) int local15 = local4 + local9 * SoftwareRaster.width;
@@ -135,7 +135,7 @@ public final class SoftwareAlphaSprite extends SoftwareSprite {
 
 	@OriginalMember(owner = "client!jn", name = "a", descriptor = "(IIIII)V")
 	@Override
-	public final void renderResizedAlpha(@OriginalArg(0) int x, @OriginalArg(1) int y, @OriginalArg(2) int width, @OriginalArg(3) int height, @OriginalArg(4) int alpha) {
+	public void renderResizedAlpha(@OriginalArg(0) int x, @OriginalArg(1) int y, @OriginalArg(2) int width, @OriginalArg(3) int height, @OriginalArg(4) int alpha) {
 		if (width <= 0 || height <= 0) {
 			return;
 		}
@@ -191,7 +191,7 @@ public final class SoftwareAlphaSprite extends SoftwareSprite {
 
 	@OriginalMember(owner = "client!jn", name = "b", descriptor = "(IIIIII)V")
 	@Override
-	protected final void renderRotatedScaledTransparent(@OriginalArg(0) int pivotX, @OriginalArg(1) int pivotY, @OriginalArg(2) int x, @OriginalArg(3) int y, @OriginalArg(4) int angle, @OriginalArg(5) int scale) {
+	protected void renderRotatedScaledTransparent(@OriginalArg(0) int pivotX, @OriginalArg(1) int pivotY, @OriginalArg(2) int x, @OriginalArg(3) int y, @OriginalArg(4) int angle, @OriginalArg(5) int scale) {
 		if (scale == 0) {
 			return;
 		}
@@ -606,7 +606,7 @@ public final class SoftwareAlphaSprite extends SoftwareSprite {
 
 	@OriginalMember(owner = "client!jn", name = "a", descriptor = "(IIIIIIII[I[I)V")
 	@Override
-	public final void method2165(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(8) int[] arg7, @OriginalArg(9) int[] arg8) {
+	public void method2165(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(8) int[] arg7, @OriginalArg(9) int[] arg8) {
 		try {
 			@Pc(4) int local4 = -arg2 / 2;
 			@Pc(9) int local9 = -arg3 / 2;
@@ -641,13 +641,13 @@ public final class SoftwareAlphaSprite extends SoftwareSprite {
 
 	@OriginalMember(owner = "client!jn", name = "c", descriptor = "()[I")
 	@Override
-	public final int[] getPixels() {
+	public int[] getPixels() {
 		return this.pixels;
 	}
 
 	@OriginalMember(owner = "client!jn", name = "a", descriptor = "(IIII)V")
 	@Override
-	public final void renderResizedTransparent(@OriginalArg(0) int x, @OriginalArg(1) int y, @OriginalArg(2) int width, @OriginalArg(3) int height) {
+	public void renderResizedTransparent(@OriginalArg(0) int x, @OriginalArg(1) int y, @OriginalArg(2) int width, @OriginalArg(3) int height) {
 		if (width <= 0 || height <= 0) {
 			return;
 		}
@@ -703,7 +703,7 @@ public final class SoftwareAlphaSprite extends SoftwareSprite {
 
 	@OriginalMember(owner = "client!jn", name = "a", descriptor = "(IIIIIIDI)V")
 	@Override
-	public final void renderRotatedTransparent(@OriginalArg(0) int x, @OriginalArg(1) int y, @OriginalArg(6) double angle) {
+	public void renderRotatedTransparent(@OriginalArg(0) int x, @OriginalArg(1) int y, @OriginalArg(6) double angle) {
 		try {
 			@Pc(15) int local15 = (int) (Math.sin(angle) * 65536.0D);
 			@Pc(21) int local21 = (int) (Math.cos(angle) * 65536.0D);
@@ -735,7 +735,7 @@ public final class SoftwareAlphaSprite extends SoftwareSprite {
 
 	@OriginalMember(owner = "client!jn", name = "c", descriptor = "(II)V")
 	@Override
-	public final void renderHorizontalFlipTransparent(@OriginalArg(0) int x, @OriginalArg(1) int y) {
+	public void renderHorizontalFlipTransparent(@OriginalArg(0) int x, @OriginalArg(1) int y) {
 		@Pc(10) int local10 = x + this.innerWidth - this.width - this.xOffset;
 		@Pc(15) int local15 = y + this.yOffset;
 		@Pc(21) int local21 = local10 + local15 * SoftwareRaster.width;
@@ -776,7 +776,7 @@ public final class SoftwareAlphaSprite extends SoftwareSprite {
 
 	@OriginalMember(owner = "client!jn", name = "a", descriptor = "(II)V")
 	@Override
-	public final void renderTransparent(@OriginalArg(0) int x, @OriginalArg(1) int y) {
+	public void renderTransparent(@OriginalArg(0) int x, @OriginalArg(1) int y) {
 		@Pc(4) int local4 = x + this.xOffset;
 		@Pc(9) int local9 = y + this.yOffset;
 		@Pc(15) int local15 = local4 + local9 * SoftwareRaster.width;

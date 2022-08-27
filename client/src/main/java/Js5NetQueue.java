@@ -53,7 +53,7 @@ public final class Js5NetQueue {
 	}
 
 	@OriginalMember(owner = "client!en", name = "b", descriptor = "(I)V")
-	public final void closeServer() {
+	public void closeServer() {
 		if (this.socket == null) {
 			return;
 		}
@@ -74,19 +74,19 @@ public final class Js5NetQueue {
 	}
 
 	@OriginalMember(owner = "client!en", name = "c", descriptor = "(I)Z")
-	public final boolean isUrgentRequestQueueFull() {
+	public boolean isUrgentRequestQueueFull() {
 		return this.getUrgentRequestCount() >= 20;
 	}
 
 	@OriginalMember(owner = "client!en", name = "a", descriptor = "(B)V")
-	public final void breakConnection() {
+	public void breakConnection() {
 		if (this.socket != null) {
 			this.socket.breakConnection();
 		}
 	}
 
 	@OriginalMember(owner = "client!en", name = "a", descriptor = "(ILclient!eo;Z)V")
-	public final void start(@OriginalArg(1) BufferedSocket socket, @OriginalArg(2) boolean loggedIn) {
+	public void start(@OriginalArg(1) BufferedSocket socket, @OriginalArg(2) boolean loggedIn) {
 		if (this.socket != null) {
 			try {
 				this.socket.close();
@@ -134,7 +134,7 @@ public final class Js5NetQueue {
 	}
 
 	@OriginalMember(owner = "client!en", name = "a", descriptor = "(BIZII)Lclient!ul;")
-	public final Js5NetRequest read(@OriginalArg(1) int archive, @OriginalArg(4) int group, @OriginalArg(2) boolean urgent, @OriginalArg(0) byte trailerLen) {
+	public Js5NetRequest read(@OriginalArg(1) int archive, @OriginalArg(4) int group, @OriginalArg(2) boolean urgent, @OriginalArg(0) byte trailerLen) {
 		@Pc(16) long key = group + (archive << 16);
 		@Pc(20) Js5NetRequest request = new Js5NetRequest();
 		request.trailerLen = trailerLen;
@@ -154,14 +154,14 @@ public final class Js5NetQueue {
 	}
 
 	@OriginalMember(owner = "client!en", name = "f", descriptor = "(I)V")
-	public final void quit() {
+	public void quit() {
 		if (this.socket != null) {
 			this.socket.close();
 		}
 	}
 
 	@OriginalMember(owner = "client!en", name = "g", descriptor = "(I)V")
-	public final void rekey() {
+	public void rekey() {
 		try {
 			this.socket.close();
 		} catch (@Pc(9) Exception ex) {
@@ -173,12 +173,12 @@ public final class Js5NetQueue {
 	}
 
 	@OriginalMember(owner = "client!en", name = "a", descriptor = "(Z)I")
-	public final int getUrgentRequestCount() {
+	public int getUrgentRequestCount() {
 		return this.pendingUrgentRequests.size() + this.inFlightUrgentRequests.size();
 	}
 
 	@OriginalMember(owner = "client!en", name = "a", descriptor = "(BZ)V")
-	public final void writeLoggedIn(@OriginalArg(1) boolean loggedIn) {
+	public void writeLoggedIn(@OriginalArg(1) boolean loggedIn) {
 		if (this.socket == null) {
 			return;
 		}
@@ -199,7 +199,7 @@ public final class Js5NetQueue {
 	}
 
 	@OriginalMember(owner = "client!en", name = "b", descriptor = "(Z)Z")
-	public final boolean isPrefetchRequestQueueFull() {
+	public boolean isPrefetchRequestQueueFull() {
 		return this.getPrefetchRequestCount() >= 20;
 	}
 
@@ -225,7 +225,7 @@ public final class Js5NetQueue {
 	}
 
 	@OriginalMember(owner = "client!en", name = "h", descriptor = "(I)Z")
-	public final boolean loop() {
+	public boolean loop() {
 		if (this.socket != null) {
 			@Pc(11) long now = MonotonicClock.currentTimeMillis();
 			@Pc(18) int duration = (int) (now - this.previousLoop);

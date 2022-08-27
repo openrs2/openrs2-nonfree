@@ -90,7 +90,7 @@ public final class Js5CachedResourceProvider extends Js5ResourceProvider {
 	}
 
 	@OriginalMember(owner = "client!wb", name = "b", descriptor = "(I)I")
-	public final int getTotalVerifiedGroups() {
+	public int getTotalVerifiedGroups() {
 		if (this.index == null) {
 			return 0;
 		} else if (this.verifyAll) {
@@ -103,7 +103,7 @@ public final class Js5CachedResourceProvider extends Js5ResourceProvider {
 
 	@OriginalMember(owner = "client!wb", name = "a", descriptor = "(I)Lclient!fo;")
 	@Override
-	public final Js5Index fetchIndex() {
+	public Js5Index fetchIndex() {
 		if (this.index != null) {
 			return this.index;
 		}
@@ -164,7 +164,7 @@ public final class Js5CachedResourceProvider extends Js5ResourceProvider {
 	}
 
 	@OriginalMember(owner = "client!wb", name = "b", descriptor = "(B)I")
-	public final int getIndexPercentageComplete() {
+	public int getIndexPercentageComplete() {
 		if (this.fetchIndex() != null) {
 			return 100;
 		} else if (this.indexRequest == null) {
@@ -176,7 +176,7 @@ public final class Js5CachedResourceProvider extends Js5ResourceProvider {
 
 	@OriginalMember(owner = "client!wb", name = "b", descriptor = "(II)V")
 	@Override
-	public final void prefetchGroup(@OriginalArg(0) int group) {
+	public void prefetchGroup(@OriginalArg(0) int group) {
 		if (this.cache == null) {
 			return;
 		}
@@ -191,7 +191,7 @@ public final class Js5CachedResourceProvider extends Js5ResourceProvider {
 	}
 
 	@OriginalMember(owner = "client!wb", name = "a", descriptor = "(Z)V")
-	public final void processPrefetchQueue() {
+	public void processPrefetchQueue() {
 		if (this.groupQueue == null || this.fetchIndex() == null) {
 			return;
 		}
@@ -214,12 +214,12 @@ public final class Js5CachedResourceProvider extends Js5ResourceProvider {
 	}
 
 	@OriginalMember(owner = "client!wb", name = "b", descriptor = "(Z)I")
-	public final int getVerifiedGroups() {
+	public int getVerifiedGroups() {
 		return this.verifiedGroups;
 	}
 
 	@OriginalMember(owner = "client!wb", name = "d", descriptor = "(I)V")
-	public final void prefetchAll() {
+	public void prefetchAll() {
 		if (this.cache != null) {
 			this.prefetchAll = true;
 			if (this.groupQueue == null) {
@@ -230,7 +230,7 @@ public final class Js5CachedResourceProvider extends Js5ResourceProvider {
 
 	@OriginalMember(owner = "client!wb", name = "c", descriptor = "(II)[B")
 	@Override
-	public final byte[] fetchGroup(@OriginalArg(1) int group) {
+	public byte[] fetchGroup(@OriginalArg(1) int group) {
 		@Pc(9) Js5Request request = this.fetchGroupInner(group, 0);
 		if (request == null) {
 			return null;
@@ -242,13 +242,13 @@ public final class Js5CachedResourceProvider extends Js5ResourceProvider {
 	}
 
 	@OriginalMember(owner = "client!wb", name = "e", descriptor = "(I)I")
-	public final int getIndexSize() {
+	public int getIndexSize() {
 		return this.index == null ? 0 : this.index.size;
 	}
 
 	@OriginalMember(owner = "client!wb", name = "a", descriptor = "(II)I")
 	@Override
-	public final int getPercentageComplete(@OriginalArg(0) int group) {
+	public int getPercentageComplete(@OriginalArg(0) int group) {
 		@Pc(9) Js5Request request = (Js5Request) this.requests.get(group);
 		return request == null ? 0 : request.getPercentageComplete();
 	}
@@ -367,7 +367,7 @@ public final class Js5CachedResourceProvider extends Js5ResourceProvider {
 	}
 
 	@OriginalMember(owner = "client!wb", name = "f", descriptor = "(I)V")
-	public final void loop() {
+	public void loop() {
 		if (this.groupQueue != null) {
 			if (this.fetchIndex() == null) {
 				return;

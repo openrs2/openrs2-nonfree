@@ -13,7 +13,7 @@ public final class TextureOpVerticalGradient extends TextureOp {
 
 	@OriginalMember(owner = "client!fa", name = "a", descriptor = "(II)[I")
 	@Override
-	public final int[] getMonochromeOutput(@OriginalArg(1) int y) {
+	public int[] getMonochromeOutput(@OriginalArg(1) int y) {
 		@Pc(15) int[] dest = this.monochromeImageCache.get(y);
 		if (this.monochromeImageCache.invalid) {
 			ArrayUtils.fill(dest, 0, Texture.width, Texture.normalisedY[y]);

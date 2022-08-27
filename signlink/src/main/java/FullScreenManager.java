@@ -36,7 +36,7 @@ public final class FullScreenManager {
 	}
 
 	@OriginalMember(owner = "signlink!c", name = "a", descriptor = "(Z)V")
-	public final void exit() {
+	public void exit() {
 		if (this.previousDisplayMode != null) {
 			this.device.setDisplayMode(this.previousDisplayMode);
 			if (!this.device.getDisplayMode().equals(this.previousDisplayMode)) {
@@ -48,7 +48,7 @@ public final class FullScreenManager {
 	}
 
 	@OriginalMember(owner = "signlink!c", name = "a", descriptor = "(IIIBLjava/awt/Frame;I)V")
-	public final void enter(@OriginalArg(4) Frame frame, @OriginalArg(1) int width, @OriginalArg(0) int height, @OriginalArg(2) int bitDepth, @OriginalArg(5) int refreshRate) {
+	public void enter(@OriginalArg(4) Frame frame, @OriginalArg(1) int width, @OriginalArg(0) int height, @OriginalArg(2) int bitDepth, @OriginalArg(5) int refreshRate) {
 		this.previousDisplayMode = this.device.getDisplayMode();
 		if (this.previousDisplayMode == null) {
 			throw new NullPointerException();
@@ -77,7 +77,7 @@ public final class FullScreenManager {
 	}
 
 	@OriginalMember(owner = "signlink!c", name = "a", descriptor = "(I)[I")
-	public final int[] getDisplayModes() {
+	public int[] getDisplayModes() {
 		@Pc(3) DisplayMode[] displayModes = this.device.getDisplayModes();
 		@Pc(9) int[] result = new int[displayModes.length << 2];
 		for (@Pc(17) int i = 0; i < displayModes.length; i++) {

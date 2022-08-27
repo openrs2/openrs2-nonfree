@@ -24,7 +24,7 @@ public final class ImageProducerFrameBuffer extends FrameBuffer implements Image
 
 	@OriginalMember(owner = "client!tm", name = "addConsumer", descriptor = "(Ljava/awt/image/ImageConsumer;)V")
 	@Override
-	public final synchronized void addConsumer(@OriginalArg(0) ImageConsumer consumer) {
+	public synchronized void addConsumer(@OriginalArg(0) ImageConsumer consumer) {
 		this.consumer = consumer;
 		consumer.setDimensions(this.width, this.height);
 		consumer.setProperties(null);
@@ -34,12 +34,12 @@ public final class ImageProducerFrameBuffer extends FrameBuffer implements Image
 
 	@OriginalMember(owner = "client!tm", name = "requestTopDownLeftRightResend", descriptor = "(Ljava/awt/image/ImageConsumer;)V")
 	@Override
-	public final void requestTopDownLeftRightResend(@OriginalArg(0) ImageConsumer consumer) {
+	public void requestTopDownLeftRightResend(@OriginalArg(0) ImageConsumer consumer) {
 	}
 
 	@OriginalMember(owner = "client!tm", name = "a", descriptor = "(ZIIILjava/awt/Graphics;I)V")
 	@Override
-	public final void draw(@OriginalArg(4) Graphics graphics, @OriginalArg(5) int x, @OriginalArg(2) int y, @OriginalArg(1) int width, @OriginalArg(3) int height) {
+	public void draw(@OriginalArg(4) Graphics graphics, @OriginalArg(5) int x, @OriginalArg(2) int y, @OriginalArg(1) int width, @OriginalArg(3) int height) {
 		this.setPixels(x, y, width, height);
 		@Pc(9) Shape clip = graphics.getClip();
 		graphics.clipRect(x, y, width, height);
@@ -57,20 +57,20 @@ public final class ImageProducerFrameBuffer extends FrameBuffer implements Image
 
 	@OriginalMember(owner = "client!tm", name = "a", descriptor = "(ILjava/awt/Graphics;BI)V")
 	@Override
-	public final void draw(@OriginalArg(1) Graphics graphics) {
+	public void draw(@OriginalArg(1) Graphics graphics) {
 		this.setPixels();
 		graphics.drawImage(this.image, 0, 0, this);
 	}
 
 	@OriginalMember(owner = "client!tm", name = "imageUpdate", descriptor = "(Ljava/awt/Image;IIIII)Z")
 	@Override
-	public final boolean imageUpdate(@OriginalArg(0) Image image, @OriginalArg(1) int flags, @OriginalArg(2) int x, @OriginalArg(3) int y, @OriginalArg(4) int width, @OriginalArg(5) int height) {
+	public boolean imageUpdate(@OriginalArg(0) Image image, @OriginalArg(1) int flags, @OriginalArg(2) int x, @OriginalArg(3) int y, @OriginalArg(4) int width, @OriginalArg(5) int height) {
 		return true;
 	}
 
 	@OriginalMember(owner = "client!tm", name = "startProduction", descriptor = "(Ljava/awt/image/ImageConsumer;)V")
 	@Override
-	public final void startProduction(@OriginalArg(0) ImageConsumer consumer) {
+	public void startProduction(@OriginalArg(0) ImageConsumer consumer) {
 		this.addConsumer(consumer);
 	}
 
@@ -84,13 +84,13 @@ public final class ImageProducerFrameBuffer extends FrameBuffer implements Image
 
 	@OriginalMember(owner = "client!tm", name = "isConsumer", descriptor = "(Ljava/awt/image/ImageConsumer;)Z")
 	@Override
-	public final synchronized boolean isConsumer(@OriginalArg(0) ImageConsumer consumer) {
+	public synchronized boolean isConsumer(@OriginalArg(0) ImageConsumer consumer) {
 		return this.consumer == consumer;
 	}
 
 	@OriginalMember(owner = "client!tm", name = "removeConsumer", descriptor = "(Ljava/awt/image/ImageConsumer;)V")
 	@Override
-	public final synchronized void removeConsumer(@OriginalArg(0) ImageConsumer consumer) {
+	public synchronized void removeConsumer(@OriginalArg(0) ImageConsumer consumer) {
 		if (this.consumer == consumer) {
 			this.consumer = null;
 		}
@@ -98,7 +98,7 @@ public final class ImageProducerFrameBuffer extends FrameBuffer implements Image
 
 	@OriginalMember(owner = "client!tm", name = "a", descriptor = "(Ljava/awt/Component;IIB)V")
 	@Override
-	public final void init(@OriginalArg(0) Component component, @OriginalArg(1) int width, @OriginalArg(2) int height) {
+	public void init(@OriginalArg(0) Component component, @OriginalArg(1) int width, @OriginalArg(2) int height) {
 		this.width = width;
 		this.height = height;
 		this.pixels = new int[width * height + 1];

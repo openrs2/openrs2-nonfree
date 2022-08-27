@@ -56,7 +56,7 @@ public final class GlIndexedSprite extends IndexedSprite {
 
 	@OriginalMember(owner = "client!n", name = "a", descriptor = "(II)V")
 	@Override
-	public final void renderTransparent(@OriginalArg(0) int x, @OriginalArg(1) int y) {
+	public void renderTransparent(@OriginalArg(0) int x, @OriginalArg(1) int y) {
 		GlRenderer.method1596();
 		x += this.xOffset;
 		y += this.yOffset;
@@ -70,7 +70,7 @@ public final class GlIndexedSprite extends IndexedSprite {
 
 	@OriginalMember(owner = "client!n", name = "finalize", descriptor = "()V")
 	@Override
-	public final void finalize() throws Throwable {
+	public void finalize() throws Throwable {
 		if (this.textureId != -1) {
 			GlCleaner.deleteTexture2d(this.textureId, this.size, this.contextId);
 			this.textureId = -1;
@@ -108,7 +108,7 @@ public final class GlIndexedSprite extends IndexedSprite {
 
 	@OriginalMember(owner = "client!n", name = "a", descriptor = "(III)V")
 	@Override
-	public final void renderAlpha(@OriginalArg(0) int x, @OriginalArg(1) int y, @OriginalArg(2) int alpha) {
+	public void renderAlpha(@OriginalArg(0) int x, @OriginalArg(1) int y, @OriginalArg(2) int alpha) {
 		GlRenderer.method1625();
 		x += this.xOffset;
 		y += this.yOffset;
@@ -170,7 +170,7 @@ public final class GlIndexedSprite extends IndexedSprite {
 	}
 
 	@OriginalMember(owner = "client!n", name = "a", descriptor = "(IILclient!oa;)V")
-	public final void renderTransparentMasked(@OriginalArg(0) int x, @OriginalArg(1) int y, @OriginalArg(2) GlSprite mask) {
+	public void renderTransparentMasked(@OriginalArg(0) int x, @OriginalArg(1) int y, @OriginalArg(2) GlSprite mask) {
 		if (mask == null) {
 			return;
 		}

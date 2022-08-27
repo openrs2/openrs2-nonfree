@@ -19,7 +19,7 @@ public final class TextureOpKaleidoscope extends TextureOp {
 
 	@OriginalMember(owner = "client!uc", name = "b", descriptor = "(II)[[I")
 	@Override
-	public final int[][] getColorOutput(@OriginalArg(0) int y) {
+	public int[][] getColorOutput(@OriginalArg(0) int y) {
 		@Pc(7) int[][] dest = this.colorImageCache.get(y);
 		if (this.colorImageCache.invalid) {
 			@Pc(15) int[] destRed = dest[0];
@@ -38,7 +38,7 @@ public final class TextureOpKaleidoscope extends TextureOp {
 
 	@OriginalMember(owner = "client!uc", name = "a", descriptor = "(BLclient!fd;I)V")
 	@Override
-	public final void decode(@OriginalArg(1) Buffer buffer, @OriginalArg(2) int code) {
+	public void decode(@OriginalArg(1) Buffer buffer, @OriginalArg(2) int code) {
 		if (code == 0) {
 			this.monochrome = buffer.readUnsignedByte() == 1;
 		}
@@ -80,7 +80,7 @@ public final class TextureOpKaleidoscope extends TextureOp {
 
 	@OriginalMember(owner = "client!uc", name = "a", descriptor = "(II)[I")
 	@Override
-	public final int[] getMonochromeOutput(@OriginalArg(1) int y) {
+	public int[] getMonochromeOutput(@OriginalArg(1) int y) {
 		@Pc(20) int[] dest = this.monochromeImageCache.get(y);
 		if (this.monochromeImageCache.invalid) {
 			for (@Pc(26) int x = 0; x < Texture.width; x++) {

@@ -135,12 +135,12 @@ public final class Cache {
 
 	@OriginalMember(owner = "client!fm", name = "toString", descriptor = "()Ljava/lang/String;")
 	@Override
-	public final String toString() {
+	public String toString() {
 		return "Cache:" + this.archive;
 	}
 
 	@OriginalMember(owner = "client!fm", name = "a", descriptor = "(II)[B")
-	public final byte[] read(@OriginalArg(0) int group) {
+	public byte[] read(@OriginalArg(0) int group) {
 		synchronized (this.data) {
 			try {
 				if ((long) (group * 6 + 6) > this.index.length()) {
@@ -200,7 +200,7 @@ public final class Cache {
 	}
 
 	@OriginalMember(owner = "client!fm", name = "a", descriptor = "(I[BII)Z")
-	public final boolean write(@OriginalArg(2) int group, @OriginalArg(1) byte[] bytes, @OriginalArg(0) int len) {
+	public boolean write(@OriginalArg(2) int group, @OriginalArg(1) byte[] bytes, @OriginalArg(0) int len) {
 		synchronized (this.data) {
 			if (len < 0 || len > this.maxLen) {
 				throw new IllegalArgumentException();

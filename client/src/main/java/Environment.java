@@ -111,7 +111,7 @@ public final class Environment {
 	}
 
 	@OriginalMember(owner = "client!wj", name = "a", descriptor = "(Lclient!fd;I)V")
-	public final void method4786(@OriginalArg(0) Buffer buffer) {
+	public void method4786(@OriginalArg(0) Buffer buffer) {
 		this.aFloat151 = (float) (buffer.readUnsignedByte() * 8) / 255.0F;
 		this.aFloat152 = (float) (buffer.readUnsignedByte() * 8) / 255.0F;
 		this.aFloat153 = (float) (buffer.readUnsignedByte() * 8) / 255.0F;

@@ -156,7 +156,7 @@ public final class SoftwareIndexedSprite extends IndexedSprite {
 
 	@OriginalMember(owner = "client!fe", name = "a", descriptor = "(III)V")
 	@Override
-	public final void renderAlpha(@OriginalArg(0) int x, @OriginalArg(1) int y, @OriginalArg(2) int alpha) {
+	public void renderAlpha(@OriginalArg(0) int x, @OriginalArg(1) int y, @OriginalArg(2) int alpha) {
 		@Pc(4) int local4 = x + this.xOffset;
 		@Pc(9) int local9 = y + this.yOffset;
 		@Pc(15) int local15 = local4 + local9 * SoftwareRaster.width;
@@ -196,7 +196,7 @@ public final class SoftwareIndexedSprite extends IndexedSprite {
 	}
 
 	@OriginalMember(owner = "client!fe", name = "a", descriptor = "()V")
-	public final void clear() {
+	public void clear() {
 		@Pc(1) int off = 0;
 		@Pc(7) int len = this.pixels.length - 7;
 		while (off < len) {
@@ -218,7 +218,7 @@ public final class SoftwareIndexedSprite extends IndexedSprite {
 	}
 
 	@OriginalMember(owner = "client!fe", name = "b", descriptor = "(III)V")
-	public final void adjustPalette(@OriginalArg(0) int redDelta, @OriginalArg(1) int greenDelta, @OriginalArg(2) int blueDelta) {
+	public void adjustPalette(@OriginalArg(0) int redDelta, @OriginalArg(1) int greenDelta, @OriginalArg(2) int blueDelta) {
 		for (@Pc(1) int i = 0; i < this.palette.length; i++) {
 			@Pc(15) int red = this.palette[i] >> 16 & 0xFF;
 			@Pc(19) int red2 = red + redDelta;
@@ -246,7 +246,7 @@ public final class SoftwareIndexedSprite extends IndexedSprite {
 	}
 
 	@OriginalMember(owner = "client!fe", name = "b", descriptor = "()V")
-	public final void flipVertical() {
+	public void flipVertical() {
 		@Pc(6) byte[] pixels = new byte[this.width * this.height];
 		@Pc(8) int i = 0;
 		for (@Pc(13) int y = this.height - 1; y >= 0; y--) {
@@ -259,7 +259,7 @@ public final class SoftwareIndexedSprite extends IndexedSprite {
 	}
 
 	@OriginalMember(owner = "client!fe", name = "c", descriptor = "()V")
-	public final void rotateClockwise() {
+	public void rotateClockwise() {
 		@Pc(6) byte[] pixels = new byte[this.width * this.height];
 		@Pc(8) int i = 0;
 		for (@Pc(10) int x = 0; x < this.width; x++) {
@@ -280,7 +280,7 @@ public final class SoftwareIndexedSprite extends IndexedSprite {
 	}
 
 	@OriginalMember(owner = "client!fe", name = "a", descriptor = "(IIIIII)V")
-	public final void method1314(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4) {
+	public void method1314(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4) {
 		arg0 -= this.xOffset << 4;
 		arg1 -= this.yOffset << 4;
 		@Pc(23) double local23 = (double) (arg4 & 0xFFFF) * 9.587379924285257E-5D;
@@ -700,7 +700,7 @@ public final class SoftwareIndexedSprite extends IndexedSprite {
 	}
 
 	@OriginalMember(owner = "client!fe", name = "a", descriptor = "(IIII)V")
-	public final void method1315(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) {
+	public void method1315(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) {
 		@Pc(2) int local2 = this.width;
 		@Pc(5) int local5 = this.height;
 		@Pc(7) int local7 = 0;
@@ -752,7 +752,7 @@ public final class SoftwareIndexedSprite extends IndexedSprite {
 	}
 
 	@OriginalMember(owner = "client!fe", name = "a", descriptor = "(IIIII)V")
-	public final void method1316(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4) {
+	public void method1316(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4) {
 		@Pc(2) int local2 = this.width;
 		@Pc(5) int local5 = this.height;
 		@Pc(7) int local7 = 0;
@@ -805,7 +805,7 @@ public final class SoftwareIndexedSprite extends IndexedSprite {
 
 	@OriginalMember(owner = "client!fe", name = "a", descriptor = "(II)V")
 	@Override
-	public final void renderTransparent(@OriginalArg(0) int x, @OriginalArg(1) int y) {
+	public void renderTransparent(@OriginalArg(0) int x, @OriginalArg(1) int y) {
 		@Pc(4) int local4 = x + this.xOffset;
 		@Pc(9) int local9 = y + this.yOffset;
 		@Pc(15) int local15 = local4 + local9 * SoftwareRaster.width;
@@ -845,7 +845,7 @@ public final class SoftwareIndexedSprite extends IndexedSprite {
 	}
 
 	@OriginalMember(owner = "client!fe", name = "d", descriptor = "()V")
-	public final void method1320() {
+	public void method1320() {
 		if (this.width == this.innerWidth && this.height == this.innerHeight) {
 			return;
 		}
@@ -864,7 +864,7 @@ public final class SoftwareIndexedSprite extends IndexedSprite {
 	}
 
 	@OriginalMember(owner = "client!fe", name = "a", descriptor = "(II[I[I)V")
-	public final void renderTransparentMasked(@OriginalArg(0) int x, @OriginalArg(1) int y, @OriginalArg(2) int[] maskXs, @OriginalArg(3) int[] maskWidths) {
+	public void renderTransparentMasked(@OriginalArg(0) int x, @OriginalArg(1) int y, @OriginalArg(2) int[] maskXs, @OriginalArg(3) int[] maskWidths) {
 		if (SoftwareRaster.clipHeight - SoftwareRaster.clipY != maskXs.length) {
 			throw new IllegalStateException();
 		}

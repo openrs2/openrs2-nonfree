@@ -73,7 +73,7 @@ public final class ParticleEffectorType {
 	}
 
 	@OriginalMember(owner = "client!dc", name = "a", descriptor = "(B)V")
-	public final void postDecode() {
+	public void postDecode() {
 		this.anInt906 = MathUtils.COSINE[this.anInt893];
 		this.anInt904 = (int) Math.sqrt((double) (this.anInt892 * this.anInt892 + this.anInt898 * this.anInt898 + this.anInt903 * this.anInt903));
 		if (this.anInt911 == 0) {
@@ -93,7 +93,7 @@ public final class ParticleEffectorType {
 	}
 
 	@OriginalMember(owner = "client!dc", name = "a", descriptor = "(Lclient!fd;B)V")
-	public final void decode(@OriginalArg(0) Buffer buffer) {
+	public void decode(@OriginalArg(0) Buffer buffer) {
 		while (true) {
 			@Pc(10) int code = buffer.readUnsignedByte();
 			if (code == 0) {

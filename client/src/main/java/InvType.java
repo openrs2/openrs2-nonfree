@@ -17,7 +17,7 @@ public final class InvType extends SecondaryNode {
 	}
 
 	@OriginalMember(owner = "client!fn", name = "a", descriptor = "(ILclient!fd;)V")
-	public final void decode(@OriginalArg(1) Buffer buffer) {
+	public void decode(@OriginalArg(1) Buffer buffer) {
 		while (true) {
 			@Pc(8) int code = buffer.readUnsignedByte();
 			if (code == 0) {

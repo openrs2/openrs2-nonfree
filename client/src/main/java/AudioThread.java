@@ -19,7 +19,7 @@ public final class AudioThread implements Runnable {
 
 	@OriginalMember(owner = "client!im", name = "run", descriptor = "()V")
 	@Override
-	public final void run() {
+	public void run() {
 		this.running = true;
 		try {
 			while (!this.stop) {

@@ -53,7 +53,7 @@ public final class GlShader {
 
 	@OriginalMember(owner = "client!ec", name = "finalize", descriptor = "()V")
 	@Override
-	public final void finalize() throws Throwable {
+	public void finalize() throws Throwable {
 		GlCleaner.deleteShader(this.id, this.contextId);
 		super.finalize();
 	}

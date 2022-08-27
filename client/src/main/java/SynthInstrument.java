@@ -95,7 +95,7 @@ public final class SynthInstrument {
 	}
 
 	@OriginalMember(owner = "client!uh", name = "a", descriptor = "(Lclient!fd;)V")
-	public final void decode(@OriginalArg(0) Buffer buffer) {
+	public void decode(@OriginalArg(0) Buffer buffer) {
 		this.phaseEnvelope = new Envelope();
 		this.phaseEnvelope.decode(buffer);
 		this.amplitudeEnvelope = new Envelope();
@@ -143,7 +143,7 @@ public final class SynthInstrument {
 	}
 
 	@OriginalMember(owner = "client!uh", name = "a", descriptor = "(II)[I")
-	public final int[] getSamples(@OriginalArg(0) int count, @OriginalArg(1) int millis) {
+	public int[] getSamples(@OriginalArg(0) int count, @OriginalArg(1) int millis) {
 		ArrayUtils.clear(samples, 0, count);
 		if (millis < 10) {
 			return samples;

@@ -61,13 +61,13 @@ public final class LiquidMaterialRenderer implements MaterialRenderer {
 
 	@OriginalMember(owner = "client!gk", name = "c", descriptor = "()I")
 	@Override
-	public final int getFlags() {
+	public int getFlags() {
 		return 0;
 	}
 
 	@OriginalMember(owner = "client!gk", name = "a", descriptor = "()V")
 	@Override
-	public final void unbind() {
+	public void unbind() {
 		if (this.anInt2099 >= 0) {
 			@Pc(5) GL gl = GlRenderer.gl;
 			gl.glCallList(this.anInt2099 + 1);
@@ -123,7 +123,7 @@ public final class LiquidMaterialRenderer implements MaterialRenderer {
 
 	@OriginalMember(owner = "client!gk", name = "a", descriptor = "(I)V")
 	@Override
-	public final void setArgument(@OriginalArg(0) int arg) {
+	public void setArgument(@OriginalArg(0) int arg) {
 		if (this.anInt2099 < 0) {
 			return;
 		}
@@ -153,7 +153,7 @@ public final class LiquidMaterialRenderer implements MaterialRenderer {
 
 	@OriginalMember(owner = "client!gk", name = "b", descriptor = "()V")
 	@Override
-	public final void bind() {
+	public void bind() {
 		if (this.anInt2099 < 0) {
 			return;
 		}

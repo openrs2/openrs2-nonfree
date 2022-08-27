@@ -54,13 +54,13 @@ public final class TextureOp37 extends TextureOp {
 
 	@OriginalMember(owner = "client!rg", name = "e", descriptor = "(B)V")
 	@Override
-	public final void postDecode() {
+	public void postDecode() {
 		TextureOp.createTrigonometryTables();
 	}
 
 	@OriginalMember(owner = "client!rg", name = "a", descriptor = "(BLclient!fd;I)V")
 	@Override
-	public final void decode(@OriginalArg(1) Buffer buffer, @OriginalArg(2) int code) {
+	public void decode(@OriginalArg(1) Buffer buffer, @OriginalArg(2) int code) {
 		if (code == 0) {
 			this.anInt4508 = buffer.readUnsignedShort();
 		} else if (code == 1) {
@@ -80,7 +80,7 @@ public final class TextureOp37 extends TextureOp {
 
 	@OriginalMember(owner = "client!rg", name = "a", descriptor = "(II)[I")
 	@Override
-	public final int[] getMonochromeOutput(@OriginalArg(1) int y) {
+	public int[] getMonochromeOutput(@OriginalArg(1) int y) {
 		@Pc(12) int[] dest = this.monochromeImageCache.get(y);
 		if (this.monochromeImageCache.invalid) {
 			@Pc(22) int local22 = Texture.normalisedY[y] - 2048;

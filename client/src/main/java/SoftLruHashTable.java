@@ -29,7 +29,7 @@ public final class SoftLruHashTable {
 	}
 
 	@OriginalMember(owner = "client!cc", name = "a", descriptor = "(Z)I")
-	public final int size() {
+	public int size() {
 		@Pc(7) int size = 0;
 		for (@Pc(18) ReferenceNode node = (ReferenceNode) this.queue.head(); node != null; node = (ReferenceNode) this.queue.next()) {
 			if (!node.isSoft()) {
@@ -40,7 +40,7 @@ public final class SoftLruHashTable {
 	}
 
 	@OriginalMember(owner = "client!cc", name = "a", descriptor = "(ILjava/lang/Object;J)V")
-	public final void put(@OriginalArg(2) long key, @OriginalArg(1) Object value) {
+	public void put(@OriginalArg(2) long key, @OriginalArg(1) Object value) {
 		this.remove(key);
 		if (this.available == 0) {
 			@Pc(31) ReferenceNode node = (ReferenceNode) this.queue.removeHead();
@@ -56,14 +56,14 @@ public final class SoftLruHashTable {
 	}
 
 	@OriginalMember(owner = "client!cc", name = "a", descriptor = "(B)V")
-	public final void clear() {
+	public void clear() {
 		this.queue.clear();
 		this.table.clear();
 		this.available = this.capacity;
 	}
 
 	@OriginalMember(owner = "client!cc", name = "a", descriptor = "(JI)V")
-	public final void remove(@OriginalArg(0) long key) {
+	public void remove(@OriginalArg(0) long key) {
 		@Pc(10) ReferenceNode node = (ReferenceNode) this.table.get(key);
 		if (node != null) {
 			node.unlink();
@@ -73,7 +73,7 @@ public final class SoftLruHashTable {
 	}
 
 	@OriginalMember(owner = "client!cc", name = "b", descriptor = "(Z)V")
-	public final void removeSoft() {
+	public void removeSoft() {
 		for (@Pc(16) ReferenceNode node = (ReferenceNode) this.queue.head(); node != null; node = (ReferenceNode) this.queue.next()) {
 			if (node.isSoft()) {
 				node.unlink();
@@ -84,7 +84,7 @@ public final class SoftLruHashTable {
 	}
 
 	@OriginalMember(owner = "client!cc", name = "a", descriptor = "(BI)V")
-	public final void clean(@OriginalArg(1) int maxAge) {
+	public void clean(@OriginalArg(1) int maxAge) {
 		if (ReferenceNodeFactory.SOFT_REFERENCE_NODE_FACTORY == null) {
 			return;
 		}
@@ -106,7 +106,7 @@ public final class SoftLruHashTable {
 	}
 
 	@OriginalMember(owner = "client!cc", name = "a", descriptor = "(JB)Ljava/lang/Object;")
-	public final Object get(@OriginalArg(0) long key) {
+	public Object get(@OriginalArg(0) long key) {
 		@Pc(10) ReferenceNode node = (ReferenceNode) this.table.get(key);
 		if (node == null) {
 			return null;

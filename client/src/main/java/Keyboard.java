@@ -166,7 +166,7 @@ public final class Keyboard implements KeyListener, FocusListener {
 
 	@OriginalMember(owner = "client!tb", name = "focusLost", descriptor = "(Ljava/awt/event/FocusEvent;)V")
 	@Override
-	public final synchronized void focusLost(@OriginalArg(0) FocusEvent event) {
+	public synchronized void focusLost(@OriginalArg(0) FocusEvent event) {
 		if (instance != null) {
 			eventQueueWriterIndex = -1;
 		}
@@ -174,7 +174,7 @@ public final class Keyboard implements KeyListener, FocusListener {
 
 	@OriginalMember(owner = "client!tb", name = "keyTyped", descriptor = "(Ljava/awt/event/KeyEvent;)V")
 	@Override
-	public final void keyTyped(@OriginalArg(0) KeyEvent event) {
+	public void keyTyped(@OriginalArg(0) KeyEvent event) {
 		if (instance != null) {
 			@Pc(9) char c = event.getKeyChar();
 			if (c != '\u0000' && c != '\uffff' && Cp1252Charset.isCharValid(c)) {
@@ -191,12 +191,12 @@ public final class Keyboard implements KeyListener, FocusListener {
 
 	@OriginalMember(owner = "client!tb", name = "focusGained", descriptor = "(Ljava/awt/event/FocusEvent;)V")
 	@Override
-	public final void focusGained(@OriginalArg(0) FocusEvent event) {
+	public void focusGained(@OriginalArg(0) FocusEvent event) {
 	}
 
 	@OriginalMember(owner = "client!tb", name = "keyPressed", descriptor = "(Ljava/awt/event/KeyEvent;)V")
 	@Override
-	public final synchronized void keyPressed(@OriginalArg(0) KeyEvent event) {
+	public synchronized void keyPressed(@OriginalArg(0) KeyEvent event) {
 		if (instance == null) {
 			return;
 		}
@@ -234,7 +234,7 @@ public final class Keyboard implements KeyListener, FocusListener {
 
 	@OriginalMember(owner = "client!tb", name = "keyReleased", descriptor = "(Ljava/awt/event/KeyEvent;)V")
 	@Override
-	public final synchronized void keyReleased(@OriginalArg(0) KeyEvent event) {
+	public synchronized void keyReleased(@OriginalArg(0) KeyEvent event) {
 		if (instance != null) {
 			idleLoops = 0;
 			@Pc(10) int code = event.getKeyCode();

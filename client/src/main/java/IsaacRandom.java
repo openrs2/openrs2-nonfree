@@ -157,7 +157,7 @@ public final class IsaacRandom {
 	}
 
 	@OriginalMember(owner = "client!m", name = "c", descriptor = "(I)I")
-	public final int nextInt() {
+	public int nextInt() {
 		if (this.count-- == 0) {
 			this.isaac();
 			this.count = 255;

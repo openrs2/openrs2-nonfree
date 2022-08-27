@@ -30,7 +30,7 @@ public final class LinkedList {
 	}
 
 	@OriginalMember(owner = "client!ll", name = "a", descriptor = "(I)V")
-	public final void clear() {
+	public void clear() {
 		while (true) {
 			@Pc(9) Node node = this.sentinel.next;
 			if (this.sentinel == node) {
@@ -42,7 +42,7 @@ public final class LinkedList {
 	}
 
 	@OriginalMember(owner = "client!ll", name = "a", descriptor = "(Lclient!ni;B)V")
-	public final void addHead(@OriginalArg(0) Node node) {
+	public void addHead(@OriginalArg(0) Node node) {
 		if (node.prev != null) {
 			node.unlink();
 		}
@@ -53,7 +53,7 @@ public final class LinkedList {
 	}
 
 	@OriginalMember(owner = "client!ll", name = "a", descriptor = "(Z)Lclient!ni;")
-	public final Node removeHead() {
+	public Node removeHead() {
 		@Pc(7) Node node = this.sentinel.next;
 		if (node == this.sentinel) {
 			return null;
@@ -64,12 +64,12 @@ public final class LinkedList {
 	}
 
 	@OriginalMember(owner = "client!ll", name = "b", descriptor = "(I)Z")
-	public final boolean isEmpty() {
+	public boolean isEmpty() {
 		return this.sentinel.next == this.sentinel;
 	}
 
 	@OriginalMember(owner = "client!ll", name = "c", descriptor = "(I)Lclient!ni;")
-	public final Node head() {
+	public Node head() {
 		@Pc(7) Node node = this.sentinel.next;
 		if (node == this.sentinel) {
 			this.cursor = null;
@@ -81,7 +81,7 @@ public final class LinkedList {
 	}
 
 	@OriginalMember(owner = "client!ll", name = "a", descriptor = "(BLclient!ni;)V")
-	public final void addTail(@OriginalArg(1) Node node) {
+	public void addTail(@OriginalArg(1) Node node) {
 		if (node.prev != null) {
 			node.unlink();
 		}
@@ -92,7 +92,7 @@ public final class LinkedList {
 	}
 
 	@OriginalMember(owner = "client!ll", name = "a", descriptor = "(B)Lclient!ni;")
-	public final Node tail() {
+	public Node tail() {
 		@Pc(7) Node node = this.sentinel.prev;
 		if (node == this.sentinel) {
 			this.cursor = null;
@@ -104,7 +104,7 @@ public final class LinkedList {
 	}
 
 	@OriginalMember(owner = "client!ll", name = "b", descriptor = "(Z)Lclient!ni;")
-	public final Node prev() {
+	public Node prev() {
 		@Pc(8) Node node = this.cursor;
 		if (node == this.sentinel) {
 			this.cursor = null;
@@ -116,7 +116,7 @@ public final class LinkedList {
 	}
 
 	@OriginalMember(owner = "client!ll", name = "d", descriptor = "(I)Lclient!ni;")
-	public final Node next() {
+	public Node next() {
 		@Pc(13) Node node = this.cursor;
 		if (this.sentinel == node) {
 			this.cursor = null;

@@ -838,7 +838,7 @@ public final class GlModel extends Model {
 
 	@OriginalMember(owner = "client!s", name = "a", descriptor = "(III)Lclient!vc;")
 	@Override
-	public final Entity method3809() {
+	public Entity method3809() {
 		this.aBoolean325 = false;
 		if (this.aClass152_1 != null) {
 			this.aShortArray95 = this.aClass152_1.aShortArray84;
@@ -852,7 +852,7 @@ public final class GlModel extends Model {
 
 	@OriginalMember(owner = "client!s", name = "c", descriptor = "()I")
 	@Override
-	public final int getMinZ() {
+	public int getMinZ() {
 		if (!this.bounds.valid) {
 			this.calculateBounds();
 		}
@@ -860,7 +860,7 @@ public final class GlModel extends Model {
 	}
 
 	@OriginalMember(owner = "client!s", name = "a", descriptor = "(SS)V")
-	public final void retexture(@OriginalArg(0) short source, @OriginalArg(1) short destination) {
+	public void retexture(@OriginalArg(0) short source, @OriginalArg(1) short destination) {
 		for (@Pc(1) int i = 0; i < this.triangleCount; i++) {
 			if (this.triangleTextures[i] == source) {
 				this.triangleTextures[i] = destination;
@@ -885,7 +885,7 @@ public final class GlModel extends Model {
 
 	@OriginalMember(owner = "client!s", name = "i", descriptor = "()I")
 	@Override
-	public final int getMinX() {
+	public int getMinX() {
 		if (!this.bounds.valid) {
 			this.calculateBounds();
 		}
@@ -894,7 +894,7 @@ public final class GlModel extends Model {
 
 	@OriginalMember(owner = "client!s", name = "a", descriptor = "(IIIIIIIIJILclient!ne;)V")
 	@Override
-	public final void method3805(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) long arg8, @OriginalArg(9) int arg9, @OriginalArg(10) ParticleSystem arg10) {
+	public void method3805(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) long arg8, @OriginalArg(9) int arg9, @OriginalArg(10) ParticleSystem arg10) {
 		if (this.anInt4691 == 0) {
 			return;
 		}
@@ -1083,7 +1083,7 @@ public final class GlModel extends Model {
 
 	@OriginalMember(owner = "client!s", name = "a", descriptor = "(I[IIIIZ)V")
 	@Override
-	protected final void transform(@OriginalArg(0) int type, @OriginalArg(1) int[] bone, @OriginalArg(2) int x, @OriginalArg(3) int y, @OriginalArg(4) int z, @OriginalArg(5) boolean arg5) {
+	protected void transform(@OriginalArg(0) int type, @OriginalArg(1) int[] bone, @OriginalArg(2) int x, @OriginalArg(3) int y, @OriginalArg(4) int z, @OriginalArg(5) boolean arg5) {
 		@Pc(2) int local2 = bone.length;
 		if (type == 0) {
 			x <<= 4;
@@ -1303,7 +1303,7 @@ public final class GlModel extends Model {
 
 	@OriginalMember(owner = "client!s", name = "b", descriptor = "()I")
 	@Override
-	public final int getMinY() {
+	public int getMinY() {
 		if (!this.bounds.valid) {
 			this.calculateBounds();
 		}
@@ -1311,12 +1311,12 @@ public final class GlModel extends Model {
 	}
 
 	@OriginalMember(owner = "client!s", name = "o", descriptor = "()I")
-	public final int method3847() {
+	public int method3847() {
 		return this.aShort43;
 	}
 
 	@OriginalMember(owner = "client!s", name = "p", descriptor = "()V")
-	public final void method3848() {
+	public void method3848() {
 		if (this.aShortArray95 == null) {
 			this.method3827();
 			return;
@@ -1340,7 +1340,7 @@ public final class GlModel extends Model {
 
 	@OriginalMember(owner = "client!s", name = "f", descriptor = "()I")
 	@Override
-	public final int getBoundingCylinderRadius() {
+	public int getBoundingCylinderRadius() {
 		if (!this.bounds.valid) {
 			this.calculateBounds();
 		}
@@ -1349,7 +1349,7 @@ public final class GlModel extends Model {
 
 	@OriginalMember(owner = "client!s", name = "a", descriptor = "(IIIIIIIJ)V")
 	@Override
-	public final void method3822(@OriginalArg(1) int yAngle, @OriginalArg(2) int zAngle, @OriginalArg(3) int xAngle, @OriginalArg(4) int xOffset, @OriginalArg(5) int yOffset, @OriginalArg(6) int zOffset, @OriginalArg(7) long arg6) {
+	public void method3822(@OriginalArg(1) int yAngle, @OriginalArg(2) int zAngle, @OriginalArg(3) int xAngle, @OriginalArg(4) int xOffset, @OriginalArg(5) int yOffset, @OriginalArg(6) int zOffset, @OriginalArg(7) long arg6) {
 		if (this.anInt4691 == 0) {
 			return;
 		}
@@ -1371,7 +1371,7 @@ public final class GlModel extends Model {
 
 	@OriginalMember(owner = "client!s", name = "a", descriptor = "(I)V")
 	@Override
-	public final void method3815(@OriginalArg(0) int angle) {
+	public void method3815(@OriginalArg(0) int angle) {
 		@Pc(3) int sine = MathUtils.SINE[angle];
 		@Pc(7) int cosine = MathUtils.COSINE[angle];
 		for (@Pc(9) int i = 0; i < this.vertexCount; i++) {
@@ -1384,7 +1384,7 @@ public final class GlModel extends Model {
 	}
 
 	@OriginalMember(owner = "client!s", name = "q", descriptor = "()V")
-	public final void method3849() {
+	public void method3849() {
 		if (this.aShortArray95 == null) {
 			this.method3828();
 			return;
@@ -1405,7 +1405,7 @@ public final class GlModel extends Model {
 	}
 
 	@OriginalMember(owner = "client!s", name = "r", descriptor = "()V")
-	public final void method3850() {
+	public void method3850() {
 		for (@Pc(1) int i = 0; i < this.vertexCount; i++) {
 			this.vertexZ[i] = -this.vertexZ[i];
 		}
@@ -1429,7 +1429,7 @@ public final class GlModel extends Model {
 
 	@OriginalMember(owner = "client!s", name = "j", descriptor = "()Z")
 	@Override
-	protected final boolean method3830() {
+	protected boolean method3830() {
 		if (this.boneVertices == null) {
 			return false;
 		}
@@ -1449,13 +1449,13 @@ public final class GlModel extends Model {
 
 	@OriginalMember(owner = "client!s", name = "a", descriptor = "()Z")
 	@Override
-	public final boolean method3808() {
+	public boolean method3808() {
 		return this.aBoolean325 && this.vertexX != null && this.aShortArray95 != null;
 	}
 
 	@OriginalMember(owner = "client!s", name = "c", descriptor = "(I)V")
 	@Override
-	public final void method3832(@OriginalArg(0) int angle) {
+	public void method3832(@OriginalArg(0) int angle) {
 		@Pc(3) int sine = MathUtils.SINE[angle];
 		@Pc(7) int cosine = MathUtils.COSINE[angle];
 		for (@Pc(9) int i = 0; i < this.vertexCount; i++) {
@@ -1505,7 +1505,7 @@ public final class GlModel extends Model {
 	}
 
 	@OriginalMember(owner = "client!s", name = "a", descriptor = "(ZZZZZZZZZZZ)Lclient!s;")
-	public final GlModel method3852(@OriginalArg(0) boolean arg0, @OriginalArg(1) boolean arg1, @OriginalArg(2) boolean arg2, @OriginalArg(4) boolean arg3, @OriginalArg(5) boolean arg4, @OriginalArg(6) boolean arg5, @OriginalArg(7) boolean arg6, @OriginalArg(9) boolean arg7, @OriginalArg(10) boolean arg8) {
+	public GlModel method3852(@OriginalArg(0) boolean arg0, @OriginalArg(1) boolean arg1, @OriginalArg(2) boolean arg2, @OriginalArg(4) boolean arg3, @OriginalArg(5) boolean arg4, @OriginalArg(6) boolean arg5, @OriginalArg(7) boolean arg6, @OriginalArg(9) boolean arg7, @OriginalArg(10) boolean arg8) {
 		@Pc(3) GlModel model = new GlModel();
 		model.vertexCount = this.vertexCount;
 		model.anInt4688 = this.anInt4688;
@@ -1622,7 +1622,7 @@ public final class GlModel extends Model {
 
 	@OriginalMember(owner = "client!s", name = "l", descriptor = "()I")
 	@Override
-	public final int getMaxZ() {
+	public int getMaxZ() {
 		if (!this.bounds.valid) {
 			this.calculateBounds();
 		}
@@ -1630,7 +1630,7 @@ public final class GlModel extends Model {
 	}
 
 	@OriginalMember(owner = "client!s", name = "a", descriptor = "(Lclient!fe;)Lclient!fe;")
-	public final SoftwareIndexedSprite method3854(@OriginalArg(0) SoftwareIndexedSprite arg0) {
+	public SoftwareIndexedSprite method3854(@OriginalArg(0) SoftwareIndexedSprite arg0) {
 		if (this.anInt4691 == 0) {
 			return null;
 		}
@@ -1706,20 +1706,20 @@ public final class GlModel extends Model {
 	}
 
 	@OriginalMember(owner = "client!s", name = "d", descriptor = "(I)V")
-	public final void method3855(@OriginalArg(0) int arg0) {
+	public void method3855(@OriginalArg(0) int arg0) {
 		this.aShort43 = (short) arg0;
 		this.colorBuffer.valid = false;
 	}
 
 	@OriginalMember(owner = "client!s", name = "c", descriptor = "(ZZZ)Lclient!vg;")
 	@Override
-	public final Model method3836(@OriginalArg(0) boolean shareAlpha, @OriginalArg(1) boolean shareColors, @OriginalArg(2) boolean shareNormals) {
+	public Model method3836(@OriginalArg(0) boolean shareAlpha, @OriginalArg(1) boolean shareColors, @OriginalArg(2) boolean shareNormals) {
 		return this.method3873(shareAlpha, shareColors, shareNormals, Static6.aClass53_Sub4_Sub2_4, Static6.aClass53_Sub4_Sub2_3);
 	}
 
 	@OriginalMember(owner = "client!s", name = "a", descriptor = "(I[IIIIZI[I)V")
 	@Override
-	protected final void transform(@OriginalArg(0) int type, @OriginalArg(1) int[] bone, @OriginalArg(2) int x, @OriginalArg(3) int y, @OriginalArg(4) int z, @OriginalArg(5) boolean arg5, @OriginalArg(6) int parts, @OriginalArg(7) int[] arg7) {
+	protected void transform(@OriginalArg(0) int type, @OriginalArg(1) int[] bone, @OriginalArg(2) int x, @OriginalArg(3) int y, @OriginalArg(4) int z, @OriginalArg(5) boolean arg5, @OriginalArg(6) int parts, @OriginalArg(7) int[] arg7) {
 		@Pc(2) int local2 = bone.length;
 		if (type == 0) {
 			@Pc(8) int local8 = x << 4;
@@ -2131,7 +2131,7 @@ public final class GlModel extends Model {
 	}
 
 	@OriginalMember(owner = "client!s", name = "e", descriptor = "(I)V")
-	public final void method3857() {
+	public void method3857() {
 		if (this.aShortArray95 == null) {
 			this.method3815(256);
 			return;
@@ -2273,7 +2273,7 @@ public final class GlModel extends Model {
 
 	@OriginalMember(owner = "client!s", name = "k", descriptor = "()I")
 	@Override
-	public final int getMaxX() {
+	public int getMaxX() {
 		if (!this.bounds.valid) {
 			this.calculateBounds();
 		}
@@ -2282,7 +2282,7 @@ public final class GlModel extends Model {
 
 	@OriginalMember(owner = "client!s", name = "d", descriptor = "()V")
 	@Override
-	protected final void method3819() {
+	protected void method3819() {
 		for (@Pc(1) int i = 0; i < this.vertexCount; i++) {
 			this.vertexX[i] = this.vertexX[i] + 7 >> 4;
 			this.vertexY[i] = this.vertexY[i] + 7 >> 4;
@@ -2294,7 +2294,7 @@ public final class GlModel extends Model {
 
 	@OriginalMember(owner = "client!s", name = "c", descriptor = "(III)V")
 	@Override
-	public final void resize(@OriginalArg(0) int x, @OriginalArg(1) int y, @OriginalArg(2) int z) {
+	public void resize(@OriginalArg(0) int x, @OriginalArg(1) int y, @OriginalArg(2) int z) {
 		for (@Pc(1) int i = 0; i < this.vertexCount; i++) {
 			this.vertexX[i] = this.vertexX[i] * x >> 7;
 			this.vertexY[i] = this.vertexY[i] * y >> 7;
@@ -2305,7 +2305,7 @@ public final class GlModel extends Model {
 	}
 
 	@OriginalMember(owner = "client!s", name = "a", descriptor = "(IILclient!s;[[I[[IIII)V")
-	public final void method3859(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) GlModel arg2, @OriginalArg(3) int[][] arg3, @OriginalArg(4) int[][] arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7) {
+	public void method3859(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) GlModel arg2, @OriginalArg(3) int[][] arg3, @OriginalArg(4) int[][] arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7) {
 		if (!arg2.bounds.valid) {
 			arg2.calculateBounds();
 		}
@@ -2404,7 +2404,7 @@ public final class GlModel extends Model {
 	}
 
 	@OriginalMember(owner = "client!s", name = "f", descriptor = "(I)V")
-	public final void method3861(@OriginalArg(0) int arg0) {
+	public void method3861(@OriginalArg(0) int arg0) {
 		this.aShort44 = (short) arg0;
 		if (this.normalBuffer != null) {
 			this.normalBuffer.valid = false;
@@ -2413,7 +2413,7 @@ public final class GlModel extends Model {
 
 	@OriginalMember(owner = "client!s", name = "a", descriptor = "(Lclient!vc;IIIZ)V")
 	@Override
-	public final void method3807(@OriginalArg(0) Entity arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) boolean arg4) {
+	public void method3807(@OriginalArg(0) Entity arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) boolean arg4) {
 		@Pc(2) GlModel local2 = (GlModel) arg0;
 		if (this.triangleCount == 0 || local2.triangleCount == 0) {
 			return;
@@ -2557,7 +2557,7 @@ public final class GlModel extends Model {
 	}
 
 	@OriginalMember(owner = "client!s", name = "u", descriptor = "()V")
-	public final void method3862() {
+	public void method3862() {
 		if (this.aShortArray95 == null) {
 			this.method3820();
 			return;
@@ -2581,7 +2581,7 @@ public final class GlModel extends Model {
 
 	@OriginalMember(owner = "client!s", name = "b", descriptor = "(III)V")
 	@Override
-	public final void translate(@OriginalArg(0) int x, @OriginalArg(1) int y, @OriginalArg(2) int z) {
+	public void translate(@OriginalArg(0) int x, @OriginalArg(1) int y, @OriginalArg(2) int z) {
 		for (@Pc(1) int i = 0; i < this.vertexCount; i++) {
 			@Pc(7) int[] vertex = this.vertexX;
 			vertex[i] += x;
@@ -2596,7 +2596,7 @@ public final class GlModel extends Model {
 
 	@OriginalMember(owner = "client!s", name = "h", descriptor = "()V")
 	@Override
-	public final void method3828() {
+	public void method3828() {
 		for (@Pc(1) int i = 0; i < this.vertexCount; i++) {
 			this.vertexX[i] = -this.vertexX[i];
 			this.vertexZ[i] = -this.vertexZ[i];
@@ -2658,7 +2658,7 @@ public final class GlModel extends Model {
 	}
 
 	@OriginalMember(owner = "client!s", name = "w", descriptor = "()V")
-	public final void createBones() {
+	public void createBones() {
 		if (this.vertexBones != null) {
 			@Pc(5) int[] boneLens = new int[256];
 			@Pc(7) int maxBone = 0;
@@ -2707,7 +2707,7 @@ public final class GlModel extends Model {
 	}
 
 	@OriginalMember(owner = "client!s", name = "b", descriptor = "(SS)V")
-	public final void recolor(@OriginalArg(0) short source, @OriginalArg(1) short destination) {
+	public void recolor(@OriginalArg(0) short source, @OriginalArg(1) short destination) {
 		for (@Pc(1) int i = 0; i < this.triangleCount; i++) {
 			if (this.triangleColors[i] == source) {
 				this.triangleColors[i] = destination;
@@ -2730,13 +2730,13 @@ public final class GlModel extends Model {
 	}
 
 	@OriginalMember(owner = "client!s", name = "x", descriptor = "()I")
-	public final int method3869() {
+	public int method3869() {
 		return this.aShort44;
 	}
 
 	@OriginalMember(owner = "client!s", name = "e", descriptor = "()V")
 	@Override
-	public final void method3820() {
+	public void method3820() {
 		for (@Pc(1) int local1 = 0; local1 < this.vertexCount; local1++) {
 			@Pc(10) int local10 = this.vertexX[local1];
 			this.vertexX[local1] = this.vertexZ[local1];
@@ -3084,13 +3084,13 @@ public final class GlModel extends Model {
 
 	@OriginalMember(owner = "client!s", name = "b", descriptor = "(ZZZ)Lclient!vg;")
 	@Override
-	public final Model method3833(@OriginalArg(0) boolean shareAlpha, @OriginalArg(1) boolean shareColors, @OriginalArg(2) boolean shareNormals) {
+	public Model method3833(@OriginalArg(0) boolean shareAlpha, @OriginalArg(1) boolean shareColors, @OriginalArg(2) boolean shareNormals) {
 		return this.method3873(shareAlpha, shareColors, shareNormals, Static6.aClass53_Sub4_Sub2_6, Static6.aClass53_Sub4_Sub2_5);
 	}
 
 	@OriginalMember(owner = "client!s", name = "m", descriptor = "()I")
 	@Override
-	public final int getMaxY() {
+	public int getMaxY() {
 		if (!this.bounds.valid) {
 			this.calculateBounds();
 		}
@@ -3099,7 +3099,7 @@ public final class GlModel extends Model {
 
 	@OriginalMember(owner = "client!s", name = "g", descriptor = "()V")
 	@Override
-	public final void method3827() {
+	public void method3827() {
 		for (@Pc(1) int local1 = 0; local1 < this.vertexCount; local1++) {
 			@Pc(10) int local10 = this.vertexZ[local1];
 			this.vertexZ[local1] = this.vertexX[local1];
@@ -3111,7 +3111,7 @@ public final class GlModel extends Model {
 
 	@OriginalMember(owner = "client!s", name = "b", descriptor = "(I)V")
 	@Override
-	public final void method3817(@OriginalArg(0) int arg0) {
+	public void method3817(@OriginalArg(0) int arg0) {
 		@Pc(3) int local3 = MathUtils.SINE[arg0];
 		@Pc(7) int local7 = MathUtils.COSINE[arg0];
 		for (@Pc(9) int local9 = 0; local9 < this.vertexCount; local9++) {
@@ -3124,7 +3124,7 @@ public final class GlModel extends Model {
 	}
 
 	@OriginalMember(owner = "client!s", name = "a", descriptor = "(ZZZZZZZ)V")
-	public final void method3872(@OriginalArg(0) boolean arg0, @OriginalArg(1) boolean arg1, @OriginalArg(2) boolean arg2, @OriginalArg(4) boolean arg3, @OriginalArg(5) boolean arg4, @OriginalArg(6) boolean arg5) {
+	public void method3872(@OriginalArg(0) boolean arg0, @OriginalArg(1) boolean arg1, @OriginalArg(2) boolean arg2, @OriginalArg(4) boolean arg3, @OriginalArg(5) boolean arg4, @OriginalArg(6) boolean arg5) {
 		if (this.shareFlags != 0) {
 			throw new IllegalArgumentException();
 		} else if (this.anInt4691 != 0) {
@@ -3193,7 +3193,7 @@ public final class GlModel extends Model {
 
 	@OriginalMember(owner = "client!s", name = "a", descriptor = "(ZZZ)Lclient!vg;")
 	@Override
-	public final Model method3831(@OriginalArg(0) boolean shareAlpha, @OriginalArg(1) boolean shareColors, @OriginalArg(2) boolean shareNormals) {
+	public Model method3831(@OriginalArg(0) boolean shareAlpha, @OriginalArg(1) boolean shareColors, @OriginalArg(2) boolean shareNormals) {
 		return this.method3873(shareAlpha, shareColors, shareNormals, Static6.aClass53_Sub4_Sub2_2, Static6.aClass53_Sub4_Sub2_1);
 	}
 
@@ -3313,7 +3313,7 @@ public final class GlModel extends Model {
 
 	@OriginalMember(owner = "client!s", name = "a", descriptor = "(IIII)V")
 	@Override
-	protected final void transform(@OriginalArg(0) int type, @OriginalArg(1) int x, @OriginalArg(2) int y, @OriginalArg(3) int z) {
+	protected void transform(@OriginalArg(0) int type, @OriginalArg(1) int x, @OriginalArg(2) int y, @OriginalArg(3) int z) {
 		if (type == 0) {
 			@Pc(3) int local3 = 0;
 			originX = 0;

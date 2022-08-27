@@ -38,7 +38,7 @@ public final class MapElementBounds extends Node {
 	}
 
 	@OriginalMember(owner = "client!nb", name = "a", descriptor = "(III)Z")
-	public final boolean isHovering(@OriginalArg(0) int x, @OriginalArg(2) int y) {
+	public boolean isHovering(@OriginalArg(0) int x, @OriginalArg(2) int y) {
 		if (x >= this.iconMinX && x <= this.iconMaxX && y >= this.iconMinY && y <= this.iconMaxY) {
 			return true;
 		} else {

@@ -26,7 +26,7 @@ public final class context {
 
 			@OriginalMember(owner = "gl!jaggl/context$2", name = "run", descriptor = "()Ljava/lang/Object;")
 			@Override
-			public final Object run() {
+			public Object run() {
 				return context.choosePixelFormat1(component, numSamples, alphaBits);
 			}
 		});

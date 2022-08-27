@@ -21,13 +21,13 @@ public final class HashTableIterator {
 	}
 
 	@OriginalMember(owner = "client!qe", name = "a", descriptor = "(B)Lclient!ni;")
-	public final Node head() {
+	public Node head() {
 		this.bucket = 0;
 		return this.next();
 	}
 
 	@OriginalMember(owner = "client!qe", name = "b", descriptor = "(B)Lclient!ni;")
-	public final Node next() {
+	public Node next() {
 		if (this.bucket > 0 && this.table.buckets[this.bucket - 1] != this.cursor) {
 			@Pc(25) Node node = this.cursor;
 			this.cursor = node.next;

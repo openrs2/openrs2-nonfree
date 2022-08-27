@@ -64,7 +64,7 @@ public final class SeqType {
 	public int priority = 5;
 
 	@OriginalMember(owner = "client!eg", name = "a", descriptor = "(ZIILclient!vg;II)Lclient!vg;")
-	public final Model method1014(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) Model arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4) {
+	public Model method1014(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) Model arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4) {
 		@Pc(10) int local10 = this.anIntArray94[arg1];
 		arg1 = this.frames[arg1];
 		@Pc(21) AnimFrameset local21 = SeqTypeList.getAnimFrameset(arg1 >> 16);
@@ -120,7 +120,7 @@ public final class SeqType {
 	}
 
 	@OriginalMember(owner = "client!eg", name = "a", descriptor = "(Lclient!fd;Z)V")
-	public final void decode(@OriginalArg(0) Buffer buffer) {
+	public void decode(@OriginalArg(0) Buffer buffer) {
 		while (true) {
 			@Pc(14) int code = buffer.readUnsignedByte();
 			if (code == 0) {
@@ -131,7 +131,7 @@ public final class SeqType {
 	}
 
 	@OriginalMember(owner = "client!eg", name = "a", descriptor = "(ZIILclient!vg;I)Lclient!vg;")
-	public final Model method1017(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) Model arg2, @OriginalArg(4) int arg3) {
+	public Model method1017(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) Model arg2, @OriginalArg(4) int arg3) {
 		@Pc(8) int local8 = this.anIntArray94[arg3];
 		@Pc(19) int local19 = this.frames[arg3];
 		@Pc(25) AnimFrameset local25 = SeqTypeList.getAnimFrameset(local19 >> 16);
@@ -188,7 +188,7 @@ public final class SeqType {
 	}
 
 	@OriginalMember(owner = "client!eg", name = "a", descriptor = "(IIILclient!vg;I)Lclient!vg;")
-	public final Model method1018(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) Model arg2, @OriginalArg(4) int arg3) {
+	public Model method1018(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) Model arg2, @OriginalArg(4) int arg3) {
 		@Pc(8) int local8 = this.anIntArray94[arg0];
 		arg0 = this.frames[arg0];
 		@Pc(27) AnimFrameset local27 = SeqTypeList.getAnimFrameset(arg0 >> 16);
@@ -283,7 +283,7 @@ public final class SeqType {
 	}
 
 	@OriginalMember(owner = "client!eg", name = "a", descriptor = "(IIIIILclient!vg;)Lclient!vg;")
-	public final Model method1021(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) Model arg4) {
+	public Model method1021(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) Model arg4) {
 		@Pc(10) int local10 = this.anIntArray94[arg2];
 		arg2 = this.frames[arg2];
 		@Pc(21) AnimFrameset local21 = SeqTypeList.getAnimFrameset(arg2 >> 16);
@@ -339,7 +339,7 @@ public final class SeqType {
 	}
 
 	@OriginalMember(owner = "client!eg", name = "a", descriptor = "(B)V")
-	public final void postDecode() {
+	public void postDecode() {
 		if (this.anInt1240 == -1) {
 			if (this.aBooleanArray6 == null) {
 				this.anInt1240 = 0;

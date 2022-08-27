@@ -19,7 +19,7 @@ public final class LinkedList {
 	}
 
 	@OriginalMember(owner = "unpackclass!f", name = "a", descriptor = "(Lunpackclass!w;)V")
-	public final void addTail(@OriginalArg(0) Node node) {
+	public void addTail(@OriginalArg(0) Node node) {
 		if (node.prev != null) {
 			node.unlink();
 		}
@@ -30,7 +30,7 @@ public final class LinkedList {
 	}
 
 	@OriginalMember(owner = "unpackclass!f", name = "a", descriptor = "()Lunpackclass!w;")
-	public final Node head() {
+	public Node head() {
 		@Pc(3) Node head = this.sentinel.next;
 		if (head == this.sentinel) {
 			this.cursor = null;
@@ -42,7 +42,7 @@ public final class LinkedList {
 	}
 
 	@OriginalMember(owner = "unpackclass!f", name = "b", descriptor = "()Lunpackclass!w;")
-	public final Node next() {
+	public Node next() {
 		@Pc(2) Node next = this.cursor;
 		if (next == this.sentinel) {
 			this.cursor = null;

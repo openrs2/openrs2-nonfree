@@ -146,7 +146,7 @@ public final class Texture extends SecondaryNode {
 	}
 
 	@OriginalMember(owner = "client!ln", name = "a", descriptor = "(DIILclient!kj;Lclient!fh;IZ)Lclient!vn;")
-	public final SoftwareSprite getSprite(@OriginalArg(2) int width, @OriginalArg(5) int height, @OriginalArg(0) double brightness, @OriginalArg(3) TextureProvider provider, @OriginalArg(4) Js5 spritesArchive) {
+	public SoftwareSprite getSprite(@OriginalArg(2) int width, @OriginalArg(5) int height, @OriginalArg(0) double brightness, @OriginalArg(3) TextureProvider provider, @OriginalArg(4) Js5 spritesArchive) {
 		setBrightness(brightness);
 		Texture.provider = provider;
 		Texture.spritesArchive = spritesArchive;
@@ -206,7 +206,7 @@ public final class Texture extends SecondaryNode {
 	}
 
 	@OriginalMember(owner = "client!ln", name = "a", descriptor = "(IBILclient!fh;DLclient!kj;Z)[I")
-	public final int[] getPixelsAlpha(@OriginalArg(0) int width, @OriginalArg(2) int height, @OriginalArg(4) double brightness, @OriginalArg(5) TextureProvider provider, @OriginalArg(3) Js5 spritesArchive, @OriginalArg(6) boolean columnMajor) {
+	public int[] getPixelsAlpha(@OriginalArg(0) int width, @OriginalArg(2) int height, @OriginalArg(4) double brightness, @OriginalArg(5) TextureProvider provider, @OriginalArg(3) Js5 spritesArchive, @OriginalArg(6) boolean columnMajor) {
 		@Pc(12) int[] pixels = new int[height * width * 4];
 		setBrightness(brightness);
 		Texture.provider = provider;
@@ -290,7 +290,7 @@ public final class Texture extends SecondaryNode {
 	}
 
 	@OriginalMember(owner = "client!ln", name = "a", descriptor = "(IBZLclient!kj;Lclient!fh;I)[F")
-	public final float[] getBloomPixels(@OriginalArg(5) int width, @OriginalArg(0) int height, @OriginalArg(3) TextureProvider provider, @OriginalArg(4) Js5 spritesArchive, @OriginalArg(2) boolean columnMajor) {
+	public float[] getBloomPixels(@OriginalArg(5) int width, @OriginalArg(0) int height, @OriginalArg(3) TextureProvider provider, @OriginalArg(4) Js5 spritesArchive, @OriginalArg(2) boolean columnMajor) {
 		Texture.provider = provider;
 		@Pc(29) float[] pixels = new float[width * 4 * height];
 		Texture.spritesArchive = spritesArchive;
@@ -355,7 +355,7 @@ public final class Texture extends SecondaryNode {
 	}
 
 	@OriginalMember(owner = "client!ln", name = "a", descriptor = "(Lclient!kj;Lclient!fh;I)Z")
-	public final boolean isReady(@OriginalArg(0) TextureProvider provider, @OriginalArg(1) Js5 spritesArchive) {
+	public boolean isReady(@OriginalArg(0) TextureProvider provider, @OriginalArg(1) Js5 spritesArchive) {
 		if (spriteGroupId > 0) {
 			for (@Pc(26) int i = 0; i < this.spriteIds.length; i++) {
 				if (!spritesArchive.isFileReady(spriteGroupId, this.spriteIds[i])) {
@@ -378,7 +378,7 @@ public final class Texture extends SecondaryNode {
 	}
 
 	@OriginalMember(owner = "client!ln", name = "a", descriptor = "(ILclient!kj;Lclient!fh;IDIZ)Lclient!jn;")
-	public final SoftwareAlphaSprite getAlphaSprite(@OriginalArg(5) int width, @OriginalArg(0) int height, @OriginalArg(4) double brightness, @OriginalArg(1) TextureProvider provider, @OriginalArg(2) Js5 spritesArchive) {
+	public SoftwareAlphaSprite getAlphaSprite(@OriginalArg(5) int width, @OriginalArg(0) int height, @OriginalArg(4) double brightness, @OriginalArg(1) TextureProvider provider, @OriginalArg(2) Js5 spritesArchive) {
 		setBrightness(brightness);
 		Texture.provider = provider;
 		Texture.spritesArchive = spritesArchive;
@@ -456,7 +456,7 @@ public final class Texture extends SecondaryNode {
 	}
 
 	@OriginalMember(owner = "client!ln", name = "a", descriptor = "(DZILclient!fh;Lclient!kj;IZI)[I")
-	public final int[] getPixels(@OriginalArg(7) int width, @OriginalArg(5) int height, @OriginalArg(0) double brightness, @OriginalArg(4) TextureProvider provider, @OriginalArg(3) Js5 spritesArchive, @OriginalArg(1) boolean columnMajor, @OriginalArg(6) boolean flipHorizontal) {
+	public int[] getPixels(@OriginalArg(7) int width, @OriginalArg(5) int height, @OriginalArg(0) double brightness, @OriginalArg(4) TextureProvider provider, @OriginalArg(3) Js5 spritesArchive, @OriginalArg(1) boolean columnMajor, @OriginalArg(6) boolean flipHorizontal) {
 		setBrightness(brightness);
 		Texture.provider = provider;
 		Texture.spritesArchive = spritesArchive;

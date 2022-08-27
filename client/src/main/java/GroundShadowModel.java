@@ -49,7 +49,7 @@ public final class GroundShadowModel {
 	}
 
 	@OriginalMember(owner = "client!kc", name = "a", descriptor = "(Lclient!fe;II)Z")
-	public final boolean method2236(@OriginalArg(0) SoftwareIndexedSprite sprite, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
+	public boolean method2236(@OriginalArg(0) SoftwareIndexedSprite sprite, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
 		@Pc(2) byte[] pixels = sprite.pixels;
 		@Pc(5) int width = sprite.width;
 		@Pc(19) int local19 = arg1 * 128 + (arg2 * 128 + 1) * width + 1;
@@ -102,7 +102,7 @@ public final class GroundShadowModel {
 	}
 
 	@OriginalMember(owner = "client!kc", name = "a", descriptor = "()V")
-	public final void render() {
+	public void render() {
 		@Pc(1) GL gl = GlRenderer.gl;
 		GlRenderer.setTextureId(this.textureId);
 		if (this.vertexVbo == null) {
@@ -128,7 +128,7 @@ public final class GroundShadowModel {
 	}
 
 	@OriginalMember(owner = "client!kc", name = "a", descriptor = "([[III)V")
-	public final void buffer(@OriginalArg(1) int x, @OriginalArg(2) int z, @OriginalArg(0) int[][] heights) {
+	public void buffer(@OriginalArg(1) int x, @OriginalArg(2) int z, @OriginalArg(0) int[][] heights) {
 		@Pc(4) Buffer vertexBuffer = new Buffer(1620);
 		for (@Pc(6) int zOff = 0; zOff <= 8; zOff++) {
 			for (@Pc(11) int xOff = 0; xOff <= 8; xOff++) {

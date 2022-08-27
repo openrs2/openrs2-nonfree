@@ -91,7 +91,7 @@ public final class MelType {
 	public int hoverSprite = -1;
 
 	@OriginalMember(owner = "client!ho", name = "a", descriptor = "(Lclient!fd;I)V")
-	public final void decode(@OriginalArg(0) Buffer buffer) {
+	public void decode(@OriginalArg(0) Buffer buffer) {
 		while (true) {
 			@Pc(15) int code = buffer.readUnsignedByte();
 			if (code == 0) {
@@ -102,7 +102,7 @@ public final class MelType {
 	}
 
 	@OriginalMember(owner = "client!ho", name = "a", descriptor = "(B)Lclient!fe;")
-	public final SoftwareIndexedSprite method1808() {
+	public SoftwareIndexedSprite method1808() {
 		@Pc(22) SoftwareIndexedSprite sprite = (SoftwareIndexedSprite) MelTypeList.sprites.get(this.worldMapSprite | 0x20000);
 		if (sprite != null) {
 			return sprite;
@@ -191,7 +191,7 @@ public final class MelType {
 	}
 
 	@OriginalMember(owner = "client!ho", name = "a", descriptor = "(I)Z")
-	public final boolean isVisible() {
+	public boolean isVisible() {
 		if (this.primaryVisibleVarp == -1 && this.primaryVisibleVarbit == -1) {
 			return true;
 		}
@@ -217,7 +217,7 @@ public final class MelType {
 	}
 
 	@OriginalMember(owner = "client!ho", name = "a", descriptor = "(ZZZ)Lclient!ma;")
-	public final IndexedSprite method1811(@OriginalArg(0) boolean hover, @OriginalArg(2) boolean forceSoftware) {
+	public IndexedSprite method1811(@OriginalArg(0) boolean hover, @OriginalArg(2) boolean forceSoftware) {
 		@Pc(17) int spriteId = hover ? this.hoverSprite : this.sprite;
 		@Pc(30) IndexedSprite sprite = (IndexedSprite) MelTypeList.sprites.get(spriteId | (hover ? 0x10000 : 0));
 		if (sprite != null) {

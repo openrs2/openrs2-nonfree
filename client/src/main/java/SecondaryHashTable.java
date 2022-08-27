@@ -30,7 +30,7 @@ public final class SecondaryHashTable {
 	}
 
 	@OriginalMember(owner = "client!ak", name = "a", descriptor = "(I)Lclient!lh;")
-	public final SecondaryNode nextWithKey() {
+	public SecondaryNode nextWithKey() {
 		if (this.searchCursor == null) {
 			return null;
 		}
@@ -48,7 +48,7 @@ public final class SecondaryHashTable {
 	}
 
 	@OriginalMember(owner = "client!ak", name = "a", descriptor = "(BJ)Lclient!lh;")
-	public final SecondaryNode get(@OriginalArg(1) long key) {
+	public SecondaryNode get(@OriginalArg(1) long key) {
 		this.searchKey = key;
 		@Pc(26) SecondaryNode sentinel = this.buckets[(int) (key & (long) (this.bucketCount - 1))];
 		for (this.searchCursor = sentinel.secondaryNext; this.searchCursor != sentinel; this.searchCursor = this.searchCursor.secondaryNext) {
@@ -63,7 +63,7 @@ public final class SecondaryHashTable {
 	}
 
 	@OriginalMember(owner = "client!ak", name = "a", descriptor = "(JLclient!lh;I)V")
-	public final void put(@OriginalArg(0) long key, @OriginalArg(1) SecondaryNode value) {
+	public void put(@OriginalArg(0) long key, @OriginalArg(1) SecondaryNode value) {
 		if (value.secondaryPrev != null) {
 			value.unlinkSecondary();
 		}

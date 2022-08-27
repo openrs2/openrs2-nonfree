@@ -87,7 +87,7 @@ public final class GlTexture extends SecondaryNode {
 	}
 
 	@OriginalMember(owner = "client!so", name = "a", descriptor = "(Lclient!kj;Lclient!fh;Z)[I")
-	public final int[] getPixels(@OriginalArg(0) TextureProvider textureProvider, @OriginalArg(1) Js5 spritesArchive, @OriginalArg(2) boolean lowDetail) {
+	public int[] getPixels(@OriginalArg(0) TextureProvider textureProvider, @OriginalArg(1) Js5 spritesArchive, @OriginalArg(2) boolean lowDetail) {
 		if (this.texture.isReady(textureProvider, spritesArchive)) {
 			@Pc(14) int size = lowDetail ? 64 : 128;
 			return this.texture.getPixels(size, size, 1.0D, textureProvider, spritesArchive, this.columnMajor, false);
@@ -97,7 +97,7 @@ public final class GlTexture extends SecondaryNode {
 	}
 
 	@OriginalMember(owner = "client!so", name = "a", descriptor = "(Lclient!kj;Lclient!fh;FZ)[I")
-	public final int[] method4073(@OriginalArg(0) TextureProvider textureProvider, @OriginalArg(1) Js5 spritesArchive, @OriginalArg(2) float brightness, @OriginalArg(3) boolean lowDetail) {
+	public int[] method4073(@OriginalArg(0) TextureProvider textureProvider, @OriginalArg(1) Js5 spritesArchive, @OriginalArg(2) float brightness, @OriginalArg(3) boolean lowDetail) {
 		if (this.pixels == null || this.brightness != brightness) {
 			if (!this.texture.isReady(textureProvider, spritesArchive)) {
 				return null;
@@ -187,7 +187,7 @@ public final class GlTexture extends SecondaryNode {
 
 	@OriginalMember(owner = "client!so", name = "finalize", descriptor = "()V")
 	@Override
-	public final void finalize() throws Throwable {
+	public void finalize() throws Throwable {
 		if (this.textureId != -1) {
 			GlCleaner.deleteTexture(this.textureId, this.textureSize, this.contextId);
 			this.textureId = -1;
@@ -197,7 +197,7 @@ public final class GlTexture extends SecondaryNode {
 	}
 
 	@OriginalMember(owner = "client!so", name = "d", descriptor = "(I)V")
-	public final void method4074(@OriginalArg(0) int arg0) {
+	public void method4074(@OriginalArg(0) int arg0) {
 		if (this.pixels == null || this.anInt4970 == 0 && this.anInt4968 == 0) {
 			return;
 		}
@@ -223,12 +223,12 @@ public final class GlTexture extends SecondaryNode {
 	}
 
 	@OriginalMember(owner = "client!so", name = "a", descriptor = "(Lclient!kj;Lclient!fh;)Z")
-	public final boolean isReady(@OriginalArg(0) TextureProvider provider, @OriginalArg(1) Js5 spritesArchive) {
+	public boolean isReady(@OriginalArg(0) TextureProvider provider, @OriginalArg(1) Js5 spritesArchive) {
 		return this.texture.isReady(provider, spritesArchive);
 	}
 
 	@OriginalMember(owner = "client!so", name = "a", descriptor = "(Lclient!kj;Lclient!fh;I)Z")
-	public final boolean method4077(@OriginalArg(0) TextureProvider provider, @OriginalArg(1) Js5 spritesArchive, @OriginalArg(2) int size) {
+	public boolean method4077(@OriginalArg(0) TextureProvider provider, @OriginalArg(1) Js5 spritesArchive, @OriginalArg(2) int size) {
 		if (!this.texture.isReady(provider, spritesArchive)) {
 			return false;
 		}

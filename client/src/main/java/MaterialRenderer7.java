@@ -54,7 +54,7 @@ public final class MaterialRenderer7 implements MaterialRenderer {
 
 	@OriginalMember(owner = "client!ae", name = "b", descriptor = "()V")
 	@Override
-	public final void bind() {
+	public void bind() {
 		@Pc(5) GL gl = GlRenderer.gl;
 		GlRenderer.setTextureCombineAlphaMode(1);
 		if (Static5.aClass4_Sub3_Sub10_6 == null || this.anInt96 < 0 || !Preferences.highDetailLighting) {
@@ -76,7 +76,7 @@ public final class MaterialRenderer7 implements MaterialRenderer {
 
 	@OriginalMember(owner = "client!ae", name = "a", descriptor = "()V")
 	@Override
-	public final void unbind() {
+	public void unbind() {
 		@Pc(5) GL gl = GlRenderer.gl;
 		if (this.aBoolean7) {
 			gl.glCallList(this.anInt96 + 1);
@@ -88,12 +88,12 @@ public final class MaterialRenderer7 implements MaterialRenderer {
 
 	@OriginalMember(owner = "client!ae", name = "c", descriptor = "()I")
 	@Override
-	public final int getFlags() {
+	public int getFlags() {
 		return 4;
 	}
 
 	@OriginalMember(owner = "client!ae", name = "a", descriptor = "(I)V")
 	@Override
-	public final void setArgument(@OriginalArg(0) int arg) {
+	public void setArgument(@OriginalArg(0) int arg) {
 	}
 }

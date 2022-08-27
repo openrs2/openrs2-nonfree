@@ -66,20 +66,20 @@ public final class UnderwaterMaterialRenderer implements MaterialRenderer {
 
 	@OriginalMember(owner = "client!bj", name = "b", descriptor = "()V")
 	@Override
-	public final void bind() {
+	public void bind() {
 		@Pc(1) GL gl = GlRenderer.gl;
 		gl.glCallList(this.listId);
 	}
 
 	@OriginalMember(owner = "client!bj", name = "c", descriptor = "()I")
 	@Override
-	public final int getFlags() {
+	public int getFlags() {
 		return 0;
 	}
 
 	@OriginalMember(owner = "client!bj", name = "a", descriptor = "()V")
 	@Override
-	public final void unbind() {
+	public void unbind() {
 		@Pc(1) GL gl = GlRenderer.gl;
 		gl.glCallList(this.listId + 1);
 	}
@@ -149,7 +149,7 @@ public final class UnderwaterMaterialRenderer implements MaterialRenderer {
 
 	@OriginalMember(owner = "client!bj", name = "a", descriptor = "(I)V")
 	@Override
-	public final void setArgument(@OriginalArg(0) int arg) {
+	public void setArgument(@OriginalArg(0) int arg) {
 		@Pc(1) GL gl = GlRenderer.gl;
 		gl.glActiveTexture(GL.GL_TEXTURE1);
 		if (aBoolean21 || arg >= 0) {

@@ -63,7 +63,7 @@ public final class AreaSound extends Node {
 	public int movementSpeed = 0;
 
 	@OriginalMember(owner = "client!gn", name = "c", descriptor = "(I)V")
-	public final void update() {
+	public void update() {
 		@Pc(9) int prevSound = this.sound;
 		if (this.locType != null) {
 			@Pc(96) LocType locType = this.locType.getMultiLoc();

@@ -40,7 +40,7 @@ public final class FloType {
 	public int anInt3876 = 128;
 
 	@OriginalMember(owner = "client!oh", name = "a", descriptor = "(ILclient!fd;I)V")
-	public final void decode(@OriginalArg(1) Buffer buffer, @OriginalArg(0) int id) {
+	public void decode(@OriginalArg(1) Buffer buffer, @OriginalArg(0) int id) {
 		while (true) {
 			@Pc(15) int code = buffer.readUnsignedByte();
 			if (code == 0) {

@@ -33,7 +33,7 @@ public final class StructType extends SecondaryNode {
 	}
 
 	@OriginalMember(owner = "client!ro", name = "a", descriptor = "(III)I")
-	public final int getParam(@OriginalArg(1) int id, @OriginalArg(0) int defaultValue) {
+	public int getParam(@OriginalArg(1) int id, @OriginalArg(0) int defaultValue) {
 		if (this.params == null) {
 			return defaultValue;
 		} else {
@@ -43,7 +43,7 @@ public final class StructType extends SecondaryNode {
 	}
 
 	@OriginalMember(owner = "client!ro", name = "a", descriptor = "(Lclient!fd;I)V")
-	public final void decode(@OriginalArg(0) Buffer buffer) {
+	public void decode(@OriginalArg(0) Buffer buffer) {
 		while (true) {
 			@Pc(9) int code = buffer.readUnsignedByte();
 			if (code == 0) {
@@ -54,7 +54,7 @@ public final class StructType extends SecondaryNode {
 	}
 
 	@OriginalMember(owner = "client!ro", name = "a", descriptor = "(Ljava/lang/String;IB)Ljava/lang/String;")
-	public final String getParam(@OriginalArg(1) int id, @OriginalArg(0) String defaultValue) {
+	public String getParam(@OriginalArg(1) int id, @OriginalArg(0) String defaultValue) {
 		if (this.params == null) {
 			return defaultValue;
 		} else {

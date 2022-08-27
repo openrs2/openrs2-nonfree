@@ -32,7 +32,7 @@ public final class LightType {
 	}
 
 	@OriginalMember(owner = "client!vd", name = "a", descriptor = "(ZLclient!fd;I)V")
-	public final void decode(@OriginalArg(1) Buffer buffer, @OriginalArg(2) int id) {
+	public void decode(@OriginalArg(1) Buffer buffer, @OriginalArg(2) int id) {
 		while (true) {
 			@Pc(5) int code = buffer.readUnsignedByte();
 			if (code == 0) {

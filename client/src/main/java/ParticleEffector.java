@@ -38,7 +38,7 @@ public final class ParticleEffector extends SecondaryNode {
 	}
 
 	@OriginalMember(owner = "client!wn", name = "a", descriptor = "(IIII)V")
-	public final void method4827(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2) {
+	public void method4827(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2) {
 		this.anInt6090 = arg0;
 		this.anInt6084 = arg2;
 		this.anInt6085 = arg1;

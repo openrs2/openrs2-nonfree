@@ -64,7 +64,7 @@ public final class GlProgram {
 
 	@OriginalMember(owner = "client!pf", name = "finalize", descriptor = "()V")
 	@Override
-	public final void finalize() throws Throwable {
+	public void finalize() throws Throwable {
 		GlCleaner.deleteProgram(this.id, this.shaders, this.contextId);
 		super.finalize();
 	}

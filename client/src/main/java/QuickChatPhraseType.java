@@ -31,12 +31,12 @@ public final class QuickChatPhraseType extends SecondaryNode {
 	public boolean searchable = true;
 
 	@OriginalMember(owner = "client!ij", name = "d", descriptor = "(I)I")
-	public final int getDynamicCommandCount() {
+	public int getDynamicCommandCount() {
 		return this.dynamicCommands == null ? 0 : this.dynamicCommands.length;
 	}
 
 	@OriginalMember(owner = "client!ij", name = "a", descriptor = "(III)I")
-	public final int getDynamicCommandParam(@OriginalArg(2) int i, @OriginalArg(0) int j) {
+	public int getDynamicCommandParam(@OriginalArg(2) int i, @OriginalArg(0) int j) {
 		if (this.dynamicCommands == null || i < 0 || i > this.dynamicCommands.length) {
 			return -1;
 		} else if (this.dynamicCommandParams[i] == null || j < 0 || j > this.dynamicCommandParams[i].length) {
@@ -47,7 +47,7 @@ public final class QuickChatPhraseType extends SecondaryNode {
 	}
 
 	@OriginalMember(owner = "client!ij", name = "a", descriptor = "(II)I")
-	public final int getDynamicCommand(@OriginalArg(0) int i) {
+	public int getDynamicCommand(@OriginalArg(0) int i) {
 		return this.dynamicCommands == null || i < 0 || i > this.dynamicCommands.length ? -1 : this.dynamicCommands[i];
 	}
 
@@ -79,7 +79,7 @@ public final class QuickChatPhraseType extends SecondaryNode {
 	}
 
 	@OriginalMember(owner = "client!ij", name = "a", descriptor = "(Lclient!fd;I)V")
-	public final void decode(@OriginalArg(0) Buffer buffer) {
+	public void decode(@OriginalArg(0) Buffer buffer) {
 		while (true) {
 			@Pc(14) int code = buffer.readUnsignedByte();
 			if (code == 0) {
@@ -90,7 +90,7 @@ public final class QuickChatPhraseType extends SecondaryNode {
 	}
 
 	@OriginalMember(owner = "client!ij", name = "a", descriptor = "(ILclient!fd;)Ljava/lang/String;")
-	public final String decodeMessage(@OriginalArg(1) Buffer buffer) {
+	public String decodeMessage(@OriginalArg(1) Buffer buffer) {
 		@Pc(16) StringBuffer s = new StringBuffer(80);
 		if (this.dynamicCommands != null) {
 			for (@Pc(21) int i = 0; i < this.dynamicCommands.length; i++) {
@@ -103,7 +103,7 @@ public final class QuickChatPhraseType extends SecondaryNode {
 	}
 
 	@OriginalMember(owner = "client!ij", name = "e", descriptor = "(I)V")
-	public final void method1910() {
+	public void method1910() {
 		if (this.automaticResponses != null) {
 			for (@Pc(20) int i = 0; i < this.automaticResponses.length; i++) {
 				this.automaticResponses[i] |= 32768;
@@ -112,7 +112,7 @@ public final class QuickChatPhraseType extends SecondaryNode {
 	}
 
 	@OriginalMember(owner = "client!ij", name = "a", descriptor = "([IBLclient!fd;)V")
-	public final void encodeMessage(@OriginalArg(2) Buffer buffer, @OriginalArg(0) int[] values) {
+	public void encodeMessage(@OriginalArg(2) Buffer buffer, @OriginalArg(0) int[] values) {
 		if (this.dynamicCommands == null) {
 			return;
 		}
@@ -125,7 +125,7 @@ public final class QuickChatPhraseType extends SecondaryNode {
 	}
 
 	@OriginalMember(owner = "client!ij", name = "f", descriptor = "(I)Ljava/lang/String;")
-	public final String getText() {
+	public String getText() {
 		@Pc(6) StringBuffer s = new StringBuffer(80);
 		if (this.text == null) {
 			return "";

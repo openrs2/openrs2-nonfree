@@ -16,7 +16,7 @@ public final class ParamType extends SecondaryNode {
 	private char type;
 
 	@OriginalMember(owner = "client!jc", name = "a", descriptor = "(Lclient!fd;I)V")
-	public final void decode(@OriginalArg(0) Buffer buffer) {
+	public void decode(@OriginalArg(0) Buffer buffer) {
 		while (true) {
 			@Pc(9) int code = buffer.readUnsignedByte();
 			if (code == 0) {
@@ -27,7 +27,7 @@ public final class ParamType extends SecondaryNode {
 	}
 
 	@OriginalMember(owner = "client!jc", name = "f", descriptor = "(I)Z")
-	public final boolean isString() {
+	public boolean isString() {
 		return this.type == 's';
 	}
 

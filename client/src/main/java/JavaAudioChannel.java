@@ -30,7 +30,7 @@ public final class JavaAudioChannel extends AudioChannel {
 
 	@OriginalMember(owner = "client!kb", name = "b", descriptor = "()V")
 	@Override
-	protected final void close() {
+	protected void close() {
 		if (this.line != null) {
 			this.line.close();
 			this.line = null;
@@ -39,7 +39,7 @@ public final class JavaAudioChannel extends AudioChannel {
 
 	@OriginalMember(owner = "client!kb", name = "b", descriptor = "(I)V")
 	@Override
-	public final void open(@OriginalArg(0) int bufferCapacity) throws LineUnavailableException {
+	public void open(@OriginalArg(0) int bufferCapacity) throws LineUnavailableException {
 		try {
 			@Pc(20) Info info = new Info(SourceDataLine.class, this.format, bufferCapacity << (AudioChannel.stereo ? 2 : 1));
 			this.line = (SourceDataLine) AudioSystem.getLine(info);
@@ -58,13 +58,13 @@ public final class JavaAudioChannel extends AudioChannel {
 
 	@OriginalMember(owner = "client!kb", name = "a", descriptor = "()I")
 	@Override
-	protected final int getBufferSize() {
+	protected int getBufferSize() {
 		return this.lineBufferSize - (this.line.available() >> (AudioChannel.stereo ? 2 : 1));
 	}
 
 	@OriginalMember(owner = "client!kb", name = "d", descriptor = "()V")
 	@Override
-	protected final void flush() throws LineUnavailableException {
+	protected void flush() throws LineUnavailableException {
 		this.line.flush();
 		if (!this.reopenAfterFlush) {
 			return;
@@ -79,7 +79,7 @@ public final class JavaAudioChannel extends AudioChannel {
 
 	@OriginalMember(owner = "client!kb", name = "a", descriptor = "(Ljava/awt/Component;)V")
 	@Override
-	public final void init(@OriginalArg(0) Component component) {
+	public void init(@OriginalArg(0) Component component) {
 		@Pc(1) javax.sound.sampled.Mixer.Info[] mixers = AudioSystem.getMixerInfo();
 		if (mixers != null) {
 			for (@Pc(9) int i = 0; i < mixers.length; i++) {
@@ -98,7 +98,7 @@ public final class JavaAudioChannel extends AudioChannel {
 
 	@OriginalMember(owner = "client!kb", name = "c", descriptor = "()V")
 	@Override
-	protected final void write() {
+	protected void write() {
 		@Pc(1) short len = 256;
 		if (AudioChannel.stereo) {
 			len = 512;

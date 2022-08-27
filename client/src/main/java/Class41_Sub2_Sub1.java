@@ -15,7 +15,7 @@ public final class Class41_Sub2_Sub1 extends Class41_Sub2 {
 	}
 
 	@OriginalMember(owner = "client!oe", name = "a", descriptor = "(III)[B")
-	public final byte[] method3156() {
+	public byte[] method3156() {
 		this.bytes = new byte[524288];
 		this.method3142();
 		return this.bytes;
@@ -23,7 +23,7 @@ public final class Class41_Sub2_Sub1 extends Class41_Sub2 {
 
 	@OriginalMember(owner = "client!oe", name = "a", descriptor = "(IB)V")
 	@Override
-	protected final void setPixel(@OriginalArg(0) int index, @OriginalArg(1) byte arg1) {
+	protected void setPixel(@OriginalArg(0) int index, @OriginalArg(1) byte arg1) {
 		@Pc(3) int index2 = index * 2;
 		arg1 = (byte) ((arg1 >> 1 & 0x7F) + 127);
 		this.bytes[index2++] = arg1;

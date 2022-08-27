@@ -49,7 +49,7 @@ public final class GLContextImpl extends GLContext {
 
 	@OriginalMember(owner = "gl!jaggl/jogl_wrapper/GLContextImpl", name = "makeCurrent", descriptor = "()I")
 	@Override
-	public final int makeCurrent() throws GLException {
+	public int makeCurrent() throws GLException {
 		@Pc(1) boolean created = false;
 		if (!this.context_valid) {
 			this.create();
@@ -65,7 +65,7 @@ public final class GLContextImpl extends GLContext {
 
 	@OriginalMember(owner = "gl!jaggl/jogl_wrapper/GLContextImpl", name = "release", descriptor = "()V")
 	@Override
-	public final void release() throws GLException {
+	public void release() throws GLException {
 		if (!context.releaseContext()) {
 			throw new GLException("Error freeing OpenGL context: " + context.getLastError());
 		}
@@ -73,7 +73,7 @@ public final class GLContextImpl extends GLContext {
 
 	@OriginalMember(owner = "gl!jaggl/jogl_wrapper/GLContextImpl", name = "destroy", descriptor = "()V")
 	@Override
-	public final void destroy() throws GLException {
+	public void destroy() throws GLException {
 		if (!context.destroy()) {
 			throw new GLException("Unable to delete OpenGL context");
 		}
@@ -82,7 +82,7 @@ public final class GLContextImpl extends GLContext {
 
 	@OriginalMember(owner = "gl!jaggl/jogl_wrapper/GLContextImpl", name = "getGL", descriptor = "()Lgl!javax/media/opengl/GL;")
 	@Override
-	public final GL getGL() {
+	public GL getGL() {
 		return this.gl;
 	}
 

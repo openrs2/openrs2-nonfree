@@ -29,7 +29,7 @@ public final class MsiType {
 	}
 
 	@OriginalMember(owner = "client!qg", name = "a", descriptor = "(IZLclient!fd;)V")
-	public final void decode(@OriginalArg(2) Buffer buffer, @OriginalArg(0) int id) {
+	public void decode(@OriginalArg(2) Buffer buffer, @OriginalArg(0) int id) {
 		while (true) {
 			@Pc(9) int code = buffer.readUnsignedByte();
 			if (code == 0) {
@@ -40,7 +40,7 @@ public final class MsiType {
 	}
 
 	@OriginalMember(owner = "client!qg", name = "a", descriptor = "(IZI)Lclient!fe;")
-	public final SoftwareIndexedSprite getSprite(@OriginalArg(1) boolean flipVertical, @OriginalArg(2) int angle) {
+	public SoftwareIndexedSprite getSprite(@OriginalArg(1) boolean flipVertical, @OriginalArg(2) int angle) {
 		@Pc(23) SoftwareIndexedSprite sprite = (SoftwareIndexedSprite) MsiTypeList.sprites.get(angle << 16 | this.spriteId | (flipVertical ? 0x40000 : 0));
 		if (sprite != null) {
 			return sprite;

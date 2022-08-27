@@ -32,18 +32,18 @@ public final class GLDrawableImpl implements GLDrawable {
 
 	@OriginalMember(owner = "gl!jaggl/jogl_wrapper/GLDrawableImpl", name = "createContext", descriptor = "(Lgl!javax/media/opengl/GLContext;)Lgl!javax/media/opengl/GLContext;")
 	@Override
-	public final GLContext createContext(@OriginalArg(0) GLContext context) {
+	public GLContext createContext(@OriginalArg(0) GLContext context) {
 		return new GLContextImpl(this);
 	}
 
 	@OriginalMember(owner = "gl!jaggl/jogl_wrapper/GLDrawableImpl", name = "swapBuffers", descriptor = "()V")
 	@Override
-	public final void swapBuffers() throws GLException {
+	public void swapBuffers() throws GLException {
 		context.swapBuffers();
 	}
 
 	@OriginalMember(owner = "gl!jaggl/jogl_wrapper/GLDrawableImpl", name = "setRealized", descriptor = "(Z)V")
 	@Override
-	public final void setRealized(@OriginalArg(0) boolean realized) {
+	public void setRealized(@OriginalArg(0) boolean realized) {
 	}
 }

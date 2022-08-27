@@ -48,7 +48,7 @@ public final class MonochromeImageCache {
 	}
 
 	@OriginalMember(owner = "client!da", name = "a", descriptor = "(I)[[I")
-	public final int[][] get() {
+	public int[][] get() {
 		if (this.capacity != this.height) {
 			throw new RuntimeException("Can only retrieve a full image cache");
 		}
@@ -59,7 +59,7 @@ public final class MonochromeImageCache {
 	}
 
 	@OriginalMember(owner = "client!da", name = "a", descriptor = "(II)[I")
-	public final int[] get(@OriginalArg(0) int row) {
+	public int[] get(@OriginalArg(0) int row) {
 		if (this.capacity == this.height) {
 			this.invalid = this.entries[row] == null;
 			this.entries[row] = MonochromeImageCacheEntry.VALID;
@@ -91,7 +91,7 @@ public final class MonochromeImageCache {
 	}
 
 	@OriginalMember(owner = "client!da", name = "a", descriptor = "(B)V")
-	public final void clear() {
+	public void clear() {
 		for (@Pc(7) int i = 0; i < this.capacity; i++) {
 			this.pixels[i] = null;
 		}

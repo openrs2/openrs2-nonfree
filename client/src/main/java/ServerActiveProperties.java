@@ -23,52 +23,52 @@ public final class ServerActiveProperties extends Node {
 	}
 
 	@OriginalMember(owner = "client!on", name = "d", descriptor = "(B)Z")
-	public final boolean isDragTarget() {
+	public boolean isDragTarget() {
 		return (this.events >> 21 & 0x1) != 0;
 	}
 
 	@OriginalMember(owner = "client!on", name = "a", descriptor = "(II)Z")
-	public final boolean isButtonEnabled(@OriginalArg(0) int button) {
+	public boolean isButtonEnabled(@OriginalArg(0) int button) {
 		return (this.events >> button + 1 & 0x1) != 0;
 	}
 
 	@OriginalMember(owner = "client!on", name = "b", descriptor = "(I)Z")
-	public final boolean isObjSwapEnabled() {
+	public boolean isObjSwapEnabled() {
 		return (this.events >> 28 & 0x1) != 0;
 	}
 
 	@OriginalMember(owner = "client!on", name = "e", descriptor = "(B)I")
-	public final int getDragDepth() {
+	public int getDragDepth() {
 		return this.events >> 18 & 0x7;
 	}
 
 	@OriginalMember(owner = "client!on", name = "d", descriptor = "(I)I")
-	public final int getTargetMask() {
+	public int getTargetMask() {
 		return getTargetMask(this.events);
 	}
 
 	@OriginalMember(owner = "client!on", name = "f", descriptor = "(B)Z")
-	public final boolean isResumePauseButtonEnabled() {
+	public boolean isResumePauseButtonEnabled() {
 		return (this.events & 0x1) != 0;
 	}
 
 	@OriginalMember(owner = "client!on", name = "e", descriptor = "(I)Z")
-	public final boolean isObjUseEnabled() {
+	public boolean isObjUseEnabled() {
 		return (this.events >> 31 & 0x1) != 0;
 	}
 
 	@OriginalMember(owner = "client!on", name = "f", descriptor = "(I)Z")
-	public final boolean isObjReplaceEnabled() {
+	public boolean isObjReplaceEnabled() {
 		return (this.events >> 29 & 0x1) != 0;
 	}
 
 	@OriginalMember(owner = "client!on", name = "a", descriptor = "(Z)Z")
-	public final boolean isUseTarget() {
+	public boolean isUseTarget() {
 		return (this.events >> 22 & 0x1) != 0;
 	}
 
 	@OriginalMember(owner = "client!on", name = "h", descriptor = "(I)Z")
-	public final boolean isObjOpsEnabled() {
+	public boolean isObjOpsEnabled() {
 		return (this.events >> 30 & 0x1) != 0;
 	}
 }

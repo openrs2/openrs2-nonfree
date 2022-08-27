@@ -19,7 +19,7 @@ public final class TextureOpBinary extends TextureOp {
 
 	@OriginalMember(owner = "client!mo", name = "a", descriptor = "(BLclient!fd;I)V")
 	@Override
-	public final void decode(@OriginalArg(1) Buffer buffer, @OriginalArg(2) int code) {
+	public void decode(@OriginalArg(1) Buffer buffer, @OriginalArg(2) int code) {
 		if (code == 0) {
 			this.minValue = buffer.readUnsignedShort();
 		} else if (code == 1) {
@@ -29,7 +29,7 @@ public final class TextureOpBinary extends TextureOp {
 
 	@OriginalMember(owner = "client!mo", name = "a", descriptor = "(II)[I")
 	@Override
-	public final int[] getMonochromeOutput(@OriginalArg(1) int y) {
+	public int[] getMonochromeOutput(@OriginalArg(1) int y) {
 		@Pc(17) int[] dest = this.monochromeImageCache.get(y);
 		if (this.monochromeImageCache.invalid) {
 			@Pc(27) int[] src = this.getChildMonochromeOutput(0, y);

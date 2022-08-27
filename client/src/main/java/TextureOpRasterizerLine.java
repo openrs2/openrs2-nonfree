@@ -34,12 +34,12 @@ public final class TextureOpRasterizerLine extends TextureOpRasterizerShape {
 
 	@OriginalMember(owner = "client!de", name = "a", descriptor = "(III)V")
 	@Override
-	public final void renderFill(@OriginalArg(1) int width, @OriginalArg(2) int height) {
+	public void renderFill(@OriginalArg(1) int width, @OriginalArg(2) int height) {
 	}
 
 	@OriginalMember(owner = "client!de", name = "a", descriptor = "(IIZ)V")
 	@Override
-	public final void renderOutline(@OriginalArg(0) int width, @OriginalArg(1) int height) {
+	public void renderOutline(@OriginalArg(0) int width, @OriginalArg(1) int height) {
 		@Pc(6) int x0 = this.x0 * width >> 12;
 		@Pc(25) int x1 = this.x1 * width >> 12;
 		@Pc(32) int y1 = this.y1 * height >> 12;
@@ -49,6 +49,6 @@ public final class TextureOpRasterizerLine extends TextureOpRasterizerShape {
 
 	@OriginalMember(owner = "client!de", name = "a", descriptor = "(IIB)V")
 	@Override
-	public final void render(@OriginalArg(0) int width, @OriginalArg(1) int height) {
+	public void render(@OriginalArg(0) int width, @OriginalArg(1) int height) {
 	}
 }

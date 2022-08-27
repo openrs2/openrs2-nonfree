@@ -81,7 +81,7 @@ public final class HuffmanCodec {
 	}
 
 	@OriginalMember(owner = "client!oj", name = "a", descriptor = "(III[B[BI)I")
-	public final int encode(@OriginalArg(4) byte[] src, @OriginalArg(1) int srcOff, @OriginalArg(3) byte[] dest, @OriginalArg(0) int destOff, @OriginalArg(5) int len) {
+	public int encode(@OriginalArg(4) byte[] src, @OriginalArg(1) int srcOff, @OriginalArg(3) byte[] dest, @OriginalArg(0) int destOff, @OriginalArg(5) int len) {
 		@Pc(19) int prevCodeword = 0;
 		@Pc(23) int pos = destOff << 3;
 		while (srcOff < len) {
@@ -124,7 +124,7 @@ public final class HuffmanCodec {
 	}
 
 	@OriginalMember(owner = "client!oj", name = "b", descriptor = "(III[B[BI)I")
-	public final int decode(@OriginalArg(3) byte[] src, @OriginalArg(1) int srcOff, @OriginalArg(4) byte[] dest, @OriginalArg(0) int destOff, @OriginalArg(5) int len) {
+	public int decode(@OriginalArg(3) byte[] src, @OriginalArg(1) int srcOff, @OriginalArg(4) byte[] dest, @OriginalArg(0) int destOff, @OriginalArg(5) int len) {
 		if (len == 0) {
 			return 0;
 		}

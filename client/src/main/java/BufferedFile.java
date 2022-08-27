@@ -70,7 +70,7 @@ public final class BufferedFile {
 	}
 
 	@OriginalMember(owner = "client!wl", name = "a", descriptor = "(I[BIB)V")
-	public final void write(@OriginalArg(1) byte[] b, @OriginalArg(0) int off, @OriginalArg(2) int len) throws IOException {
+	public void write(@OriginalArg(1) byte[] b, @OriginalArg(0) int off, @OriginalArg(2) int len) throws IOException {
 		try {
 			if (this.virtualPosition + (long) len > this.virtualLength) {
 				this.virtualLength = this.virtualPosition + (long) len;
@@ -153,12 +153,12 @@ public final class BufferedFile {
 	}
 
 	@OriginalMember(owner = "client!wl", name = "a", descriptor = "(B)J")
-	public final long length() {
+	public long length() {
 		return this.virtualLength;
 	}
 
 	@OriginalMember(owner = "client!wl", name = "a", descriptor = "(ZJ)V")
-	public final void seek(@OriginalArg(1) long position) throws IOException {
+	public void seek(@OriginalArg(1) long position) throws IOException {
 		if (position < 0L) {
 			throw new IOException("Invalid seek to " + position + " in file " + this.getFile());
 		}
@@ -200,7 +200,7 @@ public final class BufferedFile {
 	}
 
 	@OriginalMember(owner = "client!wl", name = "a", descriptor = "(I[BII)V")
-	public final void read(@OriginalArg(1) byte[] b, @OriginalArg(2) int off, @OriginalArg(3) int len) throws IOException {
+	public void read(@OriginalArg(1) byte[] b, @OriginalArg(2) int off, @OriginalArg(3) int len) throws IOException {
 		try {
 			if (b.length < len) {
 				throw new ArrayIndexOutOfBoundsException(len - b.length);
@@ -294,7 +294,7 @@ public final class BufferedFile {
 	}
 
 	@OriginalMember(owner = "client!wl", name = "a", descriptor = "(I[B)V")
-	public final void read(@OriginalArg(1) byte[] b) throws IOException {
+	public void read(@OriginalArg(1) byte[] b) throws IOException {
 		this.read(b, 0, b.length);
 	}
 }

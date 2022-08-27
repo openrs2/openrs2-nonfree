@@ -19,7 +19,7 @@ public final class ParticleLinkedList {
 	}
 
 	@OriginalMember(owner = "client!ug", name = "a", descriptor = "(I)Lclient!mb;")
-	public final ParticleNode next() {
+	public ParticleNode next() {
 		@Pc(6) ParticleNode node = this.cursor;
 		if (this.sentinel == node) {
 			this.cursor = null;
@@ -31,7 +31,7 @@ public final class ParticleLinkedList {
 	}
 
 	@OriginalMember(owner = "client!ug", name = "b", descriptor = "(I)I")
-	public final int size() {
+	public int size() {
 		@Pc(15) int size = 0;
 		@Pc(19) ParticleNode node = this.sentinel.next;
 		while (this.sentinel != node) {
@@ -42,7 +42,7 @@ public final class ParticleLinkedList {
 	}
 
 	@OriginalMember(owner = "client!ug", name = "b", descriptor = "(B)Lclient!mb;")
-	public final ParticleNode head() {
+	public ParticleNode head() {
 		@Pc(9) ParticleNode node = this.sentinel.next;
 		if (node == this.sentinel) {
 			this.cursor = null;
@@ -54,7 +54,7 @@ public final class ParticleLinkedList {
 	}
 
 	@OriginalMember(owner = "client!ug", name = "a", descriptor = "(BLclient!mb;)V")
-	public final void addTail(@OriginalArg(1) ParticleNode node) {
+	public void addTail(@OriginalArg(1) ParticleNode node) {
 		if (node.prev != null) {
 			node.unlink();
 		}

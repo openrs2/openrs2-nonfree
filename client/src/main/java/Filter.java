@@ -44,7 +44,7 @@ public final class Filter {
 	}
 
 	@OriginalMember(owner = "client!qo", name = "a", descriptor = "(IF)I")
-	public final int compute(@OriginalArg(0) int direction, @OriginalArg(1) float t) {
+	public int compute(@OriginalArg(0) int direction, @OriginalArg(1) float t) {
 		if (direction == 0) {
 			@Pc(20) float decibels = (float) this.inverseGain[0] + (float) (this.inverseGain[1] - this.inverseGain[0]) * t;
 			decibels *= 0.0030517578F;
@@ -85,7 +85,7 @@ public final class Filter {
 	}
 
 	@OriginalMember(owner = "client!qo", name = "a", descriptor = "(Lclient!fd;Lclient!h;)V")
-	public final void decode(@OriginalArg(0) Buffer buffer, @OriginalArg(1) Envelope envelope) {
+	public void decode(@OriginalArg(0) Buffer buffer, @OriginalArg(1) Envelope envelope) {
 		@Pc(3) int pairs = buffer.readUnsignedByte();
 		this.pairs[0] = pairs >> 4;
 		this.pairs[1] = pairs & 0xF;

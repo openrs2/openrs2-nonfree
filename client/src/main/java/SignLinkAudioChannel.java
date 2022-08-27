@@ -21,7 +21,7 @@ public final class SignLinkAudioChannel extends AudioChannel {
 
 	@OriginalMember(owner = "client!nm", name = "b", descriptor = "(I)V")
 	@Override
-	public final void open(@OriginalArg(0) int bufferCapacity) throws Exception {
+	public void open(@OriginalArg(0) int bufferCapacity) throws Exception {
 		if (bufferCapacity > 32768) {
 			throw new IllegalArgumentException();
 		}
@@ -30,31 +30,31 @@ public final class SignLinkAudioChannel extends AudioChannel {
 
 	@OriginalMember(owner = "client!nm", name = "d", descriptor = "()V")
 	@Override
-	protected final void flush() {
+	protected void flush() {
 		audioSource.flush(this.channel);
 	}
 
 	@OriginalMember(owner = "client!nm", name = "a", descriptor = "(Ljava/awt/Component;)V")
 	@Override
-	public final void init(@OriginalArg(0) Component component) throws Exception {
+	public void init(@OriginalArg(0) Component component) throws Exception {
 		audioSource.init(component, AudioChannel.stereo, Static7.sampleRate);
 	}
 
 	@OriginalMember(owner = "client!nm", name = "a", descriptor = "()I")
 	@Override
-	protected final int getBufferSize() {
+	protected int getBufferSize() {
 		return audioSource.getBufferSize(this.channel);
 	}
 
 	@OriginalMember(owner = "client!nm", name = "b", descriptor = "()V")
 	@Override
-	protected final void close() {
+	protected void close() {
 		audioSource.close(this.channel);
 	}
 
 	@OriginalMember(owner = "client!nm", name = "c", descriptor = "()V")
 	@Override
-	protected final void write() {
+	protected void write() {
 		audioSource.write(this.channel, this.samples);
 	}
 }

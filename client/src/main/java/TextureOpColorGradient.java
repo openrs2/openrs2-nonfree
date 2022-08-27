@@ -270,7 +270,7 @@ public final class TextureOpColorGradient extends TextureOp {
 
 	@OriginalMember(owner = "client!vm", name = "e", descriptor = "(B)V")
 	@Override
-	public final void postDecode() {
+	public void postDecode() {
 		if (this.samples == null) {
 			this.setPreset(1);
 		}
@@ -279,7 +279,7 @@ public final class TextureOpColorGradient extends TextureOp {
 
 	@OriginalMember(owner = "client!vm", name = "a", descriptor = "(BLclient!fd;I)V")
 	@Override
-	public final void decode(@OriginalArg(1) Buffer buffer, @OriginalArg(2) int code) {
+	public void decode(@OriginalArg(1) Buffer buffer, @OriginalArg(2) int code) {
 		if (code != 0) {
 			return;
 		}
@@ -299,7 +299,7 @@ public final class TextureOpColorGradient extends TextureOp {
 
 	@OriginalMember(owner = "client!vm", name = "b", descriptor = "(II)[[I")
 	@Override
-	public final int[][] getColorOutput(@OriginalArg(0) int y) {
+	public int[][] getColorOutput(@OriginalArg(0) int y) {
 		@Pc(15) int[][] dest = this.colorImageCache.get(y);
 		if (this.colorImageCache.invalid) {
 			@Pc(26) int[] src = this.getChildMonochromeOutput(0, y);

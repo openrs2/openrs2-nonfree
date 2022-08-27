@@ -29,7 +29,7 @@ public final class IntHashTable {
 	}
 
 	@OriginalMember(owner = "client!gf", name = "a", descriptor = "(II)I")
-	public final int get(@OriginalArg(1) int key) {
+	public int get(@OriginalArg(1) int key) {
 		@Pc(11) int mask = (this.buckets.length >> 1) - 1;
 		@Pc(15) int hash = key & mask;
 		while (true) {

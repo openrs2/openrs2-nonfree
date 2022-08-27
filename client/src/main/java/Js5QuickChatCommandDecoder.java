@@ -8,7 +8,7 @@ public final class Js5QuickChatCommandDecoder implements QuickChatCommandDecoder
 
 	@OriginalMember(owner = "client!oi", name = "a", descriptor = "(J[IBI)Ljava/lang/String;")
 	@Override
-	public final String decode(@OriginalArg(3) int command, @OriginalArg(1) int[] params, @OriginalArg(0) long value) {
+	public String decode(@OriginalArg(3) int command, @OriginalArg(1) int[] params, @OriginalArg(0) long value) {
 		if (command == 0) {
 			@Pc(18) EnumType type = EnumTypeList.get(params[0]);
 			return type.getString((int) value);

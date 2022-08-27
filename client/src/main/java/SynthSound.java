@@ -66,7 +66,7 @@ public final class SynthSound {
 	}
 
 	@OriginalMember(owner = "client!ag", name = "b", descriptor = "()I")
-	public final int getStart() {
+	public int getStart() {
 		@Pc(1) int start = 9999999;
 		for (@Pc(3) int i = 0; i < 10; i++) {
 			if (this.instruments[i] != null && this.instruments[i].start / 20 < start) {
@@ -93,7 +93,7 @@ public final class SynthSound {
 	}
 
 	@OriginalMember(owner = "client!ag", name = "c", descriptor = "()Lclient!pb;")
-	public final PcmSound toPcmSound() {
+	public PcmSound toPcmSound() {
 		@Pc(2) byte[] samples = this.getSamples();
 		return new PcmSound(22050, samples, this.start * 22050 / 1000, this.end * 22050 / 1000);
 	}

@@ -92,7 +92,7 @@ public final class WaterMaterialRenderer implements MaterialRenderer {
 
 	@OriginalMember(owner = "client!bd", name = "c", descriptor = "()I")
 	@Override
-	public final int getFlags() {
+	public int getFlags() {
 		return 15;
 	}
 
@@ -112,13 +112,13 @@ public final class WaterMaterialRenderer implements MaterialRenderer {
 
 	@OriginalMember(owner = "client!bd", name = "a", descriptor = "()V")
 	@Override
-	public final void unbind() {
+	public void unbind() {
 		GlRenderer.gl.glCallList(this.anInt267 + 1);
 	}
 
 	@OriginalMember(owner = "client!bd", name = "b", descriptor = "()V")
 	@Override
-	public final void bind() {
+	public void bind() {
 		@Pc(1) GL gl = GlRenderer.gl;
 		GlRenderer.setTextureCombineRgbMode(2);
 		GlRenderer.setTextureCombineAlphaMode(2);
@@ -141,7 +141,7 @@ public final class WaterMaterialRenderer implements MaterialRenderer {
 
 	@OriginalMember(owner = "client!bd", name = "a", descriptor = "(I)V")
 	@Override
-	public final void setArgument(@OriginalArg(0) int arg) {
+	public void setArgument(@OriginalArg(0) int arg) {
 		@Pc(1) GL gl = GlRenderer.gl;
 		gl.glActiveTexture(GL.GL_TEXTURE1);
 		gl.glTexEnvfv(GL.GL_TEXTURE_ENV, GL.GL_TEXTURE_ENV_COLOR, Static4.aFloatArray38, 0);

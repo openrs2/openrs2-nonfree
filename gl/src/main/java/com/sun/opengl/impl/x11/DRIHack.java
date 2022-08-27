@@ -16,7 +16,7 @@ public final class DRIHack {
 
 			@OriginalMember(owner = "gl!com/sun/opengl/impl/x11/DRIHack$1", name = "run", descriptor = "()Ljava/lang/Object;")
 			@Override
-			public final Object run() {
+			public Object run() {
 				dri.bind();
 				return null;
 			}

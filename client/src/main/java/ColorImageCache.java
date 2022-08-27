@@ -39,7 +39,7 @@ public final class ColorImageCache {
 	}
 
 	@OriginalMember(owner = "client!md", name = "a", descriptor = "(B)V")
-	public final void clear() {
+	public void clear() {
 		for (@Pc(11) int i = 0; i < this.capacity; i++) {
 			this.pixels[i][0] = null;
 			this.pixels[i][1] = null;
@@ -53,7 +53,7 @@ public final class ColorImageCache {
 	}
 
 	@OriginalMember(owner = "client!md", name = "a", descriptor = "(I)[[[I")
-	public final int[][][] get() {
+	public int[][][] get() {
 		if (this.capacity != this.height) {
 			throw new RuntimeException("Can only retrieve a full image cache");
 		}
@@ -64,7 +64,7 @@ public final class ColorImageCache {
 	}
 
 	@OriginalMember(owner = "client!md", name = "a", descriptor = "(II)[[I")
-	public final int[][] get(@OriginalArg(0) int row) {
+	public int[][] get(@OriginalArg(0) int row) {
 		if (this.height == this.capacity) {
 			this.invalid = this.entries[row] == null;
 			this.entries[row] = ColorImageCacheEntry.VALID;

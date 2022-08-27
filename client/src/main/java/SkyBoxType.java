@@ -30,7 +30,7 @@ public final class SkyBoxType {
 	}
 
 	@OriginalMember(owner = "client!qm", name = "a", descriptor = "(IILclient!fd;)V")
-	public final void decode(@OriginalArg(2) Buffer buffer, @OriginalArg(1) int id) {
+	public void decode(@OriginalArg(2) Buffer buffer, @OriginalArg(1) int id) {
 		while (true) {
 			@Pc(15) int code = buffer.readUnsignedByte();
 			if (code == 0) {

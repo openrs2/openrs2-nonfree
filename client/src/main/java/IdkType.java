@@ -31,7 +31,7 @@ public final class IdkType {
 	public int feature = -1;
 
 	@OriginalMember(owner = "client!qa", name = "b", descriptor = "(I)Lclient!ml;")
-	public final RawModel getHeadModel() {
+	public RawModel getHeadModel() {
 		@Pc(8) RawModel[] models = new RawModel[5];
 		@Pc(10) int len = 0;
 		for (@Pc(17) int i = 0; i < 5; i++) {
@@ -54,7 +54,7 @@ public final class IdkType {
 	}
 
 	@OriginalMember(owner = "client!qa", name = "a", descriptor = "(B)Lclient!ml;")
-	public final RawModel getBodyModel() {
+	public RawModel getBodyModel() {
 		if (this.bodyModels == null) {
 			return null;
 		}
@@ -115,7 +115,7 @@ public final class IdkType {
 	}
 
 	@OriginalMember(owner = "client!qa", name = "b", descriptor = "(B)Z")
-	public final boolean isBodyModelReady() {
+	public boolean isBodyModelReady() {
 		if (this.bodyModels == null) {
 			return true;
 		}
@@ -129,7 +129,7 @@ public final class IdkType {
 	}
 
 	@OriginalMember(owner = "client!qa", name = "a", descriptor = "(ZLclient!fd;)V")
-	public final void decode(@OriginalArg(1) Buffer buffer) {
+	public void decode(@OriginalArg(1) Buffer buffer) {
 		while (true) {
 			@Pc(5) int code = buffer.readUnsignedByte();
 			if (code == 0) {
@@ -140,7 +140,7 @@ public final class IdkType {
 	}
 
 	@OriginalMember(owner = "client!qa", name = "c", descriptor = "(I)Z")
-	public final boolean isHeadModelReady() {
+	public boolean isHeadModelReady() {
 		@Pc(16) boolean ready = true;
 		for (@Pc(18) int i = 0; i < 5; i++) {
 			if (this.headModels[i] != -1 && !IdkTypeList.modelsArchive.isFileReady(this.headModels[i], 0)) {

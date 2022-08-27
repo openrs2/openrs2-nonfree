@@ -53,7 +53,7 @@ public final class BufferedSocket implements Runnable {
 	}
 
 	@OriginalMember(owner = "client!eo", name = "a", descriptor = "(I[BIB)V")
-	public final void read(@OriginalArg(1) byte[] b, @OriginalArg(0) int off, @OriginalArg(2) int len) throws IOException {
+	public void read(@OriginalArg(1) byte[] b, @OriginalArg(0) int off, @OriginalArg(2) int len) throws IOException {
 		if (this.closed) {
 			return;
 		}
@@ -68,12 +68,12 @@ public final class BufferedSocket implements Runnable {
 	}
 
 	@OriginalMember(owner = "client!eo", name = "a", descriptor = "(B)I")
-	public final int available() throws IOException {
+	public int available() throws IOException {
 		return this.closed ? 0 : this.in.available();
 	}
 
 	@OriginalMember(owner = "client!eo", name = "c", descriptor = "(I)V")
-	public final void close() {
+	public void close() {
 		if (this.closed) {
 			return;
 		}
@@ -96,7 +96,7 @@ public final class BufferedSocket implements Runnable {
 	}
 
 	@OriginalMember(owner = "client!eo", name = "b", descriptor = "(B)V")
-	public final void breakConnection() {
+	public void breakConnection() {
 		if (!this.closed) {
 			this.in = new BrokenInputStream();
 			this.out = new BrokenOutputStream();
@@ -104,18 +104,18 @@ public final class BufferedSocket implements Runnable {
 	}
 
 	@OriginalMember(owner = "client!eo", name = "a", descriptor = "(Z)I")
-	public final int read() throws IOException {
+	public int read() throws IOException {
 		return this.closed ? 0 : this.in.read();
 	}
 
 	@OriginalMember(owner = "client!eo", name = "finalize", descriptor = "()V")
 	@Override
-	public final void finalize() {
+	public void finalize() {
 		this.close();
 	}
 
 	@OriginalMember(owner = "client!eo", name = "c", descriptor = "(B)V")
-	public final void checkError() throws IOException {
+	public void checkError() throws IOException {
 		if (!this.closed && this.error) {
 			this.error = false;
 			throw new IOException();
@@ -124,7 +124,7 @@ public final class BufferedSocket implements Runnable {
 
 	@OriginalMember(owner = "client!eo", name = "run", descriptor = "()V")
 	@Override
-	public final void run() {
+	public void run() {
 		try {
 			while (true) {
 				@Pc(40) int len;
@@ -189,7 +189,7 @@ public final class BufferedSocket implements Runnable {
 	}
 
 	@OriginalMember(owner = "client!eo", name = "a", descriptor = "(I[BII)V")
-	public final void write(@OriginalArg(1) byte[] b, @OriginalArg(2) int len) throws IOException {
+	public void write(@OriginalArg(1) byte[] b, @OriginalArg(2) int len) throws IOException {
 		if (this.closed) {
 			return;
 		}

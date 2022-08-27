@@ -49,7 +49,7 @@ public final class SoundBank {
 	}
 
 	@OriginalMember(owner = "client!jk", name = "a", descriptor = "([III)Lclient!pb;")
-	public final PcmSound getVorbisSound(@OriginalArg(2) int id, @OriginalArg(0) int[] samplingRates) {
+	public PcmSound getVorbisSound(@OriginalArg(2) int id, @OriginalArg(0) int[] samplingRates) {
 		if (this.vorbisArchive.capacity() == 1) {
 			return this.getVorbisSound(0, id, samplingRates);
 		} else if (this.vorbisArchive.getGroupCapacity(id) == 1) {
@@ -90,7 +90,7 @@ public final class SoundBank {
 	}
 
 	@OriginalMember(owner = "client!jk", name = "a", descriptor = "(I[II)Lclient!pb;")
-	public final PcmSound getSynthSound(@OriginalArg(2) int id, @OriginalArg(1) int[] samplingRates) {
+	public PcmSound getSynthSound(@OriginalArg(2) int id, @OriginalArg(1) int[] samplingRates) {
 		if (this.synthArchive.capacity() == 1) {
 			return this.getSynthSound(0, id, samplingRates);
 		} else if (this.synthArchive.getGroupCapacity(id) == 1) {

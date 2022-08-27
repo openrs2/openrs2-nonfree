@@ -129,7 +129,7 @@ public final class VorbisFloor {
 	}
 
 	@OriginalMember(owner = "client!bf", name = "a", descriptor = "([FI)V")
-	public final void synthesize(@OriginalArg(0) float[] floor, @OriginalArg(1) int n) {
+	public void synthesize(@OriginalArg(0) float[] floor, @OriginalArg(1) int n) {
 		@Pc(3) int xListLen = this.xList.length;
 		@Pc(10) int range = RANGES[this.multiplier - 1];
 		step2Flag[0] = step2Flag[1] = true;
@@ -203,7 +203,7 @@ public final class VorbisFloor {
 	}
 
 	@OriginalMember(owner = "client!bf", name = "b", descriptor = "()Z")
-	public final boolean decodePacket() {
+	public boolean decodePacket() {
 		@Pc(5) boolean nonZero = VorbisSound.readBit() != 0;
 		if (!nonZero) {
 			return false;

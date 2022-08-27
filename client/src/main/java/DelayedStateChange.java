@@ -244,12 +244,12 @@ public final class DelayedStateChange extends SecondaryNode {
 	}
 
 	@OriginalMember(owner = "client!g", name = "d", descriptor = "(I)I")
-	public final int getType() {
+	public int getType() {
 		return (int) (this.key >>> 32 & 0xFFL);
 	}
 
 	@OriginalMember(owner = "client!g", name = "e", descriptor = "(I)I")
-	public final int getId() {
+	public int getId() {
 		return (int) this.key;
 	}
 
@@ -268,7 +268,7 @@ public final class DelayedStateChange extends SecondaryNode {
 	}
 
 	@OriginalMember(owner = "client!g", name = "g", descriptor = "(I)J")
-	public final long getTime() {
+	public long getTime() {
 		return this.secondaryKey & Long.MAX_VALUE;
 	}
 }

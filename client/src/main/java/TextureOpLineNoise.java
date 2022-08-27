@@ -30,13 +30,13 @@ public final class TextureOpLineNoise extends TextureOp {
 
 	@OriginalMember(owner = "client!kl", name = "e", descriptor = "(B)V")
 	@Override
-	public final void postDecode() {
+	public void postDecode() {
 		TextureOp.createTrigonometryTables();
 	}
 
 	@OriginalMember(owner = "client!kl", name = "a", descriptor = "(BLclient!fd;I)V")
 	@Override
-	public final void decode(@OriginalArg(1) Buffer buffer, @OriginalArg(2) int code) {
+	public void decode(@OriginalArg(1) Buffer buffer, @OriginalArg(2) int code) {
 		if (code == 0) {
 			this.seed = buffer.readUnsignedByte();
 		} else if (code == 1) {
@@ -52,7 +52,7 @@ public final class TextureOpLineNoise extends TextureOp {
 
 	@OriginalMember(owner = "client!kl", name = "a", descriptor = "(II)[I")
 	@Override
-	public final int[] getMonochromeOutput(@OriginalArg(1) int y) {
+	public int[] getMonochromeOutput(@OriginalArg(1) int y) {
 		@Pc(7) int[] dest = this.monochromeImageCache.get(y);
 		if (this.monochromeImageCache.invalid) {
 			@Pc(16) int local16 = this.maxAngle >> 1;

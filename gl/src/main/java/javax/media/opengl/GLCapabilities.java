@@ -10,7 +10,7 @@ public final class GLCapabilities extends jagglcaps implements Cloneable {
 
 	@OriginalMember(owner = "gl!javax/media/opengl/GLCapabilities", name = "clone", descriptor = "()Ljava/lang/Object;")
 	@Override
-	public final Object clone() {
+	public Object clone() {
 		try {
 			return super.clone();
 		} catch (@Pc(3) CloneNotSupportedException ex) {

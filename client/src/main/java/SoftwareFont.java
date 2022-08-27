@@ -135,7 +135,7 @@ public final class SoftwareFont extends Font {
 
 	@OriginalMember(owner = "client!ke", name = "a", descriptor = "(IIIIIIIZ)V")
 	@Override
-	protected final void renderGlyphTransparent(@OriginalArg(0) int glyph, @OriginalArg(1) int x, @OriginalArg(2) int y, @OriginalArg(3) int width, @OriginalArg(4) int height, @OriginalArg(5) int color, @OriginalArg(6) int alpha) {
+	protected void renderGlyphTransparent(@OriginalArg(0) int glyph, @OriginalArg(1) int x, @OriginalArg(2) int y, @OriginalArg(3) int width, @OriginalArg(4) int height, @OriginalArg(5) int color, @OriginalArg(6) int alpha) {
 		@Pc(5) int destIndex = x + y * SoftwareRaster.width;
 		@Pc(9) int destStride = SoftwareRaster.width - width;
 		@Pc(11) int srcStride = 0;
@@ -172,7 +172,7 @@ public final class SoftwareFont extends Font {
 
 	@OriginalMember(owner = "client!ke", name = "a", descriptor = "(IIIIIIZ)V")
 	@Override
-	protected final void renderGlyph(@OriginalArg(0) int glyph, @OriginalArg(1) int x, @OriginalArg(2) int y, @OriginalArg(3) int width, @OriginalArg(4) int height, @OriginalArg(5) int color) {
+	protected void renderGlyph(@OriginalArg(0) int glyph, @OriginalArg(1) int x, @OriginalArg(2) int y, @OriginalArg(3) int width, @OriginalArg(4) int height, @OriginalArg(5) int color) {
 		@Pc(5) int destIndex = x + y * SoftwareRaster.width;
 		@Pc(9) int destStride = SoftwareRaster.width - width;
 		@Pc(11) int srcStride = 0;

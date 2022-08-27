@@ -22,7 +22,7 @@ public final class MidiNoteStream extends PcmStream {
 
 	@OriginalMember(owner = "client!bn", name = "b", descriptor = "(I)V")
 	@Override
-	public final void skip(@OriginalArg(0) int len) {
+	public void skip(@OriginalArg(0) int len) {
 		this.mixer.skip(len);
 		for (@Pc(15) MidiNote note = (MidiNote) this.notes.head(); note != null; note = (MidiNote) this.notes.next()) {
 			if (!this.parent.method2491(note)) {
@@ -82,7 +82,7 @@ public final class MidiNoteStream extends PcmStream {
 
 	@OriginalMember(owner = "client!bn", name = "d", descriptor = "()Lclient!tf;")
 	@Override
-	public final PcmStream firstSubStream() {
+	public PcmStream firstSubStream() {
 		@Pc(9) MidiNote note = (MidiNote) this.notes.head();
 		if (note == null) {
 			return null;
@@ -95,7 +95,7 @@ public final class MidiNoteStream extends PcmStream {
 
 	@OriginalMember(owner = "client!bn", name = "c", descriptor = "()Lclient!tf;")
 	@Override
-	public final PcmStream nextSubStream() {
+	public PcmStream nextSubStream() {
 		@Pc(9) MidiNote note;
 		do {
 			note = (MidiNote) this.notes.next();
@@ -108,7 +108,7 @@ public final class MidiNoteStream extends PcmStream {
 
 	@OriginalMember(owner = "client!bn", name = "a", descriptor = "([III)V")
 	@Override
-	public final void read(@OriginalArg(0) int[] samples, @OriginalArg(1) int off, @OriginalArg(2) int len) {
+	public void read(@OriginalArg(0) int[] samples, @OriginalArg(1) int off, @OriginalArg(2) int len) {
 		this.mixer.read(samples, off, len);
 		for (@Pc(17) MidiNote note = (MidiNote) this.notes.head(); note != null; note = (MidiNote) this.notes.next()) {
 			if (!this.parent.method2491(note)) {
@@ -152,7 +152,7 @@ public final class MidiNoteStream extends PcmStream {
 
 	@OriginalMember(owner = "client!bn", name = "a", descriptor = "()I")
 	@Override
-	public final int method3346() {
+	public int method3346() {
 		return 0;
 	}
 }

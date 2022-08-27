@@ -8,7 +8,7 @@ public final class TextureOpTiledSprite extends TextureOpSprite {
 
 	@OriginalMember(owner = "client!wd", name = "b", descriptor = "(II)[[I")
 	@Override
-	public final int[][] getColorOutput(@OriginalArg(0) int y) {
+	public int[][] getColorOutput(@OriginalArg(0) int y) {
 		@Pc(17) int[][] dest = this.colorImageCache.get(y);
 		if (this.colorImageCache.invalid && this.loadSprite()) {
 			@Pc(30) int[] destGreen = dest[1];

@@ -16,13 +16,13 @@ public final class TextureOpPolarDistortion extends TextureOp {
 
 	@OriginalMember(owner = "client!ph", name = "e", descriptor = "(B)V")
 	@Override
-	public final void postDecode() {
+	public void postDecode() {
 		TextureOp.createTrigonometryTables();
 	}
 
 	@OriginalMember(owner = "client!ph", name = "a", descriptor = "(II)[I")
 	@Override
-	public final int[] getMonochromeOutput(@OriginalArg(1) int y) {
+	public int[] getMonochromeOutput(@OriginalArg(1) int y) {
 		@Pc(13) int[] dest = this.monochromeImageCache.get(y);
 		if (this.monochromeImageCache.invalid) {
 			@Pc(23) int[] src1 = this.getChildMonochromeOutput(1, y);
@@ -43,7 +43,7 @@ public final class TextureOpPolarDistortion extends TextureOp {
 
 	@OriginalMember(owner = "client!ph", name = "a", descriptor = "(BLclient!fd;I)V")
 	@Override
-	public final void decode(@OriginalArg(1) Buffer buffer, @OriginalArg(2) int code) {
+	public void decode(@OriginalArg(1) Buffer buffer, @OriginalArg(2) int code) {
 		if (code == 0) {
 			this.magnitude = buffer.readUnsignedShort() << 4;
 		} else if (code == 1) {
@@ -53,7 +53,7 @@ public final class TextureOpPolarDistortion extends TextureOp {
 
 	@OriginalMember(owner = "client!ph", name = "b", descriptor = "(II)[[I")
 	@Override
-	public final int[][] getColorOutput(@OriginalArg(0) int y) {
+	public int[][] getColorOutput(@OriginalArg(0) int y) {
 		@Pc(7) int[][] dest = this.colorImageCache.get(y);
 		if (this.colorImageCache.invalid) {
 			@Pc(17) int[] src1 = this.getChildMonochromeOutput(1, y);
