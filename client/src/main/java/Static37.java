@@ -35,21 +35,21 @@ public final class Static37 {
 	}
 
 	@OriginalMember(owner = "client!wd", name = "a", descriptor = "(IZ)V")
-	public static void method4710(@OriginalArg(1) boolean arg0) {
+	public static void method4710(@OriginalArg(1) boolean underwater) {
 		@Pc(11) byte[][] local11;
-		if (GlRenderer.enabled && arg0) {
+		if (GlRenderer.enabled && underwater) {
 			local11 = Static1.underwaterLocBytes;
 		} else {
 			local11 = Static5.locBytes;
 		}
-		@Pc(29) int local29 = Static1.mapBytes.length;
-		for (@Pc(31) int local31 = 0; local31 < local29; local31++) {
-			@Pc(42) byte[] local42 = local11[local31];
+		@Pc(29) int len = Static1.mapBytes.length;
+		for (@Pc(31) int i = 0; i < len; i++) {
+			@Pc(42) byte[] local42 = local11[i];
 			if (local42 != null) {
-				@Pc(55) int local55 = (Static7.mapSquares[local31] >> 8) * 64 - Static5.originX;
-				@Pc(66) int local66 = (Static7.mapSquares[local31] & 0xFF) * 64 - Static7.originZ;
+				@Pc(55) int local55 = (Static7.mapSquares[i] >> 8) * 64 - Static5.originX;
+				@Pc(66) int local66 = (Static7.mapSquares[i] & 0xFF) * 64 - Static7.originZ;
 				Static9.audioLoop();
-				Static11.readMapLocs(arg0, local42, local66, local55, PathFinder.collisionMaps);
+				Static11.readMapLocs(underwater, local42, local66, local55, PathFinder.collisionMaps);
 			}
 		}
 	}

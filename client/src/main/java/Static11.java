@@ -425,7 +425,7 @@ public final class Static11 {
 	}
 
 	@OriginalMember(owner = "client!ch", name = "a", descriptor = "(Z[BIII[Lclient!ch;)V")
-	public static void readMapLocs(@OriginalArg(0) boolean arg0, @OriginalArg(1) byte[] bytes, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) CollisionMap[] arg4) {
+	public static void readMapLocs(@OriginalArg(0) boolean underwater, @OriginalArg(1) byte[] bytes, @OriginalArg(3) int z, @OriginalArg(4) int x, @OriginalArg(5) CollisionMap[] collisionMaps) {
 		@Pc(10) Buffer buffer = new Buffer(bytes);
 		@Pc(20) int id = -1;
 		while (true) {
@@ -441,26 +441,26 @@ public final class Static11 {
 					break;
 				}
 				position += positionDelta - 1;
-				@Pc(56) int z = position & 0x3F;
-				@Pc(62) int x = position >> 6 & 0x3F;
+				@Pc(56) int locZ = position & 0x3F;
+				@Pc(62) int locX = position >> 6 & 0x3F;
 				@Pc(66) int shapeAndAngle = buffer.readUnsignedByte();
 				@Pc(70) int angle = shapeAndAngle & 0x3;
 				@Pc(74) int shape = shapeAndAngle >> 2;
-				@Pc(79) int local79 = x + arg3;
-				@Pc(84) int local84 = z + arg2;
+				@Pc(79) int locX2 = locX + x;
+				@Pc(84) int locZ2 = locZ + z;
 				@Pc(88) int level = position >> 12;
-				if (local79 > 0 && local84 > 0 && local79 < 103 && local84 < 103) {
+				if (locX2 > 0 && locZ2 > 0 && locX2 < 103 && locZ2 < 103) {
 					@Pc(104) CollisionMap collisionMap = null;
-					if (!arg0) {
-						@Pc(108) int local108 = level;
-						if ((Static4.tileFlags[1][local79][local84] & 0x2) == 2) {
-							local108 = level - 1;
+					if (!underwater) {
+						@Pc(108) int collisionLevel = level;
+						if ((Static4.tileFlags[1][locX2][locZ2] & 0x2) == 2) {
+							collisionLevel = level - 1;
 						}
-						if (local108 >= 0) {
-							collisionMap = arg4[local108];
+						if (collisionLevel >= 0) {
+							collisionMap = collisionMaps[collisionLevel];
 						}
 					}
-					Static22.method2193(angle, level, id, level, local79, arg0, local84, collisionMap, !arg0, shape);
+					Static22.method2193(angle, level, id, level, locX2, underwater, locZ2, collisionMap, !underwater, shape);
 				}
 			}
 		}

@@ -717,22 +717,22 @@ public final class Static14 {
 	}
 
 	@OriginalMember(owner = "client!fb", name = "b", descriptor = "(Lclient!fe;III)V")
-	public static void method1212(@OriginalArg(0) SoftwareIndexedSprite arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) {
-		if (arg0 != null) {
-			@Pc(12) int local12 = arg1 - (arg2 * Static4.anInt3366 >> 8) >> 3;
-			@Pc(22) int local22 = arg3 - (arg2 * Static4.anInt3363 >> 8) >> 3;
-			Static15.method1219(arg0, Static2.aClass56_Sub1_2, local12 + 1, local22 + 1);
+	public static void method1212(@OriginalArg(0) SoftwareIndexedSprite sprite, @OriginalArg(1) int xFine, @OriginalArg(2) int arg2, @OriginalArg(3) int zFine) {
+		if (sprite != null) {
+			@Pc(12) int local12 = xFine - (arg2 * Static4.anInt3366 >> 8) >> 3;
+			@Pc(22) int local22 = zFine - (arg2 * Static4.anInt3363 >> 8) >> 3;
+			Static15.method1219(sprite, Static2.aClass56_Sub1_2, local12 + 1, local22 + 1);
 		}
 	}
 
 	@OriginalMember(owner = "client!fb", name = "c", descriptor = "(Lclient!fe;III)Z")
-	public static boolean method1214(@OriginalArg(0) SoftwareIndexedSprite arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) {
-		if (arg0 == null) {
+	public static boolean method1214(@OriginalArg(0) SoftwareIndexedSprite sprite, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) {
+		if (sprite == null) {
 			return false;
 		} else {
 			@Pc(13) int local13 = arg1 - (arg2 * Static4.anInt3366 >> 8) >> 3;
 			@Pc(23) int local23 = arg3 - (arg2 * Static4.anInt3363 >> 8) >> 3;
-			return Static15.method1217(arg0, Static2.aClass56_Sub1_2, local13 + 1, local23 + 1);
+			return Static15.method1217(sprite, Static2.aClass56_Sub1_2, local13 + 1, local23 + 1);
 		}
 	}
 

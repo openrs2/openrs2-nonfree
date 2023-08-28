@@ -319,12 +319,12 @@ public final class Static15 {
 					if (rotatedX > 0 && rotatedZ > 0 && rotatedX < 103 && rotatedZ < 103) {
 						@Pc(162) CollisionMap collisionMap = null;
 						if (!arg8) {
-							@Pc(166) int local166 = arg0;
+							@Pc(166) int collisionLevel = arg0;
 							if ((Static4.tileFlags[1][rotatedX][rotatedZ] & 0x2) == 2) {
-								local166 = arg0 - 1;
+								collisionLevel = arg0 - 1;
 							}
-							if (local166 >= 0) {
-								collisionMap = arg2[local166];
+							if (collisionLevel >= 0) {
+								collisionMap = arg2[collisionLevel];
 							}
 						}
 						Static22.method2193(angle + zoneAngle & 0x3, arg0, id, arg0, rotatedX, arg8, rotatedZ, collisionMap, !arg8, shape);

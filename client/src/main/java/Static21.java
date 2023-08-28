@@ -217,7 +217,7 @@ public final class Static21 {
 			if (local105 instanceof Loc) {
 				((Loc) local105).method3732();
 			} else {
-				Static15.method4592(x, Static3.anIntArray166[angle] * 8, angle + 4, arg1, type, Static7.anIntArray646[angle] * 8, z, 4);
+				Static15.method4592(x, Static3.wallDecorXOffsets[angle] * 8, angle + 4, arg1, type, Static7.wallDecorZOffsets[angle] * 8, z, 4);
 			}
 		} else if (shape == 7) {
 			if (local105 instanceof Loc) {
@@ -229,12 +229,12 @@ public final class Static21 {
 			if (local105 instanceof Loc) {
 				((Loc) local105).method3732();
 			} else {
-				Static15.method4592(x, Static3.anIntArray166[angle] * 8, angle + 4, arg1, type, Static7.anIntArray646[angle] * 8, z, 4);
+				Static15.method4592(x, Static3.wallDecorXOffsets[angle] * 8, angle + 4, arg1, type, Static7.wallDecorZOffsets[angle] * 8, z, 4);
 			}
 			if (local107 instanceof Loc) {
 				((Loc) local107).method3732();
 			} else {
-				Static15.method4592(x, Static3.anIntArray166[angle] * 8, (angle + 2 & 0x3) + 4, arg1, type, Static7.anIntArray646[angle] * 8, z, 4);
+				Static15.method4592(x, Static3.wallDecorXOffsets[angle] * 8, (angle + 2 & 0x3) + 4, arg1, type, Static7.wallDecorZOffsets[angle] * 8, z, 4);
 			}
 		} else if (shape == 11) {
 			if (local105 instanceof Loc) {

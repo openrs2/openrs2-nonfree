@@ -156,7 +156,7 @@ public final class Static7 {
 	public static boolean aBoolean389 = false;
 
 	@OriginalMember(owner = "client!w", name = "B", descriptor = "[I")
-	public static final int[] anIntArray646 = new int[] { -1, -1, 1, 1 };
+	public static final int[] wallDecorZOffsets = new int[] { -1, -1, 1, 1 };
 
 	@OriginalMember(owner = "client!wc", name = "b", descriptor = "I")
 	public static int anInt5803 = 0;
