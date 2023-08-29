@@ -277,33 +277,34 @@ public final class Static24 {
 	}
 
 	@OriginalMember(owner = "client!mg", name = "a", descriptor = "(ZI)V")
-	public static void method2708(@OriginalArg(0) boolean arg0) {
-		@Pc(11) byte local11;
-		@Pc(13) byte[][] local13;
-		if (GlRenderer.enabled && arg0) {
-			local11 = 1;
-			local13 = Static1.underwaterLocBytes;
+	public static void method2708(@OriginalArg(0) boolean underwater) {
+		@Pc(11) byte levels;
+		@Pc(13) byte[][] locBytes;
+		if (GlRenderer.enabled && underwater) {
+			levels = 1;
+			locBytes = Static1.underwaterLocBytes;
 		} else {
-			local13 = Static5.locBytes;
-			local11 = 4;
+			locBytes = Static5.locBytes;
+			levels = 4;
 		}
-		for (@Pc(27) int local27 = 0; local27 < local11; local27++) {
+		for (@Pc(27) int destLevel = 0; destLevel < levels; destLevel++) {
 			Static9.audioLoop();
-			for (@Pc(38) int local38 = 0; local38 < 13; local38++) {
-				for (@Pc(43) int local43 = 0; local43 < 13; local43++) {
-					@Pc(54) int local54 = Static7.zones[local27][local38][local43];
-					if (local54 != -1) {
-						@Pc(63) int local63 = local54 >> 24 & 0x3;
-						if (!arg0 || local63 == 0) {
-							@Pc(77) int local77 = local54 >> 1 & 0x3;
-							@Pc(83) int local83 = local54 >> 3 & 0x7FF;
-							@Pc(89) int local89 = local54 >> 14 & 0x3FF;
-							@Pc(99) int local99 = (local89 / 8 << 8) + local83 / 8;
-							for (@Pc(101) int local101 = 0; local101 < Static7.mapSquares.length; local101++) {
-								if (local99 == Static7.mapSquares[local101] && local13[local101] != null) {
-									Static15.readZoneLocs(local27, local38 * 8, PathFinder.collisionMaps, local13[local101], local77, (local83 & 0x7) * 8, (local89 & 0x7) * 8, local63, arg0, local43 * 8);
-									break;
-								}
+			for (@Pc(38) int destX = 0; destX < 13; destX++) {
+				for (@Pc(43) int destZ = 0; destZ < 13; destZ++) {
+					@Pc(54) int zone = Static7.zones[destLevel][destX][destZ];
+					if (zone != -1) {
+						@Pc(63) int srcLevel = zone >> 24 & 0x3;
+						if (underwater && srcLevel != 0) {
+							continue;
+						}
+						@Pc(77) int angle = zone >> 1 & 0x3;
+						@Pc(83) int srcZ = zone >> 3 & 0x7FF;
+						@Pc(89) int srcX = zone >> 14 & 0x3FF;
+						@Pc(99) int mapSquare = (srcX / 8 << 8) + srcZ / 8;
+						for (@Pc(101) int i = 0; i < Static7.mapSquares.length; i++) {
+							if (mapSquare == Static7.mapSquares[i] && locBytes[i] != null) {
+								Static15.readZoneLocs(destLevel, destX * 8, PathFinder.collisionMaps, locBytes[i], angle, (srcZ & 0x7) * 8, (srcX & 0x7) * 8, srcLevel, underwater, destZ * 8);
+								break;
 							}
 						}
 					}

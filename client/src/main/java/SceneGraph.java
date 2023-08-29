@@ -723,4 +723,541 @@ public final class SceneGraph {
 			}
 		}
 	}
+
+	@OriginalMember(owner = "client!jh", name = "a", descriptor = "(BIIILclient!ch;II)V")
+	public static void removeLoc(@OriginalArg(1) int level, @OriginalArg(2) int virtualLevel, @OriginalArg(6) int x, @OriginalArg(3) int z, @OriginalArg(5) int layer, @OriginalArg(4) CollisionMap collisionMap) {
+		@Pc(9) long key = 0L;
+		if (layer == 0) {
+			key = getWallKey(level, x, z);
+		} else if (layer == 1) {
+			key = getWallDecorKey(level, x, z);
+		} else if (layer == 2) {
+			key = getSceneryKey(level, x, z);
+		} else if (layer == 3) {
+			key = getGroundDecorKey(level, x, z);
+		}
+		@Pc(67) int shape = (int) key >> 14 & 0x1F;
+		@Pc(74) int id = Integer.MAX_VALUE & (int) (key >>> 32);
+		@Pc(81) int angle = (int) key >> 20 & 0x3;
+		@Pc(85) LocType type = LocTypeList.get(id);
+		if (type.hasAreaSound()) {
+			AreaSoundManager.remove(level, x, z, type);
+		}
+		if (key == 0L) {
+			return;
+		}
+		@Pc(105) Entity primary = null;
+		@Pc(107) Entity secondary = null;
+		if (layer == 0) {
+			@Pc(117) Wall wall = removeWall(level, x, z);
+			if (wall != null) {
+				secondary = wall.secondary;
+				primary = wall.primary;
+			}
+			if (type.blockWalk != 0) {
+				collisionMap.unflagWall(x, z, shape, angle, type.blockRange, !type.breakRouteFinding);
+			}
+		} else if (layer == 1) {
+			@Pc(155) WallDecor wallDecor = removeWallDecor(level, x, z);
+			if (wallDecor != null) {
+				primary = wallDecor.primary;
+				secondary = wallDecor.secondary;
+			}
+		} else if (layer == 2) {
+			@Pc(173) Scenery scenery = removeScenery(level, x, z);
+			if (scenery != null) {
+				primary = scenery.entity;
+			}
+			if (type.blockWalk != 0 && x + type.width < 104 && type.width + z < 104 && x + type.length < 104 && type.length + z < 104) {
+				collisionMap.unflagScenery(x, z, type.width, type.length, angle, type.blockRange, !type.breakRouteFinding);
+			}
+		} else if (layer == 3) {
+			@Pc(238) GroundDecor groundDecor = removeGroundDecor(level, x, z);
+			if (groundDecor != null) {
+				primary = groundDecor.entity;
+			}
+			if (type.blockWalk == 1) {
+				collisionMap.unflagGroundDecor(x, z);
+			}
+		}
+		if (type.multiLocs != null) {
+			type = type.getMultiLoc();
+		}
+		if (!GlRenderer.enabled || type == null || !type.aBoolean372) {
+			return;
+		}
+		if (shape == 2) {
+			if (primary instanceof Loc) {
+				((Loc) primary).method3732();
+			} else {
+				Static15.method4592(x, 0, angle + 4, virtualLevel, type, 0, z, shape);
+			}
+			if (secondary instanceof Loc) {
+				((Loc) secondary).method3732();
+			} else {
+				Static15.method4592(x, 0, angle + 1 & 0x3, virtualLevel, type, 0, z, shape);
+			}
+		} else if (shape == 5) {
+			if (primary instanceof Loc) {
+				((Loc) primary).method3732();
+			} else {
+				Static15.method4592(x, Static4.anIntArray315[angle] * 8, angle, virtualLevel, type, Static6.anIntArray475[angle] * 8, z, 4);
+			}
+		} else if (shape == 6) {
+			if (primary instanceof Loc) {
+				((Loc) primary).method3732();
+			} else {
+				Static15.method4592(x, Static3.wallDecorXOffsets[angle] * 8, angle + 4, virtualLevel, type, Static7.wallDecorZOffsets[angle] * 8, z, 4);
+			}
+		} else if (shape == 7) {
+			if (primary instanceof Loc) {
+				((Loc) primary).method3732();
+			} else {
+				Static15.method4592(x, 0, (angle + 2 & 0x3) + 4, virtualLevel, type, 0, z, 4);
+			}
+		} else if (shape == 8) {
+			if (primary instanceof Loc) {
+				((Loc) primary).method3732();
+			} else {
+				Static15.method4592(x, Static3.wallDecorXOffsets[angle] * 8, angle + 4, virtualLevel, type, Static7.wallDecorZOffsets[angle] * 8, z, 4);
+			}
+			if (secondary instanceof Loc) {
+				((Loc) secondary).method3732();
+			} else {
+				Static15.method4592(x, Static3.wallDecorXOffsets[angle] * 8, (angle + 2 & 0x3) + 4, virtualLevel, type, Static7.wallDecorZOffsets[angle] * 8, z, 4);
+			}
+		} else if (shape == 11) {
+			if (primary instanceof Loc) {
+				((Loc) primary).method3732();
+			} else {
+				Static15.method4592(x, 0, angle + 4, virtualLevel, type, 0, z, 10);
+			}
+		} else if (primary instanceof Loc) {
+			((Loc) primary).method3732();
+		} else {
+			Static15.method4592(x, 0, angle, virtualLevel, type, 0, z, shape);
+		}
+	}
+
+	@OriginalMember(owner = "client!ka", name = "a", descriptor = "(IIIIIIZILclient!ch;ZI)V")
+	public static void setLoc(@OriginalArg(1) int level, @OriginalArg(3) int virtualLevel, @OriginalArg(4) int x, @OriginalArg(7) int z, @OriginalArg(2) int id, @OriginalArg(10) int shape, @OriginalArg(0) int angle, @OriginalArg(8) CollisionMap collisionMap, @OriginalArg(6) boolean underwater, @OriginalArg(9) boolean arg8) {
+		if (arg8 && !isAllLevelsVisible() && (Static4.tileFlags[0][x][z] & 0x2) == 0) {
+			if ((Static4.tileFlags[level][x][z] & 0x10) != 0) {
+				return;
+			}
+			if (Static35.getVisibleLevel(level, x, z) != Static2.visibleLevel) {
+				return;
+			}
+		}
+		if (Static5.firstVisibleLevel > level) {
+			Static5.firstVisibleLevel = level;
+		}
+		@Pc(60) LocType type = LocTypeList.get(id);
+		if (GlRenderer.enabled && type.aBoolean383) {
+			return;
+		}
+		@Pc(78) int width;
+		@Pc(81) int length;
+		if (angle == 1 || angle == 3) {
+			width = type.length;
+			length = type.width;
+		} else {
+			length = type.length;
+			width = type.width;
+		}
+		@Pc(102) int local102;
+		@Pc(100) int local100;
+		if (width + x > 104) {
+			local100 = x + 1;
+			local102 = x;
+		} else {
+			local100 = x + (width + 1 >> 1);
+			local102 = x + (width >> 1);
+		}
+		@Pc(130) int local130;
+		@Pc(128) int local128;
+		if (z + length > 104) {
+			local128 = z + 1;
+			local130 = z;
+		} else {
+			local130 = z + (length >> 1);
+			local128 = z + (length + 1 >> 1);
+		}
+		@Pc(151) int[][] tileHeightsBelow = tileHeights[virtualLevel];
+		@Pc(159) int xFine = (width << 6) + (x << 7);
+		@Pc(167) int zFine = (length << 6) + (z << 7);
+		@Pc(193) int local193 = tileHeightsBelow[local100][local130] + tileHeightsBelow[local102][local130] + tileHeightsBelow[local102][local128] + tileHeightsBelow[local100][local128] >> 2;
+		@Pc(195) int local195 = 0;
+		if (GlRenderer.enabled && virtualLevel != 0) {
+			@Pc(203) int[][] tileHeightsBase = tileHeights[0];
+			local195 = local193 - (tileHeightsBase[local102][local128] + tileHeightsBase[local102][local130] + tileHeightsBase[local100][local130] + tileHeightsBase[local100][local128] >> 2);
+		}
+		@Pc(250) long key = (long) (x | z << 7 | shape << 14 | angle << 20 | 0x40000000);
+		@Pc(253) int[][] tileHeightsAbove = null;
+		if (underwater) {
+			tileHeightsAbove = surfaceTileHeights[0];
+		} else if (virtualLevel < 3) {
+			tileHeightsAbove = tileHeights[virtualLevel + 1];
+		}
+		if (type.interactivity == 0 || underwater) {
+			key |= Long.MIN_VALUE;
+		}
+		if (type.anInt5517 == 1) {
+			key |= 0x400000L;
+		}
+		if (type.aBoolean384) {
+			key |= 0x80000000L;
+		}
+		if (type.hasAreaSound()) {
+			AreaSoundManager.add(level, x, z, type, angle, null, null);
+		}
+		@Pc(321) long key2 = key | (long) id << 32;
+		@Pc(330) boolean local330 = type.aBoolean372 & !underwater;
+		if (shape == 22) {
+			if (Preferences.groundDecoration || type.interactivity != 0 || type.blockWalk == 1 || type.forceDecor) {
+				@Pc(377) Entity local377;
+				if (type.seqId == -1 && type.seqIds == null && type.multiLocs == null && !type.aBoolean379) {
+					@Pc(393) Class96 local393 = type.method4450(xFine, arg8, 22, local193, tileHeightsBelow, tileHeightsAbove, local330, angle, zFine, null);
+					if (GlRenderer.enabled && local330) {
+						Static14.method1212(local393.sprite, xFine, local195, zFine);
+					}
+					local377 = local393.entity;
+				} else {
+					local377 = new Loc(id, 22, angle, virtualLevel, x, z, -1, type.aBoolean380, null);
+				}
+				setGroundDecor(level, x, z, local193, local377, key2, type.aBoolean371);
+				if (type.blockWalk == 1 && collisionMap != null) {
+					collisionMap.flagGroundDecor(x, z);
+				}
+			}
+		} else if (shape == 10 || shape == 11) {
+			@Pc(493) Entity local493;
+			if (type.seqId == -1 && type.seqIds == null && type.multiLocs == null && !type.aBoolean379) {
+				@Pc(479) Class96 local479 = type.method4450(xFine, arg8, 10, local193, tileHeightsBelow, tileHeightsAbove, local330, shape == 11 ? angle + 4 : angle, zFine, null);
+				if (GlRenderer.enabled && local330) {
+					Static14.method1212(local479.sprite, xFine, local195, zFine);
+				}
+				local493 = local479.entity;
+			} else {
+				local493 = new Loc(id, 10, shape == 11 ? angle + 4 : angle, virtualLevel, x, z, -1, type.aBoolean380, null);
+			}
+			if (local493 != null) {
+				@Pc(532) boolean local532 = method2196(level, x, z, local193, width, length, local493, key2);
+				if (type.aBoolean377 && local532 && arg8) {
+					@Pc(542) int local542 = 15;
+					if (local493 instanceof Model) {
+						local542 = ((Model) local493).getBoundingCylinderRadius() / 4;
+						if (local542 > 30) {
+							local542 = 30;
+						}
+					}
+					for (@Pc(561) int local561 = 0; local561 <= width; local561++) {
+						for (@Pc(566) int local566 = 0; local566 <= length; local566++) {
+							if (Static5.aByteArrayArrayArray18[level][local561 + x][z + local566] < local542) {
+								Static5.aByteArrayArrayArray18[level][x + local561][local566 + z] = (byte) local542;
+							}
+						}
+					}
+				}
+			}
+			if (type.blockWalk != 0 && collisionMap != null) {
+				collisionMap.flagScenery(x, z, width, length, type.blockRange, !type.breakRouteFinding);
+			}
+		} else if (shape >= 12) {
+			@Pc(666) Entity local666;
+			if (type.seqId == -1 && type.seqIds == null && type.multiLocs == null && !type.aBoolean379) {
+				@Pc(682) Class96 local682 = type.method4450(xFine, arg8, shape, local193, tileHeightsBelow, tileHeightsAbove, local330, angle, zFine, null);
+				if (GlRenderer.enabled && local330) {
+					Static14.method1212(local682.sprite, xFine, local195, zFine);
+				}
+				local666 = local682.entity;
+			} else {
+				local666 = new Loc(id, shape, angle, virtualLevel, x, z, -1, type.aBoolean380, null);
+			}
+			method2196(level, x, z, local193, 1, 1, local666, key2);
+			if (arg8 && shape >= 12 && shape <= 17 && shape != 13 && level > 0 && type.occlusionMode != 0) {
+				Static4.anIntArrayArrayArray9[level][x][z] |= 4;
+			}
+			if (type.blockWalk != 0 && collisionMap != null) {
+				collisionMap.flagScenery(x, z, width, length, type.blockRange, !type.breakRouteFinding);
+			}
+		} else if (shape == 0) {
+			@Pc(796) Entity local796;
+			if (type.seqId == -1 && type.seqIds == null && type.multiLocs == null && !type.aBoolean379) {
+				@Pc(812) Class96 local812 = type.method4450(xFine, arg8, 0, local193, tileHeightsBelow, tileHeightsAbove, local330, angle, zFine, null);
+				if (GlRenderer.enabled && local330) {
+					Static14.method1212(local812.sprite, xFine, local195, zFine);
+				}
+				local796 = local812.entity;
+			} else {
+				local796 = new Loc(id, 0, angle, virtualLevel, x, z, -1, type.aBoolean380, null);
+			}
+			setWall(level, x, z, local193, local796, null, Static2.anIntArray651[angle], 0, key2);
+			if (arg8) {
+				if (angle == 0) {
+					if (type.aBoolean377) {
+						Static5.aByteArrayArrayArray18[level][x][z] = 50;
+						Static5.aByteArrayArrayArray18[level][x][z + 1] = 50;
+					}
+					if (type.occlusionMode == 1) {
+						Static4.anIntArrayArrayArray9[level][x][z] |= 1;
+					}
+				} else if (angle == 1) {
+					if (type.aBoolean377) {
+						Static5.aByteArrayArrayArray18[level][x][z + 1] = 50;
+						Static5.aByteArrayArrayArray18[level][x + 1][z + 1] = 50;
+					}
+					if (type.occlusionMode == 1) {
+						Static4.anIntArrayArrayArray9[level][x][z + 1] |= 2;
+					}
+				} else if (angle == 2) {
+					if (type.aBoolean377) {
+						Static5.aByteArrayArrayArray18[level][x + 1][z] = 50;
+						Static5.aByteArrayArrayArray18[level][x + 1][z + 1] = 50;
+					}
+					if (type.occlusionMode == 1) {
+						Static4.anIntArrayArrayArray9[level][x + 1][z] |= 1;
+					}
+				} else if (angle == 3) {
+					if (type.aBoolean377) {
+						Static5.aByteArrayArrayArray18[level][x][z] = 50;
+						Static5.aByteArrayArrayArray18[level][x + 1][z] = 50;
+					}
+					if (type.occlusionMode == 1) {
+						Static4.anIntArrayArrayArray9[level][x][z] |= 2;
+					}
+				}
+			}
+			if (type.blockWalk != 0 && collisionMap != null) {
+				collisionMap.flagWall(x, z, shape, angle, type.blockRange, !type.breakRouteFinding);
+			}
+			if (type.wallDecorOffsetScale != 16) {
+				scaleWallDecorOffsets(level, x, z, type.wallDecorOffsetScale);
+			}
+		} else if (shape == 1) {
+			@Pc(1119) Entity local1119;
+			if (type.seqId == -1 && type.seqIds == null && type.multiLocs == null && !type.aBoolean379) {
+				@Pc(1135) Class96 local1135 = type.method4450(xFine, arg8, 1, local193, tileHeightsBelow, tileHeightsAbove, local330, angle, zFine, null);
+				if (GlRenderer.enabled && local330) {
+					Static14.method1212(local1135.sprite, xFine, local195, zFine);
+				}
+				local1119 = local1135.entity;
+			} else {
+				local1119 = new Loc(id, 1, angle, virtualLevel, x, z, -1, type.aBoolean380, null);
+			}
+			setWall(level, x, z, local193, local1119, null, Static6.anIntArray519[angle], 0, key2);
+			if (type.aBoolean377 && arg8) {
+				if (angle == 0) {
+					Static5.aByteArrayArrayArray18[level][x][z + 1] = 50;
+				} else if (angle == 1) {
+					Static5.aByteArrayArrayArray18[level][x + 1][z + 1] = 50;
+				} else if (angle == 2) {
+					Static5.aByteArrayArrayArray18[level][x + 1][z] = 50;
+				} else if (angle == 3) {
+					Static5.aByteArrayArrayArray18[level][x][z] = 50;
+				}
+			}
+			if (type.blockWalk != 0 && collisionMap != null) {
+				collisionMap.flagWall(x, z, shape, angle, type.blockRange, !type.breakRouteFinding);
+			}
+		} else if (shape == 2) {
+			@Pc(1265) int local1265 = angle + 1 & 0x3;
+			@Pc(1309) Entity local1309;
+			@Pc(1295) Entity local1295;
+			if (type.seqId == -1 && type.seqIds == null && type.multiLocs == null && !type.aBoolean379) {
+				@Pc(1329) Class96 local1329 = type.method4450(xFine, arg8, 2, local193, tileHeightsBelow, tileHeightsAbove, local330, angle + 4, zFine, null);
+				if (GlRenderer.enabled && local330) {
+					Static14.method1212(local1329.sprite, xFine, local195, zFine);
+				}
+				local1295 = local1329.entity;
+				@Pc(1358) Class96 local1358 = type.method4450(xFine, arg8, 2, local193, tileHeightsBelow, tileHeightsAbove, local330, local1265, zFine, null);
+				if (GlRenderer.enabled && local330) {
+					Static14.method1212(local1358.sprite, xFine, local195, zFine);
+				}
+				local1309 = local1358.entity;
+			} else {
+				local1295 = new Loc(id, 2, angle + 4, virtualLevel, x, z, -1, type.aBoolean380, null);
+				local1309 = new Loc(id, 2, local1265, virtualLevel, x, z, -1, type.aBoolean380, null);
+			}
+			setWall(level, x, z, local193, local1295, local1309, Static2.anIntArray651[angle], Static2.anIntArray651[local1265], key2);
+			if (type.occlusionMode == 1 && arg8) {
+				if (angle == 0) {
+					Static4.anIntArrayArrayArray9[level][x][z] |= 1;
+					Static4.anIntArrayArrayArray9[level][x][z + 1] |= 2;
+				} else if (angle == 1) {
+					Static4.anIntArrayArrayArray9[level][x][z + 1] |= 2;
+					Static4.anIntArrayArrayArray9[level][x + 1][z] |= 1;
+				} else if (angle == 2) {
+					Static4.anIntArrayArrayArray9[level][x + 1][z] |= 1;
+					Static4.anIntArrayArrayArray9[level][x][z] |= 2;
+				} else if (angle == 3) {
+					Static4.anIntArrayArrayArray9[level][x][z] |= 2;
+					Static4.anIntArrayArrayArray9[level][x][z] |= 1;
+				}
+			}
+			if (type.blockWalk != 0 && collisionMap != null) {
+				collisionMap.flagWall(x, z, shape, angle, type.blockRange, !type.breakRouteFinding);
+			}
+			if (type.wallDecorOffsetScale != 16) {
+				scaleWallDecorOffsets(level, x, z, type.wallDecorOffsetScale);
+			}
+		} else if (shape == 3) {
+			@Pc(1631) Entity local1631;
+			if (type.seqId == -1 && type.seqIds == null && type.multiLocs == null && !type.aBoolean379) {
+				@Pc(1647) Class96 local1647 = type.method4450(xFine, arg8, 3, local193, tileHeightsBelow, tileHeightsAbove, local330, angle, zFine, null);
+				if (GlRenderer.enabled && local330) {
+					Static14.method1212(local1647.sprite, xFine, local195, zFine);
+				}
+				local1631 = local1647.entity;
+			} else {
+				local1631 = new Loc(id, 3, angle, virtualLevel, x, z, -1, type.aBoolean380, null);
+			}
+			setWall(level, x, z, local193, local1631, null, Static6.anIntArray519[angle], 0, key2);
+			if (type.aBoolean377 && arg8) {
+				if (angle == 0) {
+					Static5.aByteArrayArrayArray18[level][x][z + 1] = 50;
+				} else if (angle == 1) {
+					Static5.aByteArrayArrayArray18[level][x + 1][z + 1] = 50;
+				} else if (angle == 2) {
+					Static5.aByteArrayArrayArray18[level][x + 1][z] = 50;
+				} else if (angle == 3) {
+					Static5.aByteArrayArrayArray18[level][x][z] = 50;
+				}
+			}
+			if (type.blockWalk != 0 && collisionMap != null) {
+				collisionMap.flagWall(x, z, shape, angle, type.blockRange, !type.breakRouteFinding);
+			}
+		} else if (shape == 9) {
+			@Pc(1796) Entity local1796;
+			if (type.seqId == -1 && type.seqIds == null && type.multiLocs == null && !type.aBoolean379) {
+				@Pc(1812) Class96 local1812 = type.method4450(xFine, arg8, shape, local193, tileHeightsBelow, tileHeightsAbove, local330, angle, zFine, null);
+				if (GlRenderer.enabled && local330) {
+					Static14.method1212(local1812.sprite, xFine, local195, zFine);
+				}
+				local1796 = local1812.entity;
+			} else {
+				local1796 = new Loc(id, shape, angle, virtualLevel, x, z, -1, type.aBoolean380, null);
+			}
+			method2196(level, x, z, local193, 1, 1, local1796, key2);
+			if (type.blockWalk != 0 && collisionMap != null) {
+				collisionMap.flagScenery(x, z, width, length, type.blockRange, !type.breakRouteFinding);
+			}
+			if (type.wallDecorOffsetScale != 16) {
+				scaleWallDecorOffsets(level, x, z, type.wallDecorOffsetScale);
+			}
+		} else if (shape == 4) {
+			@Pc(1914) Entity local1914;
+			if (type.seqId == -1 && type.seqIds == null && type.multiLocs == null && !type.aBoolean379) {
+				@Pc(1930) Class96 local1930 = type.method4450(xFine, arg8, 4, local193, tileHeightsBelow, tileHeightsAbove, local330, angle, zFine, null);
+				if (GlRenderer.enabled && local330) {
+					Static14.method1212(local1930.sprite, xFine, local195, zFine);
+				}
+				local1914 = local1930.entity;
+			} else {
+				local1914 = new Loc(id, 4, angle, virtualLevel, x, z, -1, type.aBoolean380, null);
+			}
+			setWallDecor(level, x, z, local193, local1914, null, Static2.anIntArray651[angle], 0, 0, 0, key2);
+		} else if (shape == 5) {
+			@Pc(1967) long wallKey = getWallKey(level, x, z);
+			@Pc(1969) int offsetScale = 16;
+			if (wallKey != 0L) {
+				offsetScale = LocTypeList.get((int) (wallKey >>> 32) & Integer.MAX_VALUE).wallDecorOffsetScale;
+			}
+			@Pc(2040) Entity local2040;
+			if (type.seqId == -1 && type.seqIds == null && type.multiLocs == null && !type.aBoolean379) {
+				@Pc(2013) Class96 local2013 = type.method4450(xFine, arg8, 4, local193, tileHeightsBelow, tileHeightsAbove, local330, angle, zFine, null);
+				if (GlRenderer.enabled && local330) {
+					Static14.method1212(local2013.sprite, xFine - Static4.anIntArray315[angle] * 8, local195, zFine - Static6.anIntArray475[angle] * 8);
+				}
+				local2040 = local2013.entity;
+			} else {
+				local2040 = new Loc(id, 4, angle, virtualLevel, x, z, -1, type.aBoolean380, null);
+			}
+			setWallDecor(level, x, z, local193, local2040, null, Static2.anIntArray651[angle], 0, Static4.anIntArray315[angle] * offsetScale, Static6.anIntArray475[angle] * offsetScale, key2);
+		} else if (shape == 6) {
+			@Pc(2089) long wallKey = getWallKey(level, x, z);
+			@Pc(2091) int offsetScale = 8;
+			if (wallKey != 0L) {
+				offsetScale = LocTypeList.get(Integer.MAX_VALUE & (int) (wallKey >>> 32)).wallDecorOffsetScale / 2;
+			}
+			@Pc(2170) Entity local2170;
+			if (type.seqId == -1 && type.seqIds == null && type.multiLocs == null && !type.aBoolean379) {
+				@Pc(2143) Class96 local2143 = type.method4450(xFine, arg8, 4, local193, tileHeightsBelow, tileHeightsAbove, local330, angle + 4, zFine, null);
+				if (GlRenderer.enabled && local330) {
+					Static14.method1212(local2143.sprite, xFine - Static3.wallDecorXOffsets[angle] * 8, local195, zFine - Static7.wallDecorZOffsets[angle] * 8);
+				}
+				local2170 = local2143.entity;
+			} else {
+				local2170 = new Loc(id, 4, angle + 4, virtualLevel, x, z, -1, type.aBoolean380, null);
+			}
+			setWallDecor(level, x, z, local193, local2170, null, 256, angle, Static3.wallDecorXOffsets[angle] * offsetScale, Static7.wallDecorZOffsets[angle] * offsetScale, key2);
+		} else if (shape == 7) {
+			@Pc(2219) int local2219 = angle + 2 & 0x3;
+			@Pc(2248) Entity local2248;
+			if (type.seqId == -1 && type.seqIds == null && type.multiLocs == null && !type.aBoolean379) {
+				@Pc(2266) Class96 local2266 = type.method4450(xFine, arg8, 4, local193, tileHeightsBelow, tileHeightsAbove, local330, local2219 + 4, zFine, null);
+				if (GlRenderer.enabled && local330) {
+					Static14.method1212(local2266.sprite, xFine, local195, zFine);
+				}
+				local2248 = local2266.entity;
+			} else {
+				local2248 = new Loc(id, 4, local2219 + 4, virtualLevel, x, z, -1, type.aBoolean380, null);
+			}
+			setWallDecor(level, x, z, local193, local2248, null, 256, local2219, 0, 0, key2);
+		} else if (shape == 8) {
+			@Pc(2300) int offsetScale = 8;
+			@Pc(2305) long wallKey = getWallKey(level, x, z);
+			if (wallKey != 0L) {
+				offsetScale = LocTypeList.get((int) (wallKey >>> 32) & Integer.MAX_VALUE).wallDecorOffsetScale / 2;
+			}
+			@Pc(2328) int local2328 = angle + 2 & 0x3;
+			@Pc(2392) Entity local2392;
+			@Pc(2429) Entity local2429;
+			if (type.seqId == -1 && type.seqIds == null && type.multiLocs == null && !type.aBoolean379) {
+				@Pc(2350) int xOffset = Static3.wallDecorXOffsets[angle] * 8;
+				@Pc(2356) int zOffset = Static7.wallDecorZOffsets[angle] * 8;
+				@Pc(2372) Class96 local2372 = type.method4450(xFine, arg8, 4, local193, tileHeightsBelow, tileHeightsAbove, local330, angle + 4, zFine, null);
+				if (GlRenderer.enabled && local330) {
+					Static14.method1212(local2372.sprite, xFine - xOffset, local195, zFine - zOffset);
+				}
+				local2392 = local2372.entity;
+				@Pc(2410) Class96 local2410 = type.method4450(xFine, arg8, 4, local193, tileHeightsBelow, tileHeightsAbove, local330, local2328 + 4, zFine, null);
+				if (GlRenderer.enabled && local330) {
+					Static14.method1212(local2410.sprite, xFine - xOffset, local195, zFine - zOffset);
+				}
+				local2429 = local2410.entity;
+			} else {
+				local2392 = new Loc(id, 4, angle + 4, virtualLevel, x, z, -1, type.aBoolean380, null);
+				local2429 = new Loc(id, 4, local2328 + 4, virtualLevel, x, z, -1, type.aBoolean380, null);
+			}
+			setWallDecor(level, x, z, local193, local2392, local2429, 256, angle, offsetScale * Static3.wallDecorXOffsets[angle], offsetScale * Static7.wallDecorZOffsets[angle], key2);
+		}
+	}
+
+	@OriginalMember(owner = "client!db", name = "a", descriptor = "(IIIIIIII)V")
+	public static void changeLoc(@OriginalArg(1) int level, @OriginalArg(6) int x, @OriginalArg(3) int z, @OriginalArg(4) int layer, @OriginalArg(7) int shape, @OriginalArg(5) int id, @OriginalArg(2) int angle) {
+		if (x < 1 || z < 1 || x > 102 || z > 102) {
+			return;
+		}
+		if (!isAllLevelsVisible() && (Static4.tileFlags[0][x][z] & 0x2) == 0) {
+			@Pc(39) int local39 = level;
+			if ((Static4.tileFlags[level][x][z] & 0x8) != 0) {
+				local39 = 0;
+			}
+			if (local39 != Static2.visibleLevel) {
+				return;
+			}
+		}
+		@Pc(64) int virtualLevel = level;
+		if (level < 3 && (Static4.tileFlags[1][x][z] & 0x2) == 2) {
+			virtualLevel = level + 1;
+		}
+		removeLoc(level, virtualLevel, x, z, layer, PathFinder.collisionMaps[level]);
+		if (id >= 0) {
+			@Pc(97) boolean prevGroundDecoration = Preferences.groundDecoration;
+			Preferences.groundDecoration = true;
+			setLoc(level, virtualLevel, x, z, id, shape, angle, PathFinder.collisionMaps[level], false, false);
+			Preferences.groundDecoration = prevGroundDecoration;
+		}
+	}
 }

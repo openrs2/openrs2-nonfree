@@ -290,7 +290,7 @@ public final class Static15 {
 	}
 
 	@OriginalMember(owner = "client!fl", name = "a", descriptor = "(II[Lclient!ch;[BIIIIZII)V")
-	public static void readZoneLocs(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) CollisionMap[] arg2, @OriginalArg(3) byte[] bytes, @OriginalArg(4) int zoneAngle, @OriginalArg(5) int zoneZ, @OriginalArg(6) int zoneX, @OriginalArg(7) int zoneLevel, @OriginalArg(8) boolean arg8, @OriginalArg(10) int arg9) {
+	public static void readZoneLocs(@OriginalArg(0) int destLevel, @OriginalArg(1) int destX, @OriginalArg(2) CollisionMap[] collisionMaps, @OriginalArg(3) byte[] bytes, @OriginalArg(4) int rotation, @OriginalArg(5) int srcZ, @OriginalArg(6) int srcX, @OriginalArg(7) int srcLevel, @OriginalArg(8) boolean underwater, @OriginalArg(10) int destZ) {
 		@Pc(10) Buffer buffer = new Buffer(bytes);
 		@Pc(12) int id = -1;
 		while (true) {
@@ -312,22 +312,22 @@ public final class Static15 {
 				@Pc(69) int shapeAndAngle = buffer.readUnsignedByte();
 				@Pc(73) int shape = shapeAndAngle >> 2;
 				@Pc(77) int angle = shapeAndAngle & 0x3;
-				if (level == zoneLevel && zoneX <= x && zoneX + 8 > x && zoneZ <= z && zoneZ + 8 > z) {
+				if (level == srcLevel && srcX <= x && srcX + 8 > x && srcZ <= z && srcZ + 8 > z) {
 					@Pc(108) LocType type = LocTypeList.get(id);
-					@Pc(125) int rotatedX = Static29.method3147(type.width, z & 0x7, angle, x & 0x7, zoneAngle, type.length) + arg1;
-					@Pc(145) int rotatedZ = arg9 + Static26.method4356(x & 0x7, type.length, type.width, zoneAngle, z & 0x7, angle);
-					if (rotatedX > 0 && rotatedZ > 0 && rotatedX < 103 && rotatedZ < 103) {
+					@Pc(125) int x2 = destX + Static29.rotateZoneX(x & 0x7, z & 0x7, type.width, type.length, angle, rotation);
+					@Pc(145) int z2 = destZ + Static26.rotateZoneZ(x & 0x7, z & 0x7, type.width, type.length, angle, rotation);
+					if (x2 > 0 && z2 > 0 && x2 < 103 && z2 < 103) {
 						@Pc(162) CollisionMap collisionMap = null;
-						if (!arg8) {
-							@Pc(166) int collisionLevel = arg0;
-							if ((Static4.tileFlags[1][rotatedX][rotatedZ] & 0x2) == 2) {
-								collisionLevel = arg0 - 1;
+						if (!underwater) {
+							@Pc(166) int collisionLevel = destLevel;
+							if ((Static4.tileFlags[1][x2][z2] & 0x2) == 2) {
+								collisionLevel = destLevel - 1;
 							}
 							if (collisionLevel >= 0) {
-								collisionMap = arg2[collisionLevel];
+								collisionMap = collisionMaps[collisionLevel];
 							}
 						}
-						Static22.method2193(angle + zoneAngle & 0x3, arg0, id, arg0, rotatedX, arg8, rotatedZ, collisionMap, !arg8, shape);
+						SceneGraph.setLoc(destLevel, destLevel, x2, z2, id, shape, angle + rotation & 0x3, collisionMap, underwater, !underwater);
 					}
 				}
 			}

@@ -637,33 +637,6 @@ public final class Static12 {
 		return Static4.aFloatArray64;
 	}
 
-	@OriginalMember(owner = "client!db", name = "a", descriptor = "(IIIIIIII)V")
-	public static void method736(@OriginalArg(1) int level, @OriginalArg(2) int angle, @OriginalArg(3) int z, @OriginalArg(4) int layer, @OriginalArg(5) int id, @OriginalArg(6) int x, @OriginalArg(7) int shape) {
-		if (x < 1 || z < 1 || x > 102 || z > 102) {
-			return;
-		}
-		if (!SceneGraph.isAllLevelsVisible() && (Static4.tileFlags[0][x][z] & 0x2) == 0) {
-			@Pc(39) int local39 = level;
-			if ((Static4.tileFlags[level][x][z] & 0x8) != 0) {
-				local39 = 0;
-			}
-			if (local39 != Static2.visibleLevel) {
-				return;
-			}
-		}
-		@Pc(64) int local64 = level;
-		if (level < 3 && (Static4.tileFlags[1][x][z] & 0x2) == 2) {
-			local64 = level + 1;
-		}
-		Static21.method2018(level, local64, z, PathFinder.collisionMaps[level], layer, x);
-		if (id >= 0) {
-			@Pc(97) boolean prevGroundDecoration = Preferences.groundDecoration;
-			Preferences.groundDecoration = true;
-			Static22.method2193(angle, level, id, local64, x, false, z, PathFinder.collisionMaps[level], false, shape);
-			Preferences.groundDecoration = prevGroundDecoration;
-		}
-	}
-
 	@OriginalMember(owner = "client!de", name = "a", descriptor = "(BZ)V")
 	public static void method777(@OriginalArg(1) boolean arg0) {
 		Static21.method2050(arg0, GameShell.canvasWidth, InterfaceList.topLevelInterface, GameShell.canvasHeight);

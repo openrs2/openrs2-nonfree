@@ -89,21 +89,21 @@ public final class Static29 {
 	}
 
 	@OriginalMember(owner = "client!pg", name = "a", descriptor = "(IIIIIII)I")
-	public static int method3147(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(6) int arg5) {
-		arg4 &= 3;
-		if ((arg2 & 0x1) == 1) {
-			@Pc(17) int local17 = arg0;
-			arg0 = arg5;
-			arg5 = local17;
+	public static int rotateZoneX(@OriginalArg(3) int x, @OriginalArg(1) int z, @OriginalArg(0) int width, @OriginalArg(6) int length, @OriginalArg(2) int angle, @OriginalArg(4) int rotation) {
+		rotation &= 3;
+		if ((angle & 0x1) == 1) {
+			@Pc(17) int temp = width;
+			width = length;
+			length = temp;
 		}
-		if (arg4 == 0) {
-			return arg3;
-		} else if (arg4 == 1) {
-			return arg1;
-		} else if (arg4 == 2) {
-			return 1 + 7 - arg0 - arg3;
+		if (rotation == 0) {
+			return x;
+		} else if (rotation == 1) {
+			return z;
+		} else if (rotation == 2) {
+			return 1 + 7 - width - x;
 		} else {
-			return 7 + 1 - arg1 - arg5;
+			return 7 + 1 - z - length;
 		}
 	}
 

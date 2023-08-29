@@ -225,21 +225,21 @@ public final class Static26 {
 	}
 
 	@OriginalMember(owner = "client!ng", name = "a", descriptor = "(IIIIIII)I")
-	public static int method4356(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4, @OriginalArg(6) int arg5) {
-		if ((arg5 & 0x1) == 1) {
-			@Pc(8) int local8 = arg2;
-			arg2 = arg1;
-			arg1 = local8;
+	public static int rotateZoneZ(@OriginalArg(1) int x, @OriginalArg(5) int z, @OriginalArg(3) int width, @OriginalArg(2) int length, @OriginalArg(6) int angle, @OriginalArg(4) int rotation) {
+		if ((angle & 0x1) == 1) {
+			@Pc(8) int temp = width;
+			width = length;
+			length = temp;
 		}
-		arg3 &= 3;
-		if (arg3 == 0) {
-			return arg4;
-		} else if (arg3 == 1) {
-			return 1 + 7 - arg2 - arg0;
-		} else if (arg3 == 2) {
-			return 1 + 7 - arg4 - arg1;
+		rotation &= 3;
+		if (rotation == 0) {
+			return z;
+		} else if (rotation == 1) {
+			return 1 + 7 - width - x;
+		} else if (rotation == 2) {
+			return 1 + 7 - z - length;
 		} else {
-			return arg0;
+			return x;
 		}
 	}
 

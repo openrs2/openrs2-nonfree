@@ -45,7 +45,7 @@ public final class ChangeLocRequest extends Node {
 					loc.setLoops--;
 				}
 				if (loc.setLoops == 0 && loc.x >= 1 && loc.z >= 1 && loc.x <= 102 && loc.z <= 102 && (loc.id < 0 || isShapeReady(loc.id, loc.shape))) {
-					Static12.method736(loc.level, loc.angle, loc.z, loc.layer, loc.id, loc.x, loc.shape);
+					SceneGraph.changeLoc(loc.level, loc.x, loc.z, loc.layer, loc.shape, loc.id, loc.angle);
 					loc.setLoops = -1;
 					if (loc.id == loc.originalId && loc.originalId == -1) {
 						loc.unlink();
@@ -54,7 +54,7 @@ public final class ChangeLocRequest extends Node {
 					}
 				}
 			} else if (loc.originalId < 0 || isShapeReady(loc.originalId, loc.originalShape)) {
-				Static12.method736(loc.level, loc.originalAngle, loc.z, loc.layer, loc.originalId, loc.x, loc.originalShape);
+				SceneGraph.changeLoc(loc.level, loc.x, loc.z, loc.layer, loc.originalShape, loc.originalId, loc.originalAngle);
 				loc.unlink();
 			}
 		}

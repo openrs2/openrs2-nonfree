@@ -425,7 +425,7 @@ public final class Static11 {
 	}
 
 	@OriginalMember(owner = "client!ch", name = "a", descriptor = "(Z[BIII[Lclient!ch;)V")
-	public static void readMapLocs(@OriginalArg(0) boolean underwater, @OriginalArg(1) byte[] bytes, @OriginalArg(3) int z, @OriginalArg(4) int x, @OriginalArg(5) CollisionMap[] collisionMaps) {
+	public static void readMapLocs(@OriginalArg(0) boolean underwater, @OriginalArg(1) byte[] bytes, @OriginalArg(3) int destZ, @OriginalArg(4) int destX, @OriginalArg(5) CollisionMap[] collisionMaps) {
 		@Pc(10) Buffer buffer = new Buffer(bytes);
 		@Pc(20) int id = -1;
 		while (true) {
@@ -441,26 +441,26 @@ public final class Static11 {
 					break;
 				}
 				position += positionDelta - 1;
-				@Pc(56) int locZ = position & 0x3F;
-				@Pc(62) int locX = position >> 6 & 0x3F;
+				@Pc(56) int z = position & 0x3F;
+				@Pc(62) int x = position >> 6 & 0x3F;
 				@Pc(66) int shapeAndAngle = buffer.readUnsignedByte();
 				@Pc(70) int angle = shapeAndAngle & 0x3;
 				@Pc(74) int shape = shapeAndAngle >> 2;
-				@Pc(79) int locX2 = locX + x;
-				@Pc(84) int locZ2 = locZ + z;
+				@Pc(79) int x2 = x + destX;
+				@Pc(84) int z2 = z + destZ;
 				@Pc(88) int level = position >> 12;
-				if (locX2 > 0 && locZ2 > 0 && locX2 < 103 && locZ2 < 103) {
+				if (x2 > 0 && z2 > 0 && x2 < 103 && z2 < 103) {
 					@Pc(104) CollisionMap collisionMap = null;
 					if (!underwater) {
 						@Pc(108) int collisionLevel = level;
-						if ((Static4.tileFlags[1][locX2][locZ2] & 0x2) == 2) {
+						if ((Static4.tileFlags[1][x2][z2] & 0x2) == 2) {
 							collisionLevel = level - 1;
 						}
 						if (collisionLevel >= 0) {
 							collisionMap = collisionMaps[collisionLevel];
 						}
 					}
-					Static22.method2193(angle, level, id, level, locX2, underwater, locZ2, collisionMap, !underwater, shape);
+					SceneGraph.setLoc(level, level, x2, z2, id, shape, angle, collisionMap, underwater, !underwater);
 				}
 			}
 		}
