@@ -260,9 +260,9 @@ public final class Static24 {
 			Static11.method516();
 		}
 		if (mode < 2) {
-			Static4.aBoolean184 = false;
+			Static4.resizable = false;
 		} else {
-			Static4.aBoolean184 = true;
+			Static4.resizable = true;
 		}
 		if (InterfaceList.topLevelInterface != -1) {
 			Static12.method777(true);

@@ -111,7 +111,7 @@ public final class Static4 {
 	public static int anInt2663 = 0;
 
 	@OriginalMember(owner = "client!jm", name = "g", descriptor = "Z")
-	public static boolean aBoolean184 = false;
+	public static boolean resizable = false;
 
 	@OriginalMember(owner = "client!k", name = "e", descriptor = "[[Z")
 	public static final boolean[][] aBooleanArrayArray3 = new boolean[][] { new boolean[0], { true, false, true }, { true, false, false, true }, { false, false, true, true }, { true, true, false }, { false, true, true }, { true, false, false, true }, { false, false, false, true, true }, { false, true, true }, { true, false, true, true, true }, { false, true, true, true, true }, { false, true, true, true, true, false } };

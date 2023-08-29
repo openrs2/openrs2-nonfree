@@ -250,9 +250,9 @@ public final class Static11 {
 	public static int getWindowMode() {
 		if (GameShell.fullScreenFrame != null) {
 			return 3;
-		} else if (GlRenderer.enabled && Static4.aBoolean184) {
+		} else if (GlRenderer.enabled && Static4.resizable) {
 			return 2;
-		} else if (GlRenderer.enabled && !Static4.aBoolean184) {
+		} else if (GlRenderer.enabled && !Static4.resizable) {
 			return 1;
 		} else {
 			return 0;
