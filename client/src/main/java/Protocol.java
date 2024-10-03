@@ -2341,14 +2341,14 @@ public final class Protocol {
 		}
 		if ((flags & 0x20) != 0) {
 			@Pc(232) int chatFlags = inboundBuffer.readUnsignedShortA();
-			@Pc(236) int staffModelLevel = inboundBuffer.readUnsignedByteA();
+			@Pc(236) int staffModLevel = inboundBuffer.readUnsignedByteA();
 			@Pc(244) boolean quickChat = (chatFlags & 0x8000) != 0;
 			@Pc(248) int len = inboundBuffer.readUnsignedByteS();
 			@Pc(251) int off = inboundBuffer.position;
 			if (player.username != null && player.appearance != null) {
 				@Pc(264) long encodedUsername = Base37.encode(player.username);
 				@Pc(266) boolean ignore = false;
-				if (staffModelLevel <= 1) {
+				if (staffModLevel <= 1) {
 					if (!quickChat && (LoginManager.playerUnderage && !LoginManager.parentalChatConsent || LoginManager.mapQuickChat)) {
 						ignore = true;
 					} else {
@@ -2378,9 +2378,9 @@ public final class Protocol {
 					player.chatEffect = chatFlags & 0xFF;
 					player.chatLoops = 150;
 					player.chatColor = chatFlags >> 8;
-					if (staffModelLevel == 2) {
+					if (staffModLevel == 2) {
 						Chat.add(quickChat ? 17 : 1, "<img=1>" + player.getName(), message, null, phraseId);
-					} else if (staffModelLevel == 1) {
+					} else if (staffModLevel == 1) {
 						Chat.add(quickChat ? 17 : 1, "<img=0>" + player.getName(), message, null, phraseId);
 					} else {
 						Chat.add(quickChat ? 17 : 2, player.getName(), message, null, phraseId);
